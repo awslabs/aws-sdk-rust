@@ -174,6 +174,145 @@ pub fn parse_add_custom_routing_endpoints_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_add_endpoints_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::AddEndpointsOutput, crate::error::AddEndpointsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::AddEndpointsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::AddEndpointsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::AddEndpointsError {
+            meta: generic,
+            kind: crate::error::AddEndpointsErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EndpointGroupNotFoundException" => crate::error::AddEndpointsError {
+            meta: generic,
+            kind: crate::error::AddEndpointsErrorKind::EndpointGroupNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::endpoint_group_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServiceErrorException" => crate::error::AddEndpointsError {
+            meta: generic,
+            kind: crate::error::AddEndpointsErrorKind::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidArgumentException" => crate::error::AddEndpointsError {
+            meta: generic,
+            kind: crate::error::AddEndpointsErrorKind::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::AddEndpointsError {
+            meta: generic,
+            kind: crate::error::AddEndpointsErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TransactionInProgressException" => crate::error::AddEndpointsError {
+            meta: generic,
+            kind: crate::error::AddEndpointsErrorKind::TransactionInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::transaction_in_progress_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_transaction_in_progress_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::AddEndpointsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_add_endpoints_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::AddEndpointsOutput, crate::error::AddEndpointsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::add_endpoints_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_add_endpoints(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AddEndpointsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_advertise_byoip_cidr_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -4048,6 +4187,123 @@ pub fn parse_remove_custom_routing_endpoints_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::remove_custom_routing_endpoints_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_remove_endpoints_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::RemoveEndpointsOutput, crate::error::RemoveEndpointsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RemoveEndpointsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::RemoveEndpointsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::RemoveEndpointsError {
+            meta: generic,
+            kind: crate::error::RemoveEndpointsErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveEndpointsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EndpointGroupNotFoundException" => crate::error::RemoveEndpointsError {
+            meta: generic,
+            kind: crate::error::RemoveEndpointsErrorKind::EndpointGroupNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::endpoint_group_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveEndpointsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServiceErrorException" => crate::error::RemoveEndpointsError {
+            meta: generic,
+            kind: crate::error::RemoveEndpointsErrorKind::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveEndpointsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidArgumentException" => crate::error::RemoveEndpointsError {
+            meta: generic,
+            kind: crate::error::RemoveEndpointsErrorKind::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveEndpointsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TransactionInProgressException" => crate::error::RemoveEndpointsError {
+            meta: generic,
+            kind: crate::error::RemoveEndpointsErrorKind::TransactionInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::transaction_in_progress_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_transaction_in_progress_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveEndpointsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::RemoveEndpointsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_remove_endpoints_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::RemoveEndpointsOutput, crate::error::RemoveEndpointsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::remove_endpoints_output::Builder::default();
         let _ = response;
         output.build()
     })

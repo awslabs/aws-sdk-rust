@@ -1241,6 +1241,24 @@ pub fn parse_create_geofence_collection_error(
                 tmp
             }),
         },
+        "ServiceQuotaExceededException" => crate::error::CreateGeofenceCollectionError {
+            meta: generic,
+            kind: crate::error::CreateGeofenceCollectionErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGeofenceCollectionError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::CreateGeofenceCollectionError {
             meta: generic,
             kind: crate::error::CreateGeofenceCollectionErrorKind::ThrottlingException({
@@ -1357,6 +1375,24 @@ pub fn parse_create_map_error(
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMapError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceQuotaExceededException" => crate::error::CreateMapError {
+            meta: generic,
+            kind: crate::error::CreateMapErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMapError::unhandled)?;
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -1487,6 +1523,24 @@ pub fn parse_create_place_index_error(
                 tmp
             }),
         },
+        "ServiceQuotaExceededException" => crate::error::CreatePlaceIndexError {
+            meta: generic,
+            kind: crate::error::CreatePlaceIndexErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlaceIndexError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::CreatePlaceIndexError {
             meta: generic,
             kind: crate::error::CreatePlaceIndexErrorKind::ThrottlingException({
@@ -1604,6 +1658,24 @@ pub fn parse_create_route_calculator_error(
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRouteCalculatorError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceQuotaExceededException" => crate::error::CreateRouteCalculatorError {
+            meta: generic,
+            kind: crate::error::CreateRouteCalculatorErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRouteCalculatorError::unhandled)?;
                     output.build()
                 };
                 if tmp.message.is_none() {

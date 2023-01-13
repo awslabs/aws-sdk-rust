@@ -908,12 +908,12 @@ pub mod create_service_input {
             self.endpoint_type = input;
             self
         }
-        /// <p>The configuration for the URL endpoint type.</p>
+        /// <p>The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.</p>
         pub fn url_endpoint(mut self, input: crate::model::UrlEndpointInput) -> Self {
             self.url_endpoint = Some(input);
             self
         }
-        /// <p>The configuration for the URL endpoint type.</p>
+        /// <p>The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.</p>
         pub fn set_url_endpoint(
             mut self,
             input: std::option::Option<crate::model::UrlEndpointInput>,
@@ -5499,7 +5499,7 @@ pub struct CreateServiceInput {
     /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
     #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::ServiceEndpointType>,
-    /// <p>The configuration for the URL endpoint type.</p>
+    /// <p>The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.</p>
     #[doc(hidden)]
     pub url_endpoint: std::option::Option<crate::model::UrlEndpointInput>,
     /// <p>The configuration for the Lambda endpoint type.</p>
@@ -5538,7 +5538,7 @@ impl CreateServiceInput {
     pub fn endpoint_type(&self) -> std::option::Option<&crate::model::ServiceEndpointType> {
         self.endpoint_type.as_ref()
     }
-    /// <p>The configuration for the URL endpoint type.</p>
+    /// <p>The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.</p>
     pub fn url_endpoint(&self) -> std::option::Option<&crate::model::UrlEndpointInput> {
         self.url_endpoint.as_ref()
     }

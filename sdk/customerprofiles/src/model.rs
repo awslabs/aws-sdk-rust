@@ -1389,6 +1389,15 @@ pub struct Profile {
     #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A list of items used to find a profile returned in a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.</p>
+    /// <p>If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the <code>LogicalOperator</code> used in the request:</p>
+    /// <ul>
+    /// <li> <p> <code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p> </li>
+    /// <li> <p> <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p> </li>
+    /// </ul>
+    /// <p>The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request.</p>
+    #[doc(hidden)]
+    pub found_by_items: std::option::Option<std::vec::Vec<crate::model::FoundByKeyValue>>,
 }
 impl Profile {
     /// <p>The unique identifier of a customer profile.</p>
@@ -1482,6 +1491,16 @@ impl Profile {
     {
         self.attributes.as_ref()
     }
+    /// <p>A list of items used to find a profile returned in a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.</p>
+    /// <p>If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the <code>LogicalOperator</code> used in the request:</p>
+    /// <ul>
+    /// <li> <p> <code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p> </li>
+    /// <li> <p> <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p> </li>
+    /// </ul>
+    /// <p>The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request.</p>
+    pub fn found_by_items(&self) -> std::option::Option<&[crate::model::FoundByKeyValue]> {
+        self.found_by_items.as_deref()
+    }
 }
 /// See [`Profile`](crate::model::Profile).
 pub mod profile {
@@ -1513,6 +1532,8 @@ pub mod profile {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) found_by_items:
+            std::option::Option<std::vec::Vec<crate::model::FoundByKeyValue>>,
     }
     impl Builder {
         /// <p>The unique identifier of a customer profile.</p>
@@ -1789,6 +1810,37 @@ pub mod profile {
             self.attributes = input;
             self
         }
+        /// Appends an item to `found_by_items`.
+        ///
+        /// To override the contents of this collection use [`set_found_by_items`](Self::set_found_by_items).
+        ///
+        /// <p>A list of items used to find a profile returned in a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.</p>
+        /// <p>If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the <code>LogicalOperator</code> used in the request:</p>
+        /// <ul>
+        /// <li> <p> <code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p> </li>
+        /// <li> <p> <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p> </li>
+        /// </ul>
+        /// <p>The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request.</p>
+        pub fn found_by_items(mut self, input: crate::model::FoundByKeyValue) -> Self {
+            let mut v = self.found_by_items.unwrap_or_default();
+            v.push(input);
+            self.found_by_items = Some(v);
+            self
+        }
+        /// <p>A list of items used to find a profile returned in a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.</p>
+        /// <p>If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the <code>LogicalOperator</code> used in the request:</p>
+        /// <ul>
+        /// <li> <p> <code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p> </li>
+        /// <li> <p> <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p> </li>
+        /// </ul>
+        /// <p>The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request.</p>
+        pub fn set_found_by_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FoundByKeyValue>>,
+        ) -> Self {
+            self.found_by_items = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Profile`](crate::model::Profile).
         pub fn build(self) -> crate::model::Profile {
             crate::model::Profile {
@@ -1814,6 +1866,7 @@ pub mod profile {
                 mailing_address: self.mailing_address,
                 billing_address: self.billing_address,
                 attributes: self.attributes,
+                found_by_items: self.found_by_items,
             }
         }
     }
@@ -1822,6 +1875,82 @@ impl Profile {
     /// Creates a new builder-style object to manufacture [`Profile`](crate::model::Profile).
     pub fn builder() -> crate::model::profile::Builder {
         crate::model::profile::Builder::default()
+    }
+}
+
+/// <p>A data type pair that consists of a <code>KeyName</code> and <code>Values</code> list that were used to find a profile returned in response to a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct FoundByKeyValue {
+    /// <p>A searchable identifier of a customer profile.</p>
+    #[doc(hidden)]
+    pub key_name: std::option::Option<std::string::String>,
+    /// <p>A list of key values.</p>
+    #[doc(hidden)]
+    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl FoundByKeyValue {
+    /// <p>A searchable identifier of a customer profile.</p>
+    pub fn key_name(&self) -> std::option::Option<&str> {
+        self.key_name.as_deref()
+    }
+    /// <p>A list of key values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
+/// See [`FoundByKeyValue`](crate::model::FoundByKeyValue).
+pub mod found_by_key_value {
+
+    /// A builder for [`FoundByKeyValue`](crate::model::FoundByKeyValue).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key_name: std::option::Option<std::string::String>,
+        pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>A searchable identifier of a customer profile.</p>
+        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_name = Some(input.into());
+            self
+        }
+        /// <p>A searchable identifier of a customer profile.</p>
+        pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_name = input;
+            self
+        }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>A list of key values.</p>
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input.into());
+            self.values = Some(v);
+            self
+        }
+        /// <p>A list of key values.</p>
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FoundByKeyValue`](crate::model::FoundByKeyValue).
+        pub fn build(self) -> crate::model::FoundByKeyValue {
+            crate::model::FoundByKeyValue {
+                key_name: self.key_name,
+                values: self.values,
+            }
+        }
+    }
+}
+impl FoundByKeyValue {
+    /// Creates a new builder-style object to manufacture [`FoundByKeyValue`](crate::model::FoundByKeyValue).
+    pub fn builder() -> crate::model::found_by_key_value::Builder {
+        crate::model::found_by_key_value::Builder::default()
     }
 }
 
@@ -2041,6 +2170,172 @@ impl Address {
     /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
     pub fn builder() -> crate::model::address::Builder {
         crate::model::address::Builder::default()
+    }
+}
+
+/// When writing a match expression against `LogicalOperator`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let logicaloperator = unimplemented!();
+/// match logicaloperator {
+///     LogicalOperator::And => { /* ... */ },
+///     LogicalOperator::Or => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `logicaloperator` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LogicalOperator::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LogicalOperator::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LogicalOperator::NewFeature` is defined.
+/// Specifically, when `logicaloperator` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LogicalOperator::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LogicalOperator {
+    #[allow(missing_docs)] // documentation missing in model
+    And,
+    #[allow(missing_docs)] // documentation missing in model
+    Or,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for LogicalOperator {
+    fn from(s: &str) -> Self {
+        match s {
+            "AND" => LogicalOperator::And,
+            "OR" => LogicalOperator::Or,
+            other => LogicalOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for LogicalOperator {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LogicalOperator::from(s))
+    }
+}
+impl LogicalOperator {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LogicalOperator::And => "AND",
+            LogicalOperator::Or => "OR",
+            LogicalOperator::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AND", "OR"]
+    }
+}
+impl AsRef<str> for LogicalOperator {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A data type pair that consists of a <code>KeyName</code> and <code>Values</code> list that is used in conjunction with the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html#customerprofiles-SearchProfiles-request-KeyName">KeyName</a> and <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html#customerprofiles-SearchProfiles-request-Values">Values</a> parameters to search for profiles using the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AdditionalSearchKey {
+    /// <p>A searchable identifier of a customer profile.</p>
+    #[doc(hidden)]
+    pub key_name: std::option::Option<std::string::String>,
+    /// <p>A list of key values.</p>
+    #[doc(hidden)]
+    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AdditionalSearchKey {
+    /// <p>A searchable identifier of a customer profile.</p>
+    pub fn key_name(&self) -> std::option::Option<&str> {
+        self.key_name.as_deref()
+    }
+    /// <p>A list of key values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
+/// See [`AdditionalSearchKey`](crate::model::AdditionalSearchKey).
+pub mod additional_search_key {
+
+    /// A builder for [`AdditionalSearchKey`](crate::model::AdditionalSearchKey).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key_name: std::option::Option<std::string::String>,
+        pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>A searchable identifier of a customer profile.</p>
+        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_name = Some(input.into());
+            self
+        }
+        /// <p>A searchable identifier of a customer profile.</p>
+        pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_name = input;
+            self
+        }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>A list of key values.</p>
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input.into());
+            self.values = Some(v);
+            self
+        }
+        /// <p>A list of key values.</p>
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AdditionalSearchKey`](crate::model::AdditionalSearchKey).
+        pub fn build(self) -> crate::model::AdditionalSearchKey {
+            crate::model::AdditionalSearchKey {
+                key_name: self.key_name,
+                values: self.values,
+            }
+        }
+    }
+}
+impl AdditionalSearchKey {
+    /// Creates a new builder-style object to manufacture [`AdditionalSearchKey`](crate::model::AdditionalSearchKey).
+    pub fn builder() -> crate::model::additional_search_key::Builder {
+        crate::model::additional_search_key::Builder::default()
     }
 }
 

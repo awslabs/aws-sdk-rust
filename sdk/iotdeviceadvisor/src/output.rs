@@ -9,7 +9,7 @@ pub struct UpdateSuiteDefinitionOutput {
     /// <p>Amazon Resource Name (ARN) of the updated test suite.</p>
     #[doc(hidden)]
     pub suite_definition_arn: std::option::Option<std::string::String>,
-    /// <p>Suite definition name of the updated test suite.</p>
+    /// <p>Updates the suite definition name. This is a required parameter.</p>
     #[doc(hidden)]
     pub suite_definition_name: std::option::Option<std::string::String>,
     /// <p>Suite definition version of the updated test suite.</p>
@@ -31,7 +31,7 @@ impl UpdateSuiteDefinitionOutput {
     pub fn suite_definition_arn(&self) -> std::option::Option<&str> {
         self.suite_definition_arn.as_deref()
     }
-    /// <p>Suite definition name of the updated test suite.</p>
+    /// <p>Updates the suite definition name. This is a required parameter.</p>
     pub fn suite_definition_name(&self) -> std::option::Option<&str> {
         self.suite_definition_name.as_deref()
     }
@@ -88,12 +88,12 @@ pub mod update_suite_definition_output {
             self.suite_definition_arn = input;
             self
         }
-        /// <p>Suite definition name of the updated test suite.</p>
+        /// <p>Updates the suite definition name. This is a required parameter.</p>
         pub fn suite_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_name = Some(input.into());
             self
         }
-        /// <p>Suite definition name of the updated test suite.</p>
+        /// <p>Updates the suite definition name. This is a required parameter.</p>
         pub fn set_suite_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -245,6 +245,9 @@ pub struct StartSuiteRunOutput {
     /// <p>Starts a Device Advisor test suite run based on suite create time.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The response of an Device Advisor test endpoint.</p>
+    #[doc(hidden)]
+    pub endpoint: std::option::Option<std::string::String>,
 }
 impl StartSuiteRunOutput {
     /// <p>Suite Run ID of the started suite run.</p>
@@ -259,6 +262,10 @@ impl StartSuiteRunOutput {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
+    /// <p>The response of an Device Advisor test endpoint.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
 }
 /// See [`StartSuiteRunOutput`](crate::output::StartSuiteRunOutput).
 pub mod start_suite_run_output {
@@ -269,6 +276,7 @@ pub mod start_suite_run_output {
         pub(crate) suite_run_id: std::option::Option<std::string::String>,
         pub(crate) suite_run_arn: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) endpoint: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Suite Run ID of the started suite run.</p>
@@ -307,12 +315,23 @@ pub mod start_suite_run_output {
             self.created_at = input;
             self
         }
+        /// <p>The response of an Device Advisor test endpoint.</p>
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
+            self
+        }
+        /// <p>The response of an Device Advisor test endpoint.</p>
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartSuiteRunOutput`](crate::output::StartSuiteRunOutput).
         pub fn build(self) -> crate::output::StartSuiteRunOutput {
             crate::output::StartSuiteRunOutput {
                 suite_run_id: self.suite_run_id,
                 suite_run_arn: self.suite_run_arn,
                 created_at: self.created_at,
+                endpoint: self.endpoint,
             }
         }
     }
@@ -1200,33 +1219,33 @@ impl DeleteSuiteDefinitionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSuiteDefinitionOutput {
-    /// <p>Creates a Device Advisor test suite with suite UUID.</p>
+    /// <p>The UUID of the test suite created.</p>
     #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
-    /// <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
+    /// <p>The Amazon Resource Name (ARN) of the test suite.</p>
     #[doc(hidden)]
     pub suite_definition_arn: std::option::Option<std::string::String>,
-    /// <p>Creates a Device Advisor test suite with suite definition name.</p>
+    /// <p>The suite definition name of the test suite. This is a required parameter.</p>
     #[doc(hidden)]
     pub suite_definition_name: std::option::Option<std::string::String>,
-    /// <p>Creates a Device Advisor test suite with TimeStamp of when it was created.</p>
+    /// <p>The timestamp of when the test suite was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateSuiteDefinitionOutput {
-    /// <p>Creates a Device Advisor test suite with suite UUID.</p>
+    /// <p>The UUID of the test suite created.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
-    /// <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
+    /// <p>The Amazon Resource Name (ARN) of the test suite.</p>
     pub fn suite_definition_arn(&self) -> std::option::Option<&str> {
         self.suite_definition_arn.as_deref()
     }
-    /// <p>Creates a Device Advisor test suite with suite definition name.</p>
+    /// <p>The suite definition name of the test suite. This is a required parameter.</p>
     pub fn suite_definition_name(&self) -> std::option::Option<&str> {
         self.suite_definition_name.as_deref()
     }
-    /// <p>Creates a Device Advisor test suite with TimeStamp of when it was created.</p>
+    /// <p>The timestamp of when the test suite was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -1243,12 +1262,12 @@ pub mod create_suite_definition_output {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Creates a Device Advisor test suite with suite UUID.</p>
+        /// <p>The UUID of the test suite created.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Creates a Device Advisor test suite with suite UUID.</p>
+        /// <p>The UUID of the test suite created.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1256,12 +1275,12 @@ pub mod create_suite_definition_output {
             self.suite_definition_id = input;
             self
         }
-        /// <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
+        /// <p>The Amazon Resource Name (ARN) of the test suite.</p>
         pub fn suite_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_arn = Some(input.into());
             self
         }
-        /// <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
+        /// <p>The Amazon Resource Name (ARN) of the test suite.</p>
         pub fn set_suite_definition_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1269,12 +1288,12 @@ pub mod create_suite_definition_output {
             self.suite_definition_arn = input;
             self
         }
-        /// <p>Creates a Device Advisor test suite with suite definition name.</p>
+        /// <p>The suite definition name of the test suite. This is a required parameter.</p>
         pub fn suite_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_name = Some(input.into());
             self
         }
-        /// <p>Creates a Device Advisor test suite with suite definition name.</p>
+        /// <p>The suite definition name of the test suite. This is a required parameter.</p>
         pub fn set_suite_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1282,12 +1301,12 @@ pub mod create_suite_definition_output {
             self.suite_definition_name = input;
             self
         }
-        /// <p>Creates a Device Advisor test suite with TimeStamp of when it was created.</p>
+        /// <p>The timestamp of when the test suite was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>Creates a Device Advisor test suite with TimeStamp of when it was created.</p>
+        /// <p>The timestamp of when the test suite was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

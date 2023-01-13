@@ -3973,6 +3973,7 @@ pub mod describe_config_rules_input {
     pub struct Builder {
         pub(crate) config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) filters: std::option::Option<crate::model::DescribeConfigRulesFilters>,
     }
     impl Builder {
         /// Appends an item to `config_rule_names`.
@@ -4004,6 +4005,19 @@ pub mod describe_config_rules_input {
             self.next_token = input;
             self
         }
+        /// <p>Returns a list of Detecive or Proactive Config rules. By default, this API returns an unfiltered list.</p>
+        pub fn filters(mut self, input: crate::model::DescribeConfigRulesFilters) -> Self {
+            self.filters = Some(input);
+            self
+        }
+        /// <p>Returns a list of Detecive or Proactive Config rules. By default, this API returns an unfiltered list.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::DescribeConfigRulesFilters>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeConfigRulesInput`](crate::input::DescribeConfigRulesInput).
         pub fn build(
             self,
@@ -4014,6 +4028,7 @@ pub mod describe_config_rules_input {
             Ok(crate::input::DescribeConfigRulesInput {
                 config_rule_names: self.config_rule_names,
                 next_token: self.next_token,
+                filters: self.filters,
             })
         }
     }
@@ -8577,6 +8592,7 @@ pub mod get_compliance_details_by_resource_input {
         pub(crate) compliance_types:
             std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) resource_evaluation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
@@ -8633,6 +8649,23 @@ pub mod get_compliance_details_by_resource_input {
             self.next_token = input;
             self
         }
+        /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>
+        /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
+        /// </note>
+        pub fn resource_evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_evaluation_id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>
+        /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
+        /// </note>
+        pub fn set_resource_evaluation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_evaluation_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetComplianceDetailsByResourceInput`](crate::input::GetComplianceDetailsByResourceInput).
         pub fn build(
             self,
@@ -8645,6 +8678,7 @@ pub mod get_compliance_details_by_resource_input {
                 resource_id: self.resource_id,
                 compliance_types: self.compliance_types,
                 next_token: self.next_token,
+                resource_evaluation_id: self.resource_evaluation_id,
             })
         }
     }
@@ -10523,6 +10557,155 @@ impl GetResourceConfigHistoryInput {
     }
 }
 
+/// See [`GetResourceEvaluationSummaryInput`](crate::input::GetResourceEvaluationSummaryInput).
+pub mod get_resource_evaluation_summary_input {
+
+    /// A builder for [`GetResourceEvaluationSummaryInput`](crate::input::GetResourceEvaluationSummaryInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_evaluation_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
+        pub fn resource_evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_evaluation_id = Some(input.into());
+            self
+        }
+        /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
+        pub fn set_resource_evaluation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_evaluation_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResourceEvaluationSummaryInput`](crate::input::GetResourceEvaluationSummaryInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetResourceEvaluationSummaryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetResourceEvaluationSummaryInput {
+                resource_evaluation_id: self.resource_evaluation_id,
+            })
+        }
+    }
+}
+impl GetResourceEvaluationSummaryInput {
+    /// Consumes the builder and constructs an Operation<[`GetResourceEvaluationSummary`](crate::operation::GetResourceEvaluationSummary)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetResourceEvaluationSummary,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetResourceEvaluationSummaryInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetResourceEvaluationSummaryInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "StarlingDoveService.GetResourceEvaluationSummary",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_evaluation_summary(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResourceEvaluationSummary::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetResourceEvaluationSummary",
+            "configservice",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetResourceEvaluationSummaryInput`](crate::input::GetResourceEvaluationSummaryInput).
+    pub fn builder() -> crate::input::get_resource_evaluation_summary_input::Builder {
+        crate::input::get_resource_evaluation_summary_input::Builder::default()
+    }
+}
+
 /// See [`GetStoredQueryInput`](crate::input::GetStoredQueryInput).
 pub mod get_stored_query_input {
 
@@ -10905,13 +11088,15 @@ pub mod list_conformance_pack_compliance_scores_input {
             self
         }
         /// <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>
-        /// <p>Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by ascending order and last when sorting by descending order.</p>
+        /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Conformance pack compliance scores are sorted in reverse alphabetical order if you enter <code>DESCENDING</code>.</p>
+        /// <p>You can sort conformance pack compliance scores by the numerical value of the compliance score by entering <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by <code>SCORE</code>, conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and first when sorting by descending order.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.sort_order = Some(input);
             self
         }
         /// <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>
-        /// <p>Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by ascending order and last when sorting by descending order.</p>
+        /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Conformance pack compliance scores are sorted in reverse alphabetical order if you enter <code>DESCENDING</code>.</p>
+        /// <p>You can sort conformance pack compliance scores by the numerical value of the compliance score by entering <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by <code>SCORE</code>, conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and first when sorting by descending order.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -10920,13 +11105,13 @@ pub mod list_conformance_pack_compliance_scores_input {
             self
         }
         /// <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>
-        /// <p>By default, conformance pack compliance scores are sorted in ascending order by compliance score and alphabetically by name of the conformance pack if there is more than one conformance pack with the same compliance score.</p>
+        /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the compliance score.</p>
         pub fn sort_by(mut self, input: crate::model::SortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
         /// <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>
-        /// <p>By default, conformance pack compliance scores are sorted in ascending order by compliance score and alphabetically by name of the conformance pack if there is more than one conformance pack with the same compliance score.</p>
+        /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the compliance score.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<crate::model::SortBy>) -> Self {
             self.sort_by = input;
             self
@@ -11303,6 +11488,182 @@ impl ListDiscoveredResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesInput`](crate::input::ListDiscoveredResourcesInput).
     pub fn builder() -> crate::input::list_discovered_resources_input::Builder {
         crate::input::list_discovered_resources_input::Builder::default()
+    }
+}
+
+/// See [`ListResourceEvaluationsInput`](crate::input::ListResourceEvaluationsInput).
+pub mod list_resource_evaluations_input {
+
+    /// A builder for [`ListResourceEvaluationsInput`](crate::input::ListResourceEvaluationsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filters: std::option::Option<crate::model::ResourceEvaluationFilters>,
+        pub(crate) limit: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Returns a <code>ResourceEvaluationFilters</code> object.</p>
+        pub fn filters(mut self, input: crate::model::ResourceEvaluationFilters) -> Self {
+            self.filters = Some(input);
+            self
+        }
+        /// <p>Returns a <code>ResourceEvaluationFilters</code> object.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::ResourceEvaluationFilters>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>The maximum number of evaluations returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
+            self
+        }
+        /// <p>The maximum number of evaluations returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
+            self
+        }
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListResourceEvaluationsInput`](crate::input::ListResourceEvaluationsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListResourceEvaluationsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListResourceEvaluationsInput {
+                filters: self.filters,
+                limit: self.limit.unwrap_or_default(),
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListResourceEvaluationsInput {
+    /// Consumes the builder and constructs an Operation<[`ListResourceEvaluations`](crate::operation::ListResourceEvaluations)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListResourceEvaluations,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListResourceEvaluationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListResourceEvaluationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "StarlingDoveService.ListResourceEvaluations",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_resource_evaluations(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListResourceEvaluations::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListResourceEvaluations",
+            "configservice",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListResourceEvaluationsInput`](crate::input::ListResourceEvaluationsInput).
+    pub fn builder() -> crate::input::list_resource_evaluations_input::Builder {
+        crate::input::list_resource_evaluations_input::Builder::default()
     }
 }
 
@@ -12397,14 +12758,14 @@ pub mod put_conformance_pack_input {
             self.conformance_pack_name = input;
             self
         }
-        /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
+        /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn template_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_s3_uri = Some(input.into());
             self
         }
-        /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
+        /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn set_template_s3_uri(
@@ -12415,14 +12776,14 @@ pub mod put_conformance_pack_input {
             self
         }
         /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-        /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+        /// <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
         /// </note>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
         }
         /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-        /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+        /// <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
         /// </note>
         pub fn set_template_body(
             mut self,
@@ -15435,6 +15796,216 @@ impl StartRemediationExecutionInput {
     }
 }
 
+/// See [`StartResourceEvaluationInput`](crate::input::StartResourceEvaluationInput).
+pub mod start_resource_evaluation_input {
+
+    /// A builder for [`StartResourceEvaluationInput`](crate::input::StartResourceEvaluationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_details: std::option::Option<crate::model::ResourceDetails>,
+        pub(crate) evaluation_context: std::option::Option<crate::model::EvaluationContext>,
+        pub(crate) evaluation_mode: std::option::Option<crate::model::EvaluationMode>,
+        pub(crate) evaluation_timeout: std::option::Option<i32>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Returns a <code>ResourceDetails</code> object.</p>
+        pub fn resource_details(mut self, input: crate::model::ResourceDetails) -> Self {
+            self.resource_details = Some(input);
+            self
+        }
+        /// <p>Returns a <code>ResourceDetails</code> object.</p>
+        pub fn set_resource_details(
+            mut self,
+            input: std::option::Option<crate::model::ResourceDetails>,
+        ) -> Self {
+            self.resource_details = input;
+            self
+        }
+        /// <p>Returns an <code>EvaluationContext</code> object.</p>
+        pub fn evaluation_context(mut self, input: crate::model::EvaluationContext) -> Self {
+            self.evaluation_context = Some(input);
+            self
+        }
+        /// <p>Returns an <code>EvaluationContext</code> object.</p>
+        pub fn set_evaluation_context(
+            mut self,
+            input: std::option::Option<crate::model::EvaluationContext>,
+        ) -> Self {
+            self.evaluation_context = input;
+            self
+        }
+        /// <p>The mode of an evaluation. The valid value for this API is <code>Proactive</code>.</p>
+        pub fn evaluation_mode(mut self, input: crate::model::EvaluationMode) -> Self {
+            self.evaluation_mode = Some(input);
+            self
+        }
+        /// <p>The mode of an evaluation. The valid value for this API is <code>Proactive</code>.</p>
+        pub fn set_evaluation_mode(
+            mut self,
+            input: std::option::Option<crate::model::EvaluationMode>,
+        ) -> Self {
+            self.evaluation_mode = input;
+            self
+        }
+        /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
+        pub fn evaluation_timeout(mut self, input: i32) -> Self {
+            self.evaluation_timeout = Some(input);
+            self
+        }
+        /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
+        pub fn set_evaluation_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.evaluation_timeout = input;
+            self
+        }
+        /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
+        /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>
+        /// </note>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
+        /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>
+        /// </note>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartResourceEvaluationInput`](crate::input::StartResourceEvaluationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StartResourceEvaluationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::StartResourceEvaluationInput {
+                resource_details: self.resource_details,
+                evaluation_context: self.evaluation_context,
+                evaluation_mode: self.evaluation_mode,
+                evaluation_timeout: self.evaluation_timeout.unwrap_or_default(),
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+impl StartResourceEvaluationInput {
+    /// Consumes the builder and constructs an Operation<[`StartResourceEvaluation`](crate::operation::StartResourceEvaluation)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartResourceEvaluation,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StartResourceEvaluationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartResourceEvaluationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "StarlingDoveService.StartResourceEvaluation",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_resource_evaluation(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartResourceEvaluation::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartResourceEvaluation",
+            "configservice",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StartResourceEvaluationInput`](crate::input::StartResourceEvaluationInput).
+    pub fn builder() -> crate::input::start_resource_evaluation_input::Builder {
+        crate::input::start_resource_evaluation_input::Builder::default()
+    }
+}
+
 /// See [`StopConfigurationRecorderInput`](crate::input::StopConfigurationRecorderInput).
 pub mod stop_configuration_recorder_input {
 
@@ -15984,6 +16555,53 @@ impl StopConfigurationRecorderInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartResourceEvaluationInput {
+    /// <p>Returns a <code>ResourceDetails</code> object.</p>
+    #[doc(hidden)]
+    pub resource_details: std::option::Option<crate::model::ResourceDetails>,
+    /// <p>Returns an <code>EvaluationContext</code> object.</p>
+    #[doc(hidden)]
+    pub evaluation_context: std::option::Option<crate::model::EvaluationContext>,
+    /// <p>The mode of an evaluation. The valid value for this API is <code>Proactive</code>.</p>
+    #[doc(hidden)]
+    pub evaluation_mode: std::option::Option<crate::model::EvaluationMode>,
+    /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
+    pub evaluation_timeout: i32,
+    /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
+    /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl StartResourceEvaluationInput {
+    /// <p>Returns a <code>ResourceDetails</code> object.</p>
+    pub fn resource_details(&self) -> std::option::Option<&crate::model::ResourceDetails> {
+        self.resource_details.as_ref()
+    }
+    /// <p>Returns an <code>EvaluationContext</code> object.</p>
+    pub fn evaluation_context(&self) -> std::option::Option<&crate::model::EvaluationContext> {
+        self.evaluation_context.as_ref()
+    }
+    /// <p>The mode of an evaluation. The valid value for this API is <code>Proactive</code>.</p>
+    pub fn evaluation_mode(&self) -> std::option::Option<&crate::model::EvaluationMode> {
+        self.evaluation_mode.as_ref()
+    }
+    /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
+    pub fn evaluation_timeout(&self) -> i32 {
+        self.evaluation_timeout
+    }
+    /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
+    /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>
+    /// </note>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartRemediationExecutionInput {
     /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
     #[doc(hidden)]
@@ -16474,13 +17092,13 @@ pub struct PutConformancePackInput {
     /// <p>The unique name of the conformance pack you want to deploy.</p>
     #[doc(hidden)]
     pub conformance_pack_name: std::option::Option<std::string::String>,
-    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
+    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
     #[doc(hidden)]
     pub template_s3_uri: std::option::Option<std::string::String>,
     /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-    /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+    /// <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
     /// </note>
     #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
@@ -16508,14 +17126,14 @@ impl PutConformancePackInput {
     pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
         self.conformance_pack_name.as_deref()
     }
-    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
+    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
     pub fn template_s3_uri(&self) -> std::option::Option<&str> {
         self.template_s3_uri.as_deref()
     }
     /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-    /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+    /// <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
     /// </note>
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
@@ -16707,6 +17325,35 @@ impl ListStoredQueriesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListResourceEvaluationsInput {
+    /// <p>Returns a <code>ResourceEvaluationFilters</code> object.</p>
+    #[doc(hidden)]
+    pub filters: std::option::Option<crate::model::ResourceEvaluationFilters>,
+    /// <p>The maximum number of evaluations returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
+    pub limit: i32,
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourceEvaluationsInput {
+    /// <p>Returns a <code>ResourceEvaluationFilters</code> object.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::ResourceEvaluationFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of evaluations returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -16765,11 +17412,12 @@ pub struct ListConformancePackComplianceScoresInput {
     #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ConformancePackComplianceScoresFilters>,
     /// <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>
-    /// <p>Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by ascending order and last when sorting by descending order.</p>
+    /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Conformance pack compliance scores are sorted in reverse alphabetical order if you enter <code>DESCENDING</code>.</p>
+    /// <p>You can sort conformance pack compliance scores by the numerical value of the compliance score by entering <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by <code>SCORE</code>, conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and first when sorting by descending order.</p>
     #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>
-    /// <p>By default, conformance pack compliance scores are sorted in ascending order by compliance score and alphabetically by name of the conformance pack if there is more than one conformance pack with the same compliance score.</p>
+    /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the compliance score.</p>
     #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortBy>,
     /// <p>The maximum number of conformance pack compliance scores returned on each page.</p>
@@ -16787,12 +17435,13 @@ impl ListConformancePackComplianceScoresInput {
         self.filters.as_ref()
     }
     /// <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>
-    /// <p>Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by ascending order and last when sorting by descending order.</p>
+    /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Conformance pack compliance scores are sorted in reverse alphabetical order if you enter <code>DESCENDING</code>.</p>
+    /// <p>You can sort conformance pack compliance scores by the numerical value of the compliance score by entering <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by <code>SCORE</code>, conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and first when sorting by descending order.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>
-    /// <p>By default, conformance pack compliance scores are sorted in ascending order by compliance score and alphabetically by name of the conformance pack if there is more than one conformance pack with the same compliance score.</p>
+    /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the compliance score.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::SortBy> {
         self.sort_by.as_ref()
     }
@@ -16861,6 +17510,21 @@ impl GetStoredQueryInput {
     /// <p>The name of the query.</p>
     pub fn query_name(&self) -> std::option::Option<&str> {
         self.query_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetResourceEvaluationSummaryInput {
+    /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
+    #[doc(hidden)]
+    pub resource_evaluation_id: std::option::Option<std::string::String>,
+}
+impl GetResourceEvaluationSummaryInput {
+    /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
+    pub fn resource_evaluation_id(&self) -> std::option::Option<&str> {
+        self.resource_evaluation_id.as_deref()
     }
 }
 
@@ -17164,6 +17828,11 @@ pub struct GetComplianceDetailsByResourceInput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>
+    /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub resource_evaluation_id: std::option::Option<std::string::String>,
 }
 impl GetComplianceDetailsByResourceInput {
     /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
@@ -17182,6 +17851,12 @@ impl GetComplianceDetailsByResourceInput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>
+    /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
+    /// </note>
+    pub fn resource_evaluation_id(&self) -> std::option::Option<&str> {
+        self.resource_evaluation_id.as_deref()
     }
 }
 
@@ -17948,6 +18623,9 @@ pub struct DescribeConfigRulesInput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>Returns a list of Detecive or Proactive Config rules. By default, this API returns an unfiltered list.</p>
+    #[doc(hidden)]
+    pub filters: std::option::Option<crate::model::DescribeConfigRulesFilters>,
 }
 impl DescribeConfigRulesInput {
     /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
@@ -17957,6 +18635,10 @@ impl DescribeConfigRulesInput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>Returns a list of Detecive or Proactive Config rules. By default, this API returns an unfiltered list.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::DescribeConfigRulesFilters> {
+        self.filters.as_ref()
     }
 }
 

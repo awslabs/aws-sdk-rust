@@ -3731,6 +3731,151 @@ impl RetryDataReplicationInput {
     }
 }
 
+/// See [`ReverseReplicationInput`](crate::input::ReverseReplicationInput).
+pub mod reverse_replication_input {
+
+    /// A builder for [`ReverseReplicationInput`](crate::input::ReverseReplicationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recovery_instance_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
+        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recovery_instance_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
+        pub fn set_recovery_instance_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recovery_instance_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReverseReplicationInput`](crate::input::ReverseReplicationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ReverseReplicationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ReverseReplicationInput {
+                recovery_instance_id: self.recovery_instance_id,
+            })
+        }
+    }
+}
+impl ReverseReplicationInput {
+    /// Consumes the builder and constructs an Operation<[`ReverseReplication`](crate::operation::ReverseReplication)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ReverseReplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ReverseReplicationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/ReverseReplication").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ReverseReplicationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_reverse_replication(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ReverseReplication::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ReverseReplication",
+            "drs",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ReverseReplicationInput`](crate::input::ReverseReplicationInput).
+    pub fn builder() -> crate::input::reverse_replication_input::Builder {
+        crate::input::reverse_replication_input::Builder::default()
+    }
+}
+
 /// See [`StartFailbackLaunchInput`](crate::input::StartFailbackLaunchInput).
 pub mod start_failback_launch_input {
 
@@ -4124,6 +4269,151 @@ impl StartRecoveryInput {
     }
 }
 
+/// See [`StartReplicationInput`](crate::input::StartReplicationInput).
+pub mod start_replication_input {
+
+    /// A builder for [`StartReplicationInput`](crate::input::StartReplicationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_server_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the Source Server to start replication for.</p>
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_server_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Source Server to start replication for.</p>
+        pub fn set_source_server_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_server_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartReplicationInput`](crate::input::StartReplicationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StartReplicationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::StartReplicationInput {
+                source_server_id: self.source_server_id,
+            })
+        }
+    }
+}
+impl StartReplicationInput {
+    /// Consumes the builder and constructs an Operation<[`StartReplication`](crate::operation::StartReplication)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartReplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StartReplicationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/StartReplication").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartReplicationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_replication(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartReplication::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartReplication",
+            "drs",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StartReplicationInput`](crate::input::StartReplicationInput).
+    pub fn builder() -> crate::input::start_replication_input::Builder {
+        crate::input::start_replication_input::Builder::default()
+    }
+}
+
 /// See [`StopFailbackInput`](crate::input::StopFailbackInput).
 pub mod stop_failback_input {
 
@@ -4264,6 +4554,149 @@ impl StopFailbackInput {
     /// Creates a new builder-style object to manufacture [`StopFailbackInput`](crate::input::StopFailbackInput).
     pub fn builder() -> crate::input::stop_failback_input::Builder {
         crate::input::stop_failback_input::Builder::default()
+    }
+}
+
+/// See [`StopReplicationInput`](crate::input::StopReplicationInput).
+pub mod stop_replication_input {
+
+    /// A builder for [`StopReplicationInput`](crate::input::StopReplicationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_server_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the Source Server to stop replication for.</p>
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_server_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Source Server to stop replication for.</p>
+        pub fn set_source_server_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_server_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopReplicationInput`](crate::input::StopReplicationInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StopReplicationInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::StopReplicationInput {
+                source_server_id: self.source_server_id,
+            })
+        }
+    }
+}
+impl StopReplicationInput {
+    /// Consumes the builder and constructs an Operation<[`StopReplication`](crate::operation::StopReplication)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopReplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StopReplicationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/StopReplication").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StopReplicationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_stop_replication(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopReplication::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopReplication",
+            "drs",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StopReplicationInput`](crate::input::StopReplicationInput).
+    pub fn builder() -> crate::input::stop_replication_input::Builder {
+        crate::input::stop_replication_input::Builder::default()
     }
 }
 
@@ -6362,6 +6795,36 @@ impl UpdateLaunchConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StopReplicationInput {
+    /// <p>The ID of the Source Server to stop replication for.</p>
+    #[doc(hidden)]
+    pub source_server_id: std::option::Option<std::string::String>,
+}
+impl StopReplicationInput {
+    /// <p>The ID of the Source Server to stop replication for.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartReplicationInput {
+    /// <p>The ID of the Source Server to start replication for.</p>
+    #[doc(hidden)]
+    pub source_server_id: std::option::Option<std::string::String>,
+}
+impl StartReplicationInput {
+    /// <p>The ID of the Source Server to start replication for.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetryDataReplicationInput {
     /// <p>The ID of the Source Server whose data replication should be retried.</p>
     #[doc(hidden)]
@@ -6977,6 +7440,21 @@ pub struct StopFailbackInput {
 }
 impl StopFailbackInput {
     /// <p>The ID of the Recovery Instance we want to stop failback for.</p>
+    pub fn recovery_instance_id(&self) -> std::option::Option<&str> {
+        self.recovery_instance_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReverseReplicationInput {
+    /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
+    #[doc(hidden)]
+    pub recovery_instance_id: std::option::Option<std::string::String>,
+}
+impl ReverseReplicationInput {
+    /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
     pub fn recovery_instance_id(&self) -> std::option::Option<&str> {
         self.recovery_instance_id.as_deref()
     }

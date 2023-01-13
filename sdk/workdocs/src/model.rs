@@ -2,7 +2,7 @@
 
 /// <p>Describes a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct User {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
@@ -112,11 +112,32 @@ impl User {
         self.storage.as_ref()
     }
 }
+impl std::fmt::Debug for User {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("User");
+        formatter.field("id", &self.id);
+        formatter.field("username", &self.username);
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("given_name", &self.given_name);
+        formatter.field("surname", &self.surname);
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("root_folder_id", &self.root_folder_id);
+        formatter.field("recycle_bin_folder_id", &self.recycle_bin_folder_id);
+        formatter.field("status", &self.status);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("modified_timestamp", &self.modified_timestamp);
+        formatter.field("time_zone_id", &self.time_zone_id);
+        formatter.field("locale", &self.locale);
+        formatter.field("storage", &self.storage);
+        formatter.finish()
+    }
+}
 /// See [`User`](crate::model::User).
 pub mod user {
 
     /// A builder for [`User`](crate::model::User).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -328,6 +349,27 @@ pub mod user {
                 locale: self.locale,
                 storage: self.storage,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("id", &self.id);
+            formatter.field("username", &self.username);
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("given_name", &self.given_name);
+            formatter.field("surname", &self.surname);
+            formatter.field("organization_id", &self.organization_id);
+            formatter.field("root_folder_id", &self.root_folder_id);
+            formatter.field("recycle_bin_folder_id", &self.recycle_bin_folder_id);
+            formatter.field("status", &self.status);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("created_timestamp", &self.created_timestamp);
+            formatter.field("modified_timestamp", &self.modified_timestamp);
+            formatter.field("time_zone_id", &self.time_zone_id);
+            formatter.field("locale", &self.locale);
+            formatter.field("storage", &self.storage);
+            formatter.finish()
         }
     }
 }
@@ -3452,6 +3494,7 @@ impl Subscription {
 /// # let subscriptionprotocoltype = unimplemented!();
 /// match subscriptionprotocoltype {
 ///     SubscriptionProtocolType::Https => { /* ... */ },
+///     SubscriptionProtocolType::Sqs => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -3487,6 +3530,8 @@ impl Subscription {
 pub enum SubscriptionProtocolType {
     #[allow(missing_docs)] // documentation missing in model
     Https,
+    #[allow(missing_docs)] // documentation missing in model
+    Sqs,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -3494,6 +3539,7 @@ impl std::convert::From<&str> for SubscriptionProtocolType {
     fn from(s: &str) -> Self {
         match s {
             "HTTPS" => SubscriptionProtocolType::Https,
+            "SQS" => SubscriptionProtocolType::Sqs,
             other => SubscriptionProtocolType::Unknown(crate::types::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -3512,12 +3558,13 @@ impl SubscriptionProtocolType {
     pub fn as_str(&self) -> &str {
         match self {
             SubscriptionProtocolType::Https => "HTTPS",
+            SubscriptionProtocolType::Sqs => "SQS",
             SubscriptionProtocolType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HTTPS"]
+        &["HTTPS", "SQS"]
     }
 }
 impl AsRef<str> for SubscriptionProtocolType {
@@ -4726,7 +4773,7 @@ impl ResourceMetadata {
 
 /// <p>Describes the metadata of the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserMetadata {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
@@ -4766,11 +4813,22 @@ impl UserMetadata {
         self.email_address.as_deref()
     }
 }
+impl std::fmt::Debug for UserMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserMetadata");
+        formatter.field("id", &self.id);
+        formatter.field("username", &self.username);
+        formatter.field("given_name", &self.given_name);
+        formatter.field("surname", &self.surname);
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 /// See [`UserMetadata`](crate::model::UserMetadata).
 pub mod user_metadata {
 
     /// A builder for [`UserMetadata`](crate::model::UserMetadata).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -4841,6 +4899,17 @@ pub mod user_metadata {
                 surname: self.surname,
                 email_address: self.email_address,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("id", &self.id);
+            formatter.field("username", &self.username);
+            formatter.field("given_name", &self.given_name);
+            formatter.field("surname", &self.surname);
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }

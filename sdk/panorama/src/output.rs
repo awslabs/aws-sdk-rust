@@ -98,6 +98,57 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SignalApplicationInstanceNodeInstancesOutput {
+    /// <p>An application instance ID.</p>
+    #[doc(hidden)]
+    pub application_instance_id: std::option::Option<std::string::String>,
+}
+impl SignalApplicationInstanceNodeInstancesOutput {
+    /// <p>An application instance ID.</p>
+    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+        self.application_instance_id.as_deref()
+    }
+}
+/// See [`SignalApplicationInstanceNodeInstancesOutput`](crate::output::SignalApplicationInstanceNodeInstancesOutput).
+pub mod signal_application_instance_node_instances_output {
+
+    /// A builder for [`SignalApplicationInstanceNodeInstancesOutput`](crate::output::SignalApplicationInstanceNodeInstancesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application_instance_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>An application instance ID.</p>
+        pub fn application_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_instance_id = Some(input.into());
+            self
+        }
+        /// <p>An application instance ID.</p>
+        pub fn set_application_instance_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_instance_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SignalApplicationInstanceNodeInstancesOutput`](crate::output::SignalApplicationInstanceNodeInstancesOutput).
+        pub fn build(self) -> crate::output::SignalApplicationInstanceNodeInstancesOutput {
+            crate::output::SignalApplicationInstanceNodeInstancesOutput {
+                application_instance_id: self.application_instance_id,
+            }
+        }
+    }
+}
+impl SignalApplicationInstanceNodeInstancesOutput {
+    /// Creates a new builder-style object to manufacture [`SignalApplicationInstanceNodeInstancesOutput`](crate::output::SignalApplicationInstanceNodeInstancesOutput).
+    pub fn builder() -> crate::output::signal_application_instance_node_instances_output::Builder {
+        crate::output::signal_application_instance_node_instances_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveApplicationInstanceOutput {}
 /// See [`RemoveApplicationInstanceOutput`](crate::output::RemoveApplicationInstanceOutput).
 pub mod remove_application_instance_output {
@@ -2432,6 +2483,9 @@ pub struct DescribeDeviceJobOutput {
     /// <p>When the job was created.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The job's type.</p>
+    #[doc(hidden)]
+    pub job_type: std::option::Option<crate::model::JobType>,
 }
 impl DescribeDeviceJobOutput {
     /// <p>The job's ID.</p>
@@ -2466,6 +2520,10 @@ impl DescribeDeviceJobOutput {
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
+    /// <p>The job's type.</p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
 }
 /// See [`DescribeDeviceJobOutput`](crate::output::DescribeDeviceJobOutput).
 pub mod describe_device_job_output {
@@ -2481,6 +2539,7 @@ pub mod describe_device_job_output {
         pub(crate) image_version: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::UpdateProgress>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) job_type: std::option::Option<crate::model::JobType>,
     }
     impl Builder {
         /// <p>The job's ID.</p>
@@ -2575,6 +2634,16 @@ pub mod describe_device_job_output {
             self.created_time = input;
             self
         }
+        /// <p>The job's type.</p>
+        pub fn job_type(mut self, input: crate::model::JobType) -> Self {
+            self.job_type = Some(input);
+            self
+        }
+        /// <p>The job's type.</p>
+        pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
+            self.job_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDeviceJobOutput`](crate::output::DescribeDeviceJobOutput).
         pub fn build(self) -> crate::output::DescribeDeviceJobOutput {
             crate::output::DescribeDeviceJobOutput {
@@ -2586,6 +2655,7 @@ pub mod describe_device_job_output {
                 image_version: self.image_version,
                 status: self.status,
                 created_time: self.created_time,
+                job_type: self.job_type,
             }
         }
     }
@@ -3349,6 +3419,10 @@ pub struct DescribeApplicationInstanceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The application instance's state.</p>
+    #[doc(hidden)]
+    pub runtime_context_states:
+        std::option::Option<std::vec::Vec<crate::model::ReportedRuntimeContextState>>,
 }
 impl DescribeApplicationInstanceOutput {
     /// <p>The application instance's name.</p>
@@ -3412,6 +3486,12 @@ impl DescribeApplicationInstanceOutput {
     {
         self.tags.as_ref()
     }
+    /// <p>The application instance's state.</p>
+    pub fn runtime_context_states(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReportedRuntimeContextState]> {
+        self.runtime_context_states.as_deref()
+    }
 }
 /// See [`DescribeApplicationInstanceOutput`](crate::output::DescribeApplicationInstanceOutput).
 pub mod describe_application_instance_output {
@@ -3436,6 +3516,8 @@ pub mod describe_application_instance_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) runtime_context_states:
+            std::option::Option<std::vec::Vec<crate::model::ReportedRuntimeContextState>>,
     }
     impl Builder {
         /// <p>The application instance's name.</p>
@@ -3635,6 +3717,28 @@ pub mod describe_application_instance_output {
             self.tags = input;
             self
         }
+        /// Appends an item to `runtime_context_states`.
+        ///
+        /// To override the contents of this collection use [`set_runtime_context_states`](Self::set_runtime_context_states).
+        ///
+        /// <p>The application instance's state.</p>
+        pub fn runtime_context_states(
+            mut self,
+            input: crate::model::ReportedRuntimeContextState,
+        ) -> Self {
+            let mut v = self.runtime_context_states.unwrap_or_default();
+            v.push(input);
+            self.runtime_context_states = Some(v);
+            self
+        }
+        /// <p>The application instance's state.</p>
+        pub fn set_runtime_context_states(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ReportedRuntimeContextState>>,
+        ) -> Self {
+            self.runtime_context_states = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeApplicationInstanceOutput`](crate::output::DescribeApplicationInstanceOutput).
         pub fn build(self) -> crate::output::DescribeApplicationInstanceOutput {
             crate::output::DescribeApplicationInstanceOutput {
@@ -3652,6 +3756,7 @@ pub mod describe_application_instance_output {
                 application_instance_id: self.application_instance_id,
                 arn: self.arn,
                 tags: self.tags,
+                runtime_context_states: self.runtime_context_states,
             }
         }
     }

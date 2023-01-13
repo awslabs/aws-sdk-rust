@@ -3,7 +3,7 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-Provides translation between one source language and another of the same set of languages.
+Provides translation of the input content from the source language to the target language.
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.52.0"
-aws-sdk-translate = "0.22.0"
+aws-sdk-translate = "0.23.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

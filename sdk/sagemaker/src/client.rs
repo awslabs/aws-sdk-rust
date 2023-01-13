@@ -121,7 +121,7 @@ impl Client {
     ///   - [`trial_component_name(impl Into<String>)`](crate::client::fluent_builders::AssociateTrialComponent::trial_component_name) / [`set_trial_component_name(Option<String>)`](crate::client::fluent_builders::AssociateTrialComponent::set_trial_component_name): <p>The name of the component to associated with the trial.</p>
     ///   - [`trial_name(impl Into<String>)`](crate::client::fluent_builders::AssociateTrialComponent::trial_name) / [`set_trial_name(Option<String>)`](crate::client::fluent_builders::AssociateTrialComponent::set_trial_name): <p>The name of the trial to associate with.</p>
     /// - On success, responds with [`AssociateTrialComponentOutput`](crate::output::AssociateTrialComponentOutput) with field(s):
-    ///   - [`trial_component_arn(Option<String>)`](crate::output::AssociateTrialComponentOutput::trial_component_arn): <p>The ARN of the trial component.</p>
+    ///   - [`trial_component_arn(Option<String>)`](crate::output::AssociateTrialComponentOutput::trial_component_arn): <p>The Amazon Resource Name (ARN) of the trial component.</p>
     ///   - [`trial_arn(Option<String>)`](crate::output::AssociateTrialComponentOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial.</p>
     /// - On failure, responds with [`SdkError<AssociateTrialComponentError>`](crate::error::AssociateTrialComponentError)
     pub fn associate_trial_component(&self) -> fluent_builders::AssociateTrialComponent {
@@ -175,11 +175,12 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::CreateApp::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::CreateApp::set_domain_id): <p>The domain ID.</p>
-    ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::CreateApp::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::CreateApp::set_user_profile_name): <p>The user profile name.</p>
+    ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::CreateApp::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::CreateApp::set_user_profile_name): <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     ///   - [`app_type(AppType)`](crate::client::fluent_builders::CreateApp::app_type) / [`set_app_type(Option<AppType>)`](crate::client::fluent_builders::CreateApp::set_app_type): <p>The type of app.</p>
     ///   - [`app_name(impl Into<String>)`](crate::client::fluent_builders::CreateApp::app_name) / [`set_app_name(Option<String>)`](crate::client::fluent_builders::CreateApp::set_app_name): <p>The name of the app.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateApp::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateApp::set_tags): <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
     ///   - [`resource_spec(ResourceSpec)`](crate::client::fluent_builders::CreateApp::resource_spec) / [`set_resource_spec(Option<ResourceSpec>)`](crate::client::fluent_builders::CreateApp::set_resource_spec): <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>   <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>  </note>
+    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::CreateApp::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::CreateApp::set_space_name): <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
     /// - On success, responds with [`CreateAppOutput`](crate::output::CreateAppOutput) with field(s):
     ///   - [`app_arn(Option<String>)`](crate::output::CreateAppOutput::app_arn): <p>The Amazon Resource Name (ARN) of the app.</p>
     /// - On failure, responds with [`SdkError<CreateAppError>`](crate::error::CreateAppError)
@@ -326,6 +327,7 @@ impl Client {
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_kms_key_id): <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
     ///   - [`app_security_group_management(AppSecurityGroupManagement)`](crate::client::fluent_builders::CreateDomain::app_security_group_management) / [`set_app_security_group_management(Option<AppSecurityGroupManagement>)`](crate::client::fluent_builders::CreateDomain::set_app_security_group_management): <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
     ///   - [`domain_settings(DomainSettings)`](crate::client::fluent_builders::CreateDomain::domain_settings) / [`set_domain_settings(Option<DomainSettings>)`](crate::client::fluent_builders::CreateDomain::set_domain_settings): <p>A collection of <code>Domain</code> settings.</p>
+    ///   - [`default_space_settings(DefaultSpaceSettings)`](crate::client::fluent_builders::CreateDomain::default_space_settings) / [`set_default_space_settings(Option<DefaultSpaceSettings>)`](crate::client::fluent_builders::CreateDomain::set_default_space_settings): <p>The default settings used to create a space.</p>
     /// - On success, responds with [`CreateDomainOutput`](crate::output::CreateDomainOutput) with field(s):
     ///   - [`domain_arn(Option<String>)`](crate::output::CreateDomainOutput::domain_arn): <p>The Amazon Resource Name (ARN) of the created domain.</p>
     ///   - [`url(Option<String>)`](crate::output::CreateDomainOutput::url): <p>The URL to the created domain.</p>
@@ -392,12 +394,13 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`endpoint_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointConfig::endpoint_config_name) / [`set_endpoint_config_name(Option<String>)`](crate::client::fluent_builders::CreateEndpointConfig::set_endpoint_config_name): <p>The name of the endpoint configuration. You specify this name in a <code>CreateEndpoint</code> request. </p>
-    ///   - [`production_variants(Vec<ProductionVariant>)`](crate::client::fluent_builders::CreateEndpointConfig::production_variants) / [`set_production_variants(Option<Vec<ProductionVariant>>)`](crate::client::fluent_builders::CreateEndpointConfig::set_production_variants): <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
+    ///   - [`production_variants(Vec<ProductionVariant>)`](crate::client::fluent_builders::CreateEndpointConfig::production_variants) / [`set_production_variants(Option<Vec<ProductionVariant>>)`](crate::client::fluent_builders::CreateEndpointConfig::set_production_variants): <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
     ///   - [`data_capture_config(DataCaptureConfig)`](crate::client::fluent_builders::CreateEndpointConfig::data_capture_config) / [`set_data_capture_config(Option<DataCaptureConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_data_capture_config): <p>Configuration to control how SageMaker captures inference data.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEndpointConfig::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEndpointConfig::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointConfig::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEndpointConfig::set_kms_key_id): <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>  <p>The KmsKeyId can be any of the following formats: </p>  <ul>   <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>   <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>  </ul>  <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in Amazon Web Services KMS </a> </p> <note>   <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>KmsKeyId</code> when using an instance type with local storage. If any of the models that you specify in the <code>ProductionVariants</code> parameter use nitro-based instances with local storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based instances with local storage, the call to <code>CreateEndpointConfig</code> fails.</p>   <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>   <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>  </note>
     ///   - [`async_inference_config(AsyncInferenceConfig)`](crate::client::fluent_builders::CreateEndpointConfig::async_inference_config) / [`set_async_inference_config(Option<AsyncInferenceConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_async_inference_config): <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
     ///   - [`explainer_config(ExplainerConfig)`](crate::client::fluent_builders::CreateEndpointConfig::explainer_config) / [`set_explainer_config(Option<ExplainerConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_explainer_config): <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
+    ///   - [`shadow_production_variants(Vec<ProductionVariant>)`](crate::client::fluent_builders::CreateEndpointConfig::shadow_production_variants) / [`set_shadow_production_variants(Option<Vec<ProductionVariant>>)`](crate::client::fluent_builders::CreateEndpointConfig::set_shadow_production_variants): <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
     /// - On success, responds with [`CreateEndpointConfigOutput`](crate::output::CreateEndpointConfigOutput) with field(s):
     ///   - [`endpoint_config_arn(Option<String>)`](crate::output::CreateEndpointConfigOutput::endpoint_config_arn): <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
     /// - On failure, responds with [`SdkError<CreateEndpointConfigError>`](crate::error::CreateEndpointConfigError)
@@ -425,7 +428,7 @@ impl Client {
     ///   - [`event_time_feature_name(impl Into<String>)`](crate::client::fluent_builders::CreateFeatureGroup::event_time_feature_name) / [`set_event_time_feature_name(Option<String>)`](crate::client::fluent_builders::CreateFeatureGroup::set_event_time_feature_name): <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code> in a <code>FeatureGroup</code>.</p>  <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> must have a corresponding <code>EventTime</code>.</p>  <p>An <code>EventTime</code> can be a <code>String</code> or <code>Fractional</code>. </p>  <ul>   <li> <p> <code>Fractional</code>: <code>EventTime</code> feature values must be a Unix timestamp in seconds.</p> </li>   <li> <p> <code>String</code>: <code>EventTime</code> feature values must be an ISO-8601 string in the format. The following formats are supported <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year, month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>, and if applicable, <code>SSS</code> represent the hour, month, second and milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p> </li>  </ul>
     ///   - [`feature_definitions(Vec<FeatureDefinition>)`](crate::client::fluent_builders::CreateFeatureGroup::feature_definitions) / [`set_feature_definitions(Option<Vec<FeatureDefinition>>)`](crate::client::fluent_builders::CreateFeatureGroup::set_feature_definitions): <p>A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code> is compulsory per <code>Feature</code>. </p>  <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>  <p> <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code> </p>  <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
     ///   - [`online_store_config(OnlineStoreConfig)`](crate::client::fluent_builders::CreateFeatureGroup::online_store_config) / [`set_online_store_config(Option<OnlineStoreConfig>)`](crate::client::fluent_builders::CreateFeatureGroup::set_online_store_config): <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>  <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the <code>OnlineStore</code>.</p>
-    ///   - [`offline_store_config(OfflineStoreConfig)`](crate::client::fluent_builders::CreateFeatureGroup::offline_store_config) / [`set_offline_store_config(Option<OfflineStoreConfig>)`](crate::client::fluent_builders::CreateFeatureGroup::set_offline_store_config): <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to specify:</p>  <ul>   <li> <p>The Amazon Simple Storage Service (Amazon S3) location of an <code>OfflineStore</code>.</p> </li>   <li> <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p> </li>   <li> <p>An KMS encryption key to encrypt the Amazon S3 location used for <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p> </li>  </ul>  <p>To learn more about this parameter, see <code>OfflineStoreConfig</code>.</p>
+    ///   - [`offline_store_config(OfflineStoreConfig)`](crate::client::fluent_builders::CreateFeatureGroup::offline_store_config) / [`set_offline_store_config(Option<OfflineStoreConfig>)`](crate::client::fluent_builders::CreateFeatureGroup::set_offline_store_config): <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to specify:</p>  <ul>   <li> <p>The Amazon Simple Storage Service (Amazon S3) location of an <code>OfflineStore</code>.</p> </li>   <li> <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p> </li>   <li> <p>An KMS encryption key to encrypt the Amazon S3 location used for <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p> </li>   <li> <p>Format for the offline store table. Supported formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p> </li>  </ul>  <p>To learn more about this parameter, see <code>OfflineStoreConfig</code>.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFeatureGroup::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateFeatureGroup::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFeatureGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFeatureGroup::set_description): <p>A free-form description of a <code>FeatureGroup</code>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFeatureGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFeatureGroup::set_tags): <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
@@ -450,6 +453,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<CreateFlowDefinitionError>`](crate::error::CreateFlowDefinitionError)
     pub fn create_flow_definition(&self) -> fluent_builders::CreateFlowDefinition {
         fluent_builders::CreateFlowDefinition::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateHub`](crate::client::fluent_builders::CreateHub) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`hub_name(impl Into<String>)`](crate::client::fluent_builders::CreateHub::hub_name) / [`set_hub_name(Option<String>)`](crate::client::fluent_builders::CreateHub::set_hub_name): <p>The name of the hub to create.</p>
+    ///   - [`hub_description(impl Into<String>)`](crate::client::fluent_builders::CreateHub::hub_description) / [`set_hub_description(Option<String>)`](crate::client::fluent_builders::CreateHub::set_hub_description): <p>A description of the hub.</p>
+    ///   - [`hub_display_name(impl Into<String>)`](crate::client::fluent_builders::CreateHub::hub_display_name) / [`set_hub_display_name(Option<String>)`](crate::client::fluent_builders::CreateHub::set_hub_display_name): <p>The display name of the hub.</p>
+    ///   - [`hub_search_keywords(Vec<String>)`](crate::client::fluent_builders::CreateHub::hub_search_keywords) / [`set_hub_search_keywords(Option<Vec<String>>)`](crate::client::fluent_builders::CreateHub::set_hub_search_keywords): <p>The searchable keywords for the hub.</p>
+    ///   - [`s3_storage_config(HubS3StorageConfig)`](crate::client::fluent_builders::CreateHub::s3_storage_config) / [`set_s3_storage_config(Option<HubS3StorageConfig>)`](crate::client::fluent_builders::CreateHub::set_s3_storage_config): <p>The Amazon S3 storage configuration for the hub.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateHub::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateHub::set_tags): <p>Any tags to associate with the hub.</p>
+    /// - On success, responds with [`CreateHubOutput`](crate::output::CreateHubOutput) with field(s):
+    ///   - [`hub_arn(Option<String>)`](crate::output::CreateHubOutput::hub_arn): <p>The Amazon Resource Name (ARN) of the hub.</p>
+    /// - On failure, responds with [`SdkError<CreateHubError>`](crate::error::CreateHubError)
+    pub fn create_hub(&self) -> fluent_builders::CreateHub {
+        fluent_builders::CreateHub::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateHumanTaskUi`](crate::client::fluent_builders::CreateHumanTaskUi) operation.
     ///
@@ -486,10 +504,10 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateImage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateImage::set_description): <p>The description of the image.</p>
     ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateImage::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateImage::set_display_name): <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
     ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::CreateImage::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::CreateImage::set_image_name): <p>The name of the image. Must be unique to your account.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateImage::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateImage::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateImage::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateImage::set_role_arn): <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateImage::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateImage::set_tags): <p>A list of tags to apply to the image.</p>
     /// - On success, responds with [`CreateImageOutput`](crate::output::CreateImageOutput) with field(s):
-    ///   - [`image_arn(Option<String>)`](crate::output::CreateImageOutput::image_arn): <p>The Amazon Resource Name (ARN) of the image.</p>
+    ///   - [`image_arn(Option<String>)`](crate::output::CreateImageOutput::image_arn): <p>The ARN of the image.</p>
     /// - On failure, responds with [`SdkError<CreateImageError>`](crate::error::CreateImageError)
     pub fn create_image(&self) -> fluent_builders::CreateImage {
         fluent_builders::CreateImage::new(self.handle.clone())
@@ -500,11 +518,39 @@ impl Client {
     ///   - [`base_image(impl Into<String>)`](crate::client::fluent_builders::CreateImageVersion::base_image) / [`set_base_image(Option<String>)`](crate::client::fluent_builders::CreateImageVersion::set_base_image): <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>  <p> <code>   <acct-id>    .dkr.ecr.    <region>     .amazonaws.com/     <repo-name[:tag] or [@digest]></repo-name[:tag]>    </region>   </acct-id></code> </p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateImageVersion::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateImageVersion::set_client_token): <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
     ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::CreateImageVersion::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::CreateImageVersion::set_image_name): <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
+    ///   - [`aliases(Vec<String>)`](crate::client::fluent_builders::CreateImageVersion::aliases) / [`set_aliases(Option<Vec<String>>)`](crate::client::fluent_builders::CreateImageVersion::set_aliases): <p>A list of aliases created with the image version.</p>
+    ///   - [`vendor_guidance(VendorGuidance)`](crate::client::fluent_builders::CreateImageVersion::vendor_guidance) / [`set_vendor_guidance(Option<VendorGuidance>)`](crate::client::fluent_builders::CreateImageVersion::set_vendor_guidance): <p>The stability of the image version, specified by the maintainer.</p>  <ul>   <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>   <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>   <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>   <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>  </ul>
+    ///   - [`job_type(JobType)`](crate::client::fluent_builders::CreateImageVersion::job_type) / [`set_job_type(Option<JobType>)`](crate::client::fluent_builders::CreateImageVersion::set_job_type): <p>Indicates SageMaker job type compatibility.</p>  <ul>   <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>   <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>   <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>  </ul>
+    ///   - [`ml_framework(impl Into<String>)`](crate::client::fluent_builders::CreateImageVersion::ml_framework) / [`set_ml_framework(Option<String>)`](crate::client::fluent_builders::CreateImageVersion::set_ml_framework): <p>The machine learning framework vended in the image version.</p>
+    ///   - [`programming_lang(impl Into<String>)`](crate::client::fluent_builders::CreateImageVersion::programming_lang) / [`set_programming_lang(Option<String>)`](crate::client::fluent_builders::CreateImageVersion::set_programming_lang): <p>The supported programming language and its version.</p>
+    ///   - [`processor(Processor)`](crate::client::fluent_builders::CreateImageVersion::processor) / [`set_processor(Option<Processor>)`](crate::client::fluent_builders::CreateImageVersion::set_processor): <p>Indicates CPU or GPU compatibility.</p>  <ul>   <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>   <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>  </ul>
+    ///   - [`horovod(bool)`](crate::client::fluent_builders::CreateImageVersion::horovod) / [`set_horovod(bool)`](crate::client::fluent_builders::CreateImageVersion::set_horovod): <p>Indicates Horovod compatibility.</p>
+    ///   - [`release_notes(impl Into<String>)`](crate::client::fluent_builders::CreateImageVersion::release_notes) / [`set_release_notes(Option<String>)`](crate::client::fluent_builders::CreateImageVersion::set_release_notes): <p>The maintainer description of the image version.</p>
     /// - On success, responds with [`CreateImageVersionOutput`](crate::output::CreateImageVersionOutput) with field(s):
-    ///   - [`image_version_arn(Option<String>)`](crate::output::CreateImageVersionOutput::image_version_arn): <p>The Amazon Resource Name (ARN) of the image version.</p>
+    ///   - [`image_version_arn(Option<String>)`](crate::output::CreateImageVersionOutput::image_version_arn): <p>The ARN of the image version.</p>
     /// - On failure, responds with [`SdkError<CreateImageVersionError>`](crate::error::CreateImageVersionError)
     pub fn create_image_version(&self) -> fluent_builders::CreateImageVersion {
         fluent_builders::CreateImageVersion::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateInferenceExperiment`](crate::client::fluent_builders::CreateInferenceExperiment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateInferenceExperiment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateInferenceExperiment::set_name): <p>The name for the inference experiment.</p>
+    ///   - [`r#type(InferenceExperimentType)`](crate::client::fluent_builders::CreateInferenceExperiment::type) / [`set_type(Option<InferenceExperimentType>)`](crate::client::fluent_builders::CreateInferenceExperiment::set_type): <p> The type of the inference experiment that you want to run. The following types of experiments are possible: </p>  <ul>   <li> <p> <code>ShadowMode</code>: You can use this type to validate a shadow variant. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>. </p> </li>  </ul>
+    ///   - [`schedule(InferenceExperimentSchedule)`](crate::client::fluent_builders::CreateInferenceExperiment::schedule) / [`set_schedule(Option<InferenceExperimentSchedule>)`](crate::client::fluent_builders::CreateInferenceExperiment::set_schedule): <p> The duration for which you want the inference experiment to run. If you don't specify this field, the experiment automatically starts immediately upon creation and concludes after 7 days. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateInferenceExperiment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateInferenceExperiment::set_description): <p>A description for the inference experiment.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateInferenceExperiment::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateInferenceExperiment::set_role_arn): <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::CreateInferenceExperiment::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::CreateInferenceExperiment::set_endpoint_name): <p> The name of the Amazon SageMaker endpoint on which you want to run the inference experiment. </p>
+    ///   - [`model_variants(Vec<ModelVariantConfig>)`](crate::client::fluent_builders::CreateInferenceExperiment::model_variants) / [`set_model_variants(Option<Vec<ModelVariantConfig>>)`](crate::client::fluent_builders::CreateInferenceExperiment::set_model_variants): <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfig</code> object in the array describes the infrastructure configuration for the corresponding variant. </p>
+    ///   - [`data_storage_config(InferenceExperimentDataStorageConfig)`](crate::client::fluent_builders::CreateInferenceExperiment::data_storage_config) / [`set_data_storage_config(Option<InferenceExperimentDataStorageConfig>)`](crate::client::fluent_builders::CreateInferenceExperiment::set_data_storage_config): <p> The Amazon S3 location and configuration for storing inference request and response data. </p>  <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
+    ///   - [`shadow_mode_config(ShadowModeConfig)`](crate::client::fluent_builders::CreateInferenceExperiment::shadow_mode_config) / [`set_shadow_mode_config(Option<ShadowModeConfig>)`](crate::client::fluent_builders::CreateInferenceExperiment::set_shadow_mode_config): <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+    ///   - [`kms_key(impl Into<String>)`](crate::client::fluent_builders::CreateInferenceExperiment::kms_key) / [`set_kms_key(Option<String>)`](crate::client::fluent_builders::CreateInferenceExperiment::set_kms_key): <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. The <code>KmsKey</code> can be any of the following formats: </p>  <ul>   <li> <p>KMS key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>KMS key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>  </ul>  <p> If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>  <p> The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateInferenceExperiment::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateInferenceExperiment::set_tags): <p> Array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/tagging.html">Tagging your Amazon Web Services Resources</a>. </p>
+    /// - On success, responds with [`CreateInferenceExperimentOutput`](crate::output::CreateInferenceExperimentOutput) with field(s):
+    ///   - [`inference_experiment_arn(Option<String>)`](crate::output::CreateInferenceExperimentOutput::inference_experiment_arn): <p>The ARN for your inference experiment.</p>
+    /// - On failure, responds with [`SdkError<CreateInferenceExperimentError>`](crate::error::CreateInferenceExperimentError)
+    pub fn create_inference_experiment(&self) -> fluent_builders::CreateInferenceExperiment {
+        fluent_builders::CreateInferenceExperiment::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateInferenceRecommendationsJob`](crate::client::fluent_builders::CreateInferenceRecommendationsJob) operation.
     ///
@@ -581,6 +627,33 @@ impl Client {
         &self,
     ) -> fluent_builders::CreateModelBiasJobDefinition {
         fluent_builders::CreateModelBiasJobDefinition::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateModelCard`](crate::client::fluent_builders::CreateModelCard) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`model_card_name(impl Into<String>)`](crate::client::fluent_builders::CreateModelCard::model_card_name) / [`set_model_card_name(Option<String>)`](crate::client::fluent_builders::CreateModelCard::set_model_card_name): <p>The unique name of the model card.</p>
+    ///   - [`security_config(ModelCardSecurityConfig)`](crate::client::fluent_builders::CreateModelCard::security_config) / [`set_security_config(Option<ModelCardSecurityConfig>)`](crate::client::fluent_builders::CreateModelCard::set_security_config): <p>An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.</p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::CreateModelCard::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::CreateModelCard::set_content): <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
+    ///   - [`model_card_status(ModelCardStatus)`](crate::client::fluent_builders::CreateModelCard::model_card_status) / [`set_model_card_status(Option<ModelCardStatus>)`](crate::client::fluent_builders::CreateModelCard::set_model_card_status): <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>  <ul>   <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>   <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>   <li> <p> <code>Approved</code>: The model card is approved.</p> </li>   <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>  </ul>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateModelCard::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateModelCard::set_tags): <p>Key-value pairs used to manage metadata for model cards.</p>
+    /// - On success, responds with [`CreateModelCardOutput`](crate::output::CreateModelCardOutput) with field(s):
+    ///   - [`model_card_arn(Option<String>)`](crate::output::CreateModelCardOutput::model_card_arn): <p>The Amazon Resource Name (ARN) of the successfully created model card.</p>
+    /// - On failure, responds with [`SdkError<CreateModelCardError>`](crate::error::CreateModelCardError)
+    pub fn create_model_card(&self) -> fluent_builders::CreateModelCard {
+        fluent_builders::CreateModelCard::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateModelCardExportJob`](crate::client::fluent_builders::CreateModelCardExportJob) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`model_card_name(impl Into<String>)`](crate::client::fluent_builders::CreateModelCardExportJob::model_card_name) / [`set_model_card_name(Option<String>)`](crate::client::fluent_builders::CreateModelCardExportJob::set_model_card_name): <p>The name of the model card to export.</p>
+    ///   - [`model_card_version(i32)`](crate::client::fluent_builders::CreateModelCardExportJob::model_card_version) / [`set_model_card_version(i32)`](crate::client::fluent_builders::CreateModelCardExportJob::set_model_card_version): <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
+    ///   - [`model_card_export_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateModelCardExportJob::model_card_export_job_name) / [`set_model_card_export_job_name(Option<String>)`](crate::client::fluent_builders::CreateModelCardExportJob::set_model_card_export_job_name): <p>The name of the model card export job.</p>
+    ///   - [`output_config(ModelCardExportOutputConfig)`](crate::client::fluent_builders::CreateModelCardExportJob::output_config) / [`set_output_config(Option<ModelCardExportOutputConfig>)`](crate::client::fluent_builders::CreateModelCardExportJob::set_output_config): <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
+    /// - On success, responds with [`CreateModelCardExportJobOutput`](crate::output::CreateModelCardExportJobOutput) with field(s):
+    ///   - [`model_card_export_job_arn(Option<String>)`](crate::output::CreateModelCardExportJobOutput::model_card_export_job_arn): <p>The Amazon Resource Name (ARN) of the model card export job.</p>
+    /// - On failure, responds with [`SdkError<CreateModelCardExportJobError>`](crate::error::CreateModelCardExportJobError)
+    pub fn create_model_card_export_job(&self) -> fluent_builders::CreateModelCardExportJob {
+        fluent_builders::CreateModelCardExportJob::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateModelExplainabilityJobDefinition`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition) operation.
     ///
@@ -739,6 +812,7 @@ impl Client {
     ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::CreatePresignedDomainUrl::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::CreatePresignedDomainUrl::set_user_profile_name): <p>The name of the UserProfile to sign-in as.</p>
     ///   - [`session_expiration_duration_in_seconds(i32)`](crate::client::fluent_builders::CreatePresignedDomainUrl::session_expiration_duration_in_seconds) / [`set_session_expiration_duration_in_seconds(Option<i32>)`](crate::client::fluent_builders::CreatePresignedDomainUrl::set_session_expiration_duration_in_seconds): <p>The session expiration duration in seconds. This value defaults to 43200.</p>
     ///   - [`expires_in_seconds(i32)`](crate::client::fluent_builders::CreatePresignedDomainUrl::expires_in_seconds) / [`set_expires_in_seconds(Option<i32>)`](crate::client::fluent_builders::CreatePresignedDomainUrl::set_expires_in_seconds): <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
+    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::CreatePresignedDomainUrl::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::CreatePresignedDomainUrl::set_space_name): <p>The name of the space.</p>
     /// - On success, responds with [`CreatePresignedDomainUrlOutput`](crate::output::CreatePresignedDomainUrlOutput) with field(s):
     ///   - [`authorized_url(Option<String>)`](crate::output::CreatePresignedDomainUrlOutput::authorized_url): <p>The presigned URL.</p>
     /// - On failure, responds with [`SdkError<CreatePresignedDomainUrlError>`](crate::error::CreatePresignedDomainUrlError)
@@ -792,6 +866,19 @@ impl Client {
     pub fn create_project(&self) -> fluent_builders::CreateProject {
         fluent_builders::CreateProject::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateSpace`](crate::client::fluent_builders::CreateSpace) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::CreateSpace::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::CreateSpace::set_domain_id): <p>The ID of the associated Domain.</p>
+    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::CreateSpace::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::CreateSpace::set_space_name): <p>The name of the space.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateSpace::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateSpace::set_tags): <p>Tags to associated with the space. Each tag consists of a key and an optional value. Tag keys must be unique for each resource. Tags are searchable using the <code>Search</code> API.</p>
+    ///   - [`space_settings(SpaceSettings)`](crate::client::fluent_builders::CreateSpace::space_settings) / [`set_space_settings(Option<SpaceSettings>)`](crate::client::fluent_builders::CreateSpace::set_space_settings): <p>A collection of space settings.</p>
+    /// - On success, responds with [`CreateSpaceOutput`](crate::output::CreateSpaceOutput) with field(s):
+    ///   - [`space_arn(Option<String>)`](crate::output::CreateSpaceOutput::space_arn): <p>The space's Amazon Resource Name (ARN).</p>
+    /// - On failure, responds with [`SdkError<CreateSpaceError>`](crate::error::CreateSpaceError)
+    pub fn create_space(&self) -> fluent_builders::CreateSpace {
+        fluent_builders::CreateSpace::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateStudioLifecycleConfig`](crate::client::fluent_builders::CreateStudioLifecycleConfig) operation.
     ///
     /// - The fluent builder is configurable:
@@ -809,7 +896,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`training_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateTrainingJob::training_job_name) / [`set_training_job_name(Option<String>)`](crate::client::fluent_builders::CreateTrainingJob::set_training_job_name): <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
-    ///   - [`hyper_parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateTrainingJob::hyper_parameters) / [`set_hyper_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTrainingJob::set_hyper_parameters): <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>  <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>   <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>  </important>
+    ///   - [`hyper_parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateTrainingJob::hyper_parameters) / [`set_hyper_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTrainingJob::set_hyper_parameters): <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>  <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>   <p>Do not include any security-sensitive information including account access IDs, secrets or tokens in any hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your training job request and return an exception error.</p>  </important>
     ///   - [`algorithm_specification(AlgorithmSpecification)`](crate::client::fluent_builders::CreateTrainingJob::algorithm_specification) / [`set_algorithm_specification(Option<AlgorithmSpecification>)`](crate::client::fluent_builders::CreateTrainingJob::set_algorithm_specification): <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTrainingJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateTrainingJob::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to perform tasks on your behalf. </p>  <p>During model training, SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
     ///   - [`input_data_config(Vec<Channel>)`](crate::client::fluent_builders::CreateTrainingJob::input_data_config) / [`set_input_data_config(Option<Vec<Channel>>)`](crate::client::fluent_builders::CreateTrainingJob::set_input_data_config): <p>An array of <code>Channel</code> objects. Each channel is a named input source. <code>InputDataConfig</code> describes the input data and its location. </p>  <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format. </p>  <p>Depending on the input mode that the algorithm supports, SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files are available as input streams. They do not need to be downloaded.</p>
@@ -822,12 +909,12 @@ impl Client {
     ///   - [`enable_inter_container_traffic_encryption(bool)`](crate::client::fluent_builders::CreateTrainingJob::enable_inter_container_traffic_encryption) / [`set_enable_inter_container_traffic_encryption(bool)`](crate::client::fluent_builders::CreateTrainingJob::set_enable_inter_container_traffic_encryption): <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML Compute Instances in a Distributed Training Job</a>.</p>
     ///   - [`enable_managed_spot_training(bool)`](crate::client::fluent_builders::CreateTrainingJob::enable_managed_spot_training) / [`set_enable_managed_spot_training(bool)`](crate::client::fluent_builders::CreateTrainingJob::set_enable_managed_spot_training): <p>To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully managed and scalable infrastructure for training machine learning models. this option is useful when training jobs can be interrupted and when there is flexibility when the training job is run. </p>  <p>The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed. </p>
     ///   - [`checkpoint_config(CheckpointConfig)`](crate::client::fluent_builders::CreateTrainingJob::checkpoint_config) / [`set_checkpoint_config(Option<CheckpointConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_checkpoint_config): <p>Contains information about the output location for managed spot training checkpoint data.</p>
-    ///   - [`debug_hook_config(DebugHookConfig)`](crate::client::fluent_builders::CreateTrainingJob::debug_hook_config) / [`set_debug_hook_config(Option<DebugHookConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_debug_hook_config): <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
-    ///   - [`debug_rule_configurations(Vec<DebugRuleConfiguration>)`](crate::client::fluent_builders::CreateTrainingJob::debug_rule_configurations) / [`set_debug_rule_configurations(Option<Vec<DebugRuleConfiguration>>)`](crate::client::fluent_builders::CreateTrainingJob::set_debug_rule_configurations): <p>Configuration information for Debugger rules for debugging output tensors.</p>
-    ///   - [`tensor_board_output_config(TensorBoardOutputConfig)`](crate::client::fluent_builders::CreateTrainingJob::tensor_board_output_config) / [`set_tensor_board_output_config(Option<TensorBoardOutputConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_tensor_board_output_config): <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+    ///   - [`debug_hook_config(DebugHookConfig)`](crate::client::fluent_builders::CreateTrainingJob::debug_hook_config) / [`set_debug_hook_config(Option<DebugHookConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_debug_hook_config): <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+    ///   - [`debug_rule_configurations(Vec<DebugRuleConfiguration>)`](crate::client::fluent_builders::CreateTrainingJob::debug_rule_configurations) / [`set_debug_rule_configurations(Option<Vec<DebugRuleConfiguration>>)`](crate::client::fluent_builders::CreateTrainingJob::set_debug_rule_configurations): <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
+    ///   - [`tensor_board_output_config(TensorBoardOutputConfig)`](crate::client::fluent_builders::CreateTrainingJob::tensor_board_output_config) / [`set_tensor_board_output_config(Option<TensorBoardOutputConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_tensor_board_output_config): <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
     ///   - [`experiment_config(ExperimentConfig)`](crate::client::fluent_builders::CreateTrainingJob::experiment_config) / [`set_experiment_config(Option<ExperimentConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_experiment_config): <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>  <ul>   <li> <p> <code>CreateProcessingJob</code> </p> </li>   <li> <p> <code>CreateTrainingJob</code> </p> </li>   <li> <p> <code>CreateTransformJob</code> </p> </li>  </ul>
-    ///   - [`profiler_config(ProfilerConfig)`](crate::client::fluent_builders::CreateTrainingJob::profiler_config) / [`set_profiler_config(Option<ProfilerConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_profiler_config): <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
-    ///   - [`profiler_rule_configurations(Vec<ProfilerRuleConfiguration>)`](crate::client::fluent_builders::CreateTrainingJob::profiler_rule_configurations) / [`set_profiler_rule_configurations(Option<Vec<ProfilerRuleConfiguration>>)`](crate::client::fluent_builders::CreateTrainingJob::set_profiler_rule_configurations): <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+    ///   - [`profiler_config(ProfilerConfig)`](crate::client::fluent_builders::CreateTrainingJob::profiler_config) / [`set_profiler_config(Option<ProfilerConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_profiler_config): <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
+    ///   - [`profiler_rule_configurations(Vec<ProfilerRuleConfiguration>)`](crate::client::fluent_builders::CreateTrainingJob::profiler_rule_configurations) / [`set_profiler_rule_configurations(Option<Vec<ProfilerRuleConfiguration>>)`](crate::client::fluent_builders::CreateTrainingJob::set_profiler_rule_configurations): <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
     ///   - [`environment(HashMap<String, String>)`](crate::client::fluent_builders::CreateTrainingJob::environment) / [`set_environment(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTrainingJob::set_environment): <p>The environment variables to set in the Docker container.</p>
     ///   - [`retry_strategy(RetryStrategy)`](crate::client::fluent_builders::CreateTrainingJob::retry_strategy) / [`set_retry_strategy(Option<RetryStrategy>)`](crate::client::fluent_builders::CreateTrainingJob::set_retry_strategy): <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     /// - On success, responds with [`CreateTrainingJobOutput`](crate::output::CreateTrainingJobOutput) with field(s):
@@ -848,6 +935,7 @@ impl Client {
     ///   - [`environment(HashMap<String, String>)`](crate::client::fluent_builders::CreateTransformJob::environment) / [`set_environment(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTransformJob::set_environment): <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
     ///   - [`transform_input(TransformInput)`](crate::client::fluent_builders::CreateTransformJob::transform_input) / [`set_transform_input(Option<TransformInput>)`](crate::client::fluent_builders::CreateTransformJob::set_transform_input): <p>Describes the input source and the way the transform job consumes it.</p>
     ///   - [`transform_output(TransformOutput)`](crate::client::fluent_builders::CreateTransformJob::transform_output) / [`set_transform_output(Option<TransformOutput>)`](crate::client::fluent_builders::CreateTransformJob::set_transform_output): <p>Describes the results of the transform job.</p>
+    ///   - [`data_capture_config(BatchDataCaptureConfig)`](crate::client::fluent_builders::CreateTransformJob::data_capture_config) / [`set_data_capture_config(Option<BatchDataCaptureConfig>)`](crate::client::fluent_builders::CreateTransformJob::set_data_capture_config): <p>Configuration to control how SageMaker captures inference data.</p>
     ///   - [`transform_resources(TransformResources)`](crate::client::fluent_builders::CreateTransformJob::transform_resources) / [`set_transform_resources(Option<TransformResources>)`](crate::client::fluent_builders::CreateTransformJob::set_transform_resources): <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
     ///   - [`data_processing(DataProcessing)`](crate::client::fluent_builders::CreateTransformJob::data_processing) / [`set_data_processing(Option<DataProcessing>)`](crate::client::fluent_builders::CreateTransformJob::set_data_processing): <p>The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTransformJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTransformJob::set_tags): <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
@@ -960,9 +1048,10 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApp::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DeleteApp::set_domain_id): <p>The domain ID.</p>
-    ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApp::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::DeleteApp::set_user_profile_name): <p>The user profile name.</p>
+    ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApp::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::DeleteApp::set_user_profile_name): <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     ///   - [`app_type(AppType)`](crate::client::fluent_builders::DeleteApp::app_type) / [`set_app_type(Option<AppType>)`](crate::client::fluent_builders::DeleteApp::set_app_type): <p>The type of app.</p>
     ///   - [`app_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApp::app_name) / [`set_app_name(Option<String>)`](crate::client::fluent_builders::DeleteApp::set_app_name): <p>The name of the app.</p>
+    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApp::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::DeleteApp::set_space_name): <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
     /// - On success, responds with [`DeleteAppOutput`](crate::output::DeleteAppOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAppError>`](crate::error::DeleteAppError)
@@ -1126,6 +1215,29 @@ impl Client {
     pub fn delete_flow_definition(&self) -> fluent_builders::DeleteFlowDefinition {
         fluent_builders::DeleteFlowDefinition::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteHub`](crate::client::fluent_builders::DeleteHub) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`hub_name(impl Into<String>)`](crate::client::fluent_builders::DeleteHub::hub_name) / [`set_hub_name(Option<String>)`](crate::client::fluent_builders::DeleteHub::set_hub_name): <p>The name of the hub to delete.</p>
+    /// - On success, responds with [`DeleteHubOutput`](crate::output::DeleteHubOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteHubError>`](crate::error::DeleteHubError)
+    pub fn delete_hub(&self) -> fluent_builders::DeleteHub {
+        fluent_builders::DeleteHub::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteHubContent`](crate::client::fluent_builders::DeleteHubContent) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`hub_name(impl Into<String>)`](crate::client::fluent_builders::DeleteHubContent::hub_name) / [`set_hub_name(Option<String>)`](crate::client::fluent_builders::DeleteHubContent::set_hub_name): <p>The name of the hub that you want to delete content in.</p>
+    ///   - [`hub_content_type(HubContentType)`](crate::client::fluent_builders::DeleteHubContent::hub_content_type) / [`set_hub_content_type(Option<HubContentType>)`](crate::client::fluent_builders::DeleteHubContent::set_hub_content_type): <p>The type of content that you want to delete from a hub.</p>
+    ///   - [`hub_content_name(impl Into<String>)`](crate::client::fluent_builders::DeleteHubContent::hub_content_name) / [`set_hub_content_name(Option<String>)`](crate::client::fluent_builders::DeleteHubContent::set_hub_content_name): <p>The name of the content that you want to delete from a hub.</p>
+    ///   - [`hub_content_version(impl Into<String>)`](crate::client::fluent_builders::DeleteHubContent::hub_content_version) / [`set_hub_content_version(Option<String>)`](crate::client::fluent_builders::DeleteHubContent::set_hub_content_version): <p>The version of the content that you want to delete from a hub.</p>
+    /// - On success, responds with [`DeleteHubContentOutput`](crate::output::DeleteHubContentOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteHubContentError>`](crate::error::DeleteHubContentError)
+    pub fn delete_hub_content(&self) -> fluent_builders::DeleteHubContent {
+        fluent_builders::DeleteHubContent::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteHumanTaskUi`](crate::client::fluent_builders::DeleteHumanTaskUi) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1149,13 +1261,24 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteImageVersion`](crate::client::fluent_builders::DeleteImageVersion) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::DeleteImageVersion::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::DeleteImageVersion::set_image_name): <p>The name of the image.</p>
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::DeleteImageVersion::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::DeleteImageVersion::set_image_name): <p>The name of the image to delete.</p>
     ///   - [`version(i32)`](crate::client::fluent_builders::DeleteImageVersion::version) / [`set_version(Option<i32>)`](crate::client::fluent_builders::DeleteImageVersion::set_version): <p>The version to delete.</p>
+    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::DeleteImageVersion::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::DeleteImageVersion::set_alias): <p>The alias of the image to delete.</p>
     /// - On success, responds with [`DeleteImageVersionOutput`](crate::output::DeleteImageVersionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteImageVersionError>`](crate::error::DeleteImageVersionError)
     pub fn delete_image_version(&self) -> fluent_builders::DeleteImageVersion {
         fluent_builders::DeleteImageVersion::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteInferenceExperiment`](crate::client::fluent_builders::DeleteInferenceExperiment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteInferenceExperiment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteInferenceExperiment::set_name): <p>The name of the inference experiment you want to delete.</p>
+    /// - On success, responds with [`DeleteInferenceExperimentOutput`](crate::output::DeleteInferenceExperimentOutput) with field(s):
+    ///   - [`inference_experiment_arn(Option<String>)`](crate::output::DeleteInferenceExperimentOutput::inference_experiment_arn): <p>The ARN of the deleted inference experiment.</p>
+    /// - On failure, responds with [`SdkError<DeleteInferenceExperimentError>`](crate::error::DeleteInferenceExperimentError)
+    pub fn delete_inference_experiment(&self) -> fluent_builders::DeleteInferenceExperiment {
+        fluent_builders::DeleteInferenceExperiment::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteModel`](crate::client::fluent_builders::DeleteModel) operation.
     ///
@@ -1178,6 +1301,16 @@ impl Client {
         &self,
     ) -> fluent_builders::DeleteModelBiasJobDefinition {
         fluent_builders::DeleteModelBiasJobDefinition::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteModelCard`](crate::client::fluent_builders::DeleteModelCard) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`model_card_name(impl Into<String>)`](crate::client::fluent_builders::DeleteModelCard::model_card_name) / [`set_model_card_name(Option<String>)`](crate::client::fluent_builders::DeleteModelCard::set_model_card_name): <p>The name of the model card to delete.</p>
+    /// - On success, responds with [`DeleteModelCardOutput`](crate::output::DeleteModelCardOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteModelCardError>`](crate::error::DeleteModelCardError)
+    pub fn delete_model_card(&self) -> fluent_builders::DeleteModelCard {
+        fluent_builders::DeleteModelCard::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteModelExplainabilityJobDefinition`](crate::client::fluent_builders::DeleteModelExplainabilityJobDefinition) operation.
     ///
@@ -1288,6 +1421,17 @@ impl Client {
     pub fn delete_project(&self) -> fluent_builders::DeleteProject {
         fluent_builders::DeleteProject::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteSpace`](crate::client::fluent_builders::DeleteSpace) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSpace::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DeleteSpace::set_domain_id): <p>The ID of the associated Domain.</p>
+    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSpace::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::DeleteSpace::set_space_name): <p>The name of the space.</p>
+    /// - On success, responds with [`DeleteSpaceOutput`](crate::output::DeleteSpaceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSpaceError>`](crate::error::DeleteSpaceError)
+    pub fn delete_space(&self) -> fluent_builders::DeleteSpace {
+        fluent_builders::DeleteSpace::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteStudioLifecycleConfig`](crate::client::fluent_builders::DeleteStudioLifecycleConfig) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1384,9 +1528,9 @@ impl Client {
     ///   - [`status(Option<ActionStatus>)`](crate::output::DescribeActionOutput::status): <p>The status of the action.</p>
     ///   - [`properties(Option<HashMap<String, String>>)`](crate::output::DescribeActionOutput::properties): <p>A list of the action's properties.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeActionOutput::creation_time): <p>When the action was created.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeActionOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeActionOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeActionOutput::last_modified_time): <p>When the action was last modified.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribeActionOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribeActionOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::output::DescribeActionOutput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     ///   - [`lineage_group_arn(Option<String>)`](crate::output::DescribeActionOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     /// - On failure, responds with [`SdkError<DescribeActionError>`](crate::error::DescribeActionError)
@@ -1417,9 +1561,10 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DescribeApp::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DescribeApp::set_domain_id): <p>The domain ID.</p>
-    ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::DescribeApp::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::DescribeApp::set_user_profile_name): <p>The user profile name.</p>
+    ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::DescribeApp::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::DescribeApp::set_user_profile_name): <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     ///   - [`app_type(AppType)`](crate::client::fluent_builders::DescribeApp::app_type) / [`set_app_type(Option<AppType>)`](crate::client::fluent_builders::DescribeApp::set_app_type): <p>The type of app.</p>
     ///   - [`app_name(impl Into<String>)`](crate::client::fluent_builders::DescribeApp::app_name) / [`set_app_name(Option<String>)`](crate::client::fluent_builders::DescribeApp::set_app_name): <p>The name of the app.</p>
+    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::DescribeApp::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::DescribeApp::set_space_name): <p>The name of the space.</p>
     /// - On success, responds with [`DescribeAppOutput`](crate::output::DescribeAppOutput) with field(s):
     ///   - [`app_arn(Option<String>)`](crate::output::DescribeAppOutput::app_arn): <p>The Amazon Resource Name (ARN) of the app.</p>
     ///   - [`app_type(Option<AppType>)`](crate::output::DescribeAppOutput::app_type): <p>The type of app.</p>
@@ -1432,6 +1577,7 @@ impl Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeAppOutput::creation_time): <p>The creation time.</p>
     ///   - [`failure_reason(Option<String>)`](crate::output::DescribeAppOutput::failure_reason): <p>The failure reason.</p>
     ///   - [`resource_spec(Option<ResourceSpec>)`](crate::output::DescribeAppOutput::resource_spec): <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    ///   - [`space_name(Option<String>)`](crate::output::DescribeAppOutput::space_name): <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
     /// - On failure, responds with [`SdkError<DescribeAppError>`](crate::error::DescribeAppError)
     pub fn describe_app(&self) -> fluent_builders::DescribeApp {
         fluent_builders::DescribeApp::new(self.handle.clone())
@@ -1461,9 +1607,9 @@ impl Client {
     ///   - [`artifact_type(Option<String>)`](crate::output::DescribeArtifactOutput::artifact_type): <p>The type of the artifact.</p>
     ///   - [`properties(Option<HashMap<String, String>>)`](crate::output::DescribeArtifactOutput::properties): <p>A list of the artifact's properties.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeArtifactOutput::creation_time): <p>When the artifact was created.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeArtifactOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeArtifactOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeArtifactOutput::last_modified_time): <p>When the artifact was last modified.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribeArtifactOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribeArtifactOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::output::DescribeArtifactOutput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     ///   - [`lineage_group_arn(Option<String>)`](crate::output::DescribeArtifactOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     /// - On failure, responds with [`SdkError<DescribeArtifactError>`](crate::error::DescribeArtifactError)
@@ -1479,7 +1625,7 @@ impl Client {
     ///   - [`auto_ml_job_arn(Option<String>)`](crate::output::DescribeAutoMlJobOutput::auto_ml_job_arn): <p>Returns the ARN of the AutoML job.</p>
     ///   - [`input_data_config(Option<Vec<AutoMlChannel>>)`](crate::output::DescribeAutoMlJobOutput::input_data_config): <p>Returns the input data configuration for the AutoML job..</p>
     ///   - [`output_data_config(Option<AutoMlOutputDataConfig>)`](crate::output::DescribeAutoMlJobOutput::output_data_config): <p>Returns the job's output data config.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeAutoMlJobOutput::role_arn): <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeAutoMlJobOutput::role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     ///   - [`auto_ml_job_objective(Option<AutoMlJobObjective>)`](crate::output::DescribeAutoMlJobOutput::auto_ml_job_objective): <p>Returns the job's objective.</p>
     ///   - [`problem_type(Option<ProblemType>)`](crate::output::DescribeAutoMlJobOutput::problem_type): <p>Returns the job's problem type.</p>
     ///   - [`auto_ml_job_config(Option<AutoMlJobConfig>)`](crate::output::DescribeAutoMlJobOutput::auto_ml_job_config): <p>Returns the configuration for the AutoML job.</p>
@@ -1488,7 +1634,7 @@ impl Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeAutoMlJobOutput::last_modified_time): <p>Returns the job's last modified time.</p>
     ///   - [`failure_reason(Option<String>)`](crate::output::DescribeAutoMlJobOutput::failure_reason): <p>Returns the failure reason for an AutoML job, when applicable.</p>
     ///   - [`partial_failure_reasons(Option<Vec<AutoMlPartialFailureReason>>)`](crate::output::DescribeAutoMlJobOutput::partial_failure_reasons): <p>Returns a list of reasons for partial failures within an AutoML job.</p>
-    ///   - [`best_candidate(Option<AutoMlCandidate>)`](crate::output::DescribeAutoMlJobOutput::best_candidate): <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+    ///   - [`best_candidate(Option<AutoMlCandidate>)`](crate::output::DescribeAutoMlJobOutput::best_candidate): <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
     ///   - [`auto_ml_job_status(Option<AutoMlJobStatus>)`](crate::output::DescribeAutoMlJobOutput::auto_ml_job_status): <p>Returns the status of the AutoML job.</p>
     ///   - [`auto_ml_job_secondary_status(Option<AutoMlJobSecondaryStatus>)`](crate::output::DescribeAutoMlJobOutput::auto_ml_job_secondary_status): <p>Returns the secondary status of the AutoML job.</p>
     ///   - [`generate_candidate_definitions_only(bool)`](crate::output::DescribeAutoMlJobOutput::generate_candidate_definitions_only): <p>Indicates whether the output for an AutoML job generates candidate definitions only.</p>
@@ -1552,9 +1698,9 @@ impl Client {
     ///   - [`description(Option<String>)`](crate::output::DescribeContextOutput::description): <p>The description of the context.</p>
     ///   - [`properties(Option<HashMap<String, String>>)`](crate::output::DescribeContextOutput::properties): <p>A list of the context's properties.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeContextOutput::creation_time): <p>When the context was created.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeContextOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeContextOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeContextOutput::last_modified_time): <p>When the context was last modified.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribeContextOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribeContextOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`lineage_group_arn(Option<String>)`](crate::output::DescribeContextOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     /// - On failure, responds with [`SdkError<DescribeContextError>`](crate::error::DescribeContextError)
     pub fn describe_context(&self) -> fluent_builders::DescribeContext {
@@ -1646,6 +1792,7 @@ impl Client {
     ///   - [`domain_settings(Option<DomainSettings>)`](crate::output::DescribeDomainOutput::domain_settings): <p>A collection of <code>Domain</code> settings.</p>
     ///   - [`app_security_group_management(Option<AppSecurityGroupManagement>)`](crate::output::DescribeDomainOutput::app_security_group_management): <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
     ///   - [`security_group_id_for_domain_boundary(Option<String>)`](crate::output::DescribeDomainOutput::security_group_id_for_domain_boundary): <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+    ///   - [`default_space_settings(Option<DefaultSpaceSettings>)`](crate::output::DescribeDomainOutput::default_space_settings): <p>The default settings used to create a space.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::error::DescribeDomainError)
     pub fn describe_domain(&self) -> fluent_builders::DescribeDomain {
         fluent_builders::DescribeDomain::new(self.handle.clone())
@@ -1704,7 +1851,7 @@ impl Client {
     ///   - [`endpoint_name(Option<String>)`](crate::output::DescribeEndpointOutput::endpoint_name): <p>Name of the endpoint.</p>
     ///   - [`endpoint_arn(Option<String>)`](crate::output::DescribeEndpointOutput::endpoint_arn): <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     ///   - [`endpoint_config_name(Option<String>)`](crate::output::DescribeEndpointOutput::endpoint_config_name): <p>The name of the endpoint configuration associated with this endpoint.</p>
-    ///   - [`production_variants(Option<Vec<ProductionVariantSummary>>)`](crate::output::DescribeEndpointOutput::production_variants): <p> An array of <code>ProductionVariantSummary</code> objects, one for each model hosted behind this endpoint. </p>
+    ///   - [`production_variants(Option<Vec<ProductionVariantSummary>>)`](crate::output::DescribeEndpointOutput::production_variants): <p>An array of <code>ProductionVariantSummary</code> objects, one for each model hosted behind this endpoint.</p>
     ///   - [`data_capture_config(Option<DataCaptureConfigSummary>)`](crate::output::DescribeEndpointOutput::data_capture_config): <p>The currently active data capture configuration used by your Endpoint.</p>
     ///   - [`endpoint_status(Option<EndpointStatus>)`](crate::output::DescribeEndpointOutput::endpoint_status): <p>The status of the endpoint.</p>  <ul>   <li> <p> <code>OutOfService</code>: Endpoint is not available to take incoming requests.</p> </li>   <li> <p> <code>Creating</code>: <code>CreateEndpoint</code> is executing.</p> </li>   <li> <p> <code>Updating</code>: <code>UpdateEndpoint</code> or <code>UpdateEndpointWeightsAndCapacities</code> is executing.</p> </li>   <li> <p> <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated or deleted or re-scaled until it has completed. This maintenance operation does not change any customer-specified values such as VPC config, KMS encryption, model, instance type, or instance count.</p> </li>   <li> <p> <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant weight and is in the process of rolling back to its previous configuration. Once the rollback completes, endpoint returns to an <code>InService</code> status. This transitional status only applies to an endpoint that has autoscaling enabled and is undergoing variant weight or capacity changes as part of an <code>UpdateEndpointWeightsAndCapacities</code> call or when the <code>UpdateEndpointWeightsAndCapacities</code> operation is called explicitly.</p> </li>   <li> <p> <code>InService</code>: Endpoint is available to process incoming requests.</p> </li>   <li> <p> <code>Deleting</code>: <code>DeleteEndpoint</code> is executing.</p> </li>   <li> <p> <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use <code>DescribeEndpointOutput$FailureReason</code> for information about the failure. <code>DeleteEndpoint</code> is the only operation that can be performed on a failed endpoint.</p> </li>  </ul>
     ///   - [`failure_reason(Option<String>)`](crate::output::DescribeEndpointOutput::failure_reason): <p>If the status of the endpoint is <code>Failed</code>, the reason why it failed. </p>
@@ -1714,6 +1861,7 @@ impl Client {
     ///   - [`async_inference_config(Option<AsyncInferenceConfig>)`](crate::output::DescribeEndpointOutput::async_inference_config): <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
     ///   - [`pending_deployment_summary(Option<PendingDeploymentSummary>)`](crate::output::DescribeEndpointOutput::pending_deployment_summary): <p>Returns the summary of an in-progress deployment. This field is only returned when the endpoint is creating or updating with a new endpoint configuration.</p>
     ///   - [`explainer_config(Option<ExplainerConfig>)`](crate::output::DescribeEndpointOutput::explainer_config): <p>The configuration parameters for an explainer.</p>
+    ///   - [`shadow_production_variants(Option<Vec<ProductionVariantSummary>>)`](crate::output::DescribeEndpointOutput::shadow_production_variants): <p>An array of <code>ProductionVariantSummary</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointError>`](crate::error::DescribeEndpointError)
     pub fn describe_endpoint(&self) -> fluent_builders::DescribeEndpoint {
         fluent_builders::DescribeEndpoint::new(self.handle.clone())
@@ -1731,6 +1879,7 @@ impl Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeEndpointConfigOutput::creation_time): <p>A timestamp that shows when the endpoint configuration was created.</p>
     ///   - [`async_inference_config(Option<AsyncInferenceConfig>)`](crate::output::DescribeEndpointConfigOutput::async_inference_config): <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
     ///   - [`explainer_config(Option<ExplainerConfig>)`](crate::output::DescribeEndpointConfigOutput::explainer_config): <p>The configuration parameters for an explainer.</p>
+    ///   - [`shadow_production_variants(Option<Vec<ProductionVariant>>)`](crate::output::DescribeEndpointConfigOutput::shadow_production_variants): <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointConfigError>`](crate::error::DescribeEndpointConfigError)
     pub fn describe_endpoint_config(&self) -> fluent_builders::DescribeEndpointConfig {
         fluent_builders::DescribeEndpointConfig::new(self.handle.clone())
@@ -1743,7 +1892,7 @@ impl Client {
     ///   - [`experiment_name(Option<String>)`](crate::output::DescribeExperimentOutput::experiment_name): <p>The name of the experiment.</p>
     ///   - [`experiment_arn(Option<String>)`](crate::output::DescribeExperimentOutput::experiment_arn): <p>The Amazon Resource Name (ARN) of the experiment.</p>
     ///   - [`display_name(Option<String>)`](crate::output::DescribeExperimentOutput::display_name): <p>The name of the experiment as displayed. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
-    ///   - [`source(Option<ExperimentSource>)`](crate::output::DescribeExperimentOutput::source): <p>The ARN of the source and, optionally, the type.</p>
+    ///   - [`source(Option<ExperimentSource>)`](crate::output::DescribeExperimentOutput::source): <p>The Amazon Resource Name (ARN) of the source and, optionally, the type.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeExperimentOutput::description): <p>The description of the experiment.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeExperimentOutput::creation_time): <p>When the experiment was created.</p>
     ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeExperimentOutput::created_by): <p>Who created the experiment.</p>
@@ -1767,8 +1916,8 @@ impl Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeFeatureGroupOutput::creation_time): <p>A timestamp indicating when SageMaker created the <code>FeatureGroup</code>.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeFeatureGroupOutput::last_modified_time): <p>A timestamp indicating when the feature group was last updated.</p>
     ///   - [`online_store_config(Option<OnlineStoreConfig>)`](crate::output::DescribeFeatureGroupOutput::online_store_config): <p>The configuration for the <code>OnlineStore</code>.</p>
-    ///   - [`offline_store_config(Option<OfflineStoreConfig>)`](crate::output::DescribeFeatureGroupOutput::offline_store_config): <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the security configuration.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeFeatureGroupOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
+    ///   - [`offline_store_config(Option<OfflineStoreConfig>)`](crate::output::DescribeFeatureGroupOutput::offline_store_config): <p>The configuration of the offline store. It includes the following configurations:</p>  <ul>   <li> <p>Amazon S3 location of the offline store.</p> </li>   <li> <p>Configuration of the Glue data catalog.</p> </li>   <li> <p>Table format of the offline store.</p> </li>   <li> <p>Option to disable the automatic creation of a Glue table for the offline store.</p> </li>   <li> <p>Encryption configuration.</p> </li>  </ul>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeFeatureGroupOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an OfflineStoreConfig is provided.</p>
     ///   - [`feature_group_status(Option<FeatureGroupStatus>)`](crate::output::DescribeFeatureGroupOutput::feature_group_status): <p>The status of the feature group.</p>
     ///   - [`offline_store_status(Option<OfflineStoreStatus>)`](crate::output::DescribeFeatureGroupOutput::offline_store_status): <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code> </p>
     ///   - [`last_update_status(Option<LastUpdateStatus>)`](crate::output::DescribeFeatureGroupOutput::last_update_status): <p>A value indicating whether the update made to the feature group was successful.</p>
@@ -1816,6 +1965,53 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeFlowDefinitionError>`](crate::error::DescribeFlowDefinitionError)
     pub fn describe_flow_definition(&self) -> fluent_builders::DescribeFlowDefinition {
         fluent_builders::DescribeFlowDefinition::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeHub`](crate::client::fluent_builders::DescribeHub) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`hub_name(impl Into<String>)`](crate::client::fluent_builders::DescribeHub::hub_name) / [`set_hub_name(Option<String>)`](crate::client::fluent_builders::DescribeHub::set_hub_name): <p>The name of the hub to describe.</p>
+    /// - On success, responds with [`DescribeHubOutput`](crate::output::DescribeHubOutput) with field(s):
+    ///   - [`hub_name(Option<String>)`](crate::output::DescribeHubOutput::hub_name): <p>The name of the hub.</p>
+    ///   - [`hub_arn(Option<String>)`](crate::output::DescribeHubOutput::hub_arn): <p>The Amazon Resource Name (ARN) of the hub.</p>
+    ///   - [`hub_display_name(Option<String>)`](crate::output::DescribeHubOutput::hub_display_name): <p>The display name of the hub.</p>
+    ///   - [`hub_description(Option<String>)`](crate::output::DescribeHubOutput::hub_description): <p>A description of the hub.</p>
+    ///   - [`hub_search_keywords(Option<Vec<String>>)`](crate::output::DescribeHubOutput::hub_search_keywords): <p>The searchable keywords for the hub.</p>
+    ///   - [`s3_storage_config(Option<HubS3StorageConfig>)`](crate::output::DescribeHubOutput::s3_storage_config): <p>The Amazon S3 storage configuration for the hub.</p>
+    ///   - [`hub_status(Option<HubStatus>)`](crate::output::DescribeHubOutput::hub_status): <p>The status of the hub.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::DescribeHubOutput::failure_reason): <p>The failure reason if importing hub content failed.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeHubOutput::creation_time): <p>The date and time that the hub was created.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeHubOutput::last_modified_time): <p>The date and time that the hub was last modified.</p>
+    /// - On failure, responds with [`SdkError<DescribeHubError>`](crate::error::DescribeHubError)
+    pub fn describe_hub(&self) -> fluent_builders::DescribeHub {
+        fluent_builders::DescribeHub::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeHubContent`](crate::client::fluent_builders::DescribeHubContent) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`hub_name(impl Into<String>)`](crate::client::fluent_builders::DescribeHubContent::hub_name) / [`set_hub_name(Option<String>)`](crate::client::fluent_builders::DescribeHubContent::set_hub_name): <p>The name of the hub that contains the content to describe.</p>
+    ///   - [`hub_content_type(HubContentType)`](crate::client::fluent_builders::DescribeHubContent::hub_content_type) / [`set_hub_content_type(Option<HubContentType>)`](crate::client::fluent_builders::DescribeHubContent::set_hub_content_type): <p>The type of content in the hub.</p>
+    ///   - [`hub_content_name(impl Into<String>)`](crate::client::fluent_builders::DescribeHubContent::hub_content_name) / [`set_hub_content_name(Option<String>)`](crate::client::fluent_builders::DescribeHubContent::set_hub_content_name): <p>The name of the content to describe.</p>
+    ///   - [`hub_content_version(impl Into<String>)`](crate::client::fluent_builders::DescribeHubContent::hub_content_version) / [`set_hub_content_version(Option<String>)`](crate::client::fluent_builders::DescribeHubContent::set_hub_content_version): <p>The version of the content to describe.</p>
+    /// - On success, responds with [`DescribeHubContentOutput`](crate::output::DescribeHubContentOutput) with field(s):
+    ///   - [`hub_content_name(Option<String>)`](crate::output::DescribeHubContentOutput::hub_content_name): <p>The name of the hub content.</p>
+    ///   - [`hub_content_arn(Option<String>)`](crate::output::DescribeHubContentOutput::hub_content_arn): <p>The Amazon Resource Name (ARN) of the hub content.</p>
+    ///   - [`hub_content_version(Option<String>)`](crate::output::DescribeHubContentOutput::hub_content_version): <p>The version of the hub content.</p>
+    ///   - [`hub_content_type(Option<HubContentType>)`](crate::output::DescribeHubContentOutput::hub_content_type): <p>The type of hub content.</p>
+    ///   - [`document_schema_version(Option<String>)`](crate::output::DescribeHubContentOutput::document_schema_version): <p>The document schema version for the hub content.</p>
+    ///   - [`hub_name(Option<String>)`](crate::output::DescribeHubContentOutput::hub_name): <p>The name of the hub that contains the content.</p>
+    ///   - [`hub_arn(Option<String>)`](crate::output::DescribeHubContentOutput::hub_arn): <p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>
+    ///   - [`hub_content_display_name(Option<String>)`](crate::output::DescribeHubContentOutput::hub_content_display_name): <p>The display name of the hub content.</p>
+    ///   - [`hub_content_description(Option<String>)`](crate::output::DescribeHubContentOutput::hub_content_description): <p>A description of the hub content.</p>
+    ///   - [`hub_content_markdown(Option<String>)`](crate::output::DescribeHubContentOutput::hub_content_markdown): <p>Markdown files associated with the hub content to import.</p>
+    ///   - [`hub_content_document(Option<String>)`](crate::output::DescribeHubContentOutput::hub_content_document): <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
+    ///   - [`hub_content_search_keywords(Option<Vec<String>>)`](crate::output::DescribeHubContentOutput::hub_content_search_keywords): <p>The searchable keywords for the hub content.</p>
+    ///   - [`hub_content_dependencies(Option<Vec<HubContentDependency>>)`](crate::output::DescribeHubContentOutput::hub_content_dependencies): <p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>
+    ///   - [`hub_content_status(Option<HubContentStatus>)`](crate::output::DescribeHubContentOutput::hub_content_status): <p>The status of the hub content.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::DescribeHubContentOutput::failure_reason): <p>The failure reason if importing hub content failed.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeHubContentOutput::creation_time): <p>The date and time that hub content was created.</p>
+    /// - On failure, responds with [`SdkError<DescribeHubContentError>`](crate::error::DescribeHubContentError)
+    pub fn describe_hub_content(&self) -> fluent_builders::DescribeHubContent {
+        fluent_builders::DescribeHubContent::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeHumanTaskUi`](crate::client::fluent_builders::DescribeHumanTaskUi) operation.
     ///
@@ -1866,11 +2062,11 @@ impl Client {
     ///   - [`description(Option<String>)`](crate::output::DescribeImageOutput::description): <p>The description of the image.</p>
     ///   - [`display_name(Option<String>)`](crate::output::DescribeImageOutput::display_name): <p>The name of the image as displayed.</p>
     ///   - [`failure_reason(Option<String>)`](crate::output::DescribeImageOutput::failure_reason): <p>When a create, update, or delete operation fails, the reason for the failure.</p>
-    ///   - [`image_arn(Option<String>)`](crate::output::DescribeImageOutput::image_arn): <p>The Amazon Resource Name (ARN) of the image.</p>
+    ///   - [`image_arn(Option<String>)`](crate::output::DescribeImageOutput::image_arn): <p>The ARN of the image.</p>
     ///   - [`image_name(Option<String>)`](crate::output::DescribeImageOutput::image_name): <p>The name of the image.</p>
     ///   - [`image_status(Option<ImageStatus>)`](crate::output::DescribeImageOutput::image_status): <p>The status of the image.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeImageOutput::last_modified_time): <p>When the image was last modified.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeImageOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeImageOutput::role_arn): <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     /// - On failure, responds with [`SdkError<DescribeImageError>`](crate::error::DescribeImageError)
     pub fn describe_image(&self) -> fluent_builders::DescribeImage {
         fluent_builders::DescribeImage::new(self.handle.clone())
@@ -1880,19 +2076,52 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::DescribeImageVersion::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::DescribeImageVersion::set_image_name): <p>The name of the image.</p>
     ///   - [`version(i32)`](crate::client::fluent_builders::DescribeImageVersion::version) / [`set_version(Option<i32>)`](crate::client::fluent_builders::DescribeImageVersion::set_version): <p>The version of the image. If not specified, the latest version is described.</p>
+    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::DescribeImageVersion::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::DescribeImageVersion::set_alias): <p>The alias of the image version.</p>
     /// - On success, responds with [`DescribeImageVersionOutput`](crate::output::DescribeImageVersionOutput) with field(s):
     ///   - [`base_image(Option<String>)`](crate::output::DescribeImageVersionOutput::base_image): <p>The registry path of the container image on which this image version is based.</p>
     ///   - [`container_image(Option<String>)`](crate::output::DescribeImageVersionOutput::container_image): <p>The registry path of the container image that contains this image version.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeImageVersionOutput::creation_time): <p>When the version was created.</p>
     ///   - [`failure_reason(Option<String>)`](crate::output::DescribeImageVersionOutput::failure_reason): <p>When a create or delete operation fails, the reason for the failure.</p>
-    ///   - [`image_arn(Option<String>)`](crate::output::DescribeImageVersionOutput::image_arn): <p>The Amazon Resource Name (ARN) of the image the version is based on.</p>
+    ///   - [`image_arn(Option<String>)`](crate::output::DescribeImageVersionOutput::image_arn): <p>The ARN of the image the version is based on.</p>
     ///   - [`image_version_arn(Option<String>)`](crate::output::DescribeImageVersionOutput::image_version_arn): <p>The ARN of the version.</p>
     ///   - [`image_version_status(Option<ImageVersionStatus>)`](crate::output::DescribeImageVersionOutput::image_version_status): <p>The status of the version.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeImageVersionOutput::last_modified_time): <p>When the version was last modified.</p>
     ///   - [`version(Option<i32>)`](crate::output::DescribeImageVersionOutput::version): <p>The version number.</p>
+    ///   - [`vendor_guidance(Option<VendorGuidance>)`](crate::output::DescribeImageVersionOutput::vendor_guidance): <p>The stability of the image version specified by the maintainer.</p>  <ul>   <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>   <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>   <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>   <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>  </ul>
+    ///   - [`job_type(Option<JobType>)`](crate::output::DescribeImageVersionOutput::job_type): <p>Indicates SageMaker job type compatibility.</p>  <ul>   <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>   <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>   <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>  </ul>
+    ///   - [`ml_framework(Option<String>)`](crate::output::DescribeImageVersionOutput::ml_framework): <p>The machine learning framework vended in the image version.</p>
+    ///   - [`programming_lang(Option<String>)`](crate::output::DescribeImageVersionOutput::programming_lang): <p>The supported programming language and its version.</p>
+    ///   - [`processor(Option<Processor>)`](crate::output::DescribeImageVersionOutput::processor): <p>Indicates CPU or GPU compatibility.</p>  <ul>   <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>   <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>  </ul>
+    ///   - [`horovod(bool)`](crate::output::DescribeImageVersionOutput::horovod): <p>Indicates Horovod compatibility.</p>
+    ///   - [`release_notes(Option<String>)`](crate::output::DescribeImageVersionOutput::release_notes): <p>The maintainer description of the image version.</p>
     /// - On failure, responds with [`SdkError<DescribeImageVersionError>`](crate::error::DescribeImageVersionError)
     pub fn describe_image_version(&self) -> fluent_builders::DescribeImageVersion {
         fluent_builders::DescribeImageVersion::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeInferenceExperiment`](crate::client::fluent_builders::DescribeInferenceExperiment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeInferenceExperiment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeInferenceExperiment::set_name): <p>The name of the inference experiment to describe.</p>
+    /// - On success, responds with [`DescribeInferenceExperimentOutput`](crate::output::DescribeInferenceExperimentOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeInferenceExperimentOutput::arn): <p>The ARN of the inference experiment being described.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeInferenceExperimentOutput::name): <p>The name of the inference experiment.</p>
+    ///   - [`r#type(Option<InferenceExperimentType>)`](crate::output::DescribeInferenceExperimentOutput::type): <p>The type of the inference experiment.</p>
+    ///   - [`schedule(Option<InferenceExperimentSchedule>)`](crate::output::DescribeInferenceExperimentOutput::schedule): <p>The duration for which the inference experiment ran or will run.</p>
+    ///   - [`status(Option<InferenceExperimentStatus>)`](crate::output::DescribeInferenceExperimentOutput::status): <p> The status of the inference experiment. The following are the possible statuses for an inference experiment: </p>  <ul>   <li> <p> <code>Creating</code> - Amazon SageMaker is creating your experiment. </p> </li>   <li> <p> <code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time. </p> </li>   <li> <p> <code>Updating</code> - When you make changes to your experiment, your experiment shows as updating. </p> </li>   <li> <p> <code>Starting</code> - Amazon SageMaker is beginning your experiment. </p> </li>   <li> <p> <code>Running</code> - Your experiment is in progress. </p> </li>   <li> <p> <code>Stopping</code> - Amazon SageMaker is stopping your experiment. </p> </li>   <li> <p> <code>Completed</code> - Your experiment has completed. </p> </li>   <li> <p> <code>Cancelled</code> - When you conclude your experiment early using the <code>StopInferenceExperiment</code> API, or if any operation fails with an unexpected error, it shows as cancelled. </p> </li>  </ul>
+    ///   - [`status_reason(Option<String>)`](crate::output::DescribeInferenceExperimentOutput::status_reason): <p> The error message or client-specified <code>Reason</code> from the <code>StopInferenceExperiment</code> API, that explains the status of the inference experiment. </p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeInferenceExperimentOutput::description): <p>The description of the inference experiment.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeInferenceExperimentOutput::creation_time): <p>The timestamp at which you created the inference experiment.</p>
+    ///   - [`completion_time(Option<DateTime>)`](crate::output::DescribeInferenceExperimentOutput::completion_time): <p> The timestamp at which the inference experiment was completed. </p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeInferenceExperimentOutput::last_modified_time): <p>The timestamp at which you last modified the inference experiment.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeInferenceExperimentOutput::role_arn): <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+    ///   - [`endpoint_metadata(Option<EndpointMetadata>)`](crate::output::DescribeInferenceExperimentOutput::endpoint_metadata): <p>The metadata of the endpoint on which the inference experiment ran.</p>
+    ///   - [`model_variants(Option<Vec<ModelVariantConfigSummary>>)`](crate::output::DescribeInferenceExperimentOutput::model_variants): <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant. </p>
+    ///   - [`data_storage_config(Option<InferenceExperimentDataStorageConfig>)`](crate::output::DescribeInferenceExperimentOutput::data_storage_config): <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
+    ///   - [`shadow_mode_config(Option<ShadowModeConfig>)`](crate::output::DescribeInferenceExperimentOutput::shadow_mode_config): <p> The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates. </p>
+    ///   - [`kms_key(Option<String>)`](crate::output::DescribeInferenceExperimentOutput::kms_key): <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <code>CreateInferenceExperimentRequest$KmsKey</code>. </p>
+    /// - On failure, responds with [`SdkError<DescribeInferenceExperimentError>`](crate::error::DescribeInferenceExperimentError)
+    pub fn describe_inference_experiment(&self) -> fluent_builders::DescribeInferenceExperiment {
+        fluent_builders::DescribeInferenceExperiment::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeInferenceRecommendationsJob`](crate::client::fluent_builders::DescribeInferenceRecommendationsJob) operation.
     ///
@@ -1912,6 +2141,7 @@ impl Client {
     ///   - [`input_config(Option<RecommendationJobInputConfig>)`](crate::output::DescribeInferenceRecommendationsJobOutput::input_config): <p>Returns information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations you provided when you initiated the job.</p>
     ///   - [`stopping_conditions(Option<RecommendationJobStoppingConditions>)`](crate::output::DescribeInferenceRecommendationsJobOutput::stopping_conditions): <p>The stopping conditions that you provided when you initiated the job.</p>
     ///   - [`inference_recommendations(Option<Vec<InferenceRecommendation>>)`](crate::output::DescribeInferenceRecommendationsJobOutput::inference_recommendations): <p>The recommendations made by Inference Recommender.</p>
+    ///   - [`endpoint_performances(Option<Vec<EndpointPerformance>>)`](crate::output::DescribeInferenceRecommendationsJobOutput::endpoint_performances): <p>The performance results from running an Inference Recommender job on an existing endpoint.</p>
     /// - On failure, responds with [`SdkError<DescribeInferenceRecommendationsJobError>`](crate::error::DescribeInferenceRecommendationsJobError)
     pub fn describe_inference_recommendations_job(
         &self,
@@ -1955,9 +2185,9 @@ impl Client {
     ///   - [`display_name(Option<String>)`](crate::output::DescribeLineageGroupOutput::display_name): <p>The display name of the lineage group.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeLineageGroupOutput::description): <p>The description of the lineage group.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLineageGroupOutput::creation_time): <p>The creation time of lineage group.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeLineageGroupOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeLineageGroupOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeLineageGroupOutput::last_modified_time): <p>The last modified time of the lineage group.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribeLineageGroupOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribeLineageGroupOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     /// - On failure, responds with [`SdkError<DescribeLineageGroupError>`](crate::error::DescribeLineageGroupError)
     pub fn describe_lineage_group(&self) -> fluent_builders::DescribeLineageGroup {
         fluent_builders::DescribeLineageGroup::new(self.handle.clone())
@@ -2002,6 +2232,46 @@ impl Client {
     ) -> fluent_builders::DescribeModelBiasJobDefinition {
         fluent_builders::DescribeModelBiasJobDefinition::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeModelCard`](crate::client::fluent_builders::DescribeModelCard) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`model_card_name(impl Into<String>)`](crate::client::fluent_builders::DescribeModelCard::model_card_name) / [`set_model_card_name(Option<String>)`](crate::client::fluent_builders::DescribeModelCard::set_model_card_name): <p>The name of the model card to describe.</p>
+    ///   - [`model_card_version(i32)`](crate::client::fluent_builders::DescribeModelCard::model_card_version) / [`set_model_card_version(i32)`](crate::client::fluent_builders::DescribeModelCard::set_model_card_version): <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
+    /// - On success, responds with [`DescribeModelCardOutput`](crate::output::DescribeModelCardOutput) with field(s):
+    ///   - [`model_card_arn(Option<String>)`](crate::output::DescribeModelCardOutput::model_card_arn): <p>The Amazon Resource Name (ARN) of the model card.</p>
+    ///   - [`model_card_name(Option<String>)`](crate::output::DescribeModelCardOutput::model_card_name): <p>The name of the model card.</p>
+    ///   - [`model_card_version(i32)`](crate::output::DescribeModelCardOutput::model_card_version): <p>The version of the model card.</p>
+    ///   - [`content(Option<String>)`](crate::output::DescribeModelCardOutput::content): <p>The content of the model card.</p>
+    ///   - [`model_card_status(Option<ModelCardStatus>)`](crate::output::DescribeModelCardOutput::model_card_status): <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>  <ul>   <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>   <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>   <li> <p> <code>Approved</code>: The model card is approved.</p> </li>   <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>  </ul>
+    ///   - [`security_config(Option<ModelCardSecurityConfig>)`](crate::output::DescribeModelCardOutput::security_config): <p>The security configuration used to protect model card content.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeModelCardOutput::creation_time): <p>The date and time the model card was created.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeModelCardOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeModelCardOutput::last_modified_time): <p>The date and time the model card was last modified.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribeModelCardOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`model_card_processing_status(Option<ModelCardProcessingStatus>)`](crate::output::DescribeModelCardOutput::model_card_processing_status): <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>  <ul>   <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>   <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>   <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>   <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>   <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>   <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribeModelCardError>`](crate::error::DescribeModelCardError)
+    pub fn describe_model_card(&self) -> fluent_builders::DescribeModelCard {
+        fluent_builders::DescribeModelCard::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeModelCardExportJob`](crate::client::fluent_builders::DescribeModelCardExportJob) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`model_card_export_job_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeModelCardExportJob::model_card_export_job_arn) / [`set_model_card_export_job_arn(Option<String>)`](crate::client::fluent_builders::DescribeModelCardExportJob::set_model_card_export_job_arn): <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
+    /// - On success, responds with [`DescribeModelCardExportJobOutput`](crate::output::DescribeModelCardExportJobOutput) with field(s):
+    ///   - [`model_card_export_job_name(Option<String>)`](crate::output::DescribeModelCardExportJobOutput::model_card_export_job_name): <p>The name of the model card export job to describe.</p>
+    ///   - [`model_card_export_job_arn(Option<String>)`](crate::output::DescribeModelCardExportJobOutput::model_card_export_job_arn): <p>The Amazon Resource Name (ARN) of the model card export job.</p>
+    ///   - [`status(Option<ModelCardExportJobStatus>)`](crate::output::DescribeModelCardExportJobOutput::status): <p>The completion status of the model card export job.</p>  <ul>   <li> <p> <code>InProgress</code>: The model card export job is in progress.</p> </li>   <li> <p> <code>Completed</code>: The model card export job is complete.</p> </li>   <li> <p> <code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p> </li>  </ul>
+    ///   - [`model_card_name(Option<String>)`](crate::output::DescribeModelCardExportJobOutput::model_card_name): <p>The name of the model card that the model export job exports.</p>
+    ///   - [`model_card_version(i32)`](crate::output::DescribeModelCardExportJobOutput::model_card_version): <p>The version of the model card that the model export job exports.</p>
+    ///   - [`output_config(Option<ModelCardExportOutputConfig>)`](crate::output::DescribeModelCardExportJobOutput::output_config): <p>The export output details for the model card.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeModelCardExportJobOutput::created_at): <p>The date and time that the model export job was created.</p>
+    ///   - [`last_modified_at(Option<DateTime>)`](crate::output::DescribeModelCardExportJobOutput::last_modified_at): <p>The date and time that the model export job was last modified.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::DescribeModelCardExportJobOutput::failure_reason): <p>The failure reason if the model export job fails.</p>
+    ///   - [`export_artifacts(Option<ModelCardExportArtifacts>)`](crate::output::DescribeModelCardExportJobOutput::export_artifacts): <p>The exported model card artifacts.</p>
+    /// - On failure, responds with [`SdkError<DescribeModelCardExportJobError>`](crate::error::DescribeModelCardExportJobError)
+    pub fn describe_model_card_export_job(&self) -> fluent_builders::DescribeModelCardExportJob {
+        fluent_builders::DescribeModelCardExportJob::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeModelExplainabilityJobDefinition`](crate::client::fluent_builders::DescribeModelExplainabilityJobDefinition) operation.
     ///
     /// - The fluent builder is configurable:
@@ -2042,11 +2312,11 @@ impl Client {
     ///   - [`model_package_status_details(Option<ModelPackageStatusDetails>)`](crate::output::DescribeModelPackageOutput::model_package_status_details): <p>Details about the current status of the model package.</p>
     ///   - [`certify_for_marketplace(bool)`](crate::output::DescribeModelPackageOutput::certify_for_marketplace): <p>Whether the model package is certified for listing on Amazon Web Services Marketplace.</p>
     ///   - [`model_approval_status(Option<ModelApprovalStatus>)`](crate::output::DescribeModelPackageOutput::model_approval_status): <p>The approval status of the model package.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeModelPackageOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeModelPackageOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::output::DescribeModelPackageOutput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     ///   - [`model_metrics(Option<ModelMetrics>)`](crate::output::DescribeModelPackageOutput::model_metrics): <p>Metrics for the model.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeModelPackageOutput::last_modified_time): <p>The last time that the model package was modified.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribeModelPackageOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribeModelPackageOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`approval_description(Option<String>)`](crate::output::DescribeModelPackageOutput::approval_description): <p>A description provided for the model approval.</p>
     ///   - [`customer_metadata_properties(Option<HashMap<String, String>>)`](crate::output::DescribeModelPackageOutput::customer_metadata_properties): <p>The metadata properties associated with the model package versions.</p>
     ///   - [`drift_check_baselines(Option<DriftCheckBaselines>)`](crate::output::DescribeModelPackageOutput::drift_check_baselines): <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
@@ -2067,7 +2337,7 @@ impl Client {
     ///   - [`model_package_group_arn(Option<String>)`](crate::output::DescribeModelPackageGroupOutput::model_package_group_arn): <p>The Amazon Resource Name (ARN) of the model group.</p>
     ///   - [`model_package_group_description(Option<String>)`](crate::output::DescribeModelPackageGroupOutput::model_package_group_description): <p>A description of the model group.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeModelPackageGroupOutput::creation_time): <p>The time that the model group was created.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeModelPackageGroupOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeModelPackageGroupOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`model_package_group_status(Option<ModelPackageGroupStatus>)`](crate::output::DescribeModelPackageGroupOutput::model_package_group_status): <p>The status of the model group.</p>
     /// - On failure, responds with [`SdkError<DescribeModelPackageGroupError>`](crate::error::DescribeModelPackageGroupError)
     pub fn describe_model_package_group(&self) -> fluent_builders::DescribeModelPackageGroup {
@@ -2177,8 +2447,8 @@ impl Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribePipelineOutput::creation_time): <p>The time when the pipeline was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribePipelineOutput::last_modified_time): <p>The time when the pipeline was last modified.</p>
     ///   - [`last_run_time(Option<DateTime>)`](crate::output::DescribePipelineOutput::last_run_time): <p>The time when the pipeline was last run.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribePipelineOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribePipelineOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribePipelineOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribePipelineOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`parallelism_configuration(Option<ParallelismConfiguration>)`](crate::output::DescribePipelineOutput::parallelism_configuration): <p>Lists the parallelism configuration applied to the pipeline.</p>
     /// - On failure, responds with [`SdkError<DescribePipelineError>`](crate::error::DescribePipelineError)
     pub fn describe_pipeline(&self) -> fluent_builders::DescribePipeline {
@@ -2211,8 +2481,8 @@ impl Client {
     ///   - [`failure_reason(Option<String>)`](crate::output::DescribePipelineExecutionOutput::failure_reason): <p>If the execution failed, a message describing why.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribePipelineExecutionOutput::creation_time): <p>The time when the pipeline execution was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribePipelineExecutionOutput::last_modified_time): <p>The time when the pipeline execution was modified last.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribePipelineExecutionOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribePipelineExecutionOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribePipelineExecutionOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribePipelineExecutionOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`parallelism_configuration(Option<ParallelismConfiguration>)`](crate::output::DescribePipelineExecutionOutput::parallelism_configuration): <p>The parallelism configuration applied to the pipeline.</p>
     /// - On failure, responds with [`SdkError<DescribePipelineExecutionError>`](crate::error::DescribePipelineExecutionError)
     pub fn describe_pipeline_execution(&self) -> fluent_builders::DescribePipelineExecution {
@@ -2260,13 +2530,32 @@ impl Client {
     ///   - [`service_catalog_provisioning_details(Option<ServiceCatalogProvisioningDetails>)`](crate::output::DescribeProjectOutput::service_catalog_provisioning_details): <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
     ///   - [`service_catalog_provisioned_product_details(Option<ServiceCatalogProvisionedProductDetails>)`](crate::output::DescribeProjectOutput::service_catalog_provisioned_product_details): <p>Information about a provisioned service catalog product.</p>
     ///   - [`project_status(Option<ProjectStatus>)`](crate::output::DescribeProjectOutput::project_status): <p>The status of the project.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeProjectOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeProjectOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeProjectOutput::creation_time): <p>The time when the project was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeProjectOutput::last_modified_time): <p>The timestamp when project was last modified.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribeProjectOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribeProjectOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::error::DescribeProjectError)
     pub fn describe_project(&self) -> fluent_builders::DescribeProject {
         fluent_builders::DescribeProject::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeSpace`](crate::client::fluent_builders::DescribeSpace) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSpace::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DescribeSpace::set_domain_id): <p>The ID of the associated Domain.</p>
+    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::DescribeSpace::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::DescribeSpace::set_space_name): <p>The name of the space.</p>
+    /// - On success, responds with [`DescribeSpaceOutput`](crate::output::DescribeSpaceOutput) with field(s):
+    ///   - [`domain_id(Option<String>)`](crate::output::DescribeSpaceOutput::domain_id): <p>The ID of the associated Domain.</p>
+    ///   - [`space_arn(Option<String>)`](crate::output::DescribeSpaceOutput::space_arn): <p>The space's Amazon Resource Name (ARN).</p>
+    ///   - [`space_name(Option<String>)`](crate::output::DescribeSpaceOutput::space_name): <p>The name of the space.</p>
+    ///   - [`home_efs_file_system_uid(Option<String>)`](crate::output::DescribeSpaceOutput::home_efs_file_system_uid): <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+    ///   - [`status(Option<SpaceStatus>)`](crate::output::DescribeSpaceOutput::status): <p>The status.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeSpaceOutput::last_modified_time): <p>The last modified time.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeSpaceOutput::creation_time): <p>The creation time.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::DescribeSpaceOutput::failure_reason): <p>The failure reason.</p>
+    ///   - [`space_settings(Option<SpaceSettings>)`](crate::output::DescribeSpaceOutput::space_settings): <p>A collection of space settings.</p>
+    /// - On failure, responds with [`SdkError<DescribeSpaceError>`](crate::error::DescribeSpaceError)
+    pub fn describe_space(&self) -> fluent_builders::DescribeSpace {
+        fluent_builders::DescribeSpace::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeStudioLifecycleConfig`](crate::client::fluent_builders::DescribeStudioLifecycleConfig) operation.
     ///
@@ -2329,14 +2618,14 @@ impl Client {
     ///   - [`checkpoint_config(Option<CheckpointConfig>)`](crate::output::DescribeTrainingJobOutput::checkpoint_config): <p>Contains information about the output location for managed spot training checkpoint data. </p>
     ///   - [`training_time_in_seconds(Option<i32>)`](crate::output::DescribeTrainingJobOutput::training_time_in_seconds): <p>The training time in seconds.</p>
     ///   - [`billable_time_in_seconds(Option<i32>)`](crate::output::DescribeTrainingJobOutput::billable_time_in_seconds): <p>The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>  <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker bills you if you run distributed training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>  <p>You can calculate the savings from using managed spot training using the formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.</p>
-    ///   - [`debug_hook_config(Option<DebugHookConfig>)`](crate::output::DescribeTrainingJobOutput::debug_hook_config): <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+    ///   - [`debug_hook_config(Option<DebugHookConfig>)`](crate::output::DescribeTrainingJobOutput::debug_hook_config): <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
     ///   - [`experiment_config(Option<ExperimentConfig>)`](crate::output::DescribeTrainingJobOutput::experiment_config): <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>  <ul>   <li> <p> <code>CreateProcessingJob</code> </p> </li>   <li> <p> <code>CreateTrainingJob</code> </p> </li>   <li> <p> <code>CreateTransformJob</code> </p> </li>  </ul>
-    ///   - [`debug_rule_configurations(Option<Vec<DebugRuleConfiguration>>)`](crate::output::DescribeTrainingJobOutput::debug_rule_configurations): <p>Configuration information for Debugger rules for debugging output tensors.</p>
-    ///   - [`tensor_board_output_config(Option<TensorBoardOutputConfig>)`](crate::output::DescribeTrainingJobOutput::tensor_board_output_config): <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
-    ///   - [`debug_rule_evaluation_statuses(Option<Vec<DebugRuleEvaluationStatus>>)`](crate::output::DescribeTrainingJobOutput::debug_rule_evaluation_statuses): <p>Evaluation status of Debugger rules for debugging on a training job.</p>
-    ///   - [`profiler_config(Option<ProfilerConfig>)`](crate::output::DescribeTrainingJobOutput::profiler_config): <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
-    ///   - [`profiler_rule_configurations(Option<Vec<ProfilerRuleConfiguration>>)`](crate::output::DescribeTrainingJobOutput::profiler_rule_configurations): <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
-    ///   - [`profiler_rule_evaluation_statuses(Option<Vec<ProfilerRuleEvaluationStatus>>)`](crate::output::DescribeTrainingJobOutput::profiler_rule_evaluation_statuses): <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+    ///   - [`debug_rule_configurations(Option<Vec<DebugRuleConfiguration>>)`](crate::output::DescribeTrainingJobOutput::debug_rule_configurations): <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
+    ///   - [`tensor_board_output_config(Option<TensorBoardOutputConfig>)`](crate::output::DescribeTrainingJobOutput::tensor_board_output_config): <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
+    ///   - [`debug_rule_evaluation_statuses(Option<Vec<DebugRuleEvaluationStatus>>)`](crate::output::DescribeTrainingJobOutput::debug_rule_evaluation_statuses): <p>Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.</p>
+    ///   - [`profiler_config(Option<ProfilerConfig>)`](crate::output::DescribeTrainingJobOutput::profiler_config): <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
+    ///   - [`profiler_rule_configurations(Option<Vec<ProfilerRuleConfiguration>>)`](crate::output::DescribeTrainingJobOutput::profiler_rule_configurations): <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
+    ///   - [`profiler_rule_evaluation_statuses(Option<Vec<ProfilerRuleEvaluationStatus>>)`](crate::output::DescribeTrainingJobOutput::profiler_rule_evaluation_statuses): <p>Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.</p>
     ///   - [`profiling_status(Option<ProfilingStatus>)`](crate::output::DescribeTrainingJobOutput::profiling_status): <p>Profiling status of a training job.</p>
     ///   - [`retry_strategy(Option<RetryStrategy>)`](crate::output::DescribeTrainingJobOutput::retry_strategy): <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     ///   - [`environment(Option<HashMap<String, String>>)`](crate::output::DescribeTrainingJobOutput::environment): <p>The environment variables to set in the Docker container.</p>
@@ -2362,6 +2651,7 @@ impl Client {
     ///   - [`environment(Option<HashMap<String, String>>)`](crate::output::DescribeTransformJobOutput::environment): <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
     ///   - [`transform_input(Option<TransformInput>)`](crate::output::DescribeTransformJobOutput::transform_input): <p>Describes the dataset to be transformed and the Amazon S3 location where it is stored.</p>
     ///   - [`transform_output(Option<TransformOutput>)`](crate::output::DescribeTransformJobOutput::transform_output): <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
+    ///   - [`data_capture_config(Option<BatchDataCaptureConfig>)`](crate::output::DescribeTransformJobOutput::data_capture_config): <p>Configuration to control how SageMaker captures inference data.</p>
     ///   - [`transform_resources(Option<TransformResources>)`](crate::output::DescribeTransformJobOutput::transform_resources): <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeTransformJobOutput::creation_time): <p>A timestamp that shows when the transform Job was created.</p>
     ///   - [`transform_start_time(Option<DateTime>)`](crate::output::DescribeTransformJobOutput::transform_start_time): <p>Indicates when the transform job starts on ML instances. You are billed for the time interval between this time and the value of <code>TransformEndTime</code>.</p>
@@ -2415,6 +2705,7 @@ impl Client {
     ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::output::DescribeTrialComponentOutput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     ///   - [`metrics(Option<Vec<TrialComponentMetricSummary>>)`](crate::output::DescribeTrialComponentOutput::metrics): <p>The metrics for the component.</p>
     ///   - [`lineage_group_arn(Option<String>)`](crate::output::DescribeTrialComponentOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    ///   - [`sources(Option<Vec<TrialComponentSource>>)`](crate::output::DescribeTrialComponentOutput::sources): <p>A list of ARNs and, if applicable, job types for multiple sources of an experiment run.</p>
     /// - On failure, responds with [`SdkError<DescribeTrialComponentError>`](crate::error::DescribeTrialComponentError)
     pub fn describe_trial_component(&self) -> fluent_builders::DescribeTrialComponent {
         fluent_builders::DescribeTrialComponent::new(self.handle.clone())
@@ -2478,7 +2769,7 @@ impl Client {
     ///   - [`trial_component_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateTrialComponent::trial_component_name) / [`set_trial_component_name(Option<String>)`](crate::client::fluent_builders::DisassociateTrialComponent::set_trial_component_name): <p>The name of the component to disassociate from the trial.</p>
     ///   - [`trial_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateTrialComponent::trial_name) / [`set_trial_name(Option<String>)`](crate::client::fluent_builders::DisassociateTrialComponent::set_trial_name): <p>The name of the trial to disassociate from.</p>
     /// - On success, responds with [`DisassociateTrialComponentOutput`](crate::output::DisassociateTrialComponentOutput) with field(s):
-    ///   - [`trial_component_arn(Option<String>)`](crate::output::DisassociateTrialComponentOutput::trial_component_arn): <p>The ARN of the trial component.</p>
+    ///   - [`trial_component_arn(Option<String>)`](crate::output::DisassociateTrialComponentOutput::trial_component_arn): <p>The Amazon Resource Name (ARN) of the trial component.</p>
     ///   - [`trial_arn(Option<String>)`](crate::output::DisassociateTrialComponentOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial.</p>
     /// - On failure, responds with [`SdkError<DisassociateTrialComponentError>`](crate::error::DisassociateTrialComponentError)
     pub fn disassociate_trial_component(&self) -> fluent_builders::DisassociateTrialComponent {
@@ -2557,6 +2848,27 @@ impl Client {
     pub fn get_search_suggestions(&self) -> fluent_builders::GetSearchSuggestions {
         fluent_builders::GetSearchSuggestions::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ImportHubContent`](crate::client::fluent_builders::ImportHubContent) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`hub_content_name(impl Into<String>)`](crate::client::fluent_builders::ImportHubContent::hub_content_name) / [`set_hub_content_name(Option<String>)`](crate::client::fluent_builders::ImportHubContent::set_hub_content_name): <p>The name of the hub content to import.</p>
+    ///   - [`hub_content_version(impl Into<String>)`](crate::client::fluent_builders::ImportHubContent::hub_content_version) / [`set_hub_content_version(Option<String>)`](crate::client::fluent_builders::ImportHubContent::set_hub_content_version): <p>The version of the hub content to import.</p>
+    ///   - [`hub_content_type(HubContentType)`](crate::client::fluent_builders::ImportHubContent::hub_content_type) / [`set_hub_content_type(Option<HubContentType>)`](crate::client::fluent_builders::ImportHubContent::set_hub_content_type): <p>The type of hub content to import.</p>
+    ///   - [`document_schema_version(impl Into<String>)`](crate::client::fluent_builders::ImportHubContent::document_schema_version) / [`set_document_schema_version(Option<String>)`](crate::client::fluent_builders::ImportHubContent::set_document_schema_version): <p>The version of the hub content schema to import.</p>
+    ///   - [`hub_name(impl Into<String>)`](crate::client::fluent_builders::ImportHubContent::hub_name) / [`set_hub_name(Option<String>)`](crate::client::fluent_builders::ImportHubContent::set_hub_name): <p>The name of the hub to import content into.</p>
+    ///   - [`hub_content_display_name(impl Into<String>)`](crate::client::fluent_builders::ImportHubContent::hub_content_display_name) / [`set_hub_content_display_name(Option<String>)`](crate::client::fluent_builders::ImportHubContent::set_hub_content_display_name): <p>The display name of the hub content to import.</p>
+    ///   - [`hub_content_description(impl Into<String>)`](crate::client::fluent_builders::ImportHubContent::hub_content_description) / [`set_hub_content_description(Option<String>)`](crate::client::fluent_builders::ImportHubContent::set_hub_content_description): <p>A description of the hub content to import.</p>
+    ///   - [`hub_content_markdown(impl Into<String>)`](crate::client::fluent_builders::ImportHubContent::hub_content_markdown) / [`set_hub_content_markdown(Option<String>)`](crate::client::fluent_builders::ImportHubContent::set_hub_content_markdown): <p>Markdown files associated with the hub content to import.</p>
+    ///   - [`hub_content_document(impl Into<String>)`](crate::client::fluent_builders::ImportHubContent::hub_content_document) / [`set_hub_content_document(Option<String>)`](crate::client::fluent_builders::ImportHubContent::set_hub_content_document): <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
+    ///   - [`hub_content_search_keywords(Vec<String>)`](crate::client::fluent_builders::ImportHubContent::hub_content_search_keywords) / [`set_hub_content_search_keywords(Option<Vec<String>>)`](crate::client::fluent_builders::ImportHubContent::set_hub_content_search_keywords): <p>The searchable keywords of the hub content.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportHubContent::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportHubContent::set_tags): <p>Any tags associated with the hub content.</p>
+    /// - On success, responds with [`ImportHubContentOutput`](crate::output::ImportHubContentOutput) with field(s):
+    ///   - [`hub_arn(Option<String>)`](crate::output::ImportHubContentOutput::hub_arn): <p>The ARN of the hub that the content was imported into.</p>
+    ///   - [`hub_content_arn(Option<String>)`](crate::output::ImportHubContentOutput::hub_content_arn): <p>The ARN of the hub content that was imported.</p>
+    /// - On failure, responds with [`SdkError<ImportHubContentError>`](crate::error::ImportHubContentError)
+    pub fn import_hub_content(&self) -> fluent_builders::ImportHubContent {
+        fluent_builders::ImportHubContent::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListActions`](crate::client::fluent_builders::ListActions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListActions::into_paginator).
     ///
@@ -2594,6 +2906,22 @@ impl Client {
     pub fn list_algorithms(&self) -> fluent_builders::ListAlgorithms {
         fluent_builders::ListAlgorithms::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListAliases`](crate::client::fluent_builders::ListAliases) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAliases::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::ListAliases::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::ListAliases::set_image_name): <p>The name of the image.</p>
+    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::ListAliases::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::ListAliases::set_alias): <p>The alias of the image version.</p>
+    ///   - [`version(i32)`](crate::client::fluent_builders::ListAliases::version) / [`set_version(Option<i32>)`](crate::client::fluent_builders::ListAliases::set_version): <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAliases::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAliases::set_max_results): <p>The maximum number of aliases to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAliases::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAliases::set_next_token): <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
+    /// - On success, responds with [`ListAliasesOutput`](crate::output::ListAliasesOutput) with field(s):
+    ///   - [`sage_maker_image_version_aliases(Option<Vec<String>>)`](crate::output::ListAliasesOutput::sage_maker_image_version_aliases): <p>A list of SageMaker image version aliases.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAliasesOutput::next_token): <p>A token for getting the next set of aliases, if more aliases exist.</p>
+    /// - On failure, responds with [`SdkError<ListAliasesError>`](crate::error::ListAliasesError)
+    pub fn list_aliases(&self) -> fluent_builders::ListAliases {
+        fluent_builders::ListAliases::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListAppImageConfigs`](crate::client::fluent_builders::ListAppImageConfigs) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppImageConfigs::into_paginator).
     ///
@@ -2623,7 +2951,8 @@ impl Client {
     ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListApps::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListApps::set_sort_order): <p>The sort order for the results. The default is Ascending.</p>
     ///   - [`sort_by(AppSortKey)`](crate::client::fluent_builders::ListApps::sort_by) / [`set_sort_by(Option<AppSortKey>)`](crate::client::fluent_builders::ListApps::set_sort_by): <p>The parameter by which to sort the results. The default is CreationTime.</p>
     ///   - [`domain_id_equals(impl Into<String>)`](crate::client::fluent_builders::ListApps::domain_id_equals) / [`set_domain_id_equals(Option<String>)`](crate::client::fluent_builders::ListApps::set_domain_id_equals): <p>A parameter to search for the domain ID.</p>
-    ///   - [`user_profile_name_equals(impl Into<String>)`](crate::client::fluent_builders::ListApps::user_profile_name_equals) / [`set_user_profile_name_equals(Option<String>)`](crate::client::fluent_builders::ListApps::set_user_profile_name_equals): <p>A parameter to search by user profile name.</p>
+    ///   - [`user_profile_name_equals(impl Into<String>)`](crate::client::fluent_builders::ListApps::user_profile_name_equals) / [`set_user_profile_name_equals(Option<String>)`](crate::client::fluent_builders::ListApps::set_user_profile_name_equals): <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be set.</p>
+    ///   - [`space_name_equals(impl Into<String>)`](crate::client::fluent_builders::ListApps::space_name_equals) / [`set_space_name_equals(Option<String>)`](crate::client::fluent_builders::ListApps::set_space_name_equals): <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.</p>
     /// - On success, responds with [`ListAppsOutput`](crate::output::ListAppsOutput) with field(s):
     ///   - [`apps(Option<Vec<AppDetails>>)`](crate::output::ListAppsOutput::apps): <p>The list of apps.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAppsOutput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
@@ -2975,6 +3304,66 @@ impl Client {
     pub fn list_flow_definitions(&self) -> fluent_builders::ListFlowDefinitions {
         fluent_builders::ListFlowDefinitions::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListHubContents`](crate::client::fluent_builders::ListHubContents) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`hub_name(impl Into<String>)`](crate::client::fluent_builders::ListHubContents::hub_name) / [`set_hub_name(Option<String>)`](crate::client::fluent_builders::ListHubContents::set_hub_name): <p>The name of the hub to list the contents of.</p>
+    ///   - [`hub_content_type(HubContentType)`](crate::client::fluent_builders::ListHubContents::hub_content_type) / [`set_hub_content_type(Option<HubContentType>)`](crate::client::fluent_builders::ListHubContents::set_hub_content_type): <p>The type of hub content to list.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListHubContents::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListHubContents::set_name_contains): <p>Only list hub content if the name contains the specified string.</p>
+    ///   - [`max_schema_version(impl Into<String>)`](crate::client::fluent_builders::ListHubContents::max_schema_version) / [`set_max_schema_version(Option<String>)`](crate::client::fluent_builders::ListHubContents::set_max_schema_version): <p>The upper bound of the hub content schema verion.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListHubContents::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListHubContents::set_creation_time_before): <p>Only list hub content that was created before the time specified.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListHubContents::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListHubContents::set_creation_time_after): <p>Only list hub content that was created after the time specified.</p>
+    ///   - [`sort_by(HubContentSortBy)`](crate::client::fluent_builders::ListHubContents::sort_by) / [`set_sort_by(Option<HubContentSortBy>)`](crate::client::fluent_builders::ListHubContents::set_sort_by): <p>Sort hub content versions by either name or creation time.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListHubContents::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListHubContents::set_sort_order): <p>Sort hubs by ascending or descending order.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHubContents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListHubContents::set_max_results): <p>The maximum amount of hub content to list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHubContents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHubContents::set_next_token): <p>If the response to a previous <code>ListHubContents</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content, use the token in the next request.</p>
+    /// - On success, responds with [`ListHubContentsOutput`](crate::output::ListHubContentsOutput) with field(s):
+    ///   - [`hub_content_summaries(Option<Vec<HubContentInfo>>)`](crate::output::ListHubContentsOutput::hub_content_summaries): <p>The summaries of the listed hub content.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListHubContentsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content, use it in the subsequent request.</p>
+    /// - On failure, responds with [`SdkError<ListHubContentsError>`](crate::error::ListHubContentsError)
+    pub fn list_hub_contents(&self) -> fluent_builders::ListHubContents {
+        fluent_builders::ListHubContents::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListHubContentVersions`](crate::client::fluent_builders::ListHubContentVersions) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`hub_name(impl Into<String>)`](crate::client::fluent_builders::ListHubContentVersions::hub_name) / [`set_hub_name(Option<String>)`](crate::client::fluent_builders::ListHubContentVersions::set_hub_name): <p>The name of the hub to list the content versions of.</p>
+    ///   - [`hub_content_type(HubContentType)`](crate::client::fluent_builders::ListHubContentVersions::hub_content_type) / [`set_hub_content_type(Option<HubContentType>)`](crate::client::fluent_builders::ListHubContentVersions::set_hub_content_type): <p>The type of hub content to list versions of.</p>
+    ///   - [`hub_content_name(impl Into<String>)`](crate::client::fluent_builders::ListHubContentVersions::hub_content_name) / [`set_hub_content_name(Option<String>)`](crate::client::fluent_builders::ListHubContentVersions::set_hub_content_name): <p>The name of the hub content.</p>
+    ///   - [`min_version(impl Into<String>)`](crate::client::fluent_builders::ListHubContentVersions::min_version) / [`set_min_version(Option<String>)`](crate::client::fluent_builders::ListHubContentVersions::set_min_version): <p>The lower bound of the hub content versions to list.</p>
+    ///   - [`max_schema_version(impl Into<String>)`](crate::client::fluent_builders::ListHubContentVersions::max_schema_version) / [`set_max_schema_version(Option<String>)`](crate::client::fluent_builders::ListHubContentVersions::set_max_schema_version): <p>The upper bound of the hub content schema version.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListHubContentVersions::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListHubContentVersions::set_creation_time_before): <p>Only list hub content versions that were created before the time specified.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListHubContentVersions::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListHubContentVersions::set_creation_time_after): <p>Only list hub content versions that were created after the time specified.</p>
+    ///   - [`sort_by(HubContentSortBy)`](crate::client::fluent_builders::ListHubContentVersions::sort_by) / [`set_sort_by(Option<HubContentSortBy>)`](crate::client::fluent_builders::ListHubContentVersions::set_sort_by): <p>Sort hub content versions by either name or creation time.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListHubContentVersions::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListHubContentVersions::set_sort_order): <p>Sort hub content versions by ascending or descending order.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHubContentVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListHubContentVersions::set_max_results): <p>The maximum number of hub content versions to list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHubContentVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHubContentVersions::set_next_token): <p>If the response to a previous <code>ListHubContentVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content versions, use the token in the next request.</p>
+    /// - On success, responds with [`ListHubContentVersionsOutput`](crate::output::ListHubContentVersionsOutput) with field(s):
+    ///   - [`hub_content_summaries(Option<Vec<HubContentInfo>>)`](crate::output::ListHubContentVersionsOutput::hub_content_summaries): <p>The summaries of the listed hub content versions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListHubContentVersionsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content versions, use it in the subsequent request.</p>
+    /// - On failure, responds with [`SdkError<ListHubContentVersionsError>`](crate::error::ListHubContentVersionsError)
+    pub fn list_hub_content_versions(&self) -> fluent_builders::ListHubContentVersions {
+        fluent_builders::ListHubContentVersions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListHubs`](crate::client::fluent_builders::ListHubs) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListHubs::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListHubs::set_name_contains): <p>Only list hubs with names that contain the specified string.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListHubs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListHubs::set_creation_time_before): <p>Only list hubs that were created before the time specified.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListHubs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListHubs::set_creation_time_after): <p>Only list hubs that were created after the time specified.</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListHubs::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListHubs::set_last_modified_time_before): <p>Only list hubs that were last modified before the time specified.</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListHubs::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListHubs::set_last_modified_time_after): <p>Only list hubs that were last modified after the time specified.</p>
+    ///   - [`sort_by(HubSortBy)`](crate::client::fluent_builders::ListHubs::sort_by) / [`set_sort_by(Option<HubSortBy>)`](crate::client::fluent_builders::ListHubs::set_sort_by): <p>Sort hubs by either name or creation time.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListHubs::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListHubs::set_sort_order): <p>Sort hubs by ascending or descending order.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHubs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListHubs::set_max_results): <p>The maximum number of hubs to list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHubs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHubs::set_next_token): <p>If the response to a previous <code>ListHubs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hubs, use the token in the next request.</p>
+    /// - On success, responds with [`ListHubsOutput`](crate::output::ListHubsOutput) with field(s):
+    ///   - [`hub_summaries(Option<Vec<HubInfo>>)`](crate::output::ListHubsOutput::hub_summaries): <p>The summaries of the listed hubs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListHubsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hubs, use it in the subsequent request.</p>
+    /// - On failure, responds with [`SdkError<ListHubsError>`](crate::error::ListHubsError)
+    pub fn list_hubs(&self) -> fluent_builders::ListHubs {
+        fluent_builders::ListHubs::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListHumanTaskUis`](crate::client::fluent_builders::ListHumanTaskUis) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListHumanTaskUis::into_paginator).
     ///
@@ -3054,6 +3443,28 @@ impl Client {
     pub fn list_image_versions(&self) -> fluent_builders::ListImageVersions {
         fluent_builders::ListImageVersions::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListInferenceExperiments`](crate::client::fluent_builders::ListInferenceExperiments) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInferenceExperiments::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListInferenceExperiments::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListInferenceExperiments::set_name_contains): <p>Selects inference experiments whose names contain this name.</p>
+    ///   - [`r#type(InferenceExperimentType)`](crate::client::fluent_builders::ListInferenceExperiments::type) / [`set_type(Option<InferenceExperimentType>)`](crate::client::fluent_builders::ListInferenceExperiments::set_type): <p> Selects inference experiments of this type. For the possible types of inference experiments, see <code>CreateInferenceExperimentRequest$Type</code>. </p>
+    ///   - [`status_equals(InferenceExperimentStatus)`](crate::client::fluent_builders::ListInferenceExperiments::status_equals) / [`set_status_equals(Option<InferenceExperimentStatus>)`](crate::client::fluent_builders::ListInferenceExperiments::set_status_equals): <p> Selects inference experiments which are in this status. For the possible statuses, see <code>DescribeInferenceExperimentResponse$Status</code>. </p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListInferenceExperiments::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListInferenceExperiments::set_creation_time_after): <p>Selects inference experiments which were created after this timestamp.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListInferenceExperiments::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListInferenceExperiments::set_creation_time_before): <p>Selects inference experiments which were created before this timestamp.</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListInferenceExperiments::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListInferenceExperiments::set_last_modified_time_after): <p>Selects inference experiments which were last modified after this timestamp.</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListInferenceExperiments::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListInferenceExperiments::set_last_modified_time_before): <p>Selects inference experiments which were last modified before this timestamp.</p>
+    ///   - [`sort_by(SortInferenceExperimentsBy)`](crate::client::fluent_builders::ListInferenceExperiments::sort_by) / [`set_sort_by(Option<SortInferenceExperimentsBy>)`](crate::client::fluent_builders::ListInferenceExperiments::set_sort_by): <p>The column by which to sort the listed inference experiments.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListInferenceExperiments::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListInferenceExperiments::set_sort_order): <p>The direction of sorting (ascending or descending).</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInferenceExperiments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInferenceExperiments::set_next_token): <p> The response from the last list when returning a list large enough to need tokening. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInferenceExperiments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInferenceExperiments::set_max_results): <p>The maximum number of results to select.</p>
+    /// - On success, responds with [`ListInferenceExperimentsOutput`](crate::output::ListInferenceExperimentsOutput) with field(s):
+    ///   - [`inference_experiments(Option<Vec<InferenceExperimentSummary>>)`](crate::output::ListInferenceExperimentsOutput::inference_experiments): <p>List of inference experiments.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInferenceExperimentsOutput::next_token): <p>The token to use when calling the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListInferenceExperimentsError>`](crate::error::ListInferenceExperimentsError)
+    pub fn list_inference_experiments(&self) -> fluent_builders::ListInferenceExperiments {
+        fluent_builders::ListInferenceExperiments::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListInferenceRecommendationsJobs`](crate::client::fluent_builders::ListInferenceRecommendationsJobs) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::into_paginator).
     ///
@@ -3076,6 +3487,24 @@ impl Client {
         &self,
     ) -> fluent_builders::ListInferenceRecommendationsJobs {
         fluent_builders::ListInferenceRecommendationsJobs::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListInferenceRecommendationsJobSteps`](crate::client::fluent_builders::ListInferenceRecommendationsJobSteps) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInferenceRecommendationsJobSteps::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobSteps::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobSteps::set_job_name): <p>The name for the Inference Recommender job.</p>
+    ///   - [`status(RecommendationJobStatus)`](crate::client::fluent_builders::ListInferenceRecommendationsJobSteps::status) / [`set_status(Option<RecommendationJobStatus>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobSteps::set_status): <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
+    ///   - [`step_type(RecommendationStepType)`](crate::client::fluent_builders::ListInferenceRecommendationsJobSteps::step_type) / [`set_step_type(Option<RecommendationStepType>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobSteps::set_step_type): <p>A filter to return details about the specified type of subtask.</p>  <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInferenceRecommendationsJobSteps::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobSteps::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobSteps::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobSteps::set_next_token): <p>A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.</p>
+    /// - On success, responds with [`ListInferenceRecommendationsJobStepsOutput`](crate::output::ListInferenceRecommendationsJobStepsOutput) with field(s):
+    ///   - [`steps(Option<Vec<InferenceRecommendationsJobStep>>)`](crate::output::ListInferenceRecommendationsJobStepsOutput::steps): <p>A list of all subtask details in Inference Recommender.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInferenceRecommendationsJobStepsOutput::next_token): <p>A token that you can specify in your next request to return more results from the list.</p>
+    /// - On failure, responds with [`SdkError<ListInferenceRecommendationsJobStepsError>`](crate::error::ListInferenceRecommendationsJobStepsError)
+    pub fn list_inference_recommendations_job_steps(
+        &self,
+    ) -> fluent_builders::ListInferenceRecommendationsJobSteps {
+        fluent_builders::ListInferenceRecommendationsJobSteps::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListLabelingJobs`](crate::client::fluent_builders::ListLabelingJobs) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLabelingJobs::into_paginator).
@@ -3152,6 +3581,65 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListModelBiasJobDefinitionsError>`](crate::error::ListModelBiasJobDefinitionsError)
     pub fn list_model_bias_job_definitions(&self) -> fluent_builders::ListModelBiasJobDefinitions {
         fluent_builders::ListModelBiasJobDefinitions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListModelCardExportJobs`](crate::client::fluent_builders::ListModelCardExportJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListModelCardExportJobs::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`model_card_name(impl Into<String>)`](crate::client::fluent_builders::ListModelCardExportJobs::model_card_name) / [`set_model_card_name(Option<String>)`](crate::client::fluent_builders::ListModelCardExportJobs::set_model_card_name): <p>List export jobs for the model card with the specified name.</p>
+    ///   - [`model_card_version(i32)`](crate::client::fluent_builders::ListModelCardExportJobs::model_card_version) / [`set_model_card_version(i32)`](crate::client::fluent_builders::ListModelCardExportJobs::set_model_card_version): <p>List export jobs for the model card with the specified version.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListModelCardExportJobs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListModelCardExportJobs::set_creation_time_after): <p>Only list model card export jobs that were created after the time specified.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListModelCardExportJobs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListModelCardExportJobs::set_creation_time_before): <p>Only list model card export jobs that were created before the time specified.</p>
+    ///   - [`model_card_export_job_name_contains(impl Into<String>)`](crate::client::fluent_builders::ListModelCardExportJobs::model_card_export_job_name_contains) / [`set_model_card_export_job_name_contains(Option<String>)`](crate::client::fluent_builders::ListModelCardExportJobs::set_model_card_export_job_name_contains): <p>Only list model card export jobs with names that contain the specified string.</p>
+    ///   - [`status_equals(ModelCardExportJobStatus)`](crate::client::fluent_builders::ListModelCardExportJobs::status_equals) / [`set_status_equals(Option<ModelCardExportJobStatus>)`](crate::client::fluent_builders::ListModelCardExportJobs::set_status_equals): <p>Only list model card export jobs with the specified status.</p>
+    ///   - [`sort_by(ModelCardExportJobSortBy)`](crate::client::fluent_builders::ListModelCardExportJobs::sort_by) / [`set_sort_by(Option<ModelCardExportJobSortBy>)`](crate::client::fluent_builders::ListModelCardExportJobs::set_sort_by): <p>Sort model card export jobs by either name or creation time. Sorts by creation time by default.</p>
+    ///   - [`sort_order(ModelCardExportJobSortOrder)`](crate::client::fluent_builders::ListModelCardExportJobs::sort_order) / [`set_sort_order(Option<ModelCardExportJobSortOrder>)`](crate::client::fluent_builders::ListModelCardExportJobs::set_sort_order): <p>Sort model card export jobs by ascending or descending order.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListModelCardExportJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListModelCardExportJobs::set_next_token): <p>If the response to a previous <code>ListModelCardExportJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card export jobs, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListModelCardExportJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListModelCardExportJobs::set_max_results): <p>The maximum number of model card export jobs to list.</p>
+    /// - On success, responds with [`ListModelCardExportJobsOutput`](crate::output::ListModelCardExportJobsOutput) with field(s):
+    ///   - [`model_card_export_job_summaries(Option<Vec<ModelCardExportJobSummary>>)`](crate::output::ListModelCardExportJobsOutput::model_card_export_job_summaries): <p>The summaries of the listed model card export jobs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListModelCardExportJobsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card export jobs, use it in the subsequent request.</p>
+    /// - On failure, responds with [`SdkError<ListModelCardExportJobsError>`](crate::error::ListModelCardExportJobsError)
+    pub fn list_model_card_export_jobs(&self) -> fluent_builders::ListModelCardExportJobs {
+        fluent_builders::ListModelCardExportJobs::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListModelCards`](crate::client::fluent_builders::ListModelCards) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListModelCards::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListModelCards::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListModelCards::set_creation_time_after): <p>Only list model cards that were created after the time specified.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListModelCards::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListModelCards::set_creation_time_before): <p>Only list model cards that were created before the time specified.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListModelCards::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListModelCards::set_max_results): <p>The maximum number of model cards to list.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListModelCards::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListModelCards::set_name_contains): <p>Only list model cards with names that contain the specified string.</p>
+    ///   - [`model_card_status(ModelCardStatus)`](crate::client::fluent_builders::ListModelCards::model_card_status) / [`set_model_card_status(Option<ModelCardStatus>)`](crate::client::fluent_builders::ListModelCards::set_model_card_status): <p>Only list model cards with the specified approval status.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListModelCards::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListModelCards::set_next_token): <p>If the response to a previous <code>ListModelCards</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model cards, use the token in the next request.</p>
+    ///   - [`sort_by(ModelCardSortBy)`](crate::client::fluent_builders::ListModelCards::sort_by) / [`set_sort_by(Option<ModelCardSortBy>)`](crate::client::fluent_builders::ListModelCards::set_sort_by): <p>Sort model cards by either name or creation time. Sorts by creation time by default.</p>
+    ///   - [`sort_order(ModelCardSortOrder)`](crate::client::fluent_builders::ListModelCards::sort_order) / [`set_sort_order(Option<ModelCardSortOrder>)`](crate::client::fluent_builders::ListModelCards::set_sort_order): <p>Sort model cards by ascending or descending order.</p>
+    /// - On success, responds with [`ListModelCardsOutput`](crate::output::ListModelCardsOutput) with field(s):
+    ///   - [`model_card_summaries(Option<Vec<ModelCardSummary>>)`](crate::output::ListModelCardsOutput::model_card_summaries): <p>The summaries of the listed model cards.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListModelCardsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model cards, use it in the subsequent request.</p>
+    /// - On failure, responds with [`SdkError<ListModelCardsError>`](crate::error::ListModelCardsError)
+    pub fn list_model_cards(&self) -> fluent_builders::ListModelCards {
+        fluent_builders::ListModelCards::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListModelCardVersions`](crate::client::fluent_builders::ListModelCardVersions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListModelCardVersions::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListModelCardVersions::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListModelCardVersions::set_creation_time_after): <p>Only list model card versions that were created after the time specified.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListModelCardVersions::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListModelCardVersions::set_creation_time_before): <p>Only list model card versions that were created before the time specified.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListModelCardVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListModelCardVersions::set_max_results): <p>The maximum number of model card versions to list.</p>
+    ///   - [`model_card_name(impl Into<String>)`](crate::client::fluent_builders::ListModelCardVersions::model_card_name) / [`set_model_card_name(Option<String>)`](crate::client::fluent_builders::ListModelCardVersions::set_model_card_name): <p>List model card versions for the model card with the specified name.</p>
+    ///   - [`model_card_status(ModelCardStatus)`](crate::client::fluent_builders::ListModelCardVersions::model_card_status) / [`set_model_card_status(Option<ModelCardStatus>)`](crate::client::fluent_builders::ListModelCardVersions::set_model_card_status): <p>Only list model card versions with the specified approval status.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListModelCardVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListModelCardVersions::set_next_token): <p>If the response to a previous <code>ListModelCardVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card versions, use the token in the next request.</p>
+    ///   - [`sort_by(ModelCardVersionSortBy)`](crate::client::fluent_builders::ListModelCardVersions::sort_by) / [`set_sort_by(Option<ModelCardVersionSortBy>)`](crate::client::fluent_builders::ListModelCardVersions::set_sort_by): <p>Sort listed model card versions by version. Sorts by version by default.</p>
+    ///   - [`sort_order(ModelCardSortOrder)`](crate::client::fluent_builders::ListModelCardVersions::sort_order) / [`set_sort_order(Option<ModelCardSortOrder>)`](crate::client::fluent_builders::ListModelCardVersions::set_sort_order): <p>Sort model card versions by ascending or descending order.</p>
+    /// - On success, responds with [`ListModelCardVersionsOutput`](crate::output::ListModelCardVersionsOutput) with field(s):
+    ///   - [`model_card_version_summary_list(Option<Vec<ModelCardVersionSummary>>)`](crate::output::ListModelCardVersionsOutput::model_card_version_summary_list): <p>The summaries of the listed versions of the model card.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListModelCardVersionsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card versions, use it in the subsequent request.</p>
+    /// - On failure, responds with [`SdkError<ListModelCardVersionsError>`](crate::error::ListModelCardVersionsError)
+    pub fn list_model_card_versions(&self) -> fluent_builders::ListModelCardVersions {
+        fluent_builders::ListModelCardVersions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListModelExplainabilityJobDefinitions`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::into_paginator).
@@ -3265,6 +3753,40 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListModelsError>`](crate::error::ListModelsError)
     pub fn list_models(&self) -> fluent_builders::ListModels {
         fluent_builders::ListModels::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListMonitoringAlertHistory`](crate::client::fluent_builders::ListMonitoringAlertHistory) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMonitoringAlertHistory::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::client::fluent_builders::ListMonitoringAlertHistory::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::client::fluent_builders::ListMonitoringAlertHistory::set_monitoring_schedule_name): <p>The name of a monitoring schedule.</p>
+    ///   - [`monitoring_alert_name(impl Into<String>)`](crate::client::fluent_builders::ListMonitoringAlertHistory::monitoring_alert_name) / [`set_monitoring_alert_name(Option<String>)`](crate::client::fluent_builders::ListMonitoringAlertHistory::set_monitoring_alert_name): <p>The name of a monitoring alert.</p>
+    ///   - [`sort_by(MonitoringAlertHistorySortKey)`](crate::client::fluent_builders::ListMonitoringAlertHistory::sort_by) / [`set_sort_by(Option<MonitoringAlertHistorySortKey>)`](crate::client::fluent_builders::ListMonitoringAlertHistory::set_sort_by): <p>The field used to sort results. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListMonitoringAlertHistory::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListMonitoringAlertHistory::set_sort_order): <p>The sort order, whether <code>Ascending</code> or <code>Descending</code>, of the alert history. The default is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMonitoringAlertHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMonitoringAlertHistory::set_next_token): <p>If the result of the previous <code>ListMonitoringAlertHistory</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMonitoringAlertHistory::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMonitoringAlertHistory::set_max_results): <p>The maximum number of results to display. The default is 100.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListMonitoringAlertHistory::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListMonitoringAlertHistory::set_creation_time_before): <p>A filter that returns only alerts created on or before the specified time.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListMonitoringAlertHistory::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListMonitoringAlertHistory::set_creation_time_after): <p>A filter that returns only alerts created on or after the specified time.</p>
+    ///   - [`status_equals(MonitoringAlertStatus)`](crate::client::fluent_builders::ListMonitoringAlertHistory::status_equals) / [`set_status_equals(Option<MonitoringAlertStatus>)`](crate::client::fluent_builders::ListMonitoringAlertHistory::set_status_equals): <p>A filter that retrieves only alerts with a specific status.</p>
+    /// - On success, responds with [`ListMonitoringAlertHistoryOutput`](crate::output::ListMonitoringAlertHistoryOutput) with field(s):
+    ///   - [`monitoring_alert_history(Option<Vec<MonitoringAlertHistorySummary>>)`](crate::output::ListMonitoringAlertHistoryOutput::monitoring_alert_history): <p>An alert history for a model monitoring schedule.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMonitoringAlertHistoryOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
+    /// - On failure, responds with [`SdkError<ListMonitoringAlertHistoryError>`](crate::error::ListMonitoringAlertHistoryError)
+    pub fn list_monitoring_alert_history(&self) -> fluent_builders::ListMonitoringAlertHistory {
+        fluent_builders::ListMonitoringAlertHistory::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListMonitoringAlerts`](crate::client::fluent_builders::ListMonitoringAlerts) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMonitoringAlerts::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::client::fluent_builders::ListMonitoringAlerts::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::client::fluent_builders::ListMonitoringAlerts::set_monitoring_schedule_name): <p>The name of a monitoring schedule.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMonitoringAlerts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMonitoringAlerts::set_next_token): <p>If the result of the previous <code>ListMonitoringAlerts</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMonitoringAlerts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMonitoringAlerts::set_max_results): <p>The maximum number of results to display. The default is 100.</p>
+    /// - On success, responds with [`ListMonitoringAlertsOutput`](crate::output::ListMonitoringAlertsOutput) with field(s):
+    ///   - [`monitoring_alert_summaries(Option<Vec<MonitoringAlertSummary>>)`](crate::output::ListMonitoringAlertsOutput::monitoring_alert_summaries): <p>A JSON array where each element is a summary for a monitoring alert.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMonitoringAlertsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
+    /// - On failure, responds with [`SdkError<ListMonitoringAlertsError>`](crate::error::ListMonitoringAlertsError)
+    pub fn list_monitoring_alerts(&self) -> fluent_builders::ListMonitoringAlerts {
+        fluent_builders::ListMonitoringAlerts::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListMonitoringExecutions`](crate::client::fluent_builders::ListMonitoringExecutions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMonitoringExecutions::into_paginator).
@@ -3467,6 +3989,23 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::error::ListProjectsError)
     pub fn list_projects(&self) -> fluent_builders::ListProjects {
         fluent_builders::ListProjects::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListSpaces`](crate::client::fluent_builders::ListSpaces) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSpaces::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSpaces::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSpaces::set_next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSpaces::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSpaces::set_max_results): <p>Returns a list up to a specified limit.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListSpaces::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListSpaces::set_sort_order): <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    ///   - [`sort_by(SpaceSortKey)`](crate::client::fluent_builders::ListSpaces::sort_by) / [`set_sort_by(Option<SpaceSortKey>)`](crate::client::fluent_builders::ListSpaces::set_sort_by): <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+    ///   - [`domain_id_equals(impl Into<String>)`](crate::client::fluent_builders::ListSpaces::domain_id_equals) / [`set_domain_id_equals(Option<String>)`](crate::client::fluent_builders::ListSpaces::set_domain_id_equals): <p>A parameter to search for the Domain ID.</p>
+    ///   - [`space_name_contains(impl Into<String>)`](crate::client::fluent_builders::ListSpaces::space_name_contains) / [`set_space_name_contains(Option<String>)`](crate::client::fluent_builders::ListSpaces::set_space_name_contains): <p>A parameter by which to filter the results.</p>
+    /// - On success, responds with [`ListSpacesOutput`](crate::output::ListSpacesOutput) with field(s):
+    ///   - [`spaces(Option<Vec<SpaceDetails>>)`](crate::output::ListSpacesOutput::spaces): <p>The list of spaces.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSpacesOutput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListSpacesError>`](crate::error::ListSpacesError)
+    pub fn list_spaces(&self) -> fluent_builders::ListSpaces {
+        fluent_builders::ListSpaces::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListStageDevices`](crate::client::fluent_builders::ListStageDevices) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStageDevices::into_paginator).
@@ -3807,6 +4346,16 @@ impl Client {
     pub fn start_edge_deployment_stage(&self) -> fluent_builders::StartEdgeDeploymentStage {
         fluent_builders::StartEdgeDeploymentStage::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`StartInferenceExperiment`](crate::client::fluent_builders::StartInferenceExperiment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartInferenceExperiment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartInferenceExperiment::set_name): <p>The name of the inference experiment to start.</p>
+    /// - On success, responds with [`StartInferenceExperimentOutput`](crate::output::StartInferenceExperimentOutput) with field(s):
+    ///   - [`inference_experiment_arn(Option<String>)`](crate::output::StartInferenceExperimentOutput::inference_experiment_arn): <p>The ARN of the started inference experiment to start.</p>
+    /// - On failure, responds with [`SdkError<StartInferenceExperimentError>`](crate::error::StartInferenceExperimentError)
+    pub fn start_inference_experiment(&self) -> fluent_builders::StartInferenceExperiment {
+        fluent_builders::StartInferenceExperiment::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`StartMonitoringSchedule`](crate::client::fluent_builders::StartMonitoringSchedule) operation.
     ///
     /// - The fluent builder is configurable:
@@ -3892,6 +4441,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<StopHyperParameterTuningJobError>`](crate::error::StopHyperParameterTuningJobError)
     pub fn stop_hyper_parameter_tuning_job(&self) -> fluent_builders::StopHyperParameterTuningJob {
         fluent_builders::StopHyperParameterTuningJob::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`StopInferenceExperiment`](crate::client::fluent_builders::StopInferenceExperiment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StopInferenceExperiment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StopInferenceExperiment::set_name): <p>The name of the inference experiment to stop.</p>
+    ///   - [`model_variant_actions(HashMap<String, ModelVariantAction>)`](crate::client::fluent_builders::StopInferenceExperiment::model_variant_actions) / [`set_model_variant_actions(Option<HashMap<String, ModelVariantAction>>)`](crate::client::fluent_builders::StopInferenceExperiment::set_model_variant_actions): <p> Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following: </p>  <ul>   <li> <p> <code>Promote</code> - Promote the shadow variant to a production variant</p> </li>   <li> <p> <code>Remove</code> - Delete the variant</p> </li>   <li> <p> <code>Retain</code> - Keep the variant as it is</p> </li>  </ul>
+    ///   - [`desired_model_variants(Vec<ModelVariantConfig>)`](crate::client::fluent_builders::StopInferenceExperiment::desired_model_variants) / [`set_desired_model_variants(Option<Vec<ModelVariantConfig>>)`](crate::client::fluent_builders::StopInferenceExperiment::set_desired_model_variants): <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant. </p>
+    ///   - [`desired_state(InferenceExperimentStopDesiredState)`](crate::client::fluent_builders::StopInferenceExperiment::desired_state) / [`set_desired_state(Option<InferenceExperimentStopDesiredState>)`](crate::client::fluent_builders::StopInferenceExperiment::set_desired_state): <p> The desired state of the experiment after stopping. The possible states are the following: </p>  <ul>   <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li>   <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li>  </ul>
+    ///   - [`reason(impl Into<String>)`](crate::client::fluent_builders::StopInferenceExperiment::reason) / [`set_reason(Option<String>)`](crate::client::fluent_builders::StopInferenceExperiment::set_reason): <p>The reason for stopping the experiment.</p>
+    /// - On success, responds with [`StopInferenceExperimentOutput`](crate::output::StopInferenceExperimentOutput) with field(s):
+    ///   - [`inference_experiment_arn(Option<String>)`](crate::output::StopInferenceExperimentOutput::inference_experiment_arn): <p>The ARN of the stopped inference experiment.</p>
+    /// - On failure, responds with [`SdkError<StopInferenceExperimentError>`](crate::error::StopInferenceExperimentError)
+    pub fn stop_inference_experiment(&self) -> fluent_builders::StopInferenceExperiment {
+        fluent_builders::StopInferenceExperiment::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`StopInferenceRecommendationsJob`](crate::client::fluent_builders::StopInferenceRecommendationsJob) operation.
     ///
@@ -4069,6 +4632,8 @@ impl Client {
     ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_domain_id): <p>The ID of the domain to be updated.</p>
     ///   - [`default_user_settings(UserSettings)`](crate::client::fluent_builders::UpdateDomain::default_user_settings) / [`set_default_user_settings(Option<UserSettings>)`](crate::client::fluent_builders::UpdateDomain::set_default_user_settings): <p>A collection of settings.</p>
     ///   - [`domain_settings_for_update(DomainSettingsForUpdate)`](crate::client::fluent_builders::UpdateDomain::domain_settings_for_update) / [`set_domain_settings_for_update(Option<DomainSettingsForUpdate>)`](crate::client::fluent_builders::UpdateDomain::set_domain_settings_for_update): <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
+    ///   - [`default_space_settings(DefaultSpaceSettings)`](crate::client::fluent_builders::UpdateDomain::default_space_settings) / [`set_default_space_settings(Option<DefaultSpaceSettings>)`](crate::client::fluent_builders::UpdateDomain::set_default_space_settings): <p>The default settings used to create a space within the Domain.</p>
+    ///   - [`app_security_group_management(AppSecurityGroupManagement)`](crate::client::fluent_builders::UpdateDomain::app_security_group_management) / [`set_app_security_group_management(Option<AppSecurityGroupManagement>)`](crate::client::fluent_builders::UpdateDomain::set_app_security_group_management): <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
     /// - On success, responds with [`UpdateDomainOutput`](crate::output::UpdateDomainOutput) with field(s):
     ///   - [`domain_arn(Option<String>)`](crate::output::UpdateDomainOutput::domain_arn): <p>The Amazon Resource Name (ARN) of the domain.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainError>`](crate::error::UpdateDomainError)
@@ -4140,6 +4705,19 @@ impl Client {
     pub fn update_feature_metadata(&self) -> fluent_builders::UpdateFeatureMetadata {
         fluent_builders::UpdateFeatureMetadata::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateHub`](crate::client::fluent_builders::UpdateHub) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`hub_name(impl Into<String>)`](crate::client::fluent_builders::UpdateHub::hub_name) / [`set_hub_name(Option<String>)`](crate::client::fluent_builders::UpdateHub::set_hub_name): <p>The name of the hub to update.</p>
+    ///   - [`hub_description(impl Into<String>)`](crate::client::fluent_builders::UpdateHub::hub_description) / [`set_hub_description(Option<String>)`](crate::client::fluent_builders::UpdateHub::set_hub_description): <p>A description of the updated hub.</p>
+    ///   - [`hub_display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateHub::hub_display_name) / [`set_hub_display_name(Option<String>)`](crate::client::fluent_builders::UpdateHub::set_hub_display_name): <p>The display name of the hub.</p>
+    ///   - [`hub_search_keywords(Vec<String>)`](crate::client::fluent_builders::UpdateHub::hub_search_keywords) / [`set_hub_search_keywords(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateHub::set_hub_search_keywords): <p>The searchable keywords for the hub.</p>
+    /// - On success, responds with [`UpdateHubOutput`](crate::output::UpdateHubOutput) with field(s):
+    ///   - [`hub_arn(Option<String>)`](crate::output::UpdateHubOutput::hub_arn): <p>The Amazon Resource Name (ARN) of the updated hub.</p>
+    /// - On failure, responds with [`SdkError<UpdateHubError>`](crate::error::UpdateHubError)
+    pub fn update_hub(&self) -> fluent_builders::UpdateHub {
+        fluent_builders::UpdateHub::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateImage`](crate::client::fluent_builders::UpdateImage) operation.
     ///
     /// - The fluent builder is configurable:
@@ -4147,12 +4725,60 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateImage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateImage::set_description): <p>The new description for the image.</p>
     ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateImage::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateImage::set_display_name): <p>The new display name for the image.</p>
     ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::UpdateImage::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::UpdateImage::set_image_name): <p>The name of the image to update.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateImage::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateImage::set_role_arn): <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateImage::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateImage::set_role_arn): <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     /// - On success, responds with [`UpdateImageOutput`](crate::output::UpdateImageOutput) with field(s):
-    ///   - [`image_arn(Option<String>)`](crate::output::UpdateImageOutput::image_arn): <p>The Amazon Resource Name (ARN) of the image.</p>
+    ///   - [`image_arn(Option<String>)`](crate::output::UpdateImageOutput::image_arn): <p>The ARN of the image.</p>
     /// - On failure, responds with [`SdkError<UpdateImageError>`](crate::error::UpdateImageError)
     pub fn update_image(&self) -> fluent_builders::UpdateImage {
         fluent_builders::UpdateImage::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateImageVersion`](crate::client::fluent_builders::UpdateImageVersion) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::UpdateImageVersion::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::UpdateImageVersion::set_image_name): <p>The name of the image.</p>
+    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::UpdateImageVersion::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::UpdateImageVersion::set_alias): <p>The alias of the image version.</p>
+    ///   - [`version(i32)`](crate::client::fluent_builders::UpdateImageVersion::version) / [`set_version(Option<i32>)`](crate::client::fluent_builders::UpdateImageVersion::set_version): <p>The version of the image.</p>
+    ///   - [`aliases_to_add(Vec<String>)`](crate::client::fluent_builders::UpdateImageVersion::aliases_to_add) / [`set_aliases_to_add(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateImageVersion::set_aliases_to_add): <p>A list of aliases to add.</p>
+    ///   - [`aliases_to_delete(Vec<String>)`](crate::client::fluent_builders::UpdateImageVersion::aliases_to_delete) / [`set_aliases_to_delete(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateImageVersion::set_aliases_to_delete): <p>A list of aliases to delete.</p>
+    ///   - [`vendor_guidance(VendorGuidance)`](crate::client::fluent_builders::UpdateImageVersion::vendor_guidance) / [`set_vendor_guidance(Option<VendorGuidance>)`](crate::client::fluent_builders::UpdateImageVersion::set_vendor_guidance): <p>The availability of the image version specified by the maintainer.</p>  <ul>   <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>   <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>   <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>   <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>  </ul>
+    ///   - [`job_type(JobType)`](crate::client::fluent_builders::UpdateImageVersion::job_type) / [`set_job_type(Option<JobType>)`](crate::client::fluent_builders::UpdateImageVersion::set_job_type): <p>Indicates SageMaker job type compatibility.</p>  <ul>   <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>   <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>   <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>  </ul>
+    ///   - [`ml_framework(impl Into<String>)`](crate::client::fluent_builders::UpdateImageVersion::ml_framework) / [`set_ml_framework(Option<String>)`](crate::client::fluent_builders::UpdateImageVersion::set_ml_framework): <p>The machine learning framework vended in the image version.</p>
+    ///   - [`programming_lang(impl Into<String>)`](crate::client::fluent_builders::UpdateImageVersion::programming_lang) / [`set_programming_lang(Option<String>)`](crate::client::fluent_builders::UpdateImageVersion::set_programming_lang): <p>The supported programming language and its version.</p>
+    ///   - [`processor(Processor)`](crate::client::fluent_builders::UpdateImageVersion::processor) / [`set_processor(Option<Processor>)`](crate::client::fluent_builders::UpdateImageVersion::set_processor): <p>Indicates CPU or GPU compatibility.</p>  <ul>   <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>   <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>  </ul>
+    ///   - [`horovod(bool)`](crate::client::fluent_builders::UpdateImageVersion::horovod) / [`set_horovod(bool)`](crate::client::fluent_builders::UpdateImageVersion::set_horovod): <p>Indicates Horovod compatibility.</p>
+    ///   - [`release_notes(impl Into<String>)`](crate::client::fluent_builders::UpdateImageVersion::release_notes) / [`set_release_notes(Option<String>)`](crate::client::fluent_builders::UpdateImageVersion::set_release_notes): <p>The maintainer description of the image version.</p>
+    /// - On success, responds with [`UpdateImageVersionOutput`](crate::output::UpdateImageVersionOutput) with field(s):
+    ///   - [`image_version_arn(Option<String>)`](crate::output::UpdateImageVersionOutput::image_version_arn): <p>The ARN of the image version.</p>
+    /// - On failure, responds with [`SdkError<UpdateImageVersionError>`](crate::error::UpdateImageVersionError)
+    pub fn update_image_version(&self) -> fluent_builders::UpdateImageVersion {
+        fluent_builders::UpdateImageVersion::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateInferenceExperiment`](crate::client::fluent_builders::UpdateInferenceExperiment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateInferenceExperiment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateInferenceExperiment::set_name): <p>The name of the inference experiment to be updated.</p>
+    ///   - [`schedule(InferenceExperimentSchedule)`](crate::client::fluent_builders::UpdateInferenceExperiment::schedule) / [`set_schedule(Option<InferenceExperimentSchedule>)`](crate::client::fluent_builders::UpdateInferenceExperiment::set_schedule): <p> The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateInferenceExperiment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateInferenceExperiment::set_description): <p>The description of the inference experiment.</p>
+    ///   - [`model_variants(Vec<ModelVariantConfig>)`](crate::client::fluent_builders::UpdateInferenceExperiment::model_variants) / [`set_model_variants(Option<Vec<ModelVariantConfig>>)`](crate::client::fluent_builders::UpdateInferenceExperiment::set_model_variants): <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update. </p>
+    ///   - [`data_storage_config(InferenceExperimentDataStorageConfig)`](crate::client::fluent_builders::UpdateInferenceExperiment::data_storage_config) / [`set_data_storage_config(Option<InferenceExperimentDataStorageConfig>)`](crate::client::fluent_builders::UpdateInferenceExperiment::set_data_storage_config): <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
+    ///   - [`shadow_mode_config(ShadowModeConfig)`](crate::client::fluent_builders::UpdateInferenceExperiment::shadow_mode_config) / [`set_shadow_mode_config(Option<ShadowModeConfig>)`](crate::client::fluent_builders::UpdateInferenceExperiment::set_shadow_mode_config): <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+    /// - On success, responds with [`UpdateInferenceExperimentOutput`](crate::output::UpdateInferenceExperimentOutput) with field(s):
+    ///   - [`inference_experiment_arn(Option<String>)`](crate::output::UpdateInferenceExperimentOutput::inference_experiment_arn): <p>The ARN of the updated inference experiment.</p>
+    /// - On failure, responds with [`SdkError<UpdateInferenceExperimentError>`](crate::error::UpdateInferenceExperimentError)
+    pub fn update_inference_experiment(&self) -> fluent_builders::UpdateInferenceExperiment {
+        fluent_builders::UpdateInferenceExperiment::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateModelCard`](crate::client::fluent_builders::UpdateModelCard) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`model_card_name(impl Into<String>)`](crate::client::fluent_builders::UpdateModelCard::model_card_name) / [`set_model_card_name(Option<String>)`](crate::client::fluent_builders::UpdateModelCard::set_model_card_name): <p>The name of the model card to update.</p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::UpdateModelCard::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::UpdateModelCard::set_content): <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>  <p>When updating model card content, be sure to include the full content and not just updated content.</p>
+    ///   - [`model_card_status(ModelCardStatus)`](crate::client::fluent_builders::UpdateModelCard::model_card_status) / [`set_model_card_status(Option<ModelCardStatus>)`](crate::client::fluent_builders::UpdateModelCard::set_model_card_status): <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>  <ul>   <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>   <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>   <li> <p> <code>Approved</code>: The model card is approved.</p> </li>   <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>  </ul>
+    /// - On success, responds with [`UpdateModelCardOutput`](crate::output::UpdateModelCardOutput) with field(s):
+    ///   - [`model_card_arn(Option<String>)`](crate::output::UpdateModelCardOutput::model_card_arn): <p>The Amazon Resource Name (ARN) of the updated model card.</p>
+    /// - On failure, responds with [`SdkError<UpdateModelCardError>`](crate::error::UpdateModelCardError)
+    pub fn update_model_card(&self) -> fluent_builders::UpdateModelCard {
+        fluent_builders::UpdateModelCard::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateModelPackage`](crate::client::fluent_builders::UpdateModelPackage) operation.
     ///
@@ -4168,6 +4794,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateModelPackageError>`](crate::error::UpdateModelPackageError)
     pub fn update_model_package(&self) -> fluent_builders::UpdateModelPackage {
         fluent_builders::UpdateModelPackage::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateMonitoringAlert`](crate::client::fluent_builders::UpdateMonitoringAlert) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::client::fluent_builders::UpdateMonitoringAlert::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::client::fluent_builders::UpdateMonitoringAlert::set_monitoring_schedule_name): <p>The name of a monitoring schedule.</p>
+    ///   - [`monitoring_alert_name(impl Into<String>)`](crate::client::fluent_builders::UpdateMonitoringAlert::monitoring_alert_name) / [`set_monitoring_alert_name(Option<String>)`](crate::client::fluent_builders::UpdateMonitoringAlert::set_monitoring_alert_name): <p>The name of a monitoring alert.</p>
+    ///   - [`datapoints_to_alert(i32)`](crate::client::fluent_builders::UpdateMonitoringAlert::datapoints_to_alert) / [`set_datapoints_to_alert(Option<i32>)`](crate::client::fluent_builders::UpdateMonitoringAlert::set_datapoints_to_alert): <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
+    ///   - [`evaluation_period(i32)`](crate::client::fluent_builders::UpdateMonitoringAlert::evaluation_period) / [`set_evaluation_period(Option<i32>)`](crate::client::fluent_builders::UpdateMonitoringAlert::set_evaluation_period): <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
+    /// - On success, responds with [`UpdateMonitoringAlertOutput`](crate::output::UpdateMonitoringAlertOutput) with field(s):
+    ///   - [`monitoring_schedule_arn(Option<String>)`](crate::output::UpdateMonitoringAlertOutput::monitoring_schedule_arn): <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+    ///   - [`monitoring_alert_name(Option<String>)`](crate::output::UpdateMonitoringAlertOutput::monitoring_alert_name): <p>The name of a monitoring alert.</p>
+    /// - On failure, responds with [`SdkError<UpdateMonitoringAlertError>`](crate::error::UpdateMonitoringAlertError)
+    pub fn update_monitoring_alert(&self) -> fluent_builders::UpdateMonitoringAlert {
+        fluent_builders::UpdateMonitoringAlert::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateMonitoringSchedule`](crate::client::fluent_builders::UpdateMonitoringSchedule) operation.
     ///
@@ -4259,12 +4899,24 @@ impl Client {
     pub fn update_project(&self) -> fluent_builders::UpdateProject {
         fluent_builders::UpdateProject::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateSpace`](crate::client::fluent_builders::UpdateSpace) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSpace::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::UpdateSpace::set_domain_id): <p>The ID of the associated Domain.</p>
+    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSpace::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::UpdateSpace::set_space_name): <p>The name of the space.</p>
+    ///   - [`space_settings(SpaceSettings)`](crate::client::fluent_builders::UpdateSpace::space_settings) / [`set_space_settings(Option<SpaceSettings>)`](crate::client::fluent_builders::UpdateSpace::set_space_settings): <p>A collection of space settings.</p>
+    /// - On success, responds with [`UpdateSpaceOutput`](crate::output::UpdateSpaceOutput) with field(s):
+    ///   - [`space_arn(Option<String>)`](crate::output::UpdateSpaceOutput::space_arn): <p>The space's Amazon Resource Name (ARN).</p>
+    /// - On failure, responds with [`SdkError<UpdateSpaceError>`](crate::error::UpdateSpaceError)
+    pub fn update_space(&self) -> fluent_builders::UpdateSpace {
+        fluent_builders::UpdateSpace::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateTrainingJob`](crate::client::fluent_builders::UpdateTrainingJob) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`training_job_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTrainingJob::training_job_name) / [`set_training_job_name(Option<String>)`](crate::client::fluent_builders::UpdateTrainingJob::set_training_job_name): <p>The name of a training job to update the Debugger profiling configuration.</p>
-    ///   - [`profiler_config(ProfilerConfigForUpdate)`](crate::client::fluent_builders::UpdateTrainingJob::profiler_config) / [`set_profiler_config(Option<ProfilerConfigForUpdate>)`](crate::client::fluent_builders::UpdateTrainingJob::set_profiler_config): <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
-    ///   - [`profiler_rule_configurations(Vec<ProfilerRuleConfiguration>)`](crate::client::fluent_builders::UpdateTrainingJob::profiler_rule_configurations) / [`set_profiler_rule_configurations(Option<Vec<ProfilerRuleConfiguration>>)`](crate::client::fluent_builders::UpdateTrainingJob::set_profiler_rule_configurations): <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+    ///   - [`profiler_config(ProfilerConfigForUpdate)`](crate::client::fluent_builders::UpdateTrainingJob::profiler_config) / [`set_profiler_config(Option<ProfilerConfigForUpdate>)`](crate::client::fluent_builders::UpdateTrainingJob::set_profiler_config): <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
+    ///   - [`profiler_rule_configurations(Vec<ProfilerRuleConfiguration>)`](crate::client::fluent_builders::UpdateTrainingJob::profiler_rule_configurations) / [`set_profiler_rule_configurations(Option<Vec<ProfilerRuleConfiguration>>)`](crate::client::fluent_builders::UpdateTrainingJob::set_profiler_rule_configurations): <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
     ///   - [`resource_config(ResourceConfigForUpdate)`](crate::client::fluent_builders::UpdateTrainingJob::resource_config) / [`set_resource_config(Option<ResourceConfigForUpdate>)`](crate::client::fluent_builders::UpdateTrainingJob::set_resource_config): <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
     /// - On success, responds with [`UpdateTrainingJobOutput`](crate::output::UpdateTrainingJobOutput) with field(s):
     ///   - [`training_job_arn(Option<String>)`](crate::output::UpdateTrainingJobOutput::training_job_arn): <p>The Amazon Resource Name (ARN) of the training job.</p>
@@ -5157,12 +5809,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_id(input);
             self
         }
-        /// <p>The user profile name.</p>
+        /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
         pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_profile_name(input.into());
             self
         }
-        /// <p>The user profile name.</p>
+        /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
         pub fn set_user_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5222,6 +5874,16 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ResourceSpec>,
         ) -> Self {
             self.inner = self.inner.set_resource_spec(input);
+            self
+        }
+        /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.space_name(input.into());
+            self
+        }
+        /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_space_name(input);
             self
         }
     }
@@ -6716,6 +7378,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_settings(input);
             self
         }
+        /// <p>The default settings used to create a space.</p>
+        pub fn default_space_settings(mut self, input: crate::model::DefaultSpaceSettings) -> Self {
+            self.inner = self.inner.default_space_settings(input);
+            self
+        }
+        /// <p>The default settings used to create a space.</p>
+        pub fn set_default_space_settings(
+            mut self,
+            input: std::option::Option<crate::model::DefaultSpaceSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_default_space_settings(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateEdgeDeploymentPlan`.
     ///
@@ -7332,12 +8007,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_production_variants`](Self::set_production_variants).
         ///
-        /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
+        /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
         pub fn production_variants(mut self, input: crate::model::ProductionVariant) -> Self {
             self.inner = self.inner.production_variants(input);
             self
         }
-        /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
+        /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
         pub fn set_production_variants(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
@@ -7435,10 +8110,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_explainer_config(input);
             self
         }
+        /// Appends an item to `ShadowProductionVariants`.
+        ///
+        /// To override the contents of this collection use [`set_shadow_production_variants`](Self::set_shadow_production_variants).
+        ///
+        /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
+        pub fn shadow_production_variants(
+            mut self,
+            input: crate::model::ProductionVariant,
+        ) -> Self {
+            self.inner = self.inner.shadow_production_variants(input);
+            self
+        }
+        /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
+        pub fn set_shadow_production_variants(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
+        ) -> Self {
+            self.inner = self.inner.set_shadow_production_variants(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateExperiment`.
     ///
-    /// <p>Creates an SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed, compared and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a machine learning model.</p>
+    /// <p>Creates a SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed, compared and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a machine learning model.</p> <note>
+    /// <p>In the Studio UI, trials are referred to as <i>run groups</i> and trial components are referred to as <i>runs</i>.</p>
+    /// </note>
     /// <p>The goal of an experiment is to determine the components that produce the best model. Multiple trials are performed, each one isolating and measuring the impact of a change to one or more inputs, while keeping the remaining inputs constant.</p>
     /// <p>When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial components are automatically tracked, logged, and indexed. When you use the Amazon Web Services SDK for Python (Boto), you must use the logging APIs provided by the SDK.</p>
     /// <p>You can add tags to experiments, trials, trial components and then use the <code>Search</code> API to search for the tags.</p>
@@ -7736,6 +8433,7 @@ pub mod fluent_builders {
         /// <li> <p>The Amazon Simple Storage Service (Amazon S3) location of an <code>OfflineStore</code>.</p> </li>
         /// <li> <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p> </li>
         /// <li> <p>An KMS encryption key to encrypt the Amazon S3 location used for <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p> </li>
+        /// <li> <p>Format for the offline store table. Supported formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p> </li>
         /// </ul>
         /// <p>To learn more about this parameter, see <code>OfflineStoreConfig</code>.</p>
         pub fn offline_store_config(mut self, input: crate::model::OfflineStoreConfig) -> Self {
@@ -7747,6 +8445,7 @@ pub mod fluent_builders {
         /// <li> <p>The Amazon Simple Storage Service (Amazon S3) location of an <code>OfflineStore</code>.</p> </li>
         /// <li> <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p> </li>
         /// <li> <p>An KMS encryption key to encrypt the Amazon S3 location used for <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p> </li>
+        /// <li> <p>Format for the offline store table. Supported formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p> </li>
         /// </ul>
         /// <p>To learn more about this parameter, see <code>OfflineStoreConfig</code>.</p>
         pub fn set_offline_store_config(
@@ -7955,6 +8654,152 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateHub`.
+    ///
+    /// <p>Create a hub.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateHub {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_hub_input::Builder,
+    }
+    impl CreateHub {
+        /// Creates a new `CreateHub`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateHub,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateHubError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateHubOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateHubError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the hub to create.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_name(input.into());
+            self
+        }
+        /// <p>The name of the hub to create.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_hub_name(input);
+            self
+        }
+        /// <p>A description of the hub.</p>
+        pub fn hub_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_description(input.into());
+            self
+        }
+        /// <p>A description of the hub.</p>
+        pub fn set_hub_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_description(input);
+            self
+        }
+        /// <p>The display name of the hub.</p>
+        pub fn hub_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_display_name(input.into());
+            self
+        }
+        /// <p>The display name of the hub.</p>
+        pub fn set_hub_display_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_display_name(input);
+            self
+        }
+        /// Appends an item to `HubSearchKeywords`.
+        ///
+        /// To override the contents of this collection use [`set_hub_search_keywords`](Self::set_hub_search_keywords).
+        ///
+        /// <p>The searchable keywords for the hub.</p>
+        pub fn hub_search_keywords(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_search_keywords(input.into());
+            self
+        }
+        /// <p>The searchable keywords for the hub.</p>
+        pub fn set_hub_search_keywords(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_search_keywords(input);
+            self
+        }
+        /// <p>The Amazon S3 storage configuration for the hub.</p>
+        pub fn s3_storage_config(mut self, input: crate::model::HubS3StorageConfig) -> Self {
+            self.inner = self.inner.s3_storage_config(input);
+            self
+        }
+        /// <p>The Amazon S3 storage configuration for the hub.</p>
+        pub fn set_s3_storage_config(
+            mut self,
+            input: std::option::Option<crate::model::HubS3StorageConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_s3_storage_config(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Any tags to associate with the hub.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Any tags to associate with the hub.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateHumanTaskUi`.
     ///
     /// <p>Defines the settings you will use for the human review workflow user interface. Reviewers will see a three-panel interface with an instruction area, the item to review, and an input area.</p>
@@ -8064,6 +8909,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateHyperParameterTuningJob`.
     ///
     /// <p>Starts a hyperparameter tuning job. A hyperparameter tuning job finds the best version of a model by running many training jobs on your dataset using the algorithm you choose and values for hyperparameters within ranges that you specify. It then chooses the hyperparameter values that result in a model that performs the best, as measured by an objective metric that you choose.</p>
+    /// <p>A hyperparameter tuning job automatically creates Amazon SageMaker experiments, trials, and trial components for each training job that it runs. You can view these entities in Amazon SageMaker Studio. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/experiments-view-compare.html#experiments-view">View Experiments, Trials, and Trial Components</a>.</p> <important>
+    /// <p>Do not include any security-sensitive information including account access IDs, secrets or tokens in any hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your training job request and return an exception error.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHyperParameterTuningJob {
         handle: std::sync::Arc<super::Handle>,
@@ -8327,12 +9175,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+        /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+        /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -8461,6 +9309,367 @@ pub mod fluent_builders {
         /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
         pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_image_name(input);
+            self
+        }
+        /// Appends an item to `Aliases`.
+        ///
+        /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
+        ///
+        /// <p>A list of aliases created with the image version.</p>
+        pub fn aliases(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aliases(input.into());
+            self
+        }
+        /// <p>A list of aliases created with the image version.</p>
+        pub fn set_aliases(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_aliases(input);
+            self
+        }
+        /// <p>The stability of the image version, specified by the maintainer.</p>
+        /// <ul>
+        /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+        /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+        /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+        /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+        /// </ul>
+        pub fn vendor_guidance(mut self, input: crate::model::VendorGuidance) -> Self {
+            self.inner = self.inner.vendor_guidance(input);
+            self
+        }
+        /// <p>The stability of the image version, specified by the maintainer.</p>
+        /// <ul>
+        /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+        /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+        /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+        /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+        /// </ul>
+        pub fn set_vendor_guidance(
+            mut self,
+            input: std::option::Option<crate::model::VendorGuidance>,
+        ) -> Self {
+            self.inner = self.inner.set_vendor_guidance(input);
+            self
+        }
+        /// <p>Indicates SageMaker job type compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+        /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+        /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+        /// </ul>
+        pub fn job_type(mut self, input: crate::model::JobType) -> Self {
+            self.inner = self.inner.job_type(input);
+            self
+        }
+        /// <p>Indicates SageMaker job type compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+        /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+        /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+        /// </ul>
+        pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
+            self.inner = self.inner.set_job_type(input);
+            self
+        }
+        /// <p>The machine learning framework vended in the image version.</p>
+        pub fn ml_framework(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_framework(input.into());
+            self
+        }
+        /// <p>The machine learning framework vended in the image version.</p>
+        pub fn set_ml_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ml_framework(input);
+            self
+        }
+        /// <p>The supported programming language and its version.</p>
+        pub fn programming_lang(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.programming_lang(input.into());
+            self
+        }
+        /// <p>The supported programming language and its version.</p>
+        pub fn set_programming_lang(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_programming_lang(input);
+            self
+        }
+        /// <p>Indicates CPU or GPU compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+        /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+        /// </ul>
+        pub fn processor(mut self, input: crate::model::Processor) -> Self {
+            self.inner = self.inner.processor(input);
+            self
+        }
+        /// <p>Indicates CPU or GPU compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+        /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+        /// </ul>
+        pub fn set_processor(
+            mut self,
+            input: std::option::Option<crate::model::Processor>,
+        ) -> Self {
+            self.inner = self.inner.set_processor(input);
+            self
+        }
+        /// <p>Indicates Horovod compatibility.</p>
+        pub fn horovod(mut self, input: bool) -> Self {
+            self.inner = self.inner.horovod(input);
+            self
+        }
+        /// <p>Indicates Horovod compatibility.</p>
+        pub fn set_horovod(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_horovod(input);
+            self
+        }
+        /// <p>The maintainer description of the image version.</p>
+        pub fn release_notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.release_notes(input.into());
+            self
+        }
+        /// <p>The maintainer description of the image version.</p>
+        pub fn set_release_notes(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_release_notes(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateInferenceExperiment`.
+    ///
+    /// <p> Creates an inference experiment using the configurations specified in the request. </p>
+    /// <p> Use this API to setup and schedule an experiment to compare model variants on a Amazon SageMaker inference endpoint. For more information about inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>. </p>
+    /// <p> Amazon SageMaker begins your experiment at the scheduled time and routes traffic to your endpoint's model variants based on your specified configuration. </p>
+    /// <p> While the experiment is in progress or after it has concluded, you can view metrics that compare your model variants. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests-view-monitor-edit.html">View, monitor, and edit shadow tests</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateInferenceExperiment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_inference_experiment_input::Builder,
+    }
+    impl CreateInferenceExperiment {
+        /// Creates a new `CreateInferenceExperiment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateInferenceExperiment,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateInferenceExperimentError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateInferenceExperimentOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateInferenceExperimentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name for the inference experiment.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name for the inference experiment.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p> The type of the inference experiment that you want to run. The following types of experiments are possible: </p>
+        /// <ul>
+        /// <li> <p> <code>ShadowMode</code>: You can use this type to validate a shadow variant. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>. </p> </li>
+        /// </ul>
+        pub fn r#type(mut self, input: crate::model::InferenceExperimentType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        /// <p> The type of the inference experiment that you want to run. The following types of experiments are possible: </p>
+        /// <ul>
+        /// <li> <p> <code>ShadowMode</code>: You can use this type to validate a shadow variant. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>. </p> </li>
+        /// </ul>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p> The duration for which you want the inference experiment to run. If you don't specify this field, the experiment automatically starts immediately upon creation and concludes after 7 days. </p>
+        pub fn schedule(mut self, input: crate::model::InferenceExperimentSchedule) -> Self {
+            self.inner = self.inner.schedule(input);
+            self
+        }
+        /// <p> The duration for which you want the inference experiment to run. If you don't specify this field, the experiment automatically starts immediately upon creation and concludes after 7 days. </p>
+        pub fn set_schedule(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentSchedule>,
+        ) -> Self {
+            self.inner = self.inner.set_schedule(input);
+            self
+        }
+        /// <p>A description for the inference experiment.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A description for the inference experiment.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
+            self
+        }
+        /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
+            self
+        }
+        /// <p> The name of the Amazon SageMaker endpoint on which you want to run the inference experiment. </p>
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
+            self
+        }
+        /// <p> The name of the Amazon SageMaker endpoint on which you want to run the inference experiment. </p>
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_name(input);
+            self
+        }
+        /// Appends an item to `ModelVariants`.
+        ///
+        /// To override the contents of this collection use [`set_model_variants`](Self::set_model_variants).
+        ///
+        /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfig</code> object in the array describes the infrastructure configuration for the corresponding variant. </p>
+        pub fn model_variants(mut self, input: crate::model::ModelVariantConfig) -> Self {
+            self.inner = self.inner.model_variants(input);
+            self
+        }
+        /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfig</code> object in the array describes the infrastructure configuration for the corresponding variant. </p>
+        pub fn set_model_variants(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelVariantConfig>>,
+        ) -> Self {
+            self.inner = self.inner.set_model_variants(input);
+            self
+        }
+        /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
+        /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
+        pub fn data_storage_config(
+            mut self,
+            input: crate::model::InferenceExperimentDataStorageConfig,
+        ) -> Self {
+            self.inner = self.inner.data_storage_config(input);
+            self
+        }
+        /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
+        /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
+        pub fn set_data_storage_config(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentDataStorageConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_data_storage_config(input);
+            self
+        }
+        /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+        pub fn shadow_mode_config(mut self, input: crate::model::ShadowModeConfig) -> Self {
+            self.inner = self.inner.shadow_mode_config(input);
+            self
+        }
+        /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+        pub fn set_shadow_mode_config(
+            mut self,
+            input: std::option::Option<crate::model::ShadowModeConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_shadow_mode_config(input);
+            self
+        }
+        /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. The <code>KmsKey</code> can be any of the following formats: </p>
+        /// <ul>
+        /// <li> <p>KMS key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>KMS key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+        /// </ul>
+        /// <p> If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+        /// <p> The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>. </p>
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(input.into());
+            self
+        }
+        /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. The <code>KmsKey</code> can be any of the following formats: </p>
+        /// <ul>
+        /// <li> <p>KMS key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>KMS key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+        /// </ul>
+        /// <p> If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+        /// <p> The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>. </p>
+        pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p> Array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/tagging.html">Tagging your Amazon Web Services Resources</a>. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p> Array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/tagging.html">Tagging your Amazon Web Services Resources</a>. </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -9301,6 +10510,260 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateModelCard`.
+    ///
+    /// <p>Creates an Amazon SageMaker Model Card.</p>
+    /// <p>For information about how to use model cards, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html">Amazon SageMaker Model Card</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateModelCard {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_model_card_input::Builder,
+    }
+    impl CreateModelCard {
+        /// Creates a new `CreateModelCard`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateModelCard,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateModelCardError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateModelCardOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateModelCardError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique name of the model card.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_card_name(input.into());
+            self
+        }
+        /// <p>The unique name of the model card.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_model_card_name(input);
+            self
+        }
+        /// <p>An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.</p>
+        pub fn security_config(mut self, input: crate::model::ModelCardSecurityConfig) -> Self {
+            self.inner = self.inner.security_config(input);
+            self
+        }
+        /// <p>An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.</p>
+        pub fn set_security_config(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardSecurityConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_security_config(input);
+            self
+        }
+        /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
+            self
+        }
+        /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_content(input);
+            self
+        }
+        /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+        /// <ul>
+        /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+        /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+        /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+        /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+        /// </ul>
+        pub fn model_card_status(mut self, input: crate::model::ModelCardStatus) -> Self {
+            self.inner = self.inner.model_card_status(input);
+            self
+        }
+        /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+        /// <ul>
+        /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+        /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+        /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+        /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+        /// </ul>
+        pub fn set_model_card_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_model_card_status(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs used to manage metadata for model cards.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Key-value pairs used to manage metadata for model cards.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateModelCardExportJob`.
+    ///
+    /// <p>Creates an Amazon SageMaker Model Card export job.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateModelCardExportJob {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_model_card_export_job_input::Builder,
+    }
+    impl CreateModelCardExportJob {
+        /// Creates a new `CreateModelCardExportJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateModelCardExportJob,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateModelCardExportJobError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateModelCardExportJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateModelCardExportJobError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the model card to export.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_card_name(input.into());
+            self
+        }
+        /// <p>The name of the model card to export.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_model_card_name(input);
+            self
+        }
+        /// <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
+        pub fn model_card_version(mut self, input: i32) -> Self {
+            self.inner = self.inner.model_card_version(input);
+            self
+        }
+        /// <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
+        pub fn set_model_card_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_model_card_version(input);
+            self
+        }
+        /// <p>The name of the model card export job.</p>
+        pub fn model_card_export_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_card_export_job_name(input.into());
+            self
+        }
+        /// <p>The name of the model card export job.</p>
+        pub fn set_model_card_export_job_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_model_card_export_job_name(input);
+            self
+        }
+        /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
+        pub fn output_config(mut self, input: crate::model::ModelCardExportOutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
+            self
+        }
+        /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
+        pub fn set_output_config(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardExportOutputConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_output_config(input);
             self
         }
     }
@@ -11024,6 +12487,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_expires_in_seconds(input);
             self
         }
+        /// <p>The name of the space.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.space_name(input.into());
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_space_name(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreatePresignedNotebookInstanceUrl`.
     ///
@@ -11478,6 +12951,119 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateSpace`.
+    ///
+    /// <p>Creates a space used for real time collaboration in a Domain.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateSpace {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_space_input::Builder,
+    }
+    impl CreateSpace {
+        /// Creates a new `CreateSpace`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateSpace,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateSpaceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateSpaceOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateSpaceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the associated Domain.</p>
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
+            self
+        }
+        /// <p>The ID of the associated Domain.</p>
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.space_name(input.into());
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_space_name(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to associated with the space. Each tag consists of a key and an optional value. Tag keys must be unique for each resource. Tags are searchable using the <code>Search</code> API.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Tags to associated with the space. Each tag consists of a key and an optional value. Tag keys must be unique for each resource. Tags are searchable using the <code>Search</code> API.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>A collection of space settings.</p>
+        pub fn space_settings(mut self, input: crate::model::SpaceSettings) -> Self {
+            self.inner = self.inner.space_settings(input);
+            self
+        }
+        /// <p>A collection of space settings.</p>
+        pub fn set_space_settings(
+            mut self,
+            input: std::option::Option<crate::model::SpaceSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_space_settings(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateStudioLifecycleConfig`.
     ///
     /// <p>Creates a new Studio Lifecycle Configuration.</p>
@@ -11614,9 +13200,9 @@ pub mod fluent_builders {
     /// <ul>
     /// <li> <p> <code>AlgorithmSpecification</code> - Identifies the training algorithm to use. </p> </li>
     /// <li> <p> <code>HyperParameters</code> - Specify these algorithm-specific parameters to enable the estimation of model parameters during training. Hyperparameters can be tuned to optimize this learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p> <important>
-    /// <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>
+    /// <p>Do not include any security-sensitive information including account access IDs, secrets or tokens in any hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your training job request and return an exception error.</p>
     /// </important> </li>
-    /// <li> <p> <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3, EFS, or FSx location where it is stored.</p> </li>
+    /// <li> <p> <code>InputDataConfig</code> - Describes the input required by the training job and the Amazon S3, EFS, or FSx location where it is stored.</p> </li>
     /// <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want SageMaker to save the results of model training. </p> </li>
     /// <li> <p> <code>ResourceConfig</code> - Identifies the resources, ML compute instances, and ML storage volumes to deploy for model training. In distributed training, you specify more than one instance. </p> </li>
     /// <li> <p> <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine learning models by up to 80% by using Amazon EC2 Spot instances. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot Training</a>. </p> </li>
@@ -11704,7 +13290,7 @@ pub mod fluent_builders {
         ///
         /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
         /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>
-        /// <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>
+        /// <p>Do not include any security-sensitive information including account access IDs, secrets or tokens in any hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your training job request and return an exception error.</p>
         /// </important>
         pub fn hyper_parameters(
             mut self,
@@ -11716,7 +13302,7 @@ pub mod fluent_builders {
         }
         /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
         /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>
-        /// <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>
+        /// <p>Do not include any security-sensitive information including account access IDs, secrets or tokens in any hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your training job request and return an exception error.</p>
         /// </important>
         pub fn set_hyper_parameters(
             mut self,
@@ -11906,12 +13492,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_checkpoint_config(input);
             self
         }
-        /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+        /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
         pub fn debug_hook_config(mut self, input: crate::model::DebugHookConfig) -> Self {
             self.inner = self.inner.debug_hook_config(input);
             self
         }
-        /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+        /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
         pub fn set_debug_hook_config(
             mut self,
             input: std::option::Option<crate::model::DebugHookConfig>,
@@ -11923,7 +13509,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_debug_rule_configurations`](Self::set_debug_rule_configurations).
         ///
-        /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
         pub fn debug_rule_configurations(
             mut self,
             input: crate::model::DebugRuleConfiguration,
@@ -11931,7 +13517,7 @@ pub mod fluent_builders {
             self.inner = self.inner.debug_rule_configurations(input);
             self
         }
-        /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
         pub fn set_debug_rule_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DebugRuleConfiguration>>,
@@ -11939,7 +13525,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_debug_rule_configurations(input);
             self
         }
-        /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+        /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
         pub fn tensor_board_output_config(
             mut self,
             input: crate::model::TensorBoardOutputConfig,
@@ -11947,7 +13533,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tensor_board_output_config(input);
             self
         }
-        /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+        /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
         pub fn set_tensor_board_output_config(
             mut self,
             input: std::option::Option<crate::model::TensorBoardOutputConfig>,
@@ -11978,12 +13564,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_experiment_config(input);
             self
         }
-        /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
         pub fn profiler_config(mut self, input: crate::model::ProfilerConfig) -> Self {
             self.inner = self.inner.profiler_config(input);
             self
         }
-        /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
         pub fn set_profiler_config(
             mut self,
             input: std::option::Option<crate::model::ProfilerConfig>,
@@ -11995,7 +13581,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_profiler_rule_configurations`](Self::set_profiler_rule_configurations).
         ///
-        /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
         pub fn profiler_rule_configurations(
             mut self,
             input: crate::model::ProfilerRuleConfiguration,
@@ -12003,7 +13589,7 @@ pub mod fluent_builders {
             self.inner = self.inner.profiler_rule_configurations(input);
             self
         }
-        /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
         pub fn set_profiler_rule_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
@@ -12246,6 +13832,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::TransformOutput>,
         ) -> Self {
             self.inner = self.inner.set_transform_output(input);
+            self
+        }
+        /// <p>Configuration to control how SageMaker captures inference data.</p>
+        pub fn data_capture_config(mut self, input: crate::model::BatchDataCaptureConfig) -> Self {
+            self.inner = self.inner.data_capture_config(input);
+            self
+        }
+        /// <p>Configuration to control how SageMaker captures inference data.</p>
+        pub fn set_data_capture_config(
+            mut self,
+            input: std::option::Option<crate::model::BatchDataCaptureConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_data_capture_config(input);
             self
         }
         /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
@@ -13371,12 +14970,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_id(input);
             self
         }
-        /// <p>The user profile name.</p>
+        /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
         pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_profile_name(input.into());
             self
         }
-        /// <p>The user profile name.</p>
+        /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
         pub fn set_user_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13402,6 +15001,16 @@ pub mod fluent_builders {
         /// <p>The name of the app.</p>
         pub fn set_app_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_name(input);
+            self
+        }
+        /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.space_name(input.into());
+            self
+        }
+        /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_space_name(input);
             self
         }
     }
@@ -14586,6 +16195,191 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteHub`.
+    ///
+    /// <p>Delete a hub.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteHub {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_hub_input::Builder,
+    }
+    impl DeleteHub {
+        /// Creates a new `DeleteHub`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteHub,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteHubError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteHubOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteHubError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the hub to delete.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_name(input.into());
+            self
+        }
+        /// <p>The name of the hub to delete.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_hub_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteHubContent`.
+    ///
+    /// <p>Delete the contents of a hub.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteHubContent {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_hub_content_input::Builder,
+    }
+    impl DeleteHubContent {
+        /// Creates a new `DeleteHubContent`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteHubContent,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteHubContentError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteHubContentOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteHubContentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the hub that you want to delete content in.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_name(input.into());
+            self
+        }
+        /// <p>The name of the hub that you want to delete content in.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_hub_name(input);
+            self
+        }
+        /// <p>The type of content that you want to delete from a hub.</p>
+        pub fn hub_content_type(mut self, input: crate::model::HubContentType) -> Self {
+            self.inner = self.inner.hub_content_type(input);
+            self
+        }
+        /// <p>The type of content that you want to delete from a hub.</p>
+        pub fn set_hub_content_type(
+            mut self,
+            input: std::option::Option<crate::model::HubContentType>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_type(input);
+            self
+        }
+        /// <p>The name of the content that you want to delete from a hub.</p>
+        pub fn hub_content_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_content_name(input.into());
+            self
+        }
+        /// <p>The name of the content that you want to delete from a hub.</p>
+        pub fn set_hub_content_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_name(input);
+            self
+        }
+        /// <p>The version of the content that you want to delete from a hub.</p>
+        pub fn hub_content_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_content_version(input.into());
+            self
+        }
+        /// <p>The version of the content that you want to delete from a hub.</p>
+        pub fn set_hub_content_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_version(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteHumanTaskUi`.
     ///
     /// <p>Use this operation to delete a human task user interface (worker task template).</p>
@@ -14798,12 +16592,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the image.</p>
+        /// <p>The name of the image to delete.</p>
         pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.image_name(input.into());
             self
         }
-        /// <p>The name of the image.</p>
+        /// <p>The name of the image to delete.</p>
         pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_image_name(input);
             self
@@ -14816,6 +16610,91 @@ pub mod fluent_builders {
         /// <p>The version to delete.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_version(input);
+            self
+        }
+        /// <p>The alias of the image to delete.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
+            self
+        }
+        /// <p>The alias of the image to delete.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteInferenceExperiment`.
+    ///
+    /// <p>Deletes an inference experiment.</p> <note>
+    /// <p> This operation does not delete your endpoint, variants, or any underlying resources. This operation only deletes the metadata of your experiment. </p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteInferenceExperiment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_inference_experiment_input::Builder,
+    }
+    impl DeleteInferenceExperiment {
+        /// Creates a new `DeleteInferenceExperiment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteInferenceExperiment,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteInferenceExperimentError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteInferenceExperimentOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteInferenceExperimentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the inference experiment you want to delete.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the inference experiment you want to delete.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -14965,6 +16844,82 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_job_definition_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteModelCard`.
+    ///
+    /// <p>Deletes an Amazon SageMaker Model Card.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteModelCard {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_model_card_input::Builder,
+    }
+    impl DeleteModelCard {
+        /// Creates a new `DeleteModelCard`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteModelCard,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteModelCardError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteModelCardOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteModelCardError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the model card to delete.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_card_name(input.into());
+            self
+        }
+        /// <p>The name of the model card to delete.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_model_card_name(input);
             self
         }
     }
@@ -15755,6 +17710,89 @@ pub mod fluent_builders {
         /// <p>The name of the project to delete.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteSpace`.
+    ///
+    /// <p>Used to delete a space.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteSpace {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_space_input::Builder,
+    }
+    impl DeleteSpace {
+        /// Creates a new `DeleteSpace`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteSpace,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteSpaceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteSpaceOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteSpaceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the associated Domain.</p>
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
+            self
+        }
+        /// <p>The ID of the associated Domain.</p>
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.space_name(input.into());
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_space_name(input);
             self
         }
     }
@@ -16636,12 +18674,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_id(input);
             self
         }
-        /// <p>The user profile name.</p>
+        /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
         pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_profile_name(input.into());
             self
         }
-        /// <p>The user profile name.</p>
+        /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
         pub fn set_user_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16667,6 +18705,16 @@ pub mod fluent_builders {
         /// <p>The name of the app.</p>
         pub fn set_app_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_name(input);
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.space_name(input.into());
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_space_name(input);
             self
         }
     }
@@ -18090,6 +20138,191 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeHub`.
+    ///
+    /// <p>Describe a hub.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeHub {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_hub_input::Builder,
+    }
+    impl DescribeHub {
+        /// Creates a new `DescribeHub`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeHub,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeHubError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeHubOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeHubError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the hub to describe.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_name(input.into());
+            self
+        }
+        /// <p>The name of the hub to describe.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_hub_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeHubContent`.
+    ///
+    /// <p>Describe the content of a hub.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeHubContent {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_hub_content_input::Builder,
+    }
+    impl DescribeHubContent {
+        /// Creates a new `DescribeHubContent`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeHubContent,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeHubContentError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeHubContentOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeHubContentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the hub that contains the content to describe.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_name(input.into());
+            self
+        }
+        /// <p>The name of the hub that contains the content to describe.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_hub_name(input);
+            self
+        }
+        /// <p>The type of content in the hub.</p>
+        pub fn hub_content_type(mut self, input: crate::model::HubContentType) -> Self {
+            self.inner = self.inner.hub_content_type(input);
+            self
+        }
+        /// <p>The type of content in the hub.</p>
+        pub fn set_hub_content_type(
+            mut self,
+            input: std::option::Option<crate::model::HubContentType>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_type(input);
+            self
+        }
+        /// <p>The name of the content to describe.</p>
+        pub fn hub_content_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_content_name(input.into());
+            self
+        }
+        /// <p>The name of the content to describe.</p>
+        pub fn set_hub_content_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_name(input);
+            self
+        }
+        /// <p>The version of the content to describe.</p>
+        pub fn hub_content_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_content_version(input.into());
+            self
+        }
+        /// <p>The version of the content to describe.</p>
+        pub fn set_hub_content_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_version(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeHumanTaskUi`.
     ///
     /// <p>Returns information about the requested human task user interface (worker task template).</p>
@@ -18398,6 +20631,89 @@ pub mod fluent_builders {
         /// <p>The version of the image. If not specified, the latest version is described.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_version(input);
+            self
+        }
+        /// <p>The alias of the image version.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
+            self
+        }
+        /// <p>The alias of the image version.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeInferenceExperiment`.
+    ///
+    /// <p>Returns details about an inference experiment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeInferenceExperiment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_inference_experiment_input::Builder,
+    }
+    impl DescribeInferenceExperiment {
+        /// Creates a new `DescribeInferenceExperiment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeInferenceExperiment,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeInferenceExperimentError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeInferenceExperimentOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeInferenceExperimentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the inference experiment to describe.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the inference experiment to describe.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -18776,6 +21092,168 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_job_definition_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeModelCard`.
+    ///
+    /// <p>Describes the content, creation time, and security configuration of an Amazon SageMaker Model Card.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeModelCard {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_model_card_input::Builder,
+    }
+    impl DescribeModelCard {
+        /// Creates a new `DescribeModelCard`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeModelCard,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeModelCardError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeModelCardOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeModelCardError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the model card to describe.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_card_name(input.into());
+            self
+        }
+        /// <p>The name of the model card to describe.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_model_card_name(input);
+            self
+        }
+        /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
+        pub fn model_card_version(mut self, input: i32) -> Self {
+            self.inner = self.inner.model_card_version(input);
+            self
+        }
+        /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
+        pub fn set_model_card_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_model_card_version(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeModelCardExportJob`.
+    ///
+    /// <p>Describes an Amazon SageMaker Model Card export job.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeModelCardExportJob {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_model_card_export_job_input::Builder,
+    }
+    impl DescribeModelCardExportJob {
+        /// Creates a new `DescribeModelCardExportJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeModelCardExportJob,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeModelCardExportJobError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeModelCardExportJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeModelCardExportJobError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
+        pub fn model_card_export_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_card_export_job_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
+        pub fn set_model_card_export_job_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_model_card_export_job_arn(input);
             self
         }
     }
@@ -19708,6 +22186,89 @@ pub mod fluent_builders {
         /// <p>The name of the project to describe.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeSpace`.
+    ///
+    /// <p>Describes the space.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeSpace {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_space_input::Builder,
+    }
+    impl DescribeSpace {
+        /// Creates a new `DescribeSpace`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeSpace,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeSpaceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeSpaceOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeSpaceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the associated Domain.</p>
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
+            self
+        }
+        /// <p>The ID of the associated Domain.</p>
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.space_name(input.into());
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_space_name(input);
             self
         }
     }
@@ -21010,6 +23571,220 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ImportHubContent`.
+    ///
+    /// <p>Import hub content.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ImportHubContent {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::import_hub_content_input::Builder,
+    }
+    impl ImportHubContent {
+        /// Creates a new `ImportHubContent`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ImportHubContent,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ImportHubContentError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ImportHubContentOutput,
+            aws_smithy_http::result::SdkError<crate::error::ImportHubContentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the hub content to import.</p>
+        pub fn hub_content_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_content_name(input.into());
+            self
+        }
+        /// <p>The name of the hub content to import.</p>
+        pub fn set_hub_content_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_name(input);
+            self
+        }
+        /// <p>The version of the hub content to import.</p>
+        pub fn hub_content_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_content_version(input.into());
+            self
+        }
+        /// <p>The version of the hub content to import.</p>
+        pub fn set_hub_content_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_version(input);
+            self
+        }
+        /// <p>The type of hub content to import.</p>
+        pub fn hub_content_type(mut self, input: crate::model::HubContentType) -> Self {
+            self.inner = self.inner.hub_content_type(input);
+            self
+        }
+        /// <p>The type of hub content to import.</p>
+        pub fn set_hub_content_type(
+            mut self,
+            input: std::option::Option<crate::model::HubContentType>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_type(input);
+            self
+        }
+        /// <p>The version of the hub content schema to import.</p>
+        pub fn document_schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_schema_version(input.into());
+            self
+        }
+        /// <p>The version of the hub content schema to import.</p>
+        pub fn set_document_schema_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_document_schema_version(input);
+            self
+        }
+        /// <p>The name of the hub to import content into.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_name(input.into());
+            self
+        }
+        /// <p>The name of the hub to import content into.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_hub_name(input);
+            self
+        }
+        /// <p>The display name of the hub content to import.</p>
+        pub fn hub_content_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_content_display_name(input.into());
+            self
+        }
+        /// <p>The display name of the hub content to import.</p>
+        pub fn set_hub_content_display_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_display_name(input);
+            self
+        }
+        /// <p>A description of the hub content to import.</p>
+        pub fn hub_content_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_content_description(input.into());
+            self
+        }
+        /// <p>A description of the hub content to import.</p>
+        pub fn set_hub_content_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_description(input);
+            self
+        }
+        /// <p>Markdown files associated with the hub content to import.</p>
+        pub fn hub_content_markdown(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_content_markdown(input.into());
+            self
+        }
+        /// <p>Markdown files associated with the hub content to import.</p>
+        pub fn set_hub_content_markdown(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_markdown(input);
+            self
+        }
+        /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
+        pub fn hub_content_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_content_document(input.into());
+            self
+        }
+        /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
+        pub fn set_hub_content_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_document(input);
+            self
+        }
+        /// Appends an item to `HubContentSearchKeywords`.
+        ///
+        /// To override the contents of this collection use [`set_hub_content_search_keywords`](Self::set_hub_content_search_keywords).
+        ///
+        /// <p>The searchable keywords of the hub content.</p>
+        pub fn hub_content_search_keywords(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.hub_content_search_keywords(input.into());
+            self
+        }
+        /// <p>The searchable keywords of the hub content.</p>
+        pub fn set_hub_content_search_keywords(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_search_keywords(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Any tags associated with the hub content.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Any tags associated with the hub content.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListActions`.
     ///
     /// <p>Lists the actions in your account and their properties.</p>
@@ -21325,6 +24100,125 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListAliases`.
+    ///
+    /// <p>Lists the aliases of a specified image or image version.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListAliases {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_aliases_input::Builder,
+    }
+    impl ListAliases {
+        /// Creates a new `ListAliases`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListAliases,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListAliasesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAliasesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListAliasesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAliasesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAliasesPaginator {
+            crate::paginator::ListAliasesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of the image.</p>
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
+            self
+        }
+        /// <p>The name of the image.</p>
+        pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_name(input);
+            self
+        }
+        /// <p>The alias of the image version.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
+            self
+        }
+        /// <p>The alias of the image version.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias(input);
+            self
+        }
+        /// <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
+        pub fn version(mut self, input: i32) -> Self {
+            self.inner = self.inner.version(input);
+            self
+        }
+        /// <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
+        pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_version(input);
+            self
+        }
+        /// <p>The maximum number of aliases to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of aliases to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListAppImageConfigs`.
     ///
     /// <p>Lists the AppImageConfigs in your account and their properties. The list can be filtered by creation time or modified time, and whether the AppImageConfig name contains a specified string.</p>
@@ -21629,17 +24523,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_id_equals(input);
             self
         }
-        /// <p>A parameter to search by user profile name.</p>
+        /// <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be set.</p>
         pub fn user_profile_name_equals(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_profile_name_equals(input.into());
             self
         }
-        /// <p>A parameter to search by user profile name.</p>
+        /// <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be set.</p>
         pub fn set_user_profile_name_equals(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_user_profile_name_equals(input);
+            self
+        }
+        /// <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.</p>
+        pub fn space_name_equals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.space_name_equals(input.into());
+            self
+        }
+        /// <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.</p>
+        pub fn set_space_name_equals(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_space_name_equals(input);
             self
         }
     }
@@ -24645,6 +27552,555 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListHubContents`.
+    ///
+    /// <p>List the contents of a hub.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListHubContents {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_hub_contents_input::Builder,
+    }
+    impl ListHubContents {
+        /// Creates a new `ListHubContents`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListHubContents,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListHubContentsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListHubContentsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListHubContentsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the hub to list the contents of.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_name(input.into());
+            self
+        }
+        /// <p>The name of the hub to list the contents of.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_hub_name(input);
+            self
+        }
+        /// <p>The type of hub content to list.</p>
+        pub fn hub_content_type(mut self, input: crate::model::HubContentType) -> Self {
+            self.inner = self.inner.hub_content_type(input);
+            self
+        }
+        /// <p>The type of hub content to list.</p>
+        pub fn set_hub_content_type(
+            mut self,
+            input: std::option::Option<crate::model::HubContentType>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_type(input);
+            self
+        }
+        /// <p>Only list hub content if the name contains the specified string.</p>
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
+            self
+        }
+        /// <p>Only list hub content if the name contains the specified string.</p>
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
+            self
+        }
+        /// <p>The upper bound of the hub content schema verion.</p>
+        pub fn max_schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_schema_version(input.into());
+            self
+        }
+        /// <p>The upper bound of the hub content schema verion.</p>
+        pub fn set_max_schema_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_max_schema_version(input);
+            self
+        }
+        /// <p>Only list hub content that was created before the time specified.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
+            self
+        }
+        /// <p>Only list hub content that was created before the time specified.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_before(input);
+            self
+        }
+        /// <p>Only list hub content that was created after the time specified.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
+            self
+        }
+        /// <p>Only list hub content that was created after the time specified.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_after(input);
+            self
+        }
+        /// <p>Sort hub content versions by either name or creation time.</p>
+        pub fn sort_by(mut self, input: crate::model::HubContentSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
+            self
+        }
+        /// <p>Sort hub content versions by either name or creation time.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::HubContentSortBy>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p>Sort hubs by ascending or descending order.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
+            self
+        }
+        /// <p>Sort hubs by ascending or descending order.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
+            self
+        }
+        /// <p>The maximum amount of hub content to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum amount of hub content to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>If the response to a previous <code>ListHubContents</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the response to a previous <code>ListHubContents</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListHubContentVersions`.
+    ///
+    /// <p>List hub content versions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListHubContentVersions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_hub_content_versions_input::Builder,
+    }
+    impl ListHubContentVersions {
+        /// Creates a new `ListHubContentVersions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListHubContentVersions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListHubContentVersionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListHubContentVersionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListHubContentVersionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the hub to list the content versions of.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_name(input.into());
+            self
+        }
+        /// <p>The name of the hub to list the content versions of.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_hub_name(input);
+            self
+        }
+        /// <p>The type of hub content to list versions of.</p>
+        pub fn hub_content_type(mut self, input: crate::model::HubContentType) -> Self {
+            self.inner = self.inner.hub_content_type(input);
+            self
+        }
+        /// <p>The type of hub content to list versions of.</p>
+        pub fn set_hub_content_type(
+            mut self,
+            input: std::option::Option<crate::model::HubContentType>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_type(input);
+            self
+        }
+        /// <p>The name of the hub content.</p>
+        pub fn hub_content_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_content_name(input.into());
+            self
+        }
+        /// <p>The name of the hub content.</p>
+        pub fn set_hub_content_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_content_name(input);
+            self
+        }
+        /// <p>The lower bound of the hub content versions to list.</p>
+        pub fn min_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.min_version(input.into());
+            self
+        }
+        /// <p>The lower bound of the hub content versions to list.</p>
+        pub fn set_min_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_min_version(input);
+            self
+        }
+        /// <p>The upper bound of the hub content schema version.</p>
+        pub fn max_schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_schema_version(input.into());
+            self
+        }
+        /// <p>The upper bound of the hub content schema version.</p>
+        pub fn set_max_schema_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_max_schema_version(input);
+            self
+        }
+        /// <p>Only list hub content versions that were created before the time specified.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
+            self
+        }
+        /// <p>Only list hub content versions that were created before the time specified.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_before(input);
+            self
+        }
+        /// <p>Only list hub content versions that were created after the time specified.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
+            self
+        }
+        /// <p>Only list hub content versions that were created after the time specified.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_after(input);
+            self
+        }
+        /// <p>Sort hub content versions by either name or creation time.</p>
+        pub fn sort_by(mut self, input: crate::model::HubContentSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
+            self
+        }
+        /// <p>Sort hub content versions by either name or creation time.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::HubContentSortBy>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p>Sort hub content versions by ascending or descending order.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
+            self
+        }
+        /// <p>Sort hub content versions by ascending or descending order.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
+            self
+        }
+        /// <p>The maximum number of hub content versions to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of hub content versions to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>If the response to a previous <code>ListHubContentVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content versions, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the response to a previous <code>ListHubContentVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content versions, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListHubs`.
+    ///
+    /// <p>List all existing hubs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListHubs {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_hubs_input::Builder,
+    }
+    impl ListHubs {
+        /// Creates a new `ListHubs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListHubs,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListHubsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListHubsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListHubsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Only list hubs with names that contain the specified string.</p>
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
+            self
+        }
+        /// <p>Only list hubs with names that contain the specified string.</p>
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
+            self
+        }
+        /// <p>Only list hubs that were created before the time specified.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
+            self
+        }
+        /// <p>Only list hubs that were created before the time specified.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_before(input);
+            self
+        }
+        /// <p>Only list hubs that were created after the time specified.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
+            self
+        }
+        /// <p>Only list hubs that were created after the time specified.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_after(input);
+            self
+        }
+        /// <p>Only list hubs that were last modified before the time specified.</p>
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
+            self
+        }
+        /// <p>Only list hubs that were last modified before the time specified.</p>
+        pub fn set_last_modified_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_last_modified_time_before(input);
+            self
+        }
+        /// <p>Only list hubs that were last modified after the time specified.</p>
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
+            self
+        }
+        /// <p>Only list hubs that were last modified after the time specified.</p>
+        pub fn set_last_modified_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_last_modified_time_after(input);
+            self
+        }
+        /// <p>Sort hubs by either name or creation time.</p>
+        pub fn sort_by(mut self, input: crate::model::HubSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
+            self
+        }
+        /// <p>Sort hubs by either name or creation time.</p>
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::HubSortBy>) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p>Sort hubs by ascending or descending order.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
+            self
+        }
+        /// <p>Sort hubs by ascending or descending order.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
+            self
+        }
+        /// <p>The maximum number of hubs to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of hubs to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>If the response to a previous <code>ListHubs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hubs, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the response to a previous <code>ListHubs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hubs, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListHumanTaskUis`.
     ///
     /// <p>Returns information about the human task user interfaces in your account.</p>
@@ -25326,6 +28782,212 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListInferenceExperiments`.
+    ///
+    /// <p>Returns the list of all inference experiments.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListInferenceExperiments {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_inference_experiments_input::Builder,
+    }
+    impl ListInferenceExperiments {
+        /// Creates a new `ListInferenceExperiments`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListInferenceExperiments,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListInferenceExperimentsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListInferenceExperimentsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListInferenceExperimentsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInferenceExperimentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInferenceExperimentsPaginator {
+            crate::paginator::ListInferenceExperimentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Selects inference experiments whose names contain this name.</p>
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
+            self
+        }
+        /// <p>Selects inference experiments whose names contain this name.</p>
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
+            self
+        }
+        /// <p> Selects inference experiments of this type. For the possible types of inference experiments, see <code>CreateInferenceExperimentRequest$Type</code>. </p>
+        pub fn r#type(mut self, input: crate::model::InferenceExperimentType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        /// <p> Selects inference experiments of this type. For the possible types of inference experiments, see <code>CreateInferenceExperimentRequest$Type</code>. </p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p> Selects inference experiments which are in this status. For the possible statuses, see <code>DescribeInferenceExperimentResponse$Status</code>. </p>
+        pub fn status_equals(mut self, input: crate::model::InferenceExperimentStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
+            self
+        }
+        /// <p> Selects inference experiments which are in this status. For the possible statuses, see <code>DescribeInferenceExperimentResponse$Status</code>. </p>
+        pub fn set_status_equals(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status_equals(input);
+            self
+        }
+        /// <p>Selects inference experiments which were created after this timestamp.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
+            self
+        }
+        /// <p>Selects inference experiments which were created after this timestamp.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_after(input);
+            self
+        }
+        /// <p>Selects inference experiments which were created before this timestamp.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
+            self
+        }
+        /// <p>Selects inference experiments which were created before this timestamp.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_before(input);
+            self
+        }
+        /// <p>Selects inference experiments which were last modified after this timestamp.</p>
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
+            self
+        }
+        /// <p>Selects inference experiments which were last modified after this timestamp.</p>
+        pub fn set_last_modified_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_last_modified_time_after(input);
+            self
+        }
+        /// <p>Selects inference experiments which were last modified before this timestamp.</p>
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
+            self
+        }
+        /// <p>Selects inference experiments which were last modified before this timestamp.</p>
+        pub fn set_last_modified_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_last_modified_time_before(input);
+            self
+        }
+        /// <p>The column by which to sort the listed inference experiments.</p>
+        pub fn sort_by(mut self, input: crate::model::SortInferenceExperimentsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
+            self
+        }
+        /// <p>The column by which to sort the listed inference experiments.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::SortInferenceExperimentsBy>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p>The direction of sorting (ascending or descending).</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
+            self
+        }
+        /// <p>The direction of sorting (ascending or descending).</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
+            self
+        }
+        /// <p> The response from the last list when returning a list large enough to need tokening. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p> The response from the last list when returning a list large enough to need tokening. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to select.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to select.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListInferenceRecommendationsJobs`.
     ///
     /// <p>Lists recommendation jobs that satisfy various filters.</p>
@@ -25522,6 +29184,143 @@ pub mod fluent_builders {
         /// <p>The maximum number of recommendations to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListInferenceRecommendationsJobSteps`.
+    ///
+    /// <p>Returns a list of the subtasks for an Inference Recommender job.</p>
+    /// <p>The supported subtasks are benchmarks, which evaluate the performance of your model on different instance types.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListInferenceRecommendationsJobSteps {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_inference_recommendations_job_steps_input::Builder,
+    }
+    impl ListInferenceRecommendationsJobSteps {
+        /// Creates a new `ListInferenceRecommendationsJobSteps`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListInferenceRecommendationsJobSteps,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListInferenceRecommendationsJobStepsError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListInferenceRecommendationsJobStepsOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListInferenceRecommendationsJobStepsError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInferenceRecommendationsJobStepsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListInferenceRecommendationsJobStepsPaginator {
+            crate::paginator::ListInferenceRecommendationsJobStepsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The name for the Inference Recommender job.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
+            self
+        }
+        /// <p>The name for the Inference Recommender job.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_name(input);
+            self
+        }
+        /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
+        pub fn status(mut self, input: crate::model::RecommendationJobStatus) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
+            self
+        }
+        /// <p>A filter to return details about the specified type of subtask.</p>
+        /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+        pub fn step_type(mut self, input: crate::model::RecommendationStepType) -> Self {
+            self.inner = self.inner.step_type(input);
+            self
+        }
+        /// <p>A filter to return details about the specified type of subtask.</p>
+        /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+        pub fn set_step_type(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationStepType>,
+        ) -> Self {
+            self.inner = self.inner.set_step_type(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -26190,6 +29989,533 @@ pub mod fluent_builders {
             input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListModelCardExportJobs`.
+    ///
+    /// <p>List the export jobs for the Amazon SageMaker Model Card.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListModelCardExportJobs {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_model_card_export_jobs_input::Builder,
+    }
+    impl ListModelCardExportJobs {
+        /// Creates a new `ListModelCardExportJobs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListModelCardExportJobs,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListModelCardExportJobsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListModelCardExportJobsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListModelCardExportJobsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListModelCardExportJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListModelCardExportJobsPaginator {
+            crate::paginator::ListModelCardExportJobsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>List export jobs for the model card with the specified name.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_card_name(input.into());
+            self
+        }
+        /// <p>List export jobs for the model card with the specified name.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_model_card_name(input);
+            self
+        }
+        /// <p>List export jobs for the model card with the specified version.</p>
+        pub fn model_card_version(mut self, input: i32) -> Self {
+            self.inner = self.inner.model_card_version(input);
+            self
+        }
+        /// <p>List export jobs for the model card with the specified version.</p>
+        pub fn set_model_card_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_model_card_version(input);
+            self
+        }
+        /// <p>Only list model card export jobs that were created after the time specified.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
+            self
+        }
+        /// <p>Only list model card export jobs that were created after the time specified.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_after(input);
+            self
+        }
+        /// <p>Only list model card export jobs that were created before the time specified.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
+            self
+        }
+        /// <p>Only list model card export jobs that were created before the time specified.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_before(input);
+            self
+        }
+        /// <p>Only list model card export jobs with names that contain the specified string.</p>
+        pub fn model_card_export_job_name_contains(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.model_card_export_job_name_contains(input.into());
+            self
+        }
+        /// <p>Only list model card export jobs with names that contain the specified string.</p>
+        pub fn set_model_card_export_job_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_model_card_export_job_name_contains(input);
+            self
+        }
+        /// <p>Only list model card export jobs with the specified status.</p>
+        pub fn status_equals(mut self, input: crate::model::ModelCardExportJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
+            self
+        }
+        /// <p>Only list model card export jobs with the specified status.</p>
+        pub fn set_status_equals(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardExportJobStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status_equals(input);
+            self
+        }
+        /// <p>Sort model card export jobs by either name or creation time. Sorts by creation time by default.</p>
+        pub fn sort_by(mut self, input: crate::model::ModelCardExportJobSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
+            self
+        }
+        /// <p>Sort model card export jobs by either name or creation time. Sorts by creation time by default.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardExportJobSortBy>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p>Sort model card export jobs by ascending or descending order.</p>
+        pub fn sort_order(mut self, input: crate::model::ModelCardExportJobSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
+            self
+        }
+        /// <p>Sort model card export jobs by ascending or descending order.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardExportJobSortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
+            self
+        }
+        /// <p>If the response to a previous <code>ListModelCardExportJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card export jobs, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the response to a previous <code>ListModelCardExportJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card export jobs, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of model card export jobs to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of model card export jobs to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListModelCards`.
+    ///
+    /// <p>List existing model cards.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListModelCards {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_model_cards_input::Builder,
+    }
+    impl ListModelCards {
+        /// Creates a new `ListModelCards`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListModelCards,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListModelCardsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListModelCardsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListModelCardsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListModelCardsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListModelCardsPaginator {
+            crate::paginator::ListModelCardsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Only list model cards that were created after the time specified.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
+            self
+        }
+        /// <p>Only list model cards that were created after the time specified.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_after(input);
+            self
+        }
+        /// <p>Only list model cards that were created before the time specified.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
+            self
+        }
+        /// <p>Only list model cards that were created before the time specified.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_before(input);
+            self
+        }
+        /// <p>The maximum number of model cards to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of model cards to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Only list model cards with names that contain the specified string.</p>
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
+            self
+        }
+        /// <p>Only list model cards with names that contain the specified string.</p>
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
+            self
+        }
+        /// <p>Only list model cards with the specified approval status.</p>
+        pub fn model_card_status(mut self, input: crate::model::ModelCardStatus) -> Self {
+            self.inner = self.inner.model_card_status(input);
+            self
+        }
+        /// <p>Only list model cards with the specified approval status.</p>
+        pub fn set_model_card_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_model_card_status(input);
+            self
+        }
+        /// <p>If the response to a previous <code>ListModelCards</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model cards, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the response to a previous <code>ListModelCards</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model cards, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Sort model cards by either name or creation time. Sorts by creation time by default.</p>
+        pub fn sort_by(mut self, input: crate::model::ModelCardSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
+            self
+        }
+        /// <p>Sort model cards by either name or creation time. Sorts by creation time by default.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardSortBy>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p>Sort model cards by ascending or descending order.</p>
+        pub fn sort_order(mut self, input: crate::model::ModelCardSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
+            self
+        }
+        /// <p>Sort model cards by ascending or descending order.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardSortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListModelCardVersions`.
+    ///
+    /// <p>List existing versions of an Amazon SageMaker Model Card.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListModelCardVersions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_model_card_versions_input::Builder,
+    }
+    impl ListModelCardVersions {
+        /// Creates a new `ListModelCardVersions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListModelCardVersions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListModelCardVersionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListModelCardVersionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListModelCardVersionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListModelCardVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListModelCardVersionsPaginator {
+            crate::paginator::ListModelCardVersionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Only list model card versions that were created after the time specified.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
+            self
+        }
+        /// <p>Only list model card versions that were created after the time specified.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_after(input);
+            self
+        }
+        /// <p>Only list model card versions that were created before the time specified.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
+            self
+        }
+        /// <p>Only list model card versions that were created before the time specified.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_before(input);
+            self
+        }
+        /// <p>The maximum number of model card versions to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of model card versions to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>List model card versions for the model card with the specified name.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_card_name(input.into());
+            self
+        }
+        /// <p>List model card versions for the model card with the specified name.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_model_card_name(input);
+            self
+        }
+        /// <p>Only list model card versions with the specified approval status.</p>
+        pub fn model_card_status(mut self, input: crate::model::ModelCardStatus) -> Self {
+            self.inner = self.inner.model_card_status(input);
+            self
+        }
+        /// <p>Only list model card versions with the specified approval status.</p>
+        pub fn set_model_card_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_model_card_status(input);
+            self
+        }
+        /// <p>If the response to a previous <code>ListModelCardVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card versions, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the response to a previous <code>ListModelCardVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card versions, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Sort listed model card versions by version. Sorts by version by default.</p>
+        pub fn sort_by(mut self, input: crate::model::ModelCardVersionSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
+            self
+        }
+        /// <p>Sort listed model card versions by version. Sorts by version by default.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardVersionSortBy>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p>Sort model card versions by ascending or descending order.</p>
+        pub fn sort_order(mut self, input: crate::model::ModelCardSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
+            self
+        }
+        /// <p>Sort model card versions by ascending or descending order.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardSortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -27149,6 +31475,288 @@ pub mod fluent_builders {
             input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListMonitoringAlertHistory`.
+    ///
+    /// <p>Gets a list of past alerts in a model monitoring schedule.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListMonitoringAlertHistory {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_monitoring_alert_history_input::Builder,
+    }
+    impl ListMonitoringAlertHistory {
+        /// Creates a new `ListMonitoringAlertHistory`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListMonitoringAlertHistory,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListMonitoringAlertHistoryError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMonitoringAlertHistoryOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListMonitoringAlertHistoryError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMonitoringAlertHistoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMonitoringAlertHistoryPaginator {
+            crate::paginator::ListMonitoringAlertHistoryPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of a monitoring schedule.</p>
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input.into());
+            self
+        }
+        /// <p>The name of a monitoring schedule.</p>
+        pub fn set_monitoring_schedule_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_monitoring_schedule_name(input);
+            self
+        }
+        /// <p>The name of a monitoring alert.</p>
+        pub fn monitoring_alert_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_alert_name(input.into());
+            self
+        }
+        /// <p>The name of a monitoring alert.</p>
+        pub fn set_monitoring_alert_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_monitoring_alert_name(input);
+            self
+        }
+        /// <p>The field used to sort results. The default is <code>CreationTime</code>.</p>
+        pub fn sort_by(mut self, input: crate::model::MonitoringAlertHistorySortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
+            self
+        }
+        /// <p>The field used to sort results. The default is <code>CreationTime</code>.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::MonitoringAlertHistorySortKey>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p>The sort order, whether <code>Ascending</code> or <code>Descending</code>, of the alert history. The default is <code>Descending</code>.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
+            self
+        }
+        /// <p>The sort order, whether <code>Ascending</code> or <code>Descending</code>, of the alert history. The default is <code>Descending</code>.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
+            self
+        }
+        /// <p>If the result of the previous <code>ListMonitoringAlertHistory</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the result of the previous <code>ListMonitoringAlertHistory</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to display. The default is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to display. The default is 100.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A filter that returns only alerts created on or before the specified time.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
+            self
+        }
+        /// <p>A filter that returns only alerts created on or before the specified time.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_before(input);
+            self
+        }
+        /// <p>A filter that returns only alerts created on or after the specified time.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
+            self
+        }
+        /// <p>A filter that returns only alerts created on or after the specified time.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_after(input);
+            self
+        }
+        /// <p>A filter that retrieves only alerts with a specific status.</p>
+        pub fn status_equals(mut self, input: crate::model::MonitoringAlertStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
+            self
+        }
+        /// <p>A filter that retrieves only alerts with a specific status.</p>
+        pub fn set_status_equals(
+            mut self,
+            input: std::option::Option<crate::model::MonitoringAlertStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status_equals(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListMonitoringAlerts`.
+    ///
+    /// <p>Gets the alerts for a single monitoring schedule.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListMonitoringAlerts {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_monitoring_alerts_input::Builder,
+    }
+    impl ListMonitoringAlerts {
+        /// Creates a new `ListMonitoringAlerts`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListMonitoringAlerts,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListMonitoringAlertsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMonitoringAlertsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListMonitoringAlertsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMonitoringAlertsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMonitoringAlertsPaginator {
+            crate::paginator::ListMonitoringAlertsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of a monitoring schedule.</p>
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input.into());
+            self
+        }
+        /// <p>The name of a monitoring schedule.</p>
+        pub fn set_monitoring_schedule_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_monitoring_schedule_name(input);
+            self
+        }
+        /// <p>If the result of the previous <code>ListMonitoringAlerts</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the result of the previous <code>ListMonitoringAlerts</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to display. The default is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to display. The default is 100.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -28967,6 +33575,147 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ProjectSortOrder>,
         ) -> Self {
             self.inner = self.inner.set_sort_order(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListSpaces`.
+    ///
+    /// <p>Lists spaces.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListSpaces {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_spaces_input::Builder,
+    }
+    impl ListSpaces {
+        /// Creates a new `ListSpaces`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListSpaces,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListSpacesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListSpacesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListSpacesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSpacesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSpacesPaginator {
+            crate::paginator::ListSpacesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Returns a list up to a specified limit.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Returns a list up to a specified limit.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
+            self
+        }
+        /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
+            self
+        }
+        /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+        pub fn sort_by(mut self, input: crate::model::SpaceSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
+            self
+        }
+        /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::SpaceSortKey>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p>A parameter to search for the Domain ID.</p>
+        pub fn domain_id_equals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id_equals(input.into());
+            self
+        }
+        /// <p>A parameter to search for the Domain ID.</p>
+        pub fn set_domain_id_equals(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_domain_id_equals(input);
+            self
+        }
+        /// <p>A parameter by which to filter the results.</p>
+        pub fn space_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.space_name_contains(input.into());
+            self
+        }
+        /// <p>A parameter by which to filter the results.</p>
+        pub fn set_space_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_space_name_contains(input);
             self
         }
     }
@@ -31812,6 +36561,79 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `StartInferenceExperiment`.
+    ///
+    /// <p>Starts an inference experiment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartInferenceExperiment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::start_inference_experiment_input::Builder,
+    }
+    impl StartInferenceExperiment {
+        /// Creates a new `StartInferenceExperiment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::StartInferenceExperiment,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::StartInferenceExperimentError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartInferenceExperimentOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartInferenceExperimentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the inference experiment to start.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the inference experiment to start.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `StartMonitoringSchedule`.
     ///
     /// <p>Starts a previously stopped monitoring schedule.</p> <note>
@@ -32513,6 +37335,163 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_hyper_parameter_tuning_job_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StopInferenceExperiment`.
+    ///
+    /// <p>Stops an inference experiment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StopInferenceExperiment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::stop_inference_experiment_input::Builder,
+    }
+    impl StopInferenceExperiment {
+        /// Creates a new `StopInferenceExperiment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::StopInferenceExperiment,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::StopInferenceExperimentError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StopInferenceExperimentOutput,
+            aws_smithy_http::result::SdkError<crate::error::StopInferenceExperimentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the inference experiment to stop.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the inference experiment to stop.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// Adds a key-value pair to `ModelVariantActions`.
+        ///
+        /// To override the contents of this collection use [`set_model_variant_actions`](Self::set_model_variant_actions).
+        ///
+        /// <p> Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following: </p>
+        /// <ul>
+        /// <li> <p> <code>Promote</code> - Promote the shadow variant to a production variant</p> </li>
+        /// <li> <p> <code>Remove</code> - Delete the variant</p> </li>
+        /// <li> <p> <code>Retain</code> - Keep the variant as it is</p> </li>
+        /// </ul>
+        pub fn model_variant_actions(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::ModelVariantAction,
+        ) -> Self {
+            self.inner = self.inner.model_variant_actions(k.into(), v);
+            self
+        }
+        /// <p> Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following: </p>
+        /// <ul>
+        /// <li> <p> <code>Promote</code> - Promote the shadow variant to a production variant</p> </li>
+        /// <li> <p> <code>Remove</code> - Delete the variant</p> </li>
+        /// <li> <p> <code>Retain</code> - Keep the variant as it is</p> </li>
+        /// </ul>
+        pub fn set_model_variant_actions(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::ModelVariantAction>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_model_variant_actions(input);
+            self
+        }
+        /// Appends an item to `DesiredModelVariants`.
+        ///
+        /// To override the contents of this collection use [`set_desired_model_variants`](Self::set_desired_model_variants).
+        ///
+        /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant. </p>
+        pub fn desired_model_variants(mut self, input: crate::model::ModelVariantConfig) -> Self {
+            self.inner = self.inner.desired_model_variants(input);
+            self
+        }
+        /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant. </p>
+        pub fn set_desired_model_variants(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelVariantConfig>>,
+        ) -> Self {
+            self.inner = self.inner.set_desired_model_variants(input);
+            self
+        }
+        /// <p> The desired state of the experiment after stopping. The possible states are the following: </p>
+        /// <ul>
+        /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li>
+        /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li>
+        /// </ul>
+        pub fn desired_state(
+            mut self,
+            input: crate::model::InferenceExperimentStopDesiredState,
+        ) -> Self {
+            self.inner = self.inner.desired_state(input);
+            self
+        }
+        /// <p> The desired state of the experiment after stopping. The possible states are the following: </p>
+        /// <ul>
+        /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li>
+        /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li>
+        /// </ul>
+        pub fn set_desired_state(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentStopDesiredState>,
+        ) -> Self {
+            self.inner = self.inner.set_desired_state(input);
+            self
+        }
+        /// <p>The reason for stopping the experiment.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
+            self
+        }
+        /// <p>The reason for stopping the experiment.</p>
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_reason(input);
             self
         }
     }
@@ -34026,6 +39005,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_settings_for_update(input);
             self
         }
+        /// <p>The default settings used to create a space within the Domain.</p>
+        pub fn default_space_settings(mut self, input: crate::model::DefaultSpaceSettings) -> Self {
+            self.inner = self.inner.default_space_settings(input);
+            self
+        }
+        /// <p>The default settings used to create a space within the Domain.</p>
+        pub fn set_default_space_settings(
+            mut self,
+            input: std::option::Option<crate::model::DefaultSpaceSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_default_space_settings(input);
+            self
+        }
+        /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
+        pub fn app_security_group_management(
+            mut self,
+            input: crate::model::AppSecurityGroupManagement,
+        ) -> Self {
+            self.inner = self.inner.app_security_group_management(input);
+            self
+        }
+        /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
+        pub fn set_app_security_group_management(
+            mut self,
+            input: std::option::Option<crate::model::AppSecurityGroupManagement>,
+        ) -> Self {
+            self.inner = self.inner.set_app_security_group_management(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateEndpoint`.
     ///
@@ -34595,6 +39603,122 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateHub`.
+    ///
+    /// <p>Update a hub.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateHub {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_hub_input::Builder,
+    }
+    impl UpdateHub {
+        /// Creates a new `UpdateHub`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateHub,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateHubError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateHubOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateHubError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the hub to update.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_name(input.into());
+            self
+        }
+        /// <p>The name of the hub to update.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_hub_name(input);
+            self
+        }
+        /// <p>A description of the updated hub.</p>
+        pub fn hub_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_description(input.into());
+            self
+        }
+        /// <p>A description of the updated hub.</p>
+        pub fn set_hub_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_description(input);
+            self
+        }
+        /// <p>The display name of the hub.</p>
+        pub fn hub_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_display_name(input.into());
+            self
+        }
+        /// <p>The display name of the hub.</p>
+        pub fn set_hub_display_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_display_name(input);
+            self
+        }
+        /// Appends an item to `HubSearchKeywords`.
+        ///
+        /// To override the contents of this collection use [`set_hub_search_keywords`](Self::set_hub_search_keywords).
+        ///
+        /// <p>The searchable keywords for the hub.</p>
+        pub fn hub_search_keywords(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_search_keywords(input.into());
+            self
+        }
+        /// <p>The searchable keywords for the hub.</p>
+        pub fn set_hub_search_keywords(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_hub_search_keywords(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateImage`.
     ///
     /// <p>Updates the properties of a SageMaker image. To change the image's tags, use the <code>AddTags</code> and <code>DeleteTags</code> APIs.</p>
@@ -34704,14 +39828,510 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_name(input);
             self
         }
-        /// <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+        /// <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+        /// <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateImageVersion`.
+    ///
+    /// <p>Updates the properties of a SageMaker image version.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateImageVersion {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_image_version_input::Builder,
+    }
+    impl UpdateImageVersion {
+        /// Creates a new `UpdateImageVersion`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateImageVersion,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateImageVersionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateImageVersionOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateImageVersionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the image.</p>
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
+            self
+        }
+        /// <p>The name of the image.</p>
+        pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_name(input);
+            self
+        }
+        /// <p>The alias of the image version.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
+            self
+        }
+        /// <p>The alias of the image version.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias(input);
+            self
+        }
+        /// <p>The version of the image.</p>
+        pub fn version(mut self, input: i32) -> Self {
+            self.inner = self.inner.version(input);
+            self
+        }
+        /// <p>The version of the image.</p>
+        pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_version(input);
+            self
+        }
+        /// Appends an item to `AliasesToAdd`.
+        ///
+        /// To override the contents of this collection use [`set_aliases_to_add`](Self::set_aliases_to_add).
+        ///
+        /// <p>A list of aliases to add.</p>
+        pub fn aliases_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aliases_to_add(input.into());
+            self
+        }
+        /// <p>A list of aliases to add.</p>
+        pub fn set_aliases_to_add(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_aliases_to_add(input);
+            self
+        }
+        /// Appends an item to `AliasesToDelete`.
+        ///
+        /// To override the contents of this collection use [`set_aliases_to_delete`](Self::set_aliases_to_delete).
+        ///
+        /// <p>A list of aliases to delete.</p>
+        pub fn aliases_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aliases_to_delete(input.into());
+            self
+        }
+        /// <p>A list of aliases to delete.</p>
+        pub fn set_aliases_to_delete(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_aliases_to_delete(input);
+            self
+        }
+        /// <p>The availability of the image version specified by the maintainer.</p>
+        /// <ul>
+        /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+        /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+        /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+        /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+        /// </ul>
+        pub fn vendor_guidance(mut self, input: crate::model::VendorGuidance) -> Self {
+            self.inner = self.inner.vendor_guidance(input);
+            self
+        }
+        /// <p>The availability of the image version specified by the maintainer.</p>
+        /// <ul>
+        /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+        /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+        /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+        /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+        /// </ul>
+        pub fn set_vendor_guidance(
+            mut self,
+            input: std::option::Option<crate::model::VendorGuidance>,
+        ) -> Self {
+            self.inner = self.inner.set_vendor_guidance(input);
+            self
+        }
+        /// <p>Indicates SageMaker job type compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+        /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+        /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+        /// </ul>
+        pub fn job_type(mut self, input: crate::model::JobType) -> Self {
+            self.inner = self.inner.job_type(input);
+            self
+        }
+        /// <p>Indicates SageMaker job type compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+        /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+        /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+        /// </ul>
+        pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
+            self.inner = self.inner.set_job_type(input);
+            self
+        }
+        /// <p>The machine learning framework vended in the image version.</p>
+        pub fn ml_framework(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_framework(input.into());
+            self
+        }
+        /// <p>The machine learning framework vended in the image version.</p>
+        pub fn set_ml_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ml_framework(input);
+            self
+        }
+        /// <p>The supported programming language and its version.</p>
+        pub fn programming_lang(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.programming_lang(input.into());
+            self
+        }
+        /// <p>The supported programming language and its version.</p>
+        pub fn set_programming_lang(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_programming_lang(input);
+            self
+        }
+        /// <p>Indicates CPU or GPU compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+        /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+        /// </ul>
+        pub fn processor(mut self, input: crate::model::Processor) -> Self {
+            self.inner = self.inner.processor(input);
+            self
+        }
+        /// <p>Indicates CPU or GPU compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+        /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+        /// </ul>
+        pub fn set_processor(
+            mut self,
+            input: std::option::Option<crate::model::Processor>,
+        ) -> Self {
+            self.inner = self.inner.set_processor(input);
+            self
+        }
+        /// <p>Indicates Horovod compatibility.</p>
+        pub fn horovod(mut self, input: bool) -> Self {
+            self.inner = self.inner.horovod(input);
+            self
+        }
+        /// <p>Indicates Horovod compatibility.</p>
+        pub fn set_horovod(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_horovod(input);
+            self
+        }
+        /// <p>The maintainer description of the image version.</p>
+        pub fn release_notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.release_notes(input.into());
+            self
+        }
+        /// <p>The maintainer description of the image version.</p>
+        pub fn set_release_notes(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_release_notes(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateInferenceExperiment`.
+    ///
+    /// <p> Updates an inference experiment that you created. The status of the inference experiment has to be either <code>Created</code>, <code>Running</code>. For more information on the status of an inference experiment, see <code>DescribeInferenceExperimentResponse$Status</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateInferenceExperiment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_inference_experiment_input::Builder,
+    }
+    impl UpdateInferenceExperiment {
+        /// Creates a new `UpdateInferenceExperiment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateInferenceExperiment,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateInferenceExperimentError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateInferenceExperimentOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateInferenceExperimentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the inference experiment to be updated.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the inference experiment to be updated.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p> The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date. </p>
+        pub fn schedule(mut self, input: crate::model::InferenceExperimentSchedule) -> Self {
+            self.inner = self.inner.schedule(input);
+            self
+        }
+        /// <p> The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date. </p>
+        pub fn set_schedule(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentSchedule>,
+        ) -> Self {
+            self.inner = self.inner.set_schedule(input);
+            self
+        }
+        /// <p>The description of the inference experiment.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>The description of the inference experiment.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `ModelVariants`.
+        ///
+        /// To override the contents of this collection use [`set_model_variants`](Self::set_model_variants).
+        ///
+        /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update. </p>
+        pub fn model_variants(mut self, input: crate::model::ModelVariantConfig) -> Self {
+            self.inner = self.inner.model_variants(input);
+            self
+        }
+        /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update. </p>
+        pub fn set_model_variants(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelVariantConfig>>,
+        ) -> Self {
+            self.inner = self.inner.set_model_variants(input);
+            self
+        }
+        /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
+        pub fn data_storage_config(
+            mut self,
+            input: crate::model::InferenceExperimentDataStorageConfig,
+        ) -> Self {
+            self.inner = self.inner.data_storage_config(input);
+            self
+        }
+        /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
+        pub fn set_data_storage_config(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentDataStorageConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_data_storage_config(input);
+            self
+        }
+        /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+        pub fn shadow_mode_config(mut self, input: crate::model::ShadowModeConfig) -> Self {
+            self.inner = self.inner.shadow_mode_config(input);
+            self
+        }
+        /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+        pub fn set_shadow_mode_config(
+            mut self,
+            input: std::option::Option<crate::model::ShadowModeConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_shadow_mode_config(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateModelCard`.
+    ///
+    /// <p>Update an Amazon SageMaker Model Card.</p> <important>
+    /// <p>You cannot update both model card content and model card status in a single call.</p>
+    /// </important>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateModelCard {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_model_card_input::Builder,
+    }
+    impl UpdateModelCard {
+        /// Creates a new `UpdateModelCard`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateModelCard,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateModelCardError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateModelCardOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateModelCardError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the model card to update.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_card_name(input.into());
+            self
+        }
+        /// <p>The name of the model card to update.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_model_card_name(input);
+            self
+        }
+        /// <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
+        /// <p>When updating model card content, be sure to include the full content and not just updated content.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
+            self
+        }
+        /// <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
+        /// <p>When updating model card content, be sure to include the full content and not just updated content.</p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_content(input);
+            self
+        }
+        /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+        /// <ul>
+        /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+        /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+        /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+        /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+        /// </ul>
+        pub fn model_card_status(mut self, input: crate::model::ModelCardStatus) -> Self {
+            self.inner = self.inner.model_card_status(input);
+            self
+        }
+        /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+        /// <ul>
+        /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+        /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+        /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+        /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+        /// </ul>
+        pub fn set_model_card_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_model_card_status(input);
             self
         }
     }
@@ -34883,6 +40503,115 @@ pub mod fluent_builders {
             self.inner = self
                 .inner
                 .set_additional_inference_specifications_to_add(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateMonitoringAlert`.
+    ///
+    /// <p>Update the parameters of a model monitor alert.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateMonitoringAlert {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_monitoring_alert_input::Builder,
+    }
+    impl UpdateMonitoringAlert {
+        /// Creates a new `UpdateMonitoringAlert`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateMonitoringAlert,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateMonitoringAlertError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateMonitoringAlertOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateMonitoringAlertError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of a monitoring schedule.</p>
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input.into());
+            self
+        }
+        /// <p>The name of a monitoring schedule.</p>
+        pub fn set_monitoring_schedule_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_monitoring_schedule_name(input);
+            self
+        }
+        /// <p>The name of a monitoring alert.</p>
+        pub fn monitoring_alert_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_alert_name(input.into());
+            self
+        }
+        /// <p>The name of a monitoring alert.</p>
+        pub fn set_monitoring_alert_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_monitoring_alert_name(input);
+            self
+        }
+        /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
+        pub fn datapoints_to_alert(mut self, input: i32) -> Self {
+            self.inner = self.inner.datapoints_to_alert(input);
+            self
+        }
+        /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
+        pub fn set_datapoints_to_alert(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_datapoints_to_alert(input);
+            self
+        }
+        /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
+        pub fn evaluation_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.evaluation_period(input);
+            self
+        }
+        /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
+        pub fn set_evaluation_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_evaluation_period(input);
             self
         }
     }
@@ -35775,6 +41504,102 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateSpace`.
+    ///
+    /// <p>Updates the settings of a space.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateSpace {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_space_input::Builder,
+    }
+    impl UpdateSpace {
+        /// Creates a new `UpdateSpace`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateSpace,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateSpaceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateSpaceOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateSpaceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the associated Domain.</p>
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
+            self
+        }
+        /// <p>The ID of the associated Domain.</p>
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.space_name(input.into());
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_space_name(input);
+            self
+        }
+        /// <p>A collection of space settings.</p>
+        pub fn space_settings(mut self, input: crate::model::SpaceSettings) -> Self {
+            self.inner = self.inner.space_settings(input);
+            self
+        }
+        /// <p>A collection of space settings.</p>
+        pub fn set_space_settings(
+            mut self,
+            input: std::option::Option<crate::model::SpaceSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_space_settings(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateTrainingJob`.
     ///
     /// <p>Update a model training job to request a new Debugger profiling configuration or to change warm pool retention length.</p>
@@ -35850,12 +41675,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_training_job_name(input);
             self
         }
-        /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
         pub fn profiler_config(mut self, input: crate::model::ProfilerConfigForUpdate) -> Self {
             self.inner = self.inner.profiler_config(input);
             self
         }
-        /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
         pub fn set_profiler_config(
             mut self,
             input: std::option::Option<crate::model::ProfilerConfigForUpdate>,
@@ -35867,7 +41692,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_profiler_rule_configurations`](Self::set_profiler_rule_configurations).
         ///
-        /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
         pub fn profiler_rule_configurations(
             mut self,
             input: crate::model::ProfilerRuleConfiguration,
@@ -35875,7 +41700,7 @@ pub mod fluent_builders {
             self.inner = self.inner.profiler_rule_configurations(input);
             self
         }
-        /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
         pub fn set_profiler_rule_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,

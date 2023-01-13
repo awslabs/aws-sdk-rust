@@ -39,6 +39,8 @@ pub enum Error {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
+    /// <p>There's already a transaction in progress. Another transaction can't be processed.</p>
+    TransactionInProgressException(crate::error::TransactionInProgressException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -70,6 +72,7 @@ impl std::fmt::Display for Error {
             Error::InvalidPortRangeException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::ListenerNotFoundException(inner) => inner.fmt(f),
+            Error::TransactionInProgressException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -115,6 +118,46 @@ impl From<crate::error::AddCustomRoutingEndpointsError> for Error {
                 Error::LimitExceededException(inner)
             }
             crate::error::AddCustomRoutingEndpointsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddEndpointsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::AddEndpointsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AddEndpointsError> for Error {
+    fn from(err: crate::error::AddEndpointsError) -> Self {
+        match err.kind {
+            crate::error::AddEndpointsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::AddEndpointsErrorKind::EndpointGroupNotFoundException(inner) => {
+                Error::EndpointGroupNotFoundException(inner)
+            }
+            crate::error::AddEndpointsErrorKind::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::error::AddEndpointsErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::AddEndpointsErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::AddEndpointsErrorKind::TransactionInProgressException(inner) => {
+                Error::TransactionInProgressException(inner)
+            }
+            crate::error::AddEndpointsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -1358,6 +1401,43 @@ impl From<crate::error::RemoveCustomRoutingEndpointsError> for Error {
                 inner,
             ) => Error::InvalidArgumentException(inner),
             crate::error::RemoveCustomRoutingEndpointsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveEndpointsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RemoveEndpointsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RemoveEndpointsError> for Error {
+    fn from(err: crate::error::RemoveEndpointsError) -> Self {
+        match err.kind {
+            crate::error::RemoveEndpointsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::RemoveEndpointsErrorKind::EndpointGroupNotFoundException(inner) => {
+                Error::EndpointGroupNotFoundException(inner)
+            }
+            crate::error::RemoveEndpointsErrorKind::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::error::RemoveEndpointsErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::RemoveEndpointsErrorKind::TransactionInProgressException(inner) => {
+                Error::TransactionInProgressException(inner)
+            }
+            crate::error::RemoveEndpointsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

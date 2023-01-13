@@ -5362,6 +5362,143 @@ pub fn parse_list_received_grants_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_received_grants_for_organization_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListReceivedGrantsForOrganizationOutput,
+    crate::error::ListReceivedGrantsForOrganizationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListReceivedGrantsForOrganizationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListReceivedGrantsForOrganizationError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ListReceivedGrantsForOrganizationError { meta: generic, kind: crate::error::ListReceivedGrantsForOrganizationErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "AuthorizationException" => crate::error::ListReceivedGrantsForOrganizationError { meta: generic, kind: crate::error::ListReceivedGrantsForOrganizationErrorKind::AuthorizationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::authorization_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterValueException" => crate::error::ListReceivedGrantsForOrganizationError { meta: generic, kind: crate::error::ListReceivedGrantsForOrganizationErrorKind::InvalidParameterValueException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "RateLimitExceededException" => crate::error::ListReceivedGrantsForOrganizationError { meta: generic, kind: crate::error::ListReceivedGrantsForOrganizationErrorKind::RateLimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::rate_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceLimitExceededException" => crate::error::ListReceivedGrantsForOrganizationError { meta: generic, kind: crate::error::ListReceivedGrantsForOrganizationErrorKind::ResourceLimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServerInternalException" => crate::error::ListReceivedGrantsForOrganizationError { meta: generic, kind: crate::error::ListReceivedGrantsForOrganizationErrorKind::ServerInternalException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::server_internal_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ValidationException" => crate::error::ListReceivedGrantsForOrganizationError { meta: generic, kind: crate::error::ListReceivedGrantsForOrganizationErrorKind::ValidationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ListReceivedGrantsForOrganizationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_received_grants_for_organization_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListReceivedGrantsForOrganizationOutput,
+    crate::error::ListReceivedGrantsForOrganizationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_received_grants_for_organization_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_received_grants_for_organization(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsForOrganizationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_received_licenses_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -5519,6 +5656,143 @@ pub fn parse_list_received_licenses_response(
             output,
         )
         .map_err(crate::error::ListReceivedLicensesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_received_licenses_for_organization_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListReceivedLicensesForOrganizationOutput,
+    crate::error::ListReceivedLicensesForOrganizationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListReceivedLicensesForOrganizationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListReceivedLicensesForOrganizationError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ListReceivedLicensesForOrganizationError { meta: generic, kind: crate::error::ListReceivedLicensesForOrganizationErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "AuthorizationException" => crate::error::ListReceivedLicensesForOrganizationError { meta: generic, kind: crate::error::ListReceivedLicensesForOrganizationErrorKind::AuthorizationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::authorization_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterValueException" => crate::error::ListReceivedLicensesForOrganizationError { meta: generic, kind: crate::error::ListReceivedLicensesForOrganizationErrorKind::InvalidParameterValueException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "RateLimitExceededException" => crate::error::ListReceivedLicensesForOrganizationError { meta: generic, kind: crate::error::ListReceivedLicensesForOrganizationErrorKind::RateLimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::rate_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceLimitExceededException" => crate::error::ListReceivedLicensesForOrganizationError { meta: generic, kind: crate::error::ListReceivedLicensesForOrganizationErrorKind::ResourceLimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServerInternalException" => crate::error::ListReceivedLicensesForOrganizationError { meta: generic, kind: crate::error::ListReceivedLicensesForOrganizationErrorKind::ServerInternalException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::server_internal_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ValidationException" => crate::error::ListReceivedLicensesForOrganizationError { meta: generic, kind: crate::error::ListReceivedLicensesForOrganizationErrorKind::ValidationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ListReceivedLicensesForOrganizationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_received_licenses_for_organization_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListReceivedLicensesForOrganizationOutput,
+    crate::error::ListReceivedLicensesForOrganizationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_received_licenses_for_organization_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_received_licenses_for_organization(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesForOrganizationError::unhandled)?;
         output.build()
     })
 }

@@ -300,24 +300,42 @@ pub fn serialize_structure_crate_model_stack_instance_filter(
 }
 
 #[allow(unused_mut)]
+pub fn serialize_structure_crate_model_operation_result_filter(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::OperationResultFilter,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    #[allow(unused_mut)]
+    let mut scope_83 = writer.prefix("Name");
+    if let Some(var_84) = &input.name {
+        scope_83.string(var_84.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_85 = writer.prefix("Values");
+    if let Some(var_86) = &input.values {
+        scope_85.string(var_86);
+    }
+    Ok(())
+}
+
+#[allow(unused_mut)]
 pub fn serialize_structure_crate_model_type_filters(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TypeFilters,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_83 = writer.prefix("Category");
-    if let Some(var_84) = &input.category {
-        scope_83.string(var_84.as_str());
+    let mut scope_87 = writer.prefix("Category");
+    if let Some(var_88) = &input.category {
+        scope_87.string(var_88.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_85 = writer.prefix("PublisherId");
-    if let Some(var_86) = &input.publisher_id {
-        scope_85.string(var_86);
+    let mut scope_89 = writer.prefix("PublisherId");
+    if let Some(var_90) = &input.publisher_id {
+        scope_89.string(var_90);
     }
     #[allow(unused_mut)]
-    let mut scope_87 = writer.prefix("TypeNamePrefix");
-    if let Some(var_88) = &input.type_name_prefix {
-        scope_87.string(var_88);
+    let mut scope_91 = writer.prefix("TypeNamePrefix");
+    if let Some(var_92) = &input.type_name_prefix {
+        scope_91.string(var_92);
     }
     Ok(())
 }
@@ -328,14 +346,14 @@ pub fn serialize_structure_crate_model_rollback_trigger(
     input: &crate::model::RollbackTrigger,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_89 = writer.prefix("Arn");
-    if let Some(var_90) = &input.arn {
-        scope_89.string(var_90);
+    let mut scope_93 = writer.prefix("Arn");
+    if let Some(var_94) = &input.arn {
+        scope_93.string(var_94);
     }
     #[allow(unused_mut)]
-    let mut scope_91 = writer.prefix("Type");
-    if let Some(var_92) = &input.r#type {
-        scope_91.string(var_92);
+    let mut scope_95 = writer.prefix("Type");
+    if let Some(var_96) = &input.r#type {
+        scope_95.string(var_96);
     }
     Ok(())
 }

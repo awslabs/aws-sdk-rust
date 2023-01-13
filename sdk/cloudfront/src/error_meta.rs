@@ -21,6 +21,10 @@ pub enum Error {
     ),
     /// <p>The Origin Access Identity specified is already in use.</p>
     CloudFrontOriginAccessIdentityInUse(crate::error::CloudFrontOriginAccessIdentityInUse),
+    /// <p>A continuous deployment policy with this configuration already exists.</p>
+    ContinuousDeploymentPolicyAlreadyExists(crate::error::ContinuousDeploymentPolicyAlreadyExists),
+    /// <p>You cannot delete a continuous deployment policy that is associated with a primary distribution.</p>
+    ContinuousDeploymentPolicyInUse(crate::error::ContinuousDeploymentPolicyInUse),
     /// <p>The caller reference you attempted to create the distribution with is associated with another distribution.</p>
     DistributionAlreadyExists(crate::error::DistributionAlreadyExists),
     /// <p>The specified CloudFront distribution is not disabled. You must disable the distribution before you can delete it.</p>
@@ -39,7 +43,7 @@ pub enum Error {
     FieldLevelEncryptionProfileSizeExceeded(crate::error::FieldLevelEncryptionProfileSizeExceeded),
     /// <p>A function with the same name already exists in this Amazon Web Services account. To create a function, you must provide a unique name. To update an existing function, use <code>UpdateFunction</code>.</p>
     FunctionAlreadyExists(crate::error::FunctionAlreadyExists),
-    /// <p>Cannot delete the function because it’s attached to one or more cache behaviors.</p>
+    /// <p>Cannot delete the function because it's attached to one or more cache behaviors.</p>
     FunctionInUse(crate::error::FunctionInUse),
     /// <p>The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     FunctionSizeLimitExceeded(crate::error::FunctionSizeLimitExceeded),
@@ -117,6 +121,8 @@ pub enum Error {
     NoSuchCachePolicy(crate::error::NoSuchCachePolicy),
     /// <p>The specified origin access identity does not exist.</p>
     NoSuchCloudFrontOriginAccessIdentity(crate::error::NoSuchCloudFrontOriginAccessIdentity),
+    /// <p>The continuous deployment policy doesn't exist.</p>
+    NoSuchContinuousDeploymentPolicy(crate::error::NoSuchContinuousDeploymentPolicy),
     /// <p>The specified distribution does not exist.</p>
     NoSuchDistribution(crate::error::NoSuchDistribution),
     /// <p>The specified configuration for field-level encryption doesn't exist.</p>
@@ -129,7 +135,7 @@ pub enum Error {
     NoSuchInvalidation(crate::error::NoSuchInvalidation),
     /// <p>A monitoring subscription does not exist for the specified distribution.</p>
     NoSuchMonitoringSubscription(crate::error::NoSuchMonitoringSubscription),
-    /// <p>No origin exists with the specified <code>Origin Id</code>. </p>
+    /// <p>No origin exists with the specified <code>Origin Id</code>.</p>
     NoSuchOrigin(crate::error::NoSuchOrigin),
     /// <p>The origin access control does not exist.</p>
     NoSuchOriginAccessControl(crate::error::NoSuchOriginAccessControl),
@@ -157,7 +163,7 @@ pub enum Error {
     PreconditionFailed(crate::error::PreconditionFailed),
     /// <p>The specified public key already exists.</p>
     PublicKeyAlreadyExists(crate::error::PublicKeyAlreadyExists),
-    /// <p>The specified public key is in use. </p>
+    /// <p>The specified public key is in use.</p>
     PublicKeyInUse(crate::error::PublicKeyInUse),
     /// <p>No profile specified for the field-level encryption query argument.</p>
     QueryArgProfileEmpty(crate::error::QueryArgProfileEmpty),
@@ -171,8 +177,10 @@ pub enum Error {
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>A response headers policy with this name already exists. You must provide a unique name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.</p>
     ResponseHeadersPolicyAlreadyExists(crate::error::ResponseHeadersPolicyAlreadyExists),
-    /// <p>Cannot delete the response headers policy because it is attached to one or more cache behaviors in a CloudFront distribution. </p>
+    /// <p>Cannot delete the response headers policy because it is attached to one or more cache behaviors in a CloudFront distribution.</p>
     ResponseHeadersPolicyInUse(crate::error::ResponseHeadersPolicyInUse),
+    /// <p>A continuous deployment policy for this staging distribution already exists.</p>
+    StagingDistributionInUse(crate::error::StagingDistributionInUse),
     /// <p>The caller reference you attempted to create the streaming distribution with is associated with another distribution</p>
     StreamingDistributionAlreadyExists(crate::error::StreamingDistributionAlreadyExists),
     /// <p>The specified CloudFront distribution is not disabled. You must disable the distribution before you can delete it.</p>
@@ -190,6 +198,8 @@ pub enum Error {
     TooManyCertificates(crate::error::TooManyCertificates),
     /// <p>Processing your request would cause you to exceed the maximum number of origin access identities allowed.</p>
     TooManyCloudFrontOriginAccessIdentities(crate::error::TooManyCloudFrontOriginAccessIdentities),
+    /// <p>You have reached the maximum number of continuous deployment policies for this Amazon Web Services account.</p>
+    TooManyContinuousDeploymentPolicies(crate::error::TooManyContinuousDeploymentPolicies),
     /// <p>Your request contains more cookie names in the whitelist than are allowed per cache behavior.</p>
     TooManyCookieNamesInWhiteList(crate::error::TooManyCookieNamesInWhiteList),
     /// <p>The number of cookies in the cache policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -308,6 +318,11 @@ pub enum Error {
     ),
     /// <p>You have reached the maximum number of real-time log configurations for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyRealtimeLogConfigs(crate::error::TooManyRealtimeLogConfigs),
+    /// <p>The number of headers in <code>RemoveHeadersConfig</code> in the response headers policy exceeds the maximum.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyRemoveHeadersInResponseHeadersPolicy(
+        crate::error::TooManyRemoveHeadersInResponseHeadersPolicy,
+    ),
     /// <p>You have reached the maximum number of response headers policies for this Amazon Web Services account.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyResponseHeadersPolicies(crate::error::TooManyResponseHeadersPolicies),
@@ -344,6 +359,8 @@ impl std::fmt::Display for Error {
             Error::CannotChangeImmutablePublicKeyFields(inner) => inner.fmt(f),
             Error::CloudFrontOriginAccessIdentityAlreadyExists(inner) => inner.fmt(f),
             Error::CloudFrontOriginAccessIdentityInUse(inner) => inner.fmt(f),
+            Error::ContinuousDeploymentPolicyAlreadyExists(inner) => inner.fmt(f),
+            Error::ContinuousDeploymentPolicyInUse(inner) => inner.fmt(f),
             Error::DistributionAlreadyExists(inner) => inner.fmt(f),
             Error::DistributionNotDisabled(inner) => inner.fmt(f),
             Error::FieldLevelEncryptionConfigAlreadyExists(inner) => inner.fmt(f),
@@ -392,6 +409,7 @@ impl std::fmt::Display for Error {
             Error::MonitoringSubscriptionAlreadyExists(inner) => inner.fmt(f),
             Error::NoSuchCachePolicy(inner) => inner.fmt(f),
             Error::NoSuchCloudFrontOriginAccessIdentity(inner) => inner.fmt(f),
+            Error::NoSuchContinuousDeploymentPolicy(inner) => inner.fmt(f),
             Error::NoSuchDistribution(inner) => inner.fmt(f),
             Error::NoSuchFieldLevelEncryptionConfig(inner) => inner.fmt(f),
             Error::NoSuchFieldLevelEncryptionProfile(inner) => inner.fmt(f),
@@ -420,6 +438,7 @@ impl std::fmt::Display for Error {
             Error::ResourceInUse(inner) => inner.fmt(f),
             Error::ResponseHeadersPolicyAlreadyExists(inner) => inner.fmt(f),
             Error::ResponseHeadersPolicyInUse(inner) => inner.fmt(f),
+            Error::StagingDistributionInUse(inner) => inner.fmt(f),
             Error::StreamingDistributionAlreadyExists(inner) => inner.fmt(f),
             Error::StreamingDistributionNotDisabled(inner) => inner.fmt(f),
             Error::TestFunctionFailed(inner) => inner.fmt(f),
@@ -428,6 +447,7 @@ impl std::fmt::Display for Error {
             Error::TooManyCachePolicies(inner) => inner.fmt(f),
             Error::TooManyCertificates(inner) => inner.fmt(f),
             Error::TooManyCloudFrontOriginAccessIdentities(inner) => inner.fmt(f),
+            Error::TooManyContinuousDeploymentPolicies(inner) => inner.fmt(f),
             Error::TooManyCookieNamesInWhiteList(inner) => inner.fmt(f),
             Error::TooManyCookiesInCachePolicy(inner) => inner.fmt(f),
             Error::TooManyCookiesInOriginRequestPolicy(inner) => inner.fmt(f),
@@ -471,6 +491,7 @@ impl std::fmt::Display for Error {
             Error::TooManyQueryStringsInCachePolicy(inner) => inner.fmt(f),
             Error::TooManyQueryStringsInOriginRequestPolicy(inner) => inner.fmt(f),
             Error::TooManyRealtimeLogConfigs(inner) => inner.fmt(f),
+            Error::TooManyRemoveHeadersInResponseHeadersPolicy(inner) => inner.fmt(f),
             Error::TooManyResponseHeadersPolicies(inner) => inner.fmt(f),
             Error::TooManyStreamingDistributionCnamEs(inner) => inner.fmt(f),
             Error::TooManyStreamingDistributions(inner) => inner.fmt(f),
@@ -516,6 +537,91 @@ impl From<crate::error::AssociateAliasError> for Error {
             crate::error::AssociateAliasErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CopyDistributionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CopyDistributionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CopyDistributionError> for Error {
+    fn from(err: crate::error::CopyDistributionError) -> Self {
+        match err.kind {
+            crate::error::CopyDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::CopyDistributionErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
+            crate::error::CopyDistributionErrorKind::DistributionAlreadyExists(inner) => Error::DistributionAlreadyExists(inner),
+            crate::error::CopyDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
+            crate::error::CopyDistributionErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::CopyDistributionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CopyDistributionErrorKind::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
+            crate::error::CopyDistributionErrorKind::InvalidErrorCode(inner) => Error::InvalidErrorCode(inner),
+            crate::error::CopyDistributionErrorKind::InvalidForwardCookies(inner) => Error::InvalidForwardCookies(inner),
+            crate::error::CopyDistributionErrorKind::InvalidFunctionAssociation(inner) => Error::InvalidFunctionAssociation(inner),
+            crate::error::CopyDistributionErrorKind::InvalidGeoRestrictionParameter(inner) => Error::InvalidGeoRestrictionParameter(inner),
+            crate::error::CopyDistributionErrorKind::InvalidHeadersForS3Origin(inner) => Error::InvalidHeadersForS3Origin(inner),
+            crate::error::CopyDistributionErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::CopyDistributionErrorKind::InvalidLambdaFunctionAssociation(inner) => Error::InvalidLambdaFunctionAssociation(inner),
+            crate::error::CopyDistributionErrorKind::InvalidLocationCode(inner) => Error::InvalidLocationCode(inner),
+            crate::error::CopyDistributionErrorKind::InvalidMinimumProtocolVersion(inner) => Error::InvalidMinimumProtocolVersion(inner),
+            crate::error::CopyDistributionErrorKind::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
+            crate::error::CopyDistributionErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
+            crate::error::CopyDistributionErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
+            crate::error::CopyDistributionErrorKind::InvalidOriginKeepaliveTimeout(inner) => Error::InvalidOriginKeepaliveTimeout(inner),
+            crate::error::CopyDistributionErrorKind::InvalidOriginReadTimeout(inner) => Error::InvalidOriginReadTimeout(inner),
+            crate::error::CopyDistributionErrorKind::InvalidProtocolSettings(inner) => Error::InvalidProtocolSettings(inner),
+            crate::error::CopyDistributionErrorKind::InvalidQueryStringParameters(inner) => Error::InvalidQueryStringParameters(inner),
+            crate::error::CopyDistributionErrorKind::InvalidRelativePath(inner) => Error::InvalidRelativePath(inner),
+            crate::error::CopyDistributionErrorKind::InvalidRequiredProtocol(inner) => Error::InvalidRequiredProtocol(inner),
+            crate::error::CopyDistributionErrorKind::InvalidResponseCode(inner) => Error::InvalidResponseCode(inner),
+            crate::error::CopyDistributionErrorKind::InvalidTtlOrder(inner) => Error::InvalidTtlOrder(inner),
+            crate::error::CopyDistributionErrorKind::InvalidViewerCertificate(inner) => Error::InvalidViewerCertificate(inner),
+            crate::error::CopyDistributionErrorKind::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
+            crate::error::CopyDistributionErrorKind::MissingBody(inner) => Error::MissingBody(inner),
+            crate::error::CopyDistributionErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::error::CopyDistributionErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::error::CopyDistributionErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
+            crate::error::CopyDistributionErrorKind::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
+            crate::error::CopyDistributionErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
+            crate::error::CopyDistributionErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
+            crate::error::CopyDistributionErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::error::CopyDistributionErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::CopyDistributionErrorKind::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
+            crate::error::CopyDistributionErrorKind::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
+            crate::error::CopyDistributionErrorKind::TooManyCertificates(inner) => Error::TooManyCertificates(inner),
+            crate::error::CopyDistributionErrorKind::TooManyCookieNamesInWhiteList(inner) => Error::TooManyCookieNamesInWhiteList(inner),
+            crate::error::CopyDistributionErrorKind::TooManyDistributionCnamEs(inner) => Error::TooManyDistributionCnamEs(inner),
+            crate::error::CopyDistributionErrorKind::TooManyDistributions(inner) => Error::TooManyDistributions(inner),
+            crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy(inner) => Error::TooManyDistributionsAssociatedToCachePolicy(inner),
+            crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
+            crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
+            crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
+            crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
+            crate::error::CopyDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
+            crate::error::CopyDistributionErrorKind::TooManyDistributionsWithLambdaAssociations(inner) => Error::TooManyDistributionsWithLambdaAssociations(inner),
+            crate::error::CopyDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn(inner) => Error::TooManyDistributionsWithSingleFunctionArn(inner),
+            crate::error::CopyDistributionErrorKind::TooManyFunctionAssociations(inner) => Error::TooManyFunctionAssociations(inner),
+            crate::error::CopyDistributionErrorKind::TooManyHeadersInForwardedValues(inner) => Error::TooManyHeadersInForwardedValues(inner),
+            crate::error::CopyDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution(inner) => Error::TooManyKeyGroupsAssociatedToDistribution(inner),
+            crate::error::CopyDistributionErrorKind::TooManyLambdaFunctionAssociations(inner) => Error::TooManyLambdaFunctionAssociations(inner),
+            crate::error::CopyDistributionErrorKind::TooManyOriginCustomHeaders(inner) => Error::TooManyOriginCustomHeaders(inner),
+            crate::error::CopyDistributionErrorKind::TooManyOriginGroupsPerDistribution(inner) => Error::TooManyOriginGroupsPerDistribution(inner),
+            crate::error::CopyDistributionErrorKind::TooManyOrigins(inner) => Error::TooManyOrigins(inner),
+            crate::error::CopyDistributionErrorKind::TooManyQueryStringParameters(inner) => Error::TooManyQueryStringParameters(inner),
+            crate::error::CopyDistributionErrorKind::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
+            crate::error::CopyDistributionErrorKind::TrustedKeyGroupDoesNotExist(inner) => Error::TrustedKeyGroupDoesNotExist(inner),
+            crate::error::CopyDistributionErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
+            crate::error::CopyDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -603,6 +709,39 @@ impl From<crate::error::CreateCloudFrontOriginAccessIdentityError> for Error {
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::CreateContinuousDeploymentPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CreateContinuousDeploymentPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateContinuousDeploymentPolicyError> for Error {
+    fn from(err: crate::error::CreateContinuousDeploymentPolicyError) -> Self {
+        match err.kind {
+            crate::error::CreateContinuousDeploymentPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::CreateContinuousDeploymentPolicyErrorKind::ContinuousDeploymentPolicyAlreadyExists(inner) => Error::ContinuousDeploymentPolicyAlreadyExists(inner),
+            crate::error::CreateContinuousDeploymentPolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::CreateContinuousDeploymentPolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateContinuousDeploymentPolicyErrorKind::StagingDistributionInUse(inner) => Error::StagingDistributionInUse(inner),
+            crate::error::CreateContinuousDeploymentPolicyErrorKind::TooManyContinuousDeploymentPolicies(inner) => Error::TooManyContinuousDeploymentPolicies(inner),
+            crate::error::CreateContinuousDeploymentPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDistributionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -623,6 +762,7 @@ impl From<crate::error::CreateDistributionError> for Error {
         match err.kind {
             crate::error::CreateDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::error::CreateDistributionErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
+            crate::error::CreateDistributionErrorKind::ContinuousDeploymentPolicyInUse(inner) => Error::ContinuousDeploymentPolicyInUse(inner),
             crate::error::CreateDistributionErrorKind::DistributionAlreadyExists(inner) => Error::DistributionAlreadyExists(inner),
             crate::error::CreateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
             crate::error::CreateDistributionErrorKind::IllegalOriginAccessConfiguration(inner) => Error::IllegalOriginAccessConfiguration(inner),
@@ -653,6 +793,7 @@ impl From<crate::error::CreateDistributionError> for Error {
             crate::error::CreateDistributionErrorKind::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
             crate::error::CreateDistributionErrorKind::MissingBody(inner) => Error::MissingBody(inner),
             crate::error::CreateDistributionErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::error::CreateDistributionErrorKind::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
             crate::error::CreateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
             crate::error::CreateDistributionErrorKind::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
             crate::error::CreateDistributionErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
@@ -709,6 +850,7 @@ impl From<crate::error::CreateDistributionWithTagsError> for Error {
         match err.kind {
             crate::error::CreateDistributionWithTagsErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::error::CreateDistributionWithTagsErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::ContinuousDeploymentPolicyInUse(inner) => Error::ContinuousDeploymentPolicyInUse(inner),
             crate::error::CreateDistributionWithTagsErrorKind::DistributionAlreadyExists(inner) => Error::DistributionAlreadyExists(inner),
             crate::error::CreateDistributionWithTagsErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
             crate::error::CreateDistributionWithTagsErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
@@ -739,6 +881,7 @@ impl From<crate::error::CreateDistributionWithTagsError> for Error {
             crate::error::CreateDistributionWithTagsErrorKind::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
             crate::error::CreateDistributionWithTagsErrorKind::MissingBody(inner) => Error::MissingBody(inner),
             crate::error::CreateDistributionWithTagsErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
             crate::error::CreateDistributionWithTagsErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
             crate::error::CreateDistributionWithTagsErrorKind::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
             crate::error::CreateDistributionWithTagsErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
@@ -1144,6 +1287,7 @@ impl From<crate::error::CreateResponseHeadersPolicyError> for Error {
             crate::error::CreateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(inner) => Error::ResponseHeadersPolicyAlreadyExists(inner),
             crate::error::CreateResponseHeadersPolicyErrorKind::TooLongCspInResponseHeadersPolicy(inner) => Error::TooLongCspInResponseHeadersPolicy(inner),
             crate::error::CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(inner) => Error::TooManyCustomHeadersInResponseHeadersPolicy(inner),
+            crate::error::CreateResponseHeadersPolicyErrorKind::TooManyRemoveHeadersInResponseHeadersPolicy(inner) => Error::TooManyRemoveHeadersInResponseHeadersPolicy(inner),
             crate::error::CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies(inner) => Error::TooManyResponseHeadersPolicies(inner),
             crate::error::CreateResponseHeadersPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
@@ -1305,6 +1449,39 @@ impl From<crate::error::DeleteCloudFrontOriginAccessIdentityError> for Error {
             crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity(inner) => Error::NoSuchCloudFrontOriginAccessIdentity(inner),
             crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
             crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DeleteContinuousDeploymentPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeleteContinuousDeploymentPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteContinuousDeploymentPolicyError> for Error {
+    fn from(err: crate::error::DeleteContinuousDeploymentPolicyError) -> Self {
+        match err.kind {
+            crate::error::DeleteContinuousDeploymentPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::DeleteContinuousDeploymentPolicyErrorKind::ContinuousDeploymentPolicyInUse(inner) => Error::ContinuousDeploymentPolicyInUse(inner),
+            crate::error::DeleteContinuousDeploymentPolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::DeleteContinuousDeploymentPolicyErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::DeleteContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
+            crate::error::DeleteContinuousDeploymentPolicyErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::DeleteContinuousDeploymentPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1895,6 +2072,64 @@ impl From<crate::error::GetCloudFrontOriginAccessIdentityConfigError> for Error 
             crate::error::GetCloudFrontOriginAccessIdentityConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::error::GetCloudFrontOriginAccessIdentityConfigErrorKind::NoSuchCloudFrontOriginAccessIdentity(inner) => Error::NoSuchCloudFrontOriginAccessIdentity(inner),
             crate::error::GetCloudFrontOriginAccessIdentityConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContinuousDeploymentPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetContinuousDeploymentPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetContinuousDeploymentPolicyError> for Error {
+    fn from(err: crate::error::GetContinuousDeploymentPolicyError) -> Self {
+        match err.kind {
+            crate::error::GetContinuousDeploymentPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
+            crate::error::GetContinuousDeploymentPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::GetContinuousDeploymentPolicyConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetContinuousDeploymentPolicyConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetContinuousDeploymentPolicyConfigError> for Error {
+    fn from(err: crate::error::GetContinuousDeploymentPolicyConfigError) -> Self {
+        match err.kind {
+            crate::error::GetContinuousDeploymentPolicyConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetContinuousDeploymentPolicyConfigErrorKind::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
+            crate::error::GetContinuousDeploymentPolicyConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -2666,6 +2901,36 @@ impl From<crate::error::ListConflictingAliasesError> for Error {
             crate::error::ListConflictingAliasesErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::ListContinuousDeploymentPoliciesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListContinuousDeploymentPoliciesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListContinuousDeploymentPoliciesError> for Error {
+    fn from(err: crate::error::ListContinuousDeploymentPoliciesError) -> Self {
+        match err.kind {
+            crate::error::ListContinuousDeploymentPoliciesErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::ListContinuousDeploymentPoliciesErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListContinuousDeploymentPoliciesErrorKind::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
+            crate::error::ListContinuousDeploymentPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -3503,6 +3768,40 @@ impl From<crate::error::UpdateCloudFrontOriginAccessIdentityError> for Error {
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::UpdateContinuousDeploymentPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateContinuousDeploymentPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateContinuousDeploymentPolicyError> for Error {
+    fn from(err: crate::error::UpdateContinuousDeploymentPolicyError) -> Self {
+        match err.kind {
+            crate::error::UpdateContinuousDeploymentPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::UpdateContinuousDeploymentPolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::UpdateContinuousDeploymentPolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdateContinuousDeploymentPolicyErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::UpdateContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
+            crate::error::UpdateContinuousDeploymentPolicyErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::UpdateContinuousDeploymentPolicyErrorKind::StagingDistributionInUse(inner) => Error::StagingDistributionInUse(inner),
+            crate::error::UpdateContinuousDeploymentPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDistributionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3523,6 +3822,7 @@ impl From<crate::error::UpdateDistributionError> for Error {
         match err.kind {
             crate::error::UpdateDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::error::UpdateDistributionErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
+            crate::error::UpdateDistributionErrorKind::ContinuousDeploymentPolicyInUse(inner) => Error::ContinuousDeploymentPolicyInUse(inner),
             crate::error::UpdateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
             crate::error::UpdateDistributionErrorKind::IllegalOriginAccessConfiguration(inner) => Error::IllegalOriginAccessConfiguration(inner),
             crate::error::UpdateDistributionErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
@@ -3552,6 +3852,7 @@ impl From<crate::error::UpdateDistributionError> for Error {
             crate::error::UpdateDistributionErrorKind::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
             crate::error::UpdateDistributionErrorKind::MissingBody(inner) => Error::MissingBody(inner),
             crate::error::UpdateDistributionErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::error::UpdateDistributionErrorKind::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
             crate::error::UpdateDistributionErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
             crate::error::UpdateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
             crate::error::UpdateDistributionErrorKind::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
@@ -3560,6 +3861,7 @@ impl From<crate::error::UpdateDistributionError> for Error {
             crate::error::UpdateDistributionErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
             crate::error::UpdateDistributionErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
             crate::error::UpdateDistributionErrorKind::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
+            crate::error::UpdateDistributionErrorKind::StagingDistributionInUse(inner) => Error::StagingDistributionInUse(inner),
             crate::error::UpdateDistributionErrorKind::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
             crate::error::UpdateDistributionErrorKind::TooManyCertificates(inner) => Error::TooManyCertificates(inner),
             crate::error::UpdateDistributionErrorKind::TooManyCookieNamesInWhiteList(inner) => Error::TooManyCookieNamesInWhiteList(inner),
@@ -3584,6 +3886,97 @@ impl From<crate::error::UpdateDistributionError> for Error {
             crate::error::UpdateDistributionErrorKind::TrustedKeyGroupDoesNotExist(inner) => Error::TrustedKeyGroupDoesNotExist(inner),
             crate::error::UpdateDistributionErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
             crate::error::UpdateDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::UpdateDistributionWithStagingConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateDistributionWithStagingConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateDistributionWithStagingConfigError> for Error {
+    fn from(err: crate::error::UpdateDistributionWithStagingConfigError) -> Self {
+        match err.kind {
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidErrorCode(inner) => Error::InvalidErrorCode(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidForwardCookies(inner) => Error::InvalidForwardCookies(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidFunctionAssociation(inner) => Error::InvalidFunctionAssociation(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidGeoRestrictionParameter(inner) => Error::InvalidGeoRestrictionParameter(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidHeadersForS3Origin(inner) => Error::InvalidHeadersForS3Origin(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidLambdaFunctionAssociation(inner) => Error::InvalidLambdaFunctionAssociation(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidLocationCode(inner) => Error::InvalidLocationCode(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidMinimumProtocolVersion(inner) => Error::InvalidMinimumProtocolVersion(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidOriginKeepaliveTimeout(inner) => Error::InvalidOriginKeepaliveTimeout(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidOriginReadTimeout(inner) => Error::InvalidOriginReadTimeout(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidQueryStringParameters(inner) => Error::InvalidQueryStringParameters(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidRelativePath(inner) => Error::InvalidRelativePath(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidRequiredProtocol(inner) => Error::InvalidRequiredProtocol(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidResponseCode(inner) => Error::InvalidResponseCode(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidTtlOrder(inner) => Error::InvalidTtlOrder(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidViewerCertificate(inner) => Error::InvalidViewerCertificate(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::MissingBody(inner) => Error::MissingBody(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyCertificates(inner) => Error::TooManyCertificates(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyCookieNamesInWhiteList(inner) => Error::TooManyCookieNamesInWhiteList(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionCnamEs(inner) => Error::TooManyDistributionCnamEs(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToCachePolicy(inner) => Error::TooManyDistributionsAssociatedToCachePolicy(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithLambdaAssociations(inner) => Error::TooManyDistributionsWithLambdaAssociations(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithSingleFunctionArn(inner) => Error::TooManyDistributionsWithSingleFunctionArn(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyFunctionAssociations(inner) => Error::TooManyFunctionAssociations(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyHeadersInForwardedValues(inner) => Error::TooManyHeadersInForwardedValues(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyKeyGroupsAssociatedToDistribution(inner) => Error::TooManyKeyGroupsAssociatedToDistribution(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyLambdaFunctionAssociations(inner) => Error::TooManyLambdaFunctionAssociations(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyOriginCustomHeaders(inner) => Error::TooManyOriginCustomHeaders(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyOriginGroupsPerDistribution(inner) => Error::TooManyOriginGroupsPerDistribution(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyOrigins(inner) => Error::TooManyOrigins(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyQueryStringParameters(inner) => Error::TooManyQueryStringParameters(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TrustedKeyGroupDoesNotExist(inner) => Error::TrustedKeyGroupDoesNotExist(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
+            crate::error::UpdateDistributionWithStagingConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -3930,6 +4323,7 @@ impl From<crate::error::UpdateResponseHeadersPolicyError> for Error {
             crate::error::UpdateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(inner) => Error::ResponseHeadersPolicyAlreadyExists(inner),
             crate::error::UpdateResponseHeadersPolicyErrorKind::TooLongCspInResponseHeadersPolicy(inner) => Error::TooLongCspInResponseHeadersPolicy(inner),
             crate::error::UpdateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(inner) => Error::TooManyCustomHeadersInResponseHeadersPolicy(inner),
+            crate::error::UpdateResponseHeadersPolicyErrorKind::TooManyRemoveHeadersInResponseHeadersPolicy(inner) => Error::TooManyRemoveHeadersInResponseHeadersPolicy(inner),
             crate::error::UpdateResponseHeadersPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }

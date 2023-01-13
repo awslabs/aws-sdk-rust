@@ -69,8 +69,28 @@ pub(crate) fn reflens_structure_crate_output_list_access_policies_output_next_to
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_asset_model_properties_output_next_token(
+    input: &crate::output::ListAssetModelPropertiesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_asset_models_output_next_token(
     input: &crate::output::ListAssetModelsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_asset_properties_output_next_token(
+    input: &crate::output::ListAssetPropertiesOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -219,10 +239,30 @@ pub(crate) fn lens_structure_crate_output_list_access_policies_output_access_pol
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_list_asset_model_properties_output_asset_model_property_summaries(
+    input: crate::output::ListAssetModelPropertiesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AssetModelPropertySummary>> {
+    let input = match input.asset_model_property_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_asset_models_output_asset_model_summaries(
     input: crate::output::ListAssetModelsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::AssetModelSummary>> {
     let input = match input.asset_model_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_asset_properties_output_asset_property_summaries(
+    input: crate::output::ListAssetPropertiesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AssetPropertySummary>> {
+    let input = match input.asset_property_summaries {
         None => return None,
         Some(t) => t,
     };

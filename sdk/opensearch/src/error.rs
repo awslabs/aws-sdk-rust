@@ -360,6 +360,66 @@ impl BaseException {
     }
 }
 
+/// <p>An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP status code 409.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ConflictException {
+    /// <p>A description of the error.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ConflictException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConflictException")?;
+        if let Some(inner_7) = &self.message {
+            {
+                write!(f, ": {}", inner_7)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConflictException {}
+/// See [`ConflictException`](crate::error::ConflictException).
+pub mod conflict_exception {
+
+    /// A builder for [`ConflictException`](crate::error::ConflictException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A description of the error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A description of the error.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
+    }
+}
+
 /// <p>An exception for trying to create more than allowed resources or sub-resources. Gives http status code of 409.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -377,9 +437,9 @@ impl LimitExceededException {
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
-        if let Some(inner_7) = &self.message {
+        if let Some(inner_8) = &self.message {
             {
-                write!(f, ": {}", inner_7)?;
+                write!(f, ": {}", inner_8)?;
             }
         }
         Ok(())
@@ -437,9 +497,9 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_8) = &self.message {
+        if let Some(inner_9) = &self.message {
             {
-                write!(f, ": {}", inner_8)?;
+                write!(f, ": {}", inner_9)?;
             }
         }
         Ok(())
@@ -497,9 +557,9 @@ impl InvalidTypeException {
 impl std::fmt::Display for InvalidTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTypeException")?;
-        if let Some(inner_9) = &self.message {
+        if let Some(inner_10) = &self.message {
             {
-                write!(f, ": {}", inner_9)?;
+                write!(f, ": {}", inner_10)?;
             }
         }
         Ok(())
@@ -537,66 +597,6 @@ impl InvalidTypeException {
     /// Creates a new builder-style object to manufacture [`InvalidTypeException`](crate::error::InvalidTypeException).
     pub fn builder() -> crate::error::invalid_type_exception::Builder {
         crate::error::invalid_type_exception::Builder::default()
-    }
-}
-
-/// <p>An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP status code 409.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
-    /// <p>A description of the error.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl ConflictException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConflictException")?;
-        if let Some(inner_10) = &self.message {
-            {
-                write!(f, ": {}", inner_10)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ConflictException {}
-/// See [`ConflictException`](crate::error::ConflictException).
-pub mod conflict_exception {
-
-    /// A builder for [`ConflictException`](crate::error::ConflictException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A description of the error.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A description of the error.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
-        pub fn build(self) -> crate::error::ConflictException {
-            crate::error::ConflictException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ConflictException {
-    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
-    pub fn builder() -> crate::error::conflict_exception::Builder {
-        crate::error::conflict_exception::Builder::default()
     }
 }
 
@@ -1073,6 +1073,177 @@ impl std::error::Error for AssociatePackageError {
             AssociatePackageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AssociatePackageErrorKind::ValidationException(_inner) => Some(_inner),
             AssociatePackageErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `AuthorizeVpcEndpointAccess` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AuthorizeVpcEndpointAccessError {
+    /// Kind of error that occurred.
+    pub kind: AuthorizeVpcEndpointAccessErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AuthorizeVpcEndpointAccessError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AuthorizeVpcEndpointAccessErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `AuthorizeVpcEndpointAccess` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AuthorizeVpcEndpointAccessErrorKind {
+    /// <p>An error occurred while processing the request.</p>
+    BaseException(crate::error::BaseException),
+    /// <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>
+    DisabledOperationException(crate::error::DisabledOperationException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>An exception for trying to create more than allowed resources or sub-resources. Gives http status code of 409.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for AuthorizeVpcEndpointAccessError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AuthorizeVpcEndpointAccessErrorKind::BaseException(_inner) => _inner.fmt(f),
+            AuthorizeVpcEndpointAccessErrorKind::DisabledOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            AuthorizeVpcEndpointAccessErrorKind::InternalException(_inner) => _inner.fmt(f),
+            AuthorizeVpcEndpointAccessErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            AuthorizeVpcEndpointAccessErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            AuthorizeVpcEndpointAccessErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            AuthorizeVpcEndpointAccessErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AuthorizeVpcEndpointAccessError {
+    fn code(&self) -> Option<&str> {
+        AuthorizeVpcEndpointAccessError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AuthorizeVpcEndpointAccessError {
+    /// Creates a new `AuthorizeVpcEndpointAccessError`.
+    pub fn new(kind: AuthorizeVpcEndpointAccessErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AuthorizeVpcEndpointAccessError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AuthorizeVpcEndpointAccessErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AuthorizeVpcEndpointAccessError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AuthorizeVpcEndpointAccessErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AuthorizeVpcEndpointAccessErrorKind::BaseException`.
+    pub fn is_base_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AuthorizeVpcEndpointAccessErrorKind::BaseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AuthorizeVpcEndpointAccessErrorKind::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AuthorizeVpcEndpointAccessErrorKind::DisabledOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AuthorizeVpcEndpointAccessErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AuthorizeVpcEndpointAccessErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AuthorizeVpcEndpointAccessErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AuthorizeVpcEndpointAccessErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AuthorizeVpcEndpointAccessErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AuthorizeVpcEndpointAccessErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AuthorizeVpcEndpointAccessErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AuthorizeVpcEndpointAccessErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for AuthorizeVpcEndpointAccessError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AuthorizeVpcEndpointAccessErrorKind::BaseException(_inner) => Some(_inner),
+            AuthorizeVpcEndpointAccessErrorKind::DisabledOperationException(_inner) => Some(_inner),
+            AuthorizeVpcEndpointAccessErrorKind::InternalException(_inner) => Some(_inner),
+            AuthorizeVpcEndpointAccessErrorKind::LimitExceededException(_inner) => Some(_inner),
+            AuthorizeVpcEndpointAccessErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            AuthorizeVpcEndpointAccessErrorKind::ValidationException(_inner) => Some(_inner),
+            AuthorizeVpcEndpointAccessErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1695,6 +1866,160 @@ impl std::error::Error for CreatePackageError {
     }
 }
 
+/// Error type for the `CreateVpcEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateVpcEndpointError {
+    /// Kind of error that occurred.
+    pub kind: CreateVpcEndpointErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateVpcEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateVpcEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateVpcEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateVpcEndpointErrorKind {
+    /// <p>An error occurred while processing the request.</p>
+    BaseException(crate::error::BaseException),
+    /// <p>An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP status code 409.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>
+    DisabledOperationException(crate::error::DisabledOperationException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>An exception for trying to create more than allowed resources or sub-resources. Gives http status code of 409.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateVpcEndpointError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateVpcEndpointErrorKind::BaseException(_inner) => _inner.fmt(f),
+            CreateVpcEndpointErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateVpcEndpointErrorKind::DisabledOperationException(_inner) => _inner.fmt(f),
+            CreateVpcEndpointErrorKind::InternalException(_inner) => _inner.fmt(f),
+            CreateVpcEndpointErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateVpcEndpointErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateVpcEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateVpcEndpointError {
+    fn code(&self) -> Option<&str> {
+        CreateVpcEndpointError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateVpcEndpointError {
+    /// Creates a new `CreateVpcEndpointError`.
+    pub fn new(kind: CreateVpcEndpointErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateVpcEndpointError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateVpcEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateVpcEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateVpcEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateVpcEndpointErrorKind::BaseException`.
+    pub fn is_base_exception(&self) -> bool {
+        matches!(&self.kind, CreateVpcEndpointErrorKind::BaseException(_))
+    }
+    /// Returns `true` if the error kind is `CreateVpcEndpointErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateVpcEndpointErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateVpcEndpointErrorKind::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVpcEndpointErrorKind::DisabledOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateVpcEndpointErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(&self.kind, CreateVpcEndpointErrorKind::InternalException(_))
+    }
+    /// Returns `true` if the error kind is `CreateVpcEndpointErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVpcEndpointErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateVpcEndpointErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVpcEndpointErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CreateVpcEndpointError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateVpcEndpointErrorKind::BaseException(_inner) => Some(_inner),
+            CreateVpcEndpointErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateVpcEndpointErrorKind::DisabledOperationException(_inner) => Some(_inner),
+            CreateVpcEndpointErrorKind::InternalException(_inner) => Some(_inner),
+            CreateVpcEndpointErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateVpcEndpointErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateVpcEndpointErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DeleteDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2219,6 +2544,141 @@ impl std::error::Error for DeletePackageError {
             DeletePackageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeletePackageErrorKind::ValidationException(_inner) => Some(_inner),
             DeletePackageErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeleteVpcEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteVpcEndpointError {
+    /// Kind of error that occurred.
+    pub kind: DeleteVpcEndpointErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteVpcEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteVpcEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteVpcEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteVpcEndpointErrorKind {
+    /// <p>An error occurred while processing the request.</p>
+    BaseException(crate::error::BaseException),
+    /// <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>
+    DisabledOperationException(crate::error::DisabledOperationException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteVpcEndpointError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteVpcEndpointErrorKind::BaseException(_inner) => _inner.fmt(f),
+            DeleteVpcEndpointErrorKind::DisabledOperationException(_inner) => _inner.fmt(f),
+            DeleteVpcEndpointErrorKind::InternalException(_inner) => _inner.fmt(f),
+            DeleteVpcEndpointErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteVpcEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteVpcEndpointError {
+    fn code(&self) -> Option<&str> {
+        DeleteVpcEndpointError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteVpcEndpointError {
+    /// Creates a new `DeleteVpcEndpointError`.
+    pub fn new(kind: DeleteVpcEndpointErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteVpcEndpointError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteVpcEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteVpcEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteVpcEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteVpcEndpointErrorKind::BaseException`.
+    pub fn is_base_exception(&self) -> bool {
+        matches!(&self.kind, DeleteVpcEndpointErrorKind::BaseException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteVpcEndpointErrorKind::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVpcEndpointErrorKind::DisabledOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteVpcEndpointErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(&self.kind, DeleteVpcEndpointErrorKind::InternalException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteVpcEndpointErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVpcEndpointErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteVpcEndpointError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteVpcEndpointErrorKind::BaseException(_inner) => Some(_inner),
+            DeleteVpcEndpointErrorKind::DisabledOperationException(_inner) => Some(_inner),
+            DeleteVpcEndpointErrorKind::InternalException(_inner) => Some(_inner),
+            DeleteVpcEndpointErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteVpcEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3796,6 +4256,148 @@ impl std::error::Error for DescribeReservedInstancesError {
             DescribeReservedInstancesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeReservedInstancesErrorKind::ValidationException(_inner) => Some(_inner),
             DescribeReservedInstancesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeVpcEndpoints` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeVpcEndpointsError {
+    /// Kind of error that occurred.
+    pub kind: DescribeVpcEndpointsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeVpcEndpointsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeVpcEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeVpcEndpoints` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeVpcEndpointsErrorKind {
+    /// <p>An error occurred while processing the request.</p>
+    BaseException(crate::error::BaseException),
+    /// <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>
+    DisabledOperationException(crate::error::DisabledOperationException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeVpcEndpointsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeVpcEndpointsErrorKind::BaseException(_inner) => _inner.fmt(f),
+            DescribeVpcEndpointsErrorKind::DisabledOperationException(_inner) => _inner.fmt(f),
+            DescribeVpcEndpointsErrorKind::InternalException(_inner) => _inner.fmt(f),
+            DescribeVpcEndpointsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribeVpcEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeVpcEndpointsError {
+    fn code(&self) -> Option<&str> {
+        DescribeVpcEndpointsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeVpcEndpointsError {
+    /// Creates a new `DescribeVpcEndpointsError`.
+    pub fn new(kind: DescribeVpcEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeVpcEndpointsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeVpcEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeVpcEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeVpcEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeVpcEndpointsErrorKind::BaseException`.
+    pub fn is_base_exception(&self) -> bool {
+        matches!(&self.kind, DescribeVpcEndpointsErrorKind::BaseException(_))
+    }
+    /// Returns `true` if the error kind is `DescribeVpcEndpointsErrorKind::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVpcEndpointsErrorKind::DisabledOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeVpcEndpointsErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVpcEndpointsErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeVpcEndpointsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVpcEndpointsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeVpcEndpointsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeVpcEndpointsErrorKind::BaseException(_inner) => Some(_inner),
+            DescribeVpcEndpointsErrorKind::DisabledOperationException(_inner) => Some(_inner),
+            DescribeVpcEndpointsErrorKind::InternalException(_inner) => Some(_inner),
+            DescribeVpcEndpointsErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeVpcEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5382,6 +5984,419 @@ impl std::error::Error for ListVersionsError {
     }
 }
 
+/// Error type for the `ListVpcEndpointAccess` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListVpcEndpointAccessError {
+    /// Kind of error that occurred.
+    pub kind: ListVpcEndpointAccessErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListVpcEndpointAccessError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListVpcEndpointAccessErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListVpcEndpointAccess` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListVpcEndpointAccessErrorKind {
+    /// <p>An error occurred while processing the request.</p>
+    BaseException(crate::error::BaseException),
+    /// <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>
+    DisabledOperationException(crate::error::DisabledOperationException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListVpcEndpointAccessError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListVpcEndpointAccessErrorKind::BaseException(_inner) => _inner.fmt(f),
+            ListVpcEndpointAccessErrorKind::DisabledOperationException(_inner) => _inner.fmt(f),
+            ListVpcEndpointAccessErrorKind::InternalException(_inner) => _inner.fmt(f),
+            ListVpcEndpointAccessErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListVpcEndpointAccessErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListVpcEndpointAccessError {
+    fn code(&self) -> Option<&str> {
+        ListVpcEndpointAccessError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListVpcEndpointAccessError {
+    /// Creates a new `ListVpcEndpointAccessError`.
+    pub fn new(kind: ListVpcEndpointAccessErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListVpcEndpointAccessError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListVpcEndpointAccessErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListVpcEndpointAccessError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListVpcEndpointAccessErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListVpcEndpointAccessErrorKind::BaseException`.
+    pub fn is_base_exception(&self) -> bool {
+        matches!(&self.kind, ListVpcEndpointAccessErrorKind::BaseException(_))
+    }
+    /// Returns `true` if the error kind is `ListVpcEndpointAccessErrorKind::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVpcEndpointAccessErrorKind::DisabledOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListVpcEndpointAccessErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVpcEndpointAccessErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListVpcEndpointAccessErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVpcEndpointAccessErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for ListVpcEndpointAccessError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListVpcEndpointAccessErrorKind::BaseException(_inner) => Some(_inner),
+            ListVpcEndpointAccessErrorKind::DisabledOperationException(_inner) => Some(_inner),
+            ListVpcEndpointAccessErrorKind::InternalException(_inner) => Some(_inner),
+            ListVpcEndpointAccessErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListVpcEndpointAccessErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListVpcEndpoints` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListVpcEndpointsError {
+    /// Kind of error that occurred.
+    pub kind: ListVpcEndpointsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListVpcEndpointsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListVpcEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListVpcEndpoints` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListVpcEndpointsErrorKind {
+    /// <p>An error occurred while processing the request.</p>
+    BaseException(crate::error::BaseException),
+    /// <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>
+    DisabledOperationException(crate::error::DisabledOperationException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
+    InternalException(crate::error::InternalException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListVpcEndpointsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListVpcEndpointsErrorKind::BaseException(_inner) => _inner.fmt(f),
+            ListVpcEndpointsErrorKind::DisabledOperationException(_inner) => _inner.fmt(f),
+            ListVpcEndpointsErrorKind::InternalException(_inner) => _inner.fmt(f),
+            ListVpcEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListVpcEndpointsError {
+    fn code(&self) -> Option<&str> {
+        ListVpcEndpointsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListVpcEndpointsError {
+    /// Creates a new `ListVpcEndpointsError`.
+    pub fn new(kind: ListVpcEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListVpcEndpointsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListVpcEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListVpcEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListVpcEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListVpcEndpointsErrorKind::BaseException`.
+    pub fn is_base_exception(&self) -> bool {
+        matches!(&self.kind, ListVpcEndpointsErrorKind::BaseException(_))
+    }
+    /// Returns `true` if the error kind is `ListVpcEndpointsErrorKind::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVpcEndpointsErrorKind::DisabledOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListVpcEndpointsErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(&self.kind, ListVpcEndpointsErrorKind::InternalException(_))
+    }
+}
+impl std::error::Error for ListVpcEndpointsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListVpcEndpointsErrorKind::BaseException(_inner) => Some(_inner),
+            ListVpcEndpointsErrorKind::DisabledOperationException(_inner) => Some(_inner),
+            ListVpcEndpointsErrorKind::InternalException(_inner) => Some(_inner),
+            ListVpcEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListVpcEndpointsForDomain` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListVpcEndpointsForDomainError {
+    /// Kind of error that occurred.
+    pub kind: ListVpcEndpointsForDomainErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListVpcEndpointsForDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListVpcEndpointsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListVpcEndpointsForDomain` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListVpcEndpointsForDomainErrorKind {
+    /// <p>An error occurred while processing the request.</p>
+    BaseException(crate::error::BaseException),
+    /// <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>
+    DisabledOperationException(crate::error::DisabledOperationException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListVpcEndpointsForDomainError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListVpcEndpointsForDomainErrorKind::BaseException(_inner) => _inner.fmt(f),
+            ListVpcEndpointsForDomainErrorKind::DisabledOperationException(_inner) => _inner.fmt(f),
+            ListVpcEndpointsForDomainErrorKind::InternalException(_inner) => _inner.fmt(f),
+            ListVpcEndpointsForDomainErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListVpcEndpointsForDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListVpcEndpointsForDomainError {
+    fn code(&self) -> Option<&str> {
+        ListVpcEndpointsForDomainError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListVpcEndpointsForDomainError {
+    /// Creates a new `ListVpcEndpointsForDomainError`.
+    pub fn new(kind: ListVpcEndpointsForDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListVpcEndpointsForDomainError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListVpcEndpointsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListVpcEndpointsForDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListVpcEndpointsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListVpcEndpointsForDomainErrorKind::BaseException`.
+    pub fn is_base_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVpcEndpointsForDomainErrorKind::BaseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListVpcEndpointsForDomainErrorKind::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVpcEndpointsForDomainErrorKind::DisabledOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListVpcEndpointsForDomainErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVpcEndpointsForDomainErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListVpcEndpointsForDomainErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVpcEndpointsForDomainErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for ListVpcEndpointsForDomainError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListVpcEndpointsForDomainErrorKind::BaseException(_inner) => Some(_inner),
+            ListVpcEndpointsForDomainErrorKind::DisabledOperationException(_inner) => Some(_inner),
+            ListVpcEndpointsForDomainErrorKind::InternalException(_inner) => Some(_inner),
+            ListVpcEndpointsForDomainErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListVpcEndpointsForDomainErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `PurchaseReservedInstanceOffering` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5810,6 +6825,162 @@ impl std::error::Error for RemoveTagsError {
             RemoveTagsErrorKind::InternalException(_inner) => Some(_inner),
             RemoveTagsErrorKind::ValidationException(_inner) => Some(_inner),
             RemoveTagsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `RevokeVpcEndpointAccess` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RevokeVpcEndpointAccessError {
+    /// Kind of error that occurred.
+    pub kind: RevokeVpcEndpointAccessErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RevokeVpcEndpointAccessError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RevokeVpcEndpointAccessErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `RevokeVpcEndpointAccess` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RevokeVpcEndpointAccessErrorKind {
+    /// <p>An error occurred while processing the request.</p>
+    BaseException(crate::error::BaseException),
+    /// <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>
+    DisabledOperationException(crate::error::DisabledOperationException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for RevokeVpcEndpointAccessError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RevokeVpcEndpointAccessErrorKind::BaseException(_inner) => _inner.fmt(f),
+            RevokeVpcEndpointAccessErrorKind::DisabledOperationException(_inner) => _inner.fmt(f),
+            RevokeVpcEndpointAccessErrorKind::InternalException(_inner) => _inner.fmt(f),
+            RevokeVpcEndpointAccessErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            RevokeVpcEndpointAccessErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            RevokeVpcEndpointAccessErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RevokeVpcEndpointAccessError {
+    fn code(&self) -> Option<&str> {
+        RevokeVpcEndpointAccessError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RevokeVpcEndpointAccessError {
+    /// Creates a new `RevokeVpcEndpointAccessError`.
+    pub fn new(kind: RevokeVpcEndpointAccessErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RevokeVpcEndpointAccessError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RevokeVpcEndpointAccessErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RevokeVpcEndpointAccessError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RevokeVpcEndpointAccessErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `RevokeVpcEndpointAccessErrorKind::BaseException`.
+    pub fn is_base_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RevokeVpcEndpointAccessErrorKind::BaseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RevokeVpcEndpointAccessErrorKind::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RevokeVpcEndpointAccessErrorKind::DisabledOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RevokeVpcEndpointAccessErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RevokeVpcEndpointAccessErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RevokeVpcEndpointAccessErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RevokeVpcEndpointAccessErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RevokeVpcEndpointAccessErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RevokeVpcEndpointAccessErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for RevokeVpcEndpointAccessError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RevokeVpcEndpointAccessErrorKind::BaseException(_inner) => Some(_inner),
+            RevokeVpcEndpointAccessErrorKind::DisabledOperationException(_inner) => Some(_inner),
+            RevokeVpcEndpointAccessErrorKind::InternalException(_inner) => Some(_inner),
+            RevokeVpcEndpointAccessErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            RevokeVpcEndpointAccessErrorKind::ValidationException(_inner) => Some(_inner),
+            RevokeVpcEndpointAccessErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6268,6 +7439,160 @@ impl std::error::Error for UpdatePackageError {
             UpdatePackageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdatePackageErrorKind::ValidationException(_inner) => Some(_inner),
             UpdatePackageErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateVpcEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateVpcEndpointError {
+    /// Kind of error that occurred.
+    pub kind: UpdateVpcEndpointErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateVpcEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateVpcEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateVpcEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateVpcEndpointErrorKind {
+    /// <p>An error occurred while processing the request.</p>
+    BaseException(crate::error::BaseException),
+    /// <p>An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP status code 409.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>
+    DisabledOperationException(crate::error::DisabledOperationException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateVpcEndpointError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateVpcEndpointErrorKind::BaseException(_inner) => _inner.fmt(f),
+            UpdateVpcEndpointErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateVpcEndpointErrorKind::DisabledOperationException(_inner) => _inner.fmt(f),
+            UpdateVpcEndpointErrorKind::InternalException(_inner) => _inner.fmt(f),
+            UpdateVpcEndpointErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateVpcEndpointErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateVpcEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateVpcEndpointError {
+    fn code(&self) -> Option<&str> {
+        UpdateVpcEndpointError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateVpcEndpointError {
+    /// Creates a new `UpdateVpcEndpointError`.
+    pub fn new(kind: UpdateVpcEndpointErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateVpcEndpointError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateVpcEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateVpcEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateVpcEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateVpcEndpointErrorKind::BaseException`.
+    pub fn is_base_exception(&self) -> bool {
+        matches!(&self.kind, UpdateVpcEndpointErrorKind::BaseException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateVpcEndpointErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateVpcEndpointErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateVpcEndpointErrorKind::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateVpcEndpointErrorKind::DisabledOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateVpcEndpointErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(&self.kind, UpdateVpcEndpointErrorKind::InternalException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateVpcEndpointErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateVpcEndpointErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateVpcEndpointErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateVpcEndpointErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateVpcEndpointError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateVpcEndpointErrorKind::BaseException(_inner) => Some(_inner),
+            UpdateVpcEndpointErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateVpcEndpointErrorKind::DisabledOperationException(_inner) => Some(_inner),
+            UpdateVpcEndpointErrorKind::InternalException(_inner) => Some(_inner),
+            UpdateVpcEndpointErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateVpcEndpointErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateVpcEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

@@ -19,6 +19,14 @@ impl ListAlarmRecommendationsPaginator {
         }
     }
 
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -119,6 +127,14 @@ impl ListAppAssessmentsPaginator {
             builder,
             stop_on_duplicate_token: true,
         }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.
@@ -223,6 +239,14 @@ impl ListAppComponentCompliancesPaginator {
         }
     }
 
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -323,6 +347,14 @@ impl ListAppComponentRecommendationsPaginator {
             builder,
             stop_on_duplicate_token: true,
         }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.
@@ -427,6 +459,14 @@ impl ListAppsPaginator {
         }
     }
 
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -527,6 +567,14 @@ impl ListAppVersionResourceMappingsPaginator {
             builder,
             stop_on_duplicate_token: true,
         }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.
@@ -631,6 +679,14 @@ impl ListAppVersionResourcesPaginator {
         }
     }
 
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -731,6 +787,14 @@ impl ListAppVersionsPaginator {
             builder,
             stop_on_duplicate_token: true,
         }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.
@@ -835,6 +899,14 @@ impl ListRecommendationTemplatesPaginator {
         }
     }
 
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -935,6 +1007,14 @@ impl ListResiliencyPoliciesPaginator {
             builder,
             stop_on_duplicate_token: true,
         }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.
@@ -1039,6 +1119,14 @@ impl ListSopRecommendationsPaginator {
         }
     }
 
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -1139,6 +1227,14 @@ impl ListSuggestedResiliencyPoliciesPaginator {
             builder,
             stop_on_duplicate_token: true,
         }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.
@@ -1243,6 +1339,14 @@ impl ListTestRecommendationsPaginator {
         }
     }
 
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -1343,6 +1447,14 @@ impl ListUnsupportedAppVersionResourcesPaginator {
             builder,
             stop_on_duplicate_token: true,
         }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.

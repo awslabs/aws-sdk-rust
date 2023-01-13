@@ -935,6 +935,124 @@ impl ListFrameworksPaginator {
     }
 }
 
+/// Paginator for [`ListLegalHolds`](crate::operation::ListLegalHolds)
+pub struct ListLegalHoldsPaginator {
+    handle: std::sync::Arc<crate::client::Handle>,
+    builder: crate::input::list_legal_holds_input::Builder,
+    stop_on_duplicate_token: bool,
+}
+
+impl ListLegalHoldsPaginator {
+    /// Create a new paginator-wrapper
+    pub(crate) fn new(
+        handle: std::sync::Arc<crate::client::Handle>,
+        builder: crate::input::list_legal_holds_input::Builder,
+    ) -> Self {
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `legal_holds`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListLegalHoldsPaginatorItems {
+        crate::paginator::ListLegalHoldsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
+    }
+
+    /// Create the pagination stream
+    ///
+    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::output::ListLegalHoldsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListLegalHoldsError>,
+        >,
+    > + Unpin {
+        // Move individual fields out of self for the borrow checker
+        let builder = self.builder;
+        let handle = self.handle;
+        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            Box::pin(async move {
+                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                let mut input = match builder
+                    .build()
+                    .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                {
+                    Ok(input) => input,
+                    Err(e) => {
+                        let _ = tx.send(Err(e)).await;
+                        return;
+                    }
+                };
+                loop {
+                    let op = match input
+                        .make_operation(&handle.conf)
+                        .await
+                        .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                    {
+                        Ok(op) => op,
+                        Err(e) => {
+                            let _ = tx.send(Err(e)).await;
+                            return;
+                        }
+                    };
+                    let resp = handle.client.call(op).await;
+                    // If the input member is None or it was an error
+                    let done = match resp {
+                        Ok(ref resp) => {
+                            let new_token = crate::lens::reflens_structure_crate_output_list_legal_holds_output_next_token(resp);
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
+                            }
+                        }
+                        Err(_) => true,
+                    };
+                    if tx.send(resp).await.is_err() {
+                        // receiving end was dropped
+                        return;
+                    }
+                    if done {
+                        return;
+                    }
+                }
+            })
+        })
+    }
+}
+
 /// Paginator for [`ListProtectedResources`](crate::operation::ListProtectedResources)
 pub struct ListProtectedResourcesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -1145,6 +1263,124 @@ impl ListRecoveryPointsByBackupVaultPaginator {
                     let done = match resp {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_list_recovery_points_by_backup_vault_output_next_token(resp);
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
+                            }
+                        }
+                        Err(_) => true,
+                    };
+                    if tx.send(resp).await.is_err() {
+                        // receiving end was dropped
+                        return;
+                    }
+                    if done {
+                        return;
+                    }
+                }
+            })
+        })
+    }
+}
+
+/// Paginator for [`ListRecoveryPointsByLegalHold`](crate::operation::ListRecoveryPointsByLegalHold)
+pub struct ListRecoveryPointsByLegalHoldPaginator {
+    handle: std::sync::Arc<crate::client::Handle>,
+    builder: crate::input::list_recovery_points_by_legal_hold_input::Builder,
+    stop_on_duplicate_token: bool,
+}
+
+impl ListRecoveryPointsByLegalHoldPaginator {
+    /// Create a new paginator-wrapper
+    pub(crate) fn new(
+        handle: std::sync::Arc<crate::client::Handle>,
+        builder: crate::input::list_recovery_points_by_legal_hold_input::Builder,
+    ) -> Self {
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `recovery_points`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListRecoveryPointsByLegalHoldPaginatorItems {
+        crate::paginator::ListRecoveryPointsByLegalHoldPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
+    }
+
+    /// Create the pagination stream
+    ///
+    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::output::ListRecoveryPointsByLegalHoldOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListRecoveryPointsByLegalHoldError>,
+        >,
+    > + Unpin {
+        // Move individual fields out of self for the borrow checker
+        let builder = self.builder;
+        let handle = self.handle;
+        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            Box::pin(async move {
+                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                let mut input = match builder
+                    .build()
+                    .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                {
+                    Ok(input) => input,
+                    Err(e) => {
+                        let _ = tx.send(Err(e)).await;
+                        return;
+                    }
+                };
+                loop {
+                    let op = match input
+                        .make_operation(&handle.conf)
+                        .await
+                        .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                    {
+                        Ok(op) => op,
+                        Err(e) => {
+                            let _ = tx.send(Err(e)).await;
+                            return;
+                        }
+                    };
+                    let resp = handle.client.call(op).await;
+                    // If the input member is None or it was an error
+                    let done = match resp {
+                        Ok(ref resp) => {
+                            let new_token = crate::lens::reflens_structure_crate_output_list_recovery_points_by_legal_hold_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1918,6 +2154,33 @@ impl ListCopyJobsPaginatorItems {
     }
 }
 
+/// Flattened paginator for `ListLegalHoldsPaginator`
+///
+/// This is created with [`.items()`](ListLegalHoldsPaginator::items)
+pub struct ListLegalHoldsPaginatorItems(ListLegalHoldsPaginator);
+
+impl ListLegalHoldsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::LegalHold,
+            aws_smithy_http::result::SdkError<crate::error::ListLegalHoldsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_legal_holds_output_legal_holds(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
 /// Flattened paginator for `ListProtectedResourcesPaginator`
 ///
 /// This is created with [`.items()`](ListProtectedResourcesPaginator::items)
@@ -1965,6 +2228,29 @@ impl ListRecoveryPointsByBackupVaultPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_recovery_points_by_backup_vault_output_recovery_points(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListRecoveryPointsByLegalHoldPaginator`
+///
+/// This is created with [`.items()`](ListRecoveryPointsByLegalHoldPaginator::items)
+pub struct ListRecoveryPointsByLegalHoldPaginatorItems(ListRecoveryPointsByLegalHoldPaginator);
+
+impl ListRecoveryPointsByLegalHoldPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::RecoveryPointMember,
+            aws_smithy_http::result::SdkError<crate::error::ListRecoveryPointsByLegalHoldError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_recovery_points_by_legal_hold_output_recovery_points(page).unwrap_or_default().into_iter())
     }
 }
 

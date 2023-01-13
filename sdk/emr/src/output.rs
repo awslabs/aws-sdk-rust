@@ -1600,6 +1600,79 @@ impl GetManagedScalingPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetClusterSessionCredentialsOutput {
+    /// <p>The credentials that you can use to connect to cluster endpoints that support username-based and password-based authentication.</p>
+    #[doc(hidden)]
+    pub credentials: std::option::Option<crate::model::Credentials>,
+    /// <p>The time when the credentials that are returned by the <code>GetClusterSessionCredentials</code> API expire.</p>
+    #[doc(hidden)]
+    pub expires_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl GetClusterSessionCredentialsOutput {
+    /// <p>The credentials that you can use to connect to cluster endpoints that support username-based and password-based authentication.</p>
+    pub fn credentials(&self) -> std::option::Option<&crate::model::Credentials> {
+        self.credentials.as_ref()
+    }
+    /// <p>The time when the credentials that are returned by the <code>GetClusterSessionCredentials</code> API expire.</p>
+    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.expires_at.as_ref()
+    }
+}
+/// See [`GetClusterSessionCredentialsOutput`](crate::output::GetClusterSessionCredentialsOutput).
+pub mod get_cluster_session_credentials_output {
+
+    /// A builder for [`GetClusterSessionCredentialsOutput`](crate::output::GetClusterSessionCredentialsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) credentials: std::option::Option<crate::model::Credentials>,
+        pub(crate) expires_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The credentials that you can use to connect to cluster endpoints that support username-based and password-based authentication.</p>
+        pub fn credentials(mut self, input: crate::model::Credentials) -> Self {
+            self.credentials = Some(input);
+            self
+        }
+        /// <p>The credentials that you can use to connect to cluster endpoints that support username-based and password-based authentication.</p>
+        pub fn set_credentials(
+            mut self,
+            input: std::option::Option<crate::model::Credentials>,
+        ) -> Self {
+            self.credentials = input;
+            self
+        }
+        /// <p>The time when the credentials that are returned by the <code>GetClusterSessionCredentials</code> API expire.</p>
+        pub fn expires_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.expires_at = Some(input);
+            self
+        }
+        /// <p>The time when the credentials that are returned by the <code>GetClusterSessionCredentials</code> API expire.</p>
+        pub fn set_expires_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.expires_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetClusterSessionCredentialsOutput`](crate::output::GetClusterSessionCredentialsOutput).
+        pub fn build(self) -> crate::output::GetClusterSessionCredentialsOutput {
+            crate::output::GetClusterSessionCredentialsOutput {
+                credentials: self.credentials,
+                expires_at: self.expires_at,
+            }
+        }
+    }
+}
+impl GetClusterSessionCredentialsOutput {
+    /// Creates a new builder-style object to manufacture [`GetClusterSessionCredentialsOutput`](crate::output::GetClusterSessionCredentialsOutput).
+    pub fn builder() -> crate::output::get_cluster_session_credentials_output::Builder {
+        crate::output::get_cluster_session_credentials_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBlockPublicAccessConfigurationOutput {
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating the block public access configuration to remove the exception.</p> <note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>

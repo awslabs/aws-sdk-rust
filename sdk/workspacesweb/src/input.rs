@@ -583,6 +583,203 @@ impl AssociateTrustStoreInput {
     }
 }
 
+/// See [`AssociateUserAccessLoggingSettingsInput`](crate::input::AssociateUserAccessLoggingSettingsInput).
+pub mod associate_user_access_logging_settings_input {
+
+    /// A builder for [`AssociateUserAccessLoggingSettingsInput`](crate::input::AssociateUserAccessLoggingSettingsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) portal_arn: std::option::Option<std::string::String>,
+        pub(crate) user_access_logging_settings_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the web portal.</p>
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.portal_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the web portal.</p>
+        pub fn set_portal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.portal_arn = input;
+            self
+        }
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn user_access_logging_settings_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn set_user_access_logging_settings_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateUserAccessLoggingSettingsInput`](crate::input::AssociateUserAccessLoggingSettingsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::AssociateUserAccessLoggingSettingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::AssociateUserAccessLoggingSettingsInput {
+                portal_arn: self.portal_arn,
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+            })
+        }
+    }
+}
+impl AssociateUserAccessLoggingSettingsInput {
+    /// Consumes the builder and constructs an Operation<[`AssociateUserAccessLoggingSettings`](crate::operation::AssociateUserAccessLoggingSettings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AssociateUserAccessLoggingSettings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::AssociateUserAccessLoggingSettingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_7 = &_input.portal_arn;
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "portal_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let portal_arn = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
+                if portal_arn.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "portal_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/portals/{portalArn}/userAccessLoggingSettings",
+                    portalArn = portal_arn
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::AssociateUserAccessLoggingSettingsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                let inner_8 = &_input.user_access_logging_settings_arn;
+                let inner_8 = inner_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_access_logging_settings_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_8.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_access_logging_settings_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv(
+                    "userAccessLoggingSettingsArn",
+                    &aws_smithy_http::query::fmt_string(&inner_8),
+                );
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AssociateUserAccessLoggingSettingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateUserAccessLoggingSettings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssociateUserAccessLoggingSettings",
+            "workspacesweb",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`AssociateUserAccessLoggingSettingsInput`](crate::input::AssociateUserAccessLoggingSettingsInput).
+    pub fn builder() -> crate::input::associate_user_access_logging_settings_input::Builder {
+        crate::input::associate_user_access_logging_settings_input::Builder::default()
+    }
+}
+
 /// See [`AssociateUserSettingsInput`](crate::input::AssociateUserSettingsInput).
 pub mod associate_user_settings_input {
 
@@ -650,15 +847,15 @@ impl AssociateUserSettingsInput {
                 _input: &crate::input::AssociateUserSettingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_7 = &_input.portal_arn;
-                let input_7 = input_7.as_ref().ok_or_else(|| {
+                let input_9 = &_input.portal_arn;
+                let input_9 = input_9.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "portal_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let portal_arn = aws_smithy_http::label::fmt_string(
-                    input_7,
+                    input_9,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if portal_arn.is_empty() {
@@ -682,14 +879,14 @@ impl AssociateUserSettingsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_8 = &_input.user_settings_arn;
-                let inner_8 = inner_8.as_ref().ok_or_else(|| {
+                let inner_10 = &_input.user_settings_arn;
+                let inner_10 = inner_10.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "user_settings_arn",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_8.is_empty() {
+                if inner_10.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "user_settings_arn",
@@ -699,7 +896,7 @@ impl AssociateUserSettingsInput {
                 }
                 query.push_kv(
                     "userSettingsArn",
-                    &aws_smithy_http::query::fmt_string(&inner_8),
+                    &aws_smithy_http::query::fmt_string(&inner_10),
                 );
                 Ok(())
             }
@@ -1571,6 +1768,7 @@ pub mod create_portal_input {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
     }
     impl Builder {
         /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
@@ -1652,6 +1850,23 @@ pub mod create_portal_input {
             self.client_token = input;
             self
         }
+        /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+        /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+        /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+        pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
+            self.authentication_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+        /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+        /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+        pub fn set_authentication_type(
+            mut self,
+            input: std::option::Option<crate::model::AuthenticationType>,
+        ) -> Self {
+            self.authentication_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePortalInput`](crate::input::CreatePortalInput).
         pub fn build(
             self,
@@ -1663,6 +1878,7 @@ pub mod create_portal_input {
                 customer_managed_key: self.customer_managed_key,
                 additional_encryption_context: self.additional_encryption_context,
                 client_token: self.client_token,
+                authentication_type: self.authentication_type,
             })
         }
     }
@@ -1677,6 +1893,7 @@ pub mod create_portal_input {
                 &self.additional_encryption_context,
             );
             formatter.field("client_token", &self.client_token);
+            formatter.field("authentication_type", &self.authentication_type);
             formatter.finish()
         }
     }
@@ -1980,6 +2197,188 @@ impl CreateTrustStoreInput {
     /// Creates a new builder-style object to manufacture [`CreateTrustStoreInput`](crate::input::CreateTrustStoreInput).
     pub fn builder() -> crate::input::create_trust_store_input::Builder {
         crate::input::create_trust_store_input::Builder::default()
+    }
+}
+
+/// See [`CreateUserAccessLoggingSettingsInput`](crate::input::CreateUserAccessLoggingSettingsInput).
+pub mod create_user_access_logging_settings_input {
+
+    /// A builder for [`CreateUserAccessLoggingSettingsInput`](crate::input::CreateUserAccessLoggingSettingsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) kinesis_stream_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the Kinesis stream.</p>
+        pub fn kinesis_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kinesis_stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the Kinesis stream.</p>
+        pub fn set_kinesis_stream_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.kinesis_stream_arn = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateUserAccessLoggingSettingsInput`](crate::input::CreateUserAccessLoggingSettingsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateUserAccessLoggingSettingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::CreateUserAccessLoggingSettingsInput {
+                kinesis_stream_arn: self.kinesis_stream_arn,
+                tags: self.tags,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+impl CreateUserAccessLoggingSettingsInput {
+    /// Consumes the builder and constructs an Operation<[`CreateUserAccessLoggingSettings`](crate::operation::CreateUserAccessLoggingSettings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateUserAccessLoggingSettings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateUserAccessLoggingSettingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/userAccessLoggingSettings").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateUserAccessLoggingSettingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_user_access_logging_settings(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateUserAccessLoggingSettings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateUserAccessLoggingSettings",
+            "workspacesweb",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateUserAccessLoggingSettingsInput`](crate::input::CreateUserAccessLoggingSettingsInput).
+    pub fn builder() -> crate::input::create_user_access_logging_settings_input::Builder {
+        crate::input::create_user_access_logging_settings_input::Builder::default()
     }
 }
 
@@ -2311,15 +2710,15 @@ impl DeleteBrowserSettingsInput {
                 _input: &crate::input::DeleteBrowserSettingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_9 = &_input.browser_settings_arn;
-                let input_9 = input_9.as_ref().ok_or_else(|| {
+                let input_11 = &_input.browser_settings_arn;
+                let input_11 = input_11.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "browser_settings_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let browser_settings_arn = aws_smithy_http::label::fmt_string(
-                    input_9,
+                    input_11,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if browser_settings_arn.is_empty() {
@@ -2466,15 +2865,15 @@ impl DeleteIdentityProviderInput {
                 _input: &crate::input::DeleteIdentityProviderInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_10 = &_input.identity_provider_arn;
-                let input_10 = input_10.as_ref().ok_or_else(|| {
+                let input_12 = &_input.identity_provider_arn;
+                let input_12 = input_12.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "identity_provider_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let identity_provider_arn = aws_smithy_http::label::fmt_string(
-                    input_10,
+                    input_12,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if identity_provider_arn.is_empty() {
@@ -2621,15 +3020,15 @@ impl DeleteNetworkSettingsInput {
                 _input: &crate::input::DeleteNetworkSettingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_11 = &_input.network_settings_arn;
-                let input_11 = input_11.as_ref().ok_or_else(|| {
+                let input_13 = &_input.network_settings_arn;
+                let input_13 = input_13.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "network_settings_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let network_settings_arn = aws_smithy_http::label::fmt_string(
-                    input_11,
+                    input_13,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if network_settings_arn.is_empty() {
@@ -2771,15 +3170,15 @@ impl DeletePortalInput {
                 _input: &crate::input::DeletePortalInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_12 = &_input.portal_arn;
-                let input_12 = input_12.as_ref().ok_or_else(|| {
+                let input_14 = &_input.portal_arn;
+                let input_14 = input_14.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "portal_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let portal_arn = aws_smithy_http::label::fmt_string(
-                    input_12,
+                    input_14,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if portal_arn.is_empty() {
@@ -2922,15 +3321,15 @@ impl DeleteTrustStoreInput {
                 _input: &crate::input::DeleteTrustStoreInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_13 = &_input.trust_store_arn;
-                let input_13 = input_13.as_ref().ok_or_else(|| {
+                let input_15 = &_input.trust_store_arn;
+                let input_15 = input_15.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "trust_store_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let trust_store_arn = aws_smithy_http::label::fmt_string(
-                    input_13,
+                    input_15,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if trust_store_arn.is_empty() {
@@ -3022,6 +3421,164 @@ impl DeleteTrustStoreInput {
     }
 }
 
+/// See [`DeleteUserAccessLoggingSettingsInput`](crate::input::DeleteUserAccessLoggingSettingsInput).
+pub mod delete_user_access_logging_settings_input {
+
+    /// A builder for [`DeleteUserAccessLoggingSettingsInput`](crate::input::DeleteUserAccessLoggingSettingsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_access_logging_settings_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn user_access_logging_settings_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn set_user_access_logging_settings_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteUserAccessLoggingSettingsInput`](crate::input::DeleteUserAccessLoggingSettingsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteUserAccessLoggingSettingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DeleteUserAccessLoggingSettingsInput {
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+            })
+        }
+    }
+}
+impl DeleteUserAccessLoggingSettingsInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteUserAccessLoggingSettings`](crate::operation::DeleteUserAccessLoggingSettings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteUserAccessLoggingSettings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteUserAccessLoggingSettingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_16 = &_input.user_access_logging_settings_arn;
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_access_logging_settings_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_access_logging_settings_arn = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
+                if user_access_logging_settings_arn.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_access_logging_settings_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/userAccessLoggingSettings/{userAccessLoggingSettingsArn}",
+                    userAccessLoggingSettingsArn = user_access_logging_settings_arn
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteUserAccessLoggingSettingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteUserAccessLoggingSettings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteUserAccessLoggingSettings",
+            "workspacesweb",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteUserAccessLoggingSettingsInput`](crate::input::DeleteUserAccessLoggingSettingsInput).
+    pub fn builder() -> crate::input::delete_user_access_logging_settings_input::Builder {
+        crate::input::delete_user_access_logging_settings_input::Builder::default()
+    }
+}
+
 /// See [`DeleteUserSettingsInput`](crate::input::DeleteUserSettingsInput).
 pub mod delete_user_settings_input {
 
@@ -3077,15 +3634,15 @@ impl DeleteUserSettingsInput {
                 _input: &crate::input::DeleteUserSettingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_14 = &_input.user_settings_arn;
-                let input_14 = input_14.as_ref().ok_or_else(|| {
+                let input_17 = &_input.user_settings_arn;
+                let input_17 = input_17.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "user_settings_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let user_settings_arn = aws_smithy_http::label::fmt_string(
-                    input_14,
+                    input_17,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if user_settings_arn.is_empty() {
@@ -3229,15 +3786,15 @@ impl DisassociateBrowserSettingsInput {
                 _input: &crate::input::DisassociateBrowserSettingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_15 = &_input.portal_arn;
-                let input_15 = input_15.as_ref().ok_or_else(|| {
+                let input_18 = &_input.portal_arn;
+                let input_18 = input_18.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "portal_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let portal_arn = aws_smithy_http::label::fmt_string(
-                    input_15,
+                    input_18,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if portal_arn.is_empty() {
@@ -3381,15 +3938,15 @@ impl DisassociateNetworkSettingsInput {
                 _input: &crate::input::DisassociateNetworkSettingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_16 = &_input.portal_arn;
-                let input_16 = input_16.as_ref().ok_or_else(|| {
+                let input_19 = &_input.portal_arn;
+                let input_19 = input_19.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "portal_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let portal_arn = aws_smithy_http::label::fmt_string(
-                    input_16,
+                    input_19,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if portal_arn.is_empty() {
@@ -3533,15 +4090,15 @@ impl DisassociateTrustStoreInput {
                 _input: &crate::input::DisassociateTrustStoreInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_17 = &_input.portal_arn;
-                let input_17 = input_17.as_ref().ok_or_else(|| {
+                let input_20 = &_input.portal_arn;
+                let input_20 = input_20.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "portal_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let portal_arn = aws_smithy_http::label::fmt_string(
-                    input_17,
+                    input_20,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if portal_arn.is_empty() {
@@ -3633,6 +4190,158 @@ impl DisassociateTrustStoreInput {
     }
 }
 
+/// See [`DisassociateUserAccessLoggingSettingsInput`](crate::input::DisassociateUserAccessLoggingSettingsInput).
+pub mod disassociate_user_access_logging_settings_input {
+
+    /// A builder for [`DisassociateUserAccessLoggingSettingsInput`](crate::input::DisassociateUserAccessLoggingSettingsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) portal_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the web portal.</p>
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.portal_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the web portal.</p>
+        pub fn set_portal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.portal_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateUserAccessLoggingSettingsInput`](crate::input::DisassociateUserAccessLoggingSettingsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DisassociateUserAccessLoggingSettingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DisassociateUserAccessLoggingSettingsInput {
+                portal_arn: self.portal_arn,
+            })
+        }
+    }
+}
+impl DisassociateUserAccessLoggingSettingsInput {
+    /// Consumes the builder and constructs an Operation<[`DisassociateUserAccessLoggingSettings`](crate::operation::DisassociateUserAccessLoggingSettings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisassociateUserAccessLoggingSettings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DisassociateUserAccessLoggingSettingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_21 = &_input.portal_arn;
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "portal_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let portal_arn = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
+                if portal_arn.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "portal_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/portals/{portalArn}/userAccessLoggingSettings",
+                    portalArn = portal_arn
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DisassociateUserAccessLoggingSettingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateUserAccessLoggingSettings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisassociateUserAccessLoggingSettings",
+            "workspacesweb",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DisassociateUserAccessLoggingSettingsInput`](crate::input::DisassociateUserAccessLoggingSettingsInput).
+    pub fn builder() -> crate::input::disassociate_user_access_logging_settings_input::Builder {
+        crate::input::disassociate_user_access_logging_settings_input::Builder::default()
+    }
+}
+
 /// See [`DisassociateUserSettingsInput`](crate::input::DisassociateUserSettingsInput).
 pub mod disassociate_user_settings_input {
 
@@ -3685,15 +4394,15 @@ impl DisassociateUserSettingsInput {
                 _input: &crate::input::DisassociateUserSettingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_18 = &_input.portal_arn;
-                let input_18 = input_18.as_ref().ok_or_else(|| {
+                let input_22 = &_input.portal_arn;
+                let input_22 = input_22.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "portal_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let portal_arn = aws_smithy_http::label::fmt_string(
-                    input_18,
+                    input_22,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if portal_arn.is_empty() {
@@ -3840,15 +4549,15 @@ impl GetBrowserSettingsInput {
                 _input: &crate::input::GetBrowserSettingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_19 = &_input.browser_settings_arn;
-                let input_19 = input_19.as_ref().ok_or_else(|| {
+                let input_23 = &_input.browser_settings_arn;
+                let input_23 = input_23.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "browser_settings_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let browser_settings_arn = aws_smithy_http::label::fmt_string(
-                    input_19,
+                    input_23,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if browser_settings_arn.is_empty() {
@@ -3995,15 +4704,15 @@ impl GetIdentityProviderInput {
                 _input: &crate::input::GetIdentityProviderInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_20 = &_input.identity_provider_arn;
-                let input_20 = input_20.as_ref().ok_or_else(|| {
+                let input_24 = &_input.identity_provider_arn;
+                let input_24 = input_24.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "identity_provider_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let identity_provider_arn = aws_smithy_http::label::fmt_string(
-                    input_20,
+                    input_24,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if identity_provider_arn.is_empty() {
@@ -4150,15 +4859,15 @@ impl GetNetworkSettingsInput {
                 _input: &crate::input::GetNetworkSettingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_21 = &_input.network_settings_arn;
-                let input_21 = input_21.as_ref().ok_or_else(|| {
+                let input_25 = &_input.network_settings_arn;
+                let input_25 = input_25.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "network_settings_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let network_settings_arn = aws_smithy_http::label::fmt_string(
-                    input_21,
+                    input_25,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if network_settings_arn.is_empty() {
@@ -4300,15 +5009,15 @@ impl GetPortalInput {
                 _input: &crate::input::GetPortalInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_22 = &_input.portal_arn;
-                let input_22 = input_22.as_ref().ok_or_else(|| {
+                let input_26 = &_input.portal_arn;
+                let input_26 = input_26.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "portal_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let portal_arn = aws_smithy_http::label::fmt_string(
-                    input_22,
+                    input_26,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if portal_arn.is_empty() {
@@ -4446,15 +5155,15 @@ impl GetPortalServiceProviderMetadataInput {
                 _input: &crate::input::GetPortalServiceProviderMetadataInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_23 = &_input.portal_arn;
-                let input_23 = input_23.as_ref().ok_or_else(|| {
+                let input_27 = &_input.portal_arn;
+                let input_27 = input_27.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "portal_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let portal_arn = aws_smithy_http::label::fmt_string(
-                    input_23,
+                    input_27,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if portal_arn.is_empty() {
@@ -4595,15 +5304,15 @@ impl GetTrustStoreInput {
                 _input: &crate::input::GetTrustStoreInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_24 = &_input.trust_store_arn;
-                let input_24 = input_24.as_ref().ok_or_else(|| {
+                let input_28 = &_input.trust_store_arn;
+                let input_28 = input_28.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "trust_store_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let trust_store_arn = aws_smithy_http::label::fmt_string(
-                    input_24,
+                    input_28,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if trust_store_arn.is_empty() {
@@ -4762,15 +5471,15 @@ impl GetTrustStoreCertificateInput {
                 _input: &crate::input::GetTrustStoreCertificateInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_25 = &_input.trust_store_arn;
-                let input_25 = input_25.as_ref().ok_or_else(|| {
+                let input_29 = &_input.trust_store_arn;
+                let input_29 = input_29.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "trust_store_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let trust_store_arn = aws_smithy_http::label::fmt_string(
-                    input_25,
+                    input_29,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if trust_store_arn.is_empty() {
@@ -4794,14 +5503,14 @@ impl GetTrustStoreCertificateInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_26 = &_input.thumbprint;
-                let inner_26 = inner_26.as_ref().ok_or_else(|| {
+                let inner_30 = &_input.thumbprint;
+                let inner_30 = inner_30.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "thumbprint",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_26.is_empty() {
+                if inner_30.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "thumbprint",
@@ -4809,7 +5518,7 @@ impl GetTrustStoreCertificateInput {
                         ),
                     );
                 }
-                query.push_kv("thumbprint", &aws_smithy_http::query::fmt_string(&inner_26));
+                query.push_kv("thumbprint", &aws_smithy_http::query::fmt_string(&inner_30));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4886,6 +5595,164 @@ impl GetTrustStoreCertificateInput {
     }
 }
 
+/// See [`GetUserAccessLoggingSettingsInput`](crate::input::GetUserAccessLoggingSettingsInput).
+pub mod get_user_access_logging_settings_input {
+
+    /// A builder for [`GetUserAccessLoggingSettingsInput`](crate::input::GetUserAccessLoggingSettingsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_access_logging_settings_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn user_access_logging_settings_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn set_user_access_logging_settings_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetUserAccessLoggingSettingsInput`](crate::input::GetUserAccessLoggingSettingsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetUserAccessLoggingSettingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetUserAccessLoggingSettingsInput {
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+            })
+        }
+    }
+}
+impl GetUserAccessLoggingSettingsInput {
+    /// Consumes the builder and constructs an Operation<[`GetUserAccessLoggingSettings`](crate::operation::GetUserAccessLoggingSettings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetUserAccessLoggingSettings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetUserAccessLoggingSettingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_31 = &_input.user_access_logging_settings_arn;
+                let input_31 = input_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_access_logging_settings_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_access_logging_settings_arn = aws_smithy_http::label::fmt_string(
+                    input_31,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
+                if user_access_logging_settings_arn.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_access_logging_settings_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/userAccessLoggingSettings/{userAccessLoggingSettingsArn}",
+                    userAccessLoggingSettingsArn = user_access_logging_settings_arn
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetUserAccessLoggingSettingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetUserAccessLoggingSettings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetUserAccessLoggingSettings",
+            "workspacesweb",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetUserAccessLoggingSettingsInput`](crate::input::GetUserAccessLoggingSettingsInput).
+    pub fn builder() -> crate::input::get_user_access_logging_settings_input::Builder {
+        crate::input::get_user_access_logging_settings_input::Builder::default()
+    }
+}
+
 /// See [`GetUserSettingsInput`](crate::input::GetUserSettingsInput).
 pub mod get_user_settings_input {
 
@@ -4939,15 +5806,15 @@ impl GetUserSettingsInput {
                 _input: &crate::input::GetUserSettingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_27 = &_input.user_settings_arn;
-                let input_27 = input_27.as_ref().ok_or_else(|| {
+                let input_32 = &_input.user_settings_arn;
+                let input_32 = input_32.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "user_settings_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let user_settings_arn = aws_smithy_http::label::fmt_string(
-                    input_27,
+                    input_32,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if user_settings_arn.is_empty() {
@@ -5111,16 +5978,16 @@ impl ListBrowserSettingsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_28) = &_input.next_token {
+                if let Some(inner_33) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
                     }
                 }
-                if let Some(inner_29) = &_input.max_results {
-                    if *inner_29 != 0 {
+                if let Some(inner_34) = &_input.max_results {
+                    if *inner_34 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_29).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
                         );
                     }
                 }
@@ -5276,15 +6143,15 @@ impl ListIdentityProvidersInput {
                 _input: &crate::input::ListIdentityProvidersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_30 = &_input.portal_arn;
-                let input_30 = input_30.as_ref().ok_or_else(|| {
+                let input_35 = &_input.portal_arn;
+                let input_35 = input_35.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "portal_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let portal_arn = aws_smithy_http::label::fmt_string(
-                    input_30,
+                    input_35,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if portal_arn.is_empty() {
@@ -5308,16 +6175,16 @@ impl ListIdentityProvidersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_31) = &_input.next_token {
+                if let Some(inner_36) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
                     }
                 }
-                if let Some(inner_32) = &_input.max_results {
-                    if *inner_32 != 0 {
+                if let Some(inner_37) = &_input.max_results {
+                    if *inner_37 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_32).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_37).encode(),
                         );
                     }
                 }
@@ -5469,16 +6336,16 @@ impl ListNetworkSettingsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_33) = &_input.next_token {
+                if let Some(inner_38) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
                     }
                 }
-                if let Some(inner_34) = &_input.max_results {
-                    if *inner_34 != 0 {
+                if let Some(inner_39) = &_input.max_results {
+                    if *inner_39 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_39).encode(),
                         );
                     }
                 }
@@ -5628,16 +6495,16 @@ impl ListPortalsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_35) = &_input.next_token {
+                if let Some(inner_40) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
                     }
                 }
-                if let Some(inner_36) = &_input.max_results {
-                    if *inner_36 != 0 {
+                if let Some(inner_41) = &_input.max_results {
+                    if *inner_41 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_36).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
                         );
                     }
                 }
@@ -5769,15 +6636,15 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_37 = &_input.resource_arn;
-                let input_37 = input_37.as_ref().ok_or_else(|| {
+                let input_42 = &_input.resource_arn;
+                let input_42 = input_42.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_37,
+                    input_42,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if resource_arn.is_empty() {
@@ -5944,15 +6811,15 @@ impl ListTrustStoreCertificatesInput {
                 _input: &crate::input::ListTrustStoreCertificatesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_38 = &_input.trust_store_arn;
-                let input_38 = input_38.as_ref().ok_or_else(|| {
+                let input_43 = &_input.trust_store_arn;
+                let input_43 = input_43.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "trust_store_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let trust_store_arn = aws_smithy_http::label::fmt_string(
-                    input_38,
+                    input_43,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if trust_store_arn.is_empty() {
@@ -5976,16 +6843,16 @@ impl ListTrustStoreCertificatesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_39) = &_input.next_token {
+                if let Some(inner_44) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_39));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
                     }
                 }
-                if let Some(inner_40) = &_input.max_results {
-                    if *inner_40 != 0 {
+                if let Some(inner_45) = &_input.max_results {
+                    if *inner_45 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_40).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_45).encode(),
                         );
                     }
                 }
@@ -6135,16 +7002,16 @@ impl ListTrustStoresInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_41) = &_input.next_token {
+                if let Some(inner_46) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_41));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_46));
                     }
                 }
-                if let Some(inner_42) = &_input.max_results {
-                    if *inner_42 != 0 {
+                if let Some(inner_47) = &_input.max_results {
+                    if *inner_47 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_47).encode(),
                         );
                     }
                 }
@@ -6224,6 +7091,167 @@ impl ListTrustStoresInput {
     }
 }
 
+/// See [`ListUserAccessLoggingSettingsInput`](crate::input::ListUserAccessLoggingSettingsInput).
+pub mod list_user_access_logging_settings_input {
+
+    /// A builder for [`ListUserAccessLoggingSettingsInput`](crate::input::ListUserAccessLoggingSettingsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to be included in the next page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to be included in the next page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListUserAccessLoggingSettingsInput`](crate::input::ListUserAccessLoggingSettingsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListUserAccessLoggingSettingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListUserAccessLoggingSettingsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl ListUserAccessLoggingSettingsInput {
+    /// Consumes the builder and constructs an Operation<[`ListUserAccessLoggingSettings`](crate::operation::ListUserAccessLoggingSettings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListUserAccessLoggingSettings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListUserAccessLoggingSettingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/userAccessLoggingSettings").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListUserAccessLoggingSettingsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_48) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_48));
+                    }
+                }
+                if let Some(inner_49) = &_input.max_results {
+                    if *inner_49 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_49).encode(),
+                        );
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListUserAccessLoggingSettingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListUserAccessLoggingSettings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListUserAccessLoggingSettings",
+            "workspacesweb",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListUserAccessLoggingSettingsInput`](crate::input::ListUserAccessLoggingSettingsInput).
+    pub fn builder() -> crate::input::list_user_access_logging_settings_input::Builder {
+        crate::input::list_user_access_logging_settings_input::Builder::default()
+    }
+}
+
 /// See [`ListUserSettingsInput`](crate::input::ListUserSettingsInput).
 pub mod list_user_settings_input {
 
@@ -6296,16 +7324,16 @@ impl ListUserSettingsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_43) = &_input.next_token {
+                if let Some(inner_50) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_50));
                     }
                 }
-                if let Some(inner_44) = &_input.max_results {
-                    if *inner_44 != 0 {
+                if let Some(inner_51) = &_input.max_results {
+                    if *inner_51 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_44).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_51).encode(),
                         );
                     }
                 }
@@ -6473,15 +7501,15 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_45 = &_input.resource_arn;
-                let input_45 = input_45.as_ref().ok_or_else(|| {
+                let input_52 = &_input.resource_arn;
+                let input_52 = input_52.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_45,
+                    input_52,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if resource_arn.is_empty() {
@@ -6654,15 +7682,15 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_46 = &_input.resource_arn;
-                let input_46 = input_46.as_ref().ok_or_else(|| {
+                let input_53 = &_input.resource_arn;
+                let input_53 = input_53.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_46,
+                    input_53,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if resource_arn.is_empty() {
@@ -6682,15 +7710,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_47 = &_input.tag_keys;
-                let inner_47 = inner_47.as_ref().ok_or_else(|| {
+                let inner_54 = &_input.tag_keys;
+                let inner_54 = inner_54.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "tag_keys",
                         "cannot be empty or unset",
                     )
                 })?;
-                for inner_48 in inner_47 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_48));
+                for inner_55 in inner_54 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_55));
                 }
                 Ok(())
             }
@@ -6864,15 +7892,15 @@ impl UpdateBrowserSettingsInput {
                 _input: &crate::input::UpdateBrowserSettingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_49 = &_input.browser_settings_arn;
-                let input_49 = input_49.as_ref().ok_or_else(|| {
+                let input_56 = &_input.browser_settings_arn;
+                let input_56 = input_56.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "browser_settings_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let browser_settings_arn = aws_smithy_http::label::fmt_string(
-                    input_49,
+                    input_56,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if browser_settings_arn.is_empty() {
@@ -7205,15 +8233,15 @@ impl UpdateIdentityProviderInput {
                 _input: &crate::input::UpdateIdentityProviderInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_50 = &_input.identity_provider_arn;
-                let input_50 = input_50.as_ref().ok_or_else(|| {
+                let input_57 = &_input.identity_provider_arn;
+                let input_57 = input_57.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "identity_provider_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let identity_provider_arn = aws_smithy_http::label::fmt_string(
-                    input_50,
+                    input_57,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if identity_provider_arn.is_empty() {
@@ -7447,15 +8475,15 @@ impl UpdateNetworkSettingsInput {
                 _input: &crate::input::UpdateNetworkSettingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_51 = &_input.network_settings_arn;
-                let input_51 = input_51.as_ref().ok_or_else(|| {
+                let input_58 = &_input.network_settings_arn;
+                let input_58 = input_58.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "network_settings_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let network_settings_arn = aws_smithy_http::label::fmt_string(
-                    input_51,
+                    input_58,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if network_settings_arn.is_empty() {
@@ -7571,6 +8599,7 @@ pub mod update_portal_input {
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
+        pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
     }
     impl Builder {
         /// <p>The ARN of the web portal.</p>
@@ -7593,6 +8622,23 @@ pub mod update_portal_input {
             self.display_name = input;
             self
         }
+        /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+        /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+        /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+        pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
+            self.authentication_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+        /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+        /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+        pub fn set_authentication_type(
+            mut self,
+            input: std::option::Option<crate::model::AuthenticationType>,
+        ) -> Self {
+            self.authentication_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdatePortalInput`](crate::input::UpdatePortalInput).
         pub fn build(
             self,
@@ -7601,6 +8647,7 @@ pub mod update_portal_input {
             Ok(crate::input::UpdatePortalInput {
                 portal_arn: self.portal_arn,
                 display_name: self.display_name,
+                authentication_type: self.authentication_type,
             })
         }
     }
@@ -7609,6 +8656,7 @@ pub mod update_portal_input {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("portal_arn", &self.portal_arn);
             formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("authentication_type", &self.authentication_type);
             formatter.finish()
         }
     }
@@ -7633,15 +8681,15 @@ impl UpdatePortalInput {
                 _input: &crate::input::UpdatePortalInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_52 = &_input.portal_arn;
-                let input_52 = input_52.as_ref().ok_or_else(|| {
+                let input_59 = &_input.portal_arn;
+                let input_59 = input_59.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "portal_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let portal_arn = aws_smithy_http::label::fmt_string(
-                    input_52,
+                    input_59,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if portal_arn.is_empty() {
@@ -7857,15 +8905,15 @@ impl UpdateTrustStoreInput {
                 _input: &crate::input::UpdateTrustStoreInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_53 = &_input.trust_store_arn;
-                let input_53 = input_53.as_ref().ok_or_else(|| {
+                let input_60 = &_input.trust_store_arn;
+                let input_60 = input_60.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "trust_store_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let trust_store_arn = aws_smithy_http::label::fmt_string(
-                    input_53,
+                    input_60,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if trust_store_arn.is_empty() {
@@ -7968,6 +9016,209 @@ impl UpdateTrustStoreInput {
     /// Creates a new builder-style object to manufacture [`UpdateTrustStoreInput`](crate::input::UpdateTrustStoreInput).
     pub fn builder() -> crate::input::update_trust_store_input::Builder {
         crate::input::update_trust_store_input::Builder::default()
+    }
+}
+
+/// See [`UpdateUserAccessLoggingSettingsInput`](crate::input::UpdateUserAccessLoggingSettingsInput).
+pub mod update_user_access_logging_settings_input {
+
+    /// A builder for [`UpdateUserAccessLoggingSettingsInput`](crate::input::UpdateUserAccessLoggingSettingsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_access_logging_settings_arn: std::option::Option<std::string::String>,
+        pub(crate) kinesis_stream_arn: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn user_access_logging_settings_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn set_user_access_logging_settings_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = input;
+            self
+        }
+        /// <p>The ARN of the Kinesis stream.</p>
+        pub fn kinesis_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kinesis_stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the Kinesis stream.</p>
+        pub fn set_kinesis_stream_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.kinesis_stream_arn = input;
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateUserAccessLoggingSettingsInput`](crate::input::UpdateUserAccessLoggingSettingsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateUserAccessLoggingSettingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateUserAccessLoggingSettingsInput {
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+                kinesis_stream_arn: self.kinesis_stream_arn,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+impl UpdateUserAccessLoggingSettingsInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateUserAccessLoggingSettings`](crate::operation::UpdateUserAccessLoggingSettings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateUserAccessLoggingSettings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateUserAccessLoggingSettingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_61 = &_input.user_access_logging_settings_arn;
+                let input_61 = input_61.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_access_logging_settings_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_access_logging_settings_arn = aws_smithy_http::label::fmt_string(
+                    input_61,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
+                if user_access_logging_settings_arn.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_access_logging_settings_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/userAccessLoggingSettings/{userAccessLoggingSettingsArn}",
+                    userAccessLoggingSettingsArn = user_access_logging_settings_arn
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateUserAccessLoggingSettingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PATCH").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_user_access_logging_settings(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateUserAccessLoggingSettings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateUserAccessLoggingSettings",
+            "workspacesweb",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateUserAccessLoggingSettingsInput`](crate::input::UpdateUserAccessLoggingSettingsInput).
+    pub fn builder() -> crate::input::update_user_access_logging_settings_input::Builder {
+        crate::input::update_user_access_logging_settings_input::Builder::default()
     }
 }
 
@@ -8148,15 +9399,15 @@ impl UpdateUserSettingsInput {
                 _input: &crate::input::UpdateUserSettingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_54 = &_input.user_settings_arn;
-                let input_54 = input_54.as_ref().ok_or_else(|| {
+                let input_62 = &_input.user_settings_arn;
+                let input_62 = input_62.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "user_settings_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let user_settings_arn = aws_smithy_http::label::fmt_string(
-                    input_54,
+                    input_62,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if user_settings_arn.is_empty() {
@@ -8338,6 +9589,37 @@ impl UpdateUserSettingsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateUserAccessLoggingSettingsInput {
+    /// <p>The ARN of the user access logging settings.</p>
+    #[doc(hidden)]
+    pub user_access_logging_settings_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the Kinesis stream.</p>
+    #[doc(hidden)]
+    pub kinesis_stream_arn: std::option::Option<std::string::String>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl UpdateUserAccessLoggingSettingsInput {
+    /// <p>The ARN of the user access logging settings.</p>
+    pub fn user_access_logging_settings_arn(&self) -> std::option::Option<&str> {
+        self.user_access_logging_settings_arn.as_deref()
+    }
+    /// <p>The ARN of the Kinesis stream.</p>
+    pub fn kinesis_stream_arn(&self) -> std::option::Option<&str> {
+        self.kinesis_stream_arn.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTrustStoreInput {
     /// <p>The ARN of the trust store.</p>
     #[doc(hidden)]
@@ -8383,6 +9665,11 @@ pub struct UpdatePortalInput {
     /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
     #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
+    /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+    /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+    /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    #[doc(hidden)]
+    pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl UpdatePortalInput {
     /// <p>The ARN of the web portal.</p>
@@ -8393,12 +9680,19 @@ impl UpdatePortalInput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
+    /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+    /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+    /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdatePortalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePortalInput");
         formatter.field("portal_arn", &self.portal_arn);
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("authentication_type", &self.authentication_type);
         formatter.finish()
     }
 }
@@ -8711,6 +10005,28 @@ impl ListUserSettingsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListUserAccessLoggingSettingsInput {
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to be included in the next page.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListUserAccessLoggingSettingsInput {
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be included in the next page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrustStoresInput {
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     #[doc(hidden)]
@@ -8887,6 +10203,21 @@ impl GetUserSettingsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetUserAccessLoggingSettingsInput {
+    /// <p>The ARN of the user access logging settings.</p>
+    #[doc(hidden)]
+    pub user_access_logging_settings_arn: std::option::Option<std::string::String>,
+}
+impl GetUserAccessLoggingSettingsInput {
+    /// <p>The ARN of the user access logging settings.</p>
+    pub fn user_access_logging_settings_arn(&self) -> std::option::Option<&str> {
+        self.user_access_logging_settings_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrustStoreCertificateInput {
     /// <p>The ARN of the trust store certificate.</p>
     #[doc(hidden)]
@@ -9014,6 +10345,21 @@ impl DisassociateUserSettingsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DisassociateUserAccessLoggingSettingsInput {
+    /// <p>The ARN of the web portal.</p>
+    #[doc(hidden)]
+    pub portal_arn: std::option::Option<std::string::String>,
+}
+impl DisassociateUserAccessLoggingSettingsInput {
+    /// <p>The ARN of the web portal.</p>
+    pub fn portal_arn(&self) -> std::option::Option<&str> {
+        self.portal_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateTrustStoreInput {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
@@ -9068,6 +10414,21 @@ impl DeleteUserSettingsInput {
     /// <p>The ARN of the user settings.</p>
     pub fn user_settings_arn(&self) -> std::option::Option<&str> {
         self.user_settings_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteUserAccessLoggingSettingsInput {
+    /// <p>The ARN of the user access logging settings.</p>
+    #[doc(hidden)]
+    pub user_access_logging_settings_arn: std::option::Option<std::string::String>,
+}
+impl DeleteUserAccessLoggingSettingsInput {
+    /// <p>The ARN of the user access logging settings.</p>
+    pub fn user_access_logging_settings_arn(&self) -> std::option::Option<&str> {
+        self.user_access_logging_settings_arn.as_deref()
     }
 }
 
@@ -9222,6 +10583,37 @@ impl CreateUserSettingsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateUserAccessLoggingSettingsInput {
+    /// <p>The ARN of the Kinesis stream.</p>
+    #[doc(hidden)]
+    pub kinesis_stream_arn: std::option::Option<std::string::String>,
+    /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateUserAccessLoggingSettingsInput {
+    /// <p>The ARN of the Kinesis stream.</p>
+    pub fn kinesis_stream_arn(&self) -> std::option::Option<&str> {
+        self.kinesis_stream_arn.as_deref()
+    }
+    /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTrustStoreInput {
     /// <p>A list of CA certificates to be added to the trust store.</p>
     #[doc(hidden)]
@@ -9271,6 +10663,11 @@ pub struct CreatePortalInput {
     /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+    /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+    /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    #[doc(hidden)]
+    pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl CreatePortalInput {
     /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
@@ -9297,6 +10694,12 @@ impl CreatePortalInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+    /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+    /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePortalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9309,6 +10712,7 @@ impl std::fmt::Debug for CreatePortalInput {
             &self.additional_encryption_context,
         );
         formatter.field("client_token", &self.client_token);
+        formatter.field("authentication_type", &self.authentication_type);
         formatter.finish()
     }
 }
@@ -9585,6 +10989,28 @@ impl AssociateUserSettingsInput {
     /// <p>The ARN of the user settings.</p>
     pub fn user_settings_arn(&self) -> std::option::Option<&str> {
         self.user_settings_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AssociateUserAccessLoggingSettingsInput {
+    /// <p>The ARN of the web portal.</p>
+    #[doc(hidden)]
+    pub portal_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the user access logging settings.</p>
+    #[doc(hidden)]
+    pub user_access_logging_settings_arn: std::option::Option<std::string::String>,
+}
+impl AssociateUserAccessLoggingSettingsInput {
+    /// <p>The ARN of the web portal.</p>
+    pub fn portal_arn(&self) -> std::option::Option<&str> {
+        self.portal_arn.as_deref()
+    }
+    /// <p>The ARN of the user access logging settings.</p>
+    pub fn user_access_logging_settings_arn(&self) -> std::option::Option<&str> {
+        self.user_access_logging_settings_arn.as_deref()
     }
 }
 

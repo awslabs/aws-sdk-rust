@@ -139,6 +139,26 @@ pub(crate) fn reflens_structure_crate_output_search_dashboards_output_next_token
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_search_data_sets_output_next_token(
+    input: &crate::output::SearchDataSetsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_search_data_sources_output_next_token(
+    input: &crate::output::SearchDataSourcesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_analyses_output_analysis_summary_list(
     input: crate::output::ListAnalysesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::AnalysisSummary>> {
@@ -273,6 +293,26 @@ pub(crate) fn lens_structure_crate_output_search_dashboards_output_dashboard_sum
     input: crate::output::SearchDashboardsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::DashboardSummary>> {
     let input = match input.dashboard_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_search_data_sets_output_data_set_summaries(
+    input: crate::output::SearchDataSetsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::DataSetSummary>> {
+    let input = match input.data_set_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_search_data_sources_output_data_source_summaries(
+    input: crate::output::SearchDataSourcesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::DataSourceSummary>> {
+    let input = match input.data_source_summaries {
         None => return None,
         Some(t) => t,
     };

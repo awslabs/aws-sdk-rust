@@ -64,12 +64,12 @@ pub mod create_app_input {
             self.repository = input;
             self
         }
-        /// <p> The platform or framework for an Amplify app. </p>
+        /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.platform = Some(input);
             self
         }
-        /// <p> The platform or framework for an Amplify app. </p>
+        /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -6940,12 +6940,12 @@ pub mod update_app_input {
             self.description = input;
             self
         }
-        /// <p> The platform for an Amplify app. </p>
+        /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.platform = Some(input);
             self
         }
-        /// <p> The platform for an Amplify app. </p>
+        /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -8506,7 +8506,7 @@ pub struct UpdateAppInput {
     /// <p> The description for an Amplify app. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p> The platform for an Amplify app. </p>
+    /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
@@ -8576,7 +8576,7 @@ impl UpdateAppInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The platform for an Amplify app. </p>
+    /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
     pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
         self.platform.as_ref()
     }
@@ -9743,7 +9743,7 @@ pub struct CreateAppInput {
     /// <p> The repository for an Amplify app. </p>
     #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
-    /// <p> The platform or framework for an Amplify app. </p>
+    /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
@@ -9813,7 +9813,7 @@ impl CreateAppInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The platform or framework for an Amplify app. </p>
+    /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
     pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
         self.platform.as_ref()
     }

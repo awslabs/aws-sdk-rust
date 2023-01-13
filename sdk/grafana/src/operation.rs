@@ -237,6 +237,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkspaceAuthent
     }
 }
 
+/// Operation shape for `DescribeWorkspaceConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_workspace_configuration`](crate::client::Client::describe_workspace_configuration).
+///
+/// See [`crate::client::fluent_builders::DescribeWorkspaceConfiguration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeWorkspaceConfiguration {
+    _private: (),
+}
+impl DescribeWorkspaceConfiguration {
+    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceConfigurationInput`](crate::input::DescribeWorkspaceConfigurationInput).
+    pub fn builder() -> crate::input::describe_workspace_configuration_input::Builder {
+        crate::input::describe_workspace_configuration_input::Builder::default()
+    }
+    /// Creates a new `DescribeWorkspaceConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkspaceConfiguration {
+    type Output = std::result::Result<
+        crate::output::DescribeWorkspaceConfigurationOutput,
+        crate::error::DescribeWorkspaceConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_workspace_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_describe_workspace_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DisassociateLicense`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -533,6 +567,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkspaceAuthentic
             crate::operation_deser::parse_update_workspace_authentication_error(response)
         } else {
             crate::operation_deser::parse_update_workspace_authentication_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateWorkspaceConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_workspace_configuration`](crate::client::Client::update_workspace_configuration).
+///
+/// See [`crate::client::fluent_builders::UpdateWorkspaceConfiguration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateWorkspaceConfiguration {
+    _private: (),
+}
+impl UpdateWorkspaceConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateWorkspaceConfigurationInput`](crate::input::UpdateWorkspaceConfigurationInput).
+    pub fn builder() -> crate::input::update_workspace_configuration_input::Builder {
+        crate::input::update_workspace_configuration_input::Builder::default()
+    }
+    /// Creates a new `UpdateWorkspaceConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkspaceConfiguration {
+    type Output = std::result::Result<
+        crate::output::UpdateWorkspaceConfigurationOutput,
+        crate::error::UpdateWorkspaceConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 202 {
+            crate::operation_deser::parse_update_workspace_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_update_workspace_configuration_response(response)
         }
     }
 }

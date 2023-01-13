@@ -3,8 +3,18 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
+    /// <p>A policy revision id was provided which does not match the latest policy revision. This exception is also if a policy revision id of 0 is provided via <code>PutResourcePolicy</code> and a policy with the same name already exists.</p>
+    InvalidPolicyRevisionIdException(crate::error::InvalidPolicyRevisionIdException),
     /// <p>The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The provided resource policy would prevent the caller of this request from calling PutResourcePolicy in the future.</p>
+    LockoutPreventionException(crate::error::LockoutPreventionException),
+    /// <p>Invalid policy document provided in request.</p>
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    /// <p>Exceeded the maximum number of resource policies for a target Amazon Web Services account.</p>
+    PolicyCountLimitExceededException(crate::error::PolicyCountLimitExceededException),
+    /// <p>Exceeded the maximum size for a resource policy.</p>
+    PolicySizeLimitExceededException(crate::error::PolicySizeLimitExceededException),
     /// <p>The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is correct.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached the maximum number of sampling rules.</p>
@@ -26,7 +36,12 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::InvalidPolicyRevisionIdException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
+            Error::LockoutPreventionException(inner) => inner.fmt(f),
+            Error::MalformedPolicyDocumentException(inner) => inner.fmt(f),
+            Error::PolicyCountLimitExceededException(inner) => inner.fmt(f),
+            Error::PolicySizeLimitExceededException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::RuleLimitExceededException(inner) => inner.fmt(f),
             Error::ThrottledException(inner) => inner.fmt(f),
@@ -147,6 +162,40 @@ impl From<crate::error::DeleteGroupError> for Error {
                 Error::ThrottledException(inner)
             }
             crate::error::DeleteGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteResourcePolicyError> for Error {
+    fn from(err: crate::error::DeleteResourcePolicyError) -> Self {
+        match err.kind {
+            crate::error::DeleteResourcePolicyErrorKind::InvalidPolicyRevisionIdException(
+                inner,
+            ) => Error::InvalidPolicyRevisionIdException(inner),
+            crate::error::DeleteResourcePolicyErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DeleteResourcePolicyErrorKind::ThrottledException(inner) => {
+                Error::ThrottledException(inner)
+            }
+            crate::error::DeleteResourcePolicyErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -599,6 +648,37 @@ impl From<crate::error::GetTraceSummariesError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResourcePoliciesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListResourcePoliciesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListResourcePoliciesError> for Error {
+    fn from(err: crate::error::ListResourcePoliciesError) -> Self {
+        match err.kind {
+            crate::error::ListResourcePoliciesErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::ListResourcePoliciesErrorKind::ThrottledException(inner) => {
+                Error::ThrottledException(inner)
+            }
+            crate::error::ListResourcePoliciesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -657,6 +737,48 @@ impl From<crate::error::PutEncryptionConfigError> for Error {
                 Error::ThrottledException(inner)
             }
             crate::error::PutEncryptionConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutResourcePolicyError> for Error {
+    fn from(err: crate::error::PutResourcePolicyError) -> Self {
+        match err.kind {
+            crate::error::PutResourcePolicyErrorKind::InvalidPolicyRevisionIdException(inner) => {
+                Error::InvalidPolicyRevisionIdException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::LockoutPreventionException(inner) => {
+                Error::LockoutPreventionException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::MalformedPolicyDocumentException(inner) => {
+                Error::MalformedPolicyDocumentException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::PolicyCountLimitExceededException(inner) => {
+                Error::PolicyCountLimitExceededException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::PolicySizeLimitExceededException(inner) => {
+                Error::PolicySizeLimitExceededException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::ThrottledException(inner) => {
+                Error::ThrottledException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

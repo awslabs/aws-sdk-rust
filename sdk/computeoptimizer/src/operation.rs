@@ -171,6 +171,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportEC2InstanceRecomme
     }
 }
 
+/// Operation shape for `ExportECSServiceRecommendations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`export_ecs_service_recommendations`](crate::client::Client::export_ecs_service_recommendations).
+///
+/// See [`crate::client::fluent_builders::ExportECSServiceRecommendations`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ExportECSServiceRecommendations {
+    _private: (),
+}
+impl ExportECSServiceRecommendations {
+    /// Creates a new builder-style object to manufacture [`ExportEcsServiceRecommendationsInput`](crate::input::ExportEcsServiceRecommendationsInput).
+    pub fn builder() -> crate::input::export_ecs_service_recommendations_input::Builder {
+        crate::input::export_ecs_service_recommendations_input::Builder::default()
+    }
+    /// Creates a new `ExportECSServiceRecommendations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ExportECSServiceRecommendations {
+    type Output = std::result::Result<
+        crate::output::ExportEcsServiceRecommendationsOutput,
+        crate::error::ExportECSServiceRecommendationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_export_ecs_service_recommendations_error(response)
+        } else {
+            crate::operation_deser::parse_export_ecs_service_recommendations_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ExportLambdaFunctionRecommendations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -339,6 +373,81 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEC2RecommendationProj
             crate::operation_deser::parse_get_ec2_recommendation_projected_metrics_response(
                 response,
             )
+        }
+    }
+}
+
+/// Operation shape for `GetECSServiceRecommendationProjectedMetrics`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_ecs_service_recommendation_projected_metrics`](crate::client::Client::get_ecs_service_recommendation_projected_metrics).
+///
+/// See [`crate::client::fluent_builders::GetECSServiceRecommendationProjectedMetrics`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetECSServiceRecommendationProjectedMetrics {
+    _private: (),
+}
+impl GetECSServiceRecommendationProjectedMetrics {
+    /// Creates a new builder-style object to manufacture [`GetEcsServiceRecommendationProjectedMetricsInput`](crate::input::GetEcsServiceRecommendationProjectedMetricsInput).
+    pub fn builder() -> crate::input::get_ecs_service_recommendation_projected_metrics_input::Builder
+    {
+        crate::input::get_ecs_service_recommendation_projected_metrics_input::Builder::default()
+    }
+    /// Creates a new `GetECSServiceRecommendationProjectedMetrics` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse
+    for GetECSServiceRecommendationProjectedMetrics
+{
+    type Output = std::result::Result<
+        crate::output::GetEcsServiceRecommendationProjectedMetricsOutput,
+        crate::error::GetECSServiceRecommendationProjectedMetricsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_ecs_service_recommendation_projected_metrics_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_get_ecs_service_recommendation_projected_metrics_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `GetECSServiceRecommendations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_ecs_service_recommendations`](crate::client::Client::get_ecs_service_recommendations).
+///
+/// See [`crate::client::fluent_builders::GetECSServiceRecommendations`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetECSServiceRecommendations {
+    _private: (),
+}
+impl GetECSServiceRecommendations {
+    /// Creates a new builder-style object to manufacture [`GetEcsServiceRecommendationsInput`](crate::input::GetEcsServiceRecommendationsInput).
+    pub fn builder() -> crate::input::get_ecs_service_recommendations_input::Builder {
+        crate::input::get_ecs_service_recommendations_input::Builder::default()
+    }
+    /// Creates a new `GetECSServiceRecommendations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetECSServiceRecommendations {
+    type Output = std::result::Result<
+        crate::output::GetEcsServiceRecommendationsOutput,
+        crate::error::GetECSServiceRecommendationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_ecs_service_recommendations_error(response)
+        } else {
+            crate::operation_deser::parse_get_ecs_service_recommendations_response(response)
         }
     }
 }

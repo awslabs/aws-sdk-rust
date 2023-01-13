@@ -125,7 +125,7 @@ impl Client {
     ///   - [`category_code(impl Into<String>)`](crate::client::fluent_builders::CreateCase::category_code) / [`set_category_code(Option<String>)`](crate::client::fluent_builders::CreateCase::set_category_code): <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
     ///   - [`communication_body(impl Into<String>)`](crate::client::fluent_builders::CreateCase::communication_body) / [`set_communication_body(Option<String>)`](crate::client::fluent_builders::CreateCase::set_communication_body): <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
     ///   - [`cc_email_addresses(Vec<String>)`](crate::client::fluent_builders::CreateCase::cc_email_addresses) / [`set_cc_email_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCase::set_cc_email_addresses): <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
-    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::CreateCase::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::CreateCase::set_language): <p>The language in which Amazon Web Services Support handles the case. You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language. Currently, English ("en") and Japanese ("ja") are supported.</p>
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::CreateCase::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::CreateCase::set_language): <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     ///   - [`issue_type(impl Into<String>)`](crate::client::fluent_builders::CreateCase::issue_type) / [`set_issue_type(Option<String>)`](crate::client::fluent_builders::CreateCase::set_issue_type): <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
     ///   - [`attachment_set_id(impl Into<String>)`](crate::client::fluent_builders::CreateCase::attachment_set_id) / [`set_attachment_set_id(Option<String>)`](crate::client::fluent_builders::CreateCase::set_attachment_set_id): <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
     /// - On success, responds with [`CreateCaseOutput`](crate::output::CreateCaseOutput) with field(s):
@@ -155,7 +155,7 @@ impl Client {
     ///   - [`include_resolved_cases(bool)`](crate::client::fluent_builders::DescribeCases::include_resolved_cases) / [`set_include_resolved_cases(bool)`](crate::client::fluent_builders::DescribeCases::set_include_resolved_cases): <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeCases::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeCases::set_next_token): <p>A resumption point for pagination.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeCases::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeCases::set_max_results): <p>The maximum number of results to return before paginating.</p>
-    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeCases::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeCases::set_language): <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeCases::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeCases::set_language): <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     ///   - [`include_communications(bool)`](crate::client::fluent_builders::DescribeCases::include_communications) / [`set_include_communications(Option<bool>)`](crate::client::fluent_builders::DescribeCases::set_include_communications): <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
     /// - On success, responds with [`DescribeCasesOutput`](crate::output::DescribeCasesOutput) with field(s):
     ///   - [`cases(Option<Vec<CaseDetails>>)`](crate::output::DescribeCasesOutput::cases): <p>The details for the cases that match the request.</p>
@@ -184,7 +184,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`service_code_list(Vec<String>)`](crate::client::fluent_builders::DescribeServices::service_code_list) / [`set_service_code_list(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeServices::set_service_code_list): <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
-    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeServices::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeServices::set_language): <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeServices::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeServices::set_language): <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     /// - On success, responds with [`DescribeServicesOutput`](crate::output::DescribeServicesOutput) with field(s):
     ///   - [`services(Option<Vec<Service>>)`](crate::output::DescribeServicesOutput::services): <p>A JSON-formatted list of Amazon Web Services services.</p>
     /// - On failure, responds with [`SdkError<DescribeServicesError>`](crate::error::DescribeServicesError)
@@ -194,7 +194,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeSeverityLevels`](crate::client::fluent_builders::DescribeSeverityLevels) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeSeverityLevels::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeSeverityLevels::set_language): <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeSeverityLevels::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeSeverityLevels::set_language): <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     /// - On success, responds with [`DescribeSeverityLevelsOutput`](crate::output::DescribeSeverityLevelsOutput) with field(s):
     ///   - [`severity_levels(Option<Vec<SeverityLevel>>)`](crate::output::DescribeSeverityLevelsOutput::severity_levels): <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
     /// - On failure, responds with [`SdkError<DescribeSeverityLevelsError>`](crate::error::DescribeSeverityLevelsError)
@@ -217,7 +217,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`check_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckResult::check_id) / [`set_check_id(Option<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckResult::set_check_id): <p>The unique identifier for the Trusted Advisor check.</p>
-    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckResult::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckResult::set_language): <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckResult::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckResult::set_language): <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>  <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>  <ul>   <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>   <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>   <li> <p>English - <code>en</code> </p> </li>   <li> <p>French - <code>fr</code> </p> </li>   <li> <p>German - <code>de</code> </p> </li>   <li> <p>Indonesian - <code>id</code> </p> </li>   <li> <p>Italian - <code>it</code> </p> </li>   <li> <p>Japanese - <code>ja</code> </p> </li>   <li> <p>Korean - <code>ko</code> </p> </li>   <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>   <li> <p>Spanish - <code>es</code> </p> </li>  </ul>
     /// - On success, responds with [`DescribeTrustedAdvisorCheckResultOutput`](crate::output::DescribeTrustedAdvisorCheckResultOutput) with field(s):
     ///   - [`result(Option<TrustedAdvisorCheckResult>)`](crate::output::DescribeTrustedAdvisorCheckResultOutput::result): <p>The detailed results of the Trusted Advisor check.</p>
     /// - On failure, responds with [`SdkError<DescribeTrustedAdvisorCheckResultError>`](crate::error::DescribeTrustedAdvisorCheckResultError)
@@ -229,7 +229,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeTrustedAdvisorChecks`](crate::client::fluent_builders::DescribeTrustedAdvisorChecks) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorChecks::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorChecks::set_language): <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorChecks::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorChecks::set_language): <p>The ISO 639-1 code for the language that you want your checks to appear in.</p>  <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>  <ul>   <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>   <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>   <li> <p>English - <code>en</code> </p> </li>   <li> <p>French - <code>fr</code> </p> </li>   <li> <p>German - <code>de</code> </p> </li>   <li> <p>Indonesian - <code>id</code> </p> </li>   <li> <p>Italian - <code>it</code> </p> </li>   <li> <p>Japanese - <code>ja</code> </p> </li>   <li> <p>Korean - <code>ko</code> </p> </li>   <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>   <li> <p>Spanish - <code>es</code> </p> </li>  </ul>
     /// - On success, responds with [`DescribeTrustedAdvisorChecksOutput`](crate::output::DescribeTrustedAdvisorChecksOutput) with field(s):
     ///   - [`checks(Option<Vec<TrustedAdvisorCheckDescription>>)`](crate::output::DescribeTrustedAdvisorChecksOutput::checks): <p>Information about all available Trusted Advisor checks.</p>
     /// - On failure, responds with [`SdkError<DescribeTrustedAdvisorChecksError>`](crate::error::DescribeTrustedAdvisorChecksError)
@@ -283,7 +283,7 @@ pub mod fluent_builders {
     /// <p>An attachment set is a temporary container for attachments that you add to a case or case communication. The set is available for 1 hour after it's created. The <code>expiryTime</code> returned in the response is when the set expires. </p> <note>
     /// <ul>
     /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-    /// <li> <p>If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -383,7 +383,7 @@ pub mod fluent_builders {
     /// <p>Adds additional customer communication to an Amazon Web Services Support case. Use the <code>caseId</code> parameter to identify the case to which to add communication. You can list a set of email addresses to copy on the communication by using the <code>ccEmailAddresses</code> parameter. The <code>communicationBody</code> value contains the text of the communication.</p> <note>
     /// <ul>
     /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-    /// <li> <p>If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -511,7 +511,7 @@ pub mod fluent_builders {
     /// <p>The <code>caseId</code> is separate from the <code>displayId</code> that appears in the <a href="https://console.aws.amazon.com/support">Amazon Web Services Support Center</a>. Use the <code>DescribeCases</code> operation to get the <code>displayId</code>.</p> <note>
     /// <ul>
     /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-    /// <li> <p>If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -655,12 +655,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cc_email_addresses(input);
             self
         }
-        /// <p>The language in which Amazon Web Services Support handles the case. You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language. Currently, English ("en") and Japanese ("ja") are supported.</p>
+        /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.language(input.into());
             self
         }
-        /// <p>The language in which Amazon Web Services Support handles the case. You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language. Currently, English ("en") and Japanese ("ja") are supported.</p>
+        /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_language(input);
             self
@@ -694,7 +694,7 @@ pub mod fluent_builders {
     /// <p>Returns the attachment that has the specified ID. Attachments can include screenshots, error logs, or other files that describe your issue. Attachment IDs are generated by the case management system when you add an attachment to a case or case communication. Attachment IDs are returned in the <code>AttachmentDetails</code> objects that are returned by the <code>DescribeCommunications</code> operation.</p> <note>
     /// <ul>
     /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-    /// <li> <p>If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -781,7 +781,7 @@ pub mod fluent_builders {
     /// <p>Case data is available for 12 months after creation. If a case was created more than 12 months ago, a request might return an error.</p> <note>
     /// <ul>
     /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-    /// <li> <p>If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -926,12 +926,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+        /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.language(input.into());
             self
         }
-        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+        /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_language(input);
             self
@@ -954,7 +954,7 @@ pub mod fluent_builders {
     /// <p>You can use the <code>maxResults</code> and <code>nextToken</code> parameters to control the pagination of the results. Set <code>maxResults</code> to the number of cases that you want to display on each page, and use <code>nextToken</code> to specify the resumption of pagination.</p> <note>
     /// <ul>
     /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-    /// <li> <p>If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1079,7 +1079,7 @@ pub mod fluent_builders {
     /// <p>The service codes and category codes correspond to the values that appear in the <b>Service</b> and <b>Category</b> lists on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page. The values in those fields don't necessarily match the service codes and categories returned by the <code>DescribeServices</code> operation. Always use the service codes and categories that the <code>DescribeServices</code> operation returns, so that you have the most recent set of service and category codes.</p> <note>
     /// <ul>
     /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-    /// <li> <p>If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1158,12 +1158,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_code_list(input);
             self
         }
-        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+        /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.language(input.into());
             self
         }
-        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+        /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_language(input);
             self
@@ -1174,7 +1174,7 @@ pub mod fluent_builders {
     /// <p>Returns the list of severity levels that you can assign to a support case. The severity level for a case is also a field in the <code>CaseDetails</code> data type that you include for a <code>CreateCase</code> request.</p> <note>
     /// <ul>
     /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-    /// <li> <p>If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1236,12 +1236,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+        /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.language(input.into());
             self
         }
-        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+        /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_language(input);
             self
@@ -1253,9 +1253,10 @@ pub mod fluent_builders {
     /// <p>Some checks are refreshed automatically, and you can't return their refresh statuses by using the <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation. If you call this operation for these checks, you might see an <code>InvalidParameterValue</code> error.</p> <note>
     /// <ul>
     /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-    /// <li> <p>If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
     /// </ul>
     /// </note>
+    /// <p>To call the Trusted Advisor operations in the Amazon Web Services Support API, you must use the US East (N. Virginia) endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't support the Trusted Advisor operations. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrustedAdvisorCheckRefreshStatuses {
         handle: std::sync::Arc<super::Handle>,
@@ -1358,9 +1359,10 @@ pub mod fluent_builders {
     /// </ul> <note>
     /// <ul>
     /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-    /// <li> <p>If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
     /// </ul>
     /// </note>
+    /// <p>To call the Trusted Advisor operations in the Amazon Web Services Support API, you must use the US East (N. Virginia) endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't support the Trusted Advisor operations. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrustedAdvisorCheckResult {
         handle: std::sync::Arc<super::Handle>,
@@ -1430,12 +1432,40 @@ pub mod fluent_builders {
             self.inner = self.inner.set_check_id(input);
             self
         }
-        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>
+        /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
+        /// <ul>
+        /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
+        /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
+        /// <li> <p>English - <code>en</code> </p> </li>
+        /// <li> <p>French - <code>fr</code> </p> </li>
+        /// <li> <p>German - <code>de</code> </p> </li>
+        /// <li> <p>Indonesian - <code>id</code> </p> </li>
+        /// <li> <p>Italian - <code>it</code> </p> </li>
+        /// <li> <p>Japanese - <code>ja</code> </p> </li>
+        /// <li> <p>Korean - <code>ko</code> </p> </li>
+        /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
+        /// <li> <p>Spanish - <code>es</code> </p> </li>
+        /// </ul>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.language(input.into());
             self
         }
-        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>
+        /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
+        /// <ul>
+        /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
+        /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
+        /// <li> <p>English - <code>en</code> </p> </li>
+        /// <li> <p>French - <code>fr</code> </p> </li>
+        /// <li> <p>German - <code>de</code> </p> </li>
+        /// <li> <p>Indonesian - <code>id</code> </p> </li>
+        /// <li> <p>Italian - <code>it</code> </p> </li>
+        /// <li> <p>Japanese - <code>ja</code> </p> </li>
+        /// <li> <p>Korean - <code>ko</code> </p> </li>
+        /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
+        /// <li> <p>Spanish - <code>es</code> </p> </li>
+        /// </ul>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_language(input);
             self
@@ -1443,13 +1473,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeTrustedAdvisorChecks`.
     ///
-    /// <p>Returns information about all available Trusted Advisor checks, including the name, ID, category, description, and metadata. You must specify a language code. The Amazon Web Services Support API currently supports English ("en") and Japanese ("ja"). The response contains a <code>TrustedAdvisorCheckDescription</code> object for each check. You must set the Amazon Web Services Region to us-east-1.</p> <note>
+    /// <p>Returns information about all available Trusted Advisor checks, including the name, ID, category, description, and metadata. You must specify a language code.</p>
+    /// <p>The response contains a <code>TrustedAdvisorCheckDescription</code> object for each check. You must set the Amazon Web Services Region to us-east-1.</p> <note>
     /// <ul>
     /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-    /// <li> <p>If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
     /// <li> <p>The names and descriptions for Trusted Advisor checks are subject to change. We recommend that you specify the check ID in your code to uniquely identify a check.</p> </li>
     /// </ul>
     /// </note>
+    /// <p>To call the Trusted Advisor operations in the Amazon Web Services Support API, you must use the US East (N. Virginia) endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't support the Trusted Advisor operations. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrustedAdvisorChecks {
         handle: std::sync::Arc<super::Handle>,
@@ -1509,12 +1541,40 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language that you want your checks to appear in.</p>
+        /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
+        /// <ul>
+        /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
+        /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
+        /// <li> <p>English - <code>en</code> </p> </li>
+        /// <li> <p>French - <code>fr</code> </p> </li>
+        /// <li> <p>German - <code>de</code> </p> </li>
+        /// <li> <p>Indonesian - <code>id</code> </p> </li>
+        /// <li> <p>Italian - <code>it</code> </p> </li>
+        /// <li> <p>Japanese - <code>ja</code> </p> </li>
+        /// <li> <p>Korean - <code>ko</code> </p> </li>
+        /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
+        /// <li> <p>Spanish - <code>es</code> </p> </li>
+        /// </ul>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.language(input.into());
             self
         }
-        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language that you want your checks to appear in.</p>
+        /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
+        /// <ul>
+        /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
+        /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
+        /// <li> <p>English - <code>en</code> </p> </li>
+        /// <li> <p>French - <code>fr</code> </p> </li>
+        /// <li> <p>German - <code>de</code> </p> </li>
+        /// <li> <p>Indonesian - <code>id</code> </p> </li>
+        /// <li> <p>Italian - <code>it</code> </p> </li>
+        /// <li> <p>Japanese - <code>ja</code> </p> </li>
+        /// <li> <p>Korean - <code>ko</code> </p> </li>
+        /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
+        /// <li> <p>Spanish - <code>es</code> </p> </li>
+        /// </ul>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_language(input);
             self
@@ -1526,9 +1586,10 @@ pub mod fluent_builders {
     /// <p>The response contains an array of <code>TrustedAdvisorCheckSummary</code> objects.</p> <note>
     /// <ul>
     /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-    /// <li> <p>If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
     /// </ul>
     /// </note>
+    /// <p>To call the Trusted Advisor operations in the Amazon Web Services Support API, you must use the US East (N. Virginia) endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't support the Trusted Advisor operations. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrustedAdvisorCheckSummaries {
         handle: std::sync::Arc<super::Handle>,
@@ -1612,15 +1673,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RefreshTrustedAdvisorCheck`.
     ///
-    /// <p>Refreshes the Trusted Advisor check that you specify using the check ID. You can get the check IDs by calling the <code>DescribeTrustedAdvisorChecks</code> operation.</p> <note>
+    /// <p>Refreshes the Trusted Advisor check that you specify using the check ID. You can get the check IDs by calling the <code>DescribeTrustedAdvisorChecks</code> operation.</p>
     /// <p>Some checks are refreshed automatically. If you call the <code>RefreshTrustedAdvisorCheck</code> operation to refresh them, you might see the <code>InvalidParameterValue</code> error.</p>
-    /// </note>
     /// <p>The response contains a <code>TrustedAdvisorCheckRefreshStatus</code> object.</p> <note>
     /// <ul>
     /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-    /// <li> <p>If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
     /// </ul>
     /// </note>
+    /// <p>To call the Trusted Advisor operations in the Amazon Web Services Support API, you must use the US East (N. Virginia) endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't support the Trusted Advisor operations. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RefreshTrustedAdvisorCheck {
         handle: std::sync::Arc<super::Handle>,
@@ -1700,7 +1761,7 @@ pub mod fluent_builders {
     /// <p>Resolves a support case. This operation takes a <code>caseId</code> and returns the initial and final state of the case.</p> <note>
     /// <ul>
     /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-    /// <li> <p>If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]

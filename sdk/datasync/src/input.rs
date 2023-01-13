@@ -10,12 +10,12 @@ pub mod cancel_task_execution_input {
         pub(crate) task_execution_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
+        /// <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
         pub fn task_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_execution_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
+        /// <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
         pub fn set_task_execution_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2186,6 +2186,7 @@ pub mod create_location_object_storage_input {
         pub(crate) secret_key: std::option::Option<std::string::String>,
         pub(crate) agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+        pub(crate) server_certificate: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
@@ -2302,6 +2303,21 @@ pub mod create_location_object_storage_input {
             self.tags = input;
             self
         }
+        /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+        /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+        pub fn server_certificate(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.server_certificate = Some(input);
+            self
+        }
+        /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+        /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+        pub fn set_server_certificate(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.server_certificate = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateLocationObjectStorageInput`](crate::input::CreateLocationObjectStorageInput).
         pub fn build(
             self,
@@ -2319,6 +2335,7 @@ pub mod create_location_object_storage_input {
                 secret_key: self.secret_key,
                 agent_arns: self.agent_arns,
                 tags: self.tags,
+                server_certificate: self.server_certificate,
             })
         }
     }
@@ -2334,6 +2351,7 @@ pub mod create_location_object_storage_input {
             formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
             formatter.field("agent_arns", &self.agent_arns);
             formatter.field("tags", &self.tags);
+            formatter.field("server_certificate", &self.server_certificate);
             formatter.finish()
         }
     }
@@ -3034,14 +3052,14 @@ pub mod create_task_input {
             self.name = input;
             self
         }
-        /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
-        /// <p>For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code> before starting the task execution. For more information, see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+        /// <p>Specifies the configuration options for a task. Some options include preserving file or object metadata and verifying data integrity.</p>
+        /// <p>You can also override these options before starting an individual run of a task (also known as a <i>task execution</i>). For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.options = Some(input);
             self
         }
-        /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
-        /// <p>For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code> before starting the task execution. For more information, see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+        /// <p>Specifies the configuration options for a task. Some options include preserving file or object metadata and verifying data integrity.</p>
+        /// <p>You can also override these options before starting an individual run of a task (also known as a <i>task execution</i>). For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
             self.options = input;
             self
@@ -3050,16 +3068,14 @@ pub mod create_task_input {
         ///
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-        /// <p> </p>
+        /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
             v.push(input);
             self.excludes = Some(v);
             self
         }
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-        /// <p> </p>
+        /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -3084,14 +3100,16 @@ pub mod create_task_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pair that represents the tag that you want to add to the resource. The value can be an empty string. </p>
+        /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
+        /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The key-value pair that represents the tag that you want to add to the resource. The value can be an empty string. </p>
+        /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
+        /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -3103,14 +3121,14 @@ pub mod create_task_input {
         ///
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
             v.push(input);
             self.includes = Some(v);
             self
         }
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -3551,12 +3569,12 @@ pub mod delete_task_input {
         pub(crate) task_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
         pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_arn = input;
             self
@@ -5948,32 +5966,32 @@ pub mod list_tags_for_resource_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>The maximum number of locations to return.</p>
+        /// <p>Specifies how many results that you want in the response.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of locations to return.</p>
+        /// <p>Specifies how many results that you want in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
+        /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
+        /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6467,26 +6485,27 @@ pub mod start_task_execution_input {
         pub(crate) override_options: std::option::Option<crate::model::Options>,
         pub(crate) includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
         pub(crate) excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
         pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_arn = input;
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn override_options(mut self, input: crate::model::Options) -> Self {
             self.override_options = Some(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn set_override_options(
             mut self,
             input: std::option::Option<crate::model::Options>,
@@ -6498,16 +6517,14 @@ pub mod start_task_execution_input {
         ///
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-        /// <p> </p>
+        /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
             v.push(input);
             self.includes = Some(v);
             self
         }
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-        /// <p> </p>
+        /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -6519,19 +6536,40 @@ pub mod start_task_execution_input {
         ///
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+        /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
             v.push(input);
             self.excludes = Some(v);
             self
         }
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+        /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
         ) -> Self {
             self.excludes = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
+        /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
+        /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+        ) -> Self {
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`StartTaskExecutionInput`](crate::input::StartTaskExecutionInput).
@@ -6546,6 +6584,7 @@ pub mod start_task_execution_input {
                 override_options: self.override_options,
                 includes: self.includes,
                 excludes: self.excludes,
+                tags: self.tags,
             })
         }
     }
@@ -6675,12 +6714,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6689,14 +6728,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to apply.</p>
+        /// <p>Specifies the tags that you want to apply to the resource.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags to apply.</p>
+        /// <p>Specifies the tags that you want to apply to the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -6841,12 +6880,12 @@ pub mod untag_resource_input {
         pub(crate) keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6855,14 +6894,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_keys`](Self::set_keys).
         ///
-        /// <p>The keys in the key-value pair in the tag to remove.</p>
+        /// <p>Specifies the keys in the tags that you want to remove.</p>
         pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.keys.unwrap_or_default();
             v.push(input.into());
             self.keys = Some(v);
             self
         }
-        /// <p>The keys in the key-value pair in the tag to remove.</p>
+        /// <p>Specifies the keys in the tags that you want to remove.</p>
         pub fn set_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7691,34 +7730,35 @@ pub mod update_location_object_storage_input {
         pub(crate) access_key: std::option::Option<std::string::String>,
         pub(crate) secret_key: std::option::Option<std::string::String>,
         pub(crate) agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) server_certificate: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.</p>
+        /// <p>Specifies the ARN of the object storage system location that you're updating.</p>
         pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.location_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.</p>
+        /// <p>Specifies the ARN of the object storage system location that you're updating.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input;
             self
         }
-        /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
+        /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
         pub fn server_port(mut self, input: i32) -> Self {
             self.server_port = Some(input);
             self
         }
-        /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
+        /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
         pub fn set_server_port(mut self, input: std::option::Option<i32>) -> Self {
             self.server_port = input;
             self
         }
-        /// <p>The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or <code>HTTPS</code>.</p>
+        /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
         pub fn server_protocol(mut self, input: crate::model::ObjectStorageServerProtocol) -> Self {
             self.server_protocol = Some(input);
             self
         }
-        /// <p>The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or <code>HTTPS</code>.</p>
+        /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
         pub fn set_server_protocol(
             mut self,
             input: std::option::Option<crate::model::ObjectStorageServerProtocol>,
@@ -7726,32 +7766,32 @@ pub mod update_location_object_storage_input {
             self.server_protocol = input;
             self
         }
-        /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
+        /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.subdirectory = Some(input.into());
             self
         }
-        /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
+        /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subdirectory = input;
             self
         }
-        /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+        /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
         pub fn access_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_key = Some(input.into());
             self
         }
-        /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+        /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
         pub fn set_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_key = input;
             self
         }
-        /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+        /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
         pub fn secret_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_key = Some(input.into());
             self
         }
-        /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+        /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
         pub fn set_secret_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_key = input;
             self
@@ -7760,19 +7800,36 @@ pub mod update_location_object_storage_input {
         ///
         /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
         ///
-        /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+        /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
             v.push(input.into());
             self.agent_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+        /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
         pub fn set_agent_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.agent_arns = input;
+            self
+        }
+        /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+        /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+        /// <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
+        pub fn server_certificate(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.server_certificate = Some(input);
+            self
+        }
+        /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+        /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+        /// <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
+        pub fn set_server_certificate(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.server_certificate = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateLocationObjectStorageInput`](crate::input::UpdateLocationObjectStorageInput).
@@ -7790,6 +7847,7 @@ pub mod update_location_object_storage_input {
                 access_key: self.access_key,
                 secret_key: self.secret_key,
                 agent_arns: self.agent_arns,
+                server_certificate: self.server_certificate,
             })
         }
     }
@@ -7803,6 +7861,7 @@ pub mod update_location_object_storage_input {
             formatter.field("access_key", &self.access_key);
             formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
             formatter.field("agent_arns", &self.agent_arns);
+            formatter.field("server_certificate", &self.server_certificate);
             formatter.finish()
         }
     }
@@ -8206,14 +8265,14 @@ pub mod update_task_input {
             self.task_arn = input;
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.options = Some(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
             self.options = input;
             self
@@ -8222,16 +8281,14 @@ pub mod update_task_input {
         ///
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-        /// <p> </p>
+        /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
             v.push(input);
             self.excludes = Some(v);
             self
         }
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-        /// <p> </p>
+        /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -8279,14 +8336,14 @@ pub mod update_task_input {
         ///
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
             v.push(input);
             self.includes = Some(v);
             self
         }
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -8449,14 +8506,14 @@ pub mod update_task_execution_input {
             self.task_execution_arn = input;
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.options = Some(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
             self.options = input;
             self
@@ -8597,8 +8654,8 @@ pub struct UpdateTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
     #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
-    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-    /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::model::Options>,
 }
@@ -8607,8 +8664,8 @@ impl UpdateTaskExecutionInput {
     pub fn task_execution_arn(&self) -> std::option::Option<&str> {
         self.task_execution_arn.as_deref()
     }
-    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-    /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     pub fn options(&self) -> std::option::Option<&crate::model::Options> {
         self.options.as_ref()
     }
@@ -8621,12 +8678,11 @@ pub struct UpdateTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
     #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
-    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-    /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::model::Options>,
-    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-    /// <p> </p>
+    /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     #[doc(hidden)]
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
@@ -8638,7 +8694,7 @@ pub struct UpdateTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
     #[doc(hidden)]
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
-    /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     #[doc(hidden)]
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
@@ -8647,13 +8703,12 @@ impl UpdateTaskInput {
     pub fn task_arn(&self) -> std::option::Option<&str> {
         self.task_arn.as_deref()
     }
-    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-    /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     pub fn options(&self) -> std::option::Option<&crate::model::Options> {
         self.options.as_ref()
     }
-    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-    /// <p> </p>
+    /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.excludes.as_deref()
     }
@@ -8669,7 +8724,7 @@ impl UpdateTaskInput {
     pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
-    /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.includes.as_deref()
     }
@@ -8765,58 +8820,69 @@ impl std::fmt::Debug for UpdateLocationSmbInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLocationObjectStorageInput {
-    /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.</p>
+    /// <p>Specifies the ARN of the object storage system location that you're updating.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
+    /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     #[doc(hidden)]
     pub server_port: std::option::Option<i32>,
-    /// <p>The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or <code>HTTPS</code>.</p>
+    /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
     #[doc(hidden)]
     pub server_protocol: std::option::Option<crate::model::ObjectStorageServerProtocol>,
-    /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
+    /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
     #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
-    /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+    /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
     #[doc(hidden)]
     pub access_key: std::option::Option<std::string::String>,
-    /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
     #[doc(hidden)]
     pub secret_key: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
     #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+    /// <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
+    #[doc(hidden)]
+    pub server_certificate: std::option::Option<aws_smithy_types::Blob>,
 }
 impl UpdateLocationObjectStorageInput {
-    /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.</p>
+    /// <p>Specifies the ARN of the object storage system location that you're updating.</p>
     pub fn location_arn(&self) -> std::option::Option<&str> {
         self.location_arn.as_deref()
     }
-    /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
+    /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     pub fn server_port(&self) -> std::option::Option<i32> {
         self.server_port
     }
-    /// <p>The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or <code>HTTPS</code>.</p>
+    /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
     pub fn server_protocol(
         &self,
     ) -> std::option::Option<&crate::model::ObjectStorageServerProtocol> {
         self.server_protocol.as_ref()
     }
-    /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
+    /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
     pub fn subdirectory(&self) -> std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
-    /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+    /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
     pub fn access_key(&self) -> std::option::Option<&str> {
         self.access_key.as_deref()
     }
-    /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
     pub fn secret_key(&self) -> std::option::Option<&str> {
         self.secret_key.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
     pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.agent_arns.as_deref()
+    }
+    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+    /// <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
+    pub fn server_certificate(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.server_certificate.as_ref()
     }
 }
 impl std::fmt::Debug for UpdateLocationObjectStorageInput {
@@ -8829,6 +8895,7 @@ impl std::fmt::Debug for UpdateLocationObjectStorageInput {
         formatter.field("access_key", &self.access_key);
         formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_arns", &self.agent_arns);
+        formatter.field("server_certificate", &self.server_certificate);
         formatter.finish()
     }
 }
@@ -9004,19 +9071,19 @@ impl UpdateAgentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The keys in the key-value pair in the tag to remove.</p>
+    /// <p>Specifies the keys in the tags that you want to remove.</p>
     #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The keys in the key-value pair in the tag to remove.</p>
+    /// <p>Specifies the keys in the tags that you want to remove.</p>
     pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
         self.keys.as_deref()
     }
@@ -9026,19 +9093,19 @@ impl UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tags to apply.</p>
+    /// <p>Specifies the tags that you want to apply to the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tags to apply.</p>
+    /// <p>Specifies the tags that you want to apply to the resource.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
@@ -9048,39 +9115,46 @@ impl TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTaskExecutionInput {
-    /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
     #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
-    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-    /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     #[doc(hidden)]
     pub override_options: std::option::Option<crate::model::Options>,
-    /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    /// <p> </p>
+    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     #[doc(hidden)]
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
-    /// <p>A list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     #[doc(hidden)]
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+    /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
+    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl StartTaskExecutionInput {
-    /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
     pub fn task_arn(&self) -> std::option::Option<&str> {
         self.task_arn.as_deref()
     }
-    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-    /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     pub fn override_options(&self) -> std::option::Option<&crate::model::Options> {
         self.override_options.as_ref()
     }
-    /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    /// <p> </p>
+    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.includes.as_deref()
     }
-    /// <p>A list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.excludes.as_deref()
+    }
+    /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
+    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+        self.tags.as_deref()
     }
 }
 
@@ -9146,26 +9220,26 @@ impl ListTaskExecutionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The maximum number of locations to return.</p>
+    /// <p>Specifies how many results that you want in the response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
+    /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The maximum number of locations to return.</p>
+    /// <p>Specifies how many results that you want in the response.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
+    /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9421,12 +9495,12 @@ impl DescribeAgentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTaskInput {
-    /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
     #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
 }
 impl DeleteTaskInput {
-    /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
     pub fn task_arn(&self) -> std::option::Option<&str> {
         self.task_arn.as_deref()
     }
@@ -9478,21 +9552,21 @@ pub struct CreateTaskInput {
     /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
-    /// <p>For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code> before starting the task execution. For more information, see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+    /// <p>Specifies the configuration options for a task. Some options include preserving file or object metadata and verifying data integrity.</p>
+    /// <p>You can also override these options before starting an individual run of a task (also known as a <i>task execution</i>). For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::model::Options>,
-    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    /// <p> </p>
+    /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     #[doc(hidden)]
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::TaskSchedule>,
-    /// <p>The key-value pair that represents the tag that you want to add to the resource. The value can be an empty string. </p>
+    /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
+    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-    /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     #[doc(hidden)]
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
@@ -9513,13 +9587,12 @@ impl CreateTaskInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
-    /// <p>For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code> before starting the task execution. For more information, see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+    /// <p>Specifies the configuration options for a task. Some options include preserving file or object metadata and verifying data integrity.</p>
+    /// <p>You can also override these options before starting an individual run of a task (also known as a <i>task execution</i>). For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
     pub fn options(&self) -> std::option::Option<&crate::model::Options> {
         self.options.as_ref()
     }
-    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    /// <p> </p>
+    /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.excludes.as_deref()
     }
@@ -9527,11 +9600,12 @@ impl CreateTaskInput {
     pub fn schedule(&self) -> std::option::Option<&crate::model::TaskSchedule> {
         self.schedule.as_ref()
     }
-    /// <p>The key-value pair that represents the tag that you want to add to the resource. The value can be an empty string. </p>
+    /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
+    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
-    /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.includes.as_deref()
     }
@@ -9712,6 +9786,10 @@ pub struct CreateLocationObjectStorageInput {
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+    #[doc(hidden)]
+    pub server_certificate: std::option::Option<aws_smithy_types::Blob>,
 }
 impl CreateLocationObjectStorageInput {
     /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
@@ -9752,6 +9830,11 @@ impl CreateLocationObjectStorageInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
+    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+    pub fn server_certificate(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.server_certificate.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateLocationObjectStorageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9765,6 +9848,7 @@ impl std::fmt::Debug for CreateLocationObjectStorageInput {
         formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_arns", &self.agent_arns);
         formatter.field("tags", &self.tags);
+        formatter.field("server_certificate", &self.server_certificate);
         formatter.finish()
     }
 }
@@ -10296,12 +10380,12 @@ impl CreateAgentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelTaskExecutionInput {
-    /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
+    /// <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
     #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
 }
 impl CancelTaskExecutionInput {
-    /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
+    /// <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
     pub fn task_execution_arn(&self) -> std::option::Option<&str> {
         self.task_execution_arn.as_deref()
     }

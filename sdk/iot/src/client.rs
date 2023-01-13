@@ -446,6 +446,7 @@ impl Client {
     ///   - [`job_template_arn(impl Into<String>)`](crate::client::fluent_builders::CreateJob::job_template_arn) / [`set_job_template_arn(Option<String>)`](crate::client::fluent_builders::CreateJob::set_job_template_arn): <p>The ARN of the job template used to create the job.</p>
     ///   - [`job_executions_retry_config(JobExecutionsRetryConfig)`](crate::client::fluent_builders::CreateJob::job_executions_retry_config) / [`set_job_executions_retry_config(Option<JobExecutionsRetryConfig>)`](crate::client::fluent_builders::CreateJob::set_job_executions_retry_config): <p>Allows you to create the criteria to retry a job.</p>
     ///   - [`document_parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateJob::document_parameters) / [`set_document_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateJob::set_document_parameters): <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note>   <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>  </note>
+    ///   - [`scheduling_config(SchedulingConfig)`](crate::client::fluent_builders::CreateJob::scheduling_config) / [`set_scheduling_config(Option<SchedulingConfig>)`](crate::client::fluent_builders::CreateJob::set_scheduling_config): <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
     /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
     ///   - [`job_arn(Option<String>)`](crate::output::CreateJobOutput::job_arn): <p>The job ARN.</p>
     ///   - [`job_id(Option<String>)`](crate::output::CreateJobOutput::job_id): <p>The unique identifier you assigned to this job.</p>
@@ -579,7 +580,7 @@ impl Client {
     ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_template_body): <p>The JSON formatted contents of the provisioning template.</p>
     ///   - [`enabled(bool)`](crate::client::fluent_builders::CreateProvisioningTemplate::enabled) / [`set_enabled(bool)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_enabled): <p>True to enable the provisioning template, otherwise false.</p>
     ///   - [`provisioning_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::provisioning_role_arn) / [`set_provisioning_role_arn(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_provisioning_role_arn): <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    ///   - [`pre_provisioning_hook(ProvisioningHook)`](crate::client::fluent_builders::CreateProvisioningTemplate::pre_provisioning_hook) / [`set_pre_provisioning_hook(Option<ProvisioningHook>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_pre_provisioning_hook): <p>Creates a pre-provisioning hook template.</p>
+    ///   - [`pre_provisioning_hook(ProvisioningHook)`](crate::client::fluent_builders::CreateProvisioningTemplate::pre_provisioning_hook) / [`set_pre_provisioning_hook(Option<ProvisioningHook>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_pre_provisioning_hook): <p>Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateProvisioningTemplate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_tags): <p>Metadata which can be used to manage the provisioning template.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
     ///   - [`r#type(TemplateType)`](crate::client::fluent_builders::CreateProvisioningTemplate::type) / [`set_type(Option<TemplateType>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_type): <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
     /// - On success, responds with [`CreateProvisioningTemplateOutput`](crate::output::CreateProvisioningTemplateOutput) with field(s):
@@ -1633,7 +1634,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`security_profile_name(impl Into<String>)`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::set_security_profile_name): <p> The name of the security profile. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::set_max_results): <p> The maximum number of results to return at one time. The default is 25. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::set_max_results): <p> The maximum number of results to return at one time. The default is 10. </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::set_next_token): <p> The token for the next set of results. </p>
     /// - On success, responds with [`GetBehaviorModelTrainingSummariesOutput`](crate::output::GetBehaviorModelTrainingSummariesOutput) with field(s):
     ///   - [`summaries(Option<Vec<BehaviorModelTrainingSummary>>)`](crate::output::GetBehaviorModelTrainingSummariesOutput::summaries): <p> A list of all ML Detect behaviors and their model status for a given Security Profile. </p>
@@ -2362,6 +2363,21 @@ impl Client {
         &self,
     ) -> fluent_builders::ListProvisioningTemplateVersions {
         fluent_builders::ListProvisioningTemplateVersions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListRelatedResourcesForAuditFinding`](crate::client::fluent_builders::ListRelatedResourcesForAuditFinding) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`finding_id(impl Into<String>)`](crate::client::fluent_builders::ListRelatedResourcesForAuditFinding::finding_id) / [`set_finding_id(Option<String>)`](crate::client::fluent_builders::ListRelatedResourcesForAuditFinding::set_finding_id): <p>The finding Id.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRelatedResourcesForAuditFinding::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRelatedResourcesForAuditFinding::set_next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRelatedResourcesForAuditFinding::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRelatedResourcesForAuditFinding::set_max_results): <p>The maximum number of results to return at one time.</p>
+    /// - On success, responds with [`ListRelatedResourcesForAuditFindingOutput`](crate::output::ListRelatedResourcesForAuditFindingOutput) with field(s):
+    ///   - [`related_resources(Option<Vec<RelatedResource>>)`](crate::output::ListRelatedResourcesForAuditFindingOutput::related_resources): <p>The related resources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRelatedResourcesForAuditFindingOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> for the first API call.</p>
+    /// - On failure, responds with [`SdkError<ListRelatedResourcesForAuditFindingError>`](crate::error::ListRelatedResourcesForAuditFindingError)
+    pub fn list_related_resources_for_audit_finding(
+        &self,
+    ) -> fluent_builders::ListRelatedResourcesForAuditFinding {
+        fluent_builders::ListRelatedResourcesForAuditFinding::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListRoleAliases`](crate::client::fluent_builders::ListRoleAliases) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRoleAliases::into_paginator).
@@ -3219,7 +3235,7 @@ impl Client {
     ///   - [`enabled(bool)`](crate::client::fluent_builders::UpdateProvisioningTemplate::enabled) / [`set_enabled(bool)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_enabled): <p>True to enable the provisioning template, otherwise false.</p>
     ///   - [`default_version_id(i32)`](crate::client::fluent_builders::UpdateProvisioningTemplate::default_version_id) / [`set_default_version_id(Option<i32>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_default_version_id): <p>The ID of the default provisioning template version.</p>
     ///   - [`provisioning_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::provisioning_role_arn) / [`set_provisioning_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_provisioning_role_arn): <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    ///   - [`pre_provisioning_hook(ProvisioningHook)`](crate::client::fluent_builders::UpdateProvisioningTemplate::pre_provisioning_hook) / [`set_pre_provisioning_hook(Option<ProvisioningHook>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_pre_provisioning_hook): <p>Updates the pre-provisioning hook template.</p>
+    ///   - [`pre_provisioning_hook(ProvisioningHook)`](crate::client::fluent_builders::UpdateProvisioningTemplate::pre_provisioning_hook) / [`set_pre_provisioning_hook(Option<ProvisioningHook>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_pre_provisioning_hook): <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
     ///   - [`remove_pre_provisioning_hook(bool)`](crate::client::fluent_builders::UpdateProvisioningTemplate::remove_pre_provisioning_hook) / [`set_remove_pre_provisioning_hook(Option<bool>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_remove_pre_provisioning_hook): <p>Removes pre-provisioning hook template.</p>
     /// - On success, responds with [`UpdateProvisioningTemplateOutput`](crate::output::UpdateProvisioningTemplateOutput)
 
@@ -4080,7 +4096,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AttachThingPrincipal`.
     ///
-    /// <p>Attaches the specified principal to the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.</p>
+    /// <p>Attaches the specified principal to the specified thing. A principal can be X.509 certificates, Amazon Cognito identities or federated identities.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachThingPrincipal</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachThingPrincipal {
@@ -6434,6 +6450,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_parameters(input);
             self
         }
+        /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
+        pub fn scheduling_config(mut self, input: crate::model::SchedulingConfig) -> Self {
+            self.inner = self.inner.scheduling_config(input);
+            self
+        }
+        /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
+        pub fn set_scheduling_config(
+            mut self,
+            input: std::option::Option<crate::model::SchedulingConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_scheduling_config(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateJobTemplate`.
     ///
@@ -7511,12 +7540,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_role_arn(input);
             self
         }
-        /// <p>Creates a pre-provisioning hook template.</p>
+        /// <p>Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
         pub fn pre_provisioning_hook(mut self, input: crate::model::ProvisioningHook) -> Self {
             self.inner = self.inner.pre_provisioning_hook(input);
             self
         }
-        /// <p>Creates a pre-provisioning hook template.</p>
+        /// <p>Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
         pub fn set_pre_provisioning_hook(
             mut self,
             input: std::option::Option<crate::model::ProvisioningHook>,
@@ -14564,12 +14593,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_profile_name(input);
             self
         }
-        /// <p> The maximum number of results to return at one time. The default is 25. </p>
+        /// <p> The maximum number of results to return at one time. The default is 10. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p> The maximum number of results to return at one time. The default is 25. </p>
+        /// <p> The maximum number of results to return at one time. The default is 10. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -19888,6 +19917,116 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListRelatedResourcesForAuditFinding`.
+    ///
+    /// <p>The related resources of an Audit finding. The following resources can be returned from calling this API:</p>
+    /// <ul>
+    /// <li> <p>DEVICE_CERTIFICATE</p> </li>
+    /// <li> <p>CA_CERTIFICATE</p> </li>
+    /// <li> <p>IOT_POLICY</p> </li>
+    /// <li> <p>COGNITO_IDENTITY_POOL</p> </li>
+    /// <li> <p>CLIENT_ID</p> </li>
+    /// <li> <p>ACCOUNT_SETTINGS</p> </li>
+    /// <li> <p>ROLE_ALIAS</p> </li>
+    /// <li> <p>IAM_ROLE</p> </li>
+    /// <li> <p>ISSUER_CERTIFICATE</p> </li>
+    /// </ul> <note>
+    /// <p>This API is similar to DescribeAuditFinding's <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">RelatedResources</a> but provides pagination and is not limited to 10 resources. When calling <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">DescribeAuditFinding</a> for the intermediate CA revoked for active device certificates check, RelatedResources will not be populated. You must use this API, ListRelatedResourcesForAuditFinding, to list the certificates.</p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListRelatedResourcesForAuditFinding {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_related_resources_for_audit_finding_input::Builder,
+    }
+    impl ListRelatedResourcesForAuditFinding {
+        /// Creates a new `ListRelatedResourcesForAuditFinding`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListRelatedResourcesForAuditFinding,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListRelatedResourcesForAuditFindingError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListRelatedResourcesForAuditFindingOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListRelatedResourcesForAuditFindingError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The finding Id.</p>
+        pub fn finding_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_id(input.into());
+            self
+        }
+        /// <p>The finding Id.</p>
+        pub fn set_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_finding_id(input);
+            self
+        }
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return at one time.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return at one time.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListRoleAliases`.
     ///
     /// <p>Lists the role aliases registered in your account.</p>
@@ -21242,7 +21381,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListThings`.
     ///
-    /// <p>Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters to filter your things. For example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in the registry that contain an attribute <b>Color</b> with the value <b>Red</b>. </p>
+    /// <p>Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters to filter your things. For example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in the registry that contain an attribute <b>Color</b> with the value <b>Red</b>. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html#list-things">List Things</a> from the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThings</a> action.</p> <note>
     /// <p>You will not be charged for calling this API if an <code>Access denied</code> error is returned. You will also not be charged if no attributes or pagination token was provided in request and no pagination token and no results were returned.</p>
     /// </note>
@@ -26734,12 +26873,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_role_arn(input);
             self
         }
-        /// <p>Updates the pre-provisioning hook template.</p>
+        /// <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
         pub fn pre_provisioning_hook(mut self, input: crate::model::ProvisioningHook) -> Self {
             self.inner = self.inner.pre_provisioning_hook(input);
             self
         }
-        /// <p>Updates the pre-provisioning hook template.</p>
+        /// <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
         pub fn set_pre_provisioning_hook(
             mut self,
             input: std::option::Option<crate::model::ProvisioningHook>,

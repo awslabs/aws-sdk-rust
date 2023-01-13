@@ -1102,7 +1102,7 @@ impl Form {
     }
 }
 
-/// <p>Describes the call to action button configuration for the form..</p>
+/// <p>Describes the call to action button configuration for the form.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FormCta {
@@ -1985,6 +1985,9 @@ pub struct FieldInputConfig {
     /// <p>The value for the field.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
+    /// <p>Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code> for the form is a Data Store.</p>
+    #[doc(hidden)]
+    pub is_array: std::option::Option<bool>,
 }
 impl FieldInputConfig {
     /// <p>The input type for the field. </p>
@@ -2043,6 +2046,10 @@ impl FieldInputConfig {
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
+    /// <p>Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code> for the form is a Data Store.</p>
+    pub fn is_array(&self) -> std::option::Option<bool> {
+        self.is_array
+    }
 }
 /// See [`FieldInputConfig`](crate::model::FieldInputConfig).
 pub mod field_input_config {
@@ -2064,6 +2071,7 @@ pub mod field_input_config {
         pub(crate) max_value: std::option::Option<f32>,
         pub(crate) step: std::option::Option<f32>,
         pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) is_array: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The input type for the field. </p>
@@ -2218,6 +2226,16 @@ pub mod field_input_config {
             self.value = input;
             self
         }
+        /// <p>Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code> for the form is a Data Store.</p>
+        pub fn is_array(mut self, input: bool) -> Self {
+            self.is_array = Some(input);
+            self
+        }
+        /// <p>Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code> for the form is a Data Store.</p>
+        pub fn set_is_array(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_array = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FieldInputConfig`](crate::model::FieldInputConfig).
         pub fn build(self) -> crate::model::FieldInputConfig {
             crate::model::FieldInputConfig {
@@ -2235,6 +2253,7 @@ pub mod field_input_config {
                 max_value: self.max_value,
                 step: self.step,
                 value: self.value,
+                is_array: self.is_array,
             }
         }
     }

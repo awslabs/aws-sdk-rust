@@ -110,7 +110,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_group_name): <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
     ///   - [`filter_expression(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::filter_expression) / [`set_filter_expression(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_filter_expression): <p>The filter expression defining criteria by which to group traces.</p>
-    ///   - [`insights_configuration(InsightsConfiguration)`](crate::client::fluent_builders::CreateGroup::insights_configuration) / [`set_insights_configuration(Option<InsightsConfiguration>)`](crate::client::fluent_builders::CreateGroup::set_insights_configuration): <p>The structure containing configurations related to insights.</p>  <ul>   <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>   <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>  </ul>
+    ///   - [`insights_configuration(InsightsConfiguration)`](crate::client::fluent_builders::CreateGroup::insights_configuration) / [`set_insights_configuration(Option<InsightsConfiguration>)`](crate::client::fluent_builders::CreateGroup::set_insights_configuration): <p>The structure containing configurations related to insights.</p>  <ul>   <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>   <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>  </ul>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateGroup::set_tags): <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>   <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>   <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>   <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>  </ul>
     /// - On success, responds with [`CreateGroupOutput`](crate::output::CreateGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::output::CreateGroupOutput::group): <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of the group that was generated based on the group name, the filter expression, and the insight configuration that was assigned to the group.</p>
@@ -139,6 +139,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::error::DeleteGroupError)
     pub fn delete_group(&self) -> fluent_builders::DeleteGroup {
         fluent_builders::DeleteGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_policy_name): <p>The name of the resource policy to delete.</p>
+    ///   - [`policy_revision_id(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::policy_revision_id) / [`set_policy_revision_id(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_policy_revision_id): <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned. </p>
+    /// - On success, responds with [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourcePolicyError>`](crate::error::DeleteResourcePolicyError)
+    pub fn delete_resource_policy(&self) -> fluent_builders::DeleteResourcePolicy {
+        fluent_builders::DeleteResourcePolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteSamplingRule`](crate::client::fluent_builders::DeleteSamplingRule) operation.
     ///
@@ -357,7 +368,20 @@ impl Client {
     pub fn get_trace_summaries(&self) -> fluent_builders::GetTraceSummaries {
         fluent_builders::GetTraceSummaries::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListResourcePolicies`](crate::client::fluent_builders::ListResourcePolicies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListResourcePolicies::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourcePolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourcePolicies::set_next_token): <p>Not currently supported.</p>
+    /// - On success, responds with [`ListResourcePoliciesOutput`](crate::output::ListResourcePoliciesOutput) with field(s):
+    ///   - [`resource_policies(Option<Vec<ResourcePolicy>>)`](crate::output::ListResourcePoliciesOutput::resource_policies): <p>The list of resource policies in the target Amazon Web Services account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourcePoliciesOutput::next_token): <p>Pagination token. Not currently supported.</p>
+    /// - On failure, responds with [`SdkError<ListResourcePoliciesError>`](crate::error::ListResourcePoliciesError)
+    pub fn list_resource_policies(&self) -> fluent_builders::ListResourcePolicies {
+        fluent_builders::ListResourcePolicies::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
@@ -379,6 +403,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<PutEncryptionConfigError>`](crate::error::PutEncryptionConfigError)
     pub fn put_encryption_config(&self) -> fluent_builders::PutEncryptionConfig {
         fluent_builders::PutEncryptionConfig::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy_name): <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
+    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy_document): <p>The resource policy document, which can be up to 5kb in size.</p>
+    ///   - [`policy_revision_id(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy_revision_id) / [`set_policy_revision_id(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy_revision_id): <p>Specifies a specific policy revision, to ensure an atomic create operation. By default the resource policy is created if it does not exist, or updated with an incremented revision id. The revision id is unique to each policy in the account.</p>  <p>If the policy revision id does not match the latest revision id, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception. You can also provide a <code>PolicyRevisionId</code> of 0. In this case, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception if a resource policy with the same name already exists. </p>
+    ///   - [`bypass_policy_lockout_check(bool)`](crate::client::fluent_builders::PutResourcePolicy::bypass_policy_lockout_check) / [`set_bypass_policy_lockout_check(bool)`](crate::client::fluent_builders::PutResourcePolicy::set_bypass_policy_lockout_check): <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p> <important>   <p>Setting this value to true increases the risk that the policy becomes unmanageable. Do not set this value to true indiscriminately.</p>  </important>  <p>Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent <code>PutResourcePolicy</code> request.</p>  <p>The default value is false.</p>
+    /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput) with field(s):
+    ///   - [`resource_policy(Option<ResourcePolicy>)`](crate::output::PutResourcePolicyOutput::resource_policy): <p>The resource policy document, as provided in the <code>PutResourcePolicyRequest</code>.</p>
+    /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::error::PutResourcePolicyError)
+    pub fn put_resource_policy(&self) -> fluent_builders::PutResourcePolicy {
+        fluent_builders::PutResourcePolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`PutTelemetryRecords`](crate::client::fluent_builders::PutTelemetryRecords) operation.
     ///
@@ -431,7 +468,7 @@ impl Client {
     ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_group_name): <p>The case-sensitive name of the group.</p>
     ///   - [`group_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::group_arn) / [`set_group_arn(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_group_arn): <p>The ARN that was generated upon creation.</p>
     ///   - [`filter_expression(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::filter_expression) / [`set_filter_expression(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_filter_expression): <p>The updated filter expression defining criteria by which to group traces.</p>
-    ///   - [`insights_configuration(InsightsConfiguration)`](crate::client::fluent_builders::UpdateGroup::insights_configuration) / [`set_insights_configuration(Option<InsightsConfiguration>)`](crate::client::fluent_builders::UpdateGroup::set_insights_configuration): <p>The structure containing configurations related to insights.</p>  <ul>   <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>   <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>  </ul>
+    ///   - [`insights_configuration(InsightsConfiguration)`](crate::client::fluent_builders::UpdateGroup::insights_configuration) / [`set_insights_configuration(Option<InsightsConfiguration>)`](crate::client::fluent_builders::UpdateGroup::set_insights_configuration): <p>The structure containing configurations related to insights.</p>  <ul>   <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>   <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>  </ul>
     /// - On success, responds with [`UpdateGroupOutput`](crate::output::UpdateGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::output::UpdateGroupOutput::group): <p>The group that was updated. Contains the name of the group that was updated, the ARN of the group that was updated, the updated filter expression, and the updated insight configuration assigned to the group.</p>
     /// - On failure, responds with [`SdkError<UpdateGroupError>`](crate::error::UpdateGroupError)
@@ -640,7 +677,7 @@ pub mod fluent_builders {
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
         /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>
-        /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
+        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
         /// </ul>
         pub fn insights_configuration(
             mut self,
@@ -652,7 +689,7 @@ pub mod fluent_builders {
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
         /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>
-        /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
+        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
         /// </ul>
         pub fn set_insights_configuration(
             mut self,
@@ -888,6 +925,92 @@ pub mod fluent_builders {
         /// <p>The ARN of the group that was generated on creation.</p>
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteResourcePolicy`.
+    ///
+    /// <p>Deletes a resource policy from the target Amazon Web Services account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteResourcePolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_resource_policy_input::Builder,
+    }
+    impl DeleteResourcePolicy {
+        /// Creates a new `DeleteResourcePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteResourcePolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteResourcePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the resource policy to delete.</p>
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
+            self
+        }
+        /// <p>The name of the resource policy to delete.</p>
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
+            self
+        }
+        /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned. </p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_revision_id(input.into());
+            self
+        }
+        /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned. </p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_policy_revision_id(input);
             self
         }
     }
@@ -2411,6 +2534,85 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListResourcePolicies`.
+    ///
+    /// <p>Returns the list of resource policies in the target Amazon Web Services account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListResourcePolicies {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_resource_policies_input::Builder,
+    }
+    impl ListResourcePolicies {
+        /// Creates a new `ListResourcePolicies`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListResourcePolicies,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListResourcePoliciesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListResourcePoliciesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListResourcePoliciesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourcePoliciesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListResourcePoliciesPaginator {
+            crate::paginator::ListResourcePoliciesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Not currently supported.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Not currently supported.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of tags that are applied to the specified Amazon Web Services X-Ray group or sampling rule.</p>
@@ -2472,6 +2674,12 @@ pub mod fluent_builders {
                 .await
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsForResourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagsForResourcePaginator {
+            crate::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
         }
         /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2589,6 +2797,125 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::EncryptionType>,
         ) -> Self {
             self.inner = self.inner.set_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutResourcePolicy`.
+    ///
+    /// <p> Sets the resource policy to grant one or more Amazon Web Services services and accounts permissions to access X-Ray. Each resource policy will be associated with a specific Amazon Web Services account. Each Amazon Web Services account can have a maximum of 5 resource policies, and each policy name must be unique within that account. The maximum size of each resource policy is 5KB. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutResourcePolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_resource_policy_input::Builder,
+    }
+    impl PutResourcePolicy {
+        /// Creates a new `PutResourcePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PutResourcePolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutResourcePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
+            self
+        }
+        /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
+            self
+        }
+        /// <p>The resource policy document, which can be up to 5kb in size.</p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
+            self
+        }
+        /// <p>The resource policy document, which can be up to 5kb in size.</p>
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_policy_document(input);
+            self
+        }
+        /// <p>Specifies a specific policy revision, to ensure an atomic create operation. By default the resource policy is created if it does not exist, or updated with an incremented revision id. The revision id is unique to each policy in the account.</p>
+        /// <p>If the policy revision id does not match the latest revision id, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception. You can also provide a <code>PolicyRevisionId</code> of 0. In this case, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception if a resource policy with the same name already exists. </p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_revision_id(input.into());
+            self
+        }
+        /// <p>Specifies a specific policy revision, to ensure an atomic create operation. By default the resource policy is created if it does not exist, or updated with an incremented revision id. The revision id is unique to each policy in the account.</p>
+        /// <p>If the policy revision id does not match the latest revision id, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception. You can also provide a <code>PolicyRevisionId</code> of 0. In this case, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception if a resource policy with the same name already exists. </p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_policy_revision_id(input);
+            self
+        }
+        /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p> <important>
+        /// <p>Setting this value to true increases the risk that the policy becomes unmanageable. Do not set this value to true indiscriminately.</p>
+        /// </important>
+        /// <p>Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent <code>PutResourcePolicy</code> request.</p>
+        /// <p>The default value is false.</p>
+        pub fn bypass_policy_lockout_check(mut self, input: bool) -> Self {
+            self.inner = self.inner.bypass_policy_lockout_check(input);
+            self
+        }
+        /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p> <important>
+        /// <p>Setting this value to true increases the risk that the policy becomes unmanageable. Do not set this value to true indiscriminately.</p>
+        /// </important>
+        /// <p>Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent <code>PutResourcePolicy</code> request.</p>
+        /// <p>The default value is false.</p>
+        pub fn set_bypass_policy_lockout_check(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_bypass_policy_lockout_check(input);
             self
         }
     }
@@ -3098,7 +3425,7 @@ pub mod fluent_builders {
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
         /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
-        /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
+        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
         /// </ul>
         pub fn insights_configuration(
             mut self,
@@ -3110,7 +3437,7 @@ pub mod fluent_builders {
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
         /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
-        /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
+        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
         /// </ul>
         pub fn set_insights_configuration(
             mut self,

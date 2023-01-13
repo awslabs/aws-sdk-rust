@@ -192,6 +192,11 @@ pub(crate) fn deser_operation_crate_operation_associate_custom_domain(
                             crate::json_deser::deser_structure_crate_model_custom_domain(tokens)?,
                         );
                     }
+                    "VpcDNSTargets" => {
+                        builder = builder.set_vpc_dns_targets(
+                            crate::json_deser::deser_list_com_amazonaws_apprunner_vpc_dns_target_list(tokens)?
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -473,6 +478,53 @@ pub(crate) fn deser_operation_crate_operation_create_vpc_connector(
                     "VpcConnector" => {
                         builder = builder.set_vpc_connector(
                             crate::json_deser::deser_structure_crate_model_vpc_connector(tokens)?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(
+                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )),
+                )
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "found more JSON tokens after completing parsing",
+            ),
+        );
+    }
+    Ok(builder)
+}
+
+pub(crate) fn deser_operation_crate_operation_create_vpc_ingress_connection(
+    value: &[u8],
+    mut builder: crate::output::create_vpc_ingress_connection_output::Builder,
+) -> Result<
+    crate::output::create_vpc_ingress_connection_output::Builder,
+    aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "VpcIngressConnection" => {
+                        builder = builder.set_vpc_ingress_connection(
+                            crate::json_deser::deser_structure_crate_model_vpc_ingress_connection(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -781,6 +833,53 @@ pub(crate) fn deser_operation_crate_operation_delete_vpc_connector(
     Ok(builder)
 }
 
+pub(crate) fn deser_operation_crate_operation_delete_vpc_ingress_connection(
+    value: &[u8],
+    mut builder: crate::output::delete_vpc_ingress_connection_output::Builder,
+) -> Result<
+    crate::output::delete_vpc_ingress_connection_output::Builder,
+    aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "VpcIngressConnection" => {
+                        builder = builder.set_vpc_ingress_connection(
+                            crate::json_deser::deser_structure_crate_model_vpc_ingress_connection(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(
+                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )),
+                )
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "found more JSON tokens after completing parsing",
+            ),
+        );
+    }
+    Ok(builder)
+}
+
 pub(crate) fn deser_operation_crate_operation_describe_auto_scaling_configuration(
     value: &[u8],
     mut builder: crate::output::describe_auto_scaling_configuration_output::Builder,
@@ -864,6 +963,11 @@ pub(crate) fn deser_operation_crate_operation_describe_custom_domains(
                     "CustomDomains" => {
                         builder = builder.set_custom_domains(
                             crate::json_deser::deser_list_com_amazonaws_apprunner_custom_domain_list(tokens)?
+                        );
+                    }
+                    "VpcDNSTargets" => {
+                        builder = builder.set_vpc_dns_targets(
+                            crate::json_deser::deser_list_com_amazonaws_apprunner_vpc_dns_target_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1033,6 +1137,53 @@ pub(crate) fn deser_operation_crate_operation_describe_vpc_connector(
     Ok(builder)
 }
 
+pub(crate) fn deser_operation_crate_operation_describe_vpc_ingress_connection(
+    value: &[u8],
+    mut builder: crate::output::describe_vpc_ingress_connection_output::Builder,
+) -> Result<
+    crate::output::describe_vpc_ingress_connection_output::Builder,
+    aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "VpcIngressConnection" => {
+                        builder = builder.set_vpc_ingress_connection(
+                            crate::json_deser::deser_structure_crate_model_vpc_ingress_connection(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(
+                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )),
+                )
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "found more JSON tokens after completing parsing",
+            ),
+        );
+    }
+    Ok(builder)
+}
+
 pub(crate) fn deser_operation_crate_operation_disassociate_custom_domain(
     value: &[u8],
     mut builder: crate::output::disassociate_custom_domain_output::Builder,
@@ -1071,6 +1222,11 @@ pub(crate) fn deser_operation_crate_operation_disassociate_custom_domain(
                     "CustomDomain" => {
                         builder = builder.set_custom_domain(
                             crate::json_deser::deser_structure_crate_model_custom_domain(tokens)?,
+                        );
+                    }
+                    "VpcDNSTargets" => {
+                        builder = builder.set_vpc_dns_targets(
+                            crate::json_deser::deser_list_com_amazonaws_apprunner_vpc_dns_target_list(tokens)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1467,6 +1623,60 @@ pub(crate) fn deser_operation_crate_operation_list_vpc_connectors(
     Ok(builder)
 }
 
+pub(crate) fn deser_operation_crate_operation_list_vpc_ingress_connections(
+    value: &[u8],
+    mut builder: crate::output::list_vpc_ingress_connections_output::Builder,
+) -> Result<
+    crate::output::list_vpc_ingress_connections_output::Builder,
+    aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "VpcIngressConnectionSummaryList" => {
+                        builder = builder.set_vpc_ingress_connection_summary_list(
+                            crate::json_deser::deser_list_com_amazonaws_apprunner_vpc_ingress_connection_summary_list(tokens)?
+                        );
+                    }
+                    "NextToken" => {
+                        builder = builder.set_next_token(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(
+                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )),
+                )
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "found more JSON tokens after completing parsing",
+            ),
+        );
+    }
+    Ok(builder)
+}
+
 pub(crate) fn deser_operation_crate_operation_pause_service(
     value: &[u8],
     mut builder: crate::output::pause_service_output::Builder,
@@ -1678,6 +1888,53 @@ pub(crate) fn deser_operation_crate_operation_update_service(
     Ok(builder)
 }
 
+pub(crate) fn deser_operation_crate_operation_update_vpc_ingress_connection(
+    value: &[u8],
+    mut builder: crate::output::update_vpc_ingress_connection_output::Builder,
+) -> Result<
+    crate::output::update_vpc_ingress_connection_output::Builder,
+    aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "VpcIngressConnection" => {
+                        builder = builder.set_vpc_ingress_connection(
+                            crate::json_deser::deser_structure_crate_model_vpc_ingress_connection(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(
+                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )),
+                )
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "found more JSON tokens after completing parsing",
+            ),
+        );
+    }
+    Ok(builder)
+}
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -1761,6 +2018,50 @@ where
         _ => Err(
             aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "expected start object or null",
+            ),
+        ),
+    }
+}
+
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_apprunner_vpc_dns_target_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_vpc_dns_target(tokens)?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start array or null",
             ),
         ),
     }
@@ -2378,6 +2679,134 @@ where
     }
 }
 
+pub(crate) fn deser_structure_crate_model_vpc_ingress_connection<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::VpcIngressConnection>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::vpc_ingress_connection::Builder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "VpcIngressConnectionArn" => {
+                                builder = builder.set_vpc_ingress_connection_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "VpcIngressConnectionName" => {
+                                builder = builder.set_vpc_ingress_connection_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ServiceArn" => {
+                                builder = builder.set_service_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Status" => {
+                                builder = builder.set_status(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::VpcIngressConnectionStatus::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "AccountId" => {
+                                builder = builder.set_account_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "DomainName" => {
+                                builder = builder.set_domain_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "IngressVpcConfiguration" => {
+                                builder = builder.set_ingress_vpc_configuration(
+                                    crate::json_deser::deser_structure_crate_model_ingress_vpc_configuration(tokens)?
+                                );
+                            }
+                            "CreatedAt" => {
+                                builder = builder.set_created_at(
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            "DeletedAt" => {
+                                builder = builder.set_deleted_at(
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
 #[allow(non_snake_case)]
 pub(crate) fn deser_list_com_amazonaws_apprunner_custom_domain_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
@@ -2736,6 +3165,51 @@ where
 }
 
 #[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_apprunner_vpc_ingress_connection_summary_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::VpcIngressConnectionSummary>>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_vpc_ingress_connection_summary(tokens)?
+                        ;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start array or null",
+            ),
+        ),
+    }
+}
+
+#[allow(non_snake_case)]
 pub(crate) fn deser_list_com_amazonaws_apprunner_certificate_validation_record_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
@@ -2775,6 +3249,77 @@ where
         _ => Err(
             aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "expected start array or null",
+            ),
+        ),
+    }
+}
+
+pub(crate) fn deser_structure_crate_model_vpc_dns_target<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::VpcDnsTarget>, aws_smithy_json::deserialize::error::DeserializeError>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::vpc_dns_target::Builder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "VpcIngressConnectionArn" => {
+                                builder = builder.set_vpc_ingress_connection_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "VpcId" => {
+                                builder = builder.set_vpc_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "DomainName" => {
+                                builder = builder.set_domain_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
             ),
         ),
     }
@@ -3248,6 +3793,11 @@ where
                                     crate::json_deser::deser_structure_crate_model_egress_configuration(tokens)?
                                 );
                             }
+                            "IngressConfiguration" => {
+                                builder = builder.set_ingress_configuration(
+                                    crate::json_deser::deser_structure_crate_model_ingress_configuration(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -3376,6 +3926,71 @@ where
         _ => Err(
             aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "expected start array or null",
+            ),
+        ),
+    }
+}
+
+pub(crate) fn deser_structure_crate_model_ingress_vpc_configuration<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::IngressVpcConfiguration>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::ingress_vpc_configuration::Builder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "VpcId" => {
+                                builder = builder.set_vpc_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "VpcEndpointId" => {
+                                builder = builder.set_vpc_endpoint_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
             ),
         ),
     }
@@ -3840,6 +4455,71 @@ where
     }
 }
 
+pub(crate) fn deser_structure_crate_model_vpc_ingress_connection_summary<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::VpcIngressConnectionSummary>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::vpc_ingress_connection_summary::Builder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "VpcIngressConnectionArn" => {
+                                builder = builder.set_vpc_ingress_connection_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ServiceArn" => {
+                                builder = builder.set_service_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
 pub(crate) fn deser_structure_crate_model_certificate_validation_record<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
@@ -4202,6 +4882,60 @@ where
     }
 }
 
+pub(crate) fn deser_structure_crate_model_ingress_configuration<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::IngressConfiguration>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::ingress_configuration::Builder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "IsPubliclyAccessible" => {
+                                builder = builder.set_is_publicly_accessible(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
 pub(crate) fn deser_structure_crate_model_source_code_version<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
@@ -4383,6 +5117,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "RuntimeEnvironmentSecrets" => {
+                                builder = builder.set_runtime_environment_secrets(
+                                    crate::json_deser::deser_map_com_amazonaws_apprunner_runtime_environment_secrets(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -4474,6 +5213,11 @@ where
                                     crate::json_deser::deser_map_com_amazonaws_apprunner_runtime_environment_variables(tokens)?
                                 );
                             }
+                            "RuntimeEnvironmentSecrets" => {
+                                builder = builder.set_runtime_environment_secrets(
+                                    crate::json_deser::deser_map_com_amazonaws_apprunner_runtime_environment_secrets(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -4499,6 +5243,59 @@ where
 
 #[allow(non_snake_case)]
 pub(crate) fn deser_map_com_amazonaws_apprunner_runtime_environment_variables<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            let mut map = std::collections::HashMap::new();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        let key = key.to_unescaped().map(|u| u.into_owned())?;
+                        let value = aws_smithy_json::deserialize::token::expect_string_or_null(
+                            tokens.next(),
+                        )?
+                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                        .transpose()?;
+                        if let Some(value) = value {
+                            map.insert(key, value);
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(map))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_apprunner_runtime_environment_secrets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,

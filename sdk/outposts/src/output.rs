@@ -705,7 +705,7 @@ impl ListCatalogItemsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssetsOutput {
-    /// <p> Information about hardware assets. </p>
+    /// <p>Information about the hardware assets.</p>
     #[doc(hidden)]
     pub assets: std::option::Option<std::vec::Vec<crate::model::AssetInfo>>,
     /// <p>The pagination token.</p>
@@ -713,7 +713,7 @@ pub struct ListAssetsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssetsOutput {
-    /// <p> Information about hardware assets. </p>
+    /// <p>Information about the hardware assets.</p>
     pub fn assets(&self) -> std::option::Option<&[crate::model::AssetInfo]> {
         self.assets.as_deref()
     }
@@ -736,14 +736,14 @@ pub mod list_assets_output {
         ///
         /// To override the contents of this collection use [`set_assets`](Self::set_assets).
         ///
-        /// <p> Information about hardware assets. </p>
+        /// <p>Information about the hardware assets.</p>
         pub fn assets(mut self, input: crate::model::AssetInfo) -> Self {
             let mut v = self.assets.unwrap_or_default();
             v.push(input);
             self.assets = Some(v);
             self
         }
-        /// <p> Information about hardware assets. </p>
+        /// <p>Information about the hardware assets.</p>
         pub fn set_assets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetInfo>>,
@@ -781,10 +781,10 @@ impl ListAssetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSiteAddressOutput {
-    /// <p> The ID of the site. </p>
+    /// <p>The ID of the site.</p>
     #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
-    /// <p> The type of the address you receive. </p>
+    /// <p>The type of the address you receive. </p>
     #[doc(hidden)]
     pub address_type: std::option::Option<crate::model::AddressType>,
     /// <p> Information about the address. </p>
@@ -792,11 +792,11 @@ pub struct GetSiteAddressOutput {
     pub address: std::option::Option<crate::model::Address>,
 }
 impl GetSiteAddressOutput {
-    /// <p> The ID of the site. </p>
+    /// <p>The ID of the site.</p>
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
-    /// <p> The type of the address you receive. </p>
+    /// <p>The type of the address you receive. </p>
     pub fn address_type(&self) -> std::option::Option<&crate::model::AddressType> {
         self.address_type.as_ref()
     }
@@ -816,22 +816,22 @@ pub mod get_site_address_output {
         pub(crate) address: std::option::Option<crate::model::Address>,
     }
     impl Builder {
-        /// <p> The ID of the site. </p>
+        /// <p>The ID of the site.</p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.site_id = Some(input.into());
             self
         }
-        /// <p> The ID of the site. </p>
+        /// <p>The ID of the site.</p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
         }
-        /// <p> The type of the address you receive. </p>
+        /// <p>The type of the address you receive. </p>
         pub fn address_type(mut self, input: crate::model::AddressType) -> Self {
             self.address_type = Some(input);
             self
         }
-        /// <p> The type of the address you receive. </p>
+        /// <p>The type of the address you receive. </p>
         pub fn set_address_type(
             mut self,
             input: std::option::Option<crate::model::AddressType>,
@@ -922,9 +922,7 @@ pub struct GetOutpostInstanceTypesOutput {
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The ID of the Outpost. </p> <note>
-    /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-    /// </note>
+    /// <p> The ID of the Outpost. </p>
     #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
@@ -940,9 +938,7 @@ impl GetOutpostInstanceTypesOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The ID of the Outpost. </p> <note>
-    /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-    /// </note>
+    /// <p> The ID of the Outpost. </p>
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
@@ -993,16 +989,12 @@ pub mod get_outpost_instance_types_output {
             self.next_token = input;
             self
         }
-        /// <p> The ID of the Outpost. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
         }
-        /// <p> The ID of the Outpost. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self
@@ -1133,19 +1125,19 @@ impl GetOrderOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConnectionOutput {
-    /// <p> The ID of the connection you receive. </p>
+    /// <p> The ID of the connection. </p>
     #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
-    /// <p> Information about a connection. </p>
+    /// <p> Information about the connection. </p>
     #[doc(hidden)]
     pub connection_details: std::option::Option<crate::model::ConnectionDetails>,
 }
 impl GetConnectionOutput {
-    /// <p> The ID of the connection you receive. </p>
+    /// <p> The ID of the connection. </p>
     pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
-    /// <p> Information about a connection. </p>
+    /// <p> Information about the connection. </p>
     pub fn connection_details(&self) -> std::option::Option<&crate::model::ConnectionDetails> {
         self.connection_details.as_ref()
     }
@@ -1160,12 +1152,12 @@ pub mod get_connection_output {
         pub(crate) connection_details: std::option::Option<crate::model::ConnectionDetails>,
     }
     impl Builder {
-        /// <p> The ID of the connection you receive. </p>
+        /// <p> The ID of the connection. </p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_id = Some(input.into());
             self
         }
-        /// <p> The ID of the connection you receive. </p>
+        /// <p> The ID of the connection. </p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1173,12 +1165,12 @@ pub mod get_connection_output {
             self.connection_id = input;
             self
         }
-        /// <p> Information about a connection. </p>
+        /// <p> Information about the connection. </p>
         pub fn connection_details(mut self, input: crate::model::ConnectionDetails) -> Self {
             self.connection_details = Some(input);
             self
         }
-        /// <p> Information about a connection. </p>
+        /// <p> Information about the connection. </p>
         pub fn set_connection_details(
             mut self,
             input: std::option::Option<crate::model::ConnectionDetails>,

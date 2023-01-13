@@ -409,6 +409,57 @@ impl ResetParameterGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PurchaseReservedNodesOfferingOutput {
+    /// <p>Represents the output of a <code>PurchaseReservedNodesOffering</code> operation.</p>
+    #[doc(hidden)]
+    pub reserved_node: std::option::Option<crate::model::ReservedNode>,
+}
+impl PurchaseReservedNodesOfferingOutput {
+    /// <p>Represents the output of a <code>PurchaseReservedNodesOffering</code> operation.</p>
+    pub fn reserved_node(&self) -> std::option::Option<&crate::model::ReservedNode> {
+        self.reserved_node.as_ref()
+    }
+}
+/// See [`PurchaseReservedNodesOfferingOutput`](crate::output::PurchaseReservedNodesOfferingOutput).
+pub mod purchase_reserved_nodes_offering_output {
+
+    /// A builder for [`PurchaseReservedNodesOfferingOutput`](crate::output::PurchaseReservedNodesOfferingOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) reserved_node: std::option::Option<crate::model::ReservedNode>,
+    }
+    impl Builder {
+        /// <p>Represents the output of a <code>PurchaseReservedNodesOffering</code> operation.</p>
+        pub fn reserved_node(mut self, input: crate::model::ReservedNode) -> Self {
+            self.reserved_node = Some(input);
+            self
+        }
+        /// <p>Represents the output of a <code>PurchaseReservedNodesOffering</code> operation.</p>
+        pub fn set_reserved_node(
+            mut self,
+            input: std::option::Option<crate::model::ReservedNode>,
+        ) -> Self {
+            self.reserved_node = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PurchaseReservedNodesOfferingOutput`](crate::output::PurchaseReservedNodesOfferingOutput).
+        pub fn build(self) -> crate::output::PurchaseReservedNodesOfferingOutput {
+            crate::output::PurchaseReservedNodesOfferingOutput {
+                reserved_node: self.reserved_node,
+            }
+        }
+    }
+}
+impl PurchaseReservedNodesOfferingOutput {
+    /// Creates a new builder-style object to manufacture [`PurchaseReservedNodesOfferingOutput`](crate::output::PurchaseReservedNodesOfferingOutput).
+    pub fn builder() -> crate::output::purchase_reserved_nodes_offering_output::Builder {
+        crate::output::purchase_reserved_nodes_offering_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsOutput {
     /// <p>A list of tags as key-value pairs.</p>
     #[doc(hidden)]
@@ -897,6 +948,165 @@ impl DescribeServiceUpdatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceUpdatesOutput`](crate::output::DescribeServiceUpdatesOutput).
     pub fn builder() -> crate::output::describe_service_updates_output::Builder {
         crate::output::describe_service_updates_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeReservedNodesOfferingsOutput {
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Lists available reserved node offerings.</p>
+    #[doc(hidden)]
+    pub reserved_nodes_offerings:
+        std::option::Option<std::vec::Vec<crate::model::ReservedNodesOffering>>,
+}
+impl DescribeReservedNodesOfferingsOutput {
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Lists available reserved node offerings.</p>
+    pub fn reserved_nodes_offerings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedNodesOffering]> {
+        self.reserved_nodes_offerings.as_deref()
+    }
+}
+/// See [`DescribeReservedNodesOfferingsOutput`](crate::output::DescribeReservedNodesOfferingsOutput).
+pub mod describe_reserved_nodes_offerings_output {
+
+    /// A builder for [`DescribeReservedNodesOfferingsOutput`](crate::output::DescribeReservedNodesOfferingsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) reserved_nodes_offerings:
+            std::option::Option<std::vec::Vec<crate::model::ReservedNodesOffering>>,
+    }
+    impl Builder {
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `reserved_nodes_offerings`.
+        ///
+        /// To override the contents of this collection use [`set_reserved_nodes_offerings`](Self::set_reserved_nodes_offerings).
+        ///
+        /// <p>Lists available reserved node offerings.</p>
+        pub fn reserved_nodes_offerings(
+            mut self,
+            input: crate::model::ReservedNodesOffering,
+        ) -> Self {
+            let mut v = self.reserved_nodes_offerings.unwrap_or_default();
+            v.push(input);
+            self.reserved_nodes_offerings = Some(v);
+            self
+        }
+        /// <p>Lists available reserved node offerings.</p>
+        pub fn set_reserved_nodes_offerings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ReservedNodesOffering>>,
+        ) -> Self {
+            self.reserved_nodes_offerings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeReservedNodesOfferingsOutput`](crate::output::DescribeReservedNodesOfferingsOutput).
+        pub fn build(self) -> crate::output::DescribeReservedNodesOfferingsOutput {
+            crate::output::DescribeReservedNodesOfferingsOutput {
+                next_token: self.next_token,
+                reserved_nodes_offerings: self.reserved_nodes_offerings,
+            }
+        }
+    }
+}
+impl DescribeReservedNodesOfferingsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeReservedNodesOfferingsOutput`](crate::output::DescribeReservedNodesOfferingsOutput).
+    pub fn builder() -> crate::output::describe_reserved_nodes_offerings_output::Builder {
+        crate::output::describe_reserved_nodes_offerings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeReservedNodesOutput {
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>
+    #[doc(hidden)]
+    pub reserved_nodes: std::option::Option<std::vec::Vec<crate::model::ReservedNode>>,
+}
+impl DescribeReservedNodesOutput {
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>
+    pub fn reserved_nodes(&self) -> std::option::Option<&[crate::model::ReservedNode]> {
+        self.reserved_nodes.as_deref()
+    }
+}
+/// See [`DescribeReservedNodesOutput`](crate::output::DescribeReservedNodesOutput).
+pub mod describe_reserved_nodes_output {
+
+    /// A builder for [`DescribeReservedNodesOutput`](crate::output::DescribeReservedNodesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) reserved_nodes: std::option::Option<std::vec::Vec<crate::model::ReservedNode>>,
+    }
+    impl Builder {
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `reserved_nodes`.
+        ///
+        /// To override the contents of this collection use [`set_reserved_nodes`](Self::set_reserved_nodes).
+        ///
+        /// <p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>
+        pub fn reserved_nodes(mut self, input: crate::model::ReservedNode) -> Self {
+            let mut v = self.reserved_nodes.unwrap_or_default();
+            v.push(input);
+            self.reserved_nodes = Some(v);
+            self
+        }
+        /// <p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>
+        pub fn set_reserved_nodes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ReservedNode>>,
+        ) -> Self {
+            self.reserved_nodes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeReservedNodesOutput`](crate::output::DescribeReservedNodesOutput).
+        pub fn build(self) -> crate::output::DescribeReservedNodesOutput {
+            crate::output::DescribeReservedNodesOutput {
+                next_token: self.next_token,
+                reserved_nodes: self.reserved_nodes,
+            }
+        }
+    }
+}
+impl DescribeReservedNodesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeReservedNodesOutput`](crate::output::DescribeReservedNodesOutput).
+    pub fn builder() -> crate::output::describe_reserved_nodes_output::Builder {
+        crate::output::describe_reserved_nodes_output::Builder::default()
     }
 }
 

@@ -240,7 +240,7 @@ impl InvalidArgumentException {
     }
 }
 
-/// <p> </p>
+/// <p>Specifies that you tried to invoke this API for a data stream with the on-demand capacity mode. This API is only supported for data streams with the provisioned capacity mode. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
@@ -300,6 +300,66 @@ impl ValidationException {
     }
 }
 
+/// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl AccessDeniedException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDeniedException")?;
+        if let Some(inner_6) = &self.message {
+            {
+                write!(f, ": {}", inner_6)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
+pub mod access_denied_exception {
+
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
+    }
+}
+
 /// <p>The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -317,9 +377,9 @@ impl KmsInvalidStateException {
 impl std::fmt::Display for KmsInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsInvalidStateException [KMSInvalidStateException]")?;
-        if let Some(inner_6) = &self.message {
+        if let Some(inner_7) = &self.message {
             {
-                write!(f, ": {}", inner_6)?;
+                write!(f, ": {}", inner_7)?;
             }
         }
         Ok(())
@@ -377,9 +437,9 @@ impl KmsThrottlingException {
 impl std::fmt::Display for KmsThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsThrottlingException [KMSThrottlingException]")?;
-        if let Some(inner_7) = &self.message {
+        if let Some(inner_8) = &self.message {
             {
-                write!(f, ": {}", inner_7)?;
+                write!(f, ": {}", inner_8)?;
             }
         }
         Ok(())
@@ -437,9 +497,9 @@ impl KmsOptInRequired {
 impl std::fmt::Display for KmsOptInRequired {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsOptInRequired [KMSOptInRequired]")?;
-        if let Some(inner_8) = &self.message {
+        if let Some(inner_9) = &self.message {
             {
-                write!(f, ": {}", inner_8)?;
+                write!(f, ": {}", inner_9)?;
             }
         }
         Ok(())
@@ -497,9 +557,9 @@ impl KmsNotFoundException {
 impl std::fmt::Display for KmsNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsNotFoundException [KMSNotFoundException]")?;
-        if let Some(inner_9) = &self.message {
+        if let Some(inner_10) = &self.message {
             {
-                write!(f, ": {}", inner_9)?;
+                write!(f, ": {}", inner_10)?;
             }
         }
         Ok(())
@@ -557,9 +617,9 @@ impl KmsDisabledException {
 impl std::fmt::Display for KmsDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsDisabledException [KMSDisabledException]")?;
-        if let Some(inner_10) = &self.message {
+        if let Some(inner_11) = &self.message {
             {
-                write!(f, ": {}", inner_10)?;
+                write!(f, ": {}", inner_11)?;
             }
         }
         Ok(())
@@ -617,9 +677,9 @@ impl KmsAccessDeniedException {
 impl std::fmt::Display for KmsAccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsAccessDeniedException [KMSAccessDeniedException]")?;
-        if let Some(inner_11) = &self.message {
+        if let Some(inner_12) = &self.message {
             {
-                write!(f, ": {}", inner_11)?;
+                write!(f, ": {}", inner_12)?;
             }
         }
         Ok(())
@@ -677,9 +737,9 @@ impl ProvisionedThroughputExceededException {
 impl std::fmt::Display for ProvisionedThroughputExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ProvisionedThroughputExceededException")?;
-        if let Some(inner_12) = &self.message {
+        if let Some(inner_13) = &self.message {
             {
-                write!(f, ": {}", inner_12)?;
+                write!(f, ": {}", inner_13)?;
             }
         }
         Ok(())
@@ -737,9 +797,9 @@ impl ExpiredNextTokenException {
 impl std::fmt::Display for ExpiredNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredNextTokenException")?;
-        if let Some(inner_13) = &self.message {
+        if let Some(inner_14) = &self.message {
             {
-                write!(f, ": {}", inner_13)?;
+                write!(f, ": {}", inner_14)?;
             }
         }
         Ok(())
@@ -797,9 +857,9 @@ impl ExpiredIteratorException {
 impl std::fmt::Display for ExpiredIteratorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredIteratorException")?;
-        if let Some(inner_14) = &self.message {
+        if let Some(inner_15) = &self.message {
             {
-                write!(f, ": {}", inner_14)?;
+                write!(f, ": {}", inner_15)?;
             }
         }
         Ok(())
@@ -861,6 +921,8 @@ impl aws_smithy_http::result::CreateUnhandledError for AddTagsToStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddTagsToStreamErrorKind {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state.</p>
@@ -882,6 +944,7 @@ pub enum AddTagsToStreamErrorKind {
 impl std::fmt::Display for AddTagsToStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            AddTagsToStreamErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             AddTagsToStreamErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             AddTagsToStreamErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             AddTagsToStreamErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
@@ -940,6 +1003,13 @@ impl AddTagsToStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `AddTagsToStreamErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddTagsToStreamErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `AddTagsToStreamErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
@@ -972,6 +1042,7 @@ impl AddTagsToStreamError {
 impl std::error::Error for AddTagsToStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            AddTagsToStreamErrorKind::AccessDeniedException(_inner) => Some(_inner),
             AddTagsToStreamErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             AddTagsToStreamErrorKind::ResourceInUseException(_inner) => Some(_inner),
             AddTagsToStreamErrorKind::LimitExceededException(_inner) => Some(_inner),
@@ -1128,6 +1199,8 @@ impl aws_smithy_http::result::CreateUnhandledError for DecreaseStreamRetentionPe
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DecreaseStreamRetentionPeriodErrorKind {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state.</p>
@@ -1149,6 +1222,7 @@ pub enum DecreaseStreamRetentionPeriodErrorKind {
 impl std::fmt::Display for DecreaseStreamRetentionPeriodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DecreaseStreamRetentionPeriodErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DecreaseStreamRetentionPeriodErrorKind::InvalidArgumentException(_inner) => {
                 _inner.fmt(f)
             }
@@ -1218,6 +1292,13 @@ impl DecreaseStreamRetentionPeriodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DecreaseStreamRetentionPeriodErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DecreaseStreamRetentionPeriodErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DecreaseStreamRetentionPeriodErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
@@ -1250,6 +1331,7 @@ impl DecreaseStreamRetentionPeriodError {
 impl std::error::Error for DecreaseStreamRetentionPeriodError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DecreaseStreamRetentionPeriodErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DecreaseStreamRetentionPeriodErrorKind::InvalidArgumentException(_inner) => {
                 Some(_inner)
             }
@@ -1284,6 +1366,10 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStreamErrorKind {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
@@ -1303,6 +1389,8 @@ pub enum DeleteStreamErrorKind {
 impl std::fmt::Display for DeleteStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteStreamErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteStreamErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             DeleteStreamErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             DeleteStreamErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             DeleteStreamErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -1360,6 +1448,17 @@ impl DeleteStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeleteStreamErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, DeleteStreamErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteStreamErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStreamErrorKind::InvalidArgumentException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteStreamErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteStreamErrorKind::ResourceInUseException(_))
@@ -1379,6 +1478,8 @@ impl DeleteStreamError {
 impl std::error::Error for DeleteStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteStreamErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteStreamErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             DeleteStreamErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteStreamErrorKind::LimitExceededException(_inner) => Some(_inner),
             DeleteStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
@@ -1652,6 +1753,10 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStreamErrorKind {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified correctly.</p>
@@ -1669,6 +1774,8 @@ pub enum DescribeStreamErrorKind {
 impl std::fmt::Display for DescribeStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DescribeStreamErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeStreamErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             DescribeStreamErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             DescribeStreamErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DescribeStreamErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1725,6 +1832,20 @@ impl DescribeStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DescribeStreamErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStreamErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeStreamErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStreamErrorKind::InvalidArgumentException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DescribeStreamErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
@@ -1743,6 +1864,8 @@ impl DescribeStreamError {
 impl std::error::Error for DescribeStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DescribeStreamErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeStreamErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             DescribeStreamErrorKind::LimitExceededException(_inner) => Some(_inner),
             DescribeStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeStreamErrorKind::Unhandled(_inner) => Some(_inner),
@@ -1905,6 +2028,10 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeStreamSummaryErro
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStreamSummaryErrorKind {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified correctly.</p>
@@ -1922,6 +2049,8 @@ pub enum DescribeStreamSummaryErrorKind {
 impl std::fmt::Display for DescribeStreamSummaryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DescribeStreamSummaryErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeStreamSummaryErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             DescribeStreamSummaryErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             DescribeStreamSummaryErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DescribeStreamSummaryErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1982,6 +2111,20 @@ impl DescribeStreamSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DescribeStreamSummaryErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStreamSummaryErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeStreamSummaryErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStreamSummaryErrorKind::InvalidArgumentException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DescribeStreamSummaryErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
@@ -2000,6 +2143,8 @@ impl DescribeStreamSummaryError {
 impl std::error::Error for DescribeStreamSummaryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DescribeStreamSummaryErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeStreamSummaryErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             DescribeStreamSummaryErrorKind::LimitExceededException(_inner) => Some(_inner),
             DescribeStreamSummaryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeStreamSummaryErrorKind::Unhandled(_inner) => Some(_inner),
@@ -2030,6 +2175,8 @@ impl aws_smithy_http::result::CreateUnhandledError for DisableEnhancedMonitoring
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableEnhancedMonitoringErrorKind {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state.</p>
@@ -2051,6 +2198,7 @@ pub enum DisableEnhancedMonitoringErrorKind {
 impl std::fmt::Display for DisableEnhancedMonitoringError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DisableEnhancedMonitoringErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DisableEnhancedMonitoringErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             DisableEnhancedMonitoringErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             DisableEnhancedMonitoringErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
@@ -2113,6 +2261,13 @@ impl DisableEnhancedMonitoringError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DisableEnhancedMonitoringErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableEnhancedMonitoringErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DisableEnhancedMonitoringErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
@@ -2145,6 +2300,7 @@ impl DisableEnhancedMonitoringError {
 impl std::error::Error for DisableEnhancedMonitoringError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DisableEnhancedMonitoringErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DisableEnhancedMonitoringErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             DisableEnhancedMonitoringErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DisableEnhancedMonitoringErrorKind::LimitExceededException(_inner) => Some(_inner),
@@ -2177,6 +2333,8 @@ impl aws_smithy_http::result::CreateUnhandledError for EnableEnhancedMonitoringE
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableEnhancedMonitoringErrorKind {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state.</p>
@@ -2198,6 +2356,7 @@ pub enum EnableEnhancedMonitoringErrorKind {
 impl std::fmt::Display for EnableEnhancedMonitoringError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            EnableEnhancedMonitoringErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             EnableEnhancedMonitoringErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             EnableEnhancedMonitoringErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             EnableEnhancedMonitoringErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
@@ -2260,6 +2419,13 @@ impl EnableEnhancedMonitoringError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `EnableEnhancedMonitoringErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableEnhancedMonitoringErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `EnableEnhancedMonitoringErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
@@ -2292,6 +2458,7 @@ impl EnableEnhancedMonitoringError {
 impl std::error::Error for EnableEnhancedMonitoringError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            EnableEnhancedMonitoringErrorKind::AccessDeniedException(_inner) => Some(_inner),
             EnableEnhancedMonitoringErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             EnableEnhancedMonitoringErrorKind::ResourceInUseException(_inner) => Some(_inner),
             EnableEnhancedMonitoringErrorKind::LimitExceededException(_inner) => Some(_inner),
@@ -2326,6 +2493,8 @@ pub enum GetRecordsErrorKind {
     KmsAccessDeniedException(crate::error::KmsAccessDeniedException),
     /// <p>The request was rejected because the specified customer master key (CMK) isn't enabled.</p>
     KmsDisabledException(crate::error::KmsDisabledException),
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was rejected because the specified entity or resource can't be found.</p>
     KmsNotFoundException(crate::error::KmsNotFoundException),
     /// <p>The provided iterator exceeds the maximum age allowed.</p>
@@ -2357,6 +2526,7 @@ impl std::fmt::Display for GetRecordsError {
         match &self.kind {
             GetRecordsErrorKind::KmsAccessDeniedException(_inner) => _inner.fmt(f),
             GetRecordsErrorKind::KmsDisabledException(_inner) => _inner.fmt(f),
+            GetRecordsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetRecordsErrorKind::KmsNotFoundException(_inner) => _inner.fmt(f),
             GetRecordsErrorKind::ExpiredIteratorException(_inner) => _inner.fmt(f),
             GetRecordsErrorKind::KmsOptInRequired(_inner) => _inner.fmt(f),
@@ -2427,6 +2597,10 @@ impl GetRecordsError {
     pub fn is_kms_disabled_exception(&self) -> bool {
         matches!(&self.kind, GetRecordsErrorKind::KmsDisabledException(_))
     }
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetRecordsErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `GetRecordsErrorKind::KmsNotFoundException`.
     pub fn is_kms_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetRecordsErrorKind::KmsNotFoundException(_))
@@ -2471,6 +2645,7 @@ impl std::error::Error for GetRecordsError {
         match &self.kind {
             GetRecordsErrorKind::KmsAccessDeniedException(_inner) => Some(_inner),
             GetRecordsErrorKind::KmsDisabledException(_inner) => Some(_inner),
+            GetRecordsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetRecordsErrorKind::KmsNotFoundException(_inner) => Some(_inner),
             GetRecordsErrorKind::ExpiredIteratorException(_inner) => Some(_inner),
             GetRecordsErrorKind::KmsOptInRequired(_inner) => Some(_inner),
@@ -2505,6 +2680,8 @@ impl aws_smithy_http::result::CreateUnhandledError for GetShardIteratorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetShardIteratorErrorKind {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
@@ -2524,6 +2701,7 @@ pub enum GetShardIteratorErrorKind {
 impl std::fmt::Display for GetShardIteratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetShardIteratorErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetShardIteratorErrorKind::ProvisionedThroughputExceededException(_inner) => {
                 _inner.fmt(f)
             }
@@ -2583,6 +2761,13 @@ impl GetShardIteratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `GetShardIteratorErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetShardIteratorErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `GetShardIteratorErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
@@ -2608,6 +2793,7 @@ impl GetShardIteratorError {
 impl std::error::Error for GetShardIteratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetShardIteratorErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetShardIteratorErrorKind::ProvisionedThroughputExceededException(_inner) => {
                 Some(_inner)
             }
@@ -2641,6 +2827,8 @@ impl aws_smithy_http::result::CreateUnhandledError for IncreaseStreamRetentionPe
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum IncreaseStreamRetentionPeriodErrorKind {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state.</p>
@@ -2662,6 +2850,7 @@ pub enum IncreaseStreamRetentionPeriodErrorKind {
 impl std::fmt::Display for IncreaseStreamRetentionPeriodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            IncreaseStreamRetentionPeriodErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             IncreaseStreamRetentionPeriodErrorKind::InvalidArgumentException(_inner) => {
                 _inner.fmt(f)
             }
@@ -2731,6 +2920,13 @@ impl IncreaseStreamRetentionPeriodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `IncreaseStreamRetentionPeriodErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            IncreaseStreamRetentionPeriodErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `IncreaseStreamRetentionPeriodErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
@@ -2763,6 +2959,7 @@ impl IncreaseStreamRetentionPeriodError {
 impl std::error::Error for IncreaseStreamRetentionPeriodError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            IncreaseStreamRetentionPeriodErrorKind::AccessDeniedException(_inner) => Some(_inner),
             IncreaseStreamRetentionPeriodErrorKind::InvalidArgumentException(_inner) => {
                 Some(_inner)
             }
@@ -2797,6 +2994,8 @@ impl aws_smithy_http::result::CreateUnhandledError for ListShardsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListShardsErrorKind {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The pagination token passed to the operation is expired.</p>
     ExpiredNextTokenException(crate::error::ExpiredNextTokenException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
@@ -2820,6 +3019,7 @@ pub enum ListShardsErrorKind {
 impl std::fmt::Display for ListShardsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListShardsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ListShardsErrorKind::ExpiredNextTokenException(_inner) => _inner.fmt(f),
             ListShardsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             ListShardsErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
@@ -2879,6 +3079,10 @@ impl ListShardsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListShardsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, ListShardsErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `ListShardsErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
         matches!(
@@ -2909,6 +3113,7 @@ impl ListShardsError {
 impl std::error::Error for ListShardsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListShardsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListShardsErrorKind::ExpiredNextTokenException(_inner) => Some(_inner),
             ListShardsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             ListShardsErrorKind::ResourceInUseException(_inner) => Some(_inner),
@@ -3092,6 +3297,10 @@ impl aws_smithy_http::result::CreateUnhandledError for ListStreamsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStreamsErrorKind {
+    /// <p>The pagination token passed to the operation is expired.</p>
+    ExpiredNextTokenException(crate::error::ExpiredNextTokenException),
+    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     ///
@@ -3107,6 +3316,8 @@ pub enum ListStreamsErrorKind {
 impl std::fmt::Display for ListStreamsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListStreamsErrorKind::ExpiredNextTokenException(_inner) => _inner.fmt(f),
+            ListStreamsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             ListStreamsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             ListStreamsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -3162,6 +3373,20 @@ impl ListStreamsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListStreamsErrorKind::ExpiredNextTokenException`.
+    pub fn is_expired_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamsErrorKind::ExpiredNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListStreamsErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamsErrorKind::InvalidArgumentException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListStreamsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListStreamsErrorKind::LimitExceededException(_))
@@ -3170,6 +3395,8 @@ impl ListStreamsError {
 impl std::error::Error for ListStreamsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListStreamsErrorKind::ExpiredNextTokenException(_inner) => Some(_inner),
+            ListStreamsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             ListStreamsErrorKind::LimitExceededException(_inner) => Some(_inner),
             ListStreamsErrorKind::Unhandled(_inner) => Some(_inner),
         }
@@ -3197,6 +3424,8 @@ impl aws_smithy_http::result::CreateUnhandledError for ListTagsForStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForStreamErrorKind {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
@@ -3216,6 +3445,7 @@ pub enum ListTagsForStreamErrorKind {
 impl std::fmt::Display for ListTagsForStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListTagsForStreamErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ListTagsForStreamErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             ListTagsForStreamErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             ListTagsForStreamErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -3273,6 +3503,13 @@ impl ListTagsForStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListTagsForStreamErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForStreamErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListTagsForStreamErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
@@ -3298,6 +3535,7 @@ impl ListTagsForStreamError {
 impl std::error::Error for ListTagsForStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListTagsForStreamErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListTagsForStreamErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             ListTagsForStreamErrorKind::LimitExceededException(_inner) => Some(_inner),
             ListTagsForStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
@@ -3327,7 +3565,9 @@ impl aws_smithy_http::result::CreateUnhandledError for MergeShardsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum MergeShardsErrorKind {
-    /// <p> </p>
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Specifies that you tried to invoke this API for a data stream with the on-demand capacity mode. This API is only supported for data streams with the provisioned capacity mode. </p>
     ValidationException(crate::error::ValidationException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3350,6 +3590,7 @@ pub enum MergeShardsErrorKind {
 impl std::fmt::Display for MergeShardsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            MergeShardsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             MergeShardsErrorKind::ValidationException(_inner) => _inner.fmt(f),
             MergeShardsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             MergeShardsErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
@@ -3409,6 +3650,10 @@ impl MergeShardsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `MergeShardsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, MergeShardsErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `MergeShardsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, MergeShardsErrorKind::ValidationException(_))
@@ -3439,6 +3684,7 @@ impl MergeShardsError {
 impl std::error::Error for MergeShardsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            MergeShardsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             MergeShardsErrorKind::ValidationException(_inner) => Some(_inner),
             MergeShardsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             MergeShardsErrorKind::ResourceInUseException(_inner) => Some(_inner),
@@ -3474,6 +3720,8 @@ pub enum PutRecordErrorKind {
     KmsAccessDeniedException(crate::error::KmsAccessDeniedException),
     /// <p>The request was rejected because the specified customer master key (CMK) isn't enabled.</p>
     KmsDisabledException(crate::error::KmsDisabledException),
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was rejected because the specified entity or resource can't be found.</p>
     KmsNotFoundException(crate::error::KmsNotFoundException),
     /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
@@ -3503,6 +3751,7 @@ impl std::fmt::Display for PutRecordError {
         match &self.kind {
             PutRecordErrorKind::KmsAccessDeniedException(_inner) => _inner.fmt(f),
             PutRecordErrorKind::KmsDisabledException(_inner) => _inner.fmt(f),
+            PutRecordErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             PutRecordErrorKind::KmsNotFoundException(_inner) => _inner.fmt(f),
             PutRecordErrorKind::KmsOptInRequired(_inner) => _inner.fmt(f),
             PutRecordErrorKind::KmsThrottlingException(_inner) => _inner.fmt(f),
@@ -3572,6 +3821,10 @@ impl PutRecordError {
     pub fn is_kms_disabled_exception(&self) -> bool {
         matches!(&self.kind, PutRecordErrorKind::KmsDisabledException(_))
     }
+    /// Returns `true` if the error kind is `PutRecordErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, PutRecordErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `PutRecordErrorKind::KmsNotFoundException`.
     pub fn is_kms_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutRecordErrorKind::KmsNotFoundException(_))
@@ -3609,6 +3862,7 @@ impl std::error::Error for PutRecordError {
         match &self.kind {
             PutRecordErrorKind::KmsAccessDeniedException(_inner) => Some(_inner),
             PutRecordErrorKind::KmsDisabledException(_inner) => Some(_inner),
+            PutRecordErrorKind::AccessDeniedException(_inner) => Some(_inner),
             PutRecordErrorKind::KmsNotFoundException(_inner) => Some(_inner),
             PutRecordErrorKind::KmsOptInRequired(_inner) => Some(_inner),
             PutRecordErrorKind::KmsThrottlingException(_inner) => Some(_inner),
@@ -3646,6 +3900,8 @@ pub enum PutRecordsErrorKind {
     KmsAccessDeniedException(crate::error::KmsAccessDeniedException),
     /// <p>The request was rejected because the specified customer master key (CMK) isn't enabled.</p>
     KmsDisabledException(crate::error::KmsDisabledException),
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was rejected because the specified entity or resource can't be found.</p>
     KmsNotFoundException(crate::error::KmsNotFoundException),
     /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
@@ -3675,6 +3931,7 @@ impl std::fmt::Display for PutRecordsError {
         match &self.kind {
             PutRecordsErrorKind::KmsAccessDeniedException(_inner) => _inner.fmt(f),
             PutRecordsErrorKind::KmsDisabledException(_inner) => _inner.fmt(f),
+            PutRecordsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             PutRecordsErrorKind::KmsNotFoundException(_inner) => _inner.fmt(f),
             PutRecordsErrorKind::KmsOptInRequired(_inner) => _inner.fmt(f),
             PutRecordsErrorKind::KmsThrottlingException(_inner) => _inner.fmt(f),
@@ -3744,6 +4001,10 @@ impl PutRecordsError {
     pub fn is_kms_disabled_exception(&self) -> bool {
         matches!(&self.kind, PutRecordsErrorKind::KmsDisabledException(_))
     }
+    /// Returns `true` if the error kind is `PutRecordsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, PutRecordsErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `PutRecordsErrorKind::KmsNotFoundException`.
     pub fn is_kms_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutRecordsErrorKind::KmsNotFoundException(_))
@@ -3784,6 +4045,7 @@ impl std::error::Error for PutRecordsError {
         match &self.kind {
             PutRecordsErrorKind::KmsAccessDeniedException(_inner) => Some(_inner),
             PutRecordsErrorKind::KmsDisabledException(_inner) => Some(_inner),
+            PutRecordsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             PutRecordsErrorKind::KmsNotFoundException(_inner) => Some(_inner),
             PutRecordsErrorKind::KmsOptInRequired(_inner) => Some(_inner),
             PutRecordsErrorKind::KmsThrottlingException(_inner) => Some(_inner),
@@ -3962,6 +4224,8 @@ impl aws_smithy_http::result::CreateUnhandledError for RemoveTagsFromStreamError
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsFromStreamErrorKind {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state.</p>
@@ -3983,6 +4247,7 @@ pub enum RemoveTagsFromStreamErrorKind {
 impl std::fmt::Display for RemoveTagsFromStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            RemoveTagsFromStreamErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             RemoveTagsFromStreamErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             RemoveTagsFromStreamErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             RemoveTagsFromStreamErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
@@ -4045,6 +4310,13 @@ impl RemoveTagsFromStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `RemoveTagsFromStreamErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromStreamErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `RemoveTagsFromStreamErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
@@ -4077,6 +4349,7 @@ impl RemoveTagsFromStreamError {
 impl std::error::Error for RemoveTagsFromStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            RemoveTagsFromStreamErrorKind::AccessDeniedException(_inner) => Some(_inner),
             RemoveTagsFromStreamErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             RemoveTagsFromStreamErrorKind::ResourceInUseException(_inner) => Some(_inner),
             RemoveTagsFromStreamErrorKind::LimitExceededException(_inner) => Some(_inner),
@@ -4107,7 +4380,9 @@ impl aws_smithy_http::result::CreateUnhandledError for SplitShardError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SplitShardErrorKind {
-    /// <p> </p>
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Specifies that you tried to invoke this API for a data stream with the on-demand capacity mode. This API is only supported for data streams with the provisioned capacity mode. </p>
     ValidationException(crate::error::ValidationException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -4130,6 +4405,7 @@ pub enum SplitShardErrorKind {
 impl std::fmt::Display for SplitShardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            SplitShardErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             SplitShardErrorKind::ValidationException(_inner) => _inner.fmt(f),
             SplitShardErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             SplitShardErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
@@ -4189,6 +4465,10 @@ impl SplitShardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `SplitShardErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, SplitShardErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `SplitShardErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, SplitShardErrorKind::ValidationException(_))
@@ -4216,6 +4496,7 @@ impl SplitShardError {
 impl std::error::Error for SplitShardError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            SplitShardErrorKind::AccessDeniedException(_inner) => Some(_inner),
             SplitShardErrorKind::ValidationException(_inner) => Some(_inner),
             SplitShardErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             SplitShardErrorKind::ResourceInUseException(_inner) => Some(_inner),
@@ -4251,6 +4532,8 @@ pub enum StartStreamEncryptionErrorKind {
     KmsAccessDeniedException(crate::error::KmsAccessDeniedException),
     /// <p>The request was rejected because the specified customer master key (CMK) isn't enabled.</p>
     KmsDisabledException(crate::error::KmsDisabledException),
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was rejected because the specified entity or resource can't be found.</p>
     KmsNotFoundException(crate::error::KmsNotFoundException),
     /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
@@ -4282,6 +4565,7 @@ impl std::fmt::Display for StartStreamEncryptionError {
         match &self.kind {
             StartStreamEncryptionErrorKind::KmsAccessDeniedException(_inner) => _inner.fmt(f),
             StartStreamEncryptionErrorKind::KmsDisabledException(_inner) => _inner.fmt(f),
+            StartStreamEncryptionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             StartStreamEncryptionErrorKind::KmsNotFoundException(_inner) => _inner.fmt(f),
             StartStreamEncryptionErrorKind::KmsOptInRequired(_inner) => _inner.fmt(f),
             StartStreamEncryptionErrorKind::KmsThrottlingException(_inner) => _inner.fmt(f),
@@ -4362,6 +4646,13 @@ impl StartStreamEncryptionError {
             StartStreamEncryptionErrorKind::KmsDisabledException(_)
         )
     }
+    /// Returns `true` if the error kind is `StartStreamEncryptionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamEncryptionErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `StartStreamEncryptionErrorKind::KmsNotFoundException`.
     pub fn is_kms_not_found_exception(&self) -> bool {
         matches!(
@@ -4424,6 +4715,7 @@ impl std::error::Error for StartStreamEncryptionError {
         match &self.kind {
             StartStreamEncryptionErrorKind::KmsAccessDeniedException(_inner) => Some(_inner),
             StartStreamEncryptionErrorKind::KmsDisabledException(_inner) => Some(_inner),
+            StartStreamEncryptionErrorKind::AccessDeniedException(_inner) => Some(_inner),
             StartStreamEncryptionErrorKind::KmsNotFoundException(_inner) => Some(_inner),
             StartStreamEncryptionErrorKind::KmsOptInRequired(_inner) => Some(_inner),
             StartStreamEncryptionErrorKind::KmsThrottlingException(_inner) => Some(_inner),
@@ -4458,6 +4750,8 @@ impl aws_smithy_http::result::CreateUnhandledError for StopStreamEncryptionError
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopStreamEncryptionErrorKind {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state.</p>
@@ -4479,6 +4773,7 @@ pub enum StopStreamEncryptionErrorKind {
 impl std::fmt::Display for StopStreamEncryptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            StopStreamEncryptionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             StopStreamEncryptionErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             StopStreamEncryptionErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             StopStreamEncryptionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
@@ -4541,6 +4836,13 @@ impl StopStreamEncryptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `StopStreamEncryptionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStreamEncryptionErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `StopStreamEncryptionErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
@@ -4573,6 +4875,7 @@ impl StopStreamEncryptionError {
 impl std::error::Error for StopStreamEncryptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            StopStreamEncryptionErrorKind::AccessDeniedException(_inner) => Some(_inner),
             StopStreamEncryptionErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             StopStreamEncryptionErrorKind::ResourceInUseException(_inner) => Some(_inner),
             StopStreamEncryptionErrorKind::LimitExceededException(_inner) => Some(_inner),
@@ -4603,7 +4906,9 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateShardCountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateShardCountErrorKind {
-    /// <p> </p>
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Specifies that you tried to invoke this API for a data stream with the on-demand capacity mode. This API is only supported for data streams with the provisioned capacity mode. </p>
     ValidationException(crate::error::ValidationException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -4626,6 +4931,7 @@ pub enum UpdateShardCountErrorKind {
 impl std::fmt::Display for UpdateShardCountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateShardCountErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             UpdateShardCountErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateShardCountErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             UpdateShardCountErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
@@ -4685,6 +4991,13 @@ impl UpdateShardCountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `UpdateShardCountErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateShardCountErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateShardCountErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
@@ -4724,6 +5037,7 @@ impl UpdateShardCountError {
 impl std::error::Error for UpdateShardCountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateShardCountErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UpdateShardCountErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateShardCountErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             UpdateShardCountErrorKind::ResourceInUseException(_inner) => Some(_inner),

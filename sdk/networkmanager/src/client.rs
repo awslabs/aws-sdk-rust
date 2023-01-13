@@ -9306,7 +9306,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartOrganizationServiceAccessUpdate`.
     ///
-    /// <p>Enables for the Network Manager service for an Amazon Web Services Organization. This can only be called by a management account within the organization. </p>
+    /// <p>Enables the Network Manager service for an Amazon Web Services Organization. This can only be called by a management account within the organization. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartOrganizationServiceAccessUpdate {
         handle: std::sync::Arc<super::Handle>,

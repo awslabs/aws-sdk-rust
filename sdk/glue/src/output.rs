@@ -144,6 +144,54 @@ impl UpdateTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateSourceControlFromJobOutput {
+    /// <p>The name of the Glue job.</p>
+    #[doc(hidden)]
+    pub job_name: std::option::Option<std::string::String>,
+}
+impl UpdateSourceControlFromJobOutput {
+    /// <p>The name of the Glue job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+}
+/// See [`UpdateSourceControlFromJobOutput`](crate::output::UpdateSourceControlFromJobOutput).
+pub mod update_source_control_from_job_output {
+
+    /// A builder for [`UpdateSourceControlFromJobOutput`](crate::output::UpdateSourceControlFromJobOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Glue job.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Glue job.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSourceControlFromJobOutput`](crate::output::UpdateSourceControlFromJobOutput).
+        pub fn build(self) -> crate::output::UpdateSourceControlFromJobOutput {
+            crate::output::UpdateSourceControlFromJobOutput {
+                job_name: self.job_name,
+            }
+        }
+    }
+}
+impl UpdateSourceControlFromJobOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSourceControlFromJobOutput`](crate::output::UpdateSourceControlFromJobOutput).
+    pub fn builder() -> crate::output::update_source_control_from_job_output::Builder {
+        crate::output::update_source_control_from_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSchemaOutput {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     #[doc(hidden)]
@@ -375,6 +423,54 @@ impl UpdateMlTransformOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateJobFromSourceControlOutput {
+    /// <p>The name of the Glue job.</p>
+    #[doc(hidden)]
+    pub job_name: std::option::Option<std::string::String>,
+}
+impl UpdateJobFromSourceControlOutput {
+    /// <p>The name of the Glue job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+}
+/// See [`UpdateJobFromSourceControlOutput`](crate::output::UpdateJobFromSourceControlOutput).
+pub mod update_job_from_source_control_output {
+
+    /// A builder for [`UpdateJobFromSourceControlOutput`](crate::output::UpdateJobFromSourceControlOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Glue job.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Glue job.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateJobFromSourceControlOutput`](crate::output::UpdateJobFromSourceControlOutput).
+        pub fn build(self) -> crate::output::UpdateJobFromSourceControlOutput {
+            crate::output::UpdateJobFromSourceControlOutput {
+                job_name: self.job_name,
+            }
+        }
+    }
+}
+impl UpdateJobFromSourceControlOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateJobFromSourceControlOutput`](crate::output::UpdateJobFromSourceControlOutput).
+    pub fn builder() -> crate::output::update_job_from_source_control_output::Builder {
+        crate::output::update_job_from_source_control_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJobOutput {
     /// <p>Returns the name of the updated job definition.</p>
     #[doc(hidden)]
@@ -441,6 +537,92 @@ impl UpdateDevEndpointOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDevEndpointOutput`](crate::output::UpdateDevEndpointOutput).
     pub fn builder() -> crate::output::update_dev_endpoint_output::Builder {
         crate::output::update_dev_endpoint_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateDataQualityRulesetOutput {
+    /// <p>The name of the data quality ruleset.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A description of the ruleset.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    #[doc(hidden)]
+    pub ruleset: std::option::Option<std::string::String>,
+}
+impl UpdateDataQualityRulesetOutput {
+    /// <p>The name of the data quality ruleset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the ruleset.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    pub fn ruleset(&self) -> std::option::Option<&str> {
+        self.ruleset.as_deref()
+    }
+}
+/// See [`UpdateDataQualityRulesetOutput`](crate::output::UpdateDataQualityRulesetOutput).
+pub mod update_data_quality_ruleset_output {
+
+    /// A builder for [`UpdateDataQualityRulesetOutput`](crate::output::UpdateDataQualityRulesetOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) ruleset: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the data quality ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data quality ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A description of the ruleset.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the ruleset.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+        pub fn ruleset(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ruleset = Some(input.into());
+            self
+        }
+        /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+        pub fn set_ruleset(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ruleset = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateDataQualityRulesetOutput`](crate::output::UpdateDataQualityRulesetOutput).
+        pub fn build(self) -> crate::output::UpdateDataQualityRulesetOutput {
+            crate::output::UpdateDataQualityRulesetOutput {
+                name: self.name,
+                description: self.description,
+                ruleset: self.ruleset,
+            }
+        }
+    }
+}
+impl UpdateDataQualityRulesetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDataQualityRulesetOutput`](crate::output::UpdateDataQualityRulesetOutput).
+    pub fn builder() -> crate::output::update_data_quality_ruleset_output::Builder {
+        crate::output::update_data_quality_ruleset_output::Builder::default()
     }
 }
 
@@ -1267,6 +1449,102 @@ impl StartExportLabelsTaskRunOutput {
     /// Creates a new builder-style object to manufacture [`StartExportLabelsTaskRunOutput`](crate::output::StartExportLabelsTaskRunOutput).
     pub fn builder() -> crate::output::start_export_labels_task_run_output::Builder {
         crate::output::start_export_labels_task_run_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartDataQualityRulesetEvaluationRunOutput {
+    /// <p>The unique run identifier associated with this run.</p>
+    #[doc(hidden)]
+    pub run_id: std::option::Option<std::string::String>,
+}
+impl StartDataQualityRulesetEvaluationRunOutput {
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
+/// See [`StartDataQualityRulesetEvaluationRunOutput`](crate::output::StartDataQualityRulesetEvaluationRunOutput).
+pub mod start_data_quality_ruleset_evaluation_run_output {
+
+    /// A builder for [`StartDataQualityRulesetEvaluationRunOutput`](crate::output::StartDataQualityRulesetEvaluationRunOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) run_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.run_id = Some(input.into());
+            self
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.run_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartDataQualityRulesetEvaluationRunOutput`](crate::output::StartDataQualityRulesetEvaluationRunOutput).
+        pub fn build(self) -> crate::output::StartDataQualityRulesetEvaluationRunOutput {
+            crate::output::StartDataQualityRulesetEvaluationRunOutput {
+                run_id: self.run_id,
+            }
+        }
+    }
+}
+impl StartDataQualityRulesetEvaluationRunOutput {
+    /// Creates a new builder-style object to manufacture [`StartDataQualityRulesetEvaluationRunOutput`](crate::output::StartDataQualityRulesetEvaluationRunOutput).
+    pub fn builder() -> crate::output::start_data_quality_ruleset_evaluation_run_output::Builder {
+        crate::output::start_data_quality_ruleset_evaluation_run_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartDataQualityRuleRecommendationRunOutput {
+    /// <p>The unique run identifier associated with this run.</p>
+    #[doc(hidden)]
+    pub run_id: std::option::Option<std::string::String>,
+}
+impl StartDataQualityRuleRecommendationRunOutput {
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
+/// See [`StartDataQualityRuleRecommendationRunOutput`](crate::output::StartDataQualityRuleRecommendationRunOutput).
+pub mod start_data_quality_rule_recommendation_run_output {
+
+    /// A builder for [`StartDataQualityRuleRecommendationRunOutput`](crate::output::StartDataQualityRuleRecommendationRunOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) run_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.run_id = Some(input.into());
+            self
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.run_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartDataQualityRuleRecommendationRunOutput`](crate::output::StartDataQualityRuleRecommendationRunOutput).
+        pub fn build(self) -> crate::output::StartDataQualityRuleRecommendationRunOutput {
+            crate::output::StartDataQualityRuleRecommendationRunOutput {
+                run_id: self.run_id,
+            }
+        }
+    }
+}
+impl StartDataQualityRuleRecommendationRunOutput {
+    /// Creates a new builder-style object to manufacture [`StartDataQualityRuleRecommendationRunOutput`](crate::output::StartDataQualityRuleRecommendationRunOutput).
+    pub fn builder() -> crate::output::start_data_quality_rule_recommendation_run_output::Builder {
+        crate::output::start_data_quality_rule_recommendation_run_output::Builder::default()
     }
 }
 
@@ -3082,6 +3360,334 @@ impl ListDevEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListDevEndpointsOutput`](crate::output::ListDevEndpointsOutput).
     pub fn builder() -> crate::output::list_dev_endpoints_output::Builder {
         crate::output::list_dev_endpoints_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListDataQualityRulesetsOutput {
+    /// <p>A paginated list of rulesets for the specified list of Glue tables.</p>
+    #[doc(hidden)]
+    pub rulesets: std::option::Option<std::vec::Vec<crate::model::DataQualityRulesetListDetails>>,
+    /// <p>A pagination token, if more results are available.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDataQualityRulesetsOutput {
+    /// <p>A paginated list of rulesets for the specified list of Glue tables.</p>
+    pub fn rulesets(&self) -> std::option::Option<&[crate::model::DataQualityRulesetListDetails]> {
+        self.rulesets.as_deref()
+    }
+    /// <p>A pagination token, if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListDataQualityRulesetsOutput`](crate::output::ListDataQualityRulesetsOutput).
+pub mod list_data_quality_rulesets_output {
+
+    /// A builder for [`ListDataQualityRulesetsOutput`](crate::output::ListDataQualityRulesetsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rulesets:
+            std::option::Option<std::vec::Vec<crate::model::DataQualityRulesetListDetails>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `rulesets`.
+        ///
+        /// To override the contents of this collection use [`set_rulesets`](Self::set_rulesets).
+        ///
+        /// <p>A paginated list of rulesets for the specified list of Glue tables.</p>
+        pub fn rulesets(mut self, input: crate::model::DataQualityRulesetListDetails) -> Self {
+            let mut v = self.rulesets.unwrap_or_default();
+            v.push(input);
+            self.rulesets = Some(v);
+            self
+        }
+        /// <p>A paginated list of rulesets for the specified list of Glue tables.</p>
+        pub fn set_rulesets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataQualityRulesetListDetails>>,
+        ) -> Self {
+            self.rulesets = input;
+            self
+        }
+        /// <p>A pagination token, if more results are available.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A pagination token, if more results are available.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDataQualityRulesetsOutput`](crate::output::ListDataQualityRulesetsOutput).
+        pub fn build(self) -> crate::output::ListDataQualityRulesetsOutput {
+            crate::output::ListDataQualityRulesetsOutput {
+                rulesets: self.rulesets,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListDataQualityRulesetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDataQualityRulesetsOutput`](crate::output::ListDataQualityRulesetsOutput).
+    pub fn builder() -> crate::output::list_data_quality_rulesets_output::Builder {
+        crate::output::list_data_quality_rulesets_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListDataQualityRulesetEvaluationRunsOutput {
+    /// <p>A list of <code>DataQualityRulesetEvaluationRunDescription</code> objects representing data quality ruleset runs.</p>
+    #[doc(hidden)]
+    pub runs: std::option::Option<
+        std::vec::Vec<crate::model::DataQualityRulesetEvaluationRunDescription>,
+    >,
+    /// <p>A pagination token, if more results are available.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDataQualityRulesetEvaluationRunsOutput {
+    /// <p>A list of <code>DataQualityRulesetEvaluationRunDescription</code> objects representing data quality ruleset runs.</p>
+    pub fn runs(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataQualityRulesetEvaluationRunDescription]> {
+        self.runs.as_deref()
+    }
+    /// <p>A pagination token, if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListDataQualityRulesetEvaluationRunsOutput`](crate::output::ListDataQualityRulesetEvaluationRunsOutput).
+pub mod list_data_quality_ruleset_evaluation_runs_output {
+
+    /// A builder for [`ListDataQualityRulesetEvaluationRunsOutput`](crate::output::ListDataQualityRulesetEvaluationRunsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) runs: std::option::Option<
+            std::vec::Vec<crate::model::DataQualityRulesetEvaluationRunDescription>,
+        >,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `runs`.
+        ///
+        /// To override the contents of this collection use [`set_runs`](Self::set_runs).
+        ///
+        /// <p>A list of <code>DataQualityRulesetEvaluationRunDescription</code> objects representing data quality ruleset runs.</p>
+        pub fn runs(
+            mut self,
+            input: crate::model::DataQualityRulesetEvaluationRunDescription,
+        ) -> Self {
+            let mut v = self.runs.unwrap_or_default();
+            v.push(input);
+            self.runs = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataQualityRulesetEvaluationRunDescription</code> objects representing data quality ruleset runs.</p>
+        pub fn set_runs(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::DataQualityRulesetEvaluationRunDescription>,
+            >,
+        ) -> Self {
+            self.runs = input;
+            self
+        }
+        /// <p>A pagination token, if more results are available.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A pagination token, if more results are available.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDataQualityRulesetEvaluationRunsOutput`](crate::output::ListDataQualityRulesetEvaluationRunsOutput).
+        pub fn build(self) -> crate::output::ListDataQualityRulesetEvaluationRunsOutput {
+            crate::output::ListDataQualityRulesetEvaluationRunsOutput {
+                runs: self.runs,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListDataQualityRulesetEvaluationRunsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDataQualityRulesetEvaluationRunsOutput`](crate::output::ListDataQualityRulesetEvaluationRunsOutput).
+    pub fn builder() -> crate::output::list_data_quality_ruleset_evaluation_runs_output::Builder {
+        crate::output::list_data_quality_ruleset_evaluation_runs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListDataQualityRuleRecommendationRunsOutput {
+    /// <p>A list of <code>DataQualityRuleRecommendationRunDescription</code> objects.</p>
+    #[doc(hidden)]
+    pub runs: std::option::Option<
+        std::vec::Vec<crate::model::DataQualityRuleRecommendationRunDescription>,
+    >,
+    /// <p>A pagination token, if more results are available.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDataQualityRuleRecommendationRunsOutput {
+    /// <p>A list of <code>DataQualityRuleRecommendationRunDescription</code> objects.</p>
+    pub fn runs(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataQualityRuleRecommendationRunDescription]> {
+        self.runs.as_deref()
+    }
+    /// <p>A pagination token, if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListDataQualityRuleRecommendationRunsOutput`](crate::output::ListDataQualityRuleRecommendationRunsOutput).
+pub mod list_data_quality_rule_recommendation_runs_output {
+
+    /// A builder for [`ListDataQualityRuleRecommendationRunsOutput`](crate::output::ListDataQualityRuleRecommendationRunsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) runs: std::option::Option<
+            std::vec::Vec<crate::model::DataQualityRuleRecommendationRunDescription>,
+        >,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `runs`.
+        ///
+        /// To override the contents of this collection use [`set_runs`](Self::set_runs).
+        ///
+        /// <p>A list of <code>DataQualityRuleRecommendationRunDescription</code> objects.</p>
+        pub fn runs(
+            mut self,
+            input: crate::model::DataQualityRuleRecommendationRunDescription,
+        ) -> Self {
+            let mut v = self.runs.unwrap_or_default();
+            v.push(input);
+            self.runs = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataQualityRuleRecommendationRunDescription</code> objects.</p>
+        pub fn set_runs(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::DataQualityRuleRecommendationRunDescription>,
+            >,
+        ) -> Self {
+            self.runs = input;
+            self
+        }
+        /// <p>A pagination token, if more results are available.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A pagination token, if more results are available.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDataQualityRuleRecommendationRunsOutput`](crate::output::ListDataQualityRuleRecommendationRunsOutput).
+        pub fn build(self) -> crate::output::ListDataQualityRuleRecommendationRunsOutput {
+            crate::output::ListDataQualityRuleRecommendationRunsOutput {
+                runs: self.runs,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListDataQualityRuleRecommendationRunsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDataQualityRuleRecommendationRunsOutput`](crate::output::ListDataQualityRuleRecommendationRunsOutput).
+    pub fn builder() -> crate::output::list_data_quality_rule_recommendation_runs_output::Builder {
+        crate::output::list_data_quality_rule_recommendation_runs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListDataQualityResultsOutput {
+    /// <p>A list of <code>DataQualityResultDescription</code> objects.</p>
+    #[doc(hidden)]
+    pub results: std::option::Option<std::vec::Vec<crate::model::DataQualityResultDescription>>,
+    /// <p>A pagination token, if more results are available.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDataQualityResultsOutput {
+    /// <p>A list of <code>DataQualityResultDescription</code> objects.</p>
+    pub fn results(&self) -> std::option::Option<&[crate::model::DataQualityResultDescription]> {
+        self.results.as_deref()
+    }
+    /// <p>A pagination token, if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListDataQualityResultsOutput`](crate::output::ListDataQualityResultsOutput).
+pub mod list_data_quality_results_output {
+
+    /// A builder for [`ListDataQualityResultsOutput`](crate::output::ListDataQualityResultsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) results:
+            std::option::Option<std::vec::Vec<crate::model::DataQualityResultDescription>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `results`.
+        ///
+        /// To override the contents of this collection use [`set_results`](Self::set_results).
+        ///
+        /// <p>A list of <code>DataQualityResultDescription</code> objects.</p>
+        pub fn results(mut self, input: crate::model::DataQualityResultDescription) -> Self {
+            let mut v = self.results.unwrap_or_default();
+            v.push(input);
+            self.results = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataQualityResultDescription</code> objects.</p>
+        pub fn set_results(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataQualityResultDescription>>,
+        ) -> Self {
+            self.results = input;
+            self
+        }
+        /// <p>A pagination token, if more results are available.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A pagination token, if more results are available.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDataQualityResultsOutput`](crate::output::ListDataQualityResultsOutput).
+        pub fn build(self) -> crate::output::ListDataQualityResultsOutput {
+            crate::output::ListDataQualityResultsOutput {
+                results: self.results,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListDataQualityResultsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDataQualityResultsOutput`](crate::output::ListDataQualityResultsOutput).
+    pub fn builder() -> crate::output::list_data_quality_results_output::Builder {
+        crate::output::list_data_quality_results_output::Builder::default()
     }
 }
 
@@ -7366,6 +7972,1078 @@ impl GetDevEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetDataQualityRulesetEvaluationRunOutput {
+    /// <p>The unique run identifier associated with this run.</p>
+    #[doc(hidden)]
+    pub run_id: std::option::Option<std::string::String>,
+    /// <p>The data source (an Glue table) associated with this evaluation run.</p>
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::DataSource>,
+    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    #[doc(hidden)]
+    pub role: std::option::Option<std::string::String>,
+    /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+    #[doc(hidden)]
+    pub number_of_workers: std::option::Option<i32>,
+    /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    #[doc(hidden)]
+    pub timeout: std::option::Option<i32>,
+    /// <p>Additional run options you can specify for an evaluation run.</p>
+    #[doc(hidden)]
+    pub additional_run_options:
+        std::option::Option<crate::model::DataQualityEvaluationRunAdditionalRunOptions>,
+    /// <p>The status for this run.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::TaskStatusType>,
+    /// <p>The error strings that are associated with the run.</p>
+    #[doc(hidden)]
+    pub error_string: std::option::Option<std::string::String>,
+    /// <p>The date and time when this run started.</p>
+    #[doc(hidden)]
+    pub started_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
+    #[doc(hidden)]
+    pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time when this run was completed.</p>
+    #[doc(hidden)]
+    pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The amount of time (in seconds) that the run consumed resources.</p>
+    #[doc(hidden)]
+    pub execution_time: i32,
+    /// <p>A list of ruleset names for the run.</p>
+    #[doc(hidden)]
+    pub ruleset_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of result IDs for the data quality results for the run.</p>
+    #[doc(hidden)]
+    pub result_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetDataQualityRulesetEvaluationRunOutput {
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+    /// <p>The data source (an Glue table) associated with this evaluation run.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>Additional run options you can specify for an evaluation run.</p>
+    pub fn additional_run_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DataQualityEvaluationRunAdditionalRunOptions> {
+        self.additional_run_options.as_ref()
+    }
+    /// <p>The status for this run.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TaskStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The error strings that are associated with the run.</p>
+    pub fn error_string(&self) -> std::option::Option<&str> {
+        self.error_string.as_deref()
+    }
+    /// <p>The date and time when this run started.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_on.as_ref()
+    }
+    /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_on.as_ref()
+    }
+    /// <p>The date and time when this run was completed.</p>
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.completed_on.as_ref()
+    }
+    /// <p>The amount of time (in seconds) that the run consumed resources.</p>
+    pub fn execution_time(&self) -> i32 {
+        self.execution_time
+    }
+    /// <p>A list of ruleset names for the run.</p>
+    pub fn ruleset_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.ruleset_names.as_deref()
+    }
+    /// <p>A list of result IDs for the data quality results for the run.</p>
+    pub fn result_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.result_ids.as_deref()
+    }
+}
+/// See [`GetDataQualityRulesetEvaluationRunOutput`](crate::output::GetDataQualityRulesetEvaluationRunOutput).
+pub mod get_data_quality_ruleset_evaluation_run_output {
+
+    /// A builder for [`GetDataQualityRulesetEvaluationRunOutput`](crate::output::GetDataQualityRulesetEvaluationRunOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) run_id: std::option::Option<std::string::String>,
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+        pub(crate) role: std::option::Option<std::string::String>,
+        pub(crate) number_of_workers: std::option::Option<i32>,
+        pub(crate) timeout: std::option::Option<i32>,
+        pub(crate) additional_run_options:
+            std::option::Option<crate::model::DataQualityEvaluationRunAdditionalRunOptions>,
+        pub(crate) status: std::option::Option<crate::model::TaskStatusType>,
+        pub(crate) error_string: std::option::Option<std::string::String>,
+        pub(crate) started_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completed_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) execution_time: std::option::Option<i32>,
+        pub(crate) ruleset_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) result_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.run_id = Some(input.into());
+            self
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.run_id = input;
+            self
+        }
+        /// <p>The data source (an Glue table) associated with this evaluation run.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>The data source (an Glue table) associated with this evaluation run.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// <p>An IAM role supplied to encrypt the results of the run.</p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role = Some(input.into());
+            self
+        }
+        /// <p>An IAM role supplied to encrypt the results of the run.</p>
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role = input;
+            self
+        }
+        /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.number_of_workers = Some(input);
+            self
+        }
+        /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+        pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_workers = input;
+            self
+        }
+        /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.timeout = Some(input);
+            self
+        }
+        /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout = input;
+            self
+        }
+        /// <p>Additional run options you can specify for an evaluation run.</p>
+        pub fn additional_run_options(
+            mut self,
+            input: crate::model::DataQualityEvaluationRunAdditionalRunOptions,
+        ) -> Self {
+            self.additional_run_options = Some(input);
+            self
+        }
+        /// <p>Additional run options you can specify for an evaluation run.</p>
+        pub fn set_additional_run_options(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityEvaluationRunAdditionalRunOptions>,
+        ) -> Self {
+            self.additional_run_options = input;
+            self
+        }
+        /// <p>The status for this run.</p>
+        pub fn status(mut self, input: crate::model::TaskStatusType) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status for this run.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TaskStatusType>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The error strings that are associated with the run.</p>
+        pub fn error_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_string = Some(input.into());
+            self
+        }
+        /// <p>The error strings that are associated with the run.</p>
+        pub fn set_error_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_string = input;
+            self
+        }
+        /// <p>The date and time when this run started.</p>
+        pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_on = Some(input);
+            self
+        }
+        /// <p>The date and time when this run started.</p>
+        pub fn set_started_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_on = input;
+            self
+        }
+        /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
+        pub fn last_modified_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_on = Some(input);
+            self
+        }
+        /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
+        pub fn set_last_modified_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_on = input;
+            self
+        }
+        /// <p>The date and time when this run was completed.</p>
+        pub fn completed_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.completed_on = Some(input);
+            self
+        }
+        /// <p>The date and time when this run was completed.</p>
+        pub fn set_completed_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.completed_on = input;
+            self
+        }
+        /// <p>The amount of time (in seconds) that the run consumed resources.</p>
+        pub fn execution_time(mut self, input: i32) -> Self {
+            self.execution_time = Some(input);
+            self
+        }
+        /// <p>The amount of time (in seconds) that the run consumed resources.</p>
+        pub fn set_execution_time(mut self, input: std::option::Option<i32>) -> Self {
+            self.execution_time = input;
+            self
+        }
+        /// Appends an item to `ruleset_names`.
+        ///
+        /// To override the contents of this collection use [`set_ruleset_names`](Self::set_ruleset_names).
+        ///
+        /// <p>A list of ruleset names for the run.</p>
+        pub fn ruleset_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.ruleset_names.unwrap_or_default();
+            v.push(input.into());
+            self.ruleset_names = Some(v);
+            self
+        }
+        /// <p>A list of ruleset names for the run.</p>
+        pub fn set_ruleset_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.ruleset_names = input;
+            self
+        }
+        /// Appends an item to `result_ids`.
+        ///
+        /// To override the contents of this collection use [`set_result_ids`](Self::set_result_ids).
+        ///
+        /// <p>A list of result IDs for the data quality results for the run.</p>
+        pub fn result_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.result_ids.unwrap_or_default();
+            v.push(input.into());
+            self.result_ids = Some(v);
+            self
+        }
+        /// <p>A list of result IDs for the data quality results for the run.</p>
+        pub fn set_result_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.result_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDataQualityRulesetEvaluationRunOutput`](crate::output::GetDataQualityRulesetEvaluationRunOutput).
+        pub fn build(self) -> crate::output::GetDataQualityRulesetEvaluationRunOutput {
+            crate::output::GetDataQualityRulesetEvaluationRunOutput {
+                run_id: self.run_id,
+                data_source: self.data_source,
+                role: self.role,
+                number_of_workers: self.number_of_workers,
+                timeout: self.timeout,
+                additional_run_options: self.additional_run_options,
+                status: self.status,
+                error_string: self.error_string,
+                started_on: self.started_on,
+                last_modified_on: self.last_modified_on,
+                completed_on: self.completed_on,
+                execution_time: self.execution_time.unwrap_or_default(),
+                ruleset_names: self.ruleset_names,
+                result_ids: self.result_ids,
+            }
+        }
+    }
+}
+impl GetDataQualityRulesetEvaluationRunOutput {
+    /// Creates a new builder-style object to manufacture [`GetDataQualityRulesetEvaluationRunOutput`](crate::output::GetDataQualityRulesetEvaluationRunOutput).
+    pub fn builder() -> crate::output::get_data_quality_ruleset_evaluation_run_output::Builder {
+        crate::output::get_data_quality_ruleset_evaluation_run_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetDataQualityRulesetOutput {
+    /// <p>The name of the ruleset.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A description of the ruleset.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    #[doc(hidden)]
+    pub ruleset: std::option::Option<std::string::String>,
+    /// <p>The name and database name of the target table.</p>
+    #[doc(hidden)]
+    pub target_table: std::option::Option<crate::model::DataQualityTargetTable>,
+    /// <p>A timestamp. The time and date that this data quality ruleset was created.</p>
+    #[doc(hidden)]
+    pub created_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A timestamp. The last point in time when this data quality ruleset was modified.</p>
+    #[doc(hidden)]
+    pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
+    #[doc(hidden)]
+    pub recommendation_run_id: std::option::Option<std::string::String>,
+}
+impl GetDataQualityRulesetOutput {
+    /// <p>The name of the ruleset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the ruleset.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    pub fn ruleset(&self) -> std::option::Option<&str> {
+        self.ruleset.as_deref()
+    }
+    /// <p>The name and database name of the target table.</p>
+    pub fn target_table(&self) -> std::option::Option<&crate::model::DataQualityTargetTable> {
+        self.target_table.as_ref()
+    }
+    /// <p>A timestamp. The time and date that this data quality ruleset was created.</p>
+    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_on.as_ref()
+    }
+    /// <p>A timestamp. The last point in time when this data quality ruleset was modified.</p>
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_on.as_ref()
+    }
+    /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
+    pub fn recommendation_run_id(&self) -> std::option::Option<&str> {
+        self.recommendation_run_id.as_deref()
+    }
+}
+/// See [`GetDataQualityRulesetOutput`](crate::output::GetDataQualityRulesetOutput).
+pub mod get_data_quality_ruleset_output {
+
+    /// A builder for [`GetDataQualityRulesetOutput`](crate::output::GetDataQualityRulesetOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) ruleset: std::option::Option<std::string::String>,
+        pub(crate) target_table: std::option::Option<crate::model::DataQualityTargetTable>,
+        pub(crate) created_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) recommendation_run_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A description of the ruleset.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the ruleset.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+        pub fn ruleset(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ruleset = Some(input.into());
+            self
+        }
+        /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+        pub fn set_ruleset(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ruleset = input;
+            self
+        }
+        /// <p>The name and database name of the target table.</p>
+        pub fn target_table(mut self, input: crate::model::DataQualityTargetTable) -> Self {
+            self.target_table = Some(input);
+            self
+        }
+        /// <p>The name and database name of the target table.</p>
+        pub fn set_target_table(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityTargetTable>,
+        ) -> Self {
+            self.target_table = input;
+            self
+        }
+        /// <p>A timestamp. The time and date that this data quality ruleset was created.</p>
+        pub fn created_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_on = Some(input);
+            self
+        }
+        /// <p>A timestamp. The time and date that this data quality ruleset was created.</p>
+        pub fn set_created_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_on = input;
+            self
+        }
+        /// <p>A timestamp. The last point in time when this data quality ruleset was modified.</p>
+        pub fn last_modified_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_on = Some(input);
+            self
+        }
+        /// <p>A timestamp. The last point in time when this data quality ruleset was modified.</p>
+        pub fn set_last_modified_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_on = input;
+            self
+        }
+        /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
+        pub fn recommendation_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recommendation_run_id = Some(input.into());
+            self
+        }
+        /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
+        pub fn set_recommendation_run_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recommendation_run_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDataQualityRulesetOutput`](crate::output::GetDataQualityRulesetOutput).
+        pub fn build(self) -> crate::output::GetDataQualityRulesetOutput {
+            crate::output::GetDataQualityRulesetOutput {
+                name: self.name,
+                description: self.description,
+                ruleset: self.ruleset,
+                target_table: self.target_table,
+                created_on: self.created_on,
+                last_modified_on: self.last_modified_on,
+                recommendation_run_id: self.recommendation_run_id,
+            }
+        }
+    }
+}
+impl GetDataQualityRulesetOutput {
+    /// Creates a new builder-style object to manufacture [`GetDataQualityRulesetOutput`](crate::output::GetDataQualityRulesetOutput).
+    pub fn builder() -> crate::output::get_data_quality_ruleset_output::Builder {
+        crate::output::get_data_quality_ruleset_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetDataQualityRuleRecommendationRunOutput {
+    /// <p>The unique run identifier associated with this run.</p>
+    #[doc(hidden)]
+    pub run_id: std::option::Option<std::string::String>,
+    /// <p>The data source (an Glue table) associated with this run.</p>
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::DataSource>,
+    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    #[doc(hidden)]
+    pub role: std::option::Option<std::string::String>,
+    /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+    #[doc(hidden)]
+    pub number_of_workers: std::option::Option<i32>,
+    /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    #[doc(hidden)]
+    pub timeout: std::option::Option<i32>,
+    /// <p>The status for this run.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::TaskStatusType>,
+    /// <p>The error strings that are associated with the run.</p>
+    #[doc(hidden)]
+    pub error_string: std::option::Option<std::string::String>,
+    /// <p>The date and time when this run started.</p>
+    #[doc(hidden)]
+    pub started_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
+    #[doc(hidden)]
+    pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time when this run was completed.</p>
+    #[doc(hidden)]
+    pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The amount of time (in seconds) that the run consumed resources.</p>
+    #[doc(hidden)]
+    pub execution_time: i32,
+    /// <p>When a start rule recommendation run completes, it creates a recommended ruleset (a set of rules). This member has those rules in Data Quality Definition Language (DQDL) format.</p>
+    #[doc(hidden)]
+    pub recommended_ruleset: std::option::Option<std::string::String>,
+    /// <p>The name of the ruleset that was created by the run.</p>
+    #[doc(hidden)]
+    pub created_ruleset_name: std::option::Option<std::string::String>,
+}
+impl GetDataQualityRuleRecommendationRunOutput {
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+    /// <p>The data source (an Glue table) associated with this run.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The status for this run.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TaskStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The error strings that are associated with the run.</p>
+    pub fn error_string(&self) -> std::option::Option<&str> {
+        self.error_string.as_deref()
+    }
+    /// <p>The date and time when this run started.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_on.as_ref()
+    }
+    /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_on.as_ref()
+    }
+    /// <p>The date and time when this run was completed.</p>
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.completed_on.as_ref()
+    }
+    /// <p>The amount of time (in seconds) that the run consumed resources.</p>
+    pub fn execution_time(&self) -> i32 {
+        self.execution_time
+    }
+    /// <p>When a start rule recommendation run completes, it creates a recommended ruleset (a set of rules). This member has those rules in Data Quality Definition Language (DQDL) format.</p>
+    pub fn recommended_ruleset(&self) -> std::option::Option<&str> {
+        self.recommended_ruleset.as_deref()
+    }
+    /// <p>The name of the ruleset that was created by the run.</p>
+    pub fn created_ruleset_name(&self) -> std::option::Option<&str> {
+        self.created_ruleset_name.as_deref()
+    }
+}
+/// See [`GetDataQualityRuleRecommendationRunOutput`](crate::output::GetDataQualityRuleRecommendationRunOutput).
+pub mod get_data_quality_rule_recommendation_run_output {
+
+    /// A builder for [`GetDataQualityRuleRecommendationRunOutput`](crate::output::GetDataQualityRuleRecommendationRunOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) run_id: std::option::Option<std::string::String>,
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+        pub(crate) role: std::option::Option<std::string::String>,
+        pub(crate) number_of_workers: std::option::Option<i32>,
+        pub(crate) timeout: std::option::Option<i32>,
+        pub(crate) status: std::option::Option<crate::model::TaskStatusType>,
+        pub(crate) error_string: std::option::Option<std::string::String>,
+        pub(crate) started_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completed_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) execution_time: std::option::Option<i32>,
+        pub(crate) recommended_ruleset: std::option::Option<std::string::String>,
+        pub(crate) created_ruleset_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.run_id = Some(input.into());
+            self
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.run_id = input;
+            self
+        }
+        /// <p>The data source (an Glue table) associated with this run.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>The data source (an Glue table) associated with this run.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// <p>An IAM role supplied to encrypt the results of the run.</p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role = Some(input.into());
+            self
+        }
+        /// <p>An IAM role supplied to encrypt the results of the run.</p>
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role = input;
+            self
+        }
+        /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.number_of_workers = Some(input);
+            self
+        }
+        /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+        pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_workers = input;
+            self
+        }
+        /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.timeout = Some(input);
+            self
+        }
+        /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout = input;
+            self
+        }
+        /// <p>The status for this run.</p>
+        pub fn status(mut self, input: crate::model::TaskStatusType) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status for this run.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TaskStatusType>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The error strings that are associated with the run.</p>
+        pub fn error_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_string = Some(input.into());
+            self
+        }
+        /// <p>The error strings that are associated with the run.</p>
+        pub fn set_error_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_string = input;
+            self
+        }
+        /// <p>The date and time when this run started.</p>
+        pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_on = Some(input);
+            self
+        }
+        /// <p>The date and time when this run started.</p>
+        pub fn set_started_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_on = input;
+            self
+        }
+        /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
+        pub fn last_modified_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_on = Some(input);
+            self
+        }
+        /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
+        pub fn set_last_modified_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_on = input;
+            self
+        }
+        /// <p>The date and time when this run was completed.</p>
+        pub fn completed_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.completed_on = Some(input);
+            self
+        }
+        /// <p>The date and time when this run was completed.</p>
+        pub fn set_completed_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.completed_on = input;
+            self
+        }
+        /// <p>The amount of time (in seconds) that the run consumed resources.</p>
+        pub fn execution_time(mut self, input: i32) -> Self {
+            self.execution_time = Some(input);
+            self
+        }
+        /// <p>The amount of time (in seconds) that the run consumed resources.</p>
+        pub fn set_execution_time(mut self, input: std::option::Option<i32>) -> Self {
+            self.execution_time = input;
+            self
+        }
+        /// <p>When a start rule recommendation run completes, it creates a recommended ruleset (a set of rules). This member has those rules in Data Quality Definition Language (DQDL) format.</p>
+        pub fn recommended_ruleset(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recommended_ruleset = Some(input.into());
+            self
+        }
+        /// <p>When a start rule recommendation run completes, it creates a recommended ruleset (a set of rules). This member has those rules in Data Quality Definition Language (DQDL) format.</p>
+        pub fn set_recommended_ruleset(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recommended_ruleset = input;
+            self
+        }
+        /// <p>The name of the ruleset that was created by the run.</p>
+        pub fn created_ruleset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.created_ruleset_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the ruleset that was created by the run.</p>
+        pub fn set_created_ruleset_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.created_ruleset_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDataQualityRuleRecommendationRunOutput`](crate::output::GetDataQualityRuleRecommendationRunOutput).
+        pub fn build(self) -> crate::output::GetDataQualityRuleRecommendationRunOutput {
+            crate::output::GetDataQualityRuleRecommendationRunOutput {
+                run_id: self.run_id,
+                data_source: self.data_source,
+                role: self.role,
+                number_of_workers: self.number_of_workers,
+                timeout: self.timeout,
+                status: self.status,
+                error_string: self.error_string,
+                started_on: self.started_on,
+                last_modified_on: self.last_modified_on,
+                completed_on: self.completed_on,
+                execution_time: self.execution_time.unwrap_or_default(),
+                recommended_ruleset: self.recommended_ruleset,
+                created_ruleset_name: self.created_ruleset_name,
+            }
+        }
+    }
+}
+impl GetDataQualityRuleRecommendationRunOutput {
+    /// Creates a new builder-style object to manufacture [`GetDataQualityRuleRecommendationRunOutput`](crate::output::GetDataQualityRuleRecommendationRunOutput).
+    pub fn builder() -> crate::output::get_data_quality_rule_recommendation_run_output::Builder {
+        crate::output::get_data_quality_rule_recommendation_run_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetDataQualityResultOutput {
+    /// <p>A unique result ID for the data quality result.</p>
+    #[doc(hidden)]
+    pub result_id: std::option::Option<std::string::String>,
+    /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
+    #[doc(hidden)]
+    pub score: std::option::Option<f64>,
+    /// <p>The table associated with the data quality result, if any.</p>
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::DataSource>,
+    /// <p>The name of the ruleset associated with the data quality result.</p>
+    #[doc(hidden)]
+    pub ruleset_name: std::option::Option<std::string::String>,
+    /// <p>In the context of a job in Glue Studio, each node in the canvas is typically assigned some sort of name and data quality nodes will have names. In the case of multiple nodes, the <code>evaluationContext</code> can differentiate the nodes.</p>
+    #[doc(hidden)]
+    pub evaluation_context: std::option::Option<std::string::String>,
+    /// <p>The date and time when the run for this data quality result started.</p>
+    #[doc(hidden)]
+    pub started_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time when the run for this data quality result was completed.</p>
+    #[doc(hidden)]
+    pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The job name associated with the data quality result, if any.</p>
+    #[doc(hidden)]
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>The job run ID associated with the data quality result, if any.</p>
+    #[doc(hidden)]
+    pub job_run_id: std::option::Option<std::string::String>,
+    /// <p>The unique run ID associated with the ruleset evaluation.</p>
+    #[doc(hidden)]
+    pub ruleset_evaluation_run_id: std::option::Option<std::string::String>,
+    /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+    #[doc(hidden)]
+    pub rule_results: std::option::Option<std::vec::Vec<crate::model::DataQualityRuleResult>>,
+}
+impl GetDataQualityResultOutput {
+    /// <p>A unique result ID for the data quality result.</p>
+    pub fn result_id(&self) -> std::option::Option<&str> {
+        self.result_id.as_deref()
+    }
+    /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
+    pub fn score(&self) -> std::option::Option<f64> {
+        self.score
+    }
+    /// <p>The table associated with the data quality result, if any.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>The name of the ruleset associated with the data quality result.</p>
+    pub fn ruleset_name(&self) -> std::option::Option<&str> {
+        self.ruleset_name.as_deref()
+    }
+    /// <p>In the context of a job in Glue Studio, each node in the canvas is typically assigned some sort of name and data quality nodes will have names. In the case of multiple nodes, the <code>evaluationContext</code> can differentiate the nodes.</p>
+    pub fn evaluation_context(&self) -> std::option::Option<&str> {
+        self.evaluation_context.as_deref()
+    }
+    /// <p>The date and time when the run for this data quality result started.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_on.as_ref()
+    }
+    /// <p>The date and time when the run for this data quality result was completed.</p>
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.completed_on.as_ref()
+    }
+    /// <p>The job name associated with the data quality result, if any.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The job run ID associated with the data quality result, if any.</p>
+    pub fn job_run_id(&self) -> std::option::Option<&str> {
+        self.job_run_id.as_deref()
+    }
+    /// <p>The unique run ID associated with the ruleset evaluation.</p>
+    pub fn ruleset_evaluation_run_id(&self) -> std::option::Option<&str> {
+        self.ruleset_evaluation_run_id.as_deref()
+    }
+    /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+    pub fn rule_results(&self) -> std::option::Option<&[crate::model::DataQualityRuleResult]> {
+        self.rule_results.as_deref()
+    }
+}
+/// See [`GetDataQualityResultOutput`](crate::output::GetDataQualityResultOutput).
+pub mod get_data_quality_result_output {
+
+    /// A builder for [`GetDataQualityResultOutput`](crate::output::GetDataQualityResultOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) result_id: std::option::Option<std::string::String>,
+        pub(crate) score: std::option::Option<f64>,
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+        pub(crate) ruleset_name: std::option::Option<std::string::String>,
+        pub(crate) evaluation_context: std::option::Option<std::string::String>,
+        pub(crate) started_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completed_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) job_run_id: std::option::Option<std::string::String>,
+        pub(crate) ruleset_evaluation_run_id: std::option::Option<std::string::String>,
+        pub(crate) rule_results:
+            std::option::Option<std::vec::Vec<crate::model::DataQualityRuleResult>>,
+    }
+    impl Builder {
+        /// <p>A unique result ID for the data quality result.</p>
+        pub fn result_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.result_id = Some(input.into());
+            self
+        }
+        /// <p>A unique result ID for the data quality result.</p>
+        pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.result_id = input;
+            self
+        }
+        /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
+        pub fn score(mut self, input: f64) -> Self {
+            self.score = Some(input);
+            self
+        }
+        /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
+        pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
+            self.score = input;
+            self
+        }
+        /// <p>The table associated with the data quality result, if any.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>The table associated with the data quality result, if any.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// <p>The name of the ruleset associated with the data quality result.</p>
+        pub fn ruleset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ruleset_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the ruleset associated with the data quality result.</p>
+        pub fn set_ruleset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ruleset_name = input;
+            self
+        }
+        /// <p>In the context of a job in Glue Studio, each node in the canvas is typically assigned some sort of name and data quality nodes will have names. In the case of multiple nodes, the <code>evaluationContext</code> can differentiate the nodes.</p>
+        pub fn evaluation_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.evaluation_context = Some(input.into());
+            self
+        }
+        /// <p>In the context of a job in Glue Studio, each node in the canvas is typically assigned some sort of name and data quality nodes will have names. In the case of multiple nodes, the <code>evaluationContext</code> can differentiate the nodes.</p>
+        pub fn set_evaluation_context(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.evaluation_context = input;
+            self
+        }
+        /// <p>The date and time when the run for this data quality result started.</p>
+        pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_on = Some(input);
+            self
+        }
+        /// <p>The date and time when the run for this data quality result started.</p>
+        pub fn set_started_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_on = input;
+            self
+        }
+        /// <p>The date and time when the run for this data quality result was completed.</p>
+        pub fn completed_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.completed_on = Some(input);
+            self
+        }
+        /// <p>The date and time when the run for this data quality result was completed.</p>
+        pub fn set_completed_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.completed_on = input;
+            self
+        }
+        /// <p>The job name associated with the data quality result, if any.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The job name associated with the data quality result, if any.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>The job run ID associated with the data quality result, if any.</p>
+        pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_run_id = Some(input.into());
+            self
+        }
+        /// <p>The job run ID associated with the data quality result, if any.</p>
+        pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_run_id = input;
+            self
+        }
+        /// <p>The unique run ID associated with the ruleset evaluation.</p>
+        pub fn ruleset_evaluation_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ruleset_evaluation_run_id = Some(input.into());
+            self
+        }
+        /// <p>The unique run ID associated with the ruleset evaluation.</p>
+        pub fn set_ruleset_evaluation_run_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ruleset_evaluation_run_id = input;
+            self
+        }
+        /// Appends an item to `rule_results`.
+        ///
+        /// To override the contents of this collection use [`set_rule_results`](Self::set_rule_results).
+        ///
+        /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+        pub fn rule_results(mut self, input: crate::model::DataQualityRuleResult) -> Self {
+            let mut v = self.rule_results.unwrap_or_default();
+            v.push(input);
+            self.rule_results = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+        pub fn set_rule_results(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataQualityRuleResult>>,
+        ) -> Self {
+            self.rule_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDataQualityResultOutput`](crate::output::GetDataQualityResultOutput).
+        pub fn build(self) -> crate::output::GetDataQualityResultOutput {
+            crate::output::GetDataQualityResultOutput {
+                result_id: self.result_id,
+                score: self.score,
+                data_source: self.data_source,
+                ruleset_name: self.ruleset_name,
+                evaluation_context: self.evaluation_context,
+                started_on: self.started_on,
+                completed_on: self.completed_on,
+                job_name: self.job_name,
+                job_run_id: self.job_run_id,
+                ruleset_evaluation_run_id: self.ruleset_evaluation_run_id,
+                rule_results: self.rule_results,
+            }
+        }
+    }
+}
+impl GetDataQualityResultOutput {
+    /// Creates a new builder-style object to manufacture [`GetDataQualityResultOutput`](crate::output::GetDataQualityResultOutput).
+    pub fn builder() -> crate::output::get_data_quality_result_output::Builder {
+        crate::output::get_data_quality_result_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataflowGraphOutput {
     /// <p>A list of the nodes in the resulting DAG.</p>
     #[doc(hidden)]
@@ -9255,6 +10933,30 @@ impl DeleteDevEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteDataQualityRulesetOutput {}
+/// See [`DeleteDataQualityRulesetOutput`](crate::output::DeleteDataQualityRulesetOutput).
+pub mod delete_data_quality_ruleset_output {
+
+    /// A builder for [`DeleteDataQualityRulesetOutput`](crate::output::DeleteDataQualityRulesetOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteDataQualityRulesetOutput`](crate::output::DeleteDataQualityRulesetOutput).
+        pub fn build(self) -> crate::output::DeleteDataQualityRulesetOutput {
+            crate::output::DeleteDataQualityRulesetOutput {}
+        }
+    }
+}
+impl DeleteDataQualityRulesetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDataQualityRulesetOutput`](crate::output::DeleteDataQualityRulesetOutput).
+    pub fn builder() -> crate::output::delete_data_quality_ruleset_output::Builder {
+        crate::output::delete_data_quality_ruleset_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatabaseOutput {}
 /// See [`DeleteDatabaseOutput`](crate::output::DeleteDatabaseOutput).
 pub mod delete_database_output {
@@ -10459,7 +12161,7 @@ pub struct CreateDevEndpointOutput {
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
     #[doc(hidden)]
     pub number_of_workers: std::option::Option<i32>,
-    /// <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+    /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
@@ -10536,7 +12238,7 @@ impl CreateDevEndpointOutput {
     pub fn number_of_workers(&self) -> std::option::Option<i32> {
         self.number_of_workers
     }
-    /// <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+    /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -10739,12 +12441,12 @@ pub mod create_dev_endpoint_output {
             self.number_of_workers = input;
             self
         }
-        /// <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+        /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone = Some(input.into());
             self
         }
-        /// <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+        /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10894,6 +12596,52 @@ impl CreateDevEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateDevEndpointOutput`](crate::output::CreateDevEndpointOutput).
     pub fn builder() -> crate::output::create_dev_endpoint_output::Builder {
         crate::output::create_dev_endpoint_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateDataQualityRulesetOutput {
+    /// <p>A unique name for the data quality ruleset.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl CreateDataQualityRulesetOutput {
+    /// <p>A unique name for the data quality ruleset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+/// See [`CreateDataQualityRulesetOutput`](crate::output::CreateDataQualityRulesetOutput).
+pub mod create_data_quality_ruleset_output {
+
+    /// A builder for [`CreateDataQualityRulesetOutput`](crate::output::CreateDataQualityRulesetOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique name for the data quality ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A unique name for the data quality ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateDataQualityRulesetOutput`](crate::output::CreateDataQualityRulesetOutput).
+        pub fn build(self) -> crate::output::CreateDataQualityRulesetOutput {
+            crate::output::CreateDataQualityRulesetOutput { name: self.name }
+        }
+    }
+}
+impl CreateDataQualityRulesetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDataQualityRulesetOutput`](crate::output::CreateDataQualityRulesetOutput).
+    pub fn builder() -> crate::output::create_data_quality_ruleset_output::Builder {
+        crate::output::create_data_quality_ruleset_output::Builder::default()
     }
 }
 
@@ -11262,6 +13010,54 @@ impl CancelMlTaskRunOutput {
     /// Creates a new builder-style object to manufacture [`CancelMlTaskRunOutput`](crate::output::CancelMlTaskRunOutput).
     pub fn builder() -> crate::output::cancel_ml_task_run_output::Builder {
         crate::output::cancel_ml_task_run_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CancelDataQualityRulesetEvaluationRunOutput {}
+/// See [`CancelDataQualityRulesetEvaluationRunOutput`](crate::output::CancelDataQualityRulesetEvaluationRunOutput).
+pub mod cancel_data_quality_ruleset_evaluation_run_output {
+
+    /// A builder for [`CancelDataQualityRulesetEvaluationRunOutput`](crate::output::CancelDataQualityRulesetEvaluationRunOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`CancelDataQualityRulesetEvaluationRunOutput`](crate::output::CancelDataQualityRulesetEvaluationRunOutput).
+        pub fn build(self) -> crate::output::CancelDataQualityRulesetEvaluationRunOutput {
+            crate::output::CancelDataQualityRulesetEvaluationRunOutput {}
+        }
+    }
+}
+impl CancelDataQualityRulesetEvaluationRunOutput {
+    /// Creates a new builder-style object to manufacture [`CancelDataQualityRulesetEvaluationRunOutput`](crate::output::CancelDataQualityRulesetEvaluationRunOutput).
+    pub fn builder() -> crate::output::cancel_data_quality_ruleset_evaluation_run_output::Builder {
+        crate::output::cancel_data_quality_ruleset_evaluation_run_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CancelDataQualityRuleRecommendationRunOutput {}
+/// See [`CancelDataQualityRuleRecommendationRunOutput`](crate::output::CancelDataQualityRuleRecommendationRunOutput).
+pub mod cancel_data_quality_rule_recommendation_run_output {
+
+    /// A builder for [`CancelDataQualityRuleRecommendationRunOutput`](crate::output::CancelDataQualityRuleRecommendationRunOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`CancelDataQualityRuleRecommendationRunOutput`](crate::output::CancelDataQualityRuleRecommendationRunOutput).
+        pub fn build(self) -> crate::output::CancelDataQualityRuleRecommendationRunOutput {
+            crate::output::CancelDataQualityRuleRecommendationRunOutput {}
+        }
+    }
+}
+impl CancelDataQualityRuleRecommendationRunOutput {
+    /// Creates a new builder-style object to manufacture [`CancelDataQualityRuleRecommendationRunOutput`](crate::output::CancelDataQualityRuleRecommendationRunOutput).
+    pub fn builder() -> crate::output::cancel_data_quality_rule_recommendation_run_output::Builder {
+        crate::output::cancel_data_quality_rule_recommendation_run_output::Builder::default()
     }
 }
 
@@ -11842,6 +13638,91 @@ impl BatchGetDevEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDevEndpointsOutput`](crate::output::BatchGetDevEndpointsOutput).
     pub fn builder() -> crate::output::batch_get_dev_endpoints_output::Builder {
         crate::output::batch_get_dev_endpoints_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BatchGetDataQualityResultOutput {
+    /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
+    #[doc(hidden)]
+    pub results: std::option::Option<std::vec::Vec<crate::model::DataQualityResult>>,
+    /// <p>A list of result IDs for which results were not found.</p>
+    #[doc(hidden)]
+    pub results_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetDataQualityResultOutput {
+    /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
+    pub fn results(&self) -> std::option::Option<&[crate::model::DataQualityResult]> {
+        self.results.as_deref()
+    }
+    /// <p>A list of result IDs for which results were not found.</p>
+    pub fn results_not_found(&self) -> std::option::Option<&[std::string::String]> {
+        self.results_not_found.as_deref()
+    }
+}
+/// See [`BatchGetDataQualityResultOutput`](crate::output::BatchGetDataQualityResultOutput).
+pub mod batch_get_data_quality_result_output {
+
+    /// A builder for [`BatchGetDataQualityResultOutput`](crate::output::BatchGetDataQualityResultOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) results: std::option::Option<std::vec::Vec<crate::model::DataQualityResult>>,
+        pub(crate) results_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `results`.
+        ///
+        /// To override the contents of this collection use [`set_results`](Self::set_results).
+        ///
+        /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
+        pub fn results(mut self, input: crate::model::DataQualityResult) -> Self {
+            let mut v = self.results.unwrap_or_default();
+            v.push(input);
+            self.results = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
+        pub fn set_results(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataQualityResult>>,
+        ) -> Self {
+            self.results = input;
+            self
+        }
+        /// Appends an item to `results_not_found`.
+        ///
+        /// To override the contents of this collection use [`set_results_not_found`](Self::set_results_not_found).
+        ///
+        /// <p>A list of result IDs for which results were not found.</p>
+        pub fn results_not_found(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.results_not_found.unwrap_or_default();
+            v.push(input.into());
+            self.results_not_found = Some(v);
+            self
+        }
+        /// <p>A list of result IDs for which results were not found.</p>
+        pub fn set_results_not_found(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.results_not_found = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetDataQualityResultOutput`](crate::output::BatchGetDataQualityResultOutput).
+        pub fn build(self) -> crate::output::BatchGetDataQualityResultOutput {
+            crate::output::BatchGetDataQualityResultOutput {
+                results: self.results,
+                results_not_found: self.results_not_found,
+            }
+        }
+    }
+}
+impl BatchGetDataQualityResultOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetDataQualityResultOutput`](crate::output::BatchGetDataQualityResultOutput).
+    pub fn builder() -> crate::output::batch_get_data_quality_result_output::Builder {
+        crate::output::batch_get_data_quality_result_output::Builder::default()
     }
 }
 

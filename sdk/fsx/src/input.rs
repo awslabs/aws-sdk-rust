@@ -7033,7 +7033,7 @@ pub mod restore_volume_from_snapshot_input {
         ///
         /// To override the contents of this collection use [`set_options`](Self::set_options).
         ///
-        /// <p>The settings used when restoring the specified volume from snapshot. </p>
+        /// <p>The settings used when restoring the specified volume from snapshot.</p>
         /// <ul>
         /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
         /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
@@ -7044,7 +7044,7 @@ pub mod restore_volume_from_snapshot_input {
             self.options = Some(v);
             self
         }
-        /// <p>The settings used when restoring the specified volume from snapshot. </p>
+        /// <p>The settings used when restoring the specified volume from snapshot.</p>
         /// <ul>
         /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
         /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
@@ -9135,7 +9135,7 @@ pub struct RestoreVolumeFromSnapshotInput {
     /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
     #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
-    /// <p>The settings used when restoring the specified volume from snapshot. </p>
+    /// <p>The settings used when restoring the specified volume from snapshot.</p>
     /// <ul>
     /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
@@ -9156,7 +9156,7 @@ impl RestoreVolumeFromSnapshotInput {
     pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
-    /// <p>The settings used when restoring the specified volume from snapshot. </p>
+    /// <p>The settings used when restoring the specified volume from snapshot.</p>
     /// <ul>
     /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>

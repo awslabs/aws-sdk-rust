@@ -296,6 +296,9 @@ impl Client {
     ///   - [`life_cycle(Option<LifeCycle>)`](crate::output::DisconnectSourceServerOutput::life_cycle): <p>The lifecycle information of this Source Server.</p>
     ///   - [`source_properties(Option<SourceProperties>)`](crate::output::DisconnectSourceServerOutput::source_properties): <p>The source properties of the Source Server.</p>
     ///   - [`staging_area(Option<StagingArea>)`](crate::output::DisconnectSourceServerOutput::staging_area): <p>The staging area of the source server.</p>
+    ///   - [`source_cloud_properties(Option<SourceCloudProperties>)`](crate::output::DisconnectSourceServerOutput::source_cloud_properties): <p>Source cloud properties of the Source Server.</p>
+    ///   - [`replication_direction(Option<ReplicationDirection>)`](crate::output::DisconnectSourceServerOutput::replication_direction): <p>Replication direction of the Source Server.</p>
+    ///   - [`reversed_direction_source_server_arn(Option<String>)`](crate::output::DisconnectSourceServerOutput::reversed_direction_source_server_arn): <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
     /// - On failure, responds with [`SdkError<DisconnectSourceServerError>`](crate::error::DisconnectSourceServerError)
     pub fn disconnect_source_server(&self) -> fluent_builders::DisconnectSourceServer {
         fluent_builders::DisconnectSourceServer::new(self.handle.clone())
@@ -418,9 +421,22 @@ impl Client {
     ///   - [`life_cycle(Option<LifeCycle>)`](crate::output::RetryDataReplicationOutput::life_cycle): <p>The lifecycle information of this Source Server.</p>
     ///   - [`source_properties(Option<SourceProperties>)`](crate::output::RetryDataReplicationOutput::source_properties): <p>The source properties of the Source Server.</p>
     ///   - [`staging_area(Option<StagingArea>)`](crate::output::RetryDataReplicationOutput::staging_area): <p>The staging area of the source server.</p>
+    ///   - [`source_cloud_properties(Option<SourceCloudProperties>)`](crate::output::RetryDataReplicationOutput::source_cloud_properties): <p>Source cloud properties of the Source Server.</p>
+    ///   - [`replication_direction(Option<ReplicationDirection>)`](crate::output::RetryDataReplicationOutput::replication_direction): <p>Replication direction of the Source Server.</p>
+    ///   - [`reversed_direction_source_server_arn(Option<String>)`](crate::output::RetryDataReplicationOutput::reversed_direction_source_server_arn): <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
     /// - On failure, responds with [`SdkError<RetryDataReplicationError>`](crate::error::RetryDataReplicationError)
     pub fn retry_data_replication(&self) -> fluent_builders::RetryDataReplication {
         fluent_builders::RetryDataReplication::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ReverseReplication`](crate::client::fluent_builders::ReverseReplication) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`recovery_instance_id(impl Into<String>)`](crate::client::fluent_builders::ReverseReplication::recovery_instance_id) / [`set_recovery_instance_id(Option<String>)`](crate::client::fluent_builders::ReverseReplication::set_recovery_instance_id): <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
+    /// - On success, responds with [`ReverseReplicationOutput`](crate::output::ReverseReplicationOutput) with field(s):
+    ///   - [`reversed_direction_source_server_arn(Option<String>)`](crate::output::ReverseReplicationOutput::reversed_direction_source_server_arn): <p>ARN of created SourceServer.</p>
+    /// - On failure, responds with [`SdkError<ReverseReplicationError>`](crate::error::ReverseReplicationError)
+    pub fn reverse_replication(&self) -> fluent_builders::ReverseReplication {
+        fluent_builders::ReverseReplication::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`StartFailbackLaunch`](crate::client::fluent_builders::StartFailbackLaunch) operation.
     ///
@@ -445,6 +461,16 @@ impl Client {
     pub fn start_recovery(&self) -> fluent_builders::StartRecovery {
         fluent_builders::StartRecovery::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`StartReplication`](crate::client::fluent_builders::StartReplication) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::StartReplication::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::StartReplication::set_source_server_id): <p>The ID of the Source Server to start replication for.</p>
+    /// - On success, responds with [`StartReplicationOutput`](crate::output::StartReplicationOutput) with field(s):
+    ///   - [`source_server(Option<SourceServer>)`](crate::output::StartReplicationOutput::source_server): <p>The Source Server that this action was targeted on.</p>
+    /// - On failure, responds with [`SdkError<StartReplicationError>`](crate::error::StartReplicationError)
+    pub fn start_replication(&self) -> fluent_builders::StartReplication {
+        fluent_builders::StartReplication::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`StopFailback`](crate::client::fluent_builders::StopFailback) operation.
     ///
     /// - The fluent builder is configurable:
@@ -454,6 +480,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<StopFailbackError>`](crate::error::StopFailbackError)
     pub fn stop_failback(&self) -> fluent_builders::StopFailback {
         fluent_builders::StopFailback::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`StopReplication`](crate::client::fluent_builders::StopReplication) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::StopReplication::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::StopReplication::set_source_server_id): <p>The ID of the Source Server to stop replication for.</p>
+    /// - On success, responds with [`StopReplicationOutput`](crate::output::StopReplicationOutput) with field(s):
+    ///   - [`source_server(Option<SourceServer>)`](crate::output::StopReplicationOutput::source_server): <p>The Source Server that this action was targeted on.</p>
+    /// - On failure, responds with [`SdkError<StopReplicationError>`](crate::error::StopReplicationError)
+    pub fn stop_replication(&self) -> fluent_builders::StopReplication {
+        fluent_builders::StopReplication::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
@@ -2765,6 +2801,82 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ReverseReplication`.
+    ///
+    /// <p>Start replication to origin / target region - applies only to protected instances that originated in EC2. For recovery instances on target region - starts replication back to origin region. For failback instances on origin region - starts replication to target region to re-protect them. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ReverseReplication {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::reverse_replication_input::Builder,
+    }
+    impl ReverseReplication {
+        /// Creates a new `ReverseReplication`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ReverseReplication,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ReverseReplicationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ReverseReplicationOutput,
+            aws_smithy_http::result::SdkError<crate::error::ReverseReplicationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
+        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_instance_id(input.into());
+            self
+        }
+        /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
+        pub fn set_recovery_instance_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_recovery_instance_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `StartFailbackLaunch`.
     ///
     /// <p>Initiates a Job for launching the machine that is being failed back to from the specified Recovery Instance. This will run conversion on the failback client and will reboot your machine, thus completing the failback process.</p>
@@ -2986,6 +3098,82 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `StartReplication`.
+    ///
+    /// <p>Starts replication for a stopped Source Server. This action would make the Source Server protected again and restart billing for it.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartReplication {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::start_replication_input::Builder,
+    }
+    impl StartReplication {
+        /// Creates a new `StartReplication`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::StartReplication,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::StartReplicationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartReplicationOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartReplicationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the Source Server to start replication for.</p>
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
+            self
+        }
+        /// <p>The ID of the Source Server to start replication for.</p>
+        pub fn set_source_server_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_server_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `StopFailback`.
     ///
     /// <p>Stops the failback process for a specified Recovery Instance. This changes the Failback State of the Recovery Instance back to FAILBACK_NOT_STARTED.</p>
@@ -3059,6 +3247,82 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_recovery_instance_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StopReplication`.
+    ///
+    /// <p>Stops replication for a Source Server. This action would make the Source Server unprotected, delete its existing snapshots and stop billing for it.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StopReplication {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::stop_replication_input::Builder,
+    }
+    impl StopReplication {
+        /// Creates a new `StopReplication`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::StopReplication,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::StopReplicationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StopReplicationOutput,
+            aws_smithy_http::result::SdkError<crate::error::StopReplicationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the Source Server to stop replication for.</p>
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
+            self
+        }
+        /// <p>The ID of the Source Server to stop replication for.</p>
+        pub fn set_source_server_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_server_id(input);
             self
         }
     }

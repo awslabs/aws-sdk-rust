@@ -2357,7 +2357,7 @@ pub mod create_container_service_input {
         /// .cs.amazonlightsail.com
         /// </awsregion>
         /// </randomguid>
-        /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
+        /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
         /// <p>The following are the requirements for container service names:</p>
         /// <ul>
         /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
@@ -2379,7 +2379,7 @@ pub mod create_container_service_input {
         /// .cs.amazonlightsail.com
         /// </awsregion>
         /// </randomguid>
-        /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
+        /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
         /// <p>The following are the requirements for container service names:</p>
         /// <ul>
         /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
@@ -3994,16 +3994,12 @@ pub mod create_domain_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The domain name to manage (e.g., <code>example.com</code>).</p> <note>
-        /// <p>You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or another domain name registrar. If you have already registered your domain, you can enter its name in this parameter to manage the DNS records for that domain using Lightsail.</p>
-        /// </note>
+        /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The domain name to manage (e.g., <code>example.com</code>).</p> <note>
-        /// <p>You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or another domain name registrar. If you have already registered your domain, you can enter its name in this parameter to manage the DNS records for that domain using Lightsail.</p>
-        /// </note>
+        /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -6129,7 +6125,7 @@ pub mod create_relational_database_input {
             self
         }
         /// <p>The daily time range during which automated backups are created for your new database if automated backups are enabled.</p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service documentation.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>
@@ -6142,7 +6138,7 @@ pub mod create_relational_database_input {
             self
         }
         /// <p>The daily time range during which automated backups are created for your new database if automated backups are enabled.</p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service documentation.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>
@@ -8194,12 +8190,12 @@ pub mod delete_disk_input {
             self.disk_name = input;
             self
         }
-        /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+        /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
         pub fn force_delete_add_ons(mut self, input: bool) -> Self {
             self.force_delete_add_ons = Some(input);
             self
         }
-        /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+        /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
         pub fn set_force_delete_add_ons(mut self, input: std::option::Option<bool>) -> Self {
             self.force_delete_add_ons = input;
             self
@@ -8963,12 +8959,12 @@ pub mod delete_instance_input {
             self.instance_name = input;
             self
         }
-        /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+        /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
         pub fn force_delete_add_ons(mut self, input: bool) -> Self {
             self.force_delete_add_ons = Some(input);
             self
         }
-        /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+        /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
         pub fn set_force_delete_add_ons(mut self, input: std::option::Option<bool>) -> Self {
             self.force_delete_add_ons = input;
             self
@@ -27591,7 +27587,7 @@ pub mod update_relational_database_input {
             self
         }
         /// <p>The weekly time range during which system maintenance can occur on your database.</p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>
@@ -27608,7 +27604,7 @@ pub mod update_relational_database_input {
             self
         }
         /// <p>The weekly time range during which system maintenance can occur on your database.</p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>
@@ -28068,7 +28064,7 @@ pub struct UpdateRelationalDatabaseInput {
     #[doc(hidden)]
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur on your database.</p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>
@@ -28129,7 +28125,7 @@ impl UpdateRelationalDatabaseInput {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The weekly time range during which system maintenance can occur on your database.</p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>
@@ -31246,7 +31242,7 @@ pub struct DeleteInstanceInput {
     /// <p>The name of the instance to delete.</p>
     #[doc(hidden)]
     pub instance_name: std::option::Option<std::string::String>,
-    /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+    /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
     #[doc(hidden)]
     pub force_delete_add_ons: std::option::Option<bool>,
 }
@@ -31255,7 +31251,7 @@ impl DeleteInstanceInput {
     pub fn instance_name(&self) -> std::option::Option<&str> {
         self.instance_name.as_deref()
     }
-    /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+    /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
     pub fn force_delete_add_ons(&self) -> std::option::Option<bool> {
         self.force_delete_add_ons
     }
@@ -31337,7 +31333,7 @@ pub struct DeleteDiskInput {
     /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
     #[doc(hidden)]
     pub disk_name: std::option::Option<std::string::String>,
-    /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+    /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
     #[doc(hidden)]
     pub force_delete_add_ons: std::option::Option<bool>,
 }
@@ -31346,7 +31342,7 @@ impl DeleteDiskInput {
     pub fn disk_name(&self) -> std::option::Option<&str> {
         self.disk_name.as_deref()
     }
-    /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+    /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
     pub fn force_delete_add_ons(&self) -> std::option::Option<bool> {
         self.force_delete_add_ons
     }
@@ -31752,7 +31748,7 @@ pub struct CreateRelationalDatabaseInput {
     #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>The daily time range during which automated backups are created for your new database if automated backups are enabled.</p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service documentation.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>
@@ -31856,7 +31852,7 @@ impl CreateRelationalDatabaseInput {
         self.master_user_password.as_deref()
     }
     /// <p>The daily time range during which automated backups are created for your new database if automated backups are enabled.</p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service documentation.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>
@@ -32385,9 +32381,7 @@ impl CreateDomainEntryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainInput {
-    /// <p>The domain name to manage (e.g., <code>example.com</code>).</p> <note>
-    /// <p>You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or another domain name registrar. If you have already registered your domain, you can enter its name in this parameter to manage the DNS records for that domain using Lightsail.</p>
-    /// </note>
+    /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -32396,9 +32390,7 @@ pub struct CreateDomainInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDomainInput {
-    /// <p>The domain name to manage (e.g., <code>example.com</code>).</p> <note>
-    /// <p>You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or another domain name registrar. If you have already registered your domain, you can enter its name in this parameter to manage the DNS records for that domain using Lightsail.</p>
-    /// </note>
+    /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -32746,7 +32738,7 @@ pub struct CreateContainerServiceInput {
     /// .cs.amazonlightsail.com
     /// </awsregion>
     /// </randomguid>
-    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
+    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
     /// <p>The following are the requirements for container service names:</p>
     /// <ul>
     /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
@@ -32800,7 +32792,7 @@ impl CreateContainerServiceInput {
     /// .cs.amazonlightsail.com
     /// </awsregion>
     /// </randomguid>
-    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
+    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
     /// <p>The following are the requirements for container service names:</p>
     /// <ul>
     /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>

@@ -193,6 +193,9 @@ pub struct GetTemplateOutput {
     pub tags: std::option::Option<
         std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     >,
+    /// <p>The status of the template.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::TemplateStatus>,
 }
 impl GetTemplateOutput {
     /// <p>A unique identifier of a template.</p>
@@ -227,6 +230,10 @@ impl GetTemplateOutput {
     > {
         self.tags.as_ref()
     }
+    /// <p>The status of the template.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TemplateStatus> {
+        self.status.as_ref()
+    }
 }
 /// See [`GetTemplateOutput`](crate::output::GetTemplateOutput).
 pub mod get_template_output {
@@ -246,6 +253,7 @@ pub mod get_template_output {
                 std::option::Option<std::string::String>,
             >,
         >,
+        pub(crate) status: std::option::Option<crate::model::TemplateStatus>,
     }
     impl Builder {
         /// <p>A unique identifier of a template.</p>
@@ -348,6 +356,19 @@ pub mod get_template_output {
             self.tags = input;
             self
         }
+        /// <p>The status of the template.</p>
+        pub fn status(mut self, input: crate::model::TemplateStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the template.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TemplateStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetTemplateOutput`](crate::output::GetTemplateOutput).
         pub fn build(self) -> crate::output::GetTemplateOutput {
             crate::output::GetTemplateOutput {
@@ -358,6 +379,7 @@ pub mod get_template_output {
                 layout_configuration: self.layout_configuration,
                 required_fields: self.required_fields,
                 tags: self.tags,
+                status: self.status,
             }
         }
     }

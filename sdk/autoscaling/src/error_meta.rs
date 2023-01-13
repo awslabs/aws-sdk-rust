@@ -140,6 +140,37 @@ impl From<crate::error::AttachLoadBalancerTargetGroupsError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachTrafficSourcesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::AttachTrafficSourcesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AttachTrafficSourcesError> for Error {
+    fn from(err: crate::error::AttachTrafficSourcesError) -> Self {
+        match err.kind {
+            crate::error::AttachTrafficSourcesErrorKind::ResourceContentionFault(inner) => {
+                Error::ResourceContentionFault(inner)
+            }
+            crate::error::AttachTrafficSourcesErrorKind::ServiceLinkedRoleFailure(inner) => {
+                Error::ServiceLinkedRoleFailure(inner)
+            }
+            crate::error::AttachTrafficSourcesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchDeleteScheduledActionError, R>>
     for Error
 where
@@ -1199,6 +1230,37 @@ impl From<crate::error::DescribeTerminationPolicyTypesError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTrafficSourcesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeTrafficSourcesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeTrafficSourcesError> for Error {
+    fn from(err: crate::error::DescribeTrafficSourcesError) -> Self {
+        match err.kind {
+            crate::error::DescribeTrafficSourcesErrorKind::InvalidNextToken(inner) => {
+                Error::InvalidNextToken(inner)
+            }
+            crate::error::DescribeTrafficSourcesErrorKind::ResourceContentionFault(inner) => {
+                Error::ResourceContentionFault(inner)
+            }
+            crate::error::DescribeTrafficSourcesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeWarmPoolError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1311,6 +1373,34 @@ impl From<crate::error::DetachLoadBalancerTargetGroupsError> for Error {
                 inner,
             ) => Error::ResourceContentionFault(inner),
             crate::error::DetachLoadBalancerTargetGroupsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachTrafficSourcesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DetachTrafficSourcesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DetachTrafficSourcesError> for Error {
+    fn from(err: crate::error::DetachTrafficSourcesError) -> Self {
+        match err.kind {
+            crate::error::DetachTrafficSourcesErrorKind::ResourceContentionFault(inner) => {
+                Error::ResourceContentionFault(inner)
+            }
+            crate::error::DetachTrafficSourcesErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

@@ -10,6 +10,7 @@ pub mod convert_recovery_point_to_snapshot_input {
         pub(crate) recovery_point_id: std::option::Option<std::string::String>,
         pub(crate) snapshot_name: std::option::Option<std::string::String>,
         pub(crate) retention_period: std::option::Option<i32>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
         /// <p>The unique identifier of the recovery point.</p>
@@ -48,6 +49,25 @@ pub mod convert_recovery_point_to_snapshot_input {
             self.retention_period = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the created snapshot.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the created snapshot.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConvertRecoveryPointToSnapshotInput`](crate::input::ConvertRecoveryPointToSnapshotInput).
         pub fn build(
             self,
@@ -59,6 +79,7 @@ pub mod convert_recovery_point_to_snapshot_input {
                 recovery_point_id: self.recovery_point_id,
                 snapshot_name: self.snapshot_name,
                 retention_period: self.retention_period,
+                tags: self.tags,
             })
         }
     }
@@ -690,6 +711,7 @@ pub mod create_snapshot_input {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
         pub(crate) snapshot_name: std::option::Option<std::string::String>,
         pub(crate) retention_period: std::option::Option<i32>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
         /// <p>The namespace to create a snapshot for.</p>
@@ -728,6 +750,25 @@ pub mod create_snapshot_input {
             self.retention_period = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
         pub fn build(
             self,
@@ -737,6 +778,7 @@ pub mod create_snapshot_input {
                 namespace_name: self.namespace_name,
                 snapshot_name: self.snapshot_name,
                 retention_period: self.retention_period,
+                tags: self.tags,
             })
         }
     }
@@ -1076,6 +1118,7 @@ pub mod create_workgroup_input {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) publicly_accessible: std::option::Option<bool>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) port: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The name of the created workgroup.</p>
@@ -1210,6 +1253,16 @@ pub mod create_workgroup_input {
             self.tags = input;
             self
         }
+        /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkgroupInput`](crate::input::CreateWorkgroupInput).
         pub fn build(
             self,
@@ -1225,6 +1278,7 @@ pub mod create_workgroup_input {
                 subnet_ids: self.subnet_ids,
                 publicly_accessible: self.publicly_accessible,
                 tags: self.tags,
+                port: self.port,
             })
         }
     }
@@ -2297,7 +2351,7 @@ pub mod get_credentials_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens.</p> </li>
-        /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+        /// <li> <p>Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
         /// <li> <p>The first character must be a letter.</p> </li>
         /// <li> <p>Must not contain a colon ( : ) or slash ( / ).</p> </li>
         /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words </a> in the Amazon Redshift Database Developer Guide</p> </li>
@@ -2310,7 +2364,7 @@ pub mod get_credentials_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens.</p> </li>
-        /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+        /// <li> <p>Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
         /// <li> <p>The first character must be a letter.</p> </li>
         /// <li> <p>Must not contain a colon ( : ) or slash ( / ).</p> </li>
         /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words </a> in the Amazon Redshift Database Developer Guide</p> </li>
@@ -3227,6 +3281,158 @@ impl GetSnapshotInput {
     }
 }
 
+/// See [`GetTableRestoreStatusInput`](crate::input::GetTableRestoreStatusInput).
+pub mod get_table_restore_status_input {
+
+    /// A builder for [`GetTableRestoreStatusInput`](crate::input::GetTableRestoreStatusInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) table_restore_request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
+        pub fn table_restore_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_restore_request_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
+        pub fn set_table_restore_request_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.table_restore_request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTableRestoreStatusInput`](crate::input::GetTableRestoreStatusInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetTableRestoreStatusInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetTableRestoreStatusInput {
+                table_restore_request_id: self.table_restore_request_id,
+            })
+        }
+    }
+}
+impl GetTableRestoreStatusInput {
+    /// Consumes the builder and constructs an Operation<[`GetTableRestoreStatus`](crate::operation::GetTableRestoreStatus)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetTableRestoreStatus,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetTableRestoreStatusInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetTableRestoreStatusInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RedshiftServerless.GetTableRestoreStatus",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_table_restore_status(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetTableRestoreStatus::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetTableRestoreStatus",
+            "redshiftserverless",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetTableRestoreStatusInput`](crate::input::GetTableRestoreStatusInput).
+    pub fn builder() -> crate::input::get_table_restore_status_input::Builder {
+        crate::input::get_table_restore_status_input::Builder::default()
+    }
+}
+
 /// See [`GetUsageLimitInput`](crate::input::GetUsageLimitInput).
 pub mod get_usage_limit_input {
 
@@ -3535,22 +3741,22 @@ pub mod list_endpoint_access_input {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
+        /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
+        /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3719,22 +3925,22 @@ pub mod list_namespaces_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns results in the next page.</p>
+        /// <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns results in the next page.</p>
+        /// <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3877,24 +4083,25 @@ pub mod list_recovery_points_input {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) namespace_name: std::option::Option<std::string::String>,
+        pub(crate) namespace_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
+        /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
+        /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3938,6 +4145,19 @@ pub mod list_recovery_points_input {
             self.namespace_name = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the namespace from which to list recovery points.</p>
+        pub fn namespace_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the namespace from which to list recovery points.</p>
+        pub fn set_namespace_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.namespace_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRecoveryPointsInput`](crate::input::ListRecoveryPointsInput).
         pub fn build(
             self,
@@ -3951,6 +4171,7 @@ pub mod list_recovery_points_input {
                 start_time: self.start_time,
                 end_time: self.end_time,
                 namespace_name: self.namespace_name,
+                namespace_arn: self.namespace_arn,
             })
         }
     }
@@ -4095,12 +4316,12 @@ pub mod list_snapshots_input {
             self.next_token = input;
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4302,6 +4523,197 @@ impl ListSnapshotsInput {
     }
 }
 
+/// See [`ListTableRestoreStatusInput`](crate::input::ListTableRestoreStatusInput).
+pub mod list_table_restore_status_input {
+
+    /// A builder for [`ListTableRestoreStatusInput`](crate::input::ListTableRestoreStatusInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) namespace_name: std::option::Option<std::string::String>,
+        pub(crate) workgroup_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
+        pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace_name = Some(input.into());
+            self
+        }
+        /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
+        pub fn set_namespace_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.namespace_name = input;
+            self
+        }
+        /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
+        pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workgroup_name = Some(input.into());
+            self
+        }
+        /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTableRestoreStatusInput`](crate::input::ListTableRestoreStatusInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListTableRestoreStatusInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListTableRestoreStatusInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                namespace_name: self.namespace_name,
+                workgroup_name: self.workgroup_name,
+            })
+        }
+    }
+}
+impl ListTableRestoreStatusInput {
+    /// Consumes the builder and constructs an Operation<[`ListTableRestoreStatus`](crate::operation::ListTableRestoreStatus)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTableRestoreStatus,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListTableRestoreStatusInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTableRestoreStatusInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RedshiftServerless.ListTableRestoreStatus",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_table_restore_status(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTableRestoreStatus::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTableRestoreStatus",
+            "redshiftserverless",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListTableRestoreStatusInput`](crate::input::ListTableRestoreStatusInput).
+    pub fn builder() -> crate::input::list_table_restore_status_input::Builder {
+        crate::input::list_table_restore_status_input::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
 
@@ -4486,12 +4898,12 @@ pub mod list_usage_limits_input {
             self.usage_type = input;
             self
         }
-        /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
+        /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
+        /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4645,22 +5057,22 @@ pub mod list_workgroups_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.</p>
+        /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.</p>
+        /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5174,12 +5586,12 @@ pub mod restore_from_snapshot_input {
             self.workgroup_name = input;
             self
         }
-        /// <p>The name of the snapshot to restore from.</p>
+        /// <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
         pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_name = Some(input.into());
             self
         }
-        /// <p>The name of the snapshot to restore from.</p>
+        /// <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
         pub fn set_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5187,12 +5599,14 @@ pub mod restore_from_snapshot_input {
             self.snapshot_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.</p>
+        /// <p>The format of the ARN is arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
         pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.</p>
+        /// <p>The format of the ARN is arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
         pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_arn = input;
             self
@@ -5339,6 +5753,293 @@ impl RestoreFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreFromSnapshotInput`](crate::input::RestoreFromSnapshotInput).
     pub fn builder() -> crate::input::restore_from_snapshot_input::Builder {
         crate::input::restore_from_snapshot_input::Builder::default()
+    }
+}
+
+/// See [`RestoreTableFromSnapshotInput`](crate::input::RestoreTableFromSnapshotInput).
+pub mod restore_table_from_snapshot_input {
+
+    /// A builder for [`RestoreTableFromSnapshotInput`](crate::input::RestoreTableFromSnapshotInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) namespace_name: std::option::Option<std::string::String>,
+        pub(crate) workgroup_name: std::option::Option<std::string::String>,
+        pub(crate) snapshot_name: std::option::Option<std::string::String>,
+        pub(crate) source_database_name: std::option::Option<std::string::String>,
+        pub(crate) source_schema_name: std::option::Option<std::string::String>,
+        pub(crate) source_table_name: std::option::Option<std::string::String>,
+        pub(crate) target_database_name: std::option::Option<std::string::String>,
+        pub(crate) target_schema_name: std::option::Option<std::string::String>,
+        pub(crate) new_table_name: std::option::Option<std::string::String>,
+        pub(crate) activate_case_sensitive_identifier: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The namespace of the snapshot to restore from.</p>
+        pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace_name = Some(input.into());
+            self
+        }
+        /// <p>The namespace of the snapshot to restore from.</p>
+        pub fn set_namespace_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.namespace_name = input;
+            self
+        }
+        /// <p>The workgroup to restore the table to.</p>
+        pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workgroup_name = Some(input.into());
+            self
+        }
+        /// <p>The workgroup to restore the table to.</p>
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
+        }
+        /// <p>The name of the snapshot to restore the table from.</p>
+        pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the snapshot to restore the table from.</p>
+        pub fn set_snapshot_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.snapshot_name = input;
+            self
+        }
+        /// <p>The name of the source database that contains the table being restored.</p>
+        pub fn source_database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_database_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the source database that contains the table being restored.</p>
+        pub fn set_source_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_database_name = input;
+            self
+        }
+        /// <p>The name of the source schema that contains the table being restored.</p>
+        pub fn source_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_schema_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the source schema that contains the table being restored.</p>
+        pub fn set_source_schema_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_schema_name = input;
+            self
+        }
+        /// <p>The name of the source table being restored.</p>
+        pub fn source_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_table_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the source table being restored.</p>
+        pub fn set_source_table_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_table_name = input;
+            self
+        }
+        /// <p>The name of the database to restore the table to.</p>
+        pub fn target_database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_database_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to restore the table to.</p>
+        pub fn set_target_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_database_name = input;
+            self
+        }
+        /// <p>The name of the schema to restore the table to.</p>
+        pub fn target_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_schema_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the schema to restore the table to.</p>
+        pub fn set_target_schema_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_schema_name = input;
+            self
+        }
+        /// <p>The name of the table to create from the restore operation.</p>
+        pub fn new_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_table_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the table to create from the restore operation.</p>
+        pub fn set_new_table_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.new_table_name = input;
+            self
+        }
+        /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false.</p>
+        pub fn activate_case_sensitive_identifier(mut self, input: bool) -> Self {
+            self.activate_case_sensitive_identifier = Some(input);
+            self
+        }
+        /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false.</p>
+        pub fn set_activate_case_sensitive_identifier(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.activate_case_sensitive_identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RestoreTableFromSnapshotInput`](crate::input::RestoreTableFromSnapshotInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::RestoreTableFromSnapshotInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::RestoreTableFromSnapshotInput {
+                namespace_name: self.namespace_name,
+                workgroup_name: self.workgroup_name,
+                snapshot_name: self.snapshot_name,
+                source_database_name: self.source_database_name,
+                source_schema_name: self.source_schema_name,
+                source_table_name: self.source_table_name,
+                target_database_name: self.target_database_name,
+                target_schema_name: self.target_schema_name,
+                new_table_name: self.new_table_name,
+                activate_case_sensitive_identifier: self.activate_case_sensitive_identifier,
+            })
+        }
+    }
+}
+impl RestoreTableFromSnapshotInput {
+    /// Consumes the builder and constructs an Operation<[`RestoreTableFromSnapshot`](crate::operation::RestoreTableFromSnapshot)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RestoreTableFromSnapshot,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::RestoreTableFromSnapshotInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RestoreTableFromSnapshotInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RedshiftServerless.RestoreTableFromSnapshot",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_restore_table_from_snapshot(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RestoreTableFromSnapshot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RestoreTableFromSnapshot",
+            "redshiftserverless",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`RestoreTableFromSnapshotInput`](crate::input::RestoreTableFromSnapshotInput).
+    pub fn builder() -> crate::input::restore_table_from_snapshot_input::Builder {
+        crate::input::restore_table_from_snapshot_input::Builder::default()
     }
 }
 
@@ -6291,12 +6992,12 @@ pub mod update_usage_limit_input {
             self.usage_limit_id = input;
             self
         }
-        /// <p>The new limit amount. For more information about this parameter.</p>
+        /// <p>The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
         pub fn amount(mut self, input: i64) -> Self {
             self.amount = Some(input);
             self
         }
-        /// <p>The new limit amount. For more information about this parameter.</p>
+        /// <p>The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
         pub fn set_amount(mut self, input: std::option::Option<i64>) -> Self {
             self.amount = input;
             self
@@ -6458,6 +7159,7 @@ pub mod update_workgroup_input {
         pub(crate) publicly_accessible: std::option::Option<bool>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) port: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The name of the workgroup to update.</p>
@@ -6560,6 +7262,16 @@ pub mod update_workgroup_input {
             self.security_group_ids = input;
             self
         }
+        /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateWorkgroupInput`](crate::input::UpdateWorkgroupInput).
         pub fn build(
             self,
@@ -6573,6 +7285,7 @@ pub mod update_workgroup_input {
                 publicly_accessible: self.publicly_accessible,
                 subnet_ids: self.subnet_ids,
                 security_group_ids: self.security_group_ids,
+                port: self.port,
             })
         }
     }
@@ -6696,19 +7409,19 @@ impl UpdateWorkgroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkgroupsInput {
-    /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.</p>
+    /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorkgroupsInput {
-    /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.</p>
+    /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6745,6 +7458,9 @@ pub struct CreateWorkgroupInput {
     /// <p>A array of tag instances.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+    #[doc(hidden)]
+    pub port: std::option::Option<i32>,
 }
 impl CreateWorkgroupInput {
     /// <p>The name of the created workgroup.</p>
@@ -6782,6 +7498,10 @@ impl CreateWorkgroupInput {
     /// <p>A array of tag instances.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+    /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
     }
 }
 
@@ -6825,6 +7545,9 @@ pub struct UpdateWorkgroupInput {
     /// <p>An array of security group IDs to associate with the workgroup.</p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+    #[doc(hidden)]
+    pub port: std::option::Option<i32>,
 }
 impl UpdateWorkgroupInput {
     /// <p>The name of the workgroup to update.</p>
@@ -6855,6 +7578,10 @@ impl UpdateWorkgroupInput {
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
+    /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -6879,7 +7606,7 @@ pub struct UpdateUsageLimitInput {
     /// <p>The identifier of the usage limit to update.</p>
     #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
-    /// <p>The new limit amount. For more information about this parameter.</p>
+    /// <p>The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
     #[doc(hidden)]
     pub amount: std::option::Option<i64>,
     /// <p>The new action that Amazon Redshift Serverless takes when the limit is reached.</p>
@@ -6891,7 +7618,7 @@ impl UpdateUsageLimitInput {
     pub fn usage_limit_id(&self) -> std::option::Option<&str> {
         self.usage_limit_id.as_deref()
     }
-    /// <p>The new limit amount. For more information about this parameter.</p>
+    /// <p>The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
     pub fn amount(&self) -> std::option::Option<i64> {
         self.amount
     }
@@ -6911,7 +7638,7 @@ pub struct ListUsageLimitsInput {
     /// <p>The Amazon Redshift Serverless feature whose limits you want to see.</p>
     #[doc(hidden)]
     pub usage_type: std::option::Option<crate::model::UsageLimitUsageType>,
-    /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
+    /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 100.</p>
@@ -6927,7 +7654,7 @@ impl ListUsageLimitsInput {
     pub fn usage_type(&self) -> std::option::Option<&crate::model::UsageLimitUsageType> {
         self.usage_type.as_ref()
     }
-    /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
+    /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7035,6 +7762,84 @@ impl UpdateSnapshotInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RestoreTableFromSnapshotInput {
+    /// <p>The namespace of the snapshot to restore from.</p>
+    #[doc(hidden)]
+    pub namespace_name: std::option::Option<std::string::String>,
+    /// <p>The workgroup to restore the table to.</p>
+    #[doc(hidden)]
+    pub workgroup_name: std::option::Option<std::string::String>,
+    /// <p>The name of the snapshot to restore the table from.</p>
+    #[doc(hidden)]
+    pub snapshot_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source database that contains the table being restored.</p>
+    #[doc(hidden)]
+    pub source_database_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source schema that contains the table being restored.</p>
+    #[doc(hidden)]
+    pub source_schema_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source table being restored.</p>
+    #[doc(hidden)]
+    pub source_table_name: std::option::Option<std::string::String>,
+    /// <p>The name of the database to restore the table to.</p>
+    #[doc(hidden)]
+    pub target_database_name: std::option::Option<std::string::String>,
+    /// <p>The name of the schema to restore the table to.</p>
+    #[doc(hidden)]
+    pub target_schema_name: std::option::Option<std::string::String>,
+    /// <p>The name of the table to create from the restore operation.</p>
+    #[doc(hidden)]
+    pub new_table_name: std::option::Option<std::string::String>,
+    /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false.</p>
+    #[doc(hidden)]
+    pub activate_case_sensitive_identifier: std::option::Option<bool>,
+}
+impl RestoreTableFromSnapshotInput {
+    /// <p>The namespace of the snapshot to restore from.</p>
+    pub fn namespace_name(&self) -> std::option::Option<&str> {
+        self.namespace_name.as_deref()
+    }
+    /// <p>The workgroup to restore the table to.</p>
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+        self.workgroup_name.as_deref()
+    }
+    /// <p>The name of the snapshot to restore the table from.</p>
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+        self.snapshot_name.as_deref()
+    }
+    /// <p>The name of the source database that contains the table being restored.</p>
+    pub fn source_database_name(&self) -> std::option::Option<&str> {
+        self.source_database_name.as_deref()
+    }
+    /// <p>The name of the source schema that contains the table being restored.</p>
+    pub fn source_schema_name(&self) -> std::option::Option<&str> {
+        self.source_schema_name.as_deref()
+    }
+    /// <p>The name of the source table being restored.</p>
+    pub fn source_table_name(&self) -> std::option::Option<&str> {
+        self.source_table_name.as_deref()
+    }
+    /// <p>The name of the database to restore the table to.</p>
+    pub fn target_database_name(&self) -> std::option::Option<&str> {
+        self.target_database_name.as_deref()
+    }
+    /// <p>The name of the schema to restore the table to.</p>
+    pub fn target_schema_name(&self) -> std::option::Option<&str> {
+        self.target_schema_name.as_deref()
+    }
+    /// <p>The name of the table to create from the restore operation.</p>
+    pub fn new_table_name(&self) -> std::option::Option<&str> {
+        self.new_table_name.as_deref()
+    }
+    /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false.</p>
+    pub fn activate_case_sensitive_identifier(&self) -> std::option::Option<bool> {
+        self.activate_case_sensitive_identifier
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreFromSnapshotInput {
     /// <p>The name of the namespace to restore the snapshot to.</p>
     #[doc(hidden)]
@@ -7042,10 +7847,11 @@ pub struct RestoreFromSnapshotInput {
     /// <p>The name of the workgroup used to restore the snapshot.</p>
     #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
-    /// <p>The name of the snapshot to restore from.</p>
+    /// <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
     #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.</p>
+    /// <p>The format of the ARN is arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
     #[doc(hidden)]
     pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account that owns the snapshot.</p>
@@ -7061,11 +7867,12 @@ impl RestoreFromSnapshotInput {
     pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
-    /// <p>The name of the snapshot to restore from.</p>
+    /// <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
     pub fn snapshot_name(&self) -> std::option::Option<&str> {
         self.snapshot_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.</p>
+    /// <p>The format of the ARN is arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
     pub fn snapshot_arn(&self) -> std::option::Option<&str> {
         self.snapshot_arn.as_deref()
     }
@@ -7078,11 +7885,47 @@ impl RestoreFromSnapshotInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListTableRestoreStatusInput {
+    /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
+    #[doc(hidden)]
+    pub namespace_name: std::option::Option<std::string::String>,
+    /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
+    #[doc(hidden)]
+    pub workgroup_name: std::option::Option<std::string::String>,
+}
+impl ListTableRestoreStatusInput {
+    /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
+    pub fn namespace_name(&self) -> std::option::Option<&str> {
+        self.namespace_name.as_deref()
+    }
+    /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+        self.workgroup_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSnapshotsInput {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The namespace from which to list all snapshots.</p>
@@ -7106,7 +7949,7 @@ impl ListSnapshotsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7129,6 +7972,21 @@ impl ListSnapshotsInput {
     /// <p>The timestamp showing when the snapshot creation finished.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetTableRestoreStatusInput {
+    /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
+    #[doc(hidden)]
+    pub table_restore_request_id: std::option::Option<std::string::String>,
+}
+impl GetTableRestoreStatusInput {
+    /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
+    pub fn table_restore_request_id(&self) -> std::option::Option<&str> {
+        self.table_restore_request_id.as_deref()
     }
 }
 
@@ -7189,6 +8047,9 @@ pub struct CreateSnapshotInput {
     /// <p>How long to retain the created snapshot.</p>
     #[doc(hidden)]
     pub retention_period: std::option::Option<i32>,
+    /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSnapshotInput {
     /// <p>The namespace to create a snapshot for.</p>
@@ -7202,6 +8063,10 @@ impl CreateSnapshotInput {
     /// <p>How long to retain the created snapshot.</p>
     pub fn retention_period(&self) -> std::option::Option<i32> {
         self.retention_period
+    }
+    /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
     }
 }
 
@@ -7238,10 +8103,10 @@ impl RestoreFromRecoveryPointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecoveryPointsInput {
-    /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
+    /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The time when the recovery point's creation was initiated.</p>
@@ -7253,13 +8118,16 @@ pub struct ListRecoveryPointsInput {
     /// <p>The name of the namespace to list recovery points for.</p>
     #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the namespace from which to list recovery points.</p>
+    #[doc(hidden)]
+    pub namespace_arn: std::option::Option<std::string::String>,
 }
 impl ListRecoveryPointsInput {
-    /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
+    /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7274,6 +8142,10 @@ impl ListRecoveryPointsInput {
     /// <p>The name of the namespace to list recovery points for.</p>
     pub fn namespace_name(&self) -> std::option::Option<&str> {
         self.namespace_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the namespace from which to list recovery points.</p>
+    pub fn namespace_arn(&self) -> std::option::Option<&str> {
+        self.namespace_arn.as_deref()
     }
 }
 
@@ -7305,6 +8177,9 @@ pub struct ConvertRecoveryPointToSnapshotInput {
     /// <p>How long to retain the snapshot.</p>
     #[doc(hidden)]
     pub retention_period: std::option::Option<i32>,
+    /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the created snapshot.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ConvertRecoveryPointToSnapshotInput {
     /// <p>The unique identifier of the recovery point.</p>
@@ -7319,25 +8194,29 @@ impl ConvertRecoveryPointToSnapshotInput {
     pub fn retention_period(&self) -> std::option::Option<i32> {
         self.retention_period
     }
+    /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the created snapshot.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNamespacesInput {
-    /// <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns results in the next page.</p>
+    /// <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns results in the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListNamespacesInput {
-    /// <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns results in the next page.</p>
+    /// <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns results in the next page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7569,10 +8448,10 @@ impl UpdateEndpointAccessInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEndpointAccessInput {
-    /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
+    /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the workgroup associated with the VPC endpoint to return.</p>
@@ -7583,11 +8462,11 @@ pub struct ListEndpointAccessInput {
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl ListEndpointAccessInput {
-    /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
+    /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7776,7 +8655,7 @@ pub struct GetCredentialsInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+    /// <li> <p>Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ).</p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words </a> in the Amazon Redshift Database Developer Guide</p> </li>
@@ -7796,7 +8675,7 @@ impl GetCredentialsInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+    /// <li> <p>Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ).</p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words </a> in the Amazon Redshift Database Developer Guide</p> </li>

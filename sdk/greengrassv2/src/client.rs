@@ -159,11 +159,12 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_target_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_target_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
     ///   - [`deployment_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::deployment_name) / [`set_deployment_name(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_deployment_name): <p>The name of the deployment.</p>
     ///   - [`components(HashMap<String, ComponentDeploymentSpecification>)`](crate::client::fluent_builders::CreateDeployment::components) / [`set_components(Option<HashMap<String, ComponentDeploymentSpecification>>)`](crate::client::fluent_builders::CreateDeployment::set_components): <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     ///   - [`iot_job_configuration(DeploymentIoTJobConfiguration)`](crate::client::fluent_builders::CreateDeployment::iot_job_configuration) / [`set_iot_job_configuration(Option<DeploymentIoTJobConfiguration>)`](crate::client::fluent_builders::CreateDeployment::set_iot_job_configuration): <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
     ///   - [`deployment_policies(DeploymentPolicies)`](crate::client::fluent_builders::CreateDeployment::deployment_policies) / [`set_deployment_policies(Option<DeploymentPolicies>)`](crate::client::fluent_builders::CreateDeployment::set_deployment_policies): <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
+    ///   - [`parent_target_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::parent_target_arn) / [`set_parent_target_arn(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_parent_target_arn): <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDeployment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDeployment::set_tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_client_token): <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
     /// - On success, responds with [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput) with field(s):
@@ -302,6 +303,7 @@ impl Client {
     ///   - [`iot_job_configuration(Option<DeploymentIoTJobConfiguration>)`](crate::output::GetDeploymentOutput::iot_job_configuration): <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
     ///   - [`creation_timestamp(Option<DateTime>)`](crate::output::GetDeploymentOutput::creation_timestamp): <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
     ///   - [`is_latest_for_target(bool)`](crate::output::GetDeploymentOutput::is_latest_for_target): <p>Whether or not the deployment is the latest revision for its target.</p>
+    ///   - [`parent_target_arn(Option<String>)`](crate::output::GetDeploymentOutput::parent_target_arn): <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetDeploymentOutput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     /// - On failure, responds with [`SdkError<GetDeploymentError>`](crate::error::GetDeploymentError)
     pub fn get_deployment(&self) -> fluent_builders::GetDeployment {
@@ -383,6 +385,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_target_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     ///   - [`history_filter(DeploymentHistoryFilter)`](crate::client::fluent_builders::ListDeployments::history_filter) / [`set_history_filter(Option<DeploymentHistoryFilter>)`](crate::client::fluent_builders::ListDeployments::set_history_filter): <p>The filter for the list of deployments. Choose one of the following options:</p>  <ul>   <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>   <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>  </ul>  <p>Default: <code>LATEST_ONLY</code> </p>
+    ///   - [`parent_target_arn(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::parent_target_arn) / [`set_parent_target_arn(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_parent_target_arn): <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDeployments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDeployments::set_max_results): <p>The maximum number of results to be returned per paginated request.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_next_token): <p>The token to be used for the next set of paginated results.</p>
     /// - On success, responds with [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput) with field(s):
@@ -415,7 +418,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInstalledComponents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInstalledComponents::set_next_token): <p>The token to be used for the next set of paginated results.</p>
     ///   - [`topology_filter(InstalledComponentTopologyFilter)`](crate::client::fluent_builders::ListInstalledComponents::topology_filter) / [`set_topology_filter(Option<InstalledComponentTopologyFilter>)`](crate::client::fluent_builders::ListInstalledComponents::set_topology_filter): <p>The filter for the list of components. Choose from the following options:</p>  <ul>   <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li>   <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>  </ul>  <p>Default: <code>ROOT</code> </p>
     /// - On success, responds with [`ListInstalledComponentsOutput`](crate::output::ListInstalledComponentsOutput) with field(s):
-    ///   - [`installed_components(Option<Vec<InstalledComponent>>)`](crate::output::ListInstalledComponentsOutput::installed_components): <p>A list that summarizes each component on the core device.</p> <note>   <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.</p>  </note>
+    ///   - [`installed_components(Option<Vec<InstalledComponent>>)`](crate::output::ListInstalledComponentsOutput::installed_components): <p>A list that summarizes each component on the core device.</p> <note>   <p>Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>  </note> <note>   <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>  </note>
     ///   - [`next_token(Option<String>)`](crate::output::ListInstalledComponentsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListInstalledComponentsError>`](crate::error::ListInstalledComponentsError)
     pub fn list_installed_components(&self) -> fluent_builders::ListInstalledComponents {
@@ -1048,12 +1051,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target_arn(input);
             self
@@ -1124,6 +1127,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::DeploymentPolicies>,
         ) -> Self {
             self.inner = self.inner.set_deployment_policies(input);
+            self
+        }
+        /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+        pub fn parent_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_target_arn(input.into());
+            self
+        }
+        /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+        pub fn set_parent_target_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_parent_target_arn(input);
             self
         }
         /// Adds a key-value pair to `tags`.
@@ -2547,6 +2563,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::DeploymentHistoryFilter>,
         ) -> Self {
             self.inner = self.inner.set_history_filter(input);
+            self
+        }
+        /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+        pub fn parent_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_target_arn(input.into());
+            self
+        }
+        /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+        pub fn set_parent_target_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_parent_target_arn(input);
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>

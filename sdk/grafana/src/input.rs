@@ -213,6 +213,8 @@ pub mod create_workspace_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
+        pub(crate) configuration: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
@@ -251,14 +253,14 @@ pub mod create_workspace_input {
             self.organization_role_name = input;
             self
         }
-        /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>
+        /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>
         /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
         pub fn permission_type(mut self, input: crate::model::PermissionType) -> Self {
             self.permission_type = Some(input);
             self
         }
-        /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>
+        /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>
         /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
         pub fn set_permission_type(
@@ -391,7 +393,7 @@ pub mod create_workspace_input {
         ///
         /// To override the contents of this collection use [`set_authentication_providers`](Self::set_authentication_providers).
         ///
-        /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+        /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
         pub fn authentication_providers(
             mut self,
             input: crate::model::AuthenticationProviderTypes,
@@ -401,7 +403,7 @@ pub mod create_workspace_input {
             self.authentication_providers = Some(v);
             self
         }
-        /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+        /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
         pub fn set_authentication_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
@@ -434,6 +436,32 @@ pub mod create_workspace_input {
             self.tags = input;
             self
         }
+        /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+        pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
+            self.vpc_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfiguration>,
+        ) -> Self {
+            self.vpc_configuration = input;
+            self
+        }
+        /// <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration = Some(input.into());
+            self
+        }
+        /// <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput).
         pub fn build(
             self,
@@ -453,6 +481,8 @@ pub mod create_workspace_input {
                 workspace_role_arn: self.workspace_role_arn,
                 authentication_providers: self.authentication_providers,
                 tags: self.tags,
+                vpc_configuration: self.vpc_configuration,
+                configuration: self.configuration,
             })
         }
     }
@@ -478,6 +508,8 @@ pub mod create_workspace_input {
             formatter.field("workspace_role_arn", &"*** Sensitive Data Redacted ***");
             formatter.field("authentication_providers", &self.authentication_providers);
             formatter.field("tags", &self.tags);
+            formatter.field("vpc_configuration", &self.vpc_configuration);
+            formatter.field("configuration", &self.configuration);
             formatter.finish()
         }
     }
@@ -607,24 +639,24 @@ pub mod create_workspace_api_key_input {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
+        /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
         pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_name = Some(input.into());
             self
         }
-        /// <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
+        /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_name = input;
             self
         }
         /// <p>Specifies the permission level of the key.</p>
-        /// <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+        /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
         pub fn key_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_role = Some(input.into());
             self
         }
         /// <p>Specifies the permission level of the key.</p>
-        /// <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+        /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
         pub fn set_key_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_role = input;
             self
@@ -639,12 +671,12 @@ pub mod create_workspace_api_key_input {
             self.seconds_to_live = input;
             self
         }
-        /// <p>The ID of the workspace in which to create an API key.</p>
+        /// <p>The ID of the workspace to create an API key.</p>
         pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workspace_id = Some(input.into());
             self
         }
-        /// <p>The ID of the workspace in which to create an API key.</p>
+        /// <p>The ID of the workspace to create an API key.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -1439,6 +1471,158 @@ impl DescribeWorkspaceAuthenticationInput {
     }
 }
 
+/// See [`DescribeWorkspaceConfigurationInput`](crate::input::DescribeWorkspaceConfigurationInput).
+pub mod describe_workspace_configuration_input {
+
+    /// A builder for [`DescribeWorkspaceConfigurationInput`](crate::input::DescribeWorkspaceConfigurationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workspace_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the workspace to get configuration information for.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workspace_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the workspace to get configuration information for.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workspace_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeWorkspaceConfigurationInput`](crate::input::DescribeWorkspaceConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeWorkspaceConfigurationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DescribeWorkspaceConfigurationInput {
+                workspace_id: self.workspace_id,
+            })
+        }
+    }
+}
+impl DescribeWorkspaceConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceConfiguration`](crate::operation::DescribeWorkspaceConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeWorkspaceConfiguration,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeWorkspaceConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_9 = &_input.workspace_id;
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if workspace_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/workspaces/{workspaceId}/configuration",
+                    workspaceId = workspace_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeWorkspaceConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeWorkspaceConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeWorkspaceConfiguration",
+            "grafana",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceConfigurationInput`](crate::input::DescribeWorkspaceConfigurationInput).
+    pub fn builder() -> crate::input::describe_workspace_configuration_input::Builder {
+        crate::input::describe_workspace_configuration_input::Builder::default()
+    }
+}
+
 /// See [`DisassociateLicenseInput`](crate::input::DisassociateLicenseInput).
 pub mod disassociate_license_input {
 
@@ -1506,15 +1690,15 @@ impl DisassociateLicenseInput {
                 _input: &crate::input::DisassociateLicenseInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_9 = &_input.workspace_id;
-                let input_9 = input_9.as_ref().ok_or_else(|| {
+                let input_10 = &_input.workspace_id;
+                let input_10 = input_10.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workspace_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workspace_id = aws_smithy_http::label::fmt_string(
-                    input_9,
+                    input_10,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workspace_id.is_empty() {
@@ -1525,15 +1709,15 @@ impl DisassociateLicenseInput {
                         ),
                     );
                 }
-                let input_10 = &_input.license_type;
-                let input_10 = input_10.as_ref().ok_or_else(|| {
+                let input_11 = &_input.license_type;
+                let input_11 = input_11.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "license_type",
                         "cannot be empty or unset",
                     )
                 })?;
                 let license_type = aws_smithy_http::label::fmt_string(
-                    input_10,
+                    input_11,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if license_type.is_empty() {
@@ -1660,12 +1844,12 @@ pub mod list_permissions_input {
             self.next_token = input;
             self
         }
-        /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of Amazon Web Services SSO users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups are returned.</p>
+        /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
         pub fn user_type(mut self, input: crate::model::UserType) -> Self {
             self.user_type = Some(input);
             self
         }
-        /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of Amazon Web Services SSO users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups are returned.</p>
+        /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
         pub fn set_user_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
             self.user_type = input;
             self
@@ -1736,15 +1920,15 @@ impl ListPermissionsInput {
                 _input: &crate::input::ListPermissionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_11 = &_input.workspace_id;
-                let input_11 = input_11.as_ref().ok_or_else(|| {
+                let input_12 = &_input.workspace_id;
+                let input_12 = input_12.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workspace_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workspace_id = aws_smithy_http::label::fmt_string(
-                    input_11,
+                    input_12,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workspace_id.is_empty() {
@@ -1768,32 +1952,32 @@ impl ListPermissionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_12) = &_input.max_results {
-                    if *inner_12 != 0 {
+                if let Some(inner_13) = &_input.max_results {
+                    if *inner_13 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_13).encode(),
                         );
                     }
                 }
-                if let Some(inner_13) = &_input.next_token {
+                if let Some(inner_14) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_14));
                     }
                 }
-                if let Some(inner_14) = &_input.user_type {
+                if let Some(inner_15) = &_input.user_type {
                     {
-                        query.push_kv("userType", &aws_smithy_http::query::fmt_string(&inner_14));
+                        query.push_kv("userType", &aws_smithy_http::query::fmt_string(&inner_15));
                     }
                 }
-                if let Some(inner_15) = &_input.user_id {
+                if let Some(inner_16) = &_input.user_id {
                     {
-                        query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_15));
+                        query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_16));
                     }
                 }
-                if let Some(inner_16) = &_input.group_id {
+                if let Some(inner_17) = &_input.group_id {
                     {
-                        query.push_kv("groupId", &aws_smithy_http::query::fmt_string(&inner_16));
+                        query.push_kv("groupId", &aws_smithy_http::query::fmt_string(&inner_17));
                     }
                 }
                 Ok(())
@@ -1924,15 +2108,15 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_17 = &_input.resource_arn;
-                let input_17 = input_17.as_ref().ok_or_else(|| {
+                let input_18 = &_input.resource_arn;
+                let input_18 = input_18.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_17,
+                    input_18,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -2090,17 +2274,17 @@ impl ListWorkspacesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_18) = &_input.max_results {
-                    if *inner_18 != 0 {
+                if let Some(inner_19) = &_input.max_results {
+                    if *inner_19 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_19).encode(),
                         );
                     }
                 }
-                if let Some(inner_19) = &_input.next_token {
+                if let Some(inner_20) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_20));
                     }
                 }
                 Ok(())
@@ -2258,15 +2442,15 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_20 = &_input.resource_arn;
-                let input_20 = input_20.as_ref().ok_or_else(|| {
+                let input_21 = &_input.resource_arn;
+                let input_21 = input_21.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_20,
+                    input_21,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -2439,15 +2623,15 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_21 = &_input.resource_arn;
-                let input_21 = input_21.as_ref().ok_or_else(|| {
+                let input_22 = &_input.resource_arn;
+                let input_22 = input_22.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_21,
+                    input_22,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -2467,15 +2651,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_22 = &_input.tag_keys;
-                let inner_22 = inner_22.as_ref().ok_or_else(|| {
+                let inner_23 = &_input.tag_keys;
+                let inner_23 = inner_23.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "tag_keys",
                         "cannot be empty or unset",
                     )
                 })?;
-                for inner_23 in inner_22 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_23));
+                for inner_24 in inner_23 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_24));
                 }
                 Ok(())
             }
@@ -2627,15 +2811,15 @@ impl UpdatePermissionsInput {
                 _input: &crate::input::UpdatePermissionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_24 = &_input.workspace_id;
-                let input_24 = input_24.as_ref().ok_or_else(|| {
+                let input_25 = &_input.workspace_id;
+                let input_25 = input_25.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workspace_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workspace_id = aws_smithy_http::label::fmt_string(
-                    input_24,
+                    input_25,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workspace_id.is_empty() {
@@ -2761,6 +2945,8 @@ pub mod update_workspace_input {
         pub(crate) workspace_organizational_units:
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) workspace_role_arn: std::option::Option<std::string::String>,
+        pub(crate) vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
+        pub(crate) remove_vpc_configuration: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
@@ -2933,6 +3119,31 @@ pub mod update_workspace_input {
             self.workspace_role_arn = input;
             self
         }
+        /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+        pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
+            self.vpc_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfiguration>,
+        ) -> Self {
+            self.vpc_configuration = input;
+            self
+        }
+        /// <p>Whether to remove the VPC configuration from the workspace.</p>
+        /// <p>Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.</p>
+        pub fn remove_vpc_configuration(mut self, input: bool) -> Self {
+            self.remove_vpc_configuration = Some(input);
+            self
+        }
+        /// <p>Whether to remove the VPC configuration from the workspace.</p>
+        /// <p>Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.</p>
+        pub fn set_remove_vpc_configuration(mut self, input: std::option::Option<bool>) -> Self {
+            self.remove_vpc_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateWorkspaceInput`](crate::input::UpdateWorkspaceInput).
         pub fn build(
             self,
@@ -2950,6 +3161,8 @@ pub mod update_workspace_input {
                 workspace_notification_destinations: self.workspace_notification_destinations,
                 workspace_organizational_units: self.workspace_organizational_units,
                 workspace_role_arn: self.workspace_role_arn,
+                vpc_configuration: self.vpc_configuration,
+                remove_vpc_configuration: self.remove_vpc_configuration,
             })
         }
     }
@@ -2973,6 +3186,8 @@ pub mod update_workspace_input {
                 &"*** Sensitive Data Redacted ***",
             );
             formatter.field("workspace_role_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("vpc_configuration", &self.vpc_configuration);
+            formatter.field("remove_vpc_configuration", &self.remove_vpc_configuration);
             formatter.finish()
         }
     }
@@ -2997,15 +3212,15 @@ impl UpdateWorkspaceInput {
                 _input: &crate::input::UpdateWorkspaceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_25 = &_input.workspace_id;
-                let input_25 = input_25.as_ref().ok_or_else(|| {
+                let input_26 = &_input.workspace_id;
+                let input_26 = input_26.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workspace_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workspace_id = aws_smithy_http::label::fmt_string(
-                    input_25,
+                    input_26,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workspace_id.is_empty() {
@@ -3137,7 +3352,7 @@ pub mod update_workspace_authentication_input {
         ///
         /// To override the contents of this collection use [`set_authentication_providers`](Self::set_authentication_providers).
         ///
-        /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+        /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
         pub fn authentication_providers(
             mut self,
             input: crate::model::AuthenticationProviderTypes,
@@ -3147,7 +3362,7 @@ pub mod update_workspace_authentication_input {
             self.authentication_providers = Some(v);
             self
         }
-        /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+        /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
         pub fn set_authentication_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
@@ -3203,15 +3418,15 @@ impl UpdateWorkspaceAuthenticationInput {
                 _input: &crate::input::UpdateWorkspaceAuthenticationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_26 = &_input.workspace_id;
-                let input_26 = input_26.as_ref().ok_or_else(|| {
+                let input_27 = &_input.workspace_id;
+                let input_27 = input_27.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workspace_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workspace_id = aws_smithy_http::label::fmt_string(
-                    input_26,
+                    input_27,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workspace_id.is_empty() {
@@ -3316,6 +3531,186 @@ impl UpdateWorkspaceAuthenticationInput {
     }
 }
 
+/// See [`UpdateWorkspaceConfigurationInput`](crate::input::UpdateWorkspaceConfigurationInput).
+pub mod update_workspace_configuration_input {
+
+    /// A builder for [`UpdateWorkspaceConfigurationInput`](crate::input::UpdateWorkspaceConfigurationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) configuration: std::option::Option<std::string::String>,
+        pub(crate) workspace_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration = Some(input.into());
+            self
+        }
+        /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration = input;
+            self
+        }
+        /// <p>The ID of the workspace to update.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workspace_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the workspace to update.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workspace_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateWorkspaceConfigurationInput`](crate::input::UpdateWorkspaceConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateWorkspaceConfigurationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateWorkspaceConfigurationInput {
+                configuration: self.configuration,
+                workspace_id: self.workspace_id,
+            })
+        }
+    }
+}
+impl UpdateWorkspaceConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateWorkspaceConfiguration`](crate::operation::UpdateWorkspaceConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateWorkspaceConfiguration,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateWorkspaceConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_28 = &_input.workspace_id;
+                let input_28 = input_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_28,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if workspace_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/workspaces/{workspaceId}/configuration",
+                    workspaceId = workspace_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateWorkspaceConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_workspace_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateWorkspaceConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateWorkspaceConfiguration",
+            "grafana",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateWorkspaceConfigurationInput`](crate::input::UpdateWorkspaceConfigurationInput).
+    pub fn builder() -> crate::input::update_workspace_configuration_input::Builder {
+        crate::input::update_workspace_configuration_input::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3351,7 +3746,7 @@ pub struct CreateWorkspaceInput {
     /// <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.</p>
     #[doc(hidden)]
     pub organization_role_name: std::option::Option<std::string::String>,
-    /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>
+    /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>
     /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
     #[doc(hidden)]
@@ -3380,7 +3775,7 @@ pub struct CreateWorkspaceInput {
     /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.</p>
     #[doc(hidden)]
     pub workspace_role_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
     #[doc(hidden)]
     pub authentication_providers:
         std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
@@ -3388,6 +3783,12 @@ pub struct CreateWorkspaceInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+    #[doc(hidden)]
+    pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
+    /// <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+    #[doc(hidden)]
+    pub configuration: std::option::Option<std::string::String>,
 }
 impl CreateWorkspaceInput {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
@@ -3402,7 +3803,7 @@ impl CreateWorkspaceInput {
     pub fn organization_role_name(&self) -> std::option::Option<&str> {
         self.organization_role_name.as_deref()
     }
-    /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>
+    /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>
     /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
     pub fn permission_type(&self) -> std::option::Option<&crate::model::PermissionType> {
@@ -3440,7 +3841,7 @@ impl CreateWorkspaceInput {
     pub fn workspace_role_arn(&self) -> std::option::Option<&str> {
         self.workspace_role_arn.as_deref()
     }
-    /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
     pub fn authentication_providers(
         &self,
     ) -> std::option::Option<&[crate::model::AuthenticationProviderTypes]> {
@@ -3452,6 +3853,14 @@ impl CreateWorkspaceInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+    /// <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+    pub fn configuration(&self) -> std::option::Option<&str> {
+        self.configuration.as_deref()
     }
 }
 impl std::fmt::Debug for CreateWorkspaceInput {
@@ -3476,6 +3885,8 @@ impl std::fmt::Debug for CreateWorkspaceInput {
         formatter.field("workspace_role_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("authentication_providers", &self.authentication_providers);
         formatter.field("tags", &self.tags);
+        formatter.field("vpc_configuration", &self.vpc_configuration);
+        formatter.field("configuration", &self.configuration);
         formatter.finish()
     }
 }
@@ -3536,6 +3947,13 @@ pub struct UpdateWorkspaceInput {
     /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
     #[doc(hidden)]
     pub workspace_role_arn: std::option::Option<std::string::String>,
+    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+    #[doc(hidden)]
+    pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
+    /// <p>Whether to remove the VPC configuration from the workspace.</p>
+    /// <p>Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.</p>
+    #[doc(hidden)]
+    pub remove_vpc_configuration: std::option::Option<bool>,
 }
 impl UpdateWorkspaceInput {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
@@ -3587,6 +4005,15 @@ impl UpdateWorkspaceInput {
     pub fn workspace_role_arn(&self) -> std::option::Option<&str> {
         self.workspace_role_arn.as_deref()
     }
+    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+    /// <p>Whether to remove the VPC configuration from the workspace.</p>
+    /// <p>Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.</p>
+    pub fn remove_vpc_configuration(&self) -> std::option::Option<bool> {
+        self.remove_vpc_configuration
+    }
 }
 impl std::fmt::Debug for UpdateWorkspaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3608,6 +4035,8 @@ impl std::fmt::Debug for UpdateWorkspaceInput {
             &"*** Sensitive Data Redacted ***",
         );
         formatter.field("workspace_role_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("vpc_configuration", &self.vpc_configuration);
+        formatter.field("remove_vpc_configuration", &self.remove_vpc_configuration);
         formatter.finish()
     }
 }
@@ -3662,7 +4091,7 @@ pub struct ListPermissionsInput {
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of Amazon Web Services SSO users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups are returned.</p>
+    /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
     #[doc(hidden)]
     pub user_type: std::option::Option<crate::model::UserType>,
     /// <p>(Optional) Limits the results to only the user that matches this ID.</p>
@@ -3684,7 +4113,7 @@ impl ListPermissionsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of Amazon Web Services SSO users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups are returned.</p>
+    /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
     pub fn user_type(&self) -> std::option::Option<&crate::model::UserType> {
         self.user_type.as_ref()
     }
@@ -3749,11 +4178,48 @@ impl AssociateLicenseInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateWorkspaceConfigurationInput {
+    /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+    #[doc(hidden)]
+    pub configuration: std::option::Option<std::string::String>,
+    /// <p>The ID of the workspace to update.</p>
+    #[doc(hidden)]
+    pub workspace_id: std::option::Option<std::string::String>,
+}
+impl UpdateWorkspaceConfigurationInput {
+    /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+    pub fn configuration(&self) -> std::option::Option<&str> {
+        self.configuration.as_deref()
+    }
+    /// <p>The ID of the workspace to update.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeWorkspaceConfigurationInput {
+    /// <p>The ID of the workspace to get configuration information for.</p>
+    #[doc(hidden)]
+    pub workspace_id: std::option::Option<std::string::String>,
+}
+impl DescribeWorkspaceConfigurationInput {
+    /// <p>The ID of the workspace to get configuration information for.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkspaceAuthenticationInput {
     /// <p>The ID of the workspace to update the authentication for.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
     #[doc(hidden)]
     pub authentication_providers:
         std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
@@ -3766,7 +4232,7 @@ impl UpdateWorkspaceAuthenticationInput {
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
-    /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
     pub fn authentication_providers(
         &self,
     ) -> std::option::Option<&[crate::model::AuthenticationProviderTypes]> {
@@ -3819,27 +4285,27 @@ impl DeleteWorkspaceApiKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkspaceApiKeyInput {
-    /// <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
+    /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
     #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>Specifies the permission level of the key.</p>
-    /// <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+    /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
     #[doc(hidden)]
     pub key_role: std::option::Option<std::string::String>,
     /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
     #[doc(hidden)]
     pub seconds_to_live: std::option::Option<i32>,
-    /// <p>The ID of the workspace in which to create an API key.</p>
+    /// <p>The ID of the workspace to create an API key.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl CreateWorkspaceApiKeyInput {
-    /// <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
+    /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
     pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
     /// <p>Specifies the permission level of the key.</p>
-    /// <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+    /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
     pub fn key_role(&self) -> std::option::Option<&str> {
         self.key_role.as_deref()
     }
@@ -3847,7 +4313,7 @@ impl CreateWorkspaceApiKeyInput {
     pub fn seconds_to_live(&self) -> std::option::Option<i32> {
         self.seconds_to_live
     }
-    /// <p>The ID of the workspace in which to create an API key.</p>
+    /// <p>The ID of the workspace to create an API key.</p>
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }

@@ -2623,6 +2623,217 @@ pub fn parse_describe_parameters_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_reserved_nodes_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeReservedNodesOutput,
+    crate::error::DescribeReservedNodesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeReservedNodesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeReservedNodesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterCombinationException" => crate::error::DescribeReservedNodesError {
+            meta: generic,
+            kind:
+                crate::error::DescribeReservedNodesErrorKind::InvalidParameterCombinationException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesError::unhandled)?;
+                            output.build()
+                        };
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "InvalidParameterValueException" => crate::error::DescribeReservedNodesError {
+            meta: generic,
+            kind: crate::error::DescribeReservedNodesErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ReservedNodeNotFoundFault" => crate::error::DescribeReservedNodesError {
+            meta: generic,
+            kind: crate::error::DescribeReservedNodesErrorKind::ReservedNodeNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::reserved_node_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_reserved_node_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceLinkedRoleNotFoundFault" => crate::error::DescribeReservedNodesError {
+            meta: generic,
+            kind: crate::error::DescribeReservedNodesErrorKind::ServiceLinkedRoleNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_linked_role_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeReservedNodesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_reserved_nodes_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeReservedNodesOutput,
+    crate::error::DescribeReservedNodesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_reserved_nodes_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_reserved_nodes(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeReservedNodesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_reserved_nodes_offerings_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeReservedNodesOfferingsOutput,
+    crate::error::DescribeReservedNodesOfferingsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeReservedNodesOfferingsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeReservedNodesOfferingsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterCombinationException" => crate::error::DescribeReservedNodesOfferingsError { meta: generic, kind: crate::error::DescribeReservedNodesOfferingsErrorKind::InvalidParameterCombinationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesOfferingsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterValueException" => crate::error::DescribeReservedNodesOfferingsError { meta: generic, kind: crate::error::DescribeReservedNodesOfferingsErrorKind::InvalidParameterValueException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesOfferingsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ReservedNodesOfferingNotFoundFault" => crate::error::DescribeReservedNodesOfferingsError { meta: generic, kind: crate::error::DescribeReservedNodesOfferingsErrorKind::ReservedNodesOfferingNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::reserved_nodes_offering_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_reserved_nodes_offering_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesOfferingsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServiceLinkedRoleNotFoundFault" => crate::error::DescribeReservedNodesOfferingsError { meta: generic, kind: crate::error::DescribeReservedNodesOfferingsErrorKind::ServiceLinkedRoleNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesOfferingsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DescribeReservedNodesOfferingsError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_reserved_nodes_offerings_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeReservedNodesOfferingsOutput,
+    crate::error::DescribeReservedNodesOfferingsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_reserved_nodes_offerings_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_reserved_nodes_offerings(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeReservedNodesOfferingsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_service_updates_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3415,6 +3626,149 @@ pub fn parse_list_tags_response(
             output,
         )
         .map_err(crate::error::ListTagsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_purchase_reserved_nodes_offering_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PurchaseReservedNodesOfferingOutput,
+    crate::error::PurchaseReservedNodesOfferingError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::PurchaseReservedNodesOfferingError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterCombinationException" => crate::error::PurchaseReservedNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedNodesOfferingErrorKind::InvalidParameterCombinationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterValueException" => crate::error::PurchaseReservedNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedNodesOfferingErrorKind::InvalidParameterValueException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ReservedNodeAlreadyExistsFault" => crate::error::PurchaseReservedNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedNodesOfferingErrorKind::ReservedNodeAlreadyExistsFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::reserved_node_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_reserved_node_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ReservedNodeQuotaExceededFault" => crate::error::PurchaseReservedNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedNodesOfferingErrorKind::ReservedNodeQuotaExceededFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::reserved_node_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_reserved_node_quota_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ReservedNodesOfferingNotFoundFault" => crate::error::PurchaseReservedNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedNodesOfferingErrorKind::ReservedNodesOfferingNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::reserved_nodes_offering_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_reserved_nodes_offering_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServiceLinkedRoleNotFoundFault" => crate::error::PurchaseReservedNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedNodesOfferingErrorKind::ServiceLinkedRoleNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TagQuotaPerResourceExceeded" => crate::error::PurchaseReservedNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedNodesOfferingErrorKind::TagQuotaPerResourceExceeded({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::PurchaseReservedNodesOfferingError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_purchase_reserved_nodes_offering_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PurchaseReservedNodesOfferingOutput,
+    crate::error::PurchaseReservedNodesOfferingError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::purchase_reserved_nodes_offering_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_purchase_reserved_nodes_offering(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
         output.build()
     })
 }

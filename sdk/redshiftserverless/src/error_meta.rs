@@ -77,6 +77,7 @@ impl From<crate::error::ConvertRecoveryPointToSnapshotError> for Error {
             crate::error::ConvertRecoveryPointToSnapshotErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::error::ConvertRecoveryPointToSnapshotErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::error::ConvertRecoveryPointToSnapshotErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ConvertRecoveryPointToSnapshotErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
             crate::error::ConvertRecoveryPointToSnapshotErrorKind::ValidationException(inner) => Error::ValidationException(inner),
             crate::error::ConvertRecoveryPointToSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
@@ -186,6 +187,9 @@ impl From<crate::error::CreateSnapshotError> for Error {
             }
             crate::error::CreateSnapshotErrorKind::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::error::CreateSnapshotErrorKind::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
             }
             crate::error::CreateSnapshotErrorKind::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -682,6 +686,37 @@ impl From<crate::error::GetSnapshotError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTableRestoreStatusError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetTableRestoreStatusError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetTableRestoreStatusError> for Error {
+    fn from(err: crate::error::GetTableRestoreStatusError) -> Self {
+        match err.kind {
+            crate::error::GetTableRestoreStatusErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetTableRestoreStatusErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::GetTableRestoreStatusErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetUsageLimitError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -867,6 +902,40 @@ impl From<crate::error::ListSnapshotsError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::ListSnapshotsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTableRestoreStatusError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListTableRestoreStatusError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListTableRestoreStatusError> for Error {
+    fn from(err: crate::error::ListTableRestoreStatusError) -> Self {
+        match err.kind {
+            crate::error::ListTableRestoreStatusErrorKind::InvalidPaginationException(inner) => {
+                Error::InvalidPaginationException(inner)
+            }
+            crate::error::ListTableRestoreStatusErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListTableRestoreStatusErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::ListTableRestoreStatusErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -1083,6 +1152,43 @@ impl From<crate::error::RestoreFromSnapshotError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::RestoreFromSnapshotErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RestoreTableFromSnapshotError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::RestoreTableFromSnapshotError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RestoreTableFromSnapshotError> for Error {
+    fn from(err: crate::error::RestoreTableFromSnapshotError) -> Self {
+        match err.kind {
+            crate::error::RestoreTableFromSnapshotErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::RestoreTableFromSnapshotErrorKind::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::error::RestoreTableFromSnapshotErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::RestoreTableFromSnapshotErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::RestoreTableFromSnapshotErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

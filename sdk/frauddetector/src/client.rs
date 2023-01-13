@@ -140,7 +140,7 @@ impl Client {
     ///   - [`input_path(impl Into<String>)`](crate::client::fluent_builders::CreateBatchImportJob::input_path) / [`set_input_path(Option<String>)`](crate::client::fluent_builders::CreateBatchImportJob::set_input_path): <p>The URI that points to the Amazon S3 location of your data file.</p>
     ///   - [`output_path(impl Into<String>)`](crate::client::fluent_builders::CreateBatchImportJob::output_path) / [`set_output_path(Option<String>)`](crate::client::fluent_builders::CreateBatchImportJob::set_output_path): <p>The URI that points to the Amazon S3 location for storing your results. </p>
     ///   - [`event_type_name(impl Into<String>)`](crate::client::fluent_builders::CreateBatchImportJob::event_type_name) / [`set_event_type_name(Option<String>)`](crate::client::fluent_builders::CreateBatchImportJob::set_event_type_name): <p>The name of the event type.</p>
-    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchImportJob::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchImportJob::set_iam_role_arn): <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchImportJob::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchImportJob::set_iam_role_arn): <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.</p>  <p>The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateBatchImportJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateBatchImportJob::set_tags): <p>A collection of key-value pairs associated with this request. </p>
     /// - On success, responds with [`CreateBatchImportJobOutput`](crate::output::CreateBatchImportJobOutput)
 
@@ -157,7 +157,7 @@ impl Client {
     ///   - [`event_type_name(impl Into<String>)`](crate::client::fluent_builders::CreateBatchPredictionJob::event_type_name) / [`set_event_type_name(Option<String>)`](crate::client::fluent_builders::CreateBatchPredictionJob::set_event_type_name): <p>The name of the event type.</p>
     ///   - [`detector_name(impl Into<String>)`](crate::client::fluent_builders::CreateBatchPredictionJob::detector_name) / [`set_detector_name(Option<String>)`](crate::client::fluent_builders::CreateBatchPredictionJob::set_detector_name): <p>The name of the detector.</p>
     ///   - [`detector_version(impl Into<String>)`](crate::client::fluent_builders::CreateBatchPredictionJob::detector_version) / [`set_detector_version(Option<String>)`](crate::client::fluent_builders::CreateBatchPredictionJob::set_detector_version): <p>The detector version.</p>
-    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchPredictionJob::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchPredictionJob::set_iam_role_arn): <p>The ARN of the IAM role to use for this job request.</p>
+    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchPredictionJob::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchPredictionJob::set_iam_role_arn): <p>The ARN of the IAM role to use for this job request.</p>  <p>The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateBatchPredictionJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateBatchPredictionJob::set_tags): <p>A collection of key and value pairs.</p>
     /// - On success, responds with [`CreateBatchPredictionJobOutput`](crate::output::CreateBatchPredictionJobOutput)
 
@@ -807,7 +807,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutKMSEncryptionKey`](crate::client::fluent_builders::PutKMSEncryptionKey) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`kms_encryption_key_arn(impl Into<String>)`](crate::client::fluent_builders::PutKMSEncryptionKey::kms_encryption_key_arn) / [`set_kms_encryption_key_arn(Option<String>)`](crate::client::fluent_builders::PutKMSEncryptionKey::set_kms_encryption_key_arn): <p>The KMS encryption key ARN.</p>
+    ///   - [`kms_encryption_key_arn(impl Into<String>)`](crate::client::fluent_builders::PutKMSEncryptionKey::kms_encryption_key_arn) / [`set_kms_encryption_key_arn(Option<String>)`](crate::client::fluent_builders::PutKMSEncryptionKey::set_kms_encryption_key_arn): <p>The KMS encryption key ARN.</p>  <p>The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.</p>
     /// - On success, responds with [`PutKmsEncryptionKeyOutput`](crate::output::PutKmsEncryptionKeyOutput)
 
     /// - On failure, responds with [`SdkError<PutKMSEncryptionKeyError>`](crate::error::PutKMSEncryptionKeyError)
@@ -911,7 +911,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDetectorVersionStatus::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::UpdateDetectorVersionStatus::set_detector_id): <p>The detector ID. </p>
     ///   - [`detector_version_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDetectorVersionStatus::detector_version_id) / [`set_detector_version_id(Option<String>)`](crate::client::fluent_builders::UpdateDetectorVersionStatus::set_detector_version_id): <p>The detector version ID. </p>
-    ///   - [`status(DetectorVersionStatus)`](crate::client::fluent_builders::UpdateDetectorVersionStatus::status) / [`set_status(Option<DetectorVersionStatus>)`](crate::client::fluent_builders::UpdateDetectorVersionStatus::set_status): <p>The new status.</p>
+    ///   - [`status(DetectorVersionStatus)`](crate::client::fluent_builders::UpdateDetectorVersionStatus::status) / [`set_status(Option<DetectorVersionStatus>)`](crate::client::fluent_builders::UpdateDetectorVersionStatus::set_status): <p>The new status.</p>  <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
     /// - On success, responds with [`UpdateDetectorVersionStatusOutput`](crate::output::UpdateDetectorVersionStatusOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDetectorVersionStatusError>`](crate::error::UpdateDetectorVersionStatusError)
@@ -1451,12 +1451,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_type_name(input);
             self
         }
-        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.</p>
+        /// <p>The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role_arn(input.into());
             self
         }
-        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.</p>
+        /// <p>The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
             self
@@ -1611,11 +1613,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM role to use for this job request.</p>
+        /// <p>The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM role to use for this job request.</p>
+        /// <p>The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
             self
@@ -6523,11 +6527,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The KMS encryption key ARN.</p>
+        /// <p>The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.</p>
         pub fn kms_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_encryption_key_arn(input.into());
             self
         }
         /// <p>The KMS encryption key ARN.</p>
+        /// <p>The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.</p>
         pub fn set_kms_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7429,11 +7435,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new status.</p>
+        /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
         pub fn status(mut self, input: crate::model::DetectorVersionStatus) -> Self {
             self.inner = self.inner.status(input);
             self
         }
         /// <p>The new status.</p>
+        /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DetectorVersionStatus>,

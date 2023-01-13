@@ -439,6 +439,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyOptionGroup {
     }
 }
 
+/// Operation shape for `CreateBlueGreenDeployment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_blue_green_deployment`](crate::client::Client::create_blue_green_deployment).
+///
+/// See [`crate::client::fluent_builders::CreateBlueGreenDeployment`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateBlueGreenDeployment {
+    _private: (),
+}
+impl CreateBlueGreenDeployment {
+    /// Creates a new builder-style object to manufacture [`CreateBlueGreenDeploymentInput`](crate::input::CreateBlueGreenDeploymentInput).
+    pub fn builder() -> crate::input::create_blue_green_deployment_input::Builder {
+        crate::input::create_blue_green_deployment_input::Builder::default()
+    }
+    /// Creates a new `CreateBlueGreenDeployment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateBlueGreenDeployment {
+    type Output = std::result::Result<
+        crate::output::CreateBlueGreenDeploymentOutput,
+        crate::error::CreateBlueGreenDeploymentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_blue_green_deployment_error(response)
+        } else {
+            crate::operation_deser::parse_create_blue_green_deployment_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateCustomDBEngineVersion`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -977,6 +1011,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOptionGroup {
             crate::operation_deser::parse_create_option_group_error(response)
         } else {
             crate::operation_deser::parse_create_option_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteBlueGreenDeployment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_blue_green_deployment`](crate::client::Client::delete_blue_green_deployment).
+///
+/// See [`crate::client::fluent_builders::DeleteBlueGreenDeployment`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteBlueGreenDeployment {
+    _private: (),
+}
+impl DeleteBlueGreenDeployment {
+    /// Creates a new builder-style object to manufacture [`DeleteBlueGreenDeploymentInput`](crate::input::DeleteBlueGreenDeploymentInput).
+    pub fn builder() -> crate::input::delete_blue_green_deployment_input::Builder {
+        crate::input::delete_blue_green_deployment_input::Builder::default()
+    }
+    /// Creates a new `DeleteBlueGreenDeployment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteBlueGreenDeployment {
+    type Output = std::result::Result<
+        crate::output::DeleteBlueGreenDeploymentOutput,
+        crate::error::DeleteBlueGreenDeploymentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_blue_green_deployment_error(response)
+        } else {
+            crate::operation_deser::parse_delete_blue_green_deployment_response(response)
         }
     }
 }
@@ -1587,6 +1655,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountAttribute
             crate::operation_deser::parse_describe_account_attributes_error(response)
         } else {
             crate::operation_deser::parse_describe_account_attributes_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeBlueGreenDeployments`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_blue_green_deployments`](crate::client::Client::describe_blue_green_deployments).
+///
+/// See [`crate::client::fluent_builders::DescribeBlueGreenDeployments`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeBlueGreenDeployments {
+    _private: (),
+}
+impl DescribeBlueGreenDeployments {
+    /// Creates a new builder-style object to manufacture [`DescribeBlueGreenDeploymentsInput`](crate::input::DescribeBlueGreenDeploymentsInput).
+    pub fn builder() -> crate::input::describe_blue_green_deployments_input::Builder {
+        crate::input::describe_blue_green_deployments_input::Builder::default()
+    }
+    /// Creates a new `DescribeBlueGreenDeployments` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeBlueGreenDeployments {
+    type Output = std::result::Result<
+        crate::output::DescribeBlueGreenDeploymentsOutput,
+        crate::error::DescribeBlueGreenDeploymentsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_blue_green_deployments_error(response)
+        } else {
+            crate::operation_deser::parse_describe_blue_green_deployments_response(response)
         }
     }
 }
@@ -4621,6 +4723,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StopDBInstanceAutomatedB
             crate::operation_deser::parse_stop_db_instance_automated_backups_replication_response(
                 response,
             )
+        }
+    }
+}
+
+/// Operation shape for `SwitchoverBlueGreenDeployment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`switchover_blue_green_deployment`](crate::client::Client::switchover_blue_green_deployment).
+///
+/// See [`crate::client::fluent_builders::SwitchoverBlueGreenDeployment`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct SwitchoverBlueGreenDeployment {
+    _private: (),
+}
+impl SwitchoverBlueGreenDeployment {
+    /// Creates a new builder-style object to manufacture [`SwitchoverBlueGreenDeploymentInput`](crate::input::SwitchoverBlueGreenDeploymentInput).
+    pub fn builder() -> crate::input::switchover_blue_green_deployment_input::Builder {
+        crate::input::switchover_blue_green_deployment_input::Builder::default()
+    }
+    /// Creates a new `SwitchoverBlueGreenDeployment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SwitchoverBlueGreenDeployment {
+    type Output = std::result::Result<
+        crate::output::SwitchoverBlueGreenDeploymentOutput,
+        crate::error::SwitchoverBlueGreenDeploymentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_switchover_blue_green_deployment_error(response)
+        } else {
+            crate::operation_deser::parse_switchover_blue_green_deployment_response(response)
         }
     }
 }

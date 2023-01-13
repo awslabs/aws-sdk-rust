@@ -130,6 +130,942 @@ pub fn parse_associate_alias_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_copy_distribution_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CopyDistributionOutput, crate::error::CopyDistributionError>
+{
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CopyDistributionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CopyDistributionError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::AccessDenied({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "CNAMEAlreadyExists" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::CnameAlreadyExists({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cname_already_exists::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "DistributionAlreadyExists" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::DistributionAlreadyExists({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::distribution_already_exists::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_distribution_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InconsistentQuantities" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InconsistentQuantities({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidArgument" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidArgument({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidDefaultRootObject" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidDefaultRootObject({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_default_root_object::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_default_root_object_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidErrorCode" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidErrorCode({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_error_code::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_error_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidForwardCookies" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidForwardCookies({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_forward_cookies::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_forward_cookies_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidFunctionAssociation" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidFunctionAssociation({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_function_association::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidGeoRestrictionParameter" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidGeoRestrictionParameter({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_geo_restriction_parameter::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_geo_restriction_parameter_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidHeadersForS3Origin" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidHeadersForS3Origin({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_headers_for_s3_origin::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_headers_for_s3_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidIfMatchVersion" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidIfMatchVersion({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidLambdaFunctionAssociation" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidLambdaFunctionAssociation({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_function_association::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_lambda_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidLocationCode" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidLocationCode({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_location_code::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_location_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidMinimumProtocolVersion" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidMinimumProtocolVersion({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_minimum_protocol_version::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_minimum_protocol_version_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOrigin" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidOrigin({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOriginAccessControl" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidOriginAccessControl({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOriginAccessIdentity" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidOriginAccessIdentity({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_identity::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOriginKeepaliveTimeout" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidOriginKeepaliveTimeout({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_keepalive_timeout::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_keepalive_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOriginReadTimeout" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidOriginReadTimeout({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_read_timeout::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_read_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidProtocolSettings" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidProtocolSettings({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_protocol_settings::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_protocol_settings_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidQueryStringParameters" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidQueryStringParameters({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_query_string_parameters::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidRelativePath" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidRelativePath({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_relative_path::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_relative_path_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidRequiredProtocol" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidRequiredProtocol({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_required_protocol::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_required_protocol_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidResponseCode" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidResponseCode({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_response_code::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_response_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidTTLOrder" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidTtlOrder({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_ttl_order::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_ttl_order_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidViewerCertificate" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidViewerCertificate({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_viewer_certificate::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_viewer_certificate_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidWebACLId" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidWebAclId({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_web_acl_id::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_web_acl_id_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "MissingBody" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::MissingBody({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::missing_body::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchCachePolicy" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::NoSuchCachePolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_cache_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchDistribution" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::NoSuchDistribution({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_distribution::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchFieldLevelEncryptionConfig" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::NoSuchFieldLevelEncryptionConfig({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchOrigin" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::NoSuchOrigin({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchOriginRequestPolicy" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::NoSuchOriginRequestPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin_request_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchRealtimeLogConfig" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::NoSuchRealtimeLogConfig({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_realtime_log_config::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_realtime_log_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchResponseHeadersPolicy" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::NoSuchResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "PreconditionFailed" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::PreconditionFailed({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "RealtimeLogConfigOwnerMismatch" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::RealtimeLogConfigOwnerMismatch({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::realtime_log_config_owner_mismatch::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_realtime_log_config_owner_mismatch_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyCacheBehaviors" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyCacheBehaviors({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_cache_behaviors::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_cache_behaviors_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyCertificates" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyCertificates({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_certificates::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_certificates_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyCookieNamesInWhiteList" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyCookieNamesInWhiteList({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_cookie_names_in_white_list::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_cookie_names_in_white_list_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionCNAMEs" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionCnamEs({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distribution_cnam_es::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributions" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributions({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsAssociatedToCachePolicy" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_cache_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsAssociatedToKeyGroup" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_key_group::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_key_group_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsAssociatedToOriginRequestPolicy" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsWithFunctionAssociations" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsWithFunctionAssociations({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_function_associations::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsWithLambdaAssociations" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsWithLambdaAssociations({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_lambda_associations::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_lambda_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsWithSingleFunctionARN" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_single_function_arn::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_single_function_arn_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyFunctionAssociations" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyFunctionAssociations({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_function_associations::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyHeadersInForwardedValues" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyHeadersInForwardedValues({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_headers_in_forwarded_values::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_headers_in_forwarded_values_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyKeyGroupsAssociatedToDistribution" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_key_groups_associated_to_distribution::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_key_groups_associated_to_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyLambdaFunctionAssociations" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyLambdaFunctionAssociations({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_lambda_function_associations::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_lambda_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyOriginCustomHeaders" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyOriginCustomHeaders({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_custom_headers::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_origin_custom_headers_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyOriginGroupsPerDistribution" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyOriginGroupsPerDistribution({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_groups_per_distribution::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_origin_groups_per_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyOrigins" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyOrigins({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_origins::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_origins_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyQueryStringParameters" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyQueryStringParameters({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_query_string_parameters::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyTrustedSigners" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyTrustedSigners({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_trusted_signers::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TrustedKeyGroupDoesNotExist" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TrustedKeyGroupDoesNotExist({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::trusted_key_group_does_not_exist::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_trusted_key_group_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TrustedSignerDoesNotExist" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TrustedSignerDoesNotExist({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::CopyDistributionError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_copy_distribution_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CopyDistributionOutput, crate::error::CopyDistributionError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::copy_distribution_output::Builder::default();
+        let _ = response;
+        output = output.set_distribution(
+            crate::http_serde::deser_payload_copy_distribution_copy_distribution_output_distribution(response.body().as_ref())?
+        );
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_copy_distribution_copy_distribution_output_e_tag(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::CopyDistributionError::unhandled(
+                    "Failed to parse ETag from header `ETag",
+                )
+            })?,
+        );
+        output = output.set_location(
+            crate::http_serde::deser_header_copy_distribution_copy_distribution_output_location(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::CopyDistributionError::unhandled(
+                    "Failed to parse Location from header `Location",
+                )
+            })?,
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_cache_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateCachePolicyOutput, crate::error::CreateCachePolicyError>
@@ -445,6 +1381,139 @@ pub fn parse_create_cloud_front_origin_access_identity_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_continuous_deployment_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateContinuousDeploymentPolicyOutput,
+    crate::error::CreateContinuousDeploymentPolicyError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateContinuousDeploymentPolicyError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::CreateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::CreateContinuousDeploymentPolicyErrorKind::AccessDenied({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ContinuousDeploymentPolicyAlreadyExists" => crate::error::CreateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::CreateContinuousDeploymentPolicyErrorKind::ContinuousDeploymentPolicyAlreadyExists({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::continuous_deployment_policy_already_exists::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_continuous_deployment_policy_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InconsistentQuantities" => crate::error::CreateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::CreateContinuousDeploymentPolicyErrorKind::InconsistentQuantities({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidArgument" => crate::error::CreateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::CreateContinuousDeploymentPolicyErrorKind::InvalidArgument({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "StagingDistributionInUse" => crate::error::CreateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::CreateContinuousDeploymentPolicyErrorKind::StagingDistributionInUse({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::staging_distribution_in_use::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_staging_distribution_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyContinuousDeploymentPolicies" => crate::error::CreateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::CreateContinuousDeploymentPolicyErrorKind::TooManyContinuousDeploymentPolicies({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_continuous_deployment_policies::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_continuous_deployment_policies_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::CreateContinuousDeploymentPolicyError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_continuous_deployment_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateContinuousDeploymentPolicyOutput,
+    crate::error::CreateContinuousDeploymentPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::create_continuous_deployment_policy_output::Builder::default();
+        let _ = response;
+        output = output.set_continuous_deployment_policy(
+            crate::http_serde::deser_payload_create_continuous_deployment_policy_create_continuous_deployment_policy_output_continuous_deployment_policy(response.body().as_ref())?
+        );
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_create_continuous_deployment_policy_create_continuous_deployment_policy_output_e_tag(response.headers())
+                                    .map_err(|_|crate::error::CreateContinuousDeploymentPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
+        );
+        output = output.set_location(
+            crate::http_serde::deser_header_create_continuous_deployment_policy_create_continuous_deployment_policy_output_location(response.headers())
+                                    .map_err(|_|crate::error::CreateContinuousDeploymentPolicyError::unhandled("Failed to parse Location from header `Location"))?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_distribution_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -480,6 +1549,20 @@ pub fn parse_create_distribution_error(
                     #[allow(unused_mut)]let mut output = crate::error::cname_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ContinuousDeploymentPolicyInUse" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::ContinuousDeploymentPolicyInUse({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::continuous_deployment_policy_in_use::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_continuous_deployment_policy_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -900,6 +1983,20 @@ pub fn parse_create_distribution_error(
                     #[allow(unused_mut)]let mut output = crate::error::no_such_cache_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchContinuousDeploymentPolicy" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::NoSuchContinuousDeploymentPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1426,6 +2523,20 @@ pub fn parse_create_distribution_with_tags_error(
                                                     }
             tmp
         })},
+        "ContinuousDeploymentPolicyInUse" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::ContinuousDeploymentPolicyInUse({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::continuous_deployment_policy_in_use::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_continuous_deployment_policy_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "DistributionAlreadyExists" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::DistributionAlreadyExists({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -1838,6 +2949,20 @@ pub fn parse_create_distribution_with_tags_error(
                     #[allow(unused_mut)]let mut output = crate::error::no_such_cache_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchContinuousDeploymentPolicy" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::NoSuchContinuousDeploymentPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3781,6 +4906,20 @@ pub fn parse_create_response_headers_policy_error(
                                                     }
             tmp
         })},
+        "TooManyRemoveHeadersInResponseHeadersPolicy" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::TooManyRemoveHeadersInResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_remove_headers_in_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_remove_headers_in_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "TooManyResponseHeadersPolicies" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -4552,6 +5691,128 @@ pub fn parse_delete_cloud_front_origin_access_identity_response(
         #[allow(unused_mut)]
         let mut output =
             crate::output::delete_cloud_front_origin_access_identity_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_continuous_deployment_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteContinuousDeploymentPolicyOutput,
+    crate::error::DeleteContinuousDeploymentPolicyError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteContinuousDeploymentPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteContinuousDeploymentPolicyError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::DeleteContinuousDeploymentPolicyError { meta: generic, kind: crate::error::DeleteContinuousDeploymentPolicyErrorKind::AccessDenied({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ContinuousDeploymentPolicyInUse" => crate::error::DeleteContinuousDeploymentPolicyError { meta: generic, kind: crate::error::DeleteContinuousDeploymentPolicyErrorKind::ContinuousDeploymentPolicyInUse({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::continuous_deployment_policy_in_use::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_continuous_deployment_policy_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidArgument" => crate::error::DeleteContinuousDeploymentPolicyError { meta: generic, kind: crate::error::DeleteContinuousDeploymentPolicyErrorKind::InvalidArgument({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidIfMatchVersion" => crate::error::DeleteContinuousDeploymentPolicyError { meta: generic, kind: crate::error::DeleteContinuousDeploymentPolicyErrorKind::InvalidIfMatchVersion({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchContinuousDeploymentPolicy" => crate::error::DeleteContinuousDeploymentPolicyError { meta: generic, kind: crate::error::DeleteContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "PreconditionFailed" => crate::error::DeleteContinuousDeploymentPolicyError { meta: generic, kind: crate::error::DeleteContinuousDeploymentPolicyErrorKind::PreconditionFailed({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DeleteContinuousDeploymentPolicyError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_continuous_deployment_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteContinuousDeploymentPolicyOutput,
+    crate::error::DeleteContinuousDeploymentPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::delete_continuous_deployment_policy_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -6448,6 +7709,153 @@ pub fn parse_get_cloud_front_origin_access_identity_config_response(
         output = output.set_e_tag(
             crate::http_serde::deser_header_get_cloud_front_origin_access_identity_config_get_cloud_front_origin_access_identity_config_output_e_tag(response.headers())
                                     .map_err(|_|crate::error::GetCloudFrontOriginAccessIdentityConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_continuous_deployment_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetContinuousDeploymentPolicyOutput,
+    crate::error::GetContinuousDeploymentPolicyError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetContinuousDeploymentPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetContinuousDeploymentPolicyError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::GetContinuousDeploymentPolicyError { meta: generic, kind: crate::error::GetContinuousDeploymentPolicyErrorKind::AccessDenied({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::GetContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchContinuousDeploymentPolicy" => crate::error::GetContinuousDeploymentPolicyError { meta: generic, kind: crate::error::GetContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::GetContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::GetContinuousDeploymentPolicyError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_continuous_deployment_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetContinuousDeploymentPolicyOutput,
+    crate::error::GetContinuousDeploymentPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_continuous_deployment_policy_output::Builder::default();
+        let _ = response;
+        output = output.set_continuous_deployment_policy(
+            crate::http_serde::deser_payload_get_continuous_deployment_policy_get_continuous_deployment_policy_output_continuous_deployment_policy(response.body().as_ref())?
+        );
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_get_continuous_deployment_policy_get_continuous_deployment_policy_output_e_tag(response.headers())
+                                    .map_err(|_|crate::error::GetContinuousDeploymentPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_continuous_deployment_policy_config_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetContinuousDeploymentPolicyConfigOutput,
+    crate::error::GetContinuousDeploymentPolicyConfigError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetContinuousDeploymentPolicyConfigError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetContinuousDeploymentPolicyConfigError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::GetContinuousDeploymentPolicyConfigError { meta: generic, kind: crate::error::GetContinuousDeploymentPolicyConfigErrorKind::AccessDenied({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::GetContinuousDeploymentPolicyConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchContinuousDeploymentPolicy" => crate::error::GetContinuousDeploymentPolicyConfigError { meta: generic, kind: crate::error::GetContinuousDeploymentPolicyConfigErrorKind::NoSuchContinuousDeploymentPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::GetContinuousDeploymentPolicyConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::GetContinuousDeploymentPolicyConfigError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_continuous_deployment_policy_config_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetContinuousDeploymentPolicyConfigOutput,
+    crate::error::GetContinuousDeploymentPolicyConfigError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_continuous_deployment_policy_config_output::Builder::default();
+        let _ = response;
+        output = output.set_continuous_deployment_policy_config(
+            crate::http_serde::deser_payload_get_continuous_deployment_policy_config_get_continuous_deployment_policy_config_output_continuous_deployment_policy_config(response.body().as_ref())?
+        );
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_get_continuous_deployment_policy_config_get_continuous_deployment_policy_config_output_e_tag(response.headers())
+                                    .map_err(|_|crate::error::GetContinuousDeploymentPolicyConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output.build()
     })
@@ -8531,6 +9939,89 @@ pub fn parse_list_conflicting_aliases_response(
         let _ = response;
         output = output.set_conflicting_aliases_list(
             crate::http_serde::deser_payload_list_conflicting_aliases_list_conflicting_aliases_output_conflicting_aliases_list(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_continuous_deployment_policies_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListContinuousDeploymentPoliciesOutput,
+    crate::error::ListContinuousDeploymentPoliciesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListContinuousDeploymentPoliciesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListContinuousDeploymentPoliciesError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::ListContinuousDeploymentPoliciesError { meta: generic, kind: crate::error::ListContinuousDeploymentPoliciesErrorKind::AccessDenied({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::ListContinuousDeploymentPoliciesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidArgument" => crate::error::ListContinuousDeploymentPoliciesError { meta: generic, kind: crate::error::ListContinuousDeploymentPoliciesErrorKind::InvalidArgument({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::ListContinuousDeploymentPoliciesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchContinuousDeploymentPolicy" => crate::error::ListContinuousDeploymentPoliciesError { meta: generic, kind: crate::error::ListContinuousDeploymentPoliciesErrorKind::NoSuchContinuousDeploymentPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::ListContinuousDeploymentPoliciesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ListContinuousDeploymentPoliciesError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_continuous_deployment_policies_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListContinuousDeploymentPoliciesOutput,
+    crate::error::ListContinuousDeploymentPoliciesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_continuous_deployment_policies_output::Builder::default();
+        let _ = response;
+        output = output.set_continuous_deployment_policy_list(
+            crate::http_serde::deser_payload_list_continuous_deployment_policies_list_continuous_deployment_policies_output_continuous_deployment_policy_list(response.body().as_ref())?
         );
         output.build()
     })
@@ -10949,6 +12440,149 @@ pub fn parse_update_cloud_front_origin_access_identity_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_continuous_deployment_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateContinuousDeploymentPolicyOutput,
+    crate::error::UpdateContinuousDeploymentPolicyError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::UpdateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::UpdateContinuousDeploymentPolicyErrorKind::AccessDenied({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InconsistentQuantities" => crate::error::UpdateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::UpdateContinuousDeploymentPolicyErrorKind::InconsistentQuantities({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidArgument" => crate::error::UpdateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::UpdateContinuousDeploymentPolicyErrorKind::InvalidArgument({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidIfMatchVersion" => crate::error::UpdateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::UpdateContinuousDeploymentPolicyErrorKind::InvalidIfMatchVersion({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchContinuousDeploymentPolicy" => crate::error::UpdateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::UpdateContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "PreconditionFailed" => crate::error::UpdateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::UpdateContinuousDeploymentPolicyErrorKind::PreconditionFailed({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "StagingDistributionInUse" => crate::error::UpdateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::UpdateContinuousDeploymentPolicyErrorKind::StagingDistributionInUse({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::staging_distribution_in_use::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_staging_distribution_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::UpdateContinuousDeploymentPolicyError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_continuous_deployment_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateContinuousDeploymentPolicyOutput,
+    crate::error::UpdateContinuousDeploymentPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::update_continuous_deployment_policy_output::Builder::default();
+        let _ = response;
+        output = output.set_continuous_deployment_policy(
+            crate::http_serde::deser_payload_update_continuous_deployment_policy_update_continuous_deployment_policy_output_continuous_deployment_policy(response.body().as_ref())?
+        );
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_update_continuous_deployment_policy_update_continuous_deployment_policy_output_e_tag(response.headers())
+                                    .map_err(|_|crate::error::UpdateContinuousDeploymentPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_distribution_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -10984,6 +12618,20 @@ pub fn parse_update_distribution_error(
                     #[allow(unused_mut)]let mut output = crate::error::cname_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ContinuousDeploymentPolicyInUse" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::ContinuousDeploymentPolicyInUse({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::continuous_deployment_policy_in_use::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_continuous_deployment_policy_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -11398,6 +13046,20 @@ pub fn parse_update_distribution_error(
                                                     }
             tmp
         })},
+        "NoSuchContinuousDeploymentPolicy" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::NoSuchContinuousDeploymentPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "NoSuchDistribution" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::NoSuchDistribution({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -11502,6 +13164,20 @@ pub fn parse_update_distribution_error(
                     #[allow(unused_mut)]let mut output = crate::error::realtime_log_config_owner_mismatch::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_realtime_log_config_owner_mismatch_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "StagingDistributionInUse" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::StagingDistributionInUse({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::staging_distribution_in_use::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_staging_distribution_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -11859,6 +13535,891 @@ pub fn parse_update_distribution_response(
                     "Failed to parse ETag from header `ETag",
                 )
             })?,
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_distribution_with_staging_config_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateDistributionWithStagingConfigOutput,
+    crate::error::UpdateDistributionWithStagingConfigError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateDistributionWithStagingConfigError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::AccessDenied({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "CNAMEAlreadyExists" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::CnameAlreadyExists({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cname_already_exists::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "IllegalUpdate" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::IllegalUpdate({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::illegal_update::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_illegal_update_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InconsistentQuantities" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InconsistentQuantities({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidArgument" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidArgument({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidDefaultRootObject" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidDefaultRootObject({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_default_root_object::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_default_root_object_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidErrorCode" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidErrorCode({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_error_code::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_error_code_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidForwardCookies" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidForwardCookies({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_forward_cookies::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_forward_cookies_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidFunctionAssociation" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidFunctionAssociation({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_function_association::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidGeoRestrictionParameter" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidGeoRestrictionParameter({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_geo_restriction_parameter::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_geo_restriction_parameter_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidHeadersForS3Origin" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidHeadersForS3Origin({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_headers_for_s3_origin::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_headers_for_s3_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidIfMatchVersion" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidIfMatchVersion({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidLambdaFunctionAssociation" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidLambdaFunctionAssociation({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_function_association::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_lambda_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidLocationCode" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidLocationCode({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_location_code::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_location_code_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidMinimumProtocolVersion" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidMinimumProtocolVersion({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_minimum_protocol_version::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_minimum_protocol_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOriginAccessControl" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidOriginAccessControl({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOriginAccessIdentity" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidOriginAccessIdentity({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_identity::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOriginKeepaliveTimeout" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidOriginKeepaliveTimeout({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_keepalive_timeout::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_keepalive_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOriginReadTimeout" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidOriginReadTimeout({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_read_timeout::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_read_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidQueryStringParameters" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidQueryStringParameters({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_query_string_parameters::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidRelativePath" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidRelativePath({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_relative_path::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_relative_path_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidRequiredProtocol" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidRequiredProtocol({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_required_protocol::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_required_protocol_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidResponseCode" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidResponseCode({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_response_code::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_response_code_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidTTLOrder" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidTtlOrder({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_ttl_order::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_ttl_order_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidViewerCertificate" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidViewerCertificate({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_viewer_certificate::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_viewer_certificate_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidWebACLId" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidWebAclId({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_web_acl_id::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_web_acl_id_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "MissingBody" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::MissingBody({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::missing_body::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchCachePolicy" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchCachePolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_cache_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchDistribution" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchDistribution({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_distribution::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchFieldLevelEncryptionConfig" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchFieldLevelEncryptionConfig({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchOrigin" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchOrigin({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchOriginRequestPolicy" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchOriginRequestPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin_request_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchRealtimeLogConfig" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchRealtimeLogConfig({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_realtime_log_config::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_realtime_log_config_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchResponseHeadersPolicy" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "PreconditionFailed" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::PreconditionFailed({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "RealtimeLogConfigOwnerMismatch" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::RealtimeLogConfigOwnerMismatch({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::realtime_log_config_owner_mismatch::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_realtime_log_config_owner_mismatch_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyCacheBehaviors" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyCacheBehaviors({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_cache_behaviors::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_cache_behaviors_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyCertificates" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyCertificates({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_certificates::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_certificates_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyCookieNamesInWhiteList" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyCookieNamesInWhiteList({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_cookie_names_in_white_list::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_cookie_names_in_white_list_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionCNAMEs" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionCnamEs({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distribution_cnam_es::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsAssociatedToCachePolicy" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToCachePolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_cache_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsAssociatedToKeyGroup" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToKeyGroup({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_key_group::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_key_group_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsAssociatedToOriginRequestPolicy" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsWithFunctionAssociations" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithFunctionAssociations({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_function_associations::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsWithLambdaAssociations" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithLambdaAssociations({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_lambda_associations::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_lambda_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsWithSingleFunctionARN" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithSingleFunctionArn({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_single_function_arn::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_single_function_arn_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyFunctionAssociations" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyFunctionAssociations({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_function_associations::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyHeadersInForwardedValues" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyHeadersInForwardedValues({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_headers_in_forwarded_values::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_headers_in_forwarded_values_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyKeyGroupsAssociatedToDistribution" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyKeyGroupsAssociatedToDistribution({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_key_groups_associated_to_distribution::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_key_groups_associated_to_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyLambdaFunctionAssociations" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyLambdaFunctionAssociations({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_lambda_function_associations::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_lambda_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyOriginCustomHeaders" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyOriginCustomHeaders({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_custom_headers::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_origin_custom_headers_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyOriginGroupsPerDistribution" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyOriginGroupsPerDistribution({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_groups_per_distribution::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_origin_groups_per_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyOrigins" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyOrigins({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_origins::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_origins_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyQueryStringParameters" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyQueryStringParameters({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_query_string_parameters::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyTrustedSigners" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyTrustedSigners({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_trusted_signers::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TrustedKeyGroupDoesNotExist" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TrustedKeyGroupDoesNotExist({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::trusted_key_group_does_not_exist::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_trusted_key_group_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TrustedSignerDoesNotExist" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TrustedSignerDoesNotExist({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::UpdateDistributionWithStagingConfigError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_distribution_with_staging_config_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateDistributionWithStagingConfigOutput,
+    crate::error::UpdateDistributionWithStagingConfigError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::update_distribution_with_staging_config_output::Builder::default();
+        let _ = response;
+        output = output.set_distribution(
+            crate::http_serde::deser_payload_update_distribution_with_staging_config_update_distribution_with_staging_config_output_distribution(response.body().as_ref())?
+        );
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_update_distribution_with_staging_config_update_distribution_with_staging_config_output_e_tag(response.headers())
+                                    .map_err(|_|crate::error::UpdateDistributionWithStagingConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output.build()
     })
@@ -13406,6 +15967,20 @@ pub fn parse_update_response_headers_policy_error(
                     #[allow(unused_mut)]let mut output = crate::error::too_many_custom_headers_in_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_custom_headers_in_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyRemoveHeadersInResponseHeadersPolicy" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::TooManyRemoveHeadersInResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_remove_headers_in_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_remove_headers_in_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
                     output.build()
                 }
             ;

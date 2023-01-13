@@ -57,6 +57,61 @@ impl SwitchoverReadReplicaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SwitchoverBlueGreenDeploymentOutput {
+    /// <p>Contains the details about a blue/green deployment.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    #[doc(hidden)]
+    pub blue_green_deployment: std::option::Option<crate::model::BlueGreenDeployment>,
+}
+impl SwitchoverBlueGreenDeploymentOutput {
+    /// <p>Contains the details about a blue/green deployment.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn blue_green_deployment(&self) -> std::option::Option<&crate::model::BlueGreenDeployment> {
+        self.blue_green_deployment.as_ref()
+    }
+}
+/// See [`SwitchoverBlueGreenDeploymentOutput`](crate::output::SwitchoverBlueGreenDeploymentOutput).
+pub mod switchover_blue_green_deployment_output {
+
+    /// A builder for [`SwitchoverBlueGreenDeploymentOutput`](crate::output::SwitchoverBlueGreenDeploymentOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blue_green_deployment: std::option::Option<crate::model::BlueGreenDeployment>,
+    }
+    impl Builder {
+        /// <p>Contains the details about a blue/green deployment.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn blue_green_deployment(mut self, input: crate::model::BlueGreenDeployment) -> Self {
+            self.blue_green_deployment = Some(input);
+            self
+        }
+        /// <p>Contains the details about a blue/green deployment.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_blue_green_deployment(
+            mut self,
+            input: std::option::Option<crate::model::BlueGreenDeployment>,
+        ) -> Self {
+            self.blue_green_deployment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SwitchoverBlueGreenDeploymentOutput`](crate::output::SwitchoverBlueGreenDeploymentOutput).
+        pub fn build(self) -> crate::output::SwitchoverBlueGreenDeploymentOutput {
+            crate::output::SwitchoverBlueGreenDeploymentOutput {
+                blue_green_deployment: self.blue_green_deployment,
+            }
+        }
+    }
+}
+impl SwitchoverBlueGreenDeploymentOutput {
+    /// Creates a new builder-style object to manufacture [`SwitchoverBlueGreenDeploymentOutput`](crate::output::SwitchoverBlueGreenDeploymentOutput).
+    pub fn builder() -> crate::output::switchover_blue_green_deployment_output::Builder {
+        crate::output::switchover_blue_green_deployment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDbInstanceAutomatedBackupsReplicationOutput {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
     #[doc(hidden)]
@@ -386,6 +441,9 @@ pub struct StartExportTaskOutput {
     /// <p>A warning about the snapshot export task.</p>
     #[doc(hidden)]
     pub warning_message: std::option::Option<std::string::String>,
+    /// <p>The type of source for the export.</p>
+    #[doc(hidden)]
+    pub source_type: std::option::Option<crate::model::ExportSourceType>,
 }
 impl StartExportTaskOutput {
     /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
@@ -454,6 +512,10 @@ impl StartExportTaskOutput {
     pub fn warning_message(&self) -> std::option::Option<&str> {
         self.warning_message.as_deref()
     }
+    /// <p>The type of source for the export.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::ExportSourceType> {
+        self.source_type.as_ref()
+    }
 }
 /// See [`StartExportTaskOutput`](crate::output::StartExportTaskOutput).
 pub mod start_export_task_output {
@@ -476,6 +538,7 @@ pub mod start_export_task_output {
         pub(crate) total_extracted_data_in_gb: std::option::Option<i32>,
         pub(crate) failure_cause: std::option::Option<std::string::String>,
         pub(crate) warning_message: std::option::Option<std::string::String>,
+        pub(crate) source_type: std::option::Option<crate::model::ExportSourceType>,
     }
     impl Builder {
         /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
@@ -667,6 +730,19 @@ pub mod start_export_task_output {
             self.warning_message = input;
             self
         }
+        /// <p>The type of source for the export.</p>
+        pub fn source_type(mut self, input: crate::model::ExportSourceType) -> Self {
+            self.source_type = Some(input);
+            self
+        }
+        /// <p>The type of source for the export.</p>
+        pub fn set_source_type(
+            mut self,
+            input: std::option::Option<crate::model::ExportSourceType>,
+        ) -> Self {
+            self.source_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartExportTaskOutput`](crate::output::StartExportTaskOutput).
         pub fn build(self) -> crate::output::StartExportTaskOutput {
             crate::output::StartExportTaskOutput {
@@ -685,6 +761,7 @@ pub mod start_export_task_output {
                 total_extracted_data_in_gb: self.total_extracted_data_in_gb.unwrap_or_default(),
                 failure_cause: self.failure_cause,
                 warning_message: self.warning_message,
+                source_type: self.source_type,
             }
         }
     }
@@ -3204,6 +3281,12 @@ pub struct ModifyCustomDbEngineVersionOutput {
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     #[doc(hidden)]
     pub default_character_set: std::option::Option<crate::model::CharacterSet>,
+    /// <p>The EC2 image</p>
+    #[doc(hidden)]
+    pub image: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
+    /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+    #[doc(hidden)]
+    pub db_engine_media_type: std::option::Option<std::string::String>,
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     #[doc(hidden)]
     pub supported_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
@@ -3275,6 +3358,17 @@ pub struct ModifyCustomDbEngineVersionOutput {
     /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     #[doc(hidden)]
     pub supports_babelfish: bool,
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+    #[doc(hidden)]
+    pub custom_db_engine_version_manifest: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    #[doc(hidden)]
+    pub supports_certificate_rotation_without_restart: std::option::Option<bool>,
+    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    #[doc(hidden)]
+    pub supported_ca_certificate_identifiers:
+        std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyCustomDbEngineVersionOutput {
     /// <p>The name of the database engine.</p>
@@ -3300,6 +3394,14 @@ impl ModifyCustomDbEngineVersionOutput {
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     pub fn default_character_set(&self) -> std::option::Option<&crate::model::CharacterSet> {
         self.default_character_set.as_ref()
+    }
+    /// <p>The EC2 image</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::CustomDbEngineVersionAmi> {
+        self.image.as_ref()
+    }
+    /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+    pub fn db_engine_media_type(&self) -> std::option::Option<&str> {
+        self.db_engine_media_type.as_deref()
     }
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     pub fn supported_character_sets(&self) -> std::option::Option<&[crate::model::CharacterSet]> {
@@ -3393,6 +3495,21 @@ impl ModifyCustomDbEngineVersionOutput {
     pub fn supports_babelfish(&self) -> bool {
         self.supports_babelfish
     }
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+    pub fn custom_db_engine_version_manifest(&self) -> std::option::Option<&str> {
+        self.custom_db_engine_version_manifest.as_deref()
+    }
+    /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    pub fn supports_certificate_rotation_without_restart(&self) -> std::option::Option<bool> {
+        self.supports_certificate_rotation_without_restart
+    }
+    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn supported_ca_certificate_identifiers(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.supported_ca_certificate_identifiers.as_deref()
+    }
 }
 /// See [`ModifyCustomDbEngineVersionOutput`](crate::output::ModifyCustomDbEngineVersionOutput).
 pub mod modify_custom_db_engine_version_output {
@@ -3406,6 +3523,8 @@ pub mod modify_custom_db_engine_version_output {
         pub(crate) db_engine_description: std::option::Option<std::string::String>,
         pub(crate) db_engine_version_description: std::option::Option<std::string::String>,
         pub(crate) default_character_set: std::option::Option<crate::model::CharacterSet>,
+        pub(crate) image: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
+        pub(crate) db_engine_media_type: std::option::Option<std::string::String>,
         pub(crate) supported_character_sets:
             std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
         pub(crate) supported_nchar_character_sets:
@@ -3430,6 +3549,10 @@ pub mod modify_custom_db_engine_version_output {
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) supports_babelfish: std::option::Option<bool>,
+        pub(crate) custom_db_engine_version_manifest: std::option::Option<std::string::String>,
+        pub(crate) supports_certificate_rotation_without_restart: std::option::Option<bool>,
+        pub(crate) supported_ca_certificate_identifiers:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the database engine.</p>
@@ -3508,6 +3631,32 @@ pub mod modify_custom_db_engine_version_output {
             input: std::option::Option<crate::model::CharacterSet>,
         ) -> Self {
             self.default_character_set = input;
+            self
+        }
+        /// <p>The EC2 image</p>
+        pub fn image(mut self, input: crate::model::CustomDbEngineVersionAmi) -> Self {
+            self.image = Some(input);
+            self
+        }
+        /// <p>The EC2 image</p>
+        pub fn set_image(
+            mut self,
+            input: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
+        ) -> Self {
+            self.image = input;
+            self
+        }
+        /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+        pub fn db_engine_media_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_engine_media_type = Some(input.into());
+            self
+        }
+        /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+        pub fn set_db_engine_media_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_engine_media_type = input;
             self
         }
         /// Appends an item to `supported_character_sets`.
@@ -3826,6 +3975,61 @@ pub mod modify_custom_db_engine_version_output {
             self.supports_babelfish = input;
             self
         }
+        /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+        pub fn custom_db_engine_version_manifest(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.custom_db_engine_version_manifest = Some(input.into());
+            self
+        }
+        /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+        pub fn set_custom_db_engine_version_manifest(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_db_engine_version_manifest = input;
+            self
+        }
+        /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+        pub fn supports_certificate_rotation_without_restart(mut self, input: bool) -> Self {
+            self.supports_certificate_rotation_without_restart = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+        pub fn set_supports_certificate_rotation_without_restart(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.supports_certificate_rotation_without_restart = input;
+            self
+        }
+        /// Appends an item to `supported_ca_certificate_identifiers`.
+        ///
+        /// To override the contents of this collection use [`set_supported_ca_certificate_identifiers`](Self::set_supported_ca_certificate_identifiers).
+        ///
+        /// <p>A list of the supported CA certificate identifiers.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn supported_ca_certificate_identifiers(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self
+                .supported_ca_certificate_identifiers
+                .unwrap_or_default();
+            v.push(input.into());
+            self.supported_ca_certificate_identifiers = Some(v);
+            self
+        }
+        /// <p>A list of the supported CA certificate identifiers.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_supported_ca_certificate_identifiers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_ca_certificate_identifiers = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModifyCustomDbEngineVersionOutput`](crate::output::ModifyCustomDbEngineVersionOutput).
         pub fn build(self) -> crate::output::ModifyCustomDbEngineVersionOutput {
             crate::output::ModifyCustomDbEngineVersionOutput {
@@ -3835,6 +4039,8 @@ pub mod modify_custom_db_engine_version_output {
                 db_engine_description: self.db_engine_description,
                 db_engine_version_description: self.db_engine_version_description,
                 default_character_set: self.default_character_set,
+                image: self.image,
+                db_engine_media_type: self.db_engine_media_type,
                 supported_character_sets: self.supported_character_sets,
                 supported_nchar_character_sets: self.supported_nchar_character_sets,
                 valid_upgrade_target: self.valid_upgrade_target,
@@ -3858,6 +4064,10 @@ pub mod modify_custom_db_engine_version_output {
                 create_time: self.create_time,
                 tag_list: self.tag_list,
                 supports_babelfish: self.supports_babelfish.unwrap_or_default(),
+                custom_db_engine_version_manifest: self.custom_db_engine_version_manifest,
+                supports_certificate_rotation_without_restart: self
+                    .supports_certificate_rotation_without_restart,
+                supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
             }
         }
     }
@@ -4004,11 +4214,13 @@ impl ModifyCurrentDbClusterCapacityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyCertificatesOutput {
     /// <p>A CA certificate for an Amazon Web Services account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::Certificate>,
 }
 impl ModifyCertificatesOutput {
     /// <p>A CA certificate for an Amazon Web Services account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn certificate(&self) -> std::option::Option<&crate::model::Certificate> {
         self.certificate.as_ref()
     }
@@ -4023,11 +4235,13 @@ pub mod modify_certificates_output {
     }
     impl Builder {
         /// <p>A CA certificate for an Amazon Web Services account.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn certificate(mut self, input: crate::model::Certificate) -> Self {
             self.certificate = Some(input);
             self
         }
         /// <p>A CA certificate for an Amazon Web Services account.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn set_certificate(
             mut self,
             input: std::option::Option<crate::model::Certificate>,
@@ -7241,6 +7455,86 @@ impl DescribeCertificatesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeBlueGreenDeploymentsOutput {
+    /// <p>Contains a list of blue/green deployments for the user.</p>
+    #[doc(hidden)]
+    pub blue_green_deployments:
+        std::option::Option<std::vec::Vec<crate::model::BlueGreenDeployment>>,
+    /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
+    #[doc(hidden)]
+    pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeBlueGreenDeploymentsOutput {
+    /// <p>Contains a list of blue/green deployments for the user.</p>
+    pub fn blue_green_deployments(
+        &self,
+    ) -> std::option::Option<&[crate::model::BlueGreenDeployment]> {
+        self.blue_green_deployments.as_deref()
+    }
+    /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
+/// See [`DescribeBlueGreenDeploymentsOutput`](crate::output::DescribeBlueGreenDeploymentsOutput).
+pub mod describe_blue_green_deployments_output {
+
+    /// A builder for [`DescribeBlueGreenDeploymentsOutput`](crate::output::DescribeBlueGreenDeploymentsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blue_green_deployments:
+            std::option::Option<std::vec::Vec<crate::model::BlueGreenDeployment>>,
+        pub(crate) marker: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `blue_green_deployments`.
+        ///
+        /// To override the contents of this collection use [`set_blue_green_deployments`](Self::set_blue_green_deployments).
+        ///
+        /// <p>Contains a list of blue/green deployments for the user.</p>
+        pub fn blue_green_deployments(mut self, input: crate::model::BlueGreenDeployment) -> Self {
+            let mut v = self.blue_green_deployments.unwrap_or_default();
+            v.push(input);
+            self.blue_green_deployments = Some(v);
+            self
+        }
+        /// <p>Contains a list of blue/green deployments for the user.</p>
+        pub fn set_blue_green_deployments(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BlueGreenDeployment>>,
+        ) -> Self {
+            self.blue_green_deployments = input;
+            self
+        }
+        /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeBlueGreenDeploymentsOutput`](crate::output::DescribeBlueGreenDeploymentsOutput).
+        pub fn build(self) -> crate::output::DescribeBlueGreenDeploymentsOutput {
+            crate::output::DescribeBlueGreenDeploymentsOutput {
+                blue_green_deployments: self.blue_green_deployments,
+                marker: self.marker,
+            }
+        }
+    }
+}
+impl DescribeBlueGreenDeploymentsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBlueGreenDeploymentsOutput`](crate::output::DescribeBlueGreenDeploymentsOutput).
+    pub fn builder() -> crate::output::describe_blue_green_deployments_output::Builder {
+        crate::output::describe_blue_green_deployments_output::Builder::default()
+    }
+}
+
 /// <p>Data returned by the <b>DescribeAccountAttributes</b> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8224,6 +8518,12 @@ pub struct DeleteCustomDbEngineVersionOutput {
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     #[doc(hidden)]
     pub default_character_set: std::option::Option<crate::model::CharacterSet>,
+    /// <p>The EC2 image</p>
+    #[doc(hidden)]
+    pub image: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
+    /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+    #[doc(hidden)]
+    pub db_engine_media_type: std::option::Option<std::string::String>,
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     #[doc(hidden)]
     pub supported_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
@@ -8295,6 +8595,17 @@ pub struct DeleteCustomDbEngineVersionOutput {
     /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     #[doc(hidden)]
     pub supports_babelfish: bool,
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+    #[doc(hidden)]
+    pub custom_db_engine_version_manifest: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    #[doc(hidden)]
+    pub supports_certificate_rotation_without_restart: std::option::Option<bool>,
+    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    #[doc(hidden)]
+    pub supported_ca_certificate_identifiers:
+        std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteCustomDbEngineVersionOutput {
     /// <p>The name of the database engine.</p>
@@ -8320,6 +8631,14 @@ impl DeleteCustomDbEngineVersionOutput {
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     pub fn default_character_set(&self) -> std::option::Option<&crate::model::CharacterSet> {
         self.default_character_set.as_ref()
+    }
+    /// <p>The EC2 image</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::CustomDbEngineVersionAmi> {
+        self.image.as_ref()
+    }
+    /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+    pub fn db_engine_media_type(&self) -> std::option::Option<&str> {
+        self.db_engine_media_type.as_deref()
     }
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     pub fn supported_character_sets(&self) -> std::option::Option<&[crate::model::CharacterSet]> {
@@ -8413,6 +8732,21 @@ impl DeleteCustomDbEngineVersionOutput {
     pub fn supports_babelfish(&self) -> bool {
         self.supports_babelfish
     }
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+    pub fn custom_db_engine_version_manifest(&self) -> std::option::Option<&str> {
+        self.custom_db_engine_version_manifest.as_deref()
+    }
+    /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    pub fn supports_certificate_rotation_without_restart(&self) -> std::option::Option<bool> {
+        self.supports_certificate_rotation_without_restart
+    }
+    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn supported_ca_certificate_identifiers(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.supported_ca_certificate_identifiers.as_deref()
+    }
 }
 /// See [`DeleteCustomDbEngineVersionOutput`](crate::output::DeleteCustomDbEngineVersionOutput).
 pub mod delete_custom_db_engine_version_output {
@@ -8426,6 +8760,8 @@ pub mod delete_custom_db_engine_version_output {
         pub(crate) db_engine_description: std::option::Option<std::string::String>,
         pub(crate) db_engine_version_description: std::option::Option<std::string::String>,
         pub(crate) default_character_set: std::option::Option<crate::model::CharacterSet>,
+        pub(crate) image: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
+        pub(crate) db_engine_media_type: std::option::Option<std::string::String>,
         pub(crate) supported_character_sets:
             std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
         pub(crate) supported_nchar_character_sets:
@@ -8450,6 +8786,10 @@ pub mod delete_custom_db_engine_version_output {
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) supports_babelfish: std::option::Option<bool>,
+        pub(crate) custom_db_engine_version_manifest: std::option::Option<std::string::String>,
+        pub(crate) supports_certificate_rotation_without_restart: std::option::Option<bool>,
+        pub(crate) supported_ca_certificate_identifiers:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the database engine.</p>
@@ -8528,6 +8868,32 @@ pub mod delete_custom_db_engine_version_output {
             input: std::option::Option<crate::model::CharacterSet>,
         ) -> Self {
             self.default_character_set = input;
+            self
+        }
+        /// <p>The EC2 image</p>
+        pub fn image(mut self, input: crate::model::CustomDbEngineVersionAmi) -> Self {
+            self.image = Some(input);
+            self
+        }
+        /// <p>The EC2 image</p>
+        pub fn set_image(
+            mut self,
+            input: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
+        ) -> Self {
+            self.image = input;
+            self
+        }
+        /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+        pub fn db_engine_media_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_engine_media_type = Some(input.into());
+            self
+        }
+        /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+        pub fn set_db_engine_media_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_engine_media_type = input;
             self
         }
         /// Appends an item to `supported_character_sets`.
@@ -8846,6 +9212,61 @@ pub mod delete_custom_db_engine_version_output {
             self.supports_babelfish = input;
             self
         }
+        /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+        pub fn custom_db_engine_version_manifest(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.custom_db_engine_version_manifest = Some(input.into());
+            self
+        }
+        /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+        pub fn set_custom_db_engine_version_manifest(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_db_engine_version_manifest = input;
+            self
+        }
+        /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+        pub fn supports_certificate_rotation_without_restart(mut self, input: bool) -> Self {
+            self.supports_certificate_rotation_without_restart = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+        pub fn set_supports_certificate_rotation_without_restart(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.supports_certificate_rotation_without_restart = input;
+            self
+        }
+        /// Appends an item to `supported_ca_certificate_identifiers`.
+        ///
+        /// To override the contents of this collection use [`set_supported_ca_certificate_identifiers`](Self::set_supported_ca_certificate_identifiers).
+        ///
+        /// <p>A list of the supported CA certificate identifiers.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn supported_ca_certificate_identifiers(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self
+                .supported_ca_certificate_identifiers
+                .unwrap_or_default();
+            v.push(input.into());
+            self.supported_ca_certificate_identifiers = Some(v);
+            self
+        }
+        /// <p>A list of the supported CA certificate identifiers.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_supported_ca_certificate_identifiers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_ca_certificate_identifiers = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteCustomDbEngineVersionOutput`](crate::output::DeleteCustomDbEngineVersionOutput).
         pub fn build(self) -> crate::output::DeleteCustomDbEngineVersionOutput {
             crate::output::DeleteCustomDbEngineVersionOutput {
@@ -8855,6 +9276,8 @@ pub mod delete_custom_db_engine_version_output {
                 db_engine_description: self.db_engine_description,
                 db_engine_version_description: self.db_engine_version_description,
                 default_character_set: self.default_character_set,
+                image: self.image,
+                db_engine_media_type: self.db_engine_media_type,
                 supported_character_sets: self.supported_character_sets,
                 supported_nchar_character_sets: self.supported_nchar_character_sets,
                 valid_upgrade_target: self.valid_upgrade_target,
@@ -8878,6 +9301,10 @@ pub mod delete_custom_db_engine_version_output {
                 create_time: self.create_time,
                 tag_list: self.tag_list,
                 supports_babelfish: self.supports_babelfish.unwrap_or_default(),
+                custom_db_engine_version_manifest: self.custom_db_engine_version_manifest,
+                supports_certificate_rotation_without_restart: self
+                    .supports_certificate_rotation_without_restart,
+                supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
             }
         }
     }
@@ -8886,6 +9313,61 @@ impl DeleteCustomDbEngineVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomDbEngineVersionOutput`](crate::output::DeleteCustomDbEngineVersionOutput).
     pub fn builder() -> crate::output::delete_custom_db_engine_version_output::Builder {
         crate::output::delete_custom_db_engine_version_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteBlueGreenDeploymentOutput {
+    /// <p>Contains the details about a blue/green deployment.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    #[doc(hidden)]
+    pub blue_green_deployment: std::option::Option<crate::model::BlueGreenDeployment>,
+}
+impl DeleteBlueGreenDeploymentOutput {
+    /// <p>Contains the details about a blue/green deployment.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn blue_green_deployment(&self) -> std::option::Option<&crate::model::BlueGreenDeployment> {
+        self.blue_green_deployment.as_ref()
+    }
+}
+/// See [`DeleteBlueGreenDeploymentOutput`](crate::output::DeleteBlueGreenDeploymentOutput).
+pub mod delete_blue_green_deployment_output {
+
+    /// A builder for [`DeleteBlueGreenDeploymentOutput`](crate::output::DeleteBlueGreenDeploymentOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blue_green_deployment: std::option::Option<crate::model::BlueGreenDeployment>,
+    }
+    impl Builder {
+        /// <p>Contains the details about a blue/green deployment.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn blue_green_deployment(mut self, input: crate::model::BlueGreenDeployment) -> Self {
+            self.blue_green_deployment = Some(input);
+            self
+        }
+        /// <p>Contains the details about a blue/green deployment.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_blue_green_deployment(
+            mut self,
+            input: std::option::Option<crate::model::BlueGreenDeployment>,
+        ) -> Self {
+            self.blue_green_deployment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteBlueGreenDeploymentOutput`](crate::output::DeleteBlueGreenDeploymentOutput).
+        pub fn build(self) -> crate::output::DeleteBlueGreenDeploymentOutput {
+            crate::output::DeleteBlueGreenDeploymentOutput {
+                blue_green_deployment: self.blue_green_deployment,
+            }
+        }
+    }
+}
+impl DeleteBlueGreenDeploymentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBlueGreenDeploymentOutput`](crate::output::DeleteBlueGreenDeploymentOutput).
+    pub fn builder() -> crate::output::delete_blue_green_deployment_output::Builder {
+        crate::output::delete_blue_green_deployment_output::Builder::default()
     }
 }
 
@@ -9946,6 +10428,12 @@ pub struct CreateCustomDbEngineVersionOutput {
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     #[doc(hidden)]
     pub default_character_set: std::option::Option<crate::model::CharacterSet>,
+    /// <p>The EC2 image</p>
+    #[doc(hidden)]
+    pub image: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
+    /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+    #[doc(hidden)]
+    pub db_engine_media_type: std::option::Option<std::string::String>,
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     #[doc(hidden)]
     pub supported_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
@@ -10017,6 +10505,17 @@ pub struct CreateCustomDbEngineVersionOutput {
     /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     #[doc(hidden)]
     pub supports_babelfish: bool,
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+    #[doc(hidden)]
+    pub custom_db_engine_version_manifest: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    #[doc(hidden)]
+    pub supports_certificate_rotation_without_restart: std::option::Option<bool>,
+    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    #[doc(hidden)]
+    pub supported_ca_certificate_identifiers:
+        std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateCustomDbEngineVersionOutput {
     /// <p>The name of the database engine.</p>
@@ -10042,6 +10541,14 @@ impl CreateCustomDbEngineVersionOutput {
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     pub fn default_character_set(&self) -> std::option::Option<&crate::model::CharacterSet> {
         self.default_character_set.as_ref()
+    }
+    /// <p>The EC2 image</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::CustomDbEngineVersionAmi> {
+        self.image.as_ref()
+    }
+    /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+    pub fn db_engine_media_type(&self) -> std::option::Option<&str> {
+        self.db_engine_media_type.as_deref()
     }
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     pub fn supported_character_sets(&self) -> std::option::Option<&[crate::model::CharacterSet]> {
@@ -10135,6 +10642,21 @@ impl CreateCustomDbEngineVersionOutput {
     pub fn supports_babelfish(&self) -> bool {
         self.supports_babelfish
     }
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+    pub fn custom_db_engine_version_manifest(&self) -> std::option::Option<&str> {
+        self.custom_db_engine_version_manifest.as_deref()
+    }
+    /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    pub fn supports_certificate_rotation_without_restart(&self) -> std::option::Option<bool> {
+        self.supports_certificate_rotation_without_restart
+    }
+    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn supported_ca_certificate_identifiers(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.supported_ca_certificate_identifiers.as_deref()
+    }
 }
 /// See [`CreateCustomDbEngineVersionOutput`](crate::output::CreateCustomDbEngineVersionOutput).
 pub mod create_custom_db_engine_version_output {
@@ -10148,6 +10670,8 @@ pub mod create_custom_db_engine_version_output {
         pub(crate) db_engine_description: std::option::Option<std::string::String>,
         pub(crate) db_engine_version_description: std::option::Option<std::string::String>,
         pub(crate) default_character_set: std::option::Option<crate::model::CharacterSet>,
+        pub(crate) image: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
+        pub(crate) db_engine_media_type: std::option::Option<std::string::String>,
         pub(crate) supported_character_sets:
             std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
         pub(crate) supported_nchar_character_sets:
@@ -10172,6 +10696,10 @@ pub mod create_custom_db_engine_version_output {
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) supports_babelfish: std::option::Option<bool>,
+        pub(crate) custom_db_engine_version_manifest: std::option::Option<std::string::String>,
+        pub(crate) supports_certificate_rotation_without_restart: std::option::Option<bool>,
+        pub(crate) supported_ca_certificate_identifiers:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the database engine.</p>
@@ -10250,6 +10778,32 @@ pub mod create_custom_db_engine_version_output {
             input: std::option::Option<crate::model::CharacterSet>,
         ) -> Self {
             self.default_character_set = input;
+            self
+        }
+        /// <p>The EC2 image</p>
+        pub fn image(mut self, input: crate::model::CustomDbEngineVersionAmi) -> Self {
+            self.image = Some(input);
+            self
+        }
+        /// <p>The EC2 image</p>
+        pub fn set_image(
+            mut self,
+            input: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
+        ) -> Self {
+            self.image = input;
+            self
+        }
+        /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+        pub fn db_engine_media_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_engine_media_type = Some(input.into());
+            self
+        }
+        /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+        pub fn set_db_engine_media_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_engine_media_type = input;
             self
         }
         /// Appends an item to `supported_character_sets`.
@@ -10568,6 +11122,61 @@ pub mod create_custom_db_engine_version_output {
             self.supports_babelfish = input;
             self
         }
+        /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+        pub fn custom_db_engine_version_manifest(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.custom_db_engine_version_manifest = Some(input.into());
+            self
+        }
+        /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+        pub fn set_custom_db_engine_version_manifest(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_db_engine_version_manifest = input;
+            self
+        }
+        /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+        pub fn supports_certificate_rotation_without_restart(mut self, input: bool) -> Self {
+            self.supports_certificate_rotation_without_restart = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+        pub fn set_supports_certificate_rotation_without_restart(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.supports_certificate_rotation_without_restart = input;
+            self
+        }
+        /// Appends an item to `supported_ca_certificate_identifiers`.
+        ///
+        /// To override the contents of this collection use [`set_supported_ca_certificate_identifiers`](Self::set_supported_ca_certificate_identifiers).
+        ///
+        /// <p>A list of the supported CA certificate identifiers.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn supported_ca_certificate_identifiers(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self
+                .supported_ca_certificate_identifiers
+                .unwrap_or_default();
+            v.push(input.into());
+            self.supported_ca_certificate_identifiers = Some(v);
+            self
+        }
+        /// <p>A list of the supported CA certificate identifiers.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_supported_ca_certificate_identifiers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_ca_certificate_identifiers = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateCustomDbEngineVersionOutput`](crate::output::CreateCustomDbEngineVersionOutput).
         pub fn build(self) -> crate::output::CreateCustomDbEngineVersionOutput {
             crate::output::CreateCustomDbEngineVersionOutput {
@@ -10577,6 +11186,8 @@ pub mod create_custom_db_engine_version_output {
                 db_engine_description: self.db_engine_description,
                 db_engine_version_description: self.db_engine_version_description,
                 default_character_set: self.default_character_set,
+                image: self.image,
+                db_engine_media_type: self.db_engine_media_type,
                 supported_character_sets: self.supported_character_sets,
                 supported_nchar_character_sets: self.supported_nchar_character_sets,
                 valid_upgrade_target: self.valid_upgrade_target,
@@ -10600,6 +11211,10 @@ pub mod create_custom_db_engine_version_output {
                 create_time: self.create_time,
                 tag_list: self.tag_list,
                 supports_babelfish: self.supports_babelfish.unwrap_or_default(),
+                custom_db_engine_version_manifest: self.custom_db_engine_version_manifest,
+                supports_certificate_rotation_without_restart: self
+                    .supports_certificate_rotation_without_restart,
+                supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
             }
         }
     }
@@ -10608,6 +11223,61 @@ impl CreateCustomDbEngineVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomDbEngineVersionOutput`](crate::output::CreateCustomDbEngineVersionOutput).
     pub fn builder() -> crate::output::create_custom_db_engine_version_output::Builder {
         crate::output::create_custom_db_engine_version_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateBlueGreenDeploymentOutput {
+    /// <p>Contains the details about a blue/green deployment.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    #[doc(hidden)]
+    pub blue_green_deployment: std::option::Option<crate::model::BlueGreenDeployment>,
+}
+impl CreateBlueGreenDeploymentOutput {
+    /// <p>Contains the details about a blue/green deployment.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn blue_green_deployment(&self) -> std::option::Option<&crate::model::BlueGreenDeployment> {
+        self.blue_green_deployment.as_ref()
+    }
+}
+/// See [`CreateBlueGreenDeploymentOutput`](crate::output::CreateBlueGreenDeploymentOutput).
+pub mod create_blue_green_deployment_output {
+
+    /// A builder for [`CreateBlueGreenDeploymentOutput`](crate::output::CreateBlueGreenDeploymentOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blue_green_deployment: std::option::Option<crate::model::BlueGreenDeployment>,
+    }
+    impl Builder {
+        /// <p>Contains the details about a blue/green deployment.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn blue_green_deployment(mut self, input: crate::model::BlueGreenDeployment) -> Self {
+            self.blue_green_deployment = Some(input);
+            self
+        }
+        /// <p>Contains the details about a blue/green deployment.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_blue_green_deployment(
+            mut self,
+            input: std::option::Option<crate::model::BlueGreenDeployment>,
+        ) -> Self {
+            self.blue_green_deployment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateBlueGreenDeploymentOutput`](crate::output::CreateBlueGreenDeploymentOutput).
+        pub fn build(self) -> crate::output::CreateBlueGreenDeploymentOutput {
+            crate::output::CreateBlueGreenDeploymentOutput {
+                blue_green_deployment: self.blue_green_deployment,
+            }
+        }
+    }
+}
+impl CreateBlueGreenDeploymentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBlueGreenDeploymentOutput`](crate::output::CreateBlueGreenDeploymentOutput).
+    pub fn builder() -> crate::output::create_blue_green_deployment_output::Builder {
+        crate::output::create_blue_green_deployment_output::Builder::default()
     }
 }
 
@@ -10944,6 +11614,9 @@ pub struct CancelExportTaskOutput {
     /// <p>A warning about the snapshot export task.</p>
     #[doc(hidden)]
     pub warning_message: std::option::Option<std::string::String>,
+    /// <p>The type of source for the export.</p>
+    #[doc(hidden)]
+    pub source_type: std::option::Option<crate::model::ExportSourceType>,
 }
 impl CancelExportTaskOutput {
     /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
@@ -11012,6 +11685,10 @@ impl CancelExportTaskOutput {
     pub fn warning_message(&self) -> std::option::Option<&str> {
         self.warning_message.as_deref()
     }
+    /// <p>The type of source for the export.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::ExportSourceType> {
+        self.source_type.as_ref()
+    }
 }
 /// See [`CancelExportTaskOutput`](crate::output::CancelExportTaskOutput).
 pub mod cancel_export_task_output {
@@ -11034,6 +11711,7 @@ pub mod cancel_export_task_output {
         pub(crate) total_extracted_data_in_gb: std::option::Option<i32>,
         pub(crate) failure_cause: std::option::Option<std::string::String>,
         pub(crate) warning_message: std::option::Option<std::string::String>,
+        pub(crate) source_type: std::option::Option<crate::model::ExportSourceType>,
     }
     impl Builder {
         /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
@@ -11225,6 +11903,19 @@ pub mod cancel_export_task_output {
             self.warning_message = input;
             self
         }
+        /// <p>The type of source for the export.</p>
+        pub fn source_type(mut self, input: crate::model::ExportSourceType) -> Self {
+            self.source_type = Some(input);
+            self
+        }
+        /// <p>The type of source for the export.</p>
+        pub fn set_source_type(
+            mut self,
+            input: std::option::Option<crate::model::ExportSourceType>,
+        ) -> Self {
+            self.source_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CancelExportTaskOutput`](crate::output::CancelExportTaskOutput).
         pub fn build(self) -> crate::output::CancelExportTaskOutput {
             crate::output::CancelExportTaskOutput {
@@ -11243,6 +11934,7 @@ pub mod cancel_export_task_output {
                 total_extracted_data_in_gb: self.total_extracted_data_in_gb.unwrap_or_default(),
                 failure_cause: self.failure_cause,
                 warning_message: self.warning_message,
+                source_type: self.source_type,
             }
         }
     }

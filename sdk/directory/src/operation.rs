@@ -1102,6 +1102,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrusts {
     }
 }
 
+/// Operation shape for `DescribeUpdateDirectory`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_update_directory`](crate::client::Client::describe_update_directory).
+///
+/// See [`crate::client::fluent_builders::DescribeUpdateDirectory`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeUpdateDirectory {
+    _private: (),
+}
+impl DescribeUpdateDirectory {
+    /// Creates a new builder-style object to manufacture [`DescribeUpdateDirectoryInput`](crate::input::DescribeUpdateDirectoryInput).
+    pub fn builder() -> crate::input::describe_update_directory_input::Builder {
+        crate::input::describe_update_directory_input::Builder::default()
+    }
+    /// Creates a new `DescribeUpdateDirectory` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeUpdateDirectory {
+    type Output = std::result::Result<
+        crate::output::DescribeUpdateDirectoryOutput,
+        crate::error::DescribeUpdateDirectoryError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_update_directory_error(response)
+        } else {
+            crate::operation_deser::parse_describe_update_directory_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DisableClientAuthentication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1995,6 +2029,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConditionalForward
             crate::operation_deser::parse_update_conditional_forwarder_error(response)
         } else {
             crate::operation_deser::parse_update_conditional_forwarder_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateDirectorySetup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_directory_setup`](crate::client::Client::update_directory_setup).
+///
+/// See [`crate::client::fluent_builders::UpdateDirectorySetup`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateDirectorySetup {
+    _private: (),
+}
+impl UpdateDirectorySetup {
+    /// Creates a new builder-style object to manufacture [`UpdateDirectorySetupInput`](crate::input::UpdateDirectorySetupInput).
+    pub fn builder() -> crate::input::update_directory_setup_input::Builder {
+        crate::input::update_directory_setup_input::Builder::default()
+    }
+    /// Creates a new `UpdateDirectorySetup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateDirectorySetup {
+    type Output = std::result::Result<
+        crate::output::UpdateDirectorySetupOutput,
+        crate::error::UpdateDirectorySetupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_directory_setup_error(response)
+        } else {
+            crate::operation_deser::parse_update_directory_setup_response(response)
         }
     }
 }

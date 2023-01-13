@@ -742,6 +742,8 @@ pub mod create_profile_input {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) party_type_string: std::option::Option<std::string::String>,
+        pub(crate) gender_string: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique name of the domain.</p>
@@ -1018,6 +1020,32 @@ pub mod create_profile_input {
             self.attributes = input;
             self
         }
+        /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
+        pub fn party_type_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.party_type_string = Some(input.into());
+            self
+        }
+        /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
+        pub fn set_party_type_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.party_type_string = input;
+            self
+        }
+        /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+        pub fn gender_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.gender_string = Some(input.into());
+            self
+        }
+        /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+        pub fn set_gender_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.gender_string = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateProfileInput`](crate::input::CreateProfileInput).
         pub fn build(
             self,
@@ -1046,6 +1074,8 @@ pub mod create_profile_input {
                 mailing_address: self.mailing_address,
                 billing_address: self.billing_address,
                 attributes: self.attributes,
+                party_type_string: self.party_type_string,
+                gender_string: self.gender_string,
             })
         }
     }
@@ -7003,6 +7033,9 @@ pub mod search_profiles_input {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) key_name: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) additional_search_keys:
+            std::option::Option<std::vec::Vec<crate::model::AdditionalSearchKey>>,
+        pub(crate) logical_operator: std::option::Option<crate::model::LogicalOperator>,
     }
     impl Builder {
         /// <p>The pagination token from the previous SearchProfiles API call.</p>
@@ -7016,11 +7049,13 @@ pub mod search_profiles_input {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
+        /// <p>The default is 20 if this parameter is not included in the request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
+        /// <p>The default is 20 if this parameter is not included in the request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7064,6 +7099,50 @@ pub mod search_profiles_input {
             self.values = input;
             self
         }
+        /// Appends an item to `additional_search_keys`.
+        ///
+        /// To override the contents of this collection use [`set_additional_search_keys`](Self::set_additional_search_keys).
+        ///
+        /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
+        pub fn additional_search_keys(mut self, input: crate::model::AdditionalSearchKey) -> Self {
+            let mut v = self.additional_search_keys.unwrap_or_default();
+            v.push(input);
+            self.additional_search_keys = Some(v);
+            self
+        }
+        /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
+        pub fn set_additional_search_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AdditionalSearchKey>>,
+        ) -> Self {
+            self.additional_search_keys = input;
+            self
+        }
+        /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
+        /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
+        /// <ul>
+        /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+        /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
+        /// </ul>
+        /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
+        pub fn logical_operator(mut self, input: crate::model::LogicalOperator) -> Self {
+            self.logical_operator = Some(input);
+            self
+        }
+        /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
+        /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
+        /// <ul>
+        /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+        /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
+        /// </ul>
+        /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
+        pub fn set_logical_operator(
+            mut self,
+            input: std::option::Option<crate::model::LogicalOperator>,
+        ) -> Self {
+            self.logical_operator = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchProfilesInput`](crate::input::SearchProfilesInput).
         pub fn build(
             self,
@@ -7075,6 +7154,8 @@ pub mod search_profiles_input {
                 domain_name: self.domain_name,
                 key_name: self.key_name,
                 values: self.values,
+                additional_search_keys: self.additional_search_keys,
+                logical_operator: self.logical_operator,
             })
         }
     }
@@ -7887,6 +7968,8 @@ pub mod update_profile_input {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) party_type_string: std::option::Option<std::string::String>,
+        pub(crate) gender_string: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique name of the domain.</p>
@@ -8176,6 +8259,32 @@ pub mod update_profile_input {
             self.attributes = input;
             self
         }
+        /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
+        pub fn party_type_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.party_type_string = Some(input.into());
+            self
+        }
+        /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
+        pub fn set_party_type_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.party_type_string = input;
+            self
+        }
+        /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+        pub fn gender_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.gender_string = Some(input.into());
+            self
+        }
+        /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+        pub fn set_gender_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.gender_string = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::input::UpdateProfileInput).
         pub fn build(
             self,
@@ -8205,6 +8314,8 @@ pub mod update_profile_input {
                 mailing_address: self.mailing_address,
                 billing_address: self.billing_address,
                 attributes: self.attributes,
+                party_type_string: self.party_type_string,
+                gender_string: self.gender_string,
             })
         }
     }
@@ -8417,6 +8528,12 @@ pub struct UpdateProfileInput {
     #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
+    #[doc(hidden)]
+    pub party_type_string: std::option::Option<std::string::String>,
+    /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+    #[doc(hidden)]
+    pub gender_string: std::option::Option<std::string::String>,
 }
 impl UpdateProfileInput {
     /// <p>The unique name of the domain.</p>
@@ -8513,6 +8630,14 @@ impl UpdateProfileInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
+    }
+    /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
+    pub fn party_type_string(&self) -> std::option::Option<&str> {
+        self.party_type_string.as_deref()
+    }
+    /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+    pub fn gender_string(&self) -> std::option::Option<&str> {
+        self.gender_string.as_deref()
     }
 }
 
@@ -8628,6 +8753,7 @@ pub struct SearchProfilesInput {
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
+    /// <p>The default is 20 if this parameter is not included in the request.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The unique name of the domain.</p>
@@ -8639,6 +8765,19 @@ pub struct SearchProfilesInput {
     /// <p>A list of key values.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
+    #[doc(hidden)]
+    pub additional_search_keys:
+        std::option::Option<std::vec::Vec<crate::model::AdditionalSearchKey>>,
+    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
+    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
+    /// <ul>
+    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
+    /// </ul>
+    /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
+    #[doc(hidden)]
+    pub logical_operator: std::option::Option<crate::model::LogicalOperator>,
 }
 impl SearchProfilesInput {
     /// <p>The pagination token from the previous SearchProfiles API call.</p>
@@ -8646,6 +8785,7 @@ impl SearchProfilesInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects returned per page.</p>
+    /// <p>The default is 20 if this parameter is not included in the request.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8660,6 +8800,22 @@ impl SearchProfilesInput {
     /// <p>A list of key values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
+    }
+    /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
+    pub fn additional_search_keys(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdditionalSearchKey]> {
+        self.additional_search_keys.as_deref()
+    }
+    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
+    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
+    /// <ul>
+    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
+    /// </ul>
+    /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
+    pub fn logical_operator(&self) -> std::option::Option<&crate::model::LogicalOperator> {
+        self.logical_operator.as_ref()
     }
 }
 
@@ -9650,6 +9806,12 @@ pub struct CreateProfileInput {
     #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
+    #[doc(hidden)]
+    pub party_type_string: std::option::Option<std::string::String>,
+    /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+    #[doc(hidden)]
+    pub gender_string: std::option::Option<std::string::String>,
 }
 impl CreateProfileInput {
     /// <p>The unique name of the domain.</p>
@@ -9742,6 +9904,14 @@ impl CreateProfileInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
+    }
+    /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
+    pub fn party_type_string(&self) -> std::option::Option<&str> {
+        self.party_type_string.as_deref()
+    }
+    /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+    pub fn gender_string(&self) -> std::option::Option<&str> {
+        self.gender_string.as_deref()
     }
 }
 

@@ -1178,6 +1178,7 @@ impl AsRef<str> for PatchFilterKey {
 /// match operatingsystem {
 ///     OperatingSystem::AmazonLinux => { /* ... */ },
 ///     OperatingSystem::AmazonLinux2 => { /* ... */ },
+///     OperatingSystem::AmazonLinux2022 => { /* ... */ },
 ///     OperatingSystem::CentOs => { /* ... */ },
 ///     OperatingSystem::Debian => { /* ... */ },
 ///     OperatingSystem::MacOs => { /* ... */ },
@@ -1226,6 +1227,8 @@ pub enum OperatingSystem {
     #[allow(missing_docs)] // documentation missing in model
     AmazonLinux2,
     #[allow(missing_docs)] // documentation missing in model
+    AmazonLinux2022,
+    #[allow(missing_docs)] // documentation missing in model
     CentOs,
     #[allow(missing_docs)] // documentation missing in model
     Debian,
@@ -1253,6 +1256,7 @@ impl std::convert::From<&str> for OperatingSystem {
         match s {
             "AMAZON_LINUX" => OperatingSystem::AmazonLinux,
             "AMAZON_LINUX_2" => OperatingSystem::AmazonLinux2,
+            "AMAZON_LINUX_2022" => OperatingSystem::AmazonLinux2022,
             "CENTOS" => OperatingSystem::CentOs,
             "DEBIAN" => OperatingSystem::Debian,
             "MACOS" => OperatingSystem::MacOs,
@@ -1280,6 +1284,7 @@ impl OperatingSystem {
         match self {
             OperatingSystem::AmazonLinux => "AMAZON_LINUX",
             OperatingSystem::AmazonLinux2 => "AMAZON_LINUX_2",
+            OperatingSystem::AmazonLinux2022 => "AMAZON_LINUX_2022",
             OperatingSystem::CentOs => "CENTOS",
             OperatingSystem::Debian => "DEBIAN",
             OperatingSystem::MacOs => "MACOS",
@@ -1298,6 +1303,7 @@ impl OperatingSystem {
         &[
             "AMAZON_LINUX",
             "AMAZON_LINUX_2",
+            "AMAZON_LINUX_2022",
             "CENTOS",
             "DEBIAN",
             "MACOS",
@@ -2032,7 +2038,7 @@ impl AsRef<str> for MaintenanceWindowTaskCutoffBehavior {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingInfo {
-    /// <p>The name of an S3 bucket where execution logs are stored .</p>
+    /// <p>The name of an S3 bucket where execution logs are stored.</p>
     #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>(Optional) The S3 bucket subfolder. </p>
@@ -2043,7 +2049,7 @@ pub struct LoggingInfo {
     pub s3_region: std::option::Option<std::string::String>,
 }
 impl LoggingInfo {
-    /// <p>The name of an S3 bucket where execution logs are stored .</p>
+    /// <p>The name of an S3 bucket where execution logs are stored.</p>
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
@@ -2067,12 +2073,12 @@ pub mod logging_info {
         pub(crate) s3_region: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of an S3 bucket where execution logs are stored .</p>
+        /// <p>The name of an S3 bucket where execution logs are stored.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
             self
         }
-        /// <p>The name of an S3 bucket where execution logs are stored .</p>
+        /// <p>The name of an S3 bucket where execution logs are stored.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4965,6 +4971,12 @@ pub struct DocumentRequires {
     /// <p>The document version required by the current document.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
+    /// <p>The document type of the required SSM document.</p>
+    #[doc(hidden)]
+    pub require_type: std::option::Option<std::string::String>,
+    /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    #[doc(hidden)]
+    pub version_name: std::option::Option<std::string::String>,
 }
 impl DocumentRequires {
     /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
@@ -4975,6 +4987,14 @@ impl DocumentRequires {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
+    /// <p>The document type of the required SSM document.</p>
+    pub fn require_type(&self) -> std::option::Option<&str> {
+        self.require_type.as_deref()
+    }
+    /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
 }
 /// See [`DocumentRequires`](crate::model::DocumentRequires).
 pub mod document_requires {
@@ -4984,6 +5004,8 @@ pub mod document_requires {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
+        pub(crate) require_type: std::option::Option<std::string::String>,
+        pub(crate) version_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
@@ -5006,11 +5028,33 @@ pub mod document_requires {
             self.version = input;
             self
         }
+        /// <p>The document type of the required SSM document.</p>
+        pub fn require_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.require_type = Some(input.into());
+            self
+        }
+        /// <p>The document type of the required SSM document.</p>
+        pub fn set_require_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.require_type = input;
+            self
+        }
+        /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_name = Some(input.into());
+            self
+        }
+        /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+        pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DocumentRequires`](crate::model::DocumentRequires).
         pub fn build(self) -> crate::model::DocumentRequires {
             crate::model::DocumentRequires {
                 name: self.name,
                 version: self.version,
+                require_type: self.require_type,
+                version_name: self.version_name,
             }
         }
     }
@@ -5255,6 +5299,7 @@ impl AsRef<str> for DocumentFormat {
 ///     DocumentType::Policy => { /* ... */ },
 ///     DocumentType::ProblemAnalysis => { /* ... */ },
 ///     DocumentType::ProblemAnalysisTemplate => { /* ... */ },
+///     DocumentType::QuickSetup => { /* ... */ },
 ///     DocumentType::Session => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -5316,6 +5361,8 @@ pub enum DocumentType {
     #[allow(missing_docs)] // documentation missing in model
     ProblemAnalysisTemplate,
     #[allow(missing_docs)] // documentation missing in model
+    QuickSetup,
+    #[allow(missing_docs)] // documentation missing in model
     Session,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
@@ -5336,6 +5383,7 @@ impl std::convert::From<&str> for DocumentType {
             "Policy" => DocumentType::Policy,
             "ProblemAnalysis" => DocumentType::ProblemAnalysis,
             "ProblemAnalysisTemplate" => DocumentType::ProblemAnalysisTemplate,
+            "QuickSetup" => DocumentType::QuickSetup,
             "Session" => DocumentType::Session,
             other => DocumentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
@@ -5365,6 +5413,7 @@ impl DocumentType {
             DocumentType::Policy => "Policy",
             DocumentType::ProblemAnalysis => "ProblemAnalysis",
             DocumentType::ProblemAnalysisTemplate => "ProblemAnalysisTemplate",
+            DocumentType::QuickSetup => "QuickSetup",
             DocumentType::Session => "Session",
             DocumentType::Unknown(value) => value.as_str(),
         }
@@ -5385,6 +5434,7 @@ impl DocumentType {
             "Policy",
             "ProblemAnalysis",
             "ProblemAnalysisTemplate",
+            "QuickSetup",
             "Session",
         ]
     }
@@ -7023,6 +7073,9 @@ pub struct TargetLocation {
     /// <p>The Automation execution role used by the currently running Automation. If not specified, the default value is <code>AWS-SystemsManager-AutomationExecutionRole</code>.</p>
     #[doc(hidden)]
     pub execution_role_name: std::option::Option<std::string::String>,
+    /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+    #[doc(hidden)]
+    pub target_location_alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
 }
 impl TargetLocation {
     /// <p>The Amazon Web Services accounts targeted by the current Automation execution.</p>
@@ -7045,6 +7098,12 @@ impl TargetLocation {
     pub fn execution_role_name(&self) -> std::option::Option<&str> {
         self.execution_role_name.as_deref()
     }
+    /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+    pub fn target_location_alarm_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.target_location_alarm_configuration.as_ref()
+    }
 }
 /// See [`TargetLocation`](crate::model::TargetLocation).
 pub mod target_location {
@@ -7057,6 +7116,8 @@ pub mod target_location {
         pub(crate) target_location_max_concurrency: std::option::Option<std::string::String>,
         pub(crate) target_location_max_errors: std::option::Option<std::string::String>,
         pub(crate) execution_role_name: std::option::Option<std::string::String>,
+        pub(crate) target_location_alarm_configuration:
+            std::option::Option<crate::model::AlarmConfiguration>,
     }
     impl Builder {
         /// Appends an item to `accounts`.
@@ -7139,6 +7200,22 @@ pub mod target_location {
             self.execution_role_name = input;
             self
         }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn target_location_alarm_configuration(
+            mut self,
+            input: crate::model::AlarmConfiguration,
+        ) -> Self {
+            self.target_location_alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn set_target_location_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.target_location_alarm_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TargetLocation`](crate::model::TargetLocation).
         pub fn build(self) -> crate::model::TargetLocation {
             crate::model::TargetLocation {
@@ -7147,6 +7224,7 @@ pub mod target_location {
                 target_location_max_concurrency: self.target_location_max_concurrency,
                 target_location_max_errors: self.target_location_max_errors,
                 execution_role_name: self.execution_role_name,
+                target_location_alarm_configuration: self.target_location_alarm_configuration,
             }
         }
     }
@@ -17777,6 +17855,92 @@ impl AsRef<str> for AssociationFilterKey {
     }
 }
 
+/// <p>A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetResourcePoliciesResponseEntry {
+    /// <p>A policy ID.</p>
+    #[doc(hidden)]
+    pub policy_id: std::option::Option<std::string::String>,
+    /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
+    #[doc(hidden)]
+    pub policy_hash: std::option::Option<std::string::String>,
+    /// <p>A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
+    #[doc(hidden)]
+    pub policy: std::option::Option<std::string::String>,
+}
+impl GetResourcePoliciesResponseEntry {
+    /// <p>A policy ID.</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+    /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
+    pub fn policy_hash(&self) -> std::option::Option<&str> {
+        self.policy_hash.as_deref()
+    }
+    /// <p>A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
+/// See [`GetResourcePoliciesResponseEntry`](crate::model::GetResourcePoliciesResponseEntry).
+pub mod get_resource_policies_response_entry {
+
+    /// A builder for [`GetResourcePoliciesResponseEntry`](crate::model::GetResourcePoliciesResponseEntry).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy_id: std::option::Option<std::string::String>,
+        pub(crate) policy_hash: std::option::Option<std::string::String>,
+        pub(crate) policy: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A policy ID.</p>
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_id = Some(input.into());
+            self
+        }
+        /// <p>A policy ID.</p>
+        pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_id = input;
+            self
+        }
+        /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
+        pub fn policy_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_hash = Some(input.into());
+            self
+        }
+        /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
+        pub fn set_policy_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_hash = input;
+            self
+        }
+        /// <p>A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
+            self
+        }
+        /// <p>A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResourcePoliciesResponseEntry`](crate::model::GetResourcePoliciesResponseEntry).
+        pub fn build(self) -> crate::model::GetResourcePoliciesResponseEntry {
+            crate::model::GetResourcePoliciesResponseEntry {
+                policy_id: self.policy_id,
+                policy_hash: self.policy_hash,
+                policy: self.policy,
+            }
+        }
+    }
+}
+impl GetResourcePoliciesResponseEntry {
+    /// Creates a new builder-style object to manufacture [`GetResourcePoliciesResponseEntry`](crate::model::GetResourcePoliciesResponseEntry).
+    pub fn builder() -> crate::model::get_resource_policies_response_entry::Builder {
+        crate::model::get_resource_policies_response_entry::Builder::default()
+    }
+}
+
 /// <p>An Amazon Web Services Systems Manager parameter in Parameter Store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -19230,7 +19394,12 @@ pub struct OpsItem {
     /// <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
-    /// <p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+    /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
+    /// <ul>
+    /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+    /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub ops_item_type: std::option::Option<std::string::String>,
     /// <p>The date and time the OpsItem was created.</p>
@@ -19296,13 +19465,21 @@ pub struct OpsItem {
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     #[doc(hidden)]
     pub planned_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub ops_item_arn: std::option::Option<std::string::String>,
 }
 impl OpsItem {
     /// <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
-    /// <p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+    /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
+    /// <ul>
+    /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+    /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// </ul>
     pub fn ops_item_type(&self) -> std::option::Option<&str> {
         self.ops_item_type.as_deref()
     }
@@ -19390,6 +19567,10 @@ impl OpsItem {
     pub fn planned_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.planned_end_time.as_ref()
     }
+    /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+    pub fn ops_item_arn(&self) -> std::option::Option<&str> {
+        self.ops_item_arn.as_deref()
+    }
 }
 /// See [`OpsItem`](crate::model::OpsItem).
 pub mod ops_item {
@@ -19422,6 +19603,7 @@ pub mod ops_item {
         pub(crate) actual_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) planned_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) planned_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ops_item_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
@@ -19434,12 +19616,22 @@ pub mod ops_item {
             self.created_by = input;
             self
         }
-        /// <p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+        /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
+        /// <ul>
+        /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+        /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+        /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+        /// </ul>
         pub fn ops_item_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.ops_item_type = Some(input.into());
             self
         }
-        /// <p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+        /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
+        /// <ul>
+        /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+        /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+        /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+        /// </ul>
         pub fn set_ops_item_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19702,6 +19894,16 @@ pub mod ops_item {
             self.planned_end_time = input;
             self
         }
+        /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+        pub fn ops_item_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_arn = Some(input.into());
+            self
+        }
+        /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+        pub fn set_ops_item_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_item_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OpsItem`](crate::model::OpsItem).
         pub fn build(self) -> crate::model::OpsItem {
             crate::model::OpsItem {
@@ -19726,6 +19928,7 @@ pub mod ops_item {
                 actual_end_time: self.actual_end_time,
                 planned_start_time: self.planned_start_time,
                 planned_end_time: self.planned_end_time,
+                ops_item_arn: self.ops_item_arn,
             }
         }
     }
@@ -22486,6 +22689,9 @@ pub struct StepExecution {
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation execution.</p>
     #[doc(hidden)]
     pub target_location: std::option::Option<crate::model::TargetLocation>,
+    /// <p>The CloudWatch alarms that were invoked by the automation.</p>
+    #[doc(hidden)]
+    pub triggered_alarms: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
 }
 impl StepExecution {
     /// <p>The name of this execution step.</p>
@@ -22587,6 +22793,10 @@ impl StepExecution {
     pub fn target_location(&self) -> std::option::Option<&crate::model::TargetLocation> {
         self.target_location.as_ref()
     }
+    /// <p>The CloudWatch alarms that were invoked by the automation.</p>
+    pub fn triggered_alarms(&self) -> std::option::Option<&[crate::model::AlarmStateInformation]> {
+        self.triggered_alarms.as_deref()
+    }
 }
 /// See [`StepExecution`](crate::model::StepExecution).
 pub mod step_execution {
@@ -22622,6 +22832,8 @@ pub mod step_execution {
         pub(crate) valid_next_steps: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
         pub(crate) target_location: std::option::Option<crate::model::TargetLocation>,
+        pub(crate) triggered_alarms:
+            std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
     }
     impl Builder {
         /// <p>The name of this execution step.</p>
@@ -22931,6 +23143,25 @@ pub mod step_execution {
             self.target_location = input;
             self
         }
+        /// Appends an item to `triggered_alarms`.
+        ///
+        /// To override the contents of this collection use [`set_triggered_alarms`](Self::set_triggered_alarms).
+        ///
+        /// <p>The CloudWatch alarms that were invoked by the automation.</p>
+        pub fn triggered_alarms(mut self, input: crate::model::AlarmStateInformation) -> Self {
+            let mut v = self.triggered_alarms.unwrap_or_default();
+            v.push(input);
+            self.triggered_alarms = Some(v);
+            self
+        }
+        /// <p>The CloudWatch alarms that were invoked by the automation.</p>
+        pub fn set_triggered_alarms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
+        ) -> Self {
+            self.triggered_alarms = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StepExecution`](crate::model::StepExecution).
         pub fn build(self) -> crate::model::StepExecution {
             crate::model::StepExecution {
@@ -22956,6 +23187,7 @@ pub mod step_execution {
                 valid_next_steps: self.valid_next_steps,
                 targets: self.targets,
                 target_location: self.target_location,
+                triggered_alarms: self.triggered_alarms,
             }
         }
     }
@@ -25040,7 +25272,12 @@ pub struct OpsItemSummary {
     /// <p>A list of OpsItems by severity.</p>
     #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
-    /// <p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+    /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
+    /// <ul>
+    /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+    /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub ops_item_type: std::option::Option<std::string::String>,
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
@@ -25109,7 +25346,12 @@ impl OpsItemSummary {
     pub fn severity(&self) -> std::option::Option<&str> {
         self.severity.as_deref()
     }
-    /// <p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+    /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
+    /// <ul>
+    /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+    /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// </ul>
     pub fn ops_item_type(&self) -> std::option::Option<&str> {
         self.ops_item_type.as_deref()
     }
@@ -25304,12 +25546,22 @@ pub mod ops_item_summary {
             self.severity = input;
             self
         }
-        /// <p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+        /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
+        /// <ul>
+        /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+        /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+        /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+        /// </ul>
         pub fn ops_item_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.ops_item_type = Some(input.into());
             self
         }
-        /// <p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+        /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
+        /// <ul>
+        /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+        /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+        /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+        /// </ul>
         pub fn set_ops_item_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25615,6 +25867,7 @@ impl AsRef<str> for OpsItemFilterOperator {
 /// ```text
 /// # let opsitemfilterkey = unimplemented!();
 /// match opsitemfilterkey {
+///     OpsItemFilterKey::AccountId => { /* ... */ },
 ///     OpsItemFilterKey::ActualEndTime => { /* ... */ },
 ///     OpsItemFilterKey::ActualStartTime => { /* ... */ },
 ///     OpsItemFilterKey::AutomationId => { /* ... */ },
@@ -25676,6 +25929,8 @@ impl AsRef<str> for OpsItemFilterOperator {
 )]
 pub enum OpsItemFilterKey {
     #[allow(missing_docs)] // documentation missing in model
+    AccountId,
+    #[allow(missing_docs)] // documentation missing in model
     ActualEndTime,
     #[allow(missing_docs)] // documentation missing in model
     ActualStartTime,
@@ -25735,6 +25990,7 @@ pub enum OpsItemFilterKey {
 impl std::convert::From<&str> for OpsItemFilterKey {
     fn from(s: &str) -> Self {
         match s {
+            "AccountId" => OpsItemFilterKey::AccountId,
             "ActualEndTime" => OpsItemFilterKey::ActualEndTime,
             "ActualStartTime" => OpsItemFilterKey::ActualStartTime,
             "AutomationId" => OpsItemFilterKey::AutomationId,
@@ -25779,6 +26035,7 @@ impl OpsItemFilterKey {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            OpsItemFilterKey::AccountId => "AccountId",
             OpsItemFilterKey::ActualEndTime => "ActualEndTime",
             OpsItemFilterKey::ActualStartTime => "ActualStartTime",
             OpsItemFilterKey::AutomationId => "AutomationId",
@@ -25814,6 +26071,7 @@ impl OpsItemFilterKey {
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AccountId",
             "ActualEndTime",
             "ActualStartTime",
             "AutomationId",
@@ -28407,13 +28665,13 @@ pub struct InstancePatchState {
     /// </ul>
     #[doc(hidden)]
     pub reboot_option: std::option::Option<crate::model::RebootOption>,
-    /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     #[doc(hidden)]
     pub critical_non_compliant_count: std::option::Option<i32>,
-    /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of patches per node that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     #[doc(hidden)]
     pub security_non_compliant_count: std::option::Option<i32>,
-    /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of patches per node that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     #[doc(hidden)]
     pub other_non_compliant_count: std::option::Option<i32>,
 }
@@ -28509,15 +28767,15 @@ impl InstancePatchState {
     pub fn reboot_option(&self) -> std::option::Option<&crate::model::RebootOption> {
         self.reboot_option.as_ref()
     }
-    /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn critical_non_compliant_count(&self) -> std::option::Option<i32> {
         self.critical_non_compliant_count
     }
-    /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of patches per node that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn security_non_compliant_count(&self) -> std::option::Option<i32> {
         self.security_non_compliant_count
     }
-    /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of patches per node that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn other_non_compliant_count(&self) -> std::option::Option<i32> {
         self.other_non_compliant_count
     }
@@ -28842,32 +29100,32 @@ pub mod instance_patch_state {
             self.reboot_option = input;
             self
         }
-        /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn critical_non_compliant_count(mut self, input: i32) -> Self {
             self.critical_non_compliant_count = Some(input);
             self
         }
-        /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn set_critical_non_compliant_count(mut self, input: std::option::Option<i32>) -> Self {
             self.critical_non_compliant_count = input;
             self
         }
-        /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of patches per node that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn security_non_compliant_count(mut self, input: i32) -> Self {
             self.security_non_compliant_count = Some(input);
             self
         }
-        /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of patches per node that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn set_security_non_compliant_count(mut self, input: std::option::Option<i32>) -> Self {
             self.security_non_compliant_count = input;
             self
         }
-        /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of patches per node that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn other_non_compliant_count(mut self, input: i32) -> Self {
             self.other_non_compliant_count = Some(input);
             self
         }
-        /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of patches per node that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn set_other_non_compliant_count(mut self, input: std::option::Option<i32>) -> Self {
             self.other_non_compliant_count = input;
             self
@@ -30562,10 +30820,16 @@ impl AsRef<str> for PingStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceInformationStringFilter {
-    /// <p>The filter key name to describe your managed nodes. For example:</p>
-    /// <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" | "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" | "tag:<code>{keyname}</code> </p> <important>
-    /// <p> <code>Tag Key</code> isn't a valid filter. You must specify either <code>tag-key</code> or <code>tag:{keyname}</code> and a string. Here are some valid examples: <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>, <code>tag:Windows</code>. Here are some <i>invalid</i> examples: <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>, <code>tagKey</code>, <code>abc:keyname</code>.</p>
-    /// </important>
+    /// <p>The filter key name to describe your managed nodes.</p>
+    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code> </p>
+    /// <ul>
+    /// <li> <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p> </li>
+    /// <li> <p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p> </li>
+    /// <li> <p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p> </li>
+    /// <li> <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p> </li>
+    /// <li> <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p> </li>
+    /// <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The filter values.</p>
@@ -30573,10 +30837,16 @@ pub struct InstanceInformationStringFilter {
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl InstanceInformationStringFilter {
-    /// <p>The filter key name to describe your managed nodes. For example:</p>
-    /// <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" | "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" | "tag:<code>{keyname}</code> </p> <important>
-    /// <p> <code>Tag Key</code> isn't a valid filter. You must specify either <code>tag-key</code> or <code>tag:{keyname}</code> and a string. Here are some valid examples: <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>, <code>tag:Windows</code>. Here are some <i>invalid</i> examples: <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>, <code>tagKey</code>, <code>abc:keyname</code>.</p>
-    /// </important>
+    /// <p>The filter key name to describe your managed nodes.</p>
+    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code> </p>
+    /// <ul>
+    /// <li> <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p> </li>
+    /// <li> <p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p> </li>
+    /// <li> <p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p> </li>
+    /// <li> <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p> </li>
+    /// <li> <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p> </li>
+    /// <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p> </li>
+    /// </ul>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -30595,18 +30865,30 @@ pub mod instance_information_string_filter {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The filter key name to describe your managed nodes. For example:</p>
-        /// <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" | "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" | "tag:<code>{keyname}</code> </p> <important>
-        /// <p> <code>Tag Key</code> isn't a valid filter. You must specify either <code>tag-key</code> or <code>tag:{keyname}</code> and a string. Here are some valid examples: <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>, <code>tag:Windows</code>. Here are some <i>invalid</i> examples: <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>, <code>tagKey</code>, <code>abc:keyname</code>.</p>
-        /// </important>
+        /// <p>The filter key name to describe your managed nodes.</p>
+        /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code> </p>
+        /// <ul>
+        /// <li> <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p> </li>
+        /// <li> <p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p> </li>
+        /// <li> <p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p> </li>
+        /// <li> <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p> </li>
+        /// <li> <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p> </li>
+        /// <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p> </li>
+        /// </ul>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The filter key name to describe your managed nodes. For example:</p>
-        /// <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" | "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" | "tag:<code>{keyname}</code> </p> <important>
-        /// <p> <code>Tag Key</code> isn't a valid filter. You must specify either <code>tag-key</code> or <code>tag:{keyname}</code> and a string. Here are some valid examples: <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>, <code>tag:Windows</code>. Here are some <i>invalid</i> examples: <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>, <code>tagKey</code>, <code>abc:keyname</code>.</p>
-        /// </important>
+        /// <p>The filter key name to describe your managed nodes.</p>
+        /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code> </p>
+        /// <ul>
+        /// <li> <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p> </li>
+        /// <li> <p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p> </li>
+        /// <li> <p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p> </li>
+        /// <li> <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p> </li>
+        /// <li> <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p> </li>
+        /// <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p> </li>
+        /// </ul>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self

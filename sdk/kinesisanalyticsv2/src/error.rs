@@ -3352,6 +3352,8 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteApplicationSnapshot
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApplicationSnapshotErrorKind {
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The request JSON is not valid for the operation.</p>
@@ -3375,6 +3377,9 @@ pub enum DeleteApplicationSnapshotErrorKind {
 impl std::fmt::Display for DeleteApplicationSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteApplicationSnapshotErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
             DeleteApplicationSnapshotErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             DeleteApplicationSnapshotErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             DeleteApplicationSnapshotErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
@@ -3440,6 +3445,13 @@ impl DeleteApplicationSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeleteApplicationSnapshotErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteApplicationSnapshotErrorKind::ConcurrentModificationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteApplicationSnapshotErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
@@ -3479,6 +3491,9 @@ impl DeleteApplicationSnapshotError {
 impl std::error::Error for DeleteApplicationSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteApplicationSnapshotErrorKind::ConcurrentModificationException(_inner) => {
+                Some(_inner)
+            }
             DeleteApplicationSnapshotErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             DeleteApplicationSnapshotErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteApplicationSnapshotErrorKind::ResourceInUseException(_inner) => Some(_inner),

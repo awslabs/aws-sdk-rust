@@ -202,6 +202,7 @@ pub mod create_application_input {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier of the application.</p>
@@ -285,6 +286,16 @@ pub mod create_application_input {
             self.client_token = input;
             self
         }
+        /// <p>The identifier of a customer managed key.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a customer managed key.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::input::CreateApplicationInput).
         pub fn build(
             self,
@@ -299,6 +310,7 @@ pub mod create_application_input {
                 definition: self.definition,
                 tags: self.tags,
                 client_token: self.client_token,
+                kms_key_id: self.kms_key_id,
             })
         }
     }
@@ -629,12 +641,12 @@ pub mod create_deployment_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the environment where this application will be deployed.</p>
+        /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.environment_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the environment where this application will be deployed.</p>
+        /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -851,24 +863,25 @@ pub mod create_environment_input {
         >,
         pub(crate) preferred_maintenance_window: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the environment.</p>
+        /// <p>The name of the runtime environment. Must be unique within the account.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the environment.</p>
+        /// <p>The name of the runtime environment. Must be unique within the account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The type of instance for the environment.</p>
+        /// <p>The type of instance for the runtime environment.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The type of instance for the environment.</p>
+        /// <p>The type of instance for the runtime environment.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -876,22 +889,22 @@ pub mod create_environment_input {
             self.instance_type = input;
             self
         }
-        /// <p>The description of the environment.</p>
+        /// <p>The description of the runtime environment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the environment.</p>
+        /// <p>The description of the runtime environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The engine type for the environment.</p>
+        /// <p>The engine type for the runtime environment.</p>
         pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
             self.engine_type = Some(input);
             self
         }
-        /// <p>The engine type for the environment.</p>
+        /// <p>The engine type for the runtime environment.</p>
         pub fn set_engine_type(
             mut self,
             input: std::option::Option<crate::model::EngineType>,
@@ -899,12 +912,12 @@ pub mod create_environment_input {
             self.engine_type = input;
             self
         }
-        /// <p>The version of the engine type for the environment.</p>
+        /// <p>The version of the engine type for the runtime environment.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
         }
-        /// <p>The version of the engine type for the environment.</p>
+        /// <p>The version of the engine type for the runtime environment.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -916,14 +929,14 @@ pub mod create_environment_input {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>The list of subnets associated with the VPC for this environment.</p>
+        /// <p>The list of subnets associated with the VPC for this runtime environment.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
-        /// <p>The list of subnets associated with the VPC for this environment.</p>
+        /// <p>The list of subnets associated with the VPC for this runtime environment.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -935,14 +948,14 @@ pub mod create_environment_input {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>The list of security groups for the VPC associated with this environment.</p>
+        /// <p>The list of security groups for the VPC associated with this runtime environment.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
-        /// <p>The list of security groups for the VPC associated with this environment.</p>
+        /// <p>The list of security groups for the VPC associated with this runtime environment.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -954,14 +967,14 @@ pub mod create_environment_input {
         ///
         /// To override the contents of this collection use [`set_storage_configurations`](Self::set_storage_configurations).
         ///
-        /// <p>Optional. The storage configurations for this environment.</p>
+        /// <p>Optional. The storage configurations for this runtime environment.</p>
         pub fn storage_configurations(mut self, input: crate::model::StorageConfiguration) -> Self {
             let mut v = self.storage_configurations.unwrap_or_default();
             v.push(input);
             self.storage_configurations = Some(v);
             self
         }
-        /// <p>Optional. The storage configurations for this environment.</p>
+        /// <p>Optional. The storage configurations for this runtime environment.</p>
         pub fn set_storage_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StorageConfiguration>>,
@@ -969,12 +982,12 @@ pub mod create_environment_input {
             self.storage_configurations = input;
             self
         }
-        /// <p>Specifies whether the environment is publicly accessible.</p>
+        /// <p>Specifies whether the runtime environment is publicly accessible.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.publicly_accessible = Some(input);
             self
         }
-        /// <p>Specifies whether the environment is publicly accessible.</p>
+        /// <p>Specifies whether the runtime environment is publicly accessible.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.publicly_accessible = input;
             self
@@ -999,7 +1012,7 @@ pub mod create_environment_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags for the environment.</p>
+        /// <p>The tags for the runtime environment.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1010,7 +1023,7 @@ pub mod create_environment_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags for the environment.</p>
+        /// <p>The tags for the runtime environment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1020,7 +1033,7 @@ pub mod create_environment_input {
             self.tags = input;
             self
         }
-        /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+        /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
         pub fn preferred_maintenance_window(
             mut self,
             input: impl Into<std::string::String>,
@@ -1028,7 +1041,7 @@ pub mod create_environment_input {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
-        /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+        /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1044,6 +1057,16 @@ pub mod create_environment_input {
         /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create an environment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
+            self
+        }
+        /// <p>The identifier of a customer managed key.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a customer managed key.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
@@ -1067,6 +1090,7 @@ pub mod create_environment_input {
                 tags: self.tags,
                 preferred_maintenance_window: self.preferred_maintenance_window,
                 client_token: self.client_token,
+                kms_key_id: self.kms_key_id,
             })
         }
     }
@@ -4683,22 +4707,22 @@ pub mod list_environments_input {
         pub(crate) engine_type: std::option::Option<crate::model::EngineType>,
     }
     impl Builder {
-        /// <p>A pagination token to control the number of environments displayed in the list.</p>
+        /// <p>A pagination token to control the number of runtime environments displayed in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token to control the number of environments displayed in the list.</p>
+        /// <p>A pagination token to control the number of runtime environments displayed in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of environments to return.</p>
+        /// <p>The maximum number of runtime environments to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of environments to return.</p>
+        /// <p>The maximum number of runtime environments to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4707,14 +4731,14 @@ pub mod list_environments_input {
         ///
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
-        /// <p>The name of the environment.</p>
+        /// <p>The names of the runtime environments. Must be unique within the account.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
             v.push(input.into());
             self.names = Some(v);
             self
         }
-        /// <p>The name of the environment.</p>
+        /// <p>The names of the runtime environments. Must be unique within the account.</p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4722,12 +4746,12 @@ pub mod list_environments_input {
             self.names = input;
             self
         }
-        /// <p>The engine type for the environment.</p>
+        /// <p>The engine type for the runtime environment.</p>
         pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
             self.engine_type = Some(input);
             self
         }
-        /// <p>The engine type for the environment.</p>
+        /// <p>The engine type for the runtime environment.</p>
         pub fn set_engine_type(
             mut self,
             input: std::option::Option<crate::model::EngineType>,
@@ -6182,22 +6206,22 @@ pub mod update_environment_input {
             self.environment_id = input;
             self
         }
-        /// <p>The desired capacity for the environment to update.</p>
+        /// <p>The desired capacity for the runtime environment to update.</p>
         pub fn desired_capacity(mut self, input: i32) -> Self {
             self.desired_capacity = Some(input);
             self
         }
-        /// <p>The desired capacity for the environment to update.</p>
+        /// <p>The desired capacity for the runtime environment to update.</p>
         pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_capacity = input;
             self
         }
-        /// <p>The instance type for the environment to update.</p>
+        /// <p>The instance type for the runtime environment to update.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The instance type for the environment to update.</p>
+        /// <p>The instance type for the runtime environment to update.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6205,12 +6229,12 @@ pub mod update_environment_input {
             self.instance_type = input;
             self
         }
-        /// <p>The version of the runtime engine for the environment.</p>
+        /// <p>The version of the runtime engine for the runtime environment.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
         }
-        /// <p>The version of the runtime engine for the environment.</p>
+        /// <p>The version of the runtime engine for the runtime environment.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6218,7 +6242,7 @@ pub mod update_environment_input {
             self.engine_version = input;
             self
         }
-        /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+        /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
         pub fn preferred_maintenance_window(
             mut self,
             input: impl Into<std::string::String>,
@@ -6226,7 +6250,7 @@ pub mod update_environment_input {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
-        /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+        /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6234,12 +6258,12 @@ pub mod update_environment_input {
             self.preferred_maintenance_window = input;
             self
         }
-        /// <p>Indicates whether to update the environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
+        /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
         pub fn apply_during_maintenance_window(mut self, input: bool) -> Self {
             self.apply_during_maintenance_window = Some(input);
             self
         }
-        /// <p>Indicates whether to update the environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
+        /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
         pub fn set_apply_during_maintenance_window(
             mut self,
             input: std::option::Option<bool>,
@@ -6405,33 +6429,33 @@ impl UpdateEnvironmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnvironmentsInput {
-    /// <p>A pagination token to control the number of environments displayed in the list.</p>
+    /// <p>A pagination token to control the number of runtime environments displayed in the list.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of environments to return.</p>
+    /// <p>The maximum number of runtime environments to return.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The name of the environment.</p>
+    /// <p>The names of the runtime environments. Must be unique within the account.</p>
     #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The engine type for the environment.</p>
+    /// <p>The engine type for the runtime environment.</p>
     #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
 }
 impl ListEnvironmentsInput {
-    /// <p>A pagination token to control the number of environments displayed in the list.</p>
+    /// <p>A pagination token to control the number of runtime environments displayed in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of environments to return.</p>
+    /// <p>The maximum number of runtime environments to return.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The name of the environment.</p>
+    /// <p>The names of the runtime environments. Must be unique within the account.</p>
     pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
-    /// <p>The engine type for the environment.</p>
+    /// <p>The engine type for the runtime environment.</p>
     pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
         self.engine_type.as_ref()
     }
@@ -6441,84 +6465,87 @@ impl ListEnvironmentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEnvironmentInput {
-    /// <p>The unique identifier of the environment.</p>
+    /// <p>The name of the runtime environment. Must be unique within the account.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of instance for the environment.</p>
+    /// <p>The type of instance for the runtime environment.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
-    /// <p>The description of the environment.</p>
+    /// <p>The description of the runtime environment.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The engine type for the environment.</p>
+    /// <p>The engine type for the runtime environment.</p>
     #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
-    /// <p>The version of the engine type for the environment.</p>
+    /// <p>The version of the engine type for the runtime environment.</p>
     #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
-    /// <p>The list of subnets associated with the VPC for this environment.</p>
+    /// <p>The list of subnets associated with the VPC for this runtime environment.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The list of security groups for the VPC associated with this environment.</p>
+    /// <p>The list of security groups for the VPC associated with this runtime environment.</p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Optional. The storage configurations for this environment.</p>
+    /// <p>Optional. The storage configurations for this runtime environment.</p>
     #[doc(hidden)]
     pub storage_configurations:
         std::option::Option<std::vec::Vec<crate::model::StorageConfiguration>>,
-    /// <p>Specifies whether the environment is publicly accessible.</p>
+    /// <p>Specifies whether the runtime environment is publicly accessible.</p>
     #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p>The details of a high availability configuration for this runtime environment.</p>
     #[doc(hidden)]
     pub high_availability_config: std::option::Option<crate::model::HighAvailabilityConfig>,
-    /// <p>The tags for the environment.</p>
+    /// <p>The tags for the runtime environment.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
     #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create an environment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>The identifier of a customer managed key.</p>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentInput {
-    /// <p>The unique identifier of the environment.</p>
+    /// <p>The name of the runtime environment. Must be unique within the account.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of instance for the environment.</p>
+    /// <p>The type of instance for the runtime environment.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>The description of the environment.</p>
+    /// <p>The description of the runtime environment.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The engine type for the environment.</p>
+    /// <p>The engine type for the runtime environment.</p>
     pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
         self.engine_type.as_ref()
     }
-    /// <p>The version of the engine type for the environment.</p>
+    /// <p>The version of the engine type for the runtime environment.</p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>The list of subnets associated with the VPC for this environment.</p>
+    /// <p>The list of subnets associated with the VPC for this runtime environment.</p>
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>The list of security groups for the VPC associated with this environment.</p>
+    /// <p>The list of security groups for the VPC associated with this runtime environment.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
-    /// <p>Optional. The storage configurations for this environment.</p>
+    /// <p>Optional. The storage configurations for this runtime environment.</p>
     pub fn storage_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::StorageConfiguration]> {
         self.storage_configurations.as_deref()
     }
-    /// <p>Specifies whether the environment is publicly accessible.</p>
+    /// <p>Specifies whether the runtime environment is publicly accessible.</p>
     pub fn publicly_accessible(&self) -> bool {
         self.publicly_accessible
     }
@@ -6528,20 +6555,24 @@ impl CreateEnvironmentInput {
     ) -> std::option::Option<&crate::model::HighAvailabilityConfig> {
         self.high_availability_config.as_ref()
     }
-    /// <p>The tags for the environment.</p>
+    /// <p>The tags for the runtime environment.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create an environment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>The identifier of a customer managed key.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
     }
 }
 
@@ -6567,19 +6598,19 @@ pub struct UpdateEnvironmentInput {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
-    /// <p>The desired capacity for the environment to update.</p>
+    /// <p>The desired capacity for the runtime environment to update.</p>
     #[doc(hidden)]
     pub desired_capacity: std::option::Option<i32>,
-    /// <p>The instance type for the environment to update.</p>
+    /// <p>The instance type for the runtime environment to update.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
-    /// <p>The version of the runtime engine for the environment.</p>
+    /// <p>The version of the runtime engine for the runtime environment.</p>
     #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
-    /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
     #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
-    /// <p>Indicates whether to update the environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
+    /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
     #[doc(hidden)]
     pub apply_during_maintenance_window: bool,
 }
@@ -6588,23 +6619,23 @@ impl UpdateEnvironmentInput {
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The desired capacity for the environment to update.</p>
+    /// <p>The desired capacity for the runtime environment to update.</p>
     pub fn desired_capacity(&self) -> std::option::Option<i32> {
         self.desired_capacity
     }
-    /// <p>The instance type for the environment to update.</p>
+    /// <p>The instance type for the runtime environment to update.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>The version of the runtime engine for the environment.</p>
+    /// <p>The version of the runtime engine for the runtime environment.</p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
-    /// <p>Indicates whether to update the environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
+    /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
     pub fn apply_during_maintenance_window(&self) -> bool {
         self.apply_during_maintenance_window
     }
@@ -7054,7 +7085,7 @@ impl DeleteApplicationFromEnvironmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentInput {
-    /// <p>The identifier of the environment where this application will be deployed.</p>
+    /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The application identifier.</p>
@@ -7068,7 +7099,7 @@ pub struct CreateDeploymentInput {
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentInput {
-    /// <p>The identifier of the environment where this application will be deployed.</p>
+    /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
@@ -7196,6 +7227,9 @@ pub struct CreateApplicationInput {
     /// <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>The identifier of a customer managed key.</p>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl CreateApplicationInput {
     /// <p>The unique identifier of the application.</p>
@@ -7224,6 +7258,10 @@ impl CreateApplicationInput {
     /// <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>The identifier of a customer managed key.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
     }
 }
 

@@ -559,13 +559,13 @@ pub mod create_campaign_input {
             self
         }
         /// <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p>
-        /// <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>
+        /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
         pub fn expiry_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiry_time = Some(input);
             self
         }
         /// <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p>
-        /// <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>
+        /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
         pub fn set_expiry_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -682,6 +682,7 @@ pub mod create_campaign_input {
         /// To override the contents of this collection use [`set_data_extra_dimensions`](Self::set_data_extra_dimensions).
         ///
         /// <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
+        /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
         /// <p>Default: An empty array</p>
         pub fn data_extra_dimensions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.data_extra_dimensions.unwrap_or_default();
@@ -690,6 +691,7 @@ pub mod create_campaign_input {
             self
         }
         /// <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
+        /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
         /// <p>Default: An empty array</p>
         pub fn set_data_extra_dimensions(
             mut self,
@@ -10331,7 +10333,7 @@ pub struct CreateCampaignInput {
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p>
-    /// <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>
+    /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
     #[doc(hidden)]
     pub expiry_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> (Optional) How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>
@@ -10361,6 +10363,7 @@ pub struct CreateCampaignInput {
     #[doc(hidden)]
     pub collection_scheme: std::option::Option<crate::model::CollectionScheme>,
     /// <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
+    /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
     #[doc(hidden)]
     pub data_extra_dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10391,7 +10394,7 @@ impl CreateCampaignInput {
         self.start_time.as_ref()
     }
     /// <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p>
-    /// <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>
+    /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
     pub fn expiry_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiry_time.as_ref()
     }
@@ -10429,6 +10432,7 @@ impl CreateCampaignInput {
         self.collection_scheme.as_ref()
     }
     /// <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
+    /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
     pub fn data_extra_dimensions(&self) -> std::option::Option<&[std::string::String]> {
         self.data_extra_dimensions.as_deref()

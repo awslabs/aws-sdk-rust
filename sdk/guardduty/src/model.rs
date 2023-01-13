@@ -3982,7 +3982,7 @@ impl AccountFreeTrialInfo {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSourcesFreeTrial {
-    /// <p>Describes whether any AWS CloudTrail management event logs are enabled as data sources.</p>
+    /// <p>Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.</p>
     #[doc(hidden)]
     pub cloud_trail: std::option::Option<crate::model::DataSourceFreeTrial>,
     /// <p>Describes whether any DNS logs are enabled as data sources.</p>
@@ -4002,7 +4002,7 @@ pub struct DataSourcesFreeTrial {
     pub malware_protection: std::option::Option<crate::model::MalwareProtectionDataSourceFreeTrial>,
 }
 impl DataSourcesFreeTrial {
-    /// <p>Describes whether any AWS CloudTrail management event logs are enabled as data sources.</p>
+    /// <p>Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.</p>
     pub fn cloud_trail(&self) -> std::option::Option<&crate::model::DataSourceFreeTrial> {
         self.cloud_trail.as_ref()
     }
@@ -4044,12 +4044,12 @@ pub mod data_sources_free_trial {
             std::option::Option<crate::model::MalwareProtectionDataSourceFreeTrial>,
     }
     impl Builder {
-        /// <p>Describes whether any AWS CloudTrail management event logs are enabled as data sources.</p>
+        /// <p>Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.</p>
         pub fn cloud_trail(mut self, input: crate::model::DataSourceFreeTrial) -> Self {
             self.cloud_trail = Some(input);
             self
         }
-        /// <p>Describes whether any AWS CloudTrail management event logs are enabled as data sources.</p>
+        /// <p>Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.</p>
         pub fn set_cloud_trail(
             mut self,
             input: std::option::Option<crate::model::DataSourceFreeTrial>,
@@ -4675,11 +4675,18 @@ pub struct EbsVolumesResult {
     /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataSourceStatus>,
+    /// <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.</p>
+    #[doc(hidden)]
+    pub reason: std::option::Option<std::string::String>,
 }
 impl EbsVolumesResult {
     /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::DataSourceStatus> {
         self.status.as_ref()
+    }
+    /// <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
     }
 }
 /// See [`EbsVolumesResult`](crate::model::EbsVolumesResult).
@@ -4689,6 +4696,7 @@ pub mod ebs_volumes_result {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::DataSourceStatus>,
+        pub(crate) reason: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
@@ -4704,10 +4712,21 @@ pub mod ebs_volumes_result {
             self.status = input;
             self
         }
+        /// <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
+            self
+        }
+        /// <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.</p>
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EbsVolumesResult`](crate::model::EbsVolumesResult).
         pub fn build(self) -> crate::model::EbsVolumesResult {
             crate::model::EbsVolumesResult {
                 status: self.status,
+                reason: self.reason,
             }
         }
     }
@@ -13452,7 +13471,7 @@ pub struct Scan {
     /// <p>The timestamp of when the scan was finished.</p>
     #[doc(hidden)]
     pub scan_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Represents the reason the scan was triggered.</p>
+    /// <p>Specifies the reason why the scan was initiated.</p>
     #[doc(hidden)]
     pub trigger_details: std::option::Option<crate::model::TriggerDetails>,
     /// <p>Represents the resources that were scanned in the scan entry.</p>
@@ -13503,7 +13522,7 @@ impl Scan {
     pub fn scan_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.scan_end_time.as_ref()
     }
-    /// <p>Represents the reason the scan was triggered.</p>
+    /// <p>Specifies the reason why the scan was initiated.</p>
     pub fn trigger_details(&self) -> std::option::Option<&crate::model::TriggerDetails> {
         self.trigger_details.as_ref()
     }
@@ -13639,12 +13658,12 @@ pub mod scan {
             self.scan_end_time = input;
             self
         }
-        /// <p>Represents the reason the scan was triggered.</p>
+        /// <p>Specifies the reason why the scan was initiated.</p>
         pub fn trigger_details(mut self, input: crate::model::TriggerDetails) -> Self {
             self.trigger_details = Some(input);
             self
         }
-        /// <p>Represents the reason the scan was triggered.</p>
+        /// <p>Specifies the reason why the scan was initiated.</p>
         pub fn set_trigger_details(
             mut self,
             input: std::option::Option<crate::model::TriggerDetails>,
@@ -14167,7 +14186,7 @@ impl FilterCriteria {
     }
 }
 
-/// <p>Represents a condition that when matched will be added to the response of the operation.</p>
+/// <p>Represents a condition that when matched will be added to the response of the operation. Irrespective of using any filter criteria, an administrator account can view the scan entries for all of its member accounts. However, each member account can view the scan entries only for their own account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterCriterion {
@@ -14507,5 +14526,62 @@ impl AccountDetail {
     /// Creates a new builder-style object to manufacture [`AccountDetail`](crate::model::AccountDetail).
     pub fn builder() -> crate::model::account_detail::Builder {
         crate::model::account_detail::Builder::default()
+    }
+}
+
+/// <p>Specifies the names of the data sources that couldn't be enabled.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UnprocessedDataSourcesResult {
+    /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
+    #[doc(hidden)]
+    pub malware_protection: std::option::Option<crate::model::MalwareProtectionConfigurationResult>,
+}
+impl UnprocessedDataSourcesResult {
+    /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
+    pub fn malware_protection(
+        &self,
+    ) -> std::option::Option<&crate::model::MalwareProtectionConfigurationResult> {
+        self.malware_protection.as_ref()
+    }
+}
+/// See [`UnprocessedDataSourcesResult`](crate::model::UnprocessedDataSourcesResult).
+pub mod unprocessed_data_sources_result {
+
+    /// A builder for [`UnprocessedDataSourcesResult`](crate::model::UnprocessedDataSourcesResult).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) malware_protection:
+            std::option::Option<crate::model::MalwareProtectionConfigurationResult>,
+    }
+    impl Builder {
+        /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
+        pub fn malware_protection(
+            mut self,
+            input: crate::model::MalwareProtectionConfigurationResult,
+        ) -> Self {
+            self.malware_protection = Some(input);
+            self
+        }
+        /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
+        pub fn set_malware_protection(
+            mut self,
+            input: std::option::Option<crate::model::MalwareProtectionConfigurationResult>,
+        ) -> Self {
+            self.malware_protection = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UnprocessedDataSourcesResult`](crate::model::UnprocessedDataSourcesResult).
+        pub fn build(self) -> crate::model::UnprocessedDataSourcesResult {
+            crate::model::UnprocessedDataSourcesResult {
+                malware_protection: self.malware_protection,
+            }
+        }
+    }
+}
+impl UnprocessedDataSourcesResult {
+    /// Creates a new builder-style object to manufacture [`UnprocessedDataSourcesResult`](crate::model::UnprocessedDataSourcesResult).
+    pub fn builder() -> crate::model::unprocessed_data_sources_result::Builder {
+        crate::model::unprocessed_data_sources_result::Builder::default()
     }
 }

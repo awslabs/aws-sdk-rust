@@ -50,6 +50,30 @@ impl UpdateWirelessDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateResourcePositionOutput {}
+/// See [`UpdateResourcePositionOutput`](crate::output::UpdateResourcePositionOutput).
+pub mod update_resource_position_output {
+
+    /// A builder for [`UpdateResourcePositionOutput`](crate::output::UpdateResourcePositionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateResourcePositionOutput`](crate::output::UpdateResourcePositionOutput).
+        pub fn build(self) -> crate::output::UpdateResourcePositionOutput {
+            crate::output::UpdateResourcePositionOutput {}
+        }
+    }
+}
+impl UpdateResourcePositionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResourcePositionOutput`](crate::output::UpdateResourcePositionOutput).
+    pub fn builder() -> crate::output::update_resource_position_output::Builder {
+        crate::output::update_resource_position_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceEventConfigurationOutput {}
 /// See [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput).
 pub mod update_resource_event_configuration_output {
@@ -72,6 +96,7 @@ impl UpdateResourceEventConfigurationOutput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePositionOutput {}
@@ -633,6 +658,7 @@ impl PutResourceLogLevelOutput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPositionConfigurationOutput {}
@@ -1121,6 +1147,7 @@ impl ListQueuedMessagesOutput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPositionConfigurationsOutput {
@@ -2630,6 +2657,9 @@ pub struct GetWirelessDeviceOutput {
     /// <p>Sidewalk device object.</p>
     #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkDevice>,
+    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    #[doc(hidden)]
+    pub positioning: std::option::Option<crate::model::PositioningConfigStatus>,
 }
 impl GetWirelessDeviceOutput {
     /// <p>The wireless device type.</p>
@@ -2672,6 +2702,10 @@ impl GetWirelessDeviceOutput {
     pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkDevice> {
         self.sidewalk.as_ref()
     }
+    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    pub fn positioning(&self) -> std::option::Option<&crate::model::PositioningConfigStatus> {
+        self.positioning.as_ref()
+    }
 }
 /// See [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput).
 pub mod get_wireless_device_output {
@@ -2689,6 +2723,7 @@ pub mod get_wireless_device_output {
         pub(crate) thing_arn: std::option::Option<std::string::String>,
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanDevice>,
         pub(crate) sidewalk: std::option::Option<crate::model::SidewalkDevice>,
+        pub(crate) positioning: std::option::Option<crate::model::PositioningConfigStatus>,
     }
     impl Builder {
         /// <p>The wireless device type.</p>
@@ -2803,6 +2838,19 @@ pub mod get_wireless_device_output {
             self.sidewalk = input;
             self
         }
+        /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+        pub fn positioning(mut self, input: crate::model::PositioningConfigStatus) -> Self {
+            self.positioning = Some(input);
+            self
+        }
+        /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+        pub fn set_positioning(
+            mut self,
+            input: std::option::Option<crate::model::PositioningConfigStatus>,
+        ) -> Self {
+            self.positioning = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput).
         pub fn build(self) -> crate::output::GetWirelessDeviceOutput {
             crate::output::GetWirelessDeviceOutput {
@@ -2816,6 +2864,7 @@ pub mod get_wireless_device_output {
                 thing_arn: self.thing_arn,
                 lo_ra_wan: self.lo_ra_wan,
                 sidewalk: self.sidewalk,
+                positioning: self.positioning,
             }
         }
     }
@@ -3030,6 +3079,57 @@ impl GetServiceEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetResourcePositionOutput {
+    /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    #[doc(hidden)]
+    pub geo_json_payload: std::option::Option<aws_smithy_types::Blob>,
+}
+impl GetResourcePositionOutput {
+    /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    pub fn geo_json_payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.geo_json_payload.as_ref()
+    }
+}
+/// See [`GetResourcePositionOutput`](crate::output::GetResourcePositionOutput).
+pub mod get_resource_position_output {
+
+    /// A builder for [`GetResourcePositionOutput`](crate::output::GetResourcePositionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) geo_json_payload: std::option::Option<aws_smithy_types::Blob>,
+    }
+    impl Builder {
+        /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+        pub fn geo_json_payload(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.geo_json_payload = Some(input);
+            self
+        }
+        /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+        pub fn set_geo_json_payload(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.geo_json_payload = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResourcePositionOutput`](crate::output::GetResourcePositionOutput).
+        pub fn build(self) -> crate::output::GetResourcePositionOutput {
+            crate::output::GetResourcePositionOutput {
+                geo_json_payload: self.geo_json_payload,
+            }
+        }
+    }
+}
+impl GetResourcePositionOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourcePositionOutput`](crate::output::GetResourcePositionOutput).
+    pub fn builder() -> crate::output::get_resource_position_output::Builder {
+        crate::output::get_resource_position_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceLogLevelOutput {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     #[doc(hidden)]
@@ -3237,6 +3337,58 @@ impl GetResourceEventConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetPositionEstimateOutput {
+    /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    #[doc(hidden)]
+    pub geo_json_payload: std::option::Option<aws_smithy_types::Blob>,
+}
+impl GetPositionEstimateOutput {
+    /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    pub fn geo_json_payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.geo_json_payload.as_ref()
+    }
+}
+/// See [`GetPositionEstimateOutput`](crate::output::GetPositionEstimateOutput).
+pub mod get_position_estimate_output {
+
+    /// A builder for [`GetPositionEstimateOutput`](crate::output::GetPositionEstimateOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) geo_json_payload: std::option::Option<aws_smithy_types::Blob>,
+    }
+    impl Builder {
+        /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+        pub fn geo_json_payload(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.geo_json_payload = Some(input);
+            self
+        }
+        /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+        pub fn set_geo_json_payload(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.geo_json_payload = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetPositionEstimateOutput`](crate::output::GetPositionEstimateOutput).
+        pub fn build(self) -> crate::output::GetPositionEstimateOutput {
+            crate::output::GetPositionEstimateOutput {
+                geo_json_payload: self.geo_json_payload,
+            }
+        }
+    }
+}
+impl GetPositionEstimateOutput {
+    /// Creates a new builder-style object to manufacture [`GetPositionEstimateOutput`](crate::output::GetPositionEstimateOutput).
+    pub fn builder() -> crate::output::get_position_estimate_output::Builder {
+        crate::output::get_position_estimate_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This operation is no longer supported.")]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPositionConfigurationOutput {
     /// <p>The wrapper for the solver configuration details object.</p>
     #[doc(hidden)]
@@ -3305,6 +3457,7 @@ impl GetPositionConfigurationOutput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPositionOutput {

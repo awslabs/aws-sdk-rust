@@ -103,8 +103,8 @@ impl Client {
     ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccess::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::CreateAccess::set_server_id): <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
     ///   - [`external_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccess::external_id) / [`set_external_id(Option<String>)`](crate::client::fluent_builders::CreateAccess::set_external_id): <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>  <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>  <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>  <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     /// - On success, responds with [`CreateAccessOutput`](crate::output::CreateAccessOutput) with field(s):
-    ///   - [`server_id(Option<String>)`](crate::output::CreateAccessOutput::server_id): <p>The ID of the server that the user is attached to.</p>
-    ///   - [`external_id(Option<String>)`](crate::output::CreateAccessOutput::external_id): <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
+    ///   - [`server_id(Option<String>)`](crate::output::CreateAccessOutput::server_id): <p>The identifier of the server that the user is attached to.</p>
+    ///   - [`external_id(Option<String>)`](crate::output::CreateAccessOutput::external_id): <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
     /// - On failure, responds with [`SdkError<CreateAccessError>`](crate::error::CreateAccessError)
     pub fn create_access(&self) -> fluent_builders::CreateAccess {
         fluent_builders::CreateAccess::new(self.handle.clone())
@@ -116,7 +116,7 @@ impl Client {
     ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::CreateAgreement::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::CreateAgreement::set_server_id): <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
     ///   - [`local_profile_id(impl Into<String>)`](crate::client::fluent_builders::CreateAgreement::local_profile_id) / [`set_local_profile_id(Option<String>)`](crate::client::fluent_builders::CreateAgreement::set_local_profile_id): <p>A unique identifier for the AS2 local profile.</p>
     ///   - [`partner_profile_id(impl Into<String>)`](crate::client::fluent_builders::CreateAgreement::partner_profile_id) / [`set_partner_profile_id(Option<String>)`](crate::client::fluent_builders::CreateAgreement::set_partner_profile_id): <p>A unique identifier for the partner profile used in the agreement.</p>
-    ///   - [`base_directory(impl Into<String>)`](crate::client::fluent_builders::CreateAgreement::base_directory) / [`set_base_directory(Option<String>)`](crate::client::fluent_builders::CreateAgreement::set_base_directory): <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>  <p>A <code>BaseDirectory</code> example is <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+    ///   - [`base_directory(impl Into<String>)`](crate::client::fluent_builders::CreateAgreement::base_directory) / [`set_base_directory(Option<String>)`](crate::client::fluent_builders::CreateAgreement::set_base_directory): <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>  <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
     ///   - [`access_role(impl Into<String>)`](crate::client::fluent_builders::CreateAgreement::access_role) / [`set_access_role(Option<String>)`](crate::client::fluent_builders::CreateAgreement::set_access_role): <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
     ///   - [`status(AgreementStatusType)`](crate::client::fluent_builders::CreateAgreement::status) / [`set_status(Option<AgreementStatusType>)`](crate::client::fluent_builders::CreateAgreement::set_status): <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAgreement::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAgreement::set_tags): <p>Key-value pairs that can be used to group and search for agreements.</p>
@@ -144,7 +144,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`as2_id(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::as2_id) / [`set_as2_id(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_as2_id): <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
-    ///   - [`profile_type(ProfileType)`](crate::client::fluent_builders::CreateProfile::profile_type) / [`set_profile_type(Option<ProfileType>)`](crate::client::fluent_builders::CreateProfile::set_profile_type): <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    ///   - [`profile_type(ProfileType)`](crate::client::fluent_builders::CreateProfile::profile_type) / [`set_profile_type(Option<ProfileType>)`](crate::client::fluent_builders::CreateProfile::set_profile_type): <p>Determines the type of profile to create:</p>  <ul>   <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>   <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>  </ul>
     ///   - [`certificate_ids(Vec<String>)`](crate::client::fluent_builders::CreateProfile::certificate_ids) / [`set_certificate_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateProfile::set_certificate_ids): <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateProfile::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateProfile::set_tags): <p>Key-value pairs that can be used to group and search for AS2 profiles.</p>
     /// - On success, responds with [`CreateProfileOutput`](crate::output::CreateProfileOutput) with field(s):
@@ -160,7 +160,7 @@ impl Client {
     ///   - [`domain(Domain)`](crate::client::fluent_builders::CreateServer::domain) / [`set_domain(Option<Domain>)`](crate::client::fluent_builders::CreateServer::set_domain): <p>The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p> <note>   <p>After the server is created, the domain cannot be changed.</p>  </note>
     ///   - [`endpoint_details(EndpointDetails)`](crate::client::fluent_builders::CreateServer::endpoint_details) / [`set_endpoint_details(Option<EndpointDetails>)`](crate::client::fluent_builders::CreateServer::set_endpoint_details): <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     ///   - [`endpoint_type(EndpointType)`](crate::client::fluent_builders::CreateServer::endpoint_type) / [`set_endpoint_type(Option<EndpointType>)`](crate::client::fluent_builders::CreateServer::set_endpoint_type): <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>   <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>   <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>   <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>  </note>
-    ///   - [`host_key(impl Into<String>)`](crate::client::fluent_builders::CreateServer::host_key) / [`set_host_key(Option<String>)`](crate::client::fluent_builders::CreateServer::set_host_key): <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>  <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>  <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>  <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>  <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p>  <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f my-new-server-key</code>.</p>  <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p>  <p>Use the following command to generate an ED25519 key with no passphrase:</p>  <p> <code>ssh-keygen -t ed25519 -N "" -f my-new-server-key</code>.</p>  <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>   <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>  </important>  <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+    ///   - [`host_key(impl Into<String>)`](crate::client::fluent_builders::CreateServer::host_key) / [`set_host_key(Option<String>)`](crate::client::fluent_builders::CreateServer::set_host_key): <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>  <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>  <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>  <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>  <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p>  <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f my-new-server-key</code>.</p>  <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p>  <p>Use the following command to generate an ED25519 key with no passphrase:</p>  <p> <code>ssh-keygen -t ed25519 -N "" -f my-new-server-key</code>.</p>  <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>   <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>  </important>  <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
     ///   - [`identity_provider_details(IdentityProviderDetails)`](crate::client::fluent_builders::CreateServer::identity_provider_details) / [`set_identity_provider_details(Option<IdentityProviderDetails>)`](crate::client::fluent_builders::CreateServer::set_identity_provider_details): <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
     ///   - [`identity_provider_type(IdentityProviderType)`](crate::client::fluent_builders::CreateServer::identity_provider_type) / [`set_identity_provider_type(Option<IdentityProviderType>)`](crate::client::fluent_builders::CreateServer::set_identity_provider_type): <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>  <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>  <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>  <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
     ///   - [`logging_role(impl Into<String>)`](crate::client::fluent_builders::CreateServer::logging_role) / [`set_logging_role(Option<String>)`](crate::client::fluent_builders::CreateServer::set_logging_role): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
@@ -170,9 +170,9 @@ impl Client {
     ///   - [`protocol_details(ProtocolDetails)`](crate::client::fluent_builders::CreateServer::protocol_details) / [`set_protocol_details(Option<ProtocolDetails>)`](crate::client::fluent_builders::CreateServer::set_protocol_details): <p>The protocol settings that are configured for your server.</p>  <ul>   <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>   <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>   <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>   <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>  </ul>
     ///   - [`security_policy_name(impl Into<String>)`](crate::client::fluent_builders::CreateServer::security_policy_name) / [`set_security_policy_name(Option<String>)`](crate::client::fluent_builders::CreateServer::set_security_policy_name): <p>Specifies the name of the security policy that is attached to the server.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateServer::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateServer::set_tags): <p>Key-value pairs that can be used to group and search for servers.</p>
-    ///   - [`workflow_details(WorkflowDetails)`](crate::client::fluent_builders::CreateServer::workflow_details) / [`set_workflow_details(Option<WorkflowDetails>)`](crate::client::fluent_builders::CreateServer::set_workflow_details): <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+    ///   - [`workflow_details(WorkflowDetails)`](crate::client::fluent_builders::CreateServer::workflow_details) / [`set_workflow_details(Option<WorkflowDetails>)`](crate::client::fluent_builders::CreateServer::set_workflow_details): <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>  <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
     /// - On success, responds with [`CreateServerOutput`](crate::output::CreateServerOutput) with field(s):
-    ///   - [`server_id(Option<String>)`](crate::output::CreateServerOutput::server_id): <p>The service-assigned ID of the server that is created.</p>
+    ///   - [`server_id(Option<String>)`](crate::output::CreateServerOutput::server_id): <p>The service-assigned identifier of the server that is created.</p>
     /// - On failure, responds with [`SdkError<CreateServerError>`](crate::error::CreateServerError)
     pub fn create_server(&self) -> fluent_builders::CreateServer {
         fluent_builders::CreateServer::new(self.handle.clone())
@@ -191,7 +191,7 @@ impl Client {
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateUser::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateUser::set_tags): <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>
     ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::CreateUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::CreateUser::set_user_name): <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
     /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput) with field(s):
-    ///   - [`server_id(Option<String>)`](crate::output::CreateUserOutput::server_id): <p>The ID of the server that the user is attached to.</p>
+    ///   - [`server_id(Option<String>)`](crate::output::CreateUserOutput::server_id): <p>The identifier of the server that the user is attached to.</p>
     ///   - [`user_name(Option<String>)`](crate::output::CreateUserOutput::user_name): <p>A unique string that identifies a user account associated with a server.</p>
     /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
     pub fn create_user(&self) -> fluent_builders::CreateUser {
@@ -225,7 +225,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`agreement_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAgreement::agreement_id) / [`set_agreement_id(Option<String>)`](crate::client::fluent_builders::DeleteAgreement::set_agreement_id): <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAgreement::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::DeleteAgreement::set_server_id): <p>The server ID associated with the agreement that you are deleting.</p>
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAgreement::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::DeleteAgreement::set_server_id): <p>The server identifier associated with the agreement that you are deleting.</p>
     /// - On success, responds with [`DeleteAgreementOutput`](crate::output::DeleteAgreementOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAgreementError>`](crate::error::DeleteAgreementError)
@@ -235,7 +235,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteCertificate`](crate::client::fluent_builders::DeleteCertificate) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::DeleteCertificate::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::DeleteCertificate::set_certificate_id): <p>The ID of the certificate object that you are deleting.</p>
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::DeleteCertificate::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::DeleteCertificate::set_certificate_id): <p>The identifier of the certificate object that you are deleting.</p>
     /// - On success, responds with [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCertificateError>`](crate::error::DeleteCertificateError)
@@ -255,8 +255,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteHostKey`](crate::client::fluent_builders::DeleteHostKey) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::DeleteHostKey::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::DeleteHostKey::set_server_id): <p>Provide the ID of the server that contains the host key that you are deleting.</p>
-    ///   - [`host_key_id(impl Into<String>)`](crate::client::fluent_builders::DeleteHostKey::host_key_id) / [`set_host_key_id(Option<String>)`](crate::client::fluent_builders::DeleteHostKey::set_host_key_id): <p>The ID of the host key that you are deleting.</p>
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::DeleteHostKey::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::DeleteHostKey::set_server_id): <p>The identifier of the server that contains the host key that you are deleting.</p>
+    ///   - [`host_key_id(impl Into<String>)`](crate::client::fluent_builders::DeleteHostKey::host_key_id) / [`set_host_key_id(Option<String>)`](crate::client::fluent_builders::DeleteHostKey::set_host_key_id): <p>The identifier of the host key that you are deleting.</p>
     /// - On success, responds with [`DeleteHostKeyOutput`](crate::output::DeleteHostKeyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteHostKeyError>`](crate::error::DeleteHostKeyError)
@@ -266,7 +266,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteProfile`](crate::client::fluent_builders::DeleteProfile) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProfile::profile_id) / [`set_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteProfile::set_profile_id): <p>The ID of the profile that you are deleting.</p>
+    ///   - [`profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProfile::profile_id) / [`set_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteProfile::set_profile_id): <p>The identifier of the profile that you are deleting.</p>
     /// - On success, responds with [`DeleteProfileOutput`](crate::output::DeleteProfileOutput)
 
     /// - On failure, responds with [`SdkError<DeleteProfileError>`](crate::error::DeleteProfileError)
@@ -323,7 +323,7 @@ impl Client {
     ///   - [`external_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccess::external_id) / [`set_external_id(Option<String>)`](crate::client::fluent_builders::DescribeAccess::set_external_id): <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>  <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>  <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>  <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     /// - On success, responds with [`DescribeAccessOutput`](crate::output::DescribeAccessOutput) with field(s):
     ///   - [`server_id(Option<String>)`](crate::output::DescribeAccessOutput::server_id): <p>A system-assigned unique identifier for a server that has this access assigned.</p>
-    ///   - [`access(Option<DescribedAccess>)`](crate::output::DescribeAccessOutput::access): <p>The external ID of the server that the access is attached to.</p>
+    ///   - [`access(Option<DescribedAccess>)`](crate::output::DescribeAccessOutput::access): <p>The external identifier of the server that the access is attached to.</p>
     /// - On failure, responds with [`SdkError<DescribeAccessError>`](crate::error::DescribeAccessError)
     pub fn describe_access(&self) -> fluent_builders::DescribeAccess {
         fluent_builders::DescribeAccess::new(self.handle.clone())
@@ -332,7 +332,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`agreement_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAgreement::agreement_id) / [`set_agreement_id(Option<String>)`](crate::client::fluent_builders::DescribeAgreement::set_agreement_id): <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAgreement::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::DescribeAgreement::set_server_id): <p>The server ID that's associated with the agreement.</p>
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAgreement::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::DescribeAgreement::set_server_id): <p>The server identifier that's associated with the agreement.</p>
     /// - On success, responds with [`DescribeAgreementOutput`](crate::output::DescribeAgreementOutput) with field(s):
     ///   - [`agreement(Option<DescribedAgreement>)`](crate::output::DescribeAgreementOutput::agreement): <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
     /// - On failure, responds with [`SdkError<DescribeAgreementError>`](crate::error::DescribeAgreementError)
@@ -374,8 +374,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeHostKey`](crate::client::fluent_builders::DescribeHostKey) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::DescribeHostKey::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::DescribeHostKey::set_server_id): <p>Provide the ID of the server that contains the host key that you want described.</p>
-    ///   - [`host_key_id(impl Into<String>)`](crate::client::fluent_builders::DescribeHostKey::host_key_id) / [`set_host_key_id(Option<String>)`](crate::client::fluent_builders::DescribeHostKey::set_host_key_id): <p>Provide the ID of the host key that you want described.</p>
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::DescribeHostKey::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::DescribeHostKey::set_server_id): <p>The identifier of the server that contains the host key that you want described.</p>
+    ///   - [`host_key_id(impl Into<String>)`](crate::client::fluent_builders::DescribeHostKey::host_key_id) / [`set_host_key_id(Option<String>)`](crate::client::fluent_builders::DescribeHostKey::set_host_key_id): <p>The identifier of the host key that you want described.</p>
     /// - On success, responds with [`DescribeHostKeyOutput`](crate::output::DescribeHostKeyOutput) with field(s):
     ///   - [`host_key(Option<DescribedHostKey>)`](crate::output::DescribeHostKeyOutput::host_key): <p>Returns the details for the specified host key.</p>
     /// - On failure, responds with [`SdkError<DescribeHostKeyError>`](crate::error::DescribeHostKeyError)
@@ -454,13 +454,13 @@ impl Client {
     /// Constructs a fluent builder for the [`ImportHostKey`](crate::client::fluent_builders::ImportHostKey) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::ImportHostKey::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::ImportHostKey::set_server_id): <p>Provide the ID of the server that contains the host key that you are importing.</p>
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::ImportHostKey::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::ImportHostKey::set_server_id): <p>The identifier of the server that contains the host key that you are importing.</p>
     ///   - [`host_key_body(impl Into<String>)`](crate::client::fluent_builders::ImportHostKey::host_key_body) / [`set_host_key_body(Option<String>)`](crate::client::fluent_builders::ImportHostKey::set_host_key_body): <p>The public key portion of an SSH key pair.</p>  <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::ImportHostKey::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::ImportHostKey::set_description): <p>Enter a text description to identify this host key.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::ImportHostKey::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::ImportHostKey::set_description): <p>The text description that identifies this host key.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportHostKey::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportHostKey::set_tags): <p>Key-value pairs that can be used to group and search for host keys.</p>
     /// - On success, responds with [`ImportHostKeyOutput`](crate::output::ImportHostKeyOutput) with field(s):
-    ///   - [`server_id(Option<String>)`](crate::output::ImportHostKeyOutput::server_id): <p>Returns the server ID that contains the imported key.</p>
-    ///   - [`host_key_id(Option<String>)`](crate::output::ImportHostKeyOutput::host_key_id): <p>Returns the host key ID for the imported key.</p>
+    ///   - [`server_id(Option<String>)`](crate::output::ImportHostKeyOutput::server_id): <p>Returns the server identifier that contains the imported key.</p>
+    ///   - [`host_key_id(Option<String>)`](crate::output::ImportHostKeyOutput::host_key_id): <p>Returns the host key identifier for the imported key.</p>
     /// - On failure, responds with [`SdkError<ImportHostKeyError>`](crate::error::ImportHostKeyError)
     pub fn import_host_key(&self) -> fluent_builders::ImportHostKey {
         fluent_builders::ImportHostKey::new(self.handle.clone())
@@ -554,10 +554,10 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHostKeys::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListHostKeys::set_max_results): <p>The maximum number of host keys to return.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHostKeys::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHostKeys::set_next_token): <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListHostKeys</code> to continue listing results.</p>
-    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::ListHostKeys::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::ListHostKeys::set_server_id): <p>Provide the ID of the server that contains the host keys that you want to view.</p>
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::ListHostKeys::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::ListHostKeys::set_server_id): <p>The identifier of the server that contains the host keys that you want to view.</p>
     /// - On success, responds with [`ListHostKeysOutput`](crate::output::ListHostKeysOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListHostKeysOutput::next_token): <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
-    ///   - [`server_id(Option<String>)`](crate::output::ListHostKeysOutput::server_id): <p>Returns the server ID that contains the listed host keys.</p>
+    ///   - [`server_id(Option<String>)`](crate::output::ListHostKeysOutput::server_id): <p>Returns the server identifier that contains the listed host keys.</p>
     ///   - [`host_keys(Option<Vec<ListedHostKey>>)`](crate::output::ListHostKeysOutput::host_keys): <p>Returns an array, where each item contains the details of a host key.</p>
     /// - On failure, responds with [`SdkError<ListHostKeysError>`](crate::error::ListHostKeysError)
     pub fn list_host_keys(&self) -> fluent_builders::ListHostKeys {
@@ -741,8 +741,8 @@ impl Client {
     ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccess::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::UpdateAccess::set_server_id): <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
     ///   - [`external_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccess::external_id) / [`set_external_id(Option<String>)`](crate::client::fluent_builders::UpdateAccess::set_external_id): <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>  <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>  <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>  <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     /// - On success, responds with [`UpdateAccessOutput`](crate::output::UpdateAccessOutput) with field(s):
-    ///   - [`server_id(Option<String>)`](crate::output::UpdateAccessOutput::server_id): <p>The ID of the server that the user is attached to.</p>
-    ///   - [`external_id(Option<String>)`](crate::output::UpdateAccessOutput::external_id): <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
+    ///   - [`server_id(Option<String>)`](crate::output::UpdateAccessOutput::server_id): <p>The identifier of the server that the user is attached to.</p>
+    ///   - [`external_id(Option<String>)`](crate::output::UpdateAccessOutput::external_id): <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
     /// - On failure, responds with [`SdkError<UpdateAccessError>`](crate::error::UpdateAccessError)
     pub fn update_access(&self) -> fluent_builders::UpdateAccess {
         fluent_builders::UpdateAccess::new(self.handle.clone())
@@ -794,12 +794,12 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateHostKey`](crate::client::fluent_builders::UpdateHostKey) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::UpdateHostKey::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::UpdateHostKey::set_server_id): <p>Provide the ID of the server that contains the host key that you are updating.</p>
-    ///   - [`host_key_id(impl Into<String>)`](crate::client::fluent_builders::UpdateHostKey::host_key_id) / [`set_host_key_id(Option<String>)`](crate::client::fluent_builders::UpdateHostKey::set_host_key_id): <p>Provide the ID of the host key that you are updating.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateHostKey::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateHostKey::set_description): <p>Provide an updated description for the host key.</p>
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::UpdateHostKey::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::UpdateHostKey::set_server_id): <p>The identifier of the server that contains the host key that you are updating.</p>
+    ///   - [`host_key_id(impl Into<String>)`](crate::client::fluent_builders::UpdateHostKey::host_key_id) / [`set_host_key_id(Option<String>)`](crate::client::fluent_builders::UpdateHostKey::set_host_key_id): <p>The identifier of the host key that you are updating.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateHostKey::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateHostKey::set_description): <p>An updated description for the host key.</p>
     /// - On success, responds with [`UpdateHostKeyOutput`](crate::output::UpdateHostKeyOutput) with field(s):
-    ///   - [`server_id(Option<String>)`](crate::output::UpdateHostKeyOutput::server_id): <p>Returns the server ID for the server that contains the updated host key.</p>
-    ///   - [`host_key_id(Option<String>)`](crate::output::UpdateHostKeyOutput::host_key_id): <p>Returns the host key ID for the updated host key.</p>
+    ///   - [`server_id(Option<String>)`](crate::output::UpdateHostKeyOutput::server_id): <p>Returns the server identifier for the server that contains the updated host key.</p>
+    ///   - [`host_key_id(Option<String>)`](crate::output::UpdateHostKeyOutput::host_key_id): <p>Returns the host key identifier for the updated host key.</p>
     /// - On failure, responds with [`SdkError<UpdateHostKeyError>`](crate::error::UpdateHostKeyError)
     pub fn update_host_key(&self) -> fluent_builders::UpdateHostKey {
         fluent_builders::UpdateHostKey::new(self.handle.clone())
@@ -822,7 +822,7 @@ impl Client {
     ///   - [`protocol_details(ProtocolDetails)`](crate::client::fluent_builders::UpdateServer::protocol_details) / [`set_protocol_details(Option<ProtocolDetails>)`](crate::client::fluent_builders::UpdateServer::set_protocol_details): <p>The protocol settings that are configured for your server.</p>  <ul>   <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>   <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>   <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>   <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>  </ul>
     ///   - [`endpoint_details(EndpointDetails)`](crate::client::fluent_builders::UpdateServer::endpoint_details) / [`set_endpoint_details(Option<EndpointDetails>)`](crate::client::fluent_builders::UpdateServer::set_endpoint_details): <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     ///   - [`endpoint_type(EndpointType)`](crate::client::fluent_builders::UpdateServer::endpoint_type) / [`set_endpoint_type(Option<EndpointType>)`](crate::client::fluent_builders::UpdateServer::set_endpoint_type): <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>   <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>   <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>   <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>  </note>
-    ///   - [`host_key(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::host_key) / [`set_host_key(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_host_key): <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>  <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>  <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>  <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>  <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p>  <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f my-new-server-key</code>.</p>  <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p>  <p>Use the following command to generate an ED25519 key with no passphrase:</p>  <p> <code>ssh-keygen -t ed25519 -N "" -f my-new-server-key</code>.</p>  <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>   <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>  </important>  <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+    ///   - [`host_key(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::host_key) / [`set_host_key(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_host_key): <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>  <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>  <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>  <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>  <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p>  <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f my-new-server-key</code>.</p>  <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p>  <p>Use the following command to generate an ED25519 key with no passphrase:</p>  <p> <code>ssh-keygen -t ed25519 -N "" -f my-new-server-key</code>.</p>  <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>   <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>  </important>  <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
     ///   - [`identity_provider_details(IdentityProviderDetails)`](crate::client::fluent_builders::UpdateServer::identity_provider_details) / [`set_identity_provider_details(Option<IdentityProviderDetails>)`](crate::client::fluent_builders::UpdateServer::set_identity_provider_details): <p>An array containing all of the information required to call a customer's authentication API method.</p>
     ///   - [`logging_role(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::logging_role) / [`set_logging_role(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_logging_role): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     ///   - [`post_authentication_login_banner(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::post_authentication_login_banner) / [`set_post_authentication_login_banner(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_post_authentication_login_banner): <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>   <p>The SFTP protocol does not support post-authentication display banners.</p>  </note>
@@ -830,7 +830,7 @@ impl Client {
     ///   - [`protocols(Vec<Protocol>)`](crate::client::fluent_builders::UpdateServer::protocols) / [`set_protocols(Option<Vec<Protocol>>)`](crate::client::fluent_builders::UpdateServer::set_protocols): <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>  <ul>   <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>   <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>   <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>   <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>  </ul> <note>   <ul>    <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>    <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> </li>    <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>    <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p> </li>    <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>   </ul>  </note>
     ///   - [`security_policy_name(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::security_policy_name) / [`set_security_policy_name(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_security_policy_name): <p>Specifies the name of the security policy that is attached to the server.</p>
     ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_server_id): <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
-    ///   - [`workflow_details(WorkflowDetails)`](crate::client::fluent_builders::UpdateServer::workflow_details) / [`set_workflow_details(Option<WorkflowDetails>)`](crate::client::fluent_builders::UpdateServer::set_workflow_details): <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>  <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>  <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
+    ///   - [`workflow_details(WorkflowDetails)`](crate::client::fluent_builders::UpdateServer::workflow_details) / [`set_workflow_details(Option<WorkflowDetails>)`](crate::client::fluent_builders::UpdateServer::set_workflow_details): <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>  <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>  <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>  <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     /// - On success, responds with [`UpdateServerOutput`](crate::output::UpdateServerOutput) with field(s):
     ///   - [`server_id(Option<String>)`](crate::output::UpdateServerOutput::server_id): <p>A system-assigned unique identifier for a server that the user account is assigned to.</p>
     /// - On failure, responds with [`SdkError<UpdateServerError>`](crate::error::UpdateServerError)
@@ -1163,13 +1163,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-        /// <p>A <code>BaseDirectory</code> example is <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+        /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
         pub fn base_directory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.base_directory(input.into());
             self
         }
         /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-        /// <p>A <code>BaseDirectory</code> example is <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+        /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
         pub fn set_base_directory(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1220,7 +1220,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateConnector`.
     ///
-    /// <p>Creates the connector, which captures the parameters for an outbound connection for the AS2 protocol. The connector is required for sending files from a customer's non Amazon Web Services server. </p>
+    /// <p>Creates the connector, which captures the parameters for an outbound connection for the AS2 protocol. The connector is required for sending files to an externally hosted AS2 server. For more details about connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create AS2 connectors</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnector {
         handle: std::sync::Arc<super::Handle>,
@@ -1343,7 +1343,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProfile`.
     ///
-    /// <p>Creates the profile for the AS2 process. The agreement is between the partner and the AS2 process.</p>
+    /// <p>Creates the local or partner profile to use for AS2 transfers.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProfile {
         handle: std::sync::Arc<super::Handle>,
@@ -1413,12 +1413,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_as2_id(input);
             self
         }
-        /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+        /// <p>Determines the type of profile to create:</p>
+        /// <ul>
+        /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
+        /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
+        /// </ul>
         pub fn profile_type(mut self, input: crate::model::ProfileType) -> Self {
             self.inner = self.inner.profile_type(input);
             self
         }
-        /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+        /// <p>Determines the type of profile to create:</p>
+        /// <ul>
+        /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
+        /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
+        /// </ul>
         pub fn set_profile_type(
             mut self,
             input: std::option::Option<crate::model::ProfileType>,
@@ -1607,7 +1615,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_type(input);
             self
         }
-        /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+        /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
         /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
         /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
@@ -1619,12 +1627,12 @@ pub mod fluent_builders {
         /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
         /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
         pub fn host_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.host_key(input.into());
             self
         }
-        /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+        /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
         /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
         /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
@@ -1636,7 +1644,7 @@ pub mod fluent_builders {
         /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
         /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
         pub fn set_host_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_host_key(input);
             self
@@ -1825,11 +1833,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+        /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
         pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
             self.inner = self.inner.workflow_details(input);
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+        /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
         pub fn set_workflow_details(
             mut self,
             input: std::option::Option<crate::model::WorkflowDetails>,
@@ -2363,12 +2373,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_agreement_id(input);
             self
         }
-        /// <p>The server ID associated with the agreement that you are deleting.</p>
+        /// <p>The server identifier associated with the agreement that you are deleting.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_id(input.into());
             self
         }
-        /// <p>The server ID associated with the agreement that you are deleting.</p>
+        /// <p>The server identifier associated with the agreement that you are deleting.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_server_id(input);
             self
@@ -2436,12 +2446,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the certificate object that you are deleting.</p>
+        /// <p>The identifier of the certificate object that you are deleting.</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_id(input.into());
             self
         }
-        /// <p>The ID of the certificate object that you are deleting.</p>
+        /// <p>The identifier of the certificate object that you are deleting.</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2585,22 +2595,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Provide the ID of the server that contains the host key that you are deleting.</p>
+        /// <p>The identifier of the server that contains the host key that you are deleting.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_id(input.into());
             self
         }
-        /// <p>Provide the ID of the server that contains the host key that you are deleting.</p>
+        /// <p>The identifier of the server that contains the host key that you are deleting.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_server_id(input);
             self
         }
-        /// <p>The ID of the host key that you are deleting.</p>
+        /// <p>The identifier of the host key that you are deleting.</p>
         pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.host_key_id(input.into());
             self
         }
-        /// <p>The ID of the host key that you are deleting.</p>
+        /// <p>The identifier of the host key that you are deleting.</p>
         pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_host_key_id(input);
             self
@@ -2668,12 +2678,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the profile that you are deleting.</p>
+        /// <p>The identifier of the profile that you are deleting.</p>
         pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.profile_id(input.into());
             self
         }
-        /// <p>The ID of the profile that you are deleting.</p>
+        /// <p>The identifier of the profile that you are deleting.</p>
         pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_profile_id(input);
             self
@@ -3170,12 +3180,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_agreement_id(input);
             self
         }
-        /// <p>The server ID that's associated with the agreement.</p>
+        /// <p>The server identifier that's associated with the agreement.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_id(input.into());
             self
         }
-        /// <p>The server ID that's associated with the agreement.</p>
+        /// <p>The server identifier that's associated with the agreement.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_server_id(input);
             self
@@ -3475,22 +3485,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Provide the ID of the server that contains the host key that you want described.</p>
+        /// <p>The identifier of the server that contains the host key that you want described.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_id(input.into());
             self
         }
-        /// <p>Provide the ID of the server that contains the host key that you want described.</p>
+        /// <p>The identifier of the server that contains the host key that you want described.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_server_id(input);
             self
         }
-        /// <p>Provide the ID of the host key that you want described.</p>
+        /// <p>The identifier of the host key that you want described.</p>
         pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.host_key_id(input.into());
             self
         }
-        /// <p>Provide the ID of the host key that you want described.</p>
+        /// <p>The identifier of the host key that you want described.</p>
         pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_host_key_id(input);
             self
@@ -4040,7 +4050,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportHostKey`.
     ///
-    /// <p>Adds a host key to the server specified by the <code>ServerId</code> parameter.</p>
+    /// <p>Adds a host key to the server that's specified by the <code>ServerId</code> parameter.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportHostKey {
         handle: std::sync::Arc<super::Handle>,
@@ -4100,12 +4110,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Provide the ID of the server that contains the host key that you are importing.</p>
+        /// <p>The identifier of the server that contains the host key that you are importing.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_id(input.into());
             self
         }
-        /// <p>Provide the ID of the server that contains the host key that you are importing.</p>
+        /// <p>The identifier of the server that contains the host key that you are importing.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_server_id(input);
             self
@@ -4125,12 +4135,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_host_key_body(input);
             self
         }
-        /// <p>Enter a text description to identify this host key.</p>
+        /// <p>The text description that identifies this host key.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>Enter a text description to identify this host key.</p>
+        /// <p>The text description that identifies this host key.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -4739,7 +4749,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListHostKeys`.
     ///
-    /// <p>Returns a list of host keys for the server specified by the <code>ServerId</code> paramter.</p>
+    /// <p>Returns a list of host keys for the server that's specified by the <code>ServerId</code> parameter.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHostKeys {
         handle: std::sync::Arc<super::Handle>,
@@ -4819,12 +4829,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Provide the ID of the server that contains the host keys that you want to view.</p>
+        /// <p>The identifier of the server that contains the host keys that you want to view.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_id(input.into());
             self
         }
-        /// <p>Provide the ID of the server that contains the host keys that you want to view.</p>
+        /// <p>The identifier of the server that contains the host keys that you want to view.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_server_id(input);
             self
@@ -5506,7 +5516,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartFileTransfer`.
     ///
-    /// <p>Begins an outbound file transfer. You specify the <code>ConnectorId</code> and the file paths for where to send the files. </p>
+    /// <p>Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code> and the file paths for where to send the files. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFileTransfer {
         handle: std::sync::Arc<super::Handle>,
@@ -6644,7 +6654,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateHostKey`.
     ///
-    /// <p>Updates the description for the host key specified by the specified by the <code>ServerId</code> and <code>HostKeyId</code> parameters.</p>
+    /// <p>Updates the description for the host key that's specified by the <code>ServerId</code> and <code>HostKeyId</code> parameters.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHostKey {
         handle: std::sync::Arc<super::Handle>,
@@ -6704,32 +6714,32 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Provide the ID of the server that contains the host key that you are updating.</p>
+        /// <p>The identifier of the server that contains the host key that you are updating.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_id(input.into());
             self
         }
-        /// <p>Provide the ID of the server that contains the host key that you are updating.</p>
+        /// <p>The identifier of the server that contains the host key that you are updating.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_server_id(input);
             self
         }
-        /// <p>Provide the ID of the host key that you are updating.</p>
+        /// <p>The identifier of the host key that you are updating.</p>
         pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.host_key_id(input.into());
             self
         }
-        /// <p>Provide the ID of the host key that you are updating.</p>
+        /// <p>The identifier of the host key that you are updating.</p>
         pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_host_key_id(input);
             self
         }
-        /// <p>Provide an updated description for the host key.</p>
+        /// <p>An updated description for the host key.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>Provide an updated description for the host key.</p>
+        /// <p>An updated description for the host key.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -6983,7 +6993,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_type(input);
             self
         }
-        /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+        /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
         /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
         /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
@@ -6995,12 +7005,12 @@ pub mod fluent_builders {
         /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
         /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
         pub fn host_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.host_key(input.into());
             self
         }
-        /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+        /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
         /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
         /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
@@ -7012,7 +7022,7 @@ pub mod fluent_builders {
         /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
         /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
         pub fn set_host_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_host_key(input);
             self
@@ -7150,6 +7160,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+        /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
         /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
         /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
         pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
@@ -7157,6 +7168,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+        /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
         /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
         /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
         pub fn set_workflow_details(

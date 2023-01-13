@@ -162,7 +162,7 @@ impl InvalidInputException {
     }
 }
 
-/// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+/// <p>The account doesn't have permission to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidAccessException {
@@ -592,7 +592,7 @@ impl aws_smithy_http::result::CreateUnhandledError for AcceptAdministratorInvita
 pub enum AcceptAdministratorInvitationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -755,7 +755,7 @@ impl aws_smithy_http::result::CreateUnhandledError for AcceptInvitationError {
 pub enum AcceptInvitationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -904,7 +904,7 @@ impl aws_smithy_http::result::CreateUnhandledError for BatchDisableStandardsErro
 pub enum BatchDisableStandardsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -1049,7 +1049,7 @@ impl aws_smithy_http::result::CreateUnhandledError for BatchEnableStandardsError
 pub enum BatchEnableStandardsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -1194,7 +1194,7 @@ impl aws_smithy_http::result::CreateUnhandledError for BatchImportFindingsError 
 pub enum BatchImportFindingsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -1335,7 +1335,7 @@ impl aws_smithy_http::result::CreateUnhandledError for BatchUpdateFindingsError 
 pub enum BatchUpdateFindingsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -1476,7 +1476,7 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateActionTargetError {
 pub enum CreateActionTargetErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -1630,7 +1630,7 @@ pub enum CreateFindingAggregatorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -1784,7 +1784,7 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateInsightError {
 pub enum CreateInsightErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -1930,7 +1930,7 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateMembersError {
 pub enum CreateMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -2076,7 +2076,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DeclineInvitationsError {
 pub enum DeclineInvitationsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -2217,7 +2217,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteActionTargetError {
 pub enum DeleteActionTargetErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -2360,7 +2360,7 @@ pub enum DeleteFindingAggregatorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -2525,7 +2525,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteInsightError {
 pub enum DeleteInsightErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -2671,7 +2671,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteInvitationsError {
 pub enum DeleteInvitationsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -2820,7 +2820,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteMembersError {
 pub enum DeleteMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -2966,7 +2966,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeActionTargetsErro
 pub enum DescribeActionTargetsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -3111,7 +3111,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeHubError {
 pub enum DescribeHubErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -3253,7 +3253,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeOrganizationConfi
 pub enum DescribeOrganizationConfigurationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -3413,7 +3413,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeProductsError {
 pub enum DescribeProductsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -3551,7 +3551,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeStandardsError {
 pub enum DescribeStandardsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -3680,7 +3680,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeStandardsControls
 pub enum DescribeStandardsControlsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -3827,7 +3827,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DisableImportFindingsForP
 pub enum DisableImportFindingsForProductErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -4002,7 +4002,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DisableOrganizationAdminA
 pub enum DisableOrganizationAdminAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -4160,7 +4160,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DisableSecurityHubError {
 pub enum DisableSecurityHubErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -4303,7 +4303,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DisassociateFromAdministr
 pub enum DisassociateFromAdministratorAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -4484,7 +4484,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DisassociateFromMasterAcc
 pub enum DisassociateFromMasterAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -4647,7 +4647,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DisassociateMembersError 
 pub enum DisassociateMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -4801,7 +4801,7 @@ impl aws_smithy_http::result::CreateUnhandledError for EnableImportFindingsForPr
 pub enum EnableImportFindingsForProductErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -4970,7 +4970,7 @@ impl aws_smithy_http::result::CreateUnhandledError for EnableOrganizationAdminAc
 pub enum EnableOrganizationAdminAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -5124,7 +5124,7 @@ pub enum EnableSecurityHubErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -5271,7 +5271,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GetAdministratorAccountEr
 pub enum GetAdministratorAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -5427,7 +5427,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GetEnabledStandardsError 
 pub enum GetEnabledStandardsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -5570,7 +5570,7 @@ pub enum GetFindingAggregatorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -5735,7 +5735,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GetFindingsError {
 pub enum GetFindingsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -5864,7 +5864,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GetInsightResultsError {
 pub enum GetInsightResultsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -6013,7 +6013,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GetInsightsError {
 pub enum GetInsightsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -6153,7 +6153,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GetInvitationsCountError 
 pub enum GetInvitationsCountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -6294,7 +6294,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GetMasterAccountError {
 pub enum GetMasterAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -6443,7 +6443,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GetMembersError {
 pub enum GetMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -6583,7 +6583,7 @@ impl aws_smithy_http::result::CreateUnhandledError for InviteMembersError {
 pub enum InviteMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -6731,7 +6731,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ListEnabledProductsForImp
 pub enum ListEnabledProductsForImportErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -6867,7 +6867,7 @@ pub enum ListFindingAggregatorsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -7021,7 +7021,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ListInvitationsError {
 pub enum ListInvitationsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -7159,7 +7159,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ListMembersError {
 pub enum ListMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -7290,7 +7290,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ListOrganizationAdminAcco
 pub enum ListOrganizationAdminAccountsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -7816,7 +7816,7 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateActionTargetError {
 pub enum UpdateActionTargetErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -7959,7 +7959,7 @@ pub enum UpdateFindingAggregatorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -8124,7 +8124,7 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateFindingsError {
 pub enum UpdateFindingsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -8273,7 +8273,7 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateInsightError {
 pub enum UpdateInsightErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -8421,7 +8421,7 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateOrganizationConfigu
 pub enum UpdateOrganizationConfigurationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -8581,7 +8581,7 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateSecurityHubConfigur
 pub enum UpdateSecurityHubConfigurationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -8748,7 +8748,7 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateStandardsControlErr
 pub enum UpdateStandardsControlErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
+    /// <p>The account doesn't have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),

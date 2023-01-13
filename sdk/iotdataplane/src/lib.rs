@@ -68,6 +68,8 @@ pub mod types;
 
 mod aws_endpoint;
 
+mod http_serde;
+
 pub mod middleware;
 
 mod no_credentials;
@@ -78,8 +80,6 @@ mod operation_ser;
 
 /// Paginators for the service
 pub mod paginator;
-
-mod http_serde;
 
 mod json_deser;
 

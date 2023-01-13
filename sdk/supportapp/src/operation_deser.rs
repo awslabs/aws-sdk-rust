@@ -745,6 +745,117 @@ pub fn parse_put_account_alias_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_register_slack_workspace_for_organization_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RegisterSlackWorkspaceForOrganizationOutput,
+    crate::error::RegisterSlackWorkspaceForOrganizationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RegisterSlackWorkspaceForOrganizationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::RegisterSlackWorkspaceForOrganizationError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::RegisterSlackWorkspaceForOrganizationError { meta: generic, kind: crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterSlackWorkspaceForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ConflictException" => crate::error::RegisterSlackWorkspaceForOrganizationError { meta: generic, kind: crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::ConflictException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterSlackWorkspaceForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServerException" => crate::error::RegisterSlackWorkspaceForOrganizationError { meta: generic, kind: crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::InternalServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterSlackWorkspaceForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::RegisterSlackWorkspaceForOrganizationError { meta: generic, kind: crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterSlackWorkspaceForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ValidationException" => crate::error::RegisterSlackWorkspaceForOrganizationError { meta: generic, kind: crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::ValidationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterSlackWorkspaceForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::RegisterSlackWorkspaceForOrganizationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_register_slack_workspace_for_organization_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RegisterSlackWorkspaceForOrganizationOutput,
+    crate::error::RegisterSlackWorkspaceForOrganizationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::register_slack_workspace_for_organization_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_register_slack_workspace_for_organization(response.body().as_ref(), output).map_err(crate::error::RegisterSlackWorkspaceForOrganizationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_slack_channel_configuration_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

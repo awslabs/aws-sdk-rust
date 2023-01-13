@@ -1091,7 +1091,7 @@ impl AsRef<str> for EventDataStoreStatus {
     }
 }
 
-/// <p> Provides statistics for the specified <code>ImportID</code>. </p>
+/// <p> Provides statistics for the specified <code>ImportID</code>. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportStatistics {
@@ -1101,10 +1101,10 @@ pub struct ImportStatistics {
     /// <p> The number of S3 prefixes that completed import. </p>
     #[doc(hidden)]
     pub prefixes_completed: std::option::Option<i64>,
-    /// <p>The number of files that completed import.</p>
+    /// <p>The number of log files that completed import.</p>
     #[doc(hidden)]
     pub files_completed: std::option::Option<i64>,
-    /// <p> The number of trail events imported. </p>
+    /// <p> The number of trail events imported into the event data store. </p>
     #[doc(hidden)]
     pub events_completed: std::option::Option<i64>,
     /// <p> The number of failed entries. </p>
@@ -1120,11 +1120,11 @@ impl ImportStatistics {
     pub fn prefixes_completed(&self) -> std::option::Option<i64> {
         self.prefixes_completed
     }
-    /// <p>The number of files that completed import.</p>
+    /// <p>The number of log files that completed import.</p>
     pub fn files_completed(&self) -> std::option::Option<i64> {
         self.files_completed
     }
-    /// <p> The number of trail events imported. </p>
+    /// <p> The number of trail events imported into the event data store. </p>
     pub fn events_completed(&self) -> std::option::Option<i64> {
         self.events_completed
     }
@@ -1166,22 +1166,22 @@ pub mod import_statistics {
             self.prefixes_completed = input;
             self
         }
-        /// <p>The number of files that completed import.</p>
+        /// <p>The number of log files that completed import.</p>
         pub fn files_completed(mut self, input: i64) -> Self {
             self.files_completed = Some(input);
             self
         }
-        /// <p>The number of files that completed import.</p>
+        /// <p>The number of log files that completed import.</p>
         pub fn set_files_completed(mut self, input: std::option::Option<i64>) -> Self {
             self.files_completed = input;
             self
         }
-        /// <p> The number of trail events imported. </p>
+        /// <p> The number of trail events imported into the event data store. </p>
         pub fn events_completed(mut self, input: i64) -> Self {
             self.events_completed = Some(input);
             self
         }
-        /// <p> The number of trail events imported. </p>
+        /// <p> The number of trail events imported into the event data store. </p>
         pub fn set_events_completed(mut self, input: std::option::Option<i64>) -> Self {
             self.events_completed = input;
             self
@@ -1853,7 +1853,7 @@ pub struct DataResource {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
     /// </ul>
-    /// <p>The following resource types are also availble through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
+    /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
     /// <ul>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
@@ -1890,7 +1890,7 @@ impl DataResource {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
     /// </ul>
-    /// <p>The following resource types are also availble through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
+    /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
     /// <ul>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
@@ -1938,7 +1938,7 @@ pub mod data_resource {
         /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
         /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
         /// </ul>
-        /// <p>The following resource types are also availble through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
+        /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
         /// <ul>
         /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
         /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
@@ -1958,7 +1958,7 @@ pub mod data_resource {
         /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
         /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
         /// </ul>
-        /// <p>The following resource types are also availble through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
+        /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
         /// <ul>
         /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
         /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
@@ -3202,7 +3202,7 @@ pub struct ImportsListItem {
     /// <p> The status of the import. </p>
     #[doc(hidden)]
     pub import_status: std::option::Option<crate::model::ImportStatus>,
-    /// <p> The destination event data store. </p>
+    /// <p> The ARN of the destination event data store. </p>
     #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The timestamp of the import's creation. </p>
@@ -3221,7 +3221,7 @@ impl ImportsListItem {
     pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
         self.import_status.as_ref()
     }
-    /// <p> The destination event data store. </p>
+    /// <p> The ARN of the destination event data store. </p>
     pub fn destinations(&self) -> std::option::Option<&[std::string::String]> {
         self.destinations.as_deref()
     }
@@ -3274,14 +3274,14 @@ pub mod imports_list_item {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p> The destination event data store. </p>
+        /// <p> The ARN of the destination event data store. </p>
         pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
-        /// <p> The destination event data store. </p>
+        /// <p> The ARN of the destination event data store. </p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3854,11 +3854,11 @@ impl EventDataStore {
     }
 }
 
-/// <p> Contains information about a returned CloudTrail channel. </p>
+/// <p>Contains information about a returned CloudTrail channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Channel {
-    /// <p> The Amazon Resource Name (ARN) of the channel. </p>
+    /// <p>The Amazon Resource Name (ARN) of a channel.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p> The name of the CloudTrail channel. For service-linked channels, the name is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix created by the Amazon Web Services service. </p>
@@ -3866,7 +3866,7 @@ pub struct Channel {
     pub name: std::option::Option<std::string::String>,
 }
 impl Channel {
-    /// <p> The Amazon Resource Name (ARN) of the channel. </p>
+    /// <p>The Amazon Resource Name (ARN) of a channel.</p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
@@ -3885,12 +3885,12 @@ pub mod channel {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The Amazon Resource Name (ARN) of the channel. </p>
+        /// <p>The Amazon Resource Name (ARN) of a channel.</p>
         pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the channel. </p>
+        /// <p>The Amazon Resource Name (ARN) of a channel.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
@@ -4380,23 +4380,23 @@ impl QueryStatistics {
     }
 }
 
-/// <p> Contains information about the service where CloudTrail delivers events. </p>
+/// <p>Contains information about the service where CloudTrail delivers events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Destination {
-    /// <p> The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+    /// <p>The type of destination for events arriving from a channel. For service-linked channels, the value is <code>AWS_SERVICE</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DestinationType>,
-    /// <p> The location of the service. For service-linked channels, this is the name of the Amazon Web Services service. </p>
+    /// <p>For service-linked channels, the value is the name of the Amazon Web Services service.</p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl Destination {
-    /// <p> The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+    /// <p>The type of destination for events arriving from a channel. For service-linked channels, the value is <code>AWS_SERVICE</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DestinationType> {
         self.r#type.as_ref()
     }
-    /// <p> The location of the service. For service-linked channels, this is the name of the Amazon Web Services service. </p>
+    /// <p>For service-linked channels, the value is the name of the Amazon Web Services service.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -4411,12 +4411,12 @@ pub mod destination {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+        /// <p>The type of destination for events arriving from a channel. For service-linked channels, the value is <code>AWS_SERVICE</code>.</p>
         pub fn r#type(mut self, input: crate::model::DestinationType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p> The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+        /// <p>The type of destination for events arriving from a channel. For service-linked channels, the value is <code>AWS_SERVICE</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DestinationType>,
@@ -4424,12 +4424,12 @@ pub mod destination {
             self.r#type = input;
             self
         }
-        /// <p> The location of the service. For service-linked channels, this is the name of the Amazon Web Services service. </p>
+        /// <p>For service-linked channels, the value is the name of the Amazon Web Services service.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p> The location of the service. For service-linked channels, this is the name of the Amazon Web Services service. </p>
+        /// <p>For service-linked channels, the value is the name of the Amazon Web Services service.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4540,24 +4540,24 @@ impl AsRef<str> for DestinationType {
     }
 }
 
-/// <p> Contains configuration information about the service-linked channel. </p>
+/// <p> Contains configuration information about the channel. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceConfig {
-    /// <p> Specifies whether the service-linked channel applies to one region or all regions. </p>
+    /// <p> Specifies whether the channel applies to a single region or to all regions.</p>
     #[doc(hidden)]
     pub apply_to_all_regions: std::option::Option<bool>,
-    /// <p> The advanced event selectors configured for the service-linked channel. </p>
+    /// <p> The advanced event selectors that are configured for the channel.</p>
     #[doc(hidden)]
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
 }
 impl SourceConfig {
-    /// <p> Specifies whether the service-linked channel applies to one region or all regions. </p>
+    /// <p> Specifies whether the channel applies to a single region or to all regions.</p>
     pub fn apply_to_all_regions(&self) -> std::option::Option<bool> {
         self.apply_to_all_regions
     }
-    /// <p> The advanced event selectors configured for the service-linked channel. </p>
+    /// <p> The advanced event selectors that are configured for the channel.</p>
     pub fn advanced_event_selectors(
         &self,
     ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
@@ -4575,12 +4575,12 @@ pub mod source_config {
             std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
     }
     impl Builder {
-        /// <p> Specifies whether the service-linked channel applies to one region or all regions. </p>
+        /// <p> Specifies whether the channel applies to a single region or to all regions.</p>
         pub fn apply_to_all_regions(mut self, input: bool) -> Self {
             self.apply_to_all_regions = Some(input);
             self
         }
-        /// <p> Specifies whether the service-linked channel applies to one region or all regions. </p>
+        /// <p> Specifies whether the channel applies to a single region or to all regions.</p>
         pub fn set_apply_to_all_regions(mut self, input: std::option::Option<bool>) -> Self {
             self.apply_to_all_regions = input;
             self
@@ -4589,7 +4589,7 @@ pub mod source_config {
         ///
         /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
         ///
-        /// <p> The advanced event selectors configured for the service-linked channel. </p>
+        /// <p> The advanced event selectors that are configured for the channel.</p>
         pub fn advanced_event_selectors(
             mut self,
             input: crate::model::AdvancedEventSelector,
@@ -4599,7 +4599,7 @@ pub mod source_config {
             self.advanced_event_selectors = Some(v);
             self
         }
-        /// <p> The advanced event selectors configured for the service-linked channel. </p>
+        /// <p> The advanced event selectors that are configured for the channel.</p>
         pub fn set_advanced_event_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
@@ -4620,6 +4620,141 @@ impl SourceConfig {
     /// Creates a new builder-style object to manufacture [`SourceConfig`](crate::model::SourceConfig).
     pub fn builder() -> crate::model::source_config::Builder {
         crate::model::source_config::Builder::default()
+    }
+}
+
+/// When writing a match expression against `DeliveryStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let deliverystatus = unimplemented!();
+/// match deliverystatus {
+///     DeliveryStatus::AccessDenied => { /* ... */ },
+///     DeliveryStatus::AccessDeniedSigningFile => { /* ... */ },
+///     DeliveryStatus::Cancelled => { /* ... */ },
+///     DeliveryStatus::Failed => { /* ... */ },
+///     DeliveryStatus::FailedSigningFile => { /* ... */ },
+///     DeliveryStatus::Pending => { /* ... */ },
+///     DeliveryStatus::ResourceNotFound => { /* ... */ },
+///     DeliveryStatus::Success => { /* ... */ },
+///     DeliveryStatus::UnknownValue => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `deliverystatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DeliveryStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DeliveryStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DeliveryStatus::NewFeature` is defined.
+/// Specifically, when `deliverystatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DeliveryStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// _Note: `DeliveryStatus::Unknown` has been renamed to `::UnknownValue`._
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DeliveryStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    AccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    AccessDeniedSigningFile,
+    #[allow(missing_docs)] // documentation missing in model
+    Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    FailedSigningFile,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    Success,
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
+    UnknownValue,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DeliveryStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCESS_DENIED" => DeliveryStatus::AccessDenied,
+            "ACCESS_DENIED_SIGNING_FILE" => DeliveryStatus::AccessDeniedSigningFile,
+            "CANCELLED" => DeliveryStatus::Cancelled,
+            "FAILED" => DeliveryStatus::Failed,
+            "FAILED_SIGNING_FILE" => DeliveryStatus::FailedSigningFile,
+            "PENDING" => DeliveryStatus::Pending,
+            "RESOURCE_NOT_FOUND" => DeliveryStatus::ResourceNotFound,
+            "SUCCESS" => DeliveryStatus::Success,
+            "UNKNOWN" => DeliveryStatus::UnknownValue,
+            other => DeliveryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for DeliveryStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeliveryStatus::from(s))
+    }
+}
+impl DeliveryStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeliveryStatus::AccessDenied => "ACCESS_DENIED",
+            DeliveryStatus::AccessDeniedSigningFile => "ACCESS_DENIED_SIGNING_FILE",
+            DeliveryStatus::Cancelled => "CANCELLED",
+            DeliveryStatus::Failed => "FAILED",
+            DeliveryStatus::FailedSigningFile => "FAILED_SIGNING_FILE",
+            DeliveryStatus::Pending => "PENDING",
+            DeliveryStatus::ResourceNotFound => "RESOURCE_NOT_FOUND",
+            DeliveryStatus::Success => "SUCCESS",
+            DeliveryStatus::UnknownValue => "UNKNOWN",
+            DeliveryStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACCESS_DENIED",
+            "ACCESS_DENIED_SIGNING_FILE",
+            "CANCELLED",
+            "FAILED",
+            "FAILED_SIGNING_FILE",
+            "PENDING",
+            "RESOURCE_NOT_FOUND",
+            "SUCCESS",
+            "UNKNOWN",
+        ]
+    }
+}
+impl AsRef<str> for DeliveryStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

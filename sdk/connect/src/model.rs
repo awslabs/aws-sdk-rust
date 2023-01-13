@@ -10,7 +10,9 @@ pub struct UserPhoneConfig {
     /// <p>The Auto accept setting.</p>
     #[doc(hidden)]
     pub auto_accept: bool,
-    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p>
+    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+    /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
+    /// </note>
     #[doc(hidden)]
     pub after_contact_work_time_limit: i32,
     /// <p>The phone number for the user's desk phone.</p>
@@ -26,7 +28,9 @@ impl UserPhoneConfig {
     pub fn auto_accept(&self) -> bool {
         self.auto_accept
     }
-    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p>
+    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+    /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
+    /// </note>
     pub fn after_contact_work_time_limit(&self) -> i32 {
         self.after_contact_work_time_limit
     }
@@ -70,12 +74,16 @@ pub mod user_phone_config {
             self.auto_accept = input;
             self
         }
-        /// <p>The After Call Work (ACW) timeout setting, in seconds.</p>
+        /// <p>The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+        /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
+        /// </note>
         pub fn after_contact_work_time_limit(mut self, input: i32) -> Self {
             self.after_contact_work_time_limit = Some(input);
             self
         }
-        /// <p>The After Call Work (ACW) timeout setting, in seconds.</p>
+        /// <p>The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+        /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
+        /// </note>
         pub fn set_after_contact_work_time_limit(
             mut self,
             input: std::option::Option<i32>,
@@ -219,6 +227,13 @@ pub struct UserIdentityInfo {
     /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
     #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
+    /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
+    /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
+    #[doc(hidden)]
+    pub secondary_email: std::option::Option<std::string::String>,
+    /// <p>The user's mobile number.</p>
+    #[doc(hidden)]
+    pub mobile: std::option::Option<std::string::String>,
 }
 impl UserIdentityInfo {
     /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
@@ -233,6 +248,15 @@ impl UserIdentityInfo {
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
+    /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
+    /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
+    pub fn secondary_email(&self) -> std::option::Option<&str> {
+        self.secondary_email.as_deref()
+    }
+    /// <p>The user's mobile number.</p>
+    pub fn mobile(&self) -> std::option::Option<&str> {
+        self.mobile.as_deref()
+    }
 }
 /// See [`UserIdentityInfo`](crate::model::UserIdentityInfo).
 pub mod user_identity_info {
@@ -243,6 +267,8 @@ pub mod user_identity_info {
         pub(crate) first_name: std::option::Option<std::string::String>,
         pub(crate) last_name: std::option::Option<std::string::String>,
         pub(crate) email: std::option::Option<std::string::String>,
+        pub(crate) secondary_email: std::option::Option<std::string::String>,
+        pub(crate) mobile: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
@@ -275,12 +301,39 @@ pub mod user_identity_info {
             self.email = input;
             self
         }
+        /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
+        /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
+        pub fn secondary_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secondary_email = Some(input.into());
+            self
+        }
+        /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
+        /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
+        pub fn set_secondary_email(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secondary_email = input;
+            self
+        }
+        /// <p>The user's mobile number.</p>
+        pub fn mobile(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mobile = Some(input.into());
+            self
+        }
+        /// <p>The user's mobile number.</p>
+        pub fn set_mobile(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mobile = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UserIdentityInfo`](crate::model::UserIdentityInfo).
         pub fn build(self) -> crate::model::UserIdentityInfo {
             crate::model::UserIdentityInfo {
                 first_name: self.first_name,
                 last_name: self.last_name,
                 email: self.email,
+                secondary_email: self.secondary_email,
+                mobile: self.mobile,
             }
         }
     }
@@ -597,6 +650,130 @@ impl HierarchyLevelUpdate {
     /// Creates a new builder-style object to manufacture [`HierarchyLevelUpdate`](crate::model::HierarchyLevelUpdate).
     pub fn builder() -> crate::model::hierarchy_level_update::Builder {
         crate::model::hierarchy_level_update::Builder::default()
+    }
+}
+
+/// <p>The distribution of traffic between the instance and its replicas.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TelephonyConfig {
+    /// <p>Information about traffic distributions.</p>
+    #[doc(hidden)]
+    pub distributions: std::option::Option<std::vec::Vec<crate::model::Distribution>>,
+}
+impl TelephonyConfig {
+    /// <p>Information about traffic distributions.</p>
+    pub fn distributions(&self) -> std::option::Option<&[crate::model::Distribution]> {
+        self.distributions.as_deref()
+    }
+}
+/// See [`TelephonyConfig`](crate::model::TelephonyConfig).
+pub mod telephony_config {
+
+    /// A builder for [`TelephonyConfig`](crate::model::TelephonyConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) distributions: std::option::Option<std::vec::Vec<crate::model::Distribution>>,
+    }
+    impl Builder {
+        /// Appends an item to `distributions`.
+        ///
+        /// To override the contents of this collection use [`set_distributions`](Self::set_distributions).
+        ///
+        /// <p>Information about traffic distributions.</p>
+        pub fn distributions(mut self, input: crate::model::Distribution) -> Self {
+            let mut v = self.distributions.unwrap_or_default();
+            v.push(input);
+            self.distributions = Some(v);
+            self
+        }
+        /// <p>Information about traffic distributions.</p>
+        pub fn set_distributions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Distribution>>,
+        ) -> Self {
+            self.distributions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TelephonyConfig`](crate::model::TelephonyConfig).
+        pub fn build(self) -> crate::model::TelephonyConfig {
+            crate::model::TelephonyConfig {
+                distributions: self.distributions,
+            }
+        }
+    }
+}
+impl TelephonyConfig {
+    /// Creates a new builder-style object to manufacture [`TelephonyConfig`](crate::model::TelephonyConfig).
+    pub fn builder() -> crate::model::telephony_config::Builder {
+        crate::model::telephony_config::Builder::default()
+    }
+}
+
+/// <p>Information about a traffic distribution.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Distribution {
+    /// <p>The Amazon Web Services Region where the traffic is distributed.</p>
+    #[doc(hidden)]
+    pub region: std::option::Option<std::string::String>,
+    /// <p>The percentage of the traffic that is distributed, in increments of 10.</p>
+    #[doc(hidden)]
+    pub percentage: i32,
+}
+impl Distribution {
+    /// <p>The Amazon Web Services Region where the traffic is distributed.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The percentage of the traffic that is distributed, in increments of 10.</p>
+    pub fn percentage(&self) -> i32 {
+        self.percentage
+    }
+}
+/// See [`Distribution`](crate::model::Distribution).
+pub mod distribution {
+
+    /// A builder for [`Distribution`](crate::model::Distribution).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) region: std::option::Option<std::string::String>,
+        pub(crate) percentage: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services Region where the traffic is distributed.</p>
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Region where the traffic is distributed.</p>
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
+            self
+        }
+        /// <p>The percentage of the traffic that is distributed, in increments of 10.</p>
+        pub fn percentage(mut self, input: i32) -> Self {
+            self.percentage = Some(input);
+            self
+        }
+        /// <p>The percentage of the traffic that is distributed, in increments of 10.</p>
+        pub fn set_percentage(mut self, input: std::option::Option<i32>) -> Self {
+            self.percentage = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Distribution`](crate::model::Distribution).
+        pub fn build(self) -> crate::model::Distribution {
+            crate::model::Distribution {
+                region: self.region,
+                percentage: self.percentage.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl Distribution {
+    /// Creates a new builder-style object to manufacture [`Distribution`](crate::model::Distribution).
+    pub fn builder() -> crate::model::distribution::Builder {
+        crate::model::distribution::Builder::default()
     }
 }
 
@@ -1640,6 +1817,1144 @@ impl RequiredFieldInfo {
     }
 }
 
+/// When writing a match expression against `RulePublishStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let rulepublishstatus = unimplemented!();
+/// match rulepublishstatus {
+///     RulePublishStatus::Draft => { /* ... */ },
+///     RulePublishStatus::Published => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `rulepublishstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RulePublishStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RulePublishStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RulePublishStatus::NewFeature` is defined.
+/// Specifically, when `rulepublishstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RulePublishStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RulePublishStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Draft,
+    #[allow(missing_docs)] // documentation missing in model
+    Published,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for RulePublishStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DRAFT" => RulePublishStatus::Draft,
+            "PUBLISHED" => RulePublishStatus::Published,
+            other => {
+                RulePublishStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for RulePublishStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RulePublishStatus::from(s))
+    }
+}
+impl RulePublishStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RulePublishStatus::Draft => "DRAFT",
+            RulePublishStatus::Published => "PUBLISHED",
+            RulePublishStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DRAFT", "PUBLISHED"]
+    }
+}
+impl AsRef<str> for RulePublishStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Information about the action to be performed when a rule is triggered.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RuleAction {
+    /// <p>The type of action that creates a rule.</p>
+    #[doc(hidden)]
+    pub action_type: std::option::Option<crate::model::ActionType>,
+    /// <p>Information about the task action. This field is required if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
+    #[doc(hidden)]
+    pub task_action: std::option::Option<crate::model::TaskActionDefinition>,
+    /// <p>Information about the EventBridge action.</p>
+    #[doc(hidden)]
+    pub event_bridge_action: std::option::Option<crate::model::EventBridgeActionDefinition>,
+    /// <p>Information about the contact category action.</p>
+    #[doc(hidden)]
+    pub assign_contact_category_action:
+        std::option::Option<crate::model::AssignContactCategoryActionDefinition>,
+    /// <p>Information about the send notification action.</p>
+    #[doc(hidden)]
+    pub send_notification_action:
+        std::option::Option<crate::model::SendNotificationActionDefinition>,
+}
+impl RuleAction {
+    /// <p>The type of action that creates a rule.</p>
+    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
+        self.action_type.as_ref()
+    }
+    /// <p>Information about the task action. This field is required if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
+    pub fn task_action(&self) -> std::option::Option<&crate::model::TaskActionDefinition> {
+        self.task_action.as_ref()
+    }
+    /// <p>Information about the EventBridge action.</p>
+    pub fn event_bridge_action(
+        &self,
+    ) -> std::option::Option<&crate::model::EventBridgeActionDefinition> {
+        self.event_bridge_action.as_ref()
+    }
+    /// <p>Information about the contact category action.</p>
+    pub fn assign_contact_category_action(
+        &self,
+    ) -> std::option::Option<&crate::model::AssignContactCategoryActionDefinition> {
+        self.assign_contact_category_action.as_ref()
+    }
+    /// <p>Information about the send notification action.</p>
+    pub fn send_notification_action(
+        &self,
+    ) -> std::option::Option<&crate::model::SendNotificationActionDefinition> {
+        self.send_notification_action.as_ref()
+    }
+}
+/// See [`RuleAction`](crate::model::RuleAction).
+pub mod rule_action {
+
+    /// A builder for [`RuleAction`](crate::model::RuleAction).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) action_type: std::option::Option<crate::model::ActionType>,
+        pub(crate) task_action: std::option::Option<crate::model::TaskActionDefinition>,
+        pub(crate) event_bridge_action:
+            std::option::Option<crate::model::EventBridgeActionDefinition>,
+        pub(crate) assign_contact_category_action:
+            std::option::Option<crate::model::AssignContactCategoryActionDefinition>,
+        pub(crate) send_notification_action:
+            std::option::Option<crate::model::SendNotificationActionDefinition>,
+    }
+    impl Builder {
+        /// <p>The type of action that creates a rule.</p>
+        pub fn action_type(mut self, input: crate::model::ActionType) -> Self {
+            self.action_type = Some(input);
+            self
+        }
+        /// <p>The type of action that creates a rule.</p>
+        pub fn set_action_type(
+            mut self,
+            input: std::option::Option<crate::model::ActionType>,
+        ) -> Self {
+            self.action_type = input;
+            self
+        }
+        /// <p>Information about the task action. This field is required if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
+        pub fn task_action(mut self, input: crate::model::TaskActionDefinition) -> Self {
+            self.task_action = Some(input);
+            self
+        }
+        /// <p>Information about the task action. This field is required if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
+        pub fn set_task_action(
+            mut self,
+            input: std::option::Option<crate::model::TaskActionDefinition>,
+        ) -> Self {
+            self.task_action = input;
+            self
+        }
+        /// <p>Information about the EventBridge action.</p>
+        pub fn event_bridge_action(
+            mut self,
+            input: crate::model::EventBridgeActionDefinition,
+        ) -> Self {
+            self.event_bridge_action = Some(input);
+            self
+        }
+        /// <p>Information about the EventBridge action.</p>
+        pub fn set_event_bridge_action(
+            mut self,
+            input: std::option::Option<crate::model::EventBridgeActionDefinition>,
+        ) -> Self {
+            self.event_bridge_action = input;
+            self
+        }
+        /// <p>Information about the contact category action.</p>
+        pub fn assign_contact_category_action(
+            mut self,
+            input: crate::model::AssignContactCategoryActionDefinition,
+        ) -> Self {
+            self.assign_contact_category_action = Some(input);
+            self
+        }
+        /// <p>Information about the contact category action.</p>
+        pub fn set_assign_contact_category_action(
+            mut self,
+            input: std::option::Option<crate::model::AssignContactCategoryActionDefinition>,
+        ) -> Self {
+            self.assign_contact_category_action = input;
+            self
+        }
+        /// <p>Information about the send notification action.</p>
+        pub fn send_notification_action(
+            mut self,
+            input: crate::model::SendNotificationActionDefinition,
+        ) -> Self {
+            self.send_notification_action = Some(input);
+            self
+        }
+        /// <p>Information about the send notification action.</p>
+        pub fn set_send_notification_action(
+            mut self,
+            input: std::option::Option<crate::model::SendNotificationActionDefinition>,
+        ) -> Self {
+            self.send_notification_action = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RuleAction`](crate::model::RuleAction).
+        pub fn build(self) -> crate::model::RuleAction {
+            crate::model::RuleAction {
+                action_type: self.action_type,
+                task_action: self.task_action,
+                event_bridge_action: self.event_bridge_action,
+                assign_contact_category_action: self.assign_contact_category_action,
+                send_notification_action: self.send_notification_action,
+            }
+        }
+    }
+}
+impl RuleAction {
+    /// Creates a new builder-style object to manufacture [`RuleAction`](crate::model::RuleAction).
+    pub fn builder() -> crate::model::rule_action::Builder {
+        crate::model::rule_action::Builder::default()
+    }
+}
+
+/// <p>Information about the send notification action.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SendNotificationActionDefinition {
+    /// <p>Notification delivery method.</p>
+    #[doc(hidden)]
+    pub delivery_method: std::option::Option<crate::model::NotificationDeliveryType>,
+    /// <p>The subject of the email if the delivery method is <code>EMAIL</code>. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+    #[doc(hidden)]
+    pub subject: std::option::Option<std::string::String>,
+    /// <p>Notification content. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+    #[doc(hidden)]
+    pub content: std::option::Option<std::string::String>,
+    /// <p>Content type format.</p>
+    #[doc(hidden)]
+    pub content_type: std::option::Option<crate::model::NotificationContentType>,
+    /// <p>Notification recipient.</p>
+    #[doc(hidden)]
+    pub recipient: std::option::Option<crate::model::NotificationRecipientType>,
+}
+impl SendNotificationActionDefinition {
+    /// <p>Notification delivery method.</p>
+    pub fn delivery_method(&self) -> std::option::Option<&crate::model::NotificationDeliveryType> {
+        self.delivery_method.as_ref()
+    }
+    /// <p>The subject of the email if the delivery method is <code>EMAIL</code>. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>Notification content. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>Content type format.</p>
+    pub fn content_type(&self) -> std::option::Option<&crate::model::NotificationContentType> {
+        self.content_type.as_ref()
+    }
+    /// <p>Notification recipient.</p>
+    pub fn recipient(&self) -> std::option::Option<&crate::model::NotificationRecipientType> {
+        self.recipient.as_ref()
+    }
+}
+/// See [`SendNotificationActionDefinition`](crate::model::SendNotificationActionDefinition).
+pub mod send_notification_action_definition {
+
+    /// A builder for [`SendNotificationActionDefinition`](crate::model::SendNotificationActionDefinition).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) delivery_method: std::option::Option<crate::model::NotificationDeliveryType>,
+        pub(crate) subject: std::option::Option<std::string::String>,
+        pub(crate) content: std::option::Option<std::string::String>,
+        pub(crate) content_type: std::option::Option<crate::model::NotificationContentType>,
+        pub(crate) recipient: std::option::Option<crate::model::NotificationRecipientType>,
+    }
+    impl Builder {
+        /// <p>Notification delivery method.</p>
+        pub fn delivery_method(mut self, input: crate::model::NotificationDeliveryType) -> Self {
+            self.delivery_method = Some(input);
+            self
+        }
+        /// <p>Notification delivery method.</p>
+        pub fn set_delivery_method(
+            mut self,
+            input: std::option::Option<crate::model::NotificationDeliveryType>,
+        ) -> Self {
+            self.delivery_method = input;
+            self
+        }
+        /// <p>The subject of the email if the delivery method is <code>EMAIL</code>. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+        pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subject = Some(input.into());
+            self
+        }
+        /// <p>The subject of the email if the delivery method is <code>EMAIL</code>. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+        pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subject = input;
+            self
+        }
+        /// <p>Notification content. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content = Some(input.into());
+            self
+        }
+        /// <p>Notification content. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content = input;
+            self
+        }
+        /// <p>Content type format.</p>
+        pub fn content_type(mut self, input: crate::model::NotificationContentType) -> Self {
+            self.content_type = Some(input);
+            self
+        }
+        /// <p>Content type format.</p>
+        pub fn set_content_type(
+            mut self,
+            input: std::option::Option<crate::model::NotificationContentType>,
+        ) -> Self {
+            self.content_type = input;
+            self
+        }
+        /// <p>Notification recipient.</p>
+        pub fn recipient(mut self, input: crate::model::NotificationRecipientType) -> Self {
+            self.recipient = Some(input);
+            self
+        }
+        /// <p>Notification recipient.</p>
+        pub fn set_recipient(
+            mut self,
+            input: std::option::Option<crate::model::NotificationRecipientType>,
+        ) -> Self {
+            self.recipient = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SendNotificationActionDefinition`](crate::model::SendNotificationActionDefinition).
+        pub fn build(self) -> crate::model::SendNotificationActionDefinition {
+            crate::model::SendNotificationActionDefinition {
+                delivery_method: self.delivery_method,
+                subject: self.subject,
+                content: self.content,
+                content_type: self.content_type,
+                recipient: self.recipient,
+            }
+        }
+    }
+}
+impl SendNotificationActionDefinition {
+    /// Creates a new builder-style object to manufacture [`SendNotificationActionDefinition`](crate::model::SendNotificationActionDefinition).
+    pub fn builder() -> crate::model::send_notification_action_definition::Builder {
+        crate::model::send_notification_action_definition::Builder::default()
+    }
+}
+
+/// <p>The type of notification recipient.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NotificationRecipientType {
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users with the specified tags will be notified.</p>
+    #[doc(hidden)]
+    pub user_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A list of user IDs.</p>
+    #[doc(hidden)]
+    pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl NotificationRecipientType {
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users with the specified tags will be notified.</p>
+    pub fn user_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.user_tags.as_ref()
+    }
+    /// <p>A list of user IDs.</p>
+    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_ids.as_deref()
+    }
+}
+/// See [`NotificationRecipientType`](crate::model::NotificationRecipientType).
+pub mod notification_recipient_type {
+
+    /// A builder for [`NotificationRecipientType`](crate::model::NotificationRecipientType).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `user_tags`.
+        ///
+        /// To override the contents of this collection use [`set_user_tags`](Self::set_user_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users with the specified tags will be notified.</p>
+        pub fn user_tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.user_tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.user_tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users with the specified tags will be notified.</p>
+        pub fn set_user_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.user_tags = input;
+            self
+        }
+        /// Appends an item to `user_ids`.
+        ///
+        /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
+        ///
+        /// <p>A list of user IDs.</p>
+        pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.user_ids.unwrap_or_default();
+            v.push(input.into());
+            self.user_ids = Some(v);
+            self
+        }
+        /// <p>A list of user IDs.</p>
+        pub fn set_user_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.user_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NotificationRecipientType`](crate::model::NotificationRecipientType).
+        pub fn build(self) -> crate::model::NotificationRecipientType {
+            crate::model::NotificationRecipientType {
+                user_tags: self.user_tags,
+                user_ids: self.user_ids,
+            }
+        }
+    }
+}
+impl NotificationRecipientType {
+    /// Creates a new builder-style object to manufacture [`NotificationRecipientType`](crate::model::NotificationRecipientType).
+    pub fn builder() -> crate::model::notification_recipient_type::Builder {
+        crate::model::notification_recipient_type::Builder::default()
+    }
+}
+
+/// When writing a match expression against `NotificationContentType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let notificationcontenttype = unimplemented!();
+/// match notificationcontenttype {
+///     NotificationContentType::PlainText => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `notificationcontenttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `NotificationContentType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `NotificationContentType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `NotificationContentType::NewFeature` is defined.
+/// Specifically, when `notificationcontenttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `NotificationContentType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum NotificationContentType {
+    #[allow(missing_docs)] // documentation missing in model
+    PlainText,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for NotificationContentType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PLAIN_TEXT" => NotificationContentType::PlainText,
+            other => NotificationContentType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for NotificationContentType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NotificationContentType::from(s))
+    }
+}
+impl NotificationContentType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NotificationContentType::PlainText => "PLAIN_TEXT",
+            NotificationContentType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["PLAIN_TEXT"]
+    }
+}
+impl AsRef<str> for NotificationContentType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `NotificationDeliveryType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let notificationdeliverytype = unimplemented!();
+/// match notificationdeliverytype {
+///     NotificationDeliveryType::Email => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `notificationdeliverytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `NotificationDeliveryType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `NotificationDeliveryType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `NotificationDeliveryType::NewFeature` is defined.
+/// Specifically, when `notificationdeliverytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `NotificationDeliveryType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum NotificationDeliveryType {
+    #[allow(missing_docs)] // documentation missing in model
+    Email,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for NotificationDeliveryType {
+    fn from(s: &str) -> Self {
+        match s {
+            "EMAIL" => NotificationDeliveryType::Email,
+            other => NotificationDeliveryType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for NotificationDeliveryType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NotificationDeliveryType::from(s))
+    }
+}
+impl NotificationDeliveryType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NotificationDeliveryType::Email => "EMAIL",
+            NotificationDeliveryType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["EMAIL"]
+    }
+}
+impl AsRef<str> for NotificationDeliveryType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>This action must be set if <code>TriggerEventSource</code> is one of the following values: <code>OnPostCallAnalysisAvailable</code> | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code>. Contact is categorized using the rule name.</p>
+/// <p> <code>RuleName</code> is used as <code>ContactCategory</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AssignContactCategoryActionDefinition {}
+/// See [`AssignContactCategoryActionDefinition`](crate::model::AssignContactCategoryActionDefinition).
+pub mod assign_contact_category_action_definition {
+
+    /// A builder for [`AssignContactCategoryActionDefinition`](crate::model::AssignContactCategoryActionDefinition).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`AssignContactCategoryActionDefinition`](crate::model::AssignContactCategoryActionDefinition).
+        pub fn build(self) -> crate::model::AssignContactCategoryActionDefinition {
+            crate::model::AssignContactCategoryActionDefinition {}
+        }
+    }
+}
+impl AssignContactCategoryActionDefinition {
+    /// Creates a new builder-style object to manufacture [`AssignContactCategoryActionDefinition`](crate::model::AssignContactCategoryActionDefinition).
+    pub fn builder() -> crate::model::assign_contact_category_action_definition::Builder {
+        crate::model::assign_contact_category_action_definition::Builder::default()
+    }
+}
+
+/// <p>The EventBridge action definition.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EventBridgeActionDefinition {
+    /// <p>The name.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl EventBridgeActionDefinition {
+    /// <p>The name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+/// See [`EventBridgeActionDefinition`](crate::model::EventBridgeActionDefinition).
+pub mod event_bridge_action_definition {
+
+    /// A builder for [`EventBridgeActionDefinition`](crate::model::EventBridgeActionDefinition).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EventBridgeActionDefinition`](crate::model::EventBridgeActionDefinition).
+        pub fn build(self) -> crate::model::EventBridgeActionDefinition {
+            crate::model::EventBridgeActionDefinition { name: self.name }
+        }
+    }
+}
+impl EventBridgeActionDefinition {
+    /// Creates a new builder-style object to manufacture [`EventBridgeActionDefinition`](crate::model::EventBridgeActionDefinition).
+    pub fn builder() -> crate::model::event_bridge_action_definition::Builder {
+        crate::model::event_bridge_action_definition::Builder::default()
+    }
+}
+
+/// <p>Information about the task action.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TaskActionDefinition {
+    /// <p>The name. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The identifier of the flow.</p>
+    #[doc(hidden)]
+    pub contact_flow_id: std::option::Option<std::string::String>,
+    /// <p>Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null. (Supports variable injection in the <code>Value</code> field.)</p>
+    #[doc(hidden)]
+    pub references: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::Reference>,
+    >,
+}
+impl TaskActionDefinition {
+    /// <p>The name. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The identifier of the flow.</p>
+    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+        self.contact_flow_id.as_deref()
+    }
+    /// <p>Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null. (Supports variable injection in the <code>Value</code> field.)</p>
+    pub fn references(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Reference>>
+    {
+        self.references.as_ref()
+    }
+}
+/// See [`TaskActionDefinition`](crate::model::TaskActionDefinition).
+pub mod task_action_definition {
+
+    /// A builder for [`TaskActionDefinition`](crate::model::TaskActionDefinition).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) contact_flow_id: std::option::Option<std::string::String>,
+        pub(crate) references: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::Reference>,
+        >,
+    }
+    impl Builder {
+        /// <p>The name. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The identifier of the flow.</p>
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_flow_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the flow.</p>
+        pub fn set_contact_flow_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.contact_flow_id = input;
+            self
+        }
+        /// Adds a key-value pair to `references`.
+        ///
+        /// To override the contents of this collection use [`set_references`](Self::set_references).
+        ///
+        /// <p>Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null. (Supports variable injection in the <code>Value</code> field.)</p>
+        pub fn references(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::Reference,
+        ) -> Self {
+            let mut hash_map = self.references.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.references = Some(hash_map);
+            self
+        }
+        /// <p>Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null. (Supports variable injection in the <code>Value</code> field.)</p>
+        pub fn set_references(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::Reference>,
+            >,
+        ) -> Self {
+            self.references = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TaskActionDefinition`](crate::model::TaskActionDefinition).
+        pub fn build(self) -> crate::model::TaskActionDefinition {
+            crate::model::TaskActionDefinition {
+                name: self.name,
+                description: self.description,
+                contact_flow_id: self.contact_flow_id,
+                references: self.references,
+            }
+        }
+    }
+}
+impl TaskActionDefinition {
+    /// Creates a new builder-style object to manufacture [`TaskActionDefinition`](crate::model::TaskActionDefinition).
+    pub fn builder() -> crate::model::task_action_definition::Builder {
+        crate::model::task_action_definition::Builder::default()
+    }
+}
+
+/// <p>Well-formed data on a contact, used by agents to complete a contact request. You can have up to 4,096 UTF-8 bytes across all references for a contact.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Reference {
+    /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
+    #[doc(hidden)]
+    pub value: std::option::Option<std::string::String>,
+    /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp. </p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::ReferenceType>,
+}
+impl Reference {
+    /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ReferenceType> {
+        self.r#type.as_ref()
+    }
+}
+/// See [`Reference`](crate::model::Reference).
+pub mod reference {
+
+    /// A builder for [`Reference`](crate::model::Reference).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::ReferenceType>,
+    }
+    impl Builder {
+        /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp. </p>
+        pub fn r#type(mut self, input: crate::model::ReferenceType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp. </p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ReferenceType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Reference`](crate::model::Reference).
+        pub fn build(self) -> crate::model::Reference {
+            crate::model::Reference {
+                value: self.value,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl Reference {
+    /// Creates a new builder-style object to manufacture [`Reference`](crate::model::Reference).
+    pub fn builder() -> crate::model::reference::Builder {
+        crate::model::reference::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ReferenceType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let referencetype = unimplemented!();
+/// match referencetype {
+///     ReferenceType::Attachment => { /* ... */ },
+///     ReferenceType::Date => { /* ... */ },
+///     ReferenceType::Email => { /* ... */ },
+///     ReferenceType::Number => { /* ... */ },
+///     ReferenceType::String => { /* ... */ },
+///     ReferenceType::Url => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `referencetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ReferenceType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ReferenceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ReferenceType::NewFeature` is defined.
+/// Specifically, when `referencetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ReferenceType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReferenceType {
+    #[allow(missing_docs)] // documentation missing in model
+    Attachment,
+    #[allow(missing_docs)] // documentation missing in model
+    Date,
+    #[allow(missing_docs)] // documentation missing in model
+    Email,
+    #[allow(missing_docs)] // documentation missing in model
+    Number,
+    #[allow(missing_docs)] // documentation missing in model
+    String,
+    #[allow(missing_docs)] // documentation missing in model
+    Url,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ReferenceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ATTACHMENT" => ReferenceType::Attachment,
+            "DATE" => ReferenceType::Date,
+            "EMAIL" => ReferenceType::Email,
+            "NUMBER" => ReferenceType::Number,
+            "STRING" => ReferenceType::String,
+            "URL" => ReferenceType::Url,
+            other => ReferenceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ReferenceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReferenceType::from(s))
+    }
+}
+impl ReferenceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReferenceType::Attachment => "ATTACHMENT",
+            ReferenceType::Date => "DATE",
+            ReferenceType::Email => "EMAIL",
+            ReferenceType::Number => "NUMBER",
+            ReferenceType::String => "STRING",
+            ReferenceType::Url => "URL",
+            ReferenceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ATTACHMENT", "DATE", "EMAIL", "NUMBER", "STRING", "URL"]
+    }
+}
+impl AsRef<str> for ReferenceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `ActionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let actiontype = unimplemented!();
+/// match actiontype {
+///     ActionType::AssignContactCategory => { /* ... */ },
+///     ActionType::CreateTask => { /* ... */ },
+///     ActionType::GenerateEventbridgeEvent => { /* ... */ },
+///     ActionType::SendNotification => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `actiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ActionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ActionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ActionType::NewFeature` is defined.
+/// Specifically, when `actiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ActionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ActionType {
+    #[allow(missing_docs)] // documentation missing in model
+    AssignContactCategory,
+    #[allow(missing_docs)] // documentation missing in model
+    CreateTask,
+    #[allow(missing_docs)] // documentation missing in model
+    GenerateEventbridgeEvent,
+    #[allow(missing_docs)] // documentation missing in model
+    SendNotification,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ActionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ASSIGN_CONTACT_CATEGORY" => ActionType::AssignContactCategory,
+            "CREATE_TASK" => ActionType::CreateTask,
+            "GENERATE_EVENTBRIDGE_EVENT" => ActionType::GenerateEventbridgeEvent,
+            "SEND_NOTIFICATION" => ActionType::SendNotification,
+            other => ActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ActionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ActionType::from(s))
+    }
+}
+impl ActionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ActionType::AssignContactCategory => "ASSIGN_CONTACT_CATEGORY",
+            ActionType::CreateTask => "CREATE_TASK",
+            ActionType::GenerateEventbridgeEvent => "GENERATE_EVENTBRIDGE_EVENT",
+            ActionType::SendNotification => "SEND_NOTIFICATION",
+            ActionType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ASSIGN_CONTACT_CATEGORY",
+            "CREATE_TASK",
+            "GENERATE_EVENTBRIDGE_EVENT",
+            "SEND_NOTIFICATION",
+        ]
+    }
+}
+impl AsRef<str> for ActionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Contains information about the queue and channel for which priority and delay can be set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2565,6 +3880,534 @@ impl OutboundCallerConfig {
     }
 }
 
+/// <p>Configuration information for the chat participant role.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum UpdateParticipantRoleConfigChannelInfo {
+    /// <p>Configuration information for the chat participant role.</p>
+    Chat(crate::model::ChatParticipantRoleConfig),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl UpdateParticipantRoleConfigChannelInfo {
+    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`Chat`](crate::model::UpdateParticipantRoleConfigChannelInfo::Chat), extracting the inner [`ChatParticipantRoleConfig`](crate::model::ChatParticipantRoleConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_chat(&self) -> std::result::Result<&crate::model::ChatParticipantRoleConfig, &Self> {
+        if let UpdateParticipantRoleConfigChannelInfo::Chat(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Chat`](crate::model::UpdateParticipantRoleConfigChannelInfo::Chat).
+    pub fn is_chat(&self) -> bool {
+        self.as_chat().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+/// <p>Configuration information for the chat participant role.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ChatParticipantRoleConfig {
+    /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
+    #[doc(hidden)]
+    pub participant_timer_config_list:
+        std::option::Option<std::vec::Vec<crate::model::ParticipantTimerConfiguration>>,
+}
+impl ChatParticipantRoleConfig {
+    /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
+    pub fn participant_timer_config_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ParticipantTimerConfiguration]> {
+        self.participant_timer_config_list.as_deref()
+    }
+}
+/// See [`ChatParticipantRoleConfig`](crate::model::ChatParticipantRoleConfig).
+pub mod chat_participant_role_config {
+
+    /// A builder for [`ChatParticipantRoleConfig`](crate::model::ChatParticipantRoleConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) participant_timer_config_list:
+            std::option::Option<std::vec::Vec<crate::model::ParticipantTimerConfiguration>>,
+    }
+    impl Builder {
+        /// Appends an item to `participant_timer_config_list`.
+        ///
+        /// To override the contents of this collection use [`set_participant_timer_config_list`](Self::set_participant_timer_config_list).
+        ///
+        /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
+        pub fn participant_timer_config_list(
+            mut self,
+            input: crate::model::ParticipantTimerConfiguration,
+        ) -> Self {
+            let mut v = self.participant_timer_config_list.unwrap_or_default();
+            v.push(input);
+            self.participant_timer_config_list = Some(v);
+            self
+        }
+        /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
+        pub fn set_participant_timer_config_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ParticipantTimerConfiguration>>,
+        ) -> Self {
+            self.participant_timer_config_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChatParticipantRoleConfig`](crate::model::ChatParticipantRoleConfig).
+        pub fn build(self) -> crate::model::ChatParticipantRoleConfig {
+            crate::model::ChatParticipantRoleConfig {
+                participant_timer_config_list: self.participant_timer_config_list,
+            }
+        }
+    }
+}
+impl ChatParticipantRoleConfig {
+    /// Creates a new builder-style object to manufacture [`ChatParticipantRoleConfig`](crate::model::ChatParticipantRoleConfig).
+    pub fn builder() -> crate::model::chat_participant_role_config::Builder {
+        crate::model::chat_participant_role_config::Builder::default()
+    }
+}
+
+/// <p>Configuration information for the timer. After the timer configuration is set, it persists for the duration of the chat. It persists across new contacts in the chain, for example, transfer contacts.</p>
+/// <p>For more information about how chat timeouts work, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set up chat timeouts for human participants</a>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ParticipantTimerConfiguration {
+    /// <p>The role of the participant in the chat conversation.</p>
+    #[doc(hidden)]
+    pub participant_role: std::option::Option<crate::model::TimerEligibleParticipantRoles>,
+    /// <p>The type of timer. <code>IDLE</code> indicates the timer applies for considering a human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the timer applies to automatically disconnecting a chat participant due to idleness.</p>
+    #[doc(hidden)]
+    pub timer_type: std::option::Option<crate::model::ParticipantTimerType>,
+    /// <p>The value of the timer. Either the timer action (Unset to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
+    #[doc(hidden)]
+    pub timer_value: std::option::Option<crate::model::ParticipantTimerValue>,
+}
+impl ParticipantTimerConfiguration {
+    /// <p>The role of the participant in the chat conversation.</p>
+    pub fn participant_role(
+        &self,
+    ) -> std::option::Option<&crate::model::TimerEligibleParticipantRoles> {
+        self.participant_role.as_ref()
+    }
+    /// <p>The type of timer. <code>IDLE</code> indicates the timer applies for considering a human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the timer applies to automatically disconnecting a chat participant due to idleness.</p>
+    pub fn timer_type(&self) -> std::option::Option<&crate::model::ParticipantTimerType> {
+        self.timer_type.as_ref()
+    }
+    /// <p>The value of the timer. Either the timer action (Unset to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
+    pub fn timer_value(&self) -> std::option::Option<&crate::model::ParticipantTimerValue> {
+        self.timer_value.as_ref()
+    }
+}
+/// See [`ParticipantTimerConfiguration`](crate::model::ParticipantTimerConfiguration).
+pub mod participant_timer_configuration {
+
+    /// A builder for [`ParticipantTimerConfiguration`](crate::model::ParticipantTimerConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) participant_role:
+            std::option::Option<crate::model::TimerEligibleParticipantRoles>,
+        pub(crate) timer_type: std::option::Option<crate::model::ParticipantTimerType>,
+        pub(crate) timer_value: std::option::Option<crate::model::ParticipantTimerValue>,
+    }
+    impl Builder {
+        /// <p>The role of the participant in the chat conversation.</p>
+        pub fn participant_role(
+            mut self,
+            input: crate::model::TimerEligibleParticipantRoles,
+        ) -> Self {
+            self.participant_role = Some(input);
+            self
+        }
+        /// <p>The role of the participant in the chat conversation.</p>
+        pub fn set_participant_role(
+            mut self,
+            input: std::option::Option<crate::model::TimerEligibleParticipantRoles>,
+        ) -> Self {
+            self.participant_role = input;
+            self
+        }
+        /// <p>The type of timer. <code>IDLE</code> indicates the timer applies for considering a human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the timer applies to automatically disconnecting a chat participant due to idleness.</p>
+        pub fn timer_type(mut self, input: crate::model::ParticipantTimerType) -> Self {
+            self.timer_type = Some(input);
+            self
+        }
+        /// <p>The type of timer. <code>IDLE</code> indicates the timer applies for considering a human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the timer applies to automatically disconnecting a chat participant due to idleness.</p>
+        pub fn set_timer_type(
+            mut self,
+            input: std::option::Option<crate::model::ParticipantTimerType>,
+        ) -> Self {
+            self.timer_type = input;
+            self
+        }
+        /// <p>The value of the timer. Either the timer action (Unset to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
+        pub fn timer_value(mut self, input: crate::model::ParticipantTimerValue) -> Self {
+            self.timer_value = Some(input);
+            self
+        }
+        /// <p>The value of the timer. Either the timer action (Unset to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
+        pub fn set_timer_value(
+            mut self,
+            input: std::option::Option<crate::model::ParticipantTimerValue>,
+        ) -> Self {
+            self.timer_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ParticipantTimerConfiguration`](crate::model::ParticipantTimerConfiguration).
+        pub fn build(self) -> crate::model::ParticipantTimerConfiguration {
+            crate::model::ParticipantTimerConfiguration {
+                participant_role: self.participant_role,
+                timer_type: self.timer_type,
+                timer_value: self.timer_value,
+            }
+        }
+    }
+}
+impl ParticipantTimerConfiguration {
+    /// Creates a new builder-style object to manufacture [`ParticipantTimerConfiguration`](crate::model::ParticipantTimerConfiguration).
+    pub fn builder() -> crate::model::participant_timer_configuration::Builder {
+        crate::model::participant_timer_configuration::Builder::default()
+    }
+}
+
+/// <p>The value of the timer. Either the timer action (<code>Unset</code> to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
+/// <p>For more information about how chat timeouts work, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set up chat timeouts for human participants</a>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum ParticipantTimerValue {
+    /// <p>The timer action. Currently only one value is allowed: <code>Unset</code>. It deletes a timer.</p>
+    ParticipantTimerAction(crate::model::ParticipantTimerAction),
+    /// <p>The duration of a timer, in minutes. </p>
+    ParticipantTimerDurationInMinutes(i32),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl ParticipantTimerValue {
+    /// Tries to convert the enum instance into [`ParticipantTimerAction`](crate::model::ParticipantTimerValue::ParticipantTimerAction), extracting the inner [`ParticipantTimerAction`](crate::model::ParticipantTimerAction).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_participant_timer_action(
+        &self,
+    ) -> std::result::Result<&crate::model::ParticipantTimerAction, &Self> {
+        if let ParticipantTimerValue::ParticipantTimerAction(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`ParticipantTimerAction`](crate::model::ParticipantTimerValue::ParticipantTimerAction).
+    pub fn is_participant_timer_action(&self) -> bool {
+        self.as_participant_timer_action().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ParticipantTimerDurationInMinutes`](crate::model::ParticipantTimerValue::ParticipantTimerDurationInMinutes), extracting the inner [`i32`](i32).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_participant_timer_duration_in_minutes(&self) -> std::result::Result<&i32, &Self> {
+        if let ParticipantTimerValue::ParticipantTimerDurationInMinutes(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`ParticipantTimerDurationInMinutes`](crate::model::ParticipantTimerValue::ParticipantTimerDurationInMinutes).
+    pub fn is_participant_timer_duration_in_minutes(&self) -> bool {
+        self.as_participant_timer_duration_in_minutes().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+/// When writing a match expression against `ParticipantTimerAction`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let participanttimeraction = unimplemented!();
+/// match participanttimeraction {
+///     ParticipantTimerAction::Unset => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `participanttimeraction` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ParticipantTimerAction::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ParticipantTimerAction::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ParticipantTimerAction::NewFeature` is defined.
+/// Specifically, when `participanttimeraction` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ParticipantTimerAction::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ParticipantTimerAction {
+    #[allow(missing_docs)] // documentation missing in model
+    Unset,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ParticipantTimerAction {
+    fn from(s: &str) -> Self {
+        match s {
+            "Unset" => ParticipantTimerAction::Unset,
+            other => {
+                ParticipantTimerAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for ParticipantTimerAction {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ParticipantTimerAction::from(s))
+    }
+}
+impl ParticipantTimerAction {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ParticipantTimerAction::Unset => "Unset",
+            ParticipantTimerAction::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["Unset"]
+    }
+}
+impl AsRef<str> for ParticipantTimerAction {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `ParticipantTimerType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let participanttimertype = unimplemented!();
+/// match participanttimertype {
+///     ParticipantTimerType::DisconnectNoncustomer => { /* ... */ },
+///     ParticipantTimerType::Idle => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `participanttimertype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ParticipantTimerType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ParticipantTimerType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ParticipantTimerType::NewFeature` is defined.
+/// Specifically, when `participanttimertype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ParticipantTimerType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ParticipantTimerType {
+    #[allow(missing_docs)] // documentation missing in model
+    DisconnectNoncustomer,
+    #[allow(missing_docs)] // documentation missing in model
+    Idle,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ParticipantTimerType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISCONNECT_NONCUSTOMER" => ParticipantTimerType::DisconnectNoncustomer,
+            "IDLE" => ParticipantTimerType::Idle,
+            other => {
+                ParticipantTimerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for ParticipantTimerType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ParticipantTimerType::from(s))
+    }
+}
+impl ParticipantTimerType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ParticipantTimerType::DisconnectNoncustomer => "DISCONNECT_NONCUSTOMER",
+            ParticipantTimerType::Idle => "IDLE",
+            ParticipantTimerType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DISCONNECT_NONCUSTOMER", "IDLE"]
+    }
+}
+impl AsRef<str> for ParticipantTimerType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `TimerEligibleParticipantRoles`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let timereligibleparticipantroles = unimplemented!();
+/// match timereligibleparticipantroles {
+///     TimerEligibleParticipantRoles::Agent => { /* ... */ },
+///     TimerEligibleParticipantRoles::Customer => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `timereligibleparticipantroles` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TimerEligibleParticipantRoles::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TimerEligibleParticipantRoles::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TimerEligibleParticipantRoles::NewFeature` is defined.
+/// Specifically, when `timereligibleparticipantroles` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TimerEligibleParticipantRoles::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TimerEligibleParticipantRoles {
+    #[allow(missing_docs)] // documentation missing in model
+    Agent,
+    #[allow(missing_docs)] // documentation missing in model
+    Customer,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for TimerEligibleParticipantRoles {
+    fn from(s: &str) -> Self {
+        match s {
+            "AGENT" => TimerEligibleParticipantRoles::Agent,
+            "CUSTOMER" => TimerEligibleParticipantRoles::Customer,
+            other => TimerEligibleParticipantRoles::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for TimerEligibleParticipantRoles {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TimerEligibleParticipantRoles::from(s))
+    }
+}
+impl TimerEligibleParticipantRoles {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TimerEligibleParticipantRoles::Agent => "AGENT",
+            TimerEligibleParticipantRoles::Customer => "CUSTOMER",
+            TimerEligibleParticipantRoles::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AGENT", "CUSTOMER"]
+    }
+}
+impl AsRef<str> for TimerEligibleParticipantRoles {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The storage configuration for the instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3429,6 +5272,7 @@ impl AsRef<str> for InstanceStorageResourceType {
 ///     InstanceAttributeType::ContactflowLogs => { /* ... */ },
 ///     InstanceAttributeType::ContactLens => { /* ... */ },
 ///     InstanceAttributeType::EarlyMedia => { /* ... */ },
+///     InstanceAttributeType::EnhancedContactMonitoring => { /* ... */ },
 ///     InstanceAttributeType::HighVolumeOutbound => { /* ... */ },
 ///     InstanceAttributeType::InboundCalls => { /* ... */ },
 ///     InstanceAttributeType::MultiPartyConference => { /* ... */ },
@@ -3476,6 +5320,8 @@ pub enum InstanceAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     EarlyMedia,
     #[allow(missing_docs)] // documentation missing in model
+    EnhancedContactMonitoring,
+    #[allow(missing_docs)] // documentation missing in model
     HighVolumeOutbound,
     #[allow(missing_docs)] // documentation missing in model
     InboundCalls,
@@ -3495,6 +5341,7 @@ impl std::convert::From<&str> for InstanceAttributeType {
             "CONTACTFLOW_LOGS" => InstanceAttributeType::ContactflowLogs,
             "CONTACT_LENS" => InstanceAttributeType::ContactLens,
             "EARLY_MEDIA" => InstanceAttributeType::EarlyMedia,
+            "ENHANCED_CONTACT_MONITORING" => InstanceAttributeType::EnhancedContactMonitoring,
             "HIGH_VOLUME_OUTBOUND" => InstanceAttributeType::HighVolumeOutbound,
             "INBOUND_CALLS" => InstanceAttributeType::InboundCalls,
             "MULTI_PARTY_CONFERENCE" => InstanceAttributeType::MultiPartyConference,
@@ -3521,6 +5368,7 @@ impl InstanceAttributeType {
             InstanceAttributeType::ContactflowLogs => "CONTACTFLOW_LOGS",
             InstanceAttributeType::ContactLens => "CONTACT_LENS",
             InstanceAttributeType::EarlyMedia => "EARLY_MEDIA",
+            InstanceAttributeType::EnhancedContactMonitoring => "ENHANCED_CONTACT_MONITORING",
             InstanceAttributeType::HighVolumeOutbound => "HIGH_VOLUME_OUTBOUND",
             InstanceAttributeType::InboundCalls => "INBOUND_CALLS",
             InstanceAttributeType::MultiPartyConference => "MULTI_PARTY_CONFERENCE",
@@ -3536,6 +5384,7 @@ impl InstanceAttributeType {
             "CONTACTFLOW_LOGS",
             "CONTACT_LENS",
             "EARLY_MEDIA",
+            "ENHANCED_CONTACT_MONITORING",
             "HIGH_VOLUME_OUTBOUND",
             "INBOUND_CALLS",
             "MULTI_PARTY_CONFERENCE",
@@ -4067,183 +5916,6 @@ impl AsRef<str> for ContactFlowState {
     }
 }
 
-/// <p>Well-formed data on a contact, used by agents to complete a contact request. You can have up to 4,096 UTF-8 bytes across all references for a contact.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Reference {
-    /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
-    #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
-    /// <p>The type of the reference.</p>
-    #[doc(hidden)]
-    pub r#type: std::option::Option<crate::model::ReferenceType>,
-}
-impl Reference {
-    /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
-    pub fn value(&self) -> std::option::Option<&str> {
-        self.value.as_deref()
-    }
-    /// <p>The type of the reference.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ReferenceType> {
-        self.r#type.as_ref()
-    }
-}
-/// See [`Reference`](crate::model::Reference).
-pub mod reference {
-
-    /// A builder for [`Reference`](crate::model::Reference).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) value: std::option::Option<std::string::String>,
-        pub(crate) r#type: std::option::Option<crate::model::ReferenceType>,
-    }
-    impl Builder {
-        /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
-        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.value = Some(input.into());
-            self
-        }
-        /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
-        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
-        }
-        /// <p>The type of the reference.</p>
-        pub fn r#type(mut self, input: crate::model::ReferenceType) -> Self {
-            self.r#type = Some(input);
-            self
-        }
-        /// <p>The type of the reference.</p>
-        pub fn set_type(mut self, input: std::option::Option<crate::model::ReferenceType>) -> Self {
-            self.r#type = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Reference`](crate::model::Reference).
-        pub fn build(self) -> crate::model::Reference {
-            crate::model::Reference {
-                value: self.value,
-                r#type: self.r#type,
-            }
-        }
-    }
-}
-impl Reference {
-    /// Creates a new builder-style object to manufacture [`Reference`](crate::model::Reference).
-    pub fn builder() -> crate::model::reference::Builder {
-        crate::model::reference::Builder::default()
-    }
-}
-
-/// When writing a match expression against `ReferenceType`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let referencetype = unimplemented!();
-/// match referencetype {
-///     ReferenceType::Attachment => { /* ... */ },
-///     ReferenceType::Date => { /* ... */ },
-///     ReferenceType::Email => { /* ... */ },
-///     ReferenceType::Number => { /* ... */ },
-///     ReferenceType::String => { /* ... */ },
-///     ReferenceType::Url => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `referencetype` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `ReferenceType::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `ReferenceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `ReferenceType::NewFeature` is defined.
-/// Specifically, when `referencetype` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `ReferenceType::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ReferenceType {
-    #[allow(missing_docs)] // documentation missing in model
-    Attachment,
-    #[allow(missing_docs)] // documentation missing in model
-    Date,
-    #[allow(missing_docs)] // documentation missing in model
-    Email,
-    #[allow(missing_docs)] // documentation missing in model
-    Number,
-    #[allow(missing_docs)] // documentation missing in model
-    String,
-    #[allow(missing_docs)] // documentation missing in model
-    Url,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for ReferenceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ATTACHMENT" => ReferenceType::Attachment,
-            "DATE" => ReferenceType::Date,
-            "EMAIL" => ReferenceType::Email,
-            "NUMBER" => ReferenceType::Number,
-            "STRING" => ReferenceType::String,
-            "URL" => ReferenceType::Url,
-            other => ReferenceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for ReferenceType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReferenceType::from(s))
-    }
-}
-impl ReferenceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReferenceType::Attachment => "ATTACHMENT",
-            ReferenceType::Date => "DATE",
-            ReferenceType::Email => "EMAIL",
-            ReferenceType::Number => "NUMBER",
-            ReferenceType::String => "STRING",
-            ReferenceType::Url => "URL",
-            ReferenceType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ATTACHMENT", "DATE", "EMAIL", "NUMBER", "STRING", "URL"]
-    }
-}
-impl AsRef<str> for ReferenceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// When writing a match expression against `AgentStatusState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
 /// feature that is supported by the service but has not been represented as an enum
@@ -4699,19 +6371,27 @@ impl AsRef<str> for VoiceRecordingTrack {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChatMessage {
-    /// <p>The type of the content. Supported types are <code>text/plain</code>.</p>
+    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
-    /// <p>The content of the chat message.</p>
+    /// <p>The content of the chat message. </p>
+    /// <ul>
+    /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
+    /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
 impl ChatMessage {
-    /// <p>The type of the content. Supported types are <code>text/plain</code>.</p>
+    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
-    /// <p>The content of the chat message.</p>
+    /// <p>The content of the chat message. </p>
+    /// <ul>
+    /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
+    /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+    /// </ul>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -4726,22 +6406,30 @@ pub mod chat_message {
         pub(crate) content: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of the content. Supported types are <code>text/plain</code>.</p>
+        /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>The type of the content. Supported types are <code>text/plain</code>.</p>
+        /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
         }
-        /// <p>The content of the chat message.</p>
+        /// <p>The content of the chat message. </p>
+        /// <ul>
+        /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
+        /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+        /// </ul>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The content of the chat message.</p>
+        /// <p>The content of the chat message. </p>
+        /// <ul>
+        /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
+        /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+        /// </ul>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -5109,8 +6797,10 @@ impl AsRef<str> for VocabularyState {
 ///     VocabularyLanguageCode::EnGb => { /* ... */ },
 ///     VocabularyLanguageCode::EnIe => { /* ... */ },
 ///     VocabularyLanguageCode::EnIn => { /* ... */ },
+///     VocabularyLanguageCode::EnNz => { /* ... */ },
 ///     VocabularyLanguageCode::EnUs => { /* ... */ },
 ///     VocabularyLanguageCode::EnWl => { /* ... */ },
+///     VocabularyLanguageCode::EnZa => { /* ... */ },
 ///     VocabularyLanguageCode::EsEs => { /* ... */ },
 ///     VocabularyLanguageCode::EsUs => { /* ... */ },
 ///     VocabularyLanguageCode::FrCa => { /* ... */ },
@@ -5172,9 +6862,13 @@ pub enum VocabularyLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     EnIn,
     #[allow(missing_docs)] // documentation missing in model
+    EnNz,
+    #[allow(missing_docs)] // documentation missing in model
     EnUs,
     #[allow(missing_docs)] // documentation missing in model
     EnWl,
+    #[allow(missing_docs)] // documentation missing in model
+    EnZa,
     #[allow(missing_docs)] // documentation missing in model
     EsEs,
     #[allow(missing_docs)] // documentation missing in model
@@ -5211,8 +6905,10 @@ impl std::convert::From<&str> for VocabularyLanguageCode {
             "en-GB" => VocabularyLanguageCode::EnGb,
             "en-IE" => VocabularyLanguageCode::EnIe,
             "en-IN" => VocabularyLanguageCode::EnIn,
+            "en-NZ" => VocabularyLanguageCode::EnNz,
             "en-US" => VocabularyLanguageCode::EnUs,
             "en-WL" => VocabularyLanguageCode::EnWl,
+            "en-ZA" => VocabularyLanguageCode::EnZa,
             "es-ES" => VocabularyLanguageCode::EsEs,
             "es-US" => VocabularyLanguageCode::EsUs,
             "fr-CA" => VocabularyLanguageCode::FrCa,
@@ -5249,8 +6945,10 @@ impl VocabularyLanguageCode {
             VocabularyLanguageCode::EnGb => "en-GB",
             VocabularyLanguageCode::EnIe => "en-IE",
             VocabularyLanguageCode::EnIn => "en-IN",
+            VocabularyLanguageCode::EnNz => "en-NZ",
             VocabularyLanguageCode::EnUs => "en-US",
             VocabularyLanguageCode::EnWl => "en-WL",
+            VocabularyLanguageCode::EnZa => "en-ZA",
             VocabularyLanguageCode::EsEs => "es-ES",
             VocabularyLanguageCode::EsUs => "es-US",
             VocabularyLanguageCode::FrCa => "fr-CA",
@@ -5268,9 +6966,9 @@ impl VocabularyLanguageCode {
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ar-AE", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-US",
-            "en-WL", "es-ES", "es-US", "fr-CA", "fr-FR", "hi-IN", "it-IT", "ja-JP", "ko-KR",
-            "pt-BR", "pt-PT", "zh-CN",
+            "ar-AE", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-NZ",
+            "en-US", "en-WL", "en-ZA", "es-ES", "es-US", "fr-CA", "fr-FR", "hi-IN", "it-IT",
+            "ja-JP", "ko-KR", "pt-BR", "pt-PT", "zh-CN",
         ]
     }
 }
@@ -5612,7 +7310,7 @@ impl UserIdentityInfoLite {
 }
 
 /// <p>The search criteria to be used to return users.</p> <note>
-/// <p>The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range result in empty results. </p>
+/// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5918,7 +7616,9 @@ impl AsRef<str> for HierarchyGroupMatchType {
     }
 }
 
-/// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+/// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
+/// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StringCondition {
@@ -6590,7 +8290,9 @@ impl SecurityProfilesSearchFilter {
     }
 }
 
-/// <p>The search criteria to be used to return security profiles.</p>
+/// <p>The search criteria to be used to return security profiles.</p> <note>
+/// <p>The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityProfileSearchCriteria {
@@ -6602,7 +8304,9 @@ pub struct SecurityProfileSearchCriteria {
     #[doc(hidden)]
     pub and_conditions:
         std::option::Option<std::vec::Vec<crate::model::SecurityProfileSearchCriteria>>,
-    /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+    /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
+    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+    /// </note>
     #[doc(hidden)]
     pub string_condition: std::option::Option<crate::model::StringCondition>,
 }
@@ -6619,7 +8323,9 @@ impl SecurityProfileSearchCriteria {
     ) -> std::option::Option<&[crate::model::SecurityProfileSearchCriteria]> {
         self.and_conditions.as_deref()
     }
-    /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+    /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
+    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+    /// </note>
     pub fn string_condition(&self) -> std::option::Option<&crate::model::StringCondition> {
         self.string_condition.as_ref()
     }
@@ -6678,12 +8384,16 @@ pub mod security_profile_search_criteria {
             self.and_conditions = input;
             self
         }
-        /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+        /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
+        /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+        /// </note>
         pub fn string_condition(mut self, input: crate::model::StringCondition) -> Self {
             self.string_condition = Some(input);
             self
         }
-        /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+        /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
+        /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+        /// </note>
         pub fn set_string_condition(
             mut self,
             input: std::option::Option<crate::model::StringCondition>,
@@ -6967,7 +8677,9 @@ impl RoutingProfile {
     }
 }
 
-/// <p>The search criteria to be used to return routing profiles.</p>
+/// <p>The search criteria to be used to return routing profiles.</p> <note>
+/// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingProfileSearchCriteria {
@@ -6979,7 +8691,9 @@ pub struct RoutingProfileSearchCriteria {
     #[doc(hidden)]
     pub and_conditions:
         std::option::Option<std::vec::Vec<crate::model::RoutingProfileSearchCriteria>>,
-    /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+    /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
+    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+    /// </note>
     #[doc(hidden)]
     pub string_condition: std::option::Option<crate::model::StringCondition>,
 }
@@ -6996,7 +8710,9 @@ impl RoutingProfileSearchCriteria {
     ) -> std::option::Option<&[crate::model::RoutingProfileSearchCriteria]> {
         self.and_conditions.as_deref()
     }
-    /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+    /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
+    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+    /// </note>
     pub fn string_condition(&self) -> std::option::Option<&crate::model::StringCondition> {
         self.string_condition.as_ref()
     }
@@ -7052,12 +8768,16 @@ pub mod routing_profile_search_criteria {
             self.and_conditions = input;
             self
         }
-        /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+        /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
+        /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+        /// </note>
         pub fn string_condition(mut self, input: crate::model::StringCondition) -> Self {
             self.string_condition = Some(input);
             self
         }
-        /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+        /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
+        /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+        /// </note>
         pub fn set_string_condition(
             mut self,
             input: std::option::Option<crate::model::StringCondition>,
@@ -7378,7 +9098,9 @@ impl Queue {
     }
 }
 
-/// <p>The search criteria to be used to return queues.</p>
+/// <p>The search criteria to be used to return queues.</p> <note>
+/// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueueSearchCriteria {
@@ -7388,7 +9110,9 @@ pub struct QueueSearchCriteria {
     /// <p>A list of conditions which would be applied together with an AND condition.</p>
     #[doc(hidden)]
     pub and_conditions: std::option::Option<std::vec::Vec<crate::model::QueueSearchCriteria>>,
-    /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+    /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
+    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+    /// </note>
     #[doc(hidden)]
     pub string_condition: std::option::Option<crate::model::StringCondition>,
     /// <p>The type of queue.</p>
@@ -7404,7 +9128,9 @@ impl QueueSearchCriteria {
     pub fn and_conditions(&self) -> std::option::Option<&[crate::model::QueueSearchCriteria]> {
         self.and_conditions.as_deref()
     }
-    /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+    /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
+    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+    /// </note>
     pub fn string_condition(&self) -> std::option::Option<&crate::model::StringCondition> {
         self.string_condition.as_ref()
     }
@@ -7465,12 +9191,16 @@ pub mod queue_search_criteria {
             self.and_conditions = input;
             self
         }
-        /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+        /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
+        /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+        /// </note>
         pub fn string_condition(mut self, input: crate::model::StringCondition) -> Self {
             self.string_condition = Some(input);
             self
         }
-        /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+        /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
+        /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+        /// </note>
         pub fn set_string_condition(
             mut self,
             input: std::option::Option<crate::model::StringCondition>,
@@ -9136,6 +10866,98 @@ impl AsRef<str> for PhoneNumberCountryCode {
     }
 }
 
+/// When writing a match expression against `MonitorCapability`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let monitorcapability = unimplemented!();
+/// match monitorcapability {
+///     MonitorCapability::Barge => { /* ... */ },
+///     MonitorCapability::SilentMonitor => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `monitorcapability` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MonitorCapability::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MonitorCapability::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MonitorCapability::NewFeature` is defined.
+/// Specifically, when `monitorcapability` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MonitorCapability::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MonitorCapability {
+    #[allow(missing_docs)] // documentation missing in model
+    Barge,
+    #[allow(missing_docs)] // documentation missing in model
+    SilentMonitor,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for MonitorCapability {
+    fn from(s: &str) -> Self {
+        match s {
+            "BARGE" => MonitorCapability::Barge,
+            "SILENT_MONITOR" => MonitorCapability::SilentMonitor,
+            other => {
+                MonitorCapability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for MonitorCapability {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MonitorCapability::from(s))
+    }
+}
+impl MonitorCapability {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MonitorCapability::Barge => "BARGE",
+            MonitorCapability::SilentMonitor => "SILENT_MONITOR",
+            MonitorCapability::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["BARGE", "SILENT_MONITOR"]
+    }
+}
+impl AsRef<str> for MonitorCapability {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Contains summary information about a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9487,6 +11309,284 @@ impl AsRef<str> for UseCaseType {
     }
 }
 
+/// <p>Information about traffic distribution groups.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TrafficDistributionGroupSummary {
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the traffic distribution group.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    #[doc(hidden)]
+    pub instance_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the traffic distribution group. </p>
+    /// <ul>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has succeeded.</p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has failed.</p> </li>
+    /// <li> <p> <code>PENDING_DELETION</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+    /// <li> <p> <code>DELETION_FAILED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation has failed.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::TrafficDistributionGroupStatus>,
+}
+impl TrafficDistributionGroupSummary {
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the traffic distribution group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The status of the traffic distribution group. </p>
+    /// <ul>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has succeeded.</p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has failed.</p> </li>
+    /// <li> <p> <code>PENDING_DELETION</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+    /// <li> <p> <code>DELETION_FAILED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation has failed.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::TrafficDistributionGroupStatus> {
+        self.status.as_ref()
+    }
+}
+/// See [`TrafficDistributionGroupSummary`](crate::model::TrafficDistributionGroupSummary).
+pub mod traffic_distribution_group_summary {
+
+    /// A builder for [`TrafficDistributionGroupSummary`](crate::model::TrafficDistributionGroupSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) instance_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::TrafficDistributionGroupStatus>,
+    }
+    impl Builder {
+        /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the traffic distribution group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the traffic distribution group.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+        pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_arn = input;
+            self
+        }
+        /// <p>The status of the traffic distribution group. </p>
+        /// <ul>
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has succeeded.</p> </li>
+        /// <li> <p> <code>CREATION_FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has failed.</p> </li>
+        /// <li> <p> <code>PENDING_DELETION</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+        /// <li> <p> <code>DELETION_FAILED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation has failed.</p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::TrafficDistributionGroupStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the traffic distribution group. </p>
+        /// <ul>
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has succeeded.</p> </li>
+        /// <li> <p> <code>CREATION_FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has failed.</p> </li>
+        /// <li> <p> <code>PENDING_DELETION</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+        /// <li> <p> <code>DELETION_FAILED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation has failed.</p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+        /// </ul>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TrafficDistributionGroupStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TrafficDistributionGroupSummary`](crate::model::TrafficDistributionGroupSummary).
+        pub fn build(self) -> crate::model::TrafficDistributionGroupSummary {
+            crate::model::TrafficDistributionGroupSummary {
+                id: self.id,
+                arn: self.arn,
+                name: self.name,
+                instance_arn: self.instance_arn,
+                status: self.status,
+            }
+        }
+    }
+}
+impl TrafficDistributionGroupSummary {
+    /// Creates a new builder-style object to manufacture [`TrafficDistributionGroupSummary`](crate::model::TrafficDistributionGroupSummary).
+    pub fn builder() -> crate::model::traffic_distribution_group_summary::Builder {
+        crate::model::traffic_distribution_group_summary::Builder::default()
+    }
+}
+
+/// When writing a match expression against `TrafficDistributionGroupStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let trafficdistributiongroupstatus = unimplemented!();
+/// match trafficdistributiongroupstatus {
+///     TrafficDistributionGroupStatus::Active => { /* ... */ },
+///     TrafficDistributionGroupStatus::CreationFailed => { /* ... */ },
+///     TrafficDistributionGroupStatus::CreationInProgress => { /* ... */ },
+///     TrafficDistributionGroupStatus::DeletionFailed => { /* ... */ },
+///     TrafficDistributionGroupStatus::PendingDeletion => { /* ... */ },
+///     TrafficDistributionGroupStatus::UpdateInProgress => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `trafficdistributiongroupstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TrafficDistributionGroupStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TrafficDistributionGroupStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TrafficDistributionGroupStatus::NewFeature` is defined.
+/// Specifically, when `trafficdistributiongroupstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TrafficDistributionGroupStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TrafficDistributionGroupStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    CreationFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    CreationInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    DeletionFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingDeletion,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateInProgress,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for TrafficDistributionGroupStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => TrafficDistributionGroupStatus::Active,
+            "CREATION_FAILED" => TrafficDistributionGroupStatus::CreationFailed,
+            "CREATION_IN_PROGRESS" => TrafficDistributionGroupStatus::CreationInProgress,
+            "DELETION_FAILED" => TrafficDistributionGroupStatus::DeletionFailed,
+            "PENDING_DELETION" => TrafficDistributionGroupStatus::PendingDeletion,
+            "UPDATE_IN_PROGRESS" => TrafficDistributionGroupStatus::UpdateInProgress,
+            other => TrafficDistributionGroupStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for TrafficDistributionGroupStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TrafficDistributionGroupStatus::from(s))
+    }
+}
+impl TrafficDistributionGroupStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TrafficDistributionGroupStatus::Active => "ACTIVE",
+            TrafficDistributionGroupStatus::CreationFailed => "CREATION_FAILED",
+            TrafficDistributionGroupStatus::CreationInProgress => "CREATION_IN_PROGRESS",
+            TrafficDistributionGroupStatus::DeletionFailed => "DELETION_FAILED",
+            TrafficDistributionGroupStatus::PendingDeletion => "PENDING_DELETION",
+            TrafficDistributionGroupStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
+            TrafficDistributionGroupStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATION_FAILED",
+            "CREATION_IN_PROGRESS",
+            "DELETION_FAILED",
+            "PENDING_DELETION",
+            "UPDATE_IN_PROGRESS",
+        ]
+    }
+}
+impl AsRef<str> for TrafficDistributionGroupStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Contains summary information about the task template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9833,6 +11933,377 @@ impl SecurityKey {
     /// Creates a new builder-style object to manufacture [`SecurityKey`](crate::model::SecurityKey).
     pub fn builder() -> crate::model::security_key::Builder {
         crate::model::security_key::Builder::default()
+    }
+}
+
+/// <p>A list of <code>ActionTypes</code> associated with a rule. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RuleSummary {
+    /// <p>The name of the rule.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the rule.</p>
+    #[doc(hidden)]
+    pub rule_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    #[doc(hidden)]
+    pub rule_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the event source.</p>
+    #[doc(hidden)]
+    pub event_source_name: std::option::Option<crate::model::EventSourceName>,
+    /// <p>The publish status of the rule.</p>
+    #[doc(hidden)]
+    pub publish_status: std::option::Option<crate::model::RulePublishStatus>,
+    /// <p>A list of ActionTypes associated with a rule. </p>
+    #[doc(hidden)]
+    pub action_summaries: std::option::Option<std::vec::Vec<crate::model::ActionSummary>>,
+    /// <p>The timestamp for when the rule was created. </p>
+    #[doc(hidden)]
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp for when the rule was last updated.</p>
+    #[doc(hidden)]
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl RuleSummary {
+    /// <p>The name of the rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A unique identifier for the rule.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn rule_arn(&self) -> std::option::Option<&str> {
+        self.rule_arn.as_deref()
+    }
+    /// <p>The name of the event source.</p>
+    pub fn event_source_name(&self) -> std::option::Option<&crate::model::EventSourceName> {
+        self.event_source_name.as_ref()
+    }
+    /// <p>The publish status of the rule.</p>
+    pub fn publish_status(&self) -> std::option::Option<&crate::model::RulePublishStatus> {
+        self.publish_status.as_ref()
+    }
+    /// <p>A list of ActionTypes associated with a rule. </p>
+    pub fn action_summaries(&self) -> std::option::Option<&[crate::model::ActionSummary]> {
+        self.action_summaries.as_deref()
+    }
+    /// <p>The timestamp for when the rule was created. </p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_time.as_ref()
+    }
+    /// <p>The timestamp for when the rule was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_time.as_ref()
+    }
+}
+/// See [`RuleSummary`](crate::model::RuleSummary).
+pub mod rule_summary {
+
+    /// A builder for [`RuleSummary`](crate::model::RuleSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) rule_id: std::option::Option<std::string::String>,
+        pub(crate) rule_arn: std::option::Option<std::string::String>,
+        pub(crate) event_source_name: std::option::Option<crate::model::EventSourceName>,
+        pub(crate) publish_status: std::option::Option<crate::model::RulePublishStatus>,
+        pub(crate) action_summaries:
+            std::option::Option<std::vec::Vec<crate::model::ActionSummary>>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The name of the rule.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the rule.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A unique identifier for the rule.</p>
+        pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the rule.</p>
+        pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+        pub fn rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+        pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_arn = input;
+            self
+        }
+        /// <p>The name of the event source.</p>
+        pub fn event_source_name(mut self, input: crate::model::EventSourceName) -> Self {
+            self.event_source_name = Some(input);
+            self
+        }
+        /// <p>The name of the event source.</p>
+        pub fn set_event_source_name(
+            mut self,
+            input: std::option::Option<crate::model::EventSourceName>,
+        ) -> Self {
+            self.event_source_name = input;
+            self
+        }
+        /// <p>The publish status of the rule.</p>
+        pub fn publish_status(mut self, input: crate::model::RulePublishStatus) -> Self {
+            self.publish_status = Some(input);
+            self
+        }
+        /// <p>The publish status of the rule.</p>
+        pub fn set_publish_status(
+            mut self,
+            input: std::option::Option<crate::model::RulePublishStatus>,
+        ) -> Self {
+            self.publish_status = input;
+            self
+        }
+        /// Appends an item to `action_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_action_summaries`](Self::set_action_summaries).
+        ///
+        /// <p>A list of ActionTypes associated with a rule. </p>
+        pub fn action_summaries(mut self, input: crate::model::ActionSummary) -> Self {
+            let mut v = self.action_summaries.unwrap_or_default();
+            v.push(input);
+            self.action_summaries = Some(v);
+            self
+        }
+        /// <p>A list of ActionTypes associated with a rule. </p>
+        pub fn set_action_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ActionSummary>>,
+        ) -> Self {
+            self.action_summaries = input;
+            self
+        }
+        /// <p>The timestamp for when the rule was created. </p>
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_time = Some(input);
+            self
+        }
+        /// <p>The timestamp for when the rule was created. </p>
+        pub fn set_created_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_time = input;
+            self
+        }
+        /// <p>The timestamp for when the rule was last updated.</p>
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_time = Some(input);
+            self
+        }
+        /// <p>The timestamp for when the rule was last updated.</p>
+        pub fn set_last_updated_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RuleSummary`](crate::model::RuleSummary).
+        pub fn build(self) -> crate::model::RuleSummary {
+            crate::model::RuleSummary {
+                name: self.name,
+                rule_id: self.rule_id,
+                rule_arn: self.rule_arn,
+                event_source_name: self.event_source_name,
+                publish_status: self.publish_status,
+                action_summaries: self.action_summaries,
+                created_time: self.created_time,
+                last_updated_time: self.last_updated_time,
+            }
+        }
+    }
+}
+impl RuleSummary {
+    /// Creates a new builder-style object to manufacture [`RuleSummary`](crate::model::RuleSummary).
+    pub fn builder() -> crate::model::rule_summary::Builder {
+        crate::model::rule_summary::Builder::default()
+    }
+}
+
+/// <p>Information about an action.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ActionSummary {
+    /// <p>The action type.</p>
+    #[doc(hidden)]
+    pub action_type: std::option::Option<crate::model::ActionType>,
+}
+impl ActionSummary {
+    /// <p>The action type.</p>
+    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
+        self.action_type.as_ref()
+    }
+}
+/// See [`ActionSummary`](crate::model::ActionSummary).
+pub mod action_summary {
+
+    /// A builder for [`ActionSummary`](crate::model::ActionSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) action_type: std::option::Option<crate::model::ActionType>,
+    }
+    impl Builder {
+        /// <p>The action type.</p>
+        pub fn action_type(mut self, input: crate::model::ActionType) -> Self {
+            self.action_type = Some(input);
+            self
+        }
+        /// <p>The action type.</p>
+        pub fn set_action_type(
+            mut self,
+            input: std::option::Option<crate::model::ActionType>,
+        ) -> Self {
+            self.action_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ActionSummary`](crate::model::ActionSummary).
+        pub fn build(self) -> crate::model::ActionSummary {
+            crate::model::ActionSummary {
+                action_type: self.action_type,
+            }
+        }
+    }
+}
+impl ActionSummary {
+    /// Creates a new builder-style object to manufacture [`ActionSummary`](crate::model::ActionSummary).
+    pub fn builder() -> crate::model::action_summary::Builder {
+        crate::model::action_summary::Builder::default()
+    }
+}
+
+/// When writing a match expression against `EventSourceName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventsourcename = unimplemented!();
+/// match eventsourcename {
+///     EventSourceName::OnPostCallAnalysisAvailable => { /* ... */ },
+///     EventSourceName::OnPostChatAnalysisAvailable => { /* ... */ },
+///     EventSourceName::OnRealTimeCallAnalysisAvailable => { /* ... */ },
+///     EventSourceName::OnSalesforceCaseCreate => { /* ... */ },
+///     EventSourceName::OnZendeskTicketCreate => { /* ... */ },
+///     EventSourceName::OnZendeskTicketStatusUpdate => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventsourcename` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventSourceName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventSourceName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventSourceName::NewFeature` is defined.
+/// Specifically, when `eventsourcename` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventSourceName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EventSourceName {
+    #[allow(missing_docs)] // documentation missing in model
+    OnPostCallAnalysisAvailable,
+    #[allow(missing_docs)] // documentation missing in model
+    OnPostChatAnalysisAvailable,
+    #[allow(missing_docs)] // documentation missing in model
+    OnRealTimeCallAnalysisAvailable,
+    #[allow(missing_docs)] // documentation missing in model
+    OnSalesforceCaseCreate,
+    #[allow(missing_docs)] // documentation missing in model
+    OnZendeskTicketCreate,
+    #[allow(missing_docs)] // documentation missing in model
+    OnZendeskTicketStatusUpdate,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EventSourceName {
+    fn from(s: &str) -> Self {
+        match s {
+            "OnPostCallAnalysisAvailable" => EventSourceName::OnPostCallAnalysisAvailable,
+            "OnPostChatAnalysisAvailable" => EventSourceName::OnPostChatAnalysisAvailable,
+            "OnRealTimeCallAnalysisAvailable" => EventSourceName::OnRealTimeCallAnalysisAvailable,
+            "OnSalesforceCaseCreate" => EventSourceName::OnSalesforceCaseCreate,
+            "OnZendeskTicketCreate" => EventSourceName::OnZendeskTicketCreate,
+            "OnZendeskTicketStatusUpdate" => EventSourceName::OnZendeskTicketStatusUpdate,
+            other => EventSourceName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for EventSourceName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EventSourceName::from(s))
+    }
+}
+impl EventSourceName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EventSourceName::OnPostCallAnalysisAvailable => "OnPostCallAnalysisAvailable",
+            EventSourceName::OnPostChatAnalysisAvailable => "OnPostChatAnalysisAvailable",
+            EventSourceName::OnRealTimeCallAnalysisAvailable => "OnRealTimeCallAnalysisAvailable",
+            EventSourceName::OnSalesforceCaseCreate => "OnSalesforceCaseCreate",
+            EventSourceName::OnZendeskTicketCreate => "OnZendeskTicketCreate",
+            EventSourceName::OnZendeskTicketStatusUpdate => "OnZendeskTicketStatusUpdate",
+            EventSourceName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "OnPostCallAnalysisAvailable",
+            "OnPostChatAnalysisAvailable",
+            "OnRealTimeCallAnalysisAvailable",
+            "OnSalesforceCaseCreate",
+            "OnZendeskTicketCreate",
+            "OnZendeskTicketStatusUpdate",
+        ]
+    }
+}
+impl AsRef<str> for EventSourceName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -10457,7 +12928,7 @@ impl PromptSummary {
     }
 }
 
-/// <p>Information about phone numbers that have been claimed to your Amazon Connect instance.</p>
+/// <p>Information about phone numbers that have been claimed to your Amazon Connect instance or traffic distribution group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPhoneNumbersSummary {
@@ -10476,7 +12947,7 @@ pub struct ListPhoneNumbersSummary {
     /// <p>The type of phone number.</p>
     #[doc(hidden)]
     pub phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
-    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
 }
@@ -10503,7 +12974,7 @@ impl ListPhoneNumbersSummary {
     pub fn phone_number_type(&self) -> std::option::Option<&crate::model::PhoneNumberType> {
         self.phone_number_type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
     }
@@ -10588,12 +13059,12 @@ pub mod list_phone_numbers_summary {
             self.phone_number_type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -10761,7 +13232,7 @@ pub struct LexBot {
     /// <p>The name of the Amazon Lex bot.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Region that the Amazon Lex bot was created in.</p>
+    /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
     #[doc(hidden)]
     pub lex_region: std::option::Option<std::string::String>,
 }
@@ -10770,7 +13241,7 @@ impl LexBot {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Region that the Amazon Lex bot was created in.</p>
+    /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
     pub fn lex_region(&self) -> std::option::Option<&str> {
         self.lex_region.as_deref()
     }
@@ -10795,12 +13266,12 @@ pub mod lex_bot {
             self.name = input;
             self
         }
-        /// <p>The Region that the Amazon Lex bot was created in.</p>
+        /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
         pub fn lex_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.lex_region = Some(input.into());
             self
         }
-        /// <p>The Region that the Amazon Lex bot was created in.</p>
+        /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
         pub fn set_lex_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lex_region = input;
             self
@@ -12561,7 +15032,7 @@ impl UrlReference {
 }
 
 /// <p>Contains summary information about a flow.</p>
-/// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+/// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactFlowSummary {
@@ -14205,6 +16676,9 @@ pub struct Dimensions {
     /// <p>The channel used for grouping and filters.</p>
     #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
+    /// <p>Information about the routing profile assigned to the user.</p>
+    #[doc(hidden)]
+    pub routing_profile: std::option::Option<crate::model::RoutingProfileReference>,
 }
 impl Dimensions {
     /// <p>Information about the queue for which metrics are returned.</p>
@@ -14215,6 +16689,10 @@ impl Dimensions {
     pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
         self.channel.as_ref()
     }
+    /// <p>Information about the routing profile assigned to the user.</p>
+    pub fn routing_profile(&self) -> std::option::Option<&crate::model::RoutingProfileReference> {
+        self.routing_profile.as_ref()
+    }
 }
 /// See [`Dimensions`](crate::model::Dimensions).
 pub mod dimensions {
@@ -14224,6 +16702,7 @@ pub mod dimensions {
     pub struct Builder {
         pub(crate) queue: std::option::Option<crate::model::QueueReference>,
         pub(crate) channel: std::option::Option<crate::model::Channel>,
+        pub(crate) routing_profile: std::option::Option<crate::model::RoutingProfileReference>,
     }
     impl Builder {
         /// <p>Information about the queue for which metrics are returned.</p>
@@ -14249,11 +16728,25 @@ pub mod dimensions {
             self.channel = input;
             self
         }
+        /// <p>Information about the routing profile assigned to the user.</p>
+        pub fn routing_profile(mut self, input: crate::model::RoutingProfileReference) -> Self {
+            self.routing_profile = Some(input);
+            self
+        }
+        /// <p>Information about the routing profile assigned to the user.</p>
+        pub fn set_routing_profile(
+            mut self,
+            input: std::option::Option<crate::model::RoutingProfileReference>,
+        ) -> Self {
+            self.routing_profile = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Dimensions`](crate::model::Dimensions).
         pub fn build(self) -> crate::model::Dimensions {
             crate::model::Dimensions {
                 queue: self.queue,
                 channel: self.channel,
+                routing_profile: self.routing_profile,
             }
         }
     }
@@ -14262,6 +16755,73 @@ impl Dimensions {
     /// Creates a new builder-style object to manufacture [`Dimensions`](crate::model::Dimensions).
     pub fn builder() -> crate::model::dimensions::Builder {
         crate::model::dimensions::Builder::default()
+    }
+}
+
+/// <p>Information about the routing profile assigned to the user.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RoutingProfileReference {
+    /// <p>The identifier of the routing profile.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+}
+impl RoutingProfileReference {
+    /// <p>The identifier of the routing profile.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+/// See [`RoutingProfileReference`](crate::model::RoutingProfileReference).
+pub mod routing_profile_reference {
+
+    /// A builder for [`RoutingProfileReference`](crate::model::RoutingProfileReference).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the routing profile.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the routing profile.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RoutingProfileReference`](crate::model::RoutingProfileReference).
+        pub fn build(self) -> crate::model::RoutingProfileReference {
+            crate::model::RoutingProfileReference {
+                id: self.id,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl RoutingProfileReference {
+    /// Creates a new builder-style object to manufacture [`RoutingProfileReference`](crate::model::RoutingProfileReference).
+    pub fn builder() -> crate::model::routing_profile_reference::Builder {
+        crate::model::routing_profile_reference::Builder::default()
     }
 }
 
@@ -14346,6 +16906,7 @@ impl QueueReference {
 /// match grouping {
 ///     Grouping::Channel => { /* ... */ },
 ///     Grouping::Queue => { /* ... */ },
+///     Grouping::RoutingProfile => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -14383,6 +16944,8 @@ pub enum Grouping {
     Channel,
     #[allow(missing_docs)] // documentation missing in model
     Queue,
+    #[allow(missing_docs)] // documentation missing in model
+    RoutingProfile,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -14391,6 +16954,7 @@ impl std::convert::From<&str> for Grouping {
         match s {
             "CHANNEL" => Grouping::Channel,
             "QUEUE" => Grouping::Queue,
+            "ROUTING_PROFILE" => Grouping::RoutingProfile,
             other => Grouping::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -14408,12 +16972,13 @@ impl Grouping {
         match self {
             Grouping::Channel => "CHANNEL",
             Grouping::Queue => "QUEUE",
+            Grouping::RoutingProfile => "ROUTING_PROFILE",
             Grouping::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CHANNEL", "QUEUE"]
+        &["CHANNEL", "QUEUE", "ROUTING_PROFILE"]
     }
 }
 impl AsRef<str> for Grouping {
@@ -14432,6 +16997,9 @@ pub struct Filters {
     /// <p>The channel to use to filter the metrics.</p>
     #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
+    /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
+    #[doc(hidden)]
+    pub routing_profiles: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filters {
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
@@ -14442,6 +17010,10 @@ impl Filters {
     pub fn channels(&self) -> std::option::Option<&[crate::model::Channel]> {
         self.channels.as_deref()
     }
+    /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
+    pub fn routing_profiles(&self) -> std::option::Option<&[std::string::String]> {
+        self.routing_profiles.as_deref()
+    }
 }
 /// See [`Filters`](crate::model::Filters).
 pub mod filters {
@@ -14451,6 +17023,7 @@ pub mod filters {
     pub struct Builder {
         pub(crate) queues: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
+        pub(crate) routing_profiles: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `queues`.
@@ -14491,11 +17064,31 @@ pub mod filters {
             self.channels = input;
             self
         }
+        /// Appends an item to `routing_profiles`.
+        ///
+        /// To override the contents of this collection use [`set_routing_profiles`](Self::set_routing_profiles).
+        ///
+        /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
+        pub fn routing_profiles(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.routing_profiles.unwrap_or_default();
+            v.push(input.into());
+            self.routing_profiles = Some(v);
+            self
+        }
+        /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
+        pub fn set_routing_profiles(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.routing_profiles = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Filters`](crate::model::Filters).
         pub fn build(self) -> crate::model::Filters {
             crate::model::Filters {
                 queues: self.queues,
                 channels: self.channels,
+                routing_profiles: self.routing_profiles,
             }
         }
     }
@@ -14645,7 +17238,7 @@ impl Credentials {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserData {
-    /// <p>Information about the user for the data that is returned. It contains resourceId and ARN of the user. </p>
+    /// <p>Information about the user for the data that is returned. It contains the <code>resourceId</code> and ARN of the user. </p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::model::UserReference>,
     /// <p>Information about the routing profile that is assigned to the user.</p>
@@ -14661,7 +17254,7 @@ pub struct UserData {
     #[doc(hidden)]
     pub available_slots_by_channel:
         std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
-    /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the RoutingProfile assigned to the agent. </p>
+    /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the <code>RoutingProfile</code> assigned to the agent. </p>
     #[doc(hidden)]
     pub max_slots_by_channel:
         std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
@@ -14672,9 +17265,12 @@ pub struct UserData {
     /// <p>A list of contact reference information.</p>
     #[doc(hidden)]
     pub contacts: std::option::Option<std::vec::Vec<crate::model::AgentContactReference>>,
+    /// <p>The Next status of the agent.</p>
+    #[doc(hidden)]
+    pub next_status: std::option::Option<std::string::String>,
 }
 impl UserData {
-    /// <p>Information about the user for the data that is returned. It contains resourceId and ARN of the user. </p>
+    /// <p>Information about the user for the data that is returned. It contains the <code>resourceId</code> and ARN of the user. </p>
     pub fn user(&self) -> std::option::Option<&crate::model::UserReference> {
         self.user.as_ref()
     }
@@ -14696,7 +17292,7 @@ impl UserData {
     ) -> std::option::Option<&std::collections::HashMap<crate::model::Channel, i32>> {
         self.available_slots_by_channel.as_ref()
     }
-    /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the RoutingProfile assigned to the agent. </p>
+    /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the <code>RoutingProfile</code> assigned to the agent. </p>
     pub fn max_slots_by_channel(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<crate::model::Channel, i32>> {
@@ -14711,6 +17307,10 @@ impl UserData {
     /// <p>A list of contact reference information.</p>
     pub fn contacts(&self) -> std::option::Option<&[crate::model::AgentContactReference]> {
         self.contacts.as_deref()
+    }
+    /// <p>The Next status of the agent.</p>
+    pub fn next_status(&self) -> std::option::Option<&str> {
+        self.next_status.as_deref()
     }
 }
 /// See [`UserData`](crate::model::UserData).
@@ -14731,14 +17331,15 @@ pub mod user_data {
             std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
         pub(crate) contacts:
             std::option::Option<std::vec::Vec<crate::model::AgentContactReference>>,
+        pub(crate) next_status: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about the user for the data that is returned. It contains resourceId and ARN of the user. </p>
+        /// <p>Information about the user for the data that is returned. It contains the <code>resourceId</code> and ARN of the user. </p>
         pub fn user(mut self, input: crate::model::UserReference) -> Self {
             self.user = Some(input);
             self
         }
-        /// <p>Information about the user for the data that is returned. It contains resourceId and ARN of the user. </p>
+        /// <p>Information about the user for the data that is returned. It contains the <code>resourceId</code> and ARN of the user. </p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::UserReference>) -> Self {
             self.user = input;
             self
@@ -14805,14 +17406,14 @@ pub mod user_data {
         ///
         /// To override the contents of this collection use [`set_max_slots_by_channel`](Self::set_max_slots_by_channel).
         ///
-        /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the RoutingProfile assigned to the agent. </p>
+        /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the <code>RoutingProfile</code> assigned to the agent. </p>
         pub fn max_slots_by_channel(mut self, k: crate::model::Channel, v: i32) -> Self {
             let mut hash_map = self.max_slots_by_channel.unwrap_or_default();
             hash_map.insert(k, v);
             self.max_slots_by_channel = Some(hash_map);
             self
         }
-        /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the RoutingProfile assigned to the agent. </p>
+        /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the <code>RoutingProfile</code> assigned to the agent. </p>
         pub fn set_max_slots_by_channel(
             mut self,
             input: std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
@@ -14858,6 +17459,16 @@ pub mod user_data {
             self.contacts = input;
             self
         }
+        /// <p>The Next status of the agent.</p>
+        pub fn next_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_status = Some(input.into());
+            self
+        }
+        /// <p>The Next status of the agent.</p>
+        pub fn set_next_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UserData`](crate::model::UserData).
         pub fn build(self) -> crate::model::UserData {
             crate::model::UserData {
@@ -14869,6 +17480,7 @@ pub mod user_data {
                 max_slots_by_channel: self.max_slots_by_channel,
                 active_slots_by_channel: self.active_slots_by_channel,
                 contacts: self.contacts,
+                next_status: self.next_status,
             }
         }
     }
@@ -15206,7 +17818,9 @@ impl AsRef<str> for ContactState {
 /// match contactinitiationmethod {
 ///     ContactInitiationMethod::Api => { /* ... */ },
 ///     ContactInitiationMethod::Callback => { /* ... */ },
+///     ContactInitiationMethod::Disconnect => { /* ... */ },
 ///     ContactInitiationMethod::Inbound => { /* ... */ },
+///     ContactInitiationMethod::Monitor => { /* ... */ },
 ///     ContactInitiationMethod::Outbound => { /* ... */ },
 ///     ContactInitiationMethod::QueueTransfer => { /* ... */ },
 ///     ContactInitiationMethod::Transfer => { /* ... */ },
@@ -15248,7 +17862,11 @@ pub enum ContactInitiationMethod {
     #[allow(missing_docs)] // documentation missing in model
     Callback,
     #[allow(missing_docs)] // documentation missing in model
+    Disconnect,
+    #[allow(missing_docs)] // documentation missing in model
     Inbound,
+    #[allow(missing_docs)] // documentation missing in model
+    Monitor,
     #[allow(missing_docs)] // documentation missing in model
     Outbound,
     #[allow(missing_docs)] // documentation missing in model
@@ -15263,7 +17881,9 @@ impl std::convert::From<&str> for ContactInitiationMethod {
         match s {
             "API" => ContactInitiationMethod::Api,
             "CALLBACK" => ContactInitiationMethod::Callback,
+            "DISCONNECT" => ContactInitiationMethod::Disconnect,
             "INBOUND" => ContactInitiationMethod::Inbound,
+            "MONITOR" => ContactInitiationMethod::Monitor,
             "OUTBOUND" => ContactInitiationMethod::Outbound,
             "QUEUE_TRANSFER" => ContactInitiationMethod::QueueTransfer,
             "TRANSFER" => ContactInitiationMethod::Transfer,
@@ -15286,7 +17906,9 @@ impl ContactInitiationMethod {
         match self {
             ContactInitiationMethod::Api => "API",
             ContactInitiationMethod::Callback => "CALLBACK",
+            ContactInitiationMethod::Disconnect => "DISCONNECT",
             ContactInitiationMethod::Inbound => "INBOUND",
+            ContactInitiationMethod::Monitor => "MONITOR",
             ContactInitiationMethod::Outbound => "OUTBOUND",
             ContactInitiationMethod::QueueTransfer => "QUEUE_TRANSFER",
             ContactInitiationMethod::Transfer => "TRANSFER",
@@ -15298,7 +17920,9 @@ impl ContactInitiationMethod {
         &[
             "API",
             "CALLBACK",
+            "DISCONNECT",
             "INBOUND",
+            "MONITOR",
             "OUTBOUND",
             "QUEUE_TRANSFER",
             "TRANSFER",
@@ -15321,6 +17945,9 @@ pub struct AgentStatusReference {
     /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
     #[doc(hidden)]
     pub status_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the agent status.</p>
+    #[doc(hidden)]
+    pub status_name: std::option::Option<std::string::String>,
 }
 impl AgentStatusReference {
     /// <p>The start timestamp of the agent's status.</p>
@@ -15331,6 +17958,10 @@ impl AgentStatusReference {
     pub fn status_arn(&self) -> std::option::Option<&str> {
         self.status_arn.as_deref()
     }
+    /// <p>The name of the agent status.</p>
+    pub fn status_name(&self) -> std::option::Option<&str> {
+        self.status_name.as_deref()
+    }
 }
 /// See [`AgentStatusReference`](crate::model::AgentStatusReference).
 pub mod agent_status_reference {
@@ -15340,6 +17971,7 @@ pub mod agent_status_reference {
     pub struct Builder {
         pub(crate) status_start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status_arn: std::option::Option<std::string::String>,
+        pub(crate) status_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The start timestamp of the agent's status.</p>
@@ -15365,11 +17997,22 @@ pub mod agent_status_reference {
             self.status_arn = input;
             self
         }
+        /// <p>The name of the agent status.</p>
+        pub fn status_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the agent status.</p>
+        pub fn set_status_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AgentStatusReference`](crate::model::AgentStatusReference).
         pub fn build(self) -> crate::model::AgentStatusReference {
             crate::model::AgentStatusReference {
                 status_start_timestamp: self.status_start_timestamp,
                 status_arn: self.status_arn,
+                status_name: self.status_name,
             }
         }
     }
@@ -15589,73 +18232,6 @@ impl HierarchyGroupSummaryReference {
     }
 }
 
-/// <p>Information about the routing profile assigned to the user.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RoutingProfileReference {
-    /// <p>The identifier of the routing profile.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-}
-impl RoutingProfileReference {
-    /// <p>The identifier of the routing profile.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
-        self.id.as_deref()
-    }
-    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
-    }
-}
-/// See [`RoutingProfileReference`](crate::model::RoutingProfileReference).
-pub mod routing_profile_reference {
-
-    /// A builder for [`RoutingProfileReference`](crate::model::RoutingProfileReference).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) arn: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The identifier of the routing profile.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.id = Some(input.into());
-            self
-        }
-        /// <p>The identifier of the routing profile.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`RoutingProfileReference`](crate::model::RoutingProfileReference).
-        pub fn build(self) -> crate::model::RoutingProfileReference {
-            crate::model::RoutingProfileReference {
-                id: self.id,
-                arn: self.arn,
-            }
-        }
-    }
-}
-impl RoutingProfileReference {
-    /// Creates a new builder-style object to manufacture [`RoutingProfileReference`](crate::model::RoutingProfileReference).
-    pub fn builder() -> crate::model::routing_profile_reference::Builder {
-        crate::model::routing_profile_reference::Builder::default()
-    }
-}
-
 /// <p>Information about the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -15727,21 +18303,42 @@ impl UserReference {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserDataFilters {
-    /// <p>Contains information about a queue resource for which metrics are returned.</p>
+    /// <p>A list of up to 100 queues or ARNs.</p>
     #[doc(hidden)]
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
     #[doc(hidden)]
     pub contact_filter: std::option::Option<crate::model::ContactFilter>,
+    /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
+    #[doc(hidden)]
+    pub routing_profiles: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of up to 100 agent IDs or ARNs.</p>
+    #[doc(hidden)]
+    pub agents: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A UserHierarchyGroup ID or ARN.</p>
+    #[doc(hidden)]
+    pub user_hierarchy_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UserDataFilters {
-    /// <p>Contains information about a queue resource for which metrics are returned.</p>
+    /// <p>A list of up to 100 queues or ARNs.</p>
     pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
         self.queues.as_deref()
     }
     /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
     pub fn contact_filter(&self) -> std::option::Option<&crate::model::ContactFilter> {
         self.contact_filter.as_ref()
+    }
+    /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
+    pub fn routing_profiles(&self) -> std::option::Option<&[std::string::String]> {
+        self.routing_profiles.as_deref()
+    }
+    /// <p>A list of up to 100 agent IDs or ARNs.</p>
+    pub fn agents(&self) -> std::option::Option<&[std::string::String]> {
+        self.agents.as_deref()
+    }
+    /// <p>A UserHierarchyGroup ID or ARN.</p>
+    pub fn user_hierarchy_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_hierarchy_groups.as_deref()
     }
 }
 /// See [`UserDataFilters`](crate::model::UserDataFilters).
@@ -15752,20 +18349,23 @@ pub mod user_data_filters {
     pub struct Builder {
         pub(crate) queues: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) contact_filter: std::option::Option<crate::model::ContactFilter>,
+        pub(crate) routing_profiles: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) agents: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) user_hierarchy_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `queues`.
         ///
         /// To override the contents of this collection use [`set_queues`](Self::set_queues).
         ///
-        /// <p>Contains information about a queue resource for which metrics are returned.</p>
+        /// <p>A list of up to 100 queues or ARNs.</p>
         pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queues.unwrap_or_default();
             v.push(input.into());
             self.queues = Some(v);
             self
         }
-        /// <p>Contains information about a queue resource for which metrics are returned.</p>
+        /// <p>A list of up to 100 queues or ARNs.</p>
         pub fn set_queues(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15786,11 +18386,71 @@ pub mod user_data_filters {
             self.contact_filter = input;
             self
         }
+        /// Appends an item to `routing_profiles`.
+        ///
+        /// To override the contents of this collection use [`set_routing_profiles`](Self::set_routing_profiles).
+        ///
+        /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
+        pub fn routing_profiles(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.routing_profiles.unwrap_or_default();
+            v.push(input.into());
+            self.routing_profiles = Some(v);
+            self
+        }
+        /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
+        pub fn set_routing_profiles(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.routing_profiles = input;
+            self
+        }
+        /// Appends an item to `agents`.
+        ///
+        /// To override the contents of this collection use [`set_agents`](Self::set_agents).
+        ///
+        /// <p>A list of up to 100 agent IDs or ARNs.</p>
+        pub fn agents(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.agents.unwrap_or_default();
+            v.push(input.into());
+            self.agents = Some(v);
+            self
+        }
+        /// <p>A list of up to 100 agent IDs or ARNs.</p>
+        pub fn set_agents(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.agents = input;
+            self
+        }
+        /// Appends an item to `user_hierarchy_groups`.
+        ///
+        /// To override the contents of this collection use [`set_user_hierarchy_groups`](Self::set_user_hierarchy_groups).
+        ///
+        /// <p>A UserHierarchyGroup ID or ARN.</p>
+        pub fn user_hierarchy_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.user_hierarchy_groups.unwrap_or_default();
+            v.push(input.into());
+            self.user_hierarchy_groups = Some(v);
+            self
+        }
+        /// <p>A UserHierarchyGroup ID or ARN.</p>
+        pub fn set_user_hierarchy_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.user_hierarchy_groups = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UserDataFilters`](crate::model::UserDataFilters).
         pub fn build(self) -> crate::model::UserDataFilters {
             crate::model::UserDataFilters {
                 queues: self.queues,
                 contact_filter: self.contact_filter,
+                routing_profiles: self.routing_profiles,
+                agents: self.agents,
+                user_hierarchy_groups: self.user_hierarchy_groups,
             }
         }
     }
@@ -16234,6 +18894,169 @@ impl CurrentMetricName {
     }
 }
 impl AsRef<str> for CurrentMetricName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The way to sort the resulting response based on metrics. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CurrentMetricSortCriteria {
+    /// <p>The current metric names.</p>
+    #[doc(hidden)]
+    pub sort_by_metric: std::option::Option<crate::model::CurrentMetricName>,
+    /// <p>The way to sort.</p>
+    #[doc(hidden)]
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
+}
+impl CurrentMetricSortCriteria {
+    /// <p>The current metric names.</p>
+    pub fn sort_by_metric(&self) -> std::option::Option<&crate::model::CurrentMetricName> {
+        self.sort_by_metric.as_ref()
+    }
+    /// <p>The way to sort.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+}
+/// See [`CurrentMetricSortCriteria`](crate::model::CurrentMetricSortCriteria).
+pub mod current_metric_sort_criteria {
+
+    /// A builder for [`CurrentMetricSortCriteria`](crate::model::CurrentMetricSortCriteria).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sort_by_metric: std::option::Option<crate::model::CurrentMetricName>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
+    }
+    impl Builder {
+        /// <p>The current metric names.</p>
+        pub fn sort_by_metric(mut self, input: crate::model::CurrentMetricName) -> Self {
+            self.sort_by_metric = Some(input);
+            self
+        }
+        /// <p>The current metric names.</p>
+        pub fn set_sort_by_metric(
+            mut self,
+            input: std::option::Option<crate::model::CurrentMetricName>,
+        ) -> Self {
+            self.sort_by_metric = input;
+            self
+        }
+        /// <p>The way to sort.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>The way to sort.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CurrentMetricSortCriteria`](crate::model::CurrentMetricSortCriteria).
+        pub fn build(self) -> crate::model::CurrentMetricSortCriteria {
+            crate::model::CurrentMetricSortCriteria {
+                sort_by_metric: self.sort_by_metric,
+                sort_order: self.sort_order,
+            }
+        }
+    }
+}
+impl CurrentMetricSortCriteria {
+    /// Creates a new builder-style object to manufacture [`CurrentMetricSortCriteria`](crate::model::CurrentMetricSortCriteria).
+    pub fn builder() -> crate::model::current_metric_sort_criteria::Builder {
+        crate::model::current_metric_sort_criteria::Builder::default()
+    }
+}
+
+/// When writing a match expression against `SortOrder`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sortorder = unimplemented!();
+/// match sortorder {
+///     SortOrder::Ascending => { /* ... */ },
+///     SortOrder::Descending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sortorder` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SortOrder::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SortOrder::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SortOrder::NewFeature` is defined.
+/// Specifically, when `sortorder` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SortOrder::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SortOrder {
+    #[allow(missing_docs)] // documentation missing in model
+    Ascending,
+    #[allow(missing_docs)] // documentation missing in model
+    Descending,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SortOrder {
+    fn from(s: &str) -> Self {
+        match s {
+            "ASCENDING" => SortOrder::Ascending,
+            "DESCENDING" => SortOrder::Descending,
+            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for SortOrder {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SortOrder::from(s))
+    }
+}
+impl SortOrder {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SortOrder::Ascending => "ASCENDING",
+            SortOrder::Descending => "DESCENDING",
+            SortOrder::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ASCENDING", "DESCENDING"]
+    }
+}
+impl AsRef<str> for SortOrder {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -17003,7 +19826,7 @@ impl HierarchyPath {
     }
 }
 
-/// <p>Contains information about a user account for a Amazon Connect instance.</p>
+/// <p>Contains information about a user account for an Amazon Connect instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct User {
@@ -17267,6 +20090,224 @@ impl User {
     }
 }
 
+/// <p>Information about a traffic distribution group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TrafficDistributionGroup {
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the traffic distribution group.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the traffic distribution group.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub instance_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the traffic distribution group.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has succeeded.</p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has failed.</p> </li>
+    /// <li> <p> <code>PENDING_DELETION</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+    /// <li> <p> <code>DELETION_FAILED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation has failed.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::TrafficDistributionGroupStatus>,
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TrafficDistributionGroup {
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the traffic distribution group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the traffic distribution group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN).</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The status of the traffic distribution group.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has succeeded.</p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has failed.</p> </li>
+    /// <li> <p> <code>PENDING_DELETION</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+    /// <li> <p> <code>DELETION_FAILED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation has failed.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::TrafficDistributionGroupStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+/// See [`TrafficDistributionGroup`](crate::model::TrafficDistributionGroup).
+pub mod traffic_distribution_group {
+
+    /// A builder for [`TrafficDistributionGroup`](crate::model::TrafficDistributionGroup).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) instance_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::TrafficDistributionGroupStatus>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the traffic distribution group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the traffic distribution group.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the traffic distribution group.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the traffic distribution group.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN).</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN).</p>
+        pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_arn = input;
+            self
+        }
+        /// <p>The status of the traffic distribution group.</p>
+        /// <ul>
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has succeeded.</p> </li>
+        /// <li> <p> <code>CREATION_FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has failed.</p> </li>
+        /// <li> <p> <code>PENDING_DELETION</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+        /// <li> <p> <code>DELETION_FAILED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation has failed.</p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::TrafficDistributionGroupStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the traffic distribution group.</p>
+        /// <ul>
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has succeeded.</p> </li>
+        /// <li> <p> <code>CREATION_FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a> operation has failed.</p> </li>
+        /// <li> <p> <code>PENDING_DELETION</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+        /// <li> <p> <code>DELETION_FAILED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a> operation has failed.</p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
+        /// </ul>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TrafficDistributionGroupStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TrafficDistributionGroup`](crate::model::TrafficDistributionGroup).
+        pub fn build(self) -> crate::model::TrafficDistributionGroup {
+            crate::model::TrafficDistributionGroup {
+                id: self.id,
+                arn: self.arn,
+                name: self.name,
+                description: self.description,
+                instance_arn: self.instance_arn,
+                status: self.status,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl TrafficDistributionGroup {
+    /// Creates a new builder-style object to manufacture [`TrafficDistributionGroup`](crate::model::TrafficDistributionGroup).
+    pub fn builder() -> crate::model::traffic_distribution_group::Builder {
+        crate::model::traffic_distribution_group::Builder::default()
+    }
+}
+
 /// <p>Contains information about a security profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17290,6 +20331,13 @@ pub struct SecurityProfile {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    #[doc(hidden)]
+    pub allowed_access_control_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+    #[doc(hidden)]
+    pub tag_restricted_resources: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SecurityProfile {
     /// <p>The identifier for the security profile.</p>
@@ -17319,6 +20367,17 @@ impl SecurityProfile {
     {
         self.tags.as_ref()
     }
+    /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    pub fn allowed_access_control_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.allowed_access_control_tags.as_ref()
+    }
+    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+    pub fn tag_restricted_resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_restricted_resources.as_deref()
+    }
 }
 /// See [`SecurityProfile`](crate::model::SecurityProfile).
 pub mod security_profile {
@@ -17334,6 +20393,11 @@ pub mod security_profile {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) allowed_access_control_tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) tag_restricted_resources:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The identifier for the security profile.</p>
@@ -17417,6 +20481,50 @@ pub mod security_profile {
             self.tags = input;
             self
         }
+        /// Adds a key-value pair to `allowed_access_control_tags`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_access_control_tags`](Self::set_allowed_access_control_tags).
+        ///
+        /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+        pub fn allowed_access_control_tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.allowed_access_control_tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.allowed_access_control_tags = Some(hash_map);
+            self
+        }
+        /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+        pub fn set_allowed_access_control_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.allowed_access_control_tags = input;
+            self
+        }
+        /// Appends an item to `tag_restricted_resources`.
+        ///
+        /// To override the contents of this collection use [`set_tag_restricted_resources`](Self::set_tag_restricted_resources).
+        ///
+        /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+        pub fn tag_restricted_resources(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.tag_restricted_resources.unwrap_or_default();
+            v.push(input.into());
+            self.tag_restricted_resources = Some(v);
+            self
+        }
+        /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+        pub fn set_tag_restricted_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_restricted_resources = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SecurityProfile`](crate::model::SecurityProfile).
         pub fn build(self) -> crate::model::SecurityProfile {
             crate::model::SecurityProfile {
@@ -17426,6 +20534,8 @@ pub mod security_profile {
                 security_profile_name: self.security_profile_name,
                 description: self.description,
                 tags: self.tags,
+                allowed_access_control_tags: self.allowed_access_control_tags,
+                tag_restricted_resources: self.tag_restricted_resources,
             }
         }
     }
@@ -17434,6 +20544,364 @@ impl SecurityProfile {
     /// Creates a new builder-style object to manufacture [`SecurityProfile`](crate::model::SecurityProfile).
     pub fn builder() -> crate::model::security_profile::Builder {
         crate::model::security_profile::Builder::default()
+    }
+}
+
+/// <p>Information about a rule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Rule {
+    /// <p>The name of the rule.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the rule.</p>
+    #[doc(hidden)]
+    pub rule_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    #[doc(hidden)]
+    pub rule_arn: std::option::Option<std::string::String>,
+    /// <p>The event source to trigger the rule.</p>
+    #[doc(hidden)]
+    pub trigger_event_source: std::option::Option<crate::model::RuleTriggerEventSource>,
+    /// <p>The conditions of the rule.</p>
+    #[doc(hidden)]
+    pub function: std::option::Option<std::string::String>,
+    /// <p>A list of actions to be run when the rule is triggered.</p>
+    #[doc(hidden)]
+    pub actions: std::option::Option<std::vec::Vec<crate::model::RuleAction>>,
+    /// <p>The publish status of the rule.</p>
+    #[doc(hidden)]
+    pub publish_status: std::option::Option<crate::model::RulePublishStatus>,
+    /// <p>The timestamp for when the rule was created.</p>
+    #[doc(hidden)]
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp for the when the rule was last updated.</p>
+    #[doc(hidden)]
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) of the user who last updated the rule.</p>
+    #[doc(hidden)]
+    pub last_updated_by: std::option::Option<std::string::String>,
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Rule {
+    /// <p>The name of the rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A unique identifier for the rule.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn rule_arn(&self) -> std::option::Option<&str> {
+        self.rule_arn.as_deref()
+    }
+    /// <p>The event source to trigger the rule.</p>
+    pub fn trigger_event_source(
+        &self,
+    ) -> std::option::Option<&crate::model::RuleTriggerEventSource> {
+        self.trigger_event_source.as_ref()
+    }
+    /// <p>The conditions of the rule.</p>
+    pub fn function(&self) -> std::option::Option<&str> {
+        self.function.as_deref()
+    }
+    /// <p>A list of actions to be run when the rule is triggered.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::RuleAction]> {
+        self.actions.as_deref()
+    }
+    /// <p>The publish status of the rule.</p>
+    pub fn publish_status(&self) -> std::option::Option<&crate::model::RulePublishStatus> {
+        self.publish_status.as_ref()
+    }
+    /// <p>The timestamp for when the rule was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_time.as_ref()
+    }
+    /// <p>The timestamp for the when the rule was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who last updated the rule.</p>
+    pub fn last_updated_by(&self) -> std::option::Option<&str> {
+        self.last_updated_by.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+/// See [`Rule`](crate::model::Rule).
+pub mod rule {
+
+    /// A builder for [`Rule`](crate::model::Rule).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) rule_id: std::option::Option<std::string::String>,
+        pub(crate) rule_arn: std::option::Option<std::string::String>,
+        pub(crate) trigger_event_source: std::option::Option<crate::model::RuleTriggerEventSource>,
+        pub(crate) function: std::option::Option<std::string::String>,
+        pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::RuleAction>>,
+        pub(crate) publish_status: std::option::Option<crate::model::RulePublishStatus>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_by: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The name of the rule.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the rule.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A unique identifier for the rule.</p>
+        pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the rule.</p>
+        pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+        pub fn rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+        pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_arn = input;
+            self
+        }
+        /// <p>The event source to trigger the rule.</p>
+        pub fn trigger_event_source(mut self, input: crate::model::RuleTriggerEventSource) -> Self {
+            self.trigger_event_source = Some(input);
+            self
+        }
+        /// <p>The event source to trigger the rule.</p>
+        pub fn set_trigger_event_source(
+            mut self,
+            input: std::option::Option<crate::model::RuleTriggerEventSource>,
+        ) -> Self {
+            self.trigger_event_source = input;
+            self
+        }
+        /// <p>The conditions of the rule.</p>
+        pub fn function(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function = Some(input.into());
+            self
+        }
+        /// <p>The conditions of the rule.</p>
+        pub fn set_function(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function = input;
+            self
+        }
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>A list of actions to be run when the rule is triggered.</p>
+        pub fn actions(mut self, input: crate::model::RuleAction) -> Self {
+            let mut v = self.actions.unwrap_or_default();
+            v.push(input);
+            self.actions = Some(v);
+            self
+        }
+        /// <p>A list of actions to be run when the rule is triggered.</p>
+        pub fn set_actions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RuleAction>>,
+        ) -> Self {
+            self.actions = input;
+            self
+        }
+        /// <p>The publish status of the rule.</p>
+        pub fn publish_status(mut self, input: crate::model::RulePublishStatus) -> Self {
+            self.publish_status = Some(input);
+            self
+        }
+        /// <p>The publish status of the rule.</p>
+        pub fn set_publish_status(
+            mut self,
+            input: std::option::Option<crate::model::RulePublishStatus>,
+        ) -> Self {
+            self.publish_status = input;
+            self
+        }
+        /// <p>The timestamp for when the rule was created.</p>
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_time = Some(input);
+            self
+        }
+        /// <p>The timestamp for when the rule was created.</p>
+        pub fn set_created_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_time = input;
+            self
+        }
+        /// <p>The timestamp for the when the rule was last updated.</p>
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_time = Some(input);
+            self
+        }
+        /// <p>The timestamp for the when the rule was last updated.</p>
+        pub fn set_last_updated_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_time = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the user who last updated the rule.</p>
+        pub fn last_updated_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_updated_by = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the user who last updated the rule.</p>
+        pub fn set_last_updated_by(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_updated_by = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Rule`](crate::model::Rule).
+        pub fn build(self) -> crate::model::Rule {
+            crate::model::Rule {
+                name: self.name,
+                rule_id: self.rule_id,
+                rule_arn: self.rule_arn,
+                trigger_event_source: self.trigger_event_source,
+                function: self.function,
+                actions: self.actions,
+                publish_status: self.publish_status,
+                created_time: self.created_time,
+                last_updated_time: self.last_updated_time,
+                last_updated_by: self.last_updated_by,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl Rule {
+    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
+    pub fn builder() -> crate::model::rule::Builder {
+        crate::model::rule::Builder::default()
+    }
+}
+
+/// <p>The name of the event source. This field is required if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RuleTriggerEventSource {
+    /// <p>The name of the event source.</p>
+    #[doc(hidden)]
+    pub event_source_name: std::option::Option<crate::model::EventSourceName>,
+    /// <p>The identifier for the integration association.</p>
+    #[doc(hidden)]
+    pub integration_association_id: std::option::Option<std::string::String>,
+}
+impl RuleTriggerEventSource {
+    /// <p>The name of the event source.</p>
+    pub fn event_source_name(&self) -> std::option::Option<&crate::model::EventSourceName> {
+        self.event_source_name.as_ref()
+    }
+    /// <p>The identifier for the integration association.</p>
+    pub fn integration_association_id(&self) -> std::option::Option<&str> {
+        self.integration_association_id.as_deref()
+    }
+}
+/// See [`RuleTriggerEventSource`](crate::model::RuleTriggerEventSource).
+pub mod rule_trigger_event_source {
+
+    /// A builder for [`RuleTriggerEventSource`](crate::model::RuleTriggerEventSource).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_source_name: std::option::Option<crate::model::EventSourceName>,
+        pub(crate) integration_association_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the event source.</p>
+        pub fn event_source_name(mut self, input: crate::model::EventSourceName) -> Self {
+            self.event_source_name = Some(input);
+            self
+        }
+        /// <p>The name of the event source.</p>
+        pub fn set_event_source_name(
+            mut self,
+            input: std::option::Option<crate::model::EventSourceName>,
+        ) -> Self {
+            self.event_source_name = input;
+            self
+        }
+        /// <p>The identifier for the integration association.</p>
+        pub fn integration_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.integration_association_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the integration association.</p>
+        pub fn set_integration_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.integration_association_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RuleTriggerEventSource`](crate::model::RuleTriggerEventSource).
+        pub fn build(self) -> crate::model::RuleTriggerEventSource {
+            crate::model::RuleTriggerEventSource {
+                event_source_name: self.event_source_name,
+                integration_association_id: self.integration_association_id,
+            }
+        }
+    }
+}
+impl RuleTriggerEventSource {
+    /// Creates a new builder-style object to manufacture [`RuleTriggerEventSource`](crate::model::RuleTriggerEventSource).
+    pub fn builder() -> crate::model::rule_trigger_event_source::Builder {
+        crate::model::rule_trigger_event_source::Builder::default()
     }
 }
 
@@ -17610,7 +21078,7 @@ impl QuickConnect {
     }
 }
 
-/// <p>Information about a phone number that has been claimed to your Amazon Connect instance.</p>
+/// <p>Information about a phone number that has been claimed to your Amazon Connect instance or traffic distribution group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClaimedPhoneNumberSummary {
@@ -17632,7 +21100,7 @@ pub struct ClaimedPhoneNumberSummary {
     /// <p>The description of the phone number.</p>
     #[doc(hidden)]
     pub phone_number_description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
@@ -17640,6 +21108,13 @@ pub struct ClaimedPhoneNumberSummary {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the phone number.</p>
+    /// <ul>
+    /// <li> <p> <code>CLAIMED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation succeeded.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> means a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation is still in progress and has not yet completed. You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a> at a later time to verify if the previous operation has completed.</p> </li>
+    /// <li> <p> <code>FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation has failed. It will include a message indicating the failure reason. A common reason for a failure may be that the <code>TargetArn</code> value you are claiming or updating a phone number to has reached its limit of total claimed numbers. If you received a <code>FAILED</code> status from a <code>ClaimPhoneNumber</code> API call, you have one day to retry claiming the phone number before the number is released back to the inventory for other customers to claim.</p> </li>
+    /// </ul> <note>
+    /// <p>You will not be billed for the phone number during the 1-day period if number claiming fails. </p>
+    /// </note>
     #[doc(hidden)]
     pub phone_number_status: std::option::Option<crate::model::PhoneNumberStatus>,
 }
@@ -17670,7 +21145,7 @@ impl ClaimedPhoneNumberSummary {
     pub fn phone_number_description(&self) -> std::option::Option<&str> {
         self.phone_number_description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
     }
@@ -17682,6 +21157,13 @@ impl ClaimedPhoneNumberSummary {
         self.tags.as_ref()
     }
     /// <p>The status of the phone number.</p>
+    /// <ul>
+    /// <li> <p> <code>CLAIMED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation succeeded.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> means a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation is still in progress and has not yet completed. You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a> at a later time to verify if the previous operation has completed.</p> </li>
+    /// <li> <p> <code>FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation has failed. It will include a message indicating the failure reason. A common reason for a failure may be that the <code>TargetArn</code> value you are claiming or updating a phone number to has reached its limit of total claimed numbers. If you received a <code>FAILED</code> status from a <code>ClaimPhoneNumber</code> API call, you have one day to retry claiming the phone number before the number is released back to the inventory for other customers to claim.</p> </li>
+    /// </ul> <note>
+    /// <p>You will not be billed for the phone number during the 1-day period if number claiming fails. </p>
+    /// </note>
     pub fn phone_number_status(&self) -> std::option::Option<&crate::model::PhoneNumberStatus> {
         self.phone_number_status.as_ref()
     }
@@ -17784,12 +21266,12 @@ pub mod claimed_phone_number_summary {
             self.phone_number_description = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -17820,11 +21302,25 @@ pub mod claimed_phone_number_summary {
             self
         }
         /// <p>The status of the phone number.</p>
+        /// <ul>
+        /// <li> <p> <code>CLAIMED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation succeeded.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> means a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation is still in progress and has not yet completed. You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a> at a later time to verify if the previous operation has completed.</p> </li>
+        /// <li> <p> <code>FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation has failed. It will include a message indicating the failure reason. A common reason for a failure may be that the <code>TargetArn</code> value you are claiming or updating a phone number to has reached its limit of total claimed numbers. If you received a <code>FAILED</code> status from a <code>ClaimPhoneNumber</code> API call, you have one day to retry claiming the phone number before the number is released back to the inventory for other customers to claim.</p> </li>
+        /// </ul> <note>
+        /// <p>You will not be billed for the phone number during the 1-day period if number claiming fails. </p>
+        /// </note>
         pub fn phone_number_status(mut self, input: crate::model::PhoneNumberStatus) -> Self {
             self.phone_number_status = Some(input);
             self
         }
         /// <p>The status of the phone number.</p>
+        /// <ul>
+        /// <li> <p> <code>CLAIMED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation succeeded.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> means a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation is still in progress and has not yet completed. You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a> at a later time to verify if the previous operation has completed.</p> </li>
+        /// <li> <p> <code>FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation has failed. It will include a message indicating the failure reason. A common reason for a failure may be that the <code>TargetArn</code> value you are claiming or updating a phone number to has reached its limit of total claimed numbers. If you received a <code>FAILED</code> status from a <code>ClaimPhoneNumber</code> API call, you have one day to retry claiming the phone number before the number is released back to the inventory for other customers to claim.</p> </li>
+        /// </ul> <note>
+        /// <p>You will not be billed for the phone number during the 1-day period if number claiming fails. </p>
+        /// </note>
         pub fn set_phone_number_status(
             mut self,
             input: std::option::Option<crate::model::PhoneNumberStatus>,
@@ -17856,6 +21352,11 @@ impl ClaimedPhoneNumberSummary {
 }
 
 /// <p>The status of the phone number.</p>
+/// <ul>
+/// <li> <p> <code>CLAIMED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation succeeded.</p> </li>
+/// <li> <p> <code>IN_PROGRESS</code> means a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation is still in progress and has not yet completed. You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a> at a later time to verify if the previous operation has completed.</p> </li>
+/// <li> <p> <code>FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation has failed. It will include a message indicating the failure reason. A common reason for a failure may be that the <code>TargetArn</code> value you are claiming or updating a phone number to has reached its limit of total claimed numbers. If you received a <code>FAILED</code> status from a <code>ClaimPhoneNumber</code> API call, you have one day to retry claiming the phone number before the number is released back to the inventory for other customers to claim.</p> </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PhoneNumberStatus {
@@ -19438,7 +22939,7 @@ impl AgentInfo {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueueInfo {
-    /// <p>The identifier of the agent who accepted the contact.</p>
+    /// <p>The unique identifier for the queue.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The timestamp when the contact was added to the queue.</p>
@@ -19446,7 +22947,7 @@ pub struct QueueInfo {
     pub enqueue_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl QueueInfo {
-    /// <p>The identifier of the agent who accepted the contact.</p>
+    /// <p>The unique identifier for the queue.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -19465,12 +22966,12 @@ pub mod queue_info {
         pub(crate) enqueue_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The identifier of the agent who accepted the contact.</p>
+        /// <p>The unique identifier for the queue.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the agent who accepted the contact.</p>
+        /// <p>The unique identifier for the queue.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self

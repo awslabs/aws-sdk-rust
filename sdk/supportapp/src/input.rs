@@ -18,12 +18,12 @@ pub mod create_slack_channel_configuration_input {
         pub(crate) channel_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.team_id = Some(input.into());
             self
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.team_id = input;
             self
@@ -395,12 +395,12 @@ pub mod delete_slack_channel_configuration_input {
         pub(crate) channel_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.team_id = Some(input.into());
             self
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.team_id = input;
             self
@@ -548,12 +548,12 @@ pub mod delete_slack_workspace_configuration_input {
         pub(crate) team_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.team_id = Some(input.into());
             self
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.team_id = input;
             self
@@ -1220,6 +1220,148 @@ impl PutAccountAliasInput {
     }
 }
 
+/// See [`RegisterSlackWorkspaceForOrganizationInput`](crate::input::RegisterSlackWorkspaceForOrganizationInput).
+pub mod register_slack_workspace_for_organization_input {
+
+    /// A builder for [`RegisterSlackWorkspaceForOrganizationInput`](crate::input::RegisterSlackWorkspaceForOrganizationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) team_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
+        pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.team_id = Some(input.into());
+            self
+        }
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
+        pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.team_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegisterSlackWorkspaceForOrganizationInput`](crate::input::RegisterSlackWorkspaceForOrganizationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::RegisterSlackWorkspaceForOrganizationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::RegisterSlackWorkspaceForOrganizationInput {
+                team_id: self.team_id,
+            })
+        }
+    }
+}
+impl RegisterSlackWorkspaceForOrganizationInput {
+    /// Consumes the builder and constructs an Operation<[`RegisterSlackWorkspaceForOrganization`](crate::operation::RegisterSlackWorkspaceForOrganization)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RegisterSlackWorkspaceForOrganization,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::RegisterSlackWorkspaceForOrganizationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/control/register-slack-workspace-for-organization")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RegisterSlackWorkspaceForOrganizationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_register_slack_workspace_for_organization(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RegisterSlackWorkspaceForOrganization::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RegisterSlackWorkspaceForOrganization",
+            "supportapp",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`RegisterSlackWorkspaceForOrganizationInput`](crate::input::RegisterSlackWorkspaceForOrganizationInput).
+    pub fn builder() -> crate::input::register_slack_workspace_for_organization_input::Builder {
+        crate::input::register_slack_workspace_for_organization_input::Builder::default()
+    }
+}
+
 /// See [`UpdateSlackChannelConfigurationInput`](crate::input::UpdateSlackChannelConfigurationInput).
 pub mod update_slack_channel_configuration_input {
 
@@ -1237,12 +1379,12 @@ pub mod update_slack_channel_configuration_input {
         pub(crate) channel_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.team_id = Some(input.into());
             self
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.team_id = input;
             self
@@ -1494,7 +1636,7 @@ impl UpdateSlackChannelConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSlackChannelConfigurationInput {
-    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
@@ -1534,7 +1676,7 @@ pub struct UpdateSlackChannelConfigurationInput {
     pub channel_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSlackChannelConfigurationInput {
-    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn team_id(&self) -> std::option::Option<&str> {
         self.team_id.as_deref()
     }
@@ -1581,6 +1723,21 @@ impl UpdateSlackChannelConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     pub fn channel_role_arn(&self) -> std::option::Option<&str> {
         self.channel_role_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RegisterSlackWorkspaceForOrganizationInput {
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
+    #[doc(hidden)]
+    pub team_id: std::option::Option<std::string::String>,
+}
+impl RegisterSlackWorkspaceForOrganizationInput {
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
+    pub fn team_id(&self) -> std::option::Option<&str> {
+        self.team_id.as_deref()
     }
 }
 
@@ -1638,12 +1795,12 @@ pub struct GetAccountAliasInput {}
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSlackWorkspaceConfigurationInput {
-    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
 }
 impl DeleteSlackWorkspaceConfigurationInput {
-    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn team_id(&self) -> std::option::Option<&str> {
         self.team_id.as_deref()
     }
@@ -1653,7 +1810,7 @@ impl DeleteSlackWorkspaceConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSlackChannelConfigurationInput {
-    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
@@ -1661,7 +1818,7 @@ pub struct DeleteSlackChannelConfigurationInput {
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl DeleteSlackChannelConfigurationInput {
-    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn team_id(&self) -> std::option::Option<&str> {
         self.team_id.as_deref()
     }
@@ -1680,7 +1837,7 @@ pub struct DeleteAccountAliasInput {}
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSlackChannelConfigurationInput {
-    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
@@ -1720,7 +1877,7 @@ pub struct CreateSlackChannelConfigurationInput {
     pub channel_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateSlackChannelConfigurationInput {
-    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn team_id(&self) -> std::option::Option<&str> {
         self.team_id.as_deref()
     }

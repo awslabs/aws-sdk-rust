@@ -4234,6 +4234,8 @@ pub mod list_metrics_input {
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::DimensionFilter>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) recently_active: std::option::Option<crate::model::RecentlyActive>,
+        pub(crate) include_linked_accounts: std::option::Option<bool>,
+        pub(crate) owning_account: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
@@ -4300,6 +4302,31 @@ pub mod list_metrics_input {
             self.recently_active = input;
             self
         }
+        /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
+        /// <p>The default is <code>false</code>.</p>
+        pub fn include_linked_accounts(mut self, input: bool) -> Self {
+            self.include_linked_accounts = Some(input);
+            self
+        }
+        /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
+        /// <p>The default is <code>false</code>.</p>
+        pub fn set_include_linked_accounts(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_linked_accounts = input;
+            self
+        }
+        /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
+        pub fn owning_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owning_account = Some(input.into());
+            self
+        }
+        /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
+        pub fn set_owning_account(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.owning_account = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListMetricsInput`](crate::input::ListMetricsInput).
         pub fn build(
             self,
@@ -4311,6 +4338,8 @@ pub mod list_metrics_input {
                 dimensions: self.dimensions,
                 next_token: self.next_token,
                 recently_active: self.recently_active,
+                include_linked_accounts: self.include_linked_accounts.unwrap_or_default(),
+                owning_account: self.owning_account,
             })
         }
     }
@@ -6648,17 +6677,17 @@ pub mod put_metric_stream_input {
             self.exclude_filters = input;
             self
         }
-        /// <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
+        /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
         pub fn firehose_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firehose_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
+        /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
         pub fn set_firehose_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.firehose_arn = input;
             self
         }
-        /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
+        /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
         /// <ul>
         /// <li> <p>firehose:PutRecord</p> </li>
         /// <li> <p>firehose:PutRecordBatch</p> </li>
@@ -6667,7 +6696,7 @@ pub mod put_metric_stream_input {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
+        /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
         /// <ul>
         /// <li> <p>firehose:PutRecord</p> </li>
         /// <li> <p>firehose:PutRecordBatch</p> </li>
@@ -6717,7 +6746,7 @@ pub mod put_metric_stream_input {
         /// To override the contents of this collection use [`set_statistics_configurations`](Self::set_statistics_configurations).
         ///
         /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
-        /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9 and so on.</p>
+        /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
         pub fn statistics_configurations(
             mut self,
             input: crate::model::MetricStreamStatisticsConfiguration,
@@ -6728,7 +6757,7 @@ pub mod put_metric_stream_input {
             self
         }
         /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
-        /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9 and so on.</p>
+        /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
         pub fn set_statistics_configurations(
             mut self,
             input: std::option::Option<
@@ -7831,10 +7860,10 @@ pub struct PutMetricStreamInput {
     /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same operation.</p>
     #[doc(hidden)]
     pub exclude_filters: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
-    /// <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
+    /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
     #[doc(hidden)]
     pub firehose_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
+    /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
     /// <ul>
     /// <li> <p>firehose:PutRecord</p> </li>
     /// <li> <p>firehose:PutRecordBatch</p> </li>
@@ -7850,7 +7879,7 @@ pub struct PutMetricStreamInput {
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
-    /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9 and so on.</p>
+    /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
     #[doc(hidden)]
     pub statistics_configurations:
         std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
@@ -7872,11 +7901,11 @@ impl PutMetricStreamInput {
     pub fn exclude_filters(&self) -> std::option::Option<&[crate::model::MetricStreamFilter]> {
         self.exclude_filters.as_deref()
     }
-    /// <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
+    /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
     pub fn firehose_arn(&self) -> std::option::Option<&str> {
         self.firehose_arn.as_deref()
     }
-    /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
+    /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
     /// <ul>
     /// <li> <p>firehose:PutRecord</p> </li>
     /// <li> <p>firehose:PutRecordBatch</p> </li>
@@ -7895,7 +7924,7 @@ impl PutMetricStreamInput {
         self.tags.as_deref()
     }
     /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
-    /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9 and so on.</p>
+    /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
     pub fn statistics_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::MetricStreamStatisticsConfiguration]> {
@@ -8534,6 +8563,13 @@ pub struct ListMetricsInput {
     /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
     #[doc(hidden)]
     pub recently_active: std::option::Option<crate::model::RecentlyActive>,
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
+    /// <p>The default is <code>false</code>.</p>
+    #[doc(hidden)]
+    pub include_linked_accounts: bool,
+    /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
+    #[doc(hidden)]
+    pub owning_account: std::option::Option<std::string::String>,
 }
 impl ListMetricsInput {
     /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
@@ -8556,6 +8592,15 @@ impl ListMetricsInput {
     /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
     pub fn recently_active(&self) -> std::option::Option<&crate::model::RecentlyActive> {
         self.recently_active.as_ref()
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
+    /// <p>The default is <code>false</code>.</p>
+    pub fn include_linked_accounts(&self) -> bool {
+        self.include_linked_accounts
+    }
+    /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
+    pub fn owning_account(&self) -> std::option::Option<&str> {
+        self.owning_account.as_deref()
     }
 }
 

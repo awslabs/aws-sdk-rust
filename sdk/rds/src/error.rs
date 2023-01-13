@@ -123,6 +123,126 @@ impl DbInstanceNotFoundFault {
     }
 }
 
+/// <p>The blue/green deployment can't be switched over or deleted because there is an invalid configuration in the green environment.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidBlueGreenDeploymentStateFault {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl InvalidBlueGreenDeploymentStateFault {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidBlueGreenDeploymentStateFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidBlueGreenDeploymentStateFault")?;
+        if let Some(inner_3) = &self.message {
+            {
+                write!(f, ": {}", inner_3)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidBlueGreenDeploymentStateFault {}
+/// See [`InvalidBlueGreenDeploymentStateFault`](crate::error::InvalidBlueGreenDeploymentStateFault).
+pub mod invalid_blue_green_deployment_state_fault {
+
+    /// A builder for [`InvalidBlueGreenDeploymentStateFault`](crate::error::InvalidBlueGreenDeploymentStateFault).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidBlueGreenDeploymentStateFault`](crate::error::InvalidBlueGreenDeploymentStateFault).
+        pub fn build(self) -> crate::error::InvalidBlueGreenDeploymentStateFault {
+            crate::error::InvalidBlueGreenDeploymentStateFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidBlueGreenDeploymentStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidBlueGreenDeploymentStateFault`](crate::error::InvalidBlueGreenDeploymentStateFault).
+    pub fn builder() -> crate::error::invalid_blue_green_deployment_state_fault::Builder {
+        crate::error::invalid_blue_green_deployment_state_fault::Builder::default()
+    }
+}
+
+/// <p> <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BlueGreenDeploymentNotFoundFault {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl BlueGreenDeploymentNotFoundFault {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for BlueGreenDeploymentNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "BlueGreenDeploymentNotFoundFault")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for BlueGreenDeploymentNotFoundFault {}
+/// See [`BlueGreenDeploymentNotFoundFault`](crate::error::BlueGreenDeploymentNotFoundFault).
+pub mod blue_green_deployment_not_found_fault {
+
+    /// A builder for [`BlueGreenDeploymentNotFoundFault`](crate::error::BlueGreenDeploymentNotFoundFault).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BlueGreenDeploymentNotFoundFault`](crate::error::BlueGreenDeploymentNotFoundFault).
+        pub fn build(self) -> crate::error::BlueGreenDeploymentNotFoundFault {
+            crate::error::BlueGreenDeploymentNotFoundFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl BlueGreenDeploymentNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`BlueGreenDeploymentNotFoundFault`](crate::error::BlueGreenDeploymentNotFoundFault).
+    pub fn builder() -> crate::error::blue_green_deployment_not_found_fault::Builder {
+        crate::error::blue_green_deployment_not_found_fault::Builder::default()
+    }
+}
+
 /// <p>The request would result in the user exceeding the allowed number of DB snapshots.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -140,9 +260,9 @@ impl SnapshotQuotaExceededFault {
 impl std::fmt::Display for SnapshotQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotQuotaExceededFault")?;
-        if let Some(inner_3) = &self.message {
+        if let Some(inner_5) = &self.message {
             {
-                write!(f, ": {}", inner_3)?;
+                write!(f, ": {}", inner_5)?;
             }
         }
         Ok(())
@@ -200,9 +320,9 @@ impl InvalidDbClusterStateFault {
 impl std::fmt::Display for InvalidDbClusterStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbClusterStateFault [InvalidDBClusterStateFault]")?;
-        if let Some(inner_4) = &self.message {
+        if let Some(inner_6) = &self.message {
             {
-                write!(f, ": {}", inner_4)?;
+                write!(f, ": {}", inner_6)?;
             }
         }
         Ok(())
@@ -263,9 +383,9 @@ impl std::fmt::Display for DbSnapshotAlreadyExistsFault {
             f,
             "DbSnapshotAlreadyExistsFault [DBSnapshotAlreadyExistsFault]"
         )?;
-        if let Some(inner_5) = &self.message {
+        if let Some(inner_7) = &self.message {
             {
-                write!(f, ": {}", inner_5)?;
+                write!(f, ": {}", inner_7)?;
             }
         }
         Ok(())
@@ -323,9 +443,9 @@ impl DbClusterNotFoundFault {
 impl std::fmt::Display for DbClusterNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbClusterNotFoundFault [DBClusterNotFoundFault]")?;
-        if let Some(inner_6) = &self.message {
+        if let Some(inner_8) = &self.message {
             {
-                write!(f, ": {}", inner_6)?;
+                write!(f, ": {}", inner_8)?;
             }
         }
         Ok(())
@@ -383,9 +503,9 @@ impl ResourceNotFoundFault {
 impl std::fmt::Display for ResourceNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundFault")?;
-        if let Some(inner_7) = &self.message {
+        if let Some(inner_9) = &self.message {
             {
-                write!(f, ": {}", inner_7)?;
+                write!(f, ": {}", inner_9)?;
             }
         }
         Ok(())
@@ -443,9 +563,9 @@ impl KmsKeyNotAccessibleFault {
 impl std::fmt::Display for KmsKeyNotAccessibleFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsKeyNotAccessibleFault [KMSKeyNotAccessibleFault]")?;
-        if let Some(inner_8) = &self.message {
+        if let Some(inner_10) = &self.message {
             {
-                write!(f, ": {}", inner_8)?;
+                write!(f, ": {}", inner_10)?;
             }
         }
         Ok(())
@@ -503,9 +623,9 @@ impl InvalidS3BucketFault {
 impl std::fmt::Display for InvalidS3BucketFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidS3BucketFault")?;
-        if let Some(inner_9) = &self.message {
+        if let Some(inner_11) = &self.message {
             {
-                write!(f, ": {}", inner_9)?;
+                write!(f, ": {}", inner_11)?;
             }
         }
         Ok(())
@@ -563,9 +683,9 @@ impl InvalidExportSourceStateFault {
 impl std::fmt::Display for InvalidExportSourceStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidExportSourceStateFault")?;
-        if let Some(inner_10) = &self.message {
+        if let Some(inner_12) = &self.message {
             {
-                write!(f, ": {}", inner_10)?;
+                write!(f, ": {}", inner_12)?;
             }
         }
         Ok(())
@@ -623,9 +743,9 @@ impl InvalidExportOnlyFault {
 impl std::fmt::Display for InvalidExportOnlyFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidExportOnlyFault")?;
-        if let Some(inner_11) = &self.message {
+        if let Some(inner_13) = &self.message {
             {
-                write!(f, ": {}", inner_11)?;
+                write!(f, ": {}", inner_13)?;
             }
         }
         Ok(())
@@ -683,9 +803,9 @@ impl IamRoleNotFoundFault {
 impl std::fmt::Display for IamRoleNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IamRoleNotFoundFault")?;
-        if let Some(inner_12) = &self.message {
+        if let Some(inner_14) = &self.message {
             {
-                write!(f, ": {}", inner_12)?;
+                write!(f, ": {}", inner_14)?;
             }
         }
         Ok(())
@@ -743,9 +863,9 @@ impl IamRoleMissingPermissionsFault {
 impl std::fmt::Display for IamRoleMissingPermissionsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IamRoleMissingPermissionsFault")?;
-        if let Some(inner_13) = &self.message {
+        if let Some(inner_15) = &self.message {
             {
-                write!(f, ": {}", inner_13)?;
+                write!(f, ": {}", inner_15)?;
             }
         }
         Ok(())
@@ -803,9 +923,9 @@ impl ExportTaskAlreadyExistsFault {
 impl std::fmt::Display for ExportTaskAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExportTaskAlreadyExistsFault")?;
-        if let Some(inner_14) = &self.message {
+        if let Some(inner_16) = &self.message {
             {
-                write!(f, ": {}", inner_14)?;
+                write!(f, ": {}", inner_16)?;
             }
         }
         Ok(())
@@ -863,9 +983,9 @@ impl DbSnapshotNotFoundFault {
 impl std::fmt::Display for DbSnapshotNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbSnapshotNotFoundFault [DBSnapshotNotFoundFault]")?;
-        if let Some(inner_15) = &self.message {
+        if let Some(inner_17) = &self.message {
             {
-                write!(f, ": {}", inner_15)?;
+                write!(f, ": {}", inner_17)?;
             }
         }
         Ok(())
@@ -926,9 +1046,9 @@ impl std::fmt::Display for DbClusterSnapshotNotFoundFault {
             f,
             "DbClusterSnapshotNotFoundFault [DBClusterSnapshotNotFoundFault]"
         )?;
-        if let Some(inner_16) = &self.message {
+        if let Some(inner_18) = &self.message {
             {
-                write!(f, ": {}", inner_16)?;
+                write!(f, ": {}", inner_18)?;
             }
         }
         Ok(())
@@ -986,9 +1106,9 @@ impl StorageTypeNotSupportedFault {
 impl std::fmt::Display for StorageTypeNotSupportedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StorageTypeNotSupportedFault")?;
-        if let Some(inner_17) = &self.message {
+        if let Some(inner_19) = &self.message {
             {
-                write!(f, ": {}", inner_17)?;
+                write!(f, ": {}", inner_19)?;
             }
         }
         Ok(())
@@ -1046,9 +1166,9 @@ impl DbInstanceAutomatedBackupQuotaExceededFault {
 impl std::fmt::Display for DbInstanceAutomatedBackupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbInstanceAutomatedBackupQuotaExceededFault [DBInstanceAutomatedBackupQuotaExceededFault]")?;
-        if let Some(inner_18) = &self.message {
+        if let Some(inner_20) = &self.message {
             {
-                write!(f, ": {}", inner_18)?;
+                write!(f, ": {}", inner_20)?;
             }
         }
         Ok(())
@@ -1109,9 +1229,9 @@ impl std::fmt::Display for InvalidVpcNetworkStateFault {
             f,
             "InvalidVpcNetworkStateFault [InvalidVPCNetworkStateFault]"
         )?;
-        if let Some(inner_19) = &self.message {
+        if let Some(inner_21) = &self.message {
             {
-                write!(f, ": {}", inner_19)?;
+                write!(f, ": {}", inner_21)?;
             }
         }
         Ok(())
@@ -1169,9 +1289,9 @@ impl InvalidSubnet {
 impl std::fmt::Display for InvalidSubnet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSubnet")?;
-        if let Some(inner_20) = &self.message {
+        if let Some(inner_22) = &self.message {
             {
-                write!(f, ": {}", inner_20)?;
+                write!(f, ": {}", inner_22)?;
             }
         }
         Ok(())
@@ -1232,9 +1352,9 @@ impl std::fmt::Display for InsufficientDbInstanceCapacityFault {
             f,
             "InsufficientDbInstanceCapacityFault [InsufficientDBInstanceCapacityFault]"
         )?;
-        if let Some(inner_21) = &self.message {
+        if let Some(inner_23) = &self.message {
             {
-                write!(f, ": {}", inner_21)?;
+                write!(f, ": {}", inner_23)?;
             }
         }
         Ok(())
@@ -1292,9 +1412,9 @@ impl DbSubnetGroupNotFoundFault {
 impl std::fmt::Display for DbSubnetGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbSubnetGroupNotFoundFault [DBSubnetGroupNotFoundFault]")?;
-        if let Some(inner_22) = &self.message {
+        if let Some(inner_24) = &self.message {
             {
-                write!(f, ": {}", inner_22)?;
+                write!(f, ": {}", inner_24)?;
             }
         }
         Ok(())
@@ -1355,9 +1475,9 @@ impl std::fmt::Display for DbSubnetGroupDoesNotCoverEnoughAZs {
             f,
             "DbSubnetGroupDoesNotCoverEnoughAZs [DBSubnetGroupDoesNotCoverEnoughAZs]"
         )?;
-        if let Some(inner_23) = &self.message {
+        if let Some(inner_25) = &self.message {
             {
-                write!(f, ": {}", inner_23)?;
+                write!(f, ": {}", inner_25)?;
             }
         }
         Ok(())
@@ -1416,9 +1536,9 @@ impl AuthorizationNotFoundFault {
 impl std::fmt::Display for AuthorizationNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationNotFoundFault")?;
-        if let Some(inner_24) = &self.message {
+        if let Some(inner_26) = &self.message {
             {
-                write!(f, ": {}", inner_24)?;
+                write!(f, ": {}", inner_26)?;
             }
         }
         Ok(())
@@ -1479,9 +1599,9 @@ impl std::fmt::Display for InvalidDbSecurityGroupStateFault {
             f,
             "InvalidDbSecurityGroupStateFault [InvalidDBSecurityGroupStateFault]"
         )?;
-        if let Some(inner_25) = &self.message {
+        if let Some(inner_27) = &self.message {
             {
-                write!(f, ": {}", inner_25)?;
+                write!(f, ": {}", inner_27)?;
             }
         }
         Ok(())
@@ -1542,9 +1662,9 @@ impl std::fmt::Display for DbSecurityGroupNotFoundFault {
             f,
             "DbSecurityGroupNotFoundFault [DBSecurityGroupNotFoundFault]"
         )?;
-        if let Some(inner_26) = &self.message {
+        if let Some(inner_28) = &self.message {
             {
-                write!(f, ": {}", inner_26)?;
+                write!(f, ": {}", inner_28)?;
             }
         }
         Ok(())
@@ -1602,9 +1722,9 @@ impl StorageQuotaExceededFault {
 impl std::fmt::Display for StorageQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StorageQuotaExceededFault")?;
-        if let Some(inner_27) = &self.message {
+        if let Some(inner_29) = &self.message {
             {
-                write!(f, ": {}", inner_27)?;
+                write!(f, ": {}", inner_29)?;
             }
         }
         Ok(())
@@ -1665,9 +1785,9 @@ impl std::fmt::Display for ProvisionedIopsNotAvailableInAzFault {
             f,
             "ProvisionedIopsNotAvailableInAzFault [ProvisionedIopsNotAvailableInAZFault]"
         )?;
-        if let Some(inner_28) = &self.message {
+        if let Some(inner_30) = &self.message {
             {
-                write!(f, ": {}", inner_28)?;
+                write!(f, ": {}", inner_30)?;
             }
         }
         Ok(())
@@ -1725,9 +1845,9 @@ impl PointInTimeRestoreNotEnabledFault {
 impl std::fmt::Display for PointInTimeRestoreNotEnabledFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PointInTimeRestoreNotEnabledFault")?;
-        if let Some(inner_29) = &self.message {
+        if let Some(inner_31) = &self.message {
             {
-                write!(f, ": {}", inner_29)?;
+                write!(f, ": {}", inner_31)?;
             }
         }
         Ok(())
@@ -1785,9 +1905,9 @@ impl OptionGroupNotFoundFault {
 impl std::fmt::Display for OptionGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OptionGroupNotFoundFault")?;
-        if let Some(inner_30) = &self.message {
+        if let Some(inner_32) = &self.message {
             {
-                write!(f, ": {}", inner_30)?;
+                write!(f, ": {}", inner_32)?;
             }
         }
         Ok(())
@@ -1845,9 +1965,9 @@ impl NetworkTypeNotSupported {
 impl std::fmt::Display for NetworkTypeNotSupported {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NetworkTypeNotSupported")?;
-        if let Some(inner_31) = &self.message {
+        if let Some(inner_33) = &self.message {
             {
-                write!(f, ": {}", inner_31)?;
+                write!(f, ": {}", inner_33)?;
             }
         }
         Ok(())
@@ -1905,9 +2025,9 @@ impl InvalidRestoreFault {
 impl std::fmt::Display for InvalidRestoreFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRestoreFault")?;
-        if let Some(inner_32) = &self.message {
+        if let Some(inner_34) = &self.message {
             {
-                write!(f, ": {}", inner_32)?;
+                write!(f, ": {}", inner_34)?;
             }
         }
         Ok(())
@@ -1965,9 +2085,9 @@ impl InstanceQuotaExceededFault {
 impl std::fmt::Display for InstanceQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InstanceQuotaExceededFault")?;
-        if let Some(inner_33) = &self.message {
+        if let Some(inner_35) = &self.message {
             {
-                write!(f, ": {}", inner_33)?;
+                write!(f, ": {}", inner_35)?;
             }
         }
         Ok(())
@@ -2025,9 +2145,9 @@ impl DomainNotFoundFault {
 impl std::fmt::Display for DomainNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DomainNotFoundFault")?;
-        if let Some(inner_34) = &self.message {
+        if let Some(inner_36) = &self.message {
             {
-                write!(f, ": {}", inner_34)?;
+                write!(f, ": {}", inner_36)?;
             }
         }
         Ok(())
@@ -2088,9 +2208,9 @@ impl std::fmt::Display for DbParameterGroupNotFoundFault {
             f,
             "DbParameterGroupNotFoundFault [DBParameterGroupNotFoundFault]"
         )?;
-        if let Some(inner_35) = &self.message {
+        if let Some(inner_37) = &self.message {
             {
-                write!(f, ": {}", inner_35)?;
+                write!(f, ": {}", inner_37)?;
             }
         }
         Ok(())
@@ -2151,9 +2271,9 @@ impl std::fmt::Display for DbInstanceAutomatedBackupNotFoundFault {
             f,
             "DbInstanceAutomatedBackupNotFoundFault [DBInstanceAutomatedBackupNotFoundFault]"
         )?;
-        if let Some(inner_36) = &self.message {
+        if let Some(inner_38) = &self.message {
             {
-                write!(f, ": {}", inner_36)?;
+                write!(f, ": {}", inner_38)?;
             }
         }
         Ok(())
@@ -2214,9 +2334,9 @@ impl std::fmt::Display for DbInstanceAlreadyExistsFault {
             f,
             "DbInstanceAlreadyExistsFault [DBInstanceAlreadyExistsFault]"
         )?;
-        if let Some(inner_37) = &self.message {
+        if let Some(inner_39) = &self.message {
             {
-                write!(f, ": {}", inner_37)?;
+                write!(f, ": {}", inner_39)?;
             }
         }
         Ok(())
@@ -2275,9 +2395,9 @@ impl BackupPolicyNotFoundFault {
 impl std::fmt::Display for BackupPolicyNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupPolicyNotFoundFault")?;
-        if let Some(inner_38) = &self.message {
+        if let Some(inner_40) = &self.message {
             {
-                write!(f, ": {}", inner_38)?;
+                write!(f, ": {}", inner_40)?;
             }
         }
         Ok(())
@@ -2338,9 +2458,9 @@ impl std::fmt::Display for InvalidDbSnapshotStateFault {
             f,
             "InvalidDbSnapshotStateFault [InvalidDBSnapshotStateFault]"
         )?;
-        if let Some(inner_39) = &self.message {
+        if let Some(inner_41) = &self.message {
             {
-                write!(f, ": {}", inner_39)?;
+                write!(f, ": {}", inner_41)?;
             }
         }
         Ok(())
@@ -2401,9 +2521,9 @@ impl std::fmt::Display for InvalidDbClusterSnapshotStateFault {
             f,
             "InvalidDbClusterSnapshotStateFault [InvalidDBClusterSnapshotStateFault]"
         )?;
-        if let Some(inner_40) = &self.message {
+        if let Some(inner_42) = &self.message {
             {
-                write!(f, ": {}", inner_40)?;
+                write!(f, ": {}", inner_42)?;
             }
         }
         Ok(())
@@ -2461,9 +2581,9 @@ impl InsufficientStorageClusterCapacityFault {
 impl std::fmt::Display for InsufficientStorageClusterCapacityFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientStorageClusterCapacityFault")?;
-        if let Some(inner_41) = &self.message {
+        if let Some(inner_43) = &self.message {
             {
-                write!(f, ": {}", inner_41)?;
+                write!(f, ": {}", inner_43)?;
             }
         }
         Ok(())
@@ -2524,9 +2644,9 @@ impl std::fmt::Display for InsufficientDbClusterCapacityFault {
             f,
             "InsufficientDbClusterCapacityFault [InsufficientDBClusterCapacityFault]"
         )?;
-        if let Some(inner_42) = &self.message {
+        if let Some(inner_44) = &self.message {
             {
-                write!(f, ": {}", inner_42)?;
+                write!(f, ": {}", inner_44)?;
             }
         }
         Ok(())
@@ -2587,9 +2707,9 @@ impl std::fmt::Display for DbClusterQuotaExceededFault {
             f,
             "DbClusterQuotaExceededFault [DBClusterQuotaExceededFault]"
         )?;
-        if let Some(inner_43) = &self.message {
+        if let Some(inner_45) = &self.message {
             {
-                write!(f, ": {}", inner_43)?;
+                write!(f, ": {}", inner_45)?;
             }
         }
         Ok(())
@@ -2650,9 +2770,9 @@ impl std::fmt::Display for DbClusterParameterGroupNotFoundFault {
             f,
             "DbClusterParameterGroupNotFoundFault [DBClusterParameterGroupNotFoundFault]"
         )?;
-        if let Some(inner_44) = &self.message {
+        if let Some(inner_46) = &self.message {
             {
-                write!(f, ": {}", inner_44)?;
+                write!(f, ": {}", inner_46)?;
             }
         }
         Ok(())
@@ -2713,9 +2833,9 @@ impl std::fmt::Display for DbClusterAlreadyExistsFault {
             f,
             "DbClusterAlreadyExistsFault [DBClusterAlreadyExistsFault]"
         )?;
-        if let Some(inner_45) = &self.message {
+        if let Some(inner_47) = &self.message {
             {
-                write!(f, ": {}", inner_45)?;
+                write!(f, ": {}", inner_47)?;
             }
         }
         Ok(())
@@ -2776,9 +2896,9 @@ impl std::fmt::Display for InvalidDbSubnetGroupStateFault {
             f,
             "InvalidDbSubnetGroupStateFault [InvalidDBSubnetGroupStateFault]"
         )?;
-        if let Some(inner_46) = &self.message {
+        if let Some(inner_48) = &self.message {
             {
-                write!(f, ": {}", inner_46)?;
+                write!(f, ": {}", inner_48)?;
             }
         }
         Ok(())
@@ -2839,9 +2959,9 @@ impl std::fmt::Display for InvalidDbParameterGroupStateFault {
             f,
             "InvalidDbParameterGroupStateFault [InvalidDBParameterGroupStateFault]"
         )?;
-        if let Some(inner_47) = &self.message {
+        if let Some(inner_49) = &self.message {
             {
-                write!(f, ": {}", inner_47)?;
+                write!(f, ": {}", inner_49)?;
             }
         }
         Ok(())
@@ -2902,9 +3022,9 @@ impl std::fmt::Display for DbProxyTargetGroupNotFoundFault {
             f,
             "DbProxyTargetGroupNotFoundFault [DBProxyTargetGroupNotFoundFault]"
         )?;
-        if let Some(inner_48) = &self.message {
+        if let Some(inner_50) = &self.message {
             {
-                write!(f, ": {}", inner_48)?;
+                write!(f, ": {}", inner_50)?;
             }
         }
         Ok(())
@@ -2962,9 +3082,9 @@ impl DbProxyNotFoundFault {
 impl std::fmt::Display for DbProxyNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbProxyNotFoundFault [DBProxyNotFoundFault]")?;
-        if let Some(inner_49) = &self.message {
+        if let Some(inner_51) = &self.message {
             {
-                write!(f, ": {}", inner_49)?;
+                write!(f, ": {}", inner_51)?;
             }
         }
         Ok(())
@@ -3022,9 +3142,9 @@ impl SubscriptionNotFoundFault {
 impl std::fmt::Display for SubscriptionNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionNotFoundFault")?;
-        if let Some(inner_50) = &self.message {
+        if let Some(inner_52) = &self.message {
             {
-                write!(f, ": {}", inner_50)?;
+                write!(f, ": {}", inner_52)?;
             }
         }
         Ok(())
@@ -3082,9 +3202,9 @@ impl SourceNotFoundFault {
 impl std::fmt::Display for SourceNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SourceNotFoundFault")?;
-        if let Some(inner_51) = &self.message {
+        if let Some(inner_53) = &self.message {
             {
-                write!(f, ": {}", inner_51)?;
+                write!(f, ": {}", inner_53)?;
             }
         }
         Ok(())
@@ -3145,9 +3265,9 @@ impl std::fmt::Display for DbInstanceRoleNotFoundFault {
             f,
             "DbInstanceRoleNotFoundFault [DBInstanceRoleNotFoundFault]"
         )?;
-        if let Some(inner_52) = &self.message {
+        if let Some(inner_54) = &self.message {
             {
-                write!(f, ": {}", inner_52)?;
+                write!(f, ": {}", inner_54)?;
             }
         }
         Ok(())
@@ -3205,9 +3325,9 @@ impl DbClusterRoleNotFoundFault {
 impl std::fmt::Display for DbClusterRoleNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbClusterRoleNotFoundFault [DBClusterRoleNotFoundFault]")?;
-        if let Some(inner_53) = &self.message {
+        if let Some(inner_55) = &self.message {
             {
-                write!(f, ": {}", inner_53)?;
+                write!(f, ": {}", inner_55)?;
             }
         }
         Ok(())
@@ -3265,9 +3385,9 @@ impl InvalidGlobalClusterStateFault {
 impl std::fmt::Display for InvalidGlobalClusterStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGlobalClusterStateFault")?;
-        if let Some(inner_54) = &self.message {
+        if let Some(inner_56) = &self.message {
             {
-                write!(f, ": {}", inner_54)?;
+                write!(f, ": {}", inner_56)?;
             }
         }
         Ok(())
@@ -3325,9 +3445,9 @@ impl GlobalClusterNotFoundFault {
 impl std::fmt::Display for GlobalClusterNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalClusterNotFoundFault")?;
-        if let Some(inner_55) = &self.message {
+        if let Some(inner_57) = &self.message {
             {
-                write!(f, ": {}", inner_55)?;
+                write!(f, ": {}", inner_57)?;
             }
         }
         Ok(())
@@ -3385,9 +3505,9 @@ impl InvalidDbProxyStateFault {
 impl std::fmt::Display for InvalidDbProxyStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbProxyStateFault [InvalidDBProxyStateFault]")?;
-        if let Some(inner_56) = &self.message {
+        if let Some(inner_58) = &self.message {
             {
-                write!(f, ": {}", inner_56)?;
+                write!(f, ": {}", inner_58)?;
             }
         }
         Ok(())
@@ -3445,9 +3565,9 @@ impl InsufficientAvailableIPsInSubnetFault {
 impl std::fmt::Display for InsufficientAvailableIPsInSubnetFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientAvailableIPsInSubnetFault")?;
-        if let Some(inner_57) = &self.message {
+        if let Some(inner_59) = &self.message {
             {
-                write!(f, ": {}", inner_57)?;
+                write!(f, ": {}", inner_59)?;
             }
         }
         Ok(())
@@ -3508,9 +3628,9 @@ impl std::fmt::Display for DbProxyTargetAlreadyRegisteredFault {
             f,
             "DbProxyTargetAlreadyRegisteredFault [DBProxyTargetAlreadyRegisteredFault]"
         )?;
-        if let Some(inner_58) = &self.message {
+        if let Some(inner_60) = &self.message {
             {
-                write!(f, ": {}", inner_58)?;
+                write!(f, ": {}", inner_60)?;
             }
         }
         Ok(())
@@ -3571,9 +3691,9 @@ impl std::fmt::Display for ReservedDbInstancesOfferingNotFoundFault {
             f,
             "ReservedDbInstancesOfferingNotFoundFault [ReservedDBInstancesOfferingNotFoundFault]"
         )?;
-        if let Some(inner_59) = &self.message {
+        if let Some(inner_61) = &self.message {
             {
-                write!(f, ": {}", inner_59)?;
+                write!(f, ": {}", inner_61)?;
             }
         }
         Ok(())
@@ -3634,9 +3754,9 @@ impl std::fmt::Display for ReservedDbInstanceQuotaExceededFault {
             f,
             "ReservedDbInstanceQuotaExceededFault [ReservedDBInstanceQuotaExceededFault]"
         )?;
-        if let Some(inner_60) = &self.message {
+        if let Some(inner_62) = &self.message {
             {
-                write!(f, ": {}", inner_60)?;
+                write!(f, ": {}", inner_62)?;
             }
         }
         Ok(())
@@ -3697,9 +3817,9 @@ impl std::fmt::Display for ReservedDbInstanceAlreadyExistsFault {
             f,
             "ReservedDbInstanceAlreadyExistsFault [ReservedDBInstanceAlreadyExistsFault]"
         )?;
-        if let Some(inner_61) = &self.message {
+        if let Some(inner_63) = &self.message {
             {
-                write!(f, ": {}", inner_61)?;
+                write!(f, ": {}", inner_63)?;
             }
         }
         Ok(())
@@ -3757,9 +3877,9 @@ impl InvalidOptionGroupStateFault {
 impl std::fmt::Display for InvalidOptionGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOptionGroupStateFault")?;
-        if let Some(inner_62) = &self.message {
+        if let Some(inner_64) = &self.message {
             {
-                write!(f, ": {}", inner_62)?;
+                write!(f, ": {}", inner_64)?;
             }
         }
         Ok(())
@@ -3817,9 +3937,9 @@ impl SubscriptionCategoryNotFoundFault {
 impl std::fmt::Display for SubscriptionCategoryNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionCategoryNotFoundFault")?;
-        if let Some(inner_63) = &self.message {
+        if let Some(inner_65) = &self.message {
             {
-                write!(f, ": {}", inner_63)?;
+                write!(f, ": {}", inner_65)?;
             }
         }
         Ok(())
@@ -3877,9 +3997,9 @@ impl SnsTopicArnNotFoundFault {
 impl std::fmt::Display for SnsTopicArnNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsTopicArnNotFoundFault [SNSTopicArnNotFoundFault]")?;
-        if let Some(inner_64) = &self.message {
+        if let Some(inner_66) = &self.message {
             {
-                write!(f, ": {}", inner_64)?;
+                write!(f, ": {}", inner_66)?;
             }
         }
         Ok(())
@@ -3937,9 +4057,9 @@ impl SnsNoAuthorizationFault {
 impl std::fmt::Display for SnsNoAuthorizationFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsNoAuthorizationFault [SNSNoAuthorizationFault]")?;
-        if let Some(inner_65) = &self.message {
+        if let Some(inner_67) = &self.message {
             {
-                write!(f, ": {}", inner_65)?;
+                write!(f, ": {}", inner_67)?;
             }
         }
         Ok(())
@@ -3997,9 +4117,9 @@ impl SnsInvalidTopicFault {
 impl std::fmt::Display for SnsInvalidTopicFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsInvalidTopicFault [SNSInvalidTopicFault]")?;
-        if let Some(inner_66) = &self.message {
+        if let Some(inner_68) = &self.message {
             {
-                write!(f, ": {}", inner_66)?;
+                write!(f, ": {}", inner_68)?;
             }
         }
         Ok(())
@@ -4057,9 +4177,9 @@ impl EventSubscriptionQuotaExceededFault {
 impl std::fmt::Display for EventSubscriptionQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EventSubscriptionQuotaExceededFault")?;
-        if let Some(inner_67) = &self.message {
+        if let Some(inner_69) = &self.message {
             {
-                write!(f, ": {}", inner_67)?;
+                write!(f, ": {}", inner_69)?;
             }
         }
         Ok(())
@@ -4117,9 +4237,9 @@ impl SubnetAlreadyInUse {
 impl std::fmt::Display for SubnetAlreadyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetAlreadyInUse")?;
-        if let Some(inner_68) = &self.message {
+        if let Some(inner_70) = &self.message {
             {
-                write!(f, ": {}", inner_68)?;
+                write!(f, ": {}", inner_70)?;
             }
         }
         Ok(())
@@ -4177,9 +4297,9 @@ impl DbSubnetQuotaExceededFault {
 impl std::fmt::Display for DbSubnetQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbSubnetQuotaExceededFault [DBSubnetQuotaExceededFault]")?;
-        if let Some(inner_69) = &self.message {
+        if let Some(inner_71) = &self.message {
             {
-                write!(f, ": {}", inner_69)?;
+                write!(f, ": {}", inner_71)?;
             }
         }
         Ok(())
@@ -4237,9 +4357,9 @@ impl SharedSnapshotQuotaExceededFault {
 impl std::fmt::Display for SharedSnapshotQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SharedSnapshotQuotaExceededFault")?;
-        if let Some(inner_70) = &self.message {
+        if let Some(inner_72) = &self.message {
             {
-                write!(f, ": {}", inner_70)?;
+                write!(f, ": {}", inner_72)?;
             }
         }
         Ok(())
@@ -4300,9 +4420,9 @@ impl std::fmt::Display for InvalidDbProxyEndpointStateFault {
             f,
             "InvalidDbProxyEndpointStateFault [InvalidDBProxyEndpointStateFault]"
         )?;
-        if let Some(inner_71) = &self.message {
+        if let Some(inner_73) = &self.message {
             {
-                write!(f, ": {}", inner_71)?;
+                write!(f, ": {}", inner_73)?;
             }
         }
         Ok(())
@@ -4363,9 +4483,9 @@ impl std::fmt::Display for DbProxyEndpointNotFoundFault {
             f,
             "DbProxyEndpointNotFoundFault [DBProxyEndpointNotFoundFault]"
         )?;
-        if let Some(inner_72) = &self.message {
+        if let Some(inner_74) = &self.message {
             {
-                write!(f, ": {}", inner_72)?;
+                write!(f, ": {}", inner_74)?;
             }
         }
         Ok(())
@@ -4426,9 +4546,9 @@ impl std::fmt::Display for DbProxyEndpointAlreadyExistsFault {
             f,
             "DbProxyEndpointAlreadyExistsFault [DBProxyEndpointAlreadyExistsFault]"
         )?;
-        if let Some(inner_73) = &self.message {
+        if let Some(inner_75) = &self.message {
             {
-                write!(f, ": {}", inner_73)?;
+                write!(f, ": {}", inner_75)?;
             }
         }
         Ok(())
@@ -4486,9 +4606,9 @@ impl DbProxyAlreadyExistsFault {
 impl std::fmt::Display for DbProxyAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbProxyAlreadyExistsFault [DBProxyAlreadyExistsFault]")?;
-        if let Some(inner_74) = &self.message {
+        if let Some(inner_76) = &self.message {
             {
-                write!(f, ": {}", inner_74)?;
+                write!(f, ": {}", inner_76)?;
             }
         }
         Ok(())
@@ -4549,9 +4669,9 @@ impl std::fmt::Display for DbUpgradeDependencyFailureFault {
             f,
             "DbUpgradeDependencyFailureFault [DBUpgradeDependencyFailureFault]"
         )?;
-        if let Some(inner_75) = &self.message {
+        if let Some(inner_77) = &self.message {
             {
-                write!(f, ": {}", inner_75)?;
+                write!(f, ": {}", inner_77)?;
             }
         }
         Ok(())
@@ -4609,9 +4729,9 @@ impl CertificateNotFoundFault {
 impl std::fmt::Display for CertificateNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CertificateNotFoundFault")?;
-        if let Some(inner_76) = &self.message {
+        if let Some(inner_78) = &self.message {
             {
-                write!(f, ": {}", inner_76)?;
+                write!(f, ": {}", inner_78)?;
             }
         }
         Ok(())
@@ -4672,9 +4792,9 @@ impl std::fmt::Display for InvalidDbClusterEndpointStateFault {
             f,
             "InvalidDbClusterEndpointStateFault [InvalidDBClusterEndpointStateFault]"
         )?;
-        if let Some(inner_77) = &self.message {
+        if let Some(inner_79) = &self.message {
             {
-                write!(f, ": {}", inner_77)?;
+                write!(f, ": {}", inner_79)?;
             }
         }
         Ok(())
@@ -4735,9 +4855,9 @@ impl std::fmt::Display for DbClusterEndpointNotFoundFault {
             f,
             "DbClusterEndpointNotFoundFault [DBClusterEndpointNotFoundFault]"
         )?;
-        if let Some(inner_78) = &self.message {
+        if let Some(inner_80) = &self.message {
             {
-                write!(f, ": {}", inner_78)?;
+                write!(f, ": {}", inner_80)?;
             }
         }
         Ok(())
@@ -4798,9 +4918,9 @@ impl std::fmt::Display for InvalidCustomDbEngineVersionStateFault {
             f,
             "InvalidCustomDbEngineVersionStateFault [InvalidCustomDBEngineVersionStateFault]"
         )?;
-        if let Some(inner_79) = &self.message {
+        if let Some(inner_81) = &self.message {
             {
-                write!(f, ": {}", inner_79)?;
+                write!(f, ": {}", inner_81)?;
             }
         }
         Ok(())
@@ -4861,9 +4981,9 @@ impl std::fmt::Display for CustomDbEngineVersionNotFoundFault {
             f,
             "CustomDbEngineVersionNotFoundFault [CustomDBEngineVersionNotFoundFault]"
         )?;
-        if let Some(inner_80) = &self.message {
+        if let Some(inner_82) = &self.message {
             {
-                write!(f, ": {}", inner_80)?;
+                write!(f, ": {}", inner_82)?;
             }
         }
         Ok(())
@@ -4924,9 +5044,9 @@ impl std::fmt::Display for InvalidDbClusterCapacityFault {
             f,
             "InvalidDbClusterCapacityFault [InvalidDBClusterCapacityFault]"
         )?;
-        if let Some(inner_81) = &self.message {
+        if let Some(inner_83) = &self.message {
             {
-                write!(f, ": {}", inner_81)?;
+                write!(f, ": {}", inner_83)?;
             }
         }
         Ok(())
@@ -4984,9 +5104,9 @@ impl DbLogFileNotFoundFault {
 impl std::fmt::Display for DbLogFileNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbLogFileNotFoundFault [DBLogFileNotFoundFault]")?;
-        if let Some(inner_82) = &self.message {
+        if let Some(inner_84) = &self.message {
             {
-                write!(f, ": {}", inner_82)?;
+                write!(f, ": {}", inner_84)?;
             }
         }
         Ok(())
@@ -5047,9 +5167,9 @@ impl std::fmt::Display for ReservedDbInstanceNotFoundFault {
             f,
             "ReservedDbInstanceNotFoundFault [ReservedDBInstanceNotFoundFault]"
         )?;
-        if let Some(inner_83) = &self.message {
+        if let Some(inner_85) = &self.message {
             {
-                write!(f, ": {}", inner_83)?;
+                write!(f, ": {}", inner_85)?;
             }
         }
         Ok(())
@@ -5107,9 +5227,9 @@ impl ExportTaskNotFoundFault {
 impl std::fmt::Display for ExportTaskNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExportTaskNotFoundFault")?;
-        if let Some(inner_84) = &self.message {
+        if let Some(inner_86) = &self.message {
             {
-                write!(f, ": {}", inner_84)?;
+                write!(f, ": {}", inner_86)?;
             }
         }
         Ok(())
@@ -5167,9 +5287,9 @@ impl DbProxyTargetNotFoundFault {
 impl std::fmt::Display for DbProxyTargetNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbProxyTargetNotFoundFault [DBProxyTargetNotFoundFault]")?;
-        if let Some(inner_85) = &self.message {
+        if let Some(inner_87) = &self.message {
             {
-                write!(f, ": {}", inner_85)?;
+                write!(f, ": {}", inner_87)?;
             }
         }
         Ok(())
@@ -5230,9 +5350,9 @@ impl std::fmt::Display for DbClusterBacktrackNotFoundFault {
             f,
             "DbClusterBacktrackNotFoundFault [DBClusterBacktrackNotFoundFault]"
         )?;
-        if let Some(inner_86) = &self.message {
+        if let Some(inner_88) = &self.message {
             {
-                write!(f, ": {}", inner_86)?;
+                write!(f, ": {}", inner_88)?;
             }
         }
         Ok(())
@@ -5290,9 +5410,9 @@ impl InvalidEventSubscriptionStateFault {
 impl std::fmt::Display for InvalidEventSubscriptionStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEventSubscriptionStateFault")?;
-        if let Some(inner_87) = &self.message {
+        if let Some(inner_89) = &self.message {
             {
-                write!(f, ": {}", inner_87)?;
+                write!(f, ": {}", inner_89)?;
             }
         }
         Ok(())
@@ -5350,9 +5470,9 @@ impl InvalidDbSubnetStateFault {
 impl std::fmt::Display for InvalidDbSubnetStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbSubnetStateFault [InvalidDBSubnetStateFault]")?;
-        if let Some(inner_88) = &self.message {
+        if let Some(inner_90) = &self.message {
             {
-                write!(f, ": {}", inner_88)?;
+                write!(f, ": {}", inner_90)?;
             }
         }
         Ok(())
@@ -5410,9 +5530,9 @@ impl InvalidDbInstanceAutomatedBackupStateFault {
 impl std::fmt::Display for InvalidDbInstanceAutomatedBackupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbInstanceAutomatedBackupStateFault [InvalidDBInstanceAutomatedBackupStateFault]")?;
-        if let Some(inner_89) = &self.message {
+        if let Some(inner_91) = &self.message {
             {
-                write!(f, ": {}", inner_89)?;
+                write!(f, ": {}", inner_91)?;
             }
         }
         Ok(())
@@ -5473,9 +5593,9 @@ impl std::fmt::Display for DbClusterSnapshotAlreadyExistsFault {
             f,
             "DbClusterSnapshotAlreadyExistsFault [DBClusterSnapshotAlreadyExistsFault]"
         )?;
-        if let Some(inner_90) = &self.message {
+        if let Some(inner_92) = &self.message {
             {
-                write!(f, ": {}", inner_90)?;
+                write!(f, ": {}", inner_92)?;
             }
         }
         Ok(())
@@ -5533,9 +5653,9 @@ impl OptionGroupQuotaExceededFault {
 impl std::fmt::Display for OptionGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OptionGroupQuotaExceededFault")?;
-        if let Some(inner_91) = &self.message {
+        if let Some(inner_93) = &self.message {
             {
-                write!(f, ": {}", inner_91)?;
+                write!(f, ": {}", inner_93)?;
             }
         }
         Ok(())
@@ -5593,9 +5713,9 @@ impl OptionGroupAlreadyExistsFault {
 impl std::fmt::Display for OptionGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OptionGroupAlreadyExistsFault")?;
-        if let Some(inner_92) = &self.message {
+        if let Some(inner_94) = &self.message {
             {
-                write!(f, ": {}", inner_92)?;
+                write!(f, ": {}", inner_94)?;
             }
         }
         Ok(())
@@ -5653,9 +5773,9 @@ impl GlobalClusterQuotaExceededFault {
 impl std::fmt::Display for GlobalClusterQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalClusterQuotaExceededFault")?;
-        if let Some(inner_93) = &self.message {
+        if let Some(inner_95) = &self.message {
             {
-                write!(f, ": {}", inner_93)?;
+                write!(f, ": {}", inner_95)?;
             }
         }
         Ok(())
@@ -5713,9 +5833,9 @@ impl GlobalClusterAlreadyExistsFault {
 impl std::fmt::Display for GlobalClusterAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalClusterAlreadyExistsFault")?;
-        if let Some(inner_94) = &self.message {
+        if let Some(inner_96) = &self.message {
             {
-                write!(f, ": {}", inner_94)?;
+                write!(f, ": {}", inner_96)?;
             }
         }
         Ok(())
@@ -5773,9 +5893,9 @@ impl SubscriptionAlreadyExistFault {
 impl std::fmt::Display for SubscriptionAlreadyExistFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionAlreadyExistFault")?;
-        if let Some(inner_95) = &self.message {
+        if let Some(inner_97) = &self.message {
             {
-                write!(f, ": {}", inner_95)?;
+                write!(f, ": {}", inner_97)?;
             }
         }
         Ok(())
@@ -5836,9 +5956,9 @@ impl std::fmt::Display for DbSubnetGroupQuotaExceededFault {
             f,
             "DbSubnetGroupQuotaExceededFault [DBSubnetGroupQuotaExceededFault]"
         )?;
-        if let Some(inner_96) = &self.message {
+        if let Some(inner_98) = &self.message {
             {
-                write!(f, ": {}", inner_96)?;
+                write!(f, ": {}", inner_98)?;
             }
         }
         Ok(())
@@ -5899,9 +6019,9 @@ impl std::fmt::Display for DbSubnetGroupAlreadyExistsFault {
             f,
             "DbSubnetGroupAlreadyExistsFault [DBSubnetGroupAlreadyExistsFault]"
         )?;
-        if let Some(inner_97) = &self.message {
+        if let Some(inner_99) = &self.message {
             {
-                write!(f, ": {}", inner_97)?;
+                write!(f, ": {}", inner_99)?;
             }
         }
         Ok(())
@@ -5962,9 +6082,9 @@ impl std::fmt::Display for DbSecurityGroupQuotaExceededFault {
             f,
             "DbSecurityGroupQuotaExceededFault [DBSecurityGroupQuotaExceededFault]"
         )?;
-        if let Some(inner_98) = &self.message {
+        if let Some(inner_100) = &self.message {
             {
-                write!(f, ": {}", inner_98)?;
+                write!(f, ": {}", inner_100)?;
             }
         }
         Ok(())
@@ -6025,9 +6145,9 @@ impl std::fmt::Display for DbSecurityGroupNotSupportedFault {
             f,
             "DbSecurityGroupNotSupportedFault [DBSecurityGroupNotSupportedFault]"
         )?;
-        if let Some(inner_99) = &self.message {
+        if let Some(inner_101) = &self.message {
             {
-                write!(f, ": {}", inner_99)?;
+                write!(f, ": {}", inner_101)?;
             }
         }
         Ok(())
@@ -6088,9 +6208,9 @@ impl std::fmt::Display for DbSecurityGroupAlreadyExistsFault {
             f,
             "DbSecurityGroupAlreadyExistsFault [DBSecurityGroupAlreadyExistsFault]"
         )?;
-        if let Some(inner_100) = &self.message {
+        if let Some(inner_102) = &self.message {
             {
-                write!(f, ": {}", inner_100)?;
+                write!(f, ": {}", inner_102)?;
             }
         }
         Ok(())
@@ -6151,9 +6271,9 @@ impl std::fmt::Display for DbProxyEndpointQuotaExceededFault {
             f,
             "DbProxyEndpointQuotaExceededFault [DBProxyEndpointQuotaExceededFault]"
         )?;
-        if let Some(inner_101) = &self.message {
+        if let Some(inner_103) = &self.message {
             {
-                write!(f, ": {}", inner_101)?;
+                write!(f, ": {}", inner_103)?;
             }
         }
         Ok(())
@@ -6211,9 +6331,9 @@ impl DbProxyQuotaExceededFault {
 impl std::fmt::Display for DbProxyQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbProxyQuotaExceededFault [DBProxyQuotaExceededFault]")?;
-        if let Some(inner_102) = &self.message {
+        if let Some(inner_104) = &self.message {
             {
-                write!(f, ": {}", inner_102)?;
+                write!(f, ": {}", inner_104)?;
             }
         }
         Ok(())
@@ -6274,9 +6394,9 @@ impl std::fmt::Display for DbParameterGroupQuotaExceededFault {
             f,
             "DbParameterGroupQuotaExceededFault [DBParameterGroupQuotaExceededFault]"
         )?;
-        if let Some(inner_103) = &self.message {
+        if let Some(inner_105) = &self.message {
             {
-                write!(f, ": {}", inner_103)?;
+                write!(f, ": {}", inner_105)?;
             }
         }
         Ok(())
@@ -6337,9 +6457,9 @@ impl std::fmt::Display for DbParameterGroupAlreadyExistsFault {
             f,
             "DbParameterGroupAlreadyExistsFault [DBParameterGroupAlreadyExistsFault]"
         )?;
-        if let Some(inner_104) = &self.message {
+        if let Some(inner_106) = &self.message {
             {
-                write!(f, ": {}", inner_104)?;
+                write!(f, ": {}", inner_106)?;
             }
         }
         Ok(())
@@ -6397,9 +6517,9 @@ impl InvalidDbSubnetGroupFault {
 impl std::fmt::Display for InvalidDbSubnetGroupFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbSubnetGroupFault [InvalidDBSubnetGroupFault]")?;
-        if let Some(inner_105) = &self.message {
+        if let Some(inner_107) = &self.message {
             {
-                write!(f, ": {}", inner_105)?;
+                write!(f, ": {}", inner_107)?;
             }
         }
         Ok(())
@@ -6460,9 +6580,9 @@ impl std::fmt::Display for DbSubnetGroupNotAllowedFault {
             f,
             "DbSubnetGroupNotAllowedFault [DBSubnetGroupNotAllowedFault]"
         )?;
-        if let Some(inner_106) = &self.message {
+        if let Some(inner_108) = &self.message {
             {
-                write!(f, ": {}", inner_106)?;
+                write!(f, ": {}", inner_108)?;
             }
         }
         Ok(())
@@ -6523,9 +6643,9 @@ impl std::fmt::Display for DbClusterEndpointQuotaExceededFault {
             f,
             "DbClusterEndpointQuotaExceededFault [DBClusterEndpointQuotaExceededFault]"
         )?;
-        if let Some(inner_107) = &self.message {
+        if let Some(inner_109) = &self.message {
             {
-                write!(f, ": {}", inner_107)?;
+                write!(f, ": {}", inner_109)?;
             }
         }
         Ok(())
@@ -6586,9 +6706,9 @@ impl std::fmt::Display for DbClusterEndpointAlreadyExistsFault {
             f,
             "DbClusterEndpointAlreadyExistsFault [DBClusterEndpointAlreadyExistsFault]"
         )?;
-        if let Some(inner_108) = &self.message {
+        if let Some(inner_110) = &self.message {
             {
-                write!(f, ": {}", inner_108)?;
+                write!(f, ": {}", inner_110)?;
             }
         }
         Ok(())
@@ -6629,6 +6749,66 @@ impl DbClusterEndpointAlreadyExistsFault {
     }
 }
 
+/// <p>The AMI configuration prerequisite has not been met.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Ec2ImagePropertiesNotSupportedFault {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl Ec2ImagePropertiesNotSupportedFault {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for Ec2ImagePropertiesNotSupportedFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "Ec2ImagePropertiesNotSupportedFault")?;
+        if let Some(inner_111) = &self.message {
+            {
+                write!(f, ": {}", inner_111)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for Ec2ImagePropertiesNotSupportedFault {}
+/// See [`Ec2ImagePropertiesNotSupportedFault`](crate::error::Ec2ImagePropertiesNotSupportedFault).
+pub mod ec2_image_properties_not_supported_fault {
+
+    /// A builder for [`Ec2ImagePropertiesNotSupportedFault`](crate::error::Ec2ImagePropertiesNotSupportedFault).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Ec2ImagePropertiesNotSupportedFault`](crate::error::Ec2ImagePropertiesNotSupportedFault).
+        pub fn build(self) -> crate::error::Ec2ImagePropertiesNotSupportedFault {
+            crate::error::Ec2ImagePropertiesNotSupportedFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl Ec2ImagePropertiesNotSupportedFault {
+    /// Creates a new builder-style object to manufacture [`Ec2ImagePropertiesNotSupportedFault`](crate::error::Ec2ImagePropertiesNotSupportedFault).
+    pub fn builder() -> crate::error::ec2_image_properties_not_supported_fault::Builder {
+        crate::error::ec2_image_properties_not_supported_fault::Builder::default()
+    }
+}
+
 /// <p>You have exceeded your CEV quota.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6649,9 +6829,9 @@ impl std::fmt::Display for CustomDbEngineVersionQuotaExceededFault {
             f,
             "CustomDbEngineVersionQuotaExceededFault [CustomDBEngineVersionQuotaExceededFault]"
         )?;
-        if let Some(inner_109) = &self.message {
+        if let Some(inner_112) = &self.message {
             {
-                write!(f, ": {}", inner_109)?;
+                write!(f, ": {}", inner_112)?;
             }
         }
         Ok(())
@@ -6712,9 +6892,9 @@ impl std::fmt::Display for CustomDbEngineVersionAlreadyExistsFault {
             f,
             "CustomDbEngineVersionAlreadyExistsFault [CustomDBEngineVersionAlreadyExistsFault]"
         )?;
-        if let Some(inner_110) = &self.message {
+        if let Some(inner_113) = &self.message {
             {
-                write!(f, ": {}", inner_110)?;
+                write!(f, ": {}", inner_113)?;
             }
         }
         Ok(())
@@ -6755,6 +6935,186 @@ impl CustomDbEngineVersionAlreadyExistsFault {
     }
 }
 
+/// <p>The source DB instance isn't supported for a blue/green deployment.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SourceDatabaseNotSupportedFault {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl SourceDatabaseNotSupportedFault {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for SourceDatabaseNotSupportedFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "SourceDatabaseNotSupportedFault")?;
+        if let Some(inner_114) = &self.message {
+            {
+                write!(f, ": {}", inner_114)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for SourceDatabaseNotSupportedFault {}
+/// See [`SourceDatabaseNotSupportedFault`](crate::error::SourceDatabaseNotSupportedFault).
+pub mod source_database_not_supported_fault {
+
+    /// A builder for [`SourceDatabaseNotSupportedFault`](crate::error::SourceDatabaseNotSupportedFault).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SourceDatabaseNotSupportedFault`](crate::error::SourceDatabaseNotSupportedFault).
+        pub fn build(self) -> crate::error::SourceDatabaseNotSupportedFault {
+            crate::error::SourceDatabaseNotSupportedFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl SourceDatabaseNotSupportedFault {
+    /// Creates a new builder-style object to manufacture [`SourceDatabaseNotSupportedFault`](crate::error::SourceDatabaseNotSupportedFault).
+    pub fn builder() -> crate::error::source_database_not_supported_fault::Builder {
+        crate::error::source_database_not_supported_fault::Builder::default()
+    }
+}
+
+/// <p>The source DB cluster isn't supported for a blue/green deployment.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SourceClusterNotSupportedFault {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl SourceClusterNotSupportedFault {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for SourceClusterNotSupportedFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "SourceClusterNotSupportedFault")?;
+        if let Some(inner_115) = &self.message {
+            {
+                write!(f, ": {}", inner_115)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for SourceClusterNotSupportedFault {}
+/// See [`SourceClusterNotSupportedFault`](crate::error::SourceClusterNotSupportedFault).
+pub mod source_cluster_not_supported_fault {
+
+    /// A builder for [`SourceClusterNotSupportedFault`](crate::error::SourceClusterNotSupportedFault).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SourceClusterNotSupportedFault`](crate::error::SourceClusterNotSupportedFault).
+        pub fn build(self) -> crate::error::SourceClusterNotSupportedFault {
+            crate::error::SourceClusterNotSupportedFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl SourceClusterNotSupportedFault {
+    /// Creates a new builder-style object to manufacture [`SourceClusterNotSupportedFault`](crate::error::SourceClusterNotSupportedFault).
+    pub fn builder() -> crate::error::source_cluster_not_supported_fault::Builder {
+        crate::error::source_cluster_not_supported_fault::Builder::default()
+    }
+}
+
+/// <p>A blue/green deployment with the specified name already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BlueGreenDeploymentAlreadyExistsFault {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl BlueGreenDeploymentAlreadyExistsFault {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for BlueGreenDeploymentAlreadyExistsFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "BlueGreenDeploymentAlreadyExistsFault")?;
+        if let Some(inner_116) = &self.message {
+            {
+                write!(f, ": {}", inner_116)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for BlueGreenDeploymentAlreadyExistsFault {}
+/// See [`BlueGreenDeploymentAlreadyExistsFault`](crate::error::BlueGreenDeploymentAlreadyExistsFault).
+pub mod blue_green_deployment_already_exists_fault {
+
+    /// A builder for [`BlueGreenDeploymentAlreadyExistsFault`](crate::error::BlueGreenDeploymentAlreadyExistsFault).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BlueGreenDeploymentAlreadyExistsFault`](crate::error::BlueGreenDeploymentAlreadyExistsFault).
+        pub fn build(self) -> crate::error::BlueGreenDeploymentAlreadyExistsFault {
+            crate::error::BlueGreenDeploymentAlreadyExistsFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl BlueGreenDeploymentAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`BlueGreenDeploymentAlreadyExistsFault`](crate::error::BlueGreenDeploymentAlreadyExistsFault).
+    pub fn builder() -> crate::error::blue_green_deployment_already_exists_fault::Builder {
+        crate::error::blue_green_deployment_already_exists_fault::Builder::default()
+    }
+}
+
 /// <p> <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability Zone identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6772,9 +7132,9 @@ impl CustomAvailabilityZoneNotFoundFault {
 impl std::fmt::Display for CustomAvailabilityZoneNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomAvailabilityZoneNotFoundFault")?;
-        if let Some(inner_111) = &self.message {
+        if let Some(inner_117) = &self.message {
             {
-                write!(f, ": {}", inner_111)?;
+                write!(f, ": {}", inner_117)?;
             }
         }
         Ok(())
@@ -6832,9 +7192,9 @@ impl InvalidExportTaskStateFault {
 impl std::fmt::Display for InvalidExportTaskStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidExportTaskStateFault")?;
-        if let Some(inner_112) = &self.message {
+        if let Some(inner_118) = &self.message {
             {
-                write!(f, ": {}", inner_112)?;
+                write!(f, ": {}", inner_118)?;
             }
         }
         Ok(())
@@ -6892,9 +7252,9 @@ impl AuthorizationQuotaExceededFault {
 impl std::fmt::Display for AuthorizationQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationQuotaExceededFault")?;
-        if let Some(inner_113) = &self.message {
+        if let Some(inner_119) = &self.message {
             {
-                write!(f, ": {}", inner_113)?;
+                write!(f, ": {}", inner_119)?;
             }
         }
         Ok(())
@@ -6952,9 +7312,9 @@ impl AuthorizationAlreadyExistsFault {
 impl std::fmt::Display for AuthorizationAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationAlreadyExistsFault")?;
-        if let Some(inner_114) = &self.message {
+        if let Some(inner_120) = &self.message {
             {
-                write!(f, ": {}", inner_114)?;
+                write!(f, ": {}", inner_120)?;
             }
         }
         Ok(())
@@ -7015,9 +7375,9 @@ impl std::fmt::Display for DbInstanceRoleQuotaExceededFault {
             f,
             "DbInstanceRoleQuotaExceededFault [DBInstanceRoleQuotaExceededFault]"
         )?;
-        if let Some(inner_115) = &self.message {
+        if let Some(inner_121) = &self.message {
             {
-                write!(f, ": {}", inner_115)?;
+                write!(f, ": {}", inner_121)?;
             }
         }
         Ok(())
@@ -7078,9 +7438,9 @@ impl std::fmt::Display for DbInstanceRoleAlreadyExistsFault {
             f,
             "DbInstanceRoleAlreadyExistsFault [DBInstanceRoleAlreadyExistsFault]"
         )?;
-        if let Some(inner_116) = &self.message {
+        if let Some(inner_122) = &self.message {
             {
-                write!(f, ": {}", inner_116)?;
+                write!(f, ": {}", inner_122)?;
             }
         }
         Ok(())
@@ -7141,9 +7501,9 @@ impl std::fmt::Display for DbClusterRoleQuotaExceededFault {
             f,
             "DbClusterRoleQuotaExceededFault [DBClusterRoleQuotaExceededFault]"
         )?;
-        if let Some(inner_117) = &self.message {
+        if let Some(inner_123) = &self.message {
             {
-                write!(f, ": {}", inner_117)?;
+                write!(f, ": {}", inner_123)?;
             }
         }
         Ok(())
@@ -7204,9 +7564,9 @@ impl std::fmt::Display for DbClusterRoleAlreadyExistsFault {
             f,
             "DbClusterRoleAlreadyExistsFault [DBClusterRoleAlreadyExistsFault]"
         )?;
-        if let Some(inner_118) = &self.message {
+        if let Some(inner_124) = &self.message {
             {
-                write!(f, ": {}", inner_118)?;
+                write!(f, ": {}", inner_124)?;
             }
         }
         Ok(())
@@ -7684,6 +8044,8 @@ impl aws_smithy_http::result::CreateUnhandledError for AddTagsToResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddTagsToResourceErrorKind {
+    /// <p> <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
+    BlueGreenDeploymentNotFoundFault(crate::error::BlueGreenDeploymentNotFoundFault),
     /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
@@ -7707,6 +8069,7 @@ pub enum AddTagsToResourceErrorKind {
 impl std::fmt::Display for AddTagsToResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            AddTagsToResourceErrorKind::BlueGreenDeploymentNotFoundFault(_inner) => _inner.fmt(f),
             AddTagsToResourceErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             AddTagsToResourceErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
             AddTagsToResourceErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
@@ -7766,6 +8129,13 @@ impl AddTagsToResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::BlueGreenDeploymentNotFoundFault`.
+    pub fn is_blue_green_deployment_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddTagsToResourceErrorKind::BlueGreenDeploymentNotFoundFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
@@ -7805,6 +8175,7 @@ impl AddTagsToResourceError {
 impl std::error::Error for AddTagsToResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            AddTagsToResourceErrorKind::BlueGreenDeploymentNotFoundFault(_inner) => Some(_inner),
             AddTagsToResourceErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             AddTagsToResourceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
             AddTagsToResourceErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
@@ -9124,6 +9495,254 @@ impl std::error::Error for CopyOptionGroupError {
     }
 }
 
+/// Error type for the `CreateBlueGreenDeployment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateBlueGreenDeploymentError {
+    /// Kind of error that occurred.
+    pub kind: CreateBlueGreenDeploymentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateBlueGreenDeploymentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateBlueGreenDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateBlueGreenDeployment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateBlueGreenDeploymentErrorKind {
+    /// <p>A blue/green deployment with the specified name already exists.</p>
+    BlueGreenDeploymentAlreadyExistsFault(crate::error::BlueGreenDeploymentAlreadyExistsFault),
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.</p>
+    DbClusterParameterGroupNotFoundFault(crate::error::DbClusterParameterGroupNotFoundFault),
+    /// <p>The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
+    DbClusterQuotaExceededFault(crate::error::DbClusterQuotaExceededFault),
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    /// <p>The request would result in the user exceeding the allowed number of DB instances.</p>
+    InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
+    /// <p>The requested operation can't be performed while the cluster is in this state.</p>
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    /// <p>The DB instance isn't in a valid state.</p>
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
+    /// <p>The source DB cluster isn't supported for a blue/green deployment.</p>
+    SourceClusterNotSupportedFault(crate::error::SourceClusterNotSupportedFault),
+    /// <p>The source DB instance isn't supported for a blue/green deployment.</p>
+    SourceDatabaseNotSupportedFault(crate::error::SourceDatabaseNotSupportedFault),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateBlueGreenDeploymentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateBlueGreenDeploymentErrorKind::BlueGreenDeploymentAlreadyExistsFault(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateBlueGreenDeploymentErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            CreateBlueGreenDeploymentErrorKind::DbClusterParameterGroupNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateBlueGreenDeploymentErrorKind::DbClusterQuotaExceededFault(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateBlueGreenDeploymentErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            CreateBlueGreenDeploymentErrorKind::DbParameterGroupNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateBlueGreenDeploymentErrorKind::InstanceQuotaExceededFault(_inner) => _inner.fmt(f),
+            CreateBlueGreenDeploymentErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            CreateBlueGreenDeploymentErrorKind::InvalidDbInstanceStateFault(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateBlueGreenDeploymentErrorKind::SourceClusterNotSupportedFault(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateBlueGreenDeploymentErrorKind::SourceDatabaseNotSupportedFault(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateBlueGreenDeploymentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateBlueGreenDeploymentError {
+    fn code(&self) -> Option<&str> {
+        CreateBlueGreenDeploymentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateBlueGreenDeploymentError {
+    /// Creates a new `CreateBlueGreenDeploymentError`.
+    pub fn new(kind: CreateBlueGreenDeploymentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateBlueGreenDeploymentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateBlueGreenDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateBlueGreenDeploymentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateBlueGreenDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateBlueGreenDeploymentErrorKind::BlueGreenDeploymentAlreadyExistsFault`.
+    pub fn is_blue_green_deployment_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBlueGreenDeploymentErrorKind::BlueGreenDeploymentAlreadyExistsFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBlueGreenDeploymentErrorKind::DbClusterNotFoundFault`.
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBlueGreenDeploymentErrorKind::DbClusterNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBlueGreenDeploymentErrorKind::DbClusterParameterGroupNotFoundFault`.
+    pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBlueGreenDeploymentErrorKind::DbClusterParameterGroupNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBlueGreenDeploymentErrorKind::DbClusterQuotaExceededFault`.
+    pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBlueGreenDeploymentErrorKind::DbClusterQuotaExceededFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBlueGreenDeploymentErrorKind::DbInstanceNotFoundFault`.
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBlueGreenDeploymentErrorKind::DbInstanceNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBlueGreenDeploymentErrorKind::DbParameterGroupNotFoundFault`.
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBlueGreenDeploymentErrorKind::DbParameterGroupNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBlueGreenDeploymentErrorKind::InstanceQuotaExceededFault`.
+    pub fn is_instance_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBlueGreenDeploymentErrorKind::InstanceQuotaExceededFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBlueGreenDeploymentErrorKind::InvalidDbClusterStateFault`.
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBlueGreenDeploymentErrorKind::InvalidDbClusterStateFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBlueGreenDeploymentErrorKind::InvalidDbInstanceStateFault`.
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBlueGreenDeploymentErrorKind::InvalidDbInstanceStateFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBlueGreenDeploymentErrorKind::SourceClusterNotSupportedFault`.
+    pub fn is_source_cluster_not_supported_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBlueGreenDeploymentErrorKind::SourceClusterNotSupportedFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBlueGreenDeploymentErrorKind::SourceDatabaseNotSupportedFault`.
+    pub fn is_source_database_not_supported_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBlueGreenDeploymentErrorKind::SourceDatabaseNotSupportedFault(_)
+        )
+    }
+}
+impl std::error::Error for CreateBlueGreenDeploymentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateBlueGreenDeploymentErrorKind::BlueGreenDeploymentAlreadyExistsFault(_inner) => {
+                Some(_inner)
+            }
+            CreateBlueGreenDeploymentErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            CreateBlueGreenDeploymentErrorKind::DbClusterParameterGroupNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            CreateBlueGreenDeploymentErrorKind::DbClusterQuotaExceededFault(_inner) => Some(_inner),
+            CreateBlueGreenDeploymentErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            CreateBlueGreenDeploymentErrorKind::DbParameterGroupNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            CreateBlueGreenDeploymentErrorKind::InstanceQuotaExceededFault(_inner) => Some(_inner),
+            CreateBlueGreenDeploymentErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            CreateBlueGreenDeploymentErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
+            CreateBlueGreenDeploymentErrorKind::SourceClusterNotSupportedFault(_inner) => {
+                Some(_inner)
+            }
+            CreateBlueGreenDeploymentErrorKind::SourceDatabaseNotSupportedFault(_inner) => {
+                Some(_inner)
+            }
+            CreateBlueGreenDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `CreateCustomDBEngineVersion` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9151,6 +9770,8 @@ pub enum CreateCustomDBEngineVersionErrorKind {
     CustomDbEngineVersionAlreadyExistsFault(crate::error::CustomDbEngineVersionAlreadyExistsFault),
     /// <p>You have exceeded your CEV quota.</p>
     CustomDbEngineVersionQuotaExceededFault(crate::error::CustomDbEngineVersionQuotaExceededFault),
+    /// <p>The AMI configuration prerequisite has not been met.</p>
+    Ec2ImagePropertiesNotSupportedFault(crate::error::Ec2ImagePropertiesNotSupportedFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     ///
@@ -9172,6 +9793,9 @@ impl std::fmt::Display for CreateCustomDBEngineVersionError {
             CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionQuotaExceededFault(
                 _inner,
             ) => _inner.fmt(f),
+            CreateCustomDBEngineVersionErrorKind::Ec2ImagePropertiesNotSupportedFault(_inner) => {
+                _inner.fmt(f)
+            }
             CreateCustomDBEngineVersionErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             CreateCustomDBEngineVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -9245,6 +9869,13 @@ impl CreateCustomDBEngineVersionError {
             CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionQuotaExceededFault(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateCustomDBEngineVersionErrorKind::Ec2ImagePropertiesNotSupportedFault`.
+    pub fn is_ec2_image_properties_not_supported_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomDBEngineVersionErrorKind::Ec2ImagePropertiesNotSupportedFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateCustomDBEngineVersionErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
@@ -9262,6 +9893,9 @@ impl std::error::Error for CreateCustomDBEngineVersionError {
             CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionQuotaExceededFault(
                 _inner,
             ) => Some(_inner),
+            CreateCustomDBEngineVersionErrorKind::Ec2ImagePropertiesNotSupportedFault(_inner) => {
+                Some(_inner)
+            }
             CreateCustomDBEngineVersionErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             CreateCustomDBEngineVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
@@ -10063,6 +10697,8 @@ pub enum CreateDBInstanceErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     #[deprecated(note = "Please avoid using this fault")]
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
+    /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
+    CertificateNotFoundFault(crate::error::CertificateNotFoundFault),
     /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
@@ -10114,6 +10750,7 @@ impl std::fmt::Display for CreateDBInstanceError {
         match &self.kind {
             CreateDBInstanceErrorKind::AuthorizationNotFoundFault(_inner) => _inner.fmt(f),
             CreateDBInstanceErrorKind::BackupPolicyNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBInstanceErrorKind::CertificateNotFoundFault(_inner) => _inner.fmt(f),
             CreateDBInstanceErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             CreateDBInstanceErrorKind::DbInstanceAlreadyExistsFault(_inner) => _inner.fmt(f),
             CreateDBInstanceErrorKind::DbParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
@@ -10200,6 +10837,13 @@ impl CreateDBInstanceError {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::BackupPolicyNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::CertificateNotFoundFault`.
+    pub fn is_certificate_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::CertificateNotFoundFault(_)
         )
     }
     /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::DbClusterNotFoundFault`.
@@ -10331,6 +10975,7 @@ impl std::error::Error for CreateDBInstanceError {
         match &self.kind {
             CreateDBInstanceErrorKind::AuthorizationNotFoundFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::BackupPolicyNotFoundFault(_inner) => Some(_inner),
+            CreateDBInstanceErrorKind::CertificateNotFoundFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::DbInstanceAlreadyExistsFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::DbParameterGroupNotFoundFault(_inner) => Some(_inner),
@@ -12032,6 +12677,139 @@ impl std::error::Error for CreateOptionGroupError {
             CreateOptionGroupErrorKind::OptionGroupAlreadyExistsFault(_inner) => Some(_inner),
             CreateOptionGroupErrorKind::OptionGroupQuotaExceededFault(_inner) => Some(_inner),
             CreateOptionGroupErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeleteBlueGreenDeployment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteBlueGreenDeploymentError {
+    /// Kind of error that occurred.
+    pub kind: DeleteBlueGreenDeploymentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteBlueGreenDeploymentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteBlueGreenDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteBlueGreenDeployment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteBlueGreenDeploymentErrorKind {
+    /// <p> <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
+    BlueGreenDeploymentNotFoundFault(crate::error::BlueGreenDeploymentNotFoundFault),
+    /// <p>The blue/green deployment can't be switched over or deleted because there is an invalid configuration in the green environment.</p>
+    InvalidBlueGreenDeploymentStateFault(crate::error::InvalidBlueGreenDeploymentStateFault),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteBlueGreenDeploymentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteBlueGreenDeploymentErrorKind::BlueGreenDeploymentNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteBlueGreenDeploymentErrorKind::InvalidBlueGreenDeploymentStateFault(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteBlueGreenDeploymentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteBlueGreenDeploymentError {
+    fn code(&self) -> Option<&str> {
+        DeleteBlueGreenDeploymentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteBlueGreenDeploymentError {
+    /// Creates a new `DeleteBlueGreenDeploymentError`.
+    pub fn new(kind: DeleteBlueGreenDeploymentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteBlueGreenDeploymentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteBlueGreenDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteBlueGreenDeploymentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteBlueGreenDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteBlueGreenDeploymentErrorKind::BlueGreenDeploymentNotFoundFault`.
+    pub fn is_blue_green_deployment_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBlueGreenDeploymentErrorKind::BlueGreenDeploymentNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteBlueGreenDeploymentErrorKind::InvalidBlueGreenDeploymentStateFault`.
+    pub fn is_invalid_blue_green_deployment_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBlueGreenDeploymentErrorKind::InvalidBlueGreenDeploymentStateFault(_)
+        )
+    }
+}
+impl std::error::Error for DeleteBlueGreenDeploymentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteBlueGreenDeploymentErrorKind::BlueGreenDeploymentNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            DeleteBlueGreenDeploymentErrorKind::InvalidBlueGreenDeploymentStateFault(_inner) => {
+                Some(_inner)
+            }
+            DeleteBlueGreenDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14402,6 +15180,124 @@ impl std::error::Error for DescribeAccountAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeAccountAttributesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeBlueGreenDeployments` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeBlueGreenDeploymentsError {
+    /// Kind of error that occurred.
+    pub kind: DescribeBlueGreenDeploymentsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeBlueGreenDeploymentsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeBlueGreenDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeBlueGreenDeployments` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeBlueGreenDeploymentsErrorKind {
+    /// <p> <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
+    BlueGreenDeploymentNotFoundFault(crate::error::BlueGreenDeploymentNotFoundFault),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeBlueGreenDeploymentsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeBlueGreenDeploymentsErrorKind::BlueGreenDeploymentNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeBlueGreenDeploymentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeBlueGreenDeploymentsError {
+    fn code(&self) -> Option<&str> {
+        DescribeBlueGreenDeploymentsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeBlueGreenDeploymentsError {
+    /// Creates a new `DescribeBlueGreenDeploymentsError`.
+    pub fn new(kind: DescribeBlueGreenDeploymentsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeBlueGreenDeploymentsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeBlueGreenDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeBlueGreenDeploymentsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeBlueGreenDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeBlueGreenDeploymentsErrorKind::BlueGreenDeploymentNotFoundFault`.
+    pub fn is_blue_green_deployment_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBlueGreenDeploymentsErrorKind::BlueGreenDeploymentNotFoundFault(_)
+        )
+    }
+}
+impl std::error::Error for DescribeBlueGreenDeploymentsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeBlueGreenDeploymentsErrorKind::BlueGreenDeploymentNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            DescribeBlueGreenDeploymentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19082,6 +19978,8 @@ impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
+    /// <p> <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
+    BlueGreenDeploymentNotFoundFault(crate::error::BlueGreenDeploymentNotFoundFault),
     /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
@@ -19105,6 +20003,7 @@ pub enum ListTagsForResourceErrorKind {
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListTagsForResourceErrorKind::BlueGreenDeploymentNotFoundFault(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
@@ -19164,6 +20063,13 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BlueGreenDeploymentNotFoundFault`.
+    pub fn is_blue_green_deployment_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::BlueGreenDeploymentNotFoundFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
@@ -19203,6 +20109,7 @@ impl ListTagsForResourceError {
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListTagsForResourceErrorKind::BlueGreenDeploymentNotFoundFault(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
@@ -23550,6 +24457,8 @@ impl aws_smithy_http::result::CreateUnhandledError for RemoveTagsFromResourceErr
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsFromResourceErrorKind {
+    /// <p> <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
+    BlueGreenDeploymentNotFoundFault(crate::error::BlueGreenDeploymentNotFoundFault),
     /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
@@ -23573,6 +24482,9 @@ pub enum RemoveTagsFromResourceErrorKind {
 impl std::fmt::Display for RemoveTagsFromResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            RemoveTagsFromResourceErrorKind::BlueGreenDeploymentNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
             RemoveTagsFromResourceErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             RemoveTagsFromResourceErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
             RemoveTagsFromResourceErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
@@ -23638,6 +24550,13 @@ impl RemoveTagsFromResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::BlueGreenDeploymentNotFoundFault`.
+    pub fn is_blue_green_deployment_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromResourceErrorKind::BlueGreenDeploymentNotFoundFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
@@ -23677,6 +24596,9 @@ impl RemoveTagsFromResourceError {
 impl std::error::Error for RemoveTagsFromResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            RemoveTagsFromResourceErrorKind::BlueGreenDeploymentNotFoundFault(_inner) => {
+                Some(_inner)
+            }
             RemoveTagsFromResourceErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             RemoveTagsFromResourceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
             RemoveTagsFromResourceErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
@@ -24257,6 +25179,8 @@ pub enum RestoreDBClusterFromSnapshotErrorKind {
     InsufficientStorageClusterCapacityFault(crate::error::InsufficientStorageClusterCapacityFault),
     /// <p>The supplied value isn't a valid DB cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
+    /// <p>The DB instance isn't in a valid state.</p>
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// <p>The state of the DB snapshot doesn't allow deletion.</p>
     InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
     /// <p>Cannot restore from VPC backup to non-VPC DB instance.</p>
@@ -24308,6 +25232,9 @@ impl std::fmt::Display for RestoreDBClusterFromSnapshotError {
                 _inner,
             ) => _inner.fmt(f),
             RestoreDBClusterFromSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => {
+                _inner.fmt(f)
+            }
+            RestoreDBClusterFromSnapshotErrorKind::InvalidDbInstanceStateFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBClusterFromSnapshotErrorKind::InvalidDbSnapshotStateFault(_inner) => {
@@ -24455,6 +25382,13 @@ impl RestoreDBClusterFromSnapshotError {
             RestoreDBClusterFromSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_)
         )
     }
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InvalidDbInstanceStateFault`.
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::InvalidDbInstanceStateFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InvalidDbSnapshotStateFault`.
     pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
         matches!(
@@ -24532,6 +25466,9 @@ impl std::error::Error for RestoreDBClusterFromSnapshotError {
                 _inner,
             ) => Some(_inner),
             RestoreDBClusterFromSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => {
+                Some(_inner)
+            }
+            RestoreDBClusterFromSnapshotErrorKind::InvalidDbInstanceStateFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBClusterFromSnapshotErrorKind::InvalidDbSnapshotStateFault(_inner) => {
@@ -24941,6 +25878,8 @@ pub enum RestoreDBInstanceFromDBSnapshotErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     #[deprecated(note = "Please avoid using this fault")]
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
+    DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
     /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
@@ -24996,6 +25935,9 @@ impl std::fmt::Display for RestoreDBInstanceFromDBSnapshotError {
                 _inner.fmt(f)
             }
             RestoreDBInstanceFromDBSnapshotErrorKind::BackupPolicyNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBInstanceFromDBSnapshotErrorKind::DbInstanceAlreadyExistsFault(_inner) => {
@@ -25122,6 +26064,13 @@ impl RestoreDBInstanceFromDBSnapshotError {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::BackupPolicyNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DbClusterSnapshotNotFoundFault`.
+    pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
     /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DbInstanceAlreadyExistsFault`.
@@ -25265,6 +26214,9 @@ impl std::error::Error for RestoreDBInstanceFromDBSnapshotError {
                 Some(_inner)
             }
             RestoreDBInstanceFromDBSnapshotErrorKind::BackupPolicyNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBInstanceFromDBSnapshotErrorKind::DbInstanceAlreadyExistsFault(_inner) => {
@@ -26944,6 +27896,8 @@ impl aws_smithy_http::result::CreateUnhandledError for StartExportTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartExportTaskErrorKind {
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
@@ -26975,6 +27929,7 @@ pub enum StartExportTaskErrorKind {
 impl std::fmt::Display for StartExportTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            StartExportTaskErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             StartExportTaskErrorKind::DbClusterSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             StartExportTaskErrorKind::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             StartExportTaskErrorKind::ExportTaskAlreadyExistsFault(_inner) => _inner.fmt(f),
@@ -27037,6 +27992,13 @@ impl StartExportTaskError {
     /// Returns the error code if it's available.
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::DbClusterNotFoundFault`.
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExportTaskErrorKind::DbClusterNotFoundFault(_)
+        )
     }
     /// Returns `true` if the error kind is `StartExportTaskErrorKind::DbClusterSnapshotNotFoundFault`.
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
@@ -27105,6 +28067,7 @@ impl StartExportTaskError {
 impl std::error::Error for StartExportTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            StartExportTaskErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             StartExportTaskErrorKind::DbClusterSnapshotNotFoundFault(_inner) => Some(_inner),
             StartExportTaskErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
             StartExportTaskErrorKind::ExportTaskAlreadyExistsFault(_inner) => Some(_inner),
@@ -27687,6 +28650,142 @@ impl std::error::Error for StopDBInstanceAutomatedBackupsReplicationError {
                 _inner,
             ) => Some(_inner),
             StopDBInstanceAutomatedBackupsReplicationErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `SwitchoverBlueGreenDeployment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SwitchoverBlueGreenDeploymentError {
+    /// Kind of error that occurred.
+    pub kind: SwitchoverBlueGreenDeploymentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SwitchoverBlueGreenDeploymentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SwitchoverBlueGreenDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `SwitchoverBlueGreenDeployment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SwitchoverBlueGreenDeploymentErrorKind {
+    /// <p> <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
+    BlueGreenDeploymentNotFoundFault(crate::error::BlueGreenDeploymentNotFoundFault),
+    /// <p>The blue/green deployment can't be switched over or deleted because there is an invalid configuration in the green environment.</p>
+    InvalidBlueGreenDeploymentStateFault(crate::error::InvalidBlueGreenDeploymentStateFault),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for SwitchoverBlueGreenDeploymentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SwitchoverBlueGreenDeploymentErrorKind::BlueGreenDeploymentNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            SwitchoverBlueGreenDeploymentErrorKind::InvalidBlueGreenDeploymentStateFault(
+                _inner,
+            ) => _inner.fmt(f),
+            SwitchoverBlueGreenDeploymentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SwitchoverBlueGreenDeploymentError {
+    fn code(&self) -> Option<&str> {
+        SwitchoverBlueGreenDeploymentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SwitchoverBlueGreenDeploymentError {
+    /// Creates a new `SwitchoverBlueGreenDeploymentError`.
+    pub fn new(
+        kind: SwitchoverBlueGreenDeploymentErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SwitchoverBlueGreenDeploymentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SwitchoverBlueGreenDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SwitchoverBlueGreenDeploymentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SwitchoverBlueGreenDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SwitchoverBlueGreenDeploymentErrorKind::BlueGreenDeploymentNotFoundFault`.
+    pub fn is_blue_green_deployment_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            SwitchoverBlueGreenDeploymentErrorKind::BlueGreenDeploymentNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SwitchoverBlueGreenDeploymentErrorKind::InvalidBlueGreenDeploymentStateFault`.
+    pub fn is_invalid_blue_green_deployment_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            SwitchoverBlueGreenDeploymentErrorKind::InvalidBlueGreenDeploymentStateFault(_)
+        )
+    }
+}
+impl std::error::Error for SwitchoverBlueGreenDeploymentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SwitchoverBlueGreenDeploymentErrorKind::BlueGreenDeploymentNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            SwitchoverBlueGreenDeploymentErrorKind::InvalidBlueGreenDeploymentStateFault(
+                _inner,
+            ) => Some(_inner),
+            SwitchoverBlueGreenDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

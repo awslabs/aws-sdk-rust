@@ -112,7 +112,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`device_ids(Vec<String>)`](crate::client::fluent_builders::CreateJobForDevices::device_ids) / [`set_device_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateJobForDevices::set_device_ids): <p>IDs of target devices.</p>
-    ///   - [`device_job_config(DeviceJobConfig)`](crate::client::fluent_builders::CreateJobForDevices::device_job_config) / [`set_device_job_config(Option<DeviceJobConfig>)`](crate::client::fluent_builders::CreateJobForDevices::set_device_job_config): <p>Configuration settings for the job.</p>
+    ///   - [`device_job_config(DeviceJobConfig)`](crate::client::fluent_builders::CreateJobForDevices::device_job_config) / [`set_device_job_config(Option<DeviceJobConfig>)`](crate::client::fluent_builders::CreateJobForDevices::set_device_job_config): <p>Configuration settings for a software update job.</p>
     ///   - [`job_type(JobType)`](crate::client::fluent_builders::CreateJobForDevices::job_type) / [`set_job_type(Option<JobType>)`](crate::client::fluent_builders::CreateJobForDevices::set_job_type): <p>The type of job to run.</p>
     /// - On success, responds with [`CreateJobForDevicesOutput`](crate::output::CreateJobForDevicesOutput) with field(s):
     ///   - [`jobs(Option<Vec<Job>>)`](crate::output::CreateJobForDevicesOutput::jobs): <p>A list of jobs.</p>
@@ -217,6 +217,7 @@ impl Client {
     ///   - [`application_instance_id(Option<String>)`](crate::output::DescribeApplicationInstanceOutput::application_instance_id): <p>The application instance's ID.</p>
     ///   - [`arn(Option<String>)`](crate::output::DescribeApplicationInstanceOutput::arn): <p>The application instance's ARN.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeApplicationInstanceOutput::tags): <p>The application instance's tags.</p>
+    ///   - [`runtime_context_states(Option<Vec<ReportedRuntimeContextState>>)`](crate::output::DescribeApplicationInstanceOutput::runtime_context_states): <p>The application instance's state.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationInstanceError>`](crate::error::DescribeApplicationInstanceError)
     pub fn describe_application_instance(&self) -> fluent_builders::DescribeApplicationInstance {
         fluent_builders::DescribeApplicationInstance::new(self.handle.clone())
@@ -282,6 +283,7 @@ impl Client {
     ///   - [`image_version(Option<String>)`](crate::output::DescribeDeviceJobOutput::image_version): <p>For an OTA job, the target version of the device software.</p>
     ///   - [`status(Option<UpdateProgress>)`](crate::output::DescribeDeviceJobOutput::status): <p>The job's status.</p>
     ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeDeviceJobOutput::created_time): <p>When the job was created.</p>
+    ///   - [`job_type(Option<JobType>)`](crate::output::DescribeDeviceJobOutput::job_type): <p>The job's type.</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceJobError>`](crate::error::DescribeDeviceJobError)
     pub fn describe_device_job(&self) -> fluent_builders::DescribeDeviceJob {
         fluent_builders::DescribeDeviceJob::new(self.handle.clone())
@@ -576,6 +578,19 @@ impl Client {
     pub fn remove_application_instance(&self) -> fluent_builders::RemoveApplicationInstance {
         fluent_builders::RemoveApplicationInstance::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`SignalApplicationInstanceNodeInstances`](crate::client::fluent_builders::SignalApplicationInstanceNodeInstances) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`application_instance_id(impl Into<String>)`](crate::client::fluent_builders::SignalApplicationInstanceNodeInstances::application_instance_id) / [`set_application_instance_id(Option<String>)`](crate::client::fluent_builders::SignalApplicationInstanceNodeInstances::set_application_instance_id): <p>An application instance ID.</p>
+    ///   - [`node_signals(Vec<NodeSignal>)`](crate::client::fluent_builders::SignalApplicationInstanceNodeInstances::node_signals) / [`set_node_signals(Option<Vec<NodeSignal>>)`](crate::client::fluent_builders::SignalApplicationInstanceNodeInstances::set_node_signals): <p>A list of signals.</p>
+    /// - On success, responds with [`SignalApplicationInstanceNodeInstancesOutput`](crate::output::SignalApplicationInstanceNodeInstancesOutput) with field(s):
+    ///   - [`application_instance_id(Option<String>)`](crate::output::SignalApplicationInstanceNodeInstancesOutput::application_instance_id): <p>An application instance ID.</p>
+    /// - On failure, responds with [`SdkError<SignalApplicationInstanceNodeInstancesError>`](crate::error::SignalApplicationInstanceNodeInstancesError)
+    pub fn signal_application_instance_node_instances(
+        &self,
+    ) -> fluent_builders::SignalApplicationInstanceNodeInstances {
+        fluent_builders::SignalApplicationInstanceNodeInstances::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -799,7 +814,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateJobForDevices`.
     ///
-    /// <p>Creates a job to run on one or more devices.</p>
+    /// <p>Creates a job to run on one or more devices. A job can update a device's software or reboot it.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateJobForDevices {
         handle: std::sync::Arc<super::Handle>,
@@ -876,12 +891,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_ids(input);
             self
         }
-        /// <p>Configuration settings for the job.</p>
+        /// <p>Configuration settings for a software update job.</p>
         pub fn device_job_config(mut self, input: crate::model::DeviceJobConfig) -> Self {
             self.inner = self.inner.device_job_config(input);
             self
         }
-        /// <p>Configuration settings for the job.</p>
+        /// <p>Configuration settings for a software update job.</p>
         pub fn set_device_job_config(
             mut self,
             input: std::option::Option<crate::model::DeviceJobConfig>,
@@ -3674,6 +3689,103 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_application_instance_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `SignalApplicationInstanceNodeInstances`.
+    ///
+    /// <p>Signal camera nodes to stop or resume.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct SignalApplicationInstanceNodeInstances {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::signal_application_instance_node_instances_input::Builder,
+    }
+    impl SignalApplicationInstanceNodeInstances {
+        /// Creates a new `SignalApplicationInstanceNodeInstances`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::SignalApplicationInstanceNodeInstances,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::SignalApplicationInstanceNodeInstancesError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SignalApplicationInstanceNodeInstancesOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::SignalApplicationInstanceNodeInstancesError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>An application instance ID.</p>
+        pub fn application_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_instance_id(input.into());
+            self
+        }
+        /// <p>An application instance ID.</p>
+        pub fn set_application_instance_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_instance_id(input);
+            self
+        }
+        /// Appends an item to `NodeSignals`.
+        ///
+        /// To override the contents of this collection use [`set_node_signals`](Self::set_node_signals).
+        ///
+        /// <p>A list of signals.</p>
+        pub fn node_signals(mut self, input: crate::model::NodeSignal) -> Self {
+            self.inner = self.inner.node_signals(input);
+            self
+        }
+        /// <p>A list of signals.</p>
+        pub fn set_node_signals(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::NodeSignal>>,
+        ) -> Self {
+            self.inner = self.inner.set_node_signals(input);
             self
         }
     }

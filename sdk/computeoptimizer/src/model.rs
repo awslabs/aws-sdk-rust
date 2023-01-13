@@ -100,6 +100,159 @@ impl AsRef<str> for Status {
     }
 }
 
+/// <p> Describes the external metrics preferences for EC2 rightsizing recommendations. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ExternalMetricsPreference {
+    /// <p> Contains the source options for external metrics preferences. </p>
+    #[doc(hidden)]
+    pub source: std::option::Option<crate::model::ExternalMetricsSource>,
+}
+impl ExternalMetricsPreference {
+    /// <p> Contains the source options for external metrics preferences. </p>
+    pub fn source(&self) -> std::option::Option<&crate::model::ExternalMetricsSource> {
+        self.source.as_ref()
+    }
+}
+/// See [`ExternalMetricsPreference`](crate::model::ExternalMetricsPreference).
+pub mod external_metrics_preference {
+
+    /// A builder for [`ExternalMetricsPreference`](crate::model::ExternalMetricsPreference).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source: std::option::Option<crate::model::ExternalMetricsSource>,
+    }
+    impl Builder {
+        /// <p> Contains the source options for external metrics preferences. </p>
+        pub fn source(mut self, input: crate::model::ExternalMetricsSource) -> Self {
+            self.source = Some(input);
+            self
+        }
+        /// <p> Contains the source options for external metrics preferences. </p>
+        pub fn set_source(
+            mut self,
+            input: std::option::Option<crate::model::ExternalMetricsSource>,
+        ) -> Self {
+            self.source = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExternalMetricsPreference`](crate::model::ExternalMetricsPreference).
+        pub fn build(self) -> crate::model::ExternalMetricsPreference {
+            crate::model::ExternalMetricsPreference {
+                source: self.source,
+            }
+        }
+    }
+}
+impl ExternalMetricsPreference {
+    /// Creates a new builder-style object to manufacture [`ExternalMetricsPreference`](crate::model::ExternalMetricsPreference).
+    pub fn builder() -> crate::model::external_metrics_preference::Builder {
+        crate::model::external_metrics_preference::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ExternalMetricsSource`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let externalmetricssource = unimplemented!();
+/// match externalmetricssource {
+///     ExternalMetricsSource::Datadog => { /* ... */ },
+///     ExternalMetricsSource::Dynatrace => { /* ... */ },
+///     ExternalMetricsSource::Instana => { /* ... */ },
+///     ExternalMetricsSource::Newrelic => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `externalmetricssource` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ExternalMetricsSource::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ExternalMetricsSource::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ExternalMetricsSource::NewFeature` is defined.
+/// Specifically, when `externalmetricssource` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ExternalMetricsSource::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExternalMetricsSource {
+    #[allow(missing_docs)] // documentation missing in model
+    Datadog,
+    #[allow(missing_docs)] // documentation missing in model
+    Dynatrace,
+    #[allow(missing_docs)] // documentation missing in model
+    Instana,
+    #[allow(missing_docs)] // documentation missing in model
+    Newrelic,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ExternalMetricsSource {
+    fn from(s: &str) -> Self {
+        match s {
+            "Datadog" => ExternalMetricsSource::Datadog,
+            "Dynatrace" => ExternalMetricsSource::Dynatrace,
+            "Instana" => ExternalMetricsSource::Instana,
+            "NewRelic" => ExternalMetricsSource::Newrelic,
+            other => {
+                ExternalMetricsSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for ExternalMetricsSource {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExternalMetricsSource::from(s))
+    }
+}
+impl ExternalMetricsSource {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExternalMetricsSource::Datadog => "Datadog",
+            ExternalMetricsSource::Dynatrace => "Dynatrace",
+            ExternalMetricsSource::Instana => "Instana",
+            ExternalMetricsSource::Newrelic => "NewRelic",
+            ExternalMetricsSource::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["Datadog", "Dynatrace", "Instana", "NewRelic"]
+    }
+}
+impl AsRef<str> for ExternalMetricsSource {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// When writing a match expression against `InferredWorkloadTypesPreference`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
 /// feature that is supported by the service but has not been represented as an enum
@@ -516,6 +669,7 @@ impl AsRef<str> for ScopeName {
 ///     ResourceType::AutoScalingGroup => { /* ... */ },
 ///     ResourceType::EbsVolume => { /* ... */ },
 ///     ResourceType::Ec2Instance => { /* ... */ },
+///     ResourceType::EcsService => { /* ... */ },
 ///     ResourceType::LambdaFunction => { /* ... */ },
 ///     ResourceType::NotApplicable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -558,6 +712,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Ec2Instance,
     #[allow(missing_docs)] // documentation missing in model
+    EcsService,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunction,
     #[allow(missing_docs)] // documentation missing in model
     NotApplicable,
@@ -570,6 +726,7 @@ impl std::convert::From<&str> for ResourceType {
             "AutoScalingGroup" => ResourceType::AutoScalingGroup,
             "EbsVolume" => ResourceType::EbsVolume,
             "Ec2Instance" => ResourceType::Ec2Instance,
+            "EcsService" => ResourceType::EcsService,
             "LambdaFunction" => ResourceType::LambdaFunction,
             "NotApplicable" => ResourceType::NotApplicable,
             other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
@@ -590,6 +747,7 @@ impl ResourceType {
             ResourceType::AutoScalingGroup => "AutoScalingGroup",
             ResourceType::EbsVolume => "EbsVolume",
             ResourceType::Ec2Instance => "Ec2Instance",
+            ResourceType::EcsService => "EcsService",
             ResourceType::LambdaFunction => "LambdaFunction",
             ResourceType::NotApplicable => "NotApplicable",
             ResourceType::Unknown(value) => value.as_str(),
@@ -601,6 +759,7 @@ impl ResourceType {
             "AutoScalingGroup",
             "EbsVolume",
             "Ec2Instance",
+            "EcsService",
             "LambdaFunction",
             "NotApplicable",
         ]
@@ -1130,6 +1289,7 @@ impl AsRef<str> for Currency {
 ///     RecommendationSourceType::AutoScalingGroup => { /* ... */ },
 ///     RecommendationSourceType::EbsVolume => { /* ... */ },
 ///     RecommendationSourceType::Ec2Instance => { /* ... */ },
+///     RecommendationSourceType::EcsService => { /* ... */ },
 ///     RecommendationSourceType::LambdaFunction => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -1171,6 +1331,8 @@ pub enum RecommendationSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Ec2Instance,
     #[allow(missing_docs)] // documentation missing in model
+    EcsService,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunction,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
@@ -1181,6 +1343,7 @@ impl std::convert::From<&str> for RecommendationSourceType {
             "AutoScalingGroup" => RecommendationSourceType::AutoScalingGroup,
             "EbsVolume" => RecommendationSourceType::EbsVolume,
             "Ec2Instance" => RecommendationSourceType::Ec2Instance,
+            "EcsService" => RecommendationSourceType::EcsService,
             "LambdaFunction" => RecommendationSourceType::LambdaFunction,
             other => RecommendationSourceType::Unknown(crate::types::UnknownVariantValue(
                 other.to_owned(),
@@ -1202,6 +1365,7 @@ impl RecommendationSourceType {
             RecommendationSourceType::AutoScalingGroup => "AutoScalingGroup",
             RecommendationSourceType::EbsVolume => "EbsVolume",
             RecommendationSourceType::Ec2Instance => "Ec2Instance",
+            RecommendationSourceType::EcsService => "EcsService",
             RecommendationSourceType::LambdaFunction => "LambdaFunction",
             RecommendationSourceType::Unknown(value) => value.as_str(),
         }
@@ -1212,6 +1376,7 @@ impl RecommendationSourceType {
             "AutoScalingGroup",
             "EbsVolume",
             "Ec2Instance",
+            "EcsService",
             "LambdaFunction",
         ]
     }
@@ -1598,15 +1763,19 @@ pub struct RecommendationPreferencesDetail {
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
-    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    /// <p>When the recommendations page is refreshed, a status of <code>Active</code> confirms that the preference is applied to the recommendations, and a status of <code>Inactive</code> confirms that the preference isn't yet applied to recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     #[doc(hidden)]
     pub enhanced_infrastructure_metrics:
         std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
     /// <p>The status of the inferred workload types recommendation preference.</p>
-    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    /// <p>When the recommendations page is refreshed, a status of <code>Active</code> confirms that the preference is applied to the recommendations, and a status of <code>Inactive</code> confirms that the preference isn't yet applied to recommendations.</p>
     #[doc(hidden)]
     pub inferred_workload_types: std::option::Option<crate::model::InferredWorkloadTypesPreference>,
+    /// <p> An object that describes the external metrics recommendation preference. </p>
+    /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+    #[doc(hidden)]
+    pub external_metrics_preference: std::option::Option<crate::model::ExternalMetricsPreference>,
 }
 impl RecommendationPreferencesDetail {
     /// <p>An object that describes the scope of the recommendation preference.</p>
@@ -1620,7 +1789,7 @@ impl RecommendationPreferencesDetail {
         self.resource_type.as_ref()
     }
     /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
-    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    /// <p>When the recommendations page is refreshed, a status of <code>Active</code> confirms that the preference is applied to the recommendations, and a status of <code>Inactive</code> confirms that the preference isn't yet applied to recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fn enhanced_infrastructure_metrics(
         &self,
@@ -1628,11 +1797,18 @@ impl RecommendationPreferencesDetail {
         self.enhanced_infrastructure_metrics.as_ref()
     }
     /// <p>The status of the inferred workload types recommendation preference.</p>
-    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    /// <p>When the recommendations page is refreshed, a status of <code>Active</code> confirms that the preference is applied to the recommendations, and a status of <code>Inactive</code> confirms that the preference isn't yet applied to recommendations.</p>
     pub fn inferred_workload_types(
         &self,
     ) -> std::option::Option<&crate::model::InferredWorkloadTypesPreference> {
         self.inferred_workload_types.as_ref()
+    }
+    /// <p> An object that describes the external metrics recommendation preference. </p>
+    /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+    pub fn external_metrics_preference(
+        &self,
+    ) -> std::option::Option<&crate::model::ExternalMetricsPreference> {
+        self.external_metrics_preference.as_ref()
     }
 }
 /// See [`RecommendationPreferencesDetail`](crate::model::RecommendationPreferencesDetail).
@@ -1647,6 +1823,8 @@ pub mod recommendation_preferences_detail {
             std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
         pub(crate) inferred_workload_types:
             std::option::Option<crate::model::InferredWorkloadTypesPreference>,
+        pub(crate) external_metrics_preference:
+            std::option::Option<crate::model::ExternalMetricsPreference>,
     }
     impl Builder {
         /// <p>An object that describes the scope of the recommendation preference.</p>
@@ -1677,7 +1855,7 @@ pub mod recommendation_preferences_detail {
             self
         }
         /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
-        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+        /// <p>When the recommendations page is refreshed, a status of <code>Active</code> confirms that the preference is applied to the recommendations, and a status of <code>Inactive</code> confirms that the preference isn't yet applied to recommendations.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
         pub fn enhanced_infrastructure_metrics(
             mut self,
@@ -1687,7 +1865,7 @@ pub mod recommendation_preferences_detail {
             self
         }
         /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
-        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+        /// <p>When the recommendations page is refreshed, a status of <code>Active</code> confirms that the preference is applied to the recommendations, and a status of <code>Inactive</code> confirms that the preference isn't yet applied to recommendations.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
         pub fn set_enhanced_infrastructure_metrics(
             mut self,
@@ -1697,7 +1875,7 @@ pub mod recommendation_preferences_detail {
             self
         }
         /// <p>The status of the inferred workload types recommendation preference.</p>
-        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+        /// <p>When the recommendations page is refreshed, a status of <code>Active</code> confirms that the preference is applied to the recommendations, and a status of <code>Inactive</code> confirms that the preference isn't yet applied to recommendations.</p>
         pub fn inferred_workload_types(
             mut self,
             input: crate::model::InferredWorkloadTypesPreference,
@@ -1706,12 +1884,30 @@ pub mod recommendation_preferences_detail {
             self
         }
         /// <p>The status of the inferred workload types recommendation preference.</p>
-        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+        /// <p>When the recommendations page is refreshed, a status of <code>Active</code> confirms that the preference is applied to the recommendations, and a status of <code>Inactive</code> confirms that the preference isn't yet applied to recommendations.</p>
         pub fn set_inferred_workload_types(
             mut self,
             input: std::option::Option<crate::model::InferredWorkloadTypesPreference>,
         ) -> Self {
             self.inferred_workload_types = input;
+            self
+        }
+        /// <p> An object that describes the external metrics recommendation preference. </p>
+        /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+        pub fn external_metrics_preference(
+            mut self,
+            input: crate::model::ExternalMetricsPreference,
+        ) -> Self {
+            self.external_metrics_preference = Some(input);
+            self
+        }
+        /// <p> An object that describes the external metrics recommendation preference. </p>
+        /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+        pub fn set_external_metrics_preference(
+            mut self,
+            input: std::option::Option<crate::model::ExternalMetricsPreference>,
+        ) -> Self {
+            self.external_metrics_preference = input;
             self
         }
         /// Consumes the builder and constructs a [`RecommendationPreferencesDetail`](crate::model::RecommendationPreferencesDetail).
@@ -1721,6 +1917,7 @@ pub mod recommendation_preferences_detail {
                 resource_type: self.resource_type,
                 enhanced_infrastructure_metrics: self.enhanced_infrastructure_metrics,
                 inferred_workload_types: self.inferred_workload_types,
+                external_metrics_preference: self.external_metrics_preference,
             }
         }
     }
@@ -3655,6 +3852,2475 @@ impl AsRef<str> for EnrollmentFilterName {
     }
 }
 
+/// <p>Describes an error experienced when getting recommendations.</p>
+/// <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group, or if you request recommendations for an instance of an unsupported instance family.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetRecommendationError {
+    /// <p>The ID of the error.</p>
+    #[doc(hidden)]
+    pub identifier: std::option::Option<std::string::String>,
+    /// <p>The error code.</p>
+    #[doc(hidden)]
+    pub code: std::option::Option<std::string::String>,
+    /// <p>The message, or reason, for the error.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl GetRecommendationError {
+    /// <p>The ID of the error.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The message, or reason, for the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+/// See [`GetRecommendationError`](crate::model::GetRecommendationError).
+pub mod get_recommendation_error {
+
+    /// A builder for [`GetRecommendationError`](crate::model::GetRecommendationError).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) identifier: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the error.</p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identifier = Some(input.into());
+            self
+        }
+        /// <p>The ID of the error.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identifier = input;
+            self
+        }
+        /// <p>The error code.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>The error code.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>The message, or reason, for the error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The message, or reason, for the error.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetRecommendationError`](crate::model::GetRecommendationError).
+        pub fn build(self) -> crate::model::GetRecommendationError {
+            crate::model::GetRecommendationError {
+                identifier: self.identifier,
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl GetRecommendationError {
+    /// Creates a new builder-style object to manufacture [`GetRecommendationError`](crate::model::GetRecommendationError).
+    pub fn builder() -> crate::model::get_recommendation_error::Builder {
+        crate::model::get_recommendation_error::Builder::default()
+    }
+}
+
+/// <p> Describes an Amazon ECS service recommendation. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EcsServiceRecommendation {
+    /// <p> The Amazon Resource Name (ARN) of the current ECS service. </p>
+    /// <p> The following is the format of the ARN: </p>
+    /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+    #[doc(hidden)]
+    pub service_arn: std::option::Option<std::string::String>,
+    /// <p> The Amazon Web Services account ID of the ECS service. </p>
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p> The configuration of the current ECS service. </p>
+    #[doc(hidden)]
+    pub current_service_configuration: std::option::Option<crate::model::ServiceConfiguration>,
+    /// <p> An array of objects that describe the utilization metrics of the ECS service. </p>
+    #[doc(hidden)]
+    pub utilization_metrics:
+        std::option::Option<std::vec::Vec<crate::model::EcsServiceUtilizationMetric>>,
+    /// <p> The number of days the ECS service utilization metrics were analyzed. </p>
+    #[doc(hidden)]
+    pub lookback_period_in_days: f64,
+    /// <p> The launch type the ECS service is using. </p> <note>
+    /// <p>Compute Optimizer only supports the Fargate launch type.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub launch_type: std::option::Option<crate::model::EcsServiceLaunchType>,
+    /// <p> The timestamp of when the ECS service recommendation was last generated. </p>
+    #[doc(hidden)]
+    pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The finding classification of an ECS service. </p>
+    /// <p>Findings for ECS services include:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an ECS service is considered under-provisioned. An under-provisioned ECS service might result in poor application performance.</p> </li>
+    /// <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an ECS service is considered over-provisioned. An over-provisioned ECS service might result in additional infrastructure costs. </p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub finding: std::option::Option<crate::model::EcsServiceRecommendationFinding>,
+    /// <p> The reason for the finding classification of an ECS service. </p>
+    /// <p>Finding reason codes for ECS services include:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The ECS service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The ECS service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period. </p> </li>
+    /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The ECS service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The ECS service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub finding_reason_codes:
+        std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendationFindingReasonCode>>,
+    /// <p> An array of objects that describe the recommendation options for the ECS service. </p>
+    #[doc(hidden)]
+    pub service_recommendation_options:
+        std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendationOption>>,
+    /// <p> The risk of the current ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
+    #[doc(hidden)]
+    pub current_performance_risk: std::option::Option<crate::model::CurrentPerformanceRisk>,
+}
+impl EcsServiceRecommendation {
+    /// <p> The Amazon Resource Name (ARN) of the current ECS service. </p>
+    /// <p> The following is the format of the ARN: </p>
+    /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+    /// <p> The Amazon Web Services account ID of the ECS service. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> The configuration of the current ECS service. </p>
+    pub fn current_service_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceConfiguration> {
+        self.current_service_configuration.as_ref()
+    }
+    /// <p> An array of objects that describe the utilization metrics of the ECS service. </p>
+    pub fn utilization_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::model::EcsServiceUtilizationMetric]> {
+        self.utilization_metrics.as_deref()
+    }
+    /// <p> The number of days the ECS service utilization metrics were analyzed. </p>
+    pub fn lookback_period_in_days(&self) -> f64 {
+        self.lookback_period_in_days
+    }
+    /// <p> The launch type the ECS service is using. </p> <note>
+    /// <p>Compute Optimizer only supports the Fargate launch type.</p>
+    /// </note>
+    pub fn launch_type(&self) -> std::option::Option<&crate::model::EcsServiceLaunchType> {
+        self.launch_type.as_ref()
+    }
+    /// <p> The timestamp of when the ECS service recommendation was last generated. </p>
+    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_refresh_timestamp.as_ref()
+    }
+    /// <p> The finding classification of an ECS service. </p>
+    /// <p>Findings for ECS services include:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an ECS service is considered under-provisioned. An under-provisioned ECS service might result in poor application performance.</p> </li>
+    /// <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an ECS service is considered over-provisioned. An over-provisioned ECS service might result in additional infrastructure costs. </p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
+    /// </ul>
+    pub fn finding(&self) -> std::option::Option<&crate::model::EcsServiceRecommendationFinding> {
+        self.finding.as_ref()
+    }
+    /// <p> The reason for the finding classification of an ECS service. </p>
+    /// <p>Finding reason codes for ECS services include:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The ECS service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The ECS service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period. </p> </li>
+    /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The ECS service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The ECS service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// </ul>
+    pub fn finding_reason_codes(
+        &self,
+    ) -> std::option::Option<&[crate::model::EcsServiceRecommendationFindingReasonCode]> {
+        self.finding_reason_codes.as_deref()
+    }
+    /// <p> An array of objects that describe the recommendation options for the ECS service. </p>
+    pub fn service_recommendation_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::EcsServiceRecommendationOption]> {
+        self.service_recommendation_options.as_deref()
+    }
+    /// <p> The risk of the current ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
+    pub fn current_performance_risk(
+        &self,
+    ) -> std::option::Option<&crate::model::CurrentPerformanceRisk> {
+        self.current_performance_risk.as_ref()
+    }
+}
+/// See [`EcsServiceRecommendation`](crate::model::EcsServiceRecommendation).
+pub mod ecs_service_recommendation {
+
+    /// A builder for [`EcsServiceRecommendation`](crate::model::EcsServiceRecommendation).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) service_arn: std::option::Option<std::string::String>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) current_service_configuration:
+            std::option::Option<crate::model::ServiceConfiguration>,
+        pub(crate) utilization_metrics:
+            std::option::Option<std::vec::Vec<crate::model::EcsServiceUtilizationMetric>>,
+        pub(crate) lookback_period_in_days: std::option::Option<f64>,
+        pub(crate) launch_type: std::option::Option<crate::model::EcsServiceLaunchType>,
+        pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) finding: std::option::Option<crate::model::EcsServiceRecommendationFinding>,
+        pub(crate) finding_reason_codes: std::option::Option<
+            std::vec::Vec<crate::model::EcsServiceRecommendationFindingReasonCode>,
+        >,
+        pub(crate) service_recommendation_options:
+            std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendationOption>>,
+        pub(crate) current_performance_risk:
+            std::option::Option<crate::model::CurrentPerformanceRisk>,
+    }
+    impl Builder {
+        /// <p> The Amazon Resource Name (ARN) of the current ECS service. </p>
+        /// <p> The following is the format of the ARN: </p>
+        /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) of the current ECS service. </p>
+        /// <p> The following is the format of the ARN: </p>
+        /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+        pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_arn = input;
+            self
+        }
+        /// <p> The Amazon Web Services account ID of the ECS service. </p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Web Services account ID of the ECS service. </p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p> The configuration of the current ECS service. </p>
+        pub fn current_service_configuration(
+            mut self,
+            input: crate::model::ServiceConfiguration,
+        ) -> Self {
+            self.current_service_configuration = Some(input);
+            self
+        }
+        /// <p> The configuration of the current ECS service. </p>
+        pub fn set_current_service_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServiceConfiguration>,
+        ) -> Self {
+            self.current_service_configuration = input;
+            self
+        }
+        /// Appends an item to `utilization_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_utilization_metrics`](Self::set_utilization_metrics).
+        ///
+        /// <p> An array of objects that describe the utilization metrics of the ECS service. </p>
+        pub fn utilization_metrics(
+            mut self,
+            input: crate::model::EcsServiceUtilizationMetric,
+        ) -> Self {
+            let mut v = self.utilization_metrics.unwrap_or_default();
+            v.push(input);
+            self.utilization_metrics = Some(v);
+            self
+        }
+        /// <p> An array of objects that describe the utilization metrics of the ECS service. </p>
+        pub fn set_utilization_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EcsServiceUtilizationMetric>>,
+        ) -> Self {
+            self.utilization_metrics = input;
+            self
+        }
+        /// <p> The number of days the ECS service utilization metrics were analyzed. </p>
+        pub fn lookback_period_in_days(mut self, input: f64) -> Self {
+            self.lookback_period_in_days = Some(input);
+            self
+        }
+        /// <p> The number of days the ECS service utilization metrics were analyzed. </p>
+        pub fn set_lookback_period_in_days(mut self, input: std::option::Option<f64>) -> Self {
+            self.lookback_period_in_days = input;
+            self
+        }
+        /// <p> The launch type the ECS service is using. </p> <note>
+        /// <p>Compute Optimizer only supports the Fargate launch type.</p>
+        /// </note>
+        pub fn launch_type(mut self, input: crate::model::EcsServiceLaunchType) -> Self {
+            self.launch_type = Some(input);
+            self
+        }
+        /// <p> The launch type the ECS service is using. </p> <note>
+        /// <p>Compute Optimizer only supports the Fargate launch type.</p>
+        /// </note>
+        pub fn set_launch_type(
+            mut self,
+            input: std::option::Option<crate::model::EcsServiceLaunchType>,
+        ) -> Self {
+            self.launch_type = input;
+            self
+        }
+        /// <p> The timestamp of when the ECS service recommendation was last generated. </p>
+        pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_refresh_timestamp = Some(input);
+            self
+        }
+        /// <p> The timestamp of when the ECS service recommendation was last generated. </p>
+        pub fn set_last_refresh_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_refresh_timestamp = input;
+            self
+        }
+        /// <p> The finding classification of an ECS service. </p>
+        /// <p>Findings for ECS services include:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an ECS service is considered under-provisioned. An under-provisioned ECS service might result in poor application performance.</p> </li>
+        /// <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an ECS service is considered over-provisioned. An over-provisioned ECS service might result in additional infrastructure costs. </p> </li>
+        /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
+        /// </ul>
+        pub fn finding(mut self, input: crate::model::EcsServiceRecommendationFinding) -> Self {
+            self.finding = Some(input);
+            self
+        }
+        /// <p> The finding classification of an ECS service. </p>
+        /// <p>Findings for ECS services include:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an ECS service is considered under-provisioned. An under-provisioned ECS service might result in poor application performance.</p> </li>
+        /// <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an ECS service is considered over-provisioned. An over-provisioned ECS service might result in additional infrastructure costs. </p> </li>
+        /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
+        /// </ul>
+        pub fn set_finding(
+            mut self,
+            input: std::option::Option<crate::model::EcsServiceRecommendationFinding>,
+        ) -> Self {
+            self.finding = input;
+            self
+        }
+        /// Appends an item to `finding_reason_codes`.
+        ///
+        /// To override the contents of this collection use [`set_finding_reason_codes`](Self::set_finding_reason_codes).
+        ///
+        /// <p> The reason for the finding classification of an ECS service. </p>
+        /// <p>Finding reason codes for ECS services include:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The ECS service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p> </li>
+        /// <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The ECS service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period. </p> </li>
+        /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The ECS service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+        /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The ECS service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+        /// </ul>
+        pub fn finding_reason_codes(
+            mut self,
+            input: crate::model::EcsServiceRecommendationFindingReasonCode,
+        ) -> Self {
+            let mut v = self.finding_reason_codes.unwrap_or_default();
+            v.push(input);
+            self.finding_reason_codes = Some(v);
+            self
+        }
+        /// <p> The reason for the finding classification of an ECS service. </p>
+        /// <p>Finding reason codes for ECS services include:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The ECS service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p> </li>
+        /// <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The ECS service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period. </p> </li>
+        /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The ECS service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+        /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The ECS service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+        /// </ul>
+        pub fn set_finding_reason_codes(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::EcsServiceRecommendationFindingReasonCode>,
+            >,
+        ) -> Self {
+            self.finding_reason_codes = input;
+            self
+        }
+        /// Appends an item to `service_recommendation_options`.
+        ///
+        /// To override the contents of this collection use [`set_service_recommendation_options`](Self::set_service_recommendation_options).
+        ///
+        /// <p> An array of objects that describe the recommendation options for the ECS service. </p>
+        pub fn service_recommendation_options(
+            mut self,
+            input: crate::model::EcsServiceRecommendationOption,
+        ) -> Self {
+            let mut v = self.service_recommendation_options.unwrap_or_default();
+            v.push(input);
+            self.service_recommendation_options = Some(v);
+            self
+        }
+        /// <p> An array of objects that describe the recommendation options for the ECS service. </p>
+        pub fn set_service_recommendation_options(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendationOption>>,
+        ) -> Self {
+            self.service_recommendation_options = input;
+            self
+        }
+        /// <p> The risk of the current ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
+        pub fn current_performance_risk(
+            mut self,
+            input: crate::model::CurrentPerformanceRisk,
+        ) -> Self {
+            self.current_performance_risk = Some(input);
+            self
+        }
+        /// <p> The risk of the current ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
+        pub fn set_current_performance_risk(
+            mut self,
+            input: std::option::Option<crate::model::CurrentPerformanceRisk>,
+        ) -> Self {
+            self.current_performance_risk = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EcsServiceRecommendation`](crate::model::EcsServiceRecommendation).
+        pub fn build(self) -> crate::model::EcsServiceRecommendation {
+            crate::model::EcsServiceRecommendation {
+                service_arn: self.service_arn,
+                account_id: self.account_id,
+                current_service_configuration: self.current_service_configuration,
+                utilization_metrics: self.utilization_metrics,
+                lookback_period_in_days: self.lookback_period_in_days.unwrap_or_default(),
+                launch_type: self.launch_type,
+                last_refresh_timestamp: self.last_refresh_timestamp,
+                finding: self.finding,
+                finding_reason_codes: self.finding_reason_codes,
+                service_recommendation_options: self.service_recommendation_options,
+                current_performance_risk: self.current_performance_risk,
+            }
+        }
+    }
+}
+impl EcsServiceRecommendation {
+    /// Creates a new builder-style object to manufacture [`EcsServiceRecommendation`](crate::model::EcsServiceRecommendation).
+    pub fn builder() -> crate::model::ecs_service_recommendation::Builder {
+        crate::model::ecs_service_recommendation::Builder::default()
+    }
+}
+
+/// <p> Describes the recommendation options for an Amazon ECS service. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EcsServiceRecommendationOption {
+    /// <p> The memory size of the ECS service recommendation option. </p>
+    #[doc(hidden)]
+    pub memory: std::option::Option<i32>,
+    /// <p> The CPU size of the ECS service recommendation option. </p>
+    #[doc(hidden)]
+    pub cpu: std::option::Option<i32>,
+    /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+    /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p> <important>
+    /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
+    /// <p> An array of objects that describe the projected utilization metrics of the ECS service recommendation option. </p>
+    #[doc(hidden)]
+    pub projected_utilization_metrics:
+        std::option::Option<std::vec::Vec<crate::model::EcsServiceProjectedUtilizationMetric>>,
+    /// <p> The CPU and memory size recommendations for the containers within the task of your ECS service. </p>
+    #[doc(hidden)]
+    pub container_recommendations:
+        std::option::Option<std::vec::Vec<crate::model::ContainerRecommendation>>,
+}
+impl EcsServiceRecommendationOption {
+    /// <p> The memory size of the ECS service recommendation option. </p>
+    pub fn memory(&self) -> std::option::Option<i32> {
+        self.memory
+    }
+    /// <p> The CPU size of the ECS service recommendation option. </p>
+    pub fn cpu(&self) -> std::option::Option<i32> {
+        self.cpu
+    }
+    /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+    /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p> <important>
+    /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+    /// </important>
+    pub fn savings_opportunity(&self) -> std::option::Option<&crate::model::SavingsOpportunity> {
+        self.savings_opportunity.as_ref()
+    }
+    /// <p> An array of objects that describe the projected utilization metrics of the ECS service recommendation option. </p>
+    pub fn projected_utilization_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::model::EcsServiceProjectedUtilizationMetric]> {
+        self.projected_utilization_metrics.as_deref()
+    }
+    /// <p> The CPU and memory size recommendations for the containers within the task of your ECS service. </p>
+    pub fn container_recommendations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ContainerRecommendation]> {
+        self.container_recommendations.as_deref()
+    }
+}
+/// See [`EcsServiceRecommendationOption`](crate::model::EcsServiceRecommendationOption).
+pub mod ecs_service_recommendation_option {
+
+    /// A builder for [`EcsServiceRecommendationOption`](crate::model::EcsServiceRecommendationOption).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) memory: std::option::Option<i32>,
+        pub(crate) cpu: std::option::Option<i32>,
+        pub(crate) savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
+        pub(crate) projected_utilization_metrics:
+            std::option::Option<std::vec::Vec<crate::model::EcsServiceProjectedUtilizationMetric>>,
+        pub(crate) container_recommendations:
+            std::option::Option<std::vec::Vec<crate::model::ContainerRecommendation>>,
+    }
+    impl Builder {
+        /// <p> The memory size of the ECS service recommendation option. </p>
+        pub fn memory(mut self, input: i32) -> Self {
+            self.memory = Some(input);
+            self
+        }
+        /// <p> The memory size of the ECS service recommendation option. </p>
+        pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
+            self.memory = input;
+            self
+        }
+        /// <p> The CPU size of the ECS service recommendation option. </p>
+        pub fn cpu(mut self, input: i32) -> Self {
+            self.cpu = Some(input);
+            self
+        }
+        /// <p> The CPU size of the ECS service recommendation option. </p>
+        pub fn set_cpu(mut self, input: std::option::Option<i32>) -> Self {
+            self.cpu = input;
+            self
+        }
+        /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+        /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p> <important>
+        /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+        /// </important>
+        pub fn savings_opportunity(mut self, input: crate::model::SavingsOpportunity) -> Self {
+            self.savings_opportunity = Some(input);
+            self
+        }
+        /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+        /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p> <important>
+        /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+        /// </important>
+        pub fn set_savings_opportunity(
+            mut self,
+            input: std::option::Option<crate::model::SavingsOpportunity>,
+        ) -> Self {
+            self.savings_opportunity = input;
+            self
+        }
+        /// Appends an item to `projected_utilization_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_projected_utilization_metrics`](Self::set_projected_utilization_metrics).
+        ///
+        /// <p> An array of objects that describe the projected utilization metrics of the ECS service recommendation option. </p>
+        pub fn projected_utilization_metrics(
+            mut self,
+            input: crate::model::EcsServiceProjectedUtilizationMetric,
+        ) -> Self {
+            let mut v = self.projected_utilization_metrics.unwrap_or_default();
+            v.push(input);
+            self.projected_utilization_metrics = Some(v);
+            self
+        }
+        /// <p> An array of objects that describe the projected utilization metrics of the ECS service recommendation option. </p>
+        pub fn set_projected_utilization_metrics(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::EcsServiceProjectedUtilizationMetric>,
+            >,
+        ) -> Self {
+            self.projected_utilization_metrics = input;
+            self
+        }
+        /// Appends an item to `container_recommendations`.
+        ///
+        /// To override the contents of this collection use [`set_container_recommendations`](Self::set_container_recommendations).
+        ///
+        /// <p> The CPU and memory size recommendations for the containers within the task of your ECS service. </p>
+        pub fn container_recommendations(
+            mut self,
+            input: crate::model::ContainerRecommendation,
+        ) -> Self {
+            let mut v = self.container_recommendations.unwrap_or_default();
+            v.push(input);
+            self.container_recommendations = Some(v);
+            self
+        }
+        /// <p> The CPU and memory size recommendations for the containers within the task of your ECS service. </p>
+        pub fn set_container_recommendations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ContainerRecommendation>>,
+        ) -> Self {
+            self.container_recommendations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EcsServiceRecommendationOption`](crate::model::EcsServiceRecommendationOption).
+        pub fn build(self) -> crate::model::EcsServiceRecommendationOption {
+            crate::model::EcsServiceRecommendationOption {
+                memory: self.memory,
+                cpu: self.cpu,
+                savings_opportunity: self.savings_opportunity,
+                projected_utilization_metrics: self.projected_utilization_metrics,
+                container_recommendations: self.container_recommendations,
+            }
+        }
+    }
+}
+impl EcsServiceRecommendationOption {
+    /// Creates a new builder-style object to manufacture [`EcsServiceRecommendationOption`](crate::model::EcsServiceRecommendationOption).
+    pub fn builder() -> crate::model::ecs_service_recommendation_option::Builder {
+        crate::model::ecs_service_recommendation_option::Builder::default()
+    }
+}
+
+/// <p> The CPU and memory recommendations for a container within the tasks of your Amazon ECS service. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ContainerRecommendation {
+    /// <p> The name of the container. </p>
+    #[doc(hidden)]
+    pub container_name: std::option::Option<std::string::String>,
+    /// <p> The recommended memory size configurations for the container. </p>
+    #[doc(hidden)]
+    pub memory_size_configuration: std::option::Option<crate::model::MemorySizeConfiguration>,
+    /// <p> The recommended number of CPU units reserved for the container. </p>
+    #[doc(hidden)]
+    pub cpu: std::option::Option<i32>,
+}
+impl ContainerRecommendation {
+    /// <p> The name of the container. </p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p> The recommended memory size configurations for the container. </p>
+    pub fn memory_size_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MemorySizeConfiguration> {
+        self.memory_size_configuration.as_ref()
+    }
+    /// <p> The recommended number of CPU units reserved for the container. </p>
+    pub fn cpu(&self) -> std::option::Option<i32> {
+        self.cpu
+    }
+}
+/// See [`ContainerRecommendation`](crate::model::ContainerRecommendation).
+pub mod container_recommendation {
+
+    /// A builder for [`ContainerRecommendation`](crate::model::ContainerRecommendation).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) container_name: std::option::Option<std::string::String>,
+        pub(crate) memory_size_configuration:
+            std::option::Option<crate::model::MemorySizeConfiguration>,
+        pub(crate) cpu: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> The name of the container. </p>
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the container. </p>
+        pub fn set_container_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_name = input;
+            self
+        }
+        /// <p> The recommended memory size configurations for the container. </p>
+        pub fn memory_size_configuration(
+            mut self,
+            input: crate::model::MemorySizeConfiguration,
+        ) -> Self {
+            self.memory_size_configuration = Some(input);
+            self
+        }
+        /// <p> The recommended memory size configurations for the container. </p>
+        pub fn set_memory_size_configuration(
+            mut self,
+            input: std::option::Option<crate::model::MemorySizeConfiguration>,
+        ) -> Self {
+            self.memory_size_configuration = input;
+            self
+        }
+        /// <p> The recommended number of CPU units reserved for the container. </p>
+        pub fn cpu(mut self, input: i32) -> Self {
+            self.cpu = Some(input);
+            self
+        }
+        /// <p> The recommended number of CPU units reserved for the container. </p>
+        pub fn set_cpu(mut self, input: std::option::Option<i32>) -> Self {
+            self.cpu = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ContainerRecommendation`](crate::model::ContainerRecommendation).
+        pub fn build(self) -> crate::model::ContainerRecommendation {
+            crate::model::ContainerRecommendation {
+                container_name: self.container_name,
+                memory_size_configuration: self.memory_size_configuration,
+                cpu: self.cpu,
+            }
+        }
+    }
+}
+impl ContainerRecommendation {
+    /// Creates a new builder-style object to manufacture [`ContainerRecommendation`](crate::model::ContainerRecommendation).
+    pub fn builder() -> crate::model::container_recommendation::Builder {
+        crate::model::container_recommendation::Builder::default()
+    }
+}
+
+/// <p> The memory size configurations of a container. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MemorySizeConfiguration {
+    /// <p> The amount of memory in the container. </p>
+    #[doc(hidden)]
+    pub memory: std::option::Option<i32>,
+    /// <p> The limit of memory reserve for the container. </p>
+    #[doc(hidden)]
+    pub memory_reservation: std::option::Option<i32>,
+}
+impl MemorySizeConfiguration {
+    /// <p> The amount of memory in the container. </p>
+    pub fn memory(&self) -> std::option::Option<i32> {
+        self.memory
+    }
+    /// <p> The limit of memory reserve for the container. </p>
+    pub fn memory_reservation(&self) -> std::option::Option<i32> {
+        self.memory_reservation
+    }
+}
+/// See [`MemorySizeConfiguration`](crate::model::MemorySizeConfiguration).
+pub mod memory_size_configuration {
+
+    /// A builder for [`MemorySizeConfiguration`](crate::model::MemorySizeConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) memory: std::option::Option<i32>,
+        pub(crate) memory_reservation: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> The amount of memory in the container. </p>
+        pub fn memory(mut self, input: i32) -> Self {
+            self.memory = Some(input);
+            self
+        }
+        /// <p> The amount of memory in the container. </p>
+        pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
+            self.memory = input;
+            self
+        }
+        /// <p> The limit of memory reserve for the container. </p>
+        pub fn memory_reservation(mut self, input: i32) -> Self {
+            self.memory_reservation = Some(input);
+            self
+        }
+        /// <p> The limit of memory reserve for the container. </p>
+        pub fn set_memory_reservation(mut self, input: std::option::Option<i32>) -> Self {
+            self.memory_reservation = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MemorySizeConfiguration`](crate::model::MemorySizeConfiguration).
+        pub fn build(self) -> crate::model::MemorySizeConfiguration {
+            crate::model::MemorySizeConfiguration {
+                memory: self.memory,
+                memory_reservation: self.memory_reservation,
+            }
+        }
+    }
+}
+impl MemorySizeConfiguration {
+    /// Creates a new builder-style object to manufacture [`MemorySizeConfiguration`](crate::model::MemorySizeConfiguration).
+    pub fn builder() -> crate::model::memory_size_configuration::Builder {
+        crate::model::memory_size_configuration::Builder::default()
+    }
+}
+
+/// <p> Describes the projected utilization metrics of an Amazon ECS service recommendation option. </p>
+/// <p>To determine the performance difference between your current ECS service and the recommended option, compare the utilization metric data of your service against its projected utilization metric data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EcsServiceProjectedUtilizationMetric {
+    /// <p> The name of the projected utilization metric. </p>
+    /// <p>The following utilization metrics are available:</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code> — The percentage of allocated compute units that are currently in use on the ECS service tasks.</p> </li>
+    /// <li> <p> <code>Memory</code> — The percentage of memory that is currently in use on the ECS service tasks.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub name: std::option::Option<crate::model::EcsServiceMetricName>,
+    /// <p>The statistic of the projected utilization metric.</p>
+    /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
+    /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
+    #[doc(hidden)]
+    pub statistic: std::option::Option<crate::model::EcsServiceMetricStatistic>,
+    /// <p> The lower bound values for the projected utilization metrics. </p>
+    #[doc(hidden)]
+    pub lower_bound_value: f64,
+    /// <p> The upper bound values for the projected utilization metrics. </p>
+    #[doc(hidden)]
+    pub upper_bound_value: f64,
+}
+impl EcsServiceProjectedUtilizationMetric {
+    /// <p> The name of the projected utilization metric. </p>
+    /// <p>The following utilization metrics are available:</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code> — The percentage of allocated compute units that are currently in use on the ECS service tasks.</p> </li>
+    /// <li> <p> <code>Memory</code> — The percentage of memory that is currently in use on the ECS service tasks.</p> </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&crate::model::EcsServiceMetricName> {
+        self.name.as_ref()
+    }
+    /// <p>The statistic of the projected utilization metric.</p>
+    /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
+    /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
+    pub fn statistic(&self) -> std::option::Option<&crate::model::EcsServiceMetricStatistic> {
+        self.statistic.as_ref()
+    }
+    /// <p> The lower bound values for the projected utilization metrics. </p>
+    pub fn lower_bound_value(&self) -> f64 {
+        self.lower_bound_value
+    }
+    /// <p> The upper bound values for the projected utilization metrics. </p>
+    pub fn upper_bound_value(&self) -> f64 {
+        self.upper_bound_value
+    }
+}
+/// See [`EcsServiceProjectedUtilizationMetric`](crate::model::EcsServiceProjectedUtilizationMetric).
+pub mod ecs_service_projected_utilization_metric {
+
+    /// A builder for [`EcsServiceProjectedUtilizationMetric`](crate::model::EcsServiceProjectedUtilizationMetric).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<crate::model::EcsServiceMetricName>,
+        pub(crate) statistic: std::option::Option<crate::model::EcsServiceMetricStatistic>,
+        pub(crate) lower_bound_value: std::option::Option<f64>,
+        pub(crate) upper_bound_value: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p> The name of the projected utilization metric. </p>
+        /// <p>The following utilization metrics are available:</p>
+        /// <ul>
+        /// <li> <p> <code>CPU</code> — The percentage of allocated compute units that are currently in use on the ECS service tasks.</p> </li>
+        /// <li> <p> <code>Memory</code> — The percentage of memory that is currently in use on the ECS service tasks.</p> </li>
+        /// </ul>
+        pub fn name(mut self, input: crate::model::EcsServiceMetricName) -> Self {
+            self.name = Some(input);
+            self
+        }
+        /// <p> The name of the projected utilization metric. </p>
+        /// <p>The following utilization metrics are available:</p>
+        /// <ul>
+        /// <li> <p> <code>CPU</code> — The percentage of allocated compute units that are currently in use on the ECS service tasks.</p> </li>
+        /// <li> <p> <code>Memory</code> — The percentage of memory that is currently in use on the ECS service tasks.</p> </li>
+        /// </ul>
+        pub fn set_name(
+            mut self,
+            input: std::option::Option<crate::model::EcsServiceMetricName>,
+        ) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The statistic of the projected utilization metric.</p>
+        /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
+        /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
+        pub fn statistic(mut self, input: crate::model::EcsServiceMetricStatistic) -> Self {
+            self.statistic = Some(input);
+            self
+        }
+        /// <p>The statistic of the projected utilization metric.</p>
+        /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
+        /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
+        pub fn set_statistic(
+            mut self,
+            input: std::option::Option<crate::model::EcsServiceMetricStatistic>,
+        ) -> Self {
+            self.statistic = input;
+            self
+        }
+        /// <p> The lower bound values for the projected utilization metrics. </p>
+        pub fn lower_bound_value(mut self, input: f64) -> Self {
+            self.lower_bound_value = Some(input);
+            self
+        }
+        /// <p> The lower bound values for the projected utilization metrics. </p>
+        pub fn set_lower_bound_value(mut self, input: std::option::Option<f64>) -> Self {
+            self.lower_bound_value = input;
+            self
+        }
+        /// <p> The upper bound values for the projected utilization metrics. </p>
+        pub fn upper_bound_value(mut self, input: f64) -> Self {
+            self.upper_bound_value = Some(input);
+            self
+        }
+        /// <p> The upper bound values for the projected utilization metrics. </p>
+        pub fn set_upper_bound_value(mut self, input: std::option::Option<f64>) -> Self {
+            self.upper_bound_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EcsServiceProjectedUtilizationMetric`](crate::model::EcsServiceProjectedUtilizationMetric).
+        pub fn build(self) -> crate::model::EcsServiceProjectedUtilizationMetric {
+            crate::model::EcsServiceProjectedUtilizationMetric {
+                name: self.name,
+                statistic: self.statistic,
+                lower_bound_value: self.lower_bound_value.unwrap_or_default(),
+                upper_bound_value: self.upper_bound_value.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl EcsServiceProjectedUtilizationMetric {
+    /// Creates a new builder-style object to manufacture [`EcsServiceProjectedUtilizationMetric`](crate::model::EcsServiceProjectedUtilizationMetric).
+    pub fn builder() -> crate::model::ecs_service_projected_utilization_metric::Builder {
+        crate::model::ecs_service_projected_utilization_metric::Builder::default()
+    }
+}
+
+/// When writing a match expression against `EcsServiceMetricStatistic`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ecsservicemetricstatistic = unimplemented!();
+/// match ecsservicemetricstatistic {
+///     EcsServiceMetricStatistic::Average => { /* ... */ },
+///     EcsServiceMetricStatistic::Maximum => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ecsservicemetricstatistic` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EcsServiceMetricStatistic::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EcsServiceMetricStatistic::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EcsServiceMetricStatistic::NewFeature` is defined.
+/// Specifically, when `ecsservicemetricstatistic` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EcsServiceMetricStatistic::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EcsServiceMetricStatistic {
+    #[allow(missing_docs)] // documentation missing in model
+    Average,
+    #[allow(missing_docs)] // documentation missing in model
+    Maximum,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EcsServiceMetricStatistic {
+    fn from(s: &str) -> Self {
+        match s {
+            "Average" => EcsServiceMetricStatistic::Average,
+            "Maximum" => EcsServiceMetricStatistic::Maximum,
+            other => EcsServiceMetricStatistic::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for EcsServiceMetricStatistic {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EcsServiceMetricStatistic::from(s))
+    }
+}
+impl EcsServiceMetricStatistic {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EcsServiceMetricStatistic::Average => "Average",
+            EcsServiceMetricStatistic::Maximum => "Maximum",
+            EcsServiceMetricStatistic::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["Average", "Maximum"]
+    }
+}
+impl AsRef<str> for EcsServiceMetricStatistic {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `EcsServiceMetricName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ecsservicemetricname = unimplemented!();
+/// match ecsservicemetricname {
+///     EcsServiceMetricName::Cpu => { /* ... */ },
+///     EcsServiceMetricName::Memory => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ecsservicemetricname` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EcsServiceMetricName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EcsServiceMetricName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EcsServiceMetricName::NewFeature` is defined.
+/// Specifically, when `ecsservicemetricname` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EcsServiceMetricName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EcsServiceMetricName {
+    #[allow(missing_docs)] // documentation missing in model
+    Cpu,
+    #[allow(missing_docs)] // documentation missing in model
+    Memory,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EcsServiceMetricName {
+    fn from(s: &str) -> Self {
+        match s {
+            "Cpu" => EcsServiceMetricName::Cpu,
+            "Memory" => EcsServiceMetricName::Memory,
+            other => {
+                EcsServiceMetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for EcsServiceMetricName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EcsServiceMetricName::from(s))
+    }
+}
+impl EcsServiceMetricName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EcsServiceMetricName::Cpu => "Cpu",
+            EcsServiceMetricName::Memory => "Memory",
+            EcsServiceMetricName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["Cpu", "Memory"]
+    }
+}
+impl AsRef<str> for EcsServiceMetricName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `EcsServiceRecommendationFindingReasonCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ecsservicerecommendationfindingreasoncode = unimplemented!();
+/// match ecsservicerecommendationfindingreasoncode {
+///     EcsServiceRecommendationFindingReasonCode::CpuOverProvisioned => { /* ... */ },
+///     EcsServiceRecommendationFindingReasonCode::CpuUnderProvisioned => { /* ... */ },
+///     EcsServiceRecommendationFindingReasonCode::MemoryOverProvisioned => { /* ... */ },
+///     EcsServiceRecommendationFindingReasonCode::MemoryUnderProvisioned => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ecsservicerecommendationfindingreasoncode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EcsServiceRecommendationFindingReasonCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EcsServiceRecommendationFindingReasonCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EcsServiceRecommendationFindingReasonCode::NewFeature` is defined.
+/// Specifically, when `ecsservicerecommendationfindingreasoncode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EcsServiceRecommendationFindingReasonCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EcsServiceRecommendationFindingReasonCode {
+    #[allow(missing_docs)] // documentation missing in model
+    CpuOverProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
+    CpuUnderProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
+    MemoryOverProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
+    MemoryUnderProvisioned,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EcsServiceRecommendationFindingReasonCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "CPUOverprovisioned" => EcsServiceRecommendationFindingReasonCode::CpuOverProvisioned,
+            "CPUUnderprovisioned" => EcsServiceRecommendationFindingReasonCode::CpuUnderProvisioned,
+            "MemoryOverprovisioned" => {
+                EcsServiceRecommendationFindingReasonCode::MemoryOverProvisioned
+            }
+            "MemoryUnderprovisioned" => {
+                EcsServiceRecommendationFindingReasonCode::MemoryUnderProvisioned
+            }
+            other => EcsServiceRecommendationFindingReasonCode::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
+}
+impl std::str::FromStr for EcsServiceRecommendationFindingReasonCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EcsServiceRecommendationFindingReasonCode::from(s))
+    }
+}
+impl EcsServiceRecommendationFindingReasonCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EcsServiceRecommendationFindingReasonCode::CpuOverProvisioned => "CPUOverprovisioned",
+            EcsServiceRecommendationFindingReasonCode::CpuUnderProvisioned => "CPUUnderprovisioned",
+            EcsServiceRecommendationFindingReasonCode::MemoryOverProvisioned => {
+                "MemoryOverprovisioned"
+            }
+            EcsServiceRecommendationFindingReasonCode::MemoryUnderProvisioned => {
+                "MemoryUnderprovisioned"
+            }
+            EcsServiceRecommendationFindingReasonCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "CPUOverprovisioned",
+            "CPUUnderprovisioned",
+            "MemoryOverprovisioned",
+            "MemoryUnderprovisioned",
+        ]
+    }
+}
+impl AsRef<str> for EcsServiceRecommendationFindingReasonCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `EcsServiceRecommendationFinding`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ecsservicerecommendationfinding = unimplemented!();
+/// match ecsservicerecommendationfinding {
+///     EcsServiceRecommendationFinding::Optimized => { /* ... */ },
+///     EcsServiceRecommendationFinding::OverProvisioned => { /* ... */ },
+///     EcsServiceRecommendationFinding::UnderProvisioned => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ecsservicerecommendationfinding` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EcsServiceRecommendationFinding::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EcsServiceRecommendationFinding::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EcsServiceRecommendationFinding::NewFeature` is defined.
+/// Specifically, when `ecsservicerecommendationfinding` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EcsServiceRecommendationFinding::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EcsServiceRecommendationFinding {
+    #[allow(missing_docs)] // documentation missing in model
+    Optimized,
+    #[allow(missing_docs)] // documentation missing in model
+    OverProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
+    UnderProvisioned,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EcsServiceRecommendationFinding {
+    fn from(s: &str) -> Self {
+        match s {
+            "Optimized" => EcsServiceRecommendationFinding::Optimized,
+            "Overprovisioned" => EcsServiceRecommendationFinding::OverProvisioned,
+            "Underprovisioned" => EcsServiceRecommendationFinding::UnderProvisioned,
+            other => EcsServiceRecommendationFinding::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for EcsServiceRecommendationFinding {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EcsServiceRecommendationFinding::from(s))
+    }
+}
+impl EcsServiceRecommendationFinding {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EcsServiceRecommendationFinding::Optimized => "Optimized",
+            EcsServiceRecommendationFinding::OverProvisioned => "Overprovisioned",
+            EcsServiceRecommendationFinding::UnderProvisioned => "Underprovisioned",
+            EcsServiceRecommendationFinding::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["Optimized", "Overprovisioned", "Underprovisioned"]
+    }
+}
+impl AsRef<str> for EcsServiceRecommendationFinding {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `EcsServiceLaunchType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ecsservicelaunchtype = unimplemented!();
+/// match ecsservicelaunchtype {
+///     EcsServiceLaunchType::Ec2 => { /* ... */ },
+///     EcsServiceLaunchType::Fargate => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ecsservicelaunchtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EcsServiceLaunchType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EcsServiceLaunchType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EcsServiceLaunchType::NewFeature` is defined.
+/// Specifically, when `ecsservicelaunchtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EcsServiceLaunchType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EcsServiceLaunchType {
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2,
+    #[allow(missing_docs)] // documentation missing in model
+    Fargate,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EcsServiceLaunchType {
+    fn from(s: &str) -> Self {
+        match s {
+            "EC2" => EcsServiceLaunchType::Ec2,
+            "Fargate" => EcsServiceLaunchType::Fargate,
+            other => {
+                EcsServiceLaunchType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for EcsServiceLaunchType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EcsServiceLaunchType::from(s))
+    }
+}
+impl EcsServiceLaunchType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EcsServiceLaunchType::Ec2 => "EC2",
+            EcsServiceLaunchType::Fargate => "Fargate",
+            EcsServiceLaunchType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["EC2", "Fargate"]
+    }
+}
+impl AsRef<str> for EcsServiceLaunchType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> Describes the utilization metric of an Amazon ECS service. </p>
+/// <p>To determine the performance difference between your current ECS service and the recommended option, compare the utilization metric data of your service against its projected utilization metric data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EcsServiceUtilizationMetric {
+    /// <p> The name of the utilization metric. </p>
+    /// <p>The following utilization metrics are available:</p>
+    /// <ul>
+    /// <li> <p> <code>Cpu</code> — The amount of CPU units that are used in the service.</p> </li>
+    /// <li> <p> <code>Memory</code> — The amount of memory that is used in the service.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub name: std::option::Option<crate::model::EcsServiceMetricName>,
+    /// <p>The statistic of the utilization metric.</p>
+    /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
+    /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
+    #[doc(hidden)]
+    pub statistic: std::option::Option<crate::model::EcsServiceMetricStatistic>,
+    /// <p> The value of the utilization metric. </p>
+    #[doc(hidden)]
+    pub value: f64,
+}
+impl EcsServiceUtilizationMetric {
+    /// <p> The name of the utilization metric. </p>
+    /// <p>The following utilization metrics are available:</p>
+    /// <ul>
+    /// <li> <p> <code>Cpu</code> — The amount of CPU units that are used in the service.</p> </li>
+    /// <li> <p> <code>Memory</code> — The amount of memory that is used in the service.</p> </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&crate::model::EcsServiceMetricName> {
+        self.name.as_ref()
+    }
+    /// <p>The statistic of the utilization metric.</p>
+    /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
+    /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
+    pub fn statistic(&self) -> std::option::Option<&crate::model::EcsServiceMetricStatistic> {
+        self.statistic.as_ref()
+    }
+    /// <p> The value of the utilization metric. </p>
+    pub fn value(&self) -> f64 {
+        self.value
+    }
+}
+/// See [`EcsServiceUtilizationMetric`](crate::model::EcsServiceUtilizationMetric).
+pub mod ecs_service_utilization_metric {
+
+    /// A builder for [`EcsServiceUtilizationMetric`](crate::model::EcsServiceUtilizationMetric).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<crate::model::EcsServiceMetricName>,
+        pub(crate) statistic: std::option::Option<crate::model::EcsServiceMetricStatistic>,
+        pub(crate) value: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p> The name of the utilization metric. </p>
+        /// <p>The following utilization metrics are available:</p>
+        /// <ul>
+        /// <li> <p> <code>Cpu</code> — The amount of CPU units that are used in the service.</p> </li>
+        /// <li> <p> <code>Memory</code> — The amount of memory that is used in the service.</p> </li>
+        /// </ul>
+        pub fn name(mut self, input: crate::model::EcsServiceMetricName) -> Self {
+            self.name = Some(input);
+            self
+        }
+        /// <p> The name of the utilization metric. </p>
+        /// <p>The following utilization metrics are available:</p>
+        /// <ul>
+        /// <li> <p> <code>Cpu</code> — The amount of CPU units that are used in the service.</p> </li>
+        /// <li> <p> <code>Memory</code> — The amount of memory that is used in the service.</p> </li>
+        /// </ul>
+        pub fn set_name(
+            mut self,
+            input: std::option::Option<crate::model::EcsServiceMetricName>,
+        ) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The statistic of the utilization metric.</p>
+        /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
+        /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
+        pub fn statistic(mut self, input: crate::model::EcsServiceMetricStatistic) -> Self {
+            self.statistic = Some(input);
+            self
+        }
+        /// <p>The statistic of the utilization metric.</p>
+        /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
+        /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
+        pub fn set_statistic(
+            mut self,
+            input: std::option::Option<crate::model::EcsServiceMetricStatistic>,
+        ) -> Self {
+            self.statistic = input;
+            self
+        }
+        /// <p> The value of the utilization metric. </p>
+        pub fn value(mut self, input: f64) -> Self {
+            self.value = Some(input);
+            self
+        }
+        /// <p> The value of the utilization metric. </p>
+        pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EcsServiceUtilizationMetric`](crate::model::EcsServiceUtilizationMetric).
+        pub fn build(self) -> crate::model::EcsServiceUtilizationMetric {
+            crate::model::EcsServiceUtilizationMetric {
+                name: self.name,
+                statistic: self.statistic,
+                value: self.value.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl EcsServiceUtilizationMetric {
+    /// Creates a new builder-style object to manufacture [`EcsServiceUtilizationMetric`](crate::model::EcsServiceUtilizationMetric).
+    pub fn builder() -> crate::model::ecs_service_utilization_metric::Builder {
+        crate::model::ecs_service_utilization_metric::Builder::default()
+    }
+}
+
+/// <p> The Amazon ECS service configurations used for recommendations. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ServiceConfiguration {
+    /// <p> The amount of memory used by the tasks in the ECS service. </p>
+    #[doc(hidden)]
+    pub memory: std::option::Option<i32>,
+    /// <p> The number of CPU units used by the tasks in the ECS service. </p>
+    #[doc(hidden)]
+    pub cpu: std::option::Option<i32>,
+    /// <p> The container configurations within a task of an ECS service. </p>
+    #[doc(hidden)]
+    pub container_configurations:
+        std::option::Option<std::vec::Vec<crate::model::ContainerConfiguration>>,
+    /// <p> Describes the Auto Scaling configuration methods for an Amazon ECS service. This affects the generated recommendations. For example, if Auto Scaling is configured on a ECS service’s CPU, then Compute Optimizer doesn’t generate CPU size recommendations. </p>
+    /// <p>The Auto Scaling configuration methods include:</p>
+    /// <ul>
+    /// <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the ECS service is configured to use target scaling on CPU, Compute Optimizer doesn't generate CPU recommendations.</p> </li>
+    /// <li> <p> <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the ECS service is configured to use target scaling on memory, Compute Optimizer doesn't generate memory recommendations.</p> </li>
+    /// </ul>
+    /// <p>For more information about step scaling and target scaling, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"> Step scaling policies for Application Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"> Target tracking scaling policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    #[doc(hidden)]
+    pub auto_scaling_configuration: std::option::Option<crate::model::AutoScalingConfiguration>,
+    /// <p> The task definition ARN used by the tasks in the ECS service. </p>
+    #[doc(hidden)]
+    pub task_definition_arn: std::option::Option<std::string::String>,
+}
+impl ServiceConfiguration {
+    /// <p> The amount of memory used by the tasks in the ECS service. </p>
+    pub fn memory(&self) -> std::option::Option<i32> {
+        self.memory
+    }
+    /// <p> The number of CPU units used by the tasks in the ECS service. </p>
+    pub fn cpu(&self) -> std::option::Option<i32> {
+        self.cpu
+    }
+    /// <p> The container configurations within a task of an ECS service. </p>
+    pub fn container_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ContainerConfiguration]> {
+        self.container_configurations.as_deref()
+    }
+    /// <p> Describes the Auto Scaling configuration methods for an Amazon ECS service. This affects the generated recommendations. For example, if Auto Scaling is configured on a ECS service’s CPU, then Compute Optimizer doesn’t generate CPU size recommendations. </p>
+    /// <p>The Auto Scaling configuration methods include:</p>
+    /// <ul>
+    /// <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the ECS service is configured to use target scaling on CPU, Compute Optimizer doesn't generate CPU recommendations.</p> </li>
+    /// <li> <p> <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the ECS service is configured to use target scaling on memory, Compute Optimizer doesn't generate memory recommendations.</p> </li>
+    /// </ul>
+    /// <p>For more information about step scaling and target scaling, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"> Step scaling policies for Application Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"> Target tracking scaling policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    pub fn auto_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingConfiguration> {
+        self.auto_scaling_configuration.as_ref()
+    }
+    /// <p> The task definition ARN used by the tasks in the ECS service. </p>
+    pub fn task_definition_arn(&self) -> std::option::Option<&str> {
+        self.task_definition_arn.as_deref()
+    }
+}
+/// See [`ServiceConfiguration`](crate::model::ServiceConfiguration).
+pub mod service_configuration {
+
+    /// A builder for [`ServiceConfiguration`](crate::model::ServiceConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) memory: std::option::Option<i32>,
+        pub(crate) cpu: std::option::Option<i32>,
+        pub(crate) container_configurations:
+            std::option::Option<std::vec::Vec<crate::model::ContainerConfiguration>>,
+        pub(crate) auto_scaling_configuration:
+            std::option::Option<crate::model::AutoScalingConfiguration>,
+        pub(crate) task_definition_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The amount of memory used by the tasks in the ECS service. </p>
+        pub fn memory(mut self, input: i32) -> Self {
+            self.memory = Some(input);
+            self
+        }
+        /// <p> The amount of memory used by the tasks in the ECS service. </p>
+        pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
+            self.memory = input;
+            self
+        }
+        /// <p> The number of CPU units used by the tasks in the ECS service. </p>
+        pub fn cpu(mut self, input: i32) -> Self {
+            self.cpu = Some(input);
+            self
+        }
+        /// <p> The number of CPU units used by the tasks in the ECS service. </p>
+        pub fn set_cpu(mut self, input: std::option::Option<i32>) -> Self {
+            self.cpu = input;
+            self
+        }
+        /// Appends an item to `container_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_container_configurations`](Self::set_container_configurations).
+        ///
+        /// <p> The container configurations within a task of an ECS service. </p>
+        pub fn container_configurations(
+            mut self,
+            input: crate::model::ContainerConfiguration,
+        ) -> Self {
+            let mut v = self.container_configurations.unwrap_or_default();
+            v.push(input);
+            self.container_configurations = Some(v);
+            self
+        }
+        /// <p> The container configurations within a task of an ECS service. </p>
+        pub fn set_container_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ContainerConfiguration>>,
+        ) -> Self {
+            self.container_configurations = input;
+            self
+        }
+        /// <p> Describes the Auto Scaling configuration methods for an Amazon ECS service. This affects the generated recommendations. For example, if Auto Scaling is configured on a ECS service’s CPU, then Compute Optimizer doesn’t generate CPU size recommendations. </p>
+        /// <p>The Auto Scaling configuration methods include:</p>
+        /// <ul>
+        /// <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the ECS service is configured to use target scaling on CPU, Compute Optimizer doesn't generate CPU recommendations.</p> </li>
+        /// <li> <p> <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the ECS service is configured to use target scaling on memory, Compute Optimizer doesn't generate memory recommendations.</p> </li>
+        /// </ul>
+        /// <p>For more information about step scaling and target scaling, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"> Step scaling policies for Application Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"> Target tracking scaling policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+        pub fn auto_scaling_configuration(
+            mut self,
+            input: crate::model::AutoScalingConfiguration,
+        ) -> Self {
+            self.auto_scaling_configuration = Some(input);
+            self
+        }
+        /// <p> Describes the Auto Scaling configuration methods for an Amazon ECS service. This affects the generated recommendations. For example, if Auto Scaling is configured on a ECS service’s CPU, then Compute Optimizer doesn’t generate CPU size recommendations. </p>
+        /// <p>The Auto Scaling configuration methods include:</p>
+        /// <ul>
+        /// <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the ECS service is configured to use target scaling on CPU, Compute Optimizer doesn't generate CPU recommendations.</p> </li>
+        /// <li> <p> <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the ECS service is configured to use target scaling on memory, Compute Optimizer doesn't generate memory recommendations.</p> </li>
+        /// </ul>
+        /// <p>For more information about step scaling and target scaling, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"> Step scaling policies for Application Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"> Target tracking scaling policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+        pub fn set_auto_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AutoScalingConfiguration>,
+        ) -> Self {
+            self.auto_scaling_configuration = input;
+            self
+        }
+        /// <p> The task definition ARN used by the tasks in the ECS service. </p>
+        pub fn task_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_definition_arn = Some(input.into());
+            self
+        }
+        /// <p> The task definition ARN used by the tasks in the ECS service. </p>
+        pub fn set_task_definition_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.task_definition_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceConfiguration`](crate::model::ServiceConfiguration).
+        pub fn build(self) -> crate::model::ServiceConfiguration {
+            crate::model::ServiceConfiguration {
+                memory: self.memory,
+                cpu: self.cpu,
+                container_configurations: self.container_configurations,
+                auto_scaling_configuration: self.auto_scaling_configuration,
+                task_definition_arn: self.task_definition_arn,
+            }
+        }
+    }
+}
+impl ServiceConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServiceConfiguration`](crate::model::ServiceConfiguration).
+    pub fn builder() -> crate::model::service_configuration::Builder {
+        crate::model::service_configuration::Builder::default()
+    }
+}
+
+/// When writing a match expression against `AutoScalingConfiguration`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let autoscalingconfiguration = unimplemented!();
+/// match autoscalingconfiguration {
+///     AutoScalingConfiguration::TargetTrackingScalingCpu => { /* ... */ },
+///     AutoScalingConfiguration::TargetTrackingScalingMemory => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `autoscalingconfiguration` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AutoScalingConfiguration::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AutoScalingConfiguration::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AutoScalingConfiguration::NewFeature` is defined.
+/// Specifically, when `autoscalingconfiguration` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AutoScalingConfiguration::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AutoScalingConfiguration {
+    #[allow(missing_docs)] // documentation missing in model
+    TargetTrackingScalingCpu,
+    #[allow(missing_docs)] // documentation missing in model
+    TargetTrackingScalingMemory,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for AutoScalingConfiguration {
+    fn from(s: &str) -> Self {
+        match s {
+            "TargetTrackingScalingCpu" => AutoScalingConfiguration::TargetTrackingScalingCpu,
+            "TargetTrackingScalingMemory" => AutoScalingConfiguration::TargetTrackingScalingMemory,
+            other => AutoScalingConfiguration::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for AutoScalingConfiguration {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AutoScalingConfiguration::from(s))
+    }
+}
+impl AutoScalingConfiguration {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AutoScalingConfiguration::TargetTrackingScalingCpu => "TargetTrackingScalingCpu",
+            AutoScalingConfiguration::TargetTrackingScalingMemory => "TargetTrackingScalingMemory",
+            AutoScalingConfiguration::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["TargetTrackingScalingCpu", "TargetTrackingScalingMemory"]
+    }
+}
+impl AsRef<str> for AutoScalingConfiguration {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> Describes the container configurations within the tasks of your Amazon ECS service. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ContainerConfiguration {
+    /// <p> The name of the container. </p>
+    #[doc(hidden)]
+    pub container_name: std::option::Option<std::string::String>,
+    /// <p> The memory size configurations for the container. </p>
+    #[doc(hidden)]
+    pub memory_size_configuration: std::option::Option<crate::model::MemorySizeConfiguration>,
+    /// <p> The number of CPU units reserved for the container. </p>
+    #[doc(hidden)]
+    pub cpu: std::option::Option<i32>,
+}
+impl ContainerConfiguration {
+    /// <p> The name of the container. </p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p> The memory size configurations for the container. </p>
+    pub fn memory_size_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MemorySizeConfiguration> {
+        self.memory_size_configuration.as_ref()
+    }
+    /// <p> The number of CPU units reserved for the container. </p>
+    pub fn cpu(&self) -> std::option::Option<i32> {
+        self.cpu
+    }
+}
+/// See [`ContainerConfiguration`](crate::model::ContainerConfiguration).
+pub mod container_configuration {
+
+    /// A builder for [`ContainerConfiguration`](crate::model::ContainerConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) container_name: std::option::Option<std::string::String>,
+        pub(crate) memory_size_configuration:
+            std::option::Option<crate::model::MemorySizeConfiguration>,
+        pub(crate) cpu: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> The name of the container. </p>
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the container. </p>
+        pub fn set_container_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_name = input;
+            self
+        }
+        /// <p> The memory size configurations for the container. </p>
+        pub fn memory_size_configuration(
+            mut self,
+            input: crate::model::MemorySizeConfiguration,
+        ) -> Self {
+            self.memory_size_configuration = Some(input);
+            self
+        }
+        /// <p> The memory size configurations for the container. </p>
+        pub fn set_memory_size_configuration(
+            mut self,
+            input: std::option::Option<crate::model::MemorySizeConfiguration>,
+        ) -> Self {
+            self.memory_size_configuration = input;
+            self
+        }
+        /// <p> The number of CPU units reserved for the container. </p>
+        pub fn cpu(mut self, input: i32) -> Self {
+            self.cpu = Some(input);
+            self
+        }
+        /// <p> The number of CPU units reserved for the container. </p>
+        pub fn set_cpu(mut self, input: std::option::Option<i32>) -> Self {
+            self.cpu = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ContainerConfiguration`](crate::model::ContainerConfiguration).
+        pub fn build(self) -> crate::model::ContainerConfiguration {
+            crate::model::ContainerConfiguration {
+                container_name: self.container_name,
+                memory_size_configuration: self.memory_size_configuration,
+                cpu: self.cpu,
+            }
+        }
+    }
+}
+impl ContainerConfiguration {
+    /// Creates a new builder-style object to manufacture [`ContainerConfiguration`](crate::model::ContainerConfiguration).
+    pub fn builder() -> crate::model::container_configuration::Builder {
+        crate::model::container_configuration::Builder::default()
+    }
+}
+
+/// <p> Describes a filter that returns a more specific list of Amazon ECS service recommendations. Use this filter with the <code>GetECSServiceRecommendations</code> action. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EcsServiceRecommendationFilter {
+    /// <p> The name of the filter. </p>
+    /// <p> Specify <code>Finding</code> to return recommendations with a specific finding classification. </p>
+    /// <p> Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code. </p>
+    #[doc(hidden)]
+    pub name: std::option::Option<crate::model::EcsServiceRecommendationFilterName>,
+    /// <p> The value of the filter. </p>
+    /// <p>The valid values for this parameter are as follows:</p>
+    /// <ul>
+    /// <li> <p>If you specify the <code>name</code> parameter as <code>Finding</code>, specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code>.</p> </li>
+    /// <li> <p>If you specify the <code>name</code> parameter as <code>FindingReasonCode</code>, specify <code>CPUUnderprovisioned</code>, <code>CPUOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, or <code>MemoryOverprovisioned</code>.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl EcsServiceRecommendationFilter {
+    /// <p> The name of the filter. </p>
+    /// <p> Specify <code>Finding</code> to return recommendations with a specific finding classification. </p>
+    /// <p> Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code. </p>
+    pub fn name(&self) -> std::option::Option<&crate::model::EcsServiceRecommendationFilterName> {
+        self.name.as_ref()
+    }
+    /// <p> The value of the filter. </p>
+    /// <p>The valid values for this parameter are as follows:</p>
+    /// <ul>
+    /// <li> <p>If you specify the <code>name</code> parameter as <code>Finding</code>, specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code>.</p> </li>
+    /// <li> <p>If you specify the <code>name</code> parameter as <code>FindingReasonCode</code>, specify <code>CPUUnderprovisioned</code>, <code>CPUOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, or <code>MemoryOverprovisioned</code>.</p> </li>
+    /// </ul>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
+/// See [`EcsServiceRecommendationFilter`](crate::model::EcsServiceRecommendationFilter).
+pub mod ecs_service_recommendation_filter {
+
+    /// A builder for [`EcsServiceRecommendationFilter`](crate::model::EcsServiceRecommendationFilter).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<crate::model::EcsServiceRecommendationFilterName>,
+        pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p> The name of the filter. </p>
+        /// <p> Specify <code>Finding</code> to return recommendations with a specific finding classification. </p>
+        /// <p> Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code. </p>
+        pub fn name(mut self, input: crate::model::EcsServiceRecommendationFilterName) -> Self {
+            self.name = Some(input);
+            self
+        }
+        /// <p> The name of the filter. </p>
+        /// <p> Specify <code>Finding</code> to return recommendations with a specific finding classification. </p>
+        /// <p> Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code. </p>
+        pub fn set_name(
+            mut self,
+            input: std::option::Option<crate::model::EcsServiceRecommendationFilterName>,
+        ) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p> The value of the filter. </p>
+        /// <p>The valid values for this parameter are as follows:</p>
+        /// <ul>
+        /// <li> <p>If you specify the <code>name</code> parameter as <code>Finding</code>, specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code>.</p> </li>
+        /// <li> <p>If you specify the <code>name</code> parameter as <code>FindingReasonCode</code>, specify <code>CPUUnderprovisioned</code>, <code>CPUOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, or <code>MemoryOverprovisioned</code>.</p> </li>
+        /// </ul>
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input.into());
+            self.values = Some(v);
+            self
+        }
+        /// <p> The value of the filter. </p>
+        /// <p>The valid values for this parameter are as follows:</p>
+        /// <ul>
+        /// <li> <p>If you specify the <code>name</code> parameter as <code>Finding</code>, specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code>.</p> </li>
+        /// <li> <p>If you specify the <code>name</code> parameter as <code>FindingReasonCode</code>, specify <code>CPUUnderprovisioned</code>, <code>CPUOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, or <code>MemoryOverprovisioned</code>.</p> </li>
+        /// </ul>
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EcsServiceRecommendationFilter`](crate::model::EcsServiceRecommendationFilter).
+        pub fn build(self) -> crate::model::EcsServiceRecommendationFilter {
+            crate::model::EcsServiceRecommendationFilter {
+                name: self.name,
+                values: self.values,
+            }
+        }
+    }
+}
+impl EcsServiceRecommendationFilter {
+    /// Creates a new builder-style object to manufacture [`EcsServiceRecommendationFilter`](crate::model::EcsServiceRecommendationFilter).
+    pub fn builder() -> crate::model::ecs_service_recommendation_filter::Builder {
+        crate::model::ecs_service_recommendation_filter::Builder::default()
+    }
+}
+
+/// When writing a match expression against `EcsServiceRecommendationFilterName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ecsservicerecommendationfiltername = unimplemented!();
+/// match ecsservicerecommendationfiltername {
+///     EcsServiceRecommendationFilterName::Finding => { /* ... */ },
+///     EcsServiceRecommendationFilterName::FindingReasonCode => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ecsservicerecommendationfiltername` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EcsServiceRecommendationFilterName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EcsServiceRecommendationFilterName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EcsServiceRecommendationFilterName::NewFeature` is defined.
+/// Specifically, when `ecsservicerecommendationfiltername` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EcsServiceRecommendationFilterName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EcsServiceRecommendationFilterName {
+    #[allow(missing_docs)] // documentation missing in model
+    Finding,
+    #[allow(missing_docs)] // documentation missing in model
+    FindingReasonCode,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EcsServiceRecommendationFilterName {
+    fn from(s: &str) -> Self {
+        match s {
+            "Finding" => EcsServiceRecommendationFilterName::Finding,
+            "FindingReasonCode" => EcsServiceRecommendationFilterName::FindingReasonCode,
+            other => EcsServiceRecommendationFilterName::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
+}
+impl std::str::FromStr for EcsServiceRecommendationFilterName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EcsServiceRecommendationFilterName::from(s))
+    }
+}
+impl EcsServiceRecommendationFilterName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EcsServiceRecommendationFilterName::Finding => "Finding",
+            EcsServiceRecommendationFilterName::FindingReasonCode => "FindingReasonCode",
+            EcsServiceRecommendationFilterName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["Finding", "FindingReasonCode"]
+    }
+}
+impl AsRef<str> for EcsServiceRecommendationFilterName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> Describes the projected metrics of an Amazon ECS service recommendation option. </p>
+/// <p>To determine the performance difference between your current ECS service and the recommended option, compare the metric data of your service against its projected metric data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EcsServiceRecommendedOptionProjectedMetric {
+    /// <p> The recommended CPU size for the ECS service. </p>
+    #[doc(hidden)]
+    pub recommended_cpu_units: i32,
+    /// <p> The recommended memory size for the ECS service. </p>
+    #[doc(hidden)]
+    pub recommended_memory_size: i32,
+    /// <p> An array of objects that describe the projected metric. </p>
+    #[doc(hidden)]
+    pub projected_metrics:
+        std::option::Option<std::vec::Vec<crate::model::EcsServiceProjectedMetric>>,
+}
+impl EcsServiceRecommendedOptionProjectedMetric {
+    /// <p> The recommended CPU size for the ECS service. </p>
+    pub fn recommended_cpu_units(&self) -> i32 {
+        self.recommended_cpu_units
+    }
+    /// <p> The recommended memory size for the ECS service. </p>
+    pub fn recommended_memory_size(&self) -> i32 {
+        self.recommended_memory_size
+    }
+    /// <p> An array of objects that describe the projected metric. </p>
+    pub fn projected_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::model::EcsServiceProjectedMetric]> {
+        self.projected_metrics.as_deref()
+    }
+}
+/// See [`EcsServiceRecommendedOptionProjectedMetric`](crate::model::EcsServiceRecommendedOptionProjectedMetric).
+pub mod ecs_service_recommended_option_projected_metric {
+
+    /// A builder for [`EcsServiceRecommendedOptionProjectedMetric`](crate::model::EcsServiceRecommendedOptionProjectedMetric).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recommended_cpu_units: std::option::Option<i32>,
+        pub(crate) recommended_memory_size: std::option::Option<i32>,
+        pub(crate) projected_metrics:
+            std::option::Option<std::vec::Vec<crate::model::EcsServiceProjectedMetric>>,
+    }
+    impl Builder {
+        /// <p> The recommended CPU size for the ECS service. </p>
+        pub fn recommended_cpu_units(mut self, input: i32) -> Self {
+            self.recommended_cpu_units = Some(input);
+            self
+        }
+        /// <p> The recommended CPU size for the ECS service. </p>
+        pub fn set_recommended_cpu_units(mut self, input: std::option::Option<i32>) -> Self {
+            self.recommended_cpu_units = input;
+            self
+        }
+        /// <p> The recommended memory size for the ECS service. </p>
+        pub fn recommended_memory_size(mut self, input: i32) -> Self {
+            self.recommended_memory_size = Some(input);
+            self
+        }
+        /// <p> The recommended memory size for the ECS service. </p>
+        pub fn set_recommended_memory_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.recommended_memory_size = input;
+            self
+        }
+        /// Appends an item to `projected_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_projected_metrics`](Self::set_projected_metrics).
+        ///
+        /// <p> An array of objects that describe the projected metric. </p>
+        pub fn projected_metrics(mut self, input: crate::model::EcsServiceProjectedMetric) -> Self {
+            let mut v = self.projected_metrics.unwrap_or_default();
+            v.push(input);
+            self.projected_metrics = Some(v);
+            self
+        }
+        /// <p> An array of objects that describe the projected metric. </p>
+        pub fn set_projected_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EcsServiceProjectedMetric>>,
+        ) -> Self {
+            self.projected_metrics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EcsServiceRecommendedOptionProjectedMetric`](crate::model::EcsServiceRecommendedOptionProjectedMetric).
+        pub fn build(self) -> crate::model::EcsServiceRecommendedOptionProjectedMetric {
+            crate::model::EcsServiceRecommendedOptionProjectedMetric {
+                recommended_cpu_units: self.recommended_cpu_units.unwrap_or_default(),
+                recommended_memory_size: self.recommended_memory_size.unwrap_or_default(),
+                projected_metrics: self.projected_metrics,
+            }
+        }
+    }
+}
+impl EcsServiceRecommendedOptionProjectedMetric {
+    /// Creates a new builder-style object to manufacture [`EcsServiceRecommendedOptionProjectedMetric`](crate::model::EcsServiceRecommendedOptionProjectedMetric).
+    pub fn builder() -> crate::model::ecs_service_recommended_option_projected_metric::Builder {
+        crate::model::ecs_service_recommended_option_projected_metric::Builder::default()
+    }
+}
+
+/// <p> Describes the projected metrics of an Amazon ECS service recommendation option. </p>
+/// <p>To determine the performance difference between your current ECS service and the recommended option, compare the metric data of your service against its projected metric data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EcsServiceProjectedMetric {
+    /// <p> The name of the projected metric. </p>
+    /// <p>The following metrics are available:</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code> — The percentage of allocated compute units that are currently in use on the ECS service tasks.</p> </li>
+    /// <li> <p> <code>Memory</code> — The percentage of memory that is currently in use on the ECS service tasks.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub name: std::option::Option<crate::model::EcsServiceMetricName>,
+    /// <p> The timestamps of the projected metric. </p>
+    #[doc(hidden)]
+    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+    /// <p> The upper bound values for the projected metric. </p>
+    #[doc(hidden)]
+    pub upper_bound_values: std::option::Option<std::vec::Vec<f64>>,
+    /// <p> The lower bound values for the projected metric. </p>
+    #[doc(hidden)]
+    pub lower_bound_values: std::option::Option<std::vec::Vec<f64>>,
+}
+impl EcsServiceProjectedMetric {
+    /// <p> The name of the projected metric. </p>
+    /// <p>The following metrics are available:</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code> — The percentage of allocated compute units that are currently in use on the ECS service tasks.</p> </li>
+    /// <li> <p> <code>Memory</code> — The percentage of memory that is currently in use on the ECS service tasks.</p> </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&crate::model::EcsServiceMetricName> {
+        self.name.as_ref()
+    }
+    /// <p> The timestamps of the projected metric. </p>
+    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
+        self.timestamps.as_deref()
+    }
+    /// <p> The upper bound values for the projected metric. </p>
+    pub fn upper_bound_values(&self) -> std::option::Option<&[f64]> {
+        self.upper_bound_values.as_deref()
+    }
+    /// <p> The lower bound values for the projected metric. </p>
+    pub fn lower_bound_values(&self) -> std::option::Option<&[f64]> {
+        self.lower_bound_values.as_deref()
+    }
+}
+/// See [`EcsServiceProjectedMetric`](crate::model::EcsServiceProjectedMetric).
+pub mod ecs_service_projected_metric {
+
+    /// A builder for [`EcsServiceProjectedMetric`](crate::model::EcsServiceProjectedMetric).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<crate::model::EcsServiceMetricName>,
+        pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+        pub(crate) upper_bound_values: std::option::Option<std::vec::Vec<f64>>,
+        pub(crate) lower_bound_values: std::option::Option<std::vec::Vec<f64>>,
+    }
+    impl Builder {
+        /// <p> The name of the projected metric. </p>
+        /// <p>The following metrics are available:</p>
+        /// <ul>
+        /// <li> <p> <code>CPU</code> — The percentage of allocated compute units that are currently in use on the ECS service tasks.</p> </li>
+        /// <li> <p> <code>Memory</code> — The percentage of memory that is currently in use on the ECS service tasks.</p> </li>
+        /// </ul>
+        pub fn name(mut self, input: crate::model::EcsServiceMetricName) -> Self {
+            self.name = Some(input);
+            self
+        }
+        /// <p> The name of the projected metric. </p>
+        /// <p>The following metrics are available:</p>
+        /// <ul>
+        /// <li> <p> <code>CPU</code> — The percentage of allocated compute units that are currently in use on the ECS service tasks.</p> </li>
+        /// <li> <p> <code>Memory</code> — The percentage of memory that is currently in use on the ECS service tasks.</p> </li>
+        /// </ul>
+        pub fn set_name(
+            mut self,
+            input: std::option::Option<crate::model::EcsServiceMetricName>,
+        ) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `timestamps`.
+        ///
+        /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
+        ///
+        /// <p> The timestamps of the projected metric. </p>
+        pub fn timestamps(mut self, input: aws_smithy_types::DateTime) -> Self {
+            let mut v = self.timestamps.unwrap_or_default();
+            v.push(input);
+            self.timestamps = Some(v);
+            self
+        }
+        /// <p> The timestamps of the projected metric. </p>
+        pub fn set_timestamps(
+            mut self,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+        ) -> Self {
+            self.timestamps = input;
+            self
+        }
+        /// Appends an item to `upper_bound_values`.
+        ///
+        /// To override the contents of this collection use [`set_upper_bound_values`](Self::set_upper_bound_values).
+        ///
+        /// <p> The upper bound values for the projected metric. </p>
+        pub fn upper_bound_values(mut self, input: f64) -> Self {
+            let mut v = self.upper_bound_values.unwrap_or_default();
+            v.push(input);
+            self.upper_bound_values = Some(v);
+            self
+        }
+        /// <p> The upper bound values for the projected metric. </p>
+        pub fn set_upper_bound_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<f64>>,
+        ) -> Self {
+            self.upper_bound_values = input;
+            self
+        }
+        /// Appends an item to `lower_bound_values`.
+        ///
+        /// To override the contents of this collection use [`set_lower_bound_values`](Self::set_lower_bound_values).
+        ///
+        /// <p> The lower bound values for the projected metric. </p>
+        pub fn lower_bound_values(mut self, input: f64) -> Self {
+            let mut v = self.lower_bound_values.unwrap_or_default();
+            v.push(input);
+            self.lower_bound_values = Some(v);
+            self
+        }
+        /// <p> The lower bound values for the projected metric. </p>
+        pub fn set_lower_bound_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<f64>>,
+        ) -> Self {
+            self.lower_bound_values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EcsServiceProjectedMetric`](crate::model::EcsServiceProjectedMetric).
+        pub fn build(self) -> crate::model::EcsServiceProjectedMetric {
+            crate::model::EcsServiceProjectedMetric {
+                name: self.name,
+                timestamps: self.timestamps,
+                upper_bound_values: self.upper_bound_values,
+                lower_bound_values: self.lower_bound_values,
+            }
+        }
+    }
+}
+impl EcsServiceProjectedMetric {
+    /// Creates a new builder-style object to manufacture [`EcsServiceProjectedMetric`](crate::model::EcsServiceProjectedMetric).
+    pub fn builder() -> crate::model::ecs_service_projected_metric::Builder {
+        crate::model::ecs_service_projected_metric::Builder::default()
+    }
+}
+
+/// When writing a match expression against `MetricStatistic`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let metricstatistic = unimplemented!();
+/// match metricstatistic {
+///     MetricStatistic::Average => { /* ... */ },
+///     MetricStatistic::Maximum => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `metricstatistic` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MetricStatistic::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MetricStatistic::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MetricStatistic::NewFeature` is defined.
+/// Specifically, when `metricstatistic` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MetricStatistic::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MetricStatistic {
+    #[allow(missing_docs)] // documentation missing in model
+    Average,
+    #[allow(missing_docs)] // documentation missing in model
+    Maximum,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for MetricStatistic {
+    fn from(s: &str) -> Self {
+        match s {
+            "Average" => MetricStatistic::Average,
+            "Maximum" => MetricStatistic::Maximum,
+            other => MetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for MetricStatistic {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MetricStatistic::from(s))
+    }
+}
+impl MetricStatistic {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MetricStatistic::Average => "Average",
+            MetricStatistic::Maximum => "Maximum",
+            MetricStatistic::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["Average", "Maximum"]
+    }
+}
+impl AsRef<str> for MetricStatistic {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Describes a projected utilization metric of a recommendation option.</p> <note>
 /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
 /// </note>
@@ -4238,183 +6904,6 @@ impl CpuVendorArchitecture {
 impl AsRef<str> for CpuVendorArchitecture {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-
-/// When writing a match expression against `MetricStatistic`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let metricstatistic = unimplemented!();
-/// match metricstatistic {
-///     MetricStatistic::Average => { /* ... */ },
-///     MetricStatistic::Maximum => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `metricstatistic` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `MetricStatistic::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `MetricStatistic::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `MetricStatistic::NewFeature` is defined.
-/// Specifically, when `metricstatistic` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `MetricStatistic::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum MetricStatistic {
-    #[allow(missing_docs)] // documentation missing in model
-    Average,
-    #[allow(missing_docs)] // documentation missing in model
-    Maximum,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for MetricStatistic {
-    fn from(s: &str) -> Self {
-        match s {
-            "Average" => MetricStatistic::Average,
-            "Maximum" => MetricStatistic::Maximum,
-            other => MetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for MetricStatistic {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MetricStatistic::from(s))
-    }
-}
-impl MetricStatistic {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricStatistic::Average => "Average",
-            MetricStatistic::Maximum => "Maximum",
-            MetricStatistic::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["Average", "Maximum"]
-    }
-}
-impl AsRef<str> for MetricStatistic {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Describes an error experienced when getting recommendations.</p>
-/// <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group, or if you request recommendations for an instance of an unsupported instance family.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecommendationError {
-    /// <p>The ID of the error.</p>
-    #[doc(hidden)]
-    pub identifier: std::option::Option<std::string::String>,
-    /// <p>The error code.</p>
-    #[doc(hidden)]
-    pub code: std::option::Option<std::string::String>,
-    /// <p>The message, or reason, for the error.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl GetRecommendationError {
-    /// <p>The ID of the error.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
-        self.identifier.as_deref()
-    }
-    /// <p>The error code.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
-        self.code.as_deref()
-    }
-    /// <p>The message, or reason, for the error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-/// See [`GetRecommendationError`](crate::model::GetRecommendationError).
-pub mod get_recommendation_error {
-
-    /// A builder for [`GetRecommendationError`](crate::model::GetRecommendationError).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) identifier: std::option::Option<std::string::String>,
-        pub(crate) code: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The ID of the error.</p>
-        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.identifier = Some(input.into());
-            self
-        }
-        /// <p>The ID of the error.</p>
-        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identifier = input;
-            self
-        }
-        /// <p>The error code.</p>
-        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.code = Some(input.into());
-            self
-        }
-        /// <p>The error code.</p>
-        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
-        }
-        /// <p>The message, or reason, for the error.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The message, or reason, for the error.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GetRecommendationError`](crate::model::GetRecommendationError).
-        pub fn build(self) -> crate::model::GetRecommendationError {
-            crate::model::GetRecommendationError {
-                identifier: self.identifier,
-                code: self.code,
-                message: self.message,
-            }
-        }
-    }
-}
-impl GetRecommendationError {
-    /// Creates a new builder-style object to manufacture [`GetRecommendationError`](crate::model::GetRecommendationError).
-    pub fn builder() -> crate::model::get_recommendation_error::Builder {
-        crate::model::get_recommendation_error::Builder::default()
     }
 }
 
@@ -5120,6 +7609,10 @@ pub struct EffectiveRecommendationPreferences {
     /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
     #[doc(hidden)]
     pub inferred_workload_types: std::option::Option<crate::model::InferredWorkloadTypesPreference>,
+    /// <p> An object that describes the external metrics recommendation preference. </p>
+    /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+    #[doc(hidden)]
+    pub external_metrics_preference: std::option::Option<crate::model::ExternalMetricsPreference>,
 }
 impl EffectiveRecommendationPreferences {
     /// <p>Describes the CPU vendor and architecture for an instance or Auto Scaling group recommendations.</p>
@@ -5149,6 +7642,13 @@ impl EffectiveRecommendationPreferences {
     ) -> std::option::Option<&crate::model::InferredWorkloadTypesPreference> {
         self.inferred_workload_types.as_ref()
     }
+    /// <p> An object that describes the external metrics recommendation preference. </p>
+    /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+    pub fn external_metrics_preference(
+        &self,
+    ) -> std::option::Option<&crate::model::ExternalMetricsPreference> {
+        self.external_metrics_preference.as_ref()
+    }
 }
 /// See [`EffectiveRecommendationPreferences`](crate::model::EffectiveRecommendationPreferences).
 pub mod effective_recommendation_preferences {
@@ -5162,6 +7662,8 @@ pub mod effective_recommendation_preferences {
             std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
         pub(crate) inferred_workload_types:
             std::option::Option<crate::model::InferredWorkloadTypesPreference>,
+        pub(crate) external_metrics_preference:
+            std::option::Option<crate::model::ExternalMetricsPreference>,
     }
     impl Builder {
         /// Appends an item to `cpu_vendor_architectures`.
@@ -5236,12 +7738,31 @@ pub mod effective_recommendation_preferences {
             self.inferred_workload_types = input;
             self
         }
+        /// <p> An object that describes the external metrics recommendation preference. </p>
+        /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+        pub fn external_metrics_preference(
+            mut self,
+            input: crate::model::ExternalMetricsPreference,
+        ) -> Self {
+            self.external_metrics_preference = Some(input);
+            self
+        }
+        /// <p> An object that describes the external metrics recommendation preference. </p>
+        /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+        pub fn set_external_metrics_preference(
+            mut self,
+            input: std::option::Option<crate::model::ExternalMetricsPreference>,
+        ) -> Self {
+            self.external_metrics_preference = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EffectiveRecommendationPreferences`](crate::model::EffectiveRecommendationPreferences).
         pub fn build(self) -> crate::model::EffectiveRecommendationPreferences {
             crate::model::EffectiveRecommendationPreferences {
                 cpu_vendor_architectures: self.cpu_vendor_architectures,
                 enhanced_infrastructure_metrics: self.enhanced_infrastructure_metrics,
                 inferred_workload_types: self.inferred_workload_types,
+                external_metrics_preference: self.external_metrics_preference,
             }
         }
     }
@@ -8709,6 +11230,225 @@ impl AsRef<str> for ExportableLambdaFunctionField {
     }
 }
 
+/// When writing a match expression against `ExportableEcsServiceField`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let exportableecsservicefield = unimplemented!();
+/// match exportableecsservicefield {
+///     ExportableEcsServiceField::AccountId => { /* ... */ },
+///     ExportableEcsServiceField::CurrentPerformanceRisk => { /* ... */ },
+///     ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration => { /* ... */ },
+///     ExportableEcsServiceField::CurrentServiceConfigurationCpu => { /* ... */ },
+///     ExportableEcsServiceField::CurrentServiceConfigurationMemory => { /* ... */ },
+///     ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => { /* ... */ },
+///     ExportableEcsServiceField::CurrentServiceContainerConfigurations => { /* ... */ },
+///     ExportableEcsServiceField::Finding => { /* ... */ },
+///     ExportableEcsServiceField::FindingReasonCodes => { /* ... */ },
+///     ExportableEcsServiceField::LastRefreshTimestamp => { /* ... */ },
+///     ExportableEcsServiceField::LaunchType => { /* ... */ },
+///     ExportableEcsServiceField::LookbackPeriodInDays => { /* ... */ },
+///     ExportableEcsServiceField::RecommendationOptionsContainerRecommendations => { /* ... */ },
+///     ExportableEcsServiceField::RecommendationOptionsCpu => { /* ... */ },
+///     ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => { /* ... */ },
+///     ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue => { /* ... */ },
+///     ExportableEcsServiceField::RecommendationOptionsMemory => { /* ... */ },
+///     ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => { /* ... */ },
+///     ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => { /* ... */ },
+///     ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => { /* ... */ },
+///     ExportableEcsServiceField::ServiceArn => { /* ... */ },
+///     ExportableEcsServiceField::UtilizationMetricsCpuMaximum => { /* ... */ },
+///     ExportableEcsServiceField::UtilizationMetricsMemoryMaximum => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `exportableecsservicefield` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ExportableEcsServiceField::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ExportableEcsServiceField::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ExportableEcsServiceField::NewFeature` is defined.
+/// Specifically, when `exportableecsservicefield` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ExportableEcsServiceField::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExportableEcsServiceField {
+    #[allow(missing_docs)] // documentation missing in model
+    AccountId,
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentPerformanceRisk,
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentServiceConfigurationAutoScalingConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentServiceConfigurationCpu,
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentServiceConfigurationMemory,
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentServiceConfigurationTaskDefinitionArn,
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentServiceContainerConfigurations,
+    #[allow(missing_docs)] // documentation missing in model
+    Finding,
+    #[allow(missing_docs)] // documentation missing in model
+    FindingReasonCodes,
+    #[allow(missing_docs)] // documentation missing in model
+    LastRefreshTimestamp,
+    #[allow(missing_docs)] // documentation missing in model
+    LaunchType,
+    #[allow(missing_docs)] // documentation missing in model
+    LookbackPeriodInDays,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsContainerRecommendations,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsCpu,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsCurrency,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsValue,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsMemory,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsSavingsOpportunityPercentage,
+    #[allow(missing_docs)] // documentation missing in model
+    ServiceArn,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsCpuMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsMemoryMaximum,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ExportableEcsServiceField {
+    fn from(s: &str) -> Self {
+        match s {
+            "AccountId" => ExportableEcsServiceField::AccountId,
+            "CurrentPerformanceRisk" => ExportableEcsServiceField::CurrentPerformanceRisk,
+            "CurrentServiceConfigurationAutoScalingConfiguration" => ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration,
+            "CurrentServiceConfigurationCpu" => ExportableEcsServiceField::CurrentServiceConfigurationCpu,
+            "CurrentServiceConfigurationMemory" => ExportableEcsServiceField::CurrentServiceConfigurationMemory,
+            "CurrentServiceConfigurationTaskDefinitionArn" => ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn,
+            "CurrentServiceContainerConfigurations" => ExportableEcsServiceField::CurrentServiceContainerConfigurations,
+            "Finding" => ExportableEcsServiceField::Finding,
+            "FindingReasonCodes" => ExportableEcsServiceField::FindingReasonCodes,
+            "LastRefreshTimestamp" => ExportableEcsServiceField::LastRefreshTimestamp,
+            "LaunchType" => ExportableEcsServiceField::LaunchType,
+            "LookbackPeriodInDays" => ExportableEcsServiceField::LookbackPeriodInDays,
+            "RecommendationOptionsContainerRecommendations" => ExportableEcsServiceField::RecommendationOptionsContainerRecommendations,
+            "RecommendationOptionsCpu" => ExportableEcsServiceField::RecommendationOptionsCpu,
+            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue,
+            "RecommendationOptionsMemory" => ExportableEcsServiceField::RecommendationOptionsMemory,
+            "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+            "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage,
+            "ServiceArn" => ExportableEcsServiceField::ServiceArn,
+            "UtilizationMetricsCpuMaximum" => ExportableEcsServiceField::UtilizationMetricsCpuMaximum,
+            "UtilizationMetricsMemoryMaximum" => ExportableEcsServiceField::UtilizationMetricsMemoryMaximum,
+            other => ExportableEcsServiceField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+        }
+    }
+}
+impl std::str::FromStr for ExportableEcsServiceField {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExportableEcsServiceField::from(s))
+    }
+}
+impl ExportableEcsServiceField {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExportableEcsServiceField::AccountId => "AccountId",
+            ExportableEcsServiceField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
+            ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration => "CurrentServiceConfigurationAutoScalingConfiguration",
+            ExportableEcsServiceField::CurrentServiceConfigurationCpu => "CurrentServiceConfigurationCpu",
+            ExportableEcsServiceField::CurrentServiceConfigurationMemory => "CurrentServiceConfigurationMemory",
+            ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => "CurrentServiceConfigurationTaskDefinitionArn",
+            ExportableEcsServiceField::CurrentServiceContainerConfigurations => "CurrentServiceContainerConfigurations",
+            ExportableEcsServiceField::Finding => "Finding",
+            ExportableEcsServiceField::FindingReasonCodes => "FindingReasonCodes",
+            ExportableEcsServiceField::LastRefreshTimestamp => "LastRefreshTimestamp",
+            ExportableEcsServiceField::LaunchType => "LaunchType",
+            ExportableEcsServiceField::LookbackPeriodInDays => "LookbackPeriodInDays",
+            ExportableEcsServiceField::RecommendationOptionsContainerRecommendations => "RecommendationOptionsContainerRecommendations",
+            ExportableEcsServiceField::RecommendationOptionsCpu => "RecommendationOptionsCpu",
+            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+            ExportableEcsServiceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
+            ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
+            ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+            ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
+            ExportableEcsServiceField::ServiceArn => "ServiceArn",
+            ExportableEcsServiceField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
+            ExportableEcsServiceField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
+            ExportableEcsServiceField::Unknown(value) => value.as_str()
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AccountId",
+            "CurrentPerformanceRisk",
+            "CurrentServiceConfigurationAutoScalingConfiguration",
+            "CurrentServiceConfigurationCpu",
+            "CurrentServiceConfigurationMemory",
+            "CurrentServiceConfigurationTaskDefinitionArn",
+            "CurrentServiceContainerConfigurations",
+            "Finding",
+            "FindingReasonCodes",
+            "LastRefreshTimestamp",
+            "LaunchType",
+            "LookbackPeriodInDays",
+            "RecommendationOptionsContainerRecommendations",
+            "RecommendationOptionsCpu",
+            "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            "RecommendationOptionsEstimatedMonthlySavingsValue",
+            "RecommendationOptionsMemory",
+            "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
+            "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+            "RecommendationOptionsSavingsOpportunityPercentage",
+            "ServiceArn",
+            "UtilizationMetricsCpuMaximum",
+            "UtilizationMetricsMemoryMaximum",
+        ]
+    }
+}
+impl AsRef<str> for ExportableEcsServiceField {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// When writing a match expression against `ExportableInstanceField`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
 /// feature that is supported by the service but has not been represented as an enum
@@ -8733,6 +11473,7 @@ impl AsRef<str> for ExportableLambdaFunctionField {
 ///     ExportableInstanceField::CurrentVcpus => { /* ... */ },
 ///     ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures => { /* ... */ },
 ///     ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => { /* ... */ },
+///     ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource => { /* ... */ },
 ///     ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes => { /* ... */ },
 ///     ExportableInstanceField::Finding => { /* ... */ },
 ///     ExportableInstanceField::FindingReasonCodes => { /* ... */ },
@@ -8831,6 +11572,8 @@ pub enum ExportableInstanceField {
     #[allow(missing_docs)] // documentation missing in model
     EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
     #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesExternalMetricsSource,
+    #[allow(missing_docs)] // documentation missing in model
     EffectiveRecommendationPreferencesInferredWorkloadTypes,
     #[allow(missing_docs)] // documentation missing in model
     Finding,
@@ -8928,6 +11671,7 @@ impl std::convert::From<&str> for ExportableInstanceField {
             "CurrentVCpus" => ExportableInstanceField::CurrentVcpus,
             "EffectiveRecommendationPreferencesCpuVendorArchitectures" => ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures,
             "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" => ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
+            "EffectiveRecommendationPreferencesExternalMetricsSource" => ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource,
             "EffectiveRecommendationPreferencesInferredWorkloadTypes" => ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes,
             "Finding" => ExportableInstanceField::Finding,
             "FindingReasonCodes" => ExportableInstanceField::FindingReasonCodes,
@@ -8995,6 +11739,7 @@ impl ExportableInstanceField {
             ExportableInstanceField::CurrentVcpus => "CurrentVCpus",
             ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures => "EffectiveRecommendationPreferencesCpuVendorArchitectures",
             ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
+            ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource => "EffectiveRecommendationPreferencesExternalMetricsSource",
             ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes => "EffectiveRecommendationPreferencesInferredWorkloadTypes",
             ExportableInstanceField::Finding => "Finding",
             ExportableInstanceField::FindingReasonCodes => "FindingReasonCodes",
@@ -9053,6 +11798,7 @@ impl ExportableInstanceField {
             "CurrentVCpus",
             "EffectiveRecommendationPreferencesCpuVendorArchitectures",
             "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
+            "EffectiveRecommendationPreferencesExternalMetricsSource",
             "EffectiveRecommendationPreferencesInferredWorkloadTypes",
             "Finding",
             "FindingReasonCodes",
@@ -10375,6 +13121,7 @@ impl AsRef<str> for JobFilterName {
 /// # let recommendationpreferencename = unimplemented!();
 /// match recommendationpreferencename {
 ///     RecommendationPreferenceName::EnhancedInfrastructureMetrics => { /* ... */ },
+///     RecommendationPreferenceName::ExternalMetricsPreference => { /* ... */ },
 ///     RecommendationPreferenceName::InferredWorkloadTypes => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -10412,6 +13159,8 @@ pub enum RecommendationPreferenceName {
     #[allow(missing_docs)] // documentation missing in model
     EnhancedInfrastructureMetrics,
     #[allow(missing_docs)] // documentation missing in model
+    ExternalMetricsPreference,
+    #[allow(missing_docs)] // documentation missing in model
     InferredWorkloadTypes,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
@@ -10422,6 +13171,7 @@ impl std::convert::From<&str> for RecommendationPreferenceName {
             "EnhancedInfrastructureMetrics" => {
                 RecommendationPreferenceName::EnhancedInfrastructureMetrics
             }
+            "ExternalMetricsPreference" => RecommendationPreferenceName::ExternalMetricsPreference,
             "InferredWorkloadTypes" => RecommendationPreferenceName::InferredWorkloadTypes,
             other => RecommendationPreferenceName::Unknown(crate::types::UnknownVariantValue(
                 other.to_owned(),
@@ -10443,13 +13193,18 @@ impl RecommendationPreferenceName {
             RecommendationPreferenceName::EnhancedInfrastructureMetrics => {
                 "EnhancedInfrastructureMetrics"
             }
+            RecommendationPreferenceName::ExternalMetricsPreference => "ExternalMetricsPreference",
             RecommendationPreferenceName::InferredWorkloadTypes => "InferredWorkloadTypes",
             RecommendationPreferenceName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EnhancedInfrastructureMetrics", "InferredWorkloadTypes"]
+        &[
+            "EnhancedInfrastructureMetrics",
+            "ExternalMetricsPreference",
+            "InferredWorkloadTypes",
+        ]
     }
 }
 impl AsRef<str> for RecommendationPreferenceName {

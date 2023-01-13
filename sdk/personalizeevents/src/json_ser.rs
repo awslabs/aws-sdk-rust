@@ -110,6 +110,15 @@ pub fn serialize_structure_crate_model_event(
         }
         array_26.finish();
     }
+    if let Some(var_28) = &input.metric_attribution {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("metricAttribution").start_object();
+        crate::json_ser::serialize_structure_crate_model_metric_attribution(
+            &mut object_29,
+            var_28,
+        )?;
+        object_29.finish();
+    }
     Ok(())
 }
 
@@ -117,11 +126,11 @@ pub fn serialize_structure_crate_model_item(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Item,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_28) = &input.item_id {
-        object.key("itemId").string(var_28.as_str());
+    if let Some(var_30) = &input.item_id {
+        object.key("itemId").string(var_30.as_str());
     }
-    if let Some(var_29) = &input.properties {
-        object.key("properties").string(var_29.as_str());
+    if let Some(var_31) = &input.properties {
+        object.key("properties").string(var_31.as_str());
     }
     Ok(())
 }
@@ -130,11 +139,21 @@ pub fn serialize_structure_crate_model_user(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::User,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_30) = &input.user_id {
-        object.key("userId").string(var_30.as_str());
+    if let Some(var_32) = &input.user_id {
+        object.key("userId").string(var_32.as_str());
     }
-    if let Some(var_31) = &input.properties {
-        object.key("properties").string(var_31.as_str());
+    if let Some(var_33) = &input.properties {
+        object.key("properties").string(var_33.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_metric_attribution(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::MetricAttribution,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_34) = &input.event_attribution_source {
+        object.key("eventAttributionSource").string(var_34.as_str());
     }
     Ok(())
 }

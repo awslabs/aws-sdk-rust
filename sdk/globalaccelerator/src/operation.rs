@@ -33,6 +33,38 @@ impl aws_smithy_http::response::ParseStrictResponse for AddCustomRoutingEndpoint
     }
 }
 
+/// Operation shape for `AddEndpoints`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`add_endpoints`](crate::client::Client::add_endpoints).
+///
+/// See [`crate::client::fluent_builders::AddEndpoints`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct AddEndpoints {
+    _private: (),
+}
+impl AddEndpoints {
+    /// Creates a new builder-style object to manufacture [`AddEndpointsInput`](crate::input::AddEndpointsInput).
+    pub fn builder() -> crate::input::add_endpoints_input::Builder {
+        crate::input::add_endpoints_input::Builder::default()
+    }
+    /// Creates a new `AddEndpoints` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AddEndpoints {
+    type Output =
+        std::result::Result<crate::output::AddEndpointsOutput, crate::error::AddEndpointsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_add_endpoints_error(response)
+        } else {
+            crate::operation_deser::parse_add_endpoints_response(response)
+        }
+    }
+}
+
 /// Operation shape for `AdvertiseByoipCidr`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1255,6 +1287,40 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveCustomRoutingEndpo
             crate::operation_deser::parse_remove_custom_routing_endpoints_error(response)
         } else {
             crate::operation_deser::parse_remove_custom_routing_endpoints_response(response)
+        }
+    }
+}
+
+/// Operation shape for `RemoveEndpoints`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`remove_endpoints`](crate::client::Client::remove_endpoints).
+///
+/// See [`crate::client::fluent_builders::RemoveEndpoints`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct RemoveEndpoints {
+    _private: (),
+}
+impl RemoveEndpoints {
+    /// Creates a new builder-style object to manufacture [`RemoveEndpointsInput`](crate::input::RemoveEndpointsInput).
+    pub fn builder() -> crate::input::remove_endpoints_input::Builder {
+        crate::input::remove_endpoints_input::Builder::default()
+    }
+    /// Creates a new `RemoveEndpoints` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RemoveEndpoints {
+    type Output = std::result::Result<
+        crate::output::RemoveEndpointsOutput,
+        crate::error::RemoveEndpointsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_remove_endpoints_error(response)
+        } else {
+            crate::operation_deser::parse_remove_endpoints_response(response)
         }
     }
 }

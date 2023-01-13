@@ -92,6 +92,26 @@ pub fn parse_batch_check_layer_availability_error(
                 }),
             }
         }
+        "UnsupportedCommandException" => crate::error::BatchCheckLayerAvailabilityError {
+            meta: generic,
+            kind: crate::error::BatchCheckLayerAvailabilityErrorKind::UnsupportedCommandException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::unsupported_command_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCheckLayerAvailabilityError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         _ => crate::error::BatchCheckLayerAvailabilityError::generic(generic),
     })
 }
@@ -184,6 +204,24 @@ pub fn parse_batch_delete_image_error(
                 }),
             }
         }
+        "UnsupportedCommandException" => crate::error::BatchDeleteImageError {
+            meta: generic,
+            kind: crate::error::BatchDeleteImageErrorKind::UnsupportedCommandException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteImageError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::BatchDeleteImageError::generic(generic),
     })
 }
@@ -542,6 +580,24 @@ pub fn parse_create_repository_error(
                 tmp
             }),
         },
+        "UnsupportedCommandException" => crate::error::CreateRepositoryError {
+            meta: generic,
+            kind: crate::error::CreateRepositoryErrorKind::UnsupportedCommandException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRepositoryError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateRepositoryError::generic(generic),
     })
 }
@@ -650,6 +706,24 @@ pub fn parse_delete_repository_error(
                 }),
             }
         }
+        "UnsupportedCommandException" => crate::error::DeleteRepositoryError {
+            meta: generic,
+            kind: crate::error::DeleteRepositoryErrorKind::UnsupportedCommandException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRepositoryError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteRepositoryError::generic(generic),
     })
 }
@@ -766,6 +840,24 @@ pub fn parse_delete_repository_policy_error(
                 }),
             }
         }
+        "UnsupportedCommandException" => crate::error::DeleteRepositoryPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteRepositoryPolicyErrorKind::UnsupportedCommandException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRepositoryPolicyError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteRepositoryPolicyError::generic(generic),
     })
 }
@@ -874,6 +966,24 @@ pub fn parse_describe_images_error(
                 }),
             }
         }
+        "UnsupportedCommandException" => crate::error::DescribeImagesError {
+            meta: generic,
+            kind: crate::error::DescribeImagesErrorKind::UnsupportedCommandException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeImagesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeImagesError::generic(generic),
     })
 }
@@ -963,6 +1073,24 @@ pub fn parse_describe_image_tags_error(
                 }),
             }
         }
+        "UnsupportedCommandException" => crate::error::DescribeImageTagsError {
+            meta: generic,
+            kind: crate::error::DescribeImageTagsErrorKind::UnsupportedCommandException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeImageTagsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeImageTagsError::generic(generic),
     })
 }
@@ -1149,6 +1277,24 @@ pub fn parse_describe_repositories_error(
                 }),
             }
         }
+        "UnsupportedCommandException" => crate::error::DescribeRepositoriesError {
+            meta: generic,
+            kind: crate::error::DescribeRepositoriesErrorKind::UnsupportedCommandException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRepositoriesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeRepositoriesError::generic(generic),
     })
 }
@@ -1225,6 +1371,24 @@ pub fn parse_get_authorization_token_error(
                 }),
             }
         }
+        "UnsupportedCommandException" => crate::error::GetAuthorizationTokenError {
+            meta: generic,
+            kind: crate::error::GetAuthorizationTokenErrorKind::UnsupportedCommandException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAuthorizationTokenError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetAuthorizationTokenError::generic(generic),
     })
 }
@@ -1350,61 +1514,77 @@ pub fn parse_get_repository_catalog_data_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterException" => crate::error::GetRepositoryCatalogDataError {
-            meta: generic,
-            kind: crate::error::GetRepositoryCatalogDataErrorKind::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+        "InvalidParameterException" => crate::error::GetRepositoryCatalogDataError { meta: generic, kind: crate::error::GetRepositoryCatalogDataErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryCatalogDataError::unhandled)?;
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            }),
-        },
-        "RepositoryNotFoundException" => crate::error::GetRepositoryCatalogDataError {
-            meta: generic,
-            kind: crate::error::GetRepositoryCatalogDataErrorKind::RepositoryNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::repository_not_found_exception::Builder::default();
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "RepositoryCatalogDataNotFoundException" => crate::error::GetRepositoryCatalogDataError { meta: generic, kind: crate::error::GetRepositoryCatalogDataErrorKind::RepositoryCatalogDataNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::repository_catalog_data_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_repository_catalog_data_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryCatalogDataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "RepositoryNotFoundException" => crate::error::GetRepositoryCatalogDataError { meta: generic, kind: crate::error::GetRepositoryCatalogDataErrorKind::RepositoryNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::repository_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryCatalogDataError::unhandled)?;
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            }),
-        },
-        "ServerException" => {
-            crate::error::GetRepositoryCatalogDataError {
-                meta: generic,
-                kind: crate::error::GetRepositoryCatalogDataErrorKind::ServerException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::server_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryCatalogDataError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        _ => crate::error::GetRepositoryCatalogDataError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServerException" => crate::error::GetRepositoryCatalogDataError { meta: generic, kind: crate::error::GetRepositoryCatalogDataErrorKind::ServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryCatalogDataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedCommandException" => crate::error::GetRepositoryCatalogDataError { meta: generic, kind: crate::error::GetRepositoryCatalogDataErrorKind::UnsupportedCommandException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryCatalogDataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::GetRepositoryCatalogDataError::generic(generic)
     })
 }
 
@@ -1516,6 +1696,24 @@ pub fn parse_get_repository_policy_error(
                 }),
             }
         }
+        "UnsupportedCommandException" => crate::error::GetRepositoryPolicyError {
+            meta: generic,
+            kind: crate::error::GetRepositoryPolicyErrorKind::UnsupportedCommandException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryPolicyError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetRepositoryPolicyError::generic(generic),
     })
 }
@@ -1739,6 +1937,24 @@ pub fn parse_list_tags_for_resource_error(
                 }),
             }
         }
+        "UnsupportedCommandException" => crate::error::ListTagsForResourceError {
+            meta: generic,
+            kind: crate::error::ListTagsForResourceErrorKind::UnsupportedCommandException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -2164,6 +2380,24 @@ pub fn parse_put_repository_catalog_data_error(
                 }),
             }
         }
+        "UnsupportedCommandException" => crate::error::PutRepositoryCatalogDataError {
+            meta: generic,
+            kind: crate::error::PutRepositoryCatalogDataErrorKind::UnsupportedCommandException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryCatalogDataError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::PutRepositoryCatalogDataError::generic(generic),
     })
 }
@@ -2258,6 +2492,24 @@ pub fn parse_set_repository_policy_error(
                 }),
             }
         }
+        "UnsupportedCommandException" => crate::error::SetRepositoryPolicyError {
+            meta: generic,
+            kind: crate::error::SetRepositoryPolicyErrorKind::UnsupportedCommandException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SetRepositoryPolicyError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::SetRepositoryPolicyError::generic(generic),
     })
 }
@@ -2384,6 +2636,24 @@ pub fn parse_tag_resource_error(
                 tmp
             }),
         },
+        "UnsupportedCommandException" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::UnsupportedCommandException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::TagResourceError::generic(generic),
     })
 }
@@ -2494,6 +2764,24 @@ pub fn parse_untag_resource_error(
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedCommandException" => crate::error::UntagResourceError {
+            meta: generic,
+            kind: crate::error::UntagResourceErrorKind::UnsupportedCommandException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_command_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if tmp.message.is_none() {

@@ -169,6 +169,40 @@ impl From<crate::error::AssociateTrustStoreError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::AssociateUserAccessLoggingSettingsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::AssociateUserAccessLoggingSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AssociateUserAccessLoggingSettingsError> for Error {
+    fn from(err: crate::error::AssociateUserAccessLoggingSettingsError) -> Self {
+        match err.kind {
+            crate::error::AssociateUserAccessLoggingSettingsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::AssociateUserAccessLoggingSettingsErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::AssociateUserAccessLoggingSettingsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::AssociateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::AssociateUserAccessLoggingSettingsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::AssociateUserAccessLoggingSettingsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::AssociateUserAccessLoggingSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateUserSettingsError, R>>
     for Error
 where
@@ -432,6 +466,39 @@ impl From<crate::error::CreateTrustStoreError> for Error {
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::CreateUserAccessLoggingSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CreateUserAccessLoggingSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateUserAccessLoggingSettingsError> for Error {
+    fn from(err: crate::error::CreateUserAccessLoggingSettingsError) -> Self {
+        match err.kind {
+            crate::error::CreateUserAccessLoggingSettingsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateUserAccessLoggingSettingsErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateUserAccessLoggingSettingsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateUserAccessLoggingSettingsErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateUserAccessLoggingSettingsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateUserAccessLoggingSettingsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateUserAccessLoggingSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUserSettingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -670,6 +737,50 @@ impl From<crate::error::DeleteTrustStoreError> for Error {
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DeleteUserAccessLoggingSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeleteUserAccessLoggingSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteUserAccessLoggingSettingsError> for Error {
+    fn from(err: crate::error::DeleteUserAccessLoggingSettingsError) -> Self {
+        match err.kind {
+            crate::error::DeleteUserAccessLoggingSettingsErrorKind::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::error::DeleteUserAccessLoggingSettingsErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::DeleteUserAccessLoggingSettingsErrorKind::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::error::DeleteUserAccessLoggingSettingsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DeleteUserAccessLoggingSettingsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::DeleteUserAccessLoggingSettingsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUserSettingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -826,6 +937,42 @@ impl From<crate::error::DisassociateTrustStoreError> for Error {
             crate::error::DisassociateTrustStoreErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DisassociateUserAccessLoggingSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DisassociateUserAccessLoggingSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DisassociateUserAccessLoggingSettingsError> for Error {
+    fn from(err: crate::error::DisassociateUserAccessLoggingSettingsError) -> Self {
+        match err.kind {
+            crate::error::DisassociateUserAccessLoggingSettingsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DisassociateUserAccessLoggingSettingsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DisassociateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DisassociateUserAccessLoggingSettingsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DisassociateUserAccessLoggingSettingsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DisassociateUserAccessLoggingSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1144,6 +1291,46 @@ impl From<crate::error::GetTrustStoreCertificateError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetUserAccessLoggingSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetUserAccessLoggingSettingsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetUserAccessLoggingSettingsError> for Error {
+    fn from(err: crate::error::GetUserAccessLoggingSettingsError) -> Self {
+        match err.kind {
+            crate::error::GetUserAccessLoggingSettingsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::GetUserAccessLoggingSettingsErrorKind::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::error::GetUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::error::GetUserAccessLoggingSettingsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetUserAccessLoggingSettingsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::GetUserAccessLoggingSettingsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetUserSettingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1432,6 +1619,43 @@ impl From<crate::error::ListTrustStoresError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::ListTrustStoresErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListUserAccessLoggingSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListUserAccessLoggingSettingsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListUserAccessLoggingSettingsError> for Error {
+    fn from(err: crate::error::ListUserAccessLoggingSettingsError) -> Self {
+        match err.kind {
+            crate::error::ListUserAccessLoggingSettingsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::ListUserAccessLoggingSettingsErrorKind::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::error::ListUserAccessLoggingSettingsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::ListUserAccessLoggingSettingsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::ListUserAccessLoggingSettingsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -1744,6 +1968,50 @@ impl From<crate::error::UpdateTrustStoreError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::UpdateTrustStoreErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::UpdateUserAccessLoggingSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateUserAccessLoggingSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateUserAccessLoggingSettingsError> for Error {
+    fn from(err: crate::error::UpdateUserAccessLoggingSettingsError) -> Self {
+        match err.kind {
+            crate::error::UpdateUserAccessLoggingSettingsErrorKind::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::error::UpdateUserAccessLoggingSettingsErrorKind::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::error::UpdateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateUserAccessLoggingSettingsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::UpdateUserAccessLoggingSettingsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::UpdateUserAccessLoggingSettingsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

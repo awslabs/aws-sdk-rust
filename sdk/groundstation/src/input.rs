@@ -511,6 +511,259 @@ impl CreateDataflowEndpointGroupInput {
     }
 }
 
+/// See [`CreateEphemerisInput`](crate::input::CreateEphemerisInput).
+pub mod create_ephemeris_input {
+
+    /// A builder for [`CreateEphemerisInput`](crate::input::CreateEphemerisInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) satellite_id: std::option::Option<std::string::String>,
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) priority: std::option::Option<i32>,
+        pub(crate) expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+        pub(crate) ephemeris: std::option::Option<crate::model::EphemerisData>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
+        pub fn satellite_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.satellite_id = Some(input.into());
+            self
+        }
+        /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
+        pub fn set_satellite_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.satellite_id = input;
+            self
+        }
+        /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
+        /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
+        /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+        /// <p>Priority must be 1 or greater</p>
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
+            self
+        }
+        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+        /// <p>Priority must be 1 or greater</p>
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
+            self
+        }
+        /// <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
+        pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.expiration_time = Some(input);
+            self
+        }
+        /// <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
+        pub fn set_expiration_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.expiration_time = input;
+            self
+        }
+        /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
+            self
+        }
+        /// <p>Ephemeris data.</p>
+        pub fn ephemeris(mut self, input: crate::model::EphemerisData) -> Self {
+            self.ephemeris = Some(input);
+            self
+        }
+        /// <p>Ephemeris data.</p>
+        pub fn set_ephemeris(
+            mut self,
+            input: std::option::Option<crate::model::EphemerisData>,
+        ) -> Self {
+            self.ephemeris = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags assigned to an ephemeris.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Tags assigned to an ephemeris.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateEphemerisInput`](crate::input::CreateEphemerisInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateEphemerisInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::CreateEphemerisInput {
+                satellite_id: self.satellite_id,
+                enabled: self.enabled,
+                priority: self.priority,
+                expiration_time: self.expiration_time,
+                name: self.name,
+                kms_key_arn: self.kms_key_arn,
+                ephemeris: self.ephemeris,
+                tags: self.tags,
+            })
+        }
+    }
+}
+impl CreateEphemerisInput {
+    /// Consumes the builder and constructs an Operation<[`CreateEphemeris`](crate::operation::CreateEphemeris)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateEphemeris,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateEphemerisInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/ephemeris").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateEphemerisInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_ephemeris(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateEphemeris::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateEphemeris",
+            "groundstation",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateEphemerisInput`](crate::input::CreateEphemerisInput).
+    pub fn builder() -> crate::input::create_ephemeris_input::Builder {
+        crate::input::create_ephemeris_input::Builder::default()
+    }
+}
+
 /// See [`CreateMissionProfileInput`](crate::input::CreateMissionProfileInput).
 pub mod create_mission_profile_input {
 
@@ -1107,6 +1360,156 @@ impl DeleteDataflowEndpointGroupInput {
     }
 }
 
+/// See [`DeleteEphemerisInput`](crate::input::DeleteEphemerisInput).
+pub mod delete_ephemeris_input {
+
+    /// A builder for [`DeleteEphemerisInput`](crate::input::DeleteEphemerisInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ephemeris_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn ephemeris_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ephemeris_id = Some(input.into());
+            self
+        }
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ephemeris_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteEphemerisInput`](crate::input::DeleteEphemerisInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteEphemerisInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::DeleteEphemerisInput {
+                ephemeris_id: self.ephemeris_id,
+            })
+        }
+    }
+}
+impl DeleteEphemerisInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteEphemeris`](crate::operation::DeleteEphemeris)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteEphemeris,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteEphemerisInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_5 = &_input.ephemeris_id;
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "ephemeris_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let ephemeris_id = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if ephemeris_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "ephemeris_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/ephemeris/{ephemerisId}",
+                    ephemerisId = ephemeris_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteEphemerisInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteEphemeris::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteEphemeris",
+            "groundstation",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteEphemerisInput`](crate::input::DeleteEphemerisInput).
+    pub fn builder() -> crate::input::delete_ephemeris_input::Builder {
+        crate::input::delete_ephemeris_input::Builder::default()
+    }
+}
+
 /// See [`DeleteMissionProfileInput`](crate::input::DeleteMissionProfileInput).
 pub mod delete_mission_profile_input {
 
@@ -1162,15 +1565,15 @@ impl DeleteMissionProfileInput {
                 _input: &crate::input::DeleteMissionProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_5 = &_input.mission_profile_id;
-                let input_5 = input_5.as_ref().ok_or_else(|| {
+                let input_6 = &_input.mission_profile_id;
+                let input_6 = input_6.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "mission_profile_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let mission_profile_id = aws_smithy_http::label::fmt_string(
-                    input_5,
+                    input_6,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mission_profile_id.is_empty() {
@@ -1312,15 +1715,15 @@ impl DescribeContactInput {
                 _input: &crate::input::DescribeContactInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_6 = &_input.contact_id;
-                let input_6 = input_6.as_ref().ok_or_else(|| {
+                let input_7 = &_input.contact_id;
+                let input_7 = input_7.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "contact_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let contact_id = aws_smithy_http::label::fmt_string(
-                    input_6,
+                    input_7,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if contact_id.is_empty() {
@@ -1408,6 +1811,158 @@ impl DescribeContactInput {
     }
 }
 
+/// See [`DescribeEphemerisInput`](crate::input::DescribeEphemerisInput).
+pub mod describe_ephemeris_input {
+
+    /// A builder for [`DescribeEphemerisInput`](crate::input::DescribeEphemerisInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ephemeris_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn ephemeris_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ephemeris_id = Some(input.into());
+            self
+        }
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ephemeris_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeEphemerisInput`](crate::input::DescribeEphemerisInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeEphemerisInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DescribeEphemerisInput {
+                ephemeris_id: self.ephemeris_id,
+            })
+        }
+    }
+}
+impl DescribeEphemerisInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeEphemeris`](crate::operation::DescribeEphemeris)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeEphemeris,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeEphemerisInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_8 = &_input.ephemeris_id;
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "ephemeris_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let ephemeris_id = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if ephemeris_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "ephemeris_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/ephemeris/{ephemerisId}",
+                    ephemerisId = ephemeris_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeEphemerisInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeEphemeris::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeEphemeris",
+            "groundstation",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeEphemerisInput`](crate::input::DescribeEphemerisInput).
+    pub fn builder() -> crate::input::describe_ephemeris_input::Builder {
+        crate::input::describe_ephemeris_input::Builder::default()
+    }
+}
+
 /// See [`GetConfigInput`](crate::input::GetConfigInput).
 pub mod get_config_input {
 
@@ -1473,15 +2028,15 @@ impl GetConfigInput {
                 _input: &crate::input::GetConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_7 = &_input.config_type;
-                let input_7 = input_7.as_ref().ok_or_else(|| {
+                let input_9 = &_input.config_type;
+                let input_9 = input_9.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "config_type",
                         "cannot be empty or unset",
                     )
                 })?;
                 let config_type = aws_smithy_http::label::fmt_string(
-                    input_7,
+                    input_9,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if config_type.is_empty() {
@@ -1492,15 +2047,15 @@ impl GetConfigInput {
                         ),
                     );
                 }
-                let input_8 = &_input.config_id;
-                let input_8 = input_8.as_ref().ok_or_else(|| {
+                let input_10 = &_input.config_id;
+                let input_10 = input_10.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "config_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let config_id = aws_smithy_http::label::fmt_string(
-                    input_8,
+                    input_10,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if config_id.is_empty() {
@@ -1646,15 +2201,15 @@ impl GetDataflowEndpointGroupInput {
                 _input: &crate::input::GetDataflowEndpointGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_9 = &_input.dataflow_endpoint_group_id;
-                let input_9 = input_9.as_ref().ok_or_else(|| {
+                let input_11 = &_input.dataflow_endpoint_group_id;
+                let input_11 = input_11.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "dataflow_endpoint_group_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let dataflow_endpoint_group_id = aws_smithy_http::label::fmt_string(
-                    input_9,
+                    input_11,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if dataflow_endpoint_group_id.is_empty() {
@@ -1953,15 +2508,15 @@ impl GetMissionProfileInput {
                 _input: &crate::input::GetMissionProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_10 = &_input.mission_profile_id;
-                let input_10 = input_10.as_ref().ok_or_else(|| {
+                let input_12 = &_input.mission_profile_id;
+                let input_12 = input_12.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "mission_profile_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let mission_profile_id = aws_smithy_http::label::fmt_string(
-                    input_10,
+                    input_12,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mission_profile_id.is_empty() {
@@ -2103,15 +2658,15 @@ impl GetSatelliteInput {
                 _input: &crate::input::GetSatelliteInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_11 = &_input.satellite_id;
-                let input_11 = input_11.as_ref().ok_or_else(|| {
+                let input_13 = &_input.satellite_id;
+                let input_13 = input_13.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "satellite_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let satellite_id = aws_smithy_http::label::fmt_string(
-                    input_11,
+                    input_13,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if satellite_id.is_empty() {
@@ -2273,17 +2828,17 @@ impl ListConfigsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_12) = &_input.max_results {
-                    if *inner_12 != 0 {
+                if let Some(inner_14) = &_input.max_results {
+                    if *inner_14 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
                         );
                     }
                 }
-                if let Some(inner_13) = &_input.next_token {
+                if let Some(inner_15) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_15));
                     }
                 }
                 Ok(())
@@ -2417,12 +2972,12 @@ pub mod list_contacts_input {
             self.status_list = input;
             self
         }
-        /// <p>Start time of a contact.</p>
+        /// <p>Start time of a contact in UTC.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>Start time of a contact.</p>
+        /// <p>Start time of a contact in UTC.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2430,12 +2985,12 @@ pub mod list_contacts_input {
             self.start_time = input;
             self
         }
-        /// <p>End time of a contact.</p>
+        /// <p>End time of a contact in UTC.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>End time of a contact.</p>
+        /// <p>End time of a contact in UTC.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2682,17 +3237,17 @@ impl ListDataflowEndpointGroupsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_14) = &_input.max_results {
-                    if *inner_14 != 0 {
+                if let Some(inner_16) = &_input.max_results {
+                    if *inner_16 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_16).encode(),
                         );
                     }
                 }
-                if let Some(inner_15) = &_input.next_token {
+                if let Some(inner_17) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_15));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
                     }
                 }
                 Ok(())
@@ -2768,6 +3323,242 @@ impl ListDataflowEndpointGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListDataflowEndpointGroupsInput`](crate::input::ListDataflowEndpointGroupsInput).
     pub fn builder() -> crate::input::list_dataflow_endpoint_groups_input::Builder {
         crate::input::list_dataflow_endpoint_groups_input::Builder::default()
+    }
+}
+
+/// See [`ListEphemeridesInput`](crate::input::ListEphemeridesInput).
+pub mod list_ephemerides_input {
+
+    /// A builder for [`ListEphemeridesInput`](crate::input::ListEphemeridesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) satellite_id: std::option::Option<std::string::String>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) status_list: std::option::Option<std::vec::Vec<crate::model::EphemerisStatus>>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
+        pub fn satellite_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.satellite_id = Some(input.into());
+            self
+        }
+        /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
+        pub fn set_satellite_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.satellite_id = input;
+            self
+        }
+        /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// Appends an item to `status_list`.
+        ///
+        /// To override the contents of this collection use [`set_status_list`](Self::set_status_list).
+        ///
+        /// <p>The list of ephemeris status to return.</p>
+        pub fn status_list(mut self, input: crate::model::EphemerisStatus) -> Self {
+            let mut v = self.status_list.unwrap_or_default();
+            v.push(input);
+            self.status_list = Some(v);
+            self
+        }
+        /// <p>The list of ephemeris status to return.</p>
+        pub fn set_status_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EphemerisStatus>>,
+        ) -> Self {
+            self.status_list = input;
+            self
+        }
+        /// <p>Maximum number of ephemerides to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>Maximum number of ephemerides to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Pagination token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Pagination token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEphemeridesInput`](crate::input::ListEphemeridesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListEphemeridesInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::ListEphemeridesInput {
+                satellite_id: self.satellite_id,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                status_list: self.status_list,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListEphemeridesInput {
+    /// Consumes the builder and constructs an Operation<[`ListEphemerides`](crate::operation::ListEphemerides)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListEphemerides,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListEphemeridesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/ephemerides").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListEphemeridesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_18) = &_input.max_results {
+                    if *inner_18 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
+                        );
+                    }
+                }
+                if let Some(inner_19) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListEphemeridesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_ephemerides(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListEphemerides::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListEphemerides",
+            "groundstation",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListEphemeridesInput`](crate::input::ListEphemeridesInput).
+    pub fn builder() -> crate::input::list_ephemerides_input::Builder {
+        crate::input::list_ephemerides_input::Builder::default()
     }
 }
 
@@ -2855,25 +3646,25 @@ impl ListGroundStationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_16) = &_input.satellite_id {
+                if let Some(inner_20) = &_input.satellite_id {
                     {
                         query.push_kv(
                             "satelliteId",
-                            &aws_smithy_http::query::fmt_string(&inner_16),
+                            &aws_smithy_http::query::fmt_string(&inner_20),
                         );
                     }
                 }
-                if let Some(inner_17) = &_input.max_results {
-                    if *inner_17 != 0 {
+                if let Some(inner_21) = &_input.max_results {
+                    if *inner_21 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_17).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
                         );
                     }
                 }
-                if let Some(inner_18) = &_input.next_token {
+                if let Some(inner_22) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_18));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
                     }
                 }
                 Ok(())
@@ -3024,17 +3815,17 @@ impl ListMissionProfilesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_19) = &_input.max_results {
-                    if *inner_19 != 0 {
+                if let Some(inner_23) = &_input.max_results {
+                    if *inner_23 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_19).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_23).encode(),
                         );
                     }
                 }
-                if let Some(inner_20) = &_input.next_token {
+                if let Some(inner_24) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_20));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
                     }
                 }
                 Ok(())
@@ -3183,17 +3974,17 @@ impl ListSatellitesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_21) = &_input.max_results {
-                    if *inner_21 != 0 {
+                if let Some(inner_25) = &_input.max_results {
+                    if *inner_25 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_25).encode(),
                         );
                     }
                 }
-                if let Some(inner_22) = &_input.next_token {
+                if let Some(inner_26) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_26));
                     }
                 }
                 Ok(())
@@ -3324,15 +4115,15 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_23 = &_input.resource_arn;
-                let input_23 = input_23.as_ref().ok_or_else(|| {
+                let input_27 = &_input.resource_arn;
+                let input_27 = input_27.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_23,
+                    input_27,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -3462,12 +4253,12 @@ pub mod reserve_contact_input {
             self.satellite_arn = input;
             self
         }
-        /// <p>Start time of a contact.</p>
+        /// <p>Start time of a contact in UTC.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>Start time of a contact.</p>
+        /// <p>Start time of a contact in UTC.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3475,12 +4266,12 @@ pub mod reserve_contact_input {
             self.start_time = input;
             self
         }
-        /// <p>End time of a contact.</p>
+        /// <p>End time of a contact in UTC.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>End time of a contact.</p>
+        /// <p>End time of a contact in UTC.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3731,15 +4522,15 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_24 = &_input.resource_arn;
-                let input_24 = input_24.as_ref().ok_or_else(|| {
+                let input_28 = &_input.resource_arn;
+                let input_28 = input_28.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_24,
+                    input_28,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -3912,15 +4703,15 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_25 = &_input.resource_arn;
-                let input_25 = input_25.as_ref().ok_or_else(|| {
+                let input_29 = &_input.resource_arn;
+                let input_29 = input_29.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_25,
+                    input_29,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -3940,15 +4731,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_26 = &_input.tag_keys;
-                let inner_26 = inner_26.as_ref().ok_or_else(|| {
+                let inner_30 = &_input.tag_keys;
+                let inner_30 = inner_30.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "tag_keys",
                         "cannot be empty or unset",
                     )
                 })?;
-                for inner_27 in inner_26 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_27));
+                for inner_31 in inner_30 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_31));
                 }
                 Ok(())
             }
@@ -4118,15 +4909,15 @@ impl UpdateConfigInput {
                 _input: &crate::input::UpdateConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_28 = &_input.config_type;
-                let input_28 = input_28.as_ref().ok_or_else(|| {
+                let input_32 = &_input.config_type;
+                let input_32 = input_32.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "config_type",
                         "cannot be empty or unset",
                     )
                 })?;
                 let config_type = aws_smithy_http::label::fmt_string(
-                    input_28,
+                    input_32,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if config_type.is_empty() {
@@ -4137,15 +4928,15 @@ impl UpdateConfigInput {
                         ),
                     );
                 }
-                let input_29 = &_input.config_id;
-                let input_29 = input_29.as_ref().ok_or_else(|| {
+                let input_33 = &_input.config_id;
+                let input_33 = input_33.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "config_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let config_id = aws_smithy_http::label::fmt_string(
-                    input_29,
+                    input_33,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if config_id.is_empty() {
@@ -4249,6 +5040,210 @@ impl UpdateConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigInput`](crate::input::UpdateConfigInput).
     pub fn builder() -> crate::input::update_config_input::Builder {
         crate::input::update_config_input::Builder::default()
+    }
+}
+
+/// See [`UpdateEphemerisInput`](crate::input::UpdateEphemerisInput).
+pub mod update_ephemeris_input {
+
+    /// A builder for [`UpdateEphemerisInput`](crate::input::UpdateEphemerisInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ephemeris_id: std::option::Option<std::string::String>,
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) priority: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn ephemeris_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ephemeris_id = Some(input.into());
+            self
+        }
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ephemeris_id = input;
+            self
+        }
+        /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+        /// <p>Priority must be 1 or greater</p>
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
+            self
+        }
+        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+        /// <p>Priority must be 1 or greater</p>
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateEphemerisInput`](crate::input::UpdateEphemerisInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateEphemerisInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::UpdateEphemerisInput {
+                ephemeris_id: self.ephemeris_id,
+                enabled: self.enabled,
+                name: self.name,
+                priority: self.priority,
+            })
+        }
+    }
+}
+impl UpdateEphemerisInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateEphemeris`](crate::operation::UpdateEphemeris)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateEphemeris,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateEphemerisInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_34 = &_input.ephemeris_id;
+                let input_34 = input_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "ephemeris_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let ephemeris_id = aws_smithy_http::label::fmt_string(
+                    input_34,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if ephemeris_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "ephemeris_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/ephemeris/{ephemerisId}",
+                    ephemerisId = ephemeris_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateEphemerisInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_ephemeris(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateEphemeris::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateEphemeris",
+            "groundstation",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateEphemerisInput`](crate::input::UpdateEphemerisInput).
+    pub fn builder() -> crate::input::update_ephemeris_input::Builder {
+        crate::input::update_ephemeris_input::Builder::default()
     }
 }
 
@@ -4402,15 +5397,15 @@ impl UpdateMissionProfileInput {
                 _input: &crate::input::UpdateMissionProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_30 = &_input.mission_profile_id;
-                let input_30 = input_30.as_ref().ok_or_else(|| {
+                let input_35 = &_input.mission_profile_id;
+                let input_35 = input_35.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "mission_profile_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let mission_profile_id = aws_smithy_http::label::fmt_string(
-                    input_30,
+                    input_35,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mission_profile_id.is_empty() {
@@ -4754,6 +5749,200 @@ impl ListGroundStationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListEphemeridesInput {
+    /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
+    #[doc(hidden)]
+    pub satellite_id: std::option::Option<std::string::String>,
+    /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    #[doc(hidden)]
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    #[doc(hidden)]
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The list of ephemeris status to return.</p>
+    #[doc(hidden)]
+    pub status_list: std::option::Option<std::vec::Vec<crate::model::EphemerisStatus>>,
+    /// <p>Maximum number of ephemerides to return.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>Pagination token.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEphemeridesInput {
+    /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
+    pub fn satellite_id(&self) -> std::option::Option<&str> {
+        self.satellite_id.as_deref()
+    }
+    /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
+    /// <p>The list of ephemeris status to return.</p>
+    pub fn status_list(&self) -> std::option::Option<&[crate::model::EphemerisStatus]> {
+        self.status_list.as_deref()
+    }
+    /// <p>Maximum number of ephemerides to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateEphemerisInput {
+    /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
+    #[doc(hidden)]
+    pub satellite_id: std::option::Option<std::string::String>,
+    /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
+    /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
+    #[doc(hidden)]
+    pub enabled: std::option::Option<bool>,
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Priority must be 1 or greater</p>
+    #[doc(hidden)]
+    pub priority: std::option::Option<i32>,
+    /// <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
+    #[doc(hidden)]
+    pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
+    #[doc(hidden)]
+    pub kms_key_arn: std::option::Option<std::string::String>,
+    /// <p>Ephemeris data.</p>
+    #[doc(hidden)]
+    pub ephemeris: std::option::Option<crate::model::EphemerisData>,
+    /// <p>Tags assigned to an ephemeris.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateEphemerisInput {
+    /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
+    pub fn satellite_id(&self) -> std::option::Option<&str> {
+        self.satellite_id.as_deref()
+    }
+    /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
+    /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Priority must be 1 or greater</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.expiration_time.as_ref()
+    }
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>Ephemeris data.</p>
+    pub fn ephemeris(&self) -> std::option::Option<&crate::model::EphemerisData> {
+        self.ephemeris.as_ref()
+    }
+    /// <p>Tags assigned to an ephemeris.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteEphemerisInput {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    #[doc(hidden)]
+    pub ephemeris_id: std::option::Option<std::string::String>,
+}
+impl DeleteEphemerisInput {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
+        self.ephemeris_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateEphemerisInput {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    #[doc(hidden)]
+    pub ephemeris_id: std::option::Option<std::string::String>,
+    /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
+    #[doc(hidden)]
+    pub enabled: std::option::Option<bool>,
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Priority must be 1 or greater</p>
+    #[doc(hidden)]
+    pub priority: std::option::Option<i32>,
+}
+impl UpdateEphemerisInput {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
+        self.ephemeris_id.as_deref()
+    }
+    /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Priority must be 1 or greater</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeEphemerisInput {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    #[doc(hidden)]
+    pub ephemeris_id: std::option::Option<std::string::String>,
+}
+impl DescribeEphemerisInput {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
+        self.ephemeris_id.as_deref()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4845,10 +6034,10 @@ pub struct ListContactsInput {
     /// <p>Status of a contact reservation.</p>
     #[doc(hidden)]
     pub status_list: std::option::Option<std::vec::Vec<crate::model::ContactStatus>>,
-    /// <p>Start time of a contact.</p>
+    /// <p>Start time of a contact in UTC.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>End time of a contact.</p>
+    /// <p>End time of a contact in UTC.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Name of a ground station.</p>
@@ -4874,11 +6063,11 @@ impl ListContactsInput {
     pub fn status_list(&self) -> std::option::Option<&[crate::model::ContactStatus]> {
         self.status_list.as_deref()
     }
-    /// <p>Start time of a contact.</p>
+    /// <p>Start time of a contact in UTC.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>End time of a contact.</p>
+    /// <p>End time of a contact in UTC.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -4906,10 +6095,10 @@ pub struct ReserveContactInput {
     /// <p>ARN of a satellite</p>
     #[doc(hidden)]
     pub satellite_arn: std::option::Option<std::string::String>,
-    /// <p>Start time of a contact.</p>
+    /// <p>Start time of a contact in UTC.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>End time of a contact.</p>
+    /// <p>End time of a contact in UTC.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Name of a ground station.</p>
@@ -4929,11 +6118,11 @@ impl ReserveContactInput {
     pub fn satellite_arn(&self) -> std::option::Option<&str> {
         self.satellite_arn.as_deref()
     }
-    /// <p>Start time of a contact.</p>
+    /// <p>Start time of a contact in UTC.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>End time of a contact.</p>
+    /// <p>End time of a contact in UTC.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }

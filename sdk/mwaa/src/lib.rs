@@ -76,7 +76,7 @@
 //! <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html">CreateWebLoginToken</a>
 //! </p>
 //! </li>
-//! </ul>               
+//! </ul>
 //! </li>
 //! <li>
 //! <p>

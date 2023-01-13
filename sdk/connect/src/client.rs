@@ -216,11 +216,11 @@ impl Client {
     /// Constructs a fluent builder for the [`ClaimPhoneNumber`](crate::client::fluent_builders::ClaimPhoneNumber) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_target_arn): <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_target_arn): <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
     ///   - [`phone_number(impl Into<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::phone_number) / [`set_phone_number(Option<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_phone_number): <p>The phone number you want to claim. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
     ///   - [`phone_number_description(impl Into<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::phone_number_description) / [`set_phone_number_description(Option<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_phone_number_description): <p>The description of the phone number.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ClaimPhoneNumber::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>  <p>Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code> </p>
     /// - On success, responds with [`ClaimPhoneNumberOutput`](crate::output::ClaimPhoneNumberOutput) with field(s):
     ///   - [`phone_number_id(Option<String>)`](crate::output::ClaimPhoneNumberOutput::phone_number_id): <p>A unique identifier for the phone number.</p>
     ///   - [`phone_number_arn(Option<String>)`](crate::output::ClaimPhoneNumberOutput::phone_number_arn): <p>The Amazon Resource Name (ARN) of the phone number.</p>
@@ -268,7 +268,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_description): <p>The description of the flow module. </p>
     ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_content): <p>The content of the flow module.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateContactFlowModule::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateContactFlowModule::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     /// - On success, responds with [`CreateContactFlowModuleOutput`](crate::output::CreateContactFlowModuleOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::CreateContactFlowModuleOutput::id): <p>The identifier of the flow module.</p>
     ///   - [`arn(Option<String>)`](crate::output::CreateContactFlowModuleOutput::arn): <p>The Amazon Resource Name (ARN) of the flow module.</p>
@@ -375,6 +375,23 @@ impl Client {
     pub fn create_routing_profile(&self) -> fluent_builders::CreateRoutingProfile {
         fluent_builders::CreateRoutingProfile::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateRule`](crate::client::fluent_builders::CreateRule) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateRule::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateRule::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRule::set_name): <p>A unique name for the rule.</p>
+    ///   - [`trigger_event_source(RuleTriggerEventSource)`](crate::client::fluent_builders::CreateRule::trigger_event_source) / [`set_trigger_event_source(Option<RuleTriggerEventSource>)`](crate::client::fluent_builders::CreateRule::set_trigger_event_source): <p>The event source to trigger the rule.</p>
+    ///   - [`function(impl Into<String>)`](crate::client::fluent_builders::CreateRule::function) / [`set_function(Option<String>)`](crate::client::fluent_builders::CreateRule::set_function): <p>The conditions of the rule.</p>
+    ///   - [`actions(Vec<RuleAction>)`](crate::client::fluent_builders::CreateRule::actions) / [`set_actions(Option<Vec<RuleAction>>)`](crate::client::fluent_builders::CreateRule::set_actions): <p>A list of actions to be run when the rule is triggered.</p>
+    ///   - [`publish_status(RulePublishStatus)`](crate::client::fluent_builders::CreateRule::publish_status) / [`set_publish_status(Option<RulePublishStatus>)`](crate::client::fluent_builders::CreateRule::set_publish_status): <p>The publish status of the rule.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateRule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateRule::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    /// - On success, responds with [`CreateRuleOutput`](crate::output::CreateRuleOutput) with field(s):
+    ///   - [`rule_arn(Option<String>)`](crate::output::CreateRuleOutput::rule_arn): <p>The Amazon Resource Name (ARN) of the rule.</p>
+    ///   - [`rule_id(Option<String>)`](crate::output::CreateRuleOutput::rule_id): <p>A unique identifier for the rule.</p>
+    /// - On failure, responds with [`SdkError<CreateRuleError>`](crate::error::CreateRuleError)
+    pub fn create_rule(&self) -> fluent_builders::CreateRule {
+        fluent_builders::CreateRule::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateSecurityProfile`](crate::client::fluent_builders::CreateSecurityProfile) operation.
     ///
     /// - The fluent builder is configurable:
@@ -383,6 +400,8 @@ impl Client {
     ///   - [`permissions(Vec<String>)`](crate::client::fluent_builders::CreateSecurityProfile::permissions) / [`set_permissions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_permissions): <p>Permissions assigned to the security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>. </p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityProfile::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateSecurityProfile::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSecurityProfile::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    ///   - [`allowed_access_control_tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSecurityProfile::allowed_access_control_tags) / [`set_allowed_access_control_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_allowed_access_control_tags): <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    ///   - [`tag_restricted_resources(Vec<String>)`](crate::client::fluent_builders::CreateSecurityProfile::tag_restricted_resources) / [`set_tag_restricted_resources(Option<Vec<String>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_tag_restricted_resources): <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code> </p>
     /// - On success, responds with [`CreateSecurityProfileOutput`](crate::output::CreateSecurityProfileOutput) with field(s):
     ///   - [`security_profile_id(Option<String>)`](crate::output::CreateSecurityProfileOutput::security_profile_id): <p>The identifier for the security profle.</p>
     ///   - [`security_profile_arn(Option<String>)`](crate::output::CreateSecurityProfileOutput::security_profile_arn): <p>The Amazon Resource Name (ARN) for the security profile.</p>
@@ -401,13 +420,30 @@ impl Client {
     ///   - [`defaults(TaskTemplateDefaults)`](crate::client::fluent_builders::CreateTaskTemplate::defaults) / [`set_defaults(Option<TaskTemplateDefaults>)`](crate::client::fluent_builders::CreateTaskTemplate::set_defaults): <p>The default values for fields when a task is created by referencing this template.</p>
     ///   - [`status(TaskTemplateStatus)`](crate::client::fluent_builders::CreateTaskTemplate::status) / [`set_status(Option<TaskTemplateStatus>)`](crate::client::fluent_builders::CreateTaskTemplate::set_status): <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created. </p>
     ///   - [`fields(Vec<TaskTemplateField>)`](crate::client::fluent_builders::CreateTaskTemplate::fields) / [`set_fields(Option<Vec<TaskTemplateField>>)`](crate::client::fluent_builders::CreateTaskTemplate::set_fields): <p>Fields that are part of the template.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateTaskTemplate::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateTaskTemplate::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateTaskTemplate::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateTaskTemplate::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     /// - On success, responds with [`CreateTaskTemplateOutput`](crate::output::CreateTaskTemplateOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::CreateTaskTemplateOutput::id): <p>The identifier of the task template resource.</p>
     ///   - [`arn(Option<String>)`](crate::output::CreateTaskTemplateOutput::arn): <p>The Amazon Resource Name (ARN) for the task template resource.</p>
     /// - On failure, responds with [`SdkError<CreateTaskTemplateError>`](crate::error::CreateTaskTemplateError)
     pub fn create_task_template(&self) -> fluent_builders::CreateTaskTemplate {
         fluent_builders::CreateTaskTemplate::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateTrafficDistributionGroup`](crate::client::fluent_builders::CreateTrafficDistributionGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateTrafficDistributionGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateTrafficDistributionGroup::set_name): <p>The name for the traffic distribution group. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateTrafficDistributionGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateTrafficDistributionGroup::set_description): <p>A description for the traffic distribution group.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateTrafficDistributionGroup::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateTrafficDistributionGroup::set_instance_id): <p>The identifier of the Amazon Connect instance that has been replicated. You can find the <code>instanceId</code> in the ARN of the instance.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateTrafficDistributionGroup::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateTrafficDistributionGroup::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateTrafficDistributionGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTrafficDistributionGroup::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    /// - On success, responds with [`CreateTrafficDistributionGroupOutput`](crate::output::CreateTrafficDistributionGroupOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::CreateTrafficDistributionGroupOutput::id): <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateTrafficDistributionGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    /// - On failure, responds with [`SdkError<CreateTrafficDistributionGroupError>`](crate::error::CreateTrafficDistributionGroupError)
+    pub fn create_traffic_distribution_group(
+        &self,
+    ) -> fluent_builders::CreateTrafficDistributionGroup {
+        fluent_builders::CreateTrafficDistributionGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateUseCase`](crate::client::fluent_builders::CreateUseCase) operation.
     ///
@@ -460,7 +496,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateVocabulary`](crate::client::fluent_builders::CreateVocabulary) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a create request is received more than once with same client token, subsequent requests return the previous response without creating a vocabulary again.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. If a create request is received more than once with same client token, subsequent requests return the previous response without creating a vocabulary again.</p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_vocabulary_name): <p>A unique name of the custom vocabulary.</p>
     ///   - [`language_code(VocabularyLanguageCode)`](crate::client::fluent_builders::CreateVocabulary::language_code) / [`set_language_code(Option<VocabularyLanguageCode>)`](crate::client::fluent_builders::CreateVocabulary::set_language_code): <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
@@ -539,6 +575,17 @@ impl Client {
     pub fn delete_quick_connect(&self) -> fluent_builders::DeleteQuickConnect {
         fluent_builders::DeleteQuickConnect::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteRule`](crate::client::fluent_builders::DeleteRule) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRule::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteRule::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`rule_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRule::rule_id) / [`set_rule_id(Option<String>)`](crate::client::fluent_builders::DeleteRule::set_rule_id): <p>A unique identifier for the rule.</p>
+    /// - On success, responds with [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRuleError>`](crate::error::DeleteRuleError)
+    pub fn delete_rule(&self) -> fluent_builders::DeleteRule {
+        fluent_builders::DeleteRule::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteSecurityProfile`](crate::client::fluent_builders::DeleteSecurityProfile) operation.
     ///
     /// - The fluent builder is configurable:
@@ -560,6 +607,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteTaskTemplateError>`](crate::error::DeleteTaskTemplateError)
     pub fn delete_task_template(&self) -> fluent_builders::DeleteTaskTemplate {
         fluent_builders::DeleteTaskTemplate::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteTrafficDistributionGroup`](crate::client::fluent_builders::DeleteTrafficDistributionGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`traffic_distribution_group_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTrafficDistributionGroup::traffic_distribution_group_id) / [`set_traffic_distribution_group_id(Option<String>)`](crate::client::fluent_builders::DeleteTrafficDistributionGroup::set_traffic_distribution_group_id): <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    /// - On success, responds with [`DeleteTrafficDistributionGroupOutput`](crate::output::DeleteTrafficDistributionGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTrafficDistributionGroupError>`](crate::error::DeleteTrafficDistributionGroupError)
+    pub fn delete_traffic_distribution_group(
+        &self,
+    ) -> fluent_builders::DeleteTrafficDistributionGroup {
+        fluent_builders::DeleteTrafficDistributionGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteUseCase`](crate::client::fluent_builders::DeleteUseCase) operation.
     ///
@@ -703,7 +762,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`phone_number_id(impl Into<String>)`](crate::client::fluent_builders::DescribePhoneNumber::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::client::fluent_builders::DescribePhoneNumber::set_phone_number_id): <p>A unique identifier for the phone number.</p>
     /// - On success, responds with [`DescribePhoneNumberOutput`](crate::output::DescribePhoneNumberOutput) with field(s):
-    ///   - [`claimed_phone_number_summary(Option<ClaimedPhoneNumberSummary>)`](crate::output::DescribePhoneNumberOutput::claimed_phone_number_summary): <p>Information about a phone number that's been claimed to your Amazon Connect instance.</p>
+    ///   - [`claimed_phone_number_summary(Option<ClaimedPhoneNumberSummary>)`](crate::output::DescribePhoneNumberOutput::claimed_phone_number_summary): <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
     /// - On failure, responds with [`SdkError<DescribePhoneNumberError>`](crate::error::DescribePhoneNumberError)
     pub fn describe_phone_number(&self) -> fluent_builders::DescribePhoneNumber {
         fluent_builders::DescribePhoneNumber::new(self.handle.clone())
@@ -741,6 +800,17 @@ impl Client {
     pub fn describe_routing_profile(&self) -> fluent_builders::DescribeRoutingProfile {
         fluent_builders::DescribeRoutingProfile::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeRule`](crate::client::fluent_builders::DescribeRule) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeRule::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeRule::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`rule_id(impl Into<String>)`](crate::client::fluent_builders::DescribeRule::rule_id) / [`set_rule_id(Option<String>)`](crate::client::fluent_builders::DescribeRule::set_rule_id): <p>A unique identifier for the rule.</p>
+    /// - On success, responds with [`DescribeRuleOutput`](crate::output::DescribeRuleOutput) with field(s):
+    ///   - [`rule(Option<Rule>)`](crate::output::DescribeRuleOutput::rule): <p>Information about the rule.</p>
+    /// - On failure, responds with [`SdkError<DescribeRuleError>`](crate::error::DescribeRuleError)
+    pub fn describe_rule(&self) -> fluent_builders::DescribeRule {
+        fluent_builders::DescribeRule::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeSecurityProfile`](crate::client::fluent_builders::DescribeSecurityProfile) operation.
     ///
     /// - The fluent builder is configurable:
@@ -751,6 +821,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeSecurityProfileError>`](crate::error::DescribeSecurityProfileError)
     pub fn describe_security_profile(&self) -> fluent_builders::DescribeSecurityProfile {
         fluent_builders::DescribeSecurityProfile::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeTrafficDistributionGroup`](crate::client::fluent_builders::DescribeTrafficDistributionGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`traffic_distribution_group_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTrafficDistributionGroup::traffic_distribution_group_id) / [`set_traffic_distribution_group_id(Option<String>)`](crate::client::fluent_builders::DescribeTrafficDistributionGroup::set_traffic_distribution_group_id): <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    /// - On success, responds with [`DescribeTrafficDistributionGroupOutput`](crate::output::DescribeTrafficDistributionGroupOutput) with field(s):
+    ///   - [`traffic_distribution_group(Option<TrafficDistributionGroup>)`](crate::output::DescribeTrafficDistributionGroupOutput::traffic_distribution_group): <p>Information about the traffic distribution group.</p>
+    /// - On failure, responds with [`SdkError<DescribeTrafficDistributionGroupError>`](crate::error::DescribeTrafficDistributionGroupError)
+    pub fn describe_traffic_distribution_group(
+        &self,
+    ) -> fluent_builders::DescribeTrafficDistributionGroup {
+        fluent_builders::DescribeTrafficDistributionGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeUser`](crate::client::fluent_builders::DescribeUser) operation.
     ///
@@ -850,7 +932,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateLexBot::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DisassociateLexBot::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`bot_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateLexBot::bot_name) / [`set_bot_name(Option<String>)`](crate::client::fluent_builders::DisassociateLexBot::set_bot_name): <p>The name of the Amazon Lex bot. Maximum character limit of 50.</p>
-    ///   - [`lex_region(impl Into<String>)`](crate::client::fluent_builders::DisassociateLexBot::lex_region) / [`set_lex_region(Option<String>)`](crate::client::fluent_builders::DisassociateLexBot::set_lex_region): <p>The Region in which the Amazon Lex bot has been created.</p>
+    ///   - [`lex_region(impl Into<String>)`](crate::client::fluent_builders::DisassociateLexBot::lex_region) / [`set_lex_region(Option<String>)`](crate::client::fluent_builders::DisassociateLexBot::set_lex_region): <p>The Amazon Web Services Region in which the Amazon Lex bot has been created.</p>
     /// - On success, responds with [`DisassociateLexBotOutput`](crate::output::DisassociateLexBotOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateLexBotError>`](crate::error::DisassociateLexBotError)
@@ -909,6 +991,18 @@ impl Client {
     pub fn disassociate_security_key(&self) -> fluent_builders::DisassociateSecurityKey {
         fluent_builders::DisassociateSecurityKey::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DismissUserContact`](crate::client::fluent_builders::DismissUserContact) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DismissUserContact::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DismissUserContact::set_user_id): <p>The identifier of the user account.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DismissUserContact::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DismissUserContact::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::DismissUserContact::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::DismissUserContact::set_contact_id): <p>The identifier of the contact.</p>
+    /// - On success, responds with [`DismissUserContactOutput`](crate::output::DismissUserContactOutput)
+
+    /// - On failure, responds with [`SdkError<DismissUserContactError>`](crate::error::DismissUserContactError)
+    pub fn dismiss_user_contact(&self) -> fluent_builders::DismissUserContact {
+        fluent_builders::DismissUserContact::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetContactAttributes`](crate::client::fluent_builders::GetContactAttributes) operation.
     ///
     /// - The fluent builder is configurable:
@@ -925,15 +1019,17 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::GetCurrentMetricData::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::GetCurrentMetricData::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`filters(Filters)`](crate::client::fluent_builders::GetCurrentMetricData::filters) / [`set_filters(Option<Filters>)`](crate::client::fluent_builders::GetCurrentMetricData::set_filters): <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
-    ///   - [`groupings(Vec<Grouping>)`](crate::client::fluent_builders::GetCurrentMetricData::groupings) / [`set_groupings(Option<Vec<Grouping>>)`](crate::client::fluent_builders::GetCurrentMetricData::set_groupings): <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>  <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p>
+    ///   - [`filters(Filters)`](crate::client::fluent_builders::GetCurrentMetricData::filters) / [`set_filters(Option<Filters>)`](crate::client::fluent_builders::GetCurrentMetricData::set_filters): <p>The filters to apply to returned metrics. You can filter up to the following limits:</p>  <ul>   <li> <p>Queues: 100</p> </li>   <li> <p>Routing profiles: 100</p> </li>   <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p> </li>  </ul>  <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request. </p>  <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
+    ///   - [`groupings(Vec<Grouping>)`](crate::client::fluent_builders::GetCurrentMetricData::groupings) / [`set_groupings(Option<Vec<Grouping>>)`](crate::client::fluent_builders::GetCurrentMetricData::set_groupings): <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. </p>  <ul>   <li> <p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p> </li>   <li> <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p> </li>   <li> <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p> </li>  </ul>
     ///   - [`current_metrics(Vec<CurrentMetric>)`](crate::client::fluent_builders::GetCurrentMetricData::current_metrics) / [`set_current_metrics(Option<Vec<CurrentMetric>>)`](crate::client::fluent_builders::GetCurrentMetricData::set_current_metrics): <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>  <dl>   <dt>   AGENTS_AFTER_CONTACT_WORK  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a> </p>   </dd>   <dt>   AGENTS_AVAILABLE  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a> </p>   </dd>   <dt>   AGENTS_ERROR  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a> </p>   </dd>   <dt>   AGENTS_NON_PRODUCTIVE  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a> </p>   </dd>   <dt>   AGENTS_ON_CALL  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>   </dd>   <dt>   AGENTS_ON_CONTACT  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>   </dd>   <dt>   AGENTS_ONLINE  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a> </p>   </dd>   <dt>   AGENTS_STAFFED  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a> </p>   </dd>   <dt>   CONTACTS_IN_QUEUE  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a> </p>   </dd>   <dt>   CONTACTS_SCHEDULED  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a> </p>   </dd>   <dt>   OLDEST_CONTACT_AGE  </dt>   <dd>    <p>Unit: SECONDS</p>    <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>    <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p>    <p> <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>    <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a> </p>   </dd>   <dt>   SLOTS_ACTIVE  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a> </p>   </dd>   <dt>   SLOTS_AVAILABLE  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>   </dd>  </dl>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetCurrentMetricData::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetCurrentMetricData::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>  <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::GetCurrentMetricData::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetCurrentMetricData::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`sort_criteria(Vec<CurrentMetricSortCriteria>)`](crate::client::fluent_builders::GetCurrentMetricData::sort_criteria) / [`set_sort_criteria(Option<Vec<CurrentMetricSortCriteria>>)`](crate::client::fluent_builders::GetCurrentMetricData::set_sort_criteria): <p>The way to sort the resulting response based on metrics. You can enter one sort criteria. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics.</p>  <p>Note the following:</p>  <ul>   <li> <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p> </li>  </ul>
     /// - On success, responds with [`GetCurrentMetricDataOutput`](crate::output::GetCurrentMetricDataOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::GetCurrentMetricDataOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>  <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     ///   - [`metric_results(Option<Vec<CurrentMetricResult>>)`](crate::output::GetCurrentMetricDataOutput::metric_results): <p>Information about the real-time metrics.</p>
     ///   - [`data_snapshot_time(Option<DateTime>)`](crate::output::GetCurrentMetricDataOutput::data_snapshot_time): <p>The time at which the metrics were retrieved and cached for pagination.</p>
+    ///   - [`approximate_total_count(Option<i64>)`](crate::output::GetCurrentMetricDataOutput::approximate_total_count): <p>The total count of the result, regardless of the current page size. </p>
     /// - On failure, responds with [`SdkError<GetCurrentMetricDataError>`](crate::error::GetCurrentMetricDataError)
     pub fn get_current_metric_data(&self) -> fluent_builders::GetCurrentMetricData {
         fluent_builders::GetCurrentMetricData::new(self.handle.clone())
@@ -943,12 +1039,13 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::GetCurrentUserData::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::GetCurrentUserData::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`filters(UserDataFilters)`](crate::client::fluent_builders::GetCurrentUserData::filters) / [`set_filters(Option<UserDataFilters>)`](crate::client::fluent_builders::GetCurrentUserData::set_filters): <p>Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>. The user data is retrieved only for those users who are associated with the queues and have contacts that are in the specified <code>ContactState</code>. </p>
+    ///   - [`filters(UserDataFilters)`](crate::client::fluent_builders::GetCurrentUserData::filters) / [`set_filters(Option<UserDataFilters>)`](crate::client::fluent_builders::GetCurrentUserData::set_filters): <p>The filters to apply to returned user data. You can filter up to the following limits:</p>  <ul>   <li> <p>Queues: 100</p> </li>   <li> <p>Routing profiles: 100</p> </li>   <li> <p>Agents: 100</p> </li>   <li> <p>Contact states: 9</p> </li>   <li> <p>User hierarchy groups: 1</p> </li>  </ul>  <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p>  <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetCurrentUserData::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetCurrentUserData::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::GetCurrentUserData::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetCurrentUserData::set_max_results): <p>The maximum number of results to return per page.</p>
     /// - On success, responds with [`GetCurrentUserDataOutput`](crate::output::GetCurrentUserDataOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::GetCurrentUserDataOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`user_data_list(Option<Vec<UserData>>)`](crate::output::GetCurrentUserDataOutput::user_data_list): <p>A list of the user data that is returned.</p>
+    ///   - [`approximate_total_count(Option<i64>)`](crate::output::GetCurrentUserDataOutput::approximate_total_count): <p>The total count of the result, regardless of the current page size.</p>
     /// - On failure, responds with [`SdkError<GetCurrentUserDataError>`](crate::error::GetCurrentUserDataError)
     pub fn get_current_user_data(&self) -> fluent_builders::GetCurrentUserData {
         fluent_builders::GetCurrentUserData::new(self.handle.clone())
@@ -959,6 +1056,9 @@ impl Client {
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::GetFederationToken::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::GetFederationToken::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     /// - On success, responds with [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput) with field(s):
     ///   - [`credentials(Option<Credentials>)`](crate::output::GetFederationTokenOutput::credentials): <p>The credentials to use for federation.</p>
+    ///   - [`sign_in_url(Option<String>)`](crate::output::GetFederationTokenOutput::sign_in_url): <p>The URL to sign into the user's instance. </p>
+    ///   - [`user_arn(Option<String>)`](crate::output::GetFederationTokenOutput::user_arn): <p>The Amazon Resource Name (ARN) of the user.</p>
+    ///   - [`user_id(Option<String>)`](crate::output::GetFederationTokenOutput::user_id): <p>The identifier for the user.</p>
     /// - On failure, responds with [`SdkError<GetFederationTokenError>`](crate::error::GetFederationTokenError)
     pub fn get_federation_token(&self) -> fluent_builders::GetFederationToken {
         fluent_builders::GetFederationToken::new(self.handle.clone())
@@ -1006,6 +1106,18 @@ impl Client {
     pub fn get_task_template(&self) -> fluent_builders::GetTaskTemplate {
         fluent_builders::GetTaskTemplate::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetTrafficDistribution`](crate::client::fluent_builders::GetTrafficDistribution) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetTrafficDistribution::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetTrafficDistribution::set_id): <p>The identifier of the traffic distribution group.</p>
+    /// - On success, responds with [`GetTrafficDistributionOutput`](crate::output::GetTrafficDistributionOutput) with field(s):
+    ///   - [`telephony_config(Option<TelephonyConfig>)`](crate::output::GetTrafficDistributionOutput::telephony_config): <p>The distribution of traffic between the instance and its replicas.</p>
+    ///   - [`id(Option<String>)`](crate::output::GetTrafficDistributionOutput::id): <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetTrafficDistributionOutput::arn): <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    /// - On failure, responds with [`SdkError<GetTrafficDistributionError>`](crate::error::GetTrafficDistributionError)
+    pub fn get_traffic_distribution(&self) -> fluent_builders::GetTrafficDistribution {
+        fluent_builders::GetTrafficDistribution::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListAgentStatuses`](crate::client::fluent_builders::ListAgentStatuses) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAgentStatuses::into_paginator).
     ///
@@ -1044,7 +1156,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBots::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBots::set_max_results): <p>The maximum number of results to return per page.</p>
     ///   - [`lex_version(LexVersion)`](crate::client::fluent_builders::ListBots::lex_version) / [`set_lex_version(Option<LexVersion>)`](crate::client::fluent_builders::ListBots::set_lex_version): <p>The version of Amazon Lex or Amazon Lex V2.</p>
     /// - On success, responds with [`ListBotsOutput`](crate::output::ListBotsOutput) with field(s):
-    ///   - [`lex_bots(Option<Vec<LexBotConfig>>)`](crate::output::ListBotsOutput::lex_bots): <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
+    ///   - [`lex_bots(Option<Vec<LexBotConfig>>)`](crate::output::ListBotsOutput::lex_bots): <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListBotsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListBotsError>`](crate::error::ListBotsError)
     pub fn list_bots(&self) -> fluent_builders::ListBots {
@@ -1203,7 +1315,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLexBots::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLexBots::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLexBots::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLexBots::set_max_results): <p>The maximum number of results to return per page. If no value is specified, the default is 10. </p>
     /// - On success, responds with [`ListLexBotsOutput`](crate::output::ListLexBotsOutput) with field(s):
-    ///   - [`lex_bots(Option<Vec<LexBot>>)`](crate::output::ListLexBotsOutput::lex_bots): <p>The names and Regions of the Amazon Lex bots associated with the specified instance.</p>
+    ///   - [`lex_bots(Option<Vec<LexBot>>)`](crate::output::ListLexBotsOutput::lex_bots): <p>The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListLexBotsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLexBotsError>`](crate::error::ListLexBotsError)
     pub fn list_lex_bots(&self) -> fluent_builders::ListLexBots {
@@ -1229,7 +1341,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPhoneNumbersV2::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::ListPhoneNumbersV2::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::ListPhoneNumbersV2::set_target_arn): <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account.</p>
+    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::ListPhoneNumbersV2::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::ListPhoneNumbersV2::set_target_arn): <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same Amazon Web Services Region as the request.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPhoneNumbersV2::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPhoneNumbersV2::set_max_results): <p>The maximum number of results to return per page.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPhoneNumbersV2::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPhoneNumbersV2::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     ///   - [`phone_number_country_codes(Vec<PhoneNumberCountryCode>)`](crate::client::fluent_builders::ListPhoneNumbersV2::phone_number_country_codes) / [`set_phone_number_country_codes(Option<Vec<PhoneNumberCountryCode>>)`](crate::client::fluent_builders::ListPhoneNumbersV2::set_phone_number_country_codes): <p>The ISO country code.</p>
@@ -1237,7 +1349,7 @@ impl Client {
     ///   - [`phone_number_prefix(impl Into<String>)`](crate::client::fluent_builders::ListPhoneNumbersV2::phone_number_prefix) / [`set_phone_number_prefix(Option<String>)`](crate::client::fluent_builders::ListPhoneNumbersV2::set_phone_number_prefix): <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
     /// - On success, responds with [`ListPhoneNumbersV2Output`](crate::output::ListPhoneNumbersV2Output) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListPhoneNumbersV2Output::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    ///   - [`list_phone_numbers_summary_list(Option<Vec<ListPhoneNumbersSummary>>)`](crate::output::ListPhoneNumbersV2Output::list_phone_numbers_summary_list): <p>Information about phone numbers that have been claimed to your Amazon Connect instances.</p>
+    ///   - [`list_phone_numbers_summary_list(Option<Vec<ListPhoneNumbersSummary>>)`](crate::output::ListPhoneNumbersV2Output::list_phone_numbers_summary_list): <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
     /// - On failure, responds with [`SdkError<ListPhoneNumbersV2Error>`](crate::error::ListPhoneNumbersV2Error)
     pub fn list_phone_numbers_v2(&self) -> fluent_builders::ListPhoneNumbersV2 {
         fluent_builders::ListPhoneNumbersV2::new(self.handle.clone())
@@ -1330,6 +1442,22 @@ impl Client {
     pub fn list_routing_profiles(&self) -> fluent_builders::ListRoutingProfiles {
         fluent_builders::ListRoutingProfiles::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListRules`](crate::client::fluent_builders::ListRules) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRules::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListRules::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListRules::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`publish_status(RulePublishStatus)`](crate::client::fluent_builders::ListRules::publish_status) / [`set_publish_status(Option<RulePublishStatus>)`](crate::client::fluent_builders::ListRules::set_publish_status): <p>The publish status of the rule.</p>
+    ///   - [`event_source_name(EventSourceName)`](crate::client::fluent_builders::ListRules::event_source_name) / [`set_event_source_name(Option<EventSourceName>)`](crate::client::fluent_builders::ListRules::set_event_source_name): <p>The name of the event source.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRules::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRules::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRules::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// - On success, responds with [`ListRulesOutput`](crate::output::ListRulesOutput) with field(s):
+    ///   - [`rule_summary_list(Option<Vec<RuleSummary>>)`](crate::output::ListRulesOutput::rule_summary_list): <p>Summary information about a rule.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRulesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListRulesError>`](crate::error::ListRulesError)
+    pub fn list_rules(&self) -> fluent_builders::ListRules {
+        fluent_builders::ListRules::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListSecurityKeys`](crate::client::fluent_builders::ListSecurityKeys) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSecurityKeys::into_paginator).
     ///
@@ -1401,6 +1529,22 @@ impl Client {
     pub fn list_task_templates(&self) -> fluent_builders::ListTaskTemplates {
         fluent_builders::ListTaskTemplates::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListTrafficDistributionGroups`](crate::client::fluent_builders::ListTrafficDistributionGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTrafficDistributionGroups::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTrafficDistributionGroups::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListTrafficDistributionGroups::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTrafficDistributionGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTrafficDistributionGroups::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListTrafficDistributionGroups::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListTrafficDistributionGroups::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`ListTrafficDistributionGroupsOutput`](crate::output::ListTrafficDistributionGroupsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListTrafficDistributionGroupsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    ///   - [`traffic_distribution_group_summary_list(Option<Vec<TrafficDistributionGroupSummary>>)`](crate::output::ListTrafficDistributionGroupsOutput::traffic_distribution_group_summary_list): <p>A list of traffic distribution groups.</p>
+    /// - On failure, responds with [`SdkError<ListTrafficDistributionGroupsError>`](crate::error::ListTrafficDistributionGroupsError)
+    pub fn list_traffic_distribution_groups(
+        &self,
+    ) -> fluent_builders::ListTrafficDistributionGroups {
+        fluent_builders::ListTrafficDistributionGroups::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListUseCases`](crate::client::fluent_builders::ListUseCases) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUseCases::into_paginator).
     ///
@@ -1444,6 +1588,21 @@ impl Client {
     pub fn list_users(&self) -> fluent_builders::ListUsers {
         fluent_builders::ListUsers::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`MonitorContact`](crate::client::fluent_builders::MonitorContact) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::MonitorContact::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::MonitorContact::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::MonitorContact::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::MonitorContact::set_contact_id): <p>The identifier of the contact.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::MonitorContact::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::MonitorContact::set_user_id): <p>The identifier of the user account.</p>
+    ///   - [`allowed_monitor_capabilities(Vec<MonitorCapability>)`](crate::client::fluent_builders::MonitorContact::allowed_monitor_capabilities) / [`set_allowed_monitor_capabilities(Option<Vec<MonitorCapability>>)`](crate::client::fluent_builders::MonitorContact::set_allowed_monitor_capabilities): <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::MonitorContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::MonitorContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    /// - On success, responds with [`MonitorContactOutput`](crate::output::MonitorContactOutput) with field(s):
+    ///   - [`contact_id(Option<String>)`](crate::output::MonitorContactOutput::contact_id): <p>The identifier of the contact.</p>
+    ///   - [`contact_arn(Option<String>)`](crate::output::MonitorContactOutput::contact_arn): <p>The ARN of the contact.</p>
+    /// - On failure, responds with [`SdkError<MonitorContactError>`](crate::error::MonitorContactError)
+    pub fn monitor_contact(&self) -> fluent_builders::MonitorContact {
+        fluent_builders::MonitorContact::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`PutUserStatus`](crate::client::fluent_builders::PutUserStatus) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1460,12 +1619,26 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`phone_number_id(impl Into<String>)`](crate::client::fluent_builders::ReleasePhoneNumber::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::client::fluent_builders::ReleasePhoneNumber::set_phone_number_id): <p>A unique identifier for the phone number.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::ReleasePhoneNumber::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::ReleasePhoneNumber::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::ReleasePhoneNumber::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::ReleasePhoneNumber::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     /// - On success, responds with [`ReleasePhoneNumberOutput`](crate::output::ReleasePhoneNumberOutput)
 
     /// - On failure, responds with [`SdkError<ReleasePhoneNumberError>`](crate::error::ReleasePhoneNumberError)
     pub fn release_phone_number(&self) -> fluent_builders::ReleasePhoneNumber {
         fluent_builders::ReleasePhoneNumber::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ReplicateInstance`](crate::client::fluent_builders::ReplicateInstance) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ReplicateInstance::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ReplicateInstance::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
+    ///   - [`replica_region(impl Into<String>)`](crate::client::fluent_builders::ReplicateInstance::replica_region) / [`set_replica_region(Option<String>)`](crate::client::fluent_builders::ReplicateInstance::set_replica_region): <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::ReplicateInstance::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::ReplicateInstance::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    ///   - [`replica_alias(impl Into<String>)`](crate::client::fluent_builders::ReplicateInstance::replica_alias) / [`set_replica_alias(Option<String>)`](crate::client::fluent_builders::ReplicateInstance::set_replica_alias): <p>The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.</p>
+    /// - On success, responds with [`ReplicateInstanceOutput`](crate::output::ReplicateInstanceOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::ReplicateInstanceOutput::id): <p>The identifier of the replicated instance. You can find the <code>instanceId</code> in the ARN of the instance. The replicated instance has the same identifier as the instance it was replicated from.</p>
+    ///   - [`arn(Option<String>)`](crate::output::ReplicateInstanceOutput::arn): <p>The Amazon Resource Name (ARN) of the replicated instance.</p>
+    /// - On failure, responds with [`SdkError<ReplicateInstanceError>`](crate::error::ReplicateInstanceError)
+    pub fn replicate_instance(&self) -> fluent_builders::ReplicateInstance {
+        fluent_builders::ReplicateInstance::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ResumeContactRecording`](crate::client::fluent_builders::ResumeContactRecording) operation.
     ///
@@ -1483,7 +1656,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_target_arn): <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_target_arn): <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
     ///   - [`phone_number_country_code(PhoneNumberCountryCode)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::phone_number_country_code) / [`set_phone_number_country_code(Option<PhoneNumberCountryCode>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_phone_number_country_code): <p>The ISO country code.</p>
     ///   - [`phone_number_type(PhoneNumberType)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::phone_number_type) / [`set_phone_number_type(Option<PhoneNumberType>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_phone_number_type): <p>The type of phone number.</p>
     ///   - [`phone_number_prefix(impl Into<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::phone_number_prefix) / [`set_phone_number_prefix(Option<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_phone_number_prefix): <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
@@ -1491,7 +1664,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     /// - On success, responds with [`SearchAvailablePhoneNumbersOutput`](crate::output::SearchAvailablePhoneNumbersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::SearchAvailablePhoneNumbersOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    ///   - [`available_numbers_list(Option<Vec<AvailableNumberSummary>>)`](crate::output::SearchAvailablePhoneNumbersOutput::available_numbers_list): <p>A list of available phone numbers that you can claim for your Amazon Connect instance.</p>
+    ///   - [`available_numbers_list(Option<Vec<AvailableNumberSummary>>)`](crate::output::SearchAvailablePhoneNumbersOutput::available_numbers_list): <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
     /// - On failure, responds with [`SdkError<SearchAvailablePhoneNumbersError>`](crate::error::SearchAvailablePhoneNumbersError)
     pub fn search_available_phone_numbers(&self) -> fluent_builders::SearchAvailablePhoneNumbers {
         fluent_builders::SearchAvailablePhoneNumbers::new(self.handle.clone())
@@ -1504,7 +1677,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchQueues::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchQueues::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchQueues::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchQueues::set_max_results): <p>The maximum number of results to return per page.</p>
     ///   - [`search_filter(QueueSearchFilter)`](crate::client::fluent_builders::SearchQueues::search_filter) / [`set_search_filter(Option<QueueSearchFilter>)`](crate::client::fluent_builders::SearchQueues::set_search_filter): <p>Filters to be applied to search results.</p>
-    ///   - [`search_criteria(QueueSearchCriteria)`](crate::client::fluent_builders::SearchQueues::search_criteria) / [`set_search_criteria(Option<QueueSearchCriteria>)`](crate::client::fluent_builders::SearchQueues::set_search_criteria): <p>The search criteria to be used to return queues.</p>
+    ///   - [`search_criteria(QueueSearchCriteria)`](crate::client::fluent_builders::SearchQueues::search_criteria) / [`set_search_criteria(Option<QueueSearchCriteria>)`](crate::client::fluent_builders::SearchQueues::set_search_criteria): <p>The search criteria to be used to return queues.</p> <note>   <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>  </note>
     /// - On success, responds with [`SearchQueuesOutput`](crate::output::SearchQueuesOutput) with field(s):
     ///   - [`queues(Option<Vec<Queue>>)`](crate::output::SearchQueuesOutput::queues): <p>Information about the queues.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchQueuesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
@@ -1521,7 +1694,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchRoutingProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchRoutingProfiles::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchRoutingProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchRoutingProfiles::set_max_results): <p>The maximum number of results to return per page.</p>
     ///   - [`search_filter(RoutingProfileSearchFilter)`](crate::client::fluent_builders::SearchRoutingProfiles::search_filter) / [`set_search_filter(Option<RoutingProfileSearchFilter>)`](crate::client::fluent_builders::SearchRoutingProfiles::set_search_filter): <p>Filters to be applied to search results.</p>
-    ///   - [`search_criteria(RoutingProfileSearchCriteria)`](crate::client::fluent_builders::SearchRoutingProfiles::search_criteria) / [`set_search_criteria(Option<RoutingProfileSearchCriteria>)`](crate::client::fluent_builders::SearchRoutingProfiles::set_search_criteria): <p>The search criteria to be used to return routing profiles.</p>
+    ///   - [`search_criteria(RoutingProfileSearchCriteria)`](crate::client::fluent_builders::SearchRoutingProfiles::search_criteria) / [`set_search_criteria(Option<RoutingProfileSearchCriteria>)`](crate::client::fluent_builders::SearchRoutingProfiles::set_search_criteria): <p>The search criteria to be used to return routing profiles.</p> <note>   <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>  </note>
     /// - On success, responds with [`SearchRoutingProfilesOutput`](crate::output::SearchRoutingProfilesOutput) with field(s):
     ///   - [`routing_profiles(Option<Vec<RoutingProfile>>)`](crate::output::SearchRoutingProfilesOutput::routing_profiles): <p>Information about the routing profiles.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchRoutingProfilesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
@@ -1537,7 +1710,7 @@ impl Client {
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::SearchSecurityProfiles::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::SearchSecurityProfiles::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchSecurityProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchSecurityProfiles::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchSecurityProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchSecurityProfiles::set_max_results): <p>The maximum number of results to return per page.</p>
-    ///   - [`search_criteria(SecurityProfileSearchCriteria)`](crate::client::fluent_builders::SearchSecurityProfiles::search_criteria) / [`set_search_criteria(Option<SecurityProfileSearchCriteria>)`](crate::client::fluent_builders::SearchSecurityProfiles::set_search_criteria): <p>The search criteria to be used to return security profiles.</p>
+    ///   - [`search_criteria(SecurityProfileSearchCriteria)`](crate::client::fluent_builders::SearchSecurityProfiles::search_criteria) / [`set_search_criteria(Option<SecurityProfileSearchCriteria>)`](crate::client::fluent_builders::SearchSecurityProfiles::set_search_criteria): <p>The search criteria to be used to return security profiles. </p> <note>   <p>The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>  </note> <note>   <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>  </note>
     ///   - [`search_filter(SecurityProfilesSearchFilter)`](crate::client::fluent_builders::SearchSecurityProfiles::search_filter) / [`set_search_filter(Option<SecurityProfilesSearchFilter>)`](crate::client::fluent_builders::SearchSecurityProfiles::set_search_filter): <p>Filters to be applied to search results.</p>
     /// - On success, responds with [`SearchSecurityProfilesOutput`](crate::output::SearchSecurityProfilesOutput) with field(s):
     ///   - [`security_profiles(Option<Vec<SecurityProfileSearchSummary>>)`](crate::output::SearchSecurityProfilesOutput::security_profiles): <p>Information about the security profiles.</p>
@@ -1555,7 +1728,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchUsers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchUsers::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchUsers::set_max_results): <p>The maximum number of results to return per page.</p>
     ///   - [`search_filter(UserSearchFilter)`](crate::client::fluent_builders::SearchUsers::search_filter) / [`set_search_filter(Option<UserSearchFilter>)`](crate::client::fluent_builders::SearchUsers::set_search_filter): <p>Filters to be applied to search results.</p>
-    ///   - [`search_criteria(UserSearchCriteria)`](crate::client::fluent_builders::SearchUsers::search_criteria) / [`set_search_criteria(Option<UserSearchCriteria>)`](crate::client::fluent_builders::SearchUsers::set_search_criteria): <p>The search criteria to be used to return users.</p> <note>   <p>The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range result in empty results. </p>  </note>
+    ///   - [`search_criteria(UserSearchCriteria)`](crate::client::fluent_builders::SearchUsers::search_criteria) / [`set_search_criteria(Option<UserSearchCriteria>)`](crate::client::fluent_builders::SearchUsers::set_search_criteria): <p>The search criteria to be used to return users.</p> <note>   <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>  </note>
     /// - On success, responds with [`SearchUsersOutput`](crate::output::SearchUsersOutput) with field(s):
     ///   - [`users(Option<Vec<UserSearchSummary>>)`](crate::output::SearchUsersOutput::users): <p>Information about the users.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchUsersOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
@@ -1589,9 +1762,9 @@ impl Client {
     ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::StartChatContact::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartChatContact::set_attributes): <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes. </p>  <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     ///   - [`participant_details(ParticipantDetails)`](crate::client::fluent_builders::StartChatContact::participant_details) / [`set_participant_details(Option<ParticipantDetails>)`](crate::client::fluent_builders::StartChatContact::set_participant_details): <p>Information identifying the participant.</p>
     ///   - [`initial_message(ChatMessage)`](crate::client::fluent_builders::StartChatContact::initial_message) / [`set_initial_message(Option<ChatMessage>)`](crate::client::fluent_builders::StartChatContact::set_initial_message): <p>The initial message to be sent to the newly created chat.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartChatContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartChatContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartChatContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartChatContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     ///   - [`chat_duration_in_minutes(i32)`](crate::client::fluent_builders::StartChatContact::chat_duration_in_minutes) / [`set_chat_duration_in_minutes(Option<i32>)`](crate::client::fluent_builders::StartChatContact::set_chat_duration_in_minutes): <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
-    ///   - [`supported_messaging_content_types(Vec<String>)`](crate::client::fluent_builders::StartChatContact::supported_messaging_content_types) / [`set_supported_messaging_content_types(Option<Vec<String>>)`](crate::client::fluent_builders::StartChatContact::set_supported_messaging_content_types): <p>The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.</p>
+    ///   - [`supported_messaging_content_types(Vec<String>)`](crate::client::fluent_builders::StartChatContact::supported_messaging_content_types) / [`set_supported_messaging_content_types(Option<Vec<String>>)`](crate::client::fluent_builders::StartChatContact::set_supported_messaging_content_types): <p>The supported chat message content types. Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json]</code>.</p>
     /// - On success, responds with [`StartChatContactOutput`](crate::output::StartChatContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::output::StartChatContactOutput::contact_id): <p>The identifier of this contact within the Amazon Connect instance. </p>
     ///   - [`participant_id(Option<String>)`](crate::output::StartChatContactOutput::participant_id): <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
@@ -1619,7 +1792,7 @@ impl Client {
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StartContactStreaming::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StartContactStreaming::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::StartContactStreaming::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::StartContactStreaming::set_contact_id): <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     ///   - [`chat_streaming_configuration(ChatStreamingConfiguration)`](crate::client::fluent_builders::StartContactStreaming::chat_streaming_configuration) / [`set_chat_streaming_configuration(Option<ChatStreamingConfiguration>)`](crate::client::fluent_builders::StartContactStreaming::set_chat_streaming_configuration): <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartContactStreaming::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartContactStreaming::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartContactStreaming::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartContactStreaming::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     /// - On success, responds with [`StartContactStreamingOutput`](crate::output::StartContactStreamingOutput) with field(s):
     ///   - [`streaming_id(Option<String>)`](crate::output::StartContactStreamingOutput::streaming_id): <p>The identifier of the streaming configuration enabled. </p>
     /// - On failure, responds with [`SdkError<StartContactStreamingError>`](crate::error::StartContactStreamingError)
@@ -1632,7 +1805,7 @@ impl Client {
     ///   - [`destination_phone_number(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::destination_phone_number) / [`set_destination_phone_number(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_destination_phone_number): <p>The phone number of the customer, in E.164 format.</p>
     ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_contact_flow_id): <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>  <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
     ///   - [`source_phone_number(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::source_phone_number) / [`set_source_phone_number(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_source_phone_number): <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
     ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_queue_id): <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the flow is used. If you do not specify a queue, you must specify a source phone number.</p>
     ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_attributes): <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>  <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
@@ -1655,7 +1828,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_name): <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
     ///   - [`references(HashMap<String, Reference>)`](crate::client::fluent_builders::StartTaskContact::references) / [`set_references(Option<HashMap<String, Reference>>)`](crate::client::fluent_builders::StartTaskContact::set_references): <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_description): <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     ///   - [`scheduled_time(DateTime)`](crate::client::fluent_builders::StartTaskContact::scheduled_time) / [`set_scheduled_time(Option<DateTime>)`](crate::client::fluent_builders::StartTaskContact::set_scheduled_time): <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
     ///   - [`task_template_id(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::task_template_id) / [`set_task_template_id(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_task_template_id): <p>A unique identifier for the task template.</p>
     ///   - [`quick_connect_id(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::quick_connect_id) / [`set_quick_connect_id(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_quick_connect_id): <p>The identifier for the quick connect.</p>
@@ -1731,7 +1904,7 @@ impl Client {
     ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::TransferContact::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::TransferContact::set_queue_id): <p>The identifier for the queue.</p>
     ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::TransferContact::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::TransferContact::set_user_id): <p>The identifier for the user.</p>
     ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::TransferContact::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::TransferContact::set_contact_flow_id): <p>The identifier of the flow.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::TransferContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::TransferContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::TransferContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::TransferContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     /// - On success, responds with [`TransferContactOutput`](crate::output::TransferContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::output::TransferContactOutput::contact_id): <p>The identifier of the contact in this instance of Amazon Connect. </p>
     ///   - [`contact_arn(Option<String>)`](crate::output::TransferContactOutput::contact_arn): <p>The Amazon Resource Name (ARN) of the contact.</p>
@@ -1797,7 +1970,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::set_instance_id): <p>The identifier of the Amazon Connect instance.</p>
     ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::set_contact_flow_id): <p>The identifier of the flow.</p>
-    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::set_content): <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::set_content): <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
     /// - On success, responds with [`UpdateContactFlowContentOutput`](crate::output::UpdateContactFlowContentOutput)
 
     /// - On failure, responds with [`SdkError<UpdateContactFlowContentError>`](crate::error::UpdateContactFlowContentError)
@@ -1913,12 +2086,24 @@ impl Client {
     pub fn update_instance_storage_config(&self) -> fluent_builders::UpdateInstanceStorageConfig {
         fluent_builders::UpdateInstanceStorageConfig::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateParticipantRoleConfig`](crate::client::fluent_builders::UpdateParticipantRoleConfig) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateParticipantRoleConfig::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateParticipantRoleConfig::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::UpdateParticipantRoleConfig::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::UpdateParticipantRoleConfig::set_contact_id): <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    ///   - [`channel_configuration(UpdateParticipantRoleConfigChannelInfo)`](crate::client::fluent_builders::UpdateParticipantRoleConfig::channel_configuration) / [`set_channel_configuration(Option<UpdateParticipantRoleConfigChannelInfo>)`](crate::client::fluent_builders::UpdateParticipantRoleConfig::set_channel_configuration): <p>The Amazon Connect channel you want to configure.</p>
+    /// - On success, responds with [`UpdateParticipantRoleConfigOutput`](crate::output::UpdateParticipantRoleConfigOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateParticipantRoleConfigError>`](crate::error::UpdateParticipantRoleConfigError)
+    pub fn update_participant_role_config(&self) -> fluent_builders::UpdateParticipantRoleConfig {
+        fluent_builders::UpdateParticipantRoleConfig::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdatePhoneNumber`](crate::client::fluent_builders::UpdatePhoneNumber) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`phone_number_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::set_phone_number_id): <p>A unique identifier for the phone number.</p>
-    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::set_target_arn): <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::set_target_arn): <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     /// - On success, responds with [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput) with field(s):
     ///   - [`phone_number_id(Option<String>)`](crate::output::UpdatePhoneNumberOutput::phone_number_id): <p>A unique identifier for the phone number.</p>
     ///   - [`phone_number_arn(Option<String>)`](crate::output::UpdatePhoneNumberOutput::phone_number_arn): <p>The Amazon Resource Name (ARN) of the phone number.</p>
@@ -2067,6 +2252,21 @@ impl Client {
     pub fn update_routing_profile_queues(&self) -> fluent_builders::UpdateRoutingProfileQueues {
         fluent_builders::UpdateRoutingProfileQueues::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateRule`](crate::client::fluent_builders::UpdateRule) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`rule_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRule::rule_id) / [`set_rule_id(Option<String>)`](crate::client::fluent_builders::UpdateRule::set_rule_id): <p>A unique identifier for the rule.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRule::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateRule::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateRule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateRule::set_name): <p>The name of the rule. You can change the name only if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
+    ///   - [`function(impl Into<String>)`](crate::client::fluent_builders::UpdateRule::function) / [`set_function(Option<String>)`](crate::client::fluent_builders::UpdateRule::set_function): <p>The conditions of the rule.</p>
+    ///   - [`actions(Vec<RuleAction>)`](crate::client::fluent_builders::UpdateRule::actions) / [`set_actions(Option<Vec<RuleAction>>)`](crate::client::fluent_builders::UpdateRule::set_actions): <p>A list of actions to be run when the rule is triggered.</p>
+    ///   - [`publish_status(RulePublishStatus)`](crate::client::fluent_builders::UpdateRule::publish_status) / [`set_publish_status(Option<RulePublishStatus>)`](crate::client::fluent_builders::UpdateRule::set_publish_status): <p>The publish status of the rule.</p>
+    /// - On success, responds with [`UpdateRuleOutput`](crate::output::UpdateRuleOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRuleError>`](crate::error::UpdateRuleError)
+    pub fn update_rule(&self) -> fluent_builders::UpdateRule {
+        fluent_builders::UpdateRule::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateSecurityProfile`](crate::client::fluent_builders::UpdateSecurityProfile) operation.
     ///
     /// - The fluent builder is configurable:
@@ -2074,6 +2274,8 @@ impl Client {
     ///   - [`permissions(Vec<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::permissions) / [`set_permissions(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_permissions): <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
     ///   - [`security_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::security_profile_id) / [`set_security_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_security_profile_id): <p>The identifier for the security profle.</p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`allowed_access_control_tags(HashMap<String, String>)`](crate::client::fluent_builders::UpdateSecurityProfile::allowed_access_control_tags) / [`set_allowed_access_control_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_allowed_access_control_tags): <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    ///   - [`tag_restricted_resources(Vec<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::tag_restricted_resources) / [`set_tag_restricted_resources(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_tag_restricted_resources): <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
     /// - On success, responds with [`UpdateSecurityProfileOutput`](crate::output::UpdateSecurityProfileOutput)
 
     /// - On failure, responds with [`SdkError<UpdateSecurityProfileError>`](crate::error::UpdateSecurityProfileError)
@@ -2108,6 +2310,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateTaskTemplateError>`](crate::error::UpdateTaskTemplateError)
     pub fn update_task_template(&self) -> fluent_builders::UpdateTaskTemplate {
         fluent_builders::UpdateTaskTemplate::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateTrafficDistribution`](crate::client::fluent_builders::UpdateTrafficDistribution) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateTrafficDistribution::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateTrafficDistribution::set_id): <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    ///   - [`telephony_config(TelephonyConfig)`](crate::client::fluent_builders::UpdateTrafficDistribution::telephony_config) / [`set_telephony_config(Option<TelephonyConfig>)`](crate::client::fluent_builders::UpdateTrafficDistribution::set_telephony_config): <p>The distribution of traffic between the instance and its replica(s).</p>
+    /// - On success, responds with [`UpdateTrafficDistributionOutput`](crate::output::UpdateTrafficDistributionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateTrafficDistributionError>`](crate::error::UpdateTrafficDistributionError)
+    pub fn update_traffic_distribution(&self) -> fluent_builders::UpdateTrafficDistribution {
+        fluent_builders::UpdateTrafficDistribution::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateUserHierarchy`](crate::client::fluent_builders::UpdateUserHierarchy) operation.
     ///
@@ -2753,7 +2966,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociatePhoneNumberContactFlow`.
     ///
-    /// <p>Associates a flow with a phone number claimed to your Amazon Connect instance.</p>
+    /// <p>Associates a flow with a phone number claimed to your Amazon Connect instance.</p> <important>
+    /// <p>If the number is claimed to a traffic distribution group, and you are calling this API using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone number ARN or UUID value for the <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociatePhoneNumberContactFlow {
         handle: std::sync::Arc<super::Handle>,
@@ -3140,7 +3355,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ClaimPhoneNumber`.
     ///
-    /// <p>Claims an available phone number to your Amazon Connect instance.</p>
+    /// <p>Claims an available phone number to your Amazon Connect instance or traffic distribution group. You can call this API only in the same Amazon Web Services Region where the Amazon Connect instance or traffic distribution group was created.</p>
+    /// <p>For more information about how to use this operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html">Claim a phone number in your country</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-numbers-traffic-distribution-groups.html">Claim phone numbers to traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>. </p> <important>
+    /// <p>You can call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchAvailablePhoneNumbers.html">SearchAvailablePhoneNumbers</a> API for available phone numbers that you can claim. Call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a> API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a> operation.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ClaimPhoneNumber {
         handle: std::sync::Arc<super::Handle>,
@@ -3200,12 +3418,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target_arn(input);
             self
@@ -3256,12 +3474,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+        /// <p>Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code> </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+        /// <p>Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code> </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -3410,7 +3630,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContactFlow`.
     ///
     /// <p>Creates a flow for the specified Amazon Connect instance.</p>
-    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContactFlow {
         handle: std::sync::Arc<super::Handle>,
@@ -3672,12 +3892,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -4126,7 +4346,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateQueue`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Creates a new queue for the specified Amazon Connect instance.</p>
+    /// <p>Creates a new queue for the specified Amazon Connect instance.</p> <important>
+    /// <p>If the number being used in the input is claimed to a traffic distribution group, and you are calling this API using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone number ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a> request body parameter. However, if the number is claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateQueue {
         handle: std::sync::Arc<super::Handle>,
@@ -4585,6 +4807,153 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateRule`.
+    ///
+    /// <p>Creates a rule for the specified Amazon Connect instance.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules Function language</a> to code conditions for the rule. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateRule {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_rule_input::Builder,
+    }
+    impl CreateRule {
+        /// Creates a new `CreateRule`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateRule,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateRuleError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateRuleOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateRuleError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>A unique name for the rule.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>A unique name for the rule.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The event source to trigger the rule.</p>
+        pub fn trigger_event_source(mut self, input: crate::model::RuleTriggerEventSource) -> Self {
+            self.inner = self.inner.trigger_event_source(input);
+            self
+        }
+        /// <p>The event source to trigger the rule.</p>
+        pub fn set_trigger_event_source(
+            mut self,
+            input: std::option::Option<crate::model::RuleTriggerEventSource>,
+        ) -> Self {
+            self.inner = self.inner.set_trigger_event_source(input);
+            self
+        }
+        /// <p>The conditions of the rule.</p>
+        pub fn function(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function(input.into());
+            self
+        }
+        /// <p>The conditions of the rule.</p>
+        pub fn set_function(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_function(input);
+            self
+        }
+        /// Appends an item to `Actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>A list of actions to be run when the rule is triggered.</p>
+        pub fn actions(mut self, input: crate::model::RuleAction) -> Self {
+            self.inner = self.inner.actions(input);
+            self
+        }
+        /// <p>A list of actions to be run when the rule is triggered.</p>
+        pub fn set_actions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RuleAction>>,
+        ) -> Self {
+            self.inner = self.inner.set_actions(input);
+            self
+        }
+        /// <p>The publish status of the rule.</p>
+        pub fn publish_status(mut self, input: crate::model::RulePublishStatus) -> Self {
+            self.inner = self.inner.publish_status(input);
+            self
+        }
+        /// <p>The publish status of the rule.</p>
+        pub fn set_publish_status(
+            mut self,
+            input: std::option::Option<crate::model::RulePublishStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_publish_status(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateSecurityProfile`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
@@ -4719,6 +5088,46 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// Adds a key-value pair to `AllowedAccessControlTags`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_access_control_tags`](Self::set_allowed_access_control_tags).
+        ///
+        /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+        pub fn allowed_access_control_tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.allowed_access_control_tags(k.into(), v.into());
+            self
+        }
+        /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+        pub fn set_allowed_access_control_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_allowed_access_control_tags(input);
+            self
+        }
+        /// Appends an item to `TagRestrictedResources`.
+        ///
+        /// To override the contents of this collection use [`set_tag_restricted_resources`](Self::set_tag_restricted_resources).
+        ///
+        /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code> </p>
+        pub fn tag_restricted_resources(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_restricted_resources(input.into());
+            self
+        }
+        /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code> </p>
+        pub fn set_tag_restricted_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_restricted_resources(input);
             self
         }
     }
@@ -4883,14 +5292,141 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fields(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateTrafficDistributionGroup`.
+    ///
+    /// <p>Creates a traffic distribution group given an Amazon Connect instance that has been replicated. </p>
+    /// <p>For more information about creating traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set up traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateTrafficDistributionGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_traffic_distribution_group_input::Builder,
+    }
+    impl CreateTrafficDistributionGroup {
+        /// Creates a new `CreateTrafficDistributionGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateTrafficDistributionGroup,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateTrafficDistributionGroupError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateTrafficDistributionGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateTrafficDistributionGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name for the traffic distribution group. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name for the traffic distribution group. </p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>A description for the traffic distribution group.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A description for the traffic distribution group.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance that has been replicated. You can find the <code>instanceId</code> in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance that has been replicated. You can find the <code>instanceId</code> in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -5398,12 +5934,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a create request is received more than once with same client token, subsequent requests return the previous response without creating a vocabulary again.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. If a create request is received more than once with same client token, subsequent requests return the previous response without creating a vocabulary again.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a create request is received more than once with same client token, subsequent requests return the previous response without creating a vocabulary again.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. If a create request is received more than once with same client token, subsequent requests return the previous response without creating a vocabulary again.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -5984,6 +6520,89 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteRule`.
+    ///
+    /// <p>Deletes a rule for the specified Amazon Connect instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteRule {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_rule_input::Builder,
+    }
+    impl DeleteRule {
+        /// Creates a new `DeleteRule`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteRule,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteRuleError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteRuleOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteRuleError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>A unique identifier for the rule.</p>
+        pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_id(input.into());
+            self
+        }
+        /// <p>A unique identifier for the rule.</p>
+        pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rule_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteSecurityProfile`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
@@ -6154,6 +6773,86 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_task_template_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteTrafficDistributionGroup`.
+    ///
+    /// <p>Deletes a traffic distribution group. This API can be called only in the Region where the traffic distribution group is created.</p>
+    /// <p>For more information about deleting traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteTrafficDistributionGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_traffic_distribution_group_input::Builder,
+    }
+    impl DeleteTrafficDistributionGroup {
+        /// Creates a new `DeleteTrafficDistributionGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteTrafficDistributionGroup,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteTrafficDistributionGroupError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteTrafficDistributionGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteTrafficDistributionGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+        pub fn traffic_distribution_group_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.traffic_distribution_group_id(input.into());
+            self
+        }
+        /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+        pub fn set_traffic_distribution_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_traffic_distribution_group_id(input);
             self
         }
     }
@@ -6686,7 +7385,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeContactFlow`.
     ///
     /// <p>Describes the specified flow.</p>
-    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContactFlow {
         handle: std::sync::Arc<super::Handle>,
@@ -7207,7 +7906,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePhoneNumber`.
     ///
-    /// <p>Gets details and status of a phone number that’s claimed to your Amazon Connect instance</p>
+    /// <p>Gets details and status of a phone number that’s claimed to your Amazon Connect instance or traffic distribution group.</p> <important>
+    /// <p>If the number is claimed to a traffic distribution group, and you are calling in the Amazon Web Services Region where the traffic distribution group was created, you can use either a phone number ARN or UUID value for the <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed to a traffic distribution group and you are calling this API in the alternate Amazon Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePhoneNumber {
         handle: std::sync::Arc<super::Handle>,
@@ -7537,6 +8238,89 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeRule`.
+    ///
+    /// <p>Describes a rule for the specified Amazon Connect instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeRule {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_rule_input::Builder,
+    }
+    impl DescribeRule {
+        /// Creates a new `DescribeRule`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeRule,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeRuleError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeRuleOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeRuleError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>A unique identifier for the rule.</p>
+        pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_id(input.into());
+            self
+        }
+        /// <p>A unique identifier for the rule.</p>
+        pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rule_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeSecurityProfile`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
@@ -7621,6 +8405,85 @@ pub mod fluent_builders {
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeTrafficDistributionGroup`.
+    ///
+    /// <p>Gets details and status of a traffic distribution group.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeTrafficDistributionGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_traffic_distribution_group_input::Builder,
+    }
+    impl DescribeTrafficDistributionGroup {
+        /// Creates a new `DescribeTrafficDistributionGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeTrafficDistributionGroup,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeTrafficDistributionGroupError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeTrafficDistributionGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeTrafficDistributionGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+        pub fn traffic_distribution_group_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.traffic_distribution_group_id(input.into());
+            self
+        }
+        /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+        pub fn set_traffic_distribution_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_traffic_distribution_group_id(input);
             self
         }
     }
@@ -8400,12 +9263,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_name(input);
             self
         }
-        /// <p>The Region in which the Amazon Lex bot has been created.</p>
+        /// <p>The Amazon Web Services Region in which the Amazon Lex bot has been created.</p>
         pub fn lex_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lex_region(input.into());
             self
         }
-        /// <p>The Region in which the Amazon Lex bot has been created.</p>
+        /// <p>The Amazon Web Services Region in which the Amazon Lex bot has been created.</p>
         pub fn set_lex_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lex_region(input);
             self
@@ -8413,7 +9276,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociatePhoneNumberContactFlow`.
     ///
-    /// <p>Removes the flow association from a phone number claimed to your Amazon Connect instance, if a flow association exists.</p>
+    /// <p>Removes the flow association from a phone number claimed to your Amazon Connect instance.</p> <important>
+    /// <p>If the number is claimed to a traffic distribution group, and you are calling this API using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone number ARN or UUID value for the <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociatePhoneNumberContactFlow {
         handle: std::sync::Arc<super::Handle>,
@@ -8795,6 +9660,99 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DismissUserContact`.
+    ///
+    /// <p>Dismisses contacts from an agent’s CCP and returns the agent to an available state, which allows the agent to receive a new routed contact. Contacts can only be dismissed if they are in a <code>MISSED</code>, <code>ERROR</code>, <code>ENDED</code>, or <code>REJECTED</code> state in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">Agent Event Stream</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DismissUserContact {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::dismiss_user_contact_input::Builder,
+    }
+    impl DismissUserContact {
+        /// Creates a new `DismissUserContact`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DismissUserContact,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DismissUserContactError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DismissUserContactOutput,
+            aws_smithy_http::result::SdkError<crate::error::DismissUserContactError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the user account.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
+            self
+        }
+        /// <p>The identifier of the user account.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_id(input);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the contact.</p>
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
+            self
+        }
+        /// <p>The identifier of the contact.</p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_contact_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetContactAttributes`.
     ///
     /// <p>Retrieves the contact attributes for the specified contact.</p>
@@ -8960,12 +9918,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+        /// <p>The filters to apply to returned metrics. You can filter up to the following limits:</p>
+        /// <ul>
+        /// <li> <p>Queues: 100</p> </li>
+        /// <li> <p>Routing profiles: 100</p> </li>
+        /// <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p> </li>
+        /// </ul>
+        /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request. </p>
+        /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
         pub fn filters(mut self, input: crate::model::Filters) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+        /// <p>The filters to apply to returned metrics. You can filter up to the following limits:</p>
+        /// <ul>
+        /// <li> <p>Queues: 100</p> </li>
+        /// <li> <p>Routing profiles: 100</p> </li>
+        /// <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p> </li>
+        /// </ul>
+        /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request. </p>
+        /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
         pub fn set_filters(mut self, input: std::option::Option<crate::model::Filters>) -> Self {
             self.inner = self.inner.set_filters(input);
             self
@@ -8974,14 +9946,22 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_groupings`](Self::set_groupings).
         ///
-        /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
-        /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p>
+        /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. </p>
+        /// <ul>
+        /// <li> <p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p> </li>
+        /// <li> <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p> </li>
+        /// <li> <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p> </li>
+        /// </ul>
         pub fn groupings(mut self, input: crate::model::Grouping) -> Self {
             self.inner = self.inner.groupings(input);
             self
         }
-        /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
-        /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p>
+        /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. </p>
+        /// <ul>
+        /// <li> <p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p> </li>
+        /// <li> <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p> </li>
+        /// <li> <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p> </li>
+        /// </ul>
         pub fn set_groupings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Grouping>>,
@@ -9222,6 +10202,31 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
+        /// Appends an item to `SortCriteria`.
+        ///
+        /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
+        ///
+        /// <p>The way to sort the resulting response based on metrics. You can enter one sort criteria. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics.</p>
+        /// <p>Note the following:</p>
+        /// <ul>
+        /// <li> <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p> </li>
+        /// </ul>
+        pub fn sort_criteria(mut self, input: crate::model::CurrentMetricSortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(input);
+            self
+        }
+        /// <p>The way to sort the resulting response based on metrics. You can enter one sort criteria. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics.</p>
+        /// <p>Note the following:</p>
+        /// <ul>
+        /// <li> <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p> </li>
+        /// </ul>
+        pub fn set_sort_criteria(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CurrentMetricSortCriteria>>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_criteria(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `GetCurrentUserData`.
     ///
@@ -9301,12 +10306,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>. The user data is retrieved only for those users who are associated with the queues and have contacts that are in the specified <code>ContactState</code>. </p>
+        /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p>
+        /// <ul>
+        /// <li> <p>Queues: 100</p> </li>
+        /// <li> <p>Routing profiles: 100</p> </li>
+        /// <li> <p>Agents: 100</p> </li>
+        /// <li> <p>Contact states: 9</p> </li>
+        /// <li> <p>User hierarchy groups: 1</p> </li>
+        /// </ul>
+        /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p>
+        /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
         pub fn filters(mut self, input: crate::model::UserDataFilters) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>. The user data is retrieved only for those users who are associated with the queues and have contacts that are in the specified <code>ContactState</code>. </p>
+        /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p>
+        /// <ul>
+        /// <li> <p>Queues: 100</p> </li>
+        /// <li> <p>Routing profiles: 100</p> </li>
+        /// <li> <p>Agents: 100</p> </li>
+        /// <li> <p>Contact states: 9</p> </li>
+        /// <li> <p>User hierarchy groups: 1</p> </li>
+        /// </ul>
+        /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p>
+        /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::UserDataFilters>,
@@ -10052,6 +11075,79 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetTrafficDistribution`.
+    ///
+    /// <p>Retrieves the current traffic distribution for a given traffic distribution group.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetTrafficDistribution {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_traffic_distribution_input::Builder,
+    }
+    impl GetTrafficDistribution {
+        /// Creates a new `GetTrafficDistribution`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetTrafficDistribution,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetTrafficDistributionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetTrafficDistributionOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetTrafficDistributionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the traffic distribution group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The identifier of the traffic distribution group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListAgentStatuses`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
@@ -10500,7 +11596,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContactFlows`.
     ///
     /// <p>Provides information about the flows for the specified Amazon Connect instance.</p>
-    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
     /// <p>For more information about flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Flows</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContactFlows {
@@ -11566,7 +12662,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPhoneNumbers`.
     ///
     /// <p>Provides information about the phone numbers for the specified Amazon Connect instance. </p>
-    /// <p>For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <important>
+    /// <p>The phone number <code>Arn</code> value that is returned from each of the items in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a> cannot be used to tag phone number resources. It will fail with a <code>ResourceNotFoundException</code>. Instead, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> API. It returns the new phone number ARN that can be used to tag phone number resources.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPhoneNumbers {
         handle: std::sync::Arc<super::Handle>,
@@ -11702,7 +12800,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPhoneNumbersV2`.
     ///
-    /// <p>Lists phone numbers claimed to your Amazon Connect instance. </p>
+    /// <p>Lists phone numbers claimed to your Amazon Connect instance or traffic distribution group. If the provided <code>TargetArn</code> is a traffic distribution group, you can call this API in both Amazon Web Services Regions associated with traffic distribution group.</p>
     /// <p>For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPhoneNumbersV2 {
@@ -11769,12 +12867,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListPhoneNumbersV2Paginator {
             crate::paginator::ListPhoneNumbersV2Paginator::new(self.handle, self.inner)
         }
-        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account.</p>
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same Amazon Web Services Region as the request.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account.</p>
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same Amazon Web Services Region as the request.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target_arn(input);
             self
@@ -12505,6 +13603,131 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListRules`.
+    ///
+    /// <p>List all rules for the specified Amazon Connect instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListRules {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_rules_input::Builder,
+    }
+    impl ListRules {
+        /// Creates a new `ListRules`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListRules,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListRulesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListRulesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListRulesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRulesPaginator {
+            crate::paginator::ListRulesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The publish status of the rule.</p>
+        pub fn publish_status(mut self, input: crate::model::RulePublishStatus) -> Self {
+            self.inner = self.inner.publish_status(input);
+            self
+        }
+        /// <p>The publish status of the rule.</p>
+        pub fn set_publish_status(
+            mut self,
+            input: std::option::Option<crate::model::RulePublishStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_publish_status(input);
+            self
+        }
+        /// <p>The name of the event source.</p>
+        pub fn event_source_name(mut self, input: crate::model::EventSourceName) -> Self {
+            self.inner = self.inner.event_source_name(input);
+            self
+        }
+        /// <p>The name of the event source.</p>
+        pub fn set_event_source_name(
+            mut self,
+            input: std::option::Option<crate::model::EventSourceName>,
+        ) -> Self {
+            self.inner = self.inner.set_event_source_name(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListSecurityKeys`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
@@ -13022,6 +14245,105 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListTrafficDistributionGroups`.
+    ///
+    /// <p>Lists traffic distribution groups.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListTrafficDistributionGroups {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_traffic_distribution_groups_input::Builder,
+    }
+    impl ListTrafficDistributionGroups {
+        /// Creates a new `ListTrafficDistributionGroups`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListTrafficDistributionGroups,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListTrafficDistributionGroupsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTrafficDistributionGroupsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTrafficDistributionGroupsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTrafficDistributionGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTrafficDistributionGroupsPaginator {
+            crate::paginator::ListTrafficDistributionGroupsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListUseCases`.
     ///
     /// <p>Lists the use cases for the integration association. </p>
@@ -13333,6 +14655,129 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `MonitorContact`.
+    ///
+    /// <p>Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of the user specified by <i>userId</i> will be set to silent monitoring mode on the contact.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct MonitorContact {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::monitor_contact_input::Builder,
+    }
+    impl MonitorContact {
+        /// Creates a new `MonitorContact`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::MonitorContact,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::MonitorContactError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::MonitorContactOutput,
+            aws_smithy_http::result::SdkError<crate::error::MonitorContactError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the contact.</p>
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
+            self
+        }
+        /// <p>The identifier of the contact.</p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_contact_id(input);
+            self
+        }
+        /// <p>The identifier of the user account.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
+            self
+        }
+        /// <p>The identifier of the user account.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_id(input);
+            self
+        }
+        /// Appends an item to `AllowedMonitorCapabilities`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_monitor_capabilities`](Self::set_allowed_monitor_capabilities).
+        ///
+        /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
+        pub fn allowed_monitor_capabilities(
+            mut self,
+            input: crate::model::MonitorCapability,
+        ) -> Self {
+            self.inner = self.inner.allowed_monitor_capabilities(input);
+            self
+        }
+        /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
+        pub fn set_allowed_monitor_capabilities(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MonitorCapability>>,
+        ) -> Self {
+            self.inner = self.inner.set_allowed_monitor_capabilities(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `PutUserStatus`.
     ///
     /// <p>Changes the current status of a user or agent in Amazon Connect. If the agent is currently handling a contact, this sets the agent's next status.</p>
@@ -13432,7 +14877,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ReleasePhoneNumber`.
     ///
-    /// <p>Releases a phone number previously claimed to an Amazon Connect instance.</p>
+    /// <p>Releases a phone number previously claimed to an Amazon Connect instance or traffic distribution group. You can call this API only in the Amazon Web Services Region where the number was claimed.</p> <important>
+    /// <p>To release phone numbers from a traffic distribution group, use the <code>ReleasePhoneNumber</code> API, not the Amazon Connect console.</p>
+    /// <p>After releasing a phone number, the phone number enters into a cooldown period of 30 days. It cannot be searched for or claimed again until the period has ended. If you accidentally release a phone number, contact Amazon Web Services Support.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReleasePhoneNumber {
         handle: std::sync::Arc<super::Handle>,
@@ -13505,14 +14953,124 @@ pub mod fluent_builders {
             self.inner = self.inner.set_phone_number_id(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ReplicateInstance`.
+    ///
+    /// <p>Replicates an Amazon Connect instance in the specified Amazon Web Services Region.</p>
+    /// <p>For more information about replicating an Amazon Connect instance, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ReplicateInstance {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::replicate_instance_input::Builder,
+    }
+    impl ReplicateInstance {
+        /// Creates a new `ReplicateInstance`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ReplicateInstance,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ReplicateInstanceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ReplicateInstanceOutput,
+            aws_smithy_http::result::SdkError<crate::error::ReplicateInstanceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
+        pub fn replica_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replica_region(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
+        pub fn set_replica_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_replica_region(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.</p>
+        pub fn replica_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replica_alias(input.into());
+            self
+        }
+        /// <p>The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.</p>
+        pub fn set_replica_alias(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_replica_alias(input);
             self
         }
     }
@@ -13615,7 +15173,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchAvailablePhoneNumbers`.
     ///
-    /// <p>Searches for available phone numbers that you can claim to your Amazon Connect instance.</p>
+    /// <p>Searches for available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group. If the provided <code>TargetArn</code> is a traffic distribution group, you can call this API in both Amazon Web Services Regions associated with the traffic distribution group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchAvailablePhoneNumbers {
         handle: std::sync::Arc<super::Handle>,
@@ -13681,12 +15239,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::SearchAvailablePhoneNumbersPaginator {
             crate::paginator::SearchAvailablePhoneNumbersPaginator::new(self.handle, self.inner)
         }
-        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target_arn(input);
             self
@@ -13866,12 +15424,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_search_filter(input);
             self
         }
-        /// <p>The search criteria to be used to return queues.</p>
+        /// <p>The search criteria to be used to return queues.</p> <note>
+        /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
+        /// </note>
         pub fn search_criteria(mut self, input: crate::model::QueueSearchCriteria) -> Self {
             self.inner = self.inner.search_criteria(input);
             self
         }
-        /// <p>The search criteria to be used to return queues.</p>
+        /// <p>The search criteria to be used to return queues.</p> <note>
+        /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
+        /// </note>
         pub fn set_search_criteria(
             mut self,
             input: std::option::Option<crate::model::QueueSearchCriteria>,
@@ -13992,7 +15554,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_search_filter(input);
             self
         }
-        /// <p>The search criteria to be used to return routing profiles.</p>
+        /// <p>The search criteria to be used to return routing profiles.</p> <note>
+        /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
+        /// </note>
         pub fn search_criteria(
             mut self,
             input: crate::model::RoutingProfileSearchCriteria,
@@ -14000,7 +15564,9 @@ pub mod fluent_builders {
             self.inner = self.inner.search_criteria(input);
             self
         }
-        /// <p>The search criteria to be used to return routing profiles.</p>
+        /// <p>The search criteria to be used to return routing profiles.</p> <note>
+        /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
+        /// </note>
         pub fn set_search_criteria(
             mut self,
             input: std::option::Option<crate::model::RoutingProfileSearchCriteria>,
@@ -14108,7 +15674,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The search criteria to be used to return security profiles.</p>
+        /// <p>The search criteria to be used to return security profiles. </p> <note>
+        /// <p>The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
+        /// </note> <note>
+        /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+        /// </note>
         pub fn search_criteria(
             mut self,
             input: crate::model::SecurityProfileSearchCriteria,
@@ -14116,7 +15686,11 @@ pub mod fluent_builders {
             self.inner = self.inner.search_criteria(input);
             self
         }
-        /// <p>The search criteria to be used to return security profiles.</p>
+        /// <p>The search criteria to be used to return security profiles. </p> <note>
+        /// <p>The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
+        /// </note> <note>
+        /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+        /// </note>
         pub fn set_search_criteria(
             mut self,
             input: std::option::Option<crate::model::SecurityProfileSearchCriteria>,
@@ -14140,7 +15714,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchUsers`.
     ///
-    /// <p>Searches users in an Amazon Connect instance, with optional filtering.</p>
+    /// <p>Searches users in an Amazon Connect instance, with optional filtering.</p> <note>
+    /// <p> <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchUsers {
         handle: std::sync::Arc<super::Handle>,
@@ -14250,14 +15826,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The search criteria to be used to return users.</p> <note>
-        /// <p>The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range result in empty results. </p>
+        /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
         /// </note>
         pub fn search_criteria(mut self, input: crate::model::UserSearchCriteria) -> Self {
             self.inner = self.inner.search_criteria(input);
             self
         }
         /// <p>The search criteria to be used to return users.</p> <note>
-        /// <p>The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range result in empty results. </p>
+        /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
         /// </note>
         pub fn set_search_criteria(
             mut self,
@@ -14551,12 +16127,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_initial_message(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -14575,7 +16151,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_supported_messaging_content_types`](Self::set_supported_messaging_content_types).
         ///
-        /// <p>The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.</p>
+        /// <p>The supported chat message content types. Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json]</code>.</p>
         pub fn supported_messaging_content_types(
             mut self,
             input: impl Into<std::string::String>,
@@ -14583,7 +16159,7 @@ pub mod fluent_builders {
             self.inner = self.inner.supported_messaging_content_types(input.into());
             self
         }
-        /// <p>The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.</p>
+        /// <p>The supported chat message content types. Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json]</code>.</p>
         pub fn set_supported_messaging_content_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14810,12 +16386,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_chat_streaming_configuration(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -14927,12 +16503,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -15193,12 +16769,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -15840,12 +17416,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_flow_id(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -16326,7 +17902,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactFlowContent`.
     ///
     /// <p>Updates the specified flow.</p>
-    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowContent {
         handle: std::sync::Arc<super::Handle>,
@@ -16409,12 +17985,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_flow_id(input);
             self
         }
-        /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+        /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content(input.into());
             self
         }
-        /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+        /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content(input);
             self
@@ -16757,7 +18333,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactFlowName`.
     ///
     /// <p>The name of the flow.</p>
-    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowName {
         handle: std::sync::Arc<super::Handle>,
@@ -17305,9 +18881,117 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateParticipantRoleConfig`.
+    ///
+    /// <p>Updates timeouts for when human chat participants are to be considered idle, and when agents are automatically disconnected from a chat due to idleness. You can set four timers:</p>
+    /// <ul>
+    /// <li> <p>Customer idle timeout</p> </li>
+    /// <li> <p>Customer auto-disconnect timeout</p> </li>
+    /// <li> <p>Agent idle timeout</p> </li>
+    /// <li> <p>Agent auto-disconnect timeout</p> </li>
+    /// </ul>
+    /// <p>For more information about how chat timeouts work, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set up chat timeouts for human participants</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateParticipantRoleConfig {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_participant_role_config_input::Builder,
+    }
+    impl UpdateParticipantRoleConfig {
+        /// Creates a new `UpdateParticipantRoleConfig`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateParticipantRoleConfig,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateParticipantRoleConfigError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateParticipantRoleConfigOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateParticipantRoleConfigError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
+            self
+        }
+        /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_contact_id(input);
+            self
+        }
+        /// <p>The Amazon Connect channel you want to configure.</p>
+        pub fn channel_configuration(
+            mut self,
+            input: crate::model::UpdateParticipantRoleConfigChannelInfo,
+        ) -> Self {
+            self.inner = self.inner.channel_configuration(input);
+            self
+        }
+        /// <p>The Amazon Connect channel you want to configure.</p>
+        pub fn set_channel_configuration(
+            mut self,
+            input: std::option::Option<crate::model::UpdateParticipantRoleConfigChannelInfo>,
+        ) -> Self {
+            self.inner = self.inner.set_channel_configuration(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdatePhoneNumber`.
     ///
-    /// <p>Updates your claimed phone number from its current Amazon Connect instance to another Amazon Connect instance in the same Region.</p>
+    /// <p>Updates your claimed phone number from its current Amazon Connect instance or traffic distribution group to another Amazon Connect instance or traffic distribution group in the same Amazon Web Services Region.</p> <important>
+    /// <p>You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a> API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePhoneNumber {
         handle: std::sync::Arc<super::Handle>,
@@ -17380,22 +19064,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_phone_number_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target_arn(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -17699,7 +19383,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateQueueOutboundCallerConfig`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Updates the outbound caller ID name, number, and outbound whisper flow for a specified queue.</p>
+    /// <p>Updates the outbound caller ID name, number, and outbound whisper flow for a specified queue.</p> <important>
+    /// <p>If the number being used in the input is claimed to a traffic distribution group, and you are calling this API using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone number ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a> request body parameter. However, if the number is claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQueueOutboundCallerConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -18507,6 +20193,140 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateRule`.
+    ///
+    /// <p>Updates a rule for the specified Amazon Connect instance.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules Function language</a> to code conditions for the rule. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateRule {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_rule_input::Builder,
+    }
+    impl UpdateRule {
+        /// Creates a new `UpdateRule`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateRule,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateRuleError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateRuleOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateRuleError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the rule.</p>
+        pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_id(input.into());
+            self
+        }
+        /// <p>A unique identifier for the rule.</p>
+        pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rule_id(input);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The name of the rule. You can change the name only if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the rule. You can change the name only if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The conditions of the rule.</p>
+        pub fn function(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function(input.into());
+            self
+        }
+        /// <p>The conditions of the rule.</p>
+        pub fn set_function(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_function(input);
+            self
+        }
+        /// Appends an item to `Actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>A list of actions to be run when the rule is triggered.</p>
+        pub fn actions(mut self, input: crate::model::RuleAction) -> Self {
+            self.inner = self.inner.actions(input);
+            self
+        }
+        /// <p>A list of actions to be run when the rule is triggered.</p>
+        pub fn set_actions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RuleAction>>,
+        ) -> Self {
+            self.inner = self.inner.set_actions(input);
+            self
+        }
+        /// <p>The publish status of the rule.</p>
+        pub fn publish_status(mut self, input: crate::model::RulePublishStatus) -> Self {
+            self.inner = self.inner.publish_status(input);
+            self
+        }
+        /// <p>The publish status of the rule.</p>
+        pub fn set_publish_status(
+            mut self,
+            input: std::option::Option<crate::model::RulePublishStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_publish_status(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateSecurityProfile`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
@@ -18618,6 +20438,46 @@ pub mod fluent_builders {
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// Adds a key-value pair to `AllowedAccessControlTags`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_access_control_tags`](Self::set_allowed_access_control_tags).
+        ///
+        /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+        pub fn allowed_access_control_tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.allowed_access_control_tags(k.into(), v.into());
+            self
+        }
+        /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+        pub fn set_allowed_access_control_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_allowed_access_control_tags(input);
+            self
+        }
+        /// Appends an item to `TagRestrictedResources`.
+        ///
+        /// To override the contents of this collection use [`set_tag_restricted_resources`](Self::set_tag_restricted_resources).
+        ///
+        /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+        pub fn tag_restricted_resources(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_restricted_resources(input.into());
+            self
+        }
+        /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+        pub fn set_tag_restricted_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_restricted_resources(input);
             self
         }
     }
@@ -18793,6 +20653,93 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::TaskTemplateField>>,
         ) -> Self {
             self.inner = self.inner.set_fields(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateTrafficDistribution`.
+    ///
+    /// <p>Updates the traffic distribution for a given traffic distribution group. </p>
+    /// <p>For more information about updating a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateTrafficDistribution {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_traffic_distribution_input::Builder,
+    }
+    impl UpdateTrafficDistribution {
+        /// Creates a new `UpdateTrafficDistribution`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateTrafficDistribution,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateTrafficDistributionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateTrafficDistributionOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateTrafficDistributionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The distribution of traffic between the instance and its replica(s).</p>
+        pub fn telephony_config(mut self, input: crate::model::TelephonyConfig) -> Self {
+            self.inner = self.inner.telephony_config(input);
+            self
+        }
+        /// <p>The distribution of traffic between the instance and its replica(s).</p>
+        pub fn set_telephony_config(
+            mut self,
+            input: std::option::Option<crate::model::TelephonyConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_telephony_config(input);
             self
         }
     }

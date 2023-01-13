@@ -875,6 +875,9 @@ impl From<crate::error::GetModelManifestError> for Error {
             crate::error::GetModelManifestErrorKind::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
+            crate::error::GetModelManifestErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::error::GetModelManifestErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -2001,6 +2004,9 @@ impl From<crate::error::UpdateSignalCatalogError> for Error {
             }
             crate::error::UpdateSignalCatalogErrorKind::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::error::UpdateSignalCatalogErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
             }
             crate::error::UpdateSignalCatalogErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))

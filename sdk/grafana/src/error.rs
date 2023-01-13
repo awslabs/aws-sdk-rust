@@ -1912,6 +1912,172 @@ impl std::error::Error for DescribeWorkspaceAuthenticationError {
     }
 }
 
+/// Error type for the `DescribeWorkspaceConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeWorkspaceConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: DescribeWorkspaceConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeWorkspaceConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeWorkspaceConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeWorkspaceConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeWorkspaceConfigurationErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Unexpected error while processing the request. Retry the request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request references a resource that does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because of request throttling. Retry the request.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeWorkspaceConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeWorkspaceConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeWorkspaceConfigurationErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeWorkspaceConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeWorkspaceConfigurationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeWorkspaceConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeWorkspaceConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DescribeWorkspaceConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            DescribeWorkspaceConfigurationErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            DescribeWorkspaceConfigurationErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl DescribeWorkspaceConfigurationError {
+    /// Creates a new `DescribeWorkspaceConfigurationError`.
+    pub fn new(
+        kind: DescribeWorkspaceConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeWorkspaceConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeWorkspaceConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeWorkspaceConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeWorkspaceConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeWorkspaceConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeWorkspaceConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeWorkspaceConfigurationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeWorkspaceConfigurationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeWorkspaceConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeWorkspaceConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeWorkspaceConfigurationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeWorkspaceConfigurationErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeWorkspaceConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeWorkspaceConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeWorkspaceConfigurationErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            DescribeWorkspaceConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeWorkspaceConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeWorkspaceConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DisassociateLicense` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3322,6 +3488,187 @@ impl std::error::Error for UpdateWorkspaceAuthenticationError {
             UpdateWorkspaceAuthenticationErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateWorkspaceAuthenticationErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateWorkspaceAuthenticationErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateWorkspaceConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateWorkspaceConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: UpdateWorkspaceConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateWorkspaceConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateWorkspaceConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateWorkspaceConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateWorkspaceConfigurationErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A resource was in an inconsistent state during an update or a deletion.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Unexpected error while processing the request. Retry the request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request references a resource that does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because of request throttling. Retry the request.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The value of a parameter in the request caused an error.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateWorkspaceConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateWorkspaceConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateWorkspaceConfigurationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateWorkspaceConfigurationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateWorkspaceConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateWorkspaceConfigurationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateWorkspaceConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateWorkspaceConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateWorkspaceConfigurationError {
+    fn code(&self) -> Option<&str> {
+        UpdateWorkspaceConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            UpdateWorkspaceConfigurationErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdateWorkspaceConfigurationErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl UpdateWorkspaceConfigurationError {
+    /// Creates a new `UpdateWorkspaceConfigurationError`.
+    pub fn new(kind: UpdateWorkspaceConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateWorkspaceConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateWorkspaceConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateWorkspaceConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateWorkspaceConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateWorkspaceConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateWorkspaceConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateWorkspaceConfigurationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateWorkspaceConfigurationErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateWorkspaceConfigurationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateWorkspaceConfigurationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateWorkspaceConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateWorkspaceConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateWorkspaceConfigurationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateWorkspaceConfigurationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateWorkspaceConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateWorkspaceConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateWorkspaceConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateWorkspaceConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateWorkspaceConfigurationErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateWorkspaceConfigurationErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateWorkspaceConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateWorkspaceConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateWorkspaceConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateWorkspaceConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

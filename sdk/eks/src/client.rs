@@ -123,12 +123,13 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::CreateAddon::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::CreateAddon::set_cluster_name): <p>The name of the cluster to create the add-on for.</p>
-    ///   - [`addon_name(impl Into<String>)`](crate::client::fluent_builders::CreateAddon::addon_name) / [`set_addon_name(Option<String>)`](crate::client::fluent_builders::CreateAddon::set_addon_name): <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    ///   - [`addon_name(impl Into<String>)`](crate::client::fluent_builders::CreateAddon::addon_name) / [`set_addon_name(Option<String>)`](crate::client::fluent_builders::CreateAddon::set_addon_name): <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
     ///   - [`addon_version(impl Into<String>)`](crate::client::fluent_builders::CreateAddon::addon_version) / [`set_addon_version(Option<String>)`](crate::client::fluent_builders::CreateAddon::set_addon_version): <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     ///   - [`service_account_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAddon::service_account_role_arn) / [`set_service_account_role_arn(Option<String>)`](crate::client::fluent_builders::CreateAddon::set_service_account_role_arn): <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>   <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>  </note>
     ///   - [`resolve_conflicts(ResolveConflicts)`](crate::client::fluent_builders::CreateAddon::resolve_conflicts) / [`set_resolve_conflicts(Option<ResolveConflicts>)`](crate::client::fluent_builders::CreateAddon::set_resolve_conflicts): <p>How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value you choose:</p>  <ul>   <li> <p> <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't change the value. Creation of the add-on might fail.</p> </li>   <li> <p> <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon EKS default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS default value.</p> </li>   <li> <p> <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.</p> </li>  </ul>  <p>If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon EKS add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you specify.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateAddon::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateAddon::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAddon::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAddon::set_tags): <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    ///   - [`configuration_values(impl Into<String>)`](crate::client::fluent_builders::CreateAddon::configuration_values) / [`set_configuration_values(Option<String>)`](crate::client::fluent_builders::CreateAddon::set_configuration_values): <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html"> <code>DescribeAddonConfiguration</code> </a>.</p>
     /// - On success, responds with [`CreateAddonOutput`](crate::output::CreateAddonOutput) with field(s):
     ///   - [`addon(Option<Addon>)`](crate::output::CreateAddonOutput::addon): <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<CreateAddonError>`](crate::error::CreateAddonError)
@@ -147,7 +148,7 @@ impl Client {
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateCluster::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCluster::set_tags): <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
     ///   - [`encryption_config(Vec<EncryptionConfig>)`](crate::client::fluent_builders::CreateCluster::encryption_config) / [`set_encryption_config(Option<Vec<EncryptionConfig>>)`](crate::client::fluent_builders::CreateCluster::set_encryption_config): <p>The encryption configuration for the cluster.</p>
-    ///   - [`outpost_config(OutpostConfigRequest)`](crate::client::fluent_builders::CreateCluster::outpost_config) / [`set_outpost_config(Option<OutpostConfigRequest>)`](crate::client::fluent_builders::CreateCluster::set_outpost_config): <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
+    ///   - [`outpost_config(OutpostConfigRequest)`](crate::client::fluent_builders::CreateCluster::outpost_config) / [`set_outpost_config(Option<OutpostConfigRequest>)`](crate::client::fluent_builders::CreateCluster::set_outpost_config): <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
     /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::CreateClusterOutput::cluster): <p>The full description of your new cluster.</p>
     /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::error::CreateClusterError)
@@ -176,11 +177,11 @@ impl Client {
     ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::CreateNodegroup::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::CreateNodegroup::set_cluster_name): <p>The name of the cluster to create the node group in.</p>
     ///   - [`nodegroup_name(impl Into<String>)`](crate::client::fluent_builders::CreateNodegroup::nodegroup_name) / [`set_nodegroup_name(Option<String>)`](crate::client::fluent_builders::CreateNodegroup::set_nodegroup_name): <p>The unique name to give your node group.</p>
     ///   - [`scaling_config(NodegroupScalingConfig)`](crate::client::fluent_builders::CreateNodegroup::scaling_config) / [`set_scaling_config(Option<NodegroupScalingConfig>)`](crate::client::fluent_builders::CreateNodegroup::set_scaling_config): <p>The scaling configuration details for the Auto Scaling group that is created for your node group.</p>
-    ///   - [`disk_size(i32)`](crate::client::fluent_builders::CreateNodegroup::disk_size) / [`set_disk_size(Option<i32>)`](crate::client::fluent_builders::CreateNodegroup::set_disk_size): <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    ///   - [`disk_size(i32)`](crate::client::fluent_builders::CreateNodegroup::disk_size) / [`set_disk_size(Option<i32>)`](crate::client::fluent_builders::CreateNodegroup::set_disk_size): <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB for Windows. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     ///   - [`subnets(Vec<String>)`](crate::client::fluent_builders::CreateNodegroup::subnets) / [`set_subnets(Option<Vec<String>>)`](crate::client::fluent_builders::CreateNodegroup::set_subnets): <p>The subnets to use for the Auto Scaling group that is created for your node group. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
-    ///   - [`instance_types(Vec<String>)`](crate::client::fluent_builders::CreateNodegroup::instance_types) / [`set_instance_types(Option<Vec<String>>)`](crate::client::fluent_builders::CreateNodegroup::set_instance_types): <p>Specify the instance types for a node group. If you specify a GPU instance type, be sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
-    ///   - [`ami_type(AmiTypes)`](crate::client::fluent_builders::CreateNodegroup::ami_type) / [`set_ami_type(Option<AmiTypes>)`](crate::client::fluent_builders::CreateNodegroup::set_ami_type): <p>The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type. Arm instances should use the <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
-    ///   - [`remote_access(RemoteAccessConfig)`](crate::client::fluent_builders::CreateNodegroup::remote_access) / [`set_remote_access(Option<RemoteAccessConfig>)`](crate::client::fluent_builders::CreateNodegroup::set_remote_access): <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    ///   - [`instance_types(Vec<String>)`](crate::client::fluent_builders::CreateNodegroup::instance_types) / [`set_instance_types(Option<Vec<String>>)`](crate::client::fluent_builders::CreateNodegroup::set_instance_types): <p>Specify the instance types for a node group. If you specify a GPU instance type, make sure to also specify an applicable GPU AMI type with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    ///   - [`ami_type(AmiTypes)`](crate::client::fluent_builders::CreateNodegroup::ami_type) / [`set_ami_type(Option<AmiTypes>)`](crate::client::fluent_builders::CreateNodegroup::set_ami_type): <p>The AMI type for your node group. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. If your launch template uses a Windows custom AMI, then add <code>eks:kube-proxy-windows</code> to your Windows nodes <code>rolearn</code> in the <code>aws-auth</code> <code>ConfigMap</code>. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    ///   - [`remote_access(RemoteAccessConfig)`](crate::client::fluent_builders::CreateNodegroup::remote_access) / [`set_remote_access(Option<RemoteAccessConfig>)`](crate::client::fluent_builders::CreateNodegroup::set_remote_access): <p>The remote access configuration to use with your node group. For Linux, the protocol is SSH. For Windows, the protocol is RDP. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     ///   - [`node_role(impl Into<String>)`](crate::client::fluent_builders::CreateNodegroup::node_role) / [`set_node_role(Option<String>)`](crate::client::fluent_builders::CreateNodegroup::set_node_role): <p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch nodes and register them into a cluster, you must create an IAM role for those nodes to use when they are launched. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     ///   - [`labels(HashMap<String, String>)`](crate::client::fluent_builders::CreateNodegroup::labels) / [`set_labels(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateNodegroup::set_labels): <p>The Kubernetes labels to be applied to the nodes in the node group when they are created.</p>
     ///   - [`taints(Vec<Taint>)`](crate::client::fluent_builders::CreateNodegroup::taints) / [`set_taints(Option<Vec<Taint>>)`](crate::client::fluent_builders::CreateNodegroup::set_taints): <p>The Kubernetes taints to be applied to the nodes in the node group. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
@@ -190,7 +191,7 @@ impl Client {
     ///   - [`update_config(NodegroupUpdateConfig)`](crate::client::fluent_builders::CreateNodegroup::update_config) / [`set_update_config(Option<NodegroupUpdateConfig>)`](crate::client::fluent_builders::CreateNodegroup::set_update_config): <p>The node group update configuration.</p>
     ///   - [`capacity_type(CapacityTypes)`](crate::client::fluent_builders::CreateNodegroup::capacity_type) / [`set_capacity_type(Option<CapacityTypes>)`](crate::client::fluent_builders::CreateNodegroup::set_capacity_type): <p>The capacity type for your node group.</p>
     ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::CreateNodegroup::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::CreateNodegroup::set_version): <p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes version of the cluster is used, and this is the only accepted specified value. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
-    ///   - [`release_version(impl Into<String>)`](crate::client::fluent_builders::CreateNodegroup::release_version) / [`set_release_version(Option<String>)`](crate::client::fluent_builders::CreateNodegroup::set_release_version): <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    ///   - [`release_version(impl Into<String>)`](crate::client::fluent_builders::CreateNodegroup::release_version) / [`set_release_version(Option<String>)`](crate::client::fluent_builders::CreateNodegroup::set_release_version): <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>  <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// - On success, responds with [`CreateNodegroupOutput`](crate::output::CreateNodegroupOutput) with field(s):
     ///   - [`nodegroup(Option<Nodegroup>)`](crate::output::CreateNodegroupOutput::nodegroup): <p>The full description of your new node group.</p>
     /// - On failure, responds with [`SdkError<CreateNodegroupError>`](crate::error::CreateNodegroupError)
@@ -202,7 +203,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAddon::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::DeleteAddon::set_cluster_name): <p>The name of the cluster to delete the add-on from.</p>
     ///   - [`addon_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAddon::addon_name) / [`set_addon_name(Option<String>)`](crate::client::fluent_builders::DeleteAddon::set_addon_name): <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
-    ///   - [`preserve(bool)`](crate::client::fluent_builders::DeleteAddon::preserve) / [`set_preserve(bool)`](crate::client::fluent_builders::DeleteAddon::set_preserve): <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it is not removed.</p>
+    ///   - [`preserve(bool)`](crate::client::fluent_builders::DeleteAddon::preserve) / [`set_preserve(bool)`](crate::client::fluent_builders::DeleteAddon::set_preserve): <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
     /// - On success, responds with [`DeleteAddonOutput`](crate::output::DeleteAddonOutput) with field(s):
     ///   - [`addon(Option<Addon>)`](crate::output::DeleteAddonOutput::addon): <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<DeleteAddonError>`](crate::error::DeleteAddonError)
@@ -262,16 +263,32 @@ impl Client {
     pub fn describe_addon(&self) -> fluent_builders::DescribeAddon {
         fluent_builders::DescribeAddon::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeAddonConfiguration`](crate::client::fluent_builders::DescribeAddonConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`addon_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAddonConfiguration::addon_name) / [`set_addon_name(Option<String>)`](crate::client::fluent_builders::DescribeAddonConfiguration::set_addon_name): <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    ///   - [`addon_version(impl Into<String>)`](crate::client::fluent_builders::DescribeAddonConfiguration::addon_version) / [`set_addon_version(Option<String>)`](crate::client::fluent_builders::DescribeAddonConfiguration::set_addon_version): <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    /// - On success, responds with [`DescribeAddonConfigurationOutput`](crate::output::DescribeAddonConfigurationOutput) with field(s):
+    ///   - [`addon_name(Option<String>)`](crate::output::DescribeAddonConfigurationOutput::addon_name): <p>The name of the add-on.</p>
+    ///   - [`addon_version(Option<String>)`](crate::output::DescribeAddonConfigurationOutput::addon_version): <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    ///   - [`configuration_schema(Option<String>)`](crate::output::DescribeAddonConfigurationOutput::configuration_schema): <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
+    /// - On failure, responds with [`SdkError<DescribeAddonConfigurationError>`](crate::error::DescribeAddonConfigurationError)
+    pub fn describe_addon_configuration(&self) -> fluent_builders::DescribeAddonConfiguration {
+        fluent_builders::DescribeAddonConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeAddonVersions`](crate::client::fluent_builders::DescribeAddonVersions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeAddonVersions::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`kubernetes_version(impl Into<String>)`](crate::client::fluent_builders::DescribeAddonVersions::kubernetes_version) / [`set_kubernetes_version(Option<String>)`](crate::client::fluent_builders::DescribeAddonVersions::set_kubernetes_version): <p>The Kubernetes versions that the add-on can be used with.</p>
+    ///   - [`kubernetes_version(impl Into<String>)`](crate::client::fluent_builders::DescribeAddonVersions::kubernetes_version) / [`set_kubernetes_version(Option<String>)`](crate::client::fluent_builders::DescribeAddonVersions::set_kubernetes_version): <p>The Kubernetes versions that you can use the add-on with.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeAddonVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeAddonVersions::set_max_results): <p>The maximum number of results to return.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeAddonVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeAddonVersions::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>   <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
     ///   - [`addon_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAddonVersions::addon_name) / [`set_addon_name(Option<String>)`](crate::client::fluent_builders::DescribeAddonVersions::set_addon_name): <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
+    ///   - [`types(Vec<String>)`](crate::client::fluent_builders::DescribeAddonVersions::types) / [`set_types(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeAddonVersions::set_types): <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
+    ///   - [`publishers(Vec<String>)`](crate::client::fluent_builders::DescribeAddonVersions::publishers) / [`set_publishers(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeAddonVersions::set_publishers): <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
+    ///   - [`owners(Vec<String>)`](crate::client::fluent_builders::DescribeAddonVersions::owners) / [`set_owners(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeAddonVersions::set_owners): <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
     /// - On success, responds with [`DescribeAddonVersionsOutput`](crate::output::DescribeAddonVersionsOutput) with field(s):
-    ///   - [`addons(Option<Vec<AddonInfo>>)`](crate::output::DescribeAddonVersionsOutput::addons): <p>The list of available versions with Kubernetes version compatibility.</p>
+    ///   - [`addons(Option<Vec<AddonInfo>>)`](crate::output::DescribeAddonVersionsOutput::addons): <p>The list of available versions with Kubernetes version compatibility and other properties.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeAddonVersionsOutput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>   <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
     /// - On failure, responds with [`SdkError<DescribeAddonVersionsError>`](crate::error::DescribeAddonVersionsError)
     pub fn describe_addon_versions(&self) -> fluent_builders::DescribeAddonVersions {
@@ -489,6 +506,7 @@ impl Client {
     ///   - [`service_account_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAddon::service_account_role_arn) / [`set_service_account_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateAddon::set_service_account_role_arn): <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>   <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>  </note>
     ///   - [`resolve_conflicts(ResolveConflicts)`](crate::client::fluent_builders::UpdateAddon::resolve_conflicts) / [`set_resolve_conflicts(Option<ResolveConflicts>)`](crate::client::fluent_builders::UpdateAddon::set_resolve_conflicts): <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>  <ul>   <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>   <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>   <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>  </ul>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpdateAddon::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpdateAddon::set_client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`configuration_values(impl Into<String>)`](crate::client::fluent_builders::UpdateAddon::configuration_values) / [`set_configuration_values(Option<String>)`](crate::client::fluent_builders::UpdateAddon::set_configuration_values): <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
     /// - On success, responds with [`UpdateAddonOutput`](crate::output::UpdateAddonOutput) with field(s):
     ///   - [`update(Option<Update>)`](crate::output::UpdateAddonOutput::update): <p>An object representing an asynchronous update.</p>
     /// - On failure, responds with [`SdkError<UpdateAddonError>`](crate::error::UpdateAddonError)
@@ -542,7 +560,7 @@ impl Client {
     ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::UpdateNodegroupVersion::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::UpdateNodegroupVersion::set_cluster_name): <p>The name of the Amazon EKS cluster that is associated with the managed node group to update.</p>
     ///   - [`nodegroup_name(impl Into<String>)`](crate::client::fluent_builders::UpdateNodegroupVersion::nodegroup_name) / [`set_nodegroup_name(Option<String>)`](crate::client::fluent_builders::UpdateNodegroupVersion::set_nodegroup_name): <p>The name of the managed node group to update.</p>
     ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::UpdateNodegroupVersion::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::UpdateNodegroupVersion::set_version): <p>The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
-    ///   - [`release_version(impl Into<String>)`](crate::client::fluent_builders::UpdateNodegroupVersion::release_version) / [`set_release_version(Option<String>)`](crate::client::fluent_builders::UpdateNodegroupVersion::set_release_version): <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    ///   - [`release_version(impl Into<String>)`](crate::client::fluent_builders::UpdateNodegroupVersion::release_version) / [`set_release_version(Option<String>)`](crate::client::fluent_builders::UpdateNodegroupVersion::set_release_version): <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>  <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     ///   - [`launch_template(LaunchTemplateSpecification)`](crate::client::fluent_builders::UpdateNodegroupVersion::launch_template) / [`set_launch_template(Option<LaunchTemplateSpecification>)`](crate::client::fluent_builders::UpdateNodegroupVersion::set_launch_template): <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template.</p>
     ///   - [`force(bool)`](crate::client::fluent_builders::UpdateNodegroupVersion::force) / [`set_force(bool)`](crate::client::fluent_builders::UpdateNodegroupVersion::set_force): <p>Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpdateNodegroupVersion::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpdateNodegroupVersion::set_client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -790,7 +808,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAddon`.
     ///
     /// <p>Creates an Amazon EKS add-on.</p>
-    /// <p>Amazon EKS add-ons help to automate the provisioning and lifecycle management of common operational software for Amazon EKS clusters. Amazon EKS add-ons require clusters running version 1.18 or later because Amazon EKS add-ons rely on the Server-side Apply Kubernetes feature, which is only available in Kubernetes 1.18 and later. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>Amazon EKS add-ons help to automate the provisioning and lifecycle management of common operational software for Amazon EKS clusters. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAddon {
         handle: std::sync::Arc<super::Handle>,
@@ -860,12 +878,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_name(input);
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
         pub fn addon_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.addon_name(input.into());
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
         pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_addon_name(input);
             self
@@ -959,6 +977,19 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html"> <code>DescribeAddonConfiguration</code> </a>.</p>
+        pub fn configuration_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_values(input.into());
+            self
+        }
+        /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html"> <code>DescribeAddonConfiguration</code> </a>.</p>
+        pub fn set_configuration_values(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_values(input);
             self
         }
     }
@@ -1158,12 +1189,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_config(input);
             self
         }
-        /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
+        /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
         pub fn outpost_config(mut self, input: crate::model::OutpostConfigRequest) -> Self {
             self.inner = self.inner.outpost_config(input);
             self
         }
-        /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
+        /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
         pub fn set_outpost_config(
             mut self,
             input: std::option::Option<crate::model::OutpostConfigRequest>,
@@ -1349,7 +1380,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateNodegroup`.
     ///
     /// <p>Creates a managed node group for an Amazon EKS cluster. You can only create a node group for your cluster that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI release version for the respective minor Kubernetes version of the cluster, unless you deploy a custom AMI using a launch template. For more information about using launch templates, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>.</p>
-    /// <p>An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are managed by Amazon Web Services for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p>
+    /// <p>An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are managed by Amazon Web Services for an Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed node groups</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
+    /// <p>Windows AMI types are only supported for commercial Regions that support Windows Amazon EKS.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNodegroup {
         handle: std::sync::Arc<super::Handle>,
@@ -1445,12 +1478,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scaling_config(input);
             self
         }
-        /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB for Windows. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn disk_size(mut self, input: i32) -> Self {
             self.inner = self.inner.disk_size(input);
             self
         }
-        /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB for Windows. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_disk_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_disk_size(input);
             self
@@ -1476,12 +1509,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
         ///
-        /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>Specify the instance types for a node group. If you specify a GPU instance type, make sure to also specify an applicable GPU AMI type with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_types(input.into());
             self
         }
-        /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>Specify the instance types for a node group. If you specify a GPU instance type, make sure to also specify an applicable GPU AMI type with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1489,22 +1522,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_types(input);
             self
         }
-        /// <p>The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type. Arm instances should use the <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The AMI type for your node group. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. If your launch template uses a Windows custom AMI, then add <code>eks:kube-proxy-windows</code> to your Windows nodes <code>rolearn</code> in the <code>aws-auth</code> <code>ConfigMap</code>. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn ami_type(mut self, input: crate::model::AmiTypes) -> Self {
             self.inner = self.inner.ami_type(input);
             self
         }
-        /// <p>The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type. Arm instances should use the <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The AMI type for your node group. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. If your launch template uses a Windows custom AMI, then add <code>eks:kube-proxy-windows</code> to your Windows nodes <code>rolearn</code> in the <code>aws-auth</code> <code>ConfigMap</code>. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_ami_type(mut self, input: std::option::Option<crate::model::AmiTypes>) -> Self {
             self.inner = self.inner.set_ami_type(input);
             self
         }
-        /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The remote access configuration to use with your node group. For Linux, the protocol is SSH. For Windows, the protocol is RDP. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn remote_access(mut self, input: crate::model::RemoteAccessConfig) -> Self {
             self.inner = self.inner.remote_access(input);
             self
         }
-        /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The remote access configuration to use with your node group. For Linux, the protocol is SSH. For Windows, the protocol is RDP. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_remote_access(
             mut self,
             input: std::option::Option<crate::model::RemoteAccessConfig>,
@@ -1647,12 +1680,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version(input);
             self
         }
-        /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.release_version(input.into());
             self
         }
-        /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_release_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1744,12 +1779,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_addon_name(input);
             self
         }
-        /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it is not removed.</p>
+        /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
         pub fn preserve(mut self, input: bool) -> Self {
             self.inner = self.inner.preserve(input);
             self
         }
-        /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it is not removed.</p>
+        /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
         pub fn set_preserve(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_preserve(input);
             self
@@ -2160,9 +2195,95 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeAddonConfiguration`.
+    ///
+    /// <p>Returns configuration options.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeAddonConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_addon_configuration_input::Builder,
+    }
+    impl DescribeAddonConfiguration {
+        /// Creates a new `DescribeAddonConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeAddonConfiguration,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeAddonConfigurationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeAddonConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeAddonConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+        pub fn addon_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addon_name(input.into());
+            self
+        }
+        /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+        pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_addon_name(input);
+            self
+        }
+        /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+        pub fn addon_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addon_version(input.into());
+            self
+        }
+        /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+        pub fn set_addon_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_addon_version(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeAddonVersions`.
     ///
-    /// <p>Describes the Kubernetes versions that the add-on can be used with.</p>
+    /// <p>Describes the versions for an add-on. Information such as the Kubernetes versions that you can use the add-on with, the <code>owner</code>, <code>publisher</code>, and the <code>type</code> of the add-on are returned. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAddonVersions {
         handle: std::sync::Arc<super::Handle>,
@@ -2228,12 +2349,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::DescribeAddonVersionsPaginator {
             crate::paginator::DescribeAddonVersionsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The Kubernetes versions that the add-on can be used with.</p>
+        /// <p>The Kubernetes versions that you can use the add-on with.</p>
         pub fn kubernetes_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kubernetes_version(input.into());
             self
         }
-        /// <p>The Kubernetes versions that the add-on can be used with.</p>
+        /// <p>The Kubernetes versions that you can use the add-on with.</p>
         pub fn set_kubernetes_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2273,6 +2394,57 @@ pub mod fluent_builders {
         /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
         pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_addon_name(input);
+            self
+        }
+        /// Appends an item to `types`.
+        ///
+        /// To override the contents of this collection use [`set_types`](Self::set_types).
+        ///
+        /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
+        pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.types(input.into());
+            self
+        }
+        /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
+        pub fn set_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_types(input);
+            self
+        }
+        /// Appends an item to `publishers`.
+        ///
+        /// To override the contents of this collection use [`set_publishers`](Self::set_publishers).
+        ///
+        /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
+        pub fn publishers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.publishers(input.into());
+            self
+        }
+        /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
+        pub fn set_publishers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_publishers(input);
+            self
+        }
+        /// Appends an item to `owners`.
+        ///
+        /// To override the contents of this collection use [`set_owners`](Self::set_owners).
+        ///
+        /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
+        pub fn owners(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owners(input.into());
+            self
+        }
+        /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
+        pub fn set_owners(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_owners(input);
             self
         }
     }
@@ -3991,6 +4163,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
+        /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+        pub fn configuration_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_values(input.into());
+            self
+        }
+        /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+        pub fn set_configuration_values(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_values(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateClusterConfig`.
     ///
@@ -4365,7 +4550,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the Kubernetes version or AMI version of an Amazon EKS managed node group.</p>
     /// <p>You can update a node group using a launch template only if the node group was originally deployed with a launch template. If you need to update a custom AMI in a node group that was deployed with a launch template, then update your custom AMI, specify the new ID in a new version of the launch template, and then update the node group to the new version of the launch template.</p>
-    /// <p>If you update without a launch template, then you can update to the latest available AMI version of a node group's current Kubernetes version by not specifying a Kubernetes version in the request. You can update to the latest AMI version of your cluster's current Kubernetes version by specifying your cluster's Kubernetes version in the request. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>If you update without a launch template, then you can update to the latest available AMI version of a node group's current Kubernetes version by not specifying a Kubernetes version in the request. You can update to the latest AMI version of your cluster's current Kubernetes version by specifying your cluster's Kubernetes version in the request. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>. </p>
     /// <p>You cannot roll back a node group to an earlier Kubernetes version or AMI version.</p>
     /// <p>When a node in a managed node group is terminated due to a scaling action or update, the pods in that node are drained first. Amazon EKS attempts to drain the nodes gracefully and will fail if it is unable to do so. You can <code>force</code> the update if Amazon EKS is unable to drain the nodes as a result of a pod disruption budget issue.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -4460,12 +4645,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version(input);
             self
         }
-        /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.release_version(input.into());
             self
         }
-        /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_release_version(
             mut self,
             input: std::option::Option<std::string::String>,

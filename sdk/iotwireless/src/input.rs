@@ -2718,6 +2718,7 @@ pub mod create_wireless_device_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanDevice>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) positioning: std::option::Option<crate::model::PositioningConfigStatus>,
     }
     impl Builder {
         /// <p>The wireless device type.</p>
@@ -2811,6 +2812,19 @@ pub mod create_wireless_device_input {
             self.tags = input;
             self
         }
+        /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+        pub fn positioning(mut self, input: crate::model::PositioningConfigStatus) -> Self {
+            self.positioning = Some(input);
+            self
+        }
+        /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+        pub fn set_positioning(
+            mut self,
+            input: std::option::Option<crate::model::PositioningConfigStatus>,
+        ) -> Self {
+            self.positioning = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWirelessDeviceInput`](crate::input::CreateWirelessDeviceInput).
         pub fn build(
             self,
@@ -2826,6 +2840,7 @@ pub mod create_wireless_device_input {
                 client_request_token: self.client_request_token,
                 lo_ra_wan: self.lo_ra_wan,
                 tags: self.tags,
+                positioning: self.positioning,
             })
         }
     }
@@ -8086,6 +8101,212 @@ impl GetPositionConfigurationInput {
     }
 }
 
+/// See [`GetPositionEstimateInput`](crate::input::GetPositionEstimateInput).
+pub mod get_position_estimate_input {
+
+    /// A builder for [`GetPositionEstimateInput`](crate::input::GetPositionEstimateInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) wi_fi_access_points:
+            std::option::Option<std::vec::Vec<crate::model::WiFiAccessPoint>>,
+        pub(crate) cell_towers: std::option::Option<crate::model::CellTowers>,
+        pub(crate) ip: std::option::Option<crate::model::Ip>,
+        pub(crate) gnss: std::option::Option<crate::model::Gnss>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// Appends an item to `wi_fi_access_points`.
+        ///
+        /// To override the contents of this collection use [`set_wi_fi_access_points`](Self::set_wi_fi_access_points).
+        ///
+        /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
+        pub fn wi_fi_access_points(mut self, input: crate::model::WiFiAccessPoint) -> Self {
+            let mut v = self.wi_fi_access_points.unwrap_or_default();
+            v.push(input);
+            self.wi_fi_access_points = Some(v);
+            self
+        }
+        /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
+        pub fn set_wi_fi_access_points(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::WiFiAccessPoint>>,
+        ) -> Self {
+            self.wi_fi_access_points = input;
+            self
+        }
+        /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
+        pub fn cell_towers(mut self, input: crate::model::CellTowers) -> Self {
+            self.cell_towers = Some(input);
+            self
+        }
+        /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
+        pub fn set_cell_towers(
+            mut self,
+            input: std::option::Option<crate::model::CellTowers>,
+        ) -> Self {
+            self.cell_towers = input;
+            self
+        }
+        /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
+        pub fn ip(mut self, input: crate::model::Ip) -> Self {
+            self.ip = Some(input);
+            self
+        }
+        /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
+        pub fn set_ip(mut self, input: std::option::Option<crate::model::Ip>) -> Self {
+            self.ip = input;
+            self
+        }
+        /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
+        pub fn gnss(mut self, input: crate::model::Gnss) -> Self {
+            self.gnss = Some(input);
+            self
+        }
+        /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
+        pub fn set_gnss(mut self, input: std::option::Option<crate::model::Gnss>) -> Self {
+            self.gnss = input;
+            self
+        }
+        /// <p>Optional information that specifies the time when the position information will be resolved. It uses the UNIX timestamp format. If not specified, the time at which the request was received will be used.</p>
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.timestamp = Some(input);
+            self
+        }
+        /// <p>Optional information that specifies the time when the position information will be resolved. It uses the UNIX timestamp format. If not specified, the time at which the request was received will be used.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetPositionEstimateInput`](crate::input::GetPositionEstimateInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetPositionEstimateInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetPositionEstimateInput {
+                wi_fi_access_points: self.wi_fi_access_points,
+                cell_towers: self.cell_towers,
+                ip: self.ip,
+                gnss: self.gnss,
+                timestamp: self.timestamp,
+            })
+        }
+    }
+}
+impl GetPositionEstimateInput {
+    /// Consumes the builder and constructs an Operation<[`GetPositionEstimate`](crate::operation::GetPositionEstimate)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetPositionEstimate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetPositionEstimateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/position-estimate").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetPositionEstimateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_position_estimate(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetPositionEstimate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetPositionEstimate",
+            "iotwireless",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetPositionEstimateInput`](crate::input::GetPositionEstimateInput).
+    pub fn builder() -> crate::input::get_position_estimate_input::Builder {
+        crate::input::get_position_estimate_input::Builder::default()
+    }
+}
+
 /// See [`GetResourceEventConfigurationInput`](crate::input::GetResourceEventConfigurationInput).
 pub mod get_resource_event_configuration_input {
 
@@ -8492,6 +8713,195 @@ impl GetResourceLogLevelInput {
     }
 }
 
+/// See [`GetResourcePositionInput`](crate::input::GetResourcePositionInput).
+pub mod get_resource_position_input {
+
+    /// A builder for [`GetResourcePositionInput`](crate::input::GetResourcePositionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_identifier: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<crate::model::PositionResourceType>,
+    }
+    impl Builder {
+        /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_identifier = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+        pub fn set_resource_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_identifier = input;
+            self
+        }
+        /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
+        pub fn resource_type(mut self, input: crate::model::PositionResourceType) -> Self {
+            self.resource_type = Some(input);
+            self
+        }
+        /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::PositionResourceType>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResourcePositionInput`](crate::input::GetResourcePositionInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetResourcePositionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetResourcePositionInput {
+                resource_identifier: self.resource_identifier,
+                resource_type: self.resource_type,
+            })
+        }
+    }
+}
+impl GetResourcePositionInput {
+    /// Consumes the builder and constructs an Operation<[`GetResourcePosition`](crate::operation::GetResourcePosition)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetResourcePosition,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetResourcePositionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_50 = &_input.resource_identifier;
+                let input_50 = input_50.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_identifier = aws_smithy_http::label::fmt_string(
+                    input_50,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if resource_identifier.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/resource-positions/{ResourceIdentifier}",
+                    ResourceIdentifier = resource_identifier
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::GetResourcePositionInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                let inner_51 = &_input.resource_type;
+                let inner_51 = inner_51.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_51),
+                );
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetResourcePositionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResourcePosition::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetResourcePosition",
+            "iotwireless",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetResourcePositionInput`](crate::input::GetResourcePositionInput).
+    pub fn builder() -> crate::input::get_resource_position_input::Builder {
+        crate::input::get_resource_position_input::Builder::default()
+    }
+}
+
 /// See [`GetServiceEndpointInput`](crate::input::GetServiceEndpointInput).
 pub mod get_service_endpoint_input {
 
@@ -8555,11 +8965,11 @@ impl GetServiceEndpointInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_50) = &_input.service_type {
+                if let Some(inner_52) = &_input.service_type {
                     {
                         query.push_kv(
                             "serviceType",
-                            &aws_smithy_http::query::fmt_string(&inner_50),
+                            &aws_smithy_http::query::fmt_string(&inner_52),
                         );
                     }
                 }
@@ -8689,15 +9099,15 @@ impl GetServiceProfileInput {
                 _input: &crate::input::GetServiceProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_51 = &_input.id;
-                let input_51 = input_51.as_ref().ok_or_else(|| {
+                let input_53 = &_input.id;
+                let input_53 = input_53.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_51,
+                    input_53,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -8852,15 +9262,15 @@ impl GetWirelessDeviceInput {
                 _input: &crate::input::GetWirelessDeviceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_52 = &_input.identifier;
-                let input_52 = input_52.as_ref().ok_or_else(|| {
+                let input_54 = &_input.identifier;
+                let input_54 = input_54.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "identifier",
                         "cannot be empty or unset",
                     )
                 })?;
                 let identifier = aws_smithy_http::label::fmt_string(
-                    input_52,
+                    input_54,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if identifier.is_empty() {
@@ -8884,8 +9294,8 @@ impl GetWirelessDeviceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_53 = &_input.identifier_type;
-                let inner_53 = inner_53.as_ref().ok_or_else(|| {
+                let inner_55 = &_input.identifier_type;
+                let inner_55 = inner_55.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "identifier_type",
                         "cannot be empty or unset",
@@ -8893,7 +9303,7 @@ impl GetWirelessDeviceInput {
                 })?;
                 query.push_kv(
                     "identifierType",
-                    &aws_smithy_http::query::fmt_string(&inner_53),
+                    &aws_smithy_http::query::fmt_string(&inner_55),
                 );
                 Ok(())
             }
@@ -9026,15 +9436,15 @@ impl GetWirelessDeviceStatisticsInput {
                 _input: &crate::input::GetWirelessDeviceStatisticsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_54 = &_input.wireless_device_id;
-                let input_54 = input_54.as_ref().ok_or_else(|| {
+                let input_56 = &_input.wireless_device_id;
+                let input_56 = input_56.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "wireless_device_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let wireless_device_id = aws_smithy_http::label::fmt_string(
-                    input_54,
+                    input_56,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if wireless_device_id.is_empty() {
@@ -9193,15 +9603,15 @@ impl GetWirelessGatewayInput {
                 _input: &crate::input::GetWirelessGatewayInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_55 = &_input.identifier;
-                let input_55 = input_55.as_ref().ok_or_else(|| {
+                let input_57 = &_input.identifier;
+                let input_57 = input_57.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "identifier",
                         "cannot be empty or unset",
                     )
                 })?;
                 let identifier = aws_smithy_http::label::fmt_string(
-                    input_55,
+                    input_57,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if identifier.is_empty() {
@@ -9225,8 +9635,8 @@ impl GetWirelessGatewayInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_56 = &_input.identifier_type;
-                let inner_56 = inner_56.as_ref().ok_or_else(|| {
+                let inner_58 = &_input.identifier_type;
+                let inner_58 = inner_58.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "identifier_type",
                         "cannot be empty or unset",
@@ -9234,7 +9644,7 @@ impl GetWirelessGatewayInput {
                 })?;
                 query.push_kv(
                     "identifierType",
-                    &aws_smithy_http::query::fmt_string(&inner_56),
+                    &aws_smithy_http::query::fmt_string(&inner_58),
                 );
                 Ok(())
             }
@@ -9362,15 +9772,15 @@ impl GetWirelessGatewayCertificateInput {
                 _input: &crate::input::GetWirelessGatewayCertificateInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_57 = &_input.id;
-                let input_57 = input_57.as_ref().ok_or_else(|| {
+                let input_59 = &_input.id;
+                let input_59 = input_59.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_57,
+                    input_59,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -9508,15 +9918,15 @@ impl GetWirelessGatewayFirmwareInformationInput {
                 _input: &crate::input::GetWirelessGatewayFirmwareInformationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_58 = &_input.id;
-                let input_58 = input_58.as_ref().ok_or_else(|| {
+                let input_60 = &_input.id;
+                let input_60 = input_60.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_58,
+                    input_60,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -9663,15 +10073,15 @@ impl GetWirelessGatewayStatisticsInput {
                 _input: &crate::input::GetWirelessGatewayStatisticsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_59 = &_input.wireless_gateway_id;
-                let input_59 = input_59.as_ref().ok_or_else(|| {
+                let input_61 = &_input.wireless_gateway_id;
+                let input_61 = input_61.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "wireless_gateway_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let wireless_gateway_id = aws_smithy_http::label::fmt_string(
-                    input_59,
+                    input_61,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if wireless_gateway_id.is_empty() {
@@ -9813,15 +10223,15 @@ impl GetWirelessGatewayTaskInput {
                 _input: &crate::input::GetWirelessGatewayTaskInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_60 = &_input.id;
-                let input_60 = input_60.as_ref().ok_or_else(|| {
+                let input_62 = &_input.id;
+                let input_62 = input_62.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_60,
+                    input_62,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -9959,15 +10369,15 @@ impl GetWirelessGatewayTaskDefinitionInput {
                 _input: &crate::input::GetWirelessGatewayTaskDefinitionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_61 = &_input.id;
-                let input_61 = input_61.as_ref().ok_or_else(|| {
+                let input_63 = &_input.id;
+                let input_63 = input_63.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_61,
+                    input_63,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -10133,9 +10543,9 @@ impl ListDestinationsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_62) = &_input.next_token {
+                if let Some(inner_64) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_62));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_64));
                     }
                 }
                 Ok(())
@@ -10286,9 +10696,9 @@ impl ListDeviceProfilesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_63) = &_input.next_token {
+                if let Some(inner_65) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_63));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_65));
                     }
                 }
                 if _input.max_results != 0 {
@@ -10460,8 +10870,8 @@ impl ListEventConfigurationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_64 = &_input.resource_type;
-                let inner_64 = inner_64.as_ref().ok_or_else(|| {
+                let inner_66 = &_input.resource_type;
+                let inner_66 = inner_66.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_type",
                         "cannot be empty or unset",
@@ -10469,7 +10879,7 @@ impl ListEventConfigurationsInput {
                 })?;
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_64),
+                    &aws_smithy_http::query::fmt_string(&inner_66),
                 );
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -10477,9 +10887,9 @@ impl ListEventConfigurationsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_65) = &_input.next_token {
+                if let Some(inner_67) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_65));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_67));
                     }
                 }
                 Ok(())
@@ -10628,9 +11038,9 @@ impl ListFuotaTasksInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_66) = &_input.next_token {
+                if let Some(inner_68) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_66));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_68));
                     }
                 }
                 if _input.max_results != 0 {
@@ -10787,9 +11197,9 @@ impl ListMulticastGroupsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_67) = &_input.next_token {
+                if let Some(inner_69) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_67));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_69));
                     }
                 }
                 if _input.max_results != 0 {
@@ -10950,15 +11360,15 @@ impl ListMulticastGroupsByFuotaTaskInput {
                 _input: &crate::input::ListMulticastGroupsByFuotaTaskInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_68 = &_input.id;
-                let input_68 = input_68.as_ref().ok_or_else(|| {
+                let input_70 = &_input.id;
+                let input_70 = input_70.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_68,
+                    input_70,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -10978,9 +11388,9 @@ impl ListMulticastGroupsByFuotaTaskInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_69) = &_input.next_token {
+                if let Some(inner_71) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_69));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_71));
                     }
                 }
                 if _input.max_results != 0 {
@@ -11144,9 +11554,9 @@ impl ListNetworkAnalyzerConfigurationsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_70) = &_input.next_token {
+                if let Some(inner_72) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_70));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_72));
                     }
                 }
                 Ok(())
@@ -11297,9 +11707,9 @@ impl ListPartnerAccountsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_71) = &_input.next_token {
+                if let Some(inner_73) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_71));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_73));
                     }
                 }
                 if _input.max_results != 0 {
@@ -11471,11 +11881,11 @@ impl ListPositionConfigurationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_72) = &_input.resource_type {
+                if let Some(inner_74) = &_input.resource_type {
                     {
                         query.push_kv(
                             "resourceType",
-                            &aws_smithy_http::query::fmt_string(&inner_72),
+                            &aws_smithy_http::query::fmt_string(&inner_74),
                         );
                     }
                 }
@@ -11485,9 +11895,9 @@ impl ListPositionConfigurationsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_73) = &_input.next_token {
+                if let Some(inner_75) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_73));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_75));
                     }
                 }
                 Ok(())
@@ -11657,15 +12067,15 @@ impl ListQueuedMessagesInput {
                 _input: &crate::input::ListQueuedMessagesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_74 = &_input.id;
-                let input_74 = input_74.as_ref().ok_or_else(|| {
+                let input_76 = &_input.id;
+                let input_76 = input_76.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_74,
+                    input_76,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -11685,9 +12095,9 @@ impl ListQueuedMessagesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_75) = &_input.next_token {
+                if let Some(inner_77) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_75));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_77));
                     }
                 }
                 if _input.max_results != 0 {
@@ -11696,11 +12106,11 @@ impl ListQueuedMessagesInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_76) = &_input.wireless_device_type {
+                if let Some(inner_78) = &_input.wireless_device_type {
                     {
                         query.push_kv(
                             "WirelessDeviceType",
-                            &aws_smithy_http::query::fmt_string(&inner_76),
+                            &aws_smithy_http::query::fmt_string(&inner_78),
                         );
                     }
                 }
@@ -11852,9 +12262,9 @@ impl ListServiceProfilesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_77) = &_input.next_token {
+                if let Some(inner_79) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_77));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_79));
                     }
                 }
                 if _input.max_results != 0 {
@@ -11999,14 +12409,14 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_78 = &_input.resource_arn;
-                let inner_78 = inner_78.as_ref().ok_or_else(|| {
+                let inner_80 = &_input.resource_arn;
+                let inner_80 = inner_80.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_78.is_empty() {
+                if inner_80.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "resource_arn",
@@ -12016,7 +12426,7 @@ impl ListTagsForResourceInput {
                 }
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_78),
+                    &aws_smithy_http::query::fmt_string(&inner_80),
                 );
                 Ok(())
             }
@@ -12262,56 +12672,56 @@ impl ListWirelessDevicesInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_79) = &_input.next_token {
+                if let Some(inner_81) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_79));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_81));
                     }
                 }
-                if let Some(inner_80) = &_input.destination_name {
+                if let Some(inner_82) = &_input.destination_name {
                     {
                         query.push_kv(
                             "destinationName",
-                            &aws_smithy_http::query::fmt_string(&inner_80),
-                        );
-                    }
-                }
-                if let Some(inner_81) = &_input.device_profile_id {
-                    {
-                        query.push_kv(
-                            "deviceProfileId",
-                            &aws_smithy_http::query::fmt_string(&inner_81),
-                        );
-                    }
-                }
-                if let Some(inner_82) = &_input.service_profile_id {
-                    {
-                        query.push_kv(
-                            "serviceProfileId",
                             &aws_smithy_http::query::fmt_string(&inner_82),
                         );
                     }
                 }
-                if let Some(inner_83) = &_input.wireless_device_type {
+                if let Some(inner_83) = &_input.device_profile_id {
                     {
                         query.push_kv(
-                            "wirelessDeviceType",
+                            "deviceProfileId",
                             &aws_smithy_http::query::fmt_string(&inner_83),
                         );
                     }
                 }
-                if let Some(inner_84) = &_input.fuota_task_id {
+                if let Some(inner_84) = &_input.service_profile_id {
                     {
                         query.push_kv(
-                            "fuotaTaskId",
+                            "serviceProfileId",
                             &aws_smithy_http::query::fmt_string(&inner_84),
                         );
                     }
                 }
-                if let Some(inner_85) = &_input.multicast_group_id {
+                if let Some(inner_85) = &_input.wireless_device_type {
+                    {
+                        query.push_kv(
+                            "wirelessDeviceType",
+                            &aws_smithy_http::query::fmt_string(&inner_85),
+                        );
+                    }
+                }
+                if let Some(inner_86) = &_input.fuota_task_id {
+                    {
+                        query.push_kv(
+                            "fuotaTaskId",
+                            &aws_smithy_http::query::fmt_string(&inner_86),
+                        );
+                    }
+                }
+                if let Some(inner_87) = &_input.multicast_group_id {
                     {
                         query.push_kv(
                             "multicastGroupId",
-                            &aws_smithy_http::query::fmt_string(&inner_85),
+                            &aws_smithy_http::query::fmt_string(&inner_87),
                         );
                     }
                 }
@@ -12463,9 +12873,9 @@ impl ListWirelessGatewaysInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_86) = &_input.next_token {
+                if let Some(inner_88) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_88));
                     }
                 }
                 if _input.max_results != 0 {
@@ -12648,16 +13058,16 @@ impl ListWirelessGatewayTaskDefinitionsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_87) = &_input.next_token {
+                if let Some(inner_89) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_87));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_89));
                     }
                 }
-                if let Some(inner_88) = &_input.task_definition_type {
+                if let Some(inner_90) = &_input.task_definition_type {
                     {
                         query.push_kv(
                             "taskDefinitionType",
-                            &aws_smithy_http::query::fmt_string(&inner_88),
+                            &aws_smithy_http::query::fmt_string(&inner_90),
                         );
                     }
                 }
@@ -12834,15 +13244,15 @@ impl PutPositionConfigurationInput {
                 _input: &crate::input::PutPositionConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_89 = &_input.resource_identifier;
-                let input_89 = input_89.as_ref().ok_or_else(|| {
+                let input_91 = &_input.resource_identifier;
+                let input_91 = input_91.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_identifier",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_identifier = aws_smithy_http::label::fmt_string(
-                    input_89,
+                    input_91,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_identifier.is_empty() {
@@ -12866,8 +13276,8 @@ impl PutPositionConfigurationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_90 = &_input.resource_type;
-                let inner_90 = inner_90.as_ref().ok_or_else(|| {
+                let inner_92 = &_input.resource_type;
+                let inner_92 = inner_92.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_type",
                         "cannot be empty or unset",
@@ -12875,7 +13285,7 @@ impl PutPositionConfigurationInput {
                 })?;
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_90),
+                    &aws_smithy_http::query::fmt_string(&inner_92),
                 );
                 Ok(())
             }
@@ -13051,15 +13461,15 @@ impl PutResourceLogLevelInput {
                 _input: &crate::input::PutResourceLogLevelInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_91 = &_input.resource_identifier;
-                let input_91 = input_91.as_ref().ok_or_else(|| {
+                let input_93 = &_input.resource_identifier;
+                let input_93 = input_93.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_identifier",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_identifier = aws_smithy_http::label::fmt_string(
-                    input_91,
+                    input_93,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_identifier.is_empty() {
@@ -13083,14 +13493,14 @@ impl PutResourceLogLevelInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_92 = &_input.resource_type;
-                let inner_92 = inner_92.as_ref().ok_or_else(|| {
+                let inner_94 = &_input.resource_type;
+                let inner_94 = inner_94.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_type",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_92.is_empty() {
+                if inner_94.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "resource_type",
@@ -13100,7 +13510,7 @@ impl PutResourceLogLevelInput {
                 }
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_92),
+                    &aws_smithy_http::query::fmt_string(&inner_94),
                 );
                 Ok(())
             }
@@ -13378,15 +13788,15 @@ impl ResetResourceLogLevelInput {
                 _input: &crate::input::ResetResourceLogLevelInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_93 = &_input.resource_identifier;
-                let input_93 = input_93.as_ref().ok_or_else(|| {
+                let input_95 = &_input.resource_identifier;
+                let input_95 = input_95.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_identifier",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_identifier = aws_smithy_http::label::fmt_string(
-                    input_93,
+                    input_95,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_identifier.is_empty() {
@@ -13410,14 +13820,14 @@ impl ResetResourceLogLevelInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_94 = &_input.resource_type;
-                let inner_94 = inner_94.as_ref().ok_or_else(|| {
+                let inner_96 = &_input.resource_type;
+                let inner_96 = inner_96.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_type",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_94.is_empty() {
+                if inner_96.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "resource_type",
@@ -13427,7 +13837,7 @@ impl ResetResourceLogLevelInput {
                 }
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_94),
+                    &aws_smithy_http::query::fmt_string(&inner_96),
                 );
                 Ok(())
             }
@@ -13584,15 +13994,15 @@ impl SendDataToMulticastGroupInput {
                 _input: &crate::input::SendDataToMulticastGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_95 = &_input.id;
-                let input_95 = input_95.as_ref().ok_or_else(|| {
+                let input_97 = &_input.id;
+                let input_97 = input_97.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_95,
+                    input_97,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -13787,15 +14197,15 @@ impl SendDataToWirelessDeviceInput {
                 _input: &crate::input::SendDataToWirelessDeviceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_96 = &_input.id;
-                let input_96 = input_96.as_ref().ok_or_else(|| {
+                let input_98 = &_input.id;
+                let input_98 = input_98.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_96,
+                    input_98,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -13986,15 +14396,15 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
                 _input: &crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_97 = &_input.id;
-                let input_97 = input_97.as_ref().ok_or_else(|| {
+                let input_99 = &_input.id;
+                let input_99 = input_99.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_97,
+                    input_99,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -14184,15 +14594,15 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
                 _input: &crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_98 = &_input.id;
-                let input_98 = input_98.as_ref().ok_or_else(|| {
+                let input_100 = &_input.id;
+                let input_100 = input_100.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_98,
+                    input_100,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -14360,15 +14770,15 @@ impl StartFuotaTaskInput {
                 _input: &crate::input::StartFuotaTaskInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_99 = &_input.id;
-                let input_99 = input_99.as_ref().ok_or_else(|| {
+                let input_101 = &_input.id;
+                let input_101 = input_101.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_99,
+                    input_101,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -14536,15 +14946,15 @@ impl StartMulticastGroupSessionInput {
                 _input: &crate::input::StartMulticastGroupSessionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_100 = &_input.id;
-                let input_100 = input_100.as_ref().ok_or_else(|| {
+                let input_102 = &_input.id;
+                let input_102 = input_102.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_100,
+                    input_102,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -14724,14 +15134,14 @@ impl TagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_101 = &_input.resource_arn;
-                let inner_101 = inner_101.as_ref().ok_or_else(|| {
+                let inner_103 = &_input.resource_arn;
+                let inner_103 = inner_103.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_101.is_empty() {
+                if inner_103.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "resource_arn",
@@ -14741,7 +15151,7 @@ impl TagResourceInput {
                 }
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_101),
+                    &aws_smithy_http::query::fmt_string(&inner_103),
                 );
                 Ok(())
             }
@@ -14883,15 +15293,15 @@ impl TestWirelessDeviceInput {
                 _input: &crate::input::TestWirelessDeviceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_102 = &_input.id;
-                let input_102 = input_102.as_ref().ok_or_else(|| {
+                let input_104 = &_input.id;
+                let input_104 = input_104.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_102,
+                    input_104,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -15058,14 +15468,14 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_103 = &_input.resource_arn;
-                let inner_103 = inner_103.as_ref().ok_or_else(|| {
+                let inner_105 = &_input.resource_arn;
+                let inner_105 = inner_105.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_103.is_empty() {
+                if inner_105.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "resource_arn",
@@ -15075,17 +15485,17 @@ impl UntagResourceInput {
                 }
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_103),
+                    &aws_smithy_http::query::fmt_string(&inner_105),
                 );
-                let inner_104 = &_input.tag_keys;
-                let inner_104 = inner_104.as_ref().ok_or_else(|| {
+                let inner_106 = &_input.tag_keys;
+                let inner_106 = inner_106.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "tag_keys",
                         "cannot be empty or unset",
                     )
                 })?;
-                for inner_105 in inner_104 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_105));
+                for inner_107 in inner_106 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_107));
                 }
                 Ok(())
             }
@@ -15266,15 +15676,15 @@ impl UpdateDestinationInput {
                 _input: &crate::input::UpdateDestinationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_106 = &_input.name;
-                let input_106 = input_106.as_ref().ok_or_else(|| {
+                let input_108 = &_input.name;
+                let input_108 = input_108.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_106,
+                    input_108,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -15723,15 +16133,15 @@ impl UpdateFuotaTaskInput {
                 _input: &crate::input::UpdateFuotaTaskInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_107 = &_input.id;
-                let input_107 = input_107.as_ref().ok_or_else(|| {
+                let input_109 = &_input.id;
+                let input_109 = input_109.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_107,
+                    input_109,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -16117,15 +16527,15 @@ impl UpdateMulticastGroupInput {
                 _input: &crate::input::UpdateMulticastGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_108 = &_input.id;
-                let input_108 = input_108.as_ref().ok_or_else(|| {
+                let input_110 = &_input.id;
+                let input_110 = input_110.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_108,
+                    input_110,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -16401,15 +16811,15 @@ impl UpdateNetworkAnalyzerConfigurationInput {
                 _input: &crate::input::UpdateNetworkAnalyzerConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_109 = &_input.configuration_name;
-                let input_109 = input_109.as_ref().ok_or_else(|| {
+                let input_111 = &_input.configuration_name;
+                let input_111 = input_111.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "configuration_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let configuration_name = aws_smithy_http::label::fmt_string(
-                    input_109,
+                    input_111,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if configuration_name.is_empty() {
@@ -16599,15 +17009,15 @@ impl UpdatePartnerAccountInput {
                 _input: &crate::input::UpdatePartnerAccountInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_110 = &_input.partner_account_id;
-                let input_110 = input_110.as_ref().ok_or_else(|| {
+                let input_112 = &_input.partner_account_id;
+                let input_112 = input_112.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "partner_account_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let partner_account_id = aws_smithy_http::label::fmt_string(
-                    input_110,
+                    input_112,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if partner_account_id.is_empty() {
@@ -16631,8 +17041,8 @@ impl UpdatePartnerAccountInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_111 = &_input.partner_type;
-                let inner_111 = inner_111.as_ref().ok_or_else(|| {
+                let inner_113 = &_input.partner_type;
+                let inner_113 = inner_113.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "partner_type",
                         "cannot be empty or unset",
@@ -16640,7 +17050,7 @@ impl UpdatePartnerAccountInput {
                 })?;
                 query.push_kv(
                     "partnerType",
-                    &aws_smithy_http::query::fmt_string(&inner_111),
+                    &aws_smithy_http::query::fmt_string(&inner_113),
                 );
                 Ok(())
             }
@@ -16820,15 +17230,15 @@ impl UpdatePositionInput {
                 _input: &crate::input::UpdatePositionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_112 = &_input.resource_identifier;
-                let input_112 = input_112.as_ref().ok_or_else(|| {
+                let input_114 = &_input.resource_identifier;
+                let input_114 = input_114.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_identifier",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_identifier = aws_smithy_http::label::fmt_string(
-                    input_112,
+                    input_114,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_identifier.is_empty() {
@@ -16852,8 +17262,8 @@ impl UpdatePositionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_113 = &_input.resource_type;
-                let inner_113 = inner_113.as_ref().ok_or_else(|| {
+                let inner_115 = &_input.resource_type;
+                let inner_115 = inner_115.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_type",
                         "cannot be empty or unset",
@@ -16861,7 +17271,7 @@ impl UpdatePositionInput {
                 })?;
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_113),
+                    &aws_smithy_http::query::fmt_string(&inner_115),
                 );
                 Ok(())
             }
@@ -17122,15 +17532,15 @@ impl UpdateResourceEventConfigurationInput {
                 _input: &crate::input::UpdateResourceEventConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_114 = &_input.identifier;
-                let input_114 = input_114.as_ref().ok_or_else(|| {
+                let input_116 = &_input.identifier;
+                let input_116 = input_116.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "identifier",
                         "cannot be empty or unset",
                     )
                 })?;
                 let identifier = aws_smithy_http::label::fmt_string(
-                    input_114,
+                    input_116,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if identifier.is_empty() {
@@ -17154,8 +17564,8 @@ impl UpdateResourceEventConfigurationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_115 = &_input.identifier_type;
-                let inner_115 = inner_115.as_ref().ok_or_else(|| {
+                let inner_117 = &_input.identifier_type;
+                let inner_117 = inner_117.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "identifier_type",
                         "cannot be empty or unset",
@@ -17163,13 +17573,13 @@ impl UpdateResourceEventConfigurationInput {
                 })?;
                 query.push_kv(
                     "identifierType",
-                    &aws_smithy_http::query::fmt_string(&inner_115),
+                    &aws_smithy_http::query::fmt_string(&inner_117),
                 );
-                if let Some(inner_116) = &_input.partner_type {
+                if let Some(inner_118) = &_input.partner_type {
                     {
                         query.push_kv(
                             "partnerType",
-                            &aws_smithy_http::query::fmt_string(&inner_116),
+                            &aws_smithy_http::query::fmt_string(&inner_118),
                         );
                     }
                 }
@@ -17262,6 +17672,226 @@ impl UpdateResourceEventConfigurationInput {
     }
 }
 
+/// See [`UpdateResourcePositionInput`](crate::input::UpdateResourcePositionInput).
+pub mod update_resource_position_input {
+
+    /// A builder for [`UpdateResourcePositionInput`](crate::input::UpdateResourcePositionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_identifier: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<crate::model::PositionResourceType>,
+        pub(crate) geo_json_payload: std::option::Option<aws_smithy_types::Blob>,
+    }
+    impl Builder {
+        /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_identifier = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+        pub fn set_resource_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_identifier = input;
+            self
+        }
+        /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
+        pub fn resource_type(mut self, input: crate::model::PositionResourceType) -> Self {
+            self.resource_type = Some(input);
+            self
+        }
+        /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::PositionResourceType>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+        pub fn geo_json_payload(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.geo_json_payload = Some(input);
+            self
+        }
+        /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+        pub fn set_geo_json_payload(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.geo_json_payload = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateResourcePositionInput`](crate::input::UpdateResourcePositionInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateResourcePositionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateResourcePositionInput {
+                resource_identifier: self.resource_identifier,
+                resource_type: self.resource_type,
+                geo_json_payload: self.geo_json_payload,
+            })
+        }
+    }
+}
+impl UpdateResourcePositionInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateResourcePosition`](crate::operation::UpdateResourcePosition)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateResourcePosition,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateResourcePositionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_119 = &_input.resource_identifier;
+                let input_119 = input_119.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_identifier = aws_smithy_http::label::fmt_string(
+                    input_119,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if resource_identifier.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/resource-positions/{ResourceIdentifier}",
+                    ResourceIdentifier = resource_identifier
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::UpdateResourcePositionInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                let inner_120 = &_input.resource_type;
+                let inner_120 = inner_120.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_120),
+                );
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateResourcePositionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("PATCH").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/octet-stream",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_payload_update_resource_position_input(
+                self.geo_json_payload,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateResourcePosition::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateResourcePosition",
+            "iotwireless",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateResourcePositionInput`](crate::input::UpdateResourcePositionInput).
+    pub fn builder() -> crate::input::update_resource_position_input::Builder {
+        crate::input::update_resource_position_input::Builder::default()
+    }
+}
+
 /// See [`UpdateWirelessDeviceInput`](crate::input::UpdateWirelessDeviceInput).
 pub mod update_wireless_device_input {
 
@@ -17273,6 +17903,7 @@ pub mod update_wireless_device_input {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanUpdateDevice>,
+        pub(crate) positioning: std::option::Option<crate::model::PositioningConfigStatus>,
     }
     impl Builder {
         /// <p>The ID of the resource to update.</p>
@@ -17331,6 +17962,19 @@ pub mod update_wireless_device_input {
             self.lo_ra_wan = input;
             self
         }
+        /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+        pub fn positioning(mut self, input: crate::model::PositioningConfigStatus) -> Self {
+            self.positioning = Some(input);
+            self
+        }
+        /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+        pub fn set_positioning(
+            mut self,
+            input: std::option::Option<crate::model::PositioningConfigStatus>,
+        ) -> Self {
+            self.positioning = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateWirelessDeviceInput`](crate::input::UpdateWirelessDeviceInput).
         pub fn build(
             self,
@@ -17344,6 +17988,7 @@ pub mod update_wireless_device_input {
                 name: self.name,
                 description: self.description,
                 lo_ra_wan: self.lo_ra_wan,
+                positioning: self.positioning,
             })
         }
     }
@@ -17368,15 +18013,15 @@ impl UpdateWirelessDeviceInput {
                 _input: &crate::input::UpdateWirelessDeviceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_117 = &_input.id;
-                let input_117 = input_117.as_ref().ok_or_else(|| {
+                let input_121 = &_input.id;
+                let input_121 = input_121.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_117,
+                    input_121,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -17599,15 +18244,15 @@ impl UpdateWirelessGatewayInput {
                 _input: &crate::input::UpdateWirelessGatewayInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_118 = &_input.id;
-                let input_118 = input_118.as_ref().ok_or_else(|| {
+                let input_122 = &_input.id;
+                let input_122 = input_122.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_118,
+                    input_122,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -17773,6 +18418,9 @@ pub struct UpdateWirelessDeviceInput {
     /// <p>The updated wireless device's configuration.</p>
     #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanUpdateDevice>,
+    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    #[doc(hidden)]
+    pub positioning: std::option::Option<crate::model::PositioningConfigStatus>,
 }
 impl UpdateWirelessDeviceInput {
     /// <p>The ID of the resource to update.</p>
@@ -17794,6 +18442,39 @@ impl UpdateWirelessDeviceInput {
     /// <p>The updated wireless device's configuration.</p>
     pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanUpdateDevice> {
         self.lo_ra_wan.as_ref()
+    }
+    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    pub fn positioning(&self) -> std::option::Option<&crate::model::PositioningConfigStatus> {
+        self.positioning.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateResourcePositionInput {
+    /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+    #[doc(hidden)]
+    pub resource_identifier: std::option::Option<std::string::String>,
+    /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
+    #[doc(hidden)]
+    pub resource_type: std::option::Option<crate::model::PositionResourceType>,
+    /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    #[doc(hidden)]
+    pub geo_json_payload: std::option::Option<aws_smithy_types::Blob>,
+}
+impl UpdateResourcePositionInput {
+    /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+    /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::PositionResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    pub fn geo_json_payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.geo_json_payload.as_ref()
     }
 }
 
@@ -17870,6 +18551,7 @@ impl UpdateResourceEventConfigurationInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePositionInput {
@@ -18489,6 +19171,7 @@ impl PutResourceLogLevelInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPositionConfigurationInput {
@@ -18715,6 +19398,7 @@ impl ListQueuedMessagesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPositionConfigurationsInput {
@@ -19102,6 +19786,28 @@ impl GetServiceEndpointInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetResourcePositionInput {
+    /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+    #[doc(hidden)]
+    pub resource_identifier: std::option::Option<std::string::String>,
+    /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
+    #[doc(hidden)]
+    pub resource_type: std::option::Option<crate::model::PositionResourceType>,
+}
+impl GetResourcePositionInput {
+    /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+    /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::PositionResourceType> {
+        self.resource_type.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceLogLevelInput {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     #[doc(hidden)]
@@ -19153,6 +19859,50 @@ impl GetResourceEventConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetPositionEstimateInput {
+    /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
+    #[doc(hidden)]
+    pub wi_fi_access_points: std::option::Option<std::vec::Vec<crate::model::WiFiAccessPoint>>,
+    /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
+    #[doc(hidden)]
+    pub cell_towers: std::option::Option<crate::model::CellTowers>,
+    /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
+    #[doc(hidden)]
+    pub ip: std::option::Option<crate::model::Ip>,
+    /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
+    #[doc(hidden)]
+    pub gnss: std::option::Option<crate::model::Gnss>,
+    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the UNIX timestamp format. If not specified, the time at which the request was received will be used.</p>
+    #[doc(hidden)]
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl GetPositionEstimateInput {
+    /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
+    pub fn wi_fi_access_points(&self) -> std::option::Option<&[crate::model::WiFiAccessPoint]> {
+        self.wi_fi_access_points.as_deref()
+    }
+    /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
+    pub fn cell_towers(&self) -> std::option::Option<&crate::model::CellTowers> {
+        self.cell_towers.as_ref()
+    }
+    /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
+    pub fn ip(&self) -> std::option::Option<&crate::model::Ip> {
+        self.ip.as_ref()
+    }
+    /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
+    pub fn gnss(&self) -> std::option::Option<&crate::model::Gnss> {
+        self.gnss.as_ref()
+    }
+    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the UNIX timestamp format. If not specified, the time at which the request was received will be used.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.timestamp.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This operation is no longer supported.")]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPositionConfigurationInput {
     /// <p>Resource identifier used in a position configuration.</p>
     #[doc(hidden)]
@@ -19173,6 +19923,7 @@ impl GetPositionConfigurationInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPositionInput {
@@ -19761,6 +20512,9 @@ pub struct CreateWirelessDeviceInput {
     /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    #[doc(hidden)]
+    pub positioning: std::option::Option<crate::model::PositioningConfigStatus>,
 }
 impl CreateWirelessDeviceInput {
     /// <p>The wireless device type.</p>
@@ -19790,6 +20544,10 @@ impl CreateWirelessDeviceInput {
     /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    pub fn positioning(&self) -> std::option::Option<&crate::model::PositioningConfigStatus> {
+        self.positioning.as_ref()
     }
 }
 

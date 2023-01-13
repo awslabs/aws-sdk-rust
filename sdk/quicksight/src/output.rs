@@ -3274,6 +3274,236 @@ impl SearchFoldersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SearchDataSourcesOutput {
+    /// <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
+    #[doc(hidden)]
+    pub data_source_summaries: std::option::Option<std::vec::Vec<crate::model::DataSourceSummary>>,
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
+    pub status: i32,
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl SearchDataSourcesOutput {
+    /// <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
+    pub fn data_source_summaries(&self) -> std::option::Option<&[crate::model::DataSourceSummary]> {
+        self.data_source_summaries.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+/// See [`SearchDataSourcesOutput`](crate::output::SearchDataSourcesOutput).
+pub mod search_data_sources_output {
+
+    /// A builder for [`SearchDataSourcesOutput`](crate::output::SearchDataSourcesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source_summaries:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<i32>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `data_source_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_data_source_summaries`](Self::set_data_source_summaries).
+        ///
+        /// <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
+        pub fn data_source_summaries(mut self, input: crate::model::DataSourceSummary) -> Self {
+            let mut v = self.data_source_summaries.unwrap_or_default();
+            v.push(input);
+            self.data_source_summaries = Some(v);
+            self
+        }
+        /// <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
+        pub fn set_data_source_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceSummary>>,
+        ) -> Self {
+            self.data_source_summaries = input;
+            self
+        }
+        /// <p>A pagination token that can be used in a subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A pagination token that can be used in a subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchDataSourcesOutput`](crate::output::SearchDataSourcesOutput).
+        pub fn build(self) -> crate::output::SearchDataSourcesOutput {
+            crate::output::SearchDataSourcesOutput {
+                data_source_summaries: self.data_source_summaries,
+                next_token: self.next_token,
+                status: self.status.unwrap_or_default(),
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl SearchDataSourcesOutput {
+    /// Creates a new builder-style object to manufacture [`SearchDataSourcesOutput`](crate::output::SearchDataSourcesOutput).
+    pub fn builder() -> crate::output::search_data_sources_output::Builder {
+        crate::output::search_data_sources_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SearchDataSetsOutput {
+    /// <p>A <code>DataSetSummaries</code> object that returns a summary of a dataset.</p>
+    #[doc(hidden)]
+    pub data_set_summaries: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
+    pub status: i32,
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl SearchDataSetsOutput {
+    /// <p>A <code>DataSetSummaries</code> object that returns a summary of a dataset.</p>
+    pub fn data_set_summaries(&self) -> std::option::Option<&[crate::model::DataSetSummary]> {
+        self.data_set_summaries.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+/// See [`SearchDataSetsOutput`](crate::output::SearchDataSetsOutput).
+pub mod search_data_sets_output {
+
+    /// A builder for [`SearchDataSetsOutput`](crate::output::SearchDataSetsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_set_summaries:
+            std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<i32>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `data_set_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_data_set_summaries`](Self::set_data_set_summaries).
+        ///
+        /// <p>A <code>DataSetSummaries</code> object that returns a summary of a dataset.</p>
+        pub fn data_set_summaries(mut self, input: crate::model::DataSetSummary) -> Self {
+            let mut v = self.data_set_summaries.unwrap_or_default();
+            v.push(input);
+            self.data_set_summaries = Some(v);
+            self
+        }
+        /// <p>A <code>DataSetSummaries</code> object that returns a summary of a dataset.</p>
+        pub fn set_data_set_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
+        ) -> Self {
+            self.data_set_summaries = input;
+            self
+        }
+        /// <p>A pagination token that can be used in a subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A pagination token that can be used in a subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchDataSetsOutput`](crate::output::SearchDataSetsOutput).
+        pub fn build(self) -> crate::output::SearchDataSetsOutput {
+            crate::output::SearchDataSetsOutput {
+                data_set_summaries: self.data_set_summaries,
+                next_token: self.next_token,
+                status: self.status.unwrap_or_default(),
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl SearchDataSetsOutput {
+    /// Creates a new builder-style object to manufacture [`SearchDataSetsOutput`](crate::output::SearchDataSetsOutput).
+    pub fn builder() -> crate::output::search_data_sets_output::Builder {
+        crate::output::search_data_sets_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchDashboardsOutput {
     /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
     #[doc(hidden)]
@@ -6571,6 +6801,9 @@ pub struct GenerateEmbedUrlForAnonymousUserOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
+    #[doc(hidden)]
+    pub anonymous_user_arn: std::option::Option<std::string::String>,
 }
 impl GenerateEmbedUrlForAnonymousUserOutput {
     /// <p>The embed URL for the dashboard.</p>
@@ -6585,6 +6818,10 @@ impl GenerateEmbedUrlForAnonymousUserOutput {
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
+    pub fn anonymous_user_arn(&self) -> std::option::Option<&str> {
+        self.anonymous_user_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6592,6 +6829,7 @@ impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserOutput {
         formatter.field("embed_url", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
         formatter.field("request_id", &self.request_id);
+        formatter.field("anonymous_user_arn", &self.anonymous_user_arn);
         formatter.finish()
     }
 }
@@ -6604,6 +6842,7 @@ pub mod generate_embed_url_for_anonymous_user_output {
         pub(crate) embed_url: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
+        pub(crate) anonymous_user_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The embed URL for the dashboard.</p>
@@ -6636,12 +6875,26 @@ pub mod generate_embed_url_for_anonymous_user_output {
             self.request_id = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
+        pub fn anonymous_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.anonymous_user_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
+        pub fn set_anonymous_user_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.anonymous_user_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GenerateEmbedUrlForAnonymousUserOutput`](crate::output::GenerateEmbedUrlForAnonymousUserOutput).
         pub fn build(self) -> crate::output::GenerateEmbedUrlForAnonymousUserOutput {
             crate::output::GenerateEmbedUrlForAnonymousUserOutput {
                 embed_url: self.embed_url,
                 status: self.status.unwrap_or_default(),
                 request_id: self.request_id,
+                anonymous_user_arn: self.anonymous_user_arn,
             }
         }
     }
@@ -6651,6 +6904,7 @@ pub mod generate_embed_url_for_anonymous_user_output {
             formatter.field("embed_url", &"*** Sensitive Data Redacted ***");
             formatter.field("status", &self.status);
             formatter.field("request_id", &self.request_id);
+            formatter.field("anonymous_user_arn", &self.anonymous_user_arn);
             formatter.finish()
         }
     }
@@ -7188,6 +7442,242 @@ impl DescribeTemplatePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTemplatePermissionsOutput`](crate::output::DescribeTemplatePermissionsOutput).
     pub fn builder() -> crate::output::describe_template_permissions_output::Builder {
         crate::output::describe_template_permissions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeTemplateDefinitionOutput {
+    /// <p>The descriptive name of the template.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The ID of the template described.</p>
+    #[doc(hidden)]
+    pub template_id: std::option::Option<std::string::String>,
+    /// <p>Errors associated with the template version.</p>
+    #[doc(hidden)]
+    pub errors: std::option::Option<std::vec::Vec<crate::model::TemplateError>>,
+    /// <p>Status associated with the template.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub resource_status: std::option::Option<crate::model::ResourceStatus>,
+    /// <p>The ARN of the theme of the template.</p>
+    #[doc(hidden)]
+    pub theme_arn: std::option::Option<std::string::String>,
+    /// <p>The definition of the template.</p>
+    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    #[doc(hidden)]
+    pub definition: std::option::Option<crate::model::TemplateVersionDefinition>,
+    /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
+    pub status: i32,
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl DescribeTemplateDefinitionOutput {
+    /// <p>The descriptive name of the template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the template described.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>Errors associated with the template version.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::TemplateError]> {
+        self.errors.as_deref()
+    }
+    /// <p>Status associated with the template.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// </ul>
+    pub fn resource_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.resource_status.as_ref()
+    }
+    /// <p>The ARN of the theme of the template.</p>
+    pub fn theme_arn(&self) -> std::option::Option<&str> {
+        self.theme_arn.as_deref()
+    }
+    /// <p>The definition of the template.</p>
+    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::TemplateVersionDefinition> {
+        self.definition.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+/// See [`DescribeTemplateDefinitionOutput`](crate::output::DescribeTemplateDefinitionOutput).
+pub mod describe_template_definition_output {
+
+    /// A builder for [`DescribeTemplateDefinitionOutput`](crate::output::DescribeTemplateDefinitionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) template_id: std::option::Option<std::string::String>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::TemplateError>>,
+        pub(crate) resource_status: std::option::Option<crate::model::ResourceStatus>,
+        pub(crate) theme_arn: std::option::Option<std::string::String>,
+        pub(crate) definition: std::option::Option<crate::model::TemplateVersionDefinition>,
+        pub(crate) status: std::option::Option<i32>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The descriptive name of the template.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The descriptive name of the template.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The ID of the template described.</p>
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the template described.</p>
+        pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_id = input;
+            self
+        }
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>Errors associated with the template version.</p>
+        pub fn errors(mut self, input: crate::model::TemplateError) -> Self {
+            let mut v = self.errors.unwrap_or_default();
+            v.push(input);
+            self.errors = Some(v);
+            self
+        }
+        /// <p>Errors associated with the template version.</p>
+        pub fn set_errors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TemplateError>>,
+        ) -> Self {
+            self.errors = input;
+            self
+        }
+        /// <p>Status associated with the template.</p>
+        /// <ul>
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// </ul>
+        pub fn resource_status(mut self, input: crate::model::ResourceStatus) -> Self {
+            self.resource_status = Some(input);
+            self
+        }
+        /// <p>Status associated with the template.</p>
+        /// <ul>
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// </ul>
+        pub fn set_resource_status(
+            mut self,
+            input: std::option::Option<crate::model::ResourceStatus>,
+        ) -> Self {
+            self.resource_status = input;
+            self
+        }
+        /// <p>The ARN of the theme of the template.</p>
+        pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.theme_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the theme of the template.</p>
+        pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.theme_arn = input;
+            self
+        }
+        /// <p>The definition of the template.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn definition(mut self, input: crate::model::TemplateVersionDefinition) -> Self {
+            self.definition = Some(input);
+            self
+        }
+        /// <p>The definition of the template.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn set_definition(
+            mut self,
+            input: std::option::Option<crate::model::TemplateVersionDefinition>,
+        ) -> Self {
+            self.definition = input;
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeTemplateDefinitionOutput`](crate::output::DescribeTemplateDefinitionOutput).
+        pub fn build(self) -> crate::output::DescribeTemplateDefinitionOutput {
+            crate::output::DescribeTemplateDefinitionOutput {
+                name: self.name,
+                template_id: self.template_id,
+                errors: self.errors,
+                resource_status: self.resource_status,
+                theme_arn: self.theme_arn,
+                definition: self.definition,
+                status: self.status.unwrap_or_default(),
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl DescribeTemplateDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTemplateDefinitionOutput`](crate::output::DescribeTemplateDefinitionOutput).
+    pub fn builder() -> crate::output::describe_template_definition_output::Builder {
+        crate::output::describe_template_definition_output::Builder::default()
     }
 }
 
@@ -8927,6 +9417,242 @@ impl DescribeDashboardPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeDashboardDefinitionOutput {
+    /// <p>The ID of the dashboard described.</p>
+    #[doc(hidden)]
+    pub dashboard_id: std::option::Option<std::string::String>,
+    /// <p>Errors associated with this dashboard version.</p>
+    #[doc(hidden)]
+    pub errors: std::option::Option<std::vec::Vec<crate::model::DashboardError>>,
+    /// <p>The display name of the dashboard.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Status associated with the dashboard version.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub resource_status: std::option::Option<crate::model::ResourceStatus>,
+    /// <p>The ARN of the theme of the dashboard.</p>
+    #[doc(hidden)]
+    pub theme_arn: std::option::Option<std::string::String>,
+    /// <p>The definition of a dashboard.</p>
+    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    #[doc(hidden)]
+    pub definition: std::option::Option<crate::model::DashboardVersionDefinition>,
+    /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
+    pub status: i32,
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl DescribeDashboardDefinitionOutput {
+    /// <p>The ID of the dashboard described.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>Errors associated with this dashboard version.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::DashboardError]> {
+        self.errors.as_deref()
+    }
+    /// <p>The display name of the dashboard.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Status associated with the dashboard version.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// </ul>
+    pub fn resource_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.resource_status.as_ref()
+    }
+    /// <p>The ARN of the theme of the dashboard.</p>
+    pub fn theme_arn(&self) -> std::option::Option<&str> {
+        self.theme_arn.as_deref()
+    }
+    /// <p>The definition of a dashboard.</p>
+    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::DashboardVersionDefinition> {
+        self.definition.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+/// See [`DescribeDashboardDefinitionOutput`](crate::output::DescribeDashboardDefinitionOutput).
+pub mod describe_dashboard_definition_output {
+
+    /// A builder for [`DescribeDashboardDefinitionOutput`](crate::output::DescribeDashboardDefinitionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dashboard_id: std::option::Option<std::string::String>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::DashboardError>>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) resource_status: std::option::Option<crate::model::ResourceStatus>,
+        pub(crate) theme_arn: std::option::Option<std::string::String>,
+        pub(crate) definition: std::option::Option<crate::model::DashboardVersionDefinition>,
+        pub(crate) status: std::option::Option<i32>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the dashboard described.</p>
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dashboard_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the dashboard described.</p>
+        pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_id = input;
+            self
+        }
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>Errors associated with this dashboard version.</p>
+        pub fn errors(mut self, input: crate::model::DashboardError) -> Self {
+            let mut v = self.errors.unwrap_or_default();
+            v.push(input);
+            self.errors = Some(v);
+            self
+        }
+        /// <p>Errors associated with this dashboard version.</p>
+        pub fn set_errors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DashboardError>>,
+        ) -> Self {
+            self.errors = input;
+            self
+        }
+        /// <p>The display name of the dashboard.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The display name of the dashboard.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Status associated with the dashboard version.</p>
+        /// <ul>
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// </ul>
+        pub fn resource_status(mut self, input: crate::model::ResourceStatus) -> Self {
+            self.resource_status = Some(input);
+            self
+        }
+        /// <p>Status associated with the dashboard version.</p>
+        /// <ul>
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// </ul>
+        pub fn set_resource_status(
+            mut self,
+            input: std::option::Option<crate::model::ResourceStatus>,
+        ) -> Self {
+            self.resource_status = input;
+            self
+        }
+        /// <p>The ARN of the theme of the dashboard.</p>
+        pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.theme_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the theme of the dashboard.</p>
+        pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.theme_arn = input;
+            self
+        }
+        /// <p>The definition of a dashboard.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn definition(mut self, input: crate::model::DashboardVersionDefinition) -> Self {
+            self.definition = Some(input);
+            self
+        }
+        /// <p>The definition of a dashboard.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn set_definition(
+            mut self,
+            input: std::option::Option<crate::model::DashboardVersionDefinition>,
+        ) -> Self {
+            self.definition = input;
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeDashboardDefinitionOutput`](crate::output::DescribeDashboardDefinitionOutput).
+        pub fn build(self) -> crate::output::DescribeDashboardDefinitionOutput {
+            crate::output::DescribeDashboardDefinitionOutput {
+                dashboard_id: self.dashboard_id,
+                errors: self.errors,
+                name: self.name,
+                resource_status: self.resource_status,
+                theme_arn: self.theme_arn,
+                definition: self.definition,
+                status: self.status.unwrap_or_default(),
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl DescribeDashboardDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDashboardDefinitionOutput`](crate::output::DescribeDashboardDefinitionOutput).
+    pub fn builder() -> crate::output::describe_dashboard_definition_output::Builder {
+        crate::output::describe_dashboard_definition_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDashboardOutput {
     /// <p>Information about the dashboard.</p>
     #[doc(hidden)]
@@ -9144,6 +9870,242 @@ impl DescribeAnalysisPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisPermissionsOutput`](crate::output::DescribeAnalysisPermissionsOutput).
     pub fn builder() -> crate::output::describe_analysis_permissions_output::Builder {
         crate::output::describe_analysis_permissions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeAnalysisDefinitionOutput {
+    /// <p>The ID of the analysis described.</p>
+    #[doc(hidden)]
+    pub analysis_id: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the analysis.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Errors associated with the analysis.</p>
+    #[doc(hidden)]
+    pub errors: std::option::Option<std::vec::Vec<crate::model::AnalysisError>>,
+    /// <p>Status associated with the analysis.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub resource_status: std::option::Option<crate::model::ResourceStatus>,
+    /// <p>The ARN of the theme of the analysis.</p>
+    #[doc(hidden)]
+    pub theme_arn: std::option::Option<std::string::String>,
+    /// <p>The definition of an analysis.</p>
+    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    #[doc(hidden)]
+    pub definition: std::option::Option<crate::model::AnalysisDefinition>,
+    /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
+    pub status: i32,
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl DescribeAnalysisDefinitionOutput {
+    /// <p>The ID of the analysis described.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+    /// <p>The descriptive name of the analysis.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Errors associated with the analysis.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::AnalysisError]> {
+        self.errors.as_deref()
+    }
+    /// <p>Status associated with the analysis.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// </ul>
+    pub fn resource_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.resource_status.as_ref()
+    }
+    /// <p>The ARN of the theme of the analysis.</p>
+    pub fn theme_arn(&self) -> std::option::Option<&str> {
+        self.theme_arn.as_deref()
+    }
+    /// <p>The definition of an analysis.</p>
+    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::AnalysisDefinition> {
+        self.definition.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+/// See [`DescribeAnalysisDefinitionOutput`](crate::output::DescribeAnalysisDefinitionOutput).
+pub mod describe_analysis_definition_output {
+
+    /// A builder for [`DescribeAnalysisDefinitionOutput`](crate::output::DescribeAnalysisDefinitionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) analysis_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::AnalysisError>>,
+        pub(crate) resource_status: std::option::Option<crate::model::ResourceStatus>,
+        pub(crate) theme_arn: std::option::Option<std::string::String>,
+        pub(crate) definition: std::option::Option<crate::model::AnalysisDefinition>,
+        pub(crate) status: std::option::Option<i32>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the analysis described.</p>
+        pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.analysis_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the analysis described.</p>
+        pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.analysis_id = input;
+            self
+        }
+        /// <p>The descriptive name of the analysis.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The descriptive name of the analysis.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>Errors associated with the analysis.</p>
+        pub fn errors(mut self, input: crate::model::AnalysisError) -> Self {
+            let mut v = self.errors.unwrap_or_default();
+            v.push(input);
+            self.errors = Some(v);
+            self
+        }
+        /// <p>Errors associated with the analysis.</p>
+        pub fn set_errors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AnalysisError>>,
+        ) -> Self {
+            self.errors = input;
+            self
+        }
+        /// <p>Status associated with the analysis.</p>
+        /// <ul>
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// </ul>
+        pub fn resource_status(mut self, input: crate::model::ResourceStatus) -> Self {
+            self.resource_status = Some(input);
+            self
+        }
+        /// <p>Status associated with the analysis.</p>
+        /// <ul>
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// </ul>
+        pub fn set_resource_status(
+            mut self,
+            input: std::option::Option<crate::model::ResourceStatus>,
+        ) -> Self {
+            self.resource_status = input;
+            self
+        }
+        /// <p>The ARN of the theme of the analysis.</p>
+        pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.theme_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the theme of the analysis.</p>
+        pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.theme_arn = input;
+            self
+        }
+        /// <p>The definition of an analysis.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn definition(mut self, input: crate::model::AnalysisDefinition) -> Self {
+            self.definition = Some(input);
+            self
+        }
+        /// <p>The definition of an analysis.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn set_definition(
+            mut self,
+            input: std::option::Option<crate::model::AnalysisDefinition>,
+        ) -> Self {
+            self.definition = input;
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAnalysisDefinitionOutput`](crate::output::DescribeAnalysisDefinitionOutput).
+        pub fn build(self) -> crate::output::DescribeAnalysisDefinitionOutput {
+            crate::output::DescribeAnalysisDefinitionOutput {
+                analysis_id: self.analysis_id,
+                name: self.name,
+                errors: self.errors,
+                resource_status: self.resource_status,
+                theme_arn: self.theme_arn,
+                definition: self.definition,
+                status: self.status.unwrap_or_default(),
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl DescribeAnalysisDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAnalysisDefinitionOutput`](crate::output::DescribeAnalysisDefinitionOutput).
+    pub fn builder() -> crate::output::describe_analysis_definition_output::Builder {
+        crate::output::describe_analysis_definition_output::Builder::default()
     }
 }
 
@@ -11090,6 +12052,73 @@ impl DeleteAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnalysisOutput`](crate::output::DeleteAnalysisOutput).
     pub fn builder() -> crate::output::delete_analysis_output::Builder {
         crate::output::delete_analysis_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteAccountSubscriptionOutput {
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
+    pub request_id: std::option::Option<std::string::String>,
+    /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
+    pub status: i32,
+}
+impl DeleteAccountSubscriptionOutput {
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
+/// See [`DeleteAccountSubscriptionOutput`](crate::output::DeleteAccountSubscriptionOutput).
+pub mod delete_account_subscription_output {
+
+    /// A builder for [`DeleteAccountSubscriptionOutput`](crate::output::DeleteAccountSubscriptionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) request_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteAccountSubscriptionOutput`](crate::output::DeleteAccountSubscriptionOutput).
+        pub fn build(self) -> crate::output::DeleteAccountSubscriptionOutput {
+            crate::output::DeleteAccountSubscriptionOutput {
+                request_id: self.request_id,
+                status: self.status.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl DeleteAccountSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAccountSubscriptionOutput`](crate::output::DeleteAccountSubscriptionOutput).
+    pub fn builder() -> crate::output::delete_account_subscription_output::Builder {
+        crate::output::delete_account_subscription_output::Builder::default()
     }
 }
 

@@ -141,6 +141,23 @@ impl Client {
     pub fn delete_stream(&self) -> fluent_builders::DeleteStream {
         fluent_builders::DeleteStream::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeEdgeConfiguration`](crate::client::fluent_builders::DescribeEdgeConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::DescribeEdgeConfiguration::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::DescribeEdgeConfiguration::set_stream_name): <p>The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeEdgeConfiguration::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DescribeEdgeConfiguration::set_stream_arn): <p>The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>or the <code>StreamARN</code>.</p>
+    /// - On success, responds with [`DescribeEdgeConfigurationOutput`](crate::output::DescribeEdgeConfigurationOutput) with field(s):
+    ///   - [`stream_name(Option<String>)`](crate::output::DescribeEdgeConfigurationOutput::stream_name): <p>The name of the stream from which the edge configuration was updated.</p>
+    ///   - [`stream_arn(Option<String>)`](crate::output::DescribeEdgeConfigurationOutput::stream_arn): <p>The Amazon Resource Name (ARN) of the stream.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeEdgeConfigurationOutput::creation_time): <p>The timestamp at which a stream’s edge configuration was first created.</p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DescribeEdgeConfigurationOutput::last_updated_time): <p>The timestamp at which a stream’s edge configuration was last updated.</p>
+    ///   - [`sync_status(Option<SyncStatus>)`](crate::output::DescribeEdgeConfigurationOutput::sync_status): <p>The latest status of the edge configuration update.</p>
+    ///   - [`failed_status_details(Option<String>)`](crate::output::DescribeEdgeConfigurationOutput::failed_status_details): <p>A description of the generated failure status.</p>
+    ///   - [`edge_config(Option<EdgeConfig>)`](crate::output::DescribeEdgeConfigurationOutput::edge_config): <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
+    /// - On failure, responds with [`SdkError<DescribeEdgeConfigurationError>`](crate::error::DescribeEdgeConfigurationError)
+    pub fn describe_edge_configuration(&self) -> fluent_builders::DescribeEdgeConfiguration {
+        fluent_builders::DescribeEdgeConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeImageGenerationConfiguration`](crate::client::fluent_builders::DescribeImageGenerationConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
@@ -153,6 +170,36 @@ impl Client {
         &self,
     ) -> fluent_builders::DescribeImageGenerationConfiguration {
         fluent_builders::DescribeImageGenerationConfiguration::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeMappedResourceConfiguration`](crate::client::fluent_builders::DescribeMappedResourceConfiguration) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::set_stream_name): <p>The name of the stream.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::set_stream_arn): <p>The Amazon Resource Name (ARN) of the stream.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::set_next_token): <p>The token to provide in your next request, to get another batch of results.</p>
+    /// - On success, responds with [`DescribeMappedResourceConfigurationOutput`](crate::output::DescribeMappedResourceConfigurationOutput) with field(s):
+    ///   - [`mapped_resource_configuration_list(Option<Vec<MappedResourceConfigurationListItem>>)`](crate::output::DescribeMappedResourceConfigurationOutput::mapped_resource_configuration_list): <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeMappedResourceConfigurationOutput::next_token): <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<DescribeMappedResourceConfigurationError>`](crate::error::DescribeMappedResourceConfigurationError)
+    pub fn describe_mapped_resource_configuration(
+        &self,
+    ) -> fluent_builders::DescribeMappedResourceConfiguration {
+        fluent_builders::DescribeMappedResourceConfiguration::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeMediaStorageConfiguration`](crate::client::fluent_builders::DescribeMediaStorageConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::DescribeMediaStorageConfiguration::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::DescribeMediaStorageConfiguration::set_channel_name): <p>The name of the channel.</p>
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeMediaStorageConfiguration::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeMediaStorageConfiguration::set_channel_arn): <p>The Amazon Resource Name (ARN) of the channel.</p>
+    /// - On success, responds with [`DescribeMediaStorageConfigurationOutput`](crate::output::DescribeMediaStorageConfigurationOutput) with field(s):
+    ///   - [`media_storage_configuration(Option<MediaStorageConfiguration>)`](crate::output::DescribeMediaStorageConfigurationOutput::media_storage_configuration): <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+    /// - On failure, responds with [`SdkError<DescribeMediaStorageConfigurationError>`](crate::error::DescribeMediaStorageConfigurationError)
+    pub fn describe_media_storage_configuration(
+        &self,
+    ) -> fluent_builders::DescribeMediaStorageConfiguration {
+        fluent_builders::DescribeMediaStorageConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeNotificationConfiguration`](crate::client::fluent_builders::DescribeNotificationConfiguration) operation.
     ///
@@ -265,6 +312,24 @@ impl Client {
     pub fn list_tags_for_stream(&self) -> fluent_builders::ListTagsForStream {
         fluent_builders::ListTagsForStream::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`StartEdgeConfigurationUpdate`](crate::client::fluent_builders::StartEdgeConfigurationUpdate) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::StartEdgeConfigurationUpdate::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::StartEdgeConfigurationUpdate::set_stream_name): <p>The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::StartEdgeConfigurationUpdate::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::StartEdgeConfigurationUpdate::set_stream_arn): <p> The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    ///   - [`edge_config(EdgeConfig)`](crate::client::fluent_builders::StartEdgeConfigurationUpdate::edge_config) / [`set_edge_config(Option<EdgeConfig>)`](crate::client::fluent_builders::StartEdgeConfigurationUpdate::set_edge_config): <p>The edge configuration details required to invoke the update process.</p>
+    /// - On success, responds with [`StartEdgeConfigurationUpdateOutput`](crate::output::StartEdgeConfigurationUpdateOutput) with field(s):
+    ///   - [`stream_name(Option<String>)`](crate::output::StartEdgeConfigurationUpdateOutput::stream_name): <p>The name of the stream from which the edge configuration was updated.</p>
+    ///   - [`stream_arn(Option<String>)`](crate::output::StartEdgeConfigurationUpdateOutput::stream_arn): <p>The Amazon Resource Name (ARN) of the stream.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::StartEdgeConfigurationUpdateOutput::creation_time): <p>The timestamp at which a stream’s edge configuration was first created.</p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::StartEdgeConfigurationUpdateOutput::last_updated_time): <p>The timestamp at which a stream’s edge configuration was last updated.</p>
+    ///   - [`sync_status(Option<SyncStatus>)`](crate::output::StartEdgeConfigurationUpdateOutput::sync_status): <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
+    ///   - [`failed_status_details(Option<String>)`](crate::output::StartEdgeConfigurationUpdateOutput::failed_status_details): <p>A description of the generated failure status.</p>
+    ///   - [`edge_config(Option<EdgeConfig>)`](crate::output::StartEdgeConfigurationUpdateOutput::edge_config): <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
+    /// - On failure, responds with [`SdkError<StartEdgeConfigurationUpdateError>`](crate::error::StartEdgeConfigurationUpdateError)
+    pub fn start_edge_configuration_update(&self) -> fluent_builders::StartEdgeConfigurationUpdate {
+        fluent_builders::StartEdgeConfigurationUpdate::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -338,6 +403,19 @@ impl Client {
         &self,
     ) -> fluent_builders::UpdateImageGenerationConfiguration {
         fluent_builders::UpdateImageGenerationConfiguration::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateMediaStorageConfiguration`](crate::client::fluent_builders::UpdateMediaStorageConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateMediaStorageConfiguration::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::UpdateMediaStorageConfiguration::set_channel_arn): <p>The Amazon Resource Name (ARN) of the channel.</p>
+    ///   - [`media_storage_configuration(MediaStorageConfiguration)`](crate::client::fluent_builders::UpdateMediaStorageConfiguration::media_storage_configuration) / [`set_media_storage_configuration(Option<MediaStorageConfiguration>)`](crate::client::fluent_builders::UpdateMediaStorageConfiguration::set_media_storage_configuration): <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+    /// - On success, responds with [`UpdateMediaStorageConfigurationOutput`](crate::output::UpdateMediaStorageConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateMediaStorageConfigurationError>`](crate::error::UpdateMediaStorageConfigurationError)
+    pub fn update_media_storage_configuration(
+        &self,
+    ) -> fluent_builders::UpdateMediaStorageConfiguration {
+        fluent_builders::UpdateMediaStorageConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateNotificationConfiguration`](crate::client::fluent_builders::UpdateNotificationConfiguration) operation.
     ///
@@ -845,6 +923,89 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeEdgeConfiguration`.
+    ///
+    /// <p>Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code> API. Use this API to get the status of the configuration if the configuration is in sync with the Edge Agent.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeEdgeConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_edge_configuration_input::Builder,
+    }
+    impl DescribeEdgeConfiguration {
+        /// Creates a new `DescribeEdgeConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeEdgeConfiguration,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeEdgeConfigurationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeEdgeConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeEdgeConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
+            self
+        }
+        /// <p>The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>or the <code>StreamARN</code>.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>or the <code>StreamARN</code>.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeImageGenerationConfiguration`.
     ///
     /// <p>Gets the <code>ImageGenerationConfiguration</code> for a given Kinesis video stream.</p>
@@ -929,6 +1090,208 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeMappedResourceConfiguration`.
+    ///
+    /// <p>Returns the most current information about the stream. Either streamName or streamARN should be provided in the input.</p>
+    /// <p>Returns the most current information about the stream. The <code>streamName</code> or <code>streamARN</code> should be provided in the input.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeMappedResourceConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_mapped_resource_configuration_input::Builder,
+    }
+    impl DescribeMappedResourceConfiguration {
+        /// Creates a new `DescribeMappedResourceConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeMappedResourceConfiguration,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeMappedResourceConfigurationError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeMappedResourceConfigurationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeMappedResourceConfigurationError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeMappedResourceConfigurationPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeMappedResourceConfigurationPaginator {
+            crate::paginator::DescribeMappedResourceConfigurationPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The name of the stream.</p>
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
+            self
+        }
+        /// <p>The name of the stream.</p>
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
+        /// <p>The maximum number of results to return in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token to provide in your next request, to get another batch of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to provide in your next request, to get another batch of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeMediaStorageConfiguration`.
+    ///
+    /// <p>Returns the most current information about the channel. Specify the <code>ChannelName</code> or <code>ChannelARN</code> in the input.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeMediaStorageConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_media_storage_configuration_input::Builder,
+    }
+    impl DescribeMediaStorageConfiguration {
+        /// Creates a new `DescribeMediaStorageConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeMediaStorageConfiguration,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeMediaStorageConfigurationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeMediaStorageConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeMediaStorageConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the channel.</p>
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
+            self
+        }
+        /// <p>The name of the channel.</p>
+        pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the channel.</p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the channel.</p>
+        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_arn(input);
             self
         }
     }
@@ -1753,6 +2116,103 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `StartEdgeConfigurationUpdate`.
+    ///
+    /// <p>An asynchronous API that updates a stream’s existing edge configuration. The Kinesis Video Stream will sync the stream’s edge configuration with the Edge Agent IoT Greengrass component that runs on an IoT Hub Device, setup at your premise. The time to sync can vary and depends on the connectivity of the Hub Device. The <code>SyncStatus</code> will be updated as the edge configuration is acknowledged, and synced with the Edge Agent. </p>
+    /// <p>If this API is invoked for the first time, a new edge configuration will be created for the stream, and the sync status will be set to <code>SYNCING</code>. You will have to wait for the sync status to reach a terminal state such as: <code>IN_SYNC</code>, or <code>SYNC_FAILED</code>, before using this API again. If you invoke this API during the syncing process, a <code>ResourceInUseException</code> will be thrown. The connectivity of the stream’s edge configuration and the Edge Agent will be retried for 15 minutes. After 15 minutes, the status will transition into the <code>SYNC_FAILED</code> state.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartEdgeConfigurationUpdate {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::start_edge_configuration_update_input::Builder,
+    }
+    impl StartEdgeConfigurationUpdate {
+        /// Creates a new `StartEdgeConfigurationUpdate`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::StartEdgeConfigurationUpdate,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::StartEdgeConfigurationUpdateError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartEdgeConfigurationUpdateOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartEdgeConfigurationUpdateError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
+            self
+        }
+        /// <p>The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
+        /// <p>The edge configuration details required to invoke the update process.</p>
+        pub fn edge_config(mut self, input: crate::model::EdgeConfig) -> Self {
+            self.inner = self.inner.edge_config(input);
+            self
+        }
+        /// <p>The edge configuration details required to invoke the update process.</p>
+        pub fn set_edge_config(
+            mut self,
+            input: std::option::Option<crate::model::EdgeConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_edge_config(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value pair (the value is optional) that you can define and assign to Amazon Web Services resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Billing and Cost Management and Cost Management User Guide</i>.</p>
@@ -2373,6 +2833,99 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ImageGenerationConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_image_generation_configuration(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateMediaStorageConfiguration`.
+    ///
+    /// <p>Associates a <code>SignalingChannel</code> to a stream to store the media. There are two signaling modes that can specified :</p>
+    /// <ul>
+    /// <li> <p>If the <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code> parameter will not be needed. </p> </li>
+    /// <li> <p>If the <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code> provided. </p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateMediaStorageConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_media_storage_configuration_input::Builder,
+    }
+    impl UpdateMediaStorageConfiguration {
+        /// Creates a new `UpdateMediaStorageConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateMediaStorageConfiguration,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateMediaStorageConfigurationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateMediaStorageConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateMediaStorageConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the channel.</p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the channel.</p>
+        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_arn(input);
+            self
+        }
+        /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+        pub fn media_storage_configuration(
+            mut self,
+            input: crate::model::MediaStorageConfiguration,
+        ) -> Self {
+            self.inner = self.inner.media_storage_configuration(input);
+            self
+        }
+        /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+        pub fn set_media_storage_configuration(
+            mut self,
+            input: std::option::Option<crate::model::MediaStorageConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_media_storage_configuration(input);
             self
         }
     }

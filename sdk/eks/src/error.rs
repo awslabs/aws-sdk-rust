@@ -3219,6 +3219,142 @@ impl std::error::Error for DescribeAddonError {
     }
 }
 
+/// Error type for the `DescribeAddonConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeAddonConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: DescribeAddonConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAddonConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAddonConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeAddonConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeAddonConfigurationErrorKind {
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>These errors are usually caused by a server-side issue.</p>
+    ServerException(crate::error::ServerException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeAddonConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeAddonConfigurationErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeAddonConfigurationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeAddonConfigurationErrorKind::ServerException(_inner) => _inner.fmt(f),
+            DescribeAddonConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeAddonConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DescribeAddonConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeAddonConfigurationError {
+    /// Creates a new `DescribeAddonConfigurationError`.
+    pub fn new(kind: DescribeAddonConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeAddonConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeAddonConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeAddonConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeAddonConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeAddonConfigurationErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAddonConfigurationErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAddonConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAddonConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAddonConfigurationErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAddonConfigurationErrorKind::ServerException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeAddonConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeAddonConfigurationErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeAddonConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeAddonConfigurationErrorKind::ServerException(_inner) => Some(_inner),
+            DescribeAddonConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DescribeAddonVersions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

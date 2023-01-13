@@ -731,7 +731,7 @@ impl Client {
     ///   - [`stack_set_name(impl Into<String>)`](crate::client::fluent_builders::ListStackInstances::stack_set_name) / [`set_stack_set_name(Option<String>)`](crate::client::fluent_builders::ListStackInstances::set_stack_set_name): <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStackInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStackInstances::set_next_token): <p>If the previous request didn't return all the remaining results, the response's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStackInstances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStackInstances::set_max_results): <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-    ///   - [`filters(Vec<StackInstanceFilter>)`](crate::client::fluent_builders::ListStackInstances::filters) / [`set_filters(Option<Vec<StackInstanceFilter>>)`](crate::client::fluent_builders::ListStackInstances::set_filters): <p>The status that stack instances are filtered by.</p>
+    ///   - [`filters(Vec<StackInstanceFilter>)`](crate::client::fluent_builders::ListStackInstances::filters) / [`set_filters(Option<Vec<StackInstanceFilter>>)`](crate::client::fluent_builders::ListStackInstances::set_filters): <p>The filter to apply to stack instances</p>
     ///   - [`stack_instance_account(impl Into<String>)`](crate::client::fluent_builders::ListStackInstances::stack_instance_account) / [`set_stack_instance_account(Option<String>)`](crate::client::fluent_builders::ListStackInstances::set_stack_instance_account): <p>The name of the Amazon Web Services account that you want to list stack instances for.</p>
     ///   - [`stack_instance_region(impl Into<String>)`](crate::client::fluent_builders::ListStackInstances::stack_instance_region) / [`set_stack_instance_region(Option<String>)`](crate::client::fluent_builders::ListStackInstances::set_stack_instance_region): <p>The name of the Region where you want to list stack instances.</p>
     ///   - [`call_as(CallAs)`](crate::client::fluent_builders::ListStackInstances::call_as) / [`set_call_as(Option<CallAs>)`](crate::client::fluent_builders::ListStackInstances::set_call_as): <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>  <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>  <ul>   <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>   <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>  </ul>
@@ -777,6 +777,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStackSetOperationResults::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStackSetOperationResults::set_next_token): <p>If the previous request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListStackSetOperationResults</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStackSetOperationResults::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStackSetOperationResults::set_max_results): <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     ///   - [`call_as(CallAs)`](crate::client::fluent_builders::ListStackSetOperationResults::call_as) / [`set_call_as(Option<CallAs>)`](crate::client::fluent_builders::ListStackSetOperationResults::set_call_as): <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>  <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>  <ul>   <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>   <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>  </ul>
+    ///   - [`filters(Vec<OperationResultFilter>)`](crate::client::fluent_builders::ListStackSetOperationResults::filters) / [`set_filters(Option<Vec<OperationResultFilter>>)`](crate::client::fluent_builders::ListStackSetOperationResults::set_filters): <p>The filter to apply to operation results.</p>
     /// - On success, responds with [`ListStackSetOperationResultsOutput`](crate::output::ListStackSetOperationResultsOutput) with field(s):
     ///   - [`summaries(Option<Vec<StackSetOperationResultSummary>>)`](crate::output::ListStackSetOperationResultsOutput::summaries): <p>A list of <code>StackSetOperationResultSummary</code> structures that contain information about the specified operation results, for accounts and Amazon Web Services Regions that are included in the operation.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListStackSetOperationResultsOutput::next_token): <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListOperationResults</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
@@ -6538,12 +6539,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The status that stack instances are filtered by.</p>
+        /// <p>The filter to apply to stack instances</p>
         pub fn filters(mut self, input: crate::model::StackInstanceFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The status that stack instances are filtered by.</p>
+        /// <p>The filter to apply to stack instances</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackInstanceFilter>>,
@@ -6923,6 +6924,23 @@ pub mod fluent_builders {
         /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.inner = self.inner.set_call_as(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filter to apply to operation results.</p>
+        pub fn filters(mut self, input: crate::model::OperationResultFilter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>The filter to apply to operation results.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::OperationResultFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
             self
         }
     }
@@ -8908,7 +8926,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing">Testing your public extension prior to publishing</a> in the <i>CloudFormation CLI User Guide</i>.</p>
     /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in your account and region for testing.</p>
     /// <p>To perform testing, CloudFormation assumes the execution role specified when the type was registered. For more information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-    /// <p>Once you've initiated testing on an extension using <code>TestType</code>, you can use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a> to monitor the current test status and test status description for the extension.</p>
+    /// <p>Once you've initiated testing on an extension using <code>TestType</code>, you can pass the returned <code>TypeVersionArn</code> into <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a> to monitor the current test status and test status description for the extension.</p>
     /// <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestType {

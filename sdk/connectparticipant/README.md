@@ -3,11 +3,7 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-Amazon Connect is a cloud-based contact center solution that makes it easy to set up and manage a customer contact center and provide reliable customer engagement at any scale.
-
-Amazon Connect enables customer contacts through voice or chat.
-
-The APIs described here are used by chat participants, such as agents and customers.
+Amazon Connect is a cloud-based contact center solution that makes it easy to set up and manage a customer contact center. Amazon Connect enables customer contacts through voice or chat. Use the Amazon Connect Participant Service to manage chat participants, such as agents and customers.
 
 ## Getting Started
 
@@ -21,7 +17,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.52.0"
-aws-sdk-connectparticipant = "0.22.0"
+aws-sdk-connectparticipant = "0.23.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

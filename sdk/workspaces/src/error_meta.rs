@@ -355,6 +355,46 @@ impl From<crate::error::CreateIpGroupError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateStandbyWorkspacesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateStandbyWorkspacesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateStandbyWorkspacesError> for Error {
+    fn from(err: crate::error::CreateStandbyWorkspacesError) -> Self {
+        match err.kind {
+            crate::error::CreateStandbyWorkspacesErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::CreateStandbyWorkspacesErrorKind::InvalidParameterValuesException(
+                inner,
+            ) => Error::InvalidParameterValuesException(inner),
+            crate::error::CreateStandbyWorkspacesErrorKind::OperationNotSupportedException(
+                inner,
+            ) => Error::OperationNotSupportedException(inner),
+            crate::error::CreateStandbyWorkspacesErrorKind::ResourceLimitExceededException(
+                inner,
+            ) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateStandbyWorkspacesErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::CreateStandbyWorkspacesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateTagsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1567,6 +1607,41 @@ impl From<crate::error::ModifyAccountError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::ModifyCertificateBasedAuthPropertiesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ModifyCertificateBasedAuthPropertiesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyCertificateBasedAuthPropertiesError> for Error {
+    fn from(err: crate::error::ModifyCertificateBasedAuthPropertiesError) -> Self {
+        match err.kind {
+            crate::error::ModifyCertificateBasedAuthPropertiesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ModifyCertificateBasedAuthPropertiesErrorKind::InvalidParameterValuesException(inner) => Error::InvalidParameterValuesException(inner),
+            crate::error::ModifyCertificateBasedAuthPropertiesErrorKind::OperationNotSupportedException(inner) => Error::OperationNotSupportedException(inner),
+            crate::error::ModifyCertificateBasedAuthPropertiesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ModifyCertificateBasedAuthPropertiesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyClientPropertiesError, R>>
     for Error
 where
@@ -1785,6 +1860,9 @@ impl From<crate::error::ModifyWorkspaceStateError> for Error {
             crate::error::ModifyWorkspaceStateErrorKind::InvalidResourceStateException(inner) => {
                 Error::InvalidResourceStateException(inner)
             }
+            crate::error::ModifyWorkspaceStateErrorKind::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
             crate::error::ModifyWorkspaceStateErrorKind::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -1812,6 +1890,9 @@ where
 impl From<crate::error::RebootWorkspacesError> for Error {
     fn from(err: crate::error::RebootWorkspacesError) -> Self {
         match err.kind {
+            crate::error::RebootWorkspacesErrorKind::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
             crate::error::RebootWorkspacesErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
@@ -1836,6 +1917,9 @@ where
 impl From<crate::error::RebuildWorkspacesError> for Error {
     fn from(err: crate::error::RebuildWorkspacesError) -> Self {
         match err.kind {
+            crate::error::RebuildWorkspacesErrorKind::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
             crate::error::RebuildWorkspacesErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
@@ -1896,6 +1980,9 @@ impl From<crate::error::RestoreWorkspaceError> for Error {
             }
             crate::error::RestoreWorkspaceErrorKind::InvalidParameterValuesException(inner) => {
                 Error::InvalidParameterValuesException(inner)
+            }
+            crate::error::RestoreWorkspaceErrorKind::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
             }
             crate::error::RestoreWorkspaceErrorKind::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -2141,6 +2228,9 @@ impl From<crate::error::UpdateWorkspaceBundleError> for Error {
             crate::error::UpdateWorkspaceBundleErrorKind::InvalidParameterValuesException(
                 inner,
             ) => Error::InvalidParameterValuesException(inner),
+            crate::error::UpdateWorkspaceBundleErrorKind::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
             crate::error::UpdateWorkspaceBundleErrorKind::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }

@@ -108,7 +108,7 @@ pub struct UpdateProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
     #[doc(hidden)]
     pub provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
-    /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
+    /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     #[doc(hidden)]
     pub info:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -123,7 +123,7 @@ impl UpdateProvisioningArtifactOutput {
     ) -> std::option::Option<&crate::model::ProvisioningArtifactDetail> {
         self.provisioning_artifact_detail.as_ref()
     }
-    /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
+    /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     pub fn info(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -169,7 +169,7 @@ pub mod update_provisioning_artifact_output {
         ///
         /// To override the contents of this collection use [`set_info`](Self::set_info).
         ///
-        /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
+        /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
         pub fn info(
             mut self,
             k: impl Into<std::string::String>,
@@ -180,7 +180,7 @@ pub mod update_provisioning_artifact_output {
             self.info = Some(hash_map);
             self
         }
-        /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
+        /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
         pub fn set_info(
             mut self,
             input: std::option::Option<
@@ -2005,7 +2005,7 @@ impl ListProvisionedProductPlansOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPrincipalsForPortfolioOutput {
-    /// <p>The IAM principals (users or roles) associated with the portfolio.</p>
+    /// <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>
     #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
@@ -2013,7 +2013,7 @@ pub struct ListPrincipalsForPortfolioOutput {
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListPrincipalsForPortfolioOutput {
-    /// <p>The IAM principals (users or roles) associated with the portfolio.</p>
+    /// <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>
     pub fn principals(&self) -> std::option::Option<&[crate::model::Principal]> {
         self.principals.as_deref()
     }
@@ -2036,14 +2036,14 @@ pub mod list_principals_for_portfolio_output {
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
-        /// <p>The IAM principals (users or roles) associated with the portfolio.</p>
+        /// <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>
         pub fn principals(mut self, input: crate::model::Principal) -> Self {
             let mut v = self.principals.unwrap_or_default();
             v.push(input);
             self.principals = Some(v);
             self
         }
-        /// <p>The IAM principals (users or roles) associated with the portfolio.</p>
+        /// <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -3708,7 +3708,7 @@ pub struct DescribeProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
     #[doc(hidden)]
     pub provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
-    /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
+    /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     #[doc(hidden)]
     pub info:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -3723,7 +3723,7 @@ impl DescribeProvisioningArtifactOutput {
     ) -> std::option::Option<&crate::model::ProvisioningArtifactDetail> {
         self.provisioning_artifact_detail.as_ref()
     }
-    /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
+    /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     pub fn info(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3769,7 +3769,7 @@ pub mod describe_provisioning_artifact_output {
         ///
         /// To override the contents of this collection use [`set_info`](Self::set_info).
         ///
-        /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
+        /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
         pub fn info(
             mut self,
             k: impl Into<std::string::String>,
@@ -3780,7 +3780,7 @@ pub mod describe_provisioning_artifact_output {
             self.info = Some(hash_map);
             self
         }
-        /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
+        /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
         pub fn set_info(
             mut self,
             input: std::option::Option<
@@ -5277,9 +5277,9 @@ pub struct CreateProvisioningArtifactOutput {
     #[doc(hidden)]
     pub provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
-    /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. </p>
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
     /// <p> <code>LoadTemplateFromURL</code> </p>
-    /// <p>Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     /// <p> <code>ImportFromPhysicalId</code> </p>
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
     #[doc(hidden)]
@@ -5297,9 +5297,9 @@ impl CreateProvisioningArtifactOutput {
         self.provisioning_artifact_detail.as_ref()
     }
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
-    /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. </p>
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
     /// <p> <code>LoadTemplateFromURL</code> </p>
-    /// <p>Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     /// <p> <code>ImportFromPhysicalId</code> </p>
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
     pub fn info(
@@ -5348,9 +5348,9 @@ pub mod create_provisioning_artifact_output {
         /// To override the contents of this collection use [`set_info`](Self::set_info).
         ///
         /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
-        /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. </p>
+        /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
         /// <p> <code>LoadTemplateFromURL</code> </p>
-        /// <p>Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
+        /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
         /// <p> <code>ImportFromPhysicalId</code> </p>
         /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
         pub fn info(
@@ -5364,9 +5364,9 @@ pub mod create_provisioning_artifact_output {
             self
         }
         /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
-        /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. </p>
+        /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
         /// <p> <code>LoadTemplateFromURL</code> </p>
-        /// <p>Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
+        /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
         /// <p> <code>ImportFromPhysicalId</code> </p>
         /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
         pub fn set_info(

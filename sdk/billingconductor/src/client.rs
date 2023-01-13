@@ -151,7 +151,7 @@ impl Client {
     ///   - [`account_grouping(AccountGrouping)`](crate::client::fluent_builders::CreateBillingGroup::account_grouping) / [`set_account_grouping(Option<AccountGrouping>)`](crate::client::fluent_builders::CreateBillingGroup::set_account_grouping): <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
     ///   - [`computation_preference(ComputationPreference)`](crate::client::fluent_builders::CreateBillingGroup::computation_preference) / [`set_computation_preference(Option<ComputationPreference>)`](crate::client::fluent_builders::CreateBillingGroup::set_computation_preference): <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
     ///   - [`primary_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateBillingGroup::primary_account_id) / [`set_primary_account_id(Option<String>)`](crate::client::fluent_builders::CreateBillingGroup::set_primary_account_id): <p> The account ID that serves as the main account in a billing group. </p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateBillingGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateBillingGroup::set_description): <p>The billing group description. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateBillingGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateBillingGroup::set_description): <p>The description of the billing group. </p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateBillingGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateBillingGroup::set_tags): <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
     /// - On success, responds with [`CreateBillingGroupOutput`](crate::output::CreateBillingGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateBillingGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the created billing group. </p>
@@ -179,8 +179,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreatePricingPlan::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreatePricingPlan::set_client_token): <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePricingPlan::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePricingPlan::set_name): <p>The pricing plan name. The names must be unique to each pricing plan. </p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePricingPlan::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePricingPlan::set_description): <p>The pricing plan description. </p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePricingPlan::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePricingPlan::set_name): <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePricingPlan::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePricingPlan::set_description): <p>The description of the pricing plan. </p>
     ///   - [`pricing_rule_arns(Vec<String>)`](crate::client::fluent_builders::CreatePricingPlan::pricing_rule_arns) / [`set_pricing_rule_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreatePricingPlan::set_pricing_rule_arns): <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreatePricingPlan::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreatePricingPlan::set_tags): <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
     /// - On success, responds with [`CreatePricingPlanOutput`](crate::output::CreatePricingPlanOutput) with field(s):
@@ -192,14 +192,16 @@ impl Client {
     /// Constructs a fluent builder for the [`CreatePricingRule`](crate::client::fluent_builders::CreatePricingRule) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreatePricingRule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreatePricingRule::set_client_token): <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreatePricingRule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreatePricingRule::set_client_token): <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePricingRule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePricingRule::set_name): <p> The pricing rule name. The names must be unique to each pricing rule. </p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePricingRule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePricingRule::set_description): <p> The pricing rule description. </p>
-    ///   - [`scope(PricingRuleScope)`](crate::client::fluent_builders::CreatePricingRule::scope) / [`set_scope(Option<PricingRuleScope>)`](crate::client::fluent_builders::CreatePricingRule::set_scope): <p> The scope of pricing rule that indicates if it is globally applicable, or is service-specific. </p>
+    ///   - [`scope(PricingRuleScope)`](crate::client::fluent_builders::CreatePricingRule::scope) / [`set_scope(Option<PricingRuleScope>)`](crate::client::fluent_builders::CreatePricingRule::set_scope): <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
     ///   - [`r#type(PricingRuleType)`](crate::client::fluent_builders::CreatePricingRule::type) / [`set_type(Option<PricingRuleType>)`](crate::client::fluent_builders::CreatePricingRule::set_type): <p> The type of pricing rule. </p>
-    ///   - [`modifier_percentage(f64)`](crate::client::fluent_builders::CreatePricingRule::modifier_percentage) / [`set_modifier_percentage(Option<f64>)`](crate::client::fluent_builders::CreatePricingRule::set_modifier_percentage): <p> A percentage modifier applied on the public pricing rates. </p>
+    ///   - [`modifier_percentage(f64)`](crate::client::fluent_builders::CreatePricingRule::modifier_percentage) / [`set_modifier_percentage(Option<f64>)`](crate::client::fluent_builders::CreatePricingRule::set_modifier_percentage): <p> A percentage modifier that's applied on the public pricing rates. </p>
     ///   - [`service(impl Into<String>)`](crate::client::fluent_builders::CreatePricingRule::service) / [`set_service(Option<String>)`](crate::client::fluent_builders::CreatePricingRule::set_service): <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreatePricingRule::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreatePricingRule::set_tags): <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
+    ///   - [`billing_entity(impl Into<String>)`](crate::client::fluent_builders::CreatePricingRule::billing_entity) / [`set_billing_entity(Option<String>)`](crate::client::fluent_builders::CreatePricingRule::set_billing_entity): <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+    ///   - [`tiering(CreateTieringInput)`](crate::client::fluent_builders::CreatePricingRule::tiering) / [`set_tiering(Option<CreateTieringInput>)`](crate::client::fluent_builders::CreatePricingRule::set_tiering): <p> The set of tiering configurations for the pricing rule. </p>
     /// - On success, responds with [`CreatePricingRuleOutput`](crate::output::CreatePricingRuleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreatePricingRuleOutput::arn): <p> The Amazon Resource Name (ARN) of the created pricing rule. </p>
     /// - On failure, responds with [`SdkError<CreatePricingRuleError>`](crate::error::CreatePricingRuleError)
@@ -209,7 +211,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteBillingGroup`](crate::client::fluent_builders::DeleteBillingGroup) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteBillingGroup::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteBillingGroup::set_arn): <p>The Amazon Resource Name (ARN) of the billing group you're deleting.</p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteBillingGroup::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteBillingGroup::set_arn): <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
     /// - On success, responds with [`DeleteBillingGroupOutput`](crate::output::DeleteBillingGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DeleteBillingGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted billing group.</p>
     /// - On failure, responds with [`SdkError<DeleteBillingGroupError>`](crate::error::DeleteBillingGroupError)
@@ -230,7 +232,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeletePricingPlan`](crate::client::fluent_builders::DeletePricingPlan) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeletePricingPlan::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeletePricingPlan::set_arn): <p>The Amazon Resource Name (ARN) of the pricing plan you're deleting. </p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeletePricingPlan::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeletePricingPlan::set_arn): <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
     /// - On success, responds with [`DeletePricingPlanOutput`](crate::output::DeletePricingPlanOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DeletePricingPlanOutput::arn): <p> The Amazon Resource Name (ARN) of the deleted pricing plan. </p>
     /// - On failure, responds with [`SdkError<DeletePricingPlanError>`](crate::error::DeletePricingPlanError)
@@ -240,7 +242,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeletePricingRule`](crate::client::fluent_builders::DeletePricingRule) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeletePricingRule::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeletePricingRule::set_arn): <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeletePricingRule::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeletePricingRule::set_arn): <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
     /// - On success, responds with [`DeletePricingRuleOutput`](crate::output::DeletePricingRuleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DeletePricingRuleOutput::arn): <p> The Amazon Resource Name (ARN) of the deleted pricing rule. </p>
     /// - On failure, responds with [`SdkError<DeletePricingRuleError>`](crate::error::DeletePricingRuleError)
@@ -274,11 +276,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`billing_period(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssociations::billing_period) / [`set_billing_period(Option<String>)`](crate::client::fluent_builders::ListAccountAssociations::set_billing_period): <p> The preferred billing period to get account associations. </p>
-    ///   - [`filters(ListAccountAssociationsFilter)`](crate::client::fluent_builders::ListAccountAssociations::filters) / [`set_filters(Option<ListAccountAssociationsFilter>)`](crate::client::fluent_builders::ListAccountAssociations::set_filters): <p>The filter on the account ID of the linked account, or any of the following:</p>  <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>  <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>  <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssociations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountAssociations::set_next_token): <p> The pagination token used on subsequent calls to retrieve accounts. </p>
+    ///   - [`filters(ListAccountAssociationsFilter)`](crate::client::fluent_builders::ListAccountAssociations::filters) / [`set_filters(Option<ListAccountAssociationsFilter>)`](crate::client::fluent_builders::ListAccountAssociations::set_filters): <p>The filter on the account ID of the linked account, or any of the following:</p>  <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>  <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>  <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssociations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountAssociations::set_next_token): <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
     /// - On success, responds with [`ListAccountAssociationsOutput`](crate::output::ListAccountAssociationsOutput) with field(s):
     ///   - [`linked_accounts(Option<Vec<AccountAssociationsListElement>>)`](crate::output::ListAccountAssociationsOutput::linked_accounts): <p> The list of linked accounts in the payer account. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAccountAssociationsOutput::next_token): <p> The pagination token used on subsequent calls to get accounts. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAccountAssociationsOutput::next_token): <p> The pagination token that's used on subsequent calls to get accounts. </p>
     /// - On failure, responds with [`SdkError<ListAccountAssociationsError>`](crate::error::ListAccountAssociationsError)
     pub fn list_account_associations(&self) -> fluent_builders::ListAccountAssociations {
         fluent_builders::ListAccountAssociations::new(self.handle.clone())
@@ -289,11 +291,11 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`billing_period(impl Into<String>)`](crate::client::fluent_builders::ListBillingGroupCostReports::billing_period) / [`set_billing_period(Option<String>)`](crate::client::fluent_builders::ListBillingGroupCostReports::set_billing_period): <p>The preferred billing period for your report. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBillingGroupCostReports::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBillingGroupCostReports::set_max_results): <p>The maximum number of reports to retrieve. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBillingGroupCostReports::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBillingGroupCostReports::set_next_token): <p>The pagination token used on subsequent calls to get reports. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBillingGroupCostReports::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBillingGroupCostReports::set_next_token): <p>The pagination token that's used on subsequent calls to get reports. </p>
     ///   - [`filters(ListBillingGroupCostReportsFilter)`](crate::client::fluent_builders::ListBillingGroupCostReports::filters) / [`set_filters(Option<ListBillingGroupCostReportsFilter>)`](crate::client::fluent_builders::ListBillingGroupCostReports::set_filters): <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
     /// - On success, responds with [`ListBillingGroupCostReportsOutput`](crate::output::ListBillingGroupCostReportsOutput) with field(s):
     ///   - [`billing_group_cost_reports(Option<Vec<BillingGroupCostReportElement>>)`](crate::output::ListBillingGroupCostReportsOutput::billing_group_cost_reports): <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListBillingGroupCostReportsOutput::next_token): <p>The pagination token used on subsequent calls to get reports. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBillingGroupCostReportsOutput::next_token): <p>The pagination token that's used on subsequent calls to get reports. </p>
     /// - On failure, responds with [`SdkError<ListBillingGroupCostReportsError>`](crate::error::ListBillingGroupCostReportsError)
     pub fn list_billing_group_cost_reports(&self) -> fluent_builders::ListBillingGroupCostReports {
         fluent_builders::ListBillingGroupCostReports::new(self.handle.clone())
@@ -304,11 +306,11 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`billing_period(impl Into<String>)`](crate::client::fluent_builders::ListBillingGroups::billing_period) / [`set_billing_period(Option<String>)`](crate::client::fluent_builders::ListBillingGroups::set_billing_period): <p>The preferred billing period to get billing groups. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBillingGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBillingGroups::set_max_results): <p>The maximum number of billing groups to retrieve. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBillingGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBillingGroups::set_next_token): <p>The pagination token used on subsequent calls to get billing groups. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBillingGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBillingGroups::set_next_token): <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     ///   - [`filters(ListBillingGroupsFilter)`](crate::client::fluent_builders::ListBillingGroups::filters) / [`set_filters(Option<ListBillingGroupsFilter>)`](crate::client::fluent_builders::ListBillingGroups::set_filters): <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information. </p>
     /// - On success, responds with [`ListBillingGroupsOutput`](crate::output::ListBillingGroupsOutput) with field(s):
     ///   - [`billing_groups(Option<Vec<BillingGroupListElement>>)`](crate::output::ListBillingGroupsOutput::billing_groups): <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListBillingGroupsOutput::next_token): <p>The pagination token used on subsequent calls to get billing groups. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBillingGroupsOutput::next_token): <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     /// - On failure, responds with [`SdkError<ListBillingGroupsError>`](crate::error::ListBillingGroupsError)
     pub fn list_billing_groups(&self) -> fluent_builders::ListBillingGroups {
         fluent_builders::ListBillingGroups::new(self.handle.clone())
@@ -319,14 +321,29 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`billing_period(impl Into<String>)`](crate::client::fluent_builders::ListCustomLineItems::billing_period) / [`set_billing_period(Option<String>)`](crate::client::fluent_builders::ListCustomLineItems::set_billing_period): <p> The preferred billing period to get custom line items (FFLIs). </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCustomLineItems::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCustomLineItems::set_max_results): <p> The maximum number of billing groups to retrieve. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCustomLineItems::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCustomLineItems::set_next_token): <p> The pagination token used on subsequent calls to get custom line items (FFLIs). </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCustomLineItems::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCustomLineItems::set_next_token): <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     ///   - [`filters(ListCustomLineItemsFilter)`](crate::client::fluent_builders::ListCustomLineItems::filters) / [`set_filters(Option<ListCustomLineItemsFilter>)`](crate::client::fluent_builders::ListCustomLineItems::set_filters): <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
     /// - On success, responds with [`ListCustomLineItemsOutput`](crate::output::ListCustomLineItemsOutput) with field(s):
     ///   - [`custom_line_items(Option<Vec<CustomLineItemListElement>>)`](crate::output::ListCustomLineItemsOutput::custom_line_items): <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListCustomLineItemsOutput::next_token): <p> The pagination token used on subsequent calls to get custom line items (FFLIs). </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCustomLineItemsOutput::next_token): <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     /// - On failure, responds with [`SdkError<ListCustomLineItemsError>`](crate::error::ListCustomLineItemsError)
     pub fn list_custom_line_items(&self) -> fluent_builders::ListCustomLineItems {
         fluent_builders::ListCustomLineItems::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListCustomLineItemVersions`](crate::client::fluent_builders::ListCustomLineItemVersions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCustomLineItemVersions::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListCustomLineItemVersions::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListCustomLineItemVersions::set_arn): <p>The Amazon Resource Name (ARN) for the custom line item.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCustomLineItemVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCustomLineItemVersions::set_max_results): <p>The maximum number of custom line item versions to retrieve.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCustomLineItemVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCustomLineItemVersions::set_next_token): <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
+    ///   - [`filters(ListCustomLineItemVersionsFilter)`](crate::client::fluent_builders::ListCustomLineItemVersions::filters) / [`set_filters(Option<ListCustomLineItemVersionsFilter>)`](crate::client::fluent_builders::ListCustomLineItemVersions::set_filters): <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
+    /// - On success, responds with [`ListCustomLineItemVersionsOutput`](crate::output::ListCustomLineItemVersionsOutput) with field(s):
+    ///   - [`custom_line_item_versions(Option<Vec<CustomLineItemVersionListElement>>)`](crate::output::ListCustomLineItemVersionsOutput::custom_line_item_versions): <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCustomLineItemVersionsOutput::next_token): <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
+    /// - On failure, responds with [`SdkError<ListCustomLineItemVersionsError>`](crate::error::ListCustomLineItemVersionsError)
+    pub fn list_custom_line_item_versions(&self) -> fluent_builders::ListCustomLineItemVersions {
+        fluent_builders::ListCustomLineItemVersions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPricingPlans`](crate::client::fluent_builders::ListPricingPlans) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPricingPlans::into_paginator).
@@ -335,11 +352,11 @@ impl Client {
     ///   - [`billing_period(impl Into<String>)`](crate::client::fluent_builders::ListPricingPlans::billing_period) / [`set_billing_period(Option<String>)`](crate::client::fluent_builders::ListPricingPlans::set_billing_period): <p>The preferred billing period to get pricing plan. </p>
     ///   - [`filters(ListPricingPlansFilter)`](crate::client::fluent_builders::ListPricingPlans::filters) / [`set_filters(Option<ListPricingPlansFilter>)`](crate::client::fluent_builders::ListPricingPlans::set_filters): <p>A <code>ListPricingPlansFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing plans to retrieve pricing plans information.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPricingPlans::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPricingPlans::set_max_results): <p>The maximum number of pricing plans to retrieve.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPricingPlans::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPricingPlans::set_next_token): <p>The pagination token used on subsequent call to get pricing plans. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPricingPlans::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPricingPlans::set_next_token): <p>The pagination token that's used on subsequent call to get pricing plans. </p>
     /// - On success, responds with [`ListPricingPlansOutput`](crate::output::ListPricingPlansOutput) with field(s):
     ///   - [`billing_period(Option<String>)`](crate::output::ListPricingPlansOutput::billing_period): <p> The billing period for which the described pricing plans are applicable. </p>
     ///   - [`pricing_plans(Option<Vec<PricingPlanListElement>>)`](crate::output::ListPricingPlansOutput::pricing_plans): <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListPricingPlansOutput::next_token): <p>The pagination token used on subsequent calls to get pricing plans. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPricingPlansOutput::next_token): <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
     /// - On failure, responds with [`SdkError<ListPricingPlansError>`](crate::error::ListPricingPlansError)
     pub fn list_pricing_plans(&self) -> fluent_builders::ListPricingPlans {
         fluent_builders::ListPricingPlans::new(self.handle.clone())
@@ -355,7 +372,7 @@ impl Client {
     /// - On success, responds with [`ListPricingPlansAssociatedWithPricingRuleOutput`](crate::output::ListPricingPlansAssociatedWithPricingRuleOutput) with field(s):
     ///   - [`billing_period(Option<String>)`](crate::output::ListPricingPlansAssociatedWithPricingRuleOutput::billing_period): <p> The pricing plan billing period for which associations will be listed. </p>
     ///   - [`pricing_rule_arn(Option<String>)`](crate::output::ListPricingPlansAssociatedWithPricingRuleOutput::pricing_rule_arn): <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
-    ///   - [`pricing_plan_arns(Option<Vec<String>>)`](crate::output::ListPricingPlansAssociatedWithPricingRuleOutput::pricing_plan_arns): <p> The list containing pricing plans associated with the requested pricing rule. </p>
+    ///   - [`pricing_plan_arns(Option<Vec<String>>)`](crate::output::ListPricingPlansAssociatedWithPricingRuleOutput::pricing_plan_arns): <p> The list containing pricing plans that are associated with the requested pricing rule. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPricingPlansAssociatedWithPricingRuleOutput::next_token): <p> The pagination token to be used on subsequent calls. </p>
     /// - On failure, responds with [`SdkError<ListPricingPlansAssociatedWithPricingRuleError>`](crate::error::ListPricingPlansAssociatedWithPricingRuleError)
     pub fn list_pricing_plans_associated_with_pricing_rule(
@@ -370,11 +387,11 @@ impl Client {
     ///   - [`billing_period(impl Into<String>)`](crate::client::fluent_builders::ListPricingRules::billing_period) / [`set_billing_period(Option<String>)`](crate::client::fluent_builders::ListPricingRules::set_billing_period): <p> The preferred billing period to get the pricing plan. </p>
     ///   - [`filters(ListPricingRulesFilter)`](crate::client::fluent_builders::ListPricingRules::filters) / [`set_filters(Option<ListPricingRulesFilter>)`](crate::client::fluent_builders::ListPricingRules::set_filters): <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPricingRules::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPricingRules::set_max_results): <p> The maximum number of pricing rules to retrieve. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPricingRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPricingRules::set_next_token): <p> The pagination token used on subsequent call to get pricing rules. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPricingRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPricingRules::set_next_token): <p> The pagination token that's used on subsequent call to get pricing rules. </p>
     /// - On success, responds with [`ListPricingRulesOutput`](crate::output::ListPricingRulesOutput) with field(s):
     ///   - [`billing_period(Option<String>)`](crate::output::ListPricingRulesOutput::billing_period): <p> The billing period for which the described pricing rules are applicable. </p>
     ///   - [`pricing_rules(Option<Vec<PricingRuleListElement>>)`](crate::output::ListPricingRulesOutput::pricing_rules): <p> A list containing the described pricing rules. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListPricingRulesOutput::next_token): <p> The pagination token used on subsequent calls to get pricing rules. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPricingRulesOutput::next_token): <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
     /// - On failure, responds with [`SdkError<ListPricingRulesError>`](crate::error::ListPricingRulesError)
     pub fn list_pricing_rules(&self) -> fluent_builders::ListPricingRules {
         fluent_builders::ListPricingRules::new(self.handle.clone())
@@ -390,7 +407,7 @@ impl Client {
     /// - On success, responds with [`ListPricingRulesAssociatedToPricingPlanOutput`](crate::output::ListPricingRulesAssociatedToPricingPlanOutput) with field(s):
     ///   - [`billing_period(Option<String>)`](crate::output::ListPricingRulesAssociatedToPricingPlanOutput::billing_period): <p> The billing period for which the pricing rule associations are listed. </p>
     ///   - [`pricing_plan_arn(Option<String>)`](crate::output::ListPricingRulesAssociatedToPricingPlanOutput::pricing_plan_arn): <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are listed.</p>
-    ///   - [`pricing_rule_arns(Option<Vec<String>>)`](crate::output::ListPricingRulesAssociatedToPricingPlanOutput::pricing_rule_arns): <p> A list containing pricing rules associated with the requested pricing plan. </p>
+    ///   - [`pricing_rule_arns(Option<Vec<String>>)`](crate::output::ListPricingRulesAssociatedToPricingPlanOutput::pricing_rule_arns): <p> A list containing pricing rules that are associated with the requested pricing plan. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPricingRulesAssociatedToPricingPlanOutput::next_token): <p> The pagination token to be used on subsequent calls. </p>
     /// - On failure, responds with [`SdkError<ListPricingRulesAssociatedToPricingPlanError>`](crate::error::ListPricingRulesAssociatedToPricingPlanError)
     pub fn list_pricing_rules_associated_to_pricing_plan(
@@ -405,7 +422,7 @@ impl Client {
     ///   - [`billing_period(impl Into<String>)`](crate::client::fluent_builders::ListResourcesAssociatedToCustomLineItem::billing_period) / [`set_billing_period(Option<String>)`](crate::client::fluent_builders::ListResourcesAssociatedToCustomLineItem::set_billing_period): <p> The billing period for which the resource associations will be listed. </p>
     ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListResourcesAssociatedToCustomLineItem::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListResourcesAssociatedToCustomLineItem::set_arn): <p> The ARN of the custom line item for which the resource associations will be listed. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResourcesAssociatedToCustomLineItem::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListResourcesAssociatedToCustomLineItem::set_max_results): <p> (Optional) The maximum number of resource associations to be retrieved. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourcesAssociatedToCustomLineItem::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourcesAssociatedToCustomLineItem::set_next_token): <p> (Optional) The pagination token returned by a previous request. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourcesAssociatedToCustomLineItem::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourcesAssociatedToCustomLineItem::set_next_token): <p> (Optional) The pagination token that's returned by a previous request. </p>
     ///   - [`filters(ListResourcesAssociatedToCustomLineItemFilter)`](crate::client::fluent_builders::ListResourcesAssociatedToCustomLineItem::filters) / [`set_filters(Option<ListResourcesAssociatedToCustomLineItemFilter>)`](crate::client::fluent_builders::ListResourcesAssociatedToCustomLineItem::set_filters): <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
     /// - On success, responds with [`ListResourcesAssociatedToCustomLineItemOutput`](crate::output::ListResourcesAssociatedToCustomLineItemOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::ListResourcesAssociatedToCustomLineItemOutput::arn): <p> The custom line item ARN for which the resource associations are listed. </p>
@@ -464,7 +481,7 @@ impl Client {
     ///   - [`primary_account_id(Option<String>)`](crate::output::UpdateBillingGroupOutput::primary_account_id): <p> The account ID that serves as the main account in a billing group. </p>
     ///   - [`pricing_plan_arn(Option<String>)`](crate::output::UpdateBillingGroupOutput::pricing_plan_arn): <p> The Amazon Resource Name (ARN) of the pricing plan to compute Amazon Web Services charges for the billing group. </p>
     ///   - [`size(i64)`](crate::output::UpdateBillingGroupOutput::size): <p> The number of accounts in the particular billing group. </p>
-    ///   - [`last_modified_time(i64)`](crate::output::UpdateBillingGroupOutput::last_modified_time): <p> The most recent time the billing group was modified. </p>
+    ///   - [`last_modified_time(i64)`](crate::output::UpdateBillingGroupOutput::last_modified_time): <p> The most recent time when the billing group was modified. </p>
     ///   - [`status(Option<BillingGroupStatus>)`](crate::output::UpdateBillingGroupOutput::status): <p> The status of the billing group. Only one of the valid values can be used. </p>
     ///   - [`status_reason(Option<String>)`](crate::output::UpdateBillingGroupOutput::status_reason): <p> The reason why the billing group is in its current status. </p>
     /// - On failure, responds with [`SdkError<UpdateBillingGroupError>`](crate::error::UpdateBillingGroupError)
@@ -485,7 +502,7 @@ impl Client {
     ///   - [`name(Option<String>)`](crate::output::UpdateCustomLineItemOutput::name): <p> The name of the successfully updated custom line item. </p>
     ///   - [`description(Option<String>)`](crate::output::UpdateCustomLineItemOutput::description): <p> The description of the successfully updated custom line item. </p>
     ///   - [`charge_details(Option<ListCustomLineItemChargeDetails>)`](crate::output::UpdateCustomLineItemOutput::charge_details): <p> A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the successfully updated custom line item. </p>
-    ///   - [`last_modified_time(i64)`](crate::output::UpdateCustomLineItemOutput::last_modified_time): <p> The most recent time the custom line item was modified. </p>
+    ///   - [`last_modified_time(i64)`](crate::output::UpdateCustomLineItemOutput::last_modified_time): <p> The most recent time when the custom line item was modified. </p>
     ///   - [`association_size(i64)`](crate::output::UpdateCustomLineItemOutput::association_size): <p> The number of resources that are associated to the custom line item. </p>
     /// - On failure, responds with [`SdkError<UpdateCustomLineItemError>`](crate::error::UpdateCustomLineItemError)
     pub fn update_custom_line_item(&self) -> fluent_builders::UpdateCustomLineItem {
@@ -494,15 +511,15 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdatePricingPlan`](crate::client::fluent_builders::UpdatePricingPlan) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdatePricingPlan::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdatePricingPlan::set_arn): <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdatePricingPlan::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdatePricingPlan::set_arn): <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdatePricingPlan::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdatePricingPlan::set_name): <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdatePricingPlan::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdatePricingPlan::set_description): <p>The pricing plan description. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdatePricingPlan::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdatePricingPlan::set_description): <p>The description of the pricing plan. </p>
     /// - On success, responds with [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdatePricingPlanOutput::arn): <p>The Amazon Resource Name (ARN) of the updated pricing plan. </p>
     ///   - [`name(Option<String>)`](crate::output::UpdatePricingPlanOutput::name): <p> The name of the pricing plan. The name must be unique to each pricing plan. </p>
     ///   - [`description(Option<String>)`](crate::output::UpdatePricingPlanOutput::description): <p> The new description for the pricing rule. </p>
-    ///   - [`size(i64)`](crate::output::UpdatePricingPlanOutput::size): <p> The pricing rules count currently associated with this pricing plan list. </p>
-    ///   - [`last_modified_time(i64)`](crate::output::UpdatePricingPlanOutput::last_modified_time): <p> The most recent time the pricing plan was modified. </p>
+    ///   - [`size(i64)`](crate::output::UpdatePricingPlanOutput::size): <p> The pricing rules count that's currently associated with this pricing plan list. </p>
+    ///   - [`last_modified_time(i64)`](crate::output::UpdatePricingPlanOutput::last_modified_time): <p> The most recent time when the pricing plan was modified. </p>
     /// - On failure, responds with [`SdkError<UpdatePricingPlanError>`](crate::error::UpdatePricingPlanError)
     pub fn update_pricing_plan(&self) -> fluent_builders::UpdatePricingPlan {
         fluent_builders::UpdatePricingPlan::new(self.handle.clone())
@@ -515,16 +532,19 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdatePricingRule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdatePricingRule::set_description): <p> The new description for the pricing rule. </p>
     ///   - [`r#type(PricingRuleType)`](crate::client::fluent_builders::UpdatePricingRule::type) / [`set_type(Option<PricingRuleType>)`](crate::client::fluent_builders::UpdatePricingRule::set_type): <p> The new pricing rule type. </p>
     ///   - [`modifier_percentage(f64)`](crate::client::fluent_builders::UpdatePricingRule::modifier_percentage) / [`set_modifier_percentage(Option<f64>)`](crate::client::fluent_builders::UpdatePricingRule::set_modifier_percentage): <p> The new modifier to show pricing plan rates as a percentage. </p>
+    ///   - [`tiering(UpdateTieringInput)`](crate::client::fluent_builders::UpdatePricingRule::tiering) / [`set_tiering(Option<UpdateTieringInput>)`](crate::client::fluent_builders::UpdatePricingRule::set_tiering): <p> The set of tiering configurations for the pricing rule. </p>
     /// - On success, responds with [`UpdatePricingRuleOutput`](crate::output::UpdatePricingRuleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdatePricingRuleOutput::arn): <p> The Amazon Resource Name (ARN) of the successfully updated pricing rule. </p>
     ///   - [`name(Option<String>)`](crate::output::UpdatePricingRuleOutput::name): <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
     ///   - [`description(Option<String>)`](crate::output::UpdatePricingRuleOutput::description): <p> The new description for the pricing rule. </p>
-    ///   - [`scope(Option<PricingRuleScope>)`](crate::output::UpdatePricingRuleOutput::scope): <p> The scope of pricing rule that indicates if it is globally applicable, or is service-specific. </p>
+    ///   - [`scope(Option<PricingRuleScope>)`](crate::output::UpdatePricingRuleOutput::scope): <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
     ///   - [`r#type(Option<PricingRuleType>)`](crate::output::UpdatePricingRuleOutput::type): <p> The new pricing rule type. </p>
     ///   - [`modifier_percentage(Option<f64>)`](crate::output::UpdatePricingRuleOutput::modifier_percentage): <p> The new modifier to show pricing plan rates as a percentage. </p>
     ///   - [`service(Option<String>)`](crate::output::UpdatePricingRuleOutput::service): <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
     ///   - [`associated_pricing_plan_count(i64)`](crate::output::UpdatePricingRuleOutput::associated_pricing_plan_count): <p> The pricing plans count that this pricing rule is associated with. </p>
     ///   - [`last_modified_time(i64)`](crate::output::UpdatePricingRuleOutput::last_modified_time): <p> The most recent time the pricing rule was modified. </p>
+    ///   - [`billing_entity(Option<String>)`](crate::output::UpdatePricingRuleOutput::billing_entity): <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+    ///   - [`tiering(Option<UpdateTieringInput>)`](crate::output::UpdatePricingRuleOutput::tiering): <p> The set of tiering configurations for the pricing rule. </p>
     /// - On failure, responds with [`SdkError<UpdatePricingRuleError>`](crate::error::UpdatePricingRuleError)
     pub fn update_pricing_rule(&self) -> fluent_builders::UpdatePricingRule {
         fluent_builders::UpdatePricingRule::new(self.handle.clone())
@@ -1061,12 +1081,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_primary_account_id(input);
             self
         }
-        /// <p>The billing group description. </p>
+        /// <p>The description of the billing group. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The billing group description. </p>
+        /// <p>The description of the billing group. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -1325,22 +1345,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+        /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+        /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The pricing plan description. </p>
+        /// <p>The description of the pricing plan. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The pricing plan description. </p>
+        /// <p>The description of the pricing plan. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -1448,12 +1468,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+        /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+        /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1478,12 +1498,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p> The scope of pricing rule that indicates if it is globally applicable, or is service-specific. </p>
+        /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
         pub fn scope(mut self, input: crate::model::PricingRuleScope) -> Self {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p> The scope of pricing rule that indicates if it is globally applicable, or is service-specific. </p>
+        /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
         pub fn set_scope(
             mut self,
             input: std::option::Option<crate::model::PricingRuleScope>,
@@ -1504,12 +1524,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p> A percentage modifier applied on the public pricing rates. </p>
+        /// <p> A percentage modifier that's applied on the public pricing rates. </p>
         pub fn modifier_percentage(mut self, input: f64) -> Self {
             self.inner = self.inner.modifier_percentage(input);
             self
         }
-        /// <p> A percentage modifier applied on the public pricing rates. </p>
+        /// <p> A percentage modifier that's applied on the public pricing rates. </p>
         pub fn set_modifier_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_modifier_percentage(input);
             self
@@ -1545,6 +1565,32 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+        pub fn billing_entity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.billing_entity(input.into());
+            self
+        }
+        /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+        pub fn set_billing_entity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_billing_entity(input);
+            self
+        }
+        /// <p> The set of tiering configurations for the pricing rule. </p>
+        pub fn tiering(mut self, input: crate::model::CreateTieringInput) -> Self {
+            self.inner = self.inner.tiering(input);
+            self
+        }
+        /// <p> The set of tiering configurations for the pricing rule. </p>
+        pub fn set_tiering(
+            mut self,
+            input: std::option::Option<crate::model::CreateTieringInput>,
+        ) -> Self {
+            self.inner = self.inner.set_tiering(input);
             self
         }
     }
@@ -1610,12 +1656,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the billing group you're deleting.</p>
+        /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the billing group you're deleting.</p>
+        /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -1772,12 +1818,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the pricing plan you're deleting. </p>
+        /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the pricing plan you're deleting. </p>
+        /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -1785,7 +1831,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePricingRule`.
     ///
-    /// <p> Deletes the pricing rule identified by the input Amazon Resource Name (ARN). </p>
+    /// <p> Deletes the pricing rule that's identified by the input Amazon Resource Name (ARN). </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePricingRule {
         handle: std::sync::Arc<super::Handle>,
@@ -1845,12 +1891,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+        /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+        /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -2038,8 +2084,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccountAssociations`.
     ///
-    /// <p> <i> <b>Amazon Web Services Billing Conductor is in beta release and is subject to change. Your use of Amazon Web Services Billing Conductor is subject to the Beta Service Participation terms of the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> (Section 1.10).</b> </i> </p>
-    /// <p> This is a paginated call to list linked accounts that are linked to the payer account for the specified time period. If no information is provided, the current billing period is used. The response will optionally include the billing group associated with the linked account.</p>
+    /// <p> This is a paginated call to list linked accounts that are linked to the payer account for the specified time period. If no information is provided, the current billing period is used. The response will optionally include the billing group that's associated with the linked account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountAssociations {
         handle: std::sync::Arc<super::Handle>,
@@ -2120,7 +2165,7 @@ pub mod fluent_builders {
         }
         /// <p>The filter on the account ID of the linked account, or any of the following:</p>
         /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
-        /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
+        /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
         /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
         pub fn filters(mut self, input: crate::model::ListAccountAssociationsFilter) -> Self {
             self.inner = self.inner.filters(input);
@@ -2128,7 +2173,7 @@ pub mod fluent_builders {
         }
         /// <p>The filter on the account ID of the linked account, or any of the following:</p>
         /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
-        /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
+        /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
         /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
         pub fn set_filters(
             mut self,
@@ -2137,12 +2182,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p> The pagination token used on subsequent calls to retrieve accounts. </p>
+        /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> The pagination token used on subsequent calls to retrieve accounts. </p>
+        /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2239,12 +2284,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token used on subsequent calls to get reports. </p>
+        /// <p>The pagination token that's used on subsequent calls to get reports. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used on subsequent calls to get reports. </p>
+        /// <p>The pagination token that's used on subsequent calls to get reports. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2354,12 +2399,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token used on subsequent calls to get billing groups. </p>
+        /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used on subsequent calls to get billing groups. </p>
+        /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2469,12 +2514,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p> The pagination token used on subsequent calls to get custom line items (FFLIs). </p>
+        /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> The pagination token used on subsequent calls to get custom line items (FFLIs). </p>
+        /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2488,6 +2533,118 @@ pub mod fluent_builders {
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::ListCustomLineItemsFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListCustomLineItemVersions`.
+    ///
+    /// <p>A paginated call to get a list of all custom line item versions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListCustomLineItemVersions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_custom_line_item_versions_input::Builder,
+    }
+    impl ListCustomLineItemVersions {
+        /// Creates a new `ListCustomLineItemVersions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListCustomLineItemVersions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListCustomLineItemVersionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCustomLineItemVersionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListCustomLineItemVersionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomLineItemVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCustomLineItemVersionsPaginator {
+            crate::paginator::ListCustomLineItemVersionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_arn(input);
+            self
+        }
+        /// <p>The maximum number of custom line item versions to retrieve.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of custom line item versions to retrieve.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
+        pub fn filters(mut self, input: crate::model::ListCustomLineItemVersionsFilter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::ListCustomLineItemVersionsFilter>,
         ) -> Self {
             self.inner = self.inner.set_filters(input);
             self
@@ -2597,12 +2754,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token used on subsequent call to get pricing plans. </p>
+        /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used on subsequent call to get pricing plans. </p>
+        /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2610,7 +2767,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPricingPlansAssociatedWithPricingRule`.
     ///
-    /// <p> A list of the pricing plans associated with a pricing rule. </p>
+    /// <p> A list of the pricing plans that are associated with a pricing rule. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPricingPlansAssociatedWithPricingRule {
         handle: std::sync::Arc<super::Handle>,
@@ -2836,12 +2993,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p> The pagination token used on subsequent call to get pricing rules. </p>
+        /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> The pagination token used on subsequent call to get pricing rules. </p>
+        /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2849,7 +3006,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPricingRulesAssociatedToPricingPlan`.
     ///
-    /// <p> Lists the pricing rules associated with a pricing plan. </p>
+    /// <p> Lists the pricing rules that are associated with a pricing plan. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPricingRulesAssociatedToPricingPlan {
         handle: std::sync::Arc<super::Handle>,
@@ -2973,7 +3130,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListResourcesAssociatedToCustomLineItem`.
     ///
-    /// <p> List the resources associated to a custom line item. </p>
+    /// <p> List the resources that are associated to a custom line item. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourcesAssociatedToCustomLineItem {
         handle: std::sync::Arc<super::Handle>,
@@ -3081,12 +3238,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p> (Optional) The pagination token returned by a previous request. </p>
+        /// <p> (Optional) The pagination token that's returned by a previous request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> (Optional) The pagination token returned by a previous request. </p>
+        /// <p> (Optional) The pagination token that's returned by a previous request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3676,12 +3833,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+        /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+        /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -3696,12 +3853,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The pricing plan description. </p>
+        /// <p>The description of the pricing plan. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The pricing plan description. </p>
+        /// <p>The description of the pricing plan. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -3820,6 +3977,19 @@ pub mod fluent_builders {
         /// <p> The new modifier to show pricing plan rates as a percentage. </p>
         pub fn set_modifier_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_modifier_percentage(input);
+            self
+        }
+        /// <p> The set of tiering configurations for the pricing rule. </p>
+        pub fn tiering(mut self, input: crate::model::UpdateTieringInput) -> Self {
+            self.inner = self.inner.tiering(input);
+            self
+        }
+        /// <p> The set of tiering configurations for the pricing rule. </p>
+        pub fn set_tiering(
+            mut self,
+            input: std::option::Option<crate::model::UpdateTieringInput>,
+        ) -> Self {
+            self.inner = self.inner.set_tiering(input);
             self
         }
     }

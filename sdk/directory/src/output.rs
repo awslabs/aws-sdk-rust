@@ -211,6 +211,30 @@ impl UpdateNumberOfDomainControllersOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateDirectorySetupOutput {}
+/// See [`UpdateDirectorySetupOutput`](crate::output::UpdateDirectorySetupOutput).
+pub mod update_directory_setup_output {
+
+    /// A builder for [`UpdateDirectorySetupOutput`](crate::output::UpdateDirectorySetupOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateDirectorySetupOutput`](crate::output::UpdateDirectorySetupOutput).
+        pub fn build(self) -> crate::output::UpdateDirectorySetupOutput {
+            crate::output::UpdateDirectorySetupOutput {}
+        }
+    }
+}
+impl UpdateDirectorySetupOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDirectorySetupOutput`](crate::output::UpdateDirectorySetupOutput).
+    pub fn builder() -> crate::output::update_directory_setup_output::Builder {
+        crate::output::update_directory_setup_output::Builder::default()
+    }
+}
+
 /// <p>The result of an UpdateConditionalForwarder request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1311,6 +1335,83 @@ impl DisableClientAuthenticationOutput {
     /// Creates a new builder-style object to manufacture [`DisableClientAuthenticationOutput`](crate::output::DisableClientAuthenticationOutput).
     pub fn builder() -> crate::output::disable_client_authentication_output::Builder {
         crate::output::disable_client_authentication_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeUpdateDirectoryOutput {
+    /// <p> The list of update activities on a directory for the requested update type. </p>
+    #[doc(hidden)]
+    pub update_activities: std::option::Option<std::vec::Vec<crate::model::UpdateInfoEntry>>,
+    /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeUpdateDirectoryOutput {
+    /// <p> The list of update activities on a directory for the requested update type. </p>
+    pub fn update_activities(&self) -> std::option::Option<&[crate::model::UpdateInfoEntry]> {
+        self.update_activities.as_deref()
+    }
+    /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`DescribeUpdateDirectoryOutput`](crate::output::DescribeUpdateDirectoryOutput).
+pub mod describe_update_directory_output {
+
+    /// A builder for [`DescribeUpdateDirectoryOutput`](crate::output::DescribeUpdateDirectoryOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) update_activities:
+            std::option::Option<std::vec::Vec<crate::model::UpdateInfoEntry>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `update_activities`.
+        ///
+        /// To override the contents of this collection use [`set_update_activities`](Self::set_update_activities).
+        ///
+        /// <p> The list of update activities on a directory for the requested update type. </p>
+        pub fn update_activities(mut self, input: crate::model::UpdateInfoEntry) -> Self {
+            let mut v = self.update_activities.unwrap_or_default();
+            v.push(input);
+            self.update_activities = Some(v);
+            self
+        }
+        /// <p> The list of update activities on a directory for the requested update type. </p>
+        pub fn set_update_activities(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UpdateInfoEntry>>,
+        ) -> Self {
+            self.update_activities = input;
+            self
+        }
+        /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeUpdateDirectoryOutput`](crate::output::DescribeUpdateDirectoryOutput).
+        pub fn build(self) -> crate::output::DescribeUpdateDirectoryOutput {
+            crate::output::DescribeUpdateDirectoryOutput {
+                update_activities: self.update_activities,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeUpdateDirectoryOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeUpdateDirectoryOutput`](crate::output::DescribeUpdateDirectoryOutput).
+    pub fn builder() -> crate::output::describe_update_directory_output::Builder {
+        crate::output::describe_update_directory_output::Builder::default()
     }
 }
 

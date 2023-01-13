@@ -984,8 +984,8 @@ pub fn add_headers_get_multi_region_access_point_policy_status(
     Ok(builder)
 }
 
-pub fn add_headers_get_public_access_block(
-    input: &crate::input::GetPublicAccessBlockInput,
+pub fn add_headers_get_multi_region_access_point_routes(
+    input: &crate::input::GetMultiRegionAccessPointRoutesInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_86) = &input.account_id {
@@ -1008,8 +1008,8 @@ pub fn add_headers_get_public_access_block(
     Ok(builder)
 }
 
-pub fn add_headers_get_storage_lens_configuration(
-    input: &crate::input::GetStorageLensConfigurationInput,
+pub fn add_headers_get_public_access_block(
+    input: &crate::input::GetPublicAccessBlockInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_88) = &input.account_id {
@@ -1032,8 +1032,8 @@ pub fn add_headers_get_storage_lens_configuration(
     Ok(builder)
 }
 
-pub fn add_headers_get_storage_lens_configuration_tagging(
-    input: &crate::input::GetStorageLensConfigurationTaggingInput,
+pub fn add_headers_get_storage_lens_configuration(
+    input: &crate::input::GetStorageLensConfigurationInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_90) = &input.account_id {
@@ -1056,8 +1056,8 @@ pub fn add_headers_get_storage_lens_configuration_tagging(
     Ok(builder)
 }
 
-pub fn add_headers_list_access_points(
-    input: &crate::input::ListAccessPointsInput,
+pub fn add_headers_get_storage_lens_configuration_tagging(
+    input: &crate::input::GetStorageLensConfigurationTaggingInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_92) = &input.account_id {
@@ -1080,8 +1080,8 @@ pub fn add_headers_list_access_points(
     Ok(builder)
 }
 
-pub fn add_headers_list_access_points_for_object_lambda(
-    input: &crate::input::ListAccessPointsForObjectLambdaInput,
+pub fn add_headers_list_access_points(
+    input: &crate::input::ListAccessPointsInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_94) = &input.account_id {
@@ -1104,8 +1104,8 @@ pub fn add_headers_list_access_points_for_object_lambda(
     Ok(builder)
 }
 
-pub fn add_headers_list_jobs(
-    input: &crate::input::ListJobsInput,
+pub fn add_headers_list_access_points_for_object_lambda(
+    input: &crate::input::ListAccessPointsForObjectLambdaInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_96) = &input.account_id {
@@ -1128,8 +1128,8 @@ pub fn add_headers_list_jobs(
     Ok(builder)
 }
 
-pub fn add_headers_list_multi_region_access_points(
-    input: &crate::input::ListMultiRegionAccessPointsInput,
+pub fn add_headers_list_jobs(
+    input: &crate::input::ListJobsInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_98) = &input.account_id {
@@ -1152,8 +1152,8 @@ pub fn add_headers_list_multi_region_access_points(
     Ok(builder)
 }
 
-pub fn add_headers_list_regional_buckets(
-    input: &crate::input::ListRegionalBucketsInput,
+pub fn add_headers_list_multi_region_access_points(
+    input: &crate::input::ListMultiRegionAccessPointsInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_100) = &input.account_id {
@@ -1173,10 +1173,34 @@ pub fn add_headers_list_regional_buckets(
             builder = builder.header("x-amz-account-id", header_value);
         }
     }
-    if let Some(inner_102) = &input.outpost_id {
+    Ok(builder)
+}
+
+pub fn add_headers_list_regional_buckets(
+    input: &crate::input::ListRegionalBucketsInput,
+    mut builder: http::request::Builder,
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+    if let Some(inner_102) = &input.account_id {
         let formatted_103 = inner_102.as_str();
         if !formatted_103.is_empty() {
             let header_value = formatted_103;
+            let header_value =
+                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "account_id",
+                        format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &header_value, err
+                        ),
+                    )
+                })?;
+            builder = builder.header("x-amz-account-id", header_value);
+        }
+    }
+    if let Some(inner_104) = &input.outpost_id {
+        let formatted_105 = inner_104.as_str();
+        if !formatted_105.is_empty() {
+            let header_value = formatted_105;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::error::BuildError::invalid_field(
@@ -1195,30 +1219,6 @@ pub fn add_headers_list_regional_buckets(
 
 pub fn add_headers_list_storage_lens_configurations(
     input: &crate::input::ListStorageLensConfigurationsInput,
-    mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
-    if let Some(inner_104) = &input.account_id {
-        let formatted_105 = inner_104.as_str();
-        if !formatted_105.is_empty() {
-            let header_value = formatted_105;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "account_id",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
-            builder = builder.header("x-amz-account-id", header_value);
-        }
-    }
-    Ok(builder)
-}
-
-pub fn add_headers_put_access_point_configuration_for_object_lambda(
-    input: &crate::input::PutAccessPointConfigurationForObjectLambdaInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_106) = &input.account_id {
@@ -1241,8 +1241,8 @@ pub fn add_headers_put_access_point_configuration_for_object_lambda(
     Ok(builder)
 }
 
-pub fn add_headers_put_access_point_policy(
-    input: &crate::input::PutAccessPointPolicyInput,
+pub fn add_headers_put_access_point_configuration_for_object_lambda(
+    input: &crate::input::PutAccessPointConfigurationForObjectLambdaInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_108) = &input.account_id {
@@ -1265,8 +1265,8 @@ pub fn add_headers_put_access_point_policy(
     Ok(builder)
 }
 
-pub fn add_headers_put_access_point_policy_for_object_lambda(
-    input: &crate::input::PutAccessPointPolicyForObjectLambdaInput,
+pub fn add_headers_put_access_point_policy(
+    input: &crate::input::PutAccessPointPolicyInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_110) = &input.account_id {
@@ -1289,8 +1289,8 @@ pub fn add_headers_put_access_point_policy_for_object_lambda(
     Ok(builder)
 }
 
-pub fn add_headers_put_bucket_lifecycle_configuration(
-    input: &crate::input::PutBucketLifecycleConfigurationInput,
+pub fn add_headers_put_access_point_policy_for_object_lambda(
+    input: &crate::input::PutAccessPointPolicyForObjectLambdaInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_112) = &input.account_id {
@@ -1313,8 +1313,8 @@ pub fn add_headers_put_bucket_lifecycle_configuration(
     Ok(builder)
 }
 
-pub fn add_headers_put_bucket_policy(
-    input: &crate::input::PutBucketPolicyInput,
+pub fn add_headers_put_bucket_lifecycle_configuration(
+    input: &crate::input::PutBucketLifecycleConfigurationInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_114) = &input.account_id {
@@ -1334,12 +1334,36 @@ pub fn add_headers_put_bucket_policy(
             builder = builder.header("x-amz-account-id", header_value);
         }
     }
+    Ok(builder)
+}
+
+pub fn add_headers_put_bucket_policy(
+    input: &crate::input::PutBucketPolicyInput,
+    mut builder: http::request::Builder,
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+    if let Some(inner_116) = &input.account_id {
+        let formatted_117 = inner_116.as_str();
+        if !formatted_117.is_empty() {
+            let header_value = formatted_117;
+            let header_value =
+                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "account_id",
+                        format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &header_value, err
+                        ),
+                    )
+                })?;
+            builder = builder.header("x-amz-account-id", header_value);
+        }
+    }
     if input.confirm_remove_self_bucket_access {
         let mut encoder =
             aws_smithy_types::primitive::Encoder::from(input.confirm_remove_self_bucket_access);
-        let formatted_116 = encoder.encode();
-        if !formatted_116.is_empty() {
-            let header_value = formatted_116;
+        let formatted_118 = encoder.encode();
+        if !formatted_118.is_empty() {
+            let header_value = formatted_118;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::error::BuildError::invalid_field(
@@ -1360,10 +1384,10 @@ pub fn add_headers_put_bucket_tagging(
     input: &crate::input::PutBucketTaggingInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
-    if let Some(inner_117) = &input.account_id {
-        let formatted_118 = inner_117.as_str();
-        if !formatted_118.is_empty() {
-            let header_value = formatted_118;
+    if let Some(inner_119) = &input.account_id {
+        let formatted_120 = inner_119.as_str();
+        if !formatted_120.is_empty() {
+            let header_value = formatted_120;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::error::BuildError::invalid_field(
@@ -1384,10 +1408,10 @@ pub fn add_headers_put_bucket_versioning(
     input: &crate::input::PutBucketVersioningInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
-    if let Some(inner_119) = &input.account_id {
-        let formatted_120 = inner_119.as_str();
-        if !formatted_120.is_empty() {
-            let header_value = formatted_120;
+    if let Some(inner_121) = &input.account_id {
+        let formatted_122 = inner_121.as_str();
+        if !formatted_122.is_empty() {
+            let header_value = formatted_122;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::error::BuildError::invalid_field(
@@ -1401,10 +1425,10 @@ pub fn add_headers_put_bucket_versioning(
             builder = builder.header("x-amz-account-id", header_value);
         }
     }
-    if let Some(inner_121) = &input.mfa {
-        let formatted_122 = inner_121.as_str();
-        if !formatted_122.is_empty() {
-            let header_value = formatted_122;
+    if let Some(inner_123) = &input.mfa {
+        let formatted_124 = inner_123.as_str();
+        if !formatted_124.is_empty() {
+            let header_value = formatted_124;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::error::BuildError::invalid_field(
@@ -1423,30 +1447,6 @@ pub fn add_headers_put_bucket_versioning(
 
 pub fn add_headers_put_job_tagging(
     input: &crate::input::PutJobTaggingInput,
-    mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
-    if let Some(inner_123) = &input.account_id {
-        let formatted_124 = inner_123.as_str();
-        if !formatted_124.is_empty() {
-            let header_value = formatted_124;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "account_id",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
-            builder = builder.header("x-amz-account-id", header_value);
-        }
-    }
-    Ok(builder)
-}
-
-pub fn add_headers_put_multi_region_access_point_policy(
-    input: &crate::input::PutMultiRegionAccessPointPolicyInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_125) = &input.account_id {
@@ -1469,8 +1469,8 @@ pub fn add_headers_put_multi_region_access_point_policy(
     Ok(builder)
 }
 
-pub fn add_headers_put_public_access_block(
-    input: &crate::input::PutPublicAccessBlockInput,
+pub fn add_headers_put_multi_region_access_point_policy(
+    input: &crate::input::PutMultiRegionAccessPointPolicyInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_127) = &input.account_id {
@@ -1493,8 +1493,8 @@ pub fn add_headers_put_public_access_block(
     Ok(builder)
 }
 
-pub fn add_headers_put_storage_lens_configuration(
-    input: &crate::input::PutStorageLensConfigurationInput,
+pub fn add_headers_put_public_access_block(
+    input: &crate::input::PutPublicAccessBlockInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_129) = &input.account_id {
@@ -1517,8 +1517,8 @@ pub fn add_headers_put_storage_lens_configuration(
     Ok(builder)
 }
 
-pub fn add_headers_put_storage_lens_configuration_tagging(
-    input: &crate::input::PutStorageLensConfigurationTaggingInput,
+pub fn add_headers_put_storage_lens_configuration(
+    input: &crate::input::PutStorageLensConfigurationInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_131) = &input.account_id {
@@ -1541,8 +1541,8 @@ pub fn add_headers_put_storage_lens_configuration_tagging(
     Ok(builder)
 }
 
-pub fn add_headers_update_job_priority(
-    input: &crate::input::UpdateJobPriorityInput,
+pub fn add_headers_put_storage_lens_configuration_tagging(
+    input: &crate::input::PutStorageLensConfigurationTaggingInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_133) = &input.account_id {
@@ -1565,14 +1565,62 @@ pub fn add_headers_update_job_priority(
     Ok(builder)
 }
 
-pub fn add_headers_update_job_status(
-    input: &crate::input::UpdateJobStatusInput,
+pub fn add_headers_submit_multi_region_access_point_routes(
+    input: &crate::input::SubmitMultiRegionAccessPointRoutesInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_135) = &input.account_id {
         let formatted_136 = inner_135.as_str();
         if !formatted_136.is_empty() {
             let header_value = formatted_136;
+            let header_value =
+                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "account_id",
+                        format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &header_value, err
+                        ),
+                    )
+                })?;
+            builder = builder.header("x-amz-account-id", header_value);
+        }
+    }
+    Ok(builder)
+}
+
+pub fn add_headers_update_job_priority(
+    input: &crate::input::UpdateJobPriorityInput,
+    mut builder: http::request::Builder,
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+    if let Some(inner_137) = &input.account_id {
+        let formatted_138 = inner_137.as_str();
+        if !formatted_138.is_empty() {
+            let header_value = formatted_138;
+            let header_value =
+                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "account_id",
+                        format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &header_value, err
+                        ),
+                    )
+                })?;
+            builder = builder.header("x-amz-account-id", header_value);
+        }
+    }
+    Ok(builder)
+}
+
+pub fn add_headers_update_job_status(
+    input: &crate::input::UpdateJobStatusInput,
+    mut builder: http::request::Builder,
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+    if let Some(inner_139) = &input.account_id {
+        let formatted_140 = inner_139.as_str();
+        if !formatted_140.is_empty() {
+            let header_value = formatted_140;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::error::BuildError::invalid_field(

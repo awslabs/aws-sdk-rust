@@ -94,7 +94,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateSlackChannelConfiguration`](crate::client::fluent_builders::CreateSlackChannelConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`team_id(impl Into<String>)`](crate::client::fluent_builders::CreateSlackChannelConfiguration::team_id) / [`set_team_id(Option<String>)`](crate::client::fluent_builders::CreateSlackChannelConfiguration::set_team_id): <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    ///   - [`team_id(impl Into<String>)`](crate::client::fluent_builders::CreateSlackChannelConfiguration::team_id) / [`set_team_id(Option<String>)`](crate::client::fluent_builders::CreateSlackChannelConfiguration::set_team_id): <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::CreateSlackChannelConfiguration::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::CreateSlackChannelConfiguration::set_channel_id): <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::CreateSlackChannelConfiguration::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::CreateSlackChannelConfiguration::set_channel_name): <p>The name of the Slack channel that you configure for the Amazon Web Services Support App.</p>
     ///   - [`notify_on_create_or_reopen_case(bool)`](crate::client::fluent_builders::CreateSlackChannelConfiguration::notify_on_create_or_reopen_case) / [`set_notify_on_create_or_reopen_case(Option<bool>)`](crate::client::fluent_builders::CreateSlackChannelConfiguration::set_notify_on_create_or_reopen_case): <p>Whether you want to get notified when a support case is created or reopened.</p>
@@ -123,7 +123,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteSlackChannelConfiguration`](crate::client::fluent_builders::DeleteSlackChannelConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`team_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSlackChannelConfiguration::team_id) / [`set_team_id(Option<String>)`](crate::client::fluent_builders::DeleteSlackChannelConfiguration::set_team_id): <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    ///   - [`team_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSlackChannelConfiguration::team_id) / [`set_team_id(Option<String>)`](crate::client::fluent_builders::DeleteSlackChannelConfiguration::set_team_id): <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSlackChannelConfiguration::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::DeleteSlackChannelConfiguration::set_channel_id): <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     /// - On success, responds with [`DeleteSlackChannelConfigurationOutput`](crate::output::DeleteSlackChannelConfigurationOutput)
 
@@ -136,7 +136,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteSlackWorkspaceConfiguration`](crate::client::fluent_builders::DeleteSlackWorkspaceConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`team_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSlackWorkspaceConfiguration::team_id) / [`set_team_id(Option<String>)`](crate::client::fluent_builders::DeleteSlackWorkspaceConfiguration::set_team_id): <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    ///   - [`team_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSlackWorkspaceConfiguration::team_id) / [`set_team_id(Option<String>)`](crate::client::fluent_builders::DeleteSlackWorkspaceConfiguration::set_team_id): <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     /// - On success, responds with [`DeleteSlackWorkspaceConfigurationOutput`](crate::output::DeleteSlackWorkspaceConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSlackWorkspaceConfigurationError>`](crate::error::DeleteSlackWorkspaceConfigurationError)
@@ -193,10 +193,24 @@ impl Client {
     pub fn put_account_alias(&self) -> fluent_builders::PutAccountAlias {
         fluent_builders::PutAccountAlias::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`RegisterSlackWorkspaceForOrganization`](crate::client::fluent_builders::RegisterSlackWorkspaceForOrganization) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`team_id(impl Into<String>)`](crate::client::fluent_builders::RegisterSlackWorkspaceForOrganization::team_id) / [`set_team_id(Option<String>)`](crate::client::fluent_builders::RegisterSlackWorkspaceForOrganization::set_team_id): <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
+    /// - On success, responds with [`RegisterSlackWorkspaceForOrganizationOutput`](crate::output::RegisterSlackWorkspaceForOrganizationOutput) with field(s):
+    ///   - [`team_id(Option<String>)`](crate::output::RegisterSlackWorkspaceForOrganizationOutput::team_id): <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    ///   - [`team_name(Option<String>)`](crate::output::RegisterSlackWorkspaceForOrganizationOutput::team_name): <p>The name of the Slack workspace.</p>
+    ///   - [`account_type(Option<AccountType>)`](crate::output::RegisterSlackWorkspaceForOrganizationOutput::account_type): <p>Whether the Amazon Web Services account is a management or member account that's part of an organization in Organizations.</p>
+    /// - On failure, responds with [`SdkError<RegisterSlackWorkspaceForOrganizationError>`](crate::error::RegisterSlackWorkspaceForOrganizationError)
+    pub fn register_slack_workspace_for_organization(
+        &self,
+    ) -> fluent_builders::RegisterSlackWorkspaceForOrganization {
+        fluent_builders::RegisterSlackWorkspaceForOrganization::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateSlackChannelConfiguration`](crate::client::fluent_builders::UpdateSlackChannelConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`team_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSlackChannelConfiguration::team_id) / [`set_team_id(Option<String>)`](crate::client::fluent_builders::UpdateSlackChannelConfiguration::set_team_id): <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    ///   - [`team_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSlackChannelConfiguration::team_id) / [`set_team_id(Option<String>)`](crate::client::fluent_builders::UpdateSlackChannelConfiguration::set_team_id): <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSlackChannelConfiguration::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::UpdateSlackChannelConfiguration::set_channel_id): <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSlackChannelConfiguration::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::UpdateSlackChannelConfiguration::set_channel_name): <p>The Slack channel name that you want to update.</p>
     ///   - [`notify_on_create_or_reopen_case(bool)`](crate::client::fluent_builders::UpdateSlackChannelConfiguration::notify_on_create_or_reopen_case) / [`set_notify_on_create_or_reopen_case(Option<bool>)`](crate::client::fluent_builders::UpdateSlackChannelConfiguration::set_notify_on_create_or_reopen_case): <p>Whether you want to get notified when a support case is created or reopened.</p>
@@ -205,7 +219,7 @@ impl Client {
     ///   - [`notify_on_case_severity(NotificationSeverityLevel)`](crate::client::fluent_builders::UpdateSlackChannelConfiguration::notify_on_case_severity) / [`set_notify_on_case_severity(Option<NotificationSeverityLevel>)`](crate::client::fluent_builders::UpdateSlackChannelConfiguration::set_notify_on_case_severity): <p>The case severity for a support case that you want to receive notifications.</p>  <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p>  <ul>   <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>   <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>   <li> <p> <code>notifyOnResolveCase</code> </p> </li>  </ul>  <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p>  <ul>   <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>   <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>   <li> <p> <code>notifyOnResolveCase</code> </p> </li>  </ul> <note>   <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>  </note>
     ///   - [`channel_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateSlackChannelConfiguration::channel_role_arn) / [`set_channel_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateSlackChannelConfiguration::set_channel_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     /// - On success, responds with [`UpdateSlackChannelConfigurationOutput`](crate::output::UpdateSlackChannelConfigurationOutput) with field(s):
-    ///   - [`team_id(Option<String>)`](crate::output::UpdateSlackChannelConfigurationOutput::team_id): <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    ///   - [`team_id(Option<String>)`](crate::output::UpdateSlackChannelConfigurationOutput::team_id): <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     ///   - [`channel_id(Option<String>)`](crate::output::UpdateSlackChannelConfigurationOutput::channel_id): <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     ///   - [`channel_name(Option<String>)`](crate::output::UpdateSlackChannelConfigurationOutput::channel_name): <p>The name of the Slack channel that you configure for the Amazon Web Services Support App.</p>
     ///   - [`notify_on_create_or_reopen_case(Option<bool>)`](crate::output::UpdateSlackChannelConfigurationOutput::notify_on_create_or_reopen_case): <p>Whether you want to get notified when a support case is created or reopened.</p>
@@ -297,12 +311,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.team_id(input.into());
             self
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_team_id(input);
             self
@@ -546,12 +560,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.team_id(input.into());
             self
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_team_id(input);
             self
@@ -629,12 +643,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.team_id(input.into());
             self
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_team_id(input);
             self
@@ -940,6 +954,94 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `RegisterSlackWorkspaceForOrganization`.
+    ///
+    /// <p>Registers a Slack workspace for your Amazon Web Services account. To call this API, your account must be part of an organization in Organizations.</p>
+    /// <p>If you're the <i>management account</i> and you want to register Slack workspaces for your organization, you must complete the following tasks:</p>
+    /// <ol>
+    /// <li> <p>Sign in to the <a href="https://console.aws.amazon.com/support/app">Amazon Web Services Support Center</a> and authorize the Slack workspaces where you want your organization to have access to. See <a href="https://docs.aws.amazon.com/awssupport/latest/user/authorize-slack-workspace.html">Authorize a Slack workspace</a> in the <i>Amazon Web Services Support User Guide</i>.</p> </li>
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API to authorize each Slack workspace for the organization.</p> </li>
+    /// </ol>
+    /// <p>After the management account authorizes the Slack workspace, member accounts can call this API to authorize the same Slack workspace for their individual accounts. Member accounts don't need to authorize the Slack workspace manually through the <a href="https://console.aws.amazon.com/support/app">Amazon Web Services Support Center</a>.</p>
+    /// <p>To use the Amazon Web Services Support App, each account must then complete the following tasks:</p>
+    /// <ul>
+    /// <li> <p>Create an Identity and Access Management (IAM) role with the required permission. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a>.</p> </li>
+    /// <li> <p>Configure a Slack channel to use the Amazon Web Services Support App for support cases for that account. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/add-your-slack-channel.html">Configuring a Slack channel</a>.</p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RegisterSlackWorkspaceForOrganization {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::register_slack_workspace_for_organization_input::Builder,
+    }
+    impl RegisterSlackWorkspaceForOrganization {
+        /// Creates a new `RegisterSlackWorkspaceForOrganization`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::RegisterSlackWorkspaceForOrganization,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::RegisterSlackWorkspaceForOrganizationError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RegisterSlackWorkspaceForOrganizationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::RegisterSlackWorkspaceForOrganizationError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
+        pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.team_id(input.into());
+            self
+        }
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
+        pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_team_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateSlackChannelConfiguration`.
     ///
     /// <p>Updates the configuration for a Slack channel, such as case update notifications.</p>
@@ -1002,12 +1104,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.team_id(input.into());
             self
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_team_id(input);
             self

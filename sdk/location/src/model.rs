@@ -1305,6 +1305,7 @@ pub struct CalculateRouteMatrixSummary {
     /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -1324,6 +1325,7 @@ impl CalculateRouteMatrixSummary {
     /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -1358,6 +1360,7 @@ pub mod calculate_route_matrix_summary {
         /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
         /// <ul>
         /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Grab</code> </p> </li>
         /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -1368,6 +1371,7 @@ pub mod calculate_route_matrix_summary {
         /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
         /// <ul>
         /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Grab</code> </p> </li>
         /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -2216,7 +2220,7 @@ impl TravelMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Car", "Truck", "Walking"]
+        &["Bicycle", "Car", "Motorcycle", "Truck", "Walking"]
     }
 }
 impl<T> std::convert::From<T> for TravelMode
@@ -2248,6 +2252,7 @@ pub struct CalculateRouteSummary {
     /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -2283,6 +2288,7 @@ impl CalculateRouteSummary {
     /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -2367,6 +2373,7 @@ pub mod calculate_route_summary {
         /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
         /// <ul>
         /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Grab</code> </p> </li>
         /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -2377,6 +2384,7 @@ pub mod calculate_route_summary {
         /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
         /// <ul>
         /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Grab</code> </p> </li>
         /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -2934,6 +2942,7 @@ pub struct ListRouteCalculatorsResponseEntry {
     /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -2971,6 +2980,7 @@ impl ListRouteCalculatorsResponseEntry {
     /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -3040,6 +3050,7 @@ pub mod list_route_calculators_response_entry {
         /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
         /// <ul>
         /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Grab</code> </p> </li>
         /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -3050,6 +3061,7 @@ pub mod list_route_calculators_response_entry {
         /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
         /// <ul>
         /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Grab</code> </p> </li>
         /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -3149,11 +3161,11 @@ pub struct SearchForTextResult {
     #[doc(hidden)]
     pub distance: std::option::Option<f64>,
     /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p>
-    /// <p>Returned only when the partner selected is Esri.</p>
+    /// <p>Returned only when the partner selected is Esri or Grab.</p>
     #[doc(hidden)]
     pub relevance: std::option::Option<f64>,
     /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+    /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
     /// </note>
     #[doc(hidden)]
     pub place_id: std::option::Option<std::string::String>,
@@ -3170,12 +3182,12 @@ impl SearchForTextResult {
         self.distance
     }
     /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p>
-    /// <p>Returned only when the partner selected is Esri.</p>
+    /// <p>Returned only when the partner selected is Esri or Grab.</p>
     pub fn relevance(&self) -> std::option::Option<f64> {
         self.relevance
     }
     /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+    /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
     /// </note>
     pub fn place_id(&self) -> std::option::Option<&str> {
         self.place_id.as_deref()
@@ -3218,26 +3230,26 @@ pub mod search_for_text_result {
             self
         }
         /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p>
-        /// <p>Returned only when the partner selected is Esri.</p>
+        /// <p>Returned only when the partner selected is Esri or Grab.</p>
         pub fn relevance(mut self, input: f64) -> Self {
             self.relevance = Some(input);
             self
         }
         /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p>
-        /// <p>Returned only when the partner selected is Esri.</p>
+        /// <p>Returned only when the partner selected is Esri or Grab.</p>
         pub fn set_relevance(mut self, input: std::option::Option<f64>) -> Self {
             self.relevance = input;
             self
         }
         /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-        /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+        /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
         /// </note>
         pub fn place_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.place_id = Some(input.into());
             self
         }
         /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-        /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+        /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
         /// </note>
         pub fn set_place_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.place_id = input;
@@ -3284,7 +3296,7 @@ pub struct Place {
     /// <p>A name for a local area, such as a city or town name. For example, <code>Toronto</code>.</p>
     #[doc(hidden)]
     pub municipality: std::option::Option<std::string::String>,
-    /// <p>A country, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
+    /// <p>A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
     #[doc(hidden)]
     pub sub_region: std::option::Option<std::string::String>,
     /// <p>A name for an area or geographical division, such as a province or state name. For example, <code>British Columbia</code>.</p>
@@ -3302,7 +3314,7 @@ pub struct Place {
     /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
     #[doc(hidden)]
     pub interpolated: std::option::Option<bool>,
-    /// <p>The time zone in which the <code>Place</code> is located. Returned only when using Here as the selected partner.</p>
+    /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.</p>
     #[doc(hidden)]
     pub time_zone: std::option::Option<crate::model::TimeZone>,
     /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
@@ -3339,7 +3351,7 @@ impl Place {
     pub fn municipality(&self) -> std::option::Option<&str> {
         self.municipality.as_deref()
     }
-    /// <p>A country, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
+    /// <p>A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
     pub fn sub_region(&self) -> std::option::Option<&str> {
         self.sub_region.as_deref()
     }
@@ -3362,7 +3374,7 @@ impl Place {
     pub fn interpolated(&self) -> std::option::Option<bool> {
         self.interpolated
     }
-    /// <p>The time zone in which the <code>Place</code> is located. Returned only when using Here as the selected partner.</p>
+    /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.</p>
     pub fn time_zone(&self) -> std::option::Option<&crate::model::TimeZone> {
         self.time_zone.as_ref()
     }
@@ -3465,12 +3477,12 @@ pub mod place {
             self.municipality = input;
             self
         }
-        /// <p>A country, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
+        /// <p>A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
         pub fn sub_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.sub_region = Some(input.into());
             self
         }
-        /// <p>A country, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
+        /// <p>A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
         pub fn set_sub_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sub_region = input;
             self
@@ -3521,12 +3533,12 @@ pub mod place {
             self.interpolated = input;
             self
         }
-        /// <p>The time zone in which the <code>Place</code> is located. Returned only when using Here as the selected partner.</p>
+        /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.</p>
         pub fn time_zone(mut self, input: crate::model::TimeZone) -> Self {
             self.time_zone = Some(input);
             self
         }
-        /// <p>The time zone in which the <code>Place</code> is located. Returned only when using Here as the selected partner.</p>
+        /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.</p>
         pub fn set_time_zone(mut self, input: std::option::Option<crate::model::TimeZone>) -> Self {
             self.time_zone = input;
             self
@@ -3761,6 +3773,7 @@ pub struct SearchPlaceIndexForTextSummary {
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
     /// <li> <p>Esri</p> </li>
+    /// <li> <p>Grab</p> </li>
     /// <li> <p>Here</p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -3802,6 +3815,7 @@ impl SearchPlaceIndexForTextSummary {
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
     /// <li> <p>Esri</p> </li>
+    /// <li> <p>Grab</p> </li>
     /// <li> <p>Here</p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -3941,6 +3955,7 @@ pub mod search_place_index_for_text_summary {
         /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
         /// <ul>
         /// <li> <p>Esri</p> </li>
+        /// <li> <p>Grab</p> </li>
         /// <li> <p>Here</p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -3951,6 +3966,7 @@ pub mod search_place_index_for_text_summary {
         /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
         /// <ul>
         /// <li> <p>Esri</p> </li>
+        /// <li> <p>Grab</p> </li>
         /// <li> <p>Here</p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -4012,7 +4028,7 @@ pub struct SearchForSuggestionsResult {
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use HERE or Esri as data providers.</p>
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
     /// </note>
     #[doc(hidden)]
     pub place_id: std::option::Option<std::string::String>,
@@ -4023,7 +4039,7 @@ impl SearchForSuggestionsResult {
         self.text.as_deref()
     }
     /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use HERE or Esri as data providers.</p>
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
     /// </note>
     pub fn place_id(&self) -> std::option::Option<&str> {
         self.place_id.as_deref()
@@ -4050,14 +4066,14 @@ pub mod search_for_suggestions_result {
             self
         }
         /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-        /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use HERE or Esri as data providers.</p>
+        /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
         /// </note>
         pub fn place_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.place_id = Some(input.into());
             self
         }
         /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-        /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use HERE or Esri as data providers.</p>
+        /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
         /// </note>
         pub fn set_place_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.place_id = input;
@@ -4103,6 +4119,7 @@ pub struct SearchPlaceIndexForSuggestionsSummary {
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
     /// <li> <p>Esri</p> </li>
+    /// <li> <p>Grab</p> </li>
     /// <li> <p>Here</p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -4138,6 +4155,7 @@ impl SearchPlaceIndexForSuggestionsSummary {
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
     /// <li> <p>Esri</p> </li>
+    /// <li> <p>Grab</p> </li>
     /// <li> <p>Here</p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -4255,6 +4273,7 @@ pub mod search_place_index_for_suggestions_summary {
         /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
         /// <ul>
         /// <li> <p>Esri</p> </li>
+        /// <li> <p>Grab</p> </li>
         /// <li> <p>Here</p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -4265,6 +4284,7 @@ pub mod search_place_index_for_suggestions_summary {
         /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
         /// <ul>
         /// <li> <p>Esri</p> </li>
+        /// <li> <p>Grab</p> </li>
         /// <li> <p>Here</p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -4329,7 +4349,7 @@ pub struct SearchForPositionResult {
     #[doc(hidden)]
     pub distance: std::option::Option<f64>,
     /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+    /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
     /// </note>
     #[doc(hidden)]
     pub place_id: std::option::Option<std::string::String>,
@@ -4346,7 +4366,7 @@ impl SearchForPositionResult {
         self.distance
     }
     /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+    /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
     /// </note>
     pub fn place_id(&self) -> std::option::Option<&str> {
         self.place_id.as_deref()
@@ -4388,14 +4408,14 @@ pub mod search_for_position_result {
             self
         }
         /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-        /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+        /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
         /// </note>
         pub fn place_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.place_id = Some(input.into());
             self
         }
         /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-        /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+        /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
         /// </note>
         pub fn set_place_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.place_id = input;
@@ -4432,6 +4452,7 @@ pub struct SearchPlaceIndexForPositionSummary {
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
     /// <li> <p>Esri</p> </li>
+    /// <li> <p>Grab</p> </li>
     /// <li> <p>Here</p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -4454,6 +4475,7 @@ impl SearchPlaceIndexForPositionSummary {
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
     /// <li> <p>Esri</p> </li>
+    /// <li> <p>Grab</p> </li>
     /// <li> <p>Here</p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -4518,6 +4540,7 @@ pub mod search_place_index_for_position_summary {
         /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
         /// <ul>
         /// <li> <p>Esri</p> </li>
+        /// <li> <p>Grab</p> </li>
         /// <li> <p>Here</p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -4528,6 +4551,7 @@ pub mod search_place_index_for_position_summary {
         /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
         /// <ul>
         /// <li> <p>Esri</p> </li>
+        /// <li> <p>Grab</p> </li>
         /// <li> <p>Here</p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -4586,6 +4610,7 @@ pub struct ListPlaceIndexesResponseEntry {
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -4617,6 +4642,7 @@ impl ListPlaceIndexesResponseEntry {
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -4677,6 +4703,7 @@ pub mod list_place_indexes_response_entry {
         /// <p>The data provider of geospatial data. Values can be one of the following:</p>
         /// <ul>
         /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Grab</code> </p> </li>
         /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -4687,6 +4714,7 @@ pub mod list_place_indexes_response_entry {
         /// <p>The data provider of geospatial data. Values can be one of the following:</p>
         /// <ul>
         /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Grab</code> </p> </li>
         /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -5058,12 +5086,29 @@ pub struct MapConfiguration {
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
-    /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
+    /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note>
+    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+    /// </note> </li>
     /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
     /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
+    /// <li> <p> <code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p> </li>
+    /// <li> <p> <code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p> <note>
+    /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
+    /// </note> </li>
+    /// </ul>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
+    /// <ul>
+    /// <li> <p> <code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p> </li>
+    /// <li> <p> <code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p> </li>
     /// </ul> <note>
-    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
     /// </note>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview) map styles</a>:</p>
+    /// <ul>
+    /// <li> <p> <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview) map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> <important>
+    /// <p>Open Data maps is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open Data is in preview release</a>.</p>
+    /// </important> </li>
+    /// </ul>
     #[doc(hidden)]
     pub style: std::option::Option<std::string::String>,
 }
@@ -5080,12 +5125,29 @@ impl MapConfiguration {
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
-    /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
+    /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note>
+    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+    /// </note> </li>
     /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
     /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
+    /// <li> <p> <code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p> </li>
+    /// <li> <p> <code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p> <note>
+    /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
+    /// </note> </li>
+    /// </ul>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
+    /// <ul>
+    /// <li> <p> <code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p> </li>
+    /// <li> <p> <code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p> </li>
     /// </ul> <note>
-    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
     /// </note>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview) map styles</a>:</p>
+    /// <ul>
+    /// <li> <p> <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview) map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> <important>
+    /// <p>Open Data maps is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open Data is in preview release</a>.</p>
+    /// </important> </li>
+    /// </ul>
     pub fn style(&self) -> std::option::Option<&str> {
         self.style.as_deref()
     }
@@ -5111,12 +5173,29 @@ pub mod map_configuration {
         /// </ul>
         /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
         /// <ul>
-        /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
+        /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note>
+        /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+        /// </note> </li>
         /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
         /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
+        /// <li> <p> <code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p> </li>
+        /// <li> <p> <code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p> <note>
+        /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
+        /// </note> </li>
+        /// </ul>
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
+        /// <ul>
+        /// <li> <p> <code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p> </li>
+        /// <li> <p> <code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p> </li>
         /// </ul> <note>
-        /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+        /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
         /// </note>
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview) map styles</a>:</p>
+        /// <ul>
+        /// <li> <p> <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview) map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> <important>
+        /// <p>Open Data maps is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open Data is in preview release</a>.</p>
+        /// </important> </li>
+        /// </ul>
         pub fn style(mut self, input: impl Into<std::string::String>) -> Self {
             self.style = Some(input.into());
             self
@@ -5133,12 +5212,29 @@ pub mod map_configuration {
         /// </ul>
         /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
         /// <ul>
-        /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
+        /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note>
+        /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+        /// </note> </li>
         /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
         /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
+        /// <li> <p> <code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p> </li>
+        /// <li> <p> <code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p> <note>
+        /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
+        /// </note> </li>
+        /// </ul>
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
+        /// <ul>
+        /// <li> <p> <code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p> </li>
+        /// <li> <p> <code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p> </li>
         /// </ul> <note>
-        /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+        /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
         /// </note>
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview) map styles</a>:</p>
+        /// <ul>
+        /// <li> <p> <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview) map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> <important>
+        /// <p>Open Data maps is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open Data is in preview release</a>.</p>
+        /// </important> </li>
+        /// </ul>
         pub fn set_style(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.style = input;
             self
@@ -5163,9 +5259,11 @@ impl MapConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeofenceGeometry {
-    /// <p>An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and last vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. </p>
-    /// <p>The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be inner or outer rings to describe holes and islands. Outer rings must list their vertices in counter-clockwise order around the ring's center, where the left side is the polygon's exterior. Inner rings must list their vertices in clockwise order, where the left side is the polygon's interior.</p>
-    /// <p>A geofence polygon can consist of between 4 and 1,000 vertices.</p>
+    /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p>
+    /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p>
+    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
+    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
+    /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
     #[doc(hidden)]
     pub polygon: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
     /// <p>A circle on the earth, as defined by a center point and a radius.</p>
@@ -5173,9 +5271,11 @@ pub struct GeofenceGeometry {
     pub circle: std::option::Option<crate::model::Circle>,
 }
 impl GeofenceGeometry {
-    /// <p>An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and last vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. </p>
-    /// <p>The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be inner or outer rings to describe holes and islands. Outer rings must list their vertices in counter-clockwise order around the ring's center, where the left side is the polygon's exterior. Inner rings must list their vertices in clockwise order, where the left side is the polygon's interior.</p>
-    /// <p>A geofence polygon can consist of between 4 and 1,000 vertices.</p>
+    /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p>
+    /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p>
+    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
+    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
+    /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
     pub fn polygon(&self) -> std::option::Option<&[std::vec::Vec<std::vec::Vec<f64>>]> {
         self.polygon.as_deref()
     }
@@ -5206,18 +5306,22 @@ pub mod geofence_geometry {
         ///
         /// To override the contents of this collection use [`set_polygon`](Self::set_polygon).
         ///
-        /// <p>An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and last vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. </p>
-        /// <p>The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be inner or outer rings to describe holes and islands. Outer rings must list their vertices in counter-clockwise order around the ring's center, where the left side is the polygon's exterior. Inner rings must list their vertices in clockwise order, where the left side is the polygon's interior.</p>
-        /// <p>A geofence polygon can consist of between 4 and 1,000 vertices.</p>
+        /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p>
+        /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p>
+        /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
+        /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
+        /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
         pub fn polygon(mut self, input: std::vec::Vec<std::vec::Vec<f64>>) -> Self {
             let mut v = self.polygon.unwrap_or_default();
             v.push(input);
             self.polygon = Some(v);
             self
         }
-        /// <p>An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and last vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. </p>
-        /// <p>The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be inner or outer rings to describe holes and islands. Outer rings must list their vertices in counter-clockwise order around the ring's center, where the left side is the polygon's exterior. Inner rings must list their vertices in clockwise order, where the left side is the polygon's interior.</p>
-        /// <p>A geofence polygon can consist of between 4 and 1,000 vertices.</p>
+        /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p>
+        /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p>
+        /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
+        /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
+        /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
         pub fn set_polygon(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,

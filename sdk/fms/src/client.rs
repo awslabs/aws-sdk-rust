@@ -111,6 +111,30 @@ impl Client {
     pub fn associate_third_party_firewall(&self) -> fluent_builders::AssociateThirdPartyFirewall {
         fluent_builders::AssociateThirdPartyFirewall::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`BatchAssociateResource`](crate::client::fluent_builders::BatchAssociateResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_set_identifier(impl Into<String>)`](crate::client::fluent_builders::BatchAssociateResource::resource_set_identifier) / [`set_resource_set_identifier(Option<String>)`](crate::client::fluent_builders::BatchAssociateResource::set_resource_set_identifier): <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+    ///   - [`items(Vec<String>)`](crate::client::fluent_builders::BatchAssociateResource::items) / [`set_items(Option<Vec<String>>)`](crate::client::fluent_builders::BatchAssociateResource::set_items): <p>The uniform resource identifiers (URIs) of resources that should be associated to the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
+    /// - On success, responds with [`BatchAssociateResourceOutput`](crate::output::BatchAssociateResourceOutput) with field(s):
+    ///   - [`resource_set_identifier(Option<String>)`](crate::output::BatchAssociateResourceOutput::resource_set_identifier): <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+    ///   - [`failed_items(Option<Vec<FailedItem>>)`](crate::output::BatchAssociateResourceOutput::failed_items): <p>The resources that failed to associate to the resource set.</p>
+    /// - On failure, responds with [`SdkError<BatchAssociateResourceError>`](crate::error::BatchAssociateResourceError)
+    pub fn batch_associate_resource(&self) -> fluent_builders::BatchAssociateResource {
+        fluent_builders::BatchAssociateResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`BatchDisassociateResource`](crate::client::fluent_builders::BatchDisassociateResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_set_identifier(impl Into<String>)`](crate::client::fluent_builders::BatchDisassociateResource::resource_set_identifier) / [`set_resource_set_identifier(Option<String>)`](crate::client::fluent_builders::BatchDisassociateResource::set_resource_set_identifier): <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+    ///   - [`items(Vec<String>)`](crate::client::fluent_builders::BatchDisassociateResource::items) / [`set_items(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDisassociateResource::set_items): <p>The uniform resource identifiers (URI) of resources that should be disassociated from the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
+    /// - On success, responds with [`BatchDisassociateResourceOutput`](crate::output::BatchDisassociateResourceOutput) with field(s):
+    ///   - [`resource_set_identifier(Option<String>)`](crate::output::BatchDisassociateResourceOutput::resource_set_identifier): <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+    ///   - [`failed_items(Option<Vec<FailedItem>>)`](crate::output::BatchDisassociateResourceOutput::failed_items): <p>The resources that failed to disassociate from the resource set.</p>
+    /// - On failure, responds with [`SdkError<BatchDisassociateResourceError>`](crate::error::BatchDisassociateResourceError)
+    pub fn batch_disassociate_resource(&self) -> fluent_builders::BatchDisassociateResource {
+        fluent_builders::BatchDisassociateResource::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteAppsList`](crate::client::fluent_builders::DeleteAppsList) operation.
     ///
     /// - The fluent builder is configurable:
@@ -151,6 +175,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteProtocolsListError>`](crate::error::DeleteProtocolsListError)
     pub fn delete_protocols_list(&self) -> fluent_builders::DeleteProtocolsList {
         fluent_builders::DeleteProtocolsList::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteResourceSet`](crate::client::fluent_builders::DeleteResourceSet) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteResourceSet::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::DeleteResourceSet::set_identifier): <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+    /// - On success, responds with [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourceSetError>`](crate::error::DeleteResourceSetError)
+    pub fn delete_resource_set(&self) -> fluent_builders::DeleteResourceSet {
+        fluent_builders::DeleteResourceSet::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DisassociateAdminAccount`](crate::client::fluent_builders::DisassociateAdminAccount) operation.
     ///
@@ -260,6 +294,17 @@ impl Client {
     pub fn get_protocols_list(&self) -> fluent_builders::GetProtocolsList {
         fluent_builders::GetProtocolsList::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetResourceSet`](crate::client::fluent_builders::GetResourceSet) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetResourceSet::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetResourceSet::set_identifier): <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+    /// - On success, responds with [`GetResourceSetOutput`](crate::output::GetResourceSetOutput) with field(s):
+    ///   - [`resource_set(Option<ResourceSet>)`](crate::output::GetResourceSetOutput::resource_set): <p>Information about the specified resource set.</p>
+    ///   - [`resource_set_arn(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_arn): <p>The Amazon Resource Name (ARN) of the resource set.</p>
+    /// - On failure, responds with [`SdkError<GetResourceSetError>`](crate::error::GetResourceSetError)
+    pub fn get_resource_set(&self) -> fluent_builders::GetResourceSet {
+        fluent_builders::GetResourceSet::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetThirdPartyFirewallAssociationStatus`](crate::client::fluent_builders::GetThirdPartyFirewallAssociationStatus) operation.
     ///
     /// - The fluent builder is configurable:
@@ -314,6 +359,20 @@ impl Client {
     pub fn list_compliance_status(&self) -> fluent_builders::ListComplianceStatus {
         fluent_builders::ListComplianceStatus::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListDiscoveredResources`](crate::client::fluent_builders::ListDiscoveredResources) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`member_account_ids(Vec<String>)`](crate::client::fluent_builders::ListDiscoveredResources::member_account_ids) / [`set_member_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ListDiscoveredResources::set_member_account_ids): <p>The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization.</p>
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::ListDiscoveredResources::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::ListDiscoveredResources::set_resource_type): <p>The type of resources to discover.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDiscoveredResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDiscoveredResources::set_max_results): <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDiscoveredResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDiscoveredResources::set_next_token): <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// - On success, responds with [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput) with field(s):
+    ///   - [`items(Option<Vec<DiscoveredResource>>)`](crate::output::ListDiscoveredResourcesOutput::items): <p>Details of the resources that were discovered.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDiscoveredResourcesOutput::next_token): <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// - On failure, responds with [`SdkError<ListDiscoveredResourcesError>`](crate::error::ListDiscoveredResourcesError)
+    pub fn list_discovered_resources(&self) -> fluent_builders::ListDiscoveredResources {
+        fluent_builders::ListDiscoveredResources::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListMemberAccounts`](crate::client::fluent_builders::ListMemberAccounts) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMemberAccounts::into_paginator).
     ///
@@ -353,6 +412,31 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListProtocolsListsError>`](crate::error::ListProtocolsListsError)
     pub fn list_protocols_lists(&self) -> fluent_builders::ListProtocolsLists {
         fluent_builders::ListProtocolsLists::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListResourceSetResources`](crate::client::fluent_builders::ListResourceSetResources) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::ListResourceSetResources::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::ListResourceSetResources::set_identifier): <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResourceSetResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListResourceSetResources::set_max_results): <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourceSetResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourceSetResources::set_next_token): <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// - On success, responds with [`ListResourceSetResourcesOutput`](crate::output::ListResourceSetResourcesOutput) with field(s):
+    ///   - [`items(Option<Vec<Resource>>)`](crate::output::ListResourceSetResourcesOutput::items): <p>An array of the associated resources' uniform resource identifiers (URI).</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceSetResourcesOutput::next_token): <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// - On failure, responds with [`SdkError<ListResourceSetResourcesError>`](crate::error::ListResourceSetResourcesError)
+    pub fn list_resource_set_resources(&self) -> fluent_builders::ListResourceSetResources {
+        fluent_builders::ListResourceSetResources::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListResourceSets`](crate::client::fluent_builders::ListResourceSets) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourceSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourceSets::set_next_token): <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResourceSets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListResourceSets::set_max_results): <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// - On success, responds with [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput) with field(s):
+    ///   - [`resource_sets(Option<Vec<ResourceSetSummary>>)`](crate::output::ListResourceSetsOutput::resource_sets): <p>An array of <code>ResourceSetSummary</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceSetsOutput::next_token): <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// - On failure, responds with [`SdkError<ListResourceSetsError>`](crate::error::ListResourceSetsError)
+    pub fn list_resource_sets(&self) -> fluent_builders::ListResourceSets {
+        fluent_builders::ListResourceSets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
@@ -426,6 +510,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<PutProtocolsListError>`](crate::error::PutProtocolsListError)
     pub fn put_protocols_list(&self) -> fluent_builders::PutProtocolsList {
         fluent_builders::PutProtocolsList::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutResourceSet`](crate::client::fluent_builders::PutResourceSet) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_set(ResourceSet)`](crate::client::fluent_builders::PutResourceSet::resource_set) / [`set_resource_set(Option<ResourceSet>)`](crate::client::fluent_builders::PutResourceSet::set_resource_set): <p>Details about the resource set to be created or updated.&gt;</p>
+    ///   - [`tag_list(Vec<Tag>)`](crate::client::fluent_builders::PutResourceSet::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::client::fluent_builders::PutResourceSet::set_tag_list): <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
+    /// - On success, responds with [`PutResourceSetOutput`](crate::output::PutResourceSetOutput) with field(s):
+    ///   - [`resource_set(Option<ResourceSet>)`](crate::output::PutResourceSetOutput::resource_set): <p>Details about the resource set.</p>
+    ///   - [`resource_set_arn(Option<String>)`](crate::output::PutResourceSetOutput::resource_set_arn): <p>The Amazon Resource Name (ARN) of the resource set.</p>
+    /// - On failure, responds with [`SdkError<PutResourceSetError>`](crate::error::PutResourceSetError)
+    pub fn put_resource_set(&self) -> fluent_builders::PutResourceSet {
+        fluent_builders::PutResourceSet::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
@@ -607,6 +703,192 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ThirdPartyFirewall>,
         ) -> Self {
             self.inner = self.inner.set_third_party_firewall(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `BatchAssociateResource`.
+    ///
+    /// <p>Associate resources to a Firewall Manager resource set.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchAssociateResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_associate_resource_input::Builder,
+    }
+    impl BatchAssociateResource {
+        /// Creates a new `BatchAssociateResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::BatchAssociateResource,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::BatchAssociateResourceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchAssociateResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchAssociateResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+        pub fn resource_set_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_identifier(input.into());
+            self
+        }
+        /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+        pub fn set_resource_set_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_set_identifier(input);
+            self
+        }
+        /// Appends an item to `Items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The uniform resource identifiers (URIs) of resources that should be associated to the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
+        pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.items(input.into());
+            self
+        }
+        /// <p>The uniform resource identifiers (URIs) of resources that should be associated to the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_items(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `BatchDisassociateResource`.
+    ///
+    /// <p>Disassociates resources from a Firewall Manager resource set.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchDisassociateResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_disassociate_resource_input::Builder,
+    }
+    impl BatchDisassociateResource {
+        /// Creates a new `BatchDisassociateResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::BatchDisassociateResource,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::BatchDisassociateResourceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchDisassociateResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchDisassociateResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+        pub fn resource_set_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_identifier(input.into());
+            self
+        }
+        /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+        pub fn set_resource_set_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_set_identifier(input);
+            self
+        }
+        /// Appends an item to `Items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The uniform resource identifiers (URI) of resources that should be disassociated from the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
+        pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.items(input.into());
+            self
+        }
+        /// <p>The uniform resource identifiers (URI) of resources that should be disassociated from the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_items(input);
             self
         }
     }
@@ -923,6 +1205,79 @@ pub mod fluent_builders {
         /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
         pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_list_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteResourceSet`.
+    ///
+    /// <p>Deletes the specified <code>ResourceSet</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteResourceSet {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_resource_set_input::Builder,
+    }
+    impl DeleteResourceSet {
+        /// Creates a new `DeleteResourceSet`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteResourceSet,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteResourceSetError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteResourceSetOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteResourceSetError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
+            self
+        }
+        /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_identifier(input);
             self
         }
     }
@@ -1654,6 +2009,79 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetResourceSet`.
+    ///
+    /// <p>Gets information about a specific resource set.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetResourceSet {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_resource_set_input::Builder,
+    }
+    impl GetResourceSet {
+        /// Creates a new `GetResourceSet`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetResourceSet,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetResourceSetError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetResourceSetOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetResourceSetError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
+            self
+        }
+        /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_identifier(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetThirdPartyFirewallAssociationStatus`.
     ///
     /// <p>The onboarding status of a Firewall Manager admin account to third-party firewall vendor tenant.</p>
@@ -2043,6 +2471,119 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListDiscoveredResources`.
+    ///
+    /// <p>Returns an array of resources in the organization's accounts that are available to be associated with a resource set.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListDiscoveredResources {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_discovered_resources_input::Builder,
+    }
+    impl ListDiscoveredResources {
+        /// Creates a new `ListDiscoveredResources`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListDiscoveredResources,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListDiscoveredResourcesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDiscoveredResourcesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListDiscoveredResourcesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `MemberAccountIds`.
+        ///
+        /// To override the contents of this collection use [`set_member_account_ids`](Self::set_member_account_ids).
+        ///
+        /// <p>The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization.</p>
+        pub fn member_account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_account_ids(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization.</p>
+        pub fn set_member_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_member_account_ids(input);
+            self
+        }
+        /// <p>The type of resources to discover.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
+            self
+        }
+        /// <p>The type of resources to discover.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListMemberAccounts`.
     ///
     /// <p>Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's Amazon Web Services organization.</p>
@@ -2318,6 +2859,182 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListResourceSetResources`.
+    ///
+    /// <p>Returns an array of resources that are currently associated to a resource set.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListResourceSetResources {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_resource_set_resources_input::Builder,
+    }
+    impl ListResourceSetResources {
+        /// Creates a new `ListResourceSetResources`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListResourceSetResources,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListResourceSetResourcesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListResourceSetResourcesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListResourceSetResourcesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
+            self
+        }
+        /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_identifier(input);
+            self
+        }
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListResourceSets`.
+    ///
+    /// <p>Returns an array of <code>ResourceSetSummary</code> objects.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListResourceSets {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_resource_sets_input::Builder,
+    }
+    impl ListResourceSets {
+        /// Creates a new `ListResourceSets`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListResourceSets,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListResourceSetsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListResourceSetsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListResourceSetsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2878,6 +3595,100 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tags associated with the resource.</p>
+        pub fn set_tag_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_list(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutResourceSet`.
+    ///
+    /// <p>Creates the resource set.</p>
+    /// <p>An Firewall Manager resource set defines the resources to import into an Firewall Manager policy from another Amazon Web Services service.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutResourceSet {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_resource_set_input::Builder,
+    }
+    impl PutResourceSet {
+        /// Creates a new `PutResourceSet`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PutResourceSet,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutResourceSetError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutResourceSetOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutResourceSetError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Details about the resource set to be created or updated.&gt;</p>
+        pub fn resource_set(mut self, input: crate::model::ResourceSet) -> Self {
+            self.inner = self.inner.resource_set(input);
+            self
+        }
+        /// <p>Details about the resource set to be created or updated.&gt;</p>
+        pub fn set_resource_set(
+            mut self,
+            input: std::option::Option<crate::model::ResourceSet>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_set(input);
+            self
+        }
+        /// Appends an item to `TagList`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
+            self
+        }
+        /// <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,

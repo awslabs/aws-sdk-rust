@@ -169,6 +169,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNamedQuery {
     }
 }
 
+/// Operation shape for `CreateNotebook`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_notebook`](crate::client::Client::create_notebook).
+///
+/// See [`crate::client::fluent_builders::CreateNotebook`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateNotebook {
+    _private: (),
+}
+impl CreateNotebook {
+    /// Creates a new builder-style object to manufacture [`CreateNotebookInput`](crate::input::CreateNotebookInput).
+    pub fn builder() -> crate::input::create_notebook_input::Builder {
+        crate::input::create_notebook_input::Builder::default()
+    }
+    /// Creates a new `CreateNotebook` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateNotebook {
+    type Output =
+        std::result::Result<crate::output::CreateNotebookOutput, crate::error::CreateNotebookError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_notebook_error(response)
+        } else {
+            crate::operation_deser::parse_create_notebook_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreatePreparedStatement`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -199,6 +231,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePreparedStatement 
             crate::operation_deser::parse_create_prepared_statement_error(response)
         } else {
             crate::operation_deser::parse_create_prepared_statement_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreatePresignedNotebookUrl`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_presigned_notebook_url`](crate::client::Client::create_presigned_notebook_url).
+///
+/// See [`crate::client::fluent_builders::CreatePresignedNotebookUrl`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreatePresignedNotebookUrl {
+    _private: (),
+}
+impl CreatePresignedNotebookUrl {
+    /// Creates a new builder-style object to manufacture [`CreatePresignedNotebookUrlInput`](crate::input::CreatePresignedNotebookUrlInput).
+    pub fn builder() -> crate::input::create_presigned_notebook_url_input::Builder {
+        crate::input::create_presigned_notebook_url_input::Builder::default()
+    }
+    /// Creates a new `CreatePresignedNotebookUrl` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreatePresignedNotebookUrl {
+    type Output = std::result::Result<
+        crate::output::CreatePresignedNotebookUrlOutput,
+        crate::error::CreatePresignedNotebookUrlError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_presigned_notebook_url_error(response)
+        } else {
+            crate::operation_deser::parse_create_presigned_notebook_url_response(response)
         }
     }
 }
@@ -305,6 +371,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNamedQuery {
     }
 }
 
+/// Operation shape for `DeleteNotebook`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_notebook`](crate::client::Client::delete_notebook).
+///
+/// See [`crate::client::fluent_builders::DeleteNotebook`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteNotebook {
+    _private: (),
+}
+impl DeleteNotebook {
+    /// Creates a new builder-style object to manufacture [`DeleteNotebookInput`](crate::input::DeleteNotebookInput).
+    pub fn builder() -> crate::input::delete_notebook_input::Builder {
+        crate::input::delete_notebook_input::Builder::default()
+    }
+    /// Creates a new `DeleteNotebook` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteNotebook {
+    type Output =
+        std::result::Result<crate::output::DeleteNotebookOutput, crate::error::DeleteNotebookError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_notebook_error(response)
+        } else {
+            crate::operation_deser::parse_delete_notebook_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeletePreparedStatement`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -369,6 +467,140 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkGroup {
             crate::operation_deser::parse_delete_work_group_error(response)
         } else {
             crate::operation_deser::parse_delete_work_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ExportNotebook`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`export_notebook`](crate::client::Client::export_notebook).
+///
+/// See [`crate::client::fluent_builders::ExportNotebook`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ExportNotebook {
+    _private: (),
+}
+impl ExportNotebook {
+    /// Creates a new builder-style object to manufacture [`ExportNotebookInput`](crate::input::ExportNotebookInput).
+    pub fn builder() -> crate::input::export_notebook_input::Builder {
+        crate::input::export_notebook_input::Builder::default()
+    }
+    /// Creates a new `ExportNotebook` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ExportNotebook {
+    type Output =
+        std::result::Result<crate::output::ExportNotebookOutput, crate::error::ExportNotebookError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_export_notebook_error(response)
+        } else {
+            crate::operation_deser::parse_export_notebook_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetCalculationExecution`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_calculation_execution`](crate::client::Client::get_calculation_execution).
+///
+/// See [`crate::client::fluent_builders::GetCalculationExecution`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetCalculationExecution {
+    _private: (),
+}
+impl GetCalculationExecution {
+    /// Creates a new builder-style object to manufacture [`GetCalculationExecutionInput`](crate::input::GetCalculationExecutionInput).
+    pub fn builder() -> crate::input::get_calculation_execution_input::Builder {
+        crate::input::get_calculation_execution_input::Builder::default()
+    }
+    /// Creates a new `GetCalculationExecution` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetCalculationExecution {
+    type Output = std::result::Result<
+        crate::output::GetCalculationExecutionOutput,
+        crate::error::GetCalculationExecutionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_calculation_execution_error(response)
+        } else {
+            crate::operation_deser::parse_get_calculation_execution_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetCalculationExecutionCode`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_calculation_execution_code`](crate::client::Client::get_calculation_execution_code).
+///
+/// See [`crate::client::fluent_builders::GetCalculationExecutionCode`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetCalculationExecutionCode {
+    _private: (),
+}
+impl GetCalculationExecutionCode {
+    /// Creates a new builder-style object to manufacture [`GetCalculationExecutionCodeInput`](crate::input::GetCalculationExecutionCodeInput).
+    pub fn builder() -> crate::input::get_calculation_execution_code_input::Builder {
+        crate::input::get_calculation_execution_code_input::Builder::default()
+    }
+    /// Creates a new `GetCalculationExecutionCode` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetCalculationExecutionCode {
+    type Output = std::result::Result<
+        crate::output::GetCalculationExecutionCodeOutput,
+        crate::error::GetCalculationExecutionCodeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_calculation_execution_code_error(response)
+        } else {
+            crate::operation_deser::parse_get_calculation_execution_code_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetCalculationExecutionStatus`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_calculation_execution_status`](crate::client::Client::get_calculation_execution_status).
+///
+/// See [`crate::client::fluent_builders::GetCalculationExecutionStatus`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetCalculationExecutionStatus {
+    _private: (),
+}
+impl GetCalculationExecutionStatus {
+    /// Creates a new builder-style object to manufacture [`GetCalculationExecutionStatusInput`](crate::input::GetCalculationExecutionStatusInput).
+    pub fn builder() -> crate::input::get_calculation_execution_status_input::Builder {
+        crate::input::get_calculation_execution_status_input::Builder::default()
+    }
+    /// Creates a new `GetCalculationExecutionStatus` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetCalculationExecutionStatus {
+    type Output = std::result::Result<
+        crate::output::GetCalculationExecutionStatusOutput,
+        crate::error::GetCalculationExecutionStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_calculation_execution_status_error(response)
+        } else {
+            crate::operation_deser::parse_get_calculation_execution_status_response(response)
         }
     }
 }
@@ -465,6 +697,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNamedQuery {
             crate::operation_deser::parse_get_named_query_error(response)
         } else {
             crate::operation_deser::parse_get_named_query_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetNotebookMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_notebook_metadata`](crate::client::Client::get_notebook_metadata).
+///
+/// See [`crate::client::fluent_builders::GetNotebookMetadata`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetNotebookMetadata {
+    _private: (),
+}
+impl GetNotebookMetadata {
+    /// Creates a new builder-style object to manufacture [`GetNotebookMetadataInput`](crate::input::GetNotebookMetadataInput).
+    pub fn builder() -> crate::input::get_notebook_metadata_input::Builder {
+        crate::input::get_notebook_metadata_input::Builder::default()
+    }
+    /// Creates a new `GetNotebookMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetNotebookMetadata {
+    type Output = std::result::Result<
+        crate::output::GetNotebookMetadataOutput,
+        crate::error::GetNotebookMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_notebook_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_get_notebook_metadata_response(response)
         }
     }
 }
@@ -605,6 +871,72 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueryRuntimeStatistic
     }
 }
 
+/// Operation shape for `GetSession`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_session`](crate::client::Client::get_session).
+///
+/// See [`crate::client::fluent_builders::GetSession`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetSession {
+    _private: (),
+}
+impl GetSession {
+    /// Creates a new builder-style object to manufacture [`GetSessionInput`](crate::input::GetSessionInput).
+    pub fn builder() -> crate::input::get_session_input::Builder {
+        crate::input::get_session_input::Builder::default()
+    }
+    /// Creates a new `GetSession` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetSession {
+    type Output =
+        std::result::Result<crate::output::GetSessionOutput, crate::error::GetSessionError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_session_error(response)
+        } else {
+            crate::operation_deser::parse_get_session_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetSessionStatus`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_session_status`](crate::client::Client::get_session_status).
+///
+/// See [`crate::client::fluent_builders::GetSessionStatus`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetSessionStatus {
+    _private: (),
+}
+impl GetSessionStatus {
+    /// Creates a new builder-style object to manufacture [`GetSessionStatusInput`](crate::input::GetSessionStatusInput).
+    pub fn builder() -> crate::input::get_session_status_input::Builder {
+        crate::input::get_session_status_input::Builder::default()
+    }
+    /// Creates a new `GetSessionStatus` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetSessionStatus {
+    type Output = std::result::Result<
+        crate::output::GetSessionStatusOutput,
+        crate::error::GetSessionStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_session_status_error(response)
+        } else {
+            crate::operation_deser::parse_get_session_status_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetTableMetadata`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -667,6 +999,106 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkGroup {
             crate::operation_deser::parse_get_work_group_error(response)
         } else {
             crate::operation_deser::parse_get_work_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ImportNotebook`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`import_notebook`](crate::client::Client::import_notebook).
+///
+/// See [`crate::client::fluent_builders::ImportNotebook`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ImportNotebook {
+    _private: (),
+}
+impl ImportNotebook {
+    /// Creates a new builder-style object to manufacture [`ImportNotebookInput`](crate::input::ImportNotebookInput).
+    pub fn builder() -> crate::input::import_notebook_input::Builder {
+        crate::input::import_notebook_input::Builder::default()
+    }
+    /// Creates a new `ImportNotebook` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ImportNotebook {
+    type Output =
+        std::result::Result<crate::output::ImportNotebookOutput, crate::error::ImportNotebookError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_import_notebook_error(response)
+        } else {
+            crate::operation_deser::parse_import_notebook_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListApplicationDPUSizes`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_application_dpu_sizes`](crate::client::Client::list_application_dpu_sizes).
+///
+/// See [`crate::client::fluent_builders::ListApplicationDPUSizes`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListApplicationDPUSizes {
+    _private: (),
+}
+impl ListApplicationDPUSizes {
+    /// Creates a new builder-style object to manufacture [`ListApplicationDpuSizesInput`](crate::input::ListApplicationDpuSizesInput).
+    pub fn builder() -> crate::input::list_application_dpu_sizes_input::Builder {
+        crate::input::list_application_dpu_sizes_input::Builder::default()
+    }
+    /// Creates a new `ListApplicationDPUSizes` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListApplicationDPUSizes {
+    type Output = std::result::Result<
+        crate::output::ListApplicationDpuSizesOutput,
+        crate::error::ListApplicationDPUSizesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_application_dpu_sizes_error(response)
+        } else {
+            crate::operation_deser::parse_list_application_dpu_sizes_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListCalculationExecutions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_calculation_executions`](crate::client::Client::list_calculation_executions).
+///
+/// See [`crate::client::fluent_builders::ListCalculationExecutions`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListCalculationExecutions {
+    _private: (),
+}
+impl ListCalculationExecutions {
+    /// Creates a new builder-style object to manufacture [`ListCalculationExecutionsInput`](crate::input::ListCalculationExecutionsInput).
+    pub fn builder() -> crate::input::list_calculation_executions_input::Builder {
+        crate::input::list_calculation_executions_input::Builder::default()
+    }
+    /// Creates a new `ListCalculationExecutions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListCalculationExecutions {
+    type Output = std::result::Result<
+        crate::output::ListCalculationExecutionsOutput,
+        crate::error::ListCalculationExecutionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_calculation_executions_error(response)
+        } else {
+            crate::operation_deser::parse_list_calculation_executions_response(response)
         }
     }
 }
@@ -771,6 +1203,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEngineVersions {
     }
 }
 
+/// Operation shape for `ListExecutors`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_executors`](crate::client::Client::list_executors).
+///
+/// See [`crate::client::fluent_builders::ListExecutors`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListExecutors {
+    _private: (),
+}
+impl ListExecutors {
+    /// Creates a new builder-style object to manufacture [`ListExecutorsInput`](crate::input::ListExecutorsInput).
+    pub fn builder() -> crate::input::list_executors_input::Builder {
+        crate::input::list_executors_input::Builder::default()
+    }
+    /// Creates a new `ListExecutors` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListExecutors {
+    type Output =
+        std::result::Result<crate::output::ListExecutorsOutput, crate::error::ListExecutorsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_executors_error(response)
+        } else {
+            crate::operation_deser::parse_list_executors_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListNamedQueries`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -801,6 +1265,74 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNamedQueries {
             crate::operation_deser::parse_list_named_queries_error(response)
         } else {
             crate::operation_deser::parse_list_named_queries_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListNotebookMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_notebook_metadata`](crate::client::Client::list_notebook_metadata).
+///
+/// See [`crate::client::fluent_builders::ListNotebookMetadata`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListNotebookMetadata {
+    _private: (),
+}
+impl ListNotebookMetadata {
+    /// Creates a new builder-style object to manufacture [`ListNotebookMetadataInput`](crate::input::ListNotebookMetadataInput).
+    pub fn builder() -> crate::input::list_notebook_metadata_input::Builder {
+        crate::input::list_notebook_metadata_input::Builder::default()
+    }
+    /// Creates a new `ListNotebookMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListNotebookMetadata {
+    type Output = std::result::Result<
+        crate::output::ListNotebookMetadataOutput,
+        crate::error::ListNotebookMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_notebook_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_list_notebook_metadata_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListNotebookSessions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_notebook_sessions`](crate::client::Client::list_notebook_sessions).
+///
+/// See [`crate::client::fluent_builders::ListNotebookSessions`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListNotebookSessions {
+    _private: (),
+}
+impl ListNotebookSessions {
+    /// Creates a new builder-style object to manufacture [`ListNotebookSessionsInput`](crate::input::ListNotebookSessionsInput).
+    pub fn builder() -> crate::input::list_notebook_sessions_input::Builder {
+        crate::input::list_notebook_sessions_input::Builder::default()
+    }
+    /// Creates a new `ListNotebookSessions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListNotebookSessions {
+    type Output = std::result::Result<
+        crate::output::ListNotebookSessionsOutput,
+        crate::error::ListNotebookSessionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_notebook_sessions_error(response)
+        } else {
+            crate::operation_deser::parse_list_notebook_sessions_response(response)
         }
     }
 }
@@ -869,6 +1401,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueryExecutions {
             crate::operation_deser::parse_list_query_executions_error(response)
         } else {
             crate::operation_deser::parse_list_query_executions_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListSessions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_sessions`](crate::client::Client::list_sessions).
+///
+/// See [`crate::client::fluent_builders::ListSessions`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListSessions {
+    _private: (),
+}
+impl ListSessions {
+    /// Creates a new builder-style object to manufacture [`ListSessionsInput`](crate::input::ListSessionsInput).
+    pub fn builder() -> crate::input::list_sessions_input::Builder {
+        crate::input::list_sessions_input::Builder::default()
+    }
+    /// Creates a new `ListSessions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSessions {
+    type Output =
+        std::result::Result<crate::output::ListSessionsOutput, crate::error::ListSessionsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_sessions_error(response)
+        } else {
+            crate::operation_deser::parse_list_sessions_response(response)
         }
     }
 }
@@ -973,6 +1537,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkGroups {
     }
 }
 
+/// Operation shape for `StartCalculationExecution`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_calculation_execution`](crate::client::Client::start_calculation_execution).
+///
+/// See [`crate::client::fluent_builders::StartCalculationExecution`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct StartCalculationExecution {
+    _private: (),
+}
+impl StartCalculationExecution {
+    /// Creates a new builder-style object to manufacture [`StartCalculationExecutionInput`](crate::input::StartCalculationExecutionInput).
+    pub fn builder() -> crate::input::start_calculation_execution_input::Builder {
+        crate::input::start_calculation_execution_input::Builder::default()
+    }
+    /// Creates a new `StartCalculationExecution` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartCalculationExecution {
+    type Output = std::result::Result<
+        crate::output::StartCalculationExecutionOutput,
+        crate::error::StartCalculationExecutionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_calculation_execution_error(response)
+        } else {
+            crate::operation_deser::parse_start_calculation_execution_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StartQueryExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1003,6 +1601,72 @@ impl aws_smithy_http::response::ParseStrictResponse for StartQueryExecution {
             crate::operation_deser::parse_start_query_execution_error(response)
         } else {
             crate::operation_deser::parse_start_query_execution_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartSession`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_session`](crate::client::Client::start_session).
+///
+/// See [`crate::client::fluent_builders::StartSession`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct StartSession {
+    _private: (),
+}
+impl StartSession {
+    /// Creates a new builder-style object to manufacture [`StartSessionInput`](crate::input::StartSessionInput).
+    pub fn builder() -> crate::input::start_session_input::Builder {
+        crate::input::start_session_input::Builder::default()
+    }
+    /// Creates a new `StartSession` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartSession {
+    type Output =
+        std::result::Result<crate::output::StartSessionOutput, crate::error::StartSessionError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_session_error(response)
+        } else {
+            crate::operation_deser::parse_start_session_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StopCalculationExecution`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`stop_calculation_execution`](crate::client::Client::stop_calculation_execution).
+///
+/// See [`crate::client::fluent_builders::StopCalculationExecution`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct StopCalculationExecution {
+    _private: (),
+}
+impl StopCalculationExecution {
+    /// Creates a new builder-style object to manufacture [`StopCalculationExecutionInput`](crate::input::StopCalculationExecutionInput).
+    pub fn builder() -> crate::input::stop_calculation_execution_input::Builder {
+        crate::input::stop_calculation_execution_input::Builder::default()
+    }
+    /// Creates a new `StopCalculationExecution` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StopCalculationExecution {
+    type Output = std::result::Result<
+        crate::output::StopCalculationExecutionOutput,
+        crate::error::StopCalculationExecutionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_calculation_execution_error(response)
+        } else {
+            crate::operation_deser::parse_stop_calculation_execution_response(response)
         }
     }
 }
@@ -1069,6 +1733,40 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             crate::operation_deser::parse_tag_resource_error(response)
         } else {
             crate::operation_deser::parse_tag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `TerminateSession`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`terminate_session`](crate::client::Client::terminate_session).
+///
+/// See [`crate::client::fluent_builders::TerminateSession`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct TerminateSession {
+    _private: (),
+}
+impl TerminateSession {
+    /// Creates a new builder-style object to manufacture [`TerminateSessionInput`](crate::input::TerminateSessionInput).
+    pub fn builder() -> crate::input::terminate_session_input::Builder {
+        crate::input::terminate_session_input::Builder::default()
+    }
+    /// Creates a new `TerminateSession` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for TerminateSession {
+    type Output = std::result::Result<
+        crate::output::TerminateSessionOutput,
+        crate::error::TerminateSessionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_terminate_session_error(response)
+        } else {
+            crate::operation_deser::parse_terminate_session_response(response)
         }
     }
 }
@@ -1169,6 +1867,72 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNamedQuery {
             crate::operation_deser::parse_update_named_query_error(response)
         } else {
             crate::operation_deser::parse_update_named_query_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateNotebook`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_notebook`](crate::client::Client::update_notebook).
+///
+/// See [`crate::client::fluent_builders::UpdateNotebook`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateNotebook {
+    _private: (),
+}
+impl UpdateNotebook {
+    /// Creates a new builder-style object to manufacture [`UpdateNotebookInput`](crate::input::UpdateNotebookInput).
+    pub fn builder() -> crate::input::update_notebook_input::Builder {
+        crate::input::update_notebook_input::Builder::default()
+    }
+    /// Creates a new `UpdateNotebook` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateNotebook {
+    type Output =
+        std::result::Result<crate::output::UpdateNotebookOutput, crate::error::UpdateNotebookError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_notebook_error(response)
+        } else {
+            crate::operation_deser::parse_update_notebook_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateNotebookMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_notebook_metadata`](crate::client::Client::update_notebook_metadata).
+///
+/// See [`crate::client::fluent_builders::UpdateNotebookMetadata`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateNotebookMetadata {
+    _private: (),
+}
+impl UpdateNotebookMetadata {
+    /// Creates a new builder-style object to manufacture [`UpdateNotebookMetadataInput`](crate::input::UpdateNotebookMetadataInput).
+    pub fn builder() -> crate::input::update_notebook_metadata_input::Builder {
+        crate::input::update_notebook_metadata_input::Builder::default()
+    }
+    /// Creates a new `UpdateNotebookMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateNotebookMetadata {
+    type Output = std::result::Result<
+        crate::output::UpdateNotebookMetadataOutput,
+        crate::error::UpdateNotebookMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_notebook_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_update_notebook_metadata_response(response)
         }
     }
 }

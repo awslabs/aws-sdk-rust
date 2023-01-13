@@ -479,7 +479,7 @@ pub(crate) fn deser_header_remove_application_instance_internal_server_exception
     }
 }
 
-pub(crate) fn deser_header_tag_resource_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_signal_application_instance_node_instances_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -495,7 +495,7 @@ pub(crate) fn deser_header_tag_resource_internal_server_exception_retry_after_se
     }
 }
 
-pub(crate) fn deser_header_untag_resource_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_tag_resource_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -511,7 +511,7 @@ pub(crate) fn deser_header_untag_resource_internal_server_exception_retry_after_
     }
 }
 
-pub(crate) fn deser_header_update_device_metadata_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_untag_resource_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -524,5 +524,21 @@ pub(crate) fn deser_header_update_device_metadata_internal_server_exception_retr
     } else {
         let mut var_33 = var_33;
         Ok(var_33.pop())
+    }
+}
+
+pub(crate) fn deser_header_update_device_metadata_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_34 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_34.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_34.len()
+        )))
+    } else {
+        let mut var_34 = var_34;
+        Ok(var_34.pop())
     }
 }

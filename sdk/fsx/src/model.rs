@@ -43,7 +43,7 @@ pub struct Volume {
     /// <p>The reason why the volume lifecycle status changed.</p>
     #[doc(hidden)]
     pub lifecycle_transition_reason: std::option::Option<crate::model::LifecycleTransitionReason>,
-    /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system that you initiated.</p>
+    /// <p>A list of administrative actions for the volume that are in process or waiting to be processed. Administrative actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.</p>
     #[doc(hidden)]
     pub administrative_actions:
         std::option::Option<std::vec::Vec<crate::model::AdministrativeAction>>,
@@ -105,7 +105,7 @@ impl Volume {
     ) -> std::option::Option<&crate::model::LifecycleTransitionReason> {
         self.lifecycle_transition_reason.as_ref()
     }
-    /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system that you initiated.</p>
+    /// <p>A list of administrative actions for the volume that are in process or waiting to be processed. Administrative actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.</p>
     pub fn administrative_actions(
         &self,
     ) -> std::option::Option<&[crate::model::AdministrativeAction]> {
@@ -296,14 +296,14 @@ pub mod volume {
         ///
         /// To override the contents of this collection use [`set_administrative_actions`](Self::set_administrative_actions).
         ///
-        /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system that you initiated.</p>
+        /// <p>A list of administrative actions for the volume that are in process or waiting to be processed. Administrative actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.</p>
         pub fn administrative_actions(mut self, input: crate::model::AdministrativeAction) -> Self {
             let mut v = self.administrative_actions.unwrap_or_default();
             v.push(input);
             self.administrative_actions = Some(v);
             self
         }
-        /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system that you initiated.</p>
+        /// <p>A list of administrative actions for the volume that are in process or waiting to be processed. Administrative actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.</p>
         pub fn set_administrative_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdministrativeAction>>,
@@ -396,6 +396,15 @@ pub struct OpenZfsVolumeConfiguration {
     #[doc(hidden)]
     pub user_and_group_quotas:
         std::option::Option<std::vec::Vec<crate::model::OpenZfsUserOrGroupQuota>>,
+    /// <p>Specifies the ID of the snapshot to which the volume was restored.</p>
+    #[doc(hidden)]
+    pub restore_to_snapshot: std::option::Option<std::string::String>,
+    /// <p>A Boolean value indicating whether snapshots between the current state and the specified snapshot should be deleted when a volume is restored from snapshot.</p>
+    #[doc(hidden)]
+    pub delete_intermediate_snaphots: std::option::Option<bool>,
+    /// <p>A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted when a volume is restored from snapshot.</p>
+    #[doc(hidden)]
+    pub delete_cloned_volumes: std::option::Option<bool>,
 }
 impl OpenZfsVolumeConfiguration {
     /// <p>The ID of the parent volume.</p>
@@ -453,6 +462,18 @@ impl OpenZfsVolumeConfiguration {
     ) -> std::option::Option<&[crate::model::OpenZfsUserOrGroupQuota]> {
         self.user_and_group_quotas.as_deref()
     }
+    /// <p>Specifies the ID of the snapshot to which the volume was restored.</p>
+    pub fn restore_to_snapshot(&self) -> std::option::Option<&str> {
+        self.restore_to_snapshot.as_deref()
+    }
+    /// <p>A Boolean value indicating whether snapshots between the current state and the specified snapshot should be deleted when a volume is restored from snapshot.</p>
+    pub fn delete_intermediate_snaphots(&self) -> std::option::Option<bool> {
+        self.delete_intermediate_snaphots
+    }
+    /// <p>A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted when a volume is restored from snapshot.</p>
+    pub fn delete_cloned_volumes(&self) -> std::option::Option<bool> {
+        self.delete_cloned_volumes
+    }
 }
 /// See [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration).
 pub mod open_zfs_volume_configuration {
@@ -474,6 +495,9 @@ pub mod open_zfs_volume_configuration {
         pub(crate) nfs_exports: std::option::Option<std::vec::Vec<crate::model::OpenZfsNfsExport>>,
         pub(crate) user_and_group_quotas:
             std::option::Option<std::vec::Vec<crate::model::OpenZfsUserOrGroupQuota>>,
+        pub(crate) restore_to_snapshot: std::option::Option<std::string::String>,
+        pub(crate) delete_intermediate_snaphots: std::option::Option<bool>,
+        pub(crate) delete_cloned_volumes: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The ID of the parent volume.</p>
@@ -635,6 +659,42 @@ pub mod open_zfs_volume_configuration {
             self.user_and_group_quotas = input;
             self
         }
+        /// <p>Specifies the ID of the snapshot to which the volume was restored.</p>
+        pub fn restore_to_snapshot(mut self, input: impl Into<std::string::String>) -> Self {
+            self.restore_to_snapshot = Some(input.into());
+            self
+        }
+        /// <p>Specifies the ID of the snapshot to which the volume was restored.</p>
+        pub fn set_restore_to_snapshot(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.restore_to_snapshot = input;
+            self
+        }
+        /// <p>A Boolean value indicating whether snapshots between the current state and the specified snapshot should be deleted when a volume is restored from snapshot.</p>
+        pub fn delete_intermediate_snaphots(mut self, input: bool) -> Self {
+            self.delete_intermediate_snaphots = Some(input);
+            self
+        }
+        /// <p>A Boolean value indicating whether snapshots between the current state and the specified snapshot should be deleted when a volume is restored from snapshot.</p>
+        pub fn set_delete_intermediate_snaphots(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.delete_intermediate_snaphots = input;
+            self
+        }
+        /// <p>A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted when a volume is restored from snapshot.</p>
+        pub fn delete_cloned_volumes(mut self, input: bool) -> Self {
+            self.delete_cloned_volumes = Some(input);
+            self
+        }
+        /// <p>A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted when a volume is restored from snapshot.</p>
+        pub fn set_delete_cloned_volumes(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_cloned_volumes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration).
         pub fn build(self) -> crate::model::OpenZfsVolumeConfiguration {
             crate::model::OpenZfsVolumeConfiguration {
@@ -649,6 +709,9 @@ pub mod open_zfs_volume_configuration {
                 read_only: self.read_only,
                 nfs_exports: self.nfs_exports,
                 user_and_group_quotas: self.user_and_group_quotas,
+                restore_to_snapshot: self.restore_to_snapshot,
+                delete_intermediate_snaphots: self.delete_intermediate_snaphots,
+                delete_cloned_volumes: self.delete_cloned_volumes,
             }
         }
     }
@@ -1285,8 +1348,9 @@ pub struct AdministrativeAction {
     /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li>
     /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li>
     /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li>
+    /// <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li>
     /// <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li>
-    /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system. </p> </li>
+    /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub administrative_action_type: std::option::Option<crate::model::AdministrativeActionType>,
@@ -1331,8 +1395,9 @@ impl AdministrativeAction {
     /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li>
     /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li>
     /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li>
+    /// <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li>
     /// <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li>
-    /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system. </p> </li>
+    /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li>
     /// </ul>
     pub fn administrative_action_type(
         &self,
@@ -1406,8 +1471,9 @@ pub mod administrative_action {
         /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li>
         /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li>
         /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li>
+        /// <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li>
         /// <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li>
-        /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system. </p> </li>
+        /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li>
         /// </ul>
         pub fn administrative_action_type(
             mut self,
@@ -1427,8 +1493,9 @@ pub mod administrative_action {
         /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li>
         /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li>
         /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li>
+        /// <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li>
         /// <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li>
-        /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system. </p> </li>
+        /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li>
         /// </ul>
         pub fn set_administrative_action_type(
             mut self,
@@ -2696,10 +2763,10 @@ pub struct OpenZfsFileSystemConfiguration {
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     #[doc(hidden)]
     pub daily_automatic_backup_start_time: std::option::Option<std::string::String>,
-    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy. </p>
+    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
     #[doc(hidden)]
     pub deployment_type: std::option::Option<crate::model::OpenZfsDeploymentType>,
-    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).</p>
     #[doc(hidden)]
     pub throughput_capacity: std::option::Option<i32>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
@@ -2732,11 +2799,11 @@ impl OpenZfsFileSystemConfiguration {
     pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
-    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy. </p>
+    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::OpenZfsDeploymentType> {
         self.deployment_type.as_ref()
     }
-    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).</p>
     pub fn throughput_capacity(&self) -> std::option::Option<i32> {
         self.throughput_capacity
     }
@@ -2825,12 +2892,12 @@ pub mod open_zfs_file_system_configuration {
             self.daily_automatic_backup_start_time = input;
             self
         }
-        /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy. </p>
+        /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
         pub fn deployment_type(mut self, input: crate::model::OpenZfsDeploymentType) -> Self {
             self.deployment_type = Some(input);
             self
         }
-        /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy. </p>
+        /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::OpenZfsDeploymentType>,
@@ -2838,12 +2905,12 @@ pub mod open_zfs_file_system_configuration {
             self.deployment_type = input;
             self
         }
-        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).</p>
         pub fn throughput_capacity(mut self, input: i32) -> Self {
             self.throughput_capacity = Some(input);
             self
         }
-        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).</p>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
             self
@@ -3097,6 +3164,7 @@ impl AsRef<str> for DiskIopsConfigurationMode {
 /// # let openzfsdeploymenttype = unimplemented!();
 /// match openzfsdeploymenttype {
 ///     OpenZfsDeploymentType::SingleAz1 => { /* ... */ },
+///     OpenZfsDeploymentType::SingleAz2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -3132,6 +3200,8 @@ impl AsRef<str> for DiskIopsConfigurationMode {
 pub enum OpenZfsDeploymentType {
     #[allow(missing_docs)] // documentation missing in model
     SingleAz1,
+    #[allow(missing_docs)] // documentation missing in model
+    SingleAz2,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -3139,6 +3209,7 @@ impl std::convert::From<&str> for OpenZfsDeploymentType {
     fn from(s: &str) -> Self {
         match s {
             "SINGLE_AZ_1" => OpenZfsDeploymentType::SingleAz1,
+            "SINGLE_AZ_2" => OpenZfsDeploymentType::SingleAz2,
             other => {
                 OpenZfsDeploymentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
             }
@@ -3157,12 +3228,13 @@ impl OpenZfsDeploymentType {
     pub fn as_str(&self) -> &str {
         match self {
             OpenZfsDeploymentType::SingleAz1 => "SINGLE_AZ_1",
+            OpenZfsDeploymentType::SingleAz2 => "SINGLE_AZ_2",
             OpenZfsDeploymentType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SINGLE_AZ_1"]
+        &["SINGLE_AZ_1", "SINGLE_AZ_2"]
     }
 }
 impl AsRef<str> for OpenZfsDeploymentType {
@@ -4718,7 +4790,7 @@ pub struct DataRepositoryConfiguration {
     /// </ul>
     #[doc(hidden)]
     pub auto_import_policy: std::option::Option<crate::model::AutoImportPolicyType>,
-    /// <p>Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
+    /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
     #[doc(hidden)]
     pub failure_details: std::option::Option<crate::model::DataRepositoryFailureDetails>,
 }
@@ -4757,7 +4829,7 @@ impl DataRepositoryConfiguration {
     pub fn auto_import_policy(&self) -> std::option::Option<&crate::model::AutoImportPolicyType> {
         self.auto_import_policy.as_ref()
     }
-    /// <p>Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
+    /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
     pub fn failure_details(
         &self,
     ) -> std::option::Option<&crate::model::DataRepositoryFailureDetails> {
@@ -4862,7 +4934,7 @@ pub mod data_repository_configuration {
             self.auto_import_policy = input;
             self
         }
-        /// <p>Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
+        /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
         pub fn failure_details(
             mut self,
             input: crate::model::DataRepositoryFailureDetails,
@@ -4870,7 +4942,7 @@ pub mod data_repository_configuration {
             self.failure_details = Some(input);
             self
         }
-        /// <p>Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
+        /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
         pub fn set_failure_details(
             mut self,
             input: std::option::Option<crate::model::DataRepositoryFailureDetails>,
@@ -4898,7 +4970,7 @@ impl DataRepositoryConfiguration {
     }
 }
 
-/// <p>Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
+/// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRepositoryFailureDetails {
@@ -6914,6 +6986,7 @@ impl AsRef<str> for Status {
 ///     AdministrativeActionType::ReleaseNfsV3Locks => { /* ... */ },
 ///     AdministrativeActionType::SnapshotUpdate => { /* ... */ },
 ///     AdministrativeActionType::StorageOptimization => { /* ... */ },
+///     AdministrativeActionType::VolumeRestore => { /* ... */ },
 ///     AdministrativeActionType::VolumeUpdate => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -6992,6 +7065,13 @@ impl AsRef<str> for Status {
 /// </li>
 /// <li>
 /// <p>
+/// <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume
+/// is returned to the state saved by the specified snapshot, initiated from an
+/// API (<code>RestoreVolumeFromSnapshot</code>) or CLI
+/// (<code>restore-volume-from-snapshot</code>).</p>
+/// </li>
+/// <li>
+/// <p>
 /// <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for
 /// OpenZFS volume initiated from the Amazon FSx console, API
 /// (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p>
@@ -6999,7 +7079,7 @@ impl AsRef<str> for Status {
 /// <li>
 /// <p>
 /// <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System
-/// (NFS) V3 locks on an Amazon FSx for OpenZFS file system. </p>
+/// (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p>
 /// </li>
 /// </ul>
 #[non_exhaustive]
@@ -7026,6 +7106,8 @@ pub enum AdministrativeActionType {
     #[allow(missing_docs)] // documentation missing in model
     StorageOptimization,
     #[allow(missing_docs)] // documentation missing in model
+    VolumeRestore,
+    #[allow(missing_docs)] // documentation missing in model
     VolumeUpdate,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
@@ -7041,6 +7123,7 @@ impl std::convert::From<&str> for AdministrativeActionType {
             "RELEASE_NFS_V3_LOCKS" => AdministrativeActionType::ReleaseNfsV3Locks,
             "SNAPSHOT_UPDATE" => AdministrativeActionType::SnapshotUpdate,
             "STORAGE_OPTIMIZATION" => AdministrativeActionType::StorageOptimization,
+            "VOLUME_RESTORE" => AdministrativeActionType::VolumeRestore,
             "VOLUME_UPDATE" => AdministrativeActionType::VolumeUpdate,
             other => AdministrativeActionType::Unknown(crate::types::UnknownVariantValue(
                 other.to_owned(),
@@ -7067,6 +7150,7 @@ impl AdministrativeActionType {
             AdministrativeActionType::ReleaseNfsV3Locks => "RELEASE_NFS_V3_LOCKS",
             AdministrativeActionType::SnapshotUpdate => "SNAPSHOT_UPDATE",
             AdministrativeActionType::StorageOptimization => "STORAGE_OPTIMIZATION",
+            AdministrativeActionType::VolumeRestore => "VOLUME_RESTORE",
             AdministrativeActionType::VolumeUpdate => "VOLUME_UPDATE",
             AdministrativeActionType::Unknown(value) => value.as_str(),
         }
@@ -7080,6 +7164,7 @@ impl AdministrativeActionType {
             "RELEASE_NFS_V3_LOCKS",
             "SNAPSHOT_UPDATE",
             "STORAGE_OPTIMIZATION",
+            "VOLUME_RESTORE",
             "VOLUME_UPDATE",
         ]
     }
@@ -7225,6 +7310,19 @@ pub struct OntapVolumeConfiguration {
     /// </ul>
     #[doc(hidden)]
     pub ontap_volume_type: std::option::Option<crate::model::OntapVolumeType>,
+    /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// </ul>
+    /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    #[doc(hidden)]
+    pub snapshot_policy: std::option::Option<std::string::String>,
+    /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
+    #[doc(hidden)]
+    pub copy_tags_to_backups: std::option::Option<bool>,
 }
 impl OntapVolumeConfiguration {
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
@@ -7280,6 +7378,21 @@ impl OntapVolumeConfiguration {
     pub fn ontap_volume_type(&self) -> std::option::Option<&crate::model::OntapVolumeType> {
         self.ontap_volume_type.as_ref()
     }
+    /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// </ul>
+    /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    pub fn snapshot_policy(&self) -> std::option::Option<&str> {
+        self.snapshot_policy.as_deref()
+    }
+    /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
+    pub fn copy_tags_to_backups(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_backups
+    }
 }
 /// See [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration).
 pub mod ontap_volume_configuration {
@@ -7298,6 +7411,8 @@ pub mod ontap_volume_configuration {
         pub(crate) tiering_policy: std::option::Option<crate::model::TieringPolicy>,
         pub(crate) uuid: std::option::Option<std::string::String>,
         pub(crate) ontap_volume_type: std::option::Option<crate::model::OntapVolumeType>,
+        pub(crate) snapshot_policy: std::option::Option<std::string::String>,
+        pub(crate) copy_tags_to_backups: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
@@ -7446,6 +7561,43 @@ pub mod ontap_volume_configuration {
             self.ontap_volume_type = input;
             self
         }
+        /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+        /// <ul>
+        /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+        /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+        /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+        /// </ul>
+        /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+        pub fn snapshot_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_policy = Some(input.into());
+            self
+        }
+        /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+        /// <ul>
+        /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+        /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+        /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+        /// </ul>
+        /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+        pub fn set_snapshot_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.snapshot_policy = input;
+            self
+        }
+        /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
+        pub fn copy_tags_to_backups(mut self, input: bool) -> Self {
+            self.copy_tags_to_backups = Some(input);
+            self
+        }
+        /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
+        pub fn set_copy_tags_to_backups(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_backups = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration).
         pub fn build(self) -> crate::model::OntapVolumeConfiguration {
             crate::model::OntapVolumeConfiguration {
@@ -7459,6 +7611,8 @@ pub mod ontap_volume_configuration {
                 tiering_policy: self.tiering_policy,
                 uuid: self.uuid,
                 ontap_volume_type: self.ontap_volume_type,
+                snapshot_policy: self.snapshot_policy,
+                copy_tags_to_backups: self.copy_tags_to_backups,
             }
         }
     }
@@ -8327,6 +8481,19 @@ pub struct UpdateOntapVolumeConfiguration {
     /// <p>Update the volume's data tiering policy.</p>
     #[doc(hidden)]
     pub tiering_policy: std::option::Option<crate::model::TieringPolicy>,
+    /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// </ul>
+    /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    #[doc(hidden)]
+    pub snapshot_policy: std::option::Option<std::string::String>,
+    /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
+    #[doc(hidden)]
+    pub copy_tags_to_backups: std::option::Option<bool>,
 }
 impl UpdateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -8349,6 +8516,21 @@ impl UpdateOntapVolumeConfiguration {
     pub fn tiering_policy(&self) -> std::option::Option<&crate::model::TieringPolicy> {
         self.tiering_policy.as_ref()
     }
+    /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// </ul>
+    /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    pub fn snapshot_policy(&self) -> std::option::Option<&str> {
+        self.snapshot_policy.as_deref()
+    }
+    /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
+    pub fn copy_tags_to_backups(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_backups
+    }
 }
 /// See [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration).
 pub mod update_ontap_volume_configuration {
@@ -8361,6 +8543,8 @@ pub mod update_ontap_volume_configuration {
         pub(crate) size_in_megabytes: std::option::Option<i32>,
         pub(crate) storage_efficiency_enabled: std::option::Option<bool>,
         pub(crate) tiering_policy: std::option::Option<crate::model::TieringPolicy>,
+        pub(crate) snapshot_policy: std::option::Option<std::string::String>,
+        pub(crate) copy_tags_to_backups: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -8422,6 +8606,43 @@ pub mod update_ontap_volume_configuration {
             self.tiering_policy = input;
             self
         }
+        /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+        /// <ul>
+        /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+        /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+        /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+        /// </ul>
+        /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+        pub fn snapshot_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_policy = Some(input.into());
+            self
+        }
+        /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+        /// <ul>
+        /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+        /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+        /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+        /// </ul>
+        /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+        pub fn set_snapshot_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.snapshot_policy = input;
+            self
+        }
+        /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
+        pub fn copy_tags_to_backups(mut self, input: bool) -> Self {
+            self.copy_tags_to_backups = Some(input);
+            self
+        }
+        /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
+        pub fn set_copy_tags_to_backups(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_backups = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration).
         pub fn build(self) -> crate::model::UpdateOntapVolumeConfiguration {
             crate::model::UpdateOntapVolumeConfiguration {
@@ -8430,6 +8651,8 @@ pub mod update_ontap_volume_configuration {
                 size_in_megabytes: self.size_in_megabytes,
                 storage_efficiency_enabled: self.storage_efficiency_enabled,
                 tiering_policy: self.tiering_policy,
+                snapshot_policy: self.snapshot_policy,
+                copy_tags_to_backups: self.copy_tags_to_backups,
             }
         }
     }
@@ -9731,7 +9954,11 @@ pub struct UpdateFileSystemOpenZfsConfiguration {
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     #[doc(hidden)]
     pub daily_automatic_backup_start_time: std::option::Option<std::string::String>,
-    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+    /// <p>The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second  (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
+    /// <ul>
+    /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub throughput_capacity: std::option::Option<i32>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
@@ -9761,7 +9988,11 @@ impl UpdateFileSystemOpenZfsConfiguration {
     pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
-    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+    /// <p>The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second  (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
+    /// <ul>
+    /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.</p> </li>
+    /// </ul>
     pub fn throughput_capacity(&self) -> std::option::Option<i32> {
         self.throughput_capacity
     }
@@ -9844,12 +10075,20 @@ pub mod update_file_system_open_zfs_configuration {
             self.daily_automatic_backup_start_time = input;
             self
         }
-        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+        /// <p>The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second  (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
+        /// <ul>
+        /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li>
+        /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.</p> </li>
+        /// </ul>
         pub fn throughput_capacity(mut self, input: i32) -> Self {
             self.throughput_capacity = Some(input);
             self
         }
-        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+        /// <p>The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second  (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
+        /// <ul>
+        /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li>
+        /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.</p> </li>
+        /// </ul>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
             self
@@ -9935,9 +10174,15 @@ pub struct UpdateFileSystemOntapConfiguration {
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.</p>
     #[doc(hidden)]
     pub disk_iops_configuration: std::option::Option<crate::model::DiskIopsConfiguration>,
-    /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048 MB/s.</p>
+    /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
     #[doc(hidden)]
     pub throughput_capacity: std::option::Option<i32>,
+    /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
+    #[doc(hidden)]
+    pub add_route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
+    #[doc(hidden)]
+    pub remove_route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateFileSystemOntapConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
@@ -9965,9 +10210,17 @@ impl UpdateFileSystemOntapConfiguration {
     ) -> std::option::Option<&crate::model::DiskIopsConfiguration> {
         self.disk_iops_configuration.as_ref()
     }
-    /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048 MB/s.</p>
+    /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
     pub fn throughput_capacity(&self) -> std::option::Option<i32> {
         self.throughput_capacity
+    }
+    /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
+    pub fn add_route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.add_route_table_ids.as_deref()
+    }
+    /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
+    pub fn remove_route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.remove_route_table_ids.as_deref()
     }
 }
 impl std::fmt::Debug for UpdateFileSystemOntapConfiguration {
@@ -9988,6 +10241,8 @@ impl std::fmt::Debug for UpdateFileSystemOntapConfiguration {
         );
         formatter.field("disk_iops_configuration", &self.disk_iops_configuration);
         formatter.field("throughput_capacity", &self.throughput_capacity);
+        formatter.field("add_route_table_ids", &self.add_route_table_ids);
+        formatter.field("remove_route_table_ids", &self.remove_route_table_ids);
         formatter.finish()
     }
 }
@@ -10004,6 +10259,8 @@ pub mod update_file_system_ontap_configuration {
         pub(crate) disk_iops_configuration:
             std::option::Option<crate::model::DiskIopsConfiguration>,
         pub(crate) throughput_capacity: std::option::Option<i32>,
+        pub(crate) add_route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) remove_route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
@@ -10086,14 +10343,52 @@ pub mod update_file_system_ontap_configuration {
             self.disk_iops_configuration = input;
             self
         }
-        /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048 MB/s.</p>
+        /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
         pub fn throughput_capacity(mut self, input: i32) -> Self {
             self.throughput_capacity = Some(input);
             self
         }
-        /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048 MB/s.</p>
+        /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
+            self
+        }
+        /// Appends an item to `add_route_table_ids`.
+        ///
+        /// To override the contents of this collection use [`set_add_route_table_ids`](Self::set_add_route_table_ids).
+        ///
+        /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
+        pub fn add_route_table_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.add_route_table_ids.unwrap_or_default();
+            v.push(input.into());
+            self.add_route_table_ids = Some(v);
+            self
+        }
+        /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
+        pub fn set_add_route_table_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.add_route_table_ids = input;
+            self
+        }
+        /// Appends an item to `remove_route_table_ids`.
+        ///
+        /// To override the contents of this collection use [`set_remove_route_table_ids`](Self::set_remove_route_table_ids).
+        ///
+        /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
+        pub fn remove_route_table_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.remove_route_table_ids.unwrap_or_default();
+            v.push(input.into());
+            self.remove_route_table_ids = Some(v);
+            self
+        }
+        /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
+        pub fn set_remove_route_table_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.remove_route_table_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration).
@@ -10105,6 +10400,8 @@ pub mod update_file_system_ontap_configuration {
                 weekly_maintenance_start_time: self.weekly_maintenance_start_time,
                 disk_iops_configuration: self.disk_iops_configuration,
                 throughput_capacity: self.throughput_capacity,
+                add_route_table_ids: self.add_route_table_ids,
+                remove_route_table_ids: self.remove_route_table_ids,
             }
         }
     }
@@ -10126,6 +10423,8 @@ pub mod update_file_system_ontap_configuration {
             );
             formatter.field("disk_iops_configuration", &self.disk_iops_configuration);
             formatter.field("throughput_capacity", &self.throughput_capacity);
+            formatter.field("add_route_table_ids", &self.add_route_table_ids);
+            formatter.field("remove_route_table_ids", &self.remove_route_table_ids);
             formatter.finish()
         }
     }
@@ -11959,7 +12258,7 @@ pub struct DataRepositoryAssociation {
     /// </ul>
     #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::DataRepositoryLifecycle>,
-    /// <p>Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
+    /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
     #[doc(hidden)]
     pub failure_details: std::option::Option<crate::model::DataRepositoryFailureDetails>,
     /// <p>A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
@@ -12040,7 +12339,7 @@ impl DataRepositoryAssociation {
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::DataRepositoryLifecycle> {
         self.lifecycle.as_ref()
     }
-    /// <p>Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
+    /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
     pub fn failure_details(
         &self,
     ) -> std::option::Option<&crate::model::DataRepositoryFailureDetails> {
@@ -12200,7 +12499,7 @@ pub mod data_repository_association {
             self.lifecycle = input;
             self
         }
-        /// <p>Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
+        /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
         pub fn failure_details(
             mut self,
             input: crate::model::DataRepositoryFailureDetails,
@@ -12208,7 +12507,7 @@ pub mod data_repository_association {
             self.failure_details = Some(input);
             self
         }
-        /// <p>Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
+        /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
         pub fn set_failure_details(
             mut self,
             input: std::option::Option<crate::model::DataRepositoryFailureDetails>,
@@ -16892,6 +17191,27 @@ pub struct CreateOntapVolumeConfiguration {
     /// </ul>
     #[doc(hidden)]
     pub tiering_policy: std::option::Option<crate::model::TieringPolicy>,
+    /// <p>Specifies the type of volume you are creating. Valid values are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p> </li>
+    /// <li> <p> <code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    #[doc(hidden)]
+    pub ontap_volume_type: std::option::Option<crate::model::InputOntapVolumeType>,
+    /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// </ul>
+    /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    #[doc(hidden)]
+    pub snapshot_policy: std::option::Option<std::string::String>,
+    /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
+    #[doc(hidden)]
+    pub copy_tags_to_backups: std::option::Option<bool>,
 }
 impl CreateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -16936,6 +17256,30 @@ impl CreateOntapVolumeConfiguration {
     pub fn tiering_policy(&self) -> std::option::Option<&crate::model::TieringPolicy> {
         self.tiering_policy.as_ref()
     }
+    /// <p>Specifies the type of volume you are creating. Valid values are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p> </li>
+    /// <li> <p> <code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    pub fn ontap_volume_type(&self) -> std::option::Option<&crate::model::InputOntapVolumeType> {
+        self.ontap_volume_type.as_ref()
+    }
+    /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// </ul>
+    /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    pub fn snapshot_policy(&self) -> std::option::Option<&str> {
+        self.snapshot_policy.as_deref()
+    }
+    /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
+    pub fn copy_tags_to_backups(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_backups
+    }
 }
 /// See [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration).
 pub mod create_ontap_volume_configuration {
@@ -16949,6 +17293,9 @@ pub mod create_ontap_volume_configuration {
         pub(crate) storage_efficiency_enabled: std::option::Option<bool>,
         pub(crate) storage_virtual_machine_id: std::option::Option<std::string::String>,
         pub(crate) tiering_policy: std::option::Option<crate::model::TieringPolicy>,
+        pub(crate) ontap_volume_type: std::option::Option<crate::model::InputOntapVolumeType>,
+        pub(crate) snapshot_policy: std::option::Option<std::string::String>,
+        pub(crate) copy_tags_to_backups: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -17059,6 +17406,66 @@ pub mod create_ontap_volume_configuration {
             self.tiering_policy = input;
             self
         }
+        /// <p>Specifies the type of volume you are creating. Valid values are the following:</p>
+        /// <ul>
+        /// <li> <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p> </li>
+        /// <li> <p> <code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p> </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+        pub fn ontap_volume_type(mut self, input: crate::model::InputOntapVolumeType) -> Self {
+            self.ontap_volume_type = Some(input);
+            self
+        }
+        /// <p>Specifies the type of volume you are creating. Valid values are the following:</p>
+        /// <ul>
+        /// <li> <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p> </li>
+        /// <li> <p> <code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p> </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+        pub fn set_ontap_volume_type(
+            mut self,
+            input: std::option::Option<crate::model::InputOntapVolumeType>,
+        ) -> Self {
+            self.ontap_volume_type = input;
+            self
+        }
+        /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+        /// <ul>
+        /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+        /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+        /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+        /// </ul>
+        /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+        pub fn snapshot_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_policy = Some(input.into());
+            self
+        }
+        /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+        /// <ul>
+        /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+        /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+        /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+        /// </ul>
+        /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+        pub fn set_snapshot_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.snapshot_policy = input;
+            self
+        }
+        /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
+        pub fn copy_tags_to_backups(mut self, input: bool) -> Self {
+            self.copy_tags_to_backups = Some(input);
+            self
+        }
+        /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
+        pub fn set_copy_tags_to_backups(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_backups = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration).
         pub fn build(self) -> crate::model::CreateOntapVolumeConfiguration {
             crate::model::CreateOntapVolumeConfiguration {
@@ -17068,6 +17475,9 @@ pub mod create_ontap_volume_configuration {
                 storage_efficiency_enabled: self.storage_efficiency_enabled,
                 storage_virtual_machine_id: self.storage_virtual_machine_id,
                 tiering_policy: self.tiering_policy,
+                ontap_volume_type: self.ontap_volume_type,
+                snapshot_policy: self.snapshot_policy,
+                copy_tags_to_backups: self.copy_tags_to_backups,
             }
         }
     }
@@ -17076,6 +17486,98 @@ impl CreateOntapVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration).
     pub fn builder() -> crate::model::create_ontap_volume_configuration::Builder {
         crate::model::create_ontap_volume_configuration::Builder::default()
+    }
+}
+
+/// When writing a match expression against `InputOntapVolumeType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let inputontapvolumetype = unimplemented!();
+/// match inputontapvolumetype {
+///     InputOntapVolumeType::Dp => { /* ... */ },
+///     InputOntapVolumeType::Rw => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `inputontapvolumetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InputOntapVolumeType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InputOntapVolumeType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InputOntapVolumeType::NewFeature` is defined.
+/// Specifically, when `inputontapvolumetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InputOntapVolumeType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum InputOntapVolumeType {
+    #[allow(missing_docs)] // documentation missing in model
+    Dp,
+    #[allow(missing_docs)] // documentation missing in model
+    Rw,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for InputOntapVolumeType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DP" => InputOntapVolumeType::Dp,
+            "RW" => InputOntapVolumeType::Rw,
+            other => {
+                InputOntapVolumeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for InputOntapVolumeType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InputOntapVolumeType::from(s))
+    }
+}
+impl InputOntapVolumeType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            InputOntapVolumeType::Dp => "DP",
+            InputOntapVolumeType::Rw => "RW",
+            InputOntapVolumeType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DP", "RW"]
+    }
+}
+impl AsRef<str> for InputOntapVolumeType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -17878,10 +18380,20 @@ pub struct CreateFileSystemOpenZfsConfiguration {
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     #[doc(hidden)]
     pub daily_automatic_backup_start_time: std::option::Option<std::string::String>,
-    /// <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.</p>
+    /// <p>Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within a single Availability Zone in an Amazon Web Services Region . Valid values are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US West (Oregon).</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
+    /// </ul>
+    /// <p>For more information, see: <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     #[doc(hidden)]
     pub deployment_type: std::option::Option<crate::model::OpenZfsDeploymentType>,
-    /// <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s. You pay for additional throughput capacity that you provision.</p>
+    /// <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
+    /// <ul>
+    /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.</p> </li>
+    /// </ul>
+    /// <p>You pay for additional throughput capacity that you provision.</p>
     #[doc(hidden)]
     pub throughput_capacity: std::option::Option<i32>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
@@ -17915,11 +18427,21 @@ impl CreateFileSystemOpenZfsConfiguration {
     pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
-    /// <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.</p>
+    /// <p>Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within a single Availability Zone in an Amazon Web Services Region . Valid values are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US West (Oregon).</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
+    /// </ul>
+    /// <p>For more information, see: <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::OpenZfsDeploymentType> {
         self.deployment_type.as_ref()
     }
-    /// <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s. You pay for additional throughput capacity that you provision.</p>
+    /// <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
+    /// <ul>
+    /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.</p> </li>
+    /// </ul>
+    /// <p>You pay for additional throughput capacity that you provision.</p>
     pub fn throughput_capacity(&self) -> std::option::Option<i32> {
         self.throughput_capacity
     }
@@ -18011,12 +18533,22 @@ pub mod create_file_system_open_zfs_configuration {
             self.daily_automatic_backup_start_time = input;
             self
         }
-        /// <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.</p>
+        /// <p>Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within a single Availability Zone in an Amazon Web Services Region . Valid values are the following:</p>
+        /// <ul>
+        /// <li> <p> <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US West (Oregon).</p> </li>
+        /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
+        /// </ul>
+        /// <p>For more information, see: <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
         pub fn deployment_type(mut self, input: crate::model::OpenZfsDeploymentType) -> Self {
             self.deployment_type = Some(input);
             self
         }
-        /// <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.</p>
+        /// <p>Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within a single Availability Zone in an Amazon Web Services Region . Valid values are the following:</p>
+        /// <ul>
+        /// <li> <p> <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US West (Oregon).</p> </li>
+        /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
+        /// </ul>
+        /// <p>For more information, see: <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::OpenZfsDeploymentType>,
@@ -18024,12 +18556,22 @@ pub mod create_file_system_open_zfs_configuration {
             self.deployment_type = input;
             self
         }
-        /// <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s. You pay for additional throughput capacity that you provision.</p>
+        /// <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
+        /// <ul>
+        /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li>
+        /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.</p> </li>
+        /// </ul>
+        /// <p>You pay for additional throughput capacity that you provision.</p>
         pub fn throughput_capacity(mut self, input: i32) -> Self {
             self.throughput_capacity = Some(input);
             self
         }
-        /// <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s. You pay for additional throughput capacity that you provision.</p>
+        /// <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
+        /// <ul>
+        /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li>
+        /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.</p> </li>
+        /// </ul>
+        /// <p>You pay for additional throughput capacity that you provision.</p>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
             self
@@ -19170,9 +19712,7 @@ pub struct CreateFileSystemOntapConfiguration {
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system deployment type</a>. </p>
     #[doc(hidden)]
     pub deployment_type: std::option::Option<crate::model::OntapDeploymentType>,
-    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
-    /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger.</p>
-    /// </important>
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
     #[doc(hidden)]
     pub endpoint_ip_address_range: std::option::Option<std::string::String>,
     /// <p>The ONTAP administrative password for the <code>fsxadmin</code> user with which you administer your file system using the NetApp ONTAP CLI and REST API.</p>
@@ -19187,7 +19727,7 @@ pub struct CreateFileSystemOntapConfiguration {
     /// <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
     #[doc(hidden)]
     pub route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, and 2048 MBps.</p>
+    /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
     #[doc(hidden)]
     pub throughput_capacity: std::option::Option<i32>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
@@ -19215,9 +19755,7 @@ impl CreateFileSystemOntapConfiguration {
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::OntapDeploymentType> {
         self.deployment_type.as_ref()
     }
-    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
-    /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger.</p>
-    /// </important>
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
     pub fn endpoint_ip_address_range(&self) -> std::option::Option<&str> {
         self.endpoint_ip_address_range.as_deref()
     }
@@ -19239,7 +19777,7 @@ impl CreateFileSystemOntapConfiguration {
     pub fn route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.route_table_ids.as_deref()
     }
-    /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, and 2048 MBps.</p>
+    /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
     pub fn throughput_capacity(&self) -> std::option::Option<i32> {
         self.throughput_capacity
     }
@@ -19347,16 +19885,12 @@ pub mod create_file_system_ontap_configuration {
             self.deployment_type = input;
             self
         }
-        /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
-        /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger.</p>
-        /// </important>
+        /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
         pub fn endpoint_ip_address_range(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_ip_address_range = Some(input.into());
             self
         }
-        /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
-        /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger.</p>
-        /// </important>
+        /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
         pub fn set_endpoint_ip_address_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19425,12 +19959,12 @@ pub mod create_file_system_ontap_configuration {
             self.route_table_ids = input;
             self
         }
-        /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, and 2048 MBps.</p>
+        /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
         pub fn throughput_capacity(mut self, input: i32) -> Self {
             self.throughput_capacity = Some(input);
             self
         }
-        /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, and 2048 MBps.</p>
+        /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
             self

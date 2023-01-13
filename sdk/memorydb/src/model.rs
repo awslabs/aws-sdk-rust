@@ -1019,6 +1019,9 @@ pub struct Cluster {
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
     #[doc(hidden)]
     pub auto_minor_version_upgrade: std::option::Option<bool>,
+    /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
+    #[doc(hidden)]
+    pub data_tiering: std::option::Option<crate::model::DataTieringStatus>,
 }
 impl Cluster {
     /// <p>The user-supplied name of the cluster. This identifier is a unique key that identifies a cluster.</p>
@@ -1121,6 +1124,10 @@ impl Cluster {
     pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
+    /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
+    pub fn data_tiering(&self) -> std::option::Option<&crate::model::DataTieringStatus> {
+        self.data_tiering.as_ref()
+    }
 }
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
@@ -1154,6 +1161,7 @@ pub mod cluster {
         pub(crate) snapshot_window: std::option::Option<std::string::String>,
         pub(crate) acl_name: std::option::Option<std::string::String>,
         pub(crate) auto_minor_version_upgrade: std::option::Option<bool>,
+        pub(crate) data_tiering: std::option::Option<crate::model::DataTieringStatus>,
     }
     impl Builder {
         /// <p>The user-supplied name of the cluster. This identifier is a unique key that identifies a cluster.</p>
@@ -1460,6 +1468,19 @@ pub mod cluster {
             self.auto_minor_version_upgrade = input;
             self
         }
+        /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
+        pub fn data_tiering(mut self, input: crate::model::DataTieringStatus) -> Self {
+            self.data_tiering = Some(input);
+            self
+        }
+        /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
+        pub fn set_data_tiering(
+            mut self,
+            input: std::option::Option<crate::model::DataTieringStatus>,
+        ) -> Self {
+            self.data_tiering = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster).
         pub fn build(self) -> crate::model::Cluster {
             crate::model::Cluster {
@@ -1488,6 +1509,7 @@ pub mod cluster {
                 snapshot_window: self.snapshot_window,
                 acl_name: self.acl_name,
                 auto_minor_version_upgrade: self.auto_minor_version_upgrade,
+                data_tiering: self.data_tiering,
             }
         }
     }
@@ -1496,6 +1518,98 @@ impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
     pub fn builder() -> crate::model::cluster::Builder {
         crate::model::cluster::Builder::default()
+    }
+}
+
+/// When writing a match expression against `DataTieringStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let datatieringstatus = unimplemented!();
+/// match datatieringstatus {
+///     DataTieringStatus::False => { /* ... */ },
+///     DataTieringStatus::True => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `datatieringstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DataTieringStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DataTieringStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DataTieringStatus::NewFeature` is defined.
+/// Specifically, when `datatieringstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DataTieringStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DataTieringStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    False,
+    #[allow(missing_docs)] // documentation missing in model
+    True,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DataTieringStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "false" => DataTieringStatus::False,
+            "true" => DataTieringStatus::True,
+            other => {
+                DataTieringStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for DataTieringStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DataTieringStatus::from(s))
+    }
+}
+impl DataTieringStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DataTieringStatus::False => "false",
+            DataTieringStatus::True => "true",
+            DataTieringStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["false", "true"]
+    }
+}
+impl AsRef<str> for DataTieringStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2853,6 +2967,336 @@ impl Tag {
     }
 }
 
+/// <p>Represents the output of a <code>PurchaseReservedNodesOffering</code> operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReservedNode {
+    /// <p>A customer-specified identifier to track this reservation.</p>
+    #[doc(hidden)]
+    pub reservation_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the reserved node offering to purchase.</p>
+    #[doc(hidden)]
+    pub reserved_nodes_offering_id: std::option::Option<std::string::String>,
+    /// <p>The node type for the reserved nodes.</p>
+    #[doc(hidden)]
+    pub node_type: std::option::Option<std::string::String>,
+    /// <p>The time the reservation started.</p>
+    #[doc(hidden)]
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The duration of the reservation in seconds.</p>
+    #[doc(hidden)]
+    pub duration: i32,
+    /// <p>The fixed price charged for this reserved node.</p>
+    #[doc(hidden)]
+    pub fixed_price: f64,
+    /// <p>The number of nodes that have been reserved.</p>
+    #[doc(hidden)]
+    pub node_count: i32,
+    /// <p>The offering type of this reserved node.</p>
+    #[doc(hidden)]
+    pub offering_type: std::option::Option<std::string::String>,
+    /// <p>The state of the reserved node.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<std::string::String>,
+    /// <p>The recurring price charged to run this reserved node.</p>
+    #[doc(hidden)]
+    pub recurring_charges: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
+    /// <p>The Amazon Resource Name (ARN) of the reserved node.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+}
+impl ReservedNode {
+    /// <p>A customer-specified identifier to track this reservation.</p>
+    pub fn reservation_id(&self) -> std::option::Option<&str> {
+        self.reservation_id.as_deref()
+    }
+    /// <p>The ID of the reserved node offering to purchase.</p>
+    pub fn reserved_nodes_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_nodes_offering_id.as_deref()
+    }
+    /// <p>The node type for the reserved nodes.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The time the reservation started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>The duration of the reservation in seconds.</p>
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// <p>The fixed price charged for this reserved node.</p>
+    pub fn fixed_price(&self) -> f64 {
+        self.fixed_price
+    }
+    /// <p>The number of nodes that have been reserved.</p>
+    pub fn node_count(&self) -> i32 {
+        self.node_count
+    }
+    /// <p>The offering type of this reserved node.</p>
+    pub fn offering_type(&self) -> std::option::Option<&str> {
+        self.offering_type.as_deref()
+    }
+    /// <p>The state of the reserved node.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The recurring price charged to run this reserved node.</p>
+    pub fn recurring_charges(&self) -> std::option::Option<&[crate::model::RecurringCharge]> {
+        self.recurring_charges.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the reserved node.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+/// See [`ReservedNode`](crate::model::ReservedNode).
+pub mod reserved_node {
+
+    /// A builder for [`ReservedNode`](crate::model::ReservedNode).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) reservation_id: std::option::Option<std::string::String>,
+        pub(crate) reserved_nodes_offering_id: std::option::Option<std::string::String>,
+        pub(crate) node_type: std::option::Option<std::string::String>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) duration: std::option::Option<i32>,
+        pub(crate) fixed_price: std::option::Option<f64>,
+        pub(crate) node_count: std::option::Option<i32>,
+        pub(crate) offering_type: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<std::string::String>,
+        pub(crate) recurring_charges:
+            std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A customer-specified identifier to track this reservation.</p>
+        pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reservation_id = Some(input.into());
+            self
+        }
+        /// <p>A customer-specified identifier to track this reservation.</p>
+        pub fn set_reservation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reservation_id = input;
+            self
+        }
+        /// <p>The ID of the reserved node offering to purchase.</p>
+        pub fn reserved_nodes_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reserved_nodes_offering_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the reserved node offering to purchase.</p>
+        pub fn set_reserved_nodes_offering_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reserved_nodes_offering_id = input;
+            self
+        }
+        /// <p>The node type for the reserved nodes.</p>
+        pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.node_type = Some(input.into());
+            self
+        }
+        /// <p>The node type for the reserved nodes.</p>
+        pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.node_type = input;
+            self
+        }
+        /// <p>The time the reservation started.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p>The time the reservation started.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>The duration of the reservation in seconds.</p>
+        pub fn duration(mut self, input: i32) -> Self {
+            self.duration = Some(input);
+            self
+        }
+        /// <p>The duration of the reservation in seconds.</p>
+        pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration = input;
+            self
+        }
+        /// <p>The fixed price charged for this reserved node.</p>
+        pub fn fixed_price(mut self, input: f64) -> Self {
+            self.fixed_price = Some(input);
+            self
+        }
+        /// <p>The fixed price charged for this reserved node.</p>
+        pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
+            self.fixed_price = input;
+            self
+        }
+        /// <p>The number of nodes that have been reserved.</p>
+        pub fn node_count(mut self, input: i32) -> Self {
+            self.node_count = Some(input);
+            self
+        }
+        /// <p>The number of nodes that have been reserved.</p>
+        pub fn set_node_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.node_count = input;
+            self
+        }
+        /// <p>The offering type of this reserved node.</p>
+        pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.offering_type = Some(input.into());
+            self
+        }
+        /// <p>The offering type of this reserved node.</p>
+        pub fn set_offering_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.offering_type = input;
+            self
+        }
+        /// <p>The state of the reserved node.</p>
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
+            self
+        }
+        /// <p>The state of the reserved node.</p>
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
+            self
+        }
+        /// Appends an item to `recurring_charges`.
+        ///
+        /// To override the contents of this collection use [`set_recurring_charges`](Self::set_recurring_charges).
+        ///
+        /// <p>The recurring price charged to run this reserved node.</p>
+        pub fn recurring_charges(mut self, input: crate::model::RecurringCharge) -> Self {
+            let mut v = self.recurring_charges.unwrap_or_default();
+            v.push(input);
+            self.recurring_charges = Some(v);
+            self
+        }
+        /// <p>The recurring price charged to run this reserved node.</p>
+        pub fn set_recurring_charges(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
+        ) -> Self {
+            self.recurring_charges = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the reserved node.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the reserved node.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReservedNode`](crate::model::ReservedNode).
+        pub fn build(self) -> crate::model::ReservedNode {
+            crate::model::ReservedNode {
+                reservation_id: self.reservation_id,
+                reserved_nodes_offering_id: self.reserved_nodes_offering_id,
+                node_type: self.node_type,
+                start_time: self.start_time,
+                duration: self.duration.unwrap_or_default(),
+                fixed_price: self.fixed_price.unwrap_or_default(),
+                node_count: self.node_count.unwrap_or_default(),
+                offering_type: self.offering_type,
+                state: self.state,
+                recurring_charges: self.recurring_charges,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl ReservedNode {
+    /// Creates a new builder-style object to manufacture [`ReservedNode`](crate::model::ReservedNode).
+    pub fn builder() -> crate::model::reserved_node::Builder {
+        crate::model::reserved_node::Builder::default()
+    }
+}
+
+/// <p>The recurring charge to run this reserved node.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RecurringCharge {
+    /// <p>The amount of the recurring charge to run this reserved node.</p>
+    #[doc(hidden)]
+    pub recurring_charge_amount: f64,
+    /// <p>The frequency of the recurring price charged to run this reserved node.</p>
+    #[doc(hidden)]
+    pub recurring_charge_frequency: std::option::Option<std::string::String>,
+}
+impl RecurringCharge {
+    /// <p>The amount of the recurring charge to run this reserved node.</p>
+    pub fn recurring_charge_amount(&self) -> f64 {
+        self.recurring_charge_amount
+    }
+    /// <p>The frequency of the recurring price charged to run this reserved node.</p>
+    pub fn recurring_charge_frequency(&self) -> std::option::Option<&str> {
+        self.recurring_charge_frequency.as_deref()
+    }
+}
+/// See [`RecurringCharge`](crate::model::RecurringCharge).
+pub mod recurring_charge {
+
+    /// A builder for [`RecurringCharge`](crate::model::RecurringCharge).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recurring_charge_amount: std::option::Option<f64>,
+        pub(crate) recurring_charge_frequency: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The amount of the recurring charge to run this reserved node.</p>
+        pub fn recurring_charge_amount(mut self, input: f64) -> Self {
+            self.recurring_charge_amount = Some(input);
+            self
+        }
+        /// <p>The amount of the recurring charge to run this reserved node.</p>
+        pub fn set_recurring_charge_amount(mut self, input: std::option::Option<f64>) -> Self {
+            self.recurring_charge_amount = input;
+            self
+        }
+        /// <p>The frequency of the recurring price charged to run this reserved node.</p>
+        pub fn recurring_charge_frequency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recurring_charge_frequency = Some(input.into());
+            self
+        }
+        /// <p>The frequency of the recurring price charged to run this reserved node.</p>
+        pub fn set_recurring_charge_frequency(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recurring_charge_frequency = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RecurringCharge`](crate::model::RecurringCharge).
+        pub fn build(self) -> crate::model::RecurringCharge {
+            crate::model::RecurringCharge {
+                recurring_charge_amount: self.recurring_charge_amount.unwrap_or_default(),
+                recurring_charge_frequency: self.recurring_charge_frequency,
+            }
+        }
+    }
+}
+impl RecurringCharge {
+    /// Creates a new builder-style object to manufacture [`RecurringCharge`](crate::model::RecurringCharge).
+    pub fn builder() -> crate::model::recurring_charge::Builder {
+        crate::model::recurring_charge::Builder::default()
+    }
+}
+
 /// <p>Used to streamline results of a search based on the property being filtered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2951,6 +3395,9 @@ pub struct Snapshot {
     /// <p>The configuration of the cluster from which the snapshot was taken</p>
     #[doc(hidden)]
     pub cluster_configuration: std::option::Option<crate::model::ClusterConfiguration>,
+    /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
+    #[doc(hidden)]
+    pub data_tiering: std::option::Option<crate::model::DataTieringStatus>,
 }
 impl Snapshot {
     /// <p>The name of the snapshot</p>
@@ -2979,6 +3426,10 @@ impl Snapshot {
     ) -> std::option::Option<&crate::model::ClusterConfiguration> {
         self.cluster_configuration.as_ref()
     }
+    /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
+    pub fn data_tiering(&self) -> std::option::Option<&crate::model::DataTieringStatus> {
+        self.data_tiering.as_ref()
+    }
 }
 /// See [`Snapshot`](crate::model::Snapshot).
 pub mod snapshot {
@@ -2992,6 +3443,7 @@ pub mod snapshot {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) cluster_configuration: std::option::Option<crate::model::ClusterConfiguration>,
+        pub(crate) data_tiering: std::option::Option<crate::model::DataTieringStatus>,
     }
     impl Builder {
         /// <p>The name of the snapshot</p>
@@ -3057,6 +3509,19 @@ pub mod snapshot {
             self.cluster_configuration = input;
             self
         }
+        /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
+        pub fn data_tiering(mut self, input: crate::model::DataTieringStatus) -> Self {
+            self.data_tiering = Some(input);
+            self
+        }
+        /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
+        pub fn set_data_tiering(
+            mut self,
+            input: std::option::Option<crate::model::DataTieringStatus>,
+        ) -> Self {
+            self.data_tiering = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Snapshot`](crate::model::Snapshot).
         pub fn build(self) -> crate::model::Snapshot {
             crate::model::Snapshot {
@@ -3066,6 +3531,7 @@ pub mod snapshot {
                 kms_key_id: self.kms_key_id,
                 arn: self.arn,
                 cluster_configuration: self.cluster_configuration,
+                data_tiering: self.data_tiering,
             }
         }
     }
@@ -3857,6 +4323,165 @@ impl ServiceUpdateType {
 impl AsRef<str> for ServiceUpdateType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>The offering type of this node.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReservedNodesOffering {
+    /// <p>The offering identifier.</p>
+    #[doc(hidden)]
+    pub reserved_nodes_offering_id: std::option::Option<std::string::String>,
+    /// <p>The node type for the reserved nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
+    #[doc(hidden)]
+    pub node_type: std::option::Option<std::string::String>,
+    /// <p>The duration of the reservation in seconds.</p>
+    #[doc(hidden)]
+    pub duration: i32,
+    /// <p>The fixed price charged for this reserved node.</p>
+    #[doc(hidden)]
+    pub fixed_price: f64,
+    /// <p>The offering type of this reserved node.</p>
+    #[doc(hidden)]
+    pub offering_type: std::option::Option<std::string::String>,
+    /// <p>The recurring price charged to run this reserved node.</p>
+    #[doc(hidden)]
+    pub recurring_charges: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
+}
+impl ReservedNodesOffering {
+    /// <p>The offering identifier.</p>
+    pub fn reserved_nodes_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_nodes_offering_id.as_deref()
+    }
+    /// <p>The node type for the reserved nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The duration of the reservation in seconds.</p>
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// <p>The fixed price charged for this reserved node.</p>
+    pub fn fixed_price(&self) -> f64 {
+        self.fixed_price
+    }
+    /// <p>The offering type of this reserved node.</p>
+    pub fn offering_type(&self) -> std::option::Option<&str> {
+        self.offering_type.as_deref()
+    }
+    /// <p>The recurring price charged to run this reserved node.</p>
+    pub fn recurring_charges(&self) -> std::option::Option<&[crate::model::RecurringCharge]> {
+        self.recurring_charges.as_deref()
+    }
+}
+/// See [`ReservedNodesOffering`](crate::model::ReservedNodesOffering).
+pub mod reserved_nodes_offering {
+
+    /// A builder for [`ReservedNodesOffering`](crate::model::ReservedNodesOffering).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) reserved_nodes_offering_id: std::option::Option<std::string::String>,
+        pub(crate) node_type: std::option::Option<std::string::String>,
+        pub(crate) duration: std::option::Option<i32>,
+        pub(crate) fixed_price: std::option::Option<f64>,
+        pub(crate) offering_type: std::option::Option<std::string::String>,
+        pub(crate) recurring_charges:
+            std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
+    }
+    impl Builder {
+        /// <p>The offering identifier.</p>
+        pub fn reserved_nodes_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reserved_nodes_offering_id = Some(input.into());
+            self
+        }
+        /// <p>The offering identifier.</p>
+        pub fn set_reserved_nodes_offering_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reserved_nodes_offering_id = input;
+            self
+        }
+        /// <p>The node type for the reserved nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
+        pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.node_type = Some(input.into());
+            self
+        }
+        /// <p>The node type for the reserved nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
+        pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.node_type = input;
+            self
+        }
+        /// <p>The duration of the reservation in seconds.</p>
+        pub fn duration(mut self, input: i32) -> Self {
+            self.duration = Some(input);
+            self
+        }
+        /// <p>The duration of the reservation in seconds.</p>
+        pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration = input;
+            self
+        }
+        /// <p>The fixed price charged for this reserved node.</p>
+        pub fn fixed_price(mut self, input: f64) -> Self {
+            self.fixed_price = Some(input);
+            self
+        }
+        /// <p>The fixed price charged for this reserved node.</p>
+        pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
+            self.fixed_price = input;
+            self
+        }
+        /// <p>The offering type of this reserved node.</p>
+        pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.offering_type = Some(input.into());
+            self
+        }
+        /// <p>The offering type of this reserved node.</p>
+        pub fn set_offering_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.offering_type = input;
+            self
+        }
+        /// Appends an item to `recurring_charges`.
+        ///
+        /// To override the contents of this collection use [`set_recurring_charges`](Self::set_recurring_charges).
+        ///
+        /// <p>The recurring price charged to run this reserved node.</p>
+        pub fn recurring_charges(mut self, input: crate::model::RecurringCharge) -> Self {
+            let mut v = self.recurring_charges.unwrap_or_default();
+            v.push(input);
+            self.recurring_charges = Some(v);
+            self
+        }
+        /// <p>The recurring price charged to run this reserved node.</p>
+        pub fn set_recurring_charges(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
+        ) -> Self {
+            self.recurring_charges = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReservedNodesOffering`](crate::model::ReservedNodesOffering).
+        pub fn build(self) -> crate::model::ReservedNodesOffering {
+            crate::model::ReservedNodesOffering {
+                reserved_nodes_offering_id: self.reserved_nodes_offering_id,
+                node_type: self.node_type,
+                duration: self.duration.unwrap_or_default(),
+                fixed_price: self.fixed_price.unwrap_or_default(),
+                offering_type: self.offering_type,
+                recurring_charges: self.recurring_charges,
+            }
+        }
+    }
+}
+impl ReservedNodesOffering {
+    /// Creates a new builder-style object to manufacture [`ReservedNodesOffering`](crate::model::ReservedNodesOffering).
+    pub fn builder() -> crate::model::reserved_nodes_offering::Builder {
+        crate::model::reserved_nodes_offering::Builder::default()
     }
 }
 

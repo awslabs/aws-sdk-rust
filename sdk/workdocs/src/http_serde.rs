@@ -287,8 +287,8 @@ pub fn add_headers_delete_document(
     Ok(builder)
 }
 
-pub fn add_headers_delete_folder(
-    input: &crate::input::DeleteFolderInput,
+pub fn add_headers_delete_document_version(
+    input: &crate::input::DeleteDocumentVersionInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_25) = &input.authentication_token {
@@ -311,8 +311,8 @@ pub fn add_headers_delete_folder(
     Ok(builder)
 }
 
-pub fn add_headers_delete_folder_contents(
-    input: &crate::input::DeleteFolderContentsInput,
+pub fn add_headers_delete_folder(
+    input: &crate::input::DeleteFolderInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_27) = &input.authentication_token {
@@ -335,8 +335,8 @@ pub fn add_headers_delete_folder_contents(
     Ok(builder)
 }
 
-pub fn add_headers_delete_labels(
-    input: &crate::input::DeleteLabelsInput,
+pub fn add_headers_delete_folder_contents(
+    input: &crate::input::DeleteFolderContentsInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_29) = &input.authentication_token {
@@ -359,8 +359,8 @@ pub fn add_headers_delete_labels(
     Ok(builder)
 }
 
-pub fn add_headers_delete_user(
-    input: &crate::input::DeleteUserInput,
+pub fn add_headers_delete_labels(
+    input: &crate::input::DeleteLabelsInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_31) = &input.authentication_token {
@@ -383,8 +383,8 @@ pub fn add_headers_delete_user(
     Ok(builder)
 }
 
-pub fn add_headers_describe_activities(
-    input: &crate::input::DescribeActivitiesInput,
+pub fn add_headers_delete_user(
+    input: &crate::input::DeleteUserInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_33) = &input.authentication_token {
@@ -407,8 +407,8 @@ pub fn add_headers_describe_activities(
     Ok(builder)
 }
 
-pub fn add_headers_describe_comments(
-    input: &crate::input::DescribeCommentsInput,
+pub fn add_headers_describe_activities(
+    input: &crate::input::DescribeActivitiesInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_35) = &input.authentication_token {
@@ -431,8 +431,8 @@ pub fn add_headers_describe_comments(
     Ok(builder)
 }
 
-pub fn add_headers_describe_document_versions(
-    input: &crate::input::DescribeDocumentVersionsInput,
+pub fn add_headers_describe_comments(
+    input: &crate::input::DescribeCommentsInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_37) = &input.authentication_token {
@@ -455,8 +455,8 @@ pub fn add_headers_describe_document_versions(
     Ok(builder)
 }
 
-pub fn add_headers_describe_folder_contents(
-    input: &crate::input::DescribeFolderContentsInput,
+pub fn add_headers_describe_document_versions(
+    input: &crate::input::DescribeDocumentVersionsInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_39) = &input.authentication_token {
@@ -479,8 +479,8 @@ pub fn add_headers_describe_folder_contents(
     Ok(builder)
 }
 
-pub fn add_headers_describe_groups(
-    input: &crate::input::DescribeGroupsInput,
+pub fn add_headers_describe_folder_contents(
+    input: &crate::input::DescribeFolderContentsInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_41) = &input.authentication_token {
@@ -503,8 +503,8 @@ pub fn add_headers_describe_groups(
     Ok(builder)
 }
 
-pub fn add_headers_describe_resource_permissions(
-    input: &crate::input::DescribeResourcePermissionsInput,
+pub fn add_headers_describe_groups(
+    input: &crate::input::DescribeGroupsInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_43) = &input.authentication_token {
@@ -527,8 +527,8 @@ pub fn add_headers_describe_resource_permissions(
     Ok(builder)
 }
 
-pub fn add_headers_describe_root_folders(
-    input: &crate::input::DescribeRootFoldersInput,
+pub fn add_headers_describe_resource_permissions(
+    input: &crate::input::DescribeResourcePermissionsInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_45) = &input.authentication_token {
@@ -551,8 +551,8 @@ pub fn add_headers_describe_root_folders(
     Ok(builder)
 }
 
-pub fn add_headers_describe_users(
-    input: &crate::input::DescribeUsersInput,
+pub fn add_headers_describe_root_folders(
+    input: &crate::input::DescribeRootFoldersInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_47) = &input.authentication_token {
@@ -575,8 +575,8 @@ pub fn add_headers_describe_users(
     Ok(builder)
 }
 
-pub fn add_headers_get_current_user(
-    input: &crate::input::GetCurrentUserInput,
+pub fn add_headers_describe_users(
+    input: &crate::input::DescribeUsersInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_49) = &input.authentication_token {
@@ -599,8 +599,8 @@ pub fn add_headers_get_current_user(
     Ok(builder)
 }
 
-pub fn add_headers_get_document(
-    input: &crate::input::GetDocumentInput,
+pub fn add_headers_get_current_user(
+    input: &crate::input::GetCurrentUserInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_51) = &input.authentication_token {
@@ -623,8 +623,8 @@ pub fn add_headers_get_document(
     Ok(builder)
 }
 
-pub fn add_headers_get_document_path(
-    input: &crate::input::GetDocumentPathInput,
+pub fn add_headers_get_document(
+    input: &crate::input::GetDocumentInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_53) = &input.authentication_token {
@@ -647,8 +647,8 @@ pub fn add_headers_get_document_path(
     Ok(builder)
 }
 
-pub fn add_headers_get_document_version(
-    input: &crate::input::GetDocumentVersionInput,
+pub fn add_headers_get_document_path(
+    input: &crate::input::GetDocumentPathInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_55) = &input.authentication_token {
@@ -671,8 +671,8 @@ pub fn add_headers_get_document_version(
     Ok(builder)
 }
 
-pub fn add_headers_get_folder(
-    input: &crate::input::GetFolderInput,
+pub fn add_headers_get_document_version(
+    input: &crate::input::GetDocumentVersionInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_57) = &input.authentication_token {
@@ -695,8 +695,8 @@ pub fn add_headers_get_folder(
     Ok(builder)
 }
 
-pub fn add_headers_get_folder_path(
-    input: &crate::input::GetFolderPathInput,
+pub fn add_headers_get_folder(
+    input: &crate::input::GetFolderInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_59) = &input.authentication_token {
@@ -719,8 +719,8 @@ pub fn add_headers_get_folder_path(
     Ok(builder)
 }
 
-pub fn add_headers_get_resources(
-    input: &crate::input::GetResourcesInput,
+pub fn add_headers_get_folder_path(
+    input: &crate::input::GetFolderPathInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_61) = &input.authentication_token {
@@ -743,8 +743,8 @@ pub fn add_headers_get_resources(
     Ok(builder)
 }
 
-pub fn add_headers_initiate_document_version_upload(
-    input: &crate::input::InitiateDocumentVersionUploadInput,
+pub fn add_headers_get_resources(
+    input: &crate::input::GetResourcesInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_63) = &input.authentication_token {
@@ -767,8 +767,8 @@ pub fn add_headers_initiate_document_version_upload(
     Ok(builder)
 }
 
-pub fn add_headers_remove_all_resource_permissions(
-    input: &crate::input::RemoveAllResourcePermissionsInput,
+pub fn add_headers_initiate_document_version_upload(
+    input: &crate::input::InitiateDocumentVersionUploadInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_65) = &input.authentication_token {
@@ -791,8 +791,8 @@ pub fn add_headers_remove_all_resource_permissions(
     Ok(builder)
 }
 
-pub fn add_headers_remove_resource_permission(
-    input: &crate::input::RemoveResourcePermissionInput,
+pub fn add_headers_remove_all_resource_permissions(
+    input: &crate::input::RemoveAllResourcePermissionsInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_67) = &input.authentication_token {
@@ -815,8 +815,8 @@ pub fn add_headers_remove_resource_permission(
     Ok(builder)
 }
 
-pub fn add_headers_update_document(
-    input: &crate::input::UpdateDocumentInput,
+pub fn add_headers_remove_resource_permission(
+    input: &crate::input::RemoveResourcePermissionInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_69) = &input.authentication_token {
@@ -839,8 +839,8 @@ pub fn add_headers_update_document(
     Ok(builder)
 }
 
-pub fn add_headers_update_document_version(
-    input: &crate::input::UpdateDocumentVersionInput,
+pub fn add_headers_restore_document_versions(
+    input: &crate::input::RestoreDocumentVersionsInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_71) = &input.authentication_token {
@@ -863,8 +863,8 @@ pub fn add_headers_update_document_version(
     Ok(builder)
 }
 
-pub fn add_headers_update_folder(
-    input: &crate::input::UpdateFolderInput,
+pub fn add_headers_update_document(
+    input: &crate::input::UpdateDocumentInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_73) = &input.authentication_token {
@@ -887,14 +887,62 @@ pub fn add_headers_update_folder(
     Ok(builder)
 }
 
-pub fn add_headers_update_user(
-    input: &crate::input::UpdateUserInput,
+pub fn add_headers_update_document_version(
+    input: &crate::input::UpdateDocumentVersionInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_75) = &input.authentication_token {
         let formatted_76 = inner_75.as_str();
         if !formatted_76.is_empty() {
             let header_value = formatted_76;
+            let header_value =
+                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "authentication_token",
+                        format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &"*** Sensitive Data Redacted ***", err
+                        ),
+                    )
+                })?;
+            builder = builder.header("Authentication", header_value);
+        }
+    }
+    Ok(builder)
+}
+
+pub fn add_headers_update_folder(
+    input: &crate::input::UpdateFolderInput,
+    mut builder: http::request::Builder,
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+    if let Some(inner_77) = &input.authentication_token {
+        let formatted_78 = inner_77.as_str();
+        if !formatted_78.is_empty() {
+            let header_value = formatted_78;
+            let header_value =
+                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "authentication_token",
+                        format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &"*** Sensitive Data Redacted ***", err
+                        ),
+                    )
+                })?;
+            builder = builder.header("Authentication", header_value);
+        }
+    }
+    Ok(builder)
+}
+
+pub fn add_headers_update_user(
+    input: &crate::input::UpdateUserInput,
+    mut builder: http::request::Builder,
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+    if let Some(inner_79) = &input.authentication_token {
+        let formatted_80 = inner_79.as_str();
+        if !formatted_80.is_empty() {
+            let header_value = formatted_80;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::error::BuildError::invalid_field(

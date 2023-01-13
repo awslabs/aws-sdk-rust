@@ -215,12 +215,12 @@ pub mod create_lens_share_input {
             self.lens_alias = input;
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_with = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_with = input;
             self
@@ -838,6 +838,8 @@ pub mod create_workload_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) discovery_config: std::option::Option<crate::model::WorkloadDiscoveryConfig>,
+        pub(crate) applications: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the workload.</p>
@@ -1133,6 +1135,38 @@ pub mod create_workload_input {
             self.tags = input;
             self
         }
+        /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
+        pub fn discovery_config(mut self, input: crate::model::WorkloadDiscoveryConfig) -> Self {
+            self.discovery_config = Some(input);
+            self
+        }
+        /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
+        pub fn set_discovery_config(
+            mut self,
+            input: std::option::Option<crate::model::WorkloadDiscoveryConfig>,
+        ) -> Self {
+            self.discovery_config = input;
+            self
+        }
+        /// Appends an item to `applications`.
+        ///
+        /// To override the contents of this collection use [`set_applications`](Self::set_applications).
+        ///
+        /// <p>List of AppRegistry application ARNs associated to the workload.</p>
+        pub fn applications(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.applications.unwrap_or_default();
+            v.push(input.into());
+            self.applications = Some(v);
+            self
+        }
+        /// <p>List of AppRegistry application ARNs associated to the workload.</p>
+        pub fn set_applications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.applications = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkloadInput`](crate::input::CreateWorkloadInput).
         pub fn build(
             self,
@@ -1154,6 +1188,8 @@ pub mod create_workload_input {
                 notes: self.notes,
                 client_request_token: self.client_request_token,
                 tags: self.tags,
+                discovery_config: self.discovery_config,
+                applications: self.applications,
             })
         }
     }
@@ -1293,12 +1329,12 @@ pub mod create_workload_share_input {
             self.workload_id = input;
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_with = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_with = input;
             self
@@ -4632,6 +4668,486 @@ impl ListAnswersInput {
     }
 }
 
+/// See [`ListCheckDetailsInput`](crate::input::ListCheckDetailsInput).
+pub mod list_check_details_input {
+
+    /// A builder for [`ListCheckDetailsInput`](crate::input::ListCheckDetailsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workload_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
+        pub(crate) pillar_id: std::option::Option<std::string::String>,
+        pub(crate) question_id: std::option::Option<std::string::String>,
+        pub(crate) choice_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workload_id = Some(input.into());
+            self
+        }
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+        pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workload_id = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return for this request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return for this request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Well-Architected Lens ARN.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>Well-Architected Lens ARN.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
+            self
+        }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pillar_id = Some(input.into());
+            self
+        }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pillar_id = input;
+            self
+        }
+        /// <p>The ID of the question.</p>
+        pub fn question_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.question_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the question.</p>
+        pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.question_id = input;
+            self
+        }
+        /// <p>The ID of a choice.</p>
+        pub fn choice_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.choice_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a choice.</p>
+        pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.choice_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCheckDetailsInput`](crate::input::ListCheckDetailsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListCheckDetailsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListCheckDetailsInput {
+                workload_id: self.workload_id,
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+                lens_arn: self.lens_arn,
+                pillar_id: self.pillar_id,
+                question_id: self.question_id,
+                choice_id: self.choice_id,
+            })
+        }
+    }
+}
+impl ListCheckDetailsInput {
+    /// Consumes the builder and constructs an Operation<[`ListCheckDetails`](crate::operation::ListCheckDetails)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListCheckDetails,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListCheckDetailsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_39 = &_input.workload_id;
+                let input_39 = input_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workload_id = aws_smithy_http::label::fmt_string(
+                    input_39,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if workload_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workload_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/workloads/{WorkloadId}/checks",
+                    WorkloadId = workload_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListCheckDetailsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_check_details(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListCheckDetails::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListCheckDetails",
+            "wellarchitected",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListCheckDetailsInput`](crate::input::ListCheckDetailsInput).
+    pub fn builder() -> crate::input::list_check_details_input::Builder {
+        crate::input::list_check_details_input::Builder::default()
+    }
+}
+
+/// See [`ListCheckSummariesInput`](crate::input::ListCheckSummariesInput).
+pub mod list_check_summaries_input {
+
+    /// A builder for [`ListCheckSummariesInput`](crate::input::ListCheckSummariesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workload_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
+        pub(crate) pillar_id: std::option::Option<std::string::String>,
+        pub(crate) question_id: std::option::Option<std::string::String>,
+        pub(crate) choice_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workload_id = Some(input.into());
+            self
+        }
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+        pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workload_id = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return for this request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return for this request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Well-Architected Lens ARN.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>Well-Architected Lens ARN.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
+            self
+        }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pillar_id = Some(input.into());
+            self
+        }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pillar_id = input;
+            self
+        }
+        /// <p>The ID of the question.</p>
+        pub fn question_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.question_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the question.</p>
+        pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.question_id = input;
+            self
+        }
+        /// <p>The ID of a choice.</p>
+        pub fn choice_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.choice_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a choice.</p>
+        pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.choice_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCheckSummariesInput`](crate::input::ListCheckSummariesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListCheckSummariesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListCheckSummariesInput {
+                workload_id: self.workload_id,
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+                lens_arn: self.lens_arn,
+                pillar_id: self.pillar_id,
+                question_id: self.question_id,
+                choice_id: self.choice_id,
+            })
+        }
+    }
+}
+impl ListCheckSummariesInput {
+    /// Consumes the builder and constructs an Operation<[`ListCheckSummaries`](crate::operation::ListCheckSummaries)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListCheckSummaries,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListCheckSummariesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_40 = &_input.workload_id;
+                let input_40 = input_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workload_id = aws_smithy_http::label::fmt_string(
+                    input_40,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if workload_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workload_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/workloads/{WorkloadId}/checkSummaries",
+                    WorkloadId = workload_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListCheckSummariesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_check_summaries(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListCheckSummaries::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListCheckSummaries",
+            "wellarchitected",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListCheckSummariesInput`](crate::input::ListCheckSummariesInput).
+    pub fn builder() -> crate::input::list_check_summaries_input::Builder {
+        crate::input::list_check_summaries_input::Builder::default()
+    }
+}
+
 /// See [`ListLensesInput`](crate::input::ListLensesInput).
 pub mod list_lenses_input {
 
@@ -4741,9 +5257,9 @@ impl ListLensesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_39) = &_input.next_token {
+                if let Some(inner_41) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_39));
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_41));
                     }
                 }
                 if _input.max_results != 0 {
@@ -4752,19 +5268,19 @@ impl ListLensesInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_40) = &_input.lens_type {
+                if let Some(inner_42) = &_input.lens_type {
                     {
-                        query.push_kv("LensType", &aws_smithy_http::query::fmt_string(&inner_40));
+                        query.push_kv("LensType", &aws_smithy_http::query::fmt_string(&inner_42));
                     }
                 }
-                if let Some(inner_41) = &_input.lens_status {
+                if let Some(inner_43) = &_input.lens_status {
                     {
-                        query.push_kv("LensStatus", &aws_smithy_http::query::fmt_string(&inner_41));
+                        query.push_kv("LensStatus", &aws_smithy_http::query::fmt_string(&inner_43));
                     }
                 }
-                if let Some(inner_42) = &_input.lens_name {
+                if let Some(inner_44) = &_input.lens_name {
                     {
-                        query.push_kv("LensName", &aws_smithy_http::query::fmt_string(&inner_42));
+                        query.push_kv("LensName", &aws_smithy_http::query::fmt_string(&inner_44));
                     }
                 }
                 Ok(())
@@ -4965,15 +5481,15 @@ impl ListLensReviewImprovementsInput {
                 _input: &crate::input::ListLensReviewImprovementsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_43 = &_input.workload_id;
-                let input_43 = input_43.as_ref().ok_or_else(|| {
+                let input_45 = &_input.workload_id;
+                let input_45 = input_45.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workload_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workload_id = aws_smithy_http::label::fmt_string(
-                    input_43,
+                    input_45,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workload_id.is_empty() {
@@ -4984,15 +5500,15 @@ impl ListLensReviewImprovementsInput {
                         ),
                     );
                 }
-                let input_44 = &_input.lens_alias;
-                let input_44 = input_44.as_ref().ok_or_else(|| {
+                let input_46 = &_input.lens_alias;
+                let input_46 = input_46.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "lens_alias",
                         "cannot be empty or unset",
                     )
                 })?;
                 let lens_alias = aws_smithy_http::label::fmt_string(
-                    input_44,
+                    input_46,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if lens_alias.is_empty() {
@@ -5017,9 +5533,9 @@ impl ListLensReviewImprovementsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_45) = &_input.pillar_id {
+                if let Some(inner_47) = &_input.pillar_id {
                     {
-                        query.push_kv("PillarId", &aws_smithy_http::query::fmt_string(&inner_45));
+                        query.push_kv("PillarId", &aws_smithy_http::query::fmt_string(&inner_47));
                     }
                 }
                 if _input.milestone_number != 0 {
@@ -5029,9 +5545,9 @@ impl ListLensReviewImprovementsInput {
                             .encode(),
                     );
                 }
-                if let Some(inner_46) = &_input.next_token {
+                if let Some(inner_48) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_46));
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_48));
                     }
                 }
                 if _input.max_results != 0 {
@@ -5204,15 +5720,15 @@ impl ListLensReviewsInput {
                 _input: &crate::input::ListLensReviewsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_47 = &_input.workload_id;
-                let input_47 = input_47.as_ref().ok_or_else(|| {
+                let input_49 = &_input.workload_id;
+                let input_49 = input_49.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workload_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workload_id = aws_smithy_http::label::fmt_string(
-                    input_47,
+                    input_49,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workload_id.is_empty() {
@@ -5243,9 +5759,9 @@ impl ListLensReviewsInput {
                             .encode(),
                     );
                 }
-                if let Some(inner_48) = &_input.next_token {
+                if let Some(inner_50) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_48));
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_50));
                     }
                 }
                 if _input.max_results != 0 {
@@ -5359,12 +5875,12 @@ pub mod list_lens_shares_input {
             self.lens_alias = input;
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
         pub fn shared_with_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_with_prefix = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
         pub fn set_shared_with_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5437,15 +5953,15 @@ impl ListLensSharesInput {
                 _input: &crate::input::ListLensSharesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_49 = &_input.lens_alias;
-                let input_49 = input_49.as_ref().ok_or_else(|| {
+                let input_51 = &_input.lens_alias;
+                let input_51 = input_51.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "lens_alias",
                         "cannot be empty or unset",
                     )
                 })?;
                 let lens_alias = aws_smithy_http::label::fmt_string(
-                    input_49,
+                    input_51,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if lens_alias.is_empty() {
@@ -5465,17 +5981,17 @@ impl ListLensSharesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_50) = &_input.shared_with_prefix {
+                if let Some(inner_52) = &_input.shared_with_prefix {
                     {
                         query.push_kv(
                             "SharedWithPrefix",
-                            &aws_smithy_http::query::fmt_string(&inner_50),
+                            &aws_smithy_http::query::fmt_string(&inner_52),
                         );
                     }
                 }
-                if let Some(inner_51) = &_input.next_token {
+                if let Some(inner_53) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_51));
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_53));
                     }
                 }
                 if _input.max_results != 0 {
@@ -5484,9 +6000,9 @@ impl ListLensSharesInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_52) = &_input.status {
+                if let Some(inner_54) = &_input.status {
                     {
-                        query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_52));
+                        query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_54));
                     }
                 }
                 Ok(())
@@ -5639,15 +6155,15 @@ impl ListMilestonesInput {
                 _input: &crate::input::ListMilestonesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_53 = &_input.workload_id;
-                let input_53 = input_53.as_ref().ok_or_else(|| {
+                let input_55 = &_input.workload_id;
+                let input_55 = input_55.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workload_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workload_id = aws_smithy_http::label::fmt_string(
-                    input_53,
+                    input_55,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workload_id.is_empty() {
@@ -6036,33 +6552,33 @@ impl ListShareInvitationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_54) = &_input.workload_name_prefix {
+                if let Some(inner_56) = &_input.workload_name_prefix {
                     {
                         query.push_kv(
                             "WorkloadNamePrefix",
-                            &aws_smithy_http::query::fmt_string(&inner_54),
-                        );
-                    }
-                }
-                if let Some(inner_55) = &_input.lens_name_prefix {
-                    {
-                        query.push_kv(
-                            "LensNamePrefix",
-                            &aws_smithy_http::query::fmt_string(&inner_55),
-                        );
-                    }
-                }
-                if let Some(inner_56) = &_input.share_resource_type {
-                    {
-                        query.push_kv(
-                            "ShareResourceType",
                             &aws_smithy_http::query::fmt_string(&inner_56),
                         );
                     }
                 }
-                if let Some(inner_57) = &_input.next_token {
+                if let Some(inner_57) = &_input.lens_name_prefix {
                     {
-                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_57));
+                        query.push_kv(
+                            "LensNamePrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_57),
+                        );
+                    }
+                }
+                if let Some(inner_58) = &_input.share_resource_type {
+                    {
+                        query.push_kv(
+                            "ShareResourceType",
+                            &aws_smithy_http::query::fmt_string(&inner_58),
+                        );
+                    }
+                }
+                if let Some(inner_59) = &_input.next_token {
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_59));
                     }
                 }
                 if _input.max_results != 0 {
@@ -6199,15 +6715,15 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_58 = &_input.workload_arn;
-                let input_58 = input_58.as_ref().ok_or_else(|| {
+                let input_60 = &_input.workload_arn;
+                let input_60 = input_60.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workload_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workload_arn = aws_smithy_http::label::fmt_string(
-                    input_58,
+                    input_60,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workload_arn.is_empty() {
@@ -6485,12 +7001,12 @@ pub mod list_workload_shares_input {
             self.workload_id = input;
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn shared_with_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_with_prefix = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn set_shared_with_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6565,15 +7081,15 @@ impl ListWorkloadSharesInput {
                 _input: &crate::input::ListWorkloadSharesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_59 = &_input.workload_id;
-                let input_59 = input_59.as_ref().ok_or_else(|| {
+                let input_61 = &_input.workload_id;
+                let input_61 = input_61.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workload_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workload_id = aws_smithy_http::label::fmt_string(
-                    input_59,
+                    input_61,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workload_id.is_empty() {
@@ -6597,17 +7113,17 @@ impl ListWorkloadSharesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_60) = &_input.shared_with_prefix {
+                if let Some(inner_62) = &_input.shared_with_prefix {
                     {
                         query.push_kv(
                             "SharedWithPrefix",
-                            &aws_smithy_http::query::fmt_string(&inner_60),
+                            &aws_smithy_http::query::fmt_string(&inner_62),
                         );
                     }
                 }
-                if let Some(inner_61) = &_input.next_token {
+                if let Some(inner_63) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_61));
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_63));
                     }
                 }
                 if _input.max_results != 0 {
@@ -6616,9 +7132,9 @@ impl ListWorkloadSharesInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_62) = &_input.status {
+                if let Some(inner_64) = &_input.status {
                     {
-                        query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_62));
+                        query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_64));
                     }
                 }
                 Ok(())
@@ -6776,15 +7292,15 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_63 = &_input.workload_arn;
-                let input_63 = input_63.as_ref().ok_or_else(|| {
+                let input_65 = &_input.workload_arn;
+                let input_65 = input_65.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workload_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workload_arn = aws_smithy_http::label::fmt_string(
-                    input_63,
+                    input_65,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workload_arn.is_empty() {
@@ -6957,15 +7473,15 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_64 = &_input.workload_arn;
-                let input_64 = input_64.as_ref().ok_or_else(|| {
+                let input_66 = &_input.workload_arn;
+                let input_66 = input_66.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workload_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workload_arn = aws_smithy_http::label::fmt_string(
-                    input_64,
+                    input_66,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workload_arn.is_empty() {
@@ -6985,15 +7501,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_65 = &_input.tag_keys;
-                let inner_65 = inner_65.as_ref().ok_or_else(|| {
+                let inner_67 = &_input.tag_keys;
+                let inner_67 = inner_67.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "tag_keys",
                         "cannot be empty or unset",
                     )
                 })?;
-                for inner_66 in inner_65 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_66));
+                for inner_68 in inner_67 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_68));
                 }
                 Ok(())
             }
@@ -7242,15 +7758,15 @@ impl UpdateAnswerInput {
                 _input: &crate::input::UpdateAnswerInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_67 = &_input.workload_id;
-                let input_67 = input_67.as_ref().ok_or_else(|| {
+                let input_69 = &_input.workload_id;
+                let input_69 = input_69.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workload_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workload_id = aws_smithy_http::label::fmt_string(
-                    input_67,
+                    input_69,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workload_id.is_empty() {
@@ -7261,15 +7777,15 @@ impl UpdateAnswerInput {
                         ),
                     );
                 }
-                let input_68 = &_input.lens_alias;
-                let input_68 = input_68.as_ref().ok_or_else(|| {
+                let input_70 = &_input.lens_alias;
+                let input_70 = input_70.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "lens_alias",
                         "cannot be empty or unset",
                     )
                 })?;
                 let lens_alias = aws_smithy_http::label::fmt_string(
-                    input_68,
+                    input_70,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if lens_alias.is_empty() {
@@ -7280,15 +7796,15 @@ impl UpdateAnswerInput {
                         ),
                     );
                 }
-                let input_69 = &_input.question_id;
-                let input_69 = input_69.as_ref().ok_or_else(|| {
+                let input_71 = &_input.question_id;
+                let input_71 = input_71.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "question_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let question_id = aws_smithy_http::label::fmt_string(
-                    input_69,
+                    input_71,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if question_id.is_empty() {
@@ -7658,15 +8174,15 @@ impl UpdateLensReviewInput {
                 _input: &crate::input::UpdateLensReviewInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_70 = &_input.workload_id;
-                let input_70 = input_70.as_ref().ok_or_else(|| {
+                let input_72 = &_input.workload_id;
+                let input_72 = input_72.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workload_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workload_id = aws_smithy_http::label::fmt_string(
-                    input_70,
+                    input_72,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workload_id.is_empty() {
@@ -7677,15 +8193,15 @@ impl UpdateLensReviewInput {
                         ),
                     );
                 }
-                let input_71 = &_input.lens_alias;
-                let input_71 = input_71.as_ref().ok_or_else(|| {
+                let input_73 = &_input.lens_alias;
+                let input_73 = input_73.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "lens_alias",
                         "cannot be empty or unset",
                     )
                 })?;
                 let lens_alias = aws_smithy_http::label::fmt_string(
-                    input_71,
+                    input_73,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if lens_alias.is_empty() {
@@ -7866,15 +8382,15 @@ impl UpdateShareInvitationInput {
                 _input: &crate::input::UpdateShareInvitationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_72 = &_input.share_invitation_id;
-                let input_72 = input_72.as_ref().ok_or_else(|| {
+                let input_74 = &_input.share_invitation_id;
+                let input_74 = input_74.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "share_invitation_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let share_invitation_id = aws_smithy_http::label::fmt_string(
-                    input_72,
+                    input_74,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if share_invitation_id.is_empty() {
@@ -8003,6 +8519,8 @@ pub mod update_workload_input {
         pub(crate) industry: std::option::Option<std::string::String>,
         pub(crate) notes: std::option::Option<std::string::String>,
         pub(crate) improvement_status: std::option::Option<crate::model::WorkloadImprovementStatus>,
+        pub(crate) discovery_config: std::option::Option<crate::model::WorkloadDiscoveryConfig>,
+        pub(crate) applications: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -8276,6 +8794,38 @@ pub mod update_workload_input {
             self.improvement_status = input;
             self
         }
+        /// <p>Well-Architected discovery configuration settings to associate to the workload.</p>
+        pub fn discovery_config(mut self, input: crate::model::WorkloadDiscoveryConfig) -> Self {
+            self.discovery_config = Some(input);
+            self
+        }
+        /// <p>Well-Architected discovery configuration settings to associate to the workload.</p>
+        pub fn set_discovery_config(
+            mut self,
+            input: std::option::Option<crate::model::WorkloadDiscoveryConfig>,
+        ) -> Self {
+            self.discovery_config = input;
+            self
+        }
+        /// Appends an item to `applications`.
+        ///
+        /// To override the contents of this collection use [`set_applications`](Self::set_applications).
+        ///
+        /// <p>List of AppRegistry application ARNs to associate to the workload.</p>
+        pub fn applications(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.applications.unwrap_or_default();
+            v.push(input.into());
+            self.applications = Some(v);
+            self
+        }
+        /// <p>List of AppRegistry application ARNs to associate to the workload.</p>
+        pub fn set_applications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.applications = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateWorkloadInput`](crate::input::UpdateWorkloadInput).
         pub fn build(
             self,
@@ -8299,6 +8849,8 @@ pub mod update_workload_input {
                 industry: self.industry,
                 notes: self.notes,
                 improvement_status: self.improvement_status,
+                discovery_config: self.discovery_config,
+                applications: self.applications,
             })
         }
     }
@@ -8323,15 +8875,15 @@ impl UpdateWorkloadInput {
                 _input: &crate::input::UpdateWorkloadInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_73 = &_input.workload_id;
-                let input_73 = input_73.as_ref().ok_or_else(|| {
+                let input_75 = &_input.workload_id;
+                let input_75 = input_75.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workload_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workload_id = aws_smithy_http::label::fmt_string(
-                    input_73,
+                    input_75,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workload_id.is_empty() {
@@ -8512,15 +9064,15 @@ impl UpdateWorkloadShareInput {
                 _input: &crate::input::UpdateWorkloadShareInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_74 = &_input.workload_id;
-                let input_74 = input_74.as_ref().ok_or_else(|| {
+                let input_76 = &_input.workload_id;
+                let input_76 = input_76.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workload_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workload_id = aws_smithy_http::label::fmt_string(
-                    input_74,
+                    input_76,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workload_id.is_empty() {
@@ -8531,15 +9083,15 @@ impl UpdateWorkloadShareInput {
                         ),
                     );
                 }
-                let input_75 = &_input.share_id;
-                let input_75 = input_75.as_ref().ok_or_else(|| {
+                let input_77 = &_input.share_id;
+                let input_77 = input_77.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "share_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let share_id = aws_smithy_http::label::fmt_string(
-                    input_75,
+                    input_77,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if share_id.is_empty() {
@@ -8754,15 +9306,15 @@ impl UpgradeLensReviewInput {
                 _input: &crate::input::UpgradeLensReviewInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_76 = &_input.workload_id;
-                let input_76 = input_76.as_ref().ok_or_else(|| {
+                let input_78 = &_input.workload_id;
+                let input_78 = input_78.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "workload_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let workload_id = aws_smithy_http::label::fmt_string(
-                    input_76,
+                    input_78,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if workload_id.is_empty() {
@@ -8773,15 +9325,15 @@ impl UpgradeLensReviewInput {
                         ),
                     );
                 }
-                let input_77 = &_input.lens_alias;
-                let input_77 = input_77.as_ref().ok_or_else(|| {
+                let input_79 = &_input.lens_alias;
+                let input_79 = input_79.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "lens_alias",
                         "cannot be empty or unset",
                     )
                 })?;
                 let lens_alias = aws_smithy_http::label::fmt_string(
-                    input_77,
+                    input_79,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if lens_alias.is_empty() {
@@ -9048,6 +9600,12 @@ pub struct UpdateWorkloadInput {
     /// <p>The improvement status for a workload.</p>
     #[doc(hidden)]
     pub improvement_status: std::option::Option<crate::model::WorkloadImprovementStatus>,
+    /// <p>Well-Architected discovery configuration settings to associate to the workload.</p>
+    #[doc(hidden)]
+    pub discovery_config: std::option::Option<crate::model::WorkloadDiscoveryConfig>,
+    /// <p>List of AppRegistry application ARNs to associate to the workload.</p>
+    #[doc(hidden)]
+    pub applications: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateWorkloadInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -9143,6 +9701,14 @@ impl UpdateWorkloadInput {
         &self,
     ) -> std::option::Option<&crate::model::WorkloadImprovementStatus> {
         self.improvement_status.as_ref()
+    }
+    /// <p>Well-Architected discovery configuration settings to associate to the workload.</p>
+    pub fn discovery_config(&self) -> std::option::Option<&crate::model::WorkloadDiscoveryConfig> {
+        self.discovery_config.as_ref()
+    }
+    /// <p>List of AppRegistry application ARNs to associate to the workload.</p>
+    pub fn applications(&self) -> std::option::Option<&[std::string::String]> {
+        self.applications.as_deref()
     }
 }
 
@@ -9366,7 +9932,7 @@ pub struct ListWorkloadSharesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     #[doc(hidden)]
     pub shared_with_prefix: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -9384,7 +9950,7 @@ impl ListWorkloadSharesInput {
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
-    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn shared_with_prefix(&self) -> std::option::Option<&str> {
         self.shared_with_prefix.as_deref()
     }
@@ -9557,7 +10123,7 @@ pub struct ListLensSharesInput {
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
     #[doc(hidden)]
     pub shared_with_prefix: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -9578,7 +10144,7 @@ impl ListLensSharesInput {
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
-    /// <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
     pub fn shared_with_prefix(&self) -> std::option::Option<&str> {
         self.shared_with_prefix.as_deref()
     }
@@ -9734,6 +10300,124 @@ impl ListLensesInput {
     /// <p>The full name of the lens.</p>
     pub fn lens_name(&self) -> std::option::Option<&str> {
         self.lens_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListCheckSummariesInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
+    pub workload_id: std::option::Option<std::string::String>,
+    /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return for this request.</p>
+    #[doc(hidden)]
+    pub max_results: i32,
+    /// <p>Well-Architected Lens ARN.</p>
+    #[doc(hidden)]
+    pub lens_arn: std::option::Option<std::string::String>,
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    #[doc(hidden)]
+    pub pillar_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the question.</p>
+    #[doc(hidden)]
+    pub question_id: std::option::Option<std::string::String>,
+    /// <p>The ID of a choice.</p>
+    #[doc(hidden)]
+    pub choice_id: std::option::Option<std::string::String>,
+}
+impl ListCheckSummariesInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Well-Architected Lens ARN.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn pillar_id(&self) -> std::option::Option<&str> {
+        self.pillar_id.as_deref()
+    }
+    /// <p>The ID of the question.</p>
+    pub fn question_id(&self) -> std::option::Option<&str> {
+        self.question_id.as_deref()
+    }
+    /// <p>The ID of a choice.</p>
+    pub fn choice_id(&self) -> std::option::Option<&str> {
+        self.choice_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListCheckDetailsInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
+    pub workload_id: std::option::Option<std::string::String>,
+    /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return for this request.</p>
+    #[doc(hidden)]
+    pub max_results: i32,
+    /// <p>Well-Architected Lens ARN.</p>
+    #[doc(hidden)]
+    pub lens_arn: std::option::Option<std::string::String>,
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    #[doc(hidden)]
+    pub pillar_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the question.</p>
+    #[doc(hidden)]
+    pub question_id: std::option::Option<std::string::String>,
+    /// <p>The ID of a choice.</p>
+    #[doc(hidden)]
+    pub choice_id: std::option::Option<std::string::String>,
+}
+impl ListCheckDetailsInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Well-Architected Lens ARN.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn pillar_id(&self) -> std::option::Option<&str> {
+        self.pillar_id.as_deref()
+    }
+    /// <p>The ID of the question.</p>
+    pub fn question_id(&self) -> std::option::Option<&str> {
+        self.question_id.as_deref()
+    }
+    /// <p>The ID of a choice.</p>
+    pub fn choice_id(&self) -> std::option::Option<&str> {
+        self.choice_id.as_deref()
     }
 }
 
@@ -10273,7 +10957,7 @@ pub struct CreateWorkloadShareInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     #[doc(hidden)]
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>Permission granted on a workload share.</p>
@@ -10291,7 +10975,7 @@ impl CreateWorkloadShareInput {
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
-    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn shared_with(&self) -> std::option::Option<&str> {
         self.shared_with.as_deref()
     }
@@ -10392,6 +11076,12 @@ pub struct CreateWorkloadInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
+    #[doc(hidden)]
+    pub discovery_config: std::option::Option<crate::model::WorkloadDiscoveryConfig>,
+    /// <p>List of AppRegistry application ARNs associated to the workload.</p>
+    #[doc(hidden)]
+    pub applications: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateWorkloadInput {
     /// <p>The name of the workload.</p>
@@ -10491,6 +11181,14 @@ impl CreateWorkloadInput {
     {
         self.tags.as_ref()
     }
+    /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
+    pub fn discovery_config(&self) -> std::option::Option<&crate::model::WorkloadDiscoveryConfig> {
+        self.discovery_config.as_ref()
+    }
+    /// <p>List of AppRegistry application ARNs associated to the workload.</p>
+    pub fn applications(&self) -> std::option::Option<&[std::string::String]> {
+        self.applications.as_deref()
+    }
 }
 
 /// <p>Input for milestone creation.</p>
@@ -10588,7 +11286,7 @@ pub struct CreateLensShareInput {
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     #[doc(hidden)]
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
@@ -10606,7 +11304,7 @@ impl CreateLensShareInput {
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
-    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn shared_with(&self) -> std::option::Option<&str> {
         self.shared_with.as_deref()
     }

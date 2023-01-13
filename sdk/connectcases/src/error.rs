@@ -4701,6 +4701,8 @@ pub enum UpdateLayoutErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>We couldn't find the requested resource. Check that your resources exists and were created in the same Amazon Web Services Region as your request, and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The rate has been exceeded for this API. Please try again after a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request isn't valid. Check the syntax and try again.</p>
@@ -4722,6 +4724,7 @@ impl std::fmt::Display for UpdateLayoutError {
             UpdateLayoutErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateLayoutErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateLayoutErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateLayoutErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             UpdateLayoutErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateLayoutErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateLayoutErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -4806,6 +4809,13 @@ impl UpdateLayoutError {
             UpdateLayoutErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateLayoutErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLayoutErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateLayoutErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateLayoutErrorKind::ThrottlingException(_))
@@ -4822,6 +4832,7 @@ impl std::error::Error for UpdateLayoutError {
             UpdateLayoutErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateLayoutErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateLayoutErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateLayoutErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             UpdateLayoutErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateLayoutErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateLayoutErrorKind::Unhandled(_inner) => Some(_inner),

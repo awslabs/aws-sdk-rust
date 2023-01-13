@@ -1141,6 +1141,8 @@ pub mod create_web_acl_input {
             std::collections::HashMap<std::string::String, crate::model::CustomResponseBody>,
         >,
         pub(crate) captcha_config: std::option::Option<crate::model::CaptchaConfig>,
+        pub(crate) challenge_config: std::option::Option<crate::model::ChallengeConfig>,
+        pub(crate) token_domains: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -1289,6 +1291,42 @@ pub mod create_web_acl_input {
             self.captcha_config = input;
             self
         }
+        /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+        pub fn challenge_config(mut self, input: crate::model::ChallengeConfig) -> Self {
+            self.challenge_config = Some(input);
+            self
+        }
+        /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+        pub fn set_challenge_config(
+            mut self,
+            input: std::option::Option<crate::model::ChallengeConfig>,
+        ) -> Self {
+            self.challenge_config = input;
+            self
+        }
+        /// Appends an item to `token_domains`.
+        ///
+        /// To override the contents of this collection use [`set_token_domains`](Self::set_token_domains).
+        ///
+        /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+        /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+        /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+        pub fn token_domains(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.token_domains.unwrap_or_default();
+            v.push(input.into());
+            self.token_domains = Some(v);
+            self
+        }
+        /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+        /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+        /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+        pub fn set_token_domains(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.token_domains = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWebAclInput`](crate::input::CreateWebAclInput).
         pub fn build(
             self,
@@ -1304,6 +1342,8 @@ pub mod create_web_acl_input {
                 tags: self.tags,
                 custom_response_bodies: self.custom_response_bodies,
                 captcha_config: self.captcha_config,
+                challenge_config: self.challenge_config,
+                token_domains: self.token_domains,
             })
         }
     }
@@ -9001,6 +9041,8 @@ pub mod update_web_acl_input {
             std::collections::HashMap<std::string::String, crate::model::CustomResponseBody>,
         >,
         pub(crate) captcha_config: std::option::Option<crate::model::CaptchaConfig>,
+        pub(crate) challenge_config: std::option::Option<crate::model::ChallengeConfig>,
+        pub(crate) token_domains: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -9150,6 +9192,42 @@ pub mod update_web_acl_input {
             self.captcha_config = input;
             self
         }
+        /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+        pub fn challenge_config(mut self, input: crate::model::ChallengeConfig) -> Self {
+            self.challenge_config = Some(input);
+            self
+        }
+        /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+        pub fn set_challenge_config(
+            mut self,
+            input: std::option::Option<crate::model::ChallengeConfig>,
+        ) -> Self {
+            self.challenge_config = input;
+            self
+        }
+        /// Appends an item to `token_domains`.
+        ///
+        /// To override the contents of this collection use [`set_token_domains`](Self::set_token_domains).
+        ///
+        /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+        /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+        /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+        pub fn token_domains(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.token_domains.unwrap_or_default();
+            v.push(input.into());
+            self.token_domains = Some(v);
+            self
+        }
+        /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+        /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+        /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+        pub fn set_token_domains(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.token_domains = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateWebAclInput`](crate::input::UpdateWebAclInput).
         pub fn build(
             self,
@@ -9166,6 +9244,8 @@ pub mod update_web_acl_input {
                 lock_token: self.lock_token,
                 custom_response_bodies: self.custom_response_bodies,
                 captcha_config: self.captcha_config,
+                challenge_config: self.challenge_config,
+                token_domains: self.token_domains,
             })
         }
     }
@@ -9328,6 +9408,14 @@ pub struct UpdateWebAclInput {
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
     #[doc(hidden)]
     pub captcha_config: std::option::Option<crate::model::CaptchaConfig>,
+    /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+    #[doc(hidden)]
+    pub challenge_config: std::option::Option<crate::model::ChallengeConfig>,
+    /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+    /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+    /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+    #[doc(hidden)]
+    pub token_domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateWebAclInput {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -9380,6 +9468,16 @@ impl UpdateWebAclInput {
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
     pub fn captcha_config(&self) -> std::option::Option<&crate::model::CaptchaConfig> {
         self.captcha_config.as_ref()
+    }
+    /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+    pub fn challenge_config(&self) -> std::option::Option<&crate::model::ChallengeConfig> {
+        self.challenge_config.as_ref()
+    }
+    /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+    /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+    /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+    pub fn token_domains(&self) -> std::option::Option<&[std::string::String]> {
+        self.token_domains.as_deref()
     }
 }
 
@@ -11028,6 +11126,14 @@ pub struct CreateWebAclInput {
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
     #[doc(hidden)]
     pub captcha_config: std::option::Option<crate::model::CaptchaConfig>,
+    /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+    #[doc(hidden)]
+    pub challenge_config: std::option::Option<crate::model::ChallengeConfig>,
+    /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+    /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+    /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+    #[doc(hidden)]
+    pub token_domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateWebAclInput {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -11076,6 +11182,16 @@ impl CreateWebAclInput {
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
     pub fn captcha_config(&self) -> std::option::Option<&crate::model::CaptchaConfig> {
         self.captcha_config.as_ref()
+    }
+    /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+    pub fn challenge_config(&self) -> std::option::Option<&crate::model::ChallengeConfig> {
+        self.challenge_config.as_ref()
+    }
+    /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+    /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+    /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+    pub fn token_domains(&self) -> std::option::Option<&[std::string::String]> {
+        self.token_domains.as_deref()
     }
 }
 

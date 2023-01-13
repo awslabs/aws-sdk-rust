@@ -59,12 +59,16 @@ pub mod batch_execute_statement_input {
             self.database = input;
             self
         }
-        /// <p>The name of the database schema.</p>
+        /// <p>The name of the database schema.</p> <note>
+        /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
+        /// </note>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema = Some(input.into());
             self
         }
-        /// <p>The name of the database schema.</p>
+        /// <p>The name of the database schema.</p> <note>
+        /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
+        /// </note>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
@@ -1524,7 +1528,9 @@ pub struct BatchExecuteStatementInput {
     /// <p>The name of the database.</p>
     #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
-    /// <p>The name of the database schema.</p>
+    /// <p>The name of the database schema.</p> <note>
+    /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
+    /// </note>
     #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>The parameter set for the batch operation.</p>
@@ -1561,7 +1567,9 @@ impl BatchExecuteStatementInput {
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
-    /// <p>The name of the database schema.</p>
+    /// <p>The name of the database schema.</p> <note>
+    /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
+    /// </note>
     pub fn schema(&self) -> std::option::Option<&str> {
         self.schema.as_deref()
     }

@@ -50,6 +50,54 @@ impl UpdatePreparedStatementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateNotebookMetadataOutput {}
+/// See [`UpdateNotebookMetadataOutput`](crate::output::UpdateNotebookMetadataOutput).
+pub mod update_notebook_metadata_output {
+
+    /// A builder for [`UpdateNotebookMetadataOutput`](crate::output::UpdateNotebookMetadataOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateNotebookMetadataOutput`](crate::output::UpdateNotebookMetadataOutput).
+        pub fn build(self) -> crate::output::UpdateNotebookMetadataOutput {
+            crate::output::UpdateNotebookMetadataOutput {}
+        }
+    }
+}
+impl UpdateNotebookMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateNotebookMetadataOutput`](crate::output::UpdateNotebookMetadataOutput).
+    pub fn builder() -> crate::output::update_notebook_metadata_output::Builder {
+        crate::output::update_notebook_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateNotebookOutput {}
+/// See [`UpdateNotebookOutput`](crate::output::UpdateNotebookOutput).
+pub mod update_notebook_output {
+
+    /// A builder for [`UpdateNotebookOutput`](crate::output::UpdateNotebookOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateNotebookOutput`](crate::output::UpdateNotebookOutput).
+        pub fn build(self) -> crate::output::UpdateNotebookOutput {
+            crate::output::UpdateNotebookOutput {}
+        }
+    }
+}
+impl UpdateNotebookOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateNotebookOutput`](crate::output::UpdateNotebookOutput).
+    pub fn builder() -> crate::output::update_notebook_output::Builder {
+        crate::output::update_notebook_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNamedQueryOutput {}
 /// See [`UpdateNamedQueryOutput`](crate::output::UpdateNamedQueryOutput).
 pub mod update_named_query_output {
@@ -122,6 +170,84 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TerminateSessionOutput {
+    /// <p>The state of the session. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The session has been started.</p>
+    /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+    /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+    /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+    /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::SessionState>,
+}
+impl TerminateSessionOutput {
+    /// <p>The state of the session. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The session has been started.</p>
+    /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+    /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+    /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+    /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::SessionState> {
+        self.state.as_ref()
+    }
+}
+/// See [`TerminateSessionOutput`](crate::output::TerminateSessionOutput).
+pub mod terminate_session_output {
+
+    /// A builder for [`TerminateSessionOutput`](crate::output::TerminateSessionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) state: std::option::Option<crate::model::SessionState>,
+    }
+    impl Builder {
+        /// <p>The state of the session. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The session has been started.</p>
+        /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+        /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+        /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+        /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+        pub fn state(mut self, input: crate::model::SessionState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of the session. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The session has been started.</p>
+        /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+        /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+        /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+        /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+        pub fn set_state(mut self, input: std::option::Option<crate::model::SessionState>) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TerminateSessionOutput`](crate::output::TerminateSessionOutput).
+        pub fn build(self) -> crate::output::TerminateSessionOutput {
+            crate::output::TerminateSessionOutput { state: self.state }
+        }
+    }
+}
+impl TerminateSessionOutput {
+    /// Creates a new builder-style object to manufacture [`TerminateSessionOutput`](crate::output::TerminateSessionOutput).
+    pub fn builder() -> crate::output::terminate_session_output::Builder {
+        crate::output::terminate_session_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
@@ -164,6 +290,182 @@ impl StopQueryExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StopQueryExecutionOutput`](crate::output::StopQueryExecutionOutput).
     pub fn builder() -> crate::output::stop_query_execution_output::Builder {
         crate::output::stop_query_execution_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StopCalculationExecutionOutput {
+    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p> <code>RUNNING</code> - The calculation is running.</p>
+    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::CalculationExecutionState>,
+}
+impl StopCalculationExecutionOutput {
+    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p> <code>RUNNING</code> - The calculation is running.</p>
+    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CalculationExecutionState> {
+        self.state.as_ref()
+    }
+}
+/// See [`StopCalculationExecutionOutput`](crate::output::StopCalculationExecutionOutput).
+pub mod stop_calculation_execution_output {
+
+    /// A builder for [`StopCalculationExecutionOutput`](crate::output::StopCalculationExecutionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) state: std::option::Option<crate::model::CalculationExecutionState>,
+    }
+    impl Builder {
+        /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+        /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+        /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+        /// <p> <code>RUNNING</code> - The calculation is running.</p>
+        /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+        /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+        /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+        /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+        pub fn state(mut self, input: crate::model::CalculationExecutionState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+        /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+        /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+        /// <p> <code>RUNNING</code> - The calculation is running.</p>
+        /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+        /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+        /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+        /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::CalculationExecutionState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopCalculationExecutionOutput`](crate::output::StopCalculationExecutionOutput).
+        pub fn build(self) -> crate::output::StopCalculationExecutionOutput {
+            crate::output::StopCalculationExecutionOutput { state: self.state }
+        }
+    }
+}
+impl StopCalculationExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`StopCalculationExecutionOutput`](crate::output::StopCalculationExecutionOutput).
+    pub fn builder() -> crate::output::stop_calculation_execution_output::Builder {
+        crate::output::stop_calculation_execution_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartSessionOutput {
+    /// <p>The session ID.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The state of the session. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The session has been started.</p>
+    /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+    /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+    /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+    /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::SessionState>,
+}
+impl StartSessionOutput {
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The state of the session. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The session has been started.</p>
+    /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+    /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+    /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+    /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::SessionState> {
+        self.state.as_ref()
+    }
+}
+/// See [`StartSessionOutput`](crate::output::StartSessionOutput).
+pub mod start_session_output {
+
+    /// A builder for [`StartSessionOutput`](crate::output::StartSessionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::SessionState>,
+    }
+    impl Builder {
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>The state of the session. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The session has been started.</p>
+        /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+        /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+        /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+        /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+        pub fn state(mut self, input: crate::model::SessionState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of the session. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The session has been started.</p>
+        /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+        /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+        /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+        /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+        pub fn set_state(mut self, input: std::option::Option<crate::model::SessionState>) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartSessionOutput`](crate::output::StartSessionOutput).
+        pub fn build(self) -> crate::output::StartSessionOutput {
+            crate::output::StartSessionOutput {
+                session_id: self.session_id,
+                state: self.state,
+            }
+        }
+    }
+}
+impl StartSessionOutput {
+    /// Creates a new builder-style object to manufacture [`StartSessionOutput`](crate::output::StartSessionOutput).
+    pub fn builder() -> crate::output::start_session_output::Builder {
+        crate::output::start_session_output::Builder::default()
     }
 }
 
@@ -215,6 +517,107 @@ impl StartQueryExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartQueryExecutionOutput`](crate::output::StartQueryExecutionOutput).
     pub fn builder() -> crate::output::start_query_execution_output::Builder {
         crate::output::start_query_execution_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartCalculationExecutionOutput {
+    /// <p>The calculation execution UUID.</p>
+    #[doc(hidden)]
+    pub calculation_execution_id: std::option::Option<std::string::String>,
+    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p> <code>RUNNING</code> - The calculation is running.</p>
+    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::CalculationExecutionState>,
+}
+impl StartCalculationExecutionOutput {
+    /// <p>The calculation execution UUID.</p>
+    pub fn calculation_execution_id(&self) -> std::option::Option<&str> {
+        self.calculation_execution_id.as_deref()
+    }
+    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p> <code>RUNNING</code> - The calculation is running.</p>
+    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CalculationExecutionState> {
+        self.state.as_ref()
+    }
+}
+/// See [`StartCalculationExecutionOutput`](crate::output::StartCalculationExecutionOutput).
+pub mod start_calculation_execution_output {
+
+    /// A builder for [`StartCalculationExecutionOutput`](crate::output::StartCalculationExecutionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) calculation_execution_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::CalculationExecutionState>,
+    }
+    impl Builder {
+        /// <p>The calculation execution UUID.</p>
+        pub fn calculation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.calculation_execution_id = Some(input.into());
+            self
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn set_calculation_execution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.calculation_execution_id = input;
+            self
+        }
+        /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+        /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+        /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+        /// <p> <code>RUNNING</code> - The calculation is running.</p>
+        /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+        /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+        /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+        /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+        pub fn state(mut self, input: crate::model::CalculationExecutionState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+        /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+        /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+        /// <p> <code>RUNNING</code> - The calculation is running.</p>
+        /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+        /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+        /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+        /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::CalculationExecutionState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartCalculationExecutionOutput`](crate::output::StartCalculationExecutionOutput).
+        pub fn build(self) -> crate::output::StartCalculationExecutionOutput {
+            crate::output::StartCalculationExecutionOutput {
+                calculation_execution_id: self.calculation_execution_id,
+                state: self.state,
+            }
+        }
+    }
+}
+impl StartCalculationExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`StartCalculationExecutionOutput`](crate::output::StartCalculationExecutionOutput).
+    pub fn builder() -> crate::output::start_calculation_execution_output::Builder {
+        crate::output::start_calculation_execution_output::Builder::default()
     }
 }
 
@@ -450,6 +853,82 @@ impl ListTableMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListSessionsOutput {
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A list of sessions.</p>
+    #[doc(hidden)]
+    pub sessions: std::option::Option<std::vec::Vec<crate::model::SessionSummary>>,
+}
+impl ListSessionsOutput {
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of sessions.</p>
+    pub fn sessions(&self) -> std::option::Option<&[crate::model::SessionSummary]> {
+        self.sessions.as_deref()
+    }
+}
+/// See [`ListSessionsOutput`](crate::output::ListSessionsOutput).
+pub mod list_sessions_output {
+
+    /// A builder for [`ListSessionsOutput`](crate::output::ListSessionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) sessions: std::option::Option<std::vec::Vec<crate::model::SessionSummary>>,
+    }
+    impl Builder {
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `sessions`.
+        ///
+        /// To override the contents of this collection use [`set_sessions`](Self::set_sessions).
+        ///
+        /// <p>A list of sessions.</p>
+        pub fn sessions(mut self, input: crate::model::SessionSummary) -> Self {
+            let mut v = self.sessions.unwrap_or_default();
+            v.push(input);
+            self.sessions = Some(v);
+            self
+        }
+        /// <p>A list of sessions.</p>
+        pub fn set_sessions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SessionSummary>>,
+        ) -> Self {
+            self.sessions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSessionsOutput`](crate::output::ListSessionsOutput).
+        pub fn build(self) -> crate::output::ListSessionsOutput {
+            crate::output::ListSessionsOutput {
+                next_token: self.next_token,
+                sessions: self.sessions,
+            }
+        }
+    }
+}
+impl ListSessionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSessionsOutput`](crate::output::ListSessionsOutput).
+    pub fn builder() -> crate::output::list_sessions_output::Builder {
+        crate::output::list_sessions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueryExecutionsOutput {
     /// <p>The unique IDs of each query execution as an array of strings.</p>
     #[doc(hidden)]
@@ -609,6 +1088,166 @@ impl ListPreparedStatementsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListNotebookSessionsOutput {
+    /// <p>A list of the sessions belonging to the notebook.</p>
+    #[doc(hidden)]
+    pub notebook_sessions_list:
+        std::option::Option<std::vec::Vec<crate::model::NotebookSessionSummary>>,
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListNotebookSessionsOutput {
+    /// <p>A list of the sessions belonging to the notebook.</p>
+    pub fn notebook_sessions_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotebookSessionSummary]> {
+        self.notebook_sessions_list.as_deref()
+    }
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListNotebookSessionsOutput`](crate::output::ListNotebookSessionsOutput).
+pub mod list_notebook_sessions_output {
+
+    /// A builder for [`ListNotebookSessionsOutput`](crate::output::ListNotebookSessionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notebook_sessions_list:
+            std::option::Option<std::vec::Vec<crate::model::NotebookSessionSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `notebook_sessions_list`.
+        ///
+        /// To override the contents of this collection use [`set_notebook_sessions_list`](Self::set_notebook_sessions_list).
+        ///
+        /// <p>A list of the sessions belonging to the notebook.</p>
+        pub fn notebook_sessions_list(
+            mut self,
+            input: crate::model::NotebookSessionSummary,
+        ) -> Self {
+            let mut v = self.notebook_sessions_list.unwrap_or_default();
+            v.push(input);
+            self.notebook_sessions_list = Some(v);
+            self
+        }
+        /// <p>A list of the sessions belonging to the notebook.</p>
+        pub fn set_notebook_sessions_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::NotebookSessionSummary>>,
+        ) -> Self {
+            self.notebook_sessions_list = input;
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListNotebookSessionsOutput`](crate::output::ListNotebookSessionsOutput).
+        pub fn build(self) -> crate::output::ListNotebookSessionsOutput {
+            crate::output::ListNotebookSessionsOutput {
+                notebook_sessions_list: self.notebook_sessions_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListNotebookSessionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListNotebookSessionsOutput`](crate::output::ListNotebookSessionsOutput).
+    pub fn builder() -> crate::output::list_notebook_sessions_output::Builder {
+        crate::output::list_notebook_sessions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListNotebookMetadataOutput {
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The list of notebook metadata for the specified workgroup.</p>
+    #[doc(hidden)]
+    pub notebook_metadata_list: std::option::Option<std::vec::Vec<crate::model::NotebookMetadata>>,
+}
+impl ListNotebookMetadataOutput {
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of notebook metadata for the specified workgroup.</p>
+    pub fn notebook_metadata_list(&self) -> std::option::Option<&[crate::model::NotebookMetadata]> {
+        self.notebook_metadata_list.as_deref()
+    }
+}
+/// See [`ListNotebookMetadataOutput`](crate::output::ListNotebookMetadataOutput).
+pub mod list_notebook_metadata_output {
+
+    /// A builder for [`ListNotebookMetadataOutput`](crate::output::ListNotebookMetadataOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) notebook_metadata_list:
+            std::option::Option<std::vec::Vec<crate::model::NotebookMetadata>>,
+    }
+    impl Builder {
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `notebook_metadata_list`.
+        ///
+        /// To override the contents of this collection use [`set_notebook_metadata_list`](Self::set_notebook_metadata_list).
+        ///
+        /// <p>The list of notebook metadata for the specified workgroup.</p>
+        pub fn notebook_metadata_list(mut self, input: crate::model::NotebookMetadata) -> Self {
+            let mut v = self.notebook_metadata_list.unwrap_or_default();
+            v.push(input);
+            self.notebook_metadata_list = Some(v);
+            self
+        }
+        /// <p>The list of notebook metadata for the specified workgroup.</p>
+        pub fn set_notebook_metadata_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::NotebookMetadata>>,
+        ) -> Self {
+            self.notebook_metadata_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListNotebookMetadataOutput`](crate::output::ListNotebookMetadataOutput).
+        pub fn build(self) -> crate::output::ListNotebookMetadataOutput {
+            crate::output::ListNotebookMetadataOutput {
+                next_token: self.next_token,
+                notebook_metadata_list: self.notebook_metadata_list,
+            }
+        }
+    }
+}
+impl ListNotebookMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`ListNotebookMetadataOutput`](crate::output::ListNotebookMetadataOutput).
+    pub fn builder() -> crate::output::list_notebook_metadata_output::Builder {
+        crate::output::list_notebook_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNamedQueriesOutput {
     /// <p>The list of unique query IDs.</p>
     #[doc(hidden)]
@@ -679,6 +1318,102 @@ impl ListNamedQueriesOutput {
     /// Creates a new builder-style object to manufacture [`ListNamedQueriesOutput`](crate::output::ListNamedQueriesOutput).
     pub fn builder() -> crate::output::list_named_queries_output::Builder {
         crate::output::list_named_queries_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListExecutorsOutput {
+    /// <p>The session ID.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Contains summary information about the executor.</p>
+    #[doc(hidden)]
+    pub executors_summary: std::option::Option<std::vec::Vec<crate::model::ExecutorsSummary>>,
+}
+impl ListExecutorsOutput {
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Contains summary information about the executor.</p>
+    pub fn executors_summary(&self) -> std::option::Option<&[crate::model::ExecutorsSummary]> {
+        self.executors_summary.as_deref()
+    }
+}
+/// See [`ListExecutorsOutput`](crate::output::ListExecutorsOutput).
+pub mod list_executors_output {
+
+    /// A builder for [`ListExecutorsOutput`](crate::output::ListExecutorsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) executors_summary:
+            std::option::Option<std::vec::Vec<crate::model::ExecutorsSummary>>,
+    }
+    impl Builder {
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `executors_summary`.
+        ///
+        /// To override the contents of this collection use [`set_executors_summary`](Self::set_executors_summary).
+        ///
+        /// <p>Contains summary information about the executor.</p>
+        pub fn executors_summary(mut self, input: crate::model::ExecutorsSummary) -> Self {
+            let mut v = self.executors_summary.unwrap_or_default();
+            v.push(input);
+            self.executors_summary = Some(v);
+            self
+        }
+        /// <p>Contains summary information about the executor.</p>
+        pub fn set_executors_summary(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExecutorsSummary>>,
+        ) -> Self {
+            self.executors_summary = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListExecutorsOutput`](crate::output::ListExecutorsOutput).
+        pub fn build(self) -> crate::output::ListExecutorsOutput {
+            crate::output::ListExecutorsOutput {
+                session_id: self.session_id,
+                next_token: self.next_token,
+                executors_summary: self.executors_summary,
+            }
+        }
+    }
+}
+impl ListExecutorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListExecutorsOutput`](crate::output::ListExecutorsOutput).
+    pub fn builder() -> crate::output::list_executors_output::Builder {
+        crate::output::list_executors_output::Builder::default()
     }
 }
 
@@ -916,6 +1651,211 @@ impl ListDatabasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListCalculationExecutionsOutput {
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A list of <code>CalculationSummary</code> objects.</p>
+    #[doc(hidden)]
+    pub calculations: std::option::Option<std::vec::Vec<crate::model::CalculationSummary>>,
+}
+impl ListCalculationExecutionsOutput {
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of <code>CalculationSummary</code> objects.</p>
+    pub fn calculations(&self) -> std::option::Option<&[crate::model::CalculationSummary]> {
+        self.calculations.as_deref()
+    }
+}
+/// See [`ListCalculationExecutionsOutput`](crate::output::ListCalculationExecutionsOutput).
+pub mod list_calculation_executions_output {
+
+    /// A builder for [`ListCalculationExecutionsOutput`](crate::output::ListCalculationExecutionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) calculations:
+            std::option::Option<std::vec::Vec<crate::model::CalculationSummary>>,
+    }
+    impl Builder {
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `calculations`.
+        ///
+        /// To override the contents of this collection use [`set_calculations`](Self::set_calculations).
+        ///
+        /// <p>A list of <code>CalculationSummary</code> objects.</p>
+        pub fn calculations(mut self, input: crate::model::CalculationSummary) -> Self {
+            let mut v = self.calculations.unwrap_or_default();
+            v.push(input);
+            self.calculations = Some(v);
+            self
+        }
+        /// <p>A list of <code>CalculationSummary</code> objects.</p>
+        pub fn set_calculations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CalculationSummary>>,
+        ) -> Self {
+            self.calculations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCalculationExecutionsOutput`](crate::output::ListCalculationExecutionsOutput).
+        pub fn build(self) -> crate::output::ListCalculationExecutionsOutput {
+            crate::output::ListCalculationExecutionsOutput {
+                next_token: self.next_token,
+                calculations: self.calculations,
+            }
+        }
+    }
+}
+impl ListCalculationExecutionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCalculationExecutionsOutput`](crate::output::ListCalculationExecutionsOutput).
+    pub fn builder() -> crate::output::list_calculation_executions_output::Builder {
+        crate::output::list_calculation_executions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListApplicationDpuSizesOutput {
+    /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
+    #[doc(hidden)]
+    pub application_dpu_sizes:
+        std::option::Option<std::vec::Vec<crate::model::ApplicationDpuSizes>>,
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationDpuSizesOutput {
+    /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
+    pub fn application_dpu_sizes(
+        &self,
+    ) -> std::option::Option<&[crate::model::ApplicationDpuSizes]> {
+        self.application_dpu_sizes.as_deref()
+    }
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListApplicationDpuSizesOutput`](crate::output::ListApplicationDpuSizesOutput).
+pub mod list_application_dpu_sizes_output {
+
+    /// A builder for [`ListApplicationDpuSizesOutput`](crate::output::ListApplicationDpuSizesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application_dpu_sizes:
+            std::option::Option<std::vec::Vec<crate::model::ApplicationDpuSizes>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `application_dpu_sizes`.
+        ///
+        /// To override the contents of this collection use [`set_application_dpu_sizes`](Self::set_application_dpu_sizes).
+        ///
+        /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
+        pub fn application_dpu_sizes(mut self, input: crate::model::ApplicationDpuSizes) -> Self {
+            let mut v = self.application_dpu_sizes.unwrap_or_default();
+            v.push(input);
+            self.application_dpu_sizes = Some(v);
+            self
+        }
+        /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
+        pub fn set_application_dpu_sizes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ApplicationDpuSizes>>,
+        ) -> Self {
+            self.application_dpu_sizes = input;
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListApplicationDpuSizesOutput`](crate::output::ListApplicationDpuSizesOutput).
+        pub fn build(self) -> crate::output::ListApplicationDpuSizesOutput {
+            crate::output::ListApplicationDpuSizesOutput {
+                application_dpu_sizes: self.application_dpu_sizes,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListApplicationDpuSizesOutput {
+    /// Creates a new builder-style object to manufacture [`ListApplicationDpuSizesOutput`](crate::output::ListApplicationDpuSizesOutput).
+    pub fn builder() -> crate::output::list_application_dpu_sizes_output::Builder {
+        crate::output::list_application_dpu_sizes_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ImportNotebookOutput {
+    /// <p>The ID of the notebook to import.</p>
+    #[doc(hidden)]
+    pub notebook_id: std::option::Option<std::string::String>,
+}
+impl ImportNotebookOutput {
+    /// <p>The ID of the notebook to import.</p>
+    pub fn notebook_id(&self) -> std::option::Option<&str> {
+        self.notebook_id.as_deref()
+    }
+}
+/// See [`ImportNotebookOutput`](crate::output::ImportNotebookOutput).
+pub mod import_notebook_output {
+
+    /// A builder for [`ImportNotebookOutput`](crate::output::ImportNotebookOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notebook_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the notebook to import.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notebook_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the notebook to import.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportNotebookOutput`](crate::output::ImportNotebookOutput).
+        pub fn build(self) -> crate::output::ImportNotebookOutput {
+            crate::output::ImportNotebookOutput {
+                notebook_id: self.notebook_id,
+            }
+        }
+    }
+}
+impl ImportNotebookOutput {
+    /// Creates a new builder-style object to manufacture [`ImportNotebookOutput`](crate::output::ImportNotebookOutput).
+    pub fn builder() -> crate::output::import_notebook_output::Builder {
+        crate::output::import_notebook_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkGroupOutput {
     /// <p>Information about the workgroup.</p>
     #[doc(hidden)]
@@ -1012,6 +1952,296 @@ impl GetTableMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetTableMetadataOutput`](crate::output::GetTableMetadataOutput).
     pub fn builder() -> crate::output::get_table_metadata_output::Builder {
         crate::output::get_table_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetSessionStatusOutput {
+    /// <p>The session ID.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>Contains information about the status of the session.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::SessionStatus>,
+}
+impl GetSessionStatusOutput {
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>Contains information about the status of the session.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SessionStatus> {
+        self.status.as_ref()
+    }
+}
+/// See [`GetSessionStatusOutput`](crate::output::GetSessionStatusOutput).
+pub mod get_session_status_output {
+
+    /// A builder for [`GetSessionStatusOutput`](crate::output::GetSessionStatusOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::SessionStatus>,
+    }
+    impl Builder {
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>Contains information about the status of the session.</p>
+        pub fn status(mut self, input: crate::model::SessionStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Contains information about the status of the session.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::SessionStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSessionStatusOutput`](crate::output::GetSessionStatusOutput).
+        pub fn build(self) -> crate::output::GetSessionStatusOutput {
+            crate::output::GetSessionStatusOutput {
+                session_id: self.session_id,
+                status: self.status,
+            }
+        }
+    }
+}
+impl GetSessionStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetSessionStatusOutput`](crate::output::GetSessionStatusOutput).
+    pub fn builder() -> crate::output::get_session_status_output::Builder {
+        crate::output::get_session_status_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetSessionOutput {
+    /// <p>The session ID.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The session description.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The workgroup to which the session belongs.</p>
+    #[doc(hidden)]
+    pub work_group: std::option::Option<std::string::String>,
+    /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>). You can get a list of engine versions by calling <code>ListEngineVersions</code>.</p>
+    #[doc(hidden)]
+    pub engine_version: std::option::Option<std::string::String>,
+    /// <p>Contains engine configuration information like DPU usage.</p>
+    #[doc(hidden)]
+    pub engine_configuration: std::option::Option<crate::model::EngineConfiguration>,
+    /// <p>The notebook version.</p>
+    #[doc(hidden)]
+    pub notebook_version: std::option::Option<std::string::String>,
+    /// <p>Contains the workgroup configuration information used by the session.</p>
+    #[doc(hidden)]
+    pub session_configuration: std::option::Option<crate::model::SessionConfiguration>,
+    /// <p>Contains information about the status of the session.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::SessionStatus>,
+    /// <p>Contains the DPU execution time.</p>
+    #[doc(hidden)]
+    pub statistics: std::option::Option<crate::model::SessionStatistics>,
+}
+impl GetSessionOutput {
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The session description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The workgroup to which the session belongs.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+    /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>). You can get a list of engine versions by calling <code>ListEngineVersions</code>.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>Contains engine configuration information like DPU usage.</p>
+    pub fn engine_configuration(&self) -> std::option::Option<&crate::model::EngineConfiguration> {
+        self.engine_configuration.as_ref()
+    }
+    /// <p>The notebook version.</p>
+    pub fn notebook_version(&self) -> std::option::Option<&str> {
+        self.notebook_version.as_deref()
+    }
+    /// <p>Contains the workgroup configuration information used by the session.</p>
+    pub fn session_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SessionConfiguration> {
+        self.session_configuration.as_ref()
+    }
+    /// <p>Contains information about the status of the session.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SessionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Contains the DPU execution time.</p>
+    pub fn statistics(&self) -> std::option::Option<&crate::model::SessionStatistics> {
+        self.statistics.as_ref()
+    }
+}
+/// See [`GetSessionOutput`](crate::output::GetSessionOutput).
+pub mod get_session_output {
+
+    /// A builder for [`GetSessionOutput`](crate::output::GetSessionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) work_group: std::option::Option<std::string::String>,
+        pub(crate) engine_version: std::option::Option<std::string::String>,
+        pub(crate) engine_configuration: std::option::Option<crate::model::EngineConfiguration>,
+        pub(crate) notebook_version: std::option::Option<std::string::String>,
+        pub(crate) session_configuration: std::option::Option<crate::model::SessionConfiguration>,
+        pub(crate) status: std::option::Option<crate::model::SessionStatus>,
+        pub(crate) statistics: std::option::Option<crate::model::SessionStatistics>,
+    }
+    impl Builder {
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>The session description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The session description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The workgroup to which the session belongs.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.work_group = Some(input.into());
+            self
+        }
+        /// <p>The workgroup to which the session belongs.</p>
+        pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.work_group = input;
+            self
+        }
+        /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>). You can get a list of engine versions by calling <code>ListEngineVersions</code>.</p>
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
+            self
+        }
+        /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>). You can get a list of engine versions by calling <code>ListEngineVersions</code>.</p>
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
+            self
+        }
+        /// <p>Contains engine configuration information like DPU usage.</p>
+        pub fn engine_configuration(mut self, input: crate::model::EngineConfiguration) -> Self {
+            self.engine_configuration = Some(input);
+            self
+        }
+        /// <p>Contains engine configuration information like DPU usage.</p>
+        pub fn set_engine_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EngineConfiguration>,
+        ) -> Self {
+            self.engine_configuration = input;
+            self
+        }
+        /// <p>The notebook version.</p>
+        pub fn notebook_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notebook_version = Some(input.into());
+            self
+        }
+        /// <p>The notebook version.</p>
+        pub fn set_notebook_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.notebook_version = input;
+            self
+        }
+        /// <p>Contains the workgroup configuration information used by the session.</p>
+        pub fn session_configuration(mut self, input: crate::model::SessionConfiguration) -> Self {
+            self.session_configuration = Some(input);
+            self
+        }
+        /// <p>Contains the workgroup configuration information used by the session.</p>
+        pub fn set_session_configuration(
+            mut self,
+            input: std::option::Option<crate::model::SessionConfiguration>,
+        ) -> Self {
+            self.session_configuration = input;
+            self
+        }
+        /// <p>Contains information about the status of the session.</p>
+        pub fn status(mut self, input: crate::model::SessionStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Contains information about the status of the session.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::SessionStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Contains the DPU execution time.</p>
+        pub fn statistics(mut self, input: crate::model::SessionStatistics) -> Self {
+            self.statistics = Some(input);
+            self
+        }
+        /// <p>Contains the DPU execution time.</p>
+        pub fn set_statistics(
+            mut self,
+            input: std::option::Option<crate::model::SessionStatistics>,
+        ) -> Self {
+            self.statistics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSessionOutput`](crate::output::GetSessionOutput).
+        pub fn build(self) -> crate::output::GetSessionOutput {
+            crate::output::GetSessionOutput {
+                session_id: self.session_id,
+                description: self.description,
+                work_group: self.work_group,
+                engine_version: self.engine_version,
+                engine_configuration: self.engine_configuration,
+                notebook_version: self.notebook_version,
+                session_configuration: self.session_configuration,
+                status: self.status,
+                statistics: self.statistics,
+            }
+        }
+    }
+}
+impl GetSessionOutput {
+    /// Creates a new builder-style object to manufacture [`GetSessionOutput`](crate::output::GetSessionOutput).
+    pub fn builder() -> crate::output::get_session_output::Builder {
+        crate::output::get_session_output::Builder::default()
     }
 }
 
@@ -1266,6 +2496,57 @@ impl GetPreparedStatementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetNotebookMetadataOutput {
+    /// <p>The metadata that is returned for the specified notebook ID.</p>
+    #[doc(hidden)]
+    pub notebook_metadata: std::option::Option<crate::model::NotebookMetadata>,
+}
+impl GetNotebookMetadataOutput {
+    /// <p>The metadata that is returned for the specified notebook ID.</p>
+    pub fn notebook_metadata(&self) -> std::option::Option<&crate::model::NotebookMetadata> {
+        self.notebook_metadata.as_ref()
+    }
+}
+/// See [`GetNotebookMetadataOutput`](crate::output::GetNotebookMetadataOutput).
+pub mod get_notebook_metadata_output {
+
+    /// A builder for [`GetNotebookMetadataOutput`](crate::output::GetNotebookMetadataOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notebook_metadata: std::option::Option<crate::model::NotebookMetadata>,
+    }
+    impl Builder {
+        /// <p>The metadata that is returned for the specified notebook ID.</p>
+        pub fn notebook_metadata(mut self, input: crate::model::NotebookMetadata) -> Self {
+            self.notebook_metadata = Some(input);
+            self
+        }
+        /// <p>The metadata that is returned for the specified notebook ID.</p>
+        pub fn set_notebook_metadata(
+            mut self,
+            input: std::option::Option<crate::model::NotebookMetadata>,
+        ) -> Self {
+            self.notebook_metadata = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNotebookMetadataOutput`](crate::output::GetNotebookMetadataOutput).
+        pub fn build(self) -> crate::output::GetNotebookMetadataOutput {
+            crate::output::GetNotebookMetadataOutput {
+                notebook_metadata: self.notebook_metadata,
+            }
+        }
+    }
+}
+impl GetNotebookMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`GetNotebookMetadataOutput`](crate::output::GetNotebookMetadataOutput).
+    pub fn builder() -> crate::output::get_notebook_metadata_output::Builder {
+        crate::output::get_notebook_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNamedQueryOutput {
     /// <p>Information about the query.</p>
     #[doc(hidden)]
@@ -1416,6 +2697,374 @@ impl GetDatabaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetCalculationExecutionStatusOutput {
+    /// <p>Contains information about the calculation execution status.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::CalculationStatus>,
+    /// <p>Contains information about the DPU execution time and progress.</p>
+    #[doc(hidden)]
+    pub statistics: std::option::Option<crate::model::CalculationStatistics>,
+}
+impl GetCalculationExecutionStatusOutput {
+    /// <p>Contains information about the calculation execution status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CalculationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Contains information about the DPU execution time and progress.</p>
+    pub fn statistics(&self) -> std::option::Option<&crate::model::CalculationStatistics> {
+        self.statistics.as_ref()
+    }
+}
+/// See [`GetCalculationExecutionStatusOutput`](crate::output::GetCalculationExecutionStatusOutput).
+pub mod get_calculation_execution_status_output {
+
+    /// A builder for [`GetCalculationExecutionStatusOutput`](crate::output::GetCalculationExecutionStatusOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::CalculationStatus>,
+        pub(crate) statistics: std::option::Option<crate::model::CalculationStatistics>,
+    }
+    impl Builder {
+        /// <p>Contains information about the calculation execution status.</p>
+        pub fn status(mut self, input: crate::model::CalculationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Contains information about the calculation execution status.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CalculationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Contains information about the DPU execution time and progress.</p>
+        pub fn statistics(mut self, input: crate::model::CalculationStatistics) -> Self {
+            self.statistics = Some(input);
+            self
+        }
+        /// <p>Contains information about the DPU execution time and progress.</p>
+        pub fn set_statistics(
+            mut self,
+            input: std::option::Option<crate::model::CalculationStatistics>,
+        ) -> Self {
+            self.statistics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCalculationExecutionStatusOutput`](crate::output::GetCalculationExecutionStatusOutput).
+        pub fn build(self) -> crate::output::GetCalculationExecutionStatusOutput {
+            crate::output::GetCalculationExecutionStatusOutput {
+                status: self.status,
+                statistics: self.statistics,
+            }
+        }
+    }
+}
+impl GetCalculationExecutionStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetCalculationExecutionStatusOutput`](crate::output::GetCalculationExecutionStatusOutput).
+    pub fn builder() -> crate::output::get_calculation_execution_status_output::Builder {
+        crate::output::get_calculation_execution_status_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetCalculationExecutionCodeOutput {
+    /// <p>A pre-signed URL to the code that executed the calculation.</p>
+    #[doc(hidden)]
+    pub code_block: std::option::Option<std::string::String>,
+}
+impl GetCalculationExecutionCodeOutput {
+    /// <p>A pre-signed URL to the code that executed the calculation.</p>
+    pub fn code_block(&self) -> std::option::Option<&str> {
+        self.code_block.as_deref()
+    }
+}
+/// See [`GetCalculationExecutionCodeOutput`](crate::output::GetCalculationExecutionCodeOutput).
+pub mod get_calculation_execution_code_output {
+
+    /// A builder for [`GetCalculationExecutionCodeOutput`](crate::output::GetCalculationExecutionCodeOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code_block: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A pre-signed URL to the code that executed the calculation.</p>
+        pub fn code_block(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code_block = Some(input.into());
+            self
+        }
+        /// <p>A pre-signed URL to the code that executed the calculation.</p>
+        pub fn set_code_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_block = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCalculationExecutionCodeOutput`](crate::output::GetCalculationExecutionCodeOutput).
+        pub fn build(self) -> crate::output::GetCalculationExecutionCodeOutput {
+            crate::output::GetCalculationExecutionCodeOutput {
+                code_block: self.code_block,
+            }
+        }
+    }
+}
+impl GetCalculationExecutionCodeOutput {
+    /// Creates a new builder-style object to manufacture [`GetCalculationExecutionCodeOutput`](crate::output::GetCalculationExecutionCodeOutput).
+    pub fn builder() -> crate::output::get_calculation_execution_code_output::Builder {
+        crate::output::get_calculation_execution_code_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetCalculationExecutionOutput {
+    /// <p>The calculation execution UUID.</p>
+    #[doc(hidden)]
+    pub calculation_execution_id: std::option::Option<std::string::String>,
+    /// <p>The session ID that the calculation ran in.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The description of the calculation execution.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 location in which calculation results are stored.</p>
+    #[doc(hidden)]
+    pub working_directory: std::option::Option<std::string::String>,
+    /// <p>Contains information about the status of the calculation.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::CalculationStatus>,
+    /// <p>Contains information about the data processing unit (DPU) execution time and progress. This field is populated only when statistics are available.</p>
+    #[doc(hidden)]
+    pub statistics: std::option::Option<crate::model::CalculationStatistics>,
+    /// <p>Contains result information. This field is populated only if the calculation is completed.</p>
+    #[doc(hidden)]
+    pub result: std::option::Option<crate::model::CalculationResult>,
+}
+impl GetCalculationExecutionOutput {
+    /// <p>The calculation execution UUID.</p>
+    pub fn calculation_execution_id(&self) -> std::option::Option<&str> {
+        self.calculation_execution_id.as_deref()
+    }
+    /// <p>The session ID that the calculation ran in.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The description of the calculation execution.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon S3 location in which calculation results are stored.</p>
+    pub fn working_directory(&self) -> std::option::Option<&str> {
+        self.working_directory.as_deref()
+    }
+    /// <p>Contains information about the status of the calculation.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CalculationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Contains information about the data processing unit (DPU) execution time and progress. This field is populated only when statistics are available.</p>
+    pub fn statistics(&self) -> std::option::Option<&crate::model::CalculationStatistics> {
+        self.statistics.as_ref()
+    }
+    /// <p>Contains result information. This field is populated only if the calculation is completed.</p>
+    pub fn result(&self) -> std::option::Option<&crate::model::CalculationResult> {
+        self.result.as_ref()
+    }
+}
+/// See [`GetCalculationExecutionOutput`](crate::output::GetCalculationExecutionOutput).
+pub mod get_calculation_execution_output {
+
+    /// A builder for [`GetCalculationExecutionOutput`](crate::output::GetCalculationExecutionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) calculation_execution_id: std::option::Option<std::string::String>,
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) working_directory: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::CalculationStatus>,
+        pub(crate) statistics: std::option::Option<crate::model::CalculationStatistics>,
+        pub(crate) result: std::option::Option<crate::model::CalculationResult>,
+    }
+    impl Builder {
+        /// <p>The calculation execution UUID.</p>
+        pub fn calculation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.calculation_execution_id = Some(input.into());
+            self
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn set_calculation_execution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.calculation_execution_id = input;
+            self
+        }
+        /// <p>The session ID that the calculation ran in.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The session ID that the calculation ran in.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>The description of the calculation execution.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the calculation execution.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The Amazon S3 location in which calculation results are stored.</p>
+        pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.working_directory = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 location in which calculation results are stored.</p>
+        pub fn set_working_directory(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.working_directory = input;
+            self
+        }
+        /// <p>Contains information about the status of the calculation.</p>
+        pub fn status(mut self, input: crate::model::CalculationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Contains information about the status of the calculation.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CalculationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Contains information about the data processing unit (DPU) execution time and progress. This field is populated only when statistics are available.</p>
+        pub fn statistics(mut self, input: crate::model::CalculationStatistics) -> Self {
+            self.statistics = Some(input);
+            self
+        }
+        /// <p>Contains information about the data processing unit (DPU) execution time and progress. This field is populated only when statistics are available.</p>
+        pub fn set_statistics(
+            mut self,
+            input: std::option::Option<crate::model::CalculationStatistics>,
+        ) -> Self {
+            self.statistics = input;
+            self
+        }
+        /// <p>Contains result information. This field is populated only if the calculation is completed.</p>
+        pub fn result(mut self, input: crate::model::CalculationResult) -> Self {
+            self.result = Some(input);
+            self
+        }
+        /// <p>Contains result information. This field is populated only if the calculation is completed.</p>
+        pub fn set_result(
+            mut self,
+            input: std::option::Option<crate::model::CalculationResult>,
+        ) -> Self {
+            self.result = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCalculationExecutionOutput`](crate::output::GetCalculationExecutionOutput).
+        pub fn build(self) -> crate::output::GetCalculationExecutionOutput {
+            crate::output::GetCalculationExecutionOutput {
+                calculation_execution_id: self.calculation_execution_id,
+                session_id: self.session_id,
+                description: self.description,
+                working_directory: self.working_directory,
+                status: self.status,
+                statistics: self.statistics,
+                result: self.result,
+            }
+        }
+    }
+}
+impl GetCalculationExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`GetCalculationExecutionOutput`](crate::output::GetCalculationExecutionOutput).
+    pub fn builder() -> crate::output::get_calculation_execution_output::Builder {
+        crate::output::get_calculation_execution_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ExportNotebookOutput {
+    /// <p>The notebook metadata, including notebook ID, notebook name, and workgroup name.</p>
+    #[doc(hidden)]
+    pub notebook_metadata: std::option::Option<crate::model::NotebookMetadata>,
+    /// <p>The content of the exported notebook.</p>
+    #[doc(hidden)]
+    pub payload: std::option::Option<std::string::String>,
+}
+impl ExportNotebookOutput {
+    /// <p>The notebook metadata, including notebook ID, notebook name, and workgroup name.</p>
+    pub fn notebook_metadata(&self) -> std::option::Option<&crate::model::NotebookMetadata> {
+        self.notebook_metadata.as_ref()
+    }
+    /// <p>The content of the exported notebook.</p>
+    pub fn payload(&self) -> std::option::Option<&str> {
+        self.payload.as_deref()
+    }
+}
+/// See [`ExportNotebookOutput`](crate::output::ExportNotebookOutput).
+pub mod export_notebook_output {
+
+    /// A builder for [`ExportNotebookOutput`](crate::output::ExportNotebookOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notebook_metadata: std::option::Option<crate::model::NotebookMetadata>,
+        pub(crate) payload: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The notebook metadata, including notebook ID, notebook name, and workgroup name.</p>
+        pub fn notebook_metadata(mut self, input: crate::model::NotebookMetadata) -> Self {
+            self.notebook_metadata = Some(input);
+            self
+        }
+        /// <p>The notebook metadata, including notebook ID, notebook name, and workgroup name.</p>
+        pub fn set_notebook_metadata(
+            mut self,
+            input: std::option::Option<crate::model::NotebookMetadata>,
+        ) -> Self {
+            self.notebook_metadata = input;
+            self
+        }
+        /// <p>The content of the exported notebook.</p>
+        pub fn payload(mut self, input: impl Into<std::string::String>) -> Self {
+            self.payload = Some(input.into());
+            self
+        }
+        /// <p>The content of the exported notebook.</p>
+        pub fn set_payload(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.payload = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExportNotebookOutput`](crate::output::ExportNotebookOutput).
+        pub fn build(self) -> crate::output::ExportNotebookOutput {
+            crate::output::ExportNotebookOutput {
+                notebook_metadata: self.notebook_metadata,
+                payload: self.payload,
+            }
+        }
+    }
+}
+impl ExportNotebookOutput {
+    /// Creates a new builder-style object to manufacture [`ExportNotebookOutput`](crate::output::ExportNotebookOutput).
+    pub fn builder() -> crate::output::export_notebook_output::Builder {
+        crate::output::export_notebook_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkGroupOutput {}
 /// See [`DeleteWorkGroupOutput`](crate::output::DeleteWorkGroupOutput).
 pub mod delete_work_group_output {
@@ -1458,6 +3107,30 @@ impl DeletePreparedStatementOutput {
     /// Creates a new builder-style object to manufacture [`DeletePreparedStatementOutput`](crate::output::DeletePreparedStatementOutput).
     pub fn builder() -> crate::output::delete_prepared_statement_output::Builder {
         crate::output::delete_prepared_statement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteNotebookOutput {}
+/// See [`DeleteNotebookOutput`](crate::output::DeleteNotebookOutput).
+pub mod delete_notebook_output {
+
+    /// A builder for [`DeleteNotebookOutput`](crate::output::DeleteNotebookOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteNotebookOutput`](crate::output::DeleteNotebookOutput).
+        pub fn build(self) -> crate::output::DeleteNotebookOutput {
+            crate::output::DeleteNotebookOutput {}
+        }
+    }
+}
+impl DeleteNotebookOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteNotebookOutput`](crate::output::DeleteNotebookOutput).
+    pub fn builder() -> crate::output::delete_notebook_output::Builder {
+        crate::output::delete_notebook_output::Builder::default()
     }
 }
 
@@ -1536,6 +3209,92 @@ impl CreateWorkGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreatePresignedNotebookUrlOutput {
+    /// <p>The URL of the notebook. The URL includes the authentication token and notebook file name and points directly to the opened notebook.</p>
+    #[doc(hidden)]
+    pub notebook_url: std::option::Option<std::string::String>,
+    /// <p>The authentication token for the notebook.</p>
+    #[doc(hidden)]
+    pub auth_token: std::option::Option<std::string::String>,
+    /// <p>The UTC epoch time when the authentication token expires.</p>
+    #[doc(hidden)]
+    pub auth_token_expiration_time: std::option::Option<i64>,
+}
+impl CreatePresignedNotebookUrlOutput {
+    /// <p>The URL of the notebook. The URL includes the authentication token and notebook file name and points directly to the opened notebook.</p>
+    pub fn notebook_url(&self) -> std::option::Option<&str> {
+        self.notebook_url.as_deref()
+    }
+    /// <p>The authentication token for the notebook.</p>
+    pub fn auth_token(&self) -> std::option::Option<&str> {
+        self.auth_token.as_deref()
+    }
+    /// <p>The UTC epoch time when the authentication token expires.</p>
+    pub fn auth_token_expiration_time(&self) -> std::option::Option<i64> {
+        self.auth_token_expiration_time
+    }
+}
+/// See [`CreatePresignedNotebookUrlOutput`](crate::output::CreatePresignedNotebookUrlOutput).
+pub mod create_presigned_notebook_url_output {
+
+    /// A builder for [`CreatePresignedNotebookUrlOutput`](crate::output::CreatePresignedNotebookUrlOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notebook_url: std::option::Option<std::string::String>,
+        pub(crate) auth_token: std::option::Option<std::string::String>,
+        pub(crate) auth_token_expiration_time: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The URL of the notebook. The URL includes the authentication token and notebook file name and points directly to the opened notebook.</p>
+        pub fn notebook_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notebook_url = Some(input.into());
+            self
+        }
+        /// <p>The URL of the notebook. The URL includes the authentication token and notebook file name and points directly to the opened notebook.</p>
+        pub fn set_notebook_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_url = input;
+            self
+        }
+        /// <p>The authentication token for the notebook.</p>
+        pub fn auth_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.auth_token = Some(input.into());
+            self
+        }
+        /// <p>The authentication token for the notebook.</p>
+        pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auth_token = input;
+            self
+        }
+        /// <p>The UTC epoch time when the authentication token expires.</p>
+        pub fn auth_token_expiration_time(mut self, input: i64) -> Self {
+            self.auth_token_expiration_time = Some(input);
+            self
+        }
+        /// <p>The UTC epoch time when the authentication token expires.</p>
+        pub fn set_auth_token_expiration_time(mut self, input: std::option::Option<i64>) -> Self {
+            self.auth_token_expiration_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreatePresignedNotebookUrlOutput`](crate::output::CreatePresignedNotebookUrlOutput).
+        pub fn build(self) -> crate::output::CreatePresignedNotebookUrlOutput {
+            crate::output::CreatePresignedNotebookUrlOutput {
+                notebook_url: self.notebook_url,
+                auth_token: self.auth_token,
+                auth_token_expiration_time: self.auth_token_expiration_time,
+            }
+        }
+    }
+}
+impl CreatePresignedNotebookUrlOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePresignedNotebookUrlOutput`](crate::output::CreatePresignedNotebookUrlOutput).
+    pub fn builder() -> crate::output::create_presigned_notebook_url_output::Builder {
+        crate::output::create_presigned_notebook_url_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePreparedStatementOutput {}
 /// See [`CreatePreparedStatementOutput`](crate::output::CreatePreparedStatementOutput).
 pub mod create_prepared_statement_output {
@@ -1554,6 +3313,54 @@ impl CreatePreparedStatementOutput {
     /// Creates a new builder-style object to manufacture [`CreatePreparedStatementOutput`](crate::output::CreatePreparedStatementOutput).
     pub fn builder() -> crate::output::create_prepared_statement_output::Builder {
         crate::output::create_prepared_statement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateNotebookOutput {
+    /// <p>A unique identifier for the notebook.</p>
+    #[doc(hidden)]
+    pub notebook_id: std::option::Option<std::string::String>,
+}
+impl CreateNotebookOutput {
+    /// <p>A unique identifier for the notebook.</p>
+    pub fn notebook_id(&self) -> std::option::Option<&str> {
+        self.notebook_id.as_deref()
+    }
+}
+/// See [`CreateNotebookOutput`](crate::output::CreateNotebookOutput).
+pub mod create_notebook_output {
+
+    /// A builder for [`CreateNotebookOutput`](crate::output::CreateNotebookOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notebook_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the notebook.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notebook_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the notebook.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateNotebookOutput`](crate::output::CreateNotebookOutput).
+        pub fn build(self) -> crate::output::CreateNotebookOutput {
+            crate::output::CreateNotebookOutput {
+                notebook_id: self.notebook_id,
+            }
+        }
+    }
+}
+impl CreateNotebookOutput {
+    /// Creates a new builder-style object to manufacture [`CreateNotebookOutput`](crate::output::CreateNotebookOutput).
+    pub fn builder() -> crate::output::create_notebook_output::Builder {
+        crate::output::create_notebook_output::Builder::default()
     }
 }
 

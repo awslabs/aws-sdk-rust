@@ -2455,6 +2455,7 @@ impl AlarmIdentifier {
 ///     CloudWatchRegion::ApNortheast2 => { /* ... */ },
 ///     CloudWatchRegion::ApNortheast3 => { /* ... */ },
 ///     CloudWatchRegion::ApSouth1 => { /* ... */ },
+///     CloudWatchRegion::ApSouth2 => { /* ... */ },
 ///     CloudWatchRegion::ApSoutheast1 => { /* ... */ },
 ///     CloudWatchRegion::ApSoutheast2 => { /* ... */ },
 ///     CloudWatchRegion::ApSoutheast3 => { /* ... */ },
@@ -2462,8 +2463,10 @@ impl AlarmIdentifier {
 ///     CloudWatchRegion::CnNorth1 => { /* ... */ },
 ///     CloudWatchRegion::CnNorthwest1 => { /* ... */ },
 ///     CloudWatchRegion::EuCentral1 => { /* ... */ },
+///     CloudWatchRegion::EuCentral2 => { /* ... */ },
 ///     CloudWatchRegion::EuNorth1 => { /* ... */ },
 ///     CloudWatchRegion::EuSouth1 => { /* ... */ },
+///     CloudWatchRegion::EuSouth2 => { /* ... */ },
 ///     CloudWatchRegion::EuWest1 => { /* ... */ },
 ///     CloudWatchRegion::EuWest2 => { /* ... */ },
 ///     CloudWatchRegion::EuWest3 => { /* ... */ },
@@ -2525,6 +2528,8 @@ pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApSouth1,
     #[allow(missing_docs)] // documentation missing in model
+    ApSouth2,
+    #[allow(missing_docs)] // documentation missing in model
     ApSoutheast1,
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast2,
@@ -2539,9 +2544,13 @@ pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
     EuCentral1,
     #[allow(missing_docs)] // documentation missing in model
+    EuCentral2,
+    #[allow(missing_docs)] // documentation missing in model
     EuNorth1,
     #[allow(missing_docs)] // documentation missing in model
     EuSouth1,
+    #[allow(missing_docs)] // documentation missing in model
+    EuSouth2,
     #[allow(missing_docs)] // documentation missing in model
     EuWest1,
     #[allow(missing_docs)] // documentation missing in model
@@ -2584,6 +2593,7 @@ impl std::convert::From<&str> for CloudWatchRegion {
             "ap-northeast-2" => CloudWatchRegion::ApNortheast2,
             "ap-northeast-3" => CloudWatchRegion::ApNortheast3,
             "ap-south-1" => CloudWatchRegion::ApSouth1,
+            "ap-south-2" => CloudWatchRegion::ApSouth2,
             "ap-southeast-1" => CloudWatchRegion::ApSoutheast1,
             "ap-southeast-2" => CloudWatchRegion::ApSoutheast2,
             "ap-southeast-3" => CloudWatchRegion::ApSoutheast3,
@@ -2591,8 +2601,10 @@ impl std::convert::From<&str> for CloudWatchRegion {
             "cn-north-1" => CloudWatchRegion::CnNorth1,
             "cn-northwest-1" => CloudWatchRegion::CnNorthwest1,
             "eu-central-1" => CloudWatchRegion::EuCentral1,
+            "eu-central-2" => CloudWatchRegion::EuCentral2,
             "eu-north-1" => CloudWatchRegion::EuNorth1,
             "eu-south-1" => CloudWatchRegion::EuSouth1,
+            "eu-south-2" => CloudWatchRegion::EuSouth2,
             "eu-west-1" => CloudWatchRegion::EuWest1,
             "eu-west-2" => CloudWatchRegion::EuWest2,
             "eu-west-3" => CloudWatchRegion::EuWest3,
@@ -2629,6 +2641,7 @@ impl CloudWatchRegion {
             CloudWatchRegion::ApNortheast2 => "ap-northeast-2",
             CloudWatchRegion::ApNortheast3 => "ap-northeast-3",
             CloudWatchRegion::ApSouth1 => "ap-south-1",
+            CloudWatchRegion::ApSouth2 => "ap-south-2",
             CloudWatchRegion::ApSoutheast1 => "ap-southeast-1",
             CloudWatchRegion::ApSoutheast2 => "ap-southeast-2",
             CloudWatchRegion::ApSoutheast3 => "ap-southeast-3",
@@ -2636,8 +2649,10 @@ impl CloudWatchRegion {
             CloudWatchRegion::CnNorth1 => "cn-north-1",
             CloudWatchRegion::CnNorthwest1 => "cn-northwest-1",
             CloudWatchRegion::EuCentral1 => "eu-central-1",
+            CloudWatchRegion::EuCentral2 => "eu-central-2",
             CloudWatchRegion::EuNorth1 => "eu-north-1",
             CloudWatchRegion::EuSouth1 => "eu-south-1",
+            CloudWatchRegion::EuSouth2 => "eu-south-2",
             CloudWatchRegion::EuWest1 => "eu-west-1",
             CloudWatchRegion::EuWest2 => "eu-west-2",
             CloudWatchRegion::EuWest3 => "eu-west-3",
@@ -2665,6 +2680,7 @@ impl CloudWatchRegion {
             "ap-northeast-2",
             "ap-northeast-3",
             "ap-south-1",
+            "ap-south-2",
             "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
@@ -2672,8 +2688,10 @@ impl CloudWatchRegion {
             "cn-north-1",
             "cn-northwest-1",
             "eu-central-1",
+            "eu-central-2",
             "eu-north-1",
             "eu-south-1",
+            "eu-south-2",
             "eu-west-1",
             "eu-west-2",
             "eu-west-3",
@@ -3154,14 +3172,17 @@ impl Vpc {
 ///     VpcRegion::ApNortheast2 => { /* ... */ },
 ///     VpcRegion::ApNortheast3 => { /* ... */ },
 ///     VpcRegion::ApSouth1 => { /* ... */ },
+///     VpcRegion::ApSouth2 => { /* ... */ },
 ///     VpcRegion::ApSoutheast1 => { /* ... */ },
 ///     VpcRegion::ApSoutheast2 => { /* ... */ },
 ///     VpcRegion::ApSoutheast3 => { /* ... */ },
 ///     VpcRegion::CaCentral1 => { /* ... */ },
 ///     VpcRegion::CnNorth1 => { /* ... */ },
 ///     VpcRegion::EuCentral1 => { /* ... */ },
+///     VpcRegion::EuCentral2 => { /* ... */ },
 ///     VpcRegion::EuNorth1 => { /* ... */ },
 ///     VpcRegion::EuSouth1 => { /* ... */ },
+///     VpcRegion::EuSouth2 => { /* ... */ },
 ///     VpcRegion::EuWest1 => { /* ... */ },
 ///     VpcRegion::EuWest2 => { /* ... */ },
 ///     VpcRegion::EuWest3 => { /* ... */ },
@@ -3223,6 +3244,8 @@ pub enum VpcRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApSouth1,
     #[allow(missing_docs)] // documentation missing in model
+    ApSouth2,
+    #[allow(missing_docs)] // documentation missing in model
     ApSoutheast1,
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast2,
@@ -3235,9 +3258,13 @@ pub enum VpcRegion {
     #[allow(missing_docs)] // documentation missing in model
     EuCentral1,
     #[allow(missing_docs)] // documentation missing in model
+    EuCentral2,
+    #[allow(missing_docs)] // documentation missing in model
     EuNorth1,
     #[allow(missing_docs)] // documentation missing in model
     EuSouth1,
+    #[allow(missing_docs)] // documentation missing in model
+    EuSouth2,
     #[allow(missing_docs)] // documentation missing in model
     EuWest1,
     #[allow(missing_docs)] // documentation missing in model
@@ -3280,14 +3307,17 @@ impl std::convert::From<&str> for VpcRegion {
             "ap-northeast-2" => VpcRegion::ApNortheast2,
             "ap-northeast-3" => VpcRegion::ApNortheast3,
             "ap-south-1" => VpcRegion::ApSouth1,
+            "ap-south-2" => VpcRegion::ApSouth2,
             "ap-southeast-1" => VpcRegion::ApSoutheast1,
             "ap-southeast-2" => VpcRegion::ApSoutheast2,
             "ap-southeast-3" => VpcRegion::ApSoutheast3,
             "ca-central-1" => VpcRegion::CaCentral1,
             "cn-north-1" => VpcRegion::CnNorth1,
             "eu-central-1" => VpcRegion::EuCentral1,
+            "eu-central-2" => VpcRegion::EuCentral2,
             "eu-north-1" => VpcRegion::EuNorth1,
             "eu-south-1" => VpcRegion::EuSouth1,
+            "eu-south-2" => VpcRegion::EuSouth2,
             "eu-west-1" => VpcRegion::EuWest1,
             "eu-west-2" => VpcRegion::EuWest2,
             "eu-west-3" => VpcRegion::EuWest3,
@@ -3324,14 +3354,17 @@ impl VpcRegion {
             VpcRegion::ApNortheast2 => "ap-northeast-2",
             VpcRegion::ApNortheast3 => "ap-northeast-3",
             VpcRegion::ApSouth1 => "ap-south-1",
+            VpcRegion::ApSouth2 => "ap-south-2",
             VpcRegion::ApSoutheast1 => "ap-southeast-1",
             VpcRegion::ApSoutheast2 => "ap-southeast-2",
             VpcRegion::ApSoutheast3 => "ap-southeast-3",
             VpcRegion::CaCentral1 => "ca-central-1",
             VpcRegion::CnNorth1 => "cn-north-1",
             VpcRegion::EuCentral1 => "eu-central-1",
+            VpcRegion::EuCentral2 => "eu-central-2",
             VpcRegion::EuNorth1 => "eu-north-1",
             VpcRegion::EuSouth1 => "eu-south-1",
+            VpcRegion::EuSouth2 => "eu-south-2",
             VpcRegion::EuWest1 => "eu-west-1",
             VpcRegion::EuWest2 => "eu-west-2",
             VpcRegion::EuWest3 => "eu-west-3",
@@ -3359,14 +3392,17 @@ impl VpcRegion {
             "ap-northeast-2",
             "ap-northeast-3",
             "ap-south-1",
+            "ap-south-2",
             "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ca-central-1",
             "cn-north-1",
             "eu-central-1",
+            "eu-central-2",
             "eu-north-1",
             "eu-south-1",
+            "eu-south-2",
             "eu-west-1",
             "eu-west-2",
             "eu-west-3",
@@ -3977,9 +4013,7 @@ pub struct ResourceRecordSet {
     /// </ul>
     #[doc(hidden)]
     pub weight: std::option::Option<i64>,
-    /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p> <note>
-    /// <p>Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not supported.</p>
-    /// </note>
+    /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p>
     /// <p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.</p>
     /// <p>Note the following:</p>
     /// <ul>
@@ -4161,9 +4195,7 @@ impl ResourceRecordSet {
     pub fn weight(&self) -> std::option::Option<i64> {
         self.weight
     }
-    /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p> <note>
-    /// <p>Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not supported.</p>
-    /// </note>
+    /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p>
     /// <p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.</p>
     /// <p>Note the following:</p>
     /// <ul>
@@ -4441,9 +4473,7 @@ pub mod resource_record_set {
             self.weight = input;
             self
         }
-        /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p> <note>
-        /// <p>Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not supported.</p>
-        /// </note>
+        /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p>
         /// <p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.</p>
         /// <p>Note the following:</p>
         /// <ul>
@@ -4456,9 +4486,7 @@ pub mod resource_record_set {
             self.region = Some(input);
             self
         }
-        /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p> <note>
-        /// <p>Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not supported.</p>
-        /// </note>
+        /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p>
         /// <p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.</p>
         /// <p>Note the following:</p>
         /// <ul>
@@ -6086,6 +6114,7 @@ impl GeoLocation {
 ///     ResourceRecordSetRegion::ApNortheast2 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApNortheast3 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApSouth1 => { /* ... */ },
+///     ResourceRecordSetRegion::ApSouth2 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApSoutheast1 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApSoutheast2 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApSoutheast3 => { /* ... */ },
@@ -6093,11 +6122,14 @@ impl GeoLocation {
 ///     ResourceRecordSetRegion::CnNorth1 => { /* ... */ },
 ///     ResourceRecordSetRegion::CnNorthwest1 => { /* ... */ },
 ///     ResourceRecordSetRegion::EuCentral1 => { /* ... */ },
+///     ResourceRecordSetRegion::EuCentral2 => { /* ... */ },
 ///     ResourceRecordSetRegion::EuNorth1 => { /* ... */ },
 ///     ResourceRecordSetRegion::EuSouth1 => { /* ... */ },
+///     ResourceRecordSetRegion::EuSouth2 => { /* ... */ },
 ///     ResourceRecordSetRegion::EuWest1 => { /* ... */ },
 ///     ResourceRecordSetRegion::EuWest2 => { /* ... */ },
 ///     ResourceRecordSetRegion::EuWest3 => { /* ... */ },
+///     ResourceRecordSetRegion::MeCentral1 => { /* ... */ },
 ///     ResourceRecordSetRegion::MeSouth1 => { /* ... */ },
 ///     ResourceRecordSetRegion::SaEast1 => { /* ... */ },
 ///     ResourceRecordSetRegion::UsEast1 => { /* ... */ },
@@ -6150,6 +6182,8 @@ pub enum ResourceRecordSetRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApSouth1,
     #[allow(missing_docs)] // documentation missing in model
+    ApSouth2,
+    #[allow(missing_docs)] // documentation missing in model
     ApSoutheast1,
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast2,
@@ -6164,15 +6198,21 @@ pub enum ResourceRecordSetRegion {
     #[allow(missing_docs)] // documentation missing in model
     EuCentral1,
     #[allow(missing_docs)] // documentation missing in model
+    EuCentral2,
+    #[allow(missing_docs)] // documentation missing in model
     EuNorth1,
     #[allow(missing_docs)] // documentation missing in model
     EuSouth1,
+    #[allow(missing_docs)] // documentation missing in model
+    EuSouth2,
     #[allow(missing_docs)] // documentation missing in model
     EuWest1,
     #[allow(missing_docs)] // documentation missing in model
     EuWest2,
     #[allow(missing_docs)] // documentation missing in model
     EuWest3,
+    #[allow(missing_docs)] // documentation missing in model
+    MeCentral1,
     #[allow(missing_docs)] // documentation missing in model
     MeSouth1,
     #[allow(missing_docs)] // documentation missing in model
@@ -6197,6 +6237,7 @@ impl std::convert::From<&str> for ResourceRecordSetRegion {
             "ap-northeast-2" => ResourceRecordSetRegion::ApNortheast2,
             "ap-northeast-3" => ResourceRecordSetRegion::ApNortheast3,
             "ap-south-1" => ResourceRecordSetRegion::ApSouth1,
+            "ap-south-2" => ResourceRecordSetRegion::ApSouth2,
             "ap-southeast-1" => ResourceRecordSetRegion::ApSoutheast1,
             "ap-southeast-2" => ResourceRecordSetRegion::ApSoutheast2,
             "ap-southeast-3" => ResourceRecordSetRegion::ApSoutheast3,
@@ -6204,11 +6245,14 @@ impl std::convert::From<&str> for ResourceRecordSetRegion {
             "cn-north-1" => ResourceRecordSetRegion::CnNorth1,
             "cn-northwest-1" => ResourceRecordSetRegion::CnNorthwest1,
             "eu-central-1" => ResourceRecordSetRegion::EuCentral1,
+            "eu-central-2" => ResourceRecordSetRegion::EuCentral2,
             "eu-north-1" => ResourceRecordSetRegion::EuNorth1,
             "eu-south-1" => ResourceRecordSetRegion::EuSouth1,
+            "eu-south-2" => ResourceRecordSetRegion::EuSouth2,
             "eu-west-1" => ResourceRecordSetRegion::EuWest1,
             "eu-west-2" => ResourceRecordSetRegion::EuWest2,
             "eu-west-3" => ResourceRecordSetRegion::EuWest3,
+            "me-central-1" => ResourceRecordSetRegion::MeCentral1,
             "me-south-1" => ResourceRecordSetRegion::MeSouth1,
             "sa-east-1" => ResourceRecordSetRegion::SaEast1,
             "us-east-1" => ResourceRecordSetRegion::UsEast1,
@@ -6238,6 +6282,7 @@ impl ResourceRecordSetRegion {
             ResourceRecordSetRegion::ApNortheast2 => "ap-northeast-2",
             ResourceRecordSetRegion::ApNortheast3 => "ap-northeast-3",
             ResourceRecordSetRegion::ApSouth1 => "ap-south-1",
+            ResourceRecordSetRegion::ApSouth2 => "ap-south-2",
             ResourceRecordSetRegion::ApSoutheast1 => "ap-southeast-1",
             ResourceRecordSetRegion::ApSoutheast2 => "ap-southeast-2",
             ResourceRecordSetRegion::ApSoutheast3 => "ap-southeast-3",
@@ -6245,11 +6290,14 @@ impl ResourceRecordSetRegion {
             ResourceRecordSetRegion::CnNorth1 => "cn-north-1",
             ResourceRecordSetRegion::CnNorthwest1 => "cn-northwest-1",
             ResourceRecordSetRegion::EuCentral1 => "eu-central-1",
+            ResourceRecordSetRegion::EuCentral2 => "eu-central-2",
             ResourceRecordSetRegion::EuNorth1 => "eu-north-1",
             ResourceRecordSetRegion::EuSouth1 => "eu-south-1",
+            ResourceRecordSetRegion::EuSouth2 => "eu-south-2",
             ResourceRecordSetRegion::EuWest1 => "eu-west-1",
             ResourceRecordSetRegion::EuWest2 => "eu-west-2",
             ResourceRecordSetRegion::EuWest3 => "eu-west-3",
+            ResourceRecordSetRegion::MeCentral1 => "me-central-1",
             ResourceRecordSetRegion::MeSouth1 => "me-south-1",
             ResourceRecordSetRegion::SaEast1 => "sa-east-1",
             ResourceRecordSetRegion::UsEast1 => "us-east-1",
@@ -6268,6 +6316,7 @@ impl ResourceRecordSetRegion {
             "ap-northeast-2",
             "ap-northeast-3",
             "ap-south-1",
+            "ap-south-2",
             "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
@@ -6275,11 +6324,14 @@ impl ResourceRecordSetRegion {
             "cn-north-1",
             "cn-northwest-1",
             "eu-central-1",
+            "eu-central-2",
             "eu-north-1",
             "eu-south-1",
+            "eu-south-2",
             "eu-west-1",
             "eu-west-2",
             "eu-west-3",
+            "me-central-1",
             "me-south-1",
             "sa-east-1",
             "us-east-1",

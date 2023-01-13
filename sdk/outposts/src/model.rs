@@ -94,7 +94,7 @@ impl AsRef<str> for ResourceType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Site {
-    /// <p> The ID of the site. </p>
+    /// <p>The ID of the site.</p>
     #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account.</p>
@@ -130,7 +130,7 @@ pub struct Site {
     pub rack_physical_properties: std::option::Option<crate::model::RackPhysicalProperties>,
 }
 impl Site {
-    /// <p> The ID of the site. </p>
+    /// <p>The ID of the site.</p>
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
@@ -202,12 +202,12 @@ pub mod site {
             std::option::Option<crate::model::RackPhysicalProperties>,
     }
     impl Builder {
-        /// <p> The ID of the site. </p>
+        /// <p>The ID of the site.</p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.site_id = Some(input.into());
             self
         }
-        /// <p> The ID of the site. </p>
+        /// <p>The ID of the site.</p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
@@ -1947,7 +1947,7 @@ pub struct Outpost {
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     #[doc(hidden)]
     pub outpost_arn: std::option::Option<std::string::String>,
-    /// <p> The ID of the site. </p>
+    /// <p>The ID of the site.</p>
     #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The name of the Outpost.</p>
@@ -1989,7 +1989,7 @@ impl Outpost {
     pub fn outpost_arn(&self) -> std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
-    /// <p> The ID of the site. </p>
+    /// <p>The ID of the site.</p>
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
@@ -2084,12 +2084,12 @@ pub mod outpost {
             self.outpost_arn = input;
             self
         }
-        /// <p> The ID of the site. </p>
+        /// <p>The ID of the site.</p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.site_id = Some(input.into());
             self
         }
-        /// <p> The ID of the site. </p>
+        /// <p>The ID of the site.</p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
@@ -2351,10 +2351,10 @@ pub struct OrderSummary {
     #[doc(hidden)]
     pub line_item_counts_by_status:
         std::option::Option<std::collections::HashMap<crate::model::LineItemStatus, i32>>,
-    /// <p> Submission date for the order. </p>
+    /// <p> The submission date for the order. </p>
     #[doc(hidden)]
     pub order_submission_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> Fulfilment date for the order. </p>
+    /// <p> The fulfilment date for the order. </p>
     #[doc(hidden)]
     pub order_fulfilled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -2390,11 +2390,11 @@ impl OrderSummary {
     ) -> std::option::Option<&std::collections::HashMap<crate::model::LineItemStatus, i32>> {
         self.line_item_counts_by_status.as_ref()
     }
-    /// <p> Submission date for the order. </p>
+    /// <p> The submission date for the order. </p>
     pub fn order_submission_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.order_submission_date.as_ref()
     }
-    /// <p> Fulfilment date for the order. </p>
+    /// <p> The fulfilment date for the order. </p>
     pub fn order_fulfilled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.order_fulfilled_date.as_ref()
     }
@@ -2501,12 +2501,12 @@ pub mod order_summary {
             self.line_item_counts_by_status = input;
             self
         }
-        /// <p> Submission date for the order. </p>
+        /// <p> The submission date for the order. </p>
         pub fn order_submission_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.order_submission_date = Some(input);
             self
         }
-        /// <p> Submission date for the order. </p>
+        /// <p> The submission date for the order. </p>
         pub fn set_order_submission_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2514,12 +2514,12 @@ pub mod order_summary {
             self.order_submission_date = input;
             self
         }
-        /// <p> Fulfilment date for the order. </p>
+        /// <p> The fulfilment date for the order. </p>
         pub fn order_fulfilled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.order_fulfilled_date = Some(input);
             self
         }
-        /// <p> Fulfilment date for the order. </p>
+        /// <p> The fulfilment date for the order. </p>
         pub fn set_order_fulfilled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3649,14 +3649,31 @@ impl AssetLocation {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputeAttributes {
-    /// <p> The host ID of any Dedicated Hosts on the asset. </p>
+    /// <p> The host ID of the Dedicated Host on the asset. </p>
     #[doc(hidden)]
     pub host_id: std::option::Option<std::string::String>,
+    /// <p>The state.</p>
+    /// <ul>
+    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
+    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
+    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::ComputeAssetState>,
 }
 impl ComputeAttributes {
-    /// <p> The host ID of any Dedicated Hosts on the asset. </p>
+    /// <p> The host ID of the Dedicated Host on the asset. </p>
     pub fn host_id(&self) -> std::option::Option<&str> {
         self.host_id.as_deref()
+    }
+    /// <p>The state.</p>
+    /// <ul>
+    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
+    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
+    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
+    /// </ul>
+    pub fn state(&self) -> std::option::Option<&crate::model::ComputeAssetState> {
+        self.state.as_ref()
     }
 }
 /// See [`ComputeAttributes`](crate::model::ComputeAttributes).
@@ -3666,22 +3683,47 @@ pub mod compute_attributes {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::ComputeAssetState>,
     }
     impl Builder {
-        /// <p> The host ID of any Dedicated Hosts on the asset. </p>
+        /// <p> The host ID of the Dedicated Host on the asset. </p>
         pub fn host_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_id = Some(input.into());
             self
         }
-        /// <p> The host ID of any Dedicated Hosts on the asset. </p>
+        /// <p> The host ID of the Dedicated Host on the asset. </p>
         pub fn set_host_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_id = input;
+            self
+        }
+        /// <p>The state.</p>
+        /// <ul>
+        /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
+        /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
+        /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
+        /// </ul>
+        pub fn state(mut self, input: crate::model::ComputeAssetState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state.</p>
+        /// <ul>
+        /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
+        /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
+        /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
+        /// </ul>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::ComputeAssetState>,
+        ) -> Self {
+            self.state = input;
             self
         }
         /// Consumes the builder and constructs a [`ComputeAttributes`](crate::model::ComputeAttributes).
         pub fn build(self) -> crate::model::ComputeAttributes {
             crate::model::ComputeAttributes {
                 host_id: self.host_id,
+                state: self.state,
             }
         }
     }
@@ -3690,6 +3732,103 @@ impl ComputeAttributes {
     /// Creates a new builder-style object to manufacture [`ComputeAttributes`](crate::model::ComputeAttributes).
     pub fn builder() -> crate::model::compute_attributes::Builder {
         crate::model::compute_attributes::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ComputeAssetState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let computeassetstate = unimplemented!();
+/// match computeassetstate {
+///     ComputeAssetState::Active => { /* ... */ },
+///     ComputeAssetState::Isolated => { /* ... */ },
+///     ComputeAssetState::Retiring => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `computeassetstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ComputeAssetState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ComputeAssetState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ComputeAssetState::NewFeature` is defined.
+/// Specifically, when `computeassetstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ComputeAssetState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ComputeAssetState {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Isolated,
+    #[allow(missing_docs)] // documentation missing in model
+    Retiring,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ComputeAssetState {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => ComputeAssetState::Active,
+            "ISOLATED" => ComputeAssetState::Isolated,
+            "RETIRING" => ComputeAssetState::Retiring,
+            other => {
+                ComputeAssetState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for ComputeAssetState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ComputeAssetState::from(s))
+    }
+}
+impl ComputeAssetState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ComputeAssetState::Active => "ACTIVE",
+            ComputeAssetState::Isolated => "ISOLATED",
+            ComputeAssetState::Retiring => "RETIRING",
+            ComputeAssetState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ACTIVE", "ISOLATED", "RETIRING"]
+    }
+}
+impl AsRef<str> for ComputeAssetState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3778,6 +3917,96 @@ impl AsRef<str> for AssetType {
     }
 }
 
+/// When writing a match expression against `AssetState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let assetstate = unimplemented!();
+/// match assetstate {
+///     AssetState::Active => { /* ... */ },
+///     AssetState::Retiring => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `assetstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AssetState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AssetState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AssetState::NewFeature` is defined.
+/// Specifically, when `assetstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AssetState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AssetState {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Retiring,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for AssetState {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => AssetState::Active,
+            "RETIRING" => AssetState::Retiring,
+            other => AssetState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for AssetState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AssetState::from(s))
+    }
+}
+impl AssetState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AssetState::Active => "ACTIVE",
+            AssetState::Retiring => "RETIRING",
+            AssetState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ACTIVE", "RETIRING"]
+    }
+}
+impl AsRef<str> for AssetState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Information about an instance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3842,7 +4071,7 @@ pub struct Order {
     /// <p>The status of the order.</p>
     /// <ul>
     /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the <code>LineItem</code> status.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
     /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
     /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
     /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
@@ -3876,7 +4105,7 @@ impl Order {
     /// <p>The status of the order.</p>
     /// <ul>
     /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the <code>LineItem</code> status.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
     /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
     /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
     /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
@@ -3941,7 +4170,7 @@ pub mod order {
         /// <p>The status of the order.</p>
         /// <ul>
         /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the <code>LineItem</code> status.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
         /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
         /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
         /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
@@ -3955,7 +4184,7 @@ pub mod order {
         /// <p>The status of the order.</p>
         /// <ul>
         /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the <code>LineItem</code> status.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
         /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
         /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
         /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
@@ -4315,7 +4544,7 @@ pub struct LineItemAssetInformation {
     /// <p> The ID of the asset. </p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
-    /// <p> MAC addresses of the asset. </p>
+    /// <p> The MAC addresses of the asset. </p>
     #[doc(hidden)]
     pub mac_address_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -4324,7 +4553,7 @@ impl LineItemAssetInformation {
     pub fn asset_id(&self) -> std::option::Option<&str> {
         self.asset_id.as_deref()
     }
-    /// <p> MAC addresses of the asset. </p>
+    /// <p> The MAC addresses of the asset. </p>
     pub fn mac_address_list(&self) -> std::option::Option<&[std::string::String]> {
         self.mac_address_list.as_deref()
     }
@@ -4353,14 +4582,14 @@ pub mod line_item_asset_information {
         ///
         /// To override the contents of this collection use [`set_mac_address_list`](Self::set_mac_address_list).
         ///
-        /// <p> MAC addresses of the asset. </p>
+        /// <p> The MAC addresses of the asset. </p>
         pub fn mac_address_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.mac_address_list.unwrap_or_default();
             v.push(input.into());
             self.mac_address_list = Some(v);
             self
         }
-        /// <p> MAC addresses of the asset. </p>
+        /// <p> The MAC addresses of the asset. </p>
         pub fn set_mac_address_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4736,6 +4965,7 @@ impl ConnectionDetails {
 /// ```text
 /// # let paymentterm = unimplemented!();
 /// match paymentterm {
+///     PaymentTerm::OneYear => { /* ... */ },
 ///     PaymentTerm::ThreeYears => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -4771,6 +5001,8 @@ impl ConnectionDetails {
 )]
 pub enum PaymentTerm {
     #[allow(missing_docs)] // documentation missing in model
+    OneYear,
+    #[allow(missing_docs)] // documentation missing in model
     ThreeYears,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
@@ -4778,6 +5010,7 @@ pub enum PaymentTerm {
 impl std::convert::From<&str> for PaymentTerm {
     fn from(s: &str) -> Self {
         match s {
+            "ONE_YEAR" => PaymentTerm::OneYear,
             "THREE_YEARS" => PaymentTerm::ThreeYears,
             other => PaymentTerm::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
@@ -4794,13 +5027,14 @@ impl PaymentTerm {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PaymentTerm::OneYear => "ONE_YEAR",
             PaymentTerm::ThreeYears => "THREE_YEARS",
             PaymentTerm::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["THREE_YEARS"]
+        &["ONE_YEAR", "THREE_YEARS"]
     }
 }
 impl AsRef<str> for PaymentTerm {

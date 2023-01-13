@@ -154,6 +154,18 @@ impl Client {
     pub fn create_named_query(&self) -> fluent_builders::CreateNamedQuery {
         fluent_builders::CreateNamedQuery::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateNotebook`](crate::client::fluent_builders::CreateNotebook) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`work_group(impl Into<String>)`](crate::client::fluent_builders::CreateNotebook::work_group) / [`set_work_group(Option<String>)`](crate::client::fluent_builders::CreateNotebook::set_work_group): <p>The name of the Spark enabled workgroup in which the notebook will be created.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateNotebook::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateNotebook::set_name): <p>The name of the <code>ipynb</code> file to be created in the Spark workgroup, without the <code>.ipynb</code> extension.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateNotebook::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateNotebook::set_client_request_token): <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>   <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>  </important>
+    /// - On success, responds with [`CreateNotebookOutput`](crate::output::CreateNotebookOutput) with field(s):
+    ///   - [`notebook_id(Option<String>)`](crate::output::CreateNotebookOutput::notebook_id): <p>A unique identifier for the notebook.</p>
+    /// - On failure, responds with [`SdkError<CreateNotebookError>`](crate::error::CreateNotebookError)
+    pub fn create_notebook(&self) -> fluent_builders::CreateNotebook {
+        fluent_builders::CreateNotebook::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreatePreparedStatement`](crate::client::fluent_builders::CreatePreparedStatement) operation.
     ///
     /// - The fluent builder is configurable:
@@ -167,11 +179,23 @@ impl Client {
     pub fn create_prepared_statement(&self) -> fluent_builders::CreatePreparedStatement {
         fluent_builders::CreatePreparedStatement::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreatePresignedNotebookUrl`](crate::client::fluent_builders::CreatePresignedNotebookUrl) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::CreatePresignedNotebookUrl::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::CreatePresignedNotebookUrl::set_session_id): <p>The session ID.</p>
+    /// - On success, responds with [`CreatePresignedNotebookUrlOutput`](crate::output::CreatePresignedNotebookUrlOutput) with field(s):
+    ///   - [`notebook_url(Option<String>)`](crate::output::CreatePresignedNotebookUrlOutput::notebook_url): <p>The URL of the notebook. The URL includes the authentication token and notebook file name and points directly to the opened notebook.</p>
+    ///   - [`auth_token(Option<String>)`](crate::output::CreatePresignedNotebookUrlOutput::auth_token): <p>The authentication token for the notebook.</p>
+    ///   - [`auth_token_expiration_time(Option<i64>)`](crate::output::CreatePresignedNotebookUrlOutput::auth_token_expiration_time): <p>The UTC epoch time when the authentication token expires.</p>
+    /// - On failure, responds with [`SdkError<CreatePresignedNotebookUrlError>`](crate::error::CreatePresignedNotebookUrlError)
+    pub fn create_presigned_notebook_url(&self) -> fluent_builders::CreatePresignedNotebookUrl {
+        fluent_builders::CreatePresignedNotebookUrl::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateWorkGroup`](crate::client::fluent_builders::CreateWorkGroup) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWorkGroup::set_name): <p>The workgroup name.</p>
-    ///   - [`configuration(WorkGroupConfiguration)`](crate::client::fluent_builders::CreateWorkGroup::configuration) / [`set_configuration(Option<WorkGroupConfiguration>)`](crate::client::fluent_builders::CreateWorkGroup::set_configuration): <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    ///   - [`configuration(WorkGroupConfiguration)`](crate::client::fluent_builders::CreateWorkGroup::configuration) / [`set_configuration(Option<WorkGroupConfiguration>)`](crate::client::fluent_builders::CreateWorkGroup::set_configuration): <p>Contains configuration information for creating an Athena SQL workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateWorkGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateWorkGroup::set_description): <p>The workgroup description.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWorkGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWorkGroup::set_tags): <p>A list of comma separated tags to add to the workgroup that is created.</p>
     /// - On success, responds with [`CreateWorkGroupOutput`](crate::output::CreateWorkGroupOutput)
@@ -200,6 +224,16 @@ impl Client {
     pub fn delete_named_query(&self) -> fluent_builders::DeleteNamedQuery {
         fluent_builders::DeleteNamedQuery::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteNotebook`](crate::client::fluent_builders::DeleteNotebook) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_id(impl Into<String>)`](crate::client::fluent_builders::DeleteNotebook::notebook_id) / [`set_notebook_id(Option<String>)`](crate::client::fluent_builders::DeleteNotebook::set_notebook_id): <p>The ID of the notebook to delete.</p>
+    /// - On success, responds with [`DeleteNotebookOutput`](crate::output::DeleteNotebookOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteNotebookError>`](crate::error::DeleteNotebookError)
+    pub fn delete_notebook(&self) -> fluent_builders::DeleteNotebook {
+        fluent_builders::DeleteNotebook::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeletePreparedStatement`](crate::client::fluent_builders::DeletePreparedStatement) operation.
     ///
     /// - The fluent builder is configurable:
@@ -221,6 +255,56 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteWorkGroupError>`](crate::error::DeleteWorkGroupError)
     pub fn delete_work_group(&self) -> fluent_builders::DeleteWorkGroup {
         fluent_builders::DeleteWorkGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ExportNotebook`](crate::client::fluent_builders::ExportNotebook) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_id(impl Into<String>)`](crate::client::fluent_builders::ExportNotebook::notebook_id) / [`set_notebook_id(Option<String>)`](crate::client::fluent_builders::ExportNotebook::set_notebook_id): <p>The ID of the notebook to export.</p>
+    /// - On success, responds with [`ExportNotebookOutput`](crate::output::ExportNotebookOutput) with field(s):
+    ///   - [`notebook_metadata(Option<NotebookMetadata>)`](crate::output::ExportNotebookOutput::notebook_metadata): <p>The notebook metadata, including notebook ID, notebook name, and workgroup name.</p>
+    ///   - [`payload(Option<String>)`](crate::output::ExportNotebookOutput::payload): <p>The content of the exported notebook.</p>
+    /// - On failure, responds with [`SdkError<ExportNotebookError>`](crate::error::ExportNotebookError)
+    pub fn export_notebook(&self) -> fluent_builders::ExportNotebook {
+        fluent_builders::ExportNotebook::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetCalculationExecution`](crate::client::fluent_builders::GetCalculationExecution) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`calculation_execution_id(impl Into<String>)`](crate::client::fluent_builders::GetCalculationExecution::calculation_execution_id) / [`set_calculation_execution_id(Option<String>)`](crate::client::fluent_builders::GetCalculationExecution::set_calculation_execution_id): <p>The calculation execution UUID.</p>
+    /// - On success, responds with [`GetCalculationExecutionOutput`](crate::output::GetCalculationExecutionOutput) with field(s):
+    ///   - [`calculation_execution_id(Option<String>)`](crate::output::GetCalculationExecutionOutput::calculation_execution_id): <p>The calculation execution UUID.</p>
+    ///   - [`session_id(Option<String>)`](crate::output::GetCalculationExecutionOutput::session_id): <p>The session ID that the calculation ran in.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetCalculationExecutionOutput::description): <p>The description of the calculation execution.</p>
+    ///   - [`working_directory(Option<String>)`](crate::output::GetCalculationExecutionOutput::working_directory): <p>The Amazon S3 location in which calculation results are stored.</p>
+    ///   - [`status(Option<CalculationStatus>)`](crate::output::GetCalculationExecutionOutput::status): <p>Contains information about the status of the calculation.</p>
+    ///   - [`statistics(Option<CalculationStatistics>)`](crate::output::GetCalculationExecutionOutput::statistics): <p>Contains information about the data processing unit (DPU) execution time and progress. This field is populated only when statistics are available.</p>
+    ///   - [`result(Option<CalculationResult>)`](crate::output::GetCalculationExecutionOutput::result): <p>Contains result information. This field is populated only if the calculation is completed.</p>
+    /// - On failure, responds with [`SdkError<GetCalculationExecutionError>`](crate::error::GetCalculationExecutionError)
+    pub fn get_calculation_execution(&self) -> fluent_builders::GetCalculationExecution {
+        fluent_builders::GetCalculationExecution::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetCalculationExecutionCode`](crate::client::fluent_builders::GetCalculationExecutionCode) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`calculation_execution_id(impl Into<String>)`](crate::client::fluent_builders::GetCalculationExecutionCode::calculation_execution_id) / [`set_calculation_execution_id(Option<String>)`](crate::client::fluent_builders::GetCalculationExecutionCode::set_calculation_execution_id): <p>The calculation execution UUID.</p>
+    /// - On success, responds with [`GetCalculationExecutionCodeOutput`](crate::output::GetCalculationExecutionCodeOutput) with field(s):
+    ///   - [`code_block(Option<String>)`](crate::output::GetCalculationExecutionCodeOutput::code_block): <p>A pre-signed URL to the code that executed the calculation.</p>
+    /// - On failure, responds with [`SdkError<GetCalculationExecutionCodeError>`](crate::error::GetCalculationExecutionCodeError)
+    pub fn get_calculation_execution_code(&self) -> fluent_builders::GetCalculationExecutionCode {
+        fluent_builders::GetCalculationExecutionCode::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetCalculationExecutionStatus`](crate::client::fluent_builders::GetCalculationExecutionStatus) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`calculation_execution_id(impl Into<String>)`](crate::client::fluent_builders::GetCalculationExecutionStatus::calculation_execution_id) / [`set_calculation_execution_id(Option<String>)`](crate::client::fluent_builders::GetCalculationExecutionStatus::set_calculation_execution_id): <p>The calculation execution UUID.</p>
+    /// - On success, responds with [`GetCalculationExecutionStatusOutput`](crate::output::GetCalculationExecutionStatusOutput) with field(s):
+    ///   - [`status(Option<CalculationStatus>)`](crate::output::GetCalculationExecutionStatusOutput::status): <p>Contains information about the calculation execution status.</p>
+    ///   - [`statistics(Option<CalculationStatistics>)`](crate::output::GetCalculationExecutionStatusOutput::statistics): <p>Contains information about the DPU execution time and progress.</p>
+    /// - On failure, responds with [`SdkError<GetCalculationExecutionStatusError>`](crate::error::GetCalculationExecutionStatusError)
+    pub fn get_calculation_execution_status(
+        &self,
+    ) -> fluent_builders::GetCalculationExecutionStatus {
+        fluent_builders::GetCalculationExecutionStatus::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetDatabase`](crate::client::fluent_builders::GetDatabase) operation.
     ///
@@ -252,6 +336,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetNamedQueryError>`](crate::error::GetNamedQueryError)
     pub fn get_named_query(&self) -> fluent_builders::GetNamedQuery {
         fluent_builders::GetNamedQuery::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetNotebookMetadata`](crate::client::fluent_builders::GetNotebookMetadata) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_id(impl Into<String>)`](crate::client::fluent_builders::GetNotebookMetadata::notebook_id) / [`set_notebook_id(Option<String>)`](crate::client::fluent_builders::GetNotebookMetadata::set_notebook_id): <p>The ID of the notebook whose metadata is to be retrieved.</p>
+    /// - On success, responds with [`GetNotebookMetadataOutput`](crate::output::GetNotebookMetadataOutput) with field(s):
+    ///   - [`notebook_metadata(Option<NotebookMetadata>)`](crate::output::GetNotebookMetadataOutput::notebook_metadata): <p>The metadata that is returned for the specified notebook ID.</p>
+    /// - On failure, responds with [`SdkError<GetNotebookMetadataError>`](crate::error::GetNotebookMetadataError)
+    pub fn get_notebook_metadata(&self) -> fluent_builders::GetNotebookMetadata {
+        fluent_builders::GetNotebookMetadata::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetPreparedStatement`](crate::client::fluent_builders::GetPreparedStatement) operation.
     ///
@@ -299,6 +393,35 @@ impl Client {
     pub fn get_query_runtime_statistics(&self) -> fluent_builders::GetQueryRuntimeStatistics {
         fluent_builders::GetQueryRuntimeStatistics::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetSession`](crate::client::fluent_builders::GetSession) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::GetSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::GetSession::set_session_id): <p>The session ID.</p>
+    /// - On success, responds with [`GetSessionOutput`](crate::output::GetSessionOutput) with field(s):
+    ///   - [`session_id(Option<String>)`](crate::output::GetSessionOutput::session_id): <p>The session ID.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetSessionOutput::description): <p>The session description.</p>
+    ///   - [`work_group(Option<String>)`](crate::output::GetSessionOutput::work_group): <p>The workgroup to which the session belongs.</p>
+    ///   - [`engine_version(Option<String>)`](crate::output::GetSessionOutput::engine_version): <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>). You can get a list of engine versions by calling <code>ListEngineVersions</code>.</p>
+    ///   - [`engine_configuration(Option<EngineConfiguration>)`](crate::output::GetSessionOutput::engine_configuration): <p>Contains engine configuration information like DPU usage.</p>
+    ///   - [`notebook_version(Option<String>)`](crate::output::GetSessionOutput::notebook_version): <p>The notebook version.</p>
+    ///   - [`session_configuration(Option<SessionConfiguration>)`](crate::output::GetSessionOutput::session_configuration): <p>Contains the workgroup configuration information used by the session.</p>
+    ///   - [`status(Option<SessionStatus>)`](crate::output::GetSessionOutput::status): <p>Contains information about the status of the session.</p>
+    ///   - [`statistics(Option<SessionStatistics>)`](crate::output::GetSessionOutput::statistics): <p>Contains the DPU execution time.</p>
+    /// - On failure, responds with [`SdkError<GetSessionError>`](crate::error::GetSessionError)
+    pub fn get_session(&self) -> fluent_builders::GetSession {
+        fluent_builders::GetSession::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetSessionStatus`](crate::client::fluent_builders::GetSessionStatus) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::GetSessionStatus::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::GetSessionStatus::set_session_id): <p>The session ID.</p>
+    /// - On success, responds with [`GetSessionStatusOutput`](crate::output::GetSessionStatusOutput) with field(s):
+    ///   - [`session_id(Option<String>)`](crate::output::GetSessionStatusOutput::session_id): <p>The session ID.</p>
+    ///   - [`status(Option<SessionStatus>)`](crate::output::GetSessionStatusOutput::status): <p>Contains information about the status of the session.</p>
+    /// - On failure, responds with [`SdkError<GetSessionStatusError>`](crate::error::GetSessionStatusError)
+    pub fn get_session_status(&self) -> fluent_builders::GetSessionStatus {
+        fluent_builders::GetSessionStatus::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetTableMetadata`](crate::client::fluent_builders::GetTableMetadata) operation.
     ///
     /// - The fluent builder is configurable:
@@ -320,6 +443,48 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetWorkGroupError>`](crate::error::GetWorkGroupError)
     pub fn get_work_group(&self) -> fluent_builders::GetWorkGroup {
         fluent_builders::GetWorkGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ImportNotebook`](crate::client::fluent_builders::ImportNotebook) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`work_group(impl Into<String>)`](crate::client::fluent_builders::ImportNotebook::work_group) / [`set_work_group(Option<String>)`](crate::client::fluent_builders::ImportNotebook::set_work_group): <p>The name of the Spark enabled workgroup to import the notebook to.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ImportNotebook::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ImportNotebook::set_name): <p>The name of the notebook to import.</p>
+    ///   - [`payload(impl Into<String>)`](crate::client::fluent_builders::ImportNotebook::payload) / [`set_payload(Option<String>)`](crate::client::fluent_builders::ImportNotebook::set_payload): <p>The notebook content to be imported.</p>
+    ///   - [`r#type(NotebookType)`](crate::client::fluent_builders::ImportNotebook::type) / [`set_type(Option<NotebookType>)`](crate::client::fluent_builders::ImportNotebook::set_type): <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::ImportNotebook::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::ImportNotebook::set_client_request_token): <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>   <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>  </important>
+    /// - On success, responds with [`ImportNotebookOutput`](crate::output::ImportNotebookOutput) with field(s):
+    ///   - [`notebook_id(Option<String>)`](crate::output::ImportNotebookOutput::notebook_id): <p>The ID of the notebook to import.</p>
+    /// - On failure, responds with [`SdkError<ImportNotebookError>`](crate::error::ImportNotebookError)
+    pub fn import_notebook(&self) -> fluent_builders::ImportNotebook {
+        fluent_builders::ImportNotebook::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListApplicationDPUSizes`](crate::client::fluent_builders::ListApplicationDPUSizes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplicationDPUSizes::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListApplicationDPUSizes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListApplicationDPUSizes::set_max_results): <p>Specifies the maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplicationDPUSizes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplicationDPUSizes::set_next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>
+    /// - On success, responds with [`ListApplicationDpuSizesOutput`](crate::output::ListApplicationDpuSizesOutput) with field(s):
+    ///   - [`application_dpu_sizes(Option<Vec<ApplicationDpuSizes>>)`](crate::output::ListApplicationDpuSizesOutput::application_dpu_sizes): <p>A list of the supported DPU sizes that the application runtime supports.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationDpuSizesOutput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// - On failure, responds with [`SdkError<ListApplicationDPUSizesError>`](crate::error::ListApplicationDPUSizesError)
+    pub fn list_application_dpu_sizes(&self) -> fluent_builders::ListApplicationDPUSizes {
+        fluent_builders::ListApplicationDPUSizes::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListCalculationExecutions`](crate::client::fluent_builders::ListCalculationExecutions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCalculationExecutions::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::ListCalculationExecutions::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::ListCalculationExecutions::set_session_id): <p>The session ID.</p>
+    ///   - [`state_filter(CalculationExecutionState)`](crate::client::fluent_builders::ListCalculationExecutions::state_filter) / [`set_state_filter(Option<CalculationExecutionState>)`](crate::client::fluent_builders::ListCalculationExecutions::set_state_filter): <p>A filter for a specific calculation execution state. A description of each state follows.</p>  <p> <code>CREATING</code> - The calculation is in the process of being created.</p>  <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>  <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>  <p> <code>RUNNING</code> - The calculation is running.</p>  <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>  <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>  <p> <code>COMPLETED</code> - The calculation has completed without error.</p>  <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCalculationExecutions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCalculationExecutions::set_max_results): <p>The maximum number of calculation executions to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCalculationExecutions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCalculationExecutions::set_next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// - On success, responds with [`ListCalculationExecutionsOutput`](crate::output::ListCalculationExecutionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListCalculationExecutionsOutput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    ///   - [`calculations(Option<Vec<CalculationSummary>>)`](crate::output::ListCalculationExecutionsOutput::calculations): <p>A list of <code>CalculationSummary</code> objects.</p>
+    /// - On failure, responds with [`SdkError<ListCalculationExecutionsError>`](crate::error::ListCalculationExecutionsError)
+    pub fn list_calculation_executions(&self) -> fluent_builders::ListCalculationExecutions {
+        fluent_builders::ListCalculationExecutions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDatabases`](crate::client::fluent_builders::ListDatabases) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDatabases::into_paginator).
@@ -361,6 +526,22 @@ impl Client {
     pub fn list_engine_versions(&self) -> fluent_builders::ListEngineVersions {
         fluent_builders::ListEngineVersions::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListExecutors`](crate::client::fluent_builders::ListExecutors) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExecutors::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::ListExecutors::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::ListExecutors::set_session_id): <p>The session ID.</p>
+    ///   - [`executor_state_filter(ExecutorState)`](crate::client::fluent_builders::ListExecutors::executor_state_filter) / [`set_executor_state_filter(Option<ExecutorState>)`](crate::client::fluent_builders::ListExecutors::set_executor_state_filter): <p>A filter for a specific executor state. A description of each state follows.</p>  <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>  <p> <code>CREATED</code> - The executor has been started.</p>  <p> <code>REGISTERED</code> - The executor has been registered.</p>  <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>  <p> <code>TERMINATED</code> - The executor is no longer running.</p>  <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExecutors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListExecutors::set_max_results): <p>The maximum number of executors to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExecutors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExecutors::set_next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// - On success, responds with [`ListExecutorsOutput`](crate::output::ListExecutorsOutput) with field(s):
+    ///   - [`session_id(Option<String>)`](crate::output::ListExecutorsOutput::session_id): <p>The session ID.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListExecutorsOutput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    ///   - [`executors_summary(Option<Vec<ExecutorsSummary>>)`](crate::output::ListExecutorsOutput::executors_summary): <p>Contains summary information about the executor.</p>
+    /// - On failure, responds with [`SdkError<ListExecutorsError>`](crate::error::ListExecutorsError)
+    pub fn list_executors(&self) -> fluent_builders::ListExecutors {
+        fluent_builders::ListExecutors::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListNamedQueries`](crate::client::fluent_builders::ListNamedQueries) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListNamedQueries::into_paginator).
     ///
@@ -374,6 +555,33 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListNamedQueriesError>`](crate::error::ListNamedQueriesError)
     pub fn list_named_queries(&self) -> fluent_builders::ListNamedQueries {
         fluent_builders::ListNamedQueries::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListNotebookMetadata`](crate::client::fluent_builders::ListNotebookMetadata) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filters(FilterDefinition)`](crate::client::fluent_builders::ListNotebookMetadata::filters) / [`set_filters(Option<FilterDefinition>)`](crate::client::fluent_builders::ListNotebookMetadata::set_filters): <p>Search filter string.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNotebookMetadata::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNotebookMetadata::set_next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListNotebookMetadata::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListNotebookMetadata::set_max_results): <p>Specifies the maximum number of results to return.</p>
+    ///   - [`work_group(impl Into<String>)`](crate::client::fluent_builders::ListNotebookMetadata::work_group) / [`set_work_group(Option<String>)`](crate::client::fluent_builders::ListNotebookMetadata::set_work_group): <p>The name of the Spark enabled workgroup to retrieve notebook metadata for.</p>
+    /// - On success, responds with [`ListNotebookMetadataOutput`](crate::output::ListNotebookMetadataOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListNotebookMetadataOutput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    ///   - [`notebook_metadata_list(Option<Vec<NotebookMetadata>>)`](crate::output::ListNotebookMetadataOutput::notebook_metadata_list): <p>The list of notebook metadata for the specified workgroup.</p>
+    /// - On failure, responds with [`SdkError<ListNotebookMetadataError>`](crate::error::ListNotebookMetadataError)
+    pub fn list_notebook_metadata(&self) -> fluent_builders::ListNotebookMetadata {
+        fluent_builders::ListNotebookMetadata::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListNotebookSessions`](crate::client::fluent_builders::ListNotebookSessions) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_id(impl Into<String>)`](crate::client::fluent_builders::ListNotebookSessions::notebook_id) / [`set_notebook_id(Option<String>)`](crate::client::fluent_builders::ListNotebookSessions::set_notebook_id): <p>The ID of the notebook to list sessions for.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListNotebookSessions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListNotebookSessions::set_max_results): <p>The maximum number of notebook sessions to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNotebookSessions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNotebookSessions::set_next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// - On success, responds with [`ListNotebookSessionsOutput`](crate::output::ListNotebookSessionsOutput) with field(s):
+    ///   - [`notebook_sessions_list(Option<Vec<NotebookSessionSummary>>)`](crate::output::ListNotebookSessionsOutput::notebook_sessions_list): <p>A list of the sessions belonging to the notebook.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListNotebookSessionsOutput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// - On failure, responds with [`SdkError<ListNotebookSessionsError>`](crate::error::ListNotebookSessionsError)
+    pub fn list_notebook_sessions(&self) -> fluent_builders::ListNotebookSessions {
+        fluent_builders::ListNotebookSessions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPreparedStatements`](crate::client::fluent_builders::ListPreparedStatements) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPreparedStatements::into_paginator).
@@ -402,6 +610,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListQueryExecutionsError>`](crate::error::ListQueryExecutionsError)
     pub fn list_query_executions(&self) -> fluent_builders::ListQueryExecutions {
         fluent_builders::ListQueryExecutions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListSessions`](crate::client::fluent_builders::ListSessions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSessions::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`work_group(impl Into<String>)`](crate::client::fluent_builders::ListSessions::work_group) / [`set_work_group(Option<String>)`](crate::client::fluent_builders::ListSessions::set_work_group): <p>The workgroup to which the session belongs.</p>
+    ///   - [`state_filter(SessionState)`](crate::client::fluent_builders::ListSessions::state_filter) / [`set_state_filter(Option<SessionState>)`](crate::client::fluent_builders::ListSessions::set_state_filter): <p>A filter for a specific session state. A description of each state follows.</p>  <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>  <p> <code>CREATED</code> - The session has been started.</p>  <p> <code>IDLE</code> - The session is able to accept a calculation.</p>  <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>  <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>  <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>  <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>  <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSessions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSessions::set_max_results): <p>The maximum number of sessions to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSessions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSessions::set_next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// - On success, responds with [`ListSessionsOutput`](crate::output::ListSessionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListSessionsOutput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    ///   - [`sessions(Option<Vec<SessionSummary>>)`](crate::output::ListSessionsOutput::sessions): <p>A list of sessions.</p>
+    /// - On failure, responds with [`SdkError<ListSessionsError>`](crate::error::ListSessionsError)
+    pub fn list_sessions(&self) -> fluent_builders::ListSessions {
+        fluent_builders::ListSessions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTableMetadata`](crate::client::fluent_builders::ListTableMetadata) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTableMetadata::into_paginator).
@@ -446,6 +669,21 @@ impl Client {
     pub fn list_work_groups(&self) -> fluent_builders::ListWorkGroups {
         fluent_builders::ListWorkGroups::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`StartCalculationExecution`](crate::client::fluent_builders::StartCalculationExecution) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::StartCalculationExecution::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::StartCalculationExecution::set_session_id): <p>The session ID.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::StartCalculationExecution::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::StartCalculationExecution::set_description): <p>A description of the calculation.</p>
+    ///   - [`calculation_configuration(CalculationConfiguration)`](crate::client::fluent_builders::StartCalculationExecution::calculation_configuration) / [`set_calculation_configuration(Option<CalculationConfiguration>)`](crate::client::fluent_builders::StartCalculationExecution::set_calculation_configuration): <p>Contains configuration information for the calculation.</p>
+    ///   - [`code_block(impl Into<String>)`](crate::client::fluent_builders::StartCalculationExecution::code_block) / [`set_code_block(Option<String>)`](crate::client::fluent_builders::StartCalculationExecution::set_code_block): <p>A string that contains the code of the calculation.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartCalculationExecution::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartCalculationExecution::set_client_request_token): <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p> <important>   <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>  </important>
+    /// - On success, responds with [`StartCalculationExecutionOutput`](crate::output::StartCalculationExecutionOutput) with field(s):
+    ///   - [`calculation_execution_id(Option<String>)`](crate::output::StartCalculationExecutionOutput::calculation_execution_id): <p>The calculation execution UUID.</p>
+    ///   - [`state(Option<CalculationExecutionState>)`](crate::output::StartCalculationExecutionOutput::state): <p> <code>CREATING</code> - The calculation is in the process of being created.</p>  <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>  <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>  <p> <code>RUNNING</code> - The calculation is running.</p>  <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>  <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>  <p> <code>COMPLETED</code> - The calculation has completed without error.</p>  <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    /// - On failure, responds with [`SdkError<StartCalculationExecutionError>`](crate::error::StartCalculationExecutionError)
+    pub fn start_calculation_execution(&self) -> fluent_builders::StartCalculationExecution {
+        fluent_builders::StartCalculationExecution::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`StartQueryExecution`](crate::client::fluent_builders::StartQueryExecution) operation.
     ///
     /// - The fluent builder is configurable:
@@ -455,11 +693,38 @@ impl Client {
     ///   - [`result_configuration(ResultConfiguration)`](crate::client::fluent_builders::StartQueryExecution::result_configuration) / [`set_result_configuration(Option<ResultConfiguration>)`](crate::client::fluent_builders::StartQueryExecution::set_result_configuration): <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     ///   - [`work_group(impl Into<String>)`](crate::client::fluent_builders::StartQueryExecution::work_group) / [`set_work_group(Option<String>)`](crate::client::fluent_builders::StartQueryExecution::set_work_group): <p>The name of the workgroup in which the query is being started.</p>
     ///   - [`execution_parameters(Vec<String>)`](crate::client::fluent_builders::StartQueryExecution::execution_parameters) / [`set_execution_parameters(Option<Vec<String>>)`](crate::client::fluent_builders::StartQueryExecution::set_execution_parameters): <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+    ///   - [`result_reuse_configuration(ResultReuseConfiguration)`](crate::client::fluent_builders::StartQueryExecution::result_reuse_configuration) / [`set_result_reuse_configuration(Option<ResultReuseConfiguration>)`](crate::client::fluent_builders::StartQueryExecution::set_result_reuse_configuration): <p>Specifies the query result reuse behavior for the query.</p>
     /// - On success, responds with [`StartQueryExecutionOutput`](crate::output::StartQueryExecutionOutput) with field(s):
     ///   - [`query_execution_id(Option<String>)`](crate::output::StartQueryExecutionOutput::query_execution_id): <p>The unique ID of the query that ran as a result of this request.</p>
     /// - On failure, responds with [`SdkError<StartQueryExecutionError>`](crate::error::StartQueryExecutionError)
     pub fn start_query_execution(&self) -> fluent_builders::StartQueryExecution {
         fluent_builders::StartQueryExecution::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`StartSession`](crate::client::fluent_builders::StartSession) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::StartSession::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::StartSession::set_description): <p>The session description.</p>
+    ///   - [`work_group(impl Into<String>)`](crate::client::fluent_builders::StartSession::work_group) / [`set_work_group(Option<String>)`](crate::client::fluent_builders::StartSession::set_work_group): <p>The workgroup to which the session belongs.</p>
+    ///   - [`engine_configuration(EngineConfiguration)`](crate::client::fluent_builders::StartSession::engine_configuration) / [`set_engine_configuration(Option<EngineConfiguration>)`](crate::client::fluent_builders::StartSession::set_engine_configuration): <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
+    ///   - [`notebook_version(impl Into<String>)`](crate::client::fluent_builders::StartSession::notebook_version) / [`set_notebook_version(Option<String>)`](crate::client::fluent_builders::StartSession::set_notebook_version): <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
+    ///   - [`session_idle_timeout_in_minutes(i32)`](crate::client::fluent_builders::StartSession::session_idle_timeout_in_minutes) / [`set_session_idle_timeout_in_minutes(Option<i32>)`](crate::client::fluent_builders::StartSession::set_session_idle_timeout_in_minutes): <p>The idle timeout in minutes for the session.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartSession::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartSession::set_client_request_token): <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>   <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>  </important>
+    /// - On success, responds with [`StartSessionOutput`](crate::output::StartSessionOutput) with field(s):
+    ///   - [`session_id(Option<String>)`](crate::output::StartSessionOutput::session_id): <p>The session ID.</p>
+    ///   - [`state(Option<SessionState>)`](crate::output::StartSessionOutput::state): <p>The state of the session. A description of each state follows.</p>  <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>  <p> <code>CREATED</code> - The session has been started.</p>  <p> <code>IDLE</code> - The session is able to accept a calculation.</p>  <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>  <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>  <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>  <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>  <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    /// - On failure, responds with [`SdkError<StartSessionError>`](crate::error::StartSessionError)
+    pub fn start_session(&self) -> fluent_builders::StartSession {
+        fluent_builders::StartSession::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`StopCalculationExecution`](crate::client::fluent_builders::StopCalculationExecution) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`calculation_execution_id(impl Into<String>)`](crate::client::fluent_builders::StopCalculationExecution::calculation_execution_id) / [`set_calculation_execution_id(Option<String>)`](crate::client::fluent_builders::StopCalculationExecution::set_calculation_execution_id): <p>The calculation execution UUID.</p>
+    /// - On success, responds with [`StopCalculationExecutionOutput`](crate::output::StopCalculationExecutionOutput) with field(s):
+    ///   - [`state(Option<CalculationExecutionState>)`](crate::output::StopCalculationExecutionOutput::state): <p> <code>CREATING</code> - The calculation is in the process of being created.</p>  <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>  <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>  <p> <code>RUNNING</code> - The calculation is running.</p>  <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>  <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>  <p> <code>COMPLETED</code> - The calculation has completed without error.</p>  <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    /// - On failure, responds with [`SdkError<StopCalculationExecutionError>`](crate::error::StopCalculationExecutionError)
+    pub fn stop_calculation_execution(&self) -> fluent_builders::StopCalculationExecution {
+        fluent_builders::StopCalculationExecution::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`StopQueryExecution`](crate::client::fluent_builders::StopQueryExecution) operation.
     ///
@@ -481,6 +746,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource {
         fluent_builders::TagResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`TerminateSession`](crate::client::fluent_builders::TerminateSession) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::TerminateSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::TerminateSession::set_session_id): <p>The session ID.</p>
+    /// - On success, responds with [`TerminateSessionOutput`](crate::output::TerminateSessionOutput) with field(s):
+    ///   - [`state(Option<SessionState>)`](crate::output::TerminateSessionOutput::state): <p>The state of the session. A description of each state follows.</p>  <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>  <p> <code>CREATED</code> - The session has been started.</p>  <p> <code>IDLE</code> - The session is able to accept a calculation.</p>  <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>  <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>  <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>  <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>  <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    /// - On failure, responds with [`SdkError<TerminateSessionError>`](crate::error::TerminateSessionError)
+    pub fn terminate_session(&self) -> fluent_builders::TerminateSession {
+        fluent_builders::TerminateSession::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
@@ -519,6 +794,32 @@ impl Client {
     pub fn update_named_query(&self) -> fluent_builders::UpdateNamedQuery {
         fluent_builders::UpdateNamedQuery::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateNotebook`](crate::client::fluent_builders::UpdateNotebook) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_id(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebook::notebook_id) / [`set_notebook_id(Option<String>)`](crate::client::fluent_builders::UpdateNotebook::set_notebook_id): <p>The ID of the notebook to update.</p>
+    ///   - [`payload(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebook::payload) / [`set_payload(Option<String>)`](crate::client::fluent_builders::UpdateNotebook::set_payload): <p>The updated content for the notebook.</p>
+    ///   - [`r#type(NotebookType)`](crate::client::fluent_builders::UpdateNotebook::type) / [`set_type(Option<NotebookType>)`](crate::client::fluent_builders::UpdateNotebook::set_type): <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebook::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::UpdateNotebook::set_session_id): <p>The ID of the session in which the notebook will be updated.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebook::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpdateNotebook::set_client_request_token): <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>   <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>  </important>
+    /// - On success, responds with [`UpdateNotebookOutput`](crate::output::UpdateNotebookOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateNotebookError>`](crate::error::UpdateNotebookError)
+    pub fn update_notebook(&self) -> fluent_builders::UpdateNotebook {
+        fluent_builders::UpdateNotebook::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateNotebookMetadata`](crate::client::fluent_builders::UpdateNotebookMetadata) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_id(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebookMetadata::notebook_id) / [`set_notebook_id(Option<String>)`](crate::client::fluent_builders::UpdateNotebookMetadata::set_notebook_id): <p>The ID of the notebook to update the metadata for.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebookMetadata::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpdateNotebookMetadata::set_client_request_token): <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>   <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>  </important>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebookMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateNotebookMetadata::set_name): <p>The name to update the notebook to.</p>
+    /// - On success, responds with [`UpdateNotebookMetadataOutput`](crate::output::UpdateNotebookMetadataOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateNotebookMetadataError>`](crate::error::UpdateNotebookMetadataError)
+    pub fn update_notebook_metadata(&self) -> fluent_builders::UpdateNotebookMetadata {
+        fluent_builders::UpdateNotebookMetadata::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdatePreparedStatement`](crate::client::fluent_builders::UpdatePreparedStatement) operation.
     ///
     /// - The fluent builder is configurable:
@@ -537,7 +838,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`work_group(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkGroup::work_group) / [`set_work_group(Option<String>)`](crate::client::fluent_builders::UpdateWorkGroup::set_work_group): <p>The specified workgroup that will be updated.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateWorkGroup::set_description): <p>The workgroup description.</p>
-    ///   - [`configuration_updates(WorkGroupConfigurationUpdates)`](crate::client::fluent_builders::UpdateWorkGroup::configuration_updates) / [`set_configuration_updates(Option<WorkGroupConfigurationUpdates>)`](crate::client::fluent_builders::UpdateWorkGroup::set_configuration_updates): <p>The workgroup configuration that will be updated for the given workgroup.</p>
+    ///   - [`configuration_updates(WorkGroupConfigurationUpdates)`](crate::client::fluent_builders::UpdateWorkGroup::configuration_updates) / [`set_configuration_updates(Option<WorkGroupConfigurationUpdates>)`](crate::client::fluent_builders::UpdateWorkGroup::set_configuration_updates): <p>Contains configuration updates for an Athena SQL workgroup.</p>
     ///   - [`state(WorkGroupState)`](crate::client::fluent_builders::UpdateWorkGroup::state) / [`set_state(Option<WorkGroupState>)`](crate::client::fluent_builders::UpdateWorkGroup::set_state): <p>The workgroup state that will be updated for the given workgroup.</p>
     /// - On success, responds with [`UpdateWorkGroupOutput`](crate::output::UpdateWorkGroupOutput)
 
@@ -1098,6 +1399,106 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateNotebook`.
+    ///
+    /// <p>Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled workgroup. Throws an error if a file in the workgroup with the same name already exists.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateNotebook {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_notebook_input::Builder,
+    }
+    impl CreateNotebook {
+        /// Creates a new `CreateNotebook`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateNotebook,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateNotebookError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateNotebookOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateNotebookError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Spark enabled workgroup in which the notebook will be created.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
+            self
+        }
+        /// <p>The name of the Spark enabled workgroup in which the notebook will be created.</p>
+        pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_work_group(input);
+            self
+        }
+        /// <p>The name of the <code>ipynb</code> file to be created in the Spark workgroup, without the <code>.ipynb</code> extension.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the <code>ipynb</code> file to be created in the Spark workgroup, without the <code>.ipynb</code> extension.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreatePreparedStatement`.
     ///
     /// <p>Creates a prepared statement for use with SQL queries in Athena.</p>
@@ -1207,9 +1608,82 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreatePresignedNotebookUrl`.
+    ///
+    /// <p>Gets an authentication token and the URL at which the notebook can be accessed. During programmatic access, <code>CreatePresignedNotebookUrl</code> must be called every 10 minutes to refresh the authentication token.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreatePresignedNotebookUrl {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_presigned_notebook_url_input::Builder,
+    }
+    impl CreatePresignedNotebookUrl {
+        /// Creates a new `CreatePresignedNotebookUrl`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreatePresignedNotebookUrl,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreatePresignedNotebookUrlError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreatePresignedNotebookUrlOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreatePresignedNotebookUrlError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateWorkGroup`.
     ///
-    /// <p>Creates a workgroup with the specified name.</p>
+    /// <p>Creates a workgroup with the specified name. Only one of <code>Configurations</code> or <code>Configuration</code> can be specified; <code>Configurations</code> for a workgroup with multi engine support (for example, an Apache Spark enabled workgroup) or <code>Configuration</code> for an Athena SQL workgroup.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkGroup {
         handle: std::sync::Arc<super::Handle>,
@@ -1279,12 +1753,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+        /// <p>Contains configuration information for creating an Athena SQL workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn configuration(mut self, input: crate::model::WorkGroupConfiguration) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+        /// <p>Contains configuration information for creating an Athena SQL workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::WorkGroupConfiguration>,
@@ -1470,6 +1944,79 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteNotebook`.
+    ///
+    /// <p>Deletes the specified notebook.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteNotebook {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_notebook_input::Builder,
+    }
+    impl DeleteNotebook {
+        /// Creates a new `DeleteNotebook`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteNotebook,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteNotebookError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteNotebookOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteNotebookError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the notebook to delete.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_id(input.into());
+            self
+        }
+        /// <p>The ID of the notebook to delete.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_notebook_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeletePreparedStatement`.
     ///
     /// <p>Deletes the prepared statement with the specified name from the specified workgroup.</p>
@@ -1636,6 +2183,307 @@ pub mod fluent_builders {
         /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
         pub fn set_recursive_delete_option(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_recursive_delete_option(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ExportNotebook`.
+    ///
+    /// <p>Exports the specified notebook and its metadata.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ExportNotebook {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::export_notebook_input::Builder,
+    }
+    impl ExportNotebook {
+        /// Creates a new `ExportNotebook`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ExportNotebook,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ExportNotebookError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ExportNotebookOutput,
+            aws_smithy_http::result::SdkError<crate::error::ExportNotebookError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the notebook to export.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_id(input.into());
+            self
+        }
+        /// <p>The ID of the notebook to export.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_notebook_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetCalculationExecution`.
+    ///
+    /// <p>Describes a previously submitted calculation execution.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetCalculationExecution {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_calculation_execution_input::Builder,
+    }
+    impl GetCalculationExecution {
+        /// Creates a new `GetCalculationExecution`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetCalculationExecution,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetCalculationExecutionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetCalculationExecutionOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetCalculationExecutionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn calculation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.calculation_execution_id(input.into());
+            self
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn set_calculation_execution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_calculation_execution_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetCalculationExecutionCode`.
+    ///
+    /// <p>Retrieves a pre-signed URL to a copy of the code that was executed for the calculation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetCalculationExecutionCode {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_calculation_execution_code_input::Builder,
+    }
+    impl GetCalculationExecutionCode {
+        /// Creates a new `GetCalculationExecutionCode`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetCalculationExecutionCode,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetCalculationExecutionCodeError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetCalculationExecutionCodeOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetCalculationExecutionCodeError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn calculation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.calculation_execution_id(input.into());
+            self
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn set_calculation_execution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_calculation_execution_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetCalculationExecutionStatus`.
+    ///
+    /// <p>Gets the status of a current calculation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetCalculationExecutionStatus {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_calculation_execution_status_input::Builder,
+    }
+    impl GetCalculationExecutionStatus {
+        /// Creates a new `GetCalculationExecutionStatus`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetCalculationExecutionStatus,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetCalculationExecutionStatusError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetCalculationExecutionStatusOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetCalculationExecutionStatusError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn calculation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.calculation_execution_id(input.into());
+            self
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn set_calculation_execution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_calculation_execution_id(input);
             self
         }
     }
@@ -1871,6 +2719,79 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_named_query_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetNotebookMetadata`.
+    ///
+    /// <p>Retrieves notebook metadata for the specified notebook ID.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetNotebookMetadata {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_notebook_metadata_input::Builder,
+    }
+    impl GetNotebookMetadata {
+        /// Creates a new `GetNotebookMetadata`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetNotebookMetadata,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetNotebookMetadataError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetNotebookMetadataOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetNotebookMetadataError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the notebook whose metadata is to be retrieved.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_id(input.into());
+            self
+        }
+        /// <p>The ID of the notebook whose metadata is to be retrieved.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_notebook_id(input);
             self
         }
     }
@@ -2143,7 +3064,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetQueryRuntimeStatistics`.
     ///
-    /// <p>Returns query execution runtime statistics related to a single execution of a query if you have access to the workgroup in which the query ran. The query execution runtime statistics is returned only when <code>QueryExecutionStatus$State</code> is in a SUCCEEDED or FAILED state.</p>
+    /// <p>Returns query execution runtime statistics related to a single execution of a query if you have access to the workgroup in which the query ran. Query execution runtime statistics are returned only when <code>QueryExecutionStatus$State</code> is in a SUCCEEDED or FAILED state. Stage-level input and output row count and data size statistics are not shown when a query has row-level filters defined in Lake Formation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQueryRuntimeStatistics {
         handle: std::sync::Arc<super::Handle>,
@@ -2214,6 +3135,152 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_query_execution_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetSession`.
+    ///
+    /// <p>Gets the full details of a previously created session, including the session status and configuration.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetSession {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_session_input::Builder,
+    }
+    impl GetSession {
+        /// Creates a new `GetSession`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetSession,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetSessionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetSessionOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetSessionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetSessionStatus`.
+    ///
+    /// <p>Gets the current status of a session.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetSessionStatus {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_session_status_input::Builder,
+    }
+    impl GetSessionStatus {
+        /// Creates a new `GetSessionStatus`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetSessionStatus,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetSessionStatusError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetSessionStatusOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetSessionStatusError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
             self
         }
     }
@@ -2383,6 +3450,343 @@ pub mod fluent_builders {
         /// <p>The name of the workgroup.</p>
         pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_work_group(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ImportNotebook`.
+    ///
+    /// <p>Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maximum file size that can be imported is 10 megabytes. If an <code>ipynb</code> file with the same name already exists in the workgroup, throws an error.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ImportNotebook {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::import_notebook_input::Builder,
+    }
+    impl ImportNotebook {
+        /// Creates a new `ImportNotebook`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ImportNotebook,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ImportNotebookError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ImportNotebookOutput,
+            aws_smithy_http::result::SdkError<crate::error::ImportNotebookError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Spark enabled workgroup to import the notebook to.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
+            self
+        }
+        /// <p>The name of the Spark enabled workgroup to import the notebook to.</p>
+        pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_work_group(input);
+            self
+        }
+        /// <p>The name of the notebook to import.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the notebook to import.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The notebook content to be imported.</p>
+        pub fn payload(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.payload(input.into());
+            self
+        }
+        /// <p>The notebook content to be imported.</p>
+        pub fn set_payload(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_payload(input);
+            self
+        }
+        /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+        pub fn r#type(mut self, input: crate::model::NotebookType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::NotebookType>) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListApplicationDPUSizes`.
+    ///
+    /// <p>Returns the supported DPU sizes for the supported application runtimes (for example, <code>Jupyter 1.0</code>). </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListApplicationDPUSizes {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_application_dpu_sizes_input::Builder,
+    }
+    impl ListApplicationDPUSizes {
+        /// Creates a new `ListApplicationDPUSizes`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListApplicationDPUSizes,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListApplicationDPUSizesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListApplicationDpuSizesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListApplicationDPUSizesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationDpuSizesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListApplicationDpuSizesPaginator {
+            crate::paginator::ListApplicationDpuSizesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Specifies the maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Specifies the maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListCalculationExecutions`.
+    ///
+    /// <p>Lists the calculations that have been submitted to a session in descending order. Newer calculations are listed first; older calculations are listed later.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListCalculationExecutions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_calculation_executions_input::Builder,
+    }
+    impl ListCalculationExecutions {
+        /// Creates a new `ListCalculationExecutions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListCalculationExecutions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListCalculationExecutionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCalculationExecutionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListCalculationExecutionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCalculationExecutionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCalculationExecutionsPaginator {
+            crate::paginator::ListCalculationExecutionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
+            self
+        }
+        /// <p>A filter for a specific calculation execution state. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+        /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+        /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+        /// <p> <code>RUNNING</code> - The calculation is running.</p>
+        /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+        /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+        /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+        /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+        pub fn state_filter(mut self, input: crate::model::CalculationExecutionState) -> Self {
+            self.inner = self.inner.state_filter(input);
+            self
+        }
+        /// <p>A filter for a specific calculation execution state. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+        /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+        /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+        /// <p> <code>RUNNING</code> - The calculation is running.</p>
+        /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+        /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+        /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+        /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+        pub fn set_state_filter(
+            mut self,
+            input: std::option::Option<crate::model::CalculationExecutionState>,
+        ) -> Self {
+            self.inner = self.inner.set_state_filter(input);
+            self
+        }
+        /// <p>The maximum number of calculation executions to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of calculation executions to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2663,6 +4067,130 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListExecutors`.
+    ///
+    /// <p>Lists, in descending order, the executors that have been submitted to a session. Newer executors are listed first; older executors are listed later. The result can be optionally filtered by state.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListExecutors {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_executors_input::Builder,
+    }
+    impl ListExecutors {
+        /// Creates a new `ListExecutors`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListExecutors,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListExecutorsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListExecutorsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListExecutorsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListExecutorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListExecutorsPaginator {
+            crate::paginator::ListExecutorsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
+            self
+        }
+        /// <p>A filter for a specific executor state. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The executor has been started.</p>
+        /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+        /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+        pub fn executor_state_filter(mut self, input: crate::model::ExecutorState) -> Self {
+            self.inner = self.inner.executor_state_filter(input);
+            self
+        }
+        /// <p>A filter for a specific executor state. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The executor has been started.</p>
+        /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+        /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+        pub fn set_executor_state_filter(
+            mut self,
+            input: std::option::Option<crate::model::ExecutorState>,
+        ) -> Self {
+            self.inner = self.inner.set_executor_state_filter(input);
+            self
+        }
+        /// <p>The maximum number of executors to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of executors to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListNamedQueries`.
     ///
     /// <p>Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.</p>
@@ -2760,6 +4288,205 @@ pub mod fluent_builders {
         /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
         pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_work_group(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListNotebookMetadata`.
+    ///
+    /// <p>Displays the notebook files for the specified workgroup in paginated format.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListNotebookMetadata {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_notebook_metadata_input::Builder,
+    }
+    impl ListNotebookMetadata {
+        /// Creates a new `ListNotebookMetadata`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListNotebookMetadata,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListNotebookMetadataError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListNotebookMetadataOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListNotebookMetadataError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Search filter string.</p>
+        pub fn filters(mut self, input: crate::model::FilterDefinition) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>Search filter string.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::FilterDefinition>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Specifies the maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Specifies the maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The name of the Spark enabled workgroup to retrieve notebook metadata for.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
+            self
+        }
+        /// <p>The name of the Spark enabled workgroup to retrieve notebook metadata for.</p>
+        pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_work_group(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListNotebookSessions`.
+    ///
+    /// <p>Lists, in descending order, the sessions that have been created in a notebook that are in an active state like <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code> or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListNotebookSessions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_notebook_sessions_input::Builder,
+    }
+    impl ListNotebookSessions {
+        /// Creates a new `ListNotebookSessions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListNotebookSessions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListNotebookSessionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListNotebookSessionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListNotebookSessionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the notebook to list sessions for.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_id(input.into());
+            self
+        }
+        /// <p>The ID of the notebook to list sessions for.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_notebook_id(input);
+            self
+        }
+        /// <p>The maximum number of notebook sessions to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of notebook sessions to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2959,6 +4686,134 @@ pub mod fluent_builders {
         /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
         pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_work_group(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListSessions`.
+    ///
+    /// <p>Lists the sessions in a workgroup that are in an active state like <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code>, or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListSessions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_sessions_input::Builder,
+    }
+    impl ListSessions {
+        /// Creates a new `ListSessions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListSessions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListSessionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListSessionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListSessionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSessionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSessionsPaginator {
+            crate::paginator::ListSessionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The workgroup to which the session belongs.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
+            self
+        }
+        /// <p>The workgroup to which the session belongs.</p>
+        pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_work_group(input);
+            self
+        }
+        /// <p>A filter for a specific session state. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The session has been started.</p>
+        /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+        /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+        /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+        /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+        pub fn state_filter(mut self, input: crate::model::SessionState) -> Self {
+            self.inner = self.inner.state_filter(input);
+            self
+        }
+        /// <p>A filter for a specific session state. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The session has been started.</p>
+        /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+        /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+        /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+        /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+        pub fn set_state_filter(
+            mut self,
+            input: std::option::Option<crate::model::SessionState>,
+        ) -> Self {
+            self.inner = self.inner.set_state_filter(input);
+            self
+        }
+        /// <p>The maximum number of sessions to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of sessions to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -3272,6 +5127,134 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `StartCalculationExecution`.
+    ///
+    /// <p>Submits calculations for execution within a session. You can supply the code to run as an inline code block within the request or as an Amazon S3 URL.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartCalculationExecution {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::start_calculation_execution_input::Builder,
+    }
+    impl StartCalculationExecution {
+        /// Creates a new `StartCalculationExecution`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::StartCalculationExecution,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::StartCalculationExecutionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartCalculationExecutionOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartCalculationExecutionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
+            self
+        }
+        /// <p>A description of the calculation.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A description of the calculation.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>Contains configuration information for the calculation.</p>
+        #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+        pub fn calculation_configuration(
+            mut self,
+            input: crate::model::CalculationConfiguration,
+        ) -> Self {
+            self.inner = self.inner.calculation_configuration(input);
+            self
+        }
+        /// <p>Contains configuration information for the calculation.</p>
+        #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+        pub fn set_calculation_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CalculationConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_calculation_configuration(input);
+            self
+        }
+        /// <p>A string that contains the code of the calculation.</p>
+        pub fn code_block(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_block(input.into());
+            self
+        }
+        /// <p>A string that contains the code of the calculation.</p>
+        pub fn set_code_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_code_block(input);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `StartQueryExecution`.
     ///
     /// <p>Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup in which the query ran. Running queries against an external catalog requires <code>GetDataCatalog</code> permission to the catalog. For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
@@ -3415,6 +5398,239 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_execution_parameters(input);
+            self
+        }
+        /// <p>Specifies the query result reuse behavior for the query.</p>
+        pub fn result_reuse_configuration(
+            mut self,
+            input: crate::model::ResultReuseConfiguration,
+        ) -> Self {
+            self.inner = self.inner.result_reuse_configuration(input);
+            self
+        }
+        /// <p>Specifies the query result reuse behavior for the query.</p>
+        pub fn set_result_reuse_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ResultReuseConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_result_reuse_configuration(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartSession`.
+    ///
+    /// <p>Creates a session for running calculations within a workgroup. The session is ready when it reaches an <code>IDLE</code> state.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartSession {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::start_session_input::Builder,
+    }
+    impl StartSession {
+        /// Creates a new `StartSession`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::StartSession,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::StartSessionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartSessionOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartSessionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The session description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>The session description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The workgroup to which the session belongs.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
+            self
+        }
+        /// <p>The workgroup to which the session belongs.</p>
+        pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_work_group(input);
+            self
+        }
+        /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
+        pub fn engine_configuration(mut self, input: crate::model::EngineConfiguration) -> Self {
+            self.inner = self.inner.engine_configuration(input);
+            self
+        }
+        /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
+        pub fn set_engine_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EngineConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_configuration(input);
+            self
+        }
+        /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
+        pub fn notebook_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_version(input.into());
+            self
+        }
+        /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
+        pub fn set_notebook_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_notebook_version(input);
+            self
+        }
+        /// <p>The idle timeout in minutes for the session.</p>
+        pub fn session_idle_timeout_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.session_idle_timeout_in_minutes(input);
+            self
+        }
+        /// <p>The idle timeout in minutes for the session.</p>
+        pub fn set_session_idle_timeout_in_minutes(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_session_idle_timeout_in_minutes(input);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StopCalculationExecution`.
+    ///
+    /// <p>Requests the cancellation of a calculation. A <code>StopCalculationExecution</code> call on a calculation that is already in a terminal state (for example, <code>STOPPED</code>, <code>FAILED</code>, or <code>COMPLETED</code>) succeeds but has no effect.</p> <note>
+    /// <p>Cancelling a calculation is done on a best effort basis. If a calculation cannot be cancelled, you can be charged for its completion. If you are concerned about being charged for a calculation that cannot be cancelled, consider terminating the session in which the calculation is running.</p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StopCalculationExecution {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::stop_calculation_execution_input::Builder,
+    }
+    impl StopCalculationExecution {
+        /// Creates a new `StopCalculationExecution`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::StopCalculationExecution,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::StopCalculationExecutionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StopCalculationExecutionOutput,
+            aws_smithy_http::result::SdkError<crate::error::StopCalculationExecutionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn calculation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.calculation_execution_id(input.into());
+            self
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn set_calculation_execution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_calculation_execution_id(input);
             self
         }
     }
@@ -3582,6 +5798,79 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `TerminateSession`.
+    ///
+    /// <p>Terminates an active session. A <code>TerminateSession</code> call on a session that is already inactive (for example, in a <code>FAILED</code>, <code>TERMINATED</code> or <code>TERMINATING</code> state) succeeds but has no effect. Calculations running in the session when <code>TerminateSession</code> is called are forcefully stopped, but may display as <code>FAILED</code> instead of <code>STOPPED</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct TerminateSession {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::terminate_session_input::Builder,
+    }
+    impl TerminateSession {
+        /// Creates a new `TerminateSession`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::TerminateSession,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::TerminateSessionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::TerminateSessionOutput,
+            aws_smithy_http::result::SdkError<crate::error::TerminateSessionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
             self
         }
     }
@@ -3916,6 +6205,226 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateNotebook`.
+    ///
+    /// <p>Updates the contents of a Spark notebook.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateNotebook {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_notebook_input::Builder,
+    }
+    impl UpdateNotebook {
+        /// Creates a new `UpdateNotebook`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateNotebook,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateNotebookError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateNotebookOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateNotebookError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the notebook to update.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_id(input.into());
+            self
+        }
+        /// <p>The ID of the notebook to update.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_notebook_id(input);
+            self
+        }
+        /// <p>The updated content for the notebook.</p>
+        pub fn payload(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.payload(input.into());
+            self
+        }
+        /// <p>The updated content for the notebook.</p>
+        pub fn set_payload(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_payload(input);
+            self
+        }
+        /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+        pub fn r#type(mut self, input: crate::model::NotebookType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::NotebookType>) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>The ID of the session in which the notebook will be updated.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
+            self
+        }
+        /// <p>The ID of the session in which the notebook will be updated.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateNotebookMetadata`.
+    ///
+    /// <p>Updates the metadata for a notebook.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateNotebookMetadata {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_notebook_metadata_input::Builder,
+    }
+    impl UpdateNotebookMetadata {
+        /// Creates a new `UpdateNotebookMetadata`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateNotebookMetadata,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateNotebookMetadataError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateNotebookMetadataOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateNotebookMetadataError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the notebook to update the metadata for.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_id(input.into());
+            self
+        }
+        /// <p>The ID of the notebook to update the metadata for.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_notebook_id(input);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>The name to update the notebook to.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name to update the notebook to.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdatePreparedStatement`.
     ///
     /// <p>Updates a prepared statement.</p>
@@ -4027,7 +6536,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateWorkGroup`.
     ///
-    /// <p>Updates the workgroup with the specified name. The workgroup's name cannot be changed.</p>
+    /// <p>Updates the workgroup with the specified name. The workgroup's name cannot be changed. Only one of <code>ConfigurationsUpdates</code> or <code>ConfigurationUpdates</code> can be specified; <code>ConfigurationsUpdates</code> for a workgroup with multi engine support (for example, an Apache Spark enabled workgroup) or <code>ConfigurationUpdates</code> for an Athena SQL workgroup.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkGroup {
         handle: std::sync::Arc<super::Handle>,
@@ -4107,7 +6616,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The workgroup configuration that will be updated for the given workgroup.</p>
+        /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
         pub fn configuration_updates(
             mut self,
             input: crate::model::WorkGroupConfigurationUpdates,
@@ -4115,7 +6624,7 @@ pub mod fluent_builders {
             self.inner = self.inner.configuration_updates(input);
             self
         }
-        /// <p>The workgroup configuration that will be updated for the given workgroup.</p>
+        /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
         pub fn set_configuration_updates(
             mut self,
             input: std::option::Option<crate::model::WorkGroupConfigurationUpdates>,

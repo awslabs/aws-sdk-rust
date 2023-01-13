@@ -133,6 +133,16 @@ pub(crate) fn reflens_structure_crate_output_describe_event_subscriptions_output
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_describe_global_clusters_output_marker(
+    input: &crate::output::DescribeGlobalClustersOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.marker {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_describe_orderable_db_instance_options_output_marker(
     input: &crate::output::DescribeOrderableDbInstanceOptionsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -281,6 +291,16 @@ pub(crate) fn lens_structure_crate_output_describe_event_subscriptions_output_ev
     input: crate::output::DescribeEventSubscriptionsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::EventSubscription>> {
     let input = match input.event_subscriptions_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_global_clusters_output_global_clusters(
+    input: crate::output::DescribeGlobalClustersOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::GlobalCluster>> {
+    let input = match input.global_clusters {
         None => return None,
         Some(t) => t,
     };

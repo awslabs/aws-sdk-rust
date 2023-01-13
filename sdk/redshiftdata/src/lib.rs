@@ -14,7 +14,7 @@
 //! can run SQL statements, which are committed if the statement succeeds. </p>
 //! <p>For more information about the Amazon Redshift Data API and CLI usage examples, see
 //! <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the
-//! <i>Amazon Redshift Cluster Management Guide</i>. </p>
+//! <i>Amazon Redshift Management Guide</i>. </p>
 //!
 //! # Crate Organization
 //!
@@ -61,6 +61,8 @@ pub mod output;
 pub mod types;
 
 mod aws_endpoint;
+
+mod idempotency_token;
 
 pub mod middleware;
 

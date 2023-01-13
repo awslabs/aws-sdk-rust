@@ -1180,13 +1180,21 @@ pub struct GetTopicAttributesOutput {
     /// <ul>
     /// <li> <p> <code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.</p> </li>
     /// <li> <p> <code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints.</p> </li>
+    /// <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system defaults into account.</p> </li>
     /// <li> <p> <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.</p> </li>
     /// <li> <p> <code>Policy</code> – The JSON serialization of the topic's access control policy.</p> </li>
+    /// <li> <p> <code>SignatureVersion</code> – The version of the Amazon SNS signature used for the topic.</p>
+    /// <ul>
+    /// <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li>
+    /// <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a Base64-encoded <b>SHA256withRSA</b> signature. </p> <note>
+    /// <p>If the API response does not include the <code>SignatureVersion</code> attribute, it means that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
+    /// </note> </li>
+    /// </ul> </li>
     /// <li> <p> <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for the topic.</p> </li>
     /// <li> <p> <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the topic.</p> </li>
     /// <li> <p> <code>SubscriptionsPending</code> – The number of subscriptions pending confirmation for the topic.</p> </li>
     /// <li> <p> <code>TopicArn</code> – The topic's ARN.</p> </li>
-    /// <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system defaults into account.</p> </li>
+    /// <li> <p> <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic passes through the tracing header it receives from an Amazon SNS publisher to its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to topic owner account if the sampled flag in the tracing header is true. This is only supported on standard topics.</p> </li>
     /// </ul>
     /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
     /// <ul>
@@ -1210,13 +1218,21 @@ impl GetTopicAttributesOutput {
     /// <ul>
     /// <li> <p> <code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.</p> </li>
     /// <li> <p> <code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints.</p> </li>
+    /// <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system defaults into account.</p> </li>
     /// <li> <p> <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.</p> </li>
     /// <li> <p> <code>Policy</code> – The JSON serialization of the topic's access control policy.</p> </li>
+    /// <li> <p> <code>SignatureVersion</code> – The version of the Amazon SNS signature used for the topic.</p>
+    /// <ul>
+    /// <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li>
+    /// <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a Base64-encoded <b>SHA256withRSA</b> signature. </p> <note>
+    /// <p>If the API response does not include the <code>SignatureVersion</code> attribute, it means that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
+    /// </note> </li>
+    /// </ul> </li>
     /// <li> <p> <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for the topic.</p> </li>
     /// <li> <p> <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the topic.</p> </li>
     /// <li> <p> <code>SubscriptionsPending</code> – The number of subscriptions pending confirmation for the topic.</p> </li>
     /// <li> <p> <code>TopicArn</code> – The topic's ARN.</p> </li>
-    /// <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system defaults into account.</p> </li>
+    /// <li> <p> <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic passes through the tracing header it receives from an Amazon SNS publisher to its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to topic owner account if the sampled flag in the tracing header is true. This is only supported on standard topics.</p> </li>
     /// </ul>
     /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
     /// <ul>
@@ -1257,13 +1273,21 @@ pub mod get_topic_attributes_output {
         /// <ul>
         /// <li> <p> <code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.</p> </li>
         /// <li> <p> <code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints.</p> </li>
+        /// <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system defaults into account.</p> </li>
         /// <li> <p> <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.</p> </li>
         /// <li> <p> <code>Policy</code> – The JSON serialization of the topic's access control policy.</p> </li>
+        /// <li> <p> <code>SignatureVersion</code> – The version of the Amazon SNS signature used for the topic.</p>
+        /// <ul>
+        /// <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li>
+        /// <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a Base64-encoded <b>SHA256withRSA</b> signature. </p> <note>
+        /// <p>If the API response does not include the <code>SignatureVersion</code> attribute, it means that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
+        /// </note> </li>
+        /// </ul> </li>
         /// <li> <p> <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for the topic.</p> </li>
         /// <li> <p> <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the topic.</p> </li>
         /// <li> <p> <code>SubscriptionsPending</code> – The number of subscriptions pending confirmation for the topic.</p> </li>
         /// <li> <p> <code>TopicArn</code> – The topic's ARN.</p> </li>
-        /// <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system defaults into account.</p> </li>
+        /// <li> <p> <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic passes through the tracing header it receives from an Amazon SNS publisher to its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to topic owner account if the sampled flag in the tracing header is true. This is only supported on standard topics.</p> </li>
         /// </ul>
         /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
         /// <ul>
@@ -1292,13 +1316,21 @@ pub mod get_topic_attributes_output {
         /// <ul>
         /// <li> <p> <code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.</p> </li>
         /// <li> <p> <code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints.</p> </li>
+        /// <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system defaults into account.</p> </li>
         /// <li> <p> <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.</p> </li>
         /// <li> <p> <code>Policy</code> – The JSON serialization of the topic's access control policy.</p> </li>
+        /// <li> <p> <code>SignatureVersion</code> – The version of the Amazon SNS signature used for the topic.</p>
+        /// <ul>
+        /// <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li>
+        /// <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a Base64-encoded <b>SHA256withRSA</b> signature. </p> <note>
+        /// <p>If the API response does not include the <code>SignatureVersion</code> attribute, it means that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
+        /// </note> </li>
+        /// </ul> </li>
         /// <li> <p> <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for the topic.</p> </li>
         /// <li> <p> <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the topic.</p> </li>
         /// <li> <p> <code>SubscriptionsPending</code> – The number of subscriptions pending confirmation for the topic.</p> </li>
         /// <li> <p> <code>TopicArn</code> – The topic's ARN.</p> </li>
-        /// <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system defaults into account.</p> </li>
+        /// <li> <p> <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic passes through the tracing header it receives from an Amazon SNS publisher to its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to topic owner account if the sampled flag in the tracing header is true. This is only supported on standard topics.</p> </li>
         /// </ul>
         /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
         /// <ul>
@@ -1347,6 +1379,11 @@ pub struct GetSubscriptionAttributesOutput {
     /// <li> <p> <code>DeliveryPolicy</code> – The JSON serialization of the subscription's delivery policy.</p> </li>
     /// <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy that takes into account the topic delivery policy and account system defaults.</p> </li>
     /// <li> <p> <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following string value types:</p>
+    /// <ul>
+    /// <li> <p> <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.</p> </li>
+    /// <li> <p> <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+    /// </ul> </li>
     /// <li> <p> <code>Owner</code> – The Amazon Web Services account ID of the subscription's owner.</p> </li>
     /// <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the subscription hasn't been confirmed. To confirm a pending subscription, call the <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
     /// <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message delivery is enabled for the subscription. Raw messages are free of JSON formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li>
@@ -1373,6 +1410,11 @@ impl GetSubscriptionAttributesOutput {
     /// <li> <p> <code>DeliveryPolicy</code> – The JSON serialization of the subscription's delivery policy.</p> </li>
     /// <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy that takes into account the topic delivery policy and account system defaults.</p> </li>
     /// <li> <p> <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following string value types:</p>
+    /// <ul>
+    /// <li> <p> <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.</p> </li>
+    /// <li> <p> <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+    /// </ul> </li>
     /// <li> <p> <code>Owner</code> – The Amazon Web Services account ID of the subscription's owner.</p> </li>
     /// <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the subscription hasn't been confirmed. To confirm a pending subscription, call the <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
     /// <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message delivery is enabled for the subscription. Raw messages are free of JSON formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li>
@@ -1416,6 +1458,11 @@ pub mod get_subscription_attributes_output {
         /// <li> <p> <code>DeliveryPolicy</code> – The JSON serialization of the subscription's delivery policy.</p> </li>
         /// <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy that takes into account the topic delivery policy and account system defaults.</p> </li>
         /// <li> <p> <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following string value types:</p>
+        /// <ul>
+        /// <li> <p> <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.</p> </li>
+        /// <li> <p> <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+        /// </ul> </li>
         /// <li> <p> <code>Owner</code> – The Amazon Web Services account ID of the subscription's owner.</p> </li>
         /// <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the subscription hasn't been confirmed. To confirm a pending subscription, call the <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
         /// <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message delivery is enabled for the subscription. Raw messages are free of JSON formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li>
@@ -1447,6 +1494,11 @@ pub mod get_subscription_attributes_output {
         /// <li> <p> <code>DeliveryPolicy</code> – The JSON serialization of the subscription's delivery policy.</p> </li>
         /// <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy that takes into account the topic delivery policy and account system defaults.</p> </li>
         /// <li> <p> <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following string value types:</p>
+        /// <ul>
+        /// <li> <p> <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.</p> </li>
+        /// <li> <p> <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+        /// </ul> </li>
         /// <li> <p> <code>Owner</code> – The Amazon Web Services account ID of the subscription's owner.</p> </li>
         /// <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the subscription hasn't been confirmed. To confirm a pending subscription, call the <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
         /// <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message delivery is enabled for the subscription. Raw messages are free of JSON formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li>

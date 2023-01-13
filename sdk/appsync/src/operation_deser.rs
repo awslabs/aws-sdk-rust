@@ -840,6 +840,23 @@ pub fn parse_create_resolver_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "BadRequestException" => crate::error::CreateResolverError {
+            meta: generic,
+            kind: crate::error::CreateResolverErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateResolverError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ConcurrentModificationException" => crate::error::CreateResolverError {
             meta: generic,
             kind: crate::error::CreateResolverErrorKind::ConcurrentModificationException({
@@ -1741,6 +1758,23 @@ pub fn parse_delete_resolver_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "BadRequestException" => crate::error::DeleteResolverError {
+            meta: generic,
+            kind: crate::error::DeleteResolverErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteResolverError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ConcurrentModificationException" => crate::error::DeleteResolverError {
             meta: generic,
             kind: crate::error::DeleteResolverErrorKind::ConcurrentModificationException({
@@ -2052,6 +2086,91 @@ pub fn parse_disassociate_api_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disassociate_api_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_evaluate_code_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::EvaluateCodeOutput, crate::error::EvaluateCodeError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::EvaluateCodeError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::EvaluateCodeError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::EvaluateCodeError {
+            meta: generic,
+            kind: crate::error::EvaluateCodeErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluateCodeError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "BadRequestException" => crate::error::EvaluateCodeError {
+            meta: generic,
+            kind: crate::error::EvaluateCodeErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluateCodeError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalFailureException" => crate::error::EvaluateCodeError {
+            meta: generic,
+            kind: crate::error::EvaluateCodeErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluateCodeError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::EvaluateCodeError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_evaluate_code_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::EvaluateCodeOutput, crate::error::EvaluateCodeError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::evaluate_code_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_evaluate_code(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::EvaluateCodeError::unhandled)?;
         output.build()
     })
 }
@@ -5441,6 +5560,23 @@ pub fn parse_update_resolver_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "BadRequestException" => crate::error::UpdateResolverError {
+            meta: generic,
+            kind: crate::error::UpdateResolverErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateResolverError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ConcurrentModificationException" => crate::error::UpdateResolverError {
             meta: generic,
             kind: crate::error::UpdateResolverErrorKind::ConcurrentModificationException({

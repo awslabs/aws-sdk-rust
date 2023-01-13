@@ -947,6 +947,24 @@ pub fn parse_create_web_acl_error(
                 tmp
             }),
         },
+        "WAFExpiredManagedRuleGroupVersionException" => crate::error::CreateWebACLError {
+            meta: generic,
+            kind: crate::error::CreateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::waf_expired_managed_rule_group_version_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_waf_expired_managed_rule_group_version_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "WAFInternalErrorException" => crate::error::CreateWebACLError {
             meta: generic,
             kind: crate::error::CreateWebACLErrorKind::WafInternalErrorException({

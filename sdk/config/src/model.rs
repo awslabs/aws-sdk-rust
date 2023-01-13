@@ -67,6 +67,358 @@ impl Tag {
     }
 }
 
+/// When writing a match expression against `EvaluationMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let evaluationmode = unimplemented!();
+/// match evaluationmode {
+///     EvaluationMode::Detective => { /* ... */ },
+///     EvaluationMode::Proactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `evaluationmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EvaluationMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EvaluationMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EvaluationMode::NewFeature` is defined.
+/// Specifically, when `evaluationmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EvaluationMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EvaluationMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Detective,
+    #[allow(missing_docs)] // documentation missing in model
+    Proactive,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EvaluationMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "DETECTIVE" => EvaluationMode::Detective,
+            "PROACTIVE" => EvaluationMode::Proactive,
+            other => EvaluationMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for EvaluationMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EvaluationMode::from(s))
+    }
+}
+impl EvaluationMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EvaluationMode::Detective => "DETECTIVE",
+            EvaluationMode::Proactive => "PROACTIVE",
+            EvaluationMode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DETECTIVE", "PROACTIVE"]
+    }
+}
+impl AsRef<str> for EvaluationMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Use EvaluationContext to group independently initiated proactive resource evaluations. For example, CFN Stack. If you want to check just a resource definition, you do not need to provide evaluation context.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EvaluationContext {
+    /// <p>A unique EvaluationContextIdentifier ID for an EvaluationContext.</p>
+    #[doc(hidden)]
+    pub evaluation_context_identifier: std::option::Option<std::string::String>,
+}
+impl EvaluationContext {
+    /// <p>A unique EvaluationContextIdentifier ID for an EvaluationContext.</p>
+    pub fn evaluation_context_identifier(&self) -> std::option::Option<&str> {
+        self.evaluation_context_identifier.as_deref()
+    }
+}
+/// See [`EvaluationContext`](crate::model::EvaluationContext).
+pub mod evaluation_context {
+
+    /// A builder for [`EvaluationContext`](crate::model::EvaluationContext).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) evaluation_context_identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique EvaluationContextIdentifier ID for an EvaluationContext.</p>
+        pub fn evaluation_context_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.evaluation_context_identifier = Some(input.into());
+            self
+        }
+        /// <p>A unique EvaluationContextIdentifier ID for an EvaluationContext.</p>
+        pub fn set_evaluation_context_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.evaluation_context_identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EvaluationContext`](crate::model::EvaluationContext).
+        pub fn build(self) -> crate::model::EvaluationContext {
+            crate::model::EvaluationContext {
+                evaluation_context_identifier: self.evaluation_context_identifier,
+            }
+        }
+    }
+}
+impl EvaluationContext {
+    /// Creates a new builder-style object to manufacture [`EvaluationContext`](crate::model::EvaluationContext).
+    pub fn builder() -> crate::model::evaluation_context::Builder {
+        crate::model::evaluation_context::Builder::default()
+    }
+}
+
+/// <p>Returns information about the resource being evaluated. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResourceDetails {
+    /// <p>A unique resource ID for an evaluation.</p>
+    #[doc(hidden)]
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>The type of resource being evaluated.</p>
+    #[doc(hidden)]
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>The resource definition to be evaluated as per the resource configuration schema type.</p>
+    #[doc(hidden)]
+    pub resource_configuration: std::option::Option<std::string::String>,
+    /// <p>The schema type of the resource configuration.</p>
+    #[doc(hidden)]
+    pub resource_configuration_schema_type:
+        std::option::Option<crate::model::ResourceConfigurationSchemaType>,
+}
+impl ResourceDetails {
+    /// <p>A unique resource ID for an evaluation.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of resource being evaluated.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The resource definition to be evaluated as per the resource configuration schema type.</p>
+    pub fn resource_configuration(&self) -> std::option::Option<&str> {
+        self.resource_configuration.as_deref()
+    }
+    /// <p>The schema type of the resource configuration.</p>
+    pub fn resource_configuration_schema_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceConfigurationSchemaType> {
+        self.resource_configuration_schema_type.as_ref()
+    }
+}
+/// See [`ResourceDetails`](crate::model::ResourceDetails).
+pub mod resource_details {
+
+    /// A builder for [`ResourceDetails`](crate::model::ResourceDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) resource_configuration: std::option::Option<std::string::String>,
+        pub(crate) resource_configuration_schema_type:
+            std::option::Option<crate::model::ResourceConfigurationSchemaType>,
+    }
+    impl Builder {
+        /// <p>A unique resource ID for an evaluation.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>A unique resource ID for an evaluation.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p>The type of resource being evaluated.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The type of resource being evaluated.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The resource definition to be evaluated as per the resource configuration schema type.</p>
+        pub fn resource_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_configuration = Some(input.into());
+            self
+        }
+        /// <p>The resource definition to be evaluated as per the resource configuration schema type.</p>
+        pub fn set_resource_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_configuration = input;
+            self
+        }
+        /// <p>The schema type of the resource configuration.</p>
+        pub fn resource_configuration_schema_type(
+            mut self,
+            input: crate::model::ResourceConfigurationSchemaType,
+        ) -> Self {
+            self.resource_configuration_schema_type = Some(input);
+            self
+        }
+        /// <p>The schema type of the resource configuration.</p>
+        pub fn set_resource_configuration_schema_type(
+            mut self,
+            input: std::option::Option<crate::model::ResourceConfigurationSchemaType>,
+        ) -> Self {
+            self.resource_configuration_schema_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceDetails`](crate::model::ResourceDetails).
+        pub fn build(self) -> crate::model::ResourceDetails {
+            crate::model::ResourceDetails {
+                resource_id: self.resource_id,
+                resource_type: self.resource_type,
+                resource_configuration: self.resource_configuration,
+                resource_configuration_schema_type: self.resource_configuration_schema_type,
+            }
+        }
+    }
+}
+impl ResourceDetails {
+    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
+    pub fn builder() -> crate::model::resource_details::Builder {
+        crate::model::resource_details::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ResourceConfigurationSchemaType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourceconfigurationschematype = unimplemented!();
+/// match resourceconfigurationschematype {
+///     ResourceConfigurationSchemaType::CfnResourceSchema => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourceconfigurationschematype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceConfigurationSchemaType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceConfigurationSchemaType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceConfigurationSchemaType::NewFeature` is defined.
+/// Specifically, when `resourceconfigurationschematype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceConfigurationSchemaType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ResourceConfigurationSchemaType {
+    #[allow(missing_docs)] // documentation missing in model
+    CfnResourceSchema,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ResourceConfigurationSchemaType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CFN_RESOURCE_SCHEMA" => ResourceConfigurationSchemaType::CfnResourceSchema,
+            other => ResourceConfigurationSchemaType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for ResourceConfigurationSchemaType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResourceConfigurationSchemaType::from(s))
+    }
+}
+impl ResourceConfigurationSchemaType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResourceConfigurationSchemaType::CfnResourceSchema => "CFN_RESOURCE_SCHEMA",
+            ResourceConfigurationSchemaType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["CFN_RESOURCE_SCHEMA"]
+    }
+}
+impl AsRef<str> for ResourceConfigurationSchemaType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The details that identify a resource within Config, including the resource type and resource ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -155,6 +507,8 @@ impl ResourceKey {
 ///     ResourceType::Stage => { /* ... */ },
 ///     ResourceType::Api => { /* ... */ },
 ///     ResourceType::StageV2 => { /* ... */ },
+///     ResourceType::AppConfigApplication => { /* ... */ },
+///     ResourceType::AppSyncGraphQlApi => { /* ... */ },
 ///     ResourceType::AthenaDataCatalog => { /* ... */ },
 ///     ResourceType::AthenaWorkGroup => { /* ... */ },
 ///     ResourceType::AutoScalingGroup => { /* ... */ },
@@ -182,6 +536,12 @@ impl ResourceKey {
 ///     ResourceType::DmsCertificate => { /* ... */ },
 ///     ResourceType::DmsEventSubscription => { /* ... */ },
 ///     ResourceType::DmsReplicationSubnetGroup => { /* ... */ },
+///     ResourceType::DataSyncLocationEfs => { /* ... */ },
+///     ResourceType::DataSyncLocationFSxLustre => { /* ... */ },
+///     ResourceType::DataSyncLocationNfs => { /* ... */ },
+///     ResourceType::DataSyncLocationS3 => { /* ... */ },
+///     ResourceType::DataSyncLocationSmb => { /* ... */ },
+///     ResourceType::DataSyncTask => { /* ... */ },
 ///     ResourceType::DetectiveGraph => { /* ... */ },
 ///     ResourceType::Table => { /* ... */ },
 ///     ResourceType::CustomerGateway => { /* ... */ },
@@ -194,6 +554,7 @@ impl ResourceKey {
 ///     ResourceType::LaunchTemplate => { /* ... */ },
 ///     ResourceType::NatGateway => { /* ... */ },
 ///     ResourceType::NetworkAcl => { /* ... */ },
+///     ResourceType::NetworkInsightsAccessScopeAnalysis => { /* ... */ },
 ///     ResourceType::NetworkInterface => { /* ... */ },
 ///     ResourceType::RegisteredHaInstance => { /* ... */ },
 ///     ResourceType::RouteTable => { /* ... */ },
@@ -217,6 +578,7 @@ impl ResourceKey {
 ///     ResourceType::EfsAccessPoint => { /* ... */ },
 ///     ResourceType::EfsFileSystem => { /* ... */ },
 ///     ResourceType::EksCluster => { /* ... */ },
+///     ResourceType::EksFargateProfile => { /* ... */ },
 ///     ResourceType::EmrSecurityConfiguration => { /* ... */ },
 ///     ResourceType::Application => { /* ... */ },
 ///     ResourceType::ApplicationVersion => { /* ... */ },
@@ -228,7 +590,10 @@ impl ResourceKey {
 ///     ResourceType::GlobalAcceleratorAccelerator => { /* ... */ },
 ///     ResourceType::GlobalAcceleratorEndpointGroup => { /* ... */ },
 ///     ResourceType::GlobalAcceleratorListener => { /* ... */ },
+///     ResourceType::GlueJob => { /* ... */ },
 ///     ResourceType::GuardDutyDetector => { /* ... */ },
+///     ResourceType::GuardDutyIpSet => { /* ... */ },
+///     ResourceType::GuardDutyThreatIntelSet => { /* ... */ },
 ///     ResourceType::Group => { /* ... */ },
 ///     ResourceType::Policy => { /* ... */ },
 ///     ResourceType::Role => { /* ... */ },
@@ -256,11 +621,14 @@ impl ResourceKey {
 ///     ResourceType::ClusterSnapshot => { /* ... */ },
 ///     ResourceType::ClusterSubnetGroup => { /* ... */ },
 ///     ResourceType::RedshiftEventSubscription => { /* ... */ },
+///     ResourceType::Route53HostedZone => { /* ... */ },
 ///     ResourceType::Route53ResolverResolverEndpoint => { /* ... */ },
 ///     ResourceType::Route53ResolverResolverRule => { /* ... */ },
 ///     ResourceType::Route53ResolverResolverRuleAssociation => { /* ... */ },
 ///     ResourceType::AccountPublicAccessBlock => { /* ... */ },
 ///     ResourceType::Bucket => { /* ... */ },
+///     ResourceType::SesConfigurationSet => { /* ... */ },
+///     ResourceType::SesContactList => { /* ... */ },
 ///     ResourceType::Topic => { /* ... */ },
 ///     ResourceType::Queue => { /* ... */ },
 ///     ResourceType::AssociationCompliance => { /* ... */ },
@@ -269,10 +637,14 @@ impl ResourceKey {
 ///     ResourceType::PatchCompliance => { /* ... */ },
 ///     ResourceType::SageMakerCodeRepository => { /* ... */ },
 ///     ResourceType::SageMakerModel => { /* ... */ },
+///     ResourceType::SageMakerNotebookInstanceLifecycleConfig => { /* ... */ },
+///     ResourceType::SageMakerWorkteam => { /* ... */ },
 ///     ResourceType::Secret => { /* ... */ },
 ///     ResourceType::CloudFormationProduct => { /* ... */ },
 ///     ResourceType::CloudFormationProvisionedProduct => { /* ... */ },
 ///     ResourceType::Portfolio => { /* ... */ },
+///     ResourceType::ServiceDiscoveryPublicDnsNamespace => { /* ... */ },
+///     ResourceType::ServiceDiscoveryService => { /* ... */ },
 ///     ResourceType::Protection => { /* ... */ },
 ///     ResourceType::RegionalProtection => { /* ... */ },
 ///     ResourceType::StepFunctionsActivity => { /* ... */ },
@@ -339,6 +711,10 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     StageV2,
     #[allow(missing_docs)] // documentation missing in model
+    AppConfigApplication,
+    #[allow(missing_docs)] // documentation missing in model
+    AppSyncGraphQlApi,
+    #[allow(missing_docs)] // documentation missing in model
     AthenaDataCatalog,
     #[allow(missing_docs)] // documentation missing in model
     AthenaWorkGroup,
@@ -393,6 +769,18 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     DmsReplicationSubnetGroup,
     #[allow(missing_docs)] // documentation missing in model
+    DataSyncLocationEfs,
+    #[allow(missing_docs)] // documentation missing in model
+    DataSyncLocationFSxLustre,
+    #[allow(missing_docs)] // documentation missing in model
+    DataSyncLocationNfs,
+    #[allow(missing_docs)] // documentation missing in model
+    DataSyncLocationS3,
+    #[allow(missing_docs)] // documentation missing in model
+    DataSyncLocationSmb,
+    #[allow(missing_docs)] // documentation missing in model
+    DataSyncTask,
+    #[allow(missing_docs)] // documentation missing in model
     DetectiveGraph,
     #[allow(missing_docs)] // documentation missing in model
     Table,
@@ -416,6 +804,8 @@ pub enum ResourceType {
     NatGateway,
     #[allow(missing_docs)] // documentation missing in model
     NetworkAcl,
+    #[allow(missing_docs)] // documentation missing in model
+    NetworkInsightsAccessScopeAnalysis,
     #[allow(missing_docs)] // documentation missing in model
     NetworkInterface,
     #[allow(missing_docs)] // documentation missing in model
@@ -463,6 +853,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     EksCluster,
     #[allow(missing_docs)] // documentation missing in model
+    EksFargateProfile,
+    #[allow(missing_docs)] // documentation missing in model
     EmrSecurityConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     Application,
@@ -485,7 +877,13 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     GlobalAcceleratorListener,
     #[allow(missing_docs)] // documentation missing in model
+    GlueJob,
+    #[allow(missing_docs)] // documentation missing in model
     GuardDutyDetector,
+    #[allow(missing_docs)] // documentation missing in model
+    GuardDutyIpSet,
+    #[allow(missing_docs)] // documentation missing in model
+    GuardDutyThreatIntelSet,
     #[allow(missing_docs)] // documentation missing in model
     Group,
     #[allow(missing_docs)] // documentation missing in model
@@ -541,6 +939,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     RedshiftEventSubscription,
     #[allow(missing_docs)] // documentation missing in model
+    Route53HostedZone,
+    #[allow(missing_docs)] // documentation missing in model
     Route53ResolverResolverEndpoint,
     #[allow(missing_docs)] // documentation missing in model
     Route53ResolverResolverRule,
@@ -550,6 +950,10 @@ pub enum ResourceType {
     AccountPublicAccessBlock,
     #[allow(missing_docs)] // documentation missing in model
     Bucket,
+    #[allow(missing_docs)] // documentation missing in model
+    SesConfigurationSet,
+    #[allow(missing_docs)] // documentation missing in model
+    SesContactList,
     #[allow(missing_docs)] // documentation missing in model
     Topic,
     #[allow(missing_docs)] // documentation missing in model
@@ -567,6 +971,10 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     SageMakerModel,
     #[allow(missing_docs)] // documentation missing in model
+    SageMakerNotebookInstanceLifecycleConfig,
+    #[allow(missing_docs)] // documentation missing in model
+    SageMakerWorkteam,
+    #[allow(missing_docs)] // documentation missing in model
     Secret,
     #[allow(missing_docs)] // documentation missing in model
     CloudFormationProduct,
@@ -574,6 +982,10 @@ pub enum ResourceType {
     CloudFormationProvisionedProduct,
     #[allow(missing_docs)] // documentation missing in model
     Portfolio,
+    #[allow(missing_docs)] // documentation missing in model
+    ServiceDiscoveryPublicDnsNamespace,
+    #[allow(missing_docs)] // documentation missing in model
+    ServiceDiscoveryService,
     #[allow(missing_docs)] // documentation missing in model
     Protection,
     #[allow(missing_docs)] // documentation missing in model
@@ -626,6 +1038,8 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::ApiGateway::Stage" => ResourceType::Stage,
             "AWS::ApiGatewayV2::Api" => ResourceType::Api,
             "AWS::ApiGatewayV2::Stage" => ResourceType::StageV2,
+            "AWS::AppConfig::Application" => ResourceType::AppConfigApplication,
+            "AWS::AppSync::GraphQLApi" => ResourceType::AppSyncGraphQlApi,
             "AWS::Athena::DataCatalog" => ResourceType::AthenaDataCatalog,
             "AWS::Athena::WorkGroup" => ResourceType::AthenaWorkGroup,
             "AWS::AutoScaling::AutoScalingGroup" => ResourceType::AutoScalingGroup,
@@ -653,6 +1067,12 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::DMS::Certificate" => ResourceType::DmsCertificate,
             "AWS::DMS::EventSubscription" => ResourceType::DmsEventSubscription,
             "AWS::DMS::ReplicationSubnetGroup" => ResourceType::DmsReplicationSubnetGroup,
+            "AWS::DataSync::LocationEFS" => ResourceType::DataSyncLocationEfs,
+            "AWS::DataSync::LocationFSxLustre" => ResourceType::DataSyncLocationFSxLustre,
+            "AWS::DataSync::LocationNFS" => ResourceType::DataSyncLocationNfs,
+            "AWS::DataSync::LocationS3" => ResourceType::DataSyncLocationS3,
+            "AWS::DataSync::LocationSMB" => ResourceType::DataSyncLocationSmb,
+            "AWS::DataSync::Task" => ResourceType::DataSyncTask,
             "AWS::Detective::Graph" => ResourceType::DetectiveGraph,
             "AWS::DynamoDB::Table" => ResourceType::Table,
             "AWS::EC2::CustomerGateway" => ResourceType::CustomerGateway,
@@ -665,6 +1085,9 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::EC2::LaunchTemplate" => ResourceType::LaunchTemplate,
             "AWS::EC2::NatGateway" => ResourceType::NatGateway,
             "AWS::EC2::NetworkAcl" => ResourceType::NetworkAcl,
+            "AWS::EC2::NetworkInsightsAccessScopeAnalysis" => {
+                ResourceType::NetworkInsightsAccessScopeAnalysis
+            }
             "AWS::EC2::NetworkInterface" => ResourceType::NetworkInterface,
             "AWS::EC2::RegisteredHAInstance" => ResourceType::RegisteredHaInstance,
             "AWS::EC2::RouteTable" => ResourceType::RouteTable,
@@ -688,6 +1111,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::EFS::AccessPoint" => ResourceType::EfsAccessPoint,
             "AWS::EFS::FileSystem" => ResourceType::EfsFileSystem,
             "AWS::EKS::Cluster" => ResourceType::EksCluster,
+            "AWS::EKS::FargateProfile" => ResourceType::EksFargateProfile,
             "AWS::EMR::SecurityConfiguration" => ResourceType::EmrSecurityConfiguration,
             "AWS::ElasticBeanstalk::Application" => ResourceType::Application,
             "AWS::ElasticBeanstalk::ApplicationVersion" => ResourceType::ApplicationVersion,
@@ -699,7 +1123,10 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::GlobalAccelerator::Accelerator" => ResourceType::GlobalAcceleratorAccelerator,
             "AWS::GlobalAccelerator::EndpointGroup" => ResourceType::GlobalAcceleratorEndpointGroup,
             "AWS::GlobalAccelerator::Listener" => ResourceType::GlobalAcceleratorListener,
+            "AWS::Glue::Job" => ResourceType::GlueJob,
             "AWS::GuardDuty::Detector" => ResourceType::GuardDutyDetector,
+            "AWS::GuardDuty::IPSet" => ResourceType::GuardDutyIpSet,
+            "AWS::GuardDuty::ThreatIntelSet" => ResourceType::GuardDutyThreatIntelSet,
             "AWS::IAM::Group" => ResourceType::Group,
             "AWS::IAM::Policy" => ResourceType::Policy,
             "AWS::IAM::Role" => ResourceType::Role,
@@ -727,6 +1154,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::Redshift::ClusterSnapshot" => ResourceType::ClusterSnapshot,
             "AWS::Redshift::ClusterSubnetGroup" => ResourceType::ClusterSubnetGroup,
             "AWS::Redshift::EventSubscription" => ResourceType::RedshiftEventSubscription,
+            "AWS::Route53::HostedZone" => ResourceType::Route53HostedZone,
             "AWS::Route53Resolver::ResolverEndpoint" => {
                 ResourceType::Route53ResolverResolverEndpoint
             }
@@ -736,6 +1164,8 @@ impl std::convert::From<&str> for ResourceType {
             }
             "AWS::S3::AccountPublicAccessBlock" => ResourceType::AccountPublicAccessBlock,
             "AWS::S3::Bucket" => ResourceType::Bucket,
+            "AWS::SES::ConfigurationSet" => ResourceType::SesConfigurationSet,
+            "AWS::SES::ContactList" => ResourceType::SesContactList,
             "AWS::SNS::Topic" => ResourceType::Topic,
             "AWS::SQS::Queue" => ResourceType::Queue,
             "AWS::SSM::AssociationCompliance" => ResourceType::AssociationCompliance,
@@ -744,12 +1174,20 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::SSM::PatchCompliance" => ResourceType::PatchCompliance,
             "AWS::SageMaker::CodeRepository" => ResourceType::SageMakerCodeRepository,
             "AWS::SageMaker::Model" => ResourceType::SageMakerModel,
+            "AWS::SageMaker::NotebookInstanceLifecycleConfig" => {
+                ResourceType::SageMakerNotebookInstanceLifecycleConfig
+            }
+            "AWS::SageMaker::Workteam" => ResourceType::SageMakerWorkteam,
             "AWS::SecretsManager::Secret" => ResourceType::Secret,
             "AWS::ServiceCatalog::CloudFormationProduct" => ResourceType::CloudFormationProduct,
             "AWS::ServiceCatalog::CloudFormationProvisionedProduct" => {
                 ResourceType::CloudFormationProvisionedProduct
             }
             "AWS::ServiceCatalog::Portfolio" => ResourceType::Portfolio,
+            "AWS::ServiceDiscovery::PublicDnsNamespace" => {
+                ResourceType::ServiceDiscoveryPublicDnsNamespace
+            }
+            "AWS::ServiceDiscovery::Service" => ResourceType::ServiceDiscoveryService,
             "AWS::Shield::Protection" => ResourceType::Protection,
             "AWS::ShieldRegional::Protection" => ResourceType::RegionalProtection,
             "AWS::StepFunctions::Activity" => ResourceType::StepFunctionsActivity,
@@ -791,6 +1229,8 @@ impl ResourceType {
             ResourceType::Stage => "AWS::ApiGateway::Stage",
             ResourceType::Api => "AWS::ApiGatewayV2::Api",
             ResourceType::StageV2 => "AWS::ApiGatewayV2::Stage",
+            ResourceType::AppConfigApplication => "AWS::AppConfig::Application",
+            ResourceType::AppSyncGraphQlApi => "AWS::AppSync::GraphQLApi",
             ResourceType::AthenaDataCatalog => "AWS::Athena::DataCatalog",
             ResourceType::AthenaWorkGroup => "AWS::Athena::WorkGroup",
             ResourceType::AutoScalingGroup => "AWS::AutoScaling::AutoScalingGroup",
@@ -818,6 +1258,12 @@ impl ResourceType {
             ResourceType::DmsCertificate => "AWS::DMS::Certificate",
             ResourceType::DmsEventSubscription => "AWS::DMS::EventSubscription",
             ResourceType::DmsReplicationSubnetGroup => "AWS::DMS::ReplicationSubnetGroup",
+            ResourceType::DataSyncLocationEfs => "AWS::DataSync::LocationEFS",
+            ResourceType::DataSyncLocationFSxLustre => "AWS::DataSync::LocationFSxLustre",
+            ResourceType::DataSyncLocationNfs => "AWS::DataSync::LocationNFS",
+            ResourceType::DataSyncLocationS3 => "AWS::DataSync::LocationS3",
+            ResourceType::DataSyncLocationSmb => "AWS::DataSync::LocationSMB",
+            ResourceType::DataSyncTask => "AWS::DataSync::Task",
             ResourceType::DetectiveGraph => "AWS::Detective::Graph",
             ResourceType::Table => "AWS::DynamoDB::Table",
             ResourceType::CustomerGateway => "AWS::EC2::CustomerGateway",
@@ -830,6 +1276,9 @@ impl ResourceType {
             ResourceType::LaunchTemplate => "AWS::EC2::LaunchTemplate",
             ResourceType::NatGateway => "AWS::EC2::NatGateway",
             ResourceType::NetworkAcl => "AWS::EC2::NetworkAcl",
+            ResourceType::NetworkInsightsAccessScopeAnalysis => {
+                "AWS::EC2::NetworkInsightsAccessScopeAnalysis"
+            }
             ResourceType::NetworkInterface => "AWS::EC2::NetworkInterface",
             ResourceType::RegisteredHaInstance => "AWS::EC2::RegisteredHAInstance",
             ResourceType::RouteTable => "AWS::EC2::RouteTable",
@@ -853,6 +1302,7 @@ impl ResourceType {
             ResourceType::EfsAccessPoint => "AWS::EFS::AccessPoint",
             ResourceType::EfsFileSystem => "AWS::EFS::FileSystem",
             ResourceType::EksCluster => "AWS::EKS::Cluster",
+            ResourceType::EksFargateProfile => "AWS::EKS::FargateProfile",
             ResourceType::EmrSecurityConfiguration => "AWS::EMR::SecurityConfiguration",
             ResourceType::Application => "AWS::ElasticBeanstalk::Application",
             ResourceType::ApplicationVersion => "AWS::ElasticBeanstalk::ApplicationVersion",
@@ -864,7 +1314,10 @@ impl ResourceType {
             ResourceType::GlobalAcceleratorAccelerator => "AWS::GlobalAccelerator::Accelerator",
             ResourceType::GlobalAcceleratorEndpointGroup => "AWS::GlobalAccelerator::EndpointGroup",
             ResourceType::GlobalAcceleratorListener => "AWS::GlobalAccelerator::Listener",
+            ResourceType::GlueJob => "AWS::Glue::Job",
             ResourceType::GuardDutyDetector => "AWS::GuardDuty::Detector",
+            ResourceType::GuardDutyIpSet => "AWS::GuardDuty::IPSet",
+            ResourceType::GuardDutyThreatIntelSet => "AWS::GuardDuty::ThreatIntelSet",
             ResourceType::Group => "AWS::IAM::Group",
             ResourceType::Policy => "AWS::IAM::Policy",
             ResourceType::Role => "AWS::IAM::Role",
@@ -892,6 +1345,7 @@ impl ResourceType {
             ResourceType::ClusterSnapshot => "AWS::Redshift::ClusterSnapshot",
             ResourceType::ClusterSubnetGroup => "AWS::Redshift::ClusterSubnetGroup",
             ResourceType::RedshiftEventSubscription => "AWS::Redshift::EventSubscription",
+            ResourceType::Route53HostedZone => "AWS::Route53::HostedZone",
             ResourceType::Route53ResolverResolverEndpoint => {
                 "AWS::Route53Resolver::ResolverEndpoint"
             }
@@ -901,6 +1355,8 @@ impl ResourceType {
             }
             ResourceType::AccountPublicAccessBlock => "AWS::S3::AccountPublicAccessBlock",
             ResourceType::Bucket => "AWS::S3::Bucket",
+            ResourceType::SesConfigurationSet => "AWS::SES::ConfigurationSet",
+            ResourceType::SesContactList => "AWS::SES::ContactList",
             ResourceType::Topic => "AWS::SNS::Topic",
             ResourceType::Queue => "AWS::SQS::Queue",
             ResourceType::AssociationCompliance => "AWS::SSM::AssociationCompliance",
@@ -909,12 +1365,20 @@ impl ResourceType {
             ResourceType::PatchCompliance => "AWS::SSM::PatchCompliance",
             ResourceType::SageMakerCodeRepository => "AWS::SageMaker::CodeRepository",
             ResourceType::SageMakerModel => "AWS::SageMaker::Model",
+            ResourceType::SageMakerNotebookInstanceLifecycleConfig => {
+                "AWS::SageMaker::NotebookInstanceLifecycleConfig"
+            }
+            ResourceType::SageMakerWorkteam => "AWS::SageMaker::Workteam",
             ResourceType::Secret => "AWS::SecretsManager::Secret",
             ResourceType::CloudFormationProduct => "AWS::ServiceCatalog::CloudFormationProduct",
             ResourceType::CloudFormationProvisionedProduct => {
                 "AWS::ServiceCatalog::CloudFormationProvisionedProduct"
             }
             ResourceType::Portfolio => "AWS::ServiceCatalog::Portfolio",
+            ResourceType::ServiceDiscoveryPublicDnsNamespace => {
+                "AWS::ServiceDiscovery::PublicDnsNamespace"
+            }
+            ResourceType::ServiceDiscoveryService => "AWS::ServiceDiscovery::Service",
             ResourceType::Protection => "AWS::Shield::Protection",
             ResourceType::RegionalProtection => "AWS::ShieldRegional::Protection",
             ResourceType::StepFunctionsActivity => "AWS::StepFunctions::Activity",
@@ -947,6 +1411,8 @@ impl ResourceType {
             "AWS::ApiGateway::Stage",
             "AWS::ApiGatewayV2::Api",
             "AWS::ApiGatewayV2::Stage",
+            "AWS::AppConfig::Application",
+            "AWS::AppSync::GraphQLApi",
             "AWS::Athena::DataCatalog",
             "AWS::Athena::WorkGroup",
             "AWS::AutoScaling::AutoScalingGroup",
@@ -974,6 +1440,12 @@ impl ResourceType {
             "AWS::DMS::Certificate",
             "AWS::DMS::EventSubscription",
             "AWS::DMS::ReplicationSubnetGroup",
+            "AWS::DataSync::LocationEFS",
+            "AWS::DataSync::LocationFSxLustre",
+            "AWS::DataSync::LocationNFS",
+            "AWS::DataSync::LocationS3",
+            "AWS::DataSync::LocationSMB",
+            "AWS::DataSync::Task",
             "AWS::Detective::Graph",
             "AWS::DynamoDB::Table",
             "AWS::EC2::CustomerGateway",
@@ -986,6 +1458,7 @@ impl ResourceType {
             "AWS::EC2::LaunchTemplate",
             "AWS::EC2::NatGateway",
             "AWS::EC2::NetworkAcl",
+            "AWS::EC2::NetworkInsightsAccessScopeAnalysis",
             "AWS::EC2::NetworkInterface",
             "AWS::EC2::RegisteredHAInstance",
             "AWS::EC2::RouteTable",
@@ -1009,6 +1482,7 @@ impl ResourceType {
             "AWS::EFS::AccessPoint",
             "AWS::EFS::FileSystem",
             "AWS::EKS::Cluster",
+            "AWS::EKS::FargateProfile",
             "AWS::EMR::SecurityConfiguration",
             "AWS::ElasticBeanstalk::Application",
             "AWS::ElasticBeanstalk::ApplicationVersion",
@@ -1020,7 +1494,10 @@ impl ResourceType {
             "AWS::GlobalAccelerator::Accelerator",
             "AWS::GlobalAccelerator::EndpointGroup",
             "AWS::GlobalAccelerator::Listener",
+            "AWS::Glue::Job",
             "AWS::GuardDuty::Detector",
+            "AWS::GuardDuty::IPSet",
+            "AWS::GuardDuty::ThreatIntelSet",
             "AWS::IAM::Group",
             "AWS::IAM::Policy",
             "AWS::IAM::Role",
@@ -1048,11 +1525,14 @@ impl ResourceType {
             "AWS::Redshift::ClusterSnapshot",
             "AWS::Redshift::ClusterSubnetGroup",
             "AWS::Redshift::EventSubscription",
+            "AWS::Route53::HostedZone",
             "AWS::Route53Resolver::ResolverEndpoint",
             "AWS::Route53Resolver::ResolverRule",
             "AWS::Route53Resolver::ResolverRuleAssociation",
             "AWS::S3::AccountPublicAccessBlock",
             "AWS::S3::Bucket",
+            "AWS::SES::ConfigurationSet",
+            "AWS::SES::ContactList",
             "AWS::SNS::Topic",
             "AWS::SQS::Queue",
             "AWS::SSM::AssociationCompliance",
@@ -1061,10 +1541,14 @@ impl ResourceType {
             "AWS::SSM::PatchCompliance",
             "AWS::SageMaker::CodeRepository",
             "AWS::SageMaker::Model",
+            "AWS::SageMaker::NotebookInstanceLifecycleConfig",
+            "AWS::SageMaker::Workteam",
             "AWS::SecretsManager::Secret",
             "AWS::ServiceCatalog::CloudFormationProduct",
             "AWS::ServiceCatalog::CloudFormationProvisionedProduct",
             "AWS::ServiceCatalog::Portfolio",
+            "AWS::ServiceDiscovery::PublicDnsNamespace",
+            "AWS::ServiceDiscovery::Service",
             "AWS::Shield::Protection",
             "AWS::ShieldRegional::Protection",
             "AWS::StepFunctions::Activity",
@@ -4399,12 +4883,12 @@ impl ConfigSnapshotDeliveryProperties {
     }
 }
 
-/// <p>This API allows you to create a conformance pack template with an Amazon Web Services Systems Manager document (SSM document). To deploy a conformance pack using an SSM document, you first create an SSM document with conformance pack content, and then provide the <code>DocumentName</code> (and optionally <code>DocumentVersion</code>) in the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html">PutConformancePack API</a>.</p>
+/// <p>This API allows you to create a conformance pack template with an Amazon Web Services Systems Manager document (SSM document). To deploy a conformance pack using an SSM document, first create an SSM document with conformance pack content, and then provide the <code>DocumentName</code> in the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html">PutConformancePack API</a>. You can also provide the <code>DocumentVersion</code>.</p>
 /// <p>The <code>TemplateSSMDocumentDetails</code> object contains the name of the SSM document and the version of the SSM document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateSsmDocumentDetails {
-    /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the Document Name, Config checks only your account and region for the SSM document. If you want to use an SSM document from another region or account, you must provide the ARN.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the document name, Config checks only your account and Amazon Web Services Region for the SSM document. If you want to use an SSM document from another Region or account, you must provide the ARN.</p>
     #[doc(hidden)]
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p> <note>
@@ -4414,7 +4898,7 @@ pub struct TemplateSsmDocumentDetails {
     pub document_version: std::option::Option<std::string::String>,
 }
 impl TemplateSsmDocumentDetails {
-    /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the Document Name, Config checks only your account and region for the SSM document. If you want to use an SSM document from another region or account, you must provide the ARN.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the document name, Config checks only your account and Amazon Web Services Region for the SSM document. If you want to use an SSM document from another Region or account, you must provide the ARN.</p>
     pub fn document_name(&self) -> std::option::Option<&str> {
         self.document_name.as_deref()
     }
@@ -4435,12 +4919,12 @@ pub mod template_ssm_document_details {
         pub(crate) document_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the Document Name, Config checks only your account and region for the SSM document. If you want to use an SSM document from another region or account, you must provide the ARN.</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the document name, Config checks only your account and Amazon Web Services Region for the SSM document. If you want to use an SSM document from another Region or account, you must provide the ARN.</p>
         pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_name = Some(input.into());
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the Document Name, Config checks only your account and region for the SSM document. If you want to use an SSM document from another region or account, you must provide the ARN.</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the document name, Config checks only your account and Amazon Web Services Region for the SSM document. If you want to use an SSM document from another Region or account, you must provide the ARN.</p>
         pub fn set_document_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4578,15 +5062,16 @@ impl ConfigurationRecorder {
     }
 }
 
-/// <p>Specifies the types of Amazon Web Services resource for which Config records configuration changes.</p>
-/// <p>In the recording group, you specify whether all supported types or specific types of resources are recorded.</p>
-/// <p>By default, Config records configuration changes for all supported types of regional resources that Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes.</p>
-/// <p>You can also have Config record configuration changes for supported types of global resources (for example, IAM resources). Global resources are not tied to an individual region and can be used in all regions.</p> <important>
-/// <p>The configuration details for any global resource are the same in all regions. If you customize Config in multiple regions to record global resources, it will create multiple configuration items each time a global resource changes: one configuration item for each region. These configuration items will contain identical data. To prevent duplicate configuration items, you should consider customizing Config in only one region to record global resources, unless you want the configuration items to be available in multiple regions.</p>
+/// <p>Specifies which Amazon Web Services resource types Config records for configuration changes. In the recording group, you specify whether you want to record all supported resource types or only specific types of resources.</p>
+/// <p>By default, Config records the configuration changes for all supported types of <i>regional resources</i> that Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes.</p>
+/// <p>You can also have Config record supported types of <i>global resources</i>. Global resources are not tied to a specific region and can be used in all regions. The global resource types that Config supports include IAM users, groups, roles, and customer managed policies.</p> <important>
+/// <p>Global resource types onboarded to Config recording after February 2022 will only be recorded in the service's home region for the commercial partition and Amazon Web Services GovCloud (US) West for the GovCloud partition. You can view the Configuration Items for these new global resource types only in their home region and Amazon Web Services GovCloud (US) West.</p>
+/// <p>Supported global resource types onboarded before February 2022 such as <code>AWS::IAM::Group</code>, <code>AWS::IAM::Policy</code>, <code>AWS::IAM::Role</code>, <code>AWS::IAM::User</code> remain unchanged, and they will continue to deliver Configuration Items in all supported regions in Config. The change will only affect new global resource types onboarded after February 2022.</p>
+/// <p>To record global resource types onboarded after February 2022, enable All Supported Resource Types in the home region of the global resource type you want to record.</p>
 /// </important>
 /// <p>If you don't want Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter.</p>
 /// <p>For a list of supported resource types, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Resource Types</a>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources Config Records</a>.</p>
+/// <p>For more information and a table of the Home Regions for Global Resource Types Onboarded after February 2022, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources Config Records</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordingGroup {
@@ -5174,6 +5659,10 @@ pub struct ConfigRule {
     /// </note>
     #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
+    /// <p>The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is Detective evaluation mode only.</p>
+    #[doc(hidden)]
+    pub evaluation_modes:
+        std::option::Option<std::vec::Vec<crate::model::EvaluationModeConfiguration>>,
 }
 impl ConfigRule {
     /// <p>The name that you assign to the Config rule. The name is required if you are adding a new rule.</p>
@@ -5231,6 +5720,12 @@ impl ConfigRule {
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
+    /// <p>The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is Detective evaluation mode only.</p>
+    pub fn evaluation_modes(
+        &self,
+    ) -> std::option::Option<&[crate::model::EvaluationModeConfiguration]> {
+        self.evaluation_modes.as_deref()
+    }
 }
 /// See [`ConfigRule`](crate::model::ConfigRule).
 pub mod config_rule {
@@ -5249,6 +5744,8 @@ pub mod config_rule {
             std::option::Option<crate::model::MaximumExecutionFrequency>,
         pub(crate) config_rule_state: std::option::Option<crate::model::ConfigRuleState>,
         pub(crate) created_by: std::option::Option<std::string::String>,
+        pub(crate) evaluation_modes:
+            std::option::Option<std::vec::Vec<crate::model::EvaluationModeConfiguration>>,
     }
     impl Builder {
         /// <p>The name that you assign to the Config rule. The name is required if you are adding a new rule.</p>
@@ -5398,6 +5895,28 @@ pub mod config_rule {
             self.created_by = input;
             self
         }
+        /// Appends an item to `evaluation_modes`.
+        ///
+        /// To override the contents of this collection use [`set_evaluation_modes`](Self::set_evaluation_modes).
+        ///
+        /// <p>The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is Detective evaluation mode only.</p>
+        pub fn evaluation_modes(
+            mut self,
+            input: crate::model::EvaluationModeConfiguration,
+        ) -> Self {
+            let mut v = self.evaluation_modes.unwrap_or_default();
+            v.push(input);
+            self.evaluation_modes = Some(v);
+            self
+        }
+        /// <p>The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is Detective evaluation mode only.</p>
+        pub fn set_evaluation_modes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EvaluationModeConfiguration>>,
+        ) -> Self {
+            self.evaluation_modes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConfigRule`](crate::model::ConfigRule).
         pub fn build(self) -> crate::model::ConfigRule {
             crate::model::ConfigRule {
@@ -5411,6 +5930,7 @@ pub mod config_rule {
                 maximum_execution_frequency: self.maximum_execution_frequency,
                 config_rule_state: self.config_rule_state,
                 created_by: self.created_by,
+                evaluation_modes: self.evaluation_modes,
             }
         }
     }
@@ -5419,6 +5939,55 @@ impl ConfigRule {
     /// Creates a new builder-style object to manufacture [`ConfigRule`](crate::model::ConfigRule).
     pub fn builder() -> crate::model::config_rule::Builder {
         crate::model::config_rule::Builder::default()
+    }
+}
+
+/// <p>The configuration object for Config rule evaluation mode. The Supported valid values are Detective or Proactive.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EvaluationModeConfiguration {
+    /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+    #[doc(hidden)]
+    pub mode: std::option::Option<crate::model::EvaluationMode>,
+}
+impl EvaluationModeConfiguration {
+    /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::EvaluationMode> {
+        self.mode.as_ref()
+    }
+}
+/// See [`EvaluationModeConfiguration`](crate::model::EvaluationModeConfiguration).
+pub mod evaluation_mode_configuration {
+
+    /// A builder for [`EvaluationModeConfiguration`](crate::model::EvaluationModeConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) mode: std::option::Option<crate::model::EvaluationMode>,
+    }
+    impl Builder {
+        /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+        pub fn mode(mut self, input: crate::model::EvaluationMode) -> Self {
+            self.mode = Some(input);
+            self
+        }
+        /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+        pub fn set_mode(
+            mut self,
+            input: std::option::Option<crate::model::EvaluationMode>,
+        ) -> Self {
+            self.mode = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EvaluationModeConfiguration`](crate::model::EvaluationModeConfiguration).
+        pub fn build(self) -> crate::model::EvaluationModeConfiguration {
+            crate::model::EvaluationModeConfiguration { mode: self.mode }
+        }
+    }
+}
+impl EvaluationModeConfiguration {
+    /// Creates a new builder-style object to manufacture [`EvaluationModeConfiguration`](crate::model::EvaluationModeConfiguration).
+    pub fn builder() -> crate::model::evaluation_mode_configuration::Builder {
+        crate::model::evaluation_mode_configuration::Builder::default()
     }
 }
 
@@ -6532,6 +7101,272 @@ impl StoredQueryMetadata {
     }
 }
 
+/// <p>Returns details of a resource evaluation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResourceEvaluation {
+    /// <p>The ResourceEvaluationId of a evaluation.</p>
+    #[doc(hidden)]
+    pub resource_evaluation_id: std::option::Option<std::string::String>,
+    /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+    #[doc(hidden)]
+    pub evaluation_mode: std::option::Option<crate::model::EvaluationMode>,
+    /// <p>The starting time of an execution.</p>
+    #[doc(hidden)]
+    pub evaluation_start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ResourceEvaluation {
+    /// <p>The ResourceEvaluationId of a evaluation.</p>
+    pub fn resource_evaluation_id(&self) -> std::option::Option<&str> {
+        self.resource_evaluation_id.as_deref()
+    }
+    /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+    pub fn evaluation_mode(&self) -> std::option::Option<&crate::model::EvaluationMode> {
+        self.evaluation_mode.as_ref()
+    }
+    /// <p>The starting time of an execution.</p>
+    pub fn evaluation_start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.evaluation_start_timestamp.as_ref()
+    }
+}
+/// See [`ResourceEvaluation`](crate::model::ResourceEvaluation).
+pub mod resource_evaluation {
+
+    /// A builder for [`ResourceEvaluation`](crate::model::ResourceEvaluation).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_evaluation_id: std::option::Option<std::string::String>,
+        pub(crate) evaluation_mode: std::option::Option<crate::model::EvaluationMode>,
+        pub(crate) evaluation_start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ResourceEvaluationId of a evaluation.</p>
+        pub fn resource_evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_evaluation_id = Some(input.into());
+            self
+        }
+        /// <p>The ResourceEvaluationId of a evaluation.</p>
+        pub fn set_resource_evaluation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_evaluation_id = input;
+            self
+        }
+        /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+        pub fn evaluation_mode(mut self, input: crate::model::EvaluationMode) -> Self {
+            self.evaluation_mode = Some(input);
+            self
+        }
+        /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+        pub fn set_evaluation_mode(
+            mut self,
+            input: std::option::Option<crate::model::EvaluationMode>,
+        ) -> Self {
+            self.evaluation_mode = input;
+            self
+        }
+        /// <p>The starting time of an execution.</p>
+        pub fn evaluation_start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.evaluation_start_timestamp = Some(input);
+            self
+        }
+        /// <p>The starting time of an execution.</p>
+        pub fn set_evaluation_start_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.evaluation_start_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceEvaluation`](crate::model::ResourceEvaluation).
+        pub fn build(self) -> crate::model::ResourceEvaluation {
+            crate::model::ResourceEvaluation {
+                resource_evaluation_id: self.resource_evaluation_id,
+                evaluation_mode: self.evaluation_mode,
+                evaluation_start_timestamp: self.evaluation_start_timestamp,
+            }
+        }
+    }
+}
+impl ResourceEvaluation {
+    /// Creates a new builder-style object to manufacture [`ResourceEvaluation`](crate::model::ResourceEvaluation).
+    pub fn builder() -> crate::model::resource_evaluation::Builder {
+        crate::model::resource_evaluation::Builder::default()
+    }
+}
+
+/// <p>Returns details of a resource evaluation based on the selected filter.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResourceEvaluationFilters {
+    /// <p>Filters all resource evaluations results based on an evaluation mode. the valid value for this API is <code>Proactive</code>.</p>
+    #[doc(hidden)]
+    pub evaluation_mode: std::option::Option<crate::model::EvaluationMode>,
+    /// <p>Returns a <code>TimeWindow</code> object.</p>
+    #[doc(hidden)]
+    pub time_window: std::option::Option<crate::model::TimeWindow>,
+    /// <p>Filters evaluations for a given infrastructure deployment. For example: CFN Stack.</p>
+    #[doc(hidden)]
+    pub evaluation_context_identifier: std::option::Option<std::string::String>,
+}
+impl ResourceEvaluationFilters {
+    /// <p>Filters all resource evaluations results based on an evaluation mode. the valid value for this API is <code>Proactive</code>.</p>
+    pub fn evaluation_mode(&self) -> std::option::Option<&crate::model::EvaluationMode> {
+        self.evaluation_mode.as_ref()
+    }
+    /// <p>Returns a <code>TimeWindow</code> object.</p>
+    pub fn time_window(&self) -> std::option::Option<&crate::model::TimeWindow> {
+        self.time_window.as_ref()
+    }
+    /// <p>Filters evaluations for a given infrastructure deployment. For example: CFN Stack.</p>
+    pub fn evaluation_context_identifier(&self) -> std::option::Option<&str> {
+        self.evaluation_context_identifier.as_deref()
+    }
+}
+/// See [`ResourceEvaluationFilters`](crate::model::ResourceEvaluationFilters).
+pub mod resource_evaluation_filters {
+
+    /// A builder for [`ResourceEvaluationFilters`](crate::model::ResourceEvaluationFilters).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) evaluation_mode: std::option::Option<crate::model::EvaluationMode>,
+        pub(crate) time_window: std::option::Option<crate::model::TimeWindow>,
+        pub(crate) evaluation_context_identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Filters all resource evaluations results based on an evaluation mode. the valid value for this API is <code>Proactive</code>.</p>
+        pub fn evaluation_mode(mut self, input: crate::model::EvaluationMode) -> Self {
+            self.evaluation_mode = Some(input);
+            self
+        }
+        /// <p>Filters all resource evaluations results based on an evaluation mode. the valid value for this API is <code>Proactive</code>.</p>
+        pub fn set_evaluation_mode(
+            mut self,
+            input: std::option::Option<crate::model::EvaluationMode>,
+        ) -> Self {
+            self.evaluation_mode = input;
+            self
+        }
+        /// <p>Returns a <code>TimeWindow</code> object.</p>
+        pub fn time_window(mut self, input: crate::model::TimeWindow) -> Self {
+            self.time_window = Some(input);
+            self
+        }
+        /// <p>Returns a <code>TimeWindow</code> object.</p>
+        pub fn set_time_window(
+            mut self,
+            input: std::option::Option<crate::model::TimeWindow>,
+        ) -> Self {
+            self.time_window = input;
+            self
+        }
+        /// <p>Filters evaluations for a given infrastructure deployment. For example: CFN Stack.</p>
+        pub fn evaluation_context_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.evaluation_context_identifier = Some(input.into());
+            self
+        }
+        /// <p>Filters evaluations for a given infrastructure deployment. For example: CFN Stack.</p>
+        pub fn set_evaluation_context_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.evaluation_context_identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceEvaluationFilters`](crate::model::ResourceEvaluationFilters).
+        pub fn build(self) -> crate::model::ResourceEvaluationFilters {
+            crate::model::ResourceEvaluationFilters {
+                evaluation_mode: self.evaluation_mode,
+                time_window: self.time_window,
+                evaluation_context_identifier: self.evaluation_context_identifier,
+            }
+        }
+    }
+}
+impl ResourceEvaluationFilters {
+    /// Creates a new builder-style object to manufacture [`ResourceEvaluationFilters`](crate::model::ResourceEvaluationFilters).
+    pub fn builder() -> crate::model::resource_evaluation_filters::Builder {
+        crate::model::resource_evaluation_filters::Builder::default()
+    }
+}
+
+/// <p>Filters evaluation results based on start and end times.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TimeWindow {
+    /// <p>The start time of an execution.</p>
+    #[doc(hidden)]
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The end time of an execution. The end time must be after the start date.</p>
+    #[doc(hidden)]
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl TimeWindow {
+    /// <p>The start time of an execution.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time of an execution. The end time must be after the start date.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
+}
+/// See [`TimeWindow`](crate::model::TimeWindow).
+pub mod time_window {
+
+    /// A builder for [`TimeWindow`](crate::model::TimeWindow).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The start time of an execution.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p>The start time of an execution.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>The end time of an execution. The end time must be after the start date.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        /// <p>The end time of an execution. The end time must be after the start date.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimeWindow`](crate::model::TimeWindow).
+        pub fn build(self) -> crate::model::TimeWindow {
+            crate::model::TimeWindow {
+                start_time: self.start_time,
+                end_time: self.end_time,
+            }
+        }
+    }
+}
+impl TimeWindow {
+    /// Creates a new builder-style object to manufacture [`TimeWindow`](crate::model::TimeWindow).
+    pub fn builder() -> crate::model::time_window::Builder {
+        crate::model::time_window::Builder::default()
+    }
+}
+
 /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6646,7 +7481,7 @@ impl ResourceIdentifier {
     }
 }
 
-/// <p>A compliance score is the percentage of the number of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of your conformance packs, and can be used to identify, investigate, and understand the level of compliance in your conformance packs.</p>
+/// <p>A compliance score is the percentage of the number of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of your conformance packs. You can use it to identify, investigate, and understand the level of compliance in your conformance packs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConformancePackComplianceScore {
@@ -7211,6 +8046,176 @@ impl ResourceFilters {
     /// Creates a new builder-style object to manufacture [`ResourceFilters`](crate::model::ResourceFilters).
     pub fn builder() -> crate::model::resource_filters::Builder {
         crate::model::resource_filters::Builder::default()
+    }
+}
+
+/// <p>Returns status details of an evaluation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EvaluationStatus {
+    /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::ResourceEvaluationStatus>,
+    /// <p>An explanation for failed execution status.</p>
+    #[doc(hidden)]
+    pub failure_reason: std::option::Option<std::string::String>,
+}
+impl EvaluationStatus {
+    /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceEvaluationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>An explanation for failed execution status.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
+/// See [`EvaluationStatus`](crate::model::EvaluationStatus).
+pub mod evaluation_status {
+
+    /// A builder for [`EvaluationStatus`](crate::model::EvaluationStatus).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::ResourceEvaluationStatus>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
+        pub fn status(mut self, input: crate::model::ResourceEvaluationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ResourceEvaluationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>An explanation for failed execution status.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>An explanation for failed execution status.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EvaluationStatus`](crate::model::EvaluationStatus).
+        pub fn build(self) -> crate::model::EvaluationStatus {
+            crate::model::EvaluationStatus {
+                status: self.status,
+                failure_reason: self.failure_reason,
+            }
+        }
+    }
+}
+impl EvaluationStatus {
+    /// Creates a new builder-style object to manufacture [`EvaluationStatus`](crate::model::EvaluationStatus).
+    pub fn builder() -> crate::model::evaluation_status::Builder {
+        crate::model::evaluation_status::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ResourceEvaluationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourceevaluationstatus = unimplemented!();
+/// match resourceevaluationstatus {
+///     ResourceEvaluationStatus::Failed => { /* ... */ },
+///     ResourceEvaluationStatus::InProgress => { /* ... */ },
+///     ResourceEvaluationStatus::Succeeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourceevaluationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceEvaluationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceEvaluationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceEvaluationStatus::NewFeature` is defined.
+/// Specifically, when `resourceevaluationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceEvaluationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ResourceEvaluationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ResourceEvaluationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => ResourceEvaluationStatus::Failed,
+            "IN_PROGRESS" => ResourceEvaluationStatus::InProgress,
+            "SUCCEEDED" => ResourceEvaluationStatus::Succeeded,
+            other => ResourceEvaluationStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for ResourceEvaluationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResourceEvaluationStatus::from(s))
+    }
+}
+impl ResourceEvaluationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResourceEvaluationStatus::Failed => "FAILED",
+            ResourceEvaluationStatus::InProgress => "IN_PROGRESS",
+            ResourceEvaluationStatus::Succeeded => "SUCCEEDED",
+            ResourceEvaluationStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+    }
+}
+impl AsRef<str> for ResourceEvaluationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -8063,7 +9068,7 @@ pub struct OrganizationConformancePackDetailedStatus {
     /// <p>The name of conformance pack deployed in the member account.</p>
     #[doc(hidden)]
     pub conformance_pack_name: std::option::Option<std::string::String>,
-    /// <p>Indicates deployment status for conformance pack in a member account. When master account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+    /// <p>Indicates deployment status for conformance pack in a member account. When management account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When management account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the management account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the conformance pack to:</p>
     /// <ul>
     /// <li> <p> <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the member account. </p> </li>
@@ -8097,7 +9102,7 @@ impl OrganizationConformancePackDetailedStatus {
     pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
         self.conformance_pack_name.as_deref()
     }
-    /// <p>Indicates deployment status for conformance pack in a member account. When master account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+    /// <p>Indicates deployment status for conformance pack in a member account. When management account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When management account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the management account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the conformance pack to:</p>
     /// <ul>
     /// <li> <p> <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the member account. </p> </li>
@@ -8163,7 +9168,7 @@ pub mod organization_conformance_pack_detailed_status {
             self.conformance_pack_name = input;
             self
         }
-        /// <p>Indicates deployment status for conformance pack in a member account. When master account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+        /// <p>Indicates deployment status for conformance pack in a member account. When management account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When management account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the management account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
         /// <p> Config sets the state of the conformance pack to:</p>
         /// <ul>
         /// <li> <p> <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the member account. </p> </li>
@@ -8180,7 +9185,7 @@ pub mod organization_conformance_pack_detailed_status {
             self.status = Some(input);
             self
         }
-        /// <p>Indicates deployment status for conformance pack in a member account. When master account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+        /// <p>Indicates deployment status for conformance pack in a member account. When management account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When management account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the management account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
         /// <p> Config sets the state of the conformance pack to:</p>
         /// <ul>
         /// <li> <p> <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the member account. </p> </li>
@@ -8400,7 +9405,7 @@ pub struct OrganizationResourceDetailedStatusFilters {
     /// <p>The 12-digit account ID of the member account within an organization.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>Indicates deployment status for conformance pack in a member account. When master account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+    /// <p>Indicates deployment status for conformance pack in a member account. When management account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When management account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the management account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the conformance pack to:</p>
     /// <ul>
     /// <li> <p> <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the member account. </p> </li>
@@ -8421,7 +9426,7 @@ impl OrganizationResourceDetailedStatusFilters {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>Indicates deployment status for conformance pack in a member account. When master account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+    /// <p>Indicates deployment status for conformance pack in a member account. When management account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When management account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the management account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the conformance pack to:</p>
     /// <ul>
     /// <li> <p> <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the member account. </p> </li>
@@ -8458,7 +9463,7 @@ pub mod organization_resource_detailed_status_filters {
             self.account_id = input;
             self
         }
-        /// <p>Indicates deployment status for conformance pack in a member account. When master account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+        /// <p>Indicates deployment status for conformance pack in a member account. When management account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When management account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the management account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
         /// <p> Config sets the state of the conformance pack to:</p>
         /// <ul>
         /// <li> <p> <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the member account. </p> </li>
@@ -8475,7 +9480,7 @@ pub mod organization_resource_detailed_status_filters {
             self.status = Some(input);
             self
         }
-        /// <p>Indicates deployment status for conformance pack in a member account. When master account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+        /// <p>Indicates deployment status for conformance pack in a member account. When management account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When management account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the management account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
         /// <p> Config sets the state of the conformance pack to:</p>
         /// <ul>
         /// <li> <p> <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the member account. </p> </li>
@@ -8521,7 +9526,7 @@ pub struct MemberAccountStatus {
     /// <p>The name of Config rule deployed in the member account.</p>
     #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
-    /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+    /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the rule to:</p>
     /// <ul>
     /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account. </p> </li>
@@ -8555,7 +9560,7 @@ impl MemberAccountStatus {
     pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
-    /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+    /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the rule to:</p>
     /// <ul>
     /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account. </p> </li>
@@ -8624,7 +9629,7 @@ pub mod member_account_status {
             self.config_rule_name = input;
             self
         }
-        /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+        /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
         /// <p> Config sets the state of the rule to:</p>
         /// <ul>
         /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account. </p> </li>
@@ -8644,7 +9649,7 @@ pub mod member_account_status {
             self.member_account_rule_status = Some(input);
             self
         }
-        /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+        /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
         /// <p> Config sets the state of the rule to:</p>
         /// <ul>
         /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account. </p> </li>
@@ -8864,7 +9869,7 @@ pub struct StatusDetailFilters {
     /// <p>The 12-digit account ID of the member account within an organization.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+    /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
     /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p> </li>
@@ -8885,7 +9890,7 @@ impl StatusDetailFilters {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+    /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
     /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p> </li>
@@ -8925,7 +9930,7 @@ pub mod status_detail_filters {
             self.account_id = input;
             self
         }
-        /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+        /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
         /// <p>Config sets the state of the rule to:</p>
         /// <ul>
         /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p> </li>
@@ -8945,7 +9950,7 @@ pub mod status_detail_filters {
             self.member_account_rule_status = Some(input);
             self
         }
-        /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+        /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
         /// <p>Config sets the state of the rule to:</p>
         /// <ul>
         /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p> </li>
@@ -9386,6 +10391,9 @@ pub struct EvaluationResultIdentifier {
     /// <p>The time of the event that triggered the evaluation of your Amazon Web Services resources. The time can indicate when Config delivered a configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which event triggered the evaluation.</p>
     #[doc(hidden)]
     pub ordering_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A Unique ID for an evaluation result.</p>
+    #[doc(hidden)]
+    pub resource_evaluation_id: std::option::Option<std::string::String>,
 }
 impl EvaluationResultIdentifier {
     /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource, and provides the type and ID of the evaluated resource.</p>
@@ -9398,6 +10406,10 @@ impl EvaluationResultIdentifier {
     pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ordering_timestamp.as_ref()
     }
+    /// <p>A Unique ID for an evaluation result.</p>
+    pub fn resource_evaluation_id(&self) -> std::option::Option<&str> {
+        self.resource_evaluation_id.as_deref()
+    }
 }
 /// See [`EvaluationResultIdentifier`](crate::model::EvaluationResultIdentifier).
 pub mod evaluation_result_identifier {
@@ -9408,6 +10420,7 @@ pub mod evaluation_result_identifier {
         pub(crate) evaluation_result_qualifier:
             std::option::Option<crate::model::EvaluationResultQualifier>,
         pub(crate) ordering_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) resource_evaluation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource, and provides the type and ID of the evaluated resource.</p>
@@ -9439,11 +10452,25 @@ pub mod evaluation_result_identifier {
             self.ordering_timestamp = input;
             self
         }
+        /// <p>A Unique ID for an evaluation result.</p>
+        pub fn resource_evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_evaluation_id = Some(input.into());
+            self
+        }
+        /// <p>A Unique ID for an evaluation result.</p>
+        pub fn set_resource_evaluation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_evaluation_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EvaluationResultIdentifier`](crate::model::EvaluationResultIdentifier).
         pub fn build(self) -> crate::model::EvaluationResultIdentifier {
             crate::model::EvaluationResultIdentifier {
                 evaluation_result_qualifier: self.evaluation_result_qualifier,
                 ordering_timestamp: self.ordering_timestamp,
+                resource_evaluation_id: self.resource_evaluation_id,
             }
         }
     }
@@ -9468,6 +10495,9 @@ pub struct EvaluationResultQualifier {
     /// <p>The ID of the evaluated Amazon Web Services resource.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
+    /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+    #[doc(hidden)]
+    pub evaluation_mode: std::option::Option<crate::model::EvaluationMode>,
 }
 impl EvaluationResultQualifier {
     /// <p>The name of the Config rule that was used in the evaluation.</p>
@@ -9482,6 +10512,10 @@ impl EvaluationResultQualifier {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
+    /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+    pub fn evaluation_mode(&self) -> std::option::Option<&crate::model::EvaluationMode> {
+        self.evaluation_mode.as_ref()
+    }
 }
 /// See [`EvaluationResultQualifier`](crate::model::EvaluationResultQualifier).
 pub mod evaluation_result_qualifier {
@@ -9492,6 +10526,7 @@ pub mod evaluation_result_qualifier {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) evaluation_mode: std::option::Option<crate::model::EvaluationMode>,
     }
     impl Builder {
         /// <p>The name of the Config rule that was used in the evaluation.</p>
@@ -9530,12 +10565,26 @@ pub mod evaluation_result_qualifier {
             self.resource_id = input;
             self
         }
+        /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+        pub fn evaluation_mode(mut self, input: crate::model::EvaluationMode) -> Self {
+            self.evaluation_mode = Some(input);
+            self
+        }
+        /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+        pub fn set_evaluation_mode(
+            mut self,
+            input: std::option::Option<crate::model::EvaluationMode>,
+        ) -> Self {
+            self.evaluation_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EvaluationResultQualifier`](crate::model::EvaluationResultQualifier).
         pub fn build(self) -> crate::model::EvaluationResultQualifier {
             crate::model::EvaluationResultQualifier {
                 config_rule_name: self.config_rule_name,
                 resource_type: self.resource_type,
                 resource_id: self.resource_id,
+                evaluation_mode: self.evaluation_mode,
             }
         }
     }
@@ -11647,7 +12696,7 @@ pub struct OrganizationConformancePackStatus {
     /// <p>The name that you assign to organization conformance pack.</p>
     #[doc(hidden)]
     pub organization_conformance_pack_name: std::option::Option<std::string::String>,
-    /// <p>Indicates deployment status of an organization conformance pack. When master account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When master account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the master account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+    /// <p>Indicates deployment status of an organization conformance pack. When management account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When management account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the management account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
     /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts. </p> </li>
@@ -11677,7 +12726,7 @@ impl OrganizationConformancePackStatus {
     pub fn organization_conformance_pack_name(&self) -> std::option::Option<&str> {
         self.organization_conformance_pack_name.as_deref()
     }
-    /// <p>Indicates deployment status of an organization conformance pack. When master account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When master account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the master account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+    /// <p>Indicates deployment status of an organization conformance pack. When management account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When management account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the management account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
     /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts. </p> </li>
@@ -11735,7 +12784,7 @@ pub mod organization_conformance_pack_status {
             self.organization_conformance_pack_name = input;
             self
         }
-        /// <p>Indicates deployment status of an organization conformance pack. When master account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When master account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the master account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+        /// <p>Indicates deployment status of an organization conformance pack. When management account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When management account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the management account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
         /// <p>Config sets the state of the conformance pack to:</p>
         /// <ul>
         /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts. </p> </li>
@@ -11752,7 +12801,7 @@ pub mod organization_conformance_pack_status {
             self.status = Some(input);
             self
         }
-        /// <p>Indicates deployment status of an organization conformance pack. When master account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When master account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the master account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+        /// <p>Indicates deployment status of an organization conformance pack. When management account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When management account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the management account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
         /// <p>Config sets the state of the conformance pack to:</p>
         /// <ul>
         /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts. </p> </li>
@@ -12195,7 +13244,7 @@ pub struct OrganizationConfigRuleStatus {
     /// <p>The name that you assign to organization Config rule.</p>
     #[doc(hidden)]
     pub organization_config_rule_name: std::option::Option<std::string::String>,
-    /// <p>Indicates deployment status of an organization Config rule. When master account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When master account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+    /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
     /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts. </p> </li>
@@ -12225,7 +13274,7 @@ impl OrganizationConfigRuleStatus {
     pub fn organization_config_rule_name(&self) -> std::option::Option<&str> {
         self.organization_config_rule_name.as_deref()
     }
-    /// <p>Indicates deployment status of an organization Config rule. When master account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When master account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+    /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
     /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts. </p> </li>
@@ -12286,7 +13335,7 @@ pub mod organization_config_rule_status {
             self.organization_config_rule_name = input;
             self
         }
-        /// <p>Indicates deployment status of an organization Config rule. When master account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When master account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+        /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
         /// <p>Config sets the state of the rule to:</p>
         /// <ul>
         /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts. </p> </li>
@@ -12306,7 +13355,7 @@ pub mod organization_config_rule_status {
             self.organization_rule_status = Some(input);
             self
         }
-        /// <p>Indicates deployment status of an organization Config rule. When master account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When master account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+        /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
         /// <p>Config sets the state of the rule to:</p>
         /// <ul>
         /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts. </p> </li>
@@ -15041,6 +16090,57 @@ impl AggregatedSourceType {
 impl AsRef<str> for AggregatedSourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Returns a filtered list of Detective or Proactive Config rules. By default, if the filter is not defined, this API returns an unfiltered list.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeConfigRulesFilters {
+    /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+    #[doc(hidden)]
+    pub evaluation_mode: std::option::Option<crate::model::EvaluationMode>,
+}
+impl DescribeConfigRulesFilters {
+    /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+    pub fn evaluation_mode(&self) -> std::option::Option<&crate::model::EvaluationMode> {
+        self.evaluation_mode.as_ref()
+    }
+}
+/// See [`DescribeConfigRulesFilters`](crate::model::DescribeConfigRulesFilters).
+pub mod describe_config_rules_filters {
+
+    /// A builder for [`DescribeConfigRulesFilters`](crate::model::DescribeConfigRulesFilters).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) evaluation_mode: std::option::Option<crate::model::EvaluationMode>,
+    }
+    impl Builder {
+        /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+        pub fn evaluation_mode(mut self, input: crate::model::EvaluationMode) -> Self {
+            self.evaluation_mode = Some(input);
+            self
+        }
+        /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+        pub fn set_evaluation_mode(
+            mut self,
+            input: std::option::Option<crate::model::EvaluationMode>,
+        ) -> Self {
+            self.evaluation_mode = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeConfigRulesFilters`](crate::model::DescribeConfigRulesFilters).
+        pub fn build(self) -> crate::model::DescribeConfigRulesFilters {
+            crate::model::DescribeConfigRulesFilters {
+                evaluation_mode: self.evaluation_mode,
+            }
+        }
+    }
+}
+impl DescribeConfigRulesFilters {
+    /// Creates a new builder-style object to manufacture [`DescribeConfigRulesFilters`](crate::model::DescribeConfigRulesFilters).
+    pub fn builder() -> crate::model::describe_config_rules_filters::Builder {
+        crate::model::describe_config_rules_filters::Builder::default()
     }
 }
 

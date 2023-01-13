@@ -821,14 +821,14 @@ pub mod create_grant_input {
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
-        /// <p>The grant principals.</p>
+        /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
             v.push(input.into());
             self.principals = Some(v);
             self
         }
-        /// <p>The grant principals.</p>
+        /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1837,7 +1837,7 @@ pub mod create_license_conversion_task_for_resource_input {
             self.resource_arn = input;
             self
         }
-        /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+        /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn source_license_context(
             mut self,
             input: crate::model::LicenseConversionContext,
@@ -1845,7 +1845,7 @@ pub mod create_license_conversion_task_for_resource_input {
             self.source_license_context = Some(input);
             self
         }
-        /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+        /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn set_source_license_context(
             mut self,
             input: std::option::Option<crate::model::LicenseConversionContext>,
@@ -1853,7 +1853,7 @@ pub mod create_license_conversion_task_for_resource_input {
             self.source_license_context = input;
             self
         }
-        /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+        /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn destination_license_context(
             mut self,
             input: crate::model::LicenseConversionContext,
@@ -1861,7 +1861,7 @@ pub mod create_license_conversion_task_for_resource_input {
             self.destination_license_context = Some(input);
             self
         }
-        /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+        /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn set_destination_license_context(
             mut self,
             input: std::option::Option<crate::model::LicenseConversionContext>,
@@ -6838,6 +6838,205 @@ impl ListReceivedGrantsInput {
     }
 }
 
+/// See [`ListReceivedGrantsForOrganizationInput`](crate::input::ListReceivedGrantsForOrganizationInput).
+pub mod list_received_grants_for_organization_input {
+
+    /// A builder for [`ListReceivedGrantsForOrganizationInput`](crate::input::ListReceivedGrantsForOrganizationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) license_arn: std::option::Option<std::string::String>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the received license.</p>
+        pub fn license_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the received license.</p>
+        pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_arn = input;
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li> <p> <code>ParentArn</code> </p> </li>
+        /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
+        /// </ul>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li> <p> <code>ParentArn</code> </p> </li>
+        /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
+        /// </ul>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>Token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>Maximum number of results to return in a single call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>Maximum number of results to return in a single call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListReceivedGrantsForOrganizationInput`](crate::input::ListReceivedGrantsForOrganizationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListReceivedGrantsForOrganizationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListReceivedGrantsForOrganizationInput {
+                license_arn: self.license_arn,
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl ListReceivedGrantsForOrganizationInput {
+    /// Consumes the builder and constructs an Operation<[`ListReceivedGrantsForOrganization`](crate::operation::ListReceivedGrantsForOrganization)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListReceivedGrantsForOrganization,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListReceivedGrantsForOrganizationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListReceivedGrantsForOrganizationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLicenseManager.ListReceivedGrantsForOrganization",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_received_grants_for_organization(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListReceivedGrantsForOrganization::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListReceivedGrantsForOrganization",
+            "licensemanager",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListReceivedGrantsForOrganizationInput`](crate::input::ListReceivedGrantsForOrganizationInput).
+    pub fn builder() -> crate::input::list_received_grants_for_organization_input::Builder {
+        crate::input::list_received_grants_for_organization_input::Builder::default()
+    }
+}
+
 /// See [`ListReceivedLicensesInput`](crate::input::ListReceivedLicensesInput).
 pub mod list_received_licenses_input {
 
@@ -7052,6 +7251,193 @@ impl ListReceivedLicensesInput {
     /// Creates a new builder-style object to manufacture [`ListReceivedLicensesInput`](crate::input::ListReceivedLicensesInput).
     pub fn builder() -> crate::input::list_received_licenses_input::Builder {
         crate::input::list_received_licenses_input::Builder::default()
+    }
+}
+
+/// See [`ListReceivedLicensesForOrganizationInput`](crate::input::ListReceivedLicensesForOrganizationInput).
+pub mod list_received_licenses_for_organization_input {
+
+    /// A builder for [`ListReceivedLicensesForOrganizationInput`](crate::input::ListReceivedLicensesForOrganizationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li> <p> <code>Beneficiary</code> </p> </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// </ul>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li> <p> <code>Beneficiary</code> </p> </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// </ul>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>Token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>Maximum number of results to return in a single call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>Maximum number of results to return in a single call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListReceivedLicensesForOrganizationInput`](crate::input::ListReceivedLicensesForOrganizationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListReceivedLicensesForOrganizationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListReceivedLicensesForOrganizationInput {
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl ListReceivedLicensesForOrganizationInput {
+    /// Consumes the builder and constructs an Operation<[`ListReceivedLicensesForOrganization`](crate::operation::ListReceivedLicensesForOrganization)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListReceivedLicensesForOrganization,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListReceivedLicensesForOrganizationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListReceivedLicensesForOrganizationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLicenseManager.ListReceivedLicensesForOrganization",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_received_licenses_for_organization(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListReceivedLicensesForOrganization::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListReceivedLicensesForOrganization",
+            "licensemanager",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListReceivedLicensesForOrganizationInput`](crate::input::ListReceivedLicensesForOrganizationInput).
+    pub fn builder() -> crate::input::list_received_licenses_for_organization_input::Builder {
+        crate::input::list_received_licenses_for_organization_input::Builder::default()
     }
 }
 
@@ -9637,6 +10023,43 @@ impl ListResourceInventoryInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListReceivedLicensesForOrganizationInput {
+    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>Beneficiary</code> </p> </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListReceivedLicensesForOrganizationInput {
+    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>Beneficiary</code> </p> </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReceivedLicensesInput {
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
     #[doc(hidden)]
@@ -9670,6 +10093,50 @@ impl ListReceivedLicensesInput {
     /// <li> <p> <code>Fingerprint</code> </p> </li>
     /// <li> <p> <code>IssuerName</code> </p> </li>
     /// <li> <p> <code>Beneficiary</code> </p> </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListReceivedGrantsForOrganizationInput {
+    /// <p>The Amazon Resource Name (ARN) of the received license.</p>
+    #[doc(hidden)]
+    pub license_arn: std::option::Option<std::string::String>,
+    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>ParentArn</code> </p> </li>
+    /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListReceivedGrantsForOrganizationInput {
+    /// <p>The Amazon Resource Name (ARN) of the received license.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>ParentArn</code> </p> </li>
+    /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -10516,10 +10983,10 @@ pub struct CreateLicenseConversionTaskForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+    /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
     #[doc(hidden)]
     pub source_license_context: std::option::Option<crate::model::LicenseConversionContext>,
-    /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+    /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
     #[doc(hidden)]
     pub destination_license_context: std::option::Option<crate::model::LicenseConversionContext>,
 }
@@ -10528,13 +10995,13 @@ impl CreateLicenseConversionTaskForResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+    /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
     pub fn source_license_context(
         &self,
     ) -> std::option::Option<&crate::model::LicenseConversionContext> {
         self.source_license_context.as_ref()
     }
-    /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+    /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
     pub fn destination_license_context(
         &self,
     ) -> std::option::Option<&crate::model::LicenseConversionContext> {
@@ -10787,7 +11254,7 @@ pub struct CreateGrantInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
-    /// <p>The grant principals.</p>
+    /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Home Region of the grant.</p>
@@ -10810,7 +11277,7 @@ impl CreateGrantInput {
     pub fn license_arn(&self) -> std::option::Option<&str> {
         self.license_arn.as_deref()
     }
-    /// <p>The grant principals.</p>
+    /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
     pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
         self.principals.as_deref()
     }

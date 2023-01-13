@@ -2,7 +2,529 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListVodSourcesOutput {
+    /// <p>Lists the VOD sources.</p>
+    #[doc(hidden)]
+    pub items: std::option::Option<std::vec::Vec<crate::model::VodSource>>,
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVodSourcesOutput {
+    /// <p>Lists the VOD sources.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::VodSource]> {
+        self.items.as_deref()
+    }
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput).
+pub mod list_vod_sources_output {
+
+    /// A builder for [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::VodSource>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Lists the VOD sources.</p>
+        pub fn items(mut self, input: crate::model::VodSource) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>Lists the VOD sources.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VodSource>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput).
+        pub fn build(self) -> crate::output::ListVodSourcesOutput {
+            crate::output::ListVodSourcesOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListVodSourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput).
+    pub fn builder() -> crate::output::list_vod_sources_output::Builder {
+        crate::output::list_vod_sources_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateVodSourceOutput {
+    /// <p>The ARN to assign to this VOD source.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The time the VOD source was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
+    #[doc(hidden)]
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    /// <p>The time the VOD source was last modified.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The name to assign to the source location for this VOD source.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The name to assign to the VOD source.</p>
+    #[doc(hidden)]
+    pub vod_source_name: std::option::Option<std::string::String>,
+}
+impl CreateVodSourceOutput {
+    /// <p>The ARN to assign to this VOD source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time the VOD source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The time the VOD source was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name to assign to the source location for this VOD source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The name to assign to the VOD source.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
+}
+/// See [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput).
+pub mod create_vod_source_output {
+
+    /// A builder for [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) http_package_configurations:
+            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) vod_source_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN to assign to this VOD source.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN to assign to this VOD source.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The time the VOD source was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time the VOD source was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Appends an item to `http_package_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        ///
+        /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
+        pub fn http_package_configurations(
+            mut self,
+            input: crate::model::HttpPackageConfiguration,
+        ) -> Self {
+            let mut v = self.http_package_configurations.unwrap_or_default();
+            v.push(input);
+            self.http_package_configurations = Some(v);
+            self
+        }
+        /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
+        pub fn set_http_package_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        ) -> Self {
+            self.http_package_configurations = input;
+            self
+        }
+        /// <p>The time the VOD source was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The time the VOD source was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The name to assign to the source location for this VOD source.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The name to assign to the source location for this VOD source.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The name to assign to the VOD source.</p>
+        pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vod_source_name = Some(input.into());
+            self
+        }
+        /// <p>The name to assign to the VOD source.</p>
+        pub fn set_vod_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vod_source_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput).
+        pub fn build(self) -> crate::output::CreateVodSourceOutput {
+            crate::output::CreateVodSourceOutput {
+                arn: self.arn,
+                creation_time: self.creation_time,
+                http_package_configurations: self.http_package_configurations,
+                last_modified_time: self.last_modified_time,
+                source_location_name: self.source_location_name,
+                tags: self.tags,
+                vod_source_name: self.vod_source_name,
+            }
+        }
+    }
+}
+impl CreateVodSourceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput).
+    pub fn builder() -> crate::output::create_vod_source_output::Builder {
+        crate::output::create_vod_source_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteVodSourceOutput {}
+/// See [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput).
+pub mod delete_vod_source_output {
+
+    /// A builder for [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput).
+        pub fn build(self) -> crate::output::DeleteVodSourceOutput {
+            crate::output::DeleteVodSourceOutput {}
+        }
+    }
+}
+impl DeleteVodSourceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput).
+    pub fn builder() -> crate::output::delete_vod_source_output::Builder {
+        crate::output::delete_vod_source_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVodSourceOutput {
+    /// <p>The Amazon Resource Name (ARN) associated with the VOD source.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp that indicates when the VOD source was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
+    #[doc(hidden)]
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    /// <p>The timestamp that indicates when the VOD source was last modified.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The name of the source location associated with the VOD source.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The name of the VOD source.</p>
+    #[doc(hidden)]
+    pub vod_source_name: std::option::Option<std::string::String>,
+}
+impl UpdateVodSourceOutput {
+    /// <p>The Amazon Resource Name (ARN) associated with the VOD source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the VOD source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The timestamp that indicates when the VOD source was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name of the source location associated with the VOD source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The name of the VOD source.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
+}
+/// See [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput).
+pub mod update_vod_source_output {
+
+    /// A builder for [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) http_package_configurations:
+            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) vod_source_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) associated with the VOD source.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) associated with the VOD source.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the VOD source was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the VOD source was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Appends an item to `http_package_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        ///
+        /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
+        pub fn http_package_configurations(
+            mut self,
+            input: crate::model::HttpPackageConfiguration,
+        ) -> Self {
+            let mut v = self.http_package_configurations.unwrap_or_default();
+            v.push(input);
+            self.http_package_configurations = Some(v);
+            self
+        }
+        /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
+        pub fn set_http_package_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        ) -> Self {
+            self.http_package_configurations = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the VOD source was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the VOD source was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The name of the source location associated with the VOD source.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the source location associated with the VOD source.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The name of the VOD source.</p>
+        pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vod_source_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the VOD source.</p>
+        pub fn set_vod_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vod_source_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput).
+        pub fn build(self) -> crate::output::UpdateVodSourceOutput {
+            crate::output::UpdateVodSourceOutput {
+                arn: self.arn,
+                creation_time: self.creation_time,
+                http_package_configurations: self.http_package_configurations,
+                last_modified_time: self.last_modified_time,
+                source_location_name: self.source_location_name,
+                tags: self.tags,
+                vod_source_name: self.vod_source_name,
+            }
+        }
+    }
+}
+impl UpdateVodSourceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput).
+    pub fn builder() -> crate::output::update_vod_source_output::Builder {
+        crate::output::update_vod_source_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeVodSourceOutput {
     /// <p>The ARN of the VOD source.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -19,7 +541,7 @@ pub struct UpdateVodSourceOutput {
     /// <p>The name of the source location associated with the VOD source.</p>
     #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the VOD source.</p>
+    /// <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -27,7 +549,7 @@ pub struct UpdateVodSourceOutput {
     #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
-impl UpdateVodSourceOutput {
+impl DescribeVodSourceOutput {
     /// <p>The ARN of the VOD source.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
@@ -50,7 +572,7 @@ impl UpdateVodSourceOutput {
     pub fn source_location_name(&self) -> std::option::Option<&str> {
         self.source_location_name.as_deref()
     }
-    /// <p>The tags assigned to the VOD source.</p>
+    /// <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -62,10 +584,10 @@ impl UpdateVodSourceOutput {
         self.vod_source_name.as_deref()
     }
 }
-/// See [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput).
-pub mod update_vod_source_output {
+/// See [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput).
+pub mod describe_vod_source_output {
 
-    /// A builder for [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput).
+    /// A builder for [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -155,7 +677,7 @@ pub mod update_vod_source_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the VOD source.</p>
+        /// <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -166,7 +688,7 @@ pub mod update_vod_source_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags assigned to the VOD source.</p>
+        /// <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -189,9 +711,9 @@ pub mod update_vod_source_output {
             self.vod_source_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput).
-        pub fn build(self) -> crate::output::UpdateVodSourceOutput {
-            crate::output::UpdateVodSourceOutput {
+        /// Consumes the builder and constructs a [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput).
+        pub fn build(self) -> crate::output::DescribeVodSourceOutput {
+            crate::output::DescribeVodSourceOutput {
                 arn: self.arn,
                 creation_time: self.creation_time,
                 http_package_configurations: self.http_package_configurations,
@@ -203,10 +725,372 @@ pub mod update_vod_source_output {
         }
     }
 }
-impl UpdateVodSourceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput).
-    pub fn builder() -> crate::output::update_vod_source_output::Builder {
-        crate::output::update_vod_source_output::Builder::default()
+impl DescribeVodSourceOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput).
+    pub fn builder() -> crate::output::describe_vod_source_output::Builder {
+        crate::output::describe_vod_source_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListSourceLocationsOutput {
+    /// <p>A list of source locations.</p>
+    #[doc(hidden)]
+    pub items: std::option::Option<std::vec::Vec<crate::model::SourceLocation>>,
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSourceLocationsOutput {
+    /// <p>A list of source locations.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::SourceLocation]> {
+        self.items.as_deref()
+    }
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput).
+pub mod list_source_locations_output {
+
+    /// A builder for [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::SourceLocation>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of source locations.</p>
+        pub fn items(mut self, input: crate::model::SourceLocation) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>A list of source locations.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SourceLocation>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput).
+        pub fn build(self) -> crate::output::ListSourceLocationsOutput {
+            crate::output::ListSourceLocationsOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListSourceLocationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput).
+    pub fn builder() -> crate::output::list_source_locations_output::Builder {
+        crate::output::list_source_locations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateSourceLocationOutput {
+    /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    #[doc(hidden)]
+    pub access_configuration: std::option::Option<crate::model::AccessConfiguration>,
+    /// <p>The ARN to assign to the source location.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The time the source location was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The optional configuration for the server that serves segments.</p>
+    #[doc(hidden)]
+    pub default_segment_delivery_configuration:
+        std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
+    /// <p>The source's HTTP package configurations.</p>
+    #[doc(hidden)]
+    pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
+    /// <p>The time the source location was last modified.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
+    #[doc(hidden)]
+    pub segment_delivery_configurations:
+        std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+    /// <p>The name to assign to the source location.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateSourceLocationOutput {
+    /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    pub fn access_configuration(&self) -> std::option::Option<&crate::model::AccessConfiguration> {
+        self.access_configuration.as_ref()
+    }
+    /// <p>The ARN to assign to the source location.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time the source location was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The optional configuration for the server that serves segments.</p>
+    pub fn default_segment_delivery_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultSegmentDeliveryConfiguration> {
+        self.default_segment_delivery_configuration.as_ref()
+    }
+    /// <p>The source's HTTP package configurations.</p>
+    pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
+        self.http_configuration.as_ref()
+    }
+    /// <p>The time the source location was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
+    pub fn segment_delivery_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
+        self.segment_delivery_configurations.as_deref()
+    }
+    /// <p>The name to assign to the source location.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+/// See [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput).
+pub mod create_source_location_output {
+
+    /// A builder for [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) default_segment_delivery_configuration:
+            std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
+        pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) segment_delivery_configurations:
+            std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+        pub fn access_configuration(mut self, input: crate::model::AccessConfiguration) -> Self {
+            self.access_configuration = Some(input);
+            self
+        }
+        /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+        pub fn set_access_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AccessConfiguration>,
+        ) -> Self {
+            self.access_configuration = input;
+            self
+        }
+        /// <p>The ARN to assign to the source location.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN to assign to the source location.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The time the source location was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time the source location was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The optional configuration for the server that serves segments.</p>
+        pub fn default_segment_delivery_configuration(
+            mut self,
+            input: crate::model::DefaultSegmentDeliveryConfiguration,
+        ) -> Self {
+            self.default_segment_delivery_configuration = Some(input);
+            self
+        }
+        /// <p>The optional configuration for the server that serves segments.</p>
+        pub fn set_default_segment_delivery_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
+        ) -> Self {
+            self.default_segment_delivery_configuration = input;
+            self
+        }
+        /// <p>The source's HTTP package configurations.</p>
+        pub fn http_configuration(mut self, input: crate::model::HttpConfiguration) -> Self {
+            self.http_configuration = Some(input);
+            self
+        }
+        /// <p>The source's HTTP package configurations.</p>
+        pub fn set_http_configuration(
+            mut self,
+            input: std::option::Option<crate::model::HttpConfiguration>,
+        ) -> Self {
+            self.http_configuration = input;
+            self
+        }
+        /// <p>The time the source location was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The time the source location was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// Appends an item to `segment_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
+        ///
+        /// <p>The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
+        pub fn segment_delivery_configurations(
+            mut self,
+            input: crate::model::SegmentDeliveryConfiguration,
+        ) -> Self {
+            let mut v = self.segment_delivery_configurations.unwrap_or_default();
+            v.push(input);
+            self.segment_delivery_configurations = Some(v);
+            self
+        }
+        /// <p>The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
+        pub fn set_segment_delivery_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+        ) -> Self {
+            self.segment_delivery_configurations = input;
+            self
+        }
+        /// <p>The name to assign to the source location.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The name to assign to the source location.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput).
+        pub fn build(self) -> crate::output::CreateSourceLocationOutput {
+            crate::output::CreateSourceLocationOutput {
+                access_configuration: self.access_configuration,
+                arn: self.arn,
+                creation_time: self.creation_time,
+                default_segment_delivery_configuration: self.default_segment_delivery_configuration,
+                http_configuration: self.http_configuration,
+                last_modified_time: self.last_modified_time,
+                segment_delivery_configurations: self.segment_delivery_configurations,
+                source_location_name: self.source_location_name,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl CreateSourceLocationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput).
+    pub fn builder() -> crate::output::create_source_location_output::Builder {
+        crate::output::create_source_location_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteSourceLocationOutput {}
+/// See [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput).
+pub mod delete_source_location_output {
+
+    /// A builder for [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput).
+        pub fn build(self) -> crate::output::DeleteSourceLocationOutput {
+            crate::output::DeleteSourceLocationOutput {}
+        }
+    }
+}
+impl DeleteSourceLocationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput).
+    pub fn builder() -> crate::output::delete_source_location_output::Builder {
+        crate::output::delete_source_location_output::Builder::default()
     }
 }
 
@@ -214,6 +1098,268 @@ impl UpdateVodSourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSourceLocationOutput {
+    /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    #[doc(hidden)]
+    pub access_configuration: std::option::Option<crate::model::AccessConfiguration>,
+    /// <p>The Amazon Resource Name (ARN) associated with the source location.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp that indicates when the source location was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The optional configuration for the host server that serves segments.</p>
+    #[doc(hidden)]
+    pub default_segment_delivery_configuration:
+        std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
+    /// <p>The HTTP configuration for the source location.</p>
+    #[doc(hidden)]
+    pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
+    /// <p>The timestamp that indicates when the source location was last modified.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
+    #[doc(hidden)]
+    pub segment_delivery_configurations:
+        std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+    /// <p>The name of the source location.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateSourceLocationOutput {
+    /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    pub fn access_configuration(&self) -> std::option::Option<&crate::model::AccessConfiguration> {
+        self.access_configuration.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) associated with the source location.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the source location was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The optional configuration for the host server that serves segments.</p>
+    pub fn default_segment_delivery_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultSegmentDeliveryConfiguration> {
+        self.default_segment_delivery_configuration.as_ref()
+    }
+    /// <p>The HTTP configuration for the source location.</p>
+    pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
+        self.http_configuration.as_ref()
+    }
+    /// <p>The timestamp that indicates when the source location was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
+    pub fn segment_delivery_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
+        self.segment_delivery_configurations.as_deref()
+    }
+    /// <p>The name of the source location.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+/// See [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput).
+pub mod update_source_location_output {
+
+    /// A builder for [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) default_segment_delivery_configuration:
+            std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
+        pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) segment_delivery_configurations:
+            std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+        pub fn access_configuration(mut self, input: crate::model::AccessConfiguration) -> Self {
+            self.access_configuration = Some(input);
+            self
+        }
+        /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+        pub fn set_access_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AccessConfiguration>,
+        ) -> Self {
+            self.access_configuration = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) associated with the source location.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) associated with the source location.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the source location was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the source location was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The optional configuration for the host server that serves segments.</p>
+        pub fn default_segment_delivery_configuration(
+            mut self,
+            input: crate::model::DefaultSegmentDeliveryConfiguration,
+        ) -> Self {
+            self.default_segment_delivery_configuration = Some(input);
+            self
+        }
+        /// <p>The optional configuration for the host server that serves segments.</p>
+        pub fn set_default_segment_delivery_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
+        ) -> Self {
+            self.default_segment_delivery_configuration = input;
+            self
+        }
+        /// <p>The HTTP configuration for the source location.</p>
+        pub fn http_configuration(mut self, input: crate::model::HttpConfiguration) -> Self {
+            self.http_configuration = Some(input);
+            self
+        }
+        /// <p>The HTTP configuration for the source location.</p>
+        pub fn set_http_configuration(
+            mut self,
+            input: std::option::Option<crate::model::HttpConfiguration>,
+        ) -> Self {
+            self.http_configuration = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the source location was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the source location was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// Appends an item to `segment_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
+        ///
+        /// <p>The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
+        pub fn segment_delivery_configurations(
+            mut self,
+            input: crate::model::SegmentDeliveryConfiguration,
+        ) -> Self {
+            let mut v = self.segment_delivery_configurations.unwrap_or_default();
+            v.push(input);
+            self.segment_delivery_configurations = Some(v);
+            self
+        }
+        /// <p>The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
+        pub fn set_segment_delivery_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+        ) -> Self {
+            self.segment_delivery_configurations = input;
+            self
+        }
+        /// <p>The name of the source location.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the source location.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput).
+        pub fn build(self) -> crate::output::UpdateSourceLocationOutput {
+            crate::output::UpdateSourceLocationOutput {
+                access_configuration: self.access_configuration,
+                arn: self.arn,
+                creation_time: self.creation_time,
+                default_segment_delivery_configuration: self.default_segment_delivery_configuration,
+                http_configuration: self.http_configuration,
+                last_modified_time: self.last_modified_time,
+                segment_delivery_configurations: self.segment_delivery_configurations,
+                source_location_name: self.source_location_name,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl UpdateSourceLocationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput).
+    pub fn builder() -> crate::output::update_source_location_output::Builder {
+        crate::output::update_source_location_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeSourceLocationOutput {
     /// <p>The access configuration for the source location.</p>
     #[doc(hidden)]
     pub access_configuration: std::option::Option<crate::model::AccessConfiguration>,
@@ -240,12 +1386,12 @@ pub struct UpdateSourceLocationOutput {
     /// <p>The name of the source location.</p>
     #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the source location.</p>
+    /// <p>The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
-impl UpdateSourceLocationOutput {
+impl DescribeSourceLocationOutput {
     /// <p>The access configuration for the source location.</p>
     pub fn access_configuration(&self) -> std::option::Option<&crate::model::AccessConfiguration> {
         self.access_configuration.as_ref()
@@ -282,7 +1428,7 @@ impl UpdateSourceLocationOutput {
     pub fn source_location_name(&self) -> std::option::Option<&str> {
         self.source_location_name.as_deref()
     }
-    /// <p>The tags assigned to the source location.</p>
+    /// <p>The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -290,10 +1436,10 @@ impl UpdateSourceLocationOutput {
         self.tags.as_ref()
     }
 }
-/// See [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput).
-pub mod update_source_location_output {
+/// See [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput).
+pub mod describe_source_location_output {
 
-    /// A builder for [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput).
+    /// A builder for [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
@@ -428,7 +1574,7 @@ pub mod update_source_location_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the source location.</p>
+        /// <p>The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -439,7 +1585,7 @@ pub mod update_source_location_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags assigned to the source location.</p>
+        /// <p>The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -449,9 +1595,9 @@ pub mod update_source_location_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput).
-        pub fn build(self) -> crate::output::UpdateSourceLocationOutput {
-            crate::output::UpdateSourceLocationOutput {
+        /// Consumes the builder and constructs a [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput).
+        pub fn build(self) -> crate::output::DescribeSourceLocationOutput {
+            crate::output::DescribeSourceLocationOutput {
                 access_configuration: self.access_configuration,
                 arn: self.arn,
                 creation_time: self.creation_time,
@@ -465,581 +1611,496 @@ pub mod update_source_location_output {
         }
     }
 }
-impl UpdateSourceLocationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput).
-    pub fn builder() -> crate::output::update_source_location_output::Builder {
-        crate::output::update_source_location_output::Builder::default()
+impl DescribeSourceLocationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput).
+    pub fn builder() -> crate::output::describe_source_location_output::Builder {
+        crate::output::describe_source_location_output::Builder::default()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLiveSourceOutput {
-    /// <p>The ARN of the live source.</p>
+pub struct ListPrefetchSchedulesOutput {
+    /// <p>Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp that indicates when the live source was created.</p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::PrefetchSchedule>>,
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The HTTP package configurations.</p>
-    #[doc(hidden)]
-    pub http_package_configurations:
-        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-    /// <p>The timestamp that indicates when the live source was modified.</p>
-    #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The name of the live source.</p>
-    #[doc(hidden)]
-    pub live_source_name: std::option::Option<std::string::String>,
-    /// <p>The name of the source location associated with the VOD source.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the live source.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub next_token: std::option::Option<std::string::String>,
 }
-impl UpdateLiveSourceOutput {
-    /// <p>The ARN of the live source.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
+impl ListPrefetchSchedulesOutput {
+    /// <p>Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::PrefetchSchedule]> {
+        self.items.as_deref()
     }
-    /// <p>The timestamp that indicates when the live source was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
-    }
-    /// <p>The HTTP package configurations.</p>
-    pub fn http_package_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
-    }
-    /// <p>The timestamp that indicates when the live source was modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
-    }
-    /// <p>The name of the live source.</p>
-    pub fn live_source_name(&self) -> std::option::Option<&str> {
-        self.live_source_name.as_deref()
-    }
-    /// <p>The name of the source location associated with the VOD source.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-    /// <p>The tags assigned to the live source.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
-/// See [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput).
-pub mod update_live_source_output {
+/// See [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput).
+pub mod list_prefetch_schedules_output {
 
-    /// A builder for [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput).
+    /// A builder for [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) http_package_configurations:
-            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) live_source_name: std::option::Option<std::string::String>,
-        pub(crate) source_location_name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::PrefetchSchedule>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the live source.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of the live source.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>The timestamp that indicates when the live source was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.creation_time = Some(input);
-            self
-        }
-        /// <p>The timestamp that indicates when the live source was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
-        }
-        /// Appends an item to `http_package_configurations`.
+        /// Appends an item to `items`.
         ///
-        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>The HTTP package configurations.</p>
-        pub fn http_package_configurations(
-            mut self,
-            input: crate::model::HttpPackageConfiguration,
-        ) -> Self {
-            let mut v = self.http_package_configurations.unwrap_or_default();
+        /// <p>Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
+        pub fn items(mut self, input: crate::model::PrefetchSchedule) -> Self {
+            let mut v = self.items.unwrap_or_default();
             v.push(input);
-            self.http_package_configurations = Some(v);
+            self.items = Some(v);
             self
         }
-        /// <p>The HTTP package configurations.</p>
-        pub fn set_http_package_configurations(
+        /// <p>Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
+        pub fn set_items(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PrefetchSchedule>>,
         ) -> Self {
-            self.http_package_configurations = input;
+            self.items = input;
             self
         }
-        /// <p>The timestamp that indicates when the live source was modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.last_modified_time = Some(input);
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        /// <p>The timestamp that indicates when the live source was modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        /// <p>The name of the live source.</p>
-        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.live_source_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the live source.</p>
-        pub fn set_live_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.live_source_name = input;
-            self
-        }
-        /// <p>The name of the source location associated with the VOD source.</p>
-        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.source_location_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the source location associated with the VOD source.</p>
-        pub fn set_source_location_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_location_name = input;
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags assigned to the live source.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
-        }
-        /// <p>The tags assigned to the live source.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput).
-        pub fn build(self) -> crate::output::UpdateLiveSourceOutput {
-            crate::output::UpdateLiveSourceOutput {
-                arn: self.arn,
-                creation_time: self.creation_time,
-                http_package_configurations: self.http_package_configurations,
-                last_modified_time: self.last_modified_time,
-                live_source_name: self.live_source_name,
-                source_location_name: self.source_location_name,
-                tags: self.tags,
+        /// Consumes the builder and constructs a [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput).
+        pub fn build(self) -> crate::output::ListPrefetchSchedulesOutput {
+            crate::output::ListPrefetchSchedulesOutput {
+                items: self.items,
+                next_token: self.next_token,
             }
         }
     }
 }
-impl UpdateLiveSourceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput).
-    pub fn builder() -> crate::output::update_live_source_output::Builder {
-        crate::output::update_live_source_output::Builder::default()
+impl ListPrefetchSchedulesOutput {
+    /// Creates a new builder-style object to manufacture [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput).
+    pub fn builder() -> crate::output::list_prefetch_schedules_output::Builder {
+        crate::output::list_prefetch_schedules_output::Builder::default()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateChannelOutput {
-    /// <p>The ARN of the channel.</p>
+pub struct CreatePrefetchScheduleOutput {
+    /// <p>The ARN to assign to the prefetch schedule.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The name of the channel.</p>
+    /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
     #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the channel is in a running state or not.</p>
+    pub consumption: std::option::Option<crate::model::PrefetchConsumption>,
+    /// <p>The name to assign to the prefetch schedule.</p>
     #[doc(hidden)]
-    pub channel_state: std::option::Option<crate::model::ChannelState>,
-    /// <p>The timestamp of when the channel was created.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name to assign to the playback configuration.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    pub playback_configuration_name: std::option::Option<std::string::String>,
+    /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
     #[doc(hidden)]
-    pub filler_slate: std::option::Option<crate::model::SlateSource>,
-    /// <p>The timestamp of when the channel was last modified.</p>
+    pub retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
+    /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The channel's output properties.</p>
-    #[doc(hidden)]
-    pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
-    /// <p>The channel's playback mode.</p>
-    #[doc(hidden)]
-    pub playback_mode: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the channel.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The channel's tier.</p>
-    #[doc(hidden)]
-    pub tier: std::option::Option<std::string::String>,
+    pub stream_id: std::option::Option<std::string::String>,
 }
-impl UpdateChannelOutput {
-    /// <p>The ARN of the channel.</p>
+impl CreatePrefetchScheduleOutput {
+    /// <p>The ARN to assign to the prefetch schedule.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
-        self.channel_name.as_deref()
+    /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
+    pub fn consumption(&self) -> std::option::Option<&crate::model::PrefetchConsumption> {
+        self.consumption.as_ref()
     }
-    /// <p>Indicates whether the channel is in a running state or not.</p>
-    pub fn channel_state(&self) -> std::option::Option<&crate::model::ChannelState> {
-        self.channel_state.as_ref()
+    /// <p>The name to assign to the prefetch schedule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
     }
-    /// <p>The timestamp of when the channel was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    /// <p>The name to assign to the playback configuration.</p>
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
     }
-    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
-    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
-        self.filler_slate.as_ref()
+    /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
+    pub fn retrieval(&self) -> std::option::Option<&crate::model::PrefetchRetrieval> {
+        self.retrieval.as_ref()
     }
-    /// <p>The timestamp of when the channel was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
-    }
-    /// <p>The channel's output properties.</p>
-    pub fn outputs(&self) -> std::option::Option<&[crate::model::ResponseOutputItem]> {
-        self.outputs.as_deref()
-    }
-    /// <p>The channel's playback mode.</p>
-    pub fn playback_mode(&self) -> std::option::Option<&str> {
-        self.playback_mode.as_deref()
-    }
-    /// <p>The tags assigned to the channel.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
-    }
-    /// <p>The channel's tier.</p>
-    pub fn tier(&self) -> std::option::Option<&str> {
-        self.tier.as_deref()
+    /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
 }
-/// See [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
-pub mod update_channel_output {
+/// See [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput).
+pub mod create_prefetch_schedule_output {
 
-    /// A builder for [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
+    /// A builder for [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) channel_name: std::option::Option<std::string::String>,
-        pub(crate) channel_state: std::option::Option<crate::model::ChannelState>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
-        pub(crate) playback_mode: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) tier: std::option::Option<std::string::String>,
+        pub(crate) consumption: std::option::Option<crate::model::PrefetchConsumption>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
+        pub(crate) retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
+        pub(crate) stream_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the channel.</p>
+        /// <p>The ARN to assign to the prefetch schedule.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the channel.</p>
+        /// <p>The ARN to assign to the prefetch schedule.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The name of the channel.</p>
-        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.channel_name = Some(input.into());
+        /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
+        pub fn consumption(mut self, input: crate::model::PrefetchConsumption) -> Self {
+            self.consumption = Some(input);
             self
         }
-        /// <p>The name of the channel.</p>
-        pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_name = input;
-            self
-        }
-        /// <p>Indicates whether the channel is in a running state or not.</p>
-        pub fn channel_state(mut self, input: crate::model::ChannelState) -> Self {
-            self.channel_state = Some(input);
-            self
-        }
-        /// <p>Indicates whether the channel is in a running state or not.</p>
-        pub fn set_channel_state(
+        /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
+        pub fn set_consumption(
             mut self,
-            input: std::option::Option<crate::model::ChannelState>,
+            input: std::option::Option<crate::model::PrefetchConsumption>,
         ) -> Self {
-            self.channel_state = input;
+            self.consumption = input;
             self
         }
-        /// <p>The timestamp of when the channel was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.creation_time = Some(input);
+        /// <p>The name to assign to the prefetch schedule.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        /// <p>The timestamp of when the channel was created.</p>
-        pub fn set_creation_time(
+        /// <p>The name to assign to the prefetch schedule.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name to assign to the playback configuration.</p>
+        pub fn playback_configuration_name(
             mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.creation_time = input;
+            self.playback_configuration_name = Some(input.into());
             self
         }
-        /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
-        pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
-            self.filler_slate = Some(input);
-            self
-        }
-        /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
-        pub fn set_filler_slate(
-            mut self,
-            input: std::option::Option<crate::model::SlateSource>,
-        ) -> Self {
-            self.filler_slate = input;
-            self
-        }
-        /// <p>The timestamp of when the channel was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.last_modified_time = Some(input);
-            self
-        }
-        /// <p>The timestamp of when the channel was last modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
-        }
-        /// Appends an item to `outputs`.
-        ///
-        /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
-        ///
-        /// <p>The channel's output properties.</p>
-        pub fn outputs(mut self, input: crate::model::ResponseOutputItem) -> Self {
-            let mut v = self.outputs.unwrap_or_default();
-            v.push(input);
-            self.outputs = Some(v);
-            self
-        }
-        /// <p>The channel's output properties.</p>
-        pub fn set_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
-        ) -> Self {
-            self.outputs = input;
-            self
-        }
-        /// <p>The channel's playback mode.</p>
-        pub fn playback_mode(mut self, input: impl Into<std::string::String>) -> Self {
-            self.playback_mode = Some(input.into());
-            self
-        }
-        /// <p>The channel's playback mode.</p>
-        pub fn set_playback_mode(
+        /// <p>The name to assign to the playback configuration.</p>
+        pub fn set_playback_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.playback_mode = input;
+            self.playback_configuration_name = input;
             self
         }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags assigned to the channel.</p>
-        pub fn tags(
+        /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
+        pub fn retrieval(mut self, input: crate::model::PrefetchRetrieval) -> Self {
+            self.retrieval = Some(input);
+            self
+        }
+        /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
+        pub fn set_retrieval(
             mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
+            input: std::option::Option<crate::model::PrefetchRetrieval>,
         ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
+            self.retrieval = input;
             self
         }
-        /// <p>The tags assigned to the channel.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
+        /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
             self
         }
-        /// <p>The channel's tier.</p>
-        pub fn tier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.tier = Some(input.into());
+        /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
             self
         }
-        /// <p>The channel's tier.</p>
-        pub fn set_tier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tier = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
-        pub fn build(self) -> crate::output::UpdateChannelOutput {
-            crate::output::UpdateChannelOutput {
+        /// Consumes the builder and constructs a [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput).
+        pub fn build(self) -> crate::output::CreatePrefetchScheduleOutput {
+            crate::output::CreatePrefetchScheduleOutput {
                 arn: self.arn,
-                channel_name: self.channel_name,
-                channel_state: self.channel_state,
-                creation_time: self.creation_time,
-                filler_slate: self.filler_slate,
-                last_modified_time: self.last_modified_time,
-                outputs: self.outputs,
-                playback_mode: self.playback_mode,
-                tags: self.tags,
-                tier: self.tier,
+                consumption: self.consumption,
+                name: self.name,
+                playback_configuration_name: self.playback_configuration_name,
+                retrieval: self.retrieval,
+                stream_id: self.stream_id,
             }
         }
     }
 }
-impl UpdateChannelOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
-    pub fn builder() -> crate::output::update_channel_output::Builder {
-        crate::output::update_channel_output::Builder::default()
+impl CreatePrefetchScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput).
+    pub fn builder() -> crate::output::create_prefetch_schedule_output::Builder {
+        crate::output::create_prefetch_schedule_output::Builder::default()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-pub mod untag_resource_output {
+pub struct DeletePrefetchScheduleOutput {}
+/// See [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput).
+pub mod delete_prefetch_schedule_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    /// A builder for [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-        pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+        /// Consumes the builder and constructs a [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput).
+        pub fn build(self) -> crate::output::DeletePrefetchScheduleOutput {
+            crate::output::DeletePrefetchScheduleOutput {}
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
+impl DeletePrefetchScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput).
+    pub fn builder() -> crate::output::delete_prefetch_schedule_output::Builder {
+        crate::output::delete_prefetch_schedule_output::Builder::default()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
-pub mod tag_resource_output {
+pub struct GetPrefetchScheduleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    #[doc(hidden)]
+    pub consumption: std::option::Option<crate::model::PrefetchConsumption>,
+    /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
+    #[doc(hidden)]
+    pub playback_configuration_name: std::option::Option<std::string::String>,
+    /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+    #[doc(hidden)]
+    pub retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
+    /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+    #[doc(hidden)]
+    pub stream_id: std::option::Option<std::string::String>,
+}
+impl GetPrefetchScheduleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    pub fn consumption(&self) -> std::option::Option<&crate::model::PrefetchConsumption> {
+        self.consumption.as_ref()
+    }
+    /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
+    }
+    /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+    pub fn retrieval(&self) -> std::option::Option<&crate::model::PrefetchRetrieval> {
+        self.retrieval.as_ref()
+    }
+    /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+}
+/// See [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput).
+pub mod get_prefetch_schedule_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    /// A builder for [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) consumption: std::option::Option<crate::model::PrefetchConsumption>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
+        pub(crate) retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
+        pub(crate) stream_id: std::option::Option<std::string::String>,
+    }
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
-        pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+        /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+        pub fn consumption(mut self, input: crate::model::PrefetchConsumption) -> Self {
+            self.consumption = Some(input);
+            self
+        }
+        /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+        pub fn set_consumption(
+            mut self,
+            input: std::option::Option<crate::model::PrefetchConsumption>,
+        ) -> Self {
+            self.consumption = input;
+            self
+        }
+        /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
+        pub fn playback_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.playback_configuration_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
+        pub fn set_playback_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.playback_configuration_name = input;
+            self
+        }
+        /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+        pub fn retrieval(mut self, input: crate::model::PrefetchRetrieval) -> Self {
+            self.retrieval = Some(input);
+            self
+        }
+        /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+        pub fn set_retrieval(
+            mut self,
+            input: std::option::Option<crate::model::PrefetchRetrieval>,
+        ) -> Self {
+            self.retrieval = input;
+            self
+        }
+        /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
+            self
+        }
+        /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput).
+        pub fn build(self) -> crate::output::GetPrefetchScheduleOutput {
+            crate::output::GetPrefetchScheduleOutput {
+                arn: self.arn,
+                consumption: self.consumption,
+                name: self.name,
+                playback_configuration_name: self.playback_configuration_name,
+                retrieval: self.retrieval,
+                stream_id: self.stream_id,
+            }
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
+impl GetPrefetchScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput).
+    pub fn builder() -> crate::output::get_prefetch_schedule_output::Builder {
+        crate::output::get_prefetch_schedule_output::Builder::default()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopChannelOutput {}
-/// See [`StopChannelOutput`](crate::output::StopChannelOutput).
-pub mod stop_channel_output {
+pub struct ListPlaybackConfigurationsOutput {
+    /// <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
+    #[doc(hidden)]
+    pub items: std::option::Option<std::vec::Vec<crate::model::PlaybackConfiguration>>,
+    /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPlaybackConfigurationsOutput {
+    /// <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::PlaybackConfiguration]> {
+        self.items.as_deref()
+    }
+    /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput).
+pub mod list_playback_configurations_output {
 
-    /// A builder for [`StopChannelOutput`](crate::output::StopChannelOutput).
+    /// A builder for [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::PlaybackConfiguration>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
     impl Builder {
-        /// Consumes the builder and constructs a [`StopChannelOutput`](crate::output::StopChannelOutput).
-        pub fn build(self) -> crate::output::StopChannelOutput {
-            crate::output::StopChannelOutput {}
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
+        pub fn items(mut self, input: crate::model::PlaybackConfiguration) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PlaybackConfiguration>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput).
+        pub fn build(self) -> crate::output::ListPlaybackConfigurationsOutput {
+            crate::output::ListPlaybackConfigurationsOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
         }
     }
 }
-impl StopChannelOutput {
-    /// Creates a new builder-style object to manufacture [`StopChannelOutput`](crate::output::StopChannelOutput).
-    pub fn builder() -> crate::output::stop_channel_output::Builder {
-        crate::output::stop_channel_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartChannelOutput {}
-/// See [`StartChannelOutput`](crate::output::StartChannelOutput).
-pub mod start_channel_output {
-
-    /// A builder for [`StartChannelOutput`](crate::output::StartChannelOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
-    impl Builder {
-        /// Consumes the builder and constructs a [`StartChannelOutput`](crate::output::StartChannelOutput).
-        pub fn build(self) -> crate::output::StartChannelOutput {
-            crate::output::StartChannelOutput {}
-        }
-    }
-}
-impl StartChannelOutput {
-    /// Creates a new builder-style object to manufacture [`StartChannelOutput`](crate::output::StartChannelOutput).
-    pub fn builder() -> crate::output::start_channel_output::Builder {
-        crate::output::start_channel_output::Builder::default()
+impl ListPlaybackConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput).
+    pub fn builder() -> crate::output::list_playback_configurations_output::Builder {
+        crate::output::list_playback_configurations_output::Builder::default()
     }
 }
 
@@ -1047,7 +2108,7 @@ impl StartChannelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPlaybackConfigurationOutput {
-    /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+    /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
     #[doc(hidden)]
     pub ad_decision_server_url: std::option::Option<std::string::String>,
     /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
@@ -1088,19 +2149,19 @@ pub struct PutPlaybackConfigurationOutput {
     /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
     #[doc(hidden)]
     pub personalization_threshold_seconds: i32,
-    /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) associated with the playback configuration.</p>
     #[doc(hidden)]
     pub playback_configuration_arn: std::option::Option<std::string::String>,
-    /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.</p>
+    /// <p>The playback endpoint prefix associated with the playback configuration.</p>
     #[doc(hidden)]
     pub playback_endpoint_prefix: std::option::Option<std::string::String>,
-    /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+    /// <p>The session initialization endpoint prefix associated with the playback configuration.</p>
     #[doc(hidden)]
     pub session_initialization_endpoint_prefix: std::option::Option<std::string::String>,
-    /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+    /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
     #[doc(hidden)]
     pub slate_ad_url: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the playback configuration.</p>
+    /// <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1112,7 +2173,7 @@ pub struct PutPlaybackConfigurationOutput {
     pub video_content_source_url: std::option::Option<std::string::String>,
 }
 impl PutPlaybackConfigurationOutput {
-    /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+    /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
     pub fn ad_decision_server_url(&self) -> std::option::Option<&str> {
         self.ad_decision_server_url.as_deref()
     }
@@ -1171,23 +2232,23 @@ impl PutPlaybackConfigurationOutput {
     pub fn personalization_threshold_seconds(&self) -> i32 {
         self.personalization_threshold_seconds
     }
-    /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) associated with the playback configuration.</p>
     pub fn playback_configuration_arn(&self) -> std::option::Option<&str> {
         self.playback_configuration_arn.as_deref()
     }
-    /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.</p>
+    /// <p>The playback endpoint prefix associated with the playback configuration.</p>
     pub fn playback_endpoint_prefix(&self) -> std::option::Option<&str> {
         self.playback_endpoint_prefix.as_deref()
     }
-    /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+    /// <p>The session initialization endpoint prefix associated with the playback configuration.</p>
     pub fn session_initialization_endpoint_prefix(&self) -> std::option::Option<&str> {
         self.session_initialization_endpoint_prefix.as_deref()
     }
-    /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+    /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
     pub fn slate_ad_url(&self) -> std::option::Option<&str> {
         self.slate_ad_url.as_deref()
     }
-    /// <p>The tags assigned to the playback configuration.</p>
+    /// <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1239,12 +2300,12 @@ pub mod put_playback_configuration_output {
         pub(crate) video_content_source_url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+        /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
         pub fn ad_decision_server_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.ad_decision_server_url = Some(input.into());
             self
         }
-        /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+        /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
         pub fn set_ad_decision_server_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1410,12 +2471,12 @@ pub mod put_playback_configuration_output {
             self.personalization_threshold_seconds = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) associated with the playback configuration.</p>
         pub fn playback_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.playback_configuration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) associated with the playback configuration.</p>
         pub fn set_playback_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1423,12 +2484,12 @@ pub mod put_playback_configuration_output {
             self.playback_configuration_arn = input;
             self
         }
-        /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.</p>
+        /// <p>The playback endpoint prefix associated with the playback configuration.</p>
         pub fn playback_endpoint_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.playback_endpoint_prefix = Some(input.into());
             self
         }
-        /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.</p>
+        /// <p>The playback endpoint prefix associated with the playback configuration.</p>
         pub fn set_playback_endpoint_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1436,7 +2497,7 @@ pub mod put_playback_configuration_output {
             self.playback_endpoint_prefix = input;
             self
         }
-        /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+        /// <p>The session initialization endpoint prefix associated with the playback configuration.</p>
         pub fn session_initialization_endpoint_prefix(
             mut self,
             input: impl Into<std::string::String>,
@@ -1444,7 +2505,7 @@ pub mod put_playback_configuration_output {
             self.session_initialization_endpoint_prefix = Some(input.into());
             self
         }
-        /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+        /// <p>The session initialization endpoint prefix associated with the playback configuration.</p>
         pub fn set_session_initialization_endpoint_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1452,12 +2513,12 @@ pub mod put_playback_configuration_output {
             self.session_initialization_endpoint_prefix = input;
             self
         }
-        /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+        /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
         pub fn slate_ad_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.slate_ad_url = Some(input.into());
             self
         }
-        /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+        /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
         pub fn set_slate_ad_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slate_ad_url = input;
             self
@@ -1466,7 +2527,7 @@ pub mod put_playback_configuration_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the playback configuration.</p>
+        /// <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1477,7 +2538,7 @@ pub mod put_playback_configuration_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags assigned to the playback configuration.</p>
+        /// <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1551,778 +2612,24 @@ impl PutPlaybackConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutChannelPolicyOutput {}
-/// See [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput).
-pub mod put_channel_policy_output {
+pub struct DeletePlaybackConfigurationOutput {}
+/// See [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput).
+pub mod delete_playback_configuration_output {
 
-    /// A builder for [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput).
+    /// A builder for [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput).
-        pub fn build(self) -> crate::output::PutChannelPolicyOutput {
-            crate::output::PutChannelPolicyOutput {}
+        /// Consumes the builder and constructs a [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput).
+        pub fn build(self) -> crate::output::DeletePlaybackConfigurationOutput {
+            crate::output::DeletePlaybackConfigurationOutput {}
         }
     }
 }
-impl PutChannelPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput).
-    pub fn builder() -> crate::output::put_channel_policy_output::Builder {
-        crate::output::put_channel_policy_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVodSourcesOutput {
-    /// <p>Lists the VOD sources.</p>
-    #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::model::VodSource>>,
-    /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl ListVodSourcesOutput {
-    /// <p>Lists the VOD sources.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::VodSource]> {
-        self.items.as_deref()
-    }
-    /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-}
-/// See [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput).
-pub mod list_vod_sources_output {
-
-    /// A builder for [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::VodSource>>,
-        pub(crate) next_token: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// Appends an item to `items`.
-        ///
-        /// To override the contents of this collection use [`set_items`](Self::set_items).
-        ///
-        /// <p>Lists the VOD sources.</p>
-        pub fn items(mut self, input: crate::model::VodSource) -> Self {
-            let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
-        }
-        /// <p>Lists the VOD sources.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VodSource>>,
-        ) -> Self {
-            self.items = input;
-            self
-        }
-        /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(input.into());
-            self
-        }
-        /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput).
-        pub fn build(self) -> crate::output::ListVodSourcesOutput {
-            crate::output::ListVodSourcesOutput {
-                items: self.items,
-                next_token: self.next_token,
-            }
-        }
-    }
-}
-impl ListVodSourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput).
-    pub fn builder() -> crate::output::list_vod_sources_output::Builder {
-        crate::output::list_vod_sources_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
-    /// <p>A comma-separated list of tag key:value pairs.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-}
-impl ListTagsForResourceOutput {
-    /// <p>A comma-separated list of tag key:value pairs.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
-    }
-}
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-pub mod list_tags_for_resource_output {
-
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    }
-    impl Builder {
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>A comma-separated list of tag key:value pairs.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
-        }
-        /// <p>A comma-separated list of tag key:value pairs.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-        pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
-        }
-    }
-}
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSourceLocationsOutput {
-    /// <p>A list of source locations.</p>
-    #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::model::SourceLocation>>,
-    /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl ListSourceLocationsOutput {
-    /// <p>A list of source locations.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::SourceLocation]> {
-        self.items.as_deref()
-    }
-    /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-}
-/// See [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput).
-pub mod list_source_locations_output {
-
-    /// A builder for [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::SourceLocation>>,
-        pub(crate) next_token: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// Appends an item to `items`.
-        ///
-        /// To override the contents of this collection use [`set_items`](Self::set_items).
-        ///
-        /// <p>A list of source locations.</p>
-        pub fn items(mut self, input: crate::model::SourceLocation) -> Self {
-            let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
-        }
-        /// <p>A list of source locations.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SourceLocation>>,
-        ) -> Self {
-            self.items = input;
-            self
-        }
-        /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(input.into());
-            self
-        }
-        /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput).
-        pub fn build(self) -> crate::output::ListSourceLocationsOutput {
-            crate::output::ListSourceLocationsOutput {
-                items: self.items,
-                next_token: self.next_token,
-            }
-        }
-    }
-}
-impl ListSourceLocationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput).
-    pub fn builder() -> crate::output::list_source_locations_output::Builder {
-        crate::output::list_source_locations_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPrefetchSchedulesOutput {
-    /// <p>Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
-    #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::model::PrefetchSchedule>>,
-    /// <p>The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl ListPrefetchSchedulesOutput {
-    /// <p>Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::PrefetchSchedule]> {
-        self.items.as_deref()
-    }
-    /// <p>The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-}
-/// See [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput).
-pub mod list_prefetch_schedules_output {
-
-    /// A builder for [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::PrefetchSchedule>>,
-        pub(crate) next_token: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// Appends an item to `items`.
-        ///
-        /// To override the contents of this collection use [`set_items`](Self::set_items).
-        ///
-        /// <p>Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
-        pub fn items(mut self, input: crate::model::PrefetchSchedule) -> Self {
-            let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
-        }
-        /// <p>Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PrefetchSchedule>>,
-        ) -> Self {
-            self.items = input;
-            self
-        }
-        /// <p>The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(input.into());
-            self
-        }
-        /// <p>The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput).
-        pub fn build(self) -> crate::output::ListPrefetchSchedulesOutput {
-            crate::output::ListPrefetchSchedulesOutput {
-                items: self.items,
-                next_token: self.next_token,
-            }
-        }
-    }
-}
-impl ListPrefetchSchedulesOutput {
-    /// Creates a new builder-style object to manufacture [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput).
-    pub fn builder() -> crate::output::list_prefetch_schedules_output::Builder {
-        crate::output::list_prefetch_schedules_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPlaybackConfigurationsOutput {
-    /// <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
-    #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::model::PlaybackConfiguration>>,
-    /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl ListPlaybackConfigurationsOutput {
-    /// <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::PlaybackConfiguration]> {
-        self.items.as_deref()
-    }
-    /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-}
-/// See [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput).
-pub mod list_playback_configurations_output {
-
-    /// A builder for [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::PlaybackConfiguration>>,
-        pub(crate) next_token: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// Appends an item to `items`.
-        ///
-        /// To override the contents of this collection use [`set_items`](Self::set_items).
-        ///
-        /// <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
-        pub fn items(mut self, input: crate::model::PlaybackConfiguration) -> Self {
-            let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
-        }
-        /// <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PlaybackConfiguration>>,
-        ) -> Self {
-            self.items = input;
-            self
-        }
-        /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(input.into());
-            self
-        }
-        /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput).
-        pub fn build(self) -> crate::output::ListPlaybackConfigurationsOutput {
-            crate::output::ListPlaybackConfigurationsOutput {
-                items: self.items,
-                next_token: self.next_token,
-            }
-        }
-    }
-}
-impl ListPlaybackConfigurationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput).
-    pub fn builder() -> crate::output::list_playback_configurations_output::Builder {
-        crate::output::list_playback_configurations_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLiveSourcesOutput {
-    /// <p>Lists the live sources.</p>
-    #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::model::LiveSource>>,
-    /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl ListLiveSourcesOutput {
-    /// <p>Lists the live sources.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::LiveSource]> {
-        self.items.as_deref()
-    }
-    /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-}
-/// See [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput).
-pub mod list_live_sources_output {
-
-    /// A builder for [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::LiveSource>>,
-        pub(crate) next_token: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// Appends an item to `items`.
-        ///
-        /// To override the contents of this collection use [`set_items`](Self::set_items).
-        ///
-        /// <p>Lists the live sources.</p>
-        pub fn items(mut self, input: crate::model::LiveSource) -> Self {
-            let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
-        }
-        /// <p>Lists the live sources.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LiveSource>>,
-        ) -> Self {
-            self.items = input;
-            self
-        }
-        /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(input.into());
-            self
-        }
-        /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput).
-        pub fn build(self) -> crate::output::ListLiveSourcesOutput {
-            crate::output::ListLiveSourcesOutput {
-                items: self.items,
-                next_token: self.next_token,
-            }
-        }
-    }
-}
-impl ListLiveSourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput).
-    pub fn builder() -> crate::output::list_live_sources_output::Builder {
-        crate::output::list_live_sources_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListChannelsOutput {
-    /// <p>A list of channels that are associated with this account.</p>
-    #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::model::Channel>>,
-    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl ListChannelsOutput {
-    /// <p>A list of channels that are associated with this account.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::Channel]> {
-        self.items.as_deref()
-    }
-    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-}
-/// See [`ListChannelsOutput`](crate::output::ListChannelsOutput).
-pub mod list_channels_output {
-
-    /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Channel>>,
-        pub(crate) next_token: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// Appends an item to `items`.
-        ///
-        /// To override the contents of this collection use [`set_items`](Self::set_items).
-        ///
-        /// <p>A list of channels that are associated with this account.</p>
-        pub fn items(mut self, input: crate::model::Channel) -> Self {
-            let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
-        }
-        /// <p>A list of channels that are associated with this account.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
-        ) -> Self {
-            self.items = input;
-            self
-        }
-        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(input.into());
-            self
-        }
-        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ListChannelsOutput`](crate::output::ListChannelsOutput).
-        pub fn build(self) -> crate::output::ListChannelsOutput {
-            crate::output::ListChannelsOutput {
-                items: self.items,
-                next_token: self.next_token,
-            }
-        }
-    }
-}
-impl ListChannelsOutput {
-    /// Creates a new builder-style object to manufacture [`ListChannelsOutput`](crate::output::ListChannelsOutput).
-    pub fn builder() -> crate::output::list_channels_output::Builder {
-        crate::output::list_channels_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAlertsOutput {
-    /// <p>A list of alerts that are associated with this resource.</p>
-    #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::model::Alert>>,
-    /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl ListAlertsOutput {
-    /// <p>A list of alerts that are associated with this resource.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::Alert]> {
-        self.items.as_deref()
-    }
-    /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-}
-/// See [`ListAlertsOutput`](crate::output::ListAlertsOutput).
-pub mod list_alerts_output {
-
-    /// A builder for [`ListAlertsOutput`](crate::output::ListAlertsOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Alert>>,
-        pub(crate) next_token: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// Appends an item to `items`.
-        ///
-        /// To override the contents of this collection use [`set_items`](Self::set_items).
-        ///
-        /// <p>A list of alerts that are associated with this resource.</p>
-        pub fn items(mut self, input: crate::model::Alert) -> Self {
-            let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
-        }
-        /// <p>A list of alerts that are associated with this resource.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Alert>>,
-        ) -> Self {
-            self.items = input;
-            self
-        }
-        /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(input.into());
-            self
-        }
-        /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ListAlertsOutput`](crate::output::ListAlertsOutput).
-        pub fn build(self) -> crate::output::ListAlertsOutput {
-            crate::output::ListAlertsOutput {
-                items: self.items,
-                next_token: self.next_token,
-            }
-        }
-    }
-}
-impl ListAlertsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAlertsOutput`](crate::output::ListAlertsOutput).
-    pub fn builder() -> crate::output::list_alerts_output::Builder {
-        crate::output::list_alerts_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPrefetchScheduleOutput {
-    /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
-    #[doc(hidden)]
-    pub consumption: std::option::Option<crate::model::PrefetchConsumption>,
-    /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
-    #[doc(hidden)]
-    pub playback_configuration_name: std::option::Option<std::string::String>,
-    /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
-    #[doc(hidden)]
-    pub retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
-    /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
-    #[doc(hidden)]
-    pub stream_id: std::option::Option<std::string::String>,
-}
-impl GetPrefetchScheduleOutput {
-    /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
-    }
-    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
-    pub fn consumption(&self) -> std::option::Option<&crate::model::PrefetchConsumption> {
-        self.consumption.as_ref()
-    }
-    /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
-    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
-        self.playback_configuration_name.as_deref()
-    }
-    /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
-    pub fn retrieval(&self) -> std::option::Option<&crate::model::PrefetchRetrieval> {
-        self.retrieval.as_ref()
-    }
-    /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
-        self.stream_id.as_deref()
-    }
-}
-/// See [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput).
-pub mod get_prefetch_schedule_output {
-
-    /// A builder for [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) consumption: std::option::Option<crate::model::PrefetchConsumption>,
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
-        pub(crate) retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
-        pub(crate) stream_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
-        pub fn consumption(mut self, input: crate::model::PrefetchConsumption) -> Self {
-            self.consumption = Some(input);
-            self
-        }
-        /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
-        pub fn set_consumption(
-            mut self,
-            input: std::option::Option<crate::model::PrefetchConsumption>,
-        ) -> Self {
-            self.consumption = input;
-            self
-        }
-        /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
-        pub fn playback_configuration_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.playback_configuration_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
-        pub fn set_playback_configuration_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.playback_configuration_name = input;
-            self
-        }
-        /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
-        pub fn retrieval(mut self, input: crate::model::PrefetchRetrieval) -> Self {
-            self.retrieval = Some(input);
-            self
-        }
-        /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
-        pub fn set_retrieval(
-            mut self,
-            input: std::option::Option<crate::model::PrefetchRetrieval>,
-        ) -> Self {
-            self.retrieval = input;
-            self
-        }
-        /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
-        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.stream_id = Some(input.into());
-            self
-        }
-        /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
-        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput).
-        pub fn build(self) -> crate::output::GetPrefetchScheduleOutput {
-            crate::output::GetPrefetchScheduleOutput {
-                arn: self.arn,
-                consumption: self.consumption,
-                name: self.name,
-                playback_configuration_name: self.playback_configuration_name,
-                retrieval: self.retrieval,
-                stream_id: self.stream_id,
-            }
-        }
-    }
-}
-impl GetPrefetchScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput).
-    pub fn builder() -> crate::output::get_prefetch_schedule_output::Builder {
-        crate::output::get_prefetch_schedule_output::Builder::default()
+impl DeletePlaybackConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput).
+    pub fn builder() -> crate::output::delete_playback_configuration_output::Builder {
+        crate::output::delete_playback_configuration_output::Builder::default()
     }
 }
 
@@ -2383,7 +2690,7 @@ pub struct GetPlaybackConfigurationOutput {
     /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
     #[doc(hidden)]
     pub slate_ad_url: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the playback configuration.</p>
+    /// <p>The tags assigned to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2470,7 +2777,7 @@ impl GetPlaybackConfigurationOutput {
     pub fn slate_ad_url(&self) -> std::option::Option<&str> {
         self.slate_ad_url.as_deref()
     }
-    /// <p>The tags assigned to the playback configuration.</p>
+    /// <p>The tags assigned to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2749,7 +3056,7 @@ pub mod get_playback_configuration_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the playback configuration.</p>
+        /// <p>The tags assigned to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2760,7 +3067,7 @@ pub mod get_playback_configuration_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags assigned to the playback configuration.</p>
+        /// <p>The tags assigned to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2834,11 +3141,792 @@ impl GetPlaybackConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListLiveSourcesOutput {
+    /// <p>Lists the live sources.</p>
+    #[doc(hidden)]
+    pub items: std::option::Option<std::vec::Vec<crate::model::LiveSource>>,
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLiveSourcesOutput {
+    /// <p>Lists the live sources.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::LiveSource]> {
+        self.items.as_deref()
+    }
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput).
+pub mod list_live_sources_output {
+
+    /// A builder for [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::LiveSource>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Lists the live sources.</p>
+        pub fn items(mut self, input: crate::model::LiveSource) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>Lists the live sources.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LiveSource>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput).
+        pub fn build(self) -> crate::output::ListLiveSourcesOutput {
+            crate::output::ListLiveSourcesOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListLiveSourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput).
+    pub fn builder() -> crate::output::list_live_sources_output::Builder {
+        crate::output::list_live_sources_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateLiveSourceOutput {
+    /// <p>The ARN to assign to the live source.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The time the live source was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A list of HTTP package configuration parameters for this live source.</p>
+    #[doc(hidden)]
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    /// <p>The time the live source was last modified.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The name to assign to the live source.</p>
+    #[doc(hidden)]
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The name to assign to the source location of the live source.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateLiveSourceOutput {
+    /// <p>The ARN to assign to the live source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time the live source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A list of HTTP package configuration parameters for this live source.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The time the live source was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name to assign to the live source.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The name to assign to the source location of the live source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+/// See [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput).
+pub mod create_live_source_output {
+
+    /// A builder for [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) http_package_configurations:
+            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The ARN to assign to the live source.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN to assign to the live source.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The time the live source was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time the live source was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Appends an item to `http_package_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        ///
+        /// <p>A list of HTTP package configuration parameters for this live source.</p>
+        pub fn http_package_configurations(
+            mut self,
+            input: crate::model::HttpPackageConfiguration,
+        ) -> Self {
+            let mut v = self.http_package_configurations.unwrap_or_default();
+            v.push(input);
+            self.http_package_configurations = Some(v);
+            self
+        }
+        /// <p>A list of HTTP package configuration parameters for this live source.</p>
+        pub fn set_http_package_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        ) -> Self {
+            self.http_package_configurations = input;
+            self
+        }
+        /// <p>The time the live source was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The time the live source was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The name to assign to the live source.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The name to assign to the live source.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
+            self
+        }
+        /// <p>The name to assign to the source location of the live source.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The name to assign to the source location of the live source.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput).
+        pub fn build(self) -> crate::output::CreateLiveSourceOutput {
+            crate::output::CreateLiveSourceOutput {
+                arn: self.arn,
+                creation_time: self.creation_time,
+                http_package_configurations: self.http_package_configurations,
+                last_modified_time: self.last_modified_time,
+                live_source_name: self.live_source_name,
+                source_location_name: self.source_location_name,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl CreateLiveSourceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput).
+    pub fn builder() -> crate::output::create_live_source_output::Builder {
+        crate::output::create_live_source_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteLiveSourceOutput {}
+/// See [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput).
+pub mod delete_live_source_output {
+
+    /// A builder for [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput).
+        pub fn build(self) -> crate::output::DeleteLiveSourceOutput {
+            crate::output::DeleteLiveSourceOutput {}
+        }
+    }
+}
+impl DeleteLiveSourceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput).
+    pub fn builder() -> crate::output::delete_live_source_output::Builder {
+        crate::output::delete_live_source_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateLiveSourceOutput {
+    /// <p>The Amazon Resource Name (ARN) associated with this live source.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp that indicates when the live source was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A list of HTTP package configurations for the live source on this account.</p>
+    #[doc(hidden)]
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    /// <p>The timestamp that indicates when the live source was last modified.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The name of the live source.</p>
+    #[doc(hidden)]
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source location associated with the live source.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateLiveSourceOutput {
+    /// <p>The Amazon Resource Name (ARN) associated with this live source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the live source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A list of HTTP package configurations for the live source on this account.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The timestamp that indicates when the live source was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name of the live source.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The name of the source location associated with the live source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+/// See [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput).
+pub mod update_live_source_output {
+
+    /// A builder for [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) http_package_configurations:
+            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) associated with this live source.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) associated with this live source.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Appends an item to `http_package_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        ///
+        /// <p>A list of HTTP package configurations for the live source on this account.</p>
+        pub fn http_package_configurations(
+            mut self,
+            input: crate::model::HttpPackageConfiguration,
+        ) -> Self {
+            let mut v = self.http_package_configurations.unwrap_or_default();
+            v.push(input);
+            self.http_package_configurations = Some(v);
+            self
+        }
+        /// <p>A list of HTTP package configurations for the live source on this account.</p>
+        pub fn set_http_package_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        ) -> Self {
+            self.http_package_configurations = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The name of the live source.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the live source.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
+            self
+        }
+        /// <p>The name of the source location associated with the live source.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the source location associated with the live source.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput).
+        pub fn build(self) -> crate::output::UpdateLiveSourceOutput {
+            crate::output::UpdateLiveSourceOutput {
+                arn: self.arn,
+                creation_time: self.creation_time,
+                http_package_configurations: self.http_package_configurations,
+                last_modified_time: self.last_modified_time,
+                live_source_name: self.live_source_name,
+                source_location_name: self.source_location_name,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl UpdateLiveSourceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput).
+    pub fn builder() -> crate::output::update_live_source_output::Builder {
+        crate::output::update_live_source_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeLiveSourceOutput {
+    /// <p>The ARN of the live source.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp that indicates when the live source was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The HTTP package configurations.</p>
+    #[doc(hidden)]
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    /// <p>The timestamp that indicates when the live source was modified.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The name of the live source.</p>
+    #[doc(hidden)]
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source location associated with the live source.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeLiveSourceOutput {
+    /// <p>The ARN of the live source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the live source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The HTTP package configurations.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The timestamp that indicates when the live source was modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name of the live source.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The name of the source location associated with the live source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+/// See [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput).
+pub mod describe_live_source_output {
+
+    /// A builder for [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) http_package_configurations:
+            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The ARN of the live source.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the live source.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Appends an item to `http_package_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        ///
+        /// <p>The HTTP package configurations.</p>
+        pub fn http_package_configurations(
+            mut self,
+            input: crate::model::HttpPackageConfiguration,
+        ) -> Self {
+            let mut v = self.http_package_configurations.unwrap_or_default();
+            v.push(input);
+            self.http_package_configurations = Some(v);
+            self
+        }
+        /// <p>The HTTP package configurations.</p>
+        pub fn set_http_package_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        ) -> Self {
+            self.http_package_configurations = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The name of the live source.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the live source.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
+            self
+        }
+        /// <p>The name of the source location associated with the live source.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the source location associated with the live source.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput).
+        pub fn build(self) -> crate::output::DescribeLiveSourceOutput {
+            crate::output::DescribeLiveSourceOutput {
+                arn: self.arn,
+                creation_time: self.creation_time,
+                http_package_configurations: self.http_package_configurations,
+                last_modified_time: self.last_modified_time,
+                live_source_name: self.live_source_name,
+                source_location_name: self.source_location_name,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl DescribeLiveSourceOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput).
+    pub fn builder() -> crate::output::describe_live_source_output::Builder {
+        crate::output::describe_live_source_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StopChannelOutput {}
+/// See [`StopChannelOutput`](crate::output::StopChannelOutput).
+pub mod stop_channel_output {
+
+    /// A builder for [`StopChannelOutput`](crate::output::StopChannelOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`StopChannelOutput`](crate::output::StopChannelOutput).
+        pub fn build(self) -> crate::output::StopChannelOutput {
+            crate::output::StopChannelOutput {}
+        }
+    }
+}
+impl StopChannelOutput {
+    /// Creates a new builder-style object to manufacture [`StopChannelOutput`](crate::output::StopChannelOutput).
+    pub fn builder() -> crate::output::stop_channel_output::Builder {
+        crate::output::stop_channel_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartChannelOutput {}
+/// See [`StartChannelOutput`](crate::output::StartChannelOutput).
+pub mod start_channel_output {
+
+    /// A builder for [`StartChannelOutput`](crate::output::StartChannelOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`StartChannelOutput`](crate::output::StartChannelOutput).
+        pub fn build(self) -> crate::output::StartChannelOutput {
+            crate::output::StartChannelOutput {}
+        }
+    }
+}
+impl StartChannelOutput {
+    /// Creates a new builder-style object to manufacture [`StartChannelOutput`](crate::output::StartChannelOutput).
+    pub fn builder() -> crate::output::start_channel_output::Builder {
+        crate::output::start_channel_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChannelScheduleOutput {
     /// <p>A list of schedule entries for the channel.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ScheduleEntry>>,
-    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -2847,7 +3935,7 @@ impl GetChannelScheduleOutput {
     pub fn items(&self) -> std::option::Option<&[crate::model::ScheduleEntry]> {
         self.items.as_deref()
     }
-    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2881,12 +3969,12 @@ pub mod get_channel_schedule_output {
             self.items = input;
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2910,148 +3998,143 @@ impl GetChannelScheduleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetChannelPolicyOutput {
-    /// <p>The IAM policy for the channel.</p>
-    #[doc(hidden)]
-    pub policy: std::option::Option<std::string::String>,
-}
-impl GetChannelPolicyOutput {
-    /// <p>The IAM policy for the channel.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
-        self.policy.as_deref()
-    }
-}
-/// See [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput).
-pub mod get_channel_policy_output {
-
-    /// A builder for [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) policy: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The IAM policy for the channel.</p>
-        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
-            self.policy = Some(input.into());
-            self
-        }
-        /// <p>The IAM policy for the channel.</p>
-        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput).
-        pub fn build(self) -> crate::output::GetChannelPolicyOutput {
-            crate::output::GetChannelPolicyOutput {
-                policy: self.policy,
-            }
-        }
-    }
-}
-impl GetChannelPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput).
-    pub fn builder() -> crate::output::get_channel_policy_output::Builder {
-        crate::output::get_channel_policy_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVodSourceOutput {
-    /// <p>The ARN of the VOD source.</p>
+pub struct CreateChannelOutput {
+    /// <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp that indicates when the VOD source was created.</p>
+    /// <p>The name to assign to the channel.</p>
+    #[doc(hidden)]
+    pub channel_name: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the channel is in a running state or not.</p>
+    #[doc(hidden)]
+    pub channel_state: std::option::Option<crate::model::ChannelState>,
+    /// <p>The timestamp of when the channel was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The HTTP package configurations.</p>
+    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
     #[doc(hidden)]
-    pub http_package_configurations:
-        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-    /// <p>The last modified time of the VOD source.</p>
+    pub filler_slate: std::option::Option<crate::model::SlateSource>,
+    /// <p>The timestamp of when the channel was last modified.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The name of the source location associated with the VOD source.</p>
+    /// <p>The output properties to assign to the channel.</p>
     #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the VOD source.</p>
+    pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
+    /// <p>The playback mode to assign to the channel.</p>
+    #[doc(hidden)]
+    pub playback_mode: std::option::Option<std::string::String>,
+    /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The name of the VOD source.</p>
+    /// <p>The tier of the channel.</p>
     #[doc(hidden)]
-    pub vod_source_name: std::option::Option<std::string::String>,
+    pub tier: std::option::Option<std::string::String>,
 }
-impl DescribeVodSourceOutput {
-    /// <p>The ARN of the VOD source.</p>
+impl CreateChannelOutput {
+    /// <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The timestamp that indicates when the VOD source was created.</p>
+    /// <p>The name to assign to the channel.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>Indicates whether the channel is in a running state or not.</p>
+    pub fn channel_state(&self) -> std::option::Option<&crate::model::ChannelState> {
+        self.channel_state.as_ref()
+    }
+    /// <p>The timestamp of when the channel was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The HTTP package configurations.</p>
-    pub fn http_package_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
+    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
+        self.filler_slate.as_ref()
     }
-    /// <p>The last modified time of the VOD source.</p>
+    /// <p>The timestamp of when the channel was last modified.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>The name of the source location associated with the VOD source.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
+    /// <p>The output properties to assign to the channel.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::ResponseOutputItem]> {
+        self.outputs.as_deref()
     }
-    /// <p>The tags assigned to the VOD source.</p>
+    /// <p>The playback mode to assign to the channel.</p>
+    pub fn playback_mode(&self) -> std::option::Option<&str> {
+        self.playback_mode.as_deref()
+    }
+    /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>The name of the VOD source.</p>
-    pub fn vod_source_name(&self) -> std::option::Option<&str> {
-        self.vod_source_name.as_deref()
+    /// <p>The tier of the channel.</p>
+    pub fn tier(&self) -> std::option::Option<&str> {
+        self.tier.as_deref()
     }
 }
-/// See [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput).
-pub mod describe_vod_source_output {
+/// See [`CreateChannelOutput`](crate::output::CreateChannelOutput).
+pub mod create_channel_output {
 
-    /// A builder for [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput).
+    /// A builder for [`CreateChannelOutput`](crate::output::CreateChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) channel_name: std::option::Option<std::string::String>,
+        pub(crate) channel_state: std::option::Option<crate::model::ChannelState>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) http_package_configurations:
-            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
+        pub(crate) playback_mode: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) vod_source_name: std::option::Option<std::string::String>,
+        pub(crate) tier: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the VOD source.</p>
+        /// <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the VOD source.</p>
+        /// <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The timestamp that indicates when the VOD source was created.</p>
+        /// <p>The name to assign to the channel.</p>
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_name = Some(input.into());
+            self
+        }
+        /// <p>The name to assign to the channel.</p>
+        pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_name = input;
+            self
+        }
+        /// <p>Indicates whether the channel is in a running state or not.</p>
+        pub fn channel_state(mut self, input: crate::model::ChannelState) -> Self {
+            self.channel_state = Some(input);
+            self
+        }
+        /// <p>Indicates whether the channel is in a running state or not.</p>
+        pub fn set_channel_state(
+            mut self,
+            input: std::option::Option<crate::model::ChannelState>,
+        ) -> Self {
+            self.channel_state = input;
+            self
+        }
+        /// <p>The timestamp of when the channel was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
-        /// <p>The timestamp that indicates when the VOD source was created.</p>
+        /// <p>The timestamp of when the channel was created.</p>
         pub fn set_creation_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3059,34 +4142,25 @@ pub mod describe_vod_source_output {
             self.creation_time = input;
             self
         }
-        /// Appends an item to `http_package_configurations`.
-        ///
-        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
-        ///
-        /// <p>The HTTP package configurations.</p>
-        pub fn http_package_configurations(
-            mut self,
-            input: crate::model::HttpPackageConfiguration,
-        ) -> Self {
-            let mut v = self.http_package_configurations.unwrap_or_default();
-            v.push(input);
-            self.http_package_configurations = Some(v);
+        /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+        pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
+            self.filler_slate = Some(input);
             self
         }
-        /// <p>The HTTP package configurations.</p>
-        pub fn set_http_package_configurations(
+        /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+        pub fn set_filler_slate(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+            input: std::option::Option<crate::model::SlateSource>,
         ) -> Self {
-            self.http_package_configurations = input;
+            self.filler_slate = input;
             self
         }
-        /// <p>The last modified time of the VOD source.</p>
+        /// <p>The timestamp of when the channel was last modified.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
-        /// <p>The last modified time of the VOD source.</p>
+        /// <p>The timestamp of when the channel was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3094,24 +4168,43 @@ pub mod describe_vod_source_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>The name of the source location associated with the VOD source.</p>
-        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.source_location_name = Some(input.into());
+        /// Appends an item to `outputs`.
+        ///
+        /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
+        ///
+        /// <p>The output properties to assign to the channel.</p>
+        pub fn outputs(mut self, input: crate::model::ResponseOutputItem) -> Self {
+            let mut v = self.outputs.unwrap_or_default();
+            v.push(input);
+            self.outputs = Some(v);
             self
         }
-        /// <p>The name of the source location associated with the VOD source.</p>
-        pub fn set_source_location_name(
+        /// <p>The output properties to assign to the channel.</p>
+        pub fn set_outputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
+        ) -> Self {
+            self.outputs = input;
+            self
+        }
+        /// <p>The playback mode to assign to the channel.</p>
+        pub fn playback_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.playback_mode = Some(input.into());
+            self
+        }
+        /// <p>The playback mode to assign to the channel.</p>
+        pub fn set_playback_mode(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_location_name = input;
+            self.playback_mode = input;
             self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the VOD source.</p>
+        /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3122,7 +4215,7 @@ pub mod describe_vod_source_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags assigned to the VOD source.</p>
+        /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3132,12 +4225,870 @@ pub mod describe_vod_source_output {
             self.tags = input;
             self
         }
-        /// <p>The name of the VOD source.</p>
+        /// <p>The tier of the channel.</p>
+        pub fn tier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tier = Some(input.into());
+            self
+        }
+        /// <p>The tier of the channel.</p>
+        pub fn set_tier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateChannelOutput`](crate::output::CreateChannelOutput).
+        pub fn build(self) -> crate::output::CreateChannelOutput {
+            crate::output::CreateChannelOutput {
+                arn: self.arn,
+                channel_name: self.channel_name,
+                channel_state: self.channel_state,
+                creation_time: self.creation_time,
+                filler_slate: self.filler_slate,
+                last_modified_time: self.last_modified_time,
+                outputs: self.outputs,
+                playback_mode: self.playback_mode,
+                tags: self.tags,
+                tier: self.tier,
+            }
+        }
+    }
+}
+impl CreateChannelOutput {
+    /// Creates a new builder-style object to manufacture [`CreateChannelOutput`](crate::output::CreateChannelOutput).
+    pub fn builder() -> crate::output::create_channel_output::Builder {
+        crate::output::create_channel_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListChannelsOutput {
+    /// <p>A list of channels that are associated with this account.</p>
+    #[doc(hidden)]
+    pub items: std::option::Option<std::vec::Vec<crate::model::Channel>>,
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListChannelsOutput {
+    /// <p>A list of channels that are associated with this account.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Channel]> {
+        self.items.as_deref()
+    }
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListChannelsOutput`](crate::output::ListChannelsOutput).
+pub mod list_channels_output {
+
+    /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Channel>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of channels that are associated with this account.</p>
+        pub fn items(mut self, input: crate::model::Channel) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>A list of channels that are associated with this account.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListChannelsOutput`](crate::output::ListChannelsOutput).
+        pub fn build(self) -> crate::output::ListChannelsOutput {
+            crate::output::ListChannelsOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListChannelsOutput {
+    /// Creates a new builder-style object to manufacture [`ListChannelsOutput`](crate::output::ListChannelsOutput).
+    pub fn builder() -> crate::output::list_channels_output::Builder {
+        crate::output::list_channels_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteChannelOutput {}
+/// See [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
+pub mod delete_channel_output {
+
+    /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
+        pub fn build(self) -> crate::output::DeleteChannelOutput {
+            crate::output::DeleteChannelOutput {}
+        }
+    }
+}
+impl DeleteChannelOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
+    pub fn builder() -> crate::output::delete_channel_output::Builder {
+        crate::output::delete_channel_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateChannelOutput {
+    /// <p>The Amazon Resource Name (ARN) associated with the channel.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the channel.</p>
+    #[doc(hidden)]
+    pub channel_name: std::option::Option<std::string::String>,
+    /// <p>Returns the state whether the channel is running or not.</p>
+    #[doc(hidden)]
+    pub channel_state: std::option::Option<crate::model::ChannelState>,
+    /// <p>The timestamp of when the channel was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
+    #[doc(hidden)]
+    pub filler_slate: std::option::Option<crate::model::SlateSource>,
+    /// <p>The timestamp that indicates when the channel was last modified.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The channel's output properties.</p>
+    #[doc(hidden)]
+    pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
+    /// <p>The type of playback mode for this channel.</p>
+    /// <p> <code>LINEAR</code> - Programs play back-to-back only once.</p>
+    /// <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
+    #[doc(hidden)]
+    pub playback_mode: std::option::Option<std::string::String>,
+    /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The tier associated with this Channel.</p>
+    #[doc(hidden)]
+    pub tier: std::option::Option<std::string::String>,
+}
+impl UpdateChannelOutput {
+    /// <p>The Amazon Resource Name (ARN) associated with the channel.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the channel.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>Returns the state whether the channel is running or not.</p>
+    pub fn channel_state(&self) -> std::option::Option<&crate::model::ChannelState> {
+        self.channel_state.as_ref()
+    }
+    /// <p>The timestamp of when the channel was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
+    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
+        self.filler_slate.as_ref()
+    }
+    /// <p>The timestamp that indicates when the channel was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The channel's output properties.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::ResponseOutputItem]> {
+        self.outputs.as_deref()
+    }
+    /// <p>The type of playback mode for this channel.</p>
+    /// <p> <code>LINEAR</code> - Programs play back-to-back only once.</p>
+    /// <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
+    pub fn playback_mode(&self) -> std::option::Option<&str> {
+        self.playback_mode.as_deref()
+    }
+    /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The tier associated with this Channel.</p>
+    pub fn tier(&self) -> std::option::Option<&str> {
+        self.tier.as_deref()
+    }
+}
+/// See [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
+pub mod update_channel_output {
+
+    /// A builder for [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) channel_name: std::option::Option<std::string::String>,
+        pub(crate) channel_state: std::option::Option<crate::model::ChannelState>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
+        pub(crate) playback_mode: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) tier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) associated with the channel.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) associated with the channel.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the channel.</p>
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the channel.</p>
+        pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_name = input;
+            self
+        }
+        /// <p>Returns the state whether the channel is running or not.</p>
+        pub fn channel_state(mut self, input: crate::model::ChannelState) -> Self {
+            self.channel_state = Some(input);
+            self
+        }
+        /// <p>Returns the state whether the channel is running or not.</p>
+        pub fn set_channel_state(
+            mut self,
+            input: std::option::Option<crate::model::ChannelState>,
+        ) -> Self {
+            self.channel_state = input;
+            self
+        }
+        /// <p>The timestamp of when the channel was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp of when the channel was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
+        pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
+            self.filler_slate = Some(input);
+            self
+        }
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
+        pub fn set_filler_slate(
+            mut self,
+            input: std::option::Option<crate::model::SlateSource>,
+        ) -> Self {
+            self.filler_slate = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the channel was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the channel was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// Appends an item to `outputs`.
+        ///
+        /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
+        ///
+        /// <p>The channel's output properties.</p>
+        pub fn outputs(mut self, input: crate::model::ResponseOutputItem) -> Self {
+            let mut v = self.outputs.unwrap_or_default();
+            v.push(input);
+            self.outputs = Some(v);
+            self
+        }
+        /// <p>The channel's output properties.</p>
+        pub fn set_outputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
+        ) -> Self {
+            self.outputs = input;
+            self
+        }
+        /// <p>The type of playback mode for this channel.</p>
+        /// <p> <code>LINEAR</code> - Programs play back-to-back only once.</p>
+        /// <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
+        pub fn playback_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.playback_mode = Some(input.into());
+            self
+        }
+        /// <p>The type of playback mode for this channel.</p>
+        /// <p> <code>LINEAR</code> - Programs play back-to-back only once.</p>
+        /// <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
+        pub fn set_playback_mode(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.playback_mode = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The tier associated with this Channel.</p>
+        pub fn tier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tier = Some(input.into());
+            self
+        }
+        /// <p>The tier associated with this Channel.</p>
+        pub fn set_tier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
+        pub fn build(self) -> crate::output::UpdateChannelOutput {
+            crate::output::UpdateChannelOutput {
+                arn: self.arn,
+                channel_name: self.channel_name,
+                channel_state: self.channel_state,
+                creation_time: self.creation_time,
+                filler_slate: self.filler_slate,
+                last_modified_time: self.last_modified_time,
+                outputs: self.outputs,
+                playback_mode: self.playback_mode,
+                tags: self.tags,
+                tier: self.tier,
+            }
+        }
+    }
+}
+impl UpdateChannelOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
+    pub fn builder() -> crate::output::update_channel_output::Builder {
+        crate::output::update_channel_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeChannelOutput {
+    /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the channel.</p>
+    #[doc(hidden)]
+    pub channel_name: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the channel is in a running state or not.</p>
+    #[doc(hidden)]
+    pub channel_state: std::option::Option<crate::model::ChannelState>,
+    /// <p>The timestamp of when the channel was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    #[doc(hidden)]
+    pub filler_slate: std::option::Option<crate::model::SlateSource>,
+    /// <p>The timestamp of when the channel was last modified.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The channel's output properties.</p>
+    #[doc(hidden)]
+    pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
+    /// <p>The channel's playback mode.</p>
+    #[doc(hidden)]
+    pub playback_mode: std::option::Option<std::string::String>,
+    /// <p>The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The channel's tier.</p>
+    #[doc(hidden)]
+    pub tier: std::option::Option<std::string::String>,
+}
+impl DescribeChannelOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the channel.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>Indicates whether the channel is in a running state or not.</p>
+    pub fn channel_state(&self) -> std::option::Option<&crate::model::ChannelState> {
+        self.channel_state.as_ref()
+    }
+    /// <p>The timestamp of when the channel was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
+        self.filler_slate.as_ref()
+    }
+    /// <p>The timestamp of when the channel was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The channel's output properties.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::ResponseOutputItem]> {
+        self.outputs.as_deref()
+    }
+    /// <p>The channel's playback mode.</p>
+    pub fn playback_mode(&self) -> std::option::Option<&str> {
+        self.playback_mode.as_deref()
+    }
+    /// <p>The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The channel's tier.</p>
+    pub fn tier(&self) -> std::option::Option<&str> {
+        self.tier.as_deref()
+    }
+}
+/// See [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
+pub mod describe_channel_output {
+
+    /// A builder for [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) channel_name: std::option::Option<std::string::String>,
+        pub(crate) channel_state: std::option::Option<crate::model::ChannelState>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
+        pub(crate) playback_mode: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) tier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the channel.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the channel.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the channel.</p>
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the channel.</p>
+        pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_name = input;
+            self
+        }
+        /// <p>Indicates whether the channel is in a running state or not.</p>
+        pub fn channel_state(mut self, input: crate::model::ChannelState) -> Self {
+            self.channel_state = Some(input);
+            self
+        }
+        /// <p>Indicates whether the channel is in a running state or not.</p>
+        pub fn set_channel_state(
+            mut self,
+            input: std::option::Option<crate::model::ChannelState>,
+        ) -> Self {
+            self.channel_state = input;
+            self
+        }
+        /// <p>The timestamp of when the channel was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp of when the channel was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+        pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
+            self.filler_slate = Some(input);
+            self
+        }
+        /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+        pub fn set_filler_slate(
+            mut self,
+            input: std::option::Option<crate::model::SlateSource>,
+        ) -> Self {
+            self.filler_slate = input;
+            self
+        }
+        /// <p>The timestamp of when the channel was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp of when the channel was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// Appends an item to `outputs`.
+        ///
+        /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
+        ///
+        /// <p>The channel's output properties.</p>
+        pub fn outputs(mut self, input: crate::model::ResponseOutputItem) -> Self {
+            let mut v = self.outputs.unwrap_or_default();
+            v.push(input);
+            self.outputs = Some(v);
+            self
+        }
+        /// <p>The channel's output properties.</p>
+        pub fn set_outputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
+        ) -> Self {
+            self.outputs = input;
+            self
+        }
+        /// <p>The channel's playback mode.</p>
+        pub fn playback_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.playback_mode = Some(input.into());
+            self
+        }
+        /// <p>The channel's playback mode.</p>
+        pub fn set_playback_mode(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.playback_mode = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The channel's tier.</p>
+        pub fn tier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tier = Some(input.into());
+            self
+        }
+        /// <p>The channel's tier.</p>
+        pub fn set_tier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
+        pub fn build(self) -> crate::output::DescribeChannelOutput {
+            crate::output::DescribeChannelOutput {
+                arn: self.arn,
+                channel_name: self.channel_name,
+                channel_state: self.channel_state,
+                creation_time: self.creation_time,
+                filler_slate: self.filler_slate,
+                last_modified_time: self.last_modified_time,
+                outputs: self.outputs,
+                playback_mode: self.playback_mode,
+                tags: self.tags,
+                tier: self.tier,
+            }
+        }
+    }
+}
+impl DescribeChannelOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
+    pub fn builder() -> crate::output::describe_channel_output::Builder {
+        crate::output::describe_channel_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateProgramOutput {
+    /// <p>The ad break configuration settings.</p>
+    #[doc(hidden)]
+    pub ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
+    /// <p>The ARN to assign to the program.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name to assign to the channel for this program.</p>
+    #[doc(hidden)]
+    pub channel_name: std::option::Option<std::string::String>,
+    /// <p>The time the program was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The name of the LiveSource for this Program.</p>
+    #[doc(hidden)]
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The name to assign to this program.</p>
+    #[doc(hidden)]
+    pub program_name: std::option::Option<std::string::String>,
+    /// <p>The scheduled start time for this Program.</p>
+    #[doc(hidden)]
+    pub scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The name to assign to the source location for this program.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The name that's used to refer to a VOD source.</p>
+    #[doc(hidden)]
+    pub vod_source_name: std::option::Option<std::string::String>,
+}
+impl CreateProgramOutput {
+    /// <p>The ad break configuration settings.</p>
+    pub fn ad_breaks(&self) -> std::option::Option<&[crate::model::AdBreak]> {
+        self.ad_breaks.as_deref()
+    }
+    /// <p>The ARN to assign to the program.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name to assign to the channel for this program.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The time the program was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The name of the LiveSource for this Program.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The name to assign to this program.</p>
+    pub fn program_name(&self) -> std::option::Option<&str> {
+        self.program_name.as_deref()
+    }
+    /// <p>The scheduled start time for this Program.</p>
+    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.scheduled_start_time.as_ref()
+    }
+    /// <p>The name to assign to the source location for this program.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The name that's used to refer to a VOD source.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
+}
+/// See [`CreateProgramOutput`](crate::output::CreateProgramOutput).
+pub mod create_program_output {
+
+    /// A builder for [`CreateProgramOutput`](crate::output::CreateProgramOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) channel_name: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
+        pub(crate) program_name: std::option::Option<std::string::String>,
+        pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) vod_source_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `ad_breaks`.
+        ///
+        /// To override the contents of this collection use [`set_ad_breaks`](Self::set_ad_breaks).
+        ///
+        /// <p>The ad break configuration settings.</p>
+        pub fn ad_breaks(mut self, input: crate::model::AdBreak) -> Self {
+            let mut v = self.ad_breaks.unwrap_or_default();
+            v.push(input);
+            self.ad_breaks = Some(v);
+            self
+        }
+        /// <p>The ad break configuration settings.</p>
+        pub fn set_ad_breaks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
+        ) -> Self {
+            self.ad_breaks = input;
+            self
+        }
+        /// <p>The ARN to assign to the program.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN to assign to the program.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name to assign to the channel for this program.</p>
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_name = Some(input.into());
+            self
+        }
+        /// <p>The name to assign to the channel for this program.</p>
+        pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_name = input;
+            self
+        }
+        /// <p>The time the program was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time the program was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The name of the LiveSource for this Program.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the LiveSource for this Program.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
+            self
+        }
+        /// <p>The name to assign to this program.</p>
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.program_name = Some(input.into());
+            self
+        }
+        /// <p>The name to assign to this program.</p>
+        pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.program_name = input;
+            self
+        }
+        /// <p>The scheduled start time for this Program.</p>
+        pub fn scheduled_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.scheduled_start_time = Some(input);
+            self
+        }
+        /// <p>The scheduled start time for this Program.</p>
+        pub fn set_scheduled_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.scheduled_start_time = input;
+            self
+        }
+        /// <p>The name to assign to the source location for this program.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The name to assign to the source location for this program.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// <p>The name that's used to refer to a VOD source.</p>
         pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vod_source_name = Some(input.into());
             self
         }
-        /// <p>The name of the VOD source.</p>
+        /// <p>The name that's used to refer to a VOD source.</p>
         pub fn set_vod_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3145,286 +5096,50 @@ pub mod describe_vod_source_output {
             self.vod_source_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput).
-        pub fn build(self) -> crate::output::DescribeVodSourceOutput {
-            crate::output::DescribeVodSourceOutput {
+        /// Consumes the builder and constructs a [`CreateProgramOutput`](crate::output::CreateProgramOutput).
+        pub fn build(self) -> crate::output::CreateProgramOutput {
+            crate::output::CreateProgramOutput {
+                ad_breaks: self.ad_breaks,
                 arn: self.arn,
+                channel_name: self.channel_name,
                 creation_time: self.creation_time,
-                http_package_configurations: self.http_package_configurations,
-                last_modified_time: self.last_modified_time,
+                live_source_name: self.live_source_name,
+                program_name: self.program_name,
+                scheduled_start_time: self.scheduled_start_time,
                 source_location_name: self.source_location_name,
-                tags: self.tags,
                 vod_source_name: self.vod_source_name,
             }
         }
     }
 }
-impl DescribeVodSourceOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput).
-    pub fn builder() -> crate::output::describe_vod_source_output::Builder {
-        crate::output::describe_vod_source_output::Builder::default()
+impl CreateProgramOutput {
+    /// Creates a new builder-style object to manufacture [`CreateProgramOutput`](crate::output::CreateProgramOutput).
+    pub fn builder() -> crate::output::create_program_output::Builder {
+        crate::output::create_program_output::Builder::default()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSourceLocationOutput {
-    /// <p>The access configuration for the source location.</p>
-    #[doc(hidden)]
-    pub access_configuration: std::option::Option<crate::model::AccessConfiguration>,
-    /// <p>The ARN of the source location.</p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp that indicates when the source location was created.</p>
-    #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The default segment delivery configuration settings.</p>
-    #[doc(hidden)]
-    pub default_segment_delivery_configuration:
-        std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
-    /// <p>The HTTP package configuration settings for the source location.</p>
-    #[doc(hidden)]
-    pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
-    /// <p>The timestamp that indicates when the source location was last modified.</p>
-    #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    #[doc(hidden)]
-    pub segment_delivery_configurations:
-        std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
-    /// <p>The name of the source location.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the source location.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-}
-impl DescribeSourceLocationOutput {
-    /// <p>The access configuration for the source location.</p>
-    pub fn access_configuration(&self) -> std::option::Option<&crate::model::AccessConfiguration> {
-        self.access_configuration.as_ref()
-    }
-    /// <p>The ARN of the source location.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
-    }
-    /// <p>The timestamp that indicates when the source location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
-    }
-    /// <p>The default segment delivery configuration settings.</p>
-    pub fn default_segment_delivery_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::DefaultSegmentDeliveryConfiguration> {
-        self.default_segment_delivery_configuration.as_ref()
-    }
-    /// <p>The HTTP package configuration settings for the source location.</p>
-    pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
-        self.http_configuration.as_ref()
-    }
-    /// <p>The timestamp that indicates when the source location was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
-    }
-    /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn segment_delivery_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
-        self.segment_delivery_configurations.as_deref()
-    }
-    /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-    /// <p>The tags assigned to the source location.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
-    }
-}
-/// See [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput).
-pub mod describe_source_location_output {
+pub struct DeleteProgramOutput {}
+/// See [`DeleteProgramOutput`](crate::output::DeleteProgramOutput).
+pub mod delete_program_output {
 
-    /// A builder for [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput).
+    /// A builder for [`DeleteProgramOutput`](crate::output::DeleteProgramOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) default_segment_delivery_configuration:
-            std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
-        pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) segment_delivery_configurations:
-            std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
-        pub(crate) source_location_name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    }
+    pub struct Builder {}
     impl Builder {
-        /// <p>The access configuration for the source location.</p>
-        pub fn access_configuration(mut self, input: crate::model::AccessConfiguration) -> Self {
-            self.access_configuration = Some(input);
-            self
-        }
-        /// <p>The access configuration for the source location.</p>
-        pub fn set_access_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AccessConfiguration>,
-        ) -> Self {
-            self.access_configuration = input;
-            self
-        }
-        /// <p>The ARN of the source location.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of the source location.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>The timestamp that indicates when the source location was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.creation_time = Some(input);
-            self
-        }
-        /// <p>The timestamp that indicates when the source location was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
-        }
-        /// <p>The default segment delivery configuration settings.</p>
-        pub fn default_segment_delivery_configuration(
-            mut self,
-            input: crate::model::DefaultSegmentDeliveryConfiguration,
-        ) -> Self {
-            self.default_segment_delivery_configuration = Some(input);
-            self
-        }
-        /// <p>The default segment delivery configuration settings.</p>
-        pub fn set_default_segment_delivery_configuration(
-            mut self,
-            input: std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
-        ) -> Self {
-            self.default_segment_delivery_configuration = input;
-            self
-        }
-        /// <p>The HTTP package configuration settings for the source location.</p>
-        pub fn http_configuration(mut self, input: crate::model::HttpConfiguration) -> Self {
-            self.http_configuration = Some(input);
-            self
-        }
-        /// <p>The HTTP package configuration settings for the source location.</p>
-        pub fn set_http_configuration(
-            mut self,
-            input: std::option::Option<crate::model::HttpConfiguration>,
-        ) -> Self {
-            self.http_configuration = input;
-            self
-        }
-        /// <p>The timestamp that indicates when the source location was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.last_modified_time = Some(input);
-            self
-        }
-        /// <p>The timestamp that indicates when the source location was last modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
-        }
-        /// Appends an item to `segment_delivery_configurations`.
-        ///
-        /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
-        ///
-        /// <p>A list of the segment delivery configurations associated with this resource.</p>
-        pub fn segment_delivery_configurations(
-            mut self,
-            input: crate::model::SegmentDeliveryConfiguration,
-        ) -> Self {
-            let mut v = self.segment_delivery_configurations.unwrap_or_default();
-            v.push(input);
-            self.segment_delivery_configurations = Some(v);
-            self
-        }
-        /// <p>A list of the segment delivery configurations associated with this resource.</p>
-        pub fn set_segment_delivery_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
-        ) -> Self {
-            self.segment_delivery_configurations = input;
-            self
-        }
-        /// <p>The name of the source location.</p>
-        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.source_location_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the source location.</p>
-        pub fn set_source_location_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_location_name = input;
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags assigned to the source location.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
-        }
-        /// <p>The tags assigned to the source location.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput).
-        pub fn build(self) -> crate::output::DescribeSourceLocationOutput {
-            crate::output::DescribeSourceLocationOutput {
-                access_configuration: self.access_configuration,
-                arn: self.arn,
-                creation_time: self.creation_time,
-                default_segment_delivery_configuration: self.default_segment_delivery_configuration,
-                http_configuration: self.http_configuration,
-                last_modified_time: self.last_modified_time,
-                segment_delivery_configurations: self.segment_delivery_configurations,
-                source_location_name: self.source_location_name,
-                tags: self.tags,
-            }
+        /// Consumes the builder and constructs a [`DeleteProgramOutput`](crate::output::DeleteProgramOutput).
+        pub fn build(self) -> crate::output::DeleteProgramOutput {
+            crate::output::DeleteProgramOutput {}
         }
     }
 }
-impl DescribeSourceLocationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput).
-    pub fn builder() -> crate::output::describe_source_location_output::Builder {
-        crate::output::describe_source_location_output::Builder::default()
+impl DeleteProgramOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteProgramOutput`](crate::output::DeleteProgramOutput).
+    pub fn builder() -> crate::output::delete_program_output::Builder {
+        crate::output::delete_program_output::Builder::default()
     }
 }
 
@@ -3655,619 +5370,24 @@ impl DescribeProgramOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLiveSourceOutput {
-    /// <p>The ARN of the live source.</p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp that indicates when the live source was created.</p>
-    #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The HTTP package configurations.</p>
-    #[doc(hidden)]
-    pub http_package_configurations:
-        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-    /// <p>The timestamp that indicates when the live source was modified.</p>
-    #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The name of the live source.</p>
-    #[doc(hidden)]
-    pub live_source_name: std::option::Option<std::string::String>,
-    /// <p>The name of the source location associated with the VOD source.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the live source.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-}
-impl DescribeLiveSourceOutput {
-    /// <p>The ARN of the live source.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
-    }
-    /// <p>The timestamp that indicates when the live source was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
-    }
-    /// <p>The HTTP package configurations.</p>
-    pub fn http_package_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
-    }
-    /// <p>The timestamp that indicates when the live source was modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
-    }
-    /// <p>The name of the live source.</p>
-    pub fn live_source_name(&self) -> std::option::Option<&str> {
-        self.live_source_name.as_deref()
-    }
-    /// <p>The name of the source location associated with the VOD source.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-    /// <p>The tags assigned to the live source.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
-    }
-}
-/// See [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput).
-pub mod describe_live_source_output {
+pub struct PutChannelPolicyOutput {}
+/// See [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput).
+pub mod put_channel_policy_output {
 
-    /// A builder for [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) http_package_configurations:
-            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) live_source_name: std::option::Option<std::string::String>,
-        pub(crate) source_location_name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    }
-    impl Builder {
-        /// <p>The ARN of the live source.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of the live source.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>The timestamp that indicates when the live source was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.creation_time = Some(input);
-            self
-        }
-        /// <p>The timestamp that indicates when the live source was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
-        }
-        /// Appends an item to `http_package_configurations`.
-        ///
-        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
-        ///
-        /// <p>The HTTP package configurations.</p>
-        pub fn http_package_configurations(
-            mut self,
-            input: crate::model::HttpPackageConfiguration,
-        ) -> Self {
-            let mut v = self.http_package_configurations.unwrap_or_default();
-            v.push(input);
-            self.http_package_configurations = Some(v);
-            self
-        }
-        /// <p>The HTTP package configurations.</p>
-        pub fn set_http_package_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-        ) -> Self {
-            self.http_package_configurations = input;
-            self
-        }
-        /// <p>The timestamp that indicates when the live source was modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.last_modified_time = Some(input);
-            self
-        }
-        /// <p>The timestamp that indicates when the live source was modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
-        }
-        /// <p>The name of the live source.</p>
-        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.live_source_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the live source.</p>
-        pub fn set_live_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.live_source_name = input;
-            self
-        }
-        /// <p>The name of the source location associated with the VOD source.</p>
-        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.source_location_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the source location associated with the VOD source.</p>
-        pub fn set_source_location_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_location_name = input;
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags assigned to the live source.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
-        }
-        /// <p>The tags assigned to the live source.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput).
-        pub fn build(self) -> crate::output::DescribeLiveSourceOutput {
-            crate::output::DescribeLiveSourceOutput {
-                arn: self.arn,
-                creation_time: self.creation_time,
-                http_package_configurations: self.http_package_configurations,
-                last_modified_time: self.last_modified_time,
-                live_source_name: self.live_source_name,
-                source_location_name: self.source_location_name,
-                tags: self.tags,
-            }
-        }
-    }
-}
-impl DescribeLiveSourceOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput).
-    pub fn builder() -> crate::output::describe_live_source_output::Builder {
-        crate::output::describe_live_source_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChannelOutput {
-    /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The name of the channel.</p>
-    #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the channel is in a running state or not.</p>
-    #[doc(hidden)]
-    pub channel_state: std::option::Option<crate::model::ChannelState>,
-    /// <p>The timestamp of when the channel was created.</p>
-    #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
-    #[doc(hidden)]
-    pub filler_slate: std::option::Option<crate::model::SlateSource>,
-    /// <p>The timestamp of when the channel was last modified.</p>
-    #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The channel's output properties.</p>
-    #[doc(hidden)]
-    pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
-    /// <p>The channel's playback mode.</p>
-    #[doc(hidden)]
-    pub playback_mode: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the channel.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The channel's tier.</p>
-    #[doc(hidden)]
-    pub tier: std::option::Option<std::string::String>,
-}
-impl DescribeChannelOutput {
-    /// <p>The ARN of the channel.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
-    }
-    /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
-        self.channel_name.as_deref()
-    }
-    /// <p>Indicates whether the channel is in a running state or not.</p>
-    pub fn channel_state(&self) -> std::option::Option<&crate::model::ChannelState> {
-        self.channel_state.as_ref()
-    }
-    /// <p>The timestamp of when the channel was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
-    }
-    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
-    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
-        self.filler_slate.as_ref()
-    }
-    /// <p>The timestamp of when the channel was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
-    }
-    /// <p>The channel's output properties.</p>
-    pub fn outputs(&self) -> std::option::Option<&[crate::model::ResponseOutputItem]> {
-        self.outputs.as_deref()
-    }
-    /// <p>The channel's playback mode.</p>
-    pub fn playback_mode(&self) -> std::option::Option<&str> {
-        self.playback_mode.as_deref()
-    }
-    /// <p>The tags assigned to the channel.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
-    }
-    /// <p>The channel's tier.</p>
-    pub fn tier(&self) -> std::option::Option<&str> {
-        self.tier.as_deref()
-    }
-}
-/// See [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
-pub mod describe_channel_output {
-
-    /// A builder for [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) channel_name: std::option::Option<std::string::String>,
-        pub(crate) channel_state: std::option::Option<crate::model::ChannelState>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
-        pub(crate) playback_mode: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) tier: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The ARN of the channel.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of the channel.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>The name of the channel.</p>
-        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.channel_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the channel.</p>
-        pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_name = input;
-            self
-        }
-        /// <p>Indicates whether the channel is in a running state or not.</p>
-        pub fn channel_state(mut self, input: crate::model::ChannelState) -> Self {
-            self.channel_state = Some(input);
-            self
-        }
-        /// <p>Indicates whether the channel is in a running state or not.</p>
-        pub fn set_channel_state(
-            mut self,
-            input: std::option::Option<crate::model::ChannelState>,
-        ) -> Self {
-            self.channel_state = input;
-            self
-        }
-        /// <p>The timestamp of when the channel was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.creation_time = Some(input);
-            self
-        }
-        /// <p>The timestamp of when the channel was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
-        }
-        /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
-        pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
-            self.filler_slate = Some(input);
-            self
-        }
-        /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
-        pub fn set_filler_slate(
-            mut self,
-            input: std::option::Option<crate::model::SlateSource>,
-        ) -> Self {
-            self.filler_slate = input;
-            self
-        }
-        /// <p>The timestamp of when the channel was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.last_modified_time = Some(input);
-            self
-        }
-        /// <p>The timestamp of when the channel was last modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
-        }
-        /// Appends an item to `outputs`.
-        ///
-        /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
-        ///
-        /// <p>The channel's output properties.</p>
-        pub fn outputs(mut self, input: crate::model::ResponseOutputItem) -> Self {
-            let mut v = self.outputs.unwrap_or_default();
-            v.push(input);
-            self.outputs = Some(v);
-            self
-        }
-        /// <p>The channel's output properties.</p>
-        pub fn set_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
-        ) -> Self {
-            self.outputs = input;
-            self
-        }
-        /// <p>The channel's playback mode.</p>
-        pub fn playback_mode(mut self, input: impl Into<std::string::String>) -> Self {
-            self.playback_mode = Some(input.into());
-            self
-        }
-        /// <p>The channel's playback mode.</p>
-        pub fn set_playback_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.playback_mode = input;
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags assigned to the channel.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
-        }
-        /// <p>The tags assigned to the channel.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
-        }
-        /// <p>The channel's tier.</p>
-        pub fn tier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.tier = Some(input.into());
-            self
-        }
-        /// <p>The channel's tier.</p>
-        pub fn set_tier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tier = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
-        pub fn build(self) -> crate::output::DescribeChannelOutput {
-            crate::output::DescribeChannelOutput {
-                arn: self.arn,
-                channel_name: self.channel_name,
-                channel_state: self.channel_state,
-                creation_time: self.creation_time,
-                filler_slate: self.filler_slate,
-                last_modified_time: self.last_modified_time,
-                outputs: self.outputs,
-                playback_mode: self.playback_mode,
-                tags: self.tags,
-                tier: self.tier,
-            }
-        }
-    }
-}
-impl DescribeChannelOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
-    pub fn builder() -> crate::output::describe_channel_output::Builder {
-        crate::output::describe_channel_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVodSourceOutput {}
-/// See [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput).
-pub mod delete_vod_source_output {
-
-    /// A builder for [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput).
+    /// A builder for [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput).
-        pub fn build(self) -> crate::output::DeleteVodSourceOutput {
-            crate::output::DeleteVodSourceOutput {}
+        /// Consumes the builder and constructs a [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput).
+        pub fn build(self) -> crate::output::PutChannelPolicyOutput {
+            crate::output::PutChannelPolicyOutput {}
         }
     }
 }
-impl DeleteVodSourceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput).
-    pub fn builder() -> crate::output::delete_vod_source_output::Builder {
-        crate::output::delete_vod_source_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSourceLocationOutput {}
-/// See [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput).
-pub mod delete_source_location_output {
-
-    /// A builder for [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
-    impl Builder {
-        /// Consumes the builder and constructs a [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput).
-        pub fn build(self) -> crate::output::DeleteSourceLocationOutput {
-            crate::output::DeleteSourceLocationOutput {}
-        }
-    }
-}
-impl DeleteSourceLocationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput).
-    pub fn builder() -> crate::output::delete_source_location_output::Builder {
-        crate::output::delete_source_location_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProgramOutput {}
-/// See [`DeleteProgramOutput`](crate::output::DeleteProgramOutput).
-pub mod delete_program_output {
-
-    /// A builder for [`DeleteProgramOutput`](crate::output::DeleteProgramOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
-    impl Builder {
-        /// Consumes the builder and constructs a [`DeleteProgramOutput`](crate::output::DeleteProgramOutput).
-        pub fn build(self) -> crate::output::DeleteProgramOutput {
-            crate::output::DeleteProgramOutput {}
-        }
-    }
-}
-impl DeleteProgramOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteProgramOutput`](crate::output::DeleteProgramOutput).
-    pub fn builder() -> crate::output::delete_program_output::Builder {
-        crate::output::delete_program_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePrefetchScheduleOutput {}
-/// See [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput).
-pub mod delete_prefetch_schedule_output {
-
-    /// A builder for [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
-    impl Builder {
-        /// Consumes the builder and constructs a [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput).
-        pub fn build(self) -> crate::output::DeletePrefetchScheduleOutput {
-            crate::output::DeletePrefetchScheduleOutput {}
-        }
-    }
-}
-impl DeletePrefetchScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput).
-    pub fn builder() -> crate::output::delete_prefetch_schedule_output::Builder {
-        crate::output::delete_prefetch_schedule_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePlaybackConfigurationOutput {}
-/// See [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput).
-pub mod delete_playback_configuration_output {
-
-    /// A builder for [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
-    impl Builder {
-        /// Consumes the builder and constructs a [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput).
-        pub fn build(self) -> crate::output::DeletePlaybackConfigurationOutput {
-            crate::output::DeletePlaybackConfigurationOutput {}
-        }
-    }
-}
-impl DeletePlaybackConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput).
-    pub fn builder() -> crate::output::delete_playback_configuration_output::Builder {
-        crate::output::delete_playback_configuration_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLiveSourceOutput {}
-/// See [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput).
-pub mod delete_live_source_output {
-
-    /// A builder for [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
-    impl Builder {
-        /// Consumes the builder and constructs a [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput).
-        pub fn build(self) -> crate::output::DeleteLiveSourceOutput {
-            crate::output::DeleteLiveSourceOutput {}
-        }
-    }
-}
-impl DeleteLiveSourceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput).
-    pub fn builder() -> crate::output::delete_live_source_output::Builder {
-        crate::output::delete_live_source_output::Builder::default()
+impl PutChannelPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput).
+    pub fn builder() -> crate::output::put_channel_policy_output::Builder {
+        crate::output::put_channel_policy_output::Builder::default()
     }
 }
 
@@ -4298,184 +5418,133 @@ impl DeleteChannelPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelOutput {}
-/// See [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
-pub mod delete_channel_output {
+pub struct GetChannelPolicyOutput {
+    /// <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
+    #[doc(hidden)]
+    pub policy: std::option::Option<std::string::String>,
+}
+impl GetChannelPolicyOutput {
+    /// <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
+/// See [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput).
+pub mod get_channel_policy_output {
 
-    /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
+    /// A builder for [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
+            self
+        }
+        /// <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput).
+        pub fn build(self) -> crate::output::GetChannelPolicyOutput {
+            crate::output::GetChannelPolicyOutput {
+                policy: self.policy,
+            }
+        }
+    }
+}
+impl GetChannelPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput).
+    pub fn builder() -> crate::output::get_channel_policy_output::Builder {
+        crate::output::get_channel_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UntagResourceOutput {}
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+pub mod untag_resource_output {
+
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
-        pub fn build(self) -> crate::output::DeleteChannelOutput {
-            crate::output::DeleteChannelOutput {}
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+        pub fn build(self) -> crate::output::UntagResourceOutput {
+            crate::output::UntagResourceOutput {}
         }
     }
 }
-impl DeleteChannelOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
-    pub fn builder() -> crate::output::delete_channel_output::Builder {
-        crate::output::delete_channel_output::Builder::default()
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVodSourceOutput {
-    /// <p>The ARN of the VOD source.</p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp that indicates when the VOD source was created.</p>
-    #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The HTTP package configurations.</p>
-    #[doc(hidden)]
-    pub http_package_configurations:
-        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-    /// <p>The last modified time of the VOD source.</p>
-    #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The name of the source location associated with the VOD source.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the VOD source.</p>
+pub struct TagResourceOutput {}
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
+pub mod tag_resource_output {
+
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
+        pub fn build(self) -> crate::output::TagResourceOutput {
+            crate::output::TagResourceOutput {}
+        }
+    }
+}
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListTagsForResourceOutput {
+    /// <p>The tags associated with this resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The name of the VOD source.</p>
-    #[doc(hidden)]
-    pub vod_source_name: std::option::Option<std::string::String>,
 }
-impl CreateVodSourceOutput {
-    /// <p>The ARN of the VOD source.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
-    }
-    /// <p>The timestamp that indicates when the VOD source was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
-    }
-    /// <p>The HTTP package configurations.</p>
-    pub fn http_package_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
-    }
-    /// <p>The last modified time of the VOD source.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
-    }
-    /// <p>The name of the source location associated with the VOD source.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-    /// <p>The tags assigned to the VOD source.</p>
+impl ListTagsForResourceOutput {
+    /// <p>The tags associated with this resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>The name of the VOD source.</p>
-    pub fn vod_source_name(&self) -> std::option::Option<&str> {
-        self.vod_source_name.as_deref()
-    }
 }
-/// See [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput).
-pub mod create_vod_source_output {
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+pub mod list_tags_for_resource_output {
 
-    /// A builder for [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput).
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) http_package_configurations:
-            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) vod_source_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the VOD source.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of the VOD source.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>The timestamp that indicates when the VOD source was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.creation_time = Some(input);
-            self
-        }
-        /// <p>The timestamp that indicates when the VOD source was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
-        }
-        /// Appends an item to `http_package_configurations`.
-        ///
-        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
-        ///
-        /// <p>The HTTP package configurations.</p>
-        pub fn http_package_configurations(
-            mut self,
-            input: crate::model::HttpPackageConfiguration,
-        ) -> Self {
-            let mut v = self.http_package_configurations.unwrap_or_default();
-            v.push(input);
-            self.http_package_configurations = Some(v);
-            self
-        }
-        /// <p>The HTTP package configurations.</p>
-        pub fn set_http_package_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-        ) -> Self {
-            self.http_package_configurations = input;
-            self
-        }
-        /// <p>The last modified time of the VOD source.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.last_modified_time = Some(input);
-            self
-        }
-        /// <p>The last modified time of the VOD source.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
-        }
-        /// <p>The name of the source location associated with the VOD source.</p>
-        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.source_location_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the source location associated with the VOD source.</p>
-        pub fn set_source_location_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_location_name = input;
-            self
-        }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the VOD source.</p>
+        /// <p>The tags associated with this resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4486,7 +5555,7 @@ pub mod create_vod_source_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags assigned to the VOD source.</p>
+        /// <p>The tags associated with this resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4496,1153 +5565,92 @@ pub mod create_vod_source_output {
             self.tags = input;
             self
         }
-        /// <p>The name of the VOD source.</p>
-        pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vod_source_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the VOD source.</p>
-        pub fn set_vod_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vod_source_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput).
-        pub fn build(self) -> crate::output::CreateVodSourceOutput {
-            crate::output::CreateVodSourceOutput {
-                arn: self.arn,
-                creation_time: self.creation_time,
-                http_package_configurations: self.http_package_configurations,
-                last_modified_time: self.last_modified_time,
-                source_location_name: self.source_location_name,
-                tags: self.tags,
-                vod_source_name: self.vod_source_name,
-            }
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+        pub fn build(self) -> crate::output::ListTagsForResourceOutput {
+            crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
-impl CreateVodSourceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput).
-    pub fn builder() -> crate::output::create_vod_source_output::Builder {
-        crate::output::create_vod_source_output::Builder::default()
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSourceLocationOutput {
-    /// <p>The access configuration for the source location.</p>
+pub struct ListAlertsOutput {
+    /// <p>A list of alerts that are associated with this resource.</p>
     #[doc(hidden)]
-    pub access_configuration: std::option::Option<crate::model::AccessConfiguration>,
-    /// <p>The ARN of the source location.</p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::Alert>>,
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp that indicates when the source location was created.</p>
-    #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The default segment delivery configuration settings.</p>
-    #[doc(hidden)]
-    pub default_segment_delivery_configuration:
-        std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
-    /// <p>The HTTP package configuration settings for the source location.</p>
-    #[doc(hidden)]
-    pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
-    /// <p>The timestamp that indicates when the source location was last modified.</p>
-    #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    #[doc(hidden)]
-    pub segment_delivery_configurations:
-        std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
-    /// <p>The name of the source location.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the source location.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub next_token: std::option::Option<std::string::String>,
 }
-impl CreateSourceLocationOutput {
-    /// <p>The access configuration for the source location.</p>
-    pub fn access_configuration(&self) -> std::option::Option<&crate::model::AccessConfiguration> {
-        self.access_configuration.as_ref()
+impl ListAlertsOutput {
+    /// <p>A list of alerts that are associated with this resource.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Alert]> {
+        self.items.as_deref()
     }
-    /// <p>The ARN of the source location.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
-    }
-    /// <p>The timestamp that indicates when the source location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
-    }
-    /// <p>The default segment delivery configuration settings.</p>
-    pub fn default_segment_delivery_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::DefaultSegmentDeliveryConfiguration> {
-        self.default_segment_delivery_configuration.as_ref()
-    }
-    /// <p>The HTTP package configuration settings for the source location.</p>
-    pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
-        self.http_configuration.as_ref()
-    }
-    /// <p>The timestamp that indicates when the source location was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
-    }
-    /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn segment_delivery_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
-        self.segment_delivery_configurations.as_deref()
-    }
-    /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-    /// <p>The tags assigned to the source location.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
-/// See [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput).
-pub mod create_source_location_output {
+/// See [`ListAlertsOutput`](crate::output::ListAlertsOutput).
+pub mod list_alerts_output {
 
-    /// A builder for [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput).
+    /// A builder for [`ListAlertsOutput`](crate::output::ListAlertsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) default_segment_delivery_configuration:
-            std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
-        pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) segment_delivery_configurations:
-            std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
-        pub(crate) source_location_name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Alert>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The access configuration for the source location.</p>
-        pub fn access_configuration(mut self, input: crate::model::AccessConfiguration) -> Self {
-            self.access_configuration = Some(input);
-            self
-        }
-        /// <p>The access configuration for the source location.</p>
-        pub fn set_access_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AccessConfiguration>,
-        ) -> Self {
-            self.access_configuration = input;
-            self
-        }
-        /// <p>The ARN of the source location.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of the source location.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>The timestamp that indicates when the source location was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.creation_time = Some(input);
-            self
-        }
-        /// <p>The timestamp that indicates when the source location was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
-        }
-        /// <p>The default segment delivery configuration settings.</p>
-        pub fn default_segment_delivery_configuration(
-            mut self,
-            input: crate::model::DefaultSegmentDeliveryConfiguration,
-        ) -> Self {
-            self.default_segment_delivery_configuration = Some(input);
-            self
-        }
-        /// <p>The default segment delivery configuration settings.</p>
-        pub fn set_default_segment_delivery_configuration(
-            mut self,
-            input: std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
-        ) -> Self {
-            self.default_segment_delivery_configuration = input;
-            self
-        }
-        /// <p>The HTTP package configuration settings for the source location.</p>
-        pub fn http_configuration(mut self, input: crate::model::HttpConfiguration) -> Self {
-            self.http_configuration = Some(input);
-            self
-        }
-        /// <p>The HTTP package configuration settings for the source location.</p>
-        pub fn set_http_configuration(
-            mut self,
-            input: std::option::Option<crate::model::HttpConfiguration>,
-        ) -> Self {
-            self.http_configuration = input;
-            self
-        }
-        /// <p>The timestamp that indicates when the source location was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.last_modified_time = Some(input);
-            self
-        }
-        /// <p>The timestamp that indicates when the source location was last modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
-        }
-        /// Appends an item to `segment_delivery_configurations`.
+        /// Appends an item to `items`.
         ///
-        /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>A list of the segment delivery configurations associated with this resource.</p>
-        pub fn segment_delivery_configurations(
-            mut self,
-            input: crate::model::SegmentDeliveryConfiguration,
-        ) -> Self {
-            let mut v = self.segment_delivery_configurations.unwrap_or_default();
+        /// <p>A list of alerts that are associated with this resource.</p>
+        pub fn items(mut self, input: crate::model::Alert) -> Self {
+            let mut v = self.items.unwrap_or_default();
             v.push(input);
-            self.segment_delivery_configurations = Some(v);
+            self.items = Some(v);
             self
         }
-        /// <p>A list of the segment delivery configurations associated with this resource.</p>
-        pub fn set_segment_delivery_configurations(
+        /// <p>A list of alerts that are associated with this resource.</p>
+        pub fn set_items(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Alert>>,
         ) -> Self {
-            self.segment_delivery_configurations = input;
+            self.items = input;
             self
         }
-        /// <p>The name of the source location.</p>
-        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.source_location_name = Some(input.into());
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        /// <p>The name of the source location.</p>
-        pub fn set_source_location_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_location_name = input;
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags assigned to the source location.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
-        }
-        /// <p>The tags assigned to the source location.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput).
-        pub fn build(self) -> crate::output::CreateSourceLocationOutput {
-            crate::output::CreateSourceLocationOutput {
-                access_configuration: self.access_configuration,
-                arn: self.arn,
-                creation_time: self.creation_time,
-                default_segment_delivery_configuration: self.default_segment_delivery_configuration,
-                http_configuration: self.http_configuration,
-                last_modified_time: self.last_modified_time,
-                segment_delivery_configurations: self.segment_delivery_configurations,
-                source_location_name: self.source_location_name,
-                tags: self.tags,
+        /// Consumes the builder and constructs a [`ListAlertsOutput`](crate::output::ListAlertsOutput).
+        pub fn build(self) -> crate::output::ListAlertsOutput {
+            crate::output::ListAlertsOutput {
+                items: self.items,
+                next_token: self.next_token,
             }
         }
     }
 }
-impl CreateSourceLocationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput).
-    pub fn builder() -> crate::output::create_source_location_output::Builder {
-        crate::output::create_source_location_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProgramOutput {
-    /// <p>The ad break configuration settings.</p>
-    #[doc(hidden)]
-    pub ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
-    /// <p>The ARN of the program.</p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The name of the channel that the program belongs to.</p>
-    #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
-    /// <p>The timestamp of when the program was created.</p>
-    #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The name of the LiveSource for this Program.</p>
-    #[doc(hidden)]
-    pub live_source_name: std::option::Option<std::string::String>,
-    /// <p>The name of the program.</p>
-    #[doc(hidden)]
-    pub program_name: std::option::Option<std::string::String>,
-    /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
-    #[doc(hidden)]
-    pub scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The source location name.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The name that's used to refer to a VOD source.</p>
-    #[doc(hidden)]
-    pub vod_source_name: std::option::Option<std::string::String>,
-}
-impl CreateProgramOutput {
-    /// <p>The ad break configuration settings.</p>
-    pub fn ad_breaks(&self) -> std::option::Option<&[crate::model::AdBreak]> {
-        self.ad_breaks.as_deref()
-    }
-    /// <p>The ARN of the program.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
-    }
-    /// <p>The name of the channel that the program belongs to.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
-        self.channel_name.as_deref()
-    }
-    /// <p>The timestamp of when the program was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
-    }
-    /// <p>The name of the LiveSource for this Program.</p>
-    pub fn live_source_name(&self) -> std::option::Option<&str> {
-        self.live_source_name.as_deref()
-    }
-    /// <p>The name of the program.</p>
-    pub fn program_name(&self) -> std::option::Option<&str> {
-        self.program_name.as_deref()
-    }
-    /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
-    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.scheduled_start_time.as_ref()
-    }
-    /// <p>The source location name.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-    /// <p>The name that's used to refer to a VOD source.</p>
-    pub fn vod_source_name(&self) -> std::option::Option<&str> {
-        self.vod_source_name.as_deref()
-    }
-}
-/// See [`CreateProgramOutput`](crate::output::CreateProgramOutput).
-pub mod create_program_output {
-
-    /// A builder for [`CreateProgramOutput`](crate::output::CreateProgramOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) channel_name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) live_source_name: std::option::Option<std::string::String>,
-        pub(crate) program_name: std::option::Option<std::string::String>,
-        pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) source_location_name: std::option::Option<std::string::String>,
-        pub(crate) vod_source_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// Appends an item to `ad_breaks`.
-        ///
-        /// To override the contents of this collection use [`set_ad_breaks`](Self::set_ad_breaks).
-        ///
-        /// <p>The ad break configuration settings.</p>
-        pub fn ad_breaks(mut self, input: crate::model::AdBreak) -> Self {
-            let mut v = self.ad_breaks.unwrap_or_default();
-            v.push(input);
-            self.ad_breaks = Some(v);
-            self
-        }
-        /// <p>The ad break configuration settings.</p>
-        pub fn set_ad_breaks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
-        ) -> Self {
-            self.ad_breaks = input;
-            self
-        }
-        /// <p>The ARN of the program.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of the program.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>The name of the channel that the program belongs to.</p>
-        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.channel_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the channel that the program belongs to.</p>
-        pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_name = input;
-            self
-        }
-        /// <p>The timestamp of when the program was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.creation_time = Some(input);
-            self
-        }
-        /// <p>The timestamp of when the program was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
-        }
-        /// <p>The name of the LiveSource for this Program.</p>
-        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.live_source_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the LiveSource for this Program.</p>
-        pub fn set_live_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.live_source_name = input;
-            self
-        }
-        /// <p>The name of the program.</p>
-        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.program_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the program.</p>
-        pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.program_name = input;
-            self
-        }
-        /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
-        pub fn scheduled_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.scheduled_start_time = Some(input);
-            self
-        }
-        /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
-        pub fn set_scheduled_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.scheduled_start_time = input;
-            self
-        }
-        /// <p>The source location name.</p>
-        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.source_location_name = Some(input.into());
-            self
-        }
-        /// <p>The source location name.</p>
-        pub fn set_source_location_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_location_name = input;
-            self
-        }
-        /// <p>The name that's used to refer to a VOD source.</p>
-        pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vod_source_name = Some(input.into());
-            self
-        }
-        /// <p>The name that's used to refer to a VOD source.</p>
-        pub fn set_vod_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vod_source_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CreateProgramOutput`](crate::output::CreateProgramOutput).
-        pub fn build(self) -> crate::output::CreateProgramOutput {
-            crate::output::CreateProgramOutput {
-                ad_breaks: self.ad_breaks,
-                arn: self.arn,
-                channel_name: self.channel_name,
-                creation_time: self.creation_time,
-                live_source_name: self.live_source_name,
-                program_name: self.program_name,
-                scheduled_start_time: self.scheduled_start_time,
-                source_location_name: self.source_location_name,
-                vod_source_name: self.vod_source_name,
-            }
-        }
-    }
-}
-impl CreateProgramOutput {
-    /// Creates a new builder-style object to manufacture [`CreateProgramOutput`](crate::output::CreateProgramOutput).
-    pub fn builder() -> crate::output::create_program_output::Builder {
-        crate::output::create_program_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePrefetchScheduleOutput {
-    /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
-    #[doc(hidden)]
-    pub consumption: std::option::Option<crate::model::PrefetchConsumption>,
-    /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
-    #[doc(hidden)]
-    pub playback_configuration_name: std::option::Option<std::string::String>,
-    /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
-    #[doc(hidden)]
-    pub retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
-    /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
-    #[doc(hidden)]
-    pub stream_id: std::option::Option<std::string::String>,
-}
-impl CreatePrefetchScheduleOutput {
-    /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
-    }
-    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
-    pub fn consumption(&self) -> std::option::Option<&crate::model::PrefetchConsumption> {
-        self.consumption.as_ref()
-    }
-    /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
-    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
-        self.playback_configuration_name.as_deref()
-    }
-    /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
-    pub fn retrieval(&self) -> std::option::Option<&crate::model::PrefetchRetrieval> {
-        self.retrieval.as_ref()
-    }
-    /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
-        self.stream_id.as_deref()
-    }
-}
-/// See [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput).
-pub mod create_prefetch_schedule_output {
-
-    /// A builder for [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) consumption: std::option::Option<crate::model::PrefetchConsumption>,
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
-        pub(crate) retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
-        pub(crate) stream_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
-        pub fn consumption(mut self, input: crate::model::PrefetchConsumption) -> Self {
-            self.consumption = Some(input);
-            self
-        }
-        /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
-        pub fn set_consumption(
-            mut self,
-            input: std::option::Option<crate::model::PrefetchConsumption>,
-        ) -> Self {
-            self.consumption = input;
-            self
-        }
-        /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
-        pub fn playback_configuration_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.playback_configuration_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
-        pub fn set_playback_configuration_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.playback_configuration_name = input;
-            self
-        }
-        /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
-        pub fn retrieval(mut self, input: crate::model::PrefetchRetrieval) -> Self {
-            self.retrieval = Some(input);
-            self
-        }
-        /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
-        pub fn set_retrieval(
-            mut self,
-            input: std::option::Option<crate::model::PrefetchRetrieval>,
-        ) -> Self {
-            self.retrieval = input;
-            self
-        }
-        /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
-        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.stream_id = Some(input.into());
-            self
-        }
-        /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
-        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput).
-        pub fn build(self) -> crate::output::CreatePrefetchScheduleOutput {
-            crate::output::CreatePrefetchScheduleOutput {
-                arn: self.arn,
-                consumption: self.consumption,
-                name: self.name,
-                playback_configuration_name: self.playback_configuration_name,
-                retrieval: self.retrieval,
-                stream_id: self.stream_id,
-            }
-        }
-    }
-}
-impl CreatePrefetchScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput).
-    pub fn builder() -> crate::output::create_prefetch_schedule_output::Builder {
-        crate::output::create_prefetch_schedule_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLiveSourceOutput {
-    /// <p>The ARN of the live source.</p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp that indicates when the live source was created.</p>
-    #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The HTTP package configurations.</p>
-    #[doc(hidden)]
-    pub http_package_configurations:
-        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-    /// <p>The timestamp that indicates when the live source was modified.</p>
-    #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The name of the live source.</p>
-    #[doc(hidden)]
-    pub live_source_name: std::option::Option<std::string::String>,
-    /// <p>The name of the source location associated with the VOD source.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the live source.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-}
-impl CreateLiveSourceOutput {
-    /// <p>The ARN of the live source.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
-    }
-    /// <p>The timestamp that indicates when the live source was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
-    }
-    /// <p>The HTTP package configurations.</p>
-    pub fn http_package_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
-    }
-    /// <p>The timestamp that indicates when the live source was modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
-    }
-    /// <p>The name of the live source.</p>
-    pub fn live_source_name(&self) -> std::option::Option<&str> {
-        self.live_source_name.as_deref()
-    }
-    /// <p>The name of the source location associated with the VOD source.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-    /// <p>The tags assigned to the live source.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
-    }
-}
-/// See [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput).
-pub mod create_live_source_output {
-
-    /// A builder for [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) http_package_configurations:
-            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) live_source_name: std::option::Option<std::string::String>,
-        pub(crate) source_location_name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    }
-    impl Builder {
-        /// <p>The ARN of the live source.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of the live source.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>The timestamp that indicates when the live source was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.creation_time = Some(input);
-            self
-        }
-        /// <p>The timestamp that indicates when the live source was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
-        }
-        /// Appends an item to `http_package_configurations`.
-        ///
-        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
-        ///
-        /// <p>The HTTP package configurations.</p>
-        pub fn http_package_configurations(
-            mut self,
-            input: crate::model::HttpPackageConfiguration,
-        ) -> Self {
-            let mut v = self.http_package_configurations.unwrap_or_default();
-            v.push(input);
-            self.http_package_configurations = Some(v);
-            self
-        }
-        /// <p>The HTTP package configurations.</p>
-        pub fn set_http_package_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-        ) -> Self {
-            self.http_package_configurations = input;
-            self
-        }
-        /// <p>The timestamp that indicates when the live source was modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.last_modified_time = Some(input);
-            self
-        }
-        /// <p>The timestamp that indicates when the live source was modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
-        }
-        /// <p>The name of the live source.</p>
-        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.live_source_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the live source.</p>
-        pub fn set_live_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.live_source_name = input;
-            self
-        }
-        /// <p>The name of the source location associated with the VOD source.</p>
-        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.source_location_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the source location associated with the VOD source.</p>
-        pub fn set_source_location_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_location_name = input;
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags assigned to the live source.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
-        }
-        /// <p>The tags assigned to the live source.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput).
-        pub fn build(self) -> crate::output::CreateLiveSourceOutput {
-            crate::output::CreateLiveSourceOutput {
-                arn: self.arn,
-                creation_time: self.creation_time,
-                http_package_configurations: self.http_package_configurations,
-                last_modified_time: self.last_modified_time,
-                live_source_name: self.live_source_name,
-                source_location_name: self.source_location_name,
-                tags: self.tags,
-            }
-        }
-    }
-}
-impl CreateLiveSourceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput).
-    pub fn builder() -> crate::output::create_live_source_output::Builder {
-        crate::output::create_live_source_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChannelOutput {
-    /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The name of the channel.</p>
-    #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the channel is in a running state or not.</p>
-    #[doc(hidden)]
-    pub channel_state: std::option::Option<crate::model::ChannelState>,
-    /// <p>The timestamp of when the channel was created.</p>
-    #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
-    #[doc(hidden)]
-    pub filler_slate: std::option::Option<crate::model::SlateSource>,
-    /// <p>The timestamp of when the channel was last modified.</p>
-    #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The channel's output properties.</p>
-    #[doc(hidden)]
-    pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
-    /// <p>The channel's playback mode.</p>
-    #[doc(hidden)]
-    pub playback_mode: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the channel.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The channel's tier.</p>
-    #[doc(hidden)]
-    pub tier: std::option::Option<std::string::String>,
-}
-impl CreateChannelOutput {
-    /// <p>The ARN of the channel.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
-    }
-    /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
-        self.channel_name.as_deref()
-    }
-    /// <p>Indicates whether the channel is in a running state or not.</p>
-    pub fn channel_state(&self) -> std::option::Option<&crate::model::ChannelState> {
-        self.channel_state.as_ref()
-    }
-    /// <p>The timestamp of when the channel was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
-    }
-    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
-    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
-        self.filler_slate.as_ref()
-    }
-    /// <p>The timestamp of when the channel was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
-    }
-    /// <p>The channel's output properties.</p>
-    pub fn outputs(&self) -> std::option::Option<&[crate::model::ResponseOutputItem]> {
-        self.outputs.as_deref()
-    }
-    /// <p>The channel's playback mode.</p>
-    pub fn playback_mode(&self) -> std::option::Option<&str> {
-        self.playback_mode.as_deref()
-    }
-    /// <p>The tags assigned to the channel.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
-    }
-    /// <p>The channel's tier.</p>
-    pub fn tier(&self) -> std::option::Option<&str> {
-        self.tier.as_deref()
-    }
-}
-/// See [`CreateChannelOutput`](crate::output::CreateChannelOutput).
-pub mod create_channel_output {
-
-    /// A builder for [`CreateChannelOutput`](crate::output::CreateChannelOutput).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) channel_name: std::option::Option<std::string::String>,
-        pub(crate) channel_state: std::option::Option<crate::model::ChannelState>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
-        pub(crate) playback_mode: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) tier: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The ARN of the channel.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of the channel.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>The name of the channel.</p>
-        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.channel_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the channel.</p>
-        pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_name = input;
-            self
-        }
-        /// <p>Indicates whether the channel is in a running state or not.</p>
-        pub fn channel_state(mut self, input: crate::model::ChannelState) -> Self {
-            self.channel_state = Some(input);
-            self
-        }
-        /// <p>Indicates whether the channel is in a running state or not.</p>
-        pub fn set_channel_state(
-            mut self,
-            input: std::option::Option<crate::model::ChannelState>,
-        ) -> Self {
-            self.channel_state = input;
-            self
-        }
-        /// <p>The timestamp of when the channel was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.creation_time = Some(input);
-            self
-        }
-        /// <p>The timestamp of when the channel was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
-        }
-        /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
-        pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
-            self.filler_slate = Some(input);
-            self
-        }
-        /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
-        pub fn set_filler_slate(
-            mut self,
-            input: std::option::Option<crate::model::SlateSource>,
-        ) -> Self {
-            self.filler_slate = input;
-            self
-        }
-        /// <p>The timestamp of when the channel was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.last_modified_time = Some(input);
-            self
-        }
-        /// <p>The timestamp of when the channel was last modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
-        }
-        /// Appends an item to `outputs`.
-        ///
-        /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
-        ///
-        /// <p>The channel's output properties.</p>
-        pub fn outputs(mut self, input: crate::model::ResponseOutputItem) -> Self {
-            let mut v = self.outputs.unwrap_or_default();
-            v.push(input);
-            self.outputs = Some(v);
-            self
-        }
-        /// <p>The channel's output properties.</p>
-        pub fn set_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
-        ) -> Self {
-            self.outputs = input;
-            self
-        }
-        /// <p>The channel's playback mode.</p>
-        pub fn playback_mode(mut self, input: impl Into<std::string::String>) -> Self {
-            self.playback_mode = Some(input.into());
-            self
-        }
-        /// <p>The channel's playback mode.</p>
-        pub fn set_playback_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.playback_mode = input;
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags assigned to the channel.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
-        }
-        /// <p>The tags assigned to the channel.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
-        }
-        /// <p>The channel's tier.</p>
-        pub fn tier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.tier = Some(input.into());
-            self
-        }
-        /// <p>The channel's tier.</p>
-        pub fn set_tier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tier = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CreateChannelOutput`](crate::output::CreateChannelOutput).
-        pub fn build(self) -> crate::output::CreateChannelOutput {
-            crate::output::CreateChannelOutput {
-                arn: self.arn,
-                channel_name: self.channel_name,
-                channel_state: self.channel_state,
-                creation_time: self.creation_time,
-                filler_slate: self.filler_slate,
-                last_modified_time: self.last_modified_time,
-                outputs: self.outputs,
-                playback_mode: self.playback_mode,
-                tags: self.tags,
-                tier: self.tier,
-            }
-        }
-    }
-}
-impl CreateChannelOutput {
-    /// Creates a new builder-style object to manufacture [`CreateChannelOutput`](crate::output::CreateChannelOutput).
-    pub fn builder() -> crate::output::create_channel_output::Builder {
-        crate::output::create_channel_output::Builder::default()
+impl ListAlertsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAlertsOutput`](crate::output::ListAlertsOutput).
+    pub fn builder() -> crate::output::list_alerts_output::Builder {
+        crate::output::list_alerts_output::Builder::default()
     }
 }
 

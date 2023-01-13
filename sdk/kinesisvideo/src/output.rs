@@ -74,6 +74,30 @@ impl UpdateNotificationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateMediaStorageConfigurationOutput {}
+/// See [`UpdateMediaStorageConfigurationOutput`](crate::output::UpdateMediaStorageConfigurationOutput).
+pub mod update_media_storage_configuration_output {
+
+    /// A builder for [`UpdateMediaStorageConfigurationOutput`](crate::output::UpdateMediaStorageConfigurationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateMediaStorageConfigurationOutput`](crate::output::UpdateMediaStorageConfigurationOutput).
+        pub fn build(self) -> crate::output::UpdateMediaStorageConfigurationOutput {
+            crate::output::UpdateMediaStorageConfigurationOutput {}
+        }
+    }
+}
+impl UpdateMediaStorageConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMediaStorageConfigurationOutput`](crate::output::UpdateMediaStorageConfigurationOutput).
+    pub fn builder() -> crate::output::update_media_storage_configuration_output::Builder {
+        crate::output::update_media_storage_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateImageGenerationConfigurationOutput {}
 /// See [`UpdateImageGenerationConfigurationOutput`](crate::output::UpdateImageGenerationConfigurationOutput).
 pub mod update_image_generation_configuration_output {
@@ -212,6 +236,183 @@ impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartEdgeConfigurationUpdateOutput {
+    /// <p>The name of the stream from which the edge configuration was updated.</p>
+    #[doc(hidden)]
+    pub stream_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
+    #[doc(hidden)]
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
+    #[doc(hidden)]
+    pub sync_status: std::option::Option<crate::model::SyncStatus>,
+    /// <p>A description of the generated failure status.</p>
+    #[doc(hidden)]
+    pub failed_status_details: std::option::Option<std::string::String>,
+    /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
+    #[doc(hidden)]
+    pub edge_config: std::option::Option<crate::model::EdgeConfig>,
+}
+impl StartEdgeConfigurationUpdateOutput {
+    /// <p>The name of the stream from which the edge configuration was updated.</p>
+    pub fn stream_name(&self) -> std::option::Option<&str> {
+        self.stream_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
+    pub fn sync_status(&self) -> std::option::Option<&crate::model::SyncStatus> {
+        self.sync_status.as_ref()
+    }
+    /// <p>A description of the generated failure status.</p>
+    pub fn failed_status_details(&self) -> std::option::Option<&str> {
+        self.failed_status_details.as_deref()
+    }
+    /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
+    pub fn edge_config(&self) -> std::option::Option<&crate::model::EdgeConfig> {
+        self.edge_config.as_ref()
+    }
+}
+/// See [`StartEdgeConfigurationUpdateOutput`](crate::output::StartEdgeConfigurationUpdateOutput).
+pub mod start_edge_configuration_update_output {
+
+    /// A builder for [`StartEdgeConfigurationUpdateOutput`](crate::output::StartEdgeConfigurationUpdateOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) sync_status: std::option::Option<crate::model::SyncStatus>,
+        pub(crate) failed_status_details: std::option::Option<std::string::String>,
+        pub(crate) edge_config: std::option::Option<crate::model::EdgeConfig>,
+    }
+    impl Builder {
+        /// <p>The name of the stream from which the edge configuration was updated.</p>
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stream from which the edge configuration was updated.</p>
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
+        /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_time = Some(input);
+            self
+        }
+        /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
+        pub fn set_last_updated_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_time = input;
+            self
+        }
+        /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
+        pub fn sync_status(mut self, input: crate::model::SyncStatus) -> Self {
+            self.sync_status = Some(input);
+            self
+        }
+        /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
+        pub fn set_sync_status(
+            mut self,
+            input: std::option::Option<crate::model::SyncStatus>,
+        ) -> Self {
+            self.sync_status = input;
+            self
+        }
+        /// <p>A description of the generated failure status.</p>
+        pub fn failed_status_details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failed_status_details = Some(input.into());
+            self
+        }
+        /// <p>A description of the generated failure status.</p>
+        pub fn set_failed_status_details(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failed_status_details = input;
+            self
+        }
+        /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
+        pub fn edge_config(mut self, input: crate::model::EdgeConfig) -> Self {
+            self.edge_config = Some(input);
+            self
+        }
+        /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
+        pub fn set_edge_config(
+            mut self,
+            input: std::option::Option<crate::model::EdgeConfig>,
+        ) -> Self {
+            self.edge_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartEdgeConfigurationUpdateOutput`](crate::output::StartEdgeConfigurationUpdateOutput).
+        pub fn build(self) -> crate::output::StartEdgeConfigurationUpdateOutput {
+            crate::output::StartEdgeConfigurationUpdateOutput {
+                stream_name: self.stream_name,
+                stream_arn: self.stream_arn,
+                creation_time: self.creation_time,
+                last_updated_time: self.last_updated_time,
+                sync_status: self.sync_status,
+                failed_status_details: self.failed_status_details,
+                edge_config: self.edge_config,
+            }
+        }
+    }
+}
+impl StartEdgeConfigurationUpdateOutput {
+    /// Creates a new builder-style object to manufacture [`StartEdgeConfigurationUpdateOutput`](crate::output::StartEdgeConfigurationUpdateOutput).
+    pub fn builder() -> crate::output::start_edge_configuration_update_output::Builder {
+        crate::output::start_edge_configuration_update_output::Builder::default()
     }
 }
 
@@ -820,6 +1021,148 @@ impl DescribeNotificationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeMediaStorageConfigurationOutput {
+    /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+    #[doc(hidden)]
+    pub media_storage_configuration: std::option::Option<crate::model::MediaStorageConfiguration>,
+}
+impl DescribeMediaStorageConfigurationOutput {
+    /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+    pub fn media_storage_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MediaStorageConfiguration> {
+        self.media_storage_configuration.as_ref()
+    }
+}
+/// See [`DescribeMediaStorageConfigurationOutput`](crate::output::DescribeMediaStorageConfigurationOutput).
+pub mod describe_media_storage_configuration_output {
+
+    /// A builder for [`DescribeMediaStorageConfigurationOutput`](crate::output::DescribeMediaStorageConfigurationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) media_storage_configuration:
+            std::option::Option<crate::model::MediaStorageConfiguration>,
+    }
+    impl Builder {
+        /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+        pub fn media_storage_configuration(
+            mut self,
+            input: crate::model::MediaStorageConfiguration,
+        ) -> Self {
+            self.media_storage_configuration = Some(input);
+            self
+        }
+        /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+        pub fn set_media_storage_configuration(
+            mut self,
+            input: std::option::Option<crate::model::MediaStorageConfiguration>,
+        ) -> Self {
+            self.media_storage_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeMediaStorageConfigurationOutput`](crate::output::DescribeMediaStorageConfigurationOutput).
+        pub fn build(self) -> crate::output::DescribeMediaStorageConfigurationOutput {
+            crate::output::DescribeMediaStorageConfigurationOutput {
+                media_storage_configuration: self.media_storage_configuration,
+            }
+        }
+    }
+}
+impl DescribeMediaStorageConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMediaStorageConfigurationOutput`](crate::output::DescribeMediaStorageConfigurationOutput).
+    pub fn builder() -> crate::output::describe_media_storage_configuration_output::Builder {
+        crate::output::describe_media_storage_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeMappedResourceConfigurationOutput {
+    /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+    #[doc(hidden)]
+    pub mapped_resource_configuration_list:
+        std::option::Option<std::vec::Vec<crate::model::MappedResourceConfigurationListItem>>,
+    /// <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeMappedResourceConfigurationOutput {
+    /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+    pub fn mapped_resource_configuration_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::MappedResourceConfigurationListItem]> {
+        self.mapped_resource_configuration_list.as_deref()
+    }
+    /// <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`DescribeMappedResourceConfigurationOutput`](crate::output::DescribeMappedResourceConfigurationOutput).
+pub mod describe_mapped_resource_configuration_output {
+
+    /// A builder for [`DescribeMappedResourceConfigurationOutput`](crate::output::DescribeMappedResourceConfigurationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) mapped_resource_configuration_list:
+            std::option::Option<std::vec::Vec<crate::model::MappedResourceConfigurationListItem>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `mapped_resource_configuration_list`.
+        ///
+        /// To override the contents of this collection use [`set_mapped_resource_configuration_list`](Self::set_mapped_resource_configuration_list).
+        ///
+        /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+        pub fn mapped_resource_configuration_list(
+            mut self,
+            input: crate::model::MappedResourceConfigurationListItem,
+        ) -> Self {
+            let mut v = self.mapped_resource_configuration_list.unwrap_or_default();
+            v.push(input);
+            self.mapped_resource_configuration_list = Some(v);
+            self
+        }
+        /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+        pub fn set_mapped_resource_configuration_list(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::MappedResourceConfigurationListItem>,
+            >,
+        ) -> Self {
+            self.mapped_resource_configuration_list = input;
+            self
+        }
+        /// <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeMappedResourceConfigurationOutput`](crate::output::DescribeMappedResourceConfigurationOutput).
+        pub fn build(self) -> crate::output::DescribeMappedResourceConfigurationOutput {
+            crate::output::DescribeMappedResourceConfigurationOutput {
+                mapped_resource_configuration_list: self.mapped_resource_configuration_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeMappedResourceConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMappedResourceConfigurationOutput`](crate::output::DescribeMappedResourceConfigurationOutput).
+    pub fn builder() -> crate::output::describe_mapped_resource_configuration_output::Builder {
+        crate::output::describe_mapped_resource_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeImageGenerationConfigurationOutput {
     /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
     #[doc(hidden)]
@@ -872,6 +1215,183 @@ impl DescribeImageGenerationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImageGenerationConfigurationOutput`](crate::output::DescribeImageGenerationConfigurationOutput).
     pub fn builder() -> crate::output::describe_image_generation_configuration_output::Builder {
         crate::output::describe_image_generation_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeEdgeConfigurationOutput {
+    /// <p>The name of the stream from which the edge configuration was updated.</p>
+    #[doc(hidden)]
+    pub stream_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
+    #[doc(hidden)]
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The latest status of the edge configuration update.</p>
+    #[doc(hidden)]
+    pub sync_status: std::option::Option<crate::model::SyncStatus>,
+    /// <p>A description of the generated failure status.</p>
+    #[doc(hidden)]
+    pub failed_status_details: std::option::Option<std::string::String>,
+    /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
+    #[doc(hidden)]
+    pub edge_config: std::option::Option<crate::model::EdgeConfig>,
+}
+impl DescribeEdgeConfigurationOutput {
+    /// <p>The name of the stream from which the edge configuration was updated.</p>
+    pub fn stream_name(&self) -> std::option::Option<&str> {
+        self.stream_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The latest status of the edge configuration update.</p>
+    pub fn sync_status(&self) -> std::option::Option<&crate::model::SyncStatus> {
+        self.sync_status.as_ref()
+    }
+    /// <p>A description of the generated failure status.</p>
+    pub fn failed_status_details(&self) -> std::option::Option<&str> {
+        self.failed_status_details.as_deref()
+    }
+    /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
+    pub fn edge_config(&self) -> std::option::Option<&crate::model::EdgeConfig> {
+        self.edge_config.as_ref()
+    }
+}
+/// See [`DescribeEdgeConfigurationOutput`](crate::output::DescribeEdgeConfigurationOutput).
+pub mod describe_edge_configuration_output {
+
+    /// A builder for [`DescribeEdgeConfigurationOutput`](crate::output::DescribeEdgeConfigurationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) sync_status: std::option::Option<crate::model::SyncStatus>,
+        pub(crate) failed_status_details: std::option::Option<std::string::String>,
+        pub(crate) edge_config: std::option::Option<crate::model::EdgeConfig>,
+    }
+    impl Builder {
+        /// <p>The name of the stream from which the edge configuration was updated.</p>
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stream from which the edge configuration was updated.</p>
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
+        /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_time = Some(input);
+            self
+        }
+        /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
+        pub fn set_last_updated_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_time = input;
+            self
+        }
+        /// <p>The latest status of the edge configuration update.</p>
+        pub fn sync_status(mut self, input: crate::model::SyncStatus) -> Self {
+            self.sync_status = Some(input);
+            self
+        }
+        /// <p>The latest status of the edge configuration update.</p>
+        pub fn set_sync_status(
+            mut self,
+            input: std::option::Option<crate::model::SyncStatus>,
+        ) -> Self {
+            self.sync_status = input;
+            self
+        }
+        /// <p>A description of the generated failure status.</p>
+        pub fn failed_status_details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failed_status_details = Some(input.into());
+            self
+        }
+        /// <p>A description of the generated failure status.</p>
+        pub fn set_failed_status_details(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failed_status_details = input;
+            self
+        }
+        /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
+        pub fn edge_config(mut self, input: crate::model::EdgeConfig) -> Self {
+            self.edge_config = Some(input);
+            self
+        }
+        /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
+        pub fn set_edge_config(
+            mut self,
+            input: std::option::Option<crate::model::EdgeConfig>,
+        ) -> Self {
+            self.edge_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeEdgeConfigurationOutput`](crate::output::DescribeEdgeConfigurationOutput).
+        pub fn build(self) -> crate::output::DescribeEdgeConfigurationOutput {
+            crate::output::DescribeEdgeConfigurationOutput {
+                stream_name: self.stream_name,
+                stream_arn: self.stream_arn,
+                creation_time: self.creation_time,
+                last_updated_time: self.last_updated_time,
+                sync_status: self.sync_status,
+                failed_status_details: self.failed_status_details,
+                edge_config: self.edge_config,
+            }
+        }
+    }
+}
+impl DescribeEdgeConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEdgeConfigurationOutput`](crate::output::DescribeEdgeConfigurationOutput).
+    pub fn builder() -> crate::output::describe_edge_configuration_output::Builder {
+        crate::output::describe_edge_configuration_output::Builder::default()
     }
 }
 

@@ -131,6 +131,37 @@ impl From<crate::error::CreateDataflowEndpointGroupError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateEphemerisError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateEphemerisError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateEphemerisError> for Error {
+    fn from(err: crate::error::CreateEphemerisError) -> Self {
+        match err.kind {
+            crate::error::CreateEphemerisErrorKind::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::error::CreateEphemerisErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::CreateEphemerisErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::CreateEphemerisErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMissionProfileError, R>>
     for Error
 where
@@ -230,6 +261,37 @@ impl From<crate::error::DeleteDataflowEndpointGroupError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEphemerisError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteEphemerisError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteEphemerisError> for Error {
+    fn from(err: crate::error::DeleteEphemerisError) -> Self {
+        match err.kind {
+            crate::error::DeleteEphemerisErrorKind::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::error::DeleteEphemerisErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::DeleteEphemerisErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DeleteEphemerisErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMissionProfileError, R>>
     for Error
 where
@@ -290,6 +352,39 @@ impl From<crate::error::DescribeContactError> for Error {
                 Error::ResourceNotFoundException(inner)
             }
             crate::error::DescribeContactErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEphemerisError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeEphemerisError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeEphemerisError> for Error {
+    fn from(err: crate::error::DescribeEphemerisError) -> Self {
+        match err.kind {
+            crate::error::DescribeEphemerisErrorKind::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::error::DescribeEphemerisErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::DescribeEphemerisErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DescribeEphemerisErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -551,6 +646,37 @@ impl From<crate::error::ListDataflowEndpointGroupsError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListEphemeridesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListEphemeridesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListEphemeridesError> for Error {
+    fn from(err: crate::error::ListEphemeridesError) -> Self {
+        match err.kind {
+            crate::error::ListEphemeridesErrorKind::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::error::ListEphemeridesErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::ListEphemeridesErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListEphemeridesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGroundStationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -800,6 +926,37 @@ impl From<crate::error::UpdateConfigError> for Error {
                 Error::ResourceNotFoundException(inner)
             }
             crate::error::UpdateConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateEphemerisError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateEphemerisError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateEphemerisError> for Error {
+    fn from(err: crate::error::UpdateEphemerisError) -> Self {
+        match err.kind {
+            crate::error::UpdateEphemerisErrorKind::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::error::UpdateEphemerisErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::UpdateEphemerisErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UpdateEphemerisErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

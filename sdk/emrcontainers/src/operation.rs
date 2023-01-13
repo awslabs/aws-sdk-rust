@@ -31,6 +31,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelJobRun {
     }
 }
 
+/// Operation shape for `CreateJobTemplate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_job_template`](crate::client::Client::create_job_template).
+///
+/// See [`crate::client::fluent_builders::CreateJobTemplate`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateJobTemplate {
+    _private: (),
+}
+impl CreateJobTemplate {
+    /// Creates a new builder-style object to manufacture [`CreateJobTemplateInput`](crate::input::CreateJobTemplateInput).
+    pub fn builder() -> crate::input::create_job_template_input::Builder {
+        crate::input::create_job_template_input::Builder::default()
+    }
+    /// Creates a new `CreateJobTemplate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateJobTemplate {
+    type Output = std::result::Result<
+        crate::output::CreateJobTemplateOutput,
+        crate::error::CreateJobTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_job_template_error(response)
+        } else {
+            crate::operation_deser::parse_create_job_template_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateManagedEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -95,6 +129,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualCluster {
             crate::operation_deser::parse_create_virtual_cluster_error(response)
         } else {
             crate::operation_deser::parse_create_virtual_cluster_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteJobTemplate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_job_template`](crate::client::Client::delete_job_template).
+///
+/// See [`crate::client::fluent_builders::DeleteJobTemplate`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteJobTemplate {
+    _private: (),
+}
+impl DeleteJobTemplate {
+    /// Creates a new builder-style object to manufacture [`DeleteJobTemplateInput`](crate::input::DeleteJobTemplateInput).
+    pub fn builder() -> crate::input::delete_job_template_input::Builder {
+        crate::input::delete_job_template_input::Builder::default()
+    }
+    /// Creates a new `DeleteJobTemplate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteJobTemplate {
+    type Output = std::result::Result<
+        crate::output::DeleteJobTemplateOutput,
+        crate::error::DeleteJobTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_job_template_error(response)
+        } else {
+            crate::operation_deser::parse_delete_job_template_response(response)
         }
     }
 }
@@ -199,6 +267,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobRun {
     }
 }
 
+/// Operation shape for `DescribeJobTemplate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_job_template`](crate::client::Client::describe_job_template).
+///
+/// See [`crate::client::fluent_builders::DescribeJobTemplate`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeJobTemplate {
+    _private: (),
+}
+impl DescribeJobTemplate {
+    /// Creates a new builder-style object to manufacture [`DescribeJobTemplateInput`](crate::input::DescribeJobTemplateInput).
+    pub fn builder() -> crate::input::describe_job_template_input::Builder {
+        crate::input::describe_job_template_input::Builder::default()
+    }
+    /// Creates a new `DescribeJobTemplate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeJobTemplate {
+    type Output = std::result::Result<
+        crate::output::DescribeJobTemplateOutput,
+        crate::error::DescribeJobTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_job_template_error(response)
+        } else {
+            crate::operation_deser::parse_describe_job_template_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeManagedEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -295,6 +397,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobRuns {
             crate::operation_deser::parse_list_job_runs_error(response)
         } else {
             crate::operation_deser::parse_list_job_runs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListJobTemplates`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_job_templates`](crate::client::Client::list_job_templates).
+///
+/// See [`crate::client::fluent_builders::ListJobTemplates`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListJobTemplates {
+    _private: (),
+}
+impl ListJobTemplates {
+    /// Creates a new builder-style object to manufacture [`ListJobTemplatesInput`](crate::input::ListJobTemplatesInput).
+    pub fn builder() -> crate::input::list_job_templates_input::Builder {
+        crate::input::list_job_templates_input::Builder::default()
+    }
+    /// Creates a new `ListJobTemplates` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListJobTemplates {
+    type Output = std::result::Result<
+        crate::output::ListJobTemplatesOutput,
+        crate::error::ListJobTemplatesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_job_templates_error(response)
+        } else {
+            crate::operation_deser::parse_list_job_templates_response(response)
         }
     }
 }

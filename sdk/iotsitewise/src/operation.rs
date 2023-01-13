@@ -1517,6 +1517,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessPolicies {
     }
 }
 
+/// Operation shape for `ListAssetModelProperties`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_asset_model_properties`](crate::client::Client::list_asset_model_properties).
+///
+/// See [`crate::client::fluent_builders::ListAssetModelProperties`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListAssetModelProperties {
+    _private: (),
+}
+impl ListAssetModelProperties {
+    /// Creates a new builder-style object to manufacture [`ListAssetModelPropertiesInput`](crate::input::ListAssetModelPropertiesInput).
+    pub fn builder() -> crate::input::list_asset_model_properties_input::Builder {
+        crate::input::list_asset_model_properties_input::Builder::default()
+    }
+    /// Creates a new `ListAssetModelProperties` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListAssetModelProperties {
+    type Output = std::result::Result<
+        crate::output::ListAssetModelPropertiesOutput,
+        crate::error::ListAssetModelPropertiesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_asset_model_properties_error(response)
+        } else {
+            crate::operation_deser::parse_list_asset_model_properties_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListAssetModels`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1547,6 +1581,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssetModels {
             crate::operation_deser::parse_list_asset_models_error(response)
         } else {
             crate::operation_deser::parse_list_asset_models_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListAssetProperties`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_asset_properties`](crate::client::Client::list_asset_properties).
+///
+/// See [`crate::client::fluent_builders::ListAssetProperties`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListAssetProperties {
+    _private: (),
+}
+impl ListAssetProperties {
+    /// Creates a new builder-style object to manufacture [`ListAssetPropertiesInput`](crate::input::ListAssetPropertiesInput).
+    pub fn builder() -> crate::input::list_asset_properties_input::Builder {
+        crate::input::list_asset_properties_input::Builder::default()
+    }
+    /// Creates a new `ListAssetProperties` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListAssetProperties {
+    type Output = std::result::Result<
+        crate::output::ListAssetPropertiesOutput,
+        crate::error::ListAssetPropertiesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_asset_properties_error(response)
+        } else {
+            crate::operation_deser::parse_list_asset_properties_response(response)
         }
     }
 }

@@ -1294,6 +1294,198 @@ impl std::error::Error for AssociateTrustStoreError {
     }
 }
 
+/// Error type for the `AssociateUserAccessLoggingSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AssociateUserAccessLoggingSettingsError {
+    /// Kind of error that occurred.
+    pub kind: AssociateUserAccessLoggingSettingsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AssociateUserAccessLoggingSettingsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `AssociateUserAccessLoggingSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssociateUserAccessLoggingSettingsErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There is a conflict.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>There is an internal server error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>There is a throttling error.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>There is a validation error.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for AssociateUserAccessLoggingSettingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssociateUserAccessLoggingSettingsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateUserAccessLoggingSettingsErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            AssociateUserAccessLoggingSettingsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateUserAccessLoggingSettingsErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateUserAccessLoggingSettingsErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateUserAccessLoggingSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AssociateUserAccessLoggingSettingsError {
+    fn code(&self) -> Option<&str> {
+        AssociateUserAccessLoggingSettingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssociateUserAccessLoggingSettingsError {
+    /// Creates a new `AssociateUserAccessLoggingSettingsError`.
+    pub fn new(
+        kind: AssociateUserAccessLoggingSettingsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AssociateUserAccessLoggingSettingsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssociateUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AssociateUserAccessLoggingSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssociateUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AssociateUserAccessLoggingSettingsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateUserAccessLoggingSettingsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateUserAccessLoggingSettingsErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateUserAccessLoggingSettingsErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateUserAccessLoggingSettingsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateUserAccessLoggingSettingsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateUserAccessLoggingSettingsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateUserAccessLoggingSettingsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateUserAccessLoggingSettingsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateUserAccessLoggingSettingsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for AssociateUserAccessLoggingSettingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssociateUserAccessLoggingSettingsErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            AssociateUserAccessLoggingSettingsErrorKind::ConflictException(_inner) => Some(_inner),
+            AssociateUserAccessLoggingSettingsErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            AssociateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            AssociateUserAccessLoggingSettingsErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            AssociateUserAccessLoggingSettingsErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            AssociateUserAccessLoggingSettingsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `AssociateUserSettings` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2306,6 +2498,188 @@ impl std::error::Error for CreateTrustStoreError {
     }
 }
 
+/// Error type for the `CreateUserAccessLoggingSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateUserAccessLoggingSettingsError {
+    /// Kind of error that occurred.
+    pub kind: CreateUserAccessLoggingSettingsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateUserAccessLoggingSettingsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateUserAccessLoggingSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateUserAccessLoggingSettingsErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There is a conflict.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>There is an internal server error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The service quota has been exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>There is a throttling error.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>There is a validation error.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateUserAccessLoggingSettingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateUserAccessLoggingSettingsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateUserAccessLoggingSettingsErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateUserAccessLoggingSettingsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateUserAccessLoggingSettingsErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateUserAccessLoggingSettingsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateUserAccessLoggingSettingsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateUserAccessLoggingSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateUserAccessLoggingSettingsError {
+    fn code(&self) -> Option<&str> {
+        CreateUserAccessLoggingSettingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateUserAccessLoggingSettingsError {
+    /// Creates a new `CreateUserAccessLoggingSettingsError`.
+    pub fn new(
+        kind: CreateUserAccessLoggingSettingsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateUserAccessLoggingSettingsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateUserAccessLoggingSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateUserAccessLoggingSettingsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUserAccessLoggingSettingsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateUserAccessLoggingSettingsErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUserAccessLoggingSettingsErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateUserAccessLoggingSettingsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUserAccessLoggingSettingsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateUserAccessLoggingSettingsErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUserAccessLoggingSettingsErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateUserAccessLoggingSettingsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUserAccessLoggingSettingsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateUserAccessLoggingSettingsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUserAccessLoggingSettingsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CreateUserAccessLoggingSettingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateUserAccessLoggingSettingsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateUserAccessLoggingSettingsErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateUserAccessLoggingSettingsErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            CreateUserAccessLoggingSettingsErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateUserAccessLoggingSettingsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateUserAccessLoggingSettingsErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateUserAccessLoggingSettingsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `CreateUserSettings` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3226,6 +3600,173 @@ impl std::error::Error for DeleteTrustStoreError {
     }
 }
 
+/// Error type for the `DeleteUserAccessLoggingSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteUserAccessLoggingSettingsError {
+    /// Kind of error that occurred.
+    pub kind: DeleteUserAccessLoggingSettingsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteUserAccessLoggingSettingsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteUserAccessLoggingSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteUserAccessLoggingSettingsErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There is a conflict.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>There is an internal server error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>There is a throttling error.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>There is a validation error.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteUserAccessLoggingSettingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteUserAccessLoggingSettingsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteUserAccessLoggingSettingsErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteUserAccessLoggingSettingsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteUserAccessLoggingSettingsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteUserAccessLoggingSettingsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteUserAccessLoggingSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteUserAccessLoggingSettingsError {
+    fn code(&self) -> Option<&str> {
+        DeleteUserAccessLoggingSettingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteUserAccessLoggingSettingsError {
+    /// Creates a new `DeleteUserAccessLoggingSettingsError`.
+    pub fn new(
+        kind: DeleteUserAccessLoggingSettingsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteUserAccessLoggingSettingsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteUserAccessLoggingSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteUserAccessLoggingSettingsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserAccessLoggingSettingsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteUserAccessLoggingSettingsErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserAccessLoggingSettingsErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteUserAccessLoggingSettingsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserAccessLoggingSettingsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteUserAccessLoggingSettingsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserAccessLoggingSettingsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteUserAccessLoggingSettingsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserAccessLoggingSettingsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteUserAccessLoggingSettingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteUserAccessLoggingSettingsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteUserAccessLoggingSettingsErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteUserAccessLoggingSettingsErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            DeleteUserAccessLoggingSettingsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteUserAccessLoggingSettingsErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteUserAccessLoggingSettingsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DeleteUserSettings` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3850,6 +4391,187 @@ impl std::error::Error for DisassociateTrustStoreError {
             DisassociateTrustStoreErrorKind::ThrottlingException(_inner) => Some(_inner),
             DisassociateTrustStoreErrorKind::ValidationException(_inner) => Some(_inner),
             DisassociateTrustStoreErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DisassociateUserAccessLoggingSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DisassociateUserAccessLoggingSettingsError {
+    /// Kind of error that occurred.
+    pub kind: DisassociateUserAccessLoggingSettingsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateUserAccessLoggingSettingsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DisassociateUserAccessLoggingSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisassociateUserAccessLoggingSettingsErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There is an internal server error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>There is a throttling error.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>There is a validation error.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DisassociateUserAccessLoggingSettingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisassociateUserAccessLoggingSettingsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateUserAccessLoggingSettingsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateUserAccessLoggingSettingsErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateUserAccessLoggingSettingsErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateUserAccessLoggingSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DisassociateUserAccessLoggingSettingsError {
+    fn code(&self) -> Option<&str> {
+        DisassociateUserAccessLoggingSettingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisassociateUserAccessLoggingSettingsError {
+    /// Creates a new `DisassociateUserAccessLoggingSettingsError`.
+    pub fn new(
+        kind: DisassociateUserAccessLoggingSettingsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DisassociateUserAccessLoggingSettingsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisassociateUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DisassociateUserAccessLoggingSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisassociateUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DisassociateUserAccessLoggingSettingsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateUserAccessLoggingSettingsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateUserAccessLoggingSettingsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateUserAccessLoggingSettingsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateUserAccessLoggingSettingsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateUserAccessLoggingSettingsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateUserAccessLoggingSettingsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateUserAccessLoggingSettingsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DisassociateUserAccessLoggingSettingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisassociateUserAccessLoggingSettingsErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateUserAccessLoggingSettingsErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateUserAccessLoggingSettingsErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateUserAccessLoggingSettingsErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateUserAccessLoggingSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5079,6 +5801,168 @@ impl std::error::Error for GetTrustStoreCertificateError {
     }
 }
 
+/// Error type for the `GetUserAccessLoggingSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetUserAccessLoggingSettingsError {
+    /// Kind of error that occurred.
+    pub kind: GetUserAccessLoggingSettingsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetUserAccessLoggingSettingsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetUserAccessLoggingSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetUserAccessLoggingSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetUserAccessLoggingSettingsErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There is an internal server error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>There is a throttling error.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>There is a validation error.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetUserAccessLoggingSettingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetUserAccessLoggingSettingsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetUserAccessLoggingSettingsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetUserAccessLoggingSettingsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetUserAccessLoggingSettingsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetUserAccessLoggingSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetUserAccessLoggingSettingsError {
+    fn code(&self) -> Option<&str> {
+        GetUserAccessLoggingSettingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetUserAccessLoggingSettingsError {
+    /// Creates a new `GetUserAccessLoggingSettingsError`.
+    pub fn new(kind: GetUserAccessLoggingSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetUserAccessLoggingSettingsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetUserAccessLoggingSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetUserAccessLoggingSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetUserAccessLoggingSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetUserAccessLoggingSettingsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUserAccessLoggingSettingsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUserAccessLoggingSettingsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUserAccessLoggingSettingsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUserAccessLoggingSettingsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUserAccessLoggingSettingsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUserAccessLoggingSettingsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUserAccessLoggingSettingsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUserAccessLoggingSettingsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetUserAccessLoggingSettingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetUserAccessLoggingSettingsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetUserAccessLoggingSettingsErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetUserAccessLoggingSettingsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetUserAccessLoggingSettingsErrorKind::ValidationException(_inner) => Some(_inner),
+            GetUserAccessLoggingSettingsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `GetUserSettings` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6222,6 +7106,158 @@ impl std::error::Error for ListTrustStoresError {
             ListTrustStoresErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTrustStoresErrorKind::ValidationException(_inner) => Some(_inner),
             ListTrustStoresErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListUserAccessLoggingSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListUserAccessLoggingSettingsError {
+    /// Kind of error that occurred.
+    pub kind: ListUserAccessLoggingSettingsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListUserAccessLoggingSettingsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListUserAccessLoggingSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListUserAccessLoggingSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListUserAccessLoggingSettingsErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There is an internal server error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>There is a throttling error.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>There is a validation error.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListUserAccessLoggingSettingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListUserAccessLoggingSettingsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListUserAccessLoggingSettingsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListUserAccessLoggingSettingsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListUserAccessLoggingSettingsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListUserAccessLoggingSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListUserAccessLoggingSettingsError {
+    fn code(&self) -> Option<&str> {
+        ListUserAccessLoggingSettingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListUserAccessLoggingSettingsError {
+    /// Creates a new `ListUserAccessLoggingSettingsError`.
+    pub fn new(
+        kind: ListUserAccessLoggingSettingsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListUserAccessLoggingSettingsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListUserAccessLoggingSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListUserAccessLoggingSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListUserAccessLoggingSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListUserAccessLoggingSettingsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListUserAccessLoggingSettingsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListUserAccessLoggingSettingsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListUserAccessLoggingSettingsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListUserAccessLoggingSettingsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListUserAccessLoggingSettingsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListUserAccessLoggingSettingsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListUserAccessLoggingSettingsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListUserAccessLoggingSettingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListUserAccessLoggingSettingsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListUserAccessLoggingSettingsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListUserAccessLoggingSettingsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListUserAccessLoggingSettingsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListUserAccessLoggingSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7428,6 +8464,177 @@ impl std::error::Error for UpdateTrustStoreError {
             UpdateTrustStoreErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateTrustStoreErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateTrustStoreErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateUserAccessLoggingSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateUserAccessLoggingSettingsError {
+    /// Kind of error that occurred.
+    pub kind: UpdateUserAccessLoggingSettingsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateUserAccessLoggingSettingsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateUserAccessLoggingSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateUserAccessLoggingSettingsErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There is an internal server error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>There is a throttling error.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>There is a validation error.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateUserAccessLoggingSettingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateUserAccessLoggingSettingsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateUserAccessLoggingSettingsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateUserAccessLoggingSettingsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateUserAccessLoggingSettingsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateUserAccessLoggingSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateUserAccessLoggingSettingsError {
+    fn code(&self) -> Option<&str> {
+        UpdateUserAccessLoggingSettingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateUserAccessLoggingSettingsError {
+    /// Creates a new `UpdateUserAccessLoggingSettingsError`.
+    pub fn new(
+        kind: UpdateUserAccessLoggingSettingsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateUserAccessLoggingSettingsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateUserAccessLoggingSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateUserAccessLoggingSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateUserAccessLoggingSettingsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateUserAccessLoggingSettingsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateUserAccessLoggingSettingsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateUserAccessLoggingSettingsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateUserAccessLoggingSettingsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateUserAccessLoggingSettingsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateUserAccessLoggingSettingsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateUserAccessLoggingSettingsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateUserAccessLoggingSettingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateUserAccessLoggingSettingsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateUserAccessLoggingSettingsErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            UpdateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateUserAccessLoggingSettingsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateUserAccessLoggingSettingsErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateUserAccessLoggingSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

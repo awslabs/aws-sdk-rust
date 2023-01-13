@@ -147,6 +147,19 @@ impl Client {
     ) -> fluent_builders::DisassociateGatewayFromServer {
         fluent_builders::DisassociateGatewayFromServer::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetBandwidthRateLimitSchedule`](crate::client::fluent_builders::GetBandwidthRateLimitSchedule) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_arn(impl Into<String>)`](crate::client::fluent_builders::GetBandwidthRateLimitSchedule::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::client::fluent_builders::GetBandwidthRateLimitSchedule::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`GetBandwidthRateLimitScheduleOutput`](crate::output::GetBandwidthRateLimitScheduleOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::GetBandwidthRateLimitScheduleOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`bandwidth_rate_limit_intervals(Option<Vec<BandwidthRateLimitInterval>>)`](crate::output::GetBandwidthRateLimitScheduleOutput::bandwidth_rate_limit_intervals): <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
+    /// - On failure, responds with [`SdkError<GetBandwidthRateLimitScheduleError>`](crate::error::GetBandwidthRateLimitScheduleError)
+    pub fn get_bandwidth_rate_limit_schedule(
+        &self,
+    ) -> fluent_builders::GetBandwidthRateLimitSchedule {
+        fluent_builders::GetBandwidthRateLimitSchedule::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetGateway`](crate::client::fluent_builders::GetGateway) operation.
     ///
     /// - The fluent builder is configurable:
@@ -156,6 +169,30 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetGatewayError>`](crate::error::GetGatewayError)
     pub fn get_gateway(&self) -> fluent_builders::GetGateway {
         fluent_builders::GetGateway::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetHypervisor`](crate::client::fluent_builders::GetHypervisor) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`hypervisor_arn(impl Into<String>)`](crate::client::fluent_builders::GetHypervisor::hypervisor_arn) / [`set_hypervisor_arn(Option<String>)`](crate::client::fluent_builders::GetHypervisor::set_hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    /// - On success, responds with [`GetHypervisorOutput`](crate::output::GetHypervisorOutput) with field(s):
+    ///   - [`hypervisor(Option<HypervisorDetails>)`](crate::output::GetHypervisorOutput::hypervisor): <p>Details about the requested hypervisor.</p>
+    /// - On failure, responds with [`SdkError<GetHypervisorError>`](crate::error::GetHypervisorError)
+    pub fn get_hypervisor(&self) -> fluent_builders::GetHypervisor {
+        fluent_builders::GetHypervisor::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetHypervisorPropertyMappings`](crate::client::fluent_builders::GetHypervisorPropertyMappings) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`hypervisor_arn(impl Into<String>)`](crate::client::fluent_builders::GetHypervisorPropertyMappings::hypervisor_arn) / [`set_hypervisor_arn(Option<String>)`](crate::client::fluent_builders::GetHypervisorPropertyMappings::set_hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    /// - On success, responds with [`GetHypervisorPropertyMappingsOutput`](crate::output::GetHypervisorPropertyMappingsOutput) with field(s):
+    ///   - [`hypervisor_arn(Option<String>)`](crate::output::GetHypervisorPropertyMappingsOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    ///   - [`vmware_to_aws_tag_mappings(Option<Vec<VmwareToAwsTagMapping>>)`](crate::output::GetHypervisorPropertyMappingsOutput::vmware_to_aws_tag_mappings): <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    ///   - [`iam_role_arn(Option<String>)`](crate::output::GetHypervisorPropertyMappingsOutput::iam_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role.</p>
+    /// - On failure, responds with [`SdkError<GetHypervisorPropertyMappingsError>`](crate::error::GetHypervisorPropertyMappingsError)
+    pub fn get_hypervisor_property_mappings(
+        &self,
+    ) -> fluent_builders::GetHypervisorPropertyMappings {
+        fluent_builders::GetHypervisorPropertyMappings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetVirtualMachine`](crate::client::fluent_builders::GetVirtualMachine) operation.
     ///
@@ -235,6 +272,33 @@ impl Client {
     pub fn list_virtual_machines(&self) -> fluent_builders::ListVirtualMachines {
         fluent_builders::ListVirtualMachines::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`PutBandwidthRateLimitSchedule`](crate::client::fluent_builders::PutBandwidthRateLimitSchedule) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_arn(impl Into<String>)`](crate::client::fluent_builders::PutBandwidthRateLimitSchedule::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::client::fluent_builders::PutBandwidthRateLimitSchedule::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`bandwidth_rate_limit_intervals(Vec<BandwidthRateLimitInterval>)`](crate::client::fluent_builders::PutBandwidthRateLimitSchedule::bandwidth_rate_limit_intervals) / [`set_bandwidth_rate_limit_intervals(Option<Vec<BandwidthRateLimitInterval>>)`](crate::client::fluent_builders::PutBandwidthRateLimitSchedule::set_bandwidth_rate_limit_intervals): <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
+    /// - On success, responds with [`PutBandwidthRateLimitScheduleOutput`](crate::output::PutBandwidthRateLimitScheduleOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::PutBandwidthRateLimitScheduleOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<PutBandwidthRateLimitScheduleError>`](crate::error::PutBandwidthRateLimitScheduleError)
+    pub fn put_bandwidth_rate_limit_schedule(
+        &self,
+    ) -> fluent_builders::PutBandwidthRateLimitSchedule {
+        fluent_builders::PutBandwidthRateLimitSchedule::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutHypervisorPropertyMappings`](crate::client::fluent_builders::PutHypervisorPropertyMappings) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`hypervisor_arn(impl Into<String>)`](crate::client::fluent_builders::PutHypervisorPropertyMappings::hypervisor_arn) / [`set_hypervisor_arn(Option<String>)`](crate::client::fluent_builders::PutHypervisorPropertyMappings::set_hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    ///   - [`vmware_to_aws_tag_mappings(Vec<VmwareToAwsTagMapping>)`](crate::client::fluent_builders::PutHypervisorPropertyMappings::vmware_to_aws_tag_mappings) / [`set_vmware_to_aws_tag_mappings(Option<Vec<VmwareToAwsTagMapping>>)`](crate::client::fluent_builders::PutHypervisorPropertyMappings::set_vmware_to_aws_tag_mappings): <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::PutHypervisorPropertyMappings::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::PutHypervisorPropertyMappings::set_iam_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role.</p>
+    /// - On success, responds with [`PutHypervisorPropertyMappingsOutput`](crate::output::PutHypervisorPropertyMappingsOutput) with field(s):
+    ///   - [`hypervisor_arn(Option<String>)`](crate::output::PutHypervisorPropertyMappingsOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    /// - On failure, responds with [`SdkError<PutHypervisorPropertyMappingsError>`](crate::error::PutHypervisorPropertyMappingsError)
+    pub fn put_hypervisor_property_mappings(
+        &self,
+    ) -> fluent_builders::PutHypervisorPropertyMappings {
+        fluent_builders::PutHypervisorPropertyMappings::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`PutMaintenanceStartTime`](crate::client::fluent_builders::PutMaintenanceStartTime) operation.
     ///
     /// - The fluent builder is configurable:
@@ -248,6 +312,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<PutMaintenanceStartTimeError>`](crate::error::PutMaintenanceStartTimeError)
     pub fn put_maintenance_start_time(&self) -> fluent_builders::PutMaintenanceStartTime {
         fluent_builders::PutMaintenanceStartTime::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`StartVirtualMachinesMetadataSync`](crate::client::fluent_builders::StartVirtualMachinesMetadataSync) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`hypervisor_arn(impl Into<String>)`](crate::client::fluent_builders::StartVirtualMachinesMetadataSync::hypervisor_arn) / [`set_hypervisor_arn(Option<String>)`](crate::client::fluent_builders::StartVirtualMachinesMetadataSync::set_hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    /// - On success, responds with [`StartVirtualMachinesMetadataSyncOutput`](crate::output::StartVirtualMachinesMetadataSyncOutput) with field(s):
+    ///   - [`hypervisor_arn(Option<String>)`](crate::output::StartVirtualMachinesMetadataSyncOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    /// - On failure, responds with [`SdkError<StartVirtualMachinesMetadataSyncError>`](crate::error::StartVirtualMachinesMetadataSyncError)
+    pub fn start_virtual_machines_metadata_sync(
+        &self,
+    ) -> fluent_builders::StartVirtualMachinesMetadataSync {
+        fluent_builders::StartVirtualMachinesMetadataSync::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
@@ -313,6 +389,7 @@ impl Client {
     ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::UpdateHypervisor::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::UpdateHypervisor::set_username): <p>The updated username for the hypervisor.</p>
     ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::UpdateHypervisor::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::UpdateHypervisor::set_password): <p>The updated password for the hypervisor.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateHypervisor::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateHypervisor::set_name): <p>The updated name for the hypervisor</p>
+    ///   - [`log_group_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateHypervisor::log_group_arn) / [`set_log_group_arn(Option<String>)`](crate::client::fluent_builders::UpdateHypervisor::set_log_group_arn): <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
     /// - On success, responds with [`UpdateHypervisorOutput`](crate::output::UpdateHypervisorOutput) with field(s):
     ///   - [`hypervisor_arn(Option<String>)`](crate::output::UpdateHypervisorOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor you updated.</p>
     /// - On failure, responds with [`SdkError<UpdateHypervisorError>`](crate::error::UpdateHypervisorError)
@@ -751,6 +828,79 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetBandwidthRateLimitSchedule`.
+    ///
+    /// <p>Retrieves the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to get a gateway's bandwidth rate limit schedule.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetBandwidthRateLimitSchedule {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_bandwidth_rate_limit_schedule_input::Builder,
+    }
+    impl GetBandwidthRateLimitSchedule {
+        /// Creates a new `GetBandwidthRateLimitSchedule`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetBandwidthRateLimitSchedule,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetBandwidthRateLimitScheduleError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetBandwidthRateLimitScheduleOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetBandwidthRateLimitScheduleError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+        pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_gateway_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetGateway`.
     ///
     /// <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>
@@ -821,6 +971,158 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_gateway_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetHypervisor`.
+    ///
+    /// <p>This action requests information about the specified hypervisor to which the gateway will connect. A hypervisor is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetHypervisor {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_hypervisor_input::Builder,
+    }
+    impl GetHypervisor {
+        /// Creates a new `GetHypervisor`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetHypervisor,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetHypervisorError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetHypervisorOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetHypervisorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hypervisor_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn set_hypervisor_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hypervisor_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetHypervisorPropertyMappings`.
+    ///
+    /// <p>This action retrieves the property mappings for the specified hypervisor. A hypervisor property mapping displays the relationship of entity properties available from the on-premises hypervisor to the properties available in Amazon Web Services.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetHypervisorPropertyMappings {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_hypervisor_property_mappings_input::Builder,
+    }
+    impl GetHypervisorPropertyMappings {
+        /// Creates a new `GetHypervisorPropertyMappings`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetHypervisorPropertyMappings,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetHypervisorPropertyMappingsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetHypervisorPropertyMappingsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetHypervisorPropertyMappingsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hypervisor_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn set_hypervisor_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hypervisor_arn(input);
             self
         }
     }
@@ -1380,6 +1682,205 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `PutBandwidthRateLimitSchedule`.
+    ///
+    /// <p>This action sets the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have a bandwidth rate limit schedule, which means no bandwidth rate limiting is in effect. Use this to initiate a gateway's bandwidth rate limit schedule.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutBandwidthRateLimitSchedule {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_bandwidth_rate_limit_schedule_input::Builder,
+    }
+    impl PutBandwidthRateLimitSchedule {
+        /// Creates a new `PutBandwidthRateLimitSchedule`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PutBandwidthRateLimitSchedule,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutBandwidthRateLimitScheduleError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutBandwidthRateLimitScheduleOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutBandwidthRateLimitScheduleError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+        pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_gateway_arn(input);
+            self
+        }
+        /// Appends an item to `BandwidthRateLimitIntervals`.
+        ///
+        /// To override the contents of this collection use [`set_bandwidth_rate_limit_intervals`](Self::set_bandwidth_rate_limit_intervals).
+        ///
+        /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
+        pub fn bandwidth_rate_limit_intervals(
+            mut self,
+            input: crate::model::BandwidthRateLimitInterval,
+        ) -> Self {
+            self.inner = self.inner.bandwidth_rate_limit_intervals(input);
+            self
+        }
+        /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
+        pub fn set_bandwidth_rate_limit_intervals(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
+        ) -> Self {
+            self.inner = self.inner.set_bandwidth_rate_limit_intervals(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutHypervisorPropertyMappings`.
+    ///
+    /// <p>This action sets the property mappings for the specified hypervisor. A hypervisor property mapping displays the relationship of entity properties available from the on-premises hypervisor to the properties available in Amazon Web Services.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutHypervisorPropertyMappings {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_hypervisor_property_mappings_input::Builder,
+    }
+    impl PutHypervisorPropertyMappings {
+        /// Creates a new `PutHypervisorPropertyMappings`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PutHypervisorPropertyMappings,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutHypervisorPropertyMappingsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutHypervisorPropertyMappingsOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutHypervisorPropertyMappingsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hypervisor_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn set_hypervisor_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hypervisor_arn(input);
+            self
+        }
+        /// Appends an item to `VmwareToAwsTagMappings`.
+        ///
+        /// To override the contents of this collection use [`set_vmware_to_aws_tag_mappings`](Self::set_vmware_to_aws_tag_mappings).
+        ///
+        /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+        pub fn vmware_to_aws_tag_mappings(
+            mut self,
+            input: crate::model::VmwareToAwsTagMapping,
+        ) -> Self {
+            self.inner = self.inner.vmware_to_aws_tag_mappings(input);
+            self
+        }
+        /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+        pub fn set_vmware_to_aws_tag_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VmwareToAwsTagMapping>>,
+        ) -> Self {
+            self.inner = self.inner.set_vmware_to_aws_tag_mappings(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
+        pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_iam_role_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `PutMaintenanceStartTime`.
     ///
     /// <p>Set the maintenance start time for a gateway.</p>
@@ -1492,6 +1993,82 @@ pub mod fluent_builders {
         /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
         pub fn set_day_of_month(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_day_of_month(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartVirtualMachinesMetadataSync`.
+    ///
+    /// <p>This action sends a request to sync metadata across the specified virtual machines.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartVirtualMachinesMetadataSync {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::start_virtual_machines_metadata_sync_input::Builder,
+    }
+    impl StartVirtualMachinesMetadataSync {
+        /// Creates a new `StartVirtualMachinesMetadataSync`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::StartVirtualMachinesMetadataSync,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::StartVirtualMachinesMetadataSyncError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartVirtualMachinesMetadataSyncOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartVirtualMachinesMetadataSyncError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hypervisor_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn set_hypervisor_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hypervisor_arn(input);
             self
         }
     }
@@ -2052,6 +2629,19 @@ pub mod fluent_builders {
         /// <p>The updated name for the hypervisor</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
+        pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
+        pub fn set_log_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_log_group_arn(input);
             self
         }
     }

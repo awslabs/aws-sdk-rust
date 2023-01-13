@@ -95,7 +95,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`document(Document)`](crate::client::fluent_builders::AnalyzeDocument::document) / [`set_document(Option<Document>)`](crate::client::fluent_builders::AnalyzeDocument::set_document): <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>  <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
-    ///   - [`feature_types(Vec<FeatureType>)`](crate::client::fluent_builders::AnalyzeDocument::feature_types) / [`set_feature_types(Option<Vec<FeatureType>>)`](crate::client::fluent_builders::AnalyzeDocument::set_feature_types): <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
+    ///   - [`feature_types(Vec<FeatureType>)`](crate::client::fluent_builders::AnalyzeDocument::feature_types) / [`set_feature_types(Option<Vec<FeatureType>>)`](crate::client::fluent_builders::AnalyzeDocument::set_feature_types): <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
     ///   - [`human_loop_config(HumanLoopConfig)`](crate::client::fluent_builders::AnalyzeDocument::human_loop_config) / [`set_human_loop_config(Option<HumanLoopConfig>)`](crate::client::fluent_builders::AnalyzeDocument::set_human_loop_config): <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
     ///   - [`queries_config(QueriesConfig)`](crate::client::fluent_builders::AnalyzeDocument::queries_config) / [`set_queries_config(Option<QueriesConfig>)`](crate::client::fluent_builders::AnalyzeDocument::set_queries_config): <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
     /// - On success, responds with [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput) with field(s):
@@ -196,6 +196,39 @@ impl Client {
     pub fn get_expense_analysis(&self) -> fluent_builders::GetExpenseAnalysis {
         fluent_builders::GetExpenseAnalysis::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetLendingAnalysis`](crate::client::fluent_builders::GetLendingAnalysis) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetLendingAnalysis::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetLendingAnalysis::set_job_id): <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetLendingAnalysis::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetLendingAnalysis::set_max_results): <p>The maximum number of results to return per paginated call. The largest value that you can specify is 30. If you specify a value greater than 30, a maximum of 30 results is returned. The default value is 30.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetLendingAnalysis::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetLendingAnalysis::set_next_token): <p>If the previous response was incomplete, Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of lending results.</p>
+    /// - On success, responds with [`GetLendingAnalysisOutput`](crate::output::GetLendingAnalysisOutput) with field(s):
+    ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::output::GetLendingAnalysisOutput::document_metadata): <p>Information about the input document.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::GetLendingAnalysisOutput::job_status): <p> The current status of the lending analysis job.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetLendingAnalysisOutput::next_token): <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of lending results.</p>
+    ///   - [`results(Option<Vec<LendingResult>>)`](crate::output::GetLendingAnalysisOutput::results): <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
+    ///   - [`warnings(Option<Vec<Warning>>)`](crate::output::GetLendingAnalysisOutput::warnings): <p> A list of warnings that occurred during the lending analysis operation. </p>
+    ///   - [`status_message(Option<String>)`](crate::output::GetLendingAnalysisOutput::status_message): <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
+    ///   - [`analyze_lending_model_version(Option<String>)`](crate::output::GetLendingAnalysisOutput::analyze_lending_model_version): <p> The current model version of the Analyze Lending API.</p>
+    /// - On failure, responds with [`SdkError<GetLendingAnalysisError>`](crate::error::GetLendingAnalysisError)
+    pub fn get_lending_analysis(&self) -> fluent_builders::GetLendingAnalysis {
+        fluent_builders::GetLendingAnalysis::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetLendingAnalysisSummary`](crate::client::fluent_builders::GetLendingAnalysisSummary) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetLendingAnalysisSummary::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetLendingAnalysisSummary::set_job_id): <p> A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from StartLendingAnalysis. A <code>JobId</code> value is only valid for 7 days.</p>
+    /// - On success, responds with [`GetLendingAnalysisSummaryOutput`](crate::output::GetLendingAnalysisSummaryOutput) with field(s):
+    ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::output::GetLendingAnalysisSummaryOutput::document_metadata): <p>Information about the input document.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::GetLendingAnalysisSummaryOutput::job_status): <p> The current status of the lending analysis job. </p>
+    ///   - [`summary(Option<LendingSummary>)`](crate::output::GetLendingAnalysisSummaryOutput::summary): <p> Contains summary information for documents grouped by type.</p>
+    ///   - [`warnings(Option<Vec<Warning>>)`](crate::output::GetLendingAnalysisSummaryOutput::warnings): <p>A list of warnings that occurred during the lending analysis operation.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::GetLendingAnalysisSummaryOutput::status_message): <p>Returns if the lending analysis could not be completed. Contains explanation for what error occurred.</p>
+    ///   - [`analyze_lending_model_version(Option<String>)`](crate::output::GetLendingAnalysisSummaryOutput::analyze_lending_model_version): <p>The current model version of the Analyze Lending API.</p>
+    /// - On failure, responds with [`SdkError<GetLendingAnalysisSummaryError>`](crate::error::GetLendingAnalysisSummaryError)
+    pub fn get_lending_analysis_summary(&self) -> fluent_builders::GetLendingAnalysisSummary {
+        fluent_builders::GetLendingAnalysisSummary::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`StartDocumentAnalysis`](crate::client::fluent_builders::StartDocumentAnalysis) operation.
     ///
     /// - The fluent builder is configurable:
@@ -243,6 +276,21 @@ impl Client {
     pub fn start_expense_analysis(&self) -> fluent_builders::StartExpenseAnalysis {
         fluent_builders::StartExpenseAnalysis::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`StartLendingAnalysis`](crate::client::fluent_builders::StartLendingAnalysis) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`document_location(DocumentLocation)`](crate::client::fluent_builders::StartLendingAnalysis::document_location) / [`set_document_location(Option<DocumentLocation>)`](crate::client::fluent_builders::StartLendingAnalysis::set_document_location): <p>The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous operations.</p>  <p>The input document can be an image file in JPEG or PNG format. It can also be a file in PDF format.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartLendingAnalysis::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartLendingAnalysis::set_client_request_token): <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartLendingAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-sync.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
+    ///   - [`job_tag(impl Into<String>)`](crate::client::fluent_builders::StartLendingAnalysis::job_tag) / [`set_job_tag(Option<String>)`](crate::client::fluent_builders::StartLendingAnalysis::set_job_tag): <p>An identifier that you specify to be included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
+    ///   - [`notification_channel(NotificationChannel)`](crate::client::fluent_builders::StartLendingAnalysis::notification_channel) / [`set_notification_channel(Option<NotificationChannel>)`](crate::client::fluent_builders::StartLendingAnalysis::set_notification_channel): <p>The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation. </p>
+    ///   - [`output_config(OutputConfig)`](crate::client::fluent_builders::StartLendingAnalysis::output_config) / [`set_output_config(Option<OutputConfig>)`](crate::client::fluent_builders::StartLendingAnalysis::set_output_config): <p>Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.</p>  <p> <code>OutputConfig</code> is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With <code>OutputConfig</code> enabled, you can set the name of the bucket the output will be sent to the file prefix of the results where you can download your results. Additionally, you can set the <code>KMSKeyID</code> parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3.</p>  <p>Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html"> Managing AI services opt-out policy. </a> </p>  <p>For more information on data privacy, see the <a href="https://aws.amazon.com/compliance/data-privacy-faq/">Data Privacy FAQ</a>.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartLendingAnalysis::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartLendingAnalysis::set_kms_key_id): <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side, using SSE-S3. </p>
+    /// - On success, responds with [`StartLendingAnalysisOutput`](crate::output::StartLendingAnalysisOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartLendingAnalysisOutput::job_id): <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    /// - On failure, responds with [`SdkError<StartLendingAnalysisError>`](crate::error::StartLendingAnalysisError)
+    pub fn start_lending_analysis(&self) -> fluent_builders::StartLendingAnalysis {
+        fluent_builders::StartLendingAnalysis::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
 
@@ -259,7 +307,9 @@ pub mod fluent_builders {
     /// <li> <p>Form data (key-value pairs). The related information is returned in two <code>Block</code> objects, each of type <code>KEY_VALUE_SET</code>: a KEY <code>Block</code> object and a VALUE <code>Block</code> object. For example, <i>Name: Ana Silva Carolina</i> contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the value.</p> </li>
     /// <li> <p>Table and table cell data. A TABLE <code>Block</code> object contains information about a detected table. A CELL <code>Block</code> object is returned for each cell in a table.</p> </li>
     /// <li> <p>Lines and words of text. A LINE <code>Block</code> object contains one or more WORD <code>Block</code> objects. All lines and words that are detected in the document are returned (including text that doesn't have a relationship with the value of <code>FeatureTypes</code>). </p> </li>
-    /// <li> <p>Queries.A QUERIES_RESULT Block object contains the answer to the query, the alias associated and an ID that connect it to the query asked. This Block also contains a location and attached confidence score.</p> </li>
+    /// <li> <p>Signatures. A SIGNATURE <code>Block</code> object contains the location information of a signature in a document. If used in conjunction with forms or tables, a signature can be given a Key-Value pairing or be detected in the cell of a table.</p> </li>
+    /// <li> <p>Query. A QUERY Block object contains the query text, alias and link to the associated Query results block object.</p> </li>
+    /// <li> <p>Query Result. A QUERY_RESULT Block object contains the answer to the query and an ID that connects it to the query asked. This Block also contains a confidence score.</p> </li>
     /// </ul>
     /// <p>Selection elements such as check boxes and option buttons (radio buttons) can be detected in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object contains information about a selection element, including the selection status.</p>
     /// <p>You can choose which type of analysis to perform by specifying the <code>FeatureTypes</code> list. </p>
@@ -341,12 +391,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_feature_types`](Self::set_feature_types).
         ///
-        /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
+        /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
         pub fn feature_types(mut self, input: crate::model::FeatureType) -> Self {
             self.inner = self.inner.feature_types(input);
             self
         }
-        /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
+        /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
         pub fn set_feature_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
@@ -384,7 +434,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AnalyzeExpense`.
     ///
     /// <p> <code>AnalyzeExpense</code> synchronously analyzes an input document for financially related relationships between text.</p>
-    /// <p>Information is returned as <code>ExpenseDocuments</code> and seperated as follows.</p>
+    /// <p>Information is returned as <code>ExpenseDocuments</code> and seperated as follows:</p>
     /// <ul>
     /// <li> <p> <code>LineItemGroups</code>- A data set containing <code>LineItems</code> which store information about the lines of text, such as an item purchased and its price on a receipt.</p> </li>
     /// <li> <p> <code>SummaryFields</code>- Contains all other information a receipt, such as header information or the vendors name.</p> </li>
@@ -551,7 +601,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetectDocumentText`.
     ///
-    /// <p>Detects text in the input document. Amazon Textract can detect lines of text and the words that make up a line of text. The input document must be an image in JPEG, PNG, PDF, or TIFF format. <code>DetectDocumentText</code> returns the detected text in an array of <code>Block</code> objects. </p>
+    /// <p>Detects text in the input document. Amazon Textract can detect lines of text and the words that make up a line of text. The input document must be in one of the following image formats: JPEG, PNG, PDF, or TIFF. <code>DetectDocumentText</code> returns the detected text in an array of <code>Block</code> objects. </p>
     /// <p>Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE <code>Block</code> object is the parent of LINE <code>Block</code> objects that represent the lines of detected text on a page. A LINE <code>Block</code> object is a parent for each word that makes up the line. Words are represented by <code>Block</code> objects of type WORD.</p>
     /// <p> <code>DetectDocumentText</code> is a synchronous operation. To analyze documents asynchronously, use <code>StartDocumentTextDetection</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document Text Detection</a>.</p>
@@ -636,8 +686,11 @@ pub mod fluent_builders {
     /// <li> <p>Form data (key-value pairs). The related information is returned in two <code>Block</code> objects, each of type <code>KEY_VALUE_SET</code>: a KEY <code>Block</code> object and a VALUE <code>Block</code> object. For example, <i>Name: Ana Silva Carolina</i> contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the value.</p> </li>
     /// <li> <p>Table and table cell data. A TABLE <code>Block</code> object contains information about a detected table. A CELL <code>Block</code> object is returned for each cell in a table.</p> </li>
     /// <li> <p>Lines and words of text. A LINE <code>Block</code> object contains one or more WORD <code>Block</code> objects. All lines and words that are detected in the document are returned (including text that doesn't have a relationship with the value of the <code>StartDocumentAnalysis</code> <code>FeatureTypes</code> input parameter). </p> </li>
-    /// <li> <p>Queries. A QUERIES_RESULT Block object contains the answer to the query, the alias associated and an ID that connect it to the query asked. This Block also contains a location and attached confidence score</p> </li>
-    /// </ul>
+    /// <li> <p>Query. A QUERY Block object contains the query text, alias and link to the associated Query results block object.</p> </li>
+    /// <li> <p>Query Results. A QUERY_RESULT Block object contains the answer to the query and an ID that connects it to the query asked. This Block also contains a confidence score.</p> </li>
+    /// </ul> <note>
+    /// <p>While processing a document with queries, look out for <code>INVALID_REQUEST_PARAMETERS</code> output. This indicates that either the per page query limit has been exceeded or that the operation is trying to query a page in the document which doesn’t exist. </p>
+    /// </note>
     /// <p>Selection elements such as check boxes and option buttons (radio buttons) can be detected in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object contains information about a selection element, including the selection status.</p>
     /// <p>Use the <code>MaxResults</code> parameter to limit the number of blocks that are returned. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetDocumentAnalysis</code>, and populate the <code>NextToken</code> request parameter with the token value that's returned from the previous call to <code>GetDocumentAnalysis</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document Text Analysis</a>.</p>
@@ -922,6 +975,176 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetLendingAnalysis`.
+    ///
+    /// <p>Gets the results for an Amazon Textract asynchronous operation that analyzes text in a lending document. </p>
+    /// <p>You start asynchronous text analysis by calling <code>StartLendingAnalysis</code>, which returns a job identifier (<code>JobId</code>). When the text analysis operation finishes, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that's registered in the initial call to <code>StartLendingAnalysis</code>. </p>
+    /// <p>To get the results of the text analysis operation, first check that the status value published to the Amazon SNS topic is SUCCEEDED. If so, call GetLendingAnalysis, and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLendingAnalysis</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetLendingAnalysis {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_lending_analysis_input::Builder,
+    }
+    impl GetLendingAnalysis {
+        /// Creates a new `GetLendingAnalysis`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetLendingAnalysis,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetLendingAnalysisError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetLendingAnalysisOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetLendingAnalysisError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
+            self
+        }
+        /// <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value that you can specify is 30. If you specify a value greater than 30, a maximum of 30 results is returned. The default value is 30.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value that you can specify is 30. If you specify a value greater than 30, a maximum of 30 results is returned. The default value is 30.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>If the previous response was incomplete, Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of lending results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the previous response was incomplete, Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of lending results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetLendingAnalysisSummary`.
+    ///
+    /// <p>Gets summarized results for the <code>StartLendingAnalysis</code> operation, which analyzes text in a lending document. The returned summary consists of information about documents grouped together by a common document type. Information like detected signatures, page numbers, and split documents is returned with respect to the type of grouped document. </p>
+    /// <p>You start asynchronous text analysis by calling <code>StartLendingAnalysis</code>, which returns a job identifier (<code>JobId</code>). When the text analysis operation finishes, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that's registered in the initial call to <code>StartLendingAnalysis</code>. </p>
+    /// <p>To get the results of the text analysis operation, first check that the status value published to the Amazon SNS topic is SUCCEEDED. If so, call <code>GetLendingAnalysisSummary</code>, and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLendingAnalysis</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetLendingAnalysisSummary {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_lending_analysis_summary_input::Builder,
+    }
+    impl GetLendingAnalysisSummary {
+        /// Creates a new `GetLendingAnalysisSummary`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetLendingAnalysisSummary,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetLendingAnalysisSummaryError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetLendingAnalysisSummaryOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetLendingAnalysisSummaryError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p> A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from StartLendingAnalysis. A <code>JobId</code> value is only valid for 7 days.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
+            self
+        }
+        /// <p> A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from StartLendingAnalysis. A <code>JobId</code> value is only valid for 7 days.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
             self
         }
     }
@@ -1364,6 +1587,157 @@ pub mod fluent_builders {
             self
         }
         /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartLendingAnalysis`.
+    ///
+    /// <p>Starts the classification and analysis of an input document. <code>StartLendingAnalysis</code> initiates the classification and analysis of a packet of lending documents. <code>StartLendingAnalysis</code> operates on a document file located in an Amazon S3 bucket.</p>
+    /// <p> <code>StartLendingAnalysis</code> can analyze text in documents that are in one of the following formats: JPEG, PNG, TIFF, PDF. Use <code>DocumentLocation</code> to specify the bucket name and the file name of the document. </p>
+    /// <p> <code>StartLendingAnalysis</code> returns a job identifier (<code>JobId</code>) that you use to get the results of the operation. When the text analysis is finished, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that you specify in <code>NotificationChannel</code>. To get the results of the text analysis operation, first check that the status value published to the Amazon SNS topic is SUCCEEDED. If the status is SUCCEEDED you can call either <code>GetLendingAnalysis</code> or <code>GetLendingAnalysisSummary</code> and provide the <code>JobId</code> to obtain the results of the analysis.</p>
+    /// <p>If using <code>OutputConfig</code> to specify an Amazon S3 bucket, the output will be contained within the specified prefix in a directory labeled with the job-id. In the directory there are 3 sub-directories: </p>
+    /// <ul>
+    /// <li> <p>detailedResponse (contains the GetLendingAnalysis response)</p> </li>
+    /// <li> <p>summaryResponse (for the GetLendingAnalysisSummary response)</p> </li>
+    /// <li> <p>splitDocuments (documents split across logical boundaries)</p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartLendingAnalysis {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::start_lending_analysis_input::Builder,
+    }
+    impl StartLendingAnalysis {
+        /// Creates a new `StartLendingAnalysis`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::StartLendingAnalysis,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::StartLendingAnalysisError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartLendingAnalysisOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartLendingAnalysisError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous operations.</p>
+        /// <p>The input document can be an image file in JPEG or PNG format. It can also be a file in PDF format.</p>
+        pub fn document_location(mut self, input: crate::model::DocumentLocation) -> Self {
+            self.inner = self.inner.document_location(input);
+            self
+        }
+        /// <p>The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous operations.</p>
+        /// <p>The input document can be an image file in JPEG or PNG format. It can also be a file in PDF format.</p>
+        pub fn set_document_location(
+            mut self,
+            input: std::option::Option<crate::model::DocumentLocation>,
+        ) -> Self {
+            self.inner = self.inner.set_document_location(input);
+            self
+        }
+        /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartLendingAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-sync.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
+            self
+        }
+        /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartLendingAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-sync.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>An identifier that you specify to be included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
+        pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_tag(input.into());
+            self
+        }
+        /// <p>An identifier that you specify to be included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
+        pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_tag(input);
+            self
+        }
+        /// <p>The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation. </p>
+        pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
+            self.inner = self.inner.notification_channel(input);
+            self
+        }
+        /// <p>The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation. </p>
+        pub fn set_notification_channel(
+            mut self,
+            input: std::option::Option<crate::model::NotificationChannel>,
+        ) -> Self {
+            self.inner = self.inner.set_notification_channel(input);
+            self
+        }
+        /// <p>Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.</p>
+        /// <p> <code>OutputConfig</code> is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With <code>OutputConfig</code> enabled, you can set the name of the bucket the output will be sent to the file prefix of the results where you can download your results. Additionally, you can set the <code>KMSKeyID</code> parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3.</p>
+        /// <p>Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html"> Managing AI services opt-out policy. </a> </p>
+        /// <p>For more information on data privacy, see the <a href="https://aws.amazon.com/compliance/data-privacy-faq/">Data Privacy FAQ</a>.</p>
+        pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
+            self
+        }
+        /// <p>Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.</p>
+        /// <p> <code>OutputConfig</code> is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With <code>OutputConfig</code> enabled, you can set the name of the bucket the output will be sent to the file prefix of the results where you can download your results. Additionally, you can set the <code>KMSKeyID</code> parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3.</p>
+        /// <p>Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html"> Managing AI services opt-out policy. </a> </p>
+        /// <p>For more information on data privacy, see the <a href="https://aws.amazon.com/compliance/data-privacy-faq/">Data Privacy FAQ</a>.</p>
+        pub fn set_output_config(
+            mut self,
+            input: std::option::Option<crate::model::OutputConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_output_config(input);
+            self
+        }
+        /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side, using SSE-S3. </p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
+            self
+        }
+        /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side, using SSE-S3. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self

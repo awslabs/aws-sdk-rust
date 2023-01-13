@@ -767,6 +767,160 @@ pub fn parse_export_ec2_instance_recommendations_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_export_ecs_service_recommendations_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ExportEcsServiceRecommendationsOutput,
+    crate::error::ExportECSServiceRecommendationsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ExportECSServiceRecommendationsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServerException" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::InternalServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterValueException" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::InvalidParameterValueException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "LimitExceededException" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::LimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "MissingAuthenticationToken" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::MissingAuthenticationToken({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OptInRequiredException" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::OptInRequiredException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServiceUnavailableException" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::ServiceUnavailableException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ThrottlingException" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::ThrottlingException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ExportECSServiceRecommendationsError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_export_ecs_service_recommendations_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ExportEcsServiceRecommendationsOutput,
+    crate::error::ExportECSServiceRecommendationsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::export_ecs_service_recommendations_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_export_ecs_service_recommendations(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_export_lambda_function_recommendations_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -1596,6 +1750,348 @@ pub fn parse_get_ec2_recommendation_projected_metrics_response(
             crate::output::get_ec2_recommendation_projected_metrics_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_get_ec2_recommendation_projected_metrics(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_ecs_service_recommendation_projected_metrics_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetEcsServiceRecommendationProjectedMetricsOutput,
+    crate::error::GetECSServiceRecommendationProjectedMetricsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServerException" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::InternalServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterValueException" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::InvalidParameterValueException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "MissingAuthenticationToken" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::MissingAuthenticationToken({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OptInRequiredException" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::OptInRequiredException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServiceUnavailableException" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::ServiceUnavailableException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ThrottlingException" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::ThrottlingException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::GetECSServiceRecommendationProjectedMetricsError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_ecs_service_recommendation_projected_metrics_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetEcsServiceRecommendationProjectedMetricsOutput,
+    crate::error::GetECSServiceRecommendationProjectedMetricsError,
+> {
+    Ok({
+        #[allow(unused_mut)]let mut output = crate::output::get_ecs_service_recommendation_projected_metrics_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_ecs_service_recommendation_projected_metrics(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_ecs_service_recommendations_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetEcsServiceRecommendationsOutput,
+    crate::error::GetECSServiceRecommendationsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetECSServiceRecommendationsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetECSServiceRecommendationsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetECSServiceRecommendationsError {
+            meta: generic,
+            kind: crate::error::GetECSServiceRecommendationsErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::GetECSServiceRecommendationsError {
+            meta: generic,
+            kind: crate::error::GetECSServiceRecommendationsErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValueException" => crate::error::GetECSServiceRecommendationsError {
+            meta: generic,
+            kind:
+                crate::error::GetECSServiceRecommendationsErrorKind::InvalidParameterValueException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::invalid_parameter_value_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationsError::unhandled)?;
+                            output.build()
+                        };
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "MissingAuthenticationToken" => crate::error::GetECSServiceRecommendationsError {
+            meta: generic,
+            kind: crate::error::GetECSServiceRecommendationsErrorKind::MissingAuthenticationToken(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::missing_authentication_token::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "OptInRequiredException" => crate::error::GetECSServiceRecommendationsError {
+            meta: generic,
+            kind: crate::error::GetECSServiceRecommendationsErrorKind::OptInRequiredException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::GetECSServiceRecommendationsError {
+            meta: generic,
+            kind: crate::error::GetECSServiceRecommendationsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => crate::error::GetECSServiceRecommendationsError {
+            meta: generic,
+            kind: crate::error::GetECSServiceRecommendationsErrorKind::ServiceUnavailableException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ThrottlingException" => crate::error::GetECSServiceRecommendationsError {
+            meta: generic,
+            kind: crate::error::GetECSServiceRecommendationsErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetECSServiceRecommendationsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_ecs_service_recommendations_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetEcsServiceRecommendationsOutput,
+    crate::error::GetECSServiceRecommendationsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_ecs_service_recommendations_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_get_ecs_service_recommendations(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetECSServiceRecommendationsError::unhandled)?;
         output.build()
     })
 }

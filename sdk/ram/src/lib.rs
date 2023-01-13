@@ -17,7 +17,6 @@
 //! accounts. If you use Organizations to manage your accounts, then you share your resources
 //! with your organization or organizational units (OUs). For supported resource types, you
 //! can also share resources with individual Identity and Access Management (IAM) roles an users. </p>
-//!
 //! <p>To learn more about RAM, see the following resources:</p>
 //! <ul>
 //! <li>

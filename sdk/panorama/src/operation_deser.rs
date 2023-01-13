@@ -3496,6 +3496,107 @@ pub fn parse_remove_application_instance_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_signal_application_instance_node_instances_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::SignalApplicationInstanceNodeInstancesOutput,
+    crate::error::SignalApplicationInstanceNodeInstancesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::SignalApplicationInstanceNodeInstancesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::SignalApplicationInstanceNodeInstancesError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::SignalApplicationInstanceNodeInstancesError { meta: generic, kind: crate::error::SignalApplicationInstanceNodeInstancesErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignalApplicationInstanceNodeInstancesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServerException" => crate::error::SignalApplicationInstanceNodeInstancesError { meta: generic, kind: crate::error::SignalApplicationInstanceNodeInstancesErrorKind::InternalServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignalApplicationInstanceNodeInstancesError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_signal_application_instance_node_instances_internal_server_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::SignalApplicationInstanceNodeInstancesError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServiceQuotaExceededException" => crate::error::SignalApplicationInstanceNodeInstancesError { meta: generic, kind: crate::error::SignalApplicationInstanceNodeInstancesErrorKind::ServiceQuotaExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignalApplicationInstanceNodeInstancesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ValidationException" => crate::error::SignalApplicationInstanceNodeInstancesError { meta: generic, kind: crate::error::SignalApplicationInstanceNodeInstancesErrorKind::ValidationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignalApplicationInstanceNodeInstancesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::SignalApplicationInstanceNodeInstancesError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_signal_application_instance_node_instances_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::SignalApplicationInstanceNodeInstancesOutput,
+    crate::error::SignalApplicationInstanceNodeInstancesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::signal_application_instance_node_instances_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_signal_application_instance_node_instances(response.body().as_ref(), output).map_err(crate::error::SignalApplicationInstanceNodeInstancesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {

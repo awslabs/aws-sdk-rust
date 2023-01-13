@@ -1133,6 +1133,41 @@ impl From<crate::error::RemoveApplicationInstanceError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::SignalApplicationInstanceNodeInstancesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::SignalApplicationInstanceNodeInstancesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SignalApplicationInstanceNodeInstancesError> for Error {
+    fn from(err: crate::error::SignalApplicationInstanceNodeInstancesError) -> Self {
+        match err.kind {
+            crate::error::SignalApplicationInstanceNodeInstancesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::SignalApplicationInstanceNodeInstancesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::SignalApplicationInstanceNodeInstancesErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::SignalApplicationInstanceNodeInstancesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::SignalApplicationInstanceNodeInstancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

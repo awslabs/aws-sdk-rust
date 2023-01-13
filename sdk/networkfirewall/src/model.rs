@@ -1091,7 +1091,7 @@ pub struct RulesSource {
     /// <p>Stateful inspection criteria for a domain list rule group. </p>
     #[doc(hidden)]
     pub rules_source_list: std::option::Option<crate::model::RulesSourceList>,
-    /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules Format</a>. </p>
+    /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
     #[doc(hidden)]
     pub stateful_rules: std::option::Option<std::vec::Vec<crate::model::StatefulRule>>,
     /// <p>Stateless inspection criteria to be used in a stateless rule group. </p>
@@ -1109,7 +1109,7 @@ impl RulesSource {
     pub fn rules_source_list(&self) -> std::option::Option<&crate::model::RulesSourceList> {
         self.rules_source_list.as_ref()
     }
-    /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules Format</a>. </p>
+    /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
     pub fn stateful_rules(&self) -> std::option::Option<&[crate::model::StatefulRule]> {
         self.stateful_rules.as_deref()
     }
@@ -1162,14 +1162,14 @@ pub mod rules_source {
         ///
         /// To override the contents of this collection use [`set_stateful_rules`](Self::set_stateful_rules).
         ///
-        /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules Format</a>. </p>
+        /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
         pub fn stateful_rules(mut self, input: crate::model::StatefulRule) -> Self {
             let mut v = self.stateful_rules.unwrap_or_default();
             v.push(input);
             self.stateful_rules = Some(v);
             self
         }
-        /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules Format</a>. </p>
+        /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
         pub fn set_stateful_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StatefulRule>>,
@@ -2298,7 +2298,7 @@ impl Address {
     }
 }
 
-/// <p>A single Suricata rules specification, for use in a stateful rule group. Use this option to specify a simple Suricata rule with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules Format</a>. </p>
+/// <p>A single Suricata rules specification, for use in a stateful rule group. Use this option to specify a simple Suricata rule with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulRule {
@@ -2308,6 +2308,7 @@ pub struct StatefulRule {
     /// <li> <p> <b>PASS</b> - Permits the packets to go to the intended destination.</p> </li>
     /// <li> <p> <b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> </li>
     /// <li> <p> <b>ALERT</b> - Permits the packets to go to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+    /// <li> <p> <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset packet back to sender of the packet. A TCP reset packet is a packet with no payload and a <code>RST</code> bit contained in the TCP header flags. Also sends an alert log mesage if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p> <p> <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::StatefulAction>,
@@ -2325,6 +2326,7 @@ impl StatefulRule {
     /// <li> <p> <b>PASS</b> - Permits the packets to go to the intended destination.</p> </li>
     /// <li> <p> <b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> </li>
     /// <li> <p> <b>ALERT</b> - Permits the packets to go to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+    /// <li> <p> <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset packet back to sender of the packet. A TCP reset packet is a packet with no payload and a <code>RST</code> bit contained in the TCP header flags. Also sends an alert log mesage if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p> <p> <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.</p> </li>
     /// </ul>
     pub fn action(&self) -> std::option::Option<&crate::model::StatefulAction> {
         self.action.as_ref()
@@ -2355,6 +2357,7 @@ pub mod stateful_rule {
         /// <li> <p> <b>PASS</b> - Permits the packets to go to the intended destination.</p> </li>
         /// <li> <p> <b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> </li>
         /// <li> <p> <b>ALERT</b> - Permits the packets to go to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+        /// <li> <p> <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset packet back to sender of the packet. A TCP reset packet is a packet with no payload and a <code>RST</code> bit contained in the TCP header flags. Also sends an alert log mesage if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p> <p> <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.</p> </li>
         /// </ul>
         pub fn action(mut self, input: crate::model::StatefulAction) -> Self {
             self.action = Some(input);
@@ -2366,6 +2369,7 @@ pub mod stateful_rule {
         /// <li> <p> <b>PASS</b> - Permits the packets to go to the intended destination.</p> </li>
         /// <li> <p> <b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> </li>
         /// <li> <p> <b>ALERT</b> - Permits the packets to go to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+        /// <li> <p> <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset packet back to sender of the packet. A TCP reset packet is a packet with no payload and a <code>RST</code> bit contained in the TCP header flags. Also sends an alert log mesage if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p> <p> <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.</p> </li>
         /// </ul>
         pub fn set_action(
             mut self,
@@ -2991,6 +2995,7 @@ impl AsRef<str> for StatefulRuleProtocol {
 ///     StatefulAction::Alert => { /* ... */ },
 ///     StatefulAction::Drop => { /* ... */ },
 ///     StatefulAction::Pass => { /* ... */ },
+///     StatefulAction::Reject => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -3030,6 +3035,8 @@ pub enum StatefulAction {
     Drop,
     #[allow(missing_docs)] // documentation missing in model
     Pass,
+    #[allow(missing_docs)] // documentation missing in model
+    Reject,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -3039,6 +3046,7 @@ impl std::convert::From<&str> for StatefulAction {
             "ALERT" => StatefulAction::Alert,
             "DROP" => StatefulAction::Drop,
             "PASS" => StatefulAction::Pass,
+            "REJECT" => StatefulAction::Reject,
             other => StatefulAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -3057,12 +3065,13 @@ impl StatefulAction {
             StatefulAction::Alert => "ALERT",
             StatefulAction::Drop => "DROP",
             StatefulAction::Pass => "PASS",
+            StatefulAction::Reject => "REJECT",
             StatefulAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALERT", "DROP", "PASS"]
+        &["ALERT", "DROP", "PASS", "REJECT"]
     }
 }
 impl AsRef<str> for StatefulAction {
@@ -4695,11 +4704,28 @@ pub struct StatefulEngineOptions {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
     #[doc(hidden)]
     pub rule_order: std::option::Option<crate::model::RuleOrder>,
+    /// <p>Configures how Network Firewall processes traffic when a network connection breaks midstream. Network connections can break due to disruptions in external networks or within the firewall itself.</p>
+    /// <ul>
+    /// <li> <p> <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall. This is the default behavior.</p> </li>
+    /// <li> <p> <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent traffic without context from traffic before the break. This impacts the behavior of rules that depend on this context. For example, if you have a stateful rule to <code>drop http</code> traffic, Network Firewall won't match the traffic for this rule because the service won't have the context from session initialization defining the application layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code> default action.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub stream_exception_policy: std::option::Option<crate::model::StreamExceptionPolicy>,
 }
 impl StatefulEngineOptions {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
     pub fn rule_order(&self) -> std::option::Option<&crate::model::RuleOrder> {
         self.rule_order.as_ref()
+    }
+    /// <p>Configures how Network Firewall processes traffic when a network connection breaks midstream. Network connections can break due to disruptions in external networks or within the firewall itself.</p>
+    /// <ul>
+    /// <li> <p> <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall. This is the default behavior.</p> </li>
+    /// <li> <p> <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent traffic without context from traffic before the break. This impacts the behavior of rules that depend on this context. For example, if you have a stateful rule to <code>drop http</code> traffic, Network Firewall won't match the traffic for this rule because the service won't have the context from session initialization defining the application layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code> default action.</p> </li>
+    /// </ul>
+    pub fn stream_exception_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamExceptionPolicy> {
+        self.stream_exception_policy.as_ref()
     }
 }
 /// See [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
@@ -4709,6 +4735,8 @@ pub mod stateful_engine_options {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_order: std::option::Option<crate::model::RuleOrder>,
+        pub(crate) stream_exception_policy:
+            std::option::Option<crate::model::StreamExceptionPolicy>,
     }
     impl Builder {
         /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
@@ -4724,10 +4752,35 @@ pub mod stateful_engine_options {
             self.rule_order = input;
             self
         }
+        /// <p>Configures how Network Firewall processes traffic when a network connection breaks midstream. Network connections can break due to disruptions in external networks or within the firewall itself.</p>
+        /// <ul>
+        /// <li> <p> <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall. This is the default behavior.</p> </li>
+        /// <li> <p> <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent traffic without context from traffic before the break. This impacts the behavior of rules that depend on this context. For example, if you have a stateful rule to <code>drop http</code> traffic, Network Firewall won't match the traffic for this rule because the service won't have the context from session initialization defining the application layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code> default action.</p> </li>
+        /// </ul>
+        pub fn stream_exception_policy(
+            mut self,
+            input: crate::model::StreamExceptionPolicy,
+        ) -> Self {
+            self.stream_exception_policy = Some(input);
+            self
+        }
+        /// <p>Configures how Network Firewall processes traffic when a network connection breaks midstream. Network connections can break due to disruptions in external networks or within the firewall itself.</p>
+        /// <ul>
+        /// <li> <p> <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall. This is the default behavior.</p> </li>
+        /// <li> <p> <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent traffic without context from traffic before the break. This impacts the behavior of rules that depend on this context. For example, if you have a stateful rule to <code>drop http</code> traffic, Network Firewall won't match the traffic for this rule because the service won't have the context from session initialization defining the application layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code> default action.</p> </li>
+        /// </ul>
+        pub fn set_stream_exception_policy(
+            mut self,
+            input: std::option::Option<crate::model::StreamExceptionPolicy>,
+        ) -> Self {
+            self.stream_exception_policy = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
         pub fn build(self) -> crate::model::StatefulEngineOptions {
             crate::model::StatefulEngineOptions {
                 rule_order: self.rule_order,
+                stream_exception_policy: self.stream_exception_policy,
             }
         }
     }
@@ -4736,6 +4789,98 @@ impl StatefulEngineOptions {
     /// Creates a new builder-style object to manufacture [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
     pub fn builder() -> crate::model::stateful_engine_options::Builder {
         crate::model::stateful_engine_options::Builder::default()
+    }
+}
+
+/// When writing a match expression against `StreamExceptionPolicy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let streamexceptionpolicy = unimplemented!();
+/// match streamexceptionpolicy {
+///     StreamExceptionPolicy::Continue => { /* ... */ },
+///     StreamExceptionPolicy::Drop => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `streamexceptionpolicy` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StreamExceptionPolicy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StreamExceptionPolicy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StreamExceptionPolicy::NewFeature` is defined.
+/// Specifically, when `streamexceptionpolicy` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StreamExceptionPolicy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StreamExceptionPolicy {
+    #[allow(missing_docs)] // documentation missing in model
+    Continue,
+    #[allow(missing_docs)] // documentation missing in model
+    Drop,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for StreamExceptionPolicy {
+    fn from(s: &str) -> Self {
+        match s {
+            "CONTINUE" => StreamExceptionPolicy::Continue,
+            "DROP" => StreamExceptionPolicy::Drop,
+            other => {
+                StreamExceptionPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for StreamExceptionPolicy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StreamExceptionPolicy::from(s))
+    }
+}
+impl StreamExceptionPolicy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StreamExceptionPolicy::Continue => "CONTINUE",
+            StreamExceptionPolicy::Drop => "DROP",
+            StreamExceptionPolicy::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["CONTINUE", "DROP"]
+    }
+}
+impl AsRef<str> for StreamExceptionPolicy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -6108,9 +6253,12 @@ pub struct Attachment {
     /// <p>The identifier of the firewall endpoint that Network Firewall has instantiated in the subnet. You use this to identify the firewall endpoint in the VPC route tables, when you redirect the VPC traffic through the endpoint. </p>
     #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
-    /// <p>The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code>, <code>DELETING</code>, or <code>FAILED</code>.</p>
+    /// <p>The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code> or <code>DELETING</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AttachmentStatus>,
+    /// <p>If Network Firewall fails to create or delete the firewall endpoint in the subnet, it populates this with the reason for the failure and how to resolve it. Depending on the error, it can take as many as 15 minutes to populate this field. For more information about the errors and solutions available for this field, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub status_message: std::option::Option<std::string::String>,
 }
 impl Attachment {
     /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint. </p>
@@ -6121,9 +6269,13 @@ impl Attachment {
     pub fn endpoint_id(&self) -> std::option::Option<&str> {
         self.endpoint_id.as_deref()
     }
-    /// <p>The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code>, <code>DELETING</code>, or <code>FAILED</code>.</p>
+    /// <p>The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code> or <code>DELETING</code>.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::AttachmentStatus> {
         self.status.as_ref()
+    }
+    /// <p>If Network Firewall fails to create or delete the firewall endpoint in the subnet, it populates this with the reason for the failure and how to resolve it. Depending on the error, it can take as many as 15 minutes to populate this field. For more information about the errors and solutions available for this field, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
     }
 }
 /// See [`Attachment`](crate::model::Attachment).
@@ -6135,6 +6287,7 @@ pub mod attachment {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AttachmentStatus>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint. </p>
@@ -6157,17 +6310,30 @@ pub mod attachment {
             self.endpoint_id = input;
             self
         }
-        /// <p>The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code>, <code>DELETING</code>, or <code>FAILED</code>.</p>
+        /// <p>The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code> or <code>DELETING</code>.</p>
         pub fn status(mut self, input: crate::model::AttachmentStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code>, <code>DELETING</code>, or <code>FAILED</code>.</p>
+        /// <p>The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code> or <code>DELETING</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AttachmentStatus>,
         ) -> Self {
             self.status = input;
+            self
+        }
+        /// <p>If Network Firewall fails to create or delete the firewall endpoint in the subnet, it populates this with the reason for the failure and how to resolve it. Depending on the error, it can take as many as 15 minutes to populate this field. For more information about the errors and solutions available for this field, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.</p>
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
+            self
+        }
+        /// <p>If Network Firewall fails to create or delete the firewall endpoint in the subnet, it populates this with the reason for the failure and how to resolve it. Depending on the error, it can take as many as 15 minutes to populate this field. For more information about the errors and solutions available for this field, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.</p>
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
             self
         }
         /// Consumes the builder and constructs a [`Attachment`](crate::model::Attachment).
@@ -6176,6 +6342,7 @@ pub mod attachment {
                 subnet_id: self.subnet_id,
                 endpoint_id: self.endpoint_id,
                 status: self.status,
+                status_message: self.status_message,
             }
         }
     }

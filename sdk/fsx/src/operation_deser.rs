@@ -5015,6 +5015,23 @@ pub fn parse_update_file_system_error(
                 tmp
             }),
         },
+        "InvalidNetworkSettings" => crate::error::UpdateFileSystemError {
+            meta: generic,
+            kind: crate::error::UpdateFileSystemErrorKind::InvalidNetworkSettings({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_network_settings::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_network_settings_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFileSystemError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "MissingFileSystemConfiguration" => crate::error::UpdateFileSystemError {
             meta: generic,
             kind: crate::error::UpdateFileSystemErrorKind::MissingFileSystemConfiguration({

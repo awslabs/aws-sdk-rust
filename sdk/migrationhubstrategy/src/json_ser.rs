@@ -79,32 +79,35 @@ pub fn serialize_structure_crate_input_put_portfolio_preferences_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutPortfolioPreferencesInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_19) = &input.application_preferences {
+    if let Some(var_19) = &input.application_mode {
+        object.key("applicationMode").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.application_preferences {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("applicationPreferences").start_object();
+        let mut object_21 = object.key("applicationPreferences").start_object();
         crate::json_ser::serialize_structure_crate_model_application_preferences(
-            &mut object_20,
-            var_19,
+            &mut object_21,
+            var_20,
         )?;
-        object_20.finish();
+        object_21.finish();
     }
-    if let Some(var_21) = &input.database_preferences {
+    if let Some(var_22) = &input.database_preferences {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("databasePreferences").start_object();
+        let mut object_23 = object.key("databasePreferences").start_object();
         crate::json_ser::serialize_structure_crate_model_database_preferences(
-            &mut object_22,
-            var_21,
+            &mut object_23,
+            var_22,
         )?;
-        object_22.finish();
+        object_23.finish();
     }
-    if let Some(var_23) = &input.prioritize_business_goals {
+    if let Some(var_24) = &input.prioritize_business_goals {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("prioritizeBusinessGoals").start_object();
+        let mut object_25 = object.key("prioritizeBusinessGoals").start_object();
         crate::json_ser::serialize_structure_crate_model_prioritize_business_goals(
-            &mut object_24,
-            var_23,
+            &mut object_25,
+            var_24,
         )?;
-        object_24.finish();
+        object_25.finish();
     }
     Ok(())
 }
@@ -113,13 +116,28 @@ pub fn serialize_structure_crate_input_start_assessment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartAssessmentInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_25) = &input.s3bucket_for_analysis_data {
+    if let Some(var_26) = &input.assessment_targets {
+        let mut array_27 = object.key("assessmentTargets").start_array();
+        for item_28 in var_26 {
+            {
+                #[allow(unused_mut)]
+                let mut object_29 = array_27.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_assessment_target(
+                    &mut object_29,
+                    item_28,
+                )?;
+                object_29.finish();
+            }
+        }
+        array_27.finish();
+    }
+    if let Some(var_30) = &input.s3bucket_for_analysis_data {
         object
             .key("s3bucketForAnalysisData")
-            .string(var_25.as_str());
+            .string(var_30.as_str());
     }
-    if let Some(var_26) = &input.s3bucket_for_report_data {
-        object.key("s3bucketForReportData").string(var_26.as_str());
+    if let Some(var_31) = &input.s3bucket_for_report_data {
+        object.key("s3bucketForReportData").string(var_31.as_str());
     }
     Ok(())
 }
@@ -128,32 +146,32 @@ pub fn serialize_structure_crate_input_start_import_file_task_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartImportFileTaskInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_27) = &input.s3_bucket {
-        object.key("S3Bucket").string(var_27.as_str());
+    if let Some(var_32) = &input.s3_bucket {
+        object.key("S3Bucket").string(var_32.as_str());
     }
-    if let Some(var_28) = &input.data_source_type {
-        object.key("dataSourceType").string(var_28.as_str());
+    if let Some(var_33) = &input.data_source_type {
+        object.key("dataSourceType").string(var_33.as_str());
     }
-    if let Some(var_29) = &input.group_id {
-        let mut array_30 = object.key("groupId").start_array();
-        for item_31 in var_29 {
+    if let Some(var_34) = &input.group_id {
+        let mut array_35 = object.key("groupId").start_array();
+        for item_36 in var_34 {
             {
                 #[allow(unused_mut)]
-                let mut object_32 = array_30.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_group(&mut object_32, item_31)?;
-                object_32.finish();
+                let mut object_37 = array_35.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_group(&mut object_37, item_36)?;
+                object_37.finish();
             }
         }
-        array_30.finish();
+        array_35.finish();
     }
-    if let Some(var_33) = &input.name {
-        object.key("name").string(var_33.as_str());
+    if let Some(var_38) = &input.name {
+        object.key("name").string(var_38.as_str());
     }
-    if let Some(var_34) = &input.s3bucket_for_report_data {
-        object.key("s3bucketForReportData").string(var_34.as_str());
+    if let Some(var_39) = &input.s3bucket_for_report_data {
+        object.key("s3bucketForReportData").string(var_39.as_str());
     }
-    if let Some(var_35) = &input.s3key {
-        object.key("s3key").string(var_35.as_str());
+    if let Some(var_40) = &input.s3key {
+        object.key("s3key").string(var_40.as_str());
     }
     Ok(())
 }
@@ -162,20 +180,20 @@ pub fn serialize_structure_crate_input_start_recommendation_report_generation_in
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartRecommendationReportGenerationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_36) = &input.group_id_filter {
-        let mut array_37 = object.key("groupIdFilter").start_array();
-        for item_38 in var_36 {
+    if let Some(var_41) = &input.group_id_filter {
+        let mut array_42 = object.key("groupIdFilter").start_array();
+        for item_43 in var_41 {
             {
                 #[allow(unused_mut)]
-                let mut object_39 = array_37.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_group(&mut object_39, item_38)?;
-                object_39.finish();
+                let mut object_44 = array_42.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_group(&mut object_44, item_43)?;
+                object_44.finish();
             }
         }
-        array_37.finish();
+        array_42.finish();
     }
-    if let Some(var_40) = &input.output_format {
-        object.key("outputFormat").string(var_40.as_str());
+    if let Some(var_45) = &input.output_format {
+        object.key("outputFormat").string(var_45.as_str());
     }
     Ok(())
 }
@@ -184,8 +202,8 @@ pub fn serialize_structure_crate_input_stop_assessment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopAssessmentInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_41) = &input.assessment_id {
-        object.key("assessmentId").string(var_41.as_str());
+    if let Some(var_46) = &input.assessment_id {
+        object.key("assessmentId").string(var_46.as_str());
     }
     Ok(())
 }
@@ -194,35 +212,41 @@ pub fn serialize_structure_crate_input_update_application_component_config_input
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateApplicationComponentConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_42) = &input.application_component_id {
-        object.key("applicationComponentId").string(var_42.as_str());
+    if let Some(var_47) = &input.app_type {
+        object.key("appType").string(var_47.as_str());
     }
-    if let Some(var_43) = &input.inclusion_status {
-        object.key("inclusionStatus").string(var_43.as_str());
+    if let Some(var_48) = &input.application_component_id {
+        object.key("applicationComponentId").string(var_48.as_str());
     }
-    if let Some(var_44) = &input.secrets_manager_key {
-        object.key("secretsManagerKey").string(var_44.as_str());
+    if let Some(var_49) = &input.configure_only {
+        object.key("configureOnly").boolean(*var_49);
     }
-    if let Some(var_45) = &input.source_code_list {
-        let mut array_46 = object.key("sourceCodeList").start_array();
-        for item_47 in var_45 {
+    if let Some(var_50) = &input.inclusion_status {
+        object.key("inclusionStatus").string(var_50.as_str());
+    }
+    if let Some(var_51) = &input.secrets_manager_key {
+        object.key("secretsManagerKey").string(var_51.as_str());
+    }
+    if let Some(var_52) = &input.source_code_list {
+        let mut array_53 = object.key("sourceCodeList").start_array();
+        for item_54 in var_52 {
             {
                 #[allow(unused_mut)]
-                let mut object_48 = array_46.value().start_object();
+                let mut object_55 = array_53.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_source_code(
-                    &mut object_48,
-                    item_47,
+                    &mut object_55,
+                    item_54,
                 )?;
-                object_48.finish();
+                object_55.finish();
             }
         }
-        array_46.finish();
+        array_53.finish();
     }
-    if let Some(var_49) = &input.strategy_option {
+    if let Some(var_56) = &input.strategy_option {
         #[allow(unused_mut)]
-        let mut object_50 = object.key("strategyOption").start_object();
-        crate::json_ser::serialize_structure_crate_model_strategy_option(&mut object_50, var_49)?;
-        object_50.finish();
+        let mut object_57 = object.key("strategyOption").start_object();
+        crate::json_ser::serialize_structure_crate_model_strategy_option(&mut object_57, var_56)?;
+        object_57.finish();
     }
     Ok(())
 }
@@ -231,14 +255,14 @@ pub fn serialize_structure_crate_input_update_server_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateServerConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_51) = &input.server_id {
-        object.key("serverId").string(var_51.as_str());
+    if let Some(var_58) = &input.server_id {
+        object.key("serverId").string(var_58.as_str());
     }
-    if let Some(var_52) = &input.strategy_option {
+    if let Some(var_59) = &input.strategy_option {
         #[allow(unused_mut)]
-        let mut object_53 = object.key("strategyOption").start_object();
-        crate::json_ser::serialize_structure_crate_model_strategy_option(&mut object_53, var_52)?;
-        object_53.finish();
+        let mut object_60 = object.key("strategyOption").start_object();
+        crate::json_ser::serialize_structure_crate_model_strategy_option(&mut object_60, var_59)?;
+        object_60.finish();
     }
     Ok(())
 }
@@ -247,11 +271,11 @@ pub fn serialize_structure_crate_model_group(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Group,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_54) = &input.name {
-        object.key("name").string(var_54.as_str());
+    if let Some(var_61) = &input.name {
+        object.key("name").string(var_61.as_str());
     }
-    if let Some(var_55) = &input.value {
-        object.key("value").string(var_55.as_str());
+    if let Some(var_62) = &input.value {
+        object.key("value").string(var_62.as_str());
     }
     Ok(())
 }
@@ -260,11 +284,11 @@ pub fn serialize_structure_crate_model_application_preferences(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ApplicationPreferences,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_56) = &input.management_preference {
+    if let Some(var_63) = &input.management_preference {
         #[allow(unused_mut)]
-        let mut object_57 = object.key("managementPreference").start_object();
-        crate::json_ser::serialize_union_crate_model_management_preference(&mut object_57, var_56)?;
-        object_57.finish();
+        let mut object_64 = object.key("managementPreference").start_object();
+        crate::json_ser::serialize_union_crate_model_management_preference(&mut object_64, var_63)?;
+        object_64.finish();
     }
     Ok(())
 }
@@ -273,19 +297,19 @@ pub fn serialize_structure_crate_model_database_preferences(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DatabasePreferences,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_58) = &input.database_management_preference {
+    if let Some(var_65) = &input.database_management_preference {
         object
             .key("databaseManagementPreference")
-            .string(var_58.as_str());
+            .string(var_65.as_str());
     }
-    if let Some(var_59) = &input.database_migration_preference {
+    if let Some(var_66) = &input.database_migration_preference {
         #[allow(unused_mut)]
-        let mut object_60 = object.key("databaseMigrationPreference").start_object();
+        let mut object_67 = object.key("databaseMigrationPreference").start_object();
         crate::json_ser::serialize_union_crate_model_database_migration_preference(
-            &mut object_60,
-            var_59,
+            &mut object_67,
+            var_66,
         )?;
-        object_60.finish();
+        object_67.finish();
     }
     Ok(())
 }
@@ -294,11 +318,33 @@ pub fn serialize_structure_crate_model_prioritize_business_goals(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PrioritizeBusinessGoals,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_61) = &input.business_goals {
+    if let Some(var_68) = &input.business_goals {
         #[allow(unused_mut)]
-        let mut object_62 = object.key("businessGoals").start_object();
-        crate::json_ser::serialize_structure_crate_model_business_goals(&mut object_62, var_61)?;
-        object_62.finish();
+        let mut object_69 = object.key("businessGoals").start_object();
+        crate::json_ser::serialize_structure_crate_model_business_goals(&mut object_69, var_68)?;
+        object_69.finish();
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_assessment_target(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::AssessmentTarget,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_70) = &input.condition {
+        object.key("condition").string(var_70.as_str());
+    }
+    if let Some(var_71) = &input.name {
+        object.key("name").string(var_71.as_str());
+    }
+    if let Some(var_72) = &input.values {
+        let mut array_73 = object.key("values").start_array();
+        for item_74 in var_72 {
+            {
+                array_73.value().string(item_74.as_str());
+            }
+        }
+        array_73.finish();
     }
     Ok(())
 }
@@ -307,14 +353,17 @@ pub fn serialize_structure_crate_model_source_code(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SourceCode,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_63) = &input.version_control {
-        object.key("versionControl").string(var_63.as_str());
+    if let Some(var_75) = &input.version_control {
+        object.key("versionControl").string(var_75.as_str());
     }
-    if let Some(var_64) = &input.source_version {
-        object.key("sourceVersion").string(var_64.as_str());
+    if let Some(var_76) = &input.source_version {
+        object.key("sourceVersion").string(var_76.as_str());
     }
-    if let Some(var_65) = &input.location {
-        object.key("location").string(var_65.as_str());
+    if let Some(var_77) = &input.location {
+        object.key("location").string(var_77.as_str());
+    }
+    if let Some(var_78) = &input.project_name {
+        object.key("projectName").string(var_78.as_str());
     }
     Ok(())
 }
@@ -323,52 +372,52 @@ pub fn serialize_structure_crate_model_strategy_option(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StrategyOption,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_66) = &input.strategy {
-        object.key("strategy").string(var_66.as_str());
+    if let Some(var_79) = &input.strategy {
+        object.key("strategy").string(var_79.as_str());
     }
-    if let Some(var_67) = &input.tool_name {
-        object.key("toolName").string(var_67.as_str());
+    if let Some(var_80) = &input.tool_name {
+        object.key("toolName").string(var_80.as_str());
     }
-    if let Some(var_68) = &input.target_destination {
-        object.key("targetDestination").string(var_68.as_str());
+    if let Some(var_81) = &input.target_destination {
+        object.key("targetDestination").string(var_81.as_str());
     }
-    if let Some(var_69) = &input.is_preferred {
-        object.key("isPreferred").boolean(*var_69);
+    if let Some(var_82) = &input.is_preferred {
+        object.key("isPreferred").boolean(*var_82);
     }
     Ok(())
 }
 
 pub fn serialize_union_crate_model_management_preference(
-    object_57: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    object_64: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ManagementPreference,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::ManagementPreference::AwsManagedResources(inner) => {
             #[allow(unused_mut)]
-            let mut object_70 = object_57.key("awsManagedResources").start_object();
+            let mut object_83 = object_64.key("awsManagedResources").start_object();
             crate::json_ser::serialize_structure_crate_model_aws_managed_resources(
-                &mut object_70,
+                &mut object_83,
                 inner,
             )?;
-            object_70.finish();
+            object_83.finish();
         }
         crate::model::ManagementPreference::SelfManageResources(inner) => {
             #[allow(unused_mut)]
-            let mut object_71 = object_57.key("selfManageResources").start_object();
+            let mut object_84 = object_64.key("selfManageResources").start_object();
             crate::json_ser::serialize_structure_crate_model_self_manage_resources(
-                &mut object_71,
+                &mut object_84,
                 inner,
             )?;
-            object_71.finish();
+            object_84.finish();
         }
         crate::model::ManagementPreference::NoPreference(inner) => {
             #[allow(unused_mut)]
-            let mut object_72 = object_57.key("noPreference").start_object();
+            let mut object_85 = object_64.key("noPreference").start_object();
             crate::json_ser::serialize_structure_crate_model_no_management_preference(
-                &mut object_72,
+                &mut object_85,
                 inner,
             )?;
-            object_72.finish();
+            object_85.finish();
         }
         crate::model::ManagementPreference::Unknown => {
             return Err(
@@ -382,30 +431,30 @@ pub fn serialize_union_crate_model_management_preference(
 }
 
 pub fn serialize_union_crate_model_database_migration_preference(
-    object_60: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    object_67: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DatabaseMigrationPreference,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::DatabaseMigrationPreference::Heterogeneous(inner) => {
             #[allow(unused_mut)]
-            let mut object_73 = object_60.key("heterogeneous").start_object();
-            crate::json_ser::serialize_structure_crate_model_heterogeneous(&mut object_73, inner)?;
-            object_73.finish();
+            let mut object_86 = object_67.key("heterogeneous").start_object();
+            crate::json_ser::serialize_structure_crate_model_heterogeneous(&mut object_86, inner)?;
+            object_86.finish();
         }
         crate::model::DatabaseMigrationPreference::Homogeneous(inner) => {
             #[allow(unused_mut)]
-            let mut object_74 = object_60.key("homogeneous").start_object();
-            crate::json_ser::serialize_structure_crate_model_homogeneous(&mut object_74, inner)?;
-            object_74.finish();
+            let mut object_87 = object_67.key("homogeneous").start_object();
+            crate::json_ser::serialize_structure_crate_model_homogeneous(&mut object_87, inner)?;
+            object_87.finish();
         }
         crate::model::DatabaseMigrationPreference::NoPreference(inner) => {
             #[allow(unused_mut)]
-            let mut object_75 = object_60.key("noPreference").start_object();
+            let mut object_88 = object_67.key("noPreference").start_object();
             crate::json_ser::serialize_structure_crate_model_no_database_migration_preference(
-                &mut object_75,
+                &mut object_88,
                 inner,
             )?;
-            object_75.finish();
+            object_88.finish();
         }
         crate::model::DatabaseMigrationPreference::Unknown => {
             return Err(
@@ -422,32 +471,32 @@ pub fn serialize_structure_crate_model_business_goals(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BusinessGoals,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_76) = &input.speed_of_migration {
+    if let Some(var_89) = &input.speed_of_migration {
         object.key("speedOfMigration").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_76).into()),
+            aws_smithy_types::Number::NegInt((*var_89).into()),
         );
     }
-    if let Some(var_77) = &input.reduce_operational_overhead_with_managed_services {
+    if let Some(var_90) = &input.reduce_operational_overhead_with_managed_services {
         object
             .key("reduceOperationalOverheadWithManagedServices")
             .number(
                 #[allow(clippy::useless_conversion)]
-                aws_smithy_types::Number::NegInt((*var_77).into()),
+                aws_smithy_types::Number::NegInt((*var_90).into()),
             );
     }
-    if let Some(var_78) = &input.modernize_infrastructure_with_cloud_native_technologies {
+    if let Some(var_91) = &input.modernize_infrastructure_with_cloud_native_technologies {
         object
             .key("modernizeInfrastructureWithCloudNativeTechnologies")
             .number(
                 #[allow(clippy::useless_conversion)]
-                aws_smithy_types::Number::NegInt((*var_78).into()),
+                aws_smithy_types::Number::NegInt((*var_91).into()),
             );
     }
-    if let Some(var_79) = &input.license_cost_reduction {
+    if let Some(var_92) = &input.license_cost_reduction {
         object.key("licenseCostReduction").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_79).into()),
+            aws_smithy_types::Number::NegInt((*var_92).into()),
         );
     }
     Ok(())
@@ -457,14 +506,14 @@ pub fn serialize_structure_crate_model_aws_managed_resources(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsManagedResources,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_80) = &input.target_destination {
-        let mut array_81 = object.key("targetDestination").start_array();
-        for item_82 in var_80 {
+    if let Some(var_93) = &input.target_destination {
+        let mut array_94 = object.key("targetDestination").start_array();
+        for item_95 in var_93 {
             {
-                array_81.value().string(item_82.as_str());
+                array_94.value().string(item_95.as_str());
             }
         }
-        array_81.finish();
+        array_94.finish();
     }
     Ok(())
 }
@@ -473,14 +522,14 @@ pub fn serialize_structure_crate_model_self_manage_resources(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SelfManageResources,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_83) = &input.target_destination {
-        let mut array_84 = object.key("targetDestination").start_array();
-        for item_85 in var_83 {
+    if let Some(var_96) = &input.target_destination {
+        let mut array_97 = object.key("targetDestination").start_array();
+        for item_98 in var_96 {
             {
-                array_84.value().string(item_85.as_str());
+                array_97.value().string(item_98.as_str());
             }
         }
-        array_84.finish();
+        array_97.finish();
     }
     Ok(())
 }
@@ -489,14 +538,14 @@ pub fn serialize_structure_crate_model_no_management_preference(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NoManagementPreference,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_86) = &input.target_destination {
-        let mut array_87 = object.key("targetDestination").start_array();
-        for item_88 in var_86 {
+    if let Some(var_99) = &input.target_destination {
+        let mut array_100 = object.key("targetDestination").start_array();
+        for item_101 in var_99 {
             {
-                array_87.value().string(item_88.as_str());
+                array_100.value().string(item_101.as_str());
             }
         }
-        array_87.finish();
+        array_100.finish();
     }
     Ok(())
 }
@@ -505,14 +554,14 @@ pub fn serialize_structure_crate_model_heterogeneous(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Heterogeneous,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_89) = &input.target_database_engine {
-        let mut array_90 = object.key("targetDatabaseEngine").start_array();
-        for item_91 in var_89 {
+    if let Some(var_102) = &input.target_database_engine {
+        let mut array_103 = object.key("targetDatabaseEngine").start_array();
+        for item_104 in var_102 {
             {
-                array_90.value().string(item_91.as_str());
+                array_103.value().string(item_104.as_str());
             }
         }
-        array_90.finish();
+        array_103.finish();
     }
     Ok(())
 }
@@ -521,14 +570,14 @@ pub fn serialize_structure_crate_model_homogeneous(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Homogeneous,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_92) = &input.target_database_engine {
-        let mut array_93 = object.key("targetDatabaseEngine").start_array();
-        for item_94 in var_92 {
+    if let Some(var_105) = &input.target_database_engine {
+        let mut array_106 = object.key("targetDatabaseEngine").start_array();
+        for item_107 in var_105 {
             {
-                array_93.value().string(item_94.as_str());
+                array_106.value().string(item_107.as_str());
             }
         }
-        array_93.finish();
+        array_106.finish();
     }
     Ok(())
 }
@@ -537,14 +586,14 @@ pub fn serialize_structure_crate_model_no_database_migration_preference(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NoDatabaseMigrationPreference,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_95) = &input.target_database_engine {
-        let mut array_96 = object.key("targetDatabaseEngine").start_array();
-        for item_97 in var_95 {
+    if let Some(var_108) = &input.target_database_engine {
+        let mut array_109 = object.key("targetDatabaseEngine").start_array();
+        for item_110 in var_108 {
             {
-                array_96.value().string(item_97.as_str());
+                array_109.value().string(item_110.as_str());
             }
         }
-        array_96.finish();
+        array_109.finish();
     }
     Ok(())
 }

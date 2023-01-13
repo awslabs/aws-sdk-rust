@@ -1117,6 +1117,9 @@ impl From<crate::error::UpdateLayoutError> for Error {
             crate::error::UpdateLayoutErrorKind::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::error::UpdateLayoutErrorKind::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::error::UpdateLayoutErrorKind::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }

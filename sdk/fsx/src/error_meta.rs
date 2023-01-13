@@ -1559,6 +1559,9 @@ impl From<crate::error::UpdateFileSystemError> for Error {
             crate::error::UpdateFileSystemErrorKind::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
+            crate::error::UpdateFileSystemErrorKind::InvalidNetworkSettings(inner) => {
+                Error::InvalidNetworkSettings(inner)
+            }
             crate::error::UpdateFileSystemErrorKind::MissingFileSystemConfiguration(inner) => {
                 Error::MissingFileSystemConfiguration(inner)
             }

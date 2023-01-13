@@ -137,7 +137,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`email(impl Into<String>)`](crate::client::fluent_builders::CreateAccount::email) / [`set_email(Option<String>)`](crate::client::fluent_builders::CreateAccount::set_email): <p>The email address of the owner to assign to the new member account. This email address must not already be associated with another Amazon Web Services account. You must use a valid email address to complete account creation.</p>  <p>The rules for a valid email address:</p>  <ul>   <li> <p>The address must be a minimum of 6 and a maximum of 64 characters long.</p> </li>   <li> <p>All characters must be 7-bit ASCII characters.</p> </li>   <li> <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p> </li>   <li> <p>The local name can't contain any of the following characters:</p> <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p> </li>   <li> <p>The local name can't begin with a dot (.)</p> </li>   <li> <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p> </li>   <li> <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p> </li>   <li> <p>The domain name must contain at least one dot</p> </li>  </ul>  <p>You can't access the root user of the account or remove an account that was created with an invalid email address.</p>
     ///   - [`account_name(impl Into<String>)`](crate::client::fluent_builders::CreateAccount::account_name) / [`set_account_name(Option<String>)`](crate::client::fluent_builders::CreateAccount::set_account_name): <p>The friendly name of the member account.</p>
-    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::CreateAccount::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::CreateAccount::set_role_name): <p>(Optional)</p>  <p>The name of an IAM role that Organizations automatically preconfigures in the new member account. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>  <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>  <p>For more information about how to use this role to access the member account, see the following links:</p>  <ul>   <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>Organizations User Guide</i> </p> </li>   <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>  </ul>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::CreateAccount::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::CreateAccount::set_role_name): <p>The name of an IAM role that Organizations automatically preconfigures in the new member account. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>  <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>  <p>For more information about how to use this role to access the member account, see the following links:</p>  <ul>   <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>Organizations User Guide</i> </p> </li>   <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>  </ul>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
     ///   - [`iam_user_access_to_billing(IamUserAccessToBilling)`](crate::client::fluent_builders::CreateAccount::iam_user_access_to_billing) / [`set_iam_user_access_to_billing(Option<IamUserAccessToBilling>)`](crate::client::fluent_builders::CreateAccount::set_iam_user_access_to_billing): <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>  <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAccount::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAccount::set_tags): <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>   <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>  </note>
     /// - On success, responds with [`CreateAccountOutput`](crate::output::CreateAccountOutput) with field(s):
@@ -236,6 +236,16 @@ impl Client {
     pub fn delete_policy(&self) -> fluent_builders::DeletePolicy {
         fluent_builders::DeletePolicy::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) operation.
+    ///
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DeleteResourcePolicy::send) it.
+
+    /// - On success, responds with [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourcePolicyError>`](crate::error::DeleteResourcePolicyError)
+    pub fn delete_resource_policy(&self) -> fluent_builders::DeleteResourcePolicy {
+        fluent_builders::DeleteResourcePolicy::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeregisterDelegatedAdministrator`](crate::client::fluent_builders::DeregisterDelegatedAdministrator) operation.
     ///
     /// - The fluent builder is configurable:
@@ -319,6 +329,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribePolicyError>`](crate::error::DescribePolicyError)
     pub fn describe_policy(&self) -> fluent_builders::DescribePolicy {
         fluent_builders::DescribePolicy::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeResourcePolicy`](crate::client::fluent_builders::DescribeResourcePolicy) operation.
+    ///
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeResourcePolicy::send) it.
+
+    /// - On success, responds with [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput) with field(s):
+    ///   - [`resource_policy(Option<ResourcePolicy>)`](crate::output::DescribeResourcePolicyOutput::resource_policy): <p>A structure that contains details about the resource policy.</p>
+    /// - On failure, responds with [`SdkError<DescribeResourcePolicyError>`](crate::error::DescribeResourcePolicyError)
+    pub fn describe_resource_policy(&self) -> fluent_builders::DescribeResourcePolicy {
+        fluent_builders::DescribeResourcePolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DetachPolicy`](crate::client::fluent_builders::DetachPolicy) operation.
     ///
@@ -647,6 +667,17 @@ impl Client {
     pub fn move_account(&self) -> fluent_builders::MoveAccount {
         fluent_builders::MoveAccount::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_content): <p>If provided, the new content for the resource policy. The text must be correctly formatted JSON that complies with the syntax for the resource policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::PutResourcePolicy::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::PutResourcePolicy::set_tags): <p>Updates the list of tags that you want to attach to the newly-created resource policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>   <p>Calls with tags apply to the initial creation of the resource policy, otherwise an exception is thrown. If any one of the tags is invalid or if you exceed the allowed number of tags for the resource policy, then the entire request fails and the resource policy is not created. </p>  </note>
+    /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput) with field(s):
+    ///   - [`resource_policy(Option<ResourcePolicy>)`](crate::output::PutResourcePolicyOutput::resource_policy): <p>A structure that contains details about the resource policy.</p>
+    /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::error::PutResourcePolicyError)
+    pub fn put_resource_policy(&self) -> fluent_builders::PutResourcePolicy {
+        fluent_builders::PutResourcePolicy::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`RegisterDelegatedAdministrator`](crate::client::fluent_builders::RegisterDelegatedAdministrator) operation.
     ///
     /// - The fluent builder is configurable:
@@ -729,7 +760,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptHandshake`.
     ///
     /// <p>Sends a response to the originator of a handshake agreeing to the action proposed by the handshake request.</p>
-    /// <p>This operation can be called only by the following principals when they also have the relevant IAM permissions:</p>
+    /// <p>You can only call this operation by the following principals when they also have the relevant IAM permissions:</p>
     /// <ul>
     /// <li> <p> <b>Invitation to join</b> or <b>Approve all features request</b> handshakes: only a principal from the member account.</p> <p>The user who calls the API for an invitation to join must have the <code>organizations:AcceptHandshake</code> permission. If you enabled all features in the organization, the user must also have the <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can create the required service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">Organizations and Service-Linked Roles</a> in the <i>Organizations User Guide</i>.</p> </li>
     /// <li> <p> <b>Enable all features final confirmation</b> handshake: only a principal from the management account.</p> <p>For more information about invitations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting an Amazon Web Services account to join your organization</a> in the <i>Organizations User Guide.</i> For more information about requests to enable all features in the organization, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling all features in your organization</a> in the <i>Organizations User Guide.</i> </p> </li>
@@ -1076,7 +1107,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an Amazon Web Services account that is automatically a member of the organization whose credentials made the request. This is an asynchronous request that Amazon Web Services performs in the background. Because <code>CreateAccount</code> operates asynchronously, it can return a successful completion message even though account initialization might still be in progress. You might need to wait a few minutes before you can successfully access the account. To check the status of the request, do one of the following:</p>
     /// <ul>
-    /// <li> <p>Use the <code>Id</code> member of the <code>CreateAccountStatus</code> response element from this operation to provide as a parameter to the <code>DescribeCreateAccountStatus</code> operation.</p> </li>
+    /// <li> <p>Use the <code>Id</code> value of the <code>CreateAccountStatus</code> response element from this operation to provide as a parameter to the <code>DescribeCreateAccountStatus</code> operation.</p> </li>
     /// <li> <p>Check the CloudTrail log for the <code>CreateAccountResult</code> event. For information on using CloudTrail with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging and monitoring in Organizations</a> in the <i>Organizations User Guide.</i> </p> </li>
     /// </ul>
     /// <p>The user who calls the API to create an account must have the <code>organizations:CreateAccount</code> permission. If you enabled all features in the organization, Organizations creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations and Service-Linked Roles</a> in the <i>Organizations User Guide</i>.</p>
@@ -1196,7 +1227,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_account_name(input);
             self
         }
-        /// <p>(Optional)</p>
         /// <p>The name of an IAM role that Organizations automatically preconfigures in the new member account. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
         /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
         /// <p>For more information about how to use this role to access the member account, see the following links:</p>
@@ -1209,7 +1239,6 @@ pub mod fluent_builders {
             self.inner = self.inner.role_name(input.into());
             self
         }
-        /// <p>(Optional)</p>
         /// <p>The name of an IAM role that Organizations automatically preconfigures in the new member account. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
         /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
         /// <p>For more information about how to use this role to access the member account, see the following links:</p>
@@ -2101,6 +2130,70 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteResourcePolicy`.
+    ///
+    /// <p>Deletes the resource policy from your organization.</p>
+    /// <p>You can only call this operation from the organization's management account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteResourcePolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_resource_policy_input::Builder,
+    }
+    impl DeleteResourcePolicy {
+        /// Creates a new `DeleteResourcePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteResourcePolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteResourcePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+    }
     /// Fluent builder constructing a request to `DeregisterDelegatedAdministrator`.
     ///
     /// <p>Removes the specified member Amazon Web Services account as a delegated administrator for the specified Amazon Web Services service.</p> <important>
@@ -2745,6 +2838,70 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeResourcePolicy`.
+    ///
+    /// <p>Retrieves information about a resource policy.</p>
+    /// <p>You can only call this operation from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeResourcePolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_resource_policy_input::Builder,
+    }
+    impl DescribeResourcePolicy {
+        /// Creates a new `DescribeResourcePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeResourcePolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeResourcePolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeResourcePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeResourcePolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+    }
     /// Fluent builder constructing a request to `DetachPolicy`.
     ///
     /// <p>Detaches a policy from a target root, organizational unit (OU), or account.</p> <important>
@@ -3113,7 +3270,7 @@ pub mod fluent_builders {
     /// <p>We recommend that you enable integration between Organizations and the specified Amazon Web Services service by using the console or commands that are provided by the specified service. Doing so ensures that the service is aware that it can create the resources that are required for the integration. How the service creates those resources in the organization's accounts depends on that service. For more information, see the documentation for the other Amazon Web Services service.</p>
     /// </important>
     /// <p>For more information about enabling services to integrate with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating Organizations with Other Amazon Web Services Services</a> in the <i>Organizations User Guide.</i> </p>
-    /// <p>This operation can be called only from the organization's management account and only if the organization has <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled all features</a>.</p>
+    /// <p>You can only call this operation from the organization's management account and only if the organization has <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled all features</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableAWSServiceAccess {
         handle: std::sync::Arc<super::Handle>,
@@ -5348,6 +5505,101 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_destination_parent_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutResourcePolicy`.
+    ///
+    /// <p>Creates or updates a resource policy.</p>
+    /// <p>You can only call this operation from the organization's management account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutResourcePolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_resource_policy_input::Builder,
+    }
+    impl PutResourcePolicy {
+        /// Creates a new `PutResourcePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PutResourcePolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutResourcePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>If provided, the new content for the resource policy. The text must be correctly formatted JSON that complies with the syntax for the resource policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
+            self
+        }
+        /// <p>If provided, the new content for the resource policy. The text must be correctly formatted JSON that complies with the syntax for the resource policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_content(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Updates the list of tags that you want to attach to the newly-created resource policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
+        /// <p>Calls with tags apply to the initial creation of the resource policy, otherwise an exception is thrown. If any one of the tags is invalid or if you exceed the allowed number of tags for the resource policy, then the entire request fails and the resource policy is not created. </p>
+        /// </note>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Updates the list of tags that you want to attach to the newly-created resource policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
+        /// <p>Calls with tags apply to the initial creation of the resource policy, otherwise an exception is thrown. If any one of the tags is invalid or if you exceed the allowed number of tags for the resource policy, then the entire request fails and the resource policy is not created. </p>
+        /// </note>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }

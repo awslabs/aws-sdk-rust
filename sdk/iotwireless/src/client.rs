@@ -300,6 +300,7 @@ impl Client {
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessDevice::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateWirelessDevice::set_client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     ///   - [`lo_ra_wan(LoRaWanDevice)`](crate::client::fluent_builders::CreateWirelessDevice::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanDevice>)`](crate::client::fluent_builders::CreateWirelessDevice::set_lo_ra_wan): <p>The device configuration information to use to create the wireless device.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWirelessDevice::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWirelessDevice::set_tags): <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
+    ///   - [`positioning(PositioningConfigStatus)`](crate::client::fluent_builders::CreateWirelessDevice::positioning) / [`set_positioning(Option<PositioningConfigStatus>)`](crate::client::fluent_builders::CreateWirelessDevice::set_positioning): <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     /// - On success, responds with [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateWirelessDeviceOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
     ///   - [`id(Option<String>)`](crate::output::CreateWirelessDeviceOutput::id): <p>The ID of the new wireless device.</p>
@@ -712,6 +713,20 @@ impl Client {
     pub fn get_position_configuration(&self) -> fluent_builders::GetPositionConfiguration {
         fluent_builders::GetPositionConfiguration::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetPositionEstimate`](crate::client::fluent_builders::GetPositionEstimate) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`wi_fi_access_points(Vec<WiFiAccessPoint>)`](crate::client::fluent_builders::GetPositionEstimate::wi_fi_access_points) / [`set_wi_fi_access_points(Option<Vec<WiFiAccessPoint>>)`](crate::client::fluent_builders::GetPositionEstimate::set_wi_fi_access_points): <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
+    ///   - [`cell_towers(CellTowers)`](crate::client::fluent_builders::GetPositionEstimate::cell_towers) / [`set_cell_towers(Option<CellTowers>)`](crate::client::fluent_builders::GetPositionEstimate::set_cell_towers): <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
+    ///   - [`ip(Ip)`](crate::client::fluent_builders::GetPositionEstimate::ip) / [`set_ip(Option<Ip>)`](crate::client::fluent_builders::GetPositionEstimate::set_ip): <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
+    ///   - [`gnss(Gnss)`](crate::client::fluent_builders::GetPositionEstimate::gnss) / [`set_gnss(Option<Gnss>)`](crate::client::fluent_builders::GetPositionEstimate::set_gnss): <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
+    ///   - [`timestamp(DateTime)`](crate::client::fluent_builders::GetPositionEstimate::timestamp) / [`set_timestamp(Option<DateTime>)`](crate::client::fluent_builders::GetPositionEstimate::set_timestamp): <p>Optional information that specifies the time when the position information will be resolved. It uses the UNIX timestamp format. If not specified, the time at which the request was received will be used.</p>
+    /// - On success, responds with [`GetPositionEstimateOutput`](crate::output::GetPositionEstimateOutput) with field(s):
+    ///   - [`geo_json_payload(Option<Blob>)`](crate::output::GetPositionEstimateOutput::geo_json_payload): <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    /// - On failure, responds with [`SdkError<GetPositionEstimateError>`](crate::error::GetPositionEstimateError)
+    pub fn get_position_estimate(&self) -> fluent_builders::GetPositionEstimate {
+        fluent_builders::GetPositionEstimate::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetResourceEventConfiguration`](crate::client::fluent_builders::GetResourceEventConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
@@ -740,6 +755,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetResourceLogLevelError>`](crate::error::GetResourceLogLevelError)
     pub fn get_resource_log_level(&self) -> fluent_builders::GetResourceLogLevel {
         fluent_builders::GetResourceLogLevel::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetResourcePosition`](crate::client::fluent_builders::GetResourcePosition) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::GetResourcePosition::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::GetResourcePosition::set_resource_identifier): <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+    ///   - [`resource_type(PositionResourceType)`](crate::client::fluent_builders::GetResourcePosition::resource_type) / [`set_resource_type(Option<PositionResourceType>)`](crate::client::fluent_builders::GetResourcePosition::set_resource_type): <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
+    /// - On success, responds with [`GetResourcePositionOutput`](crate::output::GetResourcePositionOutput) with field(s):
+    ///   - [`geo_json_payload(Option<Blob>)`](crate::output::GetResourcePositionOutput::geo_json_payload): <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    /// - On failure, responds with [`SdkError<GetResourcePositionError>`](crate::error::GetResourcePositionError)
+    pub fn get_resource_position(&self) -> fluent_builders::GetResourcePosition {
+        fluent_builders::GetResourcePosition::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetServiceEndpoint`](crate::client::fluent_builders::GetServiceEndpoint) operation.
     ///
@@ -782,6 +808,7 @@ impl Client {
     ///   - [`thing_arn(Option<String>)`](crate::output::GetWirelessDeviceOutput::thing_arn): <p>The ARN of the thing associated with the wireless device.</p>
     ///   - [`lo_ra_wan(Option<LoRaWanDevice>)`](crate::output::GetWirelessDeviceOutput::lo_ra_wan): <p>Information about the wireless device.</p>
     ///   - [`sidewalk(Option<SidewalkDevice>)`](crate::output::GetWirelessDeviceOutput::sidewalk): <p>Sidewalk device object.</p>
+    ///   - [`positioning(Option<PositioningConfigStatus>)`](crate::output::GetWirelessDeviceOutput::positioning): <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     /// - On failure, responds with [`SdkError<GetWirelessDeviceError>`](crate::error::GetWirelessDeviceError)
     pub fn get_wireless_device(&self) -> fluent_builders::GetWirelessDevice {
         fluent_builders::GetWirelessDevice::new(self.handle.clone())
@@ -1379,6 +1406,18 @@ impl Client {
     ) -> fluent_builders::UpdateResourceEventConfiguration {
         fluent_builders::UpdateResourceEventConfiguration::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateResourcePosition`](crate::client::fluent_builders::UpdateResourcePosition) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateResourcePosition::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::UpdateResourcePosition::set_resource_identifier): <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+    ///   - [`resource_type(PositionResourceType)`](crate::client::fluent_builders::UpdateResourcePosition::resource_type) / [`set_resource_type(Option<PositionResourceType>)`](crate::client::fluent_builders::UpdateResourcePosition::set_resource_type): <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
+    ///   - [`geo_json_payload(Blob)`](crate::client::fluent_builders::UpdateResourcePosition::geo_json_payload) / [`set_geo_json_payload(Option<Blob>)`](crate::client::fluent_builders::UpdateResourcePosition::set_geo_json_payload): <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    /// - On success, responds with [`UpdateResourcePositionOutput`](crate::output::UpdateResourcePositionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateResourcePositionError>`](crate::error::UpdateResourcePositionError)
+    pub fn update_resource_position(&self) -> fluent_builders::UpdateResourcePosition {
+        fluent_builders::UpdateResourcePosition::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateWirelessDevice`](crate::client::fluent_builders::UpdateWirelessDevice) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1387,6 +1426,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateWirelessDevice::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateWirelessDevice::set_name): <p>The new name of the resource.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateWirelessDevice::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateWirelessDevice::set_description): <p>A new description of the resource.</p>
     ///   - [`lo_ra_wan(LoRaWanUpdateDevice)`](crate::client::fluent_builders::UpdateWirelessDevice::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanUpdateDevice>)`](crate::client::fluent_builders::UpdateWirelessDevice::set_lo_ra_wan): <p>The updated wireless device's configuration.</p>
+    ///   - [`positioning(PositioningConfigStatus)`](crate::client::fluent_builders::UpdateWirelessDevice::positioning) / [`set_positioning(Option<PositioningConfigStatus>)`](crate::client::fluent_builders::UpdateWirelessDevice::set_positioning): <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     /// - On success, responds with [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput)
 
     /// - On failure, responds with [`SdkError<UpdateWirelessDeviceError>`](crate::error::UpdateWirelessDeviceError)
@@ -3093,6 +3133,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+        pub fn positioning(mut self, input: crate::model::PositioningConfigStatus) -> Self {
+            self.inner = self.inner.positioning(input);
+            self
+        }
+        /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+        pub fn set_positioning(
+            mut self,
+            input: std::option::Option<crate::model::PositioningConfigStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_positioning(input);
             self
         }
     }
@@ -5534,7 +5587,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPosition`.
     ///
-    /// <p>Get the position information for a given resource.</p>
+    /// <p>Get the position information for a given resource.</p> <important>
+    /// <p>This action is no longer supported. Calls to retrieve the position information should use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a> API operation instead.</p>
+    /// </important>
+    #[deprecated(note = "This operation is no longer supported.")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPosition {
         handle: std::sync::Arc<super::Handle>,
@@ -5623,7 +5679,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPositionConfiguration`.
     ///
-    /// <p>Get position configuration for a given resource.</p>
+    /// <p>Get position configuration for a given resource.</p> <important>
+    /// <p>This action is no longer supported. Calls to retrieve the position configuration should use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a> API operation instead.</p>
+    /// </important>
+    #[deprecated(note = "This operation is no longer supported.")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPositionConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -5707,6 +5766,132 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::PositionResourceType>,
         ) -> Self {
             self.inner = self.inner.set_resource_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetPositionEstimate`.
+    ///
+    /// <p>Get estimated position information as a payload in GeoJSON format. The payload measurement data is resolved using solvers that are provided by third-party vendors.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetPositionEstimate {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_position_estimate_input::Builder,
+    }
+    impl GetPositionEstimate {
+        /// Creates a new `GetPositionEstimate`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetPositionEstimate,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetPositionEstimateError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetPositionEstimateOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetPositionEstimateError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `WiFiAccessPoints`.
+        ///
+        /// To override the contents of this collection use [`set_wi_fi_access_points`](Self::set_wi_fi_access_points).
+        ///
+        /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
+        pub fn wi_fi_access_points(mut self, input: crate::model::WiFiAccessPoint) -> Self {
+            self.inner = self.inner.wi_fi_access_points(input);
+            self
+        }
+        /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
+        pub fn set_wi_fi_access_points(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::WiFiAccessPoint>>,
+        ) -> Self {
+            self.inner = self.inner.set_wi_fi_access_points(input);
+            self
+        }
+        /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
+        pub fn cell_towers(mut self, input: crate::model::CellTowers) -> Self {
+            self.inner = self.inner.cell_towers(input);
+            self
+        }
+        /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
+        pub fn set_cell_towers(
+            mut self,
+            input: std::option::Option<crate::model::CellTowers>,
+        ) -> Self {
+            self.inner = self.inner.set_cell_towers(input);
+            self
+        }
+        /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
+        pub fn ip(mut self, input: crate::model::Ip) -> Self {
+            self.inner = self.inner.ip(input);
+            self
+        }
+        /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
+        pub fn set_ip(mut self, input: std::option::Option<crate::model::Ip>) -> Self {
+            self.inner = self.inner.set_ip(input);
+            self
+        }
+        /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
+        pub fn gnss(mut self, input: crate::model::Gnss) -> Self {
+            self.inner = self.inner.gnss(input);
+            self
+        }
+        /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
+        pub fn set_gnss(mut self, input: std::option::Option<crate::model::Gnss>) -> Self {
+            self.inner = self.inner.set_gnss(input);
+            self
+        }
+        /// <p>Optional information that specifies the time when the position information will be resolved. It uses the UNIX timestamp format. If not specified, the time at which the request was received will be used.</p>
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.timestamp(input);
+            self
+        }
+        /// <p>Optional information that specifies the time when the position information will be resolved. It uses the UNIX timestamp format. If not specified, the time at which the request was received will be used.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_timestamp(input);
             self
         }
     }
@@ -5893,6 +6078,95 @@ pub mod fluent_builders {
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetResourcePosition`.
+    ///
+    /// <p>Get the position information for a given wireless device or a wireless gateway resource. The postion information uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic System (WGS84)</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetResourcePosition {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_resource_position_input::Builder,
+    }
+    impl GetResourcePosition {
+        /// Creates a new `GetResourcePosition`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetResourcePosition,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetResourcePositionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetResourcePositionOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetResourcePositionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
+            self
+        }
+        /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+        pub fn set_resource_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_identifier(input);
+            self
+        }
+        /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
+        pub fn resource_type(mut self, input: crate::model::PositionResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
+            self
+        }
+        /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::PositionResourceType>,
         ) -> Self {
             self.inner = self.inner.set_resource_type(input);
             self
@@ -7397,7 +7671,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPositionConfigurations`.
     ///
-    /// <p>List position configurations for a given resource, such as positioning solvers.</p>
+    /// <p>List position configurations for a given resource, such as positioning solvers.</p> <important>
+    /// <p>This action is no longer supported. Calls to retrieve position information should use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a> API operation instead.</p>
+    /// </important>
+    #[deprecated(note = "This operation is no longer supported.")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPositionConfigurations {
         handle: std::sync::Arc<super::Handle>,
@@ -8132,7 +8409,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutPositionConfiguration`.
     ///
-    /// <p>Put position configuration for a given resource.</p>
+    /// <p>Put position configuration for a given resource.</p> <important>
+    /// <p>This action is no longer supported. Calls to update the position configuration should use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a> API operation instead.</p>
+    /// </important>
+    #[deprecated(note = "This operation is no longer supported.")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPositionConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -10227,7 +10507,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePosition`.
     ///
-    /// <p>Update the position information of a resource.</p>
+    /// <p>Update the position information of a resource.</p> <important>
+    /// <p>This action is no longer supported. Calls to update the position information should use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a> API operation instead.</p>
+    /// </important>
+    #[deprecated(note = "This operation is no longer supported.")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePosition {
         handle: std::sync::Arc<super::Handle>,
@@ -10501,6 +10784,108 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateResourcePosition`.
+    ///
+    /// <p>Update the position information of a given wireless device or a wireless gateway resource. The postion coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic System (WGS84)</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateResourcePosition {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_resource_position_input::Builder,
+    }
+    impl UpdateResourcePosition {
+        /// Creates a new `UpdateResourcePosition`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateResourcePosition,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateResourcePositionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateResourcePositionOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateResourcePositionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
+            self
+        }
+        /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+        pub fn set_resource_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_identifier(input);
+            self
+        }
+        /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
+        pub fn resource_type(mut self, input: crate::model::PositionResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
+            self
+        }
+        /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::PositionResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+        pub fn geo_json_payload(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.geo_json_payload(input);
+            self
+        }
+        /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+        pub fn set_geo_json_payload(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.inner = self.inner.set_geo_json_payload(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateWirelessDevice`.
     ///
     /// <p>Updates properties of a wireless device.</p>
@@ -10617,6 +11002,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::LoRaWanUpdateDevice>,
         ) -> Self {
             self.inner = self.inner.set_lo_ra_wan(input);
+            self
+        }
+        /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+        pub fn positioning(mut self, input: crate::model::PositioningConfigStatus) -> Self {
+            self.inner = self.inner.positioning(input);
+            self
+        }
+        /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+        pub fn set_positioning(
+            mut self,
+            input: std::option::Option<crate::model::PositioningConfigStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_positioning(input);
             self
         }
     }

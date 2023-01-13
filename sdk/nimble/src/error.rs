@@ -247,7 +247,7 @@ impl ThrottlingException {
 }
 
 /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-/// <p>Please use AWS Service Quotas to request an increase. </p>
+/// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
@@ -886,7 +886,7 @@ pub enum AcceptEulasErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1055,7 +1055,7 @@ pub enum CreateLaunchProfileErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1238,7 +1238,7 @@ pub enum CreateStreamingImageErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1425,7 +1425,7 @@ pub enum CreateStreamingSessionErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1614,7 +1614,7 @@ pub enum CreateStreamingSessionStreamErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1813,7 +1813,7 @@ pub enum CreateStudioErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1982,7 +1982,7 @@ pub enum CreateStudioComponentErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2169,7 +2169,7 @@ pub enum DeleteLaunchProfileErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2354,7 +2354,7 @@ pub enum DeleteLaunchProfileMemberErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2549,7 +2549,7 @@ pub enum DeleteStreamingImageErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2736,7 +2736,7 @@ pub enum DeleteStreamingSessionErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2923,7 +2923,7 @@ pub enum DeleteStudioErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3092,7 +3092,7 @@ pub enum DeleteStudioComponentErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3279,7 +3279,7 @@ pub enum DeleteStudioMemberErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3462,7 +3462,7 @@ pub enum GetEulaErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3628,7 +3628,7 @@ pub enum GetLaunchProfileErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3808,7 +3808,7 @@ pub enum GetLaunchProfileDetailsErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3999,7 +3999,7 @@ pub enum GetLaunchProfileInitializationErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -4201,7 +4201,7 @@ pub enum GetLaunchProfileMemberErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -4388,7 +4388,7 @@ pub enum GetStreamingImageErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -4568,7 +4568,7 @@ pub enum GetStreamingSessionErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -4721,6 +4721,187 @@ impl std::error::Error for GetStreamingSessionError {
     }
 }
 
+/// Error type for the `GetStreamingSessionBackup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetStreamingSessionBackupError {
+    /// Kind of error that occurred.
+    pub kind: GetStreamingSessionBackupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetStreamingSessionBackupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetStreamingSessionBackupErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetStreamingSessionBackup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetStreamingSessionBackupErrorKind {
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Another operation is in progress. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An internal error has occurred. Please retry your request.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// <p>The specified resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request throughput limit was exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the parameters in the request is invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetStreamingSessionBackupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetStreamingSessionBackupErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetStreamingSessionBackupErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            GetStreamingSessionBackupErrorKind::InternalServerErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetStreamingSessionBackupErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetStreamingSessionBackupErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetStreamingSessionBackupErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetStreamingSessionBackupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetStreamingSessionBackupError {
+    fn code(&self) -> Option<&str> {
+        GetStreamingSessionBackupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            GetStreamingSessionBackupErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetStreamingSessionBackupErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl GetStreamingSessionBackupError {
+    /// Creates a new `GetStreamingSessionBackupError`.
+    pub fn new(kind: GetStreamingSessionBackupErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetStreamingSessionBackupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetStreamingSessionBackupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetStreamingSessionBackupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetStreamingSessionBackupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetStreamingSessionBackupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetStreamingSessionBackupErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetStreamingSessionBackupErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetStreamingSessionBackupErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetStreamingSessionBackupErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetStreamingSessionBackupErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetStreamingSessionBackupErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetStreamingSessionBackupErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetStreamingSessionBackupErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetStreamingSessionBackupErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetStreamingSessionBackupErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetStreamingSessionBackupErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetStreamingSessionBackupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetStreamingSessionBackupErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetStreamingSessionBackupErrorKind::ConflictException(_inner) => Some(_inner),
+            GetStreamingSessionBackupErrorKind::InternalServerErrorException(_inner) => {
+                Some(_inner)
+            }
+            GetStreamingSessionBackupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetStreamingSessionBackupErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetStreamingSessionBackupErrorKind::ValidationException(_inner) => Some(_inner),
+            GetStreamingSessionBackupErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `GetStreamingSessionStream` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4753,7 +4934,7 @@ pub enum GetStreamingSessionStreamErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -4948,7 +5129,7 @@ pub enum GetStudioErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5114,7 +5295,7 @@ pub enum GetStudioComponentErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5297,7 +5478,7 @@ pub enum GetStudioMemberErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5471,7 +5652,7 @@ pub enum ListEulaAcceptancesErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5654,7 +5835,7 @@ pub enum ListEulasErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5822,7 +6003,7 @@ pub enum ListLaunchProfileMembersErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6015,7 +6196,7 @@ pub enum ListLaunchProfilesErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6198,7 +6379,7 @@ pub enum ListStreamingImagesErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6351,6 +6532,189 @@ impl std::error::Error for ListStreamingImagesError {
     }
 }
 
+/// Error type for the `ListStreamingSessionBackups` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListStreamingSessionBackupsError {
+    /// Kind of error that occurred.
+    pub kind: ListStreamingSessionBackupsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListStreamingSessionBackupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListStreamingSessionBackupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListStreamingSessionBackups` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListStreamingSessionBackupsErrorKind {
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Another operation is in progress. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An internal error has occurred. Please retry your request.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// <p>The specified resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request throughput limit was exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the parameters in the request is invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListStreamingSessionBackupsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListStreamingSessionBackupsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListStreamingSessionBackupsErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            ListStreamingSessionBackupsErrorKind::InternalServerErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListStreamingSessionBackupsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListStreamingSessionBackupsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListStreamingSessionBackupsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListStreamingSessionBackupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListStreamingSessionBackupsError {
+    fn code(&self) -> Option<&str> {
+        ListStreamingSessionBackupsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            ListStreamingSessionBackupsErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListStreamingSessionBackupsErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl ListStreamingSessionBackupsError {
+    /// Creates a new `ListStreamingSessionBackupsError`.
+    pub fn new(kind: ListStreamingSessionBackupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListStreamingSessionBackupsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListStreamingSessionBackupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListStreamingSessionBackupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListStreamingSessionBackupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListStreamingSessionBackupsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamingSessionBackupsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListStreamingSessionBackupsErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamingSessionBackupsErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListStreamingSessionBackupsErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamingSessionBackupsErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListStreamingSessionBackupsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamingSessionBackupsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListStreamingSessionBackupsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamingSessionBackupsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListStreamingSessionBackupsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamingSessionBackupsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListStreamingSessionBackupsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListStreamingSessionBackupsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListStreamingSessionBackupsErrorKind::ConflictException(_inner) => Some(_inner),
+            ListStreamingSessionBackupsErrorKind::InternalServerErrorException(_inner) => {
+                Some(_inner)
+            }
+            ListStreamingSessionBackupsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListStreamingSessionBackupsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListStreamingSessionBackupsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListStreamingSessionBackupsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListStreamingSessions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6381,7 +6745,7 @@ pub enum ListStreamingSessionsErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6568,7 +6932,7 @@ pub enum ListStudioComponentsErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6755,7 +7119,7 @@ pub enum ListStudioMembersErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6935,7 +7299,7 @@ pub enum ListStudiosErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -7104,7 +7468,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -7287,7 +7651,7 @@ pub enum PutLaunchProfileMembersErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -7476,7 +7840,7 @@ pub enum PutStudioMembersErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -7656,7 +8020,7 @@ pub enum StartStreamingSessionErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -7845,7 +8209,7 @@ pub enum StartStudioSSOConfigurationRepairErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -8055,7 +8419,7 @@ pub enum StopStreamingSessionErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -8242,7 +8606,7 @@ pub enum TagResourceErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -8411,7 +8775,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -8582,7 +8946,7 @@ pub enum UpdateLaunchProfileErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -8767,7 +9131,7 @@ pub enum UpdateLaunchProfileMemberErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -8962,7 +9326,7 @@ pub enum UpdateStreamingImageErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -9149,7 +9513,7 @@ pub enum UpdateStudioErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -9318,7 +9682,7 @@ pub enum UpdateStudioComponentErrorKind {
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),

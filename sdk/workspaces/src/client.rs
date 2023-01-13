@@ -174,6 +174,18 @@ impl Client {
     pub fn create_ip_group(&self) -> fluent_builders::CreateIpGroup {
         fluent_builders::CreateIpGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateStandbyWorkspaces`](crate::client::fluent_builders::CreateStandbyWorkspaces) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`primary_region(impl Into<String>)`](crate::client::fluent_builders::CreateStandbyWorkspaces::primary_region) / [`set_primary_region(Option<String>)`](crate::client::fluent_builders::CreateStandbyWorkspaces::set_primary_region): <p>The Region of the primary WorkSpace.</p>
+    ///   - [`standby_workspaces(Vec<StandbyWorkspace>)`](crate::client::fluent_builders::CreateStandbyWorkspaces::standby_workspaces) / [`set_standby_workspaces(Option<Vec<StandbyWorkspace>>)`](crate::client::fluent_builders::CreateStandbyWorkspaces::set_standby_workspaces): <p>Information about the Standby WorkSpace to be created.</p>
+    /// - On success, responds with [`CreateStandbyWorkspacesOutput`](crate::output::CreateStandbyWorkspacesOutput) with field(s):
+    ///   - [`failed_standby_requests(Option<Vec<FailedCreateStandbyWorkspacesRequest>>)`](crate::output::CreateStandbyWorkspacesOutput::failed_standby_requests): <p>Information about the Standby WorkSpace that could not be created. </p>
+    ///   - [`pending_standby_requests(Option<Vec<PendingCreateStandbyWorkspacesRequest>>)`](crate::output::CreateStandbyWorkspacesOutput::pending_standby_requests): <p>Information about the Standby WorkSpace that was created.</p>
+    /// - On failure, responds with [`SdkError<CreateStandbyWorkspacesError>`](crate::error::CreateStandbyWorkspacesError)
+    pub fn create_standby_workspaces(&self) -> fluent_builders::CreateStandbyWorkspaces {
+        fluent_builders::CreateStandbyWorkspaces::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateTags`](crate::client::fluent_builders::CreateTags) operation.
     ///
     /// - The fluent builder is configurable:
@@ -227,7 +239,7 @@ impl Client {
     ///   - [`description(Option<String>)`](crate::output::CreateWorkspaceImageOutput::description): <p>The description of the image.</p>
     ///   - [`operating_system(Option<OperatingSystem>)`](crate::output::CreateWorkspaceImageOutput::operating_system): <p>The operating system that the image is running.</p>
     ///   - [`state(Option<WorkspaceImageState>)`](crate::output::CreateWorkspaceImageOutput::state): <p>The availability status of the image.</p>
-    ///   - [`required_tenancy(Option<WorkspaceImageRequiredTenancy>)`](crate::output::CreateWorkspaceImageOutput::required_tenancy): <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a> </p>
+    ///   - [`required_tenancy(Option<WorkspaceImageRequiredTenancy>)`](crate::output::CreateWorkspaceImageOutput::required_tenancy): <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a>.</p>
     ///   - [`created(Option<DateTime>)`](crate::output::CreateWorkspaceImageOutput::created): <p>The date when the image was created.</p>
     ///   - [`owner_account_id(Option<String>)`](crate::output::CreateWorkspaceImageOutput::owner_account_id): <p>The identifier of the Amazon Web Services account that owns the image.</p>
     /// - On failure, responds with [`SdkError<CreateWorkspaceImageError>`](crate::error::CreateWorkspaceImageError)
@@ -587,7 +599,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`ec2_image_id(impl Into<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::ec2_image_id) / [`set_ec2_image_id(Option<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_ec2_image_id): <p>The identifier of the EC2 image.</p>
-    ///   - [`ingestion_process(WorkspaceImageIngestionProcess)`](crate::client::fluent_builders::ImportWorkspaceImage::ingestion_process) / [`set_ingestion_process(Option<WorkspaceImageIngestionProcess>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_ingestion_process): <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>  <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+    ///   - [`ingestion_process(WorkspaceImageIngestionProcess)`](crate::client::fluent_builders::ImportWorkspaceImage::ingestion_process) / [`set_ingestion_process(Option<WorkspaceImageIngestionProcess>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_ingestion_process): <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>  <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>   <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>  </note>
     ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_image_name): <p>The name of the WorkSpace image.</p>
     ///   - [`image_description(impl Into<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::image_description) / [`set_image_description(Option<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_image_description): <p>The description of the WorkSpace image.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportWorkspaceImage::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_tags): <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
@@ -635,6 +647,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<ModifyAccountError>`](crate::error::ModifyAccountError)
     pub fn modify_account(&self) -> fluent_builders::ModifyAccount {
         fluent_builders::ModifyAccount::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ModifyCertificateBasedAuthProperties`](crate::client::fluent_builders::ModifyCertificateBasedAuthProperties) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ModifyCertificateBasedAuthProperties::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ModifyCertificateBasedAuthProperties::set_resource_id): <p>The resource identifiers, in the form of directory IDs.</p>
+    ///   - [`certificate_based_auth_properties(CertificateBasedAuthProperties)`](crate::client::fluent_builders::ModifyCertificateBasedAuthProperties::certificate_based_auth_properties) / [`set_certificate_based_auth_properties(Option<CertificateBasedAuthProperties>)`](crate::client::fluent_builders::ModifyCertificateBasedAuthProperties::set_certificate_based_auth_properties): <p>The properties of the certificate-based authentication.</p>
+    ///   - [`properties_to_delete(Vec<DeletableCertificateBasedAuthProperty>)`](crate::client::fluent_builders::ModifyCertificateBasedAuthProperties::properties_to_delete) / [`set_properties_to_delete(Option<Vec<DeletableCertificateBasedAuthProperty>>)`](crate::client::fluent_builders::ModifyCertificateBasedAuthProperties::set_properties_to_delete): <p>The properties of the certificate-based authentication you want to delete.</p>
+    /// - On success, responds with [`ModifyCertificateBasedAuthPropertiesOutput`](crate::output::ModifyCertificateBasedAuthPropertiesOutput)
+
+    /// - On failure, responds with [`SdkError<ModifyCertificateBasedAuthPropertiesError>`](crate::error::ModifyCertificateBasedAuthPropertiesError)
+    pub fn modify_certificate_based_auth_properties(
+        &self,
+    ) -> fluent_builders::ModifyCertificateBasedAuthProperties {
+        fluent_builders::ModifyCertificateBasedAuthProperties::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ModifyClientProperties`](crate::client::fluent_builders::ModifyClientProperties) operation.
     ///
@@ -1580,6 +1606,99 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateStandbyWorkspaces`.
+    ///
+    /// <p>Creates a Standby WorkSpace in a secondary region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateStandbyWorkspaces {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_standby_workspaces_input::Builder,
+    }
+    impl CreateStandbyWorkspaces {
+        /// Creates a new `CreateStandbyWorkspaces`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateStandbyWorkspaces,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateStandbyWorkspacesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateStandbyWorkspacesOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateStandbyWorkspacesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Region of the primary WorkSpace.</p>
+        pub fn primary_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.primary_region(input.into());
+            self
+        }
+        /// <p>The Region of the primary WorkSpace.</p>
+        pub fn set_primary_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_primary_region(input);
+            self
+        }
+        /// Appends an item to `StandbyWorkspaces`.
+        ///
+        /// To override the contents of this collection use [`set_standby_workspaces`](Self::set_standby_workspaces).
+        ///
+        /// <p>Information about the Standby WorkSpace to be created.</p>
+        pub fn standby_workspaces(mut self, input: crate::model::StandbyWorkspace) -> Self {
+            self.inner = self.inner.standby_workspaces(input);
+            self
+        }
+        /// <p>Information about the Standby WorkSpace to be created.</p>
+        pub fn set_standby_workspaces(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StandbyWorkspace>>,
+        ) -> Self {
+            self.inner = self.inner.set_standby_workspaces(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateTags`.
     ///
     /// <p>Creates the specified tags for the specified WorkSpaces resource.</p>
@@ -2063,7 +2182,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkspaces`.
     ///
     /// <p>Creates one or more WorkSpaces.</p>
-    /// <p>This operation is asynchronous and returns before the WorkSpaces are created.</p>
+    /// <p>This operation is asynchronous and returns before the WorkSpaces are created.</p> <note>
+    /// <p>The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkspaces {
         handle: std::sync::Arc<super::Handle>,
@@ -4613,7 +4734,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportWorkspaceImage`.
     ///
-    /// <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p>
+    /// <p>Imports the specified Windows 10 Bring Your Own License (BYOL) or Windows Server 2016 BYOL image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportWorkspaceImage {
         handle: std::sync::Arc<super::Handle>,
@@ -4683,8 +4804,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ec2_image_id(input);
             self
         }
-        /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
-        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+        /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
+        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
+        /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+        /// </note>
         pub fn ingestion_process(
             mut self,
             input: crate::model::WorkspaceImageIngestionProcess,
@@ -4692,8 +4815,10 @@ pub mod fluent_builders {
             self.inner = self.inner.ingestion_process(input);
             self
         }
-        /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
-        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+        /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
+        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
+        /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+        /// </note>
         pub fn set_ingestion_process(
             mut self,
             input: std::option::Option<crate::model::WorkspaceImageIngestionProcess>,
@@ -5048,6 +5173,121 @@ pub mod fluent_builders {
             self.inner = self
                 .inner
                 .set_dedicated_tenancy_management_cidr_range(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ModifyCertificateBasedAuthProperties`.
+    ///
+    /// <p>Modifies the properties of the certificate-based authentication you want to use with your WorkSpaces.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ModifyCertificateBasedAuthProperties {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::modify_certificate_based_auth_properties_input::Builder,
+    }
+    impl ModifyCertificateBasedAuthProperties {
+        /// Creates a new `ModifyCertificateBasedAuthProperties`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ModifyCertificateBasedAuthProperties,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::ModifyCertificateBasedAuthPropertiesError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ModifyCertificateBasedAuthPropertiesOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ModifyCertificateBasedAuthPropertiesError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The resource identifiers, in the form of directory IDs.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
+            self
+        }
+        /// <p>The resource identifiers, in the form of directory IDs.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
+            self
+        }
+        /// <p>The properties of the certificate-based authentication.</p>
+        pub fn certificate_based_auth_properties(
+            mut self,
+            input: crate::model::CertificateBasedAuthProperties,
+        ) -> Self {
+            self.inner = self.inner.certificate_based_auth_properties(input);
+            self
+        }
+        /// <p>The properties of the certificate-based authentication.</p>
+        pub fn set_certificate_based_auth_properties(
+            mut self,
+            input: std::option::Option<crate::model::CertificateBasedAuthProperties>,
+        ) -> Self {
+            self.inner = self.inner.set_certificate_based_auth_properties(input);
+            self
+        }
+        /// Appends an item to `PropertiesToDelete`.
+        ///
+        /// To override the contents of this collection use [`set_properties_to_delete`](Self::set_properties_to_delete).
+        ///
+        /// <p>The properties of the certificate-based authentication you want to delete.</p>
+        pub fn properties_to_delete(
+            mut self,
+            input: crate::model::DeletableCertificateBasedAuthProperty,
+        ) -> Self {
+            self.inner = self.inner.properties_to_delete(input);
+            self
+        }
+        /// <p>The properties of the certificate-based authentication you want to delete.</p>
+        pub fn set_properties_to_delete(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::DeletableCertificateBasedAuthProperty>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_properties_to_delete(input);
             self
         }
     }
@@ -5519,7 +5759,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyWorkspaceProperties`.
     ///
-    /// <p>Modifies the specified WorkSpace properties. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html"> Modify a WorkSpace</a>. </p>
+    /// <p>Modifies the specified WorkSpace properties. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html"> Modify a WorkSpace</a>. </p> <note>
+    /// <p>The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyWorkspaceProperties {
         handle: std::sync::Arc<super::Handle>,

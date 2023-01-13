@@ -209,7 +209,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateAccessPolicy`](crate::client::fluent_builders::CreateAccessPolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`access_policy_identity(Identity)`](crate::client::fluent_builders::CreateAccessPolicy::access_policy_identity) / [`set_access_policy_identity(Option<Identity>)`](crate::client::fluent_builders::CreateAccessPolicy::set_access_policy_identity): <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+    ///   - [`access_policy_identity(Identity)`](crate::client::fluent_builders::CreateAccessPolicy::access_policy_identity) / [`set_access_policy_identity(Option<Identity>)`](crate::client::fluent_builders::CreateAccessPolicy::set_access_policy_identity): <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
     ///   - [`access_policy_resource(Resource)`](crate::client::fluent_builders::CreateAccessPolicy::access_policy_resource) / [`set_access_policy_resource(Option<Resource>)`](crate::client::fluent_builders::CreateAccessPolicy::set_access_policy_resource): <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
     ///   - [`access_policy_permission(Permission)`](crate::client::fluent_builders::CreateAccessPolicy::access_policy_permission) / [`set_access_policy_permission(Option<Permission>)`](crate::client::fluent_builders::CreateAccessPolicy::set_access_policy_permission): <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPolicy::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAccessPolicy::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -310,15 +310,15 @@ impl Client {
     ///   - [`portal_logo_image_file(ImageFile)`](crate::client::fluent_builders::CreatePortal::portal_logo_image_file) / [`set_portal_logo_image_file(Option<ImageFile>)`](crate::client::fluent_builders::CreatePortal::set_portal_logo_image_file): <p>A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark background.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreatePortal::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreatePortal::set_role_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreatePortal::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreatePortal::set_tags): <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`portal_auth_mode(AuthMode)`](crate::client::fluent_builders::CreatePortal::portal_auth_mode) / [`set_portal_auth_mode(Option<AuthMode>)`](crate::client::fluent_builders::CreatePortal::set_portal_auth_mode): <p>The service to use to authenticate users to the portal. Choose from the following options:</p>  <ul>   <li> <p> <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>   <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>  </ul>  <p>You can't change this value after you create a portal.</p>  <p>Default: <code>SSO</code> </p>
+    ///   - [`portal_auth_mode(AuthMode)`](crate::client::fluent_builders::CreatePortal::portal_auth_mode) / [`set_portal_auth_mode(Option<AuthMode>)`](crate::client::fluent_builders::CreatePortal::set_portal_auth_mode): <p>The service to use to authenticate users to the portal. Choose from the following options:</p>  <ul>   <li> <p> <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>   <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>  </ul>  <p>You can't change this value after you create a portal.</p>  <p>Default: <code>SSO</code> </p>
     ///   - [`notification_sender_email(impl Into<String>)`](crate::client::fluent_builders::CreatePortal::notification_sender_email) / [`set_notification_sender_email(Option<String>)`](crate::client::fluent_builders::CreatePortal::set_notification_sender_email): <p>The email address that sends alarm notifications.</p> <important>   <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>  </important>
     ///   - [`alarms(Alarms)`](crate::client::fluent_builders::CreatePortal::alarms) / [`set_alarms(Option<Alarms>)`](crate::client::fluent_builders::CreatePortal::set_alarms): <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
     /// - On success, responds with [`CreatePortalOutput`](crate::output::CreatePortalOutput) with field(s):
     ///   - [`portal_id(Option<String>)`](crate::output::CreatePortalOutput::portal_id): <p>The ID of the created portal.</p>
     ///   - [`portal_arn(Option<String>)`](crate::output::CreatePortalOutput::portal_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
-    ///   - [`portal_start_url(Option<String>)`](crate::output::CreatePortalOutput::portal_start_url): <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    ///   - [`portal_start_url(Option<String>)`](crate::output::CreatePortalOutput::portal_start_url): <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     ///   - [`portal_status(Option<PortalStatus>)`](crate::output::CreatePortalOutput::portal_status): <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-    ///   - [`sso_application_id(Option<String>)`](crate::output::CreatePortalOutput::sso_application_id): <p>The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.</p>
+    ///   - [`sso_application_id(Option<String>)`](crate::output::CreatePortalOutput::sso_application_id): <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
     /// - On failure, responds with [`SdkError<CreatePortalError>`](crate::error::CreatePortalError)
     pub fn create_portal(&self) -> fluent_builders::CreatePortal {
         fluent_builders::CreatePortal::new(self.handle.clone())
@@ -434,7 +434,7 @@ impl Client {
     /// - On success, responds with [`DescribeAccessPolicyOutput`](crate::output::DescribeAccessPolicyOutput) with field(s):
     ///   - [`access_policy_id(Option<String>)`](crate::output::DescribeAccessPolicyOutput::access_policy_id): <p>The ID of the access policy.</p>
     ///   - [`access_policy_arn(Option<String>)`](crate::output::DescribeAccessPolicyOutput::access_policy_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
-    ///   - [`access_policy_identity(Option<Identity>)`](crate::output::DescribeAccessPolicyOutput::access_policy_identity): <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy applies.</p>
+    ///   - [`access_policy_identity(Option<Identity>)`](crate::output::DescribeAccessPolicyOutput::access_policy_identity): <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies.</p>
     ///   - [`access_policy_resource(Option<Resource>)`](crate::output::DescribeAccessPolicyOutput::access_policy_resource): <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
     ///   - [`access_policy_permission(Option<Permission>)`](crate::output::DescribeAccessPolicyOutput::access_policy_permission): <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     ///   - [`access_policy_creation_date(Option<DateTime>)`](crate::output::DescribeAccessPolicyOutput::access_policy_creation_date): <p>The date the access policy was created, in Unix epoch time.</p>
@@ -447,6 +447,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAsset::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::DescribeAsset::set_asset_id): <p>The ID of the asset.</p>
+    ///   - [`exclude_properties(bool)`](crate::client::fluent_builders::DescribeAsset::exclude_properties) / [`set_exclude_properties(bool)`](crate::client::fluent_builders::DescribeAsset::set_exclude_properties): <p> Whether or not to exclude asset properties from the response. </p>
     /// - On success, responds with [`DescribeAssetOutput`](crate::output::DescribeAssetOutput) with field(s):
     ///   - [`asset_id(Option<String>)`](crate::output::DescribeAssetOutput::asset_id): <p>The ID of the asset.</p>
     ///   - [`asset_arn(Option<String>)`](crate::output::DescribeAssetOutput::asset_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
@@ -467,6 +468,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`asset_model_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAssetModel::asset_model_id) / [`set_asset_model_id(Option<String>)`](crate::client::fluent_builders::DescribeAssetModel::set_asset_model_id): <p>The ID of the asset model.</p>
+    ///   - [`exclude_properties(bool)`](crate::client::fluent_builders::DescribeAssetModel::exclude_properties) / [`set_exclude_properties(bool)`](crate::client::fluent_builders::DescribeAssetModel::set_exclude_properties): <p> Whether or not to exclude asset model properties from the response. </p>
     /// - On success, responds with [`DescribeAssetModelOutput`](crate::output::DescribeAssetModelOutput) with field(s):
     ///   - [`asset_model_id(Option<String>)`](crate::output::DescribeAssetModelOutput::asset_model_id): <p>The ID of the asset model.</p>
     ///   - [`asset_model_arn(Option<String>)`](crate::output::DescribeAssetModelOutput::asset_model_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
@@ -597,8 +599,8 @@ impl Client {
     ///   - [`portal_arn(Option<String>)`](crate::output::DescribePortalOutput::portal_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
     ///   - [`portal_name(Option<String>)`](crate::output::DescribePortalOutput::portal_name): <p>The name of the portal.</p>
     ///   - [`portal_description(Option<String>)`](crate::output::DescribePortalOutput::portal_description): <p>The portal's description.</p>
-    ///   - [`portal_client_id(Option<String>)`](crate::output::DescribePortalOutput::portal_client_id): <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
-    ///   - [`portal_start_url(Option<String>)`](crate::output::DescribePortalOutput::portal_start_url): <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    ///   - [`portal_client_id(Option<String>)`](crate::output::DescribePortalOutput::portal_client_id): <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
+    ///   - [`portal_start_url(Option<String>)`](crate::output::DescribePortalOutput::portal_start_url): <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     ///   - [`portal_contact_email(Option<String>)`](crate::output::DescribePortalOutput::portal_contact_email): <p>The Amazon Web Services administrator's contact email address.</p>
     ///   - [`portal_status(Option<PortalStatus>)`](crate::output::DescribePortalOutput::portal_status): <p>The current status of the portal, which contains a state and any error message.</p>
     ///   - [`portal_creation_date(Option<DateTime>)`](crate::output::DescribePortalOutput::portal_creation_date): <p>The date the portal was created, in Unix epoch time.</p>
@@ -776,7 +778,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccessPolicies::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_type(IdentityType)`](crate::client::fluent_builders::ListAccessPolicies::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::client::fluent_builders::ListAccessPolicies::set_identity_type): <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
+    ///   - [`identity_type(IdentityType)`](crate::client::fluent_builders::ListAccessPolicies::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::client::fluent_builders::ListAccessPolicies::set_identity_type): <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
     ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::ListAccessPolicies::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::ListAccessPolicies::set_identity_id): <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
     ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::ListAccessPolicies::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::ListAccessPolicies::set_resource_type): <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
     ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ListAccessPolicies::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ListAccessPolicies::set_resource_id): <p>The ID of the resource. This parameter is required if you specify <code>resourceType</code>.</p>
@@ -790,6 +792,21 @@ impl Client {
     pub fn list_access_policies(&self) -> fluent_builders::ListAccessPolicies {
         fluent_builders::ListAccessPolicies::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListAssetModelProperties`](crate::client::fluent_builders::ListAssetModelProperties) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssetModelProperties::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`asset_model_id(impl Into<String>)`](crate::client::fluent_builders::ListAssetModelProperties::asset_model_id) / [`set_asset_model_id(Option<String>)`](crate::client::fluent_builders::ListAssetModelProperties::set_asset_model_id): <p>The ID of the asset model.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssetModelProperties::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssetModelProperties::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssetModelProperties::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssetModelProperties::set_max_results): <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+    ///   - [`filter(ListAssetModelPropertiesFilter)`](crate::client::fluent_builders::ListAssetModelProperties::filter) / [`set_filter(Option<ListAssetModelPropertiesFilter>)`](crate::client::fluent_builders::ListAssetModelProperties::set_filter): <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>  <ul>   <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li>   <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>  </ul>  <p>Default: <code>BASE</code> </p>
+    /// - On success, responds with [`ListAssetModelPropertiesOutput`](crate::output::ListAssetModelPropertiesOutput) with field(s):
+    ///   - [`asset_model_property_summaries(Option<Vec<AssetModelPropertySummary>>)`](crate::output::ListAssetModelPropertiesOutput::asset_model_property_summaries): <p>A list that summarizes the properties associated with the specified asset model.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssetModelPropertiesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<ListAssetModelPropertiesError>`](crate::error::ListAssetModelPropertiesError)
+    pub fn list_asset_model_properties(&self) -> fluent_builders::ListAssetModelProperties {
+        fluent_builders::ListAssetModelProperties::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListAssetModels`](crate::client::fluent_builders::ListAssetModels) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssetModels::into_paginator).
     ///
@@ -802,6 +819,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListAssetModelsError>`](crate::error::ListAssetModelsError)
     pub fn list_asset_models(&self) -> fluent_builders::ListAssetModels {
         fluent_builders::ListAssetModels::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListAssetProperties`](crate::client::fluent_builders::ListAssetProperties) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssetProperties::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::ListAssetProperties::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::ListAssetProperties::set_asset_id): <p>The ID of the asset.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssetProperties::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssetProperties::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssetProperties::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssetProperties::set_max_results): <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+    ///   - [`filter(ListAssetPropertiesFilter)`](crate::client::fluent_builders::ListAssetProperties::filter) / [`set_filter(Option<ListAssetPropertiesFilter>)`](crate::client::fluent_builders::ListAssetProperties::set_filter): <p> Filters the requested list of asset properties. You can choose one of the following options:</p>  <ul>   <li> <p> <code>ALL</code> – The list includes all asset properties for a given asset model ID. </p> </li>   <li> <p> <code>BASE</code> – The list includes only base asset properties for a given asset model ID. </p> </li>  </ul>  <p>Default: <code>BASE</code> </p>
+    /// - On success, responds with [`ListAssetPropertiesOutput`](crate::output::ListAssetPropertiesOutput) with field(s):
+    ///   - [`asset_property_summaries(Option<Vec<AssetPropertySummary>>)`](crate::output::ListAssetPropertiesOutput::asset_property_summaries): <p>A list that summarizes the properties associated with the specified asset.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssetPropertiesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<ListAssetPropertiesError>`](crate::error::ListAssetPropertiesError)
+    pub fn list_asset_properties(&self) -> fluent_builders::ListAssetProperties {
+        fluent_builders::ListAssetProperties::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAssetRelationships`](crate::client::fluent_builders::ListAssetRelationships) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssetRelationships::into_paginator).
@@ -1025,7 +1057,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`access_policy_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::access_policy_id) / [`set_access_policy_id(Option<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_access_policy_id): <p>The ID of the access policy.</p>
-    ///   - [`access_policy_identity(Identity)`](crate::client::fluent_builders::UpdateAccessPolicy::access_policy_identity) / [`set_access_policy_identity(Option<Identity>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_access_policy_identity): <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+    ///   - [`access_policy_identity(Identity)`](crate::client::fluent_builders::UpdateAccessPolicy::access_policy_identity) / [`set_access_policy_identity(Option<Identity>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_access_policy_identity): <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
     ///   - [`access_policy_resource(Resource)`](crate::client::fluent_builders::UpdateAccessPolicy::access_policy_resource) / [`set_access_policy_resource(Option<Resource>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_access_policy_resource): <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
     ///   - [`access_policy_permission(Permission)`](crate::client::fluent_builders::UpdateAccessPolicy::access_policy_permission) / [`set_access_policy_permission(Option<Permission>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_access_policy_permission): <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2003,7 +2035,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAccessPolicy`.
     ///
-    /// <p>Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.</p>
+    /// <p>Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccessPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -2063,12 +2095,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+        /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
         pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
             self.inner = self.inner.access_policy_identity(input);
             self
         }
-        /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+        /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
         pub fn set_access_policy_identity(
             mut self,
             input: std::option::Option<crate::model::Identity>,
@@ -2840,7 +2872,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePortal`.
     ///
-    /// <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or IAM to authenticate portal users and manage user permissions.</p> <note>
+    /// <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM to authenticate portal users and manage user permissions.</p> <note>
     /// <p>Before you can sign in to a new portal, you must add at least one identity to that portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2996,7 +3028,7 @@ pub mod fluent_builders {
         }
         /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
         /// <ul>
-        /// <li> <p> <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
+        /// <li> <p> <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
         /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
         /// </ul>
         /// <p>You can't change this value after you create a portal.</p>
@@ -3007,7 +3039,7 @@ pub mod fluent_builders {
         }
         /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
         /// <ul>
-        /// <li> <p> <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
+        /// <li> <p> <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
         /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
         /// </ul>
         /// <p>You can't change this value after you create a portal.</p>
@@ -4017,6 +4049,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_asset_id(input);
             self
         }
+        /// <p> Whether or not to exclude asset properties from the response. </p>
+        pub fn exclude_properties(mut self, input: bool) -> Self {
+            self.inner = self.inner.exclude_properties(input);
+            self
+        }
+        /// <p> Whether or not to exclude asset properties from the response. </p>
+        pub fn set_exclude_properties(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_exclude_properties(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DescribeAssetModel`.
     ///
@@ -4091,6 +4133,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_asset_model_id(input);
+            self
+        }
+        /// <p> Whether or not to exclude asset model properties from the response. </p>
+        pub fn exclude_properties(mut self, input: bool) -> Self {
+            self.inner = self.inner.exclude_properties(input);
+            self
+        }
+        /// <p> Whether or not to exclude asset model properties from the response. </p>
+        pub fn set_exclude_properties(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_exclude_properties(input);
             self
         }
     }
@@ -5886,7 +5938,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccessPolicies`.
     ///
-    /// <p>Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).</p>
+    /// <p>Retrieves a paginated list of access policies for an identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccessPolicies {
         handle: std::sync::Arc<super::Handle>,
@@ -5952,12 +6004,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListAccessPoliciesPaginator {
             crate::paginator::ListAccessPoliciesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
+        /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
         pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
             self.inner = self.inner.identity_type(input);
             self
         }
-        /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
+        /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -6028,6 +6080,131 @@ pub mod fluent_builders {
         /// <p>Default: 50</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListAssetModelProperties`.
+    ///
+    /// <p>Retrieves a paginated list of properties associated with an asset model. If you update properties associated with the model before you finish listing all the properties, you need to start all over again.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListAssetModelProperties {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_asset_model_properties_input::Builder,
+    }
+    impl ListAssetModelProperties {
+        /// Creates a new `ListAssetModelProperties`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListAssetModelProperties,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListAssetModelPropertiesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAssetModelPropertiesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListAssetModelPropertiesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssetModelPropertiesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssetModelPropertiesPaginator {
+            crate::paginator::ListAssetModelPropertiesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the asset model.</p>
+        pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_id(input.into());
+            self
+        }
+        /// <p>The ID of the asset model.</p>
+        pub fn set_asset_model_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_asset_model_id(input);
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li>
+        /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
+        /// </ul>
+        /// <p>Default: <code>BASE</code> </p>
+        pub fn filter(mut self, input: crate::model::ListAssetModelPropertiesFilter) -> Self {
+            self.inner = self.inner.filter(input);
+            self
+        }
+        /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li>
+        /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
+        /// </ul>
+        /// <p>Default: <code>BASE</code> </p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::ListAssetModelPropertiesFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_filter(input);
             self
         }
     }
@@ -6119,6 +6296,128 @@ pub mod fluent_builders {
         /// <p>Default: 50</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListAssetProperties`.
+    ///
+    /// <p>Retrieves a paginated list of properties associated with an asset. If you update properties associated with the model before you finish listing all the properties, you need to start all over again.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListAssetProperties {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_asset_properties_input::Builder,
+    }
+    impl ListAssetProperties {
+        /// Creates a new `ListAssetProperties`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListAssetProperties,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListAssetPropertiesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAssetPropertiesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListAssetPropertiesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssetPropertiesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssetPropertiesPaginator {
+            crate::paginator::ListAssetPropertiesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the asset.</p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
+            self
+        }
+        /// <p>The ID of the asset.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_asset_id(input);
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p> Filters the requested list of asset properties. You can choose one of the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – The list includes all asset properties for a given asset model ID. </p> </li>
+        /// <li> <p> <code>BASE</code> – The list includes only base asset properties for a given asset model ID. </p> </li>
+        /// </ul>
+        /// <p>Default: <code>BASE</code> </p>
+        pub fn filter(mut self, input: crate::model::ListAssetPropertiesFilter) -> Self {
+            self.inner = self.inner.filter(input);
+            self
+        }
+        /// <p> Filters the requested list of asset properties. You can choose one of the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – The list includes all asset properties for a given asset model ID. </p> </li>
+        /// <li> <p> <code>BASE</code> – The list includes only base asset properties for a given asset model ID. </p> </li>
+        /// </ul>
+        /// <p>Default: <code>BASE</code> </p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::ListAssetPropertiesFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_filter(input);
             self
         }
     }
@@ -7867,12 +8166,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_access_policy_id(input);
             self
         }
-        /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+        /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
         pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
             self.inner = self.inner.access_policy_identity(input);
             self
         }
-        /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+        /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
         pub fn set_access_policy_identity(
             mut self,
             input: std::option::Option<crate::model::Identity>,

@@ -139,6 +139,11 @@ pub fn serialize_structure_crate_model_user_auth_config(
     if let Some(var_34) = &input.iam_auth {
         scope_33.string(var_34.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_35 = writer.prefix("ClientPasswordAuthType");
+    if let Some(var_36) = &input.client_password_auth_type {
+        scope_35.string(var_36.as_str());
+    }
     Ok(())
 }
 
@@ -148,20 +153,20 @@ pub fn serialize_structure_crate_model_filter(
     input: &crate::model::Filter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_35 = writer.prefix("Name");
-    if let Some(var_36) = &input.name {
-        scope_35.string(var_36);
+    let mut scope_37 = writer.prefix("Name");
+    if let Some(var_38) = &input.name {
+        scope_37.string(var_38);
     }
     #[allow(unused_mut)]
-    let mut scope_37 = writer.prefix("Values");
-    if let Some(var_38) = &input.values {
-        let mut list_40 = scope_37.start_list(false, Some("Value"));
-        for item_39 in var_38 {
+    let mut scope_39 = writer.prefix("Values");
+    if let Some(var_40) = &input.values {
+        let mut list_42 = scope_39.start_list(false, Some("Value"));
+        for item_41 in var_40 {
             #[allow(unused_mut)]
-            let mut entry_41 = list_40.entry();
-            entry_41.string(item_39);
+            let mut entry_43 = list_42.entry();
+            entry_43.string(item_41);
         }
-        list_40.finish();
+        list_42.finish();
     }
     Ok(())
 }
@@ -172,26 +177,26 @@ pub fn serialize_structure_crate_model_cloudwatch_logs_export_configuration(
     input: &crate::model::CloudwatchLogsExportConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_42 = writer.prefix("EnableLogTypes");
-    if let Some(var_43) = &input.enable_log_types {
-        let mut list_45 = scope_42.start_list(false, None);
-        for item_44 in var_43 {
+    let mut scope_44 = writer.prefix("EnableLogTypes");
+    if let Some(var_45) = &input.enable_log_types {
+        let mut list_47 = scope_44.start_list(false, None);
+        for item_46 in var_45 {
             #[allow(unused_mut)]
-            let mut entry_46 = list_45.entry();
-            entry_46.string(item_44);
+            let mut entry_48 = list_47.entry();
+            entry_48.string(item_46);
         }
-        list_45.finish();
+        list_47.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_47 = writer.prefix("DisableLogTypes");
-    if let Some(var_48) = &input.disable_log_types {
-        let mut list_50 = scope_47.start_list(false, None);
-        for item_49 in var_48 {
+    let mut scope_49 = writer.prefix("DisableLogTypes");
+    if let Some(var_50) = &input.disable_log_types {
+        let mut list_52 = scope_49.start_list(false, None);
+        for item_51 in var_50 {
             #[allow(unused_mut)]
-            let mut entry_51 = list_50.entry();
-            entry_51.string(item_49);
+            let mut entry_53 = list_52.entry();
+            entry_53.string(item_51);
         }
-        list_50.finish();
+        list_52.finish();
     }
     Ok(())
 }
@@ -202,65 +207,65 @@ pub fn serialize_structure_crate_model_parameter(
     input: &crate::model::Parameter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_52 = writer.prefix("ParameterName");
-    if let Some(var_53) = &input.parameter_name {
-        scope_52.string(var_53);
-    }
-    #[allow(unused_mut)]
-    let mut scope_54 = writer.prefix("ParameterValue");
-    if let Some(var_55) = &input.parameter_value {
+    let mut scope_54 = writer.prefix("ParameterName");
+    if let Some(var_55) = &input.parameter_name {
         scope_54.string(var_55);
     }
     #[allow(unused_mut)]
-    let mut scope_56 = writer.prefix("Description");
-    if let Some(var_57) = &input.description {
+    let mut scope_56 = writer.prefix("ParameterValue");
+    if let Some(var_57) = &input.parameter_value {
         scope_56.string(var_57);
     }
     #[allow(unused_mut)]
-    let mut scope_58 = writer.prefix("Source");
-    if let Some(var_59) = &input.source {
+    let mut scope_58 = writer.prefix("Description");
+    if let Some(var_59) = &input.description {
         scope_58.string(var_59);
     }
     #[allow(unused_mut)]
-    let mut scope_60 = writer.prefix("ApplyType");
-    if let Some(var_61) = &input.apply_type {
+    let mut scope_60 = writer.prefix("Source");
+    if let Some(var_61) = &input.source {
         scope_60.string(var_61);
     }
     #[allow(unused_mut)]
-    let mut scope_62 = writer.prefix("DataType");
-    if let Some(var_63) = &input.data_type {
+    let mut scope_62 = writer.prefix("ApplyType");
+    if let Some(var_63) = &input.apply_type {
         scope_62.string(var_63);
     }
     #[allow(unused_mut)]
-    let mut scope_64 = writer.prefix("AllowedValues");
-    if let Some(var_65) = &input.allowed_values {
+    let mut scope_64 = writer.prefix("DataType");
+    if let Some(var_65) = &input.data_type {
         scope_64.string(var_65);
     }
     #[allow(unused_mut)]
-    let mut scope_66 = writer.prefix("IsModifiable");
+    let mut scope_66 = writer.prefix("AllowedValues");
+    if let Some(var_67) = &input.allowed_values {
+        scope_66.string(var_67);
+    }
+    #[allow(unused_mut)]
+    let mut scope_68 = writer.prefix("IsModifiable");
     if input.is_modifiable {
-        scope_66.boolean(input.is_modifiable);
+        scope_68.boolean(input.is_modifiable);
     }
     #[allow(unused_mut)]
-    let mut scope_67 = writer.prefix("MinimumEngineVersion");
-    if let Some(var_68) = &input.minimum_engine_version {
-        scope_67.string(var_68);
+    let mut scope_69 = writer.prefix("MinimumEngineVersion");
+    if let Some(var_70) = &input.minimum_engine_version {
+        scope_69.string(var_70);
     }
     #[allow(unused_mut)]
-    let mut scope_69 = writer.prefix("ApplyMethod");
-    if let Some(var_70) = &input.apply_method {
-        scope_69.string(var_70.as_str());
+    let mut scope_71 = writer.prefix("ApplyMethod");
+    if let Some(var_72) = &input.apply_method {
+        scope_71.string(var_72.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_71 = writer.prefix("SupportedEngineModes");
-    if let Some(var_72) = &input.supported_engine_modes {
-        let mut list_74 = scope_71.start_list(false, None);
-        for item_73 in var_72 {
+    let mut scope_73 = writer.prefix("SupportedEngineModes");
+    if let Some(var_74) = &input.supported_engine_modes {
+        let mut list_76 = scope_73.start_list(false, None);
+        for item_75 in var_74 {
             #[allow(unused_mut)]
-            let mut entry_75 = list_74.entry();
-            entry_75.string(item_73);
+            let mut entry_77 = list_76.entry();
+            entry_77.string(item_75);
         }
-        list_74.finish();
+        list_76.finish();
     }
     Ok(())
 }
@@ -271,44 +276,44 @@ pub fn serialize_structure_crate_model_connection_pool_configuration(
     input: &crate::model::ConnectionPoolConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_76 = writer.prefix("MaxConnectionsPercent");
-    if let Some(var_77) = &input.max_connections_percent {
-        scope_76.number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_77).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_78 = writer.prefix("MaxIdleConnectionsPercent");
-    if let Some(var_79) = &input.max_idle_connections_percent {
+    let mut scope_78 = writer.prefix("MaxConnectionsPercent");
+    if let Some(var_79) = &input.max_connections_percent {
         scope_78.number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_79).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_80 = writer.prefix("ConnectionBorrowTimeout");
-    if let Some(var_81) = &input.connection_borrow_timeout {
+    let mut scope_80 = writer.prefix("MaxIdleConnectionsPercent");
+    if let Some(var_81) = &input.max_idle_connections_percent {
         scope_80.number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_81).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_82 = writer.prefix("SessionPinningFilters");
-    if let Some(var_83) = &input.session_pinning_filters {
-        let mut list_85 = scope_82.start_list(false, None);
-        for item_84 in var_83 {
-            #[allow(unused_mut)]
-            let mut entry_86 = list_85.entry();
-            entry_86.string(item_84);
-        }
-        list_85.finish();
+    let mut scope_82 = writer.prefix("ConnectionBorrowTimeout");
+    if let Some(var_83) = &input.connection_borrow_timeout {
+        scope_82.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_83).into()),
+        );
     }
     #[allow(unused_mut)]
-    let mut scope_87 = writer.prefix("InitQuery");
-    if let Some(var_88) = &input.init_query {
-        scope_87.string(var_88);
+    let mut scope_84 = writer.prefix("SessionPinningFilters");
+    if let Some(var_85) = &input.session_pinning_filters {
+        let mut list_87 = scope_84.start_list(false, None);
+        for item_86 in var_85 {
+            #[allow(unused_mut)]
+            let mut entry_88 = list_87.entry();
+            entry_88.string(item_86);
+        }
+        list_87.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_89 = writer.prefix("InitQuery");
+    if let Some(var_90) = &input.init_query {
+        scope_89.string(var_90);
     }
     Ok(())
 }
@@ -319,55 +324,55 @@ pub fn serialize_structure_crate_model_option_configuration(
     input: &crate::model::OptionConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_89 = writer.prefix("OptionName");
-    if let Some(var_90) = &input.option_name {
-        scope_89.string(var_90);
+    let mut scope_91 = writer.prefix("OptionName");
+    if let Some(var_92) = &input.option_name {
+        scope_91.string(var_92);
     }
     #[allow(unused_mut)]
-    let mut scope_91 = writer.prefix("Port");
-    if let Some(var_92) = &input.port {
-        scope_91.number(
+    let mut scope_93 = writer.prefix("Port");
+    if let Some(var_94) = &input.port {
+        scope_93.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_92).into()),
+            aws_smithy_types::Number::NegInt((*var_94).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_93 = writer.prefix("OptionVersion");
-    if let Some(var_94) = &input.option_version {
-        scope_93.string(var_94);
+    let mut scope_95 = writer.prefix("OptionVersion");
+    if let Some(var_96) = &input.option_version {
+        scope_95.string(var_96);
     }
     #[allow(unused_mut)]
-    let mut scope_95 = writer.prefix("DBSecurityGroupMemberships");
-    if let Some(var_96) = &input.db_security_group_memberships {
-        let mut list_98 = scope_95.start_list(false, Some("DBSecurityGroupName"));
-        for item_97 in var_96 {
+    let mut scope_97 = writer.prefix("DBSecurityGroupMemberships");
+    if let Some(var_98) = &input.db_security_group_memberships {
+        let mut list_100 = scope_97.start_list(false, Some("DBSecurityGroupName"));
+        for item_99 in var_98 {
             #[allow(unused_mut)]
-            let mut entry_99 = list_98.entry();
-            entry_99.string(item_97);
+            let mut entry_101 = list_100.entry();
+            entry_101.string(item_99);
         }
-        list_98.finish();
+        list_100.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_100 = writer.prefix("VpcSecurityGroupMemberships");
-    if let Some(var_101) = &input.vpc_security_group_memberships {
-        let mut list_103 = scope_100.start_list(false, Some("VpcSecurityGroupId"));
-        for item_102 in var_101 {
+    let mut scope_102 = writer.prefix("VpcSecurityGroupMemberships");
+    if let Some(var_103) = &input.vpc_security_group_memberships {
+        let mut list_105 = scope_102.start_list(false, Some("VpcSecurityGroupId"));
+        for item_104 in var_103 {
             #[allow(unused_mut)]
-            let mut entry_104 = list_103.entry();
-            entry_104.string(item_102);
+            let mut entry_106 = list_105.entry();
+            entry_106.string(item_104);
         }
-        list_103.finish();
+        list_105.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_105 = writer.prefix("OptionSettings");
-    if let Some(var_106) = &input.option_settings {
-        let mut list_108 = scope_105.start_list(false, Some("OptionSetting"));
-        for item_107 in var_106 {
+    let mut scope_107 = writer.prefix("OptionSettings");
+    if let Some(var_108) = &input.option_settings {
+        let mut list_110 = scope_107.start_list(false, Some("OptionSetting"));
+        for item_109 in var_108 {
             #[allow(unused_mut)]
-            let mut entry_109 = list_108.entry();
-            crate::query_ser::serialize_structure_crate_model_option_setting(entry_109, item_107)?;
+            let mut entry_111 = list_110.entry();
+            crate::query_ser::serialize_structure_crate_model_option_setting(entry_111, item_109)?;
         }
-        list_108.finish();
+        list_110.finish();
     }
     Ok(())
 }
@@ -378,49 +383,49 @@ pub fn serialize_structure_crate_model_option_setting(
     input: &crate::model::OptionSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_110 = writer.prefix("Name");
-    if let Some(var_111) = &input.name {
-        scope_110.string(var_111);
-    }
-    #[allow(unused_mut)]
-    let mut scope_112 = writer.prefix("Value");
-    if let Some(var_113) = &input.value {
+    let mut scope_112 = writer.prefix("Name");
+    if let Some(var_113) = &input.name {
         scope_112.string(var_113);
     }
     #[allow(unused_mut)]
-    let mut scope_114 = writer.prefix("DefaultValue");
-    if let Some(var_115) = &input.default_value {
+    let mut scope_114 = writer.prefix("Value");
+    if let Some(var_115) = &input.value {
         scope_114.string(var_115);
     }
     #[allow(unused_mut)]
-    let mut scope_116 = writer.prefix("Description");
-    if let Some(var_117) = &input.description {
+    let mut scope_116 = writer.prefix("DefaultValue");
+    if let Some(var_117) = &input.default_value {
         scope_116.string(var_117);
     }
     #[allow(unused_mut)]
-    let mut scope_118 = writer.prefix("ApplyType");
-    if let Some(var_119) = &input.apply_type {
+    let mut scope_118 = writer.prefix("Description");
+    if let Some(var_119) = &input.description {
         scope_118.string(var_119);
     }
     #[allow(unused_mut)]
-    let mut scope_120 = writer.prefix("DataType");
-    if let Some(var_121) = &input.data_type {
+    let mut scope_120 = writer.prefix("ApplyType");
+    if let Some(var_121) = &input.apply_type {
         scope_120.string(var_121);
     }
     #[allow(unused_mut)]
-    let mut scope_122 = writer.prefix("AllowedValues");
-    if let Some(var_123) = &input.allowed_values {
+    let mut scope_122 = writer.prefix("DataType");
+    if let Some(var_123) = &input.data_type {
         scope_122.string(var_123);
     }
     #[allow(unused_mut)]
-    let mut scope_124 = writer.prefix("IsModifiable");
-    if input.is_modifiable {
-        scope_124.boolean(input.is_modifiable);
+    let mut scope_124 = writer.prefix("AllowedValues");
+    if let Some(var_125) = &input.allowed_values {
+        scope_124.string(var_125);
     }
     #[allow(unused_mut)]
-    let mut scope_125 = writer.prefix("IsCollection");
+    let mut scope_126 = writer.prefix("IsModifiable");
+    if input.is_modifiable {
+        scope_126.boolean(input.is_modifiable);
+    }
+    #[allow(unused_mut)]
+    let mut scope_127 = writer.prefix("IsCollection");
     if input.is_collection {
-        scope_125.boolean(input.is_collection);
+        scope_127.boolean(input.is_collection);
     }
     Ok(())
 }

@@ -540,6 +540,66 @@ impl AccessDeniedException {
     }
 }
 
+/// <p>The specified resource wasn't found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResourceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ResourceNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceNotFoundException")?;
+        if let Some(inner_10) = &self.message {
+            {
+                write!(f, ": {}", inner_10)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceNotFoundException {}
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+pub mod resource_not_found_exception {
+
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+        pub fn build(self) -> crate::error::ResourceNotFoundException {
+            crate::error::ResourceNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
+        crate::error::resource_not_found_exception::Builder::default()
+    }
+}
+
 /// <p>The specified platform version doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -557,9 +617,9 @@ impl PlatformUnknownException {
 impl std::fmt::Display for PlatformUnknownException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PlatformUnknownException")?;
-        if let Some(inner_10) = &self.message {
+        if let Some(inner_11) = &self.message {
             {
-                write!(f, ": {}", inner_10)?;
+                write!(f, ": {}", inner_11)?;
             }
         }
         Ok(())
@@ -617,9 +677,9 @@ impl PlatformTaskDefinitionIncompatibilityException {
 impl std::fmt::Display for PlatformTaskDefinitionIncompatibilityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PlatformTaskDefinitionIncompatibilityException")?;
-        if let Some(inner_11) = &self.message {
+        if let Some(inner_12) = &self.message {
             {
-                write!(f, ": {}", inner_11)?;
+                write!(f, ": {}", inner_12)?;
             }
         }
         Ok(())
@@ -660,6 +720,66 @@ impl PlatformTaskDefinitionIncompatibilityException {
     }
 }
 
+/// <p>The specified namespace wasn't found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NamespaceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl NamespaceNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NamespaceNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NamespaceNotFoundException")?;
+        if let Some(inner_13) = &self.message {
+            {
+                write!(f, ": {}", inner_13)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NamespaceNotFoundException {}
+/// See [`NamespaceNotFoundException`](crate::error::NamespaceNotFoundException).
+pub mod namespace_not_found_exception {
+
+    /// A builder for [`NamespaceNotFoundException`](crate::error::NamespaceNotFoundException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NamespaceNotFoundException`](crate::error::NamespaceNotFoundException).
+        pub fn build(self) -> crate::error::NamespaceNotFoundException {
+            crate::error::NamespaceNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl NamespaceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`NamespaceNotFoundException`](crate::error::NamespaceNotFoundException).
+    pub fn builder() -> crate::error::namespace_not_found_exception::Builder {
+        crate::error::namespace_not_found_exception::Builder::default()
+    }
+}
+
 /// <p>There's already a current Amazon ECS container agent update in progress on the container instance that's specified. If the container agent becomes disconnected while it's in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can get stuck in that state. However, when the agent reconnects, it resumes where it stopped previously.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -677,9 +797,9 @@ impl UpdateInProgressException {
 impl std::fmt::Display for UpdateInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UpdateInProgressException")?;
-        if let Some(inner_12) = &self.message {
+        if let Some(inner_14) = &self.message {
             {
-                write!(f, ": {}", inner_12)?;
+                write!(f, ": {}", inner_14)?;
             }
         }
         Ok(())
@@ -737,9 +857,9 @@ impl NoUpdateAvailableException {
 impl std::fmt::Display for NoUpdateAvailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoUpdateAvailableException")?;
-        if let Some(inner_13) = &self.message {
+        if let Some(inner_15) = &self.message {
             {
-                write!(f, ": {}", inner_13)?;
+                write!(f, ": {}", inner_15)?;
             }
         }
         Ok(())
@@ -797,9 +917,9 @@ impl MissingVersionException {
 impl std::fmt::Display for MissingVersionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MissingVersionException")?;
-        if let Some(inner_14) = &self.message {
+        if let Some(inner_16) = &self.message {
             {
-                write!(f, ": {}", inner_14)?;
+                write!(f, ": {}", inner_16)?;
             }
         }
         Ok(())
@@ -840,66 +960,6 @@ impl MissingVersionException {
     }
 }
 
-/// <p>The specified resource wasn't found.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl ResourceNotFoundException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_15) = &self.message {
-            {
-                write!(f, ": {}", inner_15)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ResourceNotFoundException {}
-/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-pub mod resource_not_found_exception {
-
-    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-        pub fn build(self) -> crate::error::ResourceNotFoundException {
-            crate::error::ResourceNotFoundException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ResourceNotFoundException {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
-        crate::error::resource_not_found_exception::Builder::default()
-    }
-}
-
 /// <p>Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/"> Amazon Web Services Support</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -917,9 +977,9 @@ impl BlockedException {
 impl std::fmt::Display for BlockedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BlockedException")?;
-        if let Some(inner_16) = &self.message {
+        if let Some(inner_17) = &self.message {
             {
-                write!(f, ": {}", inner_16)?;
+                write!(f, ": {}", inner_17)?;
             }
         }
         Ok(())
@@ -977,9 +1037,9 @@ impl ResourceInUseException {
 impl std::fmt::Display for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceInUseException")?;
-        if let Some(inner_17) = &self.message {
+        if let Some(inner_18) = &self.message {
             {
-                write!(f, ": {}", inner_17)?;
+                write!(f, ": {}", inner_18)?;
             }
         }
         Ok(())
@@ -1037,9 +1097,9 @@ impl TargetNotFoundException {
 impl std::fmt::Display for TargetNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TargetNotFoundException")?;
-        if let Some(inner_18) = &self.message {
+        if let Some(inner_19) = &self.message {
             {
-                write!(f, ": {}", inner_18)?;
+                write!(f, ": {}", inner_19)?;
             }
         }
         Ok(())
@@ -1097,9 +1157,9 @@ impl AttributeLimitExceededException {
 impl std::fmt::Display for AttributeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AttributeLimitExceededException")?;
-        if let Some(inner_19) = &self.message {
+        if let Some(inner_20) = &self.message {
             {
-                write!(f, ": {}", inner_19)?;
+                write!(f, ": {}", inner_20)?;
             }
         }
         Ok(())
@@ -1163,9 +1223,9 @@ impl TargetNotConnectedException {
 impl std::fmt::Display for TargetNotConnectedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TargetNotConnectedException")?;
-        if let Some(inner_20) = &self.message {
+        if let Some(inner_21) = &self.message {
             {
-                write!(f, ": {}", inner_20)?;
+                write!(f, ": {}", inner_21)?;
             }
         }
         Ok(())
@@ -1223,9 +1283,9 @@ impl ClusterContainsTasksException {
 impl std::fmt::Display for ClusterContainsTasksException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterContainsTasksException")?;
-        if let Some(inner_21) = &self.message {
+        if let Some(inner_22) = &self.message {
             {
-                write!(f, ": {}", inner_21)?;
+                write!(f, ": {}", inner_22)?;
             }
         }
         Ok(())
@@ -1283,9 +1343,9 @@ impl ClusterContainsServicesException {
 impl std::fmt::Display for ClusterContainsServicesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterContainsServicesException")?;
-        if let Some(inner_22) = &self.message {
+        if let Some(inner_23) = &self.message {
             {
-                write!(f, ": {}", inner_22)?;
+                write!(f, ": {}", inner_23)?;
             }
         }
         Ok(())
@@ -1343,9 +1403,9 @@ impl ClusterContainsContainerInstancesException {
 impl std::fmt::Display for ClusterContainsContainerInstancesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterContainsContainerInstancesException")?;
-        if let Some(inner_23) = &self.message {
+        if let Some(inner_24) = &self.message {
             {
-                write!(f, ": {}", inner_23)?;
+                write!(f, ": {}", inner_24)?;
             }
         }
         Ok(())
@@ -1403,9 +1463,9 @@ impl LimitExceededException {
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
-        if let Some(inner_24) = &self.message {
+        if let Some(inner_25) = &self.message {
             {
-                write!(f, ": {}", inner_24)?;
+                write!(f, ": {}", inner_25)?;
             }
         }
         Ok(())
@@ -1755,6 +1815,8 @@ pub enum CreateServiceErrorKind {
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified namespace wasn't found.</p>
+    NamespaceNotFoundException(crate::error::NamespaceNotFoundException),
     /// <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
     PlatformTaskDefinitionIncompatibilityException(
         crate::error::PlatformTaskDefinitionIncompatibilityException,
@@ -1782,6 +1844,7 @@ impl std::fmt::Display for CreateServiceError {
             CreateServiceErrorKind::ClientException(_inner) => _inner.fmt(f),
             CreateServiceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
             CreateServiceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateServiceErrorKind::NamespaceNotFoundException(_inner) => _inner.fmt(f),
             CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
                 _inner.fmt(f)
             }
@@ -1864,6 +1927,13 @@ impl CreateServiceError {
             CreateServiceErrorKind::InvalidParameterException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::NamespaceNotFoundException`.
+    pub fn is_namespace_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateServiceErrorKind::NamespaceNotFoundException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException`.
     pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
         matches!(
@@ -1897,6 +1967,7 @@ impl std::error::Error for CreateServiceError {
             CreateServiceErrorKind::ClientException(_inner) => Some(_inner),
             CreateServiceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
             CreateServiceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateServiceErrorKind::NamespaceNotFoundException(_inner) => Some(_inner),
             CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
                 Some(_inner)
             }
@@ -1937,6 +2008,8 @@ pub enum CreateTaskSetErrorKind {
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified namespace wasn't found.</p>
+    NamespaceNotFoundException(crate::error::NamespaceNotFoundException),
     /// <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
     PlatformTaskDefinitionIncompatibilityException(
         crate::error::PlatformTaskDefinitionIncompatibilityException,
@@ -1968,6 +2041,7 @@ impl std::fmt::Display for CreateTaskSetError {
             CreateTaskSetErrorKind::ClientException(_inner) => _inner.fmt(f),
             CreateTaskSetErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
             CreateTaskSetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateTaskSetErrorKind::NamespaceNotFoundException(_inner) => _inner.fmt(f),
             CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
                 _inner.fmt(f)
             }
@@ -2052,6 +2126,13 @@ impl CreateTaskSetError {
             CreateTaskSetErrorKind::InvalidParameterException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateTaskSetErrorKind::NamespaceNotFoundException`.
+    pub fn is_namespace_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTaskSetErrorKind::NamespaceNotFoundException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException`.
     pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
         matches!(
@@ -2099,6 +2180,7 @@ impl std::error::Error for CreateTaskSetError {
             CreateTaskSetErrorKind::ClientException(_inner) => Some(_inner),
             CreateTaskSetErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
             CreateTaskSetErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateTaskSetErrorKind::NamespaceNotFoundException(_inner) => Some(_inner),
             CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
                 Some(_inner)
             }
@@ -4589,6 +4671,174 @@ impl std::error::Error for ExecuteCommandError {
     }
 }
 
+/// Error type for the `GetTaskProtection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetTaskProtectionError {
+    /// Kind of error that occurred.
+    pub kind: GetTaskProtectionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetTaskProtectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetTaskProtection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetTaskProtectionErrorKind {
+    /// <p>You don't have authorization to perform the requested action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
+    ClientException(crate::error::ClientException),
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <code>ListClusters</code>. Amazon ECS clusters are Region specific.</p>
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified resource wasn't found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>These errors are usually caused by a server issue.</p>
+    ServerException(crate::error::ServerException),
+    /// <p>The specified task isn't supported in this Region.</p>
+    UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetTaskProtectionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetTaskProtectionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetTaskProtectionErrorKind::ClientException(_inner) => _inner.fmt(f),
+            GetTaskProtectionErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            GetTaskProtectionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetTaskProtectionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetTaskProtectionErrorKind::ServerException(_inner) => _inner.fmt(f),
+            GetTaskProtectionErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
+            GetTaskProtectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetTaskProtectionError {
+    fn code(&self) -> Option<&str> {
+        GetTaskProtectionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetTaskProtectionError {
+    /// Creates a new `GetTaskProtectionError`.
+    pub fn new(kind: GetTaskProtectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetTaskProtectionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetTaskProtectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetTaskProtectionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTaskProtectionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTaskProtectionErrorKind::ClientException`.
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, GetTaskProtectionErrorKind::ClientException(_))
+    }
+    /// Returns `true` if the error kind is `GetTaskProtectionErrorKind::ClusterNotFoundException`.
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTaskProtectionErrorKind::ClusterNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTaskProtectionErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTaskProtectionErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTaskProtectionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTaskProtectionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTaskProtectionErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, GetTaskProtectionErrorKind::ServerException(_))
+    }
+    /// Returns `true` if the error kind is `GetTaskProtectionErrorKind::UnsupportedFeatureException`.
+    pub fn is_unsupported_feature_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTaskProtectionErrorKind::UnsupportedFeatureException(_)
+        )
+    }
+}
+impl std::error::Error for GetTaskProtectionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetTaskProtectionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetTaskProtectionErrorKind::ClientException(_inner) => Some(_inner),
+            GetTaskProtectionErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            GetTaskProtectionErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetTaskProtectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetTaskProtectionErrorKind::ServerException(_inner) => Some(_inner),
+            GetTaskProtectionErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
+            GetTaskProtectionErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListAccountSettings` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5232,6 +5482,151 @@ impl std::error::Error for ListServicesError {
             ListServicesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListServicesErrorKind::ServerException(_inner) => Some(_inner),
             ListServicesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListServicesByNamespace` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListServicesByNamespaceError {
+    /// Kind of error that occurred.
+    pub kind: ListServicesByNamespaceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListServicesByNamespaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListServicesByNamespaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListServicesByNamespace` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListServicesByNamespaceErrorKind {
+    /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
+    ClientException(crate::error::ClientException),
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified namespace wasn't found.</p>
+    NamespaceNotFoundException(crate::error::NamespaceNotFoundException),
+    /// <p>These errors are usually caused by a server issue.</p>
+    ServerException(crate::error::ServerException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListServicesByNamespaceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListServicesByNamespaceErrorKind::ClientException(_inner) => _inner.fmt(f),
+            ListServicesByNamespaceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListServicesByNamespaceErrorKind::NamespaceNotFoundException(_inner) => _inner.fmt(f),
+            ListServicesByNamespaceErrorKind::ServerException(_inner) => _inner.fmt(f),
+            ListServicesByNamespaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListServicesByNamespaceError {
+    fn code(&self) -> Option<&str> {
+        ListServicesByNamespaceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListServicesByNamespaceError {
+    /// Creates a new `ListServicesByNamespaceError`.
+    pub fn new(kind: ListServicesByNamespaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListServicesByNamespaceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListServicesByNamespaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListServicesByNamespaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListServicesByNamespaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListServicesByNamespaceErrorKind::ClientException`.
+    pub fn is_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListServicesByNamespaceErrorKind::ClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListServicesByNamespaceErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListServicesByNamespaceErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListServicesByNamespaceErrorKind::NamespaceNotFoundException`.
+    pub fn is_namespace_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListServicesByNamespaceErrorKind::NamespaceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListServicesByNamespaceErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListServicesByNamespaceErrorKind::ServerException(_)
+        )
+    }
+}
+impl std::error::Error for ListServicesByNamespaceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListServicesByNamespaceErrorKind::ClientException(_inner) => Some(_inner),
+            ListServicesByNamespaceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListServicesByNamespaceErrorKind::NamespaceNotFoundException(_inner) => Some(_inner),
+            ListServicesByNamespaceErrorKind::ServerException(_inner) => Some(_inner),
+            ListServicesByNamespaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8551,6 +8946,8 @@ pub enum UpdateServiceErrorKind {
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified namespace wasn't found.</p>
+    NamespaceNotFoundException(crate::error::NamespaceNotFoundException),
     /// <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
     PlatformTaskDefinitionIncompatibilityException(
         crate::error::PlatformTaskDefinitionIncompatibilityException,
@@ -8580,6 +8977,7 @@ impl std::fmt::Display for UpdateServiceError {
             UpdateServiceErrorKind::ClientException(_inner) => _inner.fmt(f),
             UpdateServiceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
             UpdateServiceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateServiceErrorKind::NamespaceNotFoundException(_inner) => _inner.fmt(f),
             UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
                 _inner.fmt(f)
             }
@@ -8663,6 +9061,13 @@ impl UpdateServiceError {
             UpdateServiceErrorKind::InvalidParameterException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::NamespaceNotFoundException`.
+    pub fn is_namespace_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServiceErrorKind::NamespaceNotFoundException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException`.
     pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
         matches!(
@@ -8703,6 +9108,7 @@ impl std::error::Error for UpdateServiceError {
             UpdateServiceErrorKind::ClientException(_inner) => Some(_inner),
             UpdateServiceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
             UpdateServiceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateServiceErrorKind::NamespaceNotFoundException(_inner) => Some(_inner),
             UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
                 Some(_inner)
             }
@@ -8921,6 +9327,184 @@ impl std::error::Error for UpdateServicePrimaryTaskSetError {
                 Some(_inner)
             }
             UpdateServicePrimaryTaskSetErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateTaskProtection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateTaskProtectionError {
+    /// Kind of error that occurred.
+    pub kind: UpdateTaskProtectionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateTaskProtectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateTaskProtection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateTaskProtectionErrorKind {
+    /// <p>You don't have authorization to perform the requested action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
+    ClientException(crate::error::ClientException),
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <code>ListClusters</code>. Amazon ECS clusters are Region specific.</p>
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified resource wasn't found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>These errors are usually caused by a server issue.</p>
+    ServerException(crate::error::ServerException),
+    /// <p>The specified task isn't supported in this Region.</p>
+    UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateTaskProtectionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateTaskProtectionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateTaskProtectionErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UpdateTaskProtectionErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            UpdateTaskProtectionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateTaskProtectionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateTaskProtectionErrorKind::ServerException(_inner) => _inner.fmt(f),
+            UpdateTaskProtectionErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
+            UpdateTaskProtectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateTaskProtectionError {
+    fn code(&self) -> Option<&str> {
+        UpdateTaskProtectionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateTaskProtectionError {
+    /// Creates a new `UpdateTaskProtectionError`.
+    pub fn new(kind: UpdateTaskProtectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateTaskProtectionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateTaskProtectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateTaskProtectionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskProtectionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTaskProtectionErrorKind::ClientException`.
+    pub fn is_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskProtectionErrorKind::ClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTaskProtectionErrorKind::ClusterNotFoundException`.
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskProtectionErrorKind::ClusterNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTaskProtectionErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskProtectionErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTaskProtectionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskProtectionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTaskProtectionErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskProtectionErrorKind::ServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTaskProtectionErrorKind::UnsupportedFeatureException`.
+    pub fn is_unsupported_feature_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskProtectionErrorKind::UnsupportedFeatureException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateTaskProtectionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateTaskProtectionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateTaskProtectionErrorKind::ClientException(_inner) => Some(_inner),
+            UpdateTaskProtectionErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            UpdateTaskProtectionErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateTaskProtectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateTaskProtectionErrorKind::ServerException(_inner) => Some(_inner),
+            UpdateTaskProtectionErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
+            UpdateTaskProtectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

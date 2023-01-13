@@ -4442,6 +4442,83 @@ impl ListRoleAliasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListRelatedResourcesForAuditFindingOutput {
+    /// <p>The related resources.</p>
+    #[doc(hidden)]
+    pub related_resources: std::option::Option<std::vec::Vec<crate::model::RelatedResource>>,
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> for the first API call.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRelatedResourcesForAuditFindingOutput {
+    /// <p>The related resources.</p>
+    pub fn related_resources(&self) -> std::option::Option<&[crate::model::RelatedResource]> {
+        self.related_resources.as_deref()
+    }
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> for the first API call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListRelatedResourcesForAuditFindingOutput`](crate::output::ListRelatedResourcesForAuditFindingOutput).
+pub mod list_related_resources_for_audit_finding_output {
+
+    /// A builder for [`ListRelatedResourcesForAuditFindingOutput`](crate::output::ListRelatedResourcesForAuditFindingOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) related_resources:
+            std::option::Option<std::vec::Vec<crate::model::RelatedResource>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `related_resources`.
+        ///
+        /// To override the contents of this collection use [`set_related_resources`](Self::set_related_resources).
+        ///
+        /// <p>The related resources.</p>
+        pub fn related_resources(mut self, input: crate::model::RelatedResource) -> Self {
+            let mut v = self.related_resources.unwrap_or_default();
+            v.push(input);
+            self.related_resources = Some(v);
+            self
+        }
+        /// <p>The related resources.</p>
+        pub fn set_related_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RelatedResource>>,
+        ) -> Self {
+            self.related_resources = input;
+            self
+        }
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> for the first API call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> for the first API call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListRelatedResourcesForAuditFindingOutput`](crate::output::ListRelatedResourcesForAuditFindingOutput).
+        pub fn build(self) -> crate::output::ListRelatedResourcesForAuditFindingOutput {
+            crate::output::ListRelatedResourcesForAuditFindingOutput {
+                related_resources: self.related_resources,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListRelatedResourcesForAuditFindingOutput {
+    /// Creates a new builder-style object to manufacture [`ListRelatedResourcesForAuditFindingOutput`](crate::output::ListRelatedResourcesForAuditFindingOutput).
+    pub fn builder() -> crate::output::list_related_resources_for_audit_finding_output::Builder {
+        crate::output::list_related_resources_for_audit_finding_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProvisioningTemplateVersionsOutput {
     /// <p>The list of provisioning template versions.</p>
     #[doc(hidden)]

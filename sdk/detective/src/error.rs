@@ -226,6 +226,156 @@ impl InternalServerException {
     }
 }
 
+/// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The SDK default error code associated with the access denied exception.</p>
+    #[doc(hidden)]
+    pub error_code: std::option::Option<crate::model::ErrorCode>,
+    /// <p>The SDK default explanation of why access was denied.</p>
+    #[doc(hidden)]
+    pub error_code_reason: std::option::Option<std::string::String>,
+    /// <p>The error code associated with the access denied exception.</p>
+    #[doc(hidden)]
+    pub sub_error_code: std::option::Option<crate::model::ErrorCode>,
+    /// <p> An explanation of why access was denied.</p>
+    #[doc(hidden)]
+    pub sub_error_code_reason: std::option::Option<std::string::String>,
+}
+impl AccessDeniedException {
+    /// <p>The SDK default error code associated with the access denied exception.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The SDK default explanation of why access was denied.</p>
+    pub fn error_code_reason(&self) -> std::option::Option<&str> {
+        self.error_code_reason.as_deref()
+    }
+    /// <p>The error code associated with the access denied exception.</p>
+    pub fn sub_error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.sub_error_code.as_ref()
+    }
+    /// <p> An explanation of why access was denied.</p>
+    pub fn sub_error_code_reason(&self) -> std::option::Option<&str> {
+        self.sub_error_code_reason.as_deref()
+    }
+}
+impl AccessDeniedException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDeniedException")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
+pub mod access_denied_exception {
+
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
+        pub(crate) error_code_reason: std::option::Option<std::string::String>,
+        pub(crate) sub_error_code: std::option::Option<crate::model::ErrorCode>,
+        pub(crate) sub_error_code_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The SDK default error code associated with the access denied exception.</p>
+        pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
+            self.error_code = Some(input);
+            self
+        }
+        /// <p>The SDK default error code associated with the access denied exception.</p>
+        pub fn set_error_code(
+            mut self,
+            input: std::option::Option<crate::model::ErrorCode>,
+        ) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>The SDK default explanation of why access was denied.</p>
+        pub fn error_code_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_code_reason = Some(input.into());
+            self
+        }
+        /// <p>The SDK default explanation of why access was denied.</p>
+        pub fn set_error_code_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_code_reason = input;
+            self
+        }
+        /// <p>The error code associated with the access denied exception.</p>
+        pub fn sub_error_code(mut self, input: crate::model::ErrorCode) -> Self {
+            self.sub_error_code = Some(input);
+            self
+        }
+        /// <p>The error code associated with the access denied exception.</p>
+        pub fn set_sub_error_code(
+            mut self,
+            input: std::option::Option<crate::model::ErrorCode>,
+        ) -> Self {
+            self.sub_error_code = input;
+            self
+        }
+        /// <p> An explanation of why access was denied.</p>
+        pub fn sub_error_code_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sub_error_code_reason = Some(input.into());
+            self
+        }
+        /// <p> An explanation of why access was denied.</p>
+        pub fn set_sub_error_code_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sub_error_code_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
+                message: self.message,
+                error_code: self.error_code,
+                error_code_reason: self.error_code_reason,
+                sub_error_code: self.sub_error_code,
+                sub_error_code_reason: self.sub_error_code_reason,
+            }
+        }
+    }
+}
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
+    }
+}
+
 /// <p>This request cannot be completed for one of the following reasons.</p>
 /// <ul>
 /// <li> <p>The request would cause the number of member accounts in the behavior graph to exceed the maximum allowed. A behavior graph cannot have more than 1200 member accounts.</p> </li>
@@ -257,9 +407,9 @@ impl ServiceQuotaExceededException {
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_4) = &self.message {
+        if let Some(inner_5) = &self.message {
             {
-                write!(f, ": {}", inner_4)?;
+                write!(f, ": {}", inner_5)?;
             }
         }
         Ok(())
@@ -338,9 +488,9 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_5) = &self.message {
+        if let Some(inner_6) = &self.message {
             {
-                write!(f, ": {}", inner_5)?;
+                write!(f, ": {}", inner_6)?;
             }
         }
         Ok(())
@@ -398,9 +548,9 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_6) = &self.message {
+        if let Some(inner_7) = &self.message {
             {
-                write!(f, ": {}", inner_6)?;
+                write!(f, ": {}", inner_7)?;
             }
         }
         Ok(())
@@ -462,6 +612,8 @@ impl aws_smithy_http::result::CreateUnhandledError for AcceptInvitationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptInvitationErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request attempted an invalid action.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
@@ -483,6 +635,7 @@ pub enum AcceptInvitationErrorKind {
 impl std::fmt::Display for AcceptInvitationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            AcceptInvitationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             AcceptInvitationErrorKind::ConflictException(_inner) => _inner.fmt(f),
             AcceptInvitationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             AcceptInvitationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -541,6 +694,13 @@ impl AcceptInvitationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `AcceptInvitationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AcceptInvitationErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `AcceptInvitationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, AcceptInvitationErrorKind::ConflictException(_))
@@ -570,6 +730,7 @@ impl AcceptInvitationError {
 impl std::error::Error for AcceptInvitationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            AcceptInvitationErrorKind::AccessDeniedException(_inner) => Some(_inner),
             AcceptInvitationErrorKind::ConflictException(_inner) => Some(_inner),
             AcceptInvitationErrorKind::InternalServerException(_inner) => Some(_inner),
             AcceptInvitationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
@@ -602,6 +763,8 @@ impl aws_smithy_http::result::CreateUnhandledError for BatchGetGraphMemberDataso
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchGetGraphMemberDatasourcesErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request refers to a nonexistent resource.</p>
@@ -621,6 +784,7 @@ pub enum BatchGetGraphMemberDatasourcesErrorKind {
 impl std::fmt::Display for BatchGetGraphMemberDatasourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            BatchGetGraphMemberDatasourcesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             BatchGetGraphMemberDatasourcesErrorKind::InternalServerException(_inner) => {
                 _inner.fmt(f)
             }
@@ -689,6 +853,13 @@ impl BatchGetGraphMemberDatasourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `BatchGetGraphMemberDatasourcesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetGraphMemberDatasourcesErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `BatchGetGraphMemberDatasourcesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -714,6 +885,7 @@ impl BatchGetGraphMemberDatasourcesError {
 impl std::error::Error for BatchGetGraphMemberDatasourcesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            BatchGetGraphMemberDatasourcesErrorKind::AccessDeniedException(_inner) => Some(_inner),
             BatchGetGraphMemberDatasourcesErrorKind::InternalServerException(_inner) => {
                 Some(_inner)
             }
@@ -749,6 +921,8 @@ impl aws_smithy_http::result::CreateUnhandledError for BatchGetMembershipDatasou
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchGetMembershipDatasourcesErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request refers to a nonexistent resource.</p>
@@ -768,6 +942,7 @@ pub enum BatchGetMembershipDatasourcesErrorKind {
 impl std::fmt::Display for BatchGetMembershipDatasourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            BatchGetMembershipDatasourcesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             BatchGetMembershipDatasourcesErrorKind::InternalServerException(_inner) => {
                 _inner.fmt(f)
             }
@@ -836,6 +1011,13 @@ impl BatchGetMembershipDatasourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `BatchGetMembershipDatasourcesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetMembershipDatasourcesErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `BatchGetMembershipDatasourcesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -861,6 +1043,7 @@ impl BatchGetMembershipDatasourcesError {
 impl std::error::Error for BatchGetMembershipDatasourcesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            BatchGetMembershipDatasourcesErrorKind::AccessDeniedException(_inner) => Some(_inner),
             BatchGetMembershipDatasourcesErrorKind::InternalServerException(_inner) => Some(_inner),
             BatchGetMembershipDatasourcesErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
@@ -892,6 +1075,8 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateGraphError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGraphErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request attempted an invalid action.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
@@ -916,6 +1101,7 @@ pub enum CreateGraphErrorKind {
 impl std::fmt::Display for CreateGraphError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CreateGraphErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateGraphErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateGraphErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CreateGraphErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
@@ -973,6 +1159,10 @@ impl CreateGraphError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `CreateGraphErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, CreateGraphErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `CreateGraphErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateGraphErrorKind::ConflictException(_))
@@ -992,6 +1182,7 @@ impl CreateGraphError {
 impl std::error::Error for CreateGraphError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CreateGraphErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateGraphErrorKind::ConflictException(_inner) => Some(_inner),
             CreateGraphErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateGraphErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
@@ -1021,6 +1212,8 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMembersErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request refers to a nonexistent resource.</p>
@@ -1047,6 +1240,7 @@ pub enum CreateMembersErrorKind {
 impl std::fmt::Display for CreateMembersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CreateMembersErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateMembersErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CreateMembersErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateMembersErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
@@ -1105,6 +1299,10 @@ impl CreateMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `CreateMembersErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, CreateMembersErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `CreateMembersErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -1134,6 +1332,7 @@ impl CreateMembersError {
 impl std::error::Error for CreateMembersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CreateMembersErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateMembersErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateMembersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateMembersErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
@@ -1164,6 +1363,8 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteGraphError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGraphErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request refers to a nonexistent resource.</p>
@@ -1183,6 +1384,7 @@ pub enum DeleteGraphErrorKind {
 impl std::fmt::Display for DeleteGraphError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteGraphErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DeleteGraphErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             DeleteGraphErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DeleteGraphErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -1240,6 +1442,10 @@ impl DeleteGraphError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeleteGraphErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, DeleteGraphErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `DeleteGraphErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteGraphErrorKind::InternalServerException(_))
@@ -1259,6 +1465,7 @@ impl DeleteGraphError {
 impl std::error::Error for DeleteGraphError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteGraphErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DeleteGraphErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteGraphErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteGraphErrorKind::ValidationException(_inner) => Some(_inner),
@@ -1288,6 +1495,8 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMembersErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request attempted an invalid action.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
@@ -1309,6 +1518,7 @@ pub enum DeleteMembersErrorKind {
 impl std::fmt::Display for DeleteMembersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteMembersErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DeleteMembersErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteMembersErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             DeleteMembersErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -1367,6 +1577,10 @@ impl DeleteMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeleteMembersErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, DeleteMembersErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `DeleteMembersErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteMembersErrorKind::ConflictException(_))
@@ -1393,6 +1607,7 @@ impl DeleteMembersError {
 impl std::error::Error for DeleteMembersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteMembersErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DeleteMembersErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteMembersErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteMembersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
@@ -1425,6 +1640,8 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeOrganizationConfi
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeOrganizationConfigurationErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request cannot be completed because too many other requests are occurring at the same time.</p>
@@ -1444,6 +1661,9 @@ pub enum DescribeOrganizationConfigurationErrorKind {
 impl std::fmt::Display for DescribeOrganizationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DescribeOrganizationConfigurationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
             DescribeOrganizationConfigurationErrorKind::InternalServerException(_inner) => {
                 _inner.fmt(f)
             }
@@ -1514,6 +1734,13 @@ impl DescribeOrganizationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DescribeOrganizationConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -1539,6 +1766,9 @@ impl DescribeOrganizationConfigurationError {
 impl std::error::Error for DescribeOrganizationConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DescribeOrganizationConfigurationErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
             DescribeOrganizationConfigurationErrorKind::InternalServerException(_inner) => {
                 Some(_inner)
             }
@@ -1574,6 +1804,8 @@ impl aws_smithy_http::result::CreateUnhandledError for DisableOrganizationAdminA
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableOrganizationAdminAccountErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request cannot be completed because too many other requests are occurring at the same time.</p>
@@ -1593,6 +1825,9 @@ pub enum DisableOrganizationAdminAccountErrorKind {
 impl std::fmt::Display for DisableOrganizationAdminAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DisableOrganizationAdminAccountErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
             DisableOrganizationAdminAccountErrorKind::InternalServerException(_inner) => {
                 _inner.fmt(f)
             }
@@ -1661,6 +1896,13 @@ impl DisableOrganizationAdminAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DisableOrganizationAdminAccountErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableOrganizationAdminAccountErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DisableOrganizationAdminAccountErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -1686,6 +1928,7 @@ impl DisableOrganizationAdminAccountError {
 impl std::error::Error for DisableOrganizationAdminAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DisableOrganizationAdminAccountErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DisableOrganizationAdminAccountErrorKind::InternalServerException(_inner) => {
                 Some(_inner)
             }
@@ -1719,6 +1962,8 @@ impl aws_smithy_http::result::CreateUnhandledError for DisassociateMembershipErr
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateMembershipErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request attempted an invalid action.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
@@ -1740,6 +1985,7 @@ pub enum DisassociateMembershipErrorKind {
 impl std::fmt::Display for DisassociateMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DisassociateMembershipErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DisassociateMembershipErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DisassociateMembershipErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             DisassociateMembershipErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -1802,6 +2048,13 @@ impl DisassociateMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DisassociateMembershipErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateMembershipErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DisassociateMembershipErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
@@ -1834,6 +2087,7 @@ impl DisassociateMembershipError {
 impl std::error::Error for DisassociateMembershipError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DisassociateMembershipErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DisassociateMembershipErrorKind::ConflictException(_inner) => Some(_inner),
             DisassociateMembershipErrorKind::InternalServerException(_inner) => Some(_inner),
             DisassociateMembershipErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
@@ -1866,6 +2120,8 @@ impl aws_smithy_http::result::CreateUnhandledError for EnableOrganizationAdminAc
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableOrganizationAdminAccountErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request cannot be completed because too many other requests are occurring at the same time.</p>
@@ -1885,6 +2141,7 @@ pub enum EnableOrganizationAdminAccountErrorKind {
 impl std::fmt::Display for EnableOrganizationAdminAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            EnableOrganizationAdminAccountErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             EnableOrganizationAdminAccountErrorKind::InternalServerException(_inner) => {
                 _inner.fmt(f)
             }
@@ -1953,6 +2210,13 @@ impl EnableOrganizationAdminAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `EnableOrganizationAdminAccountErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableOrganizationAdminAccountErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `EnableOrganizationAdminAccountErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -1978,6 +2242,7 @@ impl EnableOrganizationAdminAccountError {
 impl std::error::Error for EnableOrganizationAdminAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            EnableOrganizationAdminAccountErrorKind::AccessDeniedException(_inner) => Some(_inner),
             EnableOrganizationAdminAccountErrorKind::InternalServerException(_inner) => {
                 Some(_inner)
             }
@@ -2011,6 +2276,8 @@ impl aws_smithy_http::result::CreateUnhandledError for GetMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMembersErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request refers to a nonexistent resource.</p>
@@ -2030,6 +2297,7 @@ pub enum GetMembersErrorKind {
 impl std::fmt::Display for GetMembersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetMembersErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetMembersErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             GetMembersErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             GetMembersErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -2087,6 +2355,10 @@ impl GetMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `GetMembersErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetMembersErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `GetMembersErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetMembersErrorKind::InternalServerException(_))
@@ -2106,6 +2378,7 @@ impl GetMembersError {
 impl std::error::Error for GetMembersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetMembersErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetMembersErrorKind::InternalServerException(_inner) => Some(_inner),
             GetMembersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetMembersErrorKind::ValidationException(_inner) => Some(_inner),
@@ -2135,6 +2408,8 @@ impl aws_smithy_http::result::CreateUnhandledError for ListDatasourcePackagesErr
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDatasourcePackagesErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request refers to a nonexistent resource.</p>
@@ -2154,6 +2429,7 @@ pub enum ListDatasourcePackagesErrorKind {
 impl std::fmt::Display for ListDatasourcePackagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListDatasourcePackagesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ListDatasourcePackagesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             ListDatasourcePackagesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ListDatasourcePackagesErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -2215,6 +2491,13 @@ impl ListDatasourcePackagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListDatasourcePackagesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasourcePackagesErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListDatasourcePackagesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -2240,6 +2523,7 @@ impl ListDatasourcePackagesError {
 impl std::error::Error for ListDatasourcePackagesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListDatasourcePackagesErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListDatasourcePackagesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListDatasourcePackagesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListDatasourcePackagesErrorKind::ValidationException(_inner) => Some(_inner),
@@ -2269,6 +2553,8 @@ impl aws_smithy_http::result::CreateUnhandledError for ListGraphsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGraphsErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request parameters are invalid.</p>
@@ -2286,6 +2572,7 @@ pub enum ListGraphsErrorKind {
 impl std::fmt::Display for ListGraphsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListGraphsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ListGraphsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             ListGraphsErrorKind::ValidationException(_inner) => _inner.fmt(f),
             ListGraphsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2342,6 +2629,10 @@ impl ListGraphsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListGraphsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, ListGraphsErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `ListGraphsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListGraphsErrorKind::InternalServerException(_))
@@ -2354,6 +2645,7 @@ impl ListGraphsError {
 impl std::error::Error for ListGraphsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListGraphsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListGraphsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListGraphsErrorKind::ValidationException(_inner) => Some(_inner),
             ListGraphsErrorKind::Unhandled(_inner) => Some(_inner),
@@ -2382,6 +2674,8 @@ impl aws_smithy_http::result::CreateUnhandledError for ListInvitationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInvitationsErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request parameters are invalid.</p>
@@ -2399,6 +2693,7 @@ pub enum ListInvitationsErrorKind {
 impl std::fmt::Display for ListInvitationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListInvitationsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ListInvitationsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             ListInvitationsErrorKind::ValidationException(_inner) => _inner.fmt(f),
             ListInvitationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2455,6 +2750,13 @@ impl ListInvitationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListInvitationsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInvitationsErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListInvitationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -2470,6 +2772,7 @@ impl ListInvitationsError {
 impl std::error::Error for ListInvitationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListInvitationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListInvitationsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListInvitationsErrorKind::ValidationException(_inner) => Some(_inner),
             ListInvitationsErrorKind::Unhandled(_inner) => Some(_inner),
@@ -2498,6 +2801,8 @@ impl aws_smithy_http::result::CreateUnhandledError for ListMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMembersErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request refers to a nonexistent resource.</p>
@@ -2517,6 +2822,7 @@ pub enum ListMembersErrorKind {
 impl std::fmt::Display for ListMembersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListMembersErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ListMembersErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             ListMembersErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ListMembersErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -2574,6 +2880,10 @@ impl ListMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListMembersErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, ListMembersErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `ListMembersErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListMembersErrorKind::InternalServerException(_))
@@ -2593,6 +2903,7 @@ impl ListMembersError {
 impl std::error::Error for ListMembersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListMembersErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListMembersErrorKind::InternalServerException(_inner) => Some(_inner),
             ListMembersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListMembersErrorKind::ValidationException(_inner) => Some(_inner),
@@ -2624,6 +2935,8 @@ impl aws_smithy_http::result::CreateUnhandledError for ListOrganizationAdminAcco
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListOrganizationAdminAccountsErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request cannot be completed because too many other requests are occurring at the same time.</p>
@@ -2643,6 +2956,7 @@ pub enum ListOrganizationAdminAccountsErrorKind {
 impl std::fmt::Display for ListOrganizationAdminAccountsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListOrganizationAdminAccountsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ListOrganizationAdminAccountsErrorKind::InternalServerException(_inner) => {
                 _inner.fmt(f)
             }
@@ -2711,6 +3025,13 @@ impl ListOrganizationAdminAccountsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListOrganizationAdminAccountsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOrganizationAdminAccountsErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListOrganizationAdminAccountsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -2736,6 +3057,7 @@ impl ListOrganizationAdminAccountsError {
 impl std::error::Error for ListOrganizationAdminAccountsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListOrganizationAdminAccountsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListOrganizationAdminAccountsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListOrganizationAdminAccountsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
@@ -2767,6 +3089,8 @@ impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request refers to a nonexistent resource.</p>
@@ -2786,6 +3110,7 @@ pub enum ListTagsForResourceErrorKind {
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListTagsForResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -2843,6 +3168,13 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -2868,6 +3200,7 @@ impl ListTagsForResourceError {
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListTagsForResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
@@ -2897,6 +3230,8 @@ impl aws_smithy_http::result::CreateUnhandledError for RejectInvitationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RejectInvitationErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request attempted an invalid action.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
@@ -2918,6 +3253,7 @@ pub enum RejectInvitationErrorKind {
 impl std::fmt::Display for RejectInvitationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            RejectInvitationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             RejectInvitationErrorKind::ConflictException(_inner) => _inner.fmt(f),
             RejectInvitationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             RejectInvitationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -2976,6 +3312,13 @@ impl RejectInvitationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `RejectInvitationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RejectInvitationErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `RejectInvitationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, RejectInvitationErrorKind::ConflictException(_))
@@ -3005,6 +3348,7 @@ impl RejectInvitationError {
 impl std::error::Error for RejectInvitationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            RejectInvitationErrorKind::AccessDeniedException(_inner) => Some(_inner),
             RejectInvitationErrorKind::ConflictException(_inner) => Some(_inner),
             RejectInvitationErrorKind::InternalServerException(_inner) => Some(_inner),
             RejectInvitationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
@@ -3035,6 +3379,8 @@ impl aws_smithy_http::result::CreateUnhandledError for StartMonitoringMemberErro
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartMonitoringMemberErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request attempted an invalid action.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
@@ -3063,6 +3409,7 @@ pub enum StartMonitoringMemberErrorKind {
 impl std::fmt::Display for StartMonitoringMemberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            StartMonitoringMemberErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             StartMonitoringMemberErrorKind::ConflictException(_inner) => _inner.fmt(f),
             StartMonitoringMemberErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             StartMonitoringMemberErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -3126,6 +3473,13 @@ impl StartMonitoringMemberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `StartMonitoringMemberErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMonitoringMemberErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `StartMonitoringMemberErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
@@ -3165,6 +3519,7 @@ impl StartMonitoringMemberError {
 impl std::error::Error for StartMonitoringMemberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            StartMonitoringMemberErrorKind::AccessDeniedException(_inner) => Some(_inner),
             StartMonitoringMemberErrorKind::ConflictException(_inner) => Some(_inner),
             StartMonitoringMemberErrorKind::InternalServerException(_inner) => Some(_inner),
             StartMonitoringMemberErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
@@ -3196,6 +3551,8 @@ impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request refers to a nonexistent resource.</p>
@@ -3215,6 +3572,7 @@ pub enum TagResourceErrorKind {
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            TagResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -3272,6 +3630,10 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
@@ -3291,6 +3653,7 @@ impl TagResourceError {
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            TagResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
             TagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
@@ -3320,6 +3683,8 @@ impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request refers to a nonexistent resource.</p>
@@ -3339,6 +3704,7 @@ pub enum UntagResourceErrorKind {
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UntagResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -3396,6 +3762,10 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -3418,6 +3788,7 @@ impl UntagResourceError {
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UntagResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UntagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
@@ -3449,6 +3820,8 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateDatasourcePackagesE
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDatasourcePackagesErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request refers to a nonexistent resource.</p>
@@ -3475,6 +3848,7 @@ pub enum UpdateDatasourcePackagesErrorKind {
 impl std::fmt::Display for UpdateDatasourcePackagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateDatasourcePackagesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             UpdateDatasourcePackagesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateDatasourcePackagesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateDatasourcePackagesErrorKind::ServiceQuotaExceededException(_inner) => {
@@ -3539,6 +3913,13 @@ impl UpdateDatasourcePackagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `UpdateDatasourcePackagesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasourcePackagesErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateDatasourcePackagesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -3571,6 +3952,7 @@ impl UpdateDatasourcePackagesError {
 impl std::error::Error for UpdateDatasourcePackagesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateDatasourcePackagesErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UpdateDatasourcePackagesErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateDatasourcePackagesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDatasourcePackagesErrorKind::ServiceQuotaExceededException(_inner) => {
@@ -3605,6 +3987,8 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateOrganizationConfigu
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateOrganizationConfigurationErrorKind {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request cannot be completed because too many other requests are occurring at the same time.</p>
@@ -3624,6 +4008,9 @@ pub enum UpdateOrganizationConfigurationErrorKind {
 impl std::fmt::Display for UpdateOrganizationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateOrganizationConfigurationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
             UpdateOrganizationConfigurationErrorKind::InternalServerException(_inner) => {
                 _inner.fmt(f)
             }
@@ -3692,6 +4079,13 @@ impl UpdateOrganizationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `UpdateOrganizationConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOrganizationConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateOrganizationConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -3717,6 +4111,7 @@ impl UpdateOrganizationConfigurationError {
 impl std::error::Error for UpdateOrganizationConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateOrganizationConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UpdateOrganizationConfigurationErrorKind::InternalServerException(_inner) => {
                 Some(_inner)
             }

@@ -2137,6 +2137,7 @@ pub mod fluent_builders {
     /// <li> <p> <code>lookoutvision:StartModelPackagingJob</code> </p> </li>
     /// <li> <p> <code>s3:PutObject</code> </p> </li>
     /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
+    /// <li> <p> <code>kms:GenerateDataKey</code> </p> </li>
     /// <li> <p> <code>greengrass:CreateComponentVersion</code> </p> </li>
     /// <li> <p> <code>greengrass:DescribeComponent</code> </p> </li>
     /// <li> <p>(Optional) <code>greengrass:TagResource</code>. Only required if you want to tag the component.</p> </li>

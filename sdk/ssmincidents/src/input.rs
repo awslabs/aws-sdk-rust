@@ -11,6 +11,9 @@ pub mod create_replication_set_input {
             std::collections::HashMap<std::string::String, crate::model::RegionMapInputValue>,
         >,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// Adds a key-value pair to `regions`.
@@ -38,14 +41,39 @@ pub mod create_replication_set_input {
             self.regions = input;
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to add to the replication set.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>A list of tags to add to the replication set.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateReplicationSetInput`](crate::input::CreateReplicationSetInput).
@@ -58,6 +86,7 @@ pub mod create_replication_set_input {
             Ok(crate::input::CreateReplicationSetInput {
                 regions: self.regions,
                 client_token: self.client_token,
+                tags: self.tags,
             })
         }
     }
@@ -193,6 +222,7 @@ pub mod create_response_plan_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) integrations: std::option::Option<std::vec::Vec<crate::model::Integration>>,
     }
     impl Builder {
         /// <p>A token ensuring that the operation is called only once with the specified details.</p>
@@ -251,12 +281,18 @@ pub mod create_response_plan_input {
             self.chat_channel = input;
             self
         }
-        /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
-        pub fn engagements(mut self, input: std::vec::Vec<std::string::String>) -> Self {
-            self.engagements = Some(input);
+        /// Appends an item to `engagements`.
+        ///
+        /// To override the contents of this collection use [`set_engagements`](Self::set_engagements).
+        ///
+        /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
+        pub fn engagements(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.engagements.unwrap_or_default();
+            v.push(input.into());
+            self.engagements = Some(v);
             self
         }
-        /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
+        /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
         pub fn set_engagements(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -308,6 +344,25 @@ pub mod create_response_plan_input {
             self.tags = input;
             self
         }
+        /// Appends an item to `integrations`.
+        ///
+        /// To override the contents of this collection use [`set_integrations`](Self::set_integrations).
+        ///
+        /// <p>Information about third-party services integrated into the response plan.</p>
+        pub fn integrations(mut self, input: crate::model::Integration) -> Self {
+            let mut v = self.integrations.unwrap_or_default();
+            v.push(input);
+            self.integrations = Some(v);
+            self
+        }
+        /// <p>Information about third-party services integrated into the response plan.</p>
+        pub fn set_integrations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Integration>>,
+        ) -> Self {
+            self.integrations = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateResponsePlanInput`](crate::input::CreateResponsePlanInput).
         pub fn build(
             self,
@@ -324,6 +379,7 @@ pub mod create_response_plan_input {
                 engagements: self.engagements,
                 actions: self.actions,
                 tags: self.tags,
+                integrations: self.integrations,
             })
         }
     }
@@ -452,6 +508,8 @@ pub mod create_timeline_event_input {
         pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_type: std::option::Option<std::string::String>,
         pub(crate) event_data: std::option::Option<std::string::String>,
+        pub(crate) event_references:
+            std::option::Option<std::vec::Vec<crate::model::EventReference>>,
     }
     impl Builder {
         /// <p>A token ensuring that the action is called only once with the specified details.</p>
@@ -510,6 +568,25 @@ pub mod create_timeline_event_input {
             self.event_data = input;
             self
         }
+        /// Appends an item to `event_references`.
+        ///
+        /// To override the contents of this collection use [`set_event_references`](Self::set_event_references).
+        ///
+        /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p>
+        pub fn event_references(mut self, input: crate::model::EventReference) -> Self {
+            let mut v = self.event_references.unwrap_or_default();
+            v.push(input);
+            self.event_references = Some(v);
+            self
+        }
+        /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p>
+        pub fn set_event_references(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EventReference>>,
+        ) -> Self {
+            self.event_references = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateTimelineEventInput`](crate::input::CreateTimelineEventInput).
         pub fn build(
             self,
@@ -523,6 +600,7 @@ pub mod create_timeline_event_input {
                 event_time: self.event_time,
                 event_type: self.event_type,
                 event_data: self.event_data,
+                event_references: self.event_references,
             })
         }
     }
@@ -1706,12 +1784,12 @@ pub mod get_resource_policies_input {
             self.resource_arn = input;
             self
         }
-        /// <p>The maximum number of resource policies to display per page of results.</p>
+        /// <p>The maximum number of resource policies to display for each page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of resource policies to display per page of results.</p>
+        /// <p>The maximum number of resource policies to display for each page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3283,12 +3361,12 @@ pub mod put_resource_policy_input {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the response plan to add the resource policy to.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the response plan to add the resource policy to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3687,7 +3765,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that you are adding to the response plan.</p>
+        /// <p>A list of tags to add to the response plan.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3698,7 +3776,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A list of tags that you are adding to the response plan.</p>
+        /// <p>A list of tags to add to the response plan.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3874,14 +3952,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The name of the tag you're removing from the response plan.</p>
+        /// <p>The name of the tag to remove from the response plan.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>The name of the tag you're removing from the response plan.</p>
+        /// <p>The name of the tag to remove from the response plan.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4046,32 +4124,32 @@ pub mod update_deletion_protection_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+        /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+        /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>Details if deletion protection is enabled or disabled in your account.</p>
+        /// <p>Specifies if deletion protection is turned on or off in your account. </p>
         pub fn deletion_protected(mut self, input: bool) -> Self {
             self.deletion_protected = Some(input);
             self
         }
-        /// <p>Details if deletion protection is enabled or disabled in your account.</p>
+        /// <p>Specifies if deletion protection is turned on or off in your account. </p>
         pub fn set_deletion_protected(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protected = input;
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -4687,12 +4765,12 @@ pub mod update_replication_set_input {
             self.actions = input;
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -4848,6 +4926,7 @@ pub mod update_response_plan_input {
         pub(crate) incident_template_tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) integrations: std::option::Option<std::vec::Vec<crate::model::Integration>>,
     }
     impl Builder {
         /// <p>A token ensuring that the operation is called only once with the specified details.</p>
@@ -4987,12 +5066,18 @@ pub mod update_response_plan_input {
             self.chat_channel = input;
             self
         }
-        /// <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
-        pub fn engagements(mut self, input: std::vec::Vec<std::string::String>) -> Self {
-            self.engagements = Some(input);
+        /// Appends an item to `engagements`.
+        ///
+        /// To override the contents of this collection use [`set_engagements`](Self::set_engagements).
+        ///
+        /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
+        pub fn engagements(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.engagements.unwrap_or_default();
+            v.push(input.into());
+            self.engagements = Some(v);
             self
         }
-        /// <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
+        /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
         pub fn set_engagements(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5023,7 +5108,7 @@ pub mod update_response_plan_input {
         ///
         /// To override the contents of this collection use [`set_incident_template_tags`](Self::set_incident_template_tags).
         ///
-        /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+        /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
         pub fn incident_template_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5034,7 +5119,7 @@ pub mod update_response_plan_input {
             self.incident_template_tags = Some(hash_map);
             self
         }
-        /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+        /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
         pub fn set_incident_template_tags(
             mut self,
             input: std::option::Option<
@@ -5042,6 +5127,25 @@ pub mod update_response_plan_input {
             >,
         ) -> Self {
             self.incident_template_tags = input;
+            self
+        }
+        /// Appends an item to `integrations`.
+        ///
+        /// To override the contents of this collection use [`set_integrations`](Self::set_integrations).
+        ///
+        /// <p>Information about third-party services integrated into the response plan.</p>
+        pub fn integrations(mut self, input: crate::model::Integration) -> Self {
+            let mut v = self.integrations.unwrap_or_default();
+            v.push(input);
+            self.integrations = Some(v);
+            self
+        }
+        /// <p>Information about third-party services integrated into the response plan.</p>
+        pub fn set_integrations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Integration>>,
+        ) -> Self {
+            self.integrations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateResponsePlanInput`](crate::input::UpdateResponsePlanInput).
@@ -5064,6 +5168,7 @@ pub mod update_response_plan_input {
                 engagements: self.engagements,
                 actions: self.actions,
                 incident_template_tags: self.incident_template_tags,
+                integrations: self.integrations,
             })
         }
     }
@@ -5193,6 +5298,8 @@ pub mod update_timeline_event_input {
         pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_type: std::option::Option<std::string::String>,
         pub(crate) event_data: std::option::Option<std::string::String>,
+        pub(crate) event_references:
+            std::option::Option<std::vec::Vec<crate::model::EventReference>>,
     }
     impl Builder {
         /// <p>A token ensuring that the operation is called only once with the specified details.</p>
@@ -5261,6 +5368,29 @@ pub mod update_timeline_event_input {
             self.event_data = input;
             self
         }
+        /// Appends an item to `event_references`.
+        ///
+        /// To override the contents of this collection use [`set_event_references`](Self::set_event_references).
+        ///
+        /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p> <important>
+        /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes them and enters only new references.</p>
+        /// </important>
+        pub fn event_references(mut self, input: crate::model::EventReference) -> Self {
+            let mut v = self.event_references.unwrap_or_default();
+            v.push(input);
+            self.event_references = Some(v);
+            self
+        }
+        /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p> <important>
+        /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes them and enters only new references.</p>
+        /// </important>
+        pub fn set_event_references(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EventReference>>,
+        ) -> Self {
+            self.event_references = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateTimelineEventInput`](crate::input::UpdateTimelineEventInput).
         pub fn build(
             self,
@@ -5275,6 +5405,7 @@ pub mod update_timeline_event_input {
                 event_time: self.event_time,
                 event_type: self.event_type,
                 event_data: self.event_data,
+                event_references: self.event_references,
             })
         }
     }
@@ -5414,6 +5545,11 @@ pub struct UpdateTimelineEventInput {
     /// <p>A short description of the event.</p>
     #[doc(hidden)]
     pub event_data: std::option::Option<std::string::String>,
+    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p> <important>
+    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes them and enters only new references.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub event_references: std::option::Option<std::vec::Vec<crate::model::EventReference>>,
 }
 impl UpdateTimelineEventInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
@@ -5439,6 +5575,12 @@ impl UpdateTimelineEventInput {
     /// <p>A short description of the event.</p>
     pub fn event_data(&self) -> std::option::Option<&str> {
         self.event_data.as_deref()
+    }
+    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p> <important>
+    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes them and enters only new references.</p>
+    /// </important>
+    pub fn event_references(&self) -> std::option::Option<&[crate::model::EventReference]> {
+        self.event_references.as_deref()
     }
 }
 
@@ -5483,16 +5625,19 @@ pub struct UpdateResponsePlanInput {
     /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
     #[doc(hidden)]
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
-    /// <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
+    /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
     #[doc(hidden)]
     pub engagements: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The actions that this response plan takes at the beginning of an incident.</p>
     #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
-    /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+    /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
     #[doc(hidden)]
     pub incident_template_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Information about third-party services integrated into the response plan.</p>
+    #[doc(hidden)]
+    pub integrations: std::option::Option<std::vec::Vec<crate::model::Integration>>,
 }
 impl UpdateResponsePlanInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
@@ -5542,20 +5687,24 @@ impl UpdateResponsePlanInput {
     pub fn chat_channel(&self) -> std::option::Option<&crate::model::ChatChannel> {
         self.chat_channel.as_ref()
     }
-    /// <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
-    pub fn engagements(&self) -> std::option::Option<&std::vec::Vec<std::string::String>> {
-        self.engagements.as_ref()
+    /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
+    pub fn engagements(&self) -> std::option::Option<&[std::string::String]> {
+        self.engagements.as_deref()
     }
     /// <p>The actions that this response plan takes at the beginning of an incident.</p>
     pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
         self.actions.as_deref()
     }
-    /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+    /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
     pub fn incident_template_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.incident_template_tags.as_ref()
+    }
+    /// <p>Information about third-party services integrated into the response plan.</p>
+    pub fn integrations(&self) -> std::option::Option<&[crate::model::Integration]> {
+        self.integrations.as_deref()
     }
 }
 
@@ -5569,7 +5718,7 @@ pub struct UpdateReplicationSetInput {
     /// <p>An action to add or delete a Region.</p>
     #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::UpdateReplicationSetAction>>,
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
@@ -5582,7 +5731,7 @@ impl UpdateReplicationSetInput {
     pub fn actions(&self) -> std::option::Option<&[crate::model::UpdateReplicationSetAction]> {
         self.actions.as_deref()
     }
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5706,26 +5855,26 @@ impl UpdateIncidentRecordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDeletionProtectionInput {
-    /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+    /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Details if deletion protection is enabled or disabled in your account.</p>
+    /// <p>Specifies if deletion protection is turned on or off in your account. </p>
     #[doc(hidden)]
     pub deletion_protected: std::option::Option<bool>,
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateDeletionProtectionInput {
-    /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+    /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Details if deletion protection is enabled or disabled in your account.</p>
+    /// <p>Specifies if deletion protection is turned on or off in your account. </p>
     pub fn deletion_protected(&self) -> std::option::Option<bool> {
         self.deletion_protected
     }
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5738,7 +5887,7 @@ pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan you're removing a tag from.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the tag you're removing from the response plan.</p>
+    /// <p>The name of the tag to remove from the response plan.</p>
     #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -5747,7 +5896,7 @@ impl UntagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The name of the tag you're removing from the response plan.</p>
+    /// <p>The name of the tag to remove from the response plan.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -5760,7 +5909,7 @@ pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the tags to.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tags that you are adding to the response plan.</p>
+    /// <p>A list of tags to add to the response plan.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -5770,7 +5919,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of tags that you are adding to the response plan.</p>
+    /// <p>A list of tags to add to the response plan.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5849,7 +5998,7 @@ impl StartIncidentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan to add the resource policy to.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Details of the resource policy.</p>
@@ -5857,7 +6006,7 @@ pub struct PutResourcePolicyInput {
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan to add the resource policy to.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -6122,7 +6271,7 @@ pub struct GetResourcePoliciesInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The maximum number of resource policies to display per page of results.</p>
+    /// <p>The maximum number of resource policies to display for each page of results.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to continue to the next page of results.</p>
@@ -6134,7 +6283,7 @@ impl GetResourcePoliciesInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The maximum number of resource policies to display per page of results.</p>
+    /// <p>The maximum number of resource policies to display for each page of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6282,6 +6431,9 @@ pub struct CreateTimelineEventInput {
     /// <p>A short description of the event.</p>
     #[doc(hidden)]
     pub event_data: std::option::Option<std::string::String>,
+    /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p>
+    #[doc(hidden)]
+    pub event_references: std::option::Option<std::vec::Vec<crate::model::EventReference>>,
 }
 impl CreateTimelineEventInput {
     /// <p>A token ensuring that the action is called only once with the specified details.</p>
@@ -6304,6 +6456,10 @@ impl CreateTimelineEventInput {
     pub fn event_data(&self) -> std::option::Option<&str> {
         self.event_data.as_deref()
     }
+    /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p>
+    pub fn event_references(&self) -> std::option::Option<&[crate::model::EventReference]> {
+        self.event_references.as_deref()
+    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -6325,7 +6481,7 @@ pub struct CreateResponsePlanInput {
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     #[doc(hidden)]
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
-    /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
+    /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
     #[doc(hidden)]
     pub engagements: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The actions that the response plan starts at the beginning of an incident.</p>
@@ -6335,6 +6491,9 @@ pub struct CreateResponsePlanInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Information about third-party services integrated into the response plan.</p>
+    #[doc(hidden)]
+    pub integrations: std::option::Option<std::vec::Vec<crate::model::Integration>>,
 }
 impl CreateResponsePlanInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
@@ -6357,9 +6516,9 @@ impl CreateResponsePlanInput {
     pub fn chat_channel(&self) -> std::option::Option<&crate::model::ChatChannel> {
         self.chat_channel.as_ref()
     }
-    /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn engagements(&self) -> std::option::Option<&std::vec::Vec<std::string::String>> {
-        self.engagements.as_ref()
+    /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
+    pub fn engagements(&self) -> std::option::Option<&[std::string::String]> {
+        self.engagements.as_deref()
     }
     /// <p>The actions that the response plan starts at the beginning of an incident.</p>
     pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
@@ -6372,6 +6531,10 @@ impl CreateResponsePlanInput {
     {
         self.tags.as_ref()
     }
+    /// <p>Information about third-party services integrated into the response plan.</p>
+    pub fn integrations(&self) -> std::option::Option<&[crate::model::Integration]> {
+        self.integrations.as_deref()
+    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -6383,9 +6546,13 @@ pub struct CreateReplicationSetInput {
     pub regions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RegionMapInputValue>,
     >,
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>A list of tags to add to the replication set.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateReplicationSetInput {
     /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
@@ -6396,8 +6563,15 @@ impl CreateReplicationSetInput {
     > {
         self.regions.as_ref()
     }
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>A list of tags to add to the replication set.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
     }
 }

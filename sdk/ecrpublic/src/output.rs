@@ -3,33 +3,33 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UploadLayerPartOutput {
-    /// <p>The registry ID associated with the request.</p>
+    /// <p>The registry ID that's associated with the request.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
-    /// <p>The repository name associated with the request.</p>
+    /// <p>The repository name that's associated with the request.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The upload ID associated with the request.</p>
+    /// <p>The upload ID that's associated with the request.</p>
     #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
-    /// <p>The integer value of the last byte received in the request.</p>
+    /// <p>The integer value of the last byte that's received in the request.</p>
     #[doc(hidden)]
     pub last_byte_received: std::option::Option<i64>,
 }
 impl UploadLayerPartOutput {
-    /// <p>The registry ID associated with the request.</p>
+    /// <p>The registry ID that's associated with the request.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
-    /// <p>The repository name associated with the request.</p>
+    /// <p>The repository name that's associated with the request.</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The upload ID associated with the request.</p>
+    /// <p>The upload ID that's associated with the request.</p>
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p>The integer value of the last byte received in the request.</p>
+    /// <p>The integer value of the last byte that's received in the request.</p>
     pub fn last_byte_received(&self) -> std::option::Option<i64> {
         self.last_byte_received
     }
@@ -46,22 +46,22 @@ pub mod upload_layer_part_output {
         pub(crate) last_byte_received: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The registry ID associated with the request.</p>
+        /// <p>The registry ID that's associated with the request.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The registry ID associated with the request.</p>
+        /// <p>The registry ID that's associated with the request.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
         }
-        /// <p>The repository name associated with the request.</p>
+        /// <p>The repository name that's associated with the request.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The repository name associated with the request.</p>
+        /// <p>The repository name that's associated with the request.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -69,22 +69,22 @@ pub mod upload_layer_part_output {
             self.repository_name = input;
             self
         }
-        /// <p>The upload ID associated with the request.</p>
+        /// <p>The upload ID that's associated with the request.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.upload_id = Some(input.into());
             self
         }
-        /// <p>The upload ID associated with the request.</p>
+        /// <p>The upload ID that's associated with the request.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upload_id = input;
             self
         }
-        /// <p>The integer value of the last byte received in the request.</p>
+        /// <p>The integer value of the last byte that's received in the request.</p>
         pub fn last_byte_received(mut self, input: i64) -> Self {
             self.last_byte_received = Some(input);
             self
         }
-        /// <p>The integer value of the last byte received in the request.</p>
+        /// <p>The integer value of the last byte that's received in the request.</p>
         pub fn set_last_byte_received(mut self, input: std::option::Option<i64>) -> Self {
             self.last_byte_received = input;
             self
@@ -159,26 +159,26 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetRepositoryPolicyOutput {
-    /// <p>The registry ID associated with the request.</p>
+    /// <p>The registry ID that's associated with the request.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
-    /// <p>The repository name associated with the request.</p>
+    /// <p>The repository name that's associated with the request.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The JSON repository policy text applied to the repository.</p>
+    /// <p>The JSON repository policy text that's applied to the repository.</p>
     #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl SetRepositoryPolicyOutput {
-    /// <p>The registry ID associated with the request.</p>
+    /// <p>The registry ID that's associated with the request.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
-    /// <p>The repository name associated with the request.</p>
+    /// <p>The repository name that's associated with the request.</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The JSON repository policy text applied to the repository.</p>
+    /// <p>The JSON repository policy text that's applied to the repository.</p>
     pub fn policy_text(&self) -> std::option::Option<&str> {
         self.policy_text.as_deref()
     }
@@ -194,22 +194,22 @@ pub mod set_repository_policy_output {
         pub(crate) policy_text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The registry ID associated with the request.</p>
+        /// <p>The registry ID that's associated with the request.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The registry ID associated with the request.</p>
+        /// <p>The registry ID that's associated with the request.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
         }
-        /// <p>The repository name associated with the request.</p>
+        /// <p>The repository name that's associated with the request.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The repository name associated with the request.</p>
+        /// <p>The repository name that's associated with the request.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -217,12 +217,12 @@ pub mod set_repository_policy_output {
             self.repository_name = input;
             self
         }
-        /// <p>The JSON repository policy text applied to the repository.</p>
+        /// <p>The JSON repository policy text that's applied to the repository.</p>
         pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_text = Some(input.into());
             self
         }
-        /// <p>The JSON repository policy text applied to the repository.</p>
+        /// <p>The JSON repository policy text that's applied to the repository.</p>
         pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_text = input;
             self
@@ -518,26 +518,26 @@ impl InitiateLayerUploadOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRepositoryPolicyOutput {
-    /// <p>The registry ID associated with the request.</p>
+    /// <p>The registry ID that's associated with the request.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
-    /// <p>The repository name associated with the request.</p>
+    /// <p>The repository name that's associated with the request.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The repository policy text associated with the repository. The policy text will be in JSON format.</p>
+    /// <p>The repository policy text that's associated with the repository. The policy text will be in JSON format.</p>
     #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl GetRepositoryPolicyOutput {
-    /// <p>The registry ID associated with the request.</p>
+    /// <p>The registry ID that's associated with the request.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
-    /// <p>The repository name associated with the request.</p>
+    /// <p>The repository name that's associated with the request.</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The repository policy text associated with the repository. The policy text will be in JSON format.</p>
+    /// <p>The repository policy text that's associated with the repository. The policy text will be in JSON format.</p>
     pub fn policy_text(&self) -> std::option::Option<&str> {
         self.policy_text.as_deref()
     }
@@ -553,22 +553,22 @@ pub mod get_repository_policy_output {
         pub(crate) policy_text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The registry ID associated with the request.</p>
+        /// <p>The registry ID that's associated with the request.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The registry ID associated with the request.</p>
+        /// <p>The registry ID that's associated with the request.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
         }
-        /// <p>The repository name associated with the request.</p>
+        /// <p>The repository name that's associated with the request.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The repository name associated with the request.</p>
+        /// <p>The repository name that's associated with the request.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -576,12 +576,12 @@ pub mod get_repository_policy_output {
             self.repository_name = input;
             self
         }
-        /// <p>The repository policy text associated with the repository. The policy text will be in JSON format.</p>
+        /// <p>The repository policy text that's associated with the repository. The policy text will be in JSON format.</p>
         pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_text = Some(input.into());
             self
         }
-        /// <p>The repository policy text associated with the repository. The policy text will be in JSON format.</p>
+        /// <p>The repository policy text that's associated with the repository. The policy text will be in JSON format.</p>
         pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_text = input;
             self
@@ -763,7 +763,7 @@ pub struct DescribeRepositoriesOutput {
     /// <p>A list of repository objects corresponding to valid repositories.</p>
     #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::model::Repository>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -772,7 +772,7 @@ impl DescribeRepositoriesOutput {
     pub fn repositories(&self) -> std::option::Option<&[crate::model::Repository]> {
         self.repositories.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -806,12 +806,12 @@ pub mod describe_repositories_output {
             self.repositories = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -836,19 +836,19 @@ impl DescribeRepositoriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRegistriesOutput {
-    /// <p>An object containing the details for a public registry.</p>
+    /// <p>An object that contains the details for a public registry.</p>
     #[doc(hidden)]
     pub registries: std::option::Option<std::vec::Vec<crate::model::Registry>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRegistriesOutput {
-    /// <p>An object containing the details for a public registry.</p>
+    /// <p>An object that contains the details for a public registry.</p>
     pub fn registries(&self) -> std::option::Option<&[crate::model::Registry]> {
         self.registries.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -867,14 +867,14 @@ pub mod describe_registries_output {
         ///
         /// To override the contents of this collection use [`set_registries`](Self::set_registries).
         ///
-        /// <p>An object containing the details for a public registry.</p>
+        /// <p>An object that contains the details for a public registry.</p>
         pub fn registries(mut self, input: crate::model::Registry) -> Self {
             let mut v = self.registries.unwrap_or_default();
             v.push(input);
             self.registries = Some(v);
             self
         }
-        /// <p>An object containing the details for a public registry.</p>
+        /// <p>An object that contains the details for a public registry.</p>
         pub fn set_registries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Registry>>,
@@ -882,12 +882,12 @@ pub mod describe_registries_output {
             self.registries = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -915,7 +915,7 @@ pub struct DescribeImageTagsOutput {
     /// <p>The image tag details for the images in the requested repository.</p>
     #[doc(hidden)]
     pub image_tag_details: std::option::Option<std::vec::Vec<crate::model::ImageTagDetail>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -924,7 +924,7 @@ impl DescribeImageTagsOutput {
     pub fn image_tag_details(&self) -> std::option::Option<&[crate::model::ImageTagDetail]> {
         self.image_tag_details.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -959,12 +959,12 @@ pub mod describe_image_tags_output {
             self.image_tag_details = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -992,7 +992,7 @@ pub struct DescribeImagesOutput {
     /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
     #[doc(hidden)]
     pub image_details: std::option::Option<std::vec::Vec<crate::model::ImageDetail>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -1001,7 +1001,7 @@ impl DescribeImagesOutput {
     pub fn image_details(&self) -> std::option::Option<&[crate::model::ImageDetail]> {
         self.image_details.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1035,12 +1035,12 @@ pub mod describe_images_output {
             self.image_details = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1065,10 +1065,10 @@ impl DescribeImagesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRepositoryPolicyOutput {
-    /// <p>The registry ID associated with the request.</p>
+    /// <p>The registry ID that's associated with the request.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
-    /// <p>The repository name associated with the request.</p>
+    /// <p>The repository name that's associated with the request.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON repository policy that was deleted from the repository.</p>
@@ -1076,11 +1076,11 @@ pub struct DeleteRepositoryPolicyOutput {
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl DeleteRepositoryPolicyOutput {
-    /// <p>The registry ID associated with the request.</p>
+    /// <p>The registry ID that's associated with the request.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
-    /// <p>The repository name associated with the request.</p>
+    /// <p>The repository name that's associated with the request.</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
@@ -1100,22 +1100,22 @@ pub mod delete_repository_policy_output {
         pub(crate) policy_text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The registry ID associated with the request.</p>
+        /// <p>The registry ID that's associated with the request.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The registry ID associated with the request.</p>
+        /// <p>The registry ID that's associated with the request.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
         }
-        /// <p>The repository name associated with the request.</p>
+        /// <p>The repository name that's associated with the request.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The repository name associated with the request.</p>
+        /// <p>The repository name that's associated with the request.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1278,13 +1278,13 @@ impl CreateRepositoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteLayerUploadOutput {
-    /// <p>The public registry ID associated with the request.</p>
+    /// <p>The public registry ID that's associated with the request.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
-    /// <p>The repository name associated with the request.</p>
+    /// <p>The repository name that's associated with the request.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The upload ID associated with the layer.</p>
+    /// <p>The upload ID that's associated with the layer.</p>
     #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The <code>sha256</code> digest of the image layer.</p>
@@ -1292,15 +1292,15 @@ pub struct CompleteLayerUploadOutput {
     pub layer_digest: std::option::Option<std::string::String>,
 }
 impl CompleteLayerUploadOutput {
-    /// <p>The public registry ID associated with the request.</p>
+    /// <p>The public registry ID that's associated with the request.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
-    /// <p>The repository name associated with the request.</p>
+    /// <p>The repository name that's associated with the request.</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The upload ID associated with the layer.</p>
+    /// <p>The upload ID that's associated with the layer.</p>
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
@@ -1321,22 +1321,22 @@ pub mod complete_layer_upload_output {
         pub(crate) layer_digest: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The public registry ID associated with the request.</p>
+        /// <p>The public registry ID that's associated with the request.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The public registry ID associated with the request.</p>
+        /// <p>The public registry ID that's associated with the request.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
         }
-        /// <p>The repository name associated with the request.</p>
+        /// <p>The repository name that's associated with the request.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The repository name associated with the request.</p>
+        /// <p>The repository name that's associated with the request.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1344,12 +1344,12 @@ pub mod complete_layer_upload_output {
             self.repository_name = input;
             self
         }
-        /// <p>The upload ID associated with the layer.</p>
+        /// <p>The upload ID that's associated with the layer.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.upload_id = Some(input.into());
             self
         }
-        /// <p>The upload ID associated with the layer.</p>
+        /// <p>The upload ID that's associated with the layer.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upload_id = input;
             self
@@ -1471,7 +1471,7 @@ impl BatchDeleteImageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCheckLayerAvailabilityOutput {
-    /// <p>A list of image layer objects corresponding to the image layer references in the request.</p>
+    /// <p>A list of image layer objects that correspond to the image layer references in the request.</p>
     #[doc(hidden)]
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
     /// <p>Any failures associated with the call.</p>
@@ -1479,7 +1479,7 @@ pub struct BatchCheckLayerAvailabilityOutput {
     pub failures: std::option::Option<std::vec::Vec<crate::model::LayerFailure>>,
 }
 impl BatchCheckLayerAvailabilityOutput {
-    /// <p>A list of image layer objects corresponding to the image layer references in the request.</p>
+    /// <p>A list of image layer objects that correspond to the image layer references in the request.</p>
     pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
         self.layers.as_deref()
     }
@@ -1502,14 +1502,14 @@ pub mod batch_check_layer_availability_output {
         ///
         /// To override the contents of this collection use [`set_layers`](Self::set_layers).
         ///
-        /// <p>A list of image layer objects corresponding to the image layer references in the request.</p>
+        /// <p>A list of image layer objects that correspond to the image layer references in the request.</p>
         pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
             v.push(input);
             self.layers = Some(v);
             self
         }
-        /// <p>A list of image layer objects corresponding to the image layer references in the request.</p>
+        /// <p>A list of image layer objects that correspond to the image layer references in the request.</p>
         pub fn set_layers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Layer>>,

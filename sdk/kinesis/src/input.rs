@@ -11,6 +11,7 @@ pub mod add_tags_to_stream_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream.</p>
@@ -48,6 +49,16 @@ pub mod add_tags_to_stream_input {
             self.tags = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AddTagsToStreamInput`](crate::input::AddTagsToStreamInput).
         pub fn build(
             self,
@@ -56,6 +67,7 @@ pub mod add_tags_to_stream_input {
             Ok(crate::input::AddTagsToStreamInput {
                 stream_name: self.stream_name,
                 tags: self.tags,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -355,6 +367,7 @@ pub mod decrease_stream_retention_period_input {
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) retention_period_hours: std::option::Option<i32>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream to modify.</p>
@@ -377,6 +390,16 @@ pub mod decrease_stream_retention_period_input {
             self.retention_period_hours = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DecreaseStreamRetentionPeriodInput`](crate::input::DecreaseStreamRetentionPeriodInput).
         pub fn build(
             self,
@@ -387,6 +410,7 @@ pub mod decrease_stream_retention_period_input {
             Ok(crate::input::DecreaseStreamRetentionPeriodInput {
                 stream_name: self.stream_name,
                 retention_period_hours: self.retention_period_hours,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -513,6 +537,7 @@ pub mod delete_stream_input {
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) enforce_consumer_deletion: std::option::Option<bool>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream to delete.</p>
@@ -535,6 +560,16 @@ pub mod delete_stream_input {
             self.enforce_consumer_deletion = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteStreamInput`](crate::input::DeleteStreamInput).
         pub fn build(
             self,
@@ -543,6 +578,7 @@ pub mod delete_stream_input {
             Ok(crate::input::DeleteStreamInput {
                 stream_name: self.stream_name,
                 enforce_consumer_deletion: self.enforce_consumer_deletion,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -971,6 +1007,7 @@ pub mod describe_stream_input {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) exclusive_start_shard_id: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream to describe.</p>
@@ -1010,6 +1047,16 @@ pub mod describe_stream_input {
             self.exclusive_start_shard_id = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeStreamInput`](crate::input::DescribeStreamInput).
         pub fn build(
             self,
@@ -1019,6 +1066,7 @@ pub mod describe_stream_input {
                 stream_name: self.stream_name,
                 limit: self.limit,
                 exclusive_start_shard_id: self.exclusive_start_shard_id,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -1321,6 +1369,7 @@ pub mod describe_stream_summary_input {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream to describe.</p>
@@ -1333,6 +1382,16 @@ pub mod describe_stream_summary_input {
             self.stream_name = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeStreamSummaryInput`](crate::input::DescribeStreamSummaryInput).
         pub fn build(
             self,
@@ -1342,6 +1401,7 @@ pub mod describe_stream_summary_input {
         > {
             Ok(crate::input::DescribeStreamSummaryInput {
                 stream_name: self.stream_name,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -1472,6 +1532,7 @@ pub mod disable_enhanced_monitoring_input {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_level_metrics:
             std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
@@ -1527,6 +1588,16 @@ pub mod disable_enhanced_monitoring_input {
             self.shard_level_metrics = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DisableEnhancedMonitoringInput`](crate::input::DisableEnhancedMonitoringInput).
         pub fn build(
             self,
@@ -1537,6 +1608,7 @@ pub mod disable_enhanced_monitoring_input {
             Ok(crate::input::DisableEnhancedMonitoringInput {
                 stream_name: self.stream_name,
                 shard_level_metrics: self.shard_level_metrics,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -1667,6 +1739,7 @@ pub mod enable_enhanced_monitoring_input {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_level_metrics:
             std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream for which to enable enhanced monitoring.</p>
@@ -1722,6 +1795,16 @@ pub mod enable_enhanced_monitoring_input {
             self.shard_level_metrics = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EnableEnhancedMonitoringInput`](crate::input::EnableEnhancedMonitoringInput).
         pub fn build(
             self,
@@ -1732,6 +1815,7 @@ pub mod enable_enhanced_monitoring_input {
             Ok(crate::input::EnableEnhancedMonitoringInput {
                 stream_name: self.stream_name,
                 shard_level_metrics: self.shard_level_metrics,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -1861,6 +1945,7 @@ pub mod get_records_input {
     pub struct Builder {
         pub(crate) shard_iterator: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
@@ -1886,6 +1971,16 @@ pub mod get_records_input {
             self.limit = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetRecordsInput`](crate::input::GetRecordsInput).
         pub fn build(
             self,
@@ -1894,6 +1989,7 @@ pub mod get_records_input {
             Ok(crate::input::GetRecordsInput {
                 shard_iterator: self.shard_iterator,
                 limit: self.limit,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -2024,6 +2120,7 @@ pub mod get_shard_iterator_input {
         pub(crate) shard_iterator_type: std::option::Option<crate::model::ShardIteratorType>,
         pub(crate) starting_sequence_number: std::option::Option<std::string::String>,
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the Amazon Kinesis data stream.</p>
@@ -2101,6 +2198,16 @@ pub mod get_shard_iterator_input {
             self.timestamp = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetShardIteratorInput`](crate::input::GetShardIteratorInput).
         pub fn build(
             self,
@@ -2114,6 +2221,7 @@ pub mod get_shard_iterator_input {
                 shard_iterator_type: self.shard_iterator_type,
                 starting_sequence_number: self.starting_sequence_number,
                 timestamp: self.timestamp,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -2241,6 +2349,7 @@ pub mod increase_stream_retention_period_input {
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) retention_period_hours: std::option::Option<i32>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream to modify.</p>
@@ -2263,6 +2372,16 @@ pub mod increase_stream_retention_period_input {
             self.retention_period_hours = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`IncreaseStreamRetentionPeriodInput`](crate::input::IncreaseStreamRetentionPeriodInput).
         pub fn build(
             self,
@@ -2273,6 +2392,7 @@ pub mod increase_stream_retention_period_input {
             Ok(crate::input::IncreaseStreamRetentionPeriodInput {
                 stream_name: self.stream_name,
                 retention_period_hours: self.retention_period_hours,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -2403,6 +2523,7 @@ pub mod list_shards_input {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) stream_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) shard_filter: std::option::Option<crate::model::ShardFilter>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the data stream whose shards you want to list. </p>
@@ -2498,6 +2619,16 @@ pub mod list_shards_input {
             self.shard_filter = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListShardsInput`](crate::input::ListShardsInput).
         pub fn build(
             self,
@@ -2510,6 +2641,7 @@ pub mod list_shards_input {
                 max_results: self.max_results,
                 stream_creation_timestamp: self.stream_creation_timestamp,
                 shard_filter: self.shard_filter,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -2833,6 +2965,7 @@ pub mod list_streams_input {
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) exclusive_start_stream_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The maximum number of streams to list. The default value is 100. If you specify a value greater than 100, at most 100 results are returned.</p>
@@ -2861,6 +2994,16 @@ pub mod list_streams_input {
             self.exclusive_start_stream_name = input;
             self
         }
+        /// <p></p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p></p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListStreamsInput`](crate::input::ListStreamsInput).
         pub fn build(
             self,
@@ -2869,6 +3012,7 @@ pub mod list_streams_input {
             Ok(crate::input::ListStreamsInput {
                 limit: self.limit,
                 exclusive_start_stream_name: self.exclusive_start_stream_name,
+                next_token: self.next_token,
             })
         }
     }
@@ -2997,6 +3141,7 @@ pub mod list_tags_for_stream_input {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) exclusive_start_tag_key: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream.</p>
@@ -3032,6 +3177,16 @@ pub mod list_tags_for_stream_input {
             self.limit = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForStreamInput`](crate::input::ListTagsForStreamInput).
         pub fn build(
             self,
@@ -3043,6 +3198,7 @@ pub mod list_tags_for_stream_input {
                 stream_name: self.stream_name,
                 exclusive_start_tag_key: self.exclusive_start_tag_key,
                 limit: self.limit,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -3171,6 +3327,7 @@ pub mod merge_shards_input {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_to_merge: std::option::Option<std::string::String>,
         pub(crate) adjacent_shard_to_merge: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream for the merge.</p>
@@ -3209,6 +3366,16 @@ pub mod merge_shards_input {
             self.adjacent_shard_to_merge = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MergeShardsInput`](crate::input::MergeShardsInput).
         pub fn build(
             self,
@@ -3218,6 +3385,7 @@ pub mod merge_shards_input {
                 stream_name: self.stream_name,
                 shard_to_merge: self.shard_to_merge,
                 adjacent_shard_to_merge: self.adjacent_shard_to_merge,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -3348,6 +3516,7 @@ pub mod put_record_input {
         pub(crate) partition_key: std::option::Option<std::string::String>,
         pub(crate) explicit_hash_key: std::option::Option<std::string::String>,
         pub(crate) sequence_number_for_ordering: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream to put the data record into.</p>
@@ -3412,6 +3581,16 @@ pub mod put_record_input {
             self.sequence_number_for_ordering = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutRecordInput`](crate::input::PutRecordInput).
         pub fn build(
             self,
@@ -3423,6 +3602,7 @@ pub mod put_record_input {
                 partition_key: self.partition_key,
                 explicit_hash_key: self.explicit_hash_key,
                 sequence_number_for_ordering: self.sequence_number_for_ordering,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -3549,6 +3729,7 @@ pub mod put_records_input {
         pub(crate) records:
             std::option::Option<std::vec::Vec<crate::model::PutRecordsRequestEntry>>,
         pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `records`.
@@ -3580,6 +3761,16 @@ pub mod put_records_input {
             self.stream_name = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutRecordsInput`](crate::input::PutRecordsInput).
         pub fn build(
             self,
@@ -3588,6 +3779,7 @@ pub mod put_records_input {
             Ok(crate::input::PutRecordsInput {
                 records: self.records,
                 stream_name: self.stream_name,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -3879,6 +4071,7 @@ pub mod remove_tags_from_stream_input {
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream.</p>
@@ -3910,6 +4103,16 @@ pub mod remove_tags_from_stream_input {
             self.tag_keys = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RemoveTagsFromStreamInput`](crate::input::RemoveTagsFromStreamInput).
         pub fn build(
             self,
@@ -3920,6 +4123,7 @@ pub mod remove_tags_from_stream_input {
             Ok(crate::input::RemoveTagsFromStreamInput {
                 stream_name: self.stream_name,
                 tag_keys: self.tag_keys,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -4050,6 +4254,7 @@ pub mod split_shard_input {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_to_split: std::option::Option<std::string::String>,
         pub(crate) new_starting_hash_key: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream for the shard split.</p>
@@ -4088,6 +4293,16 @@ pub mod split_shard_input {
             self.new_starting_hash_key = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SplitShardInput`](crate::input::SplitShardInput).
         pub fn build(
             self,
@@ -4097,6 +4312,7 @@ pub mod split_shard_input {
                 stream_name: self.stream_name,
                 shard_to_split: self.shard_to_split,
                 new_starting_hash_key: self.new_starting_hash_key,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -4225,6 +4441,7 @@ pub mod start_stream_encryption_input {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
         pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream for which to start encrypting records.</p>
@@ -4274,6 +4491,16 @@ pub mod start_stream_encryption_input {
             self.key_id = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartStreamEncryptionInput`](crate::input::StartStreamEncryptionInput).
         pub fn build(
             self,
@@ -4285,6 +4512,7 @@ pub mod start_stream_encryption_input {
                 stream_name: self.stream_name,
                 encryption_type: self.encryption_type,
                 key_id: self.key_id,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -4415,6 +4643,7 @@ pub mod stop_stream_encryption_input {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
         pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream on which to stop encrypting records.</p>
@@ -4464,6 +4693,16 @@ pub mod stop_stream_encryption_input {
             self.key_id = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StopStreamEncryptionInput`](crate::input::StopStreamEncryptionInput).
         pub fn build(
             self,
@@ -4475,6 +4714,7 @@ pub mod stop_stream_encryption_input {
                 stream_name: self.stream_name,
                 encryption_type: self.encryption_type,
                 key_id: self.key_id,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -4605,6 +4845,7 @@ pub mod update_shard_count_input {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) target_shard_count: std::option::Option<i32>,
         pub(crate) scaling_type: std::option::Option<crate::model::ScalingType>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream.</p>
@@ -4652,6 +4893,16 @@ pub mod update_shard_count_input {
             self.scaling_type = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateShardCountInput`](crate::input::UpdateShardCountInput).
         pub fn build(
             self,
@@ -4663,6 +4914,7 @@ pub mod update_shard_count_input {
                 stream_name: self.stream_name,
                 target_shard_count: self.target_shard_count,
                 scaling_type: self.scaling_type,
+                stream_arn: self.stream_arn,
             })
         }
     }
@@ -4985,6 +5237,9 @@ pub struct UpdateShardCountInput {
     /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
     #[doc(hidden)]
     pub scaling_type: std::option::Option<crate::model::ScalingType>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl UpdateShardCountInput {
     /// <p>The name of the stream.</p>
@@ -5004,6 +5259,10 @@ impl UpdateShardCountInput {
     /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
     pub fn scaling_type(&self) -> std::option::Option<&crate::model::ScalingType> {
         self.scaling_type.as_ref()
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
     }
 }
 
@@ -5027,6 +5286,9 @@ pub struct StopStreamEncryptionInput {
     /// </ul>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl StopStreamEncryptionInput {
     /// <p>The name of the stream on which to stop encrypting records.</p>
@@ -5047,6 +5309,10 @@ impl StopStreamEncryptionInput {
     /// </ul>
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
     }
 }
 
@@ -5070,6 +5336,9 @@ pub struct StartStreamEncryptionInput {
     /// </ul>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl StartStreamEncryptionInput {
     /// <p>The name of the stream for which to start encrypting records.</p>
@@ -5091,6 +5360,10 @@ impl StartStreamEncryptionInput {
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
 }
 
 /// <p>Represents the input for <code>SplitShard</code>.</p>
@@ -5106,6 +5379,9 @@ pub struct SplitShardInput {
     /// <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
     #[doc(hidden)]
     pub new_starting_hash_key: std::option::Option<std::string::String>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl SplitShardInput {
     /// <p>The name of the stream for the shard split.</p>
@@ -5120,6 +5396,10 @@ impl SplitShardInput {
     pub fn new_starting_hash_key(&self) -> std::option::Option<&str> {
         self.new_starting_hash_key.as_deref()
     }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
 }
 
 /// <p>Represents the input for <code>RemoveTagsFromStream</code>.</p>
@@ -5132,6 +5412,9 @@ pub struct RemoveTagsFromStreamInput {
     /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
     #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl RemoveTagsFromStreamInput {
     /// <p>The name of the stream.</p>
@@ -5141,6 +5424,10 @@ impl RemoveTagsFromStreamInput {
     /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
     }
 }
 
@@ -5176,6 +5463,9 @@ pub struct PutRecordsInput {
     /// <p>The stream name associated with the request.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl PutRecordsInput {
     /// <p>The records associated with the request.</p>
@@ -5185,6 +5475,10 @@ impl PutRecordsInput {
     /// <p>The stream name associated with the request.</p>
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
     }
 }
 
@@ -5207,6 +5501,9 @@ pub struct PutRecordInput {
     /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are coarsely ordered based on arrival time.</p>
     #[doc(hidden)]
     pub sequence_number_for_ordering: std::option::Option<std::string::String>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl PutRecordInput {
     /// <p>The name of the stream to put the data record into.</p>
@@ -5229,6 +5526,10 @@ impl PutRecordInput {
     pub fn sequence_number_for_ordering(&self) -> std::option::Option<&str> {
         self.sequence_number_for_ordering.as_deref()
     }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
 }
 
 /// <p>Represents the input for <code>MergeShards</code>.</p>
@@ -5244,6 +5545,9 @@ pub struct MergeShardsInput {
     /// <p>The shard ID of the adjacent shard for the merge.</p>
     #[doc(hidden)]
     pub adjacent_shard_to_merge: std::option::Option<std::string::String>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl MergeShardsInput {
     /// <p>The name of the stream for the merge.</p>
@@ -5257,6 +5561,10 @@ impl MergeShardsInput {
     /// <p>The shard ID of the adjacent shard for the merge.</p>
     pub fn adjacent_shard_to_merge(&self) -> std::option::Option<&str> {
         self.adjacent_shard_to_merge.as_deref()
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
     }
 }
 
@@ -5273,6 +5581,9 @@ pub struct ListTagsForStreamInput {
     /// <p>The number of tags to return. If this number is less than the total number of tags associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
     #[doc(hidden)]
     pub limit: std::option::Option<i32>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForStreamInput {
     /// <p>The name of the stream.</p>
@@ -5287,6 +5598,10 @@ impl ListTagsForStreamInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
 }
 
 /// <p>Represents the input for <code>ListStreams</code>.</p>
@@ -5299,6 +5614,9 @@ pub struct ListStreamsInput {
     /// <p>The name of the stream to start the list with.</p>
     #[doc(hidden)]
     pub exclusive_start_stream_name: std::option::Option<std::string::String>,
+    /// <p></p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStreamsInput {
     /// <p>The maximum number of streams to list. The default value is 100. If you specify a value greater than 100, at most 100 results are returned.</p>
@@ -5308,6 +5626,10 @@ impl ListStreamsInput {
     /// <p>The name of the stream to start the list with.</p>
     pub fn exclusive_start_stream_name(&self) -> std::option::Option<&str> {
         self.exclusive_start_stream_name.as_deref()
+    }
+    /// <p></p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 
@@ -5391,6 +5713,9 @@ pub struct ListShardsInput {
     /// <p>If you specify the <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type, you must also provide the value for the optional <code>Timestamp</code> property. If you specify the AT_TIMESTAMP type, then all shards that were open at the provided timestamp are returned. If you specify the FROM_TIMESTAMP type, then all shards starting from the provided timestamp to TIP are returned. </p>
     #[doc(hidden)]
     pub shard_filter: std::option::Option<crate::model::ShardFilter>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl ListShardsInput {
     /// <p>The name of the data stream whose shards you want to list. </p>
@@ -5429,6 +5754,10 @@ impl ListShardsInput {
     pub fn shard_filter(&self) -> std::option::Option<&crate::model::ShardFilter> {
         self.shard_filter.as_ref()
     }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
 }
 
 /// <p>Represents the input for <code>IncreaseStreamRetentionPeriod</code>.</p>
@@ -5441,6 +5770,9 @@ pub struct IncreaseStreamRetentionPeriodInput {
     /// <p>The new retention period of the stream, in hours. Must be more than the current retention period.</p>
     #[doc(hidden)]
     pub retention_period_hours: std::option::Option<i32>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl IncreaseStreamRetentionPeriodInput {
     /// <p>The name of the stream to modify.</p>
@@ -5450,6 +5782,10 @@ impl IncreaseStreamRetentionPeriodInput {
     /// <p>The new retention period of the stream, in hours. Must be more than the current retention period.</p>
     pub fn retention_period_hours(&self) -> std::option::Option<i32> {
         self.retention_period_hours
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
     }
 }
 
@@ -5480,6 +5816,9 @@ pub struct GetShardIteratorInput {
     /// <p>The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl GetShardIteratorInput {
     /// <p>The name of the Amazon Kinesis data stream.</p>
@@ -5510,6 +5849,10 @@ impl GetShardIteratorInput {
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
 }
 
 /// <p>Represents the input for <code>GetRecords</code>.</p>
@@ -5522,6 +5865,9 @@ pub struct GetRecordsInput {
     /// <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <code>GetRecords</code> throws <code>InvalidArgumentException</code>. The default value is 10,000.</p>
     #[doc(hidden)]
     pub limit: std::option::Option<i32>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl GetRecordsInput {
     /// <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
@@ -5531,6 +5877,10 @@ impl GetRecordsInput {
     /// <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <code>GetRecords</code> throws <code>InvalidArgumentException</code>. The default value is 10,000.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
     }
 }
 
@@ -5556,6 +5906,9 @@ pub struct EnableEnhancedMonitoringInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     #[doc(hidden)]
     pub shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl EnableEnhancedMonitoringInput {
     /// <p>The name of the stream for which to enable enhanced monitoring.</p>
@@ -5577,6 +5930,10 @@ impl EnableEnhancedMonitoringInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     pub fn shard_level_metrics(&self) -> std::option::Option<&[crate::model::MetricsName]> {
         self.shard_level_metrics.as_deref()
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
     }
 }
 
@@ -5602,6 +5959,9 @@ pub struct DisableEnhancedMonitoringInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     #[doc(hidden)]
     pub shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl DisableEnhancedMonitoringInput {
     /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
@@ -5624,6 +5984,10 @@ impl DisableEnhancedMonitoringInput {
     pub fn shard_level_metrics(&self) -> std::option::Option<&[crate::model::MetricsName]> {
         self.shard_level_metrics.as_deref()
     }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -5633,11 +5997,18 @@ pub struct DescribeStreamSummaryInput {
     /// <p>The name of the stream to describe.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl DescribeStreamSummaryInput {
     /// <p>The name of the stream to describe.</p>
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
     }
 }
 
@@ -5685,6 +6056,9 @@ pub struct DescribeStreamInput {
     /// <p>If you don't specify this parameter, the default behavior for <code>DescribeStream</code> is to describe the stream starting with the first shard in the stream.</p>
     #[doc(hidden)]
     pub exclusive_start_shard_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl DescribeStreamInput {
     /// <p>The name of the stream to describe.</p>
@@ -5700,6 +6074,10 @@ impl DescribeStreamInput {
     /// <p>If you don't specify this parameter, the default behavior for <code>DescribeStream</code> is to describe the stream starting with the first shard in the stream.</p>
     pub fn exclusive_start_shard_id(&self) -> std::option::Option<&str> {
         self.exclusive_start_shard_id.as_deref()
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
     }
 }
 
@@ -5747,6 +6125,9 @@ pub struct DeleteStreamInput {
     /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
     #[doc(hidden)]
     pub enforce_consumer_deletion: std::option::Option<bool>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl DeleteStreamInput {
     /// <p>The name of the stream to delete.</p>
@@ -5756,6 +6137,10 @@ impl DeleteStreamInput {
     /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
     pub fn enforce_consumer_deletion(&self) -> std::option::Option<bool> {
         self.enforce_consumer_deletion
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
     }
 }
 
@@ -5769,6 +6154,9 @@ pub struct DecreaseStreamRetentionPeriodInput {
     /// <p>The new retention period of the stream, in hours. Must be less than the current retention period.</p>
     #[doc(hidden)]
     pub retention_period_hours: std::option::Option<i32>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl DecreaseStreamRetentionPeriodInput {
     /// <p>The name of the stream to modify.</p>
@@ -5778,6 +6166,10 @@ impl DecreaseStreamRetentionPeriodInput {
     /// <p>The new retention period of the stream, in hours. Must be less than the current retention period.</p>
     pub fn retention_period_hours(&self) -> std::option::Option<i32> {
         self.retention_period_hours
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
     }
 }
 
@@ -5821,6 +6213,9 @@ pub struct AddTagsToStreamInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl AddTagsToStreamInput {
     /// <p>The name of the stream.</p>
@@ -5833,5 +6228,9 @@ impl AddTagsToStreamInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
     }
 }

@@ -61,7 +61,11 @@ impl NotFoundException {
 }
 
 /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-/// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+/// <p>This exceptions means one of the following:</p>
+/// <ul>
+/// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+/// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsInvalidStateException {
@@ -550,7 +554,7 @@ impl KmsInvalidSignatureException {
     }
 }
 
-/// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+/// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DependencyTimeoutException {
@@ -730,6 +734,552 @@ impl InvalidArnException {
     }
 }
 
+/// <p>The request was rejected because KMS could not find the specified VPC endpoint service. Use <code>DescribeCustomKeyStores</code> to verify the VPC endpoint service name for the external key store. Also, confirm that the <code>Allow principals</code> list for the VPC endpoint service includes the KMS service principal for the Region, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct XksProxyVpcEndpointServiceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl XksProxyVpcEndpointServiceNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for XksProxyVpcEndpointServiceNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "XksProxyVpcEndpointServiceNotFoundException")?;
+        if let Some(inner_13) = &self.message {
+            {
+                write!(f, ": {}", inner_13)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for XksProxyVpcEndpointServiceNotFoundException {}
+/// See [`XksProxyVpcEndpointServiceNotFoundException`](crate::error::XksProxyVpcEndpointServiceNotFoundException).
+pub mod xks_proxy_vpc_endpoint_service_not_found_exception {
+
+    /// A builder for [`XksProxyVpcEndpointServiceNotFoundException`](crate::error::XksProxyVpcEndpointServiceNotFoundException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksProxyVpcEndpointServiceNotFoundException`](crate::error::XksProxyVpcEndpointServiceNotFoundException).
+        pub fn build(self) -> crate::error::XksProxyVpcEndpointServiceNotFoundException {
+            crate::error::XksProxyVpcEndpointServiceNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl XksProxyVpcEndpointServiceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`XksProxyVpcEndpointServiceNotFoundException`](crate::error::XksProxyVpcEndpointServiceNotFoundException).
+    pub fn builder() -> crate::error::xks_proxy_vpc_endpoint_service_not_found_exception::Builder {
+        crate::error::xks_proxy_vpc_endpoint_service_not_found_exception::Builder::default()
+    }
+}
+
+/// <p>The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the requirements for an external key store proxy. For details, see the exception message and <a href="kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review the requirements</a> for Amazon VPC endpoint service connectivity for an external key store.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct XksProxyVpcEndpointServiceInvalidConfigurationException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl XksProxyVpcEndpointServiceInvalidConfigurationException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for XksProxyVpcEndpointServiceInvalidConfigurationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "XksProxyVpcEndpointServiceInvalidConfigurationException")?;
+        if let Some(inner_14) = &self.message {
+            {
+                write!(f, ": {}", inner_14)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for XksProxyVpcEndpointServiceInvalidConfigurationException {}
+/// See [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
+pub mod xks_proxy_vpc_endpoint_service_invalid_configuration_exception {
+
+    /// A builder for [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
+        pub fn build(
+            self,
+        ) -> crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException {
+            crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl XksProxyVpcEndpointServiceInvalidConfigurationException {
+    /// Creates a new builder-style object to manufacture [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
+    pub fn builder(
+    ) -> crate::error::xks_proxy_vpc_endpoint_service_invalid_configuration_exception::Builder {
+        crate::error::xks_proxy_vpc_endpoint_service_invalid_configuration_exception::Builder::default()
+    }
+}
+
+/// <p>The request was rejected because the specified Amazon VPC endpoint service is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an Amazon Web Services account and Region must use a different Amazon VPC endpoint service.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct XksProxyVpcEndpointServiceInUseException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl XksProxyVpcEndpointServiceInUseException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for XksProxyVpcEndpointServiceInUseException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "XksProxyVpcEndpointServiceInUseException")?;
+        if let Some(inner_15) = &self.message {
+            {
+                write!(f, ": {}", inner_15)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for XksProxyVpcEndpointServiceInUseException {}
+/// See [`XksProxyVpcEndpointServiceInUseException`](crate::error::XksProxyVpcEndpointServiceInUseException).
+pub mod xks_proxy_vpc_endpoint_service_in_use_exception {
+
+    /// A builder for [`XksProxyVpcEndpointServiceInUseException`](crate::error::XksProxyVpcEndpointServiceInUseException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksProxyVpcEndpointServiceInUseException`](crate::error::XksProxyVpcEndpointServiceInUseException).
+        pub fn build(self) -> crate::error::XksProxyVpcEndpointServiceInUseException {
+            crate::error::XksProxyVpcEndpointServiceInUseException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl XksProxyVpcEndpointServiceInUseException {
+    /// Creates a new builder-style object to manufacture [`XksProxyVpcEndpointServiceInUseException`](crate::error::XksProxyVpcEndpointServiceInUseException).
+    pub fn builder() -> crate::error::xks_proxy_vpc_endpoint_service_in_use_exception::Builder {
+        crate::error::xks_proxy_vpc_endpoint_service_in_use_exception::Builder::default()
+    }
+}
+
+/// <p>KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must be reachable before you create the external key store or update its settings.</p>
+/// <p>This exception is also thrown when the external key store proxy response to a <code>GetHealthStatus</code> request indicates that all external key manager instances are unavailable.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct XksProxyUriUnreachableException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl XksProxyUriUnreachableException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for XksProxyUriUnreachableException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "XksProxyUriUnreachableException")?;
+        if let Some(inner_16) = &self.message {
+            {
+                write!(f, ": {}", inner_16)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for XksProxyUriUnreachableException {}
+/// See [`XksProxyUriUnreachableException`](crate::error::XksProxyUriUnreachableException).
+pub mod xks_proxy_uri_unreachable_exception {
+
+    /// A builder for [`XksProxyUriUnreachableException`](crate::error::XksProxyUriUnreachableException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksProxyUriUnreachableException`](crate::error::XksProxyUriUnreachableException).
+        pub fn build(self) -> crate::error::XksProxyUriUnreachableException {
+            crate::error::XksProxyUriUnreachableException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl XksProxyUriUnreachableException {
+    /// Creates a new builder-style object to manufacture [`XksProxyUriUnreachableException`](crate::error::XksProxyUriUnreachableException).
+    pub fn builder() -> crate::error::xks_proxy_uri_unreachable_exception::Builder {
+        crate::error::xks_proxy_uri_unreachable_exception::Builder::default()
+    }
+}
+
+/// <p>The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an account and Region must use a unique external key store proxy API address.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct XksProxyUriInUseException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl XksProxyUriInUseException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for XksProxyUriInUseException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "XksProxyUriInUseException")?;
+        if let Some(inner_17) = &self.message {
+            {
+                write!(f, ": {}", inner_17)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for XksProxyUriInUseException {}
+/// See [`XksProxyUriInUseException`](crate::error::XksProxyUriInUseException).
+pub mod xks_proxy_uri_in_use_exception {
+
+    /// A builder for [`XksProxyUriInUseException`](crate::error::XksProxyUriInUseException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksProxyUriInUseException`](crate::error::XksProxyUriInUseException).
+        pub fn build(self) -> crate::error::XksProxyUriInUseException {
+            crate::error::XksProxyUriInUseException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl XksProxyUriInUseException {
+    /// Creates a new builder-style object to manufacture [`XksProxyUriInUseException`](crate::error::XksProxyUriInUseException).
+    pub fn builder() -> crate::error::xks_proxy_uri_in_use_exception::Builder {
+        crate::error::xks_proxy_uri_in_use_exception::Builder::default()
+    }
+}
+
+/// <p>The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code> is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an account and Region must use a unique external key store proxy address.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct XksProxyUriEndpointInUseException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl XksProxyUriEndpointInUseException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for XksProxyUriEndpointInUseException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "XksProxyUriEndpointInUseException")?;
+        if let Some(inner_18) = &self.message {
+            {
+                write!(f, ": {}", inner_18)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for XksProxyUriEndpointInUseException {}
+/// See [`XksProxyUriEndpointInUseException`](crate::error::XksProxyUriEndpointInUseException).
+pub mod xks_proxy_uri_endpoint_in_use_exception {
+
+    /// A builder for [`XksProxyUriEndpointInUseException`](crate::error::XksProxyUriEndpointInUseException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksProxyUriEndpointInUseException`](crate::error::XksProxyUriEndpointInUseException).
+        pub fn build(self) -> crate::error::XksProxyUriEndpointInUseException {
+            crate::error::XksProxyUriEndpointInUseException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl XksProxyUriEndpointInUseException {
+    /// Creates a new builder-style object to manufacture [`XksProxyUriEndpointInUseException`](crate::error::XksProxyUriEndpointInUseException).
+    pub fn builder() -> crate::error::xks_proxy_uri_endpoint_in_use_exception::Builder {
+        crate::error::xks_proxy_uri_endpoint_in_use_exception::Builder::default()
+    }
+}
+
+/// <p></p>
+/// <p>KMS cannot interpret the response it received from the external key store proxy. The problem might be a poorly constructed response, but it could also be a transient network issue. If you see this error repeatedly, report it to the proxy vendor.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct XksProxyInvalidResponseException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl XksProxyInvalidResponseException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for XksProxyInvalidResponseException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "XksProxyInvalidResponseException")?;
+        if let Some(inner_19) = &self.message {
+            {
+                write!(f, ": {}", inner_19)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for XksProxyInvalidResponseException {}
+/// See [`XksProxyInvalidResponseException`](crate::error::XksProxyInvalidResponseException).
+pub mod xks_proxy_invalid_response_exception {
+
+    /// A builder for [`XksProxyInvalidResponseException`](crate::error::XksProxyInvalidResponseException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksProxyInvalidResponseException`](crate::error::XksProxyInvalidResponseException).
+        pub fn build(self) -> crate::error::XksProxyInvalidResponseException {
+            crate::error::XksProxyInvalidResponseException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl XksProxyInvalidResponseException {
+    /// Creates a new builder-style object to manufacture [`XksProxyInvalidResponseException`](crate::error::XksProxyInvalidResponseException).
+    pub fn builder() -> crate::error::xks_proxy_invalid_response_exception::Builder {
+        crate::error::xks_proxy_invalid_response_exception::Builder::default()
+    }
+}
+
+/// <p>The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the requirements for an external key store proxy. For details, see the exception message.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct XksProxyInvalidConfigurationException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl XksProxyInvalidConfigurationException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for XksProxyInvalidConfigurationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "XksProxyInvalidConfigurationException")?;
+        if let Some(inner_20) = &self.message {
+            {
+                write!(f, ": {}", inner_20)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for XksProxyInvalidConfigurationException {}
+/// See [`XksProxyInvalidConfigurationException`](crate::error::XksProxyInvalidConfigurationException).
+pub mod xks_proxy_invalid_configuration_exception {
+
+    /// A builder for [`XksProxyInvalidConfigurationException`](crate::error::XksProxyInvalidConfigurationException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksProxyInvalidConfigurationException`](crate::error::XksProxyInvalidConfigurationException).
+        pub fn build(self) -> crate::error::XksProxyInvalidConfigurationException {
+            crate::error::XksProxyInvalidConfigurationException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl XksProxyInvalidConfigurationException {
+    /// Creates a new builder-style object to manufacture [`XksProxyInvalidConfigurationException`](crate::error::XksProxyInvalidConfigurationException).
+    pub fn builder() -> crate::error::xks_proxy_invalid_configuration_exception::Builder {
+        crate::error::xks_proxy_invalid_configuration_exception::Builder::default()
+    }
+}
+
+/// <p>The request was rejected because the proxy credentials failed to authenticate to the specified external key store proxy. The specified external key store proxy rejected a status request from KMS due to invalid credentials. This can indicate an error in the credentials or in the identification of the external key store proxy.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct XksProxyIncorrectAuthenticationCredentialException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl XksProxyIncorrectAuthenticationCredentialException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for XksProxyIncorrectAuthenticationCredentialException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "XksProxyIncorrectAuthenticationCredentialException")?;
+        if let Some(inner_21) = &self.message {
+            {
+                write!(f, ": {}", inner_21)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for XksProxyIncorrectAuthenticationCredentialException {}
+/// See [`XksProxyIncorrectAuthenticationCredentialException`](crate::error::XksProxyIncorrectAuthenticationCredentialException).
+pub mod xks_proxy_incorrect_authentication_credential_exception {
+
+    /// A builder for [`XksProxyIncorrectAuthenticationCredentialException`](crate::error::XksProxyIncorrectAuthenticationCredentialException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksProxyIncorrectAuthenticationCredentialException`](crate::error::XksProxyIncorrectAuthenticationCredentialException).
+        pub fn build(self) -> crate::error::XksProxyIncorrectAuthenticationCredentialException {
+            crate::error::XksProxyIncorrectAuthenticationCredentialException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl XksProxyIncorrectAuthenticationCredentialException {
+    /// Creates a new builder-style object to manufacture [`XksProxyIncorrectAuthenticationCredentialException`](crate::error::XksProxyIncorrectAuthenticationCredentialException).
+    pub fn builder(
+    ) -> crate::error::xks_proxy_incorrect_authentication_credential_exception::Builder {
+        crate::error::xks_proxy_incorrect_authentication_credential_exception::Builder::default()
+    }
+}
+
 /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -747,9 +1297,9 @@ impl CustomKeyStoreNotFoundException {
 impl std::fmt::Display for CustomKeyStoreNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomKeyStoreNotFoundException")?;
-        if let Some(inner_13) = &self.message {
+        if let Some(inner_22) = &self.message {
             {
-                write!(f, ": {}", inner_13)?;
+                write!(f, ": {}", inner_22)?;
             }
         }
         Ok(())
@@ -807,9 +1357,9 @@ impl CustomKeyStoreNameInUseException {
 impl std::fmt::Display for CustomKeyStoreNameInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomKeyStoreNameInUseException")?;
-        if let Some(inner_14) = &self.message {
+        if let Some(inner_23) = &self.message {
             {
-                write!(f, ": {}", inner_14)?;
+                write!(f, ": {}", inner_23)?;
             }
         }
         Ok(())
@@ -853,9 +1403,11 @@ impl CustomKeyStoreNameInUseException {
 /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
 /// <p>This exception is thrown under the following conditions:</p>
 /// <ul>
-/// <li> <p>You requested the <code>CreateKey</code> or <code>GenerateRandom</code> operation in a custom key store that is not connected. These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+/// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li>
+/// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+/// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
 /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
-/// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
+/// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -873,9 +1425,9 @@ impl CustomKeyStoreInvalidStateException {
 impl std::fmt::Display for CustomKeyStoreInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomKeyStoreInvalidStateException")?;
-        if let Some(inner_15) = &self.message {
+        if let Some(inner_24) = &self.message {
             {
-                write!(f, ": {}", inner_15)?;
+                write!(f, ": {}", inner_24)?;
             }
         }
         Ok(())
@@ -916,9 +1468,9 @@ impl CustomKeyStoreInvalidStateException {
     }
 }
 
-/// <p>The request was rejected because the specified CloudHSM cluster has a different cluster certificate than the original cluster. You cannot use the operation to specify an unrelated cluster.</p>
-/// <p>Specify a cluster that shares a backup history with the original cluster. This includes clusters that were created from a backup of the current cluster, and clusters that were created from the same backup that produced the current cluster.</p>
-/// <p>Clusters that share a backup history have the same cluster certificate. To view the cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
+/// <p>The request was rejected because the specified CloudHSM cluster has a different cluster certificate than the original cluster. You cannot use the operation to specify an unrelated cluster for an CloudHSM key store.</p>
+/// <p>Specify an CloudHSM cluster that shares a backup history with the original cluster. This includes clusters that were created from a backup of the current cluster, and clusters that were created from the same backup that produced the current cluster.</p>
+/// <p>CloudHSM clusters that share a backup history have the same cluster certificate. To view the cluster certificate of an CloudHSM cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudHsmClusterNotRelatedException {
@@ -935,9 +1487,9 @@ impl CloudHsmClusterNotRelatedException {
 impl std::fmt::Display for CloudHsmClusterNotRelatedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterNotRelatedException")?;
-        if let Some(inner_16) = &self.message {
+        if let Some(inner_25) = &self.message {
             {
-                write!(f, ": {}", inner_16)?;
+                write!(f, ": {}", inner_25)?;
             }
         }
         Ok(())
@@ -995,9 +1547,9 @@ impl CloudHsmClusterNotFoundException {
 impl std::fmt::Display for CloudHsmClusterNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterNotFoundException")?;
-        if let Some(inner_17) = &self.message {
+        if let Some(inner_26) = &self.message {
             {
-                write!(f, ": {}", inner_17)?;
+                write!(f, ": {}", inner_26)?;
             }
         }
         Ok(())
@@ -1038,7 +1590,7 @@ impl CloudHsmClusterNotFoundException {
     }
 }
 
-/// <p>The request was rejected because the CloudHSM cluster that is associated with the custom key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
+/// <p>The request was rejected because the CloudHSM cluster associated with the CloudHSM key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudHsmClusterNotActiveException {
@@ -1055,9 +1607,9 @@ impl CloudHsmClusterNotActiveException {
 impl std::fmt::Display for CloudHsmClusterNotActiveException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterNotActiveException")?;
-        if let Some(inner_18) = &self.message {
+        if let Some(inner_27) = &self.message {
             {
-                write!(f, ": {}", inner_18)?;
+                write!(f, ": {}", inner_27)?;
             }
         }
         Ok(())
@@ -1098,14 +1650,14 @@ impl CloudHsmClusterNotActiveException {
     }
 }
 
-/// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for a custom key store.</p>
+/// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p>
 /// <ul>
-/// <li> <p>The cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+/// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
 /// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
-/// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
-/// <li> <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
+/// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
+/// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
 /// </ul>
-/// <p>For information about the requirements for an CloudHSM cluster that is associated with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
+/// <p>For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudHsmClusterInvalidConfigurationException {
@@ -1122,9 +1674,9 @@ impl CloudHsmClusterInvalidConfigurationException {
 impl std::fmt::Display for CloudHsmClusterInvalidConfigurationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterInvalidConfigurationException")?;
-        if let Some(inner_19) = &self.message {
+        if let Some(inner_28) = &self.message {
             {
-                write!(f, ": {}", inner_19)?;
+                write!(f, ": {}", inner_28)?;
             }
         }
         Ok(())
@@ -1182,9 +1734,9 @@ impl LimitExceededException {
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
-        if let Some(inner_20) = &self.message {
+        if let Some(inner_29) = &self.message {
             {
-                write!(f, ": {}", inner_20)?;
+                write!(f, ": {}", inner_29)?;
             }
         }
         Ok(())
@@ -1242,9 +1794,9 @@ impl TagException {
 impl std::fmt::Display for TagException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagException")?;
-        if let Some(inner_21) = &self.message {
+        if let Some(inner_30) = &self.message {
             {
-                write!(f, ": {}", inner_21)?;
+                write!(f, ": {}", inner_30)?;
             }
         }
         Ok(())
@@ -1302,9 +1854,9 @@ impl InvalidGrantIdException {
 impl std::fmt::Display for InvalidGrantIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGrantIdException")?;
-        if let Some(inner_22) = &self.message {
+        if let Some(inner_31) = &self.message {
             {
-                write!(f, ": {}", inner_22)?;
+                write!(f, ": {}", inner_31)?;
             }
         }
         Ok(())
@@ -1362,9 +1914,9 @@ impl MalformedPolicyDocumentException {
 impl std::fmt::Display for MalformedPolicyDocumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MalformedPolicyDocumentException")?;
-        if let Some(inner_23) = &self.message {
+        if let Some(inner_32) = &self.message {
             {
-                write!(f, ": {}", inner_23)?;
+                write!(f, ": {}", inner_32)?;
             }
         }
         Ok(())
@@ -1422,9 +1974,9 @@ impl AlreadyExistsException {
 impl std::fmt::Display for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AlreadyExistsException")?;
-        if let Some(inner_24) = &self.message {
+        if let Some(inner_33) = &self.message {
             {
-                write!(f, ": {}", inner_24)?;
+                write!(f, ": {}", inner_33)?;
             }
         }
         Ok(())
@@ -1483,9 +2035,9 @@ impl InvalidCiphertextException {
 impl std::fmt::Display for InvalidCiphertextException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCiphertextException")?;
-        if let Some(inner_25) = &self.message {
+        if let Some(inner_34) = &self.message {
             {
-                write!(f, ": {}", inner_25)?;
+                write!(f, ": {}", inner_34)?;
             }
         }
         Ok(())
@@ -1543,9 +2095,9 @@ impl IncorrectKeyException {
 impl std::fmt::Display for IncorrectKeyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IncorrectKeyException")?;
-        if let Some(inner_26) = &self.message {
+        if let Some(inner_35) = &self.message {
             {
-                write!(f, ": {}", inner_26)?;
+                write!(f, ": {}", inner_35)?;
             }
         }
         Ok(())
@@ -1603,9 +2155,9 @@ impl InvalidMarkerException {
 impl std::fmt::Display for InvalidMarkerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMarkerException")?;
-        if let Some(inner_27) = &self.message {
+        if let Some(inner_36) = &self.message {
             {
-                write!(f, ": {}", inner_27)?;
+                write!(f, ": {}", inner_36)?;
             }
         }
         Ok(())
@@ -1663,9 +2215,9 @@ impl InvalidImportTokenException {
 impl std::fmt::Display for InvalidImportTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidImportTokenException")?;
-        if let Some(inner_28) = &self.message {
+        if let Some(inner_37) = &self.message {
             {
-                write!(f, ": {}", inner_28)?;
+                write!(f, ": {}", inner_37)?;
             }
         }
         Ok(())
@@ -1723,9 +2275,9 @@ impl IncorrectKeyMaterialException {
 impl std::fmt::Display for IncorrectKeyMaterialException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IncorrectKeyMaterialException")?;
-        if let Some(inner_29) = &self.message {
+        if let Some(inner_38) = &self.message {
             {
-                write!(f, ": {}", inner_29)?;
+                write!(f, ": {}", inner_38)?;
             }
         }
         Ok(())
@@ -1783,9 +2335,9 @@ impl ExpiredImportTokenException {
 impl std::fmt::Display for ExpiredImportTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredImportTokenException")?;
-        if let Some(inner_30) = &self.message {
+        if let Some(inner_39) = &self.message {
             {
-                write!(f, ": {}", inner_30)?;
+                write!(f, ": {}", inner_39)?;
             }
         }
         Ok(())
@@ -1846,9 +2398,9 @@ impl std::fmt::Display for CustomKeyStoreHasCmKsException {
             f,
             "CustomKeyStoreHasCmKsException [CustomKeyStoreHasCMKsException]"
         )?;
-        if let Some(inner_31) = &self.message {
+        if let Some(inner_40) = &self.message {
             {
-                write!(f, ": {}", inner_31)?;
+                write!(f, ": {}", inner_40)?;
             }
         }
         Ok(())
@@ -1889,8 +2441,190 @@ impl CustomKeyStoreHasCmKsException {
     }
 }
 
-/// <p>The request was rejected because the trust anchor certificate in the request is not the trust anchor certificate for the specified CloudHSM cluster.</p>
-/// <p>When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code> file.</p>
+/// <p>The request was rejected because the external key store proxy could not find the external key. This exception is thrown when the value of the <code>XksKeyId</code> parameter doesn't identify a key in the external key manager associated with the external key proxy.</p>
+/// <p>Verify that the <code>XksKeyId</code> represents an existing key in the external key manager. Use the key identifier that the external key store proxy uses to identify the key. For details, see the documentation provided with your external key store proxy or key manager.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct XksKeyNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl XksKeyNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for XksKeyNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "XksKeyNotFoundException")?;
+        if let Some(inner_41) = &self.message {
+            {
+                write!(f, ": {}", inner_41)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for XksKeyNotFoundException {}
+/// See [`XksKeyNotFoundException`](crate::error::XksKeyNotFoundException).
+pub mod xks_key_not_found_exception {
+
+    /// A builder for [`XksKeyNotFoundException`](crate::error::XksKeyNotFoundException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksKeyNotFoundException`](crate::error::XksKeyNotFoundException).
+        pub fn build(self) -> crate::error::XksKeyNotFoundException {
+            crate::error::XksKeyNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl XksKeyNotFoundException {
+    /// Creates a new builder-style object to manufacture [`XksKeyNotFoundException`](crate::error::XksKeyNotFoundException).
+    pub fn builder() -> crate::error::xks_key_not_found_exception::Builder {
+        crate::error::xks_key_not_found_exception::Builder::default()
+    }
+}
+
+/// <p>The request was rejected because the external key specified by the <code>XksKeyId</code> parameter did not meet the configuration requirements for an external key store.</p>
+/// <p>The external key must be an AES-256 symmetric key that is enabled and performs encryption and decryption.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct XksKeyInvalidConfigurationException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl XksKeyInvalidConfigurationException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for XksKeyInvalidConfigurationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "XksKeyInvalidConfigurationException")?;
+        if let Some(inner_42) = &self.message {
+            {
+                write!(f, ": {}", inner_42)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for XksKeyInvalidConfigurationException {}
+/// See [`XksKeyInvalidConfigurationException`](crate::error::XksKeyInvalidConfigurationException).
+pub mod xks_key_invalid_configuration_exception {
+
+    /// A builder for [`XksKeyInvalidConfigurationException`](crate::error::XksKeyInvalidConfigurationException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksKeyInvalidConfigurationException`](crate::error::XksKeyInvalidConfigurationException).
+        pub fn build(self) -> crate::error::XksKeyInvalidConfigurationException {
+            crate::error::XksKeyInvalidConfigurationException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl XksKeyInvalidConfigurationException {
+    /// Creates a new builder-style object to manufacture [`XksKeyInvalidConfigurationException`](crate::error::XksKeyInvalidConfigurationException).
+    pub fn builder() -> crate::error::xks_key_invalid_configuration_exception::Builder {
+        crate::error::xks_key_invalid_configuration_exception::Builder::default()
+    }
+}
+
+/// <p>The request was rejected because the (<code>XksKeyId</code>) is already associated with a KMS key in this external key store. Each KMS key in an external key store must be associated with a different external key.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct XksKeyAlreadyInUseException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl XksKeyAlreadyInUseException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for XksKeyAlreadyInUseException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "XksKeyAlreadyInUseException")?;
+        if let Some(inner_43) = &self.message {
+            {
+                write!(f, ": {}", inner_43)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for XksKeyAlreadyInUseException {}
+/// See [`XksKeyAlreadyInUseException`](crate::error::XksKeyAlreadyInUseException).
+pub mod xks_key_already_in_use_exception {
+
+    /// A builder for [`XksKeyAlreadyInUseException`](crate::error::XksKeyAlreadyInUseException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksKeyAlreadyInUseException`](crate::error::XksKeyAlreadyInUseException).
+        pub fn build(self) -> crate::error::XksKeyAlreadyInUseException {
+            crate::error::XksKeyAlreadyInUseException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl XksKeyAlreadyInUseException {
+    /// Creates a new builder-style object to manufacture [`XksKeyAlreadyInUseException`](crate::error::XksKeyAlreadyInUseException).
+    pub fn builder() -> crate::error::xks_key_already_in_use_exception::Builder {
+        crate::error::xks_key_already_in_use_exception::Builder::default()
+    }
+}
+
+/// <p>The request was rejected because the trust anchor certificate in the request to create an CloudHSM key store is not the trust anchor certificate for the specified CloudHSM cluster.</p>
+/// <p>When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the CloudHSM cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code> file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncorrectTrustAnchorException {
@@ -1907,9 +2641,9 @@ impl IncorrectTrustAnchorException {
 impl std::fmt::Display for IncorrectTrustAnchorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IncorrectTrustAnchorException")?;
-        if let Some(inner_32) = &self.message {
+        if let Some(inner_44) = &self.message {
             {
-                write!(f, ": {}", inner_32)?;
+                write!(f, ": {}", inner_44)?;
             }
         }
         Ok(())
@@ -1950,8 +2684,8 @@ impl IncorrectTrustAnchorException {
     }
 }
 
-/// <p>The request was rejected because the specified CloudHSM cluster is already associated with a custom key store or it shares a backup history with a cluster that is associated with a custom key store. Each custom key store must be associated with a different CloudHSM cluster.</p>
-/// <p>Clusters that share a backup history have the same cluster certificate. To view the cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
+/// <p>The request was rejected because the specified CloudHSM cluster is already associated with an CloudHSM key store in the account, or it shares a backup history with an CloudHSM key store in the account. Each CloudHSM key store in the account must be associated with a different CloudHSM cluster.</p>
+/// <p>CloudHSM clusters that share a backup history have the same cluster certificate. To view the cluster certificate of an CloudHSM cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudHsmClusterInUseException {
@@ -1968,9 +2702,9 @@ impl CloudHsmClusterInUseException {
 impl std::fmt::Display for CloudHsmClusterInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterInUseException")?;
-        if let Some(inner_33) = &self.message {
+        if let Some(inner_45) = &self.message {
             {
-                write!(f, ": {}", inner_33)?;
+                write!(f, ": {}", inner_45)?;
             }
         }
         Ok(())
@@ -2028,9 +2762,9 @@ impl InvalidAliasNameException {
 impl std::fmt::Display for InvalidAliasNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAliasNameException")?;
-        if let Some(inner_34) = &self.message {
+        if let Some(inner_46) = &self.message {
             {
-                write!(f, ": {}", inner_34)?;
+                write!(f, ": {}", inner_46)?;
             }
         }
         Ok(())
@@ -2092,14 +2826,18 @@ impl aws_smithy_http::result::CreateUnhandledError for CancelKeyDeletionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelKeyDeletionErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -2242,25 +2980,27 @@ impl aws_smithy_http::result::CreateUnhandledError for ConnectCustomKeyStoreErro
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConnectCustomKeyStoreErrorKind {
-    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for a custom key store.</p>
+    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p>
     /// <ul>
-    /// <li> <p>The cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+    /// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
     /// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
-    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
-    /// <li> <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
+    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
+    /// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
     /// </ul>
-    /// <p>For information about the requirements for an CloudHSM cluster that is associated with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
+    /// <p>For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
     CloudHsmClusterInvalidConfigurationException(
         crate::error::CloudHsmClusterInvalidConfigurationException,
     ),
-    /// <p>The request was rejected because the CloudHSM cluster that is associated with the custom key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
+    /// <p>The request was rejected because the CloudHSM cluster associated with the CloudHSM key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
     CloudHsmClusterNotActiveException(crate::error::CloudHsmClusterNotActiveException),
     /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This exception is thrown under the following conditions:</p>
     /// <ul>
-    /// <li> <p>You requested the <code>CreateKey</code> or <code>GenerateRandom</code> operation in a custom key store that is not connected. These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li>
+    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
     /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
+    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li>
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
     /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
@@ -2429,14 +3169,18 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateAliasError {
 pub enum CreateAliasErrorKind {
     /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified alias name is not valid.</p>
     InvalidAliasNameException(crate::error::InvalidAliasNameException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -2590,31 +3334,61 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateCustomKeyStoreError
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCustomKeyStoreErrorKind {
-    /// <p>The request was rejected because the specified CloudHSM cluster is already associated with a custom key store or it shares a backup history with a cluster that is associated with a custom key store. Each custom key store must be associated with a different CloudHSM cluster.</p>
-    /// <p>Clusters that share a backup history have the same cluster certificate. To view the cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
+    /// <p>The request was rejected because the specified CloudHSM cluster is already associated with an CloudHSM key store in the account, or it shares a backup history with an CloudHSM key store in the account. Each CloudHSM key store in the account must be associated with a different CloudHSM cluster.</p>
+    /// <p>CloudHSM clusters that share a backup history have the same cluster certificate. To view the cluster certificate of an CloudHSM cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
     CloudHsmClusterInUseException(crate::error::CloudHsmClusterInUseException),
-    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for a custom key store.</p>
+    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p>
     /// <ul>
-    /// <li> <p>The cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+    /// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
     /// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
-    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
-    /// <li> <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
+    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
+    /// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
     /// </ul>
-    /// <p>For information about the requirements for an CloudHSM cluster that is associated with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
+    /// <p>For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
     CloudHsmClusterInvalidConfigurationException(
         crate::error::CloudHsmClusterInvalidConfigurationException,
     ),
-    /// <p>The request was rejected because the CloudHSM cluster that is associated with the custom key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
+    /// <p>The request was rejected because the CloudHSM cluster associated with the CloudHSM key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
     CloudHsmClusterNotActiveException(crate::error::CloudHsmClusterNotActiveException),
     /// <p>The request was rejected because KMS cannot find the CloudHSM cluster with the specified cluster ID. Retry the request with a different cluster ID.</p>
     CloudHsmClusterNotFoundException(crate::error::CloudHsmClusterNotFoundException),
     /// <p>The request was rejected because the specified custom key store name is already assigned to another custom key store in the account. Try again with a custom key store name that is unique in the account.</p>
     CustomKeyStoreNameInUseException(crate::error::CustomKeyStoreNameInUseException),
-    /// <p>The request was rejected because the trust anchor certificate in the request is not the trust anchor certificate for the specified CloudHSM cluster.</p>
-    /// <p>When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code> file.</p>
+    /// <p>The request was rejected because the trust anchor certificate in the request to create an CloudHSM key store is not the trust anchor certificate for the specified CloudHSM cluster.</p>
+    /// <p>When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the CloudHSM cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code> file.</p>
     IncorrectTrustAnchorException(crate::error::IncorrectTrustAnchorException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
+    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The request was rejected because the proxy credentials failed to authenticate to the specified external key store proxy. The specified external key store proxy rejected a status request from KMS due to invalid credentials. This can indicate an error in the credentials or in the identification of the external key store proxy.</p>
+    XksProxyIncorrectAuthenticationCredentialException(
+        crate::error::XksProxyIncorrectAuthenticationCredentialException,
+    ),
+    /// <p>The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the requirements for an external key store proxy. For details, see the exception message.</p>
+    XksProxyInvalidConfigurationException(crate::error::XksProxyInvalidConfigurationException),
+    /// <p></p>
+    /// <p>KMS cannot interpret the response it received from the external key store proxy. The problem might be a poorly constructed response, but it could also be a transient network issue. If you see this error repeatedly, report it to the proxy vendor.</p>
+    XksProxyInvalidResponseException(crate::error::XksProxyInvalidResponseException),
+    /// <p>The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code> is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an account and Region must use a unique external key store proxy address.</p>
+    XksProxyUriEndpointInUseException(crate::error::XksProxyUriEndpointInUseException),
+    /// <p>The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an account and Region must use a unique external key store proxy API address.</p>
+    XksProxyUriInUseException(crate::error::XksProxyUriInUseException),
+    /// <p>KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must be reachable before you create the external key store or update its settings.</p>
+    /// <p>This exception is also thrown when the external key store proxy response to a <code>GetHealthStatus</code> request indicates that all external key manager instances are unavailable.</p>
+    XksProxyUriUnreachableException(crate::error::XksProxyUriUnreachableException),
+    /// <p>The request was rejected because the specified Amazon VPC endpoint service is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an Amazon Web Services account and Region must use a different Amazon VPC endpoint service.</p>
+    XksProxyVpcEndpointServiceInUseException(
+        crate::error::XksProxyVpcEndpointServiceInUseException,
+    ),
+    /// <p>The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the requirements for an external key store proxy. For details, see the exception message and <a href="kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review the requirements</a> for Amazon VPC endpoint service connectivity for an external key store.</p>
+    XksProxyVpcEndpointServiceInvalidConfigurationException(
+        crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException,
+    ),
+    /// <p>The request was rejected because KMS could not find the specified VPC endpoint service. Use <code>DescribeCustomKeyStores</code> to verify the VPC endpoint service name for the external key store. Also, confirm that the <code>Allow principals</code> list for the VPC endpoint service includes the KMS service principal for the Region, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p>
+    XksProxyVpcEndpointServiceNotFoundException(
+        crate::error::XksProxyVpcEndpointServiceNotFoundException,
+    ),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -2628,22 +3402,60 @@ pub enum CreateCustomKeyStoreErrorKind {
 impl std::fmt::Display for CreateCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException(_inner) => _inner.fmt(f),
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) => {
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyInvalidResponseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyUriInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyUriUnreachableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomKeyStoreErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException(_inner) => _inner.fmt(f),
-            CreateCustomKeyStoreErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            CreateCustomKeyStoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2750,22 +3562,136 @@ impl CreateCustomKeyStoreError {
             CreateCustomKeyStoreErrorKind::KmsInternalException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException`.
+    pub fn is_xks_proxy_incorrect_authentication_credential_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException`.
+    pub fn is_xks_proxy_invalid_configuration_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyInvalidResponseException`.
+    pub fn is_xks_proxy_invalid_response_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::XksProxyInvalidResponseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException`.
+    pub fn is_xks_proxy_uri_endpoint_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyUriInUseException`.
+    pub fn is_xks_proxy_uri_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::XksProxyUriInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyUriUnreachableException`.
+    pub fn is_xks_proxy_uri_unreachable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::XksProxyUriUnreachableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException`.
+    pub fn is_xks_proxy_vpc_endpoint_service_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException`.
+    pub fn is_xks_proxy_vpc_endpoint_service_invalid_configuration_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException`.
+    pub fn is_xks_proxy_vpc_endpoint_service_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException(_)
+        )
+    }
 }
 impl std::error::Error for CreateCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException(_inner) => Some(_inner),
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) => {
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyInvalidResponseException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyUriInUseException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyUriUnreachableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomKeyStoreErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) => {
-                Some(_inner)
-            }
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_inner) => Some(_inner),
-            CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_inner) => Some(_inner),
-            CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException(_inner) => Some(_inner),
-            CreateCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
-            CreateCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2791,7 +3717,7 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateGrantError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGrantErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -2802,7 +3728,11 @@ pub enum CreateGrantErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -2962,28 +3892,30 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateKeyErrorKind {
-    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for a custom key store.</p>
+    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p>
     /// <ul>
-    /// <li> <p>The cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+    /// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
     /// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
-    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
-    /// <li> <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
+    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
+    /// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
     /// </ul>
-    /// <p>For information about the requirements for an CloudHSM cluster that is associated with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
+    /// <p>For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
     CloudHsmClusterInvalidConfigurationException(
         crate::error::CloudHsmClusterInvalidConfigurationException,
     ),
     /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This exception is thrown under the following conditions:</p>
     /// <ul>
-    /// <li> <p>You requested the <code>CreateKey</code> or <code>GenerateRandom</code> operation in a custom key store that is not connected. These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li>
+    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
     /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
+    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li>
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
     /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
     CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
@@ -2997,6 +3929,14 @@ pub enum CreateKeyErrorKind {
     TagException(crate::error::TagException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// <p>The request was rejected because the (<code>XksKeyId</code>) is already associated with a KMS key in this external key store. Each KMS key in an external key store must be associated with a different external key.</p>
+    XksKeyAlreadyInUseException(crate::error::XksKeyAlreadyInUseException),
+    /// <p>The request was rejected because the external key specified by the <code>XksKeyId</code> parameter did not meet the configuration requirements for an external key store.</p>
+    /// <p>The external key must be an AES-256 symmetric key that is enabled and performs encryption and decryption.</p>
+    XksKeyInvalidConfigurationException(crate::error::XksKeyInvalidConfigurationException),
+    /// <p>The request was rejected because the external key store proxy could not find the external key. This exception is thrown when the value of the <code>XksKeyId</code> parameter doesn't identify a key in the external key manager associated with the external key proxy.</p>
+    /// <p>Verify that the <code>XksKeyId</code> represents an existing key in the external key manager. Use the key identifier that the external key store proxy uses to identify the key. For details, see the documentation provided with your external key store proxy or key manager.</p>
+    XksKeyNotFoundException(crate::error::XksKeyNotFoundException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -3022,6 +3962,9 @@ impl std::fmt::Display for CreateKeyError {
             CreateKeyErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
             CreateKeyErrorKind::TagException(_inner) => _inner.fmt(f),
             CreateKeyErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            CreateKeyErrorKind::XksKeyAlreadyInUseException(_inner) => _inner.fmt(f),
+            CreateKeyErrorKind::XksKeyInvalidConfigurationException(_inner) => _inner.fmt(f),
+            CreateKeyErrorKind::XksKeyNotFoundException(_inner) => _inner.fmt(f),
             CreateKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3134,6 +4077,24 @@ impl CreateKeyError {
             CreateKeyErrorKind::UnsupportedOperationException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateKeyErrorKind::XksKeyAlreadyInUseException`.
+    pub fn is_xks_key_already_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeyErrorKind::XksKeyAlreadyInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateKeyErrorKind::XksKeyInvalidConfigurationException`.
+    pub fn is_xks_key_invalid_configuration_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeyErrorKind::XksKeyInvalidConfigurationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateKeyErrorKind::XksKeyNotFoundException`.
+    pub fn is_xks_key_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateKeyErrorKind::XksKeyNotFoundException(_))
+    }
 }
 impl std::error::Error for CreateKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3150,6 +4111,9 @@ impl std::error::Error for CreateKeyError {
             CreateKeyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
             CreateKeyErrorKind::TagException(_inner) => Some(_inner),
             CreateKeyErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            CreateKeyErrorKind::XksKeyAlreadyInUseException(_inner) => Some(_inner),
+            CreateKeyErrorKind::XksKeyInvalidConfigurationException(_inner) => Some(_inner),
+            CreateKeyErrorKind::XksKeyNotFoundException(_inner) => Some(_inner),
             CreateKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -3176,7 +4140,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DecryptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DecryptErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -3200,7 +4164,11 @@ pub enum DecryptErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -3361,12 +4329,16 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAliasErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -3502,9 +4474,11 @@ pub enum DeleteCustomKeyStoreErrorKind {
     /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This exception is thrown under the following conditions:</p>
     /// <ul>
-    /// <li> <p>You requested the <code>CreateKey</code> or <code>GenerateRandom</code> operation in a custom key store that is not connected. These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li>
+    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
     /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
+    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li>
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
     /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
@@ -3654,14 +4628,18 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteImportedKeyMaterial
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteImportedKeyMaterialErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -3964,7 +4942,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeKeyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
@@ -4096,14 +5074,18 @@ impl aws_smithy_http::result::CreateUnhandledError for DisableKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableKeyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4237,7 +5219,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DisableKeyRotationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableKeyRotationErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -4246,7 +5228,11 @@ pub enum DisableKeyRotationErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4417,9 +5403,11 @@ pub enum DisconnectCustomKeyStoreErrorKind {
     /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This exception is thrown under the following conditions:</p>
     /// <ul>
-    /// <li> <p>You requested the <code>CreateKey</code> or <code>GenerateRandom</code> operation in a custom key store that is not connected. These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li>
+    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
     /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
+    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li>
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
     /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
@@ -4562,14 +5550,18 @@ impl aws_smithy_http::result::CreateUnhandledError for EnableKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableKeyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -4711,7 +5703,7 @@ impl aws_smithy_http::result::CreateUnhandledError for EnableKeyRotationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableKeyRotationErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -4720,7 +5712,11 @@ pub enum EnableKeyRotationErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4880,7 +5876,7 @@ impl aws_smithy_http::result::CreateUnhandledError for EncryptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EncryptErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -4899,7 +5895,11 @@ pub enum EncryptErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -5048,7 +6048,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GenerateDataKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateDataKeyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -5067,7 +6067,11 @@ pub enum GenerateDataKeyErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -5234,7 +6238,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GenerateDataKeyPairError 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateDataKeyPairErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -5253,7 +6257,11 @@ pub enum GenerateDataKeyPairErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -5439,7 +6447,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GenerateDataKeyPairWithou
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateDataKeyPairWithoutPlaintextErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -5458,7 +6466,11 @@ pub enum GenerateDataKeyPairWithoutPlaintextErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -5683,7 +6695,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GenerateDataKeyWithoutPla
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateDataKeyWithoutPlaintextErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -5702,7 +6714,11 @@ pub enum GenerateDataKeyWithoutPlaintextErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -5919,7 +6935,11 @@ pub enum GenerateMacErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -6074,17 +7094,21 @@ pub enum GenerateRandomErrorKind {
     /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This exception is thrown under the following conditions:</p>
     /// <ul>
-    /// <li> <p>You requested the <code>CreateKey</code> or <code>GenerateRandom</code> operation in a custom key store that is not connected. These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li>
+    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
     /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
+    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li>
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
     /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
     CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -6102,6 +7126,7 @@ impl std::fmt::Display for GenerateRandomError {
             GenerateRandomErrorKind::CustomKeyStoreNotFoundException(_inner) => _inner.fmt(f),
             GenerateRandomErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
             GenerateRandomErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            GenerateRandomErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             GenerateRandomErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6181,6 +7206,13 @@ impl GenerateRandomError {
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, GenerateRandomErrorKind::KmsInternalException(_))
     }
+    /// Returns `true` if the error kind is `GenerateRandomErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateRandomErrorKind::UnsupportedOperationException(_)
+        )
+    }
 }
 impl std::error::Error for GenerateRandomError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6189,6 +7221,7 @@ impl std::error::Error for GenerateRandomError {
             GenerateRandomErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
             GenerateRandomErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
             GenerateRandomErrorKind::KmsInternalException(_inner) => Some(_inner),
+            GenerateRandomErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             GenerateRandomErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -6215,14 +7248,18 @@ impl aws_smithy_http::result::CreateUnhandledError for GetKeyPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetKeyPolicyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -6359,14 +7396,18 @@ impl aws_smithy_http::result::CreateUnhandledError for GetKeyRotationStatusError
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetKeyRotationStatusErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -6527,14 +7568,18 @@ impl aws_smithy_http::result::CreateUnhandledError for GetParametersForImportErr
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetParametersForImportErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -6695,7 +7740,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GetPublicKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPublicKeyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -6716,7 +7761,11 @@ pub enum GetPublicKeyErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -6897,7 +7946,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ImportKeyMaterialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportKeyMaterialErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified import token is expired. Use <code>GetParametersForImport</code> to get a new import token and public key, use the new public key to encrypt the key material, and then try the request again.</p>
     ExpiredImportTokenException(crate::error::ExpiredImportTokenException),
@@ -6913,7 +7962,11 @@ pub enum ImportKeyMaterialErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -7103,7 +8156,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ListAliasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAliasesErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
@@ -7243,7 +8296,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ListGrantsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGrantsErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
@@ -7254,7 +8307,11 @@ pub enum ListGrantsErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -7400,14 +8457,18 @@ impl aws_smithy_http::result::CreateUnhandledError for ListKeyPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListKeyPoliciesErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -7547,7 +8608,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ListKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListKeysErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the marker that specifies where pagination should next begin is not valid.</p>
     InvalidMarkerException(crate::error::InvalidMarkerException),
@@ -7806,7 +8867,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ListRetirableGrantsError 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRetirableGrantsErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
@@ -7958,14 +9019,18 @@ impl aws_smithy_http::result::CreateUnhandledError for PutKeyPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutKeyPolicyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -8132,7 +9197,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ReEncryptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReEncryptErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -8156,7 +9221,11 @@ pub enum ReEncryptErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -8335,7 +9404,11 @@ pub enum ReplicateKeyErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -8513,7 +9586,7 @@ impl aws_smithy_http::result::CreateUnhandledError for RetireGrantError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RetireGrantErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
@@ -8524,7 +9597,11 @@ pub enum RetireGrantErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -8676,7 +9753,7 @@ impl aws_smithy_http::result::CreateUnhandledError for RevokeGrantError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RevokeGrantErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
@@ -8685,7 +9762,11 @@ pub enum RevokeGrantErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -8828,14 +9909,18 @@ impl aws_smithy_http::result::CreateUnhandledError for ScheduleKeyDeletionError 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ScheduleKeyDeletionErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -8981,7 +10066,7 @@ impl aws_smithy_http::result::CreateUnhandledError for SignError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SignErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -9000,7 +10085,11 @@ pub enum SignErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -9154,7 +10243,11 @@ pub enum TagResourceErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -9303,7 +10396,11 @@ pub enum UntagResourceErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -9439,12 +10536,16 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAliasErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -9583,31 +10684,33 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateCustomKeyStoreError
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateCustomKeyStoreErrorKind {
-    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for a custom key store.</p>
+    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p>
     /// <ul>
-    /// <li> <p>The cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+    /// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
     /// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
-    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
-    /// <li> <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
+    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
+    /// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
     /// </ul>
-    /// <p>For information about the requirements for an CloudHSM cluster that is associated with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
+    /// <p>For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
     CloudHsmClusterInvalidConfigurationException(
         crate::error::CloudHsmClusterInvalidConfigurationException,
     ),
-    /// <p>The request was rejected because the CloudHSM cluster that is associated with the custom key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
+    /// <p>The request was rejected because the CloudHSM cluster associated with the CloudHSM key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
     CloudHsmClusterNotActiveException(crate::error::CloudHsmClusterNotActiveException),
     /// <p>The request was rejected because KMS cannot find the CloudHSM cluster with the specified cluster ID. Retry the request with a different cluster ID.</p>
     CloudHsmClusterNotFoundException(crate::error::CloudHsmClusterNotFoundException),
-    /// <p>The request was rejected because the specified CloudHSM cluster has a different cluster certificate than the original cluster. You cannot use the operation to specify an unrelated cluster.</p>
-    /// <p>Specify a cluster that shares a backup history with the original cluster. This includes clusters that were created from a backup of the current cluster, and clusters that were created from the same backup that produced the current cluster.</p>
-    /// <p>Clusters that share a backup history have the same cluster certificate. To view the cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
+    /// <p>The request was rejected because the specified CloudHSM cluster has a different cluster certificate than the original cluster. You cannot use the operation to specify an unrelated cluster for an CloudHSM key store.</p>
+    /// <p>Specify an CloudHSM cluster that shares a backup history with the original cluster. This includes clusters that were created from a backup of the current cluster, and clusters that were created from the same backup that produced the current cluster.</p>
+    /// <p>CloudHSM clusters that share a backup history have the same cluster certificate. To view the cluster certificate of an CloudHSM cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
     CloudHsmClusterNotRelatedException(crate::error::CloudHsmClusterNotRelatedException),
     /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This exception is thrown under the following conditions:</p>
     /// <ul>
-    /// <li> <p>You requested the <code>CreateKey</code> or <code>GenerateRandom</code> operation in a custom key store that is not connected. These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li>
+    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
     /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
+    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li>
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
     /// <p>The request was rejected because the specified custom key store name is already assigned to another custom key store in the account. Try again with a custom key store name that is unique in the account.</p>
@@ -9616,6 +10719,34 @@ pub enum UpdateCustomKeyStoreErrorKind {
     CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
+    /// <p>The request was rejected because the proxy credentials failed to authenticate to the specified external key store proxy. The specified external key store proxy rejected a status request from KMS due to invalid credentials. This can indicate an error in the credentials or in the identification of the external key store proxy.</p>
+    XksProxyIncorrectAuthenticationCredentialException(
+        crate::error::XksProxyIncorrectAuthenticationCredentialException,
+    ),
+    /// <p>The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the requirements for an external key store proxy. For details, see the exception message.</p>
+    XksProxyInvalidConfigurationException(crate::error::XksProxyInvalidConfigurationException),
+    /// <p></p>
+    /// <p>KMS cannot interpret the response it received from the external key store proxy. The problem might be a poorly constructed response, but it could also be a transient network issue. If you see this error repeatedly, report it to the proxy vendor.</p>
+    XksProxyInvalidResponseException(crate::error::XksProxyInvalidResponseException),
+    /// <p>The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code> is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an account and Region must use a unique external key store proxy address.</p>
+    XksProxyUriEndpointInUseException(crate::error::XksProxyUriEndpointInUseException),
+    /// <p>The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an account and Region must use a unique external key store proxy API address.</p>
+    XksProxyUriInUseException(crate::error::XksProxyUriInUseException),
+    /// <p>KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must be reachable before you create the external key store or update its settings.</p>
+    /// <p>This exception is also thrown when the external key store proxy response to a <code>GetHealthStatus</code> request indicates that all external key manager instances are unavailable.</p>
+    XksProxyUriUnreachableException(crate::error::XksProxyUriUnreachableException),
+    /// <p>The request was rejected because the specified Amazon VPC endpoint service is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an Amazon Web Services account and Region must use a different Amazon VPC endpoint service.</p>
+    XksProxyVpcEndpointServiceInUseException(
+        crate::error::XksProxyVpcEndpointServiceInUseException,
+    ),
+    /// <p>The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the requirements for an external key store proxy. For details, see the exception message and <a href="kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review the requirements</a> for Amazon VPC endpoint service connectivity for an external key store.</p>
+    XksProxyVpcEndpointServiceInvalidConfigurationException(
+        crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException,
+    ),
+    /// <p>The request was rejected because KMS could not find the specified VPC endpoint service. Use <code>DescribeCustomKeyStores</code> to verify the VPC endpoint service name for the external key store. Also, confirm that the <code>Allow principals</code> list for the VPC endpoint service includes the KMS service principal for the Region, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p>
+    XksProxyVpcEndpointServiceNotFoundException(
+        crate::error::XksProxyVpcEndpointServiceNotFoundException,
+    ),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -9629,27 +10760,60 @@ pub enum UpdateCustomKeyStoreErrorKind {
 impl std::fmt::Display for UpdateCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) => {
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyInvalidResponseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyUriInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyUriUnreachableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomKeyStoreErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => _inner.fmt(f),
-            UpdateCustomKeyStoreErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            UpdateCustomKeyStoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9763,27 +10927,129 @@ impl UpdateCustomKeyStoreError {
             UpdateCustomKeyStoreErrorKind::KmsInternalException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException`.
+    pub fn is_xks_proxy_incorrect_authentication_credential_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException`.
+    pub fn is_xks_proxy_invalid_configuration_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyInvalidResponseException`.
+    pub fn is_xks_proxy_invalid_response_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::XksProxyInvalidResponseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException`.
+    pub fn is_xks_proxy_uri_endpoint_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyUriInUseException`.
+    pub fn is_xks_proxy_uri_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::XksProxyUriInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyUriUnreachableException`.
+    pub fn is_xks_proxy_uri_unreachable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::XksProxyUriUnreachableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException`.
+    pub fn is_xks_proxy_vpc_endpoint_service_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException`.
+    pub fn is_xks_proxy_vpc_endpoint_service_invalid_configuration_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException`.
+    pub fn is_xks_proxy_vpc_endpoint_service_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException(_)
+        )
+    }
 }
 impl std::error::Error for UpdateCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) => {
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyInvalidResponseException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyUriInUseException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyUriUnreachableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomKeyStoreErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) => {
-                Some(_inner)
-            }
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_inner) => Some(_inner),
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException(_inner) => {
-                Some(_inner)
-            }
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
-                Some(_inner)
-            }
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_inner) => Some(_inner),
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
-            UpdateCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
-            UpdateCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9809,14 +11075,18 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateKeyDescriptionError
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateKeyDescriptionErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -9973,7 +11243,11 @@ pub enum UpdatePrimaryRegionErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -10130,7 +11404,7 @@ impl aws_smithy_http::result::CreateUnhandledError for VerifyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum VerifyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -10151,7 +11425,11 @@ pub enum VerifyErrorKind {
     /// <p>The request was rejected because the signature verification failed. Signature verification fails when it cannot confirm that signature was produced by signing the specified message with the specified KMS key and signing algorithm.</p>
     KmsInvalidSignatureException(crate::error::KmsInvalidSignatureException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -10325,7 +11603,11 @@ pub enum VerifyMacErrorKind {
     /// <p>The request was rejected because the HMAC verification failed. HMAC verification fails when the HMAC computed by using the specified message, HMAC KMS key, and MAC algorithm does not match the HMAC specified in the request.</p>
     KmsInvalidMacException(crate::error::KmsInvalidMacException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>This exceptions means one of the following:</p>
+    /// <ul>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),

@@ -31,7 +31,7 @@ pub enum Error {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The password is invalid.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
-    /// <p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>
+    /// <p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
@@ -114,6 +114,7 @@ where
 impl From<crate::error::AbortDocumentVersionUploadError> for Error {
     fn from(err: crate::error::AbortDocumentVersionUploadError) -> Self {
         match err.kind {
+            crate::error::AbortDocumentVersionUploadErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
             crate::error::AbortDocumentVersionUploadErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
             crate::error::AbortDocumentVersionUploadErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
             crate::error::AbortDocumentVersionUploadErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
@@ -182,6 +183,9 @@ impl From<crate::error::AddResourcePermissionsError> for Error {
         match err.kind {
             crate::error::AddResourcePermissionsErrorKind::FailedDependencyException(inner) => {
                 Error::FailedDependencyException(inner)
+            }
+            crate::error::AddResourcePermissionsErrorKind::ProhibitedStateException(inner) => {
+                Error::ProhibitedStateException(inner)
             }
             crate::error::AddResourcePermissionsErrorKind::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -306,6 +310,9 @@ where
 impl From<crate::error::CreateFolderError> for Error {
     fn from(err: crate::error::CreateFolderError) -> Self {
         match err.kind {
+            crate::error::CreateFolderErrorKind::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
             crate::error::CreateFolderErrorKind::ConflictingOperationException(inner) => {
                 Error::ConflictingOperationException(inner)
             }
@@ -402,6 +409,7 @@ where
 impl From<crate::error::CreateNotificationSubscriptionError> for Error {
     fn from(err: crate::error::CreateNotificationSubscriptionError) -> Self {
         match err.kind {
+            crate::error::CreateNotificationSubscriptionErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::error::CreateNotificationSubscriptionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::error::CreateNotificationSubscriptionErrorKind::TooManySubscriptionsException(inner) => Error::TooManySubscriptionsException(inner),
             crate::error::CreateNotificationSubscriptionErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
@@ -597,6 +605,9 @@ impl From<crate::error::DeleteDocumentError> for Error {
             crate::error::DeleteDocumentErrorKind::FailedDependencyException(inner) => {
                 Error::FailedDependencyException(inner)
             }
+            crate::error::DeleteDocumentErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::error::DeleteDocumentErrorKind::ProhibitedStateException(inner) => {
                 Error::ProhibitedStateException(inner)
             }
@@ -610,6 +621,55 @@ impl From<crate::error::DeleteDocumentError> for Error {
                 Error::UnauthorizedResourceAccessException(inner)
             }
             crate::error::DeleteDocumentErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDocumentVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteDocumentVersionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteDocumentVersionError> for Error {
+    fn from(err: crate::error::DeleteDocumentVersionError) -> Self {
+        match err.kind {
+            crate::error::DeleteDocumentVersionErrorKind::ConcurrentModificationException(
+                inner,
+            ) => Error::ConcurrentModificationException(inner),
+            crate::error::DeleteDocumentVersionErrorKind::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
+            }
+            crate::error::DeleteDocumentVersionErrorKind::EntityNotExistsException(inner) => {
+                Error::EntityNotExistsException(inner)
+            }
+            crate::error::DeleteDocumentVersionErrorKind::FailedDependencyException(inner) => {
+                Error::FailedDependencyException(inner)
+            }
+            crate::error::DeleteDocumentVersionErrorKind::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::error::DeleteDocumentVersionErrorKind::ProhibitedStateException(inner) => {
+                Error::ProhibitedStateException(inner)
+            }
+            crate::error::DeleteDocumentVersionErrorKind::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
+            crate::error::DeleteDocumentVersionErrorKind::UnauthorizedResourceAccessException(
+                inner,
+            ) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DeleteDocumentVersionErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -642,6 +702,9 @@ impl From<crate::error::DeleteFolderError> for Error {
             }
             crate::error::DeleteFolderErrorKind::FailedDependencyException(inner) => {
                 Error::FailedDependencyException(inner)
+            }
+            crate::error::DeleteFolderErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
             }
             crate::error::DeleteFolderErrorKind::ProhibitedStateException(inner) => {
                 Error::ProhibitedStateException(inner)
@@ -728,6 +791,9 @@ impl From<crate::error::DeleteLabelsError> for Error {
             }
             crate::error::DeleteLabelsErrorKind::FailedDependencyException(inner) => {
                 Error::FailedDependencyException(inner)
+            }
+            crate::error::DeleteLabelsErrorKind::ProhibitedStateException(inner) => {
+                Error::ProhibitedStateException(inner)
             }
             crate::error::DeleteLabelsErrorKind::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -915,6 +981,7 @@ impl From<crate::error::DescribeDocumentVersionsError> for Error {
             crate::error::DescribeDocumentVersionsErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
             crate::error::DescribeDocumentVersionsErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
             crate::error::DescribeDocumentVersionsErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DescribeDocumentVersionsErrorKind::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
             crate::error::DescribeDocumentVersionsErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
             crate::error::DescribeDocumentVersionsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::error::DescribeDocumentVersionsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
@@ -1050,6 +1117,7 @@ impl From<crate::error::DescribeResourcePermissionsError> for Error {
     fn from(err: crate::error::DescribeResourcePermissionsError) -> Self {
         match err.kind {
             crate::error::DescribeResourcePermissionsErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DescribeResourcePermissionsErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::error::DescribeResourcePermissionsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::error::DescribeResourcePermissionsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
             crate::error::DescribeResourcePermissionsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
@@ -1441,6 +1509,8 @@ impl From<crate::error::InitiateDocumentVersionUploadError> for Error {
             crate::error::InitiateDocumentVersionUploadErrorKind::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
             crate::error::InitiateDocumentVersionUploadErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
             crate::error::InitiateDocumentVersionUploadErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::InitiateDocumentVersionUploadErrorKind::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
+            crate::error::InitiateDocumentVersionUploadErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::error::InitiateDocumentVersionUploadErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
             crate::error::InitiateDocumentVersionUploadErrorKind::ResourceAlreadyCheckedOutException(inner) => Error::ResourceAlreadyCheckedOutException(inner),
             crate::error::InitiateDocumentVersionUploadErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
@@ -1503,6 +1573,55 @@ impl From<crate::error::RemoveResourcePermissionError> for Error {
             crate::error::RemoveResourcePermissionErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
             crate::error::RemoveResourcePermissionErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
             crate::error::RemoveResourcePermissionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RestoreDocumentVersionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::RestoreDocumentVersionsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RestoreDocumentVersionsError> for Error {
+    fn from(err: crate::error::RestoreDocumentVersionsError) -> Self {
+        match err.kind {
+            crate::error::RestoreDocumentVersionsErrorKind::ConcurrentModificationException(
+                inner,
+            ) => Error::ConcurrentModificationException(inner),
+            crate::error::RestoreDocumentVersionsErrorKind::ConflictingOperationException(
+                inner,
+            ) => Error::ConflictingOperationException(inner),
+            crate::error::RestoreDocumentVersionsErrorKind::EntityNotExistsException(inner) => {
+                Error::EntityNotExistsException(inner)
+            }
+            crate::error::RestoreDocumentVersionsErrorKind::FailedDependencyException(inner) => {
+                Error::FailedDependencyException(inner)
+            }
+            crate::error::RestoreDocumentVersionsErrorKind::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::error::RestoreDocumentVersionsErrorKind::ProhibitedStateException(inner) => {
+                Error::ProhibitedStateException(inner)
+            }
+            crate::error::RestoreDocumentVersionsErrorKind::UnauthorizedOperationException(
+                inner,
+            ) => Error::UnauthorizedOperationException(inner),
+            crate::error::RestoreDocumentVersionsErrorKind::UnauthorizedResourceAccessException(
+                inner,
+            ) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::RestoreDocumentVersionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1689,6 +1808,9 @@ impl From<crate::error::UpdateUserError> for Error {
             }
             crate::error::UpdateUserErrorKind::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
+            }
+            crate::error::UpdateUserErrorKind::ProhibitedStateException(inner) => {
+                Error::ProhibitedStateException(inner)
             }
             crate::error::UpdateUserErrorKind::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)

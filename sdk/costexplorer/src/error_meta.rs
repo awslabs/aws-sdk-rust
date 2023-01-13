@@ -7,6 +7,8 @@ pub enum Error {
     BillExpirationException(crate::error::BillExpirationException),
     /// <p>The requested data is unavailable.</p>
     DataUnavailableException(crate::error::DataUnavailableException),
+    /// <p>A request to generate a recommendation is already in progress.</p>
+    GenerationExistsException(crate::error::GenerationExistsException),
     /// <p>The pagination token is invalid. Try again without a pagination token.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
@@ -40,6 +42,7 @@ impl std::fmt::Display for Error {
         match self {
             Error::BillExpirationException(inner) => inner.fmt(f),
             Error::DataUnavailableException(inner) => inner.fmt(f),
+            Error::GenerationExistsException(inner) => inner.fmt(f),
             Error::InvalidNextTokenException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::RequestChangedException(inner) => inner.fmt(f),
@@ -947,6 +950,39 @@ impl From<crate::error::ListCostCategoryDefinitionsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::ListSavingsPlansPurchaseRecommendationGenerationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListSavingsPlansPurchaseRecommendationGenerationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListSavingsPlansPurchaseRecommendationGenerationError> for Error {
+    fn from(err: crate::error::ListSavingsPlansPurchaseRecommendationGenerationError) -> Self {
+        match err.kind {
+            crate::error::ListSavingsPlansPurchaseRecommendationGenerationErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::error::ListSavingsPlansPurchaseRecommendationGenerationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::ListSavingsPlansPurchaseRecommendationGenerationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1002,6 +1038,40 @@ impl From<crate::error::ProvideAnomalyFeedbackError> for Error {
             crate::error::ProvideAnomalyFeedbackErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::StartSavingsPlansPurchaseRecommendationGenerationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::StartSavingsPlansPurchaseRecommendationGenerationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::StartSavingsPlansPurchaseRecommendationGenerationError> for Error {
+    fn from(err: crate::error::StartSavingsPlansPurchaseRecommendationGenerationError) -> Self {
+        match err.kind {
+            crate::error::StartSavingsPlansPurchaseRecommendationGenerationErrorKind::GenerationExistsException(inner) => Error::GenerationExistsException(inner),
+            crate::error::StartSavingsPlansPurchaseRecommendationGenerationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::StartSavingsPlansPurchaseRecommendationGenerationErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::StartSavingsPlansPurchaseRecommendationGenerationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }

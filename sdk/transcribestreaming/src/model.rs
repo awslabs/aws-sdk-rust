@@ -19,10 +19,12 @@
 ///     LanguageCode::EsUs => { /* ... */ },
 ///     LanguageCode::FrCa => { /* ... */ },
 ///     LanguageCode::FrFr => { /* ... */ },
+///     LanguageCode::HiIn => { /* ... */ },
 ///     LanguageCode::ItIt => { /* ... */ },
 ///     LanguageCode::JaJp => { /* ... */ },
 ///     LanguageCode::KoKr => { /* ... */ },
 ///     LanguageCode::PtBr => { /* ... */ },
+///     LanguageCode::ThTh => { /* ... */ },
 ///     LanguageCode::ZhCn => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -72,6 +74,8 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     FrFr,
     #[allow(missing_docs)] // documentation missing in model
+    HiIn,
+    #[allow(missing_docs)] // documentation missing in model
     ItIt,
     #[allow(missing_docs)] // documentation missing in model
     JaJp,
@@ -79,6 +83,8 @@ pub enum LanguageCode {
     KoKr,
     #[allow(missing_docs)] // documentation missing in model
     PtBr,
+    #[allow(missing_docs)] // documentation missing in model
+    ThTh,
     #[allow(missing_docs)] // documentation missing in model
     ZhCn,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -94,10 +100,12 @@ impl std::convert::From<&str> for LanguageCode {
             "es-US" => LanguageCode::EsUs,
             "fr-CA" => LanguageCode::FrCa,
             "fr-FR" => LanguageCode::FrFr,
+            "hi-IN" => LanguageCode::HiIn,
             "it-IT" => LanguageCode::ItIt,
             "ja-JP" => LanguageCode::JaJp,
             "ko-KR" => LanguageCode::KoKr,
             "pt-BR" => LanguageCode::PtBr,
+            "th-TH" => LanguageCode::ThTh,
             "zh-CN" => LanguageCode::ZhCn,
             other => LanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
@@ -121,10 +129,12 @@ impl LanguageCode {
             LanguageCode::EsUs => "es-US",
             LanguageCode::FrCa => "fr-CA",
             LanguageCode::FrFr => "fr-FR",
+            LanguageCode::HiIn => "hi-IN",
             LanguageCode::ItIt => "it-IT",
             LanguageCode::JaJp => "ja-JP",
             LanguageCode::KoKr => "ko-KR",
             LanguageCode::PtBr => "pt-BR",
+            LanguageCode::ThTh => "th-TH",
             LanguageCode::ZhCn => "zh-CN",
             LanguageCode::Unknown(value) => value.as_str(),
         }
@@ -132,8 +142,8 @@ impl LanguageCode {
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "ja-JP",
-            "ko-KR", "pt-BR", "zh-CN",
+            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "hi-IN", "it-IT",
+            "ja-JP", "ko-KR", "pt-BR", "th-TH", "zh-CN",
         ]
     }
 }
@@ -511,11 +521,11 @@ impl AsRef<str> for VocabularyFilterMethod {
     }
 }
 
-/// <p>Represents the transcription result stream from Amazon Transcribe to your application.</p>
+/// <p>Contains detailed information about your streaming session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum TranscriptResultStream {
-    /// <p>A portion of the transcription of the audio stream. Events are sent periodically from Amazon Transcribe to your application. The event can be a partial transcription of a section of the audio stream, or it can be the entire transcription of that portion of the audio stream. </p>
+    /// <p>Contains <code>Transcript</code>, which contains <code>Results</code>. The <code></code> object contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
     TranscriptEvent(crate::model::TranscriptEvent),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -550,16 +560,17 @@ impl TranscriptResultStream {
     }
 }
 
-/// <p>Represents a set of transcription results from the server to the client. It contains one or more segments of the transcription.</p>
+/// <p>The <code>TranscriptEvent</code> associated with a <code>TranscriptResultStream</code>.</p>
+/// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TranscriptEvent {
-    /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
+    /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     #[doc(hidden)]
     pub transcript: std::option::Option<crate::model::Transcript>,
 }
 impl TranscriptEvent {
-    /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
+    /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     pub fn transcript(&self) -> std::option::Option<&crate::model::Transcript> {
         self.transcript.as_ref()
     }
@@ -573,12 +584,12 @@ pub mod transcript_event {
         pub(crate) transcript: std::option::Option<crate::model::Transcript>,
     }
     impl Builder {
-        /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
+        /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
         pub fn transcript(mut self, input: crate::model::Transcript) -> Self {
             self.transcript = Some(input);
             self
         }
-        /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
+        /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
         pub fn set_transcript(
             mut self,
             input: std::option::Option<crate::model::Transcript>,
@@ -601,16 +612,17 @@ impl TranscriptEvent {
     }
 }
 
-/// <p>The transcription in a <code>TranscriptEvent</code>.</p>
+/// <p>The <code>Transcript</code> associated with a <code></code>.</p>
+/// <p> <code>Transcript</code> contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Transcript {
-    /// <p> <code>Result</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
+    /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl Transcript {
-    /// <p> <code>Result</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
+    /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     pub fn results(&self) -> std::option::Option<&[crate::model::Result]> {
         self.results.as_deref()
     }
@@ -628,14 +640,14 @@ pub mod transcript {
         ///
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
-        /// <p> <code>Result</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
+        /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
         pub fn results(mut self, input: crate::model::Result) -> Self {
             let mut v = self.results.unwrap_or_default();
             v.push(input);
             self.results = Some(v);
             self
         }
-        /// <p> <code>Result</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
+        /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Result>>,
@@ -658,70 +670,71 @@ impl Transcript {
     }
 }
 
-/// <p>The result of transcribing a portion of the input audio stream. </p>
+/// <p>The <code>Result</code> associated with a <code></code>.</p>
+/// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Result {
-    /// <p>A unique identifier for the result. </p>
+    /// <p>Provides a unique identifier for the <code>Result</code>.</p>
     #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
-    /// <p>The offset in seconds from the beginning of the audio stream to the beginning of the result.</p>
+    /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
     #[doc(hidden)]
     pub start_time: f64,
-    /// <p>The offset in seconds from the beginning of the audio stream to the end of the result.</p>
+    /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
     #[doc(hidden)]
     pub end_time: f64,
-    /// <p>Amazon Transcribe divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments. </p>
-    /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe has additional transcription data to send, <code>false</code> to indicate that this is the last transcription result for the segment.</p>
+    /// <p>Indicates if the segment is complete.</p>
+    /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
     #[doc(hidden)]
     pub is_partial: bool,
-    /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one <code>item</code> that contains the result of the transcription.</p>
+    /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
     #[doc(hidden)]
     pub alternatives: std::option::Option<std::vec::Vec<crate::model::Alternative>>,
-    /// <p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio channel separately.</p>
-    /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
+    /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
     #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
-    /// <p>The language code of the identified language in your media stream.</p>
+    /// <p>The language code that represents the language spoken in your audio stream.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The language code of the dominant language identified in your media.</p>
+    /// <p>The language code of the dominant language identified in your stream.</p>
+    /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
     #[doc(hidden)]
     pub language_identification:
         std::option::Option<std::vec::Vec<crate::model::LanguageWithScore>>,
 }
 impl Result {
-    /// <p>A unique identifier for the result. </p>
+    /// <p>Provides a unique identifier for the <code>Result</code>.</p>
     pub fn result_id(&self) -> std::option::Option<&str> {
         self.result_id.as_deref()
     }
-    /// <p>The offset in seconds from the beginning of the audio stream to the beginning of the result.</p>
+    /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
     pub fn start_time(&self) -> f64 {
         self.start_time
     }
-    /// <p>The offset in seconds from the beginning of the audio stream to the end of the result.</p>
+    /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
-    /// <p>Amazon Transcribe divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments. </p>
-    /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe has additional transcription data to send, <code>false</code> to indicate that this is the last transcription result for the segment.</p>
+    /// <p>Indicates if the segment is complete.</p>
+    /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
     pub fn is_partial(&self) -> bool {
         self.is_partial
     }
-    /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one <code>item</code> that contains the result of the transcription.</p>
+    /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
     pub fn alternatives(&self) -> std::option::Option<&[crate::model::Alternative]> {
         self.alternatives.as_deref()
     }
-    /// <p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio channel separately.</p>
-    /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
+    /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
     pub fn channel_id(&self) -> std::option::Option<&str> {
         self.channel_id.as_deref()
     }
-    /// <p>The language code of the identified language in your media stream.</p>
+    /// <p>The language code that represents the language spoken in your audio stream.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The language code of the dominant language identified in your media.</p>
+    /// <p>The language code of the dominant language identified in your stream.</p>
+    /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
     pub fn language_identification(
         &self,
     ) -> std::option::Option<&[crate::model::LanguageWithScore]> {
@@ -745,44 +758,44 @@ pub mod result {
             std::option::Option<std::vec::Vec<crate::model::LanguageWithScore>>,
     }
     impl Builder {
-        /// <p>A unique identifier for the result. </p>
+        /// <p>Provides a unique identifier for the <code>Result</code>.</p>
         pub fn result_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.result_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the result. </p>
+        /// <p>Provides a unique identifier for the <code>Result</code>.</p>
         pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result_id = input;
             self
         }
-        /// <p>The offset in seconds from the beginning of the audio stream to the beginning of the result.</p>
+        /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
         pub fn start_time(mut self, input: f64) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The offset in seconds from the beginning of the audio stream to the beginning of the result.</p>
+        /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The offset in seconds from the beginning of the audio stream to the end of the result.</p>
+        /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
         pub fn end_time(mut self, input: f64) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The offset in seconds from the beginning of the audio stream to the end of the result.</p>
+        /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
             self.end_time = input;
             self
         }
-        /// <p>Amazon Transcribe divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments. </p>
-        /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe has additional transcription data to send, <code>false</code> to indicate that this is the last transcription result for the segment.</p>
+        /// <p>Indicates if the segment is complete.</p>
+        /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
         pub fn is_partial(mut self, input: bool) -> Self {
             self.is_partial = Some(input);
             self
         }
-        /// <p>Amazon Transcribe divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments. </p>
-        /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe has additional transcription data to send, <code>false</code> to indicate that this is the last transcription result for the segment.</p>
+        /// <p>Indicates if the segment is complete.</p>
+        /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
         pub fn set_is_partial(mut self, input: std::option::Option<bool>) -> Self {
             self.is_partial = input;
             self
@@ -791,14 +804,14 @@ pub mod result {
         ///
         /// To override the contents of this collection use [`set_alternatives`](Self::set_alternatives).
         ///
-        /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one <code>item</code> that contains the result of the transcription.</p>
+        /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
         pub fn alternatives(mut self, input: crate::model::Alternative) -> Self {
             let mut v = self.alternatives.unwrap_or_default();
             v.push(input);
             self.alternatives = Some(v);
             self
         }
-        /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one <code>item</code> that contains the result of the transcription.</p>
+        /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
         pub fn set_alternatives(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Alternative>>,
@@ -806,24 +819,22 @@ pub mod result {
             self.alternatives = input;
             self
         }
-        /// <p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio channel separately.</p>
-        /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
+        /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_id = Some(input.into());
             self
         }
-        /// <p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio channel separately.</p>
-        /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
+        /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_id = input;
             self
         }
-        /// <p>The language code of the identified language in your media stream.</p>
+        /// <p>The language code that represents the language spoken in your audio stream.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language code of the identified language in your media stream.</p>
+        /// <p>The language code that represents the language spoken in your audio stream.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -835,14 +846,16 @@ pub mod result {
         ///
         /// To override the contents of this collection use [`set_language_identification`](Self::set_language_identification).
         ///
-        /// <p>The language code of the dominant language identified in your media.</p>
+        /// <p>The language code of the dominant language identified in your stream.</p>
+        /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
         pub fn language_identification(mut self, input: crate::model::LanguageWithScore) -> Self {
             let mut v = self.language_identification.unwrap_or_default();
             v.push(input);
             self.language_identification = Some(v);
             self
         }
-        /// <p>The language code of the dominant language identified in your media.</p>
+        /// <p>The language code of the dominant language identified in your stream.</p>
+        /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
         pub fn set_language_identification(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LanguageWithScore>>,
@@ -872,23 +885,23 @@ impl Result {
     }
 }
 
-/// <p>The language codes of the identified languages and their associated confidence scores. The confidence score is a value between zero and one; a larger value indicates a higher confidence in the identified language.</p>
+/// <p>The language code that represents the language identified in your audio, including the associated confidence score. If you enabled channel identification in your request and each channel contained a different language, you will have more than one <code>LanguageWithScore</code> result.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LanguageWithScore {
-    /// <p>The language code of the language identified by Amazon Transcribe.</p>
+    /// <p>The language code of the identified language.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The confidence score for the associated language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language. </p>
+    /// <p>The confidence score associated with the identified language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language.</p>
     #[doc(hidden)]
     pub score: f64,
 }
 impl LanguageWithScore {
-    /// <p>The language code of the language identified by Amazon Transcribe.</p>
+    /// <p>The language code of the identified language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The confidence score for the associated language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language. </p>
+    /// <p>The confidence score associated with the identified language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language.</p>
     pub fn score(&self) -> f64 {
         self.score
     }
@@ -903,12 +916,12 @@ pub mod language_with_score {
         pub(crate) score: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The language code of the language identified by Amazon Transcribe.</p>
+        /// <p>The language code of the identified language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language code of the language identified by Amazon Transcribe.</p>
+        /// <p>The language code of the identified language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -916,12 +929,12 @@ pub mod language_with_score {
             self.language_code = input;
             self
         }
-        /// <p>The confidence score for the associated language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language. </p>
+        /// <p>The confidence score associated with the identified language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language.</p>
         pub fn score(mut self, input: f64) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p>The confidence score for the associated language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language. </p>
+        /// <p>The confidence score associated with the identified language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language.</p>
         pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
             self.score = input;
             self
@@ -942,30 +955,30 @@ impl LanguageWithScore {
     }
 }
 
-/// <p>A list of possible transcriptions for the audio.</p>
+/// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alternative {
-    /// <p>The text that was transcribed from the audio.</p>
+    /// <p>Contains transcribed text.</p>
     #[doc(hidden)]
     pub transcript: std::option::Option<std::string::String>,
-    /// <p>One or more alternative interpretations of the input audio. </p>
+    /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Item>>,
-    /// <p>Contains the entities identified as personally identifiable information (PII) in the transcription output.</p>
+    /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
 }
 impl Alternative {
-    /// <p>The text that was transcribed from the audio.</p>
+    /// <p>Contains transcribed text.</p>
     pub fn transcript(&self) -> std::option::Option<&str> {
         self.transcript.as_deref()
     }
-    /// <p>One or more alternative interpretations of the input audio. </p>
+    /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::Item]> {
         self.items.as_deref()
     }
-    /// <p>Contains the entities identified as personally identifiable information (PII) in the transcription output.</p>
+    /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
     pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
         self.entities.as_deref()
     }
@@ -981,12 +994,12 @@ pub mod alternative {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
     }
     impl Builder {
-        /// <p>The text that was transcribed from the audio.</p>
+        /// <p>Contains transcribed text.</p>
         pub fn transcript(mut self, input: impl Into<std::string::String>) -> Self {
             self.transcript = Some(input.into());
             self
         }
-        /// <p>The text that was transcribed from the audio.</p>
+        /// <p>Contains transcribed text.</p>
         pub fn set_transcript(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.transcript = input;
             self
@@ -995,14 +1008,14 @@ pub mod alternative {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>One or more alternative interpretations of the input audio. </p>
+        /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
         pub fn items(mut self, input: crate::model::Item) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input);
             self.items = Some(v);
             self
         }
-        /// <p>One or more alternative interpretations of the input audio. </p>
+        /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Item>>,
@@ -1014,14 +1027,14 @@ pub mod alternative {
         ///
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
-        /// <p>Contains the entities identified as personally identifiable information (PII) in the transcription output.</p>
+        /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
         pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
             v.push(input);
             self.entities = Some(v);
             self
         }
-        /// <p>Contains the entities identified as personally identifiable information (PII) in the transcription output.</p>
+        /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
         pub fn set_entities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Entity>>,
@@ -1046,51 +1059,53 @@ impl Alternative {
     }
 }
 
-/// <p>The entity identified as personally identifiable information (PII).</p>
+/// <p>Contains entities identified as personally identifiable information (PII) in your transcription output, along with various associated attributes. Examples include category, confidence score, type, stability score, and start and end times.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Entity {
-    /// <p>The start time of speech that was identified as PII.</p>
+    /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
     #[doc(hidden)]
     pub start_time: f64,
-    /// <p>The end time of speech that was identified as PII.</p>
+    /// <p>The end time, in milliseconds, of the utterance that was identified as PII.</p>
     #[doc(hidden)]
     pub end_time: f64,
-    /// <p>The category of information identified in this entity; for example, PII.</p>
+    /// <p>The category of information identified. The only category is <code>PII</code>.</p>
     #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
-    /// <p>The type of PII identified in this entity; for example, name or credit card number.</p>
+    /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
-    /// <p>The words in the transcription output that have been identified as a PII entity.</p>
+    /// <p>The word or words identified as PII.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>A value between zero and one that Amazon Transcribe assigns to PII identified in the source audio. Larger values indicate a higher confidence in PII identification.</p>
+    /// <p>The confidence score associated with the identified PII entity in your audio.</p>
+    /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
 }
 impl Entity {
-    /// <p>The start time of speech that was identified as PII.</p>
+    /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
     pub fn start_time(&self) -> f64 {
         self.start_time
     }
-    /// <p>The end time of speech that was identified as PII.</p>
+    /// <p>The end time, in milliseconds, of the utterance that was identified as PII.</p>
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
-    /// <p>The category of information identified in this entity; for example, PII.</p>
+    /// <p>The category of information identified. The only category is <code>PII</code>.</p>
     pub fn category(&self) -> std::option::Option<&str> {
         self.category.as_deref()
     }
-    /// <p>The type of PII identified in this entity; for example, name or credit card number.</p>
+    /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>The words in the transcription output that have been identified as a PII entity.</p>
+    /// <p>The word or words identified as PII.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>A value between zero and one that Amazon Transcribe assigns to PII identified in the source audio. Larger values indicate a higher confidence in PII identification.</p>
+    /// <p>The confidence score associated with the identified PII entity in your audio.</p>
+    /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
     }
@@ -1109,62 +1124,64 @@ pub mod entity {
         pub(crate) confidence: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The start time of speech that was identified as PII.</p>
+        /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
         pub fn start_time(mut self, input: f64) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start time of speech that was identified as PII.</p>
+        /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The end time of speech that was identified as PII.</p>
+        /// <p>The end time, in milliseconds, of the utterance that was identified as PII.</p>
         pub fn end_time(mut self, input: f64) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end time of speech that was identified as PII.</p>
+        /// <p>The end time, in milliseconds, of the utterance that was identified as PII.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
             self.end_time = input;
             self
         }
-        /// <p>The category of information identified in this entity; for example, PII.</p>
+        /// <p>The category of information identified. The only category is <code>PII</code>.</p>
         pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
             self.category = Some(input.into());
             self
         }
-        /// <p>The category of information identified in this entity; for example, PII.</p>
+        /// <p>The category of information identified. The only category is <code>PII</code>.</p>
         pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.category = input;
             self
         }
-        /// <p>The type of PII identified in this entity; for example, name or credit card number.</p>
+        /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of PII identified in this entity; for example, name or credit card number.</p>
+        /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>The words in the transcription output that have been identified as a PII entity.</p>
+        /// <p>The word or words identified as PII.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The words in the transcription output that have been identified as a PII entity.</p>
+        /// <p>The word or words identified as PII.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
         }
-        /// <p>A value between zero and one that Amazon Transcribe assigns to PII identified in the source audio. Larger values indicate a higher confidence in PII identification.</p>
+        /// <p>The confidence score associated with the identified PII entity in your audio.</p>
+        /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
         pub fn confidence(mut self, input: f64) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>A value between zero and one that Amazon Transcribe assigns to PII identified in the source audio. Larger values indicate a higher confidence in PII identification.</p>
+        /// <p>The confidence score associated with the identified PII entity in your audio.</p>
+        /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
             self.confidence = input;
             self
@@ -1189,65 +1206,67 @@ impl Entity {
     }
 }
 
-/// <p>A word, phrase, or punctuation mark that is transcribed from the input audio.</p>
+/// <p>A word, phrase, or punctuation mark in your transcription output, along with various associated attributes, such as confidence score, type, and start and end times.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Item {
-    /// <p>The offset from the beginning of the audio stream to the beginning of the audio that resulted in the item.</p>
+    /// <p>The start time, in milliseconds, of the transcribed item.</p>
     #[doc(hidden)]
     pub start_time: f64,
-    /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in the item.</p>
+    /// <p>The end time, in milliseconds, of the transcribed item.</p>
     #[doc(hidden)]
     pub end_time: f64,
-    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio.</p>
+    /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ItemType>,
-    /// <p>The word or punctuation that was recognized in the input audio.</p>
+    /// <p>The word or punctuation that was transcribed.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen for your media stream. If <code>true</code> then a word in the item matches your vocabulary filter.</p>
+    /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your request. If <code>true</code>, there is a vocabulary filter match.</p>
     #[doc(hidden)]
     pub vocabulary_filter_match: bool,
-    /// <p>If speaker identification is enabled, shows the speakers identified in the media stream.</p>
+    /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
     #[doc(hidden)]
     pub speaker: std::option::Option<std::string::String>,
-    /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
+    /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+    /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
-    /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
+    /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
     #[doc(hidden)]
     pub stable: std::option::Option<bool>,
 }
 impl Item {
-    /// <p>The offset from the beginning of the audio stream to the beginning of the audio that resulted in the item.</p>
+    /// <p>The start time, in milliseconds, of the transcribed item.</p>
     pub fn start_time(&self) -> f64 {
         self.start_time
     }
-    /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in the item.</p>
+    /// <p>The end time, in milliseconds, of the transcribed item.</p>
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
-    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio.</p>
+    /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
         self.r#type.as_ref()
     }
-    /// <p>The word or punctuation that was recognized in the input audio.</p>
+    /// <p>The word or punctuation that was transcribed.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen for your media stream. If <code>true</code> then a word in the item matches your vocabulary filter.</p>
+    /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your request. If <code>true</code>, there is a vocabulary filter match.</p>
     pub fn vocabulary_filter_match(&self) -> bool {
         self.vocabulary_filter_match
     }
-    /// <p>If speaker identification is enabled, shows the speakers identified in the media stream.</p>
+    /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
     pub fn speaker(&self) -> std::option::Option<&str> {
         self.speaker.as_deref()
     }
-    /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
+    /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+    /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
     }
-    /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
+    /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
     pub fn stable(&self) -> std::option::Option<bool> {
         self.stable
     }
@@ -1268,82 +1287,84 @@ pub mod item {
         pub(crate) stable: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The offset from the beginning of the audio stream to the beginning of the audio that resulted in the item.</p>
+        /// <p>The start time, in milliseconds, of the transcribed item.</p>
         pub fn start_time(mut self, input: f64) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The offset from the beginning of the audio stream to the beginning of the audio that resulted in the item.</p>
+        /// <p>The start time, in milliseconds, of the transcribed item.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in the item.</p>
+        /// <p>The end time, in milliseconds, of the transcribed item.</p>
         pub fn end_time(mut self, input: f64) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in the item.</p>
+        /// <p>The end time, in milliseconds, of the transcribed item.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
             self.end_time = input;
             self
         }
-        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio.</p>
+        /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
         pub fn r#type(mut self, input: crate::model::ItemType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio.</p>
+        /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ItemType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>The word or punctuation that was recognized in the input audio.</p>
+        /// <p>The word or punctuation that was transcribed.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The word or punctuation that was recognized in the input audio.</p>
+        /// <p>The word or punctuation that was transcribed.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
         }
-        /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen for your media stream. If <code>true</code> then a word in the item matches your vocabulary filter.</p>
+        /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your request. If <code>true</code>, there is a vocabulary filter match.</p>
         pub fn vocabulary_filter_match(mut self, input: bool) -> Self {
             self.vocabulary_filter_match = Some(input);
             self
         }
-        /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen for your media stream. If <code>true</code> then a word in the item matches your vocabulary filter.</p>
+        /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your request. If <code>true</code>, there is a vocabulary filter match.</p>
         pub fn set_vocabulary_filter_match(mut self, input: std::option::Option<bool>) -> Self {
             self.vocabulary_filter_match = input;
             self
         }
-        /// <p>If speaker identification is enabled, shows the speakers identified in the media stream.</p>
+        /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
         pub fn speaker(mut self, input: impl Into<std::string::String>) -> Self {
             self.speaker = Some(input.into());
             self
         }
-        /// <p>If speaker identification is enabled, shows the speakers identified in the media stream.</p>
+        /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
         pub fn set_speaker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.speaker = input;
             self
         }
-        /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
+        /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+        /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
         pub fn confidence(mut self, input: f64) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
+        /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+        /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
             self.confidence = input;
             self
         }
-        /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
+        /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
         pub fn stable(mut self, input: bool) -> Self {
             self.stable = Some(input);
             self
         }
-        /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
+        /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
         pub fn set_stable(mut self, input: std::option::Option<bool>) -> Self {
             self.stable = input;
             self
@@ -1555,14 +1576,16 @@ impl AsRef<str> for MediaEncoding {
     }
 }
 
-/// <p>Represents the audio stream from your application to Amazon Transcribe.</p>
+/// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AudioStream {
-    /// <p>A blob of audio from your application. You audio stream consists of one or more audio events.</p>
-    /// <p>For information on audio encoding formats in Amazon Transcribe, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input.html">Speech input</a>. For information on audio encoding formats in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input-med.html">Speech input</a>.</p>
-    /// <p>For more information on stream encoding in Amazon Transcribe, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html">Event stream encoding</a>. For information on stream encoding in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream-med.html">Event stream encoding</a>.</p>
+    /// <p>A blob of audio from your application. Your audio stream consists of one or more audio events.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html">Event stream encoding</a>.</p>
     AudioEvent(crate::model::AudioEvent),
+    /// <p>Contains audio channel definitions and post-call analytics settings.</p>
+    ConfigurationEvent(crate::model::ConfigurationEvent),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -1574,7 +1597,6 @@ pub enum AudioStream {
     Unknown,
 }
 impl AudioStream {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AudioEvent`](crate::model::AudioStream::AudioEvent), extracting the inner [`AudioEvent`](crate::model::AudioEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_audio_event(&self) -> std::result::Result<&crate::model::AudioEvent, &Self> {
@@ -1588,14 +1610,574 @@ impl AudioStream {
     pub fn is_audio_event(&self) -> bool {
         self.as_audio_event().is_ok()
     }
+    /// Tries to convert the enum instance into [`ConfigurationEvent`](crate::model::AudioStream::ConfigurationEvent), extracting the inner [`ConfigurationEvent`](crate::model::ConfigurationEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_configuration_event(
+        &self,
+    ) -> std::result::Result<&crate::model::ConfigurationEvent, &Self> {
+        if let AudioStream::ConfigurationEvent(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`ConfigurationEvent`](crate::model::AudioStream::ConfigurationEvent).
+    pub fn is_configuration_event(&self) -> bool {
+        self.as_configuration_event().is_ok()
+    }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
     }
 }
 
-/// <p>Provides a wrapper for the audio chunks that you are sending.</p>
-/// <p>For information on audio encoding in Amazon Transcribe, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input.html">Speech input</a>. For information on audio encoding formats in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input-med.html">Speech input</a>.</p>
+/// <p>Allows you to set audio channel definitions and post-call analytics settings.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ConfigurationEvent {
+    /// <p>Indicates which speaker is on which audio channel.</p>
+    #[doc(hidden)]
+    pub channel_definitions: std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
+    /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
+    #[doc(hidden)]
+    pub post_call_analytics_settings: std::option::Option<crate::model::PostCallAnalyticsSettings>,
+}
+impl ConfigurationEvent {
+    /// <p>Indicates which speaker is on which audio channel.</p>
+    pub fn channel_definitions(&self) -> std::option::Option<&[crate::model::ChannelDefinition]> {
+        self.channel_definitions.as_deref()
+    }
+    /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
+    pub fn post_call_analytics_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::PostCallAnalyticsSettings> {
+        self.post_call_analytics_settings.as_ref()
+    }
+}
+/// See [`ConfigurationEvent`](crate::model::ConfigurationEvent).
+pub mod configuration_event {
+
+    /// A builder for [`ConfigurationEvent`](crate::model::ConfigurationEvent).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel_definitions:
+            std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
+        pub(crate) post_call_analytics_settings:
+            std::option::Option<crate::model::PostCallAnalyticsSettings>,
+    }
+    impl Builder {
+        /// Appends an item to `channel_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_channel_definitions`](Self::set_channel_definitions).
+        ///
+        /// <p>Indicates which speaker is on which audio channel.</p>
+        pub fn channel_definitions(mut self, input: crate::model::ChannelDefinition) -> Self {
+            let mut v = self.channel_definitions.unwrap_or_default();
+            v.push(input);
+            self.channel_definitions = Some(v);
+            self
+        }
+        /// <p>Indicates which speaker is on which audio channel.</p>
+        pub fn set_channel_definitions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
+        ) -> Self {
+            self.channel_definitions = input;
+            self
+        }
+        /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
+        pub fn post_call_analytics_settings(
+            mut self,
+            input: crate::model::PostCallAnalyticsSettings,
+        ) -> Self {
+            self.post_call_analytics_settings = Some(input);
+            self
+        }
+        /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
+        pub fn set_post_call_analytics_settings(
+            mut self,
+            input: std::option::Option<crate::model::PostCallAnalyticsSettings>,
+        ) -> Self {
+            self.post_call_analytics_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConfigurationEvent`](crate::model::ConfigurationEvent).
+        pub fn build(self) -> crate::model::ConfigurationEvent {
+            crate::model::ConfigurationEvent {
+                channel_definitions: self.channel_definitions,
+                post_call_analytics_settings: self.post_call_analytics_settings,
+            }
+        }
+    }
+}
+impl ConfigurationEvent {
+    /// Creates a new builder-style object to manufacture [`ConfigurationEvent`](crate::model::ConfigurationEvent).
+    pub fn builder() -> crate::model::configuration_event::Builder {
+        crate::model::configuration_event::Builder::default()
+    }
+}
+
+/// <p>Allows you to specify additional settings for your streaming Call Analytics post-call request, including output locations for your redacted and unredacted transcript, which IAM role to use, and, optionally, which encryption key to use.</p>
+/// <p> <code>ContentRedactionOutput</code>, <code>DataAccessRoleArn</code>, and <code>OutputLocation</code> are required fields.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PostCallAnalyticsSettings {
+    /// <p>The Amazon S3 location where you want your Call Analytics post-call transcription output stored. You can use any of the following formats to specify the output location:</p>
+    /// <ol>
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET</p> </li>
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li>
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
+    /// </ol>
+    #[doc(hidden)]
+    pub output_location: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    #[doc(hidden)]
+    pub data_access_role_arn: std::option::Option<std::string::String>,
+    /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p>
+    /// <p>Note that to include <code>ContentRedactionOutput</code> in your request, you must enable content redaction (<code>ContentRedactionType</code>).</p>
+    #[doc(hidden)]
+    pub content_redaction_output: std::option::Option<crate::model::ContentRedactionOutput>,
+    /// <p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p>
+    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
+    /// <ol>
+    /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li>
+    /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
+    /// </ol>
+    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
+    /// <ol>
+    /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
+    /// </ol>
+    /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+    #[doc(hidden)]
+    pub output_encryption_kms_key_id: std::option::Option<std::string::String>,
+}
+impl PostCallAnalyticsSettings {
+    /// <p>The Amazon S3 location where you want your Call Analytics post-call transcription output stored. You can use any of the following formats to specify the output location:</p>
+    /// <ol>
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET</p> </li>
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li>
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
+    /// </ol>
+    pub fn output_location(&self) -> std::option::Option<&str> {
+        self.output_location.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p>
+    /// <p>Note that to include <code>ContentRedactionOutput</code> in your request, you must enable content redaction (<code>ContentRedactionType</code>).</p>
+    pub fn content_redaction_output(
+        &self,
+    ) -> std::option::Option<&crate::model::ContentRedactionOutput> {
+        self.content_redaction_output.as_ref()
+    }
+    /// <p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p>
+    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
+    /// <ol>
+    /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li>
+    /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
+    /// </ol>
+    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
+    /// <ol>
+    /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
+    /// </ol>
+    /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+    pub fn output_encryption_kms_key_id(&self) -> std::option::Option<&str> {
+        self.output_encryption_kms_key_id.as_deref()
+    }
+}
+/// See [`PostCallAnalyticsSettings`](crate::model::PostCallAnalyticsSettings).
+pub mod post_call_analytics_settings {
+
+    /// A builder for [`PostCallAnalyticsSettings`](crate::model::PostCallAnalyticsSettings).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) output_location: std::option::Option<std::string::String>,
+        pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
+        pub(crate) content_redaction_output:
+            std::option::Option<crate::model::ContentRedactionOutput>,
+        pub(crate) output_encryption_kms_key_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon S3 location where you want your Call Analytics post-call transcription output stored. You can use any of the following formats to specify the output location:</p>
+        /// <ol>
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET</p> </li>
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li>
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
+        /// </ol>
+        pub fn output_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_location = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 location where you want your Call Analytics post-call transcription output stored. You can use any of the following formats to specify the output location:</p>
+        /// <ol>
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET</p> </li>
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li>
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
+        /// </ol>
+        pub fn set_output_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.output_location = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+        /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_access_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+        /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+        pub fn set_data_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_access_role_arn = input;
+            self
+        }
+        /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p>
+        /// <p>Note that to include <code>ContentRedactionOutput</code> in your request, you must enable content redaction (<code>ContentRedactionType</code>).</p>
+        pub fn content_redaction_output(
+            mut self,
+            input: crate::model::ContentRedactionOutput,
+        ) -> Self {
+            self.content_redaction_output = Some(input);
+            self
+        }
+        /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p>
+        /// <p>Note that to include <code>ContentRedactionOutput</code> in your request, you must enable content redaction (<code>ContentRedactionType</code>).</p>
+        pub fn set_content_redaction_output(
+            mut self,
+            input: std::option::Option<crate::model::ContentRedactionOutput>,
+        ) -> Self {
+            self.content_redaction_output = input;
+            self
+        }
+        /// <p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p>
+        /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
+        /// <ol>
+        /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+        /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li>
+        /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+        /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
+        /// </ol>
+        /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
+        /// <ol>
+        /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+        /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
+        /// </ol>
+        /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+        pub fn output_encryption_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.output_encryption_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p>
+        /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
+        /// <ol>
+        /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+        /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li>
+        /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+        /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
+        /// </ol>
+        /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
+        /// <ol>
+        /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+        /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
+        /// </ol>
+        /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+        pub fn set_output_encryption_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.output_encryption_kms_key_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PostCallAnalyticsSettings`](crate::model::PostCallAnalyticsSettings).
+        pub fn build(self) -> crate::model::PostCallAnalyticsSettings {
+            crate::model::PostCallAnalyticsSettings {
+                output_location: self.output_location,
+                data_access_role_arn: self.data_access_role_arn,
+                content_redaction_output: self.content_redaction_output,
+                output_encryption_kms_key_id: self.output_encryption_kms_key_id,
+            }
+        }
+    }
+}
+impl PostCallAnalyticsSettings {
+    /// Creates a new builder-style object to manufacture [`PostCallAnalyticsSettings`](crate::model::PostCallAnalyticsSettings).
+    pub fn builder() -> crate::model::post_call_analytics_settings::Builder {
+        crate::model::post_call_analytics_settings::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ContentRedactionOutput`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let contentredactionoutput = unimplemented!();
+/// match contentredactionoutput {
+///     ContentRedactionOutput::Redacted => { /* ... */ },
+///     ContentRedactionOutput::RedactedAndUnredacted => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `contentredactionoutput` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ContentRedactionOutput::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ContentRedactionOutput::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ContentRedactionOutput::NewFeature` is defined.
+/// Specifically, when `contentredactionoutput` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ContentRedactionOutput::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ContentRedactionOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    Redacted,
+    #[allow(missing_docs)] // documentation missing in model
+    RedactedAndUnredacted,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ContentRedactionOutput {
+    fn from(s: &str) -> Self {
+        match s {
+            "redacted" => ContentRedactionOutput::Redacted,
+            "redacted_and_unredacted" => ContentRedactionOutput::RedactedAndUnredacted,
+            other => {
+                ContentRedactionOutput::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for ContentRedactionOutput {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ContentRedactionOutput::from(s))
+    }
+}
+impl ContentRedactionOutput {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ContentRedactionOutput::Redacted => "redacted",
+            ContentRedactionOutput::RedactedAndUnredacted => "redacted_and_unredacted",
+            ContentRedactionOutput::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["redacted", "redacted_and_unredacted"]
+    }
+}
+impl AsRef<str> for ContentRedactionOutput {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Makes it possible to specify which speaker is on which audio channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ChannelDefinition {
+    /// <p>Specify the audio channel you want to define.</p>
+    #[doc(hidden)]
+    pub channel_id: i32,
+    /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
+    #[doc(hidden)]
+    pub participant_role: std::option::Option<crate::model::ParticipantRole>,
+}
+impl ChannelDefinition {
+    /// <p>Specify the audio channel you want to define.</p>
+    pub fn channel_id(&self) -> i32 {
+        self.channel_id
+    }
+    /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
+    pub fn participant_role(&self) -> std::option::Option<&crate::model::ParticipantRole> {
+        self.participant_role.as_ref()
+    }
+}
+/// See [`ChannelDefinition`](crate::model::ChannelDefinition).
+pub mod channel_definition {
+
+    /// A builder for [`ChannelDefinition`](crate::model::ChannelDefinition).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel_id: std::option::Option<i32>,
+        pub(crate) participant_role: std::option::Option<crate::model::ParticipantRole>,
+    }
+    impl Builder {
+        /// <p>Specify the audio channel you want to define.</p>
+        pub fn channel_id(mut self, input: i32) -> Self {
+            self.channel_id = Some(input);
+            self
+        }
+        /// <p>Specify the audio channel you want to define.</p>
+        pub fn set_channel_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.channel_id = input;
+            self
+        }
+        /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
+        pub fn participant_role(mut self, input: crate::model::ParticipantRole) -> Self {
+            self.participant_role = Some(input);
+            self
+        }
+        /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
+        pub fn set_participant_role(
+            mut self,
+            input: std::option::Option<crate::model::ParticipantRole>,
+        ) -> Self {
+            self.participant_role = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChannelDefinition`](crate::model::ChannelDefinition).
+        pub fn build(self) -> crate::model::ChannelDefinition {
+            crate::model::ChannelDefinition {
+                channel_id: self.channel_id.unwrap_or_default(),
+                participant_role: self.participant_role,
+            }
+        }
+    }
+}
+impl ChannelDefinition {
+    /// Creates a new builder-style object to manufacture [`ChannelDefinition`](crate::model::ChannelDefinition).
+    pub fn builder() -> crate::model::channel_definition::Builder {
+        crate::model::channel_definition::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ParticipantRole`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let participantrole = unimplemented!();
+/// match participantrole {
+///     ParticipantRole::Agent => { /* ... */ },
+///     ParticipantRole::Customer => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `participantrole` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ParticipantRole::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ParticipantRole::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ParticipantRole::NewFeature` is defined.
+/// Specifically, when `participantrole` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ParticipantRole::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ParticipantRole {
+    #[allow(missing_docs)] // documentation missing in model
+    Agent,
+    #[allow(missing_docs)] // documentation missing in model
+    Customer,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ParticipantRole {
+    fn from(s: &str) -> Self {
+        match s {
+            "AGENT" => ParticipantRole::Agent,
+            "CUSTOMER" => ParticipantRole::Customer,
+            other => ParticipantRole::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ParticipantRole {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ParticipantRole::from(s))
+    }
+}
+impl ParticipantRole {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ParticipantRole::Agent => "AGENT",
+            ParticipantRole::Customer => "CUSTOMER",
+            ParticipantRole::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AGENT", "CUSTOMER"]
+    }
+}
+impl AsRef<str> for ParticipantRole {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A wrapper for your audio chunks. Your audio stream consists of one or more audio events, which consist of one or more audio chunks.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html">Event stream encoding</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioEvent {
@@ -1733,11 +2315,12 @@ impl AsRef<str> for MedicalContentIdentificationType {
     }
 }
 
-/// <p>Represents the transcription result stream from Amazon Transcribe Medical to your application.</p>
+/// <p>Contains detailed information about your streaming session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum MedicalTranscriptResultStream {
-    /// <p>A portion of the transcription of the audio stream. Events are sent periodically from Amazon Transcribe Medical to your application. The event can be a partial transcription of a section of the audio stream, or it can be the entire transcription of that portion of the audio stream.</p>
+    /// <p>The <code>MedicalTranscriptEvent</code> associated with a <code>MedicalTranscriptResultStream</code>.</p>
+    /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     TranscriptEvent(crate::model::MedicalTranscriptEvent),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -1772,16 +2355,17 @@ impl MedicalTranscriptResultStream {
     }
 }
 
-/// <p>Represents a set of transcription results from the server to the client. It contains one or more segments of the transcription.</p>
+/// <p>The <code>MedicalTranscriptEvent</code> associated with a <code>MedicalTranscriptResultStream</code>.</p>
+/// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalTranscriptEvent {
-    /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
+    /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     #[doc(hidden)]
     pub transcript: std::option::Option<crate::model::MedicalTranscript>,
 }
 impl MedicalTranscriptEvent {
-    /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
+    /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     pub fn transcript(&self) -> std::option::Option<&crate::model::MedicalTranscript> {
         self.transcript.as_ref()
     }
@@ -1795,12 +2379,12 @@ pub mod medical_transcript_event {
         pub(crate) transcript: std::option::Option<crate::model::MedicalTranscript>,
     }
     impl Builder {
-        /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
+        /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
         pub fn transcript(mut self, input: crate::model::MedicalTranscript) -> Self {
             self.transcript = Some(input);
             self
         }
-        /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
+        /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
         pub fn set_transcript(
             mut self,
             input: std::option::Option<crate::model::MedicalTranscript>,
@@ -1823,16 +2407,17 @@ impl MedicalTranscriptEvent {
     }
 }
 
-/// <p>The medical transcript in a <code>MedicalTranscriptEvent</code>.</p>
+/// <p>The <code>MedicalTranscript</code> associated with a <code></code>.</p>
+/// <p> <code>MedicalTranscript</code> contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalTranscript {
-    /// <p> <code>MedicalResult</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
+    /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::MedicalResult>>,
 }
 impl MedicalTranscript {
-    /// <p> <code>MedicalResult</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
+    /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     pub fn results(&self) -> std::option::Option<&[crate::model::MedicalResult]> {
         self.results.as_deref()
     }
@@ -1850,14 +2435,14 @@ pub mod medical_transcript {
         ///
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
-        /// <p> <code>MedicalResult</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
+        /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
         pub fn results(mut self, input: crate::model::MedicalResult) -> Self {
             let mut v = self.results.unwrap_or_default();
             v.push(input);
             self.results = Some(v);
             self
         }
-        /// <p> <code>MedicalResult</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
+        /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MedicalResult>>,
@@ -1880,55 +2465,54 @@ impl MedicalTranscript {
     }
 }
 
-/// <p>The results of transcribing a portion of the input audio stream.</p>
+/// <p>The <code>Result</code> associated with a <code></code>.</p>
+/// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalResult {
-    /// <p>A unique identifier for the result.</p>
+    /// <p>Provides a unique identifier for the <code>Result</code>.</p>
     #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
-    /// <p>The time, in seconds, from the beginning of the audio stream to the beginning of the result.</p>
+    /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
     #[doc(hidden)]
     pub start_time: f64,
-    /// <p>The time, in seconds, from the beginning of the audio stream to the end of the result.</p>
+    /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
     #[doc(hidden)]
     pub end_time: f64,
-    /// <p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments.</p>
-    /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has additional transcription data to send. The <code>IsPartial</code> field is <code>false</code> to indicate that this is the last transcription result for the segment.</p>
+    /// <p>Indicates if the segment is complete.</p>
+    /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
     #[doc(hidden)]
     pub is_partial: bool,
-    /// <p>A list of possible transcriptions of the audio. Each alternative typically contains one <code>Item</code> that contains the result of the transcription.</p>
+    /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
     #[doc(hidden)]
     pub alternatives: std::option::Option<std::vec::Vec<crate::model::MedicalAlternative>>,
-    /// <p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio channel separately.</p>
-    /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
+    /// <p>Indicates the channel identified for the <code>Result</code>.</p>
     #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl MedicalResult {
-    /// <p>A unique identifier for the result.</p>
+    /// <p>Provides a unique identifier for the <code>Result</code>.</p>
     pub fn result_id(&self) -> std::option::Option<&str> {
         self.result_id.as_deref()
     }
-    /// <p>The time, in seconds, from the beginning of the audio stream to the beginning of the result.</p>
+    /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
     pub fn start_time(&self) -> f64 {
         self.start_time
     }
-    /// <p>The time, in seconds, from the beginning of the audio stream to the end of the result.</p>
+    /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
-    /// <p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments.</p>
-    /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has additional transcription data to send. The <code>IsPartial</code> field is <code>false</code> to indicate that this is the last transcription result for the segment.</p>
+    /// <p>Indicates if the segment is complete.</p>
+    /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
     pub fn is_partial(&self) -> bool {
         self.is_partial
     }
-    /// <p>A list of possible transcriptions of the audio. Each alternative typically contains one <code>Item</code> that contains the result of the transcription.</p>
+    /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
     pub fn alternatives(&self) -> std::option::Option<&[crate::model::MedicalAlternative]> {
         self.alternatives.as_deref()
     }
-    /// <p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio channel separately.</p>
-    /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
+    /// <p>Indicates the channel identified for the <code>Result</code>.</p>
     pub fn channel_id(&self) -> std::option::Option<&str> {
         self.channel_id.as_deref()
     }
@@ -1948,44 +2532,44 @@ pub mod medical_result {
         pub(crate) channel_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the result.</p>
+        /// <p>Provides a unique identifier for the <code>Result</code>.</p>
         pub fn result_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.result_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the result.</p>
+        /// <p>Provides a unique identifier for the <code>Result</code>.</p>
         pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result_id = input;
             self
         }
-        /// <p>The time, in seconds, from the beginning of the audio stream to the beginning of the result.</p>
+        /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
         pub fn start_time(mut self, input: f64) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The time, in seconds, from the beginning of the audio stream to the beginning of the result.</p>
+        /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The time, in seconds, from the beginning of the audio stream to the end of the result.</p>
+        /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
         pub fn end_time(mut self, input: f64) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The time, in seconds, from the beginning of the audio stream to the end of the result.</p>
+        /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
             self.end_time = input;
             self
         }
-        /// <p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments.</p>
-        /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has additional transcription data to send. The <code>IsPartial</code> field is <code>false</code> to indicate that this is the last transcription result for the segment.</p>
+        /// <p>Indicates if the segment is complete.</p>
+        /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
         pub fn is_partial(mut self, input: bool) -> Self {
             self.is_partial = Some(input);
             self
         }
-        /// <p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments.</p>
-        /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has additional transcription data to send. The <code>IsPartial</code> field is <code>false</code> to indicate that this is the last transcription result for the segment.</p>
+        /// <p>Indicates if the segment is complete.</p>
+        /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
         pub fn set_is_partial(mut self, input: std::option::Option<bool>) -> Self {
             self.is_partial = input;
             self
@@ -1994,14 +2578,14 @@ pub mod medical_result {
         ///
         /// To override the contents of this collection use [`set_alternatives`](Self::set_alternatives).
         ///
-        /// <p>A list of possible transcriptions of the audio. Each alternative typically contains one <code>Item</code> that contains the result of the transcription.</p>
+        /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
         pub fn alternatives(mut self, input: crate::model::MedicalAlternative) -> Self {
             let mut v = self.alternatives.unwrap_or_default();
             v.push(input);
             self.alternatives = Some(v);
             self
         }
-        /// <p>A list of possible transcriptions of the audio. Each alternative typically contains one <code>Item</code> that contains the result of the transcription.</p>
+        /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
         pub fn set_alternatives(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MedicalAlternative>>,
@@ -2009,14 +2593,12 @@ pub mod medical_result {
             self.alternatives = input;
             self
         }
-        /// <p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio channel separately.</p>
-        /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
+        /// <p>Indicates the channel identified for the <code>Result</code>.</p>
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_id = Some(input.into());
             self
         }
-        /// <p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio channel separately.</p>
-        /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
+        /// <p>Indicates the channel identified for the <code>Result</code>.</p>
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_id = input;
             self
@@ -2041,30 +2623,30 @@ impl MedicalResult {
     }
 }
 
-/// <p>A list of possible transcriptions for the audio.</p>
+/// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalAlternative {
-    /// <p>The text that was transcribed from the audio.</p>
+    /// <p>Contains transcribed text.</p>
     #[doc(hidden)]
     pub transcript: std::option::Option<std::string::String>,
-    /// <p>A list of objects that contains words and punctuation marks that represents one or more interpretations of the input audio.</p>
+    /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::MedicalItem>>,
-    /// <p>Contains the medical entities identified as personal health information in the transcription output.</p>
+    /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::MedicalEntity>>,
 }
 impl MedicalAlternative {
-    /// <p>The text that was transcribed from the audio.</p>
+    /// <p>Contains transcribed text.</p>
     pub fn transcript(&self) -> std::option::Option<&str> {
         self.transcript.as_deref()
     }
-    /// <p>A list of objects that contains words and punctuation marks that represents one or more interpretations of the input audio.</p>
+    /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::MedicalItem]> {
         self.items.as_deref()
     }
-    /// <p>Contains the medical entities identified as personal health information in the transcription output.</p>
+    /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
     pub fn entities(&self) -> std::option::Option<&[crate::model::MedicalEntity]> {
         self.entities.as_deref()
     }
@@ -2080,12 +2662,12 @@ pub mod medical_alternative {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::MedicalEntity>>,
     }
     impl Builder {
-        /// <p>The text that was transcribed from the audio.</p>
+        /// <p>Contains transcribed text.</p>
         pub fn transcript(mut self, input: impl Into<std::string::String>) -> Self {
             self.transcript = Some(input.into());
             self
         }
-        /// <p>The text that was transcribed from the audio.</p>
+        /// <p>Contains transcribed text.</p>
         pub fn set_transcript(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.transcript = input;
             self
@@ -2094,14 +2676,14 @@ pub mod medical_alternative {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>A list of objects that contains words and punctuation marks that represents one or more interpretations of the input audio.</p>
+        /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
         pub fn items(mut self, input: crate::model::MedicalItem) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input);
             self.items = Some(v);
             self
         }
-        /// <p>A list of objects that contains words and punctuation marks that represents one or more interpretations of the input audio.</p>
+        /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MedicalItem>>,
@@ -2113,14 +2695,14 @@ pub mod medical_alternative {
         ///
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
-        /// <p>Contains the medical entities identified as personal health information in the transcription output.</p>
+        /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
         pub fn entities(mut self, input: crate::model::MedicalEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
             v.push(input);
             self.entities = Some(v);
             self
         }
-        /// <p>Contains the medical entities identified as personal health information in the transcription output.</p>
+        /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
         pub fn set_entities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MedicalEntity>>,
@@ -2145,44 +2727,46 @@ impl MedicalAlternative {
     }
 }
 
-/// <p>The medical entity identified as personal health information.</p>
+/// <p>Contains entities identified as personal health information (PHI) in your transcription output, along with various associated attributes. Examples include category, confidence score, type, stability score, and start and end times.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalEntity {
-    /// <p>The start time of the speech that was identified as a medical entity.</p>
+    /// <p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>
     #[doc(hidden)]
     pub start_time: f64,
-    /// <p>The end time of the speech that was identified as a medical entity.</p>
+    /// <p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>
     #[doc(hidden)]
     pub end_time: f64,
-    /// <p>The type of personal health information of the medical entity.</p>
+    /// <p>The category of information identified. The only category is <code>PHI</code>.</p>
     #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
-    /// <p>The word or words in the transcription output that have been identified as a medical entity.</p>
+    /// <p>The word or words identified as PHI.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher confidence in the personal health information that it identified.</p>
+    /// <p>The confidence score associated with the identified PHI entity in your audio.</p>
+    /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
 }
 impl MedicalEntity {
-    /// <p>The start time of the speech that was identified as a medical entity.</p>
+    /// <p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>
     pub fn start_time(&self) -> f64 {
         self.start_time
     }
-    /// <p>The end time of the speech that was identified as a medical entity.</p>
+    /// <p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
-    /// <p>The type of personal health information of the medical entity.</p>
+    /// <p>The category of information identified. The only category is <code>PHI</code>.</p>
     pub fn category(&self) -> std::option::Option<&str> {
         self.category.as_deref()
     }
-    /// <p>The word or words in the transcription output that have been identified as a medical entity.</p>
+    /// <p>The word or words identified as PHI.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher confidence in the personal health information that it identified.</p>
+    /// <p>The confidence score associated with the identified PHI entity in your audio.</p>
+    /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
     }
@@ -2200,52 +2784,54 @@ pub mod medical_entity {
         pub(crate) confidence: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The start time of the speech that was identified as a medical entity.</p>
+        /// <p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>
         pub fn start_time(mut self, input: f64) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start time of the speech that was identified as a medical entity.</p>
+        /// <p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The end time of the speech that was identified as a medical entity.</p>
+        /// <p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>
         pub fn end_time(mut self, input: f64) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end time of the speech that was identified as a medical entity.</p>
+        /// <p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
             self.end_time = input;
             self
         }
-        /// <p>The type of personal health information of the medical entity.</p>
+        /// <p>The category of information identified. The only category is <code>PHI</code>.</p>
         pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
             self.category = Some(input.into());
             self
         }
-        /// <p>The type of personal health information of the medical entity.</p>
+        /// <p>The category of information identified. The only category is <code>PHI</code>.</p>
         pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.category = input;
             self
         }
-        /// <p>The word or words in the transcription output that have been identified as a medical entity.</p>
+        /// <p>The word or words identified as PHI.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The word or words in the transcription output that have been identified as a medical entity.</p>
+        /// <p>The word or words identified as PHI.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
         }
-        /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher confidence in the personal health information that it identified.</p>
+        /// <p>The confidence score associated with the identified PHI entity in your audio.</p>
+        /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
         pub fn confidence(mut self, input: f64) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher confidence in the personal health information that it identified.</p>
+        /// <p>The confidence score associated with the identified PHI entity in your audio.</p>
+        /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
             self.confidence = input;
             self
@@ -2269,51 +2855,53 @@ impl MedicalEntity {
     }
 }
 
-/// <p>A word, phrase, or punctuation mark that is transcribed from the input audio.</p>
+/// <p>A word, phrase, or punctuation mark in your transcription output, along with various associated attributes, such as confidence score, type, and start and end times.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalItem {
-    /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
+    /// <p>The start time, in milliseconds, of the transcribed item.</p>
     #[doc(hidden)]
     pub start_time: f64,
-    /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
+    /// <p>The end time, in milliseconds, of the transcribed item.</p>
     #[doc(hidden)]
     pub end_time: f64,
-    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio, such as a period to indicate the end of a sentence.</p>
+    /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ItemType>,
-    /// <p>The word or punctuation mark that was recognized in the input audio.</p>
+    /// <p>The word or punctuation that was transcribed.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to each word that it transcribes.</p>
+    /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+    /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
-    /// <p>If speaker identification is enabled, shows the integer values that correspond to the different speakers identified in the stream. For example, if the value of <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>, that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of <code>0</code> corresponds to one speaker and the value of <code>1</code> corresponds to the other speaker.</p>
+    /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
     #[doc(hidden)]
     pub speaker: std::option::Option<std::string::String>,
 }
 impl MedicalItem {
-    /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
+    /// <p>The start time, in milliseconds, of the transcribed item.</p>
     pub fn start_time(&self) -> f64 {
         self.start_time
     }
-    /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
+    /// <p>The end time, in milliseconds, of the transcribed item.</p>
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
-    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio, such as a period to indicate the end of a sentence.</p>
+    /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
         self.r#type.as_ref()
     }
-    /// <p>The word or punctuation mark that was recognized in the input audio.</p>
+    /// <p>The word or punctuation that was transcribed.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to each word that it transcribes.</p>
+    /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+    /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
     }
-    /// <p>If speaker identification is enabled, shows the integer values that correspond to the different speakers identified in the stream. For example, if the value of <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>, that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of <code>0</code> corresponds to one speaker and the value of <code>1</code> corresponds to the other speaker.</p>
+    /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
     pub fn speaker(&self) -> std::option::Option<&str> {
         self.speaker.as_deref()
     }
@@ -2332,62 +2920,64 @@ pub mod medical_item {
         pub(crate) speaker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
+        /// <p>The start time, in milliseconds, of the transcribed item.</p>
         pub fn start_time(mut self, input: f64) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
+        /// <p>The start time, in milliseconds, of the transcribed item.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
+        /// <p>The end time, in milliseconds, of the transcribed item.</p>
         pub fn end_time(mut self, input: f64) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
+        /// <p>The end time, in milliseconds, of the transcribed item.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
             self.end_time = input;
             self
         }
-        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio, such as a period to indicate the end of a sentence.</p>
+        /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
         pub fn r#type(mut self, input: crate::model::ItemType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio, such as a period to indicate the end of a sentence.</p>
+        /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ItemType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>The word or punctuation mark that was recognized in the input audio.</p>
+        /// <p>The word or punctuation that was transcribed.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The word or punctuation mark that was recognized in the input audio.</p>
+        /// <p>The word or punctuation that was transcribed.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
         }
-        /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to each word that it transcribes.</p>
+        /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+        /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
         pub fn confidence(mut self, input: f64) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to each word that it transcribes.</p>
+        /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+        /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
             self.confidence = input;
             self
         }
-        /// <p>If speaker identification is enabled, shows the integer values that correspond to the different speakers identified in the stream. For example, if the value of <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>, that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of <code>0</code> corresponds to one speaker and the value of <code>1</code> corresponds to the other speaker.</p>
+        /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
         pub fn speaker(mut self, input: impl Into<std::string::String>) -> Self {
             self.speaker = Some(input.into());
             self
         }
-        /// <p>If speaker identification is enabled, shows the integer values that correspond to the different speakers identified in the stream. For example, if the value of <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>, that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of <code>0</code> corresponds to one speaker and the value of <code>1</code> corresponds to the other speaker.</p>
+        /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
         pub fn set_speaker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.speaker = input;
             self
@@ -2614,6 +3204,1193 @@ impl Specialty {
     }
 }
 impl AsRef<str> for Specialty {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains detailed information about your Call Analytics streaming session. These details are provided in the <code>UtteranceEvent</code> and <code>CategoryEvent</code> objects.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum CallAnalyticsTranscriptResultStream {
+    /// <p>Provides information on matched categories that were used to generate real-time supervisor alerts.</p>
+    CategoryEvent(crate::model::CategoryEvent),
+    /// <p>Contains set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to channel definitions, partial result stabilization, sentiment, issue detection, and other transcription-related data.</p>
+    UtteranceEvent(crate::model::UtteranceEvent),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl CallAnalyticsTranscriptResultStream {
+    /// Tries to convert the enum instance into [`CategoryEvent`](crate::model::CallAnalyticsTranscriptResultStream::CategoryEvent), extracting the inner [`CategoryEvent`](crate::model::CategoryEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_category_event(&self) -> std::result::Result<&crate::model::CategoryEvent, &Self> {
+        if let CallAnalyticsTranscriptResultStream::CategoryEvent(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`CategoryEvent`](crate::model::CallAnalyticsTranscriptResultStream::CategoryEvent).
+    pub fn is_category_event(&self) -> bool {
+        self.as_category_event().is_ok()
+    }
+    /// Tries to convert the enum instance into [`UtteranceEvent`](crate::model::CallAnalyticsTranscriptResultStream::UtteranceEvent), extracting the inner [`UtteranceEvent`](crate::model::UtteranceEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_utterance_event(&self) -> std::result::Result<&crate::model::UtteranceEvent, &Self> {
+        if let CallAnalyticsTranscriptResultStream::UtteranceEvent(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`UtteranceEvent`](crate::model::CallAnalyticsTranscriptResultStream::UtteranceEvent).
+    pub fn is_utterance_event(&self) -> bool {
+        self.as_utterance_event().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+/// <p>Provides information on any <code>TranscriptFilterType</code> categories that matched your transcription output. Matches are identified for each segment upon completion of that segment.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CategoryEvent {
+    /// <p>Lists the categories that were matched in your audio segment.</p>
+    #[doc(hidden)]
+    pub matched_categories: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Contains information about the matched categories, including category names and timestamps.</p>
+    #[doc(hidden)]
+    pub matched_details: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::PointsOfInterest>,
+    >,
+}
+impl CategoryEvent {
+    /// <p>Lists the categories that were matched in your audio segment.</p>
+    pub fn matched_categories(&self) -> std::option::Option<&[std::string::String]> {
+        self.matched_categories.as_deref()
+    }
+    /// <p>Contains information about the matched categories, including category names and timestamps.</p>
+    pub fn matched_details(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::PointsOfInterest>,
+    > {
+        self.matched_details.as_ref()
+    }
+}
+/// See [`CategoryEvent`](crate::model::CategoryEvent).
+pub mod category_event {
+
+    /// A builder for [`CategoryEvent`](crate::model::CategoryEvent).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) matched_categories: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) matched_details: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::PointsOfInterest>,
+        >,
+    }
+    impl Builder {
+        /// Appends an item to `matched_categories`.
+        ///
+        /// To override the contents of this collection use [`set_matched_categories`](Self::set_matched_categories).
+        ///
+        /// <p>Lists the categories that were matched in your audio segment.</p>
+        pub fn matched_categories(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.matched_categories.unwrap_or_default();
+            v.push(input.into());
+            self.matched_categories = Some(v);
+            self
+        }
+        /// <p>Lists the categories that were matched in your audio segment.</p>
+        pub fn set_matched_categories(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.matched_categories = input;
+            self
+        }
+        /// Adds a key-value pair to `matched_details`.
+        ///
+        /// To override the contents of this collection use [`set_matched_details`](Self::set_matched_details).
+        ///
+        /// <p>Contains information about the matched categories, including category names and timestamps.</p>
+        pub fn matched_details(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::PointsOfInterest,
+        ) -> Self {
+            let mut hash_map = self.matched_details.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.matched_details = Some(hash_map);
+            self
+        }
+        /// <p>Contains information about the matched categories, including category names and timestamps.</p>
+        pub fn set_matched_details(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::PointsOfInterest>,
+            >,
+        ) -> Self {
+            self.matched_details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CategoryEvent`](crate::model::CategoryEvent).
+        pub fn build(self) -> crate::model::CategoryEvent {
+            crate::model::CategoryEvent {
+                matched_categories: self.matched_categories,
+                matched_details: self.matched_details,
+            }
+        }
+    }
+}
+impl CategoryEvent {
+    /// Creates a new builder-style object to manufacture [`CategoryEvent`](crate::model::CategoryEvent).
+    pub fn builder() -> crate::model::category_event::Builder {
+        crate::model::category_event::Builder::default()
+    }
+}
+
+/// <p>Contains the timestamps of matched categories.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PointsOfInterest {
+    /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
+    #[doc(hidden)]
+    pub timestamp_ranges: std::option::Option<std::vec::Vec<crate::model::TimestampRange>>,
+}
+impl PointsOfInterest {
+    /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
+    pub fn timestamp_ranges(&self) -> std::option::Option<&[crate::model::TimestampRange]> {
+        self.timestamp_ranges.as_deref()
+    }
+}
+/// See [`PointsOfInterest`](crate::model::PointsOfInterest).
+pub mod points_of_interest {
+
+    /// A builder for [`PointsOfInterest`](crate::model::PointsOfInterest).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) timestamp_ranges:
+            std::option::Option<std::vec::Vec<crate::model::TimestampRange>>,
+    }
+    impl Builder {
+        /// Appends an item to `timestamp_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_timestamp_ranges`](Self::set_timestamp_ranges).
+        ///
+        /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
+        pub fn timestamp_ranges(mut self, input: crate::model::TimestampRange) -> Self {
+            let mut v = self.timestamp_ranges.unwrap_or_default();
+            v.push(input);
+            self.timestamp_ranges = Some(v);
+            self
+        }
+        /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
+        pub fn set_timestamp_ranges(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TimestampRange>>,
+        ) -> Self {
+            self.timestamp_ranges = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PointsOfInterest`](crate::model::PointsOfInterest).
+        pub fn build(self) -> crate::model::PointsOfInterest {
+            crate::model::PointsOfInterest {
+                timestamp_ranges: self.timestamp_ranges,
+            }
+        }
+    }
+}
+impl PointsOfInterest {
+    /// Creates a new builder-style object to manufacture [`PointsOfInterest`](crate::model::PointsOfInterest).
+    pub fn builder() -> crate::model::points_of_interest::Builder {
+        crate::model::points_of_interest::Builder::default()
+    }
+}
+
+/// <p>Contains the timestamp range (start time through end time) of a matched category.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TimestampRange {
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the category match.</p>
+    #[doc(hidden)]
+    pub begin_offset_millis: std::option::Option<i64>,
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the category match.</p>
+    #[doc(hidden)]
+    pub end_offset_millis: std::option::Option<i64>,
+}
+impl TimestampRange {
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the category match.</p>
+    pub fn begin_offset_millis(&self) -> std::option::Option<i64> {
+        self.begin_offset_millis
+    }
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the category match.</p>
+    pub fn end_offset_millis(&self) -> std::option::Option<i64> {
+        self.end_offset_millis
+    }
+}
+/// See [`TimestampRange`](crate::model::TimestampRange).
+pub mod timestamp_range {
+
+    /// A builder for [`TimestampRange`](crate::model::TimestampRange).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) begin_offset_millis: std::option::Option<i64>,
+        pub(crate) end_offset_millis: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the category match.</p>
+        pub fn begin_offset_millis(mut self, input: i64) -> Self {
+            self.begin_offset_millis = Some(input);
+            self
+        }
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the category match.</p>
+        pub fn set_begin_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.begin_offset_millis = input;
+            self
+        }
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the category match.</p>
+        pub fn end_offset_millis(mut self, input: i64) -> Self {
+            self.end_offset_millis = Some(input);
+            self
+        }
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the category match.</p>
+        pub fn set_end_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.end_offset_millis = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimestampRange`](crate::model::TimestampRange).
+        pub fn build(self) -> crate::model::TimestampRange {
+            crate::model::TimestampRange {
+                begin_offset_millis: self.begin_offset_millis,
+                end_offset_millis: self.end_offset_millis,
+            }
+        }
+    }
+}
+impl TimestampRange {
+    /// Creates a new builder-style object to manufacture [`TimestampRange`](crate::model::TimestampRange).
+    pub fn builder() -> crate::model::timestamp_range::Builder {
+        crate::model::timestamp_range::Builder::default()
+    }
+}
+
+/// <p>Contains set of transcription results from one or more audio segments, along with additional information about the parameters included in your request. For example, channel definitions, partial result stabilization, sentiment, and issue detection.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UtteranceEvent {
+    /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
+    #[doc(hidden)]
+    pub utterance_id: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>
+    #[doc(hidden)]
+    pub is_partial: bool,
+    /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
+    #[doc(hidden)]
+    pub participant_role: std::option::Option<crate::model::ParticipantRole>,
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
+    #[doc(hidden)]
+    pub begin_offset_millis: std::option::Option<i64>,
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
+    #[doc(hidden)]
+    pub end_offset_millis: std::option::Option<i64>,
+    /// <p>Contains transcribed text.</p>
+    #[doc(hidden)]
+    pub transcript: std::option::Option<std::string::String>,
+    /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
+    #[doc(hidden)]
+    pub items: std::option::Option<std::vec::Vec<crate::model::CallAnalyticsItem>>,
+    /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
+    #[doc(hidden)]
+    pub entities: std::option::Option<std::vec::Vec<crate::model::CallAnalyticsEntity>>,
+    /// <p>Provides the sentiment that was detected in the specified segment.</p>
+    #[doc(hidden)]
+    pub sentiment: std::option::Option<crate::model::Sentiment>,
+    /// <p>Provides the issue that was detected in the specified segment.</p>
+    #[doc(hidden)]
+    pub issues_detected: std::option::Option<std::vec::Vec<crate::model::IssueDetected>>,
+}
+impl UtteranceEvent {
+    /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
+    pub fn utterance_id(&self) -> std::option::Option<&str> {
+        self.utterance_id.as_deref()
+    }
+    /// <p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>
+    pub fn is_partial(&self) -> bool {
+        self.is_partial
+    }
+    /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
+    pub fn participant_role(&self) -> std::option::Option<&crate::model::ParticipantRole> {
+        self.participant_role.as_ref()
+    }
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
+    pub fn begin_offset_millis(&self) -> std::option::Option<i64> {
+        self.begin_offset_millis
+    }
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
+    pub fn end_offset_millis(&self) -> std::option::Option<i64> {
+        self.end_offset_millis
+    }
+    /// <p>Contains transcribed text.</p>
+    pub fn transcript(&self) -> std::option::Option<&str> {
+        self.transcript.as_deref()
+    }
+    /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::CallAnalyticsItem]> {
+        self.items.as_deref()
+    }
+    /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::CallAnalyticsEntity]> {
+        self.entities.as_deref()
+    }
+    /// <p>Provides the sentiment that was detected in the specified segment.</p>
+    pub fn sentiment(&self) -> std::option::Option<&crate::model::Sentiment> {
+        self.sentiment.as_ref()
+    }
+    /// <p>Provides the issue that was detected in the specified segment.</p>
+    pub fn issues_detected(&self) -> std::option::Option<&[crate::model::IssueDetected]> {
+        self.issues_detected.as_deref()
+    }
+}
+/// See [`UtteranceEvent`](crate::model::UtteranceEvent).
+pub mod utterance_event {
+
+    /// A builder for [`UtteranceEvent`](crate::model::UtteranceEvent).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) utterance_id: std::option::Option<std::string::String>,
+        pub(crate) is_partial: std::option::Option<bool>,
+        pub(crate) participant_role: std::option::Option<crate::model::ParticipantRole>,
+        pub(crate) begin_offset_millis: std::option::Option<i64>,
+        pub(crate) end_offset_millis: std::option::Option<i64>,
+        pub(crate) transcript: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::CallAnalyticsItem>>,
+        pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::CallAnalyticsEntity>>,
+        pub(crate) sentiment: std::option::Option<crate::model::Sentiment>,
+        pub(crate) issues_detected: std::option::Option<std::vec::Vec<crate::model::IssueDetected>>,
+    }
+    impl Builder {
+        /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
+        pub fn utterance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.utterance_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
+        pub fn set_utterance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.utterance_id = input;
+            self
+        }
+        /// <p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>
+        pub fn is_partial(mut self, input: bool) -> Self {
+            self.is_partial = Some(input);
+            self
+        }
+        /// <p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>
+        pub fn set_is_partial(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_partial = input;
+            self
+        }
+        /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
+        pub fn participant_role(mut self, input: crate::model::ParticipantRole) -> Self {
+            self.participant_role = Some(input);
+            self
+        }
+        /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
+        pub fn set_participant_role(
+            mut self,
+            input: std::option::Option<crate::model::ParticipantRole>,
+        ) -> Self {
+            self.participant_role = input;
+            self
+        }
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
+        pub fn begin_offset_millis(mut self, input: i64) -> Self {
+            self.begin_offset_millis = Some(input);
+            self
+        }
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
+        pub fn set_begin_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.begin_offset_millis = input;
+            self
+        }
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
+        pub fn end_offset_millis(mut self, input: i64) -> Self {
+            self.end_offset_millis = Some(input);
+            self
+        }
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
+        pub fn set_end_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.end_offset_millis = input;
+            self
+        }
+        /// <p>Contains transcribed text.</p>
+        pub fn transcript(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transcript = Some(input.into());
+            self
+        }
+        /// <p>Contains transcribed text.</p>
+        pub fn set_transcript(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.transcript = input;
+            self
+        }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
+        pub fn items(mut self, input: crate::model::CallAnalyticsItem) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CallAnalyticsItem>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// Appends an item to `entities`.
+        ///
+        /// To override the contents of this collection use [`set_entities`](Self::set_entities).
+        ///
+        /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
+        pub fn entities(mut self, input: crate::model::CallAnalyticsEntity) -> Self {
+            let mut v = self.entities.unwrap_or_default();
+            v.push(input);
+            self.entities = Some(v);
+            self
+        }
+        /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
+        pub fn set_entities(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CallAnalyticsEntity>>,
+        ) -> Self {
+            self.entities = input;
+            self
+        }
+        /// <p>Provides the sentiment that was detected in the specified segment.</p>
+        pub fn sentiment(mut self, input: crate::model::Sentiment) -> Self {
+            self.sentiment = Some(input);
+            self
+        }
+        /// <p>Provides the sentiment that was detected in the specified segment.</p>
+        pub fn set_sentiment(
+            mut self,
+            input: std::option::Option<crate::model::Sentiment>,
+        ) -> Self {
+            self.sentiment = input;
+            self
+        }
+        /// Appends an item to `issues_detected`.
+        ///
+        /// To override the contents of this collection use [`set_issues_detected`](Self::set_issues_detected).
+        ///
+        /// <p>Provides the issue that was detected in the specified segment.</p>
+        pub fn issues_detected(mut self, input: crate::model::IssueDetected) -> Self {
+            let mut v = self.issues_detected.unwrap_or_default();
+            v.push(input);
+            self.issues_detected = Some(v);
+            self
+        }
+        /// <p>Provides the issue that was detected in the specified segment.</p>
+        pub fn set_issues_detected(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::IssueDetected>>,
+        ) -> Self {
+            self.issues_detected = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UtteranceEvent`](crate::model::UtteranceEvent).
+        pub fn build(self) -> crate::model::UtteranceEvent {
+            crate::model::UtteranceEvent {
+                utterance_id: self.utterance_id,
+                is_partial: self.is_partial.unwrap_or_default(),
+                participant_role: self.participant_role,
+                begin_offset_millis: self.begin_offset_millis,
+                end_offset_millis: self.end_offset_millis,
+                transcript: self.transcript,
+                items: self.items,
+                entities: self.entities,
+                sentiment: self.sentiment,
+                issues_detected: self.issues_detected,
+            }
+        }
+    }
+}
+impl UtteranceEvent {
+    /// Creates a new builder-style object to manufacture [`UtteranceEvent`](crate::model::UtteranceEvent).
+    pub fn builder() -> crate::model::utterance_event::Builder {
+        crate::model::utterance_event::Builder::default()
+    }
+}
+
+/// <p>Lists the issues that were identified in your audio segment.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct IssueDetected {
+    /// <p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>
+    #[doc(hidden)]
+    pub character_offsets: std::option::Option<crate::model::CharacterOffsets>,
+}
+impl IssueDetected {
+    /// <p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>
+    pub fn character_offsets(&self) -> std::option::Option<&crate::model::CharacterOffsets> {
+        self.character_offsets.as_ref()
+    }
+}
+/// See [`IssueDetected`](crate::model::IssueDetected).
+pub mod issue_detected {
+
+    /// A builder for [`IssueDetected`](crate::model::IssueDetected).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) character_offsets: std::option::Option<crate::model::CharacterOffsets>,
+    }
+    impl Builder {
+        /// <p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>
+        pub fn character_offsets(mut self, input: crate::model::CharacterOffsets) -> Self {
+            self.character_offsets = Some(input);
+            self
+        }
+        /// <p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>
+        pub fn set_character_offsets(
+            mut self,
+            input: std::option::Option<crate::model::CharacterOffsets>,
+        ) -> Self {
+            self.character_offsets = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IssueDetected`](crate::model::IssueDetected).
+        pub fn build(self) -> crate::model::IssueDetected {
+            crate::model::IssueDetected {
+                character_offsets: self.character_offsets,
+            }
+        }
+    }
+}
+impl IssueDetected {
+    /// Creates a new builder-style object to manufacture [`IssueDetected`](crate::model::IssueDetected).
+    pub fn builder() -> crate::model::issue_detected::Builder {
+        crate::model::issue_detected::Builder::default()
+    }
+}
+
+/// <p>Provides the location, using character count, in your transcript where a match is identified. For example, the location of an issue or a category match within a segment.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CharacterOffsets {
+    /// <p>Provides the character count of the first character where a match is identified. For example, the first character associated with an issue or a category match in a segment transcript.</p>
+    #[doc(hidden)]
+    pub begin: std::option::Option<i32>,
+    /// <p>Provides the character count of the last character where a match is identified. For example, the last character associated with an issue or a category match in a segment transcript.</p>
+    #[doc(hidden)]
+    pub end: std::option::Option<i32>,
+}
+impl CharacterOffsets {
+    /// <p>Provides the character count of the first character where a match is identified. For example, the first character associated with an issue or a category match in a segment transcript.</p>
+    pub fn begin(&self) -> std::option::Option<i32> {
+        self.begin
+    }
+    /// <p>Provides the character count of the last character where a match is identified. For example, the last character associated with an issue or a category match in a segment transcript.</p>
+    pub fn end(&self) -> std::option::Option<i32> {
+        self.end
+    }
+}
+/// See [`CharacterOffsets`](crate::model::CharacterOffsets).
+pub mod character_offsets {
+
+    /// A builder for [`CharacterOffsets`](crate::model::CharacterOffsets).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) begin: std::option::Option<i32>,
+        pub(crate) end: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Provides the character count of the first character where a match is identified. For example, the first character associated with an issue or a category match in a segment transcript.</p>
+        pub fn begin(mut self, input: i32) -> Self {
+            self.begin = Some(input);
+            self
+        }
+        /// <p>Provides the character count of the first character where a match is identified. For example, the first character associated with an issue or a category match in a segment transcript.</p>
+        pub fn set_begin(mut self, input: std::option::Option<i32>) -> Self {
+            self.begin = input;
+            self
+        }
+        /// <p>Provides the character count of the last character where a match is identified. For example, the last character associated with an issue or a category match in a segment transcript.</p>
+        pub fn end(mut self, input: i32) -> Self {
+            self.end = Some(input);
+            self
+        }
+        /// <p>Provides the character count of the last character where a match is identified. For example, the last character associated with an issue or a category match in a segment transcript.</p>
+        pub fn set_end(mut self, input: std::option::Option<i32>) -> Self {
+            self.end = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CharacterOffsets`](crate::model::CharacterOffsets).
+        pub fn build(self) -> crate::model::CharacterOffsets {
+            crate::model::CharacterOffsets {
+                begin: self.begin,
+                end: self.end,
+            }
+        }
+    }
+}
+impl CharacterOffsets {
+    /// Creates a new builder-style object to manufacture [`CharacterOffsets`](crate::model::CharacterOffsets).
+    pub fn builder() -> crate::model::character_offsets::Builder {
+        crate::model::character_offsets::Builder::default()
+    }
+}
+
+/// When writing a match expression against `Sentiment`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sentiment = unimplemented!();
+/// match sentiment {
+///     Sentiment::Mixed => { /* ... */ },
+///     Sentiment::Negative => { /* ... */ },
+///     Sentiment::Neutral => { /* ... */ },
+///     Sentiment::Positive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sentiment` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Sentiment::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Sentiment::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Sentiment::NewFeature` is defined.
+/// Specifically, when `sentiment` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Sentiment::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Sentiment {
+    #[allow(missing_docs)] // documentation missing in model
+    Mixed,
+    #[allow(missing_docs)] // documentation missing in model
+    Negative,
+    #[allow(missing_docs)] // documentation missing in model
+    Neutral,
+    #[allow(missing_docs)] // documentation missing in model
+    Positive,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for Sentiment {
+    fn from(s: &str) -> Self {
+        match s {
+            "MIXED" => Sentiment::Mixed,
+            "NEGATIVE" => Sentiment::Negative,
+            "NEUTRAL" => Sentiment::Neutral,
+            "POSITIVE" => Sentiment::Positive,
+            other => Sentiment::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for Sentiment {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Sentiment::from(s))
+    }
+}
+impl Sentiment {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Sentiment::Mixed => "MIXED",
+            Sentiment::Negative => "NEGATIVE",
+            Sentiment::Neutral => "NEUTRAL",
+            Sentiment::Positive => "POSITIVE",
+            Sentiment::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"]
+    }
+}
+impl AsRef<str> for Sentiment {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains entities identified as personally identifiable information (PII) in your transcription output, along with various associated attributes. Examples include category, confidence score, content, type, and start and end times.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CallAnalyticsEntity {
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified entity.</p>
+    #[doc(hidden)]
+    pub begin_offset_millis: std::option::Option<i64>,
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified entity.</p>
+    #[doc(hidden)]
+    pub end_offset_millis: std::option::Option<i64>,
+    /// <p>The category of information identified. For example, <code>PII</code>.</p>
+    #[doc(hidden)]
+    pub category: std::option::Option<std::string::String>,
+    /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>The word or words that represent the identified entity.</p>
+    #[doc(hidden)]
+    pub content: std::option::Option<std::string::String>,
+    /// <p>The confidence score associated with the identification of an entity in your transcript.</p>
+    /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
+    #[doc(hidden)]
+    pub confidence: std::option::Option<f64>,
+}
+impl CallAnalyticsEntity {
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified entity.</p>
+    pub fn begin_offset_millis(&self) -> std::option::Option<i64> {
+        self.begin_offset_millis
+    }
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified entity.</p>
+    pub fn end_offset_millis(&self) -> std::option::Option<i64> {
+        self.end_offset_millis
+    }
+    /// <p>The category of information identified. For example, <code>PII</code>.</p>
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The word or words that represent the identified entity.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The confidence score associated with the identification of an entity in your transcript.</p>
+    /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
+    pub fn confidence(&self) -> std::option::Option<f64> {
+        self.confidence
+    }
+}
+/// See [`CallAnalyticsEntity`](crate::model::CallAnalyticsEntity).
+pub mod call_analytics_entity {
+
+    /// A builder for [`CallAnalyticsEntity`](crate::model::CallAnalyticsEntity).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) begin_offset_millis: std::option::Option<i64>,
+        pub(crate) end_offset_millis: std::option::Option<i64>,
+        pub(crate) category: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) content: std::option::Option<std::string::String>,
+        pub(crate) confidence: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified entity.</p>
+        pub fn begin_offset_millis(mut self, input: i64) -> Self {
+            self.begin_offset_millis = Some(input);
+            self
+        }
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified entity.</p>
+        pub fn set_begin_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.begin_offset_millis = input;
+            self
+        }
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified entity.</p>
+        pub fn end_offset_millis(mut self, input: i64) -> Self {
+            self.end_offset_millis = Some(input);
+            self
+        }
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified entity.</p>
+        pub fn set_end_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.end_offset_millis = input;
+            self
+        }
+        /// <p>The category of information identified. For example, <code>PII</code>.</p>
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.category = Some(input.into());
+            self
+        }
+        /// <p>The category of information identified. For example, <code>PII</code>.</p>
+        pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.category = input;
+            self
+        }
+        /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The word or words that represent the identified entity.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content = Some(input.into());
+            self
+        }
+        /// <p>The word or words that represent the identified entity.</p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content = input;
+            self
+        }
+        /// <p>The confidence score associated with the identification of an entity in your transcript.</p>
+        /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
+        pub fn confidence(mut self, input: f64) -> Self {
+            self.confidence = Some(input);
+            self
+        }
+        /// <p>The confidence score associated with the identification of an entity in your transcript.</p>
+        /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
+        pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
+            self.confidence = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CallAnalyticsEntity`](crate::model::CallAnalyticsEntity).
+        pub fn build(self) -> crate::model::CallAnalyticsEntity {
+            crate::model::CallAnalyticsEntity {
+                begin_offset_millis: self.begin_offset_millis,
+                end_offset_millis: self.end_offset_millis,
+                category: self.category,
+                r#type: self.r#type,
+                content: self.content,
+                confidence: self.confidence,
+            }
+        }
+    }
+}
+impl CallAnalyticsEntity {
+    /// Creates a new builder-style object to manufacture [`CallAnalyticsEntity`](crate::model::CallAnalyticsEntity).
+    pub fn builder() -> crate::model::call_analytics_entity::Builder {
+        crate::model::call_analytics_entity::Builder::default()
+    }
+}
+
+/// <p>A word, phrase, or punctuation mark in your Call Analytics transcription output, along with various associated attributes, such as confidence score, type, and start and end times.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CallAnalyticsItem {
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified item.</p>
+    #[doc(hidden)]
+    pub begin_offset_millis: std::option::Option<i64>,
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified item.</p>
+    #[doc(hidden)]
+    pub end_offset_millis: std::option::Option<i64>,
+    /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::ItemType>,
+    /// <p>The word or punctuation that was transcribed.</p>
+    #[doc(hidden)]
+    pub content: std::option::Option<std::string::String>,
+    /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+    /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
+    #[doc(hidden)]
+    pub confidence: std::option::Option<f64>,
+    /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your Call Analytics request. If <code>true</code>, there is a vocabulary filter match.</p>
+    #[doc(hidden)]
+    pub vocabulary_filter_match: bool,
+    /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
+    #[doc(hidden)]
+    pub stable: std::option::Option<bool>,
+}
+impl CallAnalyticsItem {
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified item.</p>
+    pub fn begin_offset_millis(&self) -> std::option::Option<i64> {
+        self.begin_offset_millis
+    }
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified item.</p>
+    pub fn end_offset_millis(&self) -> std::option::Option<i64> {
+        self.end_offset_millis
+    }
+    /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The word or punctuation that was transcribed.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+    /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
+    pub fn confidence(&self) -> std::option::Option<f64> {
+        self.confidence
+    }
+    /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your Call Analytics request. If <code>true</code>, there is a vocabulary filter match.</p>
+    pub fn vocabulary_filter_match(&self) -> bool {
+        self.vocabulary_filter_match
+    }
+    /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
+    pub fn stable(&self) -> std::option::Option<bool> {
+        self.stable
+    }
+}
+/// See [`CallAnalyticsItem`](crate::model::CallAnalyticsItem).
+pub mod call_analytics_item {
+
+    /// A builder for [`CallAnalyticsItem`](crate::model::CallAnalyticsItem).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) begin_offset_millis: std::option::Option<i64>,
+        pub(crate) end_offset_millis: std::option::Option<i64>,
+        pub(crate) r#type: std::option::Option<crate::model::ItemType>,
+        pub(crate) content: std::option::Option<std::string::String>,
+        pub(crate) confidence: std::option::Option<f64>,
+        pub(crate) vocabulary_filter_match: std::option::Option<bool>,
+        pub(crate) stable: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified item.</p>
+        pub fn begin_offset_millis(mut self, input: i64) -> Self {
+            self.begin_offset_millis = Some(input);
+            self
+        }
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified item.</p>
+        pub fn set_begin_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.begin_offset_millis = input;
+            self
+        }
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified item.</p>
+        pub fn end_offset_millis(mut self, input: i64) -> Self {
+            self.end_offset_millis = Some(input);
+            self
+        }
+        /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified item.</p>
+        pub fn set_end_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.end_offset_millis = input;
+            self
+        }
+        /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
+        pub fn r#type(mut self, input: crate::model::ItemType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ItemType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The word or punctuation that was transcribed.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content = Some(input.into());
+            self
+        }
+        /// <p>The word or punctuation that was transcribed.</p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content = input;
+            self
+        }
+        /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+        /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
+        pub fn confidence(mut self, input: f64) -> Self {
+            self.confidence = Some(input);
+            self
+        }
+        /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+        /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
+        pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
+            self.confidence = input;
+            self
+        }
+        /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your Call Analytics request. If <code>true</code>, there is a vocabulary filter match.</p>
+        pub fn vocabulary_filter_match(mut self, input: bool) -> Self {
+            self.vocabulary_filter_match = Some(input);
+            self
+        }
+        /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your Call Analytics request. If <code>true</code>, there is a vocabulary filter match.</p>
+        pub fn set_vocabulary_filter_match(mut self, input: std::option::Option<bool>) -> Self {
+            self.vocabulary_filter_match = input;
+            self
+        }
+        /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
+        pub fn stable(mut self, input: bool) -> Self {
+            self.stable = Some(input);
+            self
+        }
+        /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
+        pub fn set_stable(mut self, input: std::option::Option<bool>) -> Self {
+            self.stable = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CallAnalyticsItem`](crate::model::CallAnalyticsItem).
+        pub fn build(self) -> crate::model::CallAnalyticsItem {
+            crate::model::CallAnalyticsItem {
+                begin_offset_millis: self.begin_offset_millis,
+                end_offset_millis: self.end_offset_millis,
+                r#type: self.r#type,
+                content: self.content,
+                confidence: self.confidence,
+                vocabulary_filter_match: self.vocabulary_filter_match.unwrap_or_default(),
+                stable: self.stable,
+            }
+        }
+    }
+}
+impl CallAnalyticsItem {
+    /// Creates a new builder-style object to manufacture [`CallAnalyticsItem`](crate::model::CallAnalyticsItem).
+    pub fn builder() -> crate::model::call_analytics_item::Builder {
+        crate::model::call_analytics_item::Builder::default()
+    }
+}
+
+/// When writing a match expression against `CallAnalyticsLanguageCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let callanalyticslanguagecode = unimplemented!();
+/// match callanalyticslanguagecode {
+///     CallAnalyticsLanguageCode::DeDe => { /* ... */ },
+///     CallAnalyticsLanguageCode::EnAu => { /* ... */ },
+///     CallAnalyticsLanguageCode::EnGb => { /* ... */ },
+///     CallAnalyticsLanguageCode::EnUs => { /* ... */ },
+///     CallAnalyticsLanguageCode::EsUs => { /* ... */ },
+///     CallAnalyticsLanguageCode::FrCa => { /* ... */ },
+///     CallAnalyticsLanguageCode::FrFr => { /* ... */ },
+///     CallAnalyticsLanguageCode::ItIt => { /* ... */ },
+///     CallAnalyticsLanguageCode::PtBr => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `callanalyticslanguagecode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CallAnalyticsLanguageCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CallAnalyticsLanguageCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CallAnalyticsLanguageCode::NewFeature` is defined.
+/// Specifically, when `callanalyticslanguagecode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CallAnalyticsLanguageCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CallAnalyticsLanguageCode {
+    #[allow(missing_docs)] // documentation missing in model
+    DeDe,
+    #[allow(missing_docs)] // documentation missing in model
+    EnAu,
+    #[allow(missing_docs)] // documentation missing in model
+    EnGb,
+    #[allow(missing_docs)] // documentation missing in model
+    EnUs,
+    #[allow(missing_docs)] // documentation missing in model
+    EsUs,
+    #[allow(missing_docs)] // documentation missing in model
+    FrCa,
+    #[allow(missing_docs)] // documentation missing in model
+    FrFr,
+    #[allow(missing_docs)] // documentation missing in model
+    ItIt,
+    #[allow(missing_docs)] // documentation missing in model
+    PtBr,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for CallAnalyticsLanguageCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "de-DE" => CallAnalyticsLanguageCode::DeDe,
+            "en-AU" => CallAnalyticsLanguageCode::EnAu,
+            "en-GB" => CallAnalyticsLanguageCode::EnGb,
+            "en-US" => CallAnalyticsLanguageCode::EnUs,
+            "es-US" => CallAnalyticsLanguageCode::EsUs,
+            "fr-CA" => CallAnalyticsLanguageCode::FrCa,
+            "fr-FR" => CallAnalyticsLanguageCode::FrFr,
+            "it-IT" => CallAnalyticsLanguageCode::ItIt,
+            "pt-BR" => CallAnalyticsLanguageCode::PtBr,
+            other => CallAnalyticsLanguageCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for CallAnalyticsLanguageCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CallAnalyticsLanguageCode::from(s))
+    }
+}
+impl CallAnalyticsLanguageCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CallAnalyticsLanguageCode::DeDe => "de-DE",
+            CallAnalyticsLanguageCode::EnAu => "en-AU",
+            CallAnalyticsLanguageCode::EnGb => "en-GB",
+            CallAnalyticsLanguageCode::EnUs => "en-US",
+            CallAnalyticsLanguageCode::EsUs => "es-US",
+            CallAnalyticsLanguageCode::FrCa => "fr-CA",
+            CallAnalyticsLanguageCode::FrFr => "fr-FR",
+            CallAnalyticsLanguageCode::ItIt => "it-IT",
+            CallAnalyticsLanguageCode::PtBr => "pt-BR",
+            CallAnalyticsLanguageCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "pt-BR",
+        ]
+    }
+}
+impl AsRef<str> for CallAnalyticsLanguageCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -91,6 +91,63 @@ impl Client {
     }
 }
 impl Client {
+    /// Constructs a fluent builder for the [`BatchCreateCustomVocabularyItem`](crate::client::fluent_builders::BatchCreateCustomVocabularyItem) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::BatchCreateCustomVocabularyItem::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::BatchCreateCustomVocabularyItem::set_bot_id): <p>The unique identifier of the bot to batch create the custom vocabulary item for.</p>
+    ///   - [`bot_version(impl Into<String>)`](crate::client::fluent_builders::BatchCreateCustomVocabularyItem::bot_version) / [`set_bot_version(Option<String>)`](crate::client::fluent_builders::BatchCreateCustomVocabularyItem::set_bot_version): <p>The bot version of the bot to batch create the custom vocabulary item for.</p>
+    ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::BatchCreateCustomVocabularyItem::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::BatchCreateCustomVocabularyItem::set_locale_id): <p>The unique locale identifier of the bot to batch create the custom vocabulary item for.</p>
+    ///   - [`custom_vocabulary_item_list(Vec<NewCustomVocabularyItem>)`](crate::client::fluent_builders::BatchCreateCustomVocabularyItem::custom_vocabulary_item_list) / [`set_custom_vocabulary_item_list(Option<Vec<NewCustomVocabularyItem>>)`](crate::client::fluent_builders::BatchCreateCustomVocabularyItem::set_custom_vocabulary_item_list): <p>The custom vocabulary item list of the bot to batch create the custom vocabulary item for.</p>
+    /// - On success, responds with [`BatchCreateCustomVocabularyItemOutput`](crate::output::BatchCreateCustomVocabularyItemOutput) with field(s):
+    ///   - [`bot_id(Option<String>)`](crate::output::BatchCreateCustomVocabularyItemOutput::bot_id): <p>The unique identifier of the bot to batch create response for the custom vocabulary item.</p>
+    ///   - [`bot_version(Option<String>)`](crate::output::BatchCreateCustomVocabularyItemOutput::bot_version): <p>The bot version of the bot to batch create the custom vocabulary item response for.</p>
+    ///   - [`locale_id(Option<String>)`](crate::output::BatchCreateCustomVocabularyItemOutput::locale_id): <p>The unique locale identifier of the bot to batch create the custom vocabulary item response for.</p>
+    ///   - [`errors(Option<Vec<FailedCustomVocabularyItem>>)`](crate::output::BatchCreateCustomVocabularyItemOutput::errors): <p>The errors of the action to batch create the custom vocabulary item response for a bot.</p>
+    ///   - [`resources(Option<Vec<CustomVocabularyItem>>)`](crate::output::BatchCreateCustomVocabularyItemOutput::resources): <p>The resources of the action to batch create the custom vocabulary item response for a bot.</p>
+    /// - On failure, responds with [`SdkError<BatchCreateCustomVocabularyItemError>`](crate::error::BatchCreateCustomVocabularyItemError)
+    pub fn batch_create_custom_vocabulary_item(
+        &self,
+    ) -> fluent_builders::BatchCreateCustomVocabularyItem {
+        fluent_builders::BatchCreateCustomVocabularyItem::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`BatchDeleteCustomVocabularyItem`](crate::client::fluent_builders::BatchDeleteCustomVocabularyItem) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteCustomVocabularyItem::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::BatchDeleteCustomVocabularyItem::set_bot_id): <p>The unique identifier of the bot to batch delete request for the custom vocabulary item.</p>
+    ///   - [`bot_version(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteCustomVocabularyItem::bot_version) / [`set_bot_version(Option<String>)`](crate::client::fluent_builders::BatchDeleteCustomVocabularyItem::set_bot_version): <p>The version of the bot to batch delete request for the custom vocabulary item.</p>
+    ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteCustomVocabularyItem::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::BatchDeleteCustomVocabularyItem::set_locale_id): <p>The locale identifier of the bot to batch delete request for the custom vocabulary item.</p>
+    ///   - [`custom_vocabulary_item_list(Vec<CustomVocabularyEntryId>)`](crate::client::fluent_builders::BatchDeleteCustomVocabularyItem::custom_vocabulary_item_list) / [`set_custom_vocabulary_item_list(Option<Vec<CustomVocabularyEntryId>>)`](crate::client::fluent_builders::BatchDeleteCustomVocabularyItem::set_custom_vocabulary_item_list): <p>The custom vocabulary list to batch delete request for the custom vocabulary item.</p>
+    /// - On success, responds with [`BatchDeleteCustomVocabularyItemOutput`](crate::output::BatchDeleteCustomVocabularyItemOutput) with field(s):
+    ///   - [`bot_id(Option<String>)`](crate::output::BatchDeleteCustomVocabularyItemOutput::bot_id): <p>The unique identifier of the bot to batch delete response for the custom vocabulary item.</p>
+    ///   - [`bot_version(Option<String>)`](crate::output::BatchDeleteCustomVocabularyItemOutput::bot_version): <p>The version of the bot to batch delete response for the custom vocabulary item.</p>
+    ///   - [`locale_id(Option<String>)`](crate::output::BatchDeleteCustomVocabularyItemOutput::locale_id): <p>The locale identifier of the bot to batch delete response for the custom vocabulary item.</p>
+    ///   - [`errors(Option<Vec<FailedCustomVocabularyItem>>)`](crate::output::BatchDeleteCustomVocabularyItemOutput::errors): <p>The errors of the action to batch delete response for the custom vocabulary item.</p>
+    ///   - [`resources(Option<Vec<CustomVocabularyItem>>)`](crate::output::BatchDeleteCustomVocabularyItemOutput::resources): <p>The resources of the action to batch delete response for the custom vocabulary item.</p>
+    /// - On failure, responds with [`SdkError<BatchDeleteCustomVocabularyItemError>`](crate::error::BatchDeleteCustomVocabularyItemError)
+    pub fn batch_delete_custom_vocabulary_item(
+        &self,
+    ) -> fluent_builders::BatchDeleteCustomVocabularyItem {
+        fluent_builders::BatchDeleteCustomVocabularyItem::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`BatchUpdateCustomVocabularyItem`](crate::client::fluent_builders::BatchUpdateCustomVocabularyItem) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::BatchUpdateCustomVocabularyItem::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::BatchUpdateCustomVocabularyItem::set_bot_id): <p>The unique identifier of the bot to the batch update request for the custom vocabulary item.</p>
+    ///   - [`bot_version(impl Into<String>)`](crate::client::fluent_builders::BatchUpdateCustomVocabularyItem::bot_version) / [`set_bot_version(Option<String>)`](crate::client::fluent_builders::BatchUpdateCustomVocabularyItem::set_bot_version): <p>The bot version of the bot to the batch update request for the custom vocabulary item.</p>
+    ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::BatchUpdateCustomVocabularyItem::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::BatchUpdateCustomVocabularyItem::set_locale_id): <p>The locale identifier of the bot to the batch update request for the custom vocabulary item.</p>
+    ///   - [`custom_vocabulary_item_list(Vec<CustomVocabularyItem>)`](crate::client::fluent_builders::BatchUpdateCustomVocabularyItem::custom_vocabulary_item_list) / [`set_custom_vocabulary_item_list(Option<Vec<CustomVocabularyItem>>)`](crate::client::fluent_builders::BatchUpdateCustomVocabularyItem::set_custom_vocabulary_item_list): <p>The custom vocabulary item list of the bot to the batch update request for the custom vocabulary item.</p>
+    /// - On success, responds with [`BatchUpdateCustomVocabularyItemOutput`](crate::output::BatchUpdateCustomVocabularyItemOutput) with field(s):
+    ///   - [`bot_id(Option<String>)`](crate::output::BatchUpdateCustomVocabularyItemOutput::bot_id): <p>The unique identifier of the bot to the batch update response for the custom vocabulary item.</p>
+    ///   - [`bot_version(Option<String>)`](crate::output::BatchUpdateCustomVocabularyItemOutput::bot_version): <p>The bot version of the bot to the batch update response for the custom vocabulary item.</p>
+    ///   - [`locale_id(Option<String>)`](crate::output::BatchUpdateCustomVocabularyItemOutput::locale_id): <p>The locale identifier of the bot to the batch update response for the custom vocabulary item.</p>
+    ///   - [`errors(Option<Vec<FailedCustomVocabularyItem>>)`](crate::output::BatchUpdateCustomVocabularyItemOutput::errors): <p>The errors of the action to batch update response for the custom vocabulary item.</p>
+    ///   - [`resources(Option<Vec<CustomVocabularyItem>>)`](crate::output::BatchUpdateCustomVocabularyItemOutput::resources): <p>The resources of the action to batch update response for the custom vocabulary item.</p>
+    /// - On failure, responds with [`SdkError<BatchUpdateCustomVocabularyItemError>`](crate::error::BatchUpdateCustomVocabularyItemError)
+    pub fn batch_update_custom_vocabulary_item(
+        &self,
+    ) -> fluent_builders::BatchUpdateCustomVocabularyItem {
+        fluent_builders::BatchUpdateCustomVocabularyItem::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`BuildBotLocale`](crate::client::fluent_builders::BuildBotLocale) operation.
     ///
     /// - The fluent builder is configurable:
@@ -934,6 +991,25 @@ impl Client {
     pub fn list_built_in_slot_types(&self) -> fluent_builders::ListBuiltInSlotTypes {
         fluent_builders::ListBuiltInSlotTypes::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListCustomVocabularyItems`](crate::client::fluent_builders::ListCustomVocabularyItems) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCustomVocabularyItems::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::ListCustomVocabularyItems::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::ListCustomVocabularyItems::set_bot_id): <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+    ///   - [`bot_version(impl Into<String>)`](crate::client::fluent_builders::ListCustomVocabularyItems::bot_version) / [`set_bot_version(Option<String>)`](crate::client::fluent_builders::ListCustomVocabularyItems::set_bot_version): <p>The bot version of the bot to the list custom vocabulary request.</p>
+    ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::ListCustomVocabularyItems::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::ListCustomVocabularyItems::set_locale_id): <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCustomVocabularyItems::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCustomVocabularyItems::set_max_results): <p>The maximum results to the list custom vocabulary request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCustomVocabularyItems::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCustomVocabularyItems::set_next_token): <p>The nextToken identifier to the list custom vocabulary request.</p>
+    /// - On success, responds with [`ListCustomVocabularyItemsOutput`](crate::output::ListCustomVocabularyItemsOutput) with field(s):
+    ///   - [`bot_id(Option<String>)`](crate::output::ListCustomVocabularyItemsOutput::bot_id): <p>The unique identifier of the bot to the list custom vocabulary response.</p>
+    ///   - [`bot_version(Option<String>)`](crate::output::ListCustomVocabularyItemsOutput::bot_version): <p>The bot version of the bot to the list custom vocabulary response.</p>
+    ///   - [`locale_id(Option<String>)`](crate::output::ListCustomVocabularyItemsOutput::locale_id): <p>The locale identifier of the bot to the list custom vocabulary response.</p>
+    ///   - [`custom_vocabulary_items(Option<Vec<CustomVocabularyItem>>)`](crate::output::ListCustomVocabularyItemsOutput::custom_vocabulary_items): <p>The custom vocabulary items from the list custom vocabulary response.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCustomVocabularyItemsOutput::next_token): <p>The nextToken identifier to the list custom vocabulary response.</p>
+    /// - On failure, responds with [`SdkError<ListCustomVocabularyItemsError>`](crate::error::ListCustomVocabularyItemsError)
+    pub fn list_custom_vocabulary_items(&self) -> fluent_builders::ListCustomVocabularyItems {
+        fluent_builders::ListCustomVocabularyItems::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListExports`](crate::client::fluent_builders::ListExports) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExports::into_paginator).
     ///
@@ -1417,6 +1493,345 @@ pub mod fluent_builders {
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
+    /// Fluent builder constructing a request to `BatchCreateCustomVocabularyItem`.
+    ///
+    /// <p>Batch create custom vocabulary item for the specified locale in the specified bot.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchCreateCustomVocabularyItem {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_create_custom_vocabulary_item_input::Builder,
+    }
+    impl BatchCreateCustomVocabularyItem {
+        /// Creates a new `BatchCreateCustomVocabularyItem`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::BatchCreateCustomVocabularyItem,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::BatchCreateCustomVocabularyItemError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchCreateCustomVocabularyItemOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchCreateCustomVocabularyItemError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the bot to batch create the custom vocabulary item for.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot to batch create the custom vocabulary item for.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The bot version of the bot to batch create the custom vocabulary item for.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
+            self
+        }
+        /// <p>The bot version of the bot to batch create the custom vocabulary item for.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_version(input);
+            self
+        }
+        /// <p>The unique locale identifier of the bot to batch create the custom vocabulary item for.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
+            self
+        }
+        /// <p>The unique locale identifier of the bot to batch create the custom vocabulary item for.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// Appends an item to `customVocabularyItemList`.
+        ///
+        /// To override the contents of this collection use [`set_custom_vocabulary_item_list`](Self::set_custom_vocabulary_item_list).
+        ///
+        /// <p>The custom vocabulary item list of the bot to batch create the custom vocabulary item for.</p>
+        pub fn custom_vocabulary_item_list(
+            mut self,
+            input: crate::model::NewCustomVocabularyItem,
+        ) -> Self {
+            self.inner = self.inner.custom_vocabulary_item_list(input);
+            self
+        }
+        /// <p>The custom vocabulary item list of the bot to batch create the custom vocabulary item for.</p>
+        pub fn set_custom_vocabulary_item_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::NewCustomVocabularyItem>>,
+        ) -> Self {
+            self.inner = self.inner.set_custom_vocabulary_item_list(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `BatchDeleteCustomVocabularyItem`.
+    ///
+    /// <p>Batch delete custom vocabulary item for the specified locale in the specified bot.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchDeleteCustomVocabularyItem {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_delete_custom_vocabulary_item_input::Builder,
+    }
+    impl BatchDeleteCustomVocabularyItem {
+        /// Creates a new `BatchDeleteCustomVocabularyItem`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::BatchDeleteCustomVocabularyItem,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::BatchDeleteCustomVocabularyItemError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchDeleteCustomVocabularyItemOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchDeleteCustomVocabularyItemError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the bot to batch delete request for the custom vocabulary item.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot to batch delete request for the custom vocabulary item.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The version of the bot to batch delete request for the custom vocabulary item.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
+            self
+        }
+        /// <p>The version of the bot to batch delete request for the custom vocabulary item.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_version(input);
+            self
+        }
+        /// <p>The locale identifier of the bot to batch delete request for the custom vocabulary item.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
+            self
+        }
+        /// <p>The locale identifier of the bot to batch delete request for the custom vocabulary item.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// Appends an item to `customVocabularyItemList`.
+        ///
+        /// To override the contents of this collection use [`set_custom_vocabulary_item_list`](Self::set_custom_vocabulary_item_list).
+        ///
+        /// <p>The custom vocabulary list to batch delete request for the custom vocabulary item.</p>
+        pub fn custom_vocabulary_item_list(
+            mut self,
+            input: crate::model::CustomVocabularyEntryId,
+        ) -> Self {
+            self.inner = self.inner.custom_vocabulary_item_list(input);
+            self
+        }
+        /// <p>The custom vocabulary list to batch delete request for the custom vocabulary item.</p>
+        pub fn set_custom_vocabulary_item_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyEntryId>>,
+        ) -> Self {
+            self.inner = self.inner.set_custom_vocabulary_item_list(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `BatchUpdateCustomVocabularyItem`.
+    ///
+    /// <p>Batch update custom vocabulary item for the specified locale in the specified bot.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchUpdateCustomVocabularyItem {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_update_custom_vocabulary_item_input::Builder,
+    }
+    impl BatchUpdateCustomVocabularyItem {
+        /// Creates a new `BatchUpdateCustomVocabularyItem`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::BatchUpdateCustomVocabularyItem,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::BatchUpdateCustomVocabularyItemError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchUpdateCustomVocabularyItemOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchUpdateCustomVocabularyItemError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the bot to the batch update request for the custom vocabulary item.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot to the batch update request for the custom vocabulary item.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The bot version of the bot to the batch update request for the custom vocabulary item.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
+            self
+        }
+        /// <p>The bot version of the bot to the batch update request for the custom vocabulary item.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_version(input);
+            self
+        }
+        /// <p>The locale identifier of the bot to the batch update request for the custom vocabulary item.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
+            self
+        }
+        /// <p>The locale identifier of the bot to the batch update request for the custom vocabulary item.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// Appends an item to `customVocabularyItemList`.
+        ///
+        /// To override the contents of this collection use [`set_custom_vocabulary_item_list`](Self::set_custom_vocabulary_item_list).
+        ///
+        /// <p>The custom vocabulary item list of the bot to the batch update request for the custom vocabulary item.</p>
+        pub fn custom_vocabulary_item_list(
+            mut self,
+            input: crate::model::CustomVocabularyItem,
+        ) -> Self {
+            self.inner = self.inner.custom_vocabulary_item_list(input);
+            self
+        }
+        /// <p>The custom vocabulary item list of the bot to the batch update request for the custom vocabulary item.</p>
+        pub fn set_custom_vocabulary_item_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+        ) -> Self {
+            self.inner = self.inner.set_custom_vocabulary_item_list(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `BuildBotLocale`.
     ///
     /// <p>Builds a bot, its intents, and its slot types into a specific locale. A bot can be built into multiple locales. At runtime the locale is used to choose a specific build of the bot.</p>
@@ -6520,6 +6935,125 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListCustomVocabularyItems`.
+    ///
+    /// <p>List custom vocabulary items for the specified locale in the specified bot.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListCustomVocabularyItems {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_custom_vocabulary_items_input::Builder,
+    }
+    impl ListCustomVocabularyItems {
+        /// Creates a new `ListCustomVocabularyItems`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListCustomVocabularyItems,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListCustomVocabularyItemsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCustomVocabularyItemsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListCustomVocabularyItemsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomVocabularyItemsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCustomVocabularyItemsPaginator {
+            crate::paginator::ListCustomVocabularyItemsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The bot version of the bot to the list custom vocabulary request.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
+            self
+        }
+        /// <p>The bot version of the bot to the list custom vocabulary request.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_version(input);
+            self
+        }
+        /// <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
+            self
+        }
+        /// <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// <p>The maximum results to the list custom vocabulary request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum results to the list custom vocabulary request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The nextToken identifier to the list custom vocabulary request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The nextToken identifier to the list custom vocabulary request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListExports`.
     ///
     /// <p>Lists the exports for a bot, bot locale, or custom vocabulary. Exports are kept in the list for 7 days.</p>
@@ -6975,7 +7509,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRecommendedIntents`.
     ///
-    /// <p>Gets a list of recommended intents provided by the bot recommendation that you can use in your bot.</p>
+    /// <p>Gets a list of recommended intents provided by the bot recommendation that you can use in your bot. Intents in the response are ordered by relevance.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecommendedIntents {
         handle: std::sync::Arc<super::Handle>,

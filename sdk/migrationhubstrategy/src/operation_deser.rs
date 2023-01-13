@@ -416,6 +416,114 @@ pub fn parse_get_import_file_task_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_latest_assessment_id_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetLatestAssessmentIdOutput,
+    crate::error::GetLatestAssessmentIdError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetLatestAssessmentIdError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetLatestAssessmentIdError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetLatestAssessmentIdError {
+            meta: generic,
+            kind: crate::error::GetLatestAssessmentIdErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLatestAssessmentIdError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "DependencyException" => crate::error::GetLatestAssessmentIdError {
+            meta: generic,
+            kind: crate::error::GetLatestAssessmentIdErrorKind::DependencyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::dependency_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLatestAssessmentIdError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::GetLatestAssessmentIdError {
+            meta: generic,
+            kind: crate::error::GetLatestAssessmentIdErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLatestAssessmentIdError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::GetLatestAssessmentIdError {
+            meta: generic,
+            kind: crate::error::GetLatestAssessmentIdErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLatestAssessmentIdError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetLatestAssessmentIdError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_latest_assessment_id_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetLatestAssessmentIdOutput,
+    crate::error::GetLatestAssessmentIdError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_latest_assessment_id_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_latest_assessment_id(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetLatestAssessmentIdError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_portfolio_preferences_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

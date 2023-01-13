@@ -972,7 +972,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>An invalid job identifier was passed to <code>GetDocumentAnalysis</code> or to <code>GetDocumentAnalysis</code>.</p>
+/// <p>An invalid job identifier was passed to an asynchronous analysis operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidJobIdException {
@@ -1988,7 +1988,7 @@ pub enum GetDocumentAnalysisErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An invalid job identifier was passed to <code>GetDocumentAnalysis</code> or to <code>GetDocumentAnalysis</code>.</p>
+    /// <p>An invalid job identifier was passed to an asynchronous analysis operation.</p>
     InvalidJobIdException(crate::error::InvalidJobIdException),
     /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
     InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
@@ -2179,7 +2179,7 @@ pub enum GetDocumentTextDetectionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An invalid job identifier was passed to <code>GetDocumentAnalysis</code> or to <code>GetDocumentAnalysis</code>.</p>
+    /// <p>An invalid job identifier was passed to an asynchronous analysis operation.</p>
     InvalidJobIdException(crate::error::InvalidJobIdException),
     /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
     InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
@@ -2372,7 +2372,7 @@ pub enum GetExpenseAnalysisErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An invalid job identifier was passed to <code>GetDocumentAnalysis</code> or to <code>GetDocumentAnalysis</code>.</p>
+    /// <p>An invalid job identifier was passed to an asynchronous analysis operation.</p>
     InvalidJobIdException(crate::error::InvalidJobIdException),
     /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
     InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
@@ -2532,6 +2532,390 @@ impl std::error::Error for GetExpenseAnalysisError {
             }
             GetExpenseAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetExpenseAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetLendingAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetLendingAnalysisError {
+    /// Kind of error that occurred.
+    pub kind: GetLendingAnalysisErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetLendingAnalysisError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetLendingAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetLendingAnalysisErrorKind {
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>An invalid job identifier was passed to an asynchronous analysis operation.</p>
+    InvalidJobIdException(crate::error::InvalidJobIdException),
+    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
+    InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
+    InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetLendingAnalysisError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetLendingAnalysisErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetLendingAnalysisErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            GetLendingAnalysisErrorKind::InvalidJobIdException(_inner) => _inner.fmt(f),
+            GetLendingAnalysisErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
+            GetLendingAnalysisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetLendingAnalysisErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
+            GetLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetLendingAnalysisErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetLendingAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetLendingAnalysisError {
+    fn code(&self) -> Option<&str> {
+        GetLendingAnalysisError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetLendingAnalysisError {
+    /// Creates a new `GetLendingAnalysisError`.
+    pub fn new(kind: GetLendingAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetLendingAnalysisError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetLendingAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::InvalidJobIdException`.
+    pub fn is_invalid_job_id_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisErrorKind::InvalidJobIdException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::InvalidKmsKeyException`.
+    pub fn is_invalid_kms_key_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisErrorKind::InvalidKmsKeyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::InvalidS3ObjectException`.
+    pub fn is_invalid_s3_object_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisErrorKind::InvalidS3ObjectException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for GetLendingAnalysisError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetLendingAnalysisErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetLendingAnalysisErrorKind::InternalServerError(_inner) => Some(_inner),
+            GetLendingAnalysisErrorKind::InvalidJobIdException(_inner) => Some(_inner),
+            GetLendingAnalysisErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
+            GetLendingAnalysisErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetLendingAnalysisErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
+            GetLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
+            GetLendingAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetLendingAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetLendingAnalysisSummary` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetLendingAnalysisSummaryError {
+    /// Kind of error that occurred.
+    pub kind: GetLendingAnalysisSummaryErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetLendingAnalysisSummaryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLendingAnalysisSummaryErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetLendingAnalysisSummary` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetLendingAnalysisSummaryErrorKind {
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>An invalid job identifier was passed to an asynchronous analysis operation.</p>
+    InvalidJobIdException(crate::error::InvalidJobIdException),
+    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
+    InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
+    InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetLendingAnalysisSummaryError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetLendingAnalysisSummaryErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetLendingAnalysisSummaryErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            GetLendingAnalysisSummaryErrorKind::InvalidJobIdException(_inner) => _inner.fmt(f),
+            GetLendingAnalysisSummaryErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
+            GetLendingAnalysisSummaryErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetLendingAnalysisSummaryErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
+            GetLendingAnalysisSummaryErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetLendingAnalysisSummaryErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetLendingAnalysisSummaryErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetLendingAnalysisSummaryError {
+    fn code(&self) -> Option<&str> {
+        GetLendingAnalysisSummaryError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetLendingAnalysisSummaryError {
+    /// Creates a new `GetLendingAnalysisSummaryError`.
+    pub fn new(kind: GetLendingAnalysisSummaryErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetLendingAnalysisSummaryError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetLendingAnalysisSummaryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetLendingAnalysisSummaryError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetLendingAnalysisSummaryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisSummaryErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisSummaryErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::InvalidJobIdException`.
+    pub fn is_invalid_job_id_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisSummaryErrorKind::InvalidJobIdException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::InvalidKmsKeyException`.
+    pub fn is_invalid_kms_key_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisSummaryErrorKind::InvalidKmsKeyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisSummaryErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::InvalidS3ObjectException`.
+    pub fn is_invalid_s3_object_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisSummaryErrorKind::InvalidS3ObjectException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisSummaryErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLendingAnalysisSummaryErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for GetLendingAnalysisSummaryError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetLendingAnalysisSummaryErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetLendingAnalysisSummaryErrorKind::InternalServerError(_inner) => Some(_inner),
+            GetLendingAnalysisSummaryErrorKind::InvalidJobIdException(_inner) => Some(_inner),
+            GetLendingAnalysisSummaryErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
+            GetLendingAnalysisSummaryErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetLendingAnalysisSummaryErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
+            GetLendingAnalysisSummaryErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
+            GetLendingAnalysisSummaryErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetLendingAnalysisSummaryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3261,6 +3645,247 @@ impl std::error::Error for StartExpenseAnalysisError {
             StartExpenseAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartExpenseAnalysisErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
             StartExpenseAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `StartLendingAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartLendingAnalysisError {
+    /// Kind of error that occurred.
+    pub kind: StartLendingAnalysisErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartLendingAnalysisError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `StartLendingAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartLendingAnalysisErrorKind {
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <code>limits</code>.</p>
+    BadDocumentException(crate::error::BadDocumentException),
+    /// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
+    DocumentTooLargeException(crate::error::DocumentTooLargeException),
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation. </p>
+    IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
+    /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
+    InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
+    InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
+    /// <p>An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Textract service limit. </p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
+    UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for StartLendingAnalysisError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartLendingAnalysisErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            StartLendingAnalysisErrorKind::BadDocumentException(_inner) => _inner.fmt(f),
+            StartLendingAnalysisErrorKind::DocumentTooLargeException(_inner) => _inner.fmt(f),
+            StartLendingAnalysisErrorKind::IdempotentParameterMismatchException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartLendingAnalysisErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            StartLendingAnalysisErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
+            StartLendingAnalysisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            StartLendingAnalysisErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
+            StartLendingAnalysisErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            StartLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartLendingAnalysisErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            StartLendingAnalysisErrorKind::UnsupportedDocumentException(_inner) => _inner.fmt(f),
+            StartLendingAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartLendingAnalysisError {
+    fn code(&self) -> Option<&str> {
+        StartLendingAnalysisError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartLendingAnalysisError {
+    /// Creates a new `StartLendingAnalysisError`.
+    pub fn new(kind: StartLendingAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartLendingAnalysisError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartLendingAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartLendingAnalysisErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::BadDocumentException`.
+    pub fn is_bad_document_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartLendingAnalysisErrorKind::BadDocumentException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::DocumentTooLargeException`.
+    pub fn is_document_too_large_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartLendingAnalysisErrorKind::DocumentTooLargeException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::IdempotentParameterMismatchException`.
+    pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartLendingAnalysisErrorKind::IdempotentParameterMismatchException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartLendingAnalysisErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::InvalidKmsKeyException`.
+    pub fn is_invalid_kms_key_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartLendingAnalysisErrorKind::InvalidKmsKeyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartLendingAnalysisErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::InvalidS3ObjectException`.
+    pub fn is_invalid_s3_object_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartLendingAnalysisErrorKind::InvalidS3ObjectException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartLendingAnalysisErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartLendingAnalysisErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::UnsupportedDocumentException`.
+    pub fn is_unsupported_document_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartLendingAnalysisErrorKind::UnsupportedDocumentException(_)
+        )
+    }
+}
+impl std::error::Error for StartLendingAnalysisError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartLendingAnalysisErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            StartLendingAnalysisErrorKind::BadDocumentException(_inner) => Some(_inner),
+            StartLendingAnalysisErrorKind::DocumentTooLargeException(_inner) => Some(_inner),
+            StartLendingAnalysisErrorKind::IdempotentParameterMismatchException(_inner) => {
+                Some(_inner)
+            }
+            StartLendingAnalysisErrorKind::InternalServerError(_inner) => Some(_inner),
+            StartLendingAnalysisErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
+            StartLendingAnalysisErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            StartLendingAnalysisErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
+            StartLendingAnalysisErrorKind::LimitExceededException(_inner) => Some(_inner),
+            StartLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
+            StartLendingAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
+            StartLendingAnalysisErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
+            StartLendingAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

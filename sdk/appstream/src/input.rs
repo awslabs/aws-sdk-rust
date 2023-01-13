@@ -1566,6 +1566,8 @@ pub mod create_directory_config_input {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) service_account_credentials:
             std::option::Option<crate::model::ServiceAccountCredentials>,
+        pub(crate) certificate_based_auth_properties:
+            std::option::Option<crate::model::CertificateBasedAuthProperties>,
     }
     impl Builder {
         /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
@@ -1621,6 +1623,22 @@ pub mod create_directory_config_input {
             self.service_account_credentials = input;
             self
         }
+        /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+        pub fn certificate_based_auth_properties(
+            mut self,
+            input: crate::model::CertificateBasedAuthProperties,
+        ) -> Self {
+            self.certificate_based_auth_properties = Some(input);
+            self
+        }
+        /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+        pub fn set_certificate_based_auth_properties(
+            mut self,
+            input: std::option::Option<crate::model::CertificateBasedAuthProperties>,
+        ) -> Self {
+            self.certificate_based_auth_properties = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDirectoryConfigInput`](crate::input::CreateDirectoryConfigInput).
         pub fn build(
             self,
@@ -1633,6 +1651,7 @@ pub mod create_directory_config_input {
                 organizational_unit_distinguished_names: self
                     .organizational_unit_distinguished_names,
                 service_account_credentials: self.service_account_credentials,
+                certificate_based_auth_properties: self.certificate_based_auth_properties,
             })
         }
     }
@@ -2029,6 +2048,8 @@ pub mod create_fleet_input {
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
         /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// <li> <p>stream.compute.large</p> </li>
         /// <li> <p>stream.compute.xlarge</p> </li>
         /// <li> <p>stream.compute.2xlarge</p> </li>
@@ -2064,6 +2085,9 @@ pub mod create_fleet_input {
         /// <ul>
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// </ul>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
@@ -2074,6 +2098,8 @@ pub mod create_fleet_input {
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
         /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// <li> <p>stream.compute.large</p> </li>
         /// <li> <p>stream.compute.xlarge</p> </li>
         /// <li> <p>stream.compute.2xlarge</p> </li>
@@ -2109,6 +2135,9 @@ pub mod create_fleet_input {
         /// <ul>
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,
@@ -11333,6 +11362,8 @@ pub mod update_directory_config_input {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) service_account_credentials:
             std::option::Option<crate::model::ServiceAccountCredentials>,
+        pub(crate) certificate_based_auth_properties:
+            std::option::Option<crate::model::CertificateBasedAuthProperties>,
     }
     impl Builder {
         /// <p>The name of the Directory Config object.</p>
@@ -11388,6 +11419,22 @@ pub mod update_directory_config_input {
             self.service_account_credentials = input;
             self
         }
+        /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+        pub fn certificate_based_auth_properties(
+            mut self,
+            input: crate::model::CertificateBasedAuthProperties,
+        ) -> Self {
+            self.certificate_based_auth_properties = Some(input);
+            self
+        }
+        /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+        pub fn set_certificate_based_auth_properties(
+            mut self,
+            input: std::option::Option<crate::model::CertificateBasedAuthProperties>,
+        ) -> Self {
+            self.certificate_based_auth_properties = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDirectoryConfigInput`](crate::input::UpdateDirectoryConfigInput).
         pub fn build(
             self,
@@ -11400,6 +11447,7 @@ pub mod update_directory_config_input {
                 organizational_unit_distinguished_names: self
                     .organizational_unit_distinguished_names,
                 service_account_credentials: self.service_account_credentials,
+                certificate_based_auth_properties: self.certificate_based_auth_properties,
             })
         }
     }
@@ -11795,6 +11843,8 @@ pub mod update_fleet_input {
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
         /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// <li> <p>stream.compute.large</p> </li>
         /// <li> <p>stream.compute.xlarge</p> </li>
         /// <li> <p>stream.compute.2xlarge</p> </li>
@@ -11830,6 +11880,9 @@ pub mod update_fleet_input {
         /// <ul>
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// </ul>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
@@ -11840,6 +11893,8 @@ pub mod update_fleet_input {
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
         /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// <li> <p>stream.compute.large</p> </li>
         /// <li> <p>stream.compute.xlarge</p> </li>
         /// <li> <p>stream.compute.2xlarge</p> </li>
@@ -11875,6 +11930,9 @@ pub mod update_fleet_input {
         /// <ul>
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,
@@ -12939,6 +12997,8 @@ pub struct UpdateFleetInput {
     /// <li> <p>stream.standard.small</p> </li>
     /// <li> <p>stream.standard.medium</p> </li>
     /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// <li> <p>stream.compute.large</p> </li>
     /// <li> <p>stream.compute.xlarge</p> </li>
     /// <li> <p>stream.compute.2xlarge</p> </li>
@@ -12974,6 +13034,9 @@ pub struct UpdateFleetInput {
     /// <ul>
     /// <li> <p>stream.standard.small</p> </li>
     /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
@@ -13055,6 +13118,8 @@ impl UpdateFleetInput {
     /// <li> <p>stream.standard.small</p> </li>
     /// <li> <p>stream.standard.medium</p> </li>
     /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// <li> <p>stream.compute.large</p> </li>
     /// <li> <p>stream.compute.xlarge</p> </li>
     /// <li> <p>stream.compute.2xlarge</p> </li>
@@ -13090,6 +13155,9 @@ impl UpdateFleetInput {
     /// <ul>
     /// <li> <p>stream.standard.small</p> </li>
     /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
@@ -13229,6 +13297,10 @@ pub struct UpdateDirectoryConfigInput {
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
     #[doc(hidden)]
     pub service_account_credentials: std::option::Option<crate::model::ServiceAccountCredentials>,
+    /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+    #[doc(hidden)]
+    pub certificate_based_auth_properties:
+        std::option::Option<crate::model::CertificateBasedAuthProperties>,
 }
 impl UpdateDirectoryConfigInput {
     /// <p>The name of the Directory Config object.</p>
@@ -13246,6 +13318,12 @@ impl UpdateDirectoryConfigInput {
         &self,
     ) -> std::option::Option<&crate::model::ServiceAccountCredentials> {
         self.service_account_credentials.as_ref()
+    }
+    /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+    pub fn certificate_based_auth_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::CertificateBasedAuthProperties> {
+        self.certificate_based_auth_properties.as_ref()
     }
 }
 
@@ -14862,6 +14940,8 @@ pub struct CreateFleetInput {
     /// <li> <p>stream.standard.small</p> </li>
     /// <li> <p>stream.standard.medium</p> </li>
     /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// <li> <p>stream.compute.large</p> </li>
     /// <li> <p>stream.compute.xlarge</p> </li>
     /// <li> <p>stream.compute.2xlarge</p> </li>
@@ -14897,6 +14977,9 @@ pub struct CreateFleetInput {
     /// <ul>
     /// <li> <p>stream.standard.small</p> </li>
     /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
@@ -14996,6 +15079,8 @@ impl CreateFleetInput {
     /// <li> <p>stream.standard.small</p> </li>
     /// <li> <p>stream.standard.medium</p> </li>
     /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// <li> <p>stream.compute.large</p> </li>
     /// <li> <p>stream.compute.xlarge</p> </li>
     /// <li> <p>stream.compute.2xlarge</p> </li>
@@ -15031,6 +15116,9 @@ impl CreateFleetInput {
     /// <ul>
     /// <li> <p>stream.standard.small</p> </li>
     /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
@@ -15190,6 +15278,10 @@ pub struct CreateDirectoryConfigInput {
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
     #[doc(hidden)]
     pub service_account_credentials: std::option::Option<crate::model::ServiceAccountCredentials>,
+    /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+    #[doc(hidden)]
+    pub certificate_based_auth_properties:
+        std::option::Option<crate::model::CertificateBasedAuthProperties>,
 }
 impl CreateDirectoryConfigInput {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
@@ -15207,6 +15299,12 @@ impl CreateDirectoryConfigInput {
         &self,
     ) -> std::option::Option<&crate::model::ServiceAccountCredentials> {
         self.service_account_credentials.as_ref()
+    }
+    /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+    pub fn certificate_based_auth_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::CertificateBasedAuthProperties> {
+        self.certificate_based_auth_properties.as_ref()
     }
 }
 

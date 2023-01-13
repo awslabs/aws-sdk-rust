@@ -19,6 +19,8 @@ pub enum Error {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>You don't have this feature activated for your account. To fix this issue, contact Amazon Web Services support.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A limit is exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more preconditions aren't met.</p>
@@ -63,6 +65,7 @@ impl std::fmt::Display for Error {
             Error::InternalFailureException(inner) => inner.fmt(f),
             Error::InvalidNextTokenException(inner) => inner.fmt(f),
             Error::InvalidParameterValueException(inner) => inner.fmt(f),
+            Error::InvalidRequestException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::PreconditionNotMetException(inner) => inner.fmt(f),
             Error::QuickSightUserNotFoundException(inner) => inner.fmt(f),
@@ -243,6 +246,9 @@ impl From<crate::error::CreateAnalysisError> for Error {
             crate::error::CreateAnalysisErrorKind::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
             }
+            crate::error::CreateAnalysisErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::error::CreateAnalysisErrorKind::ResourceExistsException(inner) => {
                 Error::ResourceExistsException(inner)
             }
@@ -285,6 +291,9 @@ impl From<crate::error::CreateDashboardError> for Error {
             }
             crate::error::CreateDashboardErrorKind::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
+            }
+            crate::error::CreateDashboardErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
             }
             crate::error::CreateDashboardErrorKind::ResourceExistsException(inner) => {
                 Error::ResourceExistsException(inner)
@@ -964,6 +973,52 @@ impl From<crate::error::DeleteAccountCustomizationError> for Error {
                 Error::ThrottlingException(inner)
             }
             crate::error::DeleteAccountCustomizationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAccountSubscriptionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteAccountSubscriptionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteAccountSubscriptionError> for Error {
+    fn from(err: crate::error::DeleteAccountSubscriptionError) -> Self {
+        match err.kind {
+            crate::error::DeleteAccountSubscriptionErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DeleteAccountSubscriptionErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DeleteAccountSubscriptionErrorKind::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::error::DeleteAccountSubscriptionErrorKind::PreconditionNotMetException(
+                inner,
+            ) => Error::PreconditionNotMetException(inner),
+            crate::error::DeleteAccountSubscriptionErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DeleteAccountSubscriptionErrorKind::ResourceUnavailableException(
+                inner,
+            ) => Error::ResourceUnavailableException(inner),
+            crate::error::DeleteAccountSubscriptionErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DeleteAccountSubscriptionErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -1819,6 +1874,55 @@ impl From<crate::error::DescribeAnalysisError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAnalysisDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeAnalysisDefinitionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeAnalysisDefinitionError> for Error {
+    fn from(err: crate::error::DescribeAnalysisDefinitionError) -> Self {
+        match err.kind {
+            crate::error::DescribeAnalysisDefinitionErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DescribeAnalysisDefinitionErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::DescribeAnalysisDefinitionErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DescribeAnalysisDefinitionErrorKind::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::error::DescribeAnalysisDefinitionErrorKind::ResourceExistsException(inner) => {
+                Error::ResourceExistsException(inner)
+            }
+            crate::error::DescribeAnalysisDefinitionErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DescribeAnalysisDefinitionErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DescribeAnalysisDefinitionErrorKind::UnsupportedUserEditionException(
+                inner,
+            ) => Error::UnsupportedUserEditionException(inner),
+            crate::error::DescribeAnalysisDefinitionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAnalysisPermissionsError, R>>
     for Error
 where
@@ -1896,6 +2000,55 @@ impl From<crate::error::DescribeDashboardError> for Error {
                 Error::UnsupportedUserEditionException(inner)
             }
             crate::error::DescribeDashboardErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDashboardDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeDashboardDefinitionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeDashboardDefinitionError> for Error {
+    fn from(err: crate::error::DescribeDashboardDefinitionError) -> Self {
+        match err.kind {
+            crate::error::DescribeDashboardDefinitionErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DescribeDashboardDefinitionErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::DescribeDashboardDefinitionErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DescribeDashboardDefinitionErrorKind::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::error::DescribeDashboardDefinitionErrorKind::ResourceExistsException(inner) => {
+                Error::ResourceExistsException(inner)
+            }
+            crate::error::DescribeDashboardDefinitionErrorKind::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeDashboardDefinitionErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DescribeDashboardDefinitionErrorKind::UnsupportedUserEditionException(
+                inner,
+            ) => Error::UnsupportedUserEditionException(inner),
+            crate::error::DescribeDashboardDefinitionErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -2525,6 +2678,55 @@ impl From<crate::error::DescribeTemplateAliasError> for Error {
                 inner,
             ) => Error::UnsupportedUserEditionException(inner),
             crate::error::DescribeTemplateAliasErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTemplateDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeTemplateDefinitionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeTemplateDefinitionError> for Error {
+    fn from(err: crate::error::DescribeTemplateDefinitionError) -> Self {
+        match err.kind {
+            crate::error::DescribeTemplateDefinitionErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DescribeTemplateDefinitionErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::DescribeTemplateDefinitionErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DescribeTemplateDefinitionErrorKind::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::error::DescribeTemplateDefinitionErrorKind::ResourceExistsException(inner) => {
+                Error::ResourceExistsException(inner)
+            }
+            crate::error::DescribeTemplateDefinitionErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DescribeTemplateDefinitionErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DescribeTemplateDefinitionErrorKind::UnsupportedUserEditionException(
+                inner,
+            ) => Error::UnsupportedUserEditionException(inner),
+            crate::error::DescribeTemplateDefinitionErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -3989,6 +4191,88 @@ impl From<crate::error::SearchDashboardsError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchDataSetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchDataSetsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SearchDataSetsError> for Error {
+    fn from(err: crate::error::SearchDataSetsError) -> Self {
+        match err.kind {
+            crate::error::SearchDataSetsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::SearchDataSetsErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::SearchDataSetsErrorKind::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::SearchDataSetsErrorKind::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::error::SearchDataSetsErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::SearchDataSetsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::SearchDataSetsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchDataSourcesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::SearchDataSourcesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SearchDataSourcesError> for Error {
+    fn from(err: crate::error::SearchDataSourcesError) -> Self {
+        match err.kind {
+            crate::error::SearchDataSourcesErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::SearchDataSourcesErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::SearchDataSourcesErrorKind::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::SearchDataSourcesErrorKind::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::error::SearchDataSourcesErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::SearchDataSourcesErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::SearchDataSourcesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchFoldersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4016,6 +4300,9 @@ impl From<crate::error::SearchFoldersError> for Error {
             }
             crate::error::SearchFoldersErrorKind::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
+            }
+            crate::error::SearchFoldersErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
             }
             crate::error::SearchFoldersErrorKind::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -4315,6 +4602,9 @@ impl From<crate::error::UpdateAnalysisPermissionsError> for Error {
             crate::error::UpdateAnalysisPermissionsErrorKind::InvalidParameterValueException(
                 inner,
             ) => Error::InvalidParameterValueException(inner),
+            crate::error::UpdateAnalysisPermissionsErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::error::UpdateAnalysisPermissionsErrorKind::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -4401,6 +4691,9 @@ impl From<crate::error::UpdateDashboardPermissionsError> for Error {
             crate::error::UpdateDashboardPermissionsErrorKind::InvalidParameterValueException(
                 inner,
             ) => Error::InvalidParameterValueException(inner),
+            crate::error::UpdateDashboardPermissionsErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::error::UpdateDashboardPermissionsErrorKind::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -5002,6 +5295,9 @@ impl From<crate::error::UpdateTemplatePermissionsError> for Error {
             crate::error::UpdateTemplatePermissionsErrorKind::InvalidParameterValueException(
                 inner,
             ) => Error::InvalidParameterValueException(inner),
+            crate::error::UpdateTemplatePermissionsErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::error::UpdateTemplatePermissionsErrorKind::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -5136,6 +5432,9 @@ impl From<crate::error::UpdateThemePermissionsError> for Error {
             crate::error::UpdateThemePermissionsErrorKind::InvalidParameterValueException(
                 inner,
             ) => Error::InvalidParameterValueException(inner),
+            crate::error::UpdateThemePermissionsErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::error::UpdateThemePermissionsErrorKind::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }

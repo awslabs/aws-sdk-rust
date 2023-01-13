@@ -343,13 +343,13 @@ pub mod create_agreement_input {
             self
         }
         /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-        /// <p>A <code>BaseDirectory</code> example is <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+        /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
         pub fn base_directory(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_directory = Some(input.into());
             self
         }
         /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-        /// <p>A <code>BaseDirectory</code> example is <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+        /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
         pub fn set_base_directory(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -759,12 +759,20 @@ pub mod create_profile_input {
             self.as2_id = input;
             self
         }
-        /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+        /// <p>Determines the type of profile to create:</p>
+        /// <ul>
+        /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
+        /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
+        /// </ul>
         pub fn profile_type(mut self, input: crate::model::ProfileType) -> Self {
             self.profile_type = Some(input);
             self
         }
-        /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+        /// <p>Determines the type of profile to create:</p>
+        /// <ul>
+        /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
+        /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
+        /// </ul>
         pub fn set_profile_type(
             mut self,
             input: std::option::Option<crate::model::ProfileType>,
@@ -1047,7 +1055,7 @@ pub mod create_server_input {
             self.endpoint_type = input;
             self
         }
-        /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+        /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
         /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
         /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
@@ -1059,12 +1067,12 @@ pub mod create_server_input {
         /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
         /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
         pub fn host_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_key = Some(input.into());
             self
         }
-        /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+        /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
         /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
         /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
@@ -1076,7 +1084,7 @@ pub mod create_server_input {
         /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
         /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
         pub fn set_host_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_key = input;
             self
@@ -1269,11 +1277,13 @@ pub mod create_server_input {
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+        /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
         pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
             self.workflow_details = Some(input);
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+        /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
         pub fn set_workflow_details(
             mut self,
             input: std::option::Option<crate::model::WorkflowDetails>,
@@ -2175,12 +2185,12 @@ pub mod delete_agreement_input {
             self.agreement_id = input;
             self
         }
-        /// <p>The server ID associated with the agreement that you are deleting.</p>
+        /// <p>The server identifier associated with the agreement that you are deleting.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>The server ID associated with the agreement that you are deleting.</p>
+        /// <p>The server identifier associated with the agreement that you are deleting.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -2321,12 +2331,12 @@ pub mod delete_certificate_input {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the certificate object that you are deleting.</p>
+        /// <p>The identifier of the certificate object that you are deleting.</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate object that you are deleting.</p>
+        /// <p>The identifier of the certificate object that you are deleting.</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2617,22 +2627,22 @@ pub mod delete_host_key_input {
         pub(crate) host_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Provide the ID of the server that contains the host key that you are deleting.</p>
+        /// <p>The identifier of the server that contains the host key that you are deleting.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>Provide the ID of the server that contains the host key that you are deleting.</p>
+        /// <p>The identifier of the server that contains the host key that you are deleting.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
         }
-        /// <p>The ID of the host key that you are deleting.</p>
+        /// <p>The identifier of the host key that you are deleting.</p>
         pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the host key that you are deleting.</p>
+        /// <p>The identifier of the host key that you are deleting.</p>
         pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_key_id = input;
             self
@@ -2773,12 +2783,12 @@ pub mod delete_profile_input {
         pub(crate) profile_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the profile that you are deleting.</p>
+        /// <p>The identifier of the profile that you are deleting.</p>
         pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.profile_id = Some(input.into());
             self
         }
-        /// <p>The ID of the profile that you are deleting.</p>
+        /// <p>The identifier of the profile that you are deleting.</p>
         pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.profile_id = input;
             self
@@ -3713,12 +3723,12 @@ pub mod describe_agreement_input {
             self.agreement_id = input;
             self
         }
-        /// <p>The server ID that's associated with the agreement.</p>
+        /// <p>The server identifier that's associated with the agreement.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>The server ID that's associated with the agreement.</p>
+        /// <p>The server identifier that's associated with the agreement.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -4318,22 +4328,22 @@ pub mod describe_host_key_input {
         pub(crate) host_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Provide the ID of the server that contains the host key that you want described.</p>
+        /// <p>The identifier of the server that contains the host key that you want described.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>Provide the ID of the server that contains the host key that you want described.</p>
+        /// <p>The identifier of the server that contains the host key that you want described.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
         }
-        /// <p>Provide the ID of the host key that you want described.</p>
+        /// <p>The identifier of the host key that you want described.</p>
         pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_key_id = Some(input.into());
             self
         }
-        /// <p>Provide the ID of the host key that you want described.</p>
+        /// <p>The identifier of the host key that you want described.</p>
         pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_key_id = input;
             self
@@ -5489,12 +5499,12 @@ pub mod import_host_key_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Provide the ID of the server that contains the host key that you are importing.</p>
+        /// <p>The identifier of the server that contains the host key that you are importing.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>Provide the ID of the server that contains the host key that you are importing.</p>
+        /// <p>The identifier of the server that contains the host key that you are importing.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -5514,12 +5524,12 @@ pub mod import_host_key_input {
             self.host_key_body = input;
             self
         }
-        /// <p>Enter a text description to identify this host key.</p>
+        /// <p>The text description that identifies this host key.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>Enter a text description to identify this host key.</p>
+        /// <p>The text description that identifies this host key.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -6722,12 +6732,12 @@ pub mod list_host_keys_input {
             self.next_token = input;
             self
         }
-        /// <p>Provide the ID of the server that contains the host keys that you want to view.</p>
+        /// <p>The identifier of the server that contains the host keys that you want to view.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>Provide the ID of the server that contains the host keys that you want to view.</p>
+        /// <p>The identifier of the server that contains the host keys that you want to view.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -9972,32 +9982,32 @@ pub mod update_host_key_input {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Provide the ID of the server that contains the host key that you are updating.</p>
+        /// <p>The identifier of the server that contains the host key that you are updating.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>Provide the ID of the server that contains the host key that you are updating.</p>
+        /// <p>The identifier of the server that contains the host key that you are updating.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
         }
-        /// <p>Provide the ID of the host key that you are updating.</p>
+        /// <p>The identifier of the host key that you are updating.</p>
         pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_key_id = Some(input.into());
             self
         }
-        /// <p>Provide the ID of the host key that you are updating.</p>
+        /// <p>The identifier of the host key that you are updating.</p>
         pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_key_id = input;
             self
         }
-        /// <p>Provide an updated description for the host key.</p>
+        /// <p>An updated description for the host key.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>Provide an updated description for the host key.</p>
+        /// <p>An updated description for the host key.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -10413,7 +10423,7 @@ pub mod update_server_input {
             self.endpoint_type = input;
             self
         }
-        /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+        /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
         /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
         /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
@@ -10425,12 +10435,12 @@ pub mod update_server_input {
         /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
         /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
         pub fn host_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_key = Some(input.into());
             self
         }
-        /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+        /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
         /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
         /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
@@ -10442,7 +10452,7 @@ pub mod update_server_input {
         /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
         /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
         pub fn set_host_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_key = input;
             self
@@ -10582,6 +10592,7 @@ pub mod update_server_input {
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+        /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
         /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
         /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
         pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
@@ -10589,6 +10600,7 @@ pub mod update_server_input {
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+        /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
         /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
         /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
         pub fn set_workflow_details(
@@ -11162,7 +11174,7 @@ pub struct UpdateServerInput {
     /// </note>
     #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::EndpointType>,
-    /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+    /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
     /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
     /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
     /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
@@ -11174,7 +11186,7 @@ pub struct UpdateServerInput {
     /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
     /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
     #[doc(hidden)]
     pub host_key: std::option::Option<std::string::String>,
     /// <p>An array containing all of the information required to call a customer's authentication API method.</p>
@@ -11216,6 +11228,7 @@ pub struct UpdateServerInput {
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+    /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
     /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     #[doc(hidden)]
@@ -11261,7 +11274,7 @@ impl UpdateServerInput {
     pub fn endpoint_type(&self) -> std::option::Option<&crate::model::EndpointType> {
         self.endpoint_type.as_ref()
     }
-    /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+    /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
     /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
     /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
     /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
@@ -11273,7 +11286,7 @@ impl UpdateServerInput {
     /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
     /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
     pub fn host_key(&self) -> std::option::Option<&str> {
         self.host_key.as_deref()
     }
@@ -11325,6 +11338,7 @@ impl UpdateServerInput {
         self.server_id.as_deref()
     }
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+    /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
     /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     pub fn workflow_details(&self) -> std::option::Option<&crate::model::WorkflowDetails> {
@@ -11383,26 +11397,26 @@ impl UpdateProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateHostKeyInput {
-    /// <p>Provide the ID of the server that contains the host key that you are updating.</p>
+    /// <p>The identifier of the server that contains the host key that you are updating.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>Provide the ID of the host key that you are updating.</p>
+    /// <p>The identifier of the host key that you are updating.</p>
     #[doc(hidden)]
     pub host_key_id: std::option::Option<std::string::String>,
-    /// <p>Provide an updated description for the host key.</p>
+    /// <p>An updated description for the host key.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateHostKeyInput {
-    /// <p>Provide the ID of the server that contains the host key that you are updating.</p>
+    /// <p>The identifier of the server that contains the host key that you are updating.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>Provide the ID of the host key that you are updating.</p>
+    /// <p>The identifier of the host key that you are updating.</p>
     pub fn host_key_id(&self) -> std::option::Option<&str> {
         self.host_key_id.as_deref()
     }
-    /// <p>Provide an updated description for the host key.</p>
+    /// <p>An updated description for the host key.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -12009,7 +12023,7 @@ pub struct ListHostKeysInput {
     /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListHostKeys</code> to continue listing results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Provide the ID of the server that contains the host keys that you want to view.</p>
+    /// <p>The identifier of the server that contains the host keys that you want to view.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
 }
@@ -12022,7 +12036,7 @@ impl ListHostKeysInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Provide the ID of the server that contains the host keys that you want to view.</p>
+    /// <p>The identifier of the server that contains the host keys that you want to view.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
@@ -12204,14 +12218,14 @@ impl ImportSshPublicKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportHostKeyInput {
-    /// <p>Provide the ID of the server that contains the host key that you are importing.</p>
+    /// <p>The identifier of the server that contains the host key that you are importing.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The public key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     #[doc(hidden)]
     pub host_key_body: std::option::Option<std::string::String>,
-    /// <p>Enter a text description to identify this host key.</p>
+    /// <p>The text description that identifies this host key.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
@@ -12219,7 +12233,7 @@ pub struct ImportHostKeyInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ImportHostKeyInput {
-    /// <p>Provide the ID of the server that contains the host key that you are importing.</p>
+    /// <p>The identifier of the server that contains the host key that you are importing.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
@@ -12228,7 +12242,7 @@ impl ImportHostKeyInput {
     pub fn host_key_body(&self) -> std::option::Option<&str> {
         self.host_key_body.as_deref()
     }
-    /// <p>Enter a text description to identify this host key.</p>
+    /// <p>The text description that identifies this host key.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -12412,19 +12426,19 @@ impl DescribeProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHostKeyInput {
-    /// <p>Provide the ID of the server that contains the host key that you want described.</p>
+    /// <p>The identifier of the server that contains the host key that you want described.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>Provide the ID of the host key that you want described.</p>
+    /// <p>The identifier of the host key that you want described.</p>
     #[doc(hidden)]
     pub host_key_id: std::option::Option<std::string::String>,
 }
 impl DescribeHostKeyInput {
-    /// <p>Provide the ID of the server that contains the host key that you want described.</p>
+    /// <p>The identifier of the server that contains the host key that you want described.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>Provide the ID of the host key that you want described.</p>
+    /// <p>The identifier of the host key that you want described.</p>
     pub fn host_key_id(&self) -> std::option::Option<&str> {
         self.host_key_id.as_deref()
     }
@@ -12489,7 +12503,7 @@ pub struct DescribeAgreementInput {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     #[doc(hidden)]
     pub agreement_id: std::option::Option<std::string::String>,
-    /// <p>The server ID that's associated with the agreement.</p>
+    /// <p>The server identifier that's associated with the agreement.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
 }
@@ -12498,7 +12512,7 @@ impl DescribeAgreementInput {
     pub fn agreement_id(&self) -> std::option::Option<&str> {
         self.agreement_id.as_deref()
     }
-    /// <p>The server ID that's associated with the agreement.</p>
+    /// <p>The server identifier that's associated with the agreement.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
@@ -12617,12 +12631,12 @@ impl DeleteServerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProfileInput {
-    /// <p>The ID of the profile that you are deleting.</p>
+    /// <p>The identifier of the profile that you are deleting.</p>
     #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl DeleteProfileInput {
-    /// <p>The ID of the profile that you are deleting.</p>
+    /// <p>The identifier of the profile that you are deleting.</p>
     pub fn profile_id(&self) -> std::option::Option<&str> {
         self.profile_id.as_deref()
     }
@@ -12632,19 +12646,19 @@ impl DeleteProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHostKeyInput {
-    /// <p>Provide the ID of the server that contains the host key that you are deleting.</p>
+    /// <p>The identifier of the server that contains the host key that you are deleting.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the host key that you are deleting.</p>
+    /// <p>The identifier of the host key that you are deleting.</p>
     #[doc(hidden)]
     pub host_key_id: std::option::Option<std::string::String>,
 }
 impl DeleteHostKeyInput {
-    /// <p>Provide the ID of the server that contains the host key that you are deleting.</p>
+    /// <p>The identifier of the server that contains the host key that you are deleting.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>The ID of the host key that you are deleting.</p>
+    /// <p>The identifier of the host key that you are deleting.</p>
     pub fn host_key_id(&self) -> std::option::Option<&str> {
         self.host_key_id.as_deref()
     }
@@ -12669,12 +12683,12 @@ impl DeleteConnectorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCertificateInput {
-    /// <p>The ID of the certificate object that you are deleting.</p>
+    /// <p>The identifier of the certificate object that you are deleting.</p>
     #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl DeleteCertificateInput {
-    /// <p>The ID of the certificate object that you are deleting.</p>
+    /// <p>The identifier of the certificate object that you are deleting.</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -12687,7 +12701,7 @@ pub struct DeleteAgreementInput {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     #[doc(hidden)]
     pub agreement_id: std::option::Option<std::string::String>,
-    /// <p>The server ID associated with the agreement that you are deleting.</p>
+    /// <p>The server identifier associated with the agreement that you are deleting.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
 }
@@ -12696,7 +12710,7 @@ impl DeleteAgreementInput {
     pub fn agreement_id(&self) -> std::option::Option<&str> {
         self.agreement_id.as_deref()
     }
-    /// <p>The server ID associated with the agreement that you are deleting.</p>
+    /// <p>The server identifier associated with the agreement that you are deleting.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
@@ -12930,7 +12944,7 @@ pub struct CreateServerInput {
     /// </note>
     #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::EndpointType>,
-    /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+    /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
     /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
     /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
     /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
@@ -12942,7 +12956,7 @@ pub struct CreateServerInput {
     /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
     /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
     #[doc(hidden)]
     pub host_key: std::option::Option<std::string::String>,
     /// <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
@@ -12999,6 +13013,7 @@ pub struct CreateServerInput {
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+    /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
     #[doc(hidden)]
     pub workflow_details: std::option::Option<crate::model::WorkflowDetails>,
 }
@@ -13038,7 +13053,7 @@ impl CreateServerInput {
     pub fn endpoint_type(&self) -> std::option::Option<&crate::model::EndpointType> {
         self.endpoint_type.as_ref()
     }
-    /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+    /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
     /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
     /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
     /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
@@ -13050,7 +13065,7 @@ impl CreateServerInput {
     /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
     /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
     pub fn host_key(&self) -> std::option::Option<&str> {
         self.host_key.as_deref()
     }
@@ -13121,6 +13136,7 @@ impl CreateServerInput {
         self.tags.as_deref()
     }
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+    /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
     pub fn workflow_details(&self) -> std::option::Option<&crate::model::WorkflowDetails> {
         self.workflow_details.as_ref()
     }
@@ -13160,7 +13176,11 @@ pub struct CreateProfileInput {
     /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     #[doc(hidden)]
     pub as2_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    /// <p>Determines the type of profile to create:</p>
+    /// <ul>
+    /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
+    /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub profile_type: std::option::Option<crate::model::ProfileType>,
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
@@ -13175,7 +13195,11 @@ impl CreateProfileInput {
     pub fn as2_id(&self) -> std::option::Option<&str> {
         self.as2_id.as_deref()
     }
-    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    /// <p>Determines the type of profile to create:</p>
+    /// <ul>
+    /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
+    /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
+    /// </ul>
     pub fn profile_type(&self) -> std::option::Option<&crate::model::ProfileType> {
         self.profile_type.as_ref()
     }
@@ -13249,7 +13273,7 @@ pub struct CreateAgreementInput {
     #[doc(hidden)]
     pub partner_profile_id: std::option::Option<std::string::String>,
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
     #[doc(hidden)]
     pub base_directory: std::option::Option<std::string::String>,
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
@@ -13280,7 +13304,7 @@ impl CreateAgreementInput {
         self.partner_profile_id.as_deref()
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
     pub fn base_directory(&self) -> std::option::Option<&str> {
         self.base_directory.as_deref()
     }

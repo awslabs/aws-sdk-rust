@@ -830,6 +830,8 @@ pub enum CreateAgreementErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -848,6 +850,7 @@ impl std::fmt::Display for CreateAgreementError {
             CreateAgreementErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
             CreateAgreementErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateAgreementErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateAgreementErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateAgreementErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -937,6 +940,10 @@ impl CreateAgreementError {
             CreateAgreementErrorKind::ServiceUnavailableException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateAgreementErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateAgreementErrorKind::ThrottlingException(_))
+    }
 }
 impl std::error::Error for CreateAgreementError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -946,6 +953,7 @@ impl std::error::Error for CreateAgreementError {
             CreateAgreementErrorKind::ResourceExistsException(_inner) => Some(_inner),
             CreateAgreementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateAgreementErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateAgreementErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateAgreementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -982,6 +990,8 @@ pub enum CreateConnectorErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -1000,6 +1010,7 @@ impl std::fmt::Display for CreateConnectorError {
             CreateConnectorErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
             CreateConnectorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateConnectorErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateConnectorErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1089,6 +1100,10 @@ impl CreateConnectorError {
             CreateConnectorErrorKind::ServiceUnavailableException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateConnectorErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateConnectorErrorKind::ThrottlingException(_))
+    }
 }
 impl std::error::Error for CreateConnectorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1098,6 +1113,7 @@ impl std::error::Error for CreateConnectorError {
             CreateConnectorErrorKind::ResourceExistsException(_inner) => Some(_inner),
             CreateConnectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateConnectorErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateConnectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -1132,6 +1148,8 @@ pub enum CreateProfileErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -1149,6 +1167,7 @@ impl std::fmt::Display for CreateProfileError {
             CreateProfileErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             CreateProfileErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateProfileErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateProfileErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1228,6 +1247,10 @@ impl CreateProfileError {
             CreateProfileErrorKind::ServiceUnavailableException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateProfileErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateProfileErrorKind::ThrottlingException(_))
+    }
 }
 impl std::error::Error for CreateProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1236,6 +1259,7 @@ impl std::error::Error for CreateProfileError {
             CreateProfileErrorKind::InvalidRequestException(_inner) => Some(_inner),
             CreateProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateProfileErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateProfileErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -7939,6 +7963,8 @@ pub enum UpdateAccessErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -7957,6 +7983,7 @@ impl std::fmt::Display for UpdateAccessError {
             UpdateAccessErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
             UpdateAccessErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateAccessErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateAccessErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateAccessErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8043,6 +8070,10 @@ impl UpdateAccessError {
             UpdateAccessErrorKind::ServiceUnavailableException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateAccessErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateAccessErrorKind::ThrottlingException(_))
+    }
 }
 impl std::error::Error for UpdateAccessError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8052,6 +8083,7 @@ impl std::error::Error for UpdateAccessError {
             UpdateAccessErrorKind::ResourceExistsException(_inner) => Some(_inner),
             UpdateAccessErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAccessErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateAccessErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateAccessErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -8088,6 +8120,8 @@ pub enum UpdateAgreementErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -8106,6 +8140,7 @@ impl std::fmt::Display for UpdateAgreementError {
             UpdateAgreementErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
             UpdateAgreementErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateAgreementErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateAgreementErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateAgreementErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8195,6 +8230,10 @@ impl UpdateAgreementError {
             UpdateAgreementErrorKind::ServiceUnavailableException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateAgreementErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateAgreementErrorKind::ThrottlingException(_))
+    }
 }
 impl std::error::Error for UpdateAgreementError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8204,6 +8243,7 @@ impl std::error::Error for UpdateAgreementError {
             UpdateAgreementErrorKind::ResourceExistsException(_inner) => Some(_inner),
             UpdateAgreementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAgreementErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateAgreementErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateAgreementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -8238,6 +8278,8 @@ pub enum UpdateCertificateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -8255,6 +8297,7 @@ impl std::fmt::Display for UpdateCertificateError {
             UpdateCertificateErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             UpdateCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateCertificateErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateCertificateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8337,6 +8380,13 @@ impl UpdateCertificateError {
             UpdateCertificateErrorKind::ServiceUnavailableException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateCertificateErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCertificateErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for UpdateCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8345,6 +8395,7 @@ impl std::error::Error for UpdateCertificateError {
             UpdateCertificateErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateCertificateErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateCertificateErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -8381,6 +8432,8 @@ pub enum UpdateConnectorErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -8399,6 +8452,7 @@ impl std::fmt::Display for UpdateConnectorError {
             UpdateConnectorErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
             UpdateConnectorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateConnectorErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateConnectorErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8488,6 +8542,10 @@ impl UpdateConnectorError {
             UpdateConnectorErrorKind::ServiceUnavailableException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateConnectorErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateConnectorErrorKind::ThrottlingException(_))
+    }
 }
 impl std::error::Error for UpdateConnectorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8497,6 +8555,7 @@ impl std::error::Error for UpdateConnectorError {
             UpdateConnectorErrorKind::ResourceExistsException(_inner) => Some(_inner),
             UpdateConnectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateConnectorErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateConnectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -8677,6 +8736,8 @@ pub enum UpdateProfileErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -8694,6 +8755,7 @@ impl std::fmt::Display for UpdateProfileError {
             UpdateProfileErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             UpdateProfileErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateProfileErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateProfileErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8773,6 +8835,10 @@ impl UpdateProfileError {
             UpdateProfileErrorKind::ServiceUnavailableException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateProfileErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateProfileErrorKind::ThrottlingException(_))
+    }
 }
 impl std::error::Error for UpdateProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8781,6 +8847,7 @@ impl std::error::Error for UpdateProfileError {
             UpdateProfileErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateProfileErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateProfileErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }

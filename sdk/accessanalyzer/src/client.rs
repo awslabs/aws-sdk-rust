@@ -372,6 +372,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`analyzer_arn(impl Into<String>)`](crate::client::fluent_builders::StartResourceScan::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::client::fluent_builders::StartResourceScan::set_analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::StartResourceScan::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::StartResourceScan::set_resource_arn): <p>The ARN of the resource to scan.</p>
+    ///   - [`resource_owner_account(impl Into<String>)`](crate::client::fluent_builders::StartResourceScan::resource_owner_account) / [`set_resource_owner_account(Option<String>)`](crate::client::fluent_builders::StartResourceScan::set_resource_owner_account): <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
     /// - On success, responds with [`StartResourceScanOutput`](crate::output::StartResourceScanOutput)
 
     /// - On failure, responds with [`SdkError<StartResourceScanError>`](crate::error::StartResourceScanError)
@@ -2719,6 +2720,19 @@ pub mod fluent_builders {
         /// <p>The ARN of the resource to scan.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
+        pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_owner_account(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
+        pub fn set_resource_owner_account(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_owner_account(input);
             self
         }
     }

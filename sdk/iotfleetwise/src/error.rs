@@ -4113,6 +4113,8 @@ pub enum GetModelManifestErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request couldn't be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    ValidationException(crate::error::ValidationException),
     /// <p>The request couldn't be completed because the server temporarily failed.</p>
     InternalServerException(crate::error::InternalServerException),
     ///
@@ -4131,6 +4133,7 @@ impl std::fmt::Display for GetModelManifestError {
             GetModelManifestErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetModelManifestErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             GetModelManifestErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetModelManifestErrorKind::ValidationException(_inner) => _inner.fmt(f),
             GetModelManifestErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             GetModelManifestErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -4207,6 +4210,13 @@ impl GetModelManifestError {
             GetModelManifestErrorKind::ThrottlingException(_)
         )
     }
+    /// Returns `true` if the error kind is `GetModelManifestErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetModelManifestErrorKind::ValidationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `GetModelManifestErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -4221,6 +4231,7 @@ impl std::error::Error for GetModelManifestError {
             GetModelManifestErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetModelManifestErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetModelManifestErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetModelManifestErrorKind::ValidationException(_inner) => Some(_inner),
             GetModelManifestErrorKind::InternalServerException(_inner) => Some(_inner),
             GetModelManifestErrorKind::Unhandled(_inner) => Some(_inner),
         }
@@ -8474,6 +8485,8 @@ pub enum UpdateSignalCatalogErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request couldn't be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -8495,6 +8508,7 @@ impl std::fmt::Display for UpdateSignalCatalogError {
             UpdateSignalCatalogErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateSignalCatalogErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateSignalCatalogErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateSignalCatalogErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateSignalCatalogErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8605,6 +8619,13 @@ impl UpdateSignalCatalogError {
             UpdateSignalCatalogErrorKind::ThrottlingException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateSignalCatalogErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSignalCatalogErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for UpdateSignalCatalogError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8617,6 +8638,7 @@ impl std::error::Error for UpdateSignalCatalogError {
             UpdateSignalCatalogErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateSignalCatalogErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateSignalCatalogErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateSignalCatalogErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateSignalCatalogErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }

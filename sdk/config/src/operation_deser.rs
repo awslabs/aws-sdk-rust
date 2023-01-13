@@ -1775,6 +1775,24 @@ pub fn parse_describe_config_rules_error(
                 tmp
             }),
         },
+        "InvalidParameterValueException" => crate::error::DescribeConfigRulesError {
+            meta: generic,
+            kind: crate::error::DescribeConfigRulesErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConfigRulesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "NoSuchConfigRuleException" => crate::error::DescribeConfigRulesError {
             meta: generic,
             kind: crate::error::DescribeConfigRulesErrorKind::NoSuchConfigRuleException({
@@ -4773,6 +4791,68 @@ pub fn parse_get_resource_config_history_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_resource_evaluation_summary_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetResourceEvaluationSummaryOutput,
+    crate::error::GetResourceEvaluationSummaryError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetResourceEvaluationSummaryError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetResourceEvaluationSummaryError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFoundException" => crate::error::GetResourceEvaluationSummaryError {
+            meta: generic,
+            kind: crate::error::GetResourceEvaluationSummaryErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetResourceEvaluationSummaryError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetResourceEvaluationSummaryError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_resource_evaluation_summary_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetResourceEvaluationSummaryOutput,
+    crate::error::GetResourceEvaluationSummaryError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_resource_evaluation_summary_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_get_resource_evaluation_summary(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetResourceEvaluationSummaryError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_stored_query_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetStoredQueryOutput, crate::error::GetStoredQueryError> {
@@ -5117,6 +5197,102 @@ pub fn parse_list_discovered_resources_response(
             output,
         )
         .map_err(crate::error::ListDiscoveredResourcesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_resource_evaluations_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListResourceEvaluationsOutput,
+    crate::error::ListResourceEvaluationsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListResourceEvaluationsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListResourceEvaluationsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidNextTokenException" => crate::error::ListResourceEvaluationsError {
+            meta: generic,
+            kind: crate::error::ListResourceEvaluationsErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceEvaluationsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValueException" => crate::error::ListResourceEvaluationsError {
+            meta: generic,
+            kind: crate::error::ListResourceEvaluationsErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceEvaluationsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidTimeRangeException" => crate::error::ListResourceEvaluationsError {
+            meta: generic,
+            kind: crate::error::ListResourceEvaluationsErrorKind::InvalidTimeRangeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_time_range_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_time_range_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceEvaluationsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListResourceEvaluationsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_resource_evaluations_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListResourceEvaluationsOutput,
+    crate::error::ListResourceEvaluationsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_resource_evaluations_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_resource_evaluations(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListResourceEvaluationsError::unhandled)?;
         output.build()
     })
 }
@@ -7298,6 +7474,86 @@ pub fn parse_start_remediation_execution_response(
             output,
         )
         .map_err(crate::error::StartRemediationExecutionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_resource_evaluation_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartResourceEvaluationOutput,
+    crate::error::StartResourceEvaluationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StartResourceEvaluationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::StartResourceEvaluationError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "IdempotentParameterMismatch" => crate::error::StartResourceEvaluationError {
+            meta: generic,
+            kind: crate::error::StartResourceEvaluationErrorKind::IdempotentParameterMismatch({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::idempotent_parameter_mismatch::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_json_err(response.body().as_ref(), output).map_err(crate::error::StartResourceEvaluationError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValueException" => crate::error::StartResourceEvaluationError {
+            meta: generic,
+            kind: crate::error::StartResourceEvaluationErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartResourceEvaluationError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::StartResourceEvaluationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_resource_evaluation_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartResourceEvaluationOutput,
+    crate::error::StartResourceEvaluationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::start_resource_evaluation_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_start_resource_evaluation(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartResourceEvaluationError::unhandled)?;
         output.build()
     })
 }

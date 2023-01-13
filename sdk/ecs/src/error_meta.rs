@@ -27,6 +27,8 @@ pub enum Error {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Amazon ECS can't determine the current version of the Amazon ECS container agent on the container instance and doesn't have enough information to proceed with an update. This could be because the agent running on the container instance is a previous or custom version that doesn't use our version information.</p>
     MissingVersionException(crate::error::MissingVersionException),
+    /// <p>The specified namespace wasn't found.</p>
+    NamespaceNotFoundException(crate::error::NamespaceNotFoundException),
     /// <p>There's no update available for this Amazon ECS container agent. This might be because the agent is already running the latest version or because it's so old that there's no update path to the current version.</p>
     NoUpdateAvailableException(crate::error::NoUpdateAvailableException),
     /// <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
@@ -85,6 +87,7 @@ impl std::fmt::Display for Error {
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::MissingVersionException(inner) => inner.fmt(f),
+            Error::NamespaceNotFoundException(inner) => inner.fmt(f),
             Error::NoUpdateAvailableException(inner) => inner.fmt(f),
             Error::PlatformTaskDefinitionIncompatibilityException(inner) => inner.fmt(f),
             Error::PlatformUnknownException(inner) => inner.fmt(f),
@@ -193,6 +196,7 @@ impl From<crate::error::CreateServiceError> for Error {
             crate::error::CreateServiceErrorKind::ClientException(inner) => Error::ClientException(inner),
             crate::error::CreateServiceErrorKind::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::error::CreateServiceErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::CreateServiceErrorKind::NamespaceNotFoundException(inner) => Error::NamespaceNotFoundException(inner),
             crate::error::CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(inner) => Error::PlatformTaskDefinitionIncompatibilityException(inner),
             crate::error::CreateServiceErrorKind::PlatformUnknownException(inner) => Error::PlatformUnknownException(inner),
             crate::error::CreateServiceErrorKind::ServerException(inner) => Error::ServerException(inner),
@@ -221,6 +225,7 @@ impl From<crate::error::CreateTaskSetError> for Error {
             crate::error::CreateTaskSetErrorKind::ClientException(inner) => Error::ClientException(inner),
             crate::error::CreateTaskSetErrorKind::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::error::CreateTaskSetErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::CreateTaskSetErrorKind::NamespaceNotFoundException(inner) => Error::NamespaceNotFoundException(inner),
             crate::error::CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException(inner) => Error::PlatformTaskDefinitionIncompatibilityException(inner),
             crate::error::CreateTaskSetErrorKind::PlatformUnknownException(inner) => Error::PlatformUnknownException(inner),
             crate::error::CreateTaskSetErrorKind::ServerException(inner) => Error::ServerException(inner),
@@ -862,6 +867,51 @@ impl From<crate::error::ExecuteCommandError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTaskProtectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetTaskProtectionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetTaskProtectionError> for Error {
+    fn from(err: crate::error::GetTaskProtectionError) -> Self {
+        match err.kind {
+            crate::error::GetTaskProtectionErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::GetTaskProtectionErrorKind::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::error::GetTaskProtectionErrorKind::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
+            crate::error::GetTaskProtectionErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::GetTaskProtectionErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetTaskProtectionErrorKind::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::error::GetTaskProtectionErrorKind::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::error::GetTaskProtectionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountSettingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1020,6 +1070,43 @@ impl From<crate::error::ListServicesError> for Error {
                 Error::ServerException(inner)
             }
             crate::error::ListServicesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListServicesByNamespaceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListServicesByNamespaceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListServicesByNamespaceError> for Error {
+    fn from(err: crate::error::ListServicesByNamespaceError) -> Self {
+        match err.kind {
+            crate::error::ListServicesByNamespaceErrorKind::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::error::ListServicesByNamespaceErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::ListServicesByNamespaceErrorKind::NamespaceNotFoundException(inner) => {
+                Error::NamespaceNotFoundException(inner)
+            }
+            crate::error::ListServicesByNamespaceErrorKind::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::error::ListServicesByNamespaceErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -1880,6 +1967,7 @@ impl From<crate::error::UpdateServiceError> for Error {
             crate::error::UpdateServiceErrorKind::ClientException(inner) => Error::ClientException(inner),
             crate::error::UpdateServiceErrorKind::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::error::UpdateServiceErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::UpdateServiceErrorKind::NamespaceNotFoundException(inner) => Error::NamespaceNotFoundException(inner),
             crate::error::UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(inner) => Error::PlatformTaskDefinitionIncompatibilityException(inner),
             crate::error::UpdateServiceErrorKind::PlatformUnknownException(inner) => Error::PlatformUnknownException(inner),
             crate::error::UpdateServiceErrorKind::ServerException(inner) => Error::ServerException(inner),
@@ -1936,6 +2024,52 @@ impl From<crate::error::UpdateServicePrimaryTaskSetError> for Error {
                 inner,
             ) => Error::UnsupportedFeatureException(inner),
             crate::error::UpdateServicePrimaryTaskSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateTaskProtectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateTaskProtectionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateTaskProtectionError> for Error {
+    fn from(err: crate::error::UpdateTaskProtectionError) -> Self {
+        match err.kind {
+            crate::error::UpdateTaskProtectionErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::UpdateTaskProtectionErrorKind::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::error::UpdateTaskProtectionErrorKind::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
+            crate::error::UpdateTaskProtectionErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::UpdateTaskProtectionErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UpdateTaskProtectionErrorKind::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::error::UpdateTaskProtectionErrorKind::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::error::UpdateTaskProtectionErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

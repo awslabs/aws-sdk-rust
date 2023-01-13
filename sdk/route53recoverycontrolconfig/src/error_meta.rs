@@ -9,7 +9,7 @@ pub enum Error {
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>402 response - You attempted to create more resources than the service allows based on service quotas.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),

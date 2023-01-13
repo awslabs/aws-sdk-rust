@@ -170,6 +170,30 @@ impl UpdateUserHierarchyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateTrafficDistributionOutput {}
+/// See [`UpdateTrafficDistributionOutput`](crate::output::UpdateTrafficDistributionOutput).
+pub mod update_traffic_distribution_output {
+
+    /// A builder for [`UpdateTrafficDistributionOutput`](crate::output::UpdateTrafficDistributionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateTrafficDistributionOutput`](crate::output::UpdateTrafficDistributionOutput).
+        pub fn build(self) -> crate::output::UpdateTrafficDistributionOutput {
+            crate::output::UpdateTrafficDistributionOutput {}
+        }
+    }
+}
+impl UpdateTrafficDistributionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateTrafficDistributionOutput`](crate::output::UpdateTrafficDistributionOutput).
+    pub fn builder() -> crate::output::update_traffic_distribution_output::Builder {
+        crate::output::update_traffic_distribution_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTaskTemplateOutput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -472,6 +496,30 @@ impl UpdateSecurityProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityProfileOutput`](crate::output::UpdateSecurityProfileOutput).
     pub fn builder() -> crate::output::update_security_profile_output::Builder {
         crate::output::update_security_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateRuleOutput {}
+/// See [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
+pub mod update_rule_output {
+
+    /// A builder for [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
+        pub fn build(self) -> crate::output::UpdateRuleOutput {
+            crate::output::UpdateRuleOutput {}
+        }
+    }
+}
+impl UpdateRuleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
+    pub fn builder() -> crate::output::update_rule_output::Builder {
+        crate::output::update_rule_output::Builder::default()
     }
 }
 
@@ -810,6 +858,30 @@ impl UpdatePhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput).
     pub fn builder() -> crate::output::update_phone_number_output::Builder {
         crate::output::update_phone_number_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateParticipantRoleConfigOutput {}
+/// See [`UpdateParticipantRoleConfigOutput`](crate::output::UpdateParticipantRoleConfigOutput).
+pub mod update_participant_role_config_output {
+
+    /// A builder for [`UpdateParticipantRoleConfigOutput`](crate::output::UpdateParticipantRoleConfigOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateParticipantRoleConfigOutput`](crate::output::UpdateParticipantRoleConfigOutput).
+        pub fn build(self) -> crate::output::UpdateParticipantRoleConfigOutput {
+            crate::output::UpdateParticipantRoleConfigOutput {}
+        }
+    }
+}
+impl UpdateParticipantRoleConfigOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateParticipantRoleConfigOutput`](crate::output::UpdateParticipantRoleConfigOutput).
+    pub fn builder() -> crate::output::update_participant_role_config_output::Builder {
+        crate::output::update_participant_role_config_output::Builder::default()
     }
 }
 
@@ -2047,7 +2119,7 @@ pub struct SearchAvailablePhoneNumbersOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of available phone numbers that you can claim for your Amazon Connect instance.</p>
+    /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
     #[doc(hidden)]
     pub available_numbers_list:
         std::option::Option<std::vec::Vec<crate::model::AvailableNumberSummary>>,
@@ -2057,7 +2129,7 @@ impl SearchAvailablePhoneNumbersOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of available phone numbers that you can claim for your Amazon Connect instance.</p>
+    /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
     pub fn available_numbers_list(
         &self,
     ) -> std::option::Option<&[crate::model::AvailableNumberSummary]> {
@@ -2089,7 +2161,7 @@ pub mod search_available_phone_numbers_output {
         ///
         /// To override the contents of this collection use [`set_available_numbers_list`](Self::set_available_numbers_list).
         ///
-        /// <p>A list of available phone numbers that you can claim for your Amazon Connect instance.</p>
+        /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
         pub fn available_numbers_list(
             mut self,
             input: crate::model::AvailableNumberSummary,
@@ -2099,7 +2171,7 @@ pub mod search_available_phone_numbers_output {
             self.available_numbers_list = Some(v);
             self
         }
-        /// <p>A list of available phone numbers that you can claim for your Amazon Connect instance.</p>
+        /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
         pub fn set_available_numbers_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AvailableNumberSummary>>,
@@ -2150,6 +2222,73 @@ impl ResumeContactRecordingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReplicateInstanceOutput {
+    /// <p>The identifier of the replicated instance. You can find the <code>instanceId</code> in the ARN of the instance. The replicated instance has the same identifier as the instance it was replicated from.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the replicated instance.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+}
+impl ReplicateInstanceOutput {
+    /// <p>The identifier of the replicated instance. You can find the <code>instanceId</code> in the ARN of the instance. The replicated instance has the same identifier as the instance it was replicated from.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the replicated instance.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+/// See [`ReplicateInstanceOutput`](crate::output::ReplicateInstanceOutput).
+pub mod replicate_instance_output {
+
+    /// A builder for [`ReplicateInstanceOutput`](crate::output::ReplicateInstanceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the replicated instance. You can find the <code>instanceId</code> in the ARN of the instance. The replicated instance has the same identifier as the instance it was replicated from.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the replicated instance. You can find the <code>instanceId</code> in the ARN of the instance. The replicated instance has the same identifier as the instance it was replicated from.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the replicated instance.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the replicated instance.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReplicateInstanceOutput`](crate::output::ReplicateInstanceOutput).
+        pub fn build(self) -> crate::output::ReplicateInstanceOutput {
+            crate::output::ReplicateInstanceOutput {
+                id: self.id,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl ReplicateInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`ReplicateInstanceOutput`](crate::output::ReplicateInstanceOutput).
+    pub fn builder() -> crate::output::replicate_instance_output::Builder {
+        crate::output::replicate_instance_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReleasePhoneNumberOutput {}
 /// See [`ReleasePhoneNumberOutput`](crate::output::ReleasePhoneNumberOutput).
 pub mod release_phone_number_output {
@@ -2192,6 +2331,73 @@ impl PutUserStatusOutput {
     /// Creates a new builder-style object to manufacture [`PutUserStatusOutput`](crate::output::PutUserStatusOutput).
     pub fn builder() -> crate::output::put_user_status_output::Builder {
         crate::output::put_user_status_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MonitorContactOutput {
+    /// <p>The identifier of the contact.</p>
+    #[doc(hidden)]
+    pub contact_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the contact.</p>
+    #[doc(hidden)]
+    pub contact_arn: std::option::Option<std::string::String>,
+}
+impl MonitorContactOutput {
+    /// <p>The identifier of the contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The ARN of the contact.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+}
+/// See [`MonitorContactOutput`](crate::output::MonitorContactOutput).
+pub mod monitor_contact_output {
+
+    /// A builder for [`MonitorContactOutput`](crate::output::MonitorContactOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) contact_id: std::option::Option<std::string::String>,
+        pub(crate) contact_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the contact.</p>
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the contact.</p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_id = input;
+            self
+        }
+        /// <p>The ARN of the contact.</p>
+        pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the contact.</p>
+        pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MonitorContactOutput`](crate::output::MonitorContactOutput).
+        pub fn build(self) -> crate::output::MonitorContactOutput {
+            crate::output::MonitorContactOutput {
+                contact_id: self.contact_id,
+                contact_arn: self.contact_arn,
+            }
+        }
+    }
+}
+impl MonitorContactOutput {
+    /// Creates a new builder-style object to manufacture [`MonitorContactOutput`](crate::output::MonitorContactOutput).
+    pub fn builder() -> crate::output::monitor_contact_output::Builder {
+        crate::output::monitor_contact_output::Builder::default()
     }
 }
 
@@ -2427,6 +2633,94 @@ impl ListUseCasesOutput {
     /// Creates a new builder-style object to manufacture [`ListUseCasesOutput`](crate::output::ListUseCasesOutput).
     pub fn builder() -> crate::output::list_use_cases_output::Builder {
         crate::output::list_use_cases_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListTrafficDistributionGroupsOutput {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A list of traffic distribution groups.</p>
+    #[doc(hidden)]
+    pub traffic_distribution_group_summary_list:
+        std::option::Option<std::vec::Vec<crate::model::TrafficDistributionGroupSummary>>,
+}
+impl ListTrafficDistributionGroupsOutput {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of traffic distribution groups.</p>
+    pub fn traffic_distribution_group_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::TrafficDistributionGroupSummary]> {
+        self.traffic_distribution_group_summary_list.as_deref()
+    }
+}
+/// See [`ListTrafficDistributionGroupsOutput`](crate::output::ListTrafficDistributionGroupsOutput).
+pub mod list_traffic_distribution_groups_output {
+
+    /// A builder for [`ListTrafficDistributionGroupsOutput`](crate::output::ListTrafficDistributionGroupsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) traffic_distribution_group_summary_list:
+            std::option::Option<std::vec::Vec<crate::model::TrafficDistributionGroupSummary>>,
+    }
+    impl Builder {
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `traffic_distribution_group_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_traffic_distribution_group_summary_list`](Self::set_traffic_distribution_group_summary_list).
+        ///
+        /// <p>A list of traffic distribution groups.</p>
+        pub fn traffic_distribution_group_summary_list(
+            mut self,
+            input: crate::model::TrafficDistributionGroupSummary,
+        ) -> Self {
+            let mut v = self
+                .traffic_distribution_group_summary_list
+                .unwrap_or_default();
+            v.push(input);
+            self.traffic_distribution_group_summary_list = Some(v);
+            self
+        }
+        /// <p>A list of traffic distribution groups.</p>
+        pub fn set_traffic_distribution_group_summary_list(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::TrafficDistributionGroupSummary>,
+            >,
+        ) -> Self {
+            self.traffic_distribution_group_summary_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTrafficDistributionGroupsOutput`](crate::output::ListTrafficDistributionGroupsOutput).
+        pub fn build(self) -> crate::output::ListTrafficDistributionGroupsOutput {
+            crate::output::ListTrafficDistributionGroupsOutput {
+                next_token: self.next_token,
+                traffic_distribution_group_summary_list: self
+                    .traffic_distribution_group_summary_list,
+            }
+        }
+    }
+}
+impl ListTrafficDistributionGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListTrafficDistributionGroupsOutput`](crate::output::ListTrafficDistributionGroupsOutput).
+    pub fn builder() -> crate::output::list_traffic_distribution_groups_output::Builder {
+        crate::output::list_traffic_distribution_groups_output::Builder::default()
     }
 }
 
@@ -2814,6 +3108,82 @@ impl ListSecurityKeysOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityKeysOutput`](crate::output::ListSecurityKeysOutput).
     pub fn builder() -> crate::output::list_security_keys_output::Builder {
         crate::output::list_security_keys_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListRulesOutput {
+    /// <p>Summary information about a rule.</p>
+    #[doc(hidden)]
+    pub rule_summary_list: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRulesOutput {
+    /// <p>Summary information about a rule.</p>
+    pub fn rule_summary_list(&self) -> std::option::Option<&[crate::model::RuleSummary]> {
+        self.rule_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListRulesOutput`](crate::output::ListRulesOutput).
+pub mod list_rules_output {
+
+    /// A builder for [`ListRulesOutput`](crate::output::ListRulesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rule_summary_list: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `rule_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_rule_summary_list`](Self::set_rule_summary_list).
+        ///
+        /// <p>Summary information about a rule.</p>
+        pub fn rule_summary_list(mut self, input: crate::model::RuleSummary) -> Self {
+            let mut v = self.rule_summary_list.unwrap_or_default();
+            v.push(input);
+            self.rule_summary_list = Some(v);
+            self
+        }
+        /// <p>Summary information about a rule.</p>
+        pub fn set_rule_summary_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
+        ) -> Self {
+            self.rule_summary_list = input;
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListRulesOutput`](crate::output::ListRulesOutput).
+        pub fn build(self) -> crate::output::ListRulesOutput {
+            crate::output::ListRulesOutput {
+                rule_summary_list: self.rule_summary_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListRulesOutput {
+    /// Creates a new builder-style object to manufacture [`ListRulesOutput`](crate::output::ListRulesOutput).
+    pub fn builder() -> crate::output::list_rules_output::Builder {
+        crate::output::list_rules_output::Builder::default()
     }
 }
 
@@ -3315,7 +3685,7 @@ pub struct ListPhoneNumbersV2Output {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances.</p>
+    /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
     #[doc(hidden)]
     pub list_phone_numbers_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ListPhoneNumbersSummary>>,
@@ -3325,7 +3695,7 @@ impl ListPhoneNumbersV2Output {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances.</p>
+    /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
     pub fn list_phone_numbers_summary_list(
         &self,
     ) -> std::option::Option<&[crate::model::ListPhoneNumbersSummary]> {
@@ -3357,7 +3727,7 @@ pub mod list_phone_numbers_v2_output {
         ///
         /// To override the contents of this collection use [`set_list_phone_numbers_summary_list`](Self::set_list_phone_numbers_summary_list).
         ///
-        /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances.</p>
+        /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
         pub fn list_phone_numbers_summary_list(
             mut self,
             input: crate::model::ListPhoneNumbersSummary,
@@ -3367,7 +3737,7 @@ pub mod list_phone_numbers_v2_output {
             self.list_phone_numbers_summary_list = Some(v);
             self
         }
-        /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances.</p>
+        /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
         pub fn set_list_phone_numbers_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ListPhoneNumbersSummary>>,
@@ -3478,7 +3848,7 @@ impl ListPhoneNumbersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLexBotsOutput {
-    /// <p>The names and Regions of the Amazon Lex bots associated with the specified instance.</p>
+    /// <p>The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.</p>
     #[doc(hidden)]
     pub lex_bots: std::option::Option<std::vec::Vec<crate::model::LexBot>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -3486,7 +3856,7 @@ pub struct ListLexBotsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLexBotsOutput {
-    /// <p>The names and Regions of the Amazon Lex bots associated with the specified instance.</p>
+    /// <p>The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.</p>
     pub fn lex_bots(&self) -> std::option::Option<&[crate::model::LexBot]> {
         self.lex_bots.as_deref()
     }
@@ -3509,14 +3879,14 @@ pub mod list_lex_bots_output {
         ///
         /// To override the contents of this collection use [`set_lex_bots`](Self::set_lex_bots).
         ///
-        /// <p>The names and Regions of the Amazon Lex bots associated with the specified instance.</p>
+        /// <p>The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.</p>
         pub fn lex_bots(mut self, input: crate::model::LexBot) -> Self {
             let mut v = self.lex_bots.unwrap_or_default();
             v.push(input);
             self.lex_bots = Some(v);
             self
         }
-        /// <p>The names and Regions of the Amazon Lex bots associated with the specified instance.</p>
+        /// <p>The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.</p>
         pub fn set_lex_bots(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LexBot>>,
@@ -4359,7 +4729,7 @@ impl ListContactFlowModulesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBotsOutput {
-    /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
+    /// <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
     #[doc(hidden)]
     pub lex_bots: std::option::Option<std::vec::Vec<crate::model::LexBotConfig>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -4367,7 +4737,7 @@ pub struct ListBotsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBotsOutput {
-    /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
+    /// <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
     pub fn lex_bots(&self) -> std::option::Option<&[crate::model::LexBotConfig]> {
         self.lex_bots.as_deref()
     }
@@ -4390,14 +4760,14 @@ pub mod list_bots_output {
         ///
         /// To override the contents of this collection use [`set_lex_bots`](Self::set_lex_bots).
         ///
-        /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
+        /// <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
         pub fn lex_bots(mut self, input: crate::model::LexBotConfig) -> Self {
             let mut v = self.lex_bots.unwrap_or_default();
             v.push(input);
             self.lex_bots = Some(v);
             self
         }
-        /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
+        /// <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
         pub fn set_lex_bots(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LexBotConfig>>,
@@ -4587,6 +4957,95 @@ impl ListAgentStatusesOutput {
     /// Creates a new builder-style object to manufacture [`ListAgentStatusesOutput`](crate::output::ListAgentStatusesOutput).
     pub fn builder() -> crate::output::list_agent_statuses_output::Builder {
         crate::output::list_agent_statuses_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetTrafficDistributionOutput {
+    /// <p>The distribution of traffic between the instance and its replicas.</p>
+    #[doc(hidden)]
+    pub telephony_config: std::option::Option<crate::model::TelephonyConfig>,
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+}
+impl GetTrafficDistributionOutput {
+    /// <p>The distribution of traffic between the instance and its replicas.</p>
+    pub fn telephony_config(&self) -> std::option::Option<&crate::model::TelephonyConfig> {
+        self.telephony_config.as_ref()
+    }
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+/// See [`GetTrafficDistributionOutput`](crate::output::GetTrafficDistributionOutput).
+pub mod get_traffic_distribution_output {
+
+    /// A builder for [`GetTrafficDistributionOutput`](crate::output::GetTrafficDistributionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) telephony_config: std::option::Option<crate::model::TelephonyConfig>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The distribution of traffic between the instance and its replicas.</p>
+        pub fn telephony_config(mut self, input: crate::model::TelephonyConfig) -> Self {
+            self.telephony_config = Some(input);
+            self
+        }
+        /// <p>The distribution of traffic between the instance and its replicas.</p>
+        pub fn set_telephony_config(
+            mut self,
+            input: std::option::Option<crate::model::TelephonyConfig>,
+        ) -> Self {
+            self.telephony_config = input;
+            self
+        }
+        /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTrafficDistributionOutput`](crate::output::GetTrafficDistributionOutput).
+        pub fn build(self) -> crate::output::GetTrafficDistributionOutput {
+            crate::output::GetTrafficDistributionOutput {
+                telephony_config: self.telephony_config,
+                id: self.id,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl GetTrafficDistributionOutput {
+    /// Creates a new builder-style object to manufacture [`GetTrafficDistributionOutput`](crate::output::GetTrafficDistributionOutput).
+    pub fn builder() -> crate::output::get_traffic_distribution_output::Builder {
+        crate::output::get_traffic_distribution_output::Builder::default()
     }
 }
 
@@ -5006,11 +5465,32 @@ pub struct GetFederationTokenOutput {
     /// <p>The credentials to use for federation.</p>
     #[doc(hidden)]
     pub credentials: std::option::Option<crate::model::Credentials>,
+    /// <p>The URL to sign into the user's instance. </p>
+    #[doc(hidden)]
+    pub sign_in_url: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    #[doc(hidden)]
+    pub user_arn: std::option::Option<std::string::String>,
+    /// <p>The identifier for the user.</p>
+    #[doc(hidden)]
+    pub user_id: std::option::Option<std::string::String>,
 }
 impl GetFederationTokenOutput {
     /// <p>The credentials to use for federation.</p>
     pub fn credentials(&self) -> std::option::Option<&crate::model::Credentials> {
         self.credentials.as_ref()
+    }
+    /// <p>The URL to sign into the user's instance. </p>
+    pub fn sign_in_url(&self) -> std::option::Option<&str> {
+        self.sign_in_url.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The identifier for the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
     }
 }
 /// See [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput).
@@ -5020,6 +5500,9 @@ pub mod get_federation_token_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
+        pub(crate) sign_in_url: std::option::Option<std::string::String>,
+        pub(crate) user_arn: std::option::Option<std::string::String>,
+        pub(crate) user_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The credentials to use for federation.</p>
@@ -5035,10 +5518,43 @@ pub mod get_federation_token_output {
             self.credentials = input;
             self
         }
+        /// <p>The URL to sign into the user's instance. </p>
+        pub fn sign_in_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sign_in_url = Some(input.into());
+            self
+        }
+        /// <p>The URL to sign into the user's instance. </p>
+        pub fn set_sign_in_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sign_in_url = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the user.</p>
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the user.</p>
+        pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_arn = input;
+            self
+        }
+        /// <p>The identifier for the user.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the user.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput).
         pub fn build(self) -> crate::output::GetFederationTokenOutput {
             crate::output::GetFederationTokenOutput {
                 credentials: self.credentials,
+                sign_in_url: self.sign_in_url,
+                user_arn: self.user_arn,
+                user_id: self.user_id,
             }
         }
     }
@@ -5060,6 +5576,9 @@ pub struct GetCurrentUserDataOutput {
     /// <p>A list of the user data that is returned.</p>
     #[doc(hidden)]
     pub user_data_list: std::option::Option<std::vec::Vec<crate::model::UserData>>,
+    /// <p>The total count of the result, regardless of the current page size.</p>
+    #[doc(hidden)]
+    pub approximate_total_count: std::option::Option<i64>,
 }
 impl GetCurrentUserDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -5070,6 +5589,10 @@ impl GetCurrentUserDataOutput {
     pub fn user_data_list(&self) -> std::option::Option<&[crate::model::UserData]> {
         self.user_data_list.as_deref()
     }
+    /// <p>The total count of the result, regardless of the current page size.</p>
+    pub fn approximate_total_count(&self) -> std::option::Option<i64> {
+        self.approximate_total_count
+    }
 }
 /// See [`GetCurrentUserDataOutput`](crate::output::GetCurrentUserDataOutput).
 pub mod get_current_user_data_output {
@@ -5079,6 +5602,7 @@ pub mod get_current_user_data_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) user_data_list: std::option::Option<std::vec::Vec<crate::model::UserData>>,
+        pub(crate) approximate_total_count: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -5110,11 +5634,22 @@ pub mod get_current_user_data_output {
             self.user_data_list = input;
             self
         }
+        /// <p>The total count of the result, regardless of the current page size.</p>
+        pub fn approximate_total_count(mut self, input: i64) -> Self {
+            self.approximate_total_count = Some(input);
+            self
+        }
+        /// <p>The total count of the result, regardless of the current page size.</p>
+        pub fn set_approximate_total_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.approximate_total_count = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCurrentUserDataOutput`](crate::output::GetCurrentUserDataOutput).
         pub fn build(self) -> crate::output::GetCurrentUserDataOutput {
             crate::output::GetCurrentUserDataOutput {
                 next_token: self.next_token,
                 user_data_list: self.user_data_list,
+                approximate_total_count: self.approximate_total_count,
             }
         }
     }
@@ -5140,6 +5675,9 @@ pub struct GetCurrentMetricDataOutput {
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
     #[doc(hidden)]
     pub data_snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The total count of the result, regardless of the current page size. </p>
+    #[doc(hidden)]
+    pub approximate_total_count: std::option::Option<i64>,
 }
 impl GetCurrentMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -5155,6 +5693,10 @@ impl GetCurrentMetricDataOutput {
     pub fn data_snapshot_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_snapshot_time.as_ref()
     }
+    /// <p>The total count of the result, regardless of the current page size. </p>
+    pub fn approximate_total_count(&self) -> std::option::Option<i64> {
+        self.approximate_total_count
+    }
 }
 /// See [`GetCurrentMetricDataOutput`](crate::output::GetCurrentMetricDataOutput).
 pub mod get_current_metric_data_output {
@@ -5166,6 +5708,7 @@ pub mod get_current_metric_data_output {
         pub(crate) metric_results:
             std::option::Option<std::vec::Vec<crate::model::CurrentMetricResult>>,
         pub(crate) data_snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) approximate_total_count: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -5212,12 +5755,23 @@ pub mod get_current_metric_data_output {
             self.data_snapshot_time = input;
             self
         }
+        /// <p>The total count of the result, regardless of the current page size. </p>
+        pub fn approximate_total_count(mut self, input: i64) -> Self {
+            self.approximate_total_count = Some(input);
+            self
+        }
+        /// <p>The total count of the result, regardless of the current page size. </p>
+        pub fn set_approximate_total_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.approximate_total_count = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCurrentMetricDataOutput`](crate::output::GetCurrentMetricDataOutput).
         pub fn build(self) -> crate::output::GetCurrentMetricDataOutput {
             crate::output::GetCurrentMetricDataOutput {
                 next_token: self.next_token,
                 metric_results: self.metric_results,
                 data_snapshot_time: self.data_snapshot_time,
+                approximate_total_count: self.approximate_total_count,
             }
         }
     }
@@ -5295,6 +5849,30 @@ impl GetContactAttributesOutput {
     /// Creates a new builder-style object to manufacture [`GetContactAttributesOutput`](crate::output::GetContactAttributesOutput).
     pub fn builder() -> crate::output::get_contact_attributes_output::Builder {
         crate::output::get_contact_attributes_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DismissUserContactOutput {}
+/// See [`DismissUserContactOutput`](crate::output::DismissUserContactOutput).
+pub mod dismiss_user_contact_output {
+
+    /// A builder for [`DismissUserContactOutput`](crate::output::DismissUserContactOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DismissUserContactOutput`](crate::output::DismissUserContactOutput).
+        pub fn build(self) -> crate::output::DismissUserContactOutput {
+            crate::output::DismissUserContactOutput {}
+        }
+    }
+}
+impl DismissUserContactOutput {
+    /// Creates a new builder-style object to manufacture [`DismissUserContactOutput`](crate::output::DismissUserContactOutput).
+    pub fn builder() -> crate::output::dismiss_user_contact_output::Builder {
+        crate::output::dismiss_user_contact_output::Builder::default()
     }
 }
 
@@ -5716,6 +6294,63 @@ impl DescribeUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeTrafficDistributionGroupOutput {
+    /// <p>Information about the traffic distribution group.</p>
+    #[doc(hidden)]
+    pub traffic_distribution_group: std::option::Option<crate::model::TrafficDistributionGroup>,
+}
+impl DescribeTrafficDistributionGroupOutput {
+    /// <p>Information about the traffic distribution group.</p>
+    pub fn traffic_distribution_group(
+        &self,
+    ) -> std::option::Option<&crate::model::TrafficDistributionGroup> {
+        self.traffic_distribution_group.as_ref()
+    }
+}
+/// See [`DescribeTrafficDistributionGroupOutput`](crate::output::DescribeTrafficDistributionGroupOutput).
+pub mod describe_traffic_distribution_group_output {
+
+    /// A builder for [`DescribeTrafficDistributionGroupOutput`](crate::output::DescribeTrafficDistributionGroupOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) traffic_distribution_group:
+            std::option::Option<crate::model::TrafficDistributionGroup>,
+    }
+    impl Builder {
+        /// <p>Information about the traffic distribution group.</p>
+        pub fn traffic_distribution_group(
+            mut self,
+            input: crate::model::TrafficDistributionGroup,
+        ) -> Self {
+            self.traffic_distribution_group = Some(input);
+            self
+        }
+        /// <p>Information about the traffic distribution group.</p>
+        pub fn set_traffic_distribution_group(
+            mut self,
+            input: std::option::Option<crate::model::TrafficDistributionGroup>,
+        ) -> Self {
+            self.traffic_distribution_group = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeTrafficDistributionGroupOutput`](crate::output::DescribeTrafficDistributionGroupOutput).
+        pub fn build(self) -> crate::output::DescribeTrafficDistributionGroupOutput {
+            crate::output::DescribeTrafficDistributionGroupOutput {
+                traffic_distribution_group: self.traffic_distribution_group,
+            }
+        }
+    }
+}
+impl DescribeTrafficDistributionGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTrafficDistributionGroupOutput`](crate::output::DescribeTrafficDistributionGroupOutput).
+    pub fn builder() -> crate::output::describe_traffic_distribution_group_output::Builder {
+        crate::output::describe_traffic_distribution_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSecurityProfileOutput {
     /// <p>The security profile.</p>
     #[doc(hidden)]
@@ -5761,6 +6396,52 @@ impl DescribeSecurityProfileOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityProfileOutput`](crate::output::DescribeSecurityProfileOutput).
     pub fn builder() -> crate::output::describe_security_profile_output::Builder {
         crate::output::describe_security_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeRuleOutput {
+    /// <p>Information about the rule.</p>
+    #[doc(hidden)]
+    pub rule: std::option::Option<crate::model::Rule>,
+}
+impl DescribeRuleOutput {
+    /// <p>Information about the rule.</p>
+    pub fn rule(&self) -> std::option::Option<&crate::model::Rule> {
+        self.rule.as_ref()
+    }
+}
+/// See [`DescribeRuleOutput`](crate::output::DescribeRuleOutput).
+pub mod describe_rule_output {
+
+    /// A builder for [`DescribeRuleOutput`](crate::output::DescribeRuleOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rule: std::option::Option<crate::model::Rule>,
+    }
+    impl Builder {
+        /// <p>Information about the rule.</p>
+        pub fn rule(mut self, input: crate::model::Rule) -> Self {
+            self.rule = Some(input);
+            self
+        }
+        /// <p>Information about the rule.</p>
+        pub fn set_rule(mut self, input: std::option::Option<crate::model::Rule>) -> Self {
+            self.rule = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeRuleOutput`](crate::output::DescribeRuleOutput).
+        pub fn build(self) -> crate::output::DescribeRuleOutput {
+            crate::output::DescribeRuleOutput { rule: self.rule }
+        }
+    }
+}
+impl DescribeRuleOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRuleOutput`](crate::output::DescribeRuleOutput).
+    pub fn builder() -> crate::output::describe_rule_output::Builder {
+        crate::output::describe_rule_output::Builder::default()
     }
 }
 
@@ -5916,12 +6597,12 @@ impl DescribeQueueOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePhoneNumberOutput {
-    /// <p>Information about a phone number that's been claimed to your Amazon Connect instance.</p>
+    /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
     #[doc(hidden)]
     pub claimed_phone_number_summary: std::option::Option<crate::model::ClaimedPhoneNumberSummary>,
 }
 impl DescribePhoneNumberOutput {
-    /// <p>Information about a phone number that's been claimed to your Amazon Connect instance.</p>
+    /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
     pub fn claimed_phone_number_summary(
         &self,
     ) -> std::option::Option<&crate::model::ClaimedPhoneNumberSummary> {
@@ -5938,7 +6619,7 @@ pub mod describe_phone_number_output {
             std::option::Option<crate::model::ClaimedPhoneNumberSummary>,
     }
     impl Builder {
-        /// <p>Information about a phone number that's been claimed to your Amazon Connect instance.</p>
+        /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
         pub fn claimed_phone_number_summary(
             mut self,
             input: crate::model::ClaimedPhoneNumberSummary,
@@ -5946,7 +6627,7 @@ pub mod describe_phone_number_output {
             self.claimed_phone_number_summary = Some(input);
             self
         }
-        /// <p>Information about a phone number that's been claimed to your Amazon Connect instance.</p>
+        /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
         pub fn set_claimed_phone_number_summary(
             mut self,
             input: std::option::Option<crate::model::ClaimedPhoneNumberSummary>,
@@ -6541,6 +7222,30 @@ impl DeleteUseCaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteTrafficDistributionGroupOutput {}
+/// See [`DeleteTrafficDistributionGroupOutput`](crate::output::DeleteTrafficDistributionGroupOutput).
+pub mod delete_traffic_distribution_group_output {
+
+    /// A builder for [`DeleteTrafficDistributionGroupOutput`](crate::output::DeleteTrafficDistributionGroupOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteTrafficDistributionGroupOutput`](crate::output::DeleteTrafficDistributionGroupOutput).
+        pub fn build(self) -> crate::output::DeleteTrafficDistributionGroupOutput {
+            crate::output::DeleteTrafficDistributionGroupOutput {}
+        }
+    }
+}
+impl DeleteTrafficDistributionGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTrafficDistributionGroupOutput`](crate::output::DeleteTrafficDistributionGroupOutput).
+    pub fn builder() -> crate::output::delete_traffic_distribution_group_output::Builder {
+        crate::output::delete_traffic_distribution_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTaskTemplateOutput {}
 /// See [`DeleteTaskTemplateOutput`](crate::output::DeleteTaskTemplateOutput).
 pub mod delete_task_template_output {
@@ -6583,6 +7288,30 @@ impl DeleteSecurityProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSecurityProfileOutput`](crate::output::DeleteSecurityProfileOutput).
     pub fn builder() -> crate::output::delete_security_profile_output::Builder {
         crate::output::delete_security_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteRuleOutput {}
+/// See [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
+pub mod delete_rule_output {
+
+    /// A builder for [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
+        pub fn build(self) -> crate::output::DeleteRuleOutput {
+            crate::output::DeleteRuleOutput {}
+        }
+    }
+}
+impl DeleteRuleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
+    pub fn builder() -> crate::output::delete_rule_output::Builder {
+        crate::output::delete_rule_output::Builder::default()
     }
 }
 
@@ -7035,6 +7764,73 @@ impl CreateUseCaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateTrafficDistributionGroupOutput {
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+}
+impl CreateTrafficDistributionGroupOutput {
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+/// See [`CreateTrafficDistributionGroupOutput`](crate::output::CreateTrafficDistributionGroupOutput).
+pub mod create_traffic_distribution_group_output {
+
+    /// A builder for [`CreateTrafficDistributionGroupOutput`](crate::output::CreateTrafficDistributionGroupOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateTrafficDistributionGroupOutput`](crate::output::CreateTrafficDistributionGroupOutput).
+        pub fn build(self) -> crate::output::CreateTrafficDistributionGroupOutput {
+            crate::output::CreateTrafficDistributionGroupOutput {
+                id: self.id,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl CreateTrafficDistributionGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTrafficDistributionGroupOutput`](crate::output::CreateTrafficDistributionGroupOutput).
+    pub fn builder() -> crate::output::create_traffic_distribution_group_output::Builder {
+        crate::output::create_traffic_distribution_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTaskTemplateOutput {
     /// <p>The identifier of the task template resource.</p>
     #[doc(hidden)]
@@ -7169,6 +7965,73 @@ impl CreateSecurityProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateSecurityProfileOutput`](crate::output::CreateSecurityProfileOutput).
     pub fn builder() -> crate::output::create_security_profile_output::Builder {
         crate::output::create_security_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateRuleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    #[doc(hidden)]
+    pub rule_arn: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the rule.</p>
+    #[doc(hidden)]
+    pub rule_id: std::option::Option<std::string::String>,
+}
+impl CreateRuleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn rule_arn(&self) -> std::option::Option<&str> {
+        self.rule_arn.as_deref()
+    }
+    /// <p>A unique identifier for the rule.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+}
+/// See [`CreateRuleOutput`](crate::output::CreateRuleOutput).
+pub mod create_rule_output {
+
+    /// A builder for [`CreateRuleOutput`](crate::output::CreateRuleOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rule_arn: std::option::Option<std::string::String>,
+        pub(crate) rule_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+        pub fn rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+        pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_arn = input;
+            self
+        }
+        /// <p>A unique identifier for the rule.</p>
+        pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the rule.</p>
+        pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateRuleOutput`](crate::output::CreateRuleOutput).
+        pub fn build(self) -> crate::output::CreateRuleOutput {
+            crate::output::CreateRuleOutput {
+                rule_arn: self.rule_arn,
+                rule_id: self.rule_id,
+            }
+        }
+    }
+}
+impl CreateRuleOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRuleOutput`](crate::output::CreateRuleOutput).
+    pub fn builder() -> crate::output::create_rule_output::Builder {
+        crate::output::create_rule_output::Builder::default()
     }
 }
 

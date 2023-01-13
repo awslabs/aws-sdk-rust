@@ -78,6 +78,49 @@ impl From<crate::error::CreateChatTokenError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLoggingConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateLoggingConfigurationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateLoggingConfigurationError> for Error {
+    fn from(err: crate::error::CreateLoggingConfigurationError) -> Self {
+        match err.kind {
+            crate::error::CreateLoggingConfigurationErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::CreateLoggingConfigurationErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::CreateLoggingConfigurationErrorKind::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
+            }
+            crate::error::CreateLoggingConfigurationErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::CreateLoggingConfigurationErrorKind::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateLoggingConfigurationErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::CreateLoggingConfigurationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRoomError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -118,6 +161,46 @@ impl From<crate::error::CreateRoomError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLoggingConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteLoggingConfigurationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteLoggingConfigurationError> for Error {
+    fn from(err: crate::error::DeleteLoggingConfigurationError) -> Self {
+        match err.kind {
+            crate::error::DeleteLoggingConfigurationErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DeleteLoggingConfigurationErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::DeleteLoggingConfigurationErrorKind::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
+            }
+            crate::error::DeleteLoggingConfigurationErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DeleteLoggingConfigurationErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::DeleteLoggingConfigurationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMessageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -136,6 +219,9 @@ impl From<crate::error::DeleteMessageError> for Error {
         match err.kind {
             crate::error::DeleteMessageErrorKind::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::error::DeleteMessageErrorKind::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
             }
             crate::error::DeleteMessageErrorKind::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -205,6 +291,9 @@ impl From<crate::error::DisconnectUserError> for Error {
             crate::error::DisconnectUserErrorKind::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::error::DisconnectUserErrorKind::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
+            }
             crate::error::DisconnectUserErrorKind::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -215,6 +304,40 @@ impl From<crate::error::DisconnectUserError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::DisconnectUserErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLoggingConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetLoggingConfigurationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetLoggingConfigurationError> for Error {
+    fn from(err: crate::error::GetLoggingConfigurationError) -> Self {
+        match err.kind {
+            crate::error::GetLoggingConfigurationErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::GetLoggingConfigurationErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetLoggingConfigurationErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::GetLoggingConfigurationErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -246,6 +369,37 @@ impl From<crate::error::GetRoomError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::GetRoomErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLoggingConfigurationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListLoggingConfigurationsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListLoggingConfigurationsError> for Error {
+    fn from(err: crate::error::ListLoggingConfigurationsError) -> Self {
+        match err.kind {
+            crate::error::ListLoggingConfigurationsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::ListLoggingConfigurationsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::ListLoggingConfigurationsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -334,6 +488,9 @@ impl From<crate::error::SendEventError> for Error {
             crate::error::SendEventErrorKind::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::error::SendEventErrorKind::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
+            }
             crate::error::SendEventErrorKind::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -406,6 +563,43 @@ impl From<crate::error::UntagResourceError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateLoggingConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateLoggingConfigurationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateLoggingConfigurationError> for Error {
+    fn from(err: crate::error::UpdateLoggingConfigurationError) -> Self {
+        match err.kind {
+            crate::error::UpdateLoggingConfigurationErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::UpdateLoggingConfigurationErrorKind::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
+            }
+            crate::error::UpdateLoggingConfigurationErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UpdateLoggingConfigurationErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::UpdateLoggingConfigurationErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

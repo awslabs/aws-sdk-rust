@@ -5586,6 +5586,42 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProvisioningTemplate
     }
 }
 
+/// Operation shape for `ListRelatedResourcesForAuditFinding`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_related_resources_for_audit_finding`](crate::client::Client::list_related_resources_for_audit_finding).
+///
+/// See [`crate::client::fluent_builders::ListRelatedResourcesForAuditFinding`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListRelatedResourcesForAuditFinding {
+    _private: (),
+}
+impl ListRelatedResourcesForAuditFinding {
+    /// Creates a new builder-style object to manufacture [`ListRelatedResourcesForAuditFindingInput`](crate::input::ListRelatedResourcesForAuditFindingInput).
+    pub fn builder() -> crate::input::list_related_resources_for_audit_finding_input::Builder {
+        crate::input::list_related_resources_for_audit_finding_input::Builder::default()
+    }
+    /// Creates a new `ListRelatedResourcesForAuditFinding` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListRelatedResourcesForAuditFinding {
+    type Output = std::result::Result<
+        crate::output::ListRelatedResourcesForAuditFindingOutput,
+        crate::error::ListRelatedResourcesForAuditFindingError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_related_resources_for_audit_finding_error(response)
+        } else {
+            crate::operation_deser::parse_list_related_resources_for_audit_finding_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `ListRoleAliases`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

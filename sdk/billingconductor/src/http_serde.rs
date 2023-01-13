@@ -671,7 +671,7 @@ pub(crate) fn deser_header_list_custom_line_items_throttling_exception_retry_aft
     }
 }
 
-pub(crate) fn deser_header_list_pricing_plans_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_list_custom_line_item_versions_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -687,7 +687,7 @@ pub(crate) fn deser_header_list_pricing_plans_internal_server_exception_retry_af
     }
 }
 
-pub(crate) fn deser_header_list_pricing_plans_throttling_exception_retry_after_seconds(
+pub(crate) fn deser_header_list_custom_line_item_versions_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -703,7 +703,7 @@ pub(crate) fn deser_header_list_pricing_plans_throttling_exception_retry_after_s
     }
 }
 
-pub(crate) fn deser_header_list_pricing_plans_associated_with_pricing_rule_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_list_pricing_plans_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -719,7 +719,7 @@ pub(crate) fn deser_header_list_pricing_plans_associated_with_pricing_rule_inter
     }
 }
 
-pub(crate) fn deser_header_list_pricing_plans_associated_with_pricing_rule_throttling_exception_retry_after_seconds(
+pub(crate) fn deser_header_list_pricing_plans_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -735,7 +735,7 @@ pub(crate) fn deser_header_list_pricing_plans_associated_with_pricing_rule_throt
     }
 }
 
-pub(crate) fn deser_header_list_pricing_rules_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_list_pricing_plans_associated_with_pricing_rule_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -751,7 +751,7 @@ pub(crate) fn deser_header_list_pricing_rules_internal_server_exception_retry_af
     }
 }
 
-pub(crate) fn deser_header_list_pricing_rules_throttling_exception_retry_after_seconds(
+pub(crate) fn deser_header_list_pricing_plans_associated_with_pricing_rule_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -767,7 +767,7 @@ pub(crate) fn deser_header_list_pricing_rules_throttling_exception_retry_after_s
     }
 }
 
-pub(crate) fn deser_header_list_pricing_rules_associated_to_pricing_plan_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_list_pricing_rules_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -783,7 +783,7 @@ pub(crate) fn deser_header_list_pricing_rules_associated_to_pricing_plan_interna
     }
 }
 
-pub(crate) fn deser_header_list_pricing_rules_associated_to_pricing_plan_throttling_exception_retry_after_seconds(
+pub(crate) fn deser_header_list_pricing_rules_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -799,7 +799,7 @@ pub(crate) fn deser_header_list_pricing_rules_associated_to_pricing_plan_throttl
     }
 }
 
-pub(crate) fn deser_header_list_resources_associated_to_custom_line_item_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_list_pricing_rules_associated_to_pricing_plan_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -815,7 +815,7 @@ pub(crate) fn deser_header_list_resources_associated_to_custom_line_item_interna
     }
 }
 
-pub(crate) fn deser_header_list_resources_associated_to_custom_line_item_throttling_exception_retry_after_seconds(
+pub(crate) fn deser_header_list_pricing_rules_associated_to_pricing_plan_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -831,7 +831,7 @@ pub(crate) fn deser_header_list_resources_associated_to_custom_line_item_throttl
     }
 }
 
-pub(crate) fn deser_header_list_tags_for_resource_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_list_resources_associated_to_custom_line_item_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -847,7 +847,7 @@ pub(crate) fn deser_header_list_tags_for_resource_internal_server_exception_retr
     }
 }
 
-pub(crate) fn deser_header_list_tags_for_resource_throttling_exception_retry_after_seconds(
+pub(crate) fn deser_header_list_resources_associated_to_custom_line_item_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -863,7 +863,7 @@ pub(crate) fn deser_header_list_tags_for_resource_throttling_exception_retry_aft
     }
 }
 
-pub(crate) fn deser_header_tag_resource_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_list_tags_for_resource_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -879,7 +879,7 @@ pub(crate) fn deser_header_tag_resource_internal_server_exception_retry_after_se
     }
 }
 
-pub(crate) fn deser_header_tag_resource_throttling_exception_retry_after_seconds(
+pub(crate) fn deser_header_list_tags_for_resource_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -895,7 +895,7 @@ pub(crate) fn deser_header_tag_resource_throttling_exception_retry_after_seconds
     }
 }
 
-pub(crate) fn deser_header_untag_resource_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_tag_resource_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -911,7 +911,7 @@ pub(crate) fn deser_header_untag_resource_internal_server_exception_retry_after_
     }
 }
 
-pub(crate) fn deser_header_untag_resource_throttling_exception_retry_after_seconds(
+pub(crate) fn deser_header_tag_resource_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -927,7 +927,7 @@ pub(crate) fn deser_header_untag_resource_throttling_exception_retry_after_secon
     }
 }
 
-pub(crate) fn deser_header_update_billing_group_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_untag_resource_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -943,7 +943,7 @@ pub(crate) fn deser_header_update_billing_group_internal_server_exception_retry_
     }
 }
 
-pub(crate) fn deser_header_update_billing_group_throttling_exception_retry_after_seconds(
+pub(crate) fn deser_header_untag_resource_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -959,7 +959,7 @@ pub(crate) fn deser_header_update_billing_group_throttling_exception_retry_after
     }
 }
 
-pub(crate) fn deser_header_update_custom_line_item_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_billing_group_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -975,7 +975,7 @@ pub(crate) fn deser_header_update_custom_line_item_internal_server_exception_ret
     }
 }
 
-pub(crate) fn deser_header_update_custom_line_item_throttling_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_billing_group_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -991,7 +991,7 @@ pub(crate) fn deser_header_update_custom_line_item_throttling_exception_retry_af
     }
 }
 
-pub(crate) fn deser_header_update_pricing_plan_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_custom_line_item_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1007,7 +1007,7 @@ pub(crate) fn deser_header_update_pricing_plan_internal_server_exception_retry_a
     }
 }
 
-pub(crate) fn deser_header_update_pricing_plan_throttling_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_custom_line_item_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1023,7 +1023,7 @@ pub(crate) fn deser_header_update_pricing_plan_throttling_exception_retry_after_
     }
 }
 
-pub(crate) fn deser_header_update_pricing_rule_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_pricing_plan_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1039,7 +1039,7 @@ pub(crate) fn deser_header_update_pricing_rule_internal_server_exception_retry_a
     }
 }
 
-pub(crate) fn deser_header_update_pricing_rule_throttling_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_pricing_plan_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1052,5 +1052,37 @@ pub(crate) fn deser_header_update_pricing_rule_throttling_exception_retry_after_
     } else {
         let mut var_68 = var_68;
         Ok(var_68.pop())
+    }
+}
+
+pub(crate) fn deser_header_update_pricing_rule_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_69 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_69.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_69.len()
+        )))
+    } else {
+        let mut var_69 = var_69;
+        Ok(var_69.pop())
+    }
+}
+
+pub(crate) fn deser_header_update_pricing_rule_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_70 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_70.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_70.len()
+        )))
+    } else {
+        let mut var_70 = var_70;
+        Ok(var_70.pop())
     }
 }

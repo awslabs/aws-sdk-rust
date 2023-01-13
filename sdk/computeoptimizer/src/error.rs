@@ -1644,6 +1644,226 @@ impl std::error::Error for ExportEC2InstanceRecommendationsError {
     }
 }
 
+/// Error type for the `ExportECSServiceRecommendations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ExportECSServiceRecommendationsError {
+    /// Kind of error that occurred.
+    pub kind: ExportECSServiceRecommendationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ExportECSServiceRecommendationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ExportECSServiceRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ExportECSServiceRecommendations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ExportECSServiceRecommendationsErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal error has occurred. Try your call again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The value supplied for the input parameter is out of range or not valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The request exceeds a limit of the service.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
+    MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
+    /// <p>The account is not opted in to Compute Optimizer.</p>
+    OptInRequiredException(crate::error::OptInRequiredException),
+    /// <p>The request has failed due to a temporary failure of the server.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ExportECSServiceRecommendationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ExportECSServiceRecommendationsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            ExportECSServiceRecommendationsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ExportECSServiceRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            ExportECSServiceRecommendationsErrorKind::LimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            ExportECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
+                _inner.fmt(f)
+            }
+            ExportECSServiceRecommendationsErrorKind::OptInRequiredException(_inner) => {
+                _inner.fmt(f)
+            }
+            ExportECSServiceRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            ExportECSServiceRecommendationsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ExportECSServiceRecommendationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ExportECSServiceRecommendationsError {
+    fn code(&self) -> Option<&str> {
+        ExportECSServiceRecommendationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ExportECSServiceRecommendationsError {
+    /// Creates a new `ExportECSServiceRecommendationsError`.
+    pub fn new(
+        kind: ExportECSServiceRecommendationsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ExportECSServiceRecommendationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ExportECSServiceRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ExportECSServiceRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ExportECSServiceRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportECSServiceRecommendationsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportECSServiceRecommendationsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportECSServiceRecommendationsErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportECSServiceRecommendationsErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::MissingAuthenticationToken`.
+    pub fn is_missing_authentication_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::OptInRequiredException`.
+    pub fn is_opt_in_required_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportECSServiceRecommendationsErrorKind::OptInRequiredException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportECSServiceRecommendationsErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportECSServiceRecommendationsErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ExportECSServiceRecommendationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ExportECSServiceRecommendationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ExportECSServiceRecommendationsErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            ExportECSServiceRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            ExportECSServiceRecommendationsErrorKind::LimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            ExportECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
+                Some(_inner)
+            }
+            ExportECSServiceRecommendationsErrorKind::OptInRequiredException(_inner) => {
+                Some(_inner)
+            }
+            ExportECSServiceRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            ExportECSServiceRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ExportECSServiceRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ExportLambdaFunctionRecommendations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2735,6 +2955,447 @@ impl std::error::Error for GetEC2RecommendationProjectedMetricsError {
                 Some(_inner)
             }
             GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetECSServiceRecommendationProjectedMetrics` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetECSServiceRecommendationProjectedMetricsError {
+    /// Kind of error that occurred.
+    pub kind: GetECSServiceRecommendationProjectedMetricsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for GetECSServiceRecommendationProjectedMetricsError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetECSServiceRecommendationProjectedMetricsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetECSServiceRecommendationProjectedMetrics` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetECSServiceRecommendationProjectedMetricsErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal error has occurred. Try your call again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The value supplied for the input parameter is out of range or not valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
+    MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
+    /// <p>The account is not opted in to Compute Optimizer.</p>
+    OptInRequiredException(crate::error::OptInRequiredException),
+    /// <p>A resource that is required for the action doesn't exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed due to a temporary failure of the server.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetECSServiceRecommendationProjectedMetricsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetECSServiceRecommendationProjectedMetricsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind
+    for GetECSServiceRecommendationProjectedMetricsError
+{
+    fn code(&self) -> Option<&str> {
+        GetECSServiceRecommendationProjectedMetricsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetECSServiceRecommendationProjectedMetricsError {
+    /// Creates a new `GetECSServiceRecommendationProjectedMetricsError`.
+    pub fn new(
+        kind: GetECSServiceRecommendationProjectedMetricsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetECSServiceRecommendationProjectedMetricsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetECSServiceRecommendationProjectedMetricsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetECSServiceRecommendationProjectedMetricsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetECSServiceRecommendationProjectedMetricsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::MissingAuthenticationToken`.
+    pub fn is_missing_authentication_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::MissingAuthenticationToken(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::OptInRequiredException`.
+    pub fn is_opt_in_required_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::OptInRequiredException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for GetECSServiceRecommendationProjectedMetricsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetECSServiceRecommendationProjectedMetricsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationProjectedMetricsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
+        }
+    }
+}
+
+/// Error type for the `GetECSServiceRecommendations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetECSServiceRecommendationsError {
+    /// Kind of error that occurred.
+    pub kind: GetECSServiceRecommendationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetECSServiceRecommendationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetECSServiceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetECSServiceRecommendations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetECSServiceRecommendationsErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal error has occurred. Try your call again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The value supplied for the input parameter is out of range or not valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
+    MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
+    /// <p>The account is not opted in to Compute Optimizer.</p>
+    OptInRequiredException(crate::error::OptInRequiredException),
+    /// <p>A resource that is required for the action doesn't exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed due to a temporary failure of the server.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetECSServiceRecommendationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetECSServiceRecommendationsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetECSServiceRecommendationsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetECSServiceRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
+                _inner.fmt(f)
+            }
+            GetECSServiceRecommendationsErrorKind::OptInRequiredException(_inner) => _inner.fmt(f),
+            GetECSServiceRecommendationsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetECSServiceRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetECSServiceRecommendationsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetECSServiceRecommendationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetECSServiceRecommendationsError {
+    fn code(&self) -> Option<&str> {
+        GetECSServiceRecommendationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetECSServiceRecommendationsError {
+    /// Creates a new `GetECSServiceRecommendationsError`.
+    pub fn new(kind: GetECSServiceRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetECSServiceRecommendationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetECSServiceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetECSServiceRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetECSServiceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationsErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::MissingAuthenticationToken`.
+    pub fn is_missing_authentication_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::OptInRequiredException`.
+    pub fn is_opt_in_required_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationsErrorKind::OptInRequiredException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationsErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetECSServiceRecommendationsErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for GetECSServiceRecommendationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetECSServiceRecommendationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetECSServiceRecommendationsErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetECSServiceRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            GetECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
+                Some(_inner)
+            }
+            GetECSServiceRecommendationsErrorKind::OptInRequiredException(_inner) => Some(_inner),
+            GetECSServiceRecommendationsErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetECSServiceRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            GetECSServiceRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetECSServiceRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

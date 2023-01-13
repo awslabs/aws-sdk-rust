@@ -165,7 +165,7 @@ impl Client {
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateGrant::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateGrant::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     ///   - [`grant_name(impl Into<String>)`](crate::client::fluent_builders::CreateGrant::grant_name) / [`set_grant_name(Option<String>)`](crate::client::fluent_builders::CreateGrant::set_grant_name): <p>Grant name.</p>
     ///   - [`license_arn(impl Into<String>)`](crate::client::fluent_builders::CreateGrant::license_arn) / [`set_license_arn(Option<String>)`](crate::client::fluent_builders::CreateGrant::set_license_arn): <p>Amazon Resource Name (ARN) of the license.</p>
-    ///   - [`principals(Vec<String>)`](crate::client::fluent_builders::CreateGrant::principals) / [`set_principals(Option<Vec<String>>)`](crate::client::fluent_builders::CreateGrant::set_principals): <p>The grant principals.</p>
+    ///   - [`principals(Vec<String>)`](crate::client::fluent_builders::CreateGrant::principals) / [`set_principals(Option<Vec<String>>)`](crate::client::fluent_builders::CreateGrant::set_principals): <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
     ///   - [`home_region(impl Into<String>)`](crate::client::fluent_builders::CreateGrant::home_region) / [`set_home_region(Option<String>)`](crate::client::fluent_builders::CreateGrant::set_home_region): <p>Home Region of the grant.</p>
     ///   - [`allowed_operations(Vec<AllowedOperation>)`](crate::client::fluent_builders::CreateGrant::allowed_operations) / [`set_allowed_operations(Option<Vec<AllowedOperation>>)`](crate::client::fluent_builders::CreateGrant::set_allowed_operations): <p>Allowed operations for the grant.</p>
     /// - On success, responds with [`CreateGrantOutput`](crate::output::CreateGrantOutput) with field(s):
@@ -238,8 +238,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::set_resource_arn): <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
-    ///   - [`source_license_context(LicenseConversionContext)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::source_license_context) / [`set_source_license_context(Option<LicenseConversionContext>)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::set_source_license_context): <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
-    ///   - [`destination_license_context(LicenseConversionContext)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::destination_license_context) / [`set_destination_license_context(Option<LicenseConversionContext>)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::set_destination_license_context): <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+    ///   - [`source_license_context(LicenseConversionContext)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::source_license_context) / [`set_source_license_context(Option<LicenseConversionContext>)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::set_source_license_context): <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
+    ///   - [`destination_license_context(LicenseConversionContext)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::destination_license_context) / [`set_destination_license_context(Option<LicenseConversionContext>)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::set_destination_license_context): <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
     /// - On success, responds with [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput) with field(s):
     ///   - [`license_conversion_task_id(Option<String>)`](crate::output::CreateLicenseConversionTaskForResourceOutput::license_conversion_task_id): <p>The ID of the created license type conversion task.</p>
     /// - On failure, responds with [`SdkError<CreateLicenseConversionTaskForResourceError>`](crate::error::CreateLicenseConversionTaskForResourceError)
@@ -630,6 +630,22 @@ impl Client {
     pub fn list_received_grants(&self) -> fluent_builders::ListReceivedGrants {
         fluent_builders::ListReceivedGrants::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListReceivedGrantsForOrganization`](crate::client::fluent_builders::ListReceivedGrantsForOrganization) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`license_arn(impl Into<String>)`](crate::client::fluent_builders::ListReceivedGrantsForOrganization::license_arn) / [`set_license_arn(Option<String>)`](crate::client::fluent_builders::ListReceivedGrantsForOrganization::set_license_arn): <p>The Amazon Resource Name (ARN) of the received license.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListReceivedGrantsForOrganization::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListReceivedGrantsForOrganization::set_filters): <p>Filters to scope the results. The following filters are supported:</p>  <ul>   <li> <p> <code>ParentArn</code> </p> </li>   <li> <p> <code>GranteePrincipalArn</code> </p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReceivedGrantsForOrganization::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReceivedGrantsForOrganization::set_next_token): <p>Token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReceivedGrantsForOrganization::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListReceivedGrantsForOrganization::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput) with field(s):
+    ///   - [`grants(Option<Vec<Grant>>)`](crate::output::ListReceivedGrantsForOrganizationOutput::grants): <p>Lists the grants the organization has received.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListReceivedGrantsForOrganizationOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListReceivedGrantsForOrganizationError>`](crate::error::ListReceivedGrantsForOrganizationError)
+    pub fn list_received_grants_for_organization(
+        &self,
+    ) -> fluent_builders::ListReceivedGrantsForOrganization {
+        fluent_builders::ListReceivedGrantsForOrganization::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListReceivedLicenses`](crate::client::fluent_builders::ListReceivedLicenses) operation.
     ///
     /// - The fluent builder is configurable:
@@ -643,6 +659,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListReceivedLicensesError>`](crate::error::ListReceivedLicensesError)
     pub fn list_received_licenses(&self) -> fluent_builders::ListReceivedLicenses {
         fluent_builders::ListReceivedLicenses::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListReceivedLicensesForOrganization`](crate::client::fluent_builders::ListReceivedLicensesForOrganization) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListReceivedLicensesForOrganization::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListReceivedLicensesForOrganization::set_filters): <p>Filters to scope the results. The following filters are supported:</p>  <ul>   <li> <p> <code>Beneficiary</code> </p> </li>   <li> <p> <code>ProductSKU</code> </p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReceivedLicensesForOrganization::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReceivedLicensesForOrganization::set_next_token): <p>Token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReceivedLicensesForOrganization::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListReceivedLicensesForOrganization::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput) with field(s):
+    ///   - [`licenses(Option<Vec<GrantedLicense>>)`](crate::output::ListReceivedLicensesForOrganizationOutput::licenses): <p>Lists the licenses the organization has received.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListReceivedLicensesForOrganizationOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListReceivedLicensesForOrganizationError>`](crate::error::ListReceivedLicensesForOrganizationError)
+    pub fn list_received_licenses_for_organization(
+        &self,
+    ) -> fluent_builders::ListReceivedLicensesForOrganization {
+        fluent_builders::ListReceivedLicensesForOrganization::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListResourceInventory`](crate::client::fluent_builders::ListResourceInventory) operation.
     ///
@@ -1106,7 +1137,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CheckoutLicense`.
     ///
-    /// <p>Checks out the specified license.</p>
+    /// <p>Checks out the specified license.</p> <note>
+    /// <p>If the account that created the license is the same that is performing the check out, you must specify the account as the beneficiary.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CheckoutLicense {
         handle: std::sync::Arc<super::Handle>,
@@ -1346,12 +1379,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
-        /// <p>The grant principals.</p>
+        /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principals(input.into());
             self
         }
-        /// <p>The grant principals.</p>
+        /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1997,7 +2030,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+        /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn source_license_context(
             mut self,
             input: crate::model::LicenseConversionContext,
@@ -2005,7 +2038,7 @@ pub mod fluent_builders {
             self.inner = self.inner.source_license_context(input);
             self
         }
-        /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+        /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn set_source_license_context(
             mut self,
             input: std::option::Option<crate::model::LicenseConversionContext>,
@@ -2013,7 +2046,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_license_context(input);
             self
         }
-        /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+        /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn destination_license_context(
             mut self,
             input: crate::model::LicenseConversionContext,
@@ -2021,7 +2054,7 @@ pub mod fluent_builders {
             self.inner = self.inner.destination_license_context(input);
             self
         }
-        /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+        /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn set_destination_license_context(
             mut self,
             input: std::option::Option<crate::model::LicenseConversionContext>,
@@ -4786,6 +4819,124 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListReceivedGrantsForOrganization`.
+    ///
+    /// <p>Lists the grants received for all accounts in the organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListReceivedGrantsForOrganization {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_received_grants_for_organization_input::Builder,
+    }
+    impl ListReceivedGrantsForOrganization {
+        /// Creates a new `ListReceivedGrantsForOrganization`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListReceivedGrantsForOrganization,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListReceivedGrantsForOrganizationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListReceivedGrantsForOrganizationOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListReceivedGrantsForOrganizationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the received license.</p>
+        pub fn license_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the received license.</p>
+        pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_license_arn(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li> <p> <code>ParentArn</code> </p> </li>
+        /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
+        /// </ul>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li> <p> <code>ParentArn</code> </p> </li>
+        /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
+        /// </ul>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>Token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Maximum number of results to return in a single call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Maximum number of results to return in a single call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListReceivedLicenses`.
     ///
     /// <p>Lists received licenses.</p>
@@ -4888,6 +5039,118 @@ pub mod fluent_builders {
         /// <li> <p> <code>Fingerprint</code> </p> </li>
         /// <li> <p> <code>IssuerName</code> </p> </li>
         /// <li> <p> <code>Beneficiary</code> </p> </li>
+        /// </ul>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>Token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Maximum number of results to return in a single call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Maximum number of results to return in a single call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListReceivedLicensesForOrganization`.
+    ///
+    /// <p>Lists the licenses received for all accounts in the organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListReceivedLicensesForOrganization {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_received_licenses_for_organization_input::Builder,
+    }
+    impl ListReceivedLicensesForOrganization {
+        /// Creates a new `ListReceivedLicensesForOrganization`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListReceivedLicensesForOrganization,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListReceivedLicensesForOrganizationError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListReceivedLicensesForOrganizationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListReceivedLicensesForOrganizationError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li> <p> <code>Beneficiary</code> </p> </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// </ul>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li> <p> <code>Beneficiary</code> </p> </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,

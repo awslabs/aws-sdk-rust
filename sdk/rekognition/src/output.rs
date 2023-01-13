@@ -3501,6 +3501,9 @@ pub struct DetectLabelsOutput {
     /// <p>Version number of the label detection model that was used to detect labels.</p>
     #[doc(hidden)]
     pub label_model_version: std::option::Option<std::string::String>,
+    /// <p>Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant colors.</p>
+    #[doc(hidden)]
+    pub image_properties: std::option::Option<crate::model::DetectLabelsImageProperties>,
 }
 impl DetectLabelsOutput {
     /// <p>An array of labels for the real-world objects detected. </p>
@@ -3519,6 +3522,12 @@ impl DetectLabelsOutput {
     pub fn label_model_version(&self) -> std::option::Option<&str> {
         self.label_model_version.as_deref()
     }
+    /// <p>Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant colors.</p>
+    pub fn image_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectLabelsImageProperties> {
+        self.image_properties.as_ref()
+    }
 }
 /// See [`DetectLabelsOutput`](crate::output::DetectLabelsOutput).
 pub mod detect_labels_output {
@@ -3529,6 +3538,7 @@ pub mod detect_labels_output {
         pub(crate) labels: std::option::Option<std::vec::Vec<crate::model::Label>>,
         pub(crate) orientation_correction: std::option::Option<crate::model::OrientationCorrection>,
         pub(crate) label_model_version: std::option::Option<std::string::String>,
+        pub(crate) image_properties: std::option::Option<crate::model::DetectLabelsImageProperties>,
     }
     impl Builder {
         /// Appends an item to `labels`.
@@ -3583,12 +3593,29 @@ pub mod detect_labels_output {
             self.label_model_version = input;
             self
         }
+        /// <p>Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant colors.</p>
+        pub fn image_properties(
+            mut self,
+            input: crate::model::DetectLabelsImageProperties,
+        ) -> Self {
+            self.image_properties = Some(input);
+            self
+        }
+        /// <p>Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant colors.</p>
+        pub fn set_image_properties(
+            mut self,
+            input: std::option::Option<crate::model::DetectLabelsImageProperties>,
+        ) -> Self {
+            self.image_properties = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DetectLabelsOutput`](crate::output::DetectLabelsOutput).
         pub fn build(self) -> crate::output::DetectLabelsOutput {
             crate::output::DetectLabelsOutput {
                 labels: self.labels,
                 orientation_correction: self.orientation_correction,
                 label_model_version: self.label_model_version,
+                image_properties: self.image_properties,
             }
         }
     }

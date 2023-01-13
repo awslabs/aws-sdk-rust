@@ -142,31 +142,31 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RotationRulesType {
     /// <p>The number of days between automatic scheduled rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated.</p>
-    /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both.</p>
+    /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both. To set a rotation schedule in hours, use <code>ScheduleExpression</code>.</p>
     #[doc(hidden)]
     pub automatically_after_days: std::option::Option<i64>,
-    /// <p>The length of the rotation window in hours, for example <code>3h</code> for a three hour window. Secrets Manager rotates your secret at any time during this window. The window must not go into the next UTC day. If you don't specify this value, the window automatically ends at the end of the UTC day. The window begins according to the <code>ScheduleExpression</code>. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>.</p>
+    /// <p>The length of the rotation window in hours, for example <code>3h</code> for a three hour window. Secrets Manager rotates your secret at any time during this window. The window must not extend into the next rotation window or the next UTC day. The window starts according to the <code>ScheduleExpression</code>. If you don't specify a <code>Duration</code>, for a <code>ScheduleExpression</code> in hours, the window automatically closes after one hour. For a <code>ScheduleExpression</code> in days, the window automatically closes at the end of the UTC day. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a> in the <i>Secrets Manager Users Guide</i>.</p>
     #[doc(hidden)]
     pub duration: std::option::Option<std::string::String>,
-    /// <p>A <code>cron()</code> or <code>rate()</code> expression that defines the schedule for rotating your secret. Secrets Manager rotation schedules use UTC time zone. </p>
-    /// <p>Secrets Manager <code>rate()</code> expressions represent the interval in days that you want to rotate your secret, for example <code>rate(10 days)</code>. If you use a <code>rate()</code> expression, the rotation window opens at midnight, and Secrets Manager rotates your secret any time that day after midnight. You can set a <code>Duration</code> to shorten the rotation window.</p>
-    /// <p>You can use a <code>cron()</code> expression to create rotation schedules that are more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>. If you use a <code>cron()</code> expression, Secrets Manager rotates your secret any time during that day after the window opens. For example, <code>cron(0 8 1 * ? *)</code> represents a rotation window that occurs on the first day of every month beginning at 8:00 AM UTC. Secrets Manager rotates the secret any time that day after 8:00 AM. You can set a <code>Duration</code> to shorten the rotation window.</p>
+    /// <p>A <code>cron()</code> or <code>rate()</code> expression that defines the schedule for rotating your secret. Secrets Manager rotation schedules use UTC time zone. Secrets Manager rotates your secret any time during a rotation window.</p>
+    /// <p>Secrets Manager <code>rate()</code> expressions represent the interval in hours or days that you want to rotate your secret, for example <code>rate(12 hours)</code> or <code>rate(10 days)</code>. You can rotate a secret as often as every four hours. If you use a <code>rate()</code> expression, the rotation window starts at midnight. For a rate in hours, the default rotation window closes after one hour. For a rate in days, the default rotation window closes at the end of the day. You can set the <code>Duration</code> to change the rotation window. The rotation window must not extend into the next UTC day or into the next rotation window.</p>
+    /// <p>You can use a <code>cron()</code> expression to create a rotation schedule that is more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a> in the <i>Secrets Manager Users Guide</i>. For a cron expression that represents a schedule in hours, the default rotation window closes after one hour. For a cron expression that represents a schedule in days, the default rotation window closes at the end of the day. You can set the <code>Duration</code> to change the rotation window. The rotation window must not extend into the next UTC day or into the next rotation window.</p>
     #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
 }
 impl RotationRulesType {
     /// <p>The number of days between automatic scheduled rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated.</p>
-    /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both.</p>
+    /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both. To set a rotation schedule in hours, use <code>ScheduleExpression</code>.</p>
     pub fn automatically_after_days(&self) -> std::option::Option<i64> {
         self.automatically_after_days
     }
-    /// <p>The length of the rotation window in hours, for example <code>3h</code> for a three hour window. Secrets Manager rotates your secret at any time during this window. The window must not go into the next UTC day. If you don't specify this value, the window automatically ends at the end of the UTC day. The window begins according to the <code>ScheduleExpression</code>. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>.</p>
+    /// <p>The length of the rotation window in hours, for example <code>3h</code> for a three hour window. Secrets Manager rotates your secret at any time during this window. The window must not extend into the next rotation window or the next UTC day. The window starts according to the <code>ScheduleExpression</code>. If you don't specify a <code>Duration</code>, for a <code>ScheduleExpression</code> in hours, the window automatically closes after one hour. For a <code>ScheduleExpression</code> in days, the window automatically closes at the end of the UTC day. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a> in the <i>Secrets Manager Users Guide</i>.</p>
     pub fn duration(&self) -> std::option::Option<&str> {
         self.duration.as_deref()
     }
-    /// <p>A <code>cron()</code> or <code>rate()</code> expression that defines the schedule for rotating your secret. Secrets Manager rotation schedules use UTC time zone. </p>
-    /// <p>Secrets Manager <code>rate()</code> expressions represent the interval in days that you want to rotate your secret, for example <code>rate(10 days)</code>. If you use a <code>rate()</code> expression, the rotation window opens at midnight, and Secrets Manager rotates your secret any time that day after midnight. You can set a <code>Duration</code> to shorten the rotation window.</p>
-    /// <p>You can use a <code>cron()</code> expression to create rotation schedules that are more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>. If you use a <code>cron()</code> expression, Secrets Manager rotates your secret any time during that day after the window opens. For example, <code>cron(0 8 1 * ? *)</code> represents a rotation window that occurs on the first day of every month beginning at 8:00 AM UTC. Secrets Manager rotates the secret any time that day after 8:00 AM. You can set a <code>Duration</code> to shorten the rotation window.</p>
+    /// <p>A <code>cron()</code> or <code>rate()</code> expression that defines the schedule for rotating your secret. Secrets Manager rotation schedules use UTC time zone. Secrets Manager rotates your secret any time during a rotation window.</p>
+    /// <p>Secrets Manager <code>rate()</code> expressions represent the interval in hours or days that you want to rotate your secret, for example <code>rate(12 hours)</code> or <code>rate(10 days)</code>. You can rotate a secret as often as every four hours. If you use a <code>rate()</code> expression, the rotation window starts at midnight. For a rate in hours, the default rotation window closes after one hour. For a rate in days, the default rotation window closes at the end of the day. You can set the <code>Duration</code> to change the rotation window. The rotation window must not extend into the next UTC day or into the next rotation window.</p>
+    /// <p>You can use a <code>cron()</code> expression to create a rotation schedule that is more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a> in the <i>Secrets Manager Users Guide</i>. For a cron expression that represents a schedule in hours, the default rotation window closes after one hour. For a cron expression that represents a schedule in days, the default rotation window closes at the end of the day. You can set the <code>Duration</code> to change the rotation window. The rotation window must not extend into the next UTC day or into the next rotation window.</p>
     pub fn schedule_expression(&self) -> std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
@@ -183,37 +183,37 @@ pub mod rotation_rules_type {
     }
     impl Builder {
         /// <p>The number of days between automatic scheduled rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated.</p>
-        /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both.</p>
+        /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both. To set a rotation schedule in hours, use <code>ScheduleExpression</code>.</p>
         pub fn automatically_after_days(mut self, input: i64) -> Self {
             self.automatically_after_days = Some(input);
             self
         }
         /// <p>The number of days between automatic scheduled rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated.</p>
-        /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both.</p>
+        /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both. To set a rotation schedule in hours, use <code>ScheduleExpression</code>.</p>
         pub fn set_automatically_after_days(mut self, input: std::option::Option<i64>) -> Self {
             self.automatically_after_days = input;
             self
         }
-        /// <p>The length of the rotation window in hours, for example <code>3h</code> for a three hour window. Secrets Manager rotates your secret at any time during this window. The window must not go into the next UTC day. If you don't specify this value, the window automatically ends at the end of the UTC day. The window begins according to the <code>ScheduleExpression</code>. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>.</p>
+        /// <p>The length of the rotation window in hours, for example <code>3h</code> for a three hour window. Secrets Manager rotates your secret at any time during this window. The window must not extend into the next rotation window or the next UTC day. The window starts according to the <code>ScheduleExpression</code>. If you don't specify a <code>Duration</code>, for a <code>ScheduleExpression</code> in hours, the window automatically closes after one hour. For a <code>ScheduleExpression</code> in days, the window automatically closes at the end of the UTC day. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a> in the <i>Secrets Manager Users Guide</i>.</p>
         pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
             self.duration = Some(input.into());
             self
         }
-        /// <p>The length of the rotation window in hours, for example <code>3h</code> for a three hour window. Secrets Manager rotates your secret at any time during this window. The window must not go into the next UTC day. If you don't specify this value, the window automatically ends at the end of the UTC day. The window begins according to the <code>ScheduleExpression</code>. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>.</p>
+        /// <p>The length of the rotation window in hours, for example <code>3h</code> for a three hour window. Secrets Manager rotates your secret at any time during this window. The window must not extend into the next rotation window or the next UTC day. The window starts according to the <code>ScheduleExpression</code>. If you don't specify a <code>Duration</code>, for a <code>ScheduleExpression</code> in hours, the window automatically closes after one hour. For a <code>ScheduleExpression</code> in days, the window automatically closes at the end of the UTC day. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a> in the <i>Secrets Manager Users Guide</i>.</p>
         pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.duration = input;
             self
         }
-        /// <p>A <code>cron()</code> or <code>rate()</code> expression that defines the schedule for rotating your secret. Secrets Manager rotation schedules use UTC time zone. </p>
-        /// <p>Secrets Manager <code>rate()</code> expressions represent the interval in days that you want to rotate your secret, for example <code>rate(10 days)</code>. If you use a <code>rate()</code> expression, the rotation window opens at midnight, and Secrets Manager rotates your secret any time that day after midnight. You can set a <code>Duration</code> to shorten the rotation window.</p>
-        /// <p>You can use a <code>cron()</code> expression to create rotation schedules that are more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>. If you use a <code>cron()</code> expression, Secrets Manager rotates your secret any time during that day after the window opens. For example, <code>cron(0 8 1 * ? *)</code> represents a rotation window that occurs on the first day of every month beginning at 8:00 AM UTC. Secrets Manager rotates the secret any time that day after 8:00 AM. You can set a <code>Duration</code> to shorten the rotation window.</p>
+        /// <p>A <code>cron()</code> or <code>rate()</code> expression that defines the schedule for rotating your secret. Secrets Manager rotation schedules use UTC time zone. Secrets Manager rotates your secret any time during a rotation window.</p>
+        /// <p>Secrets Manager <code>rate()</code> expressions represent the interval in hours or days that you want to rotate your secret, for example <code>rate(12 hours)</code> or <code>rate(10 days)</code>. You can rotate a secret as often as every four hours. If you use a <code>rate()</code> expression, the rotation window starts at midnight. For a rate in hours, the default rotation window closes after one hour. For a rate in days, the default rotation window closes at the end of the day. You can set the <code>Duration</code> to change the rotation window. The rotation window must not extend into the next UTC day or into the next rotation window.</p>
+        /// <p>You can use a <code>cron()</code> expression to create a rotation schedule that is more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a> in the <i>Secrets Manager Users Guide</i>. For a cron expression that represents a schedule in hours, the default rotation window closes after one hour. For a cron expression that represents a schedule in days, the default rotation window closes at the end of the day. You can set the <code>Duration</code> to change the rotation window. The rotation window must not extend into the next UTC day or into the next rotation window.</p>
         pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule_expression = Some(input.into());
             self
         }
-        /// <p>A <code>cron()</code> or <code>rate()</code> expression that defines the schedule for rotating your secret. Secrets Manager rotation schedules use UTC time zone. </p>
-        /// <p>Secrets Manager <code>rate()</code> expressions represent the interval in days that you want to rotate your secret, for example <code>rate(10 days)</code>. If you use a <code>rate()</code> expression, the rotation window opens at midnight, and Secrets Manager rotates your secret any time that day after midnight. You can set a <code>Duration</code> to shorten the rotation window.</p>
-        /// <p>You can use a <code>cron()</code> expression to create rotation schedules that are more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>. If you use a <code>cron()</code> expression, Secrets Manager rotates your secret any time during that day after the window opens. For example, <code>cron(0 8 1 * ? *)</code> represents a rotation window that occurs on the first day of every month beginning at 8:00 AM UTC. Secrets Manager rotates the secret any time that day after 8:00 AM. You can set a <code>Duration</code> to shorten the rotation window.</p>
+        /// <p>A <code>cron()</code> or <code>rate()</code> expression that defines the schedule for rotating your secret. Secrets Manager rotation schedules use UTC time zone. Secrets Manager rotates your secret any time during a rotation window.</p>
+        /// <p>Secrets Manager <code>rate()</code> expressions represent the interval in hours or days that you want to rotate your secret, for example <code>rate(12 hours)</code> or <code>rate(10 days)</code>. You can rotate a secret as often as every four hours. If you use a <code>rate()</code> expression, the rotation window starts at midnight. For a rate in hours, the default rotation window closes after one hour. For a rate in days, the default rotation window closes at the end of the day. You can set the <code>Duration</code> to change the rotation window. The rotation window must not extend into the next UTC day or into the next rotation window.</p>
+        /// <p>You can use a <code>cron()</code> expression to create a rotation schedule that is more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a> in the <i>Secrets Manager Users Guide</i>. For a cron expression that represents a schedule in hours, the default rotation window closes after one hour. For a cron expression that represents a schedule in days, the default rotation window closes at the end of the day. You can set the <code>Duration</code> to change the rotation window. The rotation window must not extend into the next UTC day or into the next rotation window.</p>
         pub fn set_schedule_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -715,6 +715,9 @@ pub struct SecretListEntry {
     /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html"> <code>DeleteSecret</code> </a> operation.</p>
     #[doc(hidden)]
     pub deleted_date: std::option::Option<aws_smithy_types::DateTime>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub next_rotation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html"> <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html"> <code>UntagResource</code> </a>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -780,6 +783,10 @@ impl SecretListEntry {
     pub fn deleted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deleted_date.as_ref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn next_rotation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.next_rotation_date.as_ref()
+    }
     /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html"> <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html"> <code>UntagResource</code> </a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -824,6 +831,7 @@ pub mod secret_list_entry {
         pub(crate) last_changed_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deleted_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) next_rotation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) secret_versions_to_stages: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -961,6 +969,19 @@ pub mod secret_list_entry {
             self.deleted_date = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn next_rotation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.next_rotation_date = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_next_rotation_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.next_rotation_date = input;
+            self
+        }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -1062,6 +1083,7 @@ pub mod secret_list_entry {
                 last_changed_date: self.last_changed_date,
                 last_accessed_date: self.last_accessed_date,
                 deleted_date: self.deleted_date,
+                next_rotation_date: self.next_rotation_date,
                 tags: self.tags,
                 secret_versions_to_stages: self.secret_versions_to_stages,
                 owning_service: self.owning_service,
@@ -1298,6 +1320,7 @@ impl Filter {
 ///     FilterNameStringType::All => { /* ... */ },
 ///     FilterNameStringType::Description => { /* ... */ },
 ///     FilterNameStringType::Name => { /* ... */ },
+///     FilterNameStringType::OwningService => { /* ... */ },
 ///     FilterNameStringType::PrimaryRegion => { /* ... */ },
 ///     FilterNameStringType::TagKey => { /* ... */ },
 ///     FilterNameStringType::TagValue => { /* ... */ },
@@ -1341,6 +1364,8 @@ pub enum FilterNameStringType {
     #[allow(missing_docs)] // documentation missing in model
     Name,
     #[allow(missing_docs)] // documentation missing in model
+    OwningService,
+    #[allow(missing_docs)] // documentation missing in model
     PrimaryRegion,
     #[allow(missing_docs)] // documentation missing in model
     TagKey,
@@ -1355,6 +1380,7 @@ impl std::convert::From<&str> for FilterNameStringType {
             "all" => FilterNameStringType::All,
             "description" => FilterNameStringType::Description,
             "name" => FilterNameStringType::Name,
+            "owning-service" => FilterNameStringType::OwningService,
             "primary-region" => FilterNameStringType::PrimaryRegion,
             "tag-key" => FilterNameStringType::TagKey,
             "tag-value" => FilterNameStringType::TagValue,
@@ -1378,6 +1404,7 @@ impl FilterNameStringType {
             FilterNameStringType::All => "all",
             FilterNameStringType::Description => "description",
             FilterNameStringType::Name => "name",
+            FilterNameStringType::OwningService => "owning-service",
             FilterNameStringType::PrimaryRegion => "primary-region",
             FilterNameStringType::TagKey => "tag-key",
             FilterNameStringType::TagValue => "tag-value",
@@ -1390,6 +1417,7 @@ impl FilterNameStringType {
             "all",
             "description",
             "name",
+            "owning-service",
             "primary-region",
             "tag-key",
             "tag-value",

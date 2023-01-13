@@ -1054,6 +1054,35 @@ impl From<crate::error::GetMultiRegionAccessPointPolicyStatusError> for Error {
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointRoutesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetMultiRegionAccessPointRoutesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetMultiRegionAccessPointRoutesError> for Error {
+    fn from(err: crate::error::GetMultiRegionAccessPointRoutesError) -> Self {
+        match err.kind {
+            crate::error::GetMultiRegionAccessPointRoutesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPublicAccessBlockError, R>>
     for Error
 where
@@ -1623,6 +1652,36 @@ impl From<crate::error::PutStorageLensConfigurationTaggingError> for Error {
     fn from(err: crate::error::PutStorageLensConfigurationTaggingError) -> Self {
         match err.kind {
             crate::error::PutStorageLensConfigurationTaggingErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::SubmitMultiRegionAccessPointRoutesError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::SubmitMultiRegionAccessPointRoutesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SubmitMultiRegionAccessPointRoutesError> for Error {
+    fn from(err: crate::error::SubmitMultiRegionAccessPointRoutesError) -> Self {
+        match err.kind {
+            crate::error::SubmitMultiRegionAccessPointRoutesErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

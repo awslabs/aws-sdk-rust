@@ -167,19 +167,19 @@ impl UpdateProfileOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateHostKeyOutput {
-    /// <p>Returns the server ID for the server that contains the updated host key.</p>
+    /// <p>Returns the server identifier for the server that contains the updated host key.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>Returns the host key ID for the updated host key.</p>
+    /// <p>Returns the host key identifier for the updated host key.</p>
     #[doc(hidden)]
     pub host_key_id: std::option::Option<std::string::String>,
 }
 impl UpdateHostKeyOutput {
-    /// <p>Returns the server ID for the server that contains the updated host key.</p>
+    /// <p>Returns the server identifier for the server that contains the updated host key.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>Returns the host key ID for the updated host key.</p>
+    /// <p>Returns the host key identifier for the updated host key.</p>
     pub fn host_key_id(&self) -> std::option::Option<&str> {
         self.host_key_id.as_deref()
     }
@@ -194,22 +194,22 @@ pub mod update_host_key_output {
         pub(crate) host_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Returns the server ID for the server that contains the updated host key.</p>
+        /// <p>Returns the server identifier for the server that contains the updated host key.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>Returns the server ID for the server that contains the updated host key.</p>
+        /// <p>Returns the server identifier for the server that contains the updated host key.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
         }
-        /// <p>Returns the host key ID for the updated host key.</p>
+        /// <p>Returns the host key identifier for the updated host key.</p>
         pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_key_id = Some(input.into());
             self
         }
-        /// <p>Returns the host key ID for the updated host key.</p>
+        /// <p>Returns the host key identifier for the updated host key.</p>
         pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_key_id = input;
             self
@@ -381,19 +381,19 @@ impl UpdateAgreementOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccessOutput {
-    /// <p>The ID of the server that the user is attached to.</p>
+    /// <p>The identifier of the server that the user is attached to.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
+    /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
     #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
 }
 impl UpdateAccessOutput {
-    /// <p>The ID of the server that the user is attached to.</p>
+    /// <p>The identifier of the server that the user is attached to.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
+    /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
@@ -408,22 +408,22 @@ pub mod update_access_output {
         pub(crate) external_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the server that the user is attached to.</p>
+        /// <p>The identifier of the server that the user is attached to.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>The ID of the server that the user is attached to.</p>
+        /// <p>The identifier of the server that the user is attached to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
         }
-        /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
+        /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
+        /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -1226,7 +1226,7 @@ pub struct ListHostKeysOutput {
     /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Returns the server ID that contains the listed host keys.</p>
+    /// <p>Returns the server identifier that contains the listed host keys.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>Returns an array, where each item contains the details of a host key.</p>
@@ -1238,7 +1238,7 @@ impl ListHostKeysOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Returns the server ID that contains the listed host keys.</p>
+    /// <p>Returns the server identifier that contains the listed host keys.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
@@ -1268,12 +1268,12 @@ pub mod list_host_keys_output {
             self.next_token = input;
             self
         }
-        /// <p>Returns the server ID that contains the listed host keys.</p>
+        /// <p>Returns the server identifier that contains the listed host keys.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>Returns the server ID that contains the listed host keys.</p>
+        /// <p>Returns the server identifier that contains the listed host keys.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -1850,19 +1850,19 @@ impl ImportSshPublicKeyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportHostKeyOutput {
-    /// <p>Returns the server ID that contains the imported key.</p>
+    /// <p>Returns the server identifier that contains the imported key.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>Returns the host key ID for the imported key.</p>
+    /// <p>Returns the host key identifier for the imported key.</p>
     #[doc(hidden)]
     pub host_key_id: std::option::Option<std::string::String>,
 }
 impl ImportHostKeyOutput {
-    /// <p>Returns the server ID that contains the imported key.</p>
+    /// <p>Returns the server identifier that contains the imported key.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>Returns the host key ID for the imported key.</p>
+    /// <p>Returns the host key identifier for the imported key.</p>
     pub fn host_key_id(&self) -> std::option::Option<&str> {
         self.host_key_id.as_deref()
     }
@@ -1877,22 +1877,22 @@ pub mod import_host_key_output {
         pub(crate) host_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Returns the server ID that contains the imported key.</p>
+        /// <p>Returns the server identifier that contains the imported key.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>Returns the server ID that contains the imported key.</p>
+        /// <p>Returns the server identifier that contains the imported key.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
         }
-        /// <p>Returns the host key ID for the imported key.</p>
+        /// <p>Returns the host key identifier for the imported key.</p>
         pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_key_id = Some(input.into());
             self
         }
-        /// <p>Returns the host key ID for the imported key.</p>
+        /// <p>Returns the host key identifier for the imported key.</p>
         pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_key_id = input;
             self
@@ -2516,7 +2516,7 @@ pub struct DescribeAccessOutput {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>The external ID of the server that the access is attached to.</p>
+    /// <p>The external identifier of the server that the access is attached to.</p>
     #[doc(hidden)]
     pub access: std::option::Option<crate::model::DescribedAccess>,
 }
@@ -2525,7 +2525,7 @@ impl DescribeAccessOutput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>The external ID of the server that the access is attached to.</p>
+    /// <p>The external identifier of the server that the access is attached to.</p>
     pub fn access(&self) -> std::option::Option<&crate::model::DescribedAccess> {
         self.access.as_ref()
     }
@@ -2550,12 +2550,12 @@ pub mod describe_access_output {
             self.server_id = input;
             self
         }
-        /// <p>The external ID of the server that the access is attached to.</p>
+        /// <p>The external identifier of the server that the access is attached to.</p>
         pub fn access(mut self, input: crate::model::DescribedAccess) -> Self {
             self.access = Some(input);
             self
         }
-        /// <p>The external ID of the server that the access is attached to.</p>
+        /// <p>The external identifier of the server that the access is attached to.</p>
         pub fn set_access(
             mut self,
             input: std::option::Option<crate::model::DescribedAccess>,
@@ -2871,7 +2871,7 @@ impl CreateWorkflowOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserOutput {
-    /// <p>The ID of the server that the user is attached to.</p>
+    /// <p>The identifier of the server that the user is attached to.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>A unique string that identifies a user account associated with a server.</p>
@@ -2879,7 +2879,7 @@ pub struct CreateUserOutput {
     pub user_name: std::option::Option<std::string::String>,
 }
 impl CreateUserOutput {
-    /// <p>The ID of the server that the user is attached to.</p>
+    /// <p>The identifier of the server that the user is attached to.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
@@ -2898,12 +2898,12 @@ pub mod create_user_output {
         pub(crate) user_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the server that the user is attached to.</p>
+        /// <p>The identifier of the server that the user is attached to.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>The ID of the server that the user is attached to.</p>
+        /// <p>The identifier of the server that the user is attached to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -2938,12 +2938,12 @@ impl CreateUserOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateServerOutput {
-    /// <p>The service-assigned ID of the server that is created.</p>
+    /// <p>The service-assigned identifier of the server that is created.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
 }
 impl CreateServerOutput {
-    /// <p>The service-assigned ID of the server that is created.</p>
+    /// <p>The service-assigned identifier of the server that is created.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
@@ -2957,12 +2957,12 @@ pub mod create_server_output {
         pub(crate) server_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The service-assigned ID of the server that is created.</p>
+        /// <p>The service-assigned identifier of the server that is created.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>The service-assigned ID of the server that is created.</p>
+        /// <p>The service-assigned identifier of the server that is created.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -3130,19 +3130,19 @@ impl CreateAgreementOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessOutput {
-    /// <p>The ID of the server that the user is attached to.</p>
+    /// <p>The identifier of the server that the user is attached to.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
+    /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
     #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
 }
 impl CreateAccessOutput {
-    /// <p>The ID of the server that the user is attached to.</p>
+    /// <p>The identifier of the server that the user is attached to.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
+    /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
@@ -3157,22 +3157,22 @@ pub mod create_access_output {
         pub(crate) external_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the server that the user is attached to.</p>
+        /// <p>The identifier of the server that the user is attached to.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>The ID of the server that the user is attached to.</p>
+        /// <p>The identifier of the server that the user is attached to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
         }
-        /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
+        /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
+        /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self

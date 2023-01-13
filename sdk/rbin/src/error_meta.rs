@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
+    /// <p>The specified retention rule lock request can't be completed.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The service could not respond to the request due to an internal problem.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource was not found.</p>
@@ -24,6 +26,7 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
@@ -79,6 +82,9 @@ where
 impl From<crate::error::DeleteRuleError> for Error {
     fn from(err: crate::error::DeleteRuleError) -> Self {
         match err.kind {
+            crate::error::DeleteRuleErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::error::DeleteRuleErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -186,6 +192,40 @@ impl From<crate::error::ListTagsForResourceError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::LockRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::LockRuleError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::LockRuleError> for Error {
+    fn from(err: crate::error::LockRuleError) -> Self {
+        match err.kind {
+            crate::error::LockRuleErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::LockRuleErrorKind::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::error::LockRuleErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::LockRuleErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::LockRuleErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -215,6 +255,40 @@ impl From<crate::error::TagResourceError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UnlockRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UnlockRuleError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UnlockRuleError> for Error {
+    fn from(err: crate::error::UnlockRuleError) -> Self {
+        match err.kind {
+            crate::error::UnlockRuleErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::UnlockRuleErrorKind::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::error::UnlockRuleErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UnlockRuleErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::UnlockRuleErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -267,6 +341,9 @@ where
 impl From<crate::error::UpdateRuleError> for Error {
     fn from(err: crate::error::UpdateRuleError) -> Self {
         match err.kind {
+            crate::error::UpdateRuleErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::error::UpdateRuleErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

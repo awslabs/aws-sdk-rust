@@ -545,7 +545,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::RegisterResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::RegisterResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
-    ///   - [`use_service_linked_role(bool)`](crate::client::fluent_builders::RegisterResource::use_service_linked_role) / [`set_use_service_linked_role(Option<bool>)`](crate::client::fluent_builders::RegisterResource::set_use_service_linked_role): <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>  <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
+    ///   - [`use_service_linked_role(bool)`](crate::client::fluent_builders::RegisterResource::use_service_linked_role) / [`set_use_service_linked_role(Option<bool>)`](crate::client::fluent_builders::RegisterResource::set_use_service_linked_role): <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::RegisterResource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::RegisterResource::set_role_arn): <p>The identifier for the role that registers the resource.</p>
     /// - On success, responds with [`RegisterResourceOutput`](crate::output::RegisterResourceOutput)
 
@@ -4191,13 +4191,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
-        /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
         pub fn use_service_linked_role(mut self, input: bool) -> Self {
             self.inner = self.inner.use_service_linked_role(input);
             self
         }
         /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
-        /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
         pub fn set_use_service_linked_role(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_use_service_linked_role(input);
             self

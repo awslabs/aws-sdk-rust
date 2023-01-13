@@ -96,7 +96,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::DeleteRecommendationPreferences::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::set_resource_type): <p>The target resource type of the recommendation preference to delete.</p>  <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>   <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>  </note>
     ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteRecommendationPreferences::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::set_scope): <p>An object that describes the scope of the recommendation preference to delete.</p>  <p>You can delete recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    ///   - [`recommendation_preference_names(Vec<RecommendationPreferenceName>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::recommendation_preference_names) / [`set_recommendation_preference_names(Option<Vec<RecommendationPreferenceName>>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::set_recommendation_preference_names): <p>The name of the recommendation preference to delete.</p>  <p>Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.</p>
+    ///   - [`recommendation_preference_names(Vec<RecommendationPreferenceName>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::recommendation_preference_names) / [`set_recommendation_preference_names(Option<Vec<RecommendationPreferenceName>>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::set_recommendation_preference_names): <p>The name of the recommendation preference to delete.</p>
     /// - On success, responds with [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRecommendationPreferencesError>`](crate::error::DeleteRecommendationPreferencesError)
@@ -106,6 +106,7 @@ impl Client {
         fluent_builders::DeleteRecommendationPreferences::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeRecommendationExportJobs`](crate::client::fluent_builders::DescribeRecommendationExportJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeRecommendationExportJobs::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`job_ids(Vec<String>)`](crate::client::fluent_builders::DescribeRecommendationExportJobs::job_ids) / [`set_job_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeRecommendationExportJobs::set_job_ids): <p>The identification numbers of the export jobs to return.</p>  <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>  <p>All export jobs created in the last seven days are returned if this parameter is omitted.</p>
@@ -176,6 +177,24 @@ impl Client {
         &self,
     ) -> fluent_builders::ExportEC2InstanceRecommendations {
         fluent_builders::ExportEC2InstanceRecommendations::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ExportECSServiceRecommendations`](crate::client::fluent_builders::ExportECSServiceRecommendations) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::ExportECSServiceRecommendations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ExportECSServiceRecommendations::set_account_ids): <p> The Amazon Web Services account IDs for the export ECS service recommendations. </p>  <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>  <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>  <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>  <p>You can specify multiple account IDs per request.</p>
+    ///   - [`filters(Vec<EcsServiceRecommendationFilter>)`](crate::client::fluent_builders::ExportECSServiceRecommendations::filters) / [`set_filters(Option<Vec<EcsServiceRecommendationFilter>>)`](crate::client::fluent_builders::ExportECSServiceRecommendations::set_filters): <p> An array of objects to specify a filter that exports a more specific set of ECS service recommendations. </p>
+    ///   - [`fields_to_export(Vec<ExportableEcsServiceField>)`](crate::client::fluent_builders::ExportECSServiceRecommendations::fields_to_export) / [`set_fields_to_export(Option<Vec<ExportableEcsServiceField>>)`](crate::client::fluent_builders::ExportECSServiceRecommendations::set_fields_to_export): <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`s3_destination_config(S3DestinationConfig)`](crate::client::fluent_builders::ExportECSServiceRecommendations::s3_destination_config) / [`set_s3_destination_config(Option<S3DestinationConfig>)`](crate::client::fluent_builders::ExportECSServiceRecommendations::set_s3_destination_config): <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>  <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`file_format(FileFormat)`](crate::client::fluent_builders::ExportECSServiceRecommendations::file_format) / [`set_file_format(Option<FileFormat>)`](crate::client::fluent_builders::ExportECSServiceRecommendations::set_file_format): <p> The format of the export file. </p>  <p>The CSV file is the only export file format currently supported.</p>
+    ///   - [`include_member_accounts(bool)`](crate::client::fluent_builders::ExportECSServiceRecommendations::include_member_accounts) / [`set_include_member_accounts(bool)`](crate::client::fluent_builders::ExportECSServiceRecommendations::set_include_member_accounts): <p>If your account is the management account or the delegated administrator of an organization, this parameter indicates whether to include recommendations for resources in all member accounts of the organization.</p>  <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>  <p>If this parameter is omitted, recommendations for member accounts of the organization aren't included in the export file.</p>  <p>If this parameter or the account ID parameter is omitted, recommendations for member accounts aren't included in the export.</p>
+    /// - On success, responds with [`ExportEcsServiceRecommendationsOutput`](crate::output::ExportEcsServiceRecommendationsOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::ExportEcsServiceRecommendationsOutput::job_id): <p> The identification number of the export job. </p>  <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
+    ///   - [`s3_destination(Option<S3Destination>)`](crate::output::ExportEcsServiceRecommendationsOutput::s3_destination): <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
+    /// - On failure, responds with [`SdkError<ExportECSServiceRecommendationsError>`](crate::error::ExportECSServiceRecommendationsError)
+    pub fn export_ecs_service_recommendations(
+        &self,
+    ) -> fluent_builders::ExportECSServiceRecommendations {
+        fluent_builders::ExportECSServiceRecommendations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ExportLambdaFunctionRecommendations`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations) operation.
     ///
@@ -266,12 +285,45 @@ impl Client {
     ) -> fluent_builders::GetEC2RecommendationProjectedMetrics {
         fluent_builders::GetEC2RecommendationProjectedMetrics::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetECSServiceRecommendationProjectedMetrics`](crate::client::fluent_builders::GetECSServiceRecommendationProjectedMetrics) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`service_arn(impl Into<String>)`](crate::client::fluent_builders::GetECSServiceRecommendationProjectedMetrics::service_arn) / [`set_service_arn(Option<String>)`](crate::client::fluent_builders::GetECSServiceRecommendationProjectedMetrics::set_service_arn): <p> The ARN that identifies the ECS service. </p>  <p> The following is the format of the ARN: </p>  <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+    ///   - [`stat(MetricStatistic)`](crate::client::fluent_builders::GetECSServiceRecommendationProjectedMetrics::stat) / [`set_stat(Option<MetricStatistic>)`](crate::client::fluent_builders::GetECSServiceRecommendationProjectedMetrics::set_stat): <p> The statistic of the projected metrics. </p>
+    ///   - [`period(i32)`](crate::client::fluent_builders::GetECSServiceRecommendationProjectedMetrics::period) / [`set_period(i32)`](crate::client::fluent_builders::GetECSServiceRecommendationProjectedMetrics::set_period): <p> The granularity, in seconds, of the projected metrics data points. </p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetECSServiceRecommendationProjectedMetrics::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetECSServiceRecommendationProjectedMetrics::set_start_time): <p> The timestamp of the first projected metrics data point to return. </p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetECSServiceRecommendationProjectedMetrics::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetECSServiceRecommendationProjectedMetrics::set_end_time): <p> The timestamp of the last projected metrics data point to return. </p>
+    /// - On success, responds with [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::output::GetEcsServiceRecommendationProjectedMetricsOutput) with field(s):
+    ///   - [`recommended_option_projected_metrics(Option<Vec<EcsServiceRecommendedOptionProjectedMetric>>)`](crate::output::GetEcsServiceRecommendationProjectedMetricsOutput::recommended_option_projected_metrics): <p> An array of objects that describes the projected metrics. </p>
+    /// - On failure, responds with [`SdkError<GetECSServiceRecommendationProjectedMetricsError>`](crate::error::GetECSServiceRecommendationProjectedMetricsError)
+    pub fn get_ecs_service_recommendation_projected_metrics(
+        &self,
+    ) -> fluent_builders::GetECSServiceRecommendationProjectedMetrics {
+        fluent_builders::GetECSServiceRecommendationProjectedMetrics::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetECSServiceRecommendations`](crate::client::fluent_builders::GetECSServiceRecommendations) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`service_arns(Vec<String>)`](crate::client::fluent_builders::GetECSServiceRecommendations::service_arns) / [`set_service_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GetECSServiceRecommendations::set_service_arns): <p> The ARN that identifies the ECS service. </p>  <p> The following is the format of the ARN: </p>  <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetECSServiceRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetECSServiceRecommendations::set_next_token): <p> The token to advance to the next page of ECS service recommendations. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetECSServiceRecommendations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetECSServiceRecommendations::set_max_results): <p> The maximum number of ECS service recommendations to return with a single request. </p>  <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    ///   - [`filters(Vec<EcsServiceRecommendationFilter>)`](crate::client::fluent_builders::GetECSServiceRecommendations::filters) / [`set_filters(Option<Vec<EcsServiceRecommendationFilter>>)`](crate::client::fluent_builders::GetECSServiceRecommendations::set_filters): <p> An array of objects to specify a filter that returns a more specific list of ECS service recommendations. </p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::GetECSServiceRecommendations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetECSServiceRecommendations::set_account_ids): <p> Return the ECS service recommendations to the specified Amazon Web Services account IDs. </p>  <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the ECS service recommendations to specific member accounts.</p>  <p>You can only specify one account ID per request.</p>
+    /// - On success, responds with [`GetEcsServiceRecommendationsOutput`](crate::output::GetEcsServiceRecommendationsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetEcsServiceRecommendationsOutput::next_token): <p> The token to advance to the next page of ECS service recommendations. </p>
+    ///   - [`ecs_service_recommendations(Option<Vec<EcsServiceRecommendation>>)`](crate::output::GetEcsServiceRecommendationsOutput::ecs_service_recommendations): <p> An array of objects that describe the ECS service recommendations. </p>
+    ///   - [`errors(Option<Vec<GetRecommendationError>>)`](crate::output::GetEcsServiceRecommendationsOutput::errors): <p> An array of objects that describe errors of the request. </p>
+    /// - On failure, responds with [`SdkError<GetECSServiceRecommendationsError>`](crate::error::GetECSServiceRecommendationsError)
+    pub fn get_ecs_service_recommendations(&self) -> fluent_builders::GetECSServiceRecommendations {
+        fluent_builders::GetECSServiceRecommendations::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetEffectiveRecommendationPreferences`](crate::client::fluent_builders::GetEffectiveRecommendationPreferences) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetEffectiveRecommendationPreferences::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetEffectiveRecommendationPreferences::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
     /// - On success, responds with [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput) with field(s):
     ///   - [`enhanced_infrastructure_metrics(Option<EnhancedInfrastructureMetrics>)`](crate::output::GetEffectiveRecommendationPreferencesOutput::enhanced_infrastructure_metrics): <p>The status of the enhanced infrastructure metrics recommendation preference. Considers all applicable preferences that you might have set at the resource, account, and organization level.</p>  <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>  <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`external_metrics_preference(Option<ExternalMetricsPreference>)`](crate::output::GetEffectiveRecommendationPreferencesOutput::external_metrics_preference): <p>The provider of the external metrics recommendation preference. Considers all applicable preferences that you might have set at the account and organization level.</p>  <p>If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response.</p>  <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetEC2InstanceRecommendations</code> actions.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<GetEffectiveRecommendationPreferencesError>`](crate::error::GetEffectiveRecommendationPreferencesError)
     pub fn get_effective_recommendation_preferences(
         &self,
@@ -293,6 +345,7 @@ impl Client {
         fluent_builders::GetEnrollmentStatus::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetEnrollmentStatusesForOrganization`](crate::client::fluent_builders::GetEnrollmentStatusesForOrganization) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetEnrollmentStatusesForOrganization::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`filters(Vec<EnrollmentFilter>)`](crate::client::fluent_builders::GetEnrollmentStatusesForOrganization::filters) / [`set_filters(Option<Vec<EnrollmentFilter>>)`](crate::client::fluent_builders::GetEnrollmentStatusesForOrganization::set_filters): <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
@@ -308,6 +361,7 @@ impl Client {
         fluent_builders::GetEnrollmentStatusesForOrganization::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetLambdaFunctionRecommendations`](crate::client::fluent_builders::GetLambdaFunctionRecommendations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetLambdaFunctionRecommendations::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`function_arns(Vec<String>)`](crate::client::fluent_builders::GetLambdaFunctionRecommendations::function_arns) / [`set_function_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GetLambdaFunctionRecommendations::set_function_arns): <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>  <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
@@ -325,6 +379,7 @@ impl Client {
         fluent_builders::GetLambdaFunctionRecommendations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetRecommendationPreferences`](crate::client::fluent_builders::GetRecommendationPreferences) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetRecommendationPreferences::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::GetRecommendationPreferences::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::GetRecommendationPreferences::set_resource_type): <p>The target resource type of the recommendation preference for which to return preferences.</p>  <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>   <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>  </note>
@@ -339,6 +394,7 @@ impl Client {
         fluent_builders::GetRecommendationPreferences::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetRecommendationSummaries`](crate::client::fluent_builders::GetRecommendationSummaries) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetRecommendationSummaries::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::GetRecommendationSummaries::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetRecommendationSummaries::set_account_ids): <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>  <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>  <p>Only one account ID can be specified per request.</p>
@@ -358,6 +414,7 @@ impl Client {
     ///   - [`scope(Scope)`](crate::client::fluent_builders::PutRecommendationPreferences::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_scope): <p>An object that describes the scope of the recommendation preference to create.</p>  <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>   <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>  </note>
     ///   - [`enhanced_infrastructure_metrics(EnhancedInfrastructureMetrics)`](crate::client::fluent_builders::PutRecommendationPreferences::enhanced_infrastructure_metrics) / [`set_enhanced_infrastructure_metrics(Option<EnhancedInfrastructureMetrics>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_enhanced_infrastructure_metrics): <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>  <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     ///   - [`inferred_workload_types(InferredWorkloadTypesPreference)`](crate::client::fluent_builders::PutRecommendationPreferences::inferred_workload_types) / [`set_inferred_workload_types(Option<InferredWorkloadTypesPreference>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_inferred_workload_types): <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>   <p>The inferred workload type feature is active by default. To deactivate it, create a recommendation preference.</p>  </note>  <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`external_metrics_preference(ExternalMetricsPreference)`](crate::client::fluent_builders::PutRecommendationPreferences::external_metrics_preference) / [`set_external_metrics_preference(Option<ExternalMetricsPreference>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_external_metrics_preference): <p>The provider of the external metrics recommendation preference to create or update.</p>  <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>  <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
     /// - On success, responds with [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput)
 
     /// - On failure, responds with [`SdkError<PutRecommendationPreferencesError>`](crate::error::PutRecommendationPreferencesError)
@@ -483,7 +540,6 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_recommendation_preference_names`](Self::set_recommendation_preference_names).
         ///
         /// <p>The name of the recommendation preference to delete.</p>
-        /// <p>Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.</p>
         pub fn recommendation_preference_names(
             mut self,
             input: crate::model::RecommendationPreferenceName,
@@ -492,7 +548,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the recommendation preference to delete.</p>
-        /// <p>Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.</p>
         pub fn set_recommendation_preference_names(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecommendationPreferenceName>>,
@@ -563,6 +618,15 @@ pub mod fluent_builders {
                 .await
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeRecommendationExportJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeRecommendationExportJobsPaginator {
+            crate::paginator::DescribeRecommendationExportJobsPaginator::new(
+                self.handle,
+                self.inner,
+            )
         }
         /// Appends an item to `jobIds`.
         ///
@@ -1177,6 +1241,176 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::RecommendationPreferences>,
         ) -> Self {
             self.inner = self.inner.set_recommendation_preferences(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ExportECSServiceRecommendations`.
+    ///
+    /// <p> Exports optimization recommendations for Amazon ECS services on Fargate. </p>
+    /// <p>Recommendations are exported in a CSV file, and its metadata in a JSON file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    /// <p>You can only have one Amazon ECS service export job in progress per Amazon Web Services Region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ExportECSServiceRecommendations {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::export_ecs_service_recommendations_input::Builder,
+    }
+    impl ExportECSServiceRecommendations {
+        /// Creates a new `ExportECSServiceRecommendations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ExportECSServiceRecommendations,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ExportECSServiceRecommendationsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ExportEcsServiceRecommendationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ExportECSServiceRecommendationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `accountIds`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p> The Amazon Web Services account IDs for the export ECS service recommendations. </p>
+        /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
+        /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
+        /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
+        /// <p>You can specify multiple account IDs per request.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
+            self
+        }
+        /// <p> The Amazon Web Services account IDs for the export ECS service recommendations. </p>
+        /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
+        /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
+        /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
+        /// <p>You can specify multiple account IDs per request.</p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_account_ids(input);
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p> An array of objects to specify a filter that exports a more specific set of ECS service recommendations. </p>
+        pub fn filters(mut self, input: crate::model::EcsServiceRecommendationFilter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p> An array of objects to specify a filter that exports a more specific set of ECS service recommendations. </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendationFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// Appends an item to `fieldsToExport`.
+        ///
+        /// To override the contents of this collection use [`set_fields_to_export`](Self::set_fields_to_export).
+        ///
+        /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn fields_to_export(mut self, input: crate::model::ExportableEcsServiceField) -> Self {
+            self.inner = self.inner.fields_to_export(input);
+            self
+        }
+        /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn set_fields_to_export(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExportableEcsServiceField>>,
+        ) -> Self {
+            self.inner = self.inner.set_fields_to_export(input);
+            self
+        }
+        /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
+        /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn s3_destination_config(mut self, input: crate::model::S3DestinationConfig) -> Self {
+            self.inner = self.inner.s3_destination_config(input);
+            self
+        }
+        /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
+        /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn set_s3_destination_config(
+            mut self,
+            input: std::option::Option<crate::model::S3DestinationConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_s3_destination_config(input);
+            self
+        }
+        /// <p> The format of the export file. </p>
+        /// <p>The CSV file is the only export file format currently supported.</p>
+        pub fn file_format(mut self, input: crate::model::FileFormat) -> Self {
+            self.inner = self.inner.file_format(input);
+            self
+        }
+        /// <p> The format of the export file. </p>
+        /// <p>The CSV file is the only export file format currently supported.</p>
+        pub fn set_file_format(
+            mut self,
+            input: std::option::Option<crate::model::FileFormat>,
+        ) -> Self {
+            self.inner = self.inner.set_file_format(input);
+            self
+        }
+        /// <p>If your account is the management account or the delegated administrator of an organization, this parameter indicates whether to include recommendations for resources in all member accounts of the organization.</p>
+        /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        /// <p>If this parameter is omitted, recommendations for member accounts of the organization aren't included in the export file.</p>
+        /// <p>If this parameter or the account ID parameter is omitted, recommendations for member accounts aren't included in the export.</p>
+        pub fn include_member_accounts(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_member_accounts(input);
+            self
+        }
+        /// <p>If your account is the management account or the delegated administrator of an organization, this parameter indicates whether to include recommendations for resources in all member accounts of the organization.</p>
+        /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        /// <p>If this parameter is omitted, recommendations for member accounts of the organization aren't included in the export file.</p>
+        /// <p>If this parameter or the account ID parameter is omitted, recommendations for member accounts aren't included in the export.</p>
+        pub fn set_include_member_accounts(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_member_accounts(input);
             self
         }
     }
@@ -1964,6 +2198,281 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetECSServiceRecommendationProjectedMetrics`.
+    ///
+    /// <p> Returns the projected metrics of Amazon ECS service recommendations. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetECSServiceRecommendationProjectedMetrics {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_ecs_service_recommendation_projected_metrics_input::Builder,
+    }
+    impl GetECSServiceRecommendationProjectedMetrics {
+        /// Creates a new `GetECSServiceRecommendationProjectedMetrics`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetECSServiceRecommendationProjectedMetrics,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetECSServiceRecommendationProjectedMetricsError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetEcsServiceRecommendationProjectedMetricsOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetECSServiceRecommendationProjectedMetricsError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The ARN that identifies the ECS service. </p>
+        /// <p> The following is the format of the ARN: </p>
+        /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
+            self
+        }
+        /// <p> The ARN that identifies the ECS service. </p>
+        /// <p> The following is the format of the ARN: </p>
+        /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+        pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_service_arn(input);
+            self
+        }
+        /// <p> The statistic of the projected metrics. </p>
+        pub fn stat(mut self, input: crate::model::MetricStatistic) -> Self {
+            self.inner = self.inner.stat(input);
+            self
+        }
+        /// <p> The statistic of the projected metrics. </p>
+        pub fn set_stat(
+            mut self,
+            input: std::option::Option<crate::model::MetricStatistic>,
+        ) -> Self {
+            self.inner = self.inner.set_stat(input);
+            self
+        }
+        /// <p> The granularity, in seconds, of the projected metrics data points. </p>
+        pub fn period(mut self, input: i32) -> Self {
+            self.inner = self.inner.period(input);
+            self
+        }
+        /// <p> The granularity, in seconds, of the projected metrics data points. </p>
+        pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_period(input);
+            self
+        }
+        /// <p> The timestamp of the first projected metrics data point to return. </p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
+            self
+        }
+        /// <p> The timestamp of the first projected metrics data point to return. </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_start_time(input);
+            self
+        }
+        /// <p> The timestamp of the last projected metrics data point to return. </p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
+            self
+        }
+        /// <p> The timestamp of the last projected metrics data point to return. </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_end_time(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetECSServiceRecommendations`.
+    ///
+    /// <p> Returns Amazon ECS service recommendations. </p>
+    /// <p> Compute Optimizer generates recommendations for Amazon ECS services on Fargate that meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetECSServiceRecommendations {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_ecs_service_recommendations_input::Builder,
+    }
+    impl GetECSServiceRecommendations {
+        /// Creates a new `GetECSServiceRecommendations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetECSServiceRecommendations,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetECSServiceRecommendationsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetEcsServiceRecommendationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetECSServiceRecommendationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `serviceArns`.
+        ///
+        /// To override the contents of this collection use [`set_service_arns`](Self::set_service_arns).
+        ///
+        /// <p> The ARN that identifies the ECS service. </p>
+        /// <p> The following is the format of the ARN: </p>
+        /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+        pub fn service_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arns(input.into());
+            self
+        }
+        /// <p> The ARN that identifies the ECS service. </p>
+        /// <p> The following is the format of the ARN: </p>
+        /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+        pub fn set_service_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_service_arns(input);
+            self
+        }
+        /// <p> The token to advance to the next page of ECS service recommendations. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p> The token to advance to the next page of ECS service recommendations. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p> The maximum number of ECS service recommendations to return with a single request. </p>
+        /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p> The maximum number of ECS service recommendations to return with a single request. </p>
+        /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p> An array of objects to specify a filter that returns a more specific list of ECS service recommendations. </p>
+        pub fn filters(mut self, input: crate::model::EcsServiceRecommendationFilter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p> An array of objects to specify a filter that returns a more specific list of ECS service recommendations. </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendationFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// Appends an item to `accountIds`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p> Return the ECS service recommendations to the specified Amazon Web Services account IDs. </p>
+        /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the ECS service recommendations to specific member accounts.</p>
+        /// <p>You can only specify one account ID per request.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
+            self
+        }
+        /// <p> Return the ECS service recommendations to the specified Amazon Web Services account IDs. </p>
+        /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the ECS service recommendations to specific member accounts.</p>
+        /// <p>You can only specify one account ID per request.</p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_account_ids(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetEffectiveRecommendationPreferences`.
     ///
     /// <p>Returns the recommendation preferences that are in effect for a given resource, such as enhanced infrastructure metrics. Considers all applicable preferences that you might have set at the resource, account, and organization level.</p>
@@ -2173,6 +2682,17 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetEnrollmentStatusesForOrganizationPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetEnrollmentStatusesForOrganizationPaginator {
+            crate::paginator::GetEnrollmentStatusesForOrganizationPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -2275,6 +2795,15 @@ pub mod fluent_builders {
                 .await
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetLambdaFunctionRecommendationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetLambdaFunctionRecommendationsPaginator {
+            crate::paginator::GetLambdaFunctionRecommendationsPaginator::new(
+                self.handle,
+                self.inner,
+            )
         }
         /// Appends an item to `functionArns`.
         ///
@@ -2422,6 +2951,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetRecommendationPreferencesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetRecommendationPreferencesPaginator {
+            crate::paginator::GetRecommendationPreferencesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The target resource type of the recommendation preference for which to return preferences.</p>
         /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
         /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
@@ -2485,6 +3020,7 @@ pub mod fluent_builders {
     /// <li> <p>Auto Scaling groups in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li>
     /// <li> <p>Amazon EBS volumes in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li>
     /// <li> <p>Lambda functions in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li>
+    /// <li> <p>Amazon ECS services in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code>.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecommendationSummaries {
@@ -2544,6 +3080,12 @@ pub mod fluent_builders {
                 .await
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetRecommendationSummariesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetRecommendationSummariesPaginator {
+            crate::paginator::GetRecommendationSummariesPaginator::new(self.handle, self.inner)
         }
         /// Appends an item to `accountIds`.
         ///
@@ -2729,6 +3271,28 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::InferredWorkloadTypesPreference>,
         ) -> Self {
             self.inner = self.inner.set_inferred_workload_types(input);
+            self
+        }
+        /// <p>The provider of the external metrics recommendation preference to create or update.</p>
+        /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
+        /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn external_metrics_preference(
+            mut self,
+            input: crate::model::ExternalMetricsPreference,
+        ) -> Self {
+            self.inner = self.inner.external_metrics_preference(input);
+            self
+        }
+        /// <p>The provider of the external metrics recommendation preference to create or update.</p>
+        /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
+        /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn set_external_metrics_preference(
+            mut self,
+            input: std::option::Option<crate::model::ExternalMetricsPreference>,
+        ) -> Self {
+            self.inner = self.inner.set_external_metrics_preference(input);
             self
         }
     }

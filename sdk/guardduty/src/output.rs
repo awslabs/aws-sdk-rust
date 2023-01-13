@@ -1810,7 +1810,7 @@ pub struct GetMalwareScanSettingsOutput {
     /// <p>Represents the criteria to be used in the filter for scanning resources.</p>
     #[doc(hidden)]
     pub scan_resource_criteria: std::option::Option<crate::model::ScanResourceCriteria>,
-    /// <p>An enum value representing possible snapshot preservations.</p>
+    /// <p>An enum value representing possible snapshot preservation settings.</p>
     #[doc(hidden)]
     pub ebs_snapshot_preservation: std::option::Option<crate::model::EbsSnapshotPreservation>,
 }
@@ -1821,7 +1821,7 @@ impl GetMalwareScanSettingsOutput {
     ) -> std::option::Option<&crate::model::ScanResourceCriteria> {
         self.scan_resource_criteria.as_ref()
     }
-    /// <p>An enum value representing possible snapshot preservations.</p>
+    /// <p>An enum value representing possible snapshot preservation settings.</p>
     pub fn ebs_snapshot_preservation(
         &self,
     ) -> std::option::Option<&crate::model::EbsSnapshotPreservation> {
@@ -1852,7 +1852,7 @@ pub mod get_malware_scan_settings_output {
             self.scan_resource_criteria = input;
             self
         }
-        /// <p>An enum value representing possible snapshot preservations.</p>
+        /// <p>An enum value representing possible snapshot preservation settings.</p>
         pub fn ebs_snapshot_preservation(
             mut self,
             input: crate::model::EbsSnapshotPreservation,
@@ -1860,7 +1860,7 @@ pub mod get_malware_scan_settings_output {
             self.ebs_snapshot_preservation = Some(input);
             self
         }
-        /// <p>An enum value representing possible snapshot preservations.</p>
+        /// <p>An enum value representing possible snapshot preservation settings.</p>
         pub fn set_ebs_snapshot_preservation(
             mut self,
             input: std::option::Option<crate::model::EbsSnapshotPreservation>,
@@ -3662,11 +3662,20 @@ pub struct CreateDetectorOutput {
     /// <p>The unique ID of the created detector.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
+    /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
+    #[doc(hidden)]
+    pub unprocessed_data_sources: std::option::Option<crate::model::UnprocessedDataSourcesResult>,
 }
 impl CreateDetectorOutput {
     /// <p>The unique ID of the created detector.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
+    }
+    /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
+    pub fn unprocessed_data_sources(
+        &self,
+    ) -> std::option::Option<&crate::model::UnprocessedDataSourcesResult> {
+        self.unprocessed_data_sources.as_ref()
     }
 }
 /// See [`CreateDetectorOutput`](crate::output::CreateDetectorOutput).
@@ -3676,6 +3685,8 @@ pub mod create_detector_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_id: std::option::Option<std::string::String>,
+        pub(crate) unprocessed_data_sources:
+            std::option::Option<crate::model::UnprocessedDataSourcesResult>,
     }
     impl Builder {
         /// <p>The unique ID of the created detector.</p>
@@ -3688,10 +3699,27 @@ pub mod create_detector_output {
             self.detector_id = input;
             self
         }
+        /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
+        pub fn unprocessed_data_sources(
+            mut self,
+            input: crate::model::UnprocessedDataSourcesResult,
+        ) -> Self {
+            self.unprocessed_data_sources = Some(input);
+            self
+        }
+        /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
+        pub fn set_unprocessed_data_sources(
+            mut self,
+            input: std::option::Option<crate::model::UnprocessedDataSourcesResult>,
+        ) -> Self {
+            self.unprocessed_data_sources = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDetectorOutput`](crate::output::CreateDetectorOutput).
         pub fn build(self) -> crate::output::CreateDetectorOutput {
             crate::output::CreateDetectorOutput {
                 detector_id: self.detector_id,
+                unprocessed_data_sources: self.unprocessed_data_sources,
             }
         }
     }

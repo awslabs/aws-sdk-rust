@@ -1264,6 +1264,8 @@ pub enum DeleteDatasetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
+    ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -1282,6 +1284,7 @@ impl std::fmt::Display for DeleteDatasetError {
             DeleteDatasetErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             DeleteDatasetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DeleteDatasetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteDatasetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1362,6 +1365,10 @@ impl DeleteDatasetError {
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteDatasetErrorKind::ThrottlingException(_))
     }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DeleteDatasetErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for DeleteDatasetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1371,6 +1378,7 @@ impl std::error::Error for DeleteDatasetError {
             DeleteDatasetErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteDatasetErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteDatasetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -1576,6 +1584,8 @@ pub enum DeleteLabelErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
+    ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -1594,6 +1604,7 @@ impl std::fmt::Display for DeleteLabelError {
             DeleteLabelErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             DeleteLabelErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DeleteLabelErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteLabelErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteLabelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1671,6 +1682,10 @@ impl DeleteLabelError {
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteLabelErrorKind::ThrottlingException(_))
     }
+    /// Returns `true` if the error kind is `DeleteLabelErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLabelErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for DeleteLabelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1680,6 +1695,7 @@ impl std::error::Error for DeleteLabelError {
             DeleteLabelErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteLabelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteLabelErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteLabelErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteLabelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -1716,6 +1732,8 @@ pub enum DeleteLabelGroupErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
+    ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -1734,6 +1752,7 @@ impl std::fmt::Display for DeleteLabelGroupError {
             DeleteLabelGroupErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             DeleteLabelGroupErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DeleteLabelGroupErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteLabelGroupErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteLabelGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1820,6 +1839,13 @@ impl DeleteLabelGroupError {
             DeleteLabelGroupErrorKind::ThrottlingException(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteLabelGroupErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLabelGroupErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for DeleteLabelGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1829,6 +1855,7 @@ impl std::error::Error for DeleteLabelGroupError {
             DeleteLabelGroupErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteLabelGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteLabelGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteLabelGroupErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteLabelGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -1865,6 +1892,8 @@ pub enum DeleteModelErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
+    ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -1883,6 +1912,7 @@ impl std::fmt::Display for DeleteModelError {
             DeleteModelErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             DeleteModelErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DeleteModelErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteModelErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteModelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1960,6 +1990,10 @@ impl DeleteModelError {
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteModelErrorKind::ThrottlingException(_))
     }
+    /// Returns `true` if the error kind is `DeleteModelErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DeleteModelErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for DeleteModelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1969,6 +2003,7 @@ impl std::error::Error for DeleteModelError {
             DeleteModelErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteModelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteModelErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteModelErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteModelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }

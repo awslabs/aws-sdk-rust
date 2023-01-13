@@ -165,11 +165,16 @@ impl Client {
     /// Constructs a fluent builder for the [`ClassifyDocument`](crate::client::fluent_builders::ClassifyDocument) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::ClassifyDocument::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::ClassifyDocument::set_text): <p>The document text to be analyzed.</p>
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::ClassifyDocument::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::ClassifyDocument::set_text): <p>The document text to be analyzed. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
     ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::ClassifyDocument::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::ClassifyDocument::set_endpoint_arn): <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
+    ///   - [`bytes(Blob)`](crate::client::fluent_builders::ClassifyDocument::bytes) / [`set_bytes(Option<Blob>)`](crate::client::fluent_builders::ClassifyDocument::set_bytes): <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>  <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>  <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>  <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+    ///   - [`document_reader_config(DocumentReaderConfig)`](crate::client::fluent_builders::ClassifyDocument::document_reader_config) / [`set_document_reader_config(Option<DocumentReaderConfig>)`](crate::client::fluent_builders::ClassifyDocument::set_document_reader_config): <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
     /// - On success, responds with [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput) with field(s):
     ///   - [`classes(Option<Vec<DocumentClass>>)`](crate::output::ClassifyDocumentOutput::classes): <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
     ///   - [`labels(Option<Vec<DocumentLabel>>)`](crate::output::ClassifyDocumentOutput::labels): <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
+    ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::output::ClassifyDocumentOutput::document_metadata): <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
+    ///   - [`document_type(Option<Vec<DocumentTypeListItem>>)`](crate::output::ClassifyDocumentOutput::document_type): <p>The document type for each page in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
+    ///   - [`errors(Option<Vec<ErrorsListItem>>)`](crate::output::ClassifyDocumentOutput::errors): <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
     /// - On failure, responds with [`SdkError<ClassifyDocumentError>`](crate::error::ClassifyDocumentError)
     pub fn classify_document(&self) -> fluent_builders::ClassifyDocument {
         fluent_builders::ClassifyDocument::new(self.handle.clone())
@@ -231,7 +236,7 @@ impl Client {
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEntityRecognizer::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEntityRecognizer::set_tags): <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
     ///   - [`input_data_config(EntityRecognizerInputDataConfig)`](crate::client::fluent_builders::CreateEntityRecognizer::input_data_config) / [`set_input_data_config(Option<EntityRecognizerInputDataConfig>)`](crate::client::fluent_builders::CreateEntityRecognizer::set_input_data_config): <p>Specifies the format and location of the input data. The S3 bucket containing the input data must be located in the same region as the entity recognizer being created. </p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateEntityRecognizer::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateEntityRecognizer::set_client_request_token): <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::CreateEntityRecognizer::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::CreateEntityRecognizer::set_language_code): <p> You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::CreateEntityRecognizer::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::CreateEntityRecognizer::set_language_code): <p> You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or image input files, you must specify English as the language. All training documents must be in the same language.</p>
     ///   - [`volume_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEntityRecognizer::volume_kms_key_id) / [`set_volume_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEntityRecognizer::set_volume_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
     ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::CreateEntityRecognizer::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::CreateEntityRecognizer::set_vpc_config): <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     ///   - [`model_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEntityRecognizer::model_kms_key_id) / [`set_model_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEntityRecognizer::set_model_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
@@ -384,7 +389,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeResourcePolicy`](crate::client::fluent_builders::DescribeResourcePolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DescribeResourcePolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DescribeResourcePolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the custom model version that has the resource policy.</p>
     /// - On success, responds with [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput) with field(s):
     ///   - [`resource_policy(Option<String>)`](crate::output::DescribeResourcePolicyOutput::resource_policy): <p>The JSON body of the resource-based policy.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeResourcePolicyOutput::creation_time): <p>The time at which the policy was created.</p>
@@ -441,11 +446,17 @@ impl Client {
     /// Constructs a fluent builder for the [`DetectEntities`](crate::client::fluent_builders::DetectEntities) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectEntities::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectEntities::set_text): <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
-    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::DetectEntities::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::DetectEntities::set_language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>  <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectEntities::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectEntities::set_text): <p>A UTF-8 text string. The maximum string size is 100 KB. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::DetectEntities::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::DetectEntities::set_language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>  <p>All input documents must be in the same language.</p>
     ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::DetectEntities::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::DetectEntities::set_endpoint_arn): <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>  <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>  <p>For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
+    ///   - [`bytes(Blob)`](crate::client::fluent_builders::DetectEntities::bytes) / [`set_bytes(Option<Blob>)`](crate::client::fluent_builders::DetectEntities::set_bytes): <p>This field applies only when you use a custom entity recognition model that was trained with PDF annotations. For other cases, enter your text input in the <code>Text</code> field.</p>  <p> Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. Using a plain-text file in the <code>Bytes</code> parameter is equivelent to using the <code>Text</code> parameter (the <code>Entities</code> field in the response is identical).</p>  <p>You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>  <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to detect entities, the SDK may encode the document file bytes for you. </p>  <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>  <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+    ///   - [`document_reader_config(DocumentReaderConfig)`](crate::client::fluent_builders::DetectEntities::document_reader_config) / [`set_document_reader_config(Option<DocumentReaderConfig>)`](crate::client::fluent_builders::DetectEntities::set_document_reader_config): <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
     /// - On success, responds with [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput) with field(s):
     ///   - [`entities(Option<Vec<Entity>>)`](crate::output::DetectEntitiesOutput::entities): <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>  <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
+    ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::output::DetectEntitiesOutput::document_metadata): <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
+    ///   - [`document_type(Option<Vec<DocumentTypeListItem>>)`](crate::output::DetectEntitiesOutput::document_type): <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
+    ///   - [`blocks(Option<Vec<Block>>)`](crate::output::DetectEntitiesOutput::blocks): <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>  <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>  <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
+    ///   - [`errors(Option<Vec<ErrorsListItem>>)`](crate::output::DetectEntitiesOutput::errors): <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
     /// - On failure, responds with [`SdkError<DetectEntitiesError>`](crate::error::DetectEntitiesError)
     pub fn detect_entities(&self) -> fluent_builders::DetectEntities {
         fluent_builders::DetectEntities::new(self.handle.clone())
@@ -583,6 +594,7 @@ impl Client {
         fluent_builders::ListDominantLanguageDetectionJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEndpoints`](crate::client::fluent_builders::ListEndpoints) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEndpoints::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`filter(EndpointFilter)`](crate::client::fluent_builders::ListEndpoints::filter) / [`set_filter(Option<EndpointFilter>)`](crate::client::fluent_builders::ListEndpoints::set_filter): <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
@@ -667,6 +679,7 @@ impl Client {
         fluent_builders::ListKeyPhrasesDetectionJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPiiEntitiesDetectionJobs`](crate::client::fluent_builders::ListPiiEntitiesDetectionJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPiiEntitiesDetectionJobs::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`filter(PiiEntitiesDetectionJobFilter)`](crate::client::fluent_builders::ListPiiEntitiesDetectionJobs::filter) / [`set_filter(Option<PiiEntitiesDetectionJobFilter>)`](crate::client::fluent_builders::ListPiiEntitiesDetectionJobs::set_filter): <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
@@ -896,7 +909,7 @@ impl Client {
     /// Constructs a fluent builder for the [`StartTargetedSentimentDetectionJob`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_input_data_config): <p>The input properties for an inference job.</p>
+    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_input_data_config): <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
     ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_output_data_config): <p>Specifies where to send the output files. </p>
     ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
     ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_job_name): <p>The identifier of the job.</p>
@@ -1634,6 +1647,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ClassifyDocument`.
     ///
     /// <p>Creates a new document classification request to analyze a single document in real-time, using a previously created and trained custom model and an endpoint.</p>
+    /// <p>You can input plain text or you can upload a single-page input document (text, PDF, Word, or image). </p>
+    /// <p>If the system detects errors while processing a page in the input document, the API response includes an entry in <code>Errors</code> that describes the errors.</p>
+    /// <p>If the system detects a document-level error in your input document, the API returns an <code>InvalidRequestException</code> error response. For details about this exception, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html"> Errors in semi-structured documents</a> in the Comprehend Developer Guide. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ClassifyDocument {
         handle: std::sync::Arc<super::Handle>,
@@ -1693,12 +1709,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The document text to be analyzed.</p>
+        /// <p>The document text to be analyzed. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>The document text to be analyzed.</p>
+        /// <p>The document text to be analyzed. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -1711,6 +1727,35 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_endpoint_arn(input);
+            self
+        }
+        /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
+        /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
+        /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+        /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+        pub fn bytes(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.bytes(input);
+            self
+        }
+        /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
+        /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
+        /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+        /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+        pub fn set_bytes(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_bytes(input);
+            self
+        }
+        /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
+        pub fn document_reader_config(mut self, input: crate::model::DocumentReaderConfig) -> Self {
+            self.inner = self.inner.document_reader_config(input);
+            self
+        }
+        /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
+        pub fn set_document_reader_config(
+            mut self,
+            input: std::option::Option<crate::model::DocumentReaderConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_document_reader_config(input);
             self
         }
     }
@@ -2343,12 +2388,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p> You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.</p>
+        /// <p> You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or image input files, you must specify English as the language. All training documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p> You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.</p>
+        /// <p> You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or image input files, you must specify English as the language. All training documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -3474,12 +3519,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
+        /// <p>The Amazon Resource Name (ARN) of the custom model version that has the resource policy.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
+        /// <p>The Amazon Resource Name (ARN) of the custom model version that has the resource policy.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -3783,7 +3828,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetectEntities`.
     ///
-    /// <p>Inspects text for named entities, and returns information about them. For more information, about named entities, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide.</p>
+    /// <p>Detects named entities in input text when you use the pre-trained model. Detects custom entities if you have a custom entity recognition model. </p>
+    /// <p> When detecting named entities using the pre-trained model, use plain text as the input. For more information about named entities, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide.</p>
+    /// <p>When you use a custom entity recognition model, you can input plain text or you can upload a single-page input document (text, PDF, Word, or image). </p>
+    /// <p>If the system detects errors while processing a page in the input document, the API response includes an entry in <code>Errors</code> for each error. </p>
+    /// <p>If the system detects a document-level error in your input document, the API returns an <code>InvalidRequestException</code> error response. For details about this exception, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html"> Errors in semi-structured documents</a> in the Comprehend Developer Guide. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectEntities {
         handle: std::sync::Arc<super::Handle>,
@@ -3843,24 +3892,24 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-        /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
+        /// <p>All input documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-        /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
+        /// <p>All input documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -3880,6 +3929,39 @@ pub mod fluent_builders {
         /// <p>For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_endpoint_arn(input);
+            self
+        }
+        /// <p>This field applies only when you use a custom entity recognition model that was trained with PDF annotations. For other cases, enter your text input in the <code>Text</code> field.</p>
+        /// <p> Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. Using a plain-text file in the <code>Bytes</code> parameter is equivelent to using the <code>Text</code> parameter (the <code>Entities</code> field in the response is identical).</p>
+        /// <p>You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
+        /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to detect entities, the SDK may encode the document file bytes for you. </p>
+        /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+        /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+        pub fn bytes(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.bytes(input);
+            self
+        }
+        /// <p>This field applies only when you use a custom entity recognition model that was trained with PDF annotations. For other cases, enter your text input in the <code>Text</code> field.</p>
+        /// <p> Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. Using a plain-text file in the <code>Bytes</code> parameter is equivelent to using the <code>Text</code> parameter (the <code>Entities</code> field in the response is identical).</p>
+        /// <p>You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
+        /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to detect entities, the SDK may encode the document file bytes for you. </p>
+        /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+        /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+        pub fn set_bytes(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_bytes(input);
+            self
+        }
+        /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
+        pub fn document_reader_config(mut self, input: crate::model::DocumentReaderConfig) -> Self {
+            self.inner = self.inner.document_reader_config(input);
+            self
+        }
+        /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
+        pub fn set_document_reader_config(
+            mut self,
+            input: std::option::Option<crate::model::DocumentReaderConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_document_reader_config(input);
             self
         }
     }
@@ -4929,6 +5011,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEndpointsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEndpointsPaginator {
+            crate::paginator::ListEndpointsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
         pub fn filter(mut self, input: crate::model::EndpointFilter) -> Self {
             self.inner = self.inner.filter(input);
@@ -5522,6 +5610,12 @@ pub mod fluent_builders {
                 .await
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPiiEntitiesDetectionJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPiiEntitiesDetectionJobsPaginator {
+            crate::paginator::ListPiiEntitiesDetectionJobsPaginator::new(self.handle, self.inner)
         }
         /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::PiiEntitiesDetectionJobFilter) -> Self {
@@ -7417,12 +7511,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The input properties for an inference job.</p>
+        /// <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
             self.inner = self.inner.input_data_config(input);
             self
         }
-        /// <p>The input properties for an inference job.</p>
+        /// <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,

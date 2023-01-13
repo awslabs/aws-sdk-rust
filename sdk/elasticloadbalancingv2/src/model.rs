@@ -804,7 +804,7 @@ impl Action {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForwardActionConfig {
-    /// <p>One or more target groups. For Network Load Balancers, you can specify a single target group.</p>
+    /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
     #[doc(hidden)]
     pub target_groups: std::option::Option<std::vec::Vec<crate::model::TargetGroupTuple>>,
     /// <p>The target group stickiness for the rule.</p>
@@ -813,7 +813,7 @@ pub struct ForwardActionConfig {
         std::option::Option<crate::model::TargetGroupStickinessConfig>,
 }
 impl ForwardActionConfig {
-    /// <p>One or more target groups. For Network Load Balancers, you can specify a single target group.</p>
+    /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
     pub fn target_groups(&self) -> std::option::Option<&[crate::model::TargetGroupTuple]> {
         self.target_groups.as_deref()
     }
@@ -840,14 +840,14 @@ pub mod forward_action_config {
         ///
         /// To override the contents of this collection use [`set_target_groups`](Self::set_target_groups).
         ///
-        /// <p>One or more target groups. For Network Load Balancers, you can specify a single target group.</p>
+        /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
         pub fn target_groups(mut self, input: crate::model::TargetGroupTuple) -> Self {
             let mut v = self.target_groups.unwrap_or_default();
             v.push(input);
             self.target_groups = Some(v);
             self
         }
-        /// <p>One or more target groups. For Network Load Balancers, you can specify a single target group.</p>
+        /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
         pub fn set_target_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetGroupTuple>>,
@@ -2579,13 +2579,13 @@ impl RuleCondition {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceIpConditionConfig {
-    /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.</p>
+    /// <p>The source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.</p>
     /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use <code>HttpHeaderConditionConfig</code>.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SourceIpConditionConfig {
-    /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.</p>
+    /// <p>The source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.</p>
     /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use <code>HttpHeaderConditionConfig</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
@@ -2604,7 +2604,7 @@ pub mod source_ip_condition_config {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.</p>
+        /// <p>The source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.</p>
         /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use <code>HttpHeaderConditionConfig</code>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
@@ -2612,7 +2612,7 @@ pub mod source_ip_condition_config {
             self.values = Some(v);
             self
         }
-        /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.</p>
+        /// <p>The source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.</p>
         /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use <code>HttpHeaderConditionConfig</code>.</p>
         pub fn set_values(
             mut self,
@@ -2703,13 +2703,13 @@ impl HttpRequestMethodConditionConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryStringConditionConfig {
-    /// <p>One or more key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
+    /// <p>The key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
     /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::model::QueryStringKeyValuePair>>,
 }
 impl QueryStringConditionConfig {
-    /// <p>One or more key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
+    /// <p>The key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
     /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
     pub fn values(&self) -> std::option::Option<&[crate::model::QueryStringKeyValuePair]> {
         self.values.as_deref()
@@ -2729,7 +2729,7 @@ pub mod query_string_condition_config {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>One or more key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
+        /// <p>The key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
         /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
         pub fn values(mut self, input: crate::model::QueryStringKeyValuePair) -> Self {
             let mut v = self.values.unwrap_or_default();
@@ -2737,7 +2737,7 @@ pub mod query_string_condition_config {
             self.values = Some(v);
             self
         }
-        /// <p>One or more key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
+        /// <p>The key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
         /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
         pub fn set_values(
             mut self,
@@ -2837,7 +2837,7 @@ pub struct HttpHeaderConditionConfig {
     /// <p>You can't use an HTTP header condition to specify the host header. Use <code>HostHeaderConditionConfig</code> to specify a host header condition.</p>
     #[doc(hidden)]
     pub http_header_name: std::option::Option<std::string::String>,
-    /// <p>One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
     #[doc(hidden)]
@@ -2849,7 +2849,7 @@ impl HttpHeaderConditionConfig {
     pub fn http_header_name(&self) -> std::option::Option<&str> {
         self.http_header_name.as_deref()
     }
-    /// <p>One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
@@ -2885,7 +2885,7 @@ pub mod http_header_condition_config {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+        /// <p>The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
         /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
         /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2894,7 +2894,7 @@ pub mod http_header_condition_config {
             self.values = Some(v);
             self
         }
-        /// <p>One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+        /// <p>The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
         /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
         /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
         pub fn set_values(
@@ -2924,13 +2924,13 @@ impl HttpHeaderConditionConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PathPatternConditionConfig {
-    /// <p>One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>The path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path pattern is compared only to the path of the URL, not to its query string. To compare against the query string, use <code>QueryStringConditionConfig</code>.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PathPatternConditionConfig {
-    /// <p>One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>The path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path pattern is compared only to the path of the URL, not to its query string. To compare against the query string, use <code>QueryStringConditionConfig</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
@@ -2949,7 +2949,7 @@ pub mod path_pattern_condition_config {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+        /// <p>The path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
         /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path pattern is compared only to the path of the URL, not to its query string. To compare against the query string, use <code>QueryStringConditionConfig</code>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
@@ -2957,7 +2957,7 @@ pub mod path_pattern_condition_config {
             self.values = Some(v);
             self
         }
-        /// <p>One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+        /// <p>The path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
         /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path pattern is compared only to the path of the URL, not to its query string. To compare against the query string, use <code>QueryStringConditionConfig</code>.</p>
         pub fn set_values(
             mut self,
@@ -2985,13 +2985,13 @@ impl PathPatternConditionConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostHeaderConditionConfig {
-    /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl HostHeaderConditionConfig {
-    /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
@@ -3010,7 +3010,7 @@ pub mod host_header_condition_config {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+        /// <p>The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
         /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
@@ -3018,7 +3018,7 @@ pub mod host_header_condition_config {
             self.values = Some(v);
             self
         }
-        /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+        /// <p>The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
         /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
         pub fn set_values(
             mut self,
@@ -3190,9 +3190,10 @@ pub struct TargetDescription {
     #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives traffic from the load balancer nodes in the specified Availability Zone or from all enabled Availability Zones for the load balancer.</p>
+    /// <p>For Application Load Balancer target groups, the specified Availability Zone value is only applicable when cross-zone load balancing is off. Otherwise the parameter is ignored and treated as <code>all</code>.</p>
     /// <p>This parameter is not supported if the target type of the target group is <code>instance</code> or <code>alb</code>.</p>
     /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically detected and this parameter is optional. If the IP address is outside the VPC, this parameter is required.</p>
-    /// <p>With an Application Load Balancer, if the target type is <code>ip</code> and the IP address is outside the VPC for the target group, the only supported value is <code>all</code>.</p>
+    /// <p>For Application Load Balancer target groups with cross-zone load balancing off, if the target type is <code>ip</code> and the IP address is outside of the VPC for the target group, this should be an Availability Zone inside the VPC for the target group.</p>
     /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only supported value is <code>all</code>.</p>
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
@@ -3207,9 +3208,10 @@ impl TargetDescription {
         self.port
     }
     /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives traffic from the load balancer nodes in the specified Availability Zone or from all enabled Availability Zones for the load balancer.</p>
+    /// <p>For Application Load Balancer target groups, the specified Availability Zone value is only applicable when cross-zone load balancing is off. Otherwise the parameter is ignored and treated as <code>all</code>.</p>
     /// <p>This parameter is not supported if the target type of the target group is <code>instance</code> or <code>alb</code>.</p>
     /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically detected and this parameter is optional. If the IP address is outside the VPC, this parameter is required.</p>
-    /// <p>With an Application Load Balancer, if the target type is <code>ip</code> and the IP address is outside the VPC for the target group, the only supported value is <code>all</code>.</p>
+    /// <p>For Application Load Balancer target groups with cross-zone load balancing off, if the target type is <code>ip</code> and the IP address is outside of the VPC for the target group, this should be an Availability Zone inside the VPC for the target group.</p>
     /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only supported value is <code>all</code>.</p>
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
@@ -3247,18 +3249,20 @@ pub mod target_description {
             self
         }
         /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives traffic from the load balancer nodes in the specified Availability Zone or from all enabled Availability Zones for the load balancer.</p>
+        /// <p>For Application Load Balancer target groups, the specified Availability Zone value is only applicable when cross-zone load balancing is off. Otherwise the parameter is ignored and treated as <code>all</code>.</p>
         /// <p>This parameter is not supported if the target type of the target group is <code>instance</code> or <code>alb</code>.</p>
         /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically detected and this parameter is optional. If the IP address is outside the VPC, this parameter is required.</p>
-        /// <p>With an Application Load Balancer, if the target type is <code>ip</code> and the IP address is outside the VPC for the target group, the only supported value is <code>all</code>.</p>
+        /// <p>For Application Load Balancer target groups with cross-zone load balancing off, if the target type is <code>ip</code> and the IP address is outside of the VPC for the target group, this should be an Availability Zone inside the VPC for the target group.</p>
         /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only supported value is <code>all</code>.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone = Some(input.into());
             self
         }
         /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives traffic from the load balancer nodes in the specified Availability Zone or from all enabled Availability Zones for the load balancer.</p>
+        /// <p>For Application Load Balancer target groups, the specified Availability Zone value is only applicable when cross-zone load balancing is off. Otherwise the parameter is ignored and treated as <code>all</code>.</p>
         /// <p>This parameter is not supported if the target type of the target group is <code>instance</code> or <code>alb</code>.</p>
         /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically detected and this parameter is optional. If the IP address is outside the VPC, this parameter is required.</p>
-        /// <p>With an Application Load Balancer, if the target type is <code>ip</code> and the IP address is outside the VPC for the target group, the only supported value is <code>all</code>.</p>
+        /// <p>For Application Load Balancer target groups with cross-zone load balancing off, if the target type is <code>ip</code> and the IP address is outside of the VPC for the target group, this should be an Availability Zone inside the VPC for the target group.</p>
         /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only supported value is <code>all</code>.</p>
         pub fn set_availability_zone(
             mut self,
@@ -3289,19 +3293,24 @@ impl TargetDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetGroupAttribute {
     /// <p>The name of the attribute.</p>
-    /// <p>The following attribute is supported by all load balancers:</p>
+    /// <p>The following attributes are supported by all load balancers:</p>
     /// <ul>
     /// <li> <p> <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is not supported.</p> </li>
-    /// </ul>
-    /// <p>The following attributes are supported by Application Load Balancers, Network Load Balancers, and Gateway Load Balancers:</p>
-    /// <ul>
     /// <li> <p> <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
-    /// <li> <p> <code>stickiness.type</code> - Indicates the type of stickiness. The possible values are: </p>
+    /// <li> <p> <code>stickiness.type</code> - Indicates the type of stickiness. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers</p> </li>
-    /// <li> <p> <code>source_ip</code> for Network Load Balancers</p> </li>
-    /// <li> <p> <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers</p> </li>
+    /// <li> <p> <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers.</p> </li>
+    /// <li> <p> <code>source_ip</code> for Network Load Balancers.</p> </li>
+    /// <li> <p> <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.</p> </li>
     /// </ul> </li>
+    /// </ul>
+    /// <p>The following attributes are supported by Application Load Balancers and Network Load Balancers:</p>
+    /// <ul>
+    /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled. The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The default is <code>use_load_balancer_configuration</code>.</p> </li>
+    /// <li> <p> <code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the maximum number of targets. The default is <code>off</code>.</p> </li>
+    /// <li> <p> <code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage of targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.</p> </li>
+    /// <li> <p> <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, send traffic to all targets, including unhealthy targets. The possible values are 1 to the maximum number of targets. The default is 1.</p> </li>
+    /// <li> <p> <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</code> - The minimum percentage of targets that must be healthy. If the percentage of healthy targets is below this value, send traffic to all targets, including unhealthy targets. The possible values are <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.</p> </li>
     /// </ul>
     /// <p>The following attributes are supported only if the load balancer is an Application Load Balancer and the target is an instance or an IP address:</p>
     /// <ul>
@@ -3309,7 +3318,7 @@ pub struct TargetGroupAttribute {
     /// <li> <p> <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target receives an increasing share of the traffic to the target group. After this time period ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).</p> </li>
     /// <li> <p> <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved for use by the load balancer.</p> </li>
     /// <li> <p> <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the application-based cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
-    /// <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
+    /// <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds). </p> </li>
     /// </ul>
     /// <p>The following attribute is supported only if the load balancer is an Application Load Balancer and the target is a Lambda function:</p>
     /// <ul>
@@ -3319,7 +3328,12 @@ pub struct TargetGroupAttribute {
     /// <ul>
     /// <li> <p> <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
     /// <li> <p> <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
-    /// <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>. </p> </li>
+    /// </ul>
+    /// <p>The following attributes are supported only by Gateway Load Balancers:</p>
+    /// <ul>
+    /// <li> <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is deregistered. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same. </p> </li>
+    /// <li> <p> <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes must be the same. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -3329,19 +3343,24 @@ pub struct TargetGroupAttribute {
 }
 impl TargetGroupAttribute {
     /// <p>The name of the attribute.</p>
-    /// <p>The following attribute is supported by all load balancers:</p>
+    /// <p>The following attributes are supported by all load balancers:</p>
     /// <ul>
     /// <li> <p> <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is not supported.</p> </li>
-    /// </ul>
-    /// <p>The following attributes are supported by Application Load Balancers, Network Load Balancers, and Gateway Load Balancers:</p>
-    /// <ul>
     /// <li> <p> <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
-    /// <li> <p> <code>stickiness.type</code> - Indicates the type of stickiness. The possible values are: </p>
+    /// <li> <p> <code>stickiness.type</code> - Indicates the type of stickiness. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers</p> </li>
-    /// <li> <p> <code>source_ip</code> for Network Load Balancers</p> </li>
-    /// <li> <p> <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers</p> </li>
+    /// <li> <p> <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers.</p> </li>
+    /// <li> <p> <code>source_ip</code> for Network Load Balancers.</p> </li>
+    /// <li> <p> <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.</p> </li>
     /// </ul> </li>
+    /// </ul>
+    /// <p>The following attributes are supported by Application Load Balancers and Network Load Balancers:</p>
+    /// <ul>
+    /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled. The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The default is <code>use_load_balancer_configuration</code>.</p> </li>
+    /// <li> <p> <code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the maximum number of targets. The default is <code>off</code>.</p> </li>
+    /// <li> <p> <code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage of targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.</p> </li>
+    /// <li> <p> <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, send traffic to all targets, including unhealthy targets. The possible values are 1 to the maximum number of targets. The default is 1.</p> </li>
+    /// <li> <p> <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</code> - The minimum percentage of targets that must be healthy. If the percentage of healthy targets is below this value, send traffic to all targets, including unhealthy targets. The possible values are <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.</p> </li>
     /// </ul>
     /// <p>The following attributes are supported only if the load balancer is an Application Load Balancer and the target is an instance or an IP address:</p>
     /// <ul>
@@ -3349,7 +3368,7 @@ impl TargetGroupAttribute {
     /// <li> <p> <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target receives an increasing share of the traffic to the target group. After this time period ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).</p> </li>
     /// <li> <p> <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved for use by the load balancer.</p> </li>
     /// <li> <p> <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the application-based cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
-    /// <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
+    /// <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds). </p> </li>
     /// </ul>
     /// <p>The following attribute is supported only if the load balancer is an Application Load Balancer and the target is a Lambda function:</p>
     /// <ul>
@@ -3359,7 +3378,12 @@ impl TargetGroupAttribute {
     /// <ul>
     /// <li> <p> <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
     /// <li> <p> <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
-    /// <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>. </p> </li>
+    /// </ul>
+    /// <p>The following attributes are supported only by Gateway Load Balancers:</p>
+    /// <ul>
+    /// <li> <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is deregistered. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same. </p> </li>
+    /// <li> <p> <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes must be the same. </p> </li>
     /// </ul>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
@@ -3380,19 +3404,24 @@ pub mod target_group_attribute {
     }
     impl Builder {
         /// <p>The name of the attribute.</p>
-        /// <p>The following attribute is supported by all load balancers:</p>
+        /// <p>The following attributes are supported by all load balancers:</p>
         /// <ul>
         /// <li> <p> <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is not supported.</p> </li>
-        /// </ul>
-        /// <p>The following attributes are supported by Application Load Balancers, Network Load Balancers, and Gateway Load Balancers:</p>
-        /// <ul>
         /// <li> <p> <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
-        /// <li> <p> <code>stickiness.type</code> - Indicates the type of stickiness. The possible values are: </p>
+        /// <li> <p> <code>stickiness.type</code> - Indicates the type of stickiness. The possible values are:</p>
         /// <ul>
-        /// <li> <p> <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers</p> </li>
-        /// <li> <p> <code>source_ip</code> for Network Load Balancers</p> </li>
-        /// <li> <p> <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers</p> </li>
+        /// <li> <p> <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers.</p> </li>
+        /// <li> <p> <code>source_ip</code> for Network Load Balancers.</p> </li>
+        /// <li> <p> <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.</p> </li>
         /// </ul> </li>
+        /// </ul>
+        /// <p>The following attributes are supported by Application Load Balancers and Network Load Balancers:</p>
+        /// <ul>
+        /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled. The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The default is <code>use_load_balancer_configuration</code>.</p> </li>
+        /// <li> <p> <code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the maximum number of targets. The default is <code>off</code>.</p> </li>
+        /// <li> <p> <code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage of targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.</p> </li>
+        /// <li> <p> <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, send traffic to all targets, including unhealthy targets. The possible values are 1 to the maximum number of targets. The default is 1.</p> </li>
+        /// <li> <p> <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</code> - The minimum percentage of targets that must be healthy. If the percentage of healthy targets is below this value, send traffic to all targets, including unhealthy targets. The possible values are <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.</p> </li>
         /// </ul>
         /// <p>The following attributes are supported only if the load balancer is an Application Load Balancer and the target is an instance or an IP address:</p>
         /// <ul>
@@ -3400,7 +3429,7 @@ pub mod target_group_attribute {
         /// <li> <p> <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target receives an increasing share of the traffic to the target group. After this time period ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).</p> </li>
         /// <li> <p> <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved for use by the load balancer.</p> </li>
         /// <li> <p> <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the application-based cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
-        /// <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
+        /// <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds). </p> </li>
         /// </ul>
         /// <p>The following attribute is supported only if the load balancer is an Application Load Balancer and the target is a Lambda function:</p>
         /// <ul>
@@ -3410,26 +3439,36 @@ pub mod target_group_attribute {
         /// <ul>
         /// <li> <p> <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
         /// <li> <p> <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
-        /// <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>. </p> </li>
+        /// </ul>
+        /// <p>The following attributes are supported only by Gateway Load Balancers:</p>
+        /// <ul>
+        /// <li> <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is deregistered. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same. </p> </li>
+        /// <li> <p> <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes must be the same. </p> </li>
         /// </ul>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
         /// <p>The name of the attribute.</p>
-        /// <p>The following attribute is supported by all load balancers:</p>
+        /// <p>The following attributes are supported by all load balancers:</p>
         /// <ul>
         /// <li> <p> <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is not supported.</p> </li>
-        /// </ul>
-        /// <p>The following attributes are supported by Application Load Balancers, Network Load Balancers, and Gateway Load Balancers:</p>
-        /// <ul>
         /// <li> <p> <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
-        /// <li> <p> <code>stickiness.type</code> - Indicates the type of stickiness. The possible values are: </p>
+        /// <li> <p> <code>stickiness.type</code> - Indicates the type of stickiness. The possible values are:</p>
         /// <ul>
-        /// <li> <p> <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers</p> </li>
-        /// <li> <p> <code>source_ip</code> for Network Load Balancers</p> </li>
-        /// <li> <p> <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers</p> </li>
+        /// <li> <p> <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers.</p> </li>
+        /// <li> <p> <code>source_ip</code> for Network Load Balancers.</p> </li>
+        /// <li> <p> <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.</p> </li>
         /// </ul> </li>
+        /// </ul>
+        /// <p>The following attributes are supported by Application Load Balancers and Network Load Balancers:</p>
+        /// <ul>
+        /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled. The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The default is <code>use_load_balancer_configuration</code>.</p> </li>
+        /// <li> <p> <code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the maximum number of targets. The default is <code>off</code>.</p> </li>
+        /// <li> <p> <code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage of targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.</p> </li>
+        /// <li> <p> <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, send traffic to all targets, including unhealthy targets. The possible values are 1 to the maximum number of targets. The default is 1.</p> </li>
+        /// <li> <p> <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</code> - The minimum percentage of targets that must be healthy. If the percentage of healthy targets is below this value, send traffic to all targets, including unhealthy targets. The possible values are <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.</p> </li>
         /// </ul>
         /// <p>The following attributes are supported only if the load balancer is an Application Load Balancer and the target is an instance or an IP address:</p>
         /// <ul>
@@ -3437,7 +3476,7 @@ pub mod target_group_attribute {
         /// <li> <p> <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target receives an increasing share of the traffic to the target group. After this time period ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).</p> </li>
         /// <li> <p> <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved for use by the load balancer.</p> </li>
         /// <li> <p> <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the application-based cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
-        /// <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
+        /// <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds). </p> </li>
         /// </ul>
         /// <p>The following attribute is supported only if the load balancer is an Application Load Balancer and the target is a Lambda function:</p>
         /// <ul>
@@ -3447,7 +3486,12 @@ pub mod target_group_attribute {
         /// <ul>
         /// <li> <p> <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
         /// <li> <p> <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
-        /// <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>. </p> </li>
+        /// </ul>
+        /// <p>The following attributes are supported only by Gateway Load Balancers:</p>
+        /// <ul>
+        /// <li> <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is deregistered. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same. </p> </li>
+        /// <li> <p> <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes must be the same. </p> </li>
         /// </ul>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
@@ -4090,8 +4134,9 @@ impl AsRef<str> for TargetTypeEnum {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Matcher {
-    /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
-    /// <p>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
+    /// <p>For Application Load Balancers, you can specify values between 200 and 499, with the default value being 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
+    /// <p>For Network Load Balancers, you can specify values between 200 and 599, with the default value being 200-399. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
+    /// <p>For Gateway Load Balancers, this must be "200–399".</p>
     /// <p>Note that when using shorthand syntax, some values such as commas need to be escaped.</p>
     #[doc(hidden)]
     pub http_code: std::option::Option<std::string::String>,
@@ -4100,8 +4145,9 @@ pub struct Matcher {
     pub grpc_code: std::option::Option<std::string::String>,
 }
 impl Matcher {
-    /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
-    /// <p>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
+    /// <p>For Application Load Balancers, you can specify values between 200 and 499, with the default value being 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
+    /// <p>For Network Load Balancers, you can specify values between 200 and 599, with the default value being 200-399. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
+    /// <p>For Gateway Load Balancers, this must be "200–399".</p>
     /// <p>Note that when using shorthand syntax, some values such as commas need to be escaped.</p>
     pub fn http_code(&self) -> std::option::Option<&str> {
         self.http_code.as_deref()
@@ -4121,15 +4167,17 @@ pub mod matcher {
         pub(crate) grpc_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
-        /// <p>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
+        /// <p>For Application Load Balancers, you can specify values between 200 and 499, with the default value being 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
+        /// <p>For Network Load Balancers, you can specify values between 200 and 599, with the default value being 200-399. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
+        /// <p>For Gateway Load Balancers, this must be "200–399".</p>
         /// <p>Note that when using shorthand syntax, some values such as commas need to be escaped.</p>
         pub fn http_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_code = Some(input.into());
             self
         }
-        /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
-        /// <p>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
+        /// <p>For Application Load Balancers, you can specify values between 200 and 499, with the default value being 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
+        /// <p>For Network Load Balancers, you can specify values between 200 and 599, with the default value being 200-399. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
+        /// <p>For Gateway Load Balancers, this must be "200–399".</p>
         /// <p>Note that when using shorthand syntax, some values such as commas need to be escaped.</p>
         pub fn set_http_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_code = input;
@@ -4281,9 +4329,10 @@ impl AsRef<str> for ProtocolEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerAttribute {
     /// <p>The name of the attribute.</p>
-    /// <p>The following attribute is supported by all load balancers:</p>
+    /// <p>The following attributes are supported by all load balancers:</p>
     /// <ul>
     /// <li> <p> <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot be changed.</p> </li>
     /// </ul>
     /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
     /// <ul>
@@ -4308,10 +4357,6 @@ pub struct LoadBalancerAttribute {
     /// </ul> </li>
     /// <li> <p> <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.</p> </li>
     /// <li> <p> <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
-    /// </ul>
-    /// <p>The following attribute is supported by Network Load Balancers and Gateway Load Balancers:</p>
-    /// <ul>
-    /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -4321,9 +4366,10 @@ pub struct LoadBalancerAttribute {
 }
 impl LoadBalancerAttribute {
     /// <p>The name of the attribute.</p>
-    /// <p>The following attribute is supported by all load balancers:</p>
+    /// <p>The following attributes are supported by all load balancers:</p>
     /// <ul>
     /// <li> <p> <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot be changed.</p> </li>
     /// </ul>
     /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
     /// <ul>
@@ -4348,10 +4394,6 @@ impl LoadBalancerAttribute {
     /// </ul> </li>
     /// <li> <p> <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.</p> </li>
     /// <li> <p> <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
-    /// </ul>
-    /// <p>The following attribute is supported by Network Load Balancers and Gateway Load Balancers:</p>
-    /// <ul>
-    /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
     /// </ul>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
@@ -4372,9 +4414,10 @@ pub mod load_balancer_attribute {
     }
     impl Builder {
         /// <p>The name of the attribute.</p>
-        /// <p>The following attribute is supported by all load balancers:</p>
+        /// <p>The following attributes are supported by all load balancers:</p>
         /// <ul>
         /// <li> <p> <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot be changed.</p> </li>
         /// </ul>
         /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
         /// <ul>
@@ -4399,19 +4442,16 @@ pub mod load_balancer_attribute {
         /// </ul> </li>
         /// <li> <p> <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.</p> </li>
         /// <li> <p> <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
-        /// </ul>
-        /// <p>The following attribute is supported by Network Load Balancers and Gateway Load Balancers:</p>
-        /// <ul>
-        /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
         /// </ul>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
         /// <p>The name of the attribute.</p>
-        /// <p>The following attribute is supported by all load balancers:</p>
+        /// <p>The following attributes are supported by all load balancers:</p>
         /// <ul>
         /// <li> <p> <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot be changed.</p> </li>
         /// </ul>
         /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
         /// <ul>
@@ -4436,10 +4476,6 @@ pub mod load_balancer_attribute {
         /// </ul> </li>
         /// <li> <p> <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.</p> </li>
         /// <li> <p> <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
-        /// </ul>
-        /// <p>The following attribute is supported by Network Load Balancers and Gateway Load Balancers:</p>
-        /// <ul>
-        /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
         /// </ul>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;

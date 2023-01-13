@@ -16,7 +16,7 @@ pub struct TaskSet {
     /// <p>The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists in.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
-    /// <p>The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the startedBy field isn't used.</p>
+    /// <p>The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the <code>startedBy</code> field isn't used.</p>
     #[doc(hidden)]
     pub started_by: std::option::Option<std::string::String>,
     /// <p>The external ID associated with the task set.</p>
@@ -91,7 +91,7 @@ pub struct TaskSet {
     /// <p>A floating-point percentage of your desired number of tasks to place and keep running in the task set.</p>
     #[doc(hidden)]
     pub scale: std::option::Option<crate::model::Scale>,
-    /// <p>The stability status. This indicates whether the task set has reached a steady state. If the following conditions are met, the task set sre in <code>STEADY_STATE</code>:</p>
+    /// <p>The stability status. This indicates whether the task set has reached a steady state. If the following conditions are met, the task set are in <code>STEADY_STATE</code>:</p>
     /// <ul>
     /// <li> <p>The task <code>runningCount</code> is equal to the <code>computedDesiredCount</code>.</p> </li>
     /// <li> <p>The <code>pendingCount</code> is <code>0</code>.</p> </li>
@@ -135,7 +135,7 @@ impl TaskSet {
     pub fn cluster_arn(&self) -> std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
-    /// <p>The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the startedBy field isn't used.</p>
+    /// <p>The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the <code>startedBy</code> field isn't used.</p>
     pub fn started_by(&self) -> std::option::Option<&str> {
         self.started_by.as_deref()
     }
@@ -230,7 +230,7 @@ impl TaskSet {
     pub fn scale(&self) -> std::option::Option<&crate::model::Scale> {
         self.scale.as_ref()
     }
-    /// <p>The stability status. This indicates whether the task set has reached a steady state. If the following conditions are met, the task set sre in <code>STEADY_STATE</code>:</p>
+    /// <p>The stability status. This indicates whether the task set has reached a steady state. If the following conditions are met, the task set are in <code>STEADY_STATE</code>:</p>
     /// <ul>
     /// <li> <p>The task <code>runningCount</code> is equal to the <code>computedDesiredCount</code>.</p> </li>
     /// <li> <p>The <code>pendingCount</code> is <code>0</code>.</p> </li>
@@ -334,12 +334,12 @@ pub mod task_set {
             self.cluster_arn = input;
             self
         }
-        /// <p>The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the startedBy field isn't used.</p>
+        /// <p>The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the <code>startedBy</code> field isn't used.</p>
         pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.started_by = Some(input.into());
             self
         }
-        /// <p>The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the startedBy field isn't used.</p>
+        /// <p>The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the <code>startedBy</code> field isn't used.</p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.started_by = input;
             self
@@ -601,7 +601,7 @@ pub mod task_set {
             self.scale = input;
             self
         }
-        /// <p>The stability status. This indicates whether the task set has reached a steady state. If the following conditions are met, the task set sre in <code>STEADY_STATE</code>:</p>
+        /// <p>The stability status. This indicates whether the task set has reached a steady state. If the following conditions are met, the task set are in <code>STEADY_STATE</code>:</p>
         /// <ul>
         /// <li> <p>The task <code>runningCount</code> is equal to the <code>computedDesiredCount</code>.</p> </li>
         /// <li> <p>The <code>pendingCount</code> is <code>0</code>.</p> </li>
@@ -613,7 +613,7 @@ pub mod task_set {
             self.stability_status = Some(input);
             self
         }
-        /// <p>The stability status. This indicates whether the task set has reached a steady state. If the following conditions are met, the task set sre in <code>STEADY_STATE</code>:</p>
+        /// <p>The stability status. This indicates whether the task set has reached a steady state. If the following conditions are met, the task set are in <code>STEADY_STATE</code>:</p>
         /// <ul>
         /// <li> <p>The task <code>runningCount</code> is equal to the <code>computedDesiredCount</code>.</p> </li>
         /// <li> <p>The <code>pendingCount</code> is <code>0</code>.</p> </li>
@@ -1757,6 +1757,181 @@ impl AsRef<str> for LaunchType {
     }
 }
 
+/// <p>A failed resource. For a list of common causes, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Failure {
+    /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The reason for the failure.</p>
+    #[doc(hidden)]
+    pub reason: std::option::Option<std::string::String>,
+    /// <p>The details of the failure.</p>
+    #[doc(hidden)]
+    pub detail: std::option::Option<std::string::String>,
+}
+impl Failure {
+    /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The reason for the failure.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>The details of the failure.</p>
+    pub fn detail(&self) -> std::option::Option<&str> {
+        self.detail.as_deref()
+    }
+}
+/// See [`Failure`](crate::model::Failure).
+pub mod failure {
+
+    /// A builder for [`Failure`](crate::model::Failure).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) reason: std::option::Option<std::string::String>,
+        pub(crate) detail: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The reason for the failure.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
+            self
+        }
+        /// <p>The reason for the failure.</p>
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
+            self
+        }
+        /// <p>The details of the failure.</p>
+        pub fn detail(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detail = Some(input.into());
+            self
+        }
+        /// <p>The details of the failure.</p>
+        pub fn set_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detail = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Failure`](crate::model::Failure).
+        pub fn build(self) -> crate::model::Failure {
+            crate::model::Failure {
+                arn: self.arn,
+                reason: self.reason,
+                detail: self.detail,
+            }
+        }
+    }
+}
+impl Failure {
+    /// Creates a new builder-style object to manufacture [`Failure`](crate::model::Failure).
+    pub fn builder() -> crate::model::failure::Builder {
+        crate::model::failure::Builder::default()
+    }
+}
+
+/// <p>An object representing the protection status details for a task. You can set the protection status with the <code>UpdateTaskProtection</code> API and get the status of tasks with the <code>GetTaskProtection</code> API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ProtectedTask {
+    /// <p>The task ARN.</p>
+    #[doc(hidden)]
+    pub task_arn: std::option::Option<std::string::String>,
+    /// <p>The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
+    #[doc(hidden)]
+    pub protection_enabled: bool,
+    /// <p>The epoch time when protection for the task will expire.</p>
+    #[doc(hidden)]
+    pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ProtectedTask {
+    /// <p>The task ARN.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
+    pub fn protection_enabled(&self) -> bool {
+        self.protection_enabled
+    }
+    /// <p>The epoch time when protection for the task will expire.</p>
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.expiration_date.as_ref()
+    }
+}
+/// See [`ProtectedTask`](crate::model::ProtectedTask).
+pub mod protected_task {
+
+    /// A builder for [`ProtectedTask`](crate::model::ProtectedTask).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) task_arn: std::option::Option<std::string::String>,
+        pub(crate) protection_enabled: std::option::Option<bool>,
+        pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The task ARN.</p>
+        pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_arn = Some(input.into());
+            self
+        }
+        /// <p>The task ARN.</p>
+        pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_arn = input;
+            self
+        }
+        /// <p>The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
+        pub fn protection_enabled(mut self, input: bool) -> Self {
+            self.protection_enabled = Some(input);
+            self
+        }
+        /// <p>The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
+        pub fn set_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.protection_enabled = input;
+            self
+        }
+        /// <p>The epoch time when protection for the task will expire.</p>
+        pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.expiration_date = Some(input);
+            self
+        }
+        /// <p>The epoch time when protection for the task will expire.</p>
+        pub fn set_expiration_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.expiration_date = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProtectedTask`](crate::model::ProtectedTask).
+        pub fn build(self) -> crate::model::ProtectedTask {
+            crate::model::ProtectedTask {
+                task_arn: self.task_arn,
+                protection_enabled: self.protection_enabled.unwrap_or_default(),
+                expiration_date: self.expiration_date,
+            }
+        }
+    }
+}
+impl ProtectedTask {
+    /// Creates a new builder-style object to manufacture [`ProtectedTask`](crate::model::ProtectedTask).
+    pub fn builder() -> crate::model::protected_task::Builder {
+        crate::model::protected_task::Builder::default()
+    }
+}
+
 /// <p>Details on a service within a cluster</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1846,7 +2021,7 @@ pub struct Service {
     /// </ul>
     #[doc(hidden)]
     pub scheduling_strategy: std::option::Option<crate::model::SchedulingStrategy>,
-    /// <p>The deployment controller type the service is using. When using the DescribeServices API, this field is omitted if the service uses the <code>ECS</code> deployment controller type.</p>
+    /// <p>The deployment controller type the service is using. </p>
     #[doc(hidden)]
     pub deployment_controller: std::option::Option<crate::model::DeploymentController>,
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
@@ -1992,7 +2167,7 @@ impl Service {
     pub fn scheduling_strategy(&self) -> std::option::Option<&crate::model::SchedulingStrategy> {
         self.scheduling_strategy.as_ref()
     }
-    /// <p>The deployment controller type the service is using. When using the DescribeServices API, this field is omitted if the service uses the <code>ECS</code> deployment controller type.</p>
+    /// <p>The deployment controller type the service is using. </p>
     pub fn deployment_controller(
         &self,
     ) -> std::option::Option<&crate::model::DeploymentController> {
@@ -2444,12 +2619,12 @@ pub mod service {
             self.scheduling_strategy = input;
             self
         }
-        /// <p>The deployment controller type the service is using. When using the DescribeServices API, this field is omitted if the service uses the <code>ECS</code> deployment controller type.</p>
+        /// <p>The deployment controller type the service is using. </p>
         pub fn deployment_controller(mut self, input: crate::model::DeploymentController) -> Self {
             self.deployment_controller = Some(input);
             self
         }
-        /// <p>The deployment controller type the service is using. When using the DescribeServices API, this field is omitted if the service uses the <code>ECS</code> deployment controller type.</p>
+        /// <p>The deployment controller type the service is using. </p>
         pub fn set_deployment_controller(
             mut self,
             input: std::option::Option<crate::model::DeploymentController>,
@@ -3502,6 +3677,16 @@ pub struct Deployment {
     /// <p>A description of the rollout state of a deployment.</p>
     #[doc(hidden)]
     pub rollout_state_reason: std::option::Option<std::string::String>,
+    /// <p>The details of the Service Connect configuration that's used by this deployment. Compare the configuration between multiple deployments when troubleshooting issues with new deployments.</p>
+    /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
+    /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub service_connect_configuration:
+        std::option::Option<crate::model::ServiceConnectConfiguration>,
+    /// <p>The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery name to a Cloud Map service name.</p>
+    #[doc(hidden)]
+    pub service_connect_resources:
+        std::option::Option<std::vec::Vec<crate::model::ServiceConnectServiceResource>>,
 }
 impl Deployment {
     /// <p>The ID of the deployment.</p>
@@ -3598,6 +3783,20 @@ impl Deployment {
     pub fn rollout_state_reason(&self) -> std::option::Option<&str> {
         self.rollout_state_reason.as_deref()
     }
+    /// <p>The details of the Service Connect configuration that's used by this deployment. Compare the configuration between multiple deployments when troubleshooting issues with new deployments.</p>
+    /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
+    /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn service_connect_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceConnectConfiguration> {
+        self.service_connect_configuration.as_ref()
+    }
+    /// <p>The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery name to a Cloud Map service name.</p>
+    pub fn service_connect_resources(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceConnectServiceResource]> {
+        self.service_connect_resources.as_deref()
+    }
 }
 /// See [`Deployment`](crate::model::Deployment).
 pub mod deployment {
@@ -3622,6 +3821,10 @@ pub mod deployment {
         pub(crate) network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
         pub(crate) rollout_state: std::option::Option<crate::model::DeploymentRolloutState>,
         pub(crate) rollout_state_reason: std::option::Option<std::string::String>,
+        pub(crate) service_connect_configuration:
+            std::option::Option<crate::model::ServiceConnectConfiguration>,
+        pub(crate) service_connect_resources:
+            std::option::Option<std::vec::Vec<crate::model::ServiceConnectServiceResource>>,
     }
     impl Builder {
         /// <p>The ID of the deployment.</p>
@@ -3875,6 +4078,48 @@ pub mod deployment {
             self.rollout_state_reason = input;
             self
         }
+        /// <p>The details of the Service Connect configuration that's used by this deployment. Compare the configuration between multiple deployments when troubleshooting issues with new deployments.</p>
+        /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn service_connect_configuration(
+            mut self,
+            input: crate::model::ServiceConnectConfiguration,
+        ) -> Self {
+            self.service_connect_configuration = Some(input);
+            self
+        }
+        /// <p>The details of the Service Connect configuration that's used by this deployment. Compare the configuration between multiple deployments when troubleshooting issues with new deployments.</p>
+        /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn set_service_connect_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServiceConnectConfiguration>,
+        ) -> Self {
+            self.service_connect_configuration = input;
+            self
+        }
+        /// Appends an item to `service_connect_resources`.
+        ///
+        /// To override the contents of this collection use [`set_service_connect_resources`](Self::set_service_connect_resources).
+        ///
+        /// <p>The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery name to a Cloud Map service name.</p>
+        pub fn service_connect_resources(
+            mut self,
+            input: crate::model::ServiceConnectServiceResource,
+        ) -> Self {
+            let mut v = self.service_connect_resources.unwrap_or_default();
+            v.push(input);
+            self.service_connect_resources = Some(v);
+            self
+        }
+        /// <p>The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery name to a Cloud Map service name.</p>
+        pub fn set_service_connect_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ServiceConnectServiceResource>>,
+        ) -> Self {
+            self.service_connect_resources = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Deployment`](crate::model::Deployment).
         pub fn build(self) -> crate::model::Deployment {
             crate::model::Deployment {
@@ -3894,6 +4139,8 @@ pub mod deployment {
                 network_configuration: self.network_configuration,
                 rollout_state: self.rollout_state,
                 rollout_state_reason: self.rollout_state_reason,
+                service_connect_configuration: self.service_connect_configuration,
+                service_connect_resources: self.service_connect_resources,
             }
         }
     }
@@ -3902,6 +4149,836 @@ impl Deployment {
     /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
     pub fn builder() -> crate::model::deployment::Builder {
         crate::model::deployment::Builder::default()
+    }
+}
+
+/// <p>The Service Connect resource. Each configuration maps a discovery name to a Cloud Map service name. The data is stored in Cloud Map as part of the Service Connect configuration for each discovery name of this Amazon ECS service.</p>
+/// <p>A task can resolve the <code>dnsName</code> for each of the <code>clientAliases</code> of a service. However a task can't resolve the discovery names. If you want to connect to a service, refer to the <code>ServiceConnectConfiguration</code> of that service for the list of <code>clientAliases</code> that you can use.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ServiceConnectServiceResource {
+    /// <p>The discovery name of this Service Connect resource.</p>
+    /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
+    /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+    #[doc(hidden)]
+    pub discovery_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the namespace in Cloud Map that matches the discovery name for this Service Connect resource. You can use this ARN in other integrations with Cloud Map. However, Service Connect can't ensure connectivity outside of Amazon ECS.</p>
+    #[doc(hidden)]
+    pub discovery_arn: std::option::Option<std::string::String>,
+}
+impl ServiceConnectServiceResource {
+    /// <p>The discovery name of this Service Connect resource.</p>
+    /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
+    /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+    pub fn discovery_name(&self) -> std::option::Option<&str> {
+        self.discovery_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the namespace in Cloud Map that matches the discovery name for this Service Connect resource. You can use this ARN in other integrations with Cloud Map. However, Service Connect can't ensure connectivity outside of Amazon ECS.</p>
+    pub fn discovery_arn(&self) -> std::option::Option<&str> {
+        self.discovery_arn.as_deref()
+    }
+}
+/// See [`ServiceConnectServiceResource`](crate::model::ServiceConnectServiceResource).
+pub mod service_connect_service_resource {
+
+    /// A builder for [`ServiceConnectServiceResource`](crate::model::ServiceConnectServiceResource).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) discovery_name: std::option::Option<std::string::String>,
+        pub(crate) discovery_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The discovery name of this Service Connect resource.</p>
+        /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
+        /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+        pub fn discovery_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.discovery_name = Some(input.into());
+            self
+        }
+        /// <p>The discovery name of this Service Connect resource.</p>
+        /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
+        /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+        pub fn set_discovery_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.discovery_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the namespace in Cloud Map that matches the discovery name for this Service Connect resource. You can use this ARN in other integrations with Cloud Map. However, Service Connect can't ensure connectivity outside of Amazon ECS.</p>
+        pub fn discovery_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.discovery_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the namespace in Cloud Map that matches the discovery name for this Service Connect resource. You can use this ARN in other integrations with Cloud Map. However, Service Connect can't ensure connectivity outside of Amazon ECS.</p>
+        pub fn set_discovery_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.discovery_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceConnectServiceResource`](crate::model::ServiceConnectServiceResource).
+        pub fn build(self) -> crate::model::ServiceConnectServiceResource {
+            crate::model::ServiceConnectServiceResource {
+                discovery_name: self.discovery_name,
+                discovery_arn: self.discovery_arn,
+            }
+        }
+    }
+}
+impl ServiceConnectServiceResource {
+    /// Creates a new builder-style object to manufacture [`ServiceConnectServiceResource`](crate::model::ServiceConnectServiceResource).
+    pub fn builder() -> crate::model::service_connect_service_resource::Builder {
+        crate::model::service_connect_service_resource::Builder::default()
+    }
+}
+
+/// <p>The Service Connect configuration of your Amazon ECS service. The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
+/// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ServiceConnectConfiguration {
+    /// <p>Specifies whether to use Service Connect with this service.</p>
+    #[doc(hidden)]
+    pub enabled: bool,
+    /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace for use with Service Connect. The namespace must be in the same Amazon Web Services Region as the Amazon ECS service and cluster. The type of namespace doesn't affect Service Connect. For more information about Cloud Map, see <a href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
+    /// <p>The list of Service Connect service objects. These are names and aliases (also known as endpoints) that are used by other Amazon ECS services to connect to this service. </p>
+    /// <p>This field is not required for a "client" Amazon ECS service that's a member of a namespace only to connect to other services within the namespace. An example of this would be a frontend application that accepts incoming requests from either a load balancer that's attached to the service or by other means.</p>
+    /// <p>An object selects a port from the task definition, assigns a name for the Cloud Map service, and a list of aliases (endpoints) and ports for client applications to refer to this service.</p>
+    #[doc(hidden)]
+    pub services: std::option::Option<std::vec::Vec<crate::model::ServiceConnectService>>,
+    /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
+    /// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. For more information about the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p>
+    /// <p>Understand the following when specifying a log configuration for your containers.</p>
+    /// <ul>
+    /// <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> </li>
+    /// <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li>
+    /// <li> <p>For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container agent must register the available logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li>
+    /// <li> <p>For tasks that are on Fargate, because you don't have access to the underlying infrastructure your tasks are hosted on, any additional software needed must be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub log_configuration: std::option::Option<crate::model::LogConfiguration>,
+}
+impl ServiceConnectConfiguration {
+    /// <p>Specifies whether to use Service Connect with this service.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace for use with Service Connect. The namespace must be in the same Amazon Web Services Region as the Amazon ECS service and cluster. The type of namespace doesn't affect Service Connect. For more information about Cloud Map, see <a href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The list of Service Connect service objects. These are names and aliases (also known as endpoints) that are used by other Amazon ECS services to connect to this service. </p>
+    /// <p>This field is not required for a "client" Amazon ECS service that's a member of a namespace only to connect to other services within the namespace. An example of this would be a frontend application that accepts incoming requests from either a load balancer that's attached to the service or by other means.</p>
+    /// <p>An object selects a port from the task definition, assigns a name for the Cloud Map service, and a list of aliases (endpoints) and ports for client applications to refer to this service.</p>
+    pub fn services(&self) -> std::option::Option<&[crate::model::ServiceConnectService]> {
+        self.services.as_deref()
+    }
+    /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
+    /// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. For more information about the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p>
+    /// <p>Understand the following when specifying a log configuration for your containers.</p>
+    /// <ul>
+    /// <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> </li>
+    /// <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li>
+    /// <li> <p>For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container agent must register the available logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li>
+    /// <li> <p>For tasks that are on Fargate, because you don't have access to the underlying infrastructure your tasks are hosted on, any additional software needed must be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li>
+    /// </ul>
+    pub fn log_configuration(&self) -> std::option::Option<&crate::model::LogConfiguration> {
+        self.log_configuration.as_ref()
+    }
+}
+/// See [`ServiceConnectConfiguration`](crate::model::ServiceConnectConfiguration).
+pub mod service_connect_configuration {
+
+    /// A builder for [`ServiceConnectConfiguration`](crate::model::ServiceConnectConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) namespace: std::option::Option<std::string::String>,
+        pub(crate) services:
+            std::option::Option<std::vec::Vec<crate::model::ServiceConnectService>>,
+        pub(crate) log_configuration: std::option::Option<crate::model::LogConfiguration>,
+    }
+    impl Builder {
+        /// <p>Specifies whether to use Service Connect with this service.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        /// <p>Specifies whether to use Service Connect with this service.</p>
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace for use with Service Connect. The namespace must be in the same Amazon Web Services Region as the Amazon ECS service and cluster. The type of namespace doesn't affect Service Connect. For more information about Cloud Map, see <a href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace = Some(input.into());
+            self
+        }
+        /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace for use with Service Connect. The namespace must be in the same Amazon Web Services Region as the Amazon ECS service and cluster. The type of namespace doesn't affect Service Connect. For more information about Cloud Map, see <a href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace = input;
+            self
+        }
+        /// Appends an item to `services`.
+        ///
+        /// To override the contents of this collection use [`set_services`](Self::set_services).
+        ///
+        /// <p>The list of Service Connect service objects. These are names and aliases (also known as endpoints) that are used by other Amazon ECS services to connect to this service. </p>
+        /// <p>This field is not required for a "client" Amazon ECS service that's a member of a namespace only to connect to other services within the namespace. An example of this would be a frontend application that accepts incoming requests from either a load balancer that's attached to the service or by other means.</p>
+        /// <p>An object selects a port from the task definition, assigns a name for the Cloud Map service, and a list of aliases (endpoints) and ports for client applications to refer to this service.</p>
+        pub fn services(mut self, input: crate::model::ServiceConnectService) -> Self {
+            let mut v = self.services.unwrap_or_default();
+            v.push(input);
+            self.services = Some(v);
+            self
+        }
+        /// <p>The list of Service Connect service objects. These are names and aliases (also known as endpoints) that are used by other Amazon ECS services to connect to this service. </p>
+        /// <p>This field is not required for a "client" Amazon ECS service that's a member of a namespace only to connect to other services within the namespace. An example of this would be a frontend application that accepts incoming requests from either a load balancer that's attached to the service or by other means.</p>
+        /// <p>An object selects a port from the task definition, assigns a name for the Cloud Map service, and a list of aliases (endpoints) and ports for client applications to refer to this service.</p>
+        pub fn set_services(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ServiceConnectService>>,
+        ) -> Self {
+            self.services = input;
+            self
+        }
+        /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
+        /// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. For more information about the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p>
+        /// <p>Understand the following when specifying a log configuration for your containers.</p>
+        /// <ul>
+        /// <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> </li>
+        /// <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li>
+        /// <li> <p>For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container agent must register the available logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li>
+        /// <li> <p>For tasks that are on Fargate, because you don't have access to the underlying infrastructure your tasks are hosted on, any additional software needed must be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li>
+        /// </ul>
+        pub fn log_configuration(mut self, input: crate::model::LogConfiguration) -> Self {
+            self.log_configuration = Some(input);
+            self
+        }
+        /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
+        /// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. For more information about the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p>
+        /// <p>Understand the following when specifying a log configuration for your containers.</p>
+        /// <ul>
+        /// <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> </li>
+        /// <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li>
+        /// <li> <p>For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container agent must register the available logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li>
+        /// <li> <p>For tasks that are on Fargate, because you don't have access to the underlying infrastructure your tasks are hosted on, any additional software needed must be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li>
+        /// </ul>
+        pub fn set_log_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LogConfiguration>,
+        ) -> Self {
+            self.log_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceConnectConfiguration`](crate::model::ServiceConnectConfiguration).
+        pub fn build(self) -> crate::model::ServiceConnectConfiguration {
+            crate::model::ServiceConnectConfiguration {
+                enabled: self.enabled.unwrap_or_default(),
+                namespace: self.namespace,
+                services: self.services,
+                log_configuration: self.log_configuration,
+            }
+        }
+    }
+}
+impl ServiceConnectConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServiceConnectConfiguration`](crate::model::ServiceConnectConfiguration).
+    pub fn builder() -> crate::model::service_connect_configuration::Builder {
+        crate::model::service_connect_configuration::Builder::default()
+    }
+}
+
+/// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
+/// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. For more information about the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p>
+/// <p>Understand the following when specifying a log configuration for your containers.</p>
+/// <ul>
+/// <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> </li>
+/// <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li>
+/// <li> <p>For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container agent must register the available logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li>
+/// <li> <p>For tasks that are on Fargate, because you don't have access to the underlying infrastructure your tasks are hosted on, any additional software needed must be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LogConfiguration {
+    /// <p>The log driver to use for the container.</p>
+    /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+    /// <p>For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>For more information about using the <code>awsfirelens</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+    /// <p>If you have a custom driver that isn't listed, you can fork the Amazon ECS container agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you would like to have included. However, we don't currently provide support for running modified copies of this software.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub log_driver: std::option::Option<crate::model::LogDriver>,
+    /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
+    #[doc(hidden)]
+    pub options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub secret_options: std::option::Option<std::vec::Vec<crate::model::Secret>>,
+}
+impl LogConfiguration {
+    /// <p>The log driver to use for the container.</p>
+    /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+    /// <p>For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>For more information about using the <code>awsfirelens</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+    /// <p>If you have a custom driver that isn't listed, you can fork the Amazon ECS container agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you would like to have included. However, we don't currently provide support for running modified copies of this software.</p>
+    /// </note>
+    pub fn log_driver(&self) -> std::option::Option<&crate::model::LogDriver> {
+        self.log_driver.as_ref()
+    }
+    /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
+    pub fn options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.options.as_ref()
+    }
+    /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn secret_options(&self) -> std::option::Option<&[crate::model::Secret]> {
+        self.secret_options.as_deref()
+    }
+}
+/// See [`LogConfiguration`](crate::model::LogConfiguration).
+pub mod log_configuration {
+
+    /// A builder for [`LogConfiguration`](crate::model::LogConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) log_driver: std::option::Option<crate::model::LogDriver>,
+        pub(crate) options: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) secret_options: std::option::Option<std::vec::Vec<crate::model::Secret>>,
+    }
+    impl Builder {
+        /// <p>The log driver to use for the container.</p>
+        /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+        /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+        /// <p>For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>For more information about using the <code>awsfirelens</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+        /// <p>If you have a custom driver that isn't listed, you can fork the Amazon ECS container agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you would like to have included. However, we don't currently provide support for running modified copies of this software.</p>
+        /// </note>
+        pub fn log_driver(mut self, input: crate::model::LogDriver) -> Self {
+            self.log_driver = Some(input);
+            self
+        }
+        /// <p>The log driver to use for the container.</p>
+        /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+        /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+        /// <p>For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>For more information about using the <code>awsfirelens</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+        /// <p>If you have a custom driver that isn't listed, you can fork the Amazon ECS container agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you would like to have included. However, we don't currently provide support for running modified copies of this software.</p>
+        /// </note>
+        pub fn set_log_driver(
+            mut self,
+            input: std::option::Option<crate::model::LogDriver>,
+        ) -> Self {
+            self.log_driver = input;
+            self
+        }
+        /// Adds a key-value pair to `options`.
+        ///
+        /// To override the contents of this collection use [`set_options`](Self::set_options).
+        ///
+        /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
+        pub fn options(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.options.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.options = Some(hash_map);
+            self
+        }
+        /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
+        pub fn set_options(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.options = input;
+            self
+        }
+        /// Appends an item to `secret_options`.
+        ///
+        /// To override the contents of this collection use [`set_secret_options`](Self::set_secret_options).
+        ///
+        /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn secret_options(mut self, input: crate::model::Secret) -> Self {
+            let mut v = self.secret_options.unwrap_or_default();
+            v.push(input);
+            self.secret_options = Some(v);
+            self
+        }
+        /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn set_secret_options(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Secret>>,
+        ) -> Self {
+            self.secret_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LogConfiguration`](crate::model::LogConfiguration).
+        pub fn build(self) -> crate::model::LogConfiguration {
+            crate::model::LogConfiguration {
+                log_driver: self.log_driver,
+                options: self.options,
+                secret_options: self.secret_options,
+            }
+        }
+    }
+}
+impl LogConfiguration {
+    /// Creates a new builder-style object to manufacture [`LogConfiguration`](crate::model::LogConfiguration).
+    pub fn builder() -> crate::model::log_configuration::Builder {
+        crate::model::log_configuration::Builder::default()
+    }
+}
+
+/// <p>An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways:</p>
+/// <ul>
+/// <li> <p>To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter.</p> </li>
+/// <li> <p>To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter.</p> </li>
+/// </ul>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Secret {
+    /// <p>The name of the secret.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
+    /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+    /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub value_from: std::option::Option<std::string::String>,
+}
+impl Secret {
+    /// <p>The name of the secret.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
+    /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+    /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
+    /// </note>
+    pub fn value_from(&self) -> std::option::Option<&str> {
+        self.value_from.as_deref()
+    }
+}
+/// See [`Secret`](crate::model::Secret).
+pub mod secret {
+
+    /// A builder for [`Secret`](crate::model::Secret).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) value_from: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the secret.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the secret.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
+        /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+        /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
+        /// </note>
+        pub fn value_from(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value_from = Some(input.into());
+            self
+        }
+        /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
+        /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+        /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
+        /// </note>
+        pub fn set_value_from(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value_from = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Secret`](crate::model::Secret).
+        pub fn build(self) -> crate::model::Secret {
+            crate::model::Secret {
+                name: self.name,
+                value_from: self.value_from,
+            }
+        }
+    }
+}
+impl Secret {
+    /// Creates a new builder-style object to manufacture [`Secret`](crate::model::Secret).
+    pub fn builder() -> crate::model::secret::Builder {
+        crate::model::secret::Builder::default()
+    }
+}
+
+/// When writing a match expression against `LogDriver`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let logdriver = unimplemented!();
+/// match logdriver {
+///     LogDriver::Awsfirelens => { /* ... */ },
+///     LogDriver::Awslogs => { /* ... */ },
+///     LogDriver::Fluentd => { /* ... */ },
+///     LogDriver::Gelf => { /* ... */ },
+///     LogDriver::Journald => { /* ... */ },
+///     LogDriver::JsonFile => { /* ... */ },
+///     LogDriver::Splunk => { /* ... */ },
+///     LogDriver::Syslog => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `logdriver` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LogDriver::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LogDriver::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LogDriver::NewFeature` is defined.
+/// Specifically, when `logdriver` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LogDriver::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LogDriver {
+    #[allow(missing_docs)] // documentation missing in model
+    Awsfirelens,
+    #[allow(missing_docs)] // documentation missing in model
+    Awslogs,
+    #[allow(missing_docs)] // documentation missing in model
+    Fluentd,
+    #[allow(missing_docs)] // documentation missing in model
+    Gelf,
+    #[allow(missing_docs)] // documentation missing in model
+    Journald,
+    #[allow(missing_docs)] // documentation missing in model
+    JsonFile,
+    #[allow(missing_docs)] // documentation missing in model
+    Splunk,
+    #[allow(missing_docs)] // documentation missing in model
+    Syslog,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for LogDriver {
+    fn from(s: &str) -> Self {
+        match s {
+            "awsfirelens" => LogDriver::Awsfirelens,
+            "awslogs" => LogDriver::Awslogs,
+            "fluentd" => LogDriver::Fluentd,
+            "gelf" => LogDriver::Gelf,
+            "journald" => LogDriver::Journald,
+            "json-file" => LogDriver::JsonFile,
+            "splunk" => LogDriver::Splunk,
+            "syslog" => LogDriver::Syslog,
+            other => LogDriver::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for LogDriver {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LogDriver::from(s))
+    }
+}
+impl LogDriver {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LogDriver::Awsfirelens => "awsfirelens",
+            LogDriver::Awslogs => "awslogs",
+            LogDriver::Fluentd => "fluentd",
+            LogDriver::Gelf => "gelf",
+            LogDriver::Journald => "journald",
+            LogDriver::JsonFile => "json-file",
+            LogDriver::Splunk => "splunk",
+            LogDriver::Syslog => "syslog",
+            LogDriver::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "awsfirelens",
+            "awslogs",
+            "fluentd",
+            "gelf",
+            "journald",
+            "json-file",
+            "splunk",
+            "syslog",
+        ]
+    }
+}
+impl AsRef<str> for LogDriver {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The Service Connect service object configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ServiceConnectService {
+    /// <p>The <code>portName</code> must match the name of one of the <code>portMappings</code> from all the containers in the task definition of this Amazon ECS service.</p>
+    #[doc(hidden)]
+    pub port_name: std::option::Option<std::string::String>,
+    /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
+    /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+    #[doc(hidden)]
+    pub discovery_name: std::option::Option<std::string::String>,
+    /// <p>The list of client aliases for this Service Connect service. You use these to assign names that can be used by client applications. The maximum number of client aliases that you can have in this list is 1.</p>
+    /// <p>Each alias ("endpoint") is a fully-qualified name and port number that other Amazon ECS tasks ("clients") can use to connect to this service.</p>
+    /// <p>Each name and port mapping must be unique within the namespace.</p>
+    /// <p>For each <code>ServiceConnectService</code>, you must provide at least one <code>clientAlias</code> with one <code>port</code>.</p>
+    #[doc(hidden)]
+    pub client_aliases: std::option::Option<std::vec::Vec<crate::model::ServiceConnectClientAlias>>,
+    /// <p>The port number for the Service Connect proxy to listen on.</p>
+    /// <p>Use the value of this field to bypass the proxy for traffic on the port number specified in the named <code>portMapping</code> in the task definition of this application, and then use it in your VPC security groups to allow traffic into the proxy for this Amazon ECS service.</p>
+    /// <p>In <code>awsvpc</code> mode and Fargate, the default value is the container port number. The container port number is in the <code>portMapping</code> in the task definition. In bridge mode, the default value is the ephemeral port of the Service Connect proxy.</p>
+    #[doc(hidden)]
+    pub ingress_port_override: std::option::Option<i32>,
+}
+impl ServiceConnectService {
+    /// <p>The <code>portName</code> must match the name of one of the <code>portMappings</code> from all the containers in the task definition of this Amazon ECS service.</p>
+    pub fn port_name(&self) -> std::option::Option<&str> {
+        self.port_name.as_deref()
+    }
+    /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
+    /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+    pub fn discovery_name(&self) -> std::option::Option<&str> {
+        self.discovery_name.as_deref()
+    }
+    /// <p>The list of client aliases for this Service Connect service. You use these to assign names that can be used by client applications. The maximum number of client aliases that you can have in this list is 1.</p>
+    /// <p>Each alias ("endpoint") is a fully-qualified name and port number that other Amazon ECS tasks ("clients") can use to connect to this service.</p>
+    /// <p>Each name and port mapping must be unique within the namespace.</p>
+    /// <p>For each <code>ServiceConnectService</code>, you must provide at least one <code>clientAlias</code> with one <code>port</code>.</p>
+    pub fn client_aliases(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceConnectClientAlias]> {
+        self.client_aliases.as_deref()
+    }
+    /// <p>The port number for the Service Connect proxy to listen on.</p>
+    /// <p>Use the value of this field to bypass the proxy for traffic on the port number specified in the named <code>portMapping</code> in the task definition of this application, and then use it in your VPC security groups to allow traffic into the proxy for this Amazon ECS service.</p>
+    /// <p>In <code>awsvpc</code> mode and Fargate, the default value is the container port number. The container port number is in the <code>portMapping</code> in the task definition. In bridge mode, the default value is the ephemeral port of the Service Connect proxy.</p>
+    pub fn ingress_port_override(&self) -> std::option::Option<i32> {
+        self.ingress_port_override
+    }
+}
+/// See [`ServiceConnectService`](crate::model::ServiceConnectService).
+pub mod service_connect_service {
+
+    /// A builder for [`ServiceConnectService`](crate::model::ServiceConnectService).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) port_name: std::option::Option<std::string::String>,
+        pub(crate) discovery_name: std::option::Option<std::string::String>,
+        pub(crate) client_aliases:
+            std::option::Option<std::vec::Vec<crate::model::ServiceConnectClientAlias>>,
+        pub(crate) ingress_port_override: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The <code>portName</code> must match the name of one of the <code>portMappings</code> from all the containers in the task definition of this Amazon ECS service.</p>
+        pub fn port_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.port_name = Some(input.into());
+            self
+        }
+        /// <p>The <code>portName</code> must match the name of one of the <code>portMappings</code> from all the containers in the task definition of this Amazon ECS service.</p>
+        pub fn set_port_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.port_name = input;
+            self
+        }
+        /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
+        /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+        pub fn discovery_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.discovery_name = Some(input.into());
+            self
+        }
+        /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
+        /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+        pub fn set_discovery_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.discovery_name = input;
+            self
+        }
+        /// Appends an item to `client_aliases`.
+        ///
+        /// To override the contents of this collection use [`set_client_aliases`](Self::set_client_aliases).
+        ///
+        /// <p>The list of client aliases for this Service Connect service. You use these to assign names that can be used by client applications. The maximum number of client aliases that you can have in this list is 1.</p>
+        /// <p>Each alias ("endpoint") is a fully-qualified name and port number that other Amazon ECS tasks ("clients") can use to connect to this service.</p>
+        /// <p>Each name and port mapping must be unique within the namespace.</p>
+        /// <p>For each <code>ServiceConnectService</code>, you must provide at least one <code>clientAlias</code> with one <code>port</code>.</p>
+        pub fn client_aliases(mut self, input: crate::model::ServiceConnectClientAlias) -> Self {
+            let mut v = self.client_aliases.unwrap_or_default();
+            v.push(input);
+            self.client_aliases = Some(v);
+            self
+        }
+        /// <p>The list of client aliases for this Service Connect service. You use these to assign names that can be used by client applications. The maximum number of client aliases that you can have in this list is 1.</p>
+        /// <p>Each alias ("endpoint") is a fully-qualified name and port number that other Amazon ECS tasks ("clients") can use to connect to this service.</p>
+        /// <p>Each name and port mapping must be unique within the namespace.</p>
+        /// <p>For each <code>ServiceConnectService</code>, you must provide at least one <code>clientAlias</code> with one <code>port</code>.</p>
+        pub fn set_client_aliases(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ServiceConnectClientAlias>>,
+        ) -> Self {
+            self.client_aliases = input;
+            self
+        }
+        /// <p>The port number for the Service Connect proxy to listen on.</p>
+        /// <p>Use the value of this field to bypass the proxy for traffic on the port number specified in the named <code>portMapping</code> in the task definition of this application, and then use it in your VPC security groups to allow traffic into the proxy for this Amazon ECS service.</p>
+        /// <p>In <code>awsvpc</code> mode and Fargate, the default value is the container port number. The container port number is in the <code>portMapping</code> in the task definition. In bridge mode, the default value is the ephemeral port of the Service Connect proxy.</p>
+        pub fn ingress_port_override(mut self, input: i32) -> Self {
+            self.ingress_port_override = Some(input);
+            self
+        }
+        /// <p>The port number for the Service Connect proxy to listen on.</p>
+        /// <p>Use the value of this field to bypass the proxy for traffic on the port number specified in the named <code>portMapping</code> in the task definition of this application, and then use it in your VPC security groups to allow traffic into the proxy for this Amazon ECS service.</p>
+        /// <p>In <code>awsvpc</code> mode and Fargate, the default value is the container port number. The container port number is in the <code>portMapping</code> in the task definition. In bridge mode, the default value is the ephemeral port of the Service Connect proxy.</p>
+        pub fn set_ingress_port_override(mut self, input: std::option::Option<i32>) -> Self {
+            self.ingress_port_override = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceConnectService`](crate::model::ServiceConnectService).
+        pub fn build(self) -> crate::model::ServiceConnectService {
+            crate::model::ServiceConnectService {
+                port_name: self.port_name,
+                discovery_name: self.discovery_name,
+                client_aliases: self.client_aliases,
+                ingress_port_override: self.ingress_port_override,
+            }
+        }
+    }
+}
+impl ServiceConnectService {
+    /// Creates a new builder-style object to manufacture [`ServiceConnectService`](crate::model::ServiceConnectService).
+    pub fn builder() -> crate::model::service_connect_service::Builder {
+        crate::model::service_connect_service::Builder::default()
+    }
+}
+
+/// <p>Each alias ("endpoint") is a fully-qualified name and port number that other tasks ("clients") can use to connect to this service.</p>
+/// <p>Each name and port mapping must be unique within the namespace.</p>
+/// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ServiceConnectClientAlias {
+    /// <p>The listening port number for the Service Connect proxy. This port is available inside of all of the tasks within the same namespace.</p>
+    /// <p>To avoid changing your applications in client Amazon ECS services, set this to the same port that the client application uses by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub port: std::option::Option<i32>,
+    /// <p>The <code>dnsName</code> is the name that you use in the applications of client tasks to connect to this service. The name must be a valid DNS name but doesn't need to be fully-qualified. The name can include up to 127 characters. The name can include lowercase letters, numbers, underscores (_), hyphens (-), and periods (.). The name can't start with a hyphen.</p>
+    /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+    /// <p>To avoid changing your applications in client Amazon ECS services, set this to the same name that the client application uses by default. For example, a few common names are <code>database</code>, <code>db</code>, or the lowercase name of a database, such as <code>mysql</code> or <code>redis</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub dns_name: std::option::Option<std::string::String>,
+}
+impl ServiceConnectClientAlias {
+    /// <p>The listening port number for the Service Connect proxy. This port is available inside of all of the tasks within the same namespace.</p>
+    /// <p>To avoid changing your applications in client Amazon ECS services, set this to the same port that the client application uses by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The <code>dnsName</code> is the name that you use in the applications of client tasks to connect to this service. The name must be a valid DNS name but doesn't need to be fully-qualified. The name can include up to 127 characters. The name can include lowercase letters, numbers, underscores (_), hyphens (-), and periods (.). The name can't start with a hyphen.</p>
+    /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+    /// <p>To avoid changing your applications in client Amazon ECS services, set this to the same name that the client application uses by default. For example, a few common names are <code>database</code>, <code>db</code>, or the lowercase name of a database, such as <code>mysql</code> or <code>redis</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+}
+/// See [`ServiceConnectClientAlias`](crate::model::ServiceConnectClientAlias).
+pub mod service_connect_client_alias {
+
+    /// A builder for [`ServiceConnectClientAlias`](crate::model::ServiceConnectClientAlias).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) port: std::option::Option<i32>,
+        pub(crate) dns_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The listening port number for the Service Connect proxy. This port is available inside of all of the tasks within the same namespace.</p>
+        /// <p>To avoid changing your applications in client Amazon ECS services, set this to the same port that the client application uses by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p>The listening port number for the Service Connect proxy. This port is available inside of all of the tasks within the same namespace.</p>
+        /// <p>To avoid changing your applications in client Amazon ECS services, set this to the same port that the client application uses by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
+        /// <p>The <code>dnsName</code> is the name that you use in the applications of client tasks to connect to this service. The name must be a valid DNS name but doesn't need to be fully-qualified. The name can include up to 127 characters. The name can include lowercase letters, numbers, underscores (_), hyphens (-), and periods (.). The name can't start with a hyphen.</p>
+        /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+        /// <p>To avoid changing your applications in client Amazon ECS services, set this to the same name that the client application uses by default. For example, a few common names are <code>database</code>, <code>db</code>, or the lowercase name of a database, such as <code>mysql</code> or <code>redis</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dns_name = Some(input.into());
+            self
+        }
+        /// <p>The <code>dnsName</code> is the name that you use in the applications of client tasks to connect to this service. The name must be a valid DNS name but doesn't need to be fully-qualified. The name can include up to 127 characters. The name can include lowercase letters, numbers, underscores (_), hyphens (-), and periods (.). The name can't start with a hyphen.</p>
+        /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+        /// <p>To avoid changing your applications in client Amazon ECS services, set this to the same name that the client application uses by default. For example, a few common names are <code>database</code>, <code>db</code>, or the lowercase name of a database, such as <code>mysql</code> or <code>redis</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dns_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceConnectClientAlias`](crate::model::ServiceConnectClientAlias).
+        pub fn build(self) -> crate::model::ServiceConnectClientAlias {
+            crate::model::ServiceConnectClientAlias {
+                port: self.port,
+                dns_name: self.dns_name,
+            }
+        }
+    }
+}
+impl ServiceConnectClientAlias {
+    /// Creates a new builder-style object to manufacture [`ServiceConnectClientAlias`](crate::model::ServiceConnectClientAlias).
+    pub fn builder() -> crate::model::service_connect_client_alias::Builder {
+        crate::model::service_connect_client_alias::Builder::default()
     }
 }
 
@@ -4031,6 +5108,9 @@ pub struct DeploymentConfiguration {
     /// <p>If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default value and is used to define the lower limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is running tasks that use the Fargate launch type, the minimum healthy percent value is not used, although it is returned when describing your service.</p>
     #[doc(hidden)]
     pub minimum_healthy_percent: std::option::Option<i32>,
+    /// <p>Information about the CloudWatch alarms.</p>
+    #[doc(hidden)]
+    pub alarms: std::option::Option<crate::model::DeploymentAlarms>,
 }
 impl DeploymentConfiguration {
     /// <note>
@@ -4063,6 +5143,10 @@ impl DeploymentConfiguration {
     pub fn minimum_healthy_percent(&self) -> std::option::Option<i32> {
         self.minimum_healthy_percent
     }
+    /// <p>Information about the CloudWatch alarms.</p>
+    pub fn alarms(&self) -> std::option::Option<&crate::model::DeploymentAlarms> {
+        self.alarms.as_ref()
+    }
 }
 /// See [`DeploymentConfiguration`](crate::model::DeploymentConfiguration).
 pub mod deployment_configuration {
@@ -4074,6 +5158,7 @@ pub mod deployment_configuration {
             std::option::Option<crate::model::DeploymentCircuitBreaker>,
         pub(crate) maximum_percent: std::option::Option<i32>,
         pub(crate) minimum_healthy_percent: std::option::Option<i32>,
+        pub(crate) alarms: std::option::Option<crate::model::DeploymentAlarms>,
     }
     impl Builder {
         /// <note>
@@ -4144,12 +5229,26 @@ pub mod deployment_configuration {
             self.minimum_healthy_percent = input;
             self
         }
+        /// <p>Information about the CloudWatch alarms.</p>
+        pub fn alarms(mut self, input: crate::model::DeploymentAlarms) -> Self {
+            self.alarms = Some(input);
+            self
+        }
+        /// <p>Information about the CloudWatch alarms.</p>
+        pub fn set_alarms(
+            mut self,
+            input: std::option::Option<crate::model::DeploymentAlarms>,
+        ) -> Self {
+            self.alarms = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeploymentConfiguration`](crate::model::DeploymentConfiguration).
         pub fn build(self) -> crate::model::DeploymentConfiguration {
             crate::model::DeploymentConfiguration {
                 deployment_circuit_breaker: self.deployment_circuit_breaker,
                 maximum_percent: self.maximum_percent,
                 minimum_healthy_percent: self.minimum_healthy_percent,
+                alarms: self.alarms,
             }
         }
     }
@@ -4158,6 +5257,104 @@ impl DeploymentConfiguration {
     /// Creates a new builder-style object to manufacture [`DeploymentConfiguration`](crate::model::DeploymentConfiguration).
     pub fn builder() -> crate::model::deployment_configuration::Builder {
         crate::model::deployment_configuration::Builder::default()
+    }
+}
+
+/// <p>One of the methods which provide a way for you to quickly identify when a deployment has failed, and then to optionally roll back the failure to the last working deployment.</p>
+/// <p>When the alarms are generated, Amazon ECS sets the service deployment to failed. Set the rollback parameter to have Amazon ECS to roll back your service to the last completed deployment after a failure.</p>
+/// <p>You can only use the <code>DeploymentAlarms</code> method to detect failures when the <code>DeploymentController</code> is set to <code>ECS</code> (rolling update).</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeploymentAlarms {
+    /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
+    #[doc(hidden)]
+    pub alarm_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
+    #[doc(hidden)]
+    pub enable: bool,
+    /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+    #[doc(hidden)]
+    pub rollback: bool,
+}
+impl DeploymentAlarms {
+    /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
+    pub fn alarm_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.alarm_names.as_deref()
+    }
+    /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
+    pub fn enable(&self) -> bool {
+        self.enable
+    }
+    /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+    pub fn rollback(&self) -> bool {
+        self.rollback
+    }
+}
+/// See [`DeploymentAlarms`](crate::model::DeploymentAlarms).
+pub mod deployment_alarms {
+
+    /// A builder for [`DeploymentAlarms`](crate::model::DeploymentAlarms).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) alarm_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) enable: std::option::Option<bool>,
+        pub(crate) rollback: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// Appends an item to `alarm_names`.
+        ///
+        /// To override the contents of this collection use [`set_alarm_names`](Self::set_alarm_names).
+        ///
+        /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
+        pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.alarm_names.unwrap_or_default();
+            v.push(input.into());
+            self.alarm_names = Some(v);
+            self
+        }
+        /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
+        pub fn set_alarm_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.alarm_names = input;
+            self
+        }
+        /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
+        pub fn enable(mut self, input: bool) -> Self {
+            self.enable = Some(input);
+            self
+        }
+        /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
+        pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable = input;
+            self
+        }
+        /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+        pub fn rollback(mut self, input: bool) -> Self {
+            self.rollback = Some(input);
+            self
+        }
+        /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+        pub fn set_rollback(mut self, input: std::option::Option<bool>) -> Self {
+            self.rollback = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeploymentAlarms`](crate::model::DeploymentAlarms).
+        pub fn build(self) -> crate::model::DeploymentAlarms {
+            crate::model::DeploymentAlarms {
+                alarm_names: self.alarm_names,
+                enable: self.enable.unwrap_or_default(),
+                rollback: self.rollback.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl DeploymentAlarms {
+    /// Creates a new builder-style object to manufacture [`DeploymentAlarms`](crate::model::DeploymentAlarms).
+    pub fn builder() -> crate::model::deployment_alarms::Builder {
+        crate::model::deployment_alarms::Builder::default()
     }
 }
 
@@ -4171,7 +5368,7 @@ pub struct DeploymentCircuitBreaker {
     /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
     #[doc(hidden)]
     pub enable: bool,
-    /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+    /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     #[doc(hidden)]
     pub rollback: bool,
 }
@@ -4180,7 +5377,7 @@ impl DeploymentCircuitBreaker {
     pub fn enable(&self) -> bool {
         self.enable
     }
-    /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+    /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn rollback(&self) -> bool {
         self.rollback
     }
@@ -4205,12 +5402,12 @@ pub mod deployment_circuit_breaker {
             self.enable = input;
             self
         }
-        /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+        /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
         pub fn rollback(mut self, input: bool) -> Self {
             self.rollback = Some(input);
             self
         }
-        /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+        /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
         pub fn set_rollback(mut self, input: std::option::Option<bool>) -> Self {
             self.rollback = input;
             self
@@ -4228,92 +5425,6 @@ impl DeploymentCircuitBreaker {
     /// Creates a new builder-style object to manufacture [`DeploymentCircuitBreaker`](crate::model::DeploymentCircuitBreaker).
     pub fn builder() -> crate::model::deployment_circuit_breaker::Builder {
         crate::model::deployment_circuit_breaker::Builder::default()
-    }
-}
-
-/// <p>A failed resource. For a list of common causes, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Failure {
-    /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The reason for the failure.</p>
-    #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
-    /// <p>The details of the failure.</p>
-    #[doc(hidden)]
-    pub detail: std::option::Option<std::string::String>,
-}
-impl Failure {
-    /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
-    }
-    /// <p>The reason for the failure.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
-        self.reason.as_deref()
-    }
-    /// <p>The details of the failure.</p>
-    pub fn detail(&self) -> std::option::Option<&str> {
-        self.detail.as_deref()
-    }
-}
-/// See [`Failure`](crate::model::Failure).
-pub mod failure {
-
-    /// A builder for [`Failure`](crate::model::Failure).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) reason: std::option::Option<std::string::String>,
-        pub(crate) detail: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>The reason for the failure.</p>
-        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-            self.reason = Some(input.into());
-            self
-        }
-        /// <p>The reason for the failure.</p>
-        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
-        }
-        /// <p>The details of the failure.</p>
-        pub fn detail(mut self, input: impl Into<std::string::String>) -> Self {
-            self.detail = Some(input.into());
-            self
-        }
-        /// <p>The details of the failure.</p>
-        pub fn set_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.detail = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Failure`](crate::model::Failure).
-        pub fn build(self) -> crate::model::Failure {
-            crate::model::Failure {
-                arn: self.arn,
-                reason: self.reason,
-                detail: self.detail,
-            }
-        }
-    }
-}
-impl Failure {
-    /// Creates a new builder-style object to manufacture [`Failure`](crate::model::Failure).
-    pub fn builder() -> crate::model::failure::Builder {
-        crate::model::failure::Builder::default()
     }
 }
 
@@ -5381,7 +6492,7 @@ pub struct Attribute {
     /// <p>The name of the attribute. The <code>name</code> must contain between 1 and 128 characters. The name may contain letters (uppercase and lowercase), numbers, hyphens (-), underscores (_), forward slashes (/), back slashes (\), or periods (.).</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value of the attribute. The <code>value</code> must contain between 1 and 128 characters. It can contain letters (uppercase and lowercase), numbers, hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/), back slashes (\), colons (:), or spaces. The value can't can't start or end with a space.</p>
+    /// <p>The value of the attribute. The <code>value</code> must contain between 1 and 128 characters. It can contain letters (uppercase and lowercase), numbers, hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/), back slashes (\), colons (:), or spaces. The value can't start or end with a space.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The type of the target to attach the attribute with. This parameter is required if you use the short form ID for a resource instead of the full ARN.</p>
@@ -5396,7 +6507,7 @@ impl Attribute {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The value of the attribute. The <code>value</code> must contain between 1 and 128 characters. It can contain letters (uppercase and lowercase), numbers, hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/), back slashes (\), colons (:), or spaces. The value can't can't start or end with a space.</p>
+    /// <p>The value of the attribute. The <code>value</code> must contain between 1 and 128 characters. It can contain letters (uppercase and lowercase), numbers, hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/), back slashes (\), colons (:), or spaces. The value can't start or end with a space.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -5431,12 +6542,12 @@ pub mod attribute {
             self.name = input;
             self
         }
-        /// <p>The value of the attribute. The <code>value</code> must contain between 1 and 128 characters. It can contain letters (uppercase and lowercase), numbers, hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/), back slashes (\), colons (:), or spaces. The value can't can't start or end with a space.</p>
+        /// <p>The value of the attribute. The <code>value</code> must contain between 1 and 128 characters. It can contain letters (uppercase and lowercase), numbers, hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/), back slashes (\), colons (:), or spaces. The value can't start or end with a space.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of the attribute. The <code>value</code> must contain between 1 and 128 characters. It can contain letters (uppercase and lowercase), numbers, hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/), back slashes (\), colons (:), or spaces. The value can't can't start or end with a space.</p>
+        /// <p>The value of the attribute. The <code>value</code> must contain between 1 and 128 characters. It can contain letters (uppercase and lowercase), numbers, hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/), back slashes (\), colons (:), or spaces. The value can't start or end with a space.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -6160,6 +7271,10 @@ pub struct Cluster {
     /// </dl>
     #[doc(hidden)]
     pub attachments_status: std::option::Option<std::string::String>,
+    /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
+    /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub service_connect_defaults: std::option::Option<crate::model::ClusterServiceConnectDefaults>,
 }
 impl Cluster {
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
@@ -6296,6 +7411,13 @@ impl Cluster {
     pub fn attachments_status(&self) -> std::option::Option<&str> {
         self.attachments_status.as_deref()
     }
+    /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
+    /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn service_connect_defaults(
+        &self,
+    ) -> std::option::Option<&crate::model::ClusterServiceConnectDefaults> {
+        self.service_connect_defaults.as_ref()
+    }
 }
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
@@ -6319,6 +7441,8 @@ pub mod cluster {
             std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
         pub(crate) attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
         pub(crate) attachments_status: std::option::Option<std::string::String>,
+        pub(crate) service_connect_defaults:
+            std::option::Option<crate::model::ClusterServiceConnectDefaults>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the cluster. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
@@ -6681,6 +7805,24 @@ pub mod cluster {
             self.attachments_status = input;
             self
         }
+        /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn service_connect_defaults(
+            mut self,
+            input: crate::model::ClusterServiceConnectDefaults,
+        ) -> Self {
+            self.service_connect_defaults = Some(input);
+            self
+        }
+        /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn set_service_connect_defaults(
+            mut self,
+            input: std::option::Option<crate::model::ClusterServiceConnectDefaults>,
+        ) -> Self {
+            self.service_connect_defaults = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster).
         pub fn build(self) -> crate::model::Cluster {
             crate::model::Cluster {
@@ -6701,6 +7843,7 @@ pub mod cluster {
                 default_capacity_provider_strategy: self.default_capacity_provider_strategy,
                 attachments: self.attachments,
                 attachments_status: self.attachments_status,
+                service_connect_defaults: self.service_connect_defaults,
             }
         }
     }
@@ -6709,6 +7852,55 @@ impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
     pub fn builder() -> crate::model::cluster::Builder {
         crate::model::cluster::Builder::default()
+    }
+}
+
+/// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
+/// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClusterServiceConnectDefaults {
+    /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a service and don't specify a Service Connect configuration, this namespace is used.</p>
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
+}
+impl ClusterServiceConnectDefaults {
+    /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a service and don't specify a Service Connect configuration, this namespace is used.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
+/// See [`ClusterServiceConnectDefaults`](crate::model::ClusterServiceConnectDefaults).
+pub mod cluster_service_connect_defaults {
+
+    /// A builder for [`ClusterServiceConnectDefaults`](crate::model::ClusterServiceConnectDefaults).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) namespace: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a service and don't specify a Service Connect configuration, this namespace is used.</p>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace = Some(input.into());
+            self
+        }
+        /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a service and don't specify a Service Connect configuration, this namespace is used.</p>
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClusterServiceConnectDefaults`](crate::model::ClusterServiceConnectDefaults).
+        pub fn build(self) -> crate::model::ClusterServiceConnectDefaults {
+            crate::model::ClusterServiceConnectDefaults {
+                namespace: self.namespace,
+            }
+        }
+    }
+}
+impl ClusterServiceConnectDefaults {
+    /// Creates a new builder-style object to manufacture [`ClusterServiceConnectDefaults`](crate::model::ClusterServiceConnectDefaults).
+    pub fn builder() -> crate::model::cluster_service_connect_defaults::Builder {
+        crate::model::cluster_service_connect_defaults::Builder::default()
     }
 }
 
@@ -7293,6 +8485,71 @@ impl ExecuteCommandLogging {
 impl AsRef<str> for ExecuteCommandLogging {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
+/// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClusterServiceConnectDefaultsRequest {
+    /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you create a service and don't specify a Service Connect configuration. The namespace name can include up to 1024 characters. The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;), or slash (/).</p>
+    /// <p>If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is supported. The namespace must be in this account and this Amazon Web Services Region.</p>
+    /// <p>If you enter a new name, a Cloud Map namespace will be created. Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance discovery only. This instance discovery method is the "HTTP" namespace type in the Command Line Interface. Other types of instance discovery aren't used by Service Connect.</p>
+    /// <p>If you update the service with an empty string <code>""</code> for the namespace name, the cluster configuration for Service Connect is removed. Note that the namespace will remain in Cloud Map and must be deleted separately.</p>
+    /// <p>For more information about Cloud Map, see <a href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
+}
+impl ClusterServiceConnectDefaultsRequest {
+    /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you create a service and don't specify a Service Connect configuration. The namespace name can include up to 1024 characters. The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;), or slash (/).</p>
+    /// <p>If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is supported. The namespace must be in this account and this Amazon Web Services Region.</p>
+    /// <p>If you enter a new name, a Cloud Map namespace will be created. Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance discovery only. This instance discovery method is the "HTTP" namespace type in the Command Line Interface. Other types of instance discovery aren't used by Service Connect.</p>
+    /// <p>If you update the service with an empty string <code>""</code> for the namespace name, the cluster configuration for Service Connect is removed. Note that the namespace will remain in Cloud Map and must be deleted separately.</p>
+    /// <p>For more information about Cloud Map, see <a href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
+/// See [`ClusterServiceConnectDefaultsRequest`](crate::model::ClusterServiceConnectDefaultsRequest).
+pub mod cluster_service_connect_defaults_request {
+
+    /// A builder for [`ClusterServiceConnectDefaultsRequest`](crate::model::ClusterServiceConnectDefaultsRequest).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) namespace: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you create a service and don't specify a Service Connect configuration. The namespace name can include up to 1024 characters. The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;), or slash (/).</p>
+        /// <p>If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is supported. The namespace must be in this account and this Amazon Web Services Region.</p>
+        /// <p>If you enter a new name, a Cloud Map namespace will be created. Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance discovery only. This instance discovery method is the "HTTP" namespace type in the Command Line Interface. Other types of instance discovery aren't used by Service Connect.</p>
+        /// <p>If you update the service with an empty string <code>""</code> for the namespace name, the cluster configuration for Service Connect is removed. Note that the namespace will remain in Cloud Map and must be deleted separately.</p>
+        /// <p>For more information about Cloud Map, see <a href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace = Some(input.into());
+            self
+        }
+        /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you create a service and don't specify a Service Connect configuration. The namespace name can include up to 1024 characters. The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;), or slash (/).</p>
+        /// <p>If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is supported. The namespace must be in this account and this Amazon Web Services Region.</p>
+        /// <p>If you enter a new name, a Cloud Map namespace will be created. Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance discovery only. This instance discovery method is the "HTTP" namespace type in the Command Line Interface. Other types of instance discovery aren't used by Service Connect.</p>
+        /// <p>If you update the service with an empty string <code>""</code> for the namespace name, the cluster configuration for Service Connect is removed. Note that the namespace will remain in Cloud Map and must be deleted separately.</p>
+        /// <p>For more information about Cloud Map, see <a href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClusterServiceConnectDefaultsRequest`](crate::model::ClusterServiceConnectDefaultsRequest).
+        pub fn build(self) -> crate::model::ClusterServiceConnectDefaultsRequest {
+            crate::model::ClusterServiceConnectDefaultsRequest {
+                namespace: self.namespace,
+            }
+        }
+    }
+}
+impl ClusterServiceConnectDefaultsRequest {
+    /// Creates a new builder-style object to manufacture [`ClusterServiceConnectDefaultsRequest`](crate::model::ClusterServiceConnectDefaultsRequest).
+    pub fn builder() -> crate::model::cluster_service_connect_defaults_request::Builder {
+        crate::model::cluster_service_connect_defaults_request::Builder::default()
     }
 }
 
@@ -7951,10 +9208,12 @@ pub struct ManagedScaling {
     /// <p>The target capacity value for the capacity provider. The specified value must be greater than <code>0</code> and less than or equal to <code>100</code>. A value of <code>100</code> results in the Amazon EC2 instances in your Auto Scaling group being completely used.</p>
     #[doc(hidden)]
     pub target_capacity: std::option::Option<i32>,
-    /// <p>The minimum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter is omitted, the default value of <code>1</code> is used.</p>
+    /// <p>The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is not affected by this parameter If this parameter is omitted, the default value of <code>1</code> is used.</p>
+    /// <p>When additional capacity is required, Amazon ECS will scale up the minimum scaling step size even if the actual demand is less than the minimum scaling step size.</p>
+    /// <p>If you use a capacity provider with an Auto Scaling group configured with more than one Amazon EC2 instance type or Availability Zone, Amazon ECS will scale up by the exact minimum scaling step size value and will ignore both the maximum scaling step size as well as the capacity demand.</p>
     #[doc(hidden)]
     pub minimum_scaling_step_size: std::option::Option<i32>,
-    /// <p>The maximum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter is omitted, the default value of <code>10000</code> is used.</p>
+    /// <p>The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is not affected by this parameter. If this parameter is omitted, the default value of <code>1</code> is used.</p>
     #[doc(hidden)]
     pub maximum_scaling_step_size: std::option::Option<i32>,
     /// <p>The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch metrics for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code> seconds is used.</p>
@@ -7970,11 +9229,13 @@ impl ManagedScaling {
     pub fn target_capacity(&self) -> std::option::Option<i32> {
         self.target_capacity
     }
-    /// <p>The minimum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter is omitted, the default value of <code>1</code> is used.</p>
+    /// <p>The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is not affected by this parameter If this parameter is omitted, the default value of <code>1</code> is used.</p>
+    /// <p>When additional capacity is required, Amazon ECS will scale up the minimum scaling step size even if the actual demand is less than the minimum scaling step size.</p>
+    /// <p>If you use a capacity provider with an Auto Scaling group configured with more than one Amazon EC2 instance type or Availability Zone, Amazon ECS will scale up by the exact minimum scaling step size value and will ignore both the maximum scaling step size as well as the capacity demand.</p>
     pub fn minimum_scaling_step_size(&self) -> std::option::Option<i32> {
         self.minimum_scaling_step_size
     }
-    /// <p>The maximum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter is omitted, the default value of <code>10000</code> is used.</p>
+    /// <p>The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is not affected by this parameter. If this parameter is omitted, the default value of <code>1</code> is used.</p>
     pub fn maximum_scaling_step_size(&self) -> std::option::Option<i32> {
         self.maximum_scaling_step_size
     }
@@ -8019,22 +9280,26 @@ pub mod managed_scaling {
             self.target_capacity = input;
             self
         }
-        /// <p>The minimum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter is omitted, the default value of <code>1</code> is used.</p>
+        /// <p>The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is not affected by this parameter If this parameter is omitted, the default value of <code>1</code> is used.</p>
+        /// <p>When additional capacity is required, Amazon ECS will scale up the minimum scaling step size even if the actual demand is less than the minimum scaling step size.</p>
+        /// <p>If you use a capacity provider with an Auto Scaling group configured with more than one Amazon EC2 instance type or Availability Zone, Amazon ECS will scale up by the exact minimum scaling step size value and will ignore both the maximum scaling step size as well as the capacity demand.</p>
         pub fn minimum_scaling_step_size(mut self, input: i32) -> Self {
             self.minimum_scaling_step_size = Some(input);
             self
         }
-        /// <p>The minimum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter is omitted, the default value of <code>1</code> is used.</p>
+        /// <p>The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is not affected by this parameter If this parameter is omitted, the default value of <code>1</code> is used.</p>
+        /// <p>When additional capacity is required, Amazon ECS will scale up the minimum scaling step size even if the actual demand is less than the minimum scaling step size.</p>
+        /// <p>If you use a capacity provider with an Auto Scaling group configured with more than one Amazon EC2 instance type or Availability Zone, Amazon ECS will scale up by the exact minimum scaling step size value and will ignore both the maximum scaling step size as well as the capacity demand.</p>
         pub fn set_minimum_scaling_step_size(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_scaling_step_size = input;
             self
         }
-        /// <p>The maximum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter is omitted, the default value of <code>10000</code> is used.</p>
+        /// <p>The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is not affected by this parameter. If this parameter is omitted, the default value of <code>1</code> is used.</p>
         pub fn maximum_scaling_step_size(mut self, input: i32) -> Self {
             self.maximum_scaling_step_size = Some(input);
             self
         }
-        /// <p>The maximum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter is omitted, the default value of <code>10000</code> is used.</p>
+        /// <p>The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is not affected by this parameter. If this parameter is omitted, the default value of <code>1</code> is used.</p>
         pub fn set_maximum_scaling_step_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_scaling_step_size = input;
             self
@@ -8805,6 +10070,31 @@ pub struct NetworkBinding {
     /// <p>The protocol used for the network binding.</p>
     #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::TransportProtocol>,
+    /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
+    /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
+    /// <ul>
+    /// <li> <p>You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p> </li>
+    /// <li> <p>This parameter is available for both the EC2 and Fargate launch types.</p> </li>
+    /// <li> <p>This parameter is available for both the Linux and Windows operating systems.</p> </li>
+    /// <li> <p>The container instance must have at least version 1.67.0 of the container agent and at least version 1.67.0-1 of the <code>ecs-init</code> package </p> </li>
+    /// <li> <p>You can specify a maximum of 100 port ranges per container.</p> </li>
+    /// <li> <p>You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:</p>
+    /// <ul>
+    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+    /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports from the default ephemeral range and passes it to docker to bind them to the container ports.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>The <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+    /// <li> <p>A port can only be included in one port mapping per container.</p> </li>
+    /// <li> <p>You cannot specify overlapping port ranges.</p> </li>
+    /// <li> <p>The first port in the range must be less than last port in the range.</p> </li>
+    /// <li> <p>Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large number of ports.</p> <p>For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github website.</p> <p>For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li>
+    /// </ul>
+    /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
+    #[doc(hidden)]
+    pub container_port_range: std::option::Option<std::string::String>,
+    /// <p>The port number range on the host that's used with the network binding. This is assigned is assigned by Docker and delivered by the Amazon ECS agent.</p>
+    #[doc(hidden)]
+    pub host_port_range: std::option::Option<std::string::String>,
 }
 impl NetworkBinding {
     /// <p>The IP address that the container is bound to on the container instance.</p>
@@ -8823,6 +10113,33 @@ impl NetworkBinding {
     pub fn protocol(&self) -> std::option::Option<&crate::model::TransportProtocol> {
         self.protocol.as_ref()
     }
+    /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
+    /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
+    /// <ul>
+    /// <li> <p>You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p> </li>
+    /// <li> <p>This parameter is available for both the EC2 and Fargate launch types.</p> </li>
+    /// <li> <p>This parameter is available for both the Linux and Windows operating systems.</p> </li>
+    /// <li> <p>The container instance must have at least version 1.67.0 of the container agent and at least version 1.67.0-1 of the <code>ecs-init</code> package </p> </li>
+    /// <li> <p>You can specify a maximum of 100 port ranges per container.</p> </li>
+    /// <li> <p>You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:</p>
+    /// <ul>
+    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+    /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports from the default ephemeral range and passes it to docker to bind them to the container ports.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>The <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+    /// <li> <p>A port can only be included in one port mapping per container.</p> </li>
+    /// <li> <p>You cannot specify overlapping port ranges.</p> </li>
+    /// <li> <p>The first port in the range must be less than last port in the range.</p> </li>
+    /// <li> <p>Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large number of ports.</p> <p>For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github website.</p> <p>For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li>
+    /// </ul>
+    /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
+    pub fn container_port_range(&self) -> std::option::Option<&str> {
+        self.container_port_range.as_deref()
+    }
+    /// <p>The port number range on the host that's used with the network binding. This is assigned is assigned by Docker and delivered by the Amazon ECS agent.</p>
+    pub fn host_port_range(&self) -> std::option::Option<&str> {
+        self.host_port_range.as_deref()
+    }
 }
 /// See [`NetworkBinding`](crate::model::NetworkBinding).
 pub mod network_binding {
@@ -8834,6 +10151,8 @@ pub mod network_binding {
         pub(crate) container_port: std::option::Option<i32>,
         pub(crate) host_port: std::option::Option<i32>,
         pub(crate) protocol: std::option::Option<crate::model::TransportProtocol>,
+        pub(crate) container_port_range: std::option::Option<std::string::String>,
+        pub(crate) host_port_range: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The IP address that the container is bound to on the container instance.</p>
@@ -8879,6 +10198,70 @@ pub mod network_binding {
             self.protocol = input;
             self
         }
+        /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
+        /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
+        /// <ul>
+        /// <li> <p>You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p> </li>
+        /// <li> <p>This parameter is available for both the EC2 and Fargate launch types.</p> </li>
+        /// <li> <p>This parameter is available for both the Linux and Windows operating systems.</p> </li>
+        /// <li> <p>The container instance must have at least version 1.67.0 of the container agent and at least version 1.67.0-1 of the <code>ecs-init</code> package </p> </li>
+        /// <li> <p>You can specify a maximum of 100 port ranges per container.</p> </li>
+        /// <li> <p>You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:</p>
+        /// <ul>
+        /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+        /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports from the default ephemeral range and passes it to docker to bind them to the container ports.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>The <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+        /// <li> <p>A port can only be included in one port mapping per container.</p> </li>
+        /// <li> <p>You cannot specify overlapping port ranges.</p> </li>
+        /// <li> <p>The first port in the range must be less than last port in the range.</p> </li>
+        /// <li> <p>Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large number of ports.</p> <p>For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github website.</p> <p>For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li>
+        /// </ul>
+        /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
+        pub fn container_port_range(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_port_range = Some(input.into());
+            self
+        }
+        /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
+        /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
+        /// <ul>
+        /// <li> <p>You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p> </li>
+        /// <li> <p>This parameter is available for both the EC2 and Fargate launch types.</p> </li>
+        /// <li> <p>This parameter is available for both the Linux and Windows operating systems.</p> </li>
+        /// <li> <p>The container instance must have at least version 1.67.0 of the container agent and at least version 1.67.0-1 of the <code>ecs-init</code> package </p> </li>
+        /// <li> <p>You can specify a maximum of 100 port ranges per container.</p> </li>
+        /// <li> <p>You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:</p>
+        /// <ul>
+        /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+        /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports from the default ephemeral range and passes it to docker to bind them to the container ports.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>The <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+        /// <li> <p>A port can only be included in one port mapping per container.</p> </li>
+        /// <li> <p>You cannot specify overlapping port ranges.</p> </li>
+        /// <li> <p>The first port in the range must be less than last port in the range.</p> </li>
+        /// <li> <p>Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large number of ports.</p> <p>For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github website.</p> <p>For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li>
+        /// </ul>
+        /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
+        pub fn set_container_port_range(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_port_range = input;
+            self
+        }
+        /// <p>The port number range on the host that's used with the network binding. This is assigned is assigned by Docker and delivered by the Amazon ECS agent.</p>
+        pub fn host_port_range(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_port_range = Some(input.into());
+            self
+        }
+        /// <p>The port number range on the host that's used with the network binding. This is assigned is assigned by Docker and delivered by the Amazon ECS agent.</p>
+        pub fn set_host_port_range(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.host_port_range = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NetworkBinding`](crate::model::NetworkBinding).
         pub fn build(self) -> crate::model::NetworkBinding {
             crate::model::NetworkBinding {
@@ -8886,6 +10269,8 @@ pub mod network_binding {
                 container_port: self.container_port,
                 host_port: self.host_port,
                 protocol: self.protocol,
+                container_port_range: self.container_port_range,
+                host_port_range: self.host_port_range,
             }
         }
     }
@@ -10060,7 +11445,10 @@ impl EphemeralStorage {
 /// # let taskstopcode = unimplemented!();
 /// match taskstopcode {
 ///     TaskStopCode::EssentialContainerExited => { /* ... */ },
+///     TaskStopCode::ServiceSchedulerInitiated => { /* ... */ },
+///     TaskStopCode::SpotInterruption => { /* ... */ },
 ///     TaskStopCode::TaskFailedToStart => { /* ... */ },
+///     TaskStopCode::TerminationNotice => { /* ... */ },
 ///     TaskStopCode::UserInitiated => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -10098,7 +11486,13 @@ pub enum TaskStopCode {
     #[allow(missing_docs)] // documentation missing in model
     EssentialContainerExited,
     #[allow(missing_docs)] // documentation missing in model
+    ServiceSchedulerInitiated,
+    #[allow(missing_docs)] // documentation missing in model
+    SpotInterruption,
+    #[allow(missing_docs)] // documentation missing in model
     TaskFailedToStart,
+    #[allow(missing_docs)] // documentation missing in model
+    TerminationNotice,
     #[allow(missing_docs)] // documentation missing in model
     UserInitiated,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -10108,7 +11502,10 @@ impl std::convert::From<&str> for TaskStopCode {
     fn from(s: &str) -> Self {
         match s {
             "EssentialContainerExited" => TaskStopCode::EssentialContainerExited,
+            "ServiceSchedulerInitiated" => TaskStopCode::ServiceSchedulerInitiated,
+            "SpotInterruption" => TaskStopCode::SpotInterruption,
             "TaskFailedToStart" => TaskStopCode::TaskFailedToStart,
+            "TerminationNotice" => TaskStopCode::TerminationNotice,
             "UserInitiated" => TaskStopCode::UserInitiated,
             other => TaskStopCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
@@ -10126,7 +11523,10 @@ impl TaskStopCode {
     pub fn as_str(&self) -> &str {
         match self {
             TaskStopCode::EssentialContainerExited => "EssentialContainerExited",
+            TaskStopCode::ServiceSchedulerInitiated => "ServiceSchedulerInitiated",
+            TaskStopCode::SpotInterruption => "SpotInterruption",
             TaskStopCode::TaskFailedToStart => "TaskFailedToStart",
+            TaskStopCode::TerminationNotice => "TerminationNotice",
             TaskStopCode::UserInitiated => "UserInitiated",
             TaskStopCode::Unknown(value) => value.as_str(),
         }
@@ -10135,7 +11535,10 @@ impl TaskStopCode {
     pub const fn values() -> &'static [&'static str] {
         &[
             "EssentialContainerExited",
+            "ServiceSchedulerInitiated",
+            "SpotInterruption",
             "TaskFailedToStart",
+            "TerminationNotice",
             "UserInitiated",
         ]
     }
@@ -10153,7 +11556,7 @@ pub struct TaskOverride {
     /// <p>One or more container overrides that are sent to a task.</p>
     #[doc(hidden)]
     pub container_overrides: std::option::Option<std::vec::Vec<crate::model::ContainerOverride>>,
-    /// <p>The cpu override for the task.</p>
+    /// <p>The CPU override for the task.</p>
     #[doc(hidden)]
     pub cpu: std::option::Option<std::string::String>,
     /// <p>The Elastic Inference accelerator override for the task.</p>
@@ -10184,7 +11587,7 @@ impl TaskOverride {
     pub fn container_overrides(&self) -> std::option::Option<&[crate::model::ContainerOverride]> {
         self.container_overrides.as_deref()
     }
-    /// <p>The cpu override for the task.</p>
+    /// <p>The CPU override for the task.</p>
     pub fn cpu(&self) -> std::option::Option<&str> {
         self.cpu.as_deref()
     }
@@ -10253,12 +11656,12 @@ pub mod task_override {
             self.container_overrides = input;
             self
         }
-        /// <p>The cpu override for the task.</p>
+        /// <p>The CPU override for the task.</p>
         pub fn cpu(mut self, input: impl Into<std::string::String>) -> Self {
             self.cpu = Some(input.into());
             self
         }
-        /// <p>The cpu override for the task.</p>
+        /// <p>The CPU override for the task.</p>
         pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cpu = input;
             self
@@ -13156,7 +14559,7 @@ impl AsRef<str> for Compatibility {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuntimePlatform {
     /// <p>The CPU architecture.</p>
-    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is avaiable for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
+    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
     #[doc(hidden)]
     pub cpu_architecture: std::option::Option<crate::model::CpuArchitecture>,
     /// <p>The operating system.</p>
@@ -13165,7 +14568,7 @@ pub struct RuntimePlatform {
 }
 impl RuntimePlatform {
     /// <p>The CPU architecture.</p>
-    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is avaiable for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
+    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
     pub fn cpu_architecture(&self) -> std::option::Option<&crate::model::CpuArchitecture> {
         self.cpu_architecture.as_ref()
     }
@@ -13185,13 +14588,13 @@ pub mod runtime_platform {
     }
     impl Builder {
         /// <p>The CPU architecture.</p>
-        /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is avaiable for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
+        /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
         pub fn cpu_architecture(mut self, input: crate::model::CpuArchitecture) -> Self {
             self.cpu_architecture = Some(input);
             self
         }
         /// <p>The CPU architecture.</p>
-        /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is avaiable for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
+        /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
         pub fn set_cpu_architecture(
             mut self,
             input: std::option::Option<crate::model::CpuArchitecture>,
@@ -15084,7 +16487,7 @@ pub struct ContainerDefinition {
     #[doc(hidden)]
     pub docker_labels:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is specified in a task definition, it overrides the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming values are displayed in the <code>Ulimit</code> data type.</p>
+    /// <p>A list of <code>ulimits</code> to set in the container. If a <code>ulimit</code> value is specified in a task definition, it overrides the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming values are displayed in the <code>Ulimit</code> data type.</p>
     /// <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code> resource limit sets a restriction on the number of open files that a container can use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.</p>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
     /// <p>This parameter is not supported for Windows containers.</p>
@@ -15366,7 +16769,7 @@ impl ContainerDefinition {
     {
         self.docker_labels.as_ref()
     }
-    /// <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is specified in a task definition, it overrides the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming values are displayed in the <code>Ulimit</code> data type.</p>
+    /// <p>A list of <code>ulimits</code> to set in the container. If a <code>ulimit</code> value is specified in a task definition, it overrides the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming values are displayed in the <code>Ulimit</code> data type.</p>
     /// <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code> resource limit sets a restriction on the number of open files that a container can use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.</p>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
     /// <p>This parameter is not supported for Windows containers.</p>
@@ -16170,7 +17573,7 @@ pub mod container_definition {
         ///
         /// To override the contents of this collection use [`set_ulimits`](Self::set_ulimits).
         ///
-        /// <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is specified in a task definition, it overrides the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming values are displayed in the <code>Ulimit</code> data type.</p>
+        /// <p>A list of <code>ulimits</code> to set in the container. If a <code>ulimit</code> value is specified in a task definition, it overrides the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming values are displayed in the <code>Ulimit</code> data type.</p>
         /// <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code> resource limit sets a restriction on the number of open files that a container can use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.</p>
         /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
         /// <p>This parameter is not supported for Windows containers.</p>
@@ -16181,7 +17584,7 @@ pub mod container_definition {
             self.ulimits = Some(v);
             self
         }
-        /// <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is specified in a task definition, it overrides the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming values are displayed in the <code>Ulimit</code> data type.</p>
+        /// <p>A list of <code>ulimits</code> to set in the container. If a <code>ulimit</code> value is specified in a task definition, it overrides the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming values are displayed in the <code>Ulimit</code> data type.</p>
         /// <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code> resource limit sets a restriction on the number of open files that a container can use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.</p>
         /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
         /// <p>This parameter is not supported for Windows containers.</p>
@@ -16615,13 +18018,15 @@ impl SystemControl {
 /// <li> <p> <code>UNHEALTHY</code>-The container health check has failed.</p> </li>
 /// <li> <p> <code>UNKNOWN</code>-The container health check is being evaluated or there's no container health check defined.</p> </li>
 /// </ul>
-/// <p>The following describes the possible <code>healthStatus</code> values for a task. The container health check status of nonessential containers do not have an effect on the health status of a task.</p>
+/// <p>The following describes the possible <code>healthStatus</code> values for a task. The container health check status of nonessential containers only affects the health status of a task if no essential containers have health checks defined.</p>
 /// <ul>
 /// <li> <p> <code>HEALTHY</code>-All essential containers within the task have passed their health checks.</p> </li>
 /// <li> <p> <code>UNHEALTHY</code>-One or more essential containers have failed their health check.</p> </li>
-/// <li> <p> <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are no container health checks defined.</p> </li>
+/// <li> <p> <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are only nonessential containers with health checks defined.</p> </li>
 /// </ul>
-/// <p>If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it.</p>
+/// <p>If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it.</p> <important>
+/// <p>For tasks that are a part of a service and the service uses the <code>ECS</code> rolling deployment type, the deployment is paused while the new tasks have the <code>UNKNOWN</code> task health check status. For example, tasks that define health checks for nonessential containers when no essential containers have health checks will have the <code>UNKNOWN</code> health check status indefinitely which prevents the deployment from completing.</p>
+/// </important>
 /// <p>The following are notes about container health check support:</p>
 /// <ul>
 /// <li> <p>Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS container agent</a>.</p> </li>
@@ -16788,370 +18193,6 @@ impl HealthCheck {
     }
 }
 
-/// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
-/// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. For more information about the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p>
-/// <p>Understand the following when specifying a log configuration for your containers.</p>
-/// <ul>
-/// <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> </li>
-/// <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li>
-/// <li> <p>For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container agent must register the available logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li>
-/// <li> <p>For tasks that are on Fargate, because you don't have access to the underlying infrastructure your tasks are hosted on, any additional software needed must be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li>
-/// </ul>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogConfiguration {
-    /// <p>The log driver to use for the container.</p>
-    /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-    /// <p>For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>For more information about using the <code>awsfirelens</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
-    /// <p>If you have a custom driver that isn't listed, you can fork the Amazon ECS container agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you would like to have included. However, we don't currently provide support for running modified copies of this software.</p>
-    /// </note>
-    #[doc(hidden)]
-    pub log_driver: std::option::Option<crate::model::LogDriver>,
-    /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
-    #[doc(hidden)]
-    pub options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
-    pub secret_options: std::option::Option<std::vec::Vec<crate::model::Secret>>,
-}
-impl LogConfiguration {
-    /// <p>The log driver to use for the container.</p>
-    /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-    /// <p>For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>For more information about using the <code>awsfirelens</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
-    /// <p>If you have a custom driver that isn't listed, you can fork the Amazon ECS container agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you would like to have included. However, we don't currently provide support for running modified copies of this software.</p>
-    /// </note>
-    pub fn log_driver(&self) -> std::option::Option<&crate::model::LogDriver> {
-        self.log_driver.as_ref()
-    }
-    /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
-    pub fn options(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.options.as_ref()
-    }
-    /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn secret_options(&self) -> std::option::Option<&[crate::model::Secret]> {
-        self.secret_options.as_deref()
-    }
-}
-/// See [`LogConfiguration`](crate::model::LogConfiguration).
-pub mod log_configuration {
-
-    /// A builder for [`LogConfiguration`](crate::model::LogConfiguration).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) log_driver: std::option::Option<crate::model::LogDriver>,
-        pub(crate) options: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) secret_options: std::option::Option<std::vec::Vec<crate::model::Secret>>,
-    }
-    impl Builder {
-        /// <p>The log driver to use for the container.</p>
-        /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-        /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-        /// <p>For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>For more information about using the <code>awsfirelens</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
-        /// <p>If you have a custom driver that isn't listed, you can fork the Amazon ECS container agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you would like to have included. However, we don't currently provide support for running modified copies of this software.</p>
-        /// </note>
-        pub fn log_driver(mut self, input: crate::model::LogDriver) -> Self {
-            self.log_driver = Some(input);
-            self
-        }
-        /// <p>The log driver to use for the container.</p>
-        /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-        /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-        /// <p>For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>For more information about using the <code>awsfirelens</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
-        /// <p>If you have a custom driver that isn't listed, you can fork the Amazon ECS container agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you would like to have included. However, we don't currently provide support for running modified copies of this software.</p>
-        /// </note>
-        pub fn set_log_driver(
-            mut self,
-            input: std::option::Option<crate::model::LogDriver>,
-        ) -> Self {
-            self.log_driver = input;
-            self
-        }
-        /// Adds a key-value pair to `options`.
-        ///
-        /// To override the contents of this collection use [`set_options`](Self::set_options).
-        ///
-        /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
-        pub fn options(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.options.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.options = Some(hash_map);
-            self
-        }
-        /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
-        pub fn set_options(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.options = input;
-            self
-        }
-        /// Appends an item to `secret_options`.
-        ///
-        /// To override the contents of this collection use [`set_secret_options`](Self::set_secret_options).
-        ///
-        /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn secret_options(mut self, input: crate::model::Secret) -> Self {
-            let mut v = self.secret_options.unwrap_or_default();
-            v.push(input);
-            self.secret_options = Some(v);
-            self
-        }
-        /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn set_secret_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Secret>>,
-        ) -> Self {
-            self.secret_options = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LogConfiguration`](crate::model::LogConfiguration).
-        pub fn build(self) -> crate::model::LogConfiguration {
-            crate::model::LogConfiguration {
-                log_driver: self.log_driver,
-                options: self.options,
-                secret_options: self.secret_options,
-            }
-        }
-    }
-}
-impl LogConfiguration {
-    /// Creates a new builder-style object to manufacture [`LogConfiguration`](crate::model::LogConfiguration).
-    pub fn builder() -> crate::model::log_configuration::Builder {
-        crate::model::log_configuration::Builder::default()
-    }
-}
-
-/// <p>An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways:</p>
-/// <ul>
-/// <li> <p>To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter.</p> </li>
-/// <li> <p>To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter.</p> </li>
-/// </ul>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Secret {
-    /// <p>The name of the secret.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
-    /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
-    /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
-    /// </note>
-    #[doc(hidden)]
-    pub value_from: std::option::Option<std::string::String>,
-}
-impl Secret {
-    /// <p>The name of the secret.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
-    /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
-    /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
-    /// </note>
-    pub fn value_from(&self) -> std::option::Option<&str> {
-        self.value_from.as_deref()
-    }
-}
-/// See [`Secret`](crate::model::Secret).
-pub mod secret {
-
-    /// A builder for [`Secret`](crate::model::Secret).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) value_from: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the secret.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>The name of the secret.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
-        /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
-        /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
-        /// </note>
-        pub fn value_from(mut self, input: impl Into<std::string::String>) -> Self {
-            self.value_from = Some(input.into());
-            self
-        }
-        /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
-        /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
-        /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
-        /// </note>
-        pub fn set_value_from(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value_from = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Secret`](crate::model::Secret).
-        pub fn build(self) -> crate::model::Secret {
-            crate::model::Secret {
-                name: self.name,
-                value_from: self.value_from,
-            }
-        }
-    }
-}
-impl Secret {
-    /// Creates a new builder-style object to manufacture [`Secret`](crate::model::Secret).
-    pub fn builder() -> crate::model::secret::Builder {
-        crate::model::secret::Builder::default()
-    }
-}
-
-/// When writing a match expression against `LogDriver`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let logdriver = unimplemented!();
-/// match logdriver {
-///     LogDriver::Awsfirelens => { /* ... */ },
-///     LogDriver::Awslogs => { /* ... */ },
-///     LogDriver::Fluentd => { /* ... */ },
-///     LogDriver::Gelf => { /* ... */ },
-///     LogDriver::Journald => { /* ... */ },
-///     LogDriver::JsonFile => { /* ... */ },
-///     LogDriver::Splunk => { /* ... */ },
-///     LogDriver::Syslog => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `logdriver` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `LogDriver::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `LogDriver::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `LogDriver::NewFeature` is defined.
-/// Specifically, when `logdriver` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `LogDriver::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum LogDriver {
-    #[allow(missing_docs)] // documentation missing in model
-    Awsfirelens,
-    #[allow(missing_docs)] // documentation missing in model
-    Awslogs,
-    #[allow(missing_docs)] // documentation missing in model
-    Fluentd,
-    #[allow(missing_docs)] // documentation missing in model
-    Gelf,
-    #[allow(missing_docs)] // documentation missing in model
-    Journald,
-    #[allow(missing_docs)] // documentation missing in model
-    JsonFile,
-    #[allow(missing_docs)] // documentation missing in model
-    Splunk,
-    #[allow(missing_docs)] // documentation missing in model
-    Syslog,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for LogDriver {
-    fn from(s: &str) -> Self {
-        match s {
-            "awsfirelens" => LogDriver::Awsfirelens,
-            "awslogs" => LogDriver::Awslogs,
-            "fluentd" => LogDriver::Fluentd,
-            "gelf" => LogDriver::Gelf,
-            "journald" => LogDriver::Journald,
-            "json-file" => LogDriver::JsonFile,
-            "splunk" => LogDriver::Splunk,
-            "syslog" => LogDriver::Syslog,
-            other => LogDriver::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for LogDriver {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LogDriver::from(s))
-    }
-}
-impl LogDriver {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LogDriver::Awsfirelens => "awsfirelens",
-            LogDriver::Awslogs => "awslogs",
-            LogDriver::Fluentd => "fluentd",
-            LogDriver::Gelf => "gelf",
-            LogDriver::Journald => "journald",
-            LogDriver::JsonFile => "json-file",
-            LogDriver::Splunk => "splunk",
-            LogDriver::Syslog => "syslog",
-            LogDriver::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "awsfirelens",
-            "awslogs",
-            "fluentd",
-            "gelf",
-            "journald",
-            "json-file",
-            "splunk",
-            "syslog",
-        ]
-    }
-}
-impl AsRef<str> for LogDriver {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>The <code>ulimit</code> settings to pass to the container.</p>
 /// <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code> resource limit sets a restriction on the number of open files that a container can use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.</p>
 #[non_exhaustive]
@@ -17160,10 +18201,10 @@ pub struct Ulimit {
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::UlimitName>,
-    /// <p>The soft limit for the ulimit type.</p>
+    /// <p>The soft limit for the <code>ulimit</code> type.</p>
     #[doc(hidden)]
     pub soft_limit: i32,
-    /// <p>The hard limit for the ulimit type.</p>
+    /// <p>The hard limit for the <code>ulimit</code> type.</p>
     #[doc(hidden)]
     pub hard_limit: i32,
 }
@@ -17172,11 +18213,11 @@ impl Ulimit {
     pub fn name(&self) -> std::option::Option<&crate::model::UlimitName> {
         self.name.as_ref()
     }
-    /// <p>The soft limit for the ulimit type.</p>
+    /// <p>The soft limit for the <code>ulimit</code> type.</p>
     pub fn soft_limit(&self) -> i32 {
         self.soft_limit
     }
-    /// <p>The hard limit for the ulimit type.</p>
+    /// <p>The hard limit for the <code>ulimit</code> type.</p>
     pub fn hard_limit(&self) -> i32 {
         self.hard_limit
     }
@@ -17202,22 +18243,22 @@ pub mod ulimit {
             self.name = input;
             self
         }
-        /// <p>The soft limit for the ulimit type.</p>
+        /// <p>The soft limit for the <code>ulimit</code> type.</p>
         pub fn soft_limit(mut self, input: i32) -> Self {
             self.soft_limit = Some(input);
             self
         }
-        /// <p>The soft limit for the ulimit type.</p>
+        /// <p>The soft limit for the <code>ulimit</code> type.</p>
         pub fn set_soft_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.soft_limit = input;
             self
         }
-        /// <p>The hard limit for the ulimit type.</p>
+        /// <p>The hard limit for the <code>ulimit</code> type.</p>
         pub fn hard_limit(mut self, input: i32) -> Self {
             self.hard_limit = Some(input);
             self
         }
-        /// <p>The hard limit for the ulimit type.</p>
+        /// <p>The hard limit for the <code>ulimit</code> type.</p>
         pub fn set_hard_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.hard_limit = input;
             self
@@ -18493,6 +19534,11 @@ pub struct PortMapping {
     #[doc(hidden)]
     pub container_port: std::option::Option<i32>,
     /// <p>The port number on the container instance to reserve for your container.</p>
+    /// <p>If you specify a <code>containerPortRange</code>, leave this field empty and the value of the <code>hostPort</code> is set as follows:</p>
+    /// <ul>
+    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+    /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open ports on the host and automaticaly binds them to the container ports. This is a dynamic mapping strategy.</p> </li>
+    /// </ul>
     /// <p>If you use containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.</p>
     /// <p>If you use containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral port range for your container instance operating system and Docker version.</p>
     /// <p>The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the ephemeral port range.</p>
@@ -18502,6 +19548,37 @@ pub struct PortMapping {
     /// <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and <code>udp</code>. The default is <code>tcp</code>.</p>
     #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::TransportProtocol>,
+    /// <p>The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter is the name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can include up to 64 characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The application protocol that's used for the port mapping. This parameter only applies to Service Connect. We recommend that you set this parameter to be consistent with the protocol that your application uses. If you set this parameter, Amazon ECS adds protocol-specific connection handling to the Service Connect proxy. If you set this parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console and CloudWatch.</p>
+    /// <p>If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add protocol-specific telemetry for TCP.</p>
+    /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub app_protocol: std::option::Option<crate::model::ApplicationProtocol>,
+    /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
+    /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
+    /// <ul>
+    /// <li> <p>You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p> </li>
+    /// <li> <p>This parameter is available for both the EC2 and Fargate launch types.</p> </li>
+    /// <li> <p>This parameter is available for both the Linux and Windows operating systems.</p> </li>
+    /// <li> <p>The container instance must have at least version 1.67.0 of the container agent and at least version 1.67.0-1 of the <code>ecs-init</code> package </p> </li>
+    /// <li> <p>You can specify a maximum of 100 port ranges per container.</p> </li>
+    /// <li> <p>You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:</p>
+    /// <ul>
+    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+    /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports from the default ephemeral range and passes it to docker to bind them to the container ports.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>The <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+    /// <li> <p>A port can only be included in one port mapping per container.</p> </li>
+    /// <li> <p>You cannot specify overlapping port ranges.</p> </li>
+    /// <li> <p>The first port in the range must be less than last port in the range.</p> </li>
+    /// <li> <p>Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large number of ports.</p> <p>For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github website.</p> <p>For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li>
+    /// </ul>
+    /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
+    #[doc(hidden)]
+    pub container_port_range: std::option::Option<std::string::String>,
 }
 impl PortMapping {
     /// <p>The port number on the container that's bound to the user-specified or automatically assigned host port.</p>
@@ -18511,6 +19588,11 @@ impl PortMapping {
         self.container_port
     }
     /// <p>The port number on the container instance to reserve for your container.</p>
+    /// <p>If you specify a <code>containerPortRange</code>, leave this field empty and the value of the <code>hostPort</code> is set as follows:</p>
+    /// <ul>
+    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+    /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open ports on the host and automaticaly binds them to the container ports. This is a dynamic mapping strategy.</p> </li>
+    /// </ul>
     /// <p>If you use containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.</p>
     /// <p>If you use containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral port range for your container instance operating system and Docker version.</p>
     /// <p>The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the ephemeral port range.</p>
@@ -18522,6 +19604,40 @@ impl PortMapping {
     pub fn protocol(&self) -> std::option::Option<&crate::model::TransportProtocol> {
         self.protocol.as_ref()
     }
+    /// <p>The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter is the name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can include up to 64 characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The application protocol that's used for the port mapping. This parameter only applies to Service Connect. We recommend that you set this parameter to be consistent with the protocol that your application uses. If you set this parameter, Amazon ECS adds protocol-specific connection handling to the Service Connect proxy. If you set this parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console and CloudWatch.</p>
+    /// <p>If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add protocol-specific telemetry for TCP.</p>
+    /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn app_protocol(&self) -> std::option::Option<&crate::model::ApplicationProtocol> {
+        self.app_protocol.as_ref()
+    }
+    /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
+    /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
+    /// <ul>
+    /// <li> <p>You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p> </li>
+    /// <li> <p>This parameter is available for both the EC2 and Fargate launch types.</p> </li>
+    /// <li> <p>This parameter is available for both the Linux and Windows operating systems.</p> </li>
+    /// <li> <p>The container instance must have at least version 1.67.0 of the container agent and at least version 1.67.0-1 of the <code>ecs-init</code> package </p> </li>
+    /// <li> <p>You can specify a maximum of 100 port ranges per container.</p> </li>
+    /// <li> <p>You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:</p>
+    /// <ul>
+    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+    /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports from the default ephemeral range and passes it to docker to bind them to the container ports.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>The <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+    /// <li> <p>A port can only be included in one port mapping per container.</p> </li>
+    /// <li> <p>You cannot specify overlapping port ranges.</p> </li>
+    /// <li> <p>The first port in the range must be less than last port in the range.</p> </li>
+    /// <li> <p>Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large number of ports.</p> <p>For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github website.</p> <p>For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li>
+    /// </ul>
+    /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
+    pub fn container_port_range(&self) -> std::option::Option<&str> {
+        self.container_port_range.as_deref()
+    }
 }
 /// See [`PortMapping`](crate::model::PortMapping).
 pub mod port_mapping {
@@ -18532,6 +19648,9 @@ pub mod port_mapping {
         pub(crate) container_port: std::option::Option<i32>,
         pub(crate) host_port: std::option::Option<i32>,
         pub(crate) protocol: std::option::Option<crate::model::TransportProtocol>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) app_protocol: std::option::Option<crate::model::ApplicationProtocol>,
+        pub(crate) container_port_range: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The port number on the container that's bound to the user-specified or automatically assigned host port.</p>
@@ -18549,6 +19668,11 @@ pub mod port_mapping {
             self
         }
         /// <p>The port number on the container instance to reserve for your container.</p>
+        /// <p>If you specify a <code>containerPortRange</code>, leave this field empty and the value of the <code>hostPort</code> is set as follows:</p>
+        /// <ul>
+        /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+        /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open ports on the host and automaticaly binds them to the container ports. This is a dynamic mapping strategy.</p> </li>
+        /// </ul>
         /// <p>If you use containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.</p>
         /// <p>If you use containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral port range for your container instance operating system and Docker version.</p>
         /// <p>The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the ephemeral port range.</p>
@@ -18558,6 +19682,11 @@ pub mod port_mapping {
             self
         }
         /// <p>The port number on the container instance to reserve for your container.</p>
+        /// <p>If you specify a <code>containerPortRange</code>, leave this field empty and the value of the <code>hostPort</code> is set as follows:</p>
+        /// <ul>
+        /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+        /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open ports on the host and automaticaly binds them to the container ports. This is a dynamic mapping strategy.</p> </li>
+        /// </ul>
         /// <p>If you use containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.</p>
         /// <p>If you use containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral port range for your container instance operating system and Docker version.</p>
         /// <p>The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the ephemeral port range.</p>
@@ -18579,12 +19708,95 @@ pub mod port_mapping {
             self.protocol = input;
             self
         }
+        /// <p>The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter is the name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can include up to 64 characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter is the name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can include up to 64 characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The application protocol that's used for the port mapping. This parameter only applies to Service Connect. We recommend that you set this parameter to be consistent with the protocol that your application uses. If you set this parameter, Amazon ECS adds protocol-specific connection handling to the Service Connect proxy. If you set this parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console and CloudWatch.</p>
+        /// <p>If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add protocol-specific telemetry for TCP.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn app_protocol(mut self, input: crate::model::ApplicationProtocol) -> Self {
+            self.app_protocol = Some(input);
+            self
+        }
+        /// <p>The application protocol that's used for the port mapping. This parameter only applies to Service Connect. We recommend that you set this parameter to be consistent with the protocol that your application uses. If you set this parameter, Amazon ECS adds protocol-specific connection handling to the Service Connect proxy. If you set this parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console and CloudWatch.</p>
+        /// <p>If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add protocol-specific telemetry for TCP.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn set_app_protocol(
+            mut self,
+            input: std::option::Option<crate::model::ApplicationProtocol>,
+        ) -> Self {
+            self.app_protocol = input;
+            self
+        }
+        /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
+        /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
+        /// <ul>
+        /// <li> <p>You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p> </li>
+        /// <li> <p>This parameter is available for both the EC2 and Fargate launch types.</p> </li>
+        /// <li> <p>This parameter is available for both the Linux and Windows operating systems.</p> </li>
+        /// <li> <p>The container instance must have at least version 1.67.0 of the container agent and at least version 1.67.0-1 of the <code>ecs-init</code> package </p> </li>
+        /// <li> <p>You can specify a maximum of 100 port ranges per container.</p> </li>
+        /// <li> <p>You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:</p>
+        /// <ul>
+        /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+        /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports from the default ephemeral range and passes it to docker to bind them to the container ports.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>The <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+        /// <li> <p>A port can only be included in one port mapping per container.</p> </li>
+        /// <li> <p>You cannot specify overlapping port ranges.</p> </li>
+        /// <li> <p>The first port in the range must be less than last port in the range.</p> </li>
+        /// <li> <p>Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large number of ports.</p> <p>For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github website.</p> <p>For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li>
+        /// </ul>
+        /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
+        pub fn container_port_range(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_port_range = Some(input.into());
+            self
+        }
+        /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
+        /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
+        /// <ul>
+        /// <li> <p>You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p> </li>
+        /// <li> <p>This parameter is available for both the EC2 and Fargate launch types.</p> </li>
+        /// <li> <p>This parameter is available for both the Linux and Windows operating systems.</p> </li>
+        /// <li> <p>The container instance must have at least version 1.67.0 of the container agent and at least version 1.67.0-1 of the <code>ecs-init</code> package </p> </li>
+        /// <li> <p>You can specify a maximum of 100 port ranges per container.</p> </li>
+        /// <li> <p>You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:</p>
+        /// <ul>
+        /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+        /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports from the default ephemeral range and passes it to docker to bind them to the container ports.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>The <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+        /// <li> <p>A port can only be included in one port mapping per container.</p> </li>
+        /// <li> <p>You cannot specify overlapping port ranges.</p> </li>
+        /// <li> <p>The first port in the range must be less than last port in the range.</p> </li>
+        /// <li> <p>Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large number of ports.</p> <p>For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github website.</p> <p>For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li>
+        /// </ul>
+        /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
+        pub fn set_container_port_range(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_port_range = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PortMapping`](crate::model::PortMapping).
         pub fn build(self) -> crate::model::PortMapping {
             crate::model::PortMapping {
                 container_port: self.container_port,
                 host_port: self.host_port,
                 protocol: self.protocol,
+                name: self.name,
+                app_protocol: self.app_protocol,
+                container_port_range: self.container_port_range,
             }
         }
     }
@@ -18593,6 +19805,103 @@ impl PortMapping {
     /// Creates a new builder-style object to manufacture [`PortMapping`](crate::model::PortMapping).
     pub fn builder() -> crate::model::port_mapping::Builder {
         crate::model::port_mapping::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ApplicationProtocol`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let applicationprotocol = unimplemented!();
+/// match applicationprotocol {
+///     ApplicationProtocol::Grpc => { /* ... */ },
+///     ApplicationProtocol::Http => { /* ... */ },
+///     ApplicationProtocol::Http2 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `applicationprotocol` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ApplicationProtocol::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ApplicationProtocol::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ApplicationProtocol::NewFeature` is defined.
+/// Specifically, when `applicationprotocol` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ApplicationProtocol::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ApplicationProtocol {
+    #[allow(missing_docs)] // documentation missing in model
+    Grpc,
+    #[allow(missing_docs)] // documentation missing in model
+    Http,
+    #[allow(missing_docs)] // documentation missing in model
+    Http2,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ApplicationProtocol {
+    fn from(s: &str) -> Self {
+        match s {
+            "grpc" => ApplicationProtocol::Grpc,
+            "http" => ApplicationProtocol::Http,
+            "http2" => ApplicationProtocol::Http2,
+            other => {
+                ApplicationProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for ApplicationProtocol {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ApplicationProtocol::from(s))
+    }
+}
+impl ApplicationProtocol {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ApplicationProtocol::Grpc => "grpc",
+            ApplicationProtocol::Http => "http",
+            ApplicationProtocol::Http2 => "http2",
+            ApplicationProtocol::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["grpc", "http", "http2"]
+    }
+}
+impl AsRef<str> for ApplicationProtocol {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

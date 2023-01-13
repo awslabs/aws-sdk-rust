@@ -1387,6 +1387,7 @@ pub mod create_dataset_import_job_input {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) import_mode: std::option::Option<crate::model::ImportMode>,
+        pub(crate) publish_attribution_metrics_to_s3: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name for the dataset import job.</p>
@@ -1472,6 +1473,19 @@ pub mod create_dataset_import_job_input {
             self.import_mode = input;
             self
         }
+        /// <p>If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3</p>
+        pub fn publish_attribution_metrics_to_s3(mut self, input: bool) -> Self {
+            self.publish_attribution_metrics_to_s3 = Some(input);
+            self
+        }
+        /// <p>If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3</p>
+        pub fn set_publish_attribution_metrics_to_s3(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.publish_attribution_metrics_to_s3 = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDatasetImportJobInput`](crate::input::CreateDatasetImportJobInput).
         pub fn build(
             self,
@@ -1486,6 +1500,7 @@ pub mod create_dataset_import_job_input {
                 role_arn: self.role_arn,
                 tags: self.tags,
                 import_mode: self.import_mode,
+                publish_attribution_metrics_to_s3: self.publish_attribution_metrics_to_s3,
             })
         }
     }
@@ -1993,6 +2008,210 @@ impl CreateFilterInput {
     /// Creates a new builder-style object to manufacture [`CreateFilterInput`](crate::input::CreateFilterInput).
     pub fn builder() -> crate::input::create_filter_input::Builder {
         crate::input::create_filter_input::Builder::default()
+    }
+}
+
+/// See [`CreateMetricAttributionInput`](crate::input::CreateMetricAttributionInput).
+pub mod create_metric_attribution_input {
+
+    /// A builder for [`CreateMetricAttributionInput`](crate::input::CreateMetricAttributionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
+        pub(crate) metrics: std::option::Option<std::vec::Vec<crate::model::MetricAttribute>>,
+        pub(crate) metrics_output_config:
+            std::option::Option<crate::model::MetricAttributionOutput>,
+    }
+    impl Builder {
+        /// <p>A name for the metric attribution.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A name for the metric attribution.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
+        pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dataset_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
+        pub fn set_dataset_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dataset_group_arn = input;
+            self
+        }
+        /// Appends an item to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
+        pub fn metrics(mut self, input: crate::model::MetricAttribute) -> Self {
+            let mut v = self.metrics.unwrap_or_default();
+            v.push(input);
+            self.metrics = Some(v);
+            self
+        }
+        /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
+        pub fn set_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricAttribute>>,
+        ) -> Self {
+            self.metrics = input;
+            self
+        }
+        /// <p>The output configuration details for the metric attribution.</p>
+        pub fn metrics_output_config(
+            mut self,
+            input: crate::model::MetricAttributionOutput,
+        ) -> Self {
+            self.metrics_output_config = Some(input);
+            self
+        }
+        /// <p>The output configuration details for the metric attribution.</p>
+        pub fn set_metrics_output_config(
+            mut self,
+            input: std::option::Option<crate::model::MetricAttributionOutput>,
+        ) -> Self {
+            self.metrics_output_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateMetricAttributionInput`](crate::input::CreateMetricAttributionInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateMetricAttributionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::CreateMetricAttributionInput {
+                name: self.name,
+                dataset_group_arn: self.dataset_group_arn,
+                metrics: self.metrics,
+                metrics_output_config: self.metrics_output_config,
+            })
+        }
+    }
+}
+impl CreateMetricAttributionInput {
+    /// Consumes the builder and constructs an Operation<[`CreateMetricAttribution`](crate::operation::CreateMetricAttribution)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateMetricAttribution,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateMetricAttributionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateMetricAttributionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonPersonalize.CreateMetricAttribution",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_metric_attribution(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateMetricAttribution::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateMetricAttribution",
+            "personalize",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateMetricAttributionInput`](crate::input::CreateMetricAttributionInput).
+    pub fn builder() -> crate::input::create_metric_attribution_input::Builder {
+        crate::input::create_metric_attribution_input::Builder::default()
     }
 }
 
@@ -2635,11 +2854,22 @@ pub mod create_solution_version_input {
     /// A builder for [`CreateSolutionVersionInput`](crate::input::CreateSolutionVersionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) solution_arn: std::option::Option<std::string::String>,
         pub(crate) training_mode: std::option::Option<crate::model::TrainingMode>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
+        /// <p>The name of the solution version.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the solution version.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
         /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
         pub fn solution_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.solution_arn = Some(input.into());
@@ -2694,6 +2924,7 @@ pub mod create_solution_version_input {
             aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateSolutionVersionInput {
+                name: self.name,
                 solution_arn: self.solution_arn,
                 training_mode: self.training_mode,
                 tags: self.tags,
@@ -3550,6 +3781,158 @@ impl DeleteFilterInput {
     /// Creates a new builder-style object to manufacture [`DeleteFilterInput`](crate::input::DeleteFilterInput).
     pub fn builder() -> crate::input::delete_filter_input::Builder {
         crate::input::delete_filter_input::Builder::default()
+    }
+}
+
+/// See [`DeleteMetricAttributionInput`](crate::input::DeleteMetricAttributionInput).
+pub mod delete_metric_attribution_input {
+
+    /// A builder for [`DeleteMetricAttributionInput`](crate::input::DeleteMetricAttributionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_attribution_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+        pub fn metric_attribution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_attribution_arn = Some(input.into());
+            self
+        }
+        /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+        pub fn set_metric_attribution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.metric_attribution_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteMetricAttributionInput`](crate::input::DeleteMetricAttributionInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteMetricAttributionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DeleteMetricAttributionInput {
+                metric_attribution_arn: self.metric_attribution_arn,
+            })
+        }
+    }
+}
+impl DeleteMetricAttributionInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteMetricAttribution`](crate::operation::DeleteMetricAttribution)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteMetricAttribution,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteMetricAttributionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteMetricAttributionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonPersonalize.DeleteMetricAttribution",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_metric_attribution(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteMetricAttribution::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteMetricAttribution",
+            "personalize",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteMetricAttributionInput`](crate::input::DeleteMetricAttributionInput).
+    pub fn builder() -> crate::input::delete_metric_attribution_input::Builder {
+        crate::input::delete_metric_attribution_input::Builder::default()
     }
 }
 
@@ -5638,6 +6021,158 @@ impl DescribeFilterInput {
     /// Creates a new builder-style object to manufacture [`DescribeFilterInput`](crate::input::DescribeFilterInput).
     pub fn builder() -> crate::input::describe_filter_input::Builder {
         crate::input::describe_filter_input::Builder::default()
+    }
+}
+
+/// See [`DescribeMetricAttributionInput`](crate::input::DescribeMetricAttributionInput).
+pub mod describe_metric_attribution_input {
+
+    /// A builder for [`DescribeMetricAttributionInput`](crate::input::DescribeMetricAttributionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_attribution_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+        pub fn metric_attribution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_attribution_arn = Some(input.into());
+            self
+        }
+        /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+        pub fn set_metric_attribution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.metric_attribution_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeMetricAttributionInput`](crate::input::DescribeMetricAttributionInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeMetricAttributionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DescribeMetricAttributionInput {
+                metric_attribution_arn: self.metric_attribution_arn,
+            })
+        }
+    }
+}
+impl DescribeMetricAttributionInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeMetricAttribution`](crate::operation::DescribeMetricAttribution)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeMetricAttribution,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeMetricAttributionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeMetricAttributionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonPersonalize.DescribeMetricAttribution",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_metric_attribution(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeMetricAttribution::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeMetricAttribution",
+            "personalize",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeMetricAttributionInput`](crate::input::DescribeMetricAttributionInput).
+    pub fn builder() -> crate::input::describe_metric_attribution_input::Builder {
+        crate::input::describe_metric_attribution_input::Builder::default()
     }
 }
 
@@ -8074,6 +8609,355 @@ impl ListFiltersInput {
     }
 }
 
+/// See [`ListMetricAttributionMetricsInput`](crate::input::ListMetricAttributionMetricsInput).
+pub mod list_metric_attribution_metrics_input {
+
+    /// A builder for [`ListMetricAttributionMetricsInput`](crate::input::ListMetricAttributionMetricsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_attribution_arn: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the metric attribution to retrieve attributes for.</p>
+        pub fn metric_attribution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_attribution_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the metric attribution to retrieve attributes for.</p>
+        pub fn set_metric_attribution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.metric_attribution_arn = input;
+            self
+        }
+        /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of metrics to return in one page of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of metrics to return in one page of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMetricAttributionMetricsInput`](crate::input::ListMetricAttributionMetricsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListMetricAttributionMetricsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListMetricAttributionMetricsInput {
+                metric_attribution_arn: self.metric_attribution_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl ListMetricAttributionMetricsInput {
+    /// Consumes the builder and constructs an Operation<[`ListMetricAttributionMetrics`](crate::operation::ListMetricAttributionMetrics)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListMetricAttributionMetrics,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListMetricAttributionMetricsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListMetricAttributionMetricsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonPersonalize.ListMetricAttributionMetrics",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_metric_attribution_metrics(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListMetricAttributionMetrics::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListMetricAttributionMetrics",
+            "personalize",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListMetricAttributionMetricsInput`](crate::input::ListMetricAttributionMetricsInput).
+    pub fn builder() -> crate::input::list_metric_attribution_metrics_input::Builder {
+        crate::input::list_metric_attribution_metrics_input::Builder::default()
+    }
+}
+
+/// See [`ListMetricAttributionsInput`](crate::input::ListMetricAttributionsInput).
+pub mod list_metric_attributions_input {
+
+    /// A builder for [`ListMetricAttributionsInput`](crate::input::ListMetricAttributionsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
+        pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dataset_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
+        pub fn set_dataset_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dataset_group_arn = input;
+            self
+        }
+        /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of metric attributions to return in one page of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of metric attributions to return in one page of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMetricAttributionsInput`](crate::input::ListMetricAttributionsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListMetricAttributionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListMetricAttributionsInput {
+                dataset_group_arn: self.dataset_group_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl ListMetricAttributionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListMetricAttributions`](crate::operation::ListMetricAttributions)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListMetricAttributions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListMetricAttributionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListMetricAttributionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonPersonalize.ListMetricAttributions",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_metric_attributions(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListMetricAttributions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListMetricAttributions",
+            "personalize",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListMetricAttributionsInput`](crate::input::ListMetricAttributionsInput).
+    pub fn builder() -> crate::input::list_metric_attributions_input::Builder {
+        crate::input::list_metric_attributions_input::Builder::default()
+    }
+}
+
 /// See [`ListRecipesInput`](crate::input::ListRecipesInput).
 pub mod list_recipes_input {
 
@@ -10049,6 +10933,219 @@ impl UpdateCampaignInput {
     }
 }
 
+/// See [`UpdateMetricAttributionInput`](crate::input::UpdateMetricAttributionInput).
+pub mod update_metric_attribution_input {
+
+    /// A builder for [`UpdateMetricAttributionInput`](crate::input::UpdateMetricAttributionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) add_metrics: std::option::Option<std::vec::Vec<crate::model::MetricAttribute>>,
+        pub(crate) remove_metrics: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) metrics_output_config:
+            std::option::Option<crate::model::MetricAttributionOutput>,
+        pub(crate) metric_attribution_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `add_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_add_metrics`](Self::set_add_metrics).
+        ///
+        /// <p>Add new metric attributes to the metric attribution.</p>
+        pub fn add_metrics(mut self, input: crate::model::MetricAttribute) -> Self {
+            let mut v = self.add_metrics.unwrap_or_default();
+            v.push(input);
+            self.add_metrics = Some(v);
+            self
+        }
+        /// <p>Add new metric attributes to the metric attribution.</p>
+        pub fn set_add_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricAttribute>>,
+        ) -> Self {
+            self.add_metrics = input;
+            self
+        }
+        /// Appends an item to `remove_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_remove_metrics`](Self::set_remove_metrics).
+        ///
+        /// <p>Remove metric attributes from the metric attribution.</p>
+        pub fn remove_metrics(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.remove_metrics.unwrap_or_default();
+            v.push(input.into());
+            self.remove_metrics = Some(v);
+            self
+        }
+        /// <p>Remove metric attributes from the metric attribution.</p>
+        pub fn set_remove_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.remove_metrics = input;
+            self
+        }
+        /// <p>An output config for the metric attribution.</p>
+        pub fn metrics_output_config(
+            mut self,
+            input: crate::model::MetricAttributionOutput,
+        ) -> Self {
+            self.metrics_output_config = Some(input);
+            self
+        }
+        /// <p>An output config for the metric attribution.</p>
+        pub fn set_metrics_output_config(
+            mut self,
+            input: std::option::Option<crate::model::MetricAttributionOutput>,
+        ) -> Self {
+            self.metrics_output_config = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
+        pub fn metric_attribution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_attribution_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
+        pub fn set_metric_attribution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.metric_attribution_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateMetricAttributionInput`](crate::input::UpdateMetricAttributionInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateMetricAttributionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateMetricAttributionInput {
+                add_metrics: self.add_metrics,
+                remove_metrics: self.remove_metrics,
+                metrics_output_config: self.metrics_output_config,
+                metric_attribution_arn: self.metric_attribution_arn,
+            })
+        }
+    }
+}
+impl UpdateMetricAttributionInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateMetricAttribution`](crate::operation::UpdateMetricAttribution)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateMetricAttribution,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateMetricAttributionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateMetricAttributionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonPersonalize.UpdateMetricAttribution",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_metric_attribution(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateMetricAttribution::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateMetricAttribution",
+            "personalize",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateMetricAttributionInput`](crate::input::UpdateMetricAttributionInput).
+    pub fn builder() -> crate::input::update_metric_attribution_input::Builder {
+        crate::input::update_metric_attribution_input::Builder::default()
+    }
+}
+
 /// See [`UpdateRecommenderInput`](crate::input::UpdateRecommenderInput).
 pub mod update_recommender_input {
 
@@ -10233,6 +11330,44 @@ impl UpdateRecommenderInput {
     /// <p>The configuration details of the recommender.</p>
     pub fn recommender_config(&self) -> std::option::Option<&crate::model::RecommenderConfig> {
         self.recommender_config.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateMetricAttributionInput {
+    /// <p>Add new metric attributes to the metric attribution.</p>
+    #[doc(hidden)]
+    pub add_metrics: std::option::Option<std::vec::Vec<crate::model::MetricAttribute>>,
+    /// <p>Remove metric attributes from the metric attribution.</p>
+    #[doc(hidden)]
+    pub remove_metrics: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>An output config for the metric attribution.</p>
+    #[doc(hidden)]
+    pub metrics_output_config: std::option::Option<crate::model::MetricAttributionOutput>,
+    /// <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
+    #[doc(hidden)]
+    pub metric_attribution_arn: std::option::Option<std::string::String>,
+}
+impl UpdateMetricAttributionInput {
+    /// <p>Add new metric attributes to the metric attribution.</p>
+    pub fn add_metrics(&self) -> std::option::Option<&[crate::model::MetricAttribute]> {
+        self.add_metrics.as_deref()
+    }
+    /// <p>Remove metric attributes from the metric attribution.</p>
+    pub fn remove_metrics(&self) -> std::option::Option<&[std::string::String]> {
+        self.remove_metrics.as_deref()
+    }
+    /// <p>An output config for the metric attribution.</p>
+    pub fn metrics_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MetricAttributionOutput> {
+        self.metrics_output_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
+    pub fn metric_attribution_arn(&self) -> std::option::Option<&str> {
+        self.metric_attribution_arn.as_deref()
     }
 }
 
@@ -10518,6 +11653,64 @@ impl ListRecipesInput {
     /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned. </p>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListMetricAttributionsInput {
+    /// <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub dataset_group_arn: std::option::Option<std::string::String>,
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of metric attributions to return in one page of results.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListMetricAttributionsInput {
+    /// <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of metric attributions to return in one page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListMetricAttributionMetricsInput {
+    /// <p>The Amazon Resource Name (ARN) of the metric attribution to retrieve attributes for.</p>
+    #[doc(hidden)]
+    pub metric_attribution_arn: std::option::Option<std::string::String>,
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of metrics to return in one page of results.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListMetricAttributionMetricsInput {
+    /// <p>The Amazon Resource Name (ARN) of the metric attribution to retrieve attributes for.</p>
+    pub fn metric_attribution_arn(&self) -> std::option::Option<&str> {
+        self.metric_attribution_arn.as_deref()
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of metrics to return in one page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
     }
 }
 
@@ -10868,6 +12061,21 @@ impl DescribeRecipeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeMetricAttributionInput {
+    /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub metric_attribution_arn: std::option::Option<std::string::String>,
+}
+impl DescribeMetricAttributionInput {
+    /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    pub fn metric_attribution_arn(&self) -> std::option::Option<&str> {
+        self.metric_attribution_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFilterInput {
     /// <p>The ARN of the filter to describe.</p>
     #[doc(hidden)]
@@ -11078,6 +12286,21 @@ impl DeleteRecommenderInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteMetricAttributionInput {
+    /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub metric_attribution_arn: std::option::Option<std::string::String>,
+}
+impl DeleteMetricAttributionInput {
+    /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    pub fn metric_attribution_arn(&self) -> std::option::Option<&str> {
+        self.metric_attribution_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFilterInput {
     /// <p>The ARN of the filter to delete.</p>
     #[doc(hidden)]
@@ -11154,6 +12377,9 @@ impl DeleteCampaignInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSolutionVersionInput {
+    /// <p>The name of the solution version.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
     #[doc(hidden)]
     pub solution_arn: std::option::Option<std::string::String>,
@@ -11167,6 +12393,10 @@ pub struct CreateSolutionVersionInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSolutionVersionInput {
+    /// <p>The name of the solution version.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
     pub fn solution_arn(&self) -> std::option::Option<&str> {
         self.solution_arn.as_deref()
@@ -11331,6 +12561,44 @@ impl CreateRecommenderInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateMetricAttributionInput {
+    /// <p>A name for the metric attribution.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
+    #[doc(hidden)]
+    pub dataset_group_arn: std::option::Option<std::string::String>,
+    /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
+    #[doc(hidden)]
+    pub metrics: std::option::Option<std::vec::Vec<crate::model::MetricAttribute>>,
+    /// <p>The output configuration details for the metric attribution.</p>
+    #[doc(hidden)]
+    pub metrics_output_config: std::option::Option<crate::model::MetricAttributionOutput>,
+}
+impl CreateMetricAttributionInput {
+    /// <p>A name for the metric attribution.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
+    pub fn metrics(&self) -> std::option::Option<&[crate::model::MetricAttribute]> {
+        self.metrics.as_deref()
+    }
+    /// <p>The output configuration details for the metric attribution.</p>
+    pub fn metrics_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MetricAttributionOutput> {
+        self.metrics_output_config.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFilterInput {
     /// <p>The name of the filter to create.</p>
@@ -11430,6 +12698,9 @@ pub struct CreateDatasetImportJobInput {
     /// </ul>
     #[doc(hidden)]
     pub import_mode: std::option::Option<crate::model::ImportMode>,
+    /// <p>If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3</p>
+    #[doc(hidden)]
+    pub publish_attribution_metrics_to_s3: std::option::Option<bool>,
 }
 impl CreateDatasetImportJobInput {
     /// <p>The name for the dataset import job.</p>
@@ -11459,6 +12730,10 @@ impl CreateDatasetImportJobInput {
     /// </ul>
     pub fn import_mode(&self) -> std::option::Option<&crate::model::ImportMode> {
         self.import_mode.as_ref()
+    }
+    /// <p>If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3</p>
+    pub fn publish_attribution_metrics_to_s3(&self) -> std::option::Option<bool> {
+        self.publish_attribution_metrics_to_s3
     }
 }
 

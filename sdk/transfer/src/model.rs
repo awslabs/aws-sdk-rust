@@ -265,6 +265,10 @@ pub struct WorkflowDetails {
     /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     #[doc(hidden)]
     pub on_upload: std::option::Option<std::vec::Vec<crate::model::WorkflowDetail>>,
+    /// <p>A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a server that executes whenever there is a partial upload.</p>
+    /// <p>A <i>partial upload</i> occurs when a file is open when the session disconnects.</p>
+    #[doc(hidden)]
+    pub on_partial_upload: std::option::Option<std::vec::Vec<crate::model::WorkflowDetail>>,
 }
 impl WorkflowDetails {
     /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
@@ -272,6 +276,11 @@ impl WorkflowDetails {
     /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     pub fn on_upload(&self) -> std::option::Option<&[crate::model::WorkflowDetail]> {
         self.on_upload.as_deref()
+    }
+    /// <p>A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a server that executes whenever there is a partial upload.</p>
+    /// <p>A <i>partial upload</i> occurs when a file is open when the session disconnects.</p>
+    pub fn on_partial_upload(&self) -> std::option::Option<&[crate::model::WorkflowDetail]> {
+        self.on_partial_upload.as_deref()
     }
 }
 /// See [`WorkflowDetails`](crate::model::WorkflowDetails).
@@ -281,6 +290,8 @@ pub mod workflow_details {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) on_upload: std::option::Option<std::vec::Vec<crate::model::WorkflowDetail>>,
+        pub(crate) on_partial_upload:
+            std::option::Option<std::vec::Vec<crate::model::WorkflowDetail>>,
     }
     impl Builder {
         /// Appends an item to `on_upload`.
@@ -306,10 +317,32 @@ pub mod workflow_details {
             self.on_upload = input;
             self
         }
+        /// Appends an item to `on_partial_upload`.
+        ///
+        /// To override the contents of this collection use [`set_on_partial_upload`](Self::set_on_partial_upload).
+        ///
+        /// <p>A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a server that executes whenever there is a partial upload.</p>
+        /// <p>A <i>partial upload</i> occurs when a file is open when the session disconnects.</p>
+        pub fn on_partial_upload(mut self, input: crate::model::WorkflowDetail) -> Self {
+            let mut v = self.on_partial_upload.unwrap_or_default();
+            v.push(input);
+            self.on_partial_upload = Some(v);
+            self
+        }
+        /// <p>A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a server that executes whenever there is a partial upload.</p>
+        /// <p>A <i>partial upload</i> occurs when a file is open when the session disconnects.</p>
+        pub fn set_on_partial_upload(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::WorkflowDetail>>,
+        ) -> Self {
+            self.on_partial_upload = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkflowDetails`](crate::model::WorkflowDetails).
         pub fn build(self) -> crate::model::WorkflowDetails {
             crate::model::WorkflowDetails {
                 on_upload: self.on_upload,
+                on_partial_upload: self.on_partial_upload,
             }
         }
     }
@@ -322,6 +355,7 @@ impl WorkflowDetails {
 }
 
 /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+/// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowDetail {
@@ -711,13 +745,13 @@ pub struct EndpointDetails {
     /// </note>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The ID of the VPC endpoint.</p> <note>
+    /// <p>The identifier of the VPC endpoint.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
     /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
     /// </note>
     #[doc(hidden)]
     pub vpc_endpoint_id: std::option::Option<std::string::String>,
-    /// <p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p> <note>
+    /// <p>The VPC identifier of the VPC in which a server's endpoint will be hosted.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// </note>
     #[doc(hidden)]
@@ -742,14 +776,14 @@ impl EndpointDetails {
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>The ID of the VPC endpoint.</p> <note>
+    /// <p>The identifier of the VPC endpoint.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
     /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
     /// </note>
     pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
-    /// <p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p> <note>
+    /// <p>The VPC identifier of the VPC in which a server's endpoint will be hosted.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// </note>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
@@ -822,7 +856,7 @@ pub mod endpoint_details {
             self.subnet_ids = input;
             self
         }
-        /// <p>The ID of the VPC endpoint.</p> <note>
+        /// <p>The identifier of the VPC endpoint.</p> <note>
         /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
         /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
         /// </note>
@@ -830,7 +864,7 @@ pub mod endpoint_details {
             self.vpc_endpoint_id = Some(input.into());
             self
         }
-        /// <p>The ID of the VPC endpoint.</p> <note>
+        /// <p>The identifier of the VPC endpoint.</p> <note>
         /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
         /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
         /// </note>
@@ -841,14 +875,14 @@ pub mod endpoint_details {
             self.vpc_endpoint_id = input;
             self
         }
-        /// <p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p> <note>
+        /// <p>The VPC identifier of the VPC in which a server's endpoint will be hosted.</p> <note>
         /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
         /// </note>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_id = Some(input.into());
             self
         }
-        /// <p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p> <note>
+        /// <p>The VPC identifier of the VPC in which a server's endpoint will be hosted.</p> <note>
         /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
         /// </note>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -904,10 +938,12 @@ impl EndpointDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtocolDetails {
     /// <p> Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example: </p>
-    /// <p> <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code> </p>
-    /// <p>Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address you want to use.</p> <note>
+    /// <p> <code>aws transfer update-server --protocol-details PassiveIp=0.0.0.0</code> </p>
+    /// <p>Replace <code>0.0.0.0</code> in the example above with the actual IP address you want to use.</p> <note>
     /// <p> If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>. </p>
     /// </note>
+    /// <p> <i>Special values</i> </p>
+    /// <p>The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code> parameter. The value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In this case, the server automatically responds with one of the endpoint IPs within the PASV response. <code>PassiveIp=0.0.0.0</code> has a more unique application for its usage. For example, if you have a High Availability (HA) Network Load Balancer (NLB) environment, where you have 3 subnets, you can only specify a single IP address using the <code>PassiveIp</code> parameter. This reduces the effectiveness of having High Availability. In this case, you can specify <code>PassiveIp=0.0.0.0</code>. This tells the client to use the same IP address as the Control connection and utilize all AZs for their connections. Note, however, that not all FTP clients support the <code>PassiveIp=0.0.0.0</code> response. FileZilla and WinSCP do support it. If you are using other clients, check to see if your client supports the <code>PassiveIp=0.0.0.0</code> response.</p>
     #[doc(hidden)]
     pub passive_ip: std::option::Option<std::string::String>,
     /// <p>A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions through a unique session ID. This property is available during <code>CreateServer</code> and <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.</p>
@@ -933,10 +969,12 @@ pub struct ProtocolDetails {
 }
 impl ProtocolDetails {
     /// <p> Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example: </p>
-    /// <p> <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code> </p>
-    /// <p>Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address you want to use.</p> <note>
+    /// <p> <code>aws transfer update-server --protocol-details PassiveIp=0.0.0.0</code> </p>
+    /// <p>Replace <code>0.0.0.0</code> in the example above with the actual IP address you want to use.</p> <note>
     /// <p> If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>. </p>
     /// </note>
+    /// <p> <i>Special values</i> </p>
+    /// <p>The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code> parameter. The value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In this case, the server automatically responds with one of the endpoint IPs within the PASV response. <code>PassiveIp=0.0.0.0</code> has a more unique application for its usage. For example, if you have a High Availability (HA) Network Load Balancer (NLB) environment, where you have 3 subnets, you can only specify a single IP address using the <code>PassiveIp</code> parameter. This reduces the effectiveness of having High Availability. In this case, you can specify <code>PassiveIp=0.0.0.0</code>. This tells the client to use the same IP address as the Control connection and utilize all AZs for their connections. Note, however, that not all FTP clients support the <code>PassiveIp=0.0.0.0</code> response. FileZilla and WinSCP do support it. If you are using other clients, check to see if your client supports the <code>PassiveIp=0.0.0.0</code> response.</p>
     pub fn passive_ip(&self) -> std::option::Option<&str> {
         self.passive_ip.as_deref()
     }
@@ -980,19 +1018,23 @@ pub mod protocol_details {
     }
     impl Builder {
         /// <p> Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example: </p>
-        /// <p> <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code> </p>
-        /// <p>Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address you want to use.</p> <note>
+        /// <p> <code>aws transfer update-server --protocol-details PassiveIp=0.0.0.0</code> </p>
+        /// <p>Replace <code>0.0.0.0</code> in the example above with the actual IP address you want to use.</p> <note>
         /// <p> If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>. </p>
         /// </note>
+        /// <p> <i>Special values</i> </p>
+        /// <p>The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code> parameter. The value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In this case, the server automatically responds with one of the endpoint IPs within the PASV response. <code>PassiveIp=0.0.0.0</code> has a more unique application for its usage. For example, if you have a High Availability (HA) Network Load Balancer (NLB) environment, where you have 3 subnets, you can only specify a single IP address using the <code>PassiveIp</code> parameter. This reduces the effectiveness of having High Availability. In this case, you can specify <code>PassiveIp=0.0.0.0</code>. This tells the client to use the same IP address as the Control connection and utilize all AZs for their connections. Note, however, that not all FTP clients support the <code>PassiveIp=0.0.0.0</code> response. FileZilla and WinSCP do support it. If you are using other clients, check to see if your client supports the <code>PassiveIp=0.0.0.0</code> response.</p>
         pub fn passive_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.passive_ip = Some(input.into());
             self
         }
         /// <p> Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example: </p>
-        /// <p> <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code> </p>
-        /// <p>Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address you want to use.</p> <note>
+        /// <p> <code>aws transfer update-server --protocol-details PassiveIp=0.0.0.0</code> </p>
+        /// <p>Replace <code>0.0.0.0</code> in the example above with the actual IP address you want to use.</p> <note>
         /// <p> If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>. </p>
         /// </note>
+        /// <p> <i>Special values</i> </p>
+        /// <p>The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code> parameter. The value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In this case, the server automatically responds with one of the endpoint IPs within the PASV response. <code>PassiveIp=0.0.0.0</code> has a more unique application for its usage. For example, if you have a High Availability (HA) Network Load Balancer (NLB) environment, where you have 3 subnets, you can only specify a single IP address using the <code>PassiveIp</code> parameter. This reduces the effectiveness of having High Availability. In this case, you can specify <code>PassiveIp=0.0.0.0</code>. This tells the client to use the same IP address as the Control connection and utilize all AZs for their connections. Note, however, that not all FTP clients support the <code>PassiveIp=0.0.0.0</code> response. FileZilla and WinSCP do support it. If you are using other clients, check to see if your client supports the <code>PassiveIp=0.0.0.0</code> response.</p>
         pub fn set_passive_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.passive_ip = input;
             self
@@ -1906,6 +1948,7 @@ impl AsRef<str> for SigningAlg {
 ///     EncryptionAlg::Aes128Cbc => { /* ... */ },
 ///     EncryptionAlg::Aes192Cbc => { /* ... */ },
 ///     EncryptionAlg::Aes256Cbc => { /* ... */ },
+///     EncryptionAlg::None => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -1945,6 +1988,8 @@ pub enum EncryptionAlg {
     Aes192Cbc,
     #[allow(missing_docs)] // documentation missing in model
     Aes256Cbc,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -1954,6 +1999,7 @@ impl std::convert::From<&str> for EncryptionAlg {
             "AES128_CBC" => EncryptionAlg::Aes128Cbc,
             "AES192_CBC" => EncryptionAlg::Aes192Cbc,
             "AES256_CBC" => EncryptionAlg::Aes256Cbc,
+            "NONE" => EncryptionAlg::None,
             other => EncryptionAlg::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -1972,12 +2018,13 @@ impl EncryptionAlg {
             EncryptionAlg::Aes128Cbc => "AES128_CBC",
             EncryptionAlg::Aes192Cbc => "AES192_CBC",
             EncryptionAlg::Aes256Cbc => "AES256_CBC",
+            EncryptionAlg::None => "NONE",
             EncryptionAlg::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AES128_CBC", "AES192_CBC", "AES256_CBC"]
+        &["AES128_CBC", "AES192_CBC", "AES256_CBC", "NONE"]
     }
 }
 impl AsRef<str> for EncryptionAlg {
@@ -2325,7 +2372,7 @@ impl AsRef<str> for CustomStepStatus {
     }
 }
 
-/// <p>Contains the ID, text description, and Amazon Resource Name (ARN) for the workflow.</p>
+/// <p>Contains the identifier, text description, and Amazon Resource Name (ARN) for the workflow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListedWorkflow {
@@ -2824,7 +2871,6 @@ impl ListedServer {
 /// ability to perform file operations. There are six possible states: <code>OFFLINE</code>,
 /// <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>,
 /// <code>START_FAILED</code>, and <code>STOP_FAILED</code>.</p>
-///
 /// <p>
 /// <code>OFFLINE</code> indicates that the server exists, but that it is not available for
 /// file operations. <code>ONLINE</code> indicates that the server is available to perform file
@@ -3309,14 +3355,14 @@ impl AsRef<str> for ProfileType {
     }
 }
 
-/// <p>Returns properties of the host key that is specified.</p>
+/// <p>Returns properties of the host key that's specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListedHostKey {
-    /// <p>Specifies the unique Amazon Resource Name (ARN) of the host key.</p>
+    /// <p>The unique Amazon Resource Name (ARN) of the host key.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>A unique identifier for the host key.</p>
     #[doc(hidden)]
     pub host_key_id: std::option::Option<std::string::String>,
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
@@ -3325,13 +3371,13 @@ pub struct ListedHostKey {
     /// <p>The current description for the host key. You can change it by calling the <code>UpdateHostKey</code> operation and providing a new description.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:</p>
+    /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
     /// <ul>
-    /// <li> <p>ssh-rsa</p> </li>
-    /// <li> <p>ssh-ed25519</p> </li>
-    /// <li> <p>ecdsa-sha2-nistp256 </p> </li>
-    /// <li> <p>ecdsa-sha2-nistp384</p> </li>
-    /// <li> <p>ecdsa-sha2-nistp521</p> </li>
+    /// <li> <p> <code>ssh-rsa</code> </p> </li>
+    /// <li> <p> <code>ssh-ed25519</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -3340,11 +3386,11 @@ pub struct ListedHostKey {
     pub date_imported: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListedHostKey {
-    /// <p>Specifies the unique Amazon Resource Name (ARN) of the host key.</p>
+    /// <p>The unique Amazon Resource Name (ARN) of the host key.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p></p>
+    /// <p>A unique identifier for the host key.</p>
     pub fn host_key_id(&self) -> std::option::Option<&str> {
         self.host_key_id.as_deref()
     }
@@ -3356,13 +3402,13 @@ impl ListedHostKey {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:</p>
+    /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
     /// <ul>
-    /// <li> <p>ssh-rsa</p> </li>
-    /// <li> <p>ssh-ed25519</p> </li>
-    /// <li> <p>ecdsa-sha2-nistp256 </p> </li>
-    /// <li> <p>ecdsa-sha2-nistp384</p> </li>
-    /// <li> <p>ecdsa-sha2-nistp521</p> </li>
+    /// <li> <p> <code>ssh-rsa</code> </p> </li>
+    /// <li> <p> <code>ssh-ed25519</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
@@ -3386,22 +3432,22 @@ pub mod listed_host_key {
         pub(crate) date_imported: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Specifies the unique Amazon Resource Name (ARN) of the host key.</p>
+        /// <p>The unique Amazon Resource Name (ARN) of the host key.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>Specifies the unique Amazon Resource Name (ARN) of the host key.</p>
+        /// <p>The unique Amazon Resource Name (ARN) of the host key.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p></p>
+        /// <p>A unique identifier for the host key.</p>
         pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_key_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>A unique identifier for the host key.</p>
         pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_key_id = input;
             self
@@ -3426,25 +3472,25 @@ pub mod listed_host_key {
             self.description = input;
             self
         }
-        /// <p>The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:</p>
+        /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
         /// <ul>
-        /// <li> <p>ssh-rsa</p> </li>
-        /// <li> <p>ssh-ed25519</p> </li>
-        /// <li> <p>ecdsa-sha2-nistp256 </p> </li>
-        /// <li> <p>ecdsa-sha2-nistp384</p> </li>
-        /// <li> <p>ecdsa-sha2-nistp521</p> </li>
+        /// <li> <p> <code>ssh-rsa</code> </p> </li>
+        /// <li> <p> <code>ssh-ed25519</code> </p> </li>
+        /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li>
+        /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
+        /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:</p>
+        /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
         /// <ul>
-        /// <li> <p>ssh-rsa</p> </li>
-        /// <li> <p>ssh-ed25519</p> </li>
-        /// <li> <p>ecdsa-sha2-nistp256 </p> </li>
-        /// <li> <p>ecdsa-sha2-nistp384</p> </li>
-        /// <li> <p>ecdsa-sha2-nistp521</p> </li>
+        /// <li> <p> <code>ssh-rsa</code> </p> </li>
+        /// <li> <p> <code>ssh-ed25519</code> </p> </li>
+        /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li>
+        /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
+        /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
@@ -3846,7 +3892,7 @@ pub struct FileLocation {
     /// <p>Specifies the S3 details for the file being used, such as bucket, ETag, and so forth.</p>
     #[doc(hidden)]
     pub s3_file_location: std::option::Option<crate::model::S3FileLocation>,
-    /// <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
+    /// <p>Specifies the Amazon EFS identifier and the path for the file being used.</p>
     #[doc(hidden)]
     pub efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
 }
@@ -3855,7 +3901,7 @@ impl FileLocation {
     pub fn s3_file_location(&self) -> std::option::Option<&crate::model::S3FileLocation> {
         self.s3_file_location.as_ref()
     }
-    /// <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
+    /// <p>Specifies the Amazon EFS identifier and the path for the file being used.</p>
     pub fn efs_file_location(&self) -> std::option::Option<&crate::model::EfsFileLocation> {
         self.efs_file_location.as_ref()
     }
@@ -3883,12 +3929,12 @@ pub mod file_location {
             self.s3_file_location = input;
             self
         }
-        /// <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
+        /// <p>Specifies the Amazon EFS identifier and the path for the file being used.</p>
         pub fn efs_file_location(mut self, input: crate::model::EfsFileLocation) -> Self {
             self.efs_file_location = Some(input);
             self
         }
-        /// <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
+        /// <p>Specifies the Amazon EFS identifier and the path for the file being used.</p>
         pub fn set_efs_file_location(
             mut self,
             input: std::option::Option<crate::model::EfsFileLocation>,
@@ -3917,7 +3963,7 @@ impl FileLocation {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EfsFileLocation {
-    /// <p>The ID of the file system, assigned by Amazon EFS.</p>
+    /// <p>The identifier of the file system, assigned by Amazon EFS.</p>
     #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The pathname for the folder being used by a workflow.</p>
@@ -3925,7 +3971,7 @@ pub struct EfsFileLocation {
     pub path: std::option::Option<std::string::String>,
 }
 impl EfsFileLocation {
-    /// <p>The ID of the file system, assigned by Amazon EFS.</p>
+    /// <p>The identifier of the file system, assigned by Amazon EFS.</p>
     pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
@@ -3944,12 +3990,12 @@ pub mod efs_file_location {
         pub(crate) path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the file system, assigned by Amazon EFS.</p>
+        /// <p>The identifier of the file system, assigned by Amazon EFS.</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_id = Some(input.into());
             self
         }
-        /// <p>The ID of the file system, assigned by Amazon EFS.</p>
+        /// <p>The identifier of the file system, assigned by Amazon EFS.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5154,6 +5200,9 @@ pub struct WorkflowStep {
     /// <p>You specify one or more tags: each tag contains a key/value pair.</p>
     #[doc(hidden)]
     pub tag_step_details: std::option::Option<crate::model::TagStepDetails>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub decrypt_step_details: std::option::Option<crate::model::DecryptStepDetails>,
 }
 impl WorkflowStep {
     /// <p> Currently, the following step types are supported. </p>
@@ -5190,6 +5239,10 @@ impl WorkflowStep {
     pub fn tag_step_details(&self) -> std::option::Option<&crate::model::TagStepDetails> {
         self.tag_step_details.as_ref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn decrypt_step_details(&self) -> std::option::Option<&crate::model::DecryptStepDetails> {
+        self.decrypt_step_details.as_ref()
+    }
 }
 /// See [`WorkflowStep`](crate::model::WorkflowStep).
 pub mod workflow_step {
@@ -5202,6 +5255,7 @@ pub mod workflow_step {
         pub(crate) custom_step_details: std::option::Option<crate::model::CustomStepDetails>,
         pub(crate) delete_step_details: std::option::Option<crate::model::DeleteStepDetails>,
         pub(crate) tag_step_details: std::option::Option<crate::model::TagStepDetails>,
+        pub(crate) decrypt_step_details: std::option::Option<crate::model::DecryptStepDetails>,
     }
     impl Builder {
         /// <p> Currently, the following step types are supported. </p>
@@ -5297,6 +5351,19 @@ pub mod workflow_step {
             self.tag_step_details = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn decrypt_step_details(mut self, input: crate::model::DecryptStepDetails) -> Self {
+            self.decrypt_step_details = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_decrypt_step_details(
+            mut self,
+            input: std::option::Option<crate::model::DecryptStepDetails>,
+        ) -> Self {
+            self.decrypt_step_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkflowStep`](crate::model::WorkflowStep).
         pub fn build(self) -> crate::model::WorkflowStep {
             crate::model::WorkflowStep {
@@ -5305,6 +5372,7 @@ pub mod workflow_step {
                 custom_step_details: self.custom_step_details,
                 delete_step_details: self.delete_step_details,
                 tag_step_details: self.tag_step_details,
+                decrypt_step_details: self.decrypt_step_details,
             }
         }
     }
@@ -5313,6 +5381,463 @@ impl WorkflowStep {
     /// Creates a new builder-style object to manufacture [`WorkflowStep`](crate::model::WorkflowStep).
     pub fn builder() -> crate::model::workflow_step::Builder {
         crate::model::workflow_step::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DecryptStepDetails {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::EncryptionType>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub source_file_location: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub overwrite_existing: std::option::Option<crate::model::OverwriteExisting>,
+    /// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
+    #[doc(hidden)]
+    pub destination_file_location: std::option::Option<crate::model::InputFileLocation>,
+}
+impl DecryptStepDetails {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+        self.r#type.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn source_file_location(&self) -> std::option::Option<&str> {
+        self.source_file_location.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn overwrite_existing(&self) -> std::option::Option<&crate::model::OverwriteExisting> {
+        self.overwrite_existing.as_ref()
+    }
+    /// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
+    pub fn destination_file_location(
+        &self,
+    ) -> std::option::Option<&crate::model::InputFileLocation> {
+        self.destination_file_location.as_ref()
+    }
+}
+/// See [`DecryptStepDetails`](crate::model::DecryptStepDetails).
+pub mod decrypt_step_details {
+
+    /// A builder for [`DecryptStepDetails`](crate::model::DecryptStepDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::EncryptionType>,
+        pub(crate) source_file_location: std::option::Option<std::string::String>,
+        pub(crate) overwrite_existing: std::option::Option<crate::model::OverwriteExisting>,
+        pub(crate) destination_file_location: std::option::Option<crate::model::InputFileLocation>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn r#type(mut self, input: crate::model::EncryptionType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn source_file_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_file_location = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_source_file_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_file_location = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn overwrite_existing(mut self, input: crate::model::OverwriteExisting) -> Self {
+            self.overwrite_existing = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_overwrite_existing(
+            mut self,
+            input: std::option::Option<crate::model::OverwriteExisting>,
+        ) -> Self {
+            self.overwrite_existing = input;
+            self
+        }
+        /// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
+        pub fn destination_file_location(mut self, input: crate::model::InputFileLocation) -> Self {
+            self.destination_file_location = Some(input);
+            self
+        }
+        /// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
+        pub fn set_destination_file_location(
+            mut self,
+            input: std::option::Option<crate::model::InputFileLocation>,
+        ) -> Self {
+            self.destination_file_location = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DecryptStepDetails`](crate::model::DecryptStepDetails).
+        pub fn build(self) -> crate::model::DecryptStepDetails {
+            crate::model::DecryptStepDetails {
+                name: self.name,
+                r#type: self.r#type,
+                source_file_location: self.source_file_location,
+                overwrite_existing: self.overwrite_existing,
+                destination_file_location: self.destination_file_location,
+            }
+        }
+    }
+}
+impl DecryptStepDetails {
+    /// Creates a new builder-style object to manufacture [`DecryptStepDetails`](crate::model::DecryptStepDetails).
+    pub fn builder() -> crate::model::decrypt_step_details::Builder {
+        crate::model::decrypt_step_details::Builder::default()
+    }
+}
+
+/// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InputFileLocation {
+    /// <p>Specifies the details for the S3 file being copied.</p>
+    #[doc(hidden)]
+    pub s3_file_location: std::option::Option<crate::model::S3InputFileLocation>,
+    /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
+    pub efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
+}
+impl InputFileLocation {
+    /// <p>Specifies the details for the S3 file being copied.</p>
+    pub fn s3_file_location(&self) -> std::option::Option<&crate::model::S3InputFileLocation> {
+        self.s3_file_location.as_ref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn efs_file_location(&self) -> std::option::Option<&crate::model::EfsFileLocation> {
+        self.efs_file_location.as_ref()
+    }
+}
+/// See [`InputFileLocation`](crate::model::InputFileLocation).
+pub mod input_file_location {
+
+    /// A builder for [`InputFileLocation`](crate::model::InputFileLocation).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_file_location: std::option::Option<crate::model::S3InputFileLocation>,
+        pub(crate) efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
+    }
+    impl Builder {
+        /// <p>Specifies the details for the S3 file being copied.</p>
+        pub fn s3_file_location(mut self, input: crate::model::S3InputFileLocation) -> Self {
+            self.s3_file_location = Some(input);
+            self
+        }
+        /// <p>Specifies the details for the S3 file being copied.</p>
+        pub fn set_s3_file_location(
+            mut self,
+            input: std::option::Option<crate::model::S3InputFileLocation>,
+        ) -> Self {
+            self.s3_file_location = input;
+            self
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn efs_file_location(mut self, input: crate::model::EfsFileLocation) -> Self {
+            self.efs_file_location = Some(input);
+            self
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn set_efs_file_location(
+            mut self,
+            input: std::option::Option<crate::model::EfsFileLocation>,
+        ) -> Self {
+            self.efs_file_location = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InputFileLocation`](crate::model::InputFileLocation).
+        pub fn build(self) -> crate::model::InputFileLocation {
+            crate::model::InputFileLocation {
+                s3_file_location: self.s3_file_location,
+                efs_file_location: self.efs_file_location,
+            }
+        }
+    }
+}
+impl InputFileLocation {
+    /// Creates a new builder-style object to manufacture [`InputFileLocation`](crate::model::InputFileLocation).
+    pub fn builder() -> crate::model::input_file_location::Builder {
+        crate::model::input_file_location::Builder::default()
+    }
+}
+
+/// <p>Specifies the customer input S3 file location. If it is used inside <code>copyStepDetails.DestinationFileLocation</code>, it should be the S3 copy destination.</p>
+/// <p> You need to provide the bucket and key. The key can represent either a path or a file. This is determined by whether or not you end the key value with the forward slash (/) character. If the final character is "/", then your file is copied to the folder, and its name does not change. If, rather, the final character is alphanumeric, your uploaded file is renamed to the path value. In this case, if a file with that name already exists, it is overwritten. </p>
+/// <p>For example, if your path is <code>shared-files/bob/</code>, your uploaded files are copied to the <code>shared-files/bob/</code>, folder. If your path is <code>shared-files/today</code>, each uploaded file is copied to the <code>shared-files</code> folder and named <code>today</code>: each upload overwrites the previous version of the <i>bob</i> file.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct S3InputFileLocation {
+    /// <p>Specifies the S3 bucket for the customer input file.</p>
+    #[doc(hidden)]
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
+    #[doc(hidden)]
+    pub key: std::option::Option<std::string::String>,
+}
+impl S3InputFileLocation {
+    /// <p>Specifies the S3 bucket for the customer input file.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+}
+/// See [`S3InputFileLocation`](crate::model::S3InputFileLocation).
+pub mod s3_input_file_location {
+
+    /// A builder for [`S3InputFileLocation`](crate::model::S3InputFileLocation).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) key: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the S3 bucket for the customer input file.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        /// <p>Specifies the S3 bucket for the customer input file.</p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3InputFileLocation`](crate::model::S3InputFileLocation).
+        pub fn build(self) -> crate::model::S3InputFileLocation {
+            crate::model::S3InputFileLocation {
+                bucket: self.bucket,
+                key: self.key,
+            }
+        }
+    }
+}
+impl S3InputFileLocation {
+    /// Creates a new builder-style object to manufacture [`S3InputFileLocation`](crate::model::S3InputFileLocation).
+    pub fn builder() -> crate::model::s3_input_file_location::Builder {
+        crate::model::s3_input_file_location::Builder::default()
+    }
+}
+
+/// When writing a match expression against `OverwriteExisting`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let overwriteexisting = unimplemented!();
+/// match overwriteexisting {
+///     OverwriteExisting::False => { /* ... */ },
+///     OverwriteExisting::True => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `overwriteexisting` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OverwriteExisting::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OverwriteExisting::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OverwriteExisting::NewFeature` is defined.
+/// Specifically, when `overwriteexisting` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OverwriteExisting::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OverwriteExisting {
+    #[allow(missing_docs)] // documentation missing in model
+    False,
+    #[allow(missing_docs)] // documentation missing in model
+    True,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for OverwriteExisting {
+    fn from(s: &str) -> Self {
+        match s {
+            "FALSE" => OverwriteExisting::False,
+            "TRUE" => OverwriteExisting::True,
+            other => {
+                OverwriteExisting::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for OverwriteExisting {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OverwriteExisting::from(s))
+    }
+}
+impl OverwriteExisting {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OverwriteExisting::False => "FALSE",
+            OverwriteExisting::True => "TRUE",
+            OverwriteExisting::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FALSE", "TRUE"]
+    }
+}
+impl AsRef<str> for OverwriteExisting {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `EncryptionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let encryptiontype = unimplemented!();
+/// match encryptiontype {
+///     EncryptionType::Pgp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `encryptiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EncryptionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EncryptionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EncryptionType::NewFeature` is defined.
+/// Specifically, when `encryptiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EncryptionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EncryptionType {
+    #[allow(missing_docs)] // documentation missing in model
+    Pgp,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EncryptionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PGP" => EncryptionType::Pgp,
+            other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for EncryptionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EncryptionType::from(s))
+    }
+}
+impl EncryptionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EncryptionType::Pgp => "PGP",
+            EncryptionType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["PGP"]
+    }
+}
+impl AsRef<str> for EncryptionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -5840,240 +6365,6 @@ impl CopyStepDetails {
     }
 }
 
-/// When writing a match expression against `OverwriteExisting`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let overwriteexisting = unimplemented!();
-/// match overwriteexisting {
-///     OverwriteExisting::False => { /* ... */ },
-///     OverwriteExisting::True => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `overwriteexisting` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `OverwriteExisting::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `OverwriteExisting::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `OverwriteExisting::NewFeature` is defined.
-/// Specifically, when `overwriteexisting` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `OverwriteExisting::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum OverwriteExisting {
-    #[allow(missing_docs)] // documentation missing in model
-    False,
-    #[allow(missing_docs)] // documentation missing in model
-    True,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for OverwriteExisting {
-    fn from(s: &str) -> Self {
-        match s {
-            "FALSE" => OverwriteExisting::False,
-            "TRUE" => OverwriteExisting::True,
-            other => {
-                OverwriteExisting::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
-        }
-    }
-}
-impl std::str::FromStr for OverwriteExisting {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OverwriteExisting::from(s))
-    }
-}
-impl OverwriteExisting {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OverwriteExisting::False => "FALSE",
-            OverwriteExisting::True => "TRUE",
-            OverwriteExisting::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["FALSE", "TRUE"]
-    }
-}
-impl AsRef<str> for OverwriteExisting {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputFileLocation {
-    /// <p>Specifies the details for the S3 file being copied.</p>
-    #[doc(hidden)]
-    pub s3_file_location: std::option::Option<crate::model::S3InputFileLocation>,
-    /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
-    pub efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
-}
-impl InputFileLocation {
-    /// <p>Specifies the details for the S3 file being copied.</p>
-    pub fn s3_file_location(&self) -> std::option::Option<&crate::model::S3InputFileLocation> {
-        self.s3_file_location.as_ref()
-    }
-    /// <p>Reserved for future use.</p>
-    pub fn efs_file_location(&self) -> std::option::Option<&crate::model::EfsFileLocation> {
-        self.efs_file_location.as_ref()
-    }
-}
-/// See [`InputFileLocation`](crate::model::InputFileLocation).
-pub mod input_file_location {
-
-    /// A builder for [`InputFileLocation`](crate::model::InputFileLocation).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) s3_file_location: std::option::Option<crate::model::S3InputFileLocation>,
-        pub(crate) efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
-    }
-    impl Builder {
-        /// <p>Specifies the details for the S3 file being copied.</p>
-        pub fn s3_file_location(mut self, input: crate::model::S3InputFileLocation) -> Self {
-            self.s3_file_location = Some(input);
-            self
-        }
-        /// <p>Specifies the details for the S3 file being copied.</p>
-        pub fn set_s3_file_location(
-            mut self,
-            input: std::option::Option<crate::model::S3InputFileLocation>,
-        ) -> Self {
-            self.s3_file_location = input;
-            self
-        }
-        /// <p>Reserved for future use.</p>
-        pub fn efs_file_location(mut self, input: crate::model::EfsFileLocation) -> Self {
-            self.efs_file_location = Some(input);
-            self
-        }
-        /// <p>Reserved for future use.</p>
-        pub fn set_efs_file_location(
-            mut self,
-            input: std::option::Option<crate::model::EfsFileLocation>,
-        ) -> Self {
-            self.efs_file_location = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InputFileLocation`](crate::model::InputFileLocation).
-        pub fn build(self) -> crate::model::InputFileLocation {
-            crate::model::InputFileLocation {
-                s3_file_location: self.s3_file_location,
-                efs_file_location: self.efs_file_location,
-            }
-        }
-    }
-}
-impl InputFileLocation {
-    /// Creates a new builder-style object to manufacture [`InputFileLocation`](crate::model::InputFileLocation).
-    pub fn builder() -> crate::model::input_file_location::Builder {
-        crate::model::input_file_location::Builder::default()
-    }
-}
-
-/// <p>Specifies the customer input S3 file location. If it is used inside <code>copyStepDetails.DestinationFileLocation</code>, it should be the S3 copy destination.</p>
-/// <p> You need to provide the bucket and key. The key can represent either a path or a file. This is determined by whether or not you end the key value with the forward slash (/) character. If the final character is "/", then your file is copied to the folder, and its name does not change. If, rather, the final character is alphanumeric, your uploaded file is renamed to the path value. In this case, if a file with that name already exists, it is overwritten. </p>
-/// <p>For example, if your path is <code>shared-files/bob/</code>, your uploaded files are copied to the <code>shared-files/bob/</code>, folder. If your path is <code>shared-files/today</code>, each uploaded file is copied to the <code>shared-files</code> folder and named <code>today</code>: each upload overwrites the previous version of the <i>bob</i> file.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3InputFileLocation {
-    /// <p>Specifies the S3 bucket for the customer input file.</p>
-    #[doc(hidden)]
-    pub bucket: std::option::Option<std::string::String>,
-    /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
-    #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
-}
-impl S3InputFileLocation {
-    /// <p>Specifies the S3 bucket for the customer input file.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
-        self.bucket.as_deref()
-    }
-    /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
-        self.key.as_deref()
-    }
-}
-/// See [`S3InputFileLocation`](crate::model::S3InputFileLocation).
-pub mod s3_input_file_location {
-
-    /// A builder for [`S3InputFileLocation`](crate::model::S3InputFileLocation).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) bucket: std::option::Option<std::string::String>,
-        pub(crate) key: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Specifies the S3 bucket for the customer input file.</p>
-        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(input.into());
-            self
-        }
-        /// <p>Specifies the S3 bucket for the customer input file.</p>
-        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
-        }
-        /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
-        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.key = Some(input.into());
-            self
-        }
-        /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
-        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`S3InputFileLocation`](crate::model::S3InputFileLocation).
-        pub fn build(self) -> crate::model::S3InputFileLocation {
-            crate::model::S3InputFileLocation {
-                bucket: self.bucket,
-                key: self.key,
-            }
-        }
-    }
-}
-impl S3InputFileLocation {
-    /// Creates a new builder-style object to manufacture [`S3InputFileLocation`](crate::model::S3InputFileLocation).
-    pub fn builder() -> crate::model::s3_input_file_location::Builder {
-        crate::model::s3_input_file_location::Builder::default()
-    }
-}
-
 /// When writing a match expression against `WorkflowStepType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
 /// feature that is supported by the service but has not been represented as an enum
@@ -6088,6 +6379,7 @@ impl S3InputFileLocation {
 /// match workflowsteptype {
 ///     WorkflowStepType::Copy => { /* ... */ },
 ///     WorkflowStepType::Custom => { /* ... */ },
+///     WorkflowStepType::Decrypt => { /* ... */ },
 ///     WorkflowStepType::Delete => { /* ... */ },
 ///     WorkflowStepType::Tag => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -6128,6 +6420,8 @@ pub enum WorkflowStepType {
     #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
+    Decrypt,
+    #[allow(missing_docs)] // documentation missing in model
     Delete,
     #[allow(missing_docs)] // documentation missing in model
     Tag,
@@ -6139,6 +6433,7 @@ impl std::convert::From<&str> for WorkflowStepType {
         match s {
             "COPY" => WorkflowStepType::Copy,
             "CUSTOM" => WorkflowStepType::Custom,
+            "DECRYPT" => WorkflowStepType::Decrypt,
             "DELETE" => WorkflowStepType::Delete,
             "TAG" => WorkflowStepType::Tag,
             other => WorkflowStepType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
@@ -6158,6 +6453,7 @@ impl WorkflowStepType {
         match self {
             WorkflowStepType::Copy => "COPY",
             WorkflowStepType::Custom => "CUSTOM",
+            WorkflowStepType::Decrypt => "DECRYPT",
             WorkflowStepType::Delete => "DELETE",
             WorkflowStepType::Tag => "TAG",
             WorkflowStepType::Unknown(value) => value.as_str(),
@@ -6165,7 +6461,7 @@ impl WorkflowStepType {
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COPY", "CUSTOM", "DELETE", "TAG"]
+        &["COPY", "CUSTOM", "DECRYPT", "DELETE", "TAG"]
     }
 }
 impl AsRef<str> for WorkflowStepType {
@@ -6629,6 +6925,7 @@ pub struct DescribedServer {
     #[doc(hidden)]
     pub user_count: std::option::Option<i32>,
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+    /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
     #[doc(hidden)]
     pub workflow_details: std::option::Option<crate::model::WorkflowDetails>,
 }
@@ -6737,6 +7034,7 @@ impl DescribedServer {
         self.user_count
     }
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+    /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
     pub fn workflow_details(&self) -> std::option::Option<&crate::model::WorkflowDetails> {
         self.workflow_details.as_ref()
     }
@@ -7058,11 +7356,13 @@ pub mod described_server {
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+        /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
         pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
             self.workflow_details = Some(input);
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+        /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
         pub fn set_workflow_details(
             mut self,
             input: std::option::Option<crate::model::WorkflowDetails>,
@@ -7285,7 +7585,7 @@ impl DescribedSecurityPolicy {
     }
 }
 
-/// <p>The details for a local or partner AS2 profile. profile.</p>
+/// <p>The details for a local or partner AS2 profile. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribedProfile {
@@ -7465,13 +7765,13 @@ pub struct DescribedHostKey {
     /// <p>The text description for this host key.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:</p>
+    /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
     /// <ul>
-    /// <li> <p>ssh-rsa</p> </li>
-    /// <li> <p>ssh-ed25519</p> </li>
-    /// <li> <p>ecdsa-sha2-nistp256 </p> </li>
-    /// <li> <p>ecdsa-sha2-nistp384</p> </li>
-    /// <li> <p>ecdsa-sha2-nistp521</p> </li>
+    /// <li> <p> <code>ssh-rsa</code> </p> </li>
+    /// <li> <p> <code>ssh-ed25519</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -7499,13 +7799,13 @@ impl DescribedHostKey {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:</p>
+    /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
     /// <ul>
-    /// <li> <p>ssh-rsa</p> </li>
-    /// <li> <p>ssh-ed25519</p> </li>
-    /// <li> <p>ecdsa-sha2-nistp256 </p> </li>
-    /// <li> <p>ecdsa-sha2-nistp384</p> </li>
-    /// <li> <p>ecdsa-sha2-nistp521</p> </li>
+    /// <li> <p> <code>ssh-rsa</code> </p> </li>
+    /// <li> <p> <code>ssh-ed25519</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
@@ -7577,25 +7877,25 @@ pub mod described_host_key {
             self.description = input;
             self
         }
-        /// <p>The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:</p>
+        /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
         /// <ul>
-        /// <li> <p>ssh-rsa</p> </li>
-        /// <li> <p>ssh-ed25519</p> </li>
-        /// <li> <p>ecdsa-sha2-nistp256 </p> </li>
-        /// <li> <p>ecdsa-sha2-nistp384</p> </li>
-        /// <li> <p>ecdsa-sha2-nistp521</p> </li>
+        /// <li> <p> <code>ssh-rsa</code> </p> </li>
+        /// <li> <p> <code>ssh-ed25519</code> </p> </li>
+        /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li>
+        /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
+        /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:</p>
+        /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
         /// <ul>
-        /// <li> <p>ssh-rsa</p> </li>
-        /// <li> <p>ssh-ed25519</p> </li>
-        /// <li> <p>ecdsa-sha2-nistp256 </p> </li>
-        /// <li> <p>ecdsa-sha2-nistp384</p> </li>
-        /// <li> <p>ecdsa-sha2-nistp521</p> </li>
+        /// <li> <p> <code>ssh-rsa</code> </p> </li>
+        /// <li> <p> <code>ssh-ed25519</code> </p> </li>
+        /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li>
+        /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
+        /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;

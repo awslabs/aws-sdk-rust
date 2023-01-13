@@ -97,10 +97,10 @@ impl Client {
     ///   - [`suite_definition_configuration(SuiteDefinitionConfiguration)`](crate::client::fluent_builders::CreateSuiteDefinition::suite_definition_configuration) / [`set_suite_definition_configuration(Option<SuiteDefinitionConfiguration>)`](crate::client::fluent_builders::CreateSuiteDefinition::set_suite_definition_configuration): <p>Creates a Device Advisor test suite with suite definition configuration.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSuiteDefinition::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSuiteDefinition::set_tags): <p>The tags to be attached to the suite definition.</p>
     /// - On success, responds with [`CreateSuiteDefinitionOutput`](crate::output::CreateSuiteDefinitionOutput) with field(s):
-    ///   - [`suite_definition_id(Option<String>)`](crate::output::CreateSuiteDefinitionOutput::suite_definition_id): <p>Creates a Device Advisor test suite with suite UUID.</p>
-    ///   - [`suite_definition_arn(Option<String>)`](crate::output::CreateSuiteDefinitionOutput::suite_definition_arn): <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
-    ///   - [`suite_definition_name(Option<String>)`](crate::output::CreateSuiteDefinitionOutput::suite_definition_name): <p>Creates a Device Advisor test suite with suite definition name.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateSuiteDefinitionOutput::created_at): <p>Creates a Device Advisor test suite with TimeStamp of when it was created.</p>
+    ///   - [`suite_definition_id(Option<String>)`](crate::output::CreateSuiteDefinitionOutput::suite_definition_id): <p>The UUID of the test suite created.</p>
+    ///   - [`suite_definition_arn(Option<String>)`](crate::output::CreateSuiteDefinitionOutput::suite_definition_arn): <p>The Amazon Resource Name (ARN) of the test suite.</p>
+    ///   - [`suite_definition_name(Option<String>)`](crate::output::CreateSuiteDefinitionOutput::suite_definition_name): <p>The suite definition name of the test suite. This is a required parameter.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateSuiteDefinitionOutput::created_at): <p>The timestamp of when the test suite was created.</p>
     /// - On failure, responds with [`SdkError<CreateSuiteDefinitionError>`](crate::error::CreateSuiteDefinitionError)
     pub fn create_suite_definition(&self) -> fluent_builders::CreateSuiteDefinition {
         fluent_builders::CreateSuiteDefinition::new(self.handle.clone())
@@ -207,7 +207,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the IoT Device Advisor resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The resource ARN of the IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags attached to the IoT Device Advisor resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -225,6 +225,7 @@ impl Client {
     ///   - [`suite_run_id(Option<String>)`](crate::output::StartSuiteRunOutput::suite_run_id): <p>Suite Run ID of the started suite run.</p>
     ///   - [`suite_run_arn(Option<String>)`](crate::output::StartSuiteRunOutput::suite_run_arn): <p>Amazon Resource Name (ARN) of the started suite run.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::StartSuiteRunOutput::created_at): <p>Starts a Device Advisor test suite run based on suite create time.</p>
+    ///   - [`endpoint(Option<String>)`](crate::output::StartSuiteRunOutput::endpoint): <p>The response of an Device Advisor test endpoint.</p>
     /// - On failure, responds with [`SdkError<StartSuiteRunError>`](crate::error::StartSuiteRunError)
     pub fn start_suite_run(&self) -> fluent_builders::StartSuiteRun {
         fluent_builders::StartSuiteRun::new(self.handle.clone())
@@ -243,7 +244,7 @@ impl Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The resource ARN of an IoT Device Advisor resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to be attached to the IoT Device Advisor resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
@@ -254,7 +255,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The resource ARN of an IoT Device Advisor resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.</p>
     ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>List of tag keys to remove from the IoT Device Advisor resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
@@ -270,7 +271,7 @@ impl Client {
     /// - On success, responds with [`UpdateSuiteDefinitionOutput`](crate::output::UpdateSuiteDefinitionOutput) with field(s):
     ///   - [`suite_definition_id(Option<String>)`](crate::output::UpdateSuiteDefinitionOutput::suite_definition_id): <p>Suite definition ID of the updated test suite.</p>
     ///   - [`suite_definition_arn(Option<String>)`](crate::output::UpdateSuiteDefinitionOutput::suite_definition_arn): <p>Amazon Resource Name (ARN) of the updated test suite.</p>
-    ///   - [`suite_definition_name(Option<String>)`](crate::output::UpdateSuiteDefinitionOutput::suite_definition_name): <p>Suite definition name of the updated test suite.</p>
+    ///   - [`suite_definition_name(Option<String>)`](crate::output::UpdateSuiteDefinitionOutput::suite_definition_name): <p>Updates the suite definition name. This is a required parameter.</p>
     ///   - [`suite_definition_version(Option<String>)`](crate::output::UpdateSuiteDefinitionOutput::suite_definition_version): <p>Suite definition version of the updated test suite.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::UpdateSuiteDefinitionOutput::created_at): <p>Timestamp of when the test suite was created.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::output::UpdateSuiteDefinitionOutput::last_updated_at): <p>Timestamp of when the test suite was updated.</p>
@@ -1085,12 +1086,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the IoT Device Advisor resource.</p>
+        /// <p>The resource ARN of the IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN of the IoT Device Advisor resource.</p>
+        /// <p>The resource ARN of the IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1375,12 +1376,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The resource ARN of an IoT Device Advisor resource.</p>
+        /// <p>The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The resource ARN of an IoT Device Advisor resource.</p>
+        /// <p>The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1472,12 +1473,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The resource ARN of an IoT Device Advisor resource.</p>
+        /// <p>The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The resource ARN of an IoT Device Advisor resource.</p>
+        /// <p>The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self

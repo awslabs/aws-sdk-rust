@@ -13,6 +13,10 @@ pub enum Error {
     #[allow(missing_docs)] // documentation missing in model
     #[deprecated(note = "Please avoid using this fault")]
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
+    /// <p>A blue/green deployment with the specified name already exists.</p>
+    BlueGreenDeploymentAlreadyExistsFault(crate::error::BlueGreenDeploymentAlreadyExistsFault),
+    /// <p> <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
+    BlueGreenDeploymentNotFoundFault(crate::error::BlueGreenDeploymentNotFoundFault),
     /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::error::CertificateNotFoundFault),
     /// <p> <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability Zone identifier.</p>
@@ -119,6 +123,8 @@ pub enum Error {
     DbUpgradeDependencyFailureFault(crate::error::DbUpgradeDependencyFailureFault),
     /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
+    /// <p>The AMI configuration prerequisite has not been met.</p>
+    Ec2ImagePropertiesNotSupportedFault(crate::error::Ec2ImagePropertiesNotSupportedFault),
     /// <p>You have reached the maximum number of event subscriptions.</p>
     EventSubscriptionQuotaExceededFault(crate::error::EventSubscriptionQuotaExceededFault),
     /// <p>You can't start an export task that's already running.</p>
@@ -145,6 +151,8 @@ pub enum Error {
     InsufficientDbInstanceCapacityFault(crate::error::InsufficientDbInstanceCapacityFault),
     /// <p>There is insufficient storage available for the current action. You might be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>
     InsufficientStorageClusterCapacityFault(crate::error::InsufficientStorageClusterCapacityFault),
+    /// <p>The blue/green deployment can't be switched over or deleted because there is an invalid configuration in the green environment.</p>
+    InvalidBlueGreenDeploymentStateFault(crate::error::InvalidBlueGreenDeploymentStateFault),
     /// <p>You can't delete the CEV.</p>
     InvalidCustomDbEngineVersionStateFault(crate::error::InvalidCustomDbEngineVersionStateFault),
     /// <p> <code>Capacity</code> isn't a valid Aurora Serverless DB cluster capacity. Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
@@ -233,6 +241,10 @@ pub enum Error {
     SharedSnapshotQuotaExceededFault(crate::error::SharedSnapshotQuotaExceededFault),
     /// <p>The request would result in the user exceeding the allowed number of DB snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
+    /// <p>The source DB cluster isn't supported for a blue/green deployment.</p>
+    SourceClusterNotSupportedFault(crate::error::SourceClusterNotSupportedFault),
+    /// <p>The source DB instance isn't supported for a blue/green deployment.</p>
+    SourceDatabaseNotSupportedFault(crate::error::SourceDatabaseNotSupportedFault),
     /// <p>The requested source could not be found.</p>
     SourceNotFoundFault(crate::error::SourceNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
@@ -264,6 +276,8 @@ impl std::fmt::Display for Error {
             Error::AuthorizationNotFoundFault(inner) => inner.fmt(f),
             Error::AuthorizationQuotaExceededFault(inner) => inner.fmt(f),
             Error::BackupPolicyNotFoundFault(inner) => inner.fmt(f),
+            Error::BlueGreenDeploymentAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::BlueGreenDeploymentNotFoundFault(inner) => inner.fmt(f),
             Error::CertificateNotFoundFault(inner) => inner.fmt(f),
             Error::CustomAvailabilityZoneNotFoundFault(inner) => inner.fmt(f),
             Error::CustomDbEngineVersionAlreadyExistsFault(inner) => inner.fmt(f),
@@ -316,6 +330,7 @@ impl std::fmt::Display for Error {
             Error::DbSubnetQuotaExceededFault(inner) => inner.fmt(f),
             Error::DbUpgradeDependencyFailureFault(inner) => inner.fmt(f),
             Error::DomainNotFoundFault(inner) => inner.fmt(f),
+            Error::Ec2ImagePropertiesNotSupportedFault(inner) => inner.fmt(f),
             Error::EventSubscriptionQuotaExceededFault(inner) => inner.fmt(f),
             Error::ExportTaskAlreadyExistsFault(inner) => inner.fmt(f),
             Error::ExportTaskNotFoundFault(inner) => inner.fmt(f),
@@ -329,6 +344,7 @@ impl std::fmt::Display for Error {
             Error::InsufficientDbClusterCapacityFault(inner) => inner.fmt(f),
             Error::InsufficientDbInstanceCapacityFault(inner) => inner.fmt(f),
             Error::InsufficientStorageClusterCapacityFault(inner) => inner.fmt(f),
+            Error::InvalidBlueGreenDeploymentStateFault(inner) => inner.fmt(f),
             Error::InvalidCustomDbEngineVersionStateFault(inner) => inner.fmt(f),
             Error::InvalidDbClusterCapacityFault(inner) => inner.fmt(f),
             Error::InvalidDbClusterEndpointStateFault(inner) => inner.fmt(f),
@@ -371,6 +387,8 @@ impl std::fmt::Display for Error {
             Error::SnsTopicArnNotFoundFault(inner) => inner.fmt(f),
             Error::SharedSnapshotQuotaExceededFault(inner) => inner.fmt(f),
             Error::SnapshotQuotaExceededFault(inner) => inner.fmt(f),
+            Error::SourceClusterNotSupportedFault(inner) => inner.fmt(f),
+            Error::SourceDatabaseNotSupportedFault(inner) => inner.fmt(f),
             Error::SourceNotFoundFault(inner) => inner.fmt(f),
             Error::StorageQuotaExceededFault(inner) => inner.fmt(f),
             Error::StorageTypeNotSupportedFault(inner) => inner.fmt(f),
@@ -507,6 +525,9 @@ where
 impl From<crate::error::AddTagsToResourceError> for Error {
     fn from(err: crate::error::AddTagsToResourceError) -> Self {
         match err.kind {
+            crate::error::AddTagsToResourceErrorKind::BlueGreenDeploymentNotFoundFault(inner) => {
+                Error::BlueGreenDeploymentNotFoundFault(inner)
+            }
             crate::error::AddTagsToResourceErrorKind::DbClusterNotFoundFault(inner) => {
                 Error::DbClusterNotFoundFault(inner)
             }
@@ -827,6 +848,40 @@ impl From<crate::error::CopyOptionGroupError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBlueGreenDeploymentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateBlueGreenDeploymentError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateBlueGreenDeploymentError> for Error {
+    fn from(err: crate::error::CreateBlueGreenDeploymentError) -> Self {
+        match err.kind {
+            crate::error::CreateBlueGreenDeploymentErrorKind::BlueGreenDeploymentAlreadyExistsFault(inner) => Error::BlueGreenDeploymentAlreadyExistsFault(inner),
+            crate::error::CreateBlueGreenDeploymentErrorKind::DbClusterNotFoundFault(inner) => Error::DbClusterNotFoundFault(inner),
+            crate::error::CreateBlueGreenDeploymentErrorKind::DbClusterParameterGroupNotFoundFault(inner) => Error::DbClusterParameterGroupNotFoundFault(inner),
+            crate::error::CreateBlueGreenDeploymentErrorKind::DbClusterQuotaExceededFault(inner) => Error::DbClusterQuotaExceededFault(inner),
+            crate::error::CreateBlueGreenDeploymentErrorKind::DbInstanceNotFoundFault(inner) => Error::DbInstanceNotFoundFault(inner),
+            crate::error::CreateBlueGreenDeploymentErrorKind::DbParameterGroupNotFoundFault(inner) => Error::DbParameterGroupNotFoundFault(inner),
+            crate::error::CreateBlueGreenDeploymentErrorKind::InstanceQuotaExceededFault(inner) => Error::InstanceQuotaExceededFault(inner),
+            crate::error::CreateBlueGreenDeploymentErrorKind::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
+            crate::error::CreateBlueGreenDeploymentErrorKind::InvalidDbInstanceStateFault(inner) => Error::InvalidDbInstanceStateFault(inner),
+            crate::error::CreateBlueGreenDeploymentErrorKind::SourceClusterNotSupportedFault(inner) => Error::SourceClusterNotSupportedFault(inner),
+            crate::error::CreateBlueGreenDeploymentErrorKind::SourceDatabaseNotSupportedFault(inner) => Error::SourceDatabaseNotSupportedFault(inner),
+            crate::error::CreateBlueGreenDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCustomDBEngineVersionError, R>>
     for Error
 where
@@ -848,6 +903,7 @@ impl From<crate::error::CreateCustomDBEngineVersionError> for Error {
         match err.kind {
             crate::error::CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionAlreadyExistsFault(inner) => Error::CustomDbEngineVersionAlreadyExistsFault(inner),
             crate::error::CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionQuotaExceededFault(inner) => Error::CustomDbEngineVersionQuotaExceededFault(inner),
+            crate::error::CreateCustomDBEngineVersionErrorKind::Ec2ImagePropertiesNotSupportedFault(inner) => Error::Ec2ImagePropertiesNotSupportedFault(inner),
             crate::error::CreateCustomDBEngineVersionErrorKind::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
             crate::error::CreateCustomDBEngineVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
@@ -1060,6 +1116,9 @@ impl From<crate::error::CreateDBInstanceError> for Error {
             }
             crate::error::CreateDBInstanceErrorKind::BackupPolicyNotFoundFault(inner) => {
                 Error::BackupPolicyNotFoundFault(inner)
+            }
+            crate::error::CreateDBInstanceErrorKind::CertificateNotFoundFault(inner) => {
+                Error::CertificateNotFoundFault(inner)
             }
             crate::error::CreateDBInstanceErrorKind::DbClusterNotFoundFault(inner) => {
                 Error::DbClusterNotFoundFault(inner)
@@ -1484,6 +1543,31 @@ impl From<crate::error::CreateOptionGroupError> for Error {
             crate::error::CreateOptionGroupErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBlueGreenDeploymentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteBlueGreenDeploymentError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteBlueGreenDeploymentError> for Error {
+    fn from(err: crate::error::DeleteBlueGreenDeploymentError) -> Self {
+        match err.kind {
+            crate::error::DeleteBlueGreenDeploymentErrorKind::BlueGreenDeploymentNotFoundFault(inner) => Error::BlueGreenDeploymentNotFoundFault(inner),
+            crate::error::DeleteBlueGreenDeploymentErrorKind::InvalidBlueGreenDeploymentStateFault(inner) => Error::InvalidBlueGreenDeploymentStateFault(inner),
+            crate::error::DeleteBlueGreenDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -2030,6 +2114,30 @@ impl From<crate::error::DescribeAccountAttributesError> for Error {
             crate::error::DescribeAccountAttributesErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeBlueGreenDeploymentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeBlueGreenDeploymentsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeBlueGreenDeploymentsError> for Error {
+    fn from(err: crate::error::DescribeBlueGreenDeploymentsError) -> Self {
+        match err.kind {
+            crate::error::DescribeBlueGreenDeploymentsErrorKind::BlueGreenDeploymentNotFoundFault(inner) => Error::BlueGreenDeploymentNotFoundFault(inner),
+            crate::error::DescribeBlueGreenDeploymentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -3211,6 +3319,9 @@ where
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
         match err.kind {
+            crate::error::ListTagsForResourceErrorKind::BlueGreenDeploymentNotFoundFault(inner) => {
+                Error::BlueGreenDeploymentNotFoundFault(inner)
+            }
             crate::error::ListTagsForResourceErrorKind::DbClusterNotFoundFault(inner) => {
                 Error::DbClusterNotFoundFault(inner)
             }
@@ -4269,6 +4380,9 @@ where
 impl From<crate::error::RemoveTagsFromResourceError> for Error {
     fn from(err: crate::error::RemoveTagsFromResourceError) -> Self {
         match err.kind {
+            crate::error::RemoveTagsFromResourceErrorKind::BlueGreenDeploymentNotFoundFault(
+                inner,
+            ) => Error::BlueGreenDeploymentNotFoundFault(inner),
             crate::error::RemoveTagsFromResourceErrorKind::DbClusterNotFoundFault(inner) => {
                 Error::DbClusterNotFoundFault(inner)
             }
@@ -4412,6 +4526,7 @@ impl From<crate::error::RestoreDBClusterFromSnapshotError> for Error {
             crate::error::RestoreDBClusterFromSnapshotErrorKind::InsufficientDbClusterCapacityFault(inner) => Error::InsufficientDbClusterCapacityFault(inner),
             crate::error::RestoreDBClusterFromSnapshotErrorKind::InsufficientStorageClusterCapacityFault(inner) => Error::InsufficientStorageClusterCapacityFault(inner),
             crate::error::RestoreDBClusterFromSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(inner) => Error::InvalidDbClusterSnapshotStateFault(inner),
+            crate::error::RestoreDBClusterFromSnapshotErrorKind::InvalidDbInstanceStateFault(inner) => Error::InvalidDbInstanceStateFault(inner),
             crate::error::RestoreDBClusterFromSnapshotErrorKind::InvalidDbSnapshotStateFault(inner) => Error::InvalidDbSnapshotStateFault(inner),
             crate::error::RestoreDBClusterFromSnapshotErrorKind::InvalidRestoreFault(inner) => Error::InvalidRestoreFault(inner),
             crate::error::RestoreDBClusterFromSnapshotErrorKind::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
@@ -4489,6 +4604,7 @@ impl From<crate::error::RestoreDBInstanceFromDBSnapshotError> for Error {
         match err.kind {
             crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::AuthorizationNotFoundFault(inner) => Error::AuthorizationNotFoundFault(inner),
             crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::BackupPolicyNotFoundFault(inner) => Error::BackupPolicyNotFoundFault(inner),
+            crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::DbClusterSnapshotNotFoundFault(inner) => Error::DbClusterSnapshotNotFoundFault(inner),
             crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::DbInstanceAlreadyExistsFault(inner) => Error::DbInstanceAlreadyExistsFault(inner),
             crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::DbParameterGroupNotFoundFault(inner) => Error::DbParameterGroupNotFoundFault(inner),
             crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::DbSecurityGroupNotFoundFault(inner) => Error::DbSecurityGroupNotFoundFault(inner),
@@ -4809,6 +4925,9 @@ where
 impl From<crate::error::StartExportTaskError> for Error {
     fn from(err: crate::error::StartExportTaskError) -> Self {
         match err.kind {
+            crate::error::StartExportTaskErrorKind::DbClusterNotFoundFault(inner) => {
+                Error::DbClusterNotFoundFault(inner)
+            }
             crate::error::StartExportTaskErrorKind::DbClusterSnapshotNotFoundFault(inner) => {
                 Error::DbClusterSnapshotNotFoundFault(inner)
             }
@@ -4979,6 +5098,31 @@ impl From<crate::error::StopDBInstanceAutomatedBackupsReplicationError> for Erro
             crate::error::StopDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceNotFoundFault(inner) => Error::DbInstanceNotFoundFault(inner),
             crate::error::StopDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDbInstanceStateFault(inner) => Error::InvalidDbInstanceStateFault(inner),
             crate::error::StopDBInstanceAutomatedBackupsReplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SwitchoverBlueGreenDeploymentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::SwitchoverBlueGreenDeploymentError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SwitchoverBlueGreenDeploymentError> for Error {
+    fn from(err: crate::error::SwitchoverBlueGreenDeploymentError) -> Self {
+        match err.kind {
+            crate::error::SwitchoverBlueGreenDeploymentErrorKind::BlueGreenDeploymentNotFoundFault(inner) => Error::BlueGreenDeploymentNotFoundFault(inner),
+            crate::error::SwitchoverBlueGreenDeploymentErrorKind::InvalidBlueGreenDeploymentStateFault(inner) => Error::InvalidBlueGreenDeploymentStateFault(inner),
+            crate::error::SwitchoverBlueGreenDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }

@@ -1159,12 +1159,18 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCertificateErrorKind {
+    /// <p>You do not have access required to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>You are trying to update a resource or configuration that is already being created or updated. Wait for the previous operation to finish and try again.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The certificate is in use by another Amazon Web Services service in the caller's account. Remove the association and try again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded a quota.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -1178,9 +1184,12 @@ pub enum DeleteCertificateErrorKind {
 impl std::fmt::Display for DeleteCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteCertificateErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteCertificateErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteCertificateErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
             DeleteCertificateErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             DeleteCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteCertificateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DeleteCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1235,6 +1244,17 @@ impl DeleteCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeleteCertificateErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCertificateErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCertificateErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteCertificateErrorKind::ConflictException(_))
+    }
     /// Returns `true` if the error kind is `DeleteCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
@@ -1256,13 +1276,23 @@ impl DeleteCertificateError {
             DeleteCertificateErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteCertificateErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCertificateErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for DeleteCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteCertificateErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteCertificateErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
             DeleteCertificateErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteCertificateErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -1964,6 +1994,8 @@ impl aws_smithy_http::result::CreateUnhandledError for ListCertificatesError {
 pub enum ListCertificatesErrorKind {
     /// <p>One or more of of request parameters specified is not valid.</p>
     InvalidArgsException(crate::error::InvalidArgsException),
+    /// <p>The supplied input failed to satisfy constraints of an Amazon Web Services service.</p>
+    ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -1978,6 +2010,7 @@ impl std::fmt::Display for ListCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ListCertificatesErrorKind::InvalidArgsException(_inner) => _inner.fmt(f),
+            ListCertificatesErrorKind::ValidationException(_inner) => _inner.fmt(f),
             ListCertificatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2039,11 +2072,19 @@ impl ListCertificatesError {
             ListCertificatesErrorKind::InvalidArgsException(_)
         )
     }
+    /// Returns `true` if the error kind is `ListCertificatesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCertificatesErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for ListCertificatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListCertificatesErrorKind::InvalidArgsException(_inner) => Some(_inner),
+            ListCertificatesErrorKind::ValidationException(_inner) => Some(_inner),
             ListCertificatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }

@@ -809,12 +809,12 @@ impl DescribeCertificateAuthorityAuditReportOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCertificateAuthorityOutput {
-    /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
     #[doc(hidden)]
     pub certificate_authority: std::option::Option<crate::model::CertificateAuthority>,
 }
 impl DescribeCertificateAuthorityOutput {
-    /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
     pub fn certificate_authority(
         &self,
     ) -> std::option::Option<&crate::model::CertificateAuthority> {
@@ -830,12 +830,12 @@ pub mod describe_certificate_authority_output {
         pub(crate) certificate_authority: std::option::Option<crate::model::CertificateAuthority>,
     }
     impl Builder {
-        /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
+        /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
         pub fn certificate_authority(mut self, input: crate::model::CertificateAuthority) -> Self {
             self.certificate_authority = Some(input);
             self
         }
-        /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
+        /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
         pub fn set_certificate_authority(
             mut self,
             input: std::option::Option<crate::model::CertificateAuthority>,

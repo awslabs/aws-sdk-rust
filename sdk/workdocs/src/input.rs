@@ -1896,7 +1896,7 @@ pub mod create_user_input {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("organization_id", &self.organization_id);
             formatter.field("username", &self.username);
-            formatter.field("email_address", &self.email_address);
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
             formatter.field("given_name", &self.given_name);
             formatter.field("surname", &self.surname);
             formatter.field("password", &"*** Sensitive Data Redacted ***");
@@ -2857,6 +2857,242 @@ impl DeleteDocumentInput {
     }
 }
 
+/// See [`DeleteDocumentVersionInput`](crate::input::DeleteDocumentVersionInput).
+pub mod delete_document_version_input {
+
+    /// A builder for [`DeleteDocumentVersionInput`](crate::input::DeleteDocumentVersionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    pub struct Builder {
+        pub(crate) authentication_token: std::option::Option<std::string::String>,
+        pub(crate) document_id: std::option::Option<std::string::String>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
+        pub(crate) delete_prior_versions: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+        pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authentication_token = Some(input.into());
+            self
+        }
+        /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+        pub fn set_authentication_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_token = input;
+            self
+        }
+        /// <p>The ID of a document.</p>
+        pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a document.</p>
+        pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_id = input;
+            self
+        }
+        /// <p>The version ID of a document.</p>
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
+            self
+        }
+        /// <p>The version ID of a document.</p>
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
+            self
+        }
+        /// <p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>
+        pub fn delete_prior_versions(mut self, input: bool) -> Self {
+            self.delete_prior_versions = Some(input);
+            self
+        }
+        /// <p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>
+        pub fn set_delete_prior_versions(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_prior_versions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteDocumentVersionInput`](crate::input::DeleteDocumentVersionInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteDocumentVersionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DeleteDocumentVersionInput {
+                authentication_token: self.authentication_token,
+                document_id: self.document_id,
+                version_id: self.version_id,
+                delete_prior_versions: self.delete_prior_versions.unwrap_or_default(),
+            })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("delete_prior_versions", &self.delete_prior_versions);
+            formatter.finish()
+        }
+    }
+}
+impl DeleteDocumentVersionInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteDocumentVersion`](crate::operation::DeleteDocumentVersion)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteDocumentVersion,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteDocumentVersionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_20 = &_input.document_id;
+                let input_20 = input_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "document_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let document_id = aws_smithy_http::label::fmt_string(
+                    input_20,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if document_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "document_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                let input_21 = &_input.version_id;
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "version_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let version_id = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if version_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "version_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/api/v1/documentVersions/{DocumentId}/versions/{VersionId}",
+                    DocumentId = document_id,
+                    VersionId = version_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::DeleteDocumentVersionInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                let inner_22 = &_input.delete_prior_versions;
+                query.push_kv(
+                    "deletePriorVersions",
+                    aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
+                );
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteDocumentVersionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                let builder =
+                    crate::http_serde::add_headers_delete_document_version(input, builder)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteDocumentVersion::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteDocumentVersion",
+            "workdocs",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteDocumentVersionInput`](crate::input::DeleteDocumentVersionInput).
+    pub fn builder() -> crate::input::delete_document_version_input::Builder {
+        crate::input::delete_document_version_input::Builder::default()
+    }
+}
+
 /// See [`DeleteFolderInput`](crate::input::DeleteFolderInput).
 pub mod delete_folder_input {
 
@@ -2930,15 +3166,15 @@ impl DeleteFolderInput {
                 _input: &crate::input::DeleteFolderInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_20 = &_input.folder_id;
-                let input_20 = input_20.as_ref().ok_or_else(|| {
+                let input_23 = &_input.folder_id;
+                let input_23 = input_23.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "folder_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let folder_id = aws_smithy_http::label::fmt_string(
-                    input_20,
+                    input_23,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if folder_id.is_empty() {
@@ -3102,15 +3338,15 @@ impl DeleteFolderContentsInput {
                 _input: &crate::input::DeleteFolderContentsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_21 = &_input.folder_id;
-                let input_21 = input_21.as_ref().ok_or_else(|| {
+                let input_24 = &_input.folder_id;
+                let input_24 = input_24.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "folder_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let folder_id = aws_smithy_http::label::fmt_string(
-                    input_21,
+                    input_24,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if folder_id.is_empty() {
@@ -3312,15 +3548,15 @@ impl DeleteLabelsInput {
                 _input: &crate::input::DeleteLabelsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_22 = &_input.resource_id;
-                let input_22 = input_22.as_ref().ok_or_else(|| {
+                let input_25 = &_input.resource_id;
+                let input_25 = input_25.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_id = aws_smithy_http::label::fmt_string(
-                    input_22,
+                    input_25,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_id.is_empty() {
@@ -3344,10 +3580,10 @@ impl DeleteLabelsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_23) = &_input.labels {
+                if let Some(inner_26) = &_input.labels {
                     {
-                        for inner_24 in inner_23 {
-                            query.push_kv("labels", &aws_smithy_http::query::fmt_string(&inner_24));
+                        for inner_27 in inner_26 {
+                            query.push_kv("labels", &aws_smithy_http::query::fmt_string(&inner_27));
                         }
                     }
                 }
@@ -3504,15 +3740,15 @@ impl DeleteNotificationSubscriptionInput {
                 _input: &crate::input::DeleteNotificationSubscriptionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_25 = &_input.organization_id;
-                let input_25 = input_25.as_ref().ok_or_else(|| {
+                let input_28 = &_input.organization_id;
+                let input_28 = input_28.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "organization_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let organization_id = aws_smithy_http::label::fmt_string(
-                    input_25,
+                    input_28,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if organization_id.is_empty() {
@@ -3523,15 +3759,15 @@ impl DeleteNotificationSubscriptionInput {
                         ),
                     );
                 }
-                let input_26 = &_input.subscription_id;
-                let input_26 = input_26.as_ref().ok_or_else(|| {
+                let input_29 = &_input.subscription_id;
+                let input_29 = input_29.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "subscription_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let subscription_id = aws_smithy_http::label::fmt_string(
-                    input_26,
+                    input_29,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if subscription_id.is_empty() {
@@ -3697,15 +3933,15 @@ impl DeleteUserInput {
                 _input: &crate::input::DeleteUserInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_27 = &_input.user_id;
-                let input_27 = input_27.as_ref().ok_or_else(|| {
+                let input_30 = &_input.user_id;
+                let input_30 = input_30.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "user_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let user_id = aws_smithy_http::label::fmt_string(
-                    input_27,
+                    input_30,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if user_id.is_empty() {
@@ -3996,52 +4232,52 @@ impl DescribeActivitiesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_28) = &_input.start_time {
+                if let Some(inner_31) = &_input.start_time {
                     {
                         query.push_kv(
                             "startTime",
                             &aws_smithy_http::query::fmt_timestamp(
-                                inner_28,
+                                inner_31,
                                 aws_smithy_types::date_time::Format::DateTime,
                             )?,
                         );
                     }
                 }
-                if let Some(inner_29) = &_input.end_time {
+                if let Some(inner_32) = &_input.end_time {
                     {
                         query.push_kv(
                             "endTime",
                             &aws_smithy_http::query::fmt_timestamp(
-                                inner_29,
+                                inner_32,
                                 aws_smithy_types::date_time::Format::DateTime,
                             )?,
                         );
                     }
                 }
-                if let Some(inner_30) = &_input.organization_id {
+                if let Some(inner_33) = &_input.organization_id {
                     {
                         query.push_kv(
                             "organizationId",
-                            &aws_smithy_http::query::fmt_string(&inner_30),
+                            &aws_smithy_http::query::fmt_string(&inner_33),
                         );
                     }
                 }
-                if let Some(inner_31) = &_input.activity_types {
+                if let Some(inner_34) = &_input.activity_types {
                     {
                         query.push_kv(
                             "activityTypes",
-                            &aws_smithy_http::query::fmt_string(&inner_31),
+                            &aws_smithy_http::query::fmt_string(&inner_34),
                         );
                     }
                 }
-                if let Some(inner_32) = &_input.resource_id {
+                if let Some(inner_35) = &_input.resource_id {
                     {
-                        query.push_kv("resourceId", &aws_smithy_http::query::fmt_string(&inner_32));
+                        query.push_kv("resourceId", &aws_smithy_http::query::fmt_string(&inner_35));
                     }
                 }
-                if let Some(inner_33) = &_input.user_id {
+                if let Some(inner_36) = &_input.user_id {
                     {
-                        query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_33));
+                        query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_36));
                     }
                 }
                 if _input.include_indirect_activities {
@@ -4053,17 +4289,17 @@ impl DescribeActivitiesInput {
                         .encode(),
                     );
                 }
-                if let Some(inner_34) = &_input.limit {
-                    if *inner_34 != 0 {
+                if let Some(inner_37) = &_input.limit {
+                    if *inner_37 != 0 {
                         query.push_kv(
                             "limit",
-                            aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_37).encode(),
                         );
                     }
                 }
-                if let Some(inner_35) = &_input.marker {
+                if let Some(inner_38) = &_input.marker {
                     {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_35));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_38));
                     }
                 }
                 Ok(())
@@ -4257,15 +4493,15 @@ impl DescribeCommentsInput {
                 _input: &crate::input::DescribeCommentsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_36 = &_input.document_id;
-                let input_36 = input_36.as_ref().ok_or_else(|| {
+                let input_39 = &_input.document_id;
+                let input_39 = input_39.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "document_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let document_id = aws_smithy_http::label::fmt_string(
-                    input_36,
+                    input_39,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if document_id.is_empty() {
@@ -4276,15 +4512,15 @@ impl DescribeCommentsInput {
                         ),
                     );
                 }
-                let input_37 = &_input.version_id;
-                let input_37 = input_37.as_ref().ok_or_else(|| {
+                let input_40 = &_input.version_id;
+                let input_40 = input_40.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "version_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let version_id = aws_smithy_http::label::fmt_string(
-                    input_37,
+                    input_40,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if version_id.is_empty() {
@@ -4309,17 +4545,17 @@ impl DescribeCommentsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_38) = &_input.limit {
-                    if *inner_38 != 0 {
+                if let Some(inner_41) = &_input.limit {
+                    if *inner_41 != 0 {
                         query.push_kv(
                             "limit",
-                            aws_smithy_types::primitive::Encoder::from(*inner_38).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
                         );
                     }
                 }
-                if let Some(inner_39) = &_input.marker {
+                if let Some(inner_42) = &_input.marker {
                     {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_39));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_42));
                     }
                 }
                 Ok(())
@@ -4526,15 +4762,15 @@ impl DescribeDocumentVersionsInput {
                 _input: &crate::input::DescribeDocumentVersionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_40 = &_input.document_id;
-                let input_40 = input_40.as_ref().ok_or_else(|| {
+                let input_43 = &_input.document_id;
+                let input_43 = input_43.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "document_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let document_id = aws_smithy_http::label::fmt_string(
-                    input_40,
+                    input_43,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if document_id.is_empty() {
@@ -4558,27 +4794,27 @@ impl DescribeDocumentVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_41) = &_input.marker {
+                if let Some(inner_44) = &_input.marker {
                     {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_41));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_44));
                     }
                 }
-                if let Some(inner_42) = &_input.limit {
-                    if *inner_42 != 0 {
+                if let Some(inner_45) = &_input.limit {
+                    if *inner_45 != 0 {
                         query.push_kv(
                             "limit",
-                            aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_45).encode(),
                         );
                     }
                 }
-                if let Some(inner_43) = &_input.include {
+                if let Some(inner_46) = &_input.include {
                     {
-                        query.push_kv("include", &aws_smithy_http::query::fmt_string(&inner_43));
+                        query.push_kv("include", &aws_smithy_http::query::fmt_string(&inner_46));
                     }
                 }
-                if let Some(inner_44) = &_input.fields {
+                if let Some(inner_47) = &_input.fields {
                     {
-                        query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_44));
+                        query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_47));
                     }
                 }
                 Ok(())
@@ -4818,15 +5054,15 @@ impl DescribeFolderContentsInput {
                 _input: &crate::input::DescribeFolderContentsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_45 = &_input.folder_id;
-                let input_45 = input_45.as_ref().ok_or_else(|| {
+                let input_48 = &_input.folder_id;
+                let input_48 = input_48.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "folder_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let folder_id = aws_smithy_http::label::fmt_string(
-                    input_45,
+                    input_48,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if folder_id.is_empty() {
@@ -4850,37 +5086,37 @@ impl DescribeFolderContentsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_46) = &_input.sort {
+                if let Some(inner_49) = &_input.sort {
                     {
-                        query.push_kv("sort", &aws_smithy_http::query::fmt_string(&inner_46));
+                        query.push_kv("sort", &aws_smithy_http::query::fmt_string(&inner_49));
                     }
                 }
-                if let Some(inner_47) = &_input.order {
+                if let Some(inner_50) = &_input.order {
                     {
-                        query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_47));
+                        query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_50));
                     }
                 }
-                if let Some(inner_48) = &_input.limit {
-                    if *inner_48 != 0 {
+                if let Some(inner_51) = &_input.limit {
+                    if *inner_51 != 0 {
                         query.push_kv(
                             "limit",
-                            aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_51).encode(),
                         );
                     }
                 }
-                if let Some(inner_49) = &_input.marker {
+                if let Some(inner_52) = &_input.marker {
                     {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_49));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_52));
                     }
                 }
-                if let Some(inner_50) = &_input.r#type {
+                if let Some(inner_53) = &_input.r#type {
                     {
-                        query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_50));
+                        query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_53));
                     }
                 }
-                if let Some(inner_51) = &_input.include {
+                if let Some(inner_54) = &_input.include {
                     {
-                        query.push_kv("include", &aws_smithy_http::query::fmt_string(&inner_51));
+                        query.push_kv("include", &aws_smithy_http::query::fmt_string(&inner_54));
                     }
                 }
                 Ok(())
@@ -5084,14 +5320,14 @@ impl DescribeGroupsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_52 = &_input.search_query;
-                let inner_52 = inner_52.as_ref().ok_or_else(|| {
+                let inner_55 = &_input.search_query;
+                let inner_55 = inner_55.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "search_query",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_52.is_empty() {
+                if inner_55.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "search_query",
@@ -5101,26 +5337,26 @@ impl DescribeGroupsInput {
                 }
                 query.push_kv(
                     "searchQuery",
-                    &aws_smithy_http::query::fmt_string(&inner_52),
+                    &aws_smithy_http::query::fmt_string(&inner_55),
                 );
-                if let Some(inner_53) = &_input.organization_id {
+                if let Some(inner_56) = &_input.organization_id {
                     {
                         query.push_kv(
                             "organizationId",
-                            &aws_smithy_http::query::fmt_string(&inner_53),
+                            &aws_smithy_http::query::fmt_string(&inner_56),
                         );
                     }
                 }
-                if let Some(inner_54) = &_input.marker {
+                if let Some(inner_57) = &_input.marker {
                     {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_54));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_57));
                     }
                 }
-                if let Some(inner_55) = &_input.limit {
-                    if *inner_55 != 0 {
+                if let Some(inner_58) = &_input.limit {
+                    if *inner_58 != 0 {
                         query.push_kv(
                             "limit",
-                            aws_smithy_types::primitive::Encoder::from(*inner_55).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_58).encode(),
                         );
                     }
                 }
@@ -5280,15 +5516,15 @@ impl DescribeNotificationSubscriptionsInput {
                 _input: &crate::input::DescribeNotificationSubscriptionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_56 = &_input.organization_id;
-                let input_56 = input_56.as_ref().ok_or_else(|| {
+                let input_59 = &_input.organization_id;
+                let input_59 = input_59.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "organization_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let organization_id = aws_smithy_http::label::fmt_string(
-                    input_56,
+                    input_59,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if organization_id.is_empty() {
@@ -5312,16 +5548,16 @@ impl DescribeNotificationSubscriptionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_57) = &_input.marker {
+                if let Some(inner_60) = &_input.marker {
                     {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_57));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_60));
                     }
                 }
-                if let Some(inner_58) = &_input.limit {
-                    if *inner_58 != 0 {
+                if let Some(inner_61) = &_input.limit {
+                    if *inner_61 != 0 {
                         query.push_kv(
                             "limit",
-                            aws_smithy_types::primitive::Encoder::from(*inner_58).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
                         );
                     }
                 }
@@ -5515,15 +5751,15 @@ impl DescribeResourcePermissionsInput {
                 _input: &crate::input::DescribeResourcePermissionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_59 = &_input.resource_id;
-                let input_59 = input_59.as_ref().ok_or_else(|| {
+                let input_62 = &_input.resource_id;
+                let input_62 = input_62.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_id = aws_smithy_http::label::fmt_string(
-                    input_59,
+                    input_62,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_id.is_empty() {
@@ -5547,25 +5783,25 @@ impl DescribeResourcePermissionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_60) = &_input.principal_id {
+                if let Some(inner_63) = &_input.principal_id {
                     {
                         query.push_kv(
                             "principalId",
-                            &aws_smithy_http::query::fmt_string(&inner_60),
+                            &aws_smithy_http::query::fmt_string(&inner_63),
                         );
                     }
                 }
-                if let Some(inner_61) = &_input.limit {
-                    if *inner_61 != 0 {
+                if let Some(inner_64) = &_input.limit {
+                    if *inner_64 != 0 {
                         query.push_kv(
                             "limit",
-                            aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
                         );
                     }
                 }
-                if let Some(inner_62) = &_input.marker {
+                if let Some(inner_65) = &_input.marker {
                     {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_62));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_65));
                     }
                 }
                 Ok(())
@@ -5742,17 +5978,17 @@ impl DescribeRootFoldersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_63) = &_input.limit {
-                    if *inner_63 != 0 {
+                if let Some(inner_66) = &_input.limit {
+                    if *inner_66 != 0 {
                         query.push_kv(
                             "limit",
-                            aws_smithy_types::primitive::Encoder::from(*inner_63).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_66).encode(),
                         );
                     }
                 }
-                if let Some(inner_64) = &_input.marker {
+                if let Some(inner_67) = &_input.marker {
                     {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_64));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_67));
                     }
                 }
                 Ok(())
@@ -5886,12 +6122,24 @@ pub mod describe_users_input {
             self.user_ids = input;
             self
         }
-        /// <p>A query to filter users by user name.</p>
+        /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
+        /// <ul>
+        /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
+        /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
+        /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
+        /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
+        /// </ul>
         pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
             self.query = Some(input.into());
             self
         }
-        /// <p>A query to filter users by user name.</p>
+        /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
+        /// <ul>
+        /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
+        /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
+        /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
+        /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
+        /// </ul>
         pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query = input;
             self
@@ -6023,55 +6271,55 @@ impl DescribeUsersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_65) = &_input.organization_id {
+                if let Some(inner_68) = &_input.organization_id {
                     {
                         query.push_kv(
                             "organizationId",
-                            &aws_smithy_http::query::fmt_string(&inner_65),
+                            &aws_smithy_http::query::fmt_string(&inner_68),
                         );
                     }
                 }
-                if let Some(inner_66) = &_input.user_ids {
+                if let Some(inner_69) = &_input.user_ids {
                     {
-                        query.push_kv("userIds", &aws_smithy_http::query::fmt_string(&inner_66));
+                        query.push_kv("userIds", &aws_smithy_http::query::fmt_string(&inner_69));
                     }
                 }
-                if let Some(inner_67) = &_input.query {
+                if let Some(inner_70) = &_input.query {
                     {
-                        query.push_kv("query", &aws_smithy_http::query::fmt_string(&inner_67));
+                        query.push_kv("query", &aws_smithy_http::query::fmt_string(&inner_70));
                     }
                 }
-                if let Some(inner_68) = &_input.include {
+                if let Some(inner_71) = &_input.include {
                     {
-                        query.push_kv("include", &aws_smithy_http::query::fmt_string(&inner_68));
+                        query.push_kv("include", &aws_smithy_http::query::fmt_string(&inner_71));
                     }
                 }
-                if let Some(inner_69) = &_input.order {
+                if let Some(inner_72) = &_input.order {
                     {
-                        query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_69));
+                        query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_72));
                     }
                 }
-                if let Some(inner_70) = &_input.sort {
+                if let Some(inner_73) = &_input.sort {
                     {
-                        query.push_kv("sort", &aws_smithy_http::query::fmt_string(&inner_70));
+                        query.push_kv("sort", &aws_smithy_http::query::fmt_string(&inner_73));
                     }
                 }
-                if let Some(inner_71) = &_input.marker {
+                if let Some(inner_74) = &_input.marker {
                     {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_71));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_74));
                     }
                 }
-                if let Some(inner_72) = &_input.limit {
-                    if *inner_72 != 0 {
+                if let Some(inner_75) = &_input.limit {
+                    if *inner_75 != 0 {
                         query.push_kv(
                             "limit",
-                            aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_75).encode(),
                         );
                     }
                 }
-                if let Some(inner_73) = &_input.fields {
+                if let Some(inner_76) = &_input.fields {
                     {
-                        query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_73));
+                        query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_76));
                     }
                 }
                 Ok(())
@@ -6374,15 +6622,15 @@ impl GetDocumentInput {
                 _input: &crate::input::GetDocumentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_74 = &_input.document_id;
-                let input_74 = input_74.as_ref().ok_or_else(|| {
+                let input_77 = &_input.document_id;
+                let input_77 = input_77.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "document_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let document_id = aws_smithy_http::label::fmt_string(
-                    input_74,
+                    input_77,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if document_id.is_empty() {
@@ -6602,15 +6850,15 @@ impl GetDocumentPathInput {
                 _input: &crate::input::GetDocumentPathInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_75 = &_input.document_id;
-                let input_75 = input_75.as_ref().ok_or_else(|| {
+                let input_78 = &_input.document_id;
+                let input_78 = input_78.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "document_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let document_id = aws_smithy_http::label::fmt_string(
-                    input_75,
+                    input_78,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if document_id.is_empty() {
@@ -6634,22 +6882,22 @@ impl GetDocumentPathInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_76) = &_input.limit {
-                    if *inner_76 != 0 {
+                if let Some(inner_79) = &_input.limit {
+                    if *inner_79 != 0 {
                         query.push_kv(
                             "limit",
-                            aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_79).encode(),
                         );
                     }
                 }
-                if let Some(inner_77) = &_input.fields {
+                if let Some(inner_80) = &_input.fields {
                     {
-                        query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_77));
+                        query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_80));
                     }
                 }
-                if let Some(inner_78) = &_input.marker {
+                if let Some(inner_81) = &_input.marker {
                     {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_78));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_81));
                     }
                 }
                 Ok(())
@@ -6843,15 +7091,15 @@ impl GetDocumentVersionInput {
                 _input: &crate::input::GetDocumentVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_79 = &_input.document_id;
-                let input_79 = input_79.as_ref().ok_or_else(|| {
+                let input_82 = &_input.document_id;
+                let input_82 = input_82.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "document_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let document_id = aws_smithy_http::label::fmt_string(
-                    input_79,
+                    input_82,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if document_id.is_empty() {
@@ -6862,15 +7110,15 @@ impl GetDocumentVersionInput {
                         ),
                     );
                 }
-                let input_80 = &_input.version_id;
-                let input_80 = input_80.as_ref().ok_or_else(|| {
+                let input_83 = &_input.version_id;
+                let input_83 = input_83.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "version_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let version_id = aws_smithy_http::label::fmt_string(
-                    input_80,
+                    input_83,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if version_id.is_empty() {
@@ -6895,9 +7143,9 @@ impl GetDocumentVersionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_81) = &_input.fields {
+                if let Some(inner_84) = &_input.fields {
                     {
-                        query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_81));
+                        query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_84));
                     }
                 }
                 if _input.include_custom_metadata {
@@ -7070,15 +7318,15 @@ impl GetFolderInput {
                 _input: &crate::input::GetFolderInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_82 = &_input.folder_id;
-                let input_82 = input_82.as_ref().ok_or_else(|| {
+                let input_85 = &_input.folder_id;
+                let input_85 = input_85.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "folder_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let folder_id = aws_smithy_http::label::fmt_string(
-                    input_82,
+                    input_85,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if folder_id.is_empty() {
@@ -7292,15 +7540,15 @@ impl GetFolderPathInput {
                 _input: &crate::input::GetFolderPathInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_83 = &_input.folder_id;
-                let input_83 = input_83.as_ref().ok_or_else(|| {
+                let input_86 = &_input.folder_id;
+                let input_86 = input_86.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "folder_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let folder_id = aws_smithy_http::label::fmt_string(
-                    input_83,
+                    input_86,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if folder_id.is_empty() {
@@ -7324,22 +7572,22 @@ impl GetFolderPathInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_84) = &_input.limit {
-                    if *inner_84 != 0 {
+                if let Some(inner_87) = &_input.limit {
+                    if *inner_87 != 0 {
                         query.push_kv(
                             "limit",
-                            aws_smithy_types::primitive::Encoder::from(*inner_84).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_87).encode(),
                         );
                     }
                 }
-                if let Some(inner_85) = &_input.fields {
+                if let Some(inner_88) = &_input.fields {
                     {
-                        query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_85));
+                        query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_88));
                     }
                 }
-                if let Some(inner_86) = &_input.marker {
+                if let Some(inner_89) = &_input.marker {
                     {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_86));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_89));
                     }
                 }
                 Ok(())
@@ -7542,30 +7790,30 @@ impl GetResourcesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_87) = &_input.user_id {
+                if let Some(inner_90) = &_input.user_id {
                     {
-                        query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_87));
+                        query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_90));
                     }
                 }
-                if let Some(inner_88) = &_input.collection_type {
+                if let Some(inner_91) = &_input.collection_type {
                     {
                         query.push_kv(
                             "collectionType",
-                            &aws_smithy_http::query::fmt_string(&inner_88),
+                            &aws_smithy_http::query::fmt_string(&inner_91),
                         );
                     }
                 }
-                if let Some(inner_89) = &_input.limit {
-                    if *inner_89 != 0 {
+                if let Some(inner_92) = &_input.limit {
+                    if *inner_92 != 0 {
                         query.push_kv(
                             "limit",
-                            aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_92).encode(),
                         );
                     }
                 }
-                if let Some(inner_90) = &_input.marker {
+                if let Some(inner_93) = &_input.marker {
                     {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_90));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_93));
                     }
                 }
                 Ok(())
@@ -7977,15 +8225,15 @@ impl RemoveAllResourcePermissionsInput {
                 _input: &crate::input::RemoveAllResourcePermissionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_91 = &_input.resource_id;
-                let input_91 = input_91.as_ref().ok_or_else(|| {
+                let input_94 = &_input.resource_id;
+                let input_94 = input_94.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_id = aws_smithy_http::label::fmt_string(
-                    input_91,
+                    input_94,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_id.is_empty() {
@@ -8183,15 +8431,15 @@ impl RemoveResourcePermissionInput {
                 _input: &crate::input::RemoveResourcePermissionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_92 = &_input.resource_id;
-                let input_92 = input_92.as_ref().ok_or_else(|| {
+                let input_95 = &_input.resource_id;
+                let input_95 = input_95.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_id = aws_smithy_http::label::fmt_string(
-                    input_92,
+                    input_95,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_id.is_empty() {
@@ -8202,15 +8450,15 @@ impl RemoveResourcePermissionInput {
                         ),
                     );
                 }
-                let input_93 = &_input.principal_id;
-                let input_93 = input_93.as_ref().ok_or_else(|| {
+                let input_96 = &_input.principal_id;
+                let input_96 = input_96.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "principal_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let principal_id = aws_smithy_http::label::fmt_string(
-                    input_93,
+                    input_96,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if principal_id.is_empty() {
@@ -8235,9 +8483,9 @@ impl RemoveResourcePermissionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_94) = &_input.principal_type {
+                if let Some(inner_97) = &_input.principal_type {
                     {
-                        query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_94));
+                        query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_97));
                     }
                 }
                 Ok(())
@@ -8315,6 +8563,183 @@ impl RemoveResourcePermissionInput {
     /// Creates a new builder-style object to manufacture [`RemoveResourcePermissionInput`](crate::input::RemoveResourcePermissionInput).
     pub fn builder() -> crate::input::remove_resource_permission_input::Builder {
         crate::input::remove_resource_permission_input::Builder::default()
+    }
+}
+
+/// See [`RestoreDocumentVersionsInput`](crate::input::RestoreDocumentVersionsInput).
+pub mod restore_document_versions_input {
+
+    /// A builder for [`RestoreDocumentVersionsInput`](crate::input::RestoreDocumentVersionsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    pub struct Builder {
+        pub(crate) authentication_token: std::option::Option<std::string::String>,
+        pub(crate) document_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+        pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authentication_token = Some(input.into());
+            self
+        }
+        /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+        pub fn set_authentication_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_token = input;
+            self
+        }
+        /// <p>The ID of the document.</p>
+        pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the document.</p>
+        pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RestoreDocumentVersionsInput`](crate::input::RestoreDocumentVersionsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::RestoreDocumentVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::RestoreDocumentVersionsInput {
+                authentication_token: self.authentication_token,
+                document_id: self.document_id,
+            })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.finish()
+        }
+    }
+}
+impl RestoreDocumentVersionsInput {
+    /// Consumes the builder and constructs an Operation<[`RestoreDocumentVersions`](crate::operation::RestoreDocumentVersions)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RestoreDocumentVersions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::RestoreDocumentVersionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_98 = &_input.document_id;
+                let input_98 = input_98.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "document_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let document_id = aws_smithy_http::label::fmt_string(
+                    input_98,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if document_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "document_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/api/v1/documentVersions/restore/{DocumentId}",
+                    DocumentId = document_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RestoreDocumentVersionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                let builder =
+                    crate::http_serde::add_headers_restore_document_versions(input, builder)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RestoreDocumentVersions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RestoreDocumentVersions",
+            "workdocs",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`RestoreDocumentVersionsInput`](crate::input::RestoreDocumentVersionsInput).
+    pub fn builder() -> crate::input::restore_document_versions_input::Builder {
+        crate::input::restore_document_versions_input::Builder::default()
     }
 }
 
@@ -8436,15 +8861,15 @@ impl UpdateDocumentInput {
                 _input: &crate::input::UpdateDocumentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_95 = &_input.document_id;
-                let input_95 = input_95.as_ref().ok_or_else(|| {
+                let input_99 = &_input.document_id;
+                let input_99 = input_99.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "document_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let document_id = aws_smithy_http::label::fmt_string(
-                    input_95,
+                    input_99,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if document_id.is_empty() {
@@ -8655,15 +9080,15 @@ impl UpdateDocumentVersionInput {
                 _input: &crate::input::UpdateDocumentVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_96 = &_input.document_id;
-                let input_96 = input_96.as_ref().ok_or_else(|| {
+                let input_100 = &_input.document_id;
+                let input_100 = input_100.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "document_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let document_id = aws_smithy_http::label::fmt_string(
-                    input_96,
+                    input_100,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if document_id.is_empty() {
@@ -8674,15 +9099,15 @@ impl UpdateDocumentVersionInput {
                         ),
                     );
                 }
-                let input_97 = &_input.version_id;
-                let input_97 = input_97.as_ref().ok_or_else(|| {
+                let input_101 = &_input.version_id;
+                let input_101 = input_101.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "version_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let version_id = aws_smithy_http::label::fmt_string(
-                    input_97,
+                    input_101,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if version_id.is_empty() {
@@ -8911,15 +9336,15 @@ impl UpdateFolderInput {
                 _input: &crate::input::UpdateFolderInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_98 = &_input.folder_id;
-                let input_98 = input_98.as_ref().ok_or_else(|| {
+                let input_102 = &_input.folder_id;
+                let input_102 = input_102.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "folder_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let folder_id = aws_smithy_http::label::fmt_string(
-                    input_98,
+                    input_102,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if folder_id.is_empty() {
@@ -9195,15 +9620,15 @@ impl UpdateUserInput {
                 _input: &crate::input::UpdateUserInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_99 = &_input.user_id;
-                let input_99 = input_99.as_ref().ok_or_else(|| {
+                let input_103 = &_input.user_id;
+                let input_103 = input_103.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "user_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let user_id = aws_smithy_http::label::fmt_string(
-                    input_99,
+                    input_103,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if user_id.is_empty() {
@@ -9547,6 +9972,36 @@ impl std::fmt::Debug for UpdateDocumentInput {
         formatter.field("name", &self.name);
         formatter.field("parent_folder_id", &self.parent_folder_id);
         formatter.field("resource_state", &self.resource_state);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RestoreDocumentVersionsInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
+    pub authentication_token: std::option::Option<std::string::String>,
+    /// <p>The ID of the document.</p>
+    #[doc(hidden)]
+    pub document_id: std::option::Option<std::string::String>,
+}
+impl RestoreDocumentVersionsInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the document.</p>
+    pub fn document_id(&self) -> std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
+}
+impl std::fmt::Debug for RestoreDocumentVersionsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RestoreDocumentVersionsInput");
+        formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("document_id", &self.document_id);
         formatter.finish()
     }
 }
@@ -10035,7 +10490,13 @@ pub struct DescribeUsersInput {
     /// <p>The IDs of the users.</p>
     #[doc(hidden)]
     pub user_ids: std::option::Option<std::string::String>,
-    /// <p>A query to filter users by user name.</p>
+    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
+    /// <ul>
+    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
+    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
+    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
+    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub query: std::option::Option<std::string::String>,
     /// <p>The state of the users. Specify "ALL" to include inactive users.</p>
@@ -10070,7 +10531,13 @@ impl DescribeUsersInput {
     pub fn user_ids(&self) -> std::option::Option<&str> {
         self.user_ids.as_deref()
     }
-    /// <p>A query to filter users by user name.</p>
+    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
+    /// <ul>
+    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
+    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
+    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
+    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
+    /// </ul>
     pub fn query(&self) -> std::option::Option<&str> {
         self.query.as_deref()
     }
@@ -10743,6 +11210,52 @@ impl std::fmt::Debug for DeleteFolderInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteDocumentVersionInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
+    pub authentication_token: std::option::Option<std::string::String>,
+    /// <p>The ID of a document.</p>
+    #[doc(hidden)]
+    pub document_id: std::option::Option<std::string::String>,
+    /// <p>The version ID of a document.</p>
+    #[doc(hidden)]
+    pub version_id: std::option::Option<std::string::String>,
+    /// <p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>
+    #[doc(hidden)]
+    pub delete_prior_versions: bool,
+}
+impl DeleteDocumentVersionInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of a document.</p>
+    pub fn document_id(&self) -> std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
+    /// <p>The version ID of a document.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>
+    pub fn delete_prior_versions(&self) -> bool {
+        self.delete_prior_versions
+    }
+}
+impl std::fmt::Debug for DeleteDocumentVersionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteDocumentVersionInput");
+        formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("document_id", &self.document_id);
+        formatter.field("version_id", &self.version_id);
+        formatter.field("delete_prior_versions", &self.delete_prior_versions);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDocumentInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     #[doc(hidden)]
@@ -10975,7 +11488,7 @@ impl std::fmt::Debug for CreateUserInput {
         let mut formatter = f.debug_struct("CreateUserInput");
         formatter.field("organization_id", &self.organization_id);
         formatter.field("username", &self.username);
-        formatter.field("email_address", &self.email_address);
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
         formatter.field("given_name", &self.given_name);
         formatter.field("surname", &self.surname);
         formatter.field("password", &"*** Sensitive Data Redacted ***");

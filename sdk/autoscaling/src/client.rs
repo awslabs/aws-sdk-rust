@@ -117,7 +117,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::AttachLoadBalancerTargetGroups::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::AttachLoadBalancerTargetGroups::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`target_group_ar_ns(Vec<String>)`](crate::client::fluent_builders::AttachLoadBalancerTargetGroups::target_group_ar_ns) / [`set_target_group_ar_ns(Option<Vec<String>>)`](crate::client::fluent_builders::AttachLoadBalancerTargetGroups::set_target_group_ar_ns): <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
+    ///   - [`target_group_ar_ns(Vec<String>)`](crate::client::fluent_builders::AttachLoadBalancerTargetGroups::target_group_ar_ns) / [`set_target_group_ar_ns(Option<Vec<String>>)`](crate::client::fluent_builders::AttachLoadBalancerTargetGroups::set_target_group_ar_ns): <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     /// - On success, responds with [`AttachLoadBalancerTargetGroupsOutput`](crate::output::AttachLoadBalancerTargetGroupsOutput)
 
     /// - On failure, responds with [`SdkError<AttachLoadBalancerTargetGroupsError>`](crate::error::AttachLoadBalancerTargetGroupsError)
@@ -125,6 +125,17 @@ impl Client {
         &self,
     ) -> fluent_builders::AttachLoadBalancerTargetGroups {
         fluent_builders::AttachLoadBalancerTargetGroups::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`AttachTrafficSources`](crate::client::fluent_builders::AttachTrafficSources) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::AttachTrafficSources::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::AttachTrafficSources::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
+    ///   - [`traffic_sources(Vec<TrafficSourceIdentifier>)`](crate::client::fluent_builders::AttachTrafficSources::traffic_sources) / [`set_traffic_sources(Option<Vec<TrafficSourceIdentifier>>)`](crate::client::fluent_builders::AttachTrafficSources::set_traffic_sources): <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>  <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming traffic and route requests to one or more registered targets.</p>
+    /// - On success, responds with [`AttachTrafficSourcesOutput`](crate::output::AttachTrafficSourcesOutput)
+
+    /// - On failure, responds with [`SdkError<AttachTrafficSourcesError>`](crate::error::AttachTrafficSourcesError)
+    pub fn attach_traffic_sources(&self) -> fluent_builders::AttachTrafficSources {
+        fluent_builders::AttachTrafficSources::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`BatchDeleteScheduledAction`](crate::client::fluent_builders::BatchDeleteScheduledAction) operation.
     ///
@@ -177,10 +188,10 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateAutoScalingGroup`](crate::client::fluent_builders::CreateAutoScalingGroup) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_auto_scaling_group_name): <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
+    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_auto_scaling_group_name): <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>  <p>The name can contain any ASCII character 33 to 126 including most punctuation characters, digits, and upper and lowercased letters.</p> <note>   <p>You cannot use a colon (:) in the name.</p>  </note>
     ///   - [`launch_configuration_name(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::launch_configuration_name) / [`set_launch_configuration_name(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_launch_configuration_name): <p>The name of the launch configuration to use to launch instances. </p>  <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
     ///   - [`launch_template(LaunchTemplateSpecification)`](crate::client::fluent_builders::CreateAutoScalingGroup::launch_template) / [`set_launch_template(Option<LaunchTemplateSpecification>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_launch_template): <p>Information used to specify the launch template and version to use to launch instances. </p>  <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> <note>   <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  </note>
-    ///   - [`mixed_instances_policy(MixedInstancesPolicy)`](crate::client::fluent_builders::CreateAutoScalingGroup::mixed_instances_policy) / [`set_mixed_instances_policy(Option<MixedInstancesPolicy>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_mixed_instances_policy): <p>An embedded object that specifies a mixed instances policy.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    ///   - [`mixed_instances_policy(MixedInstancesPolicy)`](crate::client::fluent_builders::CreateAutoScalingGroup::mixed_instances_policy) / [`set_mixed_instances_policy(Option<MixedInstancesPolicy>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_mixed_instances_policy): <p>The mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_instance_id): <p>The ID of the instance used to base the launch configuration on. If specified, Amazon EC2 Auto Scaling uses the configuration values from the specified instance to create a new launch configuration. To get the instance ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> API operation. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating an Auto Scaling group using an EC2 instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     ///   - [`min_size(i32)`](crate::client::fluent_builders::CreateAutoScalingGroup::min_size) / [`set_min_size(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_min_size): <p>The minimum size of the group.</p>
     ///   - [`max_size(i32)`](crate::client::fluent_builders::CreateAutoScalingGroup::max_size) / [`set_max_size(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_max_size): <p>The maximum size of the group.</p> <note>   <p>With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your largest instance weight (weights that define how many units each instance contributes to the desired capacity of the group).</p>  </note>
@@ -188,9 +199,9 @@ impl Client {
     ///   - [`default_cooldown(i32)`](crate::client::fluent_builders::CreateAutoScalingGroup::default_cooldown) / [`set_default_cooldown(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_default_cooldown): <p> <i>Only needed if you use simple scaling policies.</i> </p>  <p>The amount of time, in seconds, between one scaling activity ending and another one starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>Default: <code>300</code> seconds</p>
     ///   - [`availability_zones(Vec<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::availability_zones) / [`set_availability_zones(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_availability_zones): <p>A list of Availability Zones where instances in the Auto Scaling group can be created. Used for launching into the default VPC subnet in each Availability Zone when not using the <code>VPCZoneIdentifier</code> property, or for attaching a network interface when an existing network interface ID is specified in a launch template.</p>
     ///   - [`load_balancer_names(Vec<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::load_balancer_names) / [`set_load_balancer_names(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_load_balancer_names): <p>A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network Load Balancers, and Gateway Load Balancer, specify the <code>TargetGroupARNs</code> property instead.</p>
-    ///   - [`target_group_ar_ns(Vec<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::target_group_ar_ns) / [`set_target_group_ar_ns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_target_group_ar_ns): <p>The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group. Instances are registered as targets with the target groups. The target groups receive incoming traffic and route requests to one or more registered targets. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`health_check_type(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::health_check_type) / [`set_health_check_type(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_health_check_type): <p>The service to use for the health checks. The valid values are <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto Scaling group to use load balancer (ELB) health checks, it considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health checks. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`health_check_grace_period(i32)`](crate::client::fluent_builders::CreateAutoScalingGroup::health_check_grace_period) / [`set_health_check_grace_period(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_health_check_grace_period): <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or custom health check. This is useful if your instances do not immediately pass these health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>Default: <code>0</code> seconds</p>
+    ///   - [`target_group_ar_ns(Vec<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::target_group_ar_ns) / [`set_target_group_ar_ns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_target_group_ar_ns): <p>The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate with the Auto Scaling group. Instances are registered as targets with the target groups. The target groups receive incoming traffic and route requests to one or more registered targets. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    ///   - [`health_check_type(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::health_check_type) / [`set_health_check_type(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_health_check_type): <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
+    ///   - [`health_check_grace_period(i32)`](crate::client::fluent_builders::CreateAutoScalingGroup::health_check_grace_period) / [`set_health_check_grace_period(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_health_check_grace_period): <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>Default: <code>0</code> seconds</p>
     ///   - [`placement_group(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::placement_group) / [`set_placement_group(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_placement_group): <p>The name of the placement group into which to launch your instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>   <p>A <i>cluster</i> placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group. </p>  </note>
     ///   - [`vpc_zone_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::vpc_zone_identifier) / [`set_vpc_zone_identifier(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_vpc_zone_identifier): <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where instances in the Auto Scaling group can be created. If you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify must reside in those Availability Zones.</p>
     ///   - [`termination_policies(Vec<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::termination_policies) / [`set_termination_policies(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_termination_policies): <p>A policy or a list of policies that are used to select the instance to terminate. These policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
@@ -203,6 +214,7 @@ impl Client {
     ///   - [`context(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::context) / [`set_context(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_context): <p>Reserved.</p>
     ///   - [`desired_capacity_type(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::desired_capacity_type) / [`set_desired_capacity_type(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_desired_capacity_type): <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>  <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
     ///   - [`default_instance_warmup(i32)`](crate::client::fluent_builders::CreateAutoScalingGroup::default_instance_warmup) / [`set_default_instance_warmup(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_default_instance_warmup): <p>The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch metrics. This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates instance metrics, resulting in more reliable usage data. Set this value equal to the amount of time that it takes for resource consumption to become stable after an instance reaches the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>   <p>To manage your warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that scale continuously, such as target tracking and step scaling policies. </p>   <p>If you need to remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a minimum value of <code>0</code>.</p>  </important>  <p>Default: None </p>
+    ///   - [`traffic_sources(Vec<TrafficSourceIdentifier>)`](crate::client::fluent_builders::CreateAutoScalingGroup::traffic_sources) / [`set_traffic_sources(Option<Vec<TrafficSourceIdentifier>>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_traffic_sources): <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not use this parameter for production workloads. It is also subject to change.</b> </p>  <p>The unique identifiers of one or more traffic sources.</p>  <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming traffic and route requests to one or more registered targets.</p>
     /// - On success, responds with [`CreateAutoScalingGroupOutput`](crate::output::CreateAutoScalingGroupOutput)
 
     /// - On failure, responds with [`SdkError<CreateAutoScalingGroupError>`](crate::error::CreateAutoScalingGroupError)
@@ -216,8 +228,8 @@ impl Client {
     ///   - [`image_id(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::image_id) / [`set_image_id(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_image_id): <p>The ID of the Amazon Machine Image (AMI) that was assigned during registration. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>  <p>If you specify <code>InstanceId</code>, an <code>ImageId</code> is not required.</p>
     ///   - [`key_name(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::key_name) / [`set_key_name(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_key_name): <p>The name of the key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     ///   - [`security_groups(Vec<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::security_groups) / [`set_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_security_groups): <p>A list that contains the security group IDs to assign to the instances in the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    ///   - [`classic_link_vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::classic_link_vpc_id) / [`set_classic_link_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_classic_link_vpc_id): <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>  <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    ///   - [`classic_link_vpc_security_groups(Vec<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::classic_link_vpc_security_groups) / [`set_classic_link_vpc_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_classic_link_vpc_security_groups): <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>  <p>The IDs of one or more security groups for the specified ClassicLink-enabled VPC.</p>  <p>If you specify the <code>ClassicLinkVPCId</code> property, you must specify <code>ClassicLinkVPCSecurityGroups</code>.</p>
+    ///   - [`classic_link_vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::classic_link_vpc_id) / [`set_classic_link_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_classic_link_vpc_id): <p>Available for backward compatibility.</p>
+    ///   - [`classic_link_vpc_security_groups(Vec<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::classic_link_vpc_security_groups) / [`set_classic_link_vpc_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_classic_link_vpc_security_groups): <p>Available for backward compatibility.</p>
     ///   - [`user_data(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::user_data) / [`set_user_data(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_user_data): <p>The user data to make available to the launched EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_instance_id): <p>The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes from the instance, except for the block device mapping.</p>  <p>To create a launch configuration with a block device mapping or override any other instance attributes, specify them as part of the same request.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_instance_type): <p>Specifies the instance type of the EC2 instance. For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>  <p>If you specify <code>InstanceId</code>, an <code>InstanceType</code> is not required.</p>
@@ -590,6 +602,20 @@ impl Client {
     ) -> fluent_builders::DescribeTerminationPolicyTypes {
         fluent_builders::DescribeTerminationPolicyTypes::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeTrafficSources`](crate::client::fluent_builders::DescribeTrafficSources) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeTrafficSources::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DescribeTrafficSources::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
+    ///   - [`traffic_source_type(impl Into<String>)`](crate::client::fluent_builders::DescribeTrafficSources::traffic_source_type) / [`set_traffic_source_type(Option<String>)`](crate::client::fluent_builders::DescribeTrafficSources::set_traffic_source_type): <p>The type of traffic source you are describing. Currently, the only valid value is <code>vpc-lattice</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeTrafficSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeTrafficSources::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeTrafficSources::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeTrafficSources::set_max_records): <p>The maximum number of items to return with this call. The maximum value is <code>50</code>.</p>
+    /// - On success, responds with [`DescribeTrafficSourcesOutput`](crate::output::DescribeTrafficSourcesOutput) with field(s):
+    ///   - [`traffic_sources(Option<Vec<TrafficSourceState>>)`](crate::output::DescribeTrafficSourcesOutput::traffic_sources): <p>Information about the traffic sources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeTrafficSourcesOutput::next_token): <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+    /// - On failure, responds with [`SdkError<DescribeTrafficSourcesError>`](crate::error::DescribeTrafficSourcesError)
+    pub fn describe_traffic_sources(&self) -> fluent_builders::DescribeTrafficSources {
+        fluent_builders::DescribeTrafficSources::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeWarmPool`](crate::client::fluent_builders::DescribeWarmPool) operation.
     ///
     /// - The fluent builder is configurable:
@@ -599,7 +625,7 @@ impl Client {
     /// - On success, responds with [`DescribeWarmPoolOutput`](crate::output::DescribeWarmPoolOutput) with field(s):
     ///   - [`warm_pool_configuration(Option<WarmPoolConfiguration>)`](crate::output::DescribeWarmPoolOutput::warm_pool_configuration): <p>The warm pool configuration details. </p>
     ///   - [`instances(Option<Vec<Instance>>)`](crate::output::DescribeWarmPoolOutput::instances): <p>The instances that are currently in the warm pool.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeWarmPoolOutput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeWarmPoolOutput::next_token): <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeWarmPoolError>`](crate::error::DescribeWarmPoolError)
     pub fn describe_warm_pool(&self) -> fluent_builders::DescribeWarmPool {
         fluent_builders::DescribeWarmPool::new(self.handle.clone())
@@ -639,6 +665,17 @@ impl Client {
         &self,
     ) -> fluent_builders::DetachLoadBalancerTargetGroups {
         fluent_builders::DetachLoadBalancerTargetGroups::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DetachTrafficSources`](crate::client::fluent_builders::DetachTrafficSources) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DetachTrafficSources::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DetachTrafficSources::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
+    ///   - [`traffic_sources(Vec<TrafficSourceIdentifier>)`](crate::client::fluent_builders::DetachTrafficSources::traffic_sources) / [`set_traffic_sources(Option<Vec<TrafficSourceIdentifier>>)`](crate::client::fluent_builders::DetachTrafficSources::set_traffic_sources): <p>The unique identifiers of one or more traffic sources you are detaching. You can specify up to 10 traffic sources.</p>  <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. When you detach a target group, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the target group using the <code>DescribeTrafficSources</code> API call. The instances continue to run.</p>
+    /// - On success, responds with [`DetachTrafficSourcesOutput`](crate::output::DetachTrafficSourcesOutput)
+
+    /// - On failure, responds with [`SdkError<DetachTrafficSourcesError>`](crate::error::DetachTrafficSourcesError)
+    pub fn detach_traffic_sources(&self) -> fluent_builders::DetachTrafficSources {
+        fluent_builders::DetachTrafficSources::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DisableMetricsCollection`](crate::client::fluent_builders::DisableMetricsCollection) operation.
     ///
@@ -908,14 +945,14 @@ impl Client {
     ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
     ///   - [`launch_configuration_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::launch_configuration_name) / [`set_launch_configuration_name(Option<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_launch_configuration_name): <p>The name of the launch configuration. If you specify <code>LaunchConfigurationName</code> in your update request, you can't specify <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
     ///   - [`launch_template(LaunchTemplateSpecification)`](crate::client::fluent_builders::UpdateAutoScalingGroup::launch_template) / [`set_launch_template(Option<LaunchTemplateSpecification>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_launch_template): <p>The launch template and version to use to specify the updates. If you specify <code>LaunchTemplate</code> in your update request, you can't specify <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
-    ///   - [`mixed_instances_policy(MixedInstancesPolicy)`](crate::client::fluent_builders::UpdateAutoScalingGroup::mixed_instances_policy) / [`set_mixed_instances_policy(Option<MixedInstancesPolicy>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_mixed_instances_policy): <p>An embedded object that specifies a mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    ///   - [`mixed_instances_policy(MixedInstancesPolicy)`](crate::client::fluent_builders::UpdateAutoScalingGroup::mixed_instances_policy) / [`set_mixed_instances_policy(Option<MixedInstancesPolicy>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_mixed_instances_policy): <p>The mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     ///   - [`min_size(i32)`](crate::client::fluent_builders::UpdateAutoScalingGroup::min_size) / [`set_min_size(Option<i32>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_min_size): <p>The minimum size of the Auto Scaling group.</p>
     ///   - [`max_size(i32)`](crate::client::fluent_builders::UpdateAutoScalingGroup::max_size) / [`set_max_size(Option<i32>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_max_size): <p>The maximum size of the Auto Scaling group.</p> <note>   <p>With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your largest instance weight (weights that define how many units each instance contributes to the desired capacity of the group).</p>  </note>
     ///   - [`desired_capacity(i32)`](crate::client::fluent_builders::UpdateAutoScalingGroup::desired_capacity) / [`set_desired_capacity(Option<i32>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_desired_capacity): <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
     ///   - [`default_cooldown(i32)`](crate::client::fluent_builders::UpdateAutoScalingGroup::default_cooldown) / [`set_default_cooldown(Option<i32>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_default_cooldown): <p> <i>Only needed if you use simple scaling policies.</i> </p>  <p>The amount of time, in seconds, between one scaling activity ending and another one starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     ///   - [`availability_zones(Vec<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::availability_zones) / [`set_availability_zones(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_availability_zones): <p>One or more Availability Zones for the group.</p>
-    ///   - [`health_check_type(impl Into<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::health_check_type) / [`set_health_check_type(Option<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_health_check_type): <p>The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health checks.</p>
-    ///   - [`health_check_grace_period(i32)`](crate::client::fluent_builders::UpdateAutoScalingGroup::health_check_grace_period) / [`set_health_check_grace_period(Option<i32>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_health_check_grace_period): <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or custom health check. This is useful if your instances do not immediately pass these health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    ///   - [`health_check_type(impl Into<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::health_check_type) / [`set_health_check_type(Option<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_health_check_type): <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on.</p>  <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
+    ///   - [`health_check_grace_period(i32)`](crate::client::fluent_builders::UpdateAutoScalingGroup::health_check_grace_period) / [`set_health_check_grace_period(Option<i32>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_health_check_grace_period): <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     ///   - [`placement_group(impl Into<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::placement_group) / [`set_placement_group(Option<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_placement_group): <p>The name of an existing placement group into which to launch your instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>   <p>A <i>cluster</i> placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group. </p>  </note>
     ///   - [`vpc_zone_identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::vpc_zone_identifier) / [`set_vpc_zone_identifier(Option<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_vpc_zone_identifier): <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify must reside in those Availability Zones.</p>
     ///   - [`termination_policies(Vec<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::termination_policies) / [`set_termination_policies(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_termination_policies): <p>A policy or a list of policies that are used to select the instances to terminate. The policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
@@ -1223,17 +1260,115 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
         pub fn target_group_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_group_ar_ns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
         pub fn set_target_group_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_target_group_ar_ns(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `AttachTrafficSources`.
+    ///
+    /// <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change. Do not use this API for production workloads. This API is also subject to change.</b> </p>
+    /// <p>Attaches one or more traffic sources to the specified Auto Scaling group.</p>
+    /// <p>To describe the traffic sources for an Auto Scaling group, call the <code>DescribeTrafficSources</code> API. To detach a traffic source from the Auto Scaling group, call the <code>DetachTrafficSources</code> API.</p>
+    /// <p>This operation is additive and does not detach existing traffic sources from the Auto Scaling group.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AttachTrafficSources {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::attach_traffic_sources_input::Builder,
+    }
+    impl AttachTrafficSources {
+        /// Creates a new `AttachTrafficSources`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::AttachTrafficSources,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::AttachTrafficSourcesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AttachTrafficSourcesOutput,
+            aws_smithy_http::result::SdkError<crate::error::AttachTrafficSourcesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Auto Scaling group.</p>
+        pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(input.into());
+            self
+        }
+        /// <p>The name of the Auto Scaling group.</p>
+        pub fn set_auto_scaling_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_auto_scaling_group_name(input);
+            self
+        }
+        /// Appends an item to `TrafficSources`.
+        ///
+        /// To override the contents of this collection use [`set_traffic_sources`](Self::set_traffic_sources).
+        ///
+        /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
+        /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming traffic and route requests to one or more registered targets.</p>
+        pub fn traffic_sources(mut self, input: crate::model::TrafficSourceIdentifier) -> Self {
+            self.inner = self.inner.traffic_sources(input);
+            self
+        }
+        /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
+        /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming traffic and route requests to one or more registered targets.</p>
+        pub fn set_traffic_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TrafficSourceIdentifier>>,
+        ) -> Self {
+            self.inner = self.inner.set_traffic_sources(input);
             self
         }
     }
@@ -1711,11 +1846,17 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
+        /// <p>The name can contain any ASCII character 33 to 126 including most punctuation characters, digits, and upper and lowercased letters.</p> <note>
+        /// <p>You cannot use a colon (:) in the name.</p>
+        /// </note>
         pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.auto_scaling_group_name(input.into());
             self
         }
         /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
+        /// <p>The name can contain any ASCII character 33 to 126 including most punctuation characters, digits, and upper and lowercased letters.</p> <note>
+        /// <p>You cannot use a colon (:) in the name.</p>
+        /// </note>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1757,14 +1898,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_template(input);
             self
         }
-        /// <p>An embedded object that specifies a mixed instances policy.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn mixed_instances_policy(mut self, input: crate::model::MixedInstancesPolicy) -> Self {
             self.inner = self.inner.mixed_instances_policy(input);
             self
         }
-        /// <p>An embedded object that specifies a mixed instances policy.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_mixed_instances_policy(
             mut self,
             input: std::option::Option<crate::model::MixedInstancesPolicy>,
@@ -1868,12 +2007,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group. Instances are registered as targets with the target groups. The target groups receive incoming traffic and route requests to one or more registered targets. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate with the Auto Scaling group. Instances are registered as targets with the target groups. The target groups receive incoming traffic and route requests to one or more registered targets. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn target_group_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_group_ar_ns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group. Instances are registered as targets with the target groups. The target groups receive incoming traffic and route requests to one or more registered targets. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate with the Auto Scaling group. Instances are registered as targets with the target groups. The target groups receive incoming traffic and route requests to one or more registered targets. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_target_group_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1881,12 +2020,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_group_ar_ns(input);
             self
         }
-        /// <p>The service to use for the health checks. The valid values are <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto Scaling group to use load balancer (ELB) health checks, it considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health checks. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
         pub fn health_check_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.health_check_type(input.into());
             self
         }
-        /// <p>The service to use for the health checks. The valid values are <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto Scaling group to use load balancer (ELB) health checks, it considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health checks. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
         pub fn set_health_check_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1894,13 +2035,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_type(input);
             self
         }
-        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or custom health check. This is useful if your instances do not immediately pass these health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Default: <code>0</code> seconds</p>
         pub fn health_check_grace_period(mut self, input: i32) -> Self {
             self.inner = self.inner.health_check_grace_period(input);
             self
         }
-        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or custom health check. This is useful if your instances do not immediately pass these health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Default: <code>0</code> seconds</p>
         pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_health_check_grace_period(input);
@@ -2083,12 +2224,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_instance_warmup(input);
             self
         }
+        /// Appends an item to `TrafficSources`.
+        ///
+        /// To override the contents of this collection use [`set_traffic_sources`](Self::set_traffic_sources).
+        ///
+        /// <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not use this parameter for production workloads. It is also subject to change.</b> </p>
+        /// <p>The unique identifiers of one or more traffic sources.</p>
+        /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming traffic and route requests to one or more registered targets.</p>
+        pub fn traffic_sources(mut self, input: crate::model::TrafficSourceIdentifier) -> Self {
+            self.inner = self.inner.traffic_sources(input);
+            self
+        }
+        /// <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not use this parameter for production workloads. It is also subject to change.</b> </p>
+        /// <p>The unique identifiers of one or more traffic sources.</p>
+        /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming traffic and route requests to one or more registered targets.</p>
+        pub fn set_traffic_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TrafficSourceIdentifier>>,
+        ) -> Self {
+            self.inner = self.inner.set_traffic_sources(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateLaunchConfiguration`.
     ///
     /// <p>Creates a launch configuration.</p>
     /// <p>If you exceed your maximum limit of launch configurations, the call fails. To query this limit, call the <code>DescribeAccountLimits</code> API. For information about updating this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-quotas.html">Quotas for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch configurations</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch configurations</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <note>
+    /// <p>Amazon EC2 Auto Scaling configures instances launched as part of an Auto Scaling group using either a launch template or a launch configuration. We strongly recommend that you do not use launch configurations. They do not provide full functionality for Amazon EC2 Auto Scaling or Amazon EC2. For information about using launch templates, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html">Launch templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLaunchConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -2200,14 +2364,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_groups(input);
             self
         }
-        /// <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
-        /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>Available for backward compatibility.</p>
         pub fn classic_link_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.classic_link_vpc_id(input.into());
             self
         }
-        /// <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
-        /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>Available for backward compatibility.</p>
         pub fn set_classic_link_vpc_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2219,9 +2381,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_classic_link_vpc_security_groups`](Self::set_classic_link_vpc_security_groups).
         ///
-        /// <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
-        /// <p>The IDs of one or more security groups for the specified ClassicLink-enabled VPC.</p>
-        /// <p>If you specify the <code>ClassicLinkVPCId</code> property, you must specify <code>ClassicLinkVPCSecurityGroups</code>.</p>
+        /// <p>Available for backward compatibility.</p>
         pub fn classic_link_vpc_security_groups(
             mut self,
             input: impl Into<std::string::String>,
@@ -2229,9 +2389,7 @@ pub mod fluent_builders {
             self.inner = self.inner.classic_link_vpc_security_groups(input.into());
             self
         }
-        /// <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
-        /// <p>The IDs of one or more security groups for the specified ClassicLink-enabled VPC.</p>
-        /// <p>If you specify the <code>ClassicLinkVPCId</code> property, you must specify <code>ClassicLinkVPCSecurityGroups</code>.</p>
+        /// <p>Available for backward compatibility.</p>
         pub fn set_classic_link_vpc_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2513,10 +2671,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAutoScalingGroup`.
     ///
     /// <p>Deletes the specified Auto Scaling group.</p>
-    /// <p>If the group has instances or scaling activities in progress, you must specify the option to force the deletion in order for it to succeed.</p>
-    /// <p>If the group has policies, deleting the group deletes the policies, the underlying alarm actions, and any alarm that no longer has an associated action.</p>
+    /// <p>If the group has instances or scaling activities in progress, you must specify the option to force the deletion in order for it to succeed. The force delete operation will also terminate the EC2 instances. If the group has a warm pool, the force delete option also deletes the warm pool.</p>
     /// <p>To remove instances from the Auto Scaling group before deleting it, call the <code>DetachInstances</code> API with the list of instances and the option to decrement the desired capacity. This ensures that Amazon EC2 Auto Scaling does not launch replacement instances.</p>
     /// <p>To terminate all instances before deleting the Auto Scaling group, call the <code>UpdateAutoScalingGroup</code> API and set the minimum size and desired capacity of the Auto Scaling group to zero.</p>
+    /// <p>If the group has scaling policies, deleting the group deletes the policies, the underlying alarm actions, and any alarm that no longer has an associated action.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-process-shutdown.html">Delete your Auto Scaling infrastructure</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAutoScalingGroup {
         handle: std::sync::Arc<super::Handle>,
@@ -4130,7 +4289,9 @@ pub mod fluent_builders {
     /// <p>Gets information about the Elastic Load Balancing target groups for the specified Auto Scaling group.</p>
     /// <p>To determine the attachment status of the target group, use the <code>State</code> element in the response. When you attach a target group to an Auto Scaling group, the initial <code>State</code> value is <code>Adding</code>. The state transitions to <code>Added</code> after all Auto Scaling instances are registered with the target group. If Elastic Load Balancing health checks are enabled for the Auto Scaling group, the state transitions to <code>InService</code> after at least one Auto Scaling instance passes the health check. When the target group is in the <code>InService</code> state, Amazon EC2 Auto Scaling can terminate and replace any instances that are reported as unhealthy. If no registered instances pass the health checks, the target group doesn't enter the <code>InService</code> state. </p>
     /// <p>Target groups also have an <code>InService</code> state if you attach them in the <code>CreateAutoScalingGroup</code> API call. If your target group state is <code>InService</code>, but it is not working properly, check the scaling activities by calling <code>DescribeScalingActivities</code> and take any corrective actions necessary.</p>
-    /// <p>For help with failed health checks, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting Amazon EC2 Auto Scaling: Health checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+    /// <p>For help with failed health checks, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting Amazon EC2 Auto Scaling: Health checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <note>
+    /// <p>You can use this operation to describe target groups that were attached by using <code>AttachLoadBalancerTargetGroups</code>, but not for target groups that were attached by using <code>AttachTrafficSources</code>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancerTargetGroups {
         handle: std::sync::Arc<super::Handle>,
@@ -5057,6 +5218,116 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
     }
+    /// Fluent builder constructing a request to `DescribeTrafficSources`.
+    ///
+    /// <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change. Do not use this API for production workloads. This API is also subject to change.</b> </p>
+    /// <p>Gets information about the traffic sources for the specified Auto Scaling group.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeTrafficSources {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_traffic_sources_input::Builder,
+    }
+    impl DescribeTrafficSources {
+        /// Creates a new `DescribeTrafficSources`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeTrafficSources,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeTrafficSourcesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeTrafficSourcesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeTrafficSourcesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Auto Scaling group.</p>
+        pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(input.into());
+            self
+        }
+        /// <p>The name of the Auto Scaling group.</p>
+        pub fn set_auto_scaling_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_auto_scaling_group_name(input);
+            self
+        }
+        /// <p>The type of traffic source you are describing. Currently, the only valid value is <code>vpc-lattice</code>.</p>
+        pub fn traffic_source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.traffic_source_type(input.into());
+            self
+        }
+        /// <p>The type of traffic source you are describing. Currently, the only valid value is <code>vpc-lattice</code>.</p>
+        pub fn set_traffic_source_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_traffic_source_type(input);
+            self
+        }
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of items to return with this call. The maximum value is <code>50</code>.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
+            self
+        }
+        /// <p>The maximum number of items to return with this call. The maximum value is <code>50</code>.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeWarmPool`.
     ///
     /// <p>Gets information about a warm pool and its instances.</p>
@@ -5362,7 +5633,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachLoadBalancerTargetGroups`.
     ///
     /// <p>Detaches one or more target groups from the specified Auto Scaling group.</p>
-    /// <p>When you detach a target group, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the target group using the <code>DescribeLoadBalancerTargetGroups</code> API call. The instances remain running.</p>
+    /// <p>When you detach a target group, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the target group using the <code>DescribeLoadBalancerTargetGroups</code> API call. The instances remain running.</p> <note>
+    /// <p>You can use this operation to detach target groups that were attached by using <code>AttachLoadBalancerTargetGroups</code>, but not for target groups that were attached by using <code>AttachTrafficSources</code>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachLoadBalancerTargetGroups {
         handle: std::sync::Arc<super::Handle>,
@@ -5450,6 +5723,102 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_target_group_ar_ns(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DetachTrafficSources`.
+    ///
+    /// <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change. Do not use this API for production workloads. This API is also subject to change.</b> </p>
+    /// <p>Detaches one or more traffic sources from the specified Auto Scaling group.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DetachTrafficSources {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::detach_traffic_sources_input::Builder,
+    }
+    impl DetachTrafficSources {
+        /// Creates a new `DetachTrafficSources`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DetachTrafficSources,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DetachTrafficSourcesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DetachTrafficSourcesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DetachTrafficSourcesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Auto Scaling group.</p>
+        pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(input.into());
+            self
+        }
+        /// <p>The name of the Auto Scaling group.</p>
+        pub fn set_auto_scaling_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_auto_scaling_group_name(input);
+            self
+        }
+        /// Appends an item to `TrafficSources`.
+        ///
+        /// To override the contents of this collection use [`set_traffic_sources`](Self::set_traffic_sources).
+        ///
+        /// <p>The unique identifiers of one or more traffic sources you are detaching. You can specify up to 10 traffic sources.</p>
+        /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. When you detach a target group, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the target group using the <code>DescribeTrafficSources</code> API call. The instances continue to run.</p>
+        pub fn traffic_sources(mut self, input: crate::model::TrafficSourceIdentifier) -> Self {
+            self.inner = self.inner.traffic_sources(input);
+            self
+        }
+        /// <p>The unique identifiers of one or more traffic sources you are detaching. You can specify up to 10 traffic sources.</p>
+        /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. When you detach a target group, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the target group using the <code>DescribeTrafficSources</code> API call. The instances continue to run.</p>
+        pub fn set_traffic_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TrafficSourceIdentifier>>,
+        ) -> Self {
+            self.inner = self.inner.set_traffic_sources(input);
             self
         }
     }
@@ -8105,12 +8474,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_template(input);
             self
         }
-        /// <p>An embedded object that specifies a mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn mixed_instances_policy(mut self, input: crate::model::MixedInstancesPolicy) -> Self {
             self.inner = self.inner.mixed_instances_policy(input);
             self
         }
-        /// <p>An embedded object that specifies a mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_mixed_instances_policy(
             mut self,
             input: std::option::Option<crate::model::MixedInstancesPolicy>,
@@ -8181,12 +8550,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zones(input);
             self
         }
-        /// <p>The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health checks.</p>
+        /// <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on.</p>
+        /// <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
         pub fn health_check_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.health_check_type(input.into());
             self
         }
-        /// <p>The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health checks.</p>
+        /// <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on.</p>
+        /// <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
         pub fn set_health_check_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8194,12 +8565,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_type(input);
             self
         }
-        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or custom health check. This is useful if your instances do not immediately pass these health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn health_check_grace_period(mut self, input: i32) -> Self {
             self.inner = self.inner.health_check_grace_period(input);
             self
         }
-        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or custom health check. This is useful if your instances do not immediately pass these health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_health_check_grace_period(input);
             self

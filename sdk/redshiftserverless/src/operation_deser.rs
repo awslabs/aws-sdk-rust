@@ -92,6 +92,23 @@ pub fn parse_convert_recovery_point_to_snapshot_error(
                     },
                 ),
         },
+        "TooManyTagsException" => crate::error::ConvertRecoveryPointToSnapshotError {
+            meta: generic,
+            kind: crate::error::ConvertRecoveryPointToSnapshotErrorKind::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConvertRecoveryPointToSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::ConvertRecoveryPointToSnapshotError {
             meta: generic,
             kind: crate::error::ConvertRecoveryPointToSnapshotErrorKind::ValidationException({
@@ -460,6 +477,23 @@ pub fn parse_create_snapshot_error(
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyTagsException" => crate::error::CreateSnapshotError {
+            meta: generic,
+            kind: crate::error::CreateSnapshotErrorKind::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -1938,6 +1972,80 @@ pub fn parse_get_snapshot_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_table_restore_status_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetTableRestoreStatusOutput,
+    crate::error::GetTableRestoreStatusError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetTableRestoreStatusError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetTableRestoreStatusError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFoundException" => crate::error::GetTableRestoreStatusError {
+            meta: generic,
+            kind: crate::error::GetTableRestoreStatusErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTableRestoreStatusError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::GetTableRestoreStatusError {
+            meta: generic,
+            kind: crate::error::GetTableRestoreStatusErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTableRestoreStatusError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetTableRestoreStatusError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_table_restore_status_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetTableRestoreStatusOutput,
+    crate::error::GetTableRestoreStatusError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_table_restore_status_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_table_restore_status(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetTableRestoreStatusError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_usage_limit_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetUsageLimitOutput, crate::error::GetUsageLimitError> {
@@ -2459,6 +2567,101 @@ pub fn parse_list_snapshots_response(
             output,
         )
         .map_err(crate::error::ListSnapshotsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_table_restore_status_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListTableRestoreStatusOutput,
+    crate::error::ListTableRestoreStatusError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListTableRestoreStatusError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListTableRestoreStatusError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidPaginationException" => crate::error::ListTableRestoreStatusError {
+            meta: generic,
+            kind: crate::error::ListTableRestoreStatusErrorKind::InvalidPaginationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pagination_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTableRestoreStatusError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::ListTableRestoreStatusError {
+            meta: generic,
+            kind: crate::error::ListTableRestoreStatusErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTableRestoreStatusError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::ListTableRestoreStatusError {
+            meta: generic,
+            kind: crate::error::ListTableRestoreStatusErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTableRestoreStatusError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListTableRestoreStatusError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_table_restore_status_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListTableRestoreStatusOutput,
+    crate::error::ListTableRestoreStatusError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_table_restore_status_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_table_restore_status(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListTableRestoreStatusError::unhandled)?;
         output.build()
     })
 }
@@ -3122,6 +3325,120 @@ pub fn parse_restore_from_snapshot_response(
             output,
         )
         .map_err(crate::error::RestoreFromSnapshotError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_restore_table_from_snapshot_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RestoreTableFromSnapshotOutput,
+    crate::error::RestoreTableFromSnapshotError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RestoreTableFromSnapshotError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::RestoreTableFromSnapshotError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::RestoreTableFromSnapshotError {
+                meta: generic,
+                kind: crate::error::RestoreTableFromSnapshotErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreTableFromSnapshotError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalServerException" => crate::error::RestoreTableFromSnapshotError {
+            meta: generic,
+            kind: crate::error::RestoreTableFromSnapshotErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreTableFromSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::RestoreTableFromSnapshotError {
+            meta: generic,
+            kind: crate::error::RestoreTableFromSnapshotErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreTableFromSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::RestoreTableFromSnapshotError {
+            meta: generic,
+            kind: crate::error::RestoreTableFromSnapshotErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreTableFromSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::RestoreTableFromSnapshotError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_restore_table_from_snapshot_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RestoreTableFromSnapshotOutput,
+    crate::error::RestoreTableFromSnapshotError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::restore_table_from_snapshot_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_restore_table_from_snapshot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RestoreTableFromSnapshotError::unhandled)?;
         output.build()
     })
 }

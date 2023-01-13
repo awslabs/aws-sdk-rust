@@ -496,6 +496,232 @@ impl AsRef<str> for RadiusAuthenticationProtocol {
     }
 }
 
+/// <p> OS version that the directory needs to be updated to. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct OsUpdateSettings {
+    /// <p> OS version that the directory needs to be updated to. </p>
+    #[doc(hidden)]
+    pub os_version: std::option::Option<crate::model::OsVersion>,
+}
+impl OsUpdateSettings {
+    /// <p> OS version that the directory needs to be updated to. </p>
+    pub fn os_version(&self) -> std::option::Option<&crate::model::OsVersion> {
+        self.os_version.as_ref()
+    }
+}
+/// See [`OsUpdateSettings`](crate::model::OsUpdateSettings).
+pub mod os_update_settings {
+
+    /// A builder for [`OsUpdateSettings`](crate::model::OsUpdateSettings).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) os_version: std::option::Option<crate::model::OsVersion>,
+    }
+    impl Builder {
+        /// <p> OS version that the directory needs to be updated to. </p>
+        pub fn os_version(mut self, input: crate::model::OsVersion) -> Self {
+            self.os_version = Some(input);
+            self
+        }
+        /// <p> OS version that the directory needs to be updated to. </p>
+        pub fn set_os_version(
+            mut self,
+            input: std::option::Option<crate::model::OsVersion>,
+        ) -> Self {
+            self.os_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OsUpdateSettings`](crate::model::OsUpdateSettings).
+        pub fn build(self) -> crate::model::OsUpdateSettings {
+            crate::model::OsUpdateSettings {
+                os_version: self.os_version,
+            }
+        }
+    }
+}
+impl OsUpdateSettings {
+    /// Creates a new builder-style object to manufacture [`OsUpdateSettings`](crate::model::OsUpdateSettings).
+    pub fn builder() -> crate::model::os_update_settings::Builder {
+        crate::model::os_update_settings::Builder::default()
+    }
+}
+
+/// When writing a match expression against `OsVersion`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let osversion = unimplemented!();
+/// match osversion {
+///     OsVersion::Version2012 => { /* ... */ },
+///     OsVersion::Version2019 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `osversion` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OsVersion::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OsVersion::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OsVersion::NewFeature` is defined.
+/// Specifically, when `osversion` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OsVersion::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OsVersion {
+    #[allow(missing_docs)] // documentation missing in model
+    Version2012,
+    #[allow(missing_docs)] // documentation missing in model
+    Version2019,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for OsVersion {
+    fn from(s: &str) -> Self {
+        match s {
+            "SERVER_2012" => OsVersion::Version2012,
+            "SERVER_2019" => OsVersion::Version2019,
+            other => OsVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for OsVersion {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OsVersion::from(s))
+    }
+}
+impl OsVersion {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OsVersion::Version2012 => "SERVER_2012",
+            OsVersion::Version2019 => "SERVER_2019",
+            OsVersion::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["SERVER_2012", "SERVER_2019"]
+    }
+}
+impl AsRef<str> for OsVersion {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `UpdateType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let updatetype = unimplemented!();
+/// match updatetype {
+///     UpdateType::Os => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `updatetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `UpdateType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `UpdateType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `UpdateType::NewFeature` is defined.
+/// Specifically, when `updatetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `UpdateType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum UpdateType {
+    #[allow(missing_docs)] // documentation missing in model
+    Os,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for UpdateType {
+    fn from(s: &str) -> Self {
+        match s {
+            "OS" => UpdateType::Os,
+            other => UpdateType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for UpdateType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UpdateType::from(s))
+    }
+}
+impl UpdateType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            UpdateType::Os => "OS",
+            UpdateType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["OS"]
+    }
+}
+impl AsRef<str> for UpdateType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Identifier that contains details about the directory consumer account with whom the directory is being unshared.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2442,6 +2668,351 @@ impl ClientAuthenticationType {
     }
 }
 impl AsRef<str> for ClientAuthenticationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> An entry of update information related to a requested update type. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateInfoEntry {
+    /// <p> The name of the Region. </p>
+    #[doc(hidden)]
+    pub region: std::option::Option<std::string::String>,
+    /// <p> The status of the update performed on the directory. </p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::UpdateStatus>,
+    /// <p> The reason for the current status of the update type activity. </p>
+    #[doc(hidden)]
+    pub status_reason: std::option::Option<std::string::String>,
+    /// <p> This specifies if the update was initiated by the customer or by the service team. </p>
+    #[doc(hidden)]
+    pub initiated_by: std::option::Option<std::string::String>,
+    /// <p> The new value of the target setting. </p>
+    #[doc(hidden)]
+    pub new_value: std::option::Option<crate::model::UpdateValue>,
+    /// <p> The old value of the target setting. </p>
+    #[doc(hidden)]
+    pub previous_value: std::option::Option<crate::model::UpdateValue>,
+    /// <p> The start time of the <code>UpdateDirectorySetup</code> for the particular type. </p>
+    #[doc(hidden)]
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The last updated date and time of a particular directory setting. </p>
+    #[doc(hidden)]
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl UpdateInfoEntry {
+    /// <p> The name of the Region. </p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p> The status of the update performed on the directory. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::UpdateStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The reason for the current status of the update type activity. </p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p> This specifies if the update was initiated by the customer or by the service team. </p>
+    pub fn initiated_by(&self) -> std::option::Option<&str> {
+        self.initiated_by.as_deref()
+    }
+    /// <p> The new value of the target setting. </p>
+    pub fn new_value(&self) -> std::option::Option<&crate::model::UpdateValue> {
+        self.new_value.as_ref()
+    }
+    /// <p> The old value of the target setting. </p>
+    pub fn previous_value(&self) -> std::option::Option<&crate::model::UpdateValue> {
+        self.previous_value.as_ref()
+    }
+    /// <p> The start time of the <code>UpdateDirectorySetup</code> for the particular type. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p> The last updated date and time of a particular directory setting. </p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_date_time.as_ref()
+    }
+}
+/// See [`UpdateInfoEntry`](crate::model::UpdateInfoEntry).
+pub mod update_info_entry {
+
+    /// A builder for [`UpdateInfoEntry`](crate::model::UpdateInfoEntry).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) region: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::UpdateStatus>,
+        pub(crate) status_reason: std::option::Option<std::string::String>,
+        pub(crate) initiated_by: std::option::Option<std::string::String>,
+        pub(crate) new_value: std::option::Option<crate::model::UpdateValue>,
+        pub(crate) previous_value: std::option::Option<crate::model::UpdateValue>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p> The name of the Region. </p>
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
+            self
+        }
+        /// <p> The name of the Region. </p>
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
+            self
+        }
+        /// <p> The status of the update performed on the directory. </p>
+        pub fn status(mut self, input: crate::model::UpdateStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p> The status of the update performed on the directory. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::UpdateStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p> The reason for the current status of the update type activity. </p>
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
+            self
+        }
+        /// <p> The reason for the current status of the update type activity. </p>
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
+            self
+        }
+        /// <p> This specifies if the update was initiated by the customer or by the service team. </p>
+        pub fn initiated_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.initiated_by = Some(input.into());
+            self
+        }
+        /// <p> This specifies if the update was initiated by the customer or by the service team. </p>
+        pub fn set_initiated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.initiated_by = input;
+            self
+        }
+        /// <p> The new value of the target setting. </p>
+        pub fn new_value(mut self, input: crate::model::UpdateValue) -> Self {
+            self.new_value = Some(input);
+            self
+        }
+        /// <p> The new value of the target setting. </p>
+        pub fn set_new_value(
+            mut self,
+            input: std::option::Option<crate::model::UpdateValue>,
+        ) -> Self {
+            self.new_value = input;
+            self
+        }
+        /// <p> The old value of the target setting. </p>
+        pub fn previous_value(mut self, input: crate::model::UpdateValue) -> Self {
+            self.previous_value = Some(input);
+            self
+        }
+        /// <p> The old value of the target setting. </p>
+        pub fn set_previous_value(
+            mut self,
+            input: std::option::Option<crate::model::UpdateValue>,
+        ) -> Self {
+            self.previous_value = input;
+            self
+        }
+        /// <p> The start time of the <code>UpdateDirectorySetup</code> for the particular type. </p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p> The start time of the <code>UpdateDirectorySetup</code> for the particular type. </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p> The last updated date and time of a particular directory setting. </p>
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_date_time = Some(input);
+            self
+        }
+        /// <p> The last updated date and time of a particular directory setting. </p>
+        pub fn set_last_updated_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_date_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateInfoEntry`](crate::model::UpdateInfoEntry).
+        pub fn build(self) -> crate::model::UpdateInfoEntry {
+            crate::model::UpdateInfoEntry {
+                region: self.region,
+                status: self.status,
+                status_reason: self.status_reason,
+                initiated_by: self.initiated_by,
+                new_value: self.new_value,
+                previous_value: self.previous_value,
+                start_time: self.start_time,
+                last_updated_date_time: self.last_updated_date_time,
+            }
+        }
+    }
+}
+impl UpdateInfoEntry {
+    /// Creates a new builder-style object to manufacture [`UpdateInfoEntry`](crate::model::UpdateInfoEntry).
+    pub fn builder() -> crate::model::update_info_entry::Builder {
+        crate::model::update_info_entry::Builder::default()
+    }
+}
+
+/// <p> The value for a given type of <code>UpdateSettings</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateValue {
+    /// <p> The OS update related settings. </p>
+    #[doc(hidden)]
+    pub os_update_settings: std::option::Option<crate::model::OsUpdateSettings>,
+}
+impl UpdateValue {
+    /// <p> The OS update related settings. </p>
+    pub fn os_update_settings(&self) -> std::option::Option<&crate::model::OsUpdateSettings> {
+        self.os_update_settings.as_ref()
+    }
+}
+/// See [`UpdateValue`](crate::model::UpdateValue).
+pub mod update_value {
+
+    /// A builder for [`UpdateValue`](crate::model::UpdateValue).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) os_update_settings: std::option::Option<crate::model::OsUpdateSettings>,
+    }
+    impl Builder {
+        /// <p> The OS update related settings. </p>
+        pub fn os_update_settings(mut self, input: crate::model::OsUpdateSettings) -> Self {
+            self.os_update_settings = Some(input);
+            self
+        }
+        /// <p> The OS update related settings. </p>
+        pub fn set_os_update_settings(
+            mut self,
+            input: std::option::Option<crate::model::OsUpdateSettings>,
+        ) -> Self {
+            self.os_update_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateValue`](crate::model::UpdateValue).
+        pub fn build(self) -> crate::model::UpdateValue {
+            crate::model::UpdateValue {
+                os_update_settings: self.os_update_settings,
+            }
+        }
+    }
+}
+impl UpdateValue {
+    /// Creates a new builder-style object to manufacture [`UpdateValue`](crate::model::UpdateValue).
+    pub fn builder() -> crate::model::update_value::Builder {
+        crate::model::update_value::Builder::default()
+    }
+}
+
+/// When writing a match expression against `UpdateStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let updatestatus = unimplemented!();
+/// match updatestatus {
+///     UpdateStatus::UpdateFailed => { /* ... */ },
+///     UpdateStatus::Updated => { /* ... */ },
+///     UpdateStatus::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `updatestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `UpdateStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `UpdateStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `UpdateStatus::NewFeature` is defined.
+/// Specifically, when `updatestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `UpdateStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum UpdateStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Updated,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for UpdateStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "UpdateFailed" => UpdateStatus::UpdateFailed,
+            "Updated" => UpdateStatus::Updated,
+            "Updating" => UpdateStatus::Updating,
+            other => UpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for UpdateStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UpdateStatus::from(s))
+    }
+}
+impl UpdateStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            UpdateStatus::UpdateFailed => "UpdateFailed",
+            UpdateStatus::Updated => "Updated",
+            UpdateStatus::Updating => "Updating",
+            UpdateStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["UpdateFailed", "Updated", "Updating"]
+    }
+}
+impl AsRef<str> for UpdateStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -5556,6 +6127,9 @@ pub struct DirectoryDescription {
     /// <p>Lists the Regions where the directory has replicated.</p>
     #[doc(hidden)]
     pub regions_info: std::option::Option<crate::model::RegionsInfo>,
+    /// <p>The operating system (OS) version of the directory.</p>
+    #[doc(hidden)]
+    pub os_version: std::option::Option<crate::model::OsVersion>,
 }
 impl DirectoryDescription {
     /// <p>The directory identifier.</p>
@@ -5668,6 +6242,10 @@ impl DirectoryDescription {
     pub fn regions_info(&self) -> std::option::Option<&crate::model::RegionsInfo> {
         self.regions_info.as_ref()
     }
+    /// <p>The operating system (OS) version of the directory.</p>
+    pub fn os_version(&self) -> std::option::Option<&crate::model::OsVersion> {
+        self.os_version.as_ref()
+    }
 }
 impl std::fmt::Debug for DirectoryDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5706,6 +6284,7 @@ impl std::fmt::Debug for DirectoryDescription {
             &self.owner_directory_description,
         );
         formatter.field("regions_info", &self.regions_info);
+        formatter.field("os_version", &self.os_version);
         formatter.finish()
     }
 }
@@ -5742,6 +6321,7 @@ pub mod directory_description {
         pub(crate) owner_directory_description:
             std::option::Option<crate::model::OwnerDirectoryDescription>,
         pub(crate) regions_info: std::option::Option<crate::model::RegionsInfo>,
+        pub(crate) os_version: std::option::Option<crate::model::OsVersion>,
     }
     impl Builder {
         /// <p>The directory identifier.</p>
@@ -6059,6 +6639,19 @@ pub mod directory_description {
             self.regions_info = input;
             self
         }
+        /// <p>The operating system (OS) version of the directory.</p>
+        pub fn os_version(mut self, input: crate::model::OsVersion) -> Self {
+            self.os_version = Some(input);
+            self
+        }
+        /// <p>The operating system (OS) version of the directory.</p>
+        pub fn set_os_version(
+            mut self,
+            input: std::option::Option<crate::model::OsVersion>,
+        ) -> Self {
+            self.os_version = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DirectoryDescription`](crate::model::DirectoryDescription).
         pub fn build(self) -> crate::model::DirectoryDescription {
             crate::model::DirectoryDescription {
@@ -6089,6 +6682,7 @@ pub mod directory_description {
                     .unwrap_or_default(),
                 owner_directory_description: self.owner_directory_description,
                 regions_info: self.regions_info,
+                os_version: self.os_version,
             }
         }
     }
@@ -6129,6 +6723,7 @@ pub mod directory_description {
                 &self.owner_directory_description,
             );
             formatter.field("regions_info", &self.regions_info);
+            formatter.field("os_version", &self.os_version);
             formatter.finish()
         }
     }

@@ -1519,6 +1519,8 @@ pub enum PublishErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified combination of HTTP verb and URI is not supported.</p>
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
+    /// <p>The rate exceeds the limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     ///
@@ -1537,6 +1539,7 @@ impl std::fmt::Display for PublishError {
             PublishErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
             PublishErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             PublishErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
+            PublishErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             PublishErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             PublishErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1604,6 +1607,10 @@ impl PublishError {
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::MethodNotAllowedException(_))
     }
+    /// Returns `true` if the error kind is `PublishErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `PublishErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::UnauthorizedException(_))
@@ -1615,6 +1622,7 @@ impl std::error::Error for PublishError {
             PublishErrorKind::InternalFailureException(_inner) => Some(_inner),
             PublishErrorKind::InvalidRequestException(_inner) => Some(_inner),
             PublishErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
+            PublishErrorKind::ThrottlingException(_inner) => Some(_inner),
             PublishErrorKind::UnauthorizedException(_inner) => Some(_inner),
             PublishErrorKind::Unhandled(_inner) => Some(_inner),
         }

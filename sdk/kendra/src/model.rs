@@ -2075,7 +2075,7 @@ pub struct DocumentAttributeValue {
     /// <p>A string, such as "department".</p>
     #[doc(hidden)]
     pub string_value: std::option::Option<std::string::String>,
-    /// <p>A list of strings. </p>
+    /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
     #[doc(hidden)]
     pub string_list_value: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A long integer value.</p>
@@ -2091,7 +2091,7 @@ impl DocumentAttributeValue {
     pub fn string_value(&self) -> std::option::Option<&str> {
         self.string_value.as_deref()
     }
-    /// <p>A list of strings. </p>
+    /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
     pub fn string_list_value(&self) -> std::option::Option<&[std::string::String]> {
         self.string_list_value.as_deref()
     }
@@ -2131,14 +2131,14 @@ pub mod document_attribute_value {
         ///
         /// To override the contents of this collection use [`set_string_list_value`](Self::set_string_list_value).
         ///
-        /// <p>A list of strings. </p>
+        /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
         pub fn string_list_value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.string_list_value.unwrap_or_default();
             v.push(input.into());
             self.string_list_value = Some(v);
             self
         }
-        /// <p>A list of strings. </p>
+        /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
         pub fn set_string_list_value(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3767,7 +3767,7 @@ pub struct GitHubConfiguration {
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your GitHub. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication for a GitHub data source</a>.</p> </li>
+    /// <li> <p>personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data source</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
@@ -3852,7 +3852,7 @@ impl GitHubConfiguration {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your GitHub. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication for a GitHub data source</a>.</p> </li>
+    /// <li> <p>personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data source</a>.</p> </li>
     /// </ul>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
@@ -4044,7 +4044,7 @@ pub mod git_hub_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your GitHub. The secret must contain a JSON structure with the following keys:</p>
         /// <ul>
-        /// <li> <p>githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication for a GitHub data source</a>.</p> </li>
+        /// <li> <p>personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data source</a>.</p> </li>
         /// </ul>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
@@ -4052,7 +4052,7 @@ pub mod git_hub_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your GitHub. The secret must contain a JSON structure with the following keys:</p>
         /// <ul>
-        /// <li> <p>githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication for a GitHub data source</a>.</p> </li>
+        /// <li> <p>personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data source</a>.</p> </li>
         /// </ul>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
@@ -4925,7 +4925,7 @@ pub struct JiraConfiguration {
     /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>jiraId—The Jira username.</p> </li>
-    /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication"> Authentication for a Jira data source</a>.</p> </li>
+    /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using a Jira data source</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
@@ -4982,7 +4982,7 @@ impl JiraConfiguration {
     /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>jiraId—The Jira username.</p> </li>
-    /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication"> Authentication for a Jira data source</a>.</p> </li>
+    /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using a Jira data source</a>.</p> </li>
     /// </ul>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
@@ -5097,7 +5097,7 @@ pub mod jira_configuration {
         /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
         /// <ul>
         /// <li> <p>jiraId—The Jira username.</p> </li>
-        /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication"> Authentication for a Jira data source</a>.</p> </li>
+        /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using a Jira data source</a>.</p> </li>
         /// </ul>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
@@ -5106,7 +5106,7 @@ pub mod jira_configuration {
         /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
         /// <ul>
         /// <li> <p>jiraId—The Jira username.</p> </li>
-        /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication"> Authentication for a Jira data source</a>.</p> </li>
+        /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using a Jira data source</a>.</p> </li>
         /// </ul>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
@@ -5495,7 +5495,7 @@ pub struct QuipConfiguration {
     pub domain: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication for a Quip data source</a>.</p> </li>
+    /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
@@ -5540,7 +5540,7 @@ impl QuipConfiguration {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication for a Quip data source</a>.</p> </li>
+    /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p> </li>
     /// </ul>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
@@ -5629,7 +5629,7 @@ pub mod quip_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
         /// <ul>
-        /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication for a Quip data source</a>.</p> </li>
+        /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p> </li>
         /// </ul>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
@@ -5637,7 +5637,7 @@ pub mod quip_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
         /// <ul>
-        /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication for a Quip data source</a>.</p> </li>
+        /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p> </li>
         /// </ul>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
@@ -5853,7 +5853,7 @@ pub struct BoxConfiguration {
     /// <li> <p>privateKey—A set of characters that make up an encryption key.</p> </li>
     /// <li> <p>passphrase—A set of characters that act like a password.</p> </li>
     /// </ul>
-    /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication for a Box data source</a>.</p>
+    /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
@@ -5907,7 +5907,7 @@ impl BoxConfiguration {
     /// <li> <p>privateKey—A set of characters that make up an encryption key.</p> </li>
     /// <li> <p>passphrase—A set of characters that act like a password.</p> </li>
     /// </ul>
-    /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication for a Box data source</a>.</p>
+    /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
@@ -6012,7 +6012,7 @@ pub mod box_configuration {
         /// <li> <p>privateKey—A set of characters that make up an encryption key.</p> </li>
         /// <li> <p>passphrase—A set of characters that act like a password.</p> </li>
         /// </ul>
-        /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication for a Box data source</a>.</p>
+        /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
@@ -6025,7 +6025,7 @@ pub mod box_configuration {
         /// <li> <p>privateKey—A set of characters that make up an encryption key.</p> </li>
         /// <li> <p>passphrase—A set of characters that act like a password.</p> </li>
         /// </ul>
-        /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication for a Box data source</a>.</p>
+        /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -8395,8 +8395,8 @@ pub struct ConfluenceConfiguration {
     /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
     #[doc(hidden)]
     pub server_url: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
-    /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication for a Confluence data source</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.</p>
+    /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The version or the type of Confluence installation to connect to.</p>
@@ -8439,8 +8439,8 @@ impl ConfluenceConfiguration {
     pub fn server_url(&self) -> std::option::Option<&str> {
         self.server_url.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
-    /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication for a Confluence data source</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.</p>
+    /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
@@ -8535,14 +8535,14 @@ pub mod confluence_configuration {
             self.server_url = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
-        /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication for a Confluence data source</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.</p>
+        /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
-        /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication for a Confluence data source</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.</p>
+        /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -10275,7 +10275,7 @@ pub struct ServiceNowConfiguration {
     /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i> </p>
     #[doc(hidden)]
     pub host_url: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication for a ServiceNow data source</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the release that the ServiceNow host is running. If the host is not running the <code>LONDON</code> release, use <code>OTHERS</code>.</p>
@@ -10299,7 +10299,7 @@ impl ServiceNowConfiguration {
     pub fn host_url(&self) -> std::option::Option<&str> {
         self.host_url.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication for a ServiceNow data source</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
@@ -10357,12 +10357,12 @@ pub mod service_now_configuration {
             self.host_url = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication for a ServiceNow data source</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication for a ServiceNow data source</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -13168,7 +13168,7 @@ impl AclConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnConfiguration {
-    /// <p>The column that provides the document's unique identifier.</p>
+    /// <p>The column that provides the document's identifier.</p>
     #[doc(hidden)]
     pub document_id_column_name: std::option::Option<std::string::String>,
     /// <p>The column that contains the contents of the document.</p>
@@ -13186,7 +13186,7 @@ pub struct ColumnConfiguration {
     pub change_detecting_columns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ColumnConfiguration {
-    /// <p>The column that provides the document's unique identifier.</p>
+    /// <p>The column that provides the document's identifier.</p>
     pub fn document_id_column_name(&self) -> std::option::Option<&str> {
         self.document_id_column_name.as_deref()
     }
@@ -13224,12 +13224,12 @@ pub mod column_configuration {
             std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The column that provides the document's unique identifier.</p>
+        /// <p>The column that provides the document's identifier.</p>
         pub fn document_id_column_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_id_column_name = Some(input.into());
             self
         }
-        /// <p>The column that provides the document's unique identifier.</p>
+        /// <p>The column that provides the document's identifier.</p>
         pub fn set_document_id_column_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13571,7 +13571,7 @@ pub struct SharePointConfiguration {
     #[doc(hidden)]
     pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>.</p>
-    /// <p>You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication for a SharePoint data source</a>.</p>
+    /// <p>You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a SharePoint data source</a>.</p>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p> <code>TRUE</code> to index document attachments.</p>
@@ -13625,7 +13625,7 @@ impl SharePointConfiguration {
         self.urls.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>.</p>
-    /// <p>You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication for a SharePoint data source</a>.</p>
+    /// <p>You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a SharePoint data source</a>.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
@@ -13743,13 +13743,13 @@ pub mod share_point_configuration {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>.</p>
-        /// <p>You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication for a SharePoint data source</a>.</p>
+        /// <p>You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a SharePoint data source</a>.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>.</p>
-        /// <p>You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication for a SharePoint data source</a>.</p>
+        /// <p>You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a SharePoint data source</a>.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -14907,7 +14907,7 @@ impl Tag {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelevanceFeedback {
-    /// <p>The unique identifier of the search result that the user provided relevance feedback for.</p>
+    /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
     #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
     /// <p>Whether to document was relevant or not relevant to the search.</p>
@@ -14915,7 +14915,7 @@ pub struct RelevanceFeedback {
     pub relevance_value: std::option::Option<crate::model::RelevanceType>,
 }
 impl RelevanceFeedback {
-    /// <p>The unique identifier of the search result that the user provided relevance feedback for.</p>
+    /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
     pub fn result_id(&self) -> std::option::Option<&str> {
         self.result_id.as_deref()
     }
@@ -14934,12 +14934,12 @@ pub mod relevance_feedback {
         pub(crate) relevance_value: std::option::Option<crate::model::RelevanceType>,
     }
     impl Builder {
-        /// <p>The unique identifier of the search result that the user provided relevance feedback for.</p>
+        /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
         pub fn result_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.result_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the search result that the user provided relevance feedback for.</p>
+        /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
         pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result_id = input;
             self
@@ -15067,7 +15067,7 @@ impl AsRef<str> for RelevanceType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClickFeedback {
-    /// <p>The unique identifier of the search result that was clicked.</p>
+    /// <p>The identifier of the search result that was clicked.</p>
     #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp of the date and time that the result was clicked.</p>
@@ -15075,7 +15075,7 @@ pub struct ClickFeedback {
     pub click_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ClickFeedback {
-    /// <p>The unique identifier of the search result that was clicked.</p>
+    /// <p>The identifier of the search result that was clicked.</p>
     pub fn result_id(&self) -> std::option::Option<&str> {
         self.result_id.as_deref()
     }
@@ -15094,12 +15094,12 @@ pub mod click_feedback {
         pub(crate) click_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The unique identifier of the search result that was clicked.</p>
+        /// <p>The identifier of the search result that was clicked.</p>
         pub fn result_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.result_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the search result that was clicked.</p>
+        /// <p>The identifier of the search result that was clicked.</p>
         pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result_id = input;
             self
@@ -15704,17 +15704,20 @@ impl DocumentAttributeValueCountPair {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryResultItem {
-    /// <p>The unique identifier for the query result.</p>
+    /// <p>The identifier for the query result.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The type of document. </p>
+    /// <p>The type of document within the response. For example, a response could include a question-answer that's relevant to the query.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::QueryResultType>,
+    /// <p>If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in <code>DocumentExcerpt</code>.</p>
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::QueryResultFormat>,
     /// <p>One or more additional attributes associated with the query result.</p>
     #[doc(hidden)]
     pub additional_attributes:
         std::option::Option<std::vec::Vec<crate::model::AdditionalResultAttribute>>,
-    /// <p>The unique identifier for the document.</p>
+    /// <p>The identifier for the document.</p>
     #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The title of the document. Contains the text of the title and information for highlighting the relevant terms in the title.</p>
@@ -15733,18 +15736,25 @@ pub struct QueryResultItem {
     /// <p>The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches the query.</p>
     #[doc(hidden)]
     pub score_attributes: std::option::Option<crate::model::ScoreAttributes>,
-    /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.</p>
+    /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback </a>.</p>
     #[doc(hidden)]
     pub feedback_token: std::option::Option<std::string::String>,
+    /// <p>An excerpt from a table within a document.</p>
+    #[doc(hidden)]
+    pub table_excerpt: std::option::Option<crate::model::TableExcerpt>,
 }
 impl QueryResultItem {
-    /// <p>The unique identifier for the query result.</p>
+    /// <p>The identifier for the query result.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The type of document. </p>
+    /// <p>The type of document within the response. For example, a response could include a question-answer that's relevant to the query.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::QueryResultType> {
         self.r#type.as_ref()
+    }
+    /// <p>If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in <code>DocumentExcerpt</code>.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::QueryResultFormat> {
+        self.format.as_ref()
     }
     /// <p>One or more additional attributes associated with the query result.</p>
     pub fn additional_attributes(
@@ -15752,7 +15762,7 @@ impl QueryResultItem {
     ) -> std::option::Option<&[crate::model::AdditionalResultAttribute]> {
         self.additional_attributes.as_deref()
     }
-    /// <p>The unique identifier for the document.</p>
+    /// <p>The identifier for the document.</p>
     pub fn document_id(&self) -> std::option::Option<&str> {
         self.document_id.as_deref()
     }
@@ -15777,9 +15787,13 @@ impl QueryResultItem {
     pub fn score_attributes(&self) -> std::option::Option<&crate::model::ScoreAttributes> {
         self.score_attributes.as_ref()
     }
-    /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.</p>
+    /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback </a>.</p>
     pub fn feedback_token(&self) -> std::option::Option<&str> {
         self.feedback_token.as_deref()
+    }
+    /// <p>An excerpt from a table within a document.</p>
+    pub fn table_excerpt(&self) -> std::option::Option<&crate::model::TableExcerpt> {
+        self.table_excerpt.as_ref()
     }
 }
 /// See [`QueryResultItem`](crate::model::QueryResultItem).
@@ -15790,6 +15804,7 @@ pub mod query_result_item {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::QueryResultType>,
+        pub(crate) format: std::option::Option<crate::model::QueryResultFormat>,
         pub(crate) additional_attributes:
             std::option::Option<std::vec::Vec<crate::model::AdditionalResultAttribute>>,
         pub(crate) document_id: std::option::Option<std::string::String>,
@@ -15800,29 +15815,43 @@ pub mod query_result_item {
             std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
         pub(crate) score_attributes: std::option::Option<crate::model::ScoreAttributes>,
         pub(crate) feedback_token: std::option::Option<std::string::String>,
+        pub(crate) table_excerpt: std::option::Option<crate::model::TableExcerpt>,
     }
     impl Builder {
-        /// <p>The unique identifier for the query result.</p>
+        /// <p>The identifier for the query result.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the query result.</p>
+        /// <p>The identifier for the query result.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The type of document. </p>
+        /// <p>The type of document within the response. For example, a response could include a question-answer that's relevant to the query.</p>
         pub fn r#type(mut self, input: crate::model::QueryResultType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of document. </p>
+        /// <p>The type of document within the response. For example, a response could include a question-answer that's relevant to the query.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::QueryResultType>,
         ) -> Self {
             self.r#type = input;
+            self
+        }
+        /// <p>If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in <code>DocumentExcerpt</code>.</p>
+        pub fn format(mut self, input: crate::model::QueryResultFormat) -> Self {
+            self.format = Some(input);
+            self
+        }
+        /// <p>If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in <code>DocumentExcerpt</code>.</p>
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::QueryResultFormat>,
+        ) -> Self {
+            self.format = input;
             self
         }
         /// Appends an item to `additional_attributes`.
@@ -15847,12 +15876,12 @@ pub mod query_result_item {
             self.additional_attributes = input;
             self
         }
-        /// <p>The unique identifier for the document.</p>
+        /// <p>The identifier for the document.</p>
         pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the document.</p>
+        /// <p>The identifier for the document.</p>
         pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.document_id = input;
             self
@@ -15927,12 +15956,12 @@ pub mod query_result_item {
             self.score_attributes = input;
             self
         }
-        /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.</p>
+        /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback </a>.</p>
         pub fn feedback_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.feedback_token = Some(input.into());
             self
         }
-        /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.</p>
+        /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback </a>.</p>
         pub fn set_feedback_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15940,11 +15969,25 @@ pub mod query_result_item {
             self.feedback_token = input;
             self
         }
+        /// <p>An excerpt from a table within a document.</p>
+        pub fn table_excerpt(mut self, input: crate::model::TableExcerpt) -> Self {
+            self.table_excerpt = Some(input);
+            self
+        }
+        /// <p>An excerpt from a table within a document.</p>
+        pub fn set_table_excerpt(
+            mut self,
+            input: std::option::Option<crate::model::TableExcerpt>,
+        ) -> Self {
+            self.table_excerpt = input;
+            self
+        }
         /// Consumes the builder and constructs a [`QueryResultItem`](crate::model::QueryResultItem).
         pub fn build(self) -> crate::model::QueryResultItem {
             crate::model::QueryResultItem {
                 id: self.id,
                 r#type: self.r#type,
+                format: self.format,
                 additional_attributes: self.additional_attributes,
                 document_id: self.document_id,
                 document_title: self.document_title,
@@ -15953,6 +15996,7 @@ pub mod query_result_item {
                 document_attributes: self.document_attributes,
                 score_attributes: self.score_attributes,
                 feedback_token: self.feedback_token,
+                table_excerpt: self.table_excerpt,
             }
         }
     }
@@ -15961,6 +16005,242 @@ impl QueryResultItem {
     /// Creates a new builder-style object to manufacture [`QueryResultItem`](crate::model::QueryResultItem).
     pub fn builder() -> crate::model::query_result_item::Builder {
         crate::model::query_result_item::Builder::default()
+    }
+}
+
+/// <p>An excerpt from a table within a document. The table excerpt displays up to five columns and three rows, depending on how many table cells are relevant to the query and how many columns are available in the original table. The top most relevant cell is displayed in the table excerpt, along with the next most relevant cells.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TableExcerpt {
+    /// <p>A list of rows in the table excerpt.</p>
+    #[doc(hidden)]
+    pub rows: std::option::Option<std::vec::Vec<crate::model::TableRow>>,
+    /// <p>A count of the number of rows in the original table within the document.</p>
+    #[doc(hidden)]
+    pub total_number_of_rows: std::option::Option<i32>,
+}
+impl TableExcerpt {
+    /// <p>A list of rows in the table excerpt.</p>
+    pub fn rows(&self) -> std::option::Option<&[crate::model::TableRow]> {
+        self.rows.as_deref()
+    }
+    /// <p>A count of the number of rows in the original table within the document.</p>
+    pub fn total_number_of_rows(&self) -> std::option::Option<i32> {
+        self.total_number_of_rows
+    }
+}
+/// See [`TableExcerpt`](crate::model::TableExcerpt).
+pub mod table_excerpt {
+
+    /// A builder for [`TableExcerpt`](crate::model::TableExcerpt).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rows: std::option::Option<std::vec::Vec<crate::model::TableRow>>,
+        pub(crate) total_number_of_rows: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// Appends an item to `rows`.
+        ///
+        /// To override the contents of this collection use [`set_rows`](Self::set_rows).
+        ///
+        /// <p>A list of rows in the table excerpt.</p>
+        pub fn rows(mut self, input: crate::model::TableRow) -> Self {
+            let mut v = self.rows.unwrap_or_default();
+            v.push(input);
+            self.rows = Some(v);
+            self
+        }
+        /// <p>A list of rows in the table excerpt.</p>
+        pub fn set_rows(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TableRow>>,
+        ) -> Self {
+            self.rows = input;
+            self
+        }
+        /// <p>A count of the number of rows in the original table within the document.</p>
+        pub fn total_number_of_rows(mut self, input: i32) -> Self {
+            self.total_number_of_rows = Some(input);
+            self
+        }
+        /// <p>A count of the number of rows in the original table within the document.</p>
+        pub fn set_total_number_of_rows(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_number_of_rows = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TableExcerpt`](crate::model::TableExcerpt).
+        pub fn build(self) -> crate::model::TableExcerpt {
+            crate::model::TableExcerpt {
+                rows: self.rows,
+                total_number_of_rows: self.total_number_of_rows,
+            }
+        }
+    }
+}
+impl TableExcerpt {
+    /// Creates a new builder-style object to manufacture [`TableExcerpt`](crate::model::TableExcerpt).
+    pub fn builder() -> crate::model::table_excerpt::Builder {
+        crate::model::table_excerpt::Builder::default()
+    }
+}
+
+/// <p>Information about a row in a table excerpt.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TableRow {
+    /// <p>A list of table cells in a row.</p>
+    #[doc(hidden)]
+    pub cells: std::option::Option<std::vec::Vec<crate::model::TableCell>>,
+}
+impl TableRow {
+    /// <p>A list of table cells in a row.</p>
+    pub fn cells(&self) -> std::option::Option<&[crate::model::TableCell]> {
+        self.cells.as_deref()
+    }
+}
+/// See [`TableRow`](crate::model::TableRow).
+pub mod table_row {
+
+    /// A builder for [`TableRow`](crate::model::TableRow).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cells: std::option::Option<std::vec::Vec<crate::model::TableCell>>,
+    }
+    impl Builder {
+        /// Appends an item to `cells`.
+        ///
+        /// To override the contents of this collection use [`set_cells`](Self::set_cells).
+        ///
+        /// <p>A list of table cells in a row.</p>
+        pub fn cells(mut self, input: crate::model::TableCell) -> Self {
+            let mut v = self.cells.unwrap_or_default();
+            v.push(input);
+            self.cells = Some(v);
+            self
+        }
+        /// <p>A list of table cells in a row.</p>
+        pub fn set_cells(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TableCell>>,
+        ) -> Self {
+            self.cells = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TableRow`](crate::model::TableRow).
+        pub fn build(self) -> crate::model::TableRow {
+            crate::model::TableRow { cells: self.cells }
+        }
+    }
+}
+impl TableRow {
+    /// Creates a new builder-style object to manufacture [`TableRow`](crate::model::TableRow).
+    pub fn builder() -> crate::model::table_row::Builder {
+        crate::model::table_row::Builder::default()
+    }
+}
+
+/// <p>Provides information about a table cell in a table excerpt.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TableCell {
+    /// <p>The actual value or content within a table cell. A table cell could contain a date value of a year, or a string value of text, for example.</p>
+    #[doc(hidden)]
+    pub value: std::option::Option<std::string::String>,
+    /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
+    #[doc(hidden)]
+    pub top_answer: bool,
+    /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
+    #[doc(hidden)]
+    pub highlighted: bool,
+    /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
+    #[doc(hidden)]
+    pub header: bool,
+}
+impl TableCell {
+    /// <p>The actual value or content within a table cell. A table cell could contain a date value of a year, or a string value of text, for example.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
+    pub fn top_answer(&self) -> bool {
+        self.top_answer
+    }
+    /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
+    pub fn highlighted(&self) -> bool {
+        self.highlighted
+    }
+    /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
+    pub fn header(&self) -> bool {
+        self.header
+    }
+}
+/// See [`TableCell`](crate::model::TableCell).
+pub mod table_cell {
+
+    /// A builder for [`TableCell`](crate::model::TableCell).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) top_answer: std::option::Option<bool>,
+        pub(crate) highlighted: std::option::Option<bool>,
+        pub(crate) header: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The actual value or content within a table cell. A table cell could contain a date value of a year, or a string value of text, for example.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The actual value or content within a table cell. A table cell could contain a date value of a year, or a string value of text, for example.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
+        pub fn top_answer(mut self, input: bool) -> Self {
+            self.top_answer = Some(input);
+            self
+        }
+        /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
+        pub fn set_top_answer(mut self, input: std::option::Option<bool>) -> Self {
+            self.top_answer = input;
+            self
+        }
+        /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
+        pub fn highlighted(mut self, input: bool) -> Self {
+            self.highlighted = Some(input);
+            self
+        }
+        /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
+        pub fn set_highlighted(mut self, input: std::option::Option<bool>) -> Self {
+            self.highlighted = input;
+            self
+        }
+        /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
+        pub fn header(mut self, input: bool) -> Self {
+            self.header = Some(input);
+            self
+        }
+        /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
+        pub fn set_header(mut self, input: std::option::Option<bool>) -> Self {
+            self.header = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TableCell`](crate::model::TableCell).
+        pub fn build(self) -> crate::model::TableCell {
+            crate::model::TableCell {
+                value: self.value,
+                top_answer: self.top_answer.unwrap_or_default(),
+                highlighted: self.highlighted.unwrap_or_default(),
+                header: self.header.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl TableCell {
+    /// Creates a new builder-style object to manufacture [`TableCell`](crate::model::TableCell).
+    pub fn builder() -> crate::model::table_cell::Builder {
+        crate::model::table_cell::Builder::default()
     }
 }
 
@@ -16702,6 +16982,98 @@ impl AdditionalResultAttributeValueType {
     }
 }
 impl AsRef<str> for AdditionalResultAttributeValueType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `QueryResultFormat`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let queryresultformat = unimplemented!();
+/// match queryresultformat {
+///     QueryResultFormat::Table => { /* ... */ },
+///     QueryResultFormat::Text => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `queryresultformat` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `QueryResultFormat::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `QueryResultFormat::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `QueryResultFormat::NewFeature` is defined.
+/// Specifically, when `queryresultformat` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `QueryResultFormat::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum QueryResultFormat {
+    #[allow(missing_docs)] // documentation missing in model
+    Table,
+    #[allow(missing_docs)] // documentation missing in model
+    Text,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for QueryResultFormat {
+    fn from(s: &str) -> Self {
+        match s {
+            "TABLE" => QueryResultFormat::Table,
+            "TEXT" => QueryResultFormat::Text,
+            other => {
+                QueryResultFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for QueryResultFormat {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(QueryResultFormat::from(s))
+    }
+}
+impl QueryResultFormat {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            QueryResultFormat::Table => "TABLE",
+            QueryResultFormat::Text => "TEXT",
+            QueryResultFormat::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["TABLE", "TEXT"]
+    }
+}
+impl AsRef<str> for QueryResultFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -18474,13 +18846,13 @@ impl AsRef<str> for QuerySuggestionsBlockListStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IndexConfigurationSummary {
-    /// <p>The identifier of the index.</p>
+    /// <p>The name of the index.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
+    /// <p>A identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the index is a enterprise edition index or a developer edition index. </p>
+    /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index. </p>
     #[doc(hidden)]
     pub edition: std::option::Option<crate::model::IndexEdition>,
     /// <p>The Unix timestamp when the index was created.</p>
@@ -18494,15 +18866,15 @@ pub struct IndexConfigurationSummary {
     pub status: std::option::Option<crate::model::IndexStatus>,
 }
 impl IndexConfigurationSummary {
-    /// <p>The identifier of the index.</p>
+    /// <p>The name of the index.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A unique identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
+    /// <p>A identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Indicates whether the index is a enterprise edition index or a developer edition index. </p>
+    /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index. </p>
     pub fn edition(&self) -> std::option::Option<&crate::model::IndexEdition> {
         self.edition.as_ref()
     }
@@ -18533,32 +18905,32 @@ pub mod index_configuration_summary {
         pub(crate) status: std::option::Option<crate::model::IndexStatus>,
     }
     impl Builder {
-        /// <p>The identifier of the index.</p>
+        /// <p>The name of the index.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The identifier of the index.</p>
+        /// <p>The name of the index.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A unique identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
+        /// <p>A identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
+        /// <p>A identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>Indicates whether the index is a enterprise edition index or a developer edition index. </p>
+        /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index. </p>
         pub fn edition(mut self, input: crate::model::IndexEdition) -> Self {
             self.edition = Some(input);
             self
         }
-        /// <p>Indicates whether the index is a enterprise edition index or a developer edition index. </p>
+        /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index. </p>
         pub fn set_edition(
             mut self,
             input: std::option::Option<crate::model::IndexEdition>,
@@ -18900,7 +19272,7 @@ impl GroupSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaqSummary {
-    /// <p>The unique identifier of the FAQ.</p>
+    /// <p>The identifier of the FAQ.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name that you assigned the FAQ when you created or updated the FAQ.</p>
@@ -18923,7 +19295,7 @@ pub struct FaqSummary {
     pub language_code: std::option::Option<std::string::String>,
 }
 impl FaqSummary {
-    /// <p>The unique identifier of the FAQ.</p>
+    /// <p>The identifier of the FAQ.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -18967,12 +19339,12 @@ pub mod faq_summary {
         pub(crate) language_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the FAQ.</p>
+        /// <p>The identifier of the FAQ.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the FAQ.</p>
+        /// <p>The identifier of the FAQ.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -20200,7 +20572,7 @@ impl AsRef<str> for Persona {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSourceSyncJob {
-    /// <p>A unique identifier for the synchronization job.</p>
+    /// <p>A identifier for the synchronization job.</p>
     #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>The UNIX datetime that the synchronization job started.</p>
@@ -20226,7 +20598,7 @@ pub struct DataSourceSyncJob {
     pub metrics: std::option::Option<crate::model::DataSourceSyncJobMetrics>,
 }
 impl DataSourceSyncJob {
-    /// <p>A unique identifier for the synchronization job.</p>
+    /// <p>A identifier for the synchronization job.</p>
     pub fn execution_id(&self) -> std::option::Option<&str> {
         self.execution_id.as_deref()
     }
@@ -20275,12 +20647,12 @@ pub mod data_source_sync_job {
         pub(crate) metrics: std::option::Option<crate::model::DataSourceSyncJobMetrics>,
     }
     impl Builder {
-        /// <p>A unique identifier for the synchronization job.</p>
+        /// <p>A identifier for the synchronization job.</p>
         pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the synchronization job.</p>
+        /// <p>A identifier for the synchronization job.</p>
         pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.execution_id = input;
             self
@@ -20825,14 +21197,14 @@ impl TimeRange {
     }
 }
 
-/// <p>Summary information for an Amazon Kendra data source. Returned in a call to the <code>DescribeDataSource</code> API.</p>
+/// <p>Summary information for a Amazon Kendra data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSourceSummary {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the data source.</p>
+    /// <p>The identifier for the data source.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of the data source.</p>
@@ -20856,7 +21228,7 @@ impl DataSourceSummary {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The unique identifier for the data source.</p>
+    /// <p>The identifier for the data source.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -20906,12 +21278,12 @@ pub mod data_source_summary {
             self.name = input;
             self
         }
-        /// <p>The unique identifier for the data source.</p>
+        /// <p>The identifier for the data source.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the data source.</p>
+        /// <p>The identifier for the data source.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -21586,20 +21958,20 @@ impl AsRef<str> for Interval {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Suggestion {
-    /// <p>The unique UUID (universally unique identifier) of a single query suggestion.</p>
+    /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value for the unique UUID (universally unique identifier) of a single query suggestion.</p>
+    /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
     /// <p>The value is the text string of a suggestion.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::model::SuggestionValue>,
 }
 impl Suggestion {
-    /// <p>The unique UUID (universally unique identifier) of a single query suggestion.</p>
+    /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value for the unique UUID (universally unique identifier) of a single query suggestion.</p>
+    /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
     /// <p>The value is the text string of a suggestion.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::SuggestionValue> {
         self.value.as_ref()
@@ -21615,23 +21987,23 @@ pub mod suggestion {
         pub(crate) value: std::option::Option<crate::model::SuggestionValue>,
     }
     impl Builder {
-        /// <p>The unique UUID (universally unique identifier) of a single query suggestion.</p>
+        /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique UUID (universally unique identifier) of a single query suggestion.</p>
+        /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The value for the unique UUID (universally unique identifier) of a single query suggestion.</p>
+        /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
         /// <p>The value is the text string of a suggestion.</p>
         pub fn value(mut self, input: crate::model::SuggestionValue) -> Self {
             self.value = Some(input);
             self
         }
-        /// <p>The value for the unique UUID (universally unique identifier) of a single query suggestion.</p>
+        /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
         /// <p>The value is the text string of a suggestion.</p>
         pub fn set_value(
             mut self,
@@ -22589,7 +22961,7 @@ impl ServerSideEncryptionConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutDocumentResponseFailedDocument {
-    /// <p>The unique identifier of the document.</p>
+    /// <p>The identifier of the document.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of error that caused the document to fail to be indexed.</p>
@@ -22600,7 +22972,7 @@ pub struct BatchPutDocumentResponseFailedDocument {
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchPutDocumentResponseFailedDocument {
-    /// <p>The unique identifier of the document.</p>
+    /// <p>The identifier of the document.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -22624,12 +22996,12 @@ pub mod batch_put_document_response_failed_document {
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the document.</p>
+        /// <p>The identifier of the document.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the document.</p>
+        /// <p>The identifier of the document.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -22681,7 +23053,7 @@ impl BatchPutDocumentResponseFailedDocument {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Document {
-    /// <p>A unique identifier of the document in the index.</p>
+    /// <p>A identifier of the document in the index.</p>
     /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -22714,7 +23086,7 @@ pub struct Document {
     pub access_control_configuration_id: std::option::Option<std::string::String>,
 }
 impl Document {
-    /// <p>A unique identifier of the document in the index.</p>
+    /// <p>A identifier of the document in the index.</p>
     /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
@@ -22774,13 +23146,13 @@ pub mod document {
         pub(crate) access_control_configuration_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier of the document in the index.</p>
+        /// <p>A identifier of the document in the index.</p>
         /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>A unique identifier of the document in the index.</p>
+        /// <p>A identifier of the document in the index.</p>
         /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
@@ -23041,7 +23413,7 @@ impl AsRef<str> for ContentType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Status {
-    /// <p>The unique identifier of the document.</p>
+    /// <p>The identifier of the document.</p>
     #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The current status of a document.</p>
@@ -23056,7 +23428,7 @@ pub struct Status {
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl Status {
-    /// <p>The unique identifier of the document.</p>
+    /// <p>The identifier of the document.</p>
     pub fn document_id(&self) -> std::option::Option<&str> {
         self.document_id.as_deref()
     }
@@ -23086,12 +23458,12 @@ pub mod status {
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the document.</p>
+        /// <p>The identifier of the document.</p>
         pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the document.</p>
+        /// <p>The identifier of the document.</p>
         pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.document_id = input;
             self
@@ -23273,7 +23645,7 @@ impl AsRef<str> for DocumentStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetDocumentStatusResponseError {
-    /// <p>The unique identifier of the document whose status could not be retrieved.</p>
+    /// <p>The identifier of the document whose status could not be retrieved.</p>
     #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>Indicates the source of the error.</p>
@@ -23284,7 +23656,7 @@ pub struct BatchGetDocumentStatusResponseError {
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchGetDocumentStatusResponseError {
-    /// <p>The unique identifier of the document whose status could not be retrieved.</p>
+    /// <p>The identifier of the document whose status could not be retrieved.</p>
     pub fn document_id(&self) -> std::option::Option<&str> {
         self.document_id.as_deref()
     }
@@ -23308,12 +23680,12 @@ pub mod batch_get_document_status_response_error {
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the document whose status could not be retrieved.</p>
+        /// <p>The identifier of the document whose status could not be retrieved.</p>
         pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the document whose status could not be retrieved.</p>
+        /// <p>The identifier of the document whose status could not be retrieved.</p>
         pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.document_id = input;
             self
@@ -23365,7 +23737,7 @@ impl BatchGetDocumentStatusResponseError {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentInfo {
-    /// <p>The unique identifier of the document.</p>
+    /// <p>The identifier of the document.</p>
     #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>Attributes that identify a specific version of a document to check.</p>
@@ -23385,7 +23757,7 @@ pub struct DocumentInfo {
     pub attributes: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
 }
 impl DocumentInfo {
-    /// <p>The unique identifier of the document.</p>
+    /// <p>The identifier of the document.</p>
     pub fn document_id(&self) -> std::option::Option<&str> {
         self.document_id.as_deref()
     }
@@ -23416,12 +23788,12 @@ pub mod document_info {
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
     }
     impl Builder {
-        /// <p>The unique identifier of the document.</p>
+        /// <p>The identifier of the document.</p>
         pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the document.</p>
+        /// <p>The identifier of the document.</p>
         pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.document_id = input;
             self

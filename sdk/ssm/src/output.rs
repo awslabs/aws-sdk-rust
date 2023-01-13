@@ -2523,6 +2523,73 @@ impl RegisterDefaultPatchBaselineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PutResourcePolicyOutput {
+    /// <p>The policy ID. To update a policy, you must specify <code>PolicyId</code> and <code>PolicyHash</code>.</p>
+    #[doc(hidden)]
+    pub policy_id: std::option::Option<std::string::String>,
+    /// <p>ID of the current policy version.</p>
+    #[doc(hidden)]
+    pub policy_hash: std::option::Option<std::string::String>,
+}
+impl PutResourcePolicyOutput {
+    /// <p>The policy ID. To update a policy, you must specify <code>PolicyId</code> and <code>PolicyHash</code>.</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+    /// <p>ID of the current policy version.</p>
+    pub fn policy_hash(&self) -> std::option::Option<&str> {
+        self.policy_hash.as_deref()
+    }
+}
+/// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+pub mod put_resource_policy_output {
+
+    /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy_id: std::option::Option<std::string::String>,
+        pub(crate) policy_hash: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The policy ID. To update a policy, you must specify <code>PolicyId</code> and <code>PolicyHash</code>.</p>
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_id = Some(input.into());
+            self
+        }
+        /// <p>The policy ID. To update a policy, you must specify <code>PolicyId</code> and <code>PolicyHash</code>.</p>
+        pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_id = input;
+            self
+        }
+        /// <p>ID of the current policy version.</p>
+        pub fn policy_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_hash = Some(input.into());
+            self
+        }
+        /// <p>ID of the current policy version.</p>
+        pub fn set_policy_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_hash = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+        pub fn build(self) -> crate::output::PutResourcePolicyOutput {
+            crate::output::PutResourcePolicyOutput {
+                policy_id: self.policy_id,
+                policy_hash: self.policy_hash,
+            }
+        }
+    }
+}
+impl PutResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    pub fn builder() -> crate::output::put_resource_policy_output::Builder {
+        crate::output::put_resource_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutParameterOutput {
     /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system returns the latest parameter value when a parameter is called.</p>
     #[doc(hidden)]
@@ -4179,6 +4246,88 @@ impl GetServiceSettingOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceSettingOutput`](crate::output::GetServiceSettingOutput).
     pub fn builder() -> crate::output::get_service_setting_output::Builder {
         crate::output::get_service_setting_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetResourcePoliciesOutput {
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>An array of the <code>Policy</code> object.</p>
+    #[doc(hidden)]
+    pub policies:
+        std::option::Option<std::vec::Vec<crate::model::GetResourcePoliciesResponseEntry>>,
+}
+impl GetResourcePoliciesOutput {
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of the <code>Policy</code> object.</p>
+    pub fn policies(
+        &self,
+    ) -> std::option::Option<&[crate::model::GetResourcePoliciesResponseEntry]> {
+        self.policies.as_deref()
+    }
+}
+/// See [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
+pub mod get_resource_policies_output {
+
+    /// A builder for [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) policies:
+            std::option::Option<std::vec::Vec<crate::model::GetResourcePoliciesResponseEntry>>,
+    }
+    impl Builder {
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `policies`.
+        ///
+        /// To override the contents of this collection use [`set_policies`](Self::set_policies).
+        ///
+        /// <p>An array of the <code>Policy</code> object.</p>
+        pub fn policies(mut self, input: crate::model::GetResourcePoliciesResponseEntry) -> Self {
+            let mut v = self.policies.unwrap_or_default();
+            v.push(input);
+            self.policies = Some(v);
+            self
+        }
+        /// <p>An array of the <code>Policy</code> object.</p>
+        pub fn set_policies(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::GetResourcePoliciesResponseEntry>,
+            >,
+        ) -> Self {
+            self.policies = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
+        pub fn build(self) -> crate::output::GetResourcePoliciesOutput {
+            crate::output::GetResourcePoliciesOutput {
+                next_token: self.next_token,
+                policies: self.policies,
+            }
+        }
+    }
+}
+impl GetResourcePoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
+    pub fn builder() -> crate::output::get_resource_policies_output::Builder {
+        crate::output::get_resource_policies_output::Builder::default()
     }
 }
 
@@ -11417,6 +11566,30 @@ impl DeregisterManagedInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteResourcePolicyOutput {}
+/// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+pub mod delete_resource_policy_output {
+
+    /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+        pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
+            crate::output::DeleteResourcePolicyOutput {}
+        }
+    }
+}
+impl DeleteResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    pub fn builder() -> crate::output::delete_resource_policy_output::Builder {
+        crate::output::delete_resource_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceDataSyncOutput {}
 /// See [`DeleteResourceDataSyncOutput`](crate::output::DeleteResourceDataSyncOutput).
 pub mod delete_resource_data_sync_output {
@@ -11958,11 +12131,18 @@ pub struct CreateOpsItemOutput {
     /// <p>The ID of the OpsItem.</p>
     #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
+    /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub ops_item_arn: std::option::Option<std::string::String>,
 }
 impl CreateOpsItemOutput {
     /// <p>The ID of the OpsItem.</p>
     pub fn ops_item_id(&self) -> std::option::Option<&str> {
         self.ops_item_id.as_deref()
+    }
+    /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+    pub fn ops_item_arn(&self) -> std::option::Option<&str> {
+        self.ops_item_arn.as_deref()
     }
 }
 /// See [`CreateOpsItemOutput`](crate::output::CreateOpsItemOutput).
@@ -11972,6 +12152,7 @@ pub mod create_ops_item_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_item_id: std::option::Option<std::string::String>,
+        pub(crate) ops_item_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the OpsItem.</p>
@@ -11984,10 +12165,21 @@ pub mod create_ops_item_output {
             self.ops_item_id = input;
             self
         }
+        /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+        pub fn ops_item_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_arn = Some(input.into());
+            self
+        }
+        /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+        pub fn set_ops_item_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_item_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateOpsItemOutput`](crate::output::CreateOpsItemOutput).
         pub fn build(self) -> crate::output::CreateOpsItemOutput {
             crate::output::CreateOpsItemOutput {
                 ops_item_id: self.ops_item_id,
+                ops_item_arn: self.ops_item_arn,
             }
         }
     }

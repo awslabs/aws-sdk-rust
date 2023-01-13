@@ -53,6 +53,57 @@ impl UpdateRecommenderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateMetricAttributionOutput {
+    /// <p>The Amazon Resource Name (ARN) for the metric attribution that you updated.</p>
+    #[doc(hidden)]
+    pub metric_attribution_arn: std::option::Option<std::string::String>,
+}
+impl UpdateMetricAttributionOutput {
+    /// <p>The Amazon Resource Name (ARN) for the metric attribution that you updated.</p>
+    pub fn metric_attribution_arn(&self) -> std::option::Option<&str> {
+        self.metric_attribution_arn.as_deref()
+    }
+}
+/// See [`UpdateMetricAttributionOutput`](crate::output::UpdateMetricAttributionOutput).
+pub mod update_metric_attribution_output {
+
+    /// A builder for [`UpdateMetricAttributionOutput`](crate::output::UpdateMetricAttributionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_attribution_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) for the metric attribution that you updated.</p>
+        pub fn metric_attribution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_attribution_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the metric attribution that you updated.</p>
+        pub fn set_metric_attribution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.metric_attribution_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateMetricAttributionOutput`](crate::output::UpdateMetricAttributionOutput).
+        pub fn build(self) -> crate::output::UpdateMetricAttributionOutput {
+            crate::output::UpdateMetricAttributionOutput {
+                metric_attribution_arn: self.metric_attribution_arn,
+            }
+        }
+    }
+}
+impl UpdateMetricAttributionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMetricAttributionOutput`](crate::output::UpdateMetricAttributionOutput).
+    pub fn builder() -> crate::output::update_metric_attribution_output::Builder {
+        crate::output::update_metric_attribution_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCampaignOutput {
     /// <p>The same campaign ARN as given in the request.</p>
     #[doc(hidden)]
@@ -708,6 +759,165 @@ impl ListRecipesOutput {
     /// Creates a new builder-style object to manufacture [`ListRecipesOutput`](crate::output::ListRecipesOutput).
     pub fn builder() -> crate::output::list_recipes_output::Builder {
         crate::output::list_recipes_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListMetricAttributionsOutput {
+    /// <p>The list of metric attributions.</p>
+    #[doc(hidden)]
+    pub metric_attributions:
+        std::option::Option<std::vec::Vec<crate::model::MetricAttributionSummary>>,
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMetricAttributionsOutput {
+    /// <p>The list of metric attributions.</p>
+    pub fn metric_attributions(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetricAttributionSummary]> {
+        self.metric_attributions.as_deref()
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListMetricAttributionsOutput`](crate::output::ListMetricAttributionsOutput).
+pub mod list_metric_attributions_output {
+
+    /// A builder for [`ListMetricAttributionsOutput`](crate::output::ListMetricAttributionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_attributions:
+            std::option::Option<std::vec::Vec<crate::model::MetricAttributionSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `metric_attributions`.
+        ///
+        /// To override the contents of this collection use [`set_metric_attributions`](Self::set_metric_attributions).
+        ///
+        /// <p>The list of metric attributions.</p>
+        pub fn metric_attributions(
+            mut self,
+            input: crate::model::MetricAttributionSummary,
+        ) -> Self {
+            let mut v = self.metric_attributions.unwrap_or_default();
+            v.push(input);
+            self.metric_attributions = Some(v);
+            self
+        }
+        /// <p>The list of metric attributions.</p>
+        pub fn set_metric_attributions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricAttributionSummary>>,
+        ) -> Self {
+            self.metric_attributions = input;
+            self
+        }
+        /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMetricAttributionsOutput`](crate::output::ListMetricAttributionsOutput).
+        pub fn build(self) -> crate::output::ListMetricAttributionsOutput {
+            crate::output::ListMetricAttributionsOutput {
+                metric_attributions: self.metric_attributions,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListMetricAttributionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMetricAttributionsOutput`](crate::output::ListMetricAttributionsOutput).
+    pub fn builder() -> crate::output::list_metric_attributions_output::Builder {
+        crate::output::list_metric_attributions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListMetricAttributionMetricsOutput {
+    /// <p>The metrics for the specified metric attribution.</p>
+    #[doc(hidden)]
+    pub metrics: std::option::Option<std::vec::Vec<crate::model::MetricAttribute>>,
+    /// <p>Specify the pagination token from a previous <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMetricAttributionMetricsOutput {
+    /// <p>The metrics for the specified metric attribution.</p>
+    pub fn metrics(&self) -> std::option::Option<&[crate::model::MetricAttribute]> {
+        self.metrics.as_deref()
+    }
+    /// <p>Specify the pagination token from a previous <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListMetricAttributionMetricsOutput`](crate::output::ListMetricAttributionMetricsOutput).
+pub mod list_metric_attribution_metrics_output {
+
+    /// A builder for [`ListMetricAttributionMetricsOutput`](crate::output::ListMetricAttributionMetricsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metrics: std::option::Option<std::vec::Vec<crate::model::MetricAttribute>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>The metrics for the specified metric attribution.</p>
+        pub fn metrics(mut self, input: crate::model::MetricAttribute) -> Self {
+            let mut v = self.metrics.unwrap_or_default();
+            v.push(input);
+            self.metrics = Some(v);
+            self
+        }
+        /// <p>The metrics for the specified metric attribution.</p>
+        pub fn set_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricAttribute>>,
+        ) -> Self {
+            self.metrics = input;
+            self
+        }
+        /// <p>Specify the pagination token from a previous <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Specify the pagination token from a previous <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMetricAttributionMetricsOutput`](crate::output::ListMetricAttributionMetricsOutput).
+        pub fn build(self) -> crate::output::ListMetricAttributionMetricsOutput {
+            crate::output::ListMetricAttributionMetricsOutput {
+                metrics: self.metrics,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListMetricAttributionMetricsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMetricAttributionMetricsOutput`](crate::output::ListMetricAttributionMetricsOutput).
+    pub fn builder() -> crate::output::list_metric_attribution_metrics_output::Builder {
+        crate::output::list_metric_attribution_metrics_output::Builder::default()
     }
 }
 
@@ -1750,6 +1960,57 @@ impl DescribeRecipeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeMetricAttributionOutput {
+    /// <p>The details of the metric attribution.</p>
+    #[doc(hidden)]
+    pub metric_attribution: std::option::Option<crate::model::MetricAttribution>,
+}
+impl DescribeMetricAttributionOutput {
+    /// <p>The details of the metric attribution.</p>
+    pub fn metric_attribution(&self) -> std::option::Option<&crate::model::MetricAttribution> {
+        self.metric_attribution.as_ref()
+    }
+}
+/// See [`DescribeMetricAttributionOutput`](crate::output::DescribeMetricAttributionOutput).
+pub mod describe_metric_attribution_output {
+
+    /// A builder for [`DescribeMetricAttributionOutput`](crate::output::DescribeMetricAttributionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_attribution: std::option::Option<crate::model::MetricAttribution>,
+    }
+    impl Builder {
+        /// <p>The details of the metric attribution.</p>
+        pub fn metric_attribution(mut self, input: crate::model::MetricAttribution) -> Self {
+            self.metric_attribution = Some(input);
+            self
+        }
+        /// <p>The details of the metric attribution.</p>
+        pub fn set_metric_attribution(
+            mut self,
+            input: std::option::Option<crate::model::MetricAttribution>,
+        ) -> Self {
+            self.metric_attribution = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeMetricAttributionOutput`](crate::output::DescribeMetricAttributionOutput).
+        pub fn build(self) -> crate::output::DescribeMetricAttributionOutput {
+            crate::output::DescribeMetricAttributionOutput {
+                metric_attribution: self.metric_attribution,
+            }
+        }
+    }
+}
+impl DescribeMetricAttributionOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMetricAttributionOutput`](crate::output::DescribeMetricAttributionOutput).
+    pub fn builder() -> crate::output::describe_metric_attribution_output::Builder {
+        crate::output::describe_metric_attribution_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFilterOutput {
     /// <p>The filter's details.</p>
     #[doc(hidden)]
@@ -2435,6 +2696,30 @@ impl DeleteRecommenderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteMetricAttributionOutput {}
+/// See [`DeleteMetricAttributionOutput`](crate::output::DeleteMetricAttributionOutput).
+pub mod delete_metric_attribution_output {
+
+    /// A builder for [`DeleteMetricAttributionOutput`](crate::output::DeleteMetricAttributionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteMetricAttributionOutput`](crate::output::DeleteMetricAttributionOutput).
+        pub fn build(self) -> crate::output::DeleteMetricAttributionOutput {
+            crate::output::DeleteMetricAttributionOutput {}
+        }
+    }
+}
+impl DeleteMetricAttributionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMetricAttributionOutput`](crate::output::DeleteMetricAttributionOutput).
+    pub fn builder() -> crate::output::delete_metric_attribution_output::Builder {
+        crate::output::delete_metric_attribution_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFilterOutput {}
 /// See [`DeleteFilterOutput`](crate::output::DeleteFilterOutput).
 pub mod delete_filter_output {
@@ -2747,6 +3032,57 @@ impl CreateRecommenderOutput {
     /// Creates a new builder-style object to manufacture [`CreateRecommenderOutput`](crate::output::CreateRecommenderOutput).
     pub fn builder() -> crate::output::create_recommender_output::Builder {
         crate::output::create_recommender_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateMetricAttributionOutput {
+    /// <p>The Amazon Resource Name (ARN) for the new metric attribution.</p>
+    #[doc(hidden)]
+    pub metric_attribution_arn: std::option::Option<std::string::String>,
+}
+impl CreateMetricAttributionOutput {
+    /// <p>The Amazon Resource Name (ARN) for the new metric attribution.</p>
+    pub fn metric_attribution_arn(&self) -> std::option::Option<&str> {
+        self.metric_attribution_arn.as_deref()
+    }
+}
+/// See [`CreateMetricAttributionOutput`](crate::output::CreateMetricAttributionOutput).
+pub mod create_metric_attribution_output {
+
+    /// A builder for [`CreateMetricAttributionOutput`](crate::output::CreateMetricAttributionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_attribution_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) for the new metric attribution.</p>
+        pub fn metric_attribution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_attribution_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the new metric attribution.</p>
+        pub fn set_metric_attribution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.metric_attribution_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateMetricAttributionOutput`](crate::output::CreateMetricAttributionOutput).
+        pub fn build(self) -> crate::output::CreateMetricAttributionOutput {
+            crate::output::CreateMetricAttributionOutput {
+                metric_attribution_arn: self.metric_attribution_arn,
+            }
+        }
+    }
+}
+impl CreateMetricAttributionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMetricAttributionOutput`](crate::output::CreateMetricAttributionOutput).
+    pub fn builder() -> crate::output::create_metric_attribution_output::Builder {
+        crate::output::create_metric_attribution_output::Builder::default()
     }
 }
 

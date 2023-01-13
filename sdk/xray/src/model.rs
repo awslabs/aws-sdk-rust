@@ -1326,6 +1326,120 @@ impl BackendConnectionErrors {
     }
 }
 
+/// <p>A resource policy grants one or more Amazon Web Services services and accounts permissions to access X-Ray. Each resource policy is associated with a specific Amazon Web Services account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResourcePolicy {
+    /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
+    #[doc(hidden)]
+    pub policy_name: std::option::Option<std::string::String>,
+    /// <p>The resource policy document, which can be up to 5kb in size.</p>
+    #[doc(hidden)]
+    pub policy_document: std::option::Option<std::string::String>,
+    /// <p>Returns the current policy revision id for this policy name.</p>
+    #[doc(hidden)]
+    pub policy_revision_id: std::option::Option<std::string::String>,
+    /// <p>When the policy was last updated, in Unix time seconds.</p>
+    #[doc(hidden)]
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ResourcePolicy {
+    /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The resource policy document, which can be up to 5kb in size.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+    /// <p>Returns the current policy revision id for this policy name.</p>
+    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
+        self.policy_revision_id.as_deref()
+    }
+    /// <p>When the policy was last updated, in Unix time seconds.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_time.as_ref()
+    }
+}
+/// See [`ResourcePolicy`](crate::model::ResourcePolicy).
+pub mod resource_policy {
+
+    /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy_name: std::option::Option<std::string::String>,
+        pub(crate) policy_document: std::option::Option<std::string::String>,
+        pub(crate) policy_revision_id: std::option::Option<std::string::String>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
+            self
+        }
+        /// <p>The resource policy document, which can be up to 5kb in size.</p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
+            self
+        }
+        /// <p>The resource policy document, which can be up to 5kb in size.</p>
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_document = input;
+            self
+        }
+        /// <p>Returns the current policy revision id for this policy name.</p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_revision_id = Some(input.into());
+            self
+        }
+        /// <p>Returns the current policy revision id for this policy name.</p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_revision_id = input;
+            self
+        }
+        /// <p>When the policy was last updated, in Unix time seconds.</p>
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_time = Some(input);
+            self
+        }
+        /// <p>When the policy was last updated, in Unix time seconds.</p>
+        pub fn set_last_updated_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourcePolicy`](crate::model::ResourcePolicy).
+        pub fn build(self) -> crate::model::ResourcePolicy {
+            crate::model::ResourcePolicy {
+                policy_name: self.policy_name,
+                policy_document: self.policy_document,
+                policy_revision_id: self.policy_revision_id,
+                last_updated_time: self.last_updated_time,
+            }
+        }
+    }
+}
+impl ResourcePolicy {
+    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
+    pub fn builder() -> crate::model::resource_policy::Builder {
+        crate::model::resource_policy::Builder::default()
+    }
+}
+
 /// <p>A configuration document that specifies encryption configuration settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4740,7 +4854,7 @@ impl ErrorStatistics {
     }
 }
 
-/// <p>Information about a connection between two services.</p>
+/// <p>Information about a connection between two services. An edge can be a synchronous connection, such as typical call between client and service, or an asynchronous link, such as a Lambda function which retrieves an event from an SNS queue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Edge {
@@ -4756,12 +4870,19 @@ pub struct Edge {
     /// <p>Response statistics for segments on the edge.</p>
     #[doc(hidden)]
     pub summary_statistics: std::option::Option<crate::model::EdgeStatistics>,
-    /// <p>A histogram that maps the spread of client response times on an edge.</p>
+    /// <p>A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.</p>
     #[doc(hidden)]
     pub response_time_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
     /// <p>Aliases for the edge.</p>
     #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
+    /// <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
+    #[doc(hidden)]
+    pub edge_type: std::option::Option<std::string::String>,
+    /// <p>A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is received. Only populated when <i>EdgeType</i> is <code>link</code>.</p>
+    #[doc(hidden)]
+    pub received_event_age_histogram:
+        std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
 }
 impl Edge {
     /// <p>Identifier of the edge. Unique within a service map.</p>
@@ -4780,13 +4901,23 @@ impl Edge {
     pub fn summary_statistics(&self) -> std::option::Option<&crate::model::EdgeStatistics> {
         self.summary_statistics.as_ref()
     }
-    /// <p>A histogram that maps the spread of client response times on an edge.</p>
+    /// <p>A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.</p>
     pub fn response_time_histogram(&self) -> std::option::Option<&[crate::model::HistogramEntry]> {
         self.response_time_histogram.as_deref()
     }
     /// <p>Aliases for the edge.</p>
     pub fn aliases(&self) -> std::option::Option<&[crate::model::Alias]> {
         self.aliases.as_deref()
+    }
+    /// <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
+    pub fn edge_type(&self) -> std::option::Option<&str> {
+        self.edge_type.as_deref()
+    }
+    /// <p>A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is received. Only populated when <i>EdgeType</i> is <code>link</code>.</p>
+    pub fn received_event_age_histogram(
+        &self,
+    ) -> std::option::Option<&[crate::model::HistogramEntry]> {
+        self.received_event_age_histogram.as_deref()
     }
 }
 /// See [`Edge`](crate::model::Edge).
@@ -4802,6 +4933,9 @@ pub mod edge {
         pub(crate) response_time_histogram:
             std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
         pub(crate) aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
+        pub(crate) edge_type: std::option::Option<std::string::String>,
+        pub(crate) received_event_age_histogram:
+            std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
     }
     impl Builder {
         /// <p>Identifier of the edge. Unique within a service map.</p>
@@ -4857,14 +4991,14 @@ pub mod edge {
         ///
         /// To override the contents of this collection use [`set_response_time_histogram`](Self::set_response_time_histogram).
         ///
-        /// <p>A histogram that maps the spread of client response times on an edge.</p>
+        /// <p>A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.</p>
         pub fn response_time_histogram(mut self, input: crate::model::HistogramEntry) -> Self {
             let mut v = self.response_time_histogram.unwrap_or_default();
             v.push(input);
             self.response_time_histogram = Some(v);
             self
         }
-        /// <p>A histogram that maps the spread of client response times on an edge.</p>
+        /// <p>A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.</p>
         pub fn set_response_time_histogram(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
@@ -4891,6 +5025,35 @@ pub mod edge {
             self.aliases = input;
             self
         }
+        /// <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
+        pub fn edge_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_type = Some(input.into());
+            self
+        }
+        /// <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
+        pub fn set_edge_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.edge_type = input;
+            self
+        }
+        /// Appends an item to `received_event_age_histogram`.
+        ///
+        /// To override the contents of this collection use [`set_received_event_age_histogram`](Self::set_received_event_age_histogram).
+        ///
+        /// <p>A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is received. Only populated when <i>EdgeType</i> is <code>link</code>.</p>
+        pub fn received_event_age_histogram(mut self, input: crate::model::HistogramEntry) -> Self {
+            let mut v = self.received_event_age_histogram.unwrap_or_default();
+            v.push(input);
+            self.received_event_age_histogram = Some(v);
+            self
+        }
+        /// <p>A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is received. Only populated when <i>EdgeType</i> is <code>link</code>.</p>
+        pub fn set_received_event_age_histogram(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
+        ) -> Self {
+            self.received_event_age_histogram = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Edge`](crate::model::Edge).
         pub fn build(self) -> crate::model::Edge {
             crate::model::Edge {
@@ -4900,6 +5063,8 @@ pub mod edge {
                 summary_statistics: self.summary_statistics,
                 response_time_histogram: self.response_time_histogram,
                 aliases: self.aliases,
+                edge_type: self.edge_type,
+                received_event_age_histogram: self.received_event_age_histogram,
             }
         }
     }
@@ -7325,7 +7490,7 @@ pub struct Trace {
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
     #[doc(hidden)]
     pub duration: std::option::Option<f64>,
-    /// <p>LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
+    /// <p>LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more information about this limit and other X-Ray limits and quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
     #[doc(hidden)]
     pub limit_exceeded: std::option::Option<bool>,
     /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
@@ -7341,7 +7506,7 @@ impl Trace {
     pub fn duration(&self) -> std::option::Option<f64> {
         self.duration
     }
-    /// <p>LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
+    /// <p>LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more information about this limit and other X-Ray limits and quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
     pub fn limit_exceeded(&self) -> std::option::Option<bool> {
         self.limit_exceeded
     }
@@ -7382,12 +7547,12 @@ pub mod trace {
             self.duration = input;
             self
         }
-        /// <p>LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
+        /// <p>LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more information about this limit and other X-Ray limits and quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
         pub fn limit_exceeded(mut self, input: bool) -> Self {
             self.limit_exceeded = Some(input);
             self
         }
-        /// <p>LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
+        /// <p>LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more information about this limit and other X-Ray limits and quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
         pub fn set_limit_exceeded(mut self, input: std::option::Option<bool>) -> Self {
             self.limit_exceeded = input;
             self

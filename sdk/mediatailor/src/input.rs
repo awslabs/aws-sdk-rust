@@ -11,14 +11,14 @@ pub mod configure_logs_for_playback_configuration_input {
         pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
-        /// <p>Valid values: 0 - 100</p>
+        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+        /// <p>Valid values: <code>0</code> - <code>100</code> </p>
         pub fn percent_enabled(mut self, input: i32) -> Self {
             self.percent_enabled = Some(input);
             self
         }
-        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
-        /// <p>Valid values: 0 - 100</p>
+        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+        /// <p>Valid values: <code>0</code> - <code>100</code> </p>
         pub fn set_percent_enabled(mut self, input: std::option::Option<i32>) -> Self {
             self.percent_enabled = input;
             self
@@ -179,22 +179,22 @@ pub mod create_channel_input {
         pub(crate) tier: std::option::Option<crate::model::Tier>,
     }
     impl Builder {
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
         }
-        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
         pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
             self.filler_slate = Some(input);
             self
         }
-        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
         pub fn set_filler_slate(
             mut self,
             input: std::option::Option<crate::model::SlateSource>,
@@ -222,15 +222,15 @@ pub mod create_channel_input {
             self
         }
         /// <p>The type of playback mode to use for this channel.</p>
-        /// <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>
-        /// <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+        /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
+        /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
         pub fn playback_mode(mut self, input: crate::model::PlaybackMode) -> Self {
             self.playback_mode = Some(input);
             self
         }
         /// <p>The type of playback mode to use for this channel.</p>
-        /// <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>
-        /// <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+        /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
+        /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
         pub fn set_playback_mode(
             mut self,
             input: std::option::Option<crate::model::PlaybackMode>,
@@ -242,7 +242,7 @@ pub mod create_channel_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the channel.</p>
+        /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -253,7 +253,7 @@ pub mod create_channel_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags to assign to the channel.</p>
+        /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -456,12 +456,12 @@ pub mod create_live_source_input {
             self.http_package_configurations = input;
             self
         }
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.live_source_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn set_live_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -469,12 +469,12 @@ pub mod create_live_source_input {
             self.live_source_name = input;
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -486,7 +486,7 @@ pub mod create_live_source_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the live source.</p>
+        /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -497,7 +497,7 @@ pub mod create_live_source_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags to assign to the live source.</p>
+        /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -703,17 +703,17 @@ pub mod create_prefetch_schedule_input {
             self.consumption = input;
             self
         }
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name to assign to the schedule request.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name to assign to the schedule request.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>The name to assign to the playback configuration.</p>
         pub fn playback_configuration_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -721,7 +721,7 @@ pub mod create_prefetch_schedule_input {
             self.playback_configuration_name = Some(input.into());
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>The name to assign to the playback configuration.</p>
         pub fn set_playback_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -742,12 +742,12 @@ pub mod create_prefetch_schedule_input {
             self.retrieval = input;
             self
         }
-        /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
+        /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_id = Some(input.into());
             self
         }
-        /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
+        /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -959,12 +959,12 @@ pub mod create_program_input {
             self.ad_breaks = input;
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel for this Program.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel for this Program.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -982,12 +982,12 @@ pub mod create_program_input {
             self.live_source_name = input;
             self
         }
-        /// <p>The identifier for the program you are working on.</p>
+        /// <p>The name of the Program.</p>
         pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.program_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the program you are working on.</p>
+        /// <p>The name of the Program.</p>
         pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.program_name = input;
             self
@@ -1287,12 +1287,12 @@ pub mod create_source_location_input {
             self.segment_delivery_configurations = input;
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name associated with the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name associated with the source location.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1304,7 +1304,7 @@ pub mod create_source_location_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the source location.</p>
+        /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1315,7 +1315,7 @@ pub mod create_source_location_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags to assign to the source location.</p>
+        /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1516,12 +1516,12 @@ pub mod create_vod_source_input {
             self.http_package_configurations = input;
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location for this VOD source.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location for this VOD source.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1533,7 +1533,7 @@ pub mod create_vod_source_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the VOD source.</p>
+        /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1544,7 +1544,7 @@ pub mod create_vod_source_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags to assign to the VOD source.</p>
+        /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1554,12 +1554,12 @@ pub mod create_vod_source_input {
             self.tags = input;
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name associated with the VOD source.&gt;</p>
         pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vod_source_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name associated with the VOD source.&gt;</p>
         pub fn set_vod_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1744,12 +1744,12 @@ pub mod delete_channel_input {
         pub(crate) channel_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -1890,12 +1890,12 @@ pub mod delete_channel_policy_input {
         pub(crate) channel_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this channel policy.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this channel policy.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -2043,12 +2043,12 @@ pub mod delete_live_source_input {
         pub(crate) source_location_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.live_source_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn set_live_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2056,12 +2056,12 @@ pub mod delete_live_source_input {
             self.live_source_name = input;
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Source.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Source.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2232,12 +2232,12 @@ pub mod delete_playback_configuration_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name of the playback configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name of the playback configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2379,17 +2379,17 @@ pub mod delete_prefetch_schedule_input {
         pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>The name of the playback configuration for this prefetch schedule.</p>
         pub fn playback_configuration_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -2397,7 +2397,7 @@ pub mod delete_prefetch_schedule_input {
             self.playback_configuration_name = Some(input.into());
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>The name of the playback configuration for this prefetch schedule.</p>
         pub fn set_playback_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2569,22 +2569,22 @@ pub mod delete_program_input {
         pub(crate) program_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
         }
-        /// <p>The identifier for the program you are working on.</p>
+        /// <p>The name of the program.</p>
         pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.program_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the program you are working on.</p>
+        /// <p>The name of the program.</p>
         pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.program_name = input;
             self
@@ -2750,12 +2750,12 @@ pub mod delete_source_location_input {
         pub(crate) source_location_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2906,12 +2906,12 @@ pub mod delete_vod_source_input {
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2919,12 +2919,12 @@ pub mod delete_vod_source_input {
             self.source_location_name = input;
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name of the VOD source.</p>
         pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vod_source_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name of the VOD source.</p>
         pub fn set_vod_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3093,12 +3093,12 @@ pub mod describe_channel_input {
         pub(crate) channel_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -3240,12 +3240,12 @@ pub mod describe_live_source_input {
         pub(crate) source_location_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.live_source_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn set_live_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3253,12 +3253,12 @@ pub mod describe_live_source_input {
             self.live_source_name = input;
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Source.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Source.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3430,22 +3430,22 @@ pub mod describe_program_input {
         pub(crate) program_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this Program.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this Program.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
         }
-        /// <p>The identifier for the program you are working on.</p>
+        /// <p>The name of the program.</p>
         pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.program_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the program you are working on.</p>
+        /// <p>The name of the program.</p>
         pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.program_name = input;
             self
@@ -3611,12 +3611,12 @@ pub mod describe_source_location_input {
         pub(crate) source_location_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3767,12 +3767,12 @@ pub mod describe_vod_source_input {
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3780,12 +3780,12 @@ pub mod describe_vod_source_input {
             self.source_location_name = input;
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name of the VOD Source.</p>
         pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vod_source_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name of the VOD Source.</p>
         pub fn set_vod_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3956,12 +3956,12 @@ pub mod get_channel_policy_input {
         pub(crate) channel_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this Channel Policy.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this Channel Policy.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -4111,22 +4111,22 @@ pub mod get_channel_schedule_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this Channel Schedule.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this Channel Schedule.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
         }
-        /// <p>The schedule duration in minutes. The maximum duration is 4320 minutes (three days).</p>
+        /// <p>The duration in minutes of the channel schedule.</p>
         pub fn duration_minutes(mut self, input: impl Into<std::string::String>) -> Self {
             self.duration_minutes = Some(input.into());
             self
         }
-        /// <p>The schedule duration in minutes. The maximum duration is 4320 minutes (three days).</p>
+        /// <p>The duration in minutes of the channel schedule.</p>
         pub fn set_duration_minutes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4134,22 +4134,28 @@ pub mod get_channel_schedule_input {
             self.duration_minutes = input;
             self
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+        /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
+        /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+        /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+        /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
+        /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+        /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4473,17 +4479,17 @@ pub mod get_prefetch_schedule_input {
         pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
         pub fn playback_configuration_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -4491,7 +4497,7 @@ pub mod get_prefetch_schedule_input {
             self.playback_configuration_name = Some(input.into());
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
         pub fn set_playback_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4664,22 +4670,22 @@ pub mod list_alerts_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4851,22 +4857,22 @@ pub mod list_channels_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of channels that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channels, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of channels that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channels, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5009,32 +5015,32 @@ pub mod list_live_sources_input {
         pub(crate) source_location_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Sources list.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Sources list.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5204,22 +5210,22 @@ pub mod list_playback_configurations_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Maximum number of records to return.</p>
+        /// <p>The maximum number of playback configurations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> playback configurations, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of records to return.</p>
+        /// <p>The maximum number of playback configurations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> playback configurations, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5365,33 +5371,33 @@ pub mod list_prefetch_schedules_input {
         pub(crate) stream_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
+        /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
+        /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>
-        /// <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>
-        /// <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>
-        /// <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+        /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+        /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
+        /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+        /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>
-        /// <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>
-        /// <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>
-        /// <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+        /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+        /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
+        /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+        /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
         pub fn playback_configuration_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -5399,7 +5405,7 @@ pub mod list_prefetch_schedules_input {
             self.playback_configuration_name = Some(input.into());
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
         pub fn set_playback_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5579,22 +5585,22 @@ pub mod list_source_locations_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p> The maximum number of source locations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p> The maximum number of source locations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5737,12 +5743,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+        /// <p>The Amazon Resource Name (ARN) associated with this resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+        /// <p>The Amazon Resource Name (ARN) associated with this resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5887,32 +5893,32 @@ pub mod list_vod_sources_input {
         pub(crate) source_location_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p> The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p> The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source list.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source list.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6082,12 +6088,12 @@ pub mod put_channel_policy_input {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The channel name associated with this Channel Policy.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The channel name associated with this Channel Policy.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -6440,7 +6446,7 @@ pub mod put_playback_configuration_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the playback configuration.</p>
+        /// <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -6451,7 +6457,7 @@ pub mod put_playback_configuration_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags to assign to the playback configuration.</p>
+        /// <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -6636,12 +6642,12 @@ pub mod start_channel_input {
         pub(crate) channel_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -6786,12 +6792,12 @@ pub mod stop_channel_input {
         pub(crate) channel_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -6939,12 +6945,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+        /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+        /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6953,7 +6959,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A comma-separated list of tag key:value pairs.</p>
+        /// <p>The tags to assign to the resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -6964,7 +6970,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A comma-separated list of tag key:value pairs.</p>
+        /// <p>The tags to assign to the resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -7126,12 +7132,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to untag.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to untag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -7140,14 +7146,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
+        /// <p>The tag keys associated with the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
+        /// <p>The tag keys associated with the resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7312,22 +7318,22 @@ pub mod update_channel_input {
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::RequestOutputItem>>,
     }
     impl Builder {
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
         }
-        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
         pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
             self.filler_slate = Some(input);
             self
         }
-        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
         pub fn set_filler_slate(
             mut self,
             input: std::option::Option<crate::model::SlateSource>,
@@ -7531,12 +7537,12 @@ pub mod update_live_source_input {
             self.http_package_configurations = input;
             self
         }
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.live_source_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn set_live_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7544,12 +7550,12 @@ pub mod update_live_source_input {
             self.live_source_name = input;
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Source.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Source.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7805,12 +7811,12 @@ pub mod update_source_location_input {
             self.segment_delivery_configurations = input;
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8005,12 +8011,12 @@ pub mod update_vod_source_input {
             self.http_package_configurations = input;
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8018,12 +8024,12 @@ pub mod update_vod_source_input {
             self.source_location_name = input;
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name of the VOD source.</p>
         pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vod_source_name = Some(input.into());
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name of the VOD source.</p>
         pub fn set_vod_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8201,15 +8207,109 @@ impl UpdateVodSourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListVodSourcesInput {
+    /// <p> The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    #[doc(hidden)]
+    pub max_results: i32,
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The name of the source location associated with this VOD Source list.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+}
+impl ListVodSourcesInput {
+    /// <p> The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The name of the source location associated with this VOD Source list.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateVodSourceInput {
+    /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
+    #[doc(hidden)]
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    /// <p>The name of the source location for this VOD source.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The name associated with the VOD source.&gt;</p>
+    #[doc(hidden)]
+    pub vod_source_name: std::option::Option<std::string::String>,
+}
+impl CreateVodSourceInput {
+    /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The name of the source location for this VOD source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The name associated with the VOD source.&gt;</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteVodSourceInput {
+    /// <p>The name of the source location associated with this VOD Source.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The name of the VOD source.</p>
+    #[doc(hidden)]
+    pub vod_source_name: std::option::Option<std::string::String>,
+}
+impl DeleteVodSourceInput {
+    /// <p>The name of the source location associated with this VOD Source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The name of the VOD source.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVodSourceInput {
     /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
     #[doc(hidden)]
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-    /// <p>The identifier for the source location you are working on.</p>
+    /// <p>The name of the source location associated with this VOD Source.</p>
     #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The identifier for the VOD source you are working on.</p>
+    /// <p>The name of the VOD source.</p>
     #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
@@ -8220,13 +8320,132 @@ impl UpdateVodSourceInput {
     ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
         self.http_package_configurations.as_deref()
     }
-    /// <p>The identifier for the source location you are working on.</p>
+    /// <p>The name of the source location associated with this VOD Source.</p>
     pub fn source_location_name(&self) -> std::option::Option<&str> {
         self.source_location_name.as_deref()
     }
-    /// <p>The identifier for the VOD source you are working on.</p>
+    /// <p>The name of the VOD source.</p>
     pub fn vod_source_name(&self) -> std::option::Option<&str> {
         self.vod_source_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeVodSourceInput {
+    /// <p>The name of the source location associated with this VOD Source.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The name of the VOD Source.</p>
+    #[doc(hidden)]
+    pub vod_source_name: std::option::Option<std::string::String>,
+}
+impl DescribeVodSourceInput {
+    /// <p>The name of the source location associated with this VOD Source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The name of the VOD Source.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListSourceLocationsInput {
+    /// <p> The maximum number of source locations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    #[doc(hidden)]
+    pub max_results: i32,
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSourceLocationsInput {
+    /// <p> The maximum number of source locations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateSourceLocationInput {
+    /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    #[doc(hidden)]
+    pub access_configuration: std::option::Option<crate::model::AccessConfiguration>,
+    /// <p>The optional configuration for the server that serves segments.</p>
+    #[doc(hidden)]
+    pub default_segment_delivery_configuration:
+        std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
+    /// <p>The source's HTTP package configurations.</p>
+    #[doc(hidden)]
+    pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
+    /// <p>A list of the segment delivery configurations associated with this resource.</p>
+    #[doc(hidden)]
+    pub segment_delivery_configurations:
+        std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+    /// <p>The name associated with the source location.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateSourceLocationInput {
+    /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    pub fn access_configuration(&self) -> std::option::Option<&crate::model::AccessConfiguration> {
+        self.access_configuration.as_ref()
+    }
+    /// <p>The optional configuration for the server that serves segments.</p>
+    pub fn default_segment_delivery_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultSegmentDeliveryConfiguration> {
+        self.default_segment_delivery_configuration.as_ref()
+    }
+    /// <p>The source's HTTP package configurations.</p>
+    pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
+        self.http_configuration.as_ref()
+    }
+    /// <p>A list of the segment delivery configurations associated with this resource.</p>
+    pub fn segment_delivery_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
+        self.segment_delivery_configurations.as_deref()
+    }
+    /// <p>The name associated with the source location.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteSourceLocationInput {
+    /// <p>The name of the source location.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+}
+impl DeleteSourceLocationInput {
+    /// <p>The name of the source location.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
     }
 }
 
@@ -8248,7 +8467,7 @@ pub struct UpdateSourceLocationInput {
     #[doc(hidden)]
     pub segment_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
-    /// <p>The identifier for the source location you are working on.</p>
+    /// <p>The name of the source location.</p>
     #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
 }
@@ -8273,7 +8492,7 @@ impl UpdateSourceLocationInput {
     ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
         self.segment_delivery_configurations.as_deref()
     }
-    /// <p>The identifier for the source location you are working on.</p>
+    /// <p>The name of the source location.</p>
     pub fn source_location_name(&self) -> std::option::Option<&str> {
         self.source_location_name.as_deref()
     }
@@ -8282,30 +8501,13 @@ impl UpdateSourceLocationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLiveSourceInput {
-    /// <p>A list of HTTP package configurations for the live source on this account.</p>
-    #[doc(hidden)]
-    pub http_package_configurations:
-        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-    /// <p>The identifier for the live source you are working on.</p>
-    #[doc(hidden)]
-    pub live_source_name: std::option::Option<std::string::String>,
-    /// <p>The identifier for the source location you are working on.</p>
+pub struct DescribeSourceLocationInput {
+    /// <p>The name of the source location.</p>
     #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
 }
-impl UpdateLiveSourceInput {
-    /// <p>A list of HTTP package configurations for the live source on this account.</p>
-    pub fn http_package_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
-    }
-    /// <p>The identifier for the live source you are working on.</p>
-    pub fn live_source_name(&self) -> std::option::Option<&str> {
-        self.live_source_name.as_deref()
-    }
-    /// <p>The identifier for the source location you are working on.</p>
+impl DescribeSourceLocationInput {
+    /// <p>The name of the source location.</p>
     pub fn source_location_name(&self) -> std::option::Option<&str> {
         self.source_location_name.as_deref()
     }
@@ -8314,107 +8516,151 @@ impl UpdateLiveSourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateChannelInput {
-    /// <p>The identifier for the channel you are working on.</p>
+pub struct ListPrefetchSchedulesInput {
+    /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
-    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+    pub max_results: i32,
+    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+    /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
+    /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
     #[doc(hidden)]
-    pub filler_slate: std::option::Option<crate::model::SlateSource>,
-    /// <p>The channel's output properties.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
     #[doc(hidden)]
-    pub outputs: std::option::Option<std::vec::Vec<crate::model::RequestOutputItem>>,
+    pub playback_configuration_name: std::option::Option<std::string::String>,
+    /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
+    #[doc(hidden)]
+    pub stream_id: std::option::Option<std::string::String>,
 }
-impl UpdateChannelInput {
-    /// <p>The identifier for the channel you are working on.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
-        self.channel_name.as_deref()
+impl ListPrefetchSchedulesInput {
+    /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
     }
-    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
-    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
-        self.filler_slate.as_ref()
+    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+    /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
+    /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
     }
-    /// <p>The channel's output properties.</p>
-    pub fn outputs(&self) -> std::option::Option<&[crate::model::RequestOutputItem]> {
-        self.outputs.as_deref()
+    /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
     }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
-    #[doc(hidden)]
-    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
-        self.resource_arn.as_deref()
-    }
-    /// <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
-        self.tag_keys.as_deref()
+    /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+pub struct CreatePrefetchScheduleInput {
+    /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A comma-separated list of tag key:value pairs.</p>
+    pub consumption: std::option::Option<crate::model::PrefetchConsumption>,
+    /// <p>The name to assign to the schedule request.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name to assign to the playback configuration.</p>
+    #[doc(hidden)]
+    pub playback_configuration_name: std::option::Option<std::string::String>,
+    /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
+    #[doc(hidden)]
+    pub retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
+    /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
+    #[doc(hidden)]
+    pub stream_id: std::option::Option<std::string::String>,
 }
-impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
-        self.resource_arn.as_deref()
+impl CreatePrefetchScheduleInput {
+    /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
+    pub fn consumption(&self) -> std::option::Option<&crate::model::PrefetchConsumption> {
+        self.consumption.as_ref()
     }
-    /// <p>A comma-separated list of tag key:value pairs.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
+    /// <p>The name to assign to the schedule request.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name to assign to the playback configuration.</p>
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
+    }
+    /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
+    pub fn retrieval(&self) -> std::option::Option<&crate::model::PrefetchRetrieval> {
+        self.retrieval.as_ref()
+    }
+    /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopChannelInput {
-    /// <p>The identifier for the channel you are working on.</p>
+pub struct DeletePrefetchScheduleInput {
+    /// <p>The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.</p>
     #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the playback configuration for this prefetch schedule.</p>
+    #[doc(hidden)]
+    pub playback_configuration_name: std::option::Option<std::string::String>,
 }
-impl StopChannelInput {
-    /// <p>The identifier for the channel you are working on.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
-        self.channel_name.as_deref()
+impl DeletePrefetchScheduleInput {
+    /// <p>The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the playback configuration for this prefetch schedule.</p>
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartChannelInput {
-    /// <p>The identifier for the channel you are working on.</p>
+pub struct GetPrefetchScheduleInput {
+    /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
     #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
+    #[doc(hidden)]
+    pub playback_configuration_name: std::option::Option<std::string::String>,
 }
-impl StartChannelInput {
-    /// <p>The identifier for the channel you are working on.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
-        self.channel_name.as_deref()
+impl GetPrefetchScheduleInput {
+    /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListPlaybackConfigurationsInput {
+    /// <p>The maximum number of playback configurations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> playback configurations, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    #[doc(hidden)]
+    pub max_results: i32,
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPlaybackConfigurationsInput {
+    /// <p>The maximum number of playback configurations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> playback configurations, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 
@@ -8460,7 +8706,7 @@ pub struct PutPlaybackConfigurationInput {
     /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
     #[doc(hidden)]
     pub slate_ad_url: std::option::Option<std::string::String>,
-    /// <p>The tags to assign to the playback configuration.</p>
+    /// <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -8529,7 +8775,7 @@ impl PutPlaybackConfigurationInput {
     pub fn slate_ad_url(&self) -> std::option::Option<&str> {
         self.slate_ad_url.as_deref()
     }
-    /// <p>The tags to assign to the playback configuration.</p>
+    /// <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -8549,254 +8795,15 @@ impl PutPlaybackConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutChannelPolicyInput {
-    /// <p>The identifier for the channel you are working on.</p>
-    #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
-    /// <p>Adds an IAM role that determines the permissions of your channel.</p>
-    #[doc(hidden)]
-    pub policy: std::option::Option<std::string::String>,
-}
-impl PutChannelPolicyInput {
-    /// <p>The identifier for the channel you are working on.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
-        self.channel_name.as_deref()
-    }
-    /// <p>Adds an IAM role that determines the permissions of your channel.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
-        self.policy.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVodSourcesInput {
-    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
-    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-    /// <p>The identifier for the source location you are working on.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-}
-impl ListVodSourcesInput {
-    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    pub fn max_results(&self) -> i32 {
-        self.max_results
-    }
-    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-    /// <p>The identifier for the source location you are working on.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
-}
-impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
-        self.resource_arn.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSourceLocationsInput {
-    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
-    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl ListSourceLocationsInput {
-    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    pub fn max_results(&self) -> i32 {
-        self.max_results
-    }
-    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPrefetchSchedulesInput {
-    /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
-    /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>
-    /// <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>
-    /// <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>
-    /// <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+pub struct DeletePlaybackConfigurationInput {
     /// <p>The name of the playback configuration.</p>
-    #[doc(hidden)]
-    pub playback_configuration_name: std::option::Option<std::string::String>,
-    /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
-    #[doc(hidden)]
-    pub stream_id: std::option::Option<std::string::String>,
-}
-impl ListPrefetchSchedulesInput {
-    /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
-    pub fn max_results(&self) -> i32 {
-        self.max_results
-    }
-    /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>
-    /// <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>
-    /// <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>
-    /// <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-    /// <p>The name of the playback configuration.</p>
-    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
-        self.playback_configuration_name.as_deref()
-    }
-    /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
-        self.stream_id.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPlaybackConfigurationsInput {
-    /// <p>Maximum number of records to return.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
-    /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl ListPlaybackConfigurationsInput {
-    /// <p>Maximum number of records to return.</p>
-    pub fn max_results(&self) -> i32 {
-        self.max_results
-    }
-    /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLiveSourcesInput {
-    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
-    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-    /// <p>The identifier for the source location you are working on.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-}
-impl ListLiveSourcesInput {
-    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    pub fn max_results(&self) -> i32 {
-        self.max_results
-    }
-    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-    /// <p>The identifier for the source location you are working on.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListChannelsInput {
-    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
-    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl ListChannelsInput {
-    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    pub fn max_results(&self) -> i32 {
-        self.max_results
-    }
-    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAlertsInput {
-    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
-    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
-}
-impl ListAlertsInput {
-    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    pub fn max_results(&self) -> i32 {
-        self.max_results
-    }
-    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
-        self.resource_arn.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPrefetchScheduleInput {
-    /// <p>The identifier for the playback configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The name of the playback configuration.</p>
-    #[doc(hidden)]
-    pub playback_configuration_name: std::option::Option<std::string::String>,
 }
-impl GetPrefetchScheduleInput {
-    /// <p>The identifier for the playback configuration.</p>
+impl DeletePlaybackConfigurationInput {
+    /// <p>The name of the playback configuration.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-    /// <p>The name of the playback configuration.</p>
-    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
-        self.playback_configuration_name.as_deref()
     }
 }
 
@@ -8818,34 +8825,218 @@ impl GetPlaybackConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetChannelScheduleInput {
-    /// <p>The identifier for the channel you are working on.</p>
-    #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
-    /// <p>The schedule duration in minutes. The maximum duration is 4320 minutes (three days).</p>
-    #[doc(hidden)]
-    pub duration_minutes: std::option::Option<std::string::String>,
-    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+pub struct ListLiveSourcesInput {
+    /// <p>The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     #[doc(hidden)]
     pub max_results: i32,
-    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The name of the source location associated with this Live Sources list.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+}
+impl ListLiveSourcesInput {
+    /// <p>The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The name of the source location associated with this Live Sources list.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateLiveSourceInput {
+    /// <p>A list of HTTP package configuration parameters for this live source.</p>
+    #[doc(hidden)]
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    /// <p>The name of the live source.</p>
+    #[doc(hidden)]
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source location.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateLiveSourceInput {
+    /// <p>A list of HTTP package configuration parameters for this live source.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The name of the live source.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The name of the source location.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteLiveSourceInput {
+    /// <p>The name of the live source.</p>
+    #[doc(hidden)]
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source location associated with this Live Source.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+}
+impl DeleteLiveSourceInput {
+    /// <p>The name of the live source.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The name of the source location associated with this Live Source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateLiveSourceInput {
+    /// <p>A list of HTTP package configurations for the live source on this account.</p>
+    #[doc(hidden)]
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    /// <p>The name of the live source.</p>
+    #[doc(hidden)]
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source location associated with this Live Source.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+}
+impl UpdateLiveSourceInput {
+    /// <p>A list of HTTP package configurations for the live source on this account.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The name of the live source.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The name of the source location associated with this Live Source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeLiveSourceInput {
+    /// <p>The name of the live source.</p>
+    #[doc(hidden)]
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source location associated with this Live Source.</p>
+    #[doc(hidden)]
+    pub source_location_name: std::option::Option<std::string::String>,
+}
+impl DescribeLiveSourceInput {
+    /// <p>The name of the live source.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The name of the source location associated with this Live Source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StopChannelInput {
+    /// <p>The name of the channel.</p>
+    #[doc(hidden)]
+    pub channel_name: std::option::Option<std::string::String>,
+}
+impl StopChannelInput {
+    /// <p>The name of the channel.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartChannelInput {
+    /// <p>The name of the channel.</p>
+    #[doc(hidden)]
+    pub channel_name: std::option::Option<std::string::String>,
+}
+impl StartChannelInput {
+    /// <p>The name of the channel.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetChannelScheduleInput {
+    /// <p>The name of the channel associated with this Channel Schedule.</p>
+    #[doc(hidden)]
+    pub channel_name: std::option::Option<std::string::String>,
+    /// <p>The duration in minutes of the channel schedule.</p>
+    #[doc(hidden)]
+    pub duration_minutes: std::option::Option<std::string::String>,
+    /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    #[doc(hidden)]
+    pub max_results: i32,
+    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+    /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
+    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetChannelScheduleInput {
-    /// <p>The identifier for the channel you are working on.</p>
+    /// <p>The name of the channel associated with this Channel Schedule.</p>
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
-    /// <p>The schedule duration in minutes. The maximum duration is 4320 minutes (three days).</p>
+    /// <p>The duration in minutes of the channel schedule.</p>
     pub fn duration_minutes(&self) -> std::option::Option<&str> {
         self.duration_minutes.as_deref()
     }
-    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+    /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
+    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8854,244 +9045,80 @@ impl GetChannelScheduleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetChannelPolicyInput {
-    /// <p>The identifier for the channel you are working on.</p>
+pub struct CreateChannelInput {
+    /// <p>The name of the channel.</p>
     #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
+    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
+    #[doc(hidden)]
+    pub filler_slate: std::option::Option<crate::model::SlateSource>,
+    /// <p>The channel's output properties.</p>
+    #[doc(hidden)]
+    pub outputs: std::option::Option<std::vec::Vec<crate::model::RequestOutputItem>>,
+    /// <p>The type of playback mode to use for this channel.</p>
+    /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
+    /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+    #[doc(hidden)]
+    pub playback_mode: std::option::Option<crate::model::PlaybackMode>,
+    /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The tier of the channel.</p>
+    #[doc(hidden)]
+    pub tier: std::option::Option<crate::model::Tier>,
 }
-impl GetChannelPolicyInput {
-    /// <p>The identifier for the channel you are working on.</p>
+impl CreateChannelInput {
+    /// <p>The name of the channel.</p>
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVodSourceInput {
-    /// <p>The identifier for the source location you are working on.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The identifier for the VOD source you are working on.</p>
-    #[doc(hidden)]
-    pub vod_source_name: std::option::Option<std::string::String>,
-}
-impl DescribeVodSourceInput {
-    /// <p>The identifier for the source location you are working on.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
+    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
+    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
+        self.filler_slate.as_ref()
     }
-    /// <p>The identifier for the VOD source you are working on.</p>
-    pub fn vod_source_name(&self) -> std::option::Option<&str> {
-        self.vod_source_name.as_deref()
+    /// <p>The channel's output properties.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::RequestOutputItem]> {
+        self.outputs.as_deref()
     }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSourceLocationInput {
-    /// <p>The identifier for the source location you are working on.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-}
-impl DescribeSourceLocationInput {
-    /// <p>The identifier for the source location you are working on.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
+    /// <p>The type of playback mode to use for this channel.</p>
+    /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
+    /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+    pub fn playback_mode(&self) -> std::option::Option<&crate::model::PlaybackMode> {
+        self.playback_mode.as_ref()
+    }
+    /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The tier of the channel.</p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
+        self.tier.as_ref()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProgramInput {
-    /// <p>The identifier for the channel you are working on.</p>
+pub struct ListChannelsInput {
+    /// <p>The maximum number of channels that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channels, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
-    /// <p>The identifier for the program you are working on.</p>
+    pub max_results: i32,
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     #[doc(hidden)]
-    pub program_name: std::option::Option<std::string::String>,
+    pub next_token: std::option::Option<std::string::String>,
 }
-impl DescribeProgramInput {
-    /// <p>The identifier for the channel you are working on.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
-        self.channel_name.as_deref()
+impl ListChannelsInput {
+    /// <p>The maximum number of channels that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channels, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
     }
-    /// <p>The identifier for the program you are working on.</p>
-    pub fn program_name(&self) -> std::option::Option<&str> {
-        self.program_name.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLiveSourceInput {
-    /// <p>The identifier for the live source you are working on.</p>
-    #[doc(hidden)]
-    pub live_source_name: std::option::Option<std::string::String>,
-    /// <p>The identifier for the source location you are working on.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-}
-impl DescribeLiveSourceInput {
-    /// <p>The identifier for the live source you are working on.</p>
-    pub fn live_source_name(&self) -> std::option::Option<&str> {
-        self.live_source_name.as_deref()
-    }
-    /// <p>The identifier for the source location you are working on.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChannelInput {
-    /// <p>The identifier for the channel you are working on.</p>
-    #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
-}
-impl DescribeChannelInput {
-    /// <p>The identifier for the channel you are working on.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
-        self.channel_name.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVodSourceInput {
-    /// <p>The identifier for the source location you are working on.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The identifier for the VOD source you are working on.</p>
-    #[doc(hidden)]
-    pub vod_source_name: std::option::Option<std::string::String>,
-}
-impl DeleteVodSourceInput {
-    /// <p>The identifier for the source location you are working on.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-    /// <p>The identifier for the VOD source you are working on.</p>
-    pub fn vod_source_name(&self) -> std::option::Option<&str> {
-        self.vod_source_name.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSourceLocationInput {
-    /// <p>The identifier for the source location you are working on.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-}
-impl DeleteSourceLocationInput {
-    /// <p>The identifier for the source location you are working on.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProgramInput {
-    /// <p>The identifier for the channel you are working on.</p>
-    #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
-    /// <p>The identifier for the program you are working on.</p>
-    #[doc(hidden)]
-    pub program_name: std::option::Option<std::string::String>,
-}
-impl DeleteProgramInput {
-    /// <p>The identifier for the channel you are working on.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
-        self.channel_name.as_deref()
-    }
-    /// <p>The identifier for the program you are working on.</p>
-    pub fn program_name(&self) -> std::option::Option<&str> {
-        self.program_name.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePrefetchScheduleInput {
-    /// <p>The identifier for the playback configuration.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The name of the playback configuration.</p>
-    #[doc(hidden)]
-    pub playback_configuration_name: std::option::Option<std::string::String>,
-}
-impl DeletePrefetchScheduleInput {
-    /// <p>The identifier for the playback configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>The name of the playback configuration.</p>
-    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
-        self.playback_configuration_name.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePlaybackConfigurationInput {
-    /// <p>The identifier for the playback configuration.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-}
-impl DeletePlaybackConfigurationInput {
-    /// <p>The identifier for the playback configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLiveSourceInput {
-    /// <p>The identifier for the live source you are working on.</p>
-    #[doc(hidden)]
-    pub live_source_name: std::option::Option<std::string::String>,
-    /// <p>The identifier for the source location you are working on.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-}
-impl DeleteLiveSourceInput {
-    /// <p>The identifier for the live source you are working on.</p>
-    pub fn live_source_name(&self) -> std::option::Option<&str> {
-        self.live_source_name.as_deref()
-    }
-    /// <p>The identifier for the source location you are working on.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelPolicyInput {
-    /// <p>The identifier for the channel you are working on.</p>
-    #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
-}
-impl DeleteChannelPolicyInput {
-    /// <p>The identifier for the channel you are working on.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
-        self.channel_name.as_deref()
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 
@@ -9099,12 +9126,12 @@ impl DeleteChannelPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChannelInput {
-    /// <p>The identifier for the channel you are working on.</p>
+    /// <p>The name of the channel.</p>
     #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
 }
 impl DeleteChannelInput {
-    /// <p>The identifier for the channel you are working on.</p>
+    /// <p>The name of the channel.</p>
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
@@ -9113,103 +9140,44 @@ impl DeleteChannelInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVodSourceInput {
-    /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
+pub struct UpdateChannelInput {
+    /// <p>The name of the channel.</p>
     #[doc(hidden)]
-    pub http_package_configurations:
-        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-    /// <p>The identifier for the source location you are working on.</p>
+    pub channel_name: std::option::Option<std::string::String>,
+    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The tags to assign to the VOD source.</p>
+    pub filler_slate: std::option::Option<crate::model::SlateSource>,
+    /// <p>The channel's output properties.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The identifier for the VOD source you are working on.</p>
-    #[doc(hidden)]
-    pub vod_source_name: std::option::Option<std::string::String>,
+    pub outputs: std::option::Option<std::vec::Vec<crate::model::RequestOutputItem>>,
 }
-impl CreateVodSourceInput {
-    /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
-    pub fn http_package_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
+impl UpdateChannelInput {
+    /// <p>The name of the channel.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
     }
-    /// <p>The identifier for the source location you are working on.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
+    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
+    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
+        self.filler_slate.as_ref()
     }
-    /// <p>The tags to assign to the VOD source.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
-    }
-    /// <p>The identifier for the VOD source you are working on.</p>
-    pub fn vod_source_name(&self) -> std::option::Option<&str> {
-        self.vod_source_name.as_deref()
+    /// <p>The channel's output properties.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::RequestOutputItem]> {
+        self.outputs.as_deref()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSourceLocationInput {
-    /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+pub struct DescribeChannelInput {
+    /// <p>The name of the channel.</p>
     #[doc(hidden)]
-    pub access_configuration: std::option::Option<crate::model::AccessConfiguration>,
-    /// <p>The optional configuration for the server that serves segments.</p>
-    #[doc(hidden)]
-    pub default_segment_delivery_configuration:
-        std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
-    /// <p>The source's HTTP package configurations.</p>
-    #[doc(hidden)]
-    pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
-    /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    #[doc(hidden)]
-    pub segment_delivery_configurations:
-        std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
-    /// <p>The identifier for the source location you are working on.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The tags to assign to the source location.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub channel_name: std::option::Option<std::string::String>,
 }
-impl CreateSourceLocationInput {
-    /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
-    pub fn access_configuration(&self) -> std::option::Option<&crate::model::AccessConfiguration> {
-        self.access_configuration.as_ref()
-    }
-    /// <p>The optional configuration for the server that serves segments.</p>
-    pub fn default_segment_delivery_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::DefaultSegmentDeliveryConfiguration> {
-        self.default_segment_delivery_configuration.as_ref()
-    }
-    /// <p>The source's HTTP package configurations.</p>
-    pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
-        self.http_configuration.as_ref()
-    }
-    /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn segment_delivery_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
-        self.segment_delivery_configurations.as_deref()
-    }
-    /// <p>The identifier for the source location you are working on.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-    /// <p>The tags to assign to the source location.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
+impl DescribeChannelInput {
+    /// <p>The name of the channel.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
     }
 }
 
@@ -9220,13 +9188,13 @@ pub struct CreateProgramInput {
     /// <p>The ad break configuration settings.</p>
     #[doc(hidden)]
     pub ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
-    /// <p>The identifier for the channel you are working on.</p>
+    /// <p>The name of the channel for this Program.</p>
     #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The name of the LiveSource for this Program.</p>
     #[doc(hidden)]
     pub live_source_name: std::option::Option<std::string::String>,
-    /// <p>The identifier for the program you are working on.</p>
+    /// <p>The name of the Program.</p>
     #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
     /// <p>The schedule configuration settings.</p>
@@ -9244,7 +9212,7 @@ impl CreateProgramInput {
     pub fn ad_breaks(&self) -> std::option::Option<&[crate::model::AdBreak]> {
         self.ad_breaks.as_deref()
     }
-    /// <p>The identifier for the channel you are working on.</p>
+    /// <p>The name of the channel for this Program.</p>
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
@@ -9252,7 +9220,7 @@ impl CreateProgramInput {
     pub fn live_source_name(&self) -> std::option::Option<&str> {
         self.live_source_name.as_deref()
     }
-    /// <p>The identifier for the program you are working on.</p>
+    /// <p>The name of the Program.</p>
     pub fn program_name(&self) -> std::option::Option<&str> {
         self.program_name.as_deref()
     }
@@ -9275,144 +9243,188 @@ impl CreateProgramInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePrefetchScheduleInput {
-    /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
-    #[doc(hidden)]
-    pub consumption: std::option::Option<crate::model::PrefetchConsumption>,
-    /// <p>The identifier for the playback configuration.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The name of the playback configuration.</p>
-    #[doc(hidden)]
-    pub playback_configuration_name: std::option::Option<std::string::String>,
-    /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
-    #[doc(hidden)]
-    pub retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
-    /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
-    #[doc(hidden)]
-    pub stream_id: std::option::Option<std::string::String>,
-}
-impl CreatePrefetchScheduleInput {
-    /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
-    pub fn consumption(&self) -> std::option::Option<&crate::model::PrefetchConsumption> {
-        self.consumption.as_ref()
-    }
-    /// <p>The identifier for the playback configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>The name of the playback configuration.</p>
-    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
-        self.playback_configuration_name.as_deref()
-    }
-    /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
-    pub fn retrieval(&self) -> std::option::Option<&crate::model::PrefetchRetrieval> {
-        self.retrieval.as_ref()
-    }
-    /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
-        self.stream_id.as_deref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLiveSourceInput {
-    /// <p>A list of HTTP package configuration parameters for this live source.</p>
-    #[doc(hidden)]
-    pub http_package_configurations:
-        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-    /// <p>The identifier for the live source you are working on.</p>
-    #[doc(hidden)]
-    pub live_source_name: std::option::Option<std::string::String>,
-    /// <p>The identifier for the source location you are working on.</p>
-    #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The tags to assign to the live source.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-}
-impl CreateLiveSourceInput {
-    /// <p>A list of HTTP package configuration parameters for this live source.</p>
-    pub fn http_package_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
-    }
-    /// <p>The identifier for the live source you are working on.</p>
-    pub fn live_source_name(&self) -> std::option::Option<&str> {
-        self.live_source_name.as_deref()
-    }
-    /// <p>The identifier for the source location you are working on.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
-        self.source_location_name.as_deref()
-    }
-    /// <p>The tags to assign to the live source.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChannelInput {
-    /// <p>The identifier for the channel you are working on.</p>
+pub struct DeleteProgramInput {
+    /// <p>The name of the channel.</p>
     #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
-    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+    /// <p>The name of the program.</p>
     #[doc(hidden)]
-    pub filler_slate: std::option::Option<crate::model::SlateSource>,
-    /// <p>The channel's output properties.</p>
-    #[doc(hidden)]
-    pub outputs: std::option::Option<std::vec::Vec<crate::model::RequestOutputItem>>,
-    /// <p>The type of playback mode to use for this channel.</p>
-    /// <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>
-    /// <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
-    #[doc(hidden)]
-    pub playback_mode: std::option::Option<crate::model::PlaybackMode>,
-    /// <p>The tags to assign to the channel.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The tier of the channel.</p>
-    #[doc(hidden)]
-    pub tier: std::option::Option<crate::model::Tier>,
+    pub program_name: std::option::Option<std::string::String>,
 }
-impl CreateChannelInput {
-    /// <p>The identifier for the channel you are working on.</p>
+impl DeleteProgramInput {
+    /// <p>The name of the channel.</p>
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
-    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
-    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
-        self.filler_slate.as_ref()
+    /// <p>The name of the program.</p>
+    pub fn program_name(&self) -> std::option::Option<&str> {
+        self.program_name.as_deref()
     }
-    /// <p>The channel's output properties.</p>
-    pub fn outputs(&self) -> std::option::Option<&[crate::model::RequestOutputItem]> {
-        self.outputs.as_deref()
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeProgramInput {
+    /// <p>The name of the channel associated with this Program.</p>
+    #[doc(hidden)]
+    pub channel_name: std::option::Option<std::string::String>,
+    /// <p>The name of the program.</p>
+    #[doc(hidden)]
+    pub program_name: std::option::Option<std::string::String>,
+}
+impl DescribeProgramInput {
+    /// <p>The name of the channel associated with this Program.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
     }
-    /// <p>The type of playback mode to use for this channel.</p>
-    /// <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>
-    /// <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
-    pub fn playback_mode(&self) -> std::option::Option<&crate::model::PlaybackMode> {
-        self.playback_mode.as_ref()
+    /// <p>The name of the program.</p>
+    pub fn program_name(&self) -> std::option::Option<&str> {
+        self.program_name.as_deref()
     }
-    /// <p>The tags to assign to the channel.</p>
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PutChannelPolicyInput {
+    /// <p>The channel name associated with this Channel Policy.</p>
+    #[doc(hidden)]
+    pub channel_name: std::option::Option<std::string::String>,
+    /// <p>Adds an IAM role that determines the permissions of your channel.</p>
+    #[doc(hidden)]
+    pub policy: std::option::Option<std::string::String>,
+}
+impl PutChannelPolicyInput {
+    /// <p>The channel name associated with this Channel Policy.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>Adds an IAM role that determines the permissions of your channel.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteChannelPolicyInput {
+    /// <p>The name of the channel associated with this channel policy.</p>
+    #[doc(hidden)]
+    pub channel_name: std::option::Option<std::string::String>,
+}
+impl DeleteChannelPolicyInput {
+    /// <p>The name of the channel associated with this channel policy.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetChannelPolicyInput {
+    /// <p>The name of the channel associated with this Channel Policy.</p>
+    #[doc(hidden)]
+    pub channel_name: std::option::Option<std::string::String>,
+}
+impl GetChannelPolicyInput {
+    /// <p>The name of the channel associated with this Channel Policy.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to untag.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The tag keys associated with the resource.</p>
+    #[doc(hidden)]
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to untag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys associated with the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The tags to assign to the resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to assign to the resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>The tier of the channel.</p>
-    pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
-        self.tier.as_ref()
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) associated with this resource.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) associated with this resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListAlertsInput {
+    /// <p>The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    #[doc(hidden)]
+    pub max_results: i32,
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListAlertsInput {
+    /// <p>The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
     }
 }
 
@@ -9420,8 +9432,8 @@ impl CreateChannelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigureLogsForPlaybackConfigurationInput {
-    /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
-    /// <p>Valid values: 0 - 100</p>
+    /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+    /// <p>Valid values: <code>0</code> - <code>100</code> </p>
     #[doc(hidden)]
     pub percent_enabled: i32,
     /// <p>The name of the playback configuration.</p>
@@ -9429,8 +9441,8 @@ pub struct ConfigureLogsForPlaybackConfigurationInput {
     pub playback_configuration_name: std::option::Option<std::string::String>,
 }
 impl ConfigureLogsForPlaybackConfigurationInput {
-    /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
-    /// <p>Valid values: 0 - 100</p>
+    /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+    /// <p>Valid values: <code>0</code> - <code>100</code> </p>
     pub fn percent_enabled(&self) -> i32 {
         self.percent_enabled
     }

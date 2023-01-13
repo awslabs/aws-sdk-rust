@@ -108,7 +108,7 @@ impl Client {
     ///   - [`account_access_type(AccountAccessType)`](crate::client::fluent_builders::CreateWorkspace::account_access_type) / [`set_account_access_type(Option<AccountAccessType>)`](crate::client::fluent_builders::CreateWorkspace::set_account_access_type): <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_client_token): <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
     ///   - [`organization_role_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::organization_role_name) / [`set_organization_role_name(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_organization_role_name): <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.</p>
-    ///   - [`permission_type(PermissionType)`](crate::client::fluent_builders::CreateWorkspace::permission_type) / [`set_permission_type(Option<PermissionType>)`](crate::client::fluent_builders::CreateWorkspace::set_permission_type): <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>  <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
+    ///   - [`permission_type(PermissionType)`](crate::client::fluent_builders::CreateWorkspace::permission_type) / [`set_permission_type(Option<PermissionType>)`](crate::client::fluent_builders::CreateWorkspace::set_permission_type): <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>  <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
     ///   - [`stack_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::stack_set_name) / [`set_stack_set_name(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_stack_set_name): <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
     ///   - [`workspace_data_sources(Vec<DataSourceType>)`](crate::client::fluent_builders::CreateWorkspace::workspace_data_sources) / [`set_workspace_data_sources(Option<Vec<DataSourceType>>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_data_sources): <p>Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.</p>  <p>If you don't specify a data source here, you can still add it as a data source in the workspace console later. However, you will then have to manually configure permissions for it.</p>
     ///   - [`workspace_description(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::workspace_description) / [`set_workspace_description(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_description): <p>A description for the workspace. This is used only to help you identify this workspace.</p>  <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
@@ -116,8 +116,10 @@ impl Client {
     ///   - [`workspace_notification_destinations(Vec<NotificationDestinationType>)`](crate::client::fluent_builders::CreateWorkspace::workspace_notification_destinations) / [`set_workspace_notification_destinations(Option<Vec<NotificationDestinationType>>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_notification_destinations): <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
     ///   - [`workspace_organizational_units(Vec<String>)`](crate::client::fluent_builders::CreateWorkspace::workspace_organizational_units) / [`set_workspace_organizational_units(Option<Vec<String>>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_organizational_units): <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
     ///   - [`workspace_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::workspace_role_arn) / [`set_workspace_role_arn(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_role_arn): <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.</p>
-    ///   - [`authentication_providers(Vec<AuthenticationProviderTypes>)`](crate::client::fluent_builders::CreateWorkspace::authentication_providers) / [`set_authentication_providers(Option<Vec<AuthenticationProviderTypes>>)`](crate::client::fluent_builders::CreateWorkspace::set_authentication_providers): <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    ///   - [`authentication_providers(Vec<AuthenticationProviderTypes>)`](crate::client::fluent_builders::CreateWorkspace::authentication_providers) / [`set_authentication_providers(Option<Vec<AuthenticationProviderTypes>>)`](crate::client::fluent_builders::CreateWorkspace::set_authentication_providers): <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateWorkspace::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateWorkspace::set_tags): <p>The list of tags associated with the workspace.</p>
+    ///   - [`vpc_configuration(VpcConfiguration)`](crate::client::fluent_builders::CreateWorkspace::vpc_configuration) / [`set_vpc_configuration(Option<VpcConfiguration>)`](crate::client::fluent_builders::CreateWorkspace::set_vpc_configuration): <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+    ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_configuration): <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     /// - On success, responds with [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput) with field(s):
     ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::CreateWorkspaceOutput::workspace): <p>A structure containing data about the workspace that was created.</p>
     /// - On failure, responds with [`SdkError<CreateWorkspaceError>`](crate::error::CreateWorkspaceError)
@@ -127,13 +129,13 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateWorkspaceApiKey`](crate::client::fluent_builders::CreateWorkspaceApiKey) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`key_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::key_name) / [`set_key_name(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_key_name): <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
-    ///   - [`key_role(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::key_role) / [`set_key_role(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_key_role): <p>Specifies the permission level of the key.</p>  <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+    ///   - [`key_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::key_name) / [`set_key_name(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_key_name): <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
+    ///   - [`key_role(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::key_role) / [`set_key_role(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_key_role): <p>Specifies the permission level of the key.</p>  <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
     ///   - [`seconds_to_live(i32)`](crate::client::fluent_builders::CreateWorkspaceApiKey::seconds_to_live) / [`set_seconds_to_live(Option<i32>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_seconds_to_live): <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_workspace_id): <p>The ID of the workspace in which to create an API key.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_workspace_id): <p>The ID of the workspace to create an API key.</p>
     /// - On success, responds with [`CreateWorkspaceApiKeyOutput`](crate::output::CreateWorkspaceApiKeyOutput) with field(s):
     ///   - [`key_name(Option<String>)`](crate::output::CreateWorkspaceApiKeyOutput::key_name): <p>The name of the key that was created.</p>
-    ///   - [`key(Option<String>)`](crate::output::CreateWorkspaceApiKeyOutput::key): <p>The key token that was created. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
+    ///   - [`key(Option<String>)`](crate::output::CreateWorkspaceApiKeyOutput::key): <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
     ///   - [`workspace_id(Option<String>)`](crate::output::CreateWorkspaceApiKeyOutput::workspace_id): <p>The ID of the workspace that the key is valid for.</p>
     /// - On failure, responds with [`SdkError<CreateWorkspaceApiKeyError>`](crate::error::CreateWorkspaceApiKeyError)
     pub fn create_workspace_api_key(&self) -> fluent_builders::CreateWorkspaceApiKey {
@@ -155,7 +157,7 @@ impl Client {
     ///   - [`key_name(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkspaceApiKey::key_name) / [`set_key_name(Option<String>)`](crate::client::fluent_builders::DeleteWorkspaceApiKey::set_key_name): <p>The name of the API key to delete.</p>
     ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkspaceApiKey::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::DeleteWorkspaceApiKey::set_workspace_id): <p>The ID of the workspace to delete.</p>
     /// - On success, responds with [`DeleteWorkspaceApiKeyOutput`](crate::output::DeleteWorkspaceApiKeyOutput) with field(s):
-    ///   - [`key_name(Option<String>)`](crate::output::DeleteWorkspaceApiKeyOutput::key_name): <p>The name of the API key that was deleted.</p>
+    ///   - [`key_name(Option<String>)`](crate::output::DeleteWorkspaceApiKeyOutput::key_name): <p>The name of the key that was deleted.</p>
     ///   - [`workspace_id(Option<String>)`](crate::output::DeleteWorkspaceApiKeyOutput::workspace_id): <p>The ID of the workspace where the key was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteWorkspaceApiKeyError>`](crate::error::DeleteWorkspaceApiKeyError)
     pub fn delete_workspace_api_key(&self) -> fluent_builders::DeleteWorkspaceApiKey {
@@ -183,6 +185,18 @@ impl Client {
     ) -> fluent_builders::DescribeWorkspaceAuthentication {
         fluent_builders::DescribeWorkspaceAuthentication::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeWorkspaceConfiguration`](crate::client::fluent_builders::DescribeWorkspaceConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspaceConfiguration::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::DescribeWorkspaceConfiguration::set_workspace_id): <p>The ID of the workspace to get configuration information for.</p>
+    /// - On success, responds with [`DescribeWorkspaceConfigurationOutput`](crate::output::DescribeWorkspaceConfigurationOutput) with field(s):
+    ///   - [`configuration(Option<String>)`](crate::output::DescribeWorkspaceConfigurationOutput::configuration): <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+    /// - On failure, responds with [`SdkError<DescribeWorkspaceConfigurationError>`](crate::error::DescribeWorkspaceConfigurationError)
+    pub fn describe_workspace_configuration(
+        &self,
+    ) -> fluent_builders::DescribeWorkspaceConfiguration {
+        fluent_builders::DescribeWorkspaceConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DisassociateLicense`](crate::client::fluent_builders::DisassociateLicense) operation.
     ///
     /// - The fluent builder is configurable:
@@ -200,7 +214,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPermissions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPermissions::set_max_results): <p>The maximum number of results to include in the response.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPermissions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPermissions::set_next_token): <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</p>
-    ///   - [`user_type(UserType)`](crate::client::fluent_builders::ListPermissions::user_type) / [`set_user_type(Option<UserType>)`](crate::client::fluent_builders::ListPermissions::set_user_type): <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of Amazon Web Services SSO users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups are returned.</p>
+    ///   - [`user_type(UserType)`](crate::client::fluent_builders::ListPermissions::user_type) / [`set_user_type(Option<UserType>)`](crate::client::fluent_builders::ListPermissions::set_user_type): <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
     ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::ListPermissions::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::ListPermissions::set_user_id): <p>(Optional) Limits the results to only the user that matches this ID.</p>
     ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::ListPermissions::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::ListPermissions::set_group_id): <p>(Optional) Limits the results to only the group that matches this ID.</p>
     ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::ListPermissions::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::ListPermissions::set_workspace_id): <p>The ID of the workspace to list permissions for. This parameter is required.</p>
@@ -281,6 +295,8 @@ impl Client {
     ///   - [`workspace_notification_destinations(Vec<NotificationDestinationType>)`](crate::client::fluent_builders::UpdateWorkspace::workspace_notification_destinations) / [`set_workspace_notification_destinations(Option<Vec<NotificationDestinationType>>)`](crate::client::fluent_builders::UpdateWorkspace::set_workspace_notification_destinations): <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
     ///   - [`workspace_organizational_units(Vec<String>)`](crate::client::fluent_builders::UpdateWorkspace::workspace_organizational_units) / [`set_workspace_organizational_units(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateWorkspace::set_workspace_organizational_units): <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
     ///   - [`workspace_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspace::workspace_role_arn) / [`set_workspace_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateWorkspace::set_workspace_role_arn): <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
+    ///   - [`vpc_configuration(VpcConfiguration)`](crate::client::fluent_builders::UpdateWorkspace::vpc_configuration) / [`set_vpc_configuration(Option<VpcConfiguration>)`](crate::client::fluent_builders::UpdateWorkspace::set_vpc_configuration): <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+    ///   - [`remove_vpc_configuration(bool)`](crate::client::fluent_builders::UpdateWorkspace::remove_vpc_configuration) / [`set_remove_vpc_configuration(Option<bool>)`](crate::client::fluent_builders::UpdateWorkspace::set_remove_vpc_configuration): <p>Whether to remove the VPC configuration from the workspace.</p>  <p>Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.</p>
     /// - On success, responds with [`UpdateWorkspaceOutput`](crate::output::UpdateWorkspaceOutput) with field(s):
     ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::UpdateWorkspaceOutput::workspace): <p>A structure containing data about the workspace that was created.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkspaceError>`](crate::error::UpdateWorkspaceError)
@@ -291,7 +307,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspaceAuthentication::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::UpdateWorkspaceAuthentication::set_workspace_id): <p>The ID of the workspace to update the authentication for.</p>
-    ///   - [`authentication_providers(Vec<AuthenticationProviderTypes>)`](crate::client::fluent_builders::UpdateWorkspaceAuthentication::authentication_providers) / [`set_authentication_providers(Option<Vec<AuthenticationProviderTypes>>)`](crate::client::fluent_builders::UpdateWorkspaceAuthentication::set_authentication_providers): <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    ///   - [`authentication_providers(Vec<AuthenticationProviderTypes>)`](crate::client::fluent_builders::UpdateWorkspaceAuthentication::authentication_providers) / [`set_authentication_providers(Option<Vec<AuthenticationProviderTypes>>)`](crate::client::fluent_builders::UpdateWorkspaceAuthentication::set_authentication_providers): <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
     ///   - [`saml_configuration(SamlConfiguration)`](crate::client::fluent_builders::UpdateWorkspaceAuthentication::saml_configuration) / [`set_saml_configuration(Option<SamlConfiguration>)`](crate::client::fluent_builders::UpdateWorkspaceAuthentication::set_saml_configuration): <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
     /// - On success, responds with [`UpdateWorkspaceAuthenticationOutput`](crate::output::UpdateWorkspaceAuthenticationOutput) with field(s):
     ///   - [`authentication(Option<AuthenticationDescription>)`](crate::output::UpdateWorkspaceAuthenticationOutput::authentication): <p>A structure that describes the user authentication for this workspace after the update is made.</p>
@@ -300,6 +316,17 @@ impl Client {
         &self,
     ) -> fluent_builders::UpdateWorkspaceAuthentication {
         fluent_builders::UpdateWorkspaceAuthentication::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateWorkspaceConfiguration`](crate::client::fluent_builders::UpdateWorkspaceConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspaceConfiguration::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::UpdateWorkspaceConfiguration::set_configuration): <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspaceConfiguration::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::UpdateWorkspaceConfiguration::set_workspace_id): <p>The ID of the workspace to update.</p>
+    /// - On success, responds with [`UpdateWorkspaceConfigurationOutput`](crate::output::UpdateWorkspaceConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateWorkspaceConfigurationError>`](crate::error::UpdateWorkspaceConfigurationError)
+    pub fn update_workspace_configuration(&self) -> fluent_builders::UpdateWorkspaceConfiguration {
+        fluent_builders::UpdateWorkspaceConfiguration::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -494,14 +521,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_role_name(input);
             self
         }
-        /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>
+        /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>
         /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
         pub fn permission_type(mut self, input: crate::model::PermissionType) -> Self {
             self.inner = self.inner.permission_type(input);
             self
         }
-        /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>
+        /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>
         /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
         pub fn set_permission_type(
@@ -628,7 +655,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_authentication_providers`](Self::set_authentication_providers).
         ///
-        /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+        /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
         pub fn authentication_providers(
             mut self,
             input: crate::model::AuthenticationProviderTypes,
@@ -636,7 +663,7 @@ pub mod fluent_builders {
             self.inner = self.inner.authentication_providers(input);
             self
         }
-        /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+        /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
         pub fn set_authentication_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
@@ -667,10 +694,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+        pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
+            self.inner = self.inner.vpc_configuration(input);
+            self
+        }
+        /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_configuration(input);
+            self
+        }
+        /// <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration(input.into());
+            self
+        }
+        /// <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateWorkspaceApiKey`.
     ///
-    /// <p>Creates an API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html"> https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example requests.</p>
+    /// <p>Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example requests.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkspaceApiKey {
         handle: std::sync::Arc<super::Handle>,
@@ -730,24 +783,24 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
+        /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
         pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key_name(input.into());
             self
         }
-        /// <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
+        /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key_name(input);
             self
         }
         /// <p>Specifies the permission level of the key.</p>
-        /// <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+        /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
         pub fn key_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key_role(input.into());
             self
         }
         /// <p>Specifies the permission level of the key.</p>
-        /// <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+        /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
         pub fn set_key_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key_role(input);
             self
@@ -762,12 +815,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_seconds_to_live(input);
             self
         }
-        /// <p>The ID of the workspace in which to create an API key.</p>
+        /// <p>The ID of the workspace to create an API key.</p>
         pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workspace_id(input.into());
             self
         }
-        /// <p>The ID of the workspace in which to create an API key.</p>
+        /// <p>The ID of the workspace to create an API key.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workspace_id(input);
             self
@@ -848,7 +901,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteWorkspaceApiKey`.
     ///
-    /// <p>Deletes an API key for a workspace.</p>
+    /// <p>Deletes a Grafana API key for the workspace.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkspaceApiKey {
         handle: std::sync::Arc<super::Handle>,
@@ -1075,6 +1128,79 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeWorkspaceConfiguration`.
+    ///
+    /// <p>Gets the current configuration string for the given workspace.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeWorkspaceConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_workspace_configuration_input::Builder,
+    }
+    impl DescribeWorkspaceConfiguration {
+        /// Creates a new `DescribeWorkspaceConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeWorkspaceConfiguration,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeWorkspaceConfigurationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeWorkspaceConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeWorkspaceConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the workspace to get configuration information for.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// <p>The ID of the workspace to get configuration information for.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DisassociateLicense`.
     ///
     /// <p>Removes the Grafana Enterprise license from a workspace.</p>
@@ -1249,12 +1375,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of Amazon Web Services SSO users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups are returned.</p>
+        /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
         pub fn user_type(mut self, input: crate::model::UserType) -> Self {
             self.inner = self.inner.user_type(input);
             self
         }
-        /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of Amazon Web Services SSO users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups are returned.</p>
+        /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
         pub fn set_user_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
             self.inner = self.inner.set_user_type(input);
             self
@@ -1732,7 +1858,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorkspace`.
     ///
     /// <p>Modifies an existing Amazon Managed Grafana workspace. If you use this operation and omit any optional parameters, the existing values of those parameters are not changed.</p>
-    /// <p>To modify the user authentication methods that the workspace uses, such as SAML or Amazon Web Services SSO, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">UpdateWorkspaceAuthentication</a>.</p>
+    /// <p>To modify the user authentication methods that the workspace uses, such as SAML or IAM Identity Center, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">UpdateWorkspaceAuthentication</a>.</p>
     /// <p>To modify which users in the workspace have the <code>Admin</code> and <code>Editor</code> Grafana roles, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkspace {
@@ -1957,6 +2083,31 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workspace_role_arn(input);
             self
         }
+        /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+        pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
+            self.inner = self.inner.vpc_configuration(input);
+            self
+        }
+        /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_configuration(input);
+            self
+        }
+        /// <p>Whether to remove the VPC configuration from the workspace.</p>
+        /// <p>Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.</p>
+        pub fn remove_vpc_configuration(mut self, input: bool) -> Self {
+            self.inner = self.inner.remove_vpc_configuration(input);
+            self
+        }
+        /// <p>Whether to remove the VPC configuration from the workspace.</p>
+        /// <p>Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.</p>
+        pub fn set_remove_vpc_configuration(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_remove_vpc_configuration(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateWorkspaceAuthentication`.
     ///
@@ -2034,7 +2185,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_authentication_providers`](Self::set_authentication_providers).
         ///
-        /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+        /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
         pub fn authentication_providers(
             mut self,
             input: crate::model::AuthenticationProviderTypes,
@@ -2042,7 +2193,7 @@ pub mod fluent_builders {
             self.inner = self.inner.authentication_providers(input);
             self
         }
-        /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+        /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
         pub fn set_authentication_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
@@ -2061,6 +2212,92 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::SamlConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_saml_configuration(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateWorkspaceConfiguration`.
+    ///
+    /// <p>Updates the configuration string for the given workspace</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateWorkspaceConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_workspace_configuration_input::Builder,
+    }
+    impl UpdateWorkspaceConfiguration {
+        /// Creates a new `UpdateWorkspaceConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateWorkspaceConfiguration,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateWorkspaceConfigurationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateWorkspaceConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateWorkspaceConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration(input.into());
+            self
+        }
+        /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration(input);
+            self
+        }
+        /// <p>The ID of the workspace to update.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// <p>The ID of the workspace to update.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
             self
         }
     }

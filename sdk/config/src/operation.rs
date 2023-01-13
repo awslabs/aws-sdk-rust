@@ -2093,6 +2093,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceConfigHistory
     }
 }
 
+/// Operation shape for `GetResourceEvaluationSummary`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_resource_evaluation_summary`](crate::client::Client::get_resource_evaluation_summary).
+///
+/// See [`crate::client::fluent_builders::GetResourceEvaluationSummary`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetResourceEvaluationSummary {
+    _private: (),
+}
+impl GetResourceEvaluationSummary {
+    /// Creates a new builder-style object to manufacture [`GetResourceEvaluationSummaryInput`](crate::input::GetResourceEvaluationSummaryInput).
+    pub fn builder() -> crate::input::get_resource_evaluation_summary_input::Builder {
+        crate::input::get_resource_evaluation_summary_input::Builder::default()
+    }
+    /// Creates a new `GetResourceEvaluationSummary` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetResourceEvaluationSummary {
+    type Output = std::result::Result<
+        crate::output::GetResourceEvaluationSummaryOutput,
+        crate::error::GetResourceEvaluationSummaryError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_resource_evaluation_summary_error(response)
+        } else {
+            crate::operation_deser::parse_get_resource_evaluation_summary_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetStoredQuery`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2223,6 +2257,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDiscoveredResources 
             crate::operation_deser::parse_list_discovered_resources_error(response)
         } else {
             crate::operation_deser::parse_list_discovered_resources_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListResourceEvaluations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_resource_evaluations`](crate::client::Client::list_resource_evaluations).
+///
+/// See [`crate::client::fluent_builders::ListResourceEvaluations`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListResourceEvaluations {
+    _private: (),
+}
+impl ListResourceEvaluations {
+    /// Creates a new builder-style object to manufacture [`ListResourceEvaluationsInput`](crate::input::ListResourceEvaluationsInput).
+    pub fn builder() -> crate::input::list_resource_evaluations_input::Builder {
+        crate::input::list_resource_evaluations_input::Builder::default()
+    }
+    /// Creates a new `ListResourceEvaluations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListResourceEvaluations {
+    type Output = std::result::Result<
+        crate::output::ListResourceEvaluationsOutput,
+        crate::error::ListResourceEvaluationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_resource_evaluations_error(response)
+        } else {
+            crate::operation_deser::parse_list_resource_evaluations_response(response)
         }
     }
 }
@@ -2965,6 +3033,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRemediationExecutio
             crate::operation_deser::parse_start_remediation_execution_error(response)
         } else {
             crate::operation_deser::parse_start_remediation_execution_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartResourceEvaluation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_resource_evaluation`](crate::client::Client::start_resource_evaluation).
+///
+/// See [`crate::client::fluent_builders::StartResourceEvaluation`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct StartResourceEvaluation {
+    _private: (),
+}
+impl StartResourceEvaluation {
+    /// Creates a new builder-style object to manufacture [`StartResourceEvaluationInput`](crate::input::StartResourceEvaluationInput).
+    pub fn builder() -> crate::input::start_resource_evaluation_input::Builder {
+        crate::input::start_resource_evaluation_input::Builder::default()
+    }
+    /// Creates a new `StartResourceEvaluation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartResourceEvaluation {
+    type Output = std::result::Result<
+        crate::output::StartResourceEvaluationOutput,
+        crate::error::StartResourceEvaluationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_resource_evaluation_error(response)
+        } else {
+            crate::operation_deser::parse_start_resource_evaluation_response(response)
         }
     }
 }

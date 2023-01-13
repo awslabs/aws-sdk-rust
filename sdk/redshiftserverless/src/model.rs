@@ -43,6 +43,9 @@ pub struct Workgroup {
     /// <p>The creation date of the workgroup.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+    #[doc(hidden)]
+    pub port: std::option::Option<i32>,
 }
 impl Workgroup {
     /// <p>The unique identifier of the workgroup.</p>
@@ -97,6 +100,10 @@ impl Workgroup {
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
+    /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
 }
 /// See [`Workgroup`](crate::model::Workgroup).
 pub mod workgroup {
@@ -118,6 +125,7 @@ pub mod workgroup {
         pub(crate) endpoint: std::option::Option<crate::model::Endpoint>,
         pub(crate) publicly_accessible: std::option::Option<bool>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) port: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The unique identifier of the workgroup.</p>
@@ -292,6 +300,16 @@ pub mod workgroup {
             self.creation_date = input;
             self
         }
+        /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Workgroup`](crate::model::Workgroup).
         pub fn build(self) -> crate::model::Workgroup {
             crate::model::Workgroup {
@@ -308,6 +326,7 @@ pub mod workgroup {
                 endpoint: self.endpoint,
                 publicly_accessible: self.publicly_accessible,
                 creation_date: self.creation_date,
+                port: self.port,
             }
         }
     }
@@ -1929,6 +1948,353 @@ impl AsRef<str> for SnapshotStatus {
     }
 }
 
+/// <p>Contains information about a table restore request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TableRestoreStatus {
+    /// <p>The ID of the RestoreTableFromSnapshot request.</p>
+    #[doc(hidden)]
+    pub table_restore_request_id: std::option::Option<std::string::String>,
+    /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<std::string::String>,
+    /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
+    #[doc(hidden)]
+    pub request_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The namespace of the table being restored from.</p>
+    #[doc(hidden)]
+    pub namespace_name: std::option::Option<std::string::String>,
+    /// <p>The name of the workgroup being restored from.</p>
+    #[doc(hidden)]
+    pub workgroup_name: std::option::Option<std::string::String>,
+    /// <p>The name of the snapshot being restored from.</p>
+    #[doc(hidden)]
+    pub snapshot_name: std::option::Option<std::string::String>,
+    /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
+    #[doc(hidden)]
+    pub progress_in_mega_bytes: std::option::Option<i64>,
+    /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
+    #[doc(hidden)]
+    pub total_data_in_mega_bytes: std::option::Option<i64>,
+    /// <p>The name of the source database being restored from.</p>
+    #[doc(hidden)]
+    pub source_database_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source schema being restored from.</p>
+    #[doc(hidden)]
+    pub source_schema_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source table being restored from.</p>
+    #[doc(hidden)]
+    pub source_table_name: std::option::Option<std::string::String>,
+    /// <p>The name of the database to restore to.</p>
+    #[doc(hidden)]
+    pub target_database_name: std::option::Option<std::string::String>,
+    /// <p>The name of the schema to restore to.</p>
+    #[doc(hidden)]
+    pub target_schema_name: std::option::Option<std::string::String>,
+    /// <p>The name of the table to create from the restore operation.</p>
+    #[doc(hidden)]
+    pub new_table_name: std::option::Option<std::string::String>,
+}
+impl TableRestoreStatus {
+    /// <p>The ID of the RestoreTableFromSnapshot request.</p>
+    pub fn table_restore_request_id(&self) -> std::option::Option<&str> {
+        self.table_restore_request_id.as_deref()
+    }
+    /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
+    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.request_time.as_ref()
+    }
+    /// <p>The namespace of the table being restored from.</p>
+    pub fn namespace_name(&self) -> std::option::Option<&str> {
+        self.namespace_name.as_deref()
+    }
+    /// <p>The name of the workgroup being restored from.</p>
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+        self.workgroup_name.as_deref()
+    }
+    /// <p>The name of the snapshot being restored from.</p>
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+        self.snapshot_name.as_deref()
+    }
+    /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
+    pub fn progress_in_mega_bytes(&self) -> std::option::Option<i64> {
+        self.progress_in_mega_bytes
+    }
+    /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
+    pub fn total_data_in_mega_bytes(&self) -> std::option::Option<i64> {
+        self.total_data_in_mega_bytes
+    }
+    /// <p>The name of the source database being restored from.</p>
+    pub fn source_database_name(&self) -> std::option::Option<&str> {
+        self.source_database_name.as_deref()
+    }
+    /// <p>The name of the source schema being restored from.</p>
+    pub fn source_schema_name(&self) -> std::option::Option<&str> {
+        self.source_schema_name.as_deref()
+    }
+    /// <p>The name of the source table being restored from.</p>
+    pub fn source_table_name(&self) -> std::option::Option<&str> {
+        self.source_table_name.as_deref()
+    }
+    /// <p>The name of the database to restore to.</p>
+    pub fn target_database_name(&self) -> std::option::Option<&str> {
+        self.target_database_name.as_deref()
+    }
+    /// <p>The name of the schema to restore to.</p>
+    pub fn target_schema_name(&self) -> std::option::Option<&str> {
+        self.target_schema_name.as_deref()
+    }
+    /// <p>The name of the table to create from the restore operation.</p>
+    pub fn new_table_name(&self) -> std::option::Option<&str> {
+        self.new_table_name.as_deref()
+    }
+}
+/// See [`TableRestoreStatus`](crate::model::TableRestoreStatus).
+pub mod table_restore_status {
+
+    /// A builder for [`TableRestoreStatus`](crate::model::TableRestoreStatus).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) table_restore_request_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) request_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) namespace_name: std::option::Option<std::string::String>,
+        pub(crate) workgroup_name: std::option::Option<std::string::String>,
+        pub(crate) snapshot_name: std::option::Option<std::string::String>,
+        pub(crate) progress_in_mega_bytes: std::option::Option<i64>,
+        pub(crate) total_data_in_mega_bytes: std::option::Option<i64>,
+        pub(crate) source_database_name: std::option::Option<std::string::String>,
+        pub(crate) source_schema_name: std::option::Option<std::string::String>,
+        pub(crate) source_table_name: std::option::Option<std::string::String>,
+        pub(crate) target_database_name: std::option::Option<std::string::String>,
+        pub(crate) target_schema_name: std::option::Option<std::string::String>,
+        pub(crate) new_table_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the RestoreTableFromSnapshot request.</p>
+        pub fn table_restore_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_restore_request_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the RestoreTableFromSnapshot request.</p>
+        pub fn set_table_restore_request_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.table_restore_request_id = input;
+            self
+        }
+        /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
+        pub fn request_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.request_time = Some(input);
+            self
+        }
+        /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
+        pub fn set_request_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.request_time = input;
+            self
+        }
+        /// <p>The namespace of the table being restored from.</p>
+        pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace_name = Some(input.into());
+            self
+        }
+        /// <p>The namespace of the table being restored from.</p>
+        pub fn set_namespace_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.namespace_name = input;
+            self
+        }
+        /// <p>The name of the workgroup being restored from.</p>
+        pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workgroup_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the workgroup being restored from.</p>
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
+        }
+        /// <p>The name of the snapshot being restored from.</p>
+        pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the snapshot being restored from.</p>
+        pub fn set_snapshot_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.snapshot_name = input;
+            self
+        }
+        /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
+        pub fn progress_in_mega_bytes(mut self, input: i64) -> Self {
+            self.progress_in_mega_bytes = Some(input);
+            self
+        }
+        /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
+        pub fn set_progress_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
+            self.progress_in_mega_bytes = input;
+            self
+        }
+        /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
+        pub fn total_data_in_mega_bytes(mut self, input: i64) -> Self {
+            self.total_data_in_mega_bytes = Some(input);
+            self
+        }
+        /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
+        pub fn set_total_data_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
+            self.total_data_in_mega_bytes = input;
+            self
+        }
+        /// <p>The name of the source database being restored from.</p>
+        pub fn source_database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_database_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the source database being restored from.</p>
+        pub fn set_source_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_database_name = input;
+            self
+        }
+        /// <p>The name of the source schema being restored from.</p>
+        pub fn source_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_schema_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the source schema being restored from.</p>
+        pub fn set_source_schema_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_schema_name = input;
+            self
+        }
+        /// <p>The name of the source table being restored from.</p>
+        pub fn source_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_table_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the source table being restored from.</p>
+        pub fn set_source_table_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_table_name = input;
+            self
+        }
+        /// <p>The name of the database to restore to.</p>
+        pub fn target_database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_database_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to restore to.</p>
+        pub fn set_target_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_database_name = input;
+            self
+        }
+        /// <p>The name of the schema to restore to.</p>
+        pub fn target_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_schema_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the schema to restore to.</p>
+        pub fn set_target_schema_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_schema_name = input;
+            self
+        }
+        /// <p>The name of the table to create from the restore operation.</p>
+        pub fn new_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_table_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the table to create from the restore operation.</p>
+        pub fn set_new_table_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.new_table_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TableRestoreStatus`](crate::model::TableRestoreStatus).
+        pub fn build(self) -> crate::model::TableRestoreStatus {
+            crate::model::TableRestoreStatus {
+                table_restore_request_id: self.table_restore_request_id,
+                status: self.status,
+                message: self.message,
+                request_time: self.request_time,
+                namespace_name: self.namespace_name,
+                workgroup_name: self.workgroup_name,
+                snapshot_name: self.snapshot_name,
+                progress_in_mega_bytes: self.progress_in_mega_bytes,
+                total_data_in_mega_bytes: self.total_data_in_mega_bytes,
+                source_database_name: self.source_database_name,
+                source_schema_name: self.source_schema_name,
+                source_table_name: self.source_table_name,
+                target_database_name: self.target_database_name,
+                target_schema_name: self.target_schema_name,
+                new_table_name: self.new_table_name,
+            }
+        }
+    }
+}
+impl TableRestoreStatus {
+    /// Creates a new builder-style object to manufacture [`TableRestoreStatus`](crate::model::TableRestoreStatus).
+    pub fn builder() -> crate::model::table_restore_status::Builder {
+        crate::model::table_restore_status::Builder::default()
+    }
+}
+
 /// <p>A collection of database objects and users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2446,6 +2812,9 @@ pub struct RecoveryPoint {
     /// <p>The name of the workgroup the recovery point is associated with.</p>
     #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.</p>
+    #[doc(hidden)]
+    pub namespace_arn: std::option::Option<std::string::String>,
 }
 impl RecoveryPoint {
     /// <p>The unique identifier of the recovery point.</p>
@@ -2468,6 +2837,10 @@ impl RecoveryPoint {
     pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.</p>
+    pub fn namespace_arn(&self) -> std::option::Option<&str> {
+        self.namespace_arn.as_deref()
+    }
 }
 /// See [`RecoveryPoint`](crate::model::RecoveryPoint).
 pub mod recovery_point {
@@ -2480,6 +2853,7 @@ pub mod recovery_point {
         pub(crate) total_size_in_mega_bytes: std::option::Option<f64>,
         pub(crate) namespace_name: std::option::Option<std::string::String>,
         pub(crate) workgroup_name: std::option::Option<std::string::String>,
+        pub(crate) namespace_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier of the recovery point.</p>
@@ -2544,6 +2918,19 @@ pub mod recovery_point {
             self.workgroup_name = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.</p>
+        pub fn namespace_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.</p>
+        pub fn set_namespace_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.namespace_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RecoveryPoint`](crate::model::RecoveryPoint).
         pub fn build(self) -> crate::model::RecoveryPoint {
             crate::model::RecoveryPoint {
@@ -2552,6 +2939,7 @@ pub mod recovery_point {
                 total_size_in_mega_bytes: self.total_size_in_mega_bytes,
                 namespace_name: self.namespace_name,
                 workgroup_name: self.workgroup_name,
+                namespace_arn: self.namespace_arn,
             }
         }
     }

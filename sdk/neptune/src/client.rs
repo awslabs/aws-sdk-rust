@@ -210,6 +210,7 @@ impl Client {
     ///   - [`enable_iam_database_authentication(bool)`](crate::client::fluent_builders::CreateDBCluster::enable_iam_database_authentication) / [`set_enable_iam_database_authentication(Option<bool>)`](crate::client::fluent_builders::CreateDBCluster::set_enable_iam_database_authentication): <p>If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB cluster (this cannot be set at an instance level).</p>  <p>Default: <code>false</code>.</p>
     ///   - [`enable_cloudwatch_logs_exports(Vec<String>)`](crate::client::fluent_builders::CreateDBCluster::enable_cloudwatch_logs_exports) / [`set_enable_cloudwatch_logs_exports(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDBCluster::set_enable_cloudwatch_logs_exports): <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
     ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::CreateDBCluster::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::CreateDBCluster::set_deletion_protection): <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
+    ///   - [`serverless_v2_scaling_configuration(ServerlessV2ScalingConfiguration)`](crate::client::fluent_builders::CreateDBCluster::serverless_v2_scaling_configuration) / [`set_serverless_v2_scaling_configuration(Option<ServerlessV2ScalingConfiguration>)`](crate::client::fluent_builders::CreateDBCluster::set_serverless_v2_scaling_configuration): <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
     ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_global_cluster_identifier): <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
     /// - On success, responds with [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::output::CreateDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
@@ -736,6 +737,7 @@ impl Client {
         fluent_builders::DescribeEventSubscriptions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeGlobalClusters`](crate::client::fluent_builders::DescribeGlobalClusters) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeGlobalClusters::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeGlobalClusters::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::DescribeGlobalClusters::set_global_cluster_identifier): <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>  <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
@@ -852,6 +854,7 @@ impl Client {
     ///   - [`db_instance_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::db_instance_parameter_group_name) / [`set_db_instance_parameter_group_name(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_db_instance_parameter_group_name): <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>   <p>When you apply a parameter group using <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied during the next maintenance window but instead are applied immediately.</p>  </note>  <p>Default: The existing name setting</p>  <p>Constraints:</p>  <ul>   <li> <p>The DB parameter group must be in the same DB parameter group family as the target DB cluster version.</p> </li>   <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li>  </ul>
     ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::ModifyDBCluster::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::ModifyDBCluster::set_deletion_protection): <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.</p>
     ///   - [`copy_tags_to_snapshot(bool)`](crate::client::fluent_builders::ModifyDBCluster::copy_tags_to_snapshot) / [`set_copy_tags_to_snapshot(Option<bool>)`](crate::client::fluent_builders::ModifyDBCluster::set_copy_tags_to_snapshot): <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
+    ///   - [`serverless_v2_scaling_configuration(ServerlessV2ScalingConfiguration)`](crate::client::fluent_builders::ModifyDBCluster::serverless_v2_scaling_configuration) / [`set_serverless_v2_scaling_configuration(Option<ServerlessV2ScalingConfiguration>)`](crate::client::fluent_builders::ModifyDBCluster::set_serverless_v2_scaling_configuration): <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
     /// - On success, responds with [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::output::ModifyDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     /// - On failure, responds with [`SdkError<ModifyDBClusterError>`](crate::error::ModifyDBClusterError)
@@ -1119,6 +1122,7 @@ impl Client {
     ///   - [`db_cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::db_cluster_parameter_group_name) / [`set_db_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_db_cluster_parameter_group_name): <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>  </ul>
     ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_deletion_protection): <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
     ///   - [`copy_tags_to_snapshot(bool)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::copy_tags_to_snapshot) / [`set_copy_tags_to_snapshot(Option<bool>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_copy_tags_to_snapshot): <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the restored DB cluster that is created.</i> </p>
+    ///   - [`serverless_v2_scaling_configuration(ServerlessV2ScalingConfiguration)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::serverless_v2_scaling_configuration) / [`set_serverless_v2_scaling_configuration(Option<ServerlessV2ScalingConfiguration>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_serverless_v2_scaling_configuration): <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
     /// - On success, responds with [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::output::RestoreDbClusterFromSnapshotOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     /// - On failure, responds with [`SdkError<RestoreDBClusterFromSnapshotError>`](crate::error::RestoreDBClusterFromSnapshotError)
@@ -1145,6 +1149,7 @@ impl Client {
     ///   - [`enable_cloudwatch_logs_exports(Vec<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::enable_cloudwatch_logs_exports) / [`set_enable_cloudwatch_logs_exports(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_enable_cloudwatch_logs_exports): <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs.</p>
     ///   - [`db_cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::db_cluster_parameter_group_name) / [`set_db_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_db_cluster_parameter_group_name): <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>  </ul>
     ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_deletion_protection): <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
+    ///   - [`serverless_v2_scaling_configuration(ServerlessV2ScalingConfiguration)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::serverless_v2_scaling_configuration) / [`set_serverless_v2_scaling_configuration(Option<ServerlessV2ScalingConfiguration>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_serverless_v2_scaling_configuration): <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
     /// - On success, responds with [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::output::RestoreDbClusterToPointInTimeOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     /// - On failure, responds with [`SdkError<RestoreDBClusterToPointInTimeError>`](crate::error::RestoreDBClusterToPointInTimeError)
@@ -2573,6 +2578,24 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_deletion_protection(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.inner = self.inner.serverless_v2_scaling_configuration(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
             self
         }
         /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
@@ -7482,6 +7505,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeGlobalClustersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeGlobalClustersPaginator {
+            crate::paginator::DescribeGlobalClustersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
         /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
         pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8590,6 +8619,24 @@ pub mod fluent_builders {
         /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
         pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_copy_tags_to_snapshot(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.inner = self.inner.serverless_v2_scaling_configuration(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
             self
         }
     }
@@ -11194,6 +11241,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.inner = self.inner.serverless_v2_scaling_configuration(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `RestoreDBClusterToPointInTime`.
     ///
@@ -11544,6 +11609,24 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_deletion_protection(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.inner = self.inner.serverless_v2_scaling_configuration(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
             self
         }
     }

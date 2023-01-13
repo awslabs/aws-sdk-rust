@@ -620,6 +620,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomLineItems {
     }
 }
 
+/// Operation shape for `ListCustomLineItemVersions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_custom_line_item_versions`](crate::client::Client::list_custom_line_item_versions).
+///
+/// See [`crate::client::fluent_builders::ListCustomLineItemVersions`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListCustomLineItemVersions {
+    _private: (),
+}
+impl ListCustomLineItemVersions {
+    /// Creates a new builder-style object to manufacture [`ListCustomLineItemVersionsInput`](crate::input::ListCustomLineItemVersionsInput).
+    pub fn builder() -> crate::input::list_custom_line_item_versions_input::Builder {
+        crate::input::list_custom_line_item_versions_input::Builder::default()
+    }
+    /// Creates a new `ListCustomLineItemVersions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListCustomLineItemVersions {
+    type Output = std::result::Result<
+        crate::output::ListCustomLineItemVersionsOutput,
+        crate::error::ListCustomLineItemVersionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_custom_line_item_versions_error(response)
+        } else {
+            crate::operation_deser::parse_list_custom_line_item_versions_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListPricingPlans`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

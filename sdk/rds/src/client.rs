@@ -207,6 +207,7 @@ impl Client {
     ///   - [`total_extracted_data_in_gb(i32)`](crate::output::CancelExportTaskOutput::total_extracted_data_in_gb): <p>The total amount of data exported, in gigabytes.</p>
     ///   - [`failure_cause(Option<String>)`](crate::output::CancelExportTaskOutput::failure_cause): <p>The reason the export failed, if it failed.</p>
     ///   - [`warning_message(Option<String>)`](crate::output::CancelExportTaskOutput::warning_message): <p>A warning about the snapshot export task.</p>
+    ///   - [`source_type(Option<ExportSourceType>)`](crate::output::CancelExportTaskOutput::source_type): <p>The type of source for the export.</p>
     /// - On failure, responds with [`SdkError<CancelExportTaskError>`](crate::error::CancelExportTaskError)
     pub fn cancel_export_task(&self) -> fluent_builders::CancelExportTask {
         fluent_builders::CancelExportTask::new(self.handle.clone())
@@ -259,10 +260,11 @@ impl Client {
     ///   - [`target_db_snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::CopyDBSnapshot::target_db_snapshot_identifier) / [`set_target_db_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::CopyDBSnapshot::set_target_db_snapshot_identifier): <p>The identifier for the copy of the snapshot.</p>  <p>Constraints:</p>  <ul>   <li> <p>Can't be null, empty, or blank</p> </li>   <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>  <p>Example: <code>my-db-snapshot</code> </p>
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CopyDBSnapshot::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CopyDBSnapshot::set_kms_key_id): <p>The Amazon Web Services KMS key identifier for an encrypted DB snapshot. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>  <p>If you copy an encrypted DB snapshot from your Amazon Web Services account, you can specify a value for this parameter to encrypt the copy with a new KMS key. If you don't specify a value for this parameter, then the copy of the DB snapshot is encrypted with the same Amazon Web Services KMS key as the source DB snapshot.</p>  <p>If you copy an encrypted DB snapshot that is shared from another Amazon Web Services account, then you must specify a value for this parameter.</p>  <p>If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.</p>  <p>If you copy an encrypted snapshot to a different Amazon Web Services Region, then you must specify an Amazon Web Services KMS key identifier for the destination Amazon Web Services Region. KMS keys are specific to the Amazon Web Services Region that they are created in, and you can't use KMS keys from one Amazon Web Services Region in another Amazon Web Services Region.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CopyDBSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CopyDBSnapshot::set_tags): <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    ///   - [`copy_tags(bool)`](crate::client::fluent_builders::CopyDBSnapshot::copy_tags) / [`set_copy_tags(Option<bool>)`](crate::client::fluent_builders::CopyDBSnapshot::set_copy_tags): <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags are not copied.</p>
+    ///   - [`copy_tags(bool)`](crate::client::fluent_builders::CopyDBSnapshot::copy_tags) / [`set_copy_tags(Option<bool>)`](crate::client::fluent_builders::CopyDBSnapshot::set_copy_tags): <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't copied.</p>
     ///   - [`pre_signed_url(impl Into<String>)`](crate::client::fluent_builders::CopyDBSnapshot::pre_signed_url) / [`set_pre_signed_url(Option<String>)`](crate::client::fluent_builders::CopyDBSnapshot::set_pre_signed_url): <p>When you are copying a snapshot from one Amazon Web Services GovCloud (US) Region to another, the URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API operation in the source Amazon Web Services Region that contains the source DB snapshot to copy.</p>  <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>  <p>You must specify this parameter when you copy an encrypted DB snapshot from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot in the same Amazon Web Services Region.</p>  <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>  <ul>   <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> operation is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>   <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>   <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p> </li>  </ul>  <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>   <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>  </note>
     ///   - [`option_group_name(impl Into<String>)`](crate::client::fluent_builders::CopyDBSnapshot::option_group_name) / [`set_option_group_name(Option<String>)`](crate::client::fluent_builders::CopyDBSnapshot::set_option_group_name): <p>The name of an option group to associate with the copy of the snapshot.</p>  <p>Specify this option if you are copying a snapshot from one Amazon Web Services Region to another, and your DB instance uses a nondefault option group. If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL Server, you must specify this option when copying across Amazon Web Services Regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option group considerations</a> in the <i>Amazon RDS User Guide</i>.</p>
     ///   - [`target_custom_availability_zone(impl Into<String>)`](crate::client::fluent_builders::CopyDBSnapshot::target_custom_availability_zone) / [`set_target_custom_availability_zone(Option<String>)`](crate::client::fluent_builders::CopyDBSnapshot::set_target_custom_availability_zone): <p>The external custom Availability Zone (CAZ) identifier for the target CAZ.</p>  <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
+    ///   - [`copy_option_group(bool)`](crate::client::fluent_builders::CopyDBSnapshot::copy_option_group) / [`set_copy_option_group(Option<bool>)`](crate::client::fluent_builders::CopyDBSnapshot::set_copy_option_group): <p>A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
     /// - On success, responds with [`CopyDbSnapshotOutput`](crate::output::CopyDbSnapshotOutput) with field(s):
     ///   - [`db_snapshot(Option<DbSnapshot>)`](crate::output::CopyDbSnapshotOutput::db_snapshot): <p>Contains the details of an Amazon RDS DB snapshot.</p>  <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
     /// - On failure, responds with [`SdkError<CopyDBSnapshotError>`](crate::error::CopyDBSnapshotError)
@@ -282,13 +284,29 @@ impl Client {
     pub fn copy_option_group(&self) -> fluent_builders::CopyOptionGroup {
         fluent_builders::CopyOptionGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateBlueGreenDeployment`](crate::client::fluent_builders::CreateBlueGreenDeployment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`blue_green_deployment_name(impl Into<String>)`](crate::client::fluent_builders::CreateBlueGreenDeployment::blue_green_deployment_name) / [`set_blue_green_deployment_name(Option<String>)`](crate::client::fluent_builders::CreateBlueGreenDeployment::set_blue_green_deployment_name): <p>The name of the blue/green deployment.</p>  <p>Constraints:</p>  <ul>   <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>  </ul>
+    ///   - [`source(impl Into<String>)`](crate::client::fluent_builders::CreateBlueGreenDeployment::source) / [`set_source(Option<String>)`](crate::client::fluent_builders::CreateBlueGreenDeployment::set_source): <p>The Amazon Resource Name (ARN) of the source production database.</p>  <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
+    ///   - [`target_engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateBlueGreenDeployment::target_engine_version) / [`set_target_engine_version(Option<String>)`](crate::client::fluent_builders::CreateBlueGreenDeployment::set_target_engine_version): <p>The engine version of the database in the green environment.</p>  <p>Specify the engine version to upgrade to in the green environment.</p>
+    ///   - [`target_db_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateBlueGreenDeployment::target_db_parameter_group_name) / [`set_target_db_parameter_group_name(Option<String>)`](crate::client::fluent_builders::CreateBlueGreenDeployment::set_target_db_parameter_group_name): <p>The DB parameter group associated with the DB instance in the green environment.</p>  <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
+    ///   - [`target_db_cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateBlueGreenDeployment::target_db_cluster_parameter_group_name) / [`set_target_db_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::CreateBlueGreenDeployment::set_target_db_cluster_parameter_group_name): <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>  <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateBlueGreenDeployment::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateBlueGreenDeployment::set_tags): <p>Tags to assign to the blue/green deployment.</p>
+    /// - On success, responds with [`CreateBlueGreenDeploymentOutput`](crate::output::CreateBlueGreenDeploymentOutput) with field(s):
+    ///   - [`blue_green_deployment(Option<BlueGreenDeployment>)`](crate::output::CreateBlueGreenDeploymentOutput::blue_green_deployment): <p>Contains the details about a blue/green deployment.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<CreateBlueGreenDeploymentError>`](crate::error::CreateBlueGreenDeploymentError)
+    pub fn create_blue_green_deployment(&self) -> fluent_builders::CreateBlueGreenDeployment {
+        fluent_builders::CreateBlueGreenDeployment::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateCustomDBEngineVersion`](crate::client::fluent_builders::CreateCustomDBEngineVersion) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`engine(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::engine) / [`set_engine(Option<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::set_engine): <p>The database engine to use for your custom engine version (CEV). The only supported value is <code>custom-oracle-ee</code>.</p>
-    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::set_engine_version): <p>The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::set_engine_version): <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
     ///   - [`database_installation_files_s3_bucket_name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::database_installation_files_s3_bucket_name) / [`set_database_installation_files_s3_bucket_name(Option<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::set_database_installation_files_s3_bucket_name): <p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is <code>my-custom-installation-files</code>.</p>
     ///   - [`database_installation_files_s3_prefix(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::database_installation_files_s3_prefix) / [`set_database_installation_files_s3_prefix(Option<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::set_database_installation_files_s3_prefix): <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
+    ///   - [`image_id(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::image_id) / [`set_image_id(Option<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::set_image_id): <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for SQL Server.</p>
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::set_kms_key_id): <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>  <p>If you have an existing symmetric encryption KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric encryption KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>  <p>You can choose the same symmetric encryption key when you create a CEV and a DB instance, or choose different keys.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::set_description): <p>An optional description of your CEV.</p>
     ///   - [`manifest(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::manifest) / [`set_manifest(Option<String>)`](crate::client::fluent_builders::CreateCustomDBEngineVersion::set_manifest): <p>The CEV manifest, which is a JSON document that describes the installation .zip files stored in Amazon S3. Specify the name/value pairs in a file or a quoted string. RDS Custom applies the patches in the order in which they are listed.</p>  <p>The following JSON fields are valid:</p>  <dl>   <dt>   MediaImportTemplateVersion  </dt>   <dd>    <p>Version of the CEV manifest. The date is in the format <code>YYYY-MM-DD</code>.</p>   </dd>   <dt>   databaseInstallationFileNames  </dt>   <dd>    <p>Ordered list of installation files for the CEV.</p>   </dd>   <dt>   opatchFileNames  </dt>   <dd>    <p>Ordered list of OPatch installers used for the Oracle DB engine.</p>   </dd>   <dt>   psuRuPatchFileNames  </dt>   <dd>    <p>The PSU and RU patches for this CEV.</p>   </dd>   <dt>   OtherPatchFileNames  </dt>   <dd>    <p>The patches that are not in the list of PSU and RU patches. Amazon RDS applies these patches after applying the PSU and RU patches.</p>   </dd>  </dl>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest"> Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -300,6 +318,8 @@ impl Client {
     ///   - [`db_engine_description(Option<String>)`](crate::output::CreateCustomDbEngineVersionOutput::db_engine_description): <p>The description of the database engine.</p>
     ///   - [`db_engine_version_description(Option<String>)`](crate::output::CreateCustomDbEngineVersionOutput::db_engine_version_description): <p>The description of the database engine version.</p>
     ///   - [`default_character_set(Option<CharacterSet>)`](crate::output::CreateCustomDbEngineVersionOutput::default_character_set): <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
+    ///   - [`image(Option<CustomDbEngineVersionAmi>)`](crate::output::CreateCustomDbEngineVersionOutput::image): <p>The EC2 image</p>
+    ///   - [`db_engine_media_type(Option<String>)`](crate::output::CreateCustomDbEngineVersionOutput::db_engine_media_type): <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
     ///   - [`supported_character_sets(Option<Vec<CharacterSet>>)`](crate::output::CreateCustomDbEngineVersionOutput::supported_character_sets): <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     ///   - [`supported_nchar_character_sets(Option<Vec<CharacterSet>>)`](crate::output::CreateCustomDbEngineVersionOutput::supported_nchar_character_sets): <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     ///   - [`valid_upgrade_target(Option<Vec<UpgradeTarget>>)`](crate::output::CreateCustomDbEngineVersionOutput::valid_upgrade_target): <p>A list of engine versions that this database engine version can be upgraded to.</p>
@@ -320,6 +340,9 @@ impl Client {
     ///   - [`create_time(Option<DateTime>)`](crate::output::CreateCustomDbEngineVersionOutput::create_time): <p>The creation time of the DB engine version.</p>
     ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::CreateCustomDbEngineVersionOutput::tag_list): <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     ///   - [`supports_babelfish(bool)`](crate::output::CreateCustomDbEngineVersionOutput::supports_babelfish): <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    ///   - [`custom_db_engine_version_manifest(Option<String>)`](crate::output::CreateCustomDbEngineVersionOutput::custom_db_engine_version_manifest): <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+    ///   - [`supports_certificate_rotation_without_restart(Option<bool>)`](crate::output::CreateCustomDbEngineVersionOutput::supports_certificate_rotation_without_restart): <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    ///   - [`supported_ca_certificate_identifiers(Option<Vec<String>>)`](crate::output::CreateCustomDbEngineVersionOutput::supported_ca_certificate_identifiers): <p>A list of the supported CA certificate identifiers.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<CreateCustomDBEngineVersionError>`](crate::error::CreateCustomDBEngineVersionError)
     pub fn create_custom_db_engine_version(&self) -> fluent_builders::CreateCustomDBEngineVersion {
         fluent_builders::CreateCustomDBEngineVersion::new(self.handle.clone())
@@ -339,7 +362,7 @@ impl Client {
     ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_engine_version): <p>The version number of the database engine to use.</p>  <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>  <p> <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p>  <p>To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora, use the following command:</p>  <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>  <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>  <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p>  <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>  <p> <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code> </p>  <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>  <p> <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code> </p>  <p> <b>Aurora MySQL</b> </p>  <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p> <b>Aurora PostgreSQL</b> </p>  <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon Aurora PostgreSQL releases and engine versions</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p> <b>MySQL</b> </p>  <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p>  <p> <b>PostgreSQL</b> </p>  <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`port(i32)`](crate::client::fluent_builders::CreateDBCluster::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::CreateDBCluster::set_port): <p>The port number on which the instances in the DB cluster accept connections.</p>  <p> <b>RDS for MySQL and Aurora MySQL</b> </p>  <p>Default: <code>3306</code> </p>  <p>Valid values: <code>1150-65535</code> </p>  <p> <b>RDS for PostgreSQL and Aurora PostgreSQL</b> </p>  <p>Default: <code>5432</code> </p>  <p>Valid values: <code>1150-65535</code> </p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`master_username(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::master_username) / [`set_master_username(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_master_username): <p>The name of the master user for the DB cluster.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 16 letters or numbers.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>  </ul>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_master_user_password): <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_master_user_password): <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 8 to 41 characters.</p> </li>   <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>  </ul>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`option_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::option_group_name) / [`set_option_group_name(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_option_group_name): <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>  <p>DB clusters are associated with a default option group that can't be modified.</p>
     ///   - [`preferred_backup_window(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::preferred_backup_window) / [`set_preferred_backup_window(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_preferred_backup_window): <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"> Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>   <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>   <li> <p>Must not conflict with the preferred maintenance window.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>  </ul>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>  <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"> Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>  <p>Constraints: Minimum 30-minute window.</p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -363,7 +386,7 @@ impl Client {
     ///   - [`db_cluster_instance_class(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::db_cluster_instance_class) / [`set_db_cluster_instance_class(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_db_cluster_instance_class): <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>  <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>This setting is required to create a Multi-AZ DB cluster.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`allocated_storage(i32)`](crate::client::fluent_builders::CreateDBCluster::allocated_storage) / [`set_allocated_storage(Option<i32>)`](crate::client::fluent_builders::CreateDBCluster::set_allocated_storage): <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>  <p>This setting is required to create a Multi-AZ DB cluster.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_storage_type): <p>Specifies the storage type to be associated with the DB cluster.</p>  <p>This setting is required to create a Multi-AZ DB cluster.</p>  <p>Valid values: <code>io1</code> </p>  <p>When specified, a value for the <code>Iops</code> parameter is required.</p>  <p>Default: <code>io1</code> </p>  <p>Valid for: Multi-AZ DB clusters only</p>
-    ///   - [`iops(i32)`](crate::client::fluent_builders::CreateDBCluster::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::CreateDBCluster::set_iops): <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>  <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>This setting is required to create a Multi-AZ DB cluster.</p>  <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
+    ///   - [`iops(i32)`](crate::client::fluent_builders::CreateDBCluster::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::CreateDBCluster::set_iops): <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>  <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>This setting is required to create a Multi-AZ DB cluster.</p>  <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::CreateDBCluster::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::CreateDBCluster::set_publicly_accessible): <p>A value that indicates whether the DB cluster is publicly accessible.</p>  <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>  <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>  <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>  <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>  <ul>   <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>   <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p> </li>  </ul>  <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>  <ul>   <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>   <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p> </li>  </ul>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::CreateDBCluster::auto_minor_version_upgrade) / [`set_auto_minor_version_upgrade(Option<bool>)`](crate::client::fluent_builders::CreateDBCluster::set_auto_minor_version_upgrade): <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window. By default, minor engine upgrades are applied automatically.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`monitoring_interval(i32)`](crate::client::fluent_builders::CreateDBCluster::monitoring_interval) / [`set_monitoring_interval(Option<i32>)`](crate::client::fluent_builders::CreateDBCluster::set_monitoring_interval): <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>  <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than 0.</p>  <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>  <p>Valid for: Multi-AZ DB clusters only</p>
@@ -373,6 +396,9 @@ impl Client {
     ///   - [`performance_insights_retention_period(i32)`](crate::client::fluent_builders::CreateDBCluster::performance_insights_retention_period) / [`set_performance_insights_retention_period(Option<i32>)`](crate::client::fluent_builders::CreateDBCluster::set_performance_insights_retention_period): <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>  <ul>   <li> <p>7</p> </li>   <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>   <li> <p>731</p> </li>  </ul>  <p>For example, the following values are valid:</p>  <ul>   <li> <p>93 (3 months * 31)</p> </li>   <li> <p>341 (11 months * 31)</p> </li>   <li> <p>589 (19 months * 31)</p> </li>   <li> <p>731</p> </li>  </ul>  <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`serverless_v2_scaling_configuration(ServerlessV2ScalingConfiguration)`](crate::client::fluent_builders::CreateDBCluster::serverless_v2_scaling_configuration) / [`set_serverless_v2_scaling_configuration(Option<ServerlessV2ScalingConfiguration>)`](crate::client::fluent_builders::CreateDBCluster::set_serverless_v2_scaling_configuration): <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     ///   - [`network_type(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::network_type) / [`set_network_type(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_network_type): <p>The network type of the DB cluster.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>IPV4</code> </p> </li>   <li> <p> <code>DUAL</code> </p> </li>  </ul>  <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>Valid for: Aurora DB clusters only</p>
+    ///   - [`db_system_id(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::db_system_id) / [`set_db_system_id(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_db_system_id): <p>Reserved for future use.</p>
+    ///   - [`manage_master_user_password(bool)`](crate::client::fluent_builders::CreateDBCluster::manage_master_user_password) / [`set_manage_master_user_password(Option<bool>)`](crate::client::fluent_builders::CreateDBCluster::set_manage_master_user_password): <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>Constraints:</p>  <ul>   <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>  </ul>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    ///   - [`master_user_secret_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::master_user_secret_kms_key_id) / [`set_master_user_secret_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_master_user_secret_kms_key_id): <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>  <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>  <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>  <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>  <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// - On success, responds with [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::output::CreateDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>  <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>  <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>  <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// - On failure, responds with [`SdkError<CreateDBClusterError>`](crate::error::CreateDBClusterError)
@@ -435,11 +461,11 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`db_name(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::db_name) / [`set_db_name(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_db_name): <p>The meaning of this parameter differs according to the database engine you use.</p>  <p> <b>MySQL</b> </p>  <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>   <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>   <li> <p>Can't be a word reserved by the specified database engine</p> </li>  </ul>  <p> <b>MariaDB</b> </p>  <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>   <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>   <li> <p>Can't be a word reserved by the specified database engine</p> </li>  </ul>  <p> <b>PostgreSQL</b> </p>  <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the DB instance.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li>   <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>   <li> <p>Can't be a word reserved by the specified database engine</p> </li>  </ul>  <p> <b>Oracle</b> </p>  <p>The Oracle System ID (SID) of the created DB instance. If you specify <code>null</code>, the default value <code>ORCL</code> is used. You can't specify the string NULL, or any other reserved word, for <code>DBName</code>.</p>  <p>Default: <code>ORCL</code> </p>  <p>Constraints:</p>  <ul>   <li> <p>Can't be longer than 8 characters</p> </li>  </ul>  <p> <b>Amazon RDS Custom for Oracle</b> </p>  <p>The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify a value, the default value is <code>ORCL</code>.</p>  <p>Default: <code>ORCL</code> </p>  <p>Constraints:</p>  <ul>   <li> <p>It must contain 1 to 8 alphanumeric characters.</p> </li>   <li> <p>It must contain a letter.</p> </li>   <li> <p>It can't be a word reserved by the database engine.</p> </li>  </ul>  <p> <b>Amazon RDS Custom for SQL Server</b> </p>  <p>Not applicable. Must be null.</p>  <p> <b>SQL Server</b> </p>  <p>Not applicable. Must be null.</p>  <p> <b>Amazon Aurora MySQL</b> </p>  <p>The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.</p>  <p>Constraints:</p>  <ul>   <li> <p>It must contain 1 to 64 alphanumeric characters.</p> </li>   <li> <p>It can't be a word reserved by the database engine.</p> </li>  </ul>  <p> <b>Amazon Aurora PostgreSQL</b> </p>  <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>  <p>Constraints:</p>  <ul>   <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>   <li> <p>It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>   <li> <p>It can't be a word reserved by the database engine.</p> </li>  </ul>
     ///   - [`db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::db_instance_identifier) / [`set_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_db_instance_identifier): <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>mydbinstance</code> </p>
-    ///   - [`allocated_storage(i32)`](crate::client::fluent_builders::CreateDBInstance::allocated_storage) / [`set_allocated_storage(Option<i32>)`](crate::client::fluent_builders::CreateDBInstance::set_allocated_storage): <p>The amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>  <p>Type: Integer</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.</p>  <p> <b>Amazon RDS Custom</b> </p>  <p>Constraints to the amount of storage for each storage type are the following:</p>  <ul>   <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>   <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>  </ul>  <p> <b>MySQL</b> </p>  <p>Constraints to the amount of storage for each storage type are the following:</p>  <ul>   <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>   <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>   <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>  </ul>  <p> <b>MariaDB</b> </p>  <p>Constraints to the amount of storage for each storage type are the following:</p>  <ul>   <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>   <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>   <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>  </ul>  <p> <b>PostgreSQL</b> </p>  <p>Constraints to the amount of storage for each storage type are the following:</p>  <ul>   <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>   <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>   <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>  </ul>  <p> <b>Oracle</b> </p>  <p>Constraints to the amount of storage for each storage type are the following:</p>  <ul>   <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>   <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>   <li> <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p> </li>  </ul>  <p> <b>SQL Server</b> </p>  <p>Constraints to the amount of storage for each storage type are the following:</p>  <ul>   <li> <p>General Purpose (SSD) storage (gp2):</p>    <ul>     <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p> </li>     <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p> </li>    </ul> </li>   <li> <p>Provisioned IOPS storage (io1):</p>    <ul>     <li> <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p> </li>     <li> <p>Web and Express editions: Must be an integer from 100 to 16384.</p> </li>    </ul> </li>   <li> <p>Magnetic storage (standard):</p>    <ul>     <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p> </li>     <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p> </li>    </ul> </li>  </ul>
+    ///   - [`allocated_storage(i32)`](crate::client::fluent_builders::CreateDBInstance::allocated_storage) / [`set_allocated_storage(Option<i32>)`](crate::client::fluent_builders::CreateDBInstance::set_allocated_storage): <p>The amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>  <p>Type: Integer</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.</p>  <p> <b>Amazon RDS Custom</b> </p>  <p>Constraints to the amount of storage for each storage type are the following:</p>  <ul>   <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>   <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>  </ul>  <p> <b>MySQL</b> </p>  <p>Constraints to the amount of storage for each storage type are the following:</p>  <ul>   <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>   <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>   <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>  </ul>  <p> <b>MariaDB</b> </p>  <p>Constraints to the amount of storage for each storage type are the following:</p>  <ul>   <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>   <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>   <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>  </ul>  <p> <b>PostgreSQL</b> </p>  <p>Constraints to the amount of storage for each storage type are the following:</p>  <ul>   <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>   <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>   <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>  </ul>  <p> <b>Oracle</b> </p>  <p>Constraints to the amount of storage for each storage type are the following:</p>  <ul>   <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>   <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>   <li> <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p> </li>  </ul>  <p> <b>SQL Server</b> </p>  <p>Constraints to the amount of storage for each storage type are the following:</p>  <ul>   <li> <p>General Purpose (SSD) storage (gp2, gp3):</p>    <ul>     <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p> </li>     <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p> </li>    </ul> </li>   <li> <p>Provisioned IOPS storage (io1):</p>    <ul>     <li> <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p> </li>     <li> <p>Web and Express editions: Must be an integer from 100 to 16384.</p> </li>    </ul> </li>   <li> <p>Magnetic storage (standard):</p>    <ul>     <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p> </li>     <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p> </li>    </ul> </li>  </ul>
     ///   - [`db_instance_class(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::db_instance_class) / [`set_db_instance_class(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_db_instance_class): <p>The compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
     ///   - [`engine(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::engine) / [`set_engine(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_engine): <p>The name of the database engine to be used for this instance.</p>  <p>Not every database engine is available for every Amazon Web Services Region.</p>  <p>Valid Values:</p>  <ul>   <li> <p> <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p> </li>   <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li>   <li> <p> <code>aurora-postgresql</code> </p> </li>   <li> <p> <code>custom-oracle-ee (for RDS Custom for Oracle instances)</code> </p> </li>   <li> <p> <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p> </li>   <li> <p> <code>custom-sqlserver-se (for RDS Custom for SQL Server instances)</code> </p> </li>   <li> <p> <code>custom-sqlserver-web (for RDS Custom for SQL Server instances)</code> </p> </li>   <li> <p> <code>mariadb</code> </p> </li>   <li> <p> <code>mysql</code> </p> </li>   <li> <p> <code>oracle-ee</code> </p> </li>   <li> <p> <code>oracle-ee-cdb</code> </p> </li>   <li> <p> <code>oracle-se2</code> </p> </li>   <li> <p> <code>oracle-se2-cdb</code> </p> </li>   <li> <p> <code>postgres</code> </p> </li>   <li> <p> <code>sqlserver-ee</code> </p> </li>   <li> <p> <code>sqlserver-se</code> </p> </li>   <li> <p> <code>sqlserver-ex</code> </p> </li>   <li> <p> <code>sqlserver-web</code> </p> </li>  </ul>
     ///   - [`master_username(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::master_username) / [`set_master_username(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_master_username): <p>The name for the master user.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The name for the master user is managed by the DB cluster.</p>  <p> <b>Amazon RDS</b> </p>  <p>Constraints:</p>  <ul>   <li> <p>Required.</p> </li>   <li> <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>  </ul>
-    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_master_user_password): <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The password for the master user is managed by the DB cluster.</p>  <p> <b>MariaDB</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>Microsoft SQL Server</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p>  <p> <b>MySQL</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>Oracle</b> </p>  <p>Constraints: Must contain from 8 to 30 characters.</p>  <p> <b>PostgreSQL</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p>
+    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_master_user_password): <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The password for the master user is managed by the DB cluster.</p>  <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>  <p> <b>MariaDB</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>Microsoft SQL Server</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p>  <p> <b>MySQL</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>Oracle</b> </p>  <p>Constraints: Must contain from 8 to 30 characters.</p>  <p> <b>PostgreSQL</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p>
     ///   - [`db_security_groups(Vec<String>)`](crate::client::fluent_builders::CreateDBInstance::db_security_groups) / [`set_db_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDBInstance::set_db_security_groups): <p>A list of DB security groups to associate with this DB instance.</p>  <p>This setting applies to the legacy EC2-Classic platform, which is no longer used to create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting instead.</p>
     ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateDBInstance::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDBInstance::set_vpc_security_group_ids): <p>A list of Amazon EC2 VPC security groups to associate with this DB instance.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster.</p>  <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
     ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_availability_zone): <p>The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.</p>  <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>  <p>Example: <code>us-east-1d</code> </p>  <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
@@ -450,17 +476,17 @@ impl Client {
     ///   - [`preferred_backup_window(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::preferred_backup_window) / [`set_preferred_backup_window(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_preferred_backup_window): <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>   <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>   <li> <p>Must not conflict with the preferred maintenance window.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>  </ul>
     ///   - [`port(i32)`](crate::client::fluent_builders::CreateDBInstance::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::CreateDBInstance::set_port): <p>The port number on which the database accepts connections.</p>  <p> <b>MySQL</b> </p>  <p>Default: <code>3306</code> </p>  <p>Valid values: <code>1150-65535</code> </p>  <p>Type: Integer</p>  <p> <b>MariaDB</b> </p>  <p>Default: <code>3306</code> </p>  <p>Valid values: <code>1150-65535</code> </p>  <p>Type: Integer</p>  <p> <b>PostgreSQL</b> </p>  <p>Default: <code>5432</code> </p>  <p>Valid values: <code>1150-65535</code> </p>  <p>Type: Integer</p>  <p> <b>Oracle</b> </p>  <p>Default: <code>1521</code> </p>  <p>Valid values: <code>1150-65535</code> </p>  <p> <b>SQL Server</b> </p>  <p>Default: <code>1433</code> </p>  <p>Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Default: <code>3306</code> </p>  <p>Valid values: <code>1150-65535</code> </p>  <p>Type: Integer</p>
     ///   - [`multi_az(bool)`](crate::client::fluent_builders::CreateDBInstance::multi_az) / [`set_multi_az(Option<bool>)`](crate::client::fluent_builders::CreateDBInstance::set_multi_az): <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
-    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_engine_version): <p>The version number of the database engine to use.</p>  <p>For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>  <p>The following are the database engines and links to information about the major and minor versions that are available with Amazon RDS. Not every database engine is available for every Amazon Web Services Region.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster.</p>  <p> <b>Amazon RDS Custom for Oracle</b> </p>  <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: <code>19.<i>customized_string</i> </code>. An example identifier is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>  <p> <b>Amazon RDS Custom for SQL Server</b> </p>  <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>  <p> <b>MariaDB</b> </p>  <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p>  <p> <b>Microsoft SQL Server</b> </p>  <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>  <p> <b>MySQL</b> </p>  <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p>  <p> <b>Oracle</b> </p>  <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle Database Engine Release Notes</a> in the <i>Amazon RDS User Guide</i>.</p>  <p> <b>PostgreSQL</b> </p>  <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide</i>.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_engine_version): <p>The version number of the database engine to use.</p>  <p>For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>  <p>The following are the database engines and links to information about the major and minor versions that are available with Amazon RDS. Not every database engine is available for every Amazon Web Services Region.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster.</p>  <p> <b>Amazon RDS Custom for Oracle</b> </p>  <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>  <p> <b>Amazon RDS Custom for SQL Server</b> </p>  <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>  <p> <b>MariaDB</b> </p>  <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p>  <p> <b>Microsoft SQL Server</b> </p>  <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>  <p> <b>MySQL</b> </p>  <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p>  <p> <b>Oracle</b> </p>  <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle Database Engine Release Notes</a> in the <i>Amazon RDS User Guide</i>.</p>  <p> <b>PostgreSQL</b> </p>  <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide</i>.</p>
     ///   - [`auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::CreateDBInstance::auto_minor_version_upgrade) / [`set_auto_minor_version_upgrade(Option<bool>)`](crate::client::fluent_builders::CreateDBInstance::set_auto_minor_version_upgrade): <p>A value that indicates whether minor engine upgrades are applied automatically to the DB instance during the maintenance window. By default, minor engine upgrades are applied automatically.</p>  <p>If you create an RDS Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code> to <code>false</code>.</p>
     ///   - [`license_model(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::license_model) / [`set_license_model(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_license_model): <p>License model information for this DB instance.</p>  <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>  <p>This setting doesn't apply to RDS Custom.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable.</p>
-    ///   - [`iops(i32)`](crate::client::fluent_builders::CreateDBInstance::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::CreateDBInstance::set_iops): <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. Storage is managed by the DB cluster.</p>
+    ///   - [`iops(i32)`](crate::client::fluent_builders::CreateDBInstance::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::CreateDBInstance::set_iops): <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. Storage is managed by the DB cluster.</p>
     ///   - [`option_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::option_group_name) / [`set_option_group_name(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_option_group_name): <p>A value that indicates that the DB instance should be associated with the specified option group.</p>  <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance after it is associated with a DB instance.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable.</p>
     ///   - [`character_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::character_set_name) / [`set_character_set_name(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_character_set_name): <p>For supported engines, this value indicates that the DB instance should be associated with the specified <code>CharacterSet</code>.</p>  <p>This setting doesn't apply to RDS Custom. However, if you need to change the character set, you can change it on the database itself.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     ///   - [`nchar_character_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::nchar_character_set_name) / [`set_nchar_character_set_name(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_nchar_character_set_name): <p>The name of the NCHAR character set for the Oracle DB instance.</p>  <p>This parameter doesn't apply to RDS Custom.</p>
     ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::CreateDBInstance::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::CreateDBInstance::set_publicly_accessible): <p>A value that indicates whether the DB instance is publicly accessible.</p>  <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB instance's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>  <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>  <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>  <ul>   <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p> </li>   <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p> </li>  </ul>  <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>  <ul>   <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p> </li>   <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p> </li>  </ul>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDBInstance::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDBInstance::set_tags): <p>Tags to assign to the DB instance.</p>
     ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_db_cluster_identifier): <p>The identifier of the DB cluster that the instance will belong to.</p>  <p>This setting doesn't apply to RDS Custom.</p>
-    ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_storage_type): <p>Specifies the storage type to be associated with the DB instance.</p>  <p>Valid values: <code>standard | gp2 | io1</code> </p>  <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>  <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. Storage is managed by the DB cluster.</p>
+    ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_storage_type): <p>Specifies the storage type to be associated with the DB instance.</p>  <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>  <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>  <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. Storage is managed by the DB cluster.</p>
     ///   - [`tde_credential_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::tde_credential_arn) / [`set_tde_credential_arn(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_tde_credential_arn): <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable.</p>
     ///   - [`tde_credential_password(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::tde_credential_password) / [`set_tde_credential_password(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_tde_credential_password): <p>The password for the given ARN from the key store in order to access the device.</p>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`storage_encrypted(bool)`](crate::client::fluent_builders::CreateDBInstance::storage_encrypted) / [`set_storage_encrypted(Option<bool>)`](crate::client::fluent_builders::CreateDBInstance::set_storage_encrypted): <p>A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.</p>  <p>For RDS Custom instances, either set this parameter to <code>true</code> or leave it unset. If you set this parameter to <code>false</code>, RDS reports an error.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The encryption for DB instances is managed by the DB cluster.</p>
@@ -480,10 +506,14 @@ impl Client {
     ///   - [`processor_features(Vec<ProcessorFeature>)`](crate::client::fluent_builders::CreateDBInstance::processor_features) / [`set_processor_features(Option<Vec<ProcessorFeature>>)`](crate::client::fluent_builders::CreateDBInstance::set_processor_features): <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable.</p>
     ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::CreateDBInstance::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::CreateDBInstance::set_deletion_protection): <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. You can enable or disable deletion protection for the DB cluster. For more information, see <code>CreateDBCluster</code>. DB instances in a DB cluster can be deleted even when deletion protection is enabled for the DB cluster.</p>
     ///   - [`max_allocated_storage(i32)`](crate::client::fluent_builders::CreateDBInstance::max_allocated_storage) / [`set_max_allocated_storage(Option<i32>)`](crate::client::fluent_builders::CreateDBInstance::set_max_allocated_storage): <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>  <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. Storage is managed by the DB cluster.</p>
-    ///   - [`enable_customer_owned_ip(bool)`](crate::client::fluent_builders::CreateDBInstance::enable_customer_owned_ip) / [`set_enable_customer_owned_ip(Option<bool>)`](crate::client::fluent_builders::CreateDBInstance::set_enable_customer_owned_ip): <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>  <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>  <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    ///   - [`enable_customer_owned_ip(bool)`](crate::client::fluent_builders::CreateDBInstance::enable_customer_owned_ip) / [`set_enable_customer_owned_ip(Option<bool>)`](crate::client::fluent_builders::CreateDBInstance::set_enable_customer_owned_ip): <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>  <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>  <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     ///   - [`custom_iam_instance_profile(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::custom_iam_instance_profile) / [`set_custom_iam_instance_profile(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_custom_iam_instance_profile): <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>  <ul>   <li> <p>The profile must exist in your account.</p> </li>   <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>   <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>  </ul>  <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>This setting is required for RDS Custom.</p>
     ///   - [`backup_target(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::backup_target) / [`set_backup_target(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_backup_target): <p>Specifies where automated backups and manual snapshots are stored.</p>  <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     ///   - [`network_type(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::network_type) / [`set_network_type(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_network_type): <p>The network type of the DB instance.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>IPV4</code> </p> </li>   <li> <p> <code>DUAL</code> </p> </li>  </ul>  <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    ///   - [`storage_throughput(i32)`](crate::client::fluent_builders::CreateDBInstance::storage_throughput) / [`set_storage_throughput(Option<i32>)`](crate::client::fluent_builders::CreateDBInstance::set_storage_throughput): <p>Specifies the storage throughput value for the DB instance.</p>  <p>This setting applies only to the <code>gp3</code> storage type.</p>  <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    ///   - [`manage_master_user_password(bool)`](crate::client::fluent_builders::CreateDBInstance::manage_master_user_password) / [`set_manage_master_user_password(Option<bool>)`](crate::client::fluent_builders::CreateDBInstance::set_manage_master_user_password): <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>  <p>Constraints:</p>  <ul>   <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>  </ul>
+    ///   - [`master_user_secret_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::master_user_secret_kms_key_id) / [`set_master_user_secret_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_master_user_secret_kms_key_id): <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>  <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>  <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>  <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>  <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    ///   - [`ca_certificate_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::ca_certificate_identifier) / [`set_ca_certificate_identifier(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_ca_certificate_identifier): <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On success, responds with [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::output::CreateDbInstanceOutput::db_instance): <p>Contains the details of an Amazon RDS DB instance.</p>  <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     /// - On failure, responds with [`SdkError<CreateDBInstanceError>`](crate::error::CreateDBInstanceError)
@@ -507,7 +537,7 @@ impl Client {
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::set_tags): <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     ///   - [`db_subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::db_subnet_group_name) / [`set_db_subnet_group_name(Option<String>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::set_db_subnet_group_name): <p>Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.</p>  <p>Constraints:</p>  <ul>   <li> <p>Can only be specified if the source DB instance identifier specifies a DB instance in another Amazon Web Services Region.</p> </li>   <li> <p>If supplied, must match the name of an existing DBSubnetGroup.</p> </li>   <li> <p>The specified DB subnet group must be in the same Amazon Web Services Region in which the operation is running.</p> </li>   <li> <p>All read replicas in one Amazon Web Services Region that are created from the same source DB instance must either:&gt;</p>    <ul>     <li> <p>Specify DB subnet groups from the same VPC. All these read replicas are created in the same VPC.</p> </li>     <li> <p>Not specify a DB subnet group. All these read replicas are created outside of any VPC.</p> </li>    </ul> </li>  </ul>  <p>Example: <code>mydbsubnetgroup</code> </p>
     ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::set_vpc_security_group_ids): <p>A list of Amazon EC2 VPC security groups to associate with the read replica.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
-    ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::set_storage_type): <p>Specifies the storage type to be associated with the read replica.</p>  <p>Valid values: <code>standard | gp2 | io1</code> </p>  <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>  <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+    ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::set_storage_type): <p>Specifies the storage type to be associated with the read replica.</p>  <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>  <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>  <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     ///   - [`copy_tags_to_snapshot(bool)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::copy_tags_to_snapshot) / [`set_copy_tags_to_snapshot(Option<bool>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::set_copy_tags_to_snapshot): <p>A value that indicates whether to copy all tags from the read replica to snapshots of the read replica. By default, tags are not copied.</p>
     ///   - [`monitoring_interval(i32)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::monitoring_interval) / [`set_monitoring_interval(Option<i32>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::set_monitoring_interval): <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the read replica. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>  <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
     ///   - [`monitoring_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::monitoring_role_arn) / [`set_monitoring_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::set_monitoring_role_arn): <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>  <p>This setting doesn't apply to RDS Custom.</p>
@@ -527,6 +557,9 @@ impl Client {
     ///   - [`max_allocated_storage(i32)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::max_allocated_storage) / [`set_max_allocated_storage(Option<i32>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::set_max_allocated_storage): <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>  <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     ///   - [`custom_iam_instance_profile(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::custom_iam_instance_profile) / [`set_custom_iam_instance_profile(Option<String>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::set_custom_iam_instance_profile): <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>  <ul>   <li> <p>The profile must exist in your account.</p> </li>   <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>   <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>  </ul>  <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>This setting is required for RDS Custom.</p>
     ///   - [`network_type(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::network_type) / [`set_network_type(Option<String>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::set_network_type): <p>The network type of the DB instance.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>IPV4</code> </p> </li>   <li> <p> <code>DUAL</code> </p> </li>  </ul>  <p>The network type is determined by the <code>DBSubnetGroup</code> specified for read replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    ///   - [`storage_throughput(i32)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::storage_throughput) / [`set_storage_throughput(Option<i32>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::set_storage_throughput): <p>Specifies the storage throughput value for the read replica.</p>  <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    ///   - [`enable_customer_owned_ip(bool)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::enable_customer_owned_ip) / [`set_enable_customer_owned_ip(Option<bool>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::set_enable_customer_owned_ip): <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>  <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>  <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    ///   - [`allocated_storage(i32)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::allocated_storage) / [`set_allocated_storage(Option<i32>)`](crate::client::fluent_builders::CreateDBInstanceReadReplica::set_allocated_storage): <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>   <p>Be sure to allocate enough memory for your read replica so that the create operation can succeed. You can also allocate additional memory for future growth.</p>  </note>
     /// - On success, responds with [`CreateDbInstanceReadReplicaOutput`](crate::output::CreateDbInstanceReadReplicaOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::output::CreateDbInstanceReadReplicaOutput::db_instance): <p>Contains the details of an Amazon RDS DB instance.</p>  <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     /// - On failure, responds with [`SdkError<CreateDBInstanceReadReplicaError>`](crate::error::CreateDBInstanceReadReplicaError)
@@ -663,6 +696,17 @@ impl Client {
     pub fn create_option_group(&self) -> fluent_builders::CreateOptionGroup {
         fluent_builders::CreateOptionGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteBlueGreenDeployment`](crate::client::fluent_builders::DeleteBlueGreenDeployment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`blue_green_deployment_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteBlueGreenDeployment::blue_green_deployment_identifier) / [`set_blue_green_deployment_identifier(Option<String>)`](crate::client::fluent_builders::DeleteBlueGreenDeployment::set_blue_green_deployment_identifier): <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>  <p>Constraints: </p>  <ul>   <li> <p>Must match an existing blue/green deployment identifier.</p> </li>  </ul>
+    ///   - [`delete_target(bool)`](crate::client::fluent_builders::DeleteBlueGreenDeployment::delete_target) / [`set_delete_target(Option<bool>)`](crate::client::fluent_builders::DeleteBlueGreenDeployment::set_delete_target): <p>A value that indicates whether to delete the resources in the green environment.</p>
+    /// - On success, responds with [`DeleteBlueGreenDeploymentOutput`](crate::output::DeleteBlueGreenDeploymentOutput) with field(s):
+    ///   - [`blue_green_deployment(Option<BlueGreenDeployment>)`](crate::output::DeleteBlueGreenDeploymentOutput::blue_green_deployment): <p>Contains the details about a blue/green deployment.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<DeleteBlueGreenDeploymentError>`](crate::error::DeleteBlueGreenDeploymentError)
+    pub fn delete_blue_green_deployment(&self) -> fluent_builders::DeleteBlueGreenDeployment {
+        fluent_builders::DeleteBlueGreenDeployment::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteCustomDBEngineVersion`](crate::client::fluent_builders::DeleteCustomDBEngineVersion) operation.
     ///
     /// - The fluent builder is configurable:
@@ -675,6 +719,8 @@ impl Client {
     ///   - [`db_engine_description(Option<String>)`](crate::output::DeleteCustomDbEngineVersionOutput::db_engine_description): <p>The description of the database engine.</p>
     ///   - [`db_engine_version_description(Option<String>)`](crate::output::DeleteCustomDbEngineVersionOutput::db_engine_version_description): <p>The description of the database engine version.</p>
     ///   - [`default_character_set(Option<CharacterSet>)`](crate::output::DeleteCustomDbEngineVersionOutput::default_character_set): <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
+    ///   - [`image(Option<CustomDbEngineVersionAmi>)`](crate::output::DeleteCustomDbEngineVersionOutput::image): <p>The EC2 image</p>
+    ///   - [`db_engine_media_type(Option<String>)`](crate::output::DeleteCustomDbEngineVersionOutput::db_engine_media_type): <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
     ///   - [`supported_character_sets(Option<Vec<CharacterSet>>)`](crate::output::DeleteCustomDbEngineVersionOutput::supported_character_sets): <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     ///   - [`supported_nchar_character_sets(Option<Vec<CharacterSet>>)`](crate::output::DeleteCustomDbEngineVersionOutput::supported_nchar_character_sets): <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     ///   - [`valid_upgrade_target(Option<Vec<UpgradeTarget>>)`](crate::output::DeleteCustomDbEngineVersionOutput::valid_upgrade_target): <p>A list of engine versions that this database engine version can be upgraded to.</p>
@@ -695,6 +741,9 @@ impl Client {
     ///   - [`create_time(Option<DateTime>)`](crate::output::DeleteCustomDbEngineVersionOutput::create_time): <p>The creation time of the DB engine version.</p>
     ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::DeleteCustomDbEngineVersionOutput::tag_list): <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     ///   - [`supports_babelfish(bool)`](crate::output::DeleteCustomDbEngineVersionOutput::supports_babelfish): <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    ///   - [`custom_db_engine_version_manifest(Option<String>)`](crate::output::DeleteCustomDbEngineVersionOutput::custom_db_engine_version_manifest): <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+    ///   - [`supports_certificate_rotation_without_restart(Option<bool>)`](crate::output::DeleteCustomDbEngineVersionOutput::supports_certificate_rotation_without_restart): <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    ///   - [`supported_ca_certificate_identifiers(Option<Vec<String>>)`](crate::output::DeleteCustomDbEngineVersionOutput::supported_ca_certificate_identifiers): <p>A list of the supported CA certificate identifiers.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<DeleteCustomDBEngineVersionError>`](crate::error::DeleteCustomDBEngineVersionError)
     pub fn delete_custom_db_engine_version(&self) -> fluent_builders::DeleteCustomDBEngineVersion {
         fluent_builders::DeleteCustomDBEngineVersion::new(self.handle.clone())
@@ -891,6 +940,21 @@ impl Client {
     pub fn describe_account_attributes(&self) -> fluent_builders::DescribeAccountAttributes {
         fluent_builders::DescribeAccountAttributes::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeBlueGreenDeployments`](crate::client::fluent_builders::DescribeBlueGreenDeployments) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeBlueGreenDeployments::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`blue_green_deployment_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeBlueGreenDeployments::blue_green_deployment_identifier) / [`set_blue_green_deployment_identifier(Option<String>)`](crate::client::fluent_builders::DescribeBlueGreenDeployments::set_blue_green_deployment_identifier): <p>The blue/green deployment identifier. If this parameter is specified, information from only the specific blue/green deployment is returned. This parameter isn't case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match an existing blue/green deployment identifier.</p> </li>  </ul>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeBlueGreenDeployments::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeBlueGreenDeployments::set_filters): <p>A filter that specifies one or more blue/green deployments to describe.</p>  <p>Supported filters:</p>  <ul>   <li> <p> <code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p> </li>   <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p> </li>   <li> <p> <code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p> </li>   <li> <p> <code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p> </li>  </ul>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeBlueGreenDeployments::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeBlueGreenDeployments::set_marker): <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeBlueGreenDeployments::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeBlueGreenDeployments::set_max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    /// - On success, responds with [`DescribeBlueGreenDeploymentsOutput`](crate::output::DescribeBlueGreenDeploymentsOutput) with field(s):
+    ///   - [`blue_green_deployments(Option<Vec<BlueGreenDeployment>>)`](crate::output::DescribeBlueGreenDeploymentsOutput::blue_green_deployments): <p>Contains a list of blue/green deployments for the user.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeBlueGreenDeploymentsOutput::marker): <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
+    /// - On failure, responds with [`SdkError<DescribeBlueGreenDeploymentsError>`](crate::error::DescribeBlueGreenDeploymentsError)
+    pub fn describe_blue_green_deployments(&self) -> fluent_builders::DescribeBlueGreenDeployments {
+        fluent_builders::DescribeBlueGreenDeployments::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeCertificates`](crate::client::fluent_builders::DescribeCertificates) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeCertificates::into_paginator).
     ///
@@ -975,7 +1039,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusters::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusters::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::DescribeDBClusters::set_db_cluster_identifier): <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>  </ul>
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusters::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::DescribeDBClusters::set_db_cluster_identifier): <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>  </ul>
     ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeDBClusters::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeDBClusters::set_filters): <p>A filter that specifies one or more DB clusters to describe.</p>  <p>Supported filters:</p>  <ul>   <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>   <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>   <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li>   <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li>  </ul>
     ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeDBClusters::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeDBClusters::set_max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
     ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusters::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeDBClusters::set_marker): <p>An optional pagination token provided by a previous <code>DescribeDBClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -1062,7 +1126,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDBInstances::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeDBInstances::db_instance_identifier) / [`set_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::DescribeDBInstances::set_db_instance_identifier): <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>  </ul>
+    ///   - [`db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeDBInstances::db_instance_identifier) / [`set_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::DescribeDBInstances::set_db_instance_identifier): <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>  </ul>
     ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeDBInstances::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeDBInstances::set_filters): <p>A filter that specifies one or more DB instances to describe.</p>  <p>Supported filters:</p>  <ul>   <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>   <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p> </li>   <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only include information about the DB instances identified by these DB instance resource identifiers.</p> </li>   <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p> </li>   <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p> </li>  </ul>
     ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeDBInstances::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeDBInstances::set_max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
     ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeDBInstances::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeDBInstances::set_marker): <p>An optional pagination token provided by a previous <code>DescribeDBInstances</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -1264,7 +1328,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeEngineDefaultParameters::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`db_parameter_group_family(impl Into<String>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::db_parameter_group_family) / [`set_db_parameter_group_family(Option<String>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::set_db_parameter_group_family): <p>The name of the DB parameter group family.</p>  <p>Valid Values:</p>  <ul>   <li> <p> <code>aurora5.6</code> </p> </li>   <li> <p> <code>aurora-mysql5.7</code> </p> </li>   <li> <p> <code>aurora-mysql8.0</code> </p> </li>   <li> <p> <code>aurora-postgresql10</code> </p> </li>   <li> <p> <code>aurora-postgresql11</code> </p> </li>   <li> <p> <code>aurora-postgresql12</code> </p> </li>   <li> <p> <code>aurora-postgresql13</code> </p> </li>   <li> <p> <code>mariadb10.2</code> </p> </li>   <li> <p> <code>mariadb10.3</code> </p> </li>   <li> <p> <code>mariadb10.4</code> </p> </li>   <li> <p> <code>mariadb10.5</code> </p> </li>   <li> <p> <code>mariadb10.6</code> </p> </li>   <li> <p> <code>mysql5.7</code> </p> </li>   <li> <p> <code>mysql8.0</code> </p> </li>   <li> <p> <code>postgres10</code> </p> </li>   <li> <p> <code>postgres11</code> </p> </li>   <li> <p> <code>postgres12</code> </p> </li>   <li> <p> <code>postgres13</code> </p> </li>   <li> <p> <code>postgres14</code> </p> </li>   <li> <p> <code>sqlserver-ee-11.0</code> </p> </li>   <li> <p> <code>sqlserver-ee-12.0</code> </p> </li>   <li> <p> <code>sqlserver-ee-13.0</code> </p> </li>   <li> <p> <code>sqlserver-ee-14.0</code> </p> </li>   <li> <p> <code>sqlserver-ee-15.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-11.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-12.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-13.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-14.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-15.0</code> </p> </li>   <li> <p> <code>sqlserver-se-11.0</code> </p> </li>   <li> <p> <code>sqlserver-se-12.0</code> </p> </li>   <li> <p> <code>sqlserver-se-13.0</code> </p> </li>   <li> <p> <code>sqlserver-se-14.0</code> </p> </li>   <li> <p> <code>sqlserver-se-15.0</code> </p> </li>   <li> <p> <code>sqlserver-web-11.0</code> </p> </li>   <li> <p> <code>sqlserver-web-12.0</code> </p> </li>   <li> <p> <code>sqlserver-web-13.0</code> </p> </li>   <li> <p> <code>sqlserver-web-14.0</code> </p> </li>   <li> <p> <code>sqlserver-web-15.0</code> </p> </li>  </ul>
+    ///   - [`db_parameter_group_family(impl Into<String>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::db_parameter_group_family) / [`set_db_parameter_group_family(Option<String>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::set_db_parameter_group_family): <p>The name of the DB parameter group family.</p>  <p>Valid Values:</p>  <ul>   <li> <p> <code>aurora5.6</code> </p> </li>   <li> <p> <code>aurora-mysql5.7</code> </p> </li>   <li> <p> <code>aurora-mysql8.0</code> </p> </li>   <li> <p> <code>aurora-postgresql10</code> </p> </li>   <li> <p> <code>aurora-postgresql11</code> </p> </li>   <li> <p> <code>aurora-postgresql12</code> </p> </li>   <li> <p> <code>aurora-postgresql13</code> </p> </li>   <li> <p> <code>aurora-postgresql14</code> </p> </li>   <li> <p> <code>custom-oracle-ee-19</code> </p> </li>   <li> <p> <code>mariadb10.2</code> </p> </li>   <li> <p> <code>mariadb10.3</code> </p> </li>   <li> <p> <code>mariadb10.4</code> </p> </li>   <li> <p> <code>mariadb10.5</code> </p> </li>   <li> <p> <code>mariadb10.6</code> </p> </li>   <li> <p> <code>mysql5.7</code> </p> </li>   <li> <p> <code>mysql8.0</code> </p> </li>   <li> <p> <code>oracle-ee-19</code> </p> </li>   <li> <p> <code>oracle-ee-cdb-19</code> </p> </li>   <li> <p> <code>oracle-ee-cdb-21</code> </p> </li>   <li> <p> <code>oracle-se2-19</code> </p> </li>   <li> <p> <code>oracle-se2-cdb-19</code> </p> </li>   <li> <p> <code>oracle-se2-cdb-21</code> </p> </li>   <li> <p> <code>postgres10</code> </p> </li>   <li> <p> <code>postgres11</code> </p> </li>   <li> <p> <code>postgres12</code> </p> </li>   <li> <p> <code>postgres13</code> </p> </li>   <li> <p> <code>postgres14</code> </p> </li>   <li> <p> <code>sqlserver-ee-11.0</code> </p> </li>   <li> <p> <code>sqlserver-ee-12.0</code> </p> </li>   <li> <p> <code>sqlserver-ee-13.0</code> </p> </li>   <li> <p> <code>sqlserver-ee-14.0</code> </p> </li>   <li> <p> <code>sqlserver-ee-15.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-11.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-12.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-13.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-14.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-15.0</code> </p> </li>   <li> <p> <code>sqlserver-se-11.0</code> </p> </li>   <li> <p> <code>sqlserver-se-12.0</code> </p> </li>   <li> <p> <code>sqlserver-se-13.0</code> </p> </li>   <li> <p> <code>sqlserver-se-14.0</code> </p> </li>   <li> <p> <code>sqlserver-se-15.0</code> </p> </li>   <li> <p> <code>sqlserver-web-11.0</code> </p> </li>   <li> <p> <code>sqlserver-web-12.0</code> </p> </li>   <li> <p> <code>sqlserver-web-13.0</code> </p> </li>   <li> <p> <code>sqlserver-web-14.0</code> </p> </li>   <li> <p> <code>sqlserver-web-15.0</code> </p> </li>  </ul>
     ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::set_filters): <p>This parameter isn't currently supported.</p>
     ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::set_max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
     ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::set_marker): <p>An optional pagination token provided by a previous <code>DescribeEngineDefaultParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -1331,6 +1395,7 @@ impl Client {
     ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeExportTasks::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeExportTasks::set_filters): <p>Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>  <p>Supported filters include the following:</p>  <ul>   <li> <p> <code>export-task-identifier</code> - An identifier for the snapshot export task.</p> </li>   <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p> </li>   <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li>   <li> <p> <code>status</code> - The status of the export task. Must be lowercase. Valid statuses are the following:</p>    <ul>     <li> <p> <code>canceled</code> </p> </li>     <li> <p> <code>canceling</code> </p> </li>     <li> <p> <code>complete</code> </p> </li>     <li> <p> <code>failed</code> </p> </li>     <li> <p> <code>in_progress</code> </p> </li>     <li> <p> <code>starting</code> </p> </li>    </ul> </li>  </ul>
     ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeExportTasks::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeExportTasks::set_marker): <p>An optional pagination token provided by a previous <code>DescribeExportTasks</code> request. If you specify this parameter, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeExportTasks::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeExportTasks::set_max_records): <p>The maximum number of records to include in the response. If more records exist than the specified value, a pagination token called a marker is included in the response. You can use the marker in a later <code>DescribeExportTasks</code> request to retrieve the remaining results.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`source_type(ExportSourceType)`](crate::client::fluent_builders::DescribeExportTasks::source_type) / [`set_source_type(Option<ExportSourceType>)`](crate::client::fluent_builders::DescribeExportTasks::set_source_type): <p>The type of source for the export.</p>
     /// - On success, responds with [`DescribeExportTasksOutput`](crate::output::DescribeExportTasksOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::output::DescribeExportTasksOutput::marker): <p>A pagination token that can be used in a later <code>DescribeExportTasks</code> request. A marker is used for pagination to identify the location to begin output for the next response of <code>DescribeExportTasks</code>.</p>
     ///   - [`export_tasks(Option<Vec<ExportTask>>)`](crate::output::DescribeExportTasksOutput::export_tasks): <p>Information about an export of a snapshot to Amazon S3.</p>
@@ -1567,7 +1632,7 @@ impl Client {
     ///   - [`certificate_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyCertificates::certificate_identifier) / [`set_certificate_identifier(Option<String>)`](crate::client::fluent_builders::ModifyCertificates::set_certificate_identifier): <p>The new default certificate identifier to override the current one with.</p>  <p>To determine the valid values, use the <code>describe-certificates</code> CLI command or the <code>DescribeCertificates</code> API operation.</p>
     ///   - [`remove_customer_override(bool)`](crate::client::fluent_builders::ModifyCertificates::remove_customer_override) / [`set_remove_customer_override(Option<bool>)`](crate::client::fluent_builders::ModifyCertificates::set_remove_customer_override): <p>A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
     /// - On success, responds with [`ModifyCertificatesOutput`](crate::output::ModifyCertificatesOutput) with field(s):
-    ///   - [`certificate(Option<Certificate>)`](crate::output::ModifyCertificatesOutput::certificate): <p>A CA certificate for an Amazon Web Services account.</p>
+    ///   - [`certificate(Option<Certificate>)`](crate::output::ModifyCertificatesOutput::certificate): <p>A CA certificate for an Amazon Web Services account.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<ModifyCertificatesError>`](crate::error::ModifyCertificatesError)
     pub fn modify_certificates(&self) -> fluent_builders::ModifyCertificates {
         fluent_builders::ModifyCertificates::new(self.handle.clone())
@@ -1605,6 +1670,8 @@ impl Client {
     ///   - [`db_engine_description(Option<String>)`](crate::output::ModifyCustomDbEngineVersionOutput::db_engine_description): <p>The description of the database engine.</p>
     ///   - [`db_engine_version_description(Option<String>)`](crate::output::ModifyCustomDbEngineVersionOutput::db_engine_version_description): <p>The description of the database engine version.</p>
     ///   - [`default_character_set(Option<CharacterSet>)`](crate::output::ModifyCustomDbEngineVersionOutput::default_character_set): <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
+    ///   - [`image(Option<CustomDbEngineVersionAmi>)`](crate::output::ModifyCustomDbEngineVersionOutput::image): <p>The EC2 image</p>
+    ///   - [`db_engine_media_type(Option<String>)`](crate::output::ModifyCustomDbEngineVersionOutput::db_engine_media_type): <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
     ///   - [`supported_character_sets(Option<Vec<CharacterSet>>)`](crate::output::ModifyCustomDbEngineVersionOutput::supported_character_sets): <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     ///   - [`supported_nchar_character_sets(Option<Vec<CharacterSet>>)`](crate::output::ModifyCustomDbEngineVersionOutput::supported_nchar_character_sets): <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     ///   - [`valid_upgrade_target(Option<Vec<UpgradeTarget>>)`](crate::output::ModifyCustomDbEngineVersionOutput::valid_upgrade_target): <p>A list of engine versions that this database engine version can be upgraded to.</p>
@@ -1625,6 +1692,9 @@ impl Client {
     ///   - [`create_time(Option<DateTime>)`](crate::output::ModifyCustomDbEngineVersionOutput::create_time): <p>The creation time of the DB engine version.</p>
     ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ModifyCustomDbEngineVersionOutput::tag_list): <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     ///   - [`supports_babelfish(bool)`](crate::output::ModifyCustomDbEngineVersionOutput::supports_babelfish): <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    ///   - [`custom_db_engine_version_manifest(Option<String>)`](crate::output::ModifyCustomDbEngineVersionOutput::custom_db_engine_version_manifest): <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+    ///   - [`supports_certificate_rotation_without_restart(Option<bool>)`](crate::output::ModifyCustomDbEngineVersionOutput::supports_certificate_rotation_without_restart): <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    ///   - [`supported_ca_certificate_identifiers(Option<Vec<String>>)`](crate::output::ModifyCustomDbEngineVersionOutput::supported_ca_certificate_identifiers): <p>A list of the supported CA certificate identifiers.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<ModifyCustomDBEngineVersionError>`](crate::error::ModifyCustomDBEngineVersionError)
     pub fn modify_custom_db_engine_version(&self) -> fluent_builders::ModifyCustomDBEngineVersion {
         fluent_builders::ModifyCustomDBEngineVersion::new(self.handle.clone())
@@ -1633,13 +1703,13 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_db_cluster_identifier): <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>  <p>Constraints: This identifier must match the identifier of an existing DB cluster.</p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    ///   - [`new_db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::new_db_cluster_identifier) / [`set_new_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_new_db_cluster_identifier): <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>   <li> <p>The first character must be a letter</p> </li>   <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>  <p>Example: <code>my-cluster2</code> </p>  <p>Valid for: Aurora DB clusters only</p>
+    ///   - [`new_db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::new_db_cluster_identifier) / [`set_new_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_new_db_cluster_identifier): <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>   <li> <p>The first character must be a letter</p> </li>   <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>  <p>Example: <code>my-cluster2</code> </p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`apply_immediately(bool)`](crate::client::fluent_builders::ModifyDBCluster::apply_immediately) / [`set_apply_immediately(bool)`](crate::client::fluent_builders::ModifyDBCluster::set_apply_immediately): <p>A value that indicates whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this parameter is disabled, changes to the DB cluster are applied during the next maintenance window.</p>  <p>The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If the <code>ApplyImmediately</code> parameter is disabled, then changes to the <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>  <p>By default, this parameter is disabled.</p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`backup_retention_period(i32)`](crate::client::fluent_builders::ModifyDBCluster::backup_retention_period) / [`set_backup_retention_period(Option<i32>)`](crate::client::fluent_builders::ModifyDBCluster::set_backup_retention_period): <p>The number of days for which automated backups are retained. Specify a minimum value of 1.</p>  <p>Default: 1</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be a value from 1 to 35</p> </li>  </ul>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`db_cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::db_cluster_parameter_group_name) / [`set_db_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_db_cluster_parameter_group_name): <p>The name of the DB cluster parameter group to use for the DB cluster.</p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::ModifyDBCluster::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyDBCluster::set_vpc_security_group_ids): <p>A list of VPC security groups that the DB cluster will belong to.</p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`port(i32)`](crate::client::fluent_builders::ModifyDBCluster::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::ModifyDBCluster::set_port): <p>The port number on which the DB cluster accepts connections.</p>  <p>Constraints: Value must be <code>1150-65535</code> </p>  <p>Default: The same port as the original DB cluster.</p>  <p>Valid for: Aurora DB clusters only</p>
-    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_master_user_password): <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_master_user_password): <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 8 to 41 characters.</p> </li>   <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>  </ul>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`option_group_name(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::option_group_name) / [`set_option_group_name(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_option_group_name): <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>  <p>DB clusters are associated with a default option group that can't be modified.</p>
     ///   - [`preferred_backup_window(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::preferred_backup_window) / [`set_preferred_backup_window(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_preferred_backup_window): <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"> Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>   <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>   <li> <p>Must not conflict with the preferred maintenance window.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>  </ul>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>  <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"> Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>  <p>Constraints: Minimum 30-minute window.</p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1659,7 +1729,7 @@ impl Client {
     ///   - [`db_cluster_instance_class(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::db_cluster_instance_class) / [`set_db_cluster_instance_class(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_db_cluster_instance_class): <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>  <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html"> DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`allocated_storage(i32)`](crate::client::fluent_builders::ModifyDBCluster::allocated_storage) / [`set_allocated_storage(Option<i32>)`](crate::client::fluent_builders::ModifyDBCluster::set_allocated_storage): <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>  <p>Type: Integer</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_storage_type): <p>Specifies the storage type to be associated with the DB cluster.</p>  <p>Valid values: <code>io1</code> </p>  <p>When specified, a value for the <code>Iops</code> parameter is required.</p>  <p>Default: <code>io1</code> </p>  <p>Valid for: Multi-AZ DB clusters only</p>
-    ///   - [`iops(i32)`](crate::client::fluent_builders::ModifyDBCluster::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::ModifyDBCluster::set_iops): <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>  <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
+    ///   - [`iops(i32)`](crate::client::fluent_builders::ModifyDBCluster::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::ModifyDBCluster::set_iops): <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>  <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::ModifyDBCluster::auto_minor_version_upgrade) / [`set_auto_minor_version_upgrade(Option<bool>)`](crate::client::fluent_builders::ModifyDBCluster::set_auto_minor_version_upgrade): <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window. By default, minor engine upgrades are applied automatically.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`monitoring_interval(i32)`](crate::client::fluent_builders::ModifyDBCluster::monitoring_interval) / [`set_monitoring_interval(Option<i32>)`](crate::client::fluent_builders::ModifyDBCluster::set_monitoring_interval): <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>  <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than 0.</p>  <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`monitoring_role_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::monitoring_role_arn) / [`set_monitoring_role_arn(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_monitoring_role_arn): <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i> </p>  <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code> value.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
@@ -1668,6 +1738,9 @@ impl Client {
     ///   - [`performance_insights_retention_period(i32)`](crate::client::fluent_builders::ModifyDBCluster::performance_insights_retention_period) / [`set_performance_insights_retention_period(Option<i32>)`](crate::client::fluent_builders::ModifyDBCluster::set_performance_insights_retention_period): <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>  <ul>   <li> <p>7</p> </li>   <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>   <li> <p>731</p> </li>  </ul>  <p>For example, the following values are valid:</p>  <ul>   <li> <p>93 (3 months * 31)</p> </li>   <li> <p>341 (11 months * 31)</p> </li>   <li> <p>589 (19 months * 31)</p> </li>   <li> <p>731</p> </li>  </ul>  <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`serverless_v2_scaling_configuration(ServerlessV2ScalingConfiguration)`](crate::client::fluent_builders::ModifyDBCluster::serverless_v2_scaling_configuration) / [`set_serverless_v2_scaling_configuration(Option<ServerlessV2ScalingConfiguration>)`](crate::client::fluent_builders::ModifyDBCluster::set_serverless_v2_scaling_configuration): <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     ///   - [`network_type(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::network_type) / [`set_network_type(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_network_type): <p>The network type of the DB cluster.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>IPV4</code> </p> </li>   <li> <p> <code>DUAL</code> </p> </li>  </ul>  <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>Valid for: Aurora DB clusters only</p>
+    ///   - [`manage_master_user_password(bool)`](crate::client::fluent_builders::ModifyDBCluster::manage_master_user_password) / [`set_manage_master_user_password(Option<bool>)`](crate::client::fluent_builders::ModifyDBCluster::set_manage_master_user_password): <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>  <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>  <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    ///   - [`rotate_master_user_password(bool)`](crate::client::fluent_builders::ModifyDBCluster::rotate_master_user_password) / [`set_rotate_master_user_password(Option<bool>)`](crate::client::fluent_builders::ModifyDBCluster::set_rotate_master_user_password): <p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>  <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>Constraints:</p>  <ul>   <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>  </ul>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    ///   - [`master_user_secret_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::master_user_secret_kms_key_id) / [`set_master_user_secret_kms_key_id(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_master_user_secret_kms_key_id): <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>  <p>This setting is valid only if both of the following conditions are met:</p>  <ul>   <li> <p>The DB cluster doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB cluster already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key that is used to encrypt the secret.</p> </li>   <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>  </ul>  <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>  <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// - On success, responds with [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::output::ModifyDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>  <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>  <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>  <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// - On failure, responds with [`SdkError<ModifyDBClusterError>`](crate::error::ModifyDBClusterError)
@@ -1729,12 +1802,12 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::db_instance_identifier) / [`set_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_db_instance_identifier): <p>The DB instance identifier. This value is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing DBInstance.</p> </li>  </ul>
     ///   - [`allocated_storage(i32)`](crate::client::fluent_builders::ModifyDBInstance::allocated_storage) / [`set_allocated_storage(Option<i32>)`](crate::client::fluent_builders::ModifyDBInstance::set_allocated_storage): <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>  <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p>  <p>For the valid values for allocated storage for each engine, see <code>CreateDBInstance</code>.</p>
-    ///   - [`db_instance_class(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::db_instance_class) / [`set_db_instance_class(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_db_instance_class): <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>  <p>This setting doesn't apply to RDS Custom for Oracle.</p>  <p>Default: Uses existing setting</p>
+    ///   - [`db_instance_class(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::db_instance_class) / [`set_db_instance_class(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_db_instance_class): <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS"> DB instance class support for RDS Custom for SQL Server</a>.</p>  <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless you specify <code>ApplyImmediately</code> in your request. </p>  <p>Default: Uses existing setting</p>
     ///   - [`db_subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::db_subnet_group_name) / [`set_db_subnet_group_name(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_db_subnet_group_name): <p>The new DB subnet group for the DB instance. You can use this parameter to move your DB instance to a different VPC. If your DB instance isn't in a VPC, you can also use this parameter to move your DB instance into a VPC. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Changing the subnet group causes an outage during the change. The change is applied during the next maintenance window, unless you enable <code>ApplyImmediately</code>.</p>  <p>This parameter doesn't apply to RDS Custom.</p>  <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>  <p>Example: <code>mydbsubnetgroup</code> </p>
     ///   - [`db_security_groups(Vec<String>)`](crate::client::fluent_builders::ModifyDBInstance::db_security_groups) / [`set_db_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyDBInstance::set_db_security_groups): <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match existing DBSecurityGroups.</p> </li>  </ul>
     ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::ModifyDBInstance::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyDBInstance::set_vpc_security_group_ids): <p>A list of Amazon EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied as soon as possible.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match existing VpcSecurityGroupIds.</p> </li>  </ul>
     ///   - [`apply_immediately(bool)`](crate::client::fluent_builders::ModifyDBInstance::apply_immediately) / [`set_apply_immediately(bool)`](crate::client::fluent_builders::ModifyDBInstance::set_apply_immediately): <p>A value that indicates whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By default, this parameter is disabled.</p>  <p>If this parameter is disabled, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot. Review the table of parameters in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of enabling or disabling <code>ApplyImmediately</code> for each modified parameter and to determine when the changes are applied.</p>
-    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_master_user_password): <p>The new password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>  <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>  <p>Default: Uses existing setting</p>  <p> <b>MariaDB</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>Microsoft SQL Server</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p>  <p> <b>MySQL</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>Oracle</b> </p>  <p>Constraints: Must contain from 8 to 30 characters.</p>  <p> <b>PostgreSQL</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p> <note>   <p>Amazon RDS API operations never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>  </note>
+    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_master_user_password): <p>The new password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>  <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>  <p>Default: Uses existing setting</p>  <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>  <p> <b>MariaDB</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>Microsoft SQL Server</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p>  <p> <b>MySQL</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>Oracle</b> </p>  <p>Constraints: Must contain from 8 to 30 characters.</p>  <p> <b>PostgreSQL</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p> <note>   <p>Amazon RDS API operations never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>  </note>
     ///   - [`db_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::db_parameter_group_name) / [`set_db_parameter_group_name(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_db_parameter_group_name): <p>The name of the DB parameter group to apply to the DB instance.</p>  <p>Changing this setting doesn't result in an outage. The parameter group name itself is changed immediately, but the actual parameter changes are not applied until you reboot the instance without failover. In this case, the DB instance isn't rebooted automatically, and the parameter changes aren't applied during the next maintenance window. However, if you modify dynamic parameters in the newly associated DB parameter group, these changes are applied immediately without a reboot.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>Default: Uses existing setting</p>  <p>Constraints: The DB parameter group must be in the same DB parameter group family as the DB instance.</p>
     ///   - [`backup_retention_period(i32)`](crate::client::fluent_builders::ModifyDBInstance::backup_retention_period) / [`set_backup_retention_period(Option<i32>)`](crate::client::fluent_builders::ModifyDBInstance::set_backup_retention_period): <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p> <note>   <p>Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few minutes, depending on the size and class of your DB instance.</p>  </note>  <p>These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If you change the parameter from one non-zero value to another non-zero value, the change is asynchronously applied as soon as possible.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The retention period for automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>  <p>Default: Uses existing setting</p>  <p>Constraints:</p>  <ul>   <li> <p>It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It can't be set to 0 for an RDS Custom for Oracle DB instance.</p> </li>   <li> <p>It can be specified for a MySQL read replica only if the source is running MySQL 5.6 or later.</p> </li>   <li> <p>It can be specified for a PostgreSQL read replica only if the source is running PostgreSQL 9.3.5.</p> </li>  </ul>
     ///   - [`preferred_backup_window(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::preferred_backup_window) / [`set_preferred_backup_window(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_preferred_backup_window): <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i> </p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>   <li> <p>Must be in Universal Time Coordinated (UTC)</p> </li>   <li> <p>Must not conflict with the preferred maintenance window</p> </li>   <li> <p>Must be at least 30 minutes</p> </li>  </ul>
@@ -1747,10 +1820,10 @@ impl Client {
     ///   - [`iops(i32)`](crate::client::fluent_builders::ModifyDBInstance::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::ModifyDBInstance::set_iops): <p>The new Provisioned IOPS (I/O operations per second) value for the RDS instance.</p>  <p>Changing this setting doesn't result in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If you are migrating from Provisioned IOPS to standard storage, set this value to 0. The DB instance will require a reboot for the change in storage type to take effect.</p>  <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>  <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p>  <p>Default: Uses existing setting</p>
     ///   - [`option_group_name(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::option_group_name) / [`set_option_group_name(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_option_group_name): <p>A value that indicates the DB instance should be associated with the specified option group.</p>  <p>Changing this parameter doesn't result in an outage, with one exception. If the parameter change results in an option group that enables OEM, it can cause a brief period, lasting less than a second, during which new connections are rejected but existing connections aren't interrupted.</p>  <p>The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request.</p>  <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance after it is associated with a DB instance.</p>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`new_db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::new_db_instance_identifier) / [`set_new_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_new_db_instance_identifier): <p>The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB instance identifier, an instance reboot occurs immediately if you enable <code>ApplyImmediately</code>, or will occur during the next maintenance window if you disable Apply Immediately. This value is stored as a lowercase string.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>mydbinstance</code> </p>
-    ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_storage_type): <p>Specifies the storage type to be associated with the DB instance.</p>  <p>If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the <code>Iops</code> parameter.</p>  <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>  <p>Valid values: <code>standard | gp2 | io1</code> </p>  <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+    ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_storage_type): <p>Specifies the storage type to be associated with the DB instance.</p>  <p>If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the <code>Iops</code> parameter.</p>  <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>  <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>  <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     ///   - [`tde_credential_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::tde_credential_arn) / [`set_tde_credential_arn(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_tde_credential_arn): <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`tde_credential_password(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::tde_credential_password) / [`set_tde_credential_password(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_tde_credential_password): <p>The password for the given ARN from the key store in order to access the device.</p>  <p>This setting doesn't apply to RDS Custom.</p>
-    ///   - [`ca_certificate_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::ca_certificate_identifier) / [`set_ca_certificate_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_ca_certificate_identifier): <p>Specifies the certificate to associate with the DB instance.</p>  <p>This setting doesn't apply to RDS Custom.</p>
+    ///   - [`ca_certificate_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::ca_certificate_identifier) / [`set_ca_certificate_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_ca_certificate_identifier): <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_domain): <p>The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance from its current domain. You must create the domain before this operation. Currently, you can create only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`copy_tags_to_snapshot(bool)`](crate::client::fluent_builders::ModifyDBInstance::copy_tags_to_snapshot) / [`set_copy_tags_to_snapshot(Option<bool>)`](crate::client::fluent_builders::ModifyDBInstance::set_copy_tags_to_snapshot): <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more information, see <code>ModifyDBCluster</code>.</p>
     ///   - [`monitoring_interval(i32)`](crate::client::fluent_builders::ModifyDBInstance::monitoring_interval) / [`set_monitoring_interval(Option<i32>)`](crate::client::fluent_builders::ModifyDBInstance::set_monitoring_interval): <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0, which is the default.</p>  <p>If <code>MonitoringRoleArn</code> is specified, set <code>MonitoringInterval</code> to a value other than 0.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
@@ -1770,11 +1843,15 @@ impl Client {
     ///   - [`max_allocated_storage(i32)`](crate::client::fluent_builders::ModifyDBInstance::max_allocated_storage) / [`set_max_allocated_storage(Option<i32>)`](crate::client::fluent_builders::ModifyDBInstance::set_max_allocated_storage): <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>  <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`certificate_rotation_restart(bool)`](crate::client::fluent_builders::ModifyDBInstance::certificate_rotation_restart) / [`set_certificate_rotation_restart(Option<bool>)`](crate::client::fluent_builders::ModifyDBInstance::set_certificate_rotation_restart): <p>A value that indicates whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>  <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p> <important>   <p>Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.</p>  </important>  <p>If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB engine to rotate your SSL/TLS certificate:</p>  <ul>   <li> <p>For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i> </p> </li>   <li> <p>For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>  </ul>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`replica_mode(ReplicaMode)`](crate::client::fluent_builders::ModifyDBInstance::replica_mode) / [`set_replica_mode(Option<ReplicaMode>)`](crate::client::fluent_builders::ModifyDBInstance::set_replica_mode): <p>A value that sets the open mode of a replica database to either mounted or read-only.</p> <note>   <p>Currently, this parameter is only supported for Oracle DB instances.</p>  </note>  <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>This setting doesn't apply to RDS Custom.</p>
-    ///   - [`enable_customer_owned_ip(bool)`](crate::client::fluent_builders::ModifyDBInstance::enable_customer_owned_ip) / [`set_enable_customer_owned_ip(Option<bool>)`](crate::client::fluent_builders::ModifyDBInstance::set_enable_customer_owned_ip): <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>  <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>  <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    ///   - [`enable_customer_owned_ip(bool)`](crate::client::fluent_builders::ModifyDBInstance::enable_customer_owned_ip) / [`set_enable_customer_owned_ip(Option<bool>)`](crate::client::fluent_builders::ModifyDBInstance::set_enable_customer_owned_ip): <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>  <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>  <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     ///   - [`aws_backup_recovery_point_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::aws_backup_recovery_point_arn) / [`set_aws_backup_recovery_point_arn(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_aws_backup_recovery_point_arn): <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`automation_mode(AutomationMode)`](crate::client::fluent_builders::ModifyDBInstance::automation_mode) / [`set_automation_mode(Option<AutomationMode>)`](crate::client::fluent_builders::ModifyDBInstance::set_automation_mode): <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>ResumeFullAutomationModeMinutes</code>.</p>
     ///   - [`resume_full_automation_mode_minutes(i32)`](crate::client::fluent_builders::ModifyDBInstance::resume_full_automation_mode_minutes) / [`set_resume_full_automation_mode_minutes(Option<i32>)`](crate::client::fluent_builders::ModifyDBInstance::set_resume_full_automation_mode_minutes): <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is <code>60</code> (default). The maximum value is <code>1,440</code>.</p>
     ///   - [`network_type(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::network_type) / [`set_network_type(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_network_type): <p>The network type of the DB instance.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>IPV4</code> </p> </li>   <li> <p> <code>DUAL</code> </p> </li>  </ul>  <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    ///   - [`storage_throughput(i32)`](crate::client::fluent_builders::ModifyDBInstance::storage_throughput) / [`set_storage_throughput(Option<i32>)`](crate::client::fluent_builders::ModifyDBInstance::set_storage_throughput): <p>Specifies the storage throughput value for the DB instance.</p>  <p>This setting applies only to the <code>gp3</code> storage type.</p>  <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    ///   - [`manage_master_user_password(bool)`](crate::client::fluent_builders::ModifyDBInstance::manage_master_user_password) / [`set_manage_master_user_password(Option<bool>)`](crate::client::fluent_builders::ModifyDBInstance::set_manage_master_user_password): <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>  <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>  <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>  <p>Constraints:</p>  <ul>   <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>  </ul>
+    ///   - [`rotate_master_user_password(bool)`](crate::client::fluent_builders::ModifyDBInstance::rotate_master_user_password) / [`set_rotate_master_user_password(Option<bool>)`](crate::client::fluent_builders::ModifyDBInstance::set_rotate_master_user_password): <p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>  <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>  <p>Constraints:</p>  <ul>   <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>  </ul>
+    ///   - [`master_user_secret_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::master_user_secret_kms_key_id) / [`set_master_user_secret_kms_key_id(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_master_user_secret_kms_key_id): <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>  <p>This setting is valid only if both of the following conditions are met:</p>  <ul>   <li> <p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p> </li>   <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>  </ul>  <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>  <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// - On success, responds with [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::output::ModifyDbInstanceOutput::db_instance): <p>Contains the details of an Amazon RDS DB instance.</p>  <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     /// - On failure, responds with [`SdkError<ModifyDBInstanceError>`](crate::error::ModifyDBInstanceError)
@@ -2083,7 +2160,7 @@ impl Client {
     ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_engine_version): <p>The version number of the database engine to use.</p>  <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>  <p> <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p>  <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:</p>  <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>  <p> <b>Aurora MySQL</b> </p>  <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
     ///   - [`port(i32)`](crate::client::fluent_builders::RestoreDBClusterFromS3::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_port): <p>The port number on which the instances in the restored DB cluster accept connections.</p>  <p>Default: <code>3306</code> </p>
     ///   - [`master_username(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::master_username) / [`set_master_username(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_master_username): <p>The name of the master user for the restored DB cluster.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 16 letters or numbers.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>  </ul>
-    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_master_user_password): <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>  <p>Constraints: Must contain from 8 to 41 characters.</p>
+    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_master_user_password): <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 8 to 41 characters.</p> </li>   <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>  </ul>
     ///   - [`option_group_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::option_group_name) / [`set_option_group_name(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_option_group_name): <p>A value that indicates that the restored DB cluster should be associated with the specified option group.</p>  <p>Permanent options can't be removed from an option group. An option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>
     ///   - [`preferred_backup_window(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::preferred_backup_window) / [`set_preferred_backup_window(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_preferred_backup_window): <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"> Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>   <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>   <li> <p>Must not conflict with the preferred maintenance window.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>  </ul>
     ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>  <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>  <p>Constraints: Minimum 30-minute window.</p>
@@ -2104,6 +2181,8 @@ impl Client {
     ///   - [`domain_iam_role_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::domain_iam_role_name) / [`set_domain_iam_role_name(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_domain_iam_role_name): <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
     ///   - [`serverless_v2_scaling_configuration(ServerlessV2ScalingConfiguration)`](crate::client::fluent_builders::RestoreDBClusterFromS3::serverless_v2_scaling_configuration) / [`set_serverless_v2_scaling_configuration(Option<ServerlessV2ScalingConfiguration>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_serverless_v2_scaling_configuration): <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     ///   - [`network_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::network_type) / [`set_network_type(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_network_type): <p>The network type of the DB cluster.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>IPV4</code> </p> </li>   <li> <p> <code>DUAL</code> </p> </li>  </ul>  <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    ///   - [`manage_master_user_password(bool)`](crate::client::fluent_builders::RestoreDBClusterFromS3::manage_master_user_password) / [`set_manage_master_user_password(Option<bool>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_manage_master_user_password): <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>Constraints:</p>  <ul>   <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>  </ul>
+    ///   - [`master_user_secret_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::master_user_secret_kms_key_id) / [`set_master_user_secret_kms_key_id(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_master_user_secret_kms_key_id): <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>  <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>  <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>  <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>  <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// - On success, responds with [`RestoreDbClusterFromS3Output`](crate::output::RestoreDbClusterFromS3Output) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::output::RestoreDbClusterFromS3Output::db_cluster): <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>  <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>  <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>  <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// - On failure, responds with [`SdkError<RestoreDBClusterFromS3Error>`](crate::error::RestoreDBClusterFromS3Error)
@@ -2137,7 +2216,7 @@ impl Client {
     ///   - [`domain_iam_role_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::domain_iam_role_name) / [`set_domain_iam_role_name(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_domain_iam_role_name): <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>  <p>Valid for: Aurora DB clusters only</p>
     ///   - [`db_cluster_instance_class(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::db_cluster_instance_class) / [`set_db_cluster_instance_class(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_db_cluster_instance_class): <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>  <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_storage_type): <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>  <p>Valid values: <code>io1</code> </p>  <p>When specified, a value for the <code>Iops</code> parameter is required.</p>  <p>Default: <code>io1</code> </p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    ///   - [`iops(i32)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_iops): <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>  <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    ///   - [`iops(i32)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_iops): <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>  <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_publicly_accessible): <p>A value that indicates whether the DB cluster is publicly accessible.</p>  <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>  <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>  <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>  <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>  <ul>   <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>   <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p> </li>  </ul>  <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>  <ul>   <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>   <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p> </li>  </ul>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`serverless_v2_scaling_configuration(ServerlessV2ScalingConfiguration)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::serverless_v2_scaling_configuration) / [`set_serverless_v2_scaling_configuration(Option<ServerlessV2ScalingConfiguration>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_serverless_v2_scaling_configuration): <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     ///   - [`network_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::network_type) / [`set_network_type(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_network_type): <p>The network type of the DB cluster.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>IPV4</code> </p> </li>   <li> <p> <code>DUAL</code> </p> </li>  </ul>  <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>Valid for: Aurora DB clusters only</p>
@@ -2176,7 +2255,7 @@ impl Client {
     ///   - [`db_cluster_instance_class(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::db_cluster_instance_class) / [`set_db_cluster_instance_class(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_db_cluster_instance_class): <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>  <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i> </p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_storage_type): <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>  <p>Valid values: <code>io1</code> </p>  <p>When specified, a value for the <code>Iops</code> parameter is required.</p>  <p>Default: <code>io1</code> </p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_publicly_accessible): <p>A value that indicates whether the DB cluster is publicly accessible.</p>  <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>  <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>  <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>  <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>  <ul>   <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>   <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p> </li>  </ul>  <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>  <ul>   <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>   <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p> </li>  </ul>  <p>Valid for: Multi-AZ DB clusters only</p>
-    ///   - [`iops(i32)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_iops): <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>  <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
+    ///   - [`iops(i32)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_iops): <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>  <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`serverless_v2_scaling_configuration(ServerlessV2ScalingConfiguration)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::serverless_v2_scaling_configuration) / [`set_serverless_v2_scaling_configuration(Option<ServerlessV2ScalingConfiguration>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_serverless_v2_scaling_configuration): <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     ///   - [`network_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::network_type) / [`set_network_type(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_network_type): <p>The network type of the DB cluster.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>IPV4</code> </p> </li>   <li> <p> <code>DUAL</code> </p> </li>  </ul>  <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>Valid for: Aurora DB clusters only</p>
     /// - On success, responds with [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput) with field(s):
@@ -2191,7 +2270,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::db_instance_identifier) / [`set_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_db_instance_identifier): <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 numbers, letters, or hyphens</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>  <p>Example: <code>my-snapshot-id</code> </p>
-    ///   - [`db_snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::db_snapshot_identifier) / [`set_db_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_db_snapshot_identifier): <p>The identifier for the DB snapshot to restore from.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li>   <li> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> </li>  </ul>
+    ///   - [`db_snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::db_snapshot_identifier) / [`set_db_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_db_snapshot_identifier): <p>The identifier for the DB snapshot to restore from.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li>   <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.</p> </li>   <li> <p>Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li>   <li> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> </li>  </ul>
     ///   - [`db_instance_class(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::db_instance_class) / [`set_db_instance_class(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_db_instance_class): <p>The compute and memory capacity of the Amazon RDS DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>  <p>Default: The same DBInstanceClass as the original DB instance.</p>
     ///   - [`port(i32)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_port): <p>The port number on which the database accepts connections.</p>  <p>Default: The same port as the original DB instance</p>  <p>Constraints: Value must be <code>1150-65535</code> </p>
     ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_availability_zone): <p>The Availability Zone (AZ) where the DB instance will be created.</p>  <p>Default: A random, system-chosen Availability Zone.</p>  <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>  <p>Example: <code>us-east-1a</code> </p>
@@ -2202,10 +2281,10 @@ impl Client {
     ///   - [`license_model(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::license_model) / [`set_license_model(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_license_model): <p>License model information for the restored DB instance.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>Default: Same as source.</p>  <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
     ///   - [`db_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::db_name) / [`set_db_name(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_db_name): <p>The database name for the restored DB instance.</p>  <p>This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS Custom DB instances.</p>
     ///   - [`engine(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::engine) / [`set_engine(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_engine): <p>The database engine to use for the new instance.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>Default: The same as source</p>  <p>Constraint: Must be compatible with the engine of the source. For example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p>  <p>Valid Values:</p>  <ul>   <li> <p> <code>mariadb</code> </p> </li>   <li> <p> <code>mysql</code> </p> </li>   <li> <p> <code>oracle-ee</code> </p> </li>   <li> <p> <code>oracle-ee-cdb</code> </p> </li>   <li> <p> <code>oracle-se2</code> </p> </li>   <li> <p> <code>oracle-se2-cdb</code> </p> </li>   <li> <p> <code>postgres</code> </p> </li>   <li> <p> <code>sqlserver-ee</code> </p> </li>   <li> <p> <code>sqlserver-se</code> </p> </li>   <li> <p> <code>sqlserver-ex</code> </p> </li>   <li> <p> <code>sqlserver-web</code> </p> </li>  </ul>
-    ///   - [`iops(i32)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_iops): <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second. If this parameter isn't specified, the IOPS value is taken from the backup. If this parameter is set to 0, the new instance is converted to a non-PIOPS instance. The conversion takes additional time, though your DB instance is available for connections before the conversion starts.</p>  <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i> </p>  <p>Constraints: Must be an integer greater than 1000.</p>
+    ///   - [`iops(i32)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_iops): <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second. If this parameter isn't specified, the IOPS value is taken from the backup. If this parameter is set to 0, the new instance is converted to a non-PIOPS instance. The conversion takes additional time, though your DB instance is available for connections before the conversion starts.</p>  <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>  <p>Constraints: Must be an integer greater than 1000.</p>
     ///   - [`option_group_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::option_group_name) / [`set_option_group_name(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_option_group_name): <p>The name of the option group to be used for the restored DB instance.</p>  <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance after it is associated with a DB instance.</p>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_tags): <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_storage_type): <p>Specifies the storage type to be associated with the DB instance.</p>  <p>Valid values: <code>standard | gp2 | io1</code> </p>  <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>  <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+    ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_storage_type): <p>Specifies the storage type to be associated with the DB instance.</p>  <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>  <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>  <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     ///   - [`tde_credential_arn(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::tde_credential_arn) / [`set_tde_credential_arn(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_tde_credential_arn): <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`tde_credential_password(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::tde_credential_password) / [`set_tde_credential_password(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_tde_credential_password): <p>The password for the given ARN from the key store in order to access the device.</p>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_vpc_security_group_ids): <p>A list of EC2 VPC security groups to associate with this DB instance.</p>  <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
@@ -2218,10 +2297,13 @@ impl Client {
     ///   - [`use_default_processor_features(bool)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::use_default_processor_features) / [`set_use_default_processor_features(Option<bool>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_use_default_processor_features): <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`db_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::db_parameter_group_name) / [`set_db_parameter_group_name(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_db_parameter_group_name): <p>The name of the DB parameter group to associate with this DB instance.</p>  <p>If you don't specify a value for <code>DBParameterGroupName</code>, then RDS uses the default <code>DBParameterGroup</code> for the specified DB engine.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>   <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
     ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_deletion_protection): <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
-    ///   - [`enable_customer_owned_ip(bool)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::enable_customer_owned_ip) / [`set_enable_customer_owned_ip(Option<bool>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_enable_customer_owned_ip): <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>  <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    ///   - [`enable_customer_owned_ip(bool)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::enable_customer_owned_ip) / [`set_enable_customer_owned_ip(Option<bool>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_enable_customer_owned_ip): <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>  <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     ///   - [`custom_iam_instance_profile(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::custom_iam_instance_profile) / [`set_custom_iam_instance_profile(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_custom_iam_instance_profile): <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>  <ul>   <li> <p>The profile must exist in your account.</p> </li>   <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>   <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>  </ul>  <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>This setting is required for RDS Custom.</p>
     ///   - [`backup_target(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::backup_target) / [`set_backup_target(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_backup_target): <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>  <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     ///   - [`network_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::network_type) / [`set_network_type(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_network_type): <p>The network type of the DB instance.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>IPV4</code> </p> </li>   <li> <p> <code>DUAL</code> </p> </li>  </ul>  <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    ///   - [`storage_throughput(i32)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::storage_throughput) / [`set_storage_throughput(Option<i32>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_storage_throughput): <p>Specifies the storage throughput value for the DB instance.</p>  <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    ///   - [`db_cluster_snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::db_cluster_snapshot_identifier) / [`set_db_cluster_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_db_cluster_snapshot_identifier): <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>  <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing Multi-AZ DB cluster snapshot.</p> </li>   <li> <p>Can't be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li>   <li> <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p> </li>   <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.</p> </li>   <li> <p>Can't be the identifier of an Aurora DB cluster snapshot.</p> </li>   <li> <p>Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.</p> </li>  </ul>
+    ///   - [`allocated_storage(i32)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::allocated_storage) / [`set_allocated_storage(Option<i32>)`](crate::client::fluent_builders::RestoreDBInstanceFromDBSnapshot::set_allocated_storage): <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p> <note>   <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>  </note>
     /// - On success, responds with [`RestoreDbInstanceFromDbSnapshotOutput`](crate::output::RestoreDbInstanceFromDbSnapshotOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::output::RestoreDbInstanceFromDbSnapshotOutput::db_instance): <p>Contains the details of an Amazon RDS DB instance.</p>  <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     /// - On failure, responds with [`SdkError<RestoreDBInstanceFromDBSnapshotError>`](crate::error::RestoreDBInstanceFromDBSnapshotError)
@@ -2235,11 +2317,11 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`db_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::db_name) / [`set_db_name(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_db_name): <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
     ///   - [`db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::db_instance_identifier) / [`set_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_db_instance_identifier): <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>mydbinstance</code> </p>
-    ///   - [`allocated_storage(i32)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::allocated_storage) / [`set_allocated_storage(Option<i32>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_allocated_storage): <p>The amount of storage (in gigabytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>   <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>  </note>
+    ///   - [`allocated_storage(i32)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::allocated_storage) / [`set_allocated_storage(Option<i32>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_allocated_storage): <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>   <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>  </note>
     ///   - [`db_instance_class(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::db_instance_class) / [`set_db_instance_class(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_db_instance_class): <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>  <p>Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.</p>
     ///   - [`engine(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::engine) / [`set_engine(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_engine): <p>The name of the database engine to be used for this instance.</p>  <p>Valid Values: <code>mysql</code> </p>
     ///   - [`master_username(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::master_username) / [`set_master_username(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_master_username): <p>The name for the master user.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 16 letters or numbers.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>  </ul>
-    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_master_user_password): <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>  <p>Constraints: Must contain from 8 to 41 characters.</p>
+    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_master_user_password): <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>  <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>  <p> <b>MariaDB</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>Microsoft SQL Server</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p>  <p> <b>MySQL</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>Oracle</b> </p>  <p>Constraints: Must contain from 8 to 30 characters.</p>  <p> <b>PostgreSQL</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p>
     ///   - [`db_security_groups(Vec<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::db_security_groups) / [`set_db_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_db_security_groups): <p>A list of DB security groups to associate with this DB instance.</p>  <p>Default: The default DB security group for the database engine.</p>
     ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_vpc_security_group_ids): <p>A list of VPC security groups to associate with this DB instance.</p>
     ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_availability_zone): <p>The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p>  <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>  <p>Example: <code>us-east-1d</code> </p>  <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
@@ -2253,11 +2335,11 @@ impl Client {
     ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_engine_version): <p>The version number of the database engine to use. Choose the latest minor version of your database engine. For information about engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.</p>
     ///   - [`auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::auto_minor_version_upgrade) / [`set_auto_minor_version_upgrade(Option<bool>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_auto_minor_version_upgrade): <p>A value that indicates whether minor engine upgrades are applied automatically to the DB instance during the maintenance window. By default, minor engine upgrades are not applied automatically.</p>
     ///   - [`license_model(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::license_model) / [`set_license_model(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_license_model): <p>The license model for this DB instance. Use <code>general-public-license</code>.</p>
-    ///   - [`iops(i32)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_iops): <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i> </p>
+    ///   - [`iops(i32)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_iops): <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
     ///   - [`option_group_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::option_group_name) / [`set_option_group_name(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_option_group_name): <p>The name of the option group to associate with this DB instance. If this argument is omitted, the default option group for the specified engine is used.</p>
     ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_publicly_accessible): <p>A value that indicates whether the DB instance is publicly accessible.</p>  <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB instance's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>  <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  <p>For more information, see <code>CreateDBInstance</code>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_tags): <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_storage_type): <p>Specifies the storage type to be associated with the DB instance.</p>  <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code> </p>  <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>  <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+    ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_storage_type): <p>Specifies the storage type to be associated with the DB instance.</p>  <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>  <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>  <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
     ///   - [`storage_encrypted(bool)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::storage_encrypted) / [`set_storage_encrypted(Option<bool>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_storage_encrypted): <p>A value that indicates whether the new DB instance is encrypted or not.</p>
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_kms_key_id): <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>  <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>  <p>If the <code>StorageEncrypted</code> parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     ///   - [`copy_tags_to_snapshot(bool)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::copy_tags_to_snapshot) / [`set_copy_tags_to_snapshot(Option<bool>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_copy_tags_to_snapshot): <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
@@ -2278,6 +2360,9 @@ impl Client {
     ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_deletion_protection): <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
     ///   - [`max_allocated_storage(i32)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::max_allocated_storage) / [`set_max_allocated_storage(Option<i32>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_max_allocated_storage): <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>  <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     ///   - [`network_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::network_type) / [`set_network_type(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_network_type): <p>The network type of the DB instance.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>IPV4</code> </p> </li>   <li> <p> <code>DUAL</code> </p> </li>  </ul>  <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    ///   - [`storage_throughput(i32)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::storage_throughput) / [`set_storage_throughput(Option<i32>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_storage_throughput): <p>Specifies the storage throughput value for the DB instance.</p>  <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    ///   - [`manage_master_user_password(bool)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::manage_master_user_password) / [`set_manage_master_user_password(Option<bool>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_manage_master_user_password): <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>  <p>Constraints:</p>  <ul>   <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>  </ul>
+    ///   - [`master_user_secret_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::master_user_secret_kms_key_id) / [`set_master_user_secret_kms_key_id(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceFromS3::set_master_user_secret_kms_key_id): <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>  <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>  <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>  <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>  <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// - On success, responds with [`RestoreDbInstanceFromS3Output`](crate::output::RestoreDbInstanceFromS3Output) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::output::RestoreDbInstanceFromS3Output::db_instance): <p>Contains the details of an Amazon RDS DB instance.</p>  <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     /// - On failure, responds with [`SdkError<RestoreDBInstanceFromS3Error>`](crate::error::RestoreDBInstanceFromS3Error)
@@ -2305,7 +2390,7 @@ impl Client {
     ///   - [`option_group_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::option_group_name) / [`set_option_group_name(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_option_group_name): <p>The name of the option group to be used for the restored DB instance.</p>  <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance after it is associated with a DB instance</p>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`copy_tags_to_snapshot(bool)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::copy_tags_to_snapshot) / [`set_copy_tags_to_snapshot(Option<bool>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_copy_tags_to_snapshot): <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_tags): <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_storage_type): <p>Specifies the storage type to be associated with the DB instance.</p>  <p>Valid values: <code>standard | gp2 | io1</code> </p>  <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>  <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+    ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_storage_type): <p>Specifies the storage type to be associated with the DB instance.</p>  <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>  <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>  <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     ///   - [`tde_credential_arn(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::tde_credential_arn) / [`set_tde_credential_arn(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_tde_credential_arn): <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`tde_credential_password(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::tde_credential_password) / [`set_tde_credential_password(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_tde_credential_password): <p>The password for the given ARN from the key store in order to access the device.</p>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_vpc_security_group_ids): <p>A list of EC2 VPC security groups to associate with this DB instance.</p>  <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
@@ -2320,10 +2405,12 @@ impl Client {
     ///   - [`source_dbi_resource_id(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::source_dbi_resource_id) / [`set_source_dbi_resource_id(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_source_dbi_resource_id): <p>The resource ID of the source DB instance from which to restore.</p>
     ///   - [`max_allocated_storage(i32)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::max_allocated_storage) / [`set_max_allocated_storage(Option<i32>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_max_allocated_storage): <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>  <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>This setting doesn't apply to RDS Custom.</p>
     ///   - [`source_db_instance_automated_backups_arn(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::source_db_instance_automated_backups_arn) / [`set_source_db_instance_automated_backups_arn(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_source_db_instance_automated_backups_arn): <p>The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example, <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>  <p>This setting doesn't apply to RDS Custom.</p>
-    ///   - [`enable_customer_owned_ip(bool)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::enable_customer_owned_ip) / [`set_enable_customer_owned_ip(Option<bool>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_enable_customer_owned_ip): <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>  <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    ///   - [`enable_customer_owned_ip(bool)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::enable_customer_owned_ip) / [`set_enable_customer_owned_ip(Option<bool>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_enable_customer_owned_ip): <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>  <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     ///   - [`custom_iam_instance_profile(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::custom_iam_instance_profile) / [`set_custom_iam_instance_profile(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_custom_iam_instance_profile): <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>  <ul>   <li> <p>The profile must exist in your account.</p> </li>   <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>   <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>  </ul>  <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>This setting is required for RDS Custom.</p>
     ///   - [`backup_target(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::backup_target) / [`set_backup_target(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_backup_target): <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>  <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     ///   - [`network_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::network_type) / [`set_network_type(Option<String>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_network_type): <p>The network type of the DB instance.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>IPV4</code> </p> </li>   <li> <p> <code>DUAL</code> </p> </li>  </ul>  <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    ///   - [`storage_throughput(i32)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::storage_throughput) / [`set_storage_throughput(Option<i32>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_storage_throughput): <p>Specifies the storage throughput value for the DB instance.</p>  <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    ///   - [`allocated_storage(i32)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::allocated_storage) / [`set_allocated_storage(Option<i32>)`](crate::client::fluent_builders::RestoreDBInstanceToPointInTime::set_allocated_storage): <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>   <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>  </note>
     /// - On success, responds with [`RestoreDbInstanceToPointInTimeOutput`](crate::output::RestoreDbInstanceToPointInTimeOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::output::RestoreDbInstanceToPointInTimeOutput::db_instance): <p>Contains the details of an Amazon RDS DB instance.</p>  <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     /// - On failure, responds with [`SdkError<RestoreDBInstanceToPointInTimeError>`](crate::error::RestoreDBInstanceToPointInTimeError)
@@ -2409,7 +2496,7 @@ impl Client {
     ///   - [`source_arn(impl Into<String>)`](crate::client::fluent_builders::StartExportTask::source_arn) / [`set_source_arn(Option<String>)`](crate::client::fluent_builders::StartExportTask::set_source_arn): <p>The Amazon Resource Name (ARN) of the snapshot to export to Amazon S3.</p>
     ///   - [`s3_bucket_name(impl Into<String>)`](crate::client::fluent_builders::StartExportTask::s3_bucket_name) / [`set_s3_bucket_name(Option<String>)`](crate::client::fluent_builders::StartExportTask::set_s3_bucket_name): <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
     ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartExportTask::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::StartExportTask::set_iam_role_arn): <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot.</p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartExportTask::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartExportTask::set_kms_key_id): <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to execute the following operations. These can be set in the Amazon Web Services KMS key policy:</p>  <ul>   <li> <p>GrantOperation.Encrypt</p> </li>   <li> <p>GrantOperation.Decrypt</p> </li>   <li> <p>GrantOperation.GenerateDataKey</p> </li>   <li> <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li>   <li> <p>GrantOperation.ReEncryptFrom</p> </li>   <li> <p>GrantOperation.ReEncryptTo</p> </li>   <li> <p>GrantOperation.CreateGrant</p> </li>   <li> <p>GrantOperation.DescribeKey</p> </li>   <li> <p>GrantOperation.RetireGrant</p> </li>  </ul>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartExportTask::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartExportTask::set_kms_key_id): <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>  <ul>   <li> <p>kms:Encrypt</p> </li>   <li> <p>kms:Decrypt</p> </li>   <li> <p>kms:GenerateDataKey</p> </li>   <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li>   <li> <p>kms:ReEncryptFrom</p> </li>   <li> <p>kms:ReEncryptTo</p> </li>   <li> <p>kms:CreateGrant</p> </li>   <li> <p>kms:DescribeKey</p> </li>   <li> <p>kms:RetireGrant</p> </li>  </ul>
     ///   - [`s3_prefix(impl Into<String>)`](crate::client::fluent_builders::StartExportTask::s3_prefix) / [`set_s3_prefix(Option<String>)`](crate::client::fluent_builders::StartExportTask::set_s3_prefix): <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
     ///   - [`export_only(Vec<String>)`](crate::client::fluent_builders::StartExportTask::export_only) / [`set_export_only(Option<Vec<String>>)`](crate::client::fluent_builders::StartExportTask::set_export_only): <p>The data to be exported from the snapshot. If this parameter is not provided, all the snapshot data is exported. Valid values are the following:</p>  <ul>   <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>   <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>   <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>   <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>  </ul>
     /// - On success, responds with [`StartExportTaskOutput`](crate::output::StartExportTaskOutput) with field(s):
@@ -2428,6 +2515,7 @@ impl Client {
     ///   - [`total_extracted_data_in_gb(i32)`](crate::output::StartExportTaskOutput::total_extracted_data_in_gb): <p>The total amount of data exported, in gigabytes.</p>
     ///   - [`failure_cause(Option<String>)`](crate::output::StartExportTaskOutput::failure_cause): <p>The reason the export failed, if it failed.</p>
     ///   - [`warning_message(Option<String>)`](crate::output::StartExportTaskOutput::warning_message): <p>A warning about the snapshot export task.</p>
+    ///   - [`source_type(Option<ExportSourceType>)`](crate::output::StartExportTaskOutput::source_type): <p>The type of source for the export.</p>
     /// - On failure, responds with [`SdkError<StartExportTaskError>`](crate::error::StartExportTaskError)
     pub fn start_export_task(&self) -> fluent_builders::StartExportTask {
         fluent_builders::StartExportTask::new(self.handle.clone())
@@ -2477,6 +2565,19 @@ impl Client {
         &self,
     ) -> fluent_builders::StopDBInstanceAutomatedBackupsReplication {
         fluent_builders::StopDBInstanceAutomatedBackupsReplication::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`SwitchoverBlueGreenDeployment`](crate::client::fluent_builders::SwitchoverBlueGreenDeployment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`blue_green_deployment_identifier(impl Into<String>)`](crate::client::fluent_builders::SwitchoverBlueGreenDeployment::blue_green_deployment_identifier) / [`set_blue_green_deployment_identifier(Option<String>)`](crate::client::fluent_builders::SwitchoverBlueGreenDeployment::set_blue_green_deployment_identifier): <p>The blue/green deployment identifier.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match an existing blue/green deployment identifier.</p> </li>  </ul>
+    ///   - [`switchover_timeout(i32)`](crate::client::fluent_builders::SwitchoverBlueGreenDeployment::switchover_timeout) / [`set_switchover_timeout(Option<i32>)`](crate::client::fluent_builders::SwitchoverBlueGreenDeployment::set_switchover_timeout): <p>The amount of time, in seconds, for the switchover to complete. The default is 300.</p>  <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
+    /// - On success, responds with [`SwitchoverBlueGreenDeploymentOutput`](crate::output::SwitchoverBlueGreenDeploymentOutput) with field(s):
+    ///   - [`blue_green_deployment(Option<BlueGreenDeployment>)`](crate::output::SwitchoverBlueGreenDeploymentOutput::blue_green_deployment): <p>Contains the details about a blue/green deployment.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<SwitchoverBlueGreenDeploymentError>`](crate::error::SwitchoverBlueGreenDeploymentError)
+    pub fn switchover_blue_green_deployment(
+        &self,
+    ) -> fluent_builders::SwitchoverBlueGreenDeployment {
+        fluent_builders::SwitchoverBlueGreenDeployment::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`SwitchoverReadReplica`](crate::client::fluent_builders::SwitchoverReadReplica) operation.
     ///
@@ -4069,12 +4170,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags are not copied.</p>
+        /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't copied.</p>
         pub fn copy_tags(mut self, input: bool) -> Self {
             self.inner = self.inner.copy_tags(input);
             self
         }
-        /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags are not copied.</p>
+        /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't copied.</p>
         pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_copy_tags(input);
             self
@@ -4145,6 +4246,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_target_custom_availability_zone(input);
+            self
+        }
+        /// <p>A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+        pub fn copy_option_group(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_option_group(input);
+            self
+        }
+        /// <p>A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+        pub fn set_copy_option_group(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_option_group(input);
             self
         }
     }
@@ -4300,20 +4411,178 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateBlueGreenDeployment`.
+    ///
+    /// <p>Creates a blue/green deployment.</p>
+    /// <p>A blue/green deployment creates a staging environment that copies the production environment. In a blue/green deployment, the blue environment is the current production environment. The green environment is the staging environment. The staging environment stays in sync with the current production environment using logical replication.</p>
+    /// <p>You can make changes to the databases in the green environment without affecting production workloads. For example, you can upgrade the major or minor DB engine version, change database parameters, or make schema changes in the staging environment. You can thoroughly test changes in the green environment. When ready, you can switch over the environments to promote the green environment to be the new production environment. The switchover typically takes under a minute.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateBlueGreenDeployment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_blue_green_deployment_input::Builder,
+    }
+    impl CreateBlueGreenDeployment {
+        /// Creates a new `CreateBlueGreenDeployment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateBlueGreenDeployment,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateBlueGreenDeploymentError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateBlueGreenDeploymentOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateBlueGreenDeploymentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the blue/green deployment.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
+        /// </ul>
+        pub fn blue_green_deployment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blue_green_deployment_name(input.into());
+            self
+        }
+        /// <p>The name of the blue/green deployment.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
+        /// </ul>
+        pub fn set_blue_green_deployment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_blue_green_deployment_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
+        /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
+        /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source(input);
+            self
+        }
+        /// <p>The engine version of the database in the green environment.</p>
+        /// <p>Specify the engine version to upgrade to in the green environment.</p>
+        pub fn target_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_engine_version(input.into());
+            self
+        }
+        /// <p>The engine version of the database in the green environment.</p>
+        /// <p>Specify the engine version to upgrade to in the green environment.</p>
+        pub fn set_target_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_target_engine_version(input);
+            self
+        }
+        /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
+        /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
+        pub fn target_db_parameter_group_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.target_db_parameter_group_name(input.into());
+            self
+        }
+        /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
+        /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
+        pub fn set_target_db_parameter_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_target_db_parameter_group_name(input);
+            self
+        }
+        /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
+        /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
+        pub fn target_db_cluster_parameter_group_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .target_db_cluster_parameter_group_name(input.into());
+            self
+        }
+        /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
+        /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
+        pub fn set_target_db_cluster_parameter_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_target_db_cluster_parameter_group_name(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to assign to the blue/green deployment.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Tags to assign to the blue/green deployment.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateCustomDBEngineVersion`.
     ///
-    /// <p>Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot of a database engine and specific AMI. The supported engines are the following:</p>
-    /// <ul>
-    /// <li> <p>Oracle Database 12.1 Enterprise Edition with the January 2021 or later RU/RUR</p> </li>
-    /// <li> <p>Oracle Database 19c Enterprise Edition with the January 2021 or later RU/RUR</p> </li>
-    /// </ul>
-    /// <p>Amazon RDS, which is a fully managed service, supplies the Amazon Machine Image (AMI) and database software. The Amazon RDS database software is preinstalled, so you need only select a DB engine and version, and create your database. With Amazon RDS Custom for Oracle, you upload your database installation files in Amazon S3.</p>
-    /// <p>When you create a custom engine version, you specify the files in a JSON document called a CEV manifest. This document describes installation .zip files stored in Amazon S3. RDS Custom creates your CEV from the installation files that you provided. This service model is called Bring Your Own Media (BYOM).</p>
-    /// <p>Creation takes approximately two hours. If creation fails, RDS Custom issues <code>RDS-EVENT-0196</code> with the message <code>Creation failed for custom engine version</code>, and includes details about the failure. For example, the event prints missing files.</p>
-    /// <p>After you create the CEV, it is available for use. You can create multiple CEVs, and create multiple RDS Custom instances from any CEV. You can also change the status of a CEV to make it available or inactive.</p> <note>
-    /// <p>The MediaImport service that imports files from Amazon S3 to create CEVs isn't integrated with Amazon Web Services CloudTrail. If you turn on data logging for Amazon RDS in CloudTrail, calls to the <code>CreateCustomDbEngineVersion</code> event aren't logged. However, you might see calls from the API gateway that accesses your Amazon S3 bucket. These calls originate from the MediaImport service for the <code>CreateCustomDbEngineVersion</code> event.</p>
-    /// </note>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.create"> Creating a CEV</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>Creates a custom DB engine version (CEV).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomDBEngineVersion {
         handle: std::sync::Arc<super::Handle>,
@@ -4383,12 +4652,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_engine(input);
             self
         }
-        /// <p>The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
+        /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.engine_version(input.into());
             self
         }
-        /// <p>The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
+        /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4432,6 +4701,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_database_installation_files_s3_prefix(input);
+            self
+        }
+        /// <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for SQL Server.</p>
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(input.into());
+            self
+        }
+        /// <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for SQL Server.</p>
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_id(input);
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
@@ -4918,14 +5197,22 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+        /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+        /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.master_user_password(input.into());
             self
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+        /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+        /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_master_user_password(
             mut self,
@@ -5409,7 +5696,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
@@ -5418,7 +5705,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
@@ -5628,6 +5915,64 @@ pub mod fluent_builders {
         /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_type(input);
+            self
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn db_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_system_id(input.into());
+            self
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn set_db_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_db_system_id(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn manage_master_user_password(mut self, input: bool) -> Self {
+            self.inner = self.inner.manage_master_user_password(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn set_manage_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_manage_master_user_password(input);
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn master_user_secret_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.master_user_secret_kms_key_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn set_master_user_secret_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_master_user_secret_kms_key_id(input);
             self
         }
     }
@@ -6336,41 +6681,41 @@ pub mod fluent_builders {
         /// <p> <b>Amazon RDS Custom</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
         /// </ul>
         /// <p> <b>MySQL</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>PostgreSQL</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>Oracle</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>SQL Server</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2):</p>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3):</p>
         /// <ul>
         /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p> </li>
         /// <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p> </li>
@@ -6397,41 +6742,41 @@ pub mod fluent_builders {
         /// <p> <b>Amazon RDS Custom</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
         /// </ul>
         /// <p> <b>MySQL</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>PostgreSQL</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>Oracle</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>SQL Server</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2):</p>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3):</p>
         /// <ul>
         /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p> </li>
         /// <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p> </li>
@@ -6554,6 +6899,7 @@ pub mod fluent_builders {
         /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. The password for the master user is managed by the DB cluster.</p>
+        /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
         /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
         /// <p> <b>Microsoft SQL Server</b> </p>
@@ -6571,6 +6917,7 @@ pub mod fluent_builders {
         /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. The password for the master user is managed by the DB cluster.</p>
+        /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
         /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
         /// <p> <b>Microsoft SQL Server</b> </p>
@@ -6856,7 +7203,7 @@ pub mod fluent_builders {
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster.</p>
         /// <p> <b>Amazon RDS Custom for Oracle</b> </p>
-        /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: <code>19.<i>customized_string</i> </code>. An example identifier is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p> <b>Amazon RDS Custom for SQL Server</b> </p>
         /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p> <b>MariaDB</b> </p>
@@ -6879,7 +7226,7 @@ pub mod fluent_builders {
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster.</p>
         /// <p> <b>Amazon RDS Custom for Oracle</b> </p>
-        /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: <code>19.<i>customized_string</i> </code>. An example identifier is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p> <b>Amazon RDS Custom for SQL Server</b> </p>
         /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p> <b>MariaDB</b> </p>
@@ -6932,7 +7279,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_license_model(input);
             self
         }
-        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. Storage is managed by the DB cluster.</p>
@@ -6940,7 +7287,7 @@ pub mod fluent_builders {
             self.inner = self.inner.iops(input);
             self
         }
-        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. Storage is managed by the DB cluster.</p>
@@ -7072,8 +7419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. Storage is managed by the DB cluster.</p>
@@ -7082,8 +7429,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. Storage is managed by the DB cluster.</p>
@@ -7475,7 +7822,7 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_customer_owned_ip(input);
             self
@@ -7483,7 +7830,7 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_customer_owned_ip(input);
             self
@@ -7557,6 +7904,81 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_type(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.inner = self.inner.storage_throughput(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_storage_throughput(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn manage_master_user_password(mut self, input: bool) -> Self {
+            self.inner = self.inner.manage_master_user_password(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn set_manage_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_manage_master_user_password(input);
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn master_user_secret_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.master_user_secret_kms_key_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn set_master_user_secret_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_master_user_secret_kms_key_id(input);
+            self
+        }
+        /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn ca_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ca_certificate_identifier(input.into());
+            self
+        }
+        /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_ca_certificate_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ca_certificate_identifier(input);
             self
         }
     }
@@ -7901,16 +8323,16 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the storage type to be associated with the read replica.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the read replica.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_storage_type(input);
@@ -8294,6 +8716,48 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_type(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the read replica.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.inner = self.inner.storage_throughput(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the read replica.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_storage_throughput(input);
+            self
+        }
+        /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
+        /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
+        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_customer_owned_ip(input);
+            self
+        }
+        /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
+        /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
+        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_customer_owned_ip(input);
+            self
+        }
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+        /// <p>Be sure to allocate enough memory for your read replica so that the create operation can succeed. You can also allocate additional memory for future growth.</p>
+        /// </note>
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_storage(input);
+            self
+        }
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+        /// <p>Be sure to allocate enough memory for your read replica so that the create operation can succeed. You can also allocate additional memory for future growth.</p>
+        /// </note>
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_allocated_storage(input);
             self
         }
     }
@@ -9739,6 +10203,104 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteBlueGreenDeployment`.
+    ///
+    /// <p>Deletes a blue/green deployment.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteBlueGreenDeployment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_blue_green_deployment_input::Builder,
+    }
+    impl DeleteBlueGreenDeployment {
+        /// Creates a new `DeleteBlueGreenDeployment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteBlueGreenDeployment,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteBlueGreenDeploymentError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteBlueGreenDeploymentOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteBlueGreenDeploymentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>
+        /// <p>Constraints: </p>
+        /// <ul>
+        /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+        /// </ul>
+        pub fn blue_green_deployment_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.blue_green_deployment_identifier(input.into());
+            self
+        }
+        /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>
+        /// <p>Constraints: </p>
+        /// <ul>
+        /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+        /// </ul>
+        pub fn set_blue_green_deployment_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_blue_green_deployment_identifier(input);
+            self
+        }
+        /// <p>A value that indicates whether to delete the resources in the green environment.</p>
+        pub fn delete_target(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_target(input);
+            self
+        }
+        /// <p>A value that indicates whether to delete the resources in the green environment.</p>
+        pub fn set_delete_target(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_delete_target(input);
             self
         }
     }
@@ -11403,9 +11965,159 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
     }
+    /// Fluent builder constructing a request to `DescribeBlueGreenDeployments`.
+    ///
+    /// <p>Returns information about blue/green deployments.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeBlueGreenDeployments {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_blue_green_deployments_input::Builder,
+    }
+    impl DescribeBlueGreenDeployments {
+        /// Creates a new `DescribeBlueGreenDeployments`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeBlueGreenDeployments,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeBlueGreenDeploymentsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeBlueGreenDeploymentsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeBlueGreenDeploymentsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeBlueGreenDeploymentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeBlueGreenDeploymentsPaginator {
+            crate::paginator::DescribeBlueGreenDeploymentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The blue/green deployment identifier. If this parameter is specified, information from only the specific blue/green deployment is returned. This parameter isn't case-sensitive.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>If supplied, must match an existing blue/green deployment identifier.</p> </li>
+        /// </ul>
+        pub fn blue_green_deployment_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.blue_green_deployment_identifier(input.into());
+            self
+        }
+        /// <p>The blue/green deployment identifier. If this parameter is specified, information from only the specific blue/green deployment is returned. This parameter isn't case-sensitive.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>If supplied, must match an existing blue/green deployment identifier.</p> </li>
+        /// </ul>
+        pub fn set_blue_green_deployment_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_blue_green_deployment_identifier(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
+        /// <p>Supported filters:</p>
+        /// <ul>
+        /// <li> <p> <code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p> </li>
+        /// <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p> </li>
+        /// <li> <p> <code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p> </li>
+        /// <li> <p> <code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p> </li>
+        /// </ul>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
+        /// <p>Supported filters:</p>
+        /// <ul>
+        /// <li> <p> <code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p> </li>
+        /// <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p> </li>
+        /// <li> <p> <code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p> </li>
+        /// <li> <p> <code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p> </li>
+        /// </ul>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
+            self
+        }
+        /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
+            self
+        }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
+        /// <p>Default: 100</p>
+        /// <p>Constraints: Minimum 20, maximum 100.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
+            self
+        }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
+        /// <p>Default: 100</p>
+        /// <p>Constraints: Minimum 20, maximum 100.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeCertificates`.
     ///
     /// <p>Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCertificates {
         handle: std::sync::Arc<super::Handle>,
@@ -12214,7 +12926,7 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::DescribeDbClustersPaginator {
             crate::paginator::DescribeDbClustersPaginator::new(self.handle, self.inner)
         }
-        /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+        /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
@@ -12223,7 +12935,7 @@ pub mod fluent_builders {
             self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
-        /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+        /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
@@ -13145,7 +13857,7 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::DescribeDbInstancesPaginator {
             crate::paginator::DescribeDbInstancesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
+        /// <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
@@ -13154,7 +13866,7 @@ pub mod fluent_builders {
             self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
-        /// <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
+        /// <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
@@ -14961,6 +15673,8 @@ pub mod fluent_builders {
         /// <li> <p> <code>aurora-postgresql11</code> </p> </li>
         /// <li> <p> <code>aurora-postgresql12</code> </p> </li>
         /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql14</code> </p> </li>
+        /// <li> <p> <code>custom-oracle-ee-19</code> </p> </li>
         /// <li> <p> <code>mariadb10.2</code> </p> </li>
         /// <li> <p> <code>mariadb10.3</code> </p> </li>
         /// <li> <p> <code>mariadb10.4</code> </p> </li>
@@ -14968,6 +15682,12 @@ pub mod fluent_builders {
         /// <li> <p> <code>mariadb10.6</code> </p> </li>
         /// <li> <p> <code>mysql5.7</code> </p> </li>
         /// <li> <p> <code>mysql8.0</code> </p> </li>
+        /// <li> <p> <code>oracle-ee-19</code> </p> </li>
+        /// <li> <p> <code>oracle-ee-cdb-19</code> </p> </li>
+        /// <li> <p> <code>oracle-ee-cdb-21</code> </p> </li>
+        /// <li> <p> <code>oracle-se2-19</code> </p> </li>
+        /// <li> <p> <code>oracle-se2-cdb-19</code> </p> </li>
+        /// <li> <p> <code>oracle-se2-cdb-21</code> </p> </li>
         /// <li> <p> <code>postgres10</code> </p> </li>
         /// <li> <p> <code>postgres11</code> </p> </li>
         /// <li> <p> <code>postgres12</code> </p> </li>
@@ -15008,6 +15728,8 @@ pub mod fluent_builders {
         /// <li> <p> <code>aurora-postgresql11</code> </p> </li>
         /// <li> <p> <code>aurora-postgresql12</code> </p> </li>
         /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql14</code> </p> </li>
+        /// <li> <p> <code>custom-oracle-ee-19</code> </p> </li>
         /// <li> <p> <code>mariadb10.2</code> </p> </li>
         /// <li> <p> <code>mariadb10.3</code> </p> </li>
         /// <li> <p> <code>mariadb10.4</code> </p> </li>
@@ -15015,6 +15737,12 @@ pub mod fluent_builders {
         /// <li> <p> <code>mariadb10.6</code> </p> </li>
         /// <li> <p> <code>mysql5.7</code> </p> </li>
         /// <li> <p> <code>mysql8.0</code> </p> </li>
+        /// <li> <p> <code>oracle-ee-19</code> </p> </li>
+        /// <li> <p> <code>oracle-ee-cdb-19</code> </p> </li>
+        /// <li> <p> <code>oracle-ee-cdb-21</code> </p> </li>
+        /// <li> <p> <code>oracle-se2-19</code> </p> </li>
+        /// <li> <p> <code>oracle-se2-cdb-19</code> </p> </li>
+        /// <li> <p> <code>oracle-se2-cdb-21</code> </p> </li>
         /// <li> <p> <code>postgres10</code> </p> </li>
         /// <li> <p> <code>postgres11</code> </p> </li>
         /// <li> <p> <code>postgres12</code> </p> </li>
@@ -15688,6 +16416,19 @@ pub mod fluent_builders {
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
+            self
+        }
+        /// <p>The type of source for the export.</p>
+        pub fn source_type(mut self, input: crate::model::ExportSourceType) -> Self {
+            self.inner = self.inner.source_type(input);
+            self
+        }
+        /// <p>The type of source for the export.</p>
+        pub fn set_source_type(
+            mut self,
+            input: std::option::Option<crate::model::ExportSourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_source_type(input);
             self
         }
     }
@@ -18164,7 +18905,7 @@ pub mod fluent_builders {
         /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
         /// </ul>
         /// <p>Example: <code>my-cluster2</code> </p>
-        /// <p>Valid for: Aurora DB clusters only</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn new_db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.new_db_cluster_identifier(input.into());
             self
@@ -18177,7 +18918,7 @@ pub mod fluent_builders {
         /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
         /// </ul>
         /// <p>Example: <code>my-cluster2</code> </p>
-        /// <p>Valid for: Aurora DB clusters only</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_new_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18277,14 +19018,22 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+        /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+        /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.master_user_password(input.into());
             self
         }
         /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+        /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+        /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_master_user_password(
             mut self,
@@ -18676,7 +19425,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn iops(mut self, input: i32) -> Self {
@@ -18684,7 +19433,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
@@ -18855,6 +19604,80 @@ pub mod fluent_builders {
         /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_type(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+        /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn manage_master_user_password(mut self, input: bool) -> Self {
+            self.inner = self.inner.manage_master_user_password(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+        /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn set_manage_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_manage_master_user_password(input);
+            self
+        }
+        /// <p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+        /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn rotate_master_user_password(mut self, input: bool) -> Self {
+            self.inner = self.inner.rotate_master_user_password(input);
+            self
+        }
+        /// <p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+        /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn set_rotate_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_rotate_master_user_password(input);
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if both of the following conditions are met:</p>
+        /// <ul>
+        /// <li> <p>The DB cluster doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB cluster already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key that is used to encrypt the secret.</p> </li>
+        /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+        /// </ul>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn master_user_secret_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.master_user_secret_kms_key_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if both of the following conditions are met:</p>
+        /// <ul>
+        /// <li> <p>The DB cluster doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB cluster already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key that is used to encrypt the secret.</p> </li>
+        /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+        /// </ul>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn set_master_user_secret_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_master_user_secret_kms_key_id(input);
             self
         }
     }
@@ -19333,17 +20156,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_allocated_storage(input);
             self
         }
-        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
-        /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
+        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS"> DB instance class support for RDS Custom for SQL Server</a>.</p>
+        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless you specify <code>ApplyImmediately</code> in your request. </p>
         /// <p>Default: Uses existing setting</p>
         pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.db_instance_class(input.into());
             self
         }
-        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
-        /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
+        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS"> DB instance class support for RDS Custom for SQL Server</a>.</p>
+        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless you specify <code>ApplyImmediately</code> in your request. </p>
         /// <p>Default: Uses existing setting</p>
         pub fn set_db_instance_class(
             mut self,
@@ -19449,6 +20270,7 @@ pub mod fluent_builders {
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
         /// <p>Default: Uses existing setting</p>
+        /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
         /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
         /// <p> <b>Microsoft SQL Server</b> </p>
@@ -19471,6 +20293,7 @@ pub mod fluent_builders {
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
         /// <p>Default: Uses existing setting</p>
+        /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
         /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
         /// <p> <b>Microsoft SQL Server</b> </p>
@@ -19759,7 +20582,7 @@ pub mod fluent_builders {
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
         /// <p>If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.storage_type(input.into());
@@ -19768,7 +20591,7 @@ pub mod fluent_builders {
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
         /// <p>If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_storage_type(input);
@@ -19804,14 +20627,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tde_credential_password(input);
             self
         }
-        /// <p>Specifies the certificate to associate with the DB instance.</p>
+        /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn ca_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ca_certificate_identifier(input.into());
             self
         }
-        /// <p>Specifies the certificate to associate with the DB instance.</p>
+        /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn set_ca_certificate_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20212,7 +21037,7 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_customer_owned_ip(input);
             self
@@ -20220,7 +21045,7 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_customer_owned_ip(input);
             self
@@ -20291,6 +21116,96 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_type(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.inner = self.inner.storage_throughput(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_storage_throughput(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+        /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn manage_master_user_password(mut self, input: bool) -> Self {
+            self.inner = self.inner.manage_master_user_password(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+        /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn set_manage_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_manage_master_user_password(input);
+            self
+        }
+        /// <p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+        /// </ul>
+        pub fn rotate_master_user_password(mut self, input: bool) -> Self {
+            self.inner = self.inner.rotate_master_user_password(input);
+            self
+        }
+        /// <p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+        /// </ul>
+        pub fn set_rotate_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_rotate_master_user_password(input);
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if both of the following conditions are met:</p>
+        /// <ul>
+        /// <li> <p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p> </li>
+        /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+        /// </ul>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn master_user_secret_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.master_user_secret_kms_key_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if both of the following conditions are met:</p>
+        /// <ul>
+        /// <li> <p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p> </li>
+        /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+        /// </ul>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn set_master_user_secret_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_master_user_secret_kms_key_id(input);
             self
         }
     }
@@ -23258,13 +24173,21 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+        /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+        /// </ul>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.master_user_password(input.into());
             self
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+        /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+        /// </ul>
         pub fn set_master_user_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23603,6 +24526,50 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
         pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_type(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn manage_master_user_password(mut self, input: bool) -> Self {
+            self.inner = self.inner.manage_master_user_password(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn set_manage_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_manage_master_user_password(input);
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn master_user_secret_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.master_user_secret_kms_key_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn set_master_user_secret_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_master_user_secret_kms_key_id(input);
             self
         }
     }
@@ -24175,7 +25142,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn iops(mut self, input: i32) -> Self {
@@ -24183,7 +25150,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
@@ -24844,7 +25811,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn iops(mut self, input: i32) -> Self {
@@ -24852,7 +25819,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
@@ -25001,6 +25968,8 @@ pub mod fluent_builders {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li>
+        /// <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.</p> </li>
+        /// <li> <p>Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li>
         /// <li> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> </li>
         /// </ul>
         pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -25011,6 +25980,8 @@ pub mod fluent_builders {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li>
+        /// <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.</p> </li>
+        /// <li> <p>Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li>
         /// <li> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> </li>
         /// </ul>
         pub fn set_db_snapshot_identifier(
@@ -25203,14 +26174,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second. If this parameter isn't specified, the IOPS value is taken from the backup. If this parameter is set to 0, the new instance is converted to a non-PIOPS instance. The conversion takes additional time, though your DB instance is available for connections before the conversion starts.</p>
-        /// <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
         /// <p>Constraints: Must be an integer greater than 1000.</p>
         pub fn iops(mut self, input: i32) -> Self {
             self.inner = self.inner.iops(input);
             self
         }
         /// <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second. If this parameter isn't specified, the IOPS value is taken from the backup. If this parameter is set to 0, the new instance is converted to a non-PIOPS instance. The conversion takes additional time, though your DB instance is available for connections before the conversion starts.</p>
-        /// <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
         /// <p>Constraints: Must be an integer greater than 1000.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_iops(input);
@@ -25251,16 +26222,16 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_storage_type(input);
@@ -25476,7 +26447,7 @@ pub mod fluent_builders {
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_customer_owned_ip(input);
             self
@@ -25485,7 +26456,7 @@ pub mod fluent_builders {
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_customer_owned_ip(input);
             self
@@ -25559,6 +26530,68 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_type(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.inner = self.inner.storage_throughput(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_storage_throughput(input);
+            self
+        }
+        /// <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
+        /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must match the identifier of an existing Multi-AZ DB cluster snapshot.</p> </li>
+        /// <li> <p>Can't be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li>
+        /// <li> <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p> </li>
+        /// <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.</p> </li>
+        /// <li> <p>Can't be the identifier of an Aurora DB cluster snapshot.</p> </li>
+        /// <li> <p>Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.</p> </li>
+        /// </ul>
+        pub fn db_cluster_snapshot_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_cluster_snapshot_identifier(input.into());
+            self
+        }
+        /// <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
+        /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must match the identifier of an existing Multi-AZ DB cluster snapshot.</p> </li>
+        /// <li> <p>Can't be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li>
+        /// <li> <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p> </li>
+        /// <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.</p> </li>
+        /// <li> <p>Can't be the identifier of an Aurora DB cluster snapshot.</p> </li>
+        /// <li> <p>Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.</p> </li>
+        /// </ul>
+        pub fn set_db_cluster_snapshot_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
+            self
+        }
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p> <note>
+        /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+        /// </note>
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_storage(input);
+            self
+        }
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p> <note>
+        /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+        /// </note>
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_allocated_storage(input);
             self
         }
     }
@@ -25662,14 +26695,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
-        /// <p>The amount of storage (in gigabytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
         /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
         /// </note>
         pub fn allocated_storage(mut self, input: i32) -> Self {
             self.inner = self.inner.allocated_storage(input);
             self
         }
-        /// <p>The amount of storage (in gigabytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
         /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
         /// </note>
         pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
@@ -25729,13 +26762,33 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
+        /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
+        /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p> <b>Microsoft SQL Server</b> </p>
+        /// <p>Constraints: Must contain from 8 to 128 characters.</p>
+        /// <p> <b>MySQL</b> </p>
+        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p> <b>Oracle</b> </p>
+        /// <p>Constraints: Must contain from 8 to 30 characters.</p>
+        /// <p> <b>PostgreSQL</b> </p>
+        /// <p>Constraints: Must contain from 8 to 128 characters.</p>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.master_user_password(input.into());
             self
         }
         /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
+        /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
+        /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p> <b>Microsoft SQL Server</b> </p>
+        /// <p>Constraints: Must contain from 8 to 128 characters.</p>
+        /// <p> <b>MySQL</b> </p>
+        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p> <b>Oracle</b> </p>
+        /// <p>Constraints: Must contain from 8 to 30 characters.</p>
+        /// <p> <b>PostgreSQL</b> </p>
+        /// <p>Constraints: Must contain from 8 to 128 characters.</p>
         pub fn set_master_user_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25961,12 +27014,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_license_model(input);
             self
         }
-        /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn iops(mut self, input: i32) -> Self {
             self.inner = self.inner.iops(input);
             self
         }
-        /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_iops(input);
             self
@@ -26018,16 +27071,16 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_storage_type(input);
@@ -26346,6 +27399,62 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_type(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.inner = self.inner.storage_throughput(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_storage_throughput(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn manage_master_user_password(mut self, input: bool) -> Self {
+            self.inner = self.inner.manage_master_user_password(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn set_manage_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_manage_master_user_password(input);
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn master_user_secret_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.master_user_secret_kms_key_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn set_master_user_secret_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_master_user_secret_kms_key_id(input);
             self
         }
     }
@@ -26750,16 +27859,16 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_storage_type(input);
@@ -27010,7 +28119,7 @@ pub mod fluent_builders {
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_customer_owned_ip(input);
             self
@@ -27019,7 +28128,7 @@ pub mod fluent_builders {
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_customer_owned_ip(input);
             self
@@ -27093,6 +28202,32 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_type(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.inner = self.inner.storage_throughput(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_storage_throughput(input);
+            self
+        }
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+        /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+        /// </note>
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_storage(input);
+            self
+        }
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+        /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+        /// </note>
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_allocated_storage(input);
             self
         }
     }
@@ -27228,7 +28363,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartActivityStream`.
     ///
-    /// <p>Starts a database activity stream to monitor activity on the database. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database Activity Streams</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Starts a database activity stream to monitor activity on the database. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html"> Monitoring Amazon Aurora with Database Activity Streams</a> in the <i>Amazon Aurora User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html"> Monitoring Amazon RDS with Database Activity Streams</a> in the <i>Amazon RDS User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartActivityStream {
         handle: std::sync::Arc<super::Handle>,
@@ -27735,33 +28870,33 @@ pub mod fluent_builders {
             self.inner = self.inner.set_iam_role_arn(input);
             self
         }
-        /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to execute the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
+        /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
         /// <ul>
-        /// <li> <p>GrantOperation.Encrypt</p> </li>
-        /// <li> <p>GrantOperation.Decrypt</p> </li>
-        /// <li> <p>GrantOperation.GenerateDataKey</p> </li>
-        /// <li> <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li>
-        /// <li> <p>GrantOperation.ReEncryptFrom</p> </li>
-        /// <li> <p>GrantOperation.ReEncryptTo</p> </li>
-        /// <li> <p>GrantOperation.CreateGrant</p> </li>
-        /// <li> <p>GrantOperation.DescribeKey</p> </li>
-        /// <li> <p>GrantOperation.RetireGrant</p> </li>
+        /// <li> <p>kms:Encrypt</p> </li>
+        /// <li> <p>kms:Decrypt</p> </li>
+        /// <li> <p>kms:GenerateDataKey</p> </li>
+        /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li>
+        /// <li> <p>kms:ReEncryptFrom</p> </li>
+        /// <li> <p>kms:ReEncryptTo</p> </li>
+        /// <li> <p>kms:CreateGrant</p> </li>
+        /// <li> <p>kms:DescribeKey</p> </li>
+        /// <li> <p>kms:RetireGrant</p> </li>
         /// </ul>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to execute the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
+        /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
         /// <ul>
-        /// <li> <p>GrantOperation.Encrypt</p> </li>
-        /// <li> <p>GrantOperation.Decrypt</p> </li>
-        /// <li> <p>GrantOperation.GenerateDataKey</p> </li>
-        /// <li> <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li>
-        /// <li> <p>GrantOperation.ReEncryptFrom</p> </li>
-        /// <li> <p>GrantOperation.ReEncryptTo</p> </li>
-        /// <li> <p>GrantOperation.CreateGrant</p> </li>
-        /// <li> <p>GrantOperation.DescribeKey</p> </li>
-        /// <li> <p>GrantOperation.RetireGrant</p> </li>
+        /// <li> <p>kms:Encrypt</p> </li>
+        /// <li> <p>kms:Decrypt</p> </li>
+        /// <li> <p>kms:GenerateDataKey</p> </li>
+        /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li>
+        /// <li> <p>kms:ReEncryptFrom</p> </li>
+        /// <li> <p>kms:ReEncryptTo</p> </li>
+        /// <li> <p>kms:CreateGrant</p> </li>
+        /// <li> <p>kms:DescribeKey</p> </li>
+        /// <li> <p>kms:RetireGrant</p> </li>
         /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
@@ -27810,7 +28945,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopActivityStream`.
     ///
     /// <p>Stops a database activity stream that was started using the Amazon Web Services console, the <code>start-activity-stream</code> CLI command, or the <code>StartActivityStream</code> action.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database Activity Streams</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html"> Monitoring Amazon Aurora with Database Activity Streams</a> in the <i>Amazon Aurora User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html"> Monitoring Amazon RDS with Database Activity Streams</a> in the <i>Amazon RDS User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopActivityStream {
         handle: std::sync::Arc<super::Handle>,
@@ -28141,6 +29276,107 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_source_db_instance_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `SwitchoverBlueGreenDeployment`.
+    ///
+    /// <p>Switches over a blue/green deployment.</p>
+    /// <p>Before you switch over, production traffic is routed to the databases in the blue environment. After you switch over, production traffic is routed to the databases in the green environment.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct SwitchoverBlueGreenDeployment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::switchover_blue_green_deployment_input::Builder,
+    }
+    impl SwitchoverBlueGreenDeployment {
+        /// Creates a new `SwitchoverBlueGreenDeployment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::SwitchoverBlueGreenDeployment,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::SwitchoverBlueGreenDeploymentError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SwitchoverBlueGreenDeploymentOutput,
+            aws_smithy_http::result::SdkError<crate::error::SwitchoverBlueGreenDeploymentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The blue/green deployment identifier.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+        /// </ul>
+        pub fn blue_green_deployment_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.blue_green_deployment_identifier(input.into());
+            self
+        }
+        /// <p>The blue/green deployment identifier.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+        /// </ul>
+        pub fn set_blue_green_deployment_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_blue_green_deployment_identifier(input);
+            self
+        }
+        /// <p>The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+        /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
+        pub fn switchover_timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.switchover_timeout(input);
+            self
+        }
+        /// <p>The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+        /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
+        pub fn set_switchover_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_switchover_timeout(input);
             self
         }
     }

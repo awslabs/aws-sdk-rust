@@ -2603,13 +2603,13 @@ pub mod create_cluster_input {
             self
         }
         /// <p>The Elastic IP (EIP) address for the cluster.</p>
-        /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
+        /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
         pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.elastic_ip = Some(input.into());
             self
         }
         /// <p>The Elastic IP (EIP) address for the cluster.</p>
-        /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
+        /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.elastic_ip = input;
             self
@@ -22176,12 +22176,12 @@ pub mod restore_from_cluster_snapshot_input {
             self.hsm_configuration_identifier = input;
             self
         }
-        /// <p>The elastic IP (EIP) address for the cluster.</p>
+        /// <p>The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on.</p>
         pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.elastic_ip = Some(input.into());
             self
         }
-        /// <p>The elastic IP (EIP) address for the cluster.</p>
+        /// <p>The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.elastic_ip = input;
             self
@@ -24331,7 +24331,7 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
     #[doc(hidden)]
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
-    /// <p>The elastic IP (EIP) address for the cluster.</p>
+    /// <p>The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on.</p>
     #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>The name of the parameter group to be associated with this cluster.</p>
@@ -24482,7 +24482,7 @@ impl RestoreFromClusterSnapshotInput {
     pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
         self.hsm_configuration_identifier.as_deref()
     }
-    /// <p>The elastic IP (EIP) address for the cluster.</p>
+    /// <p>The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on.</p>
     pub fn elastic_ip(&self) -> std::option::Option<&str> {
         self.elastic_ip.as_deref()
     }
@@ -28764,7 +28764,7 @@ pub struct CreateClusterInput {
     #[doc(hidden)]
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
     /// <p>The Elastic IP (EIP) address for the cluster.</p>
-    /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
+    /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
     #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
@@ -28966,7 +28966,7 @@ impl CreateClusterInput {
         self.hsm_configuration_identifier.as_deref()
     }
     /// <p>The Elastic IP (EIP) address for the cluster.</p>
-    /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
+    /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn elastic_ip(&self) -> std::option::Option<&str> {
         self.elastic_ip.as_deref()
     }

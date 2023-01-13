@@ -94,13 +94,28 @@ impl Client {
     /// Constructs a fluent builder for the [`AssociateAlias`](crate::client::fluent_builders::AssociateAlias) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_distribution_id(impl Into<String>)`](crate::client::fluent_builders::AssociateAlias::target_distribution_id) / [`set_target_distribution_id(Option<String>)`](crate::client::fluent_builders::AssociateAlias::set_target_distribution_id): <p>The ID of the distribution that you’re associating the alias with.</p>
+    ///   - [`target_distribution_id(impl Into<String>)`](crate::client::fluent_builders::AssociateAlias::target_distribution_id) / [`set_target_distribution_id(Option<String>)`](crate::client::fluent_builders::AssociateAlias::set_target_distribution_id): <p>The ID of the distribution that you're associating the alias with.</p>
     ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::AssociateAlias::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::AssociateAlias::set_alias): <p>The alias (also known as a CNAME) to add to the target distribution.</p>
     /// - On success, responds with [`AssociateAliasOutput`](crate::output::AssociateAliasOutput)
 
     /// - On failure, responds with [`SdkError<AssociateAliasError>`](crate::error::AssociateAliasError)
     pub fn associate_alias(&self) -> fluent_builders::AssociateAlias {
         fluent_builders::AssociateAlias::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CopyDistribution`](crate::client::fluent_builders::CopyDistribution) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`primary_distribution_id(impl Into<String>)`](crate::client::fluent_builders::CopyDistribution::primary_distribution_id) / [`set_primary_distribution_id(Option<String>)`](crate::client::fluent_builders::CopyDistribution::set_primary_distribution_id): <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
+    ///   - [`staging(bool)`](crate::client::fluent_builders::CopyDistribution::staging) / [`set_staging(Option<bool>)`](crate::client::fluent_builders::CopyDistribution::set_staging): <p>The type of distribution that your primary distribution will be copied to. The only valid value is <code>True</code>, indicating that you are copying to a staging distribution.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::CopyDistribution::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::CopyDistribution::set_if_match): <p>The version identifier of the primary distribution whose configuration you are copying. This is the <code>ETag</code> value returned in the response to <code>GetDistribution</code> and <code>GetDistributionConfig</code>.</p>
+    ///   - [`caller_reference(impl Into<String>)`](crate::client::fluent_builders::CopyDistribution::caller_reference) / [`set_caller_reference(Option<String>)`](crate::client::fluent_builders::CopyDistribution::set_caller_reference): <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
+    /// - On success, responds with [`CopyDistributionOutput`](crate::output::CopyDistributionOutput) with field(s):
+    ///   - [`distribution(Option<Distribution>)`](crate::output::CopyDistributionOutput::distribution): <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
+    ///   - [`location(Option<String>)`](crate::output::CopyDistributionOutput::location): <p>The URL of the staging distribution.</p>
+    ///   - [`e_tag(Option<String>)`](crate::output::CopyDistributionOutput::e_tag): <p>The version identifier for the current version of the staging distribution.</p>
+    /// - On failure, responds with [`SdkError<CopyDistributionError>`](crate::error::CopyDistributionError)
+    pub fn copy_distribution(&self) -> fluent_builders::CopyDistribution {
+        fluent_builders::CopyDistribution::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateCachePolicy`](crate::client::fluent_builders::CreateCachePolicy) operation.
     ///
@@ -128,6 +143,20 @@ impl Client {
     ) -> fluent_builders::CreateCloudFrontOriginAccessIdentity {
         fluent_builders::CreateCloudFrontOriginAccessIdentity::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateContinuousDeploymentPolicy`](crate::client::fluent_builders::CreateContinuousDeploymentPolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`continuous_deployment_policy_config(ContinuousDeploymentPolicyConfig)`](crate::client::fluent_builders::CreateContinuousDeploymentPolicy::continuous_deployment_policy_config) / [`set_continuous_deployment_policy_config(Option<ContinuousDeploymentPolicyConfig>)`](crate::client::fluent_builders::CreateContinuousDeploymentPolicy::set_continuous_deployment_policy_config): <p>Contains the configuration for a continuous deployment policy.</p>
+    /// - On success, responds with [`CreateContinuousDeploymentPolicyOutput`](crate::output::CreateContinuousDeploymentPolicyOutput) with field(s):
+    ///   - [`continuous_deployment_policy(Option<ContinuousDeploymentPolicy>)`](crate::output::CreateContinuousDeploymentPolicyOutput::continuous_deployment_policy): <p>A continuous deployment policy.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreateContinuousDeploymentPolicyOutput::location): <p>The location of the continuous deployment policy.</p>
+    ///   - [`e_tag(Option<String>)`](crate::output::CreateContinuousDeploymentPolicyOutput::e_tag): <p>The version identifier for the current version of the continuous deployment policy.</p>
+    /// - On failure, responds with [`SdkError<CreateContinuousDeploymentPolicyError>`](crate::error::CreateContinuousDeploymentPolicyError)
+    pub fn create_continuous_deployment_policy(
+        &self,
+    ) -> fluent_builders::CreateContinuousDeploymentPolicy {
+        fluent_builders::CreateContinuousDeploymentPolicy::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateDistribution`](crate::client::fluent_builders::CreateDistribution) operation.
     ///
     /// - The fluent builder is configurable:
@@ -143,9 +172,9 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateDistributionWithTags`](crate::client::fluent_builders::CreateDistributionWithTags) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`distribution_config_with_tags(DistributionConfigWithTags)`](crate::client::fluent_builders::CreateDistributionWithTags::distribution_config_with_tags) / [`set_distribution_config_with_tags(Option<DistributionConfigWithTags>)`](crate::client::fluent_builders::CreateDistributionWithTags::set_distribution_config_with_tags): <p>The distribution's configuration information. </p>
+    ///   - [`distribution_config_with_tags(DistributionConfigWithTags)`](crate::client::fluent_builders::CreateDistributionWithTags::distribution_config_with_tags) / [`set_distribution_config_with_tags(Option<DistributionConfigWithTags>)`](crate::client::fluent_builders::CreateDistributionWithTags::set_distribution_config_with_tags): <p>The distribution's configuration information.</p>
     /// - On success, responds with [`CreateDistributionWithTagsOutput`](crate::output::CreateDistributionWithTagsOutput) with field(s):
-    ///   - [`distribution(Option<Distribution>)`](crate::output::CreateDistributionWithTagsOutput::distribution): <p>The distribution's information. </p>
+    ///   - [`distribution(Option<Distribution>)`](crate::output::CreateDistributionWithTagsOutput::distribution): <p>The distribution's information.</p>
     ///   - [`location(Option<String>)`](crate::output::CreateDistributionWithTagsOutput::location): <p>The fully qualified URI of the new distribution resource just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateDistributionWithTagsOutput::e_tag): <p>The current version of the distribution created.</p>
     /// - On failure, responds with [`SdkError<CreateDistributionWithTagsError>`](crate::error::CreateDistributionWithTagsError)
@@ -184,7 +213,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_name): <p>A name to identify the function.</p>
-    ///   - [`function_config(FunctionConfig)`](crate::client::fluent_builders::CreateFunction::function_config) / [`set_function_config(Option<FunctionConfig>)`](crate::client::fluent_builders::CreateFunction::set_function_config): <p>Configuration information about the function, including an optional comment and the function’s runtime.</p>
+    ///   - [`function_config(FunctionConfig)`](crate::client::fluent_builders::CreateFunction::function_config) / [`set_function_config(Option<FunctionConfig>)`](crate::client::fluent_builders::CreateFunction::set_function_config): <p>Configuration information about the function, including an optional comment and the function's runtime.</p>
     ///   - [`function_code(Blob)`](crate::client::fluent_builders::CreateFunction::function_code) / [`set_function_code(Option<Blob>)`](crate::client::fluent_builders::CreateFunction::set_function_code): <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// - On success, responds with [`CreateFunctionOutput`](crate::output::CreateFunctionOutput) with field(s):
     ///   - [`function_summary(Option<FunctionSummary>)`](crate::output::CreateFunctionOutput::function_summary): <p>Contains configuration information and metadata about a CloudFront function.</p>
@@ -281,7 +310,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateResponseHeadersPolicy`](crate::client::fluent_builders::CreateResponseHeadersPolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`response_headers_policy_config(ResponseHeadersPolicyConfig)`](crate::client::fluent_builders::CreateResponseHeadersPolicy::response_headers_policy_config) / [`set_response_headers_policy_config(Option<ResponseHeadersPolicyConfig>)`](crate::client::fluent_builders::CreateResponseHeadersPolicy::set_response_headers_policy_config): <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
+    ///   - [`response_headers_policy_config(ResponseHeadersPolicyConfig)`](crate::client::fluent_builders::CreateResponseHeadersPolicy::response_headers_policy_config) / [`set_response_headers_policy_config(Option<ResponseHeadersPolicyConfig>)`](crate::client::fluent_builders::CreateResponseHeadersPolicy::set_response_headers_policy_config): <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
     /// - On success, responds with [`CreateResponseHeadersPolicyOutput`](crate::output::CreateResponseHeadersPolicyOutput) with field(s):
     ///   - [`response_headers_policy(Option<ResponseHeadersPolicy>)`](crate::output::CreateResponseHeadersPolicyOutput::response_headers_policy): <p>Contains a response headers policy.</p>
     ///   - [`location(Option<String>)`](crate::output::CreateResponseHeadersPolicyOutput::location): <p>The URL of the response headers policy.</p>
@@ -305,9 +334,9 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateStreamingDistributionWithTags`](crate::client::fluent_builders::CreateStreamingDistributionWithTags) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`streaming_distribution_config_with_tags(StreamingDistributionConfigWithTags)`](crate::client::fluent_builders::CreateStreamingDistributionWithTags::streaming_distribution_config_with_tags) / [`set_streaming_distribution_config_with_tags(Option<StreamingDistributionConfigWithTags>)`](crate::client::fluent_builders::CreateStreamingDistributionWithTags::set_streaming_distribution_config_with_tags): <p> The streaming distribution's configuration information. </p>
+    ///   - [`streaming_distribution_config_with_tags(StreamingDistributionConfigWithTags)`](crate::client::fluent_builders::CreateStreamingDistributionWithTags::streaming_distribution_config_with_tags) / [`set_streaming_distribution_config_with_tags(Option<StreamingDistributionConfigWithTags>)`](crate::client::fluent_builders::CreateStreamingDistributionWithTags::set_streaming_distribution_config_with_tags): <p>The streaming distribution's configuration information.</p>
     /// - On success, responds with [`CreateStreamingDistributionWithTagsOutput`](crate::output::CreateStreamingDistributionWithTagsOutput) with field(s):
-    ///   - [`streaming_distribution(Option<StreamingDistribution>)`](crate::output::CreateStreamingDistributionWithTagsOutput::streaming_distribution): <p>The streaming distribution's information. </p>
+    ///   - [`streaming_distribution(Option<StreamingDistribution>)`](crate::output::CreateStreamingDistributionWithTagsOutput::streaming_distribution): <p>The streaming distribution's information.</p>
     ///   - [`location(Option<String>)`](crate::output::CreateStreamingDistributionWithTagsOutput::location): <p>The fully qualified URI of the new streaming distribution resource just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateStreamingDistributionWithTagsOutput::e_tag): <p>The current version of the distribution created.</p>
     /// - On failure, responds with [`SdkError<CreateStreamingDistributionWithTagsError>`](crate::error::CreateStreamingDistributionWithTagsError)
@@ -320,7 +349,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteCachePolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteCachePolicy::set_id): <p>The unique identifier for the cache policy that you are deleting. To get the identifier, you can use <code>ListCachePolicies</code>.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteCachePolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteCachePolicy::set_if_match): <p>The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteCachePolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteCachePolicy::set_if_match): <p>The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
     /// - On success, responds with [`DeleteCachePolicyOutput`](crate::output::DeleteCachePolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCachePolicyError>`](crate::error::DeleteCachePolicyError)
@@ -340,11 +369,24 @@ impl Client {
     ) -> fluent_builders::DeleteCloudFrontOriginAccessIdentity {
         fluent_builders::DeleteCloudFrontOriginAccessIdentity::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteContinuousDeploymentPolicy`](crate::client::fluent_builders::DeleteContinuousDeploymentPolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteContinuousDeploymentPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteContinuousDeploymentPolicy::set_id): <p>The identifier of the continuous deployment policy that you are deleting.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteContinuousDeploymentPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteContinuousDeploymentPolicy::set_if_match): <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
+    /// - On success, responds with [`DeleteContinuousDeploymentPolicyOutput`](crate::output::DeleteContinuousDeploymentPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteContinuousDeploymentPolicyError>`](crate::error::DeleteContinuousDeploymentPolicyError)
+    pub fn delete_continuous_deployment_policy(
+        &self,
+    ) -> fluent_builders::DeleteContinuousDeploymentPolicy {
+        fluent_builders::DeleteContinuousDeploymentPolicy::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteDistribution`](crate::client::fluent_builders::DeleteDistribution) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteDistribution::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteDistribution::set_id): <p>The distribution ID. </p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteDistribution::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteDistribution::set_if_match): <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteDistribution::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteDistribution::set_id): <p>The distribution ID.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteDistribution::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteDistribution::set_if_match): <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On success, responds with [`DeleteDistributionOutput`](crate::output::DeleteDistributionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDistributionError>`](crate::error::DeleteDistributionError)
@@ -392,7 +434,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteKeyGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteKeyGroup::set_id): <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteKeyGroup::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteKeyGroup::set_if_match): <p>The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteKeyGroup::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteKeyGroup::set_if_match): <p>The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
     /// - On success, responds with [`DeleteKeyGroupOutput`](crate::output::DeleteKeyGroupOutput)
 
     /// - On failure, responds with [`SdkError<DeleteKeyGroupError>`](crate::error::DeleteKeyGroupError)
@@ -424,7 +466,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteOriginRequestPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteOriginRequestPolicy::set_id): <p>The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteOriginRequestPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteOriginRequestPolicy::set_if_match): <p>The version of the origin request policy that you are deleting. The version is the origin request policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteOriginRequestPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteOriginRequestPolicy::set_if_match): <p>The version of the origin request policy that you are deleting. The version is the origin request policy's <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
     /// - On success, responds with [`DeleteOriginRequestPolicyOutput`](crate::output::DeleteOriginRequestPolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteOriginRequestPolicyError>`](crate::error::DeleteOriginRequestPolicyError)
@@ -457,7 +499,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteResponseHeadersPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteResponseHeadersPolicy::set_id): <p>The identifier for the response headers policy that you are deleting.</p>  <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteResponseHeadersPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteResponseHeadersPolicy::set_if_match): <p>The version of the response headers policy that you are deleting.</p>  <p>The version is the response headers policy’s <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteResponseHeadersPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteResponseHeadersPolicy::set_if_match): <p>The version of the response headers policy that you are deleting.</p>  <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
     /// - On success, responds with [`DeleteResponseHeadersPolicyOutput`](crate::output::DeleteResponseHeadersPolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteResponseHeadersPolicyError>`](crate::error::DeleteResponseHeadersPolicyError)
@@ -467,7 +509,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteStreamingDistribution`](crate::client::fluent_builders::DeleteStreamingDistribution) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingDistribution::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteStreamingDistribution::set_id): <p>The distribution ID. </p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingDistribution::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteStreamingDistribution::set_id): <p>The distribution ID.</p>
     ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingDistribution::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteStreamingDistribution::set_if_match): <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On success, responds with [`DeleteStreamingDistributionOutput`](crate::output::DeleteStreamingDistributionOutput)
 
@@ -479,7 +521,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeFunction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeFunction::set_name): <p>The name of the function that you are getting information about.</p>
-    ///   - [`stage(FunctionStage)`](crate::client::fluent_builders::DescribeFunction::stage) / [`set_stage(Option<FunctionStage>)`](crate::client::fluent_builders::DescribeFunction::set_stage): <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    ///   - [`stage(FunctionStage)`](crate::client::fluent_builders::DescribeFunction::stage) / [`set_stage(Option<FunctionStage>)`](crate::client::fluent_builders::DescribeFunction::set_stage): <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     /// - On success, responds with [`DescribeFunctionOutput`](crate::output::DescribeFunctionOutput) with field(s):
     ///   - [`function_summary(Option<FunctionSummary>)`](crate::output::DescribeFunctionOutput::function_summary): <p>Contains configuration information and metadata about a CloudFront function.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::DescribeFunctionOutput::e_tag): <p>The version identifier for the current version of the CloudFront function.</p>
@@ -490,7 +532,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetCachePolicy`](crate::client::fluent_builders::GetCachePolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetCachePolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetCachePolicy::set_id): <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetCachePolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetCachePolicy::set_id): <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     /// - On success, responds with [`GetCachePolicyOutput`](crate::output::GetCachePolicyOutput) with field(s):
     ///   - [`cache_policy(Option<CachePolicy>)`](crate::output::GetCachePolicyOutput::cache_policy): <p>The cache policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetCachePolicyOutput::e_tag): <p>The current version of the cache policy.</p>
@@ -501,7 +543,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetCachePolicyConfig`](crate::client::fluent_builders::GetCachePolicyConfig) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetCachePolicyConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetCachePolicyConfig::set_id): <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetCachePolicyConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetCachePolicyConfig::set_id): <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     /// - On success, responds with [`GetCachePolicyConfigOutput`](crate::output::GetCachePolicyConfigOutput) with field(s):
     ///   - [`cache_policy_config(Option<CachePolicyConfig>)`](crate::output::GetCachePolicyConfigOutput::cache_policy_config): <p>The cache policy configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetCachePolicyConfigOutput::e_tag): <p>The current version of the cache policy.</p>
@@ -525,15 +567,41 @@ impl Client {
     /// Constructs a fluent builder for the [`GetCloudFrontOriginAccessIdentityConfig`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentityConfig) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentityConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentityConfig::set_id): <p>The identity's ID. </p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentityConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentityConfig::set_id): <p>The identity's ID.</p>
     /// - On success, responds with [`GetCloudFrontOriginAccessIdentityConfigOutput`](crate::output::GetCloudFrontOriginAccessIdentityConfigOutput) with field(s):
-    ///   - [`cloud_front_origin_access_identity_config(Option<CloudFrontOriginAccessIdentityConfig>)`](crate::output::GetCloudFrontOriginAccessIdentityConfigOutput::cloud_front_origin_access_identity_config): <p>The origin access identity's configuration information. </p>
+    ///   - [`cloud_front_origin_access_identity_config(Option<CloudFrontOriginAccessIdentityConfig>)`](crate::output::GetCloudFrontOriginAccessIdentityConfigOutput::cloud_front_origin_access_identity_config): <p>The origin access identity's configuration information.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetCloudFrontOriginAccessIdentityConfigOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On failure, responds with [`SdkError<GetCloudFrontOriginAccessIdentityConfigError>`](crate::error::GetCloudFrontOriginAccessIdentityConfigError)
     pub fn get_cloud_front_origin_access_identity_config(
         &self,
     ) -> fluent_builders::GetCloudFrontOriginAccessIdentityConfig {
         fluent_builders::GetCloudFrontOriginAccessIdentityConfig::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetContinuousDeploymentPolicy`](crate::client::fluent_builders::GetContinuousDeploymentPolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetContinuousDeploymentPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetContinuousDeploymentPolicy::set_id): <p>The identifier of the continuous deployment policy that you are getting.</p>
+    /// - On success, responds with [`GetContinuousDeploymentPolicyOutput`](crate::output::GetContinuousDeploymentPolicyOutput) with field(s):
+    ///   - [`continuous_deployment_policy(Option<ContinuousDeploymentPolicy>)`](crate::output::GetContinuousDeploymentPolicyOutput::continuous_deployment_policy): <p>A continuous deployment policy.</p>
+    ///   - [`e_tag(Option<String>)`](crate::output::GetContinuousDeploymentPolicyOutput::e_tag): <p>The version identifier for the current version of the continuous deployment policy.</p>
+    /// - On failure, responds with [`SdkError<GetContinuousDeploymentPolicyError>`](crate::error::GetContinuousDeploymentPolicyError)
+    pub fn get_continuous_deployment_policy(
+        &self,
+    ) -> fluent_builders::GetContinuousDeploymentPolicy {
+        fluent_builders::GetContinuousDeploymentPolicy::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetContinuousDeploymentPolicyConfig`](crate::client::fluent_builders::GetContinuousDeploymentPolicyConfig) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetContinuousDeploymentPolicyConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetContinuousDeploymentPolicyConfig::set_id): <p>The identifier of the continuous deployment policy whose configuration you are getting.</p>
+    /// - On success, responds with [`GetContinuousDeploymentPolicyConfigOutput`](crate::output::GetContinuousDeploymentPolicyConfigOutput) with field(s):
+    ///   - [`continuous_deployment_policy_config(Option<ContinuousDeploymentPolicyConfig>)`](crate::output::GetContinuousDeploymentPolicyConfigOutput::continuous_deployment_policy_config): <p>Contains the configuration for a continuous deployment policy.</p>
+    ///   - [`e_tag(Option<String>)`](crate::output::GetContinuousDeploymentPolicyConfigOutput::e_tag): <p>The version identifier for the current version of the continuous deployment policy.</p>
+    /// - On failure, responds with [`SdkError<GetContinuousDeploymentPolicyConfigError>`](crate::error::GetContinuousDeploymentPolicyConfigError)
+    pub fn get_continuous_deployment_policy_config(
+        &self,
+    ) -> fluent_builders::GetContinuousDeploymentPolicyConfig {
+        fluent_builders::GetContinuousDeploymentPolicyConfig::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetDistribution`](crate::client::fluent_builders::GetDistribution) operation.
     ///
@@ -611,7 +679,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetFunction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetFunction::set_name): <p>The name of the function whose code you are getting.</p>
-    ///   - [`stage(FunctionStage)`](crate::client::fluent_builders::GetFunction::stage) / [`set_stage(Option<FunctionStage>)`](crate::client::fluent_builders::GetFunction::set_stage): <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    ///   - [`stage(FunctionStage)`](crate::client::fluent_builders::GetFunction::stage) / [`set_stage(Option<FunctionStage>)`](crate::client::fluent_builders::GetFunction::set_stage): <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     /// - On success, responds with [`GetFunctionOutput`](crate::output::GetFunctionOutput) with field(s):
     ///   - [`function_code(Option<Blob>)`](crate::output::GetFunctionOutput::function_code): <p>The function code of a CloudFront function.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetFunctionOutput::e_tag): <p>The version identifier for the current version of the CloudFront function.</p>
@@ -626,7 +694,7 @@ impl Client {
     ///   - [`distribution_id(impl Into<String>)`](crate::client::fluent_builders::GetInvalidation::distribution_id) / [`set_distribution_id(Option<String>)`](crate::client::fluent_builders::GetInvalidation::set_distribution_id): <p>The distribution's ID.</p>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetInvalidation::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetInvalidation::set_id): <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
     /// - On success, responds with [`GetInvalidationOutput`](crate::output::GetInvalidationOutput) with field(s):
-    ///   - [`invalidation(Option<Invalidation>)`](crate::output::GetInvalidationOutput::invalidation): <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>. </p>
+    ///   - [`invalidation(Option<Invalidation>)`](crate::output::GetInvalidationOutput::invalidation): <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
     /// - On failure, responds with [`SdkError<GetInvalidationError>`](crate::error::GetInvalidationError)
     pub fn get_invalidation(&self) -> fluent_builders::GetInvalidation {
         fluent_builders::GetInvalidation::new(self.handle.clone())
@@ -690,7 +758,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetOriginRequestPolicy`](crate::client::fluent_builders::GetOriginRequestPolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetOriginRequestPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetOriginRequestPolicy::set_id): <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetOriginRequestPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetOriginRequestPolicy::set_id): <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     /// - On success, responds with [`GetOriginRequestPolicyOutput`](crate::output::GetOriginRequestPolicyOutput) with field(s):
     ///   - [`origin_request_policy(Option<OriginRequestPolicy>)`](crate::output::GetOriginRequestPolicyOutput::origin_request_policy): <p>The origin request policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetOriginRequestPolicyOutput::e_tag): <p>The current version of the origin request policy.</p>
@@ -701,7 +769,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetOriginRequestPolicyConfig`](crate::client::fluent_builders::GetOriginRequestPolicyConfig) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetOriginRequestPolicyConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetOriginRequestPolicyConfig::set_id): <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetOriginRequestPolicyConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetOriginRequestPolicyConfig::set_id): <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     /// - On success, responds with [`GetOriginRequestPolicyConfigOutput`](crate::output::GetOriginRequestPolicyConfigOutput) with field(s):
     ///   - [`origin_request_policy_config(Option<OriginRequestPolicyConfig>)`](crate::output::GetOriginRequestPolicyConfigOutput::origin_request_policy_config): <p>The origin request policy configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetOriginRequestPolicyConfigOutput::e_tag): <p>The current version of the origin request policy.</p>
@@ -747,7 +815,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetResponseHeadersPolicy`](crate::client::fluent_builders::GetResponseHeadersPolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetResponseHeadersPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetResponseHeadersPolicy::set_id): <p>The identifier for the response headers policy.</p>  <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetResponseHeadersPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetResponseHeadersPolicy::set_id): <p>The identifier for the response headers policy.</p>  <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     /// - On success, responds with [`GetResponseHeadersPolicyOutput`](crate::output::GetResponseHeadersPolicyOutput) with field(s):
     ///   - [`response_headers_policy(Option<ResponseHeadersPolicy>)`](crate::output::GetResponseHeadersPolicyOutput::response_headers_policy): <p>Contains a response headers policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetResponseHeadersPolicyOutput::e_tag): <p>The version identifier for the current version of the response headers policy.</p>
@@ -758,7 +826,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetResponseHeadersPolicyConfig`](crate::client::fluent_builders::GetResponseHeadersPolicyConfig) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetResponseHeadersPolicyConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetResponseHeadersPolicyConfig::set_id): <p>The identifier for the response headers policy.</p>  <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetResponseHeadersPolicyConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetResponseHeadersPolicyConfig::set_id): <p>The identifier for the response headers policy.</p>  <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     /// - On success, responds with [`GetResponseHeadersPolicyConfigOutput`](crate::output::GetResponseHeadersPolicyConfigOutput) with field(s):
     ///   - [`response_headers_policy_config(Option<ResponseHeadersPolicyConfig>)`](crate::output::GetResponseHeadersPolicyConfigOutput::response_headers_policy_config): <p>Contains a response headers policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetResponseHeadersPolicyConfigOutput::e_tag): <p>The version identifier for the current version of the response headers policy.</p>
@@ -796,7 +864,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`r#type(CachePolicyType)`](crate::client::fluent_builders::ListCachePolicies::type) / [`set_type(Option<CachePolicyType>)`](crate::client::fluent_builders::ListCachePolicies::set_type): <p>A filter to return only the specified kinds of cache policies. Valid values are:</p>  <ul>   <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>   <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>  </ul>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListCachePolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListCachePolicies::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListCachePolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListCachePolicies::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListCachePolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListCachePolicies::set_max_items): <p>The maximum number of cache policies that you want in the response.</p>
     /// - On success, responds with [`ListCachePoliciesOutput`](crate::output::ListCachePoliciesOutput) with field(s):
     ///   - [`cache_policy_list(Option<CachePolicyList>)`](crate::output::ListCachePoliciesOutput::cache_policy_list): <p>A list of cache policies.</p>
@@ -809,9 +877,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities::set_marker): <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities::set_max_items): <p>The maximum number of origin access identities you want in the response body. </p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities::set_max_items): <p>The maximum number of origin access identities you want in the response body.</p>
     /// - On success, responds with [`ListCloudFrontOriginAccessIdentitiesOutput`](crate::output::ListCloudFrontOriginAccessIdentitiesOutput) with field(s):
-    ///   - [`cloud_front_origin_access_identity_list(Option<CloudFrontOriginAccessIdentityList>)`](crate::output::ListCloudFrontOriginAccessIdentitiesOutput::cloud_front_origin_access_identity_list): <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
+    ///   - [`cloud_front_origin_access_identity_list(Option<CloudFrontOriginAccessIdentityList>)`](crate::output::ListCloudFrontOriginAccessIdentitiesOutput::cloud_front_origin_access_identity_list): <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
     /// - On failure, responds with [`SdkError<ListCloudFrontOriginAccessIdentitiesError>`](crate::error::ListCloudFrontOriginAccessIdentitiesError)
     pub fn list_cloud_front_origin_access_identities(
         &self,
@@ -823,13 +891,26 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`distribution_id(impl Into<String>)`](crate::client::fluent_builders::ListConflictingAliases::distribution_id) / [`set_distribution_id(Option<String>)`](crate::client::fluent_builders::ListConflictingAliases::set_distribution_id): <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
     ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::ListConflictingAliases::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::ListConflictingAliases::set_alias): <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListConflictingAliases::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListConflictingAliases::set_marker): <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListConflictingAliases::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListConflictingAliases::set_marker): <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListConflictingAliases::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListConflictingAliases::set_max_items): <p>The maximum number of conflicting aliases that you want in the response.</p>
     /// - On success, responds with [`ListConflictingAliasesOutput`](crate::output::ListConflictingAliasesOutput) with field(s):
     ///   - [`conflicting_aliases_list(Option<ConflictingAliasesList>)`](crate::output::ListConflictingAliasesOutput::conflicting_aliases_list): <p>A list of conflicting aliases.</p>
     /// - On failure, responds with [`SdkError<ListConflictingAliasesError>`](crate::error::ListConflictingAliasesError)
     pub fn list_conflicting_aliases(&self) -> fluent_builders::ListConflictingAliases {
         fluent_builders::ListConflictingAliases::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListContinuousDeploymentPolicies`](crate::client::fluent_builders::ListContinuousDeploymentPolicies) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListContinuousDeploymentPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListContinuousDeploymentPolicies::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListContinuousDeploymentPolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListContinuousDeploymentPolicies::set_max_items): <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
+    /// - On success, responds with [`ListContinuousDeploymentPoliciesOutput`](crate::output::ListContinuousDeploymentPoliciesOutput) with field(s):
+    ///   - [`continuous_deployment_policy_list(Option<ContinuousDeploymentPolicyList>)`](crate::output::ListContinuousDeploymentPoliciesOutput::continuous_deployment_policy_list): <p>A list of continuous deployment policies.</p>
+    /// - On failure, responds with [`SdkError<ListContinuousDeploymentPoliciesError>`](crate::error::ListContinuousDeploymentPoliciesError)
+    pub fn list_continuous_deployment_policies(
+        &self,
+    ) -> fluent_builders::ListContinuousDeploymentPolicies {
+        fluent_builders::ListContinuousDeploymentPolicies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDistributions`](crate::client::fluent_builders::ListDistributions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDistributions::into_paginator).
@@ -838,7 +919,7 @@ impl Client {
     ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributions::set_marker): <p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDistributions::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDistributions::set_max_items): <p>The maximum number of distributions you want in the response body.</p>
     /// - On success, responds with [`ListDistributionsOutput`](crate::output::ListDistributionsOutput) with field(s):
-    ///   - [`distribution_list(Option<DistributionList>)`](crate::output::ListDistributionsOutput::distribution_list): <p>The <code>DistributionList</code> type. </p>
+    ///   - [`distribution_list(Option<DistributionList>)`](crate::output::ListDistributionsOutput::distribution_list): <p>The <code>DistributionList</code> type.</p>
     /// - On failure, responds with [`SdkError<ListDistributionsError>`](crate::error::ListDistributionsError)
     pub fn list_distributions(&self) -> fluent_builders::ListDistributions {
         fluent_builders::ListDistributions::new(self.handle.clone())
@@ -846,7 +927,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListDistributionsByCachePolicyId`](crate::client::fluent_builders::ListDistributionsByCachePolicyId) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByCachePolicyId::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByCachePolicyId::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByCachePolicyId::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByCachePolicyId::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDistributionsByCachePolicyId::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDistributionsByCachePolicyId::set_max_items): <p>The maximum number of distribution IDs that you want in the response.</p>
     ///   - [`cache_policy_id(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByCachePolicyId::cache_policy_id) / [`set_cache_policy_id(Option<String>)`](crate::client::fluent_builders::ListDistributionsByCachePolicyId::set_cache_policy_id): <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
     /// - On success, responds with [`ListDistributionsByCachePolicyIdOutput`](crate::output::ListDistributionsByCachePolicyIdOutput) with field(s):
@@ -860,7 +941,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListDistributionsByKeyGroup`](crate::client::fluent_builders::ListDistributionsByKeyGroup) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByKeyGroup::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByKeyGroup::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByKeyGroup::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByKeyGroup::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDistributionsByKeyGroup::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDistributionsByKeyGroup::set_max_items): <p>The maximum number of distribution IDs that you want in the response.</p>
     ///   - [`key_group_id(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByKeyGroup::key_group_id) / [`set_key_group_id(Option<String>)`](crate::client::fluent_builders::ListDistributionsByKeyGroup::set_key_group_id): <p>The ID of the key group whose associated distribution IDs you are listing.</p>
     /// - On success, responds with [`ListDistributionsByKeyGroupOutput`](crate::output::ListDistributionsByKeyGroupOutput) with field(s):
@@ -872,7 +953,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListDistributionsByOriginRequestPolicyId`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::set_max_items): <p>The maximum number of distribution IDs that you want in the response.</p>
     ///   - [`origin_request_policy_id(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::origin_request_policy_id) / [`set_origin_request_policy_id(Option<String>)`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::set_origin_request_policy_id): <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
     /// - On success, responds with [`ListDistributionsByOriginRequestPolicyIdOutput`](crate::output::ListDistributionsByOriginRequestPolicyIdOutput) with field(s):
@@ -886,7 +967,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListDistributionsByRealtimeLogConfig`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::set_max_items): <p>The maximum number of distributions that you want in the response.</p>
     ///   - [`realtime_log_config_name(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::realtime_log_config_name) / [`set_realtime_log_config_name(Option<String>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::set_realtime_log_config_name): <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
     ///   - [`realtime_log_config_arn(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::realtime_log_config_arn) / [`set_realtime_log_config_arn(Option<String>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::set_realtime_log_config_arn): <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
@@ -901,7 +982,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListDistributionsByResponseHeadersPolicyId`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::set_max_items): <p>The maximum number of distribution IDs that you want to get in the response.</p>
     ///   - [`response_headers_policy_id(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::response_headers_policy_id) / [`set_response_headers_policy_id(Option<String>)`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::set_response_headers_policy_id): <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
     /// - On success, responds with [`ListDistributionsByResponseHeadersPolicyIdOutput`](crate::output::ListDistributionsByResponseHeadersPolicyIdOutput) with field(s):
@@ -915,11 +996,11 @@ impl Client {
     /// Constructs a fluent builder for the [`ListDistributionsByWebACLId`](crate::client::fluent_builders::ListDistributionsByWebACLId) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByWebACLId::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByWebACLId::set_marker): <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByWebACLId::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByWebACLId::set_marker): <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDistributionsByWebACLId::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDistributionsByWebACLId::set_max_items): <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
     ///   - [`web_acl_id(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByWebACLId::web_acl_id) / [`set_web_acl_id(Option<String>)`](crate::client::fluent_builders::ListDistributionsByWebACLId::set_web_acl_id): <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
     /// - On success, responds with [`ListDistributionsByWebAclIdOutput`](crate::output::ListDistributionsByWebAclIdOutput) with field(s):
-    ///   - [`distribution_list(Option<DistributionList>)`](crate::output::ListDistributionsByWebAclIdOutput::distribution_list): <p>The <code>DistributionList</code> type. </p>
+    ///   - [`distribution_list(Option<DistributionList>)`](crate::output::ListDistributionsByWebAclIdOutput::distribution_list): <p>The <code>DistributionList</code> type.</p>
     /// - On failure, responds with [`SdkError<ListDistributionsByWebACLIdError>`](crate::error::ListDistributionsByWebACLIdError)
     pub fn list_distributions_by_web_acl_id(&self) -> fluent_builders::ListDistributionsByWebACLId {
         fluent_builders::ListDistributionsByWebACLId::new(self.handle.clone())
@@ -927,8 +1008,8 @@ impl Client {
     /// Constructs a fluent builder for the [`ListFieldLevelEncryptionConfigs`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs::set_marker): <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs::set_max_items): <p>The maximum number of field-level encryption configurations you want in the response body. </p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs::set_marker): <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs::set_max_items): <p>The maximum number of field-level encryption configurations you want in the response body.</p>
     /// - On success, responds with [`ListFieldLevelEncryptionConfigsOutput`](crate::output::ListFieldLevelEncryptionConfigsOutput) with field(s):
     ///   - [`field_level_encryption_list(Option<FieldLevelEncryptionList>)`](crate::output::ListFieldLevelEncryptionConfigsOutput::field_level_encryption_list): <p>Returns a list of all field-level encryption configurations that have been created in CloudFront for this account.</p>
     /// - On failure, responds with [`SdkError<ListFieldLevelEncryptionConfigsError>`](crate::error::ListFieldLevelEncryptionConfigsError)
@@ -940,7 +1021,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListFieldLevelEncryptionProfiles`](crate::client::fluent_builders::ListFieldLevelEncryptionProfiles) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListFieldLevelEncryptionProfiles::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListFieldLevelEncryptionProfiles::set_marker): <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListFieldLevelEncryptionProfiles::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListFieldLevelEncryptionProfiles::set_marker): <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page).</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListFieldLevelEncryptionProfiles::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListFieldLevelEncryptionProfiles::set_max_items): <p>The maximum number of field-level encryption profiles you want in the response body. </p>
     /// - On success, responds with [`ListFieldLevelEncryptionProfilesOutput`](crate::output::ListFieldLevelEncryptionProfilesOutput) with field(s):
     ///   - [`field_level_encryption_profile_list(Option<FieldLevelEncryptionProfileList>)`](crate::output::ListFieldLevelEncryptionProfilesOutput::field_level_encryption_profile_list): <p>Returns a list of the field-level encryption profiles that have been created in CloudFront for this account.</p>
@@ -953,7 +1034,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListFunctions`](crate::client::fluent_builders::ListFunctions) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListFunctions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListFunctions::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListFunctions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListFunctions::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListFunctions::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListFunctions::set_max_items): <p>The maximum number of functions that you want in the response.</p>
     ///   - [`stage(FunctionStage)`](crate::client::fluent_builders::ListFunctions::stage) / [`set_stage(Option<FunctionStage>)`](crate::client::fluent_builders::ListFunctions::set_stage): <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     /// - On success, responds with [`ListFunctionsOutput`](crate::output::ListFunctionsOutput) with field(s):
@@ -967,10 +1048,10 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`distribution_id(impl Into<String>)`](crate::client::fluent_builders::ListInvalidations::distribution_id) / [`set_distribution_id(Option<String>)`](crate::client::fluent_builders::ListInvalidations::set_distribution_id): <p>The distribution's ID.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListInvalidations::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListInvalidations::set_marker): <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page. </p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListInvalidations::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListInvalidations::set_marker): <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListInvalidations::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListInvalidations::set_max_items): <p>The maximum number of invalidation batches that you want in the response body.</p>
     /// - On success, responds with [`ListInvalidationsOutput`](crate::output::ListInvalidationsOutput) with field(s):
-    ///   - [`invalidation_list(Option<InvalidationList>)`](crate::output::ListInvalidationsOutput::invalidation_list): <p>Information about invalidation batches. </p>
+    ///   - [`invalidation_list(Option<InvalidationList>)`](crate::output::ListInvalidationsOutput::invalidation_list): <p>Information about invalidation batches.</p>
     /// - On failure, responds with [`SdkError<ListInvalidationsError>`](crate::error::ListInvalidationsError)
     pub fn list_invalidations(&self) -> fluent_builders::ListInvalidations {
         fluent_builders::ListInvalidations::new(self.handle.clone())
@@ -978,7 +1059,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListKeyGroups`](crate::client::fluent_builders::ListKeyGroups) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListKeyGroups::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListKeyGroups::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListKeyGroups::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListKeyGroups::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListKeyGroups::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListKeyGroups::set_max_items): <p>The maximum number of key groups that you want in the response.</p>
     /// - On success, responds with [`ListKeyGroupsOutput`](crate::output::ListKeyGroupsOutput) with field(s):
     ///   - [`key_group_list(Option<KeyGroupList>)`](crate::output::ListKeyGroupsOutput::key_group_list): <p>A list of key groups.</p>
@@ -1001,7 +1082,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`r#type(OriginRequestPolicyType)`](crate::client::fluent_builders::ListOriginRequestPolicies::type) / [`set_type(Option<OriginRequestPolicyType>)`](crate::client::fluent_builders::ListOriginRequestPolicies::set_type): <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>  <ul>   <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>   <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>  </ul>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListOriginRequestPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListOriginRequestPolicies::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListOriginRequestPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListOriginRequestPolicies::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListOriginRequestPolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListOriginRequestPolicies::set_max_items): <p>The maximum number of origin request policies that you want in the response.</p>
     /// - On success, responds with [`ListOriginRequestPoliciesOutput`](crate::output::ListOriginRequestPoliciesOutput) with field(s):
     ///   - [`origin_request_policy_list(Option<OriginRequestPolicyList>)`](crate::output::ListOriginRequestPoliciesOutput::origin_request_policy_list): <p>A list of origin request policies.</p>
@@ -1012,8 +1093,8 @@ impl Client {
     /// Constructs a fluent builder for the [`ListPublicKeys`](crate::client::fluent_builders::ListPublicKeys) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListPublicKeys::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListPublicKeys::set_marker): <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListPublicKeys::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListPublicKeys::set_max_items): <p>The maximum number of public keys you want in the response body. </p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListPublicKeys::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListPublicKeys::set_marker): <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListPublicKeys::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListPublicKeys::set_max_items): <p>The maximum number of public keys you want in the response body.</p>
     /// - On success, responds with [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput) with field(s):
     ///   - [`public_key_list(Option<PublicKeyList>)`](crate::output::ListPublicKeysOutput::public_key_list): <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
     /// - On failure, responds with [`SdkError<ListPublicKeysError>`](crate::error::ListPublicKeysError)
@@ -1024,7 +1105,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListRealtimeLogConfigs::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListRealtimeLogConfigs::set_max_items): <p>The maximum number of real-time log configurations that you want in the response.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListRealtimeLogConfigs::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListRealtimeLogConfigs::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListRealtimeLogConfigs::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListRealtimeLogConfigs::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     /// - On success, responds with [`ListRealtimeLogConfigsOutput`](crate::output::ListRealtimeLogConfigsOutput) with field(s):
     ///   - [`realtime_log_configs(Option<RealtimeLogConfigs>)`](crate::output::ListRealtimeLogConfigsOutput::realtime_log_configs): <p>A list of real-time log configurations.</p>
     /// - On failure, responds with [`SdkError<ListRealtimeLogConfigsError>`](crate::error::ListRealtimeLogConfigsError)
@@ -1035,7 +1116,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`r#type(ResponseHeadersPolicyType)`](crate::client::fluent_builders::ListResponseHeadersPolicies::type) / [`set_type(Option<ResponseHeadersPolicyType>)`](crate::client::fluent_builders::ListResponseHeadersPolicies::set_type): <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>  <ul>   <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>   <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>  </ul>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListResponseHeadersPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListResponseHeadersPolicies::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response. </p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListResponseHeadersPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListResponseHeadersPolicies::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListResponseHeadersPolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListResponseHeadersPolicies::set_max_items): <p>The maximum number of response headers policies that you want to get in the response.</p>
     /// - On success, responds with [`ListResponseHeadersPoliciesOutput`](crate::output::ListResponseHeadersPoliciesOutput) with field(s):
     ///   - [`response_headers_policy_list(Option<ResponseHeadersPolicyList>)`](crate::output::ListResponseHeadersPoliciesOutput::response_headers_policy_list): <p>A list of response headers policies.</p>
@@ -1050,7 +1131,7 @@ impl Client {
     ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListStreamingDistributions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListStreamingDistributions::set_marker): <p>The value that you provided for the <code>Marker</code> request parameter.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListStreamingDistributions::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListStreamingDistributions::set_max_items): <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
     /// - On success, responds with [`ListStreamingDistributionsOutput`](crate::output::ListStreamingDistributionsOutput) with field(s):
-    ///   - [`streaming_distribution_list(Option<StreamingDistributionList>)`](crate::output::ListStreamingDistributionsOutput::streaming_distribution_list): <p>The <code>StreamingDistributionList</code> type. </p>
+    ///   - [`streaming_distribution_list(Option<StreamingDistributionList>)`](crate::output::ListStreamingDistributionsOutput::streaming_distribution_list): <p>The <code>StreamingDistributionList</code> type.</p>
     /// - On failure, responds with [`SdkError<ListStreamingDistributionsError>`](crate::error::ListStreamingDistributionsError)
     pub fn list_streaming_distributions(&self) -> fluent_builders::ListStreamingDistributions {
         fluent_builders::ListStreamingDistributions::new(self.handle.clone())
@@ -1058,9 +1139,9 @@ impl Client {
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource): <p> An ARN of a CloudFront resource.</p>
+    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource): <p>An ARN of a CloudFront resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Tags>)`](crate::output::ListTagsForResourceOutput::tags): <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+    ///   - [`tags(Option<Tags>)`](crate::output::ListTagsForResourceOutput::tags): <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
@@ -1079,8 +1160,8 @@ impl Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource): <p> An ARN of a CloudFront resource.</p>
-    ///   - [`tags(Tags)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Tags>)`](crate::client::fluent_builders::TagResource::set_tags): <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource): <p>An ARN of a CloudFront resource.</p>
+    ///   - [`tags(Tags)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Tags>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -1103,8 +1184,8 @@ impl Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource): <p> An ARN of a CloudFront resource.</p>
-    ///   - [`tag_keys(TagKeys)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<TagKeys>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p> A complex type that contains zero or more <code>Tag</code> key elements.</p>
+    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource): <p>An ARN of a CloudFront resource.</p>
+    ///   - [`tag_keys(TagKeys)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<TagKeys>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -1115,8 +1196,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`cache_policy_config(CachePolicyConfig)`](crate::client::fluent_builders::UpdateCachePolicy::cache_policy_config) / [`set_cache_policy_config(Option<CachePolicyConfig>)`](crate::client::fluent_builders::UpdateCachePolicy::set_cache_policy_config): <p>A cache policy configuration.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateCachePolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateCachePolicy::set_id): <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateCachePolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateCachePolicy::set_if_match): <p>The version of the cache policy that you are updating. The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateCachePolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateCachePolicy::set_id): <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateCachePolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateCachePolicy::set_if_match): <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
     /// - On success, responds with [`UpdateCachePolicyOutput`](crate::output::UpdateCachePolicyOutput) with field(s):
     ///   - [`cache_policy(Option<CachePolicy>)`](crate::output::UpdateCachePolicyOutput::cache_policy): <p>A cache policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateCachePolicyOutput::e_tag): <p>The current version of the cache policy.</p>
@@ -1139,6 +1220,21 @@ impl Client {
     ) -> fluent_builders::UpdateCloudFrontOriginAccessIdentity {
         fluent_builders::UpdateCloudFrontOriginAccessIdentity::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateContinuousDeploymentPolicy`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`continuous_deployment_policy_config(ContinuousDeploymentPolicyConfig)`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy::continuous_deployment_policy_config) / [`set_continuous_deployment_policy_config(Option<ContinuousDeploymentPolicyConfig>)`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy::set_continuous_deployment_policy_config): <p>The continuous deployment policy configuration.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy::set_id): <p>The identifier of the continuous deployment policy that you are updating.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy::set_if_match): <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
+    /// - On success, responds with [`UpdateContinuousDeploymentPolicyOutput`](crate::output::UpdateContinuousDeploymentPolicyOutput) with field(s):
+    ///   - [`continuous_deployment_policy(Option<ContinuousDeploymentPolicy>)`](crate::output::UpdateContinuousDeploymentPolicyOutput::continuous_deployment_policy): <p>A continuous deployment policy.</p>
+    ///   - [`e_tag(Option<String>)`](crate::output::UpdateContinuousDeploymentPolicyOutput::e_tag): <p>The version identifier for the current version of the continuous deployment policy.</p>
+    /// - On failure, responds with [`SdkError<UpdateContinuousDeploymentPolicyError>`](crate::error::UpdateContinuousDeploymentPolicyError)
+    pub fn update_continuous_deployment_policy(
+        &self,
+    ) -> fluent_builders::UpdateContinuousDeploymentPolicy {
+        fluent_builders::UpdateContinuousDeploymentPolicy::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateDistribution`](crate::client::fluent_builders::UpdateDistribution) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1152,10 +1248,25 @@ impl Client {
     pub fn update_distribution(&self) -> fluent_builders::UpdateDistribution {
         fluent_builders::UpdateDistribution::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateDistributionWithStagingConfig`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig::set_id): <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
+    ///   - [`staging_distribution_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig::staging_distribution_id) / [`set_staging_distribution_id(Option<String>)`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig::set_staging_distribution_id): <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig::set_if_match): <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>  <p> <code>   <primary etag>    ,     <staging etag></staging>   </primary></code> </p>
+    /// - On success, responds with [`UpdateDistributionWithStagingConfigOutput`](crate::output::UpdateDistributionWithStagingConfigOutput) with field(s):
+    ///   - [`distribution(Option<Distribution>)`](crate::output::UpdateDistributionWithStagingConfigOutput::distribution): <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
+    ///   - [`e_tag(Option<String>)`](crate::output::UpdateDistributionWithStagingConfigOutput::e_tag): <p>The current version of the primary distribution (after it's updated).</p>
+    /// - On failure, responds with [`SdkError<UpdateDistributionWithStagingConfigError>`](crate::error::UpdateDistributionWithStagingConfigError)
+    pub fn update_distribution_with_staging_config(
+        &self,
+    ) -> fluent_builders::UpdateDistributionWithStagingConfig {
+        fluent_builders::UpdateDistributionWithStagingConfig::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateFieldLevelEncryptionConfig`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`field_level_encryption_config(FieldLevelEncryptionConfig)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::field_level_encryption_config) / [`set_field_level_encryption_config(Option<FieldLevelEncryptionConfig>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::set_field_level_encryption_config): <p>Request to update a field-level encryption configuration. </p>
+    ///   - [`field_level_encryption_config(FieldLevelEncryptionConfig)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::field_level_encryption_config) / [`set_field_level_encryption_config(Option<FieldLevelEncryptionConfig>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::set_field_level_encryption_config): <p>Request to update a field-level encryption configuration.</p>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::set_id): <p>The ID of the configuration you want to update.</p>
     ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::set_if_match): <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On success, responds with [`UpdateFieldLevelEncryptionConfigOutput`](crate::output::UpdateFieldLevelEncryptionConfigOutput) with field(s):
@@ -1170,12 +1281,12 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateFieldLevelEncryptionProfile`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`field_level_encryption_profile_config(FieldLevelEncryptionProfileConfig)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::field_level_encryption_profile_config) / [`set_field_level_encryption_profile_config(Option<FieldLevelEncryptionProfileConfig>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::set_field_level_encryption_profile_config): <p>Request to update a field-level encryption profile. </p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::set_id): <p>The ID of the field-level encryption profile request. </p>
+    ///   - [`field_level_encryption_profile_config(FieldLevelEncryptionProfileConfig)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::field_level_encryption_profile_config) / [`set_field_level_encryption_profile_config(Option<FieldLevelEncryptionProfileConfig>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::set_field_level_encryption_profile_config): <p>Request to update a field-level encryption profile.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::set_id): <p>The ID of the field-level encryption profile request.</p>
     ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::set_if_match): <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On success, responds with [`UpdateFieldLevelEncryptionProfileOutput`](crate::output::UpdateFieldLevelEncryptionProfileOutput) with field(s):
     ///   - [`field_level_encryption_profile(Option<FieldLevelEncryptionProfile>)`](crate::output::UpdateFieldLevelEncryptionProfileOutput::field_level_encryption_profile): <p>Return the results of updating the profile.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdateFieldLevelEncryptionProfileOutput::e_tag): <p>The result of the field-level encryption profile request. </p>
+    ///   - [`e_tag(Option<String>)`](crate::output::UpdateFieldLevelEncryptionProfileOutput::e_tag): <p>The result of the field-level encryption profile request.</p>
     /// - On failure, responds with [`SdkError<UpdateFieldLevelEncryptionProfileError>`](crate::error::UpdateFieldLevelEncryptionProfileError)
     pub fn update_field_level_encryption_profile(
         &self,
@@ -1201,7 +1312,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`key_group_config(KeyGroupConfig)`](crate::client::fluent_builders::UpdateKeyGroup::key_group_config) / [`set_key_group_config(Option<KeyGroupConfig>)`](crate::client::fluent_builders::UpdateKeyGroup::set_key_group_config): <p>The key group configuration.</p>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateKeyGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateKeyGroup::set_id): <p>The identifier of the key group that you are updating.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateKeyGroup::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateKeyGroup::set_if_match): <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateKeyGroup::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateKeyGroup::set_if_match): <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
     /// - On success, responds with [`UpdateKeyGroupOutput`](crate::output::UpdateKeyGroupOutput) with field(s):
     ///   - [`key_group(Option<KeyGroup>)`](crate::output::UpdateKeyGroupOutput::key_group): <p>The key group that was just updated.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateKeyGroupOutput::e_tag): <p>The identifier for this version of the key group.</p>
@@ -1226,8 +1337,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`origin_request_policy_config(OriginRequestPolicyConfig)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::origin_request_policy_config) / [`set_origin_request_policy_config(Option<OriginRequestPolicyConfig>)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::set_origin_request_policy_config): <p>An origin request policy configuration.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::set_id): <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::set_if_match): <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::set_id): <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::set_if_match): <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
     /// - On success, responds with [`UpdateOriginRequestPolicyOutput`](crate::output::UpdateOriginRequestPolicyOutput) with field(s):
     ///   - [`origin_request_policy(Option<OriginRequestPolicy>)`](crate::output::UpdateOriginRequestPolicyOutput::origin_request_policy): <p>An origin request policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateOriginRequestPolicyOutput::e_tag): <p>The current version of the origin request policy.</p>
@@ -1267,7 +1378,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`response_headers_policy_config(ResponseHeadersPolicyConfig)`](crate::client::fluent_builders::UpdateResponseHeadersPolicy::response_headers_policy_config) / [`set_response_headers_policy_config(Option<ResponseHeadersPolicyConfig>)`](crate::client::fluent_builders::UpdateResponseHeadersPolicy::set_response_headers_policy_config): <p>A response headers policy configuration.</p>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateResponseHeadersPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateResponseHeadersPolicy::set_id): <p>The identifier for the response headers policy that you are updating.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateResponseHeadersPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateResponseHeadersPolicy::set_if_match): <p>The version of the response headers policy that you are updating.</p>  <p>The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateResponseHeadersPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateResponseHeadersPolicy::set_if_match): <p>The version of the response headers policy that you are updating.</p>  <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
     /// - On success, responds with [`UpdateResponseHeadersPolicyOutput`](crate::output::UpdateResponseHeadersPolicyOutput) with field(s):
     ///   - [`response_headers_policy(Option<ResponseHeadersPolicy>)`](crate::output::UpdateResponseHeadersPolicyOutput::response_headers_policy): <p>A response headers policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateResponseHeadersPolicyOutput::e_tag): <p>The current version of the response headers policy.</p>
@@ -1299,7 +1410,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateAlias`.
     ///
     /// <p>Associates an alias (also known as a CNAME or an alternate domain name) with a CloudFront distribution.</p>
-    /// <p>With this operation you can move an alias that’s already in use on a CloudFront distribution to a different distribution in one step. This prevents the downtime that could occur if you first remove the alias from one distribution and then separately add the alias to another distribution.</p>
+    /// <p>With this operation you can move an alias that's already in use on a CloudFront distribution to a different distribution in one step. This prevents the downtime that could occur if you first remove the alias from one distribution and then separately add the alias to another distribution.</p>
     /// <p>To use this operation to associate an alias with a distribution, you provide the alias and the ID of the target distribution for the alias. For more information, including how to set up the target distribution, prerequisites that you must complete, and other restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAlias {
@@ -1360,12 +1471,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the distribution that you’re associating the alias with.</p>
+        /// <p>The ID of the distribution that you're associating the alias with.</p>
         pub fn target_distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_distribution_id(input.into());
             self
         }
-        /// <p>The ID of the distribution that you’re associating the alias with.</p>
+        /// <p>The ID of the distribution that you're associating the alias with.</p>
         pub fn set_target_distribution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1384,15 +1495,125 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CopyDistribution`.
+    ///
+    /// <p>Creates a staging distribution using the configuration of the provided primary distribution. A staging distribution is a copy of an existing distribution (called the primary distribution) that you can use in a continuous deployment workflow.</p>
+    /// <p>After you create a staging distribution, you can use <code>UpdateDistribution</code> to modify the staging distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to incrementally move traffic to the staging distribution.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CopyDistribution {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::copy_distribution_input::Builder,
+    }
+    impl CopyDistribution {
+        /// Creates a new `CopyDistribution`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CopyDistribution,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CopyDistributionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CopyDistributionOutput,
+            aws_smithy_http::result::SdkError<crate::error::CopyDistributionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
+        pub fn primary_distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.primary_distribution_id(input.into());
+            self
+        }
+        /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
+        pub fn set_primary_distribution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_primary_distribution_id(input);
+            self
+        }
+        /// <p>The type of distribution that your primary distribution will be copied to. The only valid value is <code>True</code>, indicating that you are copying to a staging distribution.</p>
+        pub fn staging(mut self, input: bool) -> Self {
+            self.inner = self.inner.staging(input);
+            self
+        }
+        /// <p>The type of distribution that your primary distribution will be copied to. The only valid value is <code>True</code>, indicating that you are copying to a staging distribution.</p>
+        pub fn set_staging(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_staging(input);
+            self
+        }
+        /// <p>The version identifier of the primary distribution whose configuration you are copying. This is the <code>ETag</code> value returned in the response to <code>GetDistribution</code> and <code>GetDistributionConfig</code>.</p>
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
+            self
+        }
+        /// <p>The version identifier of the primary distribution whose configuration you are copying. This is the <code>ETag</code> value returned in the response to <code>GetDistribution</code> and <code>GetDistributionConfig</code>.</p>
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_if_match(input);
+            self
+        }
+        /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.caller_reference(input.into());
+            self
+        }
+        /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
+        pub fn set_caller_reference(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_caller_reference(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateCachePolicy`.
     ///
     /// <p>Creates a cache policy.</p>
-    /// <p>After you create a cache policy, you can attach it to one or more cache behaviors. When it’s attached to a cache behavior, the cache policy determines the following:</p>
+    /// <p>After you create a cache policy, you can attach it to one or more cache behaviors. When it's attached to a cache behavior, the cache policy determines the following:</p>
     /// <ul>
     /// <li> <p>The values that CloudFront includes in the <i>cache key</i>. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.</p> </li>
     /// <li> <p>The default, minimum, and maximum time to live (TTL) values that you want objects to stay in the CloudFront cache.</p> </li>
     /// </ul>
-    /// <p>The headers, cookies, and query strings that are included in the cache key are automatically included in requests that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p>
+    /// <p>The headers, cookies, and query strings that are included in the cache key are automatically included in requests that CloudFront sends to the origin. CloudFront sends a request when it can't find an object in its cache that matches the request's cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p>
     /// <p>For more information about cache policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">Controlling the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCachePolicy {
@@ -1552,11 +1773,90 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateContinuousDeploymentPolicy`.
+    ///
+    /// <p>Creates a continuous deployment policy that distributes traffic for a custom domain name to two different CloudFront distributions.</p>
+    /// <p>To use a continuous deployment policy, first use <code>CopyDistribution</code> to create a staging distribution, then use <code>UpdateDistribution</code> to modify the staging distribution's configuration.</p>
+    /// <p>After you create and update a staging distribution, you can use a continuous deployment policy to incrementally move traffic to the staging distribution. This workflow enables you to test changes to a distribution's configuration before moving all of your domain's production traffic to the new configuration.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateContinuousDeploymentPolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_continuous_deployment_policy_input::Builder,
+    }
+    impl CreateContinuousDeploymentPolicy {
+        /// Creates a new `CreateContinuousDeploymentPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateContinuousDeploymentPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateContinuousDeploymentPolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateContinuousDeploymentPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateContinuousDeploymentPolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Contains the configuration for a continuous deployment policy.</p>
+        pub fn continuous_deployment_policy_config(
+            mut self,
+            input: crate::model::ContinuousDeploymentPolicyConfig,
+        ) -> Self {
+            self.inner = self.inner.continuous_deployment_policy_config(input);
+            self
+        }
+        /// <p>Contains the configuration for a continuous deployment policy.</p>
+        pub fn set_continuous_deployment_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::ContinuousDeploymentPolicyConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_continuous_deployment_policy_config(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateDistribution`.
     ///
-    /// <p>Creates a new web distribution. You create a CloudFront distribution to tell CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery. Send a <code>POST</code> request to the <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.</p> <important>
-    /// <p>When you update a distribution, there are more required fields than when you create a distribution. When you update your distribution by using <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>, follow the steps included in the documentation to get the current configuration and then make your updates. This helps to make sure that you include all of the required fields. To view a summary, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// </important>
+    /// <p>Creates a CloudFront distribution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDistribution {
         handle: std::sync::Arc<super::Handle>,
@@ -1692,7 +1992,7 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The distribution's configuration information. </p>
+        /// <p>The distribution's configuration information.</p>
         pub fn distribution_config_with_tags(
             mut self,
             input: crate::model::DistributionConfigWithTags,
@@ -1700,7 +2000,7 @@ pub mod fluent_builders {
             self.inner = self.inner.distribution_config_with_tags(input);
             self
         }
-        /// <p>The distribution's configuration information. </p>
+        /// <p>The distribution's configuration information.</p>
         pub fn set_distribution_config_with_tags(
             mut self,
             input: std::option::Option<crate::model::DistributionConfigWithTags>,
@@ -1871,8 +2171,8 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a CloudFront function.</p>
     /// <p>To create a function, you provide the function code and some configuration information about the function. The response contains an Amazon Resource Name (ARN) that uniquely identifies the function.</p>
-    /// <p>When you create a function, it’s in the <code>DEVELOPMENT</code> stage. In this stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
-    /// <p>When you’re ready to use your function with a CloudFront distribution, use <code>PublishFunction</code> to copy the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. When it’s live, you can attach the function to a distribution’s cache behavior, using the function’s ARN.</p>
+    /// <p>When you create a function, it's in the <code>DEVELOPMENT</code> stage. In this stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
+    /// <p>When you're ready to use your function with a CloudFront distribution, use <code>PublishFunction</code> to copy the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. When it's live, you can attach the function to a distribution's cache behavior, using the function's ARN.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFunction {
         handle: std::sync::Arc<super::Handle>,
@@ -1942,12 +2242,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Configuration information about the function, including an optional comment and the function’s runtime.</p>
+        /// <p>Configuration information about the function, including an optional comment and the function's runtime.</p>
         pub fn function_config(mut self, input: crate::model::FunctionConfig) -> Self {
             self.inner = self.inner.function_config(input);
             self
         }
-        /// <p>Configuration information about the function, including an optional comment and the function’s runtime.</p>
+        /// <p>Configuration information about the function, including an optional comment and the function's runtime.</p>
         pub fn set_function_config(
             mut self,
             input: std::option::Option<crate::model::FunctionConfig>,
@@ -1971,7 +2271,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateInvalidation`.
     ///
-    /// <p>Create a new invalidation. </p>
+    /// <p>Create a new invalidation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInvalidation {
         handle: std::sync::Arc<super::Handle>,
@@ -2312,13 +2612,13 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateOriginRequestPolicy`.
     ///
     /// <p>Creates an origin request policy.</p>
-    /// <p>After you create an origin request policy, you can attach it to one or more cache behaviors. When it’s attached to a cache behavior, the origin request policy determines the values that CloudFront includes in requests that it sends to the origin. Each request that CloudFront sends to the origin includes the following:</p>
+    /// <p>After you create an origin request policy, you can attach it to one or more cache behaviors. When it's attached to a cache behavior, the origin request policy determines the values that CloudFront includes in requests that it sends to the origin. Each request that CloudFront sends to the origin includes the following:</p>
     /// <ul>
     /// <li> <p>The request body and the URL path (without the domain name) from the viewer request.</p> </li>
     /// <li> <p>The headers that CloudFront automatically includes in every origin request, including <code>Host</code>, <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.</p> </li>
     /// <li> <p>All HTTP headers, cookies, and URL query strings that are specified in the cache policy or the origin request policy. These can include items from the viewer request and, in the case of headers, additional ones that are added by CloudFront.</p> </li>
     /// </ul>
-    /// <p>CloudFront sends a request when it can’t find a valid object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.</p>
+    /// <p>CloudFront sends a request when it can't find a valid object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.</p>
     /// <p>For more information about origin request policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">Controlling origin requests</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOriginRequestPolicy {
@@ -2596,8 +2896,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResponseHeadersPolicy`.
     ///
     /// <p>Creates a response headers policy.</p>
-    /// <p>A response headers policy contains information about a set of HTTP response headers and their values. To create a response headers policy, you provide some metadata about the policy, and a set of configurations that specify the response headers.</p>
-    /// <p>After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a CloudFront distribution. When it’s attached to a cache behavior, CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match the cache behavior.</p>
+    /// <p>A response headers policy contains information about a set of HTTP headers. To create a response headers policy, you provide some metadata about the policy and a set of configurations that specify the headers.</p>
+    /// <p>After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a CloudFront distribution. When it's attached to a cache behavior, the response headers policy affects the HTTP headers that CloudFront includes in HTTP responses to requests that match the cache behavior. CloudFront adds or removes response headers according to the configuration of the response headers policy.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/modifying-response-headers.html">Adding or removing HTTP headers in CloudFront responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResponseHeadersPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -2657,7 +2958,7 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
+        /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
         pub fn response_headers_policy_config(
             mut self,
             input: crate::model::ResponseHeadersPolicyConfig,
@@ -2665,7 +2966,7 @@ pub mod fluent_builders {
             self.inner = self.inner.response_headers_policy_config(input);
             self
         }
-        /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
+        /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
         pub fn set_response_headers_policy_config(
             mut self,
             input: std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
@@ -2819,7 +3120,7 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The streaming distribution's configuration information. </p>
+        /// <p>The streaming distribution's configuration information.</p>
         pub fn streaming_distribution_config_with_tags(
             mut self,
             input: crate::model::StreamingDistributionConfigWithTags,
@@ -2827,7 +3128,7 @@ pub mod fluent_builders {
             self.inner = self.inner.streaming_distribution_config_with_tags(input);
             self
         }
-        /// <p> The streaming distribution's configuration information. </p>
+        /// <p>The streaming distribution's configuration information.</p>
         pub fn set_streaming_distribution_config_with_tags(
             mut self,
             input: std::option::Option<crate::model::StreamingDistributionConfigWithTags>,
@@ -2841,8 +3142,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCachePolicy`.
     ///
     /// <p>Deletes a cache policy.</p>
-    /// <p>You cannot delete a cache policy if it’s attached to a cache behavior. First update your distributions to remove the cache policy from all cache behaviors, then delete the cache policy.</p>
-    /// <p>To delete a cache policy, you must provide the policy’s identifier and version. To get these values, you can use <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.</p>
+    /// <p>You cannot delete a cache policy if it's attached to a cache behavior. First update your distributions to remove the cache policy from all cache behaviors, then delete the cache policy.</p>
+    /// <p>To delete a cache policy, you must provide the policy's identifier and version. To get these values, you can use <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCachePolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -2912,12 +3213,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -2925,7 +3226,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCloudFrontOriginAccessIdentity`.
     ///
-    /// <p>Delete an origin access identity. </p>
+    /// <p>Delete an origin access identity.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCloudFrontOriginAccessIdentity {
         handle: std::sync::Arc<super::Handle>,
@@ -3010,9 +3311,93 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteContinuousDeploymentPolicy`.
+    ///
+    /// <p>Deletes a continuous deployment policy.</p>
+    /// <p>You cannot delete a continuous deployment policy that's attached to a primary distribution. First update your distribution to remove the continuous deployment policy, then you can delete the policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteContinuousDeploymentPolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_continuous_deployment_policy_input::Builder,
+    }
+    impl DeleteContinuousDeploymentPolicy {
+        /// Creates a new `DeleteContinuousDeploymentPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteContinuousDeploymentPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteContinuousDeploymentPolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteContinuousDeploymentPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteContinuousDeploymentPolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
+            self
+        }
+        /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_if_match(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteDistribution`.
     ///
-    /// <p>Delete a distribution. </p>
+    /// <p>Delete a distribution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDistribution {
         handle: std::sync::Arc<super::Handle>,
@@ -3072,22 +3457,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The distribution ID. </p>
+        /// <p>The distribution ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The distribution ID. </p>
+        /// <p>The distribution ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+        /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+        /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -3262,8 +3647,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFunction`.
     ///
     /// <p>Deletes a CloudFront function.</p>
-    /// <p>You cannot delete a function if it’s associated with a cache behavior. First, update your distributions to remove the function association from all cache behaviors, then delete the function.</p>
-    /// <p>To delete a function, you must provide the function’s name and version (<code>ETag</code> value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
+    /// <p>You cannot delete a function if it's associated with a cache behavior. First, update your distributions to remove the function association from all cache behaviors, then delete the function.</p>
+    /// <p>To delete a function, you must provide the function's name and version (<code>ETag</code> value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFunction {
         handle: std::sync::Arc<super::Handle>,
@@ -3348,7 +3733,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a key group.</p>
     /// <p>You cannot delete a key group that is referenced in a cache behavior. First update your distributions to remove the key group from all cache behaviors, then delete the key group.</p>
-    /// <p>To delete a key group, you must provide the key group’s identifier and version. To get these values, use <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
+    /// <p>To delete a key group, you must provide the key group's identifier and version. To get these values, use <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteKeyGroup {
         handle: std::sync::Arc<super::Handle>,
@@ -3418,12 +3803,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
+        /// <p>The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
+        /// <p>The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -3592,8 +3977,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteOriginRequestPolicy`.
     ///
     /// <p>Deletes an origin request policy.</p>
-    /// <p>You cannot delete an origin request policy if it’s attached to any cache behaviors. First update your distributions to remove the origin request policy from all cache behaviors, then delete the origin request policy.</p>
-    /// <p>To delete an origin request policy, you must provide the policy’s identifier and version. To get the identifier, you can use <code>ListOriginRequestPolicies</code> or <code>GetOriginRequestPolicy</code>.</p>
+    /// <p>You cannot delete an origin request policy if it's attached to any cache behaviors. First update your distributions to remove the origin request policy from all cache behaviors, then delete the origin request policy.</p>
+    /// <p>To delete an origin request policy, you must provide the policy's identifier and version. To get the identifier, you can use <code>ListOriginRequestPolicies</code> or <code>GetOriginRequestPolicy</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOriginRequestPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -3663,12 +4048,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy's <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy's <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -3760,8 +4145,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRealtimeLogConfig`.
     ///
     /// <p>Deletes a real-time log configuration.</p>
-    /// <p>You cannot delete a real-time log configuration if it’s attached to a cache behavior. First update your distributions to remove the real-time log configuration from all cache behaviors, then delete the real-time log configuration.</p>
-    /// <p>To delete a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to delete.</p>
+    /// <p>You cannot delete a real-time log configuration if it's attached to a cache behavior. First update your distributions to remove the real-time log configuration from all cache behaviors, then delete the real-time log configuration.</p>
+    /// <p>To delete a real-time log configuration, you can provide the configuration's name or its Amazon Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to delete.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRealtimeLogConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -3845,8 +4230,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResponseHeadersPolicy`.
     ///
     /// <p>Deletes a response headers policy.</p>
-    /// <p>You cannot delete a response headers policy if it’s attached to a cache behavior. First update your distributions to remove the response headers policy from all cache behaviors, then delete the response headers policy.</p>
-    /// <p>To delete a response headers policy, you must provide the policy’s identifier and version. To get these values, you can use <code>ListResponseHeadersPolicies</code> or <code>GetResponseHeadersPolicy</code>. </p>
+    /// <p>You cannot delete a response headers policy if it's attached to a cache behavior. First update your distributions to remove the response headers policy from all cache behaviors, then delete the response headers policy.</p>
+    /// <p>To delete a response headers policy, you must provide the policy's identifier and version. To get these values, you can use <code>ListResponseHeadersPolicies</code> or <code>GetResponseHeadersPolicy</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResponseHeadersPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -3919,13 +4304,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the response headers policy that you are deleting.</p>
-        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The version of the response headers policy that you are deleting.</p>
-        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -4005,12 +4390,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The distribution ID. </p>
+        /// <p>The distribution ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The distribution ID. </p>
+        /// <p>The distribution ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -4028,8 +4413,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFunction`.
     ///
-    /// <p>Gets configuration information and metadata about a CloudFront function, but not the function’s code. To get a function’s code, use <code>GetFunction</code>.</p>
-    /// <p>To get configuration information and metadata about a function, you must provide the function’s name and stage. To get these values, you can use <code>ListFunctions</code>.</p>
+    /// <p>Gets configuration information and metadata about a CloudFront function, but not the function's code. To get a function's code, use <code>GetFunction</code>.</p>
+    /// <p>To get configuration information and metadata about a function, you must provide the function's name and stage. To get these values, you can use <code>ListFunctions</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFunction {
         handle: std::sync::Arc<super::Handle>,
@@ -4099,12 +4484,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+        /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
             self.inner = self.inner.stage(input);
             self
         }
-        /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+        /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn set_stage(
             mut self,
             input: std::option::Option<crate::model::FunctionStage>,
@@ -4117,10 +4502,10 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a cache policy, including the following metadata:</p>
     /// <ul>
-    /// <li> <p>The policy’s identifier.</p> </li>
+    /// <li> <p>The policy's identifier.</p> </li>
     /// <li> <p>The date and time when the policy was last modified.</p> </li>
     /// </ul>
-    /// <p>To get a cache policy, you must provide the policy’s identifier. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+    /// <p>To get a cache policy, you must provide the policy's identifier. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCachePolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -4180,12 +4565,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -4194,7 +4579,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCachePolicyConfig`.
     ///
     /// <p>Gets a cache policy configuration.</p>
-    /// <p>To get a cache policy configuration, you must provide the policy’s identifier. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+    /// <p>To get a cache policy configuration, you must provide the policy's identifier. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCachePolicyConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -4254,12 +4639,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -4267,7 +4652,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCloudFrontOriginAccessIdentity`.
     ///
-    /// <p>Get the information about an origin access identity. </p>
+    /// <p>Get the information about an origin access identity.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCloudFrontOriginAccessIdentity {
         handle: std::sync::Arc<super::Handle>,
@@ -4340,7 +4725,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCloudFrontOriginAccessIdentityConfig`.
     ///
-    /// <p>Get the configuration information about an origin access identity. </p>
+    /// <p>Get the configuration information about an origin access identity.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCloudFrontOriginAccessIdentityConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -4404,12 +4789,162 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identity's ID. </p>
+        /// <p>The identity's ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identity's ID. </p>
+        /// <p>The identity's ID.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetContinuousDeploymentPolicy`.
+    ///
+    /// <p>Gets a continuous deployment policy, including metadata (the policy's identifier and the date and time when the policy was last modified).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetContinuousDeploymentPolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_continuous_deployment_policy_input::Builder,
+    }
+    impl GetContinuousDeploymentPolicy {
+        /// Creates a new `GetContinuousDeploymentPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetContinuousDeploymentPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetContinuousDeploymentPolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetContinuousDeploymentPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetContinuousDeploymentPolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the continuous deployment policy that you are getting.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The identifier of the continuous deployment policy that you are getting.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetContinuousDeploymentPolicyConfig`.
+    ///
+    /// <p>Gets configuration information about a continuous deployment policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetContinuousDeploymentPolicyConfig {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_continuous_deployment_policy_config_input::Builder,
+    }
+    impl GetContinuousDeploymentPolicyConfig {
+        /// Creates a new `GetContinuousDeploymentPolicyConfig`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetContinuousDeploymentPolicyConfig,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetContinuousDeploymentPolicyConfigError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetContinuousDeploymentPolicyConfigOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetContinuousDeploymentPolicyConfigError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the continuous deployment policy whose configuration you are getting.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The identifier of the continuous deployment policy whose configuration you are getting.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -4490,7 +5025,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDistributionConfig`.
     ///
-    /// <p>Get the configuration information about a distribution. </p>
+    /// <p>Get the configuration information about a distribution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDistributionConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -4860,7 +5395,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFunction`.
     ///
     /// <p>Gets the code of a CloudFront function. To get configuration information and metadata about a function, use <code>DescribeFunction</code>.</p>
-    /// <p>To get a function’s code, you must provide the function’s name and stage. To get these values, you can use <code>ListFunctions</code>.</p>
+    /// <p>To get a function's code, you must provide the function's name and stage. To get these values, you can use <code>ListFunctions</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFunction {
         handle: std::sync::Arc<super::Handle>,
@@ -4930,12 +5465,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+        /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
             self.inner = self.inner.stage(input);
             self
         }
-        /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+        /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn set_stage(
             mut self,
             input: std::option::Option<crate::model::FunctionStage>,
@@ -4946,7 +5481,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInvalidation`.
     ///
-    /// <p>Get the information about an invalidation. </p>
+    /// <p>Get the information about an invalidation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInvalidation {
         handle: std::sync::Arc<super::Handle>,
@@ -5033,7 +5568,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetKeyGroup`.
     ///
     /// <p>Gets a key group, including the date and time when the key group was last modified.</p>
-    /// <p>To get a key group, you must provide the key group’s identifier. If the key group is referenced in a distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.</p>
+    /// <p>To get a key group, you must provide the key group's identifier. If the key group is referenced in a distribution's cache behavior, you can get the key group's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetKeyGroup {
         handle: std::sync::Arc<super::Handle>,
@@ -5107,7 +5642,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetKeyGroupConfig`.
     ///
     /// <p>Gets a key group configuration.</p>
-    /// <p>To get a key group configuration, you must provide the key group’s identifier. If the key group is referenced in a distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.</p>
+    /// <p>To get a key group configuration, you must provide the key group's identifier. If the key group is referenced in a distribution's cache behavior, you can get the key group's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetKeyGroupConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -5404,10 +5939,10 @@ pub mod fluent_builders {
     ///
     /// <p>Gets an origin request policy, including the following metadata:</p>
     /// <ul>
-    /// <li> <p>The policy’s identifier.</p> </li>
+    /// <li> <p>The policy's identifier.</p> </li>
     /// <li> <p>The date and time when the policy was last modified.</p> </li>
     /// </ul>
-    /// <p>To get an origin request policy, you must provide the policy’s identifier. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+    /// <p>To get an origin request policy, you must provide the policy's identifier. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOriginRequestPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -5467,12 +6002,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -5481,7 +6016,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOriginRequestPolicyConfig`.
     ///
     /// <p>Gets an origin request policy configuration.</p>
-    /// <p>To get an origin request policy configuration, you must provide the policy’s identifier. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+    /// <p>To get an origin request policy configuration, you must provide the policy's identifier. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOriginRequestPolicyConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -5541,12 +6076,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -5701,7 +6236,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRealtimeLogConfig`.
     ///
     /// <p>Gets a real-time log configuration.</p>
-    /// <p>To get a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to get.</p>
+    /// <p>To get a real-time log configuration, you can provide the configuration's name or its Amazon Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to get.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRealtimeLogConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -5784,8 +6319,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResponseHeadersPolicy`.
     ///
-    /// <p>Gets a response headers policy, including metadata (the policy’s identifier and the date and time when the policy was last modified).</p>
-    /// <p>To get a response headers policy, you must provide the policy’s identifier. If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+    /// <p>Gets a response headers policy, including metadata (the policy's identifier and the date and time when the policy was last modified).</p>
+    /// <p>To get a response headers policy, you must provide the policy's identifier. If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResponseHeadersPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -5846,13 +6381,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -5861,7 +6396,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResponseHeadersPolicyConfig`.
     ///
     /// <p>Gets a response headers policy configuration.</p>
-    /// <p>To get a response headers policy configuration, you must provide the policy’s identifier. If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+    /// <p>To get a response headers policy configuration, you must provide the policy's identifier. If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResponseHeadersPolicyConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -5922,13 +6457,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -6009,7 +6544,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetStreamingDistributionConfig`.
     ///
-    /// <p>Get the configuration information about a streaming distribution. </p>
+    /// <p>Get the configuration information about a streaming distribution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStreamingDistributionConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -6165,12 +6700,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -6273,12 +6808,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>The maximum number of origin access identities you want in the response body. </p>
+        /// <p>The maximum number of origin access identities you want in the response body.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.inner = self.inner.max_items(input);
             self
         }
-        /// <p>The maximum number of origin access identities you want in the response body. </p>
+        /// <p>The maximum number of origin access identities you want in the response body.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_items(input);
             self
@@ -6286,7 +6821,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListConflictingAliases`.
     ///
-    /// <p>Gets a list of aliases (also called CNAMEs or alternate domain names) that conflict or overlap with the provided alias, and the associated CloudFront distributions and Amazon Web Services accounts for each conflicting alias. In the returned list, the distribution and account IDs are partially hidden, which allows you to identify the distributions and accounts that you own, but helps to protect the information of ones that you don’t own.</p>
+    /// <p>Gets a list of aliases (also called CNAMEs or alternate domain names) that conflict or overlap with the provided alias, and the associated CloudFront distributions and Amazon Web Services accounts for each conflicting alias. In the returned list, the distribution and account IDs are partially hidden, which allows you to identify the distributions and accounts that you own, but helps to protect the information of ones that you don't own.</p>
     /// <p>Use this operation to find aliases that are in use in CloudFront that conflict or overlap with the provided alias. For example, if you provide <code>www.example.com</code> as input, the returned list can include <code>www.example.com</code> and the overlapping wildcard alternate domain name (<code>*.example.com</code>), if they exist. If you provide <code>*.example.com</code> as input, the returned list can include <code>*.example.com</code> and any alternate domain names covered by that wildcard (for example, <code>www.example.com</code>, <code>test.example.com</code>, <code>dev.example.com</code>, and so on), if they exist.</p>
     /// <p>To list conflicting aliases, you provide the alias to search and the ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias. For more information, including how to set up the distribution and certificate, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
@@ -6372,12 +6907,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alias(input);
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -6388,6 +6923,90 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of conflicting aliases that you want in the response.</p>
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListContinuousDeploymentPolicies`.
+    ///
+    /// <p>Gets a list of the continuous deployment policies in your Amazon Web Services account.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListContinuousDeploymentPolicies {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_continuous_deployment_policies_input::Builder,
+    }
+    impl ListContinuousDeploymentPolicies {
+        /// Creates a new `ListContinuousDeploymentPolicies`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListContinuousDeploymentPolicies,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListContinuousDeploymentPoliciesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListContinuousDeploymentPoliciesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListContinuousDeploymentPoliciesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
+            self
+        }
+        /// <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
+            self
+        }
+        /// <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
+            self
+        }
+        /// <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_items(input);
             self
@@ -6484,7 +7103,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDistributionsByCachePolicyId`.
     ///
-    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified cache policy.</p>
+    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified cache policy.</p>
     /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByCachePolicyId {
@@ -6545,12 +7164,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -6642,12 +7261,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -6675,7 +7294,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDistributionsByOriginRequestPolicyId`.
     ///
-    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified origin request policy.</p>
+    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified origin request policy.</p>
     /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByOriginRequestPolicyId {
@@ -6740,12 +7359,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -6776,9 +7395,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDistributionsByRealtimeLogConfig`.
     ///
-    /// <p>Gets a list of distributions that have a cache behavior that’s associated with the specified real-time log configuration.</p>
+    /// <p>Gets a list of distributions that have a cache behavior that's associated with the specified real-time log configuration.</p>
     /// <p>You can specify the real-time log configuration by its name or its Amazon Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to list distributions for.</p>
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request. </p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByRealtimeLogConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -6842,12 +7461,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -6891,7 +7510,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDistributionsByResponseHeadersPolicyId`.
     ///
-    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified response headers policy.</p>
+    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified response headers policy.</p>
     /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByResponseHeadersPolicyId {
@@ -6956,12 +7575,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -7052,12 +7671,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
+        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
+        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -7145,22 +7764,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>The maximum number of field-level encryption configurations you want in the response body. </p>
+        /// <p>The maximum number of field-level encryption configurations you want in the response body.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.inner = self.inner.max_items(input);
             self
         }
-        /// <p>The maximum number of field-level encryption configurations you want in the response body. </p>
+        /// <p>The maximum number of field-level encryption configurations you want in the response body.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_items(input);
             self
@@ -7228,12 +7847,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page).</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page).</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -7313,12 +7932,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -7349,7 +7968,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInvalidations`.
     ///
-    /// <p>Lists invalidation batches. </p>
+    /// <p>Lists invalidation batches.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvalidations {
         handle: std::sync::Arc<super::Handle>,
@@ -7428,12 +8047,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_distribution_id(input);
             self
         }
-        /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page. </p>
+        /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page. </p>
+        /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -7512,12 +8131,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -7702,12 +8321,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -7785,22 +8404,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>The maximum number of public keys you want in the response body. </p>
+        /// <p>The maximum number of public keys you want in the response body.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.inner = self.inner.max_items(input);
             self
         }
-        /// <p>The maximum number of public keys you want in the response body. </p>
+        /// <p>The maximum number of public keys you want in the response body.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_items(input);
             self
@@ -7809,7 +8428,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRealtimeLogConfigs`.
     ///
     /// <p>Gets a list of real-time log configurations.</p>
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request. </p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRealtimeLogConfigs {
         handle: std::sync::Arc<super::Handle>,
@@ -7879,12 +8498,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_items(input);
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -7975,12 +8594,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response. </p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response. </p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -7998,7 +8617,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStreamingDistributions`.
     ///
-    /// <p>List streaming distributions. </p>
+    /// <p>List streaming distributions.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreamingDistributions {
         handle: std::sync::Arc<super::Handle>,
@@ -8147,12 +8766,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> An ARN of a CloudFront resource.</p>
+        /// <p>An ARN of a CloudFront resource.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource(input.into());
             self
         }
-        /// <p> An ARN of a CloudFront resource.</p>
+        /// <p>An ARN of a CloudFront resource.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource(input);
             self
@@ -8161,8 +8780,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PublishFunction`.
     ///
     /// <p>Publishes a CloudFront function by copying the function code from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. This automatically updates all cache behaviors that are using this function to use the newly published copy in the <code>LIVE</code> stage.</p>
-    /// <p>When a function is published to the <code>LIVE</code> stage, you can attach the function to a distribution’s cache behavior, using the function’s Amazon Resource Name (ARN).</p>
-    /// <p>To publish a function, you must provide the function’s name and version (<code>ETag</code> value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
+    /// <p>When a function is published to the <code>LIVE</code> stage, you can attach the function to a distribution's cache behavior, using the function's Amazon Resource Name (ARN).</p>
+    /// <p>To publish a function, you must provide the function's name and version (<code>ETag</code> value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PublishFunction {
         handle: std::sync::Arc<super::Handle>,
@@ -8305,22 +8924,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> An ARN of a CloudFront resource.</p>
+        /// <p>An ARN of a CloudFront resource.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource(input.into());
             self
         }
-        /// <p> An ARN of a CloudFront resource.</p>
+        /// <p>An ARN of a CloudFront resource.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource(input);
             self
         }
-        /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+        /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
         pub fn tags(mut self, input: crate::model::Tags) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+        /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
         pub fn set_tags(mut self, input: std::option::Option<crate::model::Tags>) -> Self {
             self.inner = self.inner.set_tags(input);
             self
@@ -8329,8 +8948,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TestFunction`.
     ///
     /// <p>Tests a CloudFront function.</p>
-    /// <p>To test a function, you provide an <i>event object</i> that represents an HTTP request or response that your CloudFront distribution could receive in production. CloudFront runs the function, passing it the event object that you provided, and returns the function’s result (the modified event object) in the response. The response also contains function logs and error messages, if any exist. For more information about testing functions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// <p>To test a function, you provide the function’s name and version (<code>ETag</code> value) along with the event object. To get the function’s name and version, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
+    /// <p>To test a function, you provide an <i>event object</i> that represents an HTTP request or response that your CloudFront distribution could receive in production. CloudFront runs the function, passing it the event object that you provided, and returns the function's result (the modified event object) in the response. The response also contains function logs and error messages, if any exist. For more information about testing functions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>To test a function, you provide the function's name and version (<code>ETag</code> value) along with the event object. To get the function's name and version, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestFunction {
         handle: std::sync::Arc<super::Handle>,
@@ -8499,22 +9118,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> An ARN of a CloudFront resource.</p>
+        /// <p>An ARN of a CloudFront resource.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource(input.into());
             self
         }
-        /// <p> An ARN of a CloudFront resource.</p>
+        /// <p>An ARN of a CloudFront resource.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource(input);
             self
         }
-        /// <p> A complex type that contains zero or more <code>Tag</code> key elements.</p>
+        /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
         pub fn tag_keys(mut self, input: crate::model::TagKeys) -> Self {
             self.inner = self.inner.tag_keys(input);
             self
         }
-        /// <p> A complex type that contains zero or more <code>Tag</code> key elements.</p>
+        /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
         pub fn set_tag_keys(mut self, input: std::option::Option<crate::model::TagKeys>) -> Self {
             self.inner = self.inner.set_tag_keys(input);
             self
@@ -8527,7 +9146,7 @@ pub mod fluent_builders {
     /// <ol>
     /// <li> <p>Use <code>GetCachePolicyConfig</code> to get the current configuration.</p> </li>
     /// <li> <p>Locally modify the fields in the cache policy configuration that you want to update.</p> </li>
-    /// <li> <p>Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration, including the fields that you modified and those that you didn’t.</p> </li>
+    /// <li> <p>Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration, including the fields that you modified and those that you didn't.</p> </li>
     /// </ol>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCachePolicy {
@@ -8601,22 +9220,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cache_policy_config(input);
             self
         }
-        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -8624,7 +9243,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateCloudFrontOriginAccessIdentity`.
     ///
-    /// <p>Update an origin access identity. </p>
+    /// <p>Update an origin access identity.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCloudFrontOriginAccessIdentity {
         handle: std::sync::Arc<super::Handle>,
@@ -8727,34 +9346,124 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateContinuousDeploymentPolicy`.
+    ///
+    /// <p>Updates a continuous deployment policy. You can update a continuous deployment policy to enable or disable it, to change the percentage of traffic that it sends to the staging distribution, or to change the staging distribution that it sends traffic to.</p>
+    /// <p>When you update a continuous deployment policy configuration, all the fields are updated with the values that are provided in the request. You cannot update some fields independent of others. To update a continuous deployment policy configuration:</p>
+    /// <ol>
+    /// <li> <p>Use <code>GetContinuousDeploymentPolicyConfig</code> to get the current configuration.</p> </li>
+    /// <li> <p>Locally modify the fields in the continuous deployment policy configuration that you want to update.</p> </li>
+    /// <li> <p>Use <code>UpdateContinuousDeploymentPolicy</code>, providing the entire continuous deployment policy configuration, including the fields that you modified and those that you didn't.</p> </li>
+    /// </ol>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateContinuousDeploymentPolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_continuous_deployment_policy_input::Builder,
+    }
+    impl UpdateContinuousDeploymentPolicy {
+        /// Creates a new `UpdateContinuousDeploymentPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateContinuousDeploymentPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateContinuousDeploymentPolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateContinuousDeploymentPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateContinuousDeploymentPolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The continuous deployment policy configuration.</p>
+        pub fn continuous_deployment_policy_config(
+            mut self,
+            input: crate::model::ContinuousDeploymentPolicyConfig,
+        ) -> Self {
+            self.inner = self.inner.continuous_deployment_policy_config(input);
+            self
+        }
+        /// <p>The continuous deployment policy configuration.</p>
+        pub fn set_continuous_deployment_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::ContinuousDeploymentPolicyConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_continuous_deployment_policy_config(input);
+            self
+        }
+        /// <p>The identifier of the continuous deployment policy that you are updating.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The identifier of the continuous deployment policy that you are updating.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
+            self
+        }
+        /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_if_match(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateDistribution`.
     ///
-    /// <p>Updates the configuration for a web distribution. </p> <important>
-    /// <p>When you update a distribution, there are more required fields than when you create a distribution. When you update your distribution by using this API action, follow the steps here to get the current configuration and then make your updates, to make sure that you include all of the required fields. To view a summary, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// </important>
-    /// <p>The update process includes getting the current distribution configuration, updating the XML document that is returned to make your changes, and then submitting an <code>UpdateDistribution</code> request to make the updates.</p>
-    /// <p>For information about updating a distribution using the CloudFront console instead, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html">Creating a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>Updates the configuration for a CloudFront distribution.</p>
+    /// <p>The update process includes getting the current distribution configuration, updating it to make your changes, and then submitting an <code>UpdateDistribution</code> request to make the updates.</p>
     /// <p> <b>To update a web distribution using the CloudFront API</b> </p>
     /// <ol>
-    /// <li> <p>Submit a <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html">GetDistributionConfig</a> request to get the current configuration and an <code>Etag</code> header for the distribution.</p> <note>
-    /// <p>If you update the distribution again, you must get a new <code>Etag</code> header.</p>
-    /// </note> </li>
-    /// <li> <p>Update the XML document that was returned in the response to your <code>GetDistributionConfig</code> request to include your changes. </p> <important>
-    /// <p>When you edit the XML file, be aware of the following:</p>
+    /// <li> <p>Use <code>GetDistributionConfig</code> to get the current configuration, including the version identifier (<code>ETag</code>).</p> </li>
+    /// <li> <p>Update the distribution configuration that was returned in the response. Note the following important requirements and restrictions:</p>
     /// <ul>
-    /// <li> <p>You must strip out the ETag parameter that is returned.</p> </li>
-    /// <li> <p>Additional fields are required when you update a distribution. There may be fields included in the XML file for features that you haven't configured for your distribution. This is expected and required to successfully update the distribution.</p> </li>
-    /// <li> <p>You can't change the value of <code>CallerReference</code>. If you try to change this value, CloudFront returns an <code>IllegalUpdate</code> error. </p> </li>
-    /// <li> <p>The new configuration replaces the existing configuration; the values that you specify in an <code>UpdateDistribution</code> request are not merged into your existing configuration. When you add, delete, or replace values in an element that allows multiple values (for example, <code>CNAME</code>), you must specify all of the values that you want to appear in the updated distribution. In addition, you must update the corresponding <code>Quantity</code> element.</p> </li>
-    /// </ul>
-    /// </important> </li>
-    /// <li> <p>Submit an <code>UpdateDistribution</code> request to update the configuration for your distribution:</p>
-    /// <ul>
-    /// <li> <p>In the request body, include the XML document that you updated in Step 2. The request body must include an XML document with a <code>DistributionConfig</code> element.</p> </li>
-    /// <li> <p>Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GetDistributionConfig</code> request in Step 1.</p> </li>
+    /// <li> <p>You must rename the <code>ETag</code> field to <code>IfMatch</code>, leaving the value unchanged. (Set the value of <code>IfMatch</code> to the value of <code>ETag</code>, then remove the <code>ETag</code> field.)</p> </li>
+    /// <li> <p>You can't change the value of <code>CallerReference</code>.</p> </li>
     /// </ul> </li>
-    /// <li> <p>Review the response to the <code>UpdateDistribution</code> request to confirm that the configuration was successfully updated.</p> </li>
-    /// <li> <p>Optional: Submit a <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a> request to confirm that your changes have propagated. When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.</p> </li>
+    /// <li> <p>Submit an <code>UpdateDistribution</code> request, providing the distribution configuration. The new configuration replaces the existing configuration. The values that you specify in an <code>UpdateDistribution</code> request are not merged into your existing configuration. Make sure to include all fields: the ones that you modified and also the ones that you didn't.</p> </li>
     /// </ol>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDistribution {
@@ -8849,9 +9558,120 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateDistributionWithStagingConfig`.
+    ///
+    /// <p>Copies the staging distribution's configuration to its corresponding primary distribution. The primary distribution retains its <code>Aliases</code> (also known as alternate domain names or CNAMEs) and <code>ContinuousDeploymentPolicyId</code> value, but otherwise its configuration is overwritten to match the staging distribution.</p>
+    /// <p>You can use this operation in a continuous deployment workflow after you have tested configuration changes on the staging distribution. After using a continuous deployment policy to move a portion of your domain name's traffic to the staging distribution and verifying that it works as intended, you can use this operation to copy the staging distribution's configuration to the primary distribution. This action will disable the continuous deployment policy and move your domain's traffic back to the primary distribution.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateDistributionWithStagingConfig {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_distribution_with_staging_config_input::Builder,
+    }
+    impl UpdateDistributionWithStagingConfig {
+        /// Creates a new `UpdateDistributionWithStagingConfig`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateDistributionWithStagingConfig,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::UpdateDistributionWithStagingConfigError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateDistributionWithStagingConfigOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::UpdateDistributionWithStagingConfigError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
+        pub fn staging_distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.staging_distribution_id(input.into());
+            self
+        }
+        /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
+        pub fn set_staging_distribution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_staging_distribution_id(input);
+            self
+        }
+        /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
+        /// <p> <code>
+        /// <primary etag>
+        /// ,
+        /// <staging etag></staging>
+        /// </primary></code> </p>
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
+            self
+        }
+        /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
+        /// <p> <code>
+        /// <primary etag>
+        /// ,
+        /// <staging etag></staging>
+        /// </primary></code> </p>
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_if_match(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateFieldLevelEncryptionConfig`.
     ///
-    /// <p>Update a field-level encryption configuration. </p>
+    /// <p>Update a field-level encryption configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFieldLevelEncryptionConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -8911,7 +9731,7 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Request to update a field-level encryption configuration. </p>
+        /// <p>Request to update a field-level encryption configuration.</p>
         pub fn field_level_encryption_config(
             mut self,
             input: crate::model::FieldLevelEncryptionConfig,
@@ -8919,7 +9739,7 @@ pub mod fluent_builders {
             self.inner = self.inner.field_level_encryption_config(input);
             self
         }
-        /// <p>Request to update a field-level encryption configuration. </p>
+        /// <p>Request to update a field-level encryption configuration.</p>
         pub fn set_field_level_encryption_config(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryptionConfig>,
@@ -8950,7 +9770,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFieldLevelEncryptionProfile`.
     ///
-    /// <p>Update a field-level encryption profile. </p>
+    /// <p>Update a field-level encryption profile.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFieldLevelEncryptionProfile {
         handle: std::sync::Arc<super::Handle>,
@@ -9010,7 +9830,7 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Request to update a field-level encryption profile. </p>
+        /// <p>Request to update a field-level encryption profile.</p>
         pub fn field_level_encryption_profile_config(
             mut self,
             input: crate::model::FieldLevelEncryptionProfileConfig,
@@ -9018,7 +9838,7 @@ pub mod fluent_builders {
             self.inner = self.inner.field_level_encryption_profile_config(input);
             self
         }
-        /// <p>Request to update a field-level encryption profile. </p>
+        /// <p>Request to update a field-level encryption profile.</p>
         pub fn set_field_level_encryption_profile_config(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
@@ -9026,12 +9846,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_field_level_encryption_profile_config(input);
             self
         }
-        /// <p>The ID of the field-level encryption profile request. </p>
+        /// <p>The ID of the field-level encryption profile request.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The ID of the field-level encryption profile request. </p>
+        /// <p>The ID of the field-level encryption profile request.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -9050,8 +9870,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFunction`.
     ///
     /// <p>Updates a CloudFront function.</p>
-    /// <p>You can update a function’s code or the comment that describes the function. You cannot update a function’s name.</p>
-    /// <p>To update a function, you provide the function’s name and version (<code>ETag</code> value) along with the updated function code. To get the name and version, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
+    /// <p>You can update a function's code or the comment that describes the function. You cannot update a function's name.</p>
+    /// <p>To update a function, you provide the function's name and version (<code>ETag</code> value) along with the updated function code. To get the name and version, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFunction {
         handle: std::sync::Arc<super::Handle>,
@@ -9165,7 +9985,7 @@ pub mod fluent_builders {
     /// <ol>
     /// <li> <p>Get the current key group with <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p> </li>
     /// <li> <p>Locally modify the fields in the key group that you want to update. For example, add or remove public key IDs.</p> </li>
-    /// <li> <p>Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields that you modified and those that you didn’t.</p> </li>
+    /// <li> <p>Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields that you modified and those that you didn't.</p> </li>
     /// </ol>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateKeyGroup {
@@ -9249,12 +10069,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
+        /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
+        /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -9366,7 +10186,7 @@ pub mod fluent_builders {
     /// <ol>
     /// <li> <p>Use <code>GetOriginRequestPolicyConfig</code> to get the current configuration.</p> </li>
     /// <li> <p>Locally modify the fields in the origin request policy configuration that you want to update.</p> </li>
-    /// <li> <p>Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin request policy configuration, including the fields that you modified and those that you didn’t.</p> </li>
+    /// <li> <p>Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin request policy configuration, including the fields that you modified and those that you didn't.</p> </li>
     /// </ol>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOriginRequestPolicy {
@@ -9443,22 +10263,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_origin_request_policy_config(input);
             self
         }
-        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -9567,9 +10387,9 @@ pub mod fluent_builders {
     /// <ol>
     /// <li> <p>Call <code>GetRealtimeLogConfig</code> to get the current real-time log configuration.</p> </li>
     /// <li> <p>Locally modify the parameters in the real-time log configuration that you want to update.</p> </li>
-    /// <li> <p>Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time log configuration, including the parameters that you modified and those that you didn’t.</p> </li>
+    /// <li> <p>Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time log configuration, including the parameters that you modified and those that you didn't.</p> </li>
     /// </ol>
-    /// <p>You cannot update a real-time log configuration’s <code>Name</code> or <code>ARN</code>.</p>
+    /// <p>You cannot update a real-time log configuration's <code>Name</code> or <code>ARN</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRealtimeLogConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -9701,9 +10521,9 @@ pub mod fluent_builders {
     /// <p>Updates a response headers policy.</p>
     /// <p>When you update a response headers policy, the entire policy is replaced. You cannot update some policy fields independent of others. To update a response headers policy configuration:</p>
     /// <ol>
-    /// <li> <p>Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy’s configuration.</p> </li>
+    /// <li> <p>Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy's configuration.</p> </li>
     /// <li> <p>Modify the fields in the response headers policy configuration that you want to update.</p> </li>
-    /// <li> <p>Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers policy configuration, including the fields that you modified and those that you didn’t.</p> </li>
+    /// <li> <p>Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers policy configuration, including the fields that you modified and those that you didn't.</p> </li>
     /// </ol>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResponseHeadersPolicy {
@@ -9791,13 +10611,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the response headers policy that you are updating.</p>
-        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The version of the response headers policy that you are updating.</p>
-        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -9805,7 +10625,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateStreamingDistribution`.
     ///
-    /// <p>Update a streaming distribution. </p>
+    /// <p>Update a streaming distribution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStreamingDistribution {
         handle: std::sync::Arc<super::Handle>,

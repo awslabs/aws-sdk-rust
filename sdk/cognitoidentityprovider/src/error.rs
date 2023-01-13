@@ -10284,6 +10284,8 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteIdentityProviderErr
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteIdentityProviderErrorKind {
+    /// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -10309,6 +10311,9 @@ pub enum DeleteIdentityProviderErrorKind {
 impl std::fmt::Display for DeleteIdentityProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteIdentityProviderErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
             DeleteIdentityProviderErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             DeleteIdentityProviderErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DeleteIdentityProviderErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
@@ -10375,6 +10380,13 @@ impl DeleteIdentityProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeleteIdentityProviderErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteIdentityProviderErrorKind::ConcurrentModificationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteIdentityProviderErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
@@ -10421,6 +10433,9 @@ impl DeleteIdentityProviderError {
 impl std::error::Error for DeleteIdentityProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteIdentityProviderErrorKind::ConcurrentModificationException(_inner) => {
+                Some(_inner)
+            }
             DeleteIdentityProviderErrorKind::InternalErrorException(_inner) => Some(_inner),
             DeleteIdentityProviderErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteIdentityProviderErrorKind::NotAuthorizedException(_inner) => Some(_inner),
@@ -11155,6 +11170,8 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteUserPoolClientError
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUserPoolClientErrorKind {
+    /// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -11178,6 +11195,7 @@ pub enum DeleteUserPoolClientErrorKind {
 impl std::fmt::Display for DeleteUserPoolClientError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteUserPoolClientErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
             DeleteUserPoolClientErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             DeleteUserPoolClientErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DeleteUserPoolClientErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
@@ -11241,6 +11259,13 @@ impl DeleteUserPoolClientError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeleteUserPoolClientErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserPoolClientErrorKind::ConcurrentModificationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteUserPoolClientErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
@@ -11280,6 +11305,7 @@ impl DeleteUserPoolClientError {
 impl std::error::Error for DeleteUserPoolClientError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteUserPoolClientErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             DeleteUserPoolClientErrorKind::InternalErrorException(_inner) => Some(_inner),
             DeleteUserPoolClientErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteUserPoolClientErrorKind::NotAuthorizedException(_inner) => Some(_inner),
@@ -19715,6 +19741,8 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateIdentityProviderErr
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateIdentityProviderErrorKind {
+    /// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -19740,6 +19768,9 @@ pub enum UpdateIdentityProviderErrorKind {
 impl std::fmt::Display for UpdateIdentityProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateIdentityProviderErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
             UpdateIdentityProviderErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             UpdateIdentityProviderErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             UpdateIdentityProviderErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
@@ -19806,6 +19837,13 @@ impl UpdateIdentityProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `UpdateIdentityProviderErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateIdentityProviderErrorKind::ConcurrentModificationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateIdentityProviderErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
@@ -19852,6 +19890,9 @@ impl UpdateIdentityProviderError {
 impl std::error::Error for UpdateIdentityProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateIdentityProviderErrorKind::ConcurrentModificationException(_inner) => {
+                Some(_inner)
+            }
             UpdateIdentityProviderErrorKind::InternalErrorException(_inner) => Some(_inner),
             UpdateIdentityProviderErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateIdentityProviderErrorKind::NotAuthorizedException(_inner) => Some(_inner),

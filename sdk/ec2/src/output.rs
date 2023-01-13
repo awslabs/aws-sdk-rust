@@ -2997,12 +2997,12 @@ impl RejectTransitGatewayPeeringAttachmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectTransitGatewayMulticastDomainAssociationsOutput {
-    /// <p>Describes the multicast domain associations.</p>
+    /// <p>Information about the multicast domain associations.</p>
     #[doc(hidden)]
     pub associations: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
 }
 impl RejectTransitGatewayMulticastDomainAssociationsOutput {
-    /// <p>Describes the multicast domain associations.</p>
+    /// <p>Information about the multicast domain associations.</p>
     pub fn associations(
         &self,
     ) -> std::option::Option<&crate::model::TransitGatewayMulticastDomainAssociations> {
@@ -3019,7 +3019,7 @@ pub mod reject_transit_gateway_multicast_domain_associations_output {
             std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
     }
     impl Builder {
-        /// <p>Describes the multicast domain associations.</p>
+        /// <p>Information about the multicast domain associations.</p>
         pub fn associations(
             mut self,
             input: crate::model::TransitGatewayMulticastDomainAssociations,
@@ -3027,7 +3027,7 @@ pub mod reject_transit_gateway_multicast_domain_associations_output {
             self.associations = Some(input);
             self
         }
-        /// <p>Describes the multicast domain associations.</p>
+        /// <p>Information about the multicast domain associations.</p>
         pub fn set_associations(
             mut self,
             input: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
@@ -3560,7 +3560,7 @@ pub struct ProvisionPublicIpv4PoolCidrOutput {
     /// <p>The ID of the pool that you want to provision the CIDR to.</p>
     #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
-    /// <p>Describes an address range of an IPv4 address pool.</p>
+    /// <p>Information about the address range of the public IPv4 pool.</p>
     #[doc(hidden)]
     pub pool_address_range: std::option::Option<crate::model::PublicIpv4PoolRange>,
 }
@@ -3569,7 +3569,7 @@ impl ProvisionPublicIpv4PoolCidrOutput {
     pub fn pool_id(&self) -> std::option::Option<&str> {
         self.pool_id.as_deref()
     }
-    /// <p>Describes an address range of an IPv4 address pool.</p>
+    /// <p>Information about the address range of the public IPv4 pool.</p>
     pub fn pool_address_range(&self) -> std::option::Option<&crate::model::PublicIpv4PoolRange> {
         self.pool_address_range.as_ref()
     }
@@ -3594,12 +3594,12 @@ pub mod provision_public_ipv4_pool_cidr_output {
             self.pool_id = input;
             self
         }
-        /// <p>Describes an address range of an IPv4 address pool.</p>
+        /// <p>Information about the address range of the public IPv4 pool.</p>
         pub fn pool_address_range(mut self, input: crate::model::PublicIpv4PoolRange) -> Self {
             self.pool_address_range = Some(input);
             self
         }
-        /// <p>Describes an address range of an IPv4 address pool.</p>
+        /// <p>Information about the address range of the public IPv4 pool.</p>
         pub fn set_pool_address_range(
             mut self,
             input: std::option::Option<crate::model::PublicIpv4PoolRange>,
@@ -3729,12 +3729,12 @@ impl ProvisionByoipCidrOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MoveByoipCidrToIpamOutput {
-    /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
+    /// <p>The BYOIP CIDR.</p>
     #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl MoveByoipCidrToIpamOutput {
-    /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
+    /// <p>The BYOIP CIDR.</p>
     pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
         self.byoip_cidr.as_ref()
     }
@@ -3748,12 +3748,12 @@ pub mod move_byoip_cidr_to_ipam_output {
         pub(crate) byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
     }
     impl Builder {
-        /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
+        /// <p>The BYOIP CIDR.</p>
         pub fn byoip_cidr(mut self, input: crate::model::ByoipCidr) -> Self {
             self.byoip_cidr = Some(input);
             self
         }
-        /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
+        /// <p>The BYOIP CIDR.</p>
         pub fn set_byoip_cidr(
             mut self,
             input: std::option::Option<crate::model::ByoipCidr>,
@@ -3908,12 +3908,12 @@ impl MonitorInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyVpnTunnelOptionsOutput {
-    /// <p>Describes a VPN connection.</p>
+    /// <p>Information about the VPN connection.</p>
     #[doc(hidden)]
     pub vpn_connection: std::option::Option<crate::model::VpnConnection>,
 }
 impl ModifyVpnTunnelOptionsOutput {
-    /// <p>Describes a VPN connection.</p>
+    /// <p>Information about the VPN connection.</p>
     pub fn vpn_connection(&self) -> std::option::Option<&crate::model::VpnConnection> {
         self.vpn_connection.as_ref()
     }
@@ -3927,12 +3927,12 @@ pub mod modify_vpn_tunnel_options_output {
         pub(crate) vpn_connection: std::option::Option<crate::model::VpnConnection>,
     }
     impl Builder {
-        /// <p>Describes a VPN connection.</p>
+        /// <p>Information about the VPN connection.</p>
         pub fn vpn_connection(mut self, input: crate::model::VpnConnection) -> Self {
             self.vpn_connection = Some(input);
             self
         }
-        /// <p>Describes a VPN connection.</p>
+        /// <p>Information about the VPN connection.</p>
         pub fn set_vpn_connection(
             mut self,
             input: std::option::Option<crate::model::VpnConnection>,
@@ -3959,12 +3959,12 @@ impl ModifyVpnTunnelOptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyVpnTunnelCertificateOutput {
-    /// <p>Describes a VPN connection.</p>
+    /// <p>Information about the VPN connection.</p>
     #[doc(hidden)]
     pub vpn_connection: std::option::Option<crate::model::VpnConnection>,
 }
 impl ModifyVpnTunnelCertificateOutput {
-    /// <p>Describes a VPN connection.</p>
+    /// <p>Information about the VPN connection.</p>
     pub fn vpn_connection(&self) -> std::option::Option<&crate::model::VpnConnection> {
         self.vpn_connection.as_ref()
     }
@@ -3978,12 +3978,12 @@ pub mod modify_vpn_tunnel_certificate_output {
         pub(crate) vpn_connection: std::option::Option<crate::model::VpnConnection>,
     }
     impl Builder {
-        /// <p>Describes a VPN connection.</p>
+        /// <p>Information about the VPN connection.</p>
         pub fn vpn_connection(mut self, input: crate::model::VpnConnection) -> Self {
             self.vpn_connection = Some(input);
             self
         }
-        /// <p>Describes a VPN connection.</p>
+        /// <p>Information about the VPN connection.</p>
         pub fn set_vpn_connection(
             mut self,
             input: std::option::Option<crate::model::VpnConnection>,
@@ -4010,12 +4010,12 @@ impl ModifyVpnTunnelCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyVpnConnectionOptionsOutput {
-    /// <p>Describes a VPN connection.</p>
+    /// <p>Information about the VPN connection.</p>
     #[doc(hidden)]
     pub vpn_connection: std::option::Option<crate::model::VpnConnection>,
 }
 impl ModifyVpnConnectionOptionsOutput {
-    /// <p>Describes a VPN connection.</p>
+    /// <p>Information about the VPN connection.</p>
     pub fn vpn_connection(&self) -> std::option::Option<&crate::model::VpnConnection> {
         self.vpn_connection.as_ref()
     }
@@ -4029,12 +4029,12 @@ pub mod modify_vpn_connection_options_output {
         pub(crate) vpn_connection: std::option::Option<crate::model::VpnConnection>,
     }
     impl Builder {
-        /// <p>Describes a VPN connection.</p>
+        /// <p>Information about the VPN connection.</p>
         pub fn vpn_connection(mut self, input: crate::model::VpnConnection) -> Self {
             self.vpn_connection = Some(input);
             self
         }
-        /// <p>Describes a VPN connection.</p>
+        /// <p>Information about the VPN connection.</p>
         pub fn set_vpn_connection(
             mut self,
             input: std::option::Option<crate::model::VpnConnection>,
@@ -4061,12 +4061,12 @@ impl ModifyVpnConnectionOptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyVpnConnectionOutput {
-    /// <p>Describes a VPN connection.</p>
+    /// <p>Information about the VPN connection.</p>
     #[doc(hidden)]
     pub vpn_connection: std::option::Option<crate::model::VpnConnection>,
 }
 impl ModifyVpnConnectionOutput {
-    /// <p>Describes a VPN connection.</p>
+    /// <p>Information about the VPN connection.</p>
     pub fn vpn_connection(&self) -> std::option::Option<&crate::model::VpnConnection> {
         self.vpn_connection.as_ref()
     }
@@ -4080,12 +4080,12 @@ pub mod modify_vpn_connection_output {
         pub(crate) vpn_connection: std::option::Option<crate::model::VpnConnection>,
     }
     impl Builder {
-        /// <p>Describes a VPN connection.</p>
+        /// <p>Information about the VPN connection.</p>
         pub fn vpn_connection(mut self, input: crate::model::VpnConnection) -> Self {
             self.vpn_connection = Some(input);
             self
         }
-        /// <p>Describes a VPN connection.</p>
+        /// <p>Information about the VPN connection.</p>
         pub fn set_vpn_connection(
             mut self,
             input: std::option::Option<crate::model::VpnConnection>,
@@ -4615,6 +4615,430 @@ impl ModifyVolumeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ModifyVerifiedAccessTrustProviderOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+    #[doc(hidden)]
+    pub verified_access_trust_provider:
+        std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+}
+impl ModifyVerifiedAccessTrustProviderOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+    pub fn verified_access_trust_provider(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifiedAccessTrustProvider> {
+        self.verified_access_trust_provider.as_ref()
+    }
+}
+/// See [`ModifyVerifiedAccessTrustProviderOutput`](crate::output::ModifyVerifiedAccessTrustProviderOutput).
+pub mod modify_verified_access_trust_provider_output {
+
+    /// A builder for [`ModifyVerifiedAccessTrustProviderOutput`](crate::output::ModifyVerifiedAccessTrustProviderOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_trust_provider:
+            std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+    }
+    impl Builder {
+        /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+        pub fn verified_access_trust_provider(
+            mut self,
+            input: crate::model::VerifiedAccessTrustProvider,
+        ) -> Self {
+            self.verified_access_trust_provider = Some(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+        pub fn set_verified_access_trust_provider(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+        ) -> Self {
+            self.verified_access_trust_provider = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyVerifiedAccessTrustProviderOutput`](crate::output::ModifyVerifiedAccessTrustProviderOutput).
+        pub fn build(self) -> crate::output::ModifyVerifiedAccessTrustProviderOutput {
+            crate::output::ModifyVerifiedAccessTrustProviderOutput {
+                verified_access_trust_provider: self.verified_access_trust_provider,
+            }
+        }
+    }
+}
+impl ModifyVerifiedAccessTrustProviderOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessTrustProviderOutput`](crate::output::ModifyVerifiedAccessTrustProviderOutput).
+    pub fn builder() -> crate::output::modify_verified_access_trust_provider_output::Builder {
+        crate::output::modify_verified_access_trust_provider_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
+    /// <p>The logging configuration for Amazon Web Services Verified Access instance.</p>
+    #[doc(hidden)]
+    pub logging_configuration:
+        std::option::Option<crate::model::VerifiedAccessInstanceLoggingConfiguration>,
+}
+impl ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
+    /// <p>The logging configuration for Amazon Web Services Verified Access instance.</p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifiedAccessInstanceLoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
+}
+/// See [`ModifyVerifiedAccessInstanceLoggingConfigurationOutput`](crate::output::ModifyVerifiedAccessInstanceLoggingConfigurationOutput).
+pub mod modify_verified_access_instance_logging_configuration_output {
+
+    /// A builder for [`ModifyVerifiedAccessInstanceLoggingConfigurationOutput`](crate::output::ModifyVerifiedAccessInstanceLoggingConfigurationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) logging_configuration:
+            std::option::Option<crate::model::VerifiedAccessInstanceLoggingConfiguration>,
+    }
+    impl Builder {
+        /// <p>The logging configuration for Amazon Web Services Verified Access instance.</p>
+        pub fn logging_configuration(
+            mut self,
+            input: crate::model::VerifiedAccessInstanceLoggingConfiguration,
+        ) -> Self {
+            self.logging_configuration = Some(input);
+            self
+        }
+        /// <p>The logging configuration for Amazon Web Services Verified Access instance.</p>
+        pub fn set_logging_configuration(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessInstanceLoggingConfiguration>,
+        ) -> Self {
+            self.logging_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyVerifiedAccessInstanceLoggingConfigurationOutput`](crate::output::ModifyVerifiedAccessInstanceLoggingConfigurationOutput).
+        pub fn build(
+            self,
+        ) -> crate::output::ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
+            crate::output::ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
+                logging_configuration: self.logging_configuration,
+            }
+        }
+    }
+}
+impl ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessInstanceLoggingConfigurationOutput`](crate::output::ModifyVerifiedAccessInstanceLoggingConfigurationOutput).
+    pub fn builder(
+    ) -> crate::output::modify_verified_access_instance_logging_configuration_output::Builder {
+        crate::output::modify_verified_access_instance_logging_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ModifyVerifiedAccessInstanceOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    #[doc(hidden)]
+    pub verified_access_instance: std::option::Option<crate::model::VerifiedAccessInstance>,
+}
+impl ModifyVerifiedAccessInstanceOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    pub fn verified_access_instance(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifiedAccessInstance> {
+        self.verified_access_instance.as_ref()
+    }
+}
+/// See [`ModifyVerifiedAccessInstanceOutput`](crate::output::ModifyVerifiedAccessInstanceOutput).
+pub mod modify_verified_access_instance_output {
+
+    /// A builder for [`ModifyVerifiedAccessInstanceOutput`](crate::output::ModifyVerifiedAccessInstanceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_instance:
+            std::option::Option<crate::model::VerifiedAccessInstance>,
+    }
+    impl Builder {
+        /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+        pub fn verified_access_instance(
+            mut self,
+            input: crate::model::VerifiedAccessInstance,
+        ) -> Self {
+            self.verified_access_instance = Some(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+        pub fn set_verified_access_instance(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessInstance>,
+        ) -> Self {
+            self.verified_access_instance = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyVerifiedAccessInstanceOutput`](crate::output::ModifyVerifiedAccessInstanceOutput).
+        pub fn build(self) -> crate::output::ModifyVerifiedAccessInstanceOutput {
+            crate::output::ModifyVerifiedAccessInstanceOutput {
+                verified_access_instance: self.verified_access_instance,
+            }
+        }
+    }
+}
+impl ModifyVerifiedAccessInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessInstanceOutput`](crate::output::ModifyVerifiedAccessInstanceOutput).
+    pub fn builder() -> crate::output::modify_verified_access_instance_output::Builder {
+        crate::output::modify_verified_access_instance_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ModifyVerifiedAccessGroupPolicyOutput {
+    /// <p>The status of the Verified Access policy.</p>
+    #[doc(hidden)]
+    pub policy_enabled: std::option::Option<bool>,
+    /// <p>The Amazon Web Services Verified Access policy document.</p>
+    #[doc(hidden)]
+    pub policy_document: std::option::Option<std::string::String>,
+}
+impl ModifyVerifiedAccessGroupPolicyOutput {
+    /// <p>The status of the Verified Access policy.</p>
+    pub fn policy_enabled(&self) -> std::option::Option<bool> {
+        self.policy_enabled
+    }
+    /// <p>The Amazon Web Services Verified Access policy document.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+}
+/// See [`ModifyVerifiedAccessGroupPolicyOutput`](crate::output::ModifyVerifiedAccessGroupPolicyOutput).
+pub mod modify_verified_access_group_policy_output {
+
+    /// A builder for [`ModifyVerifiedAccessGroupPolicyOutput`](crate::output::ModifyVerifiedAccessGroupPolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy_enabled: std::option::Option<bool>,
+        pub(crate) policy_document: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status of the Verified Access policy.</p>
+        pub fn policy_enabled(mut self, input: bool) -> Self {
+            self.policy_enabled = Some(input);
+            self
+        }
+        /// <p>The status of the Verified Access policy.</p>
+        pub fn set_policy_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.policy_enabled = input;
+            self
+        }
+        /// <p>The Amazon Web Services Verified Access policy document.</p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Verified Access policy document.</p>
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_document = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyVerifiedAccessGroupPolicyOutput`](crate::output::ModifyVerifiedAccessGroupPolicyOutput).
+        pub fn build(self) -> crate::output::ModifyVerifiedAccessGroupPolicyOutput {
+            crate::output::ModifyVerifiedAccessGroupPolicyOutput {
+                policy_enabled: self.policy_enabled,
+                policy_document: self.policy_document,
+            }
+        }
+    }
+}
+impl ModifyVerifiedAccessGroupPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessGroupPolicyOutput`](crate::output::ModifyVerifiedAccessGroupPolicyOutput).
+    pub fn builder() -> crate::output::modify_verified_access_group_policy_output::Builder {
+        crate::output::modify_verified_access_group_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ModifyVerifiedAccessGroupOutput {
+    /// <p>Details of Amazon Web Services Verified Access group.</p>
+    #[doc(hidden)]
+    pub verified_access_group: std::option::Option<crate::model::VerifiedAccessGroup>,
+}
+impl ModifyVerifiedAccessGroupOutput {
+    /// <p>Details of Amazon Web Services Verified Access group.</p>
+    pub fn verified_access_group(&self) -> std::option::Option<&crate::model::VerifiedAccessGroup> {
+        self.verified_access_group.as_ref()
+    }
+}
+/// See [`ModifyVerifiedAccessGroupOutput`](crate::output::ModifyVerifiedAccessGroupOutput).
+pub mod modify_verified_access_group_output {
+
+    /// A builder for [`ModifyVerifiedAccessGroupOutput`](crate::output::ModifyVerifiedAccessGroupOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_group: std::option::Option<crate::model::VerifiedAccessGroup>,
+    }
+    impl Builder {
+        /// <p>Details of Amazon Web Services Verified Access group.</p>
+        pub fn verified_access_group(mut self, input: crate::model::VerifiedAccessGroup) -> Self {
+            self.verified_access_group = Some(input);
+            self
+        }
+        /// <p>Details of Amazon Web Services Verified Access group.</p>
+        pub fn set_verified_access_group(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessGroup>,
+        ) -> Self {
+            self.verified_access_group = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyVerifiedAccessGroupOutput`](crate::output::ModifyVerifiedAccessGroupOutput).
+        pub fn build(self) -> crate::output::ModifyVerifiedAccessGroupOutput {
+            crate::output::ModifyVerifiedAccessGroupOutput {
+                verified_access_group: self.verified_access_group,
+            }
+        }
+    }
+}
+impl ModifyVerifiedAccessGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessGroupOutput`](crate::output::ModifyVerifiedAccessGroupOutput).
+    pub fn builder() -> crate::output::modify_verified_access_group_output::Builder {
+        crate::output::modify_verified_access_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ModifyVerifiedAccessEndpointPolicyOutput {
+    /// <p>The status of the Verified Access policy.</p>
+    #[doc(hidden)]
+    pub policy_enabled: std::option::Option<bool>,
+    /// <p>The Amazon Web Services Verified Access policy document.</p>
+    #[doc(hidden)]
+    pub policy_document: std::option::Option<std::string::String>,
+}
+impl ModifyVerifiedAccessEndpointPolicyOutput {
+    /// <p>The status of the Verified Access policy.</p>
+    pub fn policy_enabled(&self) -> std::option::Option<bool> {
+        self.policy_enabled
+    }
+    /// <p>The Amazon Web Services Verified Access policy document.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+}
+/// See [`ModifyVerifiedAccessEndpointPolicyOutput`](crate::output::ModifyVerifiedAccessEndpointPolicyOutput).
+pub mod modify_verified_access_endpoint_policy_output {
+
+    /// A builder for [`ModifyVerifiedAccessEndpointPolicyOutput`](crate::output::ModifyVerifiedAccessEndpointPolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy_enabled: std::option::Option<bool>,
+        pub(crate) policy_document: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status of the Verified Access policy.</p>
+        pub fn policy_enabled(mut self, input: bool) -> Self {
+            self.policy_enabled = Some(input);
+            self
+        }
+        /// <p>The status of the Verified Access policy.</p>
+        pub fn set_policy_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.policy_enabled = input;
+            self
+        }
+        /// <p>The Amazon Web Services Verified Access policy document.</p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Verified Access policy document.</p>
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_document = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyVerifiedAccessEndpointPolicyOutput`](crate::output::ModifyVerifiedAccessEndpointPolicyOutput).
+        pub fn build(self) -> crate::output::ModifyVerifiedAccessEndpointPolicyOutput {
+            crate::output::ModifyVerifiedAccessEndpointPolicyOutput {
+                policy_enabled: self.policy_enabled,
+                policy_document: self.policy_document,
+            }
+        }
+    }
+}
+impl ModifyVerifiedAccessEndpointPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessEndpointPolicyOutput`](crate::output::ModifyVerifiedAccessEndpointPolicyOutput).
+    pub fn builder() -> crate::output::modify_verified_access_endpoint_policy_output::Builder {
+        crate::output::modify_verified_access_endpoint_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ModifyVerifiedAccessEndpointOutput {
+    /// <p>The Amazon Web Services Verified Access endpoint details.</p>
+    #[doc(hidden)]
+    pub verified_access_endpoint: std::option::Option<crate::model::VerifiedAccessEndpoint>,
+}
+impl ModifyVerifiedAccessEndpointOutput {
+    /// <p>The Amazon Web Services Verified Access endpoint details.</p>
+    pub fn verified_access_endpoint(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifiedAccessEndpoint> {
+        self.verified_access_endpoint.as_ref()
+    }
+}
+/// See [`ModifyVerifiedAccessEndpointOutput`](crate::output::ModifyVerifiedAccessEndpointOutput).
+pub mod modify_verified_access_endpoint_output {
+
+    /// A builder for [`ModifyVerifiedAccessEndpointOutput`](crate::output::ModifyVerifiedAccessEndpointOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_endpoint:
+            std::option::Option<crate::model::VerifiedAccessEndpoint>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services Verified Access endpoint details.</p>
+        pub fn verified_access_endpoint(
+            mut self,
+            input: crate::model::VerifiedAccessEndpoint,
+        ) -> Self {
+            self.verified_access_endpoint = Some(input);
+            self
+        }
+        /// <p>The Amazon Web Services Verified Access endpoint details.</p>
+        pub fn set_verified_access_endpoint(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessEndpoint>,
+        ) -> Self {
+            self.verified_access_endpoint = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyVerifiedAccessEndpointOutput`](crate::output::ModifyVerifiedAccessEndpointOutput).
+        pub fn build(self) -> crate::output::ModifyVerifiedAccessEndpointOutput {
+            crate::output::ModifyVerifiedAccessEndpointOutput {
+                verified_access_endpoint: self.verified_access_endpoint,
+            }
+        }
+    }
+}
+impl ModifyVerifiedAccessEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessEndpointOutput`](crate::output::ModifyVerifiedAccessEndpointOutput).
+    pub fn builder() -> crate::output::modify_verified_access_endpoint_output::Builder {
+        crate::output::modify_verified_access_endpoint_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyTransitGatewayVpcAttachmentOutput {
     /// <p>Information about the modified attachment.</p>
     #[doc(hidden)]
@@ -4733,12 +5157,12 @@ impl ModifyTransitGatewayPrefixListReferenceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyTransitGatewayOutput {
-    /// <p>Describes a transit gateway.</p>
+    /// <p>Information about the transit gateway.</p>
     #[doc(hidden)]
     pub transit_gateway: std::option::Option<crate::model::TransitGateway>,
 }
 impl ModifyTransitGatewayOutput {
-    /// <p>Describes a transit gateway.</p>
+    /// <p>Information about the transit gateway.</p>
     pub fn transit_gateway(&self) -> std::option::Option<&crate::model::TransitGateway> {
         self.transit_gateway.as_ref()
     }
@@ -4752,12 +5176,12 @@ pub mod modify_transit_gateway_output {
         pub(crate) transit_gateway: std::option::Option<crate::model::TransitGateway>,
     }
     impl Builder {
-        /// <p>Describes a transit gateway.</p>
+        /// <p>Information about the transit gateway.</p>
         pub fn transit_gateway(mut self, input: crate::model::TransitGateway) -> Self {
             self.transit_gateway = Some(input);
             self
         }
-        /// <p>Describes a transit gateway.</p>
+        /// <p>Information about the transit gateway.</p>
         pub fn set_transit_gateway(
             mut self,
             input: std::option::Option<crate::model::TransitGateway>,
@@ -5337,12 +5761,12 @@ impl ModifyManagedPrefixListOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyLocalGatewayRouteOutput {
-    /// <p>Describes a route for a local gateway route table.</p>
+    /// <p>Information about the local gateway route table.</p>
     #[doc(hidden)]
     pub route: std::option::Option<crate::model::LocalGatewayRoute>,
 }
 impl ModifyLocalGatewayRouteOutput {
-    /// <p>Describes a route for a local gateway route table.</p>
+    /// <p>Information about the local gateway route table.</p>
     pub fn route(&self) -> std::option::Option<&crate::model::LocalGatewayRoute> {
         self.route.as_ref()
     }
@@ -5356,12 +5780,12 @@ pub mod modify_local_gateway_route_output {
         pub(crate) route: std::option::Option<crate::model::LocalGatewayRoute>,
     }
     impl Builder {
-        /// <p>Describes a route for a local gateway route table.</p>
+        /// <p>Information about the local gateway route table.</p>
         pub fn route(mut self, input: crate::model::LocalGatewayRoute) -> Self {
             self.route = Some(input);
             self
         }
-        /// <p>Describes a route for a local gateway route table.</p>
+        /// <p>Information about the local gateway route table.</p>
         pub fn set_route(
             mut self,
             input: std::option::Option<crate::model::LocalGatewayRoute>,
@@ -5488,12 +5912,12 @@ impl ModifyIpamScopeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyIpamResourceCidrOutput {
-    /// <p>The CIDR for an IPAM resource.</p>
+    /// <p>The CIDR of the resource.</p>
     #[doc(hidden)]
     pub ipam_resource_cidr: std::option::Option<crate::model::IpamResourceCidr>,
 }
 impl ModifyIpamResourceCidrOutput {
-    /// <p>The CIDR for an IPAM resource.</p>
+    /// <p>The CIDR of the resource.</p>
     pub fn ipam_resource_cidr(&self) -> std::option::Option<&crate::model::IpamResourceCidr> {
         self.ipam_resource_cidr.as_ref()
     }
@@ -5507,12 +5931,12 @@ pub mod modify_ipam_resource_cidr_output {
         pub(crate) ipam_resource_cidr: std::option::Option<crate::model::IpamResourceCidr>,
     }
     impl Builder {
-        /// <p>The CIDR for an IPAM resource.</p>
+        /// <p>The CIDR of the resource.</p>
         pub fn ipam_resource_cidr(mut self, input: crate::model::IpamResourceCidr) -> Self {
             self.ipam_resource_cidr = Some(input);
             self
         }
-        /// <p>The CIDR for an IPAM resource.</p>
+        /// <p>The CIDR of the resource.</p>
         pub fn set_ipam_resource_cidr(
             mut self,
             input: std::option::Option<crate::model::IpamResourceCidr>,
@@ -5879,12 +6303,12 @@ impl ModifyInstanceEventWindowOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyInstanceEventStartTimeOutput {
-    /// <p>Describes a scheduled event for an instance.</p>
+    /// <p>Information about the event.</p>
     #[doc(hidden)]
     pub event: std::option::Option<crate::model::InstanceStatusEvent>,
 }
 impl ModifyInstanceEventStartTimeOutput {
-    /// <p>Describes a scheduled event for an instance.</p>
+    /// <p>Information about the event.</p>
     pub fn event(&self) -> std::option::Option<&crate::model::InstanceStatusEvent> {
         self.event.as_ref()
     }
@@ -5898,12 +6322,12 @@ pub mod modify_instance_event_start_time_output {
         pub(crate) event: std::option::Option<crate::model::InstanceStatusEvent>,
     }
     impl Builder {
-        /// <p>Describes a scheduled event for an instance.</p>
+        /// <p>Information about the event.</p>
         pub fn event(mut self, input: crate::model::InstanceStatusEvent) -> Self {
             self.event = Some(input);
             self
         }
-        /// <p>Describes a scheduled event for an instance.</p>
+        /// <p>Information about the event.</p>
         pub fn set_event(
             mut self,
             input: std::option::Option<crate::model::InstanceStatusEvent>,
@@ -7805,6 +8229,146 @@ impl GetVpnConnectionDeviceSampleConfigurationOutput {
     pub fn builder() -> crate::output::get_vpn_connection_device_sample_configuration_output::Builder
     {
         crate::output::get_vpn_connection_device_sample_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetVerifiedAccessGroupPolicyOutput {
+    /// <p>The status of the Verified Access policy.</p>
+    #[doc(hidden)]
+    pub policy_enabled: std::option::Option<bool>,
+    /// <p>The Amazon Web Services Verified Access policy document.</p>
+    #[doc(hidden)]
+    pub policy_document: std::option::Option<std::string::String>,
+}
+impl GetVerifiedAccessGroupPolicyOutput {
+    /// <p>The status of the Verified Access policy.</p>
+    pub fn policy_enabled(&self) -> std::option::Option<bool> {
+        self.policy_enabled
+    }
+    /// <p>The Amazon Web Services Verified Access policy document.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+}
+/// See [`GetVerifiedAccessGroupPolicyOutput`](crate::output::GetVerifiedAccessGroupPolicyOutput).
+pub mod get_verified_access_group_policy_output {
+
+    /// A builder for [`GetVerifiedAccessGroupPolicyOutput`](crate::output::GetVerifiedAccessGroupPolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy_enabled: std::option::Option<bool>,
+        pub(crate) policy_document: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status of the Verified Access policy.</p>
+        pub fn policy_enabled(mut self, input: bool) -> Self {
+            self.policy_enabled = Some(input);
+            self
+        }
+        /// <p>The status of the Verified Access policy.</p>
+        pub fn set_policy_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.policy_enabled = input;
+            self
+        }
+        /// <p>The Amazon Web Services Verified Access policy document.</p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Verified Access policy document.</p>
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_document = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetVerifiedAccessGroupPolicyOutput`](crate::output::GetVerifiedAccessGroupPolicyOutput).
+        pub fn build(self) -> crate::output::GetVerifiedAccessGroupPolicyOutput {
+            crate::output::GetVerifiedAccessGroupPolicyOutput {
+                policy_enabled: self.policy_enabled,
+                policy_document: self.policy_document,
+            }
+        }
+    }
+}
+impl GetVerifiedAccessGroupPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetVerifiedAccessGroupPolicyOutput`](crate::output::GetVerifiedAccessGroupPolicyOutput).
+    pub fn builder() -> crate::output::get_verified_access_group_policy_output::Builder {
+        crate::output::get_verified_access_group_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetVerifiedAccessEndpointPolicyOutput {
+    /// <p>The status of the Verified Access policy.</p>
+    #[doc(hidden)]
+    pub policy_enabled: std::option::Option<bool>,
+    /// <p>The Amazon Web Services Verified Access policy document.</p>
+    #[doc(hidden)]
+    pub policy_document: std::option::Option<std::string::String>,
+}
+impl GetVerifiedAccessEndpointPolicyOutput {
+    /// <p>The status of the Verified Access policy.</p>
+    pub fn policy_enabled(&self) -> std::option::Option<bool> {
+        self.policy_enabled
+    }
+    /// <p>The Amazon Web Services Verified Access policy document.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+}
+/// See [`GetVerifiedAccessEndpointPolicyOutput`](crate::output::GetVerifiedAccessEndpointPolicyOutput).
+pub mod get_verified_access_endpoint_policy_output {
+
+    /// A builder for [`GetVerifiedAccessEndpointPolicyOutput`](crate::output::GetVerifiedAccessEndpointPolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy_enabled: std::option::Option<bool>,
+        pub(crate) policy_document: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status of the Verified Access policy.</p>
+        pub fn policy_enabled(mut self, input: bool) -> Self {
+            self.policy_enabled = Some(input);
+            self
+        }
+        /// <p>The status of the Verified Access policy.</p>
+        pub fn set_policy_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.policy_enabled = input;
+            self
+        }
+        /// <p>The Amazon Web Services Verified Access policy document.</p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Verified Access policy document.</p>
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_document = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetVerifiedAccessEndpointPolicyOutput`](crate::output::GetVerifiedAccessEndpointPolicyOutput).
+        pub fn build(self) -> crate::output::GetVerifiedAccessEndpointPolicyOutput {
+            crate::output::GetVerifiedAccessEndpointPolicyOutput {
+                policy_enabled: self.policy_enabled,
+                policy_document: self.policy_document,
+            }
+        }
+    }
+}
+impl GetVerifiedAccessEndpointPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetVerifiedAccessEndpointPolicyOutput`](crate::output::GetVerifiedAccessEndpointPolicyOutput).
+    pub fn builder() -> crate::output::get_verified_access_endpoint_policy_output::Builder {
+        crate::output::get_verified_access_endpoint_policy_output::Builder::default()
     }
 }
 
@@ -10771,6 +11335,82 @@ impl GetCapacityReservationUsageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetAwsNetworkPerformanceDataOutput {
+    /// <p>The list of data responses.</p>
+    #[doc(hidden)]
+    pub data_responses: std::option::Option<std::vec::Vec<crate::model::DataResponse>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl GetAwsNetworkPerformanceDataOutput {
+    /// <p>The list of data responses.</p>
+    pub fn data_responses(&self) -> std::option::Option<&[crate::model::DataResponse]> {
+        self.data_responses.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`GetAwsNetworkPerformanceDataOutput`](crate::output::GetAwsNetworkPerformanceDataOutput).
+pub mod get_aws_network_performance_data_output {
+
+    /// A builder for [`GetAwsNetworkPerformanceDataOutput`](crate::output::GetAwsNetworkPerformanceDataOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_responses: std::option::Option<std::vec::Vec<crate::model::DataResponse>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `data_responses`.
+        ///
+        /// To override the contents of this collection use [`set_data_responses`](Self::set_data_responses).
+        ///
+        /// <p>The list of data responses.</p>
+        pub fn data_responses(mut self, input: crate::model::DataResponse) -> Self {
+            let mut v = self.data_responses.unwrap_or_default();
+            v.push(input);
+            self.data_responses = Some(v);
+            self
+        }
+        /// <p>The list of data responses.</p>
+        pub fn set_data_responses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataResponse>>,
+        ) -> Self {
+            self.data_responses = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetAwsNetworkPerformanceDataOutput`](crate::output::GetAwsNetworkPerformanceDataOutput).
+        pub fn build(self) -> crate::output::GetAwsNetworkPerformanceDataOutput {
+            crate::output::GetAwsNetworkPerformanceDataOutput {
+                data_responses: self.data_responses,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetAwsNetworkPerformanceDataOutput {
+    /// Creates a new builder-style object to manufacture [`GetAwsNetworkPerformanceDataOutput`](crate::output::GetAwsNetworkPerformanceDataOutput).
+    pub fn builder() -> crate::output::get_aws_network_performance_data_output::Builder {
+        crate::output::get_aws_network_performance_data_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssociatedIpv6PoolCidrsOutput {
     /// <p>Information about the IPv6 CIDR block associations.</p>
     #[doc(hidden)]
@@ -11579,6 +12219,55 @@ impl EnableSerialConsoleAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EnableReachabilityAnalyzerOrganizationSharingOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    #[doc(hidden)]
+    pub return_value: std::option::Option<bool>,
+}
+impl EnableReachabilityAnalyzerOrganizationSharingOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn return_value(&self) -> std::option::Option<bool> {
+        self.return_value
+    }
+}
+/// See [`EnableReachabilityAnalyzerOrganizationSharingOutput`](crate::output::EnableReachabilityAnalyzerOrganizationSharingOutput).
+pub mod enable_reachability_analyzer_organization_sharing_output {
+
+    /// A builder for [`EnableReachabilityAnalyzerOrganizationSharingOutput`](crate::output::EnableReachabilityAnalyzerOrganizationSharingOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) return_value: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+        pub fn return_value(mut self, input: bool) -> Self {
+            self.return_value = Some(input);
+            self
+        }
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+        pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
+            self.return_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EnableReachabilityAnalyzerOrganizationSharingOutput`](crate::output::EnableReachabilityAnalyzerOrganizationSharingOutput).
+        pub fn build(self) -> crate::output::EnableReachabilityAnalyzerOrganizationSharingOutput {
+            crate::output::EnableReachabilityAnalyzerOrganizationSharingOutput {
+                return_value: self.return_value,
+            }
+        }
+    }
+}
+impl EnableReachabilityAnalyzerOrganizationSharingOutput {
+    /// Creates a new builder-style object to manufacture [`EnableReachabilityAnalyzerOrganizationSharingOutput`](crate::output::EnableReachabilityAnalyzerOrganizationSharingOutput).
+    pub fn builder(
+    ) -> crate::output::enable_reachability_analyzer_organization_sharing_output::Builder {
+        crate::output::enable_reachability_analyzer_organization_sharing_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableIpamOrganizationAdminAccountOutput {
     /// <p>The result of enabling the IPAM account.</p>
     #[doc(hidden)]
@@ -12052,6 +12741,106 @@ impl EnableEbsEncryptionByDefaultOutput {
     /// Creates a new builder-style object to manufacture [`EnableEbsEncryptionByDefaultOutput`](crate::output::EnableEbsEncryptionByDefaultOutput).
     pub fn builder() -> crate::output::enable_ebs_encryption_by_default_output::Builder {
         crate::output::enable_ebs_encryption_by_default_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EnableAwsNetworkPerformanceMetricSubscriptionOutput {
+    /// <p>Indicates whether the subscribe action was successful.</p>
+    #[doc(hidden)]
+    pub output: std::option::Option<bool>,
+}
+impl EnableAwsNetworkPerformanceMetricSubscriptionOutput {
+    /// <p>Indicates whether the subscribe action was successful.</p>
+    pub fn output(&self) -> std::option::Option<bool> {
+        self.output
+    }
+}
+/// See [`EnableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::output::EnableAwsNetworkPerformanceMetricSubscriptionOutput).
+pub mod enable_aws_network_performance_metric_subscription_output {
+
+    /// A builder for [`EnableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::output::EnableAwsNetworkPerformanceMetricSubscriptionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) output: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Indicates whether the subscribe action was successful.</p>
+        pub fn output(mut self, input: bool) -> Self {
+            self.output = Some(input);
+            self
+        }
+        /// <p>Indicates whether the subscribe action was successful.</p>
+        pub fn set_output(mut self, input: std::option::Option<bool>) -> Self {
+            self.output = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EnableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::output::EnableAwsNetworkPerformanceMetricSubscriptionOutput).
+        pub fn build(self) -> crate::output::EnableAwsNetworkPerformanceMetricSubscriptionOutput {
+            crate::output::EnableAwsNetworkPerformanceMetricSubscriptionOutput {
+                output: self.output,
+            }
+        }
+    }
+}
+impl EnableAwsNetworkPerformanceMetricSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`EnableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::output::EnableAwsNetworkPerformanceMetricSubscriptionOutput).
+    pub fn builder(
+    ) -> crate::output::enable_aws_network_performance_metric_subscription_output::Builder {
+        crate::output::enable_aws_network_performance_metric_subscription_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EnableAddressTransferOutput {
+    /// <p>An Elastic IP address transfer.</p>
+    #[doc(hidden)]
+    pub address_transfer: std::option::Option<crate::model::AddressTransfer>,
+}
+impl EnableAddressTransferOutput {
+    /// <p>An Elastic IP address transfer.</p>
+    pub fn address_transfer(&self) -> std::option::Option<&crate::model::AddressTransfer> {
+        self.address_transfer.as_ref()
+    }
+}
+/// See [`EnableAddressTransferOutput`](crate::output::EnableAddressTransferOutput).
+pub mod enable_address_transfer_output {
+
+    /// A builder for [`EnableAddressTransferOutput`](crate::output::EnableAddressTransferOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) address_transfer: std::option::Option<crate::model::AddressTransfer>,
+    }
+    impl Builder {
+        /// <p>An Elastic IP address transfer.</p>
+        pub fn address_transfer(mut self, input: crate::model::AddressTransfer) -> Self {
+            self.address_transfer = Some(input);
+            self
+        }
+        /// <p>An Elastic IP address transfer.</p>
+        pub fn set_address_transfer(
+            mut self,
+            input: std::option::Option<crate::model::AddressTransfer>,
+        ) -> Self {
+            self.address_transfer = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EnableAddressTransferOutput`](crate::output::EnableAddressTransferOutput).
+        pub fn build(self) -> crate::output::EnableAddressTransferOutput {
+            crate::output::EnableAddressTransferOutput {
+                address_transfer: self.address_transfer,
+            }
+        }
+    }
+}
+impl EnableAddressTransferOutput {
+    /// Creates a new builder-style object to manufacture [`EnableAddressTransferOutput`](crate::output::EnableAddressTransferOutput).
+    pub fn builder() -> crate::output::enable_address_transfer_output::Builder {
+        crate::output::enable_address_transfer_output::Builder::default()
     }
 }
 
@@ -13452,6 +14241,107 @@ impl DisableEbsEncryptionByDefaultOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DisableAwsNetworkPerformanceMetricSubscriptionOutput {
+    /// <p>Indicates whether the unsubscribe action was successful.</p>
+    #[doc(hidden)]
+    pub output: std::option::Option<bool>,
+}
+impl DisableAwsNetworkPerformanceMetricSubscriptionOutput {
+    /// <p>Indicates whether the unsubscribe action was successful.</p>
+    pub fn output(&self) -> std::option::Option<bool> {
+        self.output
+    }
+}
+/// See [`DisableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::output::DisableAwsNetworkPerformanceMetricSubscriptionOutput).
+pub mod disable_aws_network_performance_metric_subscription_output {
+
+    /// A builder for [`DisableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::output::DisableAwsNetworkPerformanceMetricSubscriptionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) output: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Indicates whether the unsubscribe action was successful.</p>
+        pub fn output(mut self, input: bool) -> Self {
+            self.output = Some(input);
+            self
+        }
+        /// <p>Indicates whether the unsubscribe action was successful.</p>
+        pub fn set_output(mut self, input: std::option::Option<bool>) -> Self {
+            self.output = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::output::DisableAwsNetworkPerformanceMetricSubscriptionOutput).
+        pub fn build(self) -> crate::output::DisableAwsNetworkPerformanceMetricSubscriptionOutput {
+            crate::output::DisableAwsNetworkPerformanceMetricSubscriptionOutput {
+                output: self.output,
+            }
+        }
+    }
+}
+impl DisableAwsNetworkPerformanceMetricSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`DisableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::output::DisableAwsNetworkPerformanceMetricSubscriptionOutput).
+    pub fn builder(
+    ) -> crate::output::disable_aws_network_performance_metric_subscription_output::Builder {
+        crate::output::disable_aws_network_performance_metric_subscription_output::Builder::default(
+        )
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DisableAddressTransferOutput {
+    /// <p>An Elastic IP address transfer.</p>
+    #[doc(hidden)]
+    pub address_transfer: std::option::Option<crate::model::AddressTransfer>,
+}
+impl DisableAddressTransferOutput {
+    /// <p>An Elastic IP address transfer.</p>
+    pub fn address_transfer(&self) -> std::option::Option<&crate::model::AddressTransfer> {
+        self.address_transfer.as_ref()
+    }
+}
+/// See [`DisableAddressTransferOutput`](crate::output::DisableAddressTransferOutput).
+pub mod disable_address_transfer_output {
+
+    /// A builder for [`DisableAddressTransferOutput`](crate::output::DisableAddressTransferOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) address_transfer: std::option::Option<crate::model::AddressTransfer>,
+    }
+    impl Builder {
+        /// <p>An Elastic IP address transfer.</p>
+        pub fn address_transfer(mut self, input: crate::model::AddressTransfer) -> Self {
+            self.address_transfer = Some(input);
+            self
+        }
+        /// <p>An Elastic IP address transfer.</p>
+        pub fn set_address_transfer(
+            mut self,
+            input: std::option::Option<crate::model::AddressTransfer>,
+        ) -> Self {
+            self.address_transfer = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisableAddressTransferOutput`](crate::output::DisableAddressTransferOutput).
+        pub fn build(self) -> crate::output::DisableAddressTransferOutput {
+            crate::output::DisableAddressTransferOutput {
+                address_transfer: self.address_transfer,
+            }
+        }
+    }
+}
+impl DisableAddressTransferOutput {
+    /// Creates a new builder-style object to manufacture [`DisableAddressTransferOutput`](crate::output::DisableAddressTransferOutput).
+    pub fn builder() -> crate::output::disable_address_transfer_output::Builder {
+        crate::output::disable_address_transfer_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachVpnGatewayOutput {}
 /// See [`DetachVpnGatewayOutput`](crate::output::DetachVpnGatewayOutput).
 pub mod detach_vpn_gateway_output {
@@ -13619,6 +14509,92 @@ impl DetachVolumeOutput {
     /// Creates a new builder-style object to manufacture [`DetachVolumeOutput`](crate::output::DetachVolumeOutput).
     pub fn builder() -> crate::output::detach_volume_output::Builder {
         crate::output::detach_volume_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DetachVerifiedAccessTrustProviderOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+    #[doc(hidden)]
+    pub verified_access_trust_provider:
+        std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    #[doc(hidden)]
+    pub verified_access_instance: std::option::Option<crate::model::VerifiedAccessInstance>,
+}
+impl DetachVerifiedAccessTrustProviderOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+    pub fn verified_access_trust_provider(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifiedAccessTrustProvider> {
+        self.verified_access_trust_provider.as_ref()
+    }
+    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    pub fn verified_access_instance(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifiedAccessInstance> {
+        self.verified_access_instance.as_ref()
+    }
+}
+/// See [`DetachVerifiedAccessTrustProviderOutput`](crate::output::DetachVerifiedAccessTrustProviderOutput).
+pub mod detach_verified_access_trust_provider_output {
+
+    /// A builder for [`DetachVerifiedAccessTrustProviderOutput`](crate::output::DetachVerifiedAccessTrustProviderOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_trust_provider:
+            std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+        pub(crate) verified_access_instance:
+            std::option::Option<crate::model::VerifiedAccessInstance>,
+    }
+    impl Builder {
+        /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+        pub fn verified_access_trust_provider(
+            mut self,
+            input: crate::model::VerifiedAccessTrustProvider,
+        ) -> Self {
+            self.verified_access_trust_provider = Some(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+        pub fn set_verified_access_trust_provider(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+        ) -> Self {
+            self.verified_access_trust_provider = input;
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+        pub fn verified_access_instance(
+            mut self,
+            input: crate::model::VerifiedAccessInstance,
+        ) -> Self {
+            self.verified_access_instance = Some(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+        pub fn set_verified_access_instance(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessInstance>,
+        ) -> Self {
+            self.verified_access_instance = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetachVerifiedAccessTrustProviderOutput`](crate::output::DetachVerifiedAccessTrustProviderOutput).
+        pub fn build(self) -> crate::output::DetachVerifiedAccessTrustProviderOutput {
+            crate::output::DetachVerifiedAccessTrustProviderOutput {
+                verified_access_trust_provider: self.verified_access_trust_provider,
+                verified_access_instance: self.verified_access_instance,
+            }
+        }
+    }
+}
+impl DetachVerifiedAccessTrustProviderOutput {
+    /// Creates a new builder-style object to manufacture [`DetachVerifiedAccessTrustProviderOutput`](crate::output::DetachVerifiedAccessTrustProviderOutput).
+    pub fn builder() -> crate::output::detach_verified_access_trust_provider_output::Builder {
+        crate::output::detach_verified_access_trust_provider_output::Builder::default()
     }
 }
 
@@ -15077,6 +16053,426 @@ impl DescribeVolumeAttributeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVolumeAttributeOutput`](crate::output::DescribeVolumeAttributeOutput).
     pub fn builder() -> crate::output::describe_volume_attribute_output::Builder {
         crate::output::describe_volume_attribute_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeVerifiedAccessTrustProvidersOutput {
+    /// <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+    #[doc(hidden)]
+    pub verified_access_trust_providers:
+        std::option::Option<std::vec::Vec<crate::model::VerifiedAccessTrustProvider>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVerifiedAccessTrustProvidersOutput {
+    /// <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+    pub fn verified_access_trust_providers(
+        &self,
+    ) -> std::option::Option<&[crate::model::VerifiedAccessTrustProvider]> {
+        self.verified_access_trust_providers.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`DescribeVerifiedAccessTrustProvidersOutput`](crate::output::DescribeVerifiedAccessTrustProvidersOutput).
+pub mod describe_verified_access_trust_providers_output {
+
+    /// A builder for [`DescribeVerifiedAccessTrustProvidersOutput`](crate::output::DescribeVerifiedAccessTrustProvidersOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_trust_providers:
+            std::option::Option<std::vec::Vec<crate::model::VerifiedAccessTrustProvider>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `verified_access_trust_providers`.
+        ///
+        /// To override the contents of this collection use [`set_verified_access_trust_providers`](Self::set_verified_access_trust_providers).
+        ///
+        /// <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+        pub fn verified_access_trust_providers(
+            mut self,
+            input: crate::model::VerifiedAccessTrustProvider,
+        ) -> Self {
+            let mut v = self.verified_access_trust_providers.unwrap_or_default();
+            v.push(input);
+            self.verified_access_trust_providers = Some(v);
+            self
+        }
+        /// <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+        pub fn set_verified_access_trust_providers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VerifiedAccessTrustProvider>>,
+        ) -> Self {
+            self.verified_access_trust_providers = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeVerifiedAccessTrustProvidersOutput`](crate::output::DescribeVerifiedAccessTrustProvidersOutput).
+        pub fn build(self) -> crate::output::DescribeVerifiedAccessTrustProvidersOutput {
+            crate::output::DescribeVerifiedAccessTrustProvidersOutput {
+                verified_access_trust_providers: self.verified_access_trust_providers,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeVerifiedAccessTrustProvidersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVerifiedAccessTrustProvidersOutput`](crate::output::DescribeVerifiedAccessTrustProvidersOutput).
+    pub fn builder() -> crate::output::describe_verified_access_trust_providers_output::Builder {
+        crate::output::describe_verified_access_trust_providers_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeVerifiedAccessInstancesOutput {
+    /// <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+    #[doc(hidden)]
+    pub verified_access_instances:
+        std::option::Option<std::vec::Vec<crate::model::VerifiedAccessInstance>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVerifiedAccessInstancesOutput {
+    /// <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+    pub fn verified_access_instances(
+        &self,
+    ) -> std::option::Option<&[crate::model::VerifiedAccessInstance]> {
+        self.verified_access_instances.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`DescribeVerifiedAccessInstancesOutput`](crate::output::DescribeVerifiedAccessInstancesOutput).
+pub mod describe_verified_access_instances_output {
+
+    /// A builder for [`DescribeVerifiedAccessInstancesOutput`](crate::output::DescribeVerifiedAccessInstancesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_instances:
+            std::option::Option<std::vec::Vec<crate::model::VerifiedAccessInstance>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `verified_access_instances`.
+        ///
+        /// To override the contents of this collection use [`set_verified_access_instances`](Self::set_verified_access_instances).
+        ///
+        /// <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+        pub fn verified_access_instances(
+            mut self,
+            input: crate::model::VerifiedAccessInstance,
+        ) -> Self {
+            let mut v = self.verified_access_instances.unwrap_or_default();
+            v.push(input);
+            self.verified_access_instances = Some(v);
+            self
+        }
+        /// <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+        pub fn set_verified_access_instances(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VerifiedAccessInstance>>,
+        ) -> Self {
+            self.verified_access_instances = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeVerifiedAccessInstancesOutput`](crate::output::DescribeVerifiedAccessInstancesOutput).
+        pub fn build(self) -> crate::output::DescribeVerifiedAccessInstancesOutput {
+            crate::output::DescribeVerifiedAccessInstancesOutput {
+                verified_access_instances: self.verified_access_instances,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeVerifiedAccessInstancesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVerifiedAccessInstancesOutput`](crate::output::DescribeVerifiedAccessInstancesOutput).
+    pub fn builder() -> crate::output::describe_verified_access_instances_output::Builder {
+        crate::output::describe_verified_access_instances_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
+    /// <p>The current logging configuration for the Amazon Web Services Verified Access instances.</p>
+    #[doc(hidden)]
+    pub logging_configurations: std::option::Option<
+        std::vec::Vec<crate::model::VerifiedAccessInstanceLoggingConfiguration>,
+    >,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
+    /// <p>The current logging configuration for the Amazon Web Services Verified Access instances.</p>
+    pub fn logging_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::VerifiedAccessInstanceLoggingConfiguration]> {
+        self.logging_configurations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`DescribeVerifiedAccessInstanceLoggingConfigurationsOutput`](crate::output::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput).
+pub mod describe_verified_access_instance_logging_configurations_output {
+
+    /// A builder for [`DescribeVerifiedAccessInstanceLoggingConfigurationsOutput`](crate::output::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) logging_configurations: std::option::Option<
+            std::vec::Vec<crate::model::VerifiedAccessInstanceLoggingConfiguration>,
+        >,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `logging_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_logging_configurations`](Self::set_logging_configurations).
+        ///
+        /// <p>The current logging configuration for the Amazon Web Services Verified Access instances.</p>
+        pub fn logging_configurations(
+            mut self,
+            input: crate::model::VerifiedAccessInstanceLoggingConfiguration,
+        ) -> Self {
+            let mut v = self.logging_configurations.unwrap_or_default();
+            v.push(input);
+            self.logging_configurations = Some(v);
+            self
+        }
+        /// <p>The current logging configuration for the Amazon Web Services Verified Access instances.</p>
+        pub fn set_logging_configurations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::VerifiedAccessInstanceLoggingConfiguration>,
+            >,
+        ) -> Self {
+            self.logging_configurations = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeVerifiedAccessInstanceLoggingConfigurationsOutput`](crate::output::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput).
+        pub fn build(
+            self,
+        ) -> crate::output::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
+            crate::output::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
+                logging_configurations: self.logging_configurations,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVerifiedAccessInstanceLoggingConfigurationsOutput`](crate::output::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput).
+    pub fn builder(
+    ) -> crate::output::describe_verified_access_instance_logging_configurations_output::Builder
+    {
+        crate::output::describe_verified_access_instance_logging_configurations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeVerifiedAccessGroupsOutput {
+    /// <p>The ID of the Verified Access group.</p>
+    #[doc(hidden)]
+    pub verified_access_groups:
+        std::option::Option<std::vec::Vec<crate::model::VerifiedAccessGroup>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVerifiedAccessGroupsOutput {
+    /// <p>The ID of the Verified Access group.</p>
+    pub fn verified_access_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::VerifiedAccessGroup]> {
+        self.verified_access_groups.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`DescribeVerifiedAccessGroupsOutput`](crate::output::DescribeVerifiedAccessGroupsOutput).
+pub mod describe_verified_access_groups_output {
+
+    /// A builder for [`DescribeVerifiedAccessGroupsOutput`](crate::output::DescribeVerifiedAccessGroupsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_groups:
+            std::option::Option<std::vec::Vec<crate::model::VerifiedAccessGroup>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `verified_access_groups`.
+        ///
+        /// To override the contents of this collection use [`set_verified_access_groups`](Self::set_verified_access_groups).
+        ///
+        /// <p>The ID of the Verified Access group.</p>
+        pub fn verified_access_groups(mut self, input: crate::model::VerifiedAccessGroup) -> Self {
+            let mut v = self.verified_access_groups.unwrap_or_default();
+            v.push(input);
+            self.verified_access_groups = Some(v);
+            self
+        }
+        /// <p>The ID of the Verified Access group.</p>
+        pub fn set_verified_access_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VerifiedAccessGroup>>,
+        ) -> Self {
+            self.verified_access_groups = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeVerifiedAccessGroupsOutput`](crate::output::DescribeVerifiedAccessGroupsOutput).
+        pub fn build(self) -> crate::output::DescribeVerifiedAccessGroupsOutput {
+            crate::output::DescribeVerifiedAccessGroupsOutput {
+                verified_access_groups: self.verified_access_groups,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeVerifiedAccessGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVerifiedAccessGroupsOutput`](crate::output::DescribeVerifiedAccessGroupsOutput).
+    pub fn builder() -> crate::output::describe_verified_access_groups_output::Builder {
+        crate::output::describe_verified_access_groups_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeVerifiedAccessEndpointsOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+    #[doc(hidden)]
+    pub verified_access_endpoints:
+        std::option::Option<std::vec::Vec<crate::model::VerifiedAccessEndpoint>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVerifiedAccessEndpointsOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+    pub fn verified_access_endpoints(
+        &self,
+    ) -> std::option::Option<&[crate::model::VerifiedAccessEndpoint]> {
+        self.verified_access_endpoints.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`DescribeVerifiedAccessEndpointsOutput`](crate::output::DescribeVerifiedAccessEndpointsOutput).
+pub mod describe_verified_access_endpoints_output {
+
+    /// A builder for [`DescribeVerifiedAccessEndpointsOutput`](crate::output::DescribeVerifiedAccessEndpointsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_endpoints:
+            std::option::Option<std::vec::Vec<crate::model::VerifiedAccessEndpoint>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `verified_access_endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_verified_access_endpoints`](Self::set_verified_access_endpoints).
+        ///
+        /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+        pub fn verified_access_endpoints(
+            mut self,
+            input: crate::model::VerifiedAccessEndpoint,
+        ) -> Self {
+            let mut v = self.verified_access_endpoints.unwrap_or_default();
+            v.push(input);
+            self.verified_access_endpoints = Some(v);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+        pub fn set_verified_access_endpoints(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VerifiedAccessEndpoint>>,
+        ) -> Self {
+            self.verified_access_endpoints = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeVerifiedAccessEndpointsOutput`](crate::output::DescribeVerifiedAccessEndpointsOutput).
+        pub fn build(self) -> crate::output::DescribeVerifiedAccessEndpointsOutput {
+            crate::output::DescribeVerifiedAccessEndpointsOutput {
+                verified_access_endpoints: self.verified_access_endpoints,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeVerifiedAccessEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVerifiedAccessEndpointsOutput`](crate::output::DescribeVerifiedAccessEndpointsOutput).
+    pub fn builder() -> crate::output::describe_verified_access_endpoints_output::Builder {
+        crate::output::describe_verified_access_endpoints_output::Builder::default()
     }
 }
 
@@ -21728,11 +23124,18 @@ pub struct DescribeImagesOutput {
     /// <p>Information about the images.</p>
     #[doc(hidden)]
     pub images: std::option::Option<std::vec::Vec<crate::model::Image>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImagesOutput {
     /// <p>Information about the images.</p>
     pub fn images(&self) -> std::option::Option<&[crate::model::Image]> {
         self.images.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 /// See [`DescribeImagesOutput`](crate::output::DescribeImagesOutput).
@@ -21742,6 +23145,7 @@ pub mod describe_images_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) images: std::option::Option<std::vec::Vec<crate::model::Image>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `images`.
@@ -21763,10 +23167,21 @@ pub mod describe_images_output {
             self.images = input;
             self
         }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeImagesOutput`](crate::output::DescribeImagesOutput).
         pub fn build(self) -> crate::output::DescribeImagesOutput {
             crate::output::DescribeImagesOutput {
                 images: self.images,
+                next_token: self.next_token,
             }
         }
     }
@@ -21812,7 +23227,7 @@ pub struct DescribeImageAttributeOutput {
     /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>.</p>
     #[doc(hidden)]
     pub tpm_support: std::option::Option<crate::model::AttributeValue>,
-    /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
     pub uefi_data: std::option::Option<crate::model::AttributeValue>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>
@@ -21820,7 +23235,7 @@ pub struct DescribeImageAttributeOutput {
     /// </note>
     #[doc(hidden)]
     pub last_launched_time: std::option::Option<crate::model::AttributeValue>,
-    /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
     pub imds_support: std::option::Option<crate::model::AttributeValue>,
 }
@@ -21867,7 +23282,7 @@ impl DescribeImageAttributeOutput {
     pub fn tpm_support(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.tpm_support.as_ref()
     }
-    /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn uefi_data(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.uefi_data.as_ref()
     }
@@ -21877,7 +23292,7 @@ impl DescribeImageAttributeOutput {
     pub fn last_launched_time(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.last_launched_time.as_ref()
     }
-    /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn imds_support(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.imds_support.as_ref()
     }
@@ -22050,12 +23465,12 @@ pub mod describe_image_attribute_output {
             self.tpm_support = input;
             self
         }
-        /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
         pub fn uefi_data(mut self, input: crate::model::AttributeValue) -> Self {
             self.uefi_data = Some(input);
             self
         }
-        /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
         pub fn set_uefi_data(
             mut self,
             input: std::option::Option<crate::model::AttributeValue>,
@@ -22080,12 +23495,12 @@ pub mod describe_image_attribute_output {
             self.last_launched_time = input;
             self
         }
-        /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
         pub fn imds_support(mut self, input: crate::model::AttributeValue) -> Self {
             self.imds_support = Some(input);
             self
         }
-        /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
         pub fn set_imds_support(
             mut self,
             input: std::option::Option<crate::model::AttributeValue>,
@@ -24654,6 +26069,85 @@ impl DescribeBundleTasksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeAwsNetworkPerformanceMetricSubscriptionsOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Describes the current Infrastructure Performance subscriptions.</p>
+    #[doc(hidden)]
+    pub subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
+}
+impl DescribeAwsNetworkPerformanceMetricSubscriptionsOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Describes the current Infrastructure Performance subscriptions.</p>
+    pub fn subscriptions(&self) -> std::option::Option<&[crate::model::Subscription]> {
+        self.subscriptions.as_deref()
+    }
+}
+/// See [`DescribeAwsNetworkPerformanceMetricSubscriptionsOutput`](crate::output::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput).
+pub mod describe_aws_network_performance_metric_subscriptions_output {
+
+    /// A builder for [`DescribeAwsNetworkPerformanceMetricSubscriptionsOutput`](crate::output::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
+    }
+    impl Builder {
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `subscriptions`.
+        ///
+        /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
+        ///
+        /// <p>Describes the current Infrastructure Performance subscriptions.</p>
+        pub fn subscriptions(mut self, input: crate::model::Subscription) -> Self {
+            let mut v = self.subscriptions.unwrap_or_default();
+            v.push(input);
+            self.subscriptions = Some(v);
+            self
+        }
+        /// <p>Describes the current Infrastructure Performance subscriptions.</p>
+        pub fn set_subscriptions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
+        ) -> Self {
+            self.subscriptions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAwsNetworkPerformanceMetricSubscriptionsOutput`](crate::output::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput).
+        pub fn build(
+            self,
+        ) -> crate::output::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput {
+            crate::output::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput {
+                next_token: self.next_token,
+                subscriptions: self.subscriptions,
+            }
+        }
+    }
+}
+impl DescribeAwsNetworkPerformanceMetricSubscriptionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAwsNetworkPerformanceMetricSubscriptionsOutput`](crate::output::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput).
+    pub fn builder(
+    ) -> crate::output::describe_aws_network_performance_metric_subscriptions_output::Builder {
+        crate::output::describe_aws_network_performance_metric_subscriptions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAvailabilityZonesOutput {
     /// <p>Information about the Availability Zones, Local Zones, and Wavelength Zones.</p>
     #[doc(hidden)]
@@ -24782,6 +26276,83 @@ impl DescribeAggregateIdFormatOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAggregateIdFormatOutput`](crate::output::DescribeAggregateIdFormatOutput).
     pub fn builder() -> crate::output::describe_aggregate_id_format_output::Builder {
         crate::output::describe_aggregate_id_format_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeAddressTransfersOutput {
+    /// <p>The Elastic IP address transfer.</p>
+    #[doc(hidden)]
+    pub address_transfers: std::option::Option<std::vec::Vec<crate::model::AddressTransfer>>,
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAddressTransfersOutput {
+    /// <p>The Elastic IP address transfer.</p>
+    pub fn address_transfers(&self) -> std::option::Option<&[crate::model::AddressTransfer]> {
+        self.address_transfers.as_deref()
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`DescribeAddressTransfersOutput`](crate::output::DescribeAddressTransfersOutput).
+pub mod describe_address_transfers_output {
+
+    /// A builder for [`DescribeAddressTransfersOutput`](crate::output::DescribeAddressTransfersOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) address_transfers:
+            std::option::Option<std::vec::Vec<crate::model::AddressTransfer>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `address_transfers`.
+        ///
+        /// To override the contents of this collection use [`set_address_transfers`](Self::set_address_transfers).
+        ///
+        /// <p>The Elastic IP address transfer.</p>
+        pub fn address_transfers(mut self, input: crate::model::AddressTransfer) -> Self {
+            let mut v = self.address_transfers.unwrap_or_default();
+            v.push(input);
+            self.address_transfers = Some(v);
+            self
+        }
+        /// <p>The Elastic IP address transfer.</p>
+        pub fn set_address_transfers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AddressTransfer>>,
+        ) -> Self {
+            self.address_transfers = input;
+            self
+        }
+        /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAddressTransfersOutput`](crate::output::DescribeAddressTransfersOutput).
+        pub fn build(self) -> crate::output::DescribeAddressTransfersOutput {
+            crate::output::DescribeAddressTransfersOutput {
+                address_transfers: self.address_transfers,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeAddressTransfersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAddressTransfersOutput`](crate::output::DescribeAddressTransfersOutput).
+    pub fn builder() -> crate::output::describe_address_transfers_output::Builder {
+        crate::output::describe_address_transfers_output::Builder::default()
     }
 }
 
@@ -25695,6 +27266,229 @@ impl DeleteVolumeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
     pub fn builder() -> crate::output::delete_volume_output::Builder {
         crate::output::delete_volume_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteVerifiedAccessTrustProviderOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+    #[doc(hidden)]
+    pub verified_access_trust_provider:
+        std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+}
+impl DeleteVerifiedAccessTrustProviderOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+    pub fn verified_access_trust_provider(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifiedAccessTrustProvider> {
+        self.verified_access_trust_provider.as_ref()
+    }
+}
+/// See [`DeleteVerifiedAccessTrustProviderOutput`](crate::output::DeleteVerifiedAccessTrustProviderOutput).
+pub mod delete_verified_access_trust_provider_output {
+
+    /// A builder for [`DeleteVerifiedAccessTrustProviderOutput`](crate::output::DeleteVerifiedAccessTrustProviderOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_trust_provider:
+            std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+    }
+    impl Builder {
+        /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+        pub fn verified_access_trust_provider(
+            mut self,
+            input: crate::model::VerifiedAccessTrustProvider,
+        ) -> Self {
+            self.verified_access_trust_provider = Some(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+        pub fn set_verified_access_trust_provider(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+        ) -> Self {
+            self.verified_access_trust_provider = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteVerifiedAccessTrustProviderOutput`](crate::output::DeleteVerifiedAccessTrustProviderOutput).
+        pub fn build(self) -> crate::output::DeleteVerifiedAccessTrustProviderOutput {
+            crate::output::DeleteVerifiedAccessTrustProviderOutput {
+                verified_access_trust_provider: self.verified_access_trust_provider,
+            }
+        }
+    }
+}
+impl DeleteVerifiedAccessTrustProviderOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVerifiedAccessTrustProviderOutput`](crate::output::DeleteVerifiedAccessTrustProviderOutput).
+    pub fn builder() -> crate::output::delete_verified_access_trust_provider_output::Builder {
+        crate::output::delete_verified_access_trust_provider_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteVerifiedAccessInstanceOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    #[doc(hidden)]
+    pub verified_access_instance: std::option::Option<crate::model::VerifiedAccessInstance>,
+}
+impl DeleteVerifiedAccessInstanceOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    pub fn verified_access_instance(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifiedAccessInstance> {
+        self.verified_access_instance.as_ref()
+    }
+}
+/// See [`DeleteVerifiedAccessInstanceOutput`](crate::output::DeleteVerifiedAccessInstanceOutput).
+pub mod delete_verified_access_instance_output {
+
+    /// A builder for [`DeleteVerifiedAccessInstanceOutput`](crate::output::DeleteVerifiedAccessInstanceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_instance:
+            std::option::Option<crate::model::VerifiedAccessInstance>,
+    }
+    impl Builder {
+        /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+        pub fn verified_access_instance(
+            mut self,
+            input: crate::model::VerifiedAccessInstance,
+        ) -> Self {
+            self.verified_access_instance = Some(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+        pub fn set_verified_access_instance(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessInstance>,
+        ) -> Self {
+            self.verified_access_instance = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteVerifiedAccessInstanceOutput`](crate::output::DeleteVerifiedAccessInstanceOutput).
+        pub fn build(self) -> crate::output::DeleteVerifiedAccessInstanceOutput {
+            crate::output::DeleteVerifiedAccessInstanceOutput {
+                verified_access_instance: self.verified_access_instance,
+            }
+        }
+    }
+}
+impl DeleteVerifiedAccessInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVerifiedAccessInstanceOutput`](crate::output::DeleteVerifiedAccessInstanceOutput).
+    pub fn builder() -> crate::output::delete_verified_access_instance_output::Builder {
+        crate::output::delete_verified_access_instance_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteVerifiedAccessGroupOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access group.</p>
+    #[doc(hidden)]
+    pub verified_access_group: std::option::Option<crate::model::VerifiedAccessGroup>,
+}
+impl DeleteVerifiedAccessGroupOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access group.</p>
+    pub fn verified_access_group(&self) -> std::option::Option<&crate::model::VerifiedAccessGroup> {
+        self.verified_access_group.as_ref()
+    }
+}
+/// See [`DeleteVerifiedAccessGroupOutput`](crate::output::DeleteVerifiedAccessGroupOutput).
+pub mod delete_verified_access_group_output {
+
+    /// A builder for [`DeleteVerifiedAccessGroupOutput`](crate::output::DeleteVerifiedAccessGroupOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_group: std::option::Option<crate::model::VerifiedAccessGroup>,
+    }
+    impl Builder {
+        /// <p>The ID of the Amazon Web Services Verified Access group.</p>
+        pub fn verified_access_group(mut self, input: crate::model::VerifiedAccessGroup) -> Self {
+            self.verified_access_group = Some(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access group.</p>
+        pub fn set_verified_access_group(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessGroup>,
+        ) -> Self {
+            self.verified_access_group = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteVerifiedAccessGroupOutput`](crate::output::DeleteVerifiedAccessGroupOutput).
+        pub fn build(self) -> crate::output::DeleteVerifiedAccessGroupOutput {
+            crate::output::DeleteVerifiedAccessGroupOutput {
+                verified_access_group: self.verified_access_group,
+            }
+        }
+    }
+}
+impl DeleteVerifiedAccessGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVerifiedAccessGroupOutput`](crate::output::DeleteVerifiedAccessGroupOutput).
+    pub fn builder() -> crate::output::delete_verified_access_group_output::Builder {
+        crate::output::delete_verified_access_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteVerifiedAccessEndpointOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+    #[doc(hidden)]
+    pub verified_access_endpoint: std::option::Option<crate::model::VerifiedAccessEndpoint>,
+}
+impl DeleteVerifiedAccessEndpointOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+    pub fn verified_access_endpoint(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifiedAccessEndpoint> {
+        self.verified_access_endpoint.as_ref()
+    }
+}
+/// See [`DeleteVerifiedAccessEndpointOutput`](crate::output::DeleteVerifiedAccessEndpointOutput).
+pub mod delete_verified_access_endpoint_output {
+
+    /// A builder for [`DeleteVerifiedAccessEndpointOutput`](crate::output::DeleteVerifiedAccessEndpointOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_endpoint:
+            std::option::Option<crate::model::VerifiedAccessEndpoint>,
+    }
+    impl Builder {
+        /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+        pub fn verified_access_endpoint(
+            mut self,
+            input: crate::model::VerifiedAccessEndpoint,
+        ) -> Self {
+            self.verified_access_endpoint = Some(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+        pub fn set_verified_access_endpoint(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessEndpoint>,
+        ) -> Self {
+            self.verified_access_endpoint = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteVerifiedAccessEndpointOutput`](crate::output::DeleteVerifiedAccessEndpointOutput).
+        pub fn build(self) -> crate::output::DeleteVerifiedAccessEndpointOutput {
+            crate::output::DeleteVerifiedAccessEndpointOutput {
+                verified_access_endpoint: self.verified_access_endpoint,
+            }
+        }
+    }
+}
+impl DeleteVerifiedAccessEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVerifiedAccessEndpointOutput`](crate::output::DeleteVerifiedAccessEndpointOutput).
+    pub fn builder() -> crate::output::delete_verified_access_endpoint_output::Builder {
+        crate::output::delete_verified_access_endpoint_output::Builder::default()
     }
 }
 
@@ -27428,13 +29222,13 @@ impl DeleteLocalGatewayRouteTableVpcAssociationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
-    /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+    /// <p>Information about the association.</p>
     #[doc(hidden)]
     pub local_gateway_route_table_virtual_interface_group_association:
         std::option::Option<crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
 }
 impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
-    /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+    /// <p>Information about the association.</p>
     pub fn local_gateway_route_table_virtual_interface_group_association(
         &self,
     ) -> std::option::Option<&crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>
@@ -27455,7 +29249,7 @@ pub mod delete_local_gateway_route_table_virtual_interface_group_association_out
             >,
     }
     impl Builder {
-        /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+        /// <p>Information about the association.</p>
         pub fn local_gateway_route_table_virtual_interface_group_association(
             mut self,
             input: crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
@@ -27463,7 +29257,7 @@ pub mod delete_local_gateway_route_table_virtual_interface_group_association_out
             self.local_gateway_route_table_virtual_interface_group_association = Some(input);
             self
         }
-        /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+        /// <p>Information about the association.</p>
         pub fn set_local_gateway_route_table_virtual_interface_group_association(
             mut self,
             input: std::option::Option<
@@ -27496,12 +29290,12 @@ impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteTableOutput {
-    /// <p>Describes a local gateway route table.</p>
+    /// <p>Information about the local gateway route table.</p>
     #[doc(hidden)]
     pub local_gateway_route_table: std::option::Option<crate::model::LocalGatewayRouteTable>,
 }
 impl DeleteLocalGatewayRouteTableOutput {
-    /// <p>Describes a local gateway route table.</p>
+    /// <p>Information about the local gateway route table.</p>
     pub fn local_gateway_route_table(
         &self,
     ) -> std::option::Option<&crate::model::LocalGatewayRouteTable> {
@@ -27518,7 +29312,7 @@ pub mod delete_local_gateway_route_table_output {
             std::option::Option<crate::model::LocalGatewayRouteTable>,
     }
     impl Builder {
-        /// <p>Describes a local gateway route table.</p>
+        /// <p>Information about the local gateway route table.</p>
         pub fn local_gateway_route_table(
             mut self,
             input: crate::model::LocalGatewayRouteTable,
@@ -27526,7 +29320,7 @@ pub mod delete_local_gateway_route_table_output {
             self.local_gateway_route_table = Some(input);
             self
         }
-        /// <p>Describes a local gateway route table.</p>
+        /// <p>Information about the local gateway route table.</p>
         pub fn set_local_gateway_route_table(
             mut self,
             input: std::option::Option<crate::model::LocalGatewayRouteTable>,
@@ -28319,12 +30113,12 @@ impl DeleteCustomerGatewayOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCoipPoolOutput {
-    /// <p>Describes a customer-owned address pool.</p>
+    /// <p>Information about the CoIP address pool.</p>
     #[doc(hidden)]
     pub coip_pool: std::option::Option<crate::model::CoipPool>,
 }
 impl DeleteCoipPoolOutput {
-    /// <p>Describes a customer-owned address pool.</p>
+    /// <p>Information about the CoIP address pool.</p>
     pub fn coip_pool(&self) -> std::option::Option<&crate::model::CoipPool> {
         self.coip_pool.as_ref()
     }
@@ -28338,12 +30132,12 @@ pub mod delete_coip_pool_output {
         pub(crate) coip_pool: std::option::Option<crate::model::CoipPool>,
     }
     impl Builder {
-        /// <p>Describes a customer-owned address pool.</p>
+        /// <p>Information about the CoIP address pool.</p>
         pub fn coip_pool(mut self, input: crate::model::CoipPool) -> Self {
             self.coip_pool = Some(input);
             self
         }
-        /// <p>Describes a customer-owned address pool.</p>
+        /// <p>Information about the CoIP address pool.</p>
         pub fn set_coip_pool(mut self, input: std::option::Option<crate::model::CoipPool>) -> Self {
             self.coip_pool = input;
             self
@@ -29364,6 +31158,229 @@ impl CreateVolumeOutput {
     /// Creates a new builder-style object to manufacture [`CreateVolumeOutput`](crate::output::CreateVolumeOutput).
     pub fn builder() -> crate::output::create_volume_output::Builder {
         crate::output::create_volume_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateVerifiedAccessTrustProviderOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+    #[doc(hidden)]
+    pub verified_access_trust_provider:
+        std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+}
+impl CreateVerifiedAccessTrustProviderOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+    pub fn verified_access_trust_provider(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifiedAccessTrustProvider> {
+        self.verified_access_trust_provider.as_ref()
+    }
+}
+/// See [`CreateVerifiedAccessTrustProviderOutput`](crate::output::CreateVerifiedAccessTrustProviderOutput).
+pub mod create_verified_access_trust_provider_output {
+
+    /// A builder for [`CreateVerifiedAccessTrustProviderOutput`](crate::output::CreateVerifiedAccessTrustProviderOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_trust_provider:
+            std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+    }
+    impl Builder {
+        /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+        pub fn verified_access_trust_provider(
+            mut self,
+            input: crate::model::VerifiedAccessTrustProvider,
+        ) -> Self {
+            self.verified_access_trust_provider = Some(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+        pub fn set_verified_access_trust_provider(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+        ) -> Self {
+            self.verified_access_trust_provider = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateVerifiedAccessTrustProviderOutput`](crate::output::CreateVerifiedAccessTrustProviderOutput).
+        pub fn build(self) -> crate::output::CreateVerifiedAccessTrustProviderOutput {
+            crate::output::CreateVerifiedAccessTrustProviderOutput {
+                verified_access_trust_provider: self.verified_access_trust_provider,
+            }
+        }
+    }
+}
+impl CreateVerifiedAccessTrustProviderOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVerifiedAccessTrustProviderOutput`](crate::output::CreateVerifiedAccessTrustProviderOutput).
+    pub fn builder() -> crate::output::create_verified_access_trust_provider_output::Builder {
+        crate::output::create_verified_access_trust_provider_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateVerifiedAccessInstanceOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    #[doc(hidden)]
+    pub verified_access_instance: std::option::Option<crate::model::VerifiedAccessInstance>,
+}
+impl CreateVerifiedAccessInstanceOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    pub fn verified_access_instance(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifiedAccessInstance> {
+        self.verified_access_instance.as_ref()
+    }
+}
+/// See [`CreateVerifiedAccessInstanceOutput`](crate::output::CreateVerifiedAccessInstanceOutput).
+pub mod create_verified_access_instance_output {
+
+    /// A builder for [`CreateVerifiedAccessInstanceOutput`](crate::output::CreateVerifiedAccessInstanceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_instance:
+            std::option::Option<crate::model::VerifiedAccessInstance>,
+    }
+    impl Builder {
+        /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+        pub fn verified_access_instance(
+            mut self,
+            input: crate::model::VerifiedAccessInstance,
+        ) -> Self {
+            self.verified_access_instance = Some(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+        pub fn set_verified_access_instance(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessInstance>,
+        ) -> Self {
+            self.verified_access_instance = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateVerifiedAccessInstanceOutput`](crate::output::CreateVerifiedAccessInstanceOutput).
+        pub fn build(self) -> crate::output::CreateVerifiedAccessInstanceOutput {
+            crate::output::CreateVerifiedAccessInstanceOutput {
+                verified_access_instance: self.verified_access_instance,
+            }
+        }
+    }
+}
+impl CreateVerifiedAccessInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVerifiedAccessInstanceOutput`](crate::output::CreateVerifiedAccessInstanceOutput).
+    pub fn builder() -> crate::output::create_verified_access_instance_output::Builder {
+        crate::output::create_verified_access_instance_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateVerifiedAccessGroupOutput {
+    /// <p>The ID of the Verified Access group.</p>
+    #[doc(hidden)]
+    pub verified_access_group: std::option::Option<crate::model::VerifiedAccessGroup>,
+}
+impl CreateVerifiedAccessGroupOutput {
+    /// <p>The ID of the Verified Access group.</p>
+    pub fn verified_access_group(&self) -> std::option::Option<&crate::model::VerifiedAccessGroup> {
+        self.verified_access_group.as_ref()
+    }
+}
+/// See [`CreateVerifiedAccessGroupOutput`](crate::output::CreateVerifiedAccessGroupOutput).
+pub mod create_verified_access_group_output {
+
+    /// A builder for [`CreateVerifiedAccessGroupOutput`](crate::output::CreateVerifiedAccessGroupOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_group: std::option::Option<crate::model::VerifiedAccessGroup>,
+    }
+    impl Builder {
+        /// <p>The ID of the Verified Access group.</p>
+        pub fn verified_access_group(mut self, input: crate::model::VerifiedAccessGroup) -> Self {
+            self.verified_access_group = Some(input);
+            self
+        }
+        /// <p>The ID of the Verified Access group.</p>
+        pub fn set_verified_access_group(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessGroup>,
+        ) -> Self {
+            self.verified_access_group = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateVerifiedAccessGroupOutput`](crate::output::CreateVerifiedAccessGroupOutput).
+        pub fn build(self) -> crate::output::CreateVerifiedAccessGroupOutput {
+            crate::output::CreateVerifiedAccessGroupOutput {
+                verified_access_group: self.verified_access_group,
+            }
+        }
+    }
+}
+impl CreateVerifiedAccessGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVerifiedAccessGroupOutput`](crate::output::CreateVerifiedAccessGroupOutput).
+    pub fn builder() -> crate::output::create_verified_access_group_output::Builder {
+        crate::output::create_verified_access_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateVerifiedAccessEndpointOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+    #[doc(hidden)]
+    pub verified_access_endpoint: std::option::Option<crate::model::VerifiedAccessEndpoint>,
+}
+impl CreateVerifiedAccessEndpointOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+    pub fn verified_access_endpoint(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifiedAccessEndpoint> {
+        self.verified_access_endpoint.as_ref()
+    }
+}
+/// See [`CreateVerifiedAccessEndpointOutput`](crate::output::CreateVerifiedAccessEndpointOutput).
+pub mod create_verified_access_endpoint_output {
+
+    /// A builder for [`CreateVerifiedAccessEndpointOutput`](crate::output::CreateVerifiedAccessEndpointOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_endpoint:
+            std::option::Option<crate::model::VerifiedAccessEndpoint>,
+    }
+    impl Builder {
+        /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+        pub fn verified_access_endpoint(
+            mut self,
+            input: crate::model::VerifiedAccessEndpoint,
+        ) -> Self {
+            self.verified_access_endpoint = Some(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+        pub fn set_verified_access_endpoint(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessEndpoint>,
+        ) -> Self {
+            self.verified_access_endpoint = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateVerifiedAccessEndpointOutput`](crate::output::CreateVerifiedAccessEndpointOutput).
+        pub fn build(self) -> crate::output::CreateVerifiedAccessEndpointOutput {
+            crate::output::CreateVerifiedAccessEndpointOutput {
+                verified_access_endpoint: self.verified_access_endpoint,
+            }
+        }
+    }
+}
+impl CreateVerifiedAccessEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVerifiedAccessEndpointOutput`](crate::output::CreateVerifiedAccessEndpointOutput).
+    pub fn builder() -> crate::output::create_verified_access_endpoint_output::Builder {
+        crate::output::create_verified_access_endpoint_output::Builder::default()
     }
 }
 
@@ -31342,12 +33359,12 @@ impl CreatePublicIpv4PoolOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePlacementGroupOutput {
-    /// <p>Describes a placement group.</p>
+    /// <p>Information about the placement group.</p>
     #[doc(hidden)]
     pub placement_group: std::option::Option<crate::model::PlacementGroup>,
 }
 impl CreatePlacementGroupOutput {
-    /// <p>Describes a placement group.</p>
+    /// <p>Information about the placement group.</p>
     pub fn placement_group(&self) -> std::option::Option<&crate::model::PlacementGroup> {
         self.placement_group.as_ref()
     }
@@ -31361,12 +33378,12 @@ pub mod create_placement_group_output {
         pub(crate) placement_group: std::option::Option<crate::model::PlacementGroup>,
     }
     impl Builder {
-        /// <p>Describes a placement group.</p>
+        /// <p>Information about the placement group.</p>
         pub fn placement_group(mut self, input: crate::model::PlacementGroup) -> Self {
             self.placement_group = Some(input);
             self
         }
-        /// <p>Describes a placement group.</p>
+        /// <p>Information about the placement group.</p>
         pub fn set_placement_group(
             mut self,
             input: std::option::Option<crate::model::PlacementGroup>,
@@ -31914,13 +33931,13 @@ impl CreateLocalGatewayRouteTableVpcAssociationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
-    /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+    /// <p>Information about the local gateway route table virtual interface group association.</p>
     #[doc(hidden)]
     pub local_gateway_route_table_virtual_interface_group_association:
         std::option::Option<crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
 }
 impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
-    /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+    /// <p>Information about the local gateway route table virtual interface group association.</p>
     pub fn local_gateway_route_table_virtual_interface_group_association(
         &self,
     ) -> std::option::Option<&crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>
@@ -31941,7 +33958,7 @@ pub mod create_local_gateway_route_table_virtual_interface_group_association_out
             >,
     }
     impl Builder {
-        /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+        /// <p>Information about the local gateway route table virtual interface group association.</p>
         pub fn local_gateway_route_table_virtual_interface_group_association(
             mut self,
             input: crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
@@ -31949,7 +33966,7 @@ pub mod create_local_gateway_route_table_virtual_interface_group_association_out
             self.local_gateway_route_table_virtual_interface_group_association = Some(input);
             self
         }
-        /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+        /// <p>Information about the local gateway route table virtual interface group association.</p>
         pub fn set_local_gateway_route_table_virtual_interface_group_association(
             mut self,
             input: std::option::Option<
@@ -31982,12 +33999,12 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteTableOutput {
-    /// <p>Describes a local gateway route table.</p>
+    /// <p>Information about the local gateway route table.</p>
     #[doc(hidden)]
     pub local_gateway_route_table: std::option::Option<crate::model::LocalGatewayRouteTable>,
 }
 impl CreateLocalGatewayRouteTableOutput {
-    /// <p>Describes a local gateway route table.</p>
+    /// <p>Information about the local gateway route table.</p>
     pub fn local_gateway_route_table(
         &self,
     ) -> std::option::Option<&crate::model::LocalGatewayRouteTable> {
@@ -32004,7 +34021,7 @@ pub mod create_local_gateway_route_table_output {
             std::option::Option<crate::model::LocalGatewayRouteTable>,
     }
     impl Builder {
-        /// <p>Describes a local gateway route table.</p>
+        /// <p>Information about the local gateway route table.</p>
         pub fn local_gateway_route_table(
             mut self,
             input: crate::model::LocalGatewayRouteTable,
@@ -32012,7 +34029,7 @@ pub mod create_local_gateway_route_table_output {
             self.local_gateway_route_table = Some(input);
             self
         }
-        /// <p>Describes a local gateway route table.</p>
+        /// <p>Information about the local gateway route table.</p>
         pub fn set_local_gateway_route_table(
             mut self,
             input: std::option::Option<crate::model::LocalGatewayRouteTable>,
@@ -33309,12 +35326,12 @@ impl CreateCustomerGatewayOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCoipPoolOutput {
-    /// <p>Describes a customer-owned address pool.</p>
+    /// <p>Information about the CoIP address pool.</p>
     #[doc(hidden)]
     pub coip_pool: std::option::Option<crate::model::CoipPool>,
 }
 impl CreateCoipPoolOutput {
-    /// <p>Describes a customer-owned address pool.</p>
+    /// <p>Information about the CoIP address pool.</p>
     pub fn coip_pool(&self) -> std::option::Option<&crate::model::CoipPool> {
         self.coip_pool.as_ref()
     }
@@ -33328,12 +35345,12 @@ pub mod create_coip_pool_output {
         pub(crate) coip_pool: std::option::Option<crate::model::CoipPool>,
     }
     impl Builder {
-        /// <p>Describes a customer-owned address pool.</p>
+        /// <p>Information about the CoIP address pool.</p>
         pub fn coip_pool(mut self, input: crate::model::CoipPool) -> Self {
             self.coip_pool = Some(input);
             self
         }
-        /// <p>Describes a customer-owned address pool.</p>
+        /// <p>Information about the CoIP address pool.</p>
         pub fn set_coip_pool(mut self, input: std::option::Option<crate::model::CoipPool>) -> Self {
             self.coip_pool = input;
             self
@@ -34507,6 +36524,54 @@ impl CancelImportTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CancelImageLaunchPermissionOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
+    pub r#return: std::option::Option<bool>,
+}
+impl CancelImageLaunchPermissionOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
+/// See [`CancelImageLaunchPermissionOutput`](crate::output::CancelImageLaunchPermissionOutput).
+pub mod cancel_image_launch_permission_output {
+
+    /// A builder for [`CancelImageLaunchPermissionOutput`](crate::output::CancelImageLaunchPermissionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#return: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
+            self
+        }
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CancelImageLaunchPermissionOutput`](crate::output::CancelImageLaunchPermissionOutput).
+        pub fn build(self) -> crate::output::CancelImageLaunchPermissionOutput {
+            crate::output::CancelImageLaunchPermissionOutput {
+                r#return: self.r#return,
+            }
+        }
+    }
+}
+impl CancelImageLaunchPermissionOutput {
+    /// Creates a new builder-style object to manufacture [`CancelImageLaunchPermissionOutput`](crate::output::CancelImageLaunchPermissionOutput).
+    pub fn builder() -> crate::output::cancel_image_launch_permission_output::Builder {
+        crate::output::cancel_image_launch_permission_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelExportTaskOutput {}
 /// See [`CancelExportTaskOutput`](crate::output::CancelExportTaskOutput).
 pub mod cancel_export_task_output {
@@ -35211,6 +37276,92 @@ impl AttachVolumeOutput {
     /// Creates a new builder-style object to manufacture [`AttachVolumeOutput`](crate::output::AttachVolumeOutput).
     pub fn builder() -> crate::output::attach_volume_output::Builder {
         crate::output::attach_volume_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AttachVerifiedAccessTrustProviderOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+    #[doc(hidden)]
+    pub verified_access_trust_provider:
+        std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    #[doc(hidden)]
+    pub verified_access_instance: std::option::Option<crate::model::VerifiedAccessInstance>,
+}
+impl AttachVerifiedAccessTrustProviderOutput {
+    /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+    pub fn verified_access_trust_provider(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifiedAccessTrustProvider> {
+        self.verified_access_trust_provider.as_ref()
+    }
+    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    pub fn verified_access_instance(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifiedAccessInstance> {
+        self.verified_access_instance.as_ref()
+    }
+}
+/// See [`AttachVerifiedAccessTrustProviderOutput`](crate::output::AttachVerifiedAccessTrustProviderOutput).
+pub mod attach_verified_access_trust_provider_output {
+
+    /// A builder for [`AttachVerifiedAccessTrustProviderOutput`](crate::output::AttachVerifiedAccessTrustProviderOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verified_access_trust_provider:
+            std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+        pub(crate) verified_access_instance:
+            std::option::Option<crate::model::VerifiedAccessInstance>,
+    }
+    impl Builder {
+        /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+        pub fn verified_access_trust_provider(
+            mut self,
+            input: crate::model::VerifiedAccessTrustProvider,
+        ) -> Self {
+            self.verified_access_trust_provider = Some(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+        pub fn set_verified_access_trust_provider(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessTrustProvider>,
+        ) -> Self {
+            self.verified_access_trust_provider = input;
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+        pub fn verified_access_instance(
+            mut self,
+            input: crate::model::VerifiedAccessInstance,
+        ) -> Self {
+            self.verified_access_instance = Some(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+        pub fn set_verified_access_instance(
+            mut self,
+            input: std::option::Option<crate::model::VerifiedAccessInstance>,
+        ) -> Self {
+            self.verified_access_instance = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AttachVerifiedAccessTrustProviderOutput`](crate::output::AttachVerifiedAccessTrustProviderOutput).
+        pub fn build(self) -> crate::output::AttachVerifiedAccessTrustProviderOutput {
+            crate::output::AttachVerifiedAccessTrustProviderOutput {
+                verified_access_trust_provider: self.verified_access_trust_provider,
+                verified_access_instance: self.verified_access_instance,
+            }
+        }
+    }
+}
+impl AttachVerifiedAccessTrustProviderOutput {
+    /// Creates a new builder-style object to manufacture [`AttachVerifiedAccessTrustProviderOutput`](crate::output::AttachVerifiedAccessTrustProviderOutput).
+    pub fn builder() -> crate::output::attach_verified_access_trust_provider_output::Builder {
+        crate::output::attach_verified_access_trust_provider_output::Builder::default()
     }
 }
 
@@ -37079,12 +39230,12 @@ impl AcceptTransitGatewayPeeringAttachmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptTransitGatewayMulticastDomainAssociationsOutput {
-    /// <p>Describes the multicast domain associations.</p>
+    /// <p>Information about the multicast domain associations.</p>
     #[doc(hidden)]
     pub associations: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
 }
 impl AcceptTransitGatewayMulticastDomainAssociationsOutput {
-    /// <p>Describes the multicast domain associations.</p>
+    /// <p>Information about the multicast domain associations.</p>
     pub fn associations(
         &self,
     ) -> std::option::Option<&crate::model::TransitGatewayMulticastDomainAssociations> {
@@ -37101,7 +39252,7 @@ pub mod accept_transit_gateway_multicast_domain_associations_output {
             std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
     }
     impl Builder {
-        /// <p>Describes the multicast domain associations.</p>
+        /// <p>Information about the multicast domain associations.</p>
         pub fn associations(
             mut self,
             input: crate::model::TransitGatewayMulticastDomainAssociations,
@@ -37109,7 +39260,7 @@ pub mod accept_transit_gateway_multicast_domain_associations_output {
             self.associations = Some(input);
             self
         }
-        /// <p>Describes the multicast domain associations.</p>
+        /// <p>Information about the multicast domain associations.</p>
         pub fn set_associations(
             mut self,
             input: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
@@ -37179,5 +39330,56 @@ impl AcceptReservedInstancesExchangeQuoteOutput {
     /// Creates a new builder-style object to manufacture [`AcceptReservedInstancesExchangeQuoteOutput`](crate::output::AcceptReservedInstancesExchangeQuoteOutput).
     pub fn builder() -> crate::output::accept_reserved_instances_exchange_quote_output::Builder {
         crate::output::accept_reserved_instances_exchange_quote_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AcceptAddressTransferOutput {
+    /// <p>An Elastic IP address transfer.</p>
+    #[doc(hidden)]
+    pub address_transfer: std::option::Option<crate::model::AddressTransfer>,
+}
+impl AcceptAddressTransferOutput {
+    /// <p>An Elastic IP address transfer.</p>
+    pub fn address_transfer(&self) -> std::option::Option<&crate::model::AddressTransfer> {
+        self.address_transfer.as_ref()
+    }
+}
+/// See [`AcceptAddressTransferOutput`](crate::output::AcceptAddressTransferOutput).
+pub mod accept_address_transfer_output {
+
+    /// A builder for [`AcceptAddressTransferOutput`](crate::output::AcceptAddressTransferOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) address_transfer: std::option::Option<crate::model::AddressTransfer>,
+    }
+    impl Builder {
+        /// <p>An Elastic IP address transfer.</p>
+        pub fn address_transfer(mut self, input: crate::model::AddressTransfer) -> Self {
+            self.address_transfer = Some(input);
+            self
+        }
+        /// <p>An Elastic IP address transfer.</p>
+        pub fn set_address_transfer(
+            mut self,
+            input: std::option::Option<crate::model::AddressTransfer>,
+        ) -> Self {
+            self.address_transfer = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AcceptAddressTransferOutput`](crate::output::AcceptAddressTransferOutput).
+        pub fn build(self) -> crate::output::AcceptAddressTransferOutput {
+            crate::output::AcceptAddressTransferOutput {
+                address_transfer: self.address_transfer,
+            }
+        }
+    }
+}
+impl AcceptAddressTransferOutput {
+    /// Creates a new builder-style object to manufacture [`AcceptAddressTransferOutput`](crate::output::AcceptAddressTransferOutput).
+    pub fn builder() -> crate::output::accept_address_transfer_output::Builder {
+        crate::output::accept_address_transfer_output::Builder::default()
     }
 }

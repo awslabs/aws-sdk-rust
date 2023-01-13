@@ -604,6 +604,9 @@ where
 impl From<crate::error::DeleteApplicationSnapshotError> for Error {
     fn from(err: crate::error::DeleteApplicationSnapshotError) -> Self {
         match err.kind {
+            crate::error::DeleteApplicationSnapshotErrorKind::ConcurrentModificationException(
+                inner,
+            ) => Error::ConcurrentModificationException(inner),
             crate::error::DeleteApplicationSnapshotErrorKind::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }

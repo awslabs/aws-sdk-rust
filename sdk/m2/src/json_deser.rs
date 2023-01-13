@@ -766,6 +766,15 @@ pub(crate) fn deser_operation_crate_operation_get_application(
                             .transpose()?,
                         );
                     }
+                    "kmsKeyId" => {
+                        builder = builder.set_kms_key_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "lastStartTime" => {
                         builder = builder.set_last_start_time(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -1476,6 +1485,15 @@ pub(crate) fn deser_operation_crate_operation_get_environment(
                     }
                     "instanceType" => {
                         builder = builder.set_instance_type(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "kmsKeyId" => {
+                        builder = builder.set_kms_key_id(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?

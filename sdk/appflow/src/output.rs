@@ -53,6 +53,57 @@ impl UpdateFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateConnectorRegistrationOutput {
+    /// <p>The ARN of the connector being updated.</p>
+    #[doc(hidden)]
+    pub connector_arn: std::option::Option<std::string::String>,
+}
+impl UpdateConnectorRegistrationOutput {
+    /// <p>The ARN of the connector being updated.</p>
+    pub fn connector_arn(&self) -> std::option::Option<&str> {
+        self.connector_arn.as_deref()
+    }
+}
+/// See [`UpdateConnectorRegistrationOutput`](crate::output::UpdateConnectorRegistrationOutput).
+pub mod update_connector_registration_output {
+
+    /// A builder for [`UpdateConnectorRegistrationOutput`](crate::output::UpdateConnectorRegistrationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connector_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the connector being updated.</p>
+        pub fn connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the connector being updated.</p>
+        pub fn set_connector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateConnectorRegistrationOutput`](crate::output::UpdateConnectorRegistrationOutput).
+        pub fn build(self) -> crate::output::UpdateConnectorRegistrationOutput {
+            crate::output::UpdateConnectorRegistrationOutput {
+                connector_arn: self.connector_arn,
+            }
+        }
+    }
+}
+impl UpdateConnectorRegistrationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectorRegistrationOutput`](crate::output::UpdateConnectorRegistrationOutput).
+    pub fn builder() -> crate::output::update_connector_registration_output::Builder {
+        crate::output::update_connector_registration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectorProfileOutput {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
     #[doc(hidden)]
@@ -614,6 +665,9 @@ pub struct ListConnectorEntitiesOutput {
             std::vec::Vec<crate::model::ConnectorEntity>,
         >,
     >,
+    /// <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectorEntitiesOutput {
     /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
@@ -626,6 +680,10 @@ impl ListConnectorEntitiesOutput {
         >,
     > {
         self.connector_entity_map.as_ref()
+    }
+    /// <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 /// See [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput).
@@ -640,6 +698,7 @@ pub mod list_connector_entities_output {
                 std::vec::Vec<crate::model::ConnectorEntity>,
             >,
         >,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Adds a key-value pair to `connector_entity_map`.
@@ -670,10 +729,21 @@ pub mod list_connector_entities_output {
             self.connector_entity_map = input;
             self
         }
+        /// <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput).
         pub fn build(self) -> crate::output::ListConnectorEntitiesOutput {
             crate::output::ListConnectorEntitiesOutput {
                 connector_entity_map: self.connector_entity_map,
+                next_token: self.next_token,
             }
         }
     }
@@ -816,6 +886,21 @@ pub struct DescribeFlowOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
+    #[doc(hidden)]
+    pub metadata_catalog_config: std::option::Option<crate::model::MetadataCatalogConfig>,
+    /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
+    #[doc(hidden)]
+    pub last_run_metadata_catalog_details:
+        std::option::Option<std::vec::Vec<crate::model::MetadataCatalogDetail>>,
+    /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
+    /// <ul>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub schema_version: std::option::Option<i64>,
 }
 impl DescribeFlowOutput {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
@@ -889,6 +974,27 @@ impl DescribeFlowOutput {
     {
         self.tags.as_ref()
     }
+    /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
+    pub fn metadata_catalog_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MetadataCatalogConfig> {
+        self.metadata_catalog_config.as_ref()
+    }
+    /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
+    pub fn last_run_metadata_catalog_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetadataCatalogDetail]> {
+        self.last_run_metadata_catalog_details.as_deref()
+    }
+    /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
+    /// <ul>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
+    /// </ul>
+    pub fn schema_version(&self) -> std::option::Option<i64> {
+        self.schema_version
+    }
 }
 /// See [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
 pub mod describe_flow_output {
@@ -915,6 +1021,11 @@ pub mod describe_flow_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) metadata_catalog_config:
+            std::option::Option<crate::model::MetadataCatalogConfig>,
+        pub(crate) last_run_metadata_catalog_details:
+            std::option::Option<std::vec::Vec<crate::model::MetadataCatalogDetail>>,
+        pub(crate) schema_version: std::option::Option<i64>,
     }
     impl Builder {
         /// <p> The flow's Amazon Resource Name (ARN). </p>
@@ -1137,6 +1248,64 @@ pub mod describe_flow_output {
             self.tags = input;
             self
         }
+        /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
+        pub fn metadata_catalog_config(
+            mut self,
+            input: crate::model::MetadataCatalogConfig,
+        ) -> Self {
+            self.metadata_catalog_config = Some(input);
+            self
+        }
+        /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
+        pub fn set_metadata_catalog_config(
+            mut self,
+            input: std::option::Option<crate::model::MetadataCatalogConfig>,
+        ) -> Self {
+            self.metadata_catalog_config = input;
+            self
+        }
+        /// Appends an item to `last_run_metadata_catalog_details`.
+        ///
+        /// To override the contents of this collection use [`set_last_run_metadata_catalog_details`](Self::set_last_run_metadata_catalog_details).
+        ///
+        /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
+        pub fn last_run_metadata_catalog_details(
+            mut self,
+            input: crate::model::MetadataCatalogDetail,
+        ) -> Self {
+            let mut v = self.last_run_metadata_catalog_details.unwrap_or_default();
+            v.push(input);
+            self.last_run_metadata_catalog_details = Some(v);
+            self
+        }
+        /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
+        pub fn set_last_run_metadata_catalog_details(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetadataCatalogDetail>>,
+        ) -> Self {
+            self.last_run_metadata_catalog_details = input;
+            self
+        }
+        /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
+        /// <ul>
+        /// <li> <p>Source-to-destination field mappings</p> </li>
+        /// <li> <p>Field data types</p> </li>
+        /// <li> <p>Partition keys</p> </li>
+        /// </ul>
+        pub fn schema_version(mut self, input: i64) -> Self {
+            self.schema_version = Some(input);
+            self
+        }
+        /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
+        /// <ul>
+        /// <li> <p>Source-to-destination field mappings</p> </li>
+        /// <li> <p>Field data types</p> </li>
+        /// <li> <p>Partition keys</p> </li>
+        /// </ul>
+        pub fn set_schema_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.schema_version = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
         pub fn build(self) -> crate::output::DescribeFlowOutput {
             crate::output::DescribeFlowOutput {
@@ -1156,6 +1325,9 @@ pub mod describe_flow_output {
                 created_by: self.created_by,
                 last_updated_by: self.last_updated_by,
                 tags: self.tags,
+                metadata_catalog_config: self.metadata_catalog_config,
+                last_run_metadata_catalog_details: self.last_run_metadata_catalog_details,
+                schema_version: self.schema_version,
             }
         }
     }

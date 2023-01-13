@@ -67,6 +67,513 @@ impl ChangeProgressDetails {
     }
 }
 
+/// <p>The connection endpoint for connecting to an Amazon OpenSearch Service domain through a proxy.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VpcEndpoint {
+    /// <p>The unique identifier of the endpoint.</p>
+    #[doc(hidden)]
+    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+    /// <p>The creator of the endpoint.</p>
+    #[doc(hidden)]
+    pub vpc_endpoint_owner: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
+    #[doc(hidden)]
+    pub domain_arn: std::option::Option<std::string::String>,
+    /// <p>Options to specify the subnets and security groups for an Amazon OpenSearch Service VPC endpoint.</p>
+    #[doc(hidden)]
+    pub vpc_options: std::option::Option<crate::model::VpcDerivedInfo>,
+    /// <p>The current status of the endpoint.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::VpcEndpointStatus>,
+    /// <p>The connection endpoint ID for connecting to the domain.</p>
+    #[doc(hidden)]
+    pub endpoint: std::option::Option<std::string::String>,
+}
+impl VpcEndpoint {
+    /// <p>The unique identifier of the endpoint.</p>
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint_id.as_deref()
+    }
+    /// <p>The creator of the endpoint.</p>
+    pub fn vpc_endpoint_owner(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint_owner.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
+    pub fn domain_arn(&self) -> std::option::Option<&str> {
+        self.domain_arn.as_deref()
+    }
+    /// <p>Options to specify the subnets and security groups for an Amazon OpenSearch Service VPC endpoint.</p>
+    pub fn vpc_options(&self) -> std::option::Option<&crate::model::VpcDerivedInfo> {
+        self.vpc_options.as_ref()
+    }
+    /// <p>The current status of the endpoint.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VpcEndpointStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The connection endpoint ID for connecting to the domain.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+}
+/// See [`VpcEndpoint`](crate::model::VpcEndpoint).
+pub mod vpc_endpoint {
+
+    /// A builder for [`VpcEndpoint`](crate::model::VpcEndpoint).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
+        pub(crate) vpc_endpoint_owner: std::option::Option<std::string::String>,
+        pub(crate) domain_arn: std::option::Option<std::string::String>,
+        pub(crate) vpc_options: std::option::Option<crate::model::VpcDerivedInfo>,
+        pub(crate) status: std::option::Option<crate::model::VpcEndpointStatus>,
+        pub(crate) endpoint: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the endpoint.</p>
+        pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the endpoint.</p>
+        pub fn set_vpc_endpoint_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_endpoint_id = input;
+            self
+        }
+        /// <p>The creator of the endpoint.</p>
+        pub fn vpc_endpoint_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_endpoint_owner = Some(input.into());
+            self
+        }
+        /// <p>The creator of the endpoint.</p>
+        pub fn set_vpc_endpoint_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_endpoint_owner = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
+        pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
+        pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_arn = input;
+            self
+        }
+        /// <p>Options to specify the subnets and security groups for an Amazon OpenSearch Service VPC endpoint.</p>
+        pub fn vpc_options(mut self, input: crate::model::VpcDerivedInfo) -> Self {
+            self.vpc_options = Some(input);
+            self
+        }
+        /// <p>Options to specify the subnets and security groups for an Amazon OpenSearch Service VPC endpoint.</p>
+        pub fn set_vpc_options(
+            mut self,
+            input: std::option::Option<crate::model::VpcDerivedInfo>,
+        ) -> Self {
+            self.vpc_options = input;
+            self
+        }
+        /// <p>The current status of the endpoint.</p>
+        pub fn status(mut self, input: crate::model::VpcEndpointStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The current status of the endpoint.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::VpcEndpointStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The connection endpoint ID for connecting to the domain.</p>
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
+            self
+        }
+        /// <p>The connection endpoint ID for connecting to the domain.</p>
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcEndpoint`](crate::model::VpcEndpoint).
+        pub fn build(self) -> crate::model::VpcEndpoint {
+            crate::model::VpcEndpoint {
+                vpc_endpoint_id: self.vpc_endpoint_id,
+                vpc_endpoint_owner: self.vpc_endpoint_owner,
+                domain_arn: self.domain_arn,
+                vpc_options: self.vpc_options,
+                status: self.status,
+                endpoint: self.endpoint,
+            }
+        }
+    }
+}
+impl VpcEndpoint {
+    /// Creates a new builder-style object to manufacture [`VpcEndpoint`](crate::model::VpcEndpoint).
+    pub fn builder() -> crate::model::vpc_endpoint::Builder {
+        crate::model::vpc_endpoint::Builder::default()
+    }
+}
+
+/// When writing a match expression against `VpcEndpointStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let vpcendpointstatus = unimplemented!();
+/// match vpcendpointstatus {
+///     VpcEndpointStatus::Active => { /* ... */ },
+///     VpcEndpointStatus::CreateFailed => { /* ... */ },
+///     VpcEndpointStatus::Creating => { /* ... */ },
+///     VpcEndpointStatus::DeleteFailed => { /* ... */ },
+///     VpcEndpointStatus::Deleting => { /* ... */ },
+///     VpcEndpointStatus::UpdateFailed => { /* ... */ },
+///     VpcEndpointStatus::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `vpcendpointstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `VpcEndpointStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `VpcEndpointStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `VpcEndpointStatus::NewFeature` is defined.
+/// Specifically, when `vpcendpointstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `VpcEndpointStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// <p>Specifies the current status of the VPC endpoint:
+/// <ul>
+/// <li>CREATING: Indicates that the VPC endpoint is currently being created.</li>
+/// <li>CREATE_FAILED: Indicates that the VPC endpoint creation failed.</li>
+/// <li>ACTIVE: Indicates that the VPC endpoint is currently active.</li>
+/// <li>UPDATING: Indicates that the VPC endpoint is currently being updated.</li>
+/// <li>UPDATE_FAILED: Indicates that the VPC endpoint update failed.</li>
+/// <li>DELETING: Indicates that the VPC endpoint is currently being deleted.</li>
+/// <li>DELETE_FAILED: Indicates that the VPC endpoint deletion failed.</li>
+/// </ul>
+/// </p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VpcEndpointStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for VpcEndpointStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => VpcEndpointStatus::Active,
+            "CREATE_FAILED" => VpcEndpointStatus::CreateFailed,
+            "CREATING" => VpcEndpointStatus::Creating,
+            "DELETE_FAILED" => VpcEndpointStatus::DeleteFailed,
+            "DELETING" => VpcEndpointStatus::Deleting,
+            "UPDATE_FAILED" => VpcEndpointStatus::UpdateFailed,
+            "UPDATING" => VpcEndpointStatus::Updating,
+            other => {
+                VpcEndpointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for VpcEndpointStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VpcEndpointStatus::from(s))
+    }
+}
+impl VpcEndpointStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VpcEndpointStatus::Active => "ACTIVE",
+            VpcEndpointStatus::CreateFailed => "CREATE_FAILED",
+            VpcEndpointStatus::Creating => "CREATING",
+            VpcEndpointStatus::DeleteFailed => "DELETE_FAILED",
+            VpcEndpointStatus::Deleting => "DELETING",
+            VpcEndpointStatus::UpdateFailed => "UPDATE_FAILED",
+            VpcEndpointStatus::Updating => "UPDATING",
+            VpcEndpointStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATE_FAILED",
+            "CREATING",
+            "DELETE_FAILED",
+            "DELETING",
+            "UPDATE_FAILED",
+            "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for VpcEndpointStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VpcDerivedInfo {
+    /// <p>The VPC Id for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
+    #[doc(hidden)]
+    pub vpc_id: std::option::Option<std::string::String>,
+    /// <p>Specifies the subnets for VPC endpoint.</p>
+    #[doc(hidden)]
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The availability zones for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
+    #[doc(hidden)]
+    pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies the security groups for VPC endpoint.</p>
+    #[doc(hidden)]
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VpcDerivedInfo {
+    /// <p>The VPC Id for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>Specifies the subnets for VPC endpoint.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The availability zones for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>Specifies the security groups for VPC endpoint.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
+/// See [`VpcDerivedInfo`](crate::model::VpcDerivedInfo).
+pub mod vpc_derived_info {
+
+    /// A builder for [`VpcDerivedInfo`](crate::model::VpcDerivedInfo).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_id: std::option::Option<std::string::String>,
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The VPC Id for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
+            self
+        }
+        /// <p>The VPC Id for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
+            self
+        }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>Specifies the subnets for VPC endpoint.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        /// <p>Specifies the subnets for VPC endpoint.</p>
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// <p>The availability zones for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.availability_zones.unwrap_or_default();
+            v.push(input.into());
+            self.availability_zones = Some(v);
+            self
+        }
+        /// <p>The availability zones for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
+        pub fn set_availability_zones(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.availability_zones = input;
+            self
+        }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>Specifies the security groups for VPC endpoint.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        /// <p>Specifies the security groups for VPC endpoint.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcDerivedInfo`](crate::model::VpcDerivedInfo).
+        pub fn build(self) -> crate::model::VpcDerivedInfo {
+            crate::model::VpcDerivedInfo {
+                vpc_id: self.vpc_id,
+                subnet_ids: self.subnet_ids,
+                availability_zones: self.availability_zones,
+                security_group_ids: self.security_group_ids,
+            }
+        }
+    }
+}
+impl VpcDerivedInfo {
+    /// Creates a new builder-style object to manufacture [`VpcDerivedInfo`](crate::model::VpcDerivedInfo).
+    pub fn builder() -> crate::model::vpc_derived_info::Builder {
+        crate::model::vpc_derived_info::Builder::default()
+    }
+}
+
+/// <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VpcOptions {
+    /// <p>Specifies the subnets for VPC endpoint.</p>
+    #[doc(hidden)]
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies the security groups for VPC endpoint.</p>
+    #[doc(hidden)]
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VpcOptions {
+    /// <p>Specifies the subnets for VPC endpoint.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>Specifies the security groups for VPC endpoint.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
+/// See [`VpcOptions`](crate::model::VpcOptions).
+pub mod vpc_options {
+
+    /// A builder for [`VpcOptions`](crate::model::VpcOptions).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>Specifies the subnets for VPC endpoint.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        /// <p>Specifies the subnets for VPC endpoint.</p>
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>Specifies the security groups for VPC endpoint.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        /// <p>Specifies the security groups for VPC endpoint.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcOptions`](crate::model::VpcOptions).
+        pub fn build(self) -> crate::model::VpcOptions {
+            crate::model::VpcOptions {
+                subnet_ids: self.subnet_ids,
+                security_group_ids: self.security_group_ids,
+            }
+        }
+    }
+}
+impl VpcOptions {
+    /// Creates a new builder-style object to manufacture [`VpcOptions`](crate::model::VpcOptions).
+    pub fn builder() -> crate::model::vpc_options::Builder {
+        crate::model::vpc_options::Builder::default()
+    }
+}
+
 /// <p>Basic information about a package.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3868,138 +4375,6 @@ impl VpcDerivedInfoStatus {
     }
 }
 
-/// <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcDerivedInfo {
-    /// <p>The VPC Id for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
-    #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the subnets for VPC endpoint.</p>
-    #[doc(hidden)]
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The availability zones for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
-    #[doc(hidden)]
-    pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies the security groups for VPC endpoint.</p>
-    #[doc(hidden)]
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl VpcDerivedInfo {
-    /// <p>The VPC Id for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
-        self.vpc_id.as_deref()
-    }
-    /// <p>Specifies the subnets for VPC endpoint.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.subnet_ids.as_deref()
-    }
-    /// <p>The availability zones for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
-        self.availability_zones.as_deref()
-    }
-    /// <p>Specifies the security groups for VPC endpoint.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.security_group_ids.as_deref()
-    }
-}
-/// See [`VpcDerivedInfo`](crate::model::VpcDerivedInfo).
-pub mod vpc_derived_info {
-
-    /// A builder for [`VpcDerivedInfo`](crate::model::VpcDerivedInfo).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) vpc_id: std::option::Option<std::string::String>,
-        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        /// <p>The VPC Id for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
-        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(input.into());
-            self
-        }
-        /// <p>The VPC Id for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
-        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
-        }
-        /// Appends an item to `subnet_ids`.
-        ///
-        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
-        ///
-        /// <p>Specifies the subnets for VPC endpoint.</p>
-        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
-        }
-        /// <p>Specifies the subnets for VPC endpoint.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
-        }
-        /// Appends an item to `availability_zones`.
-        ///
-        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
-        ///
-        /// <p>The availability zones for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
-        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
-            self.availability_zones = Some(v);
-            self
-        }
-        /// <p>The availability zones for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
-        }
-        /// Appends an item to `security_group_ids`.
-        ///
-        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
-        ///
-        /// <p>Specifies the security groups for VPC endpoint.</p>
-        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
-        }
-        /// <p>Specifies the security groups for VPC endpoint.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`VpcDerivedInfo`](crate::model::VpcDerivedInfo).
-        pub fn build(self) -> crate::model::VpcDerivedInfo {
-            crate::model::VpcDerivedInfo {
-                vpc_id: self.vpc_id,
-                subnet_ids: self.subnet_ids,
-                availability_zones: self.availability_zones,
-                security_group_ids: self.security_group_ids,
-            }
-        }
-    }
-}
-impl VpcDerivedInfo {
-    /// Creates a new builder-style object to manufacture [`VpcDerivedInfo`](crate::model::VpcDerivedInfo).
-    pub fn builder() -> crate::model::vpc_derived_info::Builder {
-        crate::model::vpc_derived_info::Builder::default()
-    }
-}
-
 /// <p>Status of a daily automated snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5971,91 +6346,6 @@ impl MasterUserOptions {
     }
 }
 
-/// <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcOptions {
-    /// <p>Specifies the subnets for VPC endpoint.</p>
-    #[doc(hidden)]
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies the security groups for VPC endpoint.</p>
-    #[doc(hidden)]
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl VpcOptions {
-    /// <p>Specifies the subnets for VPC endpoint.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.subnet_ids.as_deref()
-    }
-    /// <p>Specifies the security groups for VPC endpoint.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.security_group_ids.as_deref()
-    }
-}
-/// See [`VpcOptions`](crate::model::VpcOptions).
-pub mod vpc_options {
-
-    /// A builder for [`VpcOptions`](crate::model::VpcOptions).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        /// Appends an item to `subnet_ids`.
-        ///
-        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
-        ///
-        /// <p>Specifies the subnets for VPC endpoint.</p>
-        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
-        }
-        /// <p>Specifies the subnets for VPC endpoint.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
-        }
-        /// Appends an item to `security_group_ids`.
-        ///
-        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
-        ///
-        /// <p>Specifies the security groups for VPC endpoint.</p>
-        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
-        }
-        /// <p>Specifies the security groups for VPC endpoint.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`VpcOptions`](crate::model::VpcOptions).
-        pub fn build(self) -> crate::model::VpcOptions {
-            crate::model::VpcOptions {
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-            }
-        }
-    }
-}
-impl VpcOptions {
-    /// Creates a new builder-style object to manufacture [`VpcOptions`](crate::model::VpcOptions).
-    pub fn builder() -> crate::model::vpc_options::Builder {
-        crate::model::vpc_options::Builder::default()
-    }
-}
-
 /// <p>The current options of an Elasticsearch domain service software options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6799,6 +7089,285 @@ impl DomainInformation {
     /// Creates a new builder-style object to manufacture [`DomainInformation`](crate::model::DomainInformation).
     pub fn builder() -> crate::model::domain_information::Builder {
         crate::model::domain_information::Builder::default()
+    }
+}
+
+/// <p>Summary information for an Amazon OpenSearch Service-managed VPC endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VpcEndpointSummary {
+    /// <p>The unique identifier of the endpoint.</p>
+    #[doc(hidden)]
+    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+    /// <p>The creator of the endpoint.</p>
+    #[doc(hidden)]
+    pub vpc_endpoint_owner: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
+    #[doc(hidden)]
+    pub domain_arn: std::option::Option<std::string::String>,
+    /// <p>The current status of the endpoint.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::VpcEndpointStatus>,
+}
+impl VpcEndpointSummary {
+    /// <p>The unique identifier of the endpoint.</p>
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint_id.as_deref()
+    }
+    /// <p>The creator of the endpoint.</p>
+    pub fn vpc_endpoint_owner(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint_owner.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
+    pub fn domain_arn(&self) -> std::option::Option<&str> {
+        self.domain_arn.as_deref()
+    }
+    /// <p>The current status of the endpoint.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VpcEndpointStatus> {
+        self.status.as_ref()
+    }
+}
+/// See [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
+pub mod vpc_endpoint_summary {
+
+    /// A builder for [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
+        pub(crate) vpc_endpoint_owner: std::option::Option<std::string::String>,
+        pub(crate) domain_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::VpcEndpointStatus>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the endpoint.</p>
+        pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the endpoint.</p>
+        pub fn set_vpc_endpoint_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_endpoint_id = input;
+            self
+        }
+        /// <p>The creator of the endpoint.</p>
+        pub fn vpc_endpoint_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_endpoint_owner = Some(input.into());
+            self
+        }
+        /// <p>The creator of the endpoint.</p>
+        pub fn set_vpc_endpoint_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_endpoint_owner = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
+        pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
+        pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_arn = input;
+            self
+        }
+        /// <p>The current status of the endpoint.</p>
+        pub fn status(mut self, input: crate::model::VpcEndpointStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The current status of the endpoint.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::VpcEndpointStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
+        pub fn build(self) -> crate::model::VpcEndpointSummary {
+            crate::model::VpcEndpointSummary {
+                vpc_endpoint_id: self.vpc_endpoint_id,
+                vpc_endpoint_owner: self.vpc_endpoint_owner,
+                domain_arn: self.domain_arn,
+                status: self.status,
+            }
+        }
+    }
+}
+impl VpcEndpointSummary {
+    /// Creates a new builder-style object to manufacture [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
+    pub fn builder() -> crate::model::vpc_endpoint_summary::Builder {
+        crate::model::vpc_endpoint_summary::Builder::default()
+    }
+}
+
+/// <p>Information about an account or service that has access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AuthorizedPrincipal {
+    /// <p>The type of principal.</p>
+    #[doc(hidden)]
+    pub principal_type: std::option::Option<crate::model::PrincipalType>,
+    /// <p>The IAM principal that is allowed access to the domain.</p>
+    #[doc(hidden)]
+    pub principal: std::option::Option<std::string::String>,
+}
+impl AuthorizedPrincipal {
+    /// <p>The type of principal.</p>
+    pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+        self.principal_type.as_ref()
+    }
+    /// <p>The IAM principal that is allowed access to the domain.</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+}
+/// See [`AuthorizedPrincipal`](crate::model::AuthorizedPrincipal).
+pub mod authorized_principal {
+
+    /// A builder for [`AuthorizedPrincipal`](crate::model::AuthorizedPrincipal).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) principal_type: std::option::Option<crate::model::PrincipalType>,
+        pub(crate) principal: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The type of principal.</p>
+        pub fn principal_type(mut self, input: crate::model::PrincipalType) -> Self {
+            self.principal_type = Some(input);
+            self
+        }
+        /// <p>The type of principal.</p>
+        pub fn set_principal_type(
+            mut self,
+            input: std::option::Option<crate::model::PrincipalType>,
+        ) -> Self {
+            self.principal_type = input;
+            self
+        }
+        /// <p>The IAM principal that is allowed access to the domain.</p>
+        pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.principal = Some(input.into());
+            self
+        }
+        /// <p>The IAM principal that is allowed access to the domain.</p>
+        pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.principal = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AuthorizedPrincipal`](crate::model::AuthorizedPrincipal).
+        pub fn build(self) -> crate::model::AuthorizedPrincipal {
+            crate::model::AuthorizedPrincipal {
+                principal_type: self.principal_type,
+                principal: self.principal,
+            }
+        }
+    }
+}
+impl AuthorizedPrincipal {
+    /// Creates a new builder-style object to manufacture [`AuthorizedPrincipal`](crate::model::AuthorizedPrincipal).
+    pub fn builder() -> crate::model::authorized_principal::Builder {
+        crate::model::authorized_principal::Builder::default()
+    }
+}
+
+/// When writing a match expression against `PrincipalType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let principaltype = unimplemented!();
+/// match principaltype {
+///     PrincipalType::AwsAccount => { /* ... */ },
+///     PrincipalType::AwsService => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `principaltype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PrincipalType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PrincipalType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PrincipalType::NewFeature` is defined.
+/// Specifically, when `principaltype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PrincipalType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// <p>Specifies the type of AWS account permitted to manage VPC endpoints.:
+/// <ul>
+/// <li>AWS_ACCOUNT: Indicates that the account is owned by an AWS user.</li>
+/// <li>AWS_SERVICE: Indicates the the account is owned by an AWS service.</li>
+/// </ul>
+/// </p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PrincipalType {
+    #[allow(missing_docs)] // documentation missing in model
+    AwsAccount,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsService,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for PrincipalType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS_ACCOUNT" => PrincipalType::AwsAccount,
+            "AWS_SERVICE" => PrincipalType::AwsService,
+            other => PrincipalType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for PrincipalType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PrincipalType::from(s))
+    }
+}
+impl PrincipalType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PrincipalType::AwsAccount => "AWS_ACCOUNT",
+            PrincipalType::AwsService => "AWS_SERVICE",
+            PrincipalType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AWS_ACCOUNT", "AWS_SERVICE"]
+    }
+}
+impl AsRef<str> for PrincipalType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -8051,6 +8620,198 @@ impl CompatibleVersionsMap {
     /// Creates a new builder-style object to manufacture [`CompatibleVersionsMap`](crate::model::CompatibleVersionsMap).
     pub fn builder() -> crate::model::compatible_versions_map::Builder {
         crate::model::compatible_versions_map::Builder::default()
+    }
+}
+
+/// <p>Error information when attempting to describe an Amazon OpenSearch Service-managed VPC endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VpcEndpointError {
+    /// <p>The unique identifier of the endpoint. </p>
+    #[doc(hidden)]
+    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+    /// <p>The code associated with the error.</p>
+    #[doc(hidden)]
+    pub error_code: std::option::Option<crate::model::VpcEndpointErrorCode>,
+    /// <p>A message describing the error.</p>
+    #[doc(hidden)]
+    pub error_message: std::option::Option<std::string::String>,
+}
+impl VpcEndpointError {
+    /// <p>The unique identifier of the endpoint. </p>
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint_id.as_deref()
+    }
+    /// <p>The code associated with the error.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::VpcEndpointErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>A message describing the error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
+/// See [`VpcEndpointError`](crate::model::VpcEndpointError).
+pub mod vpc_endpoint_error {
+
+    /// A builder for [`VpcEndpointError`](crate::model::VpcEndpointError).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
+        pub(crate) error_code: std::option::Option<crate::model::VpcEndpointErrorCode>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the endpoint. </p>
+        pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the endpoint. </p>
+        pub fn set_vpc_endpoint_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_endpoint_id = input;
+            self
+        }
+        /// <p>The code associated with the error.</p>
+        pub fn error_code(mut self, input: crate::model::VpcEndpointErrorCode) -> Self {
+            self.error_code = Some(input);
+            self
+        }
+        /// <p>The code associated with the error.</p>
+        pub fn set_error_code(
+            mut self,
+            input: std::option::Option<crate::model::VpcEndpointErrorCode>,
+        ) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>A message describing the error.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the error.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcEndpointError`](crate::model::VpcEndpointError).
+        pub fn build(self) -> crate::model::VpcEndpointError {
+            crate::model::VpcEndpointError {
+                vpc_endpoint_id: self.vpc_endpoint_id,
+                error_code: self.error_code,
+                error_message: self.error_message,
+            }
+        }
+    }
+}
+impl VpcEndpointError {
+    /// Creates a new builder-style object to manufacture [`VpcEndpointError`](crate::model::VpcEndpointError).
+    pub fn builder() -> crate::model::vpc_endpoint_error::Builder {
+        crate::model::vpc_endpoint_error::Builder::default()
+    }
+}
+
+/// When writing a match expression against `VpcEndpointErrorCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let vpcendpointerrorcode = unimplemented!();
+/// match vpcendpointerrorcode {
+///     VpcEndpointErrorCode::EndpointNotFound => { /* ... */ },
+///     VpcEndpointErrorCode::ServerError => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `vpcendpointerrorcode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `VpcEndpointErrorCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `VpcEndpointErrorCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `VpcEndpointErrorCode::NewFeature` is defined.
+/// Specifically, when `vpcendpointerrorcode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `VpcEndpointErrorCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// <p>Specifies the error code of the failure encountered while describing the VPC endpoint:
+/// <ul>
+/// <li>ENDPOINT_NOT_FOUND: Indicates that the requested VPC endpoint does not exist.</li>
+/// <li>SERVER_ERROR: Indicates the describe endpoint operation failed due to an internal server error.</li>
+/// </ul>
+/// </p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VpcEndpointErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
+    EndpointNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    ServerError,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for VpcEndpointErrorCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ENDPOINT_NOT_FOUND" => VpcEndpointErrorCode::EndpointNotFound,
+            "SERVER_ERROR" => VpcEndpointErrorCode::ServerError,
+            other => {
+                VpcEndpointErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for VpcEndpointErrorCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VpcEndpointErrorCode::from(s))
+    }
+}
+impl VpcEndpointErrorCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VpcEndpointErrorCode::EndpointNotFound => "ENDPOINT_NOT_FOUND",
+            VpcEndpointErrorCode::ServerError => "SERVER_ERROR",
+            VpcEndpointErrorCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ENDPOINT_NOT_FOUND", "SERVER_ERROR"]
+    }
+}
+impl AsRef<str> for VpcEndpointErrorCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

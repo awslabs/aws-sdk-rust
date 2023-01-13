@@ -10,7 +10,8 @@
 #![allow(clippy::needless_return)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <p>Amazon Route 53 API actions let you register domain names and perform related operations.</p>
+//! <p>Amazon Route 53 API actions let you register domain names and perform related
+//! operations.</p>
 //!
 //! # Crate Organization
 //!

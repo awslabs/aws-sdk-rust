@@ -6621,6 +6621,41 @@ impl From<crate::error::ListProvisioningTemplateVersionsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::ListRelatedResourcesForAuditFindingError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListRelatedResourcesForAuditFindingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListRelatedResourcesForAuditFindingError> for Error {
+    fn from(err: crate::error::ListRelatedResourcesForAuditFindingError) -> Self {
+        match err.kind {
+            crate::error::ListRelatedResourcesForAuditFindingErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::error::ListRelatedResourcesForAuditFindingErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListRelatedResourcesForAuditFindingErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListRelatedResourcesForAuditFindingErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListRelatedResourcesForAuditFindingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRoleAliasesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

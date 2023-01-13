@@ -441,6 +441,525 @@ impl ResourceNotFoundException {
     }
 }
 
+/// Error type for the `BatchCreateCustomVocabularyItem` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchCreateCustomVocabularyItemError {
+    /// Kind of error that occurred.
+    pub kind: BatchCreateCustomVocabularyItemErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchCreateCustomVocabularyItemError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchCreateCustomVocabularyItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `BatchCreateCustomVocabularyItem` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchCreateCustomVocabularyItemErrorKind {
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have reached a quota for your bot. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for BatchCreateCustomVocabularyItemError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchCreateCustomVocabularyItemErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchCreateCustomVocabularyItemErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchCreateCustomVocabularyItemErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchCreateCustomVocabularyItemErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            BatchCreateCustomVocabularyItemErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            BatchCreateCustomVocabularyItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchCreateCustomVocabularyItemError {
+    fn code(&self) -> Option<&str> {
+        BatchCreateCustomVocabularyItemError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchCreateCustomVocabularyItemError {
+    /// Creates a new `BatchCreateCustomVocabularyItemError`.
+    pub fn new(
+        kind: BatchCreateCustomVocabularyItemErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchCreateCustomVocabularyItemError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchCreateCustomVocabularyItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchCreateCustomVocabularyItemError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchCreateCustomVocabularyItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchCreateCustomVocabularyItemErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateCustomVocabularyItemErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchCreateCustomVocabularyItemErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateCustomVocabularyItemErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchCreateCustomVocabularyItemErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateCustomVocabularyItemErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchCreateCustomVocabularyItemErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateCustomVocabularyItemErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchCreateCustomVocabularyItemErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateCustomVocabularyItemErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for BatchCreateCustomVocabularyItemError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchCreateCustomVocabularyItemErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            BatchCreateCustomVocabularyItemErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            BatchCreateCustomVocabularyItemErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            BatchCreateCustomVocabularyItemErrorKind::ThrottlingException(_inner) => Some(_inner),
+            BatchCreateCustomVocabularyItemErrorKind::ValidationException(_inner) => Some(_inner),
+            BatchCreateCustomVocabularyItemErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `BatchDeleteCustomVocabularyItem` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchDeleteCustomVocabularyItemError {
+    /// Kind of error that occurred.
+    pub kind: BatchDeleteCustomVocabularyItemErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchDeleteCustomVocabularyItemError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchDeleteCustomVocabularyItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `BatchDeleteCustomVocabularyItem` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchDeleteCustomVocabularyItemErrorKind {
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have reached a quota for your bot. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for BatchDeleteCustomVocabularyItemError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchDeleteCustomVocabularyItemErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchDeleteCustomVocabularyItemErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchDeleteCustomVocabularyItemErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchDeleteCustomVocabularyItemErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            BatchDeleteCustomVocabularyItemErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            BatchDeleteCustomVocabularyItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchDeleteCustomVocabularyItemError {
+    fn code(&self) -> Option<&str> {
+        BatchDeleteCustomVocabularyItemError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchDeleteCustomVocabularyItemError {
+    /// Creates a new `BatchDeleteCustomVocabularyItemError`.
+    pub fn new(
+        kind: BatchDeleteCustomVocabularyItemErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchDeleteCustomVocabularyItemError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchDeleteCustomVocabularyItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchDeleteCustomVocabularyItemError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchDeleteCustomVocabularyItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchDeleteCustomVocabularyItemErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteCustomVocabularyItemErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDeleteCustomVocabularyItemErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteCustomVocabularyItemErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDeleteCustomVocabularyItemErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteCustomVocabularyItemErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDeleteCustomVocabularyItemErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteCustomVocabularyItemErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDeleteCustomVocabularyItemErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteCustomVocabularyItemErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for BatchDeleteCustomVocabularyItemError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchDeleteCustomVocabularyItemErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            BatchDeleteCustomVocabularyItemErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            BatchDeleteCustomVocabularyItemErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            BatchDeleteCustomVocabularyItemErrorKind::ThrottlingException(_inner) => Some(_inner),
+            BatchDeleteCustomVocabularyItemErrorKind::ValidationException(_inner) => Some(_inner),
+            BatchDeleteCustomVocabularyItemErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `BatchUpdateCustomVocabularyItem` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchUpdateCustomVocabularyItemError {
+    /// Kind of error that occurred.
+    pub kind: BatchUpdateCustomVocabularyItemErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchUpdateCustomVocabularyItemError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchUpdateCustomVocabularyItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `BatchUpdateCustomVocabularyItem` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchUpdateCustomVocabularyItemErrorKind {
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have reached a quota for your bot. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for BatchUpdateCustomVocabularyItemError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchUpdateCustomVocabularyItemErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchUpdateCustomVocabularyItemErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchUpdateCustomVocabularyItemErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchUpdateCustomVocabularyItemErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            BatchUpdateCustomVocabularyItemErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            BatchUpdateCustomVocabularyItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchUpdateCustomVocabularyItemError {
+    fn code(&self) -> Option<&str> {
+        BatchUpdateCustomVocabularyItemError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchUpdateCustomVocabularyItemError {
+    /// Creates a new `BatchUpdateCustomVocabularyItemError`.
+    pub fn new(
+        kind: BatchUpdateCustomVocabularyItemErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchUpdateCustomVocabularyItemError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchUpdateCustomVocabularyItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchUpdateCustomVocabularyItemError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchUpdateCustomVocabularyItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchUpdateCustomVocabularyItemErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateCustomVocabularyItemErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchUpdateCustomVocabularyItemErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateCustomVocabularyItemErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchUpdateCustomVocabularyItemErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateCustomVocabularyItemErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchUpdateCustomVocabularyItemErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateCustomVocabularyItemErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchUpdateCustomVocabularyItemErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateCustomVocabularyItemErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for BatchUpdateCustomVocabularyItemError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchUpdateCustomVocabularyItemErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            BatchUpdateCustomVocabularyItemErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            BatchUpdateCustomVocabularyItemErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            BatchUpdateCustomVocabularyItemErrorKind::ThrottlingException(_inner) => Some(_inner),
+            BatchUpdateCustomVocabularyItemErrorKind::ValidationException(_inner) => Some(_inner),
+            BatchUpdateCustomVocabularyItemErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `BuildBotLocale` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7184,6 +7703,168 @@ impl std::error::Error for ListBuiltInSlotTypesError {
             ListBuiltInSlotTypesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListBuiltInSlotTypesErrorKind::ValidationException(_inner) => Some(_inner),
             ListBuiltInSlotTypesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListCustomVocabularyItems` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListCustomVocabularyItemsError {
+    /// Kind of error that occurred.
+    pub kind: ListCustomVocabularyItemsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListCustomVocabularyItemsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListCustomVocabularyItemsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListCustomVocabularyItems` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListCustomVocabularyItemsErrorKind {
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have reached a quota for your bot. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListCustomVocabularyItemsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListCustomVocabularyItemsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListCustomVocabularyItemsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListCustomVocabularyItemsErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListCustomVocabularyItemsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListCustomVocabularyItemsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListCustomVocabularyItemsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListCustomVocabularyItemsError {
+    fn code(&self) -> Option<&str> {
+        ListCustomVocabularyItemsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListCustomVocabularyItemsError {
+    /// Creates a new `ListCustomVocabularyItemsError`.
+    pub fn new(kind: ListCustomVocabularyItemsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListCustomVocabularyItemsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListCustomVocabularyItemsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListCustomVocabularyItemsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListCustomVocabularyItemsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListCustomVocabularyItemsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCustomVocabularyItemsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListCustomVocabularyItemsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCustomVocabularyItemsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListCustomVocabularyItemsErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCustomVocabularyItemsErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListCustomVocabularyItemsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCustomVocabularyItemsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListCustomVocabularyItemsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCustomVocabularyItemsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListCustomVocabularyItemsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListCustomVocabularyItemsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListCustomVocabularyItemsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListCustomVocabularyItemsErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            ListCustomVocabularyItemsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListCustomVocabularyItemsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListCustomVocabularyItemsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

@@ -183,6 +183,66 @@ impl ThrottlingException {
     }
 }
 
+/// <p>This request exceeds a service quota.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ServiceQuotaExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ServiceQuotaExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceQuotaExceededException")?;
+        if let Some(inner_3) = &self.message {
+            {
+                write!(f, ": {}", inner_3)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceQuotaExceededException {}
+/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+pub mod service_quota_exceeded_exception {
+
+    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
+            crate::error::ServiceQuotaExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
+        crate::error::service_quota_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>Resource not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -216,9 +276,9 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_3) = &self.message {
+        if let Some(inner_4) = &self.message {
             {
-                write!(f, ": {}", inner_3)?;
+                write!(f, ": {}", inner_4)?;
             }
         }
         Ok(())
@@ -319,9 +379,9 @@ impl InternalServerException {
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
-        if let Some(inner_4) = &self.message {
+        if let Some(inner_5) = &self.message {
             {
-                write!(f, ": {}", inner_4)?;
+                write!(f, ": {}", inner_5)?;
             }
         }
         Ok(())
@@ -374,126 +434,6 @@ impl InternalServerException {
     }
 }
 
-/// <p>You don't have sufficient permissions to perform this action.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl AccessDeniedException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AccessDeniedException")?;
-        if let Some(inner_5) = &self.message {
-            {
-                write!(f, ": {}", inner_5)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AccessDeniedException {}
-/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
-pub mod access_denied_exception {
-
-    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
-        pub fn build(self) -> crate::error::AccessDeniedException {
-            crate::error::AccessDeniedException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl AccessDeniedException {
-    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
-    pub fn builder() -> crate::error::access_denied_exception::Builder {
-        crate::error::access_denied_exception::Builder::default()
-    }
-}
-
-/// <p>This request exceeds a service quota.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceQuotaExceededException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl ServiceQuotaExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_6) = &self.message {
-            {
-                write!(f, ": {}", inner_6)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ServiceQuotaExceededException {}
-/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-pub mod service_quota_exceeded_exception {
-
-    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
-            crate::error::ServiceQuotaExceededException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ServiceQuotaExceededException {
-    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
-        crate::error::service_quota_exceeded_exception::Builder::default()
-    }
-}
-
 /// <p>This operation attempted to create a resource that already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -527,9 +467,9 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_7) = &self.message {
+        if let Some(inner_6) = &self.message {
             {
-                write!(f, ": {}", inner_7)?;
+                write!(f, ": {}", inner_6)?;
             }
         }
         Ok(())
@@ -600,6 +540,617 @@ impl ConflictException {
     }
 }
 
+/// <p>You don't have sufficient permissions to perform this action.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl AccessDeniedException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDeniedException")?;
+        if let Some(inner_7) = &self.message {
+            {
+                write!(f, ": {}", inner_7)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
+pub mod access_denied_exception {
+
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
+    }
+}
+
+/// Error type for the `BatchCreateRumMetricDefinitions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchCreateRumMetricDefinitionsError {
+    /// Kind of error that occurred.
+    pub kind: BatchCreateRumMetricDefinitionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchCreateRumMetricDefinitionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchCreateRumMetricDefinitionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `BatchCreateRumMetricDefinitions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchCreateRumMetricDefinitionsErrorKind {
+    /// <p>You don't have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>This operation attempted to create a resource that already exists.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Internal service exception.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>This request exceeds a service quota.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request was throttled because of quota limits.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the arguments for the request is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for BatchCreateRumMetricDefinitionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchCreateRumMetricDefinitionsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchCreateRumMetricDefinitionsErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            BatchCreateRumMetricDefinitionsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchCreateRumMetricDefinitionsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchCreateRumMetricDefinitionsErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchCreateRumMetricDefinitionsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            BatchCreateRumMetricDefinitionsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            BatchCreateRumMetricDefinitionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchCreateRumMetricDefinitionsError {
+    fn code(&self) -> Option<&str> {
+        BatchCreateRumMetricDefinitionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            BatchCreateRumMetricDefinitionsErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            BatchCreateRumMetricDefinitionsErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl BatchCreateRumMetricDefinitionsError {
+    /// Creates a new `BatchCreateRumMetricDefinitionsError`.
+    pub fn new(
+        kind: BatchCreateRumMetricDefinitionsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchCreateRumMetricDefinitionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchCreateRumMetricDefinitionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchCreateRumMetricDefinitionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchCreateRumMetricDefinitionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchCreateRumMetricDefinitionsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateRumMetricDefinitionsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchCreateRumMetricDefinitionsErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateRumMetricDefinitionsErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchCreateRumMetricDefinitionsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateRumMetricDefinitionsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchCreateRumMetricDefinitionsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateRumMetricDefinitionsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchCreateRumMetricDefinitionsErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateRumMetricDefinitionsErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchCreateRumMetricDefinitionsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateRumMetricDefinitionsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchCreateRumMetricDefinitionsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateRumMetricDefinitionsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for BatchCreateRumMetricDefinitionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchCreateRumMetricDefinitionsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            BatchCreateRumMetricDefinitionsErrorKind::ConflictException(_inner) => Some(_inner),
+            BatchCreateRumMetricDefinitionsErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            BatchCreateRumMetricDefinitionsErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            BatchCreateRumMetricDefinitionsErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            BatchCreateRumMetricDefinitionsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            BatchCreateRumMetricDefinitionsErrorKind::ValidationException(_inner) => Some(_inner),
+            BatchCreateRumMetricDefinitionsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `BatchDeleteRumMetricDefinitions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchDeleteRumMetricDefinitionsError {
+    /// Kind of error that occurred.
+    pub kind: BatchDeleteRumMetricDefinitionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchDeleteRumMetricDefinitionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchDeleteRumMetricDefinitionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `BatchDeleteRumMetricDefinitions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchDeleteRumMetricDefinitionsErrorKind {
+    /// <p>You don't have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>This operation attempted to create a resource that already exists.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Internal service exception.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was throttled because of quota limits.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the arguments for the request is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for BatchDeleteRumMetricDefinitionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchDeleteRumMetricDefinitionsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchDeleteRumMetricDefinitionsErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            BatchDeleteRumMetricDefinitionsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchDeleteRumMetricDefinitionsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchDeleteRumMetricDefinitionsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            BatchDeleteRumMetricDefinitionsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            BatchDeleteRumMetricDefinitionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchDeleteRumMetricDefinitionsError {
+    fn code(&self) -> Option<&str> {
+        BatchDeleteRumMetricDefinitionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            BatchDeleteRumMetricDefinitionsErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            BatchDeleteRumMetricDefinitionsErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl BatchDeleteRumMetricDefinitionsError {
+    /// Creates a new `BatchDeleteRumMetricDefinitionsError`.
+    pub fn new(
+        kind: BatchDeleteRumMetricDefinitionsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchDeleteRumMetricDefinitionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchDeleteRumMetricDefinitionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchDeleteRumMetricDefinitionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchDeleteRumMetricDefinitionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchDeleteRumMetricDefinitionsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteRumMetricDefinitionsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDeleteRumMetricDefinitionsErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteRumMetricDefinitionsErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDeleteRumMetricDefinitionsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteRumMetricDefinitionsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDeleteRumMetricDefinitionsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteRumMetricDefinitionsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDeleteRumMetricDefinitionsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteRumMetricDefinitionsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDeleteRumMetricDefinitionsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteRumMetricDefinitionsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for BatchDeleteRumMetricDefinitionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchDeleteRumMetricDefinitionsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            BatchDeleteRumMetricDefinitionsErrorKind::ConflictException(_inner) => Some(_inner),
+            BatchDeleteRumMetricDefinitionsErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            BatchDeleteRumMetricDefinitionsErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            BatchDeleteRumMetricDefinitionsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            BatchDeleteRumMetricDefinitionsErrorKind::ValidationException(_inner) => Some(_inner),
+            BatchDeleteRumMetricDefinitionsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `BatchGetRumMetricDefinitions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchGetRumMetricDefinitionsError {
+    /// Kind of error that occurred.
+    pub kind: BatchGetRumMetricDefinitionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchGetRumMetricDefinitionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchGetRumMetricDefinitionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `BatchGetRumMetricDefinitions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchGetRumMetricDefinitionsErrorKind {
+    /// <p>You don't have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Internal service exception.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>One of the arguments for the request is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for BatchGetRumMetricDefinitionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchGetRumMetricDefinitionsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            BatchGetRumMetricDefinitionsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            BatchGetRumMetricDefinitionsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetRumMetricDefinitionsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            BatchGetRumMetricDefinitionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchGetRumMetricDefinitionsError {
+    fn code(&self) -> Option<&str> {
+        BatchGetRumMetricDefinitionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            BatchGetRumMetricDefinitionsErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl BatchGetRumMetricDefinitionsError {
+    /// Creates a new `BatchGetRumMetricDefinitionsError`.
+    pub fn new(kind: BatchGetRumMetricDefinitionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchGetRumMetricDefinitionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchGetRumMetricDefinitionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchGetRumMetricDefinitionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchGetRumMetricDefinitionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchGetRumMetricDefinitionsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetRumMetricDefinitionsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetRumMetricDefinitionsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetRumMetricDefinitionsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetRumMetricDefinitionsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetRumMetricDefinitionsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetRumMetricDefinitionsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetRumMetricDefinitionsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for BatchGetRumMetricDefinitionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchGetRumMetricDefinitionsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            BatchGetRumMetricDefinitionsErrorKind::InternalServerException(_inner) => Some(_inner),
+            BatchGetRumMetricDefinitionsErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            BatchGetRumMetricDefinitionsErrorKind::ValidationException(_inner) => Some(_inner),
+            BatchGetRumMetricDefinitionsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `CreateAppMonitor` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -627,6 +1178,8 @@ pub enum CreateAppMonitorErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Internal service exception.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This request exceeds a service quota.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was throttled because of quota limits.</p>
@@ -649,6 +1202,7 @@ impl std::fmt::Display for CreateAppMonitorError {
             CreateAppMonitorErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateAppMonitorErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateAppMonitorErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateAppMonitorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateAppMonitorErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             CreateAppMonitorErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateAppMonitorErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -732,6 +1286,13 @@ impl CreateAppMonitorError {
             CreateAppMonitorErrorKind::InternalServerException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateAppMonitorErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAppMonitorErrorKind::ResourceNotFoundException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateAppMonitorErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
@@ -760,6 +1321,7 @@ impl std::error::Error for CreateAppMonitorError {
             CreateAppMonitorErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateAppMonitorErrorKind::ConflictException(_inner) => Some(_inner),
             CreateAppMonitorErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateAppMonitorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateAppMonitorErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateAppMonitorErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateAppMonitorErrorKind::ValidationException(_inner) => Some(_inner),
@@ -932,6 +1494,185 @@ impl std::error::Error for DeleteAppMonitorError {
             DeleteAppMonitorErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteAppMonitorErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteAppMonitorErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeleteRumMetricsDestination` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteRumMetricsDestinationError {
+    /// Kind of error that occurred.
+    pub kind: DeleteRumMetricsDestinationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteRumMetricsDestinationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteRumMetricsDestinationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteRumMetricsDestination` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteRumMetricsDestinationErrorKind {
+    /// <p>You don't have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>This operation attempted to create a resource that already exists.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Internal service exception.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was throttled because of quota limits.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the arguments for the request is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteRumMetricsDestinationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteRumMetricsDestinationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteRumMetricsDestinationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteRumMetricsDestinationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteRumMetricsDestinationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteRumMetricsDestinationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteRumMetricsDestinationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteRumMetricsDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteRumMetricsDestinationError {
+    fn code(&self) -> Option<&str> {
+        DeleteRumMetricsDestinationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            DeleteRumMetricsDestinationErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            DeleteRumMetricsDestinationErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl DeleteRumMetricsDestinationError {
+    /// Creates a new `DeleteRumMetricsDestinationError`.
+    pub fn new(kind: DeleteRumMetricsDestinationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteRumMetricsDestinationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteRumMetricsDestinationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteRumMetricsDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteRumMetricsDestinationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteRumMetricsDestinationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRumMetricsDestinationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteRumMetricsDestinationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRumMetricsDestinationErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteRumMetricsDestinationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRumMetricsDestinationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteRumMetricsDestinationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRumMetricsDestinationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteRumMetricsDestinationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRumMetricsDestinationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteRumMetricsDestinationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRumMetricsDestinationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteRumMetricsDestinationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteRumMetricsDestinationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteRumMetricsDestinationErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteRumMetricsDestinationErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteRumMetricsDestinationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteRumMetricsDestinationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteRumMetricsDestinationErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteRumMetricsDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1390,6 +2131,158 @@ impl std::error::Error for ListAppMonitorsError {
     }
 }
 
+/// Error type for the `ListRumMetricsDestinations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListRumMetricsDestinationsError {
+    /// Kind of error that occurred.
+    pub kind: ListRumMetricsDestinationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListRumMetricsDestinationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListRumMetricsDestinationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListRumMetricsDestinations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListRumMetricsDestinationsErrorKind {
+    /// <p>You don't have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Internal service exception.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>One of the arguments for the request is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListRumMetricsDestinationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListRumMetricsDestinationsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListRumMetricsDestinationsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListRumMetricsDestinationsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListRumMetricsDestinationsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListRumMetricsDestinationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListRumMetricsDestinationsError {
+    fn code(&self) -> Option<&str> {
+        ListRumMetricsDestinationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            ListRumMetricsDestinationsErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl ListRumMetricsDestinationsError {
+    /// Creates a new `ListRumMetricsDestinationsError`.
+    pub fn new(kind: ListRumMetricsDestinationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListRumMetricsDestinationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListRumMetricsDestinationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListRumMetricsDestinationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListRumMetricsDestinationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListRumMetricsDestinationsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRumMetricsDestinationsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRumMetricsDestinationsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRumMetricsDestinationsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRumMetricsDestinationsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRumMetricsDestinationsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRumMetricsDestinationsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRumMetricsDestinationsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListRumMetricsDestinationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListRumMetricsDestinationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListRumMetricsDestinationsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListRumMetricsDestinationsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListRumMetricsDestinationsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListRumMetricsDestinationsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListTagsForResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1670,6 +2563,183 @@ impl std::error::Error for PutRumEventsError {
             PutRumEventsErrorKind::ThrottlingException(_inner) => Some(_inner),
             PutRumEventsErrorKind::ValidationException(_inner) => Some(_inner),
             PutRumEventsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `PutRumMetricsDestination` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutRumMetricsDestinationError {
+    /// Kind of error that occurred.
+    pub kind: PutRumMetricsDestinationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutRumMetricsDestinationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutRumMetricsDestinationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `PutRumMetricsDestination` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutRumMetricsDestinationErrorKind {
+    /// <p>You don't have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>This operation attempted to create a resource that already exists.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Internal service exception.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was throttled because of quota limits.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the arguments for the request is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for PutRumMetricsDestinationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutRumMetricsDestinationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            PutRumMetricsDestinationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            PutRumMetricsDestinationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            PutRumMetricsDestinationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            PutRumMetricsDestinationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            PutRumMetricsDestinationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            PutRumMetricsDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutRumMetricsDestinationError {
+    fn code(&self) -> Option<&str> {
+        PutRumMetricsDestinationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            PutRumMetricsDestinationErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            PutRumMetricsDestinationErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl PutRumMetricsDestinationError {
+    /// Creates a new `PutRumMetricsDestinationError`.
+    pub fn new(kind: PutRumMetricsDestinationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutRumMetricsDestinationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutRumMetricsDestinationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutRumMetricsDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutRumMetricsDestinationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutRumMetricsDestinationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRumMetricsDestinationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutRumMetricsDestinationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRumMetricsDestinationErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutRumMetricsDestinationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRumMetricsDestinationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutRumMetricsDestinationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRumMetricsDestinationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutRumMetricsDestinationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRumMetricsDestinationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutRumMetricsDestinationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRumMetricsDestinationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for PutRumMetricsDestinationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutRumMetricsDestinationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            PutRumMetricsDestinationErrorKind::ConflictException(_inner) => Some(_inner),
+            PutRumMetricsDestinationErrorKind::InternalServerException(_inner) => Some(_inner),
+            PutRumMetricsDestinationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            PutRumMetricsDestinationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            PutRumMetricsDestinationErrorKind::ValidationException(_inner) => Some(_inner),
+            PutRumMetricsDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2099,6 +3169,198 @@ impl std::error::Error for UpdateAppMonitorError {
             UpdateAppMonitorErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateAppMonitorErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateAppMonitorErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateRumMetricDefinition` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateRumMetricDefinitionError {
+    /// Kind of error that occurred.
+    pub kind: UpdateRumMetricDefinitionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateRumMetricDefinitionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateRumMetricDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateRumMetricDefinition` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateRumMetricDefinitionErrorKind {
+    /// <p>You don't have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>This operation attempted to create a resource that already exists.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Internal service exception.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>This request exceeds a service quota.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request was throttled because of quota limits.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the arguments for the request is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateRumMetricDefinitionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateRumMetricDefinitionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateRumMetricDefinitionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateRumMetricDefinitionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateRumMetricDefinitionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateRumMetricDefinitionErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateRumMetricDefinitionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateRumMetricDefinitionErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateRumMetricDefinitionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateRumMetricDefinitionError {
+    fn code(&self) -> Option<&str> {
+        UpdateRumMetricDefinitionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            UpdateRumMetricDefinitionErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdateRumMetricDefinitionErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl UpdateRumMetricDefinitionError {
+    /// Creates a new `UpdateRumMetricDefinitionError`.
+    pub fn new(kind: UpdateRumMetricDefinitionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateRumMetricDefinitionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateRumMetricDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateRumMetricDefinitionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateRumMetricDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateRumMetricDefinitionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRumMetricDefinitionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateRumMetricDefinitionErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRumMetricDefinitionErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateRumMetricDefinitionErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRumMetricDefinitionErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateRumMetricDefinitionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRumMetricDefinitionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateRumMetricDefinitionErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRumMetricDefinitionErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateRumMetricDefinitionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRumMetricDefinitionErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateRumMetricDefinitionErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRumMetricDefinitionErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateRumMetricDefinitionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateRumMetricDefinitionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateRumMetricDefinitionErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateRumMetricDefinitionErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateRumMetricDefinitionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateRumMetricDefinitionErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            UpdateRumMetricDefinitionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateRumMetricDefinitionErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateRumMetricDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

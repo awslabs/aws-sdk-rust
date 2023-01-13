@@ -505,6 +505,183 @@ impl AssociatePackageInput {
     }
 }
 
+/// See [`AuthorizeVpcEndpointAccessInput`](crate::input::AuthorizeVpcEndpointAccessInput).
+pub mod authorize_vpc_endpoint_access_input {
+
+    /// A builder for [`AuthorizeVpcEndpointAccessInput`](crate::input::AuthorizeVpcEndpointAccessInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) account: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the OpenSearch Service domain to provide access to.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the OpenSearch Service domain to provide access to.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>The account ID to grant access to.</p>
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account = Some(input.into());
+            self
+        }
+        /// <p>The account ID to grant access to.</p>
+        pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AuthorizeVpcEndpointAccessInput`](crate::input::AuthorizeVpcEndpointAccessInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::AuthorizeVpcEndpointAccessInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::AuthorizeVpcEndpointAccessInput {
+                domain_name: self.domain_name,
+                account: self.account,
+            })
+        }
+    }
+}
+impl AuthorizeVpcEndpointAccessInput {
+    /// Consumes the builder and constructs an Operation<[`AuthorizeVpcEndpointAccess`](crate::operation::AuthorizeVpcEndpointAccess)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AuthorizeVpcEndpointAccess,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::AuthorizeVpcEndpointAccessInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_4 = &_input.domain_name;
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let domain_name = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if domain_name.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2015-01-01/es/domain/{DomainName}/authorizeVpcEndpointAccess",
+                    DomainName = domain_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AuthorizeVpcEndpointAccessInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_authorize_vpc_endpoint_access(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AuthorizeVpcEndpointAccess::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AuthorizeVpcEndpointAccess",
+            "elasticsearchservice",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`AuthorizeVpcEndpointAccessInput`](crate::input::AuthorizeVpcEndpointAccessInput).
+    pub fn builder() -> crate::input::authorize_vpc_endpoint_access_input::Builder {
+        crate::input::authorize_vpc_endpoint_access_input::Builder::default()
+    }
+}
+
 /// See [`CancelElasticsearchServiceSoftwareUpdateInput`](crate::input::CancelElasticsearchServiceSoftwareUpdateInput).
 pub mod cancel_elasticsearch_service_software_update_input {
 
@@ -1435,6 +1612,175 @@ impl CreatePackageInput {
     }
 }
 
+/// See [`CreateVpcEndpointInput`](crate::input::CreateVpcEndpointInput).
+pub mod create_vpc_endpoint_input {
+
+    /// A builder for [`CreateVpcEndpointInput`](crate::input::CreateVpcEndpointInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_arn: std::option::Option<std::string::String>,
+        pub(crate) vpc_options: std::option::Option<crate::model::VpcOptions>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+        pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+        pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_arn = input;
+            self
+        }
+        /// <p>Options to specify the subnets and security groups for the endpoint.</p>
+        pub fn vpc_options(mut self, input: crate::model::VpcOptions) -> Self {
+            self.vpc_options = Some(input);
+            self
+        }
+        /// <p>Options to specify the subnets and security groups for the endpoint.</p>
+        pub fn set_vpc_options(
+            mut self,
+            input: std::option::Option<crate::model::VpcOptions>,
+        ) -> Self {
+            self.vpc_options = input;
+            self
+        }
+        /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateVpcEndpointInput`](crate::input::CreateVpcEndpointInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateVpcEndpointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::CreateVpcEndpointInput {
+                domain_arn: self.domain_arn,
+                vpc_options: self.vpc_options,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+impl CreateVpcEndpointInput {
+    /// Consumes the builder and constructs an Operation<[`CreateVpcEndpoint`](crate::operation::CreateVpcEndpoint)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateVpcEndpoint,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateVpcEndpointInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/2015-01-01/es/vpcEndpoints").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateVpcEndpointInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_vpc_endpoint(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateVpcEndpoint::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateVpcEndpoint",
+            "elasticsearchservice",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateVpcEndpointInput`](crate::input::CreateVpcEndpointInput).
+    pub fn builder() -> crate::input::create_vpc_endpoint_input::Builder {
+        crate::input::create_vpc_endpoint_input::Builder::default()
+    }
+}
+
 /// See [`DeleteElasticsearchDomainInput`](crate::input::DeleteElasticsearchDomainInput).
 pub mod delete_elasticsearch_domain_input {
 
@@ -1487,15 +1833,15 @@ impl DeleteElasticsearchDomainInput {
                 _input: &crate::input::DeleteElasticsearchDomainInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_4 = &_input.domain_name;
-                let input_4 = input_4.as_ref().ok_or_else(|| {
+                let input_5 = &_input.domain_name;
+                let input_5 = input_5.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_name = aws_smithy_http::label::fmt_string(
-                    input_4,
+                    input_5,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_name.is_empty() {
@@ -1761,15 +2107,15 @@ impl DeleteInboundCrossClusterSearchConnectionInput {
                 _input: &crate::input::DeleteInboundCrossClusterSearchConnectionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_5 = &_input.cross_cluster_search_connection_id;
-                let input_5 = input_5.as_ref().ok_or_else(|| {
+                let input_6 = &_input.cross_cluster_search_connection_id;
+                let input_6 = input_6.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cross_cluster_search_connection_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cross_cluster_search_connection_id = aws_smithy_http::label::fmt_string(
-                    input_5,
+                    input_6,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cross_cluster_search_connection_id.is_empty() {
@@ -1922,15 +2268,15 @@ impl DeleteOutboundCrossClusterSearchConnectionInput {
                 _input: &crate::input::DeleteOutboundCrossClusterSearchConnectionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_6 = &_input.cross_cluster_search_connection_id;
-                let input_6 = input_6.as_ref().ok_or_else(|| {
+                let input_7 = &_input.cross_cluster_search_connection_id;
+                let input_7 = input_7.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cross_cluster_search_connection_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cross_cluster_search_connection_id = aws_smithy_http::label::fmt_string(
-                    input_6,
+                    input_7,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cross_cluster_search_connection_id.is_empty() {
@@ -2073,15 +2419,15 @@ impl DeletePackageInput {
                 _input: &crate::input::DeletePackageInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_7 = &_input.package_id;
-                let input_7 = input_7.as_ref().ok_or_else(|| {
+                let input_8 = &_input.package_id;
+                let input_8 = input_8.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "package_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let package_id = aws_smithy_http::label::fmt_string(
-                    input_7,
+                    input_8,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if package_id.is_empty() {
@@ -2173,6 +2519,161 @@ impl DeletePackageInput {
     }
 }
 
+/// See [`DeleteVpcEndpointInput`](crate::input::DeleteVpcEndpointInput).
+pub mod delete_vpc_endpoint_input {
+
+    /// A builder for [`DeleteVpcEndpointInput`](crate::input::DeleteVpcEndpointInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the endpoint to be deleted.</p>
+        pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the endpoint to be deleted.</p>
+        pub fn set_vpc_endpoint_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_endpoint_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteVpcEndpointInput`](crate::input::DeleteVpcEndpointInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteVpcEndpointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DeleteVpcEndpointInput {
+                vpc_endpoint_id: self.vpc_endpoint_id,
+            })
+        }
+    }
+}
+impl DeleteVpcEndpointInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteVpcEndpoint`](crate::operation::DeleteVpcEndpoint)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteVpcEndpoint,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteVpcEndpointInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_9 = &_input.vpc_endpoint_id;
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vpc_endpoint_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vpc_endpoint_id = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if vpc_endpoint_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vpc_endpoint_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2015-01-01/es/vpcEndpoints/{VpcEndpointId}",
+                    VpcEndpointId = vpc_endpoint_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteVpcEndpointInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteVpcEndpoint::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteVpcEndpoint",
+            "elasticsearchservice",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointInput`](crate::input::DeleteVpcEndpointInput).
+    pub fn builder() -> crate::input::delete_vpc_endpoint_input::Builder {
+        crate::input::delete_vpc_endpoint_input::Builder::default()
+    }
+}
+
 /// See [`DescribeDomainAutoTunesInput`](crate::input::DescribeDomainAutoTunesInput).
 pub mod describe_domain_auto_tunes_input {
 
@@ -2249,15 +2750,15 @@ impl DescribeDomainAutoTunesInput {
                 _input: &crate::input::DescribeDomainAutoTunesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_8 = &_input.domain_name;
-                let input_8 = input_8.as_ref().ok_or_else(|| {
+                let input_10 = &_input.domain_name;
+                let input_10 = input_10.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_name = aws_smithy_http::label::fmt_string(
-                    input_8,
+                    input_10,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_name.is_empty() {
@@ -2429,15 +2930,15 @@ impl DescribeDomainChangeProgressInput {
                 _input: &crate::input::DescribeDomainChangeProgressInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_9 = &_input.domain_name;
-                let input_9 = input_9.as_ref().ok_or_else(|| {
+                let input_11 = &_input.domain_name;
+                let input_11 = input_11.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_name = aws_smithy_http::label::fmt_string(
-                    input_9,
+                    input_11,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_name.is_empty() {
@@ -2461,9 +2962,9 @@ impl DescribeDomainChangeProgressInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_10) = &_input.change_id {
+                if let Some(inner_12) = &_input.change_id {
                     {
-                        query.push_kv("changeid", &aws_smithy_http::query::fmt_string(&inner_10));
+                        query.push_kv("changeid", &aws_smithy_http::query::fmt_string(&inner_12));
                     }
                 }
                 Ok(())
@@ -2594,15 +3095,15 @@ impl DescribeElasticsearchDomainInput {
                 _input: &crate::input::DescribeElasticsearchDomainInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_11 = &_input.domain_name;
-                let input_11 = input_11.as_ref().ok_or_else(|| {
+                let input_13 = &_input.domain_name;
+                let input_13 = input_13.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_name = aws_smithy_http::label::fmt_string(
-                    input_11,
+                    input_13,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_name.is_empty() {
@@ -2746,15 +3247,15 @@ impl DescribeElasticsearchDomainConfigInput {
                 _input: &crate::input::DescribeElasticsearchDomainConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_12 = &_input.domain_name;
-                let input_12 = input_12.as_ref().ok_or_else(|| {
+                let input_14 = &_input.domain_name;
+                let input_14 = input_14.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_name = aws_smithy_http::label::fmt_string(
-                    input_12,
+                    input_14,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_name.is_empty() {
@@ -3078,15 +3579,15 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
                 _input: &crate::input::DescribeElasticsearchInstanceTypeLimitsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_13 = &_input.elasticsearch_version;
-                let input_13 = input_13.as_ref().ok_or_else(|| {
+                let input_15 = &_input.elasticsearch_version;
+                let input_15 = input_15.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "elasticsearch_version",
                         "cannot be empty or unset",
                     )
                 })?;
                 let elasticsearch_version = aws_smithy_http::label::fmt_string(
-                    input_13,
+                    input_15,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if elasticsearch_version.is_empty() {
@@ -3097,15 +3598,15 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
                         ),
                     );
                 }
-                let input_14 = &_input.instance_type;
-                let input_14 = input_14.as_ref().ok_or_else(|| {
+                let input_16 = &_input.instance_type;
+                let input_16 = input_16.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "instance_type",
                         "cannot be empty or unset",
                     )
                 })?;
                 let instance_type = aws_smithy_http::label::fmt_string(
-                    input_14,
+                    input_16,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if instance_type.is_empty() {
@@ -3130,9 +3631,9 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_15) = &_input.domain_name {
+                if let Some(inner_17) = &_input.domain_name {
                     {
-                        query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_15));
+                        query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_17));
                     }
                 }
                 Ok(())
@@ -3870,9 +4371,9 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_16) = &_input.reserved_elasticsearch_instance_offering_id {
+                if let Some(inner_18) = &_input.reserved_elasticsearch_instance_offering_id {
                     {
-                        query.push_kv("offeringId", &aws_smithy_http::query::fmt_string(&inner_16));
+                        query.push_kv("offeringId", &aws_smithy_http::query::fmt_string(&inner_18));
                     }
                 }
                 if _input.max_results != 0 {
@@ -3881,9 +4382,9 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_17) = &_input.next_token {
+                if let Some(inner_19) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
                     }
                 }
                 Ok(())
@@ -4054,11 +4555,11 @@ impl DescribeReservedElasticsearchInstancesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_18) = &_input.reserved_elasticsearch_instance_id {
+                if let Some(inner_20) = &_input.reserved_elasticsearch_instance_id {
                     {
                         query.push_kv(
                             "reservationId",
-                            &aws_smithy_http::query::fmt_string(&inner_18),
+                            &aws_smithy_http::query::fmt_string(&inner_20),
                         );
                     }
                 }
@@ -4068,9 +4569,9 @@ impl DescribeReservedElasticsearchInstancesInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_19) = &_input.next_token {
+                if let Some(inner_21) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_21));
                     }
                 }
                 Ok(())
@@ -4149,6 +4650,160 @@ impl DescribeReservedElasticsearchInstancesInput {
     }
 }
 
+/// See [`DescribeVpcEndpointsInput`](crate::input::DescribeVpcEndpointsInput).
+pub mod describe_vpc_endpoints_input {
+
+    /// A builder for [`DescribeVpcEndpointsInput`](crate::input::DescribeVpcEndpointsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_endpoint_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `vpc_endpoint_ids`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_endpoint_ids`](Self::set_vpc_endpoint_ids).
+        ///
+        /// <p>The unique identifiers of the endpoints to get information about.</p>
+        pub fn vpc_endpoint_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.vpc_endpoint_ids.unwrap_or_default();
+            v.push(input.into());
+            self.vpc_endpoint_ids = Some(v);
+            self
+        }
+        /// <p>The unique identifiers of the endpoints to get information about.</p>
+        pub fn set_vpc_endpoint_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.vpc_endpoint_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeVpcEndpointsInput`](crate::input::DescribeVpcEndpointsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeVpcEndpointsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DescribeVpcEndpointsInput {
+                vpc_endpoint_ids: self.vpc_endpoint_ids,
+            })
+        }
+    }
+}
+impl DescribeVpcEndpointsInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeVpcEndpoints`](crate::operation::DescribeVpcEndpoints)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeVpcEndpoints,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeVpcEndpointsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/2015-01-01/es/vpcEndpoints/describe")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeVpcEndpointsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_vpc_endpoints(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeVpcEndpoints::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeVpcEndpoints",
+            "elasticsearchservice",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointsInput`](crate::input::DescribeVpcEndpointsInput).
+    pub fn builder() -> crate::input::describe_vpc_endpoints_input::Builder {
+        crate::input::describe_vpc_endpoints_input::Builder::default()
+    }
+}
+
 /// See [`DissociatePackageInput`](crate::input::DissociatePackageInput).
 pub mod dissociate_package_input {
 
@@ -4213,15 +4868,15 @@ impl DissociatePackageInput {
                 _input: &crate::input::DissociatePackageInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_20 = &_input.package_id;
-                let input_20 = input_20.as_ref().ok_or_else(|| {
+                let input_22 = &_input.package_id;
+                let input_22 = input_22.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "package_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let package_id = aws_smithy_http::label::fmt_string(
-                    input_20,
+                    input_22,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if package_id.is_empty() {
@@ -4232,15 +4887,15 @@ impl DissociatePackageInput {
                         ),
                     );
                 }
-                let input_21 = &_input.domain_name;
-                let input_21 = input_21.as_ref().ok_or_else(|| {
+                let input_23 = &_input.domain_name;
+                let input_23 = input_23.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_name = aws_smithy_http::label::fmt_string(
-                    input_21,
+                    input_23,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_name.is_empty() {
@@ -4394,9 +5049,9 @@ impl GetCompatibleElasticsearchVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_22) = &_input.domain_name {
+                if let Some(inner_24) = &_input.domain_name {
                     {
-                        query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_22));
+                        query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_24));
                     }
                 }
                 Ok(())
@@ -4551,15 +5206,15 @@ impl GetPackageVersionHistoryInput {
                 _input: &crate::input::GetPackageVersionHistoryInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_23 = &_input.package_id;
-                let input_23 = input_23.as_ref().ok_or_else(|| {
+                let input_25 = &_input.package_id;
+                let input_25 = input_25.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "package_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let package_id = aws_smithy_http::label::fmt_string(
-                    input_23,
+                    input_25,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if package_id.is_empty() {
@@ -4589,9 +5244,9 @@ impl GetPackageVersionHistoryInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_24) = &_input.next_token {
+                if let Some(inner_26) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_26));
                     }
                 }
                 Ok(())
@@ -4746,15 +5401,15 @@ impl GetUpgradeHistoryInput {
                 _input: &crate::input::GetUpgradeHistoryInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_25 = &_input.domain_name;
-                let input_25 = input_25.as_ref().ok_or_else(|| {
+                let input_27 = &_input.domain_name;
+                let input_27 = input_27.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_name = aws_smithy_http::label::fmt_string(
-                    input_25,
+                    input_27,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_name.is_empty() {
@@ -4784,9 +5439,9 @@ impl GetUpgradeHistoryInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_26) = &_input.next_token {
+                if let Some(inner_28) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_26));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
                     }
                 }
                 Ok(())
@@ -4917,15 +5572,15 @@ impl GetUpgradeStatusInput {
                 _input: &crate::input::GetUpgradeStatusInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_27 = &_input.domain_name;
-                let input_27 = input_27.as_ref().ok_or_else(|| {
+                let input_29 = &_input.domain_name;
+                let input_29 = input_29.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_name = aws_smithy_http::label::fmt_string(
-                    input_27,
+                    input_29,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_name.is_empty() {
@@ -5078,9 +5733,9 @@ impl ListDomainNamesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_28) = &_input.engine_type {
+                if let Some(inner_30) = &_input.engine_type {
                     {
-                        query.push_kv("engineType", &aws_smithy_http::query::fmt_string(&inner_28));
+                        query.push_kv("engineType", &aws_smithy_http::query::fmt_string(&inner_30));
                     }
                 }
                 Ok(())
@@ -5235,15 +5890,15 @@ impl ListDomainsForPackageInput {
                 _input: &crate::input::ListDomainsForPackageInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_29 = &_input.package_id;
-                let input_29 = input_29.as_ref().ok_or_else(|| {
+                let input_31 = &_input.package_id;
+                let input_31 = input_31.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "package_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let package_id = aws_smithy_http::label::fmt_string(
-                    input_29,
+                    input_31,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if package_id.is_empty() {
@@ -5273,9 +5928,9 @@ impl ListDomainsForPackageInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_30) = &_input.next_token {
+                if let Some(inner_32) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
                     }
                 }
                 Ok(())
@@ -5445,15 +6100,15 @@ impl ListElasticsearchInstanceTypesInput {
                 _input: &crate::input::ListElasticsearchInstanceTypesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_31 = &_input.elasticsearch_version;
-                let input_31 = input_31.as_ref().ok_or_else(|| {
+                let input_33 = &_input.elasticsearch_version;
+                let input_33 = input_33.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "elasticsearch_version",
                         "cannot be empty or unset",
                     )
                 })?;
                 let elasticsearch_version = aws_smithy_http::label::fmt_string(
-                    input_31,
+                    input_33,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if elasticsearch_version.is_empty() {
@@ -5477,9 +6132,9 @@ impl ListElasticsearchInstanceTypesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_32) = &_input.domain_name {
+                if let Some(inner_34) = &_input.domain_name {
                     {
-                        query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_32));
+                        query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_34));
                     }
                 }
                 if _input.max_results != 0 {
@@ -5488,9 +6143,9 @@ impl ListElasticsearchInstanceTypesInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_33) = &_input.next_token {
+                if let Some(inner_35) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
                     }
                 }
                 Ok(())
@@ -5647,9 +6302,9 @@ impl ListElasticsearchVersionsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_34) = &_input.next_token {
+                if let Some(inner_36) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
                     }
                 }
                 Ok(())
@@ -5804,15 +6459,15 @@ impl ListPackagesForDomainInput {
                 _input: &crate::input::ListPackagesForDomainInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_35 = &_input.domain_name;
-                let input_35 = input_35.as_ref().ok_or_else(|| {
+                let input_37 = &_input.domain_name;
+                let input_37 = input_37.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_name = aws_smithy_http::label::fmt_string(
-                    input_35,
+                    input_37,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_name.is_empty() {
@@ -5842,9 +6497,9 @@ impl ListPackagesForDomainInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_36) = &_input.next_token {
+                if let Some(inner_38) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
                     }
                 }
                 Ok(())
@@ -5979,14 +6634,14 @@ impl ListTagsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_37 = &_input.arn;
-                let inner_37 = inner_37.as_ref().ok_or_else(|| {
+                let inner_39 = &_input.arn;
+                let inner_39 = inner_39.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "arn",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_37.is_empty() {
+                if inner_39.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "arn",
@@ -5994,7 +6649,7 @@ impl ListTagsInput {
                         ),
                     );
                 }
-                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_37));
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_39));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6066,6 +6721,501 @@ impl ListTagsInput {
     /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput).
     pub fn builder() -> crate::input::list_tags_input::Builder {
         crate::input::list_tags_input::Builder::default()
+    }
+}
+
+/// See [`ListVpcEndpointAccessInput`](crate::input::ListVpcEndpointAccessInput).
+pub mod list_vpc_endpoint_access_input {
+
+    /// A builder for [`ListVpcEndpointAccessInput`](crate::input::ListVpcEndpointAccessInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListVpcEndpointAccessInput`](crate::input::ListVpcEndpointAccessInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListVpcEndpointAccessInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListVpcEndpointAccessInput {
+                domain_name: self.domain_name,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListVpcEndpointAccessInput {
+    /// Consumes the builder and constructs an Operation<[`ListVpcEndpointAccess`](crate::operation::ListVpcEndpointAccess)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListVpcEndpointAccess,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListVpcEndpointAccessInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_40 = &_input.domain_name;
+                let input_40 = input_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let domain_name = aws_smithy_http::label::fmt_string(
+                    input_40,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if domain_name.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2015-01-01/es/domain/{DomainName}/listVpcEndpointAccess",
+                    DomainName = domain_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListVpcEndpointAccessInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_41) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_41));
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListVpcEndpointAccessInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListVpcEndpointAccess::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListVpcEndpointAccess",
+            "elasticsearchservice",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListVpcEndpointAccessInput`](crate::input::ListVpcEndpointAccessInput).
+    pub fn builder() -> crate::input::list_vpc_endpoint_access_input::Builder {
+        crate::input::list_vpc_endpoint_access_input::Builder::default()
+    }
+}
+
+/// See [`ListVpcEndpointsInput`](crate::input::ListVpcEndpointsInput).
+pub mod list_vpc_endpoints_input {
+
+    /// A builder for [`ListVpcEndpointsInput`](crate::input::ListVpcEndpointsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Identifier to allow retrieval of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Identifier to allow retrieval of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListVpcEndpointsInput`](crate::input::ListVpcEndpointsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListVpcEndpointsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListVpcEndpointsInput {
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListVpcEndpointsInput {
+    /// Consumes the builder and constructs an Operation<[`ListVpcEndpoints`](crate::operation::ListVpcEndpoints)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListVpcEndpoints,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListVpcEndpointsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/2015-01-01/es/vpcEndpoints").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListVpcEndpointsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_42) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListVpcEndpointsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListVpcEndpoints::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListVpcEndpoints",
+            "elasticsearchservice",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListVpcEndpointsInput`](crate::input::ListVpcEndpointsInput).
+    pub fn builder() -> crate::input::list_vpc_endpoints_input::Builder {
+        crate::input::list_vpc_endpoints_input::Builder::default()
+    }
+}
+
+/// See [`ListVpcEndpointsForDomainInput`](crate::input::ListVpcEndpointsForDomainInput).
+pub mod list_vpc_endpoints_for_domain_input {
+
+    /// A builder for [`ListVpcEndpointsForDomainInput`](crate::input::ListVpcEndpointsForDomainInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Name of the ElasticSearch domain whose VPC endpoints are to be listed.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>Name of the ElasticSearch domain whose VPC endpoints are to be listed.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListVpcEndpointsForDomainInput`](crate::input::ListVpcEndpointsForDomainInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListVpcEndpointsForDomainInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListVpcEndpointsForDomainInput {
+                domain_name: self.domain_name,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListVpcEndpointsForDomainInput {
+    /// Consumes the builder and constructs an Operation<[`ListVpcEndpointsForDomain`](crate::operation::ListVpcEndpointsForDomain)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListVpcEndpointsForDomain,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListVpcEndpointsForDomainInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_43 = &_input.domain_name;
+                let input_43 = input_43.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let domain_name = aws_smithy_http::label::fmt_string(
+                    input_43,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if domain_name.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2015-01-01/es/domain/{DomainName}/vpcEndpoints",
+                    DomainName = domain_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListVpcEndpointsForDomainInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_44) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListVpcEndpointsForDomainInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListVpcEndpointsForDomain::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListVpcEndpointsForDomain",
+            "elasticsearchservice",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListVpcEndpointsForDomainInput`](crate::input::ListVpcEndpointsForDomainInput).
+    pub fn builder() -> crate::input::list_vpc_endpoints_for_domain_input::Builder {
+        crate::input::list_vpc_endpoints_for_domain_input::Builder::default()
     }
 }
 
@@ -6309,15 +7459,15 @@ impl RejectInboundCrossClusterSearchConnectionInput {
                 _input: &crate::input::RejectInboundCrossClusterSearchConnectionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_38 = &_input.cross_cluster_search_connection_id;
-                let input_38 = input_38.as_ref().ok_or_else(|| {
+                let input_45 = &_input.cross_cluster_search_connection_id;
+                let input_45 = input_45.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cross_cluster_search_connection_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cross_cluster_search_connection_id = aws_smithy_http::label::fmt_string(
-                    input_38,
+                    input_45,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cross_cluster_search_connection_id.is_empty() {
@@ -6568,6 +7718,186 @@ impl RemoveTagsInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsInput`](crate::input::RemoveTagsInput).
     pub fn builder() -> crate::input::remove_tags_input::Builder {
         crate::input::remove_tags_input::Builder::default()
+    }
+}
+
+/// See [`RevokeVpcEndpointAccessInput`](crate::input::RevokeVpcEndpointAccessInput).
+pub mod revoke_vpc_endpoint_access_input {
+
+    /// A builder for [`RevokeVpcEndpointAccessInput`](crate::input::RevokeVpcEndpointAccessInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) account: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the OpenSearch Service domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the OpenSearch Service domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>The account ID to revoke access from.</p>
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account = Some(input.into());
+            self
+        }
+        /// <p>The account ID to revoke access from.</p>
+        pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RevokeVpcEndpointAccessInput`](crate::input::RevokeVpcEndpointAccessInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::RevokeVpcEndpointAccessInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::RevokeVpcEndpointAccessInput {
+                domain_name: self.domain_name,
+                account: self.account,
+            })
+        }
+    }
+}
+impl RevokeVpcEndpointAccessInput {
+    /// Consumes the builder and constructs an Operation<[`RevokeVpcEndpointAccess`](crate::operation::RevokeVpcEndpointAccess)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RevokeVpcEndpointAccess,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::RevokeVpcEndpointAccessInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_46 = &_input.domain_name;
+                let input_46 = input_46.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let domain_name = aws_smithy_http::label::fmt_string(
+                    input_46,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if domain_name.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2015-01-01/es/domain/{DomainName}/revokeVpcEndpointAccess",
+                    DomainName = domain_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RevokeVpcEndpointAccessInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_revoke_vpc_endpoint_access(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RevokeVpcEndpointAccess::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RevokeVpcEndpointAccess",
+            "elasticsearchservice",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`RevokeVpcEndpointAccessInput`](crate::input::RevokeVpcEndpointAccessInput).
+    pub fn builder() -> crate::input::revoke_vpc_endpoint_access_input::Builder {
+        crate::input::revoke_vpc_endpoint_access_input::Builder::default()
     }
 }
 
@@ -7020,15 +8350,15 @@ impl UpdateElasticsearchDomainConfigInput {
                 _input: &crate::input::UpdateElasticsearchDomainConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_39 = &_input.domain_name;
-                let input_39 = input_39.as_ref().ok_or_else(|| {
+                let input_47 = &_input.domain_name;
+                let input_47 = input_47.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_name = aws_smithy_http::label::fmt_string(
-                    input_39,
+                    input_47,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_name.is_empty() {
@@ -7318,6 +8648,167 @@ impl UpdatePackageInput {
     }
 }
 
+/// See [`UpdateVpcEndpointInput`](crate::input::UpdateVpcEndpointInput).
+pub mod update_vpc_endpoint_input {
+
+    /// A builder for [`UpdateVpcEndpointInput`](crate::input::UpdateVpcEndpointInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
+        pub(crate) vpc_options: std::option::Option<crate::model::VpcOptions>,
+    }
+    impl Builder {
+        /// <p>Unique identifier of the VPC endpoint to be updated.</p>
+        pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier of the VPC endpoint to be updated.</p>
+        pub fn set_vpc_endpoint_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_endpoint_id = input;
+            self
+        }
+        /// <p>The security groups and/or subnets to add, remove, or modify.</p>
+        pub fn vpc_options(mut self, input: crate::model::VpcOptions) -> Self {
+            self.vpc_options = Some(input);
+            self
+        }
+        /// <p>The security groups and/or subnets to add, remove, or modify.</p>
+        pub fn set_vpc_options(
+            mut self,
+            input: std::option::Option<crate::model::VpcOptions>,
+        ) -> Self {
+            self.vpc_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateVpcEndpointInput`](crate::input::UpdateVpcEndpointInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateVpcEndpointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateVpcEndpointInput {
+                vpc_endpoint_id: self.vpc_endpoint_id,
+                vpc_options: self.vpc_options,
+            })
+        }
+    }
+}
+impl UpdateVpcEndpointInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateVpcEndpoint`](crate::operation::UpdateVpcEndpoint)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateVpcEndpoint,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateVpcEndpointInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/2015-01-01/es/vpcEndpoints/update")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateVpcEndpointInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_vpc_endpoint(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateVpcEndpoint::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateVpcEndpoint",
+            "elasticsearchservice",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateVpcEndpointInput`](crate::input::UpdateVpcEndpointInput).
+    pub fn builder() -> crate::input::update_vpc_endpoint_input::Builder {
+        crate::input::update_vpc_endpoint_input::Builder::default()
+    }
+}
+
 /// See [`UpgradeElasticsearchDomainInput`](crate::input::UpgradeElasticsearchDomainInput).
 pub mod upgrade_elasticsearch_domain_input {
 
@@ -7518,6 +9009,28 @@ impl UpgradeElasticsearchDomainInput {
     }
 }
 
+/// <p>Modifies an Amazon OpenSearch Service-managed interface VPC endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateVpcEndpointInput {
+    /// <p>Unique identifier of the VPC endpoint to be updated.</p>
+    #[doc(hidden)]
+    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+    /// <p>The security groups and/or subnets to add, remove, or modify.</p>
+    #[doc(hidden)]
+    pub vpc_options: std::option::Option<crate::model::VpcOptions>,
+}
+impl UpdateVpcEndpointInput {
+    /// <p>Unique identifier of the VPC endpoint to be updated.</p>
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint_id.as_deref()
+    }
+    /// <p>The security groups and/or subnets to add, remove, or modify.</p>
+    pub fn vpc_options(&self) -> std::option::Option<&crate::model::VpcOptions> {
+        self.vpc_options.as_ref()
+    }
+}
+
 /// <p> Container for request parameters to <code> <code>UpdatePackage</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7703,6 +9216,28 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
     }
 }
 
+/// <p>Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RevokeVpcEndpointAccessInput {
+    /// <p>The name of the OpenSearch Service domain.</p>
+    #[doc(hidden)]
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>The account ID to revoke access from.</p>
+    #[doc(hidden)]
+    pub account: std::option::Option<std::string::String>,
+}
+impl RevokeVpcEndpointAccessInput {
+    /// <p>The name of the OpenSearch Service domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The account ID to revoke access from.</p>
+    pub fn account(&self) -> std::option::Option<&str> {
+        self.account.as_deref()
+    }
+}
+
 /// <p>Container for the parameters to the <code><code>RemoveTags</code></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain from which you want to remove the specified <code>TagKey</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7766,6 +9301,65 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
     /// <p>The number of Elasticsearch instances to reserve.</p>
     pub fn instance_count(&self) -> i32 {
         self.instance_count
+    }
+}
+
+/// <p>Container for request parameters to the <code><code>ListVpcEndpointsForDomain</code></code> operation. Specifies the domain whose VPC endpoints will be listed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListVpcEndpointsForDomainInput {
+    /// <p>Name of the ElasticSearch domain whose VPC endpoints are to be listed.</p>
+    #[doc(hidden)]
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVpcEndpointsForDomainInput {
+    /// <p>Name of the ElasticSearch domain whose VPC endpoints are to be listed.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+
+/// <p>Container for request parameters to the <code><code>ListVpcEndpoints</code></code> operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListVpcEndpointsInput {
+    /// <p>Identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVpcEndpointsInput {
+    /// <p>Identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+
+/// <p>Retrieves information about each principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListVpcEndpointAccessInput {
+    /// <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
+    #[doc(hidden)]
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVpcEndpointAccessInput {
+    /// <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 
@@ -8025,6 +9619,21 @@ impl DissociatePackageInput {
     /// <p>Name of the domain that you want to associate the package with.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
+    }
+}
+
+/// <p>Container for request parameters to the <code><code>DescribeVpcEndpoints</code></code> operation. Specifies the list of VPC endpoints to be described.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeVpcEndpointsInput {
+    /// <p>The unique identifiers of the endpoints to get information about.</p>
+    #[doc(hidden)]
+    pub vpc_endpoint_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeVpcEndpointsInput {
+    /// <p>The unique identifiers of the endpoints to get information about.</p>
+    pub fn vpc_endpoint_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_endpoint_ids.as_deref()
     }
 }
 
@@ -8330,6 +9939,21 @@ impl DescribeDomainAutoTunesInput {
     }
 }
 
+/// <p>Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteVpcEndpointInput {
+    /// <p>The unique identifier of the endpoint to be deleted.</p>
+    #[doc(hidden)]
+    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+}
+impl DeleteVpcEndpointInput {
+    /// <p>The unique identifier of the endpoint to be deleted.</p>
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint_id.as_deref()
+    }
+}
+
 /// <p> Container for request parameters to <code> <code>DeletePackage</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8392,6 +10016,35 @@ impl DeleteElasticsearchDomainInput {
     /// <p>The name of the Elasticsearch domain that you want to permanently delete.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
+    }
+}
+
+/// <p>Container for the parameters to the <code><code>CreateVpcEndpointRequest</code></code> operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateVpcEndpointInput {
+    /// <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+    #[doc(hidden)]
+    pub domain_arn: std::option::Option<std::string::String>,
+    /// <p>Options to specify the subnets and security groups for the endpoint.</p>
+    #[doc(hidden)]
+    pub vpc_options: std::option::Option<crate::model::VpcOptions>,
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateVpcEndpointInput {
+    /// <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+    pub fn domain_arn(&self) -> std::option::Option<&str> {
+        self.domain_arn.as_deref()
+    }
+    /// <p>Options to specify the subnets and security groups for the endpoint.</p>
+    pub fn vpc_options(&self) -> std::option::Option<&crate::model::VpcOptions> {
+        self.vpc_options.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 
@@ -8613,6 +10266,28 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to stop the latest service software update on.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
+    }
+}
+
+/// <p>Container for request parameters to the <code><code>AuthorizeVpcEndpointAccess</code></code> operation. Specifies the account to be permitted to manage VPC endpoints against the domain.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AuthorizeVpcEndpointAccessInput {
+    /// <p>The name of the OpenSearch Service domain to provide access to.</p>
+    #[doc(hidden)]
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>The account ID to grant access to.</p>
+    #[doc(hidden)]
+    pub account: std::option::Option<std::string::String>,
+}
+impl AuthorizeVpcEndpointAccessInput {
+    /// <p>The name of the OpenSearch Service domain to provide access to.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The account ID to grant access to.</p>
+    pub fn account(&self) -> std::option::Option<&str> {
+        self.account.as_deref()
     }
 }
 

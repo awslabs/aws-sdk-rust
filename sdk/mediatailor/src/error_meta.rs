@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// Invalid request parameters.
+    /// <p>A request contains unexpected data.</p>
     BadRequestException(crate::error::BadRequestException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).

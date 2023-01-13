@@ -159,6 +159,16 @@ pub(crate) fn reflens_structure_crate_output_list_builds_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_compute_output_next_token(
+    input: &crate::output::ListComputeOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_fleets_output_next_token(
     input: &crate::output::ListFleetsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -181,6 +191,16 @@ pub(crate) fn reflens_structure_crate_output_list_game_server_groups_output_next
 
 pub(crate) fn reflens_structure_crate_output_list_game_servers_output_next_token(
     input: &crate::output::ListGameServersOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_locations_output_next_token(
+    input: &crate::output::ListLocationsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -359,6 +379,16 @@ pub(crate) fn lens_structure_crate_output_list_builds_output_builds(
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_list_compute_output_compute_list(
+    input: crate::output::ListComputeOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Compute>> {
+    let input = match input.compute_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_fleets_output_fleet_ids(
     input: crate::output::ListFleetsOutput,
 ) -> std::option::Option<std::vec::Vec<std::string::String>> {
@@ -383,6 +413,16 @@ pub(crate) fn lens_structure_crate_output_list_game_servers_output_game_servers(
     input: crate::output::ListGameServersOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::GameServer>> {
     let input = match input.game_servers {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_locations_output_locations(
+    input: crate::output::ListLocationsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::LocationModel>> {
+    let input = match input.locations {
         None => return None,
         Some(t) => t,
     };

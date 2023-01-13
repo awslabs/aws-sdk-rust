@@ -921,6 +921,11 @@ pub fn serialize_structure_crate_model_vpc_options(
     if input.ipv6_support {
         object.key("Ipv6Support").boolean(input.ipv6_support);
     }
+    if input.appliance_mode_support {
+        object
+            .key("ApplianceModeSupport")
+            .boolean(input.appliance_mode_support);
+    }
     Ok(())
 }
 

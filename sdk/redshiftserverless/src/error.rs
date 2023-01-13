@@ -733,6 +733,8 @@ pub enum ConvertRecoveryPointToSnapshotErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service limit was exceeded.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request exceeded the number of tags allowed for a resource.</p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The input failed to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
     ///
@@ -758,6 +760,7 @@ impl std::fmt::Display for ConvertRecoveryPointToSnapshotError {
             ConvertRecoveryPointToSnapshotErrorKind::ServiceQuotaExceededException(_inner) => {
                 _inner.fmt(f)
             }
+            ConvertRecoveryPointToSnapshotErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             ConvertRecoveryPointToSnapshotErrorKind::ValidationException(_inner) => _inner.fmt(f),
             ConvertRecoveryPointToSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -853,6 +856,13 @@ impl ConvertRecoveryPointToSnapshotError {
             ConvertRecoveryPointToSnapshotErrorKind::ServiceQuotaExceededException(_)
         )
     }
+    /// Returns `true` if the error kind is `ConvertRecoveryPointToSnapshotErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConvertRecoveryPointToSnapshotErrorKind::TooManyTagsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ConvertRecoveryPointToSnapshotErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
@@ -874,6 +884,7 @@ impl std::error::Error for ConvertRecoveryPointToSnapshotError {
             ConvertRecoveryPointToSnapshotErrorKind::ServiceQuotaExceededException(_inner) => {
                 Some(_inner)
             }
+            ConvertRecoveryPointToSnapshotErrorKind::TooManyTagsException(_inner) => Some(_inner),
             ConvertRecoveryPointToSnapshotErrorKind::ValidationException(_inner) => Some(_inner),
             ConvertRecoveryPointToSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
@@ -1221,6 +1232,8 @@ pub enum CreateSnapshotErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service limit was exceeded.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request exceeded the number of tags allowed for a resource.</p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The input failed to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
     ///
@@ -1240,6 +1253,7 @@ impl std::fmt::Display for CreateSnapshotError {
             CreateSnapshotErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CreateSnapshotErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateSnapshotErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateSnapshotErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateSnapshotErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1325,6 +1339,10 @@ impl CreateSnapshotError {
             CreateSnapshotErrorKind::ServiceQuotaExceededException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(&self.kind, CreateSnapshotErrorKind::TooManyTagsException(_))
+    }
     /// Returns `true` if the error kind is `CreateSnapshotErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateSnapshotErrorKind::ValidationException(_))
@@ -1337,6 +1355,7 @@ impl std::error::Error for CreateSnapshotError {
             CreateSnapshotErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateSnapshotErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateSnapshotErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateSnapshotErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateSnapshotErrorKind::ValidationException(_inner) => Some(_inner),
             CreateSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
@@ -3328,6 +3347,129 @@ impl std::error::Error for GetSnapshotError {
     }
 }
 
+/// Error type for the `GetTableRestoreStatus` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetTableRestoreStatusError {
+    /// Kind of error that occurred.
+    pub kind: GetTableRestoreStatusErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetTableRestoreStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetTableRestoreStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetTableRestoreStatus` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetTableRestoreStatusErrorKind {
+    /// <p>The resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The input failed to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetTableRestoreStatusError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetTableRestoreStatusErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetTableRestoreStatusErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetTableRestoreStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetTableRestoreStatusError {
+    fn code(&self) -> Option<&str> {
+        GetTableRestoreStatusError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetTableRestoreStatusError {
+    /// Creates a new `GetTableRestoreStatusError`.
+    pub fn new(kind: GetTableRestoreStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetTableRestoreStatusError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetTableRestoreStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetTableRestoreStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetTableRestoreStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetTableRestoreStatusErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTableRestoreStatusErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTableRestoreStatusErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTableRestoreStatusErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetTableRestoreStatusError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetTableRestoreStatusErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetTableRestoreStatusErrorKind::ValidationException(_inner) => Some(_inner),
+            GetTableRestoreStatusErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `GetUsageLimit` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4119,6 +4261,140 @@ impl std::error::Error for ListSnapshotsError {
             ListSnapshotsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListSnapshotsErrorKind::ValidationException(_inner) => Some(_inner),
             ListSnapshotsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListTableRestoreStatus` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListTableRestoreStatusError {
+    /// Kind of error that occurred.
+    pub kind: ListTableRestoreStatusErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListTableRestoreStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTableRestoreStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListTableRestoreStatus` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTableRestoreStatusErrorKind {
+    /// <p>The provided pagination token is invalid.</p>
+    InvalidPaginationException(crate::error::InvalidPaginationException),
+    /// <p>The resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The input failed to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListTableRestoreStatusError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTableRestoreStatusErrorKind::InvalidPaginationException(_inner) => _inner.fmt(f),
+            ListTableRestoreStatusErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTableRestoreStatusErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListTableRestoreStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListTableRestoreStatusError {
+    fn code(&self) -> Option<&str> {
+        ListTableRestoreStatusError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListTableRestoreStatusError {
+    /// Creates a new `ListTableRestoreStatusError`.
+    pub fn new(kind: ListTableRestoreStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListTableRestoreStatusError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTableRestoreStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListTableRestoreStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTableRestoreStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListTableRestoreStatusErrorKind::InvalidPaginationException`.
+    pub fn is_invalid_pagination_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTableRestoreStatusErrorKind::InvalidPaginationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTableRestoreStatusErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTableRestoreStatusErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTableRestoreStatusErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTableRestoreStatusErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListTableRestoreStatusError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTableRestoreStatusErrorKind::InvalidPaginationException(_inner) => Some(_inner),
+            ListTableRestoreStatusErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTableRestoreStatusErrorKind::ValidationException(_inner) => Some(_inner),
+            ListTableRestoreStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5003,6 +5279,158 @@ impl std::error::Error for RestoreFromSnapshotError {
             RestoreFromSnapshotErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             RestoreFromSnapshotErrorKind::ValidationException(_inner) => Some(_inner),
             RestoreFromSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `RestoreTableFromSnapshot` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RestoreTableFromSnapshotError {
+    /// Kind of error that occurred.
+    pub kind: RestoreTableFromSnapshotErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RestoreTableFromSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RestoreTableFromSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `RestoreTableFromSnapshot` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RestoreTableFromSnapshotErrorKind {
+    /// <p>The submitted action has conflicts.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The input failed to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for RestoreTableFromSnapshotError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RestoreTableFromSnapshotErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            RestoreTableFromSnapshotErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            RestoreTableFromSnapshotErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            RestoreTableFromSnapshotErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            RestoreTableFromSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RestoreTableFromSnapshotError {
+    fn code(&self) -> Option<&str> {
+        RestoreTableFromSnapshotError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            RestoreTableFromSnapshotErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl RestoreTableFromSnapshotError {
+    /// Creates a new `RestoreTableFromSnapshotError`.
+    pub fn new(kind: RestoreTableFromSnapshotErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RestoreTableFromSnapshotError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RestoreTableFromSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RestoreTableFromSnapshotError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RestoreTableFromSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `RestoreTableFromSnapshotErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableFromSnapshotErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreTableFromSnapshotErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableFromSnapshotErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreTableFromSnapshotErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableFromSnapshotErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreTableFromSnapshotErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableFromSnapshotErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for RestoreTableFromSnapshotError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RestoreTableFromSnapshotErrorKind::ConflictException(_inner) => Some(_inner),
+            RestoreTableFromSnapshotErrorKind::InternalServerException(_inner) => Some(_inner),
+            RestoreTableFromSnapshotErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            RestoreTableFromSnapshotErrorKind::ValidationException(_inner) => Some(_inner),
+            RestoreTableFromSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

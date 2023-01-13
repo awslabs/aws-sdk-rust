@@ -199,6 +199,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeExecution {
     }
 }
 
+/// Operation shape for `DescribeMapRun`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_map_run`](crate::client::Client::describe_map_run).
+///
+/// See [`crate::client::fluent_builders::DescribeMapRun`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeMapRun {
+    _private: (),
+}
+impl DescribeMapRun {
+    /// Creates a new builder-style object to manufacture [`DescribeMapRunInput`](crate::input::DescribeMapRunInput).
+    pub fn builder() -> crate::input::describe_map_run_input::Builder {
+        crate::input::describe_map_run_input::Builder::default()
+    }
+    /// Creates a new `DescribeMapRun` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeMapRun {
+    type Output =
+        std::result::Result<crate::output::DescribeMapRunOutput, crate::error::DescribeMapRunError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_map_run_error(response)
+        } else {
+            crate::operation_deser::parse_describe_map_run_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeStateMachine`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -395,6 +427,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExecutions {
             crate::operation_deser::parse_list_executions_error(response)
         } else {
             crate::operation_deser::parse_list_executions_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListMapRuns`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_map_runs`](crate::client::Client::list_map_runs).
+///
+/// See [`crate::client::fluent_builders::ListMapRuns`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListMapRuns {
+    _private: (),
+}
+impl ListMapRuns {
+    /// Creates a new builder-style object to manufacture [`ListMapRunsInput`](crate::input::ListMapRunsInput).
+    pub fn builder() -> crate::input::list_map_runs_input::Builder {
+        crate::input::list_map_runs_input::Builder::default()
+    }
+    /// Creates a new `ListMapRuns` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListMapRuns {
+    type Output =
+        std::result::Result<crate::output::ListMapRunsOutput, crate::error::ListMapRunsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_map_runs_error(response)
+        } else {
+            crate::operation_deser::parse_list_map_runs_response(response)
         }
     }
 }
@@ -727,6 +791,38 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateMapRun`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_map_run`](crate::client::Client::update_map_run).
+///
+/// See [`crate::client::fluent_builders::UpdateMapRun`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateMapRun {
+    _private: (),
+}
+impl UpdateMapRun {
+    /// Creates a new builder-style object to manufacture [`UpdateMapRunInput`](crate::input::UpdateMapRunInput).
+    pub fn builder() -> crate::input::update_map_run_input::Builder {
+        crate::input::update_map_run_input::Builder::default()
+    }
+    /// Creates a new `UpdateMapRun` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateMapRun {
+    type Output =
+        std::result::Result<crate::output::UpdateMapRunOutput, crate::error::UpdateMapRunError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_map_run_error(response)
+        } else {
+            crate::operation_deser::parse_update_map_run_response(response)
         }
     }
 }

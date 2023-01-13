@@ -555,6 +555,10 @@ pub struct ListMetricsOutput {
     /// <p>The token that marks the start of the next batch of returned results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
+    /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
+    #[doc(hidden)]
+    pub owning_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListMetricsOutput {
     /// <p>The metrics that match your request. </p>
@@ -565,6 +569,11 @@ impl ListMetricsOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
+    /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
+    pub fn owning_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.owning_accounts.as_deref()
+    }
 }
 /// See [`ListMetricsOutput`](crate::output::ListMetricsOutput).
 pub mod list_metrics_output {
@@ -574,6 +583,7 @@ pub mod list_metrics_output {
     pub struct Builder {
         pub(crate) metrics: std::option::Option<std::vec::Vec<crate::model::Metric>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) owning_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `metrics`.
@@ -605,11 +615,33 @@ pub mod list_metrics_output {
             self.next_token = input;
             self
         }
+        /// Appends an item to `owning_accounts`.
+        ///
+        /// To override the contents of this collection use [`set_owning_accounts`](Self::set_owning_accounts).
+        ///
+        /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
+        /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
+        pub fn owning_accounts(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.owning_accounts.unwrap_or_default();
+            v.push(input.into());
+            self.owning_accounts = Some(v);
+            self
+        }
+        /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
+        /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
+        pub fn set_owning_accounts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.owning_accounts = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListMetricsOutput`](crate::output::ListMetricsOutput).
         pub fn build(self) -> crate::output::ListMetricsOutput {
             crate::output::ListMetricsOutput {
                 metrics: self.metrics,
                 next_token: self.next_token,
+                owning_accounts: self.owning_accounts,
             }
         }
     }
@@ -842,7 +874,7 @@ pub struct GetMetricStreamOutput {
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
     #[doc(hidden)]
     pub exclude_filters: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
-    /// <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.</p>
+    /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
     #[doc(hidden)]
     pub firehose_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that is used by this metric stream.</p>
@@ -882,7 +914,7 @@ impl GetMetricStreamOutput {
     pub fn exclude_filters(&self) -> std::option::Option<&[crate::model::MetricStreamFilter]> {
         self.exclude_filters.as_deref()
     }
-    /// <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.</p>
+    /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
     pub fn firehose_arn(&self) -> std::option::Option<&str> {
         self.firehose_arn.as_deref()
     }
@@ -993,12 +1025,12 @@ pub mod get_metric_stream_output {
             self.exclude_filters = input;
             self
         }
-        /// <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.</p>
+        /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
         pub fn firehose_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firehose_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.</p>
+        /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
         pub fn set_firehose_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.firehose_arn = input;
             self

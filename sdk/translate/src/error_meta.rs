@@ -27,11 +27,11 @@ pub enum Error {
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You have added too many tags to this resource. The maximum is 50 tags.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>Requested display language code is not supported.</p>
     UnsupportedDisplayLanguageCodeException(crate::error::UnsupportedDisplayLanguageCodeException),
-    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <code>how-to-error-msg</code>. </p>
+    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-to-error-msg.html">Error messages</a>. </p>
     UnsupportedLanguagePairException(crate::error::UnsupportedLanguagePairException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).

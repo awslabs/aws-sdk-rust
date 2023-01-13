@@ -50,6 +50,79 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PutResourceSetOutput {
+    /// <p>Details about the resource set.</p>
+    #[doc(hidden)]
+    pub resource_set: std::option::Option<crate::model::ResourceSet>,
+    /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
+    #[doc(hidden)]
+    pub resource_set_arn: std::option::Option<std::string::String>,
+}
+impl PutResourceSetOutput {
+    /// <p>Details about the resource set.</p>
+    pub fn resource_set(&self) -> std::option::Option<&crate::model::ResourceSet> {
+        self.resource_set.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
+    pub fn resource_set_arn(&self) -> std::option::Option<&str> {
+        self.resource_set_arn.as_deref()
+    }
+}
+/// See [`PutResourceSetOutput`](crate::output::PutResourceSetOutput).
+pub mod put_resource_set_output {
+
+    /// A builder for [`PutResourceSetOutput`](crate::output::PutResourceSetOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_set: std::option::Option<crate::model::ResourceSet>,
+        pub(crate) resource_set_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Details about the resource set.</p>
+        pub fn resource_set(mut self, input: crate::model::ResourceSet) -> Self {
+            self.resource_set = Some(input);
+            self
+        }
+        /// <p>Details about the resource set.</p>
+        pub fn set_resource_set(
+            mut self,
+            input: std::option::Option<crate::model::ResourceSet>,
+        ) -> Self {
+            self.resource_set = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
+        pub fn resource_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_set_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
+        pub fn set_resource_set_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_set_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutResourceSetOutput`](crate::output::PutResourceSetOutput).
+        pub fn build(self) -> crate::output::PutResourceSetOutput {
+            crate::output::PutResourceSetOutput {
+                resource_set: self.resource_set,
+                resource_set_arn: self.resource_set_arn,
+            }
+        }
+    }
+}
+impl PutResourceSetOutput {
+    /// Creates a new builder-style object to manufacture [`PutResourceSetOutput`](crate::output::PutResourceSetOutput).
+    pub fn builder() -> crate::output::put_resource_set_output::Builder {
+        crate::output::put_resource_set_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutProtocolsListOutput {
     /// <p>The details of the Firewall Manager protocols list.</p>
     #[doc(hidden)]
@@ -431,6 +504,159 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListResourceSetsOutput {
+    /// <p>An array of <code>ResourceSetSummary</code> objects.</p>
+    #[doc(hidden)]
+    pub resource_sets: std::option::Option<std::vec::Vec<crate::model::ResourceSetSummary>>,
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourceSetsOutput {
+    /// <p>An array of <code>ResourceSetSummary</code> objects.</p>
+    pub fn resource_sets(&self) -> std::option::Option<&[crate::model::ResourceSetSummary]> {
+        self.resource_sets.as_deref()
+    }
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
+pub mod list_resource_sets_output {
+
+    /// A builder for [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_sets:
+            std::option::Option<std::vec::Vec<crate::model::ResourceSetSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `resource_sets`.
+        ///
+        /// To override the contents of this collection use [`set_resource_sets`](Self::set_resource_sets).
+        ///
+        /// <p>An array of <code>ResourceSetSummary</code> objects.</p>
+        pub fn resource_sets(mut self, input: crate::model::ResourceSetSummary) -> Self {
+            let mut v = self.resource_sets.unwrap_or_default();
+            v.push(input);
+            self.resource_sets = Some(v);
+            self
+        }
+        /// <p>An array of <code>ResourceSetSummary</code> objects.</p>
+        pub fn set_resource_sets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceSetSummary>>,
+        ) -> Self {
+            self.resource_sets = input;
+            self
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
+        pub fn build(self) -> crate::output::ListResourceSetsOutput {
+            crate::output::ListResourceSetsOutput {
+                resource_sets: self.resource_sets,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListResourceSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
+    pub fn builder() -> crate::output::list_resource_sets_output::Builder {
+        crate::output::list_resource_sets_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListResourceSetResourcesOutput {
+    /// <p>An array of the associated resources' uniform resource identifiers (URI).</p>
+    #[doc(hidden)]
+    pub items: std::option::Option<std::vec::Vec<crate::model::Resource>>,
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourceSetResourcesOutput {
+    /// <p>An array of the associated resources' uniform resource identifiers (URI).</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.items.as_deref()
+    }
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListResourceSetResourcesOutput`](crate::output::ListResourceSetResourcesOutput).
+pub mod list_resource_set_resources_output {
+
+    /// A builder for [`ListResourceSetResourcesOutput`](crate::output::ListResourceSetResourcesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Resource>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>An array of the associated resources' uniform resource identifiers (URI).</p>
+        pub fn items(mut self, input: crate::model::Resource) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>An array of the associated resources' uniform resource identifiers (URI).</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListResourceSetResourcesOutput`](crate::output::ListResourceSetResourcesOutput).
+        pub fn build(self) -> crate::output::ListResourceSetResourcesOutput {
+            crate::output::ListResourceSetResourcesOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListResourceSetResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListResourceSetResourcesOutput`](crate::output::ListResourceSetResourcesOutput).
+    pub fn builder() -> crate::output::list_resource_set_resources_output::Builder {
+        crate::output::list_resource_set_resources_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProtocolsListsOutput {
     /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
     #[doc(hidden)]
@@ -656,6 +882,82 @@ impl ListMemberAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput).
     pub fn builder() -> crate::output::list_member_accounts_output::Builder {
         crate::output::list_member_accounts_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListDiscoveredResourcesOutput {
+    /// <p>Details of the resources that were discovered.</p>
+    #[doc(hidden)]
+    pub items: std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>,
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDiscoveredResourcesOutput {
+    /// <p>Details of the resources that were discovered.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::DiscoveredResource]> {
+        self.items.as_deref()
+    }
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
+pub mod list_discovered_resources_output {
+
+    /// A builder for [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Details of the resources that were discovered.</p>
+        pub fn items(mut self, input: crate::model::DiscoveredResource) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>Details of the resources that were discovered.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
+        pub fn build(self) -> crate::output::ListDiscoveredResourcesOutput {
+            crate::output::ListDiscoveredResourcesOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListDiscoveredResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
+    pub fn builder() -> crate::output::list_discovered_resources_output::Builder {
+        crate::output::list_discovered_resources_output::Builder::default()
     }
 }
 
@@ -1002,6 +1304,79 @@ impl GetThirdPartyFirewallAssociationStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetThirdPartyFirewallAssociationStatusOutput`](crate::output::GetThirdPartyFirewallAssociationStatusOutput).
     pub fn builder() -> crate::output::get_third_party_firewall_association_status_output::Builder {
         crate::output::get_third_party_firewall_association_status_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetResourceSetOutput {
+    /// <p>Information about the specified resource set.</p>
+    #[doc(hidden)]
+    pub resource_set: std::option::Option<crate::model::ResourceSet>,
+    /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
+    #[doc(hidden)]
+    pub resource_set_arn: std::option::Option<std::string::String>,
+}
+impl GetResourceSetOutput {
+    /// <p>Information about the specified resource set.</p>
+    pub fn resource_set(&self) -> std::option::Option<&crate::model::ResourceSet> {
+        self.resource_set.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
+    pub fn resource_set_arn(&self) -> std::option::Option<&str> {
+        self.resource_set_arn.as_deref()
+    }
+}
+/// See [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
+pub mod get_resource_set_output {
+
+    /// A builder for [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_set: std::option::Option<crate::model::ResourceSet>,
+        pub(crate) resource_set_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Information about the specified resource set.</p>
+        pub fn resource_set(mut self, input: crate::model::ResourceSet) -> Self {
+            self.resource_set = Some(input);
+            self
+        }
+        /// <p>Information about the specified resource set.</p>
+        pub fn set_resource_set(
+            mut self,
+            input: std::option::Option<crate::model::ResourceSet>,
+        ) -> Self {
+            self.resource_set = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
+        pub fn resource_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_set_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
+        pub fn set_resource_set_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_set_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
+        pub fn build(self) -> crate::output::GetResourceSetOutput {
+            crate::output::GetResourceSetOutput {
+                resource_set: self.resource_set,
+                resource_set_arn: self.resource_set_arn,
+            }
+        }
+    }
+}
+impl GetResourceSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
+    pub fn builder() -> crate::output::get_resource_set_output::Builder {
+        crate::output::get_resource_set_output::Builder::default()
     }
 }
 
@@ -1653,6 +2028,30 @@ impl DisassociateAdminAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteResourceSetOutput {}
+/// See [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
+pub mod delete_resource_set_output {
+
+    /// A builder for [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
+        pub fn build(self) -> crate::output::DeleteResourceSetOutput {
+            crate::output::DeleteResourceSetOutput {}
+        }
+    }
+}
+impl DeleteResourceSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
+    pub fn builder() -> crate::output::delete_resource_set_output::Builder {
+        crate::output::delete_resource_set_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProtocolsListOutput {}
 /// See [`DeleteProtocolsListOutput`](crate::output::DeleteProtocolsListOutput).
 pub mod delete_protocols_list_output {
@@ -1743,6 +2142,164 @@ impl DeleteAppsListOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppsListOutput`](crate::output::DeleteAppsListOutput).
     pub fn builder() -> crate::output::delete_apps_list_output::Builder {
         crate::output::delete_apps_list_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BatchDisassociateResourceOutput {
+    /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+    #[doc(hidden)]
+    pub resource_set_identifier: std::option::Option<std::string::String>,
+    /// <p>The resources that failed to disassociate from the resource set.</p>
+    #[doc(hidden)]
+    pub failed_items: std::option::Option<std::vec::Vec<crate::model::FailedItem>>,
+}
+impl BatchDisassociateResourceOutput {
+    /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+    pub fn resource_set_identifier(&self) -> std::option::Option<&str> {
+        self.resource_set_identifier.as_deref()
+    }
+    /// <p>The resources that failed to disassociate from the resource set.</p>
+    pub fn failed_items(&self) -> std::option::Option<&[crate::model::FailedItem]> {
+        self.failed_items.as_deref()
+    }
+}
+/// See [`BatchDisassociateResourceOutput`](crate::output::BatchDisassociateResourceOutput).
+pub mod batch_disassociate_resource_output {
+
+    /// A builder for [`BatchDisassociateResourceOutput`](crate::output::BatchDisassociateResourceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_set_identifier: std::option::Option<std::string::String>,
+        pub(crate) failed_items: std::option::Option<std::vec::Vec<crate::model::FailedItem>>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+        pub fn resource_set_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_set_identifier = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+        pub fn set_resource_set_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_set_identifier = input;
+            self
+        }
+        /// Appends an item to `failed_items`.
+        ///
+        /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
+        ///
+        /// <p>The resources that failed to disassociate from the resource set.</p>
+        pub fn failed_items(mut self, input: crate::model::FailedItem) -> Self {
+            let mut v = self.failed_items.unwrap_or_default();
+            v.push(input);
+            self.failed_items = Some(v);
+            self
+        }
+        /// <p>The resources that failed to disassociate from the resource set.</p>
+        pub fn set_failed_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FailedItem>>,
+        ) -> Self {
+            self.failed_items = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchDisassociateResourceOutput`](crate::output::BatchDisassociateResourceOutput).
+        pub fn build(self) -> crate::output::BatchDisassociateResourceOutput {
+            crate::output::BatchDisassociateResourceOutput {
+                resource_set_identifier: self.resource_set_identifier,
+                failed_items: self.failed_items,
+            }
+        }
+    }
+}
+impl BatchDisassociateResourceOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDisassociateResourceOutput`](crate::output::BatchDisassociateResourceOutput).
+    pub fn builder() -> crate::output::batch_disassociate_resource_output::Builder {
+        crate::output::batch_disassociate_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BatchAssociateResourceOutput {
+    /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+    #[doc(hidden)]
+    pub resource_set_identifier: std::option::Option<std::string::String>,
+    /// <p>The resources that failed to associate to the resource set.</p>
+    #[doc(hidden)]
+    pub failed_items: std::option::Option<std::vec::Vec<crate::model::FailedItem>>,
+}
+impl BatchAssociateResourceOutput {
+    /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+    pub fn resource_set_identifier(&self) -> std::option::Option<&str> {
+        self.resource_set_identifier.as_deref()
+    }
+    /// <p>The resources that failed to associate to the resource set.</p>
+    pub fn failed_items(&self) -> std::option::Option<&[crate::model::FailedItem]> {
+        self.failed_items.as_deref()
+    }
+}
+/// See [`BatchAssociateResourceOutput`](crate::output::BatchAssociateResourceOutput).
+pub mod batch_associate_resource_output {
+
+    /// A builder for [`BatchAssociateResourceOutput`](crate::output::BatchAssociateResourceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_set_identifier: std::option::Option<std::string::String>,
+        pub(crate) failed_items: std::option::Option<std::vec::Vec<crate::model::FailedItem>>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+        pub fn resource_set_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_set_identifier = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+        pub fn set_resource_set_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_set_identifier = input;
+            self
+        }
+        /// Appends an item to `failed_items`.
+        ///
+        /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
+        ///
+        /// <p>The resources that failed to associate to the resource set.</p>
+        pub fn failed_items(mut self, input: crate::model::FailedItem) -> Self {
+            let mut v = self.failed_items.unwrap_or_default();
+            v.push(input);
+            self.failed_items = Some(v);
+            self
+        }
+        /// <p>The resources that failed to associate to the resource set.</p>
+        pub fn set_failed_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FailedItem>>,
+        ) -> Self {
+            self.failed_items = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchAssociateResourceOutput`](crate::output::BatchAssociateResourceOutput).
+        pub fn build(self) -> crate::output::BatchAssociateResourceOutput {
+            crate::output::BatchAssociateResourceOutput {
+                resource_set_identifier: self.resource_set_identifier,
+                failed_items: self.failed_items,
+            }
+        }
+    }
+}
+impl BatchAssociateResourceOutput {
+    /// Creates a new builder-style object to manufacture [`BatchAssociateResourceOutput`](crate::output::BatchAssociateResourceOutput).
+    pub fn builder() -> crate::output::batch_associate_resource_output::Builder {
+        crate::output::batch_associate_resource_output::Builder::default()
     }
 }
 

@@ -288,6 +288,306 @@ impl TooManyTagsException {
     }
 }
 
+/// <p>Exceeded the maximum size for a resource policy.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PolicySizeLimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl PolicySizeLimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for PolicySizeLimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "PolicySizeLimitExceededException")?;
+        if let Some(inner_5) = &self.message {
+            {
+                write!(f, ": {}", inner_5)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for PolicySizeLimitExceededException {}
+/// See [`PolicySizeLimitExceededException`](crate::error::PolicySizeLimitExceededException).
+pub mod policy_size_limit_exceeded_exception {
+
+    /// A builder for [`PolicySizeLimitExceededException`](crate::error::PolicySizeLimitExceededException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PolicySizeLimitExceededException`](crate::error::PolicySizeLimitExceededException).
+        pub fn build(self) -> crate::error::PolicySizeLimitExceededException {
+            crate::error::PolicySizeLimitExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl PolicySizeLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`PolicySizeLimitExceededException`](crate::error::PolicySizeLimitExceededException).
+    pub fn builder() -> crate::error::policy_size_limit_exceeded_exception::Builder {
+        crate::error::policy_size_limit_exceeded_exception::Builder::default()
+    }
+}
+
+/// <p>Exceeded the maximum number of resource policies for a target Amazon Web Services account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PolicyCountLimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl PolicyCountLimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for PolicyCountLimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "PolicyCountLimitExceededException")?;
+        if let Some(inner_6) = &self.message {
+            {
+                write!(f, ": {}", inner_6)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for PolicyCountLimitExceededException {}
+/// See [`PolicyCountLimitExceededException`](crate::error::PolicyCountLimitExceededException).
+pub mod policy_count_limit_exceeded_exception {
+
+    /// A builder for [`PolicyCountLimitExceededException`](crate::error::PolicyCountLimitExceededException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PolicyCountLimitExceededException`](crate::error::PolicyCountLimitExceededException).
+        pub fn build(self) -> crate::error::PolicyCountLimitExceededException {
+            crate::error::PolicyCountLimitExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl PolicyCountLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`PolicyCountLimitExceededException`](crate::error::PolicyCountLimitExceededException).
+    pub fn builder() -> crate::error::policy_count_limit_exceeded_exception::Builder {
+        crate::error::policy_count_limit_exceeded_exception::Builder::default()
+    }
+}
+
+/// <p>Invalid policy document provided in request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MalformedPolicyDocumentException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl MalformedPolicyDocumentException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for MalformedPolicyDocumentException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "MalformedPolicyDocumentException")?;
+        if let Some(inner_7) = &self.message {
+            {
+                write!(f, ": {}", inner_7)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for MalformedPolicyDocumentException {}
+/// See [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
+pub mod malformed_policy_document_exception {
+
+    /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
+        pub fn build(self) -> crate::error::MalformedPolicyDocumentException {
+            crate::error::MalformedPolicyDocumentException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl MalformedPolicyDocumentException {
+    /// Creates a new builder-style object to manufacture [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
+    pub fn builder() -> crate::error::malformed_policy_document_exception::Builder {
+        crate::error::malformed_policy_document_exception::Builder::default()
+    }
+}
+
+/// <p>The provided resource policy would prevent the caller of this request from calling PutResourcePolicy in the future.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LockoutPreventionException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl LockoutPreventionException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for LockoutPreventionException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "LockoutPreventionException")?;
+        if let Some(inner_8) = &self.message {
+            {
+                write!(f, ": {}", inner_8)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for LockoutPreventionException {}
+/// See [`LockoutPreventionException`](crate::error::LockoutPreventionException).
+pub mod lockout_prevention_exception {
+
+    /// A builder for [`LockoutPreventionException`](crate::error::LockoutPreventionException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LockoutPreventionException`](crate::error::LockoutPreventionException).
+        pub fn build(self) -> crate::error::LockoutPreventionException {
+            crate::error::LockoutPreventionException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl LockoutPreventionException {
+    /// Creates a new builder-style object to manufacture [`LockoutPreventionException`](crate::error::LockoutPreventionException).
+    pub fn builder() -> crate::error::lockout_prevention_exception::Builder {
+        crate::error::lockout_prevention_exception::Builder::default()
+    }
+}
+
+/// <p>A policy revision id was provided which does not match the latest policy revision. This exception is also if a policy revision id of 0 is provided via <code>PutResourcePolicy</code> and a policy with the same name already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidPolicyRevisionIdException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl InvalidPolicyRevisionIdException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidPolicyRevisionIdException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidPolicyRevisionIdException")?;
+        if let Some(inner_9) = &self.message {
+            {
+                write!(f, ": {}", inner_9)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidPolicyRevisionIdException {}
+/// See [`InvalidPolicyRevisionIdException`](crate::error::InvalidPolicyRevisionIdException).
+pub mod invalid_policy_revision_id_exception {
+
+    /// A builder for [`InvalidPolicyRevisionIdException`](crate::error::InvalidPolicyRevisionIdException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidPolicyRevisionIdException`](crate::error::InvalidPolicyRevisionIdException).
+        pub fn build(self) -> crate::error::InvalidPolicyRevisionIdException {
+            crate::error::InvalidPolicyRevisionIdException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidPolicyRevisionIdException {
+    /// Creates a new builder-style object to manufacture [`InvalidPolicyRevisionIdException`](crate::error::InvalidPolicyRevisionIdException).
+    pub fn builder() -> crate::error::invalid_policy_revision_id_exception::Builder {
+        crate::error::invalid_policy_revision_id_exception::Builder::default()
+    }
+}
+
 /// <p>You have reached the maximum number of sampling rules.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -305,9 +605,9 @@ impl RuleLimitExceededException {
 impl std::fmt::Display for RuleLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RuleLimitExceededException")?;
-        if let Some(inner_5) = &self.message {
+        if let Some(inner_10) = &self.message {
             {
-                write!(f, ": {}", inner_5)?;
+                write!(f, ": {}", inner_10)?;
             }
         }
         Ok(())
@@ -816,6 +1116,142 @@ impl std::error::Error for DeleteGroupError {
             DeleteGroupErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteGroupErrorKind::ThrottledException(_inner) => Some(_inner),
             DeleteGroupErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeleteResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteResourcePolicyError {
+    /// Kind of error that occurred.
+    pub kind: DeleteResourcePolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteResourcePolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteResourcePolicyErrorKind {
+    /// <p>A policy revision id was provided which does not match the latest policy revision. This exception is also if a policy revision id of 0 is provided via <code>PutResourcePolicy</code> and a policy with the same name already exists.</p>
+    InvalidPolicyRevisionIdException(crate::error::InvalidPolicyRevisionIdException),
+    /// <p>The request is missing required parameters or has invalid parameters.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The request exceeds the maximum number of requests per second.</p>
+    ThrottledException(crate::error::ThrottledException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteResourcePolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteResourcePolicyErrorKind::InvalidPolicyRevisionIdException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteResourcePolicyErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::ThrottledException(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteResourcePolicyError {
+    fn code(&self) -> Option<&str> {
+        DeleteResourcePolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteResourcePolicyError {
+    /// Creates a new `DeleteResourcePolicyError`.
+    pub fn new(kind: DeleteResourcePolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteResourcePolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteResourcePolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InvalidPolicyRevisionIdException`.
+    pub fn is_invalid_policy_revision_id_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::InvalidPolicyRevisionIdException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ThrottledException`.
+    pub fn is_throttled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::ThrottledException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteResourcePolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteResourcePolicyErrorKind::InvalidPolicyRevisionIdException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::ThrottledException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2603,6 +3039,129 @@ impl std::error::Error for GetTraceSummariesError {
     }
 }
 
+/// Error type for the `ListResourcePolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListResourcePoliciesError {
+    /// Kind of error that occurred.
+    pub kind: ListResourcePoliciesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListResourcePoliciesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListResourcePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListResourcePolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListResourcePoliciesErrorKind {
+    /// <p>The request is missing required parameters or has invalid parameters.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The request exceeds the maximum number of requests per second.</p>
+    ThrottledException(crate::error::ThrottledException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListResourcePoliciesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListResourcePoliciesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListResourcePoliciesErrorKind::ThrottledException(_inner) => _inner.fmt(f),
+            ListResourcePoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListResourcePoliciesError {
+    fn code(&self) -> Option<&str> {
+        ListResourcePoliciesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListResourcePoliciesError {
+    /// Creates a new `ListResourcePoliciesError`.
+    pub fn new(kind: ListResourcePoliciesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListResourcePoliciesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListResourcePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListResourcePoliciesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListResourcePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListResourcePoliciesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourcePoliciesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListResourcePoliciesErrorKind::ThrottledException`.
+    pub fn is_throttled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourcePoliciesErrorKind::ThrottledException(_)
+        )
+    }
+}
+impl std::error::Error for ListResourcePoliciesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListResourcePoliciesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListResourcePoliciesErrorKind::ThrottledException(_inner) => Some(_inner),
+            ListResourcePoliciesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListTagsForResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2848,6 +3407,169 @@ impl std::error::Error for PutEncryptionConfigError {
             PutEncryptionConfigErrorKind::InvalidRequestException(_inner) => Some(_inner),
             PutEncryptionConfigErrorKind::ThrottledException(_inner) => Some(_inner),
             PutEncryptionConfigErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `PutResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutResourcePolicyError {
+    /// Kind of error that occurred.
+    pub kind: PutResourcePolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutResourcePolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `PutResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutResourcePolicyErrorKind {
+    /// <p>A policy revision id was provided which does not match the latest policy revision. This exception is also if a policy revision id of 0 is provided via <code>PutResourcePolicy</code> and a policy with the same name already exists.</p>
+    InvalidPolicyRevisionIdException(crate::error::InvalidPolicyRevisionIdException),
+    /// <p>The provided resource policy would prevent the caller of this request from calling PutResourcePolicy in the future.</p>
+    LockoutPreventionException(crate::error::LockoutPreventionException),
+    /// <p>Invalid policy document provided in request.</p>
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    /// <p>Exceeded the maximum number of resource policies for a target Amazon Web Services account.</p>
+    PolicyCountLimitExceededException(crate::error::PolicyCountLimitExceededException),
+    /// <p>Exceeded the maximum size for a resource policy.</p>
+    PolicySizeLimitExceededException(crate::error::PolicySizeLimitExceededException),
+    /// <p>The request exceeds the maximum number of requests per second.</p>
+    ThrottledException(crate::error::ThrottledException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for PutResourcePolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutResourcePolicyErrorKind::InvalidPolicyRevisionIdException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::LockoutPreventionException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::PolicyCountLimitExceededException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::PolicySizeLimitExceededException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::ThrottledException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutResourcePolicyError {
+    fn code(&self) -> Option<&str> {
+        PutResourcePolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutResourcePolicyError {
+    /// Creates a new `PutResourcePolicyError`.
+    pub fn new(kind: PutResourcePolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutResourcePolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutResourcePolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::InvalidPolicyRevisionIdException`.
+    pub fn is_invalid_policy_revision_id_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::InvalidPolicyRevisionIdException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::LockoutPreventionException`.
+    pub fn is_lockout_prevention_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::LockoutPreventionException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::MalformedPolicyDocumentException`.
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::MalformedPolicyDocumentException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::PolicyCountLimitExceededException`.
+    pub fn is_policy_count_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::PolicyCountLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::PolicySizeLimitExceededException`.
+    pub fn is_policy_size_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::PolicySizeLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ThrottledException`.
+    pub fn is_throttled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::ThrottledException(_)
+        )
+    }
+}
+impl std::error::Error for PutResourcePolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutResourcePolicyErrorKind::InvalidPolicyRevisionIdException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::LockoutPreventionException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::PolicyCountLimitExceededException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::PolicySizeLimitExceededException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::ThrottledException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

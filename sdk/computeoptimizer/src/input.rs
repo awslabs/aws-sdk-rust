@@ -49,7 +49,6 @@ pub mod delete_recommendation_preferences_input {
         /// To override the contents of this collection use [`set_recommendation_preference_names`](Self::set_recommendation_preference_names).
         ///
         /// <p>The name of the recommendation preference to delete.</p>
-        /// <p>Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.</p>
         pub fn recommendation_preference_names(
             mut self,
             input: crate::model::RecommendationPreferenceName,
@@ -60,7 +59,6 @@ pub mod delete_recommendation_preferences_input {
             self
         }
         /// <p>The name of the recommendation preference to delete.</p>
-        /// <p>Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.</p>
         pub fn set_recommendation_preference_names(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecommendationPreferenceName>>,
@@ -1221,6 +1219,265 @@ impl ExportEc2InstanceRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`ExportEc2InstanceRecommendationsInput`](crate::input::ExportEc2InstanceRecommendationsInput).
     pub fn builder() -> crate::input::export_ec2_instance_recommendations_input::Builder {
         crate::input::export_ec2_instance_recommendations_input::Builder::default()
+    }
+}
+
+/// See [`ExportEcsServiceRecommendationsInput`](crate::input::ExportEcsServiceRecommendationsInput).
+pub mod export_ecs_service_recommendations_input {
+
+    /// A builder for [`ExportEcsServiceRecommendationsInput`](crate::input::ExportEcsServiceRecommendationsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) filters:
+            std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendationFilter>>,
+        pub(crate) fields_to_export:
+            std::option::Option<std::vec::Vec<crate::model::ExportableEcsServiceField>>,
+        pub(crate) s3_destination_config: std::option::Option<crate::model::S3DestinationConfig>,
+        pub(crate) file_format: std::option::Option<crate::model::FileFormat>,
+        pub(crate) include_member_accounts: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p> The Amazon Web Services account IDs for the export ECS service recommendations. </p>
+        /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
+        /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
+        /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
+        /// <p>You can specify multiple account IDs per request.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.account_ids.unwrap_or_default();
+            v.push(input.into());
+            self.account_ids = Some(v);
+            self
+        }
+        /// <p> The Amazon Web Services account IDs for the export ECS service recommendations. </p>
+        /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
+        /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
+        /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
+        /// <p>You can specify multiple account IDs per request.</p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.account_ids = input;
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p> An array of objects to specify a filter that exports a more specific set of ECS service recommendations. </p>
+        pub fn filters(mut self, input: crate::model::EcsServiceRecommendationFilter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p> An array of objects to specify a filter that exports a more specific set of ECS service recommendations. </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendationFilter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// Appends an item to `fields_to_export`.
+        ///
+        /// To override the contents of this collection use [`set_fields_to_export`](Self::set_fields_to_export).
+        ///
+        /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn fields_to_export(mut self, input: crate::model::ExportableEcsServiceField) -> Self {
+            let mut v = self.fields_to_export.unwrap_or_default();
+            v.push(input);
+            self.fields_to_export = Some(v);
+            self
+        }
+        /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn set_fields_to_export(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExportableEcsServiceField>>,
+        ) -> Self {
+            self.fields_to_export = input;
+            self
+        }
+        /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
+        /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn s3_destination_config(mut self, input: crate::model::S3DestinationConfig) -> Self {
+            self.s3_destination_config = Some(input);
+            self
+        }
+        /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
+        /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn set_s3_destination_config(
+            mut self,
+            input: std::option::Option<crate::model::S3DestinationConfig>,
+        ) -> Self {
+            self.s3_destination_config = input;
+            self
+        }
+        /// <p> The format of the export file. </p>
+        /// <p>The CSV file is the only export file format currently supported.</p>
+        pub fn file_format(mut self, input: crate::model::FileFormat) -> Self {
+            self.file_format = Some(input);
+            self
+        }
+        /// <p> The format of the export file. </p>
+        /// <p>The CSV file is the only export file format currently supported.</p>
+        pub fn set_file_format(
+            mut self,
+            input: std::option::Option<crate::model::FileFormat>,
+        ) -> Self {
+            self.file_format = input;
+            self
+        }
+        /// <p>If your account is the management account or the delegated administrator of an organization, this parameter indicates whether to include recommendations for resources in all member accounts of the organization.</p>
+        /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        /// <p>If this parameter is omitted, recommendations for member accounts of the organization aren't included in the export file.</p>
+        /// <p>If this parameter or the account ID parameter is omitted, recommendations for member accounts aren't included in the export.</p>
+        pub fn include_member_accounts(mut self, input: bool) -> Self {
+            self.include_member_accounts = Some(input);
+            self
+        }
+        /// <p>If your account is the management account or the delegated administrator of an organization, this parameter indicates whether to include recommendations for resources in all member accounts of the organization.</p>
+        /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        /// <p>If this parameter is omitted, recommendations for member accounts of the organization aren't included in the export file.</p>
+        /// <p>If this parameter or the account ID parameter is omitted, recommendations for member accounts aren't included in the export.</p>
+        pub fn set_include_member_accounts(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_member_accounts = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExportEcsServiceRecommendationsInput`](crate::input::ExportEcsServiceRecommendationsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ExportEcsServiceRecommendationsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ExportEcsServiceRecommendationsInput {
+                account_ids: self.account_ids,
+                filters: self.filters,
+                fields_to_export: self.fields_to_export,
+                s3_destination_config: self.s3_destination_config,
+                file_format: self.file_format,
+                include_member_accounts: self.include_member_accounts.unwrap_or_default(),
+            })
+        }
+    }
+}
+impl ExportEcsServiceRecommendationsInput {
+    /// Consumes the builder and constructs an Operation<[`ExportECSServiceRecommendations`](crate::operation::ExportECSServiceRecommendations)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ExportECSServiceRecommendations,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ExportEcsServiceRecommendationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ExportEcsServiceRecommendationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "ComputeOptimizerService.ExportECSServiceRecommendations",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_export_ecs_service_recommendations(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ExportECSServiceRecommendations::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ExportECSServiceRecommendations",
+            "computeoptimizer",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ExportEcsServiceRecommendationsInput`](crate::input::ExportEcsServiceRecommendationsInput).
+    pub fn builder() -> crate::input::export_ecs_service_recommendations_input::Builder {
+        crate::input::export_ecs_service_recommendations_input::Builder::default()
     }
 }
 
@@ -2431,6 +2688,448 @@ impl GetEc2RecommendationProjectedMetricsInput {
     }
 }
 
+/// See [`GetEcsServiceRecommendationProjectedMetricsInput`](crate::input::GetEcsServiceRecommendationProjectedMetricsInput).
+pub mod get_ecs_service_recommendation_projected_metrics_input {
+
+    /// A builder for [`GetEcsServiceRecommendationProjectedMetricsInput`](crate::input::GetEcsServiceRecommendationProjectedMetricsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) service_arn: std::option::Option<std::string::String>,
+        pub(crate) stat: std::option::Option<crate::model::MetricStatistic>,
+        pub(crate) period: std::option::Option<i32>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p> The ARN that identifies the ECS service. </p>
+        /// <p> The following is the format of the ARN: </p>
+        /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_arn = Some(input.into());
+            self
+        }
+        /// <p> The ARN that identifies the ECS service. </p>
+        /// <p> The following is the format of the ARN: </p>
+        /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+        pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_arn = input;
+            self
+        }
+        /// <p> The statistic of the projected metrics. </p>
+        pub fn stat(mut self, input: crate::model::MetricStatistic) -> Self {
+            self.stat = Some(input);
+            self
+        }
+        /// <p> The statistic of the projected metrics. </p>
+        pub fn set_stat(
+            mut self,
+            input: std::option::Option<crate::model::MetricStatistic>,
+        ) -> Self {
+            self.stat = input;
+            self
+        }
+        /// <p> The granularity, in seconds, of the projected metrics data points. </p>
+        pub fn period(mut self, input: i32) -> Self {
+            self.period = Some(input);
+            self
+        }
+        /// <p> The granularity, in seconds, of the projected metrics data points. </p>
+        pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.period = input;
+            self
+        }
+        /// <p> The timestamp of the first projected metrics data point to return. </p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p> The timestamp of the first projected metrics data point to return. </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p> The timestamp of the last projected metrics data point to return. </p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        /// <p> The timestamp of the last projected metrics data point to return. </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEcsServiceRecommendationProjectedMetricsInput`](crate::input::GetEcsServiceRecommendationProjectedMetricsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetEcsServiceRecommendationProjectedMetricsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(
+                crate::input::GetEcsServiceRecommendationProjectedMetricsInput {
+                    service_arn: self.service_arn,
+                    stat: self.stat,
+                    period: self.period.unwrap_or_default(),
+                    start_time: self.start_time,
+                    end_time: self.end_time,
+                },
+            )
+        }
+    }
+}
+impl GetEcsServiceRecommendationProjectedMetricsInput {
+    /// Consumes the builder and constructs an Operation<[`GetECSServiceRecommendationProjectedMetrics`](crate::operation::GetECSServiceRecommendationProjectedMetrics)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetECSServiceRecommendationProjectedMetrics,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetEcsServiceRecommendationProjectedMetricsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetEcsServiceRecommendationProjectedMetricsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "ComputeOptimizerService.GetECSServiceRecommendationProjectedMetrics",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_ecs_service_recommendation_projected_metrics(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetECSServiceRecommendationProjectedMetrics::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetECSServiceRecommendationProjectedMetrics",
+            "computeoptimizer",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetEcsServiceRecommendationProjectedMetricsInput`](crate::input::GetEcsServiceRecommendationProjectedMetricsInput).
+    pub fn builder() -> crate::input::get_ecs_service_recommendation_projected_metrics_input::Builder
+    {
+        crate::input::get_ecs_service_recommendation_projected_metrics_input::Builder::default()
+    }
+}
+
+/// See [`GetEcsServiceRecommendationsInput`](crate::input::GetEcsServiceRecommendationsInput).
+pub mod get_ecs_service_recommendations_input {
+
+    /// A builder for [`GetEcsServiceRecommendationsInput`](crate::input::GetEcsServiceRecommendationsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) service_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) filters:
+            std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendationFilter>>,
+        pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `service_arns`.
+        ///
+        /// To override the contents of this collection use [`set_service_arns`](Self::set_service_arns).
+        ///
+        /// <p> The ARN that identifies the ECS service. </p>
+        /// <p> The following is the format of the ARN: </p>
+        /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+        pub fn service_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.service_arns.unwrap_or_default();
+            v.push(input.into());
+            self.service_arns = Some(v);
+            self
+        }
+        /// <p> The ARN that identifies the ECS service. </p>
+        /// <p> The following is the format of the ARN: </p>
+        /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+        pub fn set_service_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.service_arns = input;
+            self
+        }
+        /// <p> The token to advance to the next page of ECS service recommendations. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> The token to advance to the next page of ECS service recommendations. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p> The maximum number of ECS service recommendations to return with a single request. </p>
+        /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p> The maximum number of ECS service recommendations to return with a single request. </p>
+        /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p> An array of objects to specify a filter that returns a more specific list of ECS service recommendations. </p>
+        pub fn filters(mut self, input: crate::model::EcsServiceRecommendationFilter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p> An array of objects to specify a filter that returns a more specific list of ECS service recommendations. </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendationFilter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p> Return the ECS service recommendations to the specified Amazon Web Services account IDs. </p>
+        /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the ECS service recommendations to specific member accounts.</p>
+        /// <p>You can only specify one account ID per request.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.account_ids.unwrap_or_default();
+            v.push(input.into());
+            self.account_ids = Some(v);
+            self
+        }
+        /// <p> Return the ECS service recommendations to the specified Amazon Web Services account IDs. </p>
+        /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the ECS service recommendations to specific member accounts.</p>
+        /// <p>You can only specify one account ID per request.</p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.account_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEcsServiceRecommendationsInput`](crate::input::GetEcsServiceRecommendationsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetEcsServiceRecommendationsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetEcsServiceRecommendationsInput {
+                service_arns: self.service_arns,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+                account_ids: self.account_ids,
+            })
+        }
+    }
+}
+impl GetEcsServiceRecommendationsInput {
+    /// Consumes the builder and constructs an Operation<[`GetECSServiceRecommendations`](crate::operation::GetECSServiceRecommendations)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetECSServiceRecommendations,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetEcsServiceRecommendationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetEcsServiceRecommendationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "ComputeOptimizerService.GetECSServiceRecommendations",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_ecs_service_recommendations(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetECSServiceRecommendations::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetECSServiceRecommendations",
+            "computeoptimizer",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetEcsServiceRecommendationsInput`](crate::input::GetEcsServiceRecommendationsInput).
+    pub fn builder() -> crate::input::get_ecs_service_recommendations_input::Builder {
+        crate::input::get_ecs_service_recommendations_input::Builder::default()
+    }
+}
+
 /// See [`GetEffectiveRecommendationPreferencesInput`](crate::input::GetEffectiveRecommendationPreferencesInput).
 pub mod get_effective_recommendation_preferences_input {
 
@@ -3511,6 +4210,8 @@ pub mod put_recommendation_preferences_input {
             std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
         pub(crate) inferred_workload_types:
             std::option::Option<crate::model::InferredWorkloadTypesPreference>,
+        pub(crate) external_metrics_preference:
+            std::option::Option<crate::model::ExternalMetricsPreference>,
     }
     impl Builder {
         /// <p>The target resource type of the recommendation preference to create.</p>
@@ -3592,6 +4293,28 @@ pub mod put_recommendation_preferences_input {
             self.inferred_workload_types = input;
             self
         }
+        /// <p>The provider of the external metrics recommendation preference to create or update.</p>
+        /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
+        /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn external_metrics_preference(
+            mut self,
+            input: crate::model::ExternalMetricsPreference,
+        ) -> Self {
+            self.external_metrics_preference = Some(input);
+            self
+        }
+        /// <p>The provider of the external metrics recommendation preference to create or update.</p>
+        /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
+        /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn set_external_metrics_preference(
+            mut self,
+            input: std::option::Option<crate::model::ExternalMetricsPreference>,
+        ) -> Self {
+            self.external_metrics_preference = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutRecommendationPreferencesInput`](crate::input::PutRecommendationPreferencesInput).
         pub fn build(
             self,
@@ -3604,6 +4327,7 @@ pub mod put_recommendation_preferences_input {
                 scope: self.scope,
                 enhanced_infrastructure_metrics: self.enhanced_infrastructure_metrics,
                 inferred_workload_types: self.inferred_workload_types,
+                external_metrics_preference: self.external_metrics_preference,
             })
         }
     }
@@ -3962,6 +4686,12 @@ pub struct PutRecommendationPreferencesInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
     #[doc(hidden)]
     pub inferred_workload_types: std::option::Option<crate::model::InferredWorkloadTypesPreference>,
+    /// <p>The provider of the external metrics recommendation preference to create or update.</p>
+    /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
+    /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
+    pub external_metrics_preference: std::option::Option<crate::model::ExternalMetricsPreference>,
 }
 impl PutRecommendationPreferencesInput {
     /// <p>The target resource type of the recommendation preference to create.</p>
@@ -3995,6 +4725,15 @@ impl PutRecommendationPreferencesInput {
         &self,
     ) -> std::option::Option<&crate::model::InferredWorkloadTypesPreference> {
         self.inferred_workload_types.as_ref()
+    }
+    /// <p>The provider of the external metrics recommendation preference to create or update.</p>
+    /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
+    /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn external_metrics_preference(
+        &self,
+    ) -> std::option::Option<&crate::model::ExternalMetricsPreference> {
+        self.external_metrics_preference.as_ref()
     }
 }
 
@@ -4181,6 +4920,106 @@ impl GetEffectiveRecommendationPreferencesInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetEcsServiceRecommendationsInput {
+    /// <p> The ARN that identifies the ECS service. </p>
+    /// <p> The following is the format of the ARN: </p>
+    /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+    #[doc(hidden)]
+    pub service_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> The token to advance to the next page of ECS service recommendations. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p> The maximum number of ECS service recommendations to return with a single request. </p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p> An array of objects to specify a filter that returns a more specific list of ECS service recommendations. </p>
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendationFilter>>,
+    /// <p> Return the ECS service recommendations to the specified Amazon Web Services account IDs. </p>
+    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the ECS service recommendations to specific member accounts.</p>
+    /// <p>You can only specify one account ID per request.</p>
+    #[doc(hidden)]
+    pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetEcsServiceRecommendationsInput {
+    /// <p> The ARN that identifies the ECS service. </p>
+    /// <p> The following is the format of the ARN: </p>
+    /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+    pub fn service_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.service_arns.as_deref()
+    }
+    /// <p> The token to advance to the next page of ECS service recommendations. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of ECS service recommendations to return with a single request. </p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> An array of objects to specify a filter that returns a more specific list of ECS service recommendations. </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::EcsServiceRecommendationFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p> Return the ECS service recommendations to the specified Amazon Web Services account IDs. </p>
+    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the ECS service recommendations to specific member accounts.</p>
+    /// <p>You can only specify one account ID per request.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetEcsServiceRecommendationProjectedMetricsInput {
+    /// <p> The ARN that identifies the ECS service. </p>
+    /// <p> The following is the format of the ARN: </p>
+    /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+    #[doc(hidden)]
+    pub service_arn: std::option::Option<std::string::String>,
+    /// <p> The statistic of the projected metrics. </p>
+    #[doc(hidden)]
+    pub stat: std::option::Option<crate::model::MetricStatistic>,
+    /// <p> The granularity, in seconds, of the projected metrics data points. </p>
+    #[doc(hidden)]
+    pub period: i32,
+    /// <p> The timestamp of the first projected metrics data point to return. </p>
+    #[doc(hidden)]
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The timestamp of the last projected metrics data point to return. </p>
+    #[doc(hidden)]
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl GetEcsServiceRecommendationProjectedMetricsInput {
+    /// <p> The ARN that identifies the ECS service. </p>
+    /// <p> The following is the format of the ARN: </p>
+    /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+    /// <p> The statistic of the projected metrics. </p>
+    pub fn stat(&self) -> std::option::Option<&crate::model::MetricStatistic> {
+        self.stat.as_ref()
+    }
+    /// <p> The granularity, in seconds, of the projected metrics data points. </p>
+    pub fn period(&self) -> i32 {
+        self.period
+    }
+    /// <p> The timestamp of the first projected metrics data point to return. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p> The timestamp of the last projected metrics data point to return. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
     }
 }
 
@@ -4480,6 +5319,77 @@ impl ExportLambdaFunctionRecommendationsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ExportEcsServiceRecommendationsInput {
+    /// <p> The Amazon Web Services account IDs for the export ECS service recommendations. </p>
+    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
+    /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
+    /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
+    /// <p>You can specify multiple account IDs per request.</p>
+    #[doc(hidden)]
+    pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> An array of objects to specify a filter that exports a more specific set of ECS service recommendations. </p>
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendationFilter>>,
+    /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
+    pub fields_to_export:
+        std::option::Option<std::vec::Vec<crate::model::ExportableEcsServiceField>>,
+    /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
+    /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
+    pub s3_destination_config: std::option::Option<crate::model::S3DestinationConfig>,
+    /// <p> The format of the export file. </p>
+    /// <p>The CSV file is the only export file format currently supported.</p>
+    #[doc(hidden)]
+    pub file_format: std::option::Option<crate::model::FileFormat>,
+    /// <p>If your account is the management account or the delegated administrator of an organization, this parameter indicates whether to include recommendations for resources in all member accounts of the organization.</p>
+    /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    /// <p>If this parameter is omitted, recommendations for member accounts of the organization aren't included in the export file.</p>
+    /// <p>If this parameter or the account ID parameter is omitted, recommendations for member accounts aren't included in the export.</p>
+    #[doc(hidden)]
+    pub include_member_accounts: bool,
+}
+impl ExportEcsServiceRecommendationsInput {
+    /// <p> The Amazon Web Services account IDs for the export ECS service recommendations. </p>
+    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
+    /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
+    /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
+    /// <p>You can specify multiple account IDs per request.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p> An array of objects to specify a filter that exports a more specific set of ECS service recommendations. </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::EcsServiceRecommendationFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn fields_to_export(
+        &self,
+    ) -> std::option::Option<&[crate::model::ExportableEcsServiceField]> {
+        self.fields_to_export.as_deref()
+    }
+    /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
+    /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn s3_destination_config(&self) -> std::option::Option<&crate::model::S3DestinationConfig> {
+        self.s3_destination_config.as_ref()
+    }
+    /// <p> The format of the export file. </p>
+    /// <p>The CSV file is the only export file format currently supported.</p>
+    pub fn file_format(&self) -> std::option::Option<&crate::model::FileFormat> {
+        self.file_format.as_ref()
+    }
+    /// <p>If your account is the management account or the delegated administrator of an organization, this parameter indicates whether to include recommendations for resources in all member accounts of the organization.</p>
+    /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    /// <p>If this parameter is omitted, recommendations for member accounts of the organization aren't included in the export file.</p>
+    /// <p>If this parameter or the account ID parameter is omitted, recommendations for member accounts aren't included in the export.</p>
+    pub fn include_member_accounts(&self) -> bool {
+        self.include_member_accounts
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportEc2InstanceRecommendationsInput {
     /// <p>The IDs of the Amazon Web Services accounts for which to export instance recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>
@@ -4765,7 +5675,6 @@ pub struct DeleteRecommendationPreferencesInput {
     #[doc(hidden)]
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p>The name of the recommendation preference to delete.</p>
-    /// <p>Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.</p>
     #[doc(hidden)]
     pub recommendation_preference_names:
         std::option::Option<std::vec::Vec<crate::model::RecommendationPreferenceName>>,
@@ -4784,7 +5693,6 @@ impl DeleteRecommendationPreferencesInput {
         self.scope.as_ref()
     }
     /// <p>The name of the recommendation preference to delete.</p>
-    /// <p>Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.</p>
     pub fn recommendation_preference_names(
         &self,
     ) -> std::option::Option<&[crate::model::RecommendationPreferenceName]> {

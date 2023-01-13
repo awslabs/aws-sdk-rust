@@ -131,6 +131,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStream {
     }
 }
 
+/// Operation shape for `DescribeEdgeConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_edge_configuration`](crate::client::Client::describe_edge_configuration).
+///
+/// See [`crate::client::fluent_builders::DescribeEdgeConfiguration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeEdgeConfiguration {
+    _private: (),
+}
+impl DescribeEdgeConfiguration {
+    /// Creates a new builder-style object to manufacture [`DescribeEdgeConfigurationInput`](crate::input::DescribeEdgeConfigurationInput).
+    pub fn builder() -> crate::input::describe_edge_configuration_input::Builder {
+        crate::input::describe_edge_configuration_input::Builder::default()
+    }
+    /// Creates a new `DescribeEdgeConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeEdgeConfiguration {
+    type Output = std::result::Result<
+        crate::output::DescribeEdgeConfigurationOutput,
+        crate::error::DescribeEdgeConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_edge_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_describe_edge_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeImageGenerationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -161,6 +195,74 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImageGenerationC
             crate::operation_deser::parse_describe_image_generation_configuration_error(response)
         } else {
             crate::operation_deser::parse_describe_image_generation_configuration_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeMappedResourceConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_mapped_resource_configuration`](crate::client::Client::describe_mapped_resource_configuration).
+///
+/// See [`crate::client::fluent_builders::DescribeMappedResourceConfiguration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeMappedResourceConfiguration {
+    _private: (),
+}
+impl DescribeMappedResourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`DescribeMappedResourceConfigurationInput`](crate::input::DescribeMappedResourceConfigurationInput).
+    pub fn builder() -> crate::input::describe_mapped_resource_configuration_input::Builder {
+        crate::input::describe_mapped_resource_configuration_input::Builder::default()
+    }
+    /// Creates a new `DescribeMappedResourceConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeMappedResourceConfiguration {
+    type Output = std::result::Result<
+        crate::output::DescribeMappedResourceConfigurationOutput,
+        crate::error::DescribeMappedResourceConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_mapped_resource_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_describe_mapped_resource_configuration_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeMediaStorageConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_media_storage_configuration`](crate::client::Client::describe_media_storage_configuration).
+///
+/// See [`crate::client::fluent_builders::DescribeMediaStorageConfiguration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeMediaStorageConfiguration {
+    _private: (),
+}
+impl DescribeMediaStorageConfiguration {
+    /// Creates a new builder-style object to manufacture [`DescribeMediaStorageConfigurationInput`](crate::input::DescribeMediaStorageConfigurationInput).
+    pub fn builder() -> crate::input::describe_media_storage_configuration_input::Builder {
+        crate::input::describe_media_storage_configuration_input::Builder::default()
+    }
+    /// Creates a new `DescribeMediaStorageConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeMediaStorageConfiguration {
+    type Output = std::result::Result<
+        crate::output::DescribeMediaStorageConfigurationOutput,
+        crate::error::DescribeMediaStorageConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_media_storage_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_describe_media_storage_configuration_response(response)
         }
     }
 }
@@ -467,6 +569,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForStream {
     }
 }
 
+/// Operation shape for `StartEdgeConfigurationUpdate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_edge_configuration_update`](crate::client::Client::start_edge_configuration_update).
+///
+/// See [`crate::client::fluent_builders::StartEdgeConfigurationUpdate`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct StartEdgeConfigurationUpdate {
+    _private: (),
+}
+impl StartEdgeConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`StartEdgeConfigurationUpdateInput`](crate::input::StartEdgeConfigurationUpdateInput).
+    pub fn builder() -> crate::input::start_edge_configuration_update_input::Builder {
+        crate::input::start_edge_configuration_update_input::Builder::default()
+    }
+    /// Creates a new `StartEdgeConfigurationUpdate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartEdgeConfigurationUpdate {
+    type Output = std::result::Result<
+        crate::output::StartEdgeConfigurationUpdateOutput,
+        crate::error::StartEdgeConfigurationUpdateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_edge_configuration_update_error(response)
+        } else {
+            crate::operation_deser::parse_start_edge_configuration_update_response(response)
+        }
+    }
+}
+
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -658,6 +794,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateImageGenerationCon
             crate::operation_deser::parse_update_image_generation_configuration_error(response)
         } else {
             crate::operation_deser::parse_update_image_generation_configuration_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateMediaStorageConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_media_storage_configuration`](crate::client::Client::update_media_storage_configuration).
+///
+/// See [`crate::client::fluent_builders::UpdateMediaStorageConfiguration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateMediaStorageConfiguration {
+    _private: (),
+}
+impl UpdateMediaStorageConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateMediaStorageConfigurationInput`](crate::input::UpdateMediaStorageConfigurationInput).
+    pub fn builder() -> crate::input::update_media_storage_configuration_input::Builder {
+        crate::input::update_media_storage_configuration_input::Builder::default()
+    }
+    /// Creates a new `UpdateMediaStorageConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateMediaStorageConfiguration {
+    type Output = std::result::Result<
+        crate::output::UpdateMediaStorageConfigurationOutput,
+        crate::error::UpdateMediaStorageConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_media_storage_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_update_media_storage_configuration_response(response)
         }
     }
 }

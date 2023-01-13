@@ -109,6 +109,16 @@ pub(crate) fn reflens_structure_crate_output_list_import_jobs_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_recommendations_output_next_token(
+    input: &crate::output::ListRecommendationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_suppressed_destinations_output_next_token(
     input: &crate::output::ListSuppressedDestinationsOutput,
 ) -> std::option::Option<&std::string::String> {

@@ -91,6 +91,56 @@ impl Client {
     }
 }
 impl Client {
+    /// Constructs a fluent builder for the [`BatchCreateRumMetricDefinitions`](crate::client::fluent_builders::BatchCreateRumMetricDefinitions) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_monitor_name(impl Into<String>)`](crate::client::fluent_builders::BatchCreateRumMetricDefinitions::app_monitor_name) / [`set_app_monitor_name(Option<String>)`](crate::client::fluent_builders::BatchCreateRumMetricDefinitions::set_app_monitor_name): <p>The name of the CloudWatch RUM app monitor that is to send the metrics.</p>
+    ///   - [`destination(MetricDestination)`](crate::client::fluent_builders::BatchCreateRumMetricDefinitions::destination) / [`set_destination(Option<MetricDestination>)`](crate::client::fluent_builders::BatchCreateRumMetricDefinitions::set_destination): <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
+    ///   - [`destination_arn(impl Into<String>)`](crate::client::fluent_builders::BatchCreateRumMetricDefinitions::destination_arn) / [`set_destination_arn(Option<String>)`](crate::client::fluent_builders::BatchCreateRumMetricDefinitions::set_destination_arn): <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>  <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
+    ///   - [`metric_definitions(Vec<MetricDefinitionRequest>)`](crate::client::fluent_builders::BatchCreateRumMetricDefinitions::metric_definitions) / [`set_metric_definitions(Option<Vec<MetricDefinitionRequest>>)`](crate::client::fluent_builders::BatchCreateRumMetricDefinitions::set_metric_definitions): <p>An array of structures which define the metrics that you want to send.</p>
+    /// - On success, responds with [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput) with field(s):
+    ///   - [`errors(Option<Vec<BatchCreateRumMetricDefinitionsError>>)`](crate::output::BatchCreateRumMetricDefinitionsOutput::errors): <p>An array of error objects, if the operation caused any errors.</p>
+    ///   - [`metric_definitions(Option<Vec<MetricDefinition>>)`](crate::output::BatchCreateRumMetricDefinitionsOutput::metric_definitions): <p>An array of structures that define the extended metrics.</p>
+    /// - On failure, responds with [`SdkError<BatchCreateRumMetricDefinitionsError>`](crate::error::BatchCreateRumMetricDefinitionsError)
+    pub fn batch_create_rum_metric_definitions(
+        &self,
+    ) -> fluent_builders::BatchCreateRumMetricDefinitions {
+        fluent_builders::BatchCreateRumMetricDefinitions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`BatchDeleteRumMetricDefinitions`](crate::client::fluent_builders::BatchDeleteRumMetricDefinitions) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_monitor_name(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteRumMetricDefinitions::app_monitor_name) / [`set_app_monitor_name(Option<String>)`](crate::client::fluent_builders::BatchDeleteRumMetricDefinitions::set_app_monitor_name): <p>The name of the CloudWatch RUM app monitor that is sending these metrics.</p>
+    ///   - [`destination(MetricDestination)`](crate::client::fluent_builders::BatchDeleteRumMetricDefinitions::destination) / [`set_destination(Option<MetricDestination>)`](crate::client::fluent_builders::BatchDeleteRumMetricDefinitions::set_destination): <p>Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
+    ///   - [`destination_arn(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteRumMetricDefinitions::destination_arn) / [`set_destination_arn(Option<String>)`](crate::client::fluent_builders::BatchDeleteRumMetricDefinitions::set_destination_arn): <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>  <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
+    ///   - [`metric_definition_ids(Vec<String>)`](crate::client::fluent_builders::BatchDeleteRumMetricDefinitions::metric_definition_ids) / [`set_metric_definition_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDeleteRumMetricDefinitions::set_metric_definition_ids): <p>An array of structures which define the metrics that you want to stop sending.</p>
+    /// - On success, responds with [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput) with field(s):
+    ///   - [`errors(Option<Vec<BatchDeleteRumMetricDefinitionsError>>)`](crate::output::BatchDeleteRumMetricDefinitionsOutput::errors): <p>An array of error objects, if the operation caused any errors.</p>
+    ///   - [`metric_definition_ids(Option<Vec<String>>)`](crate::output::BatchDeleteRumMetricDefinitionsOutput::metric_definition_ids): <p>The IDs of the metric definitions that were deleted.</p>
+    /// - On failure, responds with [`SdkError<BatchDeleteRumMetricDefinitionsError>`](crate::error::BatchDeleteRumMetricDefinitionsError)
+    pub fn batch_delete_rum_metric_definitions(
+        &self,
+    ) -> fluent_builders::BatchDeleteRumMetricDefinitions {
+        fluent_builders::BatchDeleteRumMetricDefinitions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`BatchGetRumMetricDefinitions`](crate::client::fluent_builders::BatchGetRumMetricDefinitions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::BatchGetRumMetricDefinitions::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_monitor_name(impl Into<String>)`](crate::client::fluent_builders::BatchGetRumMetricDefinitions::app_monitor_name) / [`set_app_monitor_name(Option<String>)`](crate::client::fluent_builders::BatchGetRumMetricDefinitions::set_app_monitor_name): <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
+    ///   - [`destination(MetricDestination)`](crate::client::fluent_builders::BatchGetRumMetricDefinitions::destination) / [`set_destination(Option<MetricDestination>)`](crate::client::fluent_builders::BatchGetRumMetricDefinitions::set_destination): <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
+    ///   - [`destination_arn(impl Into<String>)`](crate::client::fluent_builders::BatchGetRumMetricDefinitions::destination_arn) / [`set_destination_arn(Option<String>)`](crate::client::fluent_builders::BatchGetRumMetricDefinitions::set_destination_arn): <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>  <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::BatchGetRumMetricDefinitions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::BatchGetRumMetricDefinitions::set_max_results): <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>  <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::BatchGetRumMetricDefinitions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::BatchGetRumMetricDefinitions::set_next_token): <p>Use the token returned by the previous operation to request the next page of results.</p>
+    /// - On success, responds with [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput) with field(s):
+    ///   - [`metric_definitions(Option<Vec<MetricDefinition>>)`](crate::output::BatchGetRumMetricDefinitionsOutput::metric_definitions): <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::BatchGetRumMetricDefinitionsOutput::next_token): <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<BatchGetRumMetricDefinitionsError>`](crate::error::BatchGetRumMetricDefinitionsError)
+    pub fn batch_get_rum_metric_definitions(
+        &self,
+    ) -> fluent_builders::BatchGetRumMetricDefinitions {
+        fluent_builders::BatchGetRumMetricDefinitions::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateAppMonitor`](crate::client::fluent_builders::CreateAppMonitor) operation.
     ///
     /// - The fluent builder is configurable:
@@ -99,6 +149,7 @@ impl Client {
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAppMonitor::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAppMonitor::set_tags): <p>Assigns one or more tags (key-value pairs) to the app monitor.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with an app monitor.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     ///   - [`app_monitor_configuration(AppMonitorConfiguration)`](crate::client::fluent_builders::CreateAppMonitor::app_monitor_configuration) / [`set_app_monitor_configuration(Option<AppMonitorConfiguration>)`](crate::client::fluent_builders::CreateAppMonitor::set_app_monitor_configuration): <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>  <p>If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.</p>
     ///   - [`cw_log_enabled(bool)`](crate::client::fluent_builders::CreateAppMonitor::cw_log_enabled) / [`set_cw_log_enabled(Option<bool>)`](crate::client::fluent_builders::CreateAppMonitor::set_cw_log_enabled): <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>  <p>If you omit this parameter, the default is <code>false</code>.</p>
+    ///   - [`custom_events(CustomEvents)`](crate::client::fluent_builders::CreateAppMonitor::custom_events) / [`set_custom_events(Option<CustomEvents>)`](crate::client::fluent_builders::CreateAppMonitor::set_custom_events): <p>Specifies whether this app monitor allows the web client to define and send custom events. If you omit this parameter, custom events are <code>DISABLED</code>.</p>  <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
     /// - On success, responds with [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::CreateAppMonitorOutput::id): <p>The unique ID of the new app monitor.</p>
     /// - On failure, responds with [`SdkError<CreateAppMonitorError>`](crate::error::CreateAppMonitorError)
@@ -114,6 +165,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteAppMonitorError>`](crate::error::DeleteAppMonitorError)
     pub fn delete_app_monitor(&self) -> fluent_builders::DeleteAppMonitor {
         fluent_builders::DeleteAppMonitor::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteRumMetricsDestination`](crate::client::fluent_builders::DeleteRumMetricsDestination) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_monitor_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRumMetricsDestination::app_monitor_name) / [`set_app_monitor_name(Option<String>)`](crate::client::fluent_builders::DeleteRumMetricsDestination::set_app_monitor_name): <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
+    ///   - [`destination(MetricDestination)`](crate::client::fluent_builders::DeleteRumMetricsDestination::destination) / [`set_destination(Option<MetricDestination>)`](crate::client::fluent_builders::DeleteRumMetricsDestination::set_destination): <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
+    ///   - [`destination_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteRumMetricsDestination::destination_arn) / [`set_destination_arn(Option<String>)`](crate::client::fluent_builders::DeleteRumMetricsDestination::set_destination_arn): <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</p>
+    /// - On success, responds with [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRumMetricsDestinationError>`](crate::error::DeleteRumMetricsDestinationError)
+    pub fn delete_rum_metrics_destination(&self) -> fluent_builders::DeleteRumMetricsDestination {
+        fluent_builders::DeleteRumMetricsDestination::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetAppMonitor`](crate::client::fluent_builders::GetAppMonitor) operation.
     ///
@@ -145,7 +208,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppMonitors::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppMonitors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppMonitors::set_max_results): <p>The maximum number of results to return in one operation. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppMonitors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppMonitors::set_max_results): <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppMonitors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppMonitors::set_next_token): <p>Use the token returned by the previous operation to request the next page of results.</p>
     /// - On success, responds with [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListAppMonitorsOutput::next_token): <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
@@ -153,6 +216,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListAppMonitorsError>`](crate::error::ListAppMonitorsError)
     pub fn list_app_monitors(&self) -> fluent_builders::ListAppMonitors {
         fluent_builders::ListAppMonitors::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListRumMetricsDestinations`](crate::client::fluent_builders::ListRumMetricsDestinations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRumMetricsDestinations::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_monitor_name(impl Into<String>)`](crate::client::fluent_builders::ListRumMetricsDestinations::app_monitor_name) / [`set_app_monitor_name(Option<String>)`](crate::client::fluent_builders::ListRumMetricsDestinations::set_app_monitor_name): <p>The name of the app monitor associated with the destinations that you want to retrieve.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRumMetricsDestinations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRumMetricsDestinations::set_max_results): <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>  <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRumMetricsDestinations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRumMetricsDestinations::set_next_token): <p>Use the token returned by the previous operation to request the next page of results.</p>
+    /// - On success, responds with [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput) with field(s):
+    ///   - [`destinations(Option<Vec<MetricDestinationSummary>>)`](crate::output::ListRumMetricsDestinationsOutput::destinations): <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRumMetricsDestinationsOutput::next_token): <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListRumMetricsDestinationsError>`](crate::error::ListRumMetricsDestinationsError)
+    pub fn list_rum_metrics_destinations(&self) -> fluent_builders::ListRumMetricsDestinations {
+        fluent_builders::ListRumMetricsDestinations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
@@ -178,6 +255,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<PutRumEventsError>`](crate::error::PutRumEventsError)
     pub fn put_rum_events(&self) -> fluent_builders::PutRumEvents {
         fluent_builders::PutRumEvents::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutRumMetricsDestination`](crate::client::fluent_builders::PutRumMetricsDestination) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_monitor_name(impl Into<String>)`](crate::client::fluent_builders::PutRumMetricsDestination::app_monitor_name) / [`set_app_monitor_name(Option<String>)`](crate::client::fluent_builders::PutRumMetricsDestination::set_app_monitor_name): <p>The name of the CloudWatch RUM app monitor that will send the metrics.</p>
+    ///   - [`destination(MetricDestination)`](crate::client::fluent_builders::PutRumMetricsDestination::destination) / [`set_destination(Option<MetricDestination>)`](crate::client::fluent_builders::PutRumMetricsDestination::set_destination): <p>Defines the destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
+    ///   - [`destination_arn(impl Into<String>)`](crate::client::fluent_builders::PutRumMetricsDestination::destination_arn) / [`set_destination_arn(Option<String>)`](crate::client::fluent_builders::PutRumMetricsDestination::set_destination_arn): <p>Use this parameter only if <code>Destination</code> is <code>Evidently</code>. This parameter specifies the ARN of the Evidently experiment that will receive the extended metrics.</p>
+    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::PutRumMetricsDestination::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::PutRumMetricsDestination::set_iam_role_arn): <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>  <p>This parameter specifies the ARN of an IAM role that RUM will assume to write to the Evidently experiment that you are sending metrics to. This role must have permission to write to that experiment.</p>
+    /// - On success, responds with [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput)
+
+    /// - On failure, responds with [`SdkError<PutRumMetricsDestinationError>`](crate::error::PutRumMetricsDestinationError)
+    pub fn put_rum_metrics_destination(&self) -> fluent_builders::PutRumMetricsDestination {
+        fluent_builders::PutRumMetricsDestination::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
@@ -208,11 +298,26 @@ impl Client {
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::UpdateAppMonitor::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::UpdateAppMonitor::set_domain): <p>The top-level internet domain name for which your application has administrative authority.</p>
     ///   - [`app_monitor_configuration(AppMonitorConfiguration)`](crate::client::fluent_builders::UpdateAppMonitor::app_monitor_configuration) / [`set_app_monitor_configuration(Option<AppMonitorConfiguration>)`](crate::client::fluent_builders::UpdateAppMonitor::set_app_monitor_configuration): <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     ///   - [`cw_log_enabled(bool)`](crate::client::fluent_builders::UpdateAppMonitor::cw_log_enabled) / [`set_cw_log_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateAppMonitor::set_cw_log_enabled): <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
+    ///   - [`custom_events(CustomEvents)`](crate::client::fluent_builders::UpdateAppMonitor::custom_events) / [`set_custom_events(Option<CustomEvents>)`](crate::client::fluent_builders::UpdateAppMonitor::set_custom_events): <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>  <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
     /// - On success, responds with [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput)
 
     /// - On failure, responds with [`SdkError<UpdateAppMonitorError>`](crate::error::UpdateAppMonitorError)
     pub fn update_app_monitor(&self) -> fluent_builders::UpdateAppMonitor {
         fluent_builders::UpdateAppMonitor::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateRumMetricDefinition`](crate::client::fluent_builders::UpdateRumMetricDefinition) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_monitor_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRumMetricDefinition::app_monitor_name) / [`set_app_monitor_name(Option<String>)`](crate::client::fluent_builders::UpdateRumMetricDefinition::set_app_monitor_name): <p>The name of the CloudWatch RUM app monitor that sends these metrics.</p>
+    ///   - [`destination(MetricDestination)`](crate::client::fluent_builders::UpdateRumMetricDefinition::destination) / [`set_destination(Option<MetricDestination>)`](crate::client::fluent_builders::UpdateRumMetricDefinition::set_destination): <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
+    ///   - [`destination_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRumMetricDefinition::destination_arn) / [`set_destination_arn(Option<String>)`](crate::client::fluent_builders::UpdateRumMetricDefinition::set_destination_arn): <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>  <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
+    ///   - [`metric_definition(MetricDefinitionRequest)`](crate::client::fluent_builders::UpdateRumMetricDefinition::metric_definition) / [`set_metric_definition(Option<MetricDefinitionRequest>)`](crate::client::fluent_builders::UpdateRumMetricDefinition::set_metric_definition): <p>A structure that contains the new definition that you want to use for this metric.</p>
+    ///   - [`metric_definition_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRumMetricDefinition::metric_definition_id) / [`set_metric_definition_id(Option<String>)`](crate::client::fluent_builders::UpdateRumMetricDefinition::set_metric_definition_id): <p>The ID of the metric definition to update.</p>
+    /// - On success, responds with [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRumMetricDefinitionError>`](crate::error::UpdateRumMetricDefinitionError)
+    pub fn update_rum_metric_definition(&self) -> fluent_builders::UpdateRumMetricDefinition {
+        fluent_builders::UpdateRumMetricDefinition::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -222,6 +327,389 @@ pub mod fluent_builders {
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
+    /// Fluent builder constructing a request to `BatchCreateRumMetricDefinitions`.
+    ///
+    /// <p>Specifies the extended metrics that you want a CloudWatch RUM app monitor to send to a destination. Valid destinations include CloudWatch and Evidently.</p>
+    /// <p>By default, RUM app monitors send some metrics to CloudWatch. These default metrics are listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-metrics.html">CloudWatch metrics that you can collect with CloudWatch RUM</a>.</p>
+    /// <p>If you also send extended metrics, you can send metrics to Evidently as well as CloudWatch, and you can also optionally send the metrics with additional dimensions. The valid dimension names for the additional dimensions are <code>BrowserName</code>, <code>CountryCode</code>, <code>DeviceType</code>, <code>FileType</code>, <code>OSName</code>, and <code>PageId</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html"> Extended metrics that you can send to CloudWatch and CloudWatch Evidently</a>.</p>
+    /// <p>The maximum number of metric definitions that you can specify in one <code>BatchCreateRumMetricDefinitions</code> operation is 200.</p>
+    /// <p>The maximum number of metric definitions that one destination can contain is 2000.</p>
+    /// <p>Extended metrics sent are charged as CloudWatch custom metrics. Each combination of additional dimension name and dimension value counts as a custom metric. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+    /// <p>You must have already created a destination for the metrics before you send them. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
+    /// <p>If some metric definitions specified in a <code>BatchCreateRumMetricDefinitions</code> operations are not valid, those metric definitions fail and return errors, but all valid metric definitions in the same operation still succeed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchCreateRumMetricDefinitions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_create_rum_metric_definitions_input::Builder,
+    }
+    impl BatchCreateRumMetricDefinitions {
+        /// Creates a new `BatchCreateRumMetricDefinitions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::BatchCreateRumMetricDefinitions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::BatchCreateRumMetricDefinitionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchCreateRumMetricDefinitionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchCreateRumMetricDefinitionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the CloudWatch RUM app monitor that is to send the metrics.</p>
+        pub fn app_monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_monitor_name(input.into());
+            self
+        }
+        /// <p>The name of the CloudWatch RUM app monitor that is to send the metrics.</p>
+        pub fn set_app_monitor_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_app_monitor_name(input);
+            self
+        }
+        /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
+        pub fn destination(mut self, input: crate::model::MetricDestination) -> Self {
+            self.inner = self.inner.destination(input);
+            self
+        }
+        /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
+        pub fn set_destination(
+            mut self,
+            input: std::option::Option<crate::model::MetricDestination>,
+        ) -> Self {
+            self.inner = self.inner.set_destination(input);
+            self
+        }
+        /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+        /// <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
+        pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_arn(input.into());
+            self
+        }
+        /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+        /// <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
+        pub fn set_destination_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_arn(input);
+            self
+        }
+        /// Appends an item to `MetricDefinitions`.
+        ///
+        /// To override the contents of this collection use [`set_metric_definitions`](Self::set_metric_definitions).
+        ///
+        /// <p>An array of structures which define the metrics that you want to send.</p>
+        pub fn metric_definitions(mut self, input: crate::model::MetricDefinitionRequest) -> Self {
+            self.inner = self.inner.metric_definitions(input);
+            self
+        }
+        /// <p>An array of structures which define the metrics that you want to send.</p>
+        pub fn set_metric_definitions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricDefinitionRequest>>,
+        ) -> Self {
+            self.inner = self.inner.set_metric_definitions(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `BatchDeleteRumMetricDefinitions`.
+    ///
+    /// <p>Removes the specified metrics from being sent to an extended metrics destination.</p>
+    /// <p>If some metric definition IDs specified in a <code>BatchDeleteRumMetricDefinitions</code> operations are not valid, those metric definitions fail and return errors, but all valid metric definition IDs in the same operation are still deleted.</p>
+    /// <p>The maximum number of metric definitions that you can specify in one <code>BatchDeleteRumMetricDefinitions</code> operation is 200.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchDeleteRumMetricDefinitions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_delete_rum_metric_definitions_input::Builder,
+    }
+    impl BatchDeleteRumMetricDefinitions {
+        /// Creates a new `BatchDeleteRumMetricDefinitions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::BatchDeleteRumMetricDefinitions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::BatchDeleteRumMetricDefinitionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchDeleteRumMetricDefinitionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchDeleteRumMetricDefinitionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the CloudWatch RUM app monitor that is sending these metrics.</p>
+        pub fn app_monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_monitor_name(input.into());
+            self
+        }
+        /// <p>The name of the CloudWatch RUM app monitor that is sending these metrics.</p>
+        pub fn set_app_monitor_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_app_monitor_name(input);
+            self
+        }
+        /// <p>Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
+        pub fn destination(mut self, input: crate::model::MetricDestination) -> Self {
+            self.inner = self.inner.destination(input);
+            self
+        }
+        /// <p>Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
+        pub fn set_destination(
+            mut self,
+            input: std::option::Option<crate::model::MetricDestination>,
+        ) -> Self {
+            self.inner = self.inner.set_destination(input);
+            self
+        }
+        /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
+        /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
+        pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_arn(input.into());
+            self
+        }
+        /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
+        /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
+        pub fn set_destination_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_arn(input);
+            self
+        }
+        /// Appends an item to `MetricDefinitionIds`.
+        ///
+        /// To override the contents of this collection use [`set_metric_definition_ids`](Self::set_metric_definition_ids).
+        ///
+        /// <p>An array of structures which define the metrics that you want to stop sending.</p>
+        pub fn metric_definition_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_definition_ids(input.into());
+            self
+        }
+        /// <p>An array of structures which define the metrics that you want to stop sending.</p>
+        pub fn set_metric_definition_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_metric_definition_ids(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `BatchGetRumMetricDefinitions`.
+    ///
+    /// <p>Retrieves the list of metrics and dimensions that a RUM app monitor is sending to a single destination.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchGetRumMetricDefinitions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_get_rum_metric_definitions_input::Builder,
+    }
+    impl BatchGetRumMetricDefinitions {
+        /// Creates a new `BatchGetRumMetricDefinitions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::BatchGetRumMetricDefinitions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::BatchGetRumMetricDefinitionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchGetRumMetricDefinitionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchGetRumMetricDefinitionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::BatchGetRumMetricDefinitionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::BatchGetRumMetricDefinitionsPaginator {
+            crate::paginator::BatchGetRumMetricDefinitionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
+        pub fn app_monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_monitor_name(input.into());
+            self
+        }
+        /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
+        pub fn set_app_monitor_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_app_monitor_name(input);
+            self
+        }
+        /// <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
+        pub fn destination(mut self, input: crate::model::MetricDestination) -> Self {
+            self.inner = self.inner.destination(input);
+            self
+        }
+        /// <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
+        pub fn set_destination(
+            mut self,
+            input: std::option::Option<crate::model::MetricDestination>,
+        ) -> Self {
+            self.inner = self.inner.set_destination(input);
+            self
+        }
+        /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+        /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
+        pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_arn(input.into());
+            self
+        }
+        /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+        /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
+        pub fn set_destination_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_arn(input);
+            self
+        }
+        /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
+        /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
+        /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Use the token returned by the previous operation to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Use the token returned by the previous operation to request the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateAppMonitor`.
     ///
     /// <p>Creates a Amazon CloudWatch RUM app monitor, which collects telemetry data from your application and sends that data to RUM. The data includes performance and reliability information such as page load time, client-side errors, and user behavior.</p>
@@ -367,6 +855,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cw_log_enabled(input);
             self
         }
+        /// <p>Specifies whether this app monitor allows the web client to define and send custom events. If you omit this parameter, custom events are <code>DISABLED</code>.</p>
+        /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
+        pub fn custom_events(mut self, input: crate::model::CustomEvents) -> Self {
+            self.inner = self.inner.custom_events(input);
+            self
+        }
+        /// <p>Specifies whether this app monitor allows the web client to define and send custom events. If you omit this parameter, custom events are <code>DISABLED</code>.</p>
+        /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
+        pub fn set_custom_events(
+            mut self,
+            input: std::option::Option<crate::model::CustomEvents>,
+        ) -> Self {
+            self.inner = self.inner.set_custom_events(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteAppMonitor`.
     ///
@@ -438,6 +941,108 @@ pub mod fluent_builders {
         /// <p>The name of the app monitor to delete.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteRumMetricsDestination`.
+    ///
+    /// <p>Deletes a destination for CloudWatch RUM extended metrics, so that the specified app monitor stops sending extended metrics to that destination.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteRumMetricsDestination {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_rum_metrics_destination_input::Builder,
+    }
+    impl DeleteRumMetricsDestination {
+        /// Creates a new `DeleteRumMetricsDestination`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteRumMetricsDestination,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteRumMetricsDestinationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteRumMetricsDestinationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteRumMetricsDestinationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
+        pub fn app_monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_monitor_name(input.into());
+            self
+        }
+        /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
+        pub fn set_app_monitor_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_app_monitor_name(input);
+            self
+        }
+        /// <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
+        pub fn destination(mut self, input: crate::model::MetricDestination) -> Self {
+            self.inner = self.inner.destination(input);
+            self
+        }
+        /// <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
+        pub fn set_destination(
+            mut self,
+            input: std::option::Option<crate::model::MetricDestination>,
+        ) -> Self {
+            self.inner = self.inner.set_destination(input);
+            self
+        }
+        /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</p>
+        pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_arn(input.into());
+            self
+        }
+        /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</p>
+        pub fn set_destination_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_arn(input);
             self
         }
     }
@@ -711,12 +1316,117 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListAppMonitorsPaginator {
             crate::paginator::ListAppMonitorsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The maximum number of results to return in one operation. </p>
+        /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in one operation. </p>
+        /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Use the token returned by the previous operation to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Use the token returned by the previous operation to request the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListRumMetricsDestinations`.
+    ///
+    /// <p>Returns a list of destinations that you have created to receive RUM extended metrics, for the specified app monitor.</p>
+    /// <p>For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrcs.html">AddRumMetrics</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListRumMetricsDestinations {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_rum_metrics_destinations_input::Builder,
+    }
+    impl ListRumMetricsDestinations {
+        /// Creates a new `ListRumMetricsDestinations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListRumMetricsDestinations,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListRumMetricsDestinationsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListRumMetricsDestinationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListRumMetricsDestinationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRumMetricsDestinationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRumMetricsDestinationsPaginator {
+            crate::paginator::ListRumMetricsDestinationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of the app monitor associated with the destinations that you want to retrieve.</p>
+        pub fn app_monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_monitor_name(input.into());
+            self
+        }
+        /// <p>The name of the app monitor associated with the destinations that you want to retrieve.</p>
+        pub fn set_app_monitor_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_app_monitor_name(input);
+            self
+        }
+        /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
+        /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
+        /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -929,6 +1639,121 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::RumEvent>>,
         ) -> Self {
             self.inner = self.inner.set_rum_events(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutRumMetricsDestination`.
+    ///
+    /// <p>Creates or updates a destination to receive extended metrics from CloudWatch RUM. You can send extended metrics to CloudWatch or to a CloudWatch Evidently experiment.</p>
+    /// <p>For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrics.html">AddRumMetrics</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutRumMetricsDestination {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_rum_metrics_destination_input::Builder,
+    }
+    impl PutRumMetricsDestination {
+        /// Creates a new `PutRumMetricsDestination`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PutRumMetricsDestination,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutRumMetricsDestinationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutRumMetricsDestinationOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutRumMetricsDestinationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the CloudWatch RUM app monitor that will send the metrics.</p>
+        pub fn app_monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_monitor_name(input.into());
+            self
+        }
+        /// <p>The name of the CloudWatch RUM app monitor that will send the metrics.</p>
+        pub fn set_app_monitor_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_app_monitor_name(input);
+            self
+        }
+        /// <p>Defines the destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
+        pub fn destination(mut self, input: crate::model::MetricDestination) -> Self {
+            self.inner = self.inner.destination(input);
+            self
+        }
+        /// <p>Defines the destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
+        pub fn set_destination(
+            mut self,
+            input: std::option::Option<crate::model::MetricDestination>,
+        ) -> Self {
+            self.inner = self.inner.set_destination(input);
+            self
+        }
+        /// <p>Use this parameter only if <code>Destination</code> is <code>Evidently</code>. This parameter specifies the ARN of the Evidently experiment that will receive the extended metrics.</p>
+        pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_arn(input.into());
+            self
+        }
+        /// <p>Use this parameter only if <code>Destination</code> is <code>Evidently</code>. This parameter specifies the ARN of the Evidently experiment that will receive the extended metrics.</p>
+        pub fn set_destination_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_arn(input);
+            self
+        }
+        /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+        /// <p>This parameter specifies the ARN of an IAM role that RUM will assume to write to the Evidently experiment that you are sending metrics to. This role must have permission to write to that experiment.</p>
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(input.into());
+            self
+        }
+        /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+        /// <p>This parameter specifies the ARN of an IAM role that RUM will assume to write to the Evidently experiment that you are sending metrics to. This role must have permission to write to that experiment.</p>
+        pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_iam_role_arn(input);
             self
         }
     }
@@ -1232,6 +2057,151 @@ pub mod fluent_builders {
         /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
         pub fn set_cw_log_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_cw_log_enabled(input);
+            self
+        }
+        /// <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>
+        /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
+        pub fn custom_events(mut self, input: crate::model::CustomEvents) -> Self {
+            self.inner = self.inner.custom_events(input);
+            self
+        }
+        /// <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>
+        /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
+        pub fn set_custom_events(
+            mut self,
+            input: std::option::Option<crate::model::CustomEvents>,
+        ) -> Self {
+            self.inner = self.inner.set_custom_events(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateRumMetricDefinition`.
+    ///
+    /// <p>Modifies one existing metric definition for CloudWatch RUM extended metrics. For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html">BatchCreateRumMetricsDefinitions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateRumMetricDefinition {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_rum_metric_definition_input::Builder,
+    }
+    impl UpdateRumMetricDefinition {
+        /// Creates a new `UpdateRumMetricDefinition`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateRumMetricDefinition,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateRumMetricDefinitionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateRumMetricDefinitionOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateRumMetricDefinitionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the CloudWatch RUM app monitor that sends these metrics.</p>
+        pub fn app_monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_monitor_name(input.into());
+            self
+        }
+        /// <p>The name of the CloudWatch RUM app monitor that sends these metrics.</p>
+        pub fn set_app_monitor_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_app_monitor_name(input);
+            self
+        }
+        /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
+        pub fn destination(mut self, input: crate::model::MetricDestination) -> Self {
+            self.inner = self.inner.destination(input);
+            self
+        }
+        /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
+        pub fn set_destination(
+            mut self,
+            input: std::option::Option<crate::model::MetricDestination>,
+        ) -> Self {
+            self.inner = self.inner.set_destination(input);
+            self
+        }
+        /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+        /// <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
+        pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_arn(input.into());
+            self
+        }
+        /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+        /// <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
+        pub fn set_destination_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_arn(input);
+            self
+        }
+        /// <p>A structure that contains the new definition that you want to use for this metric.</p>
+        pub fn metric_definition(mut self, input: crate::model::MetricDefinitionRequest) -> Self {
+            self.inner = self.inner.metric_definition(input);
+            self
+        }
+        /// <p>A structure that contains the new definition that you want to use for this metric.</p>
+        pub fn set_metric_definition(
+            mut self,
+            input: std::option::Option<crate::model::MetricDefinitionRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_metric_definition(input);
+            self
+        }
+        /// <p>The ID of the metric definition to update.</p>
+        pub fn metric_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_definition_id(input.into());
+            self
+        }
+        /// <p>The ID of the metric definition to update.</p>
+        pub fn set_metric_definition_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_metric_definition_id(input);
             self
         }
     }

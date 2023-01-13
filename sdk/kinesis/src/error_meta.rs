@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The provided iterator exceeds the maximum age allowed.</p>
     ExpiredIteratorException(crate::error::ExpiredIteratorException),
     /// <p>The pagination token passed to the operation is expired.</p>
@@ -29,7 +31,7 @@ pub enum Error {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The requested resource could not be found. The stream might not be specified correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> </p>
+    /// <p>Specifies that you tried to invoke this API for a data stream with the on-demand capacity mode. This API is only supported for data streams with the provisioned capacity mode. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -44,6 +46,7 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ExpiredIteratorException(inner) => inner.fmt(f),
             Error::ExpiredNextTokenException(inner) => inner.fmt(f),
             Error::InvalidArgumentException(inner) => inner.fmt(f),
@@ -78,6 +81,9 @@ where
 impl From<crate::error::AddTagsToStreamError> for Error {
     fn from(err: crate::error::AddTagsToStreamError) -> Self {
         match err.kind {
+            crate::error::AddTagsToStreamErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::AddTagsToStreamErrorKind::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
@@ -146,6 +152,9 @@ where
 impl From<crate::error::DecreaseStreamRetentionPeriodError> for Error {
     fn from(err: crate::error::DecreaseStreamRetentionPeriodError) -> Self {
         match err.kind {
+            crate::error::DecreaseStreamRetentionPeriodErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::DecreaseStreamRetentionPeriodErrorKind::InvalidArgumentException(
                 inner,
             ) => Error::InvalidArgumentException(inner),
@@ -180,6 +189,12 @@ where
 impl From<crate::error::DeleteStreamError> for Error {
     fn from(err: crate::error::DeleteStreamError) -> Self {
         match err.kind {
+            crate::error::DeleteStreamErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DeleteStreamErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
             crate::error::DeleteStreamErrorKind::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
@@ -270,6 +285,12 @@ where
 impl From<crate::error::DescribeStreamError> for Error {
     fn from(err: crate::error::DescribeStreamError) -> Self {
         match err.kind {
+            crate::error::DescribeStreamErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DescribeStreamErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
             crate::error::DescribeStreamErrorKind::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
@@ -335,6 +356,12 @@ where
 impl From<crate::error::DescribeStreamSummaryError> for Error {
     fn from(err: crate::error::DescribeStreamSummaryError) -> Self {
         match err.kind {
+            crate::error::DescribeStreamSummaryErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DescribeStreamSummaryErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
             crate::error::DescribeStreamSummaryErrorKind::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
@@ -366,6 +393,9 @@ where
 impl From<crate::error::DisableEnhancedMonitoringError> for Error {
     fn from(err: crate::error::DisableEnhancedMonitoringError) -> Self {
         match err.kind {
+            crate::error::DisableEnhancedMonitoringErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::DisableEnhancedMonitoringErrorKind::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
@@ -403,6 +433,9 @@ where
 impl From<crate::error::EnableEnhancedMonitoringError> for Error {
     fn from(err: crate::error::EnableEnhancedMonitoringError) -> Self {
         match err.kind {
+            crate::error::EnableEnhancedMonitoringErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::EnableEnhancedMonitoringErrorKind::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
@@ -442,6 +475,9 @@ impl From<crate::error::GetRecordsError> for Error {
             }
             crate::error::GetRecordsErrorKind::KmsDisabledException(inner) => {
                 Error::KmsDisabledException(inner)
+            }
+            crate::error::GetRecordsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
             }
             crate::error::GetRecordsErrorKind::KmsNotFoundException(inner) => {
                 Error::KmsNotFoundException(inner)
@@ -491,6 +527,9 @@ where
 impl From<crate::error::GetShardIteratorError> for Error {
     fn from(err: crate::error::GetShardIteratorError) -> Self {
         match err.kind {
+            crate::error::GetShardIteratorErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::GetShardIteratorErrorKind::ProvisionedThroughputExceededException(
                 inner,
             ) => Error::ProvisionedThroughputExceededException(inner),
@@ -525,6 +564,9 @@ where
 impl From<crate::error::IncreaseStreamRetentionPeriodError> for Error {
     fn from(err: crate::error::IncreaseStreamRetentionPeriodError) -> Self {
         match err.kind {
+            crate::error::IncreaseStreamRetentionPeriodErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::IncreaseStreamRetentionPeriodErrorKind::InvalidArgumentException(
                 inner,
             ) => Error::InvalidArgumentException(inner),
@@ -559,6 +601,9 @@ where
 impl From<crate::error::ListShardsError> for Error {
     fn from(err: crate::error::ListShardsError) -> Self {
         match err.kind {
+            crate::error::ListShardsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::ListShardsErrorKind::ExpiredNextTokenException(inner) => {
                 Error::ExpiredNextTokenException(inner)
             }
@@ -635,6 +680,12 @@ where
 impl From<crate::error::ListStreamsError> for Error {
     fn from(err: crate::error::ListStreamsError) -> Self {
         match err.kind {
+            crate::error::ListStreamsErrorKind::ExpiredNextTokenException(inner) => {
+                Error::ExpiredNextTokenException(inner)
+            }
+            crate::error::ListStreamsErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
             crate::error::ListStreamsErrorKind::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
@@ -662,6 +713,9 @@ where
 impl From<crate::error::ListTagsForStreamError> for Error {
     fn from(err: crate::error::ListTagsForStreamError) -> Self {
         match err.kind {
+            crate::error::ListTagsForStreamErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::ListTagsForStreamErrorKind::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
@@ -693,6 +747,9 @@ where
 impl From<crate::error::MergeShardsError> for Error {
     fn from(err: crate::error::MergeShardsError) -> Self {
         match err.kind {
+            crate::error::MergeShardsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::MergeShardsErrorKind::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -735,6 +792,9 @@ impl From<crate::error::PutRecordError> for Error {
             }
             crate::error::PutRecordErrorKind::KmsDisabledException(inner) => {
                 Error::KmsDisabledException(inner)
+            }
+            crate::error::PutRecordErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
             }
             crate::error::PutRecordErrorKind::KmsNotFoundException(inner) => {
                 Error::KmsNotFoundException(inner)
@@ -784,6 +844,9 @@ impl From<crate::error::PutRecordsError> for Error {
             }
             crate::error::PutRecordsErrorKind::KmsDisabledException(inner) => {
                 Error::KmsDisabledException(inner)
+            }
+            crate::error::PutRecordsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
             }
             crate::error::PutRecordsErrorKind::KmsNotFoundException(inner) => {
                 Error::KmsNotFoundException(inner)
@@ -868,6 +931,9 @@ where
 impl From<crate::error::RemoveTagsFromStreamError> for Error {
     fn from(err: crate::error::RemoveTagsFromStreamError) -> Self {
         match err.kind {
+            crate::error::RemoveTagsFromStreamErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::RemoveTagsFromStreamErrorKind::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
@@ -902,6 +968,9 @@ where
 impl From<crate::error::SplitShardError> for Error {
     fn from(err: crate::error::SplitShardError) -> Self {
         match err.kind {
+            crate::error::SplitShardErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::SplitShardErrorKind::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -947,6 +1016,9 @@ impl From<crate::error::StartStreamEncryptionError> for Error {
             }
             crate::error::StartStreamEncryptionErrorKind::KmsDisabledException(inner) => {
                 Error::KmsDisabledException(inner)
+            }
+            crate::error::StartStreamEncryptionErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
             }
             crate::error::StartStreamEncryptionErrorKind::KmsNotFoundException(inner) => {
                 Error::KmsNotFoundException(inner)
@@ -997,6 +1069,9 @@ where
 impl From<crate::error::StopStreamEncryptionError> for Error {
     fn from(err: crate::error::StopStreamEncryptionError) -> Self {
         match err.kind {
+            crate::error::StopStreamEncryptionErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::StopStreamEncryptionErrorKind::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
@@ -1033,6 +1108,9 @@ where
 impl From<crate::error::UpdateShardCountError> for Error {
     fn from(err: crate::error::UpdateShardCountError) -> Self {
         match err.kind {
+            crate::error::UpdateShardCountErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::UpdateShardCountErrorKind::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }

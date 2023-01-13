@@ -697,6 +697,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteCommand {
     }
 }
 
+/// Operation shape for `GetTaskProtection`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_task_protection`](crate::client::Client::get_task_protection).
+///
+/// See [`crate::client::fluent_builders::GetTaskProtection`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetTaskProtection {
+    _private: (),
+}
+impl GetTaskProtection {
+    /// Creates a new builder-style object to manufacture [`GetTaskProtectionInput`](crate::input::GetTaskProtectionInput).
+    pub fn builder() -> crate::input::get_task_protection_input::Builder {
+        crate::input::get_task_protection_input::Builder::default()
+    }
+    /// Creates a new `GetTaskProtection` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetTaskProtection {
+    type Output = std::result::Result<
+        crate::output::GetTaskProtectionOutput,
+        crate::error::GetTaskProtectionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_task_protection_error(response)
+        } else {
+            crate::operation_deser::parse_get_task_protection_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListAccountSettings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -857,6 +891,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServices {
             crate::operation_deser::parse_list_services_error(response)
         } else {
             crate::operation_deser::parse_list_services_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListServicesByNamespace`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_services_by_namespace`](crate::client::Client::list_services_by_namespace).
+///
+/// See [`crate::client::fluent_builders::ListServicesByNamespace`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListServicesByNamespace {
+    _private: (),
+}
+impl ListServicesByNamespace {
+    /// Creates a new builder-style object to manufacture [`ListServicesByNamespaceInput`](crate::input::ListServicesByNamespaceInput).
+    pub fn builder() -> crate::input::list_services_by_namespace_input::Builder {
+        crate::input::list_services_by_namespace_input::Builder::default()
+    }
+    /// Creates a new `ListServicesByNamespace` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListServicesByNamespace {
+    type Output = std::result::Result<
+        crate::output::ListServicesByNamespaceOutput,
+        crate::error::ListServicesByNamespaceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_services_by_namespace_error(response)
+        } else {
+            crate::operation_deser::parse_list_services_by_namespace_response(response)
         }
     }
 }
@@ -1685,6 +1753,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateServicePrimaryTask
             crate::operation_deser::parse_update_service_primary_task_set_error(response)
         } else {
             crate::operation_deser::parse_update_service_primary_task_set_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateTaskProtection`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_task_protection`](crate::client::Client::update_task_protection).
+///
+/// See [`crate::client::fluent_builders::UpdateTaskProtection`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateTaskProtection {
+    _private: (),
+}
+impl UpdateTaskProtection {
+    /// Creates a new builder-style object to manufacture [`UpdateTaskProtectionInput`](crate::input::UpdateTaskProtectionInput).
+    pub fn builder() -> crate::input::update_task_protection_input::Builder {
+        crate::input::update_task_protection_input::Builder::default()
+    }
+    /// Creates a new `UpdateTaskProtection` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateTaskProtection {
+    type Output = std::result::Result<
+        crate::output::UpdateTaskProtectionOutput,
+        crate::error::UpdateTaskProtectionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_task_protection_error(response)
+        } else {
+            crate::operation_deser::parse_update_task_protection_response(response)
         }
     }
 }

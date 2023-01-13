@@ -112,6 +112,7 @@ impl Client {
     ///   - [`configuration(ClusterConfiguration)`](crate::client::fluent_builders::CreateCluster::configuration) / [`set_configuration(Option<ClusterConfiguration>)`](crate::client::fluent_builders::CreateCluster::set_configuration): <p>The <code>execute</code> command configuration for the cluster.</p>
     ///   - [`capacity_providers(Vec<String>)`](crate::client::fluent_builders::CreateCluster::capacity_providers) / [`set_capacity_providers(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCluster::set_capacity_providers): <p>The short name of one or more capacity providers to associate with the cluster. A capacity provider must be associated with a cluster before it can be included as part of the default capacity provider strategy of the cluster or used in a capacity provider strategy when calling the <code>CreateService</code> or <code>RunTask</code> actions.</p>  <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not associated with another cluster. New Auto Scaling group capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>  <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>  <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
     ///   - [`default_capacity_provider_strategy(Vec<CapacityProviderStrategyItem>)`](crate::client::fluent_builders::CreateCluster::default_capacity_provider_strategy) / [`set_default_capacity_provider_strategy(Option<Vec<CapacityProviderStrategyItem>>)`](crate::client::fluent_builders::CreateCluster::set_default_capacity_provider_strategy): <p>The capacity provider strategy to set as the default for the cluster. After a default capacity provider strategy is set for a cluster, when you call the <code>RunTask</code> or <code>CreateService</code> APIs with no capacity provider strategy or launch type specified, the default capacity provider strategy for the cluster is used.</p>  <p>If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined later with the <code>PutClusterCapacityProviders</code> API operation.</p>
+    ///   - [`service_connect_defaults(ClusterServiceConnectDefaultsRequest)`](crate::client::fluent_builders::CreateCluster::service_connect_defaults) / [`set_service_connect_defaults(Option<ClusterServiceConnectDefaultsRequest>)`](crate::client::fluent_builders::CreateCluster::set_service_connect_defaults): <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>  <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::CreateClusterOutput::cluster): <p>The full description of your new cluster.</p>
     /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::error::CreateClusterError)
@@ -136,13 +137,14 @@ impl Client {
     ///   - [`placement_constraints(Vec<PlacementConstraint>)`](crate::client::fluent_builders::CreateService::placement_constraints) / [`set_placement_constraints(Option<Vec<PlacementConstraint>>)`](crate::client::fluent_builders::CreateService::set_placement_constraints): <p>An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
     ///   - [`placement_strategy(Vec<PlacementStrategy>)`](crate::client::fluent_builders::CreateService::placement_strategy) / [`set_placement_strategy(Option<Vec<PlacementStrategy>>)`](crate::client::fluent_builders::CreateService::set_placement_strategy): <p>The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules for each service.</p>
     ///   - [`network_configuration(NetworkConfiguration)`](crate::client::fluent_builders::CreateService::network_configuration) / [`set_network_configuration(Option<NetworkConfiguration>)`](crate::client::fluent_builders::CreateService::set_network_configuration): <p>The network configuration for the service. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    ///   - [`health_check_grace_period_seconds(i32)`](crate::client::fluent_builders::CreateService::health_check_grace_period_seconds) / [`set_health_check_grace_period_seconds(Option<i32>)`](crate::client::fluent_builders::CreateService::set_health_check_grace_period_seconds): <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used when your service is configured to use a load balancer. If your service has a load balancer defined and you don't specify a health check grace period value, the default value of <code>0</code> is used.</p>  <p>If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the task definition healtch check parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.</p>  <p>If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
+    ///   - [`health_check_grace_period_seconds(i32)`](crate::client::fluent_builders::CreateService::health_check_grace_period_seconds) / [`set_health_check_grace_period_seconds(Option<i32>)`](crate::client::fluent_builders::CreateService::set_health_check_grace_period_seconds): <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used when your service is configured to use a load balancer. If your service has a load balancer defined and you don't specify a health check grace period value, the default value of <code>0</code> is used.</p>  <p>If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the task definition health check parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.</p>  <p>If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
     ///   - [`scheduling_strategy(SchedulingStrategy)`](crate::client::fluent_builders::CreateService::scheduling_strategy) / [`set_scheduling_strategy(Option<SchedulingStrategy>)`](crate::client::fluent_builders::CreateService::set_scheduling_strategy): <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>  <p>There are two service scheduler strategies available:</p>  <ul>   <li> <p> <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions. This scheduler strategy is required if the service uses the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types.</p> </li>   <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks and will stop tasks that don't meet the placement constraints. When you're using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies.</p> <note>     <p>Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types don't support the <code>DAEMON</code> scheduling strategy.</p>    </note> </li>  </ul>
     ///   - [`deployment_controller(DeploymentController)`](crate::client::fluent_builders::CreateService::deployment_controller) / [`set_deployment_controller(Option<DeploymentController>)`](crate::client::fluent_builders::CreateService::set_deployment_controller): <p>The deployment controller to use for the service. If no deployment controller is specified, the default value of <code>ECS</code> is used.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateService::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateService::set_tags): <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as well.</p>  <p>The following basic restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per resource - 50</p> </li>   <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>   <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>   <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>   <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>   <li> <p>Tag keys and values are case-sensitive.</p> </li>   <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>  </ul>
     ///   - [`enable_ecs_managed_tags(bool)`](crate::client::fluent_builders::CreateService::enable_ecs_managed_tags) / [`set_enable_ecs_managed_tags(bool)`](crate::client::fluent_builders::CreateService::set_enable_ecs_managed_tags): <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     ///   - [`propagate_tags(PropagateTags)`](crate::client::fluent_builders::CreateService::propagate_tags) / [`set_propagate_tags(Option<PropagateTags>)`](crate::client::fluent_builders::CreateService::set_propagate_tags): <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <code>TagResource</code> API action.</p>
     ///   - [`enable_execute_command(bool)`](crate::client::fluent_builders::CreateService::enable_execute_command) / [`set_enable_execute_command(bool)`](crate::client::fluent_builders::CreateService::set_enable_execute_command): <p>Determines whether the execute command functionality is enabled for the service. If <code>true</code>, this enables execute command functionality on all containers in the service tasks.</p>
+    ///   - [`service_connect_configuration(ServiceConnectConfiguration)`](crate::client::fluent_builders::CreateService::service_connect_configuration) / [`set_service_connect_configuration(Option<ServiceConnectConfiguration>)`](crate::client::fluent_builders::CreateService::set_service_connect_configuration): <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>  <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// - On success, responds with [`CreateServiceOutput`](crate::output::CreateServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::output::CreateServiceOutput::service): <p>The full description of your service following the create call.</p>  <p>A service will return either a <code>capacityProviderStrategy</code> or <code>launchType</code> parameter, but not both, depending where one was specified when it was created.</p>  <p>If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code> and <code>taskSets</code> parameters will not be returned.</p>  <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the <code>deploymentController</code>, <code>taskSets</code> and <code>deployments</code> parameters will be returned, however the <code>deployments</code> parameter will be an empty list.</p>
     /// - On failure, responds with [`SdkError<CreateServiceError>`](crate::error::CreateServiceError)
@@ -279,7 +281,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`clusters(Vec<String>)`](crate::client::fluent_builders::DescribeClusters::clusters) / [`set_clusters(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeClusters::set_clusters): <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries. If you do not specify a cluster, the default cluster is assumed.</p>
-    ///   - [`include(Vec<ClusterField>)`](crate::client::fluent_builders::DescribeClusters::include) / [`set_include(Option<Vec<ClusterField>>)`](crate::client::fluent_builders::DescribeClusters::set_include): <p>Determines whether to include additional information about the clusters in the response. If this field is omitted, this information isn't included.</p>  <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster are included.</p>  <p>If <code>SETTINGS</code> is specified, the settings for the cluster are included.</p>  <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is included.</p>  <p>If <code>STATISTICS</code> is specified, the task and service count is included, separated by launch type.</p>  <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.</p>
+    ///   - [`include(Vec<ClusterField>)`](crate::client::fluent_builders::DescribeClusters::include) / [`set_include(Option<Vec<ClusterField>>)`](crate::client::fluent_builders::DescribeClusters::set_include): <p>Determines whether to include additional information about the clusters in the response. If this field is omitted, this information isn't included.</p>  <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster are included, for example the capacity providers.</p>  <p>If <code>SETTINGS</code> is specified, the settings for the cluster are included.</p>  <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is included.</p>  <p>If <code>STATISTICS</code> is specified, the task and service count is included, separated by launch type.</p>  <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.</p>
     /// - On success, responds with [`DescribeClustersOutput`](crate::output::DescribeClustersOutput) with field(s):
     ///   - [`clusters(Option<Vec<Cluster>>)`](crate::output::DescribeClustersOutput::clusters): <p>The list of clusters.</p>
     ///   - [`failures(Option<Vec<Failure>>)`](crate::output::DescribeClustersOutput::failures): <p>Any failures associated with the call.</p>
@@ -360,6 +362,7 @@ impl Client {
     /// - On success, responds with [`DiscoverPollEndpointOutput`](crate::output::DiscoverPollEndpointOutput) with field(s):
     ///   - [`endpoint(Option<String>)`](crate::output::DiscoverPollEndpointOutput::endpoint): <p>The endpoint for the Amazon ECS agent to poll.</p>
     ///   - [`telemetry_endpoint(Option<String>)`](crate::output::DiscoverPollEndpointOutput::telemetry_endpoint): <p>The telemetry endpoint for the Amazon ECS agent.</p>
+    ///   - [`service_connect_endpoint(Option<String>)`](crate::output::DiscoverPollEndpointOutput::service_connect_endpoint): <p>The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// - On failure, responds with [`SdkError<DiscoverPollEndpointError>`](crate::error::DiscoverPollEndpointError)
     pub fn discover_poll_endpoint(&self) -> fluent_builders::DiscoverPollEndpoint {
         fluent_builders::DiscoverPollEndpoint::new(self.handle.clone())
@@ -382,6 +385,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<ExecuteCommandError>`](crate::error::ExecuteCommandError)
     pub fn execute_command(&self) -> fluent_builders::ExecuteCommand {
         fluent_builders::ExecuteCommand::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetTaskProtection`](crate::client::fluent_builders::GetTaskProtection) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`cluster(impl Into<String>)`](crate::client::fluent_builders::GetTaskProtection::cluster) / [`set_cluster(Option<String>)`](crate::client::fluent_builders::GetTaskProtection::set_cluster): <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+    ///   - [`tasks(Vec<String>)`](crate::client::fluent_builders::GetTaskProtection::tasks) / [`set_tasks(Option<Vec<String>>)`](crate::client::fluent_builders::GetTaskProtection::set_tasks): <p>A list of up to 100 task IDs or full ARN entries.</p>
+    /// - On success, responds with [`GetTaskProtectionOutput`](crate::output::GetTaskProtectionOutput) with field(s):
+    ///   - [`protected_tasks(Option<Vec<ProtectedTask>>)`](crate::output::GetTaskProtectionOutput::protected_tasks): <p>A list of tasks with the following information.</p>  <ul>   <li> <p> <code>taskArn</code>: The task ARN.</p> </li>   <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>   <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>  </ul>
+    ///   - [`failures(Option<Vec<Failure>>)`](crate::output::GetTaskProtectionOutput::failures): <p>Any failures associated with the call.</p>
+    /// - On failure, responds with [`SdkError<GetTaskProtectionError>`](crate::error::GetTaskProtectionError)
+    pub fn get_task_protection(&self) -> fluent_builders::GetTaskProtection {
+        fluent_builders::GetTaskProtection::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAccountSettings`](crate::client::fluent_builders::ListAccountSettings) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccountSettings::into_paginator).
@@ -462,6 +477,20 @@ impl Client {
     pub fn list_services(&self) -> fluent_builders::ListServices {
         fluent_builders::ListServices::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListServicesByNamespace`](crate::client::fluent_builders::ListServicesByNamespace) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServicesByNamespace::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListServicesByNamespace::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListServicesByNamespace::set_namespace): <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace to list the services in.</p>  <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListServicesByNamespace::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListServicesByNamespace::set_next_token): <p>The <code>nextToken</code> value that's returned from a <code>ListServicesByNamespace</code> request. It indicates that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> is returned, it is possible the number of results is less than <code>maxResults</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListServicesByNamespace::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListServicesByNamespace::set_max_results): <p>The maximum number of service results that <code>ListServicesByNamespace</code> returns in paginated output. When this parameter is used, <code>ListServicesByNamespace</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListServicesByNamespace</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListServicesByNamespace</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
+    /// - On success, responds with [`ListServicesByNamespaceOutput`](crate::output::ListServicesByNamespaceOutput) with field(s):
+    ///   - [`service_arns(Option<Vec<String>>)`](crate::output::ListServicesByNamespaceOutput::service_arns): <p>The list of full ARN entries for each service that's associated with the specified namespace.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListServicesByNamespaceOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListServicesByNamespace</code> request. When the results of a <code>ListServicesByNamespace</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. When there are no more results to return, this value is <code>null</code>.</p>
+    /// - On failure, responds with [`SdkError<ListServicesByNamespaceError>`](crate::error::ListServicesByNamespaceError)
+    pub fn list_services_by_namespace(&self) -> fluent_builders::ListServicesByNamespace {
+        fluent_builders::ListServicesByNamespace::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -512,7 +541,7 @@ impl Client {
     ///   - [`family(impl Into<String>)`](crate::client::fluent_builders::ListTasks::family) / [`set_family(Option<String>)`](crate::client::fluent_builders::ListTasks::set_family): <p>The name of the task definition family to use when filtering the <code>ListTasks</code> results. Specifying a <code>family</code> limits the results to tasks that belong to that family.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTasks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTasks::set_next_token): <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>   <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTasks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTasks::set_max_results): <p>The maximum number of task results that <code>ListTasks</code> returned in paginated output. When this parameter is used, <code>ListTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListTasks</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListTasks</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
-    ///   - [`started_by(impl Into<String>)`](crate::client::fluent_builders::ListTasks::started_by) / [`set_started_by(Option<String>)`](crate::client::fluent_builders::ListTasks::set_started_by): <p>The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value limits the results to tasks that were started with that value.</p>
+    ///   - [`started_by(impl Into<String>)`](crate::client::fluent_builders::ListTasks::started_by) / [`set_started_by(Option<String>)`](crate::client::fluent_builders::ListTasks::set_started_by): <p>The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value limits the results to tasks that were started with that value.</p>  <p>When you specify <code>startedBy</code> as the filter, it must be the only filter that you use.</p>
     ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::ListTasks::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::ListTasks::set_service_name): <p>The name of the service to use when filtering the <code>ListTasks</code> results. Specifying a <code>serviceName</code> limits the results to tasks that belong to that service.</p>
     ///   - [`desired_status(DesiredStatus)`](crate::client::fluent_builders::ListTasks::desired_status) / [`set_desired_status(Option<DesiredStatus>)`](crate::client::fluent_builders::ListTasks::set_desired_status): <p>The task desired status to use when filtering the <code>ListTasks</code> results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful for debugging tasks that aren't starting properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note>   <p>Although you can filter results based on a desired status of <code>PENDING</code>, this doesn't return any results. Amazon ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>  </note>
     ///   - [`launch_type(LaunchType)`](crate::client::fluent_builders::ListTasks::launch_type) / [`set_launch_type(Option<LaunchType>)`](crate::client::fluent_builders::ListTasks::set_launch_type): <p>The launch type to use when filtering the <code>ListTasks</code> results.</p>
@@ -761,6 +790,7 @@ impl Client {
     ///   - [`cluster(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::cluster) / [`set_cluster(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_cluster): <p>The name of the cluster to modify the settings for.</p>
     ///   - [`settings(Vec<ClusterSetting>)`](crate::client::fluent_builders::UpdateCluster::settings) / [`set_settings(Option<Vec<ClusterSetting>>)`](crate::client::fluent_builders::UpdateCluster::set_settings): <p>The cluster settings for your cluster.</p>
     ///   - [`configuration(ClusterConfiguration)`](crate::client::fluent_builders::UpdateCluster::configuration) / [`set_configuration(Option<ClusterConfiguration>)`](crate::client::fluent_builders::UpdateCluster::set_configuration): <p>The execute command configuration for the cluster.</p>
+    ///   - [`service_connect_defaults(ClusterServiceConnectDefaultsRequest)`](crate::client::fluent_builders::UpdateCluster::service_connect_defaults) / [`set_service_connect_defaults(Option<ClusterServiceConnectDefaultsRequest>)`](crate::client::fluent_builders::UpdateCluster::set_service_connect_defaults): <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>  <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// - On success, responds with [`UpdateClusterOutput`](crate::output::UpdateClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::UpdateClusterOutput::cluster): <p>Details about the cluster.</p>
     /// - On failure, responds with [`SdkError<UpdateClusterError>`](crate::error::UpdateClusterError)
@@ -771,7 +801,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`cluster(impl Into<String>)`](crate::client::fluent_builders::UpdateClusterSettings::cluster) / [`set_cluster(Option<String>)`](crate::client::fluent_builders::UpdateClusterSettings::set_cluster): <p>The name of the cluster to modify the settings for.</p>
-    ///   - [`settings(Vec<ClusterSetting>)`](crate::client::fluent_builders::UpdateClusterSettings::settings) / [`set_settings(Option<Vec<ClusterSetting>>)`](crate::client::fluent_builders::UpdateClusterSettings::set_settings): <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p>
+    ///   - [`settings(Vec<ClusterSetting>)`](crate::client::fluent_builders::UpdateClusterSettings::settings) / [`set_settings(Option<Vec<ClusterSetting>>)`](crate::client::fluent_builders::UpdateClusterSettings::set_settings): <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p> <important>   <p>Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait 7 days before you can re-create it.</p>  </important>
     /// - On success, responds with [`UpdateClusterSettingsOutput`](crate::output::UpdateClusterSettingsOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::UpdateClusterSettingsOutput::cluster): <p>Details about the cluster</p>
     /// - On failure, responds with [`SdkError<UpdateClusterSettingsError>`](crate::error::UpdateClusterSettingsError)
@@ -824,6 +854,7 @@ impl Client {
     ///   - [`load_balancers(Vec<LoadBalancer>)`](crate::client::fluent_builders::UpdateService::load_balancers) / [`set_load_balancers(Option<Vec<LoadBalancer>>)`](crate::client::fluent_builders::UpdateService::set_load_balancers): <p>A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name, and the container port to access from the load balancer. The container name is as it appears in a container definition.</p>  <p>When you add, update, or remove a load balancer configuration, Amazon ECS starts new tasks with the updated Elastic Load Balancing configuration, and then stops the old tasks when the new tasks are running.</p>  <p>For services that use rolling updates, you can add, update, or remove Elastic Load Balancing target groups. You can update from a single target group to multiple target groups and from multiple target groups to a single target group.</p>  <p>For services that use blue/green deployments, you can update Elastic Load Balancing target groups by using <code> <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a> </code> through CodeDeploy. Note that multiple target groups are not supported for blue/green deployments. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Register multiple target groups with a service</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. </p>  <p>For services that use the external deployment controller, you can add, update, or remove load balancers by using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html">CreateTaskSet</a>. Note that multiple target groups are not supported for external deployments. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Register multiple target groups with a service</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. </p>  <p>You can remove existing <code>loadBalancers</code> by passing an empty list.</p>
     ///   - [`propagate_tags(PropagateTags)`](crate::client::fluent_builders::UpdateService::propagate_tags) / [`set_propagate_tags(Option<PropagateTags>)`](crate::client::fluent_builders::UpdateService::set_propagate_tags): <p>Determines whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>  <p>Only tasks launched after the update will reflect the update. To update the tags on all tasks, set <code>forceNewDeployment</code> to <code>true</code>, so that Amazon ECS starts new tasks with the updated tags.</p>
     ///   - [`service_registries(Vec<ServiceRegistry>)`](crate::client::fluent_builders::UpdateService::service_registries) / [`set_service_registries(Option<Vec<ServiceRegistry>>)`](crate::client::fluent_builders::UpdateService::set_service_registries): <p>The details for the service discovery registries to assign to this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.</p>  <p>When you add, update, or remove the service registries configuration, Amazon ECS starts new tasks with the updated service registries configuration, and then stops the old tasks when the new tasks are running.</p>  <p>You can remove existing <code>serviceRegistries</code> by passing an empty list.</p>
+    ///   - [`service_connect_configuration(ServiceConnectConfiguration)`](crate::client::fluent_builders::UpdateService::service_connect_configuration) / [`set_service_connect_configuration(Option<ServiceConnectConfiguration>)`](crate::client::fluent_builders::UpdateService::set_service_connect_configuration): <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>  <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// - On success, responds with [`UpdateServiceOutput`](crate::output::UpdateServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::output::UpdateServiceOutput::service): <p>The full description of your service following the update call.</p>
     /// - On failure, responds with [`SdkError<UpdateServiceError>`](crate::error::UpdateServiceError)
@@ -837,10 +868,24 @@ impl Client {
     ///   - [`service(impl Into<String>)`](crate::client::fluent_builders::UpdateServicePrimaryTaskSet::service) / [`set_service(Option<String>)`](crate::client::fluent_builders::UpdateServicePrimaryTaskSet::set_service): <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
     ///   - [`primary_task_set(impl Into<String>)`](crate::client::fluent_builders::UpdateServicePrimaryTaskSet::primary_task_set) / [`set_primary_task_set(Option<String>)`](crate::client::fluent_builders::UpdateServicePrimaryTaskSet::set_primary_task_set): <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the deployment.</p>
     /// - On success, responds with [`UpdateServicePrimaryTaskSetOutput`](crate::output::UpdateServicePrimaryTaskSetOutput) with field(s):
-    ///   - [`task_set(Option<TaskSet>)`](crate::output::UpdateServicePrimaryTaskSetOutput::task_set): <p>etails about the task set.</p>
+    ///   - [`task_set(Option<TaskSet>)`](crate::output::UpdateServicePrimaryTaskSetOutput::task_set): <p>The details about the task set.</p>
     /// - On failure, responds with [`SdkError<UpdateServicePrimaryTaskSetError>`](crate::error::UpdateServicePrimaryTaskSetError)
     pub fn update_service_primary_task_set(&self) -> fluent_builders::UpdateServicePrimaryTaskSet {
         fluent_builders::UpdateServicePrimaryTaskSet::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateTaskProtection`](crate::client::fluent_builders::UpdateTaskProtection) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`cluster(impl Into<String>)`](crate::client::fluent_builders::UpdateTaskProtection::cluster) / [`set_cluster(Option<String>)`](crate::client::fluent_builders::UpdateTaskProtection::set_cluster): <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+    ///   - [`tasks(Vec<String>)`](crate::client::fluent_builders::UpdateTaskProtection::tasks) / [`set_tasks(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateTaskProtection::set_tasks): <p>A list of up to 10 task IDs or full ARN entries.</p>
+    ///   - [`protection_enabled(bool)`](crate::client::fluent_builders::UpdateTaskProtection::protection_enabled) / [`set_protection_enabled(bool)`](crate::client::fluent_builders::UpdateTaskProtection::set_protection_enabled): <p>Specify <code>true</code> to mark a task for protection and <code>false</code> to unset protection, making it eligible for termination.</p>
+    ///   - [`expires_in_minutes(i32)`](crate::client::fluent_builders::UpdateTaskProtection::expires_in_minutes) / [`set_expires_in_minutes(Option<i32>)`](crate::client::fluent_builders::UpdateTaskProtection::set_expires_in_minutes): <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p>  <p>If you don’t specify the time, then the task is automatically protected for 120 minutes (2 hours).</p>
+    /// - On success, responds with [`UpdateTaskProtectionOutput`](crate::output::UpdateTaskProtectionOutput) with field(s):
+    ///   - [`protected_tasks(Option<Vec<ProtectedTask>>)`](crate::output::UpdateTaskProtectionOutput::protected_tasks): <p>A list of tasks with the following information.</p>  <ul>   <li> <p> <code>taskArn</code>: The task ARN.</p> </li>   <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>   <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>  </ul>
+    ///   - [`failures(Option<Vec<Failure>>)`](crate::output::UpdateTaskProtectionOutput::failures): <p>Any failures associated with the call.</p>
+    /// - On failure, responds with [`SdkError<UpdateTaskProtectionError>`](crate::error::UpdateTaskProtectionError)
+    pub fn update_task_protection(&self) -> fluent_builders::UpdateTaskProtection {
+        fluent_builders::UpdateTaskProtection::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateTaskSet`](crate::client::fluent_builders::UpdateTaskSet) operation.
     ///
@@ -1176,6 +1221,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_capacity_provider_strategy(input);
             self
         }
+        /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn service_connect_defaults(
+            mut self,
+            input: crate::model::ClusterServiceConnectDefaultsRequest,
+        ) -> Self {
+            self.inner = self.inner.service_connect_defaults(input);
+            self
+        }
+        /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn set_service_connect_defaults(
+            mut self,
+            input: std::option::Option<crate::model::ClusterServiceConnectDefaultsRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_service_connect_defaults(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateService`.
     ///
@@ -1501,14 +1564,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used when your service is configured to use a load balancer. If your service has a load balancer defined and you don't specify a health check grace period value, the default value of <code>0</code> is used.</p>
-        /// <p>If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the task definition healtch check parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.</p>
+        /// <p>If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the task definition health check parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.</p>
         /// <p>If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
         pub fn health_check_grace_period_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.health_check_grace_period_seconds(input);
             self
         }
         /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used when your service is configured to use a load balancer. If your service has a load balancer defined and you don't specify a health check grace period value, the default value of <code>0</code> is used.</p>
-        /// <p>If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the task definition healtch check parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.</p>
+        /// <p>If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the task definition health check parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.</p>
         /// <p>If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
         pub fn set_health_check_grace_period_seconds(
             mut self,
@@ -1625,6 +1688,24 @@ pub mod fluent_builders {
         /// <p>Determines whether the execute command functionality is enabled for the service. If <code>true</code>, this enables execute command functionality on all containers in the service tasks.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_execute_command(input);
+            self
+        }
+        /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn service_connect_configuration(
+            mut self,
+            input: crate::model::ServiceConnectConfiguration,
+        ) -> Self {
+            self.inner = self.inner.service_connect_configuration(input);
+            self
+        }
+        /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn set_service_connect_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServiceConnectConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_service_connect_configuration(input);
             self
         }
     }
@@ -2811,7 +2892,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
         /// <p>Determines whether to include additional information about the clusters in the response. If this field is omitted, this information isn't included.</p>
-        /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster are included.</p>
+        /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster are included, for example the capacity providers.</p>
         /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are included.</p>
         /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is included.</p>
         /// <p>If <code>STATISTICS</code> is specified, the task and service count is included, separated by launch type.</p>
@@ -2821,7 +2902,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Determines whether to include additional information about the clusters in the response. If this field is omitted, this information isn't included.</p>
-        /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster are included.</p>
+        /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster are included, for example the capacity providers.</p>
         /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are included.</p>
         /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is included.</p>
         /// <p>If <code>STATISTICS</code> is specified, the task and service count is included, separated by launch type.</p>
@@ -3460,7 +3541,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExecuteCommand`.
     ///
     /// <p>Runs a command remotely on a container within a task.</p>
-    /// <p>If you use a condition key in your IAM policy to refine the conditions for the policy statement, for example limit the actions to a specific cluster, you recevie an <code>AccessDeniedException</code> when there is a mismatch between the condition key value and the corresponding parameter value.</p>
+    /// <p>If you use a condition key in your IAM policy to refine the conditions for the policy statement, for example limit the actions to a specific cluster, you receive an <code>AccessDeniedException</code> when there is a mismatch between the condition key value and the corresponding parameter value.</p>
+    /// <p>For information about required permissions and considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.htm">Using Amazon ECS Exec for debugging</a> in the <i>Amazon ECS Developer Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteCommand {
         handle: std::sync::Arc<super::Handle>,
@@ -3568,6 +3650,96 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
         pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetTaskProtection`.
+    ///
+    /// <p>Retrieves the protection status of tasks in an Amazon ECS service.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetTaskProtection {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_task_protection_input::Builder,
+    }
+    impl GetTaskProtection {
+        /// Creates a new `GetTaskProtection`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetTaskProtection,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetTaskProtectionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetTaskProtectionOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetTaskProtectionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
+            self
+        }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+        pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cluster(input);
+            self
+        }
+        /// Appends an item to `tasks`.
+        ///
+        /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
+        ///
+        /// <p>A list of up to 100 task IDs or full ARN entries.</p>
+        pub fn tasks(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tasks(input.into());
+            self
+        }
+        /// <p>A list of up to 100 task IDs or full ARN entries.</p>
+        pub fn set_tasks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tasks(input);
             self
         }
     }
@@ -4201,6 +4373,107 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListServicesByNamespace`.
+    ///
+    /// <p>This operation lists all of the services that are associated with a Cloud Map namespace. This list might include services in different clusters. In contrast, <code>ListServices</code> can only list services in one cluster at a time. If you need to filter the list of services in a single cluster by various parameters, use <code>ListServices</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListServicesByNamespace {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_services_by_namespace_input::Builder,
+    }
+    impl ListServicesByNamespace {
+        /// Creates a new `ListServicesByNamespace`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListServicesByNamespace,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListServicesByNamespaceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListServicesByNamespaceOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListServicesByNamespaceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServicesByNamespacePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListServicesByNamespacePaginator {
+            crate::paginator::ListServicesByNamespacePaginator::new(self.handle, self.inner)
+        }
+        /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace to list the services in.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
+            self
+        }
+        /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace to list the services in.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_namespace(input);
+            self
+        }
+        /// <p>The <code>nextToken</code> value that's returned from a <code>ListServicesByNamespace</code> request. It indicates that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> is returned, it is possible the number of results is less than <code>maxResults</code>.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The <code>nextToken</code> value that's returned from a <code>ListServicesByNamespace</code> request. It indicates that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> is returned, it is possible the number of results is less than <code>maxResults</code>.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of service results that <code>ListServicesByNamespace</code> returns in paginated output. When this parameter is used, <code>ListServicesByNamespace</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListServicesByNamespace</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListServicesByNamespace</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of service results that <code>ListServicesByNamespace</code> returns in paginated output. When this parameter is used, <code>ListServicesByNamespace</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListServicesByNamespace</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListServicesByNamespace</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List the tags for an Amazon ECS resource.</p>
@@ -4650,11 +4923,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value limits the results to tasks that were started with that value.</p>
+        /// <p>When you specify <code>startedBy</code> as the filter, it must be the only filter that you use.</p>
         pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.started_by(input.into());
             self
         }
         /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value limits the results to tasks that were started with that value.</p>
+        /// <p>When you specify <code>startedBy</code> as the filter, it must be the only filter that you use.</p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_started_by(input);
             self
@@ -7270,6 +7545,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
+        /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn service_connect_defaults(
+            mut self,
+            input: crate::model::ClusterServiceConnectDefaultsRequest,
+        ) -> Self {
+            self.inner = self.inner.service_connect_defaults(input);
+            self
+        }
+        /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn set_service_connect_defaults(
+            mut self,
+            input: std::option::Option<crate::model::ClusterServiceConnectDefaultsRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_service_connect_defaults(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateClusterSettings`.
     ///
@@ -7347,12 +7640,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_settings`](Self::set_settings).
         ///
-        /// <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p>
+        /// <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p> <important>
+        /// <p>Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait 7 days before you can re-create it.</p>
+        /// </important>
         pub fn settings(mut self, input: crate::model::ClusterSetting) -> Self {
             self.inner = self.inner.settings(input);
             self
         }
-        /// <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p>
+        /// <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p> <important>
+        /// <p>Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait 7 days before you can re-create it.</p>
+        /// </important>
         pub fn set_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterSetting>>,
@@ -7365,6 +7662,8 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the Amazon ECS container agent on a specified container instance. Updating the Amazon ECS container agent doesn't interrupt running tasks or services on the container instance. The process for updating the agent differs depending on whether your container instance was launched with the Amazon ECS-optimized AMI or another operating system.</p> <note>
     /// <p>The <code>UpdateContainerAgent</code> API isn't supported for container instances using the Amazon ECS-optimized Amazon Linux 2 (arm64) AMI. To update the container agent, you can update the <code>ecs-init</code> package. This updates the agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// </note> <note>
+    /// <p>Agent updates with the <code>UpdateContainerAgent</code> API operation do not apply to Windows container instances. We recommend that you launch new container instances to update the agent version in your Windows clusters.</p>
     /// </note>
     /// <p>The <code>UpdateContainerAgent</code> API requires an Amazon ECS-optimized AMI or Amazon Linux AMI with the <code>ecs-init</code> service installed and running. For help updating the Amazon ECS container agent on other operating systems, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually updating the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -7925,6 +8224,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_registries(input);
             self
         }
+        /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn service_connect_configuration(
+            mut self,
+            input: crate::model::ServiceConnectConfiguration,
+        ) -> Self {
+            self.inner = self.inner.service_connect_configuration(input);
+            self
+        }
+        /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
+        /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn set_service_connect_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServiceConnectConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_service_connect_configuration(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateServicePrimaryTaskSet`.
     ///
@@ -8019,6 +8336,125 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_primary_task_set(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateTaskProtection`.
+    ///
+    /// <p>Updates the protection status of a task. You can set <code>protectionEnabled</code> to <code>true</code> to protect your task from termination during scale-in events from <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service Autoscaling</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">deployments</a>.</p>
+    /// <p>Task-protection, by default, expires after 2 hours at which point Amazon ECS unsets the <code>protectionEnabled</code> property making the task eligible for termination by a subsequent scale-in event.</p>
+    /// <p>You can specify a custom expiration period for task protection from 1 minute to up to 2,880 minutes (48 hours). To specify the custom expiration period, set the <code>expiresInMinutes</code> property. The <code>expiresInMinutes</code> property is always reset when you invoke this operation for a task that already has <code>protectionEnabled</code> set to <code>true</code>. You can keep extending the protection expiration period of a task by invoking this operation repeatedly.</p>
+    /// <p>To learn more about Amazon ECS task protection, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection.html">Task scale-in protection</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.</p> <note>
+    /// <p>This operation is only supported for tasks belonging to an Amazon ECS service. Invoking this operation for a standalone task will result in an <code>TASK_NOT_VALID</code> failure. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a>.</p>
+    /// </note> <important>
+    /// <p>If you prefer to set task protection from within the container, we recommend using the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection-endpoint.html">Task scale-in protection endpoint</a>.</p>
+    /// </important>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateTaskProtection {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_task_protection_input::Builder,
+    }
+    impl UpdateTaskProtection {
+        /// Creates a new `UpdateTaskProtection`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateTaskProtection,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateTaskProtectionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateTaskProtectionOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateTaskProtectionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
+            self
+        }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+        pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cluster(input);
+            self
+        }
+        /// Appends an item to `tasks`.
+        ///
+        /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
+        ///
+        /// <p>A list of up to 10 task IDs or full ARN entries.</p>
+        pub fn tasks(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tasks(input.into());
+            self
+        }
+        /// <p>A list of up to 10 task IDs or full ARN entries.</p>
+        pub fn set_tasks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tasks(input);
+            self
+        }
+        /// <p>Specify <code>true</code> to mark a task for protection and <code>false</code> to unset protection, making it eligible for termination.</p>
+        pub fn protection_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.protection_enabled(input);
+            self
+        }
+        /// <p>Specify <code>true</code> to mark a task for protection and <code>false</code> to unset protection, making it eligible for termination.</p>
+        pub fn set_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_protection_enabled(input);
+            self
+        }
+        /// <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p>
+        /// <p>If you don’t specify the time, then the task is automatically protected for 120 minutes (2 hours).</p>
+        pub fn expires_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.expires_in_minutes(input);
+            self
+        }
+        /// <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p>
+        /// <p>If you don’t specify the time, then the task is automatically protected for 120 minutes (2 hours).</p>
+        pub fn set_expires_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_expires_in_minutes(input);
             self
         }
     }

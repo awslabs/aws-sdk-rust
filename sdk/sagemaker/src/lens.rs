@@ -19,6 +19,16 @@ pub(crate) fn reflens_structure_crate_output_list_algorithms_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_aliases_output_next_token(
+    input: &crate::output::ListAliasesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_app_image_configs_output_next_token(
     input: &crate::output::ListAppImageConfigsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -249,8 +259,28 @@ pub(crate) fn reflens_structure_crate_output_list_image_versions_output_next_tok
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_inference_experiments_output_next_token(
+    input: &crate::output::ListInferenceExperimentsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_inference_recommendations_jobs_output_next_token(
     input: &crate::output::ListInferenceRecommendationsJobsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_inference_recommendations_job_steps_output_next_token(
+    input: &crate::output::ListInferenceRecommendationsJobStepsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -291,6 +321,36 @@ pub(crate) fn reflens_structure_crate_output_list_lineage_groups_output_next_tok
 
 pub(crate) fn reflens_structure_crate_output_list_model_bias_job_definitions_output_next_token(
     input: &crate::output::ListModelBiasJobDefinitionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_model_card_export_jobs_output_next_token(
+    input: &crate::output::ListModelCardExportJobsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_model_cards_output_next_token(
+    input: &crate::output::ListModelCardsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_model_card_versions_output_next_token(
+    input: &crate::output::ListModelCardVersionsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -351,6 +411,26 @@ pub(crate) fn reflens_structure_crate_output_list_model_quality_job_definitions_
 
 pub(crate) fn reflens_structure_crate_output_list_models_output_next_token(
     input: &crate::output::ListModelsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_monitoring_alert_history_output_next_token(
+    input: &crate::output::ListMonitoringAlertHistoryOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_monitoring_alerts_output_next_token(
+    input: &crate::output::ListMonitoringAlertsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -451,6 +531,16 @@ pub(crate) fn reflens_structure_crate_output_list_processing_jobs_output_next_to
 
 pub(crate) fn reflens_structure_crate_output_list_projects_output_next_token(
     input: &crate::output::ListProjectsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_spaces_output_next_token(
+    input: &crate::output::ListSpacesOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -613,6 +703,16 @@ pub(crate) fn lens_structure_crate_output_list_algorithms_output_algorithm_summa
     input: crate::output::ListAlgorithmsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::AlgorithmSummary>> {
     let input = match input.algorithm_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_aliases_output_sage_maker_image_version_aliases(
+    input: crate::output::ListAliasesOutput,
+) -> std::option::Option<std::vec::Vec<std::string::String>> {
+    let input = match input.sage_maker_image_version_aliases {
         None => return None,
         Some(t) => t,
     };
@@ -849,10 +949,30 @@ pub(crate) fn lens_structure_crate_output_list_image_versions_output_image_versi
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_list_inference_experiments_output_inference_experiments(
+    input: crate::output::ListInferenceExperimentsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::InferenceExperimentSummary>> {
+    let input = match input.inference_experiments {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_inference_recommendations_jobs_output_inference_recommendations_jobs(
     input: crate::output::ListInferenceRecommendationsJobsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::InferenceRecommendationsJob>> {
     let input = match input.inference_recommendations_jobs {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_inference_recommendations_job_steps_output_steps(
+    input: crate::output::ListInferenceRecommendationsJobStepsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::InferenceRecommendationsJobStep>> {
+    let input = match input.steps {
         None => return None,
         Some(t) => t,
     };
@@ -893,6 +1013,36 @@ pub(crate) fn lens_structure_crate_output_list_model_bias_job_definitions_output
     input: crate::output::ListModelBiasJobDefinitionsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::MonitoringJobDefinitionSummary>> {
     let input = match input.job_definition_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_model_card_export_jobs_output_model_card_export_job_summaries(
+    input: crate::output::ListModelCardExportJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ModelCardExportJobSummary>> {
+    let input = match input.model_card_export_job_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_model_cards_output_model_card_summaries(
+    input: crate::output::ListModelCardsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ModelCardSummary>> {
+    let input = match input.model_card_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_model_card_versions_output_model_card_version_summary_list(
+    input: crate::output::ListModelCardVersionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ModelCardVersionSummary>> {
+    let input = match input.model_card_version_summary_list {
         None => return None,
         Some(t) => t,
     };
@@ -953,6 +1103,26 @@ pub(crate) fn lens_structure_crate_output_list_models_output_models(
     input: crate::output::ListModelsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::ModelSummary>> {
     let input = match input.models {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_monitoring_alert_history_output_monitoring_alert_history(
+    input: crate::output::ListMonitoringAlertHistoryOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::MonitoringAlertHistorySummary>> {
+    let input = match input.monitoring_alert_history {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_monitoring_alerts_output_monitoring_alert_summaries(
+    input: crate::output::ListMonitoringAlertsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::MonitoringAlertSummary>> {
+    let input = match input.monitoring_alert_summaries {
         None => return None,
         Some(t) => t,
     };
@@ -1043,6 +1213,16 @@ pub(crate) fn lens_structure_crate_output_list_processing_jobs_output_processing
     input: crate::output::ListProcessingJobsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::ProcessingJobSummary>> {
     let input = match input.processing_job_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_spaces_output_spaces(
+    input: crate::output::ListSpacesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::SpaceDetails>> {
+    let input = match input.spaces {
         None => return None,
         Some(t) => t,
     };

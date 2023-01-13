@@ -12,7 +12,7 @@ pub struct UpdateRevisionOutput {
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The unique identifier for the data set associated with this revision.</p>
+    /// <p>The unique identifier for the data set associated with the data set revision.</p>
     #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
@@ -50,7 +50,7 @@ impl UpdateRevisionOutput {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The unique identifier for the data set associated with this revision.</p>
+    /// <p>The unique identifier for the data set associated with the data set revision.</p>
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
@@ -135,12 +135,12 @@ pub mod update_revision_output {
             self.created_at = input;
             self
         }
-        /// <p>The unique identifier for the data set associated with this revision.</p>
+        /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the data set associated with this revision.</p>
+        /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_set_id = input;
             self
@@ -636,7 +636,7 @@ pub struct UpdateAssetOutput {
     /// <p>The ARN for the asset.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Information about the asset.</p>
+    /// <p>Details about the asset.</p>
     #[doc(hidden)]
     pub asset_details: std::option::Option<crate::model::AssetDetails>,
     /// <p>The type of asset that is added to a data set.</p>
@@ -651,7 +651,7 @@ pub struct UpdateAssetOutput {
     /// <p>The unique identifier for the asset.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy"- or "Table(s) included in LF-tag policy" are used as the asset name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this asset.</p>
@@ -669,7 +669,7 @@ impl UpdateAssetOutput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Information about the asset.</p>
+    /// <p>Details about the asset.</p>
     pub fn asset_details(&self) -> std::option::Option<&crate::model::AssetDetails> {
         self.asset_details.as_ref()
     }
@@ -689,7 +689,7 @@ impl UpdateAssetOutput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy"- or "Table(s) included in LF-tag policy" are used as the asset name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -734,12 +734,12 @@ pub mod update_asset_output {
             self.arn = input;
             self
         }
-        /// <p>Information about the asset.</p>
+        /// <p>Details about the asset.</p>
         pub fn asset_details(mut self, input: crate::model::AssetDetails) -> Self {
             self.asset_details = Some(input);
             self
         }
-        /// <p>Information about the asset.</p>
+        /// <p>Details about the asset.</p>
         pub fn set_asset_details(
             mut self,
             input: std::option::Option<crate::model::AssetDetails>,
@@ -793,12 +793,12 @@ pub mod update_asset_output {
             self.id = input;
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy"- or "Table(s) included in LF-tag policy" are used as the asset name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy"- or "Table(s) included in LF-tag policy" are used as the asset name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1033,7 +1033,7 @@ pub struct RevokeRevisionOutput {
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The unique identifier for the data set associated with this revision.</p>
+    /// <p>The unique identifier for the data set associated with the data set revision.</p>
     #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
@@ -1071,7 +1071,7 @@ impl RevokeRevisionOutput {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The unique identifier for the data set associated with this revision.</p>
+    /// <p>The unique identifier for the data set associated with the data set revision.</p>
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
@@ -1156,12 +1156,12 @@ pub mod revoke_revision_output {
             self.created_at = input;
             self
         }
-        /// <p>The unique identifier for the data set associated with this revision.</p>
+        /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the data set associated with this revision.</p>
+        /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_set_id = input;
             self
@@ -1731,7 +1731,7 @@ pub struct GetRevisionOutput {
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The unique identifier for the data set associated with this revision.</p>
+    /// <p>The unique identifier for the data set associated with the data set revision.</p>
     #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
@@ -1773,7 +1773,7 @@ impl GetRevisionOutput {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The unique identifier for the data set associated with this revision.</p>
+    /// <p>The unique identifier for the data set associated with the data set revision.</p>
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
@@ -1868,12 +1868,12 @@ pub mod get_revision_output {
             self.created_at = input;
             self
         }
-        /// <p>The unique identifier for the data set associated with this revision.</p>
+        /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the data set associated with this revision.</p>
+        /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_set_id = input;
             self
@@ -2634,7 +2634,7 @@ pub struct GetAssetOutput {
     /// <p>The ARN for the asset.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Information about the asset.</p>
+    /// <p>Details about the asset.</p>
     #[doc(hidden)]
     pub asset_details: std::option::Option<crate::model::AssetDetails>,
     /// <p>The type of asset that is added to a data set.</p>
@@ -2649,7 +2649,7 @@ pub struct GetAssetOutput {
     /// <p>The unique identifier for the asset.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy" or "Table(s) included in the LF-tag policy" are used as the asset name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this asset.</p>
@@ -2667,7 +2667,7 @@ impl GetAssetOutput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Information about the asset.</p>
+    /// <p>Details about the asset.</p>
     pub fn asset_details(&self) -> std::option::Option<&crate::model::AssetDetails> {
         self.asset_details.as_ref()
     }
@@ -2687,7 +2687,7 @@ impl GetAssetOutput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy" or "Table(s) included in the LF-tag policy" are used as the asset name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -2732,12 +2732,12 @@ pub mod get_asset_output {
             self.arn = input;
             self
         }
-        /// <p>Information about the asset.</p>
+        /// <p>Details about the asset.</p>
         pub fn asset_details(mut self, input: crate::model::AssetDetails) -> Self {
             self.asset_details = Some(input);
             self
         }
-        /// <p>Information about the asset.</p>
+        /// <p>Details about the asset.</p>
         pub fn set_asset_details(
             mut self,
             input: std::option::Option<crate::model::AssetDetails>,
@@ -2791,12 +2791,12 @@ pub mod get_asset_output {
             self.id = input;
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy" or "Table(s) included in the LF-tag policy" are used as the asset name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy" or "Table(s) included in the LF-tag policy" are used as the asset name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2967,7 +2967,7 @@ pub struct CreateRevisionOutput {
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The unique identifier for the data set associated with this revision.</p>
+    /// <p>The unique identifier for the data set associated with the data set revision.</p>
     #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
@@ -3009,7 +3009,7 @@ impl CreateRevisionOutput {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The unique identifier for the data set associated with this revision.</p>
+    /// <p>The unique identifier for the data set associated with the data set revision.</p>
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
@@ -3104,12 +3104,12 @@ pub mod create_revision_output {
             self.created_at = input;
             self
         }
-        /// <p>The unique identifier for the data set associated with this revision.</p>
+        /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the data set associated with this revision.</p>
+        /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_set_id = input;
             self

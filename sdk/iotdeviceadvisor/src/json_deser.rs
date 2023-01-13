@@ -790,6 +790,15 @@ pub(crate) fn deser_operation_crate_operation_start_suite_run(
                             )?,
                         );
                     }
+                    "endpoint" => {
+                        builder = builder.set_endpoint(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "suiteRunArn" => {
                         builder = builder.set_suite_run_arn(
                             aws_smithy_json::deserialize::token::expect_string_or_null(

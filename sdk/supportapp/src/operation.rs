@@ -271,6 +271,42 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountAlias {
     }
 }
 
+/// Operation shape for `RegisterSlackWorkspaceForOrganization`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`register_slack_workspace_for_organization`](crate::client::Client::register_slack_workspace_for_organization).
+///
+/// See [`crate::client::fluent_builders::RegisterSlackWorkspaceForOrganization`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct RegisterSlackWorkspaceForOrganization {
+    _private: (),
+}
+impl RegisterSlackWorkspaceForOrganization {
+    /// Creates a new builder-style object to manufacture [`RegisterSlackWorkspaceForOrganizationInput`](crate::input::RegisterSlackWorkspaceForOrganizationInput).
+    pub fn builder() -> crate::input::register_slack_workspace_for_organization_input::Builder {
+        crate::input::register_slack_workspace_for_organization_input::Builder::default()
+    }
+    /// Creates a new `RegisterSlackWorkspaceForOrganization` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RegisterSlackWorkspaceForOrganization {
+    type Output = std::result::Result<
+        crate::output::RegisterSlackWorkspaceForOrganizationOutput,
+        crate::error::RegisterSlackWorkspaceForOrganizationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_register_slack_workspace_for_organization_error(response)
+        } else {
+            crate::operation_deser::parse_register_slack_workspace_for_organization_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `UpdateSlackChannelConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

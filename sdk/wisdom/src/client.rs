@@ -367,23 +367,6 @@ impl Client {
     ) -> fluent_builders::NotifyRecommendationsReceived {
         fluent_builders::NotifyRecommendationsReceived::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the [`PutFeedback`](crate::client::fluent_builders::PutFeedback) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`assistant_id(impl Into<String>)`](crate::client::fluent_builders::PutFeedback::assistant_id) / [`set_assistant_id(Option<String>)`](crate::client::fluent_builders::PutFeedback::set_assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    ///   - [`target_id(impl Into<String>)`](crate::client::fluent_builders::PutFeedback::target_id) / [`set_target_id(Option<String>)`](crate::client::fluent_builders::PutFeedback::set_target_id): <p>The identifier of a recommendation. or The identifier of the result data.</p>
-    ///   - [`target_type(TargetType)`](crate::client::fluent_builders::PutFeedback::target_type) / [`set_target_type(Option<TargetType>)`](crate::client::fluent_builders::PutFeedback::set_target_type): <p>The type of the targetId for which The feedback. is targeted.</p>
-    ///   - [`feedback(FeedbackData)`](crate::client::fluent_builders::PutFeedback::feedback) / [`set_feedback(Option<FeedbackData>)`](crate::client::fluent_builders::PutFeedback::set_feedback): <p>The feedback.</p>
-    /// - On success, responds with [`PutFeedbackOutput`](crate::output::PutFeedbackOutput) with field(s):
-    ///   - [`assistant_id(Option<String>)`](crate::output::PutFeedbackOutput::assistant_id): <p>The identifier of the Wisdom assistant.</p>
-    ///   - [`assistant_arn(Option<String>)`](crate::output::PutFeedbackOutput::assistant_arn): <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    ///   - [`target_id(Option<String>)`](crate::output::PutFeedbackOutput::target_id): <p>The identifier of a recommendation. or The identifier of the result data.</p>
-    ///   - [`target_type(Option<TargetType>)`](crate::output::PutFeedbackOutput::target_type): <p>The type of the targetId for which The feedback. is targeted.</p>
-    ///   - [`feedback(Option<FeedbackData>)`](crate::output::PutFeedbackOutput::feedback): <p>The feedback.</p>
-    /// - On failure, responds with [`SdkError<PutFeedbackError>`](crate::error::PutFeedbackError)
-    pub fn put_feedback(&self) -> fluent_builders::PutFeedback {
-        fluent_builders::PutFeedback::new(self.handle.clone())
-    }
     /// Constructs a fluent builder for the [`QueryAssistant`](crate::client::fluent_builders::QueryAssistant) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::QueryAssistant::into_paginator).
     ///
@@ -2738,115 +2721,6 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_recommendation_ids(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutFeedback`.
-    ///
-    /// <p>Submits feedback to Wisdom. The feedback is used to improve future recommendations from <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a> or results from <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>. Feedback can be resubmitted up to 6 hours after submission. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutFeedback {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::put_feedback_input::Builder,
-    }
-    impl PutFeedback {
-        /// Creates a new `PutFeedback`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::PutFeedback,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::PutFeedbackError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::PutFeedbackOutput,
-            aws_smithy_http::result::SdkError<crate::error::PutFeedbackError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(input.into());
-            self
-        }
-        /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_assistant_id(input);
-            self
-        }
-        /// <p>The identifier of a recommendation. or The identifier of the result data.</p>
-        pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_id(input.into());
-            self
-        }
-        /// <p>The identifier of a recommendation. or The identifier of the result data.</p>
-        pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_target_id(input);
-            self
-        }
-        /// <p>The type of the targetId for which The feedback. is targeted.</p>
-        pub fn target_type(mut self, input: crate::model::TargetType) -> Self {
-            self.inner = self.inner.target_type(input);
-            self
-        }
-        /// <p>The type of the targetId for which The feedback. is targeted.</p>
-        pub fn set_target_type(
-            mut self,
-            input: std::option::Option<crate::model::TargetType>,
-        ) -> Self {
-            self.inner = self.inner.set_target_type(input);
-            self
-        }
-        /// <p>The feedback.</p>
-        pub fn feedback(mut self, input: crate::model::FeedbackData) -> Self {
-            self.inner = self.inner.feedback(input);
-            self
-        }
-        /// <p>The feedback.</p>
-        pub fn set_feedback(
-            mut self,
-            input: std::option::Option<crate::model::FeedbackData>,
-        ) -> Self {
-            self.inner = self.inner.set_feedback(input);
             self
         }
     }

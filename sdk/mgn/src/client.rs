@@ -91,6 +91,65 @@ impl Client {
     }
 }
 impl Client {
+    /// Constructs a fluent builder for the [`ArchiveApplication`](crate::client::fluent_builders::ArchiveApplication) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ArchiveApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ArchiveApplication::set_application_id): <p>Application ID.</p>
+    /// - On success, responds with [`ArchiveApplicationOutput`](crate::output::ArchiveApplicationOutput) with field(s):
+    ///   - [`application_id(Option<String>)`](crate::output::ArchiveApplicationOutput::application_id): <p>Application ID.</p>
+    ///   - [`arn(Option<String>)`](crate::output::ArchiveApplicationOutput::arn): <p>Application ARN.</p>
+    ///   - [`name(Option<String>)`](crate::output::ArchiveApplicationOutput::name): <p>Application name.</p>
+    ///   - [`description(Option<String>)`](crate::output::ArchiveApplicationOutput::description): <p>Application description.</p>
+    ///   - [`is_archived(Option<bool>)`](crate::output::ArchiveApplicationOutput::is_archived): <p>Application archival status.</p>
+    ///   - [`application_aggregated_status(Option<ApplicationAggregatedStatus>)`](crate::output::ArchiveApplicationOutput::application_aggregated_status): <p>Application aggregated status.</p>
+    ///   - [`creation_date_time(Option<String>)`](crate::output::ArchiveApplicationOutput::creation_date_time): <p>Application creation dateTime.</p>
+    ///   - [`last_modified_date_time(Option<String>)`](crate::output::ArchiveApplicationOutput::last_modified_date_time): <p>Application last modified dateTime.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ArchiveApplicationOutput::tags): <p>Application tags.</p>
+    ///   - [`wave_id(Option<String>)`](crate::output::ArchiveApplicationOutput::wave_id): <p>Application wave ID.</p>
+    /// - On failure, responds with [`SdkError<ArchiveApplicationError>`](crate::error::ArchiveApplicationError)
+    pub fn archive_application(&self) -> fluent_builders::ArchiveApplication {
+        fluent_builders::ArchiveApplication::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ArchiveWave`](crate::client::fluent_builders::ArchiveWave) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`wave_id(impl Into<String>)`](crate::client::fluent_builders::ArchiveWave::wave_id) / [`set_wave_id(Option<String>)`](crate::client::fluent_builders::ArchiveWave::set_wave_id): <p>Wave ID.</p>
+    /// - On success, responds with [`ArchiveWaveOutput`](crate::output::ArchiveWaveOutput) with field(s):
+    ///   - [`wave_id(Option<String>)`](crate::output::ArchiveWaveOutput::wave_id): <p>Wave ID.</p>
+    ///   - [`arn(Option<String>)`](crate::output::ArchiveWaveOutput::arn): <p>Wave ARN.</p>
+    ///   - [`name(Option<String>)`](crate::output::ArchiveWaveOutput::name): <p>Wave name.</p>
+    ///   - [`description(Option<String>)`](crate::output::ArchiveWaveOutput::description): <p>Wave description.</p>
+    ///   - [`is_archived(Option<bool>)`](crate::output::ArchiveWaveOutput::is_archived): <p>Wave archival status.</p>
+    ///   - [`wave_aggregated_status(Option<WaveAggregatedStatus>)`](crate::output::ArchiveWaveOutput::wave_aggregated_status): <p>Wave aggregated status.</p>
+    ///   - [`creation_date_time(Option<String>)`](crate::output::ArchiveWaveOutput::creation_date_time): <p>Wave creation dateTime.</p>
+    ///   - [`last_modified_date_time(Option<String>)`](crate::output::ArchiveWaveOutput::last_modified_date_time): <p>Wave last modified dateTime.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ArchiveWaveOutput::tags): <p>Wave tags.</p>
+    /// - On failure, responds with [`SdkError<ArchiveWaveError>`](crate::error::ArchiveWaveError)
+    pub fn archive_wave(&self) -> fluent_builders::ArchiveWave {
+        fluent_builders::ArchiveWave::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`AssociateApplications`](crate::client::fluent_builders::AssociateApplications) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`wave_id(impl Into<String>)`](crate::client::fluent_builders::AssociateApplications::wave_id) / [`set_wave_id(Option<String>)`](crate::client::fluent_builders::AssociateApplications::set_wave_id): <p>Wave ID.</p>
+    ///   - [`application_i_ds(Vec<String>)`](crate::client::fluent_builders::AssociateApplications::application_i_ds) / [`set_application_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::AssociateApplications::set_application_i_ds): <p>Application IDs list.</p>
+    /// - On success, responds with [`AssociateApplicationsOutput`](crate::output::AssociateApplicationsOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateApplicationsError>`](crate::error::AssociateApplicationsError)
+    pub fn associate_applications(&self) -> fluent_builders::AssociateApplications {
+        fluent_builders::AssociateApplications::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`AssociateSourceServers`](crate::client::fluent_builders::AssociateSourceServers) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::AssociateSourceServers::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::AssociateSourceServers::set_application_id): <p>Application ID.</p>
+    ///   - [`source_server_i_ds(Vec<String>)`](crate::client::fluent_builders::AssociateSourceServers::source_server_i_ds) / [`set_source_server_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::AssociateSourceServers::set_source_server_i_ds): <p>Source server IDs list.</p>
+    /// - On success, responds with [`AssociateSourceServersOutput`](crate::output::AssociateSourceServersOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateSourceServersError>`](crate::error::AssociateSourceServersError)
+    pub fn associate_source_servers(&self) -> fluent_builders::AssociateSourceServers {
+        fluent_builders::AssociateSourceServers::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ChangeServerLifeCycleState`](crate::client::fluent_builders::ChangeServerLifeCycleState) operation.
     ///
     /// - The fluent builder is configurable:
@@ -107,20 +166,67 @@ impl Client {
     ///   - [`source_properties(Option<SourceProperties>)`](crate::output::ChangeServerLifeCycleStateOutput::source_properties): <p>Source server properties.</p>
     ///   - [`replication_type(Option<ReplicationType>)`](crate::output::ChangeServerLifeCycleStateOutput::replication_type): <p>Source server replication type.</p>
     ///   - [`vcenter_client_id(Option<String>)`](crate::output::ChangeServerLifeCycleStateOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::ChangeServerLifeCycleStateOutput::application_id): <p>Source server application ID.</p>
     /// - On failure, responds with [`SdkError<ChangeServerLifeCycleStateError>`](crate::error::ChangeServerLifeCycleStateError)
     pub fn change_server_life_cycle_state(&self) -> fluent_builders::ChangeServerLifeCycleState {
         fluent_builders::ChangeServerLifeCycleState::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateApplication`](crate::client::fluent_builders::CreateApplication) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_name): <p>Application name.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_description): <p>Application description.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateApplication::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateApplication::set_tags): <p>Application tags.</p>
+    /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
+    ///   - [`application_id(Option<String>)`](crate::output::CreateApplicationOutput::application_id): <p>Application ID.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateApplicationOutput::arn): <p>Application ARN.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateApplicationOutput::name): <p>Application name.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateApplicationOutput::description): <p>Application description.</p>
+    ///   - [`is_archived(Option<bool>)`](crate::output::CreateApplicationOutput::is_archived): <p>Application archival status.</p>
+    ///   - [`application_aggregated_status(Option<ApplicationAggregatedStatus>)`](crate::output::CreateApplicationOutput::application_aggregated_status): <p>Application aggregated status.</p>
+    ///   - [`creation_date_time(Option<String>)`](crate::output::CreateApplicationOutput::creation_date_time): <p>Application creation dateTime.</p>
+    ///   - [`last_modified_date_time(Option<String>)`](crate::output::CreateApplicationOutput::last_modified_date_time): <p>Application last modified dateTime.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateApplicationOutput::tags): <p>Application tags.</p>
+    ///   - [`wave_id(Option<String>)`](crate::output::CreateApplicationOutput::wave_id): <p>Application wave ID.</p>
+    /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::error::CreateApplicationError)
+    pub fn create_application(&self) -> fluent_builders::CreateApplication {
+        fluent_builders::CreateApplication::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateLaunchConfigurationTemplate`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`post_launch_actions(PostLaunchActions)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::post_launch_actions) / [`set_post_launch_actions(Option<PostLaunchActions>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_post_launch_actions): <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_tags): <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+    ///   - [`post_launch_actions(PostLaunchActions)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::post_launch_actions) / [`set_post_launch_actions(Option<PostLaunchActions>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_post_launch_actions): <p>Launch configuration template post launch actions.</p>
+    ///   - [`enable_map_auto_tagging(bool)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::enable_map_auto_tagging) / [`set_enable_map_auto_tagging(Option<bool>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_enable_map_auto_tagging): <p>Enable map auto tagging.</p>
+    ///   - [`map_auto_tagging_mpe_id(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::map_auto_tagging_mpe_id) / [`set_map_auto_tagging_mpe_id(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_map_auto_tagging_mpe_id): <p>Launch configuration template map auto tagging MPE ID.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_tags): <p>Request to associate tags during creation of a Launch Configuration Template.</p>
+    ///   - [`launch_disposition(LaunchDisposition)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::launch_disposition) / [`set_launch_disposition(Option<LaunchDisposition>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_launch_disposition): <p>Launch disposition.</p>
+    ///   - [`target_instance_type_right_sizing_method(TargetInstanceTypeRightSizingMethod)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::target_instance_type_right_sizing_method) / [`set_target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_target_instance_type_right_sizing_method): <p>Target instance type right-sizing method.</p>
+    ///   - [`copy_private_ip(bool)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::copy_private_ip) / [`set_copy_private_ip(Option<bool>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_copy_private_ip): <p>Copy private Ip.</p>
+    ///   - [`associate_public_ip_address(bool)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::associate_public_ip_address) / [`set_associate_public_ip_address(Option<bool>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_associate_public_ip_address): <p>Associate public Ip address.</p>
+    ///   - [`copy_tags(bool)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::copy_tags) / [`set_copy_tags(Option<bool>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_copy_tags): <p>Copy tags.</p>
+    ///   - [`licensing(Licensing)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::licensing) / [`set_licensing(Option<Licensing>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_licensing): <p>Configure Licensing.</p>
+    ///   - [`boot_mode(BootMode)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::boot_mode) / [`set_boot_mode(Option<BootMode>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_boot_mode): <p>Launch configuration template boot mode.</p>
+    ///   - [`small_volume_max_size(i64)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::small_volume_max_size) / [`set_small_volume_max_size(i64)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_small_volume_max_size): <p>Small volume maximum size.</p>
+    ///   - [`small_volume_conf(LaunchTemplateDiskConf)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::small_volume_conf) / [`set_small_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_small_volume_conf): <p>Small volume config.</p>
+    ///   - [`large_volume_conf(LaunchTemplateDiskConf)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::large_volume_conf) / [`set_large_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_large_volume_conf): <p>Large volume config.</p>
     /// - On success, responds with [`CreateLaunchConfigurationTemplateOutput`](crate::output::CreateLaunchConfigurationTemplateOutput) with field(s):
-    ///   - [`launch_configuration_template_id(Option<String>)`](crate::output::CreateLaunchConfigurationTemplateOutput::launch_configuration_template_id): <p>Copy Private IP during Launch Configuration.</p>
-    ///   - [`arn(Option<String>)`](crate::output::CreateLaunchConfigurationTemplateOutput::arn): <p>Copy Private IP during Launch Configuration.</p>
-    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::CreateLaunchConfigurationTemplateOutput::post_launch_actions): <p>Copy Private IP during Launch Configuration.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateLaunchConfigurationTemplateOutput::tags): <p>Copy Private IP during Launch Configuration.</p>
+    ///   - [`launch_configuration_template_id(Option<String>)`](crate::output::CreateLaunchConfigurationTemplateOutput::launch_configuration_template_id): <p>ID of the Launch Configuration Template.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateLaunchConfigurationTemplateOutput::arn): <p>ARN of the Launch Configuration Template.</p>
+    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::CreateLaunchConfigurationTemplateOutput::post_launch_actions): <p>Post Launch Actions of the Launch Configuration Template.</p>
+    ///   - [`enable_map_auto_tagging(Option<bool>)`](crate::output::CreateLaunchConfigurationTemplateOutput::enable_map_auto_tagging): <p>Enable map auto tagging.</p>
+    ///   - [`map_auto_tagging_mpe_id(Option<String>)`](crate::output::CreateLaunchConfigurationTemplateOutput::map_auto_tagging_mpe_id): <p>Launch configuration template map auto tagging MPE ID.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateLaunchConfigurationTemplateOutput::tags): <p>Tags of the Launch Configuration Template.</p>
+    ///   - [`ec2_launch_template_id(Option<String>)`](crate::output::CreateLaunchConfigurationTemplateOutput::ec2_launch_template_id): <p>EC2 launch template ID.</p>
+    ///   - [`launch_disposition(Option<LaunchDisposition>)`](crate::output::CreateLaunchConfigurationTemplateOutput::launch_disposition): <p>Launch disposition.</p>
+    ///   - [`target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::output::CreateLaunchConfigurationTemplateOutput::target_instance_type_right_sizing_method): <p>Target instance type right-sizing method.</p>
+    ///   - [`copy_private_ip(Option<bool>)`](crate::output::CreateLaunchConfigurationTemplateOutput::copy_private_ip): <p>Copy private Ip.</p>
+    ///   - [`associate_public_ip_address(Option<bool>)`](crate::output::CreateLaunchConfigurationTemplateOutput::associate_public_ip_address): <p>Associate public Ip address.</p>
+    ///   - [`copy_tags(Option<bool>)`](crate::output::CreateLaunchConfigurationTemplateOutput::copy_tags): <p>Copy tags.</p>
+    ///   - [`licensing(Option<Licensing>)`](crate::output::CreateLaunchConfigurationTemplateOutput::licensing): <p>Configure Licensing.</p>
+    ///   - [`boot_mode(Option<BootMode>)`](crate::output::CreateLaunchConfigurationTemplateOutput::boot_mode): <p>Launch configuration template boot mode.</p>
+    ///   - [`small_volume_max_size(i64)`](crate::output::CreateLaunchConfigurationTemplateOutput::small_volume_max_size): <p>Small volume maximum size.</p>
+    ///   - [`small_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::output::CreateLaunchConfigurationTemplateOutput::small_volume_conf): <p>Small volume config.</p>
+    ///   - [`large_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::output::CreateLaunchConfigurationTemplateOutput::large_volume_conf): <p>Large volume config.</p>
     /// - On failure, responds with [`SdkError<CreateLaunchConfigurationTemplateError>`](crate::error::CreateLaunchConfigurationTemplateError)
     pub fn create_launch_configuration_template(
         &self,
@@ -164,6 +270,36 @@ impl Client {
         &self,
     ) -> fluent_builders::CreateReplicationConfigurationTemplate {
         fluent_builders::CreateReplicationConfigurationTemplate::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateWave`](crate::client::fluent_builders::CreateWave) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWave::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWave::set_name): <p>Wave name.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateWave::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateWave::set_description): <p>Wave description.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateWave::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateWave::set_tags): <p>Wave tags.</p>
+    /// - On success, responds with [`CreateWaveOutput`](crate::output::CreateWaveOutput) with field(s):
+    ///   - [`wave_id(Option<String>)`](crate::output::CreateWaveOutput::wave_id): <p>Wave ID.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateWaveOutput::arn): <p>Wave ARN.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateWaveOutput::name): <p>Wave name.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateWaveOutput::description): <p>Wave description.</p>
+    ///   - [`is_archived(Option<bool>)`](crate::output::CreateWaveOutput::is_archived): <p>Wave archival status.</p>
+    ///   - [`wave_aggregated_status(Option<WaveAggregatedStatus>)`](crate::output::CreateWaveOutput::wave_aggregated_status): <p>Wave aggregated status.</p>
+    ///   - [`creation_date_time(Option<String>)`](crate::output::CreateWaveOutput::creation_date_time): <p>Wave creation dateTime.</p>
+    ///   - [`last_modified_date_time(Option<String>)`](crate::output::CreateWaveOutput::last_modified_date_time): <p>Wave last modified dateTime.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateWaveOutput::tags): <p>Wave tags.</p>
+    /// - On failure, responds with [`SdkError<CreateWaveError>`](crate::error::CreateWaveError)
+    pub fn create_wave(&self) -> fluent_builders::CreateWave {
+        fluent_builders::CreateWave::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_application_id): <p>Application ID.</p>
+    /// - On success, responds with [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::error::DeleteApplicationError)
+    pub fn delete_application(&self) -> fluent_builders::DeleteApplication {
+        fluent_builders::DeleteApplication::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteJob`](crate::client::fluent_builders::DeleteJob) operation.
     ///
@@ -219,6 +355,16 @@ impl Client {
     pub fn delete_vcenter_client(&self) -> fluent_builders::DeleteVcenterClient {
         fluent_builders::DeleteVcenterClient::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteWave`](crate::client::fluent_builders::DeleteWave) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`wave_id(impl Into<String>)`](crate::client::fluent_builders::DeleteWave::wave_id) / [`set_wave_id(Option<String>)`](crate::client::fluent_builders::DeleteWave::set_wave_id): <p>Wave ID.</p>
+    /// - On success, responds with [`DeleteWaveOutput`](crate::output::DeleteWaveOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWaveError>`](crate::error::DeleteWaveError)
+    pub fn delete_wave(&self) -> fluent_builders::DeleteWave {
+        fluent_builders::DeleteWave::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeJobLogItems`](crate::client::fluent_builders::DescribeJobLogItems) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeJobLogItems::into_paginator).
     ///
@@ -251,12 +397,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`launch_configuration_template_i_ds(Vec<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::launch_configuration_template_i_ds) / [`set_launch_configuration_template_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::set_launch_configuration_template_i_ds): <p>Request to disconnect Source Server from service by Server ID.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::set_max_results): <p>Request to disconnect Source Server from service by Server ID.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::set_next_token): <p>Request to disconnect Source Server from service by Server ID.</p>
+    ///   - [`launch_configuration_template_i_ds(Vec<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::launch_configuration_template_i_ds) / [`set_launch_configuration_template_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::set_launch_configuration_template_i_ds): <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::set_max_results): <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::set_next_token): <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
     /// - On success, responds with [`DescribeLaunchConfigurationTemplatesOutput`](crate::output::DescribeLaunchConfigurationTemplatesOutput) with field(s):
-    ///   - [`items(Option<Vec<LaunchConfigurationTemplate>>)`](crate::output::DescribeLaunchConfigurationTemplatesOutput::items): <p>Request to disconnect Source Server from service by Server ID.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeLaunchConfigurationTemplatesOutput::next_token): <p>Request to disconnect Source Server from service by Server ID.</p>
+    ///   - [`items(Option<Vec<LaunchConfigurationTemplate>>)`](crate::output::DescribeLaunchConfigurationTemplatesOutput::items): <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeLaunchConfigurationTemplatesOutput::next_token): <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
     /// - On failure, responds with [`SdkError<DescribeLaunchConfigurationTemplatesError>`](crate::error::DescribeLaunchConfigurationTemplatesError)
     pub fn describe_launch_configuration_templates(
         &self,
@@ -306,6 +452,28 @@ impl Client {
     pub fn describe_vcenter_clients(&self) -> fluent_builders::DescribeVcenterClients {
         fluent_builders::DescribeVcenterClients::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DisassociateApplications`](crate::client::fluent_builders::DisassociateApplications) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`wave_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateApplications::wave_id) / [`set_wave_id(Option<String>)`](crate::client::fluent_builders::DisassociateApplications::set_wave_id): <p>Wave ID.</p>
+    ///   - [`application_i_ds(Vec<String>)`](crate::client::fluent_builders::DisassociateApplications::application_i_ds) / [`set_application_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociateApplications::set_application_i_ds): <p>Application IDs list.</p>
+    /// - On success, responds with [`DisassociateApplicationsOutput`](crate::output::DisassociateApplicationsOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateApplicationsError>`](crate::error::DisassociateApplicationsError)
+    pub fn disassociate_applications(&self) -> fluent_builders::DisassociateApplications {
+        fluent_builders::DisassociateApplications::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DisassociateSourceServers`](crate::client::fluent_builders::DisassociateSourceServers) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateSourceServers::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DisassociateSourceServers::set_application_id): <p>Application ID.</p>
+    ///   - [`source_server_i_ds(Vec<String>)`](crate::client::fluent_builders::DisassociateSourceServers::source_server_i_ds) / [`set_source_server_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociateSourceServers::set_source_server_i_ds): <p>Source server IDs list.</p>
+    /// - On success, responds with [`DisassociateSourceServersOutput`](crate::output::DisassociateSourceServersOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateSourceServersError>`](crate::error::DisassociateSourceServersError)
+    pub fn disassociate_source_servers(&self) -> fluent_builders::DisassociateSourceServers {
+        fluent_builders::DisassociateSourceServers::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DisconnectFromService`](crate::client::fluent_builders::DisconnectFromService) operation.
     ///
     /// - The fluent builder is configurable:
@@ -321,6 +489,7 @@ impl Client {
     ///   - [`source_properties(Option<SourceProperties>)`](crate::output::DisconnectFromServiceOutput::source_properties): <p>Source server properties.</p>
     ///   - [`replication_type(Option<ReplicationType>)`](crate::output::DisconnectFromServiceOutput::replication_type): <p>Source server replication type.</p>
     ///   - [`vcenter_client_id(Option<String>)`](crate::output::DisconnectFromServiceOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::DisconnectFromServiceOutput::application_id): <p>Source server application ID.</p>
     /// - On failure, responds with [`SdkError<DisconnectFromServiceError>`](crate::error::DisconnectFromServiceError)
     pub fn disconnect_from_service(&self) -> fluent_builders::DisconnectFromService {
         fluent_builders::DisconnectFromService::new(self.handle.clone())
@@ -340,6 +509,7 @@ impl Client {
     ///   - [`source_properties(Option<SourceProperties>)`](crate::output::FinalizeCutoverOutput::source_properties): <p>Source server properties.</p>
     ///   - [`replication_type(Option<ReplicationType>)`](crate::output::FinalizeCutoverOutput::replication_type): <p>Source server replication type.</p>
     ///   - [`vcenter_client_id(Option<String>)`](crate::output::FinalizeCutoverOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::FinalizeCutoverOutput::application_id): <p>Source server application ID.</p>
     /// - On failure, responds with [`SdkError<FinalizeCutoverError>`](crate::error::FinalizeCutoverError)
     pub fn finalize_cutover(&self) -> fluent_builders::FinalizeCutover {
         fluent_builders::FinalizeCutover::new(self.handle.clone())
@@ -358,7 +528,9 @@ impl Client {
     ///   - [`copy_tags(Option<bool>)`](crate::output::GetLaunchConfigurationOutput::copy_tags): <p>Copy Tags during Launch Configuration.</p>
     ///   - [`licensing(Option<Licensing>)`](crate::output::GetLaunchConfigurationOutput::licensing): <p>Launch configuration OS licensing.</p>
     ///   - [`boot_mode(Option<BootMode>)`](crate::output::GetLaunchConfigurationOutput::boot_mode): <p>Launch configuration boot mode.</p>
-    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::GetLaunchConfigurationOutput::post_launch_actions): <p>Server participating in Job.</p>
+    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::GetLaunchConfigurationOutput::post_launch_actions): <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
+    ///   - [`enable_map_auto_tagging(Option<bool>)`](crate::output::GetLaunchConfigurationOutput::enable_map_auto_tagging): <p>Enable map auto tagging.</p>
+    ///   - [`map_auto_tagging_mpe_id(Option<String>)`](crate::output::GetLaunchConfigurationOutput::map_auto_tagging_mpe_id): <p>Map auto tagging MPE ID.</p>
     /// - On failure, responds with [`SdkError<GetLaunchConfigurationError>`](crate::error::GetLaunchConfigurationError)
     pub fn get_launch_configuration(&self) -> fluent_builders::GetLaunchConfiguration {
         fluent_builders::GetLaunchConfiguration::new(self.handle.clone())
@@ -397,6 +569,35 @@ impl Client {
     pub fn initialize_service(&self) -> fluent_builders::InitializeService {
         fluent_builders::InitializeService::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListApplications`](crate::client::fluent_builders::ListApplications) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filters(ListApplicationsRequestFilters)`](crate::client::fluent_builders::ListApplications::filters) / [`set_filters(Option<ListApplicationsRequestFilters>)`](crate::client::fluent_builders::ListApplications::set_filters): <p>Applications list filters.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListApplications::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListApplications::set_max_results): <p>Maximum results to return when listing applications.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplications::set_next_token): <p>Request next token.</p>
+    /// - On success, responds with [`ListApplicationsOutput`](crate::output::ListApplicationsOutput) with field(s):
+    ///   - [`items(Option<Vec<Application>>)`](crate::output::ListApplicationsOutput::items): <p>Applications list.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationsOutput::next_token): <p>Response next token.</p>
+    /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::error::ListApplicationsError)
+    pub fn list_applications(&self) -> fluent_builders::ListApplications {
+        fluent_builders::ListApplications::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListSourceServerActions`](crate::client::fluent_builders::ListSourceServerActions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSourceServerActions::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::ListSourceServerActions::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::ListSourceServerActions::set_source_server_id): <p>Source server ID.</p>
+    ///   - [`filters(SourceServerActionsRequestFilters)`](crate::client::fluent_builders::ListSourceServerActions::filters) / [`set_filters(Option<SourceServerActionsRequestFilters>)`](crate::client::fluent_builders::ListSourceServerActions::set_filters): <p>Filters to apply when listing source server post migration custom actions.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSourceServerActions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListSourceServerActions::set_max_results): <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSourceServerActions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSourceServerActions::set_next_token): <p>Next token to use when listing source server post migration custom actions.</p>
+    /// - On success, responds with [`ListSourceServerActionsOutput`](crate::output::ListSourceServerActionsOutput) with field(s):
+    ///   - [`items(Option<Vec<SourceServerActionDocument>>)`](crate::output::ListSourceServerActionsOutput::items): <p>List of source server post migration custom actions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSourceServerActionsOutput::next_token): <p>Next token returned when listing source server post migration custom actions.</p>
+    /// - On failure, responds with [`SdkError<ListSourceServerActionsError>`](crate::error::ListSourceServerActionsError)
+    pub fn list_source_server_actions(&self) -> fluent_builders::ListSourceServerActions {
+        fluent_builders::ListSourceServerActions::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -406,6 +607,35 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListTemplateActions`](crate::client::fluent_builders::ListTemplateActions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTemplateActions::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`launch_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::ListTemplateActions::launch_configuration_template_id) / [`set_launch_configuration_template_id(Option<String>)`](crate::client::fluent_builders::ListTemplateActions::set_launch_configuration_template_id): <p>Launch configuration template ID.</p>
+    ///   - [`filters(TemplateActionsRequestFilters)`](crate::client::fluent_builders::ListTemplateActions::filters) / [`set_filters(Option<TemplateActionsRequestFilters>)`](crate::client::fluent_builders::ListTemplateActions::set_filters): <p>Filters to apply when listing template post migration custom actions.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTemplateActions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListTemplateActions::set_max_results): <p>Maximum amount of items to return when listing template post migration custom actions.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTemplateActions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTemplateActions::set_next_token): <p>Next token to use when listing template post migration custom actions.</p>
+    /// - On success, responds with [`ListTemplateActionsOutput`](crate::output::ListTemplateActionsOutput) with field(s):
+    ///   - [`items(Option<Vec<TemplateActionDocument>>)`](crate::output::ListTemplateActionsOutput::items): <p>List of template post migration custom actions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTemplateActionsOutput::next_token): <p>Next token returned when listing template post migration custom actions.</p>
+    /// - On failure, responds with [`SdkError<ListTemplateActionsError>`](crate::error::ListTemplateActionsError)
+    pub fn list_template_actions(&self) -> fluent_builders::ListTemplateActions {
+        fluent_builders::ListTemplateActions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListWaves`](crate::client::fluent_builders::ListWaves) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWaves::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filters(ListWavesRequestFilters)`](crate::client::fluent_builders::ListWaves::filters) / [`set_filters(Option<ListWavesRequestFilters>)`](crate::client::fluent_builders::ListWaves::set_filters): <p>Waves list filters.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWaves::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListWaves::set_max_results): <p>Maximum results to return when listing waves.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWaves::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWaves::set_next_token): <p>Request next token.</p>
+    /// - On success, responds with [`ListWavesOutput`](crate::output::ListWavesOutput) with field(s):
+    ///   - [`items(Option<Vec<Wave>>)`](crate::output::ListWavesOutput::items): <p>Waves list.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWavesOutput::next_token): <p>Response next token.</p>
+    /// - On failure, responds with [`SdkError<ListWavesError>`](crate::error::ListWavesError)
+    pub fn list_waves(&self) -> fluent_builders::ListWaves {
+        fluent_builders::ListWaves::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`MarkAsArchived`](crate::client::fluent_builders::MarkAsArchived) operation.
     ///
@@ -422,9 +652,88 @@ impl Client {
     ///   - [`source_properties(Option<SourceProperties>)`](crate::output::MarkAsArchivedOutput::source_properties): <p>Source server properties.</p>
     ///   - [`replication_type(Option<ReplicationType>)`](crate::output::MarkAsArchivedOutput::replication_type): <p>Source server replication type.</p>
     ///   - [`vcenter_client_id(Option<String>)`](crate::output::MarkAsArchivedOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::MarkAsArchivedOutput::application_id): <p>Source server application ID.</p>
     /// - On failure, responds with [`SdkError<MarkAsArchivedError>`](crate::error::MarkAsArchivedError)
     pub fn mark_as_archived(&self) -> fluent_builders::MarkAsArchived {
         fluent_builders::MarkAsArchived::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutSourceServerAction`](crate::client::fluent_builders::PutSourceServerAction) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::PutSourceServerAction::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::PutSourceServerAction::set_source_server_id): <p>Source server ID.</p>
+    ///   - [`action_name(impl Into<String>)`](crate::client::fluent_builders::PutSourceServerAction::action_name) / [`set_action_name(Option<String>)`](crate::client::fluent_builders::PutSourceServerAction::set_action_name): <p>Source server post migration custom action name.</p>
+    ///   - [`document_identifier(impl Into<String>)`](crate::client::fluent_builders::PutSourceServerAction::document_identifier) / [`set_document_identifier(Option<String>)`](crate::client::fluent_builders::PutSourceServerAction::set_document_identifier): <p>Source server post migration custom action document identifier.</p>
+    ///   - [`order(i32)`](crate::client::fluent_builders::PutSourceServerAction::order) / [`set_order(i32)`](crate::client::fluent_builders::PutSourceServerAction::set_order): <p>Source server post migration custom action order.</p>
+    ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::PutSourceServerAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::PutSourceServerAction::set_action_id): <p>Source server post migration custom action ID.</p>
+    ///   - [`document_version(impl Into<String>)`](crate::client::fluent_builders::PutSourceServerAction::document_version) / [`set_document_version(Option<String>)`](crate::client::fluent_builders::PutSourceServerAction::set_document_version): <p>Source server post migration custom action document version.</p>
+    ///   - [`active(bool)`](crate::client::fluent_builders::PutSourceServerAction::active) / [`set_active(Option<bool>)`](crate::client::fluent_builders::PutSourceServerAction::set_active): <p>Source server post migration custom action active status.</p>
+    ///   - [`timeout_seconds(i32)`](crate::client::fluent_builders::PutSourceServerAction::timeout_seconds) / [`set_timeout_seconds(i32)`](crate::client::fluent_builders::PutSourceServerAction::set_timeout_seconds): <p>Source server post migration custom action timeout in seconds.</p>
+    ///   - [`must_succeed_for_cutover(bool)`](crate::client::fluent_builders::PutSourceServerAction::must_succeed_for_cutover) / [`set_must_succeed_for_cutover(Option<bool>)`](crate::client::fluent_builders::PutSourceServerAction::set_must_succeed_for_cutover): <p>Source server post migration custom action must succeed for cutover.</p>
+    ///   - [`parameters(HashMap<String, Vec<SsmParameterStoreParameter>>)`](crate::client::fluent_builders::PutSourceServerAction::parameters) / [`set_parameters(Option<HashMap<String, Vec<SsmParameterStoreParameter>>>)`](crate::client::fluent_builders::PutSourceServerAction::set_parameters): <p>Source server post migration custom action parameters.</p>
+    /// - On success, responds with [`PutSourceServerActionOutput`](crate::output::PutSourceServerActionOutput) with field(s):
+    ///   - [`action_id(Option<String>)`](crate::output::PutSourceServerActionOutput::action_id): <p>Source server post migration custom action ID.</p>
+    ///   - [`action_name(Option<String>)`](crate::output::PutSourceServerActionOutput::action_name): <p>Source server post migration custom action name.</p>
+    ///   - [`document_identifier(Option<String>)`](crate::output::PutSourceServerActionOutput::document_identifier): <p>Source server post migration custom action document identifier.</p>
+    ///   - [`order(i32)`](crate::output::PutSourceServerActionOutput::order): <p>Source server post migration custom action order.</p>
+    ///   - [`document_version(Option<String>)`](crate::output::PutSourceServerActionOutput::document_version): <p>Source server post migration custom action document version.</p>
+    ///   - [`active(Option<bool>)`](crate::output::PutSourceServerActionOutput::active): <p>Source server post migration custom action active status.</p>
+    ///   - [`timeout_seconds(i32)`](crate::output::PutSourceServerActionOutput::timeout_seconds): <p>Source server post migration custom action timeout in seconds.</p>
+    ///   - [`must_succeed_for_cutover(Option<bool>)`](crate::output::PutSourceServerActionOutput::must_succeed_for_cutover): <p>Source server post migration custom action must succeed for cutover.</p>
+    ///   - [`parameters(Option<HashMap<String, Vec<SsmParameterStoreParameter>>>)`](crate::output::PutSourceServerActionOutput::parameters): <p>Source server post migration custom action parameters.</p>
+    /// - On failure, responds with [`SdkError<PutSourceServerActionError>`](crate::error::PutSourceServerActionError)
+    pub fn put_source_server_action(&self) -> fluent_builders::PutSourceServerAction {
+        fluent_builders::PutSourceServerAction::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutTemplateAction`](crate::client::fluent_builders::PutTemplateAction) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`launch_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::PutTemplateAction::launch_configuration_template_id) / [`set_launch_configuration_template_id(Option<String>)`](crate::client::fluent_builders::PutTemplateAction::set_launch_configuration_template_id): <p>Launch configuration template ID.</p>
+    ///   - [`action_name(impl Into<String>)`](crate::client::fluent_builders::PutTemplateAction::action_name) / [`set_action_name(Option<String>)`](crate::client::fluent_builders::PutTemplateAction::set_action_name): <p>Template post migration custom action name.</p>
+    ///   - [`document_identifier(impl Into<String>)`](crate::client::fluent_builders::PutTemplateAction::document_identifier) / [`set_document_identifier(Option<String>)`](crate::client::fluent_builders::PutTemplateAction::set_document_identifier): <p>Template post migration custom action document identifier.</p>
+    ///   - [`order(i32)`](crate::client::fluent_builders::PutTemplateAction::order) / [`set_order(i32)`](crate::client::fluent_builders::PutTemplateAction::set_order): <p>Template post migration custom action order.</p>
+    ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::PutTemplateAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::PutTemplateAction::set_action_id): <p>Template post migration custom action ID.</p>
+    ///   - [`document_version(impl Into<String>)`](crate::client::fluent_builders::PutTemplateAction::document_version) / [`set_document_version(Option<String>)`](crate::client::fluent_builders::PutTemplateAction::set_document_version): <p>Template post migration custom action document version.</p>
+    ///   - [`active(bool)`](crate::client::fluent_builders::PutTemplateAction::active) / [`set_active(Option<bool>)`](crate::client::fluent_builders::PutTemplateAction::set_active): <p>Template post migration custom action active status.</p>
+    ///   - [`timeout_seconds(i32)`](crate::client::fluent_builders::PutTemplateAction::timeout_seconds) / [`set_timeout_seconds(i32)`](crate::client::fluent_builders::PutTemplateAction::set_timeout_seconds): <p>Template post migration custom action timeout in seconds.</p>
+    ///   - [`must_succeed_for_cutover(bool)`](crate::client::fluent_builders::PutTemplateAction::must_succeed_for_cutover) / [`set_must_succeed_for_cutover(Option<bool>)`](crate::client::fluent_builders::PutTemplateAction::set_must_succeed_for_cutover): <p>Template post migration custom action must succeed for cutover.</p>
+    ///   - [`parameters(HashMap<String, Vec<SsmParameterStoreParameter>>)`](crate::client::fluent_builders::PutTemplateAction::parameters) / [`set_parameters(Option<HashMap<String, Vec<SsmParameterStoreParameter>>>)`](crate::client::fluent_builders::PutTemplateAction::set_parameters): <p>Template post migration custom action parameters.</p>
+    ///   - [`operating_system(impl Into<String>)`](crate::client::fluent_builders::PutTemplateAction::operating_system) / [`set_operating_system(Option<String>)`](crate::client::fluent_builders::PutTemplateAction::set_operating_system): <p>Operating system eligible for this template post migration custom action.</p>
+    /// - On success, responds with [`PutTemplateActionOutput`](crate::output::PutTemplateActionOutput) with field(s):
+    ///   - [`action_id(Option<String>)`](crate::output::PutTemplateActionOutput::action_id): <p>Template post migration custom action ID.</p>
+    ///   - [`action_name(Option<String>)`](crate::output::PutTemplateActionOutput::action_name): <p>Template post migration custom action name.</p>
+    ///   - [`document_identifier(Option<String>)`](crate::output::PutTemplateActionOutput::document_identifier): <p>Template post migration custom action document identifier.</p>
+    ///   - [`order(i32)`](crate::output::PutTemplateActionOutput::order): <p>Template post migration custom action order.</p>
+    ///   - [`document_version(Option<String>)`](crate::output::PutTemplateActionOutput::document_version): <p>Template post migration custom action document version.</p>
+    ///   - [`active(Option<bool>)`](crate::output::PutTemplateActionOutput::active): <p>Template post migration custom action active status.</p>
+    ///   - [`timeout_seconds(i32)`](crate::output::PutTemplateActionOutput::timeout_seconds): <p>Template post migration custom action timeout in seconds.</p>
+    ///   - [`must_succeed_for_cutover(Option<bool>)`](crate::output::PutTemplateActionOutput::must_succeed_for_cutover): <p>Template post migration custom action must succeed for cutover.</p>
+    ///   - [`parameters(Option<HashMap<String, Vec<SsmParameterStoreParameter>>>)`](crate::output::PutTemplateActionOutput::parameters): <p>Template post migration custom action parameters.</p>
+    ///   - [`operating_system(Option<String>)`](crate::output::PutTemplateActionOutput::operating_system): <p>Operating system eligible for this template post migration custom action.</p>
+    /// - On failure, responds with [`SdkError<PutTemplateActionError>`](crate::error::PutTemplateActionError)
+    pub fn put_template_action(&self) -> fluent_builders::PutTemplateAction {
+        fluent_builders::PutTemplateAction::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`RemoveSourceServerAction`](crate::client::fluent_builders::RemoveSourceServerAction) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::RemoveSourceServerAction::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::RemoveSourceServerAction::set_source_server_id): <p>Source server ID of the post migration custom action to remove.</p>
+    ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::RemoveSourceServerAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::RemoveSourceServerAction::set_action_id): <p>Source server post migration custom action ID to remove.</p>
+    /// - On success, responds with [`RemoveSourceServerActionOutput`](crate::output::RemoveSourceServerActionOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveSourceServerActionError>`](crate::error::RemoveSourceServerActionError)
+    pub fn remove_source_server_action(&self) -> fluent_builders::RemoveSourceServerAction {
+        fluent_builders::RemoveSourceServerAction::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`RemoveTemplateAction`](crate::client::fluent_builders::RemoveTemplateAction) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`launch_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::RemoveTemplateAction::launch_configuration_template_id) / [`set_launch_configuration_template_id(Option<String>)`](crate::client::fluent_builders::RemoveTemplateAction::set_launch_configuration_template_id): <p>Launch configuration template ID of the post migration custom action to remove.</p>
+    ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::RemoveTemplateAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::RemoveTemplateAction::set_action_id): <p>Template post migration custom action ID to remove.</p>
+    /// - On success, responds with [`RemoveTemplateActionOutput`](crate::output::RemoveTemplateActionOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveTemplateActionError>`](crate::error::RemoveTemplateActionError)
+    pub fn remove_template_action(&self) -> fluent_builders::RemoveTemplateAction {
+        fluent_builders::RemoveTemplateAction::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`RetryDataReplication`](crate::client::fluent_builders::RetryDataReplication) operation.
     ///
@@ -441,6 +750,7 @@ impl Client {
     ///   - [`source_properties(Option<SourceProperties>)`](crate::output::RetryDataReplicationOutput::source_properties): <p>Source server properties.</p>
     ///   - [`replication_type(Option<ReplicationType>)`](crate::output::RetryDataReplicationOutput::replication_type): <p>Source server replication type.</p>
     ///   - [`vcenter_client_id(Option<String>)`](crate::output::RetryDataReplicationOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::RetryDataReplicationOutput::application_id): <p>Source server application ID.</p>
     /// - On failure, responds with [`SdkError<RetryDataReplicationError>`](crate::error::RetryDataReplicationError)
     pub fn retry_data_replication(&self) -> fluent_builders::RetryDataReplication {
         fluent_builders::RetryDataReplication::new(self.handle.clone())
@@ -471,6 +781,7 @@ impl Client {
     ///   - [`source_properties(Option<SourceProperties>)`](crate::output::StartReplicationOutput::source_properties): <p>Source server properties.</p>
     ///   - [`replication_type(Option<ReplicationType>)`](crate::output::StartReplicationOutput::replication_type): <p>Source server replication type.</p>
     ///   - [`vcenter_client_id(Option<String>)`](crate::output::StartReplicationOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::StartReplicationOutput::application_id): <p>Source server application ID.</p>
     /// - On failure, responds with [`SdkError<StartReplicationError>`](crate::error::StartReplicationError)
     pub fn start_replication(&self) -> fluent_builders::StartReplication {
         fluent_builders::StartReplication::new(self.handle.clone())
@@ -508,6 +819,43 @@ impl Client {
     pub fn terminate_target_instances(&self) -> fluent_builders::TerminateTargetInstances {
         fluent_builders::TerminateTargetInstances::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UnarchiveApplication`](crate::client::fluent_builders::UnarchiveApplication) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UnarchiveApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UnarchiveApplication::set_application_id): <p>Application ID.</p>
+    /// - On success, responds with [`UnarchiveApplicationOutput`](crate::output::UnarchiveApplicationOutput) with field(s):
+    ///   - [`application_id(Option<String>)`](crate::output::UnarchiveApplicationOutput::application_id): <p>Application ID.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UnarchiveApplicationOutput::arn): <p>Application ARN.</p>
+    ///   - [`name(Option<String>)`](crate::output::UnarchiveApplicationOutput::name): <p>Application name.</p>
+    ///   - [`description(Option<String>)`](crate::output::UnarchiveApplicationOutput::description): <p>Application description.</p>
+    ///   - [`is_archived(Option<bool>)`](crate::output::UnarchiveApplicationOutput::is_archived): <p>Application archival status.</p>
+    ///   - [`application_aggregated_status(Option<ApplicationAggregatedStatus>)`](crate::output::UnarchiveApplicationOutput::application_aggregated_status): <p>Application aggregated status.</p>
+    ///   - [`creation_date_time(Option<String>)`](crate::output::UnarchiveApplicationOutput::creation_date_time): <p>Application creation dateTime.</p>
+    ///   - [`last_modified_date_time(Option<String>)`](crate::output::UnarchiveApplicationOutput::last_modified_date_time): <p>Application last modified dateTime.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UnarchiveApplicationOutput::tags): <p>Application tags.</p>
+    ///   - [`wave_id(Option<String>)`](crate::output::UnarchiveApplicationOutput::wave_id): <p>Application wave ID.</p>
+    /// - On failure, responds with [`SdkError<UnarchiveApplicationError>`](crate::error::UnarchiveApplicationError)
+    pub fn unarchive_application(&self) -> fluent_builders::UnarchiveApplication {
+        fluent_builders::UnarchiveApplication::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UnarchiveWave`](crate::client::fluent_builders::UnarchiveWave) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`wave_id(impl Into<String>)`](crate::client::fluent_builders::UnarchiveWave::wave_id) / [`set_wave_id(Option<String>)`](crate::client::fluent_builders::UnarchiveWave::set_wave_id): <p>Wave ID.</p>
+    /// - On success, responds with [`UnarchiveWaveOutput`](crate::output::UnarchiveWaveOutput) with field(s):
+    ///   - [`wave_id(Option<String>)`](crate::output::UnarchiveWaveOutput::wave_id): <p>Wave ID.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UnarchiveWaveOutput::arn): <p>Wave ARN.</p>
+    ///   - [`name(Option<String>)`](crate::output::UnarchiveWaveOutput::name): <p>Wave name.</p>
+    ///   - [`description(Option<String>)`](crate::output::UnarchiveWaveOutput::description): <p>Wave description.</p>
+    ///   - [`is_archived(Option<bool>)`](crate::output::UnarchiveWaveOutput::is_archived): <p>Wave archival status.</p>
+    ///   - [`wave_aggregated_status(Option<WaveAggregatedStatus>)`](crate::output::UnarchiveWaveOutput::wave_aggregated_status): <p>Wave aggregated status.</p>
+    ///   - [`creation_date_time(Option<String>)`](crate::output::UnarchiveWaveOutput::creation_date_time): <p>Wave creation dateTime.</p>
+    ///   - [`last_modified_date_time(Option<String>)`](crate::output::UnarchiveWaveOutput::last_modified_date_time): <p>Wave last modified dateTime.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UnarchiveWaveOutput::tags): <p>Wave tags.</p>
+    /// - On failure, responds with [`SdkError<UnarchiveWaveError>`](crate::error::UnarchiveWaveError)
+    pub fn unarchive_wave(&self) -> fluent_builders::UnarchiveWave {
+        fluent_builders::UnarchiveWave::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -518,6 +866,27 @@ impl Client {
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource {
         fluent_builders::UntagResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_application_id): <p>Application ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_name): <p>Application name.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_description): <p>Application description.</p>
+    /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput) with field(s):
+    ///   - [`application_id(Option<String>)`](crate::output::UpdateApplicationOutput::application_id): <p>Application ID.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateApplicationOutput::arn): <p>Application ARN.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateApplicationOutput::name): <p>Application name.</p>
+    ///   - [`description(Option<String>)`](crate::output::UpdateApplicationOutput::description): <p>Application description.</p>
+    ///   - [`is_archived(Option<bool>)`](crate::output::UpdateApplicationOutput::is_archived): <p>Application archival status.</p>
+    ///   - [`application_aggregated_status(Option<ApplicationAggregatedStatus>)`](crate::output::UpdateApplicationOutput::application_aggregated_status): <p>Application aggregated status.</p>
+    ///   - [`creation_date_time(Option<String>)`](crate::output::UpdateApplicationOutput::creation_date_time): <p>Application creation dateTime.</p>
+    ///   - [`last_modified_date_time(Option<String>)`](crate::output::UpdateApplicationOutput::last_modified_date_time): <p>Application last modified dateTime.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateApplicationOutput::tags): <p>Application tags.</p>
+    ///   - [`wave_id(Option<String>)`](crate::output::UpdateApplicationOutput::wave_id): <p>Application wave ID.</p>
+    /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::error::UpdateApplicationError)
+    pub fn update_application(&self) -> fluent_builders::UpdateApplication {
+        fluent_builders::UpdateApplication::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateLaunchConfiguration`](crate::client::fluent_builders::UpdateLaunchConfiguration) operation.
     ///
@@ -530,7 +899,9 @@ impl Client {
     ///   - [`copy_tags(bool)`](crate::client::fluent_builders::UpdateLaunchConfiguration::copy_tags) / [`set_copy_tags(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_copy_tags): <p>Update Launch configuration copy Tags request.</p>
     ///   - [`licensing(Licensing)`](crate::client::fluent_builders::UpdateLaunchConfiguration::licensing) / [`set_licensing(Option<Licensing>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_licensing): <p>Update Launch configuration licensing request.</p>
     ///   - [`boot_mode(BootMode)`](crate::client::fluent_builders::UpdateLaunchConfiguration::boot_mode) / [`set_boot_mode(Option<BootMode>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_boot_mode): <p>Update Launch configuration boot mode request.</p>
-    ///   - [`post_launch_actions(PostLaunchActions)`](crate::client::fluent_builders::UpdateLaunchConfiguration::post_launch_actions) / [`set_post_launch_actions(Option<PostLaunchActions>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_post_launch_actions): <p>Server participating in Job.</p>
+    ///   - [`post_launch_actions(PostLaunchActions)`](crate::client::fluent_builders::UpdateLaunchConfiguration::post_launch_actions) / [`set_post_launch_actions(Option<PostLaunchActions>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_post_launch_actions): <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
+    ///   - [`enable_map_auto_tagging(bool)`](crate::client::fluent_builders::UpdateLaunchConfiguration::enable_map_auto_tagging) / [`set_enable_map_auto_tagging(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_enable_map_auto_tagging): <p>Enable map auto tagging.</p>
+    ///   - [`map_auto_tagging_mpe_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::map_auto_tagging_mpe_id) / [`set_map_auto_tagging_mpe_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_map_auto_tagging_mpe_id): <p>Launch configuration map auto tagging MPE ID.</p>
     /// - On success, responds with [`UpdateLaunchConfigurationOutput`](crate::output::UpdateLaunchConfigurationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::output::UpdateLaunchConfigurationOutput::source_server_id): <p>Launch configuration Source Server ID.</p>
     ///   - [`name(Option<String>)`](crate::output::UpdateLaunchConfigurationOutput::name): <p>Launch configuration name.</p>
@@ -541,7 +912,9 @@ impl Client {
     ///   - [`copy_tags(Option<bool>)`](crate::output::UpdateLaunchConfigurationOutput::copy_tags): <p>Copy Tags during Launch Configuration.</p>
     ///   - [`licensing(Option<Licensing>)`](crate::output::UpdateLaunchConfigurationOutput::licensing): <p>Launch configuration OS licensing.</p>
     ///   - [`boot_mode(Option<BootMode>)`](crate::output::UpdateLaunchConfigurationOutput::boot_mode): <p>Launch configuration boot mode.</p>
-    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::UpdateLaunchConfigurationOutput::post_launch_actions): <p>Server participating in Job.</p>
+    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::UpdateLaunchConfigurationOutput::post_launch_actions): <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
+    ///   - [`enable_map_auto_tagging(Option<bool>)`](crate::output::UpdateLaunchConfigurationOutput::enable_map_auto_tagging): <p>Enable map auto tagging.</p>
+    ///   - [`map_auto_tagging_mpe_id(Option<String>)`](crate::output::UpdateLaunchConfigurationOutput::map_auto_tagging_mpe_id): <p>Map auto tagging MPE ID.</p>
     /// - On failure, responds with [`SdkError<UpdateLaunchConfigurationError>`](crate::error::UpdateLaunchConfigurationError)
     pub fn update_launch_configuration(&self) -> fluent_builders::UpdateLaunchConfiguration {
         fluent_builders::UpdateLaunchConfiguration::new(self.handle.clone())
@@ -549,13 +922,38 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateLaunchConfigurationTemplate`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`launch_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::launch_configuration_template_id) / [`set_launch_configuration_template_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_launch_configuration_template_id): <p>Update Launch configuration Target instance right sizing request.</p>
-    ///   - [`post_launch_actions(PostLaunchActions)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::post_launch_actions) / [`set_post_launch_actions(Option<PostLaunchActions>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_post_launch_actions): <p>Update Launch configuration Target instance right sizing request.</p>
+    ///   - [`launch_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::launch_configuration_template_id) / [`set_launch_configuration_template_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_launch_configuration_template_id): <p>Launch Configuration Template ID.</p>
+    ///   - [`post_launch_actions(PostLaunchActions)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::post_launch_actions) / [`set_post_launch_actions(Option<PostLaunchActions>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_post_launch_actions): <p>Post Launch Action to execute on the Test or Cutover instance.</p>
+    ///   - [`enable_map_auto_tagging(bool)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::enable_map_auto_tagging) / [`set_enable_map_auto_tagging(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_enable_map_auto_tagging): <p>Enable map auto tagging.</p>
+    ///   - [`map_auto_tagging_mpe_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::map_auto_tagging_mpe_id) / [`set_map_auto_tagging_mpe_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_map_auto_tagging_mpe_id): <p>Launch configuration template map auto tagging MPE ID.</p>
+    ///   - [`launch_disposition(LaunchDisposition)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::launch_disposition) / [`set_launch_disposition(Option<LaunchDisposition>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_launch_disposition): <p>Launch disposition.</p>
+    ///   - [`target_instance_type_right_sizing_method(TargetInstanceTypeRightSizingMethod)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::target_instance_type_right_sizing_method) / [`set_target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_target_instance_type_right_sizing_method): <p>Target instance type right-sizing method.</p>
+    ///   - [`copy_private_ip(bool)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::copy_private_ip) / [`set_copy_private_ip(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_copy_private_ip): <p>Copy private Ip.</p>
+    ///   - [`associate_public_ip_address(bool)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::associate_public_ip_address) / [`set_associate_public_ip_address(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_associate_public_ip_address): <p>Associate public Ip address.</p>
+    ///   - [`copy_tags(bool)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::copy_tags) / [`set_copy_tags(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_copy_tags): <p>Copy tags.</p>
+    ///   - [`licensing(Licensing)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::licensing) / [`set_licensing(Option<Licensing>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_licensing): <p>Configure Licensing.</p>
+    ///   - [`boot_mode(BootMode)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::boot_mode) / [`set_boot_mode(Option<BootMode>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_boot_mode): <p>Launch configuration template boot mode.</p>
+    ///   - [`small_volume_max_size(i64)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::small_volume_max_size) / [`set_small_volume_max_size(i64)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_small_volume_max_size): <p>Small volume maximum size.</p>
+    ///   - [`small_volume_conf(LaunchTemplateDiskConf)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::small_volume_conf) / [`set_small_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_small_volume_conf): <p>Small volume config.</p>
+    ///   - [`large_volume_conf(LaunchTemplateDiskConf)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::large_volume_conf) / [`set_large_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_large_volume_conf): <p>Large volume config.</p>
     /// - On success, responds with [`UpdateLaunchConfigurationTemplateOutput`](crate::output::UpdateLaunchConfigurationTemplateOutput) with field(s):
-    ///   - [`launch_configuration_template_id(Option<String>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::launch_configuration_template_id): <p>Copy Private IP during Launch Configuration.</p>
-    ///   - [`arn(Option<String>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::arn): <p>Copy Private IP during Launch Configuration.</p>
-    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::post_launch_actions): <p>Copy Private IP during Launch Configuration.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::tags): <p>Copy Private IP during Launch Configuration.</p>
+    ///   - [`launch_configuration_template_id(Option<String>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::launch_configuration_template_id): <p>ID of the Launch Configuration Template.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::arn): <p>ARN of the Launch Configuration Template.</p>
+    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::post_launch_actions): <p>Post Launch Actions of the Launch Configuration Template.</p>
+    ///   - [`enable_map_auto_tagging(Option<bool>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::enable_map_auto_tagging): <p>Enable map auto tagging.</p>
+    ///   - [`map_auto_tagging_mpe_id(Option<String>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::map_auto_tagging_mpe_id): <p>Launch configuration template map auto tagging MPE ID.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::tags): <p>Tags of the Launch Configuration Template.</p>
+    ///   - [`ec2_launch_template_id(Option<String>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::ec2_launch_template_id): <p>EC2 launch template ID.</p>
+    ///   - [`launch_disposition(Option<LaunchDisposition>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::launch_disposition): <p>Launch disposition.</p>
+    ///   - [`target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::target_instance_type_right_sizing_method): <p>Target instance type right-sizing method.</p>
+    ///   - [`copy_private_ip(Option<bool>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::copy_private_ip): <p>Copy private Ip.</p>
+    ///   - [`associate_public_ip_address(Option<bool>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::associate_public_ip_address): <p>Associate public Ip address.</p>
+    ///   - [`copy_tags(Option<bool>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::copy_tags): <p>Copy tags.</p>
+    ///   - [`licensing(Option<Licensing>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::licensing): <p>Configure Licensing.</p>
+    ///   - [`boot_mode(Option<BootMode>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::boot_mode): <p>Launch configuration template boot mode.</p>
+    ///   - [`small_volume_max_size(i64)`](crate::output::UpdateLaunchConfigurationTemplateOutput::small_volume_max_size): <p>Small volume maximum size.</p>
+    ///   - [`small_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::small_volume_conf): <p>Small volume config.</p>
+    ///   - [`large_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::large_volume_conf): <p>Large volume config.</p>
     /// - On failure, responds with [`SdkError<UpdateLaunchConfigurationTemplateError>`](crate::error::UpdateLaunchConfigurationTemplateError)
     pub fn update_launch_configuration_template(
         &self,
@@ -657,11 +1055,32 @@ impl Client {
     ///   - [`source_properties(Option<SourceProperties>)`](crate::output::UpdateSourceServerReplicationTypeOutput::source_properties): <p>Source server properties.</p>
     ///   - [`replication_type(Option<ReplicationType>)`](crate::output::UpdateSourceServerReplicationTypeOutput::replication_type): <p>Source server replication type.</p>
     ///   - [`vcenter_client_id(Option<String>)`](crate::output::UpdateSourceServerReplicationTypeOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::UpdateSourceServerReplicationTypeOutput::application_id): <p>Source server application ID.</p>
     /// - On failure, responds with [`SdkError<UpdateSourceServerReplicationTypeError>`](crate::error::UpdateSourceServerReplicationTypeError)
     pub fn update_source_server_replication_type(
         &self,
     ) -> fluent_builders::UpdateSourceServerReplicationType {
         fluent_builders::UpdateSourceServerReplicationType::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateWave`](crate::client::fluent_builders::UpdateWave) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`wave_id(impl Into<String>)`](crate::client::fluent_builders::UpdateWave::wave_id) / [`set_wave_id(Option<String>)`](crate::client::fluent_builders::UpdateWave::set_wave_id): <p>Wave ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateWave::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateWave::set_name): <p>Wave name.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateWave::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateWave::set_description): <p>Wave description.</p>
+    /// - On success, responds with [`UpdateWaveOutput`](crate::output::UpdateWaveOutput) with field(s):
+    ///   - [`wave_id(Option<String>)`](crate::output::UpdateWaveOutput::wave_id): <p>Wave ID.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateWaveOutput::arn): <p>Wave ARN.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateWaveOutput::name): <p>Wave name.</p>
+    ///   - [`description(Option<String>)`](crate::output::UpdateWaveOutput::description): <p>Wave description.</p>
+    ///   - [`is_archived(Option<bool>)`](crate::output::UpdateWaveOutput::is_archived): <p>Wave archival status.</p>
+    ///   - [`wave_aggregated_status(Option<WaveAggregatedStatus>)`](crate::output::UpdateWaveOutput::wave_aggregated_status): <p>Wave aggregated status.</p>
+    ///   - [`creation_date_time(Option<String>)`](crate::output::UpdateWaveOutput::creation_date_time): <p>Wave creation dateTime.</p>
+    ///   - [`last_modified_date_time(Option<String>)`](crate::output::UpdateWaveOutput::last_modified_date_time): <p>Wave last modified dateTime.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateWaveOutput::tags): <p>Wave tags.</p>
+    /// - On failure, responds with [`SdkError<UpdateWaveError>`](crate::error::UpdateWaveError)
+    pub fn update_wave(&self) -> fluent_builders::UpdateWave {
+        fluent_builders::UpdateWave::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -671,6 +1090,338 @@ pub mod fluent_builders {
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
+    /// Fluent builder constructing a request to `ArchiveApplication`.
+    ///
+    /// <p>Archive application.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ArchiveApplication {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::archive_application_input::Builder,
+    }
+    impl ArchiveApplication {
+        /// Creates a new `ArchiveApplication`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ArchiveApplication,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ArchiveApplicationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ArchiveApplicationOutput,
+            aws_smithy_http::result::SdkError<crate::error::ArchiveApplicationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Application ID.</p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
+            self
+        }
+        /// <p>Application ID.</p>
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ArchiveWave`.
+    ///
+    /// <p>Archive wave.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ArchiveWave {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::archive_wave_input::Builder,
+    }
+    impl ArchiveWave {
+        /// Creates a new `ArchiveWave`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ArchiveWave,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ArchiveWaveError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ArchiveWaveOutput,
+            aws_smithy_http::result::SdkError<crate::error::ArchiveWaveError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Wave ID.</p>
+        pub fn wave_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wave_id(input.into());
+            self
+        }
+        /// <p>Wave ID.</p>
+        pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_wave_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `AssociateApplications`.
+    ///
+    /// <p>Associate applications to wave.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AssociateApplications {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::associate_applications_input::Builder,
+    }
+    impl AssociateApplications {
+        /// Creates a new `AssociateApplications`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::AssociateApplications,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::AssociateApplicationsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateApplicationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssociateApplicationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Wave ID.</p>
+        pub fn wave_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wave_id(input.into());
+            self
+        }
+        /// <p>Wave ID.</p>
+        pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_wave_id(input);
+            self
+        }
+        /// Appends an item to `applicationIDs`.
+        ///
+        /// To override the contents of this collection use [`set_application_i_ds`](Self::set_application_i_ds).
+        ///
+        /// <p>Application IDs list.</p>
+        pub fn application_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_i_ds(input.into());
+            self
+        }
+        /// <p>Application IDs list.</p>
+        pub fn set_application_i_ds(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_application_i_ds(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `AssociateSourceServers`.
+    ///
+    /// <p>Associate source servers to application.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AssociateSourceServers {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::associate_source_servers_input::Builder,
+    }
+    impl AssociateSourceServers {
+        /// Creates a new `AssociateSourceServers`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::AssociateSourceServers,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::AssociateSourceServersError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateSourceServersOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssociateSourceServersError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Application ID.</p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
+            self
+        }
+        /// <p>Application ID.</p>
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_id(input);
+            self
+        }
+        /// Appends an item to `sourceServerIDs`.
+        ///
+        /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
+        ///
+        /// <p>Source server IDs list.</p>
+        pub fn source_server_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_i_ds(input.into());
+            self
+        }
+        /// <p>Source server IDs list.</p>
+        pub fn set_source_server_i_ds(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_source_server_i_ds(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ChangeServerLifeCycleState`.
     ///
     /// <p>Allows the user to set the SourceServer.LifeCycle.state property for specific Source Server IDs to one of the following: READY_FOR_TEST or READY_FOR_CUTOVER. This command only works if the Source Server is already launchable (dataReplicationInfo.lagDuration is not null.)</p>
@@ -765,9 +1516,115 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateApplication`.
+    ///
+    /// <p>Create application.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateApplication {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_application_input::Builder,
+    }
+    impl CreateApplication {
+        /// Creates a new `CreateApplication`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateApplication,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateApplicationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateApplicationOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateApplicationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Application name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>Application name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>Application description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>Application description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Application tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>Application tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateLaunchConfigurationTemplate`.
     ///
-    /// <p>Creates a new ReplicationConfigurationTemplate.</p>
+    /// <p>Creates a new Launch Configuration Template.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLaunchConfigurationTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -827,12 +1684,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+        /// <p>Launch configuration template post launch actions.</p>
         pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
             self.inner = self.inner.post_launch_actions(input);
             self
         }
-        /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+        /// <p>Launch configuration template post launch actions.</p>
         pub fn set_post_launch_actions(
             mut self,
             input: std::option::Option<crate::model::PostLaunchActions>,
@@ -840,11 +1697,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_post_launch_actions(input);
             self
         }
+        /// <p>Enable map auto tagging.</p>
+        pub fn enable_map_auto_tagging(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_map_auto_tagging(input);
+            self
+        }
+        /// <p>Enable map auto tagging.</p>
+        pub fn set_enable_map_auto_tagging(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_map_auto_tagging(input);
+            self
+        }
+        /// <p>Launch configuration template map auto tagging MPE ID.</p>
+        pub fn map_auto_tagging_mpe_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_auto_tagging_mpe_id(input.into());
+            self
+        }
+        /// <p>Launch configuration template map auto tagging MPE ID.</p>
+        pub fn set_map_auto_tagging_mpe_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_map_auto_tagging_mpe_id(input);
+            self
+        }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+        /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -853,7 +1733,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+        /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -861,6 +1741,126 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>Launch disposition.</p>
+        pub fn launch_disposition(mut self, input: crate::model::LaunchDisposition) -> Self {
+            self.inner = self.inner.launch_disposition(input);
+            self
+        }
+        /// <p>Launch disposition.</p>
+        pub fn set_launch_disposition(
+            mut self,
+            input: std::option::Option<crate::model::LaunchDisposition>,
+        ) -> Self {
+            self.inner = self.inner.set_launch_disposition(input);
+            self
+        }
+        /// <p>Target instance type right-sizing method.</p>
+        pub fn target_instance_type_right_sizing_method(
+            mut self,
+            input: crate::model::TargetInstanceTypeRightSizingMethod,
+        ) -> Self {
+            self.inner = self.inner.target_instance_type_right_sizing_method(input);
+            self
+        }
+        /// <p>Target instance type right-sizing method.</p>
+        pub fn set_target_instance_type_right_sizing_method(
+            mut self,
+            input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_target_instance_type_right_sizing_method(input);
+            self
+        }
+        /// <p>Copy private Ip.</p>
+        pub fn copy_private_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_private_ip(input);
+            self
+        }
+        /// <p>Copy private Ip.</p>
+        pub fn set_copy_private_ip(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_private_ip(input);
+            self
+        }
+        /// <p>Associate public Ip address.</p>
+        pub fn associate_public_ip_address(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_public_ip_address(input);
+            self
+        }
+        /// <p>Associate public Ip address.</p>
+        pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_associate_public_ip_address(input);
+            self
+        }
+        /// <p>Copy tags.</p>
+        pub fn copy_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags(input);
+            self
+        }
+        /// <p>Copy tags.</p>
+        pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags(input);
+            self
+        }
+        /// <p>Configure Licensing.</p>
+        pub fn licensing(mut self, input: crate::model::Licensing) -> Self {
+            self.inner = self.inner.licensing(input);
+            self
+        }
+        /// <p>Configure Licensing.</p>
+        pub fn set_licensing(
+            mut self,
+            input: std::option::Option<crate::model::Licensing>,
+        ) -> Self {
+            self.inner = self.inner.set_licensing(input);
+            self
+        }
+        /// <p>Launch configuration template boot mode.</p>
+        pub fn boot_mode(mut self, input: crate::model::BootMode) -> Self {
+            self.inner = self.inner.boot_mode(input);
+            self
+        }
+        /// <p>Launch configuration template boot mode.</p>
+        pub fn set_boot_mode(mut self, input: std::option::Option<crate::model::BootMode>) -> Self {
+            self.inner = self.inner.set_boot_mode(input);
+            self
+        }
+        /// <p>Small volume maximum size.</p>
+        pub fn small_volume_max_size(mut self, input: i64) -> Self {
+            self.inner = self.inner.small_volume_max_size(input);
+            self
+        }
+        /// <p>Small volume maximum size.</p>
+        pub fn set_small_volume_max_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_small_volume_max_size(input);
+            self
+        }
+        /// <p>Small volume config.</p>
+        pub fn small_volume_conf(mut self, input: crate::model::LaunchTemplateDiskConf) -> Self {
+            self.inner = self.inner.small_volume_conf(input);
+            self
+        }
+        /// <p>Small volume config.</p>
+        pub fn set_small_volume_conf(
+            mut self,
+            input: std::option::Option<crate::model::LaunchTemplateDiskConf>,
+        ) -> Self {
+            self.inner = self.inner.set_small_volume_conf(input);
+            self
+        }
+        /// <p>Large volume config.</p>
+        pub fn large_volume_conf(mut self, input: crate::model::LaunchTemplateDiskConf) -> Self {
+            self.inner = self.inner.large_volume_conf(input);
+            self
+        }
+        /// <p>Large volume config.</p>
+        pub fn set_large_volume_conf(
+            mut self,
+            input: std::option::Option<crate::model::LaunchTemplateDiskConf>,
+        ) -> Self {
+            self.inner = self.inner.set_large_volume_conf(input);
             self
         }
     }
@@ -1139,6 +2139,188 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateWave`.
+    ///
+    /// <p>Create wave.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateWave {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_wave_input::Builder,
+    }
+    impl CreateWave {
+        /// Creates a new `CreateWave`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateWave,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateWaveError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateWaveOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateWaveError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Wave name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>Wave name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>Wave description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>Wave description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Wave tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>Wave tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteApplication`.
+    ///
+    /// <p>Delete application.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteApplication {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_application_input::Builder,
+    }
+    impl DeleteApplication {
+        /// Creates a new `DeleteApplication`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteApplication,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteApplicationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteApplicationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteApplicationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Application ID.</p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
+            self
+        }
+        /// <p>Application ID.</p>
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteJob`.
     ///
     /// <p>Deletes a single Job by ID.</p>
@@ -1214,7 +2396,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteLaunchConfigurationTemplate`.
     ///
-    /// <p>Creates a new ReplicationConfigurationTemplate.</p>
+    /// <p>Deletes a single Launch Configuration Template by ID.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLaunchConfigurationTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -1528,6 +2710,79 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteWave`.
+    ///
+    /// <p>Delete wave.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteWave {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_wave_input::Builder,
+    }
+    impl DeleteWave {
+        /// Creates a new `DeleteWave`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteWave,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteWaveError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteWaveOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteWaveError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Wave ID.</p>
+        pub fn wave_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wave_id(input.into());
+            self
+        }
+        /// <p>Wave ID.</p>
+        pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_wave_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeJobLogItems`.
     ///
     /// <p>Retrieves detailed job log items with paging.</p>
@@ -1731,7 +2986,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLaunchConfigurationTemplates`.
     ///
-    /// <p>Creates a new ReplicationConfigurationTemplate.</p>
+    /// <p>Lists all Launch Configuration Templates, filtered by Launch Configuration Template IDs</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLaunchConfigurationTemplates {
         handle: std::sync::Arc<super::Handle>,
@@ -1810,7 +3065,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_launch_configuration_template_i_ds`](Self::set_launch_configuration_template_i_ds).
         ///
-        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
         pub fn launch_configuration_template_i_ds(
             mut self,
             input: impl Into<std::string::String>,
@@ -1818,7 +3073,7 @@ pub mod fluent_builders {
             self.inner = self.inner.launch_configuration_template_i_ds(input.into());
             self
         }
-        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
         pub fn set_launch_configuration_template_i_ds(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1826,22 +3081,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_configuration_template_i_ds(input);
             self
         }
-        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        /// <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        /// <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        /// <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        /// <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2157,6 +3412,189 @@ pub mod fluent_builders {
         /// <p>Next pagination token to be provided for DescribeVcenterClients.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DisassociateApplications`.
+    ///
+    /// <p>Disassociate applications from wave.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DisassociateApplications {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::disassociate_applications_input::Builder,
+    }
+    impl DisassociateApplications {
+        /// Creates a new `DisassociateApplications`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DisassociateApplications,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DisassociateApplicationsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateApplicationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DisassociateApplicationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Wave ID.</p>
+        pub fn wave_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wave_id(input.into());
+            self
+        }
+        /// <p>Wave ID.</p>
+        pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_wave_id(input);
+            self
+        }
+        /// Appends an item to `applicationIDs`.
+        ///
+        /// To override the contents of this collection use [`set_application_i_ds`](Self::set_application_i_ds).
+        ///
+        /// <p>Application IDs list.</p>
+        pub fn application_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_i_ds(input.into());
+            self
+        }
+        /// <p>Application IDs list.</p>
+        pub fn set_application_i_ds(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_application_i_ds(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DisassociateSourceServers`.
+    ///
+    /// <p>Disassociate source servers from application.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DisassociateSourceServers {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::disassociate_source_servers_input::Builder,
+    }
+    impl DisassociateSourceServers {
+        /// Creates a new `DisassociateSourceServers`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DisassociateSourceServers,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DisassociateSourceServersError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateSourceServersOutput,
+            aws_smithy_http::result::SdkError<crate::error::DisassociateSourceServersError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Application ID.</p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
+            self
+        }
+        /// <p>Application ID.</p>
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_id(input);
+            self
+        }
+        /// Appends an item to `sourceServerIDs`.
+        ///
+        /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
+        ///
+        /// <p>Source server IDs list.</p>
+        pub fn source_server_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_i_ds(input.into());
+            self
+        }
+        /// <p>Source server IDs list.</p>
+        pub fn set_source_server_i_ds(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_source_server_i_ds(input);
             self
         }
     }
@@ -2527,6 +3965,223 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
     }
+    /// Fluent builder constructing a request to `ListApplications`.
+    ///
+    /// <p>Retrieves all applications or multiple applications by ID.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListApplications {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_applications_input::Builder,
+    }
+    impl ListApplications {
+        /// Creates a new `ListApplications`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListApplications,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListApplicationsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListApplicationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListApplicationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListApplicationsPaginator {
+            crate::paginator::ListApplicationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Applications list filters.</p>
+        pub fn filters(mut self, input: crate::model::ListApplicationsRequestFilters) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>Applications list filters.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::ListApplicationsRequestFilters>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>Maximum results to return when listing applications.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Maximum results to return when listing applications.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Request next token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Request next token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListSourceServerActions`.
+    ///
+    /// <p>List source server post migration custom actions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListSourceServerActions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_source_server_actions_input::Builder,
+    }
+    impl ListSourceServerActions {
+        /// Creates a new `ListSourceServerActions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListSourceServerActions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListSourceServerActionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListSourceServerActionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListSourceServerActionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSourceServerActionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSourceServerActionsPaginator {
+            crate::paginator::ListSourceServerActionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Source server ID.</p>
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
+            self
+        }
+        /// <p>Source server ID.</p>
+        pub fn set_source_server_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_server_id(input);
+            self
+        }
+        /// <p>Filters to apply when listing source server post migration custom actions.</p>
+        pub fn filters(mut self, input: crate::model::SourceServerActionsRequestFilters) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>Filters to apply when listing source server post migration custom actions.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::SourceServerActionsRequestFilters>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Next token to use when listing source server post migration custom actions.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Next token to use when listing source server post migration custom actions.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List all tags for your Application Migration Service resources.</p>
@@ -2597,6 +4252,226 @@ pub mod fluent_builders {
         /// <p>List tags for resource request by ARN.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListTemplateActions`.
+    ///
+    /// <p>List template post migration custom actions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListTemplateActions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_template_actions_input::Builder,
+    }
+    impl ListTemplateActions {
+        /// Creates a new `ListTemplateActions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListTemplateActions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListTemplateActionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTemplateActionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTemplateActionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTemplateActionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTemplateActionsPaginator {
+            crate::paginator::ListTemplateActionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Launch configuration template ID.</p>
+        pub fn launch_configuration_template_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.launch_configuration_template_id(input.into());
+            self
+        }
+        /// <p>Launch configuration template ID.</p>
+        pub fn set_launch_configuration_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_launch_configuration_template_id(input);
+            self
+        }
+        /// <p>Filters to apply when listing template post migration custom actions.</p>
+        pub fn filters(mut self, input: crate::model::TemplateActionsRequestFilters) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>Filters to apply when listing template post migration custom actions.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::TemplateActionsRequestFilters>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Next token to use when listing template post migration custom actions.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Next token to use when listing template post migration custom actions.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListWaves`.
+    ///
+    /// <p>Retrieves all waves or multiple waves by ID.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListWaves {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_waves_input::Builder,
+    }
+    impl ListWaves {
+        /// Creates a new `ListWaves`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListWaves,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListWavesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListWavesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListWavesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWavesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWavesPaginator {
+            crate::paginator::ListWavesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Waves list filters.</p>
+        pub fn filters(mut self, input: crate::model::ListWavesRequestFilters) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>Waves list filters.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::ListWavesRequestFilters>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>Maximum results to return when listing waves.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Maximum results to return when listing waves.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Request next token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Request next token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2673,6 +4548,573 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_source_server_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutSourceServerAction`.
+    ///
+    /// <p>Put source server post migration custom action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutSourceServerAction {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_source_server_action_input::Builder,
+    }
+    impl PutSourceServerAction {
+        /// Creates a new `PutSourceServerAction`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PutSourceServerAction,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutSourceServerActionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutSourceServerActionOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutSourceServerActionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Source server ID.</p>
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
+            self
+        }
+        /// <p>Source server ID.</p>
+        pub fn set_source_server_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_server_id(input);
+            self
+        }
+        /// <p>Source server post migration custom action name.</p>
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input.into());
+            self
+        }
+        /// <p>Source server post migration custom action name.</p>
+        pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action_name(input);
+            self
+        }
+        /// <p>Source server post migration custom action document identifier.</p>
+        pub fn document_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_identifier(input.into());
+            self
+        }
+        /// <p>Source server post migration custom action document identifier.</p>
+        pub fn set_document_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_document_identifier(input);
+            self
+        }
+        /// <p>Source server post migration custom action order.</p>
+        pub fn order(mut self, input: i32) -> Self {
+            self.inner = self.inner.order(input);
+            self
+        }
+        /// <p>Source server post migration custom action order.</p>
+        pub fn set_order(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_order(input);
+            self
+        }
+        /// <p>Source server post migration custom action ID.</p>
+        pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(input.into());
+            self
+        }
+        /// <p>Source server post migration custom action ID.</p>
+        pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action_id(input);
+            self
+        }
+        /// <p>Source server post migration custom action document version.</p>
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_version(input.into());
+            self
+        }
+        /// <p>Source server post migration custom action document version.</p>
+        pub fn set_document_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_document_version(input);
+            self
+        }
+        /// <p>Source server post migration custom action active status.</p>
+        pub fn active(mut self, input: bool) -> Self {
+            self.inner = self.inner.active(input);
+            self
+        }
+        /// <p>Source server post migration custom action active status.</p>
+        pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_active(input);
+            self
+        }
+        /// <p>Source server post migration custom action timeout in seconds.</p>
+        pub fn timeout_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout_seconds(input);
+            self
+        }
+        /// <p>Source server post migration custom action timeout in seconds.</p>
+        pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_timeout_seconds(input);
+            self
+        }
+        /// <p>Source server post migration custom action must succeed for cutover.</p>
+        pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
+            self.inner = self.inner.must_succeed_for_cutover(input);
+            self
+        }
+        /// <p>Source server post migration custom action must succeed for cutover.</p>
+        pub fn set_must_succeed_for_cutover(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_must_succeed_for_cutover(input);
+            self
+        }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>Source server post migration custom action parameters.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: std::vec::Vec<crate::model::SsmParameterStoreParameter>,
+        ) -> Self {
+            self.inner = self.inner.parameters(k.into(), v);
+            self
+        }
+        /// <p>Source server post migration custom action parameters.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    std::vec::Vec<crate::model::SsmParameterStoreParameter>,
+                >,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_parameters(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutTemplateAction`.
+    ///
+    /// <p>Put template post migration custom action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutTemplateAction {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_template_action_input::Builder,
+    }
+    impl PutTemplateAction {
+        /// Creates a new `PutTemplateAction`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PutTemplateAction,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutTemplateActionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutTemplateActionOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutTemplateActionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Launch configuration template ID.</p>
+        pub fn launch_configuration_template_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.launch_configuration_template_id(input.into());
+            self
+        }
+        /// <p>Launch configuration template ID.</p>
+        pub fn set_launch_configuration_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_launch_configuration_template_id(input);
+            self
+        }
+        /// <p>Template post migration custom action name.</p>
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input.into());
+            self
+        }
+        /// <p>Template post migration custom action name.</p>
+        pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action_name(input);
+            self
+        }
+        /// <p>Template post migration custom action document identifier.</p>
+        pub fn document_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_identifier(input.into());
+            self
+        }
+        /// <p>Template post migration custom action document identifier.</p>
+        pub fn set_document_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_document_identifier(input);
+            self
+        }
+        /// <p>Template post migration custom action order.</p>
+        pub fn order(mut self, input: i32) -> Self {
+            self.inner = self.inner.order(input);
+            self
+        }
+        /// <p>Template post migration custom action order.</p>
+        pub fn set_order(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_order(input);
+            self
+        }
+        /// <p>Template post migration custom action ID.</p>
+        pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(input.into());
+            self
+        }
+        /// <p>Template post migration custom action ID.</p>
+        pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action_id(input);
+            self
+        }
+        /// <p>Template post migration custom action document version.</p>
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_version(input.into());
+            self
+        }
+        /// <p>Template post migration custom action document version.</p>
+        pub fn set_document_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_document_version(input);
+            self
+        }
+        /// <p>Template post migration custom action active status.</p>
+        pub fn active(mut self, input: bool) -> Self {
+            self.inner = self.inner.active(input);
+            self
+        }
+        /// <p>Template post migration custom action active status.</p>
+        pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_active(input);
+            self
+        }
+        /// <p>Template post migration custom action timeout in seconds.</p>
+        pub fn timeout_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout_seconds(input);
+            self
+        }
+        /// <p>Template post migration custom action timeout in seconds.</p>
+        pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_timeout_seconds(input);
+            self
+        }
+        /// <p>Template post migration custom action must succeed for cutover.</p>
+        pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
+            self.inner = self.inner.must_succeed_for_cutover(input);
+            self
+        }
+        /// <p>Template post migration custom action must succeed for cutover.</p>
+        pub fn set_must_succeed_for_cutover(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_must_succeed_for_cutover(input);
+            self
+        }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>Template post migration custom action parameters.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: std::vec::Vec<crate::model::SsmParameterStoreParameter>,
+        ) -> Self {
+            self.inner = self.inner.parameters(k.into(), v);
+            self
+        }
+        /// <p>Template post migration custom action parameters.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    std::vec::Vec<crate::model::SsmParameterStoreParameter>,
+                >,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_parameters(input);
+            self
+        }
+        /// <p>Operating system eligible for this template post migration custom action.</p>
+        pub fn operating_system(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operating_system(input.into());
+            self
+        }
+        /// <p>Operating system eligible for this template post migration custom action.</p>
+        pub fn set_operating_system(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_operating_system(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `RemoveSourceServerAction`.
+    ///
+    /// <p>Remove source server post migration custom action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RemoveSourceServerAction {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::remove_source_server_action_input::Builder,
+    }
+    impl RemoveSourceServerAction {
+        /// Creates a new `RemoveSourceServerAction`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::RemoveSourceServerAction,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::RemoveSourceServerActionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RemoveSourceServerActionOutput,
+            aws_smithy_http::result::SdkError<crate::error::RemoveSourceServerActionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Source server ID of the post migration custom action to remove.</p>
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
+            self
+        }
+        /// <p>Source server ID of the post migration custom action to remove.</p>
+        pub fn set_source_server_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_server_id(input);
+            self
+        }
+        /// <p>Source server post migration custom action ID to remove.</p>
+        pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(input.into());
+            self
+        }
+        /// <p>Source server post migration custom action ID to remove.</p>
+        pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `RemoveTemplateAction`.
+    ///
+    /// <p>Remove template post migration custom action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RemoveTemplateAction {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::remove_template_action_input::Builder,
+    }
+    impl RemoveTemplateAction {
+        /// Creates a new `RemoveTemplateAction`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::RemoveTemplateAction,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::RemoveTemplateActionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RemoveTemplateActionOutput,
+            aws_smithy_http::result::SdkError<crate::error::RemoveTemplateActionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Launch configuration template ID of the post migration custom action to remove.</p>
+        pub fn launch_configuration_template_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.launch_configuration_template_id(input.into());
+            self
+        }
+        /// <p>Launch configuration template ID of the post migration custom action to remove.</p>
+        pub fn set_launch_configuration_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_launch_configuration_template_id(input);
+            self
+        }
+        /// <p>Template post migration custom action ID to remove.</p>
+        pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(input.into());
+            self
+        }
+        /// <p>Template post migration custom action ID to remove.</p>
+        pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action_id(input);
             self
         }
     }
@@ -3233,6 +5675,155 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UnarchiveApplication`.
+    ///
+    /// <p>Unarchive application.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UnarchiveApplication {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::unarchive_application_input::Builder,
+    }
+    impl UnarchiveApplication {
+        /// Creates a new `UnarchiveApplication`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UnarchiveApplication,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UnarchiveApplicationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UnarchiveApplicationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UnarchiveApplicationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Application ID.</p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
+            self
+        }
+        /// <p>Application ID.</p>
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UnarchiveWave`.
+    ///
+    /// <p>Unarchive wave.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UnarchiveWave {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::unarchive_wave_input::Builder,
+    }
+    impl UnarchiveWave {
+        /// Creates a new `UnarchiveWave`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UnarchiveWave,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UnarchiveWaveError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UnarchiveWaveOutput,
+            aws_smithy_http::result::SdkError<crate::error::UnarchiveWaveError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Wave ID.</p>
+        pub fn wave_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wave_id(input.into());
+            self
+        }
+        /// <p>Wave ID.</p>
+        pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_wave_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes the specified set of tags from the specified set of Application Migration Service resources.</p>
@@ -3320,6 +5911,102 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_tag_keys(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateApplication`.
+    ///
+    /// <p>Update application.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateApplication {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_application_input::Builder,
+    }
+    impl UpdateApplication {
+        /// Creates a new `UpdateApplication`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateApplication,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateApplicationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateApplicationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateApplicationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Application ID.</p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
+            self
+        }
+        /// <p>Application ID.</p>
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_id(input);
+            self
+        }
+        /// <p>Application name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>Application name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>Application description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>Application description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
     }
@@ -3482,12 +6169,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_boot_mode(input);
             self
         }
-        /// <p>Server participating in Job.</p>
+        /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
         pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
             self.inner = self.inner.post_launch_actions(input);
             self
         }
-        /// <p>Server participating in Job.</p>
+        /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
         pub fn set_post_launch_actions(
             mut self,
             input: std::option::Option<crate::model::PostLaunchActions>,
@@ -3495,10 +6182,33 @@ pub mod fluent_builders {
             self.inner = self.inner.set_post_launch_actions(input);
             self
         }
+        /// <p>Enable map auto tagging.</p>
+        pub fn enable_map_auto_tagging(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_map_auto_tagging(input);
+            self
+        }
+        /// <p>Enable map auto tagging.</p>
+        pub fn set_enable_map_auto_tagging(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_map_auto_tagging(input);
+            self
+        }
+        /// <p>Launch configuration map auto tagging MPE ID.</p>
+        pub fn map_auto_tagging_mpe_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_auto_tagging_mpe_id(input.into());
+            self
+        }
+        /// <p>Launch configuration map auto tagging MPE ID.</p>
+        pub fn set_map_auto_tagging_mpe_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_map_auto_tagging_mpe_id(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateLaunchConfigurationTemplate`.
     ///
-    /// <p>Creates a new ReplicationConfigurationTemplate.</p>
+    /// <p>Updates an existing Launch Configuration Template by ID.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLaunchConfigurationTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -3558,7 +6268,7 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Update Launch configuration Target instance right sizing request.</p>
+        /// <p>Launch Configuration Template ID.</p>
         pub fn launch_configuration_template_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -3566,7 +6276,7 @@ pub mod fluent_builders {
             self.inner = self.inner.launch_configuration_template_id(input.into());
             self
         }
-        /// <p>Update Launch configuration Target instance right sizing request.</p>
+        /// <p>Launch Configuration Template ID.</p>
         pub fn set_launch_configuration_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3574,17 +6284,160 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_configuration_template_id(input);
             self
         }
-        /// <p>Update Launch configuration Target instance right sizing request.</p>
+        /// <p>Post Launch Action to execute on the Test or Cutover instance.</p>
         pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
             self.inner = self.inner.post_launch_actions(input);
             self
         }
-        /// <p>Update Launch configuration Target instance right sizing request.</p>
+        /// <p>Post Launch Action to execute on the Test or Cutover instance.</p>
         pub fn set_post_launch_actions(
             mut self,
             input: std::option::Option<crate::model::PostLaunchActions>,
         ) -> Self {
             self.inner = self.inner.set_post_launch_actions(input);
+            self
+        }
+        /// <p>Enable map auto tagging.</p>
+        pub fn enable_map_auto_tagging(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_map_auto_tagging(input);
+            self
+        }
+        /// <p>Enable map auto tagging.</p>
+        pub fn set_enable_map_auto_tagging(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_map_auto_tagging(input);
+            self
+        }
+        /// <p>Launch configuration template map auto tagging MPE ID.</p>
+        pub fn map_auto_tagging_mpe_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_auto_tagging_mpe_id(input.into());
+            self
+        }
+        /// <p>Launch configuration template map auto tagging MPE ID.</p>
+        pub fn set_map_auto_tagging_mpe_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_map_auto_tagging_mpe_id(input);
+            self
+        }
+        /// <p>Launch disposition.</p>
+        pub fn launch_disposition(mut self, input: crate::model::LaunchDisposition) -> Self {
+            self.inner = self.inner.launch_disposition(input);
+            self
+        }
+        /// <p>Launch disposition.</p>
+        pub fn set_launch_disposition(
+            mut self,
+            input: std::option::Option<crate::model::LaunchDisposition>,
+        ) -> Self {
+            self.inner = self.inner.set_launch_disposition(input);
+            self
+        }
+        /// <p>Target instance type right-sizing method.</p>
+        pub fn target_instance_type_right_sizing_method(
+            mut self,
+            input: crate::model::TargetInstanceTypeRightSizingMethod,
+        ) -> Self {
+            self.inner = self.inner.target_instance_type_right_sizing_method(input);
+            self
+        }
+        /// <p>Target instance type right-sizing method.</p>
+        pub fn set_target_instance_type_right_sizing_method(
+            mut self,
+            input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_target_instance_type_right_sizing_method(input);
+            self
+        }
+        /// <p>Copy private Ip.</p>
+        pub fn copy_private_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_private_ip(input);
+            self
+        }
+        /// <p>Copy private Ip.</p>
+        pub fn set_copy_private_ip(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_private_ip(input);
+            self
+        }
+        /// <p>Associate public Ip address.</p>
+        pub fn associate_public_ip_address(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_public_ip_address(input);
+            self
+        }
+        /// <p>Associate public Ip address.</p>
+        pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_associate_public_ip_address(input);
+            self
+        }
+        /// <p>Copy tags.</p>
+        pub fn copy_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags(input);
+            self
+        }
+        /// <p>Copy tags.</p>
+        pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags(input);
+            self
+        }
+        /// <p>Configure Licensing.</p>
+        pub fn licensing(mut self, input: crate::model::Licensing) -> Self {
+            self.inner = self.inner.licensing(input);
+            self
+        }
+        /// <p>Configure Licensing.</p>
+        pub fn set_licensing(
+            mut self,
+            input: std::option::Option<crate::model::Licensing>,
+        ) -> Self {
+            self.inner = self.inner.set_licensing(input);
+            self
+        }
+        /// <p>Launch configuration template boot mode.</p>
+        pub fn boot_mode(mut self, input: crate::model::BootMode) -> Self {
+            self.inner = self.inner.boot_mode(input);
+            self
+        }
+        /// <p>Launch configuration template boot mode.</p>
+        pub fn set_boot_mode(mut self, input: std::option::Option<crate::model::BootMode>) -> Self {
+            self.inner = self.inner.set_boot_mode(input);
+            self
+        }
+        /// <p>Small volume maximum size.</p>
+        pub fn small_volume_max_size(mut self, input: i64) -> Self {
+            self.inner = self.inner.small_volume_max_size(input);
+            self
+        }
+        /// <p>Small volume maximum size.</p>
+        pub fn set_small_volume_max_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_small_volume_max_size(input);
+            self
+        }
+        /// <p>Small volume config.</p>
+        pub fn small_volume_conf(mut self, input: crate::model::LaunchTemplateDiskConf) -> Self {
+            self.inner = self.inner.small_volume_conf(input);
+            self
+        }
+        /// <p>Small volume config.</p>
+        pub fn set_small_volume_conf(
+            mut self,
+            input: std::option::Option<crate::model::LaunchTemplateDiskConf>,
+        ) -> Self {
+            self.inner = self.inner.set_small_volume_conf(input);
+            self
+        }
+        /// <p>Large volume config.</p>
+        pub fn large_volume_conf(mut self, input: crate::model::LaunchTemplateDiskConf) -> Self {
+            self.inner = self.inner.large_volume_conf(input);
+            self
+        }
+        /// <p>Large volume config.</p>
+        pub fn set_large_volume_conf(
+            mut self,
+            input: std::option::Option<crate::model::LaunchTemplateDiskConf>,
+        ) -> Self {
+            self.inner = self.inner.set_large_volume_conf(input);
             self
         }
     }
@@ -4247,6 +7100,99 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ReplicationType>,
         ) -> Self {
             self.inner = self.inner.set_replication_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateWave`.
+    ///
+    /// <p>Update wave.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateWave {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_wave_input::Builder,
+    }
+    impl UpdateWave {
+        /// Creates a new `UpdateWave`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateWave,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateWaveError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateWaveOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateWaveError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Wave ID.</p>
+        pub fn wave_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wave_id(input.into());
+            self
+        }
+        /// <p>Wave ID.</p>
+        pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_wave_id(input);
+            self
+        }
+        /// <p>Wave name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>Wave name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>Wave description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>Wave description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
     }

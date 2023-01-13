@@ -10,7 +10,7 @@ version = "0.52.0"
 
 [dependencies.aws-sdk-sns]
 path = "../../sdk/sns"
-version = "0.22.0"
+version = "0.23.0"
 
 [dependencies.tokio]
 version = "1.20.1"

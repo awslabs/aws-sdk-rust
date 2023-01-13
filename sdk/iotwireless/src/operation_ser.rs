@@ -199,6 +199,19 @@ pub fn serialize_operation_crate_operation_create_wireless_gateway_task_definiti
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_get_position_estimate(
+    input: &crate::input::GetPositionEstimateInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::error::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_get_position_estimate_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_put_position_configuration(
     input: &crate::input::PutPositionConfigurationInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::error::SerializationError> {
@@ -407,6 +420,16 @@ pub fn serialize_operation_crate_operation_update_resource_event_configuration(
     )?;
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_payload_update_resource_position_input(
+    payload: std::option::Option<aws_smithy_types::Blob>,
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::error::BuildError> {
+    let payload = match payload {
+        Some(t) => t,
+        None => return Ok(Vec::new()),
+    };
+    Ok(payload.into_inner())
 }
 
 pub fn serialize_operation_crate_operation_update_wireless_device(

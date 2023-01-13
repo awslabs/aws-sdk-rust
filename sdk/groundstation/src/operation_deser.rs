@@ -283,6 +283,91 @@ pub fn parse_create_dataflow_endpoint_group_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_ephemeris_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateEphemerisOutput, crate::error::CreateEphemerisError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateEphemerisError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateEphemerisError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DependencyException" => crate::error::CreateEphemerisError {
+            meta: generic,
+            kind: crate::error::CreateEphemerisErrorKind::DependencyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::dependency_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEphemerisError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::CreateEphemerisError {
+            meta: generic,
+            kind: crate::error::CreateEphemerisErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEphemerisError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::CreateEphemerisError {
+            meta: generic,
+            kind: crate::error::CreateEphemerisErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEphemerisError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateEphemerisError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_ephemeris_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateEphemerisOutput, crate::error::CreateEphemerisError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_ephemeris_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_ephemeris(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateEphemerisError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_mission_profile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -554,6 +639,91 @@ pub fn parse_delete_dataflow_endpoint_group_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_ephemeris_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteEphemerisOutput, crate::error::DeleteEphemerisError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteEphemerisError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteEphemerisError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DependencyException" => crate::error::DeleteEphemerisError {
+            meta: generic,
+            kind: crate::error::DeleteEphemerisErrorKind::DependencyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::dependency_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEphemerisError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::DeleteEphemerisError {
+            meta: generic,
+            kind: crate::error::DeleteEphemerisErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEphemerisError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DeleteEphemerisError {
+            meta: generic,
+            kind: crate::error::DeleteEphemerisErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEphemerisError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteEphemerisError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_ephemeris_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteEphemerisOutput, crate::error::DeleteEphemerisError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_ephemeris_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_delete_ephemeris(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteEphemerisError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_mission_profile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -725,6 +895,93 @@ pub fn parse_describe_contact_response(
             output,
         )
         .map_err(crate::error::DescribeContactError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_ephemeris_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeEphemerisOutput, crate::error::DescribeEphemerisError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeEphemerisError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeEphemerisError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DependencyException" => crate::error::DescribeEphemerisError {
+            meta: generic,
+            kind: crate::error::DescribeEphemerisErrorKind::DependencyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::dependency_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEphemerisError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::DescribeEphemerisError {
+            meta: generic,
+            kind: crate::error::DescribeEphemerisErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEphemerisError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DescribeEphemerisError {
+            meta: generic,
+            kind: crate::error::DescribeEphemerisErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEphemerisError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeEphemerisError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_ephemeris_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeEphemerisOutput, crate::error::DescribeEphemerisError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_ephemeris_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_ephemeris(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeEphemerisError::unhandled)?;
         output.build()
     })
 }
@@ -1432,6 +1689,91 @@ pub fn parse_list_dataflow_endpoint_groups_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_ephemerides_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListEphemeridesOutput, crate::error::ListEphemeridesError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListEphemeridesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListEphemeridesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DependencyException" => crate::error::ListEphemeridesError {
+            meta: generic,
+            kind: crate::error::ListEphemeridesErrorKind::DependencyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::dependency_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEphemeridesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::ListEphemeridesError {
+            meta: generic,
+            kind: crate::error::ListEphemeridesErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEphemeridesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::ListEphemeridesError {
+            meta: generic,
+            kind: crate::error::ListEphemeridesErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEphemeridesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListEphemeridesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_ephemerides_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListEphemeridesOutput, crate::error::ListEphemeridesError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_ephemerides_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_ephemerides(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListEphemeridesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_ground_stations_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2115,6 +2457,91 @@ pub fn parse_update_config_response(
             output,
         )
         .map_err(crate::error::UpdateConfigError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_ephemeris_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateEphemerisOutput, crate::error::UpdateEphemerisError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateEphemerisError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateEphemerisError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DependencyException" => crate::error::UpdateEphemerisError {
+            meta: generic,
+            kind: crate::error::UpdateEphemerisErrorKind::DependencyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::dependency_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEphemerisError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::UpdateEphemerisError {
+            meta: generic,
+            kind: crate::error::UpdateEphemerisErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEphemerisError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::UpdateEphemerisError {
+            meta: generic,
+            kind: crate::error::UpdateEphemerisErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEphemerisError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateEphemerisError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_ephemeris_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateEphemerisOutput, crate::error::UpdateEphemerisError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_ephemeris_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_ephemeris(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateEphemerisError::unhandled)?;
         output.build()
     })
 }

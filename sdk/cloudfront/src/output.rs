@@ -557,7 +557,7 @@ pub struct UpdateFieldLevelEncryptionProfileOutput {
     #[doc(hidden)]
     pub field_level_encryption_profile:
         std::option::Option<crate::model::FieldLevelEncryptionProfile>,
-    /// <p>The result of the field-level encryption profile request. </p>
+    /// <p>The result of the field-level encryption profile request.</p>
     #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
@@ -568,7 +568,7 @@ impl UpdateFieldLevelEncryptionProfileOutput {
     ) -> std::option::Option<&crate::model::FieldLevelEncryptionProfile> {
         self.field_level_encryption_profile.as_ref()
     }
-    /// <p>The result of the field-level encryption profile request. </p>
+    /// <p>The result of the field-level encryption profile request.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -600,12 +600,12 @@ pub mod update_field_level_encryption_profile_output {
             self.field_level_encryption_profile = input;
             self
         }
-        /// <p>The result of the field-level encryption profile request. </p>
+        /// <p>The result of the field-level encryption profile request.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>The result of the field-level encryption profile request. </p>
+        /// <p>The result of the field-level encryption profile request.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -698,6 +698,76 @@ impl UpdateFieldLevelEncryptionConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateDistributionWithStagingConfigOutput {
+    /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
+    #[doc(hidden)]
+    pub distribution: std::option::Option<crate::model::Distribution>,
+    /// <p>The current version of the primary distribution (after it's updated).</p>
+    #[doc(hidden)]
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl UpdateDistributionWithStagingConfigOutput {
+    /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
+    pub fn distribution(&self) -> std::option::Option<&crate::model::Distribution> {
+        self.distribution.as_ref()
+    }
+    /// <p>The current version of the primary distribution (after it's updated).</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
+/// See [`UpdateDistributionWithStagingConfigOutput`](crate::output::UpdateDistributionWithStagingConfigOutput).
+pub mod update_distribution_with_staging_config_output {
+
+    /// A builder for [`UpdateDistributionWithStagingConfigOutput`](crate::output::UpdateDistributionWithStagingConfigOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) distribution: std::option::Option<crate::model::Distribution>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
+        pub fn distribution(mut self, input: crate::model::Distribution) -> Self {
+            self.distribution = Some(input);
+            self
+        }
+        /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
+        pub fn set_distribution(
+            mut self,
+            input: std::option::Option<crate::model::Distribution>,
+        ) -> Self {
+            self.distribution = input;
+            self
+        }
+        /// <p>The current version of the primary distribution (after it's updated).</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The current version of the primary distribution (after it's updated).</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateDistributionWithStagingConfigOutput`](crate::output::UpdateDistributionWithStagingConfigOutput).
+        pub fn build(self) -> crate::output::UpdateDistributionWithStagingConfigOutput {
+            crate::output::UpdateDistributionWithStagingConfigOutput {
+                distribution: self.distribution,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl UpdateDistributionWithStagingConfigOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDistributionWithStagingConfigOutput`](crate::output::UpdateDistributionWithStagingConfigOutput).
+    pub fn builder() -> crate::output::update_distribution_with_staging_config_output::Builder {
+        crate::output::update_distribution_with_staging_config_output::Builder::default()
+    }
+}
+
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -765,6 +835,82 @@ impl UpdateDistributionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDistributionOutput`](crate::output::UpdateDistributionOutput).
     pub fn builder() -> crate::output::update_distribution_output::Builder {
         crate::output::update_distribution_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateContinuousDeploymentPolicyOutput {
+    /// <p>A continuous deployment policy.</p>
+    #[doc(hidden)]
+    pub continuous_deployment_policy: std::option::Option<crate::model::ContinuousDeploymentPolicy>,
+    /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+    #[doc(hidden)]
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl UpdateContinuousDeploymentPolicyOutput {
+    /// <p>A continuous deployment policy.</p>
+    pub fn continuous_deployment_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ContinuousDeploymentPolicy> {
+        self.continuous_deployment_policy.as_ref()
+    }
+    /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
+/// See [`UpdateContinuousDeploymentPolicyOutput`](crate::output::UpdateContinuousDeploymentPolicyOutput).
+pub mod update_continuous_deployment_policy_output {
+
+    /// A builder for [`UpdateContinuousDeploymentPolicyOutput`](crate::output::UpdateContinuousDeploymentPolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) continuous_deployment_policy:
+            std::option::Option<crate::model::ContinuousDeploymentPolicy>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A continuous deployment policy.</p>
+        pub fn continuous_deployment_policy(
+            mut self,
+            input: crate::model::ContinuousDeploymentPolicy,
+        ) -> Self {
+            self.continuous_deployment_policy = Some(input);
+            self
+        }
+        /// <p>A continuous deployment policy.</p>
+        pub fn set_continuous_deployment_policy(
+            mut self,
+            input: std::option::Option<crate::model::ContinuousDeploymentPolicy>,
+        ) -> Self {
+            self.continuous_deployment_policy = input;
+            self
+        }
+        /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateContinuousDeploymentPolicyOutput`](crate::output::UpdateContinuousDeploymentPolicyOutput).
+        pub fn build(self) -> crate::output::UpdateContinuousDeploymentPolicyOutput {
+            crate::output::UpdateContinuousDeploymentPolicyOutput {
+                continuous_deployment_policy: self.continuous_deployment_policy,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl UpdateContinuousDeploymentPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateContinuousDeploymentPolicyOutput`](crate::output::UpdateContinuousDeploymentPolicyOutput).
+    pub fn builder() -> crate::output::update_continuous_deployment_policy_output::Builder {
+        crate::output::update_continuous_deployment_policy_output::Builder::default()
     }
 }
 
@@ -1065,16 +1211,16 @@ impl PublishFunctionOutput {
     }
 }
 
-/// <p> The returned result of the corresponding request.</p>
+/// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
-    /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<crate::model::Tags>,
 }
 impl ListTagsForResourceOutput {
-    /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(&self) -> std::option::Option<&crate::model::Tags> {
         self.tags.as_ref()
     }
@@ -1088,12 +1234,12 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<crate::model::Tags>,
     }
     impl Builder {
-        /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+        /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
         pub fn tags(mut self, input: crate::model::Tags) -> Self {
             self.tags = Some(input);
             self
         }
-        /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+        /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
         pub fn set_tags(mut self, input: std::option::Option<crate::model::Tags>) -> Self {
             self.tags = input;
             self
@@ -1111,16 +1257,16 @@ impl ListTagsForResourceOutput {
     }
 }
 
-/// <p>The returned result of the corresponding request. </p>
+/// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamingDistributionsOutput {
-    /// <p>The <code>StreamingDistributionList</code> type. </p>
+    /// <p>The <code>StreamingDistributionList</code> type.</p>
     #[doc(hidden)]
     pub streaming_distribution_list: std::option::Option<crate::model::StreamingDistributionList>,
 }
 impl ListStreamingDistributionsOutput {
-    /// <p>The <code>StreamingDistributionList</code> type. </p>
+    /// <p>The <code>StreamingDistributionList</code> type.</p>
     pub fn streaming_distribution_list(
         &self,
     ) -> std::option::Option<&crate::model::StreamingDistributionList> {
@@ -1137,7 +1283,7 @@ pub mod list_streaming_distributions_output {
             std::option::Option<crate::model::StreamingDistributionList>,
     }
     impl Builder {
-        /// <p>The <code>StreamingDistributionList</code> type. </p>
+        /// <p>The <code>StreamingDistributionList</code> type.</p>
         pub fn streaming_distribution_list(
             mut self,
             input: crate::model::StreamingDistributionList,
@@ -1145,7 +1291,7 @@ pub mod list_streaming_distributions_output {
             self.streaming_distribution_list = Some(input);
             self
         }
-        /// <p>The <code>StreamingDistributionList</code> type. </p>
+        /// <p>The <code>StreamingDistributionList</code> type.</p>
         pub fn set_streaming_distribution_list(
             mut self,
             input: std::option::Option<crate::model::StreamingDistributionList>,
@@ -1492,16 +1638,16 @@ impl ListKeyGroupsOutput {
     }
 }
 
-/// <p>The returned result of the corresponding request. </p>
+/// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInvalidationsOutput {
-    /// <p>Information about invalidation batches. </p>
+    /// <p>Information about invalidation batches.</p>
     #[doc(hidden)]
     pub invalidation_list: std::option::Option<crate::model::InvalidationList>,
 }
 impl ListInvalidationsOutput {
-    /// <p>Information about invalidation batches. </p>
+    /// <p>Information about invalidation batches.</p>
     pub fn invalidation_list(&self) -> std::option::Option<&crate::model::InvalidationList> {
         self.invalidation_list.as_ref()
     }
@@ -1515,12 +1661,12 @@ pub mod list_invalidations_output {
         pub(crate) invalidation_list: std::option::Option<crate::model::InvalidationList>,
     }
     impl Builder {
-        /// <p>Information about invalidation batches. </p>
+        /// <p>Information about invalidation batches.</p>
         pub fn invalidation_list(mut self, input: crate::model::InvalidationList) -> Self {
             self.invalidation_list = Some(input);
             self
         }
-        /// <p>Information about invalidation batches. </p>
+        /// <p>Information about invalidation batches.</p>
         pub fn set_invalidation_list(
             mut self,
             input: std::option::Option<crate::model::InvalidationList>,
@@ -1713,12 +1859,12 @@ impl ListFieldLevelEncryptionConfigsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByWebAclIdOutput {
-    /// <p>The <code>DistributionList</code> type. </p>
+    /// <p>The <code>DistributionList</code> type.</p>
     #[doc(hidden)]
     pub distribution_list: std::option::Option<crate::model::DistributionList>,
 }
 impl ListDistributionsByWebAclIdOutput {
-    /// <p>The <code>DistributionList</code> type. </p>
+    /// <p>The <code>DistributionList</code> type.</p>
     pub fn distribution_list(&self) -> std::option::Option<&crate::model::DistributionList> {
         self.distribution_list.as_ref()
     }
@@ -1732,12 +1878,12 @@ pub mod list_distributions_by_web_acl_id_output {
         pub(crate) distribution_list: std::option::Option<crate::model::DistributionList>,
     }
     impl Builder {
-        /// <p>The <code>DistributionList</code> type. </p>
+        /// <p>The <code>DistributionList</code> type.</p>
         pub fn distribution_list(mut self, input: crate::model::DistributionList) -> Self {
             self.distribution_list = Some(input);
             self
         }
-        /// <p>The <code>DistributionList</code> type. </p>
+        /// <p>The <code>DistributionList</code> type.</p>
         pub fn set_distribution_list(
             mut self,
             input: std::option::Option<crate::model::DistributionList>,
@@ -2017,16 +2163,16 @@ impl ListDistributionsByCachePolicyIdOutput {
     }
 }
 
-/// <p>The returned result of the corresponding request. </p>
+/// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsOutput {
-    /// <p>The <code>DistributionList</code> type. </p>
+    /// <p>The <code>DistributionList</code> type.</p>
     #[doc(hidden)]
     pub distribution_list: std::option::Option<crate::model::DistributionList>,
 }
 impl ListDistributionsOutput {
-    /// <p>The <code>DistributionList</code> type. </p>
+    /// <p>The <code>DistributionList</code> type.</p>
     pub fn distribution_list(&self) -> std::option::Option<&crate::model::DistributionList> {
         self.distribution_list.as_ref()
     }
@@ -2040,12 +2186,12 @@ pub mod list_distributions_output {
         pub(crate) distribution_list: std::option::Option<crate::model::DistributionList>,
     }
     impl Builder {
-        /// <p>The <code>DistributionList</code> type. </p>
+        /// <p>The <code>DistributionList</code> type.</p>
         pub fn distribution_list(mut self, input: crate::model::DistributionList) -> Self {
             self.distribution_list = Some(input);
             self
         }
-        /// <p>The <code>DistributionList</code> type. </p>
+        /// <p>The <code>DistributionList</code> type.</p>
         pub fn set_distribution_list(
             mut self,
             input: std::option::Option<crate::model::DistributionList>,
@@ -2065,6 +2211,64 @@ impl ListDistributionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsOutput`](crate::output::ListDistributionsOutput).
     pub fn builder() -> crate::output::list_distributions_output::Builder {
         crate::output::list_distributions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListContinuousDeploymentPoliciesOutput {
+    /// <p>A list of continuous deployment policies.</p>
+    #[doc(hidden)]
+    pub continuous_deployment_policy_list:
+        std::option::Option<crate::model::ContinuousDeploymentPolicyList>,
+}
+impl ListContinuousDeploymentPoliciesOutput {
+    /// <p>A list of continuous deployment policies.</p>
+    pub fn continuous_deployment_policy_list(
+        &self,
+    ) -> std::option::Option<&crate::model::ContinuousDeploymentPolicyList> {
+        self.continuous_deployment_policy_list.as_ref()
+    }
+}
+/// See [`ListContinuousDeploymentPoliciesOutput`](crate::output::ListContinuousDeploymentPoliciesOutput).
+pub mod list_continuous_deployment_policies_output {
+
+    /// A builder for [`ListContinuousDeploymentPoliciesOutput`](crate::output::ListContinuousDeploymentPoliciesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) continuous_deployment_policy_list:
+            std::option::Option<crate::model::ContinuousDeploymentPolicyList>,
+    }
+    impl Builder {
+        /// <p>A list of continuous deployment policies.</p>
+        pub fn continuous_deployment_policy_list(
+            mut self,
+            input: crate::model::ContinuousDeploymentPolicyList,
+        ) -> Self {
+            self.continuous_deployment_policy_list = Some(input);
+            self
+        }
+        /// <p>A list of continuous deployment policies.</p>
+        pub fn set_continuous_deployment_policy_list(
+            mut self,
+            input: std::option::Option<crate::model::ContinuousDeploymentPolicyList>,
+        ) -> Self {
+            self.continuous_deployment_policy_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListContinuousDeploymentPoliciesOutput`](crate::output::ListContinuousDeploymentPoliciesOutput).
+        pub fn build(self) -> crate::output::ListContinuousDeploymentPoliciesOutput {
+            crate::output::ListContinuousDeploymentPoliciesOutput {
+                continuous_deployment_policy_list: self.continuous_deployment_policy_list,
+            }
+        }
+    }
+}
+impl ListContinuousDeploymentPoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`ListContinuousDeploymentPoliciesOutput`](crate::output::ListContinuousDeploymentPoliciesOutput).
+    pub fn builder() -> crate::output::list_continuous_deployment_policies_output::Builder {
+        crate::output::list_continuous_deployment_policies_output::Builder::default()
     }
 }
 
@@ -2125,17 +2329,17 @@ impl ListConflictingAliasesOutput {
     }
 }
 
-/// <p>The returned result of the corresponding request. </p>
+/// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCloudFrontOriginAccessIdentitiesOutput {
-    /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
+    /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
     #[doc(hidden)]
     pub cloud_front_origin_access_identity_list:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentityList>,
 }
 impl ListCloudFrontOriginAccessIdentitiesOutput {
-    /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
+    /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
     pub fn cloud_front_origin_access_identity_list(
         &self,
     ) -> std::option::Option<&crate::model::CloudFrontOriginAccessIdentityList> {
@@ -2152,7 +2356,7 @@ pub mod list_cloud_front_origin_access_identities_output {
             std::option::Option<crate::model::CloudFrontOriginAccessIdentityList>,
     }
     impl Builder {
-        /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
+        /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
         pub fn cloud_front_origin_access_identity_list(
             mut self,
             input: crate::model::CloudFrontOriginAccessIdentityList,
@@ -2160,7 +2364,7 @@ pub mod list_cloud_front_origin_access_identities_output {
             self.cloud_front_origin_access_identity_list = Some(input);
             self
         }
-        /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
+        /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
         pub fn set_cloud_front_origin_access_identity_list(
             mut self,
             input: std::option::Option<crate::model::CloudFrontOriginAccessIdentityList>,
@@ -3221,12 +3425,12 @@ impl GetKeyGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInvalidationOutput {
-    /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>. </p>
+    /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
     #[doc(hidden)]
     pub invalidation: std::option::Option<crate::model::Invalidation>,
 }
 impl GetInvalidationOutput {
-    /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>. </p>
+    /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
     pub fn invalidation(&self) -> std::option::Option<&crate::model::Invalidation> {
         self.invalidation.as_ref()
     }
@@ -3240,12 +3444,12 @@ pub mod get_invalidation_output {
         pub(crate) invalidation: std::option::Option<crate::model::Invalidation>,
     }
     impl Builder {
-        /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>. </p>
+        /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
         pub fn invalidation(mut self, input: crate::model::Invalidation) -> Self {
             self.invalidation = Some(input);
             self
         }
-        /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>. </p>
+        /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
         pub fn set_invalidation(
             mut self,
             input: std::option::Option<crate::model::Invalidation>,
@@ -3818,11 +4022,164 @@ impl GetDistributionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetContinuousDeploymentPolicyConfigOutput {
+    /// <p>Contains the configuration for a continuous deployment policy.</p>
+    #[doc(hidden)]
+    pub continuous_deployment_policy_config:
+        std::option::Option<crate::model::ContinuousDeploymentPolicyConfig>,
+    /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+    #[doc(hidden)]
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl GetContinuousDeploymentPolicyConfigOutput {
+    /// <p>Contains the configuration for a continuous deployment policy.</p>
+    pub fn continuous_deployment_policy_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ContinuousDeploymentPolicyConfig> {
+        self.continuous_deployment_policy_config.as_ref()
+    }
+    /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
+/// See [`GetContinuousDeploymentPolicyConfigOutput`](crate::output::GetContinuousDeploymentPolicyConfigOutput).
+pub mod get_continuous_deployment_policy_config_output {
+
+    /// A builder for [`GetContinuousDeploymentPolicyConfigOutput`](crate::output::GetContinuousDeploymentPolicyConfigOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) continuous_deployment_policy_config:
+            std::option::Option<crate::model::ContinuousDeploymentPolicyConfig>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Contains the configuration for a continuous deployment policy.</p>
+        pub fn continuous_deployment_policy_config(
+            mut self,
+            input: crate::model::ContinuousDeploymentPolicyConfig,
+        ) -> Self {
+            self.continuous_deployment_policy_config = Some(input);
+            self
+        }
+        /// <p>Contains the configuration for a continuous deployment policy.</p>
+        pub fn set_continuous_deployment_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::ContinuousDeploymentPolicyConfig>,
+        ) -> Self {
+            self.continuous_deployment_policy_config = input;
+            self
+        }
+        /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetContinuousDeploymentPolicyConfigOutput`](crate::output::GetContinuousDeploymentPolicyConfigOutput).
+        pub fn build(self) -> crate::output::GetContinuousDeploymentPolicyConfigOutput {
+            crate::output::GetContinuousDeploymentPolicyConfigOutput {
+                continuous_deployment_policy_config: self.continuous_deployment_policy_config,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl GetContinuousDeploymentPolicyConfigOutput {
+    /// Creates a new builder-style object to manufacture [`GetContinuousDeploymentPolicyConfigOutput`](crate::output::GetContinuousDeploymentPolicyConfigOutput).
+    pub fn builder() -> crate::output::get_continuous_deployment_policy_config_output::Builder {
+        crate::output::get_continuous_deployment_policy_config_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetContinuousDeploymentPolicyOutput {
+    /// <p>A continuous deployment policy.</p>
+    #[doc(hidden)]
+    pub continuous_deployment_policy: std::option::Option<crate::model::ContinuousDeploymentPolicy>,
+    /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+    #[doc(hidden)]
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl GetContinuousDeploymentPolicyOutput {
+    /// <p>A continuous deployment policy.</p>
+    pub fn continuous_deployment_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ContinuousDeploymentPolicy> {
+        self.continuous_deployment_policy.as_ref()
+    }
+    /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
+/// See [`GetContinuousDeploymentPolicyOutput`](crate::output::GetContinuousDeploymentPolicyOutput).
+pub mod get_continuous_deployment_policy_output {
+
+    /// A builder for [`GetContinuousDeploymentPolicyOutput`](crate::output::GetContinuousDeploymentPolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) continuous_deployment_policy:
+            std::option::Option<crate::model::ContinuousDeploymentPolicy>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A continuous deployment policy.</p>
+        pub fn continuous_deployment_policy(
+            mut self,
+            input: crate::model::ContinuousDeploymentPolicy,
+        ) -> Self {
+            self.continuous_deployment_policy = Some(input);
+            self
+        }
+        /// <p>A continuous deployment policy.</p>
+        pub fn set_continuous_deployment_policy(
+            mut self,
+            input: std::option::Option<crate::model::ContinuousDeploymentPolicy>,
+        ) -> Self {
+            self.continuous_deployment_policy = input;
+            self
+        }
+        /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetContinuousDeploymentPolicyOutput`](crate::output::GetContinuousDeploymentPolicyOutput).
+        pub fn build(self) -> crate::output::GetContinuousDeploymentPolicyOutput {
+            crate::output::GetContinuousDeploymentPolicyOutput {
+                continuous_deployment_policy: self.continuous_deployment_policy,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl GetContinuousDeploymentPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetContinuousDeploymentPolicyOutput`](crate::output::GetContinuousDeploymentPolicyOutput).
+    pub fn builder() -> crate::output::get_continuous_deployment_policy_output::Builder {
+        crate::output::get_continuous_deployment_policy_output::Builder::default()
+    }
+}
+
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCloudFrontOriginAccessIdentityConfigOutput {
-    /// <p>The origin access identity's configuration information. </p>
+    /// <p>The origin access identity's configuration information.</p>
     #[doc(hidden)]
     pub cloud_front_origin_access_identity_config:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
@@ -3831,7 +4188,7 @@ pub struct GetCloudFrontOriginAccessIdentityConfigOutput {
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetCloudFrontOriginAccessIdentityConfigOutput {
-    /// <p>The origin access identity's configuration information. </p>
+    /// <p>The origin access identity's configuration information.</p>
     pub fn cloud_front_origin_access_identity_config(
         &self,
     ) -> std::option::Option<&crate::model::CloudFrontOriginAccessIdentityConfig> {
@@ -3853,7 +4210,7 @@ pub mod get_cloud_front_origin_access_identity_config_output {
         pub(crate) e_tag: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The origin access identity's configuration information. </p>
+        /// <p>The origin access identity's configuration information.</p>
         pub fn cloud_front_origin_access_identity_config(
             mut self,
             input: crate::model::CloudFrontOriginAccessIdentityConfig,
@@ -3861,7 +4218,7 @@ pub mod get_cloud_front_origin_access_identity_config_output {
             self.cloud_front_origin_access_identity_config = Some(input);
             self
         }
-        /// <p>The origin access identity's configuration information. </p>
+        /// <p>The origin access identity's configuration information.</p>
         pub fn set_cloud_front_origin_access_identity_config(
             mut self,
             input: std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
@@ -4475,6 +4832,30 @@ impl DeleteDistributionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteContinuousDeploymentPolicyOutput {}
+/// See [`DeleteContinuousDeploymentPolicyOutput`](crate::output::DeleteContinuousDeploymentPolicyOutput).
+pub mod delete_continuous_deployment_policy_output {
+
+    /// A builder for [`DeleteContinuousDeploymentPolicyOutput`](crate::output::DeleteContinuousDeploymentPolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteContinuousDeploymentPolicyOutput`](crate::output::DeleteContinuousDeploymentPolicyOutput).
+        pub fn build(self) -> crate::output::DeleteContinuousDeploymentPolicyOutput {
+            crate::output::DeleteContinuousDeploymentPolicyOutput {}
+        }
+    }
+}
+impl DeleteContinuousDeploymentPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteContinuousDeploymentPolicyOutput`](crate::output::DeleteContinuousDeploymentPolicyOutput).
+    pub fn builder() -> crate::output::delete_continuous_deployment_policy_output::Builder {
+        crate::output::delete_continuous_deployment_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCloudFrontOriginAccessIdentityOutput {}
 /// See [`DeleteCloudFrontOriginAccessIdentityOutput`](crate::output::DeleteCloudFrontOriginAccessIdentityOutput).
 pub mod delete_cloud_front_origin_access_identity_output {
@@ -4520,11 +4901,11 @@ impl DeleteCachePolicyOutput {
     }
 }
 
-/// <p>The returned result of the corresponding request. </p>
+/// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamingDistributionWithTagsOutput {
-    /// <p>The streaming distribution's information. </p>
+    /// <p>The streaming distribution's information.</p>
     #[doc(hidden)]
     pub streaming_distribution: std::option::Option<crate::model::StreamingDistribution>,
     /// <p>The fully qualified URI of the new streaming distribution resource just created.</p>
@@ -4535,7 +4916,7 @@ pub struct CreateStreamingDistributionWithTagsOutput {
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreateStreamingDistributionWithTagsOutput {
-    /// <p>The streaming distribution's information. </p>
+    /// <p>The streaming distribution's information.</p>
     pub fn streaming_distribution(
         &self,
     ) -> std::option::Option<&crate::model::StreamingDistribution> {
@@ -4561,7 +4942,7 @@ pub mod create_streaming_distribution_with_tags_output {
         pub(crate) e_tag: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The streaming distribution's information. </p>
+        /// <p>The streaming distribution's information.</p>
         pub fn streaming_distribution(
             mut self,
             input: crate::model::StreamingDistribution,
@@ -4569,7 +4950,7 @@ pub mod create_streaming_distribution_with_tags_output {
             self.streaming_distribution = Some(input);
             self
         }
-        /// <p>The streaming distribution's information. </p>
+        /// <p>The streaming distribution's information.</p>
         pub fn set_streaming_distribution(
             mut self,
             input: std::option::Option<crate::model::StreamingDistribution>,
@@ -5610,11 +5991,11 @@ impl CreateFieldLevelEncryptionConfigOutput {
     }
 }
 
-/// <p>The returned result of the corresponding request. </p>
+/// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDistributionWithTagsOutput {
-    /// <p>The distribution's information. </p>
+    /// <p>The distribution's information.</p>
     #[doc(hidden)]
     pub distribution: std::option::Option<crate::model::Distribution>,
     /// <p>The fully qualified URI of the new distribution resource just created.</p>
@@ -5625,7 +6006,7 @@ pub struct CreateDistributionWithTagsOutput {
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreateDistributionWithTagsOutput {
-    /// <p>The distribution's information. </p>
+    /// <p>The distribution's information.</p>
     pub fn distribution(&self) -> std::option::Option<&crate::model::Distribution> {
         self.distribution.as_ref()
     }
@@ -5649,12 +6030,12 @@ pub mod create_distribution_with_tags_output {
         pub(crate) e_tag: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The distribution's information. </p>
+        /// <p>The distribution's information.</p>
         pub fn distribution(mut self, input: crate::model::Distribution) -> Self {
             self.distribution = Some(input);
             self
         }
-        /// <p>The distribution's information. </p>
+        /// <p>The distribution's information.</p>
         pub fn set_distribution(
             mut self,
             input: std::option::Option<crate::model::Distribution>,
@@ -5785,6 +6166,101 @@ impl CreateDistributionOutput {
     /// Creates a new builder-style object to manufacture [`CreateDistributionOutput`](crate::output::CreateDistributionOutput).
     pub fn builder() -> crate::output::create_distribution_output::Builder {
         crate::output::create_distribution_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateContinuousDeploymentPolicyOutput {
+    /// <p>A continuous deployment policy.</p>
+    #[doc(hidden)]
+    pub continuous_deployment_policy: std::option::Option<crate::model::ContinuousDeploymentPolicy>,
+    /// <p>The location of the continuous deployment policy.</p>
+    #[doc(hidden)]
+    pub location: std::option::Option<std::string::String>,
+    /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+    #[doc(hidden)]
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl CreateContinuousDeploymentPolicyOutput {
+    /// <p>A continuous deployment policy.</p>
+    pub fn continuous_deployment_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ContinuousDeploymentPolicy> {
+        self.continuous_deployment_policy.as_ref()
+    }
+    /// <p>The location of the continuous deployment policy.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
+/// See [`CreateContinuousDeploymentPolicyOutput`](crate::output::CreateContinuousDeploymentPolicyOutput).
+pub mod create_continuous_deployment_policy_output {
+
+    /// A builder for [`CreateContinuousDeploymentPolicyOutput`](crate::output::CreateContinuousDeploymentPolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) continuous_deployment_policy:
+            std::option::Option<crate::model::ContinuousDeploymentPolicy>,
+        pub(crate) location: std::option::Option<std::string::String>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A continuous deployment policy.</p>
+        pub fn continuous_deployment_policy(
+            mut self,
+            input: crate::model::ContinuousDeploymentPolicy,
+        ) -> Self {
+            self.continuous_deployment_policy = Some(input);
+            self
+        }
+        /// <p>A continuous deployment policy.</p>
+        pub fn set_continuous_deployment_policy(
+            mut self,
+            input: std::option::Option<crate::model::ContinuousDeploymentPolicy>,
+        ) -> Self {
+            self.continuous_deployment_policy = input;
+            self
+        }
+        /// <p>The location of the continuous deployment policy.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
+            self
+        }
+        /// <p>The location of the continuous deployment policy.</p>
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
+            self
+        }
+        /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateContinuousDeploymentPolicyOutput`](crate::output::CreateContinuousDeploymentPolicyOutput).
+        pub fn build(self) -> crate::output::CreateContinuousDeploymentPolicyOutput {
+            crate::output::CreateContinuousDeploymentPolicyOutput {
+                continuous_deployment_policy: self.continuous_deployment_policy,
+                location: self.location,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl CreateContinuousDeploymentPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateContinuousDeploymentPolicyOutput`](crate::output::CreateContinuousDeploymentPolicyOutput).
+    pub fn builder() -> crate::output::create_continuous_deployment_policy_output::Builder {
+        crate::output::create_continuous_deployment_policy_output::Builder::default()
     }
 }
 
@@ -5970,6 +6446,95 @@ impl CreateCachePolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateCachePolicyOutput`](crate::output::CreateCachePolicyOutput).
     pub fn builder() -> crate::output::create_cache_policy_output::Builder {
         crate::output::create_cache_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CopyDistributionOutput {
+    /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
+    #[doc(hidden)]
+    pub distribution: std::option::Option<crate::model::Distribution>,
+    /// <p>The URL of the staging distribution.</p>
+    #[doc(hidden)]
+    pub location: std::option::Option<std::string::String>,
+    /// <p>The version identifier for the current version of the staging distribution.</p>
+    #[doc(hidden)]
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl CopyDistributionOutput {
+    /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
+    pub fn distribution(&self) -> std::option::Option<&crate::model::Distribution> {
+        self.distribution.as_ref()
+    }
+    /// <p>The URL of the staging distribution.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The version identifier for the current version of the staging distribution.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
+/// See [`CopyDistributionOutput`](crate::output::CopyDistributionOutput).
+pub mod copy_distribution_output {
+
+    /// A builder for [`CopyDistributionOutput`](crate::output::CopyDistributionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) distribution: std::option::Option<crate::model::Distribution>,
+        pub(crate) location: std::option::Option<std::string::String>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
+        pub fn distribution(mut self, input: crate::model::Distribution) -> Self {
+            self.distribution = Some(input);
+            self
+        }
+        /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
+        pub fn set_distribution(
+            mut self,
+            input: std::option::Option<crate::model::Distribution>,
+        ) -> Self {
+            self.distribution = input;
+            self
+        }
+        /// <p>The URL of the staging distribution.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
+            self
+        }
+        /// <p>The URL of the staging distribution.</p>
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
+            self
+        }
+        /// <p>The version identifier for the current version of the staging distribution.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The version identifier for the current version of the staging distribution.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CopyDistributionOutput`](crate::output::CopyDistributionOutput).
+        pub fn build(self) -> crate::output::CopyDistributionOutput {
+            crate::output::CopyDistributionOutput {
+                distribution: self.distribution,
+                location: self.location,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl CopyDistributionOutput {
+    /// Creates a new builder-style object to manufacture [`CopyDistributionOutput`](crate::output::CopyDistributionOutput).
+    pub fn builder() -> crate::output::copy_distribution_output::Builder {
+        crate::output::copy_distribution_output::Builder::default()
     }
 }
 

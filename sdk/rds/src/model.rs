@@ -131,7 +131,7 @@ pub struct DbInstance {
     /// <p>The status of a read replica. If the instance isn't a read replica, this is blank.</p>
     #[doc(hidden)]
     pub status_infos: std::option::Option<std::vec::Vec<crate::model::DbInstanceStatusInfo>>,
-    /// <p>Specifies the storage type associated with DB instance.</p>
+    /// <p>Specifies the storage type associated with the DB instance.</p>
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
@@ -154,6 +154,7 @@ pub struct DbInstance {
     #[doc(hidden)]
     pub dbi_resource_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the CA certificate for this DB instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
     pub ca_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>The Active Directory Domain membership records associated with the DB instance.</p>
@@ -242,7 +243,7 @@ pub struct DbInstance {
     /// <p>Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     #[doc(hidden)]
     pub customer_owned_ip_enabled: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
@@ -295,6 +296,20 @@ pub struct DbInstance {
     #[doc(hidden)]
     pub activity_stream_policy_status:
         std::option::Option<crate::model::ActivityStreamPolicyStatus>,
+    /// <p>Specifies the storage throughput for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    #[doc(hidden)]
+    pub storage_throughput: std::option::Option<i32>,
+    /// <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB. This setting is valid for RDS Custom only.</p>
+    #[doc(hidden)]
+    pub db_system_id: std::option::Option<std::string::String>,
+    /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
+    pub master_user_secret: std::option::Option<crate::model::MasterUserSecret>,
+    /// <p>The details of the DB instance's server certificate.</p>
+    #[doc(hidden)]
+    pub certificate_details: std::option::Option<crate::model::CertificateDetails>,
 }
 impl DbInstance {
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -466,7 +481,7 @@ impl DbInstance {
     pub fn status_infos(&self) -> std::option::Option<&[crate::model::DbInstanceStatusInfo]> {
         self.status_infos.as_deref()
     }
-    /// <p>Specifies the storage type associated with DB instance.</p>
+    /// <p>Specifies the storage type associated with the DB instance.</p>
     pub fn storage_type(&self) -> std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -496,6 +511,7 @@ impl DbInstance {
         self.dbi_resource_id.as_deref()
     }
     /// <p>The identifier of the CA certificate for this DB instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn ca_certificate_identifier(&self) -> std::option::Option<&str> {
         self.ca_certificate_identifier.as_deref()
     }
@@ -606,7 +622,7 @@ impl DbInstance {
     /// <p>Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub fn customer_owned_ip_enabled(&self) -> std::option::Option<bool> {
         self.customer_owned_ip_enabled
     }
@@ -676,6 +692,24 @@ impl DbInstance {
         &self,
     ) -> std::option::Option<&crate::model::ActivityStreamPolicyStatus> {
         self.activity_stream_policy_status.as_ref()
+    }
+    /// <p>Specifies the storage throughput for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    pub fn storage_throughput(&self) -> std::option::Option<i32> {
+        self.storage_throughput
+    }
+    /// <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB. This setting is valid for RDS Custom only.</p>
+    pub fn db_system_id(&self) -> std::option::Option<&str> {
+        self.db_system_id.as_deref()
+    }
+    /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn master_user_secret(&self) -> std::option::Option<&crate::model::MasterUserSecret> {
+        self.master_user_secret.as_ref()
+    }
+    /// <p>The details of the DB instance's server certificate.</p>
+    pub fn certificate_details(&self) -> std::option::Option<&crate::model::CertificateDetails> {
+        self.certificate_details.as_ref()
     }
 }
 /// See [`DbInstance`](crate::model::DbInstance).
@@ -776,6 +810,10 @@ pub mod db_instance {
         pub(crate) network_type: std::option::Option<std::string::String>,
         pub(crate) activity_stream_policy_status:
             std::option::Option<crate::model::ActivityStreamPolicyStatus>,
+        pub(crate) storage_throughput: std::option::Option<i32>,
+        pub(crate) db_system_id: std::option::Option<std::string::String>,
+        pub(crate) master_user_secret: std::option::Option<crate::model::MasterUserSecret>,
+        pub(crate) certificate_details: std::option::Option<crate::model::CertificateDetails>,
     }
     impl Builder {
         /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -1307,12 +1345,12 @@ pub mod db_instance {
             self.status_infos = input;
             self
         }
-        /// <p>Specifies the storage type associated with DB instance.</p>
+        /// <p>Specifies the storage type associated with the DB instance.</p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_type = Some(input.into());
             self
         }
-        /// <p>Specifies the storage type associated with DB instance.</p>
+        /// <p>Specifies the storage type associated with the DB instance.</p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.storage_type = input;
             self
@@ -1389,11 +1427,13 @@ pub mod db_instance {
             self
         }
         /// <p>The identifier of the CA certificate for this DB instance.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn ca_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.ca_certificate_identifier = Some(input.into());
             self
         }
         /// <p>The identifier of the CA certificate for this DB instance.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn set_ca_certificate_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1742,7 +1782,7 @@ pub mod db_instance {
         /// <p>Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
         /// <p>A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn customer_owned_ip_enabled(mut self, input: bool) -> Self {
             self.customer_owned_ip_enabled = Some(input);
             self
@@ -1750,7 +1790,7 @@ pub mod db_instance {
         /// <p>Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
         /// <p>A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn set_customer_owned_ip_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.customer_owned_ip_enabled = input;
             self
@@ -1949,6 +1989,56 @@ pub mod db_instance {
             self.activity_stream_policy_status = input;
             self
         }
+        /// <p>Specifies the storage throughput for the DB instance.</p>
+        /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.storage_throughput = Some(input);
+            self
+        }
+        /// <p>Specifies the storage throughput for the DB instance.</p>
+        /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_throughput = input;
+            self
+        }
+        /// <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB. This setting is valid for RDS Custom only.</p>
+        pub fn db_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_system_id = Some(input.into());
+            self
+        }
+        /// <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB. This setting is valid for RDS Custom only.</p>
+        pub fn set_db_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_system_id = input;
+            self
+        }
+        /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn master_user_secret(mut self, input: crate::model::MasterUserSecret) -> Self {
+            self.master_user_secret = Some(input);
+            self
+        }
+        /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn set_master_user_secret(
+            mut self,
+            input: std::option::Option<crate::model::MasterUserSecret>,
+        ) -> Self {
+            self.master_user_secret = input;
+            self
+        }
+        /// <p>The details of the DB instance's server certificate.</p>
+        pub fn certificate_details(mut self, input: crate::model::CertificateDetails) -> Self {
+            self.certificate_details = Some(input);
+            self
+        }
+        /// <p>The details of the DB instance's server certificate.</p>
+        pub fn set_certificate_details(
+            mut self,
+            input: std::option::Option<crate::model::CertificateDetails>,
+        ) -> Self {
+            self.certificate_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbInstance`](crate::model::DbInstance).
         pub fn build(self) -> crate::model::DbInstance {
             crate::model::DbInstance {
@@ -2033,6 +2123,10 @@ pub mod db_instance {
                 backup_target: self.backup_target,
                 network_type: self.network_type,
                 activity_stream_policy_status: self.activity_stream_policy_status,
+                storage_throughput: self.storage_throughput,
+                db_system_id: self.db_system_id,
+                master_user_secret: self.master_user_secret,
+                certificate_details: self.certificate_details,
             }
         }
     }
@@ -2041,6 +2135,198 @@ impl DbInstance {
     /// Creates a new builder-style object to manufacture [`DbInstance`](crate::model::DbInstance).
     pub fn builder() -> crate::model::db_instance::Builder {
         crate::model::db_instance::Builder::default()
+    }
+}
+
+/// <p>Returns the details of the DB instance’s server certificate.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CertificateDetails {
+    /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
+    #[doc(hidden)]
+    pub ca_identifier: std::option::Option<std::string::String>,
+    /// <p>The expiration date of the DB instance’s server certificate.</p>
+    #[doc(hidden)]
+    pub valid_till: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl CertificateDetails {
+    /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
+    pub fn ca_identifier(&self) -> std::option::Option<&str> {
+        self.ca_identifier.as_deref()
+    }
+    /// <p>The expiration date of the DB instance’s server certificate.</p>
+    pub fn valid_till(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.valid_till.as_ref()
+    }
+}
+/// See [`CertificateDetails`](crate::model::CertificateDetails).
+pub mod certificate_details {
+
+    /// A builder for [`CertificateDetails`](crate::model::CertificateDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ca_identifier: std::option::Option<std::string::String>,
+        pub(crate) valid_till: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
+        pub fn ca_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ca_identifier = Some(input.into());
+            self
+        }
+        /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
+        pub fn set_ca_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ca_identifier = input;
+            self
+        }
+        /// <p>The expiration date of the DB instance’s server certificate.</p>
+        pub fn valid_till(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.valid_till = Some(input);
+            self
+        }
+        /// <p>The expiration date of the DB instance’s server certificate.</p>
+        pub fn set_valid_till(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.valid_till = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CertificateDetails`](crate::model::CertificateDetails).
+        pub fn build(self) -> crate::model::CertificateDetails {
+            crate::model::CertificateDetails {
+                ca_identifier: self.ca_identifier,
+                valid_till: self.valid_till,
+            }
+        }
+    }
+}
+impl CertificateDetails {
+    /// Creates a new builder-style object to manufacture [`CertificateDetails`](crate::model::CertificateDetails).
+    pub fn builder() -> crate::model::certificate_details::Builder {
+        crate::model::certificate_details::Builder::default()
+    }
+}
+
+/// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MasterUserSecret {
+    /// <p>The Amazon Resource Name (ARN) of the secret.</p>
+    #[doc(hidden)]
+    pub secret_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the secret.</p>
+    /// <p>The possible status values include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>creating</code> - The secret is being created.</p> </li>
+    /// <li> <p> <code>active</code> - The secret is available for normal use and rotation.</p> </li>
+    /// <li> <p> <code>rotating</code> - The secret is being rotated.</p> </li>
+    /// <li> <p> <code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub secret_status: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl MasterUserSecret {
+    /// <p>The Amazon Resource Name (ARN) of the secret.</p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The status of the secret.</p>
+    /// <p>The possible status values include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>creating</code> - The secret is being created.</p> </li>
+    /// <li> <p> <code>active</code> - The secret is available for normal use and rotation.</p> </li>
+    /// <li> <p> <code>rotating</code> - The secret is being rotated.</p> </li>
+    /// <li> <p> <code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p> </li>
+    /// </ul>
+    pub fn secret_status(&self) -> std::option::Option<&str> {
+        self.secret_status.as_deref()
+    }
+    /// <p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
+/// See [`MasterUserSecret`](crate::model::MasterUserSecret).
+pub mod master_user_secret {
+
+    /// A builder for [`MasterUserSecret`](crate::model::MasterUserSecret).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) secret_arn: std::option::Option<std::string::String>,
+        pub(crate) secret_status: std::option::Option<std::string::String>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the secret.</p>
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the secret.</p>
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_arn = input;
+            self
+        }
+        /// <p>The status of the secret.</p>
+        /// <p>The possible status values include the following:</p>
+        /// <ul>
+        /// <li> <p> <code>creating</code> - The secret is being created.</p> </li>
+        /// <li> <p> <code>active</code> - The secret is available for normal use and rotation.</p> </li>
+        /// <li> <p> <code>rotating</code> - The secret is being rotated.</p> </li>
+        /// <li> <p> <code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p> </li>
+        /// </ul>
+        pub fn secret_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_status = Some(input.into());
+            self
+        }
+        /// <p>The status of the secret.</p>
+        /// <p>The possible status values include the following:</p>
+        /// <ul>
+        /// <li> <p> <code>creating</code> - The secret is being created.</p> </li>
+        /// <li> <p> <code>active</code> - The secret is available for normal use and rotation.</p> </li>
+        /// <li> <p> <code>rotating</code> - The secret is being rotated.</p> </li>
+        /// <li> <p> <code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p> </li>
+        /// </ul>
+        pub fn set_secret_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secret_status = input;
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MasterUserSecret`](crate::model::MasterUserSecret).
+        pub fn build(self) -> crate::model::MasterUserSecret {
+            crate::model::MasterUserSecret {
+                secret_arn: self.secret_arn,
+                secret_status: self.secret_status,
+                kms_key_id: self.kms_key_id,
+            }
+        }
+    }
+}
+impl MasterUserSecret {
+    /// Creates a new builder-style object to manufacture [`MasterUserSecret`](crate::model::MasterUserSecret).
+    pub fn builder() -> crate::model::master_user_secret::Builder {
+        crate::model::master_user_secret::Builder::default()
     }
 }
 
@@ -2485,6 +2771,7 @@ impl DbInstanceAutomatedBackupsReplication {
 }
 
 /// <p>Metadata assigned to an Amazon RDS resource consisting of a key-value pair.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
@@ -3254,6 +3541,7 @@ pub struct PendingModifiedValues {
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
     /// <p>The identifier of the CA certificate for the DB instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
     pub ca_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>The DB subnet group for the DB instance.</p>
@@ -3275,6 +3563,9 @@ pub struct PendingModifiedValues {
     /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
     #[doc(hidden)]
     pub resume_full_automation_mode_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The storage throughput of the DB instance.</p>
+    #[doc(hidden)]
+    pub storage_throughput: std::option::Option<i32>,
 }
 impl PendingModifiedValues {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -3323,6 +3614,7 @@ impl PendingModifiedValues {
         self.storage_type.as_deref()
     }
     /// <p>The identifier of the CA certificate for the DB instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn ca_certificate_identifier(&self) -> std::option::Option<&str> {
         self.ca_certificate_identifier.as_deref()
     }
@@ -3354,6 +3646,10 @@ impl PendingModifiedValues {
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.resume_full_automation_mode_time.as_ref()
     }
+    /// <p>The storage throughput of the DB instance.</p>
+    pub fn storage_throughput(&self) -> std::option::Option<i32> {
+        self.storage_throughput
+    }
 }
 /// See [`PendingModifiedValues`](crate::model::PendingModifiedValues).
 pub mod pending_modified_values {
@@ -3382,6 +3678,7 @@ pub mod pending_modified_values {
         pub(crate) automation_mode: std::option::Option<crate::model::AutomationMode>,
         pub(crate) resume_full_automation_mode_time:
             std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) storage_throughput: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -3512,11 +3809,13 @@ pub mod pending_modified_values {
             self
         }
         /// <p>The identifier of the CA certificate for the DB instance.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn ca_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.ca_certificate_identifier = Some(input.into());
             self
         }
         /// <p>The identifier of the CA certificate for the DB instance.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn set_ca_certificate_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3614,6 +3913,16 @@ pub mod pending_modified_values {
             self.resume_full_automation_mode_time = input;
             self
         }
+        /// <p>The storage throughput of the DB instance.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.storage_throughput = Some(input);
+            self
+        }
+        /// <p>The storage throughput of the DB instance.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_throughput = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::model::PendingModifiedValues).
         pub fn build(self) -> crate::model::PendingModifiedValues {
             crate::model::PendingModifiedValues {
@@ -3635,6 +3944,7 @@ pub mod pending_modified_values {
                 iam_database_authentication_enabled: self.iam_database_authentication_enabled,
                 automation_mode: self.automation_mode,
                 resume_full_automation_mode_time: self.resume_full_automation_mode_time,
+                storage_throughput: self.storage_throughput,
             }
         }
     }
@@ -4406,6 +4716,560 @@ impl DbSecurityGroupMembership {
     }
 }
 
+/// <p>Contains the details about a blue/green deployment.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BlueGreenDeployment {
+    /// <p>The system-generated identifier of the blue/green deployment.</p>
+    #[doc(hidden)]
+    pub blue_green_deployment_identifier: std::option::Option<std::string::String>,
+    /// <p>The user-supplied name of the blue/green deployment.</p>
+    #[doc(hidden)]
+    pub blue_green_deployment_name: std::option::Option<std::string::String>,
+    /// <p>The source database for the blue/green deployment.</p>
+    /// <p>Before switchover, the source database is the production database in the blue environment.</p>
+    #[doc(hidden)]
+    pub source: std::option::Option<std::string::String>,
+    /// <p>The target database for the blue/green deployment.</p>
+    /// <p>Before switchover, the target database is the clone database in the green environment.</p>
+    #[doc(hidden)]
+    pub target: std::option::Option<std::string::String>,
+    /// <p>The details about each source and target resource in the blue/green deployment.</p>
+    #[doc(hidden)]
+    pub switchover_details: std::option::Option<std::vec::Vec<crate::model::SwitchoverDetail>>,
+    /// <p>Either tasks to be performed or tasks that have been completed on the target database before switchover.</p>
+    #[doc(hidden)]
+    pub tasks: std::option::Option<std::vec::Vec<crate::model::BlueGreenDeploymentTask>>,
+    /// <p>The status of the blue/green deployment.</p>
+    /// <p>Values:</p>
+    /// <ul>
+    /// <li> <p> <code>PROVISIONING</code> - Resources are being created in the green environment.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - Resources are available in the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p> </li>
+    /// <li> <p> <code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The blue/green deployment is being deleted.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub status: std::option::Option<std::string::String>,
+    /// <p>Additional information about the status of the blue/green deployment.</p>
+    #[doc(hidden)]
+    pub status_details: std::option::Option<std::string::String>,
+    /// <p>Specifies the time when the blue/green deployment was created, in Universal Coordinated Time (UTC).</p>
+    #[doc(hidden)]
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Specifies the time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).</p>
+    #[doc(hidden)]
+    pub delete_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
+    pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl BlueGreenDeployment {
+    /// <p>The system-generated identifier of the blue/green deployment.</p>
+    pub fn blue_green_deployment_identifier(&self) -> std::option::Option<&str> {
+        self.blue_green_deployment_identifier.as_deref()
+    }
+    /// <p>The user-supplied name of the blue/green deployment.</p>
+    pub fn blue_green_deployment_name(&self) -> std::option::Option<&str> {
+        self.blue_green_deployment_name.as_deref()
+    }
+    /// <p>The source database for the blue/green deployment.</p>
+    /// <p>Before switchover, the source database is the production database in the blue environment.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The target database for the blue/green deployment.</p>
+    /// <p>Before switchover, the target database is the clone database in the green environment.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+    /// <p>The details about each source and target resource in the blue/green deployment.</p>
+    pub fn switchover_details(&self) -> std::option::Option<&[crate::model::SwitchoverDetail]> {
+        self.switchover_details.as_deref()
+    }
+    /// <p>Either tasks to be performed or tasks that have been completed on the target database before switchover.</p>
+    pub fn tasks(&self) -> std::option::Option<&[crate::model::BlueGreenDeploymentTask]> {
+        self.tasks.as_deref()
+    }
+    /// <p>The status of the blue/green deployment.</p>
+    /// <p>Values:</p>
+    /// <ul>
+    /// <li> <p> <code>PROVISIONING</code> - Resources are being created in the green environment.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - Resources are available in the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p> </li>
+    /// <li> <p> <code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The blue/green deployment is being deleted.</p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>Additional information about the status of the blue/green deployment.</p>
+    pub fn status_details(&self) -> std::option::Option<&str> {
+        self.status_details.as_deref()
+    }
+    /// <p>Specifies the time when the blue/green deployment was created, in Universal Coordinated Time (UTC).</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.create_time.as_ref()
+    }
+    /// <p>Specifies the time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).</p>
+    pub fn delete_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.delete_time.as_ref()
+    }
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+}
+/// See [`BlueGreenDeployment`](crate::model::BlueGreenDeployment).
+pub mod blue_green_deployment {
+
+    /// A builder for [`BlueGreenDeployment`](crate::model::BlueGreenDeployment).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blue_green_deployment_identifier: std::option::Option<std::string::String>,
+        pub(crate) blue_green_deployment_name: std::option::Option<std::string::String>,
+        pub(crate) source: std::option::Option<std::string::String>,
+        pub(crate) target: std::option::Option<std::string::String>,
+        pub(crate) switchover_details:
+            std::option::Option<std::vec::Vec<crate::model::SwitchoverDetail>>,
+        pub(crate) tasks: std::option::Option<std::vec::Vec<crate::model::BlueGreenDeploymentTask>>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) status_details: std::option::Option<std::string::String>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) delete_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The system-generated identifier of the blue/green deployment.</p>
+        pub fn blue_green_deployment_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.blue_green_deployment_identifier = Some(input.into());
+            self
+        }
+        /// <p>The system-generated identifier of the blue/green deployment.</p>
+        pub fn set_blue_green_deployment_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.blue_green_deployment_identifier = input;
+            self
+        }
+        /// <p>The user-supplied name of the blue/green deployment.</p>
+        pub fn blue_green_deployment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.blue_green_deployment_name = Some(input.into());
+            self
+        }
+        /// <p>The user-supplied name of the blue/green deployment.</p>
+        pub fn set_blue_green_deployment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.blue_green_deployment_name = input;
+            self
+        }
+        /// <p>The source database for the blue/green deployment.</p>
+        /// <p>Before switchover, the source database is the production database in the blue environment.</p>
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
+            self
+        }
+        /// <p>The source database for the blue/green deployment.</p>
+        /// <p>Before switchover, the source database is the production database in the blue environment.</p>
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
+            self
+        }
+        /// <p>The target database for the blue/green deployment.</p>
+        /// <p>Before switchover, the target database is the clone database in the green environment.</p>
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target = Some(input.into());
+            self
+        }
+        /// <p>The target database for the blue/green deployment.</p>
+        /// <p>Before switchover, the target database is the clone database in the green environment.</p>
+        pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target = input;
+            self
+        }
+        /// Appends an item to `switchover_details`.
+        ///
+        /// To override the contents of this collection use [`set_switchover_details`](Self::set_switchover_details).
+        ///
+        /// <p>The details about each source and target resource in the blue/green deployment.</p>
+        pub fn switchover_details(mut self, input: crate::model::SwitchoverDetail) -> Self {
+            let mut v = self.switchover_details.unwrap_or_default();
+            v.push(input);
+            self.switchover_details = Some(v);
+            self
+        }
+        /// <p>The details about each source and target resource in the blue/green deployment.</p>
+        pub fn set_switchover_details(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SwitchoverDetail>>,
+        ) -> Self {
+            self.switchover_details = input;
+            self
+        }
+        /// Appends an item to `tasks`.
+        ///
+        /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
+        ///
+        /// <p>Either tasks to be performed or tasks that have been completed on the target database before switchover.</p>
+        pub fn tasks(mut self, input: crate::model::BlueGreenDeploymentTask) -> Self {
+            let mut v = self.tasks.unwrap_or_default();
+            v.push(input);
+            self.tasks = Some(v);
+            self
+        }
+        /// <p>Either tasks to be performed or tasks that have been completed on the target database before switchover.</p>
+        pub fn set_tasks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BlueGreenDeploymentTask>>,
+        ) -> Self {
+            self.tasks = input;
+            self
+        }
+        /// <p>The status of the blue/green deployment.</p>
+        /// <p>Values:</p>
+        /// <ul>
+        /// <li> <p> <code>PROVISIONING</code> - Resources are being created in the green environment.</p> </li>
+        /// <li> <p> <code>AVAILABLE</code> - Resources are available in the green environment.</p> </li>
+        /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p> </li>
+        /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p> </li>
+        /// <li> <p> <code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p> </li>
+        /// <li> <p> <code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p> </li>
+        /// <li> <p> <code>DELETING</code> - The blue/green deployment is being deleted.</p> </li>
+        /// </ul>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the blue/green deployment.</p>
+        /// <p>Values:</p>
+        /// <ul>
+        /// <li> <p> <code>PROVISIONING</code> - Resources are being created in the green environment.</p> </li>
+        /// <li> <p> <code>AVAILABLE</code> - Resources are available in the green environment.</p> </li>
+        /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p> </li>
+        /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p> </li>
+        /// <li> <p> <code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p> </li>
+        /// <li> <p> <code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p> </li>
+        /// <li> <p> <code>DELETING</code> - The blue/green deployment is being deleted.</p> </li>
+        /// </ul>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Additional information about the status of the blue/green deployment.</p>
+        pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_details = Some(input.into());
+            self
+        }
+        /// <p>Additional information about the status of the blue/green deployment.</p>
+        pub fn set_status_details(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_details = input;
+            self
+        }
+        /// <p>Specifies the time when the blue/green deployment was created, in Universal Coordinated Time (UTC).</p>
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.create_time = Some(input);
+            self
+        }
+        /// <p>Specifies the time when the blue/green deployment was created, in Universal Coordinated Time (UTC).</p>
+        pub fn set_create_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.create_time = input;
+            self
+        }
+        /// <p>Specifies the time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).</p>
+        pub fn delete_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.delete_time = Some(input);
+            self
+        }
+        /// <p>Specifies the time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).</p>
+        pub fn set_delete_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.delete_time = input;
+            self
+        }
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tag_list.unwrap_or_default();
+            v.push(input);
+            self.tag_list = Some(v);
+            self
+        }
+        /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn set_tag_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tag_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BlueGreenDeployment`](crate::model::BlueGreenDeployment).
+        pub fn build(self) -> crate::model::BlueGreenDeployment {
+            crate::model::BlueGreenDeployment {
+                blue_green_deployment_identifier: self.blue_green_deployment_identifier,
+                blue_green_deployment_name: self.blue_green_deployment_name,
+                source: self.source,
+                target: self.target,
+                switchover_details: self.switchover_details,
+                tasks: self.tasks,
+                status: self.status,
+                status_details: self.status_details,
+                create_time: self.create_time,
+                delete_time: self.delete_time,
+                tag_list: self.tag_list,
+            }
+        }
+    }
+}
+impl BlueGreenDeployment {
+    /// Creates a new builder-style object to manufacture [`BlueGreenDeployment`](crate::model::BlueGreenDeployment).
+    pub fn builder() -> crate::model::blue_green_deployment::Builder {
+        crate::model::blue_green_deployment::Builder::default()
+    }
+}
+
+/// <p>Contains the details about a task for a blue/green deployment.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BlueGreenDeploymentTask {
+    /// <p>The name of the blue/green deployment task.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The status of the blue/green deployment task.</p>
+    /// <p>Values:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> - The resources are being prepared for deployment.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The resource is being deployed.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The resource has been deployed.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Deployment of the resource failed.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub status: std::option::Option<std::string::String>,
+}
+impl BlueGreenDeploymentTask {
+    /// <p>The name of the blue/green deployment task.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the blue/green deployment task.</p>
+    /// <p>Values:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> - The resources are being prepared for deployment.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The resource is being deployed.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The resource has been deployed.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Deployment of the resource failed.</p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
+/// See [`BlueGreenDeploymentTask`](crate::model::BlueGreenDeploymentTask).
+pub mod blue_green_deployment_task {
+
+    /// A builder for [`BlueGreenDeploymentTask`](crate::model::BlueGreenDeploymentTask).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the blue/green deployment task.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the blue/green deployment task.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The status of the blue/green deployment task.</p>
+        /// <p>Values:</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING</code> - The resources are being prepared for deployment.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> - The resource is being deployed.</p> </li>
+        /// <li> <p> <code>COMPLETED</code> - The resource has been deployed.</p> </li>
+        /// <li> <p> <code>FAILED</code> - Deployment of the resource failed.</p> </li>
+        /// </ul>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the blue/green deployment task.</p>
+        /// <p>Values:</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING</code> - The resources are being prepared for deployment.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> - The resource is being deployed.</p> </li>
+        /// <li> <p> <code>COMPLETED</code> - The resource has been deployed.</p> </li>
+        /// <li> <p> <code>FAILED</code> - Deployment of the resource failed.</p> </li>
+        /// </ul>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BlueGreenDeploymentTask`](crate::model::BlueGreenDeploymentTask).
+        pub fn build(self) -> crate::model::BlueGreenDeploymentTask {
+            crate::model::BlueGreenDeploymentTask {
+                name: self.name,
+                status: self.status,
+            }
+        }
+    }
+}
+impl BlueGreenDeploymentTask {
+    /// Creates a new builder-style object to manufacture [`BlueGreenDeploymentTask`](crate::model::BlueGreenDeploymentTask).
+    pub fn builder() -> crate::model::blue_green_deployment_task::Builder {
+        crate::model::blue_green_deployment_task::Builder::default()
+    }
+}
+
+/// <p>Contains the details about a blue/green deployment.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SwitchoverDetail {
+    /// <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
+    #[doc(hidden)]
+    pub source_member: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
+    #[doc(hidden)]
+    pub target_member: std::option::Option<std::string::String>,
+    /// <p>The switchover status of a resource in a blue/green deployment.</p>
+    /// <p>Values:</p>
+    /// <ul>
+    /// <li> <p> <code>preparing-for-switchover</code> - The resource is being prepared to switch over.</p> </li>
+    /// <li> <p> <code>ready-for-switchover</code> - The resource is ready to switch over.</p> </li>
+    /// <li> <p> <code>switchover-in-progress</code> - The resource is being switched over.</p> </li>
+    /// <li> <p> <code>switchover-completed</code> - The resource has been switched over.</p> </li>
+    /// <li> <p> <code>switchover-failed</code> - The resource attempted to switch over but failed.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub status: std::option::Option<std::string::String>,
+}
+impl SwitchoverDetail {
+    /// <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
+    pub fn source_member(&self) -> std::option::Option<&str> {
+        self.source_member.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
+    pub fn target_member(&self) -> std::option::Option<&str> {
+        self.target_member.as_deref()
+    }
+    /// <p>The switchover status of a resource in a blue/green deployment.</p>
+    /// <p>Values:</p>
+    /// <ul>
+    /// <li> <p> <code>preparing-for-switchover</code> - The resource is being prepared to switch over.</p> </li>
+    /// <li> <p> <code>ready-for-switchover</code> - The resource is ready to switch over.</p> </li>
+    /// <li> <p> <code>switchover-in-progress</code> - The resource is being switched over.</p> </li>
+    /// <li> <p> <code>switchover-completed</code> - The resource has been switched over.</p> </li>
+    /// <li> <p> <code>switchover-failed</code> - The resource attempted to switch over but failed.</p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
+/// See [`SwitchoverDetail`](crate::model::SwitchoverDetail).
+pub mod switchover_detail {
+
+    /// A builder for [`SwitchoverDetail`](crate::model::SwitchoverDetail).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_member: std::option::Option<std::string::String>,
+        pub(crate) target_member: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
+        pub fn source_member(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_member = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
+        pub fn set_source_member(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_member = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
+        pub fn target_member(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_member = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
+        pub fn set_target_member(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_member = input;
+            self
+        }
+        /// <p>The switchover status of a resource in a blue/green deployment.</p>
+        /// <p>Values:</p>
+        /// <ul>
+        /// <li> <p> <code>preparing-for-switchover</code> - The resource is being prepared to switch over.</p> </li>
+        /// <li> <p> <code>ready-for-switchover</code> - The resource is ready to switch over.</p> </li>
+        /// <li> <p> <code>switchover-in-progress</code> - The resource is being switched over.</p> </li>
+        /// <li> <p> <code>switchover-completed</code> - The resource has been switched over.</p> </li>
+        /// <li> <p> <code>switchover-failed</code> - The resource attempted to switch over but failed.</p> </li>
+        /// </ul>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The switchover status of a resource in a blue/green deployment.</p>
+        /// <p>Values:</p>
+        /// <ul>
+        /// <li> <p> <code>preparing-for-switchover</code> - The resource is being prepared to switch over.</p> </li>
+        /// <li> <p> <code>ready-for-switchover</code> - The resource is ready to switch over.</p> </li>
+        /// <li> <p> <code>switchover-in-progress</code> - The resource is being switched over.</p> </li>
+        /// <li> <p> <code>switchover-completed</code> - The resource has been switched over.</p> </li>
+        /// <li> <p> <code>switchover-failed</code> - The resource attempted to switch over but failed.</p> </li>
+        /// </ul>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SwitchoverDetail`](crate::model::SwitchoverDetail).
+        pub fn build(self) -> crate::model::SwitchoverDetail {
+            crate::model::SwitchoverDetail {
+                source_member: self.source_member,
+                target_member: self.target_member,
+                status: self.status,
+            }
+        }
+    }
+}
+impl SwitchoverDetail {
+    /// Creates a new builder-style object to manufacture [`SwitchoverDetail`](crate::model::SwitchoverDetail).
+    pub fn builder() -> crate::model::switchover_detail::Builder {
+        crate::model::switchover_detail::Builder::default()
+    }
+}
+
 /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4444,7 +5308,7 @@ pub struct DbInstanceAutomatedBackup {
     /// <p>The Availability Zone that the automated backup was created in. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
-    /// <p>Provides the VPC ID associated with the DB instance</p>
+    /// <p>Provides the VPC ID associated with the DB instance.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>Provides the date and time that the DB instance was created.</p>
@@ -4500,6 +5364,9 @@ pub struct DbInstanceAutomatedBackup {
     /// <p>Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub backup_target: std::option::Option<std::string::String>,
+    /// <p>Specifies the storage throughput for the automated backup.</p>
+    #[doc(hidden)]
+    pub storage_throughput: std::option::Option<i32>,
 }
 impl DbInstanceAutomatedBackup {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
@@ -4545,7 +5412,7 @@ impl DbInstanceAutomatedBackup {
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
-    /// <p>Provides the VPC ID associated with the DB instance</p>
+    /// <p>Provides the VPC ID associated with the DB instance.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -4620,6 +5487,10 @@ impl DbInstanceAutomatedBackup {
     pub fn backup_target(&self) -> std::option::Option<&str> {
         self.backup_target.as_deref()
     }
+    /// <p>Specifies the storage throughput for the automated backup.</p>
+    pub fn storage_throughput(&self) -> std::option::Option<i32> {
+        self.storage_throughput
+    }
 }
 /// See [`DbInstanceAutomatedBackup`](crate::model::DbInstanceAutomatedBackup).
 pub mod db_instance_automated_backup {
@@ -4655,6 +5526,7 @@ pub mod db_instance_automated_backup {
         pub(crate) db_instance_automated_backups_replications:
             std::option::Option<std::vec::Vec<crate::model::DbInstanceAutomatedBackupsReplication>>,
         pub(crate) backup_target: std::option::Option<std::string::String>,
+        pub(crate) storage_throughput: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
@@ -4776,12 +5648,12 @@ pub mod db_instance_automated_backup {
             self.availability_zone = input;
             self
         }
-        /// <p>Provides the VPC ID associated with the DB instance</p>
+        /// <p>Provides the VPC ID associated with the DB instance.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_id = Some(input.into());
             self
         }
-        /// <p>Provides the VPC ID associated with the DB instance</p>
+        /// <p>Provides the VPC ID associated with the DB instance.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -5004,6 +5876,16 @@ pub mod db_instance_automated_backup {
             self.backup_target = input;
             self
         }
+        /// <p>Specifies the storage throughput for the automated backup.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.storage_throughput = Some(input);
+            self
+        }
+        /// <p>Specifies the storage throughput for the automated backup.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_throughput = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbInstanceAutomatedBackup`](crate::model::DbInstanceAutomatedBackup).
         pub fn build(self) -> crate::model::DbInstanceAutomatedBackup {
             crate::model::DbInstanceAutomatedBackup {
@@ -5037,6 +5919,7 @@ pub mod db_instance_automated_backup {
                 db_instance_automated_backups_replications: self
                     .db_instance_automated_backups_replications,
                 backup_target: self.backup_target,
+                storage_throughput: self.storage_throughput,
             }
         }
     }
@@ -5383,6 +6266,13 @@ pub struct DbCluster {
     /// <p>This setting is only for Aurora DB clusters.</p>
     #[doc(hidden)]
     pub network_type: std::option::Option<std::string::String>,
+    /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
+    pub db_system_id: std::option::Option<std::string::String>,
+    /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    #[doc(hidden)]
+    pub master_user_secret: std::option::Option<crate::model::MasterUserSecret>,
 }
 impl DbCluster {
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
@@ -5719,6 +6609,15 @@ impl DbCluster {
     pub fn network_type(&self) -> std::option::Option<&str> {
         self.network_type.as_deref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn db_system_id(&self) -> std::option::Option<&str> {
+        self.db_system_id.as_deref()
+    }
+    /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    pub fn master_user_secret(&self) -> std::option::Option<&crate::model::MasterUserSecret> {
+        self.master_user_secret.as_ref()
+    }
 }
 /// See [`DbCluster`](crate::model::DbCluster).
 pub mod db_cluster {
@@ -5806,6 +6705,8 @@ pub mod db_cluster {
         pub(crate) serverless_v2_scaling_configuration:
             std::option::Option<crate::model::ServerlessV2ScalingConfigurationInfo>,
         pub(crate) network_type: std::option::Option<std::string::String>,
+        pub(crate) db_system_id: std::option::Option<std::string::String>,
+        pub(crate) master_user_secret: std::option::Option<crate::model::MasterUserSecret>,
     }
     impl Builder {
         /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
@@ -6820,6 +7721,31 @@ pub mod db_cluster {
             self.network_type = input;
             self
         }
+        /// <p>Reserved for future use.</p>
+        pub fn db_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_system_id = Some(input.into());
+            self
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn set_db_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_system_id = input;
+            self
+        }
+        /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        pub fn master_user_secret(mut self, input: crate::model::MasterUserSecret) -> Self {
+            self.master_user_secret = Some(input);
+            self
+        }
+        /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        pub fn set_master_user_secret(
+            mut self,
+            input: std::option::Option<crate::model::MasterUserSecret>,
+        ) -> Self {
+            self.master_user_secret = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbCluster`](crate::model::DbCluster).
         pub fn build(self) -> crate::model::DbCluster {
             crate::model::DbCluster {
@@ -6892,6 +7818,8 @@ pub mod db_cluster {
                 performance_insights_retention_period: self.performance_insights_retention_period,
                 serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
                 network_type: self.network_type,
+                db_system_id: self.db_system_id,
+                master_user_secret: self.master_user_secret,
             }
         }
     }
@@ -6991,6 +7919,15 @@ pub struct ClusterPendingModifiedValues {
     /// <p>The database engine version.</p>
     #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
+    /// <p>The number of days for which automatic DB snapshots are retained.</p>
+    #[doc(hidden)]
+    pub backup_retention_period: std::option::Option<i32>,
+    /// <p>The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
+    #[doc(hidden)]
+    pub allocated_storage: std::option::Option<i32>,
+    /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    #[doc(hidden)]
+    pub iops: std::option::Option<i32>,
 }
 impl ClusterPendingModifiedValues {
     /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
@@ -7015,6 +7952,18 @@ impl ClusterPendingModifiedValues {
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
+    /// <p>The number of days for which automatic DB snapshots are retained.</p>
+    pub fn backup_retention_period(&self) -> std::option::Option<i32> {
+        self.backup_retention_period
+    }
+    /// <p>The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
+    pub fn allocated_storage(&self) -> std::option::Option<i32> {
+        self.allocated_storage
+    }
+    /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
 }
 /// See [`ClusterPendingModifiedValues`](crate::model::ClusterPendingModifiedValues).
 pub mod cluster_pending_modified_values {
@@ -7028,6 +7977,9 @@ pub mod cluster_pending_modified_values {
         pub(crate) master_user_password: std::option::Option<std::string::String>,
         pub(crate) iam_database_authentication_enabled: std::option::Option<bool>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
+        pub(crate) backup_retention_period: std::option::Option<i32>,
+        pub(crate) allocated_storage: std::option::Option<i32>,
+        pub(crate) iops: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
@@ -7098,6 +8050,36 @@ pub mod cluster_pending_modified_values {
             self.engine_version = input;
             self
         }
+        /// <p>The number of days for which automatic DB snapshots are retained.</p>
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.backup_retention_period = Some(input);
+            self
+        }
+        /// <p>The number of days for which automatic DB snapshots are retained.</p>
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.backup_retention_period = input;
+            self
+        }
+        /// <p>The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
+            self
+        }
+        /// <p>The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
+            self
+        }
+        /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
+            self
+        }
+        /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ClusterPendingModifiedValues`](crate::model::ClusterPendingModifiedValues).
         pub fn build(self) -> crate::model::ClusterPendingModifiedValues {
             crate::model::ClusterPendingModifiedValues {
@@ -7106,6 +8088,9 @@ pub mod cluster_pending_modified_values {
                 master_user_password: self.master_user_password,
                 iam_database_authentication_enabled: self.iam_database_authentication_enabled,
                 engine_version: self.engine_version,
+                backup_retention_period: self.backup_retention_period,
+                allocated_storage: self.allocated_storage,
+                iops: self.iops,
             }
         }
     }
@@ -7673,6 +8658,96 @@ impl DbClusterOptionGroupStatus {
     /// Creates a new builder-style object to manufacture [`DbClusterOptionGroupStatus`](crate::model::DbClusterOptionGroupStatus).
     pub fn builder() -> crate::model::db_cluster_option_group_status::Builder {
         crate::model::db_cluster_option_group_status::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ExportSourceType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let exportsourcetype = unimplemented!();
+/// match exportsourcetype {
+///     ExportSourceType::Cluster => { /* ... */ },
+///     ExportSourceType::Snapshot => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `exportsourcetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ExportSourceType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ExportSourceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ExportSourceType::NewFeature` is defined.
+/// Specifically, when `exportsourcetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ExportSourceType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExportSourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    Cluster,
+    #[allow(missing_docs)] // documentation missing in model
+    Snapshot,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ExportSourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CLUSTER" => ExportSourceType::Cluster,
+            "SNAPSHOT" => ExportSourceType::Snapshot,
+            other => ExportSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ExportSourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExportSourceType::from(s))
+    }
+}
+impl ExportSourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExportSourceType::Cluster => "CLUSTER",
+            ExportSourceType::Snapshot => "SNAPSHOT",
+            ExportSourceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["CLUSTER", "SNAPSHOT"]
+    }
+}
+impl AsRef<str> for ExportSourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -10711,9 +11786,18 @@ pub struct OptionGroup {
     /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the option group.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
     #[doc(hidden)]
     pub option_group_arn: std::option::Option<std::string::String>,
+    /// <p>Specifies the name of the option group from which this option group is copied.</p>
+    #[doc(hidden)]
+    pub source_option_group: std::option::Option<std::string::String>,
+    /// <p>Specifies the Amazon Web Services account ID for the option group from which this option group is copied.</p>
+    #[doc(hidden)]
+    pub source_account_id: std::option::Option<std::string::String>,
+    /// <p>Indicates when the option group was copied.</p>
+    #[doc(hidden)]
+    pub copy_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OptionGroup {
     /// <p>Specifies the name of the option group.</p>
@@ -10744,9 +11828,21 @@ impl OptionGroup {
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the option group.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
     pub fn option_group_arn(&self) -> std::option::Option<&str> {
         self.option_group_arn.as_deref()
+    }
+    /// <p>Specifies the name of the option group from which this option group is copied.</p>
+    pub fn source_option_group(&self) -> std::option::Option<&str> {
+        self.source_option_group.as_deref()
+    }
+    /// <p>Specifies the Amazon Web Services account ID for the option group from which this option group is copied.</p>
+    pub fn source_account_id(&self) -> std::option::Option<&str> {
+        self.source_account_id.as_deref()
+    }
+    /// <p>Indicates when the option group was copied.</p>
+    pub fn copy_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.copy_timestamp.as_ref()
     }
 }
 /// See [`OptionGroup`](crate::model::OptionGroup).
@@ -10763,6 +11859,9 @@ pub mod option_group {
         pub(crate) allows_vpc_and_non_vpc_instance_memberships: std::option::Option<bool>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) option_group_arn: std::option::Option<std::string::String>,
+        pub(crate) source_option_group: std::option::Option<std::string::String>,
+        pub(crate) source_account_id: std::option::Option<std::string::String>,
+        pub(crate) copy_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Specifies the name of the option group.</p>
@@ -10856,17 +11955,56 @@ pub mod option_group {
             self.vpc_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the option group.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
         pub fn option_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.option_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the option group.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
         pub fn set_option_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.option_group_arn = input;
+            self
+        }
+        /// <p>Specifies the name of the option group from which this option group is copied.</p>
+        pub fn source_option_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_option_group = Some(input.into());
+            self
+        }
+        /// <p>Specifies the name of the option group from which this option group is copied.</p>
+        pub fn set_source_option_group(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_option_group = input;
+            self
+        }
+        /// <p>Specifies the Amazon Web Services account ID for the option group from which this option group is copied.</p>
+        pub fn source_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_account_id = Some(input.into());
+            self
+        }
+        /// <p>Specifies the Amazon Web Services account ID for the option group from which this option group is copied.</p>
+        pub fn set_source_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_account_id = input;
+            self
+        }
+        /// <p>Indicates when the option group was copied.</p>
+        pub fn copy_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.copy_timestamp = Some(input);
+            self
+        }
+        /// <p>Indicates when the option group was copied.</p>
+        pub fn set_copy_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.copy_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`OptionGroup`](crate::model::OptionGroup).
@@ -10882,6 +12020,9 @@ pub mod option_group {
                     .unwrap_or_default(),
                 vpc_id: self.vpc_id,
                 option_group_arn: self.option_group_arn,
+                source_option_group: self.source_option_group,
+                source_account_id: self.source_account_id,
+                copy_timestamp: self.copy_timestamp,
             }
         }
     }
@@ -11802,6 +12943,9 @@ pub struct DbSnapshot {
     /// <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub snapshot_target: std::option::Option<std::string::String>,
+    /// <p>Specifies the storage throughput for the DB snapshot.</p>
+    #[doc(hidden)]
+    pub storage_throughput: std::option::Option<i32>,
 }
 impl DbSnapshot {
     /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -11936,6 +13080,10 @@ impl DbSnapshot {
     pub fn snapshot_target(&self) -> std::option::Option<&str> {
         self.snapshot_target.as_deref()
     }
+    /// <p>Specifies the storage throughput for the DB snapshot.</p>
+    pub fn storage_throughput(&self) -> std::option::Option<i32> {
+        self.storage_throughput
+    }
 }
 /// See [`DbSnapshot`](crate::model::DbSnapshot).
 pub mod db_snapshot {
@@ -11976,6 +13124,7 @@ pub mod db_snapshot {
         pub(crate) original_snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) snapshot_database_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) snapshot_target: std::option::Option<std::string::String>,
+        pub(crate) storage_throughput: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -12380,6 +13529,16 @@ pub mod db_snapshot {
             self.snapshot_target = input;
             self
         }
+        /// <p>Specifies the storage throughput for the DB snapshot.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.storage_throughput = Some(input);
+            self
+        }
+        /// <p>Specifies the storage throughput for the DB snapshot.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_throughput = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbSnapshot`](crate::model::DbSnapshot).
         pub fn build(self) -> crate::model::DbSnapshot {
             crate::model::DbSnapshot {
@@ -12417,6 +13576,7 @@ pub mod db_snapshot {
                 original_snapshot_create_time: self.original_snapshot_create_time,
                 snapshot_database_time: self.snapshot_database_time,
                 snapshot_target: self.snapshot_target,
+                storage_throughput: self.storage_throughput,
             }
         }
     }
@@ -12772,11 +13932,13 @@ impl ConnectionPoolConfigurationInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionPoolConfiguration {
     /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
+    /// <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.</p>
     /// <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines</p>
     /// <p>Constraints: Must be between 1 and 100.</p>
     #[doc(hidden)]
     pub max_connections_percent: std::option::Option<i32>,
     /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
+    /// <p>If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.</p>
     /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.</p>
     /// <p>Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
     #[doc(hidden)]
@@ -12797,12 +13959,14 @@ pub struct ConnectionPoolConfiguration {
 }
 impl ConnectionPoolConfiguration {
     /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
+    /// <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.</p>
     /// <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines</p>
     /// <p>Constraints: Must be between 1 and 100.</p>
     pub fn max_connections_percent(&self) -> std::option::Option<i32> {
         self.max_connections_percent
     }
     /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
+    /// <p>If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.</p>
     /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.</p>
     /// <p>Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
     pub fn max_idle_connections_percent(&self) -> std::option::Option<i32> {
@@ -12839,6 +14003,7 @@ pub mod connection_pool_configuration {
     }
     impl Builder {
         /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
+        /// <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.</p>
         /// <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines</p>
         /// <p>Constraints: Must be between 1 and 100.</p>
         pub fn max_connections_percent(mut self, input: i32) -> Self {
@@ -12846,6 +14011,7 @@ pub mod connection_pool_configuration {
             self
         }
         /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
+        /// <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.</p>
         /// <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines</p>
         /// <p>Constraints: Must be between 1 and 100.</p>
         pub fn set_max_connections_percent(mut self, input: std::option::Option<i32>) -> Self {
@@ -12853,6 +14019,7 @@ pub mod connection_pool_configuration {
             self
         }
         /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
+        /// <p>If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.</p>
         /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.</p>
         /// <p>Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
         pub fn max_idle_connections_percent(mut self, input: i32) -> Self {
@@ -12860,6 +14027,7 @@ pub mod connection_pool_configuration {
             self
         }
         /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
+        /// <p>If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.</p>
         /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.</p>
         /// <p>Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
         pub fn set_max_idle_connections_percent(mut self, input: std::option::Option<i32>) -> Self {
@@ -13802,6 +14970,9 @@ pub struct UserAuthConfigInfo {
     /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
     #[doc(hidden)]
     pub iam_auth: std::option::Option<crate::model::IamAuthMode>,
+    /// <p>The type of authentication the proxy uses for connections from clients.</p>
+    #[doc(hidden)]
+    pub client_password_auth_type: std::option::Option<crate::model::ClientPasswordAuthType>,
 }
 impl UserAuthConfigInfo {
     /// <p>A user-specified description about the authentication used by a proxy to log in as a specific database user.</p>
@@ -13824,6 +14995,12 @@ impl UserAuthConfigInfo {
     pub fn iam_auth(&self) -> std::option::Option<&crate::model::IamAuthMode> {
         self.iam_auth.as_ref()
     }
+    /// <p>The type of authentication the proxy uses for connections from clients.</p>
+    pub fn client_password_auth_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ClientPasswordAuthType> {
+        self.client_password_auth_type.as_ref()
+    }
 }
 /// See [`UserAuthConfigInfo`](crate::model::UserAuthConfigInfo).
 pub mod user_auth_config_info {
@@ -13836,6 +15013,8 @@ pub mod user_auth_config_info {
         pub(crate) auth_scheme: std::option::Option<crate::model::AuthScheme>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
         pub(crate) iam_auth: std::option::Option<crate::model::IamAuthMode>,
+        pub(crate) client_password_auth_type:
+            std::option::Option<crate::model::ClientPasswordAuthType>,
     }
     impl Builder {
         /// <p>A user-specified description about the authentication used by a proxy to log in as a specific database user.</p>
@@ -13894,6 +15073,22 @@ pub mod user_auth_config_info {
             self.iam_auth = input;
             self
         }
+        /// <p>The type of authentication the proxy uses for connections from clients.</p>
+        pub fn client_password_auth_type(
+            mut self,
+            input: crate::model::ClientPasswordAuthType,
+        ) -> Self {
+            self.client_password_auth_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication the proxy uses for connections from clients.</p>
+        pub fn set_client_password_auth_type(
+            mut self,
+            input: std::option::Option<crate::model::ClientPasswordAuthType>,
+        ) -> Self {
+            self.client_password_auth_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UserAuthConfigInfo`](crate::model::UserAuthConfigInfo).
         pub fn build(self) -> crate::model::UserAuthConfigInfo {
             crate::model::UserAuthConfigInfo {
@@ -13902,6 +15097,7 @@ pub mod user_auth_config_info {
                 auth_scheme: self.auth_scheme,
                 secret_arn: self.secret_arn,
                 iam_auth: self.iam_auth,
+                client_password_auth_type: self.client_password_auth_type,
             }
         }
     }
@@ -13910,6 +15106,113 @@ impl UserAuthConfigInfo {
     /// Creates a new builder-style object to manufacture [`UserAuthConfigInfo`](crate::model::UserAuthConfigInfo).
     pub fn builder() -> crate::model::user_auth_config_info::Builder {
         crate::model::user_auth_config_info::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ClientPasswordAuthType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let clientpasswordauthtype = unimplemented!();
+/// match clientpasswordauthtype {
+///     ClientPasswordAuthType::MysqlNativePassword => { /* ... */ },
+///     ClientPasswordAuthType::PostgresMd5 => { /* ... */ },
+///     ClientPasswordAuthType::PostgresScramSha256 => { /* ... */ },
+///     ClientPasswordAuthType::SqlServerAuthentication => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `clientpasswordauthtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ClientPasswordAuthType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ClientPasswordAuthType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ClientPasswordAuthType::NewFeature` is defined.
+/// Specifically, when `clientpasswordauthtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ClientPasswordAuthType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ClientPasswordAuthType {
+    #[allow(missing_docs)] // documentation missing in model
+    MysqlNativePassword,
+    #[allow(missing_docs)] // documentation missing in model
+    PostgresMd5,
+    #[allow(missing_docs)] // documentation missing in model
+    PostgresScramSha256,
+    #[allow(missing_docs)] // documentation missing in model
+    SqlServerAuthentication,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ClientPasswordAuthType {
+    fn from(s: &str) -> Self {
+        match s {
+            "MYSQL_NATIVE_PASSWORD" => ClientPasswordAuthType::MysqlNativePassword,
+            "POSTGRES_MD5" => ClientPasswordAuthType::PostgresMd5,
+            "POSTGRES_SCRAM_SHA_256" => ClientPasswordAuthType::PostgresScramSha256,
+            "SQL_SERVER_AUTHENTICATION" => ClientPasswordAuthType::SqlServerAuthentication,
+            other => {
+                ClientPasswordAuthType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for ClientPasswordAuthType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ClientPasswordAuthType::from(s))
+    }
+}
+impl ClientPasswordAuthType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ClientPasswordAuthType::MysqlNativePassword => "MYSQL_NATIVE_PASSWORD",
+            ClientPasswordAuthType::PostgresMd5 => "POSTGRES_MD5",
+            ClientPasswordAuthType::PostgresScramSha256 => "POSTGRES_SCRAM_SHA_256",
+            ClientPasswordAuthType::SqlServerAuthentication => "SQL_SERVER_AUTHENTICATION",
+            ClientPasswordAuthType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "MYSQL_NATIVE_PASSWORD",
+            "POSTGRES_MD5",
+            "POSTGRES_SCRAM_SHA_256",
+            "SQL_SERVER_AUTHENTICATION",
+        ]
+    }
+}
+impl AsRef<str> for ClientPasswordAuthType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -14247,6 +15550,9 @@ pub struct UserAuthConfig {
     /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
     #[doc(hidden)]
     pub iam_auth: std::option::Option<crate::model::IamAuthMode>,
+    /// <p>The type of authentication the proxy uses for connections from clients.</p>
+    #[doc(hidden)]
+    pub client_password_auth_type: std::option::Option<crate::model::ClientPasswordAuthType>,
 }
 impl UserAuthConfig {
     /// <p>A user-specified description about the authentication used by a proxy to log in as a specific database user.</p>
@@ -14269,6 +15575,12 @@ impl UserAuthConfig {
     pub fn iam_auth(&self) -> std::option::Option<&crate::model::IamAuthMode> {
         self.iam_auth.as_ref()
     }
+    /// <p>The type of authentication the proxy uses for connections from clients.</p>
+    pub fn client_password_auth_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ClientPasswordAuthType> {
+        self.client_password_auth_type.as_ref()
+    }
 }
 /// See [`UserAuthConfig`](crate::model::UserAuthConfig).
 pub mod user_auth_config {
@@ -14281,6 +15593,8 @@ pub mod user_auth_config {
         pub(crate) auth_scheme: std::option::Option<crate::model::AuthScheme>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
         pub(crate) iam_auth: std::option::Option<crate::model::IamAuthMode>,
+        pub(crate) client_password_auth_type:
+            std::option::Option<crate::model::ClientPasswordAuthType>,
     }
     impl Builder {
         /// <p>A user-specified description about the authentication used by a proxy to log in as a specific database user.</p>
@@ -14339,6 +15653,22 @@ pub mod user_auth_config {
             self.iam_auth = input;
             self
         }
+        /// <p>The type of authentication the proxy uses for connections from clients.</p>
+        pub fn client_password_auth_type(
+            mut self,
+            input: crate::model::ClientPasswordAuthType,
+        ) -> Self {
+            self.client_password_auth_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication the proxy uses for connections from clients.</p>
+        pub fn set_client_password_auth_type(
+            mut self,
+            input: std::option::Option<crate::model::ClientPasswordAuthType>,
+        ) -> Self {
+            self.client_password_auth_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UserAuthConfig`](crate::model::UserAuthConfig).
         pub fn build(self) -> crate::model::UserAuthConfig {
             crate::model::UserAuthConfig {
@@ -14347,6 +15677,7 @@ pub mod user_auth_config {
                 auth_scheme: self.auth_scheme,
                 secret_arn: self.secret_arn,
                 iam_auth: self.iam_auth,
+                client_password_auth_type: self.client_password_auth_type,
             }
         }
     }
@@ -14960,6 +16291,73 @@ impl CharacterSet {
     }
 }
 
+/// <p>A value that indicates the AMI information.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CustomDbEngineVersionAmi {
+    /// <p>A value that indicates the ID of the AMI.</p>
+    #[doc(hidden)]
+    pub image_id: std::option::Option<std::string::String>,
+    /// <p>A value that indicates the status of a custom engine version (CEV).</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<std::string::String>,
+}
+impl CustomDbEngineVersionAmi {
+    /// <p>A value that indicates the ID of the AMI.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>A value that indicates the status of a custom engine version (CEV).</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
+/// See [`CustomDbEngineVersionAmi`](crate::model::CustomDbEngineVersionAmi).
+pub mod custom_db_engine_version_ami {
+
+    /// A builder for [`CustomDbEngineVersionAmi`](crate::model::CustomDbEngineVersionAmi).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) image_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A value that indicates the ID of the AMI.</p>
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_id = Some(input.into());
+            self
+        }
+        /// <p>A value that indicates the ID of the AMI.</p>
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_id = input;
+            self
+        }
+        /// <p>A value that indicates the status of a custom engine version (CEV).</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>A value that indicates the status of a custom engine version (CEV).</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomDbEngineVersionAmi`](crate::model::CustomDbEngineVersionAmi).
+        pub fn build(self) -> crate::model::CustomDbEngineVersionAmi {
+            crate::model::CustomDbEngineVersionAmi {
+                image_id: self.image_id,
+                status: self.status,
+            }
+        }
+    }
+}
+impl CustomDbEngineVersionAmi {
+    /// Creates a new builder-style object to manufacture [`CustomDbEngineVersionAmi`](crate::model::CustomDbEngineVersionAmi).
+    pub fn builder() -> crate::model::custom_db_engine_version_ami::Builder {
+        crate::model::custom_db_engine_version_ami::Builder::default()
+    }
+}
+
 /// When writing a match expression against `CustomEngineVersionStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
 /// feature that is supported by the service but has not been represented as an enum
@@ -15058,6 +16456,7 @@ impl AsRef<str> for CustomEngineVersionStatus {
 }
 
 /// <p>A CA certificate for an Amazon Web Services account.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Certificate {
@@ -15621,13 +17020,13 @@ impl AvailableProcessorFeature {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidStorageOptions {
-    /// <p>The valid storage types for your DB instance. For example, gp2, io1.</p>
+    /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
-    /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.</p>
+    /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.</p>
     #[doc(hidden)]
     pub storage_size: std::option::Option<std::vec::Vec<crate::model::Range>>,
-    /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
+    /// <p>The valid range of provisioned IOPS. For example, 1000-256,000.</p>
     #[doc(hidden)]
     pub provisioned_iops: std::option::Option<std::vec::Vec<crate::model::Range>>,
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
@@ -15636,17 +17035,24 @@ pub struct ValidStorageOptions {
     /// <p>Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
     #[doc(hidden)]
     pub supports_storage_autoscaling: bool,
+    /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
+    #[doc(hidden)]
+    pub provisioned_storage_throughput: std::option::Option<std::vec::Vec<crate::model::Range>>,
+    /// <p>The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.</p>
+    #[doc(hidden)]
+    pub storage_throughput_to_iops_ratio:
+        std::option::Option<std::vec::Vec<crate::model::DoubleRange>>,
 }
 impl ValidStorageOptions {
-    /// <p>The valid storage types for your DB instance. For example, gp2, io1.</p>
+    /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
     pub fn storage_type(&self) -> std::option::Option<&str> {
         self.storage_type.as_deref()
     }
-    /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.</p>
+    /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.</p>
     pub fn storage_size(&self) -> std::option::Option<&[crate::model::Range]> {
         self.storage_size.as_deref()
     }
-    /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
+    /// <p>The valid range of provisioned IOPS. For example, 1000-256,000.</p>
     pub fn provisioned_iops(&self) -> std::option::Option<&[crate::model::Range]> {
         self.provisioned_iops.as_deref()
     }
@@ -15657,6 +17063,16 @@ impl ValidStorageOptions {
     /// <p>Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
     pub fn supports_storage_autoscaling(&self) -> bool {
         self.supports_storage_autoscaling
+    }
+    /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
+    pub fn provisioned_storage_throughput(&self) -> std::option::Option<&[crate::model::Range]> {
+        self.provisioned_storage_throughput.as_deref()
+    }
+    /// <p>The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.</p>
+    pub fn storage_throughput_to_iops_ratio(
+        &self,
+    ) -> std::option::Option<&[crate::model::DoubleRange]> {
+        self.storage_throughput_to_iops_ratio.as_deref()
     }
 }
 /// See [`ValidStorageOptions`](crate::model::ValidStorageOptions).
@@ -15671,14 +17087,18 @@ pub mod valid_storage_options {
         pub(crate) iops_to_storage_ratio:
             std::option::Option<std::vec::Vec<crate::model::DoubleRange>>,
         pub(crate) supports_storage_autoscaling: std::option::Option<bool>,
+        pub(crate) provisioned_storage_throughput:
+            std::option::Option<std::vec::Vec<crate::model::Range>>,
+        pub(crate) storage_throughput_to_iops_ratio:
+            std::option::Option<std::vec::Vec<crate::model::DoubleRange>>,
     }
     impl Builder {
-        /// <p>The valid storage types for your DB instance. For example, gp2, io1.</p>
+        /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_type = Some(input.into());
             self
         }
-        /// <p>The valid storage types for your DB instance. For example, gp2, io1.</p>
+        /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.storage_type = input;
             self
@@ -15687,14 +17107,14 @@ pub mod valid_storage_options {
         ///
         /// To override the contents of this collection use [`set_storage_size`](Self::set_storage_size).
         ///
-        /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.</p>
+        /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.</p>
         pub fn storage_size(mut self, input: crate::model::Range) -> Self {
             let mut v = self.storage_size.unwrap_or_default();
             v.push(input);
             self.storage_size = Some(v);
             self
         }
-        /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.</p>
+        /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.</p>
         pub fn set_storage_size(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Range>>,
@@ -15706,14 +17126,14 @@ pub mod valid_storage_options {
         ///
         /// To override the contents of this collection use [`set_provisioned_iops`](Self::set_provisioned_iops).
         ///
-        /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
+        /// <p>The valid range of provisioned IOPS. For example, 1000-256,000.</p>
         pub fn provisioned_iops(mut self, input: crate::model::Range) -> Self {
             let mut v = self.provisioned_iops.unwrap_or_default();
             v.push(input);
             self.provisioned_iops = Some(v);
             self
         }
-        /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
+        /// <p>The valid range of provisioned IOPS. For example, 1000-256,000.</p>
         pub fn set_provisioned_iops(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Range>>,
@@ -15753,6 +17173,47 @@ pub mod valid_storage_options {
             self.supports_storage_autoscaling = input;
             self
         }
+        /// Appends an item to `provisioned_storage_throughput`.
+        ///
+        /// To override the contents of this collection use [`set_provisioned_storage_throughput`](Self::set_provisioned_storage_throughput).
+        ///
+        /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
+        pub fn provisioned_storage_throughput(mut self, input: crate::model::Range) -> Self {
+            let mut v = self.provisioned_storage_throughput.unwrap_or_default();
+            v.push(input);
+            self.provisioned_storage_throughput = Some(v);
+            self
+        }
+        /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
+        pub fn set_provisioned_storage_throughput(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Range>>,
+        ) -> Self {
+            self.provisioned_storage_throughput = input;
+            self
+        }
+        /// Appends an item to `storage_throughput_to_iops_ratio`.
+        ///
+        /// To override the contents of this collection use [`set_storage_throughput_to_iops_ratio`](Self::set_storage_throughput_to_iops_ratio).
+        ///
+        /// <p>The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.</p>
+        pub fn storage_throughput_to_iops_ratio(
+            mut self,
+            input: crate::model::DoubleRange,
+        ) -> Self {
+            let mut v = self.storage_throughput_to_iops_ratio.unwrap_or_default();
+            v.push(input);
+            self.storage_throughput_to_iops_ratio = Some(v);
+            self
+        }
+        /// <p>The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.</p>
+        pub fn set_storage_throughput_to_iops_ratio(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DoubleRange>>,
+        ) -> Self {
+            self.storage_throughput_to_iops_ratio = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ValidStorageOptions`](crate::model::ValidStorageOptions).
         pub fn build(self) -> crate::model::ValidStorageOptions {
             crate::model::ValidStorageOptions {
@@ -15761,6 +17222,8 @@ pub mod valid_storage_options {
                 provisioned_iops: self.provisioned_iops,
                 iops_to_storage_ratio: self.iops_to_storage_ratio,
                 supports_storage_autoscaling: self.supports_storage_autoscaling.unwrap_or_default(),
+                provisioned_storage_throughput: self.provisioned_storage_throughput,
+                storage_throughput_to_iops_ratio: self.storage_throughput_to_iops_ratio,
             }
         }
     }
@@ -16627,6 +18090,21 @@ pub struct OrderableDbInstanceOption {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub supported_network_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Indicates whether a DB instance supports storage throughput.</p>
+    #[doc(hidden)]
+    pub supports_storage_throughput: bool,
+    /// <p>Minimum storage throughput for a DB instance.</p>
+    #[doc(hidden)]
+    pub min_storage_throughput_per_db_instance: std::option::Option<i32>,
+    /// <p>Maximum storage throughput for a DB instance.</p>
+    #[doc(hidden)]
+    pub max_storage_throughput_per_db_instance: std::option::Option<i32>,
+    /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    #[doc(hidden)]
+    pub min_storage_throughput_per_iops: std::option::Option<f64>,
+    /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    #[doc(hidden)]
+    pub max_storage_throughput_per_iops: std::option::Option<f64>,
 }
 impl OrderableDbInstanceOption {
     /// <p>The engine type of a DB instance.</p>
@@ -16755,6 +18233,26 @@ impl OrderableDbInstanceOption {
     pub fn supported_network_types(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_network_types.as_deref()
     }
+    /// <p>Indicates whether a DB instance supports storage throughput.</p>
+    pub fn supports_storage_throughput(&self) -> bool {
+        self.supports_storage_throughput
+    }
+    /// <p>Minimum storage throughput for a DB instance.</p>
+    pub fn min_storage_throughput_per_db_instance(&self) -> std::option::Option<i32> {
+        self.min_storage_throughput_per_db_instance
+    }
+    /// <p>Maximum storage throughput for a DB instance.</p>
+    pub fn max_storage_throughput_per_db_instance(&self) -> std::option::Option<i32> {
+        self.max_storage_throughput_per_db_instance
+    }
+    /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    pub fn min_storage_throughput_per_iops(&self) -> std::option::Option<f64> {
+        self.min_storage_throughput_per_iops
+    }
+    /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    pub fn max_storage_throughput_per_iops(&self) -> std::option::Option<f64> {
+        self.max_storage_throughput_per_iops
+    }
 }
 /// See [`OrderableDbInstanceOption`](crate::model::OrderableDbInstanceOption).
 pub mod orderable_db_instance_option {
@@ -16795,6 +18293,11 @@ pub mod orderable_db_instance_option {
         pub(crate) supports_global_databases: std::option::Option<bool>,
         pub(crate) supports_clusters: std::option::Option<bool>,
         pub(crate) supported_network_types: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) supports_storage_throughput: std::option::Option<bool>,
+        pub(crate) min_storage_throughput_per_db_instance: std::option::Option<i32>,
+        pub(crate) max_storage_throughput_per_db_instance: std::option::Option<i32>,
+        pub(crate) min_storage_throughput_per_iops: std::option::Option<f64>,
+        pub(crate) max_storage_throughput_per_iops: std::option::Option<f64>,
     }
     impl Builder {
         /// <p>The engine type of a DB instance.</p>
@@ -17183,6 +18686,68 @@ pub mod orderable_db_instance_option {
             self.supported_network_types = input;
             self
         }
+        /// <p>Indicates whether a DB instance supports storage throughput.</p>
+        pub fn supports_storage_throughput(mut self, input: bool) -> Self {
+            self.supports_storage_throughput = Some(input);
+            self
+        }
+        /// <p>Indicates whether a DB instance supports storage throughput.</p>
+        pub fn set_supports_storage_throughput(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_storage_throughput = input;
+            self
+        }
+        /// <p>Minimum storage throughput for a DB instance.</p>
+        pub fn min_storage_throughput_per_db_instance(mut self, input: i32) -> Self {
+            self.min_storage_throughput_per_db_instance = Some(input);
+            self
+        }
+        /// <p>Minimum storage throughput for a DB instance.</p>
+        pub fn set_min_storage_throughput_per_db_instance(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.min_storage_throughput_per_db_instance = input;
+            self
+        }
+        /// <p>Maximum storage throughput for a DB instance.</p>
+        pub fn max_storage_throughput_per_db_instance(mut self, input: i32) -> Self {
+            self.max_storage_throughput_per_db_instance = Some(input);
+            self
+        }
+        /// <p>Maximum storage throughput for a DB instance.</p>
+        pub fn set_max_storage_throughput_per_db_instance(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.max_storage_throughput_per_db_instance = input;
+            self
+        }
+        /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+        pub fn min_storage_throughput_per_iops(mut self, input: f64) -> Self {
+            self.min_storage_throughput_per_iops = Some(input);
+            self
+        }
+        /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+        pub fn set_min_storage_throughput_per_iops(
+            mut self,
+            input: std::option::Option<f64>,
+        ) -> Self {
+            self.min_storage_throughput_per_iops = input;
+            self
+        }
+        /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+        pub fn max_storage_throughput_per_iops(mut self, input: f64) -> Self {
+            self.max_storage_throughput_per_iops = Some(input);
+            self
+        }
+        /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+        pub fn set_max_storage_throughput_per_iops(
+            mut self,
+            input: std::option::Option<f64>,
+        ) -> Self {
+            self.max_storage_throughput_per_iops = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OrderableDbInstanceOption`](crate::model::OrderableDbInstanceOption).
         pub fn build(self) -> crate::model::OrderableDbInstanceOption {
             crate::model::OrderableDbInstanceOption {
@@ -17220,6 +18785,11 @@ pub mod orderable_db_instance_option {
                 supports_global_databases: self.supports_global_databases.unwrap_or_default(),
                 supports_clusters: self.supports_clusters.unwrap_or_default(),
                 supported_network_types: self.supported_network_types,
+                supports_storage_throughput: self.supports_storage_throughput.unwrap_or_default(),
+                min_storage_throughput_per_db_instance: self.min_storage_throughput_per_db_instance,
+                max_storage_throughput_per_db_instance: self.max_storage_throughput_per_db_instance,
+                min_storage_throughput_per_iops: self.min_storage_throughput_per_iops,
+                max_storage_throughput_per_iops: self.max_storage_throughput_per_iops,
             }
         }
     }
@@ -17285,6 +18855,9 @@ pub struct OptionGroupOption {
     #[doc(hidden)]
     pub option_group_option_versions:
         std::option::Option<std::vec::Vec<crate::model::OptionVersion>>,
+    /// <p>Specifies whether the option can be copied across Amazon Web Services accounts.</p>
+    #[doc(hidden)]
+    pub copyable_cross_account: std::option::Option<bool>,
 }
 impl OptionGroupOption {
     /// <p>The name of the option.</p>
@@ -17355,6 +18928,10 @@ impl OptionGroupOption {
     ) -> std::option::Option<&[crate::model::OptionVersion]> {
         self.option_group_option_versions.as_deref()
     }
+    /// <p>Specifies whether the option can be copied across Amazon Web Services accounts.</p>
+    pub fn copyable_cross_account(&self) -> std::option::Option<bool> {
+        self.copyable_cross_account
+    }
 }
 /// See [`OptionGroupOption`](crate::model::OptionGroupOption).
 pub mod option_group_option {
@@ -17380,6 +18957,7 @@ pub mod option_group_option {
             std::option::Option<std::vec::Vec<crate::model::OptionGroupOptionSetting>>,
         pub(crate) option_group_option_versions:
             std::option::Option<std::vec::Vec<crate::model::OptionVersion>>,
+        pub(crate) copyable_cross_account: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the option.</p>
@@ -17596,6 +19174,16 @@ pub mod option_group_option {
             self.option_group_option_versions = input;
             self
         }
+        /// <p>Specifies whether the option can be copied across Amazon Web Services accounts.</p>
+        pub fn copyable_cross_account(mut self, input: bool) -> Self {
+            self.copyable_cross_account = Some(input);
+            self
+        }
+        /// <p>Specifies whether the option can be copied across Amazon Web Services accounts.</p>
+        pub fn set_copyable_cross_account(mut self, input: std::option::Option<bool>) -> Self {
+            self.copyable_cross_account = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OptionGroupOption`](crate::model::OptionGroupOption).
         pub fn build(self) -> crate::model::OptionGroupOption {
             crate::model::OptionGroupOption {
@@ -17617,6 +19205,7 @@ pub mod option_group_option {
                 supports_option_version_downgrade: self.supports_option_version_downgrade,
                 option_group_option_settings: self.option_group_option_settings,
                 option_group_option_versions: self.option_group_option_versions,
+                copyable_cross_account: self.copyable_cross_account,
             }
         }
     }
@@ -18035,6 +19624,9 @@ pub struct ExportTask {
     /// <p>A warning about the snapshot export task.</p>
     #[doc(hidden)]
     pub warning_message: std::option::Option<std::string::String>,
+    /// <p>The type of source for the export.</p>
+    #[doc(hidden)]
+    pub source_type: std::option::Option<crate::model::ExportSourceType>,
 }
 impl ExportTask {
     /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
@@ -18103,6 +19695,10 @@ impl ExportTask {
     pub fn warning_message(&self) -> std::option::Option<&str> {
         self.warning_message.as_deref()
     }
+    /// <p>The type of source for the export.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::ExportSourceType> {
+        self.source_type.as_ref()
+    }
 }
 /// See [`ExportTask`](crate::model::ExportTask).
 pub mod export_task {
@@ -18125,6 +19721,7 @@ pub mod export_task {
         pub(crate) total_extracted_data_in_gb: std::option::Option<i32>,
         pub(crate) failure_cause: std::option::Option<std::string::String>,
         pub(crate) warning_message: std::option::Option<std::string::String>,
+        pub(crate) source_type: std::option::Option<crate::model::ExportSourceType>,
     }
     impl Builder {
         /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
@@ -18316,6 +19913,19 @@ pub mod export_task {
             self.warning_message = input;
             self
         }
+        /// <p>The type of source for the export.</p>
+        pub fn source_type(mut self, input: crate::model::ExportSourceType) -> Self {
+            self.source_type = Some(input);
+            self
+        }
+        /// <p>The type of source for the export.</p>
+        pub fn set_source_type(
+            mut self,
+            input: std::option::Option<crate::model::ExportSourceType>,
+        ) -> Self {
+            self.source_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExportTask`](crate::model::ExportTask).
         pub fn build(self) -> crate::model::ExportTask {
             crate::model::ExportTask {
@@ -18334,6 +19944,7 @@ pub mod export_task {
                 total_extracted_data_in_gb: self.total_extracted_data_in_gb.unwrap_or_default(),
                 failure_cause: self.failure_cause,
                 warning_message: self.warning_message,
+                source_type: self.source_type,
             }
         }
     }
@@ -18515,6 +20126,7 @@ impl Event {
 /// ```text
 /// # let sourcetype = unimplemented!();
 /// match sourcetype {
+///     SourceType::BlueGreenDeployment => { /* ... */ },
 ///     SourceType::CustomEngineVersion => { /* ... */ },
 ///     SourceType::DbCluster => { /* ... */ },
 ///     SourceType::DbClusterSnapshot => { /* ... */ },
@@ -18557,6 +20169,8 @@ impl Event {
 )]
 pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
+    BlueGreenDeployment,
+    #[allow(missing_docs)] // documentation missing in model
     CustomEngineVersion,
     #[allow(missing_docs)] // documentation missing in model
     DbCluster,
@@ -18578,6 +20192,7 @@ pub enum SourceType {
 impl std::convert::From<&str> for SourceType {
     fn from(s: &str) -> Self {
         match s {
+            "blue-green-deployment" => SourceType::BlueGreenDeployment,
             "custom-engine-version" => SourceType::CustomEngineVersion,
             "db-cluster" => SourceType::DbCluster,
             "db-cluster-snapshot" => SourceType::DbClusterSnapshot,
@@ -18601,6 +20216,7 @@ impl SourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SourceType::BlueGreenDeployment => "blue-green-deployment",
             SourceType::CustomEngineVersion => "custom-engine-version",
             SourceType::DbCluster => "db-cluster",
             SourceType::DbClusterSnapshot => "db-cluster-snapshot",
@@ -18615,6 +20231,7 @@ impl SourceType {
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "blue-green-deployment",
             "custom-engine-version",
             "db-cluster",
             "db-cluster-snapshot",
@@ -19032,6 +20649,12 @@ pub struct DbEngineVersion {
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     #[doc(hidden)]
     pub default_character_set: std::option::Option<crate::model::CharacterSet>,
+    /// <p>The EC2 image</p>
+    #[doc(hidden)]
+    pub image: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
+    /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+    #[doc(hidden)]
+    pub db_engine_media_type: std::option::Option<std::string::String>,
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     #[doc(hidden)]
     pub supported_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
@@ -19103,6 +20726,17 @@ pub struct DbEngineVersion {
     /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     #[doc(hidden)]
     pub supports_babelfish: bool,
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+    #[doc(hidden)]
+    pub custom_db_engine_version_manifest: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    #[doc(hidden)]
+    pub supports_certificate_rotation_without_restart: std::option::Option<bool>,
+    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    #[doc(hidden)]
+    pub supported_ca_certificate_identifiers:
+        std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DbEngineVersion {
     /// <p>The name of the database engine.</p>
@@ -19128,6 +20762,14 @@ impl DbEngineVersion {
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     pub fn default_character_set(&self) -> std::option::Option<&crate::model::CharacterSet> {
         self.default_character_set.as_ref()
+    }
+    /// <p>The EC2 image</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::CustomDbEngineVersionAmi> {
+        self.image.as_ref()
+    }
+    /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+    pub fn db_engine_media_type(&self) -> std::option::Option<&str> {
+        self.db_engine_media_type.as_deref()
     }
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     pub fn supported_character_sets(&self) -> std::option::Option<&[crate::model::CharacterSet]> {
@@ -19221,6 +20863,21 @@ impl DbEngineVersion {
     pub fn supports_babelfish(&self) -> bool {
         self.supports_babelfish
     }
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+    pub fn custom_db_engine_version_manifest(&self) -> std::option::Option<&str> {
+        self.custom_db_engine_version_manifest.as_deref()
+    }
+    /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    pub fn supports_certificate_rotation_without_restart(&self) -> std::option::Option<bool> {
+        self.supports_certificate_rotation_without_restart
+    }
+    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn supported_ca_certificate_identifiers(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.supported_ca_certificate_identifiers.as_deref()
+    }
 }
 /// See [`DbEngineVersion`](crate::model::DbEngineVersion).
 pub mod db_engine_version {
@@ -19234,6 +20891,8 @@ pub mod db_engine_version {
         pub(crate) db_engine_description: std::option::Option<std::string::String>,
         pub(crate) db_engine_version_description: std::option::Option<std::string::String>,
         pub(crate) default_character_set: std::option::Option<crate::model::CharacterSet>,
+        pub(crate) image: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
+        pub(crate) db_engine_media_type: std::option::Option<std::string::String>,
         pub(crate) supported_character_sets:
             std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
         pub(crate) supported_nchar_character_sets:
@@ -19258,6 +20917,10 @@ pub mod db_engine_version {
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) supports_babelfish: std::option::Option<bool>,
+        pub(crate) custom_db_engine_version_manifest: std::option::Option<std::string::String>,
+        pub(crate) supports_certificate_rotation_without_restart: std::option::Option<bool>,
+        pub(crate) supported_ca_certificate_identifiers:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the database engine.</p>
@@ -19336,6 +20999,32 @@ pub mod db_engine_version {
             input: std::option::Option<crate::model::CharacterSet>,
         ) -> Self {
             self.default_character_set = input;
+            self
+        }
+        /// <p>The EC2 image</p>
+        pub fn image(mut self, input: crate::model::CustomDbEngineVersionAmi) -> Self {
+            self.image = Some(input);
+            self
+        }
+        /// <p>The EC2 image</p>
+        pub fn set_image(
+            mut self,
+            input: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
+        ) -> Self {
+            self.image = input;
+            self
+        }
+        /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+        pub fn db_engine_media_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_engine_media_type = Some(input.into());
+            self
+        }
+        /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+        pub fn set_db_engine_media_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_engine_media_type = input;
             self
         }
         /// Appends an item to `supported_character_sets`.
@@ -19654,6 +21343,61 @@ pub mod db_engine_version {
             self.supports_babelfish = input;
             self
         }
+        /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+        pub fn custom_db_engine_version_manifest(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.custom_db_engine_version_manifest = Some(input.into());
+            self
+        }
+        /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+        pub fn set_custom_db_engine_version_manifest(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_db_engine_version_manifest = input;
+            self
+        }
+        /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+        pub fn supports_certificate_rotation_without_restart(mut self, input: bool) -> Self {
+            self.supports_certificate_rotation_without_restart = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+        pub fn set_supports_certificate_rotation_without_restart(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.supports_certificate_rotation_without_restart = input;
+            self
+        }
+        /// Appends an item to `supported_ca_certificate_identifiers`.
+        ///
+        /// To override the contents of this collection use [`set_supported_ca_certificate_identifiers`](Self::set_supported_ca_certificate_identifiers).
+        ///
+        /// <p>A list of the supported CA certificate identifiers.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn supported_ca_certificate_identifiers(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self
+                .supported_ca_certificate_identifiers
+                .unwrap_or_default();
+            v.push(input.into());
+            self.supported_ca_certificate_identifiers = Some(v);
+            self
+        }
+        /// <p>A list of the supported CA certificate identifiers.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_supported_ca_certificate_identifiers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_ca_certificate_identifiers = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbEngineVersion`](crate::model::DbEngineVersion).
         pub fn build(self) -> crate::model::DbEngineVersion {
             crate::model::DbEngineVersion {
@@ -19663,6 +21407,8 @@ pub mod db_engine_version {
                 db_engine_description: self.db_engine_description,
                 db_engine_version_description: self.db_engine_version_description,
                 default_character_set: self.default_character_set,
+                image: self.image,
+                db_engine_media_type: self.db_engine_media_type,
                 supported_character_sets: self.supported_character_sets,
                 supported_nchar_character_sets: self.supported_nchar_character_sets,
                 valid_upgrade_target: self.valid_upgrade_target,
@@ -19686,6 +21432,10 @@ pub mod db_engine_version {
                 create_time: self.create_time,
                 tag_list: self.tag_list,
                 supports_babelfish: self.supports_babelfish.unwrap_or_default(),
+                custom_db_engine_version_manifest: self.custom_db_engine_version_manifest,
+                supports_certificate_rotation_without_restart: self
+                    .supports_certificate_rotation_without_restart,
+                supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
             }
         }
     }
@@ -19774,6 +21524,9 @@ pub struct DbClusterSnapshot {
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
+    pub db_system_id: std::option::Option<std::string::String>,
 }
 impl DbClusterSnapshot {
     /// <p>Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.</p>
@@ -19870,6 +21623,10 @@ impl DbClusterSnapshot {
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn db_system_id(&self) -> std::option::Option<&str> {
+        self.db_system_id.as_deref()
+    }
 }
 /// See [`DbClusterSnapshot`](crate::model::DbClusterSnapshot).
 pub mod db_cluster_snapshot {
@@ -19899,6 +21656,7 @@ pub mod db_cluster_snapshot {
         pub(crate) source_db_cluster_snapshot_arn: std::option::Option<std::string::String>,
         pub(crate) iam_database_authentication_enabled: std::option::Option<bool>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) db_system_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -20190,6 +21948,16 @@ pub mod db_cluster_snapshot {
             self.tag_list = input;
             self
         }
+        /// <p>Reserved for future use.</p>
+        pub fn db_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_system_id = Some(input.into());
+            self
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn set_db_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_system_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbClusterSnapshot`](crate::model::DbClusterSnapshot).
         pub fn build(self) -> crate::model::DbClusterSnapshot {
             crate::model::DbClusterSnapshot {
@@ -20217,6 +21985,7 @@ pub mod db_cluster_snapshot {
                     .iam_database_authentication_enabled
                     .unwrap_or_default(),
                 tag_list: self.tag_list,
+                db_system_id: self.db_system_id,
             }
         }
     }

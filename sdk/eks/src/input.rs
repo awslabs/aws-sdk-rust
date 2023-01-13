@@ -451,6 +451,7 @@ pub mod create_addon_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) configuration_values: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the cluster to create the add-on for.</p>
@@ -463,12 +464,12 @@ pub mod create_addon_input {
             self.cluster_name = input;
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
         pub fn addon_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.addon_name = Some(input.into());
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
         pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.addon_name = input;
             self
@@ -566,6 +567,19 @@ pub mod create_addon_input {
             self.tags = input;
             self
         }
+        /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html"> <code>DescribeAddonConfiguration</code> </a>.</p>
+        pub fn configuration_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_values = Some(input.into());
+            self
+        }
+        /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html"> <code>DescribeAddonConfiguration</code> </a>.</p>
+        pub fn set_configuration_values(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_values = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAddonInput`](crate::input::CreateAddonInput).
         pub fn build(
             self,
@@ -579,6 +593,7 @@ pub mod create_addon_input {
                 resolve_conflicts: self.resolve_conflicts,
                 client_request_token: self.client_request_token,
                 tags: self.tags,
+                configuration_values: self.configuration_values,
             })
         }
     }
@@ -876,12 +891,12 @@ pub mod create_cluster_input {
             self.encryption_config = input;
             self
         }
-        /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
+        /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
         pub fn outpost_config(mut self, input: crate::model::OutpostConfigRequest) -> Self {
             self.outpost_config = Some(input);
             self
         }
-        /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
+        /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
         pub fn set_outpost_config(
             mut self,
             input: std::option::Option<crate::model::OutpostConfigRequest>,
@@ -1376,12 +1391,12 @@ pub mod create_nodegroup_input {
             self.scaling_config = input;
             self
         }
-        /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB for Windows. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn disk_size(mut self, input: i32) -> Self {
             self.disk_size = Some(input);
             self
         }
-        /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB for Windows. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_disk_size(mut self, input: std::option::Option<i32>) -> Self {
             self.disk_size = input;
             self
@@ -1409,14 +1424,14 @@ pub mod create_nodegroup_input {
         ///
         /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
         ///
-        /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>Specify the instance types for a node group. If you specify a GPU instance type, make sure to also specify an applicable GPU AMI type with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
             v.push(input.into());
             self.instance_types = Some(v);
             self
         }
-        /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>Specify the instance types for a node group. If you specify a GPU instance type, make sure to also specify an applicable GPU AMI type with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1424,22 +1439,22 @@ pub mod create_nodegroup_input {
             self.instance_types = input;
             self
         }
-        /// <p>The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type. Arm instances should use the <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The AMI type for your node group. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. If your launch template uses a Windows custom AMI, then add <code>eks:kube-proxy-windows</code> to your Windows nodes <code>rolearn</code> in the <code>aws-auth</code> <code>ConfigMap</code>. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn ami_type(mut self, input: crate::model::AmiTypes) -> Self {
             self.ami_type = Some(input);
             self
         }
-        /// <p>The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type. Arm instances should use the <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The AMI type for your node group. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. If your launch template uses a Windows custom AMI, then add <code>eks:kube-proxy-windows</code> to your Windows nodes <code>rolearn</code> in the <code>aws-auth</code> <code>ConfigMap</code>. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_ami_type(mut self, input: std::option::Option<crate::model::AmiTypes>) -> Self {
             self.ami_type = input;
             self
         }
-        /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The remote access configuration to use with your node group. For Linux, the protocol is SSH. For Windows, the protocol is RDP. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn remote_access(mut self, input: crate::model::RemoteAccessConfig) -> Self {
             self.remote_access = Some(input);
             self
         }
-        /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The remote access configuration to use with your node group. For Linux, the protocol is SSH. For Windows, the protocol is RDP. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_remote_access(
             mut self,
             input: std::option::Option<crate::model::RemoteAccessConfig>,
@@ -1588,12 +1603,14 @@ pub mod create_nodegroup_input {
             self.version = input;
             self
         }
-        /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.release_version = Some(input.into());
             self
         }
-        /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_release_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1797,12 +1814,12 @@ pub mod delete_addon_input {
             self.addon_name = input;
             self
         }
-        /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it is not removed.</p>
+        /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
         pub fn preserve(mut self, input: bool) -> Self {
             self.preserve = Some(input);
             self
         }
-        /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it is not removed.</p>
+        /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
         pub fn set_preserve(mut self, input: std::option::Option<bool>) -> Self {
             self.preserve = input;
             self
@@ -2817,6 +2834,192 @@ impl DescribeAddonInput {
     }
 }
 
+/// See [`DescribeAddonConfigurationInput`](crate::input::DescribeAddonConfigurationInput).
+pub mod describe_addon_configuration_input {
+
+    /// A builder for [`DescribeAddonConfigurationInput`](crate::input::DescribeAddonConfigurationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) addon_name: std::option::Option<std::string::String>,
+        pub(crate) addon_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+        pub fn addon_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.addon_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+        pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.addon_name = input;
+            self
+        }
+        /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+        pub fn addon_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.addon_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+        pub fn set_addon_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.addon_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAddonConfigurationInput`](crate::input::DescribeAddonConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeAddonConfigurationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DescribeAddonConfigurationInput {
+                addon_name: self.addon_name,
+                addon_version: self.addon_version,
+            })
+        }
+    }
+}
+impl DescribeAddonConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeAddonConfiguration`](crate::operation::DescribeAddonConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeAddonConfiguration,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeAddonConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/addons/configuration-schemas").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::DescribeAddonConfigurationInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                let inner_16 = &_input.addon_name;
+                let inner_16 = inner_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "addon_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_16.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "addon_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv("addonName", &aws_smithy_http::query::fmt_string(&inner_16));
+                let inner_17 = &_input.addon_version;
+                let inner_17 = inner_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "addon_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_17.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "addon_version",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv(
+                    "addonVersion",
+                    &aws_smithy_http::query::fmt_string(&inner_17),
+                );
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeAddonConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeAddonConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeAddonConfiguration",
+            "eks",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeAddonConfigurationInput`](crate::input::DescribeAddonConfigurationInput).
+    pub fn builder() -> crate::input::describe_addon_configuration_input::Builder {
+        crate::input::describe_addon_configuration_input::Builder::default()
+    }
+}
+
 /// See [`DescribeAddonVersionsInput`](crate::input::DescribeAddonVersionsInput).
 pub mod describe_addon_versions_input {
 
@@ -2827,14 +3030,17 @@ pub mod describe_addon_versions_input {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) addon_name: std::option::Option<std::string::String>,
+        pub(crate) types: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) publishers: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) owners: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Kubernetes versions that the add-on can be used with.</p>
+        /// <p>The Kubernetes versions that you can use the add-on with.</p>
         pub fn kubernetes_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.kubernetes_version = Some(input.into());
             self
         }
-        /// <p>The Kubernetes versions that the add-on can be used with.</p>
+        /// <p>The Kubernetes versions that you can use the add-on with.</p>
         pub fn set_kubernetes_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2876,6 +3082,63 @@ pub mod describe_addon_versions_input {
             self.addon_name = input;
             self
         }
+        /// Appends an item to `types`.
+        ///
+        /// To override the contents of this collection use [`set_types`](Self::set_types).
+        ///
+        /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
+        pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.types.unwrap_or_default();
+            v.push(input.into());
+            self.types = Some(v);
+            self
+        }
+        /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
+        pub fn set_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.types = input;
+            self
+        }
+        /// Appends an item to `publishers`.
+        ///
+        /// To override the contents of this collection use [`set_publishers`](Self::set_publishers).
+        ///
+        /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
+        pub fn publishers(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.publishers.unwrap_or_default();
+            v.push(input.into());
+            self.publishers = Some(v);
+            self
+        }
+        /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
+        pub fn set_publishers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.publishers = input;
+            self
+        }
+        /// Appends an item to `owners`.
+        ///
+        /// To override the contents of this collection use [`set_owners`](Self::set_owners).
+        ///
+        /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
+        pub fn owners(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.owners.unwrap_or_default();
+            v.push(input.into());
+            self.owners = Some(v);
+            self
+        }
+        /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
+        pub fn set_owners(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.owners = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAddonVersionsInput`](crate::input::DescribeAddonVersionsInput).
         pub fn build(
             self,
@@ -2888,6 +3151,9 @@ pub mod describe_addon_versions_input {
                 max_results: self.max_results,
                 next_token: self.next_token,
                 addon_name: self.addon_name,
+                types: self.types,
+                publishers: self.publishers,
+                owners: self.owners,
             })
         }
     }
@@ -2920,30 +3186,54 @@ impl DescribeAddonVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_16) = &_input.kubernetes_version {
+                if let Some(inner_18) = &_input.kubernetes_version {
                     {
                         query.push_kv(
                             "kubernetesVersion",
-                            &aws_smithy_http::query::fmt_string(&inner_16),
+                            &aws_smithy_http::query::fmt_string(&inner_18),
                         );
                     }
                 }
-                if let Some(inner_17) = &_input.max_results {
-                    if *inner_17 != 0 {
+                if let Some(inner_19) = &_input.max_results {
+                    if *inner_19 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_17).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_19).encode(),
                         );
                     }
                 }
-                if let Some(inner_18) = &_input.next_token {
+                if let Some(inner_20) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_18));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_20));
                     }
                 }
-                if let Some(inner_19) = &_input.addon_name {
+                if let Some(inner_21) = &_input.addon_name {
                     {
-                        query.push_kv("addonName", &aws_smithy_http::query::fmt_string(&inner_19));
+                        query.push_kv("addonName", &aws_smithy_http::query::fmt_string(&inner_21));
+                    }
+                }
+                if let Some(inner_22) = &_input.types {
+                    {
+                        for inner_23 in inner_22 {
+                            query.push_kv("types", &aws_smithy_http::query::fmt_string(&inner_23));
+                        }
+                    }
+                }
+                if let Some(inner_24) = &_input.publishers {
+                    {
+                        for inner_25 in inner_24 {
+                            query.push_kv(
+                                "publishers",
+                                &aws_smithy_http::query::fmt_string(&inner_25),
+                            );
+                        }
+                    }
+                }
+                if let Some(inner_26) = &_input.owners {
+                    {
+                        for inner_27 in inner_26 {
+                            query.push_kv("owners", &aws_smithy_http::query::fmt_string(&inner_27));
+                        }
                     }
                 }
                 Ok(())
@@ -3070,15 +3360,15 @@ impl DescribeClusterInput {
                 _input: &crate::input::DescribeClusterInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_20 = &_input.name;
-                let input_20 = input_20.as_ref().ok_or_else(|| {
+                let input_28 = &_input.name;
+                let input_28 = input_28.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_20,
+                    input_28,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -3232,15 +3522,15 @@ impl DescribeFargateProfileInput {
                 _input: &crate::input::DescribeFargateProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_21 = &_input.cluster_name;
-                let input_21 = input_21.as_ref().ok_or_else(|| {
+                let input_29 = &_input.cluster_name;
+                let input_29 = input_29.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cluster_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cluster_name = aws_smithy_http::label::fmt_string(
-                    input_21,
+                    input_29,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_name.is_empty() {
@@ -3251,15 +3541,15 @@ impl DescribeFargateProfileInput {
                         ),
                     );
                 }
-                let input_22 = &_input.fargate_profile_name;
-                let input_22 = input_22.as_ref().ok_or_else(|| {
+                let input_30 = &_input.fargate_profile_name;
+                let input_30 = input_30.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "fargate_profile_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let fargate_profile_name = aws_smithy_http::label::fmt_string(
-                    input_22,
+                    input_30,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if fargate_profile_name.is_empty() {
@@ -3423,15 +3713,15 @@ impl DescribeIdentityProviderConfigInput {
                 _input: &crate::input::DescribeIdentityProviderConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_23 = &_input.cluster_name;
-                let input_23 = input_23.as_ref().ok_or_else(|| {
+                let input_31 = &_input.cluster_name;
+                let input_31 = input_31.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cluster_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cluster_name = aws_smithy_http::label::fmt_string(
-                    input_23,
+                    input_31,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_name.is_empty() {
@@ -3603,15 +3893,15 @@ impl DescribeNodegroupInput {
                 _input: &crate::input::DescribeNodegroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_24 = &_input.cluster_name;
-                let input_24 = input_24.as_ref().ok_or_else(|| {
+                let input_32 = &_input.cluster_name;
+                let input_32 = input_32.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cluster_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cluster_name = aws_smithy_http::label::fmt_string(
-                    input_24,
+                    input_32,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_name.is_empty() {
@@ -3622,15 +3912,15 @@ impl DescribeNodegroupInput {
                         ),
                     );
                 }
-                let input_25 = &_input.nodegroup_name;
-                let input_25 = input_25.as_ref().ok_or_else(|| {
+                let input_33 = &_input.nodegroup_name;
+                let input_33 = input_33.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "nodegroup_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let nodegroup_name = aws_smithy_http::label::fmt_string(
-                    input_25,
+                    input_33,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if nodegroup_name.is_empty() {
@@ -3812,15 +4102,15 @@ impl DescribeUpdateInput {
                 _input: &crate::input::DescribeUpdateInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_26 = &_input.name;
-                let input_26 = input_26.as_ref().ok_or_else(|| {
+                let input_34 = &_input.name;
+                let input_34 = input_34.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_26,
+                    input_34,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -3831,15 +4121,15 @@ impl DescribeUpdateInput {
                         ),
                     );
                 }
-                let input_27 = &_input.update_id;
-                let input_27 = input_27.as_ref().ok_or_else(|| {
+                let input_35 = &_input.update_id;
+                let input_35 = input_35.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "update_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let update_id = aws_smithy_http::label::fmt_string(
-                    input_27,
+                    input_35,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if update_id.is_empty() {
@@ -3864,17 +4154,17 @@ impl DescribeUpdateInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_28) = &_input.nodegroup_name {
+                if let Some(inner_36) = &_input.nodegroup_name {
                     {
                         query.push_kv(
                             "nodegroupName",
-                            &aws_smithy_http::query::fmt_string(&inner_28),
+                            &aws_smithy_http::query::fmt_string(&inner_36),
                         );
                     }
                 }
-                if let Some(inner_29) = &_input.addon_name {
+                if let Some(inner_37) = &_input.addon_name {
                     {
-                        query.push_kv("addonName", &aws_smithy_http::query::fmt_string(&inner_29));
+                        query.push_kv("addonName", &aws_smithy_http::query::fmt_string(&inner_37));
                     }
                 }
                 Ok(())
@@ -4042,15 +4332,15 @@ impl DisassociateIdentityProviderConfigInput {
                 _input: &crate::input::DisassociateIdentityProviderConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_30 = &_input.cluster_name;
-                let input_30 = input_30.as_ref().ok_or_else(|| {
+                let input_38 = &_input.cluster_name;
+                let input_38 = input_38.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cluster_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cluster_name = aws_smithy_http::label::fmt_string(
-                    input_30,
+                    input_38,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_name.is_empty() {
@@ -4233,15 +4523,15 @@ impl ListAddonsInput {
                 _input: &crate::input::ListAddonsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_31 = &_input.cluster_name;
-                let input_31 = input_31.as_ref().ok_or_else(|| {
+                let input_39 = &_input.cluster_name;
+                let input_39 = input_39.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cluster_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cluster_name = aws_smithy_http::label::fmt_string(
-                    input_31,
+                    input_39,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_name.is_empty() {
@@ -4265,17 +4555,17 @@ impl ListAddonsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_32) = &_input.max_results {
-                    if *inner_32 != 0 {
+                if let Some(inner_40) = &_input.max_results {
+                    if *inner_40 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_32).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_40).encode(),
                         );
                     }
                 }
-                if let Some(inner_33) = &_input.next_token {
+                if let Some(inner_41) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_41));
                     }
                 }
                 Ok(())
@@ -4449,24 +4739,24 @@ impl ListClustersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_34) = &_input.max_results {
-                    if *inner_34 != 0 {
+                if let Some(inner_42) = &_input.max_results {
+                    if *inner_42 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
                         );
                     }
                 }
-                if let Some(inner_35) = &_input.next_token {
+                if let Some(inner_43) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
                     }
                 }
-                if let Some(inner_36) = &_input.include {
+                if let Some(inner_44) = &_input.include {
                     {
-                        for inner_37 in inner_36 {
+                        for inner_45 in inner_44 {
                             query
-                                .push_kv("include", &aws_smithy_http::query::fmt_string(&inner_37));
+                                .push_kv("include", &aws_smithy_http::query::fmt_string(&inner_45));
                         }
                     }
                 }
@@ -4622,15 +4912,15 @@ impl ListFargateProfilesInput {
                 _input: &crate::input::ListFargateProfilesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_38 = &_input.cluster_name;
-                let input_38 = input_38.as_ref().ok_or_else(|| {
+                let input_46 = &_input.cluster_name;
+                let input_46 = input_46.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cluster_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cluster_name = aws_smithy_http::label::fmt_string(
-                    input_38,
+                    input_46,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_name.is_empty() {
@@ -4654,17 +4944,17 @@ impl ListFargateProfilesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_39) = &_input.max_results {
-                    if *inner_39 != 0 {
+                if let Some(inner_47) = &_input.max_results {
+                    if *inner_47 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_39).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_47).encode(),
                         );
                     }
                 }
-                if let Some(inner_40) = &_input.next_token {
+                if let Some(inner_48) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_48));
                     }
                 }
                 Ok(())
@@ -4819,15 +5109,15 @@ impl ListIdentityProviderConfigsInput {
                 _input: &crate::input::ListIdentityProviderConfigsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_41 = &_input.cluster_name;
-                let input_41 = input_41.as_ref().ok_or_else(|| {
+                let input_49 = &_input.cluster_name;
+                let input_49 = input_49.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cluster_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cluster_name = aws_smithy_http::label::fmt_string(
-                    input_41,
+                    input_49,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_name.is_empty() {
@@ -4851,17 +5141,17 @@ impl ListIdentityProviderConfigsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_42) = &_input.max_results {
-                    if *inner_42 != 0 {
+                if let Some(inner_50) = &_input.max_results {
+                    if *inner_50 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_50).encode(),
                         );
                     }
                 }
-                if let Some(inner_43) = &_input.next_token {
+                if let Some(inner_51) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_51));
                     }
                 }
                 Ok(())
@@ -5014,15 +5304,15 @@ impl ListNodegroupsInput {
                 _input: &crate::input::ListNodegroupsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_44 = &_input.cluster_name;
-                let input_44 = input_44.as_ref().ok_or_else(|| {
+                let input_52 = &_input.cluster_name;
+                let input_52 = input_52.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cluster_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cluster_name = aws_smithy_http::label::fmt_string(
-                    input_44,
+                    input_52,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_name.is_empty() {
@@ -5046,17 +5336,17 @@ impl ListNodegroupsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_45) = &_input.max_results {
-                    if *inner_45 != 0 {
+                if let Some(inner_53) = &_input.max_results {
+                    if *inner_53 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_45).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_53).encode(),
                         );
                     }
                 }
-                if let Some(inner_46) = &_input.next_token {
+                if let Some(inner_54) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_46));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
                     }
                 }
                 Ok(())
@@ -5187,15 +5477,15 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_47 = &_input.resource_arn;
-                let input_47 = input_47.as_ref().ok_or_else(|| {
+                let input_55 = &_input.resource_arn;
+                let input_55 = input_55.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_47,
+                    input_55,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -5384,15 +5674,15 @@ impl ListUpdatesInput {
                 _input: &crate::input::ListUpdatesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_48 = &_input.name;
-                let input_48 = input_48.as_ref().ok_or_else(|| {
+                let input_56 = &_input.name;
+                let input_56 = input_56.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_48,
+                    input_56,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -5412,29 +5702,29 @@ impl ListUpdatesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_49) = &_input.nodegroup_name {
+                if let Some(inner_57) = &_input.nodegroup_name {
                     {
                         query.push_kv(
                             "nodegroupName",
-                            &aws_smithy_http::query::fmt_string(&inner_49),
+                            &aws_smithy_http::query::fmt_string(&inner_57),
                         );
                     }
                 }
-                if let Some(inner_50) = &_input.addon_name {
+                if let Some(inner_58) = &_input.addon_name {
                     {
-                        query.push_kv("addonName", &aws_smithy_http::query::fmt_string(&inner_50));
+                        query.push_kv("addonName", &aws_smithy_http::query::fmt_string(&inner_58));
                     }
                 }
-                if let Some(inner_51) = &_input.next_token {
+                if let Some(inner_59) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_51));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_59));
                     }
                 }
-                if let Some(inner_52) = &_input.max_results {
-                    if *inner_52 != 0 {
+                if let Some(inner_60) = &_input.max_results {
+                    if *inner_60 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_52).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_60).encode(),
                         );
                     }
                 }
@@ -5795,15 +6085,15 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_53 = &_input.resource_arn;
-                let input_53 = input_53.as_ref().ok_or_else(|| {
+                let input_61 = &_input.resource_arn;
+                let input_61 = input_61.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_53,
+                    input_61,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -5976,15 +6266,15 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_54 = &_input.resource_arn;
-                let input_54 = input_54.as_ref().ok_or_else(|| {
+                let input_62 = &_input.resource_arn;
+                let input_62 = input_62.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_54,
+                    input_62,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -6004,15 +6294,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_55 = &_input.tag_keys;
-                let inner_55 = inner_55.as_ref().ok_or_else(|| {
+                let inner_63 = &_input.tag_keys;
+                let inner_63 = inner_63.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "tag_keys",
                         "cannot be empty or unset",
                     )
                 })?;
-                for inner_56 in inner_55 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_56));
+                for inner_64 in inner_63 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_64));
                 }
                 Ok(())
             }
@@ -6102,6 +6392,7 @@ pub mod update_addon_input {
         pub(crate) service_account_role_arn: std::option::Option<std::string::String>,
         pub(crate) resolve_conflicts: std::option::Option<crate::model::ResolveConflicts>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) configuration_values: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the cluster.</p>
@@ -6190,6 +6481,19 @@ pub mod update_addon_input {
             self.client_request_token = input;
             self
         }
+        /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+        pub fn configuration_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_values = Some(input.into());
+            self
+        }
+        /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+        pub fn set_configuration_values(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_values = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAddonInput`](crate::input::UpdateAddonInput).
         pub fn build(
             self,
@@ -6202,6 +6506,7 @@ pub mod update_addon_input {
                 service_account_role_arn: self.service_account_role_arn,
                 resolve_conflicts: self.resolve_conflicts,
                 client_request_token: self.client_request_token,
+                configuration_values: self.configuration_values,
             })
         }
     }
@@ -6229,15 +6534,15 @@ impl UpdateAddonInput {
                 _input: &crate::input::UpdateAddonInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_57 = &_input.cluster_name;
-                let input_57 = input_57.as_ref().ok_or_else(|| {
+                let input_65 = &_input.cluster_name;
+                let input_65 = input_65.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cluster_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cluster_name = aws_smithy_http::label::fmt_string(
-                    input_57,
+                    input_65,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_name.is_empty() {
@@ -6248,15 +6553,15 @@ impl UpdateAddonInput {
                         ),
                     );
                 }
-                let input_58 = &_input.addon_name;
-                let input_58 = input_58.as_ref().ok_or_else(|| {
+                let input_66 = &_input.addon_name;
+                let input_66 = input_66.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "addon_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let addon_name = aws_smithy_http::label::fmt_string(
-                    input_58,
+                    input_66,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if addon_name.is_empty() {
@@ -6464,15 +6769,15 @@ impl UpdateClusterConfigInput {
                 _input: &crate::input::UpdateClusterConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_59 = &_input.name;
-                let input_59 = input_59.as_ref().ok_or_else(|| {
+                let input_67 = &_input.name;
+                let input_67 = input_67.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_59,
+                    input_67,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -6656,15 +6961,15 @@ impl UpdateClusterVersionInput {
                 _input: &crate::input::UpdateClusterVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_60 = &_input.name;
-                let input_60 = input_60.as_ref().ok_or_else(|| {
+                let input_68 = &_input.name;
+                let input_68 = input_68.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_60,
+                    input_68,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -6913,15 +7218,15 @@ impl UpdateNodegroupConfigInput {
                 _input: &crate::input::UpdateNodegroupConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_61 = &_input.cluster_name;
-                let input_61 = input_61.as_ref().ok_or_else(|| {
+                let input_69 = &_input.cluster_name;
+                let input_69 = input_69.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cluster_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cluster_name = aws_smithy_http::label::fmt_string(
-                    input_61,
+                    input_69,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_name.is_empty() {
@@ -6932,15 +7237,15 @@ impl UpdateNodegroupConfigInput {
                         ),
                     );
                 }
-                let input_62 = &_input.nodegroup_name;
-                let input_62 = input_62.as_ref().ok_or_else(|| {
+                let input_70 = &_input.nodegroup_name;
+                let input_70 = input_70.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "nodegroup_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let nodegroup_name = aws_smithy_http::label::fmt_string(
-                    input_62,
+                    input_70,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if nodegroup_name.is_empty() {
@@ -7097,12 +7402,14 @@ pub mod update_nodegroup_version_input {
             self.version = input;
             self
         }
-        /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.release_version = Some(input.into());
             self
         }
-        /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_release_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7188,15 +7495,15 @@ impl UpdateNodegroupVersionInput {
                 _input: &crate::input::UpdateNodegroupVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_63 = &_input.cluster_name;
-                let input_63 = input_63.as_ref().ok_or_else(|| {
+                let input_71 = &_input.cluster_name;
+                let input_71 = input_71.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cluster_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cluster_name = aws_smithy_http::label::fmt_string(
-                    input_63,
+                    input_71,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_name.is_empty() {
@@ -7207,15 +7514,15 @@ impl UpdateNodegroupVersionInput {
                         ),
                     );
                 }
-                let input_64 = &_input.nodegroup_name;
-                let input_64 = input_64.as_ref().ok_or_else(|| {
+                let input_72 = &_input.nodegroup_name;
+                let input_72 = input_72.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "nodegroup_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let nodegroup_name = aws_smithy_http::label::fmt_string(
-                    input_64,
+                    input_72,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if nodegroup_name.is_empty() {
@@ -7337,7 +7644,8 @@ pub struct UpdateNodegroupVersionInput {
     /// <p>The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
-    /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     #[doc(hidden)]
     pub release_version: std::option::Option<std::string::String>,
     /// <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template.</p>
@@ -7363,7 +7671,8 @@ impl UpdateNodegroupVersionInput {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn release_version(&self) -> std::option::Option<&str> {
         self.release_version.as_deref()
     }
@@ -7538,6 +7847,9 @@ pub struct UpdateAddonInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+    #[doc(hidden)]
+    pub configuration_values: std::option::Option<std::string::String>,
 }
 impl UpdateAddonInput {
     /// <p>The name of the cluster.</p>
@@ -7570,6 +7882,10 @@ impl UpdateAddonInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
+    }
+    /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+    pub fn configuration_values(&self) -> std::option::Option<&str> {
+        self.configuration_values.as_deref()
     }
 }
 
@@ -8026,7 +8342,7 @@ impl DescribeClusterInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAddonVersionsInput {
-    /// <p>The Kubernetes versions that the add-on can be used with.</p>
+    /// <p>The Kubernetes versions that you can use the add-on with.</p>
     #[doc(hidden)]
     pub kubernetes_version: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
@@ -8040,9 +8356,18 @@ pub struct DescribeAddonVersionsInput {
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     #[doc(hidden)]
     pub addon_name: std::option::Option<std::string::String>,
+    /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
+    #[doc(hidden)]
+    pub types: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
+    #[doc(hidden)]
+    pub publishers: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
+    #[doc(hidden)]
+    pub owners: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeAddonVersionsInput {
-    /// <p>The Kubernetes versions that the add-on can be used with.</p>
+    /// <p>The Kubernetes versions that you can use the add-on with.</p>
     pub fn kubernetes_version(&self) -> std::option::Option<&str> {
         self.kubernetes_version.as_deref()
     }
@@ -8059,6 +8384,40 @@ impl DescribeAddonVersionsInput {
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
+    }
+    /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
+    pub fn types(&self) -> std::option::Option<&[std::string::String]> {
+        self.types.as_deref()
+    }
+    /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
+    pub fn publishers(&self) -> std::option::Option<&[std::string::String]> {
+        self.publishers.as_deref()
+    }
+    /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
+    pub fn owners(&self) -> std::option::Option<&[std::string::String]> {
+        self.owners.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeAddonConfigurationInput {
+    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    #[doc(hidden)]
+    pub addon_name: std::option::Option<std::string::String>,
+    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    #[doc(hidden)]
+    pub addon_version: std::option::Option<std::string::String>,
+}
+impl DescribeAddonConfigurationInput {
+    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
+    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    pub fn addon_version(&self) -> std::option::Option<&str> {
+        self.addon_version.as_deref()
     }
 }
 
@@ -8168,7 +8527,7 @@ pub struct DeleteAddonInput {
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     #[doc(hidden)]
     pub addon_name: std::option::Option<std::string::String>,
-    /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it is not removed.</p>
+    /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
     #[doc(hidden)]
     pub preserve: bool,
 }
@@ -8181,7 +8540,7 @@ impl DeleteAddonInput {
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
     }
-    /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it is not removed.</p>
+    /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
     pub fn preserve(&self) -> bool {
         self.preserve
     }
@@ -8200,19 +8559,19 @@ pub struct CreateNodegroupInput {
     /// <p>The scaling configuration details for the Auto Scaling group that is created for your node group.</p>
     #[doc(hidden)]
     pub scaling_config: std::option::Option<crate::model::NodegroupScalingConfig>,
-    /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB for Windows. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     #[doc(hidden)]
     pub disk_size: std::option::Option<i32>,
     /// <p>The subnets to use for the Auto Scaling group that is created for your node group. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>Specify the instance types for a node group. If you specify a GPU instance type, make sure to also specify an applicable GPU AMI type with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     #[doc(hidden)]
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type. Arm instances should use the <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The AMI type for your node group. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. If your launch template uses a Windows custom AMI, then add <code>eks:kube-proxy-windows</code> to your Windows nodes <code>rolearn</code> in the <code>aws-auth</code> <code>ConfigMap</code>. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     #[doc(hidden)]
     pub ami_type: std::option::Option<crate::model::AmiTypes>,
-    /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The remote access configuration to use with your node group. For Linux, the protocol is SSH. For Windows, the protocol is RDP. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     #[doc(hidden)]
     pub remote_access: std::option::Option<crate::model::RemoteAccessConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch nodes and register them into a cluster, you must create an IAM role for those nodes to use when they are launched. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
@@ -8244,7 +8603,8 @@ pub struct CreateNodegroupInput {
     /// <p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes version of the cluster is used, and this is the only accepted specified value. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
-    /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     #[doc(hidden)]
     pub release_version: std::option::Option<std::string::String>,
 }
@@ -8261,7 +8621,7 @@ impl CreateNodegroupInput {
     pub fn scaling_config(&self) -> std::option::Option<&crate::model::NodegroupScalingConfig> {
         self.scaling_config.as_ref()
     }
-    /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB for Windows. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn disk_size(&self) -> std::option::Option<i32> {
         self.disk_size
     }
@@ -8269,15 +8629,15 @@ impl CreateNodegroupInput {
     pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
-    /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>Specify the instance types for a node group. If you specify a GPU instance type, make sure to also specify an applicable GPU AMI type with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_types.as_deref()
     }
-    /// <p>The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type. Arm instances should use the <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The AMI type for your node group. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. If your launch template uses a Windows custom AMI, then add <code>eks:kube-proxy-windows</code> to your Windows nodes <code>rolearn</code> in the <code>aws-auth</code> <code>ConfigMap</code>. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn ami_type(&self) -> std::option::Option<&crate::model::AmiTypes> {
         self.ami_type.as_ref()
     }
-    /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The remote access configuration to use with your node group. For Linux, the protocol is SSH. For Windows, the protocol is RDP. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn remote_access(&self) -> std::option::Option<&crate::model::RemoteAccessConfig> {
         self.remote_access.as_ref()
     }
@@ -8325,7 +8685,8 @@ impl CreateNodegroupInput {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn release_version(&self) -> std::option::Option<&str> {
         self.release_version.as_deref()
     }
@@ -8429,7 +8790,7 @@ pub struct CreateClusterInput {
     /// <p>The encryption configuration for the cluster.</p>
     #[doc(hidden)]
     pub encryption_config: std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
-    /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
+    /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
     #[doc(hidden)]
     pub outpost_config: std::option::Option<crate::model::OutpostConfigRequest>,
 }
@@ -8479,7 +8840,7 @@ impl CreateClusterInput {
     pub fn encryption_config(&self) -> std::option::Option<&[crate::model::EncryptionConfig]> {
         self.encryption_config.as_deref()
     }
-    /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
+    /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
     pub fn outpost_config(&self) -> std::option::Option<&crate::model::OutpostConfigRequest> {
         self.outpost_config.as_ref()
     }
@@ -8492,7 +8853,7 @@ pub struct CreateAddonInput {
     /// <p>The name of the cluster to create the add-on for.</p>
     #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
-    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
     #[doc(hidden)]
     pub addon_name: std::option::Option<std::string::String>,
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
@@ -8519,13 +8880,16 @@ pub struct CreateAddonInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html"> <code>DescribeAddonConfiguration</code> </a>.</p>
+    #[doc(hidden)]
+    pub configuration_values: std::option::Option<std::string::String>,
 }
 impl CreateAddonInput {
     /// <p>The name of the cluster to create the add-on for.</p>
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
     }
@@ -8559,6 +8923,10 @@ impl CreateAddonInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html"> <code>DescribeAddonConfiguration</code> </a>.</p>
+    pub fn configuration_values(&self) -> std::option::Option<&str> {
+        self.configuration_values.as_deref()
     }
 }
 

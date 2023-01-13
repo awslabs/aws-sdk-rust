@@ -750,6 +750,40 @@ impl aws_smithy_http::response::ParseStrictResponse for RetryDataReplication {
     }
 }
 
+/// Operation shape for `ReverseReplication`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`reverse_replication`](crate::client::Client::reverse_replication).
+///
+/// See [`crate::client::fluent_builders::ReverseReplication`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ReverseReplication {
+    _private: (),
+}
+impl ReverseReplication {
+    /// Creates a new builder-style object to manufacture [`ReverseReplicationInput`](crate::input::ReverseReplicationInput).
+    pub fn builder() -> crate::input::reverse_replication_input::Builder {
+        crate::input::reverse_replication_input::Builder::default()
+    }
+    /// Creates a new `ReverseReplication` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ReverseReplication {
+    type Output = std::result::Result<
+        crate::output::ReverseReplicationOutput,
+        crate::error::ReverseReplicationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_reverse_replication_error(response)
+        } else {
+            crate::operation_deser::parse_reverse_replication_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StartFailbackLaunch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -816,6 +850,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRecovery {
     }
 }
 
+/// Operation shape for `StartReplication`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_replication`](crate::client::Client::start_replication).
+///
+/// See [`crate::client::fluent_builders::StartReplication`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct StartReplication {
+    _private: (),
+}
+impl StartReplication {
+    /// Creates a new builder-style object to manufacture [`StartReplicationInput`](crate::input::StartReplicationInput).
+    pub fn builder() -> crate::input::start_replication_input::Builder {
+        crate::input::start_replication_input::Builder::default()
+    }
+    /// Creates a new `StartReplication` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartReplication {
+    type Output = std::result::Result<
+        crate::output::StartReplicationOutput,
+        crate::error::StartReplicationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_replication_error(response)
+        } else {
+            crate::operation_deser::parse_start_replication_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StopFailback`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -844,6 +912,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StopFailback {
             crate::operation_deser::parse_stop_failback_error(response)
         } else {
             crate::operation_deser::parse_stop_failback_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StopReplication`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`stop_replication`](crate::client::Client::stop_replication).
+///
+/// See [`crate::client::fluent_builders::StopReplication`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct StopReplication {
+    _private: (),
+}
+impl StopReplication {
+    /// Creates a new builder-style object to manufacture [`StopReplicationInput`](crate::input::StopReplicationInput).
+    pub fn builder() -> crate::input::stop_replication_input::Builder {
+        crate::input::stop_replication_input::Builder::default()
+    }
+    /// Creates a new `StopReplication` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StopReplication {
+    type Output = std::result::Result<
+        crate::output::StopReplicationOutput,
+        crate::error::StopReplicationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_replication_error(response)
+        } else {
+            crate::operation_deser::parse_stop_replication_response(response)
         }
     }
 }

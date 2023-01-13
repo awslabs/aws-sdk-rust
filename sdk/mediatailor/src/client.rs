@@ -94,7 +94,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ConfigureLogsForPlaybackConfiguration`](crate::client::fluent_builders::ConfigureLogsForPlaybackConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`percent_enabled(i32)`](crate::client::fluent_builders::ConfigureLogsForPlaybackConfiguration::percent_enabled) / [`set_percent_enabled(i32)`](crate::client::fluent_builders::ConfigureLogsForPlaybackConfiguration::set_percent_enabled): <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>  <p>Valid values: 0 - 100</p>
+    ///   - [`percent_enabled(i32)`](crate::client::fluent_builders::ConfigureLogsForPlaybackConfiguration::percent_enabled) / [`set_percent_enabled(i32)`](crate::client::fluent_builders::ConfigureLogsForPlaybackConfiguration::set_percent_enabled): <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>  <p>Valid values: <code>0</code> - <code>100</code> </p>
     ///   - [`playback_configuration_name(impl Into<String>)`](crate::client::fluent_builders::ConfigureLogsForPlaybackConfiguration::playback_configuration_name) / [`set_playback_configuration_name(Option<String>)`](crate::client::fluent_builders::ConfigureLogsForPlaybackConfiguration::set_playback_configuration_name): <p>The name of the playback configuration.</p>
     /// - On success, responds with [`ConfigureLogsForPlaybackConfigurationOutput`](crate::output::ConfigureLogsForPlaybackConfigurationOutput) with field(s):
     ///   - [`percent_enabled(i32)`](crate::output::ConfigureLogsForPlaybackConfigurationOutput::percent_enabled): <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
@@ -108,23 +108,23 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateChannel`](crate::client::fluent_builders::CreateChannel) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_channel_name): <p>The identifier for the channel you are working on.</p>
-    ///   - [`filler_slate(SlateSource)`](crate::client::fluent_builders::CreateChannel::filler_slate) / [`set_filler_slate(Option<SlateSource>)`](crate::client::fluent_builders::CreateChannel::set_filler_slate): <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_channel_name): <p>The name of the channel.</p>
+    ///   - [`filler_slate(SlateSource)`](crate::client::fluent_builders::CreateChannel::filler_slate) / [`set_filler_slate(Option<SlateSource>)`](crate::client::fluent_builders::CreateChannel::set_filler_slate): <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     ///   - [`outputs(Vec<RequestOutputItem>)`](crate::client::fluent_builders::CreateChannel::outputs) / [`set_outputs(Option<Vec<RequestOutputItem>>)`](crate::client::fluent_builders::CreateChannel::set_outputs): <p>The channel's output properties.</p>
-    ///   - [`playback_mode(PlaybackMode)`](crate::client::fluent_builders::CreateChannel::playback_mode) / [`set_playback_mode(Option<PlaybackMode>)`](crate::client::fluent_builders::CreateChannel::set_playback_mode): <p>The type of playback mode to use for this channel.</p>  <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>  <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateChannel::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChannel::set_tags): <p>The tags to assign to the channel.</p>
+    ///   - [`playback_mode(PlaybackMode)`](crate::client::fluent_builders::CreateChannel::playback_mode) / [`set_playback_mode(Option<PlaybackMode>)`](crate::client::fluent_builders::CreateChannel::set_playback_mode): <p>The type of playback mode to use for this channel.</p>  <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>  <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateChannel::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChannel::set_tags): <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     ///   - [`tier(Tier)`](crate::client::fluent_builders::CreateChannel::tier) / [`set_tier(Option<Tier>)`](crate::client::fluent_builders::CreateChannel::set_tier): <p>The tier of the channel.</p>
     /// - On success, responds with [`CreateChannelOutput`](crate::output::CreateChannelOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::CreateChannelOutput::arn): <p>The ARN of the channel.</p>
-    ///   - [`channel_name(Option<String>)`](crate::output::CreateChannelOutput::channel_name): <p>The name of the channel.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateChannelOutput::arn): <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
+    ///   - [`channel_name(Option<String>)`](crate::output::CreateChannelOutput::channel_name): <p>The name to assign to the channel.</p>
     ///   - [`channel_state(Option<ChannelState>)`](crate::output::CreateChannelOutput::channel_state): <p>Indicates whether the channel is in a running state or not.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateChannelOutput::creation_time): <p>The timestamp of when the channel was created.</p>
     ///   - [`filler_slate(Option<SlateSource>)`](crate::output::CreateChannelOutput::filler_slate): <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateChannelOutput::last_modified_time): <p>The timestamp of when the channel was last modified.</p>
-    ///   - [`outputs(Option<Vec<ResponseOutputItem>>)`](crate::output::CreateChannelOutput::outputs): <p>The channel's output properties.</p>
-    ///   - [`playback_mode(Option<String>)`](crate::output::CreateChannelOutput::playback_mode): <p>The channel's playback mode.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateChannelOutput::tags): <p>The tags assigned to the channel.</p>
-    ///   - [`tier(Option<String>)`](crate::output::CreateChannelOutput::tier): <p>The channel's tier.</p>
+    ///   - [`outputs(Option<Vec<ResponseOutputItem>>)`](crate::output::CreateChannelOutput::outputs): <p>The output properties to assign to the channel.</p>
+    ///   - [`playback_mode(Option<String>)`](crate::output::CreateChannelOutput::playback_mode): <p>The playback mode to assign to the channel.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateChannelOutput::tags): <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    ///   - [`tier(Option<String>)`](crate::output::CreateChannelOutput::tier): <p>The tier of the channel.</p>
     /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::error::CreateChannelError)
     pub fn create_channel(&self) -> fluent_builders::CreateChannel {
         fluent_builders::CreateChannel::new(self.handle.clone())
@@ -133,17 +133,17 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`http_package_configurations(Vec<HttpPackageConfiguration>)`](crate::client::fluent_builders::CreateLiveSource::http_package_configurations) / [`set_http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::client::fluent_builders::CreateLiveSource::set_http_package_configurations): <p>A list of HTTP package configuration parameters for this live source.</p>
-    ///   - [`live_source_name(impl Into<String>)`](crate::client::fluent_builders::CreateLiveSource::live_source_name) / [`set_live_source_name(Option<String>)`](crate::client::fluent_builders::CreateLiveSource::set_live_source_name): <p>The identifier for the live source you are working on.</p>
-    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::CreateLiveSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::CreateLiveSource::set_source_location_name): <p>The identifier for the source location you are working on.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLiveSource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLiveSource::set_tags): <p>The tags to assign to the live source.</p>
+    ///   - [`live_source_name(impl Into<String>)`](crate::client::fluent_builders::CreateLiveSource::live_source_name) / [`set_live_source_name(Option<String>)`](crate::client::fluent_builders::CreateLiveSource::set_live_source_name): <p>The name of the live source.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::CreateLiveSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::CreateLiveSource::set_source_location_name): <p>The name of the source location.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLiveSource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLiveSource::set_tags): <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     /// - On success, responds with [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::CreateLiveSourceOutput::arn): <p>The ARN of the live source.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateLiveSourceOutput::creation_time): <p>The timestamp that indicates when the live source was created.</p>
-    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::CreateLiveSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateLiveSourceOutput::last_modified_time): <p>The timestamp that indicates when the live source was modified.</p>
-    ///   - [`live_source_name(Option<String>)`](crate::output::CreateLiveSourceOutput::live_source_name): <p>The name of the live source.</p>
-    ///   - [`source_location_name(Option<String>)`](crate::output::CreateLiveSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateLiveSourceOutput::tags): <p>The tags assigned to the live source.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateLiveSourceOutput::arn): <p>The ARN to assign to the live source.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateLiveSourceOutput::creation_time): <p>The time the live source was created.</p>
+    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::CreateLiveSourceOutput::http_package_configurations): <p>A list of HTTP package configuration parameters for this live source.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateLiveSourceOutput::last_modified_time): <p>The time the live source was last modified.</p>
+    ///   - [`live_source_name(Option<String>)`](crate::output::CreateLiveSourceOutput::live_source_name): <p>The name to assign to the live source.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::CreateLiveSourceOutput::source_location_name): <p>The name to assign to the source location of the live source.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateLiveSourceOutput::tags): <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     /// - On failure, responds with [`SdkError<CreateLiveSourceError>`](crate::error::CreateLiveSourceError)
     pub fn create_live_source(&self) -> fluent_builders::CreateLiveSource {
         fluent_builders::CreateLiveSource::new(self.handle.clone())
@@ -152,17 +152,17 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`consumption(PrefetchConsumption)`](crate::client::fluent_builders::CreatePrefetchSchedule::consumption) / [`set_consumption(Option<PrefetchConsumption>)`](crate::client::fluent_builders::CreatePrefetchSchedule::set_consumption): <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePrefetchSchedule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePrefetchSchedule::set_name): <p>The identifier for the playback configuration.</p>
-    ///   - [`playback_configuration_name(impl Into<String>)`](crate::client::fluent_builders::CreatePrefetchSchedule::playback_configuration_name) / [`set_playback_configuration_name(Option<String>)`](crate::client::fluent_builders::CreatePrefetchSchedule::set_playback_configuration_name): <p>The name of the playback configuration.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePrefetchSchedule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePrefetchSchedule::set_name): <p>The name to assign to the schedule request.</p>
+    ///   - [`playback_configuration_name(impl Into<String>)`](crate::client::fluent_builders::CreatePrefetchSchedule::playback_configuration_name) / [`set_playback_configuration_name(Option<String>)`](crate::client::fluent_builders::CreatePrefetchSchedule::set_playback_configuration_name): <p>The name to assign to the playback configuration.</p>
     ///   - [`retrieval(PrefetchRetrieval)`](crate::client::fluent_builders::CreatePrefetchSchedule::retrieval) / [`set_retrieval(Option<PrefetchRetrieval>)`](crate::client::fluent_builders::CreatePrefetchSchedule::set_retrieval): <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
-    ///   - [`stream_id(impl Into<String>)`](crate::client::fluent_builders::CreatePrefetchSchedule::stream_id) / [`set_stream_id(Option<String>)`](crate::client::fluent_builders::CreatePrefetchSchedule::set_stream_id): <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
+    ///   - [`stream_id(impl Into<String>)`](crate::client::fluent_builders::CreatePrefetchSchedule::stream_id) / [`set_stream_id(Option<String>)`](crate::client::fluent_builders::CreatePrefetchSchedule::set_stream_id): <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
     /// - On success, responds with [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::CreatePrefetchScheduleOutput::arn): <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
-    ///   - [`consumption(Option<PrefetchConsumption>)`](crate::output::CreatePrefetchScheduleOutput::consumption): <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
-    ///   - [`name(Option<String>)`](crate::output::CreatePrefetchScheduleOutput::name): <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
-    ///   - [`playback_configuration_name(Option<String>)`](crate::output::CreatePrefetchScheduleOutput::playback_configuration_name): <p>The name of the playback configuration to create the prefetch schedule for.</p>
-    ///   - [`retrieval(Option<PrefetchRetrieval>)`](crate::output::CreatePrefetchScheduleOutput::retrieval): <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
-    ///   - [`stream_id(Option<String>)`](crate::output::CreatePrefetchScheduleOutput::stream_id): <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreatePrefetchScheduleOutput::arn): <p>The ARN to assign to the prefetch schedule.</p>
+    ///   - [`consumption(Option<PrefetchConsumption>)`](crate::output::CreatePrefetchScheduleOutput::consumption): <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreatePrefetchScheduleOutput::name): <p>The name to assign to the prefetch schedule.</p>
+    ///   - [`playback_configuration_name(Option<String>)`](crate::output::CreatePrefetchScheduleOutput::playback_configuration_name): <p>The name to assign to the playback configuration.</p>
+    ///   - [`retrieval(Option<PrefetchRetrieval>)`](crate::output::CreatePrefetchScheduleOutput::retrieval): <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
+    ///   - [`stream_id(Option<String>)`](crate::output::CreatePrefetchScheduleOutput::stream_id): <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
     /// - On failure, responds with [`SdkError<CreatePrefetchScheduleError>`](crate::error::CreatePrefetchScheduleError)
     pub fn create_prefetch_schedule(&self) -> fluent_builders::CreatePrefetchSchedule {
         fluent_builders::CreatePrefetchSchedule::new(self.handle.clone())
@@ -171,21 +171,21 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`ad_breaks(Vec<AdBreak>)`](crate::client::fluent_builders::CreateProgram::ad_breaks) / [`set_ad_breaks(Option<Vec<AdBreak>>)`](crate::client::fluent_builders::CreateProgram::set_ad_breaks): <p>The ad break configuration settings.</p>
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::CreateProgram::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::CreateProgram::set_channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::CreateProgram::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::CreateProgram::set_channel_name): <p>The name of the channel for this Program.</p>
     ///   - [`live_source_name(impl Into<String>)`](crate::client::fluent_builders::CreateProgram::live_source_name) / [`set_live_source_name(Option<String>)`](crate::client::fluent_builders::CreateProgram::set_live_source_name): <p>The name of the LiveSource for this Program.</p>
-    ///   - [`program_name(impl Into<String>)`](crate::client::fluent_builders::CreateProgram::program_name) / [`set_program_name(Option<String>)`](crate::client::fluent_builders::CreateProgram::set_program_name): <p>The identifier for the program you are working on.</p>
+    ///   - [`program_name(impl Into<String>)`](crate::client::fluent_builders::CreateProgram::program_name) / [`set_program_name(Option<String>)`](crate::client::fluent_builders::CreateProgram::set_program_name): <p>The name of the Program.</p>
     ///   - [`schedule_configuration(ScheduleConfiguration)`](crate::client::fluent_builders::CreateProgram::schedule_configuration) / [`set_schedule_configuration(Option<ScheduleConfiguration>)`](crate::client::fluent_builders::CreateProgram::set_schedule_configuration): <p>The schedule configuration settings.</p>
     ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::CreateProgram::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::CreateProgram::set_source_location_name): <p>The name of the source location.</p>
     ///   - [`vod_source_name(impl Into<String>)`](crate::client::fluent_builders::CreateProgram::vod_source_name) / [`set_vod_source_name(Option<String>)`](crate::client::fluent_builders::CreateProgram::set_vod_source_name): <p>The name that's used to refer to a VOD source.</p>
     /// - On success, responds with [`CreateProgramOutput`](crate::output::CreateProgramOutput) with field(s):
     ///   - [`ad_breaks(Option<Vec<AdBreak>>)`](crate::output::CreateProgramOutput::ad_breaks): <p>The ad break configuration settings.</p>
-    ///   - [`arn(Option<String>)`](crate::output::CreateProgramOutput::arn): <p>The ARN of the program.</p>
-    ///   - [`channel_name(Option<String>)`](crate::output::CreateProgramOutput::channel_name): <p>The name of the channel that the program belongs to.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateProgramOutput::creation_time): <p>The timestamp of when the program was created.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateProgramOutput::arn): <p>The ARN to assign to the program.</p>
+    ///   - [`channel_name(Option<String>)`](crate::output::CreateProgramOutput::channel_name): <p>The name to assign to the channel for this program.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateProgramOutput::creation_time): <p>The time the program was created.</p>
     ///   - [`live_source_name(Option<String>)`](crate::output::CreateProgramOutput::live_source_name): <p>The name of the LiveSource for this Program.</p>
-    ///   - [`program_name(Option<String>)`](crate::output::CreateProgramOutput::program_name): <p>The name of the program.</p>
-    ///   - [`scheduled_start_time(Option<DateTime>)`](crate::output::CreateProgramOutput::scheduled_start_time): <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
-    ///   - [`source_location_name(Option<String>)`](crate::output::CreateProgramOutput::source_location_name): <p>The source location name.</p>
+    ///   - [`program_name(Option<String>)`](crate::output::CreateProgramOutput::program_name): <p>The name to assign to this program.</p>
+    ///   - [`scheduled_start_time(Option<DateTime>)`](crate::output::CreateProgramOutput::scheduled_start_time): <p>The scheduled start time for this Program.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::CreateProgramOutput::source_location_name): <p>The name to assign to the source location for this program.</p>
     ///   - [`vod_source_name(Option<String>)`](crate::output::CreateProgramOutput::vod_source_name): <p>The name that's used to refer to a VOD source.</p>
     /// - On failure, responds with [`SdkError<CreateProgramError>`](crate::error::CreateProgramError)
     pub fn create_program(&self) -> fluent_builders::CreateProgram {
@@ -198,18 +198,18 @@ impl Client {
     ///   - [`default_segment_delivery_configuration(DefaultSegmentDeliveryConfiguration)`](crate::client::fluent_builders::CreateSourceLocation::default_segment_delivery_configuration) / [`set_default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::client::fluent_builders::CreateSourceLocation::set_default_segment_delivery_configuration): <p>The optional configuration for the server that serves segments.</p>
     ///   - [`http_configuration(HttpConfiguration)`](crate::client::fluent_builders::CreateSourceLocation::http_configuration) / [`set_http_configuration(Option<HttpConfiguration>)`](crate::client::fluent_builders::CreateSourceLocation::set_http_configuration): <p>The source's HTTP package configurations.</p>
     ///   - [`segment_delivery_configurations(Vec<SegmentDeliveryConfiguration>)`](crate::client::fluent_builders::CreateSourceLocation::segment_delivery_configurations) / [`set_segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::client::fluent_builders::CreateSourceLocation::set_segment_delivery_configurations): <p>A list of the segment delivery configurations associated with this resource.</p>
-    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::CreateSourceLocation::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::CreateSourceLocation::set_source_location_name): <p>The identifier for the source location you are working on.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSourceLocation::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSourceLocation::set_tags): <p>The tags to assign to the source location.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::CreateSourceLocation::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::CreateSourceLocation::set_source_location_name): <p>The name associated with the source location.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSourceLocation::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSourceLocation::set_tags): <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     /// - On success, responds with [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput) with field(s):
-    ///   - [`access_configuration(Option<AccessConfiguration>)`](crate::output::CreateSourceLocationOutput::access_configuration): <p>The access configuration for the source location.</p>
-    ///   - [`arn(Option<String>)`](crate::output::CreateSourceLocationOutput::arn): <p>The ARN of the source location.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateSourceLocationOutput::creation_time): <p>The timestamp that indicates when the source location was created.</p>
-    ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::output::CreateSourceLocationOutput::default_segment_delivery_configuration): <p>The default segment delivery configuration settings.</p>
-    ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::output::CreateSourceLocationOutput::http_configuration): <p>The HTTP package configuration settings for the source location.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateSourceLocationOutput::last_modified_time): <p>The timestamp that indicates when the source location was last modified.</p>
-    ///   - [`segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::output::CreateSourceLocationOutput::segment_delivery_configurations): <p>A list of the segment delivery configurations associated with this resource.</p>
-    ///   - [`source_location_name(Option<String>)`](crate::output::CreateSourceLocationOutput::source_location_name): <p>The name of the source location.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateSourceLocationOutput::tags): <p>The tags assigned to the source location.</p>
+    ///   - [`access_configuration(Option<AccessConfiguration>)`](crate::output::CreateSourceLocationOutput::access_configuration): <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateSourceLocationOutput::arn): <p>The ARN to assign to the source location.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateSourceLocationOutput::creation_time): <p>The time the source location was created.</p>
+    ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::output::CreateSourceLocationOutput::default_segment_delivery_configuration): <p>The optional configuration for the server that serves segments.</p>
+    ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::output::CreateSourceLocationOutput::http_configuration): <p>The source's HTTP package configurations.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateSourceLocationOutput::last_modified_time): <p>The time the source location was last modified.</p>
+    ///   - [`segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::output::CreateSourceLocationOutput::segment_delivery_configurations): <p>The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::CreateSourceLocationOutput::source_location_name): <p>The name to assign to the source location.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateSourceLocationOutput::tags): <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     /// - On failure, responds with [`SdkError<CreateSourceLocationError>`](crate::error::CreateSourceLocationError)
     pub fn create_source_location(&self) -> fluent_builders::CreateSourceLocation {
         fluent_builders::CreateSourceLocation::new(self.handle.clone())
@@ -218,17 +218,17 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`http_package_configurations(Vec<HttpPackageConfiguration>)`](crate::client::fluent_builders::CreateVodSource::http_package_configurations) / [`set_http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::client::fluent_builders::CreateVodSource::set_http_package_configurations): <p>A list of HTTP package configuration parameters for this VOD source.</p>
-    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::CreateVodSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::CreateVodSource::set_source_location_name): <p>The identifier for the source location you are working on.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateVodSource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateVodSource::set_tags): <p>The tags to assign to the VOD source.</p>
-    ///   - [`vod_source_name(impl Into<String>)`](crate::client::fluent_builders::CreateVodSource::vod_source_name) / [`set_vod_source_name(Option<String>)`](crate::client::fluent_builders::CreateVodSource::set_vod_source_name): <p>The identifier for the VOD source you are working on.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::CreateVodSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::CreateVodSource::set_source_location_name): <p>The name of the source location for this VOD source.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateVodSource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateVodSource::set_tags): <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    ///   - [`vod_source_name(impl Into<String>)`](crate::client::fluent_builders::CreateVodSource::vod_source_name) / [`set_vod_source_name(Option<String>)`](crate::client::fluent_builders::CreateVodSource::set_vod_source_name): <p>The name associated with the VOD source.&gt;</p>
     /// - On success, responds with [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::CreateVodSourceOutput::arn): <p>The ARN of the VOD source.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateVodSourceOutput::creation_time): <p>The timestamp that indicates when the VOD source was created.</p>
-    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::CreateVodSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateVodSourceOutput::last_modified_time): <p>The last modified time of the VOD source.</p>
-    ///   - [`source_location_name(Option<String>)`](crate::output::CreateVodSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateVodSourceOutput::tags): <p>The tags assigned to the VOD source.</p>
-    ///   - [`vod_source_name(Option<String>)`](crate::output::CreateVodSourceOutput::vod_source_name): <p>The name of the VOD source.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateVodSourceOutput::arn): <p>The ARN to assign to this VOD source.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateVodSourceOutput::creation_time): <p>The time the VOD source was created.</p>
+    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::CreateVodSourceOutput::http_package_configurations): <p>A list of HTTP package configuration parameters for this VOD source.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateVodSourceOutput::last_modified_time): <p>The time the VOD source was last modified.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::CreateVodSourceOutput::source_location_name): <p>The name to assign to the source location for this VOD source.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateVodSourceOutput::tags): <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    ///   - [`vod_source_name(Option<String>)`](crate::output::CreateVodSourceOutput::vod_source_name): <p>The name to assign to the VOD source.</p>
     /// - On failure, responds with [`SdkError<CreateVodSourceError>`](crate::error::CreateVodSourceError)
     pub fn create_vod_source(&self) -> fluent_builders::CreateVodSource {
         fluent_builders::CreateVodSource::new(self.handle.clone())
@@ -236,7 +236,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteChannel`](crate::client::fluent_builders::DeleteChannel) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::DeleteChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::DeleteChannel::set_channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::DeleteChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::DeleteChannel::set_channel_name): <p>The name of the channel.</p>
     /// - On success, responds with [`DeleteChannelOutput`](crate::output::DeleteChannelOutput)
 
     /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::error::DeleteChannelError)
@@ -246,7 +246,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteChannelPolicy`](crate::client::fluent_builders::DeleteChannelPolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelPolicy::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::DeleteChannelPolicy::set_channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelPolicy::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::DeleteChannelPolicy::set_channel_name): <p>The name of the channel associated with this channel policy.</p>
     /// - On success, responds with [`DeleteChannelPolicyOutput`](crate::output::DeleteChannelPolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteChannelPolicyError>`](crate::error::DeleteChannelPolicyError)
@@ -256,8 +256,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteLiveSource`](crate::client::fluent_builders::DeleteLiveSource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`live_source_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLiveSource::live_source_name) / [`set_live_source_name(Option<String>)`](crate::client::fluent_builders::DeleteLiveSource::set_live_source_name): <p>The identifier for the live source you are working on.</p>
-    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLiveSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::DeleteLiveSource::set_source_location_name): <p>The identifier for the source location you are working on.</p>
+    ///   - [`live_source_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLiveSource::live_source_name) / [`set_live_source_name(Option<String>)`](crate::client::fluent_builders::DeleteLiveSource::set_live_source_name): <p>The name of the live source.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLiveSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::DeleteLiveSource::set_source_location_name): <p>The name of the source location associated with this Live Source.</p>
     /// - On success, responds with [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteLiveSourceError>`](crate::error::DeleteLiveSourceError)
@@ -267,7 +267,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeletePlaybackConfiguration`](crate::client::fluent_builders::DeletePlaybackConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeletePlaybackConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeletePlaybackConfiguration::set_name): <p>The identifier for the playback configuration.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeletePlaybackConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeletePlaybackConfiguration::set_name): <p>The name of the playback configuration.</p>
     /// - On success, responds with [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<DeletePlaybackConfigurationError>`](crate::error::DeletePlaybackConfigurationError)
@@ -277,8 +277,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeletePrefetchSchedule`](crate::client::fluent_builders::DeletePrefetchSchedule) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeletePrefetchSchedule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeletePrefetchSchedule::set_name): <p>The identifier for the playback configuration.</p>
-    ///   - [`playback_configuration_name(impl Into<String>)`](crate::client::fluent_builders::DeletePrefetchSchedule::playback_configuration_name) / [`set_playback_configuration_name(Option<String>)`](crate::client::fluent_builders::DeletePrefetchSchedule::set_playback_configuration_name): <p>The name of the playback configuration.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeletePrefetchSchedule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeletePrefetchSchedule::set_name): <p>The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.</p>
+    ///   - [`playback_configuration_name(impl Into<String>)`](crate::client::fluent_builders::DeletePrefetchSchedule::playback_configuration_name) / [`set_playback_configuration_name(Option<String>)`](crate::client::fluent_builders::DeletePrefetchSchedule::set_playback_configuration_name): <p>The name of the playback configuration for this prefetch schedule.</p>
     /// - On success, responds with [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput)
 
     /// - On failure, responds with [`SdkError<DeletePrefetchScheduleError>`](crate::error::DeletePrefetchScheduleError)
@@ -288,8 +288,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteProgram`](crate::client::fluent_builders::DeleteProgram) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProgram::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::DeleteProgram::set_channel_name): <p>The identifier for the channel you are working on.</p>
-    ///   - [`program_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProgram::program_name) / [`set_program_name(Option<String>)`](crate::client::fluent_builders::DeleteProgram::set_program_name): <p>The identifier for the program you are working on.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProgram::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::DeleteProgram::set_channel_name): <p>The name of the channel.</p>
+    ///   - [`program_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProgram::program_name) / [`set_program_name(Option<String>)`](crate::client::fluent_builders::DeleteProgram::set_program_name): <p>The name of the program.</p>
     /// - On success, responds with [`DeleteProgramOutput`](crate::output::DeleteProgramOutput)
 
     /// - On failure, responds with [`SdkError<DeleteProgramError>`](crate::error::DeleteProgramError)
@@ -299,7 +299,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteSourceLocation`](crate::client::fluent_builders::DeleteSourceLocation) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSourceLocation::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::DeleteSourceLocation::set_source_location_name): <p>The identifier for the source location you are working on.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSourceLocation::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::DeleteSourceLocation::set_source_location_name): <p>The name of the source location.</p>
     /// - On success, responds with [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSourceLocationError>`](crate::error::DeleteSourceLocationError)
@@ -309,8 +309,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteVodSource`](crate::client::fluent_builders::DeleteVodSource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVodSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::DeleteVodSource::set_source_location_name): <p>The identifier for the source location you are working on.</p>
-    ///   - [`vod_source_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVodSource::vod_source_name) / [`set_vod_source_name(Option<String>)`](crate::client::fluent_builders::DeleteVodSource::set_vod_source_name): <p>The identifier for the VOD source you are working on.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVodSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::DeleteVodSource::set_source_location_name): <p>The name of the source location associated with this VOD Source.</p>
+    ///   - [`vod_source_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVodSource::vod_source_name) / [`set_vod_source_name(Option<String>)`](crate::client::fluent_builders::DeleteVodSource::set_vod_source_name): <p>The name of the VOD source.</p>
     /// - On success, responds with [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteVodSourceError>`](crate::error::DeleteVodSourceError)
@@ -320,7 +320,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeChannel`](crate::client::fluent_builders::DescribeChannel) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::DescribeChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::DescribeChannel::set_channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::DescribeChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::DescribeChannel::set_channel_name): <p>The name of the channel.</p>
     /// - On success, responds with [`DescribeChannelOutput`](crate::output::DescribeChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DescribeChannelOutput::arn): <p>The ARN of the channel.</p>
     ///   - [`channel_name(Option<String>)`](crate::output::DescribeChannelOutput::channel_name): <p>The name of the channel.</p>
@@ -330,7 +330,7 @@ impl Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeChannelOutput::last_modified_time): <p>The timestamp of when the channel was last modified.</p>
     ///   - [`outputs(Option<Vec<ResponseOutputItem>>)`](crate::output::DescribeChannelOutput::outputs): <p>The channel's output properties.</p>
     ///   - [`playback_mode(Option<String>)`](crate::output::DescribeChannelOutput::playback_mode): <p>The channel's playback mode.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeChannelOutput::tags): <p>The tags assigned to the channel.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeChannelOutput::tags): <p>The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     ///   - [`tier(Option<String>)`](crate::output::DescribeChannelOutput::tier): <p>The channel's tier.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::error::DescribeChannelError)
     pub fn describe_channel(&self) -> fluent_builders::DescribeChannel {
@@ -339,16 +339,16 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeLiveSource`](crate::client::fluent_builders::DescribeLiveSource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`live_source_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLiveSource::live_source_name) / [`set_live_source_name(Option<String>)`](crate::client::fluent_builders::DescribeLiveSource::set_live_source_name): <p>The identifier for the live source you are working on.</p>
-    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLiveSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::DescribeLiveSource::set_source_location_name): <p>The identifier for the source location you are working on.</p>
+    ///   - [`live_source_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLiveSource::live_source_name) / [`set_live_source_name(Option<String>)`](crate::client::fluent_builders::DescribeLiveSource::set_live_source_name): <p>The name of the live source.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLiveSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::DescribeLiveSource::set_source_location_name): <p>The name of the source location associated with this Live Source.</p>
     /// - On success, responds with [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DescribeLiveSourceOutput::arn): <p>The ARN of the live source.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLiveSourceOutput::creation_time): <p>The timestamp that indicates when the live source was created.</p>
     ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::DescribeLiveSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeLiveSourceOutput::last_modified_time): <p>The timestamp that indicates when the live source was modified.</p>
     ///   - [`live_source_name(Option<String>)`](crate::output::DescribeLiveSourceOutput::live_source_name): <p>The name of the live source.</p>
-    ///   - [`source_location_name(Option<String>)`](crate::output::DescribeLiveSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeLiveSourceOutput::tags): <p>The tags assigned to the live source.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::DescribeLiveSourceOutput::source_location_name): <p>The name of the source location associated with the live source.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeLiveSourceOutput::tags): <p>The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeLiveSourceError>`](crate::error::DescribeLiveSourceError)
     pub fn describe_live_source(&self) -> fluent_builders::DescribeLiveSource {
         fluent_builders::DescribeLiveSource::new(self.handle.clone())
@@ -356,8 +356,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeProgram`](crate::client::fluent_builders::DescribeProgram) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProgram::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::DescribeProgram::set_channel_name): <p>The identifier for the channel you are working on.</p>
-    ///   - [`program_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProgram::program_name) / [`set_program_name(Option<String>)`](crate::client::fluent_builders::DescribeProgram::set_program_name): <p>The identifier for the program you are working on.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProgram::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::DescribeProgram::set_channel_name): <p>The name of the channel associated with this Program.</p>
+    ///   - [`program_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProgram::program_name) / [`set_program_name(Option<String>)`](crate::client::fluent_builders::DescribeProgram::set_program_name): <p>The name of the program.</p>
     /// - On success, responds with [`DescribeProgramOutput`](crate::output::DescribeProgramOutput) with field(s):
     ///   - [`ad_breaks(Option<Vec<AdBreak>>)`](crate::output::DescribeProgramOutput::ad_breaks): <p>The ad break configuration settings.</p>
     ///   - [`arn(Option<String>)`](crate::output::DescribeProgramOutput::arn): <p>The ARN of the program.</p>
@@ -375,7 +375,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeSourceLocation`](crate::client::fluent_builders::DescribeSourceLocation) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::DescribeSourceLocation::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::DescribeSourceLocation::set_source_location_name): <p>The identifier for the source location you are working on.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::DescribeSourceLocation::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::DescribeSourceLocation::set_source_location_name): <p>The name of the source location.</p>
     /// - On success, responds with [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput) with field(s):
     ///   - [`access_configuration(Option<AccessConfiguration>)`](crate::output::DescribeSourceLocationOutput::access_configuration): <p>The access configuration for the source location.</p>
     ///   - [`arn(Option<String>)`](crate::output::DescribeSourceLocationOutput::arn): <p>The ARN of the source location.</p>
@@ -385,7 +385,7 @@ impl Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeSourceLocationOutput::last_modified_time): <p>The timestamp that indicates when the source location was last modified.</p>
     ///   - [`segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::output::DescribeSourceLocationOutput::segment_delivery_configurations): <p>A list of the segment delivery configurations associated with this resource.</p>
     ///   - [`source_location_name(Option<String>)`](crate::output::DescribeSourceLocationOutput::source_location_name): <p>The name of the source location.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeSourceLocationOutput::tags): <p>The tags assigned to the source location.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeSourceLocationOutput::tags): <p>The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeSourceLocationError>`](crate::error::DescribeSourceLocationError)
     pub fn describe_source_location(&self) -> fluent_builders::DescribeSourceLocation {
         fluent_builders::DescribeSourceLocation::new(self.handle.clone())
@@ -393,15 +393,15 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeVodSource`](crate::client::fluent_builders::DescribeVodSource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVodSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::DescribeVodSource::set_source_location_name): <p>The identifier for the source location you are working on.</p>
-    ///   - [`vod_source_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVodSource::vod_source_name) / [`set_vod_source_name(Option<String>)`](crate::client::fluent_builders::DescribeVodSource::set_vod_source_name): <p>The identifier for the VOD source you are working on.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVodSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::DescribeVodSource::set_source_location_name): <p>The name of the source location associated with this VOD Source.</p>
+    ///   - [`vod_source_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVodSource::vod_source_name) / [`set_vod_source_name(Option<String>)`](crate::client::fluent_builders::DescribeVodSource::set_vod_source_name): <p>The name of the VOD Source.</p>
     /// - On success, responds with [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DescribeVodSourceOutput::arn): <p>The ARN of the VOD source.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeVodSourceOutput::creation_time): <p>The timestamp that indicates when the VOD source was created.</p>
     ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::DescribeVodSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeVodSourceOutput::last_modified_time): <p>The last modified time of the VOD source.</p>
     ///   - [`source_location_name(Option<String>)`](crate::output::DescribeVodSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeVodSourceOutput::tags): <p>The tags assigned to the VOD source.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeVodSourceOutput::tags): <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     ///   - [`vod_source_name(Option<String>)`](crate::output::DescribeVodSourceOutput::vod_source_name): <p>The name of the VOD source.</p>
     /// - On failure, responds with [`SdkError<DescribeVodSourceError>`](crate::error::DescribeVodSourceError)
     pub fn describe_vod_source(&self) -> fluent_builders::DescribeVodSource {
@@ -410,9 +410,9 @@ impl Client {
     /// Constructs a fluent builder for the [`GetChannelPolicy`](crate::client::fluent_builders::GetChannelPolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::GetChannelPolicy::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::GetChannelPolicy::set_channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::GetChannelPolicy::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::GetChannelPolicy::set_channel_name): <p>The name of the channel associated with this Channel Policy.</p>
     /// - On success, responds with [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput) with field(s):
-    ///   - [`policy(Option<String>)`](crate::output::GetChannelPolicyOutput::policy): <p>The IAM policy for the channel.</p>
+    ///   - [`policy(Option<String>)`](crate::output::GetChannelPolicyOutput::policy): <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
     /// - On failure, responds with [`SdkError<GetChannelPolicyError>`](crate::error::GetChannelPolicyError)
     pub fn get_channel_policy(&self) -> fluent_builders::GetChannelPolicy {
         fluent_builders::GetChannelPolicy::new(self.handle.clone())
@@ -421,13 +421,13 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetChannelSchedule::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::GetChannelSchedule::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::GetChannelSchedule::set_channel_name): <p>The identifier for the channel you are working on.</p>
-    ///   - [`duration_minutes(impl Into<String>)`](crate::client::fluent_builders::GetChannelSchedule::duration_minutes) / [`set_duration_minutes(Option<String>)`](crate::client::fluent_builders::GetChannelSchedule::set_duration_minutes): <p>The schedule duration in minutes. The maximum duration is 4320 minutes (three days).</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetChannelSchedule::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetChannelSchedule::set_max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetChannelSchedule::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetChannelSchedule::set_next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::GetChannelSchedule::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::GetChannelSchedule::set_channel_name): <p>The name of the channel associated with this Channel Schedule.</p>
+    ///   - [`duration_minutes(impl Into<String>)`](crate::client::fluent_builders::GetChannelSchedule::duration_minutes) / [`set_duration_minutes(Option<String>)`](crate::client::fluent_builders::GetChannelSchedule::set_duration_minutes): <p>The duration in minutes of the channel schedule.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetChannelSchedule::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetChannelSchedule::set_max_results): <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetChannelSchedule::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetChannelSchedule::set_next_token): <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>  <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>  <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>  <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
     /// - On success, responds with [`GetChannelScheduleOutput`](crate::output::GetChannelScheduleOutput) with field(s):
     ///   - [`items(Option<Vec<ScheduleEntry>>)`](crate::output::GetChannelScheduleOutput::items): <p>A list of schedule entries for the channel.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetChannelScheduleOutput::next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetChannelScheduleOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetChannelScheduleError>`](crate::error::GetChannelScheduleError)
     pub fn get_channel_schedule(&self) -> fluent_builders::GetChannelSchedule {
         fluent_builders::GetChannelSchedule::new(self.handle.clone())
@@ -453,7 +453,7 @@ impl Client {
     ///   - [`playback_endpoint_prefix(Option<String>)`](crate::output::GetPlaybackConfigurationOutput::playback_endpoint_prefix): <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.</p>
     ///   - [`session_initialization_endpoint_prefix(Option<String>)`](crate::output::GetPlaybackConfigurationOutput::session_initialization_endpoint_prefix): <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
     ///   - [`slate_ad_url(Option<String>)`](crate::output::GetPlaybackConfigurationOutput::slate_ad_url): <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetPlaybackConfigurationOutput::tags): <p>The tags assigned to the playback configuration.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetPlaybackConfigurationOutput::tags): <p>The tags assigned to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     ///   - [`transcode_profile_name(Option<String>)`](crate::output::GetPlaybackConfigurationOutput::transcode_profile_name): <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
     ///   - [`video_content_source_url(Option<String>)`](crate::output::GetPlaybackConfigurationOutput::video_content_source_url): <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
     /// - On failure, responds with [`SdkError<GetPlaybackConfigurationError>`](crate::error::GetPlaybackConfigurationError)
@@ -463,8 +463,8 @@ impl Client {
     /// Constructs a fluent builder for the [`GetPrefetchSchedule`](crate::client::fluent_builders::GetPrefetchSchedule) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetPrefetchSchedule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetPrefetchSchedule::set_name): <p>The identifier for the playback configuration.</p>
-    ///   - [`playback_configuration_name(impl Into<String>)`](crate::client::fluent_builders::GetPrefetchSchedule::playback_configuration_name) / [`set_playback_configuration_name(Option<String>)`](crate::client::fluent_builders::GetPrefetchSchedule::set_playback_configuration_name): <p>The name of the playback configuration.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetPrefetchSchedule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetPrefetchSchedule::set_name): <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    ///   - [`playback_configuration_name(impl Into<String>)`](crate::client::fluent_builders::GetPrefetchSchedule::playback_configuration_name) / [`set_playback_configuration_name(Option<String>)`](crate::client::fluent_builders::GetPrefetchSchedule::set_playback_configuration_name): <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
     /// - On success, responds with [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::GetPrefetchScheduleOutput::arn): <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
     ///   - [`consumption(Option<PrefetchConsumption>)`](crate::output::GetPrefetchScheduleOutput::consumption): <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
@@ -480,12 +480,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAlerts::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAlerts::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListAlerts::set_max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAlerts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAlerts::set_next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAlerts::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListAlerts::set_max_results): <p>The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAlerts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAlerts::set_next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListAlerts::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListAlerts::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
     /// - On success, responds with [`ListAlertsOutput`](crate::output::ListAlertsOutput) with field(s):
     ///   - [`items(Option<Vec<Alert>>)`](crate::output::ListAlertsOutput::items): <p>A list of alerts that are associated with this resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAlertsOutput::next_token): <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAlertsOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListAlertsError>`](crate::error::ListAlertsError)
     pub fn list_alerts(&self) -> fluent_builders::ListAlerts {
         fluent_builders::ListAlerts::new(self.handle.clone())
@@ -494,8 +494,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannels::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListChannels::set_max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannels::set_next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannels::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListChannels::set_max_results): <p>The maximum number of channels that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channels, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannels::set_next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On success, responds with [`ListChannelsOutput`](crate::output::ListChannelsOutput) with field(s):
     ///   - [`items(Option<Vec<Channel>>)`](crate::output::ListChannelsOutput::items): <p>A list of channels that are associated with this account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListChannelsOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
@@ -507,12 +507,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLiveSources::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLiveSources::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListLiveSources::set_max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLiveSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLiveSources::set_next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::ListLiveSources::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::ListLiveSources::set_source_location_name): <p>The identifier for the source location you are working on.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLiveSources::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListLiveSources::set_max_results): <p>The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLiveSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLiveSources::set_next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::ListLiveSources::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::ListLiveSources::set_source_location_name): <p>The name of the source location associated with this Live Sources list.</p>
     /// - On success, responds with [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput) with field(s):
     ///   - [`items(Option<Vec<LiveSource>>)`](crate::output::ListLiveSourcesOutput::items): <p>Lists the live sources.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListLiveSourcesOutput::next_token): <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLiveSourcesOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListLiveSourcesError>`](crate::error::ListLiveSourcesError)
     pub fn list_live_sources(&self) -> fluent_builders::ListLiveSources {
         fluent_builders::ListLiveSources::new(self.handle.clone())
@@ -521,8 +521,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPlaybackConfigurations::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPlaybackConfigurations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPlaybackConfigurations::set_max_results): <p>Maximum number of records to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPlaybackConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPlaybackConfigurations::set_next_token): <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPlaybackConfigurations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPlaybackConfigurations::set_max_results): <p>The maximum number of playback configurations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> playback configurations, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPlaybackConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPlaybackConfigurations::set_next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On success, responds with [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput) with field(s):
     ///   - [`items(Option<Vec<PlaybackConfiguration>>)`](crate::output::ListPlaybackConfigurationsOutput::items): <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPlaybackConfigurationsOutput::next_token): <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
@@ -534,13 +534,13 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPrefetchSchedules::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPrefetchSchedules::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPrefetchSchedules::set_max_results): <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPrefetchSchedules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPrefetchSchedules::set_next_token): <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>  <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>  <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>  <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
-    ///   - [`playback_configuration_name(impl Into<String>)`](crate::client::fluent_builders::ListPrefetchSchedules::playback_configuration_name) / [`set_playback_configuration_name(Option<String>)`](crate::client::fluent_builders::ListPrefetchSchedules::set_playback_configuration_name): <p>The name of the playback configuration.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPrefetchSchedules::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPrefetchSchedules::set_max_results): <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPrefetchSchedules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPrefetchSchedules::set_next_token): <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>  <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>  <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>  <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
+    ///   - [`playback_configuration_name(impl Into<String>)`](crate::client::fluent_builders::ListPrefetchSchedules::playback_configuration_name) / [`set_playback_configuration_name(Option<String>)`](crate::client::fluent_builders::ListPrefetchSchedules::set_playback_configuration_name): <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
     ///   - [`stream_id(impl Into<String>)`](crate::client::fluent_builders::ListPrefetchSchedules::stream_id) / [`set_stream_id(Option<String>)`](crate::client::fluent_builders::ListPrefetchSchedules::set_stream_id): <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
     /// - On success, responds with [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput) with field(s):
-    ///   - [`items(Option<Vec<PrefetchSchedule>>)`](crate::output::ListPrefetchSchedulesOutput::items): <p>Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListPrefetchSchedulesOutput::next_token): <p>The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.</p>
+    ///   - [`items(Option<Vec<PrefetchSchedule>>)`](crate::output::ListPrefetchSchedulesOutput::items): <p>Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPrefetchSchedulesOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListPrefetchSchedulesError>`](crate::error::ListPrefetchSchedulesError)
     pub fn list_prefetch_schedules(&self) -> fluent_builders::ListPrefetchSchedules {
         fluent_builders::ListPrefetchSchedules::new(self.handle.clone())
@@ -549,11 +549,11 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSourceLocations::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSourceLocations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListSourceLocations::set_max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSourceLocations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSourceLocations::set_next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSourceLocations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListSourceLocations::set_max_results): <p> The maximum number of source locations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSourceLocations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSourceLocations::set_next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On success, responds with [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput) with field(s):
     ///   - [`items(Option<Vec<SourceLocation>>)`](crate::output::ListSourceLocationsOutput::items): <p>A list of source locations.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSourceLocationsOutput::next_token): <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSourceLocationsOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListSourceLocationsError>`](crate::error::ListSourceLocationsError)
     pub fn list_source_locations(&self) -> fluent_builders::ListSourceLocations {
         fluent_builders::ListSourceLocations::new(self.handle.clone())
@@ -561,9 +561,9 @@ impl Client {
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) associated with this resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A comma-separated list of tag key:value pairs.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags associated with this resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
@@ -572,12 +572,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVodSources::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVodSources::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListVodSources::set_max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVodSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVodSources::set_next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::ListVodSources::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::ListVodSources::set_source_location_name): <p>The identifier for the source location you are working on.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVodSources::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListVodSources::set_max_results): <p> The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVodSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVodSources::set_next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::ListVodSources::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::ListVodSources::set_source_location_name): <p>The name of the source location associated with this VOD Source list.</p>
     /// - On success, responds with [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput) with field(s):
     ///   - [`items(Option<Vec<VodSource>>)`](crate::output::ListVodSourcesOutput::items): <p>Lists the VOD sources.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListVodSourcesOutput::next_token): <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVodSourcesOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListVodSourcesError>`](crate::error::ListVodSourcesError)
     pub fn list_vod_sources(&self) -> fluent_builders::ListVodSources {
         fluent_builders::ListVodSources::new(self.handle.clone())
@@ -585,7 +585,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutChannelPolicy`](crate::client::fluent_builders::PutChannelPolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::PutChannelPolicy::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::PutChannelPolicy::set_channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::PutChannelPolicy::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::PutChannelPolicy::set_channel_name): <p>The channel name associated with this Channel Policy.</p>
     ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutChannelPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutChannelPolicy::set_policy): <p>Adds an IAM role that determines the permissions of your channel.</p>
     /// - On success, responds with [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput)
 
@@ -607,11 +607,11 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PutPlaybackConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PutPlaybackConfiguration::set_name): <p>The identifier for the playback configuration.</p>
     ///   - [`personalization_threshold_seconds(i32)`](crate::client::fluent_builders::PutPlaybackConfiguration::personalization_threshold_seconds) / [`set_personalization_threshold_seconds(i32)`](crate::client::fluent_builders::PutPlaybackConfiguration::set_personalization_threshold_seconds): <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
     ///   - [`slate_ad_url(impl Into<String>)`](crate::client::fluent_builders::PutPlaybackConfiguration::slate_ad_url) / [`set_slate_ad_url(Option<String>)`](crate::client::fluent_builders::PutPlaybackConfiguration::set_slate_ad_url): <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::PutPlaybackConfiguration::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PutPlaybackConfiguration::set_tags): <p>The tags to assign to the playback configuration.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::PutPlaybackConfiguration::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PutPlaybackConfiguration::set_tags): <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     ///   - [`transcode_profile_name(impl Into<String>)`](crate::client::fluent_builders::PutPlaybackConfiguration::transcode_profile_name) / [`set_transcode_profile_name(Option<String>)`](crate::client::fluent_builders::PutPlaybackConfiguration::set_transcode_profile_name): <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
     ///   - [`video_content_source_url(impl Into<String>)`](crate::client::fluent_builders::PutPlaybackConfiguration::video_content_source_url) / [`set_video_content_source_url(Option<String>)`](crate::client::fluent_builders::PutPlaybackConfiguration::set_video_content_source_url): <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
     /// - On success, responds with [`PutPlaybackConfigurationOutput`](crate::output::PutPlaybackConfigurationOutput) with field(s):
-    ///   - [`ad_decision_server_url(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::ad_decision_server_url): <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+    ///   - [`ad_decision_server_url(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::ad_decision_server_url): <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
     ///   - [`avail_suppression(Option<AvailSuppression>)`](crate::output::PutPlaybackConfigurationOutput::avail_suppression): <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
     ///   - [`bumper(Option<Bumper>)`](crate::output::PutPlaybackConfigurationOutput::bumper): <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
     ///   - [`cdn_configuration(Option<CdnConfiguration>)`](crate::output::PutPlaybackConfigurationOutput::cdn_configuration): <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
@@ -623,11 +623,11 @@ impl Client {
     ///   - [`manifest_processing_rules(Option<ManifestProcessingRules>)`](crate::output::PutPlaybackConfigurationOutput::manifest_processing_rules): <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
     ///   - [`name(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::name): <p>The identifier for the playback configuration.</p>
     ///   - [`personalization_threshold_seconds(i32)`](crate::output::PutPlaybackConfigurationOutput::personalization_threshold_seconds): <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
-    ///   - [`playback_configuration_arn(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::playback_configuration_arn): <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
-    ///   - [`playback_endpoint_prefix(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::playback_endpoint_prefix): <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.</p>
-    ///   - [`session_initialization_endpoint_prefix(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::session_initialization_endpoint_prefix): <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
-    ///   - [`slate_ad_url(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::slate_ad_url): <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::PutPlaybackConfigurationOutput::tags): <p>The tags assigned to the playback configuration.</p>
+    ///   - [`playback_configuration_arn(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::playback_configuration_arn): <p>The Amazon Resource Name (ARN) associated with the playback configuration.</p>
+    ///   - [`playback_endpoint_prefix(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::playback_endpoint_prefix): <p>The playback endpoint prefix associated with the playback configuration.</p>
+    ///   - [`session_initialization_endpoint_prefix(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::session_initialization_endpoint_prefix): <p>The session initialization endpoint prefix associated with the playback configuration.</p>
+    ///   - [`slate_ad_url(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::slate_ad_url): <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::PutPlaybackConfigurationOutput::tags): <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     ///   - [`transcode_profile_name(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::transcode_profile_name): <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
     ///   - [`video_content_source_url(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::video_content_source_url): <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
     /// - On failure, responds with [`SdkError<PutPlaybackConfigurationError>`](crate::error::PutPlaybackConfigurationError)
@@ -637,7 +637,7 @@ impl Client {
     /// Constructs a fluent builder for the [`StartChannel`](crate::client::fluent_builders::StartChannel) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::StartChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::StartChannel::set_channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::StartChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::StartChannel::set_channel_name): <p>The name of the channel.</p>
     /// - On success, responds with [`StartChannelOutput`](crate::output::StartChannelOutput)
 
     /// - On failure, responds with [`SdkError<StartChannelError>`](crate::error::StartChannelError)
@@ -647,7 +647,7 @@ impl Client {
     /// Constructs a fluent builder for the [`StopChannel`](crate::client::fluent_builders::StopChannel) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::StopChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::StopChannel::set_channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::StopChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::StopChannel::set_channel_name): <p>The name of the channel.</p>
     /// - On success, responds with [`StopChannelOutput`](crate::output::StopChannelOutput)
 
     /// - On failure, responds with [`SdkError<StopChannelError>`](crate::error::StopChannelError)
@@ -657,8 +657,8 @@ impl Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A comma-separated list of tag key:value pairs.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) associated with the resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to assign to the resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -668,8 +668,8 @@ impl Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to untag.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys associated with the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -679,20 +679,20 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateChannel`](crate::client::fluent_builders::UpdateChannel) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_channel_name): <p>The identifier for the channel you are working on.</p>
-    ///   - [`filler_slate(SlateSource)`](crate::client::fluent_builders::UpdateChannel::filler_slate) / [`set_filler_slate(Option<SlateSource>)`](crate::client::fluent_builders::UpdateChannel::set_filler_slate): <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_channel_name): <p>The name of the channel.</p>
+    ///   - [`filler_slate(SlateSource)`](crate::client::fluent_builders::UpdateChannel::filler_slate) / [`set_filler_slate(Option<SlateSource>)`](crate::client::fluent_builders::UpdateChannel::set_filler_slate): <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     ///   - [`outputs(Vec<RequestOutputItem>)`](crate::client::fluent_builders::UpdateChannel::outputs) / [`set_outputs(Option<Vec<RequestOutputItem>>)`](crate::client::fluent_builders::UpdateChannel::set_outputs): <p>The channel's output properties.</p>
     /// - On success, responds with [`UpdateChannelOutput`](crate::output::UpdateChannelOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::UpdateChannelOutput::arn): <p>The ARN of the channel.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateChannelOutput::arn): <p>The Amazon Resource Name (ARN) associated with the channel.</p>
     ///   - [`channel_name(Option<String>)`](crate::output::UpdateChannelOutput::channel_name): <p>The name of the channel.</p>
-    ///   - [`channel_state(Option<ChannelState>)`](crate::output::UpdateChannelOutput::channel_state): <p>Indicates whether the channel is in a running state or not.</p>
+    ///   - [`channel_state(Option<ChannelState>)`](crate::output::UpdateChannelOutput::channel_state): <p>Returns the state whether the channel is running or not.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateChannelOutput::creation_time): <p>The timestamp of when the channel was created.</p>
-    ///   - [`filler_slate(Option<SlateSource>)`](crate::output::UpdateChannelOutput::filler_slate): <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateChannelOutput::last_modified_time): <p>The timestamp of when the channel was last modified.</p>
+    ///   - [`filler_slate(Option<SlateSource>)`](crate::output::UpdateChannelOutput::filler_slate): <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateChannelOutput::last_modified_time): <p>The timestamp that indicates when the channel was last modified.</p>
     ///   - [`outputs(Option<Vec<ResponseOutputItem>>)`](crate::output::UpdateChannelOutput::outputs): <p>The channel's output properties.</p>
-    ///   - [`playback_mode(Option<String>)`](crate::output::UpdateChannelOutput::playback_mode): <p>The channel's playback mode.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateChannelOutput::tags): <p>The tags assigned to the channel.</p>
-    ///   - [`tier(Option<String>)`](crate::output::UpdateChannelOutput::tier): <p>The channel's tier.</p>
+    ///   - [`playback_mode(Option<String>)`](crate::output::UpdateChannelOutput::playback_mode): <p>The type of playback mode for this channel.</p>  <p> <code>LINEAR</code> - Programs play back-to-back only once.</p>  <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateChannelOutput::tags): <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    ///   - [`tier(Option<String>)`](crate::output::UpdateChannelOutput::tier): <p>The tier associated with this Channel.</p>
     /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::error::UpdateChannelError)
     pub fn update_channel(&self) -> fluent_builders::UpdateChannel {
         fluent_builders::UpdateChannel::new(self.handle.clone())
@@ -701,16 +701,16 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`http_package_configurations(Vec<HttpPackageConfiguration>)`](crate::client::fluent_builders::UpdateLiveSource::http_package_configurations) / [`set_http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::client::fluent_builders::UpdateLiveSource::set_http_package_configurations): <p>A list of HTTP package configurations for the live source on this account.</p>
-    ///   - [`live_source_name(impl Into<String>)`](crate::client::fluent_builders::UpdateLiveSource::live_source_name) / [`set_live_source_name(Option<String>)`](crate::client::fluent_builders::UpdateLiveSource::set_live_source_name): <p>The identifier for the live source you are working on.</p>
-    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::UpdateLiveSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::UpdateLiveSource::set_source_location_name): <p>The identifier for the source location you are working on.</p>
+    ///   - [`live_source_name(impl Into<String>)`](crate::client::fluent_builders::UpdateLiveSource::live_source_name) / [`set_live_source_name(Option<String>)`](crate::client::fluent_builders::UpdateLiveSource::set_live_source_name): <p>The name of the live source.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::UpdateLiveSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::UpdateLiveSource::set_source_location_name): <p>The name of the source location associated with this Live Source.</p>
     /// - On success, responds with [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::UpdateLiveSourceOutput::arn): <p>The ARN of the live source.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateLiveSourceOutput::arn): <p>The Amazon Resource Name (ARN) associated with this live source.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateLiveSourceOutput::creation_time): <p>The timestamp that indicates when the live source was created.</p>
-    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::UpdateLiveSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateLiveSourceOutput::last_modified_time): <p>The timestamp that indicates when the live source was modified.</p>
+    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::UpdateLiveSourceOutput::http_package_configurations): <p>A list of HTTP package configurations for the live source on this account.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateLiveSourceOutput::last_modified_time): <p>The timestamp that indicates when the live source was last modified.</p>
     ///   - [`live_source_name(Option<String>)`](crate::output::UpdateLiveSourceOutput::live_source_name): <p>The name of the live source.</p>
-    ///   - [`source_location_name(Option<String>)`](crate::output::UpdateLiveSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateLiveSourceOutput::tags): <p>The tags assigned to the live source.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::UpdateLiveSourceOutput::source_location_name): <p>The name of the source location associated with the live source.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateLiveSourceOutput::tags): <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     /// - On failure, responds with [`SdkError<UpdateLiveSourceError>`](crate::error::UpdateLiveSourceError)
     pub fn update_live_source(&self) -> fluent_builders::UpdateLiveSource {
         fluent_builders::UpdateLiveSource::new(self.handle.clone())
@@ -722,17 +722,17 @@ impl Client {
     ///   - [`default_segment_delivery_configuration(DefaultSegmentDeliveryConfiguration)`](crate::client::fluent_builders::UpdateSourceLocation::default_segment_delivery_configuration) / [`set_default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::client::fluent_builders::UpdateSourceLocation::set_default_segment_delivery_configuration): <p>The optional configuration for the host server that serves segments.</p>
     ///   - [`http_configuration(HttpConfiguration)`](crate::client::fluent_builders::UpdateSourceLocation::http_configuration) / [`set_http_configuration(Option<HttpConfiguration>)`](crate::client::fluent_builders::UpdateSourceLocation::set_http_configuration): <p>The HTTP configuration for the source location.</p>
     ///   - [`segment_delivery_configurations(Vec<SegmentDeliveryConfiguration>)`](crate::client::fluent_builders::UpdateSourceLocation::segment_delivery_configurations) / [`set_segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::client::fluent_builders::UpdateSourceLocation::set_segment_delivery_configurations): <p>A list of the segment delivery configurations associated with this resource.</p>
-    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSourceLocation::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::UpdateSourceLocation::set_source_location_name): <p>The identifier for the source location you are working on.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSourceLocation::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::UpdateSourceLocation::set_source_location_name): <p>The name of the source location.</p>
     /// - On success, responds with [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput) with field(s):
-    ///   - [`access_configuration(Option<AccessConfiguration>)`](crate::output::UpdateSourceLocationOutput::access_configuration): <p>The access configuration for the source location.</p>
-    ///   - [`arn(Option<String>)`](crate::output::UpdateSourceLocationOutput::arn): <p>The ARN of the source location.</p>
+    ///   - [`access_configuration(Option<AccessConfiguration>)`](crate::output::UpdateSourceLocationOutput::access_configuration): <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateSourceLocationOutput::arn): <p>The Amazon Resource Name (ARN) associated with the source location.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateSourceLocationOutput::creation_time): <p>The timestamp that indicates when the source location was created.</p>
-    ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::output::UpdateSourceLocationOutput::default_segment_delivery_configuration): <p>The default segment delivery configuration settings.</p>
-    ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::output::UpdateSourceLocationOutput::http_configuration): <p>The HTTP package configuration settings for the source location.</p>
+    ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::output::UpdateSourceLocationOutput::default_segment_delivery_configuration): <p>The optional configuration for the host server that serves segments.</p>
+    ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::output::UpdateSourceLocationOutput::http_configuration): <p>The HTTP configuration for the source location.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateSourceLocationOutput::last_modified_time): <p>The timestamp that indicates when the source location was last modified.</p>
-    ///   - [`segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::output::UpdateSourceLocationOutput::segment_delivery_configurations): <p>A list of the segment delivery configurations associated with this resource.</p>
+    ///   - [`segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::output::UpdateSourceLocationOutput::segment_delivery_configurations): <p>The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
     ///   - [`source_location_name(Option<String>)`](crate::output::UpdateSourceLocationOutput::source_location_name): <p>The name of the source location.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateSourceLocationOutput::tags): <p>The tags assigned to the source location.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateSourceLocationOutput::tags): <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     /// - On failure, responds with [`SdkError<UpdateSourceLocationError>`](crate::error::UpdateSourceLocationError)
     pub fn update_source_location(&self) -> fluent_builders::UpdateSourceLocation {
         fluent_builders::UpdateSourceLocation::new(self.handle.clone())
@@ -741,15 +741,15 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`http_package_configurations(Vec<HttpPackageConfiguration>)`](crate::client::fluent_builders::UpdateVodSource::http_package_configurations) / [`set_http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::client::fluent_builders::UpdateVodSource::set_http_package_configurations): <p>A list of HTTP package configurations for the VOD source on this account.</p>
-    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVodSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::UpdateVodSource::set_source_location_name): <p>The identifier for the source location you are working on.</p>
-    ///   - [`vod_source_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVodSource::vod_source_name) / [`set_vod_source_name(Option<String>)`](crate::client::fluent_builders::UpdateVodSource::set_vod_source_name): <p>The identifier for the VOD source you are working on.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVodSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::UpdateVodSource::set_source_location_name): <p>The name of the source location associated with this VOD Source.</p>
+    ///   - [`vod_source_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVodSource::vod_source_name) / [`set_vod_source_name(Option<String>)`](crate::client::fluent_builders::UpdateVodSource::set_vod_source_name): <p>The name of the VOD source.</p>
     /// - On success, responds with [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::UpdateVodSourceOutput::arn): <p>The ARN of the VOD source.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateVodSourceOutput::arn): <p>The Amazon Resource Name (ARN) associated with the VOD source.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateVodSourceOutput::creation_time): <p>The timestamp that indicates when the VOD source was created.</p>
-    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::UpdateVodSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateVodSourceOutput::last_modified_time): <p>The last modified time of the VOD source.</p>
+    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::UpdateVodSourceOutput::http_package_configurations): <p>A list of HTTP package configurations for the VOD source on this account.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateVodSourceOutput::last_modified_time): <p>The timestamp that indicates when the VOD source was last modified.</p>
     ///   - [`source_location_name(Option<String>)`](crate::output::UpdateVodSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateVodSourceOutput::tags): <p>The tags assigned to the VOD source.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateVodSourceOutput::tags): <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     ///   - [`vod_source_name(Option<String>)`](crate::output::UpdateVodSourceOutput::vod_source_name): <p>The name of the VOD source.</p>
     /// - On failure, responds with [`SdkError<UpdateVodSourceError>`](crate::error::UpdateVodSourceError)
     pub fn update_vod_source(&self) -> fluent_builders::UpdateVodSource {
@@ -765,7 +765,7 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `ConfigureLogsForPlaybackConfiguration`.
     ///
-    /// <p>Configures Amazon CloudWatch log settings for a playback configuration.</p>
+    /// <p>Amazon CloudWatch log settings for a playback configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfigureLogsForPlaybackConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -829,14 +829,14 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
-        /// <p>Valid values: 0 - 100</p>
+        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+        /// <p>Valid values: <code>0</code> - <code>100</code> </p>
         pub fn percent_enabled(mut self, input: i32) -> Self {
             self.inner = self.inner.percent_enabled(input);
             self
         }
-        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
-        /// <p>Valid values: 0 - 100</p>
+        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+        /// <p>Valid values: <code>0</code> - <code>100</code> </p>
         pub fn set_percent_enabled(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_percent_enabled(input);
             self
@@ -860,7 +860,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateChannel`.
     ///
-    /// <p>Creates a channel.</p>
+    /// <p>Creates a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel {
         handle: std::sync::Arc<super::Handle>,
@@ -920,22 +920,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
         pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
             self.inner = self.inner.filler_slate(input);
             self
         }
-        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
         pub fn set_filler_slate(
             mut self,
             input: std::option::Option<crate::model::SlateSource>,
@@ -961,15 +961,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of playback mode to use for this channel.</p>
-        /// <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>
-        /// <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+        /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
+        /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
         pub fn playback_mode(mut self, input: crate::model::PlaybackMode) -> Self {
             self.inner = self.inner.playback_mode(input);
             self
         }
         /// <p>The type of playback mode to use for this channel.</p>
-        /// <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>
-        /// <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+        /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
+        /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
         pub fn set_playback_mode(
             mut self,
             input: std::option::Option<crate::model::PlaybackMode>,
@@ -981,7 +981,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the channel.</p>
+        /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -990,7 +990,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags to assign to the channel.</p>
+        /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1013,7 +1013,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateLiveSource`.
     ///
-    /// <p>Creates name for a specific live source in a source location.</p>
+    /// <p>The live source configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLiveSource {
         handle: std::sync::Arc<super::Handle>,
@@ -1093,12 +1093,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_http_package_configurations(input);
             self
         }
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.live_source_name(input.into());
             self
         }
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn set_live_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1106,12 +1106,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_live_source_name(input);
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_location_name(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1123,7 +1123,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the live source.</p>
+        /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1132,7 +1132,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags to assign to the live source.</p>
+        /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1145,7 +1145,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePrefetchSchedule`.
     ///
-    /// <p>Creates a new prefetch schedule for the specified playback configuration.</p>
+    /// <p>Creates a prefetch schedule for a playback configuration. A prefetch schedule allows you to tell MediaTailor to fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePrefetchSchedule {
         handle: std::sync::Arc<super::Handle>,
@@ -1218,17 +1218,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_consumption(input);
             self
         }
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name to assign to the schedule request.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name to assign to the schedule request.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>The name to assign to the playback configuration.</p>
         pub fn playback_configuration_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -1236,7 +1236,7 @@ pub mod fluent_builders {
             self.inner = self.inner.playback_configuration_name(input.into());
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>The name to assign to the playback configuration.</p>
         pub fn set_playback_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1257,12 +1257,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_retrieval(input);
             self
         }
-        /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
+        /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.stream_id(input.into());
             self
         }
-        /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
+        /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_id(input);
             self
@@ -1270,7 +1270,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProgram`.
     ///
-    /// <p>Creates a program.</p>
+    /// <p>Creates a program within a channel. For information about programs, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working with programs</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProgram {
         handle: std::sync::Arc<super::Handle>,
@@ -1347,12 +1347,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ad_breaks(input);
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel for this Program.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel for this Program.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
@@ -1370,12 +1370,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_live_source_name(input);
             self
         }
-        /// <p>The identifier for the program you are working on.</p>
+        /// <p>The name of the Program.</p>
         pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.program_name(input.into());
             self
         }
-        /// <p>The identifier for the program you are working on.</p>
+        /// <p>The name of the Program.</p>
         pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_program_name(input);
             self
@@ -1425,7 +1425,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSourceLocation`.
     ///
-    /// <p>Creates a source location on a specific channel.</p>
+    /// <p>Creates a source location. A source location is a container for sources. For more information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source locations</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSourceLocation {
         handle: std::sync::Arc<super::Handle>,
@@ -1547,12 +1547,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_segment_delivery_configurations(input);
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name associated with the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_location_name(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name associated with the source location.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1564,7 +1564,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the source location.</p>
+        /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1573,7 +1573,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags to assign to the source location.</p>
+        /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1586,7 +1586,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateVodSource`.
     ///
-    /// <p>Creates name for a specific VOD source in a source location.</p>
+    /// <p>The VOD source configuration parameters.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVodSource {
         handle: std::sync::Arc<super::Handle>,
@@ -1666,12 +1666,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_http_package_configurations(input);
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location for this VOD source.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_location_name(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location for this VOD source.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1683,7 +1683,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the VOD source.</p>
+        /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1692,7 +1692,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags to assign to the VOD source.</p>
+        /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1702,12 +1702,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name associated with the VOD source.&gt;</p>
         pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vod_source_name(input.into());
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name associated with the VOD source.&gt;</p>
         pub fn set_vod_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1718,7 +1718,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannel`.
     ///
-    /// <p>Deletes a channel. You must stop the channel before it can be deleted.</p>
+    /// <p>Deletes a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannel {
         handle: std::sync::Arc<super::Handle>,
@@ -1778,12 +1778,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
@@ -1791,7 +1791,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelPolicy`.
     ///
-    /// <p>Deletes a channel's IAM policy.</p>
+    /// <p>The channel policy to delete.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -1851,12 +1851,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this channel policy.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this channel policy.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
@@ -1864,7 +1864,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteLiveSource`.
     ///
-    /// <p>Deletes a specific live source in a specific source location.</p>
+    /// <p>The live source to delete.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLiveSource {
         handle: std::sync::Arc<super::Handle>,
@@ -1924,12 +1924,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.live_source_name(input.into());
             self
         }
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn set_live_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1937,12 +1937,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_live_source_name(input);
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Source.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_location_name(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Source.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1953,7 +1953,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePlaybackConfiguration`.
     ///
-    /// <p>Deletes the playback configuration for the specified name.</p>
+    /// <p>Deletes a playback configuration. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePlaybackConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -2013,12 +2013,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name of the playback configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name of the playback configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -2026,7 +2026,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePrefetchSchedule`.
     ///
-    /// <p>Deletes a prefetch schedule for a specific playback configuration. If you call DeletePrefetchSchedule on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
+    /// <p>Deletes a prefetch schedule for a specific playback configuration. If you call <code>DeletePrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code. For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePrefetchSchedule {
         handle: std::sync::Arc<super::Handle>,
@@ -2086,17 +2086,17 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>The name of the playback configuration for this prefetch schedule.</p>
         pub fn playback_configuration_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -2104,7 +2104,7 @@ pub mod fluent_builders {
             self.inner = self.inner.playback_configuration_name(input.into());
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>The name of the playback configuration for this prefetch schedule.</p>
         pub fn set_playback_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2115,7 +2115,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteProgram`.
     ///
-    /// <p>Deletes a specific program on a specific channel.</p>
+    /// <p>Deletes a program within a channel. For information about programs, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working with programs</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProgram {
         handle: std::sync::Arc<super::Handle>,
@@ -2175,22 +2175,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>The identifier for the program you are working on.</p>
+        /// <p>The name of the program.</p>
         pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.program_name(input.into());
             self
         }
-        /// <p>The identifier for the program you are working on.</p>
+        /// <p>The name of the program.</p>
         pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_program_name(input);
             self
@@ -2198,7 +2198,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSourceLocation`.
     ///
-    /// <p>Deletes a source location on a specific channel.</p>
+    /// <p>Deletes a source location. A source location is a container for sources. For more information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source locations</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSourceLocation {
         handle: std::sync::Arc<super::Handle>,
@@ -2258,12 +2258,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_location_name(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2274,7 +2274,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteVodSource`.
     ///
-    /// <p>Deletes a specific VOD source in a specific source location.</p>
+    /// <p>The video on demand (VOD) source to delete.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVodSource {
         handle: std::sync::Arc<super::Handle>,
@@ -2334,12 +2334,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_location_name(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2347,12 +2347,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_location_name(input);
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name of the VOD source.</p>
         pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vod_source_name(input.into());
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name of the VOD source.</p>
         pub fn set_vod_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2363,7 +2363,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannel`.
     ///
-    /// <p>Describes the properties of a specific channel.</p>
+    /// <p>Describes a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannel {
         handle: std::sync::Arc<super::Handle>,
@@ -2423,12 +2423,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
@@ -2436,7 +2436,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLiveSource`.
     ///
-    /// <p>Provides details about a specific live source in a specific source location.</p>
+    /// <p>The live source to describe.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLiveSource {
         handle: std::sync::Arc<super::Handle>,
@@ -2496,12 +2496,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.live_source_name(input.into());
             self
         }
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn set_live_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2509,12 +2509,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_live_source_name(input);
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Source.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_location_name(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Source.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2525,7 +2525,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeProgram`.
     ///
-    /// <p>Retrieves the properties of the requested program.</p>
+    /// <p>Describes a program within a channel. For information about programs, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working with programs</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProgram {
         handle: std::sync::Arc<super::Handle>,
@@ -2585,22 +2585,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this Program.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this Program.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>The identifier for the program you are working on.</p>
+        /// <p>The name of the program.</p>
         pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.program_name(input.into());
             self
         }
-        /// <p>The identifier for the program you are working on.</p>
+        /// <p>The name of the program.</p>
         pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_program_name(input);
             self
@@ -2608,7 +2608,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSourceLocation`.
     ///
-    /// <p>Retrieves the properties of the requested source location.</p>
+    /// <p>Describes a source location. A source location is a container for sources. For more information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source locations</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSourceLocation {
         handle: std::sync::Arc<super::Handle>,
@@ -2668,12 +2668,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_location_name(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2684,7 +2684,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeVodSource`.
     ///
-    /// <p>Provides details about a specific VOD source in a specific source location.</p>
+    /// <p>Provides details about a specific video on demand (VOD) source in a specific source location.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVodSource {
         handle: std::sync::Arc<super::Handle>,
@@ -2744,12 +2744,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_location_name(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2757,12 +2757,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_location_name(input);
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name of the VOD Source.</p>
         pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vod_source_name(input.into());
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name of the VOD Source.</p>
         pub fn set_vod_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2773,7 +2773,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetChannelPolicy`.
     ///
-    /// <p>Retrieves information about a channel's IAM policy.</p>
+    /// <p>Returns the channel's IAM policy. IAM policies are used to control access to your channel.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -2833,12 +2833,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this Channel Policy.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this Channel Policy.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
@@ -2912,22 +2912,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::GetChannelSchedulePaginator {
             crate::paginator::GetChannelSchedulePaginator::new(self.handle, self.inner)
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this Channel Schedule.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel associated with this Channel Schedule.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>The schedule duration in minutes. The maximum duration is 4320 minutes (three days).</p>
+        /// <p>The duration in minutes of the channel schedule.</p>
         pub fn duration_minutes(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.duration_minutes(input.into());
             self
         }
-        /// <p>The schedule duration in minutes. The maximum duration is 4320 minutes (three days).</p>
+        /// <p>The duration in minutes of the channel schedule.</p>
         pub fn set_duration_minutes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2935,22 +2935,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_duration_minutes(input);
             self
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+        /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
+        /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+        /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+        /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
+        /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+        /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2958,7 +2964,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPlaybackConfiguration`.
     ///
-    /// <p>Returns the playback configuration for the specified name.</p>
+    /// <p>Retrieves a playback configuration. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPlaybackConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -3031,7 +3037,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPrefetchSchedule`.
     ///
-    /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call GetPrefetchSchedule on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
+    /// <p>Retrieves a prefetch schedule for a playback configuration. A prefetch schedule allows you to tell MediaTailor to fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPrefetchSchedule {
         handle: std::sync::Arc<super::Handle>,
@@ -3091,17 +3097,17 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The identifier for the playback configuration.</p>
+        /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
         pub fn playback_configuration_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -3109,7 +3115,7 @@ pub mod fluent_builders {
             self.inner = self.inner.playback_configuration_name(input.into());
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
         pub fn set_playback_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3120,7 +3126,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAlerts`.
     ///
-    /// <p>Returns a list of alerts for the given resource.</p>
+    /// <p>Lists the alerts that are associated with a MediaTailor channel assembly resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlerts {
         handle: std::sync::Arc<super::Handle>,
@@ -3186,22 +3192,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListAlertsPaginator {
             crate::paginator::ListAlertsPaginator::new(self.handle, self.inner)
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3219,7 +3225,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannels`.
     ///
-    /// <p>Retrieves a list of channels that are associated with this account.</p>
+    /// <p>Retrieves information about the channels that are associated with the current AWS account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels {
         handle: std::sync::Arc<super::Handle>,
@@ -3285,22 +3291,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListChannelsPaginator {
             crate::paginator::ListChannelsPaginator::new(self.handle, self.inner)
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of channels that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channels, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of channels that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channels, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3308,7 +3314,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListLiveSources`.
     ///
-    /// <p>lists all the live sources in a source location.</p>
+    /// <p>Lists the live sources contained in a source location. A source represents a piece of content.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLiveSources {
         handle: std::sync::Arc<super::Handle>,
@@ -3374,32 +3380,32 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListLiveSourcesPaginator {
             crate::paginator::ListLiveSourcesPaginator::new(self.handle, self.inner)
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p>The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Sources list.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_location_name(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Sources list.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3410,7 +3416,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPlaybackConfigurations`.
     ///
-    /// <p>Returns a list of the playback configurations defined in AWS Elemental MediaTailor. You can specify a maximum number of configurations to return at a time. The default maximum is 50. Results are returned in pagefuls. If MediaTailor has more configurations than the specified maximum, it provides parameters in the response that you can use to retrieve the next pageful.</p>
+    /// <p>Retrieves existing playback configurations. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with Configurations in AWS Elemental MediaTailor</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPlaybackConfigurations {
         handle: std::sync::Arc<super::Handle>,
@@ -3476,22 +3482,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListPlaybackConfigurationsPaginator {
             crate::paginator::ListPlaybackConfigurationsPaginator::new(self.handle, self.inner)
         }
-        /// <p>Maximum number of records to return.</p>
+        /// <p>The maximum number of playback configurations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> playback configurations, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Maximum number of records to return.</p>
+        /// <p>The maximum number of playback configurations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> playback configurations, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3499,7 +3505,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPrefetchSchedules`.
     ///
-    /// <p>Creates a new prefetch schedule.</p>
+    /// <p>Lists the prefetch schedules for a playback configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPrefetchSchedules {
         handle: std::sync::Arc<super::Handle>,
@@ -3565,33 +3571,33 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListPrefetchSchedulesPaginator {
             crate::paginator::ListPrefetchSchedulesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
+        /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
+        /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>
-        /// <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>
-        /// <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>
-        /// <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+        /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+        /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
+        /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+        /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>
-        /// <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>
-        /// <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>
-        /// <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+        /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+        /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
+        /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+        /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
         pub fn playback_configuration_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -3599,7 +3605,7 @@ pub mod fluent_builders {
             self.inner = self.inner.playback_configuration_name(input.into());
             self
         }
-        /// <p>The name of the playback configuration.</p>
+        /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
         pub fn set_playback_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3620,7 +3626,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSourceLocations`.
     ///
-    /// <p>Retrieves a list of source locations.</p>
+    /// <p>Lists the source locations for a channel. A source location defines the host server URL, and contains a list of sources.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSourceLocations {
         handle: std::sync::Arc<super::Handle>,
@@ -3686,22 +3692,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListSourceLocationsPaginator {
             crate::paginator::ListSourceLocationsPaginator::new(self.handle, self.inner)
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p> The maximum number of source locations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p> The maximum number of source locations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3709,7 +3715,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Returns a list of the tags assigned to the specified playback configuration resource.</p>
+    /// <p>A list of tags that are associated with this resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -3769,12 +3775,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+        /// <p>The Amazon Resource Name (ARN) associated with this resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+        /// <p>The Amazon Resource Name (ARN) associated with this resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -3782,7 +3788,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListVodSources`.
     ///
-    /// <p>Lists all the VOD sources in a source location.</p>
+    /// <p>Lists the VOD sources contained in a source location. A source represents a piece of content.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVodSources {
         handle: std::sync::Arc<super::Handle>,
@@ -3848,32 +3854,32 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListVodSourcesPaginator {
             crate::paginator::ListVodSourcesPaginator::new(self.handle, self.inner)
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p> The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        /// <p> The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source list.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_location_name(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source list.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3884,7 +3890,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutChannelPolicy`.
     ///
-    /// <p>Creates an IAM policy for the channel.</p>
+    /// <p>Creates an IAM policy for the channel. IAM policies are used to control access to your channel.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutChannelPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -3944,12 +3950,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The channel name associated with this Channel Policy.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The channel name associated with this Channel Policy.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
@@ -3967,7 +3973,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutPlaybackConfiguration`.
     ///
-    /// <p>Adds a new playback configuration to AWS Elemental MediaTailor.</p>
+    /// <p>Creates a playback configuration. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPlaybackConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -4184,7 +4190,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the playback configuration.</p>
+        /// <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4193,7 +4199,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags to assign to the playback configuration.</p>
+        /// <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4232,7 +4238,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartChannel`.
     ///
-    /// <p>Starts a specific channel.</p>
+    /// <p>Starts a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartChannel {
         handle: std::sync::Arc<super::Handle>,
@@ -4292,12 +4298,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
@@ -4305,7 +4311,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopChannel`.
     ///
-    /// <p>Stops a specific channel.</p>
+    /// <p>Stops a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopChannel {
         handle: std::sync::Arc<super::Handle>,
@@ -4365,12 +4371,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
@@ -4378,7 +4384,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds tags to the specified playback configuration resource. You can specify one or more tags to add.</p>
+    /// <p>The resource to tag. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -4438,12 +4444,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+        /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+        /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4452,7 +4458,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A comma-separated list of tag key:value pairs.</p>
+        /// <p>The tags to assign to the resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4461,7 +4467,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A comma-separated list of tag key:value pairs.</p>
+        /// <p>The tags to assign to the resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4474,7 +4480,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes tags from the specified playback configuration resource. You can specify one or more tags to remove.</p>
+    /// <p>The resource to untag.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -4534,12 +4540,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to untag.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to untag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4548,12 +4554,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
+        /// <p>The tag keys associated with the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
+        /// <p>The tag keys associated with the resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4564,7 +4570,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateChannel`.
     ///
-    /// <p>Updates an existing channel.</p>
+    /// <p>Updates a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannel {
         handle: std::sync::Arc<super::Handle>,
@@ -4624,22 +4630,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>The identifier for the channel you are working on.</p>
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
         pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
             self.inner = self.inner.filler_slate(input);
             self
         }
-        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
         pub fn set_filler_slate(
             mut self,
             input: std::option::Option<crate::model::SlateSource>,
@@ -4667,7 +4673,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateLiveSource`.
     ///
-    /// <p>Updates a specific live source in a specific source location.</p>
+    /// <p>Updates a live source's configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLiveSource {
         handle: std::sync::Arc<super::Handle>,
@@ -4747,12 +4753,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_http_package_configurations(input);
             self
         }
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.live_source_name(input.into());
             self
         }
-        /// <p>The identifier for the live source you are working on.</p>
+        /// <p>The name of the live source.</p>
         pub fn set_live_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4760,12 +4766,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_live_source_name(input);
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Source.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_location_name(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this Live Source.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4776,7 +4782,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSourceLocation`.
     ///
-    /// <p>Updates a source location on a specific channel.</p>
+    /// <p>Updates a source location. A source location is a container for sources. For more information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source locations</a> in the <i>MediaTailor User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSourceLocation {
         handle: std::sync::Arc<super::Handle>,
@@ -4898,12 +4904,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_segment_delivery_configurations(input);
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_location_name(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4914,7 +4920,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateVodSource`.
     ///
-    /// <p>Updates a specific VOD source in a specific source location.</p>
+    /// <p>Updates a VOD source's configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVodSource {
         handle: std::sync::Arc<super::Handle>,
@@ -4994,12 +5000,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_http_package_configurations(input);
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_location_name(input.into());
             self
         }
-        /// <p>The identifier for the source location you are working on.</p>
+        /// <p>The name of the source location associated with this VOD Source.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5007,12 +5013,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_location_name(input);
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name of the VOD source.</p>
         pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vod_source_name(input.into());
             self
         }
-        /// <p>The identifier for the VOD source you are working on.</p>
+        /// <p>The name of the VOD source.</p>
         pub fn set_vod_source_name(
             mut self,
             input: std::option::Option<std::string::String>,

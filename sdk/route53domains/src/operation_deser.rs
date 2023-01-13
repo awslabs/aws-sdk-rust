@@ -98,6 +98,157 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_associate_delegation_signer_to_domain_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssociateDelegationSignerToDomainOutput,
+    crate::error::AssociateDelegationSignerToDomainError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::AssociateDelegationSignerToDomainError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::AssociateDelegationSignerToDomainError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DnssecLimitExceeded" => crate::error::AssociateDelegationSignerToDomainError {
+            meta: generic,
+            kind: crate::error::AssociateDelegationSignerToDomainErrorKind::DnssecLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::dnssec_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_dnssec_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateDelegationSignerToDomainError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "DuplicateRequest" => {
+            crate::error::AssociateDelegationSignerToDomainError {
+                meta: generic,
+                kind: crate::error::AssociateDelegationSignerToDomainErrorKind::DuplicateRequest({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateDelegationSignerToDomainError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidInput" => crate::error::AssociateDelegationSignerToDomainError {
+            meta: generic,
+            kind: crate::error::AssociateDelegationSignerToDomainErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::AssociateDelegationSignerToDomainError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationLimitExceeded" => crate::error::AssociateDelegationSignerToDomainError {
+            meta: generic,
+            kind: crate::error::AssociateDelegationSignerToDomainErrorKind::OperationLimitExceeded(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::operation_limit_exceeded::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateDelegationSignerToDomainError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "TLDRulesViolation" => crate::error::AssociateDelegationSignerToDomainError {
+            meta: generic,
+            kind: crate::error::AssociateDelegationSignerToDomainErrorKind::TldRulesViolation({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tld_rules_violation::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateDelegationSignerToDomainError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedTLD" => {
+            crate::error::AssociateDelegationSignerToDomainError {
+                meta: generic,
+                kind: crate::error::AssociateDelegationSignerToDomainErrorKind::UnsupportedTld({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::unsupported_tld::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateDelegationSignerToDomainError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::AssociateDelegationSignerToDomainError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_associate_delegation_signer_to_domain_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssociateDelegationSignerToDomainOutput,
+    crate::error::AssociateDelegationSignerToDomainError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::associate_delegation_signer_to_domain_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_associate_delegation_signer_to_domain(response.body().as_ref(), output).map_err(crate::error::AssociateDelegationSignerToDomainError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_domain_transfer_to_another_aws_account_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -762,6 +913,117 @@ pub fn parse_disable_domain_transfer_lock_response(
             output,
         )
         .map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disassociate_delegation_signer_from_domain_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisassociateDelegationSignerFromDomainOutput,
+    crate::error::DisassociateDelegationSignerFromDomainError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DisassociateDelegationSignerFromDomainError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::DisassociateDelegationSignerFromDomainError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DuplicateRequest" => crate::error::DisassociateDelegationSignerFromDomainError { meta: generic, kind: crate::error::DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::duplicate_request::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateDelegationSignerFromDomainError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidInput" => crate::error::DisassociateDelegationSignerFromDomainError { meta: generic, kind: crate::error::DisassociateDelegationSignerFromDomainErrorKind::InvalidInput({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateDelegationSignerFromDomainError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OperationLimitExceeded" => crate::error::DisassociateDelegationSignerFromDomainError { meta: generic, kind: crate::error::DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::operation_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateDelegationSignerFromDomainError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TLDRulesViolation" => crate::error::DisassociateDelegationSignerFromDomainError { meta: generic, kind: crate::error::DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::tld_rules_violation::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateDelegationSignerFromDomainError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedTLD" => crate::error::DisassociateDelegationSignerFromDomainError { meta: generic, kind: crate::error::DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_tld::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateDelegationSignerFromDomainError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DisassociateDelegationSignerFromDomainError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disassociate_delegation_signer_from_domain_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisassociateDelegationSignerFromDomainOutput,
+    crate::error::DisassociateDelegationSignerFromDomainError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::disassociate_delegation_signer_from_domain_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_disassociate_delegation_signer_from_domain(response.body().as_ref(), output).map_err(crate::error::DisassociateDelegationSignerFromDomainError::unhandled)?;
         output.build()
     })
 }
@@ -1590,6 +1852,92 @@ pub fn parse_list_tags_for_domain_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_push_domain_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::PushDomainOutput, crate::error::PushDomainError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::PushDomainError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::PushDomainError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInput" => crate::error::PushDomainError {
+            meta: generic,
+            kind: crate::error::PushDomainErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PushDomainError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationLimitExceeded" => crate::error::PushDomainError {
+            meta: generic,
+            kind: crate::error::PushDomainErrorKind::OperationLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::PushDomainError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedTLD" => {
+            crate::error::PushDomainError {
+                meta: generic,
+                kind: crate::error::PushDomainErrorKind::UnsupportedTld({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::unsupported_tld::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::PushDomainError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::PushDomainError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_push_domain_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::PushDomainOutput, crate::error::PushDomainError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::push_domain_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_domain_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RegisterDomainOutput, crate::error::RegisterDomainError> {
@@ -2039,6 +2387,66 @@ pub fn parse_resend_contact_reachability_email_response(
                 output,
             )
             .map_err(crate::error::ResendContactReachabilityEmailError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_resend_operation_authorization_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ResendOperationAuthorizationOutput,
+    crate::error::ResendOperationAuthorizationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ResendOperationAuthorizationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ResendOperationAuthorizationError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInput" => crate::error::ResendOperationAuthorizationError {
+            meta: generic,
+            kind: crate::error::ResendOperationAuthorizationErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ResendOperationAuthorizationError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ResendOperationAuthorizationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_resend_operation_authorization_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ResendOperationAuthorizationOutput,
+    crate::error::ResendOperationAuthorizationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::resend_operation_authorization_output::Builder::default();
+        let _ = response;
         output.build()
     })
 }

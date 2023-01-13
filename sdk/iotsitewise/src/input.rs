@@ -1565,12 +1565,12 @@ pub mod create_access_policy_input {
         >,
     }
     impl Builder {
-        /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+        /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
         pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
             self.access_policy_identity = Some(input);
             self
         }
-        /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+        /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
         pub fn set_access_policy_identity(
             mut self,
             input: std::option::Option<crate::model::Identity>,
@@ -3016,7 +3016,7 @@ pub mod create_portal_input {
         }
         /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
         /// <ul>
-        /// <li> <p> <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
+        /// <li> <p> <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
         /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
         /// </ul>
         /// <p>You can't change this value after you create a portal.</p>
@@ -3027,7 +3027,7 @@ pub mod create_portal_input {
         }
         /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
         /// <ul>
-        /// <li> <p> <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
+        /// <li> <p> <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
         /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
         /// </ul>
         /// <p>You can't change this value after you create a portal.</p>
@@ -5029,6 +5029,7 @@ pub mod describe_asset_input {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) exclude_properties: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The ID of the asset.</p>
@@ -5041,6 +5042,16 @@ pub mod describe_asset_input {
             self.asset_id = input;
             self
         }
+        /// <p> Whether or not to exclude asset properties from the response. </p>
+        pub fn exclude_properties(mut self, input: bool) -> Self {
+            self.exclude_properties = Some(input);
+            self
+        }
+        /// <p> Whether or not to exclude asset properties from the response. </p>
+        pub fn set_exclude_properties(mut self, input: std::option::Option<bool>) -> Self {
+            self.exclude_properties = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAssetInput`](crate::input::DescribeAssetInput).
         pub fn build(
             self,
@@ -5048,6 +5059,7 @@ pub mod describe_asset_input {
         {
             Ok(crate::input::DescribeAssetInput {
                 asset_id: self.asset_id,
+                exclude_properties: self.exclude_properties.unwrap_or_default(),
             })
         }
     }
@@ -5095,6 +5107,20 @@ impl DescribeAssetInput {
                     .expect("formatting should succeed");
                 Ok(())
             }
+            fn uri_query(
+                _input: &crate::input::DescribeAssetInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if _input.exclude_properties {
+                    query.push_kv(
+                        "excludeProperties",
+                        aws_smithy_types::primitive::Encoder::from(_input.exclude_properties)
+                            .encode(),
+                    );
+                }
+                Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DescribeAssetInput,
@@ -5105,6 +5131,7 @@ impl DescribeAssetInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5177,6 +5204,7 @@ pub mod describe_asset_model_input {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_model_id: std::option::Option<std::string::String>,
+        pub(crate) exclude_properties: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The ID of the asset model.</p>
@@ -5192,6 +5220,16 @@ pub mod describe_asset_model_input {
             self.asset_model_id = input;
             self
         }
+        /// <p> Whether or not to exclude asset model properties from the response. </p>
+        pub fn exclude_properties(mut self, input: bool) -> Self {
+            self.exclude_properties = Some(input);
+            self
+        }
+        /// <p> Whether or not to exclude asset model properties from the response. </p>
+        pub fn set_exclude_properties(mut self, input: std::option::Option<bool>) -> Self {
+            self.exclude_properties = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAssetModelInput`](crate::input::DescribeAssetModelInput).
         pub fn build(
             self,
@@ -5201,6 +5239,7 @@ pub mod describe_asset_model_input {
         > {
             Ok(crate::input::DescribeAssetModelInput {
                 asset_model_id: self.asset_model_id,
+                exclude_properties: self.exclude_properties.unwrap_or_default(),
             })
         }
     }
@@ -5252,6 +5291,20 @@ impl DescribeAssetModelInput {
                 .expect("formatting should succeed");
                 Ok(())
             }
+            fn uri_query(
+                _input: &crate::input::DescribeAssetModelInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if _input.exclude_properties {
+                    query.push_kv(
+                        "excludeProperties",
+                        aws_smithy_types::primitive::Encoder::from(_input.exclude_properties)
+                            .encode(),
+                    );
+                }
+                Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DescribeAssetModelInput,
@@ -5262,6 +5315,7 @@ impl DescribeAssetModelInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -8769,12 +8823,12 @@ pub mod list_access_policies_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
+        /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
         pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
             self.identity_type = Some(input);
             self
         }
-        /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
+        /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -9016,6 +9070,238 @@ impl ListAccessPoliciesInput {
     }
 }
 
+/// See [`ListAssetModelPropertiesInput`](crate::input::ListAssetModelPropertiesInput).
+pub mod list_asset_model_properties_input {
+
+    /// A builder for [`ListAssetModelPropertiesInput`](crate::input::ListAssetModelPropertiesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) asset_model_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) filter: std::option::Option<crate::model::ListAssetModelPropertiesFilter>,
+    }
+    impl Builder {
+        /// <p>The ID of the asset model.</p>
+        pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_model_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset model.</p>
+        pub fn set_asset_model_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.asset_model_id = input;
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li>
+        /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
+        /// </ul>
+        /// <p>Default: <code>BASE</code> </p>
+        pub fn filter(mut self, input: crate::model::ListAssetModelPropertiesFilter) -> Self {
+            self.filter = Some(input);
+            self
+        }
+        /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li>
+        /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
+        /// </ul>
+        /// <p>Default: <code>BASE</code> </p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::ListAssetModelPropertiesFilter>,
+        ) -> Self {
+            self.filter = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAssetModelPropertiesInput`](crate::input::ListAssetModelPropertiesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListAssetModelPropertiesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListAssetModelPropertiesInput {
+                asset_model_id: self.asset_model_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filter: self.filter,
+            })
+        }
+    }
+}
+impl ListAssetModelPropertiesInput {
+    /// Consumes the builder and constructs an Operation<[`ListAssetModelProperties`](crate::operation::ListAssetModelProperties)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAssetModelProperties,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListAssetModelPropertiesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_88 = &_input.asset_model_id;
+                let input_88 = input_88.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_model_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let asset_model_id = aws_smithy_http::label::fmt_string(
+                    input_88,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if asset_model_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_model_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/asset-models/{assetModelId}/properties",
+                    assetModelId = asset_model_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListAssetModelPropertiesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_89) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_89));
+                    }
+                }
+                if let Some(inner_90) = &_input.max_results {
+                    if *inner_90 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_90).encode(),
+                        );
+                    }
+                }
+                if let Some(inner_91) = &_input.filter {
+                    {
+                        query.push_kv("filter", &aws_smithy_http::query::fmt_string(&inner_91));
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListAssetModelPropertiesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAssetModelProperties::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAssetModelProperties",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListAssetModelPropertiesInput`](crate::input::ListAssetModelPropertiesInput).
+    pub fn builder() -> crate::input::list_asset_model_properties_input::Builder {
+        crate::input::list_asset_model_properties_input::Builder::default()
+    }
+}
+
 /// See [`ListAssetModelsInput`](crate::input::ListAssetModelsInput).
 pub mod list_asset_models_input {
 
@@ -9088,16 +9374,16 @@ impl ListAssetModelsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_88) = &_input.next_token {
+                if let Some(inner_92) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_88));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_92));
                     }
                 }
-                if let Some(inner_89) = &_input.max_results {
-                    if *inner_89 != 0 {
+                if let Some(inner_93) = &_input.max_results {
+                    if *inner_93 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_93).encode(),
                         );
                     }
                 }
@@ -9176,6 +9462,231 @@ impl ListAssetModelsInput {
     /// Creates a new builder-style object to manufacture [`ListAssetModelsInput`](crate::input::ListAssetModelsInput).
     pub fn builder() -> crate::input::list_asset_models_input::Builder {
         crate::input::list_asset_models_input::Builder::default()
+    }
+}
+
+/// See [`ListAssetPropertiesInput`](crate::input::ListAssetPropertiesInput).
+pub mod list_asset_properties_input {
+
+    /// A builder for [`ListAssetPropertiesInput`](crate::input::ListAssetPropertiesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) filter: std::option::Option<crate::model::ListAssetPropertiesFilter>,
+    }
+    impl Builder {
+        /// <p>The ID of the asset.</p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_id = input;
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p> Filters the requested list of asset properties. You can choose one of the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – The list includes all asset properties for a given asset model ID. </p> </li>
+        /// <li> <p> <code>BASE</code> – The list includes only base asset properties for a given asset model ID. </p> </li>
+        /// </ul>
+        /// <p>Default: <code>BASE</code> </p>
+        pub fn filter(mut self, input: crate::model::ListAssetPropertiesFilter) -> Self {
+            self.filter = Some(input);
+            self
+        }
+        /// <p> Filters the requested list of asset properties. You can choose one of the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – The list includes all asset properties for a given asset model ID. </p> </li>
+        /// <li> <p> <code>BASE</code> – The list includes only base asset properties for a given asset model ID. </p> </li>
+        /// </ul>
+        /// <p>Default: <code>BASE</code> </p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::ListAssetPropertiesFilter>,
+        ) -> Self {
+            self.filter = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAssetPropertiesInput`](crate::input::ListAssetPropertiesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListAssetPropertiesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListAssetPropertiesInput {
+                asset_id: self.asset_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filter: self.filter,
+            })
+        }
+    }
+}
+impl ListAssetPropertiesInput {
+    /// Consumes the builder and constructs an Operation<[`ListAssetProperties`](crate::operation::ListAssetProperties)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAssetProperties,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListAssetPropertiesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_94 = &_input.asset_id;
+                let input_94 = input_94.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let asset_id = aws_smithy_http::label::fmt_string(
+                    input_94,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if asset_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(output, "/assets/{assetId}/properties", assetId = asset_id)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListAssetPropertiesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_95) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_95));
+                    }
+                }
+                if let Some(inner_96) = &_input.max_results {
+                    if *inner_96 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_96).encode(),
+                        );
+                    }
+                }
+                if let Some(inner_97) = &_input.filter {
+                    {
+                        query.push_kv("filter", &aws_smithy_http::query::fmt_string(&inner_97));
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListAssetPropertiesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAssetProperties::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAssetProperties",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListAssetPropertiesInput`](crate::input::ListAssetPropertiesInput).
+    pub fn builder() -> crate::input::list_asset_properties_input::Builder {
+        crate::input::list_asset_properties_input::Builder::default()
     }
 }
 
@@ -9276,15 +9787,15 @@ impl ListAssetRelationshipsInput {
                 _input: &crate::input::ListAssetRelationshipsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_90 = &_input.asset_id;
-                let input_90 = input_90.as_ref().ok_or_else(|| {
+                let input_98 = &_input.asset_id;
+                let input_98 = input_98.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "asset_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let asset_id = aws_smithy_http::label::fmt_string(
-                    input_90,
+                    input_98,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if asset_id.is_empty() {
@@ -9308,8 +9819,8 @@ impl ListAssetRelationshipsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_91 = &_input.traversal_type;
-                let inner_91 = inner_91.as_ref().ok_or_else(|| {
+                let inner_99 = &_input.traversal_type;
+                let inner_99 = inner_99.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "traversal_type",
                         "cannot be empty or unset",
@@ -9317,18 +9828,18 @@ impl ListAssetRelationshipsInput {
                 })?;
                 query.push_kv(
                     "traversalType",
-                    &aws_smithy_http::query::fmt_string(&inner_91),
+                    &aws_smithy_http::query::fmt_string(&inner_99),
                 );
-                if let Some(inner_92) = &_input.next_token {
+                if let Some(inner_100) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_92));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_100));
                     }
                 }
-                if let Some(inner_93) = &_input.max_results {
-                    if *inner_93 != 0 {
+                if let Some(inner_101) = &_input.max_results {
+                    if *inner_101 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_93).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_101).encode(),
                         );
                     }
                 }
@@ -9522,30 +10033,30 @@ impl ListAssetsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_94) = &_input.next_token {
+                if let Some(inner_102) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_94));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_102));
                     }
                 }
-                if let Some(inner_95) = &_input.max_results {
-                    if *inner_95 != 0 {
+                if let Some(inner_103) = &_input.max_results {
+                    if *inner_103 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_95).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_103).encode(),
                         );
                     }
                 }
-                if let Some(inner_96) = &_input.asset_model_id {
+                if let Some(inner_104) = &_input.asset_model_id {
                     {
                         query.push_kv(
                             "assetModelId",
-                            &aws_smithy_http::query::fmt_string(&inner_96),
+                            &aws_smithy_http::query::fmt_string(&inner_104),
                         );
                     }
                 }
-                if let Some(inner_97) = &_input.filter {
+                if let Some(inner_105) = &_input.filter {
                     {
-                        query.push_kv("filter", &aws_smithy_http::query::fmt_string(&inner_97));
+                        query.push_kv("filter", &aws_smithy_http::query::fmt_string(&inner_105));
                     }
                 }
                 Ok(())
@@ -9743,15 +10254,15 @@ impl ListAssociatedAssetsInput {
                 _input: &crate::input::ListAssociatedAssetsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_98 = &_input.asset_id;
-                let input_98 = input_98.as_ref().ok_or_else(|| {
+                let input_106 = &_input.asset_id;
+                let input_106 = input_106.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "asset_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let asset_id = aws_smithy_http::label::fmt_string(
-                    input_98,
+                    input_106,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if asset_id.is_empty() {
@@ -9771,32 +10282,32 @@ impl ListAssociatedAssetsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_99) = &_input.hierarchy_id {
+                if let Some(inner_107) = &_input.hierarchy_id {
                     {
                         query.push_kv(
                             "hierarchyId",
-                            &aws_smithy_http::query::fmt_string(&inner_99),
+                            &aws_smithy_http::query::fmt_string(&inner_107),
                         );
                     }
                 }
-                if let Some(inner_100) = &_input.traversal_direction {
+                if let Some(inner_108) = &_input.traversal_direction {
                     {
                         query.push_kv(
                             "traversalDirection",
-                            &aws_smithy_http::query::fmt_string(&inner_100),
+                            &aws_smithy_http::query::fmt_string(&inner_108),
                         );
                     }
                 }
-                if let Some(inner_101) = &_input.next_token {
+                if let Some(inner_109) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_101));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_109));
                     }
                 }
-                if let Some(inner_102) = &_input.max_results {
-                    if *inner_102 != 0 {
+                if let Some(inner_110) = &_input.max_results {
+                    if *inner_110 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_102).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_110).encode(),
                         );
                     }
                 }
@@ -9965,22 +10476,22 @@ impl ListBulkImportJobsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_103) = &_input.next_token {
+                if let Some(inner_111) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_103));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_111));
                     }
                 }
-                if let Some(inner_104) = &_input.max_results {
-                    if *inner_104 != 0 {
+                if let Some(inner_112) = &_input.max_results {
+                    if *inner_112 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_104).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_112).encode(),
                         );
                     }
                 }
-                if let Some(inner_105) = &_input.filter {
+                if let Some(inner_113) = &_input.filter {
                     {
-                        query.push_kv("filter", &aws_smithy_http::query::fmt_string(&inner_105));
+                        query.push_kv("filter", &aws_smithy_http::query::fmt_string(&inner_113));
                     }
                 }
                 Ok(())
@@ -10145,14 +10656,14 @@ impl ListDashboardsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_106 = &_input.project_id;
-                let inner_106 = inner_106.as_ref().ok_or_else(|| {
+                let inner_114 = &_input.project_id;
+                let inner_114 = inner_114.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "project_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_106.is_empty() {
+                if inner_114.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "project_id",
@@ -10160,17 +10671,17 @@ impl ListDashboardsInput {
                         ),
                     );
                 }
-                query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_106));
-                if let Some(inner_107) = &_input.next_token {
+                query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_114));
+                if let Some(inner_115) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_107));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_115));
                     }
                 }
-                if let Some(inner_108) = &_input.max_results {
-                    if *inner_108 != 0 {
+                if let Some(inner_116) = &_input.max_results {
+                    if *inner_116 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_108).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_116).encode(),
                         );
                     }
                 }
@@ -10324,16 +10835,16 @@ impl ListGatewaysInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_109) = &_input.next_token {
+                if let Some(inner_117) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_109));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_117));
                     }
                 }
-                if let Some(inner_110) = &_input.max_results {
-                    if *inner_110 != 0 {
+                if let Some(inner_118) = &_input.max_results {
+                    if *inner_118 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_110).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_118).encode(),
                         );
                     }
                 }
@@ -10487,16 +10998,16 @@ impl ListPortalsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_111) = &_input.next_token {
+                if let Some(inner_119) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_111));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_119));
                     }
                 }
-                if let Some(inner_112) = &_input.max_results {
-                    if *inner_112 != 0 {
+                if let Some(inner_120) = &_input.max_results {
+                    if *inner_120 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_112).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_120).encode(),
                         );
                     }
                 }
@@ -10656,15 +11167,15 @@ impl ListProjectAssetsInput {
                 _input: &crate::input::ListProjectAssetsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_113 = &_input.project_id;
-                let input_113 = input_113.as_ref().ok_or_else(|| {
+                let input_121 = &_input.project_id;
+                let input_121 = input_121.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "project_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let project_id = aws_smithy_http::label::fmt_string(
-                    input_113,
+                    input_121,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if project_id.is_empty() {
@@ -10688,16 +11199,16 @@ impl ListProjectAssetsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_114) = &_input.next_token {
+                if let Some(inner_122) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_114));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_122));
                     }
                 }
-                if let Some(inner_115) = &_input.max_results {
-                    if *inner_115 != 0 {
+                if let Some(inner_123) = &_input.max_results {
+                    if *inner_123 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_115).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_123).encode(),
                         );
                     }
                 }
@@ -10863,14 +11374,14 @@ impl ListProjectsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_116 = &_input.portal_id;
-                let inner_116 = inner_116.as_ref().ok_or_else(|| {
+                let inner_124 = &_input.portal_id;
+                let inner_124 = inner_124.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "portal_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_116.is_empty() {
+                if inner_124.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "portal_id",
@@ -10878,17 +11389,17 @@ impl ListProjectsInput {
                         ),
                     );
                 }
-                query.push_kv("portalId", &aws_smithy_http::query::fmt_string(&inner_116));
-                if let Some(inner_117) = &_input.next_token {
+                query.push_kv("portalId", &aws_smithy_http::query::fmt_string(&inner_124));
+                if let Some(inner_125) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_117));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_125));
                     }
                 }
-                if let Some(inner_118) = &_input.max_results {
-                    if *inner_118 != 0 {
+                if let Some(inner_126) = &_input.max_results {
+                    if *inner_126 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_118).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_126).encode(),
                         );
                     }
                 }
@@ -11030,14 +11541,14 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_119 = &_input.resource_arn;
-                let inner_119 = inner_119.as_ref().ok_or_else(|| {
+                let inner_127 = &_input.resource_arn;
+                let inner_127 = inner_127.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_119.is_empty() {
+                if inner_127.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "resource_arn",
@@ -11047,7 +11558,7 @@ impl ListTagsForResourceInput {
                 }
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_119),
+                    &aws_smithy_http::query::fmt_string(&inner_127),
                 );
                 Ok(())
             }
@@ -11244,37 +11755,37 @@ impl ListTimeSeriesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_120) = &_input.next_token {
+                if let Some(inner_128) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_120));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_128));
                     }
                 }
-                if let Some(inner_121) = &_input.max_results {
-                    if *inner_121 != 0 {
+                if let Some(inner_129) = &_input.max_results {
+                    if *inner_129 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_121).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_129).encode(),
                         );
                     }
                 }
-                if let Some(inner_122) = &_input.asset_id {
+                if let Some(inner_130) = &_input.asset_id {
                     {
-                        query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_122));
+                        query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_130));
                     }
                 }
-                if let Some(inner_123) = &_input.alias_prefix {
+                if let Some(inner_131) = &_input.alias_prefix {
                     {
                         query.push_kv(
                             "aliasPrefix",
-                            &aws_smithy_http::query::fmt_string(&inner_123),
+                            &aws_smithy_http::query::fmt_string(&inner_131),
                         );
                     }
                 }
-                if let Some(inner_124) = &_input.time_series_type {
+                if let Some(inner_132) = &_input.time_series_type {
                     {
                         query.push_kv(
                             "timeSeriesType",
-                            &aws_smithy_http::query::fmt_string(&inner_124),
+                            &aws_smithy_http::query::fmt_string(&inner_132),
                         );
                     }
                 }
@@ -11970,14 +12481,14 @@ impl TagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_125 = &_input.resource_arn;
-                let inner_125 = inner_125.as_ref().ok_or_else(|| {
+                let inner_133 = &_input.resource_arn;
+                let inner_133 = inner_133.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_125.is_empty() {
+                if inner_133.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "resource_arn",
@@ -11987,7 +12498,7 @@ impl TagResourceInput {
                 }
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_125),
+                    &aws_smithy_http::query::fmt_string(&inner_133),
                 );
                 Ok(())
             }
@@ -12160,14 +12671,14 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_126 = &_input.resource_arn;
-                let inner_126 = inner_126.as_ref().ok_or_else(|| {
+                let inner_134 = &_input.resource_arn;
+                let inner_134 = inner_134.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_126.is_empty() {
+                if inner_134.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "resource_arn",
@@ -12177,17 +12688,17 @@ impl UntagResourceInput {
                 }
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_126),
+                    &aws_smithy_http::query::fmt_string(&inner_134),
                 );
-                let inner_127 = &_input.tag_keys;
-                let inner_127 = inner_127.as_ref().ok_or_else(|| {
+                let inner_135 = &_input.tag_keys;
+                let inner_135 = inner_135.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "tag_keys",
                         "cannot be empty or unset",
                     )
                 })?;
-                for inner_128 in inner_127 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_128));
+                for inner_136 in inner_135 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_136));
                 }
                 Ok(())
             }
@@ -12293,12 +12804,12 @@ pub mod update_access_policy_input {
             self.access_policy_id = input;
             self
         }
-        /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+        /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
         pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
             self.access_policy_identity = Some(input);
             self
         }
-        /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+        /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
         pub fn set_access_policy_identity(
             mut self,
             input: std::option::Option<crate::model::Identity>,
@@ -12382,15 +12893,15 @@ impl UpdateAccessPolicyInput {
                 _input: &crate::input::UpdateAccessPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_129 = &_input.access_policy_id;
-                let input_129 = input_129.as_ref().ok_or_else(|| {
+                let input_137 = &_input.access_policy_id;
+                let input_137 = input_137.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "access_policy_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let access_policy_id = aws_smithy_http::label::fmt_string(
-                    input_129,
+                    input_137,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if access_policy_id.is_empty() {
@@ -12590,15 +13101,15 @@ impl UpdateAssetInput {
                 _input: &crate::input::UpdateAssetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_130 = &_input.asset_id;
-                let input_130 = input_130.as_ref().ok_or_else(|| {
+                let input_138 = &_input.asset_id;
+                let input_138 = input_138.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "asset_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let asset_id = aws_smithy_http::label::fmt_string(
-                    input_130,
+                    input_138,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if asset_id.is_empty() {
@@ -12875,15 +13386,15 @@ impl UpdateAssetModelInput {
                 _input: &crate::input::UpdateAssetModelInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_131 = &_input.asset_model_id;
-                let input_131 = input_131.as_ref().ok_or_else(|| {
+                let input_139 = &_input.asset_model_id;
+                let input_139 = input_139.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "asset_model_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let asset_model_id = aws_smithy_http::label::fmt_string(
-                    input_131,
+                    input_139,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if asset_model_id.is_empty() {
@@ -13123,15 +13634,15 @@ impl UpdateAssetPropertyInput {
                 _input: &crate::input::UpdateAssetPropertyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_132 = &_input.asset_id;
-                let input_132 = input_132.as_ref().ok_or_else(|| {
+                let input_140 = &_input.asset_id;
+                let input_140 = input_140.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "asset_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let asset_id = aws_smithy_http::label::fmt_string(
-                    input_132,
+                    input_140,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if asset_id.is_empty() {
@@ -13142,15 +13653,15 @@ impl UpdateAssetPropertyInput {
                         ),
                     );
                 }
-                let input_133 = &_input.property_id;
-                let input_133 = input_133.as_ref().ok_or_else(|| {
+                let input_141 = &_input.property_id;
+                let input_141 = input_141.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "property_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let property_id = aws_smithy_http::label::fmt_string(
-                    input_133,
+                    input_141,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if property_id.is_empty() {
@@ -13369,15 +13880,15 @@ impl UpdateDashboardInput {
                 _input: &crate::input::UpdateDashboardInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_134 = &_input.dashboard_id;
-                let input_134 = input_134.as_ref().ok_or_else(|| {
+                let input_142 = &_input.dashboard_id;
+                let input_142 = input_142.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "dashboard_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let dashboard_id = aws_smithy_http::label::fmt_string(
-                    input_134,
+                    input_142,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if dashboard_id.is_empty() {
@@ -13547,15 +14058,15 @@ impl UpdateGatewayInput {
                 _input: &crate::input::UpdateGatewayInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_135 = &_input.gateway_id;
-                let input_135 = input_135.as_ref().ok_or_else(|| {
+                let input_143 = &_input.gateway_id;
+                let input_143 = input_143.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "gateway_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let gateway_id = aws_smithy_http::label::fmt_string(
-                    input_135,
+                    input_143,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if gateway_id.is_empty() {
@@ -13745,15 +14256,15 @@ impl UpdateGatewayCapabilityConfigurationInput {
                 _input: &crate::input::UpdateGatewayCapabilityConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_136 = &_input.gateway_id;
-                let input_136 = input_136.as_ref().ok_or_else(|| {
+                let input_144 = &_input.gateway_id;
+                let input_144 = input_144.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "gateway_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let gateway_id = aws_smithy_http::label::fmt_string(
-                    input_136,
+                    input_144,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if gateway_id.is_empty() {
@@ -14029,15 +14540,15 @@ impl UpdatePortalInput {
                 _input: &crate::input::UpdatePortalInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_137 = &_input.portal_id;
-                let input_137 = input_137.as_ref().ok_or_else(|| {
+                let input_145 = &_input.portal_id;
+                let input_145 = input_145.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "portal_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let portal_id = aws_smithy_http::label::fmt_string(
-                    input_137,
+                    input_145,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if portal_id.is_empty() {
@@ -14233,15 +14744,15 @@ impl UpdateProjectInput {
                 _input: &crate::input::UpdateProjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_138 = &_input.project_id;
-                let input_138 = input_138.as_ref().ok_or_else(|| {
+                let input_146 = &_input.project_id;
+                let input_146 = input_146.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "project_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let project_id = aws_smithy_http::label::fmt_string(
-                    input_138,
+                    input_146,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if project_id.is_empty() {
@@ -14723,7 +15234,7 @@ pub struct UpdateAccessPolicyInput {
     /// <p>The ID of the access policy.</p>
     #[doc(hidden)]
     pub access_policy_id: std::option::Option<std::string::String>,
-    /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+    /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
     #[doc(hidden)]
     pub access_policy_identity: std::option::Option<crate::model::Identity>,
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
@@ -14741,7 +15252,7 @@ impl UpdateAccessPolicyInput {
     pub fn access_policy_id(&self) -> std::option::Option<&str> {
         self.access_policy_id.as_deref()
     }
-    /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+    /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
     pub fn access_policy_identity(&self) -> std::option::Option<&crate::model::Identity> {
         self.access_policy_identity.as_ref()
     }
@@ -15291,6 +15802,52 @@ impl ListAssetRelationshipsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListAssetPropertiesInput {
+    /// <p>The ID of the asset.</p>
+    #[doc(hidden)]
+    pub asset_id: std::option::Option<std::string::String>,
+    /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p> Filters the requested list of asset properties. You can choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – The list includes all asset properties for a given asset model ID. </p> </li>
+    /// <li> <p> <code>BASE</code> – The list includes only base asset properties for a given asset model ID. </p> </li>
+    /// </ul>
+    /// <p>Default: <code>BASE</code> </p>
+    #[doc(hidden)]
+    pub filter: std::option::Option<crate::model::ListAssetPropertiesFilter>,
+}
+impl ListAssetPropertiesInput {
+    /// <p>The ID of the asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> Filters the requested list of asset properties. You can choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – The list includes all asset properties for a given asset model ID. </p> </li>
+    /// <li> <p> <code>BASE</code> – The list includes only base asset properties for a given asset model ID. </p> </li>
+    /// </ul>
+    /// <p>Default: <code>BASE</code> </p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::ListAssetPropertiesFilter> {
+        self.filter.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssetModelsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
@@ -15315,8 +15872,54 @@ impl ListAssetModelsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListAssetModelPropertiesInput {
+    /// <p>The ID of the asset model.</p>
+    #[doc(hidden)]
+    pub asset_model_id: std::option::Option<std::string::String>,
+    /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li>
+    /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
+    /// </ul>
+    /// <p>Default: <code>BASE</code> </p>
+    #[doc(hidden)]
+    pub filter: std::option::Option<crate::model::ListAssetModelPropertiesFilter>,
+}
+impl ListAssetModelPropertiesInput {
+    /// <p>The ID of the asset model.</p>
+    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+        self.asset_model_id.as_deref()
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li>
+    /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
+    /// </ul>
+    /// <p>Default: <code>BASE</code> </p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::ListAssetModelPropertiesFilter> {
+        self.filter.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessPoliciesInput {
-    /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
+    /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
     #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
@@ -15340,7 +15943,7 @@ pub struct ListAccessPoliciesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListAccessPoliciesInput {
-    /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
+    /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
     pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
         self.identity_type.as_ref()
     }
@@ -15927,11 +16530,18 @@ pub struct DescribeAssetModelInput {
     /// <p>The ID of the asset model.</p>
     #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
+    /// <p> Whether or not to exclude asset model properties from the response. </p>
+    #[doc(hidden)]
+    pub exclude_properties: bool,
 }
 impl DescribeAssetModelInput {
     /// <p>The ID of the asset model.</p>
     pub fn asset_model_id(&self) -> std::option::Option<&str> {
         self.asset_model_id.as_deref()
+    }
+    /// <p> Whether or not to exclude asset model properties from the response. </p>
+    pub fn exclude_properties(&self) -> bool {
+        self.exclude_properties
     }
 }
 
@@ -15942,11 +16552,18 @@ pub struct DescribeAssetInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
+    /// <p> Whether or not to exclude asset properties from the response. </p>
+    #[doc(hidden)]
+    pub exclude_properties: bool,
 }
 impl DescribeAssetInput {
     /// <p>The ID of the asset.</p>
     pub fn asset_id(&self) -> std::option::Option<&str> {
         self.asset_id.as_deref()
+    }
+    /// <p> Whether or not to exclude asset properties from the response. </p>
+    pub fn exclude_properties(&self) -> bool {
+        self.exclude_properties
     }
 }
 
@@ -16223,7 +16840,7 @@ pub struct CreatePortalInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p> <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
+    /// <li> <p> <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
     /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
     /// </ul>
     /// <p>You can't change this value after you create a portal.</p>
@@ -16273,7 +16890,7 @@ impl CreatePortalInput {
     }
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p> <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
+    /// <li> <p> <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
     /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
     /// </ul>
     /// <p>You can't change this value after you create a portal.</p>
@@ -16548,7 +17165,7 @@ impl CreateAssetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessPolicyInput {
-    /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+    /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
     #[doc(hidden)]
     pub access_policy_identity: std::option::Option<crate::model::Identity>,
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
@@ -16566,7 +17183,7 @@ pub struct CreateAccessPolicyInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateAccessPolicyInput {
-    /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+    /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
     pub fn access_policy_identity(&self) -> std::option::Option<&crate::model::Identity> {
         self.access_policy_identity.as_ref()
     }

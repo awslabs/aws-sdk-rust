@@ -5,61 +5,61 @@
 pub enum Error {
     /// <p>The specified code signing configuration does not exist.</p>
     CodeSigningConfigNotFoundException(crate::error::CodeSigningConfigNotFoundException),
-    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
+    /// <p>Your Amazon Web Services account has exceeded its maximum total code size. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
     CodeStorageExceededException(crate::error::CodeStorageExceededException),
-    /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment. </p>
+    /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.</p>
     CodeVerificationFailedException(crate::error::CodeVerificationFailedException),
     /// <p>Need additional permissions to configure VPC settings.</p>
     Ec2AccessDeniedException(crate::error::Ec2AccessDeniedException),
-    /// <p>Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role provided for the Lambda function.</p>
+    /// <p>Amazon EC2 throttled Lambda during Lambda function initialization using the execution role provided for the function.</p>
     Ec2ThrottledException(crate::error::Ec2ThrottledException),
-    /// <p>Lambda received an unexpected EC2 client exception while setting up for the Lambda function.</p>
+    /// <p>Lambda received an unexpected Amazon EC2 client exception while setting up for the Lambda function.</p>
     Ec2UnexpectedException(crate::error::Ec2UnexpectedException),
     /// <p>An error occurred when reading from or writing to a connected file system.</p>
     EfsioException(crate::error::EfsioException),
-    /// <p>The function couldn't make a network connection to the configured file system.</p>
+    /// <p>The Lambda function couldn't make a network connection to the configured file system.</p>
     EfsMountConnectivityException(crate::error::EfsMountConnectivityException),
-    /// <p>The function couldn't mount the configured file system due to a permission or configuration issue.</p>
+    /// <p>The Lambda function couldn't mount the configured file system due to a permission or configuration issue.</p>
     EfsMountFailureException(crate::error::EfsMountFailureException),
-    /// <p>The function was able to make a network connection to the configured file system, but the mount operation timed out.</p>
+    /// <p>The Lambda function made a network connection to the configured file system, but the mount operation timed out.</p>
     EfsMountTimeoutException(crate::error::EfsMountTimeoutException),
-    /// <p>Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda function configuration, because the limit for network interfaces has been reached.</p>
+    /// <p>Lambda couldn't create an elastic network interface in the VPC, specified as part of Lambda function configuration, because the limit for network interfaces has been reached. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
     EniLimitReachedException(crate::error::EniLimitReachedException),
-    /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check fails, even if code signing policy is set to WARN.</p>
+    /// <p>The code signature failed the integrity check. If the integrity check fails, then Lambda blocks deployment, even if the code signing policy is set to WARN.</p>
     InvalidCodeSignatureException(crate::error::InvalidCodeSignatureException),
-    /// <p>One of the parameters in the request is invalid.</p>
+    /// <p>One of the parameters in the request is not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request body could not be parsed as JSON.</p>
     InvalidRequestContentException(crate::error::InvalidRequestContentException),
     /// <p>The runtime or runtime version specified is not supported.</p>
     InvalidRuntimeException(crate::error::InvalidRuntimeException),
-    /// <p>The Security Group ID provided in the Lambda function VPC configuration is invalid.</p>
+    /// <p>The security group ID provided in the Lambda function VPC configuration is not valid.</p>
     InvalidSecurityGroupIdException(crate::error::InvalidSecurityGroupIdException),
-    /// <p>The Subnet ID provided in the Lambda function VPC configuration is invalid.</p>
+    /// <p>The subnet ID provided in the Lambda function VPC configuration is not valid.</p>
     InvalidSubnetIdException(crate::error::InvalidSubnetIdException),
     /// <p>Lambda could not unzip the deployment package.</p>
     InvalidZipFileException(crate::error::InvalidZipFileException),
-    /// <p>Lambda was unable to decrypt the environment variables because KMS access was denied. Check the Lambda function's KMS permissions.</p>
+    /// <p>Lambda couldn't decrypt the environment variables because KMS access was denied. Check the Lambda function's KMS permissions.</p>
     KmsAccessDeniedException(crate::error::KmsAccessDeniedException),
-    /// <p>Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Check the Lambda function's KMS key settings.</p>
+    /// <p>Lambda couldn't decrypt the environment variables because the KMS key used is disabled. Check the Lambda function's KMS key settings.</p>
     KmsDisabledException(crate::error::KmsDisabledException),
-    /// <p>Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state for Decrypt. Check the function's KMS key settings.</p>
+    /// <p>Lambda couldn't decrypt the environment variables because the state of the KMS key used is not valid for Decrypt. Check the function's KMS key settings.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>Lambda was unable to decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings. </p>
+    /// <p>Lambda couldn't decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings.</p>
     KmsNotFoundException(crate::error::KmsNotFoundException),
-    /// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
+    /// <p>The permissions policy for the resource is too large. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
     PolicyLengthExceededException(crate::error::PolicyLengthExceededException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The specified configuration does not exist.</p>
     ProvisionedConcurrencyConfigNotFoundException(
         crate::error::ProvisionedConcurrencyConfigNotFoundException,
     ),
-    /// <p>The request payload exceeded the <code>Invoke</code> request body JSON input limit. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>. </p>
+    /// <p>The request payload exceeded the <code>Invoke</code> request body JSON input quota. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
     RequestTooLargeException(crate::error::RequestTooLargeException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you tried to update an event source mapping in the CREATING state, or you tried to delete an event source mapping currently UPDATING.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -67,9 +67,15 @@ pub enum Error {
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets has no available IP addresses.</p>
+    /// <p>The runtime restore hook encountered an error. For more information, check the Amazon CloudWatch logs.</p>
+    SnapStartException(crate::error::SnapStartException),
+    /// <p>Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function state</a> becomes <code>Active</code>.</p>
+    SnapStartNotReadyException(crate::error::SnapStartNotReadyException),
+    /// <p>The runtime restore hook failed to complete within the timeout limit (2 seconds).</p>
+    SnapStartTimeoutException(crate::error::SnapStartTimeoutException),
+    /// <p>Lambda couldn't set up VPC access for the Lambda function because one or more configured subnets has no available IP addresses.</p>
     SubnetIpAddressLimitReachedException(crate::error::SubnetIpAddressLimitReachedException),
-    /// <p>The request throughput limit was exceeded.</p>
+    /// <p>The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda quotas</a>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The content type of the <code>Invoke</code> request body is not JSON.</p>
     UnsupportedMediaTypeException(crate::error::UnsupportedMediaTypeException),
@@ -117,6 +123,9 @@ impl std::fmt::Display for Error {
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ResourceNotReadyException(inner) => inner.fmt(f),
             Error::ServiceException(inner) => inner.fmt(f),
+            Error::SnapStartException(inner) => inner.fmt(f),
+            Error::SnapStartNotReadyException(inner) => inner.fmt(f),
+            Error::SnapStartTimeoutException(inner) => inner.fmt(f),
             Error::SubnetIpAddressLimitReachedException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::UnsupportedMediaTypeException(inner) => inner.fmt(f),
@@ -1373,6 +1382,15 @@ impl From<crate::error::InvokeError> for Error {
             }
             crate::error::InvokeErrorKind::ServiceException(inner) => {
                 Error::ServiceException(inner)
+            }
+            crate::error::InvokeErrorKind::SnapStartException(inner) => {
+                Error::SnapStartException(inner)
+            }
+            crate::error::InvokeErrorKind::SnapStartNotReadyException(inner) => {
+                Error::SnapStartNotReadyException(inner)
+            }
+            crate::error::InvokeErrorKind::SnapStartTimeoutException(inner) => {
+                Error::SnapStartTimeoutException(inner)
             }
             crate::error::InvokeErrorKind::SubnetIpAddressLimitReachedException(inner) => {
                 Error::SubnetIpAddressLimitReachedException(inner)

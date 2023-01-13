@@ -1257,6 +1257,180 @@ impl CreateIpGroupInput {
     }
 }
 
+/// See [`CreateStandbyWorkspacesInput`](crate::input::CreateStandbyWorkspacesInput).
+pub mod create_standby_workspaces_input {
+
+    /// A builder for [`CreateStandbyWorkspacesInput`](crate::input::CreateStandbyWorkspacesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) primary_region: std::option::Option<std::string::String>,
+        pub(crate) standby_workspaces:
+            std::option::Option<std::vec::Vec<crate::model::StandbyWorkspace>>,
+    }
+    impl Builder {
+        /// <p>The Region of the primary WorkSpace.</p>
+        pub fn primary_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.primary_region = Some(input.into());
+            self
+        }
+        /// <p>The Region of the primary WorkSpace.</p>
+        pub fn set_primary_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.primary_region = input;
+            self
+        }
+        /// Appends an item to `standby_workspaces`.
+        ///
+        /// To override the contents of this collection use [`set_standby_workspaces`](Self::set_standby_workspaces).
+        ///
+        /// <p>Information about the Standby WorkSpace to be created.</p>
+        pub fn standby_workspaces(mut self, input: crate::model::StandbyWorkspace) -> Self {
+            let mut v = self.standby_workspaces.unwrap_or_default();
+            v.push(input);
+            self.standby_workspaces = Some(v);
+            self
+        }
+        /// <p>Information about the Standby WorkSpace to be created.</p>
+        pub fn set_standby_workspaces(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StandbyWorkspace>>,
+        ) -> Self {
+            self.standby_workspaces = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateStandbyWorkspacesInput`](crate::input::CreateStandbyWorkspacesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateStandbyWorkspacesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::CreateStandbyWorkspacesInput {
+                primary_region: self.primary_region,
+                standby_workspaces: self.standby_workspaces,
+            })
+        }
+    }
+}
+impl CreateStandbyWorkspacesInput {
+    /// Consumes the builder and constructs an Operation<[`CreateStandbyWorkspaces`](crate::operation::CreateStandbyWorkspaces)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateStandbyWorkspaces,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateStandbyWorkspacesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateStandbyWorkspacesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkspacesService.CreateStandbyWorkspaces",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_standby_workspaces(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateStandbyWorkspaces::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateStandbyWorkspaces",
+            "workspaces",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateStandbyWorkspacesInput`](crate::input::CreateStandbyWorkspacesInput).
+    pub fn builder() -> crate::input::create_standby_workspaces_input::Builder {
+        crate::input::create_standby_workspaces_input::Builder::default()
+    }
+}
+
 /// See [`CreateTagsInput`](crate::input::CreateTagsInput).
 pub mod create_tags_input {
 
@@ -6756,8 +6930,10 @@ pub mod import_workspace_image_input {
             self.ec2_image_id = input;
             self
         }
-        /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
-        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+        /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
+        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
+        /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+        /// </note>
         pub fn ingestion_process(
             mut self,
             input: crate::model::WorkspaceImageIngestionProcess,
@@ -6765,8 +6941,10 @@ pub mod import_workspace_image_input {
             self.ingestion_process = Some(input);
             self
         }
-        /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
-        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+        /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
+        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
+        /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+        /// </note>
         pub fn set_ingestion_process(
             mut self,
             input: std::option::Option<crate::model::WorkspaceImageIngestionProcess>,
@@ -7481,6 +7659,198 @@ impl ModifyAccountInput {
     /// Creates a new builder-style object to manufacture [`ModifyAccountInput`](crate::input::ModifyAccountInput).
     pub fn builder() -> crate::input::modify_account_input::Builder {
         crate::input::modify_account_input::Builder::default()
+    }
+}
+
+/// See [`ModifyCertificateBasedAuthPropertiesInput`](crate::input::ModifyCertificateBasedAuthPropertiesInput).
+pub mod modify_certificate_based_auth_properties_input {
+
+    /// A builder for [`ModifyCertificateBasedAuthPropertiesInput`](crate::input::ModifyCertificateBasedAuthPropertiesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) certificate_based_auth_properties:
+            std::option::Option<crate::model::CertificateBasedAuthProperties>,
+        pub(crate) properties_to_delete:
+            std::option::Option<std::vec::Vec<crate::model::DeletableCertificateBasedAuthProperty>>,
+    }
+    impl Builder {
+        /// <p>The resource identifiers, in the form of directory IDs.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The resource identifiers, in the form of directory IDs.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p>The properties of the certificate-based authentication.</p>
+        pub fn certificate_based_auth_properties(
+            mut self,
+            input: crate::model::CertificateBasedAuthProperties,
+        ) -> Self {
+            self.certificate_based_auth_properties = Some(input);
+            self
+        }
+        /// <p>The properties of the certificate-based authentication.</p>
+        pub fn set_certificate_based_auth_properties(
+            mut self,
+            input: std::option::Option<crate::model::CertificateBasedAuthProperties>,
+        ) -> Self {
+            self.certificate_based_auth_properties = input;
+            self
+        }
+        /// Appends an item to `properties_to_delete`.
+        ///
+        /// To override the contents of this collection use [`set_properties_to_delete`](Self::set_properties_to_delete).
+        ///
+        /// <p>The properties of the certificate-based authentication you want to delete.</p>
+        pub fn properties_to_delete(
+            mut self,
+            input: crate::model::DeletableCertificateBasedAuthProperty,
+        ) -> Self {
+            let mut v = self.properties_to_delete.unwrap_or_default();
+            v.push(input);
+            self.properties_to_delete = Some(v);
+            self
+        }
+        /// <p>The properties of the certificate-based authentication you want to delete.</p>
+        pub fn set_properties_to_delete(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::DeletableCertificateBasedAuthProperty>,
+            >,
+        ) -> Self {
+            self.properties_to_delete = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyCertificateBasedAuthPropertiesInput`](crate::input::ModifyCertificateBasedAuthPropertiesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ModifyCertificateBasedAuthPropertiesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ModifyCertificateBasedAuthPropertiesInput {
+                resource_id: self.resource_id,
+                certificate_based_auth_properties: self.certificate_based_auth_properties,
+                properties_to_delete: self.properties_to_delete,
+            })
+        }
+    }
+}
+impl ModifyCertificateBasedAuthPropertiesInput {
+    /// Consumes the builder and constructs an Operation<[`ModifyCertificateBasedAuthProperties`](crate::operation::ModifyCertificateBasedAuthProperties)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ModifyCertificateBasedAuthProperties,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ModifyCertificateBasedAuthPropertiesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ModifyCertificateBasedAuthPropertiesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkspacesService.ModifyCertificateBasedAuthProperties",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_modify_certificate_based_auth_properties(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ModifyCertificateBasedAuthProperties::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ModifyCertificateBasedAuthProperties",
+            "workspaces",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ModifyCertificateBasedAuthPropertiesInput`](crate::input::ModifyCertificateBasedAuthPropertiesInput).
+    pub fn builder() -> crate::input::modify_certificate_based_auth_properties_input::Builder {
+        crate::input::modify_certificate_based_auth_properties_input::Builder::default()
     }
 }
 
@@ -11338,6 +11708,41 @@ impl ModifyClientPropertiesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ModifyCertificateBasedAuthPropertiesInput {
+    /// <p>The resource identifiers, in the form of directory IDs.</p>
+    #[doc(hidden)]
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>The properties of the certificate-based authentication.</p>
+    #[doc(hidden)]
+    pub certificate_based_auth_properties:
+        std::option::Option<crate::model::CertificateBasedAuthProperties>,
+    /// <p>The properties of the certificate-based authentication you want to delete.</p>
+    #[doc(hidden)]
+    pub properties_to_delete:
+        std::option::Option<std::vec::Vec<crate::model::DeletableCertificateBasedAuthProperty>>,
+}
+impl ModifyCertificateBasedAuthPropertiesInput {
+    /// <p>The resource identifiers, in the form of directory IDs.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The properties of the certificate-based authentication.</p>
+    pub fn certificate_based_auth_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::CertificateBasedAuthProperties> {
+        self.certificate_based_auth_properties.as_ref()
+    }
+    /// <p>The properties of the certificate-based authentication you want to delete.</p>
+    pub fn properties_to_delete(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeletableCertificateBasedAuthProperty]> {
+        self.properties_to_delete.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyAccountInput {
     /// <p>The status of BYOL.</p>
     #[doc(hidden)]
@@ -11417,8 +11822,10 @@ pub struct ImportWorkspaceImageInput {
     /// <p>The identifier of the EC2 image.</p>
     #[doc(hidden)]
     pub ec2_image_id: std::option::Option<std::string::String>,
-    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
-    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
+    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
+    /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+    /// </note>
     #[doc(hidden)]
     pub ingestion_process: std::option::Option<crate::model::WorkspaceImageIngestionProcess>,
     /// <p>The name of the WorkSpace image.</p>
@@ -11441,8 +11848,10 @@ impl ImportWorkspaceImageInput {
     pub fn ec2_image_id(&self) -> std::option::Option<&str> {
         self.ec2_image_id.as_deref()
     }
-    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
-    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
+    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
+    /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+    /// </note>
     pub fn ingestion_process(
         &self,
     ) -> std::option::Option<&crate::model::WorkspaceImageIngestionProcess> {
@@ -12290,6 +12699,28 @@ impl CreateTagsInput {
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateStandbyWorkspacesInput {
+    /// <p>The Region of the primary WorkSpace.</p>
+    #[doc(hidden)]
+    pub primary_region: std::option::Option<std::string::String>,
+    /// <p>Information about the Standby WorkSpace to be created.</p>
+    #[doc(hidden)]
+    pub standby_workspaces: std::option::Option<std::vec::Vec<crate::model::StandbyWorkspace>>,
+}
+impl CreateStandbyWorkspacesInput {
+    /// <p>The Region of the primary WorkSpace.</p>
+    pub fn primary_region(&self) -> std::option::Option<&str> {
+        self.primary_region.as_deref()
+    }
+    /// <p>Information about the Standby WorkSpace to be created.</p>
+    pub fn standby_workspaces(&self) -> std::option::Option<&[crate::model::StandbyWorkspace]> {
+        self.standby_workspaces.as_deref()
     }
 }
 

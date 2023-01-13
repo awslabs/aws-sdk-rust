@@ -351,6 +351,10 @@ pub struct UpdateEventDataStoreOutput {
     /// <p>The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl UpdateEventDataStoreOutput {
     /// <p>The ARN of the event data store.</p>
@@ -395,6 +399,11 @@ impl UpdateEventDataStoreOutput {
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
+    /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 /// See [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput).
 pub mod update_event_data_store_output {
@@ -413,6 +422,7 @@ pub mod update_event_data_store_output {
         pub(crate) termination_protection_enabled: std::option::Option<bool>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the event data store.</p>
@@ -542,6 +552,18 @@ pub mod update_event_data_store_output {
             self.updated_timestamp = input;
             self
         }
+        /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput).
         pub fn build(self) -> crate::output::UpdateEventDataStoreOutput {
             crate::output::UpdateEventDataStoreOutput {
@@ -555,6 +577,7 @@ pub mod update_event_data_store_output {
                 termination_protection_enabled: self.termination_protection_enabled,
                 created_timestamp: self.created_timestamp,
                 updated_timestamp: self.updated_timestamp,
+                kms_key_id: self.kms_key_id,
             }
         }
     }
@@ -597,10 +620,10 @@ pub struct StopImportOutput {
     /// <p> The ID for the import. </p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
-    /// <p> The source S3 bucket. </p>
+    /// <p> The source S3 bucket for the import. </p>
     #[doc(hidden)]
     pub import_source: std::option::Option<crate::model::ImportSource>,
-    /// <p> The destination event data store. </p>
+    /// <p> The ARN of the destination event data store. </p>
     #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The status of the import. </p>
@@ -627,11 +650,11 @@ impl StopImportOutput {
     pub fn import_id(&self) -> std::option::Option<&str> {
         self.import_id.as_deref()
     }
-    /// <p> The source S3 bucket. </p>
+    /// <p> The source S3 bucket for the import. </p>
     pub fn import_source(&self) -> std::option::Option<&crate::model::ImportSource> {
         self.import_source.as_ref()
     }
-    /// <p> The destination event data store. </p>
+    /// <p> The ARN of the destination event data store. </p>
     pub fn destinations(&self) -> std::option::Option<&[std::string::String]> {
         self.destinations.as_deref()
     }
@@ -687,12 +710,12 @@ pub mod stop_import_output {
             self.import_id = input;
             self
         }
-        /// <p> The source S3 bucket. </p>
+        /// <p> The source S3 bucket for the import. </p>
         pub fn import_source(mut self, input: crate::model::ImportSource) -> Self {
             self.import_source = Some(input);
             self
         }
-        /// <p> The source S3 bucket. </p>
+        /// <p> The source S3 bucket for the import. </p>
         pub fn set_import_source(
             mut self,
             input: std::option::Option<crate::model::ImportSource>,
@@ -704,14 +727,14 @@ pub mod stop_import_output {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p> The destination event data store. </p>
+        /// <p> The ARN of the destination event data store. </p>
         pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
-        /// <p> The destination event data store. </p>
+        /// <p> The ARN of the destination event data store. </p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -899,10 +922,10 @@ pub struct StartImportOutput {
     /// <p> The ID of the import. </p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
-    /// <p> The destination event data store. </p>
+    /// <p> The ARN of the destination event data store. </p>
     #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> The source S3 bucket. </p>
+    /// <p> The source S3 bucket for the import. </p>
     #[doc(hidden)]
     pub import_source: std::option::Option<crate::model::ImportSource>,
     /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
@@ -926,11 +949,11 @@ impl StartImportOutput {
     pub fn import_id(&self) -> std::option::Option<&str> {
         self.import_id.as_deref()
     }
-    /// <p> The destination event data store. </p>
+    /// <p> The ARN of the destination event data store. </p>
     pub fn destinations(&self) -> std::option::Option<&[std::string::String]> {
         self.destinations.as_deref()
     }
-    /// <p> The source S3 bucket. </p>
+    /// <p> The source S3 bucket for the import. </p>
     pub fn import_source(&self) -> std::option::Option<&crate::model::ImportSource> {
         self.import_source.as_ref()
     }
@@ -985,14 +1008,14 @@ pub mod start_import_output {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p> The destination event data store. </p>
+        /// <p> The ARN of the destination event data store. </p>
         pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
-        /// <p> The destination event data store. </p>
+        /// <p> The ARN of the destination event data store. </p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1000,12 +1023,12 @@ pub mod start_import_output {
             self.destinations = input;
             self
         }
-        /// <p> The source S3 bucket. </p>
+        /// <p> The source S3 bucket for the import. </p>
         pub fn import_source(mut self, input: crate::model::ImportSource) -> Self {
             self.import_source = Some(input);
             self
         }
-        /// <p> The source S3 bucket. </p>
+        /// <p> The source S3 bucket for the import. </p>
         pub fn set_import_source(
             mut self,
             input: std::option::Option<crate::model::ImportSource>,
@@ -1135,6 +1158,10 @@ pub struct RestoreEventDataStoreOutput {
     /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl RestoreEventDataStoreOutput {
     /// <p>The event data store ARN.</p>
@@ -1179,6 +1206,11 @@ impl RestoreEventDataStoreOutput {
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
+    /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 /// See [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput).
 pub mod restore_event_data_store_output {
@@ -1197,6 +1229,7 @@ pub mod restore_event_data_store_output {
         pub(crate) termination_protection_enabled: std::option::Option<bool>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The event data store ARN.</p>
@@ -1326,6 +1359,18 @@ pub mod restore_event_data_store_output {
             self.updated_timestamp = input;
             self
         }
+        /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput).
         pub fn build(self) -> crate::output::RestoreEventDataStoreOutput {
             crate::output::RestoreEventDataStoreOutput {
@@ -1339,6 +1384,7 @@ pub mod restore_event_data_store_output {
                 termination_protection_enabled: self.termination_protection_enabled,
                 created_timestamp: self.created_timestamp,
                 updated_timestamp: self.updated_timestamp,
+                kms_key_id: self.kms_key_id,
             }
         }
     }
@@ -1371,6 +1417,30 @@ impl RemoveTagsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
     pub fn builder() -> crate::output::remove_tags_output::Builder {
         crate::output::remove_tags_output::Builder::default()
+    }
+}
+
+/// <p>Returns the following response if successful. Otherwise, returns an error.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RegisterOrganizationDelegatedAdminOutput {}
+/// See [`RegisterOrganizationDelegatedAdminOutput`](crate::output::RegisterOrganizationDelegatedAdminOutput).
+pub mod register_organization_delegated_admin_output {
+
+    /// A builder for [`RegisterOrganizationDelegatedAdminOutput`](crate::output::RegisterOrganizationDelegatedAdminOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`RegisterOrganizationDelegatedAdminOutput`](crate::output::RegisterOrganizationDelegatedAdminOutput).
+        pub fn build(self) -> crate::output::RegisterOrganizationDelegatedAdminOutput {
+            crate::output::RegisterOrganizationDelegatedAdminOutput {}
+        }
+    }
+}
+impl RegisterOrganizationDelegatedAdminOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterOrganizationDelegatedAdminOutput`](crate::output::RegisterOrganizationDelegatedAdminOutput).
+    pub fn builder() -> crate::output::register_organization_delegated_admin_output::Builder {
+        crate::output::register_organization_delegated_admin_output::Builder::default()
     }
 }
 
@@ -2188,19 +2258,19 @@ impl ListEventDataStoresOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChannelsOutput {
-    /// <p> The list of CloudTrail channels. </p>
+    /// <p> The list of channels in the account. </p>
     #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
-    /// <p> A token used to get the next page of results. </p>
+    /// <p>The token to use to get the next page of results after a previous API call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsOutput {
-    /// <p> The list of CloudTrail channels. </p>
+    /// <p> The list of channels in the account. </p>
     pub fn channels(&self) -> std::option::Option<&[crate::model::Channel]> {
         self.channels.as_deref()
     }
-    /// <p> A token used to get the next page of results. </p>
+    /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2219,14 +2289,14 @@ pub mod list_channels_output {
         ///
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
-        /// <p> The list of CloudTrail channels. </p>
+        /// <p> The list of channels in the account. </p>
         pub fn channels(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.channels.unwrap_or_default();
             v.push(input);
             self.channels = Some(v);
             self
         }
-        /// <p> The list of CloudTrail channels. </p>
+        /// <p> The list of channels in the account. </p>
         pub fn set_channels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
@@ -2234,12 +2304,12 @@ pub mod list_channels_output {
             self.channels = input;
             self
         }
-        /// <p> A token used to get the next page of results. </p>
+        /// <p>The token to use to get the next page of results after a previous API call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A token used to get the next page of results. </p>
+        /// <p>The token to use to get the next page of results after a previous API call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2995,7 +3065,7 @@ pub struct GetImportOutput {
     /// <p> The ID of the import. </p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
-    /// <p> The destination event data store. </p>
+    /// <p> The ARN of the destination event data store. </p>
     #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The source S3 bucket. </p>
@@ -3016,7 +3086,7 @@ pub struct GetImportOutput {
     /// <p> The timestamp of when the import was updated. </p>
     #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> Provides statistics for the import. </p>
+    /// <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
     #[doc(hidden)]
     pub import_statistics: std::option::Option<crate::model::ImportStatistics>,
 }
@@ -3025,7 +3095,7 @@ impl GetImportOutput {
     pub fn import_id(&self) -> std::option::Option<&str> {
         self.import_id.as_deref()
     }
-    /// <p> The destination event data store. </p>
+    /// <p> The ARN of the destination event data store. </p>
     pub fn destinations(&self) -> std::option::Option<&[std::string::String]> {
         self.destinations.as_deref()
     }
@@ -3053,7 +3123,7 @@ impl GetImportOutput {
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
-    /// <p> Provides statistics for the import. </p>
+    /// <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
     pub fn import_statistics(&self) -> std::option::Option<&crate::model::ImportStatistics> {
         self.import_statistics.as_ref()
     }
@@ -3089,14 +3159,14 @@ pub mod get_import_output {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p> The destination event data store. </p>
+        /// <p> The ARN of the destination event data store. </p>
         pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
-        /// <p> The destination event data store. </p>
+        /// <p> The ARN of the destination event data store. </p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3182,12 +3252,12 @@ pub mod get_import_output {
             self.updated_timestamp = input;
             self
         }
-        /// <p> Provides statistics for the import. </p>
+        /// <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
         pub fn import_statistics(mut self, input: crate::model::ImportStatistics) -> Self {
             self.import_statistics = Some(input);
             self
         }
-        /// <p> Provides statistics for the import. </p>
+        /// <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
         pub fn set_import_statistics(
             mut self,
             input: std::option::Option<crate::model::ImportStatistics>,
@@ -3364,6 +3434,10 @@ pub struct GetEventDataStoreOutput {
     /// <p>Shows the time that an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl GetEventDataStoreOutput {
     /// <p>The event data store Amazon Resource Number (ARN).</p>
@@ -3408,6 +3482,11 @@ impl GetEventDataStoreOutput {
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
+    /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 /// See [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput).
 pub mod get_event_data_store_output {
@@ -3426,6 +3505,7 @@ pub mod get_event_data_store_output {
         pub(crate) termination_protection_enabled: std::option::Option<bool>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The event data store Amazon Resource Number (ARN).</p>
@@ -3555,6 +3635,18 @@ pub mod get_event_data_store_output {
             self.updated_timestamp = input;
             self
         }
+        /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput).
         pub fn build(self) -> crate::output::GetEventDataStoreOutput {
             crate::output::GetEventDataStoreOutput {
@@ -3568,6 +3660,7 @@ pub mod get_event_data_store_output {
                 termination_protection_enabled: self.termination_protection_enabled,
                 created_timestamp: self.created_timestamp,
                 updated_timestamp: self.updated_timestamp,
+                kms_key_id: self.kms_key_id,
             }
         }
     }
@@ -3583,40 +3676,40 @@ impl GetEventDataStoreOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChannelOutput {
-    /// <p> The ARN of the CloudTrail service-linked channel. </p>
+    /// <p>The ARN of an channel returned by a <code>GetChannel</code> request.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p> The name of the CloudTrail service-linked channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix generated by the Amazon Web Services service. </p>
+    /// <p> The name of the CloudTrail channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix generated by the Amazon Web Services service. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p> The trail or event data store for the CloudTrail service-linked channel. </p>
+    /// <p>The event source for the CloudTrail channel.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
-    /// <p> Provides information about the advanced event selectors configured for the service-linked channel, and whether the service-linked channel applies to all regions or one region. </p>
+    /// <p> Provides information about the advanced event selectors configured for the channel, and whether the channel applies to all regions or a single region. </p>
     #[doc(hidden)]
     pub source_config: std::option::Option<crate::model::SourceConfig>,
-    /// <p> The Amazon Web Services service that created the CloudTrail service-linked channel. </p>
+    /// <p>The Amazon Web Services service that created the service-linked channel.</p>
     #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
 }
 impl GetChannelOutput {
-    /// <p> The ARN of the CloudTrail service-linked channel. </p>
+    /// <p>The ARN of an channel returned by a <code>GetChannel</code> request.</p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p> The name of the CloudTrail service-linked channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix generated by the Amazon Web Services service. </p>
+    /// <p> The name of the CloudTrail channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix generated by the Amazon Web Services service. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> The trail or event data store for the CloudTrail service-linked channel. </p>
+    /// <p>The event source for the CloudTrail channel.</p>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p> Provides information about the advanced event selectors configured for the service-linked channel, and whether the service-linked channel applies to all regions or one region. </p>
+    /// <p> Provides information about the advanced event selectors configured for the channel, and whether the channel applies to all regions or a single region. </p>
     pub fn source_config(&self) -> std::option::Option<&crate::model::SourceConfig> {
         self.source_config.as_ref()
     }
-    /// <p> The Amazon Web Services service that created the CloudTrail service-linked channel. </p>
+    /// <p>The Amazon Web Services service that created the service-linked channel.</p>
     pub fn destinations(&self) -> std::option::Option<&[crate::model::Destination]> {
         self.destinations.as_deref()
     }
@@ -3634,42 +3727,42 @@ pub mod get_channel_output {
         pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
     }
     impl Builder {
-        /// <p> The ARN of the CloudTrail service-linked channel. </p>
+        /// <p>The ARN of an channel returned by a <code>GetChannel</code> request.</p>
         pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_arn = Some(input.into());
             self
         }
-        /// <p> The ARN of the CloudTrail service-linked channel. </p>
+        /// <p>The ARN of an channel returned by a <code>GetChannel</code> request.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
         }
-        /// <p> The name of the CloudTrail service-linked channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix generated by the Amazon Web Services service. </p>
+        /// <p> The name of the CloudTrail channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix generated by the Amazon Web Services service. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p> The name of the CloudTrail service-linked channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix generated by the Amazon Web Services service. </p>
+        /// <p> The name of the CloudTrail channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix generated by the Amazon Web Services service. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p> The trail or event data store for the CloudTrail service-linked channel. </p>
+        /// <p>The event source for the CloudTrail channel.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
         }
-        /// <p> The trail or event data store for the CloudTrail service-linked channel. </p>
+        /// <p>The event source for the CloudTrail channel.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
         }
-        /// <p> Provides information about the advanced event selectors configured for the service-linked channel, and whether the service-linked channel applies to all regions or one region. </p>
+        /// <p> Provides information about the advanced event selectors configured for the channel, and whether the channel applies to all regions or a single region. </p>
         pub fn source_config(mut self, input: crate::model::SourceConfig) -> Self {
             self.source_config = Some(input);
             self
         }
-        /// <p> Provides information about the advanced event selectors configured for the service-linked channel, and whether the service-linked channel applies to all regions or one region. </p>
+        /// <p> Provides information about the advanced event selectors configured for the channel, and whether the channel applies to all regions or a single region. </p>
         pub fn set_source_config(
             mut self,
             input: std::option::Option<crate::model::SourceConfig>,
@@ -3681,14 +3774,14 @@ pub mod get_channel_output {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p> The Amazon Web Services service that created the CloudTrail service-linked channel. </p>
+        /// <p>The Amazon Web Services service that created the service-linked channel.</p>
         pub fn destinations(mut self, input: crate::model::Destination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input);
             self.destinations = Some(v);
             self
         }
-        /// <p> The Amazon Web Services service that created the CloudTrail service-linked channel. </p>
+        /// <p>The Amazon Web Services service that created the service-linked channel.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Destination>>,
@@ -3791,6 +3884,12 @@ pub struct DescribeQueryOutput {
     /// <p>The error message returned if a query failed.</p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
+    /// <p>The URI for the S3 bucket where CloudTrail delivered query results, if applicable.</p>
+    #[doc(hidden)]
+    pub delivery_s3_uri: std::option::Option<std::string::String>,
+    /// <p>The delivery status.</p>
+    #[doc(hidden)]
+    pub delivery_status: std::option::Option<crate::model::DeliveryStatus>,
 }
 impl DescribeQueryOutput {
     /// <p>The ID of the query.</p>
@@ -3815,6 +3914,14 @@ impl DescribeQueryOutput {
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
+    /// <p>The URI for the S3 bucket where CloudTrail delivered query results, if applicable.</p>
+    pub fn delivery_s3_uri(&self) -> std::option::Option<&str> {
+        self.delivery_s3_uri.as_deref()
+    }
+    /// <p>The delivery status.</p>
+    pub fn delivery_status(&self) -> std::option::Option<&crate::model::DeliveryStatus> {
+        self.delivery_status.as_ref()
+    }
 }
 /// See [`DescribeQueryOutput`](crate::output::DescribeQueryOutput).
 pub mod describe_query_output {
@@ -3828,6 +3935,8 @@ pub mod describe_query_output {
         pub(crate) query_statistics:
             std::option::Option<crate::model::QueryStatisticsForDescribeQuery>,
         pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) delivery_s3_uri: std::option::Option<std::string::String>,
+        pub(crate) delivery_status: std::option::Option<crate::model::DeliveryStatus>,
     }
     impl Builder {
         /// <p>The ID of the query.</p>
@@ -3892,6 +4001,32 @@ pub mod describe_query_output {
             self.error_message = input;
             self
         }
+        /// <p>The URI for the S3 bucket where CloudTrail delivered query results, if applicable.</p>
+        pub fn delivery_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delivery_s3_uri = Some(input.into());
+            self
+        }
+        /// <p>The URI for the S3 bucket where CloudTrail delivered query results, if applicable.</p>
+        pub fn set_delivery_s3_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.delivery_s3_uri = input;
+            self
+        }
+        /// <p>The delivery status.</p>
+        pub fn delivery_status(mut self, input: crate::model::DeliveryStatus) -> Self {
+            self.delivery_status = Some(input);
+            self
+        }
+        /// <p>The delivery status.</p>
+        pub fn set_delivery_status(
+            mut self,
+            input: std::option::Option<crate::model::DeliveryStatus>,
+        ) -> Self {
+            self.delivery_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeQueryOutput`](crate::output::DescribeQueryOutput).
         pub fn build(self) -> crate::output::DescribeQueryOutput {
             crate::output::DescribeQueryOutput {
@@ -3900,6 +4035,8 @@ pub mod describe_query_output {
                 query_status: self.query_status,
                 query_statistics: self.query_statistics,
                 error_message: self.error_message,
+                delivery_s3_uri: self.delivery_s3_uri,
+                delivery_status: self.delivery_status,
             }
         }
     }
@@ -3908,6 +4045,30 @@ impl DescribeQueryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeQueryOutput`](crate::output::DescribeQueryOutput).
     pub fn builder() -> crate::output::describe_query_output::Builder {
         crate::output::describe_query_output::Builder::default()
+    }
+}
+
+/// <p>Returns the following response if successful. Otherwise, returns an error.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeregisterOrganizationDelegatedAdminOutput {}
+/// See [`DeregisterOrganizationDelegatedAdminOutput`](crate::output::DeregisterOrganizationDelegatedAdminOutput).
+pub mod deregister_organization_delegated_admin_output {
+
+    /// A builder for [`DeregisterOrganizationDelegatedAdminOutput`](crate::output::DeregisterOrganizationDelegatedAdminOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeregisterOrganizationDelegatedAdminOutput`](crate::output::DeregisterOrganizationDelegatedAdminOutput).
+        pub fn build(self) -> crate::output::DeregisterOrganizationDelegatedAdminOutput {
+            crate::output::DeregisterOrganizationDelegatedAdminOutput {}
+        }
+    }
+}
+impl DeregisterOrganizationDelegatedAdminOutput {
+    /// Creates a new builder-style object to manufacture [`DeregisterOrganizationDelegatedAdminOutput`](crate::output::DeregisterOrganizationDelegatedAdminOutput).
+    pub fn builder() -> crate::output::deregister_organization_delegated_admin_output::Builder {
+        crate::output::deregister_organization_delegated_admin_output::Builder::default()
     }
 }
 
@@ -3999,7 +4160,7 @@ pub struct CreateTrailOutput {
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
     #[doc(hidden)]
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -4055,7 +4216,7 @@ impl CreateTrailOutput {
     pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
-    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -4226,13 +4387,13 @@ pub mod create_trail_output {
             self.cloud_watch_logs_role_arn = input;
             self
         }
-        /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
         /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
         /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
@@ -4313,6 +4474,10 @@ pub struct CreateEventDataStoreOutput {
     /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl CreateEventDataStoreOutput {
     /// <p>The ARN of the event data store.</p>
@@ -4361,6 +4526,11 @@ impl CreateEventDataStoreOutput {
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
+    /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 /// See [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput).
 pub mod create_event_data_store_output {
@@ -4380,6 +4550,7 @@ pub mod create_event_data_store_output {
         pub(crate) tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the event data store.</p>
@@ -4528,6 +4699,18 @@ pub mod create_event_data_store_output {
             self.updated_timestamp = input;
             self
         }
+        /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput).
         pub fn build(self) -> crate::output::CreateEventDataStoreOutput {
             crate::output::CreateEventDataStoreOutput {
@@ -4542,6 +4725,7 @@ pub mod create_event_data_store_output {
                 tags_list: self.tags_list,
                 created_timestamp: self.created_timestamp,
                 updated_timestamp: self.updated_timestamp,
+                kms_key_id: self.kms_key_id,
             }
         }
     }

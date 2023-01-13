@@ -13,14 +13,15 @@ pub mod create_access_point_input {
         pub(crate) vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
         pub(crate) public_access_block_configuration:
             std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+        pub(crate) bucket_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -102,6 +103,19 @@ pub mod create_access_point_input {
             self.public_access_block_configuration = input;
             self
         }
+        /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+        pub fn bucket_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+        pub fn set_bucket_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bucket_account_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAccessPointInput`](crate::input::CreateAccessPointInput).
         pub fn build(
             self,
@@ -115,6 +129,7 @@ pub mod create_access_point_input {
                 bucket: self.bucket,
                 vpc_configuration: self.vpc_configuration,
                 public_access_block_configuration: self.public_access_block_configuration,
+                bucket_account_id: self.bucket_account_id,
             })
         }
     }
@@ -1321,12 +1336,12 @@ pub mod delete_access_point_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID for the account that owns the specified access point.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID for the account that owns the specified access point.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -4115,12 +4130,12 @@ pub mod get_access_point_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID for the account that owns the specified access point.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID for the account that owns the specified access point.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -6608,7 +6623,7 @@ impl GetMultiRegionAccessPointInput {
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_30,
-                    aws_smithy_http::label::EncodingStrategy::Default,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if name.is_empty() {
                     return Err(
@@ -6796,7 +6811,7 @@ impl GetMultiRegionAccessPointPolicyInput {
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_31,
-                    aws_smithy_http::label::EncodingStrategy::Default,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if name.is_empty() {
                     return Err(
@@ -6989,7 +7004,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_32,
-                    aws_smithy_http::label::EncodingStrategy::Default,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if name.is_empty() {
                     return Err(
@@ -7107,6 +7122,199 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusInput`](crate::input::GetMultiRegionAccessPointPolicyStatusInput).
     pub fn builder() -> crate::input::get_multi_region_access_point_policy_status_input::Builder {
         crate::input::get_multi_region_access_point_policy_status_input::Builder::default()
+    }
+}
+
+/// See [`GetMultiRegionAccessPointRoutesInput`](crate::input::GetMultiRegionAccessPointRoutesInput).
+pub mod get_multi_region_access_point_routes_input {
+
+    /// A builder for [`GetMultiRegionAccessPointRoutesInput`](crate::input::GetMultiRegionAccessPointRoutesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) mrap: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>The Multi-Region Access Point ARN.</p>
+        pub fn mrap(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mrap = Some(input.into());
+            self
+        }
+        /// <p>The Multi-Region Access Point ARN.</p>
+        pub fn set_mrap(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mrap = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMultiRegionAccessPointRoutesInput`](crate::input::GetMultiRegionAccessPointRoutesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetMultiRegionAccessPointRoutesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetMultiRegionAccessPointRoutesInput {
+                account_id: self.account_id,
+                mrap: self.mrap,
+            })
+        }
+    }
+}
+impl GetMultiRegionAccessPointRoutesInput {
+    /// Consumes the builder and constructs an Operation<[`GetMultiRegionAccessPointRoutes`](crate::operation::GetMultiRegionAccessPointRoutes)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetMultiRegionAccessPointRoutes,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetMultiRegionAccessPointRoutesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_33 = &_input.mrap;
+                let input_33 = input_33.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mrap",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let mrap = aws_smithy_http::label::fmt_string(
+                    input_33,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
+                if mrap.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mrap",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/v20180820/mrap/instances/{Mrap}/routes",
+                    Mrap = mrap
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetMultiRegionAccessPointRoutesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                let builder = crate::http_serde::add_headers_get_multi_region_access_point_routes(
+                    input, builder,
+                )?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let endpoint_prefix = {
+            let account_id = self.account_id.as_deref().unwrap_or_default();
+            if account_id.is_empty() {
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
+            }
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
+                "{AccountId}.",
+                AccountId = account_id
+            ))
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
+        request = request.augment(|mut req, _| {
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
+            req.headers_mut().insert(
+                http::header::HeaderName::from_static("content-md5"),
+                aws_smithy_types::base64::encode(&checksum[..])
+                    .parse()
+                    .expect("checksum is valid header value"),
+            );
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
+        })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        signing_config.signing_options.content_sha256_header = true;
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetMultiRegionAccessPointRoutes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetMultiRegionAccessPointRoutes",
+            "s3control",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointRoutesInput`](crate::input::GetMultiRegionAccessPointRoutesInput).
+    pub fn builder() -> crate::input::get_multi_region_access_point_routes_input::Builder {
+        crate::input::get_multi_region_access_point_routes_input::Builder::default()
     }
 }
 
@@ -7317,15 +7525,15 @@ impl GetStorageLensConfigurationInput {
                 _input: &crate::input::GetStorageLensConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_33 = &_input.config_id;
-                let input_33 = input_33.as_ref().ok_or_else(|| {
+                let input_34 = &_input.config_id;
+                let input_34 = input_34.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "config_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let config_id = aws_smithy_http::label::fmt_string(
-                    input_33,
+                    input_34,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if config_id.is_empty() {
@@ -7495,15 +7703,15 @@ impl GetStorageLensConfigurationTaggingInput {
                 _input: &crate::input::GetStorageLensConfigurationTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_34 = &_input.config_id;
-                let input_34 = input_34.as_ref().ok_or_else(|| {
+                let input_35 = &_input.config_id;
+                let input_35 = input_35.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "config_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let config_id = aws_smithy_http::label::fmt_string(
-                    input_34,
+                    input_35,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if config_id.is_empty() {
@@ -7623,12 +7831,12 @@ pub mod list_access_points_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access points.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access points.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -7731,14 +7939,14 @@ impl ListAccessPointsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_35) = &_input.bucket {
+                if let Some(inner_36) = &_input.bucket {
                     {
-                        query.push_kv("bucket", &aws_smithy_http::query::fmt_string(&inner_35));
+                        query.push_kv("bucket", &aws_smithy_http::query::fmt_string(&inner_36));
                     }
                 }
-                if let Some(inner_36) = &_input.next_token {
+                if let Some(inner_37) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
                     }
                 }
                 if _input.max_results != 0 {
@@ -7921,9 +8129,9 @@ impl ListAccessPointsForObjectLambdaInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_37) = &_input.next_token {
+                if let Some(inner_38) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
                     }
                 }
                 if _input.max_results != 0 {
@@ -8126,26 +8334,26 @@ impl ListJobsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_38) = &_input.job_statuses {
+                if let Some(inner_39) = &_input.job_statuses {
                     {
-                        for inner_39 in inner_38 {
+                        for inner_40 in inner_39 {
                             query.push_kv(
                                 "jobStatuses",
-                                &aws_smithy_http::query::fmt_string(&inner_39),
+                                &aws_smithy_http::query::fmt_string(&inner_40),
                             );
                         }
                     }
                 }
-                if let Some(inner_40) = &_input.next_token {
+                if let Some(inner_41) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_41));
                     }
                 }
-                if let Some(inner_41) = &_input.max_results {
-                    if *inner_41 != 0 {
+                if let Some(inner_42) = &_input.max_results {
+                    if *inner_42 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
                         );
                     }
                 }
@@ -8320,9 +8528,9 @@ impl ListMultiRegionAccessPointsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_42) = &_input.next_token {
+                if let Some(inner_43) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
                     }
                 }
                 if _input.max_results != 0 {
@@ -8535,9 +8743,9 @@ impl ListRegionalBucketsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_43) = &_input.next_token {
+                if let Some(inner_44) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
                     }
                 }
                 if _input.max_results != 0 {
@@ -8707,9 +8915,9 @@ impl ListStorageLensConfigurationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_44) = &_input.next_token {
+                if let Some(inner_45) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_45));
                     }
                 }
                 Ok(())
@@ -8884,15 +9092,15 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
                 _input: &crate::input::PutAccessPointConfigurationForObjectLambdaInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_45 = &_input.name;
-                let input_45 = input_45.as_ref().ok_or_else(|| {
+                let input_46 = &_input.name;
+                let input_46 = input_46.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_45,
+                    input_46,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -9111,15 +9319,15 @@ impl PutAccessPointPolicyInput {
                 _input: &crate::input::PutAccessPointPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_46 = &_input.name;
-                let input_46 = input_46.as_ref().ok_or_else(|| {
+                let input_47 = &_input.name;
+                let input_47 = input_47.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_46,
+                    input_47,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -9313,15 +9521,15 @@ impl PutAccessPointPolicyForObjectLambdaInput {
                 _input: &crate::input::PutAccessPointPolicyForObjectLambdaInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_47 = &_input.name;
-                let input_47 = input_47.as_ref().ok_or_else(|| {
+                let input_48 = &_input.name;
+                let input_48 = input_48.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_47,
+                    input_48,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -9525,15 +9733,15 @@ impl PutBucketLifecycleConfigurationInput {
                 _input: &crate::input::PutBucketLifecycleConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_48 = &_input.bucket;
-                let input_48 = input_48.as_ref().ok_or_else(|| {
+                let input_49 = &_input.bucket;
+                let input_49 = input_49.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "bucket",
                         "cannot be empty or unset",
                     )
                 })?;
                 let bucket = aws_smithy_http::label::fmt_string(
-                    input_48,
+                    input_49,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if bucket.is_empty() {
@@ -9789,15 +9997,15 @@ impl PutBucketPolicyInput {
                 _input: &crate::input::PutBucketPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_49 = &_input.bucket;
-                let input_49 = input_49.as_ref().ok_or_else(|| {
+                let input_50 = &_input.bucket;
+                let input_50 = input_50.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "bucket",
                         "cannot be empty or unset",
                     )
                 })?;
                 let bucket = aws_smithy_http::label::fmt_string(
-                    input_49,
+                    input_50,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if bucket.is_empty() {
@@ -10026,15 +10234,15 @@ impl PutBucketTaggingInput {
                 _input: &crate::input::PutBucketTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_50 = &_input.bucket;
-                let input_50 = input_50.as_ref().ok_or_else(|| {
+                let input_51 = &_input.bucket;
+                let input_51 = input_51.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "bucket",
                         "cannot be empty or unset",
                     )
                 })?;
                 let bucket = aws_smithy_http::label::fmt_string(
-                    input_50,
+                    input_51,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if bucket.is_empty() {
@@ -10262,15 +10470,15 @@ impl PutBucketVersioningInput {
                 _input: &crate::input::PutBucketVersioningInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_51 = &_input.bucket;
-                let input_51 = input_51.as_ref().ok_or_else(|| {
+                let input_52 = &_input.bucket;
+                let input_52 = input_52.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "bucket",
                         "cannot be empty or unset",
                     )
                 })?;
                 let bucket = aws_smithy_http::label::fmt_string(
-                    input_51,
+                    input_52,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if bucket.is_empty() {
@@ -10488,15 +10696,15 @@ impl PutJobTaggingInput {
                 _input: &crate::input::PutJobTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_52 = &_input.job_id;
-                let input_52 = input_52.as_ref().ok_or_else(|| {
+                let input_53 = &_input.job_id;
+                let input_53 = input_53.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "job_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let job_id = aws_smithy_http::label::fmt_string(
-                    input_52,
+                    input_53,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if job_id.is_empty() {
@@ -11101,15 +11309,15 @@ impl PutStorageLensConfigurationInput {
                 _input: &crate::input::PutStorageLensConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_53 = &_input.config_id;
-                let input_53 = input_53.as_ref().ok_or_else(|| {
+                let input_54 = &_input.config_id;
+                let input_54 = input_54.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "config_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let config_id = aws_smithy_http::label::fmt_string(
-                    input_53,
+                    input_54,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if config_id.is_empty() {
@@ -11317,15 +11525,15 @@ impl PutStorageLensConfigurationTaggingInput {
                 _input: &crate::input::PutStorageLensConfigurationTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_54 = &_input.config_id;
-                let input_54 = input_54.as_ref().ok_or_else(|| {
+                let input_55 = &_input.config_id;
+                let input_55 = input_55.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "config_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let config_id = aws_smithy_http::label::fmt_string(
-                    input_54,
+                    input_55,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if config_id.is_empty() {
@@ -11446,6 +11654,235 @@ impl PutStorageLensConfigurationTaggingInput {
     }
 }
 
+/// See [`SubmitMultiRegionAccessPointRoutesInput`](crate::input::SubmitMultiRegionAccessPointRoutesInput).
+pub mod submit_multi_region_access_point_routes_input {
+
+    /// A builder for [`SubmitMultiRegionAccessPointRoutesInput`](crate::input::SubmitMultiRegionAccessPointRoutesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) mrap: std::option::Option<std::string::String>,
+        pub(crate) route_updates:
+            std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRoute>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>The Multi-Region Access Point ARN.</p>
+        pub fn mrap(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mrap = Some(input.into());
+            self
+        }
+        /// <p>The Multi-Region Access Point ARN.</p>
+        pub fn set_mrap(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mrap = input;
+            self
+        }
+        /// Appends an item to `route_updates`.
+        ///
+        /// To override the contents of this collection use [`set_route_updates`](Self::set_route_updates).
+        ///
+        /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+        pub fn route_updates(mut self, input: crate::model::MultiRegionAccessPointRoute) -> Self {
+            let mut v = self.route_updates.unwrap_or_default();
+            v.push(input);
+            self.route_updates = Some(v);
+            self
+        }
+        /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+        pub fn set_route_updates(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRoute>>,
+        ) -> Self {
+            self.route_updates = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SubmitMultiRegionAccessPointRoutesInput`](crate::input::SubmitMultiRegionAccessPointRoutesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::SubmitMultiRegionAccessPointRoutesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::SubmitMultiRegionAccessPointRoutesInput {
+                account_id: self.account_id,
+                mrap: self.mrap,
+                route_updates: self.route_updates,
+            })
+        }
+    }
+}
+impl SubmitMultiRegionAccessPointRoutesInput {
+    /// Consumes the builder and constructs an Operation<[`SubmitMultiRegionAccessPointRoutes`](crate::operation::SubmitMultiRegionAccessPointRoutes)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SubmitMultiRegionAccessPointRoutes,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::SubmitMultiRegionAccessPointRoutesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_56 = &_input.mrap;
+                let input_56 = input_56.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mrap",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let mrap = aws_smithy_http::label::fmt_string(
+                    input_56,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
+                if mrap.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mrap",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/v20180820/mrap/instances/{Mrap}/routes",
+                    Mrap = mrap
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SubmitMultiRegionAccessPointRoutesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                let builder =
+                    crate::http_serde::add_headers_submit_multi_region_access_point_routes(
+                        input, builder,
+                    )?;
+                Ok(builder.method("PATCH").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/xml",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_submit_multi_region_access_point_routes(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let endpoint_prefix = {
+            let account_id = self.account_id.as_deref().unwrap_or_default();
+            if account_id.is_empty() {
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
+            }
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
+                "{AccountId}.",
+                AccountId = account_id
+            ))
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
+        request = request.augment(|mut req, _| {
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
+            req.headers_mut().insert(
+                http::header::HeaderName::from_static("content-md5"),
+                aws_smithy_types::base64::encode(&checksum[..])
+                    .parse()
+                    .expect("checksum is valid header value"),
+            );
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
+        })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        signing_config.signing_options.content_sha256_header = true;
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SubmitMultiRegionAccessPointRoutes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SubmitMultiRegionAccessPointRoutes",
+            "s3control",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`SubmitMultiRegionAccessPointRoutesInput`](crate::input::SubmitMultiRegionAccessPointRoutesInput).
+    pub fn builder() -> crate::input::submit_multi_region_access_point_routes_input::Builder {
+        crate::input::submit_multi_region_access_point_routes_input::Builder::default()
+    }
+}
+
 /// See [`UpdateJobPriorityInput`](crate::input::UpdateJobPriorityInput).
 pub mod update_job_priority_input {
 
@@ -11522,15 +11959,15 @@ impl UpdateJobPriorityInput {
                 _input: &crate::input::UpdateJobPriorityInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_55 = &_input.job_id;
-                let input_55 = input_55.as_ref().ok_or_else(|| {
+                let input_57 = &_input.job_id;
+                let input_57 = input_57.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "job_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let job_id = aws_smithy_http::label::fmt_string(
-                    input_55,
+                    input_57,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if job_id.is_empty() {
@@ -11550,10 +11987,10 @@ impl UpdateJobPriorityInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_56 = &_input.priority;
+                let inner_58 = &_input.priority;
                 query.push_kv(
                     "priority",
-                    aws_smithy_types::primitive::Encoder::from(*inner_56).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_58).encode(),
                 );
                 Ok(())
             }
@@ -11736,15 +12173,15 @@ impl UpdateJobStatusInput {
                 _input: &crate::input::UpdateJobStatusInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_57 = &_input.job_id;
-                let input_57 = input_57.as_ref().ok_or_else(|| {
+                let input_59 = &_input.job_id;
+                let input_59 = input_59.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "job_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let job_id = aws_smithy_http::label::fmt_string(
-                    input_57,
+                    input_59,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if job_id.is_empty() {
@@ -11764,8 +12201,8 @@ impl UpdateJobStatusInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_58 = &_input.requested_job_status;
-                let inner_58 = inner_58.as_ref().ok_or_else(|| {
+                let inner_60 = &_input.requested_job_status;
+                let inner_60 = inner_60.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "requested_job_status",
                         "cannot be empty or unset",
@@ -11773,13 +12210,13 @@ impl UpdateJobStatusInput {
                 })?;
                 query.push_kv(
                     "requestedJobStatus",
-                    &aws_smithy_http::query::fmt_string(&inner_58),
+                    &aws_smithy_http::query::fmt_string(&inner_60),
                 );
-                if let Some(inner_59) = &_input.status_update_reason {
+                if let Some(inner_61) = &_input.status_update_reason {
                     {
                         query.push_kv(
                             "statusUpdateReason",
-                            &aws_smithy_http::query::fmt_string(&inner_59),
+                            &aws_smithy_http::query::fmt_string(&inner_61),
                         );
                     }
                 }
@@ -11934,6 +12371,38 @@ impl UpdateJobPriorityInput {
     /// <p>The priority you want to assign to this job.</p>
     pub fn priority(&self) -> i32 {
         self.priority
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SubmitMultiRegionAccessPointRoutesInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>The Multi-Region Access Point ARN.</p>
+    #[doc(hidden)]
+    pub mrap: std::option::Option<std::string::String>,
+    /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+    #[doc(hidden)]
+    pub route_updates:
+        std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRoute>>,
+}
+impl SubmitMultiRegionAccessPointRoutesInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The Multi-Region Access Point ARN.</p>
+    pub fn mrap(&self) -> std::option::Option<&str> {
+        self.mrap.as_deref()
+    }
+    /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+    pub fn route_updates(
+        &self,
+    ) -> std::option::Option<&[crate::model::MultiRegionAccessPointRoute]> {
+        self.route_updates.as_deref()
     }
 }
 
@@ -12554,7 +13023,7 @@ impl ListAccessPointsForObjectLambdaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessPointsInput {
-    /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
+    /// <p>The Amazon Web Services account ID for the account that owns the specified access points.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the bucket whose associated access points you want to list.</p>
@@ -12580,7 +13049,7 @@ pub struct ListAccessPointsInput {
     pub max_results: i32,
 }
 impl ListAccessPointsInput {
-    /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
+    /// <p>The Amazon Web Services account ID for the account that owns the specified access points.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -12666,6 +13135,28 @@ impl GetPublicAccessBlockInput {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetMultiRegionAccessPointRoutesInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>The Multi-Region Access Point ARN.</p>
+    #[doc(hidden)]
+    pub mrap: std::option::Option<std::string::String>,
+}
+impl GetMultiRegionAccessPointRoutesInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The Multi-Region Access Point ARN.</p>
+    pub fn mrap(&self) -> std::option::Option<&str> {
+        self.mrap.as_deref()
     }
 }
 
@@ -13123,7 +13614,7 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointInput {
-    /// <p>The account ID for the account that owns the specified access point.</p>
+    /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point whose configuration information you want to retrieve.</p>
@@ -13143,7 +13634,7 @@ pub struct GetAccessPointInput {
     pub name: std::option::Option<std::string::String>,
 }
 impl GetAccessPointInput {
-    /// <p>The account ID for the account that owns the specified access point.</p>
+    /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -13597,7 +14088,7 @@ impl DeleteAccessPointForObjectLambdaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessPointInput {
-    /// <p>The account ID for the account that owns the specified access point.</p>
+    /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point you want to delete.</p>
@@ -13617,7 +14108,7 @@ pub struct DeleteAccessPointInput {
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteAccessPointInput {
-    /// <p>The account ID for the account that owns the specified access point.</p>
+    /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -13902,7 +14393,7 @@ impl CreateAccessPointForObjectLambdaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessPointInput {
-    /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
+    /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name you want to assign to this access point.</p>
@@ -13932,9 +14423,12 @@ pub struct CreateAccessPointInput {
     #[doc(hidden)]
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+    /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+    #[doc(hidden)]
+    pub bucket_account_id: std::option::Option<std::string::String>,
 }
 impl CreateAccessPointInput {
-    /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
+    /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -13969,5 +14463,9 @@ impl CreateAccessPointInput {
         &self,
     ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
+    }
+    /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+    pub fn bucket_account_id(&self) -> std::option::Option<&str> {
+        self.bucket_account_id.as_deref()
     }
 }

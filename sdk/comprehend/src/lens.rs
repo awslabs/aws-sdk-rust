@@ -39,6 +39,16 @@ pub(crate) fn reflens_structure_crate_output_list_dominant_language_detection_jo
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_endpoints_output_next_token(
+    input: &crate::output::ListEndpointsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_entities_detection_jobs_output_next_token(
     input: &crate::output::ListEntitiesDetectionJobsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -89,6 +99,16 @@ pub(crate) fn reflens_structure_crate_output_list_key_phrases_detection_jobs_out
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_pii_entities_detection_jobs_output_next_token(
+    input: &crate::output::ListPiiEntitiesDetectionJobsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_sentiment_detection_jobs_output_next_token(
     input: &crate::output::ListSentimentDetectionJobsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -113,6 +133,26 @@ pub(crate) fn reflens_structure_crate_output_list_topics_detection_jobs_output_n
     input: &crate::output::ListTopicsDetectionJobsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_endpoints_output_endpoint_properties_list(
+    input: crate::output::ListEndpointsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::EndpointProperties>> {
+    let input = match input.endpoint_properties_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_pii_entities_detection_jobs_output_pii_entities_detection_job_properties_list(
+    input: crate::output::ListPiiEntitiesDetectionJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::PiiEntitiesDetectionJobProperties>> {
+    let input = match input.pii_entities_detection_job_properties_list {
         None => return None,
         Some(t) => t,
     };

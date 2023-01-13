@@ -504,6 +504,15 @@ pub(crate) fn deser_operation_crate_operation_describe_account_health(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "AnalyzedResourceCount" => {
+                        builder = builder.set_analyzed_resource_count(
+                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(i64::try_from)
+                            .transpose()?,
+                        );
+                    }
                     "MetricsAnalyzed" => {
                         builder = builder.set_metrics_analyzed(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
@@ -4246,6 +4255,15 @@ where
                                     )?,
                                 );
                             }
+                            "AnalyzedResourceCount" => {
+                                builder = builder.set_analyzed_resource_count(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -4308,6 +4326,15 @@ where
                             "Insight" => {
                                 builder = builder.set_insight(
                                     crate::json_deser::deser_structure_crate_model_service_insight_health(tokens)?
+                                );
+                            }
+                            "AnalyzedResourceCount" => {
+                                builder = builder.set_analyzed_resource_count(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i64::try_from)
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4377,6 +4404,15 @@ where
                                     crate::json_deser::deser_structure_crate_model_insight_health(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "AnalyzedResourceCount" => {
+                                builder = builder.set_analyzed_resource_count(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i64::try_from)
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -5589,6 +5625,19 @@ where
                                         })
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            "LastUpdated" => {
+                                builder = builder.set_last_updated(
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            "ResourceCollection" => {
+                                builder = builder.set_resource_collection(
+                                    crate::json_deser::deser_structure_crate_model_resource_collection(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

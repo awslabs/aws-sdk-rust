@@ -68,3 +68,13 @@ pub(crate) fn reflens_structure_crate_output_list_vpc_connectors_output_next_tok
     };
     Some(input)
 }
+
+pub(crate) fn reflens_structure_crate_output_list_vpc_ingress_connections_output_next_token(
+    input: &crate::output::ListVpcIngressConnectionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

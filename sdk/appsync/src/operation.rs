@@ -589,6 +589,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateApi {
     }
 }
 
+/// Operation shape for `EvaluateCode`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`evaluate_code`](crate::client::Client::evaluate_code).
+///
+/// See [`crate::client::fluent_builders::EvaluateCode`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct EvaluateCode {
+    _private: (),
+}
+impl EvaluateCode {
+    /// Creates a new builder-style object to manufacture [`EvaluateCodeInput`](crate::input::EvaluateCodeInput).
+    pub fn builder() -> crate::input::evaluate_code_input::Builder {
+        crate::input::evaluate_code_input::Builder::default()
+    }
+    /// Creates a new `EvaluateCode` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for EvaluateCode {
+    type Output =
+        std::result::Result<crate::output::EvaluateCodeOutput, crate::error::EvaluateCodeError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_evaluate_code_error(response)
+        } else {
+            crate::operation_deser::parse_evaluate_code_response(response)
+        }
+    }
+}
+
 /// Operation shape for `EvaluateMappingTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

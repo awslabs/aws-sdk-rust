@@ -3682,6 +3682,9 @@ pub struct FunctionConfiguration {
     /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
     #[doc(hidden)]
     pub timeout: i32,
+    /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
+    #[doc(hidden)]
+    pub function_runtime_override: std::option::Option<std::string::String>,
 }
 impl FunctionConfiguration {
     /// The expected encoding type of the input payload for the function. The default is ''json''.
@@ -3714,6 +3717,10 @@ impl FunctionConfiguration {
     pub fn timeout(&self) -> i32 {
         self.timeout
     }
+    /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
+    pub fn function_runtime_override(&self) -> std::option::Option<&str> {
+        self.function_runtime_override.as_deref()
+    }
 }
 /// See [`FunctionConfiguration`](crate::model::FunctionConfiguration).
 pub mod function_configuration {
@@ -3728,6 +3735,7 @@ pub mod function_configuration {
         pub(crate) memory_size: std::option::Option<i32>,
         pub(crate) pinned: std::option::Option<bool>,
         pub(crate) timeout: std::option::Option<i32>,
+        pub(crate) function_runtime_override: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// The expected encoding type of the input payload for the function. The default is ''json''.
@@ -3809,6 +3817,19 @@ pub mod function_configuration {
             self.timeout = input;
             self
         }
+        /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
+        pub fn function_runtime_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_runtime_override = Some(input.into());
+            self
+        }
+        /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
+        pub fn set_function_runtime_override(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_runtime_override = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FunctionConfiguration`](crate::model::FunctionConfiguration).
         pub fn build(self) -> crate::model::FunctionConfiguration {
             crate::model::FunctionConfiguration {
@@ -3819,6 +3840,7 @@ pub mod function_configuration {
                 memory_size: self.memory_size.unwrap_or_default(),
                 pinned: self.pinned.unwrap_or_default(),
                 timeout: self.timeout.unwrap_or_default(),
+                function_runtime_override: self.function_runtime_override,
             }
         }
     }

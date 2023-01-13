@@ -1397,6 +1397,76 @@ pub fn parse_create_flow_definition_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_hub_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateHubOutput, crate::error::CreateHubError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateHubError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateHubError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceInUse" => {
+            crate::error::CreateHubError {
+                meta: generic,
+                kind: crate::error::CreateHubErrorKind::ResourceInUse({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_in_use::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHubError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceLimitExceeded" => crate::error::CreateHubError {
+            meta: generic,
+            kind: crate::error::CreateHubErrorKind::ResourceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHubError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateHubError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_hub_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateHubOutput, crate::error::CreateHubError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_hub_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_hub(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateHubError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_human_task_ui_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateHumanTaskUiOutput, crate::error::CreateHumanTaskUiError>
@@ -1716,6 +1786,86 @@ pub fn parse_create_image_version_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_inference_experiment_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateInferenceExperimentOutput,
+    crate::error::CreateInferenceExperimentError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateInferenceExperimentError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateInferenceExperimentError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceInUse" => {
+            crate::error::CreateInferenceExperimentError {
+                meta: generic,
+                kind: crate::error::CreateInferenceExperimentErrorKind::ResourceInUse({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_in_use::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInferenceExperimentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceLimitExceeded" => crate::error::CreateInferenceExperimentError {
+            meta: generic,
+            kind: crate::error::CreateInferenceExperimentErrorKind::ResourceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInferenceExperimentError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateInferenceExperimentError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_inference_experiment_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateInferenceExperimentOutput,
+    crate::error::CreateInferenceExperimentError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_inference_experiment_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_inference_experiment(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateInferenceExperimentError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_inference_recommendations_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -1992,6 +2142,175 @@ pub fn parse_create_model_bias_job_definition_response(
                 output,
             )
             .map_err(crate::error::CreateModelBiasJobDefinitionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_model_card_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateModelCardOutput, crate::error::CreateModelCardError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateModelCardError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateModelCardError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::CreateModelCardError {
+                meta: generic,
+                kind: crate::error::CreateModelCardErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateModelCardError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceLimitExceeded" => crate::error::CreateModelCardError {
+            meta: generic,
+            kind: crate::error::CreateModelCardErrorKind::ResourceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateModelCardError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateModelCardError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_model_card_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateModelCardOutput, crate::error::CreateModelCardError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_model_card_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_model_card(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateModelCardError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_model_card_export_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateModelCardExportJobOutput,
+    crate::error::CreateModelCardExportJobError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateModelCardExportJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateModelCardExportJobError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::CreateModelCardExportJobError {
+                meta: generic,
+                kind: crate::error::CreateModelCardExportJobErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateModelCardExportJobError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceLimitExceeded" => crate::error::CreateModelCardExportJobError {
+            meta: generic,
+            kind: crate::error::CreateModelCardExportJobErrorKind::ResourceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateModelCardExportJobError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFound" => {
+            crate::error::CreateModelCardExportJobError {
+                meta: generic,
+                kind: crate::error::CreateModelCardExportJobErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::CreateModelCardExportJobError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::CreateModelCardExportJobError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_model_card_export_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateModelCardExportJobOutput,
+    crate::error::CreateModelCardExportJobError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_model_card_export_job_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_model_card_export_job(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateModelCardExportJobError::unhandled)?;
         output.build()
     })
 }
@@ -2801,6 +3120,76 @@ pub fn parse_create_project_response(
             output,
         )
         .map_err(crate::error::CreateProjectError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_space_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateSpaceOutput, crate::error::CreateSpaceError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateSpaceError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateSpaceError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceInUse" => {
+            crate::error::CreateSpaceError {
+                meta: generic,
+                kind: crate::error::CreateSpaceErrorKind::ResourceInUse({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_in_use::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSpaceError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceLimitExceeded" => crate::error::CreateSpaceError {
+            meta: generic,
+            kind: crate::error::CreateSpaceErrorKind::ResourceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSpaceError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateSpaceError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_space_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateSpaceOutput, crate::error::CreateSpaceError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_space_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_space(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateSpaceError::unhandled)?;
         output.build()
     })
 }
@@ -4251,6 +4640,142 @@ pub fn parse_delete_flow_definition_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_hub_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteHubOutput, crate::error::DeleteHubError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteHubError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteHubError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceInUse" => {
+            crate::error::DeleteHubError {
+                meta: generic,
+                kind: crate::error::DeleteHubErrorKind::ResourceInUse({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_in_use::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHubError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceNotFound" => {
+            crate::error::DeleteHubError {
+                meta: generic,
+                kind: crate::error::DeleteHubErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHubError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DeleteHubError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_hub_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteHubOutput, crate::error::DeleteHubError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_hub_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_hub_content_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteHubContentOutput, crate::error::DeleteHubContentError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteHubContentError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteHubContentError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceInUse" => {
+            crate::error::DeleteHubContentError {
+                meta: generic,
+                kind: crate::error::DeleteHubContentErrorKind::ResourceInUse({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_in_use::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHubContentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceNotFound" => {
+            crate::error::DeleteHubContentError {
+                meta: generic,
+                kind: crate::error::DeleteHubContentErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHubContentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DeleteHubContentError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_hub_content_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteHubContentOutput, crate::error::DeleteHubContentError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_hub_content_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_human_task_ui_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteHumanTaskUiOutput, crate::error::DeleteHumanTaskUiError>
@@ -4441,6 +4966,88 @@ pub fn parse_delete_image_version_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_inference_experiment_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteInferenceExperimentOutput,
+    crate::error::DeleteInferenceExperimentError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteInferenceExperimentError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteInferenceExperimentError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::DeleteInferenceExperimentError {
+                meta: generic,
+                kind: crate::error::DeleteInferenceExperimentErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInferenceExperimentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceNotFound" => {
+            crate::error::DeleteInferenceExperimentError {
+                meta: generic,
+                kind: crate::error::DeleteInferenceExperimentErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInferenceExperimentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DeleteInferenceExperimentError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_inference_experiment_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteInferenceExperimentOutput,
+    crate::error::DeleteInferenceExperimentError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_inference_experiment_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_delete_inference_experiment(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteInferenceExperimentError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_model_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteModelOutput, crate::error::DeleteModelError> {
@@ -4514,6 +5121,73 @@ pub fn parse_delete_model_bias_job_definition_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_model_bias_job_definition_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_model_card_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteModelCardOutput, crate::error::DeleteModelCardError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteModelCardError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteModelCardError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::DeleteModelCardError {
+                meta: generic,
+                kind: crate::error::DeleteModelCardErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteModelCardError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceNotFound" => {
+            crate::error::DeleteModelCardError {
+                meta: generic,
+                kind: crate::error::DeleteModelCardErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteModelCardError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DeleteModelCardError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_model_card_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteModelCardOutput, crate::error::DeleteModelCardError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_model_card_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -4984,6 +5658,73 @@ pub fn parse_delete_project_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_project_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_space_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteSpaceOutput, crate::error::DeleteSpaceError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteSpaceError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteSpaceError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceInUse" => {
+            crate::error::DeleteSpaceError {
+                meta: generic,
+                kind: crate::error::DeleteSpaceErrorKind::ResourceInUse({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_in_use::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSpaceError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceNotFound" => {
+            crate::error::DeleteSpaceError {
+                meta: generic,
+                kind: crate::error::DeleteSpaceErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSpaceError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DeleteSpaceError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_space_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteSpaceOutput, crate::error::DeleteSpaceError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_space_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -6472,6 +7213,118 @@ pub fn parse_describe_flow_definition_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_hub_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeHubOutput, crate::error::DescribeHubError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeHubError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeHubError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::DescribeHubError {
+                meta: generic,
+                kind: crate::error::DescribeHubErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHubError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeHubError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_hub_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeHubOutput, crate::error::DescribeHubError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_hub_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_hub(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeHubError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_hub_content_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeHubContentOutput,
+    crate::error::DescribeHubContentError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeHubContentError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeHubContentError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::DescribeHubContentError {
+                meta: generic,
+                kind: crate::error::DescribeHubContentErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHubContentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeHubContentError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_hub_content_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeHubContentOutput,
+    crate::error::DescribeHubContentError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_hub_content_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_hub_content(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeHubContentError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_human_task_ui_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -6699,6 +7552,69 @@ pub fn parse_describe_image_version_response(
             output,
         )
         .map_err(crate::error::DescribeImageVersionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_inference_experiment_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeInferenceExperimentOutput,
+    crate::error::DescribeInferenceExperimentError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeInferenceExperimentError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeInferenceExperimentError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::DescribeInferenceExperimentError {
+                meta: generic,
+                kind: crate::error::DescribeInferenceExperimentErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeInferenceExperimentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeInferenceExperimentError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_inference_experiment_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeInferenceExperimentOutput,
+    crate::error::DescribeInferenceExperimentError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_inference_experiment_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_inference_experiment(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeInferenceExperimentError::unhandled)?;
         output.build()
     })
 }
@@ -6964,6 +7880,124 @@ pub fn parse_describe_model_bias_job_definition_response(
                 output,
             )
             .map_err(crate::error::DescribeModelBiasJobDefinitionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_model_card_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeModelCardOutput, crate::error::DescribeModelCardError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeModelCardError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeModelCardError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::DescribeModelCardError {
+                meta: generic,
+                kind: crate::error::DescribeModelCardErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeModelCardError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeModelCardError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_model_card_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeModelCardOutput, crate::error::DescribeModelCardError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_model_card_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_model_card(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeModelCardError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_model_card_export_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeModelCardExportJobOutput,
+    crate::error::DescribeModelCardExportJobError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeModelCardExportJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeModelCardExportJobError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::DescribeModelCardExportJobError {
+                meta: generic,
+                kind: crate::error::DescribeModelCardExportJobErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeModelCardExportJobError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeModelCardExportJobError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_model_card_export_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeModelCardExportJobOutput,
+    crate::error::DescribeModelCardExportJobError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_model_card_export_job_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_model_card_export_job(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeModelCardExportJobError::unhandled)?;
         output.build()
     })
 }
@@ -7537,6 +8571,59 @@ pub fn parse_describe_project_response(
             output,
         )
         .map_err(crate::error::DescribeProjectError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_space_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeSpaceOutput, crate::error::DescribeSpaceError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeSpaceError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeSpaceError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::DescribeSpaceError {
+                meta: generic,
+                kind: crate::error::DescribeSpaceErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSpaceError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeSpaceError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_space_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeSpaceOutput, crate::error::DescribeSpaceError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_space_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_space(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeSpaceError::unhandled)?;
         output.build()
     })
 }
@@ -8294,6 +9381,97 @@ pub fn parse_get_search_suggestions_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_import_hub_content_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ImportHubContentOutput, crate::error::ImportHubContentError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ImportHubContentError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ImportHubContentError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceInUse" => {
+            crate::error::ImportHubContentError {
+                meta: generic,
+                kind: crate::error::ImportHubContentErrorKind::ResourceInUse({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_in_use::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::ImportHubContentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceLimitExceeded" => crate::error::ImportHubContentError {
+            meta: generic,
+            kind: crate::error::ImportHubContentErrorKind::ResourceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::ImportHubContentError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFound" => {
+            crate::error::ImportHubContentError {
+                meta: generic,
+                kind: crate::error::ImportHubContentErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ImportHubContentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::ImportHubContentError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_import_hub_content_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ImportHubContentOutput, crate::error::ImportHubContentError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::import_hub_content_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_import_hub_content(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ImportHubContentError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_actions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListActionsOutput, crate::error::ListActionsError> {
@@ -8368,6 +9546,59 @@ pub fn parse_list_algorithms_response(
             output,
         )
         .map_err(crate::error::ListAlgorithmsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_aliases_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListAliasesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListAliasesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::ListAliasesError {
+                meta: generic,
+                kind: crate::error::ListAliasesErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::ListAliasesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_aliases_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_aliases_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_aliases(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListAliasesError::unhandled)?;
         output.build()
     })
 }
@@ -9070,6 +10301,148 @@ pub fn parse_list_flow_definitions_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_hub_contents_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListHubContentsOutput, crate::error::ListHubContentsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListHubContentsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListHubContentsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::ListHubContentsError {
+                meta: generic,
+                kind: crate::error::ListHubContentsErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ListHubContentsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::ListHubContentsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_hub_contents_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListHubContentsOutput, crate::error::ListHubContentsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_hub_contents_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_hub_contents(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListHubContentsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_hub_content_versions_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListHubContentVersionsOutput,
+    crate::error::ListHubContentVersionsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListHubContentVersionsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListHubContentVersionsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::ListHubContentVersionsError {
+                meta: generic,
+                kind: crate::error::ListHubContentVersionsErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ListHubContentVersionsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::ListHubContentVersionsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_hub_content_versions_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListHubContentVersionsOutput,
+    crate::error::ListHubContentVersionsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_hub_content_versions_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_hub_content_versions(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListHubContentVersionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_hubs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListHubsOutput, crate::error::ListHubsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListHubsError::unhandled)?;
+    Err(crate::error::ListHubsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_hubs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListHubsOutput, crate::error::ListHubsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_hubs_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_hubs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListHubsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_human_task_uis_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListHumanTaskUisOutput, crate::error::ListHumanTaskUisError>
@@ -9214,6 +10587,40 @@ pub fn parse_list_image_versions_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_inference_experiments_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListInferenceExperimentsOutput,
+    crate::error::ListInferenceExperimentsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListInferenceExperimentsError::unhandled)?;
+    Err(crate::error::ListInferenceExperimentsError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_inference_experiments_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListInferenceExperimentsOutput,
+    crate::error::ListInferenceExperimentsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_inference_experiments_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_inference_experiments(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListInferenceExperimentsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_inference_recommendations_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -9243,6 +10650,35 @@ pub fn parse_list_inference_recommendations_jobs_response(
                 output,
             )
             .map_err(crate::error::ListInferenceRecommendationsJobsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_inference_recommendations_job_steps_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListInferenceRecommendationsJobStepsOutput,
+    crate::error::ListInferenceRecommendationsJobStepsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListInferenceRecommendationsJobStepsError::unhandled)?;
+    Err(crate::error::ListInferenceRecommendationsJobStepsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_inference_recommendations_job_steps_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListInferenceRecommendationsJobStepsOutput,
+    crate::error::ListInferenceRecommendationsJobStepsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_inference_recommendations_job_steps_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_inference_recommendations_job_steps(response.body().as_ref(), output).map_err(crate::error::ListInferenceRecommendationsJobStepsError::unhandled)?;
         output.build()
     })
 }
@@ -9398,6 +10834,123 @@ pub fn parse_list_model_bias_job_definitions_response(
                 output,
             )
             .map_err(crate::error::ListModelBiasJobDefinitionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_model_card_export_jobs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListModelCardExportJobsOutput,
+    crate::error::ListModelCardExportJobsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListModelCardExportJobsError::unhandled)?;
+    Err(crate::error::ListModelCardExportJobsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_model_card_export_jobs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListModelCardExportJobsOutput,
+    crate::error::ListModelCardExportJobsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_model_card_export_jobs_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_model_card_export_jobs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListModelCardExportJobsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_model_cards_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListModelCardsOutput, crate::error::ListModelCardsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListModelCardsError::unhandled)?;
+    Err(crate::error::ListModelCardsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_model_cards_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListModelCardsOutput, crate::error::ListModelCardsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_model_cards_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_model_cards(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListModelCardsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_model_card_versions_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListModelCardVersionsOutput,
+    crate::error::ListModelCardVersionsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListModelCardVersionsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListModelCardVersionsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::ListModelCardVersionsError {
+                meta: generic,
+                kind: crate::error::ListModelCardVersionsErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ListModelCardVersionsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::ListModelCardVersionsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_model_card_versions_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListModelCardVersionsOutput,
+    crate::error::ListModelCardVersionsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_model_card_versions_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_model_card_versions(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListModelCardVersionsError::unhandled)?;
         output.build()
     })
 }
@@ -9577,6 +11130,128 @@ pub fn parse_list_models_response(
             output,
         )
         .map_err(crate::error::ListModelsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_monitoring_alert_history_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListMonitoringAlertHistoryOutput,
+    crate::error::ListMonitoringAlertHistoryError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListMonitoringAlertHistoryError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListMonitoringAlertHistoryError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::ListMonitoringAlertHistoryError {
+                meta: generic,
+                kind: crate::error::ListMonitoringAlertHistoryErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ListMonitoringAlertHistoryError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::ListMonitoringAlertHistoryError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_monitoring_alert_history_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListMonitoringAlertHistoryOutput,
+    crate::error::ListMonitoringAlertHistoryError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_monitoring_alert_history_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_monitoring_alert_history(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListMonitoringAlertHistoryError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_monitoring_alerts_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListMonitoringAlertsOutput,
+    crate::error::ListMonitoringAlertsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListMonitoringAlertsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListMonitoringAlertsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::ListMonitoringAlertsError {
+                meta: generic,
+                kind: crate::error::ListMonitoringAlertsErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ListMonitoringAlertsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::ListMonitoringAlertsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_monitoring_alerts_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListMonitoringAlertsOutput,
+    crate::error::ListMonitoringAlertsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_monitoring_alerts_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_monitoring_alerts(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListMonitoringAlertsError::unhandled)?;
         output.build()
     })
 }
@@ -9974,6 +11649,32 @@ pub fn parse_list_projects_response(
             output,
         )
         .map_err(crate::error::ListProjectsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_spaces_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListSpacesOutput, crate::error::ListSpacesError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListSpacesError::unhandled)?;
+    Err(crate::error::ListSpacesError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_spaces_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListSpacesOutput, crate::error::ListSpacesError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_spaces_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_spaces(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListSpacesError::unhandled)?;
         output.build()
     })
 }
@@ -10927,6 +12628,88 @@ pub fn parse_start_edge_deployment_stage_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_inference_experiment_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartInferenceExperimentOutput,
+    crate::error::StartInferenceExperimentError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StartInferenceExperimentError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::StartInferenceExperimentError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::StartInferenceExperimentError {
+                meta: generic,
+                kind: crate::error::StartInferenceExperimentErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartInferenceExperimentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceNotFound" => {
+            crate::error::StartInferenceExperimentError {
+                meta: generic,
+                kind: crate::error::StartInferenceExperimentErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::StartInferenceExperimentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::StartInferenceExperimentError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_inference_experiment_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartInferenceExperimentOutput,
+    crate::error::StartInferenceExperimentError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::start_inference_experiment_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_start_inference_experiment(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartInferenceExperimentError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_monitoring_schedule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -11326,6 +13109,88 @@ pub fn parse_stop_hyper_parameter_tuning_job_response(
         #[allow(unused_mut)]
         let mut output = crate::output::stop_hyper_parameter_tuning_job_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_inference_experiment_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopInferenceExperimentOutput,
+    crate::error::StopInferenceExperimentError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StopInferenceExperimentError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::StopInferenceExperimentError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::StopInferenceExperimentError {
+                meta: generic,
+                kind: crate::error::StopInferenceExperimentErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopInferenceExperimentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceNotFound" => {
+            crate::error::StopInferenceExperimentError {
+                meta: generic,
+                kind: crate::error::StopInferenceExperimentErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::StopInferenceExperimentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::StopInferenceExperimentError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_inference_experiment_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopInferenceExperimentOutput,
+    crate::error::StopInferenceExperimentError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::stop_inference_experiment_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_stop_inference_experiment(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StopInferenceExperimentError::unhandled)?;
         output.build()
     })
 }
@@ -12489,6 +14354,59 @@ pub fn parse_update_feature_metadata_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_hub_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateHubOutput, crate::error::UpdateHubError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateHubError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateHubError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::UpdateHubError {
+                meta: generic,
+                kind: crate::error::UpdateHubErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateHubError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateHubError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_hub_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateHubOutput, crate::error::UpdateHubError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_hub_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_hub(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateHubError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateImageOutput, crate::error::UpdateImageError> {
@@ -12561,6 +14479,255 @@ pub fn parse_update_image_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_image_version_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateImageVersionOutput,
+    crate::error::UpdateImageVersionError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateImageVersionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateImageVersionError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceInUse" => {
+            crate::error::UpdateImageVersionError {
+                meta: generic,
+                kind: crate::error::UpdateImageVersionErrorKind::ResourceInUse({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_in_use::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImageVersionError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceNotFound" => {
+            crate::error::UpdateImageVersionError {
+                meta: generic,
+                kind: crate::error::UpdateImageVersionErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImageVersionError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateImageVersionError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_image_version_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateImageVersionOutput,
+    crate::error::UpdateImageVersionError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_image_version_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_image_version(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateImageVersionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_inference_experiment_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateInferenceExperimentOutput,
+    crate::error::UpdateInferenceExperimentError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateInferenceExperimentError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateInferenceExperimentError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::UpdateInferenceExperimentError {
+                meta: generic,
+                kind: crate::error::UpdateInferenceExperimentErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInferenceExperimentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceNotFound" => {
+            crate::error::UpdateInferenceExperimentError {
+                meta: generic,
+                kind: crate::error::UpdateInferenceExperimentErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInferenceExperimentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateInferenceExperimentError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_inference_experiment_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateInferenceExperimentOutput,
+    crate::error::UpdateInferenceExperimentError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_inference_experiment_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_inference_experiment(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateInferenceExperimentError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_model_card_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateModelCardOutput, crate::error::UpdateModelCardError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateModelCardError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateModelCardError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::UpdateModelCardError {
+                meta: generic,
+                kind: crate::error::UpdateModelCardErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateModelCardError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceLimitExceeded" => crate::error::UpdateModelCardError {
+            meta: generic,
+            kind: crate::error::UpdateModelCardErrorKind::ResourceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateModelCardError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFound" => {
+            crate::error::UpdateModelCardError {
+                meta: generic,
+                kind: crate::error::UpdateModelCardErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateModelCardError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateModelCardError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_model_card_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateModelCardOutput, crate::error::UpdateModelCardError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_model_card_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_model_card(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateModelCardError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_model_package_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -12588,6 +14755,82 @@ pub fn parse_update_model_package_response(
             output,
         )
         .map_err(crate::error::UpdateModelPackageError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_monitoring_alert_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateMonitoringAlertOutput,
+    crate::error::UpdateMonitoringAlertError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateMonitoringAlertError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateMonitoringAlertError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceLimitExceeded" => crate::error::UpdateMonitoringAlertError {
+            meta: generic,
+            kind: crate::error::UpdateMonitoringAlertErrorKind::ResourceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMonitoringAlertError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFound" => {
+            crate::error::UpdateMonitoringAlertError {
+                meta: generic,
+                kind: crate::error::UpdateMonitoringAlertErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMonitoringAlertError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateMonitoringAlertError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_monitoring_alert_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateMonitoringAlertOutput,
+    crate::error::UpdateMonitoringAlertError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_monitoring_alert_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_monitoring_alert(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateMonitoringAlertError::unhandled)?;
         output.build()
     })
 }
@@ -12927,6 +15170,95 @@ pub fn parse_update_project_response(
             output,
         )
         .map_err(crate::error::UpdateProjectError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_space_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateSpaceOutput, crate::error::UpdateSpaceError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateSpaceError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateSpaceError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceInUse" => {
+            crate::error::UpdateSpaceError {
+                meta: generic,
+                kind: crate::error::UpdateSpaceErrorKind::ResourceInUse({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_in_use::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSpaceError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceLimitExceeded" => crate::error::UpdateSpaceError {
+            meta: generic,
+            kind: crate::error::UpdateSpaceErrorKind::ResourceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSpaceError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFound" => {
+            crate::error::UpdateSpaceError {
+                meta: generic,
+                kind: crate::error::UpdateSpaceErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSpaceError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateSpaceError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_space_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateSpaceOutput, crate::error::UpdateSpaceError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_space_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_space(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateSpaceError::unhandled)?;
         output.build()
     })
 }

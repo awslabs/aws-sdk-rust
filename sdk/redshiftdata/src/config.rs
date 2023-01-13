@@ -17,6 +17,7 @@
 /// The service config can also be constructed manually using its builder.
 ///
 pub struct Config {
+    pub(crate) make_token: crate::idempotency_token::IdempotencyTokenProvider,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
@@ -37,6 +38,12 @@ impl Config {
     /// Constructs a config builder.
     pub fn builder() -> Builder {
         Builder::default()
+    }
+    /// Returns a copy of the idempotency token provider.
+    /// If a random token provider was configured,
+    /// a newly-randomized token provider will be returned.
+    pub fn make_token(&self) -> crate::idempotency_token::IdempotencyTokenProvider {
+        self.make_token.clone()
     }
     /// Return a reference to the retry configuration contained in this config, if any.
     pub fn retry_config(&self) -> Option<&aws_smithy_types::retry::RetryConfig> {
@@ -88,6 +95,7 @@ impl Config {
 /// Builder for creating a `Config`.
 #[derive(Default)]
 pub struct Builder {
+    make_token: Option<crate::idempotency_token::IdempotencyTokenProvider>,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
@@ -103,6 +111,14 @@ impl Builder {
     /// Constructs a config builder.
     pub fn new() -> Self {
         Self::default()
+    }
+    /// Sets the idempotency token provider to use for service calls that require tokens.
+    pub fn make_token(
+        mut self,
+        make_token: impl Into<crate::idempotency_token::IdempotencyTokenProvider>,
+    ) -> Self {
+        self.make_token = Some(make_token.into());
+        self
     }
     /// Set the retry_config for the builder
     ///
@@ -427,6 +443,9 @@ impl Builder {
     /// Builds a [`Config`].
     pub fn build(self) -> Config {
         Config {
+            make_token: self
+                .make_token
+                .unwrap_or_else(crate::idempotency_token::default_provider),
             retry_config: self.retry_config,
             sleep_impl: self.sleep_impl,
             timeout_config: self.timeout_config,

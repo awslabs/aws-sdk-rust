@@ -600,6 +600,120 @@ impl GetImportFileTaskInput {
     }
 }
 
+/// See [`GetLatestAssessmentIdInput`](crate::input::GetLatestAssessmentIdInput).
+pub mod get_latest_assessment_id_input {
+
+    /// A builder for [`GetLatestAssessmentIdInput`](crate::input::GetLatestAssessmentIdInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`GetLatestAssessmentIdInput`](crate::input::GetLatestAssessmentIdInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetLatestAssessmentIdInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetLatestAssessmentIdInput {})
+        }
+    }
+}
+impl GetLatestAssessmentIdInput {
+    /// Consumes the builder and constructs an Operation<[`GetLatestAssessmentId`](crate::operation::GetLatestAssessmentId)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetLatestAssessmentId,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetLatestAssessmentIdInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/get-latest-assessment-id").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetLatestAssessmentIdInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetLatestAssessmentId::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetLatestAssessmentId",
+            "migrationhubstrategy",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetLatestAssessmentIdInput`](crate::input::GetLatestAssessmentIdInput).
+    pub fn builder() -> crate::input::get_latest_assessment_id_input::Builder {
+        crate::input::get_latest_assessment_id_input::Builder::default()
+    }
+}
+
 /// See [`GetPortfolioPreferencesInput`](crate::input::GetPortfolioPreferencesInput).
 pub mod get_portfolio_preferences_input {
 
@@ -2086,6 +2200,7 @@ pub mod put_portfolio_preferences_input {
         pub(crate) application_preferences:
             std::option::Option<crate::model::ApplicationPreferences>,
         pub(crate) database_preferences: std::option::Option<crate::model::DatabasePreferences>,
+        pub(crate) application_mode: std::option::Option<crate::model::ApplicationMode>,
     }
     impl Builder {
         /// <p> The rank of the business goals based on priority. </p>
@@ -2133,6 +2248,19 @@ pub mod put_portfolio_preferences_input {
             self.database_preferences = input;
             self
         }
+        /// <p>The classification for application component types.</p>
+        pub fn application_mode(mut self, input: crate::model::ApplicationMode) -> Self {
+            self.application_mode = Some(input);
+            self
+        }
+        /// <p>The classification for application component types.</p>
+        pub fn set_application_mode(
+            mut self,
+            input: std::option::Option<crate::model::ApplicationMode>,
+        ) -> Self {
+            self.application_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutPortfolioPreferencesInput`](crate::input::PutPortfolioPreferencesInput).
         pub fn build(
             self,
@@ -2144,6 +2272,7 @@ pub mod put_portfolio_preferences_input {
                 prioritize_business_goals: self.prioritize_business_goals,
                 application_preferences: self.application_preferences,
                 database_preferences: self.database_preferences,
+                application_mode: self.application_mode,
             })
         }
     }
@@ -2268,6 +2397,8 @@ pub mod start_assessment_input {
     pub struct Builder {
         pub(crate) s3bucket_for_analysis_data: std::option::Option<std::string::String>,
         pub(crate) s3bucket_for_report_data: std::option::Option<std::string::String>,
+        pub(crate) assessment_targets:
+            std::option::Option<std::vec::Vec<crate::model::AssessmentTarget>>,
     }
     impl Builder {
         /// <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
@@ -2296,6 +2427,25 @@ pub mod start_assessment_input {
             self.s3bucket_for_report_data = input;
             self
         }
+        /// Appends an item to `assessment_targets`.
+        ///
+        /// To override the contents of this collection use [`set_assessment_targets`](Self::set_assessment_targets).
+        ///
+        /// <p>List of criteria for assessment.</p>
+        pub fn assessment_targets(mut self, input: crate::model::AssessmentTarget) -> Self {
+            let mut v = self.assessment_targets.unwrap_or_default();
+            v.push(input);
+            self.assessment_targets = Some(v);
+            self
+        }
+        /// <p>List of criteria for assessment.</p>
+        pub fn set_assessment_targets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AssessmentTarget>>,
+        ) -> Self {
+            self.assessment_targets = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartAssessmentInput`](crate::input::StartAssessmentInput).
         pub fn build(
             self,
@@ -2304,6 +2454,7 @@ pub mod start_assessment_input {
             Ok(crate::input::StartAssessmentInput {
                 s3bucket_for_analysis_data: self.s3bucket_for_analysis_data,
                 s3bucket_for_report_data: self.s3bucket_for_report_data,
+                assessment_targets: self.assessment_targets,
             })
         }
     }
@@ -2957,6 +3108,8 @@ pub mod update_application_component_config_input {
         pub(crate) strategy_option: std::option::Option<crate::model::StrategyOption>,
         pub(crate) source_code_list: std::option::Option<std::vec::Vec<crate::model::SourceCode>>,
         pub(crate) secrets_manager_key: std::option::Option<std::string::String>,
+        pub(crate) configure_only: std::option::Option<bool>,
+        pub(crate) app_type: std::option::Option<crate::model::AppType>,
     }
     impl Builder {
         /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
@@ -3030,6 +3183,26 @@ pub mod update_application_component_config_input {
             self.secrets_manager_key = input;
             self
         }
+        /// <p>Update the configuration request of an application component. If it is set to true, the source code and/or database credentials are updated. If it is set to false, the source code and/or database credentials are updated and an analysis is initiated.</p>
+        pub fn configure_only(mut self, input: bool) -> Self {
+            self.configure_only = Some(input);
+            self
+        }
+        /// <p>Update the configuration request of an application component. If it is set to true, the source code and/or database credentials are updated. If it is set to false, the source code and/or database credentials are updated and an analysis is initiated.</p>
+        pub fn set_configure_only(mut self, input: std::option::Option<bool>) -> Self {
+            self.configure_only = input;
+            self
+        }
+        /// <p>The type of known component.</p>
+        pub fn app_type(mut self, input: crate::model::AppType) -> Self {
+            self.app_type = Some(input);
+            self
+        }
+        /// <p>The type of known component.</p>
+        pub fn set_app_type(mut self, input: std::option::Option<crate::model::AppType>) -> Self {
+            self.app_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateApplicationComponentConfigInput`](crate::input::UpdateApplicationComponentConfigInput).
         pub fn build(
             self,
@@ -3043,6 +3216,8 @@ pub mod update_application_component_config_input {
                 strategy_option: self.strategy_option,
                 source_code_list: self.source_code_list,
                 secrets_manager_key: self.secrets_manager_key,
+                configure_only: self.configure_only,
+                app_type: self.app_type,
             })
         }
     }
@@ -3054,6 +3229,8 @@ pub mod update_application_component_config_input {
             formatter.field("strategy_option", &self.strategy_option);
             formatter.field("source_code_list", &self.source_code_list);
             formatter.field("secrets_manager_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("configure_only", &self.configure_only);
+            formatter.field("app_type", &self.app_type);
             formatter.finish()
         }
     }
@@ -3366,6 +3543,12 @@ pub struct UpdateApplicationComponentConfigInput {
     /// <p> Database credentials. </p>
     #[doc(hidden)]
     pub secrets_manager_key: std::option::Option<std::string::String>,
+    /// <p>Update the configuration request of an application component. If it is set to true, the source code and/or database credentials are updated. If it is set to false, the source code and/or database credentials are updated and an analysis is initiated.</p>
+    #[doc(hidden)]
+    pub configure_only: std::option::Option<bool>,
+    /// <p>The type of known component.</p>
+    #[doc(hidden)]
+    pub app_type: std::option::Option<crate::model::AppType>,
 }
 impl UpdateApplicationComponentConfigInput {
     /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
@@ -3388,6 +3571,14 @@ impl UpdateApplicationComponentConfigInput {
     pub fn secrets_manager_key(&self) -> std::option::Option<&str> {
         self.secrets_manager_key.as_deref()
     }
+    /// <p>Update the configuration request of an application component. If it is set to true, the source code and/or database credentials are updated. If it is set to false, the source code and/or database credentials are updated and an analysis is initiated.</p>
+    pub fn configure_only(&self) -> std::option::Option<bool> {
+        self.configure_only
+    }
+    /// <p>The type of known component.</p>
+    pub fn app_type(&self) -> std::option::Option<&crate::model::AppType> {
+        self.app_type.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateApplicationComponentConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3397,6 +3588,8 @@ impl std::fmt::Debug for UpdateApplicationComponentConfigInput {
         formatter.field("strategy_option", &self.strategy_option);
         formatter.field("source_code_list", &self.source_code_list);
         formatter.field("secrets_manager_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("configure_only", &self.configure_only);
+        formatter.field("app_type", &self.app_type);
         formatter.finish()
     }
 }
@@ -3498,6 +3691,9 @@ pub struct StartAssessmentInput {
     /// <p> The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
     #[doc(hidden)]
     pub s3bucket_for_report_data: std::option::Option<std::string::String>,
+    /// <p>List of criteria for assessment.</p>
+    #[doc(hidden)]
+    pub assessment_targets: std::option::Option<std::vec::Vec<crate::model::AssessmentTarget>>,
 }
 impl StartAssessmentInput {
     /// <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
@@ -3507,6 +3703,10 @@ impl StartAssessmentInput {
     /// <p> The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
     pub fn s3bucket_for_report_data(&self) -> std::option::Option<&str> {
         self.s3bucket_for_report_data.as_deref()
+    }
+    /// <p>List of criteria for assessment.</p>
+    pub fn assessment_targets(&self) -> std::option::Option<&[crate::model::AssessmentTarget]> {
+        self.assessment_targets.as_deref()
     }
 }
 
@@ -3523,6 +3723,9 @@ pub struct PutPortfolioPreferencesInput {
     /// <p> The transformation preferences for database applications. </p>
     #[doc(hidden)]
     pub database_preferences: std::option::Option<crate::model::DatabasePreferences>,
+    /// <p>The classification for application component types.</p>
+    #[doc(hidden)]
+    pub application_mode: std::option::Option<crate::model::ApplicationMode>,
 }
 impl PutPortfolioPreferencesInput {
     /// <p> The rank of the business goals based on priority. </p>
@@ -3540,6 +3743,10 @@ impl PutPortfolioPreferencesInput {
     /// <p> The transformation preferences for database applications. </p>
     pub fn database_preferences(&self) -> std::option::Option<&crate::model::DatabasePreferences> {
         self.database_preferences.as_ref()
+    }
+    /// <p>The classification for application component types.</p>
+    pub fn application_mode(&self) -> std::option::Option<&crate::model::ApplicationMode> {
+        self.application_mode.as_ref()
     }
 }
 
@@ -3758,6 +3965,11 @@ pub struct GetPortfolioSummaryInput {}
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPortfolioPreferencesInput {}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetLatestAssessmentIdInput {}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]

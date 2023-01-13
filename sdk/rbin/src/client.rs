@@ -99,6 +99,7 @@ impl Client {
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRule::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRule::set_tags): <p>Information about the tags to assign to the retention rule.</p>
     ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::CreateRule::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::CreateRule::set_resource_type): <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
     ///   - [`resource_tags(Vec<ResourceTag>)`](crate::client::fluent_builders::CreateRule::resource_tags) / [`set_resource_tags(Option<Vec<ResourceTag>>)`](crate::client::fluent_builders::CreateRule::set_resource_tags): <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>  <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>  <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
+    ///   - [`lock_configuration(LockConfiguration)`](crate::client::fluent_builders::CreateRule::lock_configuration) / [`set_lock_configuration(Option<LockConfiguration>)`](crate::client::fluent_builders::CreateRule::set_lock_configuration): <p>Information about the retention rule lock configuration.</p>
     /// - On success, responds with [`CreateRuleOutput`](crate::output::CreateRuleOutput) with field(s):
     ///   - [`identifier(Option<String>)`](crate::output::CreateRuleOutput::identifier): <p>The unique ID of the retention rule.</p>
     ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::CreateRuleOutput::retention_period): <p>Information about the retention period for which the retention rule is to retain resources.</p>
@@ -107,6 +108,8 @@ impl Client {
     ///   - [`resource_type(Option<ResourceType>)`](crate::output::CreateRuleOutput::resource_type): <p>The resource type retained by the retention rule.</p>
     ///   - [`resource_tags(Option<Vec<ResourceTag>>)`](crate::output::CreateRuleOutput::resource_tags): <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     ///   - [`status(Option<RuleStatus>)`](crate::output::CreateRuleOutput::status): <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
+    ///   - [`lock_configuration(Option<LockConfiguration>)`](crate::output::CreateRuleOutput::lock_configuration): <p>Information about the retention rule lock configuration.</p>
+    ///   - [`lock_state(Option<LockState>)`](crate::output::CreateRuleOutput::lock_state): <p>The lock state for the retention rule.</p>  <ul>   <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>   <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>   <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>   <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<CreateRuleError>`](crate::error::CreateRuleError)
     pub fn create_rule(&self) -> fluent_builders::CreateRule {
         fluent_builders::CreateRule::new(self.handle.clone())
@@ -132,6 +135,9 @@ impl Client {
     ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::GetRuleOutput::retention_period): <p>Information about the retention period for which the retention rule is to retain resources.</p>
     ///   - [`resource_tags(Option<Vec<ResourceTag>>)`](crate::output::GetRuleOutput::resource_tags): <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     ///   - [`status(Option<RuleStatus>)`](crate::output::GetRuleOutput::status): <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
+    ///   - [`lock_configuration(Option<LockConfiguration>)`](crate::output::GetRuleOutput::lock_configuration): <p>Information about the retention rule lock configuration.</p>
+    ///   - [`lock_state(Option<LockState>)`](crate::output::GetRuleOutput::lock_state): <p>The lock state for the retention rule.</p>  <ul>   <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>   <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>   <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>   <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>  </ul>
+    ///   - [`lock_end_time(Option<DateTime>)`](crate::output::GetRuleOutput::lock_end_time): <p>The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been unlocked and that are still within the unlock delay period.</p>
     /// - On failure, responds with [`SdkError<GetRuleError>`](crate::error::GetRuleError)
     pub fn get_rule(&self) -> fluent_builders::GetRule {
         fluent_builders::GetRule::new(self.handle.clone())
@@ -144,6 +150,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRules::set_next_token): <p>The token for the next page of results.</p>
     ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::ListRules::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::ListRules::set_resource_type): <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
     ///   - [`resource_tags(Vec<ResourceTag>)`](crate::client::fluent_builders::ListRules::resource_tags) / [`set_resource_tags(Option<Vec<ResourceTag>>)`](crate::client::fluent_builders::ListRules::set_resource_tags): <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    ///   - [`lock_state(LockState)`](crate::client::fluent_builders::ListRules::lock_state) / [`set_lock_state(Option<LockState>)`](crate::client::fluent_builders::ListRules::set_lock_state): <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
     /// - On success, responds with [`ListRulesOutput`](crate::output::ListRulesOutput) with field(s):
     ///   - [`rules(Option<Vec<RuleSummary>>)`](crate::output::ListRulesOutput::rules): <p>Information about the retention rules.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRulesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -161,6 +168,24 @@ impl Client {
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`LockRule`](crate::client::fluent_builders::LockRule) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::LockRule::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::LockRule::set_identifier): <p>The unique ID of the retention rule.</p>
+    ///   - [`lock_configuration(LockConfiguration)`](crate::client::fluent_builders::LockRule::lock_configuration) / [`set_lock_configuration(Option<LockConfiguration>)`](crate::client::fluent_builders::LockRule::set_lock_configuration): <p>Information about the retention rule lock configuration.</p>
+    /// - On success, responds with [`LockRuleOutput`](crate::output::LockRuleOutput) with field(s):
+    ///   - [`identifier(Option<String>)`](crate::output::LockRuleOutput::identifier): <p>The unique ID of the retention rule.</p>
+    ///   - [`description(Option<String>)`](crate::output::LockRuleOutput::description): <p>The retention rule description.</p>
+    ///   - [`resource_type(Option<ResourceType>)`](crate::output::LockRuleOutput::resource_type): <p>The resource type retained by the retention rule.</p>
+    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::LockRuleOutput::retention_period): <p>Information about the retention period for which the retention rule is to retain resources.</p>
+    ///   - [`resource_tags(Option<Vec<ResourceTag>>)`](crate::output::LockRuleOutput::resource_tags): <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    ///   - [`status(Option<RuleStatus>)`](crate::output::LockRuleOutput::status): <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
+    ///   - [`lock_configuration(Option<LockConfiguration>)`](crate::output::LockRuleOutput::lock_configuration): <p>Information about the retention rule lock configuration.</p>
+    ///   - [`lock_state(Option<LockState>)`](crate::output::LockRuleOutput::lock_state): <p>The lock state for the retention rule.</p>  <ul>   <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>   <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>   <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>   <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<LockRuleError>`](crate::error::LockRuleError)
+    pub fn lock_rule(&self) -> fluent_builders::LockRule {
+        fluent_builders::LockRule::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -171,6 +196,24 @@ impl Client {
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource {
         fluent_builders::TagResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UnlockRule`](crate::client::fluent_builders::UnlockRule) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::UnlockRule::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::UnlockRule::set_identifier): <p>The unique ID of the retention rule.</p>
+    /// - On success, responds with [`UnlockRuleOutput`](crate::output::UnlockRuleOutput) with field(s):
+    ///   - [`identifier(Option<String>)`](crate::output::UnlockRuleOutput::identifier): <p>The unique ID of the retention rule.</p>
+    ///   - [`description(Option<String>)`](crate::output::UnlockRuleOutput::description): <p>The retention rule description.</p>
+    ///   - [`resource_type(Option<ResourceType>)`](crate::output::UnlockRuleOutput::resource_type): <p>The resource type retained by the retention rule.</p>
+    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::UnlockRuleOutput::retention_period): <p>Information about the retention period for which the retention rule is to retain resources.</p>
+    ///   - [`resource_tags(Option<Vec<ResourceTag>>)`](crate::output::UnlockRuleOutput::resource_tags): <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    ///   - [`status(Option<RuleStatus>)`](crate::output::UnlockRuleOutput::status): <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
+    ///   - [`lock_configuration(Option<LockConfiguration>)`](crate::output::UnlockRuleOutput::lock_configuration): <p>Information about the retention rule lock configuration.</p>
+    ///   - [`lock_state(Option<LockState>)`](crate::output::UnlockRuleOutput::lock_state): <p>The lock state for the retention rule.</p>  <ul>   <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>   <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>   <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>   <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>  </ul>
+    ///   - [`lock_end_time(Option<DateTime>)`](crate::output::UnlockRuleOutput::lock_end_time): <p>The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been unlocked and that are still within the unlock delay period.</p>
+    /// - On failure, responds with [`SdkError<UnlockRuleError>`](crate::error::UnlockRuleError)
+    pub fn unlock_rule(&self) -> fluent_builders::UnlockRule {
+        fluent_builders::UnlockRule::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
@@ -189,7 +232,7 @@ impl Client {
     ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateRule::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::UpdateRule::set_identifier): <p>The unique ID of the retention rule.</p>
     ///   - [`retention_period(RetentionPeriod)`](crate::client::fluent_builders::UpdateRule::retention_period) / [`set_retention_period(Option<RetentionPeriod>)`](crate::client::fluent_builders::UpdateRule::set_retention_period): <p>Information about the retention period for which the retention rule is to retain resources.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRule::set_description): <p>The retention rule description.</p>
-    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::UpdateRule::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::UpdateRule::set_resource_type): <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::UpdateRule::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::UpdateRule::set_resource_type): <note>   <p>This parameter is currently not supported. You can't update a retention rule's resource type after creation.</p>  </note>
     ///   - [`resource_tags(Vec<ResourceTag>)`](crate::client::fluent_builders::UpdateRule::resource_tags) / [`set_resource_tags(Option<Vec<ResourceTag>>)`](crate::client::fluent_builders::UpdateRule::set_resource_tags): <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>  <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>  <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
     /// - On success, responds with [`UpdateRuleOutput`](crate::output::UpdateRuleOutput) with field(s):
     ///   - [`identifier(Option<String>)`](crate::output::UpdateRuleOutput::identifier): <p>The unique ID of the retention rule.</p>
@@ -198,6 +241,8 @@ impl Client {
     ///   - [`resource_type(Option<ResourceType>)`](crate::output::UpdateRuleOutput::resource_type): <p>The resource type retained by the retention rule.</p>
     ///   - [`resource_tags(Option<Vec<ResourceTag>>)`](crate::output::UpdateRuleOutput::resource_tags): <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     ///   - [`status(Option<RuleStatus>)`](crate::output::UpdateRuleOutput::status): <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
+    ///   - [`lock_state(Option<LockState>)`](crate::output::UpdateRuleOutput::lock_state): <p>The lock state for the retention rule.</p>  <ul>   <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>   <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>   <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>   <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>  </ul>
+    ///   - [`lock_end_time(Option<DateTime>)`](crate::output::UpdateRuleOutput::lock_end_time): <p>The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been unlocked and that are still within the unlock delay period.</p>
     /// - On failure, responds with [`SdkError<UpdateRuleError>`](crate::error::UpdateRuleError)
     pub fn update_rule(&self) -> fluent_builders::UpdateRule {
         fluent_builders::UpdateRule::new(self.handle.clone())
@@ -344,6 +389,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
         ) -> Self {
             self.inner = self.inner.set_resource_tags(input);
+            self
+        }
+        /// <p>Information about the retention rule lock configuration.</p>
+        pub fn lock_configuration(mut self, input: crate::model::LockConfiguration) -> Self {
+            self.inner = self.inner.lock_configuration(input);
+            self
+        }
+        /// <p>Information about the retention rule lock configuration.</p>
+        pub fn set_lock_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LockConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_lock_configuration(input);
             self
         }
     }
@@ -611,6 +669,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_tags(input);
             self
         }
+        /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
+        pub fn lock_state(mut self, input: crate::model::LockState) -> Self {
+            self.inner = self.inner.lock_state(input);
+            self
+        }
+        /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
+        pub fn set_lock_state(
+            mut self,
+            input: std::option::Option<crate::model::LockState>,
+        ) -> Self {
+            self.inner = self.inner.set_lock_state(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
@@ -682,6 +753,92 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `LockRule`.
+    ///
+    /// <p>Locks a retention rule. A locked retention rule can't be modified or deleted.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct LockRule {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::lock_rule_input::Builder,
+    }
+    impl LockRule {
+        /// Creates a new `LockRule`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::LockRule,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::LockRuleError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::LockRuleOutput,
+            aws_smithy_http::result::SdkError<crate::error::LockRuleError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID of the retention rule.</p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
+            self
+        }
+        /// <p>The unique ID of the retention rule.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_identifier(input);
+            self
+        }
+        /// <p>Information about the retention rule lock configuration.</p>
+        pub fn lock_configuration(mut self, input: crate::model::LockConfiguration) -> Self {
+            self.inner = self.inner.lock_configuration(input);
+            self
+        }
+        /// <p>Information about the retention rule lock configuration.</p>
+        pub fn set_lock_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LockConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_lock_configuration(input);
             self
         }
     }
@@ -772,6 +929,79 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UnlockRule`.
+    ///
+    /// <p>Unlocks a retention rule. After a retention rule is unlocked, it can be modified or deleted only after the unlock delay period expires.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UnlockRule {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::unlock_rule_input::Builder,
+    }
+    impl UnlockRule {
+        /// Creates a new `UnlockRule`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UnlockRule,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UnlockRuleError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UnlockRuleOutput,
+            aws_smithy_http::result::SdkError<crate::error::UnlockRuleError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID of the retention rule.</p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
+            self
+        }
+        /// <p>The unique ID of the retention rule.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_identifier(input);
             self
         }
     }
@@ -867,7 +1097,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRule`.
     ///
-    /// <p>Updates an existing Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule"> Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>Updates an existing Recycle Bin retention rule. You can update a retention rule's description, resource tags, and retention period at any time after creation. You can't update a retention rule's resource type after creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule"> Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRule {
         handle: std::sync::Arc<super::Handle>,
@@ -960,12 +1190,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+        /// <note>
+        /// <p>This parameter is currently not supported. You can't update a retention rule's resource type after creation.</p>
+        /// </note>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+        /// <note>
+        /// <p>This parameter is currently not supported. You can't update a retention rule's resource type after creation.</p>
+        /// </note>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,

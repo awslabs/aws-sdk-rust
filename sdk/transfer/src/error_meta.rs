@@ -115,6 +115,9 @@ impl From<crate::error::CreateAgreementError> for Error {
             crate::error::CreateAgreementErrorKind::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
+            crate::error::CreateAgreementErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::error::CreateAgreementErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
@@ -152,6 +155,9 @@ impl From<crate::error::CreateConnectorError> for Error {
             crate::error::CreateConnectorErrorKind::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
+            crate::error::CreateConnectorErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::error::CreateConnectorErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
@@ -185,6 +191,9 @@ impl From<crate::error::CreateProfileError> for Error {
             }
             crate::error::CreateProfileErrorKind::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
+            }
+            crate::error::CreateProfileErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::error::CreateProfileErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
@@ -1904,6 +1913,9 @@ impl From<crate::error::UpdateAccessError> for Error {
             crate::error::UpdateAccessErrorKind::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
+            crate::error::UpdateAccessErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::error::UpdateAccessErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
@@ -1941,6 +1953,9 @@ impl From<crate::error::UpdateAgreementError> for Error {
             crate::error::UpdateAgreementErrorKind::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
+            crate::error::UpdateAgreementErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::error::UpdateAgreementErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
@@ -1976,6 +1991,9 @@ impl From<crate::error::UpdateCertificateError> for Error {
             }
             crate::error::UpdateCertificateErrorKind::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
+            }
+            crate::error::UpdateCertificateErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::error::UpdateCertificateErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
@@ -2013,6 +2031,9 @@ impl From<crate::error::UpdateConnectorError> for Error {
             }
             crate::error::UpdateConnectorErrorKind::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
+            }
+            crate::error::UpdateConnectorErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::error::UpdateConnectorErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
@@ -2084,6 +2105,9 @@ impl From<crate::error::UpdateProfileError> for Error {
             }
             crate::error::UpdateProfileErrorKind::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
+            }
+            crate::error::UpdateProfileErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::error::UpdateProfileErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))

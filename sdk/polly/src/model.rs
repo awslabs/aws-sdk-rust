@@ -30,6 +30,7 @@
 ///     VoiceId::Cristiano => { /* ... */ },
 ///     VoiceId::Daniel => { /* ... */ },
 ///     VoiceId::Dora => { /* ... */ },
+///     VoiceId::Elin => { /* ... */ },
 ///     VoiceId::Emma => { /* ... */ },
 ///     VoiceId::Enrique => { /* ... */ },
 ///     VoiceId::Ewa => { /* ... */ },
@@ -38,9 +39,11 @@
 ///     VoiceId::Geraint => { /* ... */ },
 ///     VoiceId::Giorgio => { /* ... */ },
 ///     VoiceId::Gwyneth => { /* ... */ },
+///     VoiceId::Hala => { /* ... */ },
 ///     VoiceId::Hannah => { /* ... */ },
 ///     VoiceId::Hans => { /* ... */ },
 ///     VoiceId::Hiujin => { /* ... */ },
+///     VoiceId::Ida => { /* ... */ },
 ///     VoiceId::Ines => { /* ... */ },
 ///     VoiceId::Ivy => { /* ... */ },
 ///     VoiceId::Jacek => { /* ... */ },
@@ -53,6 +56,7 @@
 ///     VoiceId::Kendra => { /* ... */ },
 ///     VoiceId::Kevin => { /* ... */ },
 ///     VoiceId::Kimberly => { /* ... */ },
+///     VoiceId::Laura => { /* ... */ },
 ///     VoiceId::Lea => { /* ... */ },
 ///     VoiceId::Liam => { /* ... */ },
 ///     VoiceId::Liv => { /* ... */ },
@@ -70,6 +74,7 @@
 ///     VoiceId::Mizuki => { /* ... */ },
 ///     VoiceId::Naja => { /* ... */ },
 ///     VoiceId::Nicole => { /* ... */ },
+///     VoiceId::Ola => { /* ... */ },
 ///     VoiceId::Olivia => { /* ... */ },
 ///     VoiceId::Pedro => { /* ... */ },
 ///     VoiceId::Penelope => { /* ... */ },
@@ -79,6 +84,7 @@
 ///     VoiceId::Russell => { /* ... */ },
 ///     VoiceId::Salli => { /* ... */ },
 ///     VoiceId::Seoyeon => { /* ... */ },
+///     VoiceId::Suvi => { /* ... */ },
 ///     VoiceId::Takumi => { /* ... */ },
 ///     VoiceId::Tatyana => { /* ... */ },
 ///     VoiceId::Vicki => { /* ... */ },
@@ -155,6 +161,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Dora,
     #[allow(missing_docs)] // documentation missing in model
+    Elin,
+    #[allow(missing_docs)] // documentation missing in model
     Emma,
     #[allow(missing_docs)] // documentation missing in model
     Enrique,
@@ -171,11 +179,15 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Gwyneth,
     #[allow(missing_docs)] // documentation missing in model
+    Hala,
+    #[allow(missing_docs)] // documentation missing in model
     Hannah,
     #[allow(missing_docs)] // documentation missing in model
     Hans,
     #[allow(missing_docs)] // documentation missing in model
     Hiujin,
+    #[allow(missing_docs)] // documentation missing in model
+    Ida,
     #[allow(missing_docs)] // documentation missing in model
     Ines,
     #[allow(missing_docs)] // documentation missing in model
@@ -200,6 +212,8 @@ pub enum VoiceId {
     Kevin,
     #[allow(missing_docs)] // documentation missing in model
     Kimberly,
+    #[allow(missing_docs)] // documentation missing in model
+    Laura,
     #[allow(missing_docs)] // documentation missing in model
     Lea,
     #[allow(missing_docs)] // documentation missing in model
@@ -235,6 +249,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Nicole,
     #[allow(missing_docs)] // documentation missing in model
+    Ola,
+    #[allow(missing_docs)] // documentation missing in model
     Olivia,
     #[allow(missing_docs)] // documentation missing in model
     Pedro,
@@ -252,6 +268,8 @@ pub enum VoiceId {
     Salli,
     #[allow(missing_docs)] // documentation missing in model
     Seoyeon,
+    #[allow(missing_docs)] // documentation missing in model
+    Suvi,
     #[allow(missing_docs)] // documentation missing in model
     Takumi,
     #[allow(missing_docs)] // documentation missing in model
@@ -288,6 +306,7 @@ impl std::convert::From<&str> for VoiceId {
             "Cristiano" => VoiceId::Cristiano,
             "Daniel" => VoiceId::Daniel,
             "Dora" => VoiceId::Dora,
+            "Elin" => VoiceId::Elin,
             "Emma" => VoiceId::Emma,
             "Enrique" => VoiceId::Enrique,
             "Ewa" => VoiceId::Ewa,
@@ -296,9 +315,11 @@ impl std::convert::From<&str> for VoiceId {
             "Geraint" => VoiceId::Geraint,
             "Giorgio" => VoiceId::Giorgio,
             "Gwyneth" => VoiceId::Gwyneth,
+            "Hala" => VoiceId::Hala,
             "Hannah" => VoiceId::Hannah,
             "Hans" => VoiceId::Hans,
             "Hiujin" => VoiceId::Hiujin,
+            "Ida" => VoiceId::Ida,
             "Ines" => VoiceId::Ines,
             "Ivy" => VoiceId::Ivy,
             "Jacek" => VoiceId::Jacek,
@@ -311,6 +332,7 @@ impl std::convert::From<&str> for VoiceId {
             "Kendra" => VoiceId::Kendra,
             "Kevin" => VoiceId::Kevin,
             "Kimberly" => VoiceId::Kimberly,
+            "Laura" => VoiceId::Laura,
             "Lea" => VoiceId::Lea,
             "Liam" => VoiceId::Liam,
             "Liv" => VoiceId::Liv,
@@ -328,6 +350,7 @@ impl std::convert::From<&str> for VoiceId {
             "Mizuki" => VoiceId::Mizuki,
             "Naja" => VoiceId::Naja,
             "Nicole" => VoiceId::Nicole,
+            "Ola" => VoiceId::Ola,
             "Olivia" => VoiceId::Olivia,
             "Pedro" => VoiceId::Pedro,
             "Penelope" => VoiceId::Penelope,
@@ -337,6 +360,7 @@ impl std::convert::From<&str> for VoiceId {
             "Russell" => VoiceId::Russell,
             "Salli" => VoiceId::Salli,
             "Seoyeon" => VoiceId::Seoyeon,
+            "Suvi" => VoiceId::Suvi,
             "Takumi" => VoiceId::Takumi,
             "Tatyana" => VoiceId::Tatyana,
             "Vicki" => VoiceId::Vicki,
@@ -376,6 +400,7 @@ impl VoiceId {
             VoiceId::Cristiano => "Cristiano",
             VoiceId::Daniel => "Daniel",
             VoiceId::Dora => "Dora",
+            VoiceId::Elin => "Elin",
             VoiceId::Emma => "Emma",
             VoiceId::Enrique => "Enrique",
             VoiceId::Ewa => "Ewa",
@@ -384,9 +409,11 @@ impl VoiceId {
             VoiceId::Geraint => "Geraint",
             VoiceId::Giorgio => "Giorgio",
             VoiceId::Gwyneth => "Gwyneth",
+            VoiceId::Hala => "Hala",
             VoiceId::Hannah => "Hannah",
             VoiceId::Hans => "Hans",
             VoiceId::Hiujin => "Hiujin",
+            VoiceId::Ida => "Ida",
             VoiceId::Ines => "Ines",
             VoiceId::Ivy => "Ivy",
             VoiceId::Jacek => "Jacek",
@@ -399,6 +426,7 @@ impl VoiceId {
             VoiceId::Kendra => "Kendra",
             VoiceId::Kevin => "Kevin",
             VoiceId::Kimberly => "Kimberly",
+            VoiceId::Laura => "Laura",
             VoiceId::Lea => "Lea",
             VoiceId::Liam => "Liam",
             VoiceId::Liv => "Liv",
@@ -416,6 +444,7 @@ impl VoiceId {
             VoiceId::Mizuki => "Mizuki",
             VoiceId::Naja => "Naja",
             VoiceId::Nicole => "Nicole",
+            VoiceId::Ola => "Ola",
             VoiceId::Olivia => "Olivia",
             VoiceId::Pedro => "Pedro",
             VoiceId::Penelope => "Penelope",
@@ -425,6 +454,7 @@ impl VoiceId {
             VoiceId::Russell => "Russell",
             VoiceId::Salli => "Salli",
             VoiceId::Seoyeon => "Seoyeon",
+            VoiceId::Suvi => "Suvi",
             VoiceId::Takumi => "Takumi",
             VoiceId::Tatyana => "Tatyana",
             VoiceId::Vicki => "Vicki",
@@ -455,6 +485,7 @@ impl VoiceId {
             "Cristiano",
             "Daniel",
             "Dora",
+            "Elin",
             "Emma",
             "Enrique",
             "Ewa",
@@ -463,9 +494,11 @@ impl VoiceId {
             "Geraint",
             "Giorgio",
             "Gwyneth",
+            "Hala",
             "Hannah",
             "Hans",
             "Hiujin",
+            "Ida",
             "Ines",
             "Ivy",
             "Jacek",
@@ -478,6 +511,7 @@ impl VoiceId {
             "Kendra",
             "Kevin",
             "Kimberly",
+            "Laura",
             "Lea",
             "Liam",
             "Liv",
@@ -495,6 +529,7 @@ impl VoiceId {
             "Mizuki",
             "Naja",
             "Nicole",
+            "Ola",
             "Olivia",
             "Pedro",
             "Penelope",
@@ -504,6 +539,7 @@ impl VoiceId {
             "Russell",
             "Salli",
             "Seoyeon",
+            "Suvi",
             "Takumi",
             "Tatyana",
             "Vicki",
@@ -821,6 +857,7 @@ impl AsRef<str> for OutputFormat {
 /// ```text
 /// # let languagecode = unimplemented!();
 /// match languagecode {
+///     LanguageCode::ArAe => { /* ... */ },
 ///     LanguageCode::Arb => { /* ... */ },
 ///     LanguageCode::CaEs => { /* ... */ },
 ///     LanguageCode::CmnCn => { /* ... */ },
@@ -838,6 +875,7 @@ impl AsRef<str> for OutputFormat {
 ///     LanguageCode::EsEs => { /* ... */ },
 ///     LanguageCode::EsMx => { /* ... */ },
 ///     LanguageCode::EsUs => { /* ... */ },
+///     LanguageCode::FiFi => { /* ... */ },
 ///     LanguageCode::FrCa => { /* ... */ },
 ///     LanguageCode::FrFr => { /* ... */ },
 ///     LanguageCode::HiIn => { /* ... */ },
@@ -889,6 +927,8 @@ impl AsRef<str> for OutputFormat {
 )]
 pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
+    ArAe,
+    #[allow(missing_docs)] // documentation missing in model
     Arb,
     #[allow(missing_docs)] // documentation missing in model
     CaEs,
@@ -922,6 +962,8 @@ pub enum LanguageCode {
     EsMx,
     #[allow(missing_docs)] // documentation missing in model
     EsUs,
+    #[allow(missing_docs)] // documentation missing in model
+    FiFi,
     #[allow(missing_docs)] // documentation missing in model
     FrCa,
     #[allow(missing_docs)] // documentation missing in model
@@ -962,6 +1004,7 @@ pub enum LanguageCode {
 impl std::convert::From<&str> for LanguageCode {
     fn from(s: &str) -> Self {
         match s {
+            "ar-AE" => LanguageCode::ArAe,
             "arb" => LanguageCode::Arb,
             "ca-ES" => LanguageCode::CaEs,
             "cmn-CN" => LanguageCode::CmnCn,
@@ -979,6 +1022,7 @@ impl std::convert::From<&str> for LanguageCode {
             "es-ES" => LanguageCode::EsEs,
             "es-MX" => LanguageCode::EsMx,
             "es-US" => LanguageCode::EsUs,
+            "fi-FI" => LanguageCode::FiFi,
             "fr-CA" => LanguageCode::FrCa,
             "fr-FR" => LanguageCode::FrFr,
             "hi-IN" => LanguageCode::HiIn,
@@ -1011,6 +1055,7 @@ impl LanguageCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            LanguageCode::ArAe => "ar-AE",
             LanguageCode::Arb => "arb",
             LanguageCode::CaEs => "ca-ES",
             LanguageCode::CmnCn => "cmn-CN",
@@ -1028,6 +1073,7 @@ impl LanguageCode {
             LanguageCode::EsEs => "es-ES",
             LanguageCode::EsMx => "es-MX",
             LanguageCode::EsUs => "es-US",
+            LanguageCode::FiFi => "fi-FI",
             LanguageCode::FrCa => "fr-CA",
             LanguageCode::FrFr => "fr-FR",
             LanguageCode::HiIn => "hi-IN",
@@ -1051,6 +1097,7 @@ impl LanguageCode {
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ar-AE",
             "arb",
             "ca-ES",
             "cmn-CN",
@@ -1068,6 +1115,7 @@ impl LanguageCode {
             "es-ES",
             "es-MX",
             "es-US",
+            "fi-FI",
             "fr-CA",
             "fr-FR",
             "hi-IN",

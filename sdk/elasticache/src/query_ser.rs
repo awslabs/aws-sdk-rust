@@ -109,44 +109,68 @@ pub fn serialize_structure_crate_model_node_group_configuration(
 }
 
 #[allow(unused_mut)]
+pub fn serialize_structure_crate_model_authentication_mode(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::AuthenticationMode,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    #[allow(unused_mut)]
+    let mut scope_35 = writer.prefix("Type");
+    if let Some(var_36) = &input.r#type {
+        scope_35.string(var_36.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_37 = writer.prefix("Passwords");
+    if let Some(var_38) = &input.passwords {
+        let mut list_40 = scope_37.start_list(false, None);
+        for item_39 in var_38 {
+            #[allow(unused_mut)]
+            let mut entry_41 = list_40.entry();
+            entry_41.string(item_39);
+        }
+        list_40.finish();
+    }
+    Ok(())
+}
+
+#[allow(unused_mut)]
 pub fn serialize_structure_crate_model_configure_shard(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ConfigureShard,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_35 = writer.prefix("NodeGroupId");
-    if let Some(var_36) = &input.node_group_id {
-        scope_35.string(var_36);
+    let mut scope_42 = writer.prefix("NodeGroupId");
+    if let Some(var_43) = &input.node_group_id {
+        scope_42.string(var_43);
     }
     #[allow(unused_mut)]
-    let mut scope_37 = writer.prefix("NewReplicaCount");
+    let mut scope_44 = writer.prefix("NewReplicaCount");
     {
-        scope_37.number(
+        scope_44.number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((input.new_replica_count).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_38 = writer.prefix("PreferredAvailabilityZones");
-    if let Some(var_39) = &input.preferred_availability_zones {
-        let mut list_41 = scope_38.start_list(false, Some("PreferredAvailabilityZone"));
-        for item_40 in var_39 {
+    let mut scope_45 = writer.prefix("PreferredAvailabilityZones");
+    if let Some(var_46) = &input.preferred_availability_zones {
+        let mut list_48 = scope_45.start_list(false, Some("PreferredAvailabilityZone"));
+        for item_47 in var_46 {
             #[allow(unused_mut)]
-            let mut entry_42 = list_41.entry();
-            entry_42.string(item_40);
+            let mut entry_49 = list_48.entry();
+            entry_49.string(item_47);
         }
-        list_41.finish();
+        list_48.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_43 = writer.prefix("PreferredOutpostArns");
-    if let Some(var_44) = &input.preferred_outpost_arns {
-        let mut list_46 = scope_43.start_list(false, Some("PreferredOutpostArn"));
-        for item_45 in var_44 {
+    let mut scope_50 = writer.prefix("PreferredOutpostArns");
+    if let Some(var_51) = &input.preferred_outpost_arns {
+        let mut list_53 = scope_50.start_list(false, Some("PreferredOutpostArn"));
+        for item_52 in var_51 {
             #[allow(unused_mut)]
-            let mut entry_47 = list_46.entry();
-            entry_47.string(item_45);
+            let mut entry_54 = list_53.entry();
+            entry_54.string(item_52);
         }
-        list_46.finish();
+        list_53.finish();
     }
     Ok(())
 }
@@ -157,14 +181,14 @@ pub fn serialize_structure_crate_model_time_range_filter(
     input: &crate::model::TimeRangeFilter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_48 = writer.prefix("StartTime");
-    if let Some(var_49) = &input.start_time {
-        scope_48.date_time(var_49, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_55 = writer.prefix("StartTime");
+    if let Some(var_56) = &input.start_time {
+        scope_55.date_time(var_56, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_50 = writer.prefix("EndTime");
-    if let Some(var_51) = &input.end_time {
-        scope_50.date_time(var_51, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_57 = writer.prefix("EndTime");
+    if let Some(var_58) = &input.end_time {
+        scope_57.date_time(var_58, aws_smithy_types::date_time::Format::DateTime)?;
     }
     Ok(())
 }
@@ -175,20 +199,20 @@ pub fn serialize_structure_crate_model_filter(
     input: &crate::model::Filter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_52 = writer.prefix("Name");
-    if let Some(var_53) = &input.name {
-        scope_52.string(var_53);
+    let mut scope_59 = writer.prefix("Name");
+    if let Some(var_60) = &input.name {
+        scope_59.string(var_60);
     }
     #[allow(unused_mut)]
-    let mut scope_54 = writer.prefix("Values");
-    if let Some(var_55) = &input.values {
-        let mut list_57 = scope_54.start_list(false, None);
-        for item_56 in var_55 {
+    let mut scope_61 = writer.prefix("Values");
+    if let Some(var_62) = &input.values {
+        let mut list_64 = scope_61.start_list(false, None);
+        for item_63 in var_62 {
             #[allow(unused_mut)]
-            let mut entry_58 = list_57.entry();
-            entry_58.string(item_56);
+            let mut entry_65 = list_64.entry();
+            entry_65.string(item_63);
         }
-        list_57.finish();
+        list_64.finish();
     }
     Ok(())
 }
@@ -199,27 +223,27 @@ pub fn serialize_structure_crate_model_regional_configuration(
     input: &crate::model::RegionalConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_59 = writer.prefix("ReplicationGroupId");
-    if let Some(var_60) = &input.replication_group_id {
-        scope_59.string(var_60);
+    let mut scope_66 = writer.prefix("ReplicationGroupId");
+    if let Some(var_67) = &input.replication_group_id {
+        scope_66.string(var_67);
     }
     #[allow(unused_mut)]
-    let mut scope_61 = writer.prefix("ReplicationGroupRegion");
-    if let Some(var_62) = &input.replication_group_region {
-        scope_61.string(var_62);
+    let mut scope_68 = writer.prefix("ReplicationGroupRegion");
+    if let Some(var_69) = &input.replication_group_region {
+        scope_68.string(var_69);
     }
     #[allow(unused_mut)]
-    let mut scope_63 = writer.prefix("ReshardingConfiguration");
-    if let Some(var_64) = &input.resharding_configuration {
-        let mut list_66 = scope_63.start_list(false, Some("ReshardingConfiguration"));
-        for item_65 in var_64 {
+    let mut scope_70 = writer.prefix("ReshardingConfiguration");
+    if let Some(var_71) = &input.resharding_configuration {
+        let mut list_73 = scope_70.start_list(false, Some("ReshardingConfiguration"));
+        for item_72 in var_71 {
             #[allow(unused_mut)]
-            let mut entry_67 = list_66.entry();
+            let mut entry_74 = list_73.entry();
             crate::query_ser::serialize_structure_crate_model_resharding_configuration(
-                entry_67, item_65,
+                entry_74, item_72,
             )?;
         }
-        list_66.finish();
+        list_73.finish();
     }
     Ok(())
 }
@@ -230,14 +254,14 @@ pub fn serialize_structure_crate_model_parameter_name_value(
     input: &crate::model::ParameterNameValue,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_68 = writer.prefix("ParameterName");
-    if let Some(var_69) = &input.parameter_name {
-        scope_68.string(var_69);
+    let mut scope_75 = writer.prefix("ParameterName");
+    if let Some(var_76) = &input.parameter_name {
+        scope_75.string(var_76);
     }
     #[allow(unused_mut)]
-    let mut scope_70 = writer.prefix("ParameterValue");
-    if let Some(var_71) = &input.parameter_value {
-        scope_70.string(var_71);
+    let mut scope_77 = writer.prefix("ParameterValue");
+    if let Some(var_78) = &input.parameter_value {
+        scope_77.string(var_78);
     }
     Ok(())
 }
@@ -248,20 +272,20 @@ pub fn serialize_structure_crate_model_resharding_configuration(
     input: &crate::model::ReshardingConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_72 = writer.prefix("NodeGroupId");
-    if let Some(var_73) = &input.node_group_id {
-        scope_72.string(var_73);
+    let mut scope_79 = writer.prefix("NodeGroupId");
+    if let Some(var_80) = &input.node_group_id {
+        scope_79.string(var_80);
     }
     #[allow(unused_mut)]
-    let mut scope_74 = writer.prefix("PreferredAvailabilityZones");
-    if let Some(var_75) = &input.preferred_availability_zones {
-        let mut list_77 = scope_74.start_list(false, Some("AvailabilityZone"));
-        for item_76 in var_75 {
+    let mut scope_81 = writer.prefix("PreferredAvailabilityZones");
+    if let Some(var_82) = &input.preferred_availability_zones {
+        let mut list_84 = scope_81.start_list(false, Some("AvailabilityZone"));
+        for item_83 in var_82 {
             #[allow(unused_mut)]
-            let mut entry_78 = list_77.entry();
-            entry_78.string(item_76);
+            let mut entry_85 = list_84.entry();
+            entry_85.string(item_83);
         }
-        list_77.finish();
+        list_84.finish();
     }
     Ok(())
 }
@@ -272,16 +296,16 @@ pub fn serialize_structure_crate_model_customer_node_endpoint(
     input: &crate::model::CustomerNodeEndpoint,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_79 = writer.prefix("Address");
-    if let Some(var_80) = &input.address {
-        scope_79.string(var_80);
+    let mut scope_86 = writer.prefix("Address");
+    if let Some(var_87) = &input.address {
+        scope_86.string(var_87);
     }
     #[allow(unused_mut)]
-    let mut scope_81 = writer.prefix("Port");
-    if let Some(var_82) = &input.port {
-        scope_81.number(
+    let mut scope_88 = writer.prefix("Port");
+    if let Some(var_89) = &input.port {
+        scope_88.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_82).into()),
+            aws_smithy_types::Number::NegInt((*var_89).into()),
         );
     }
     Ok(())
@@ -293,17 +317,17 @@ pub fn serialize_structure_crate_model_destination_details(
     input: &crate::model::DestinationDetails,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_83 = writer.prefix("CloudWatchLogsDetails");
-    if let Some(var_84) = &input.cloud_watch_logs_details {
+    let mut scope_90 = writer.prefix("CloudWatchLogsDetails");
+    if let Some(var_91) = &input.cloud_watch_logs_details {
         crate::query_ser::serialize_structure_crate_model_cloud_watch_logs_destination_details(
-            scope_83, var_84,
+            scope_90, var_91,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_85 = writer.prefix("KinesisFirehoseDetails");
-    if let Some(var_86) = &input.kinesis_firehose_details {
+    let mut scope_92 = writer.prefix("KinesisFirehoseDetails");
+    if let Some(var_93) = &input.kinesis_firehose_details {
         crate::query_ser::serialize_structure_crate_model_kinesis_firehose_destination_details(
-            scope_85, var_86,
+            scope_92, var_93,
         )?;
     }
     Ok(())
@@ -315,9 +339,9 @@ pub fn serialize_structure_crate_model_cloud_watch_logs_destination_details(
     input: &crate::model::CloudWatchLogsDestinationDetails,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_87 = writer.prefix("LogGroup");
-    if let Some(var_88) = &input.log_group {
-        scope_87.string(var_88);
+    let mut scope_94 = writer.prefix("LogGroup");
+    if let Some(var_95) = &input.log_group {
+        scope_94.string(var_95);
     }
     Ok(())
 }
@@ -328,9 +352,9 @@ pub fn serialize_structure_crate_model_kinesis_firehose_destination_details(
     input: &crate::model::KinesisFirehoseDestinationDetails,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_89 = writer.prefix("DeliveryStream");
-    if let Some(var_90) = &input.delivery_stream {
-        scope_89.string(var_90);
+    let mut scope_96 = writer.prefix("DeliveryStream");
+    if let Some(var_97) = &input.delivery_stream {
+        scope_96.string(var_97);
     }
     Ok(())
 }

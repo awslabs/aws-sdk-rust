@@ -85,35 +85,45 @@ pub fn serialize_structure_crate_input_put_account_alias_input(
     Ok(())
 }
 
+pub fn serialize_structure_crate_input_register_slack_workspace_for_organization_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::RegisterSlackWorkspaceForOrganizationInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_15) = &input.team_id {
+        object.key("teamId").string(var_15.as_str());
+    }
+    Ok(())
+}
+
 pub fn serialize_structure_crate_input_update_slack_channel_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateSlackChannelConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_15) = &input.channel_id {
-        object.key("channelId").string(var_15.as_str());
+    if let Some(var_16) = &input.channel_id {
+        object.key("channelId").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.channel_name {
-        object.key("channelName").string(var_16.as_str());
+    if let Some(var_17) = &input.channel_name {
+        object.key("channelName").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.channel_role_arn {
-        object.key("channelRoleArn").string(var_17.as_str());
+    if let Some(var_18) = &input.channel_role_arn {
+        object.key("channelRoleArn").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.notify_on_add_correspondence_to_case {
+    if let Some(var_19) = &input.notify_on_add_correspondence_to_case {
         object
             .key("notifyOnAddCorrespondenceToCase")
-            .boolean(*var_18);
+            .boolean(*var_19);
     }
-    if let Some(var_19) = &input.notify_on_case_severity {
-        object.key("notifyOnCaseSeverity").string(var_19.as_str());
+    if let Some(var_20) = &input.notify_on_case_severity {
+        object.key("notifyOnCaseSeverity").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.notify_on_create_or_reopen_case {
-        object.key("notifyOnCreateOrReopenCase").boolean(*var_20);
+    if let Some(var_21) = &input.notify_on_create_or_reopen_case {
+        object.key("notifyOnCreateOrReopenCase").boolean(*var_21);
     }
-    if let Some(var_21) = &input.notify_on_resolve_case {
-        object.key("notifyOnResolveCase").boolean(*var_21);
+    if let Some(var_22) = &input.notify_on_resolve_case {
+        object.key("notifyOnResolveCase").boolean(*var_22);
     }
-    if let Some(var_22) = &input.team_id {
-        object.key("teamId").string(var_22.as_str());
+    if let Some(var_23) = &input.team_id {
+        object.key("teamId").string(var_23.as_str());
     }
     Ok(())
 }

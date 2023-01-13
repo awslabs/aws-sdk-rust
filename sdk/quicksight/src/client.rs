@@ -161,6 +161,7 @@ impl Client {
     ///   - [`source_entity(AnalysisSourceEntity)`](crate::client::fluent_builders::CreateAnalysis::source_entity) / [`set_source_entity(Option<AnalysisSourceEntity>)`](crate::client::fluent_builders::CreateAnalysis::set_source_entity): <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     ///   - [`theme_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAnalysis::theme_arn) / [`set_theme_arn(Option<String>)`](crate::client::fluent_builders::CreateAnalysis::set_theme_arn): <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAnalysis::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAnalysis::set_tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
+    ///   - [`definition(AnalysisDefinition)`](crate::client::fluent_builders::CreateAnalysis::definition) / [`set_definition(Option<AnalysisDefinition>)`](crate::client::fluent_builders::CreateAnalysis::set_definition): <p>The definition of an analysis.</p>  <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// - On success, responds with [`CreateAnalysisOutput`](crate::output::CreateAnalysisOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateAnalysisOutput::arn): <p>The ARN for the analysis.</p>
     ///   - [`analysis_id(Option<String>)`](crate::output::CreateAnalysisOutput::analysis_id): <p>The ID of the analysis.</p>
@@ -184,6 +185,7 @@ impl Client {
     ///   - [`version_description(impl Into<String>)`](crate::client::fluent_builders::CreateDashboard::version_description) / [`set_version_description(Option<String>)`](crate::client::fluent_builders::CreateDashboard::set_version_description): <p>A description for the first version of the dashboard being created.</p>
     ///   - [`dashboard_publish_options(DashboardPublishOptions)`](crate::client::fluent_builders::CreateDashboard::dashboard_publish_options) / [`set_dashboard_publish_options(Option<DashboardPublishOptions>)`](crate::client::fluent_builders::CreateDashboard::set_dashboard_publish_options): <p>Options for publishing the dashboard when you create it:</p>  <ul>   <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>   <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>   <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>  </ul>
     ///   - [`theme_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDashboard::theme_arn) / [`set_theme_arn(Option<String>)`](crate::client::fluent_builders::CreateDashboard::set_theme_arn): <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
+    ///   - [`definition(DashboardVersionDefinition)`](crate::client::fluent_builders::CreateDashboard::definition) / [`set_definition(Option<DashboardVersionDefinition>)`](crate::client::fluent_builders::CreateDashboard::set_definition): <p>The definition of a dashboard.</p>  <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// - On success, responds with [`CreateDashboardOutput`](crate::output::CreateDashboardOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateDashboardOutput::arn): <p>The ARN of the dashboard.</p>
     ///   - [`version_arn(Option<String>)`](crate::output::CreateDashboardOutput::version_arn): <p>The ARN of the dashboard, including the version number of the first version that is created.</p>
@@ -377,6 +379,7 @@ impl Client {
     ///   - [`source_entity(TemplateSourceEntity)`](crate::client::fluent_builders::CreateTemplate::source_entity) / [`set_source_entity(Option<TemplateSourceEntity>)`](crate::client::fluent_builders::CreateTemplate::set_source_entity): <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>  <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTemplate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTemplate::set_tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
     ///   - [`version_description(impl Into<String>)`](crate::client::fluent_builders::CreateTemplate::version_description) / [`set_version_description(Option<String>)`](crate::client::fluent_builders::CreateTemplate::set_version_description): <p>A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
+    ///   - [`definition(TemplateVersionDefinition)`](crate::client::fluent_builders::CreateTemplate::definition) / [`set_definition(Option<TemplateVersionDefinition>)`](crate::client::fluent_builders::CreateTemplate::set_definition): <p>The definition of a template.</p>  <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// - On success, responds with [`CreateTemplateOutput`](crate::output::CreateTemplateOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateTemplateOutput::arn): <p>The ARN for the template.</p>
     ///   - [`version_arn(Option<String>)`](crate::output::CreateTemplateOutput::version_arn): <p>The ARN for the template, including the version information of the first version.</p>
@@ -451,6 +454,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteAccountCustomizationError>`](crate::error::DeleteAccountCustomizationError)
     pub fn delete_account_customization(&self) -> fluent_builders::DeleteAccountCustomization {
         fluent_builders::DeleteAccountCustomization::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteAccountSubscription`](crate::client::fluent_builders::DeleteAccountSubscription) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountSubscription::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteAccountSubscription::set_aws_account_id): <p>The Amazon Web Services account ID of the account that you want to delete.</p>
+    /// - On success, responds with [`DeleteAccountSubscriptionOutput`](crate::output::DeleteAccountSubscriptionOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::DeleteAccountSubscriptionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
+    ///   - [`status(i32)`](crate::output::DeleteAccountSubscriptionOutput::status): <p>The HTTP status of the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteAccountSubscriptionError>`](crate::error::DeleteAccountSubscriptionError)
+    pub fn delete_account_subscription(&self) -> fluent_builders::DeleteAccountSubscription {
+        fluent_builders::DeleteAccountSubscription::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteAnalysis`](crate::client::fluent_builders::DeleteAnalysis) operation.
     ///
@@ -735,6 +749,24 @@ impl Client {
     pub fn describe_analysis(&self) -> fluent_builders::DescribeAnalysis {
         fluent_builders::DescribeAnalysis::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeAnalysisDefinition`](crate::client::fluent_builders::DescribeAnalysisDefinition) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAnalysisDefinition::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeAnalysisDefinition::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
+    ///   - [`analysis_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAnalysisDefinition::analysis_id) / [`set_analysis_id(Option<String>)`](crate::client::fluent_builders::DescribeAnalysisDefinition::set_analysis_id): <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
+    /// - On success, responds with [`DescribeAnalysisDefinitionOutput`](crate::output::DescribeAnalysisDefinitionOutput) with field(s):
+    ///   - [`analysis_id(Option<String>)`](crate::output::DescribeAnalysisDefinitionOutput::analysis_id): <p>The ID of the analysis described.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeAnalysisDefinitionOutput::name): <p>The descriptive name of the analysis.</p>
+    ///   - [`errors(Option<Vec<AnalysisError>>)`](crate::output::DescribeAnalysisDefinitionOutput::errors): <p>Errors associated with the analysis.</p>
+    ///   - [`resource_status(Option<ResourceStatus>)`](crate::output::DescribeAnalysisDefinitionOutput::resource_status): <p>Status associated with the analysis.</p>  <ul>   <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>   <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>   <li> <p> <code>CREATION_FAILED</code> </p> </li>   <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>   <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>   <li> <p> <code>UPDATE_FAILED</code> </p> </li>   <li> <p> <code>DELETED</code> </p> </li>  </ul>
+    ///   - [`theme_arn(Option<String>)`](crate::output::DescribeAnalysisDefinitionOutput::theme_arn): <p>The ARN of the theme of the analysis.</p>
+    ///   - [`definition(Option<AnalysisDefinition>)`](crate::output::DescribeAnalysisDefinitionOutput::definition): <p>The definition of an analysis.</p>  <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    ///   - [`status(i32)`](crate::output::DescribeAnalysisDefinitionOutput::status): <p>The HTTP status of the request.</p>
+    ///   - [`request_id(Option<String>)`](crate::output::DescribeAnalysisDefinitionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
+    /// - On failure, responds with [`SdkError<DescribeAnalysisDefinitionError>`](crate::error::DescribeAnalysisDefinitionError)
+    pub fn describe_analysis_definition(&self) -> fluent_builders::DescribeAnalysisDefinition {
+        fluent_builders::DescribeAnalysisDefinition::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeAnalysisPermissions`](crate::client::fluent_builders::DescribeAnalysisPermissions) operation.
     ///
     /// - The fluent builder is configurable:
@@ -764,6 +796,26 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeDashboardError>`](crate::error::DescribeDashboardError)
     pub fn describe_dashboard(&self) -> fluent_builders::DescribeDashboard {
         fluent_builders::DescribeDashboard::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeDashboardDefinition`](crate::client::fluent_builders::DescribeDashboardDefinition) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDashboardDefinition::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeDashboardDefinition::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
+    ///   - [`dashboard_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDashboardDefinition::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::client::fluent_builders::DescribeDashboardDefinition::set_dashboard_id): <p>The ID for the dashboard.</p>
+    ///   - [`version_number(i64)`](crate::client::fluent_builders::DescribeDashboardDefinition::version_number) / [`set_version_number(Option<i64>)`](crate::client::fluent_builders::DescribeDashboardDefinition::set_version_number): <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
+    ///   - [`alias_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDashboardDefinition::alias_name) / [`set_alias_name(Option<String>)`](crate::client::fluent_builders::DescribeDashboardDefinition::set_alias_name): <p>The alias name.</p>
+    /// - On success, responds with [`DescribeDashboardDefinitionOutput`](crate::output::DescribeDashboardDefinitionOutput) with field(s):
+    ///   - [`dashboard_id(Option<String>)`](crate::output::DescribeDashboardDefinitionOutput::dashboard_id): <p>The ID of the dashboard described.</p>
+    ///   - [`errors(Option<Vec<DashboardError>>)`](crate::output::DescribeDashboardDefinitionOutput::errors): <p>Errors associated with this dashboard version.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeDashboardDefinitionOutput::name): <p>The display name of the dashboard.</p>
+    ///   - [`resource_status(Option<ResourceStatus>)`](crate::output::DescribeDashboardDefinitionOutput::resource_status): <p>Status associated with the dashboard version.</p>  <ul>   <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>   <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>   <li> <p> <code>CREATION_FAILED</code> </p> </li>   <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>   <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>   <li> <p> <code>UPDATE_FAILED</code> </p> </li>   <li> <p> <code>DELETED</code> </p> </li>  </ul>
+    ///   - [`theme_arn(Option<String>)`](crate::output::DescribeDashboardDefinitionOutput::theme_arn): <p>The ARN of the theme of the dashboard.</p>
+    ///   - [`definition(Option<DashboardVersionDefinition>)`](crate::output::DescribeDashboardDefinitionOutput::definition): <p>The definition of a dashboard.</p>  <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    ///   - [`status(i32)`](crate::output::DescribeDashboardDefinitionOutput::status): <p>The HTTP status of the request.</p>
+    ///   - [`request_id(Option<String>)`](crate::output::DescribeDashboardDefinitionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
+    /// - On failure, responds with [`SdkError<DescribeDashboardDefinitionError>`](crate::error::DescribeDashboardDefinitionError)
+    pub fn describe_dashboard_definition(&self) -> fluent_builders::DescribeDashboardDefinition {
+        fluent_builders::DescribeDashboardDefinition::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeDashboardPermissions`](crate::client::fluent_builders::DescribeDashboardPermissions) operation.
     ///
@@ -997,6 +1049,26 @@ impl Client {
     pub fn describe_template_alias(&self) -> fluent_builders::DescribeTemplateAlias {
         fluent_builders::DescribeTemplateAlias::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeTemplateDefinition`](crate::client::fluent_builders::DescribeTemplateDefinition) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTemplateDefinition::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeTemplateDefinition::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the template. You must be using the Amazon Web Services account that the template is in.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTemplateDefinition::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::DescribeTemplateDefinition::set_template_id): <p>The ID of the template that you're describing.</p>
+    ///   - [`version_number(i64)`](crate::client::fluent_builders::DescribeTemplateDefinition::version_number) / [`set_version_number(Option<i64>)`](crate::client::fluent_builders::DescribeTemplateDefinition::set_version_number): <p>The version number of the template.</p>
+    ///   - [`alias_name(impl Into<String>)`](crate::client::fluent_builders::DescribeTemplateDefinition::alias_name) / [`set_alias_name(Option<String>)`](crate::client::fluent_builders::DescribeTemplateDefinition::set_alias_name): <p>The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+    /// - On success, responds with [`DescribeTemplateDefinitionOutput`](crate::output::DescribeTemplateDefinitionOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DescribeTemplateDefinitionOutput::name): <p>The descriptive name of the template.</p>
+    ///   - [`template_id(Option<String>)`](crate::output::DescribeTemplateDefinitionOutput::template_id): <p>The ID of the template described.</p>
+    ///   - [`errors(Option<Vec<TemplateError>>)`](crate::output::DescribeTemplateDefinitionOutput::errors): <p>Errors associated with the template version.</p>
+    ///   - [`resource_status(Option<ResourceStatus>)`](crate::output::DescribeTemplateDefinitionOutput::resource_status): <p>Status associated with the template.</p>  <ul>   <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>   <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>   <li> <p> <code>CREATION_FAILED</code> </p> </li>   <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>   <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>   <li> <p> <code>UPDATE_FAILED</code> </p> </li>   <li> <p> <code>DELETED</code> </p> </li>  </ul>
+    ///   - [`theme_arn(Option<String>)`](crate::output::DescribeTemplateDefinitionOutput::theme_arn): <p>The ARN of the theme of the template.</p>
+    ///   - [`definition(Option<TemplateVersionDefinition>)`](crate::output::DescribeTemplateDefinitionOutput::definition): <p>The definition of the template.</p>  <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    ///   - [`status(i32)`](crate::output::DescribeTemplateDefinitionOutput::status): <p>The HTTP status of the request.</p>
+    ///   - [`request_id(Option<String>)`](crate::output::DescribeTemplateDefinitionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
+    /// - On failure, responds with [`SdkError<DescribeTemplateDefinitionError>`](crate::error::DescribeTemplateDefinitionError)
+    pub fn describe_template_definition(&self) -> fluent_builders::DescribeTemplateDefinition {
+        fluent_builders::DescribeTemplateDefinition::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeTemplatePermissions`](crate::client::fluent_builders::DescribeTemplatePermissions) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1084,6 +1156,7 @@ impl Client {
     ///   - [`embed_url(Option<String>)`](crate::output::GenerateEmbedUrlForAnonymousUserOutput::embed_url): <p>The embed URL for the dashboard.</p>
     ///   - [`status(i32)`](crate::output::GenerateEmbedUrlForAnonymousUserOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::output::GenerateEmbedUrlForAnonymousUserOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
+    ///   - [`anonymous_user_arn(Option<String>)`](crate::output::GenerateEmbedUrlForAnonymousUserOutput::anonymous_user_arn): <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
     /// - On failure, responds with [`SdkError<GenerateEmbedUrlForAnonymousUserError>`](crate::error::GenerateEmbedUrlForAnonymousUserError)
     pub fn generate_embed_url_for_anonymous_user(
         &self,
@@ -1575,6 +1648,40 @@ impl Client {
     pub fn search_dashboards(&self) -> fluent_builders::SearchDashboards {
         fluent_builders::SearchDashboards::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`SearchDataSets`](crate::client::fluent_builders::SearchDataSets) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchDataSets::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::SearchDataSets::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::SearchDataSets::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`filters(Vec<DataSetSearchFilter>)`](crate::client::fluent_builders::SearchDataSets::filters) / [`set_filters(Option<Vec<DataSetSearchFilter>>)`](crate::client::fluent_builders::SearchDataSets::set_filters): <p>The filters to apply to the search.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchDataSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchDataSets::set_next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchDataSets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchDataSets::set_max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - On success, responds with [`SearchDataSetsOutput`](crate::output::SearchDataSetsOutput) with field(s):
+    ///   - [`data_set_summaries(Option<Vec<DataSetSummary>>)`](crate::output::SearchDataSetsOutput::data_set_summaries): <p>A <code>DataSetSummaries</code> object that returns a summary of a dataset.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchDataSetsOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`status(i32)`](crate::output::SearchDataSetsOutput::status): <p>The HTTP status of the request.</p>
+    ///   - [`request_id(Option<String>)`](crate::output::SearchDataSetsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
+    /// - On failure, responds with [`SdkError<SearchDataSetsError>`](crate::error::SearchDataSetsError)
+    pub fn search_data_sets(&self) -> fluent_builders::SearchDataSets {
+        fluent_builders::SearchDataSets::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`SearchDataSources`](crate::client::fluent_builders::SearchDataSources) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchDataSources::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::SearchDataSources::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::SearchDataSources::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`filters(Vec<DataSourceSearchFilter>)`](crate::client::fluent_builders::SearchDataSources::filters) / [`set_filters(Option<Vec<DataSourceSearchFilter>>)`](crate::client::fluent_builders::SearchDataSources::set_filters): <p>The filters to apply to the search.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchDataSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchDataSources::set_next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchDataSources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchDataSources::set_max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - On success, responds with [`SearchDataSourcesOutput`](crate::output::SearchDataSourcesOutput) with field(s):
+    ///   - [`data_source_summaries(Option<Vec<DataSourceSummary>>)`](crate::output::SearchDataSourcesOutput::data_source_summaries): <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchDataSourcesOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`status(i32)`](crate::output::SearchDataSourcesOutput::status): <p>The HTTP status of the request.</p>
+    ///   - [`request_id(Option<String>)`](crate::output::SearchDataSourcesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
+    /// - On failure, responds with [`SdkError<SearchDataSourcesError>`](crate::error::SearchDataSourcesError)
+    pub fn search_data_sources(&self) -> fluent_builders::SearchDataSources {
+        fluent_builders::SearchDataSources::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`SearchFolders`](crate::client::fluent_builders::SearchFolders) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1655,6 +1762,7 @@ impl Client {
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
     ///   - [`default_namespace(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::default_namespace) / [`set_default_namespace(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_default_namespace): <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
     ///   - [`notification_email(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::notification_email) / [`set_notification_email(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_notification_email): <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
+    ///   - [`termination_protection_enabled(bool)`](crate::client::fluent_builders::UpdateAccountSettings::termination_protection_enabled) / [`set_termination_protection_enabled(bool)`](crate::client::fluent_builders::UpdateAccountSettings::set_termination_protection_enabled): <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the account to be deleted.</p>
     /// - On success, responds with [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::UpdateAccountSettingsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::UpdateAccountSettingsOutput::status): <p>The HTTP status of the request.</p>
@@ -1671,6 +1779,7 @@ impl Client {
     ///   - [`parameters(Parameters)`](crate::client::fluent_builders::UpdateAnalysis::parameters) / [`set_parameters(Option<Parameters>)`](crate::client::fluent_builders::UpdateAnalysis::set_parameters): <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     ///   - [`source_entity(AnalysisSourceEntity)`](crate::client::fluent_builders::UpdateAnalysis::source_entity) / [`set_source_entity(Option<AnalysisSourceEntity>)`](crate::client::fluent_builders::UpdateAnalysis::set_source_entity): <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     ///   - [`theme_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAnalysis::theme_arn) / [`set_theme_arn(Option<String>)`](crate::client::fluent_builders::UpdateAnalysis::set_theme_arn): <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    ///   - [`definition(AnalysisDefinition)`](crate::client::fluent_builders::UpdateAnalysis::definition) / [`set_definition(Option<AnalysisDefinition>)`](crate::client::fluent_builders::UpdateAnalysis::set_definition): <p>The definition of an analysis.</p>  <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// - On success, responds with [`UpdateAnalysisOutput`](crate::output::UpdateAnalysisOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateAnalysisOutput::arn): <p>The ARN of the analysis that you're updating.</p>
     ///   - [`analysis_id(Option<String>)`](crate::output::UpdateAnalysisOutput::analysis_id): <p>The ID of the analysis.</p>
@@ -1709,6 +1818,7 @@ impl Client {
     ///   - [`version_description(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboard::version_description) / [`set_version_description(Option<String>)`](crate::client::fluent_builders::UpdateDashboard::set_version_description): <p>A description for the first version of the dashboard being created.</p>
     ///   - [`dashboard_publish_options(DashboardPublishOptions)`](crate::client::fluent_builders::UpdateDashboard::dashboard_publish_options) / [`set_dashboard_publish_options(Option<DashboardPublishOptions>)`](crate::client::fluent_builders::UpdateDashboard::set_dashboard_publish_options): <p>Options for publishing the dashboard when you create it:</p>  <ul>   <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>   <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>   <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>  </ul>
     ///   - [`theme_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboard::theme_arn) / [`set_theme_arn(Option<String>)`](crate::client::fluent_builders::UpdateDashboard::set_theme_arn): <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
+    ///   - [`definition(DashboardVersionDefinition)`](crate::client::fluent_builders::UpdateDashboard::definition) / [`set_definition(Option<DashboardVersionDefinition>)`](crate::client::fluent_builders::UpdateDashboard::set_definition): <p>The definition of a dashboard.</p>  <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// - On success, responds with [`UpdateDashboardOutput`](crate::output::UpdateDashboardOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateDashboardOutput::arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
     ///   - [`version_arn(Option<String>)`](crate::output::UpdateDashboardOutput::version_arn): <p>The ARN of the dashboard, including the version number.</p>
@@ -1937,6 +2047,7 @@ impl Client {
     ///   - [`source_entity(TemplateSourceEntity)`](crate::client::fluent_builders::UpdateTemplate::source_entity) / [`set_source_entity(Option<TemplateSourceEntity>)`](crate::client::fluent_builders::UpdateTemplate::set_source_entity): <p>The entity that you are using as a source when you update the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>  <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     ///   - [`version_description(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplate::version_description) / [`set_version_description(Option<String>)`](crate::client::fluent_builders::UpdateTemplate::set_version_description): <p>A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateTemplate::set_name): <p>The name for the template.</p>
+    ///   - [`definition(TemplateVersionDefinition)`](crate::client::fluent_builders::UpdateTemplate::definition) / [`set_definition(Option<TemplateVersionDefinition>)`](crate::client::fluent_builders::UpdateTemplate::set_definition): <p>The definition of a template.</p>  <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// - On success, responds with [`UpdateTemplateOutput`](crate::output::UpdateTemplateOutput) with field(s):
     ///   - [`template_id(Option<String>)`](crate::output::UpdateTemplateOutput::template_id): <p>The ID for the template.</p>
     ///   - [`arn(Option<String>)`](crate::output::UpdateTemplateOutput::arn): <p>The Amazon Resource Name (ARN) for the template.</p>
@@ -2720,6 +2831,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The definition of an analysis.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn definition(mut self, input: crate::model::AnalysisDefinition) -> Self {
+            self.inner = self.inner.definition(input);
+            self
+        }
+        /// <p>The definition of an analysis.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn set_definition(
+            mut self,
+            input: std::option::Option<crate::model::AnalysisDefinition>,
+        ) -> Self {
+            self.inner = self.inner.set_definition(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateDashboard`.
     ///
@@ -2928,6 +3054,21 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
         pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_theme_arn(input);
+            self
+        }
+        /// <p>The definition of a dashboard.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn definition(mut self, input: crate::model::DashboardVersionDefinition) -> Self {
+            self.inner = self.inner.definition(input);
+            self
+        }
+        /// <p>The definition of a dashboard.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn set_definition(
+            mut self,
+            input: std::option::Option<crate::model::DashboardVersionDefinition>,
+        ) -> Self {
+            self.inner = self.inner.set_definition(input);
             self
         }
     }
@@ -4461,6 +4602,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version_description(input);
             self
         }
+        /// <p>The definition of a template.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn definition(mut self, input: crate::model::TemplateVersionDefinition) -> Self {
+            self.inner = self.inner.definition(input);
+            self
+        }
+        /// <p>The definition of a template.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn set_definition(
+            mut self,
+            input: std::option::Option<crate::model::TemplateVersionDefinition>,
+        ) -> Self {
+            self.inner = self.inner.set_definition(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateTemplateAlias`.
     ///
@@ -4927,6 +5083,82 @@ pub mod fluent_builders {
         /// <p>The Amazon QuickSight namespace that you're deleting the customizations from.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteAccountSubscription`.
+    ///
+    /// <p>Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon QuickSight account. This operation will result in an error message if you have configured your account termination protection settings to <code>True</code>. To change this setting and delete your account, call the <code>UpdateAccountSettings</code> API and set the value of the <code>TerminationProtectionEnabled</code> parameter to <code>False</code>, then make another call to the <code>DeleteAccountSubscription</code> API.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteAccountSubscription {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_account_subscription_input::Builder,
+    }
+    impl DeleteAccountSubscription {
+        /// Creates a new `DeleteAccountSubscription`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteAccountSubscription,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteAccountSubscriptionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteAccountSubscriptionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteAccountSubscriptionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID of the account that you want to delete.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID of the account that you want to delete.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aws_account_id(input);
             self
         }
     }
@@ -6658,7 +6890,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAccountSubscription`.
     ///
-    /// <p>Use the DescribeAccountSubscription operation to receive a description of a Amazon QuickSight account's subscription. A successful API call returns an <code>AccountInfo</code> object that includes an account's name, subscription status, authentication type, edition, and notification email address.</p>
+    /// <p>Use the DescribeAccountSubscription operation to receive a description of an Amazon QuickSight account's subscription. A successful API call returns an <code>AccountInfo</code> object that includes an account's name, subscription status, authentication type, edition, and notification email address.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountSubscription {
         handle: std::sync::Arc<super::Handle>,
@@ -6784,6 +7016,94 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::output::DescribeAnalysisOutput,
             aws_smithy_http::result::SdkError<crate::error::DescribeAnalysisError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aws_account_id(input);
+            self
+        }
+        /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
+        pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_id(input.into());
+            self
+        }
+        /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
+        pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_analysis_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeAnalysisDefinition`.
+    ///
+    /// <p>Provides a detailed description of the definition of an analysis.</p> <note>
+    /// <p>If you do not need to know details about the content of an Analysis, for instance if you are trying to check the status of a recently created or updated Analysis, use the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysis.html"> <code>DescribeAnalysis</code> </a> instead. </p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeAnalysisDefinition {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_analysis_definition_input::Builder,
+    }
+    impl DescribeAnalysisDefinition {
+        /// Creates a new `DescribeAnalysisDefinition`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeAnalysisDefinition,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeAnalysisDefinitionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeAnalysisDefinitionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeAnalysisDefinitionError>,
         > {
             let op = self
                 .inner
@@ -6956,6 +7276,114 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::output::DescribeDashboardOutput,
             aws_smithy_http::result::SdkError<crate::error::DescribeDashboardError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aws_account_id(input);
+            self
+        }
+        /// <p>The ID for the dashboard.</p>
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
+            self
+        }
+        /// <p>The ID for the dashboard.</p>
+        pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dashboard_id(input);
+            self
+        }
+        /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
+        pub fn version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.version_number(input);
+            self
+        }
+        /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
+        pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_version_number(input);
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input.into());
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeDashboardDefinition`.
+    ///
+    /// <p>Provides a detailed description of the definition of a dashboard.</p> <note>
+    /// <p>If you do not need to know details about the content of a dashboard, for instance if you are trying to check the status of a recently created or updated dashboard, use the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboard.html"> <code>DescribeDashboard</code> </a> instead. </p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeDashboardDefinition {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_dashboard_definition_input::Builder,
+    }
+    impl DescribeDashboardDefinition {
+        /// Creates a new `DescribeDashboardDefinition`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeDashboardDefinition,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeDashboardDefinitionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeDashboardDefinitionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeDashboardDefinitionError>,
         > {
             let op = self
                 .inner
@@ -8461,6 +8889,114 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the template alias that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+        pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeTemplateDefinition`.
+    ///
+    /// <p>Provides a detailed description of the definition of a template.</p> <note>
+    /// <p>If you do not need to know details about the content of a template, for instance if you are trying to check the status of a recently created or updated template, use the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplate.html"> <code>DescribeTemplate</code> </a> instead. </p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeTemplateDefinition {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_template_definition_input::Builder,
+    }
+    impl DescribeTemplateDefinition {
+        /// Creates a new `DescribeTemplateDefinition`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeTemplateDefinition,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeTemplateDefinitionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeTemplateDefinitionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeTemplateDefinitionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the Amazon Web Services account that contains the template. You must be using the Amazon Web Services account that the template is in.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account that contains the template. You must be using the Amazon Web Services account that the template is in.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aws_account_id(input);
+            self
+        }
+        /// <p>The ID of the template that you're describing.</p>
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
+            self
+        }
+        /// <p>The ID of the template that you're describing.</p>
+        pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_template_id(input);
+            self
+        }
+        /// <p>The version number of the template.</p>
+        pub fn version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.version_number(input);
+            self
+        }
+        /// <p>The version number of the template.</p>
+        pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_version_number(input);
+            self
+        }
+        /// <p>The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input.into());
+            self
+        }
+        /// <p>The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias_name(input);
             self
@@ -12532,6 +13068,244 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `SearchDataSets`.
+    ///
+    /// <p>Use the <code>SearchDataSets</code> operation to search for datasets that belong to an account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct SearchDataSets {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::search_data_sets_input::Builder,
+    }
+    impl SearchDataSets {
+        /// Creates a new `SearchDataSets`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::SearchDataSets,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::SearchDataSetsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SearchDataSetsOutput,
+            aws_smithy_http::result::SdkError<crate::error::SearchDataSetsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchDataSetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchDataSetsPaginator {
+            crate::paginator::SearchDataSetsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aws_account_id(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filters to apply to the search.</p>
+        pub fn filters(mut self, input: crate::model::DataSetSearchFilter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>The filters to apply to the search.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSetSearchFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>A pagination token that can be used in a subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A pagination token that can be used in a subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to be returned per request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to be returned per request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `SearchDataSources`.
+    ///
+    /// <p>Use the <code>SearchDataSources</code> operation to search for data sources that belong to an account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct SearchDataSources {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::search_data_sources_input::Builder,
+    }
+    impl SearchDataSources {
+        /// Creates a new `SearchDataSources`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::SearchDataSources,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::SearchDataSourcesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SearchDataSourcesOutput,
+            aws_smithy_http::result::SdkError<crate::error::SearchDataSourcesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchDataSourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchDataSourcesPaginator {
+            crate::paginator::SearchDataSourcesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aws_account_id(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filters to apply to the search.</p>
+        pub fn filters(mut self, input: crate::model::DataSourceSearchFilter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>The filters to apply to the search.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceSearchFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>A pagination token that can be used in a subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A pagination token that can be used in a subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to be returned per request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to be returned per request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `SearchFolders`.
     ///
     /// <p>Searches the subfolders in a folder.</p>
@@ -13156,6 +13930,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_email(input);
             self
         }
+        /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the account to be deleted.</p>
+        pub fn termination_protection_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.termination_protection_enabled(input);
+            self
+        }
+        /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the account to be deleted.</p>
+        pub fn set_termination_protection_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_termination_protection_enabled(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateAnalysis`.
     ///
@@ -13286,6 +14073,21 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
         pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_theme_arn(input);
+            self
+        }
+        /// <p>The definition of an analysis.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn definition(mut self, input: crate::model::AnalysisDefinition) -> Self {
+            self.inner = self.inner.definition(input);
+            self
+        }
+        /// <p>The definition of an analysis.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn set_definition(
+            mut self,
+            input: std::option::Option<crate::model::AnalysisDefinition>,
+        ) -> Self {
+            self.inner = self.inner.set_definition(input);
             self
         }
     }
@@ -13583,6 +14385,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_theme_arn(input);
             self
         }
+        /// <p>The definition of a dashboard.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn definition(mut self, input: crate::model::DashboardVersionDefinition) -> Self {
+            self.inner = self.inner.definition(input);
+            self
+        }
+        /// <p>The definition of a dashboard.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn set_definition(
+            mut self,
+            input: std::option::Option<crate::model::DashboardVersionDefinition>,
+        ) -> Self {
+            self.inner = self.inner.set_definition(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateDashboardPermissions`.
     ///
@@ -13836,7 +14653,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDataSet`.
     ///
-    /// <p>Updates a dataset. This operation doesn't support datasets that include uploaded files as a source.</p>
+    /// <p>Updates a dataset. This operation doesn't support datasets that include uploaded files as a source. Partial updates are not supported by this operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataSet {
         handle: std::sync::Arc<super::Handle>,
@@ -15290,6 +16107,21 @@ pub mod fluent_builders {
         /// <p>The name for the template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The definition of a template.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn definition(mut self, input: crate::model::TemplateVersionDefinition) -> Self {
+            self.inner = self.inner.definition(input);
+            self
+        }
+        /// <p>The definition of a template.</p>
+        /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+        pub fn set_definition(
+            mut self,
+            input: std::option::Option<crate::model::TemplateVersionDefinition>,
+        ) -> Self {
+            self.inner = self.inner.set_definition(input);
             self
         }
     }

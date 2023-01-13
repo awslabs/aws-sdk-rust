@@ -301,12 +301,12 @@ pub mod create_job_for_devices_input {
             self.device_ids = input;
             self
         }
-        /// <p>Configuration settings for the job.</p>
+        /// <p>Configuration settings for a software update job.</p>
         pub fn device_job_config(mut self, input: crate::model::DeviceJobConfig) -> Self {
             self.device_job_config = Some(input);
             self
         }
-        /// <p>Configuration settings for the job.</p>
+        /// <p>Configuration settings for a software update job.</p>
         pub fn set_device_job_config(
             mut self,
             input: std::option::Option<crate::model::DeviceJobConfig>,
@@ -5658,6 +5658,195 @@ impl RemoveApplicationInstanceInput {
     }
 }
 
+/// See [`SignalApplicationInstanceNodeInstancesInput`](crate::input::SignalApplicationInstanceNodeInstancesInput).
+pub mod signal_application_instance_node_instances_input {
+
+    /// A builder for [`SignalApplicationInstanceNodeInstancesInput`](crate::input::SignalApplicationInstanceNodeInstancesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application_instance_id: std::option::Option<std::string::String>,
+        pub(crate) node_signals: std::option::Option<std::vec::Vec<crate::model::NodeSignal>>,
+    }
+    impl Builder {
+        /// <p>An application instance ID.</p>
+        pub fn application_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_instance_id = Some(input.into());
+            self
+        }
+        /// <p>An application instance ID.</p>
+        pub fn set_application_instance_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_instance_id = input;
+            self
+        }
+        /// Appends an item to `node_signals`.
+        ///
+        /// To override the contents of this collection use [`set_node_signals`](Self::set_node_signals).
+        ///
+        /// <p>A list of signals.</p>
+        pub fn node_signals(mut self, input: crate::model::NodeSignal) -> Self {
+            let mut v = self.node_signals.unwrap_or_default();
+            v.push(input);
+            self.node_signals = Some(v);
+            self
+        }
+        /// <p>A list of signals.</p>
+        pub fn set_node_signals(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::NodeSignal>>,
+        ) -> Self {
+            self.node_signals = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SignalApplicationInstanceNodeInstancesInput`](crate::input::SignalApplicationInstanceNodeInstancesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::SignalApplicationInstanceNodeInstancesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::SignalApplicationInstanceNodeInstancesInput {
+                application_instance_id: self.application_instance_id,
+                node_signals: self.node_signals,
+            })
+        }
+    }
+}
+impl SignalApplicationInstanceNodeInstancesInput {
+    /// Consumes the builder and constructs an Operation<[`SignalApplicationInstanceNodeInstances`](crate::operation::SignalApplicationInstanceNodeInstances)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SignalApplicationInstanceNodeInstances,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::SignalApplicationInstanceNodeInstancesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_49 = &_input.application_instance_id;
+                let input_49 = input_49.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "application_instance_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let application_instance_id = aws_smithy_http::label::fmt_string(
+                    input_49,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if application_instance_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "application_instance_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/application-instances/{ApplicationInstanceId}/node-signals",
+                    ApplicationInstanceId = application_instance_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SignalApplicationInstanceNodeInstancesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_signal_application_instance_node_instances(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SignalApplicationInstanceNodeInstances::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SignalApplicationInstanceNodeInstances",
+            "panorama",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`SignalApplicationInstanceNodeInstancesInput`](crate::input::SignalApplicationInstanceNodeInstancesInput).
+    pub fn builder() -> crate::input::signal_application_instance_node_instances_input::Builder {
+        crate::input::signal_application_instance_node_instances_input::Builder::default()
+    }
+}
+
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
 
@@ -5737,15 +5926,15 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_49 = &_input.resource_arn;
-                let input_49 = input_49.as_ref().ok_or_else(|| {
+                let input_50 = &_input.resource_arn;
+                let input_50 = input_50.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_49,
+                    input_50,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -5918,15 +6107,15 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_50 = &_input.resource_arn;
-                let input_50 = input_50.as_ref().ok_or_else(|| {
+                let input_51 = &_input.resource_arn;
+                let input_51 = input_51.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_50,
+                    input_51,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -5946,15 +6135,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_51 = &_input.tag_keys;
-                let inner_51 = inner_51.as_ref().ok_or_else(|| {
+                let inner_52 = &_input.tag_keys;
+                let inner_52 = inner_52.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "tag_keys",
                         "cannot be empty or unset",
                     )
                 })?;
-                for inner_52 in inner_51 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_52));
+                for inner_53 in inner_52 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_53));
                 }
                 Ok(())
             }
@@ -6096,15 +6285,15 @@ impl UpdateDeviceMetadataInput {
                 _input: &crate::input::UpdateDeviceMetadataInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_53 = &_input.device_id;
-                let input_53 = input_53.as_ref().ok_or_else(|| {
+                let input_54 = &_input.device_id;
+                let input_54 = input_54.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "device_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let device_id = aws_smithy_http::label::fmt_string(
-                    input_53,
+                    input_54,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if device_id.is_empty() {
@@ -6275,6 +6464,28 @@ impl TagResourceInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SignalApplicationInstanceNodeInstancesInput {
+    /// <p>An application instance ID.</p>
+    #[doc(hidden)]
+    pub application_instance_id: std::option::Option<std::string::String>,
+    /// <p>A list of signals.</p>
+    #[doc(hidden)]
+    pub node_signals: std::option::Option<std::vec::Vec<crate::model::NodeSignal>>,
+}
+impl SignalApplicationInstanceNodeInstancesInput {
+    /// <p>An application instance ID.</p>
+    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+        self.application_instance_id.as_deref()
+    }
+    /// <p>A list of signals.</p>
+    pub fn node_signals(&self) -> std::option::Option<&[crate::model::NodeSignal]> {
+        self.node_signals.as_deref()
     }
 }
 
@@ -7071,7 +7282,7 @@ pub struct CreateJobForDevicesInput {
     /// <p>IDs of target devices.</p>
     #[doc(hidden)]
     pub device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Configuration settings for the job.</p>
+    /// <p>Configuration settings for a software update job.</p>
     #[doc(hidden)]
     pub device_job_config: std::option::Option<crate::model::DeviceJobConfig>,
     /// <p>The type of job to run.</p>
@@ -7083,7 +7294,7 @@ impl CreateJobForDevicesInput {
     pub fn device_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.device_ids.as_deref()
     }
-    /// <p>Configuration settings for the job.</p>
+    /// <p>Configuration settings for a software update job.</p>
     pub fn device_job_config(&self) -> std::option::Option<&crate::model::DeviceJobConfig> {
         self.device_job_config.as_ref()
     }

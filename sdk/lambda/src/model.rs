@@ -14,6 +14,7 @@
 /// match throttlereason {
 ///     ThrottleReason::CallerRateLimitExceeded => { /* ... */ },
 ///     ThrottleReason::ConcurrentInvocationLimitExceeded => { /* ... */ },
+///     ThrottleReason::ConcurrentSnapshotCreateLimitExceeded => { /* ... */ },
 ///     ThrottleReason::FunctionInvocationRateLimitExceeded => { /* ... */ },
 ///     ThrottleReason::ReservedFunctionConcurrentInvocationLimitExceeded => { /* ... */ },
 ///     ThrottleReason::ReservedFunctionInvocationRateLimitExceeded => { /* ... */ },
@@ -55,6 +56,8 @@ pub enum ThrottleReason {
     #[allow(missing_docs)] // documentation missing in model
     ConcurrentInvocationLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
+    ConcurrentSnapshotCreateLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     FunctionInvocationRateLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     ReservedFunctionConcurrentInvocationLimitExceeded,
@@ -69,6 +72,9 @@ impl std::convert::From<&str> for ThrottleReason {
             "CallerRateLimitExceeded" => ThrottleReason::CallerRateLimitExceeded,
             "ConcurrentInvocationLimitExceeded" => {
                 ThrottleReason::ConcurrentInvocationLimitExceeded
+            }
+            "ConcurrentSnapshotCreateLimitExceeded" => {
+                ThrottleReason::ConcurrentSnapshotCreateLimitExceeded
             }
             "FunctionInvocationRateLimitExceeded" => {
                 ThrottleReason::FunctionInvocationRateLimitExceeded
@@ -98,6 +104,9 @@ impl ThrottleReason {
             ThrottleReason::ConcurrentInvocationLimitExceeded => {
                 "ConcurrentInvocationLimitExceeded"
             }
+            ThrottleReason::ConcurrentSnapshotCreateLimitExceeded => {
+                "ConcurrentSnapshotCreateLimitExceeded"
+            }
             ThrottleReason::FunctionInvocationRateLimitExceeded => {
                 "FunctionInvocationRateLimitExceeded"
             }
@@ -115,6 +124,7 @@ impl ThrottleReason {
         &[
             "CallerRateLimitExceeded",
             "ConcurrentInvocationLimitExceeded",
+            "ConcurrentSnapshotCreateLimitExceeded",
             "FunctionInvocationRateLimitExceeded",
             "ReservedFunctionConcurrentInvocationLimitExceeded",
             "ReservedFunctionInvocationRateLimitExceeded",
@@ -571,16 +581,277 @@ impl OnSuccess {
     }
 }
 
-/// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+/// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SnapStartResponse {
+    /// <p>When set to <code>PublishedVersions</code>, Lambda creates a snapshot of the execution environment when you publish a function version.</p>
+    #[doc(hidden)]
+    pub apply_on: std::option::Option<crate::model::SnapStartApplyOn>,
+    /// <p>When you provide a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">qualified Amazon Resource Name (ARN)</a>, this response element indicates whether SnapStart is activated for the specified function version.</p>
+    #[doc(hidden)]
+    pub optimization_status: std::option::Option<crate::model::SnapStartOptimizationStatus>,
+}
+impl SnapStartResponse {
+    /// <p>When set to <code>PublishedVersions</code>, Lambda creates a snapshot of the execution environment when you publish a function version.</p>
+    pub fn apply_on(&self) -> std::option::Option<&crate::model::SnapStartApplyOn> {
+        self.apply_on.as_ref()
+    }
+    /// <p>When you provide a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">qualified Amazon Resource Name (ARN)</a>, this response element indicates whether SnapStart is activated for the specified function version.</p>
+    pub fn optimization_status(
+        &self,
+    ) -> std::option::Option<&crate::model::SnapStartOptimizationStatus> {
+        self.optimization_status.as_ref()
+    }
+}
+/// See [`SnapStartResponse`](crate::model::SnapStartResponse).
+pub mod snap_start_response {
+
+    /// A builder for [`SnapStartResponse`](crate::model::SnapStartResponse).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) apply_on: std::option::Option<crate::model::SnapStartApplyOn>,
+        pub(crate) optimization_status:
+            std::option::Option<crate::model::SnapStartOptimizationStatus>,
+    }
+    impl Builder {
+        /// <p>When set to <code>PublishedVersions</code>, Lambda creates a snapshot of the execution environment when you publish a function version.</p>
+        pub fn apply_on(mut self, input: crate::model::SnapStartApplyOn) -> Self {
+            self.apply_on = Some(input);
+            self
+        }
+        /// <p>When set to <code>PublishedVersions</code>, Lambda creates a snapshot of the execution environment when you publish a function version.</p>
+        pub fn set_apply_on(
+            mut self,
+            input: std::option::Option<crate::model::SnapStartApplyOn>,
+        ) -> Self {
+            self.apply_on = input;
+            self
+        }
+        /// <p>When you provide a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">qualified Amazon Resource Name (ARN)</a>, this response element indicates whether SnapStart is activated for the specified function version.</p>
+        pub fn optimization_status(
+            mut self,
+            input: crate::model::SnapStartOptimizationStatus,
+        ) -> Self {
+            self.optimization_status = Some(input);
+            self
+        }
+        /// <p>When you provide a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">qualified Amazon Resource Name (ARN)</a>, this response element indicates whether SnapStart is activated for the specified function version.</p>
+        pub fn set_optimization_status(
+            mut self,
+            input: std::option::Option<crate::model::SnapStartOptimizationStatus>,
+        ) -> Self {
+            self.optimization_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SnapStartResponse`](crate::model::SnapStartResponse).
+        pub fn build(self) -> crate::model::SnapStartResponse {
+            crate::model::SnapStartResponse {
+                apply_on: self.apply_on,
+                optimization_status: self.optimization_status,
+            }
+        }
+    }
+}
+impl SnapStartResponse {
+    /// Creates a new builder-style object to manufacture [`SnapStartResponse`](crate::model::SnapStartResponse).
+    pub fn builder() -> crate::model::snap_start_response::Builder {
+        crate::model::snap_start_response::Builder::default()
+    }
+}
+
+/// When writing a match expression against `SnapStartOptimizationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let snapstartoptimizationstatus = unimplemented!();
+/// match snapstartoptimizationstatus {
+///     SnapStartOptimizationStatus::Off => { /* ... */ },
+///     SnapStartOptimizationStatus::On => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `snapstartoptimizationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SnapStartOptimizationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SnapStartOptimizationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SnapStartOptimizationStatus::NewFeature` is defined.
+/// Specifically, when `snapstartoptimizationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SnapStartOptimizationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SnapStartOptimizationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Off,
+    #[allow(missing_docs)] // documentation missing in model
+    On,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SnapStartOptimizationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Off" => SnapStartOptimizationStatus::Off,
+            "On" => SnapStartOptimizationStatus::On,
+            other => SnapStartOptimizationStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for SnapStartOptimizationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SnapStartOptimizationStatus::from(s))
+    }
+}
+impl SnapStartOptimizationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SnapStartOptimizationStatus::Off => "Off",
+            SnapStartOptimizationStatus::On => "On",
+            SnapStartOptimizationStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["Off", "On"]
+    }
+}
+impl AsRef<str> for SnapStartOptimizationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `SnapStartApplyOn`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let snapstartapplyon = unimplemented!();
+/// match snapstartapplyon {
+///     SnapStartApplyOn::None => { /* ... */ },
+///     SnapStartApplyOn::PublishedVersions => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `snapstartapplyon` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SnapStartApplyOn::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SnapStartApplyOn::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SnapStartApplyOn::NewFeature` is defined.
+/// Specifically, when `snapstartapplyon` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SnapStartApplyOn::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SnapStartApplyOn {
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    PublishedVersions,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SnapStartApplyOn {
+    fn from(s: &str) -> Self {
+        match s {
+            "None" => SnapStartApplyOn::None,
+            "PublishedVersions" => SnapStartApplyOn::PublishedVersions,
+            other => SnapStartApplyOn::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for SnapStartApplyOn {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SnapStartApplyOn::from(s))
+    }
+}
+impl SnapStartApplyOn {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SnapStartApplyOn::None => "None",
+            SnapStartApplyOn::PublishedVersions => "PublishedVersions",
+            SnapStartApplyOn::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["None", "PublishedVersions"]
+    }
+}
+impl AsRef<str> for SnapStartApplyOn {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EphemeralStorage {
-    /// <p>The size of the function’s /tmp directory.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory.</p>
     #[doc(hidden)]
     pub size: std::option::Option<i32>,
 }
 impl EphemeralStorage {
-    /// <p>The size of the function’s /tmp directory.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory.</p>
     pub fn size(&self) -> std::option::Option<i32> {
         self.size
     }
@@ -594,12 +865,12 @@ pub mod ephemeral_storage {
         pub(crate) size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The size of the function’s /tmp directory.</p>
+        /// <p>The size of the function's <code>/tmp</code> directory.</p>
         pub fn size(mut self, input: i32) -> Self {
             self.size = Some(input);
             self
         }
-        /// <p>The size of the function’s /tmp directory.</p>
+        /// <p>The size of the function's <code>/tmp</code> directory.</p>
         pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
             self.size = input;
             self
@@ -707,14 +978,14 @@ impl AsRef<str> for Architecture {
     }
 }
 
-/// <p>Response to GetFunctionConfiguration request.</p>
+/// <p>Response to a <code>GetFunctionConfiguration</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageConfigResponse {
     /// <p>Configuration values that override the container image Dockerfile.</p>
     #[doc(hidden)]
     pub image_config: std::option::Option<crate::model::ImageConfig>,
-    /// <p>Error response to GetFunctionConfiguration.</p>
+    /// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
     #[doc(hidden)]
     pub error: std::option::Option<crate::model::ImageConfigError>,
 }
@@ -723,7 +994,7 @@ impl ImageConfigResponse {
     pub fn image_config(&self) -> std::option::Option<&crate::model::ImageConfig> {
         self.image_config.as_ref()
     }
-    /// <p>Error response to GetFunctionConfiguration.</p>
+    /// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::ImageConfigError> {
         self.error.as_ref()
     }
@@ -751,12 +1022,12 @@ pub mod image_config_response {
             self.image_config = input;
             self
         }
-        /// <p>Error response to GetFunctionConfiguration.</p>
+        /// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
         pub fn error(mut self, input: crate::model::ImageConfigError) -> Self {
             self.error = Some(input);
             self
         }
-        /// <p>Error response to GetFunctionConfiguration.</p>
+        /// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::ImageConfigError>,
@@ -780,7 +1051,7 @@ impl ImageConfigResponse {
     }
 }
 
-/// <p>Error response to GetFunctionConfiguration.</p>
+/// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageConfigError {
@@ -863,14 +1134,14 @@ impl ImageConfigError {
     }
 }
 
-/// <p>Configuration values that override the container image Dockerfile settings. See <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container settings</a>. </p>
+/// <p>Configuration values that override the container image Dockerfile settings. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container image settings</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageConfig {
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
     #[doc(hidden)]
     pub entry_point: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
+    /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
     #[doc(hidden)]
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the working directory.</p>
@@ -882,7 +1153,7 @@ impl ImageConfig {
     pub fn entry_point(&self) -> std::option::Option<&[std::string::String]> {
         self.entry_point.as_deref()
     }
-    /// <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
+    /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
     pub fn command(&self) -> std::option::Option<&[std::string::String]> {
         self.command.as_deref()
     }
@@ -925,14 +1196,14 @@ pub mod image_config {
         ///
         /// To override the contents of this collection use [`set_command`](Self::set_command).
         ///
-        /// <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
+        /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
         pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.command.unwrap_or_default();
             v.push(input.into());
             self.command = Some(v);
             self
         }
-        /// <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
+        /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
         pub fn set_command(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1142,15 +1413,26 @@ impl FileSystemConfig {
 /// ```text
 /// # let lastupdatestatusreasoncode = unimplemented!();
 /// match lastupdatestatusreasoncode {
+///     LastUpdateStatusReasonCode::DisabledKmsKey => { /* ... */ },
+///     LastUpdateStatusReasonCode::EfsioError => { /* ... */ },
+///     LastUpdateStatusReasonCode::EfsMountConnectivityError => { /* ... */ },
+///     LastUpdateStatusReasonCode::EfsMountFailure => { /* ... */ },
+///     LastUpdateStatusReasonCode::EfsMountTimeout => { /* ... */ },
 ///     LastUpdateStatusReasonCode::EniLimitExceeded => { /* ... */ },
+///     LastUpdateStatusReasonCode::FunctionError => { /* ... */ },
 ///     LastUpdateStatusReasonCode::ImageAccessDenied => { /* ... */ },
 ///     LastUpdateStatusReasonCode::ImageDeleted => { /* ... */ },
 ///     LastUpdateStatusReasonCode::InsufficientRolePermissions => { /* ... */ },
 ///     LastUpdateStatusReasonCode::InternalError => { /* ... */ },
 ///     LastUpdateStatusReasonCode::InvalidConfiguration => { /* ... */ },
 ///     LastUpdateStatusReasonCode::InvalidImage => { /* ... */ },
+///     LastUpdateStatusReasonCode::InvalidRuntime => { /* ... */ },
 ///     LastUpdateStatusReasonCode::InvalidSecurityGroup => { /* ... */ },
+///     LastUpdateStatusReasonCode::InvalidStateKmsKey => { /* ... */ },
 ///     LastUpdateStatusReasonCode::InvalidSubnet => { /* ... */ },
+///     LastUpdateStatusReasonCode::InvalidZipFileException => { /* ... */ },
+///     LastUpdateStatusReasonCode::KmsKeyAccessDenied => { /* ... */ },
+///     LastUpdateStatusReasonCode::KmsKeyNotFound => { /* ... */ },
 ///     LastUpdateStatusReasonCode::SubnetOutOfIpAddresses => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -1186,7 +1468,19 @@ impl FileSystemConfig {
 )]
 pub enum LastUpdateStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
+    DisabledKmsKey,
+    #[allow(missing_docs)] // documentation missing in model
+    EfsioError,
+    #[allow(missing_docs)] // documentation missing in model
+    EfsMountConnectivityError,
+    #[allow(missing_docs)] // documentation missing in model
+    EfsMountFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    EfsMountTimeout,
+    #[allow(missing_docs)] // documentation missing in model
     EniLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionError,
     #[allow(missing_docs)] // documentation missing in model
     ImageAccessDenied,
     #[allow(missing_docs)] // documentation missing in model
@@ -1200,9 +1494,19 @@ pub enum LastUpdateStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     InvalidImage,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidRuntime,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidSecurityGroup,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidStateKmsKey,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidSubnet,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidZipFileException,
+    #[allow(missing_docs)] // documentation missing in model
+    KmsKeyAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    KmsKeyNotFound,
     #[allow(missing_docs)] // documentation missing in model
     SubnetOutOfIpAddresses,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -1211,7 +1515,13 @@ pub enum LastUpdateStatusReasonCode {
 impl std::convert::From<&str> for LastUpdateStatusReasonCode {
     fn from(s: &str) -> Self {
         match s {
+            "DisabledKMSKey" => LastUpdateStatusReasonCode::DisabledKmsKey,
+            "EFSIOError" => LastUpdateStatusReasonCode::EfsioError,
+            "EFSMountConnectivityError" => LastUpdateStatusReasonCode::EfsMountConnectivityError,
+            "EFSMountFailure" => LastUpdateStatusReasonCode::EfsMountFailure,
+            "EFSMountTimeout" => LastUpdateStatusReasonCode::EfsMountTimeout,
             "EniLimitExceeded" => LastUpdateStatusReasonCode::EniLimitExceeded,
+            "FunctionError" => LastUpdateStatusReasonCode::FunctionError,
             "ImageAccessDenied" => LastUpdateStatusReasonCode::ImageAccessDenied,
             "ImageDeleted" => LastUpdateStatusReasonCode::ImageDeleted,
             "InsufficientRolePermissions" => {
@@ -1220,8 +1530,13 @@ impl std::convert::From<&str> for LastUpdateStatusReasonCode {
             "InternalError" => LastUpdateStatusReasonCode::InternalError,
             "InvalidConfiguration" => LastUpdateStatusReasonCode::InvalidConfiguration,
             "InvalidImage" => LastUpdateStatusReasonCode::InvalidImage,
+            "InvalidRuntime" => LastUpdateStatusReasonCode::InvalidRuntime,
             "InvalidSecurityGroup" => LastUpdateStatusReasonCode::InvalidSecurityGroup,
+            "InvalidStateKMSKey" => LastUpdateStatusReasonCode::InvalidStateKmsKey,
             "InvalidSubnet" => LastUpdateStatusReasonCode::InvalidSubnet,
+            "InvalidZipFileException" => LastUpdateStatusReasonCode::InvalidZipFileException,
+            "KMSKeyAccessDenied" => LastUpdateStatusReasonCode::KmsKeyAccessDenied,
+            "KMSKeyNotFound" => LastUpdateStatusReasonCode::KmsKeyNotFound,
             "SubnetOutOfIPAddresses" => LastUpdateStatusReasonCode::SubnetOutOfIpAddresses,
             other => LastUpdateStatusReasonCode::Unknown(crate::types::UnknownVariantValue(
                 other.to_owned(),
@@ -1240,7 +1555,13 @@ impl LastUpdateStatusReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            LastUpdateStatusReasonCode::DisabledKmsKey => "DisabledKMSKey",
+            LastUpdateStatusReasonCode::EfsioError => "EFSIOError",
+            LastUpdateStatusReasonCode::EfsMountConnectivityError => "EFSMountConnectivityError",
+            LastUpdateStatusReasonCode::EfsMountFailure => "EFSMountFailure",
+            LastUpdateStatusReasonCode::EfsMountTimeout => "EFSMountTimeout",
             LastUpdateStatusReasonCode::EniLimitExceeded => "EniLimitExceeded",
+            LastUpdateStatusReasonCode::FunctionError => "FunctionError",
             LastUpdateStatusReasonCode::ImageAccessDenied => "ImageAccessDenied",
             LastUpdateStatusReasonCode::ImageDeleted => "ImageDeleted",
             LastUpdateStatusReasonCode::InsufficientRolePermissions => {
@@ -1249,8 +1570,13 @@ impl LastUpdateStatusReasonCode {
             LastUpdateStatusReasonCode::InternalError => "InternalError",
             LastUpdateStatusReasonCode::InvalidConfiguration => "InvalidConfiguration",
             LastUpdateStatusReasonCode::InvalidImage => "InvalidImage",
+            LastUpdateStatusReasonCode::InvalidRuntime => "InvalidRuntime",
             LastUpdateStatusReasonCode::InvalidSecurityGroup => "InvalidSecurityGroup",
+            LastUpdateStatusReasonCode::InvalidStateKmsKey => "InvalidStateKMSKey",
             LastUpdateStatusReasonCode::InvalidSubnet => "InvalidSubnet",
+            LastUpdateStatusReasonCode::InvalidZipFileException => "InvalidZipFileException",
+            LastUpdateStatusReasonCode::KmsKeyAccessDenied => "KMSKeyAccessDenied",
+            LastUpdateStatusReasonCode::KmsKeyNotFound => "KMSKeyNotFound",
             LastUpdateStatusReasonCode::SubnetOutOfIpAddresses => "SubnetOutOfIPAddresses",
             LastUpdateStatusReasonCode::Unknown(value) => value.as_str(),
         }
@@ -1258,15 +1584,26 @@ impl LastUpdateStatusReasonCode {
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "DisabledKMSKey",
+            "EFSIOError",
+            "EFSMountConnectivityError",
+            "EFSMountFailure",
+            "EFSMountTimeout",
             "EniLimitExceeded",
+            "FunctionError",
             "ImageAccessDenied",
             "ImageDeleted",
             "InsufficientRolePermissions",
             "InternalError",
             "InvalidConfiguration",
             "InvalidImage",
+            "InvalidRuntime",
             "InvalidSecurityGroup",
+            "InvalidStateKMSKey",
             "InvalidSubnet",
+            "InvalidZipFileException",
+            "KMSKeyAccessDenied",
+            "KMSKeyNotFound",
             "SubnetOutOfIPAddresses",
         ]
     }
@@ -1385,7 +1722,13 @@ impl AsRef<str> for LastUpdateStatus {
 /// # let statereasoncode = unimplemented!();
 /// match statereasoncode {
 ///     StateReasonCode::Creating => { /* ... */ },
+///     StateReasonCode::DisabledKmsKey => { /* ... */ },
+///     StateReasonCode::EfsioError => { /* ... */ },
+///     StateReasonCode::EfsMountConnectivityError => { /* ... */ },
+///     StateReasonCode::EfsMountFailure => { /* ... */ },
+///     StateReasonCode::EfsMountTimeout => { /* ... */ },
 ///     StateReasonCode::EniLimitExceeded => { /* ... */ },
+///     StateReasonCode::FunctionError => { /* ... */ },
 ///     StateReasonCode::Idle => { /* ... */ },
 ///     StateReasonCode::ImageAccessDenied => { /* ... */ },
 ///     StateReasonCode::ImageDeleted => { /* ... */ },
@@ -1393,8 +1736,13 @@ impl AsRef<str> for LastUpdateStatus {
 ///     StateReasonCode::InternalError => { /* ... */ },
 ///     StateReasonCode::InvalidConfiguration => { /* ... */ },
 ///     StateReasonCode::InvalidImage => { /* ... */ },
+///     StateReasonCode::InvalidRuntime => { /* ... */ },
 ///     StateReasonCode::InvalidSecurityGroup => { /* ... */ },
+///     StateReasonCode::InvalidStateKmsKey => { /* ... */ },
 ///     StateReasonCode::InvalidSubnet => { /* ... */ },
+///     StateReasonCode::InvalidZipFileException => { /* ... */ },
+///     StateReasonCode::KmsKeyAccessDenied => { /* ... */ },
+///     StateReasonCode::KmsKeyNotFound => { /* ... */ },
 ///     StateReasonCode::Restoring => { /* ... */ },
 ///     StateReasonCode::SubnetOutOfIpAddresses => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -1433,7 +1781,19 @@ pub enum StateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
     #[allow(missing_docs)] // documentation missing in model
+    DisabledKmsKey,
+    #[allow(missing_docs)] // documentation missing in model
+    EfsioError,
+    #[allow(missing_docs)] // documentation missing in model
+    EfsMountConnectivityError,
+    #[allow(missing_docs)] // documentation missing in model
+    EfsMountFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    EfsMountTimeout,
+    #[allow(missing_docs)] // documentation missing in model
     EniLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionError,
     #[allow(missing_docs)] // documentation missing in model
     Idle,
     #[allow(missing_docs)] // documentation missing in model
@@ -1449,9 +1809,19 @@ pub enum StateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     InvalidImage,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidRuntime,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidSecurityGroup,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidStateKmsKey,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidSubnet,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidZipFileException,
+    #[allow(missing_docs)] // documentation missing in model
+    KmsKeyAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    KmsKeyNotFound,
     #[allow(missing_docs)] // documentation missing in model
     Restoring,
     #[allow(missing_docs)] // documentation missing in model
@@ -1463,7 +1833,13 @@ impl std::convert::From<&str> for StateReasonCode {
     fn from(s: &str) -> Self {
         match s {
             "Creating" => StateReasonCode::Creating,
+            "DisabledKMSKey" => StateReasonCode::DisabledKmsKey,
+            "EFSIOError" => StateReasonCode::EfsioError,
+            "EFSMountConnectivityError" => StateReasonCode::EfsMountConnectivityError,
+            "EFSMountFailure" => StateReasonCode::EfsMountFailure,
+            "EFSMountTimeout" => StateReasonCode::EfsMountTimeout,
             "EniLimitExceeded" => StateReasonCode::EniLimitExceeded,
+            "FunctionError" => StateReasonCode::FunctionError,
             "Idle" => StateReasonCode::Idle,
             "ImageAccessDenied" => StateReasonCode::ImageAccessDenied,
             "ImageDeleted" => StateReasonCode::ImageDeleted,
@@ -1471,8 +1847,13 @@ impl std::convert::From<&str> for StateReasonCode {
             "InternalError" => StateReasonCode::InternalError,
             "InvalidConfiguration" => StateReasonCode::InvalidConfiguration,
             "InvalidImage" => StateReasonCode::InvalidImage,
+            "InvalidRuntime" => StateReasonCode::InvalidRuntime,
             "InvalidSecurityGroup" => StateReasonCode::InvalidSecurityGroup,
+            "InvalidStateKMSKey" => StateReasonCode::InvalidStateKmsKey,
             "InvalidSubnet" => StateReasonCode::InvalidSubnet,
+            "InvalidZipFileException" => StateReasonCode::InvalidZipFileException,
+            "KMSKeyAccessDenied" => StateReasonCode::KmsKeyAccessDenied,
+            "KMSKeyNotFound" => StateReasonCode::KmsKeyNotFound,
             "Restoring" => StateReasonCode::Restoring,
             "SubnetOutOfIPAddresses" => StateReasonCode::SubnetOutOfIpAddresses,
             other => StateReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
@@ -1491,7 +1872,13 @@ impl StateReasonCode {
     pub fn as_str(&self) -> &str {
         match self {
             StateReasonCode::Creating => "Creating",
+            StateReasonCode::DisabledKmsKey => "DisabledKMSKey",
+            StateReasonCode::EfsioError => "EFSIOError",
+            StateReasonCode::EfsMountConnectivityError => "EFSMountConnectivityError",
+            StateReasonCode::EfsMountFailure => "EFSMountFailure",
+            StateReasonCode::EfsMountTimeout => "EFSMountTimeout",
             StateReasonCode::EniLimitExceeded => "EniLimitExceeded",
+            StateReasonCode::FunctionError => "FunctionError",
             StateReasonCode::Idle => "Idle",
             StateReasonCode::ImageAccessDenied => "ImageAccessDenied",
             StateReasonCode::ImageDeleted => "ImageDeleted",
@@ -1499,8 +1886,13 @@ impl StateReasonCode {
             StateReasonCode::InternalError => "InternalError",
             StateReasonCode::InvalidConfiguration => "InvalidConfiguration",
             StateReasonCode::InvalidImage => "InvalidImage",
+            StateReasonCode::InvalidRuntime => "InvalidRuntime",
             StateReasonCode::InvalidSecurityGroup => "InvalidSecurityGroup",
+            StateReasonCode::InvalidStateKmsKey => "InvalidStateKMSKey",
             StateReasonCode::InvalidSubnet => "InvalidSubnet",
+            StateReasonCode::InvalidZipFileException => "InvalidZipFileException",
+            StateReasonCode::KmsKeyAccessDenied => "KMSKeyAccessDenied",
+            StateReasonCode::KmsKeyNotFound => "KMSKeyNotFound",
             StateReasonCode::Restoring => "Restoring",
             StateReasonCode::SubnetOutOfIpAddresses => "SubnetOutOfIPAddresses",
             StateReasonCode::Unknown(value) => value.as_str(),
@@ -1510,7 +1902,13 @@ impl StateReasonCode {
     pub const fn values() -> &'static [&'static str] {
         &[
             "Creating",
+            "DisabledKMSKey",
+            "EFSIOError",
+            "EFSMountConnectivityError",
+            "EFSMountFailure",
+            "EFSMountTimeout",
             "EniLimitExceeded",
+            "FunctionError",
             "Idle",
             "ImageAccessDenied",
             "ImageDeleted",
@@ -1518,8 +1916,13 @@ impl StateReasonCode {
             "InternalError",
             "InvalidConfiguration",
             "InvalidImage",
+            "InvalidRuntime",
             "InvalidSecurityGroup",
+            "InvalidStateKMSKey",
             "InvalidSubnet",
+            "InvalidZipFileException",
+            "KMSKeyAccessDenied",
+            "KMSKeyNotFound",
             "Restoring",
             "SubnetOutOfIPAddresses",
         ]
@@ -1881,11 +2284,11 @@ impl AsRef<str> for TracingMode {
     }
 }
 
-/// <p>The results of an operation to update or read environment variables. If the operation is successful, the response contains the environment variables. If it failed, the response contains details about the error.</p>
+/// <p>The results of an operation to update or read environment variables. If the operation succeeds, the response contains the environment variables. If it fails, the response contains details about the error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentResponse {
-    /// <p>Environment variable key-value pairs.</p>
+    /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
     #[doc(hidden)]
     pub variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1894,7 +2297,7 @@ pub struct EnvironmentResponse {
     pub error: std::option::Option<crate::model::EnvironmentError>,
 }
 impl EnvironmentResponse {
-    /// <p>Environment variable key-value pairs.</p>
+    /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
     pub fn variables(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1930,7 +2333,7 @@ pub mod environment_response {
         ///
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
-        /// <p>Environment variable key-value pairs.</p>
+        /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
         pub fn variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -1941,7 +2344,7 @@ pub mod environment_response {
             self.variables = Some(hash_map);
             self
         }
-        /// <p>Environment variable key-value pairs.</p>
+        /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
         pub fn set_variables(
             mut self,
             input: std::option::Option<
@@ -2126,7 +2529,7 @@ pub struct VpcConfigResponse {
     /// <p>A list of VPC subnet IDs.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of VPC security groups IDs.</p>
+    /// <p>A list of VPC security group IDs.</p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the VPC.</p>
@@ -2138,7 +2541,7 @@ impl VpcConfigResponse {
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>A list of VPC security groups IDs.</p>
+    /// <p>A list of VPC security group IDs.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
@@ -2181,14 +2584,14 @@ pub mod vpc_config_response {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>A list of VPC security groups IDs.</p>
+        /// <p>A list of VPC security group IDs.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
-        /// <p>A list of VPC security groups IDs.</p>
+        /// <p>A list of VPC security group IDs.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2249,6 +2652,7 @@ impl VpcConfigResponse {
 ///     Runtime::Nodejs12x => { /* ... */ },
 ///     Runtime::Nodejs14x => { /* ... */ },
 ///     Runtime::Nodejs16x => { /* ... */ },
+///     Runtime::Nodejs18x => { /* ... */ },
 ///     Runtime::Nodejs43 => { /* ... */ },
 ///     Runtime::Nodejs43edge => { /* ... */ },
 ///     Runtime::Nodejs610 => { /* ... */ },
@@ -2324,6 +2728,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Nodejs16x,
     #[allow(missing_docs)] // documentation missing in model
+    Nodejs18x,
+    #[allow(missing_docs)] // documentation missing in model
     Nodejs43,
     #[allow(missing_docs)] // documentation missing in model
     Nodejs43edge,
@@ -2369,6 +2775,7 @@ impl std::convert::From<&str> for Runtime {
             "nodejs12.x" => Runtime::Nodejs12x,
             "nodejs14.x" => Runtime::Nodejs14x,
             "nodejs16.x" => Runtime::Nodejs16x,
+            "nodejs18.x" => Runtime::Nodejs18x,
             "nodejs4.3" => Runtime::Nodejs43,
             "nodejs4.3-edge" => Runtime::Nodejs43edge,
             "nodejs6.10" => Runtime::Nodejs610,
@@ -2411,6 +2818,7 @@ impl Runtime {
             Runtime::Nodejs12x => "nodejs12.x",
             Runtime::Nodejs14x => "nodejs14.x",
             Runtime::Nodejs16x => "nodejs16.x",
+            Runtime::Nodejs18x => "nodejs18.x",
             Runtime::Nodejs43 => "nodejs4.3",
             Runtime::Nodejs43edge => "nodejs4.3-edge",
             Runtime::Nodejs610 => "nodejs6.10",
@@ -2444,6 +2852,7 @@ impl Runtime {
             "nodejs12.x",
             "nodejs14.x",
             "nodejs16.x",
+            "nodejs18.x",
             "nodejs4.3",
             "nodejs4.3-edge",
             "nodejs6.10",
@@ -2463,6 +2872,57 @@ impl Runtime {
 impl AsRef<str> for Runtime {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>The function's SnapStart setting. Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SnapStart {
+    /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
+    #[doc(hidden)]
+    pub apply_on: std::option::Option<crate::model::SnapStartApplyOn>,
+}
+impl SnapStart {
+    /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
+    pub fn apply_on(&self) -> std::option::Option<&crate::model::SnapStartApplyOn> {
+        self.apply_on.as_ref()
+    }
+}
+/// See [`SnapStart`](crate::model::SnapStart).
+pub mod snap_start {
+
+    /// A builder for [`SnapStart`](crate::model::SnapStart).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) apply_on: std::option::Option<crate::model::SnapStartApplyOn>,
+    }
+    impl Builder {
+        /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
+        pub fn apply_on(mut self, input: crate::model::SnapStartApplyOn) -> Self {
+            self.apply_on = Some(input);
+            self
+        }
+        /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
+        pub fn set_apply_on(
+            mut self,
+            input: std::option::Option<crate::model::SnapStartApplyOn>,
+        ) -> Self {
+            self.apply_on = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SnapStart`](crate::model::SnapStart).
+        pub fn build(self) -> crate::model::SnapStart {
+            crate::model::SnapStart {
+                apply_on: self.apply_on,
+            }
+        }
+    }
+}
+impl SnapStart {
+    /// Creates a new builder-style object to manufacture [`SnapStart`](crate::model::SnapStart).
+    pub fn builder() -> crate::model::snap_start::Builder {
+        crate::model::snap_start::Builder::default()
     }
 }
 
@@ -2512,7 +2972,7 @@ impl TracingConfig {
     }
 }
 
-/// <p>A function's environment variable settings. You can use environment variables to adjust your function's behavior without updating code. An environment variable is a pair of strings that are stored in a function's version-specific configuration. </p>
+/// <p>A function's environment variable settings. You can use environment variables to adjust your function's behavior without updating code. An environment variable is a pair of strings that are stored in a function's version-specific configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Environment {
@@ -2595,14 +3055,14 @@ impl Environment {
     }
 }
 
-/// <p>The VPC security groups and subnets that are attached to a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
+/// <p>The VPC security groups and subnets that are attached to a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to access resources in a VPC</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>A list of VPC subnet IDs.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of VPC security groups IDs.</p>
+    /// <p>A list of VPC security group IDs.</p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -2611,7 +3071,7 @@ impl VpcConfig {
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>A list of VPC security groups IDs.</p>
+    /// <p>A list of VPC security group IDs.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
@@ -2649,14 +3109,14 @@ pub mod vpc_config {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>A list of VPC security groups IDs.</p>
+        /// <p>A list of VPC security group IDs.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
-        /// <p>A list of VPC security groups IDs.</p>
+        /// <p>A list of VPC security group IDs.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2684,12 +3144,12 @@ impl VpcConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelfManagedKafkaEventSourceConfig {
-    /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+    /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
     #[doc(hidden)]
     pub consumer_group_id: std::option::Option<std::string::String>,
 }
 impl SelfManagedKafkaEventSourceConfig {
-    /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+    /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
     pub fn consumer_group_id(&self) -> std::option::Option<&str> {
         self.consumer_group_id.as_deref()
     }
@@ -2703,12 +3163,12 @@ pub mod self_managed_kafka_event_source_config {
         pub(crate) consumer_group_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+        /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
         pub fn consumer_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.consumer_group_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+        /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
         pub fn set_consumer_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2735,12 +3195,12 @@ impl SelfManagedKafkaEventSourceConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonManagedKafkaEventSourceConfig {
-    /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+    /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
     #[doc(hidden)]
     pub consumer_group_id: std::option::Option<std::string::String>,
 }
 impl AmazonManagedKafkaEventSourceConfig {
-    /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+    /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
     pub fn consumer_group_id(&self) -> std::option::Option<&str> {
         self.consumer_group_id.as_deref()
     }
@@ -2754,12 +3214,12 @@ pub mod amazon_managed_kafka_event_source_config {
         pub(crate) consumer_group_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+        /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
         pub fn consumer_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.consumer_group_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+        /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
         pub fn set_consumer_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3039,11 +3499,11 @@ pub struct SourceAccessConfiguration {
     /// <ul>
     /// <li> <p> <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
     /// <li> <p> <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
-    /// <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+    /// <li> <p> <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
+    /// <li> <p> <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
     /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
     /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
     /// </ul>
@@ -3058,11 +3518,11 @@ impl SourceAccessConfiguration {
     /// <ul>
     /// <li> <p> <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
     /// <li> <p> <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
-    /// <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+    /// <li> <p> <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
+    /// <li> <p> <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
     /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
     /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
     /// </ul>
@@ -3088,11 +3548,11 @@ pub mod source_access_configuration {
         /// <ul>
         /// <li> <p> <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
         /// <li> <p> <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
-        /// <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+        /// <li> <p> <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
+        /// <li> <p> <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
         /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
         /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
         /// </ul>
@@ -3104,11 +3564,11 @@ pub mod source_access_configuration {
         /// <ul>
         /// <li> <p> <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
         /// <li> <p> <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
-        /// <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+        /// <li> <p> <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
+        /// <li> <p> <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
         /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
         /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
         /// </ul>
@@ -4287,7 +4747,7 @@ pub struct FunctionConfiguration {
     /// <p>The function's execution role.</p>
     #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
-    /// <p>The function that Lambda calls to begin executing your function.</p>
+    /// <p>The function that Lambda calls to begin running your function.</p>
     #[doc(hidden)]
     pub handler: std::option::Option<std::string::String>,
     /// <p>The size of the function's deployment package, in bytes.</p>
@@ -4299,7 +4759,7 @@ pub struct FunctionConfiguration {
     /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
     #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
-    /// <p>The amount of memory available to the function at runtime. </p>
+    /// <p>The amount of memory available to the function at runtime.</p>
     #[doc(hidden)]
     pub memory_size: std::option::Option<i32>,
     /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
@@ -4317,10 +4777,10 @@ pub struct FunctionConfiguration {
     /// <p>The function's dead letter queue.</p>
     #[doc(hidden)]
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
     #[doc(hidden)]
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The function's X-Ray tracing configuration.</p>
@@ -4332,7 +4792,7 @@ pub struct FunctionConfiguration {
     /// <p>The latest updated revision of the function or alias.</p>
     #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
     #[doc(hidden)]
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
     /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
@@ -4372,9 +4832,12 @@ pub struct FunctionConfiguration {
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     #[doc(hidden)]
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
-    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
     #[doc(hidden)]
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    #[doc(hidden)]
+    pub snap_start: std::option::Option<crate::model::SnapStartResponse>,
 }
 impl FunctionConfiguration {
     /// <p>The name of the function.</p>
@@ -4393,7 +4856,7 @@ impl FunctionConfiguration {
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>The function that Lambda calls to begin executing your function.</p>
+    /// <p>The function that Lambda calls to begin running your function.</p>
     pub fn handler(&self) -> std::option::Option<&str> {
         self.handler.as_deref()
     }
@@ -4409,7 +4872,7 @@ impl FunctionConfiguration {
     pub fn timeout(&self) -> std::option::Option<i32> {
         self.timeout
     }
-    /// <p>The amount of memory available to the function at runtime. </p>
+    /// <p>The amount of memory available to the function at runtime.</p>
     pub fn memory_size(&self) -> std::option::Option<i32> {
         self.memory_size
     }
@@ -4433,11 +4896,11 @@ impl FunctionConfiguration {
     pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
     pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
         self.environment.as_ref()
     }
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -4453,7 +4916,7 @@ impl FunctionConfiguration {
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
     pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
         self.layers.as_deref()
     }
@@ -4507,9 +4970,13 @@ impl FunctionConfiguration {
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
-    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
     pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
+    }
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    pub fn snap_start(&self) -> std::option::Option<&crate::model::SnapStartResponse> {
+        self.snap_start.as_ref()
     }
 }
 /// See [`FunctionConfiguration`](crate::model::FunctionConfiguration).
@@ -4553,6 +5020,7 @@ pub mod function_configuration {
         pub(crate) signing_job_arn: std::option::Option<std::string::String>,
         pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
         pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
+        pub(crate) snap_start: std::option::Option<crate::model::SnapStartResponse>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -4598,12 +5066,12 @@ pub mod function_configuration {
             self.role = input;
             self
         }
-        /// <p>The function that Lambda calls to begin executing your function.</p>
+        /// <p>The function that Lambda calls to begin running your function.</p>
         pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
             self.handler = Some(input.into());
             self
         }
-        /// <p>The function that Lambda calls to begin executing your function.</p>
+        /// <p>The function that Lambda calls to begin running your function.</p>
         pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.handler = input;
             self
@@ -4638,12 +5106,12 @@ pub mod function_configuration {
             self.timeout = input;
             self
         }
-        /// <p>The amount of memory available to the function at runtime. </p>
+        /// <p>The amount of memory available to the function at runtime.</p>
         pub fn memory_size(mut self, input: i32) -> Self {
             self.memory_size = Some(input);
             self
         }
-        /// <p>The amount of memory available to the function at runtime. </p>
+        /// <p>The amount of memory available to the function at runtime.</p>
         pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
             self.memory_size = input;
             self
@@ -4707,12 +5175,12 @@ pub mod function_configuration {
             self.dead_letter_config = input;
             self
         }
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
         pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
             self.environment = Some(input);
             self
         }
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::EnvironmentResponse>,
@@ -4720,12 +5188,12 @@ pub mod function_configuration {
             self.environment = input;
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
+        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
+        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -4767,14 +5235,14 @@ pub mod function_configuration {
         ///
         /// To override the contents of this collection use [`set_layers`](Self::set_layers).
         ///
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
         pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
             v.push(input);
             self.layers = Some(v);
             self
         }
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
         pub fn set_layers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
@@ -4950,17 +5418,30 @@ pub mod function_configuration {
             self.architectures = input;
             self
         }
-        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
         pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
             self.ephemeral_storage = Some(input);
             self
         }
-        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
         pub fn set_ephemeral_storage(
             mut self,
             input: std::option::Option<crate::model::EphemeralStorage>,
         ) -> Self {
             self.ephemeral_storage = input;
+            self
+        }
+        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+        pub fn snap_start(mut self, input: crate::model::SnapStartResponse) -> Self {
+            self.snap_start = Some(input);
+            self
+        }
+        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+        pub fn set_snap_start(
+            mut self,
+            input: std::option::Option<crate::model::SnapStartResponse>,
+        ) -> Self {
+            self.snap_start = input;
             self
         }
         /// Consumes the builder and constructs a [`FunctionConfiguration`](crate::model::FunctionConfiguration).
@@ -4999,6 +5480,7 @@ pub mod function_configuration {
                 signing_job_arn: self.signing_job_arn,
                 architectures: self.architectures,
                 ephemeral_storage: self.ephemeral_storage,
+                snap_start: self.snap_start,
             }
         }
     }
@@ -5023,7 +5505,7 @@ pub struct ProvisionedConcurrencyConfigListItem {
     /// <p>The amount of provisioned concurrency available.</p>
     #[doc(hidden)]
     pub available_provisioned_concurrent_executions: std::option::Option<i32>,
-    /// <p>The amount of provisioned concurrency allocated.</p>
+    /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
     #[doc(hidden)]
     pub allocated_provisioned_concurrent_executions: std::option::Option<i32>,
     /// <p>The status of the allocation process.</p>
@@ -5049,7 +5531,7 @@ impl ProvisionedConcurrencyConfigListItem {
     pub fn available_provisioned_concurrent_executions(&self) -> std::option::Option<i32> {
         self.available_provisioned_concurrent_executions
     }
-    /// <p>The amount of provisioned concurrency allocated.</p>
+    /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
     pub fn allocated_provisioned_concurrent_executions(&self) -> std::option::Option<i32> {
         self.allocated_provisioned_concurrent_executions
     }
@@ -5117,12 +5599,12 @@ pub mod provisioned_concurrency_config_list_item {
             self.available_provisioned_concurrent_executions = input;
             self
         }
-        /// <p>The amount of provisioned concurrency allocated.</p>
+        /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
         pub fn allocated_provisioned_concurrent_executions(mut self, input: i32) -> Self {
             self.allocated_provisioned_concurrent_executions = Some(input);
             self
         }
-        /// <p>The amount of provisioned concurrency allocated.</p>
+        /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
         pub fn set_allocated_provisioned_concurrent_executions(
             mut self,
             input: std::option::Option<i32>,
@@ -5491,7 +5973,7 @@ pub struct FunctionUrlConfig {
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     #[doc(hidden)]
     pub cors: std::option::Option<crate::model::Cors>,
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
     #[doc(hidden)]
     pub auth_type: std::option::Option<crate::model::FunctionUrlAuthType>,
 }
@@ -5516,7 +5998,7 @@ impl FunctionUrlConfig {
     pub fn cors(&self) -> std::option::Option<&crate::model::Cors> {
         self.cors.as_ref()
     }
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
     pub fn auth_type(&self) -> std::option::Option<&crate::model::FunctionUrlAuthType> {
         self.auth_type.as_ref()
     }
@@ -5591,12 +6073,12 @@ pub mod function_url_config {
             self.cors = input;
             self
         }
-        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
         pub fn auth_type(mut self, input: crate::model::FunctionUrlAuthType) -> Self {
             self.auth_type = Some(input);
             self
         }
-        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
         pub fn set_auth_type(
             mut self,
             input: std::option::Option<crate::model::FunctionUrlAuthType>,
@@ -5885,9 +6367,9 @@ pub struct EventSourceMappingConfiguration {
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
-    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
-    /// <p>Default: 0</p>
-    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     #[doc(hidden)]
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
     /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
@@ -5896,7 +6378,7 @@ pub struct EventSourceMappingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     #[doc(hidden)]
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The ARN of the Lambda function.</p>
@@ -5974,9 +6456,9 @@ impl EventSourceMappingConfiguration {
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
     }
-    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
-    /// <p>Default: 0</p>
-    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_batching_window_in_seconds
     }
@@ -5988,7 +6470,7 @@ impl EventSourceMappingConfiguration {
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
     }
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -6159,16 +6641,16 @@ pub mod event_source_mapping_configuration {
             self.batch_size = input;
             self
         }
-        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
-        /// <p>Default: 0</p>
-        /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
+        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+        /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
             self.maximum_batching_window_in_seconds = Some(input);
             self
         }
-        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
-        /// <p>Default: 0</p>
-        /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
+        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+        /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn set_maximum_batching_window_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -6199,12 +6681,12 @@ pub mod event_source_mapping_configuration {
             self.event_source_arn = input;
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
             self.filter_criteria = Some(input);
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::FilterCriteria>,
@@ -6838,12 +7320,12 @@ impl AsRef<str> for InvocationType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Concurrency {
-    /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Concurrency</a>.</p>
+    /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
     #[doc(hidden)]
     pub reserved_concurrent_executions: std::option::Option<i32>,
 }
 impl Concurrency {
-    /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Concurrency</a>.</p>
+    /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
     pub fn reserved_concurrent_executions(&self) -> std::option::Option<i32> {
         self.reserved_concurrent_executions
     }
@@ -6857,12 +7339,12 @@ pub mod concurrency {
         pub(crate) reserved_concurrent_executions: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Concurrency</a>.</p>
+        /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
         pub fn reserved_concurrent_executions(mut self, input: i32) -> Self {
             self.reserved_concurrent_executions = Some(input);
             self
         }
-        /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Concurrency</a>.</p>
+        /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
         pub fn set_reserved_concurrent_executions(
             mut self,
             input: std::option::Option<i32>,
@@ -7190,11 +7672,11 @@ impl AccountLimit {
     }
 }
 
-/// <p>The code for the Lambda function. You can specify either an object in Amazon S3, upload a .zip file archive deployment package directly, or specify the URI of a container image.</p>
+/// <p>The code for the Lambda function. You can either specify an object in Amazon S3, upload a .zip file archive deployment package directly, or specify the URI of a container image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionCode {
-    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you.</p>
     #[doc(hidden)]
     pub zip_file: std::option::Option<aws_smithy_types::Blob>,
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
@@ -7211,7 +7693,7 @@ pub struct FunctionCode {
     pub image_uri: std::option::Option<std::string::String>,
 }
 impl FunctionCode {
-    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you.</p>
     pub fn zip_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
@@ -7256,12 +7738,12 @@ pub mod function_code {
         pub(crate) image_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you.</p>
         pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.zip_file = Some(input);
             self
         }
-        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.zip_file = input;
             self

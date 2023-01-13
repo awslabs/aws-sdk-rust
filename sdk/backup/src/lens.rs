@@ -79,6 +79,16 @@ pub(crate) fn reflens_structure_crate_output_list_frameworks_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_legal_holds_output_next_token(
+    input: &crate::output::ListLegalHoldsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_protected_resources_output_next_token(
     input: &crate::output::ListProtectedResourcesOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -91,6 +101,16 @@ pub(crate) fn reflens_structure_crate_output_list_protected_resources_output_nex
 
 pub(crate) fn reflens_structure_crate_output_list_recovery_points_by_backup_vault_output_next_token(
     input: &crate::output::ListRecoveryPointsByBackupVaultOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_recovery_points_by_legal_hold_output_next_token(
+    input: &crate::output::ListRecoveryPointsByLegalHoldOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -219,6 +239,16 @@ pub(crate) fn lens_structure_crate_output_list_copy_jobs_output_copy_jobs(
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_list_legal_holds_output_legal_holds(
+    input: crate::output::ListLegalHoldsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::LegalHold>> {
+    let input = match input.legal_holds {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_protected_resources_output_results(
     input: crate::output::ListProtectedResourcesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::ProtectedResource>> {
@@ -232,6 +262,16 @@ pub(crate) fn lens_structure_crate_output_list_protected_resources_output_result
 pub(crate) fn lens_structure_crate_output_list_recovery_points_by_backup_vault_output_recovery_points(
     input: crate::output::ListRecoveryPointsByBackupVaultOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::RecoveryPointByBackupVault>> {
+    let input = match input.recovery_points {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_recovery_points_by_legal_hold_output_recovery_points(
+    input: crate::output::ListRecoveryPointsByLegalHoldOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::RecoveryPointMember>> {
     let input = match input.recovery_points {
         None => return None,
         Some(t) => t,

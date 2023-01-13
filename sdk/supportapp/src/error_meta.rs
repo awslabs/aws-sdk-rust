@@ -11,11 +11,13 @@ pub enum Error {
     /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
     /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
     /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
     /// </ul>
     ConflictException(crate::error::ConflictException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource is missing or doesn't exist, such as an account alias or Slack channel configuration.</p>
+    /// <p>The specified resource is missing or doesn't exist, such as an account alias, Slack channel configuration, or Slack workspace configuration.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your Service Quotas request exceeds the quota for the service. For example, your Service Quotas request to Amazon Web Services Support App might exceed the maximum number of workspaces or channels per account, or the maximum number of accounts per Slack channel.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
@@ -320,6 +322,42 @@ impl From<crate::error::PutAccountAliasError> for Error {
             crate::error::PutAccountAliasErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::RegisterSlackWorkspaceForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::RegisterSlackWorkspaceForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RegisterSlackWorkspaceForOrganizationError> for Error {
+    fn from(err: crate::error::RegisterSlackWorkspaceForOrganizationError) -> Self {
+        match err.kind {
+            crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }

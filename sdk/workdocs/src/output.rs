@@ -120,6 +120,30 @@ impl UpdateDocumentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RestoreDocumentVersionsOutput {}
+/// See [`RestoreDocumentVersionsOutput`](crate::output::RestoreDocumentVersionsOutput).
+pub mod restore_document_versions_output {
+
+    /// A builder for [`RestoreDocumentVersionsOutput`](crate::output::RestoreDocumentVersionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`RestoreDocumentVersionsOutput`](crate::output::RestoreDocumentVersionsOutput).
+        pub fn build(self) -> crate::output::RestoreDocumentVersionsOutput {
+            crate::output::RestoreDocumentVersionsOutput {}
+        }
+    }
+}
+impl RestoreDocumentVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreDocumentVersionsOutput`](crate::output::RestoreDocumentVersionsOutput).
+    pub fn builder() -> crate::output::restore_document_versions_output::Builder {
+        crate::output::restore_document_versions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveResourcePermissionOutput {}
 /// See [`RemoveResourcePermissionOutput`](crate::output::RemoveResourcePermissionOutput).
 pub mod remove_resource_permission_output {
@@ -1609,6 +1633,30 @@ impl DeleteFolderOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFolderOutput`](crate::output::DeleteFolderOutput).
     pub fn builder() -> crate::output::delete_folder_output::Builder {
         crate::output::delete_folder_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteDocumentVersionOutput {}
+/// See [`DeleteDocumentVersionOutput`](crate::output::DeleteDocumentVersionOutput).
+pub mod delete_document_version_output {
+
+    /// A builder for [`DeleteDocumentVersionOutput`](crate::output::DeleteDocumentVersionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteDocumentVersionOutput`](crate::output::DeleteDocumentVersionOutput).
+        pub fn build(self) -> crate::output::DeleteDocumentVersionOutput {
+            crate::output::DeleteDocumentVersionOutput {}
+        }
+    }
+}
+impl DeleteDocumentVersionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDocumentVersionOutput`](crate::output::DeleteDocumentVersionOutput).
+    pub fn builder() -> crate::output::delete_document_version_output::Builder {
+        crate::output::delete_document_version_output::Builder::default()
     }
 }
 

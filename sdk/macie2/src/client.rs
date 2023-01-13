@@ -108,7 +108,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`ids(Vec<String>)`](crate::client::fluent_builders::BatchGetCustomDataIdentifiers::ids) / [`set_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetCustomDataIdentifiers::set_ids): <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
     /// - On success, responds with [`BatchGetCustomDataIdentifiersOutput`](crate::output::BatchGetCustomDataIdentifiersOutput) with field(s):
-    ///   - [`custom_data_identifiers(Option<Vec<BatchGetCustomDataIdentifierSummary>>)`](crate::output::BatchGetCustomDataIdentifiersOutput::custom_data_identifiers): <p>An array of objects, one for each custom data identifier that meets the criteria specified in the request.</p>
+    ///   - [`custom_data_identifiers(Option<Vec<BatchGetCustomDataIdentifierSummary>>)`](crate::output::BatchGetCustomDataIdentifiersOutput::custom_data_identifiers): <p>An array of objects, one for each custom data identifier that matches the criteria specified in the request.</p>
     ///   - [`not_found_identifier_ids(Option<Vec<String>>)`](crate::output::BatchGetCustomDataIdentifiersOutput::not_found_identifier_ids): <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
     /// - On failure, responds with [`SdkError<BatchGetCustomDataIdentifiersError>`](crate::error::BatchGetCustomDataIdentifiersError)
     pub fn batch_get_custom_data_identifiers(
@@ -175,7 +175,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateFindingsFilter`](crate::client::fluent_builders::CreateFindingsFilter) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`action(FindingsFilterAction)`](crate::client::fluent_builders::CreateFindingsFilter::action) / [`set_action(Option<FindingsFilterAction>)`](crate::client::fluent_builders::CreateFindingsFilter::set_action): <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    ///   - [`action(FindingsFilterAction)`](crate::client::fluent_builders::CreateFindingsFilter::action) / [`set_action(Option<FindingsFilterAction>)`](crate::client::fluent_builders::CreateFindingsFilter::set_action): <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateFindingsFilter::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateFindingsFilter::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFindingsFilter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFindingsFilter::set_description): <p>A custom description of the filter. The description can contain as many as 512 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::CreateFindingsFilter::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::CreateFindingsFilter::set_finding_criteria): <p>The criteria to use to filter findings.</p>
@@ -292,7 +292,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeBuckets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeBuckets::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     ///   - [`sort_criteria(BucketSortCriteria)`](crate::client::fluent_builders::DescribeBuckets::sort_criteria) / [`set_sort_criteria(Option<BucketSortCriteria>)`](crate::client::fluent_builders::DescribeBuckets::set_sort_criteria): <p>The criteria to use to sort the query results.</p>
     /// - On success, responds with [`DescribeBucketsOutput`](crate::output::DescribeBucketsOutput) with field(s):
-    ///   - [`buckets(Option<Vec<BucketMetadata>>)`](crate::output::DescribeBucketsOutput::buckets): <p>An array of objects, one for each bucket that meets the filter criteria specified in the request.</p>
+    ///   - [`buckets(Option<Vec<BucketMetadata>>)`](crate::output::DescribeBucketsOutput::buckets): <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeBucketsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<DescribeBucketsError>`](crate::error::DescribeBucketsError)
     pub fn describe_buckets(&self) -> fluent_builders::DescribeBuckets {
@@ -450,6 +450,23 @@ impl Client {
     pub fn get_allow_list(&self) -> fluent_builders::GetAllowList {
         fluent_builders::GetAllowList::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetAutomatedDiscoveryConfiguration`](crate::client::fluent_builders::GetAutomatedDiscoveryConfiguration) operation.
+    ///
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetAutomatedDiscoveryConfiguration::send) it.
+
+    /// - On success, responds with [`GetAutomatedDiscoveryConfigurationOutput`](crate::output::GetAutomatedDiscoveryConfigurationOutput) with field(s):
+    ///   - [`classification_scope_id(Option<String>)`](crate::output::GetAutomatedDiscoveryConfigurationOutput::classification_scope_id): <p>The unique identifier for the classification scope that's used when performing automated sensitive data discovery for the account. The classification scope specifies S3 buckets to exclude from automated sensitive data discovery.</p>
+    ///   - [`disabled_at(Option<DateTime>)`](crate::output::GetAutomatedDiscoveryConfigurationOutput::disabled_at): <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently disabled for the account. This value is null if automated sensitive data discovery wasn't enabled and subsequently disabled for the account.</p>
+    ///   - [`first_enabled_at(Option<DateTime>)`](crate::output::GetAutomatedDiscoveryConfigurationOutput::first_enabled_at): <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was initially enabled for the account. This value is null if automated sensitive data discovery has never been enabled for the account.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::GetAutomatedDiscoveryConfigurationOutput::last_updated_at): <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently enabled or disabled for the account.</p>
+    ///   - [`sensitivity_inspection_template_id(Option<String>)`](crate::output::GetAutomatedDiscoveryConfigurationOutput::sensitivity_inspection_template_id): <p>The unique identifier for the sensitivity inspection template that's used when performing automated sensitive data discovery for the account. The template specifies which allow lists, custom data identifiers, and managed data identifiers to use when analyzing data.</p>
+    ///   - [`status(Option<AutomatedDiscoveryStatus>)`](crate::output::GetAutomatedDiscoveryConfigurationOutput::status): <p>The current status of the automated sensitive data discovery configuration for the account. Possible values are: ENABLED, use the specified settings to perform automated sensitive data discovery activities for the account; and, DISABLED, don't perform automated sensitive data discovery activities for the account.</p>
+    /// - On failure, responds with [`SdkError<GetAutomatedDiscoveryConfigurationError>`](crate::error::GetAutomatedDiscoveryConfigurationError)
+    pub fn get_automated_discovery_configuration(
+        &self,
+    ) -> fluent_builders::GetAutomatedDiscoveryConfiguration {
+        fluent_builders::GetAutomatedDiscoveryConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetBucketStatistics`](crate::client::fluent_builders::GetBucketStatistics) operation.
     ///
     /// - The fluent builder is configurable:
@@ -460,12 +477,13 @@ impl Client {
     ///   - [`bucket_count_by_encryption_type(Option<BucketCountByEncryptionType>)`](crate::output::GetBucketStatisticsOutput::bucket_count_by_encryption_type): <p>The total number of buckets that use certain types of server-side encryption to encrypt new objects by default. This object also reports the total number of buckets that don't encrypt new objects by default.</p>
     ///   - [`bucket_count_by_object_encryption_requirement(Option<BucketCountPolicyAllowsUnencryptedObjectUploads>)`](crate::output::GetBucketStatisticsOutput::bucket_count_by_object_encryption_requirement): <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are uploaded to the buckets.</p>
     ///   - [`bucket_count_by_shared_access_type(Option<BucketCountBySharedAccessType>)`](crate::output::GetBucketStatisticsOutput::bucket_count_by_shared_access_type): <p>The total number of buckets that are or aren't shared with another Amazon Web Services account.</p>
+    ///   - [`bucket_statistics_by_sensitivity(Option<BucketStatisticsBySensitivity>)`](crate::output::GetBucketStatisticsOutput::bucket_statistics_by_sensitivity): <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
     ///   - [`classifiable_object_count(i64)`](crate::output::GetBucketStatisticsOutput::classifiable_object_count): <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
-    ///   - [`classifiable_size_in_bytes(i64)`](crate::output::GetBucketStatisticsOutput::classifiable_size_in_bytes): <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>  <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
+    ///   - [`classifiable_size_in_bytes(i64)`](crate::output::GetBucketStatisticsOutput::classifiable_size_in_bytes): <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>  <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     ///   - [`last_updated(Option<DateTime>)`](crate::output::GetBucketStatisticsOutput::last_updated): <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
     ///   - [`object_count(i64)`](crate::output::GetBucketStatisticsOutput::object_count): <p>The total number of objects in the buckets.</p>
-    ///   - [`size_in_bytes(i64)`](crate::output::GetBucketStatisticsOutput::size_in_bytes): <p>The total storage size, in bytes, of the buckets.</p>  <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
-    ///   - [`size_in_bytes_compressed(i64)`](crate::output::GetBucketStatisticsOutput::size_in_bytes_compressed): <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>  <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
+    ///   - [`size_in_bytes(i64)`](crate::output::GetBucketStatisticsOutput::size_in_bytes): <p>The total storage size, in bytes, of the buckets.</p>  <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+    ///   - [`size_in_bytes_compressed(i64)`](crate::output::GetBucketStatisticsOutput::size_in_bytes_compressed): <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>  <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
     ///   - [`unclassifiable_object_count(Option<ObjectLevelStatistics>)`](crate::output::GetBucketStatisticsOutput::unclassifiable_object_count): <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     ///   - [`unclassifiable_object_size_in_bytes(Option<ObjectLevelStatistics>)`](crate::output::GetBucketStatisticsOutput::unclassifiable_object_size_in_bytes): <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     /// - On failure, responds with [`SdkError<GetBucketStatisticsError>`](crate::error::GetBucketStatisticsError)
@@ -483,6 +501,18 @@ impl Client {
         &self,
     ) -> fluent_builders::GetClassificationExportConfiguration {
         fluent_builders::GetClassificationExportConfiguration::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetClassificationScope`](crate::client::fluent_builders::GetClassificationScope) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetClassificationScope::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetClassificationScope::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    /// - On success, responds with [`GetClassificationScopeOutput`](crate::output::GetClassificationScopeOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::GetClassificationScopeOutput::id): <p>The unique identifier for the classification scope.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetClassificationScopeOutput::name): <p>The name of the classification scope.</p>
+    ///   - [`s3(Option<S3ClassificationScope>)`](crate::output::GetClassificationScopeOutput::s3): <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
+    /// - On failure, responds with [`SdkError<GetClassificationScopeError>`](crate::error::GetClassificationScopeError)
+    pub fn get_classification_scope(&self) -> fluent_builders::GetClassificationScope {
+        fluent_builders::GetClassificationScope::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetCustomDataIdentifier`](crate::client::fluent_builders::GetCustomDataIdentifier) operation.
     ///
@@ -511,7 +541,7 @@ impl Client {
     ///   - [`finding_ids(Vec<String>)`](crate::client::fluent_builders::GetFindings::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetFindings::set_finding_ids): <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
     ///   - [`sort_criteria(SortCriteria)`](crate::client::fluent_builders::GetFindings::sort_criteria) / [`set_sort_criteria(Option<SortCriteria>)`](crate::client::fluent_builders::GetFindings::set_sort_criteria): <p>The criteria for sorting the results of the request.</p>
     /// - On success, responds with [`GetFindingsOutput`](crate::output::GetFindingsOutput) with field(s):
-    ///   - [`findings(Option<Vec<Finding>>)`](crate::output::GetFindingsOutput::findings): <p>An array of objects, one for each finding that meets the criteria specified in the request.</p>
+    ///   - [`findings(Option<Vec<Finding>>)`](crate::output::GetFindingsOutput::findings): <p>An array of objects, one for each finding that matches the criteria specified in the request.</p>
     /// - On failure, responds with [`SdkError<GetFindingsError>`](crate::error::GetFindingsError)
     pub fn get_findings(&self) -> fluent_builders::GetFindings {
         fluent_builders::GetFindings::new(self.handle.clone())
@@ -521,7 +551,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetFindingsFilter::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetFindingsFilter::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`GetFindingsFilterOutput`](crate::output::GetFindingsFilterOutput) with field(s):
-    ///   - [`action(Option<FindingsFilterAction>)`](crate::output::GetFindingsFilterOutput::action): <p>The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    ///   - [`action(Option<FindingsFilterAction>)`](crate::output::GetFindingsFilterOutput::action): <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     ///   - [`arn(Option<String>)`](crate::output::GetFindingsFilterOutput::arn): <p>The Amazon Resource Name (ARN) of the filter.</p>
     ///   - [`description(Option<String>)`](crate::output::GetFindingsFilterOutput::description): <p>The custom description of the filter.</p>
     ///   - [`finding_criteria(Option<FindingCriteria>)`](crate::output::GetFindingsFilterOutput::finding_criteria): <p>The criteria that's used to filter findings.</p>
@@ -553,7 +583,7 @@ impl Client {
     ///   - [`size(i32)`](crate::client::fluent_builders::GetFindingStatistics::size) / [`set_size(i32)`](crate::client::fluent_builders::GetFindingStatistics::set_size): <p>The maximum number of items to include in each page of the response.</p>
     ///   - [`sort_criteria(FindingStatisticsSortCriteria)`](crate::client::fluent_builders::GetFindingStatistics::sort_criteria) / [`set_sort_criteria(Option<FindingStatisticsSortCriteria>)`](crate::client::fluent_builders::GetFindingStatistics::set_sort_criteria): <p>The criteria to use to sort the query results.</p>
     /// - On success, responds with [`GetFindingStatisticsOutput`](crate::output::GetFindingStatisticsOutput) with field(s):
-    ///   - [`counts_by_group(Option<Vec<GroupCount>>)`](crate::output::GetFindingStatisticsOutput::counts_by_group): <p>An array of objects, one for each group of findings that meet the filter criteria specified in the request.</p>
+    ///   - [`counts_by_group(Option<Vec<GroupCount>>)`](crate::output::GetFindingStatisticsOutput::counts_by_group): <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
     /// - On failure, responds with [`SdkError<GetFindingStatisticsError>`](crate::error::GetFindingStatisticsError)
     pub fn get_finding_statistics(&self) -> fluent_builders::GetFindingStatistics {
         fluent_builders::GetFindingStatistics::new(self.handle.clone())
@@ -610,6 +640,19 @@ impl Client {
     pub fn get_member(&self) -> fluent_builders::GetMember {
         fluent_builders::GetMember::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetResourceProfile`](crate::client::fluent_builders::GetResourceProfile) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetResourceProfile::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetResourceProfile::set_resource_arn): <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    /// - On success, responds with [`GetResourceProfileOutput`](crate::output::GetResourceProfileOutput) with field(s):
+    ///   - [`profile_updated_at(Option<DateTime>)`](crate::output::GetResourceProfileOutput::profile_updated_at): <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
+    ///   - [`sensitivity_score(i32)`](crate::output::GetResourceProfileOutput::sensitivity_score): <p>The current sensitivity score for the bucket, ranging from&nbsp;-1&nbsp;(no analysis due to an error) to&nbsp;100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
+    ///   - [`sensitivity_score_overridden(bool)`](crate::output::GetResourceProfileOutput::sensitivity_score_overridden): <p>Specifies whether the bucket's current sensitivity score was set manually. If this value is true, the score was manually changed to 100. If this value is false, the score was calculated automatically by Amazon Macie.</p>
+    ///   - [`statistics(Option<ResourceStatistics>)`](crate::output::GetResourceProfileOutput::statistics): <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
+    /// - On failure, responds with [`SdkError<GetResourceProfileError>`](crate::error::GetResourceProfileError)
+    pub fn get_resource_profile(&self) -> fluent_builders::GetResourceProfile {
+        fluent_builders::GetResourceProfile::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetRevealConfiguration`](crate::client::fluent_builders::GetRevealConfiguration) operation.
     ///
     /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetRevealConfiguration::send) it.
@@ -645,6 +688,22 @@ impl Client {
     ) -> fluent_builders::GetSensitiveDataOccurrencesAvailability {
         fluent_builders::GetSensitiveDataOccurrencesAvailability::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetSensitivityInspectionTemplate`](crate::client::fluent_builders::GetSensitivityInspectionTemplate) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetSensitivityInspectionTemplate::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetSensitivityInspectionTemplate::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    /// - On success, responds with [`GetSensitivityInspectionTemplateOutput`](crate::output::GetSensitivityInspectionTemplateOutput) with field(s):
+    ///   - [`description(Option<String>)`](crate::output::GetSensitivityInspectionTemplateOutput::description): <p>The custom description of the template.</p>
+    ///   - [`excludes(Option<SensitivityInspectionTemplateExcludes>)`](crate::output::GetSensitivityInspectionTemplateOutput::excludes): <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
+    ///   - [`includes(Option<SensitivityInspectionTemplateIncludes>)`](crate::output::GetSensitivityInspectionTemplateOutput::includes): <p>The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing data.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetSensitivityInspectionTemplateOutput::name): <p>The name of the template.</p>
+    ///   - [`sensitivity_inspection_template_id(Option<String>)`](crate::output::GetSensitivityInspectionTemplateOutput::sensitivity_inspection_template_id): <p>The unique identifier for the template.</p>
+    /// - On failure, responds with [`SdkError<GetSensitivityInspectionTemplateError>`](crate::error::GetSensitivityInspectionTemplateError)
+    pub fn get_sensitivity_inspection_template(
+        &self,
+    ) -> fluent_builders::GetSensitivityInspectionTemplate {
+        fluent_builders::GetSensitivityInspectionTemplate::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetUsageStatistics`](crate::client::fluent_builders::GetUsageStatistics) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetUsageStatistics::into_paginator).
     ///
@@ -656,7 +715,7 @@ impl Client {
     ///   - [`time_range(TimeRange)`](crate::client::fluent_builders::GetUsageStatistics::time_range) / [`set_time_range(Option<TimeRange>)`](crate::client::fluent_builders::GetUsageStatistics::set_time_range): <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
     /// - On success, responds with [`GetUsageStatisticsOutput`](crate::output::GetUsageStatisticsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::GetUsageStatisticsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    ///   - [`records(Option<Vec<UsageRecord>>)`](crate::output::GetUsageStatisticsOutput::records): <p>An array of objects that contains the results of the query. Each object contains the data for an account that meets the filter criteria specified in the request.</p>
+    ///   - [`records(Option<Vec<UsageRecord>>)`](crate::output::GetUsageStatisticsOutput::records): <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
     ///   - [`time_range(Option<TimeRange>)`](crate::output::GetUsageStatisticsOutput::time_range): <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
     /// - On failure, responds with [`SdkError<GetUsageStatisticsError>`](crate::error::GetUsageStatisticsError)
     pub fn get_usage_statistics(&self) -> fluent_builders::GetUsageStatistics {
@@ -674,6 +733,7 @@ impl Client {
         fluent_builders::GetUsageTotals::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAllowLists`](crate::client::fluent_builders::ListAllowLists) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAllowLists::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAllowLists::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListAllowLists::set_max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
@@ -694,11 +754,24 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListClassificationJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListClassificationJobs::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     ///   - [`sort_criteria(ListJobsSortCriteria)`](crate::client::fluent_builders::ListClassificationJobs::sort_criteria) / [`set_sort_criteria(Option<ListJobsSortCriteria>)`](crate::client::fluent_builders::ListClassificationJobs::set_sort_criteria): <p>The criteria to use to sort the results.</p>
     /// - On success, responds with [`ListClassificationJobsOutput`](crate::output::ListClassificationJobsOutput) with field(s):
-    ///   - [`items(Option<Vec<JobSummary>>)`](crate::output::ListClassificationJobsOutput::items): <p>An array of objects, one for each job that meets the filter criteria specified in the request.</p>
+    ///   - [`items(Option<Vec<JobSummary>>)`](crate::output::ListClassificationJobsOutput::items): <p>An array of objects, one for each job that matches the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListClassificationJobsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListClassificationJobsError>`](crate::error::ListClassificationJobsError)
     pub fn list_classification_jobs(&self) -> fluent_builders::ListClassificationJobs {
         fluent_builders::ListClassificationJobs::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListClassificationScopes`](crate::client::fluent_builders::ListClassificationScopes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListClassificationScopes::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ListClassificationScopes::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ListClassificationScopes::set_name): <p>The name of the classification scope to retrieve the unique identifier for.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListClassificationScopes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListClassificationScopes::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - On success, responds with [`ListClassificationScopesOutput`](crate::output::ListClassificationScopesOutput) with field(s):
+    ///   - [`classification_scopes(Option<Vec<ClassificationScopeSummary>>)`](crate::output::ListClassificationScopesOutput::classification_scopes): <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListClassificationScopesOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    /// - On failure, responds with [`SdkError<ListClassificationScopesError>`](crate::error::ListClassificationScopesError)
+    pub fn list_classification_scopes(&self) -> fluent_builders::ListClassificationScopes {
+        fluent_builders::ListClassificationScopes::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCustomDataIdentifiers`](crate::client::fluent_builders::ListCustomDataIdentifiers) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCustomDataIdentifiers::into_paginator).
@@ -722,7 +795,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFindings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFindings::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     ///   - [`sort_criteria(SortCriteria)`](crate::client::fluent_builders::ListFindings::sort_criteria) / [`set_sort_criteria(Option<SortCriteria>)`](crate::client::fluent_builders::ListFindings::set_sort_criteria): <p>The criteria to use to sort the results.</p>
     /// - On success, responds with [`ListFindingsOutput`](crate::output::ListFindingsOutput) with field(s):
-    ///   - [`finding_ids(Option<Vec<String>>)`](crate::output::ListFindingsOutput::finding_ids): <p>An array of strings, where each string is the unique identifier for a finding that meets the filter criteria specified in the request.</p>
+    ///   - [`finding_ids(Option<Vec<String>>)`](crate::output::ListFindingsOutput::finding_ids): <p>An array of strings, where each string is the unique identifier for a finding that matches the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFindingsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListFindingsError>`](crate::error::ListFindingsError)
     pub fn list_findings(&self) -> fluent_builders::ListFindings {
@@ -755,6 +828,7 @@ impl Client {
         fluent_builders::ListInvitations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListManagedDataIdentifiers`](crate::client::fluent_builders::ListManagedDataIdentifiers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListManagedDataIdentifiers::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListManagedDataIdentifiers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListManagedDataIdentifiers::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -773,7 +847,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMembers::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     ///   - [`only_associated(impl Into<String>)`](crate::client::fluent_builders::ListMembers::only_associated) / [`set_only_associated(Option<String>)`](crate::client::fluent_builders::ListMembers::set_only_associated): <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
     /// - On success, responds with [`ListMembersOutput`](crate::output::ListMembersOutput) with field(s):
-    ///   - [`members(Option<Vec<Member>>)`](crate::output::ListMembersOutput::members): <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified in the request.</p>
+    ///   - [`members(Option<Vec<Member>>)`](crate::output::ListMembersOutput::members): <p>An array of objects, one for each account that's associated with the administrator account and matches the criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListMembersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListMembersError>`](crate::error::ListMembersError)
     pub fn list_members(&self) -> fluent_builders::ListMembers {
@@ -793,6 +867,50 @@ impl Client {
         &self,
     ) -> fluent_builders::ListOrganizationAdminAccounts {
         fluent_builders::ListOrganizationAdminAccounts::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListResourceProfileArtifacts`](crate::client::fluent_builders::ListResourceProfileArtifacts) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListResourceProfileArtifacts::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourceProfileArtifacts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourceProfileArtifacts::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListResourceProfileArtifacts::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListResourceProfileArtifacts::set_resource_arn): <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    /// - On success, responds with [`ListResourceProfileArtifactsOutput`](crate::output::ListResourceProfileArtifactsOutput) with field(s):
+    ///   - [`artifacts(Option<Vec<ResourceProfileArtifact>>)`](crate::output::ListResourceProfileArtifactsOutput::artifacts): <p>An array of objects, one for each S3 object that Amazon Macie selected for analysis.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceProfileArtifactsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    /// - On failure, responds with [`SdkError<ListResourceProfileArtifactsError>`](crate::error::ListResourceProfileArtifactsError)
+    pub fn list_resource_profile_artifacts(&self) -> fluent_builders::ListResourceProfileArtifacts {
+        fluent_builders::ListResourceProfileArtifacts::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListResourceProfileDetections`](crate::client::fluent_builders::ListResourceProfileDetections) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListResourceProfileDetections::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResourceProfileDetections::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListResourceProfileDetections::set_max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourceProfileDetections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourceProfileDetections::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListResourceProfileDetections::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListResourceProfileDetections::set_resource_arn): <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    /// - On success, responds with [`ListResourceProfileDetectionsOutput`](crate::output::ListResourceProfileDetectionsOutput) with field(s):
+    ///   - [`detections(Option<Vec<Detection>>)`](crate::output::ListResourceProfileDetectionsOutput::detections): <p>An array of objects, one for each type of sensitive data that Amazon Macie found in the bucket. Each object reports the number of occurrences of the specified type and provides information about the custom data identifier or managed data identifier that detected the data.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceProfileDetectionsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    /// - On failure, responds with [`SdkError<ListResourceProfileDetectionsError>`](crate::error::ListResourceProfileDetectionsError)
+    pub fn list_resource_profile_detections(
+        &self,
+    ) -> fluent_builders::ListResourceProfileDetections {
+        fluent_builders::ListResourceProfileDetections::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListSensitivityInspectionTemplates`](crate::client::fluent_builders::ListSensitivityInspectionTemplates) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSensitivityInspectionTemplates::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSensitivityInspectionTemplates::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListSensitivityInspectionTemplates::set_max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSensitivityInspectionTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSensitivityInspectionTemplates::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - On success, responds with [`ListSensitivityInspectionTemplatesOutput`](crate::output::ListSensitivityInspectionTemplatesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListSensitivityInspectionTemplatesOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    ///   - [`sensitivity_inspection_templates(Option<Vec<SensitivityInspectionTemplatesEntry>>)`](crate::output::ListSensitivityInspectionTemplatesOutput::sensitivity_inspection_templates): <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
+    /// - On failure, responds with [`SdkError<ListSensitivityInspectionTemplatesError>`](crate::error::ListSensitivityInspectionTemplatesError)
+    pub fn list_sensitivity_inspection_templates(
+        &self,
+    ) -> fluent_builders::ListSensitivityInspectionTemplates {
+        fluent_builders::ListSensitivityInspectionTemplates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
@@ -838,7 +956,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchResources::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     ///   - [`sort_criteria(SearchResourcesSortCriteria)`](crate::client::fluent_builders::SearchResources::sort_criteria) / [`set_sort_criteria(Option<SearchResourcesSortCriteria>)`](crate::client::fluent_builders::SearchResources::set_sort_criteria): <p>The criteria to use to sort the results.</p>
     /// - On success, responds with [`SearchResourcesOutput`](crate::output::SearchResourcesOutput) with field(s):
-    ///   - [`matching_resources(Option<Vec<MatchingResource>>)`](crate::output::SearchResourcesOutput::matching_resources): <p>An array of objects, one for each resource that meets the filter criteria specified in the request.</p>
+    ///   - [`matching_resources(Option<Vec<MatchingResource>>)`](crate::output::SearchResourcesOutput::matching_resources): <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchResourcesOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<SearchResourcesError>`](crate::error::SearchResourcesError)
     pub fn search_resources(&self) -> fluent_builders::SearchResources {
@@ -894,6 +1012,18 @@ impl Client {
     pub fn update_allow_list(&self) -> fluent_builders::UpdateAllowList {
         fluent_builders::UpdateAllowList::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateAutomatedDiscoveryConfiguration`](crate::client::fluent_builders::UpdateAutomatedDiscoveryConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`status(AutomatedDiscoveryStatus)`](crate::client::fluent_builders::UpdateAutomatedDiscoveryConfiguration::status) / [`set_status(Option<AutomatedDiscoveryStatus>)`](crate::client::fluent_builders::UpdateAutomatedDiscoveryConfiguration::set_status): <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>  <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
+    /// - On success, responds with [`UpdateAutomatedDiscoveryConfigurationOutput`](crate::output::UpdateAutomatedDiscoveryConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateAutomatedDiscoveryConfigurationError>`](crate::error::UpdateAutomatedDiscoveryConfigurationError)
+    pub fn update_automated_discovery_configuration(
+        &self,
+    ) -> fluent_builders::UpdateAutomatedDiscoveryConfiguration {
+        fluent_builders::UpdateAutomatedDiscoveryConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateClassificationJob`](crate::client::fluent_builders::UpdateClassificationJob) operation.
     ///
     /// - The fluent builder is configurable:
@@ -905,16 +1035,27 @@ impl Client {
     pub fn update_classification_job(&self) -> fluent_builders::UpdateClassificationJob {
         fluent_builders::UpdateClassificationJob::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateClassificationScope`](crate::client::fluent_builders::UpdateClassificationScope) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateClassificationScope::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateClassificationScope::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`s3(S3ClassificationScopeUpdate)`](crate::client::fluent_builders::UpdateClassificationScope::s3) / [`set_s3(Option<S3ClassificationScopeUpdate>)`](crate::client::fluent_builders::UpdateClassificationScope::set_s3): <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
+    /// - On success, responds with [`UpdateClassificationScopeOutput`](crate::output::UpdateClassificationScopeOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateClassificationScopeError>`](crate::error::UpdateClassificationScopeError)
+    pub fn update_classification_scope(&self) -> fluent_builders::UpdateClassificationScope {
+        fluent_builders::UpdateClassificationScope::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateFindingsFilter`](crate::client::fluent_builders::UpdateFindingsFilter) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`action(FindingsFilterAction)`](crate::client::fluent_builders::UpdateFindingsFilter::action) / [`set_action(Option<FindingsFilterAction>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_action): <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    ///   - [`action(FindingsFilterAction)`](crate::client::fluent_builders::UpdateFindingsFilter::action) / [`set_action(Option<FindingsFilterAction>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_action): <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_description): <p>A custom description of the filter. The description can contain as many as 512 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::UpdateFindingsFilter::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_finding_criteria): <p>The criteria to use to filter findings.</p>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_name): <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     ///   - [`position(i32)`](crate::client::fluent_builders::UpdateFindingsFilter::position) / [`set_position(i32)`](crate::client::fluent_builders::UpdateFindingsFilter::set_position): <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     /// - On success, responds with [`UpdateFindingsFilterOutput`](crate::output::UpdateFindingsFilterOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateFindingsFilterOutput::arn): <p>The Amazon Resource Name (ARN) of the filter that was updated.</p>
     ///   - [`id(Option<String>)`](crate::output::UpdateFindingsFilterOutput::id): <p>The unique identifier for the filter that was updated.</p>
@@ -956,6 +1097,30 @@ impl Client {
     ) -> fluent_builders::UpdateOrganizationConfiguration {
         fluent_builders::UpdateOrganizationConfiguration::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateResourceProfile`](crate::client::fluent_builders::UpdateResourceProfile) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceProfile::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UpdateResourceProfile::set_resource_arn): <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    ///   - [`sensitivity_score_override(i32)`](crate::client::fluent_builders::UpdateResourceProfile::sensitivity_score_override) / [`set_sensitivity_score_override(i32)`](crate::client::fluent_builders::UpdateResourceProfile::set_sensitivity_score_override): <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
+    /// - On success, responds with [`UpdateResourceProfileOutput`](crate::output::UpdateResourceProfileOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateResourceProfileError>`](crate::error::UpdateResourceProfileError)
+    pub fn update_resource_profile(&self) -> fluent_builders::UpdateResourceProfile {
+        fluent_builders::UpdateResourceProfile::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateResourceProfileDetections`](crate::client::fluent_builders::UpdateResourceProfileDetections) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceProfileDetections::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UpdateResourceProfileDetections::set_resource_arn): <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    ///   - [`suppress_data_identifiers(Vec<SuppressDataIdentifier>)`](crate::client::fluent_builders::UpdateResourceProfileDetections::suppress_data_identifiers) / [`set_suppress_data_identifiers(Option<Vec<SuppressDataIdentifier>>)`](crate::client::fluent_builders::UpdateResourceProfileDetections::set_suppress_data_identifiers): <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
+    /// - On success, responds with [`UpdateResourceProfileDetectionsOutput`](crate::output::UpdateResourceProfileDetectionsOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateResourceProfileDetectionsError>`](crate::error::UpdateResourceProfileDetectionsError)
+    pub fn update_resource_profile_detections(
+        &self,
+    ) -> fluent_builders::UpdateResourceProfileDetections {
+        fluent_builders::UpdateResourceProfileDetections::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateRevealConfiguration`](crate::client::fluent_builders::UpdateRevealConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
@@ -965,6 +1130,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateRevealConfigurationError>`](crate::error::UpdateRevealConfigurationError)
     pub fn update_reveal_configuration(&self) -> fluent_builders::UpdateRevealConfiguration {
         fluent_builders::UpdateRevealConfiguration::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateSensitivityInspectionTemplate`](crate::client::fluent_builders::UpdateSensitivityInspectionTemplate) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSensitivityInspectionTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSensitivityInspectionTemplate::set_description): <p>A custom description of the template.</p>
+    ///   - [`excludes(SensitivityInspectionTemplateExcludes)`](crate::client::fluent_builders::UpdateSensitivityInspectionTemplate::excludes) / [`set_excludes(Option<SensitivityInspectionTemplateExcludes>)`](crate::client::fluent_builders::UpdateSensitivityInspectionTemplate::set_excludes): <p>The managed data identifiers to explicitly exclude (not use) when analyzing data.</p>  <p>To exclude an allow list or custom data identifier that's currently included by the template, update the values for the SensitivityInspectionTemplateIncludes.allowListIds and SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties, respectively.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateSensitivityInspectionTemplate::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateSensitivityInspectionTemplate::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`includes(SensitivityInspectionTemplateIncludes)`](crate::client::fluent_builders::UpdateSensitivityInspectionTemplate::includes) / [`set_includes(Option<SensitivityInspectionTemplateIncludes>)`](crate::client::fluent_builders::UpdateSensitivityInspectionTemplate::set_includes): <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
+    /// - On success, responds with [`UpdateSensitivityInspectionTemplateOutput`](crate::output::UpdateSensitivityInspectionTemplateOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateSensitivityInspectionTemplateError>`](crate::error::UpdateSensitivityInspectionTemplateError)
+    pub fn update_sensitivity_inspection_template(
+        &self,
+    ) -> fluent_builders::UpdateSensitivityInspectionTemplate {
+        fluent_builders::UpdateSensitivityInspectionTemplate::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -1814,12 +1994,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+        /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
         pub fn action(mut self, input: crate::model::FindingsFilterAction) -> Self {
             self.inner = self.inner.action(input);
             self
         }
-        /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+        /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::FindingsFilterAction>,
@@ -2660,7 +2840,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBuckets`.
     ///
-    /// <p>Retrieves (queries) statistical data and other information about one or more S3 buckets that Amazon Macie monitors and analyzes.</p>
+    /// <p>Retrieves (queries) statistical data and other information about one or more S3 buckets that Amazon Macie monitors and analyzes for an account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBuckets {
         handle: std::sync::Arc<super::Handle>,
@@ -3586,9 +3766,76 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetAutomatedDiscoveryConfiguration`.
+    ///
+    /// <p>Retrieves the configuration settings and status of automated sensitive data discovery for an account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetAutomatedDiscoveryConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_automated_discovery_configuration_input::Builder,
+    }
+    impl GetAutomatedDiscoveryConfiguration {
+        /// Creates a new `GetAutomatedDiscoveryConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetAutomatedDiscoveryConfiguration,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetAutomatedDiscoveryConfigurationError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetAutomatedDiscoveryConfigurationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetAutomatedDiscoveryConfigurationError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+    }
     /// Fluent builder constructing a request to `GetBucketStatistics`.
     ///
-    /// <p>Retrieves (queries) aggregated statistical data about S3 buckets that Amazon Macie monitors and analyzes.</p>
+    /// <p>Retrieves (queries) aggregated statistical data about all the S3 buckets that Amazon Macie monitors and analyzes for an account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBucketStatistics {
         handle: std::sync::Arc<super::Handle>,
@@ -3724,6 +3971,79 @@ pub mod fluent_builders {
                 .await
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
+        }
+    }
+    /// Fluent builder constructing a request to `GetClassificationScope`.
+    ///
+    /// <p>Retrieves the classification scope settings for an account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetClassificationScope {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_classification_scope_input::Builder,
+    }
+    impl GetClassificationScope {
+        /// Creates a new `GetClassificationScope`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetClassificationScope,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetClassificationScopeError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetClassificationScopeOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetClassificationScopeError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
         }
     }
     /// Fluent builder constructing a request to `GetCustomDataIdentifier`.
@@ -4218,7 +4538,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMacieSession`.
     ///
-    /// <p>Retrieves the current status and configuration settings for an Amazon Macie account.</p>
+    /// <p>Retrieves the status and configuration settings for an Amazon Macie account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMacieSession {
         handle: std::sync::Arc<super::Handle>,
@@ -4413,6 +4733,79 @@ pub mod fluent_builders {
         /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetResourceProfile`.
+    ///
+    /// <p>Retrieves (queries) sensitive data discovery statistics and the sensitivity score for an S3 bucket.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetResourceProfile {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_resource_profile_input::Builder,
+    }
+    impl GetResourceProfile {
+        /// Creates a new `GetResourceProfile`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetResourceProfile,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetResourceProfileError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetResourceProfileOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetResourceProfileError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
     }
@@ -4626,6 +5019,79 @@ pub mod fluent_builders {
         /// <p>The unique identifier for the finding.</p>
         pub fn set_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_finding_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetSensitivityInspectionTemplate`.
+    ///
+    /// <p>Retrieves the settings for the sensitivity inspection template for an account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetSensitivityInspectionTemplate {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_sensitivity_inspection_template_input::Builder,
+    }
+    impl GetSensitivityInspectionTemplate {
+        /// Creates a new `GetSensitivityInspectionTemplate`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetSensitivityInspectionTemplate,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetSensitivityInspectionTemplateError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetSensitivityInspectionTemplateOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetSensitivityInspectionTemplateError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -4896,6 +5362,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAllowListsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAllowListsPaginator {
+            crate::paginator::ListAllowListsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
@@ -5029,6 +5501,95 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ListJobsSortCriteria>,
         ) -> Self {
             self.inner = self.inner.set_sort_criteria(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListClassificationScopes`.
+    ///
+    /// <p>Retrieves a subset of information about the classification scope for an account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListClassificationScopes {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_classification_scopes_input::Builder,
+    }
+    impl ListClassificationScopes {
+        /// Creates a new `ListClassificationScopes`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListClassificationScopes,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListClassificationScopesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListClassificationScopesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListClassificationScopesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListClassificationScopesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListClassificationScopesPaginator {
+            crate::paginator::ListClassificationScopesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of the classification scope to retrieve the unique identifier for.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the classification scope to retrieve the unique identifier for.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -5476,6 +6037,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListManagedDataIdentifiersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListManagedDataIdentifiersPaginator {
+            crate::paginator::ListManagedDataIdentifiersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
@@ -5656,6 +6223,292 @@ pub mod fluent_builders {
         /// Paginators are used by calling [`send().await`](crate::paginator::ListOrganizationAdminAccountsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
         pub fn into_paginator(self) -> crate::paginator::ListOrganizationAdminAccountsPaginator {
             crate::paginator::ListOrganizationAdminAccountsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of items to include in each page of a paginated response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of items to include in each page of a paginated response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListResourceProfileArtifacts`.
+    ///
+    /// <p>Retrieves information about objects that were selected from an S3 bucket for automated sensitive data discovery.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListResourceProfileArtifacts {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_resource_profile_artifacts_input::Builder,
+    }
+    impl ListResourceProfileArtifacts {
+        /// Creates a new `ListResourceProfileArtifacts`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListResourceProfileArtifacts,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListResourceProfileArtifactsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListResourceProfileArtifactsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListResourceProfileArtifactsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourceProfileArtifactsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListResourceProfileArtifactsPaginator {
+            crate::paginator::ListResourceProfileArtifactsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListResourceProfileDetections`.
+    ///
+    /// <p>Retrieves information about the types and amount of sensitive data that Amazon Macie found in an S3 bucket.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListResourceProfileDetections {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_resource_profile_detections_input::Builder,
+    }
+    impl ListResourceProfileDetections {
+        /// Creates a new `ListResourceProfileDetections`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListResourceProfileDetections,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListResourceProfileDetectionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListResourceProfileDetectionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListResourceProfileDetectionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourceProfileDetectionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListResourceProfileDetectionsPaginator {
+            crate::paginator::ListResourceProfileDetectionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of items to include in each page of a paginated response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of items to include in each page of a paginated response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListSensitivityInspectionTemplates`.
+    ///
+    /// <p>Retrieves a subset of information about the sensitivity inspection template for an account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListSensitivityInspectionTemplates {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_sensitivity_inspection_templates_input::Builder,
+    }
+    impl ListSensitivityInspectionTemplates {
+        /// Creates a new `ListSensitivityInspectionTemplates`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListSensitivityInspectionTemplates,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListSensitivityInspectionTemplatesError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListSensitivityInspectionTemplatesOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListSensitivityInspectionTemplatesError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSensitivityInspectionTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListSensitivityInspectionTemplatesPaginator {
+            crate::paginator::ListSensitivityInspectionTemplatesPaginator::new(
+                self.handle,
+                self.inner,
+            )
         }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -6468,6 +7321,88 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateAutomatedDiscoveryConfiguration`.
+    ///
+    /// <p>Enables or disables automated sensitive data discovery for an account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateAutomatedDiscoveryConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_automated_discovery_configuration_input::Builder,
+    }
+    impl UpdateAutomatedDiscoveryConfiguration {
+        /// Creates a new `UpdateAutomatedDiscoveryConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateAutomatedDiscoveryConfiguration,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::UpdateAutomatedDiscoveryConfigurationError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateAutomatedDiscoveryConfigurationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::UpdateAutomatedDiscoveryConfigurationError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
+        /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
+        pub fn status(mut self, input: crate::model::AutomatedDiscoveryStatus) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
+        /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::AutomatedDiscoveryStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateClassificationJob`.
     ///
     /// <p>Changes the status of a classification job.</p>
@@ -6564,6 +7499,92 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateClassificationScope`.
+    ///
+    /// <p>Updates the classification scope settings for an account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateClassificationScope {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_classification_scope_input::Builder,
+    }
+    impl UpdateClassificationScope {
+        /// Creates a new `UpdateClassificationScope`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateClassificationScope,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateClassificationScopeError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateClassificationScopeOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateClassificationScopeError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
+        pub fn s3(mut self, input: crate::model::S3ClassificationScopeUpdate) -> Self {
+            self.inner = self.inner.s3(input);
+            self
+        }
+        /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
+        pub fn set_s3(
+            mut self,
+            input: std::option::Option<crate::model::S3ClassificationScopeUpdate>,
+        ) -> Self {
+            self.inner = self.inner.set_s3(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateFindingsFilter`.
     ///
     /// <p>Updates the criteria and other settings for a findings filter.</p>
@@ -6626,17 +7647,27 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+        /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
         pub fn action(mut self, input: crate::model::FindingsFilterAction) -> Self {
             self.inner = self.inner.action(input);
             self
         }
-        /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+        /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::FindingsFilterAction>,
         ) -> Self {
             self.inner = self.inner.set_action(input);
+            self
+        }
+        /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
@@ -6694,16 +7725,6 @@ pub mod fluent_builders {
         /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
         pub fn set_position(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_position(input);
-            self
-        }
-        /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
             self
         }
     }
@@ -6952,6 +7973,182 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateResourceProfile`.
+    ///
+    /// <p>Updates the sensitivity score for an S3 bucket.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateResourceProfile {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_resource_profile_input::Builder,
+    }
+    impl UpdateResourceProfile {
+        /// Creates a new `UpdateResourceProfile`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateResourceProfile,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateResourceProfileError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateResourceProfileOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateResourceProfileError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
+        pub fn sensitivity_score_override(mut self, input: i32) -> Self {
+            self.inner = self.inner.sensitivity_score_override(input);
+            self
+        }
+        /// <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
+        pub fn set_sensitivity_score_override(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_sensitivity_score_override(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateResourceProfileDetections`.
+    ///
+    /// <p>Updates the sensitivity scoring settings for an S3 bucket.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateResourceProfileDetections {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_resource_profile_detections_input::Builder,
+    }
+    impl UpdateResourceProfileDetections {
+        /// Creates a new `UpdateResourceProfileDetections`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateResourceProfileDetections,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateResourceProfileDetectionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateResourceProfileDetectionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateResourceProfileDetectionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `suppressDataIdentifiers`.
+        ///
+        /// To override the contents of this collection use [`set_suppress_data_identifiers`](Self::set_suppress_data_identifiers).
+        ///
+        /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
+        pub fn suppress_data_identifiers(
+            mut self,
+            input: crate::model::SuppressDataIdentifier,
+        ) -> Self {
+            self.inner = self.inner.suppress_data_identifiers(input);
+            self
+        }
+        /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
+        pub fn set_suppress_data_identifiers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SuppressDataIdentifier>>,
+        ) -> Self {
+            self.inner = self.inner.set_suppress_data_identifiers(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateRevealConfiguration`.
     ///
     /// <p>Updates the status and configuration settings for retrieving occurrences of sensitive data reported by findings.</p>
@@ -7025,6 +8222,127 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::RevealConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_configuration(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateSensitivityInspectionTemplate`.
+    ///
+    /// <p>Updates the settings for the sensitivity inspection template for an account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateSensitivityInspectionTemplate {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_sensitivity_inspection_template_input::Builder,
+    }
+    impl UpdateSensitivityInspectionTemplate {
+        /// Creates a new `UpdateSensitivityInspectionTemplate`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateSensitivityInspectionTemplate,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::UpdateSensitivityInspectionTemplateError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateSensitivityInspectionTemplateOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::UpdateSensitivityInspectionTemplateError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A custom description of the template.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A custom description of the template.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The managed data identifiers to explicitly exclude (not use) when analyzing data.</p>
+        /// <p>To exclude an allow list or custom data identifier that's currently included by the template, update the values for the SensitivityInspectionTemplateIncludes.allowListIds and SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties, respectively.</p>
+        pub fn excludes(
+            mut self,
+            input: crate::model::SensitivityInspectionTemplateExcludes,
+        ) -> Self {
+            self.inner = self.inner.excludes(input);
+            self
+        }
+        /// <p>The managed data identifiers to explicitly exclude (not use) when analyzing data.</p>
+        /// <p>To exclude an allow list or custom data identifier that's currently included by the template, update the values for the SensitivityInspectionTemplateIncludes.allowListIds and SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties, respectively.</p>
+        pub fn set_excludes(
+            mut self,
+            input: std::option::Option<crate::model::SensitivityInspectionTemplateExcludes>,
+        ) -> Self {
+            self.inner = self.inner.set_excludes(input);
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
+        pub fn includes(
+            mut self,
+            input: crate::model::SensitivityInspectionTemplateIncludes,
+        ) -> Self {
+            self.inner = self.inner.includes(input);
+            self
+        }
+        /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
+        pub fn set_includes(
+            mut self,
+            input: std::option::Option<crate::model::SensitivityInspectionTemplateIncludes>,
+        ) -> Self {
+            self.inner = self.inner.set_includes(input);
             self
         }
     }

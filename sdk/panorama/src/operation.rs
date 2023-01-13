@@ -1004,6 +1004,42 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveApplicationInstanc
     }
 }
 
+/// Operation shape for `SignalApplicationInstanceNodeInstances`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`signal_application_instance_node_instances`](crate::client::Client::signal_application_instance_node_instances).
+///
+/// See [`crate::client::fluent_builders::SignalApplicationInstanceNodeInstances`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct SignalApplicationInstanceNodeInstances {
+    _private: (),
+}
+impl SignalApplicationInstanceNodeInstances {
+    /// Creates a new builder-style object to manufacture [`SignalApplicationInstanceNodeInstancesInput`](crate::input::SignalApplicationInstanceNodeInstancesInput).
+    pub fn builder() -> crate::input::signal_application_instance_node_instances_input::Builder {
+        crate::input::signal_application_instance_node_instances_input::Builder::default()
+    }
+    /// Creates a new `SignalApplicationInstanceNodeInstances` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SignalApplicationInstanceNodeInstances {
+    type Output = std::result::Result<
+        crate::output::SignalApplicationInstanceNodeInstancesOutput,
+        crate::error::SignalApplicationInstanceNodeInstancesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_signal_application_instance_node_instances_error(response)
+        } else {
+            crate::operation_deser::parse_signal_application_instance_node_instances_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

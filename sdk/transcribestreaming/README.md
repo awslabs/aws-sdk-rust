@@ -3,7 +3,10 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-Operations and objects for transcribing streaming speech to text.
+Amazon Transcribe streaming offers three main types of real-time transcription: __Standard__, __Medical__, and __Call Analytics__.
+  - __Standard transcriptions__ are the most common option. Refer to for details.
+  - __Medical transcriptions__ are tailored to medical professionals and incorporate medical terms. A common use case for this service is transcribing doctor-patient dialogue in real time, so doctors can focus on their patient instead of taking notes. Refer to for details.
+  - __Call Analytics transcriptions__ are designed for use with call center audio on two different channels; if you're looking for insight into customer service calls, use this option. Refer to for details.
 
 ## Getting Started
 
@@ -17,7 +20,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.52.0"
-aws-sdk-transcribestreaming = "0.22.0"
+aws-sdk-transcribestreaming = "0.23.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

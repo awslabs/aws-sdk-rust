@@ -145,12 +145,12 @@ impl UpdateWorkloadOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateShareInvitationOutput {
-    /// <p>The updated workload share invitation.</p>
+    /// <p>The updated workload or custom lens share invitation.</p>
     #[doc(hidden)]
     pub share_invitation: std::option::Option<crate::model::ShareInvitation>,
 }
 impl UpdateShareInvitationOutput {
-    /// <p>The updated workload share invitation.</p>
+    /// <p>The updated workload or custom lens share invitation.</p>
     pub fn share_invitation(&self) -> std::option::Option<&crate::model::ShareInvitation> {
         self.share_invitation.as_ref()
     }
@@ -164,12 +164,12 @@ pub mod update_share_invitation_output {
         pub(crate) share_invitation: std::option::Option<crate::model::ShareInvitation>,
     }
     impl Builder {
-        /// <p>The updated workload share invitation.</p>
+        /// <p>The updated workload or custom lens share invitation.</p>
         pub fn share_invitation(mut self, input: crate::model::ShareInvitation) -> Self {
             self.share_invitation = Some(input);
             self
         }
-        /// <p>The updated workload share invitation.</p>
+        /// <p>The updated workload or custom lens share invitation.</p>
         pub fn set_share_invitation(
             mut self,
             input: std::option::Option<crate::model::ShareInvitation>,
@@ -1396,6 +1396,158 @@ impl ListLensesOutput {
     /// Creates a new builder-style object to manufacture [`ListLensesOutput`](crate::output::ListLensesOutput).
     pub fn builder() -> crate::output::list_lenses_output::Builder {
         crate::output::list_lenses_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListCheckSummariesOutput {
+    /// <p>List of Trusted Advisor summaries related to the Well-Architected best practice.</p>
+    #[doc(hidden)]
+    pub check_summaries: std::option::Option<std::vec::Vec<crate::model::CheckSummary>>,
+    /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCheckSummariesOutput {
+    /// <p>List of Trusted Advisor summaries related to the Well-Architected best practice.</p>
+    pub fn check_summaries(&self) -> std::option::Option<&[crate::model::CheckSummary]> {
+        self.check_summaries.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListCheckSummariesOutput`](crate::output::ListCheckSummariesOutput).
+pub mod list_check_summaries_output {
+
+    /// A builder for [`ListCheckSummariesOutput`](crate::output::ListCheckSummariesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) check_summaries: std::option::Option<std::vec::Vec<crate::model::CheckSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `check_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_check_summaries`](Self::set_check_summaries).
+        ///
+        /// <p>List of Trusted Advisor summaries related to the Well-Architected best practice.</p>
+        pub fn check_summaries(mut self, input: crate::model::CheckSummary) -> Self {
+            let mut v = self.check_summaries.unwrap_or_default();
+            v.push(input);
+            self.check_summaries = Some(v);
+            self
+        }
+        /// <p>List of Trusted Advisor summaries related to the Well-Architected best practice.</p>
+        pub fn set_check_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CheckSummary>>,
+        ) -> Self {
+            self.check_summaries = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCheckSummariesOutput`](crate::output::ListCheckSummariesOutput).
+        pub fn build(self) -> crate::output::ListCheckSummariesOutput {
+            crate::output::ListCheckSummariesOutput {
+                check_summaries: self.check_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListCheckSummariesOutput {
+    /// Creates a new builder-style object to manufacture [`ListCheckSummariesOutput`](crate::output::ListCheckSummariesOutput).
+    pub fn builder() -> crate::output::list_check_summaries_output::Builder {
+        crate::output::list_check_summaries_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListCheckDetailsOutput {
+    /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
+    #[doc(hidden)]
+    pub check_details: std::option::Option<std::vec::Vec<crate::model::CheckDetail>>,
+    /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCheckDetailsOutput {
+    /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
+    pub fn check_details(&self) -> std::option::Option<&[crate::model::CheckDetail]> {
+        self.check_details.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListCheckDetailsOutput`](crate::output::ListCheckDetailsOutput).
+pub mod list_check_details_output {
+
+    /// A builder for [`ListCheckDetailsOutput`](crate::output::ListCheckDetailsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) check_details: std::option::Option<std::vec::Vec<crate::model::CheckDetail>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `check_details`.
+        ///
+        /// To override the contents of this collection use [`set_check_details`](Self::set_check_details).
+        ///
+        /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
+        pub fn check_details(mut self, input: crate::model::CheckDetail) -> Self {
+            let mut v = self.check_details.unwrap_or_default();
+            v.push(input);
+            self.check_details = Some(v);
+            self
+        }
+        /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
+        pub fn set_check_details(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CheckDetail>>,
+        ) -> Self {
+            self.check_details = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCheckDetailsOutput`](crate::output::ListCheckDetailsOutput).
+        pub fn build(self) -> crate::output::ListCheckDetailsOutput {
+            crate::output::ListCheckDetailsOutput {
+                check_details: self.check_details,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListCheckDetailsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCheckDetailsOutput`](crate::output::ListCheckDetailsOutput).
+    pub fn builder() -> crate::output::list_check_details_output::Builder {
+        crate::output::list_check_details_output::Builder::default()
     }
 }
 

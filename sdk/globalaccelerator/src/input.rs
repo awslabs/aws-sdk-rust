@@ -180,6 +180,179 @@ impl AddCustomRoutingEndpointsInput {
     }
 }
 
+/// See [`AddEndpointsInput`](crate::input::AddEndpointsInput).
+pub mod add_endpoints_input {
+
+    /// A builder for [`AddEndpointsInput`](crate::input::AddEndpointsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) endpoint_configurations:
+            std::option::Option<std::vec::Vec<crate::model::EndpointConfiguration>>,
+        pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `endpoint_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_configurations`](Self::set_endpoint_configurations).
+        ///
+        /// <p>The list of endpoint objects.</p>
+        pub fn endpoint_configurations(
+            mut self,
+            input: crate::model::EndpointConfiguration,
+        ) -> Self {
+            let mut v = self.endpoint_configurations.unwrap_or_default();
+            v.push(input);
+            self.endpoint_configurations = Some(v);
+            self
+        }
+        /// <p>The list of endpoint objects.</p>
+        pub fn set_endpoint_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointConfiguration>>,
+        ) -> Self {
+            self.endpoint_configurations = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+        pub fn set_endpoint_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.endpoint_group_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AddEndpointsInput`](crate::input::AddEndpointsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::AddEndpointsInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::AddEndpointsInput {
+                endpoint_configurations: self.endpoint_configurations,
+                endpoint_group_arn: self.endpoint_group_arn,
+            })
+        }
+    }
+}
+impl AddEndpointsInput {
+    /// Consumes the builder and constructs an Operation<[`AddEndpoints`](crate::operation::AddEndpoints)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AddEndpoints,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::AddEndpointsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AddEndpointsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "GlobalAccelerator_V20180706.AddEndpoints",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_add_endpoints(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AddEndpoints::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AddEndpoints",
+            "globalaccelerator",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`AddEndpointsInput`](crate::input::AddEndpointsInput).
+    pub fn builder() -> crate::input::add_endpoints_input::Builder {
+        crate::input::add_endpoints_input::Builder::default()
+    }
+}
+
 /// See [`AdvertiseByoipCidrInput`](crate::input::AdvertiseByoipCidrInput).
 pub mod advertise_byoip_cidr_input {
 
@@ -6452,6 +6625,176 @@ impl RemoveCustomRoutingEndpointsInput {
     }
 }
 
+/// See [`RemoveEndpointsInput`](crate::input::RemoveEndpointsInput).
+pub mod remove_endpoints_input {
+
+    /// A builder for [`RemoveEndpointsInput`](crate::input::RemoveEndpointsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) endpoint_identifiers:
+            std::option::Option<std::vec::Vec<crate::model::EndpointIdentifier>>,
+        pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `endpoint_identifiers`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_identifiers`](Self::set_endpoint_identifiers).
+        ///
+        /// <p>The identifiers of the endpoints that you want to remove.</p>
+        pub fn endpoint_identifiers(mut self, input: crate::model::EndpointIdentifier) -> Self {
+            let mut v = self.endpoint_identifiers.unwrap_or_default();
+            v.push(input);
+            self.endpoint_identifiers = Some(v);
+            self
+        }
+        /// <p>The identifiers of the endpoints that you want to remove.</p>
+        pub fn set_endpoint_identifiers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointIdentifier>>,
+        ) -> Self {
+            self.endpoint_identifiers = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+        pub fn set_endpoint_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.endpoint_group_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RemoveEndpointsInput`](crate::input::RemoveEndpointsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::RemoveEndpointsInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::RemoveEndpointsInput {
+                endpoint_identifiers: self.endpoint_identifiers,
+                endpoint_group_arn: self.endpoint_group_arn,
+            })
+        }
+    }
+}
+impl RemoveEndpointsInput {
+    /// Consumes the builder and constructs an Operation<[`RemoveEndpoints`](crate::operation::RemoveEndpoints)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RemoveEndpoints,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::RemoveEndpointsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RemoveEndpointsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "GlobalAccelerator_V20180706.RemoveEndpoints",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_remove_endpoints(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RemoveEndpoints::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RemoveEndpoints",
+            "globalaccelerator",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`RemoveEndpointsInput`](crate::input::RemoveEndpointsInput).
+    pub fn builder() -> crate::input::remove_endpoints_input::Builder {
+        crate::input::remove_endpoints_input::Builder::default()
+    }
+}
+
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
 
@@ -8725,6 +9068,28 @@ impl TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RemoveEndpointsInput {
+    /// <p>The identifiers of the endpoints that you want to remove.</p>
+    #[doc(hidden)]
+    pub endpoint_identifiers: std::option::Option<std::vec::Vec<crate::model::EndpointIdentifier>>,
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    #[doc(hidden)]
+    pub endpoint_group_arn: std::option::Option<std::string::String>,
+}
+impl RemoveEndpointsInput {
+    /// <p>The identifiers of the endpoints that you want to remove.</p>
+    pub fn endpoint_identifiers(&self) -> std::option::Option<&[crate::model::EndpointIdentifier]> {
+        self.endpoint_identifiers.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveCustomRoutingEndpointsInput {
     /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
     #[doc(hidden)]
@@ -9711,6 +10076,31 @@ impl AdvertiseByoipCidrInput {
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
     pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AddEndpointsInput {
+    /// <p>The list of endpoint objects.</p>
+    #[doc(hidden)]
+    pub endpoint_configurations:
+        std::option::Option<std::vec::Vec<crate::model::EndpointConfiguration>>,
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    #[doc(hidden)]
+    pub endpoint_group_arn: std::option::Option<std::string::String>,
+}
+impl AddEndpointsInput {
+    /// <p>The list of endpoint objects.</p>
+    pub fn endpoint_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::EndpointConfiguration]> {
+        self.endpoint_configurations.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
     }
 }
 

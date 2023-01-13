@@ -240,7 +240,7 @@ impl UnauthorizedException {
     }
 }
 
-/// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+/// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotFoundException {
@@ -421,6 +421,7 @@ impl InvalidGameSessionStatusException {
 }
 
 /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
@@ -540,7 +541,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+/// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaggingFailedException {
@@ -840,7 +841,7 @@ impl FleetCapacityExceededException {
     }
 }
 
-/// <p>The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code> request. Clients can retry such requests immediately or after a waiting period. </p>
+/// <p>The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code> request. Clients can retry such requests immediately or after a waiting period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutOfCapacityException {
@@ -925,7 +926,7 @@ pub enum AcceptMatchErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -1057,14 +1058,15 @@ impl aws_smithy_http::result::CreateUnhandledError for ClaimGameServerError {
 #[derive(std::fmt::Debug)]
 pub enum ClaimGameServerErrorKind {
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code> request. Clients can retry such requests immediately or after a waiting period. </p>
+    /// <p>The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code> request. Clients can retry such requests immediately or after a waiting period.</p>
     OutOfCapacityException(crate::error::OutOfCapacityException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1214,6 +1216,7 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateAliasError {
 #[derive(std::fmt::Debug)]
 pub enum CreateAliasErrorKind {
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -1221,7 +1224,7 @@ pub enum CreateAliasErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1362,12 +1365,13 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateBuildError {
 #[derive(std::fmt::Debug)]
 pub enum CreateBuildErrorKind {
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1502,6 +1506,7 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateFleetError {
 #[derive(std::fmt::Debug)]
 pub enum CreateFleetErrorKind {
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -1509,9 +1514,9 @@ pub enum CreateFleetErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1668,13 +1673,16 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateFleetLocationsError
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFleetLocationsErrorKind {
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1693,6 +1701,7 @@ pub enum CreateFleetLocationsErrorKind {
 impl std::fmt::Display for CreateFleetLocationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CreateFleetLocationsErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateFleetLocationsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             CreateFleetLocationsErrorKind::InvalidFleetStatusException(_inner) => _inner.fmt(f),
             CreateFleetLocationsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
@@ -1757,6 +1766,13 @@ impl CreateFleetLocationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `CreateFleetLocationsErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFleetLocationsErrorKind::ConflictException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateFleetLocationsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
@@ -1803,6 +1819,7 @@ impl CreateFleetLocationsError {
 impl std::error::Error for CreateFleetLocationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CreateFleetLocationsErrorKind::ConflictException(_inner) => Some(_inner),
             CreateFleetLocationsErrorKind::InternalServiceException(_inner) => Some(_inner),
             CreateFleetLocationsErrorKind::InvalidFleetStatusException(_inner) => Some(_inner),
             CreateFleetLocationsErrorKind::InvalidRequestException(_inner) => Some(_inner),
@@ -1836,6 +1853,7 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateGameServerGroupErro
 #[derive(std::fmt::Debug)]
 pub enum CreateGameServerGroupErrorKind {
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -1992,6 +2010,7 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateGameSessionError {
 #[derive(std::fmt::Debug)]
 pub enum CreateGameSessionErrorKind {
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// <p>The specified fleet has no available instances to fulfill a <code>CreateGameSession</code> request. Clients can retry such requests immediately or after a waiting period.</p>
     FleetCapacityExceededException(crate::error::FleetCapacityExceededException),
@@ -2005,7 +2024,7 @@ pub enum CreateGameSessionErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
@@ -2213,9 +2232,9 @@ pub enum CreateGameSessionQueueErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2353,6 +2372,167 @@ impl std::error::Error for CreateGameSessionQueueError {
     }
 }
 
+/// Error type for the `CreateLocation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateLocationError {
+    /// Kind of error that occurred.
+    pub kind: CreateLocationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateLocationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateLocationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateLocation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateLocationErrorKind {
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
+    TaggingFailedException(crate::error::TaggingFailedException),
+    /// <p>The client failed authentication. Clients should not retry such requests.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateLocationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateLocationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateLocationErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            CreateLocationErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateLocationErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateLocationErrorKind::TaggingFailedException(_inner) => _inner.fmt(f),
+            CreateLocationErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            CreateLocationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateLocationError {
+    fn code(&self) -> Option<&str> {
+        CreateLocationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateLocationError {
+    /// Creates a new `CreateLocationError`.
+    pub fn new(kind: CreateLocationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateLocationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateLocationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateLocationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateLocationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateLocationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateLocationErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateLocationErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLocationErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLocationErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLocationErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLocationErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLocationErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLocationErrorKind::TaggingFailedException`.
+    pub fn is_tagging_failed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLocationErrorKind::TaggingFailedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLocationErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLocationErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for CreateLocationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateLocationErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateLocationErrorKind::InternalServiceException(_inner) => Some(_inner),
+            CreateLocationErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateLocationErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateLocationErrorKind::TaggingFailedException(_inner) => Some(_inner),
+            CreateLocationErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            CreateLocationErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `CreateMatchmakingConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2382,9 +2562,9 @@ pub enum CreateMatchmakingConfigurationErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -2568,7 +2748,9 @@ pub enum CreateMatchmakingRuleSetErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -2587,6 +2769,7 @@ impl std::fmt::Display for CreateMatchmakingRuleSetError {
         match &self.kind {
             CreateMatchmakingRuleSetErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             CreateMatchmakingRuleSetErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateMatchmakingRuleSetErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateMatchmakingRuleSetErrorKind::TaggingFailedException(_inner) => _inner.fmt(f),
             CreateMatchmakingRuleSetErrorKind::UnsupportedRegionException(_inner) => _inner.fmt(f),
             CreateMatchmakingRuleSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2661,6 +2844,13 @@ impl CreateMatchmakingRuleSetError {
             CreateMatchmakingRuleSetErrorKind::InvalidRequestException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateMatchmakingRuleSetErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMatchmakingRuleSetErrorKind::LimitExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateMatchmakingRuleSetErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(
@@ -2681,6 +2871,7 @@ impl std::error::Error for CreateMatchmakingRuleSetError {
         match &self.kind {
             CreateMatchmakingRuleSetErrorKind::InternalServiceException(_inner) => Some(_inner),
             CreateMatchmakingRuleSetErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateMatchmakingRuleSetErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateMatchmakingRuleSetErrorKind::TaggingFailedException(_inner) => Some(_inner),
             CreateMatchmakingRuleSetErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             CreateMatchmakingRuleSetErrorKind::Unhandled(_inner) => Some(_inner),
@@ -2717,7 +2908,7 @@ pub enum CreatePlayerSessionErrorKind {
     InvalidGameSessionStatusException(crate::error::InvalidGameSessionStatusException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
@@ -2893,7 +3084,7 @@ pub enum CreatePlayerSessionsErrorKind {
     InvalidGameSessionStatusException(crate::error::InvalidGameSessionStatusException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
@@ -3070,12 +3261,13 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateScriptError {
 #[derive(std::fmt::Debug)]
 pub enum CreateScriptErrorKind {
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3218,7 +3410,7 @@ pub enum CreateVpcPeeringAuthorizationErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3374,7 +3566,7 @@ pub enum CreateVpcPeeringConnectionErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3519,9 +3711,9 @@ pub enum DeleteAliasErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3659,9 +3851,9 @@ pub enum DeleteBuildErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3801,9 +3993,9 @@ pub enum DeleteFleetErrorKind {
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3950,7 +4142,7 @@ pub enum DeleteFleetLocationsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4106,7 +4298,7 @@ pub enum DeleteGameServerGroupErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4251,9 +4443,9 @@ pub enum DeleteGameSessionQueueErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4382,6 +4574,144 @@ impl std::error::Error for DeleteGameSessionQueueError {
     }
 }
 
+/// Error type for the `DeleteLocation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteLocationError {
+    /// Kind of error that occurred.
+    pub kind: DeleteLocationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteLocationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteLocationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteLocation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteLocationErrorKind {
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>The client failed authentication. Clients should not retry such requests.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteLocationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteLocationErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DeleteLocationErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteLocationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteLocationErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DeleteLocationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteLocationError {
+    fn code(&self) -> Option<&str> {
+        DeleteLocationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteLocationError {
+    /// Creates a new `DeleteLocationError`.
+    pub fn new(kind: DeleteLocationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteLocationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteLocationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteLocationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteLocationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteLocationErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLocationErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLocationErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLocationErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLocationErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLocationErrorKind::NotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteLocationErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLocationErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteLocationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteLocationErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DeleteLocationErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteLocationErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteLocationErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DeleteLocationErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DeleteMatchmakingConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4409,9 +4739,9 @@ pub enum DeleteMatchmakingConfigurationErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -4584,9 +4914,9 @@ pub enum DeleteMatchmakingRuleSetErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -4740,7 +5070,7 @@ pub enum DeleteScalingPolicyErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4881,9 +5211,9 @@ pub enum DeleteScriptErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5026,7 +5356,7 @@ pub enum DeleteVpcPeeringAuthorizationErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5182,7 +5512,7 @@ pub enum DeleteVpcPeeringConnectionErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5302,6 +5632,144 @@ impl std::error::Error for DeleteVpcPeeringConnectionError {
     }
 }
 
+/// Error type for the `DeregisterCompute` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeregisterComputeError {
+    /// Kind of error that occurred.
+    pub kind: DeregisterComputeErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeregisterComputeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeregisterComputeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeregisterCompute` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeregisterComputeErrorKind {
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>The client failed authentication. Clients should not retry such requests.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeregisterComputeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeregisterComputeErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DeregisterComputeErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeregisterComputeErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeregisterComputeErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DeregisterComputeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeregisterComputeError {
+    fn code(&self) -> Option<&str> {
+        DeregisterComputeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeregisterComputeError {
+    /// Creates a new `DeregisterComputeError`.
+    pub fn new(kind: DeregisterComputeErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeregisterComputeError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeregisterComputeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeregisterComputeError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeregisterComputeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeregisterComputeErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterComputeErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeregisterComputeErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterComputeErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeregisterComputeErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeregisterComputeErrorKind::NotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `DeregisterComputeErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterComputeErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for DeregisterComputeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeregisterComputeErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DeregisterComputeErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeregisterComputeErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeregisterComputeErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DeregisterComputeErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DeregisterGameServer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5327,7 +5795,7 @@ pub enum DeregisterGameServerErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5472,7 +5940,7 @@ pub enum DescribeAliasErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5607,7 +6075,7 @@ pub enum DescribeBuildErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5713,6 +6181,144 @@ impl std::error::Error for DescribeBuildError {
             DescribeBuildErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeBuildErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DescribeBuildErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeCompute` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeComputeError {
+    /// Kind of error that occurred.
+    pub kind: DescribeComputeErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeComputeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeComputeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeCompute` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeComputeErrorKind {
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>The client failed authentication. Clients should not retry such requests.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeComputeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeComputeErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DescribeComputeErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeComputeErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeComputeErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DescribeComputeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeComputeError {
+    fn code(&self) -> Option<&str> {
+        DescribeComputeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeComputeError {
+    /// Creates a new `DescribeComputeError`.
+    pub fn new(kind: DescribeComputeErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeComputeError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeComputeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeComputeError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeComputeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeComputeErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeComputeErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeComputeErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeComputeErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeComputeErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DescribeComputeErrorKind::NotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `DescribeComputeErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeComputeErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeComputeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeComputeErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DescribeComputeErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeComputeErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeComputeErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DescribeComputeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5889,7 +6495,7 @@ pub enum DescribeFleetAttributesErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6034,7 +6640,7 @@ pub enum DescribeFleetCapacityErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6179,7 +6785,7 @@ pub enum DescribeFleetEventsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6322,7 +6928,7 @@ pub enum DescribeFleetLocationAttributesErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6497,7 +7103,7 @@ pub enum DescribeFleetLocationCapacityErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6668,7 +7274,7 @@ pub enum DescribeFleetLocationUtilizationErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6845,10 +7451,12 @@ pub enum DescribeFleetPortSettingsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -6866,6 +7474,7 @@ impl std::fmt::Display for DescribeFleetPortSettingsError {
             DescribeFleetPortSettingsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             DescribeFleetPortSettingsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DescribeFleetPortSettingsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DescribeFleetPortSettingsErrorKind::UnsupportedRegionException(_inner) => _inner.fmt(f),
             DescribeFleetPortSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6952,6 +7561,13 @@ impl DescribeFleetPortSettingsError {
             DescribeFleetPortSettingsErrorKind::UnauthorizedException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeFleetPortSettingsErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFleetPortSettingsErrorKind::UnsupportedRegionException(_)
+        )
+    }
 }
 impl std::error::Error for DescribeFleetPortSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6960,6 +7576,7 @@ impl std::error::Error for DescribeFleetPortSettingsError {
             DescribeFleetPortSettingsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeFleetPortSettingsErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeFleetPortSettingsErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DescribeFleetPortSettingsErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             DescribeFleetPortSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -6992,7 +7609,7 @@ pub enum DescribeFleetUtilizationErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7137,7 +7754,7 @@ pub enum DescribeGameServerErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7278,7 +7895,7 @@ pub enum DescribeGameServerGroupErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7425,7 +8042,7 @@ pub enum DescribeGameServerInstancesErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7572,7 +8189,7 @@ pub enum DescribeGameSessionDetailsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
@@ -7747,7 +8364,7 @@ pub enum DescribeGameSessionPlacementErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7896,7 +8513,7 @@ pub enum DescribeGameSessionQueuesErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8041,7 +8658,7 @@ pub enum DescribeGameSessionsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
@@ -8210,7 +8827,7 @@ pub enum DescribeInstancesErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8642,7 +9259,7 @@ pub enum DescribeMatchmakingRuleSetsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -8791,7 +9408,7 @@ pub enum DescribePlayerSessionsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8938,7 +9555,7 @@ pub enum DescribeRuntimeConfigurationErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9085,7 +9702,7 @@ pub enum DescribeScalingPoliciesErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9241,7 +9858,7 @@ pub enum DescribeScriptErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9532,7 +10149,7 @@ pub enum DescribeVpcPeeringConnectionsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9661,6 +10278,285 @@ impl std::error::Error for DescribeVpcPeeringConnectionsError {
     }
 }
 
+/// Error type for the `GetComputeAccess` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetComputeAccessError {
+    /// Kind of error that occurred.
+    pub kind: GetComputeAccessErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetComputeAccessError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetComputeAccessErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetComputeAccess` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetComputeAccessErrorKind {
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>The client failed authentication. Clients should not retry such requests.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetComputeAccessError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetComputeAccessErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetComputeAccessErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            GetComputeAccessErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetComputeAccessErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            GetComputeAccessErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetComputeAccessError {
+    fn code(&self) -> Option<&str> {
+        GetComputeAccessError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetComputeAccessError {
+    /// Creates a new `GetComputeAccessError`.
+    pub fn new(kind: GetComputeAccessErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetComputeAccessError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetComputeAccessErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetComputeAccessError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetComputeAccessErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetComputeAccessErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetComputeAccessErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetComputeAccessErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetComputeAccessErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetComputeAccessErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetComputeAccessErrorKind::NotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `GetComputeAccessErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetComputeAccessErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for GetComputeAccessError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetComputeAccessErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetComputeAccessErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            GetComputeAccessErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetComputeAccessErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            GetComputeAccessErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetComputeAuthToken` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetComputeAuthTokenError {
+    /// Kind of error that occurred.
+    pub kind: GetComputeAuthTokenErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetComputeAuthTokenError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetComputeAuthTokenErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetComputeAuthToken` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetComputeAuthTokenErrorKind {
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>The client failed authentication. Clients should not retry such requests.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetComputeAuthTokenError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetComputeAuthTokenErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetComputeAuthTokenErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            GetComputeAuthTokenErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetComputeAuthTokenErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            GetComputeAuthTokenErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetComputeAuthTokenError {
+    fn code(&self) -> Option<&str> {
+        GetComputeAuthTokenError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetComputeAuthTokenError {
+    /// Creates a new `GetComputeAuthTokenError`.
+    pub fn new(kind: GetComputeAuthTokenErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetComputeAuthTokenError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetComputeAuthTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetComputeAuthTokenError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetComputeAuthTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetComputeAuthTokenErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetComputeAuthTokenErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetComputeAuthTokenErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetComputeAuthTokenErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetComputeAuthTokenErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetComputeAuthTokenErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetComputeAuthTokenErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetComputeAuthTokenErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for GetComputeAuthTokenError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetComputeAuthTokenErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetComputeAuthTokenErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            GetComputeAuthTokenErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetComputeAuthTokenErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            GetComputeAuthTokenErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `GetGameSessionLogUrl` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9686,7 +10582,7 @@ pub enum GetGameSessionLogUrlErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9831,7 +10727,7 @@ pub enum GetInstanceAccessErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10189,6 +11085,130 @@ impl std::error::Error for ListBuildsError {
     }
 }
 
+/// Error type for the `ListCompute` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListComputeError {
+    /// Kind of error that occurred.
+    pub kind: ListComputeErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListComputeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListComputeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListCompute` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListComputeErrorKind {
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The client failed authentication. Clients should not retry such requests.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListComputeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListComputeErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListComputeErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListComputeErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            ListComputeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListComputeError {
+    fn code(&self) -> Option<&str> {
+        ListComputeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListComputeError {
+    /// Creates a new `ListComputeError`.
+    pub fn new(kind: ListComputeErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListComputeError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListComputeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListComputeError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListComputeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListComputeErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComputeErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListComputeErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(&self.kind, ListComputeErrorKind::InvalidRequestException(_))
+    }
+    /// Returns `true` if the error kind is `ListComputeErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, ListComputeErrorKind::UnauthorizedException(_))
+    }
+}
+impl std::error::Error for ListComputeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListComputeErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListComputeErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListComputeErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            ListComputeErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListFleets` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10214,7 +11234,7 @@ pub enum ListFleetsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10582,6 +11602,133 @@ impl std::error::Error for ListGameServersError {
     }
 }
 
+/// Error type for the `ListLocations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListLocationsError {
+    /// Kind of error that occurred.
+    pub kind: ListLocationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListLocationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListLocationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListLocations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListLocationsErrorKind {
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The client failed authentication. Clients should not retry such requests.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListLocationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListLocationsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListLocationsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListLocationsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            ListLocationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListLocationsError {
+    fn code(&self) -> Option<&str> {
+        ListLocationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListLocationsError {
+    /// Creates a new `ListLocationsError`.
+    pub fn new(kind: ListLocationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListLocationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListLocationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListLocationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListLocationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListLocationsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLocationsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListLocationsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLocationsErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListLocationsErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, ListLocationsErrorKind::UnauthorizedException(_))
+    }
+}
+impl std::error::Error for ListLocationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListLocationsErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListLocationsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListLocationsErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            ListLocationsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListScripts` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10731,9 +11878,9 @@ pub enum ListTagsForResourceErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -10872,7 +12019,7 @@ pub enum PutScalingPolicyErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10985,6 +12132,145 @@ impl std::error::Error for PutScalingPolicyError {
     }
 }
 
+/// Error type for the `RegisterCompute` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RegisterComputeError {
+    /// Kind of error that occurred.
+    pub kind: RegisterComputeErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RegisterComputeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterComputeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `RegisterCompute` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RegisterComputeErrorKind {
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The client failed authentication. Clients should not retry such requests.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for RegisterComputeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RegisterComputeErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            RegisterComputeErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            RegisterComputeErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            RegisterComputeErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            RegisterComputeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RegisterComputeError {
+    fn code(&self) -> Option<&str> {
+        RegisterComputeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RegisterComputeError {
+    /// Creates a new `RegisterComputeError`.
+    pub fn new(kind: RegisterComputeErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RegisterComputeError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RegisterComputeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RegisterComputeError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RegisterComputeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `RegisterComputeErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, RegisterComputeErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `RegisterComputeErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterComputeErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterComputeErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterComputeErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterComputeErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterComputeErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for RegisterComputeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RegisterComputeErrorKind::ConflictException(_inner) => Some(_inner),
+            RegisterComputeErrorKind::InternalServiceException(_inner) => Some(_inner),
+            RegisterComputeErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            RegisterComputeErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            RegisterComputeErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `RegisterGameServer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11007,6 +12293,7 @@ impl aws_smithy_http::result::CreateUnhandledError for RegisterGameServerError {
 #[derive(std::fmt::Debug)]
 pub enum RegisterGameServerErrorKind {
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -11164,7 +12451,7 @@ pub enum RequestUploadCredentialsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11309,7 +12596,7 @@ pub enum ResolveAliasErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
@@ -11455,7 +12742,7 @@ pub enum ResumeGameServerGroupErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11600,7 +12887,7 @@ pub enum SearchGameSessionsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
@@ -11763,7 +13050,7 @@ pub enum StartFleetActionsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11914,7 +13201,7 @@ pub enum StartGameSessionPlacementErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12059,7 +13346,7 @@ pub enum StartMatchBackfillErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -12200,7 +13487,7 @@ pub enum StartMatchmakingErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -12338,7 +13625,7 @@ pub enum StopFleetActionsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12489,7 +13776,7 @@ pub enum StopGameSessionPlacementErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12634,7 +13921,7 @@ pub enum StopMatchmakingErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -12772,7 +14059,7 @@ pub enum SuspendGameServerGroupErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12917,9 +14204,9 @@ pub enum TagResourceErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -13049,9 +14336,9 @@ pub enum UntagResourceErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -13187,7 +14474,7 @@ pub enum UpdateAliasErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -13319,7 +14606,7 @@ pub enum UpdateBuildErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -13448,6 +14735,7 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateFleetAttributesErro
 #[derive(std::fmt::Debug)]
 pub enum UpdateFleetAttributesErrorKind {
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -13457,7 +14745,7 @@ pub enum UpdateFleetAttributesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -13626,6 +14914,7 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateFleetCapacityError 
 #[derive(std::fmt::Debug)]
 pub enum UpdateFleetCapacityErrorKind {
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -13635,7 +14924,7 @@ pub enum UpdateFleetCapacityErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -13811,6 +15100,7 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateFleetPortSettingsEr
 #[derive(std::fmt::Debug)]
 pub enum UpdateFleetPortSettingsErrorKind {
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -13820,7 +15110,7 @@ pub enum UpdateFleetPortSettingsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -13992,7 +15282,7 @@ pub enum UpdateGameServerErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -14130,7 +15420,7 @@ pub enum UpdateGameServerGroupErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -14272,6 +15562,7 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateGameSessionError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateGameSessionErrorKind {
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -14279,7 +15570,7 @@ pub enum UpdateGameSessionErrorKind {
     InvalidGameSessionStatusException(crate::error::InvalidGameSessionStatusException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -14432,7 +15723,7 @@ pub enum UpdateGameSessionQueueErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -14579,7 +15870,7 @@ pub enum UpdateMatchmakingConfigurationErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -14743,7 +16034,7 @@ pub enum UpdateRuntimeConfigurationErrorKind {
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -14901,7 +16192,7 @@ pub enum UpdateScriptErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),

@@ -196,6 +196,240 @@ impl AsRef<str> for ResourceType {
     }
 }
 
+/// <p>An item referenced in a <code>TimelineEvent</code> that is involved in or somehow associated with an incident. You can specify an Amazon Resource Name (ARN) for an Amazon Web Services resource or a <code>RelatedItem</code> ID.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum EventReference {
+    /// <p>The ID of a <code>RelatedItem</code> referenced in a <code>TimelineEvent</code>.</p>
+    RelatedItemId(std::string::String),
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services resource referenced in a <code>TimelineEvent</code>.</p>
+    Resource(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl EventReference {
+    /// Tries to convert the enum instance into [`RelatedItemId`](crate::model::EventReference::RelatedItemId), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_related_item_id(&self) -> std::result::Result<&std::string::String, &Self> {
+        if let EventReference::RelatedItemId(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`RelatedItemId`](crate::model::EventReference::RelatedItemId).
+    pub fn is_related_item_id(&self) -> bool {
+        self.as_related_item_id().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Resource`](crate::model::EventReference::Resource), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_resource(&self) -> std::result::Result<&std::string::String, &Self> {
+        if let EventReference::Resource(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Resource`](crate::model::EventReference::Resource).
+    pub fn is_resource(&self) -> bool {
+        self.as_resource().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+/// <p>Information about third-party services integrated into a response plan.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum Integration {
+    /// <p>Information about the PagerDuty service where the response plan creates an incident.</p>
+    PagerDutyConfiguration(crate::model::PagerDutyConfiguration),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl Integration {
+    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`PagerDutyConfiguration`](crate::model::Integration::PagerDutyConfiguration), extracting the inner [`PagerDutyConfiguration`](crate::model::PagerDutyConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_pager_duty_configuration(
+        &self,
+    ) -> std::result::Result<&crate::model::PagerDutyConfiguration, &Self> {
+        if let Integration::PagerDutyConfiguration(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`PagerDutyConfiguration`](crate::model::Integration::PagerDutyConfiguration).
+    pub fn is_pager_duty_configuration(&self) -> bool {
+        self.as_pager_duty_configuration().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+/// <p>Details about the PagerDuty configuration for a response plan.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PagerDutyConfiguration {
+    /// <p>The name of the PagerDuty configuration.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
+    #[doc(hidden)]
+    pub secret_id: std::option::Option<std::string::String>,
+    /// <p>Details about the PagerDuty service associated with the configuration.</p>
+    #[doc(hidden)]
+    pub pager_duty_incident_configuration:
+        std::option::Option<crate::model::PagerDutyIncidentConfiguration>,
+}
+impl PagerDutyConfiguration {
+    /// <p>The name of the PagerDuty configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
+    pub fn secret_id(&self) -> std::option::Option<&str> {
+        self.secret_id.as_deref()
+    }
+    /// <p>Details about the PagerDuty service associated with the configuration.</p>
+    pub fn pager_duty_incident_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::PagerDutyIncidentConfiguration> {
+        self.pager_duty_incident_configuration.as_ref()
+    }
+}
+/// See [`PagerDutyConfiguration`](crate::model::PagerDutyConfiguration).
+pub mod pager_duty_configuration {
+
+    /// A builder for [`PagerDutyConfiguration`](crate::model::PagerDutyConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
+        pub(crate) pager_duty_incident_configuration:
+            std::option::Option<crate::model::PagerDutyIncidentConfiguration>,
+    }
+    impl Builder {
+        /// <p>The name of the PagerDuty configuration.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the PagerDuty configuration.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
+            self
+        }
+        /// <p>Details about the PagerDuty service associated with the configuration.</p>
+        pub fn pager_duty_incident_configuration(
+            mut self,
+            input: crate::model::PagerDutyIncidentConfiguration,
+        ) -> Self {
+            self.pager_duty_incident_configuration = Some(input);
+            self
+        }
+        /// <p>Details about the PagerDuty service associated with the configuration.</p>
+        pub fn set_pager_duty_incident_configuration(
+            mut self,
+            input: std::option::Option<crate::model::PagerDutyIncidentConfiguration>,
+        ) -> Self {
+            self.pager_duty_incident_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PagerDutyConfiguration`](crate::model::PagerDutyConfiguration).
+        pub fn build(self) -> crate::model::PagerDutyConfiguration {
+            crate::model::PagerDutyConfiguration {
+                name: self.name,
+                secret_id: self.secret_id,
+                pager_duty_incident_configuration: self.pager_duty_incident_configuration,
+            }
+        }
+    }
+}
+impl PagerDutyConfiguration {
+    /// Creates a new builder-style object to manufacture [`PagerDutyConfiguration`](crate::model::PagerDutyConfiguration).
+    pub fn builder() -> crate::model::pager_duty_configuration::Builder {
+        crate::model::pager_duty_configuration::Builder::default()
+    }
+}
+
+/// <p>Details about the PagerDuty service where the response plan creates an incident.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PagerDutyIncidentConfiguration {
+    /// <p>The ID of the PagerDuty service that the response plan associates with an incident when it launches.</p>
+    #[doc(hidden)]
+    pub service_id: std::option::Option<std::string::String>,
+}
+impl PagerDutyIncidentConfiguration {
+    /// <p>The ID of the PagerDuty service that the response plan associates with an incident when it launches.</p>
+    pub fn service_id(&self) -> std::option::Option<&str> {
+        self.service_id.as_deref()
+    }
+}
+/// See [`PagerDutyIncidentConfiguration`](crate::model::PagerDutyIncidentConfiguration).
+pub mod pager_duty_incident_configuration {
+
+    /// A builder for [`PagerDutyIncidentConfiguration`](crate::model::PagerDutyIncidentConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) service_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the PagerDuty service that the response plan associates with an incident when it launches.</p>
+        pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the PagerDuty service that the response plan associates with an incident when it launches.</p>
+        pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PagerDutyIncidentConfiguration`](crate::model::PagerDutyIncidentConfiguration).
+        pub fn build(self) -> crate::model::PagerDutyIncidentConfiguration {
+            crate::model::PagerDutyIncidentConfiguration {
+                service_id: self.service_id,
+            }
+        }
+    }
+}
+impl PagerDutyIncidentConfiguration {
+    /// Creates a new builder-style object to manufacture [`PagerDutyIncidentConfiguration`](crate::model::PagerDutyIncidentConfiguration).
+    pub fn builder() -> crate::model::pager_duty_incident_configuration::Builder {
+        crate::model::pager_duty_incident_configuration::Builder::default()
+    }
+}
+
 /// <p>The action that starts at the beginning of an incident. The response plan defines the action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1076,6 +1310,7 @@ impl ItemIdentifier {
 ///     ItemType::Metric => { /* ... */ },
 ///     ItemType::Other => { /* ... */ },
 ///     ItemType::Parent => { /* ... */ },
+///     ItemType::Task => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -1125,6 +1360,8 @@ pub enum ItemType {
     Other,
     #[allow(missing_docs)] // documentation missing in model
     Parent,
+    #[allow(missing_docs)] // documentation missing in model
+    Task,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -1139,6 +1376,7 @@ impl std::convert::From<&str> for ItemType {
             "METRIC" => ItemType::Metric,
             "OTHER" => ItemType::Other,
             "PARENT" => ItemType::Parent,
+            "TASK" => ItemType::Task,
             other => ItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -1162,6 +1400,7 @@ impl ItemType {
             ItemType::Metric => "METRIC",
             ItemType::Other => "OTHER",
             ItemType::Parent => "PARENT",
+            ItemType::Task => "TASK",
             ItemType::Unknown(value) => value.as_str(),
         }
     }
@@ -1176,6 +1415,7 @@ impl ItemType {
             "METRIC",
             "OTHER",
             "PARENT",
+            "TASK",
         ]
     }
 }
@@ -1193,6 +1433,8 @@ pub enum ItemValue {
     Arn(std::string::String),
     /// <p>The metric definition, if the related item is a metric in Amazon CloudWatch.</p>
     MetricDefinition(std::string::String),
+    /// <p>Details about an incident that is associated with a PagerDuty incident.</p>
+    PagerDutyIncidentDetail(crate::model::PagerDutyIncidentDetail),
     /// <p>The URL, if the related item is a non-Amazon Web Services resource.</p>
     Url(std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -1232,6 +1474,21 @@ impl ItemValue {
     pub fn is_metric_definition(&self) -> bool {
         self.as_metric_definition().is_ok()
     }
+    /// Tries to convert the enum instance into [`PagerDutyIncidentDetail`](crate::model::ItemValue::PagerDutyIncidentDetail), extracting the inner [`PagerDutyIncidentDetail`](crate::model::PagerDutyIncidentDetail).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_pager_duty_incident_detail(
+        &self,
+    ) -> std::result::Result<&crate::model::PagerDutyIncidentDetail, &Self> {
+        if let ItemValue::PagerDutyIncidentDetail(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`PagerDutyIncidentDetail`](crate::model::ItemValue::PagerDutyIncidentDetail).
+    pub fn is_pager_duty_incident_detail(&self) -> bool {
+        self.as_pager_duty_incident_detail().is_ok()
+    }
     /// Tries to convert the enum instance into [`Url`](crate::model::ItemValue::Url), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_url(&self) -> std::result::Result<&std::string::String, &Self> {
@@ -1251,6 +1508,92 @@ impl ItemValue {
     }
 }
 
+/// <p>Details about the PagerDuty incident associated with an incident created by an Incident Manager response plan.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PagerDutyIncidentDetail {
+    /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
+    #[doc(hidden)]
+    pub auto_resolve: std::option::Option<bool>,
+    /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
+    #[doc(hidden)]
+    pub secret_id: std::option::Option<std::string::String>,
+}
+impl PagerDutyIncidentDetail {
+    /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
+    pub fn auto_resolve(&self) -> std::option::Option<bool> {
+        self.auto_resolve
+    }
+    /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
+    pub fn secret_id(&self) -> std::option::Option<&str> {
+        self.secret_id.as_deref()
+    }
+}
+/// See [`PagerDutyIncidentDetail`](crate::model::PagerDutyIncidentDetail).
+pub mod pager_duty_incident_detail {
+
+    /// A builder for [`PagerDutyIncidentDetail`](crate::model::PagerDutyIncidentDetail).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) auto_resolve: std::option::Option<bool>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
+        pub fn auto_resolve(mut self, input: bool) -> Self {
+            self.auto_resolve = Some(input);
+            self
+        }
+        /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
+        pub fn set_auto_resolve(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_resolve = input;
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PagerDutyIncidentDetail`](crate::model::PagerDutyIncidentDetail).
+        pub fn build(self) -> crate::model::PagerDutyIncidentDetail {
+            crate::model::PagerDutyIncidentDetail {
+                id: self.id,
+                auto_resolve: self.auto_resolve,
+                secret_id: self.secret_id,
+            }
+        }
+    }
+}
+impl PagerDutyIncidentDetail {
+    /// Creates a new builder-style object to manufacture [`PagerDutyIncidentDetail`](crate::model::PagerDutyIncidentDetail).
+    pub fn builder() -> crate::model::pager_duty_incident_detail::Builder {
+        crate::model::pager_duty_incident_detail::Builder::default()
+    }
+}
+
 /// <p>Resources that responders use to triage and mitigate the incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1261,6 +1604,11 @@ pub struct RelatedItem {
     /// <p>The title of the related item.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
+    /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
+    /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub generated_id: std::option::Option<std::string::String>,
 }
 impl RelatedItem {
     /// <p>Details about the related item.</p>
@@ -1271,6 +1619,12 @@ impl RelatedItem {
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
+    /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
+    /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
+    /// </important>
+    pub fn generated_id(&self) -> std::option::Option<&str> {
+        self.generated_id.as_deref()
+    }
 }
 /// See [`RelatedItem`](crate::model::RelatedItem).
 pub mod related_item {
@@ -1280,6 +1634,7 @@ pub mod related_item {
     pub struct Builder {
         pub(crate) identifier: std::option::Option<crate::model::ItemIdentifier>,
         pub(crate) title: std::option::Option<std::string::String>,
+        pub(crate) generated_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Details about the related item.</p>
@@ -1305,11 +1660,26 @@ pub mod related_item {
             self.title = input;
             self
         }
+        /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
+        /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
+        /// </important>
+        pub fn generated_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.generated_id = Some(input.into());
+            self
+        }
+        /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
+        /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
+        /// </important>
+        pub fn set_generated_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.generated_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RelatedItem`](crate::model::RelatedItem).
         pub fn build(self) -> crate::model::RelatedItem {
             crate::model::RelatedItem {
                 identifier: self.identifier,
                 title: self.title,
+                generated_id: self.generated_id,
             }
         }
     }
@@ -1540,6 +1910,9 @@ pub struct EventSummary {
     /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
     #[doc(hidden)]
     pub event_type: std::option::Option<std::string::String>,
+    /// <p>A list of references in a <code>TimelineEvent</code>.</p>
+    #[doc(hidden)]
+    pub event_references: std::option::Option<std::vec::Vec<crate::model::EventReference>>,
 }
 impl EventSummary {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
@@ -1562,6 +1935,10 @@ impl EventSummary {
     pub fn event_type(&self) -> std::option::Option<&str> {
         self.event_type.as_deref()
     }
+    /// <p>A list of references in a <code>TimelineEvent</code>.</p>
+    pub fn event_references(&self) -> std::option::Option<&[crate::model::EventReference]> {
+        self.event_references.as_deref()
+    }
 }
 /// See [`EventSummary`](crate::model::EventSummary).
 pub mod event_summary {
@@ -1574,6 +1951,8 @@ pub mod event_summary {
         pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_type: std::option::Option<std::string::String>,
+        pub(crate) event_references:
+            std::option::Option<std::vec::Vec<crate::model::EventReference>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
@@ -1635,6 +2014,25 @@ pub mod event_summary {
             self.event_type = input;
             self
         }
+        /// Appends an item to `event_references`.
+        ///
+        /// To override the contents of this collection use [`set_event_references`](Self::set_event_references).
+        ///
+        /// <p>A list of references in a <code>TimelineEvent</code>.</p>
+        pub fn event_references(mut self, input: crate::model::EventReference) -> Self {
+            let mut v = self.event_references.unwrap_or_default();
+            v.push(input);
+            self.event_references = Some(v);
+            self
+        }
+        /// <p>A list of references in a <code>TimelineEvent</code>.</p>
+        pub fn set_event_references(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EventReference>>,
+        ) -> Self {
+            self.event_references = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EventSummary`](crate::model::EventSummary).
         pub fn build(self) -> crate::model::EventSummary {
             crate::model::EventSummary {
@@ -1643,6 +2041,7 @@ pub mod event_summary {
                 event_time: self.event_time,
                 event_updated_time: self.event_updated_time,
                 event_type: self.event_type,
+                event_references: self.event_references,
             }
         }
     }
@@ -2409,6 +2808,9 @@ pub struct TimelineEvent {
     /// <p>A short description of the event.</p>
     #[doc(hidden)]
     pub event_data: std::option::Option<std::string::String>,
+    /// <p>A list of references in a <code>TimelineEvent</code>.</p>
+    #[doc(hidden)]
+    pub event_references: std::option::Option<std::vec::Vec<crate::model::EventReference>>,
 }
 impl TimelineEvent {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
@@ -2435,6 +2837,10 @@ impl TimelineEvent {
     pub fn event_data(&self) -> std::option::Option<&str> {
         self.event_data.as_deref()
     }
+    /// <p>A list of references in a <code>TimelineEvent</code>.</p>
+    pub fn event_references(&self) -> std::option::Option<&[crate::model::EventReference]> {
+        self.event_references.as_deref()
+    }
 }
 /// See [`TimelineEvent`](crate::model::TimelineEvent).
 pub mod timeline_event {
@@ -2448,6 +2854,8 @@ pub mod timeline_event {
         pub(crate) event_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_type: std::option::Option<std::string::String>,
         pub(crate) event_data: std::option::Option<std::string::String>,
+        pub(crate) event_references:
+            std::option::Option<std::vec::Vec<crate::model::EventReference>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
@@ -2519,6 +2927,25 @@ pub mod timeline_event {
             self.event_data = input;
             self
         }
+        /// Appends an item to `event_references`.
+        ///
+        /// To override the contents of this collection use [`set_event_references`](Self::set_event_references).
+        ///
+        /// <p>A list of references in a <code>TimelineEvent</code>.</p>
+        pub fn event_references(mut self, input: crate::model::EventReference) -> Self {
+            let mut v = self.event_references.unwrap_or_default();
+            v.push(input);
+            self.event_references = Some(v);
+            self
+        }
+        /// <p>A list of references in a <code>TimelineEvent</code>.</p>
+        pub fn set_event_references(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EventReference>>,
+        ) -> Self {
+            self.event_references = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TimelineEvent`](crate::model::TimelineEvent).
         pub fn build(self) -> crate::model::TimelineEvent {
             crate::model::TimelineEvent {
@@ -2528,6 +2955,7 @@ pub mod timeline_event {
                 event_updated_time: self.event_updated_time,
                 event_type: self.event_type,
                 event_data: self.event_data,
+                event_references: self.event_references,
             }
         }
     }
@@ -2559,7 +2987,7 @@ pub struct IncidentTemplate {
     #[doc(hidden)]
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
-    /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action.</p>
+    /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
     #[doc(hidden)]
     pub incident_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2587,7 +3015,7 @@ impl IncidentTemplate {
     ) -> std::option::Option<&[crate::model::NotificationTargetItem]> {
         self.notification_targets.as_deref()
     }
-    /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action.</p>
+    /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
     pub fn incident_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2678,7 +3106,7 @@ pub mod incident_template {
         ///
         /// To override the contents of this collection use [`set_incident_tags`](Self::set_incident_tags).
         ///
-        /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action.</p>
+        /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
         pub fn incident_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2689,7 +3117,7 @@ pub mod incident_template {
             self.incident_tags = Some(hash_map);
             self
         }
-        /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action.</p>
+        /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
         pub fn set_incident_tags(
             mut self,
             input: std::option::Option<

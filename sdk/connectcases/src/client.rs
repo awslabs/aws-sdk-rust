@@ -121,7 +121,7 @@ impl Client {
     ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::CreateCase::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::CreateCase::set_domain_id): <p>The unique identifier of the Cases domain. </p>
     ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::CreateCase::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::CreateCase::set_template_id): <p>A unique identifier of a template.</p>
     ///   - [`fields(Vec<FieldValue>)`](crate::client::fluent_builders::CreateCase::fields) / [`set_fields(Option<Vec<FieldValue>>)`](crate::client::fluent_builders::CreateCase::set_fields): <p>An array of objects with field ID (matching ListFields/DescribeField) and value union data.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateCase::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateCase::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateCase::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateCase::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     /// - On success, responds with [`CreateCaseOutput`](crate::output::CreateCaseOutput) with field(s):
     ///   - [`case_id(Option<String>)`](crate::output::CreateCaseOutput::case_id): <p>A unique identifier of the case.</p>
     ///   - [`case_arn(Option<String>)`](crate::output::CreateCaseOutput::case_arn): <p>The Amazon Resource Name (ARN) of the case.</p>
@@ -190,6 +190,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateTemplate::set_description): <p>A brief description of the template.</p>
     ///   - [`layout_configuration(LayoutConfiguration)`](crate::client::fluent_builders::CreateTemplate::layout_configuration) / [`set_layout_configuration(Option<LayoutConfiguration>)`](crate::client::fluent_builders::CreateTemplate::set_layout_configuration): <p>Configuration of layouts associated to the template.</p>
     ///   - [`required_fields(Vec<RequiredField>)`](crate::client::fluent_builders::CreateTemplate::required_fields) / [`set_required_fields(Option<Vec<RequiredField>>)`](crate::client::fluent_builders::CreateTemplate::set_required_fields): <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
+    ///   - [`status(TemplateStatus)`](crate::client::fluent_builders::CreateTemplate::status) / [`set_status(Option<TemplateStatus>)`](crate::client::fluent_builders::CreateTemplate::set_status): <p>The status of the template.</p>
     /// - On success, responds with [`CreateTemplateOutput`](crate::output::CreateTemplateOutput) with field(s):
     ///   - [`template_id(Option<String>)`](crate::output::CreateTemplateOutput::template_id): <p>A unique identifier of a template.</p>
     ///   - [`template_arn(Option<String>)`](crate::output::CreateTemplateOutput::template_arn): <p>The Amazon Resource Name (ARN) of the newly created template.</p>
@@ -267,6 +268,7 @@ impl Client {
     ///   - [`layout_configuration(Option<LayoutConfiguration>)`](crate::output::GetTemplateOutput::layout_configuration): <p>Configuration of layouts associated to the template.</p>
     ///   - [`required_fields(Option<Vec<RequiredField>>)`](crate::output::GetTemplateOutput::required_fields): <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
     ///   - [`tags(Option<HashMap<String, Option<String>>>)`](crate::output::GetTemplateOutput::tags): <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    ///   - [`status(Option<TemplateStatus>)`](crate::output::GetTemplateOutput::status): <p>The status of the template.</p>
     /// - On failure, responds with [`SdkError<GetTemplateError>`](crate::error::GetTemplateError)
     pub fn get_template(&self) -> fluent_builders::GetTemplate {
         fluent_builders::GetTemplate::new(self.handle.clone())
@@ -360,6 +362,7 @@ impl Client {
     ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::ListTemplates::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::ListTemplates::set_domain_id): <p>The unique identifier of the Cases domain. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTemplates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTemplates::set_max_results): <p>The maximum number of results to return per page.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTemplates::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`status(Vec<TemplateStatus>)`](crate::client::fluent_builders::ListTemplates::status) / [`set_status(Option<Vec<TemplateStatus>>)`](crate::client::fluent_builders::ListTemplates::set_status): <p>A list of status values to filter on.</p>
     /// - On success, responds with [`ListTemplatesOutput`](crate::output::ListTemplatesOutput) with field(s):
     ///   - [`templates(Option<Vec<TemplateSummary>>)`](crate::output::ListTemplatesOutput::templates): <p>List of template summary objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTemplatesOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
@@ -481,6 +484,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateTemplate::set_description): <p>A brief description of the template.</p>
     ///   - [`layout_configuration(LayoutConfiguration)`](crate::client::fluent_builders::UpdateTemplate::layout_configuration) / [`set_layout_configuration(Option<LayoutConfiguration>)`](crate::client::fluent_builders::UpdateTemplate::set_layout_configuration): <p>Configuration of layouts associated to the template.</p>
     ///   - [`required_fields(Vec<RequiredField>)`](crate::client::fluent_builders::UpdateTemplate::required_fields) / [`set_required_fields(Option<Vec<RequiredField>>)`](crate::client::fluent_builders::UpdateTemplate::set_required_fields): <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
+    ///   - [`status(TemplateStatus)`](crate::client::fluent_builders::UpdateTemplate::status) / [`set_status(Option<TemplateStatus>)`](crate::client::fluent_builders::UpdateTemplate::set_status): <p>The status of the template.</p>
     /// - On success, responds with [`UpdateTemplateOutput`](crate::output::UpdateTemplateOutput)
 
     /// - On failure, responds with [`SdkError<UpdateTemplateError>`](crate::error::UpdateTemplateError)
@@ -786,12 +790,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fields(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1190,7 +1194,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTemplate`.
     ///
-    /// <p>Creates a template in the Cases domain. This template is used to define the case object model (that is, define what data can be captured on cases) in a Cases domain. A template must have a unique name within a domain, and it must reference existing field IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed within the same Template.</p>
+    /// <p>Creates a template in the Cases domain. This template is used to define the case object model (that is, to define what data can be captured on cases) in a Cases domain. A template must have a unique name within a domain, and it must reference existing field IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed within the same Template. A template can be either Active or Inactive, as indicated by its status. Inactive templates cannot be used to create cases.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -1308,6 +1312,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::RequiredField>>,
         ) -> Self {
             self.inner = self.inner.set_required_fields(input);
+            self
+        }
+        /// <p>The status of the template.</p>
+        pub fn status(mut self, input: crate::model::TemplateStatus) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        /// <p>The status of the template.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TemplateStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
             self
         }
     }
@@ -2432,6 +2449,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
+        /// Appends an item to `status`.
+        ///
+        /// To override the contents of this collection use [`set_status`](Self::set_status).
+        ///
+        /// <p>A list of status values to filter on.</p>
+        pub fn status(mut self, input: crate::model::TemplateStatus) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        /// <p>A list of status values to filter on.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TemplateStatus>>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `PutCaseEventConfiguration`.
     ///
@@ -3305,7 +3339,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateTemplate`.
     ///
-    /// <p>Updates the attributes of an existing template. The template attributes that can be modified include <code>name</code>, <code>description</code>, <code>layouts</code>, and <code>requiredFields</code>. At least one of these attributes must not be null. If a null value is provided for a given attribute, that attribute is ignored and its current value is preserved.</p>
+    /// <p>Updates the attributes of an existing template. The template attributes that can be modified include <code>name</code>, <code>description</code>, <code>layoutConfiguration</code>, <code>requiredFields</code>, and <code>status</code>. At least one of these attributes must not be null. If a null value is provided for a given attribute, that attribute is ignored and its current value is preserved.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -3433,6 +3467,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::RequiredField>>,
         ) -> Self {
             self.inner = self.inner.set_required_fields(input);
+            self
+        }
+        /// <p>The status of the template.</p>
+        pub fn status(mut self, input: crate::model::TemplateStatus) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        /// <p>The status of the template.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TemplateStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
             self
         }
     }

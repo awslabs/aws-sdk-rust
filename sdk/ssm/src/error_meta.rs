@@ -45,7 +45,9 @@ pub enum Error {
     DocumentAlreadyExists(crate::error::DocumentAlreadyExists),
     /// <p>You can have at most 500 active SSM documents.</p>
     DocumentLimitExceeded(crate::error::DocumentLimitExceeded),
-    /// <p>The document can't be shared with more Amazon Web Services user accounts. You can share a document with a maximum of 20 accounts. You can publicly share up to five documents. If you need to increase this limit, contact Amazon Web Services Support.</p>
+    /// <p>The document can't be shared with more Amazon Web Services user accounts. You can specify a maximum of 20 accounts per API operation to share a private document.</p>
+    /// <p>By default, you can share a private document with a maximum of 1,000 accounts and publicly share up to five documents.</p>
+    /// <p>If you need to increase the quota for privately or publicly shared Systems Manager documents, contact Amazon Web Services Support.</p>
     DocumentPermissionLimit(crate::error::DocumentPermissionLimit),
     /// <p>The document has too many versions. Delete one or more document versions and try again.</p>
     DocumentVersionLimitExceeded(crate::error::DocumentVersionLimitExceeded),
@@ -168,7 +170,7 @@ pub enum Error {
     InvalidRole(crate::error::InvalidRole),
     /// <p>The schedule is invalid. Verify your cron or rate expression and try again.</p>
     InvalidSchedule(crate::error::InvalidSchedule),
-    /// <p>The tag key or value isn't valid.</p>
+    /// <p>The specified tag key or value isn't valid.</p>
     InvalidTag(crate::error::InvalidTag),
     /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might not have permission to perform the operation.</p>
     InvalidTarget(crate::error::InvalidTarget),
@@ -186,6 +188,8 @@ pub enum Error {
     ItemSizeLimitExceededException(crate::error::ItemSizeLimitExceededException),
     /// <p>The size limit of a document is 64 KB.</p>
     MaxDocumentSizeExceeded(crate::error::MaxDocumentSizeExceeded),
+    /// <p>You don't have permission to view OpsItems in the specified account. Verify that your account is configured either as a Systems Manager delegated administrator or that you are logged into the Organizations management account.</p>
+    OpsItemAccessDeniedException(crate::error::OpsItemAccessDeniedException),
     /// <p>The OpsItem already exists.</p>
     OpsItemAlreadyExistsException(crate::error::OpsItemAlreadyExistsException),
     /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
@@ -249,6 +253,12 @@ pub enum Error {
     /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too many maintenance windows or patch baselines have been created.</p>
     /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    /// <p>The hash provided in the call doesn't match the stored hash. This exception is thrown when trying to update an obsolete policy version or when multiple requests to update a policy are sent.</p>
+    ResourcePolicyConflictException(crate::error::ResourcePolicyConflictException),
+    /// <p>One or more parameters specified for the call aren't valid. Verify the parameters and their values and try again.</p>
+    ResourcePolicyInvalidParameterException(crate::error::ResourcePolicyInvalidParameterException),
+    /// <p>The <code>PutResourcePolicy</code> API action enforces two limits. A policy can't be greater than 1024 bytes in size. And only one policy can be attached to <code>OpsItemGroup</code>. Verify these limits and try again.</p>
+    ResourcePolicyLimitExceededException(crate::error::ResourcePolicyLimitExceededException),
     /// <p>The specified service setting wasn't found. Either the service name or the setting hasn't been provisioned by the Amazon Web Services service team.</p>
     ServiceSettingNotFound(crate::error::ServiceSettingNotFound),
     /// <p>The updated status is the same as the current status.</p>
@@ -378,6 +388,7 @@ impl std::fmt::Display for Error {
             Error::ItemContentMismatchException(inner) => inner.fmt(f),
             Error::ItemSizeLimitExceededException(inner) => inner.fmt(f),
             Error::MaxDocumentSizeExceeded(inner) => inner.fmt(f),
+            Error::OpsItemAccessDeniedException(inner) => inner.fmt(f),
             Error::OpsItemAlreadyExistsException(inner) => inner.fmt(f),
             Error::OpsItemInvalidParameterException(inner) => inner.fmt(f),
             Error::OpsItemLimitExceededException(inner) => inner.fmt(f),
@@ -405,6 +416,9 @@ impl std::fmt::Display for Error {
             Error::ResourceDataSyncNotFoundException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceLimitExceededException(inner) => inner.fmt(f),
+            Error::ResourcePolicyConflictException(inner) => inner.fmt(f),
+            Error::ResourcePolicyInvalidParameterException(inner) => inner.fmt(f),
+            Error::ResourcePolicyLimitExceededException(inner) => inner.fmt(f),
             Error::ServiceSettingNotFound(inner) => inner.fmt(f),
             Error::StatusUnchanged(inner) => inner.fmt(f),
             Error::SubTypeCountLimitExceededException(inner) => inner.fmt(f),
@@ -804,6 +818,9 @@ impl From<crate::error::CreateOpsItemError> for Error {
         match err.kind {
             crate::error::CreateOpsItemErrorKind::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
+            }
+            crate::error::CreateOpsItemErrorKind::OpsItemAccessDeniedException(inner) => {
+                Error::OpsItemAccessDeniedException(inner)
             }
             crate::error::CreateOpsItemErrorKind::OpsItemAlreadyExistsException(inner) => {
                 Error::OpsItemAlreadyExistsException(inner)
@@ -1234,6 +1251,32 @@ impl From<crate::error::DeleteResourceDataSyncError> for Error {
             crate::error::DeleteResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException(inner) => Error::ResourceDataSyncInvalidConfigurationException(inner),
             crate::error::DeleteResourceDataSyncErrorKind::ResourceDataSyncNotFoundException(inner) => Error::ResourceDataSyncNotFoundException(inner),
             crate::error::DeleteResourceDataSyncErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteResourcePolicyError> for Error {
+    fn from(err: crate::error::DeleteResourcePolicyError) -> Self {
+        match err.kind {
+            crate::error::DeleteResourcePolicyErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DeleteResourcePolicyErrorKind::ResourcePolicyConflictException(inner) => Error::ResourcePolicyConflictException(inner),
+            crate::error::DeleteResourcePolicyErrorKind::ResourcePolicyInvalidParameterException(inner) => Error::ResourcePolicyInvalidParameterException(inner),
+            crate::error::DeleteResourcePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -2977,6 +3020,9 @@ impl From<crate::error::GetOpsItemError> for Error {
             crate::error::GetOpsItemErrorKind::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
+            crate::error::GetOpsItemErrorKind::OpsItemAccessDeniedException(inner) => {
+                Error::OpsItemAccessDeniedException(inner)
+            }
             crate::error::GetOpsItemErrorKind::OpsItemNotFoundException(inner) => {
                 Error::OpsItemNotFoundException(inner)
             }
@@ -3249,6 +3295,36 @@ impl From<crate::error::GetPatchBaselineForPatchGroupError> for Error {
                 Error::InternalServerError(inner)
             }
             crate::error::GetPatchBaselineForPatchGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourcePoliciesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetResourcePoliciesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetResourcePoliciesError> for Error {
+    fn from(err: crate::error::GetResourcePoliciesError) -> Self {
+        match err.kind {
+            crate::error::GetResourcePoliciesErrorKind::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::error::GetResourcePoliciesErrorKind::ResourcePolicyInvalidParameterException(
+                inner,
+            ) => Error::ResourcePolicyInvalidParameterException(inner),
+            crate::error::GetResourcePoliciesErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -4059,6 +4135,42 @@ impl From<crate::error::PutParameterError> for Error {
                 Error::UnsupportedParameterType(inner)
             }
             crate::error::PutParameterErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutResourcePolicyError> for Error {
+    fn from(err: crate::error::PutResourcePolicyError) -> Self {
+        match err.kind {
+            crate::error::PutResourcePolicyErrorKind::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::ResourcePolicyConflictException(inner) => {
+                Error::ResourcePolicyConflictException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::ResourcePolicyInvalidParameterException(
+                inner,
+            ) => Error::ResourcePolicyInvalidParameterException(inner),
+            crate::error::PutResourcePolicyErrorKind::ResourcePolicyLimitExceededException(
+                inner,
+            ) => Error::ResourcePolicyLimitExceededException(inner),
+            crate::error::PutResourcePolicyErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -4972,6 +5084,9 @@ impl From<crate::error::UpdateOpsItemError> for Error {
         match err.kind {
             crate::error::UpdateOpsItemErrorKind::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
+            }
+            crate::error::UpdateOpsItemErrorKind::OpsItemAccessDeniedException(inner) => {
+                Error::OpsItemAccessDeniedException(inner)
             }
             crate::error::UpdateOpsItemErrorKind::OpsItemAlreadyExistsException(inner) => {
                 Error::OpsItemAlreadyExistsException(inner)

@@ -844,7 +844,7 @@ impl InlineArchiveRule {
     }
 }
 
-/// <p>The criteria to use in the filter that defines the archive rule.</p>
+/// <p>The criteria to use in the filter that defines the archive rule. For more information on available filter keys, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM Access Analyzer filter keys</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Criterion {
@@ -3145,11 +3145,18 @@ pub struct FindingSourceDetail {
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
     #[doc(hidden)]
     pub access_point_arn: std::option::Option<std::string::String>,
+    /// <p>The account of the cross-account access point that generated the finding.</p>
+    #[doc(hidden)]
+    pub access_point_account: std::option::Option<std::string::String>,
 }
 impl FindingSourceDetail {
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
     pub fn access_point_arn(&self) -> std::option::Option<&str> {
         self.access_point_arn.as_deref()
+    }
+    /// <p>The account of the cross-account access point that generated the finding.</p>
+    pub fn access_point_account(&self) -> std::option::Option<&str> {
+        self.access_point_account.as_deref()
     }
 }
 /// See [`FindingSourceDetail`](crate::model::FindingSourceDetail).
@@ -3159,6 +3166,7 @@ pub mod finding_source_detail {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point_arn: std::option::Option<std::string::String>,
+        pub(crate) access_point_account: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
@@ -3174,10 +3182,24 @@ pub mod finding_source_detail {
             self.access_point_arn = input;
             self
         }
+        /// <p>The account of the cross-account access point that generated the finding.</p>
+        pub fn access_point_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_point_account = Some(input.into());
+            self
+        }
+        /// <p>The account of the cross-account access point that generated the finding.</p>
+        pub fn set_access_point_account(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_point_account = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FindingSourceDetail`](crate::model::FindingSourceDetail).
         pub fn build(self) -> crate::model::FindingSourceDetail {
             crate::model::FindingSourceDetail {
                 access_point_arn: self.access_point_arn,
+                access_point_account: self.access_point_account,
             }
         }
     }
@@ -3204,6 +3226,7 @@ impl FindingSourceDetail {
 ///     FindingSourceType::BucketAcl => { /* ... */ },
 ///     FindingSourceType::Policy => { /* ... */ },
 ///     FindingSourceType::S3AccessPoint => { /* ... */ },
+///     FindingSourceType::S3AccessPointAccount => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -3243,6 +3266,8 @@ pub enum FindingSourceType {
     Policy,
     #[allow(missing_docs)] // documentation missing in model
     S3AccessPoint,
+    #[allow(missing_docs)] // documentation missing in model
+    S3AccessPointAccount,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -3252,6 +3277,7 @@ impl std::convert::From<&str> for FindingSourceType {
             "BUCKET_ACL" => FindingSourceType::BucketAcl,
             "POLICY" => FindingSourceType::Policy,
             "S3_ACCESS_POINT" => FindingSourceType::S3AccessPoint,
+            "S3_ACCESS_POINT_ACCOUNT" => FindingSourceType::S3AccessPointAccount,
             other => {
                 FindingSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
             }
@@ -3272,12 +3298,18 @@ impl FindingSourceType {
             FindingSourceType::BucketAcl => "BUCKET_ACL",
             FindingSourceType::Policy => "POLICY",
             FindingSourceType::S3AccessPoint => "S3_ACCESS_POINT",
+            FindingSourceType::S3AccessPointAccount => "S3_ACCESS_POINT_ACCOUNT",
             FindingSourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BUCKET_ACL", "POLICY", "S3_ACCESS_POINT"]
+        &[
+            "BUCKET_ACL",
+            "POLICY",
+            "S3_ACCESS_POINT",
+            "S3_ACCESS_POINT_ACCOUNT",
+        ]
     }
 }
 impl AsRef<str> for FindingSourceType {
@@ -3393,11 +3425,17 @@ impl AsRef<str> for FindingStatus {
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
+///     ResourceType::AwsEc2Snapshot => { /* ... */ },
+///     ResourceType::AwsEcrRepository => { /* ... */ },
+///     ResourceType::AwsEfsFilesystem => { /* ... */ },
 ///     ResourceType::AwsIamRole => { /* ... */ },
 ///     ResourceType::AwsKmsKey => { /* ... */ },
 ///     ResourceType::AwsLambdaFunction => { /* ... */ },
 ///     ResourceType::AwsLambdaLayerversion => { /* ... */ },
+///     ResourceType::AwsRdsDbclustersnapshot => { /* ... */ },
+///     ResourceType::AwsRdsDbsnapshot => { /* ... */ },
 ///     ResourceType::AwsS3Bucket => { /* ... */ },
+///     ResourceType::AwsSnsTopic => { /* ... */ },
 ///     ResourceType::AwsSqsQueue => { /* ... */ },
 ///     ResourceType::AwsSecretsmanagerSecret => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -3434,6 +3472,12 @@ impl AsRef<str> for FindingStatus {
 )]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    AwsEc2Snapshot,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsEcrRepository,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsEfsFilesystem,
+    #[allow(missing_docs)] // documentation missing in model
     AwsIamRole,
     #[allow(missing_docs)] // documentation missing in model
     AwsKmsKey,
@@ -3442,7 +3486,13 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsLambdaLayerversion,
     #[allow(missing_docs)] // documentation missing in model
+    AwsRdsDbclustersnapshot,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsRdsDbsnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     AwsS3Bucket,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSnsTopic,
     #[allow(missing_docs)] // documentation missing in model
     AwsSqsQueue,
     #[allow(missing_docs)] // documentation missing in model
@@ -3453,11 +3503,17 @@ pub enum ResourceType {
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AWS::EC2::Snapshot" => ResourceType::AwsEc2Snapshot,
+            "AWS::ECR::Repository" => ResourceType::AwsEcrRepository,
+            "AWS::EFS::FileSystem" => ResourceType::AwsEfsFilesystem,
             "AWS::IAM::Role" => ResourceType::AwsIamRole,
             "AWS::KMS::Key" => ResourceType::AwsKmsKey,
             "AWS::Lambda::Function" => ResourceType::AwsLambdaFunction,
             "AWS::Lambda::LayerVersion" => ResourceType::AwsLambdaLayerversion,
+            "AWS::RDS::DBClusterSnapshot" => ResourceType::AwsRdsDbclustersnapshot,
+            "AWS::RDS::DBSnapshot" => ResourceType::AwsRdsDbsnapshot,
             "AWS::S3::Bucket" => ResourceType::AwsS3Bucket,
+            "AWS::SNS::Topic" => ResourceType::AwsSnsTopic,
             "AWS::SQS::Queue" => ResourceType::AwsSqsQueue,
             "AWS::SecretsManager::Secret" => ResourceType::AwsSecretsmanagerSecret,
             other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
@@ -3475,11 +3531,17 @@ impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceType::AwsEc2Snapshot => "AWS::EC2::Snapshot",
+            ResourceType::AwsEcrRepository => "AWS::ECR::Repository",
+            ResourceType::AwsEfsFilesystem => "AWS::EFS::FileSystem",
             ResourceType::AwsIamRole => "AWS::IAM::Role",
             ResourceType::AwsKmsKey => "AWS::KMS::Key",
             ResourceType::AwsLambdaFunction => "AWS::Lambda::Function",
             ResourceType::AwsLambdaLayerversion => "AWS::Lambda::LayerVersion",
+            ResourceType::AwsRdsDbclustersnapshot => "AWS::RDS::DBClusterSnapshot",
+            ResourceType::AwsRdsDbsnapshot => "AWS::RDS::DBSnapshot",
             ResourceType::AwsS3Bucket => "AWS::S3::Bucket",
+            ResourceType::AwsSnsTopic => "AWS::SNS::Topic",
             ResourceType::AwsSqsQueue => "AWS::SQS::Queue",
             ResourceType::AwsSecretsmanagerSecret => "AWS::SecretsManager::Secret",
             ResourceType::Unknown(value) => value.as_str(),
@@ -3488,11 +3550,17 @@ impl ResourceType {
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AWS::EC2::Snapshot",
+            "AWS::ECR::Repository",
+            "AWS::EFS::FileSystem",
             "AWS::IAM::Role",
             "AWS::KMS::Key",
             "AWS::Lambda::Function",
             "AWS::Lambda::LayerVersion",
+            "AWS::RDS::DBClusterSnapshot",
+            "AWS::RDS::DBSnapshot",
             "AWS::S3::Bucket",
+            "AWS::SNS::Topic",
             "AWS::SQS::Queue",
             "AWS::SecretsManager::Secret",
         ]
@@ -6237,14 +6305,26 @@ impl AccessPreview {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum Configuration {
+    /// <p>The access control configuration is for an Amazon EBS volume snapshot.</p>
+    EbsSnapshot(crate::model::EbsSnapshotConfiguration),
+    /// <p>The access control configuration is for an Amazon ECR repository.</p>
+    EcrRepository(crate::model::EcrRepositoryConfiguration),
+    /// <p>The access control configuration is for an Amazon EFS file system.</p>
+    EfsFileSystem(crate::model::EfsFileSystemConfiguration),
     /// <p>The access control configuration is for an IAM role. </p>
     IamRole(crate::model::IamRoleConfiguration),
     /// <p>The access control configuration is for a KMS key. </p>
     KmsKey(crate::model::KmsKeyConfiguration),
+    /// <p>The access control configuration is for an Amazon RDS DB cluster snapshot.</p>
+    RdsDbClusterSnapshot(crate::model::RdsDbClusterSnapshotConfiguration),
+    /// <p>The access control configuration is for an Amazon RDS DB snapshot.</p>
+    RdsDbSnapshot(crate::model::RdsDbSnapshotConfiguration),
     /// <p>The access control configuration is for an Amazon S3 Bucket. </p>
     S3Bucket(crate::model::S3BucketConfiguration),
     /// <p>The access control configuration is for a Secrets Manager secret.</p>
     SecretsManagerSecret(crate::model::SecretsManagerSecretConfiguration),
+    /// <p>The access control configuration is for an Amazon SNS topic</p>
+    SnsTopic(crate::model::SnsTopicConfiguration),
     /// <p>The access control configuration is for an Amazon SQS queue. </p>
     SqsQueue(crate::model::SqsQueueConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -6258,6 +6338,51 @@ pub enum Configuration {
     Unknown,
 }
 impl Configuration {
+    /// Tries to convert the enum instance into [`EbsSnapshot`](crate::model::Configuration::EbsSnapshot), extracting the inner [`EbsSnapshotConfiguration`](crate::model::EbsSnapshotConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_ebs_snapshot(
+        &self,
+    ) -> std::result::Result<&crate::model::EbsSnapshotConfiguration, &Self> {
+        if let Configuration::EbsSnapshot(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`EbsSnapshot`](crate::model::Configuration::EbsSnapshot).
+    pub fn is_ebs_snapshot(&self) -> bool {
+        self.as_ebs_snapshot().is_ok()
+    }
+    /// Tries to convert the enum instance into [`EcrRepository`](crate::model::Configuration::EcrRepository), extracting the inner [`EcrRepositoryConfiguration`](crate::model::EcrRepositoryConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_ecr_repository(
+        &self,
+    ) -> std::result::Result<&crate::model::EcrRepositoryConfiguration, &Self> {
+        if let Configuration::EcrRepository(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`EcrRepository`](crate::model::Configuration::EcrRepository).
+    pub fn is_ecr_repository(&self) -> bool {
+        self.as_ecr_repository().is_ok()
+    }
+    /// Tries to convert the enum instance into [`EfsFileSystem`](crate::model::Configuration::EfsFileSystem), extracting the inner [`EfsFileSystemConfiguration`](crate::model::EfsFileSystemConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_efs_file_system(
+        &self,
+    ) -> std::result::Result<&crate::model::EfsFileSystemConfiguration, &Self> {
+        if let Configuration::EfsFileSystem(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`EfsFileSystem`](crate::model::Configuration::EfsFileSystem).
+    pub fn is_efs_file_system(&self) -> bool {
+        self.as_efs_file_system().is_ok()
+    }
     /// Tries to convert the enum instance into [`IamRole`](crate::model::Configuration::IamRole), extracting the inner [`IamRoleConfiguration`](crate::model::IamRoleConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_iam_role(&self) -> std::result::Result<&crate::model::IamRoleConfiguration, &Self> {
@@ -6283,6 +6408,36 @@ impl Configuration {
     /// Returns true if this is a [`KmsKey`](crate::model::Configuration::KmsKey).
     pub fn is_kms_key(&self) -> bool {
         self.as_kms_key().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RdsDbClusterSnapshot`](crate::model::Configuration::RdsDbClusterSnapshot), extracting the inner [`RdsDbClusterSnapshotConfiguration`](crate::model::RdsDbClusterSnapshotConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_rds_db_cluster_snapshot(
+        &self,
+    ) -> std::result::Result<&crate::model::RdsDbClusterSnapshotConfiguration, &Self> {
+        if let Configuration::RdsDbClusterSnapshot(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`RdsDbClusterSnapshot`](crate::model::Configuration::RdsDbClusterSnapshot).
+    pub fn is_rds_db_cluster_snapshot(&self) -> bool {
+        self.as_rds_db_cluster_snapshot().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RdsDbSnapshot`](crate::model::Configuration::RdsDbSnapshot), extracting the inner [`RdsDbSnapshotConfiguration`](crate::model::RdsDbSnapshotConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_rds_db_snapshot(
+        &self,
+    ) -> std::result::Result<&crate::model::RdsDbSnapshotConfiguration, &Self> {
+        if let Configuration::RdsDbSnapshot(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`RdsDbSnapshot`](crate::model::Configuration::RdsDbSnapshot).
+    pub fn is_rds_db_snapshot(&self) -> bool {
+        self.as_rds_db_snapshot().is_ok()
     }
     /// Tries to convert the enum instance into [`S3Bucket`](crate::model::Configuration::S3Bucket), extracting the inner [`S3BucketConfiguration`](crate::model::S3BucketConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -6311,6 +6466,19 @@ impl Configuration {
     /// Returns true if this is a [`SecretsManagerSecret`](crate::model::Configuration::SecretsManagerSecret).
     pub fn is_secrets_manager_secret(&self) -> bool {
         self.as_secrets_manager_secret().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SnsTopic`](crate::model::Configuration::SnsTopic), extracting the inner [`SnsTopicConfiguration`](crate::model::SnsTopicConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_sns_topic(&self) -> std::result::Result<&crate::model::SnsTopicConfiguration, &Self> {
+        if let Configuration::SnsTopic(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`SnsTopic`](crate::model::Configuration::SnsTopic).
+    pub fn is_sns_topic(&self) -> bool {
+        self.as_sns_topic().is_ok()
     }
     /// Tries to convert the enum instance into [`SqsQueue`](crate::model::Configuration::SqsQueue), extracting the inner [`SqsQueueConfiguration`](crate::model::SqsQueueConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -6376,6 +6544,54 @@ impl SqsQueueConfiguration {
     /// Creates a new builder-style object to manufacture [`SqsQueueConfiguration`](crate::model::SqsQueueConfiguration).
     pub fn builder() -> crate::model::sqs_queue_configuration::Builder {
         crate::model::sqs_queue_configuration::Builder::default()
+    }
+}
+
+/// <p>The proposed access control configuration for an Amazon SNS topic. You can propose a configuration for a new Amazon SNS topic or an existing Amazon SNS topic that you own by specifying the policy. If the configuration is for an existing Amazon SNS topic and you do not specify the Amazon SNS policy, then the access preview uses the existing Amazon SNS policy for the topic. If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon SNS topic without a policy. To propose deletion of an existing Amazon SNS topic policy, you can specify an empty string for the Amazon SNS policy. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_Topic.html">Topic</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SnsTopicConfiguration {
+    /// <p>The JSON policy text that defines who can access an Amazon SNS topic. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub topic_policy: std::option::Option<std::string::String>,
+}
+impl SnsTopicConfiguration {
+    /// <p>The JSON policy text that defines who can access an Amazon SNS topic. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    pub fn topic_policy(&self) -> std::option::Option<&str> {
+        self.topic_policy.as_deref()
+    }
+}
+/// See [`SnsTopicConfiguration`](crate::model::SnsTopicConfiguration).
+pub mod sns_topic_configuration {
+
+    /// A builder for [`SnsTopicConfiguration`](crate::model::SnsTopicConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) topic_policy: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The JSON policy text that defines who can access an Amazon SNS topic. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+        pub fn topic_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_policy = Some(input.into());
+            self
+        }
+        /// <p>The JSON policy text that defines who can access an Amazon SNS topic. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+        pub fn set_topic_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SnsTopicConfiguration`](crate::model::SnsTopicConfiguration).
+        pub fn build(self) -> crate::model::SnsTopicConfiguration {
+            crate::model::SnsTopicConfiguration {
+                topic_policy: self.topic_policy,
+            }
+        }
+    }
+}
+impl SnsTopicConfiguration {
+    /// Creates a new builder-style object to manufacture [`SnsTopicConfiguration`](crate::model::SnsTopicConfiguration).
+    pub fn builder() -> crate::model::sns_topic_configuration::Builder {
+        crate::model::sns_topic_configuration::Builder::default()
     }
 }
 
@@ -7134,6 +7350,324 @@ impl SecretsManagerSecretConfiguration {
     }
 }
 
+/// <p>The proposed access control configuration for an Amazon RDS DB snapshot. You can propose a configuration for a new Amazon RDS DB snapshot or an Amazon RDS DB snapshot that you own by specifying the <code>RdsDbSnapshotAttributeValue</code> and optional KMS encryption key. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html">ModifyDBSnapshotAttribute</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RdsDbSnapshotConfiguration {
+    /// <p>The names and values of manual DB snapshot attributes. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot. The only valid value for <code>attributeName</code> for the attribute map is restore.</p>
+    #[doc(hidden)]
+    pub attributes: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::RdsDbSnapshotAttributeValue>,
+    >,
+    /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl RdsDbSnapshotConfiguration {
+    /// <p>The names and values of manual DB snapshot attributes. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot. The only valid value for <code>attributeName</code> for the attribute map is restore.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::RdsDbSnapshotAttributeValue>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+    /// </ul>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
+/// See [`RdsDbSnapshotConfiguration`](crate::model::RdsDbSnapshotConfiguration).
+pub mod rds_db_snapshot_configuration {
+
+    /// A builder for [`RdsDbSnapshotConfiguration`](crate::model::RdsDbSnapshotConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attributes: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                crate::model::RdsDbSnapshotAttributeValue,
+            >,
+        >,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The names and values of manual DB snapshot attributes. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot. The only valid value for <code>attributeName</code> for the attribute map is restore.</p>
+        pub fn attributes(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::RdsDbSnapshotAttributeValue,
+        ) -> Self {
+            let mut hash_map = self.attributes.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.attributes = Some(hash_map);
+            self
+        }
+        /// <p>The names and values of manual DB snapshot attributes. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot. The only valid value for <code>attributeName</code> for the attribute map is restore.</p>
+        pub fn set_attributes(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::RdsDbSnapshotAttributeValue,
+                >,
+            >,
+        ) -> Self {
+            self.attributes = input;
+            self
+        }
+        /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <ul>
+        /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
+        /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+        /// </ul>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <ul>
+        /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
+        /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+        /// </ul>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RdsDbSnapshotConfiguration`](crate::model::RdsDbSnapshotConfiguration).
+        pub fn build(self) -> crate::model::RdsDbSnapshotConfiguration {
+            crate::model::RdsDbSnapshotConfiguration {
+                attributes: self.attributes,
+                kms_key_id: self.kms_key_id,
+            }
+        }
+    }
+}
+impl RdsDbSnapshotConfiguration {
+    /// Creates a new builder-style object to manufacture [`RdsDbSnapshotConfiguration`](crate::model::RdsDbSnapshotConfiguration).
+    pub fn builder() -> crate::model::rds_db_snapshot_configuration::Builder {
+        crate::model::rds_db_snapshot_configuration::Builder::default()
+    }
+}
+
+/// <p>The name and values of a manual Amazon RDS DB snapshot attribute. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum RdsDbSnapshotAttributeValue {
+    /// <p>The Amazon Web Services account IDs that have access to the manual Amazon RDS DB snapshot. If the value <code>all</code> is specified, then the Amazon RDS DB snapshot is public and can be copied or restored by all Amazon Web Services accounts.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>accountIds</code> in <code>RdsDbSnapshotAttributeValue</code>, then the access preview uses the existing shared <code>accountIds</code> for the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>accountIds</code> in <code>RdsDbSnapshotAttributeValue</code>, then the access preview considers the snapshot without any attributes.</p> </li>
+    /// <li> <p>To propose deletion of an existing shared <code>accountIds</code>, you can specify an empty list for <code>accountIds</code> in the <code>RdsDbSnapshotAttributeValue</code>.</p> </li>
+    /// </ul>
+    AccountIds(std::vec::Vec<std::string::String>),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl RdsDbSnapshotAttributeValue {
+    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`AccountIds`](crate::model::RdsDbSnapshotAttributeValue::AccountIds), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_account_ids(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+        if let RdsDbSnapshotAttributeValue::AccountIds(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`AccountIds`](crate::model::RdsDbSnapshotAttributeValue::AccountIds).
+    pub fn is_account_ids(&self) -> bool {
+        self.as_account_ids().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+/// <p>The proposed access control configuration for an Amazon RDS DB cluster snapshot. You can propose a configuration for a new Amazon RDS DB cluster snapshot or an Amazon RDS DB cluster snapshot that you own by specifying the <code>RdsDbClusterSnapshotAttributeValue</code> and optional KMS encryption key. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterSnapshotAttribute.html">ModifyDBClusterSnapshotAttribute</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RdsDbClusterSnapshotConfiguration {
+    /// <p>The names and values of manual DB cluster snapshot attributes. Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB cluster snapshot. The only valid value for <code>AttributeName</code> for the attribute map is <code>restore</code> </p>
+    #[doc(hidden)]
+    pub attributes: std::option::Option<
+        std::collections::HashMap<
+            std::string::String,
+            crate::model::RdsDbClusterSnapshotAttributeValue,
+        >,
+    >,
+    /// <p>The KMS key identifier for an encrypted Amazon RDS DB cluster snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl RdsDbClusterSnapshotConfiguration {
+    /// <p>The names and values of manual DB cluster snapshot attributes. Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB cluster snapshot. The only valid value for <code>AttributeName</code> for the attribute map is <code>restore</code> </p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::RdsDbClusterSnapshotAttributeValue,
+        >,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The KMS key identifier for an encrypted Amazon RDS DB cluster snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+    /// </ul>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
+/// See [`RdsDbClusterSnapshotConfiguration`](crate::model::RdsDbClusterSnapshotConfiguration).
+pub mod rds_db_cluster_snapshot_configuration {
+
+    /// A builder for [`RdsDbClusterSnapshotConfiguration`](crate::model::RdsDbClusterSnapshotConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attributes: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                crate::model::RdsDbClusterSnapshotAttributeValue,
+            >,
+        >,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The names and values of manual DB cluster snapshot attributes. Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB cluster snapshot. The only valid value for <code>AttributeName</code> for the attribute map is <code>restore</code> </p>
+        pub fn attributes(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::RdsDbClusterSnapshotAttributeValue,
+        ) -> Self {
+            let mut hash_map = self.attributes.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.attributes = Some(hash_map);
+            self
+        }
+        /// <p>The names and values of manual DB cluster snapshot attributes. Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB cluster snapshot. The only valid value for <code>AttributeName</code> for the attribute map is <code>restore</code> </p>
+        pub fn set_attributes(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::RdsDbClusterSnapshotAttributeValue,
+                >,
+            >,
+        ) -> Self {
+            self.attributes = input;
+            self
+        }
+        /// <p>The KMS key identifier for an encrypted Amazon RDS DB cluster snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <ul>
+        /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
+        /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+        /// </ul>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The KMS key identifier for an encrypted Amazon RDS DB cluster snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <ul>
+        /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
+        /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+        /// </ul>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RdsDbClusterSnapshotConfiguration`](crate::model::RdsDbClusterSnapshotConfiguration).
+        pub fn build(self) -> crate::model::RdsDbClusterSnapshotConfiguration {
+            crate::model::RdsDbClusterSnapshotConfiguration {
+                attributes: self.attributes,
+                kms_key_id: self.kms_key_id,
+            }
+        }
+    }
+}
+impl RdsDbClusterSnapshotConfiguration {
+    /// Creates a new builder-style object to manufacture [`RdsDbClusterSnapshotConfiguration`](crate::model::RdsDbClusterSnapshotConfiguration).
+    pub fn builder() -> crate::model::rds_db_cluster_snapshot_configuration::Builder {
+        crate::model::rds_db_cluster_snapshot_configuration::Builder::default()
+    }
+}
+
+/// <p>The values for a manual Amazon RDS DB cluster snapshot attribute.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum RdsDbClusterSnapshotAttributeValue {
+    /// <p>The Amazon Web Services account IDs that have access to the manual Amazon RDS DB cluster snapshot. If the value <code>all</code> is specified, then the Amazon RDS DB cluster snapshot is public and can be copied or restored by all Amazon Web Services accounts.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>accountIds</code> in <code>RdsDbClusterSnapshotAttributeValue</code>, then the access preview uses the existing shared <code>accountIds</code> for the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>accountIds</code> in <code>RdsDbClusterSnapshotAttributeValue</code>, then the access preview considers the snapshot without any attributes.</p> </li>
+    /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>accountIds</code> in the <code>RdsDbClusterSnapshotAttributeValue</code>.</p> </li>
+    /// </ul>
+    AccountIds(std::vec::Vec<std::string::String>),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl RdsDbClusterSnapshotAttributeValue {
+    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`AccountIds`](crate::model::RdsDbClusterSnapshotAttributeValue::AccountIds), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_account_ids(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+        if let RdsDbClusterSnapshotAttributeValue::AccountIds(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`AccountIds`](crate::model::RdsDbClusterSnapshotAttributeValue::AccountIds).
+    pub fn is_account_ids(&self) -> bool {
+        self.as_account_ids().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
 /// <p>Proposed access control configuration for a KMS key. You can propose a configuration for a new KMS key or an existing KMS key that you own by specifying the key policy and KMS grant configuration. If the configuration is for an existing key and you do not specify the key policy, the access preview uses the existing policy for the key. If the access preview is for a new resource and you do not specify the key policy, then the access preview uses the default key policy. The proposed key policy cannot be an empty string. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>. For more information about key policy limits, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource quotas</a>.</p>
 /// <p></p>
 #[non_exhaustive]
@@ -7657,6 +8191,62 @@ impl AsRef<str> for KmsGrantOperation {
     }
 }
 
+/// <p>The proposed access control configuration for an Amazon EFS file system. You can propose a configuration for a new Amazon EFS file system or an existing Amazon EFS file system that you own by specifying the Amazon EFS policy. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/using-fs.html">Using file systems in Amazon EFS</a>.</p>
+/// <ul>
+/// <li> <p>If the configuration is for an existing Amazon EFS file system and you do not specify the Amazon EFS policy, then the access preview uses the existing Amazon EFS policy for the file system.</p> </li>
+/// <li> <p>If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon EFS file system without a policy.</p> </li>
+/// <li> <p>To propose deletion of an existing Amazon EFS file system policy, you can specify an empty string for the Amazon EFS policy.</p> </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EfsFileSystemConfiguration {
+    /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
+    #[doc(hidden)]
+    pub file_system_policy: std::option::Option<std::string::String>,
+}
+impl EfsFileSystemConfiguration {
+    /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
+    pub fn file_system_policy(&self) -> std::option::Option<&str> {
+        self.file_system_policy.as_deref()
+    }
+}
+/// See [`EfsFileSystemConfiguration`](crate::model::EfsFileSystemConfiguration).
+pub mod efs_file_system_configuration {
+
+    /// A builder for [`EfsFileSystemConfiguration`](crate::model::EfsFileSystemConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_system_policy: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
+        pub fn file_system_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_system_policy = Some(input.into());
+            self
+        }
+        /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
+        pub fn set_file_system_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_system_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EfsFileSystemConfiguration`](crate::model::EfsFileSystemConfiguration).
+        pub fn build(self) -> crate::model::EfsFileSystemConfiguration {
+            crate::model::EfsFileSystemConfiguration {
+                file_system_policy: self.file_system_policy,
+            }
+        }
+    }
+}
+impl EfsFileSystemConfiguration {
+    /// Creates a new builder-style object to manufacture [`EfsFileSystemConfiguration`](crate::model::EfsFileSystemConfiguration).
+    pub fn builder() -> crate::model::efs_file_system_configuration::Builder {
+        crate::model::efs_file_system_configuration::Builder::default()
+    }
+}
+
 /// <p>The proposed access control configuration for an IAM role. You can propose a configuration for a new IAM role or an existing IAM role that you own by specifying the trust policy. If the configuration is for a new IAM role, you must specify the trust policy. If the configuration is for an existing IAM role that you own and you do not propose the trust policy, the access preview uses the existing trust policy for the role. The proposed trust policy cannot be an empty string. For more information about role trust policy limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS quotas</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7702,5 +8292,221 @@ impl IamRoleConfiguration {
     /// Creates a new builder-style object to manufacture [`IamRoleConfiguration`](crate::model::IamRoleConfiguration).
     pub fn builder() -> crate::model::iam_role_configuration::Builder {
         crate::model::iam_role_configuration::Builder::default()
+    }
+}
+
+/// <p>The proposed access control configuration for an Amazon ECR repository. You can propose a configuration for a new Amazon ECR repository or an existing Amazon ECR repository that you own by specifying the Amazon ECR policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_Repository.html">Repository</a>.</p>
+/// <ul>
+/// <li> <p>If the configuration is for an existing Amazon ECR repository and you do not specify the Amazon ECR policy, then the access preview uses the existing Amazon ECR policy for the repository.</p> </li>
+/// <li> <p>If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon ECR repository without a policy.</p> </li>
+/// <li> <p>To propose deletion of an existing Amazon ECR repository policy, you can specify an empty string for the Amazon ECR policy.</p> </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EcrRepositoryConfiguration {
+    /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
+    #[doc(hidden)]
+    pub repository_policy: std::option::Option<std::string::String>,
+}
+impl EcrRepositoryConfiguration {
+    /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
+    pub fn repository_policy(&self) -> std::option::Option<&str> {
+        self.repository_policy.as_deref()
+    }
+}
+/// See [`EcrRepositoryConfiguration`](crate::model::EcrRepositoryConfiguration).
+pub mod ecr_repository_configuration {
+
+    /// A builder for [`EcrRepositoryConfiguration`](crate::model::EcrRepositoryConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) repository_policy: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
+        pub fn repository_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository_policy = Some(input.into());
+            self
+        }
+        /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
+        pub fn set_repository_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.repository_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EcrRepositoryConfiguration`](crate::model::EcrRepositoryConfiguration).
+        pub fn build(self) -> crate::model::EcrRepositoryConfiguration {
+            crate::model::EcrRepositoryConfiguration {
+                repository_policy: self.repository_policy,
+            }
+        }
+    }
+}
+impl EcrRepositoryConfiguration {
+    /// Creates a new builder-style object to manufacture [`EcrRepositoryConfiguration`](crate::model::EcrRepositoryConfiguration).
+    pub fn builder() -> crate::model::ecr_repository_configuration::Builder {
+        crate::model::ecr_repository_configuration::Builder::default()
+    }
+}
+
+/// <p>The proposed access control configuration for an Amazon EBS volume snapshot. You can propose a configuration for a new Amazon EBS volume snapshot or an Amazon EBS volume snapshot that you own by specifying the user IDs, groups, and optional KMS encryption key. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySnapshotAttribute.html">ModifySnapshotAttribute</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EbsSnapshotConfiguration {
+    /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>userIds</code>, then the access preview uses the existing shared <code>userIds</code> for the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>userIds</code>, then the access preview considers the snapshot without any <code>userIds</code>.</p> </li>
+    /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>groups</code>, then the access preview uses the existing shared <code>groups</code> for the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>groups</code>, then the access preview considers the snapshot without any <code>groups</code>.</p> </li>
+    /// <li> <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl EbsSnapshotConfiguration {
+    /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>userIds</code>, then the access preview uses the existing shared <code>userIds</code> for the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>userIds</code>, then the access preview considers the snapshot without any <code>userIds</code>.</p> </li>
+    /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p> </li>
+    /// </ul>
+    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_ids.as_deref()
+    }
+    /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>groups</code>, then the access preview uses the existing shared <code>groups</code> for the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>groups</code>, then the access preview considers the snapshot without any <code>groups</code>.</p> </li>
+    /// <li> <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p> </li>
+    /// </ul>
+    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.groups.as_deref()
+    }
+    /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p> </li>
+    /// </ul>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
+/// See [`EbsSnapshotConfiguration`](crate::model::EbsSnapshotConfiguration).
+pub mod ebs_snapshot_configuration {
+
+    /// A builder for [`EbsSnapshotConfiguration`](crate::model::EbsSnapshotConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) groups: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `user_ids`.
+        ///
+        /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
+        ///
+        /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p>
+        /// <ul>
+        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>userIds</code>, then the access preview uses the existing shared <code>userIds</code> for the snapshot.</p> </li>
+        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>userIds</code>, then the access preview considers the snapshot without any <code>userIds</code>.</p> </li>
+        /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p> </li>
+        /// </ul>
+        pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.user_ids.unwrap_or_default();
+            v.push(input.into());
+            self.user_ids = Some(v);
+            self
+        }
+        /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p>
+        /// <ul>
+        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>userIds</code>, then the access preview uses the existing shared <code>userIds</code> for the snapshot.</p> </li>
+        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>userIds</code>, then the access preview considers the snapshot without any <code>userIds</code>.</p> </li>
+        /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p> </li>
+        /// </ul>
+        pub fn set_user_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.user_ids = input;
+            self
+        }
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p>
+        /// <ul>
+        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>groups</code>, then the access preview uses the existing shared <code>groups</code> for the snapshot.</p> </li>
+        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>groups</code>, then the access preview considers the snapshot without any <code>groups</code>.</p> </li>
+        /// <li> <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p> </li>
+        /// </ul>
+        pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.groups.unwrap_or_default();
+            v.push(input.into());
+            self.groups = Some(v);
+            self
+        }
+        /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p>
+        /// <ul>
+        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>groups</code>, then the access preview uses the existing shared <code>groups</code> for the snapshot.</p> </li>
+        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>groups</code>, then the access preview considers the snapshot without any <code>groups</code>.</p> </li>
+        /// <li> <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p> </li>
+        /// </ul>
+        pub fn set_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.groups = input;
+            self
+        }
+        /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <ul>
+        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
+        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p> </li>
+        /// </ul>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <ul>
+        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
+        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p> </li>
+        /// </ul>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EbsSnapshotConfiguration`](crate::model::EbsSnapshotConfiguration).
+        pub fn build(self) -> crate::model::EbsSnapshotConfiguration {
+            crate::model::EbsSnapshotConfiguration {
+                user_ids: self.user_ids,
+                groups: self.groups,
+                kms_key_id: self.kms_key_id,
+            }
+        }
+    }
+}
+impl EbsSnapshotConfiguration {
+    /// Creates a new builder-style object to manufacture [`EbsSnapshotConfiguration`](crate::model::EbsSnapshotConfiguration).
+    pub fn builder() -> crate::model::ebs_snapshot_configuration::Builder {
+        crate::model::ebs_snapshot_configuration::Builder::default()
     }
 }

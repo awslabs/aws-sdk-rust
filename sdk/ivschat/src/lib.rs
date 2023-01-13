@@ -35,8 +35,12 @@
 //! <p>
 //! <b>Resources</b>
 //! </p>
-//! <p>The following resource is part of Amazon IVS Chat:</p>
+//! <p>The following resources are part of Amazon IVS Chat:</p>
 //! <ul>
+//! <li>
+//! <p>
+//! <b>LoggingConfiguration</b> — A configuration that allows customers to store and record sent messages in a chat room. See the Logging Configuration endpoints for more information.</p>
+//! </li>
 //! <li>
 //! <p>
 //! <b>Room</b> — The central Amazon IVS Chat resource through
@@ -141,10 +145,10 @@
 //! <ul>
 //! <li>
 //! <p>
-//! <a>CreateChatToken</a> — Creates an encrypted token that is used to
-//! establish an individual WebSocket connection to a room. The token is valid for one minute,
-//! and a connection (session) established with the token is valid for the specified
-//! duration.</p>
+//! <a>CreateChatToken</a> — Creates an encrypted token that is used by a chat participant to establish an
+//! individual WebSocket chat connection to a room. When the token is used to connect to chat,
+//! the connection is valid for the session duration specified in the request. The token
+//! becomes invalid at the token-expiration timestamp included in the response.</p>
 //! </li>
 //! </ul>
 //! <p>
@@ -172,6 +176,34 @@
 //! <li>
 //! <p>
 //! <a>UpdateRoom</a> — Updates a room’s configuration.</p>
+//! </li>
+//! </ul>
+//! <p>
+//! <b>Logging Configuration Endpoints</b>
+//! </p>
+//! <ul>
+//! <li>
+//! <p>
+//! <a>CreateLoggingConfiguration</a> — Creates a logging configuration that allows clients to store and record sent messages.</p>
+//! </li>
+//! <li>
+//! <p>
+//! <a>DeleteLoggingConfiguration</a> — Deletes the specified logging
+//! configuration.</p>
+//! </li>
+//! <li>
+//! <p>
+//! <a>GetLoggingConfiguration</a> — Gets the specified logging
+//! configuration.</p>
+//! </li>
+//! <li>
+//! <p>
+//! <a>ListLoggingConfigurations</a> — Gets summary information about all
+//! your logging configurations in the AWS region where the API request is processed.</p>
+//! </li>
+//! <li>
+//! <p>
+//! <a>UpdateLoggingConfiguration</a> — Updates a specified logging configuration.</p>
 //! </li>
 //! </ul>
 //! <p>

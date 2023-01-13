@@ -243,6 +243,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribePackagingGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribePackagingGroup::set_id): The ID of a MediaPackage VOD PackagingGroup resource.
     /// - On success, responds with [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput) with field(s):
+    ///   - [`approximate_asset_count(i32)`](crate::output::DescribePackagingGroupOutput::approximate_asset_count): The approximate asset count of the PackagingGroup.
     ///   - [`arn(Option<String>)`](crate::output::DescribePackagingGroupOutput::arn): The ARN of the PackagingGroup.
     ///   - [`authorization(Option<Authorization>)`](crate::output::DescribePackagingGroupOutput::authorization): CDN Authorization credentials
     ///   - [`domain_name(Option<String>)`](crate::output::DescribePackagingGroupOutput::domain_name): The fully qualified domain name for Assets in the PackagingGroup.
@@ -332,6 +333,7 @@ impl Client {
     ///   - [`authorization(Authorization)`](crate::client::fluent_builders::UpdatePackagingGroup::authorization) / [`set_authorization(Option<Authorization>)`](crate::client::fluent_builders::UpdatePackagingGroup::set_authorization): CDN Authorization credentials
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdatePackagingGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdatePackagingGroup::set_id): The ID of a MediaPackage VOD PackagingGroup resource.
     /// - On success, responds with [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput) with field(s):
+    ///   - [`approximate_asset_count(i32)`](crate::output::UpdatePackagingGroupOutput::approximate_asset_count): The approximate asset count of the PackagingGroup.
     ///   - [`arn(Option<String>)`](crate::output::UpdatePackagingGroupOutput::arn): The ARN of the PackagingGroup.
     ///   - [`authorization(Option<Authorization>)`](crate::output::UpdatePackagingGroupOutput::authorization): CDN Authorization credentials
     ///   - [`domain_name(Option<String>)`](crate::output::UpdatePackagingGroupOutput::domain_name): The fully qualified domain name for Assets in the PackagingGroup.

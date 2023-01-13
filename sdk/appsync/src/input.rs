@@ -1140,6 +1140,8 @@ pub mod create_function_input {
         pub(crate) function_version: std::option::Option<std::string::String>,
         pub(crate) sync_config: std::option::Option<crate::model::SyncConfig>,
         pub(crate) max_batch_size: std::option::Option<i32>,
+        pub(crate) runtime: std::option::Option<crate::model::AppSyncRuntime>,
+        pub(crate) code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The GraphQL API ID.</p>
@@ -1211,12 +1213,12 @@ pub mod create_function_input {
             self.response_mapping_template = input;
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
         pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_version = Some(input.into());
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
         pub fn set_function_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1249,6 +1251,29 @@ pub mod create_function_input {
             self.max_batch_size = input;
             self
         }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn runtime(mut self, input: crate::model::AppSyncRuntime) -> Self {
+            self.runtime = Some(input);
+            self
+        }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn set_runtime(
+            mut self,
+            input: std::option::Option<crate::model::AppSyncRuntime>,
+        ) -> Self {
+            self.runtime = input;
+            self
+        }
+        /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFunctionInput`](crate::input::CreateFunctionInput).
         pub fn build(
             self,
@@ -1264,6 +1289,8 @@ pub mod create_function_input {
                 function_version: self.function_version,
                 sync_config: self.sync_config,
                 max_batch_size: self.max_batch_size.unwrap_or_default(),
+                runtime: self.runtime,
+                code: self.code,
             })
         }
     }
@@ -1704,6 +1731,8 @@ pub mod create_resolver_input {
         pub(crate) sync_config: std::option::Option<crate::model::SyncConfig>,
         pub(crate) caching_config: std::option::Option<crate::model::CachingConfig>,
         pub(crate) max_batch_size: std::option::Option<i32>,
+        pub(crate) runtime: std::option::Option<crate::model::AppSyncRuntime>,
+        pub(crate) code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
@@ -1846,6 +1875,29 @@ pub mod create_resolver_input {
             self.max_batch_size = input;
             self
         }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn runtime(mut self, input: crate::model::AppSyncRuntime) -> Self {
+            self.runtime = Some(input);
+            self
+        }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn set_runtime(
+            mut self,
+            input: std::option::Option<crate::model::AppSyncRuntime>,
+        ) -> Self {
+            self.runtime = input;
+            self
+        }
+        /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateResolverInput`](crate::input::CreateResolverInput).
         pub fn build(
             self,
@@ -1863,6 +1915,8 @@ pub mod create_resolver_input {
                 sync_config: self.sync_config,
                 caching_config: self.caching_config,
                 max_batch_size: self.max_batch_size.unwrap_or_default(),
+                runtime: self.runtime,
+                code: self.code,
             })
         }
     }
@@ -3747,6 +3801,185 @@ impl DisassociateApiInput {
     /// Creates a new builder-style object to manufacture [`DisassociateApiInput`](crate::input::DisassociateApiInput).
     pub fn builder() -> crate::input::disassociate_api_input::Builder {
         crate::input::disassociate_api_input::Builder::default()
+    }
+}
+
+/// See [`EvaluateCodeInput`](crate::input::EvaluateCodeInput).
+pub mod evaluate_code_input {
+
+    /// A builder for [`EvaluateCodeInput`](crate::input::EvaluateCodeInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) runtime: std::option::Option<crate::model::AppSyncRuntime>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) context: std::option::Option<std::string::String>,
+        pub(crate) function: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
+        pub fn runtime(mut self, input: crate::model::AppSyncRuntime) -> Self {
+            self.runtime = Some(input);
+            self
+        }
+        /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
+        pub fn set_runtime(
+            mut self,
+            input: std::option::Option<crate::model::AppSyncRuntime>,
+        ) -> Self {
+            self.runtime = input;
+            self
+        }
+        /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+        pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.context = Some(input.into());
+            self
+        }
+        /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+        pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.context = input;
+            self
+        }
+        /// <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
+        pub fn function(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function = Some(input.into());
+            self
+        }
+        /// <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
+        pub fn set_function(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EvaluateCodeInput`](crate::input::EvaluateCodeInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::EvaluateCodeInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::EvaluateCodeInput {
+                runtime: self.runtime,
+                code: self.code,
+                context: self.context,
+                function: self.function,
+            })
+        }
+    }
+}
+impl EvaluateCodeInput {
+    /// Consumes the builder and constructs an Operation<[`EvaluateCode`](crate::operation::EvaluateCode)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::EvaluateCode,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::EvaluateCodeInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/v1/dataplane-evaluatecode").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::EvaluateCodeInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_evaluate_code(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::EvaluateCode::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "EvaluateCode",
+            "appsync",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`EvaluateCodeInput`](crate::input::EvaluateCodeInput).
+    pub fn builder() -> crate::input::evaluate_code_input::Builder {
+        crate::input::evaluate_code_input::Builder::default()
     }
 }
 
@@ -9030,6 +9263,8 @@ pub mod update_function_input {
         pub(crate) function_version: std::option::Option<std::string::String>,
         pub(crate) sync_config: std::option::Option<crate::model::SyncConfig>,
         pub(crate) max_batch_size: std::option::Option<i32>,
+        pub(crate) runtime: std::option::Option<crate::model::AppSyncRuntime>,
+        pub(crate) code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The GraphQL API ID.</p>
@@ -9111,12 +9346,12 @@ pub mod update_function_input {
             self.response_mapping_template = input;
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
         pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_version = Some(input.into());
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
         pub fn set_function_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9149,6 +9384,29 @@ pub mod update_function_input {
             self.max_batch_size = input;
             self
         }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn runtime(mut self, input: crate::model::AppSyncRuntime) -> Self {
+            self.runtime = Some(input);
+            self
+        }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn set_runtime(
+            mut self,
+            input: std::option::Option<crate::model::AppSyncRuntime>,
+        ) -> Self {
+            self.runtime = input;
+            self
+        }
+        /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFunctionInput`](crate::input::UpdateFunctionInput).
         pub fn build(
             self,
@@ -9165,6 +9423,8 @@ pub mod update_function_input {
                 function_version: self.function_version,
                 sync_config: self.sync_config,
                 max_batch_size: self.max_batch_size.unwrap_or_default(),
+                runtime: self.runtime,
+                code: self.code,
             })
         }
     }
@@ -9632,6 +9892,8 @@ pub mod update_resolver_input {
         pub(crate) sync_config: std::option::Option<crate::model::SyncConfig>,
         pub(crate) caching_config: std::option::Option<crate::model::CachingConfig>,
         pub(crate) max_batch_size: std::option::Option<i32>,
+        pub(crate) runtime: std::option::Option<crate::model::AppSyncRuntime>,
+        pub(crate) code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The API ID.</p>
@@ -9774,6 +10036,29 @@ pub mod update_resolver_input {
             self.max_batch_size = input;
             self
         }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn runtime(mut self, input: crate::model::AppSyncRuntime) -> Self {
+            self.runtime = Some(input);
+            self
+        }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn set_runtime(
+            mut self,
+            input: std::option::Option<crate::model::AppSyncRuntime>,
+        ) -> Self {
+            self.runtime = input;
+            self
+        }
+        /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateResolverInput`](crate::input::UpdateResolverInput).
         pub fn build(
             self,
@@ -9791,6 +10076,8 @@ pub mod update_resolver_input {
                 sync_config: self.sync_config,
                 caching_config: self.caching_config,
                 max_batch_size: self.max_batch_size.unwrap_or_default(),
+                runtime: self.runtime,
+                code: self.code,
             })
         }
     }
@@ -10271,6 +10558,12 @@ pub struct UpdateResolverInput {
     /// <p>The maximum batching size for a resolver.</p>
     #[doc(hidden)]
     pub max_batch_size: i32,
+    /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    #[doc(hidden)]
+    pub runtime: std::option::Option<crate::model::AppSyncRuntime>,
+    /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    #[doc(hidden)]
+    pub code: std::option::Option<std::string::String>,
 }
 impl UpdateResolverInput {
     /// <p>The API ID.</p>
@@ -10322,6 +10615,14 @@ impl UpdateResolverInput {
     /// <p>The maximum batching size for a resolver.</p>
     pub fn max_batch_size(&self) -> i32 {
         self.max_batch_size
+    }
+    /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    pub fn runtime(&self) -> std::option::Option<&crate::model::AppSyncRuntime> {
+        self.runtime.as_ref()
+    }
+    /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
     }
 }
 
@@ -10428,7 +10729,7 @@ pub struct UpdateFunctionInput {
     /// <p>The <code>Function</code> request mapping template.</p>
     #[doc(hidden)]
     pub response_mapping_template: std::option::Option<std::string::String>,
-    /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+    /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
     #[doc(hidden)]
     pub function_version: std::option::Option<std::string::String>,
     /// <p>Describes a Sync configuration for a resolver.</p>
@@ -10438,6 +10739,12 @@ pub struct UpdateFunctionInput {
     /// <p>The maximum batching size for a resolver.</p>
     #[doc(hidden)]
     pub max_batch_size: i32,
+    /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    #[doc(hidden)]
+    pub runtime: std::option::Option<crate::model::AppSyncRuntime>,
+    /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    #[doc(hidden)]
+    pub code: std::option::Option<std::string::String>,
 }
 impl UpdateFunctionInput {
     /// <p>The GraphQL API ID.</p>
@@ -10468,7 +10775,7 @@ impl UpdateFunctionInput {
     pub fn response_mapping_template(&self) -> std::option::Option<&str> {
         self.response_mapping_template.as_deref()
     }
-    /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+    /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
     pub fn function_version(&self) -> std::option::Option<&str> {
         self.function_version.as_deref()
     }
@@ -10480,6 +10787,14 @@ impl UpdateFunctionInput {
     /// <p>The maximum batching size for a resolver.</p>
     pub fn max_batch_size(&self) -> i32 {
         self.max_batch_size
+    }
+    /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    pub fn runtime(&self) -> std::option::Option<&crate::model::AppSyncRuntime> {
+        self.runtime.as_ref()
+    }
+    /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
     }
 }
 
@@ -11294,6 +11609,42 @@ impl EvaluateMappingTemplateInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EvaluateCodeInput {
+    /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
+    #[doc(hidden)]
+    pub runtime: std::option::Option<crate::model::AppSyncRuntime>,
+    /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    #[doc(hidden)]
+    pub code: std::option::Option<std::string::String>,
+    /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+    #[doc(hidden)]
+    pub context: std::option::Option<std::string::String>,
+    /// <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
+    #[doc(hidden)]
+    pub function: std::option::Option<std::string::String>,
+}
+impl EvaluateCodeInput {
+    /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
+    pub fn runtime(&self) -> std::option::Option<&crate::model::AppSyncRuntime> {
+        self.runtime.as_ref()
+    }
+    /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+    pub fn context(&self) -> std::option::Option<&str> {
+        self.context.as_deref()
+    }
+    /// <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
+    pub fn function(&self) -> std::option::Option<&str> {
+        self.function.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateApiInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -11542,6 +11893,12 @@ pub struct CreateResolverInput {
     /// <p>The maximum batching size for a resolver.</p>
     #[doc(hidden)]
     pub max_batch_size: i32,
+    /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    #[doc(hidden)]
+    pub runtime: std::option::Option<crate::model::AppSyncRuntime>,
+    /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    #[doc(hidden)]
+    pub code: std::option::Option<std::string::String>,
 }
 impl CreateResolverInput {
     /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
@@ -11593,6 +11950,14 @@ impl CreateResolverInput {
     /// <p>The maximum batching size for a resolver.</p>
     pub fn max_batch_size(&self) -> i32 {
         self.max_batch_size
+    }
+    /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    pub fn runtime(&self) -> std::option::Option<&crate::model::AppSyncRuntime> {
+        self.runtime.as_ref()
+    }
+    /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
     }
 }
 
@@ -11700,7 +12065,7 @@ pub struct CreateFunctionInput {
     /// <p>The <code>Function</code> response mapping template.</p>
     #[doc(hidden)]
     pub response_mapping_template: std::option::Option<std::string::String>,
-    /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+    /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
     #[doc(hidden)]
     pub function_version: std::option::Option<std::string::String>,
     /// <p>Describes a Sync configuration for a resolver.</p>
@@ -11710,6 +12075,12 @@ pub struct CreateFunctionInput {
     /// <p>The maximum batching size for a resolver.</p>
     #[doc(hidden)]
     pub max_batch_size: i32,
+    /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    #[doc(hidden)]
+    pub runtime: std::option::Option<crate::model::AppSyncRuntime>,
+    /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    #[doc(hidden)]
+    pub code: std::option::Option<std::string::String>,
 }
 impl CreateFunctionInput {
     /// <p>The GraphQL API ID.</p>
@@ -11736,7 +12107,7 @@ impl CreateFunctionInput {
     pub fn response_mapping_template(&self) -> std::option::Option<&str> {
         self.response_mapping_template.as_deref()
     }
-    /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+    /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
     pub fn function_version(&self) -> std::option::Option<&str> {
         self.function_version.as_deref()
     }
@@ -11748,6 +12119,14 @@ impl CreateFunctionInput {
     /// <p>The maximum batching size for a resolver.</p>
     pub fn max_batch_size(&self) -> i32 {
         self.max_batch_size
+    }
+    /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    pub fn runtime(&self) -> std::option::Option<&crate::model::AppSyncRuntime> {
+        self.runtime.as_ref()
+    }
+    /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
     }
 }
 

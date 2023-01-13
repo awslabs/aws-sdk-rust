@@ -669,6 +669,82 @@ impl ListInvitationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListAccessorsOutput {
+    /// <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
+    #[doc(hidden)]
+    pub accessors: std::option::Option<std::vec::Vec<crate::model::AccessorSummary>>,
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAccessorsOutput {
+    /// <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
+    pub fn accessors(&self) -> std::option::Option<&[crate::model::AccessorSummary]> {
+        self.accessors.as_deref()
+    }
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListAccessorsOutput`](crate::output::ListAccessorsOutput).
+pub mod list_accessors_output {
+
+    /// A builder for [`ListAccessorsOutput`](crate::output::ListAccessorsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) accessors: std::option::Option<std::vec::Vec<crate::model::AccessorSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `accessors`.
+        ///
+        /// To override the contents of this collection use [`set_accessors`](Self::set_accessors).
+        ///
+        /// <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
+        pub fn accessors(mut self, input: crate::model::AccessorSummary) -> Self {
+            let mut v = self.accessors.unwrap_or_default();
+            v.push(input);
+            self.accessors = Some(v);
+            self
+        }
+        /// <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
+        pub fn set_accessors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AccessorSummary>>,
+        ) -> Self {
+            self.accessors = input;
+            self
+        }
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAccessorsOutput`](crate::output::ListAccessorsOutput).
+        pub fn build(self) -> crate::output::ListAccessorsOutput {
+            crate::output::ListAccessorsOutput {
+                accessors: self.accessors,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAccessorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAccessorsOutput`](crate::output::ListAccessorsOutput).
+    pub fn builder() -> crate::output::list_accessors_output::Builder {
+        crate::output::list_accessors_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProposalOutput {
     /// <p>Information about a proposal.</p>
     #[doc(hidden)]
@@ -859,6 +935,54 @@ impl GetMemberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetAccessorOutput {
+    /// <p>The properties of the accessor.</p>
+    #[doc(hidden)]
+    pub accessor: std::option::Option<crate::model::Accessor>,
+}
+impl GetAccessorOutput {
+    /// <p>The properties of the accessor.</p>
+    pub fn accessor(&self) -> std::option::Option<&crate::model::Accessor> {
+        self.accessor.as_ref()
+    }
+}
+/// See [`GetAccessorOutput`](crate::output::GetAccessorOutput).
+pub mod get_accessor_output {
+
+    /// A builder for [`GetAccessorOutput`](crate::output::GetAccessorOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) accessor: std::option::Option<crate::model::Accessor>,
+    }
+    impl Builder {
+        /// <p>The properties of the accessor.</p>
+        pub fn accessor(mut self, input: crate::model::Accessor) -> Self {
+            self.accessor = Some(input);
+            self
+        }
+        /// <p>The properties of the accessor.</p>
+        pub fn set_accessor(mut self, input: std::option::Option<crate::model::Accessor>) -> Self {
+            self.accessor = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetAccessorOutput`](crate::output::GetAccessorOutput).
+        pub fn build(self) -> crate::output::GetAccessorOutput {
+            crate::output::GetAccessorOutput {
+                accessor: self.accessor,
+            }
+        }
+    }
+}
+impl GetAccessorOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccessorOutput`](crate::output::GetAccessorOutput).
+    pub fn builder() -> crate::output::get_accessor_output::Builder {
+        crate::output::get_accessor_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNodeOutput {}
 /// See [`DeleteNodeOutput`](crate::output::DeleteNodeOutput).
 pub mod delete_node_output {
@@ -901,6 +1025,30 @@ impl DeleteMemberOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMemberOutput`](crate::output::DeleteMemberOutput).
     pub fn builder() -> crate::output::delete_member_output::Builder {
         crate::output::delete_member_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteAccessorOutput {}
+/// See [`DeleteAccessorOutput`](crate::output::DeleteAccessorOutput).
+pub mod delete_accessor_output {
+
+    /// A builder for [`DeleteAccessorOutput`](crate::output::DeleteAccessorOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteAccessorOutput`](crate::output::DeleteAccessorOutput).
+        pub fn build(self) -> crate::output::DeleteAccessorOutput {
+            crate::output::DeleteAccessorOutput {}
+        }
+    }
+}
+impl DeleteAccessorOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAccessorOutput`](crate::output::DeleteAccessorOutput).
+    pub fn builder() -> crate::output::delete_accessor_output::Builder {
+        crate::output::delete_accessor_output::Builder::default()
     }
 }
 
@@ -1112,5 +1260,75 @@ impl CreateMemberOutput {
     /// Creates a new builder-style object to manufacture [`CreateMemberOutput`](crate::output::CreateMemberOutput).
     pub fn builder() -> crate::output::create_member_output::Builder {
         crate::output::create_member_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateAccessorOutput {
+    /// <p>The unique identifier of the accessor.</p>
+    #[doc(hidden)]
+    pub accessor_id: std::option::Option<std::string::String>,
+    /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
+    #[doc(hidden)]
+    pub billing_token: std::option::Option<std::string::String>,
+}
+impl CreateAccessorOutput {
+    /// <p>The unique identifier of the accessor.</p>
+    pub fn accessor_id(&self) -> std::option::Option<&str> {
+        self.accessor_id.as_deref()
+    }
+    /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
+    pub fn billing_token(&self) -> std::option::Option<&str> {
+        self.billing_token.as_deref()
+    }
+}
+/// See [`CreateAccessorOutput`](crate::output::CreateAccessorOutput).
+pub mod create_accessor_output {
+
+    /// A builder for [`CreateAccessorOutput`](crate::output::CreateAccessorOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) accessor_id: std::option::Option<std::string::String>,
+        pub(crate) billing_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the accessor.</p>
+        pub fn accessor_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.accessor_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the accessor.</p>
+        pub fn set_accessor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.accessor_id = input;
+            self
+        }
+        /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
+        pub fn billing_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.billing_token = Some(input.into());
+            self
+        }
+        /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
+        pub fn set_billing_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.billing_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateAccessorOutput`](crate::output::CreateAccessorOutput).
+        pub fn build(self) -> crate::output::CreateAccessorOutput {
+            crate::output::CreateAccessorOutput {
+                accessor_id: self.accessor_id,
+                billing_token: self.billing_token,
+            }
+        }
+    }
+}
+impl CreateAccessorOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAccessorOutput`](crate::output::CreateAccessorOutput).
+    pub fn builder() -> crate::output::create_accessor_output::Builder {
+        crate::output::create_accessor_output::Builder::default()
     }
 }

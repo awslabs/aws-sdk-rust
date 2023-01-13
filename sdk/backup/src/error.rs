@@ -1231,6 +1231,158 @@ impl DependencyFailureException {
     }
 }
 
+/// Error type for the `CancelLegalHold` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CancelLegalHoldError {
+    /// Kind of error that occurred.
+    pub kind: CancelLegalHoldErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CancelLegalHoldError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelLegalHoldErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CancelLegalHold` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CancelLegalHoldErrorKind {
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>Backup is already performing an action on this recovery point. It can't perform the action you requested until the first action finishes. Try again later.</p>
+    InvalidResourceStateException(crate::error::InvalidResourceStateException),
+    /// <p>Indicates that a required parameter is missing.</p>
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    /// <p>A resource that is required for the action doesn't exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request failed due to a temporary failure of the server.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CancelLegalHoldError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CancelLegalHoldErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            CancelLegalHoldErrorKind::InvalidResourceStateException(_inner) => _inner.fmt(f),
+            CancelLegalHoldErrorKind::MissingParameterValueException(_inner) => _inner.fmt(f),
+            CancelLegalHoldErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CancelLegalHoldErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CancelLegalHoldErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CancelLegalHoldError {
+    fn code(&self) -> Option<&str> {
+        CancelLegalHoldError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CancelLegalHoldError {
+    /// Creates a new `CancelLegalHoldError`.
+    pub fn new(kind: CancelLegalHoldErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CancelLegalHoldError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CancelLegalHoldErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CancelLegalHoldError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CancelLegalHoldErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CancelLegalHoldErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelLegalHoldErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelLegalHoldErrorKind::InvalidResourceStateException`.
+    pub fn is_invalid_resource_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelLegalHoldErrorKind::InvalidResourceStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelLegalHoldErrorKind::MissingParameterValueException`.
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelLegalHoldErrorKind::MissingParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelLegalHoldErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelLegalHoldErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelLegalHoldErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelLegalHoldErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for CancelLegalHoldError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CancelLegalHoldErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            CancelLegalHoldErrorKind::InvalidResourceStateException(_inner) => Some(_inner),
+            CancelLegalHoldErrorKind::MissingParameterValueException(_inner) => Some(_inner),
+            CancelLegalHoldErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CancelLegalHoldErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CancelLegalHoldErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `CreateBackupPlan` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1839,6 +1991,147 @@ impl std::error::Error for CreateFrameworkError {
             CreateFrameworkErrorKind::MissingParameterValueException(_inner) => Some(_inner),
             CreateFrameworkErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateFrameworkErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `CreateLegalHold` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateLegalHoldError {
+    /// Kind of error that occurred.
+    pub kind: CreateLegalHoldErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateLegalHoldError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateLegalHoldErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateLegalHold` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateLegalHoldErrorKind {
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>Indicates that a required parameter is missing.</p>
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    /// <p>The request failed due to a temporary failure of the server.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateLegalHoldError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateLegalHoldErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            CreateLegalHoldErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateLegalHoldErrorKind::MissingParameterValueException(_inner) => _inner.fmt(f),
+            CreateLegalHoldErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateLegalHoldErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateLegalHoldError {
+    fn code(&self) -> Option<&str> {
+        CreateLegalHoldError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateLegalHoldError {
+    /// Creates a new `CreateLegalHoldError`.
+    pub fn new(kind: CreateLegalHoldErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateLegalHoldError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateLegalHoldErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateLegalHoldError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateLegalHoldErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateLegalHoldErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLegalHoldErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLegalHoldErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLegalHoldErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLegalHoldErrorKind::MissingParameterValueException`.
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLegalHoldErrorKind::MissingParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLegalHoldErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLegalHoldErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for CreateLegalHoldError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateLegalHoldErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            CreateLegalHoldErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateLegalHoldErrorKind::MissingParameterValueException(_inner) => Some(_inner),
+            CreateLegalHoldErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateLegalHoldErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5136,6 +5429,187 @@ impl std::error::Error for DisassociateRecoveryPointError {
     }
 }
 
+/// Error type for the `DisassociateRecoveryPointFromParent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DisassociateRecoveryPointFromParentError {
+    /// Kind of error that occurred.
+    pub kind: DisassociateRecoveryPointFromParentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateRecoveryPointFromParentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateRecoveryPointFromParentErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DisassociateRecoveryPointFromParent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisassociateRecoveryPointFromParentErrorKind {
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>Indicates that a required parameter is missing.</p>
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    /// <p>A resource that is required for the action doesn't exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request failed due to a temporary failure of the server.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DisassociateRecoveryPointFromParentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisassociateRecoveryPointFromParentErrorKind::InvalidParameterValueException(
+                _inner,
+            ) => _inner.fmt(f),
+            DisassociateRecoveryPointFromParentErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateRecoveryPointFromParentErrorKind::MissingParameterValueException(
+                _inner,
+            ) => _inner.fmt(f),
+            DisassociateRecoveryPointFromParentErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateRecoveryPointFromParentErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateRecoveryPointFromParentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DisassociateRecoveryPointFromParentError {
+    fn code(&self) -> Option<&str> {
+        DisassociateRecoveryPointFromParentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisassociateRecoveryPointFromParentError {
+    /// Creates a new `DisassociateRecoveryPointFromParentError`.
+    pub fn new(
+        kind: DisassociateRecoveryPointFromParentErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DisassociateRecoveryPointFromParentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisassociateRecoveryPointFromParentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DisassociateRecoveryPointFromParentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisassociateRecoveryPointFromParentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DisassociateRecoveryPointFromParentErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateRecoveryPointFromParentErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateRecoveryPointFromParentErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateRecoveryPointFromParentErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateRecoveryPointFromParentErrorKind::MissingParameterValueException`.
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateRecoveryPointFromParentErrorKind::MissingParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateRecoveryPointFromParentErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateRecoveryPointFromParentErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateRecoveryPointFromParentErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateRecoveryPointFromParentErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DisassociateRecoveryPointFromParentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisassociateRecoveryPointFromParentErrorKind::InvalidParameterValueException(
+                _inner,
+            ) => Some(_inner),
+            DisassociateRecoveryPointFromParentErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateRecoveryPointFromParentErrorKind::MissingParameterValueException(
+                _inner,
+            ) => Some(_inner),
+            DisassociateRecoveryPointFromParentErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateRecoveryPointFromParentErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateRecoveryPointFromParentErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ExportBackupPlanTemplate` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6202,6 +6676,147 @@ impl std::error::Error for GetBackupVaultNotificationsError {
                 Some(_inner)
             }
             GetBackupVaultNotificationsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetLegalHold` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetLegalHoldError {
+    /// Kind of error that occurred.
+    pub kind: GetLegalHoldErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetLegalHoldError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLegalHoldErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetLegalHold` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetLegalHoldErrorKind {
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>Indicates that a required parameter is missing.</p>
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    /// <p>A resource that is required for the action doesn't exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request failed due to a temporary failure of the server.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetLegalHoldError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetLegalHoldErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            GetLegalHoldErrorKind::MissingParameterValueException(_inner) => _inner.fmt(f),
+            GetLegalHoldErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetLegalHoldErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            GetLegalHoldErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetLegalHoldError {
+    fn code(&self) -> Option<&str> {
+        GetLegalHoldError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetLegalHoldError {
+    /// Creates a new `GetLegalHoldError`.
+    pub fn new(kind: GetLegalHoldErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetLegalHoldError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetLegalHoldErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetLegalHoldError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetLegalHoldErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetLegalHoldErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLegalHoldErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLegalHoldErrorKind::MissingParameterValueException`.
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLegalHoldErrorKind::MissingParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLegalHoldErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLegalHoldErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLegalHoldErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLegalHoldErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for GetLegalHoldError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetLegalHoldErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            GetLegalHoldErrorKind::MissingParameterValueException(_inner) => Some(_inner),
+            GetLegalHoldErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetLegalHoldErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            GetLegalHoldErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7574,6 +8189,125 @@ impl std::error::Error for ListFrameworksError {
     }
 }
 
+/// Error type for the `ListLegalHolds` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListLegalHoldsError {
+    /// Kind of error that occurred.
+    pub kind: ListLegalHoldsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListLegalHoldsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListLegalHoldsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListLegalHolds` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListLegalHoldsErrorKind {
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The request failed due to a temporary failure of the server.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListLegalHoldsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListLegalHoldsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            ListLegalHoldsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListLegalHoldsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListLegalHoldsError {
+    fn code(&self) -> Option<&str> {
+        ListLegalHoldsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListLegalHoldsError {
+    /// Creates a new `ListLegalHoldsError`.
+    pub fn new(kind: ListLegalHoldsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListLegalHoldsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListLegalHoldsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListLegalHoldsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListLegalHoldsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListLegalHoldsErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLegalHoldsErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListLegalHoldsErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLegalHoldsErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for ListLegalHoldsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListLegalHoldsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListLegalHoldsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListLegalHoldsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListProtectedResources` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7865,6 +8599,157 @@ impl std::error::Error for ListRecoveryPointsByBackupVaultError {
     }
 }
 
+/// Error type for the `ListRecoveryPointsByLegalHold` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListRecoveryPointsByLegalHoldError {
+    /// Kind of error that occurred.
+    pub kind: ListRecoveryPointsByLegalHoldErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListRecoveryPointsByLegalHoldError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListRecoveryPointsByLegalHoldErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListRecoveryPointsByLegalHold` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListRecoveryPointsByLegalHoldErrorKind {
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>Indicates that a required parameter is missing.</p>
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    /// <p>The request failed due to a temporary failure of the server.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListRecoveryPointsByLegalHoldError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListRecoveryPointsByLegalHoldErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListRecoveryPointsByLegalHoldErrorKind::MissingParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListRecoveryPointsByLegalHoldErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListRecoveryPointsByLegalHoldErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListRecoveryPointsByLegalHoldError {
+    fn code(&self) -> Option<&str> {
+        ListRecoveryPointsByLegalHoldError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListRecoveryPointsByLegalHoldError {
+    /// Creates a new `ListRecoveryPointsByLegalHoldError`.
+    pub fn new(
+        kind: ListRecoveryPointsByLegalHoldErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListRecoveryPointsByLegalHoldError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListRecoveryPointsByLegalHoldErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListRecoveryPointsByLegalHoldError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListRecoveryPointsByLegalHoldErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListRecoveryPointsByLegalHoldErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRecoveryPointsByLegalHoldErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRecoveryPointsByLegalHoldErrorKind::MissingParameterValueException`.
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRecoveryPointsByLegalHoldErrorKind::MissingParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRecoveryPointsByLegalHoldErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRecoveryPointsByLegalHoldErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for ListRecoveryPointsByLegalHoldError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListRecoveryPointsByLegalHoldErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            ListRecoveryPointsByLegalHoldErrorKind::MissingParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            ListRecoveryPointsByLegalHoldErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            ListRecoveryPointsByLegalHoldErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListRecoveryPointsByResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8051,6 +8936,8 @@ impl aws_smithy_http::result::CreateUnhandledError for ListReportJobsError {
 pub enum ListReportJobsErrorKind {
     /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>A resource that is required for the action doesn't exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     ///
@@ -8067,6 +8954,7 @@ impl std::fmt::Display for ListReportJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ListReportJobsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            ListReportJobsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ListReportJobsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             ListReportJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -8129,6 +9017,13 @@ impl ListReportJobsError {
             ListReportJobsErrorKind::InvalidParameterValueException(_)
         )
     }
+    /// Returns `true` if the error kind is `ListReportJobsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReportJobsErrorKind::ResourceNotFoundException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListReportJobsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
@@ -8141,6 +9036,7 @@ impl std::error::Error for ListReportJobsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListReportJobsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListReportJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListReportJobsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListReportJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }

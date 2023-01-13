@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FairsharePolicy {
-    /// <p>The time period to use to calculate a fair share percentage for each fair share identifier in use, in seconds. A value of zero (0) indicates that only current usage should be measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
+    /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
     #[doc(hidden)]
     pub share_decay_seconds: std::option::Option<i32>,
-    /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that have not yet been used.</p>
+    /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that aren't already used.</p>
     /// <p>The reserved ratio is <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where <code> <i>ActiveFairShares</i> </code> is the number of active fair share identifiers.</p>
-    /// <p>For example, a <code>computeReservation</code> value of 50 indicates that Batch should reserve 50% of the maximum available vCPU if there is only one fair share identifier, 25% if there are two fair share identifiers, and 12.5% if there are three fair share identifiers. A <code>computeReservation</code> value of 25 indicates that Batch should reserve 25% of the maximum available vCPU if there is only one fair share identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share identifiers.</p>
+    /// <p>For example, a <code>computeReservation</code> value of 50 indicates that Batchreserves 50% of the maximum available vCPU if there's only one fair share identifier. It reserves 25% if there are two fair share identifiers. It reserves 12.5% if there are three fair share identifiers. A <code>computeReservation</code> value of 25 indicates that Batch should reserve 25% of the maximum available vCPU if there's only one fair share identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share identifiers.</p>
     /// <p>The minimum value is 0 and the maximum value is 99.</p>
     #[doc(hidden)]
     pub compute_reservation: std::option::Option<i32>,
@@ -18,13 +18,13 @@ pub struct FairsharePolicy {
     pub share_distribution: std::option::Option<std::vec::Vec<crate::model::ShareAttributes>>,
 }
 impl FairsharePolicy {
-    /// <p>The time period to use to calculate a fair share percentage for each fair share identifier in use, in seconds. A value of zero (0) indicates that only current usage should be measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
+    /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
     pub fn share_decay_seconds(&self) -> std::option::Option<i32> {
         self.share_decay_seconds
     }
-    /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that have not yet been used.</p>
+    /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that aren't already used.</p>
     /// <p>The reserved ratio is <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where <code> <i>ActiveFairShares</i> </code> is the number of active fair share identifiers.</p>
-    /// <p>For example, a <code>computeReservation</code> value of 50 indicates that Batch should reserve 50% of the maximum available vCPU if there is only one fair share identifier, 25% if there are two fair share identifiers, and 12.5% if there are three fair share identifiers. A <code>computeReservation</code> value of 25 indicates that Batch should reserve 25% of the maximum available vCPU if there is only one fair share identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share identifiers.</p>
+    /// <p>For example, a <code>computeReservation</code> value of 50 indicates that Batchreserves 50% of the maximum available vCPU if there's only one fair share identifier. It reserves 25% if there are two fair share identifiers. It reserves 12.5% if there are three fair share identifiers. A <code>computeReservation</code> value of 25 indicates that Batch should reserve 25% of the maximum available vCPU if there's only one fair share identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share identifiers.</p>
     /// <p>The minimum value is 0 and the maximum value is 99.</p>
     pub fn compute_reservation(&self) -> std::option::Option<i32> {
         self.compute_reservation
@@ -46,27 +46,27 @@ pub mod fairshare_policy {
             std::option::Option<std::vec::Vec<crate::model::ShareAttributes>>,
     }
     impl Builder {
-        /// <p>The time period to use to calculate a fair share percentage for each fair share identifier in use, in seconds. A value of zero (0) indicates that only current usage should be measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
+        /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
         pub fn share_decay_seconds(mut self, input: i32) -> Self {
             self.share_decay_seconds = Some(input);
             self
         }
-        /// <p>The time period to use to calculate a fair share percentage for each fair share identifier in use, in seconds. A value of zero (0) indicates that only current usage should be measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
+        /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
         pub fn set_share_decay_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.share_decay_seconds = input;
             self
         }
-        /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that have not yet been used.</p>
+        /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that aren't already used.</p>
         /// <p>The reserved ratio is <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where <code> <i>ActiveFairShares</i> </code> is the number of active fair share identifiers.</p>
-        /// <p>For example, a <code>computeReservation</code> value of 50 indicates that Batch should reserve 50% of the maximum available vCPU if there is only one fair share identifier, 25% if there are two fair share identifiers, and 12.5% if there are three fair share identifiers. A <code>computeReservation</code> value of 25 indicates that Batch should reserve 25% of the maximum available vCPU if there is only one fair share identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share identifiers.</p>
+        /// <p>For example, a <code>computeReservation</code> value of 50 indicates that Batchreserves 50% of the maximum available vCPU if there's only one fair share identifier. It reserves 25% if there are two fair share identifiers. It reserves 12.5% if there are three fair share identifiers. A <code>computeReservation</code> value of 25 indicates that Batch should reserve 25% of the maximum available vCPU if there's only one fair share identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share identifiers.</p>
         /// <p>The minimum value is 0 and the maximum value is 99.</p>
         pub fn compute_reservation(mut self, input: i32) -> Self {
             self.compute_reservation = Some(input);
             self
         }
-        /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that have not yet been used.</p>
+        /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that aren't already used.</p>
         /// <p>The reserved ratio is <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where <code> <i>ActiveFairShares</i> </code> is the number of active fair share identifiers.</p>
-        /// <p>For example, a <code>computeReservation</code> value of 50 indicates that Batch should reserve 50% of the maximum available vCPU if there is only one fair share identifier, 25% if there are two fair share identifiers, and 12.5% if there are three fair share identifiers. A <code>computeReservation</code> value of 25 indicates that Batch should reserve 25% of the maximum available vCPU if there is only one fair share identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share identifiers.</p>
+        /// <p>For example, a <code>computeReservation</code> value of 50 indicates that Batchreserves 50% of the maximum available vCPU if there's only one fair share identifier. It reserves 25% if there are two fair share identifiers. It reserves 12.5% if there are three fair share identifiers. A <code>computeReservation</code> value of 25 indicates that Batch should reserve 25% of the maximum available vCPU if there's only one fair share identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share identifiers.</p>
         /// <p>The minimum value is 0 and the maximum value is 99.</p>
         pub fn set_compute_reservation(mut self, input: std::option::Option<i32>) -> Self {
             self.compute_reservation = input;
@@ -112,9 +112,9 @@ impl FairsharePolicy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShareAttributes {
-    /// <p>A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share identifiers in a fair share policy cannot overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
+    /// <p>A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share identifiers in a fair share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
     /// <p>There can be no more than 500 fair share identifiers active in a job queue.</p>
-    /// <p>The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).</p>
+    /// <p>The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     #[doc(hidden)]
     pub share_identifier: std::option::Option<std::string::String>,
     /// <p>The weight factor for the fair share identifier. The default value is 1.0. A lower value has a higher priority for compute resources. For example, jobs that use a share identifier with a weight factor of 0.125 (1/8) get 8 times the compute resources of jobs that use a share identifier with a weight factor of 1.</p>
@@ -123,9 +123,9 @@ pub struct ShareAttributes {
     pub weight_factor: std::option::Option<f32>,
 }
 impl ShareAttributes {
-    /// <p>A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share identifiers in a fair share policy cannot overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
+    /// <p>A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share identifiers in a fair share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
     /// <p>There can be no more than 500 fair share identifiers active in a job queue.</p>
-    /// <p>The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).</p>
+    /// <p>The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub fn share_identifier(&self) -> std::option::Option<&str> {
         self.share_identifier.as_deref()
     }
@@ -145,16 +145,16 @@ pub mod share_attributes {
         pub(crate) weight_factor: std::option::Option<f32>,
     }
     impl Builder {
-        /// <p>A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share identifiers in a fair share policy cannot overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
+        /// <p>A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share identifiers in a fair share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
         /// <p>There can be no more than 500 fair share identifiers active in a job queue.</p>
-        /// <p>The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).</p>
+        /// <p>The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
         pub fn share_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.share_identifier = Some(input.into());
             self
         }
-        /// <p>A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share identifiers in a fair share policy cannot overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
+        /// <p>A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share identifiers in a fair share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
         /// <p>There can be no more than 500 fair share identifiers active in a job queue.</p>
-        /// <p>The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).</p>
+        /// <p>The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
         pub fn set_share_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -190,7 +190,7 @@ impl ShareAttributes {
     }
 }
 
-/// <p>The order in which compute environments are tried for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p> <note>
+/// <p>The order that compute environments are tried in for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p> <note>
 /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
 /// </note>
 #[non_exhaustive]
@@ -352,14 +352,14 @@ impl AsRef<str> for JqState {
     }
 }
 
-/// <p>Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/infrastructure-updates.html">Infrastructure updates</a> in the <i>Batch User Guide</i>.</p>
+/// <p>Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePolicy {
     /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
     #[doc(hidden)]
     pub terminate_jobs_on_update: std::option::Option<bool>,
-    /// <p>Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default value is 30.</p>
+    /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
     #[doc(hidden)]
     pub job_execution_timeout_minutes: i64,
 }
@@ -368,7 +368,7 @@ impl UpdatePolicy {
     pub fn terminate_jobs_on_update(&self) -> std::option::Option<bool> {
         self.terminate_jobs_on_update
     }
-    /// <p>Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default value is 30.</p>
+    /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
     pub fn job_execution_timeout_minutes(&self) -> i64 {
         self.job_execution_timeout_minutes
     }
@@ -393,12 +393,12 @@ pub mod update_policy {
             self.terminate_jobs_on_update = input;
             self
         }
-        /// <p>Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default value is 30.</p>
+        /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
         pub fn job_execution_timeout_minutes(mut self, input: i64) -> Self {
             self.job_execution_timeout_minutes = Some(input);
             self
         }
-        /// <p>Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default value is 30.</p>
+        /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
         pub fn set_job_execution_timeout_minutes(
             mut self,
             input: std::option::Option<i64>,
@@ -424,111 +424,116 @@ impl UpdatePolicy {
     }
 }
 
-/// <p>An object representing the attributes of a compute environment that can be updated. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+/// <p>An object that represents the attributes of a compute environment that can be updated. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputeResourceUpdate {
     /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub minv_cpus: std::option::Option<i32>,
     /// <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those specified in your compute environment.</p>
+    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those specified in your compute environment.</p>
     /// </note>
     #[doc(hidden)]
     pub maxv_cpus: std::option::Option<i32>,
     /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note> <note>
+    /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
     /// </note>
     #[doc(hidden)]
     pub desiredv_cpus: std::option::Option<i32>,
     /// <p>The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets. For Fargate compute resources, providing an empty list will be handled as if this parameter wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the VPC subnets from the compute resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
-    /// <p>When updating a compute environment, changing the VPC subnets requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>When updating a compute environment, changing the VPC subnets requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
+    /// <p>Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"> Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"> Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>Batch on Fargate doesn't currently support Local Zones.</p>
+    /// </note>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.</p>
+    /// <p>The Amazon EC2 security groups that are associated with instances launched in the compute environment. This parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.</p>
     /// <p>When updating a compute environment, changing the EC2 security groups requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The allocation strategy to use for the compute resource if there's not enough instances of the best fitting instance type that can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p>
     /// <p>When updating a compute environment, changing the allocation strategy requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. <code>BEST_FIT</code> isn't supported when updating a compute environment.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     /// <dl>
     /// <dt>
     /// BEST_FIT_PROGRESSIVE
     /// </dt>
     /// <dd>
-    /// <p>Batch will select additional instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per unit vCPU. If additional instances of the previously selected instance types aren't available, Batch will select new instance types.</p>
+    /// <p>Batch selects additional instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types with lower cost vCPUs. If additional instances of the previously selected instance types aren't available, Batch selects new instance types.</p>
     /// </dd>
     /// <dt>
     /// SPOT_CAPACITY_OPTIMIZED
     /// </dt>
     /// <dd>
-    /// <p>Batch will select one or more instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
+    /// <p>Batch selects one or more instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
     /// </dd>
     /// </dl>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies, Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     #[doc(hidden)]
     pub allocation_strategy: std::option::Option<crate::model::CrUpdateAllocationStrategy>,
     /// <p>The instances types that can be launched. You can specify instance families to launch any instance type within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select instance types (from the C4, M4, and R4 instance families) that match the demand of your job queues.</p>
     /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>When you create a compute environment, the instance types that you select for the compute environment must share the same architecture. For example, you can't mix x86 and ARM instances in the same compute environment.</p>
     /// </note> <note>
-    /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5. and R5 instance families are used.</p>
+    /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5, and R5 instance families are used.</p>
     /// </note>
     #[doc(hidden)]
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon EC2 key pair that's used for instances launched in the compute environment. You can use this key pair to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an empty string.</p>
     /// <p>When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub ec2_key_pair: std::option::Option<std::string::String>,
     /// <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or <code>arn:aws:iam::<i>
     /// <aws_account_id></aws_account_id></i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS instance role</a> in the <i>Batch User Guide</i>.</p>
     /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub instance_role: std::option::Option<std::string::String>,
-    /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value−for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p>
+    /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p>
     /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node parallel jobs to your compute environment, you should consider creating a cluster placement group and associate it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within a single Availability Zone with high network flow potential. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>When updating a compute environment, changing the placement group requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub placement_group: std::option::Option<std::string::String>,
-    /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage.</p>
+    /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage. For most use cases, we recommend leaving this field empty.</p>
     /// <p>When updating a compute environment, changing the bid percentage requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub bid_percentage: std::option::Option<i32>,
     /// <p>The updated launch template to use for your compute resources. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>. To remove the custom launch template and use the default launch template, set <code>launchTemplateId</code> or <code>launchTemplateName</code> member of the launch template specification to an empty string. Removing the launch template from a compute environment will not remove the AMI specified in the launch template. In order to update the AMI specified in a launch template, the <code>updateToLatestImageVersion</code> parameter must be set to <code>true</code>.</p>
     /// <p>When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub launch_template: std::option::Option<crate::model::LaunchTemplateSpecification>,
     /// <p>Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
     /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.</p>
     /// <p>One or two values can be provided.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub ec2_configuration: std::option::Option<std::vec::Vec<crate::model::Ec2Configuration>>,
     /// <p>Specifies whether the AMI ID is updated to the latest one that's supported by Batch when the compute environment has an infrastructure update. The default value is <code>false</code>.</p> <note>
-    /// <p>If an AMI ID is specified in the <code>imageId</code> or <code>imageIdOverride</code> parameters or by the launch template specified in the <code>launchTemplate</code> parameter, this parameter is ignored. For more information on updating AMI IDs during an infrastructure update, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html#updating-compute-environments-ami">Updating the AMI ID</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>An AMI ID can either be specified in the <code>imageId</code> or <code>imageIdOverride</code> parameters or be determined by the launch template that's specified in the <code>launchTemplate</code> parameter. If an AMI ID is specified any of these ways, this parameter is ignored. For more information about to update AMI IDs during an infrastructure update, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html#updating-compute-environments-ami">Updating the AMI ID</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     #[doc(hidden)]
@@ -540,7 +545,7 @@ pub struct ComputeResourceUpdate {
     pub r#type: std::option::Option<crate::model::CrType>,
     /// <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure. To remove the custom AMI ID and use the default AMI ID, set this value to an empty string.</p>
     /// <p>When updating a compute environment, changing the AMI ID requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
@@ -549,52 +554,57 @@ pub struct ComputeResourceUpdate {
 }
 impl ComputeResourceUpdate {
     /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn minv_cpus(&self) -> std::option::Option<i32> {
         self.minv_cpus
     }
     /// <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those specified in your compute environment.</p>
+    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those specified in your compute environment.</p>
     /// </note>
     pub fn maxv_cpus(&self) -> std::option::Option<i32> {
         self.maxv_cpus
     }
     /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note> <note>
+    /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
     /// </note>
     pub fn desiredv_cpus(&self) -> std::option::Option<i32> {
         self.desiredv_cpus
     }
     /// <p>The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets. For Fargate compute resources, providing an empty list will be handled as if this parameter wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the VPC subnets from the compute resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
-    /// <p>When updating a compute environment, changing the VPC subnets requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>When updating a compute environment, changing the VPC subnets requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
+    /// <p>Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"> Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"> Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>Batch on Fargate doesn't currently support Local Zones.</p>
+    /// </note>
     pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
-    /// <p>The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.</p>
+    /// <p>The Amazon EC2 security groups that are associated with instances launched in the compute environment. This parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.</p>
     /// <p>When updating a compute environment, changing the EC2 security groups requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
-    /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The allocation strategy to use for the compute resource if there's not enough instances of the best fitting instance type that can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p>
     /// <p>When updating a compute environment, changing the allocation strategy requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. <code>BEST_FIT</code> isn't supported when updating a compute environment.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     /// <dl>
     /// <dt>
     /// BEST_FIT_PROGRESSIVE
     /// </dt>
     /// <dd>
-    /// <p>Batch will select additional instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per unit vCPU. If additional instances of the previously selected instance types aren't available, Batch will select new instance types.</p>
+    /// <p>Batch selects additional instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types with lower cost vCPUs. If additional instances of the previously selected instance types aren't available, Batch selects new instance types.</p>
     /// </dd>
     /// <dt>
     /// SPOT_CAPACITY_OPTIMIZED
     /// </dt>
     /// <dd>
-    /// <p>Batch will select one or more instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
+    /// <p>Batch selects one or more instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
     /// </dd>
     /// </dl>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies, Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     pub fn allocation_strategy(
         &self,
     ) -> std::option::Option<&crate::model::CrUpdateAllocationStrategy> {
@@ -602,18 +612,18 @@ impl ComputeResourceUpdate {
     }
     /// <p>The instances types that can be launched. You can specify instance families to launch any instance type within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select instance types (from the C4, M4, and R4 instance families) that match the demand of your job queues.</p>
     /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>When you create a compute environment, the instance types that you select for the compute environment must share the same architecture. For example, you can't mix x86 and ARM instances in the same compute environment.</p>
     /// </note> <note>
-    /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5. and R5 instance families are used.</p>
+    /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5, and R5 instance families are used.</p>
     /// </note>
     pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_types.as_deref()
     }
     /// <p>The Amazon EC2 key pair that's used for instances launched in the compute environment. You can use this key pair to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an empty string.</p>
     /// <p>When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn ec2_key_pair(&self) -> std::option::Option<&str> {
         self.ec2_key_pair.as_deref()
@@ -621,14 +631,14 @@ impl ComputeResourceUpdate {
     /// <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or <code>arn:aws:iam::<i>
     /// <aws_account_id></aws_account_id></i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS instance role</a> in the <i>Batch User Guide</i>.</p>
     /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn instance_role(&self) -> std::option::Option<&str> {
         self.instance_role.as_deref()
     }
-    /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value−for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p>
+    /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p>
     /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn tags(
         &self,
@@ -638,21 +648,21 @@ impl ComputeResourceUpdate {
     }
     /// <p>The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node parallel jobs to your compute environment, you should consider creating a cluster placement group and associate it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within a single Availability Zone with high network flow potential. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>When updating a compute environment, changing the placement group requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn placement_group(&self) -> std::option::Option<&str> {
         self.placement_group.as_deref()
     }
-    /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage.</p>
+    /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage. For most use cases, we recommend leaving this field empty.</p>
     /// <p>When updating a compute environment, changing the bid percentage requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn bid_percentage(&self) -> std::option::Option<i32> {
         self.bid_percentage
     }
     /// <p>The updated launch template to use for your compute resources. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>. To remove the custom launch template and use the default launch template, set <code>launchTemplateId</code> or <code>launchTemplateName</code> member of the launch template specification to an empty string. Removing the launch template from a compute environment will not remove the AMI specified in the launch template. In order to update the AMI specified in a launch template, the <code>updateToLatestImageVersion</code> parameter must be set to <code>true</code>.</p>
     /// <p>When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn launch_template(
         &self,
@@ -662,13 +672,13 @@ impl ComputeResourceUpdate {
     /// <p>Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
     /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.</p>
     /// <p>One or two values can be provided.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn ec2_configuration(&self) -> std::option::Option<&[crate::model::Ec2Configuration]> {
         self.ec2_configuration.as_deref()
     }
     /// <p>Specifies whether the AMI ID is updated to the latest one that's supported by Batch when the compute environment has an infrastructure update. The default value is <code>false</code>.</p> <note>
-    /// <p>If an AMI ID is specified in the <code>imageId</code> or <code>imageIdOverride</code> parameters or by the launch template specified in the <code>launchTemplate</code> parameter, this parameter is ignored. For more information on updating AMI IDs during an infrastructure update, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html#updating-compute-environments-ami">Updating the AMI ID</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>An AMI ID can either be specified in the <code>imageId</code> or <code>imageIdOverride</code> parameters or be determined by the launch template that's specified in the <code>launchTemplate</code> parameter. If an AMI ID is specified any of these ways, this parameter is ignored. For more information about to update AMI IDs during an infrastructure update, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html#updating-compute-environments-ami">Updating the AMI ID</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn update_to_latest_image_version(&self) -> std::option::Option<bool> {
@@ -682,7 +692,7 @@ impl ComputeResourceUpdate {
     }
     /// <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure. To remove the custom AMI ID and use the default AMI ID, set this value to an empty string.</p>
     /// <p>When updating a compute environment, changing the AMI ID requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
@@ -720,42 +730,46 @@ pub mod compute_resource_update {
     }
     impl Builder {
         /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn minv_cpus(mut self, input: i32) -> Self {
             self.minv_cpus = Some(input);
             self
         }
         /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_minv_cpus(mut self, input: std::option::Option<i32>) -> Self {
             self.minv_cpus = input;
             self
         }
         /// <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
-        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those specified in your compute environment.</p>
+        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those specified in your compute environment.</p>
         /// </note>
         pub fn maxv_cpus(mut self, input: i32) -> Self {
             self.maxv_cpus = Some(input);
             self
         }
         /// <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
-        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those specified in your compute environment.</p>
+        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those specified in your compute environment.</p>
         /// </note>
         pub fn set_maxv_cpus(mut self, input: std::option::Option<i32>) -> Self {
             self.maxv_cpus = input;
             self
         }
         /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+        /// </note> <note>
+        /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
         /// </note>
         pub fn desiredv_cpus(mut self, input: i32) -> Self {
             self.desiredv_cpus = Some(input);
             self
         }
         /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+        /// </note> <note>
+        /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
         /// </note>
         pub fn set_desiredv_cpus(mut self, input: std::option::Option<i32>) -> Self {
             self.desiredv_cpus = input;
@@ -766,7 +780,10 @@ pub mod compute_resource_update {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p>The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets. For Fargate compute resources, providing an empty list will be handled as if this parameter wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the VPC subnets from the compute resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
-        /// <p>When updating a compute environment, changing the VPC subnets requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>When updating a compute environment, changing the VPC subnets requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
+        /// <p>Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"> Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"> Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+        /// <p>Batch on Fargate doesn't currently support Local Zones.</p>
+        /// </note>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
@@ -774,7 +791,10 @@ pub mod compute_resource_update {
             self
         }
         /// <p>The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets. For Fargate compute resources, providing an empty list will be handled as if this parameter wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the VPC subnets from the compute resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
-        /// <p>When updating a compute environment, changing the VPC subnets requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>When updating a compute environment, changing the VPC subnets requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
+        /// <p>Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"> Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"> Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+        /// <p>Batch on Fargate doesn't currently support Local Zones.</p>
+        /// </note>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -786,7 +806,7 @@ pub mod compute_resource_update {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.</p>
+        /// <p>The Amazon EC2 security groups that are associated with instances launched in the compute environment. This parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.</p>
         /// <p>When updating a compute environment, changing the EC2 security groups requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
@@ -794,7 +814,7 @@ pub mod compute_resource_update {
             self.security_group_ids = Some(v);
             self
         }
-        /// <p>The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.</p>
+        /// <p>The Amazon EC2 security groups that are associated with instances launched in the compute environment. This parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.</p>
         /// <p>When updating a compute environment, changing the EC2 security groups requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
         pub fn set_security_group_ids(
             mut self,
@@ -803,25 +823,25 @@ pub mod compute_resource_update {
             self.security_group_ids = input;
             self
         }
-        /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>The allocation strategy to use for the compute resource if there's not enough instances of the best fitting instance type that can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p>
         /// <p>When updating a compute environment, changing the allocation strategy requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. <code>BEST_FIT</code> isn't supported when updating a compute environment.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         /// <dl>
         /// <dt>
         /// BEST_FIT_PROGRESSIVE
         /// </dt>
         /// <dd>
-        /// <p>Batch will select additional instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per unit vCPU. If additional instances of the previously selected instance types aren't available, Batch will select new instance types.</p>
+        /// <p>Batch selects additional instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types with lower cost vCPUs. If additional instances of the previously selected instance types aren't available, Batch selects new instance types.</p>
         /// </dd>
         /// <dt>
         /// SPOT_CAPACITY_OPTIMIZED
         /// </dt>
         /// <dd>
-        /// <p>Batch will select one or more instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
+        /// <p>Batch selects one or more instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
         /// </dd>
         /// </dl>
-        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies, Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
         pub fn allocation_strategy(
             mut self,
             input: crate::model::CrUpdateAllocationStrategy,
@@ -829,25 +849,25 @@ pub mod compute_resource_update {
             self.allocation_strategy = Some(input);
             self
         }
-        /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>The allocation strategy to use for the compute resource if there's not enough instances of the best fitting instance type that can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p>
         /// <p>When updating a compute environment, changing the allocation strategy requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. <code>BEST_FIT</code> isn't supported when updating a compute environment.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         /// <dl>
         /// <dt>
         /// BEST_FIT_PROGRESSIVE
         /// </dt>
         /// <dd>
-        /// <p>Batch will select additional instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per unit vCPU. If additional instances of the previously selected instance types aren't available, Batch will select new instance types.</p>
+        /// <p>Batch selects additional instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types with lower cost vCPUs. If additional instances of the previously selected instance types aren't available, Batch selects new instance types.</p>
         /// </dd>
         /// <dt>
         /// SPOT_CAPACITY_OPTIMIZED
         /// </dt>
         /// <dd>
-        /// <p>Batch will select one or more instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
+        /// <p>Batch selects one or more instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
         /// </dd>
         /// </dl>
-        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies, Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
         pub fn set_allocation_strategy(
             mut self,
             input: std::option::Option<crate::model::CrUpdateAllocationStrategy>,
@@ -861,11 +881,11 @@ pub mod compute_resource_update {
         ///
         /// <p>The instances types that can be launched. You can specify instance families to launch any instance type within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select instance types (from the C4, M4, and R4 instance families) that match the demand of your job queues.</p>
         /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note> <note>
         /// <p>When you create a compute environment, the instance types that you select for the compute environment must share the same architecture. For example, you can't mix x86 and ARM instances in the same compute environment.</p>
         /// </note> <note>
-        /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5. and R5 instance families are used.</p>
+        /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5, and R5 instance families are used.</p>
         /// </note>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
@@ -875,11 +895,11 @@ pub mod compute_resource_update {
         }
         /// <p>The instances types that can be launched. You can specify instance families to launch any instance type within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select instance types (from the C4, M4, and R4 instance families) that match the demand of your job queues.</p>
         /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note> <note>
         /// <p>When you create a compute environment, the instance types that you select for the compute environment must share the same architecture. For example, you can't mix x86 and ARM instances in the same compute environment.</p>
         /// </note> <note>
-        /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5. and R5 instance families are used.</p>
+        /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5, and R5 instance families are used.</p>
         /// </note>
         pub fn set_instance_types(
             mut self,
@@ -890,7 +910,7 @@ pub mod compute_resource_update {
         }
         /// <p>The Amazon EC2 key pair that's used for instances launched in the compute environment. You can use this key pair to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an empty string.</p>
         /// <p>When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn ec2_key_pair(mut self, input: impl Into<std::string::String>) -> Self {
             self.ec2_key_pair = Some(input.into());
@@ -898,7 +918,7 @@ pub mod compute_resource_update {
         }
         /// <p>The Amazon EC2 key pair that's used for instances launched in the compute environment. You can use this key pair to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an empty string.</p>
         /// <p>When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_ec2_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ec2_key_pair = input;
@@ -907,7 +927,7 @@ pub mod compute_resource_update {
         /// <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or <code>arn:aws:iam::<i>
         /// <aws_account_id></aws_account_id></i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS instance role</a> in the <i>Batch User Guide</i>.</p>
         /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn instance_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_role = Some(input.into());
@@ -916,7 +936,7 @@ pub mod compute_resource_update {
         /// <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or <code>arn:aws:iam::<i>
         /// <aws_account_id></aws_account_id></i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS instance role</a> in the <i>Batch User Guide</i>.</p>
         /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_instance_role(
             mut self,
@@ -929,9 +949,9 @@ pub mod compute_resource_update {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value−for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p>
+        /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p>
         /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn tags(
             mut self,
@@ -943,9 +963,9 @@ pub mod compute_resource_update {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value−for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p>
+        /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p>
         /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -958,7 +978,7 @@ pub mod compute_resource_update {
         }
         /// <p>The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node parallel jobs to your compute environment, you should consider creating a cluster placement group and associate it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within a single Availability Zone with high network flow potential. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         /// <p>When updating a compute environment, changing the placement group requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn placement_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.placement_group = Some(input.into());
@@ -966,7 +986,7 @@ pub mod compute_resource_update {
         }
         /// <p>The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node parallel jobs to your compute environment, you should consider creating a cluster placement group and associate it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within a single Availability Zone with high network flow potential. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         /// <p>When updating a compute environment, changing the placement group requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_placement_group(
             mut self,
@@ -975,17 +995,17 @@ pub mod compute_resource_update {
             self.placement_group = input;
             self
         }
-        /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage.</p>
+        /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage. For most use cases, we recommend leaving this field empty.</p>
         /// <p>When updating a compute environment, changing the bid percentage requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn bid_percentage(mut self, input: i32) -> Self {
             self.bid_percentage = Some(input);
             self
         }
-        /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage.</p>
+        /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage. For most use cases, we recommend leaving this field empty.</p>
         /// <p>When updating a compute environment, changing the bid percentage requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_bid_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.bid_percentage = input;
@@ -993,7 +1013,7 @@ pub mod compute_resource_update {
         }
         /// <p>The updated launch template to use for your compute resources. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>. To remove the custom launch template and use the default launch template, set <code>launchTemplateId</code> or <code>launchTemplateName</code> member of the launch template specification to an empty string. Removing the launch template from a compute environment will not remove the AMI specified in the launch template. In order to update the AMI specified in a launch template, the <code>updateToLatestImageVersion</code> parameter must be set to <code>true</code>.</p>
         /// <p>When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn launch_template(mut self, input: crate::model::LaunchTemplateSpecification) -> Self {
             self.launch_template = Some(input);
@@ -1001,7 +1021,7 @@ pub mod compute_resource_update {
         }
         /// <p>The updated launch template to use for your compute resources. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>. To remove the custom launch template and use the default launch template, set <code>launchTemplateId</code> or <code>launchTemplateName</code> member of the launch template specification to an empty string. Removing the launch template from a compute environment will not remove the AMI specified in the launch template. In order to update the AMI specified in a launch template, the <code>updateToLatestImageVersion</code> parameter must be set to <code>true</code>.</p>
         /// <p>When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_launch_template(
             mut self,
@@ -1017,7 +1037,7 @@ pub mod compute_resource_update {
         /// <p>Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
         /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.</p>
         /// <p>One or two values can be provided.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn ec2_configuration(mut self, input: crate::model::Ec2Configuration) -> Self {
             let mut v = self.ec2_configuration.unwrap_or_default();
@@ -1028,7 +1048,7 @@ pub mod compute_resource_update {
         /// <p>Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
         /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.</p>
         /// <p>One or two values can be provided.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_ec2_configuration(
             mut self,
@@ -1038,7 +1058,7 @@ pub mod compute_resource_update {
             self
         }
         /// <p>Specifies whether the AMI ID is updated to the latest one that's supported by Batch when the compute environment has an infrastructure update. The default value is <code>false</code>.</p> <note>
-        /// <p>If an AMI ID is specified in the <code>imageId</code> or <code>imageIdOverride</code> parameters or by the launch template specified in the <code>launchTemplate</code> parameter, this parameter is ignored. For more information on updating AMI IDs during an infrastructure update, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html#updating-compute-environments-ami">Updating the AMI ID</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>An AMI ID can either be specified in the <code>imageId</code> or <code>imageIdOverride</code> parameters or be determined by the launch template that's specified in the <code>launchTemplate</code> parameter. If an AMI ID is specified any of these ways, this parameter is ignored. For more information about to update AMI IDs during an infrastructure update, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html#updating-compute-environments-ami">Updating the AMI ID</a> in the <i>Batch User Guide</i>.</p>
         /// </note>
         /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
         pub fn update_to_latest_image_version(mut self, input: bool) -> Self {
@@ -1046,7 +1066,7 @@ pub mod compute_resource_update {
             self
         }
         /// <p>Specifies whether the AMI ID is updated to the latest one that's supported by Batch when the compute environment has an infrastructure update. The default value is <code>false</code>.</p> <note>
-        /// <p>If an AMI ID is specified in the <code>imageId</code> or <code>imageIdOverride</code> parameters or by the launch template specified in the <code>launchTemplate</code> parameter, this parameter is ignored. For more information on updating AMI IDs during an infrastructure update, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html#updating-compute-environments-ami">Updating the AMI ID</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>An AMI ID can either be specified in the <code>imageId</code> or <code>imageIdOverride</code> parameters or be determined by the launch template that's specified in the <code>launchTemplate</code> parameter. If an AMI ID is specified any of these ways, this parameter is ignored. For more information about to update AMI IDs during an infrastructure update, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html#updating-compute-environments-ami">Updating the AMI ID</a> in the <i>Batch User Guide</i>.</p>
         /// </note>
         /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
         pub fn set_update_to_latest_image_version(
@@ -1072,7 +1092,7 @@ pub mod compute_resource_update {
         }
         /// <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure. To remove the custom AMI ID and use the default AMI ID, set this value to an empty string.</p>
         /// <p>When updating a compute environment, changing the AMI ID requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note> <note>
         /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </note>
@@ -1082,7 +1102,7 @@ pub mod compute_resource_update {
         }
         /// <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure. To remove the custom AMI ID and use the default AMI ID, set this value to an empty string.</p>
         /// <p>When updating a compute environment, changing the AMI ID requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note> <note>
         /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </note>
@@ -1227,25 +1247,53 @@ impl AsRef<str> for CrType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2Configuration {
-    /// <p>The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.</p>
+    /// <p>The image type to match with the instance type to select an AMI. The supported values are different for <code>ECS</code> and <code>EKS</code> resources.</p>
+    /// <dl>
+    /// <dt>
+    /// ECS
+    /// </dt>
+    /// <dd>
+    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.</p>
     /// <dl>
     /// <dt>
     /// ECS_AL2
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>− Default for all non-GPU instance families.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// ECS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// <dt>
     /// ECS_AL1
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux is reaching the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+    /// </dd>
+    /// </dl>
+    /// </dd>
+    /// <dt>
+    /// EKS
+    /// </dt>
+    /// <dd>
+    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p>
+    /// <dl>
+    /// <dt>
+    /// EKS_AL2
+    /// </dt>
+    /// <dd>
+    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// </dd>
+    /// <dt>
+    /// EKS_AL2_NVIDIA
+    /// </dt>
+    /// <dd>
+    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// </dd>
+    /// </dl>
     /// </dd>
     /// </dl>
     #[doc(hidden)]
@@ -1255,27 +1303,58 @@ pub struct Ec2Configuration {
     /// </note>
     #[doc(hidden)]
     pub image_id_override: std::option::Option<std::string::String>,
+    /// <p>The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch supports is used.</p>
+    #[doc(hidden)]
+    pub image_kubernetes_version: std::option::Option<std::string::String>,
 }
 impl Ec2Configuration {
-    /// <p>The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.</p>
+    /// <p>The image type to match with the instance type to select an AMI. The supported values are different for <code>ECS</code> and <code>EKS</code> resources.</p>
+    /// <dl>
+    /// <dt>
+    /// ECS
+    /// </dt>
+    /// <dd>
+    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.</p>
     /// <dl>
     /// <dt>
     /// ECS_AL2
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>− Default for all non-GPU instance families.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// ECS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// <dt>
     /// ECS_AL1
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux is reaching the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+    /// </dd>
+    /// </dl>
+    /// </dd>
+    /// <dt>
+    /// EKS
+    /// </dt>
+    /// <dd>
+    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p>
+    /// <dl>
+    /// <dt>
+    /// EKS_AL2
+    /// </dt>
+    /// <dd>
+    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// </dd>
+    /// <dt>
+    /// EKS_AL2_NVIDIA
+    /// </dt>
+    /// <dd>
+    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// </dd>
+    /// </dl>
     /// </dd>
     /// </dl>
     pub fn image_type(&self) -> std::option::Option<&str> {
@@ -1287,6 +1366,10 @@ impl Ec2Configuration {
     pub fn image_id_override(&self) -> std::option::Option<&str> {
         self.image_id_override.as_deref()
     }
+    /// <p>The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch supports is used.</p>
+    pub fn image_kubernetes_version(&self) -> std::option::Option<&str> {
+        self.image_kubernetes_version.as_deref()
+    }
 }
 /// See [`Ec2Configuration`](crate::model::Ec2Configuration).
 pub mod ec2_configuration {
@@ -1296,52 +1379,109 @@ pub mod ec2_configuration {
     pub struct Builder {
         pub(crate) image_type: std::option::Option<std::string::String>,
         pub(crate) image_id_override: std::option::Option<std::string::String>,
+        pub(crate) image_kubernetes_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.</p>
+        /// <p>The image type to match with the instance type to select an AMI. The supported values are different for <code>ECS</code> and <code>EKS</code> resources.</p>
+        /// <dl>
+        /// <dt>
+        /// ECS
+        /// </dt>
+        /// <dd>
+        /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.</p>
         /// <dl>
         /// <dt>
         /// ECS_AL2
         /// </dt>
         /// <dd>
-        /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>− Default for all non-GPU instance families.</p>
+        /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
         /// </dd>
         /// <dt>
         /// ECS_AL2_NVIDIA
         /// </dt>
         /// <dd>
-        /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+        /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
         /// </dd>
         /// <dt>
         /// ECS_AL1
         /// </dt>
         /// <dd>
-        /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux is reaching the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+        /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+        /// </dd>
+        /// </dl>
+        /// </dd>
+        /// <dt>
+        /// EKS
+        /// </dt>
+        /// <dd>
+        /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p>
+        /// <dl>
+        /// <dt>
+        /// EKS_AL2
+        /// </dt>
+        /// <dd>
+        /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+        /// </dd>
+        /// <dt>
+        /// EKS_AL2_NVIDIA
+        /// </dt>
+        /// <dd>
+        /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+        /// </dd>
+        /// </dl>
         /// </dd>
         /// </dl>
         pub fn image_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_type = Some(input.into());
             self
         }
-        /// <p>The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.</p>
+        /// <p>The image type to match with the instance type to select an AMI. The supported values are different for <code>ECS</code> and <code>EKS</code> resources.</p>
+        /// <dl>
+        /// <dt>
+        /// ECS
+        /// </dt>
+        /// <dd>
+        /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.</p>
         /// <dl>
         /// <dt>
         /// ECS_AL2
         /// </dt>
         /// <dd>
-        /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>− Default for all non-GPU instance families.</p>
+        /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
         /// </dd>
         /// <dt>
         /// ECS_AL2_NVIDIA
         /// </dt>
         /// <dd>
-        /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+        /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
         /// </dd>
         /// <dt>
         /// ECS_AL1
         /// </dt>
         /// <dd>
-        /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux is reaching the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+        /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+        /// </dd>
+        /// </dl>
+        /// </dd>
+        /// <dt>
+        /// EKS
+        /// </dt>
+        /// <dd>
+        /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p>
+        /// <dl>
+        /// <dt>
+        /// EKS_AL2
+        /// </dt>
+        /// <dd>
+        /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+        /// </dd>
+        /// <dt>
+        /// EKS_AL2_NVIDIA
+        /// </dt>
+        /// <dd>
+        /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+        /// </dd>
+        /// </dl>
         /// </dd>
         /// </dl>
         pub fn set_image_type(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1365,11 +1505,25 @@ pub mod ec2_configuration {
             self.image_id_override = input;
             self
         }
+        /// <p>The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch supports is used.</p>
+        pub fn image_kubernetes_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_kubernetes_version = Some(input.into());
+            self
+        }
+        /// <p>The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch supports is used.</p>
+        pub fn set_image_kubernetes_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.image_kubernetes_version = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Ec2Configuration`](crate::model::Ec2Configuration).
         pub fn build(self) -> crate::model::Ec2Configuration {
             crate::model::Ec2Configuration {
                 image_type: self.image_type,
                 image_id_override: self.image_id_override,
+                image_kubernetes_version: self.image_kubernetes_version,
             }
         }
     }
@@ -1381,7 +1535,7 @@ impl Ec2Configuration {
     }
 }
 
-/// <p>An object representing a launch template associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both.</p>
+/// <p>An object that represents a launch template that's associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both.</p>
 /// <p>If security groups are specified using both the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> and the launch template, the values in the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> will be used.</p> <note>
 /// <p>This object isn't applicable to jobs that are running on Fargate resources.</p>
 /// </note>
@@ -1674,16 +1828,648 @@ impl AsRef<str> for CeState {
     }
 }
 
-/// <p>An object representing a job timeout configuration.</p>
+/// <p>An object that contains overrides for the Kubernetes resources of a job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksPropertiesOverride {
+    /// <p>The overrides for the Kubernetes pod resources of a job.</p>
+    #[doc(hidden)]
+    pub pod_properties: std::option::Option<crate::model::EksPodPropertiesOverride>,
+}
+impl EksPropertiesOverride {
+    /// <p>The overrides for the Kubernetes pod resources of a job.</p>
+    pub fn pod_properties(&self) -> std::option::Option<&crate::model::EksPodPropertiesOverride> {
+        self.pod_properties.as_ref()
+    }
+}
+/// See [`EksPropertiesOverride`](crate::model::EksPropertiesOverride).
+pub mod eks_properties_override {
+
+    /// A builder for [`EksPropertiesOverride`](crate::model::EksPropertiesOverride).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) pod_properties: std::option::Option<crate::model::EksPodPropertiesOverride>,
+    }
+    impl Builder {
+        /// <p>The overrides for the Kubernetes pod resources of a job.</p>
+        pub fn pod_properties(mut self, input: crate::model::EksPodPropertiesOverride) -> Self {
+            self.pod_properties = Some(input);
+            self
+        }
+        /// <p>The overrides for the Kubernetes pod resources of a job.</p>
+        pub fn set_pod_properties(
+            mut self,
+            input: std::option::Option<crate::model::EksPodPropertiesOverride>,
+        ) -> Self {
+            self.pod_properties = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksPropertiesOverride`](crate::model::EksPropertiesOverride).
+        pub fn build(self) -> crate::model::EksPropertiesOverride {
+            crate::model::EksPropertiesOverride {
+                pod_properties: self.pod_properties,
+            }
+        }
+    }
+}
+impl EksPropertiesOverride {
+    /// Creates a new builder-style object to manufacture [`EksPropertiesOverride`](crate::model::EksPropertiesOverride).
+    pub fn builder() -> crate::model::eks_properties_override::Builder {
+        crate::model::eks_properties_override::Builder::default()
+    }
+}
+
+/// <p>An object that contains overrides for the Kubernetes pod properties of a job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksPodPropertiesOverride {
+    /// <p>The overrides for the container that's used on the Amazon EKS pod.</p>
+    #[doc(hidden)]
+    pub containers: std::option::Option<std::vec::Vec<crate::model::EksContainerOverride>>,
+}
+impl EksPodPropertiesOverride {
+    /// <p>The overrides for the container that's used on the Amazon EKS pod.</p>
+    pub fn containers(&self) -> std::option::Option<&[crate::model::EksContainerOverride]> {
+        self.containers.as_deref()
+    }
+}
+/// See [`EksPodPropertiesOverride`](crate::model::EksPodPropertiesOverride).
+pub mod eks_pod_properties_override {
+
+    /// A builder for [`EksPodPropertiesOverride`](crate::model::EksPodPropertiesOverride).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) containers:
+            std::option::Option<std::vec::Vec<crate::model::EksContainerOverride>>,
+    }
+    impl Builder {
+        /// Appends an item to `containers`.
+        ///
+        /// To override the contents of this collection use [`set_containers`](Self::set_containers).
+        ///
+        /// <p>The overrides for the container that's used on the Amazon EKS pod.</p>
+        pub fn containers(mut self, input: crate::model::EksContainerOverride) -> Self {
+            let mut v = self.containers.unwrap_or_default();
+            v.push(input);
+            self.containers = Some(v);
+            self
+        }
+        /// <p>The overrides for the container that's used on the Amazon EKS pod.</p>
+        pub fn set_containers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EksContainerOverride>>,
+        ) -> Self {
+            self.containers = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksPodPropertiesOverride`](crate::model::EksPodPropertiesOverride).
+        pub fn build(self) -> crate::model::EksPodPropertiesOverride {
+            crate::model::EksPodPropertiesOverride {
+                containers: self.containers,
+            }
+        }
+    }
+}
+impl EksPodPropertiesOverride {
+    /// Creates a new builder-style object to manufacture [`EksPodPropertiesOverride`](crate::model::EksPodPropertiesOverride).
+    pub fn builder() -> crate::model::eks_pod_properties_override::Builder {
+        crate::model::eks_pod_properties_override::Builder::default()
+    }
+}
+
+/// <p>Object representing any Kubernetes overrides to a job definition that's used in a <code>SubmitJob</code> API operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksContainerOverride {
+    /// <p>The override of the Docker image that's used to start the container.</p>
+    #[doc(hidden)]
+    pub image: std::option::Option<std::string::String>,
+    /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p>
+    #[doc(hidden)]
+    pub command: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker image or the job definition. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub args: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p> <note>
+    /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub env: std::option::Option<std::vec::Vec<crate::model::EksContainerEnvironmentVariable>>,
+    /// <p>The type and amount of resources to assign to a container. These override the settings in the job definition. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub resources: std::option::Option<crate::model::EksContainerResourceRequirements>,
+}
+impl EksContainerOverride {
+    /// <p>The override of the Docker image that's used to start the container.</p>
+    pub fn image(&self) -> std::option::Option<&str> {
+        self.image.as_deref()
+    }
+    /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p>
+    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+        self.command.as_deref()
+    }
+    /// <p>The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker image or the job definition. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
+        self.args.as_deref()
+    }
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p> <note>
+    /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
+    /// </note>
+    pub fn env(&self) -> std::option::Option<&[crate::model::EksContainerEnvironmentVariable]> {
+        self.env.as_deref()
+    }
+    /// <p>The type and amount of resources to assign to a container. These override the settings in the job definition. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn resources(
+        &self,
+    ) -> std::option::Option<&crate::model::EksContainerResourceRequirements> {
+        self.resources.as_ref()
+    }
+}
+/// See [`EksContainerOverride`](crate::model::EksContainerOverride).
+pub mod eks_container_override {
+
+    /// A builder for [`EksContainerOverride`](crate::model::EksContainerOverride).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) image: std::option::Option<std::string::String>,
+        pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) args: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) env:
+            std::option::Option<std::vec::Vec<crate::model::EksContainerEnvironmentVariable>>,
+        pub(crate) resources: std::option::Option<crate::model::EksContainerResourceRequirements>,
+    }
+    impl Builder {
+        /// <p>The override of the Docker image that's used to start the container.</p>
+        pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image = Some(input.into());
+            self
+        }
+        /// <p>The override of the Docker image that's used to start the container.</p>
+        pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image = input;
+            self
+        }
+        /// Appends an item to `command`.
+        ///
+        /// To override the contents of this collection use [`set_command`](Self::set_command).
+        ///
+        /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p>
+        pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.command.unwrap_or_default();
+            v.push(input.into());
+            self.command = Some(v);
+            self
+        }
+        /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p>
+        pub fn set_command(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.command = input;
+            self
+        }
+        /// Appends an item to `args`.
+        ///
+        /// To override the contents of this collection use [`set_args`](Self::set_args).
+        ///
+        /// <p>The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker image or the job definition. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.args.unwrap_or_default();
+            v.push(input.into());
+            self.args = Some(v);
+            self
+        }
+        /// <p>The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker image or the job definition. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_args(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.args = input;
+            self
+        }
+        /// Appends an item to `env`.
+        ///
+        /// To override the contents of this collection use [`set_env`](Self::set_env).
+        ///
+        /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p> <note>
+        /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
+        /// </note>
+        pub fn env(mut self, input: crate::model::EksContainerEnvironmentVariable) -> Self {
+            let mut v = self.env.unwrap_or_default();
+            v.push(input);
+            self.env = Some(v);
+            self
+        }
+        /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p> <note>
+        /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
+        /// </note>
+        pub fn set_env(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::EksContainerEnvironmentVariable>,
+            >,
+        ) -> Self {
+            self.env = input;
+            self
+        }
+        /// <p>The type and amount of resources to assign to a container. These override the settings in the job definition. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn resources(mut self, input: crate::model::EksContainerResourceRequirements) -> Self {
+            self.resources = Some(input);
+            self
+        }
+        /// <p>The type and amount of resources to assign to a container. These override the settings in the job definition. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_resources(
+            mut self,
+            input: std::option::Option<crate::model::EksContainerResourceRequirements>,
+        ) -> Self {
+            self.resources = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksContainerOverride`](crate::model::EksContainerOverride).
+        pub fn build(self) -> crate::model::EksContainerOverride {
+            crate::model::EksContainerOverride {
+                image: self.image,
+                command: self.command,
+                args: self.args,
+                env: self.env,
+                resources: self.resources,
+            }
+        }
+    }
+}
+impl EksContainerOverride {
+    /// Creates a new builder-style object to manufacture [`EksContainerOverride`](crate::model::EksContainerOverride).
+    pub fn builder() -> crate::model::eks_container_override::Builder {
+        crate::model::eks_container_override::Builder::default()
+    }
+}
+
+/// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksContainerResourceRequirements {
+    /// <p>The type and quantity of the resources to reserve for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested using either the <code>limits</code> or the <code>requests</code> objects.</p>
+    /// <dl>
+    /// <dt>
+    /// memory
+    /// </dt>
+    /// <dd>
+    /// <p>The memory hard limit (in MiB) for the container, using whole integers, with a "Mi" suffix. If your container attempts to exceed the memory specified, the container is terminated. You must specify at least 4 MiB of memory for a job. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both places, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p> <note>
+    /// <p>To maximize your resource utilization, provide your jobs with as much memory as possible for the specific instance type that you are using. To learn how, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// cpu
+    /// </dt>
+    /// <dd>
+    /// <p>The number of CPUs that's reserved for the container. Values must be an even multiple of <code>0.25</code>. <code>cpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>cpu</code> is specified in both places, then the value that's specified in <code>limits</code> must be at least as large as the value that's specified in <code>requests</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// nvidia.com/gpu
+    /// </dt>
+    /// <dd>
+    /// <p>The number of GPUs that's reserved for the container. Values must be a whole integer. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both places, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
+    /// </dd>
+    /// </dl>
+    #[doc(hidden)]
+    pub limits:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The type and quantity of the resources to request for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested by using either the <code>limits</code> or the <code>requests</code> objects.</p>
+    /// <dl>
+    /// <dt>
+    /// memory
+    /// </dt>
+    /// <dd>
+    /// <p>The memory hard limit (in MiB) for the container, using whole integers, with a "Mi" suffix. If your container attempts to exceed the memory specified, the container is terminated. You must specify at least 4 MiB of memory for a job. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p> <note>
+    /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// cpu
+    /// </dt>
+    /// <dd>
+    /// <p>The number of CPUs that are reserved for the container. Values must be an even multiple of <code>0.25</code>. <code>cpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>cpu</code> is specified in both, then the value that's specified in <code>limits</code> must be at least as large as the value that's specified in <code>requests</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// nvidia.com/gpu
+    /// </dt>
+    /// <dd>
+    /// <p>The number of GPUs that are reserved for the container. Values must be a whole integer. <code>nvidia.com/gpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>nvidia.com/gpu</code> is specified in both, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
+    /// </dd>
+    /// </dl>
+    #[doc(hidden)]
+    pub requests:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl EksContainerResourceRequirements {
+    /// <p>The type and quantity of the resources to reserve for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested using either the <code>limits</code> or the <code>requests</code> objects.</p>
+    /// <dl>
+    /// <dt>
+    /// memory
+    /// </dt>
+    /// <dd>
+    /// <p>The memory hard limit (in MiB) for the container, using whole integers, with a "Mi" suffix. If your container attempts to exceed the memory specified, the container is terminated. You must specify at least 4 MiB of memory for a job. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both places, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p> <note>
+    /// <p>To maximize your resource utilization, provide your jobs with as much memory as possible for the specific instance type that you are using. To learn how, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// cpu
+    /// </dt>
+    /// <dd>
+    /// <p>The number of CPUs that's reserved for the container. Values must be an even multiple of <code>0.25</code>. <code>cpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>cpu</code> is specified in both places, then the value that's specified in <code>limits</code> must be at least as large as the value that's specified in <code>requests</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// nvidia.com/gpu
+    /// </dt>
+    /// <dd>
+    /// <p>The number of GPUs that's reserved for the container. Values must be a whole integer. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both places, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn limits(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.limits.as_ref()
+    }
+    /// <p>The type and quantity of the resources to request for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested by using either the <code>limits</code> or the <code>requests</code> objects.</p>
+    /// <dl>
+    /// <dt>
+    /// memory
+    /// </dt>
+    /// <dd>
+    /// <p>The memory hard limit (in MiB) for the container, using whole integers, with a "Mi" suffix. If your container attempts to exceed the memory specified, the container is terminated. You must specify at least 4 MiB of memory for a job. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p> <note>
+    /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// cpu
+    /// </dt>
+    /// <dd>
+    /// <p>The number of CPUs that are reserved for the container. Values must be an even multiple of <code>0.25</code>. <code>cpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>cpu</code> is specified in both, then the value that's specified in <code>limits</code> must be at least as large as the value that's specified in <code>requests</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// nvidia.com/gpu
+    /// </dt>
+    /// <dd>
+    /// <p>The number of GPUs that are reserved for the container. Values must be a whole integer. <code>nvidia.com/gpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>nvidia.com/gpu</code> is specified in both, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn requests(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.requests.as_ref()
+    }
+}
+/// See [`EksContainerResourceRequirements`](crate::model::EksContainerResourceRequirements).
+pub mod eks_container_resource_requirements {
+
+    /// A builder for [`EksContainerResourceRequirements`](crate::model::EksContainerResourceRequirements).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) limits: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) requests: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `limits`.
+        ///
+        /// To override the contents of this collection use [`set_limits`](Self::set_limits).
+        ///
+        /// <p>The type and quantity of the resources to reserve for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested using either the <code>limits</code> or the <code>requests</code> objects.</p>
+        /// <dl>
+        /// <dt>
+        /// memory
+        /// </dt>
+        /// <dd>
+        /// <p>The memory hard limit (in MiB) for the container, using whole integers, with a "Mi" suffix. If your container attempts to exceed the memory specified, the container is terminated. You must specify at least 4 MiB of memory for a job. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both places, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p> <note>
+        /// <p>To maximize your resource utilization, provide your jobs with as much memory as possible for the specific instance type that you are using. To learn how, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
+        /// </note>
+        /// </dd>
+        /// <dt>
+        /// cpu
+        /// </dt>
+        /// <dd>
+        /// <p>The number of CPUs that's reserved for the container. Values must be an even multiple of <code>0.25</code>. <code>cpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>cpu</code> is specified in both places, then the value that's specified in <code>limits</code> must be at least as large as the value that's specified in <code>requests</code>.</p>
+        /// </dd>
+        /// <dt>
+        /// nvidia.com/gpu
+        /// </dt>
+        /// <dd>
+        /// <p>The number of GPUs that's reserved for the container. Values must be a whole integer. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both places, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
+        /// </dd>
+        /// </dl>
+        pub fn limits(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.limits.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.limits = Some(hash_map);
+            self
+        }
+        /// <p>The type and quantity of the resources to reserve for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested using either the <code>limits</code> or the <code>requests</code> objects.</p>
+        /// <dl>
+        /// <dt>
+        /// memory
+        /// </dt>
+        /// <dd>
+        /// <p>The memory hard limit (in MiB) for the container, using whole integers, with a "Mi" suffix. If your container attempts to exceed the memory specified, the container is terminated. You must specify at least 4 MiB of memory for a job. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both places, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p> <note>
+        /// <p>To maximize your resource utilization, provide your jobs with as much memory as possible for the specific instance type that you are using. To learn how, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
+        /// </note>
+        /// </dd>
+        /// <dt>
+        /// cpu
+        /// </dt>
+        /// <dd>
+        /// <p>The number of CPUs that's reserved for the container. Values must be an even multiple of <code>0.25</code>. <code>cpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>cpu</code> is specified in both places, then the value that's specified in <code>limits</code> must be at least as large as the value that's specified in <code>requests</code>.</p>
+        /// </dd>
+        /// <dt>
+        /// nvidia.com/gpu
+        /// </dt>
+        /// <dd>
+        /// <p>The number of GPUs that's reserved for the container. Values must be a whole integer. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both places, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
+        /// </dd>
+        /// </dl>
+        pub fn set_limits(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.limits = input;
+            self
+        }
+        /// Adds a key-value pair to `requests`.
+        ///
+        /// To override the contents of this collection use [`set_requests`](Self::set_requests).
+        ///
+        /// <p>The type and quantity of the resources to request for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested by using either the <code>limits</code> or the <code>requests</code> objects.</p>
+        /// <dl>
+        /// <dt>
+        /// memory
+        /// </dt>
+        /// <dd>
+        /// <p>The memory hard limit (in MiB) for the container, using whole integers, with a "Mi" suffix. If your container attempts to exceed the memory specified, the container is terminated. You must specify at least 4 MiB of memory for a job. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p> <note>
+        /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
+        /// </note>
+        /// </dd>
+        /// <dt>
+        /// cpu
+        /// </dt>
+        /// <dd>
+        /// <p>The number of CPUs that are reserved for the container. Values must be an even multiple of <code>0.25</code>. <code>cpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>cpu</code> is specified in both, then the value that's specified in <code>limits</code> must be at least as large as the value that's specified in <code>requests</code>.</p>
+        /// </dd>
+        /// <dt>
+        /// nvidia.com/gpu
+        /// </dt>
+        /// <dd>
+        /// <p>The number of GPUs that are reserved for the container. Values must be a whole integer. <code>nvidia.com/gpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>nvidia.com/gpu</code> is specified in both, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
+        /// </dd>
+        /// </dl>
+        pub fn requests(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.requests.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.requests = Some(hash_map);
+            self
+        }
+        /// <p>The type and quantity of the resources to request for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested by using either the <code>limits</code> or the <code>requests</code> objects.</p>
+        /// <dl>
+        /// <dt>
+        /// memory
+        /// </dt>
+        /// <dd>
+        /// <p>The memory hard limit (in MiB) for the container, using whole integers, with a "Mi" suffix. If your container attempts to exceed the memory specified, the container is terminated. You must specify at least 4 MiB of memory for a job. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p> <note>
+        /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
+        /// </note>
+        /// </dd>
+        /// <dt>
+        /// cpu
+        /// </dt>
+        /// <dd>
+        /// <p>The number of CPUs that are reserved for the container. Values must be an even multiple of <code>0.25</code>. <code>cpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>cpu</code> is specified in both, then the value that's specified in <code>limits</code> must be at least as large as the value that's specified in <code>requests</code>.</p>
+        /// </dd>
+        /// <dt>
+        /// nvidia.com/gpu
+        /// </dt>
+        /// <dd>
+        /// <p>The number of GPUs that are reserved for the container. Values must be a whole integer. <code>nvidia.com/gpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>nvidia.com/gpu</code> is specified in both, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
+        /// </dd>
+        /// </dl>
+        pub fn set_requests(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.requests = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksContainerResourceRequirements`](crate::model::EksContainerResourceRequirements).
+        pub fn build(self) -> crate::model::EksContainerResourceRequirements {
+            crate::model::EksContainerResourceRequirements {
+                limits: self.limits,
+                requests: self.requests,
+            }
+        }
+    }
+}
+impl EksContainerResourceRequirements {
+    /// Creates a new builder-style object to manufacture [`EksContainerResourceRequirements`](crate::model::EksContainerResourceRequirements).
+    pub fn builder() -> crate::model::eks_container_resource_requirements::Builder {
+        crate::model::eks_container_resource_requirements::Builder::default()
+    }
+}
+
+/// <p>An environment variable.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksContainerEnvironmentVariable {
+    /// <p>The name of the environment variable.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The value of the environment variable.</p>
+    #[doc(hidden)]
+    pub value: std::option::Option<std::string::String>,
+}
+impl EksContainerEnvironmentVariable {
+    /// <p>The name of the environment variable.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the environment variable.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+/// See [`EksContainerEnvironmentVariable`](crate::model::EksContainerEnvironmentVariable).
+pub mod eks_container_environment_variable {
+
+    /// A builder for [`EksContainerEnvironmentVariable`](crate::model::EksContainerEnvironmentVariable).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the environment variable.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the environment variable.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The value of the environment variable.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value of the environment variable.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksContainerEnvironmentVariable`](crate::model::EksContainerEnvironmentVariable).
+        pub fn build(self) -> crate::model::EksContainerEnvironmentVariable {
+            crate::model::EksContainerEnvironmentVariable {
+                name: self.name,
+                value: self.value,
+            }
+        }
+    }
+}
+impl EksContainerEnvironmentVariable {
+    /// Creates a new builder-style object to manufacture [`EksContainerEnvironmentVariable`](crate::model::EksContainerEnvironmentVariable).
+    pub fn builder() -> crate::model::eks_container_environment_variable::Builder {
+        crate::model::eks_container_environment_variable::Builder::default()
+    }
+}
+
+/// <p>An object that represents a job timeout configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobTimeout {
-    /// <p>The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after which Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.</p>
+    /// <p>The job timeout time (in seconds) that's measured from the job attempt's <code>startedAt</code> timestamp. After this time passes, Batch terminates your jobs if they aren't finished. The minimum value for the timeout is 60 seconds.</p>
+    /// <p>For array jobs, the timeout applies to the child jobs, not to the parent array job.</p>
+    /// <p>For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.</p>
     #[doc(hidden)]
     pub attempt_duration_seconds: std::option::Option<i32>,
 }
 impl JobTimeout {
-    /// <p>The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after which Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.</p>
+    /// <p>The job timeout time (in seconds) that's measured from the job attempt's <code>startedAt</code> timestamp. After this time passes, Batch terminates your jobs if they aren't finished. The minimum value for the timeout is 60 seconds.</p>
+    /// <p>For array jobs, the timeout applies to the child jobs, not to the parent array job.</p>
+    /// <p>For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.</p>
     pub fn attempt_duration_seconds(&self) -> std::option::Option<i32> {
         self.attempt_duration_seconds
     }
@@ -1697,12 +2483,16 @@ pub mod job_timeout {
         pub(crate) attempt_duration_seconds: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after which Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.</p>
+        /// <p>The job timeout time (in seconds) that's measured from the job attempt's <code>startedAt</code> timestamp. After this time passes, Batch terminates your jobs if they aren't finished. The minimum value for the timeout is 60 seconds.</p>
+        /// <p>For array jobs, the timeout applies to the child jobs, not to the parent array job.</p>
+        /// <p>For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.</p>
         pub fn attempt_duration_seconds(mut self, input: i32) -> Self {
             self.attempt_duration_seconds = Some(input);
             self
         }
-        /// <p>The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after which Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.</p>
+        /// <p>The job timeout time (in seconds) that's measured from the job attempt's <code>startedAt</code> timestamp. After this time passes, Batch terminates your jobs if they aren't finished. The minimum value for the timeout is 60 seconds.</p>
+        /// <p>For array jobs, the timeout applies to the child jobs, not to the parent array job.</p>
+        /// <p>For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.</p>
         pub fn set_attempt_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.attempt_duration_seconds = input;
             self
@@ -1722,14 +2512,14 @@ impl JobTimeout {
     }
 }
 
-/// <p>The retry strategy associated with a job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated job retries</a> in the <i>Batch User Guide</i>.</p>
+/// <p>The retry strategy that's associated with a job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated job retries</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetryStrategy {
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
     #[doc(hidden)]
     pub attempts: std::option::Option<i32>,
-    /// <p>Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified.</p>
+    /// <p>Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions match, then the job is retried.</p>
     #[doc(hidden)]
     pub evaluate_on_exit: std::option::Option<std::vec::Vec<crate::model::EvaluateOnExit>>,
 }
@@ -1738,7 +2528,7 @@ impl RetryStrategy {
     pub fn attempts(&self) -> std::option::Option<i32> {
         self.attempts
     }
-    /// <p>Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified.</p>
+    /// <p>Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions match, then the job is retried.</p>
     pub fn evaluate_on_exit(&self) -> std::option::Option<&[crate::model::EvaluateOnExit]> {
         self.evaluate_on_exit.as_deref()
     }
@@ -1768,14 +2558,14 @@ pub mod retry_strategy {
         ///
         /// To override the contents of this collection use [`set_evaluate_on_exit`](Self::set_evaluate_on_exit).
         ///
-        /// <p>Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified.</p>
+        /// <p>Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions match, then the job is retried.</p>
         pub fn evaluate_on_exit(mut self, input: crate::model::EvaluateOnExit) -> Self {
             let mut v = self.evaluate_on_exit.unwrap_or_default();
             v.push(input);
             self.evaluate_on_exit = Some(v);
             self
         }
-        /// <p>Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified.</p>
+        /// <p>Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions match, then the job is retried.</p>
         pub fn set_evaluate_on_exit(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EvaluateOnExit>>,
@@ -1799,20 +2589,18 @@ impl RetryStrategy {
     }
 }
 
-/// <p>Specifies a set of conditions to be met, and an action to take (<code>RETRY</code> or <code>EXIT</code>) if all conditions are met.</p>
+/// <p>Specifies an array of up to 5 conditions to be met, and an action to take (<code>RETRY</code> or <code>EXIT</code>) if all conditions are met. If none of the <code>EvaluateOnExit</code> conditions in a <code>RetryStrategy</code> match, then the job is retried.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluateOnExit {
-    /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can be up to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-    /// <p>The string can be between 1 and 512 characters in length.</p>
+    /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white spaces (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
     #[doc(hidden)]
     pub on_status_reason: std::option::Option<std::string::String>,
-    /// <p>Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can be up to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-    /// <p>The string can be between 1 and 512 characters in length.</p>
+    /// <p>Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
     #[doc(hidden)]
     pub on_reason: std::option::Option<std::string::String>,
-    /// <p>Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a job. The pattern can be up to 512 characters in length. It can contain only numbers, and can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-    /// <p>The string can be between 1 and 512 characters in length.</p>
+    /// <p>Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a job. The pattern can be up to 512 characters long. It can contain only numbers, and can end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
+    /// <p>The string can contain up to 512 characters.</p>
     #[doc(hidden)]
     pub on_exit_code: std::option::Option<std::string::String>,
     /// <p>Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>, <code>onReason</code>, and <code>onExitCode</code>) are met. The values aren't case sensitive.</p>
@@ -1820,18 +2608,16 @@ pub struct EvaluateOnExit {
     pub action: std::option::Option<crate::model::RetryAction>,
 }
 impl EvaluateOnExit {
-    /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can be up to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-    /// <p>The string can be between 1 and 512 characters in length.</p>
+    /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white spaces (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
     pub fn on_status_reason(&self) -> std::option::Option<&str> {
         self.on_status_reason.as_deref()
     }
-    /// <p>Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can be up to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-    /// <p>The string can be between 1 and 512 characters in length.</p>
+    /// <p>Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
     pub fn on_reason(&self) -> std::option::Option<&str> {
         self.on_reason.as_deref()
     }
-    /// <p>Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a job. The pattern can be up to 512 characters in length. It can contain only numbers, and can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-    /// <p>The string can be between 1 and 512 characters in length.</p>
+    /// <p>Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a job. The pattern can be up to 512 characters long. It can contain only numbers, and can end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
+    /// <p>The string can contain up to 512 characters.</p>
     pub fn on_exit_code(&self) -> std::option::Option<&str> {
         self.on_exit_code.as_deref()
     }
@@ -1852,14 +2638,12 @@ pub mod evaluate_on_exit {
         pub(crate) action: std::option::Option<crate::model::RetryAction>,
     }
     impl Builder {
-        /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can be up to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-        /// <p>The string can be between 1 and 512 characters in length.</p>
+        /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white spaces (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
         pub fn on_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.on_status_reason = Some(input.into());
             self
         }
-        /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can be up to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-        /// <p>The string can be between 1 and 512 characters in length.</p>
+        /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white spaces (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
         pub fn set_on_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1867,26 +2651,24 @@ pub mod evaluate_on_exit {
             self.on_status_reason = input;
             self
         }
-        /// <p>Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can be up to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-        /// <p>The string can be between 1 and 512 characters in length.</p>
+        /// <p>Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
         pub fn on_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.on_reason = Some(input.into());
             self
         }
-        /// <p>Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can be up to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-        /// <p>The string can be between 1 and 512 characters in length.</p>
+        /// <p>Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
         pub fn set_on_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.on_reason = input;
             self
         }
-        /// <p>Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a job. The pattern can be up to 512 characters in length. It can contain only numbers, and can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-        /// <p>The string can be between 1 and 512 characters in length.</p>
+        /// <p>Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a job. The pattern can be up to 512 characters long. It can contain only numbers, and can end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
+        /// <p>The string can contain up to 512 characters.</p>
         pub fn on_exit_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.on_exit_code = Some(input.into());
             self
         }
-        /// <p>Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a job. The pattern can be up to 512 characters in length. It can contain only numbers, and can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-        /// <p>The string can be between 1 and 512 characters in length.</p>
+        /// <p>Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a job. The pattern can be up to 512 characters long. It can contain only numbers, and can end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
+        /// <p>The string can contain up to 512 characters.</p>
         pub fn set_on_exit_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.on_exit_code = input;
             self
@@ -2009,17 +2791,17 @@ impl AsRef<str> for RetryAction {
     }
 }
 
-/// <p>Object representing any node overrides to a job definition that's used in a <code>SubmitJob</code> API operation.</p> <note>
-/// <p>This isn't applicable to jobs that are running on Fargate resources and shouldn't be provided; use <code>containerOverrides</code> instead.</p>
+/// <p>An object that represents any node overrides to a job definition that's used in a <code>SubmitJob</code> API operation.</p> <note>
+/// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs. Rather, use <code>containerOverrides</code> instead.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeOverrides {
-    /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override:</p>
+    /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
     /// <ul>
-    /// <li> <p>There must be at least one node range in your job definition that has an open upper boundary (such as <code>:</code> or <code>n:</code>).</p> </li>
-    /// <li> <p>The lower boundary of the node range specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
-    /// <li> <p>The main node index specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+    /// <li> <p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p> </li>
+    /// <li> <p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+    /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub num_nodes: std::option::Option<i32>,
@@ -2029,11 +2811,11 @@ pub struct NodeOverrides {
         std::option::Option<std::vec::Vec<crate::model::NodePropertyOverride>>,
 }
 impl NodeOverrides {
-    /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override:</p>
+    /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
     /// <ul>
-    /// <li> <p>There must be at least one node range in your job definition that has an open upper boundary (such as <code>:</code> or <code>n:</code>).</p> </li>
-    /// <li> <p>The lower boundary of the node range specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
-    /// <li> <p>The main node index specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+    /// <li> <p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p> </li>
+    /// <li> <p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+    /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
     /// </ul>
     pub fn num_nodes(&self) -> std::option::Option<i32> {
         self.num_nodes
@@ -2056,21 +2838,21 @@ pub mod node_overrides {
             std::option::Option<std::vec::Vec<crate::model::NodePropertyOverride>>,
     }
     impl Builder {
-        /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override:</p>
+        /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
         /// <ul>
-        /// <li> <p>There must be at least one node range in your job definition that has an open upper boundary (such as <code>:</code> or <code>n:</code>).</p> </li>
-        /// <li> <p>The lower boundary of the node range specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
-        /// <li> <p>The main node index specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+        /// <li> <p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p> </li>
+        /// <li> <p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+        /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
         /// </ul>
         pub fn num_nodes(mut self, input: i32) -> Self {
             self.num_nodes = Some(input);
             self
         }
-        /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override:</p>
+        /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
         /// <ul>
-        /// <li> <p>There must be at least one node range in your job definition that has an open upper boundary (such as <code>:</code> or <code>n:</code>).</p> </li>
-        /// <li> <p>The lower boundary of the node range specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
-        /// <li> <p>The main node index specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+        /// <li> <p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p> </li>
+        /// <li> <p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+        /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
         /// </ul>
         pub fn set_num_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.num_nodes = input;
@@ -2114,14 +2896,14 @@ impl NodeOverrides {
     }
 }
 
-/// <p>Object representing any node overrides to a job definition that's used in a <code>SubmitJob</code> API operation.</p>
+/// <p>The object that represents any node overrides to a job definition that's used in a <code>SubmitJob</code> API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodePropertyOverride {
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
     #[doc(hidden)]
     pub target_nodes: std::option::Option<std::string::String>,
-    /// <p>The overrides that should be sent to a node range.</p>
+    /// <p>The overrides that are sent to a node range.</p>
     #[doc(hidden)]
     pub container_overrides: std::option::Option<crate::model::ContainerOverrides>,
 }
@@ -2130,7 +2912,7 @@ impl NodePropertyOverride {
     pub fn target_nodes(&self) -> std::option::Option<&str> {
         self.target_nodes.as_deref()
     }
-    /// <p>The overrides that should be sent to a node range.</p>
+    /// <p>The overrides that are sent to a node range.</p>
     pub fn container_overrides(&self) -> std::option::Option<&crate::model::ContainerOverrides> {
         self.container_overrides.as_ref()
     }
@@ -2155,12 +2937,12 @@ pub mod node_property_override {
             self.target_nodes = input;
             self
         }
-        /// <p>The overrides that should be sent to a node range.</p>
+        /// <p>The overrides that are sent to a node range.</p>
         pub fn container_overrides(mut self, input: crate::model::ContainerOverrides) -> Self {
             self.container_overrides = Some(input);
             self
         }
-        /// <p>The overrides that should be sent to a node range.</p>
+        /// <p>The overrides that are sent to a node range.</p>
         pub fn set_container_overrides(
             mut self,
             input: std::option::Option<crate::model::ContainerOverrides>,
@@ -2188,11 +2970,11 @@ impl NodePropertyOverride {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerOverrides {
-    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     #[doc(hidden)]
     pub vcpus: std::option::Option<i32>,
-    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement that's specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     #[doc(hidden)]
     pub memory: std::option::Option<i32>,
@@ -2205,7 +2987,7 @@ pub struct ContainerOverrides {
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p> <note>
-    /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for variables that are set by the Batch service.</p>
+    /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     #[doc(hidden)]
     pub environment: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
@@ -2215,12 +2997,12 @@ pub struct ContainerOverrides {
         std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
 }
 impl ContainerOverrides {
-    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub fn vcpus(&self) -> std::option::Option<i32> {
         self.vcpus
     }
-    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement that's specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub fn memory(&self) -> std::option::Option<i32> {
         self.memory
@@ -2236,7 +3018,7 @@ impl ContainerOverrides {
         self.instance_type.as_deref()
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p> <note>
-    /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for variables that are set by the Batch service.</p>
+    /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub fn environment(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
         self.environment.as_deref()
@@ -2263,25 +3045,25 @@ pub mod container_overrides {
             std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
     }
     impl Builder {
-        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
         #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
         pub fn vcpus(mut self, input: i32) -> Self {
             self.vcpus = Some(input);
             self
         }
-        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
         #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
         pub fn set_vcpus(mut self, input: std::option::Option<i32>) -> Self {
             self.vcpus = input;
             self
         }
-        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement that's specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
         #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
         pub fn memory(mut self, input: i32) -> Self {
             self.memory = Some(input);
             self
         }
-        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement that's specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
         #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
         pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
             self.memory = input;
@@ -2328,7 +3110,7 @@ pub mod container_overrides {
         /// To override the contents of this collection use [`set_environment`](Self::set_environment).
         ///
         /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p> <note>
-        /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for variables that are set by the Batch service.</p>
+        /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
         /// </note>
         pub fn environment(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.environment.unwrap_or_default();
@@ -2337,7 +3119,7 @@ pub mod container_overrides {
             self
         }
         /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p> <note>
-        /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for variables that are set by the Batch service.</p>
+        /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
         /// </note>
         pub fn set_environment(
             mut self,
@@ -2395,8 +3177,8 @@ pub struct ResourceRequirement {
     /// type="GPU"
     /// </dt>
     /// <dd>
-    /// <p>The number of physical GPUs to reserve for the container. The number of GPUs reserved for all containers in a job shouldn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
-    /// <p>GPUs are not available for jobs that are running on Fargate resources.</p>
+    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
+    /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p>
     /// </note>
     /// </dd>
     /// <dt>
@@ -2448,19 +3230,49 @@ pub struct ResourceRequirement {
     /// value = 8192
     /// </dt>
     /// <dd>
-    /// <p> <code>VCPU</code> = 1, 2, or 4</p>
+    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
     /// </dd>
     /// <dt>
-    /// value = 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384
+    /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
     /// </dt>
     /// <dd>
     /// <p> <code>VCPU</code> = 2 or 4</p>
     /// </dd>
     /// <dt>
-    /// value = 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720
+    /// value = 16384
+    /// </dt>
+    /// <dd>
+    /// <p> <code>VCPU</code> = 2, 4, or 8</p>
+    /// </dd>
+    /// <dt>
+    /// value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720
     /// </dt>
     /// <dd>
     /// <p> <code>VCPU</code> = 4</p>
+    /// </dd>
+    /// <dt>
+    /// value = 20480, 24576, or 28672
+    /// </dt>
+    /// <dd>
+    /// <p> <code>VCPU</code> = 4 or 8</p>
+    /// </dd>
+    /// <dt>
+    /// value = 36864, 45056, 53248, or 61440
+    /// </dt>
+    /// <dd>
+    /// <p> <code>VCPU</code> = 8</p>
+    /// </dd>
+    /// <dt>
+    /// value = 32768, 40960, 49152, or 57344
+    /// </dt>
+    /// <dd>
+    /// <p> <code>VCPU</code> = 8 or 16</p>
+    /// </dd>
+    /// <dt>
+    /// value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
+    /// </dt>
+    /// <dd>
+    /// <p> <code>VCPU</code> = 16</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -2469,7 +3281,8 @@ pub struct ResourceRequirement {
     /// </dt>
     /// <dd>
     /// <p>The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several places; it must be specified for each node at least once.</p>
-    /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and 4</p>
+    /// <p>The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16</p>
     /// <dl>
     /// <dt>
     /// value = 0.25
@@ -2500,6 +3313,18 @@ pub struct ResourceRequirement {
     /// </dt>
     /// <dd>
     /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
+    /// </dd>
+    /// <dt>
+    /// value = 8
+    /// </dt>
+    /// <dd>
+    /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p>
+    /// </dd>
+    /// <dt>
+    /// value = 16
+    /// </dt>
+    /// <dd>
+    /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -2517,8 +3342,8 @@ impl ResourceRequirement {
     /// type="GPU"
     /// </dt>
     /// <dd>
-    /// <p>The number of physical GPUs to reserve for the container. The number of GPUs reserved for all containers in a job shouldn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
-    /// <p>GPUs are not available for jobs that are running on Fargate resources.</p>
+    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
+    /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p>
     /// </note>
     /// </dd>
     /// <dt>
@@ -2570,19 +3395,49 @@ impl ResourceRequirement {
     /// value = 8192
     /// </dt>
     /// <dd>
-    /// <p> <code>VCPU</code> = 1, 2, or 4</p>
+    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
     /// </dd>
     /// <dt>
-    /// value = 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384
+    /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
     /// </dt>
     /// <dd>
     /// <p> <code>VCPU</code> = 2 or 4</p>
     /// </dd>
     /// <dt>
-    /// value = 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720
+    /// value = 16384
+    /// </dt>
+    /// <dd>
+    /// <p> <code>VCPU</code> = 2, 4, or 8</p>
+    /// </dd>
+    /// <dt>
+    /// value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720
     /// </dt>
     /// <dd>
     /// <p> <code>VCPU</code> = 4</p>
+    /// </dd>
+    /// <dt>
+    /// value = 20480, 24576, or 28672
+    /// </dt>
+    /// <dd>
+    /// <p> <code>VCPU</code> = 4 or 8</p>
+    /// </dd>
+    /// <dt>
+    /// value = 36864, 45056, 53248, or 61440
+    /// </dt>
+    /// <dd>
+    /// <p> <code>VCPU</code> = 8</p>
+    /// </dd>
+    /// <dt>
+    /// value = 32768, 40960, 49152, or 57344
+    /// </dt>
+    /// <dd>
+    /// <p> <code>VCPU</code> = 8 or 16</p>
+    /// </dd>
+    /// <dt>
+    /// value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
+    /// </dt>
+    /// <dd>
+    /// <p> <code>VCPU</code> = 16</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -2591,7 +3446,8 @@ impl ResourceRequirement {
     /// </dt>
     /// <dd>
     /// <p>The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several places; it must be specified for each node at least once.</p>
-    /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and 4</p>
+    /// <p>The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16</p>
     /// <dl>
     /// <dt>
     /// value = 0.25
@@ -2622,6 +3478,18 @@ impl ResourceRequirement {
     /// </dt>
     /// <dd>
     /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
+    /// </dd>
+    /// <dt>
+    /// value = 8
+    /// </dt>
+    /// <dd>
+    /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p>
+    /// </dd>
+    /// <dt>
+    /// value = 16
+    /// </dt>
+    /// <dd>
+    /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -2650,8 +3518,8 @@ pub mod resource_requirement {
         /// type="GPU"
         /// </dt>
         /// <dd>
-        /// <p>The number of physical GPUs to reserve for the container. The number of GPUs reserved for all containers in a job shouldn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
-        /// <p>GPUs are not available for jobs that are running on Fargate resources.</p>
+        /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
+        /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p>
         /// </note>
         /// </dd>
         /// <dt>
@@ -2703,19 +3571,49 @@ pub mod resource_requirement {
         /// value = 8192
         /// </dt>
         /// <dd>
-        /// <p> <code>VCPU</code> = 1, 2, or 4</p>
+        /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
         /// </dd>
         /// <dt>
-        /// value = 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384
+        /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
         /// </dt>
         /// <dd>
         /// <p> <code>VCPU</code> = 2 or 4</p>
         /// </dd>
         /// <dt>
-        /// value = 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720
+        /// value = 16384
+        /// </dt>
+        /// <dd>
+        /// <p> <code>VCPU</code> = 2, 4, or 8</p>
+        /// </dd>
+        /// <dt>
+        /// value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720
         /// </dt>
         /// <dd>
         /// <p> <code>VCPU</code> = 4</p>
+        /// </dd>
+        /// <dt>
+        /// value = 20480, 24576, or 28672
+        /// </dt>
+        /// <dd>
+        /// <p> <code>VCPU</code> = 4 or 8</p>
+        /// </dd>
+        /// <dt>
+        /// value = 36864, 45056, 53248, or 61440
+        /// </dt>
+        /// <dd>
+        /// <p> <code>VCPU</code> = 8</p>
+        /// </dd>
+        /// <dt>
+        /// value = 32768, 40960, 49152, or 57344
+        /// </dt>
+        /// <dd>
+        /// <p> <code>VCPU</code> = 8 or 16</p>
+        /// </dd>
+        /// <dt>
+        /// value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
+        /// </dt>
+        /// <dd>
+        /// <p> <code>VCPU</code> = 16</p>
         /// </dd>
         /// </dl>
         /// </dd>
@@ -2724,7 +3622,8 @@ pub mod resource_requirement {
         /// </dt>
         /// <dd>
         /// <p>The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several places; it must be specified for each node at least once.</p>
-        /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and 4</p>
+        /// <p>The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16</p>
         /// <dl>
         /// <dt>
         /// value = 0.25
@@ -2755,6 +3654,18 @@ pub mod resource_requirement {
         /// </dt>
         /// <dd>
         /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
+        /// </dd>
+        /// <dt>
+        /// value = 8
+        /// </dt>
+        /// <dd>
+        /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p>
+        /// </dd>
+        /// <dt>
+        /// value = 16
+        /// </dt>
+        /// <dd>
+        /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p>
         /// </dd>
         /// </dl>
         /// </dd>
@@ -2769,8 +3680,8 @@ pub mod resource_requirement {
         /// type="GPU"
         /// </dt>
         /// <dd>
-        /// <p>The number of physical GPUs to reserve for the container. The number of GPUs reserved for all containers in a job shouldn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
-        /// <p>GPUs are not available for jobs that are running on Fargate resources.</p>
+        /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
+        /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p>
         /// </note>
         /// </dd>
         /// <dt>
@@ -2822,19 +3733,49 @@ pub mod resource_requirement {
         /// value = 8192
         /// </dt>
         /// <dd>
-        /// <p> <code>VCPU</code> = 1, 2, or 4</p>
+        /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
         /// </dd>
         /// <dt>
-        /// value = 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384
+        /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
         /// </dt>
         /// <dd>
         /// <p> <code>VCPU</code> = 2 or 4</p>
         /// </dd>
         /// <dt>
-        /// value = 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720
+        /// value = 16384
+        /// </dt>
+        /// <dd>
+        /// <p> <code>VCPU</code> = 2, 4, or 8</p>
+        /// </dd>
+        /// <dt>
+        /// value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720
         /// </dt>
         /// <dd>
         /// <p> <code>VCPU</code> = 4</p>
+        /// </dd>
+        /// <dt>
+        /// value = 20480, 24576, or 28672
+        /// </dt>
+        /// <dd>
+        /// <p> <code>VCPU</code> = 4 or 8</p>
+        /// </dd>
+        /// <dt>
+        /// value = 36864, 45056, 53248, or 61440
+        /// </dt>
+        /// <dd>
+        /// <p> <code>VCPU</code> = 8</p>
+        /// </dd>
+        /// <dt>
+        /// value = 32768, 40960, 49152, or 57344
+        /// </dt>
+        /// <dd>
+        /// <p> <code>VCPU</code> = 8 or 16</p>
+        /// </dd>
+        /// <dt>
+        /// value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
+        /// </dt>
+        /// <dd>
+        /// <p> <code>VCPU</code> = 16</p>
         /// </dd>
         /// </dl>
         /// </dd>
@@ -2843,7 +3784,8 @@ pub mod resource_requirement {
         /// </dt>
         /// <dd>
         /// <p>The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several places; it must be specified for each node at least once.</p>
-        /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and 4</p>
+        /// <p>The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16</p>
         /// <dl>
         /// <dt>
         /// value = 0.25
@@ -2874,6 +3816,18 @@ pub mod resource_requirement {
         /// </dt>
         /// <dd>
         /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
+        /// </dd>
+        /// <dt>
+        /// value = 8
+        /// </dt>
+        /// <dd>
+        /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p>
+        /// </dd>
+        /// <dt>
+        /// value = 16
+        /// </dt>
+        /// <dd>
+        /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p>
         /// </dd>
         /// </dl>
         /// </dd>
@@ -3070,11 +4024,11 @@ impl KeyValuePair {
     }
 }
 
-/// <p>An object representing an Batch job dependency.</p>
+/// <p>An object that represents an Batch job dependency.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobDependency {
-    /// <p>The job ID of the Batch job associated with this dependency.</p>
+    /// <p>The job ID of the Batch job that's associated with this dependency.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The type of the job dependency.</p>
@@ -3082,7 +4036,7 @@ pub struct JobDependency {
     pub r#type: std::option::Option<crate::model::ArrayJobDependency>,
 }
 impl JobDependency {
-    /// <p>The job ID of the Batch job associated with this dependency.</p>
+    /// <p>The job ID of the Batch job that's associated with this dependency.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -3101,12 +4055,12 @@ pub mod job_dependency {
         pub(crate) r#type: std::option::Option<crate::model::ArrayJobDependency>,
     }
     impl Builder {
-        /// <p>The job ID of the Batch job associated with this dependency.</p>
+        /// <p>The job ID of the Batch job that's associated with this dependency.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The job ID of the Batch job associated with this dependency.</p>
+        /// <p>The job ID of the Batch job that's associated with this dependency.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -3232,7 +4186,7 @@ impl AsRef<str> for ArrayJobDependency {
     }
 }
 
-/// <p>An object representing an Batch array job.</p>
+/// <p>An object that represents an Batch array job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArrayProperties {
@@ -3275,6 +4229,1035 @@ impl ArrayProperties {
     /// Creates a new builder-style object to manufacture [`ArrayProperties`](crate::model::ArrayProperties).
     pub fn builder() -> crate::model::array_properties::Builder {
         crate::model::array_properties::Builder::default()
+    }
+}
+
+/// <p>An object that contains the properties for the Kubernetes resources of a job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksProperties {
+    /// <p>The properties for the Kubernetes pod resources of a job.</p>
+    #[doc(hidden)]
+    pub pod_properties: std::option::Option<crate::model::EksPodProperties>,
+}
+impl EksProperties {
+    /// <p>The properties for the Kubernetes pod resources of a job.</p>
+    pub fn pod_properties(&self) -> std::option::Option<&crate::model::EksPodProperties> {
+        self.pod_properties.as_ref()
+    }
+}
+/// See [`EksProperties`](crate::model::EksProperties).
+pub mod eks_properties {
+
+    /// A builder for [`EksProperties`](crate::model::EksProperties).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) pod_properties: std::option::Option<crate::model::EksPodProperties>,
+    }
+    impl Builder {
+        /// <p>The properties for the Kubernetes pod resources of a job.</p>
+        pub fn pod_properties(mut self, input: crate::model::EksPodProperties) -> Self {
+            self.pod_properties = Some(input);
+            self
+        }
+        /// <p>The properties for the Kubernetes pod resources of a job.</p>
+        pub fn set_pod_properties(
+            mut self,
+            input: std::option::Option<crate::model::EksPodProperties>,
+        ) -> Self {
+            self.pod_properties = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksProperties`](crate::model::EksProperties).
+        pub fn build(self) -> crate::model::EksProperties {
+            crate::model::EksProperties {
+                pod_properties: self.pod_properties,
+            }
+        }
+    }
+}
+impl EksProperties {
+    /// Creates a new builder-style object to manufacture [`EksProperties`](crate::model::EksProperties).
+    pub fn builder() -> crate::model::eks_properties::Builder {
+        crate::model::eks_properties::Builder::default()
+    }
+}
+
+/// <p>The properties for the pod.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksPodProperties {
+    /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub service_account_name: std::option::Option<std::string::String>,
+    /// <p>Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>. Setting this to <code>false</code> enables the Kubernetes pod networking model. Most Batch workloads are egress-only and don't require the overhead of IP allocation for each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod networking</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub host_network: std::option::Option<bool>,
+    /// <p>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that any DNS query that does not match the configured cluster domain suffix is forwarded to the upstream nameserver inherited from the node. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's DNS policy</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code> </p>
+    #[doc(hidden)]
+    pub dns_policy: std::option::Option<std::string::String>,
+    /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
+    #[doc(hidden)]
+    pub containers: std::option::Option<std::vec::Vec<crate::model::EksContainer>>,
+    /// <p>Specifies the volumes for a job definition that uses Amazon EKS resources.</p>
+    #[doc(hidden)]
+    pub volumes: std::option::Option<std::vec::Vec<crate::model::EksVolume>>,
+}
+impl EksPodProperties {
+    /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn service_account_name(&self) -> std::option::Option<&str> {
+        self.service_account_name.as_deref()
+    }
+    /// <p>Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>. Setting this to <code>false</code> enables the Kubernetes pod networking model. Most Batch workloads are egress-only and don't require the overhead of IP allocation for each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod networking</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn host_network(&self) -> std::option::Option<bool> {
+        self.host_network
+    }
+    /// <p>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that any DNS query that does not match the configured cluster domain suffix is forwarded to the upstream nameserver inherited from the node. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's DNS policy</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code> </p>
+    pub fn dns_policy(&self) -> std::option::Option<&str> {
+        self.dns_policy.as_deref()
+    }
+    /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
+    pub fn containers(&self) -> std::option::Option<&[crate::model::EksContainer]> {
+        self.containers.as_deref()
+    }
+    /// <p>Specifies the volumes for a job definition that uses Amazon EKS resources.</p>
+    pub fn volumes(&self) -> std::option::Option<&[crate::model::EksVolume]> {
+        self.volumes.as_deref()
+    }
+}
+/// See [`EksPodProperties`](crate::model::EksPodProperties).
+pub mod eks_pod_properties {
+
+    /// A builder for [`EksPodProperties`](crate::model::EksPodProperties).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) service_account_name: std::option::Option<std::string::String>,
+        pub(crate) host_network: std::option::Option<bool>,
+        pub(crate) dns_policy: std::option::Option<std::string::String>,
+        pub(crate) containers: std::option::Option<std::vec::Vec<crate::model::EksContainer>>,
+        pub(crate) volumes: std::option::Option<std::vec::Vec<crate::model::EksVolume>>,
+    }
+    impl Builder {
+        /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn service_account_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_account_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_service_account_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.service_account_name = input;
+            self
+        }
+        /// <p>Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>. Setting this to <code>false</code> enables the Kubernetes pod networking model. Most Batch workloads are egress-only and don't require the overhead of IP allocation for each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod networking</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn host_network(mut self, input: bool) -> Self {
+            self.host_network = Some(input);
+            self
+        }
+        /// <p>Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>. Setting this to <code>false</code> enables the Kubernetes pod networking model. Most Batch workloads are egress-only and don't require the overhead of IP allocation for each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod networking</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_host_network(mut self, input: std::option::Option<bool>) -> Self {
+            self.host_network = input;
+            self
+        }
+        /// <p>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that any DNS query that does not match the configured cluster domain suffix is forwarded to the upstream nameserver inherited from the node. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's DNS policy</a> in the <i>Kubernetes documentation</i>.</p>
+        /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code> </p>
+        pub fn dns_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dns_policy = Some(input.into());
+            self
+        }
+        /// <p>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that any DNS query that does not match the configured cluster domain suffix is forwarded to the upstream nameserver inherited from the node. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's DNS policy</a> in the <i>Kubernetes documentation</i>.</p>
+        /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code> </p>
+        pub fn set_dns_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dns_policy = input;
+            self
+        }
+        /// Appends an item to `containers`.
+        ///
+        /// To override the contents of this collection use [`set_containers`](Self::set_containers).
+        ///
+        /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
+        pub fn containers(mut self, input: crate::model::EksContainer) -> Self {
+            let mut v = self.containers.unwrap_or_default();
+            v.push(input);
+            self.containers = Some(v);
+            self
+        }
+        /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
+        pub fn set_containers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EksContainer>>,
+        ) -> Self {
+            self.containers = input;
+            self
+        }
+        /// Appends an item to `volumes`.
+        ///
+        /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
+        ///
+        /// <p>Specifies the volumes for a job definition that uses Amazon EKS resources.</p>
+        pub fn volumes(mut self, input: crate::model::EksVolume) -> Self {
+            let mut v = self.volumes.unwrap_or_default();
+            v.push(input);
+            self.volumes = Some(v);
+            self
+        }
+        /// <p>Specifies the volumes for a job definition that uses Amazon EKS resources.</p>
+        pub fn set_volumes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EksVolume>>,
+        ) -> Self {
+            self.volumes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksPodProperties`](crate::model::EksPodProperties).
+        pub fn build(self) -> crate::model::EksPodProperties {
+            crate::model::EksPodProperties {
+                service_account_name: self.service_account_name,
+                host_network: self.host_network,
+                dns_policy: self.dns_policy,
+                containers: self.containers,
+                volumes: self.volumes,
+            }
+        }
+    }
+}
+impl EksPodProperties {
+    /// Creates a new builder-style object to manufacture [`EksPodProperties`](crate::model::EksPodProperties).
+    pub fn builder() -> crate::model::eks_pod_properties::Builder {
+        crate::model::eks_pod_properties::Builder::default()
+    }
+}
+
+/// <p>Specifies an Amazon EKS volume for a job definition.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksVolume {
+    /// <p>The name of the volume. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies the configuration of a Kubernetes <code>hostPath</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub host_path: std::option::Option<crate::model::EksHostPath>,
+    /// <p>Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub empty_dir: std::option::Option<crate::model::EksEmptyDir>,
+    /// <p>Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub secret: std::option::Option<crate::model::EksSecret>,
+}
+impl EksVolume {
+    /// <p>The name of the volume. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the configuration of a Kubernetes <code>hostPath</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn host_path(&self) -> std::option::Option<&crate::model::EksHostPath> {
+        self.host_path.as_ref()
+    }
+    /// <p>Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn empty_dir(&self) -> std::option::Option<&crate::model::EksEmptyDir> {
+        self.empty_dir.as_ref()
+    }
+    /// <p>Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn secret(&self) -> std::option::Option<&crate::model::EksSecret> {
+        self.secret.as_ref()
+    }
+}
+/// See [`EksVolume`](crate::model::EksVolume).
+pub mod eks_volume {
+
+    /// A builder for [`EksVolume`](crate::model::EksVolume).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) host_path: std::option::Option<crate::model::EksHostPath>,
+        pub(crate) empty_dir: std::option::Option<crate::model::EksEmptyDir>,
+        pub(crate) secret: std::option::Option<crate::model::EksSecret>,
+    }
+    impl Builder {
+        /// <p>The name of the volume. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the volume. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Specifies the configuration of a Kubernetes <code>hostPath</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn host_path(mut self, input: crate::model::EksHostPath) -> Self {
+            self.host_path = Some(input);
+            self
+        }
+        /// <p>Specifies the configuration of a Kubernetes <code>hostPath</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_host_path(
+            mut self,
+            input: std::option::Option<crate::model::EksHostPath>,
+        ) -> Self {
+            self.host_path = input;
+            self
+        }
+        /// <p>Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn empty_dir(mut self, input: crate::model::EksEmptyDir) -> Self {
+            self.empty_dir = Some(input);
+            self
+        }
+        /// <p>Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_empty_dir(
+            mut self,
+            input: std::option::Option<crate::model::EksEmptyDir>,
+        ) -> Self {
+            self.empty_dir = input;
+            self
+        }
+        /// <p>Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn secret(mut self, input: crate::model::EksSecret) -> Self {
+            self.secret = Some(input);
+            self
+        }
+        /// <p>Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_secret(mut self, input: std::option::Option<crate::model::EksSecret>) -> Self {
+            self.secret = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksVolume`](crate::model::EksVolume).
+        pub fn build(self) -> crate::model::EksVolume {
+            crate::model::EksVolume {
+                name: self.name,
+                host_path: self.host_path,
+                empty_dir: self.empty_dir,
+                secret: self.secret,
+            }
+        }
+    }
+}
+impl EksVolume {
+    /// Creates a new builder-style object to manufacture [`EksVolume`](crate::model::EksVolume).
+    pub fn builder() -> crate::model::eks_volume::Builder {
+        crate::model::eks_volume::Builder::default()
+    }
+}
+
+/// <p>Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a> in the <i>Kubernetes documentation</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksSecret {
+    /// <p>The name of the secret. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub secret_name: std::option::Option<std::string::String>,
+    /// <p>Specifies whether the secret or the secret's keys must be defined.</p>
+    #[doc(hidden)]
+    pub optional: std::option::Option<bool>,
+}
+impl EksSecret {
+    /// <p>The name of the secret. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn secret_name(&self) -> std::option::Option<&str> {
+        self.secret_name.as_deref()
+    }
+    /// <p>Specifies whether the secret or the secret's keys must be defined.</p>
+    pub fn optional(&self) -> std::option::Option<bool> {
+        self.optional
+    }
+}
+/// See [`EksSecret`](crate::model::EksSecret).
+pub mod eks_secret {
+
+    /// A builder for [`EksSecret`](crate::model::EksSecret).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) secret_name: std::option::Option<std::string::String>,
+        pub(crate) optional: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The name of the secret. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn secret_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the secret. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_secret_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_name = input;
+            self
+        }
+        /// <p>Specifies whether the secret or the secret's keys must be defined.</p>
+        pub fn optional(mut self, input: bool) -> Self {
+            self.optional = Some(input);
+            self
+        }
+        /// <p>Specifies whether the secret or the secret's keys must be defined.</p>
+        pub fn set_optional(mut self, input: std::option::Option<bool>) -> Self {
+            self.optional = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksSecret`](crate::model::EksSecret).
+        pub fn build(self) -> crate::model::EksSecret {
+            crate::model::EksSecret {
+                secret_name: self.secret_name,
+                optional: self.optional,
+            }
+        }
+    }
+}
+impl EksSecret {
+    /// Creates a new builder-style object to manufacture [`EksSecret`](crate::model::EksSecret).
+    pub fn builder() -> crate::model::eks_secret::Builder {
+        crate::model::eks_secret::Builder::default()
+    }
+}
+
+/// <p>Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. An <code>emptyDir</code> volume is first created when a pod is assigned to a node. It exists as long as that pod is running on that node. The <code>emptyDir</code> volume is initially empty. All containers in the pod can read and write the files in the <code>emptyDir</code> volume. However, the <code>emptyDir</code> volume can be mounted at the same or different paths in each container. When a pod is removed from a node for any reason, the data in the <code>emptyDir</code> is deleted permanently. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a> in the <i>Kubernetes documentation</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksEmptyDir {
+    /// <p>The medium to store the volume. The default value is an empty string, which uses the storage of the node.</p>
+    /// <dl>
+    /// <dt>
+    /// ""
+    /// </dt>
+    /// <dd>
+    /// <p> <b>(Default)</b> Use the disk storage of the node.</p>
+    /// </dd>
+    /// <dt>
+    /// "Memory"
+    /// </dt>
+    /// <dd>
+    /// <p>Use the <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the volume are lost when the node reboots, and any storage on the volume counts against the container's memory limit.</p>
+    /// </dd>
+    /// </dl>
+    #[doc(hidden)]
+    pub medium: std::option::Option<std::string::String>,
+    /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
+    #[doc(hidden)]
+    pub size_limit: std::option::Option<std::string::String>,
+}
+impl EksEmptyDir {
+    /// <p>The medium to store the volume. The default value is an empty string, which uses the storage of the node.</p>
+    /// <dl>
+    /// <dt>
+    /// ""
+    /// </dt>
+    /// <dd>
+    /// <p> <b>(Default)</b> Use the disk storage of the node.</p>
+    /// </dd>
+    /// <dt>
+    /// "Memory"
+    /// </dt>
+    /// <dd>
+    /// <p>Use the <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the volume are lost when the node reboots, and any storage on the volume counts against the container's memory limit.</p>
+    /// </dd>
+    /// </dl>
+    pub fn medium(&self) -> std::option::Option<&str> {
+        self.medium.as_deref()
+    }
+    /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
+    pub fn size_limit(&self) -> std::option::Option<&str> {
+        self.size_limit.as_deref()
+    }
+}
+/// See [`EksEmptyDir`](crate::model::EksEmptyDir).
+pub mod eks_empty_dir {
+
+    /// A builder for [`EksEmptyDir`](crate::model::EksEmptyDir).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) medium: std::option::Option<std::string::String>,
+        pub(crate) size_limit: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The medium to store the volume. The default value is an empty string, which uses the storage of the node.</p>
+        /// <dl>
+        /// <dt>
+        /// ""
+        /// </dt>
+        /// <dd>
+        /// <p> <b>(Default)</b> Use the disk storage of the node.</p>
+        /// </dd>
+        /// <dt>
+        /// "Memory"
+        /// </dt>
+        /// <dd>
+        /// <p>Use the <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the volume are lost when the node reboots, and any storage on the volume counts against the container's memory limit.</p>
+        /// </dd>
+        /// </dl>
+        pub fn medium(mut self, input: impl Into<std::string::String>) -> Self {
+            self.medium = Some(input.into());
+            self
+        }
+        /// <p>The medium to store the volume. The default value is an empty string, which uses the storage of the node.</p>
+        /// <dl>
+        /// <dt>
+        /// ""
+        /// </dt>
+        /// <dd>
+        /// <p> <b>(Default)</b> Use the disk storage of the node.</p>
+        /// </dd>
+        /// <dt>
+        /// "Memory"
+        /// </dt>
+        /// <dd>
+        /// <p>Use the <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the volume are lost when the node reboots, and any storage on the volume counts against the container's memory limit.</p>
+        /// </dd>
+        /// </dl>
+        pub fn set_medium(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.medium = input;
+            self
+        }
+        /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
+        pub fn size_limit(mut self, input: impl Into<std::string::String>) -> Self {
+            self.size_limit = Some(input.into());
+            self
+        }
+        /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
+        pub fn set_size_limit(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.size_limit = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksEmptyDir`](crate::model::EksEmptyDir).
+        pub fn build(self) -> crate::model::EksEmptyDir {
+            crate::model::EksEmptyDir {
+                medium: self.medium,
+                size_limit: self.size_limit,
+            }
+        }
+    }
+}
+impl EksEmptyDir {
+    /// Creates a new builder-style object to manufacture [`EksEmptyDir`](crate::model::EksEmptyDir).
+    pub fn builder() -> crate::model::eks_empty_dir::Builder {
+        crate::model::eks_empty_dir::Builder::default()
+    }
+}
+
+/// <p>Specifies the configuration of a Kubernetes <code>hostPath</code> volume. A <code>hostPath</code> volume mounts an existing file or directory from the host node's filesystem into your pod. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a> in the <i>Kubernetes documentation</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksHostPath {
+    /// <p>The path of the file or directory on the host to mount into containers on the pod.</p>
+    #[doc(hidden)]
+    pub path: std::option::Option<std::string::String>,
+}
+impl EksHostPath {
+    /// <p>The path of the file or directory on the host to mount into containers on the pod.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+}
+/// See [`EksHostPath`](crate::model::EksHostPath).
+pub mod eks_host_path {
+
+    /// A builder for [`EksHostPath`](crate::model::EksHostPath).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) path: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The path of the file or directory on the host to mount into containers on the pod.</p>
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
+            self
+        }
+        /// <p>The path of the file or directory on the host to mount into containers on the pod.</p>
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksHostPath`](crate::model::EksHostPath).
+        pub fn build(self) -> crate::model::EksHostPath {
+            crate::model::EksHostPath { path: self.path }
+        }
+    }
+}
+impl EksHostPath {
+    /// Creates a new builder-style object to manufacture [`EksHostPath`](crate::model::EksHostPath).
+    pub fn builder() -> crate::model::eks_host_path::Builder {
+        crate::model::eks_host_path::Builder::default()
+    }
+}
+
+/// <p>EKS container properties are used in job definitions for Amazon EKS based job definitions to describe the properties for a container node in the pod that's launched as part of a job. This can't be specified for Amazon ECS based job definitions.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksContainer {
+    /// <p>The name of the container. If the name isn't specified, the default name "<code>Default</code>" is used. Each container in a pod must have a unique name.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The Docker image used to start the container.</p>
+    #[doc(hidden)]
+    pub image: std::option::Option<std::string::String>,
+    /// <p>The image pull policy for the container. Supported values are <code>Always</code>, <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>IfNotPresent</code>. However, if the <code>:latest</code> tag is specified, it defaults to <code>Always</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating images</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub image_pull_policy: std::option::Option<std::string::String>,
+    /// <p>The entrypoint for the container. This isn't run within a shell. If this isn't specified, the <code>ENTRYPOINT</code> of the container image is used. Environment variable references are expanded using the container's environment.</p>
+    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>." <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> will be passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. The entrypoint can't be updated. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#entrypoint">ENTRYPOINT</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a container</a> and <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub command: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
+    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>." <code>$$</code> is replaced with <code>$</code>, and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub args: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The environment variables to pass to a container.</p> <note>
+    /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub env: std::option::Option<std::vec::Vec<crate::model::EksContainerEnvironmentVariable>>,
+    /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub resources: std::option::Option<crate::model::EksContainerResourceRequirements>,
+    /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub volume_mounts: std::option::Option<std::vec::Vec<crate::model::EksContainerVolumeMount>>,
+    /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub security_context: std::option::Option<crate::model::EksContainerSecurityContext>,
+}
+impl EksContainer {
+    /// <p>The name of the container. If the name isn't specified, the default name "<code>Default</code>" is used. Each container in a pod must have a unique name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Docker image used to start the container.</p>
+    pub fn image(&self) -> std::option::Option<&str> {
+        self.image.as_deref()
+    }
+    /// <p>The image pull policy for the container. Supported values are <code>Always</code>, <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>IfNotPresent</code>. However, if the <code>:latest</code> tag is specified, it defaults to <code>Always</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating images</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn image_pull_policy(&self) -> std::option::Option<&str> {
+        self.image_pull_policy.as_deref()
+    }
+    /// <p>The entrypoint for the container. This isn't run within a shell. If this isn't specified, the <code>ENTRYPOINT</code> of the container image is used. Environment variable references are expanded using the container's environment.</p>
+    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>." <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> will be passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. The entrypoint can't be updated. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#entrypoint">ENTRYPOINT</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a container</a> and <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+        self.command.as_deref()
+    }
+    /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
+    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>." <code>$$</code> is replaced with <code>$</code>, and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
+        self.args.as_deref()
+    }
+    /// <p>The environment variables to pass to a container.</p> <note>
+    /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
+    /// </note>
+    pub fn env(&self) -> std::option::Option<&[crate::model::EksContainerEnvironmentVariable]> {
+        self.env.as_deref()
+    }
+    /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn resources(
+        &self,
+    ) -> std::option::Option<&crate::model::EksContainerResourceRequirements> {
+        self.resources.as_ref()
+    }
+    /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn volume_mounts(&self) -> std::option::Option<&[crate::model::EksContainerVolumeMount]> {
+        self.volume_mounts.as_deref()
+    }
+    /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn security_context(
+        &self,
+    ) -> std::option::Option<&crate::model::EksContainerSecurityContext> {
+        self.security_context.as_ref()
+    }
+}
+/// See [`EksContainer`](crate::model::EksContainer).
+pub mod eks_container {
+
+    /// A builder for [`EksContainer`](crate::model::EksContainer).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) image: std::option::Option<std::string::String>,
+        pub(crate) image_pull_policy: std::option::Option<std::string::String>,
+        pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) args: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) env:
+            std::option::Option<std::vec::Vec<crate::model::EksContainerEnvironmentVariable>>,
+        pub(crate) resources: std::option::Option<crate::model::EksContainerResourceRequirements>,
+        pub(crate) volume_mounts:
+            std::option::Option<std::vec::Vec<crate::model::EksContainerVolumeMount>>,
+        pub(crate) security_context: std::option::Option<crate::model::EksContainerSecurityContext>,
+    }
+    impl Builder {
+        /// <p>The name of the container. If the name isn't specified, the default name "<code>Default</code>" is used. Each container in a pod must have a unique name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the container. If the name isn't specified, the default name "<code>Default</code>" is used. Each container in a pod must have a unique name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The Docker image used to start the container.</p>
+        pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image = Some(input.into());
+            self
+        }
+        /// <p>The Docker image used to start the container.</p>
+        pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image = input;
+            self
+        }
+        /// <p>The image pull policy for the container. Supported values are <code>Always</code>, <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>IfNotPresent</code>. However, if the <code>:latest</code> tag is specified, it defaults to <code>Always</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating images</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn image_pull_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_pull_policy = Some(input.into());
+            self
+        }
+        /// <p>The image pull policy for the container. Supported values are <code>Always</code>, <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>IfNotPresent</code>. However, if the <code>:latest</code> tag is specified, it defaults to <code>Always</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating images</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_image_pull_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.image_pull_policy = input;
+            self
+        }
+        /// Appends an item to `command`.
+        ///
+        /// To override the contents of this collection use [`set_command`](Self::set_command).
+        ///
+        /// <p>The entrypoint for the container. This isn't run within a shell. If this isn't specified, the <code>ENTRYPOINT</code> of the container image is used. Environment variable references are expanded using the container's environment.</p>
+        /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>." <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> will be passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. The entrypoint can't be updated. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#entrypoint">ENTRYPOINT</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a container</a> and <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.command.unwrap_or_default();
+            v.push(input.into());
+            self.command = Some(v);
+            self
+        }
+        /// <p>The entrypoint for the container. This isn't run within a shell. If this isn't specified, the <code>ENTRYPOINT</code> of the container image is used. Environment variable references are expanded using the container's environment.</p>
+        /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>." <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> will be passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. The entrypoint can't be updated. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#entrypoint">ENTRYPOINT</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a container</a> and <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_command(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.command = input;
+            self
+        }
+        /// Appends an item to `args`.
+        ///
+        /// To override the contents of this collection use [`set_args`](Self::set_args).
+        ///
+        /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
+        /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>." <code>$$</code> is replaced with <code>$</code>, and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.args.unwrap_or_default();
+            v.push(input.into());
+            self.args = Some(v);
+            self
+        }
+        /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
+        /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>." <code>$$</code> is replaced with <code>$</code>, and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_args(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.args = input;
+            self
+        }
+        /// Appends an item to `env`.
+        ///
+        /// To override the contents of this collection use [`set_env`](Self::set_env).
+        ///
+        /// <p>The environment variables to pass to a container.</p> <note>
+        /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
+        /// </note>
+        pub fn env(mut self, input: crate::model::EksContainerEnvironmentVariable) -> Self {
+            let mut v = self.env.unwrap_or_default();
+            v.push(input);
+            self.env = Some(v);
+            self
+        }
+        /// <p>The environment variables to pass to a container.</p> <note>
+        /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
+        /// </note>
+        pub fn set_env(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::EksContainerEnvironmentVariable>,
+            >,
+        ) -> Self {
+            self.env = input;
+            self
+        }
+        /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn resources(mut self, input: crate::model::EksContainerResourceRequirements) -> Self {
+            self.resources = Some(input);
+            self
+        }
+        /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_resources(
+            mut self,
+            input: std::option::Option<crate::model::EksContainerResourceRequirements>,
+        ) -> Self {
+            self.resources = input;
+            self
+        }
+        /// Appends an item to `volume_mounts`.
+        ///
+        /// To override the contents of this collection use [`set_volume_mounts`](Self::set_volume_mounts).
+        ///
+        /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn volume_mounts(mut self, input: crate::model::EksContainerVolumeMount) -> Self {
+            let mut v = self.volume_mounts.unwrap_or_default();
+            v.push(input);
+            self.volume_mounts = Some(v);
+            self
+        }
+        /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_volume_mounts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EksContainerVolumeMount>>,
+        ) -> Self {
+            self.volume_mounts = input;
+            self
+        }
+        /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn security_context(
+            mut self,
+            input: crate::model::EksContainerSecurityContext,
+        ) -> Self {
+            self.security_context = Some(input);
+            self
+        }
+        /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_security_context(
+            mut self,
+            input: std::option::Option<crate::model::EksContainerSecurityContext>,
+        ) -> Self {
+            self.security_context = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksContainer`](crate::model::EksContainer).
+        pub fn build(self) -> crate::model::EksContainer {
+            crate::model::EksContainer {
+                name: self.name,
+                image: self.image,
+                image_pull_policy: self.image_pull_policy,
+                command: self.command,
+                args: self.args,
+                env: self.env,
+                resources: self.resources,
+                volume_mounts: self.volume_mounts,
+                security_context: self.security_context,
+            }
+        }
+    }
+}
+impl EksContainer {
+    /// Creates a new builder-style object to manufacture [`EksContainer`](crate::model::EksContainer).
+    pub fn builder() -> crate::model::eks_container::Builder {
+        crate::model::eks_container::Builder::default()
+    }
+}
+
+/// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksContainerSecurityContext {
+    /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. This parameter maps to <code>RunAsUser</code> and <code>MustRanAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub run_as_user: std::option::Option<i64>,
+    /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub run_as_group: std::option::Option<i64>,
+    /// <p>When this parameter is <code>true</code>, the container is given elevated permissions on the host container instance. The level of permissions are similar to the <code>root</code> user permissions. The default value is <code>false</code>. This parameter maps to <code>privileged</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#privileged">Privileged pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub privileged: std::option::Option<bool>,
+    /// <p>When this parameter is <code>true</code>, the container is given read-only access to its root file system. The default value is <code>false</code>. This parameter maps to <code>ReadOnlyRootFilesystem</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#volumes-and-file-systems">Volumes and file systems pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub read_only_root_filesystem: std::option::Option<bool>,
+    /// <p>When this parameter is specified, the container is run as a user with a <code>uid</code> other than 0. If this parameter isn't specified, so such rule is enforced. This parameter maps to <code>RunAsUser</code> and <code>MustRunAsNonRoot</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub run_as_non_root: std::option::Option<bool>,
+}
+impl EksContainerSecurityContext {
+    /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. This parameter maps to <code>RunAsUser</code> and <code>MustRanAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn run_as_user(&self) -> std::option::Option<i64> {
+        self.run_as_user
+    }
+    /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn run_as_group(&self) -> std::option::Option<i64> {
+        self.run_as_group
+    }
+    /// <p>When this parameter is <code>true</code>, the container is given elevated permissions on the host container instance. The level of permissions are similar to the <code>root</code> user permissions. The default value is <code>false</code>. This parameter maps to <code>privileged</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#privileged">Privileged pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn privileged(&self) -> std::option::Option<bool> {
+        self.privileged
+    }
+    /// <p>When this parameter is <code>true</code>, the container is given read-only access to its root file system. The default value is <code>false</code>. This parameter maps to <code>ReadOnlyRootFilesystem</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#volumes-and-file-systems">Volumes and file systems pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn read_only_root_filesystem(&self) -> std::option::Option<bool> {
+        self.read_only_root_filesystem
+    }
+    /// <p>When this parameter is specified, the container is run as a user with a <code>uid</code> other than 0. If this parameter isn't specified, so such rule is enforced. This parameter maps to <code>RunAsUser</code> and <code>MustRunAsNonRoot</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn run_as_non_root(&self) -> std::option::Option<bool> {
+        self.run_as_non_root
+    }
+}
+/// See [`EksContainerSecurityContext`](crate::model::EksContainerSecurityContext).
+pub mod eks_container_security_context {
+
+    /// A builder for [`EksContainerSecurityContext`](crate::model::EksContainerSecurityContext).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) run_as_user: std::option::Option<i64>,
+        pub(crate) run_as_group: std::option::Option<i64>,
+        pub(crate) privileged: std::option::Option<bool>,
+        pub(crate) read_only_root_filesystem: std::option::Option<bool>,
+        pub(crate) run_as_non_root: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. This parameter maps to <code>RunAsUser</code> and <code>MustRanAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn run_as_user(mut self, input: i64) -> Self {
+            self.run_as_user = Some(input);
+            self
+        }
+        /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. This parameter maps to <code>RunAsUser</code> and <code>MustRanAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_run_as_user(mut self, input: std::option::Option<i64>) -> Self {
+            self.run_as_user = input;
+            self
+        }
+        /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn run_as_group(mut self, input: i64) -> Self {
+            self.run_as_group = Some(input);
+            self
+        }
+        /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_run_as_group(mut self, input: std::option::Option<i64>) -> Self {
+            self.run_as_group = input;
+            self
+        }
+        /// <p>When this parameter is <code>true</code>, the container is given elevated permissions on the host container instance. The level of permissions are similar to the <code>root</code> user permissions. The default value is <code>false</code>. This parameter maps to <code>privileged</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#privileged">Privileged pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn privileged(mut self, input: bool) -> Self {
+            self.privileged = Some(input);
+            self
+        }
+        /// <p>When this parameter is <code>true</code>, the container is given elevated permissions on the host container instance. The level of permissions are similar to the <code>root</code> user permissions. The default value is <code>false</code>. This parameter maps to <code>privileged</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#privileged">Privileged pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_privileged(mut self, input: std::option::Option<bool>) -> Self {
+            self.privileged = input;
+            self
+        }
+        /// <p>When this parameter is <code>true</code>, the container is given read-only access to its root file system. The default value is <code>false</code>. This parameter maps to <code>ReadOnlyRootFilesystem</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#volumes-and-file-systems">Volumes and file systems pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn read_only_root_filesystem(mut self, input: bool) -> Self {
+            self.read_only_root_filesystem = Some(input);
+            self
+        }
+        /// <p>When this parameter is <code>true</code>, the container is given read-only access to its root file system. The default value is <code>false</code>. This parameter maps to <code>ReadOnlyRootFilesystem</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#volumes-and-file-systems">Volumes and file systems pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_read_only_root_filesystem(mut self, input: std::option::Option<bool>) -> Self {
+            self.read_only_root_filesystem = input;
+            self
+        }
+        /// <p>When this parameter is specified, the container is run as a user with a <code>uid</code> other than 0. If this parameter isn't specified, so such rule is enforced. This parameter maps to <code>RunAsUser</code> and <code>MustRunAsNonRoot</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn run_as_non_root(mut self, input: bool) -> Self {
+            self.run_as_non_root = Some(input);
+            self
+        }
+        /// <p>When this parameter is specified, the container is run as a user with a <code>uid</code> other than 0. If this parameter isn't specified, so such rule is enforced. This parameter maps to <code>RunAsUser</code> and <code>MustRunAsNonRoot</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_run_as_non_root(mut self, input: std::option::Option<bool>) -> Self {
+            self.run_as_non_root = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksContainerSecurityContext`](crate::model::EksContainerSecurityContext).
+        pub fn build(self) -> crate::model::EksContainerSecurityContext {
+            crate::model::EksContainerSecurityContext {
+                run_as_user: self.run_as_user,
+                run_as_group: self.run_as_group,
+                privileged: self.privileged,
+                read_only_root_filesystem: self.read_only_root_filesystem,
+                run_as_non_root: self.run_as_non_root,
+            }
+        }
+    }
+}
+impl EksContainerSecurityContext {
+    /// Creates a new builder-style object to manufacture [`EksContainerSecurityContext`](crate::model::EksContainerSecurityContext).
+    pub fn builder() -> crate::model::eks_container_security_context::Builder {
+        crate::model::eks_container_security_context::Builder::default()
+    }
+}
+
+/// <p>The volume mounts for a container for an Amazon EKS job. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksContainerVolumeMount {
+    /// <p>The name the volume mount. This must match the name of one of the volumes in the pod.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The path on the container where the volume is mounted.</p>
+    #[doc(hidden)]
+    pub mount_path: std::option::Option<std::string::String>,
+    /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container can write to the volume. The default value is <code>false</code>.</p>
+    #[doc(hidden)]
+    pub read_only: std::option::Option<bool>,
+}
+impl EksContainerVolumeMount {
+    /// <p>The name the volume mount. This must match the name of one of the volumes in the pod.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The path on the container where the volume is mounted.</p>
+    pub fn mount_path(&self) -> std::option::Option<&str> {
+        self.mount_path.as_deref()
+    }
+    /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container can write to the volume. The default value is <code>false</code>.</p>
+    pub fn read_only(&self) -> std::option::Option<bool> {
+        self.read_only
+    }
+}
+/// See [`EksContainerVolumeMount`](crate::model::EksContainerVolumeMount).
+pub mod eks_container_volume_mount {
+
+    /// A builder for [`EksContainerVolumeMount`](crate::model::EksContainerVolumeMount).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) mount_path: std::option::Option<std::string::String>,
+        pub(crate) read_only: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The name the volume mount. This must match the name of one of the volumes in the pod.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name the volume mount. This must match the name of one of the volumes in the pod.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The path on the container where the volume is mounted.</p>
+        pub fn mount_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mount_path = Some(input.into());
+            self
+        }
+        /// <p>The path on the container where the volume is mounted.</p>
+        pub fn set_mount_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mount_path = input;
+            self
+        }
+        /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container can write to the volume. The default value is <code>false</code>.</p>
+        pub fn read_only(mut self, input: bool) -> Self {
+            self.read_only = Some(input);
+            self
+        }
+        /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container can write to the volume. The default value is <code>false</code>.</p>
+        pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
+            self.read_only = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksContainerVolumeMount`](crate::model::EksContainerVolumeMount).
+        pub fn build(self) -> crate::model::EksContainerVolumeMount {
+            crate::model::EksContainerVolumeMount {
+                name: self.name,
+                mount_path: self.mount_path,
+                read_only: self.read_only,
+            }
+        }
+    }
+}
+impl EksContainerVolumeMount {
+    /// Creates a new builder-style object to manufacture [`EksContainerVolumeMount`](crate::model::EksContainerVolumeMount).
+    pub fn builder() -> crate::model::eks_container_volume_mount::Builder {
+        crate::model::eks_container_volume_mount::Builder::default()
     }
 }
 
@@ -3370,22 +5353,24 @@ impl AsRef<str> for PlatformCapability {
     }
 }
 
-/// <p>An object representing the node properties of a multi-node parallel job.</p>
+/// <p>An object that represents the node properties of a multi-node parallel job.</p> <note>
+/// <p>Node properties can't be specified for Amazon EKS based job definitions.</p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeProperties {
-    /// <p>The number of nodes associated with a multi-node parallel job.</p>
+    /// <p>The number of nodes that are associated with a multi-node parallel job.</p>
     #[doc(hidden)]
     pub num_nodes: std::option::Option<i32>,
     /// <p>Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer than the number of nodes.</p>
     #[doc(hidden)]
     pub main_node: std::option::Option<i32>,
-    /// <p>A list of node ranges and their properties associated with a multi-node parallel job.</p>
+    /// <p>A list of node ranges and their properties that are associated with a multi-node parallel job.</p>
     #[doc(hidden)]
     pub node_range_properties: std::option::Option<std::vec::Vec<crate::model::NodeRangeProperty>>,
 }
 impl NodeProperties {
-    /// <p>The number of nodes associated with a multi-node parallel job.</p>
+    /// <p>The number of nodes that are associated with a multi-node parallel job.</p>
     pub fn num_nodes(&self) -> std::option::Option<i32> {
         self.num_nodes
     }
@@ -3393,7 +5378,7 @@ impl NodeProperties {
     pub fn main_node(&self) -> std::option::Option<i32> {
         self.main_node
     }
-    /// <p>A list of node ranges and their properties associated with a multi-node parallel job.</p>
+    /// <p>A list of node ranges and their properties that are associated with a multi-node parallel job.</p>
     pub fn node_range_properties(&self) -> std::option::Option<&[crate::model::NodeRangeProperty]> {
         self.node_range_properties.as_deref()
     }
@@ -3410,12 +5395,12 @@ pub mod node_properties {
             std::option::Option<std::vec::Vec<crate::model::NodeRangeProperty>>,
     }
     impl Builder {
-        /// <p>The number of nodes associated with a multi-node parallel job.</p>
+        /// <p>The number of nodes that are associated with a multi-node parallel job.</p>
         pub fn num_nodes(mut self, input: i32) -> Self {
             self.num_nodes = Some(input);
             self
         }
-        /// <p>The number of nodes associated with a multi-node parallel job.</p>
+        /// <p>The number of nodes that are associated with a multi-node parallel job.</p>
         pub fn set_num_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.num_nodes = input;
             self
@@ -3434,14 +5419,14 @@ pub mod node_properties {
         ///
         /// To override the contents of this collection use [`set_node_range_properties`](Self::set_node_range_properties).
         ///
-        /// <p>A list of node ranges and their properties associated with a multi-node parallel job.</p>
+        /// <p>A list of node ranges and their properties that are associated with a multi-node parallel job.</p>
         pub fn node_range_properties(mut self, input: crate::model::NodeRangeProperty) -> Self {
             let mut v = self.node_range_properties.unwrap_or_default();
             v.push(input);
             self.node_range_properties = Some(v);
             self
         }
-        /// <p>A list of node ranges and their properties associated with a multi-node parallel job.</p>
+        /// <p>A list of node ranges and their properties that are associated with a multi-node parallel job.</p>
         pub fn set_node_range_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NodeRangeProperty>>,
@@ -3466,11 +5451,11 @@ impl NodeProperties {
     }
 }
 
-/// <p>An object representing the properties of the node range for a multi-node parallel job.</p>
+/// <p>An object that represents the properties of the node range for a multi-node parallel job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeRangeProperty {
-    /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
+    /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
     #[doc(hidden)]
     pub target_nodes: std::option::Option<std::string::String>,
     /// <p>The container details for the node range.</p>
@@ -3478,7 +5463,7 @@ pub struct NodeRangeProperty {
     pub container: std::option::Option<crate::model::ContainerProperties>,
 }
 impl NodeRangeProperty {
-    /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
+    /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
     pub fn target_nodes(&self) -> std::option::Option<&str> {
         self.target_nodes.as_deref()
     }
@@ -3497,12 +5482,12 @@ pub mod node_range_property {
         pub(crate) container: std::option::Option<crate::model::ContainerProperties>,
     }
     impl Builder {
-        /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
+        /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
         pub fn target_nodes(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_nodes = Some(input.into());
             self
         }
-        /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
+        /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
         pub fn set_target_nodes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_nodes = input;
             self
@@ -3536,16 +5521,16 @@ impl NodeRangeProperty {
     }
 }
 
-/// <p>Container properties are used in job definitions to describe the container that's launched as part of a job.</p>
+/// <p>Container properties are used for Amazon ECS based job definitions. These properties to describe the container that's launched as part of a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerProperties {
-    /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+    /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
     /// </note>
     /// <ul>
     /// <li> <p>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code> or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p> </li>
-    /// <li> <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>012345678910.dkr.ecr.
+    /// <li> <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>123456789012.dkr.ecr.
     /// <region-name>
     /// .amazonaws.com/
     /// <repository-name></repository-name>
@@ -3561,7 +5546,7 @@ pub struct ContainerProperties {
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     #[doc(hidden)]
     pub vcpus: std::option::Option<i32>,
-    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     #[doc(hidden)]
     pub memory: std::option::Option<i32>,
@@ -3580,7 +5565,7 @@ pub struct ContainerProperties {
     /// <p>The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <important>
     /// <p>We don't recommend using plaintext environment variables for sensitive information, such as credential data.</p>
     /// </important> <note>
-    /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for variables that are set by the Batch service.</p>
+    /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     #[doc(hidden)]
     pub environment: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
@@ -3619,7 +5604,7 @@ pub struct ContainerProperties {
     /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <note>
     /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <code>LogConfiguration</code> data type).</p>
     /// </note>
-    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
+    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
     /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
@@ -3636,12 +5621,12 @@ pub struct ContainerProperties {
         std::option::Option<crate::model::FargatePlatformConfiguration>,
 }
 impl ContainerProperties {
-    /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+    /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
     /// </note>
     /// <ul>
     /// <li> <p>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code> or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p> </li>
-    /// <li> <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>012345678910.dkr.ecr.
+    /// <li> <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>123456789012.dkr.ecr.
     /// <region-name>
     /// .amazonaws.com/
     /// <repository-name></repository-name>
@@ -3659,7 +5644,7 @@ impl ContainerProperties {
     pub fn vcpus(&self) -> std::option::Option<i32> {
         self.vcpus
     }
-    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub fn memory(&self) -> std::option::Option<i32> {
         self.memory
@@ -3683,7 +5668,7 @@ impl ContainerProperties {
     /// <p>The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <important>
     /// <p>We don't recommend using plaintext environment variables for sensitive information, such as credential data.</p>
     /// </important> <note>
-    /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for variables that are set by the Batch service.</p>
+    /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub fn environment(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
         self.environment.as_deref()
@@ -3732,7 +5717,7 @@ impl ContainerProperties {
     /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <note>
     /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <code>LogConfiguration</code> data type).</p>
     /// </note>
-    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
+    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
     /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
     pub fn log_configuration(&self) -> std::option::Option<&crate::model::LogConfiguration> {
@@ -3785,12 +5770,12 @@ pub mod container_properties {
             std::option::Option<crate::model::FargatePlatformConfiguration>,
     }
     impl Builder {
-        /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+        /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
         /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
         /// </note>
         /// <ul>
         /// <li> <p>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code> or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p> </li>
-        /// <li> <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>012345678910.dkr.ecr.
+        /// <li> <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>123456789012.dkr.ecr.
         /// <region-name>
         /// .amazonaws.com/
         /// <repository-name></repository-name>
@@ -3803,12 +5788,12 @@ pub mod container_properties {
             self.image = Some(input.into());
             self
         }
-        /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+        /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
         /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
         /// </note>
         /// <ul>
         /// <li> <p>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code> or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p> </li>
-        /// <li> <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>012345678910.dkr.ecr.
+        /// <li> <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>123456789012.dkr.ecr.
         /// <region-name>
         /// .amazonaws.com/
         /// <repository-name></repository-name>
@@ -3835,13 +5820,13 @@ pub mod container_properties {
             self.vcpus = input;
             self
         }
-        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
+        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
         #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
         pub fn memory(mut self, input: i32) -> Self {
             self.memory = Some(input);
             self
         }
-        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
+        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
         #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
         pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
             self.memory = input;
@@ -3915,7 +5900,7 @@ pub mod container_properties {
         /// <p>The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <important>
         /// <p>We don't recommend using plaintext environment variables for sensitive information, such as credential data.</p>
         /// </important> <note>
-        /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for variables that are set by the Batch service.</p>
+        /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
         /// </note>
         pub fn environment(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.environment.unwrap_or_default();
@@ -3926,7 +5911,7 @@ pub mod container_properties {
         /// <p>The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <important>
         /// <p>We don't recommend using plaintext environment variables for sensitive information, such as credential data.</p>
         /// </important> <note>
-        /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for variables that are set by the Batch service.</p>
+        /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
         /// </note>
         pub fn set_environment(
             mut self,
@@ -4064,7 +6049,7 @@ pub mod container_properties {
         /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <note>
         /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <code>LogConfiguration</code> data type).</p>
         /// </note>
-        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
+        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
         /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </note>
         pub fn log_configuration(mut self, input: crate::model::LogConfiguration) -> Self {
@@ -4075,7 +6060,7 @@ pub mod container_properties {
         /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <note>
         /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <code>LogConfiguration</code> data type).</p>
         /// </note>
-        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
+        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
         /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </note>
         pub fn set_log_configuration(
@@ -4222,12 +6207,12 @@ impl FargatePlatformConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkConfiguration {
-    /// <p>Indicates whether the job should have a public IP address. For a job that is running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a>. The default value is "DISABLED".</p>
+    /// <p>Indicates whether the job has a public IP address. For a job that's running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. The default value is "<code>DISABLED</code>".</p>
     #[doc(hidden)]
     pub assign_public_ip: std::option::Option<crate::model::AssignPublicIp>,
 }
 impl NetworkConfiguration {
-    /// <p>Indicates whether the job should have a public IP address. For a job that is running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a>. The default value is "DISABLED".</p>
+    /// <p>Indicates whether the job has a public IP address. For a job that's running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. The default value is "<code>DISABLED</code>".</p>
     pub fn assign_public_ip(&self) -> std::option::Option<&crate::model::AssignPublicIp> {
         self.assign_public_ip.as_ref()
     }
@@ -4241,12 +6226,12 @@ pub mod network_configuration {
         pub(crate) assign_public_ip: std::option::Option<crate::model::AssignPublicIp>,
     }
     impl Builder {
-        /// <p>Indicates whether the job should have a public IP address. For a job that is running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a>. The default value is "DISABLED".</p>
+        /// <p>Indicates whether the job has a public IP address. For a job that's running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. The default value is "<code>DISABLED</code>".</p>
         pub fn assign_public_ip(mut self, input: crate::model::AssignPublicIp) -> Self {
             self.assign_public_ip = Some(input);
             self
         }
-        /// <p>Indicates whether the job should have a public IP address. For a job that is running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a>. The default value is "DISABLED".</p>
+        /// <p>Indicates whether the job has a public IP address. For a job that's running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. The default value is "<code>DISABLED</code>".</p>
         pub fn set_assign_public_ip(
             mut self,
             input: std::option::Option<crate::model::AssignPublicIp>,
@@ -4359,7 +6344,7 @@ impl AsRef<str> for AssignPublicIp {
     }
 }
 
-/// <p>An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways:</p>
+/// <p>An object that represents the secret to expose to your container. Secrets can be exposed to a container in the following ways:</p>
 /// <ul>
 /// <li> <p>To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter.</p> </li>
 /// <li> <p>To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter.</p> </li>
@@ -4371,8 +6356,8 @@ pub struct Secret {
     /// <p>The name of the secret.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
-    /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Region as the job you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
+    /// <p>The secret to expose to the container. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
+    /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Region as the job you're launching, then you can use either the full Amazon Resource Name (ARN) or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
     /// </note>
     #[doc(hidden)]
     pub value_from: std::option::Option<std::string::String>,
@@ -4382,8 +6367,8 @@ impl Secret {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
-    /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Region as the job you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
+    /// <p>The secret to expose to the container. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
+    /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Region as the job you're launching, then you can use either the full Amazon Resource Name (ARN) or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
     /// </note>
     pub fn value_from(&self) -> std::option::Option<&str> {
         self.value_from.as_deref()
@@ -4409,15 +6394,15 @@ pub mod secret {
             self.name = input;
             self
         }
-        /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
-        /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Region as the job you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
+        /// <p>The secret to expose to the container. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
+        /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Region as the job you're launching, then you can use either the full Amazon Resource Name (ARN) or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
         /// </note>
         pub fn value_from(mut self, input: impl Into<std::string::String>) -> Self {
             self.value_from = Some(input.into());
             self
         }
-        /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
-        /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Region as the job you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
+        /// <p>The secret to expose to the container. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
+        /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Region as the job you're launching, then you can use either the full Amazon Resource Name (ARN) or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
         /// </note>
         pub fn set_value_from(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value_from = input;
@@ -4443,7 +6428,7 @@ impl Secret {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogConfiguration {
-    /// <p>The log driver to use for the container. The valid values listed for this parameter are log drivers that the Amazon ECS container agent can communicate with by default.</p>
+    /// <p>The log driver to use for the container. The valid values that are listed for this parameter are log drivers that the Amazon ECS container agent can communicate with by default.</p>
     /// <p>The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p> <note>
     /// <p>Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
     /// </note>
@@ -4458,45 +6443,45 @@ pub struct LogConfiguration {
     /// fluentd
     /// </dt>
     /// <dd>
-    /// <p>Specifies the Fluentd logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker documentation.</p>
+    /// <p>Specifies the Fluentd logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the <i>Docker documentation</i>.</p>
     /// </dd>
     /// <dt>
     /// gelf
     /// </dt>
     /// <dd>
-    /// <p>Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a> in the Docker documentation.</p>
+    /// <p>Specifies the Graylog Extended Format (GELF) logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a> in the <i>Docker documentation</i>.</p>
     /// </dd>
     /// <dt>
     /// journald
     /// </dt>
     /// <dd>
-    /// <p>Specifies the journald logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker documentation.</p>
+    /// <p>Specifies the journald logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the <i>Docker documentation</i>.</p>
     /// </dd>
     /// <dt>
     /// json-file
     /// </dt>
     /// <dd>
-    /// <p>Specifies the JSON file logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker documentation.</p>
+    /// <p>Specifies the JSON file logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the <i>Docker documentation</i>.</p>
     /// </dd>
     /// <dt>
     /// splunk
     /// </dt>
     /// <dd>
-    /// <p>Specifies the Splunk logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker documentation.</p>
+    /// <p>Specifies the Splunk logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the <i>Docker documentation</i>.</p>
     /// </dd>
     /// <dt>
     /// syslog
     /// </dt>
     /// <dd>
-    /// <p>Specifies the syslog logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker documentation.</p>
+    /// <p>Specifies the syslog logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the <i>Docker documentation</i>.</p>
     /// </dd>
     /// </dl> <note>
     /// <p>If you have a custom driver that's not listed earlier that you want to work with the Amazon ECS container agent, you can fork the Amazon ECS container agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you want to have included. However, Amazon Web Services doesn't currently support running modified copies of this software.</p>
     /// </note>
-    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
     #[doc(hidden)]
     pub log_driver: std::option::Option<crate::model::LogDriver>,
-    /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+    /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
     #[doc(hidden)]
     pub options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -4505,7 +6490,7 @@ pub struct LogConfiguration {
     pub secret_options: std::option::Option<std::vec::Vec<crate::model::Secret>>,
 }
 impl LogConfiguration {
-    /// <p>The log driver to use for the container. The valid values listed for this parameter are log drivers that the Amazon ECS container agent can communicate with by default.</p>
+    /// <p>The log driver to use for the container. The valid values that are listed for this parameter are log drivers that the Amazon ECS container agent can communicate with by default.</p>
     /// <p>The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p> <note>
     /// <p>Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
     /// </note>
@@ -4520,46 +6505,46 @@ impl LogConfiguration {
     /// fluentd
     /// </dt>
     /// <dd>
-    /// <p>Specifies the Fluentd logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker documentation.</p>
+    /// <p>Specifies the Fluentd logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the <i>Docker documentation</i>.</p>
     /// </dd>
     /// <dt>
     /// gelf
     /// </dt>
     /// <dd>
-    /// <p>Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a> in the Docker documentation.</p>
+    /// <p>Specifies the Graylog Extended Format (GELF) logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a> in the <i>Docker documentation</i>.</p>
     /// </dd>
     /// <dt>
     /// journald
     /// </dt>
     /// <dd>
-    /// <p>Specifies the journald logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker documentation.</p>
+    /// <p>Specifies the journald logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the <i>Docker documentation</i>.</p>
     /// </dd>
     /// <dt>
     /// json-file
     /// </dt>
     /// <dd>
-    /// <p>Specifies the JSON file logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker documentation.</p>
+    /// <p>Specifies the JSON file logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the <i>Docker documentation</i>.</p>
     /// </dd>
     /// <dt>
     /// splunk
     /// </dt>
     /// <dd>
-    /// <p>Specifies the Splunk logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker documentation.</p>
+    /// <p>Specifies the Splunk logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the <i>Docker documentation</i>.</p>
     /// </dd>
     /// <dt>
     /// syslog
     /// </dt>
     /// <dd>
-    /// <p>Specifies the syslog logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker documentation.</p>
+    /// <p>Specifies the syslog logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the <i>Docker documentation</i>.</p>
     /// </dd>
     /// </dl> <note>
     /// <p>If you have a custom driver that's not listed earlier that you want to work with the Amazon ECS container agent, you can fork the Amazon ECS container agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you want to have included. However, Amazon Web Services doesn't currently support running modified copies of this software.</p>
     /// </note>
-    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
     pub fn log_driver(&self) -> std::option::Option<&crate::model::LogDriver> {
         self.log_driver.as_ref()
     }
-    /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+    /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
     pub fn options(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -4584,7 +6569,7 @@ pub mod log_configuration {
         pub(crate) secret_options: std::option::Option<std::vec::Vec<crate::model::Secret>>,
     }
     impl Builder {
-        /// <p>The log driver to use for the container. The valid values listed for this parameter are log drivers that the Amazon ECS container agent can communicate with by default.</p>
+        /// <p>The log driver to use for the container. The valid values that are listed for this parameter are log drivers that the Amazon ECS container agent can communicate with by default.</p>
         /// <p>The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p> <note>
         /// <p>Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
         /// </note>
@@ -4599,47 +6584,47 @@ pub mod log_configuration {
         /// fluentd
         /// </dt>
         /// <dd>
-        /// <p>Specifies the Fluentd logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker documentation.</p>
+        /// <p>Specifies the Fluentd logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the <i>Docker documentation</i>.</p>
         /// </dd>
         /// <dt>
         /// gelf
         /// </dt>
         /// <dd>
-        /// <p>Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a> in the Docker documentation.</p>
+        /// <p>Specifies the Graylog Extended Format (GELF) logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a> in the <i>Docker documentation</i>.</p>
         /// </dd>
         /// <dt>
         /// journald
         /// </dt>
         /// <dd>
-        /// <p>Specifies the journald logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker documentation.</p>
+        /// <p>Specifies the journald logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the <i>Docker documentation</i>.</p>
         /// </dd>
         /// <dt>
         /// json-file
         /// </dt>
         /// <dd>
-        /// <p>Specifies the JSON file logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker documentation.</p>
+        /// <p>Specifies the JSON file logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the <i>Docker documentation</i>.</p>
         /// </dd>
         /// <dt>
         /// splunk
         /// </dt>
         /// <dd>
-        /// <p>Specifies the Splunk logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker documentation.</p>
+        /// <p>Specifies the Splunk logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the <i>Docker documentation</i>.</p>
         /// </dd>
         /// <dt>
         /// syslog
         /// </dt>
         /// <dd>
-        /// <p>Specifies the syslog logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker documentation.</p>
+        /// <p>Specifies the syslog logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the <i>Docker documentation</i>.</p>
         /// </dd>
         /// </dl> <note>
         /// <p>If you have a custom driver that's not listed earlier that you want to work with the Amazon ECS container agent, you can fork the Amazon ECS container agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you want to have included. However, Amazon Web Services doesn't currently support running modified copies of this software.</p>
         /// </note>
-        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
         pub fn log_driver(mut self, input: crate::model::LogDriver) -> Self {
             self.log_driver = Some(input);
             self
         }
-        /// <p>The log driver to use for the container. The valid values listed for this parameter are log drivers that the Amazon ECS container agent can communicate with by default.</p>
+        /// <p>The log driver to use for the container. The valid values that are listed for this parameter are log drivers that the Amazon ECS container agent can communicate with by default.</p>
         /// <p>The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p> <note>
         /// <p>Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
         /// </note>
@@ -4654,42 +6639,42 @@ pub mod log_configuration {
         /// fluentd
         /// </dt>
         /// <dd>
-        /// <p>Specifies the Fluentd logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker documentation.</p>
+        /// <p>Specifies the Fluentd logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the <i>Docker documentation</i>.</p>
         /// </dd>
         /// <dt>
         /// gelf
         /// </dt>
         /// <dd>
-        /// <p>Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a> in the Docker documentation.</p>
+        /// <p>Specifies the Graylog Extended Format (GELF) logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a> in the <i>Docker documentation</i>.</p>
         /// </dd>
         /// <dt>
         /// journald
         /// </dt>
         /// <dd>
-        /// <p>Specifies the journald logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker documentation.</p>
+        /// <p>Specifies the journald logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the <i>Docker documentation</i>.</p>
         /// </dd>
         /// <dt>
         /// json-file
         /// </dt>
         /// <dd>
-        /// <p>Specifies the JSON file logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker documentation.</p>
+        /// <p>Specifies the JSON file logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the <i>Docker documentation</i>.</p>
         /// </dd>
         /// <dt>
         /// splunk
         /// </dt>
         /// <dd>
-        /// <p>Specifies the Splunk logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker documentation.</p>
+        /// <p>Specifies the Splunk logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the <i>Docker documentation</i>.</p>
         /// </dd>
         /// <dt>
         /// syslog
         /// </dt>
         /// <dd>
-        /// <p>Specifies the syslog logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker documentation.</p>
+        /// <p>Specifies the syslog logging driver. For more information including usage and options, see <a href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the <i>Docker documentation</i>.</p>
         /// </dd>
         /// </dl> <note>
         /// <p>If you have a custom driver that's not listed earlier that you want to work with the Amazon ECS container agent, you can fork the Amazon ECS container agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you want to have included. However, Amazon Web Services doesn't currently support running modified copies of this software.</p>
         /// </note>
-        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
         pub fn set_log_driver(
             mut self,
             input: std::option::Option<crate::model::LogDriver>,
@@ -4701,7 +6686,7 @@ pub mod log_configuration {
         ///
         /// To override the contents of this collection use [`set_options`](Self::set_options).
         ///
-        /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+        /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
         pub fn options(
             mut self,
             k: impl Into<std::string::String>,
@@ -4712,7 +6697,7 @@ pub mod log_configuration {
             self.options = Some(hash_map);
             self
         }
-        /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+        /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
         pub fn set_options(
             mut self,
             input: std::option::Option<
@@ -4885,84 +6870,84 @@ impl AsRef<str> for LogDriver {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LinuxParameters {
-    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+    /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
-    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
     #[doc(hidden)]
     pub init_process_enabled: std::option::Option<bool>,
     /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     #[doc(hidden)]
     pub shared_memory_size: std::option::Option<i32>,
-    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+    /// <p>The container path, mount options, and size (in MiB) of the <code>tmpfs</code> mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide this parameter for this resource type.</p>
     /// </note>
     #[doc(hidden)]
     pub tmpfs: std::option::Option<std::vec::Vec<crate::model::Tmpfs>>,
     /// <p>The total amount of swap memory (in MiB) a container can use. This parameter is translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where the value is the sum of the container memory plus the <code>maxSwap</code> value. For more information, see <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details"> <code>--memory-swap</code> details</a> in the Docker documentation.</p>
-    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance that it's running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     #[doc(hidden)]
     pub max_swap: std::option::Option<i32>,
-    /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    /// <p>You can use this parameter to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping to not occur unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped aggressively. Valid values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     /// <p>Consider the following when you use a per-container swap configuration.</p>
     /// <ul>
     /// <li> <p>Swap space must be enabled and allocated on the container instance for the containers to use.</p> <note>
-    /// <p>The Amazon ECS optimized AMIs don't have swap enabled by default. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a> </p>
+    /// <p>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a> </p>
     /// </note> </li>
     /// <li> <p>The swap space parameters are only supported for job definitions using EC2 resources.</p> </li>
-    /// <li> <p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container will have a default <code>swappiness</code> value of 60, and the total swap usage will be limited to two times the memory reservation of the container.</p> </li>
+    /// <li> <p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container has a default <code>swappiness</code> value of 60. Moreover, the total swap usage is limited to two times the memory reservation of the container.</p> </li>
     /// </ul> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     #[doc(hidden)]
     pub swappiness: std::option::Option<i32>,
 }
 impl LinuxParameters {
-    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+    /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     pub fn devices(&self) -> std::option::Option<&[crate::model::Device]> {
         self.devices.as_deref()
     }
-    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
     pub fn init_process_enabled(&self) -> std::option::Option<bool> {
         self.init_process_enabled
     }
     /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     pub fn shared_memory_size(&self) -> std::option::Option<i32> {
         self.shared_memory_size
     }
-    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+    /// <p>The container path, mount options, and size (in MiB) of the <code>tmpfs</code> mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide this parameter for this resource type.</p>
     /// </note>
     pub fn tmpfs(&self) -> std::option::Option<&[crate::model::Tmpfs]> {
         self.tmpfs.as_deref()
     }
     /// <p>The total amount of swap memory (in MiB) a container can use. This parameter is translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where the value is the sum of the container memory plus the <code>maxSwap</code> value. For more information, see <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details"> <code>--memory-swap</code> details</a> in the Docker documentation.</p>
-    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance that it's running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     pub fn max_swap(&self) -> std::option::Option<i32> {
         self.max_swap
     }
-    /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    /// <p>You can use this parameter to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping to not occur unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped aggressively. Valid values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     /// <p>Consider the following when you use a per-container swap configuration.</p>
     /// <ul>
     /// <li> <p>Swap space must be enabled and allocated on the container instance for the containers to use.</p> <note>
-    /// <p>The Amazon ECS optimized AMIs don't have swap enabled by default. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a> </p>
+    /// <p>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a> </p>
     /// </note> </li>
     /// <li> <p>The swap space parameters are only supported for job definitions using EC2 resources.</p> </li>
-    /// <li> <p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container will have a default <code>swappiness</code> value of 60, and the total swap usage will be limited to two times the memory reservation of the container.</p> </li>
+    /// <li> <p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container has a default <code>swappiness</code> value of 60. Moreover, the total swap usage is limited to two times the memory reservation of the container.</p> </li>
     /// </ul> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     pub fn swappiness(&self) -> std::option::Option<i32> {
         self.swappiness
@@ -4986,8 +6971,8 @@ pub mod linux_parameters {
         ///
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
-        /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+        /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
         /// </note>
         pub fn devices(mut self, input: crate::model::Device) -> Self {
             let mut v = self.devices.unwrap_or_default();
@@ -4995,8 +6980,8 @@ pub mod linux_parameters {
             self.devices = Some(v);
             self
         }
-        /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+        /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
         /// </note>
         pub fn set_devices(
             mut self,
@@ -5005,25 +6990,25 @@ pub mod linux_parameters {
             self.devices = input;
             self
         }
-        /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+        /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
         pub fn init_process_enabled(mut self, input: bool) -> Self {
             self.init_process_enabled = Some(input);
             self
         }
-        /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+        /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
         pub fn set_init_process_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.init_process_enabled = input;
             self
         }
         /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
         /// </note>
         pub fn shared_memory_size(mut self, input: i32) -> Self {
             self.shared_memory_size = Some(input);
             self
         }
         /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
         /// </note>
         pub fn set_shared_memory_size(mut self, input: std::option::Option<i32>) -> Self {
             self.shared_memory_size = input;
@@ -5033,8 +7018,8 @@ pub mod linux_parameters {
         ///
         /// To override the contents of this collection use [`set_tmpfs`](Self::set_tmpfs).
         ///
-        /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+        /// <p>The container path, mount options, and size (in MiB) of the <code>tmpfs</code> mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide this parameter for this resource type.</p>
         /// </note>
         pub fn tmpfs(mut self, input: crate::model::Tmpfs) -> Self {
             let mut v = self.tmpfs.unwrap_or_default();
@@ -5042,8 +7027,8 @@ pub mod linux_parameters {
             self.tmpfs = Some(v);
             self
         }
-        /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+        /// <p>The container path, mount options, and size (in MiB) of the <code>tmpfs</code> mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide this parameter for this resource type.</p>
         /// </note>
         pub fn set_tmpfs(
             mut self,
@@ -5053,46 +7038,46 @@ pub mod linux_parameters {
             self
         }
         /// <p>The total amount of swap memory (in MiB) a container can use. This parameter is translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where the value is the sum of the container memory plus the <code>maxSwap</code> value. For more information, see <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details"> <code>--memory-swap</code> details</a> in the Docker documentation.</p>
-        /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+        /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance that it's running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
         /// </note>
         pub fn max_swap(mut self, input: i32) -> Self {
             self.max_swap = Some(input);
             self
         }
         /// <p>The total amount of swap memory (in MiB) a container can use. This parameter is translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where the value is the sum of the container memory plus the <code>maxSwap</code> value. For more information, see <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details"> <code>--memory-swap</code> details</a> in the Docker documentation.</p>
-        /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+        /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance that it's running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
         /// </note>
         pub fn set_max_swap(mut self, input: std::option::Option<i32>) -> Self {
             self.max_swap = input;
             self
         }
-        /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+        /// <p>You can use this parameter to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping to not occur unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped aggressively. Valid values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
         /// <p>Consider the following when you use a per-container swap configuration.</p>
         /// <ul>
         /// <li> <p>Swap space must be enabled and allocated on the container instance for the containers to use.</p> <note>
-        /// <p>The Amazon ECS optimized AMIs don't have swap enabled by default. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a> </p>
+        /// <p>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a> </p>
         /// </note> </li>
         /// <li> <p>The swap space parameters are only supported for job definitions using EC2 resources.</p> </li>
-        /// <li> <p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container will have a default <code>swappiness</code> value of 60, and the total swap usage will be limited to two times the memory reservation of the container.</p> </li>
+        /// <li> <p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container has a default <code>swappiness</code> value of 60. Moreover, the total swap usage is limited to two times the memory reservation of the container.</p> </li>
         /// </ul> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
         /// </note>
         pub fn swappiness(mut self, input: i32) -> Self {
             self.swappiness = Some(input);
             self
         }
-        /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+        /// <p>You can use this parameter to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping to not occur unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped aggressively. Valid values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
         /// <p>Consider the following when you use a per-container swap configuration.</p>
         /// <ul>
         /// <li> <p>Swap space must be enabled and allocated on the container instance for the containers to use.</p> <note>
-        /// <p>The Amazon ECS optimized AMIs don't have swap enabled by default. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a> </p>
+        /// <p>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a> </p>
         /// </note> </li>
         /// <li> <p>The swap space parameters are only supported for job definitions using EC2 resources.</p> </li>
-        /// <li> <p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container will have a default <code>swappiness</code> value of 60, and the total swap usage will be limited to two times the memory reservation of the container.</p> </li>
+        /// <li> <p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container has a default <code>swappiness</code> value of 60. Moreover, the total swap usage is limited to two times the memory reservation of the container.</p> </li>
         /// </ul> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
         /// </note>
         pub fn set_swappiness(mut self, input: std::option::Option<i32>) -> Self {
             self.swappiness = input;
@@ -5118,33 +7103,33 @@ impl LinuxParameters {
     }
 }
 
-/// <p>The container path, mount options, and size of the tmpfs mount.</p> <note>
+/// <p>The container path, mount options, and size of the <code>tmpfs</code> mount.</p> <note>
 /// <p>This object isn't applicable to jobs that are running on Fargate resources.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tmpfs {
-    /// <p>The absolute file path in the container where the tmpfs volume is mounted.</p>
+    /// <p>The absolute file path in the container where the <code>tmpfs</code> volume is mounted.</p>
     #[doc(hidden)]
     pub container_path: std::option::Option<std::string::String>,
-    /// <p>The size (in MiB) of the tmpfs volume.</p>
+    /// <p>The size (in MiB) of the <code>tmpfs</code> volume.</p>
     #[doc(hidden)]
     pub size: std::option::Option<i32>,
-    /// <p>The list of tmpfs volume mount options.</p>
+    /// <p>The list of <code>tmpfs</code> volume mount options.</p>
     /// <p>Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "<code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "<code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "<code>mpol</code>"</p>
     #[doc(hidden)]
     pub mount_options: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Tmpfs {
-    /// <p>The absolute file path in the container where the tmpfs volume is mounted.</p>
+    /// <p>The absolute file path in the container where the <code>tmpfs</code> volume is mounted.</p>
     pub fn container_path(&self) -> std::option::Option<&str> {
         self.container_path.as_deref()
     }
-    /// <p>The size (in MiB) of the tmpfs volume.</p>
+    /// <p>The size (in MiB) of the <code>tmpfs</code> volume.</p>
     pub fn size(&self) -> std::option::Option<i32> {
         self.size
     }
-    /// <p>The list of tmpfs volume mount options.</p>
+    /// <p>The list of <code>tmpfs</code> volume mount options.</p>
     /// <p>Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "<code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "<code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "<code>mpol</code>"</p>
     pub fn mount_options(&self) -> std::option::Option<&[std::string::String]> {
         self.mount_options.as_deref()
@@ -5161,12 +7146,12 @@ pub mod tmpfs {
         pub(crate) mount_options: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The absolute file path in the container where the tmpfs volume is mounted.</p>
+        /// <p>The absolute file path in the container where the <code>tmpfs</code> volume is mounted.</p>
         pub fn container_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.container_path = Some(input.into());
             self
         }
-        /// <p>The absolute file path in the container where the tmpfs volume is mounted.</p>
+        /// <p>The absolute file path in the container where the <code>tmpfs</code> volume is mounted.</p>
         pub fn set_container_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5174,12 +7159,12 @@ pub mod tmpfs {
             self.container_path = input;
             self
         }
-        /// <p>The size (in MiB) of the tmpfs volume.</p>
+        /// <p>The size (in MiB) of the <code>tmpfs</code> volume.</p>
         pub fn size(mut self, input: i32) -> Self {
             self.size = Some(input);
             self
         }
-        /// <p>The size (in MiB) of the tmpfs volume.</p>
+        /// <p>The size (in MiB) of the <code>tmpfs</code> volume.</p>
         pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
             self.size = input;
             self
@@ -5188,7 +7173,7 @@ pub mod tmpfs {
         ///
         /// To override the contents of this collection use [`set_mount_options`](Self::set_mount_options).
         ///
-        /// <p>The list of tmpfs volume mount options.</p>
+        /// <p>The list of <code>tmpfs</code> volume mount options.</p>
         /// <p>Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "<code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "<code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "<code>mpol</code>"</p>
         pub fn mount_options(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.mount_options.unwrap_or_default();
@@ -5196,7 +7181,7 @@ pub mod tmpfs {
             self.mount_options = Some(v);
             self
         }
-        /// <p>The list of tmpfs volume mount options.</p>
+        /// <p>The list of <code>tmpfs</code> volume mount options.</p>
         /// <p>Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "<code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "<code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "<code>mpol</code>"</p>
         pub fn set_mount_options(
             mut self,
@@ -5222,7 +7207,7 @@ impl Tmpfs {
     }
 }
 
-/// <p>An object representing a container instance host device.</p> <note>
+/// <p>An object that represents a container instance host device.</p> <note>
 /// <p>This object isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
 /// </note>
 #[non_exhaustive]
@@ -5508,7 +7493,7 @@ impl Ulimit {
     }
 }
 
-/// <p>Details on a Docker volume mount point that's used in a job's container properties. This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container">Create a container</a> section of the Docker Remote API and the <code>--volume</code> option to docker run.</p>
+/// <p>Details for a Docker volume mount point that's used in a job's container properties. This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container">Create a container</a> section of the <i>Docker Remote API</i> and the <code>--volume</code> option to docker run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MountPoint {
@@ -5600,34 +7585,34 @@ impl MountPoint {
     }
 }
 
-/// <p>A data volume used in a job's container properties.</p>
+/// <p>A data volume that's used in a job's container properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Volume {
-    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers associated with it stop running.</p> <note>
+    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
     #[doc(hidden)]
     pub host: std::option::Option<crate::model::Host>,
-    /// <p>The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
+    /// <p>The name of the volume. It can be up to 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+    /// <p>This parameter is specified when you're using an Amazon Elastic File System file system for job storage. Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
     #[doc(hidden)]
     pub efs_volume_configuration: std::option::Option<crate::model::EfsVolumeConfiguration>,
 }
 impl Volume {
-    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers associated with it stop running.</p> <note>
+    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
     pub fn host(&self) -> std::option::Option<&crate::model::Host> {
         self.host.as_ref()
     }
-    /// <p>The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
+    /// <p>The name of the volume. It can be up to 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+    /// <p>This parameter is specified when you're using an Amazon Elastic File System file system for job storage. Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
     pub fn efs_volume_configuration(
         &self,
     ) -> std::option::Option<&crate::model::EfsVolumeConfiguration> {
@@ -5646,31 +7631,31 @@ pub mod volume {
             std::option::Option<crate::model::EfsVolumeConfiguration>,
     }
     impl Builder {
-        /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers associated with it stop running.</p> <note>
+        /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p> <note>
         /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
         /// </note>
         pub fn host(mut self, input: crate::model::Host) -> Self {
             self.host = Some(input);
             self
         }
-        /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers associated with it stop running.</p> <note>
+        /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p> <note>
         /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
         /// </note>
         pub fn set_host(mut self, input: std::option::Option<crate::model::Host>) -> Self {
             self.host = input;
             self
         }
-        /// <p>The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
+        /// <p>The name of the volume. It can be up to 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
+        /// <p>The name of the volume. It can be up to 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+        /// <p>This parameter is specified when you're using an Amazon Elastic File System file system for job storage. Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
         pub fn efs_volume_configuration(
             mut self,
             input: crate::model::EfsVolumeConfiguration,
@@ -5678,7 +7663,7 @@ pub mod volume {
             self.efs_volume_configuration = Some(input);
             self
         }
-        /// <p>This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+        /// <p>This parameter is specified when you're using an Amazon Elastic File System file system for job storage. Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
         pub fn set_efs_volume_configuration(
             mut self,
             input: std::option::Option<crate::model::EfsVolumeConfiguration>,
@@ -5853,7 +7838,7 @@ impl EfsVolumeConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EfsAuthorizationConfig {
-    /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point. If an access point is used, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+    /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which enforces the path set on the EFS access point. If an access point is used, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     #[doc(hidden)]
     pub access_point_id: std::option::Option<std::string::String>,
     /// <p>Whether or not to use the Batch job IAM role defined in a job definition when mounting the Amazon EFS file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html#efs-volume-accesspoints">Using Amazon EFS access points</a> in the <i>Batch User Guide</i>. EFS IAM authorization requires that <code>TransitEncryption</code> be <code>ENABLED</code> and that a <code>JobRoleArn</code> is specified.</p>
@@ -5861,7 +7846,7 @@ pub struct EfsAuthorizationConfig {
     pub iam: std::option::Option<crate::model::EfsAuthorizationConfigIam>,
 }
 impl EfsAuthorizationConfig {
-    /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point. If an access point is used, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+    /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which enforces the path set on the EFS access point. If an access point is used, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     pub fn access_point_id(&self) -> std::option::Option<&str> {
         self.access_point_id.as_deref()
     }
@@ -5880,12 +7865,12 @@ pub mod efs_authorization_config {
         pub(crate) iam: std::option::Option<crate::model::EfsAuthorizationConfigIam>,
     }
     impl Builder {
-        /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point. If an access point is used, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+        /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which enforces the path set on the EFS access point. If an access point is used, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
         pub fn access_point_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_point_id = Some(input.into());
             self
         }
-        /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point. If an access point is used, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+        /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which enforces the path set on the EFS access point. If an access point is used, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
         pub fn set_access_point_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6106,19 +8091,19 @@ impl AsRef<str> for EfsTransitEncryption {
     }
 }
 
-/// <p>Determine whether your data volume persists on the host container instance and where it is stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data isn't guaranteed to persist after the containers associated with it stop running.</p>
+/// <p>Determine whether your data volume persists on the host container instance and where it's stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Host {
     /// <p>The path on the host container instance that's presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the source path location doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
+    /// <p>This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.</p>
     /// </note>
     #[doc(hidden)]
     pub source_path: std::option::Option<std::string::String>,
 }
 impl Host {
     /// <p>The path on the host container instance that's presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the source path location doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
+    /// <p>This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.</p>
     /// </note>
     pub fn source_path(&self) -> std::option::Option<&str> {
         self.source_path.as_deref()
@@ -6134,14 +8119,14 @@ pub mod host {
     }
     impl Builder {
         /// <p>The path on the host container instance that's presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the source path location doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
+        /// <p>This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.</p>
         /// </note>
         pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_path = Some(input.into());
             self
         }
         /// <p>The path on the host container instance that's presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the source path location doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
+        /// <p>This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.</p>
         /// </note>
         pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_path = input;
@@ -6300,17 +8285,17 @@ impl SchedulingPolicyListingDetail {
     }
 }
 
-/// <p>An object representing summary details of a job.</p>
+/// <p>An object that represents summary details of a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobSummary {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the job.</p>
+    /// <p>The job ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The name of the job.</p>
+    /// <p>The job name.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <code>SubmitJob</code> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
@@ -6319,19 +8304,19 @@ pub struct JobSummary {
     /// <p>The current status for the job.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
-    /// <p>A short, human-readable string to provide additional details about the current status of the job.</p>
+    /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
-    /// <p>The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
+    /// <p>The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.</p>
     #[doc(hidden)]
     pub started_at: std::option::Option<i64>,
-    /// <p>The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+    /// <p>The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
     #[doc(hidden)]
     pub stopped_at: std::option::Option<i64>,
-    /// <p>An object representing the details of the container that's associated with the job.</p>
+    /// <p>An object that represents the details of the container that's associated with the job.</p>
     #[doc(hidden)]
     pub container: std::option::Option<crate::model::ContainerSummary>,
-    /// <p>The array properties of the job, if it is an array job.</p>
+    /// <p>The array properties of the job, if it's an array job.</p>
     #[doc(hidden)]
     pub array_properties: std::option::Option<crate::model::ArrayPropertiesSummary>,
     /// <p>The node properties for a single node in a job summary list.</p> <note>
@@ -6348,11 +8333,11 @@ impl JobSummary {
     pub fn job_arn(&self) -> std::option::Option<&str> {
         self.job_arn.as_deref()
     }
-    /// <p>The ID of the job.</p>
+    /// <p>The job ID.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The name of the job.</p>
+    /// <p>The job name.</p>
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
@@ -6364,23 +8349,23 @@ impl JobSummary {
     pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.status.as_ref()
     }
-    /// <p>A short, human-readable string to provide additional details about the current status of the job.</p>
+    /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
+    /// <p>The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.</p>
     pub fn started_at(&self) -> std::option::Option<i64> {
         self.started_at
     }
-    /// <p>The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+    /// <p>The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
     pub fn stopped_at(&self) -> std::option::Option<i64> {
         self.stopped_at
     }
-    /// <p>An object representing the details of the container that's associated with the job.</p>
+    /// <p>An object that represents the details of the container that's associated with the job.</p>
     pub fn container(&self) -> std::option::Option<&crate::model::ContainerSummary> {
         self.container.as_ref()
     }
-    /// <p>The array properties of the job, if it is an array job.</p>
+    /// <p>The array properties of the job, if it's an array job.</p>
     pub fn array_properties(&self) -> std::option::Option<&crate::model::ArrayPropertiesSummary> {
         self.array_properties.as_ref()
     }
@@ -6425,22 +8410,22 @@ pub mod job_summary {
             self.job_arn = input;
             self
         }
-        /// <p>The ID of the job.</p>
+        /// <p>The job ID.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The ID of the job.</p>
+        /// <p>The job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p>The name of the job.</p>
+        /// <p>The job name.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_name = Some(input.into());
             self
         }
-        /// <p>The name of the job.</p>
+        /// <p>The job name.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -6465,12 +8450,12 @@ pub mod job_summary {
             self.status = input;
             self
         }
-        /// <p>A short, human-readable string to provide additional details about the current status of the job.</p>
+        /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_reason = Some(input.into());
             self
         }
-        /// <p>A short, human-readable string to provide additional details about the current status of the job.</p>
+        /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6478,32 +8463,32 @@ pub mod job_summary {
             self.status_reason = input;
             self
         }
-        /// <p>The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
+        /// <p>The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.</p>
         pub fn started_at(mut self, input: i64) -> Self {
             self.started_at = Some(input);
             self
         }
-        /// <p>The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
+        /// <p>The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.</p>
         pub fn set_started_at(mut self, input: std::option::Option<i64>) -> Self {
             self.started_at = input;
             self
         }
-        /// <p>The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+        /// <p>The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
         pub fn stopped_at(mut self, input: i64) -> Self {
             self.stopped_at = Some(input);
             self
         }
-        /// <p>The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+        /// <p>The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
         pub fn set_stopped_at(mut self, input: std::option::Option<i64>) -> Self {
             self.stopped_at = input;
             self
         }
-        /// <p>An object representing the details of the container that's associated with the job.</p>
+        /// <p>An object that represents the details of the container that's associated with the job.</p>
         pub fn container(mut self, input: crate::model::ContainerSummary) -> Self {
             self.container = Some(input);
             self
         }
-        /// <p>An object representing the details of the container that's associated with the job.</p>
+        /// <p>An object that represents the details of the container that's associated with the job.</p>
         pub fn set_container(
             mut self,
             input: std::option::Option<crate::model::ContainerSummary>,
@@ -6511,12 +8496,12 @@ pub mod job_summary {
             self.container = input;
             self
         }
-        /// <p>The array properties of the job, if it is an array job.</p>
+        /// <p>The array properties of the job, if it's an array job.</p>
         pub fn array_properties(mut self, input: crate::model::ArrayPropertiesSummary) -> Self {
             self.array_properties = Some(input);
             self
         }
-        /// <p>The array properties of the job, if it is an array job.</p>
+        /// <p>The array properties of the job, if it's an array job.</p>
         pub fn set_array_properties(
             mut self,
             input: std::option::Option<crate::model::ArrayPropertiesSummary>,
@@ -6580,14 +8565,14 @@ impl JobSummary {
     }
 }
 
-/// <p>An object representing the properties of a node that's associated with a multi-node parallel job.</p>
+/// <p>An object that represents the properties of a node that's associated with a multi-node parallel job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodePropertiesSummary {
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
     #[doc(hidden)]
     pub is_main_node: std::option::Option<bool>,
-    /// <p>The number of nodes associated with a multi-node parallel job.</p>
+    /// <p>The number of nodes that are associated with a multi-node parallel job.</p>
     #[doc(hidden)]
     pub num_nodes: std::option::Option<i32>,
     /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
@@ -6599,7 +8584,7 @@ impl NodePropertiesSummary {
     pub fn is_main_node(&self) -> std::option::Option<bool> {
         self.is_main_node
     }
-    /// <p>The number of nodes associated with a multi-node parallel job.</p>
+    /// <p>The number of nodes that are associated with a multi-node parallel job.</p>
     pub fn num_nodes(&self) -> std::option::Option<i32> {
         self.num_nodes
     }
@@ -6629,12 +8614,12 @@ pub mod node_properties_summary {
             self.is_main_node = input;
             self
         }
-        /// <p>The number of nodes associated with a multi-node parallel job.</p>
+        /// <p>The number of nodes that are associated with a multi-node parallel job.</p>
         pub fn num_nodes(mut self, input: i32) -> Self {
             self.num_nodes = Some(input);
             self
         }
-        /// <p>The number of nodes associated with a multi-node parallel job.</p>
+        /// <p>The number of nodes that are associated with a multi-node parallel job.</p>
         pub fn set_num_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.num_nodes = input;
             self
@@ -6666,7 +8651,7 @@ impl NodePropertiesSummary {
     }
 }
 
-/// <p>An object representing the array properties of a job.</p>
+/// <p>An object that represents the array properties of a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArrayPropertiesSummary {
@@ -6733,14 +8718,14 @@ impl ArrayPropertiesSummary {
     }
 }
 
-/// <p>An object representing summary details of a container within a job.</p>
+/// <p>An object that represents summary details of a container within a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerSummary {
     /// <p>The exit code to return upon completion.</p>
     #[doc(hidden)]
     pub exit_code: std::option::Option<i32>,
-    /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+    /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
     #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
@@ -6749,7 +8734,7 @@ impl ContainerSummary {
     pub fn exit_code(&self) -> std::option::Option<i32> {
         self.exit_code
     }
-    /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+    /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
@@ -6774,12 +8759,12 @@ pub mod container_summary {
             self.exit_code = input;
             self
         }
-        /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+        /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason = Some(input.into());
             self
         }
-        /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+        /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -7128,17 +9113,17 @@ impl SchedulingPolicyDetail {
     }
 }
 
-/// <p>An object representing an Batch job.</p>
+/// <p>An object that represents an Batch job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobDetail {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the job.</p>
+    /// <p>The job name.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the job.</p>
+    /// <p>The job ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the job queue that the job is associated with.</p>
@@ -7155,72 +9140,84 @@ pub struct JobDetail {
     /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     #[doc(hidden)]
     pub scheduling_priority: std::option::Option<i32>,
-    /// <p>A list of job attempts associated with this job.</p>
+    /// <p>A list of job attempts that are associated with this job.</p>
     #[doc(hidden)]
     pub attempts: std::option::Option<std::vec::Vec<crate::model::AttemptDetail>>,
-    /// <p>A short, human-readable string to provide additional details about the current status of the job.</p>
+    /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
-    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <code>SubmitJob</code> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <code>SubmitJob</code> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<i64>,
     /// <p>The retry strategy to use for this job if an attempt fails.</p>
     #[doc(hidden)]
     pub retry_strategy: std::option::Option<crate::model::RetryStrategy>,
-    /// <p>The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
     #[doc(hidden)]
     pub started_at: std::option::Option<i64>,
-    /// <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
     #[doc(hidden)]
     pub stopped_at: std::option::Option<i64>,
     /// <p>A list of job IDs that this job depends on.</p>
     #[doc(hidden)]
     pub depends_on: std::option::Option<std::vec::Vec<crate::model::JobDependency>>,
-    /// <p>The Amazon Resource Name (ARN) of the job definition that's used by this job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
     #[doc(hidden)]
     pub job_definition: std::option::Option<std::string::String>,
-    /// <p>Additional parameters passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
+    /// <p>Additional parameters that are passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
     #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>An object representing the details of the container that's associated with the job.</p>
+    /// <p>An object that represents the details for the container that's associated with the job.</p>
     #[doc(hidden)]
     pub container: std::option::Option<crate::model::ContainerDetail>,
-    /// <p>An object representing the details of a node that's associated with a multi-node parallel job.</p>
+    /// <p>An object that represents the details of a node that's associated with a multi-node parallel job.</p>
     #[doc(hidden)]
     pub node_details: std::option::Option<crate::model::NodeDetails>,
-    /// <p>An object representing the node properties of a multi-node parallel job.</p> <note>
+    /// <p>An object that represents the node properties of a multi-node parallel job.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
     #[doc(hidden)]
     pub node_properties: std::option::Option<crate::model::NodeProperties>,
-    /// <p>The array properties of the job, if it is an array job.</p>
+    /// <p>The array properties of the job, if it's an array job.</p>
     #[doc(hidden)]
     pub array_properties: std::option::Option<crate::model::ArrayPropertiesDetail>,
     /// <p>The timeout configuration for the job.</p>
     #[doc(hidden)]
     pub timeout: std::option::Option<crate::model::JobTimeout>,
-    /// <p>The tags applied to the job.</p>
+    /// <p>The tags that are applied to the job.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
     #[doc(hidden)]
     pub propagate_tags: std::option::Option<bool>,
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
     #[doc(hidden)]
     pub platform_capabilities: std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
+    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
+    #[doc(hidden)]
+    pub eks_properties: std::option::Option<crate::model::EksPropertiesDetail>,
+    /// <p>A list of job attempts that are associated with this job.</p>
+    #[doc(hidden)]
+    pub eks_attempts: std::option::Option<std::vec::Vec<crate::model::EksAttemptDetail>>,
+    /// <p>Indicates whether the job is canceled.</p>
+    #[doc(hidden)]
+    pub is_cancelled: std::option::Option<bool>,
+    /// <p>Indicates whether the job is terminated.</p>
+    #[doc(hidden)]
+    pub is_terminated: std::option::Option<bool>,
 }
 impl JobDetail {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     pub fn job_arn(&self) -> std::option::Option<&str> {
         self.job_arn.as_deref()
     }
-    /// <p>The name of the job.</p>
+    /// <p>The job name.</p>
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The ID for the job.</p>
+    /// <p>The job ID.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -7242,15 +9239,15 @@ impl JobDetail {
     pub fn scheduling_priority(&self) -> std::option::Option<i32> {
         self.scheduling_priority
     }
-    /// <p>A list of job attempts associated with this job.</p>
+    /// <p>A list of job attempts that are associated with this job.</p>
     pub fn attempts(&self) -> std::option::Option<&[crate::model::AttemptDetail]> {
         self.attempts.as_deref()
     }
-    /// <p>A short, human-readable string to provide additional details about the current status of the job.</p>
+    /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <code>SubmitJob</code> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <code>SubmitJob</code> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     pub fn created_at(&self) -> std::option::Option<i64> {
         self.created_at
     }
@@ -7258,11 +9255,11 @@ impl JobDetail {
     pub fn retry_strategy(&self) -> std::option::Option<&crate::model::RetryStrategy> {
         self.retry_strategy.as_ref()
     }
-    /// <p>The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
     pub fn started_at(&self) -> std::option::Option<i64> {
         self.started_at
     }
-    /// <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
     pub fn stopped_at(&self) -> std::option::Option<i64> {
         self.stopped_at
     }
@@ -7270,32 +9267,32 @@ impl JobDetail {
     pub fn depends_on(&self) -> std::option::Option<&[crate::model::JobDependency]> {
         self.depends_on.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the job definition that's used by this job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
     pub fn job_definition(&self) -> std::option::Option<&str> {
         self.job_definition.as_deref()
     }
-    /// <p>Additional parameters passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
+    /// <p>Additional parameters that are passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
     pub fn parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
     }
-    /// <p>An object representing the details of the container that's associated with the job.</p>
+    /// <p>An object that represents the details for the container that's associated with the job.</p>
     pub fn container(&self) -> std::option::Option<&crate::model::ContainerDetail> {
         self.container.as_ref()
     }
-    /// <p>An object representing the details of a node that's associated with a multi-node parallel job.</p>
+    /// <p>An object that represents the details of a node that's associated with a multi-node parallel job.</p>
     pub fn node_details(&self) -> std::option::Option<&crate::model::NodeDetails> {
         self.node_details.as_ref()
     }
-    /// <p>An object representing the node properties of a multi-node parallel job.</p> <note>
+    /// <p>An object that represents the node properties of a multi-node parallel job.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
     pub fn node_properties(&self) -> std::option::Option<&crate::model::NodeProperties> {
         self.node_properties.as_ref()
     }
-    /// <p>The array properties of the job, if it is an array job.</p>
+    /// <p>The array properties of the job, if it's an array job.</p>
     pub fn array_properties(&self) -> std::option::Option<&crate::model::ArrayPropertiesDetail> {
         self.array_properties.as_ref()
     }
@@ -7303,14 +9300,14 @@ impl JobDetail {
     pub fn timeout(&self) -> std::option::Option<&crate::model::JobTimeout> {
         self.timeout.as_ref()
     }
-    /// <p>The tags applied to the job.</p>
+    /// <p>The tags that are applied to the job.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
     pub fn propagate_tags(&self) -> std::option::Option<bool> {
         self.propagate_tags
     }
@@ -7319,6 +9316,22 @@ impl JobDetail {
         &self,
     ) -> std::option::Option<&[crate::model::PlatformCapability]> {
         self.platform_capabilities.as_deref()
+    }
+    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
+    pub fn eks_properties(&self) -> std::option::Option<&crate::model::EksPropertiesDetail> {
+        self.eks_properties.as_ref()
+    }
+    /// <p>A list of job attempts that are associated with this job.</p>
+    pub fn eks_attempts(&self) -> std::option::Option<&[crate::model::EksAttemptDetail]> {
+        self.eks_attempts.as_deref()
+    }
+    /// <p>Indicates whether the job is canceled.</p>
+    pub fn is_cancelled(&self) -> std::option::Option<bool> {
+        self.is_cancelled
+    }
+    /// <p>Indicates whether the job is terminated.</p>
+    pub fn is_terminated(&self) -> std::option::Option<bool> {
+        self.is_terminated
     }
 }
 /// See [`JobDetail`](crate::model::JobDetail).
@@ -7356,6 +9369,10 @@ pub mod job_detail {
         pub(crate) propagate_tags: std::option::Option<bool>,
         pub(crate) platform_capabilities:
             std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
+        pub(crate) eks_properties: std::option::Option<crate::model::EksPropertiesDetail>,
+        pub(crate) eks_attempts: std::option::Option<std::vec::Vec<crate::model::EksAttemptDetail>>,
+        pub(crate) is_cancelled: std::option::Option<bool>,
+        pub(crate) is_terminated: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the job.</p>
@@ -7368,22 +9385,22 @@ pub mod job_detail {
             self.job_arn = input;
             self
         }
-        /// <p>The name of the job.</p>
+        /// <p>The job name.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_name = Some(input.into());
             self
         }
-        /// <p>The name of the job.</p>
+        /// <p>The job name.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
         }
-        /// <p>The ID for the job.</p>
+        /// <p>The job ID.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The ID for the job.</p>
+        /// <p>The job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -7439,14 +9456,14 @@ pub mod job_detail {
         ///
         /// To override the contents of this collection use [`set_attempts`](Self::set_attempts).
         ///
-        /// <p>A list of job attempts associated with this job.</p>
+        /// <p>A list of job attempts that are associated with this job.</p>
         pub fn attempts(mut self, input: crate::model::AttemptDetail) -> Self {
             let mut v = self.attempts.unwrap_or_default();
             v.push(input);
             self.attempts = Some(v);
             self
         }
-        /// <p>A list of job attempts associated with this job.</p>
+        /// <p>A list of job attempts that are associated with this job.</p>
         pub fn set_attempts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttemptDetail>>,
@@ -7454,12 +9471,12 @@ pub mod job_detail {
             self.attempts = input;
             self
         }
-        /// <p>A short, human-readable string to provide additional details about the current status of the job.</p>
+        /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_reason = Some(input.into());
             self
         }
-        /// <p>A short, human-readable string to provide additional details about the current status of the job.</p>
+        /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7467,12 +9484,12 @@ pub mod job_detail {
             self.status_reason = input;
             self
         }
-        /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <code>SubmitJob</code> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
+        /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <code>SubmitJob</code> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
         pub fn created_at(mut self, input: i64) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <code>SubmitJob</code> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
+        /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <code>SubmitJob</code> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
         pub fn set_created_at(mut self, input: std::option::Option<i64>) -> Self {
             self.created_at = input;
             self
@@ -7490,22 +9507,22 @@ pub mod job_detail {
             self.retry_strategy = input;
             self
         }
-        /// <p>The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
+        /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
         pub fn started_at(mut self, input: i64) -> Self {
             self.started_at = Some(input);
             self
         }
-        /// <p>The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
+        /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
         pub fn set_started_at(mut self, input: std::option::Option<i64>) -> Self {
             self.started_at = input;
             self
         }
-        /// <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+        /// <p>The Unix timestamp (in milliseconds) for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
         pub fn stopped_at(mut self, input: i64) -> Self {
             self.stopped_at = Some(input);
             self
         }
-        /// <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+        /// <p>The Unix timestamp (in milliseconds) for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
         pub fn set_stopped_at(mut self, input: std::option::Option<i64>) -> Self {
             self.stopped_at = input;
             self
@@ -7529,12 +9546,12 @@ pub mod job_detail {
             self.depends_on = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the job definition that's used by this job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
         pub fn job_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_definition = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the job definition that's used by this job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
         pub fn set_job_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7546,7 +9563,7 @@ pub mod job_detail {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Additional parameters passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
+        /// <p>Additional parameters that are passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -7557,7 +9574,7 @@ pub mod job_detail {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>Additional parameters passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
+        /// <p>Additional parameters that are passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -7567,12 +9584,12 @@ pub mod job_detail {
             self.parameters = input;
             self
         }
-        /// <p>An object representing the details of the container that's associated with the job.</p>
+        /// <p>An object that represents the details for the container that's associated with the job.</p>
         pub fn container(mut self, input: crate::model::ContainerDetail) -> Self {
             self.container = Some(input);
             self
         }
-        /// <p>An object representing the details of the container that's associated with the job.</p>
+        /// <p>An object that represents the details for the container that's associated with the job.</p>
         pub fn set_container(
             mut self,
             input: std::option::Option<crate::model::ContainerDetail>,
@@ -7580,12 +9597,12 @@ pub mod job_detail {
             self.container = input;
             self
         }
-        /// <p>An object representing the details of a node that's associated with a multi-node parallel job.</p>
+        /// <p>An object that represents the details of a node that's associated with a multi-node parallel job.</p>
         pub fn node_details(mut self, input: crate::model::NodeDetails) -> Self {
             self.node_details = Some(input);
             self
         }
-        /// <p>An object representing the details of a node that's associated with a multi-node parallel job.</p>
+        /// <p>An object that represents the details of a node that's associated with a multi-node parallel job.</p>
         pub fn set_node_details(
             mut self,
             input: std::option::Option<crate::model::NodeDetails>,
@@ -7593,14 +9610,14 @@ pub mod job_detail {
             self.node_details = input;
             self
         }
-        /// <p>An object representing the node properties of a multi-node parallel job.</p> <note>
+        /// <p>An object that represents the node properties of a multi-node parallel job.</p> <note>
         /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
         /// </note>
         pub fn node_properties(mut self, input: crate::model::NodeProperties) -> Self {
             self.node_properties = Some(input);
             self
         }
-        /// <p>An object representing the node properties of a multi-node parallel job.</p> <note>
+        /// <p>An object that represents the node properties of a multi-node parallel job.</p> <note>
         /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
         /// </note>
         pub fn set_node_properties(
@@ -7610,12 +9627,12 @@ pub mod job_detail {
             self.node_properties = input;
             self
         }
-        /// <p>The array properties of the job, if it is an array job.</p>
+        /// <p>The array properties of the job, if it's an array job.</p>
         pub fn array_properties(mut self, input: crate::model::ArrayPropertiesDetail) -> Self {
             self.array_properties = Some(input);
             self
         }
-        /// <p>The array properties of the job, if it is an array job.</p>
+        /// <p>The array properties of the job, if it's an array job.</p>
         pub fn set_array_properties(
             mut self,
             input: std::option::Option<crate::model::ArrayPropertiesDetail>,
@@ -7637,7 +9654,7 @@ pub mod job_detail {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags applied to the job.</p>
+        /// <p>The tags that are applied to the job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -7648,7 +9665,7 @@ pub mod job_detail {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags applied to the job.</p>
+        /// <p>The tags that are applied to the job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -7658,12 +9675,12 @@ pub mod job_detail {
             self.tags = input;
             self
         }
-        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
         pub fn propagate_tags(mut self, input: bool) -> Self {
             self.propagate_tags = Some(input);
             self
         }
-        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
         pub fn set_propagate_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.propagate_tags = input;
             self
@@ -7685,6 +9702,58 @@ pub mod job_detail {
             input: std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
         ) -> Self {
             self.platform_capabilities = input;
+            self
+        }
+        /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
+        pub fn eks_properties(mut self, input: crate::model::EksPropertiesDetail) -> Self {
+            self.eks_properties = Some(input);
+            self
+        }
+        /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
+        pub fn set_eks_properties(
+            mut self,
+            input: std::option::Option<crate::model::EksPropertiesDetail>,
+        ) -> Self {
+            self.eks_properties = input;
+            self
+        }
+        /// Appends an item to `eks_attempts`.
+        ///
+        /// To override the contents of this collection use [`set_eks_attempts`](Self::set_eks_attempts).
+        ///
+        /// <p>A list of job attempts that are associated with this job.</p>
+        pub fn eks_attempts(mut self, input: crate::model::EksAttemptDetail) -> Self {
+            let mut v = self.eks_attempts.unwrap_or_default();
+            v.push(input);
+            self.eks_attempts = Some(v);
+            self
+        }
+        /// <p>A list of job attempts that are associated with this job.</p>
+        pub fn set_eks_attempts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EksAttemptDetail>>,
+        ) -> Self {
+            self.eks_attempts = input;
+            self
+        }
+        /// <p>Indicates whether the job is canceled.</p>
+        pub fn is_cancelled(mut self, input: bool) -> Self {
+            self.is_cancelled = Some(input);
+            self
+        }
+        /// <p>Indicates whether the job is canceled.</p>
+        pub fn set_is_cancelled(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_cancelled = input;
+            self
+        }
+        /// <p>Indicates whether the job is terminated.</p>
+        pub fn is_terminated(mut self, input: bool) -> Self {
+            self.is_terminated = Some(input);
+            self
+        }
+        /// <p>Indicates whether the job is terminated.</p>
+        pub fn set_is_terminated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_terminated = input;
             self
         }
         /// Consumes the builder and constructs a [`JobDetail`](crate::model::JobDetail).
@@ -7714,6 +9783,10 @@ pub mod job_detail {
                 tags: self.tags,
                 propagate_tags: self.propagate_tags,
                 platform_capabilities: self.platform_capabilities,
+                eks_properties: self.eks_properties,
+                eks_attempts: self.eks_attempts,
+                is_cancelled: self.is_cancelled,
+                is_terminated: self.is_terminated,
             }
         }
     }
@@ -7725,7 +9798,774 @@ impl JobDetail {
     }
 }
 
-/// <p>An object representing the array properties of a job.</p>
+/// <p>An object that represents the details of a job attempt for a job attempt by an Amazon EKS container.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksAttemptDetail {
+    /// <p>The details for the final status of the containers for this job attempt.</p>
+    #[doc(hidden)]
+    pub containers: std::option::Option<std::vec::Vec<crate::model::EksAttemptContainerDetail>>,
+    /// <p>The name of the pod for this job attempt.</p>
+    #[doc(hidden)]
+    pub pod_name: std::option::Option<std::string::String>,
+    /// <p>The name of the node for this job attempt.</p>
+    #[doc(hidden)]
+    pub node_name: std::option::Option<std::string::String>,
+    /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
+    #[doc(hidden)]
+    pub started_at: std::option::Option<i64>,
+    /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped. This happens when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
+    #[doc(hidden)]
+    pub stopped_at: std::option::Option<i64>,
+    /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
+    #[doc(hidden)]
+    pub status_reason: std::option::Option<std::string::String>,
+}
+impl EksAttemptDetail {
+    /// <p>The details for the final status of the containers for this job attempt.</p>
+    pub fn containers(&self) -> std::option::Option<&[crate::model::EksAttemptContainerDetail]> {
+        self.containers.as_deref()
+    }
+    /// <p>The name of the pod for this job attempt.</p>
+    pub fn pod_name(&self) -> std::option::Option<&str> {
+        self.pod_name.as_deref()
+    }
+    /// <p>The name of the node for this job attempt.</p>
+    pub fn node_name(&self) -> std::option::Option<&str> {
+        self.node_name.as_deref()
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
+    pub fn started_at(&self) -> std::option::Option<i64> {
+        self.started_at
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped. This happens when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
+    pub fn stopped_at(&self) -> std::option::Option<i64> {
+        self.stopped_at
+    }
+    /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+}
+/// See [`EksAttemptDetail`](crate::model::EksAttemptDetail).
+pub mod eks_attempt_detail {
+
+    /// A builder for [`EksAttemptDetail`](crate::model::EksAttemptDetail).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) containers:
+            std::option::Option<std::vec::Vec<crate::model::EksAttemptContainerDetail>>,
+        pub(crate) pod_name: std::option::Option<std::string::String>,
+        pub(crate) node_name: std::option::Option<std::string::String>,
+        pub(crate) started_at: std::option::Option<i64>,
+        pub(crate) stopped_at: std::option::Option<i64>,
+        pub(crate) status_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `containers`.
+        ///
+        /// To override the contents of this collection use [`set_containers`](Self::set_containers).
+        ///
+        /// <p>The details for the final status of the containers for this job attempt.</p>
+        pub fn containers(mut self, input: crate::model::EksAttemptContainerDetail) -> Self {
+            let mut v = self.containers.unwrap_or_default();
+            v.push(input);
+            self.containers = Some(v);
+            self
+        }
+        /// <p>The details for the final status of the containers for this job attempt.</p>
+        pub fn set_containers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EksAttemptContainerDetail>>,
+        ) -> Self {
+            self.containers = input;
+            self
+        }
+        /// <p>The name of the pod for this job attempt.</p>
+        pub fn pod_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pod_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the pod for this job attempt.</p>
+        pub fn set_pod_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pod_name = input;
+            self
+        }
+        /// <p>The name of the node for this job attempt.</p>
+        pub fn node_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.node_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the node for this job attempt.</p>
+        pub fn set_node_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.node_name = input;
+            self
+        }
+        /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
+        pub fn started_at(mut self, input: i64) -> Self {
+            self.started_at = Some(input);
+            self
+        }
+        /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
+        pub fn set_started_at(mut self, input: std::option::Option<i64>) -> Self {
+            self.started_at = input;
+            self
+        }
+        /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped. This happens when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
+        pub fn stopped_at(mut self, input: i64) -> Self {
+            self.stopped_at = Some(input);
+            self
+        }
+        /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped. This happens when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
+        pub fn set_stopped_at(mut self, input: std::option::Option<i64>) -> Self {
+            self.stopped_at = input;
+            self
+        }
+        /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
+            self
+        }
+        /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksAttemptDetail`](crate::model::EksAttemptDetail).
+        pub fn build(self) -> crate::model::EksAttemptDetail {
+            crate::model::EksAttemptDetail {
+                containers: self.containers,
+                pod_name: self.pod_name,
+                node_name: self.node_name,
+                started_at: self.started_at,
+                stopped_at: self.stopped_at,
+                status_reason: self.status_reason,
+            }
+        }
+    }
+}
+impl EksAttemptDetail {
+    /// Creates a new builder-style object to manufacture [`EksAttemptDetail`](crate::model::EksAttemptDetail).
+    pub fn builder() -> crate::model::eks_attempt_detail::Builder {
+        crate::model::eks_attempt_detail::Builder::default()
+    }
+}
+
+/// <p>An object that represents the details for an attempt for a job attempt that an Amazon EKS container runs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksAttemptContainerDetail {
+    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    #[doc(hidden)]
+    pub exit_code: std::option::Option<i32>,
+    /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
+    #[doc(hidden)]
+    pub reason: std::option::Option<std::string::String>,
+}
+impl EksAttemptContainerDetail {
+    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    pub fn exit_code(&self) -> std::option::Option<i32> {
+        self.exit_code
+    }
+    /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+}
+/// See [`EksAttemptContainerDetail`](crate::model::EksAttemptContainerDetail).
+pub mod eks_attempt_container_detail {
+
+    /// A builder for [`EksAttemptContainerDetail`](crate::model::EksAttemptContainerDetail).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) exit_code: std::option::Option<i32>,
+        pub(crate) reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+        pub fn exit_code(mut self, input: i32) -> Self {
+            self.exit_code = Some(input);
+            self
+        }
+        /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+        pub fn set_exit_code(mut self, input: std::option::Option<i32>) -> Self {
+            self.exit_code = input;
+            self
+        }
+        /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
+            self
+        }
+        /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksAttemptContainerDetail`](crate::model::EksAttemptContainerDetail).
+        pub fn build(self) -> crate::model::EksAttemptContainerDetail {
+            crate::model::EksAttemptContainerDetail {
+                exit_code: self.exit_code,
+                reason: self.reason,
+            }
+        }
+    }
+}
+impl EksAttemptContainerDetail {
+    /// Creates a new builder-style object to manufacture [`EksAttemptContainerDetail`](crate::model::EksAttemptContainerDetail).
+    pub fn builder() -> crate::model::eks_attempt_container_detail::Builder {
+        crate::model::eks_attempt_container_detail::Builder::default()
+    }
+}
+
+/// <p>An object that contains the details for the Kubernetes resources of a job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksPropertiesDetail {
+    /// <p>The properties for the Kubernetes pod resources of a job.</p>
+    #[doc(hidden)]
+    pub pod_properties: std::option::Option<crate::model::EksPodPropertiesDetail>,
+}
+impl EksPropertiesDetail {
+    /// <p>The properties for the Kubernetes pod resources of a job.</p>
+    pub fn pod_properties(&self) -> std::option::Option<&crate::model::EksPodPropertiesDetail> {
+        self.pod_properties.as_ref()
+    }
+}
+/// See [`EksPropertiesDetail`](crate::model::EksPropertiesDetail).
+pub mod eks_properties_detail {
+
+    /// A builder for [`EksPropertiesDetail`](crate::model::EksPropertiesDetail).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) pod_properties: std::option::Option<crate::model::EksPodPropertiesDetail>,
+    }
+    impl Builder {
+        /// <p>The properties for the Kubernetes pod resources of a job.</p>
+        pub fn pod_properties(mut self, input: crate::model::EksPodPropertiesDetail) -> Self {
+            self.pod_properties = Some(input);
+            self
+        }
+        /// <p>The properties for the Kubernetes pod resources of a job.</p>
+        pub fn set_pod_properties(
+            mut self,
+            input: std::option::Option<crate::model::EksPodPropertiesDetail>,
+        ) -> Self {
+            self.pod_properties = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksPropertiesDetail`](crate::model::EksPropertiesDetail).
+        pub fn build(self) -> crate::model::EksPropertiesDetail {
+            crate::model::EksPropertiesDetail {
+                pod_properties: self.pod_properties,
+            }
+        }
+    }
+}
+impl EksPropertiesDetail {
+    /// Creates a new builder-style object to manufacture [`EksPropertiesDetail`](crate::model::EksPropertiesDetail).
+    pub fn builder() -> crate::model::eks_properties_detail::Builder {
+        crate::model::eks_properties_detail::Builder::default()
+    }
+}
+
+/// <p>The details for the pod.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksPodPropertiesDetail {
+    /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub service_account_name: std::option::Option<std::string::String>,
+    /// <p>Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>. Setting this to <code>false</code> enables the Kubernetes pod networking model. Most Batch workloads are egress-only and don't require the overhead of IP allocation for each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod networking</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub host_network: std::option::Option<bool>,
+    /// <p>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that any DNS query that does not match the configured cluster domain suffix is forwarded to the upstream nameserver inherited from the node. If no value was specified for <code>dnsPolicy</code> in the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a> API operation, then no value will be returned for <code>dnsPolicy</code> by either of <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a> or <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html">DescribeJobs</a> API operations. The pod spec setting will contain either <code>ClusterFirst</code> or <code>ClusterFirstWithHostNet</code>, depending on the value of the <code>hostNetwork</code> parameter. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's DNS policy</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code> </p>
+    #[doc(hidden)]
+    pub dns_policy: std::option::Option<std::string::String>,
+    /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
+    #[doc(hidden)]
+    pub containers: std::option::Option<std::vec::Vec<crate::model::EksContainerDetail>>,
+    /// <p>Specifies the volumes for a job definition using Amazon EKS resources.</p>
+    #[doc(hidden)]
+    pub volumes: std::option::Option<std::vec::Vec<crate::model::EksVolume>>,
+    /// <p>The name of the pod for this job.</p>
+    #[doc(hidden)]
+    pub pod_name: std::option::Option<std::string::String>,
+    /// <p>The name of the node for this job.</p>
+    #[doc(hidden)]
+    pub node_name: std::option::Option<std::string::String>,
+}
+impl EksPodPropertiesDetail {
+    /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn service_account_name(&self) -> std::option::Option<&str> {
+        self.service_account_name.as_deref()
+    }
+    /// <p>Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>. Setting this to <code>false</code> enables the Kubernetes pod networking model. Most Batch workloads are egress-only and don't require the overhead of IP allocation for each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod networking</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn host_network(&self) -> std::option::Option<bool> {
+        self.host_network
+    }
+    /// <p>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that any DNS query that does not match the configured cluster domain suffix is forwarded to the upstream nameserver inherited from the node. If no value was specified for <code>dnsPolicy</code> in the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a> API operation, then no value will be returned for <code>dnsPolicy</code> by either of <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a> or <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html">DescribeJobs</a> API operations. The pod spec setting will contain either <code>ClusterFirst</code> or <code>ClusterFirstWithHostNet</code>, depending on the value of the <code>hostNetwork</code> parameter. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's DNS policy</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code> </p>
+    pub fn dns_policy(&self) -> std::option::Option<&str> {
+        self.dns_policy.as_deref()
+    }
+    /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
+    pub fn containers(&self) -> std::option::Option<&[crate::model::EksContainerDetail]> {
+        self.containers.as_deref()
+    }
+    /// <p>Specifies the volumes for a job definition using Amazon EKS resources.</p>
+    pub fn volumes(&self) -> std::option::Option<&[crate::model::EksVolume]> {
+        self.volumes.as_deref()
+    }
+    /// <p>The name of the pod for this job.</p>
+    pub fn pod_name(&self) -> std::option::Option<&str> {
+        self.pod_name.as_deref()
+    }
+    /// <p>The name of the node for this job.</p>
+    pub fn node_name(&self) -> std::option::Option<&str> {
+        self.node_name.as_deref()
+    }
+}
+/// See [`EksPodPropertiesDetail`](crate::model::EksPodPropertiesDetail).
+pub mod eks_pod_properties_detail {
+
+    /// A builder for [`EksPodPropertiesDetail`](crate::model::EksPodPropertiesDetail).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) service_account_name: std::option::Option<std::string::String>,
+        pub(crate) host_network: std::option::Option<bool>,
+        pub(crate) dns_policy: std::option::Option<std::string::String>,
+        pub(crate) containers: std::option::Option<std::vec::Vec<crate::model::EksContainerDetail>>,
+        pub(crate) volumes: std::option::Option<std::vec::Vec<crate::model::EksVolume>>,
+        pub(crate) pod_name: std::option::Option<std::string::String>,
+        pub(crate) node_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn service_account_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_account_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_service_account_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.service_account_name = input;
+            self
+        }
+        /// <p>Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>. Setting this to <code>false</code> enables the Kubernetes pod networking model. Most Batch workloads are egress-only and don't require the overhead of IP allocation for each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod networking</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn host_network(mut self, input: bool) -> Self {
+            self.host_network = Some(input);
+            self
+        }
+        /// <p>Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>. Setting this to <code>false</code> enables the Kubernetes pod networking model. Most Batch workloads are egress-only and don't require the overhead of IP allocation for each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod networking</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_host_network(mut self, input: std::option::Option<bool>) -> Self {
+            self.host_network = input;
+            self
+        }
+        /// <p>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that any DNS query that does not match the configured cluster domain suffix is forwarded to the upstream nameserver inherited from the node. If no value was specified for <code>dnsPolicy</code> in the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a> API operation, then no value will be returned for <code>dnsPolicy</code> by either of <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a> or <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html">DescribeJobs</a> API operations. The pod spec setting will contain either <code>ClusterFirst</code> or <code>ClusterFirstWithHostNet</code>, depending on the value of the <code>hostNetwork</code> parameter. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's DNS policy</a> in the <i>Kubernetes documentation</i>.</p>
+        /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code> </p>
+        pub fn dns_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dns_policy = Some(input.into());
+            self
+        }
+        /// <p>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that any DNS query that does not match the configured cluster domain suffix is forwarded to the upstream nameserver inherited from the node. If no value was specified for <code>dnsPolicy</code> in the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a> API operation, then no value will be returned for <code>dnsPolicy</code> by either of <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a> or <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html">DescribeJobs</a> API operations. The pod spec setting will contain either <code>ClusterFirst</code> or <code>ClusterFirstWithHostNet</code>, depending on the value of the <code>hostNetwork</code> parameter. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's DNS policy</a> in the <i>Kubernetes documentation</i>.</p>
+        /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code> </p>
+        pub fn set_dns_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dns_policy = input;
+            self
+        }
+        /// Appends an item to `containers`.
+        ///
+        /// To override the contents of this collection use [`set_containers`](Self::set_containers).
+        ///
+        /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
+        pub fn containers(mut self, input: crate::model::EksContainerDetail) -> Self {
+            let mut v = self.containers.unwrap_or_default();
+            v.push(input);
+            self.containers = Some(v);
+            self
+        }
+        /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
+        pub fn set_containers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EksContainerDetail>>,
+        ) -> Self {
+            self.containers = input;
+            self
+        }
+        /// Appends an item to `volumes`.
+        ///
+        /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
+        ///
+        /// <p>Specifies the volumes for a job definition using Amazon EKS resources.</p>
+        pub fn volumes(mut self, input: crate::model::EksVolume) -> Self {
+            let mut v = self.volumes.unwrap_or_default();
+            v.push(input);
+            self.volumes = Some(v);
+            self
+        }
+        /// <p>Specifies the volumes for a job definition using Amazon EKS resources.</p>
+        pub fn set_volumes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EksVolume>>,
+        ) -> Self {
+            self.volumes = input;
+            self
+        }
+        /// <p>The name of the pod for this job.</p>
+        pub fn pod_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pod_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the pod for this job.</p>
+        pub fn set_pod_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pod_name = input;
+            self
+        }
+        /// <p>The name of the node for this job.</p>
+        pub fn node_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.node_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the node for this job.</p>
+        pub fn set_node_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.node_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksPodPropertiesDetail`](crate::model::EksPodPropertiesDetail).
+        pub fn build(self) -> crate::model::EksPodPropertiesDetail {
+            crate::model::EksPodPropertiesDetail {
+                service_account_name: self.service_account_name,
+                host_network: self.host_network,
+                dns_policy: self.dns_policy,
+                containers: self.containers,
+                volumes: self.volumes,
+                pod_name: self.pod_name,
+                node_name: self.node_name,
+            }
+        }
+    }
+}
+impl EksPodPropertiesDetail {
+    /// Creates a new builder-style object to manufacture [`EksPodPropertiesDetail`](crate::model::EksPodPropertiesDetail).
+    pub fn builder() -> crate::model::eks_pod_properties_detail::Builder {
+        crate::model::eks_pod_properties_detail::Builder::default()
+    }
+}
+
+/// <p>The details for container properties that are returned by <code>DescribeJobs</code> for jobs that use Amazon EKS.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksContainerDetail {
+    /// <p>The name of the container. If the name isn't specified, the default name "<code>Default</code>" is used. Each container in a pod must have a unique name.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The Docker image used to start the container.</p>
+    #[doc(hidden)]
+    pub image: std::option::Option<std::string::String>,
+    /// <p>The image pull policy for the container. Supported values are <code>Always</code>, <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>Always</code> if the <code>:latest</code> tag is specified, <code>IfNotPresent</code> otherwise. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating images</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub image_pull_policy: std::option::Option<std::string::String>,
+    /// <p>The entrypoint for the container. For more information, see <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub command: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
+    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub args: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The environment variables to pass to a container.</p> <note>
+    /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub env: std::option::Option<std::vec::Vec<crate::model::EksContainerEnvironmentVariable>>,
+    /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub resources: std::option::Option<crate::model::EksContainerResourceRequirements>,
+    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    #[doc(hidden)]
+    pub exit_code: std::option::Option<i32>,
+    /// <p>A short human-readable string to provide additional details for a running or stopped container. It can be up to 255 characters long.</p>
+    #[doc(hidden)]
+    pub reason: std::option::Option<std::string::String>,
+    /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub volume_mounts: std::option::Option<std::vec::Vec<crate::model::EksContainerVolumeMount>>,
+    /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub security_context: std::option::Option<crate::model::EksContainerSecurityContext>,
+}
+impl EksContainerDetail {
+    /// <p>The name of the container. If the name isn't specified, the default name "<code>Default</code>" is used. Each container in a pod must have a unique name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Docker image used to start the container.</p>
+    pub fn image(&self) -> std::option::Option<&str> {
+        self.image.as_deref()
+    }
+    /// <p>The image pull policy for the container. Supported values are <code>Always</code>, <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>Always</code> if the <code>:latest</code> tag is specified, <code>IfNotPresent</code> otherwise. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating images</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn image_pull_policy(&self) -> std::option::Option<&str> {
+        self.image_pull_policy.as_deref()
+    }
+    /// <p>The entrypoint for the container. For more information, see <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+        self.command.as_deref()
+    }
+    /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
+    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
+        self.args.as_deref()
+    }
+    /// <p>The environment variables to pass to a container.</p> <note>
+    /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
+    /// </note>
+    pub fn env(&self) -> std::option::Option<&[crate::model::EksContainerEnvironmentVariable]> {
+        self.env.as_deref()
+    }
+    /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn resources(
+        &self,
+    ) -> std::option::Option<&crate::model::EksContainerResourceRequirements> {
+        self.resources.as_ref()
+    }
+    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    pub fn exit_code(&self) -> std::option::Option<i32> {
+        self.exit_code
+    }
+    /// <p>A short human-readable string to provide additional details for a running or stopped container. It can be up to 255 characters long.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn volume_mounts(&self) -> std::option::Option<&[crate::model::EksContainerVolumeMount]> {
+        self.volume_mounts.as_deref()
+    }
+    /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn security_context(
+        &self,
+    ) -> std::option::Option<&crate::model::EksContainerSecurityContext> {
+        self.security_context.as_ref()
+    }
+}
+/// See [`EksContainerDetail`](crate::model::EksContainerDetail).
+pub mod eks_container_detail {
+
+    /// A builder for [`EksContainerDetail`](crate::model::EksContainerDetail).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) image: std::option::Option<std::string::String>,
+        pub(crate) image_pull_policy: std::option::Option<std::string::String>,
+        pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) args: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) env:
+            std::option::Option<std::vec::Vec<crate::model::EksContainerEnvironmentVariable>>,
+        pub(crate) resources: std::option::Option<crate::model::EksContainerResourceRequirements>,
+        pub(crate) exit_code: std::option::Option<i32>,
+        pub(crate) reason: std::option::Option<std::string::String>,
+        pub(crate) volume_mounts:
+            std::option::Option<std::vec::Vec<crate::model::EksContainerVolumeMount>>,
+        pub(crate) security_context: std::option::Option<crate::model::EksContainerSecurityContext>,
+    }
+    impl Builder {
+        /// <p>The name of the container. If the name isn't specified, the default name "<code>Default</code>" is used. Each container in a pod must have a unique name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the container. If the name isn't specified, the default name "<code>Default</code>" is used. Each container in a pod must have a unique name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The Docker image used to start the container.</p>
+        pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image = Some(input.into());
+            self
+        }
+        /// <p>The Docker image used to start the container.</p>
+        pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image = input;
+            self
+        }
+        /// <p>The image pull policy for the container. Supported values are <code>Always</code>, <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>Always</code> if the <code>:latest</code> tag is specified, <code>IfNotPresent</code> otherwise. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating images</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn image_pull_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_pull_policy = Some(input.into());
+            self
+        }
+        /// <p>The image pull policy for the container. Supported values are <code>Always</code>, <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>Always</code> if the <code>:latest</code> tag is specified, <code>IfNotPresent</code> otherwise. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating images</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_image_pull_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.image_pull_policy = input;
+            self
+        }
+        /// Appends an item to `command`.
+        ///
+        /// To override the contents of this collection use [`set_command`](Self::set_command).
+        ///
+        /// <p>The entrypoint for the container. For more information, see <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.command.unwrap_or_default();
+            v.push(input.into());
+            self.command = Some(v);
+            self
+        }
+        /// <p>The entrypoint for the container. For more information, see <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_command(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.command = input;
+            self
+        }
+        /// Appends an item to `args`.
+        ///
+        /// To override the contents of this collection use [`set_args`](Self::set_args).
+        ///
+        /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
+        /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.args.unwrap_or_default();
+            v.push(input.into());
+            self.args = Some(v);
+            self
+        }
+        /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
+        /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_args(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.args = input;
+            self
+        }
+        /// Appends an item to `env`.
+        ///
+        /// To override the contents of this collection use [`set_env`](Self::set_env).
+        ///
+        /// <p>The environment variables to pass to a container.</p> <note>
+        /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
+        /// </note>
+        pub fn env(mut self, input: crate::model::EksContainerEnvironmentVariable) -> Self {
+            let mut v = self.env.unwrap_or_default();
+            v.push(input);
+            self.env = Some(v);
+            self
+        }
+        /// <p>The environment variables to pass to a container.</p> <note>
+        /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
+        /// </note>
+        pub fn set_env(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::EksContainerEnvironmentVariable>,
+            >,
+        ) -> Self {
+            self.env = input;
+            self
+        }
+        /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn resources(mut self, input: crate::model::EksContainerResourceRequirements) -> Self {
+            self.resources = Some(input);
+            self
+        }
+        /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_resources(
+            mut self,
+            input: std::option::Option<crate::model::EksContainerResourceRequirements>,
+        ) -> Self {
+            self.resources = input;
+            self
+        }
+        /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+        pub fn exit_code(mut self, input: i32) -> Self {
+            self.exit_code = Some(input);
+            self
+        }
+        /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+        pub fn set_exit_code(mut self, input: std::option::Option<i32>) -> Self {
+            self.exit_code = input;
+            self
+        }
+        /// <p>A short human-readable string to provide additional details for a running or stopped container. It can be up to 255 characters long.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
+            self
+        }
+        /// <p>A short human-readable string to provide additional details for a running or stopped container. It can be up to 255 characters long.</p>
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
+            self
+        }
+        /// Appends an item to `volume_mounts`.
+        ///
+        /// To override the contents of this collection use [`set_volume_mounts`](Self::set_volume_mounts).
+        ///
+        /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn volume_mounts(mut self, input: crate::model::EksContainerVolumeMount) -> Self {
+            let mut v = self.volume_mounts.unwrap_or_default();
+            v.push(input);
+            self.volume_mounts = Some(v);
+            self
+        }
+        /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_volume_mounts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EksContainerVolumeMount>>,
+        ) -> Self {
+            self.volume_mounts = input;
+            self
+        }
+        /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn security_context(
+            mut self,
+            input: crate::model::EksContainerSecurityContext,
+        ) -> Self {
+            self.security_context = Some(input);
+            self
+        }
+        /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
+        pub fn set_security_context(
+            mut self,
+            input: std::option::Option<crate::model::EksContainerSecurityContext>,
+        ) -> Self {
+            self.security_context = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksContainerDetail`](crate::model::EksContainerDetail).
+        pub fn build(self) -> crate::model::EksContainerDetail {
+            crate::model::EksContainerDetail {
+                name: self.name,
+                image: self.image,
+                image_pull_policy: self.image_pull_policy,
+                command: self.command,
+                args: self.args,
+                env: self.env,
+                resources: self.resources,
+                exit_code: self.exit_code,
+                reason: self.reason,
+                volume_mounts: self.volume_mounts,
+                security_context: self.security_context,
+            }
+        }
+    }
+}
+impl EksContainerDetail {
+    /// Creates a new builder-style object to manufacture [`EksContainerDetail`](crate::model::EksContainerDetail).
+    pub fn builder() -> crate::model::eks_container_detail::Builder {
+        crate::model::eks_container_detail::Builder::default()
+    }
+}
+
+/// <p>An object that represents the array properties of a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArrayPropertiesDetail {
@@ -7823,11 +10663,11 @@ impl ArrayPropertiesDetail {
     }
 }
 
-/// <p>An object representing the details of a multi-node parallel job node.</p>
+/// <p>An object that represents the details of a multi-node parallel job node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeDetails {
-    /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
+    /// <p>The node index for the node. Node index numbering starts at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
     #[doc(hidden)]
     pub node_index: std::option::Option<i32>,
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
@@ -7835,7 +10675,7 @@ pub struct NodeDetails {
     pub is_main_node: std::option::Option<bool>,
 }
 impl NodeDetails {
-    /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
+    /// <p>The node index for the node. Node index numbering starts at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
     pub fn node_index(&self) -> std::option::Option<i32> {
         self.node_index
     }
@@ -7854,12 +10694,12 @@ pub mod node_details {
         pub(crate) is_main_node: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
+        /// <p>The node index for the node. Node index numbering starts at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
         pub fn node_index(mut self, input: i32) -> Self {
             self.node_index = Some(input);
             self
         }
-        /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
+        /// <p>The node index for the node. Node index numbering starts at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
         pub fn set_node_index(mut self, input: std::option::Option<i32>) -> Self {
             self.node_index = input;
             self
@@ -7890,7 +10730,7 @@ impl NodeDetails {
     }
 }
 
-/// <p>An object representing the details of a container that's part of a job.</p>
+/// <p>An object that represents the details of a container that's part of a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerDetail {
@@ -7908,17 +10748,17 @@ pub struct ContainerDetail {
     /// <p>The command that's passed to the container.</p>
     #[doc(hidden)]
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
+    /// <p>The Amazon Resource Name (ARN) that's associated with the job when run.</p>
     #[doc(hidden)]
     pub job_role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the execution role that Batch can assume. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in the <i>Batch User Guide</i>.</p>
     #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
-    /// <p>A list of volumes associated with the job.</p>
+    /// <p>A list of volumes that are associated with the job.</p>
     #[doc(hidden)]
     pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
     /// <p>The environment variables to pass to a container.</p> <note>
-    /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for variables that are set by the Batch service.</p>
+    /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     #[doc(hidden)]
     pub environment: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
@@ -7933,8 +10773,8 @@ pub struct ContainerDetail {
     /// </note>
     #[doc(hidden)]
     pub ulimits: std::option::Option<std::vec::Vec<crate::model::Ulimit>>,
-    /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). The default value is false.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as false.</p>
+    /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). The default value is <code>false</code>.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as <code>false</code>.</p>
     /// </note>
     #[doc(hidden)]
     pub privileged: std::option::Option<bool>,
@@ -7944,7 +10784,7 @@ pub struct ContainerDetail {
     /// <p>The exit code to return upon completion.</p>
     #[doc(hidden)]
     pub exit_code: std::option::Option<i32>,
-    /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+    /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
     #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container instance that the container is running on.</p>
@@ -7953,7 +10793,7 @@ pub struct ContainerDetail {
     /// <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the container job. Each container attempt receives a task ARN when they reach the <code>STARTING</code> status.</p>
     #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+    /// <p>The name of the Amazon CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
     #[doc(hidden)]
     pub log_stream_name: std::option::Option<std::string::String>,
     /// <p>The instance type of the underlying host infrastructure of a multi-node parallel job.</p> <note>
@@ -7961,7 +10801,7 @@ pub struct ContainerDetail {
     /// </note>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
-    /// <p>The network interfaces associated with the job.</p>
+    /// <p>The network interfaces that are associated with the job.</p>
     #[doc(hidden)]
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
@@ -7975,7 +10815,7 @@ pub struct ContainerDetail {
     /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance. Or, alternatively, it must be configured on a different log server for remote logging options. For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <note>
     /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <code>LogConfiguration</code> data type). Additional log drivers might be available in future releases of the Amazon ECS container agent.</p>
     /// </note>
-    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
+    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
     /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
@@ -8010,7 +10850,7 @@ impl ContainerDetail {
     pub fn command(&self) -> std::option::Option<&[std::string::String]> {
         self.command.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
+    /// <p>The Amazon Resource Name (ARN) that's associated with the job when run.</p>
     pub fn job_role_arn(&self) -> std::option::Option<&str> {
         self.job_role_arn.as_deref()
     }
@@ -8018,12 +10858,12 @@ impl ContainerDetail {
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>A list of volumes associated with the job.</p>
+    /// <p>A list of volumes that are associated with the job.</p>
     pub fn volumes(&self) -> std::option::Option<&[crate::model::Volume]> {
         self.volumes.as_deref()
     }
     /// <p>The environment variables to pass to a container.</p> <note>
-    /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for variables that are set by the Batch service.</p>
+    /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub fn environment(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
         self.environment.as_deref()
@@ -8042,8 +10882,8 @@ impl ContainerDetail {
     pub fn ulimits(&self) -> std::option::Option<&[crate::model::Ulimit]> {
         self.ulimits.as_deref()
     }
-    /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). The default value is false.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as false.</p>
+    /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). The default value is <code>false</code>.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as <code>false</code>.</p>
     /// </note>
     pub fn privileged(&self) -> std::option::Option<bool> {
         self.privileged
@@ -8056,7 +10896,7 @@ impl ContainerDetail {
     pub fn exit_code(&self) -> std::option::Option<i32> {
         self.exit_code
     }
-    /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+    /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
@@ -8068,7 +10908,7 @@ impl ContainerDetail {
     pub fn task_arn(&self) -> std::option::Option<&str> {
         self.task_arn.as_deref()
     }
-    /// <p>The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+    /// <p>The name of the Amazon CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
     pub fn log_stream_name(&self) -> std::option::Option<&str> {
         self.log_stream_name.as_deref()
     }
@@ -8078,7 +10918,7 @@ impl ContainerDetail {
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>The network interfaces associated with the job.</p>
+    /// <p>The network interfaces that are associated with the job.</p>
     pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
         self.network_interfaces.as_deref()
     }
@@ -8096,7 +10936,7 @@ impl ContainerDetail {
     /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance. Or, alternatively, it must be configured on a different log server for remote logging options. For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <note>
     /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <code>LogConfiguration</code> data type). Additional log drivers might be available in future releases of the Amazon ECS container agent.</p>
     /// </note>
-    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
+    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
     /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
     pub fn log_configuration(&self) -> std::option::Option<&crate::model::LogConfiguration> {
@@ -8209,12 +11049,12 @@ pub mod container_detail {
             self.command = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
+        /// <p>The Amazon Resource Name (ARN) that's associated with the job when run.</p>
         pub fn job_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
+        /// <p>The Amazon Resource Name (ARN) that's associated with the job when run.</p>
         pub fn set_job_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_role_arn = input;
             self
@@ -8236,14 +11076,14 @@ pub mod container_detail {
         ///
         /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
         ///
-        /// <p>A list of volumes associated with the job.</p>
+        /// <p>A list of volumes that are associated with the job.</p>
         pub fn volumes(mut self, input: crate::model::Volume) -> Self {
             let mut v = self.volumes.unwrap_or_default();
             v.push(input);
             self.volumes = Some(v);
             self
         }
-        /// <p>A list of volumes associated with the job.</p>
+        /// <p>A list of volumes that are associated with the job.</p>
         pub fn set_volumes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Volume>>,
@@ -8256,7 +11096,7 @@ pub mod container_detail {
         /// To override the contents of this collection use [`set_environment`](Self::set_environment).
         ///
         /// <p>The environment variables to pass to a container.</p> <note>
-        /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for variables that are set by the Batch service.</p>
+        /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
         /// </note>
         pub fn environment(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.environment.unwrap_or_default();
@@ -8265,7 +11105,7 @@ pub mod container_detail {
             self
         }
         /// <p>The environment variables to pass to a container.</p> <note>
-        /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for variables that are set by the Batch service.</p>
+        /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
         /// </note>
         pub fn set_environment(
             mut self,
@@ -8326,15 +11166,15 @@ pub mod container_detail {
             self.ulimits = input;
             self
         }
-        /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). The default value is false.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as false.</p>
+        /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). The default value is <code>false</code>.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as <code>false</code>.</p>
         /// </note>
         pub fn privileged(mut self, input: bool) -> Self {
             self.privileged = Some(input);
             self
         }
-        /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). The default value is false.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as false.</p>
+        /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). The default value is <code>false</code>.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as <code>false</code>.</p>
         /// </note>
         pub fn set_privileged(mut self, input: std::option::Option<bool>) -> Self {
             self.privileged = input;
@@ -8360,12 +11200,12 @@ pub mod container_detail {
             self.exit_code = input;
             self
         }
-        /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+        /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason = Some(input.into());
             self
         }
-        /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+        /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -8393,12 +11233,12 @@ pub mod container_detail {
             self.task_arn = input;
             self
         }
-        /// <p>The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+        /// <p>The name of the Amazon CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
         pub fn log_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_stream_name = Some(input.into());
             self
         }
-        /// <p>The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+        /// <p>The name of the Amazon CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
         pub fn set_log_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8427,14 +11267,14 @@ pub mod container_detail {
         ///
         /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
         ///
-        /// <p>The network interfaces associated with the job.</p>
+        /// <p>The network interfaces that are associated with the job.</p>
         pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
             v.push(input);
             self.network_interfaces = Some(v);
             self
         }
-        /// <p>The network interfaces associated with the job.</p>
+        /// <p>The network interfaces that are associated with the job.</p>
         pub fn set_network_interfaces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
@@ -8478,7 +11318,7 @@ pub mod container_detail {
         /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance. Or, alternatively, it must be configured on a different log server for remote logging options. For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <note>
         /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <code>LogConfiguration</code> data type). Additional log drivers might be available in future releases of the Amazon ECS container agent.</p>
         /// </note>
-        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
+        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
         /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </note>
         pub fn log_configuration(mut self, input: crate::model::LogConfiguration) -> Self {
@@ -8489,7 +11329,7 @@ pub mod container_detail {
         /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance. Or, alternatively, it must be configured on a different log server for remote logging options. For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <note>
         /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <code>LogConfiguration</code> data type). Additional log drivers might be available in future releases of the Amazon ECS container agent.</p>
         /// </note>
-        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
+        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
         /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </note>
         pub fn set_log_configuration(
@@ -8587,7 +11427,7 @@ impl ContainerDetail {
     }
 }
 
-/// <p>An object representing the elastic network interface for a multi-node parallel job node.</p>
+/// <p>An object that represents the elastic network interface for a multi-node parallel job node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterface {
@@ -8679,11 +11519,11 @@ impl NetworkInterface {
     }
 }
 
-/// <p>An object representing a job attempt.</p>
+/// <p>An object that represents a job attempt.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttemptDetail {
-    /// <p>Details about the container in this job attempt.</p>
+    /// <p>The details for the container in this job attempt.</p>
     #[doc(hidden)]
     pub container: std::option::Option<crate::model::AttemptContainerDetail>,
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
@@ -8692,12 +11532,12 @@ pub struct AttemptDetail {
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
     #[doc(hidden)]
     pub stopped_at: std::option::Option<i64>,
-    /// <p>A short, human-readable string to provide additional details about the current status of the job attempt.</p>
+    /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
 }
 impl AttemptDetail {
-    /// <p>Details about the container in this job attempt.</p>
+    /// <p>The details for the container in this job attempt.</p>
     pub fn container(&self) -> std::option::Option<&crate::model::AttemptContainerDetail> {
         self.container.as_ref()
     }
@@ -8709,7 +11549,7 @@ impl AttemptDetail {
     pub fn stopped_at(&self) -> std::option::Option<i64> {
         self.stopped_at
     }
-    /// <p>A short, human-readable string to provide additional details about the current status of the job attempt.</p>
+    /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
@@ -8726,12 +11566,12 @@ pub mod attempt_detail {
         pub(crate) status_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Details about the container in this job attempt.</p>
+        /// <p>The details for the container in this job attempt.</p>
         pub fn container(mut self, input: crate::model::AttemptContainerDetail) -> Self {
             self.container = Some(input);
             self
         }
-        /// <p>Details about the container in this job attempt.</p>
+        /// <p>The details for the container in this job attempt.</p>
         pub fn set_container(
             mut self,
             input: std::option::Option<crate::model::AttemptContainerDetail>,
@@ -8759,12 +11599,12 @@ pub mod attempt_detail {
             self.stopped_at = input;
             self
         }
-        /// <p>A short, human-readable string to provide additional details about the current status of the job attempt.</p>
+        /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_reason = Some(input.into());
             self
         }
-        /// <p>A short, human-readable string to provide additional details about the current status of the job attempt.</p>
+        /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8790,7 +11630,7 @@ impl AttemptDetail {
     }
 }
 
-/// <p>An object representing the details of a container that's part of a job attempt.</p>
+/// <p>An object that represents the details of a container that's part of a job attempt.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttemptContainerDetail {
@@ -8800,16 +11640,16 @@ pub struct AttemptContainerDetail {
     /// <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the job attempt. Each container attempt receives a task ARN when they reach the <code>STARTING</code> status.</p>
     #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
-    /// <p>The exit code for the job attempt. A non-zero exit code is considered a failure.</p>
+    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
     #[doc(hidden)]
     pub exit_code: std::option::Option<i32>,
-    /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+    /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
     #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
-    /// <p>The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+    /// <p>The name of the CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
     #[doc(hidden)]
     pub log_stream_name: std::option::Option<std::string::String>,
-    /// <p>The network interfaces associated with the job attempt.</p>
+    /// <p>The network interfaces that are associated with the job attempt.</p>
     #[doc(hidden)]
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
 }
@@ -8822,19 +11662,19 @@ impl AttemptContainerDetail {
     pub fn task_arn(&self) -> std::option::Option<&str> {
         self.task_arn.as_deref()
     }
-    /// <p>The exit code for the job attempt. A non-zero exit code is considered a failure.</p>
+    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn exit_code(&self) -> std::option::Option<i32> {
         self.exit_code
     }
-    /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+    /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
-    /// <p>The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+    /// <p>The name of the CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
     pub fn log_stream_name(&self) -> std::option::Option<&str> {
         self.log_stream_name.as_deref()
     }
-    /// <p>The network interfaces associated with the job attempt.</p>
+    /// <p>The network interfaces that are associated with the job attempt.</p>
     pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
         self.network_interfaces.as_deref()
     }
@@ -8877,32 +11717,32 @@ pub mod attempt_container_detail {
             self.task_arn = input;
             self
         }
-        /// <p>The exit code for the job attempt. A non-zero exit code is considered a failure.</p>
+        /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
         pub fn exit_code(mut self, input: i32) -> Self {
             self.exit_code = Some(input);
             self
         }
-        /// <p>The exit code for the job attempt. A non-zero exit code is considered a failure.</p>
+        /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
         pub fn set_exit_code(mut self, input: std::option::Option<i32>) -> Self {
             self.exit_code = input;
             self
         }
-        /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+        /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason = Some(input.into());
             self
         }
-        /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+        /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
         }
-        /// <p>The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+        /// <p>The name of the CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
         pub fn log_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_stream_name = Some(input.into());
             self
         }
-        /// <p>The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+        /// <p>The name of the CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
         pub fn set_log_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8914,14 +11754,14 @@ pub mod attempt_container_detail {
         ///
         /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
         ///
-        /// <p>The network interfaces associated with the job attempt.</p>
+        /// <p>The network interfaces that are associated with the job attempt.</p>
         pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
             v.push(input);
             self.network_interfaces = Some(v);
             self
         }
-        /// <p>The network interfaces associated with the job attempt.</p>
+        /// <p>The network interfaces that are associated with the job attempt.</p>
         pub fn set_network_interfaces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
@@ -8949,42 +11789,42 @@ impl AttemptContainerDetail {
     }
 }
 
-/// <p>An object representing the details of an Batch job queue.</p>
+/// <p>An object that represents the details for an Batch job queue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobQueueDetail {
-    /// <p>The name of the job queue.</p>
+    /// <p>The job queue name.</p>
     #[doc(hidden)]
     pub job_queue_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
     #[doc(hidden)]
     pub job_queue_arn: std::option::Option<std::string::String>,
-    /// <p>Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
+    /// <p>Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::JqState>,
-    /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
     #[doc(hidden)]
     pub scheduling_policy_arn: std::option::Option<std::string::String>,
     /// <p>The status of the job queue (for example, <code>CREATING</code> or <code>VALID</code>).</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::JqStatus>,
-    /// <p>A short, human-readable string to provide additional details about the current status of the job queue.</p>
+    /// <p>A short, human-readable string to provide additional details for the current status of the job queue.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
-    /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p>
+    /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
     #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>The compute environments that are attached to the job queue and the order that job placement is preferred. Compute environments are selected for job placement in ascending order.</p>
     #[doc(hidden)]
     pub compute_environment_order:
         std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentOrder>>,
-    /// <p>The tags applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
+    /// <p>The tags that are applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl JobQueueDetail {
-    /// <p>The name of the job queue.</p>
+    /// <p>The job queue name.</p>
     pub fn job_queue_name(&self) -> std::option::Option<&str> {
         self.job_queue_name.as_deref()
     }
@@ -8992,11 +11832,11 @@ impl JobQueueDetail {
     pub fn job_queue_arn(&self) -> std::option::Option<&str> {
         self.job_queue_arn.as_deref()
     }
-    /// <p>Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
+    /// <p>Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::JqState> {
         self.state.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub fn scheduling_policy_arn(&self) -> std::option::Option<&str> {
         self.scheduling_policy_arn.as_deref()
     }
@@ -9004,11 +11844,11 @@ impl JobQueueDetail {
     pub fn status(&self) -> std::option::Option<&crate::model::JqStatus> {
         self.status.as_ref()
     }
-    /// <p>A short, human-readable string to provide additional details about the current status of the job queue.</p>
+    /// <p>A short, human-readable string to provide additional details for the current status of the job queue.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p>
+    /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
     pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
@@ -9018,7 +11858,7 @@ impl JobQueueDetail {
     ) -> std::option::Option<&[crate::model::ComputeEnvironmentOrder]> {
         self.compute_environment_order.as_deref()
     }
-    /// <p>The tags applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
+    /// <p>The tags that are applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9046,12 +11886,12 @@ pub mod job_queue_detail {
         >,
     }
     impl Builder {
-        /// <p>The name of the job queue.</p>
+        /// <p>The job queue name.</p>
         pub fn job_queue_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_queue_name = Some(input.into());
             self
         }
-        /// <p>The name of the job queue.</p>
+        /// <p>The job queue name.</p>
         pub fn set_job_queue_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9072,22 +11912,22 @@ pub mod job_queue_detail {
             self.job_queue_arn = input;
             self
         }
-        /// <p>Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
+        /// <p>Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
         pub fn state(mut self, input: crate::model::JqState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
+        /// <p>Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::JqState>) -> Self {
             self.state = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
         pub fn scheduling_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.scheduling_policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
         pub fn set_scheduling_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9105,12 +11945,12 @@ pub mod job_queue_detail {
             self.status = input;
             self
         }
-        /// <p>A short, human-readable string to provide additional details about the current status of the job queue.</p>
+        /// <p>A short, human-readable string to provide additional details for the current status of the job queue.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_reason = Some(input.into());
             self
         }
-        /// <p>A short, human-readable string to provide additional details about the current status of the job queue.</p>
+        /// <p>A short, human-readable string to provide additional details for the current status of the job queue.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9118,12 +11958,12 @@ pub mod job_queue_detail {
             self.status_reason = input;
             self
         }
-        /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p>
+        /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.priority = Some(input);
             self
         }
-        /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p>
+        /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -9154,7 +11994,7 @@ pub mod job_queue_detail {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
+        /// <p>The tags that are applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -9165,7 +12005,7 @@ pub mod job_queue_detail {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
+        /// <p>The tags that are applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -9310,7 +12150,7 @@ impl AsRef<str> for JqStatus {
     }
 }
 
-/// <p>An object representing an Batch job definition.</p>
+/// <p>An object that represents an Batch job definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobDefinition {
@@ -9326,7 +12166,7 @@ pub struct JobDefinition {
     /// <p>The status of the job definition.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
-    /// <p>The type of job definition, either <code>container</code> or <code>multinode</code>. If the job is run on Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The type of job definition. It's either <code>container</code> or <code>multinode</code>. If the job is run on Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
@@ -9339,27 +12179,33 @@ pub struct JobDefinition {
     /// <p>The retry strategy to use for failed jobs that are submitted with this job definition.</p>
     #[doc(hidden)]
     pub retry_strategy: std::option::Option<crate::model::RetryStrategy>,
-    /// <p>An object with various properties specific to container-based jobs.</p>
+    /// <p>An object with various properties specific to Amazon ECS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
     #[doc(hidden)]
     pub container_properties: std::option::Option<crate::model::ContainerProperties>,
-    /// <p>The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout duration after which Batch terminates your jobs if they haven't finished.</p>
+    /// <p>The timeout time for jobs that are submitted with this job definition. After the amount of time you specify passes, Batch terminates your jobs if they aren't finished.</p>
     #[doc(hidden)]
     pub timeout: std::option::Option<crate::model::JobTimeout>,
-    /// <p>An object with various properties specific to multi-node parallel jobs.</p> <note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p> <note>
+    /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
     /// </note>
     #[doc(hidden)]
     pub node_properties: std::option::Option<crate::model::NodeProperties>,
-    /// <p>The tags applied to the job definition.</p>
+    /// <p>The tags that are applied to the job definition.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
     #[doc(hidden)]
     pub propagate_tags: std::option::Option<bool>,
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
     #[doc(hidden)]
     pub platform_capabilities: std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
+    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
+    #[doc(hidden)]
+    pub eks_properties: std::option::Option<crate::model::EksProperties>,
+    /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
+    #[doc(hidden)]
+    pub container_orchestration_type: std::option::Option<crate::model::OrchestrationType>,
 }
 impl JobDefinition {
     /// <p>The name of the job definition.</p>
@@ -9378,7 +12224,7 @@ impl JobDefinition {
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The type of job definition, either <code>container</code> or <code>multinode</code>. If the job is run on Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The type of job definition. It's either <code>container</code> or <code>multinode</code>. If the job is run on Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -9397,28 +12243,28 @@ impl JobDefinition {
     pub fn retry_strategy(&self) -> std::option::Option<&crate::model::RetryStrategy> {
         self.retry_strategy.as_ref()
     }
-    /// <p>An object with various properties specific to container-based jobs.</p>
+    /// <p>An object with various properties specific to Amazon ECS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
     pub fn container_properties(&self) -> std::option::Option<&crate::model::ContainerProperties> {
         self.container_properties.as_ref()
     }
-    /// <p>The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout duration after which Batch terminates your jobs if they haven't finished.</p>
+    /// <p>The timeout time for jobs that are submitted with this job definition. After the amount of time you specify passes, Batch terminates your jobs if they aren't finished.</p>
     pub fn timeout(&self) -> std::option::Option<&crate::model::JobTimeout> {
         self.timeout.as_ref()
     }
-    /// <p>An object with various properties specific to multi-node parallel jobs.</p> <note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p> <note>
+    /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
     /// </note>
     pub fn node_properties(&self) -> std::option::Option<&crate::model::NodeProperties> {
         self.node_properties.as_ref()
     }
-    /// <p>The tags applied to the job definition.</p>
+    /// <p>The tags that are applied to the job definition.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
     pub fn propagate_tags(&self) -> std::option::Option<bool> {
         self.propagate_tags
     }
@@ -9427,6 +12273,16 @@ impl JobDefinition {
         &self,
     ) -> std::option::Option<&[crate::model::PlatformCapability]> {
         self.platform_capabilities.as_deref()
+    }
+    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
+    pub fn eks_properties(&self) -> std::option::Option<&crate::model::EksProperties> {
+        self.eks_properties.as_ref()
+    }
+    /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
+    pub fn container_orchestration_type(
+        &self,
+    ) -> std::option::Option<&crate::model::OrchestrationType> {
+        self.container_orchestration_type.as_ref()
     }
 }
 /// See [`JobDefinition`](crate::model::JobDefinition).
@@ -9454,6 +12310,9 @@ pub mod job_definition {
         pub(crate) propagate_tags: std::option::Option<bool>,
         pub(crate) platform_capabilities:
             std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
+        pub(crate) eks_properties: std::option::Option<crate::model::EksProperties>,
+        pub(crate) container_orchestration_type:
+            std::option::Option<crate::model::OrchestrationType>,
     }
     impl Builder {
         /// <p>The name of the job definition.</p>
@@ -9502,12 +12361,12 @@ pub mod job_definition {
             self.status = input;
             self
         }
-        /// <p>The type of job definition, either <code>container</code> or <code>multinode</code>. If the job is run on Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>The type of job definition. It's either <code>container</code> or <code>multinode</code>. If the job is run on Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of job definition, either <code>container</code> or <code>multinode</code>. If the job is run on Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>The type of job definition. It's either <code>container</code> or <code>multinode</code>. If the job is run on Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -9560,12 +12419,12 @@ pub mod job_definition {
             self.retry_strategy = input;
             self
         }
-        /// <p>An object with various properties specific to container-based jobs.</p>
+        /// <p>An object with various properties specific to Amazon ECS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
         pub fn container_properties(mut self, input: crate::model::ContainerProperties) -> Self {
             self.container_properties = Some(input);
             self
         }
-        /// <p>An object with various properties specific to container-based jobs.</p>
+        /// <p>An object with various properties specific to Amazon ECS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
         pub fn set_container_properties(
             mut self,
             input: std::option::Option<crate::model::ContainerProperties>,
@@ -9573,25 +12432,25 @@ pub mod job_definition {
             self.container_properties = input;
             self
         }
-        /// <p>The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout duration after which Batch terminates your jobs if they haven't finished.</p>
+        /// <p>The timeout time for jobs that are submitted with this job definition. After the amount of time you specify passes, Batch terminates your jobs if they aren't finished.</p>
         pub fn timeout(mut self, input: crate::model::JobTimeout) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout duration after which Batch terminates your jobs if they haven't finished.</p>
+        /// <p>The timeout time for jobs that are submitted with this job definition. After the amount of time you specify passes, Batch terminates your jobs if they aren't finished.</p>
         pub fn set_timeout(mut self, input: std::option::Option<crate::model::JobTimeout>) -> Self {
             self.timeout = input;
             self
         }
-        /// <p>An object with various properties specific to multi-node parallel jobs.</p> <note>
-        /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+        /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p> <note>
+        /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
         /// </note>
         pub fn node_properties(mut self, input: crate::model::NodeProperties) -> Self {
             self.node_properties = Some(input);
             self
         }
-        /// <p>An object with various properties specific to multi-node parallel jobs.</p> <note>
-        /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+        /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p> <note>
+        /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
         /// </note>
         pub fn set_node_properties(
             mut self,
@@ -9604,7 +12463,7 @@ pub mod job_definition {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags applied to the job definition.</p>
+        /// <p>The tags that are applied to the job definition.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -9615,7 +12474,7 @@ pub mod job_definition {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags applied to the job definition.</p>
+        /// <p>The tags that are applied to the job definition.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -9625,12 +12484,12 @@ pub mod job_definition {
             self.tags = input;
             self
         }
-        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
         pub fn propagate_tags(mut self, input: bool) -> Self {
             self.propagate_tags = Some(input);
             self
         }
-        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
         pub fn set_propagate_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.propagate_tags = input;
             self
@@ -9654,6 +12513,35 @@ pub mod job_definition {
             self.platform_capabilities = input;
             self
         }
+        /// <p>An object with various properties that are specific to Amazon EKS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
+        pub fn eks_properties(mut self, input: crate::model::EksProperties) -> Self {
+            self.eks_properties = Some(input);
+            self
+        }
+        /// <p>An object with various properties that are specific to Amazon EKS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
+        pub fn set_eks_properties(
+            mut self,
+            input: std::option::Option<crate::model::EksProperties>,
+        ) -> Self {
+            self.eks_properties = input;
+            self
+        }
+        /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
+        pub fn container_orchestration_type(
+            mut self,
+            input: crate::model::OrchestrationType,
+        ) -> Self {
+            self.container_orchestration_type = Some(input);
+            self
+        }
+        /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
+        pub fn set_container_orchestration_type(
+            mut self,
+            input: std::option::Option<crate::model::OrchestrationType>,
+        ) -> Self {
+            self.container_orchestration_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JobDefinition`](crate::model::JobDefinition).
         pub fn build(self) -> crate::model::JobDefinition {
             crate::model::JobDefinition {
@@ -9671,6 +12559,8 @@ pub mod job_definition {
                 tags: self.tags,
                 propagate_tags: self.propagate_tags,
                 platform_capabilities: self.platform_capabilities,
+                eks_properties: self.eks_properties,
+                container_orchestration_type: self.container_orchestration_type,
             }
         }
     }
@@ -9682,11 +12572,103 @@ impl JobDefinition {
     }
 }
 
-/// <p>An object representing an Batch compute environment.</p>
+/// When writing a match expression against `OrchestrationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let orchestrationtype = unimplemented!();
+/// match orchestrationtype {
+///     OrchestrationType::Ecs => { /* ... */ },
+///     OrchestrationType::Eks => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `orchestrationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OrchestrationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OrchestrationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OrchestrationType::NewFeature` is defined.
+/// Specifically, when `orchestrationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OrchestrationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OrchestrationType {
+    #[allow(missing_docs)] // documentation missing in model
+    Ecs,
+    #[allow(missing_docs)] // documentation missing in model
+    Eks,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for OrchestrationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ECS" => OrchestrationType::Ecs,
+            "EKS" => OrchestrationType::Eks,
+            other => {
+                OrchestrationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for OrchestrationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OrchestrationType::from(s))
+    }
+}
+impl OrchestrationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OrchestrationType::Ecs => "ECS",
+            OrchestrationType::Eks => "EKS",
+            OrchestrationType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ECS", "EKS"]
+    }
+}
+impl AsRef<str> for OrchestrationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>An object that represents an Batch compute environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputeEnvironmentDetail {
-    /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     #[doc(hidden)]
     pub compute_environment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
@@ -9695,7 +12677,7 @@ pub struct ComputeEnvironmentDetail {
     /// <p>The maximum number of VCPUs expected to be used for an unmanaged compute environment.</p>
     #[doc(hidden)]
     pub unmanagedv_cpus: std::option::Option<i32>,
-    /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.</p>
+    /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.</p>
     #[doc(hidden)]
     pub ecs_cluster_arn: std::option::Option<std::string::String>,
     /// <p>The tags applied to the compute environment.</p>
@@ -9706,28 +12688,37 @@ pub struct ComputeEnvironmentDetail {
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CeType>,
     /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p>
-    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically, based on the job queue demand.</p>
+    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically based on the job queue demand.</p>
     /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::CeState>,
     /// <p>The current status of the compute environment (for example, <code>CREATING</code> or <code>VALID</code>).</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::CeStatus>,
-    /// <p>A short, human-readable string to provide additional details about the current status of the compute environment.</p>
+    /// <p>A short, human-readable string to provide additional details for the current status of the compute environment.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The compute resources defined for the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
     #[doc(hidden)]
     pub compute_resources: std::option::Option<crate::model::ComputeResource>,
-    /// <p>The service role associated with the compute environment that allows Batch to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The service role that's associated with the compute environment that allows Batch to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p>
     #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     #[doc(hidden)]
     pub update_policy: std::option::Option<crate::model::UpdatePolicy>,
+    /// <p>The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.</p>
+    #[doc(hidden)]
+    pub eks_configuration: std::option::Option<crate::model::EksConfiguration>,
+    /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
+    #[doc(hidden)]
+    pub container_orchestration_type: std::option::Option<crate::model::OrchestrationType>,
+    /// <p>Unique identifier for the compute environment.</p>
+    #[doc(hidden)]
+    pub uuid: std::option::Option<std::string::String>,
 }
 impl ComputeEnvironmentDetail {
-    /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn compute_environment_name(&self) -> std::option::Option<&str> {
         self.compute_environment_name.as_deref()
     }
@@ -9739,7 +12730,7 @@ impl ComputeEnvironmentDetail {
     pub fn unmanagedv_cpus(&self) -> std::option::Option<i32> {
         self.unmanagedv_cpus
     }
-    /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.</p>
+    /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.</p>
     pub fn ecs_cluster_arn(&self) -> std::option::Option<&str> {
         self.ecs_cluster_arn.as_deref()
     }
@@ -9755,7 +12746,7 @@ impl ComputeEnvironmentDetail {
         self.r#type.as_ref()
     }
     /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p>
-    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically, based on the job queue demand.</p>
+    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically based on the job queue demand.</p>
     /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::CeState> {
         self.state.as_ref()
@@ -9764,7 +12755,7 @@ impl ComputeEnvironmentDetail {
     pub fn status(&self) -> std::option::Option<&crate::model::CeStatus> {
         self.status.as_ref()
     }
-    /// <p>A short, human-readable string to provide additional details about the current status of the compute environment.</p>
+    /// <p>A short, human-readable string to provide additional details for the current status of the compute environment.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
@@ -9772,13 +12763,27 @@ impl ComputeEnvironmentDetail {
     pub fn compute_resources(&self) -> std::option::Option<&crate::model::ComputeResource> {
         self.compute_resources.as_ref()
     }
-    /// <p>The service role associated with the compute environment that allows Batch to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The service role that's associated with the compute environment that allows Batch to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p>
     pub fn service_role(&self) -> std::option::Option<&str> {
         self.service_role.as_deref()
     }
     /// <p>Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn update_policy(&self) -> std::option::Option<&crate::model::UpdatePolicy> {
         self.update_policy.as_ref()
+    }
+    /// <p>The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.</p>
+    pub fn eks_configuration(&self) -> std::option::Option<&crate::model::EksConfiguration> {
+        self.eks_configuration.as_ref()
+    }
+    /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
+    pub fn container_orchestration_type(
+        &self,
+    ) -> std::option::Option<&crate::model::OrchestrationType> {
+        self.container_orchestration_type.as_ref()
+    }
+    /// <p>Unique identifier for the compute environment.</p>
+    pub fn uuid(&self) -> std::option::Option<&str> {
+        self.uuid.as_deref()
     }
 }
 /// See [`ComputeEnvironmentDetail`](crate::model::ComputeEnvironmentDetail).
@@ -9801,14 +12806,18 @@ pub mod compute_environment_detail {
         pub(crate) compute_resources: std::option::Option<crate::model::ComputeResource>,
         pub(crate) service_role: std::option::Option<std::string::String>,
         pub(crate) update_policy: std::option::Option<crate::model::UpdatePolicy>,
+        pub(crate) eks_configuration: std::option::Option<crate::model::EksConfiguration>,
+        pub(crate) container_orchestration_type:
+            std::option::Option<crate::model::OrchestrationType>,
+        pub(crate) uuid: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn compute_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.compute_environment_name = Some(input.into());
             self
         }
-        /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_compute_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9839,12 +12848,12 @@ pub mod compute_environment_detail {
             self.unmanagedv_cpus = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.</p>
+        /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.</p>
         pub fn ecs_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.ecs_cluster_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.</p>
+        /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.</p>
         pub fn set_ecs_cluster_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9888,14 +12897,14 @@ pub mod compute_environment_detail {
             self
         }
         /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p>
-        /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically, based on the job queue demand.</p>
+        /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically based on the job queue demand.</p>
         /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
         pub fn state(mut self, input: crate::model::CeState) -> Self {
             self.state = Some(input);
             self
         }
         /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p>
-        /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically, based on the job queue demand.</p>
+        /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically based on the job queue demand.</p>
         /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::CeState>) -> Self {
             self.state = input;
@@ -9911,12 +12920,12 @@ pub mod compute_environment_detail {
             self.status = input;
             self
         }
-        /// <p>A short, human-readable string to provide additional details about the current status of the compute environment.</p>
+        /// <p>A short, human-readable string to provide additional details for the current status of the compute environment.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_reason = Some(input.into());
             self
         }
-        /// <p>A short, human-readable string to provide additional details about the current status of the compute environment.</p>
+        /// <p>A short, human-readable string to provide additional details for the current status of the compute environment.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9937,12 +12946,12 @@ pub mod compute_environment_detail {
             self.compute_resources = input;
             self
         }
-        /// <p>The service role associated with the compute environment that allows Batch to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>The service role that's associated with the compute environment that allows Batch to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
         }
-        /// <p>The service role associated with the compute environment that allows Batch to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>The service role that's associated with the compute environment that allows Batch to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
@@ -9960,6 +12969,45 @@ pub mod compute_environment_detail {
             self.update_policy = input;
             self
         }
+        /// <p>The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.</p>
+        pub fn eks_configuration(mut self, input: crate::model::EksConfiguration) -> Self {
+            self.eks_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.</p>
+        pub fn set_eks_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EksConfiguration>,
+        ) -> Self {
+            self.eks_configuration = input;
+            self
+        }
+        /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
+        pub fn container_orchestration_type(
+            mut self,
+            input: crate::model::OrchestrationType,
+        ) -> Self {
+            self.container_orchestration_type = Some(input);
+            self
+        }
+        /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
+        pub fn set_container_orchestration_type(
+            mut self,
+            input: std::option::Option<crate::model::OrchestrationType>,
+        ) -> Self {
+            self.container_orchestration_type = input;
+            self
+        }
+        /// <p>Unique identifier for the compute environment.</p>
+        pub fn uuid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uuid = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier for the compute environment.</p>
+        pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uuid = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ComputeEnvironmentDetail`](crate::model::ComputeEnvironmentDetail).
         pub fn build(self) -> crate::model::ComputeEnvironmentDetail {
             crate::model::ComputeEnvironmentDetail {
@@ -9975,6 +13023,9 @@ pub mod compute_environment_detail {
                 compute_resources: self.compute_resources,
                 service_role: self.service_role,
                 update_policy: self.update_policy,
+                eks_configuration: self.eks_configuration,
+                container_orchestration_type: self.container_orchestration_type,
+                uuid: self.uuid,
             }
         }
     }
@@ -9986,7 +13037,80 @@ impl ComputeEnvironmentDetail {
     }
 }
 
-/// <p>An object representing an Batch compute resource. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
+/// <p>Configuration for the Amazon EKS cluster that supports the Batch compute environment. The cluster must exist before the compute environment can be created.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EksConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EKS cluster. An example is <code>arn:<i>aws</i>:eks:<i>us-east-1</i>:<i>123456789012</i>:cluster/<i>ClusterForBatch</i> </code>. </p>
+    #[doc(hidden)]
+    pub eks_cluster_arn: std::option::Option<std::string::String>,
+    /// <p>The namespace of the Amazon EKS cluster. Batch manages pods in this namespace. The value can't left empty or null. It must be fewer than 64 characters long, can't be set to <code>default</code>, can't start with "<code>kube-</code>," and must match this regular expression: <code>^[a-z0-9]([-a-z0-9]*[a-z0-9])?$</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Namespaces</a> in the Kubernetes documentation.</p>
+    #[doc(hidden)]
+    pub kubernetes_namespace: std::option::Option<std::string::String>,
+}
+impl EksConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EKS cluster. An example is <code>arn:<i>aws</i>:eks:<i>us-east-1</i>:<i>123456789012</i>:cluster/<i>ClusterForBatch</i> </code>. </p>
+    pub fn eks_cluster_arn(&self) -> std::option::Option<&str> {
+        self.eks_cluster_arn.as_deref()
+    }
+    /// <p>The namespace of the Amazon EKS cluster. Batch manages pods in this namespace. The value can't left empty or null. It must be fewer than 64 characters long, can't be set to <code>default</code>, can't start with "<code>kube-</code>," and must match this regular expression: <code>^[a-z0-9]([-a-z0-9]*[a-z0-9])?$</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Namespaces</a> in the Kubernetes documentation.</p>
+    pub fn kubernetes_namespace(&self) -> std::option::Option<&str> {
+        self.kubernetes_namespace.as_deref()
+    }
+}
+/// See [`EksConfiguration`](crate::model::EksConfiguration).
+pub mod eks_configuration {
+
+    /// A builder for [`EksConfiguration`](crate::model::EksConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) eks_cluster_arn: std::option::Option<std::string::String>,
+        pub(crate) kubernetes_namespace: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the Amazon EKS cluster. An example is <code>arn:<i>aws</i>:eks:<i>us-east-1</i>:<i>123456789012</i>:cluster/<i>ClusterForBatch</i> </code>. </p>
+        pub fn eks_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.eks_cluster_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon EKS cluster. An example is <code>arn:<i>aws</i>:eks:<i>us-east-1</i>:<i>123456789012</i>:cluster/<i>ClusterForBatch</i> </code>. </p>
+        pub fn set_eks_cluster_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.eks_cluster_arn = input;
+            self
+        }
+        /// <p>The namespace of the Amazon EKS cluster. Batch manages pods in this namespace. The value can't left empty or null. It must be fewer than 64 characters long, can't be set to <code>default</code>, can't start with "<code>kube-</code>," and must match this regular expression: <code>^[a-z0-9]([-a-z0-9]*[a-z0-9])?$</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Namespaces</a> in the Kubernetes documentation.</p>
+        pub fn kubernetes_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kubernetes_namespace = Some(input.into());
+            self
+        }
+        /// <p>The namespace of the Amazon EKS cluster. Batch manages pods in this namespace. The value can't left empty or null. It must be fewer than 64 characters long, can't be set to <code>default</code>, can't start with "<code>kube-</code>," and must match this regular expression: <code>^[a-z0-9]([-a-z0-9]*[a-z0-9])?$</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Namespaces</a> in the Kubernetes documentation.</p>
+        pub fn set_kubernetes_namespace(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.kubernetes_namespace = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EksConfiguration`](crate::model::EksConfiguration).
+        pub fn build(self) -> crate::model::EksConfiguration {
+            crate::model::EksConfiguration {
+                eks_cluster_arn: self.eks_cluster_arn,
+                kubernetes_namespace: self.kubernetes_namespace,
+            }
+        }
+    }
+}
+impl EksConfiguration {
+    /// Creates a new builder-style object to manufacture [`EksConfiguration`](crate::model::EksConfiguration).
+    pub fn builder() -> crate::model::eks_configuration::Builder {
+        crate::model::eks_configuration::Builder::default()
+    }
+}
+
+/// <p>An object that represents an Batch compute resource. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputeResource {
@@ -9995,57 +13119,57 @@ pub struct ComputeResource {
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CrType>,
     /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     /// <dl>
     /// <dt>
     /// BEST_FIT (default)
     /// </dt>
     /// <dd>
-    /// <p>Batch selects an instance type that best fits the needs of the jobs with a preference for the lowest-cost instance type. If additional instances of the selected instance type aren't available, Batch waits for the additional instances to be available. If there aren't enough instances available, or if the user is reaching <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a> then additional jobs aren't run until the currently running jobs have completed. This allocation strategy keeps costs lower but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM Role must be specified. Compute resources that use a <code>BEST_FIT</code> allocation strategy don't support infrastructure updates and can't update some parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>Batch selects an instance type that best fits the needs of the jobs with a preference for the lowest-cost instance type. If additional instances of the selected instance type aren't available, Batch waits for the additional instances to be available. If there aren't enough instances available or the user is reaching <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>, additional jobs aren't run until the currently running jobs are completed. This allocation strategy keeps costs lower but can limit scaling. If you're using Spot Fleets with <code>BEST_FIT</code>, the Spot Fleet IAM Role must be specified. Compute resources that use a <code>BEST_FIT</code> allocation strategy don't support infrastructure updates and can't update some parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// </dd>
     /// <dt>
     /// BEST_FIT_PROGRESSIVE
     /// </dt>
     /// <dd>
-    /// <p>Batch will select additional instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per unit vCPU. If additional instances of the previously selected instance types aren't available, Batch will select new instance types.</p>
+    /// <p>Batch selects additional instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types with lower cost vCPUs. If additional instances of the previously selected instance types aren't available, Batch selects new instance types.</p>
     /// </dd>
     /// <dt>
     /// SPOT_CAPACITY_OPTIMIZED
     /// </dt>
     /// <dd>
-    /// <p>Batch will select one or more instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
+    /// <p>Batch selects one or more instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
     /// </dd>
     /// </dl>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies, Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     #[doc(hidden)]
     pub allocation_strategy: std::option::Option<crate::model::CrAllocationStrategy>,
     /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub minv_cpus: std::option::Option<i32>,
     /// <p>The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p> <note>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
+    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
     /// </note>
     #[doc(hidden)]
     pub maxv_cpus: std::option::Option<i32>,
-    /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values, based on job queue demand.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub desiredv_cpus: std::option::Option<i32>,
     /// <p>The instances types that can be launched. You can specify instance families to launch any instance type within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select instance types (from the C4, M4, and R4 instance families) that match the demand of your job queues.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>When you create a compute environment, the instance types that you select for the compute environment must share the same architecture. For example, you can't mix x86 and ARM instances in the same compute environment.</p>
     /// </note> <note>
-    /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5. and R5 instance families are used.</p>
+    /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5, and R5 instance families are used.</p>
     /// </note>
     #[doc(hidden)]
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
@@ -10054,54 +13178,57 @@ pub struct ComputeResource {
     )]
     #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
-    /// <p>The VPC subnets where the compute resources are launched. These subnets must be within the same VPC. Fargate compute resources can contain up to 16 subnets. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+    /// <p>The VPC subnets where the compute resources are launched. These subnets must be within the same VPC. Fargate compute resources can contain up to 16 subnets. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p> <note>
+    /// <p>Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"> Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"> Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>Batch on Fargate doesn't currently support Local Zones.</p>
+    /// </note>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon EC2 security groups associated with instances launched in the compute environment. One or more security groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced in <code>launchTemplate</code>. This parameter is required for jobs that are running on Fargate resources and must contain at least one security group. Fargate doesn't support launch templates. If security groups are specified using both <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in <code>securityGroupIds</code> are used.</p>
+    /// <p>The Amazon EC2 security groups that are associated with instances launched in the compute environment. One or more security groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced in <code>launchTemplate</code>. This parameter is required for jobs that are running on Fargate resources and must contain at least one security group. Fargate doesn't support launch templates. If security groups are specified using both <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in <code>securityGroupIds</code> are used.</p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon EC2 key pair that's used for instances launched in the compute environment. You can use this key pair to log in to your instances with SSH.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub ec2_key_pair: std::option::Option<std::string::String>,
     /// <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or <code>arn:aws:iam::<i>
     /// <aws_account_id></aws_account_id></i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS instance role</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub instance_role: std::option::Option<std::string::String>,
-    /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value−for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node parallel jobs to your compute environment, you should consider creating a cluster placement group and associate it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within a single Availability Zone with high network flow potential. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub placement_group: std::option::Option<std::string::String>,
-    /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the On-Demand price.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the On-Demand price. For most use cases, we recommend leaving this field empty.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub bid_percentage: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute environment. This role is required if the allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy isn't specified. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <important>
     /// <p>To tag your Spot Instances on creation, the Spot Fleet IAM role specified here must use the newer <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously recommended <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required permissions to tag Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot instances not tagged on creation</a> in the <i>Batch User Guide</i>.</p>
     /// </important>
     #[doc(hidden)]
     pub spot_iam_fleet_role: std::option::Option<std::string::String>,
     /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in a <code>CreateComputeEnvironment</code> API operation override the same parameters in the launch template. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub launch_template: std::option::Option<crate::model::LaunchTemplateSpecification>,
-    /// <p>Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+    /// <p>Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
     /// <p>One or two values can be provided.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub ec2_configuration: std::option::Option<std::vec::Vec<crate::model::Ec2Configuration>>,
@@ -10113,62 +13240,62 @@ impl ComputeResource {
         self.r#type.as_ref()
     }
     /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     /// <dl>
     /// <dt>
     /// BEST_FIT (default)
     /// </dt>
     /// <dd>
-    /// <p>Batch selects an instance type that best fits the needs of the jobs with a preference for the lowest-cost instance type. If additional instances of the selected instance type aren't available, Batch waits for the additional instances to be available. If there aren't enough instances available, or if the user is reaching <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a> then additional jobs aren't run until the currently running jobs have completed. This allocation strategy keeps costs lower but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM Role must be specified. Compute resources that use a <code>BEST_FIT</code> allocation strategy don't support infrastructure updates and can't update some parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>Batch selects an instance type that best fits the needs of the jobs with a preference for the lowest-cost instance type. If additional instances of the selected instance type aren't available, Batch waits for the additional instances to be available. If there aren't enough instances available or the user is reaching <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>, additional jobs aren't run until the currently running jobs are completed. This allocation strategy keeps costs lower but can limit scaling. If you're using Spot Fleets with <code>BEST_FIT</code>, the Spot Fleet IAM Role must be specified. Compute resources that use a <code>BEST_FIT</code> allocation strategy don't support infrastructure updates and can't update some parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// </dd>
     /// <dt>
     /// BEST_FIT_PROGRESSIVE
     /// </dt>
     /// <dd>
-    /// <p>Batch will select additional instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per unit vCPU. If additional instances of the previously selected instance types aren't available, Batch will select new instance types.</p>
+    /// <p>Batch selects additional instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types with lower cost vCPUs. If additional instances of the previously selected instance types aren't available, Batch selects new instance types.</p>
     /// </dd>
     /// <dt>
     /// SPOT_CAPACITY_OPTIMIZED
     /// </dt>
     /// <dd>
-    /// <p>Batch will select one or more instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
+    /// <p>Batch selects one or more instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
     /// </dd>
     /// </dl>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies, Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     pub fn allocation_strategy(&self) -> std::option::Option<&crate::model::CrAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
     /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn minv_cpus(&self) -> std::option::Option<i32> {
         self.minv_cpus
     }
     /// <p>The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p> <note>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
+    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
     /// </note>
     pub fn maxv_cpus(&self) -> std::option::Option<i32> {
         self.maxv_cpus
     }
-    /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values, based on job queue demand.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn desiredv_cpus(&self) -> std::option::Option<i32> {
         self.desiredv_cpus
     }
     /// <p>The instances types that can be launched. You can specify instance families to launch any instance type within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select instance types (from the C4, M4, and R4 instance families) that match the demand of your job queues.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>When you create a compute environment, the instance types that you select for the compute environment must share the same architecture. For example, you can't mix x86 and ARM instances in the same compute environment.</p>
     /// </note> <note>
-    /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5. and R5 instance families are used.</p>
+    /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5, and R5 instance families are used.</p>
     /// </note>
     pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_types.as_deref()
     }
     /// <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
@@ -10178,29 +13305,32 @@ impl ComputeResource {
     pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
-    /// <p>The VPC subnets where the compute resources are launched. These subnets must be within the same VPC. Fargate compute resources can contain up to 16 subnets. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+    /// <p>The VPC subnets where the compute resources are launched. These subnets must be within the same VPC. Fargate compute resources can contain up to 16 subnets. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p> <note>
+    /// <p>Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"> Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"> Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>Batch on Fargate doesn't currently support Local Zones.</p>
+    /// </note>
     pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
-    /// <p>The Amazon EC2 security groups associated with instances launched in the compute environment. One or more security groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced in <code>launchTemplate</code>. This parameter is required for jobs that are running on Fargate resources and must contain at least one security group. Fargate doesn't support launch templates. If security groups are specified using both <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in <code>securityGroupIds</code> are used.</p>
+    /// <p>The Amazon EC2 security groups that are associated with instances launched in the compute environment. One or more security groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced in <code>launchTemplate</code>. This parameter is required for jobs that are running on Fargate resources and must contain at least one security group. Fargate doesn't support launch templates. If security groups are specified using both <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in <code>securityGroupIds</code> are used.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The Amazon EC2 key pair that's used for instances launched in the compute environment. You can use this key pair to log in to your instances with SSH.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn ec2_key_pair(&self) -> std::option::Option<&str> {
         self.ec2_key_pair.as_deref()
     }
     /// <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or <code>arn:aws:iam::<i>
     /// <aws_account_id></aws_account_id></i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS instance role</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn instance_role(&self) -> std::option::Option<&str> {
         self.instance_role.as_deref()
     }
-    /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value−for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn tags(
         &self,
@@ -10209,19 +13339,19 @@ impl ComputeResource {
         self.tags.as_ref()
     }
     /// <p>The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node parallel jobs to your compute environment, you should consider creating a cluster placement group and associate it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within a single Availability Zone with high network flow potential. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn placement_group(&self) -> std::option::Option<&str> {
         self.placement_group.as_deref()
     }
-    /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the On-Demand price.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the On-Demand price. For most use cases, we recommend leaving this field empty.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn bid_percentage(&self) -> std::option::Option<i32> {
         self.bid_percentage
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute environment. This role is required if the allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy isn't specified. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <important>
     /// <p>To tag your Spot Instances on creation, the Spot Fleet IAM role specified here must use the newer <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously recommended <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required permissions to tag Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot instances not tagged on creation</a> in the <i>Batch User Guide</i>.</p>
     /// </important>
@@ -10229,16 +13359,16 @@ impl ComputeResource {
         self.spot_iam_fleet_role.as_deref()
     }
     /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in a <code>CreateComputeEnvironment</code> API operation override the same parameters in the launch template. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn launch_template(
         &self,
     ) -> std::option::Option<&crate::model::LaunchTemplateSpecification> {
         self.launch_template.as_ref()
     }
-    /// <p>Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+    /// <p>Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
     /// <p>One or two values can be provided.</p> <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn ec2_configuration(&self) -> std::option::Option<&[crate::model::Ec2Configuration]> {
         self.ec2_configuration.as_deref()
@@ -10285,57 +13415,57 @@ pub mod compute_resource {
             self
         }
         /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         /// <dl>
         /// <dt>
         /// BEST_FIT (default)
         /// </dt>
         /// <dd>
-        /// <p>Batch selects an instance type that best fits the needs of the jobs with a preference for the lowest-cost instance type. If additional instances of the selected instance type aren't available, Batch waits for the additional instances to be available. If there aren't enough instances available, or if the user is reaching <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a> then additional jobs aren't run until the currently running jobs have completed. This allocation strategy keeps costs lower but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM Role must be specified. Compute resources that use a <code>BEST_FIT</code> allocation strategy don't support infrastructure updates and can't update some parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>Batch selects an instance type that best fits the needs of the jobs with a preference for the lowest-cost instance type. If additional instances of the selected instance type aren't available, Batch waits for the additional instances to be available. If there aren't enough instances available or the user is reaching <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>, additional jobs aren't run until the currently running jobs are completed. This allocation strategy keeps costs lower but can limit scaling. If you're using Spot Fleets with <code>BEST_FIT</code>, the Spot Fleet IAM Role must be specified. Compute resources that use a <code>BEST_FIT</code> allocation strategy don't support infrastructure updates and can't update some parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
         /// </dd>
         /// <dt>
         /// BEST_FIT_PROGRESSIVE
         /// </dt>
         /// <dd>
-        /// <p>Batch will select additional instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per unit vCPU. If additional instances of the previously selected instance types aren't available, Batch will select new instance types.</p>
+        /// <p>Batch selects additional instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types with lower cost vCPUs. If additional instances of the previously selected instance types aren't available, Batch selects new instance types.</p>
         /// </dd>
         /// <dt>
         /// SPOT_CAPACITY_OPTIMIZED
         /// </dt>
         /// <dd>
-        /// <p>Batch will select one or more instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
+        /// <p>Batch selects one or more instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
         /// </dd>
         /// </dl>
-        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies, Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
         pub fn allocation_strategy(mut self, input: crate::model::CrAllocationStrategy) -> Self {
             self.allocation_strategy = Some(input);
             self
         }
         /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         /// <dl>
         /// <dt>
         /// BEST_FIT (default)
         /// </dt>
         /// <dd>
-        /// <p>Batch selects an instance type that best fits the needs of the jobs with a preference for the lowest-cost instance type. If additional instances of the selected instance type aren't available, Batch waits for the additional instances to be available. If there aren't enough instances available, or if the user is reaching <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a> then additional jobs aren't run until the currently running jobs have completed. This allocation strategy keeps costs lower but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM Role must be specified. Compute resources that use a <code>BEST_FIT</code> allocation strategy don't support infrastructure updates and can't update some parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>Batch selects an instance type that best fits the needs of the jobs with a preference for the lowest-cost instance type. If additional instances of the selected instance type aren't available, Batch waits for the additional instances to be available. If there aren't enough instances available or the user is reaching <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>, additional jobs aren't run until the currently running jobs are completed. This allocation strategy keeps costs lower but can limit scaling. If you're using Spot Fleets with <code>BEST_FIT</code>, the Spot Fleet IAM Role must be specified. Compute resources that use a <code>BEST_FIT</code> allocation strategy don't support infrastructure updates and can't update some parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
         /// </dd>
         /// <dt>
         /// BEST_FIT_PROGRESSIVE
         /// </dt>
         /// <dd>
-        /// <p>Batch will select additional instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per unit vCPU. If additional instances of the previously selected instance types aren't available, Batch will select new instance types.</p>
+        /// <p>Batch selects additional instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types with lower cost vCPUs. If additional instances of the previously selected instance types aren't available, Batch selects new instance types.</p>
         /// </dd>
         /// <dt>
         /// SPOT_CAPACITY_OPTIMIZED
         /// </dt>
         /// <dd>
-        /// <p>Batch will select one or more instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
+        /// <p>Batch selects one or more instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
         /// </dd>
         /// </dl>
-        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies, Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
         pub fn set_allocation_strategy(
             mut self,
             input: std::option::Option<crate::model::CrAllocationStrategy>,
@@ -10344,42 +13474,42 @@ pub mod compute_resource {
             self
         }
         /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn minv_cpus(mut self, input: i32) -> Self {
             self.minv_cpus = Some(input);
             self
         }
         /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_minv_cpus(mut self, input: std::option::Option<i32>) -> Self {
             self.minv_cpus = input;
             self
         }
         /// <p>The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p> <note>
-        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
+        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
         /// </note>
         pub fn maxv_cpus(mut self, input: i32) -> Self {
             self.maxv_cpus = Some(input);
             self
         }
         /// <p>The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p> <note>
-        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
+        /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
         /// </note>
         pub fn set_maxv_cpus(mut self, input: std::option::Option<i32>) -> Self {
             self.maxv_cpus = input;
             self
         }
-        /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values, based on job queue demand.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn desiredv_cpus(mut self, input: i32) -> Self {
             self.desiredv_cpus = Some(input);
             self
         }
-        /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values, based on job queue demand.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_desiredv_cpus(mut self, input: std::option::Option<i32>) -> Self {
             self.desiredv_cpus = input;
@@ -10390,11 +13520,11 @@ pub mod compute_resource {
         /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
         ///
         /// <p>The instances types that can be launched. You can specify instance families to launch any instance type within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select instance types (from the C4, M4, and R4 instance families) that match the demand of your job queues.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note> <note>
         /// <p>When you create a compute environment, the instance types that you select for the compute environment must share the same architecture. For example, you can't mix x86 and ARM instances in the same compute environment.</p>
         /// </note> <note>
-        /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5. and R5 instance families are used.</p>
+        /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5, and R5 instance families are used.</p>
         /// </note>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
@@ -10403,11 +13533,11 @@ pub mod compute_resource {
             self
         }
         /// <p>The instances types that can be launched. You can specify instance families to launch any instance type within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select instance types (from the C4, M4, and R4 instance families) that match the demand of your job queues.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note> <note>
         /// <p>When you create a compute environment, the instance types that you select for the compute environment must share the same architecture. For example, you can't mix x86 and ARM instances in the same compute environment.</p>
         /// </note> <note>
-        /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5. and R5 instance families are used.</p>
+        /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5, and R5 instance families are used.</p>
         /// </note>
         pub fn set_instance_types(
             mut self,
@@ -10417,7 +13547,7 @@ pub mod compute_resource {
             self
         }
         /// <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note> <note>
         /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </note>
@@ -10429,7 +13559,7 @@ pub mod compute_resource {
             self
         }
         /// <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note> <note>
         /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </note>
@@ -10444,14 +13574,20 @@ pub mod compute_resource {
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>The VPC subnets where the compute resources are launched. These subnets must be within the same VPC. Fargate compute resources can contain up to 16 subnets. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+        /// <p>The VPC subnets where the compute resources are launched. These subnets must be within the same VPC. Fargate compute resources can contain up to 16 subnets. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p> <note>
+        /// <p>Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"> Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"> Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+        /// <p>Batch on Fargate doesn't currently support Local Zones.</p>
+        /// </note>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
-        /// <p>The VPC subnets where the compute resources are launched. These subnets must be within the same VPC. Fargate compute resources can contain up to 16 subnets. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+        /// <p>The VPC subnets where the compute resources are launched. These subnets must be within the same VPC. Fargate compute resources can contain up to 16 subnets. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p> <note>
+        /// <p>Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"> Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"> Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+        /// <p>Batch on Fargate doesn't currently support Local Zones.</p>
+        /// </note>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10463,14 +13599,14 @@ pub mod compute_resource {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>The Amazon EC2 security groups associated with instances launched in the compute environment. One or more security groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced in <code>launchTemplate</code>. This parameter is required for jobs that are running on Fargate resources and must contain at least one security group. Fargate doesn't support launch templates. If security groups are specified using both <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in <code>securityGroupIds</code> are used.</p>
+        /// <p>The Amazon EC2 security groups that are associated with instances launched in the compute environment. One or more security groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced in <code>launchTemplate</code>. This parameter is required for jobs that are running on Fargate resources and must contain at least one security group. Fargate doesn't support launch templates. If security groups are specified using both <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in <code>securityGroupIds</code> are used.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
-        /// <p>The Amazon EC2 security groups associated with instances launched in the compute environment. One or more security groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced in <code>launchTemplate</code>. This parameter is required for jobs that are running on Fargate resources and must contain at least one security group. Fargate doesn't support launch templates. If security groups are specified using both <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in <code>securityGroupIds</code> are used.</p>
+        /// <p>The Amazon EC2 security groups that are associated with instances launched in the compute environment. One or more security groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced in <code>launchTemplate</code>. This parameter is required for jobs that are running on Fargate resources and must contain at least one security group. Fargate doesn't support launch templates. If security groups are specified using both <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in <code>securityGroupIds</code> are used.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10479,14 +13615,14 @@ pub mod compute_resource {
             self
         }
         /// <p>The Amazon EC2 key pair that's used for instances launched in the compute environment. You can use this key pair to log in to your instances with SSH.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn ec2_key_pair(mut self, input: impl Into<std::string::String>) -> Self {
             self.ec2_key_pair = Some(input.into());
             self
         }
         /// <p>The Amazon EC2 key pair that's used for instances launched in the compute environment. You can use this key pair to log in to your instances with SSH.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_ec2_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ec2_key_pair = input;
@@ -10494,7 +13630,7 @@ pub mod compute_resource {
         }
         /// <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or <code>arn:aws:iam::<i>
         /// <aws_account_id></aws_account_id></i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS instance role</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn instance_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_role = Some(input.into());
@@ -10502,7 +13638,7 @@ pub mod compute_resource {
         }
         /// <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or <code>arn:aws:iam::<i>
         /// <aws_account_id></aws_account_id></i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS instance role</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_instance_role(
             mut self,
@@ -10515,8 +13651,8 @@ pub mod compute_resource {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value−for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn tags(
             mut self,
@@ -10528,8 +13664,8 @@ pub mod compute_resource {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value−for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -10541,14 +13677,14 @@ pub mod compute_resource {
             self
         }
         /// <p>The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node parallel jobs to your compute environment, you should consider creating a cluster placement group and associate it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within a single Availability Zone with high network flow potential. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn placement_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.placement_group = Some(input.into());
             self
         }
         /// <p>The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node parallel jobs to your compute environment, you should consider creating a cluster placement group and associate it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within a single Availability Zone with high network flow potential. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_placement_group(
             mut self,
@@ -10557,22 +13693,22 @@ pub mod compute_resource {
             self.placement_group = input;
             self
         }
-        /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the On-Demand price.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the On-Demand price. For most use cases, we recommend leaving this field empty.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn bid_percentage(mut self, input: i32) -> Self {
             self.bid_percentage = Some(input);
             self
         }
-        /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the On-Demand price.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the On-Demand price. For most use cases, we recommend leaving this field empty.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_bid_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.bid_percentage = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute environment. This role is required if the allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy isn't specified. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note> <important>
         /// <p>To tag your Spot Instances on creation, the Spot Fleet IAM role specified here must use the newer <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously recommended <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required permissions to tag Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot instances not tagged on creation</a> in the <i>Batch User Guide</i>.</p>
         /// </important>
@@ -10581,7 +13717,7 @@ pub mod compute_resource {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute environment. This role is required if the allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy isn't specified. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note> <important>
         /// <p>To tag your Spot Instances on creation, the Spot Fleet IAM role specified here must use the newer <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously recommended <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required permissions to tag Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot instances not tagged on creation</a> in the <i>Batch User Guide</i>.</p>
         /// </important>
@@ -10593,14 +13729,14 @@ pub mod compute_resource {
             self
         }
         /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in a <code>CreateComputeEnvironment</code> API operation override the same parameters in the launch template. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn launch_template(mut self, input: crate::model::LaunchTemplateSpecification) -> Self {
             self.launch_template = Some(input);
             self
         }
         /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in a <code>CreateComputeEnvironment</code> API operation override the same parameters in the launch template. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_launch_template(
             mut self,
@@ -10613,9 +13749,9 @@ pub mod compute_resource {
         ///
         /// To override the contents of this collection use [`set_ec2_configuration`](Self::set_ec2_configuration).
         ///
-        /// <p>Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+        /// <p>Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
         /// <p>One or two values can be provided.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn ec2_configuration(mut self, input: crate::model::Ec2Configuration) -> Self {
             let mut v = self.ec2_configuration.unwrap_or_default();
@@ -10623,9 +13759,9 @@ pub mod compute_resource {
             self.ec2_configuration = Some(v);
             self
         }
-        /// <p>Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+        /// <p>Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
         /// <p>One or two values can be provided.</p> <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
         /// </note>
         pub fn set_ec2_configuration(
             mut self,

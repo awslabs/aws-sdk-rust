@@ -128,6 +128,11 @@ pub struct DbCluster {
     /// <p>Time at which the DB cluster will be automatically restarted.</p>
     #[doc(hidden)]
     pub automatic_restart_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Shows the scaling configuration for a Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    #[doc(hidden)]
+    pub serverless_v2_scaling_configuration:
+        std::option::Option<crate::model::ServerlessV2ScalingConfigurationInfo>,
 }
 impl DbCluster {
     /// <p> <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size is not fixed, but instead automatically adjusts as needed.</p>
@@ -295,6 +300,13 @@ impl DbCluster {
     pub fn automatic_restart_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.automatic_restart_time.as_ref()
     }
+    /// <p>Shows the scaling configuration for a Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfigurationInfo> {
+        self.serverless_v2_scaling_configuration.as_ref()
+    }
 }
 /// See [`DbCluster`](crate::model::DbCluster).
 pub mod db_cluster {
@@ -348,6 +360,8 @@ pub mod db_cluster {
         pub(crate) deletion_protection: std::option::Option<bool>,
         pub(crate) cross_account_clone: std::option::Option<bool>,
         pub(crate) automatic_restart_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) serverless_v2_scaling_configuration:
+            std::option::Option<crate::model::ServerlessV2ScalingConfigurationInfo>,
     }
     impl Builder {
         /// <p> <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size is not fixed, but instead automatically adjusts as needed.</p>
@@ -893,6 +907,24 @@ pub mod db_cluster {
             self.automatic_restart_time = input;
             self
         }
+        /// <p>Shows the scaling configuration for a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfigurationInfo,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = Some(input);
+            self
+        }
+        /// <p>Shows the scaling configuration for a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfigurationInfo>,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbCluster`](crate::model::DbCluster).
         pub fn build(self) -> crate::model::DbCluster {
             crate::model::DbCluster {
@@ -938,6 +970,7 @@ pub mod db_cluster {
                 deletion_protection: self.deletion_protection,
                 cross_account_clone: self.cross_account_clone,
                 automatic_restart_time: self.automatic_restart_time,
+                serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             }
         }
     }
@@ -946,6 +979,74 @@ impl DbCluster {
     /// Creates a new builder-style object to manufacture [`DbCluster`](crate::model::DbCluster).
     pub fn builder() -> crate::model::db_cluster::Builder {
         crate::model::db_cluster::Builder::default()
+    }
+}
+
+/// <p>Shows the scaling configuration for a Neptune Serverless DB cluster.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ServerlessV2ScalingConfigurationInfo {
+    /// <p>The minimum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 8, 8.5, 9, and so on.</p>
+    #[doc(hidden)]
+    pub min_capacity: std::option::Option<f64>,
+    /// <p>The maximum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 40, 40.5, 41, and so on.</p>
+    #[doc(hidden)]
+    pub max_capacity: std::option::Option<f64>,
+}
+impl ServerlessV2ScalingConfigurationInfo {
+    /// <p>The minimum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 8, 8.5, 9, and so on.</p>
+    pub fn min_capacity(&self) -> std::option::Option<f64> {
+        self.min_capacity
+    }
+    /// <p>The maximum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 40, 40.5, 41, and so on.</p>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+}
+/// See [`ServerlessV2ScalingConfigurationInfo`](crate::model::ServerlessV2ScalingConfigurationInfo).
+pub mod serverless_v2_scaling_configuration_info {
+
+    /// A builder for [`ServerlessV2ScalingConfigurationInfo`](crate::model::ServerlessV2ScalingConfigurationInfo).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) min_capacity: std::option::Option<f64>,
+        pub(crate) max_capacity: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The minimum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 8, 8.5, 9, and so on.</p>
+        pub fn min_capacity(mut self, input: f64) -> Self {
+            self.min_capacity = Some(input);
+            self
+        }
+        /// <p>The minimum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 8, 8.5, 9, and so on.</p>
+        pub fn set_min_capacity(mut self, input: std::option::Option<f64>) -> Self {
+            self.min_capacity = input;
+            self
+        }
+        /// <p>The maximum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 40, 40.5, 41, and so on.</p>
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.max_capacity = Some(input);
+            self
+        }
+        /// <p>The maximum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 40, 40.5, 41, and so on.</p>
+        pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
+            self.max_capacity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServerlessV2ScalingConfigurationInfo`](crate::model::ServerlessV2ScalingConfigurationInfo).
+        pub fn build(self) -> crate::model::ServerlessV2ScalingConfigurationInfo {
+            crate::model::ServerlessV2ScalingConfigurationInfo {
+                min_capacity: self.min_capacity,
+                max_capacity: self.max_capacity,
+            }
+        }
+    }
+}
+impl ServerlessV2ScalingConfigurationInfo {
+    /// Creates a new builder-style object to manufacture [`ServerlessV2ScalingConfigurationInfo`](crate::model::ServerlessV2ScalingConfigurationInfo).
+    pub fn builder() -> crate::model::serverless_v2_scaling_configuration_info::Builder {
+        crate::model::serverless_v2_scaling_configuration_info::Builder::default()
     }
 }
 
@@ -1309,6 +1410,74 @@ impl DbClusterOptionGroupStatus {
     /// Creates a new builder-style object to manufacture [`DbClusterOptionGroupStatus`](crate::model::DbClusterOptionGroupStatus).
     pub fn builder() -> crate::model::db_cluster_option_group_status::Builder {
         crate::model::db_cluster_option_group_status::Builder::default()
+    }
+}
+
+/// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ServerlessV2ScalingConfiguration {
+    /// <p>The minimum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 8, 8.5, 9, and so on.</p>
+    #[doc(hidden)]
+    pub min_capacity: std::option::Option<f64>,
+    /// <p>The maximum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 40, 40.5, 41, and so on.</p>
+    #[doc(hidden)]
+    pub max_capacity: std::option::Option<f64>,
+}
+impl ServerlessV2ScalingConfiguration {
+    /// <p>The minimum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 8, 8.5, 9, and so on.</p>
+    pub fn min_capacity(&self) -> std::option::Option<f64> {
+        self.min_capacity
+    }
+    /// <p>The maximum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 40, 40.5, 41, and so on.</p>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+}
+/// See [`ServerlessV2ScalingConfiguration`](crate::model::ServerlessV2ScalingConfiguration).
+pub mod serverless_v2_scaling_configuration {
+
+    /// A builder for [`ServerlessV2ScalingConfiguration`](crate::model::ServerlessV2ScalingConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) min_capacity: std::option::Option<f64>,
+        pub(crate) max_capacity: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The minimum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 8, 8.5, 9, and so on.</p>
+        pub fn min_capacity(mut self, input: f64) -> Self {
+            self.min_capacity = Some(input);
+            self
+        }
+        /// <p>The minimum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 8, 8.5, 9, and so on.</p>
+        pub fn set_min_capacity(mut self, input: std::option::Option<f64>) -> Self {
+            self.min_capacity = input;
+            self
+        }
+        /// <p>The maximum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 40, 40.5, 41, and so on.</p>
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.max_capacity = Some(input);
+            self
+        }
+        /// <p>The maximum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 40, 40.5, 41, and so on.</p>
+        pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
+            self.max_capacity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServerlessV2ScalingConfiguration`](crate::model::ServerlessV2ScalingConfiguration).
+        pub fn build(self) -> crate::model::ServerlessV2ScalingConfiguration {
+            crate::model::ServerlessV2ScalingConfiguration {
+                min_capacity: self.min_capacity,
+                max_capacity: self.max_capacity,
+            }
+        }
+    }
+}
+impl ServerlessV2ScalingConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServerlessV2ScalingConfiguration`](crate::model::ServerlessV2ScalingConfiguration).
+    pub fn builder() -> crate::model::serverless_v2_scaling_configuration::Builder {
+        crate::model::serverless_v2_scaling_configuration::Builder::default()
     }
 }
 

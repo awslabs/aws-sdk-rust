@@ -1387,6 +1387,9 @@ pub struct AssetModelCompositeModel {
     /// <p>The asset property definitions for this composite model.</p>
     #[doc(hidden)]
     pub properties: std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
+    /// <p> The ID of the asset model composite model. </p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
 }
 impl AssetModelCompositeModel {
     /// <p>The name of the composite model.</p>
@@ -1405,6 +1408,10 @@ impl AssetModelCompositeModel {
     pub fn properties(&self) -> std::option::Option<&[crate::model::AssetModelProperty]> {
         self.properties.as_deref()
     }
+    /// <p> The ID of the asset model composite model. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 /// See [`AssetModelCompositeModel`](crate::model::AssetModelCompositeModel).
 pub mod asset_model_composite_model {
@@ -1416,6 +1423,7 @@ pub mod asset_model_composite_model {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) properties: std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
+        pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the composite model.</p>
@@ -1467,6 +1475,16 @@ pub mod asset_model_composite_model {
             self.properties = input;
             self
         }
+        /// <p> The ID of the asset model composite model. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the asset model composite model. </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssetModelCompositeModel`](crate::model::AssetModelCompositeModel).
         pub fn build(self) -> crate::model::AssetModelCompositeModel {
             crate::model::AssetModelCompositeModel {
@@ -1474,6 +1492,7 @@ pub mod asset_model_composite_model {
                 description: self.description,
                 r#type: self.r#type,
                 properties: self.properties,
+                id: self.id,
             }
         }
     }
@@ -3456,15 +3475,15 @@ impl PortalResource {
 }
 
 /// <p>Contains an identity that can access an IoT SiteWise Monitor resource.</p> <note>
-/// <p>Currently, you can't use Amazon Web Services APIs to retrieve Amazon Web Services SSO identity IDs. You can find the Amazon Web Services SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">Amazon Web Services SSO console</a>.</p>
+/// <p>Currently, you can't use Amazon Web Services APIs to retrieve IAM Identity Center identity IDs. You can find the IAM Identity Center identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">IAM Identity Center console</a>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Identity {
-    /// <p>An Amazon Web Services SSO user identity.</p>
+    /// <p>An IAM Identity Center user identity.</p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::model::UserIdentity>,
-    /// <p>An Amazon Web Services SSO group identity.</p>
+    /// <p>An IAM Identity Center group identity.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::GroupIdentity>,
     /// <p>An IAM user identity.</p>
@@ -3475,11 +3494,11 @@ pub struct Identity {
     pub iam_role: std::option::Option<crate::model::IamRoleIdentity>,
 }
 impl Identity {
-    /// <p>An Amazon Web Services SSO user identity.</p>
+    /// <p>An IAM Identity Center user identity.</p>
     pub fn user(&self) -> std::option::Option<&crate::model::UserIdentity> {
         self.user.as_ref()
     }
-    /// <p>An Amazon Web Services SSO group identity.</p>
+    /// <p>An IAM Identity Center group identity.</p>
     pub fn group(&self) -> std::option::Option<&crate::model::GroupIdentity> {
         self.group.as_ref()
     }
@@ -3504,22 +3523,22 @@ pub mod identity {
         pub(crate) iam_role: std::option::Option<crate::model::IamRoleIdentity>,
     }
     impl Builder {
-        /// <p>An Amazon Web Services SSO user identity.</p>
+        /// <p>An IAM Identity Center user identity.</p>
         pub fn user(mut self, input: crate::model::UserIdentity) -> Self {
             self.user = Some(input);
             self
         }
-        /// <p>An Amazon Web Services SSO user identity.</p>
+        /// <p>An IAM Identity Center user identity.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::UserIdentity>) -> Self {
             self.user = input;
             self
         }
-        /// <p>An Amazon Web Services SSO group identity.</p>
+        /// <p>An IAM Identity Center group identity.</p>
         pub fn group(mut self, input: crate::model::GroupIdentity) -> Self {
             self.group = Some(input);
             self
         }
-        /// <p>An Amazon Web Services SSO group identity.</p>
+        /// <p>An IAM Identity Center group identity.</p>
         pub fn set_group(
             mut self,
             input: std::option::Option<crate::model::GroupIdentity>,
@@ -3675,12 +3694,12 @@ impl IamUserIdentity {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupIdentity {
-    /// <p>The Amazon Web Services SSO ID of the group.</p>
+    /// <p>The IAM Identity Center ID of the group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GroupIdentity {
-    /// <p>The Amazon Web Services SSO ID of the group.</p>
+    /// <p>The IAM Identity Center ID of the group.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -3694,12 +3713,12 @@ pub mod group_identity {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services SSO ID of the group.</p>
+        /// <p>The IAM Identity Center ID of the group.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services SSO ID of the group.</p>
+        /// <p>The IAM Identity Center ID of the group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3721,12 +3740,12 @@ impl GroupIdentity {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserIdentity {
-    /// <p>The Amazon Web Services SSO ID of the user.</p>
+    /// <p>The IAM Identity Center ID of the user.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl UserIdentity {
-    /// <p>The Amazon Web Services SSO ID of the user.</p>
+    /// <p>The IAM Identity Center ID of the user.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -3740,12 +3759,12 @@ pub mod user_identity {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services SSO ID of the user.</p>
+        /// <p>The IAM Identity Center ID of the user.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services SSO ID of the user.</p>
+        /// <p>The IAM Identity Center ID of the user.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5062,7 +5081,7 @@ pub struct PortalSummary {
     /// <p>The portal's description.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     #[doc(hidden)]
     pub start_url: std::option::Option<std::string::String>,
     /// <p>The date the portal was created, in Unix epoch time.</p>
@@ -5091,7 +5110,7 @@ impl PortalSummary {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub fn start_url(&self) -> std::option::Option<&str> {
         self.start_url.as_deref()
     }
@@ -5158,12 +5177,12 @@ pub mod portal_summary {
             self.description = input;
             self
         }
-        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn start_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_url = Some(input.into());
             self
         }
-        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn set_start_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_url = input;
             self
@@ -7191,6 +7210,298 @@ impl AsRef<str> for TraversalType {
     }
 }
 
+/// <p>Contains a summary of a property associated with an asset.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AssetPropertySummary {
+    /// <p>The ID of the property.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
+    pub alias: std::option::Option<std::string::String>,
+    /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
+    #[doc(hidden)]
+    pub unit: std::option::Option<std::string::String>,
+    /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
+    pub notification: std::option::Option<crate::model::PropertyNotification>,
+    /// <p> The ID of the composite model that contains the asset property. </p>
+    #[doc(hidden)]
+    pub asset_composite_model_id: std::option::Option<std::string::String>,
+}
+impl AssetPropertySummary {
+    /// <p>The ID of the property.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+    /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::PropertyNotification> {
+        self.notification.as_ref()
+    }
+    /// <p> The ID of the composite model that contains the asset property. </p>
+    pub fn asset_composite_model_id(&self) -> std::option::Option<&str> {
+        self.asset_composite_model_id.as_deref()
+    }
+}
+/// See [`AssetPropertySummary`](crate::model::AssetPropertySummary).
+pub mod asset_property_summary {
+
+    /// A builder for [`AssetPropertySummary`](crate::model::AssetPropertySummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) unit: std::option::Option<std::string::String>,
+        pub(crate) notification: std::option::Option<crate::model::PropertyNotification>,
+        pub(crate) asset_composite_model_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the property.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the property.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
+        pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
+            self.unit = Some(input.into());
+            self
+        }
+        /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
+        pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.unit = input;
+            self
+        }
+        /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn notification(mut self, input: crate::model::PropertyNotification) -> Self {
+            self.notification = Some(input);
+            self
+        }
+        /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn set_notification(
+            mut self,
+            input: std::option::Option<crate::model::PropertyNotification>,
+        ) -> Self {
+            self.notification = input;
+            self
+        }
+        /// <p> The ID of the composite model that contains the asset property. </p>
+        pub fn asset_composite_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_composite_model_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the composite model that contains the asset property. </p>
+        pub fn set_asset_composite_model_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.asset_composite_model_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssetPropertySummary`](crate::model::AssetPropertySummary).
+        pub fn build(self) -> crate::model::AssetPropertySummary {
+            crate::model::AssetPropertySummary {
+                id: self.id,
+                alias: self.alias,
+                unit: self.unit,
+                notification: self.notification,
+                asset_composite_model_id: self.asset_composite_model_id,
+            }
+        }
+    }
+}
+impl AssetPropertySummary {
+    /// Creates a new builder-style object to manufacture [`AssetPropertySummary`](crate::model::AssetPropertySummary).
+    pub fn builder() -> crate::model::asset_property_summary::Builder {
+        crate::model::asset_property_summary::Builder::default()
+    }
+}
+
+/// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PropertyNotification {
+    /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
+    #[doc(hidden)]
+    pub topic: std::option::Option<std::string::String>,
+    /// <p>The current notification state.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::PropertyNotificationState>,
+}
+impl PropertyNotification {
+    /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
+    pub fn topic(&self) -> std::option::Option<&str> {
+        self.topic.as_deref()
+    }
+    /// <p>The current notification state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::PropertyNotificationState> {
+        self.state.as_ref()
+    }
+}
+/// See [`PropertyNotification`](crate::model::PropertyNotification).
+pub mod property_notification {
+
+    /// A builder for [`PropertyNotification`](crate::model::PropertyNotification).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) topic: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::PropertyNotificationState>,
+    }
+    impl Builder {
+        /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
+        pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic = Some(input.into());
+            self
+        }
+        /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
+        pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic = input;
+            self
+        }
+        /// <p>The current notification state.</p>
+        pub fn state(mut self, input: crate::model::PropertyNotificationState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The current notification state.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::PropertyNotificationState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PropertyNotification`](crate::model::PropertyNotification).
+        pub fn build(self) -> crate::model::PropertyNotification {
+            crate::model::PropertyNotification {
+                topic: self.topic,
+                state: self.state,
+            }
+        }
+    }
+}
+impl PropertyNotification {
+    /// Creates a new builder-style object to manufacture [`PropertyNotification`](crate::model::PropertyNotification).
+    pub fn builder() -> crate::model::property_notification::Builder {
+        crate::model::property_notification::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ListAssetPropertiesFilter`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let listassetpropertiesfilter = unimplemented!();
+/// match listassetpropertiesfilter {
+///     ListAssetPropertiesFilter::All => { /* ... */ },
+///     ListAssetPropertiesFilter::Base => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `listassetpropertiesfilter` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ListAssetPropertiesFilter::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ListAssetPropertiesFilter::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ListAssetPropertiesFilter::NewFeature` is defined.
+/// Specifically, when `listassetpropertiesfilter` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ListAssetPropertiesFilter::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ListAssetPropertiesFilter {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Base,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ListAssetPropertiesFilter {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => ListAssetPropertiesFilter::All,
+            "BASE" => ListAssetPropertiesFilter::Base,
+            other => ListAssetPropertiesFilter::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for ListAssetPropertiesFilter {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ListAssetPropertiesFilter::from(s))
+    }
+}
+impl ListAssetPropertiesFilter {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ListAssetPropertiesFilter::All => "ALL",
+            ListAssetPropertiesFilter::Base => "BASE",
+            ListAssetPropertiesFilter::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ALL", "BASE"]
+    }
+}
+impl AsRef<str> for ListAssetPropertiesFilter {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Contains a summary of an asset model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7366,6 +7677,272 @@ impl AssetModelSummary {
     }
 }
 
+/// <p>Contains a summary of a property associated with a model.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AssetModelPropertySummary {
+    /// <p>The ID of the property.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The name of the property.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data type of the property.</p>
+    #[doc(hidden)]
+    pub data_type: std::option::Option<crate::model::PropertyDataType>,
+    /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
+    #[doc(hidden)]
+    pub data_type_spec: std::option::Option<std::string::String>,
+    /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
+    #[doc(hidden)]
+    pub unit: std::option::Option<std::string::String>,
+    /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::PropertyType>,
+    /// <p> The ID of the composite model that contains the asset model property. </p>
+    #[doc(hidden)]
+    pub asset_model_composite_model_id: std::option::Option<std::string::String>,
+}
+impl AssetModelPropertySummary {
+    /// <p>The ID of the property.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the property.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data type of the property.</p>
+    pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
+        self.data_type.as_ref()
+    }
+    /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
+    pub fn data_type_spec(&self) -> std::option::Option<&str> {
+        self.data_type_spec.as_deref()
+    }
+    /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+    /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PropertyType> {
+        self.r#type.as_ref()
+    }
+    /// <p> The ID of the composite model that contains the asset model property. </p>
+    pub fn asset_model_composite_model_id(&self) -> std::option::Option<&str> {
+        self.asset_model_composite_model_id.as_deref()
+    }
+}
+/// See [`AssetModelPropertySummary`](crate::model::AssetModelPropertySummary).
+pub mod asset_model_property_summary {
+
+    /// A builder for [`AssetModelPropertySummary`](crate::model::AssetModelPropertySummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) data_type: std::option::Option<crate::model::PropertyDataType>,
+        pub(crate) data_type_spec: std::option::Option<std::string::String>,
+        pub(crate) unit: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::PropertyType>,
+        pub(crate) asset_model_composite_model_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the property.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the property.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The name of the property.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the property.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The data type of the property.</p>
+        pub fn data_type(mut self, input: crate::model::PropertyDataType) -> Self {
+            self.data_type = Some(input);
+            self
+        }
+        /// <p>The data type of the property.</p>
+        pub fn set_data_type(
+            mut self,
+            input: std::option::Option<crate::model::PropertyDataType>,
+        ) -> Self {
+            self.data_type = input;
+            self
+        }
+        /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
+        pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_type_spec = Some(input.into());
+            self
+        }
+        /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
+        pub fn set_data_type_spec(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_type_spec = input;
+            self
+        }
+        /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
+        pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
+            self.unit = Some(input.into());
+            self
+        }
+        /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
+        pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.unit = input;
+            self
+        }
+        /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
+        pub fn r#type(mut self, input: crate::model::PropertyType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::PropertyType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p> The ID of the composite model that contains the asset model property. </p>
+        pub fn asset_model_composite_model_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.asset_model_composite_model_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the composite model that contains the asset model property. </p>
+        pub fn set_asset_model_composite_model_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.asset_model_composite_model_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssetModelPropertySummary`](crate::model::AssetModelPropertySummary).
+        pub fn build(self) -> crate::model::AssetModelPropertySummary {
+            crate::model::AssetModelPropertySummary {
+                id: self.id,
+                name: self.name,
+                data_type: self.data_type,
+                data_type_spec: self.data_type_spec,
+                unit: self.unit,
+                r#type: self.r#type,
+                asset_model_composite_model_id: self.asset_model_composite_model_id,
+            }
+        }
+    }
+}
+impl AssetModelPropertySummary {
+    /// Creates a new builder-style object to manufacture [`AssetModelPropertySummary`](crate::model::AssetModelPropertySummary).
+    pub fn builder() -> crate::model::asset_model_property_summary::Builder {
+        crate::model::asset_model_property_summary::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ListAssetModelPropertiesFilter`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let listassetmodelpropertiesfilter = unimplemented!();
+/// match listassetmodelpropertiesfilter {
+///     ListAssetModelPropertiesFilter::All => { /* ... */ },
+///     ListAssetModelPropertiesFilter::Base => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `listassetmodelpropertiesfilter` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ListAssetModelPropertiesFilter::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ListAssetModelPropertiesFilter::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ListAssetModelPropertiesFilter::NewFeature` is defined.
+/// Specifically, when `listassetmodelpropertiesfilter` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ListAssetModelPropertiesFilter::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ListAssetModelPropertiesFilter {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Base,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ListAssetModelPropertiesFilter {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => ListAssetModelPropertiesFilter::All,
+            "BASE" => ListAssetModelPropertiesFilter::Base,
+            other => ListAssetModelPropertiesFilter::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for ListAssetModelPropertiesFilter {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ListAssetModelPropertiesFilter::from(s))
+    }
+}
+impl ListAssetModelPropertiesFilter {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ListAssetModelPropertiesFilter::All => "ALL",
+            ListAssetModelPropertiesFilter::Base => "BASE",
+            ListAssetModelPropertiesFilter::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ALL", "BASE"]
+    }
+}
+impl AsRef<str> for ListAssetModelPropertiesFilter {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Contains an access policy that defines an identity's access to an IoT SiteWise Monitor resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7373,7 +7950,7 @@ pub struct AccessPolicySummary {
     /// <p>The ID of the access policy.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).</p>
+    /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
     #[doc(hidden)]
     pub identity: std::option::Option<crate::model::Identity>,
     /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
@@ -7394,7 +7971,7 @@ impl AccessPolicySummary {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).</p>
+    /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
     pub fn identity(&self) -> std::option::Option<&crate::model::Identity> {
         self.identity.as_ref()
     }
@@ -7439,12 +8016,12 @@ pub mod access_policy_summary {
             self.id = input;
             self
         }
-        /// <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).</p>
+        /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
         pub fn identity(mut self, input: crate::model::Identity) -> Self {
             self.identity = Some(input);
             self
         }
-        /// <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).</p>
+        /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
         pub fn set_identity(mut self, input: std::option::Option<crate::model::Identity>) -> Self {
             self.identity = input;
             self
@@ -9174,6 +9751,9 @@ pub struct CompositeModelProperty {
     /// <p>Contains asset property information.</p>
     #[doc(hidden)]
     pub asset_property: std::option::Option<crate::model::Property>,
+    /// <p> The ID of the composite model that contains the property. </p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
 }
 impl CompositeModelProperty {
     /// <p>The name of the property.</p>
@@ -9188,6 +9768,10 @@ impl CompositeModelProperty {
     pub fn asset_property(&self) -> std::option::Option<&crate::model::Property> {
         self.asset_property.as_ref()
     }
+    /// <p> The ID of the composite model that contains the property. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 /// See [`CompositeModelProperty`](crate::model::CompositeModelProperty).
 pub mod composite_model_property {
@@ -9198,6 +9782,7 @@ pub mod composite_model_property {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) asset_property: std::option::Option<crate::model::Property>,
+        pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the property.</p>
@@ -9233,12 +9818,23 @@ pub mod composite_model_property {
             self.asset_property = input;
             self
         }
+        /// <p> The ID of the composite model that contains the property. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the composite model that contains the property. </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CompositeModelProperty`](crate::model::CompositeModelProperty).
         pub fn build(self) -> crate::model::CompositeModelProperty {
             crate::model::CompositeModelProperty {
                 name: self.name,
                 r#type: self.r#type,
                 asset_property: self.asset_property,
+                id: self.id,
             }
         }
     }
@@ -9418,76 +10014,6 @@ impl Property {
     }
 }
 
-/// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PropertyNotification {
-    /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
-    #[doc(hidden)]
-    pub topic: std::option::Option<std::string::String>,
-    /// <p>The current notification state.</p>
-    #[doc(hidden)]
-    pub state: std::option::Option<crate::model::PropertyNotificationState>,
-}
-impl PropertyNotification {
-    /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
-    pub fn topic(&self) -> std::option::Option<&str> {
-        self.topic.as_deref()
-    }
-    /// <p>The current notification state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::PropertyNotificationState> {
-        self.state.as_ref()
-    }
-}
-/// See [`PropertyNotification`](crate::model::PropertyNotification).
-pub mod property_notification {
-
-    /// A builder for [`PropertyNotification`](crate::model::PropertyNotification).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) topic: std::option::Option<std::string::String>,
-        pub(crate) state: std::option::Option<crate::model::PropertyNotificationState>,
-    }
-    impl Builder {
-        /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
-        pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
-            self.topic = Some(input.into());
-            self
-        }
-        /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
-        pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic = input;
-            self
-        }
-        /// <p>The current notification state.</p>
-        pub fn state(mut self, input: crate::model::PropertyNotificationState) -> Self {
-            self.state = Some(input);
-            self
-        }
-        /// <p>The current notification state.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::PropertyNotificationState>,
-        ) -> Self {
-            self.state = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`PropertyNotification`](crate::model::PropertyNotification).
-        pub fn build(self) -> crate::model::PropertyNotification {
-            crate::model::PropertyNotification {
-                topic: self.topic,
-                state: self.state,
-            }
-        }
-    }
-}
-impl PropertyNotification {
-    /// Creates a new builder-style object to manufacture [`PropertyNotification`](crate::model::PropertyNotification).
-    pub fn builder() -> crate::model::property_notification::Builder {
-        crate::model::property_notification::Builder::default()
-    }
-}
-
 /// <p>Contains information about a composite model in an asset. This object contains the asset's properties that you define in the composite model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9504,6 +10030,9 @@ pub struct AssetCompositeModel {
     /// <p>The asset properties that this composite model defines.</p>
     #[doc(hidden)]
     pub properties: std::option::Option<std::vec::Vec<crate::model::AssetProperty>>,
+    /// <p> The ID of the asset composite model. </p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
 }
 impl AssetCompositeModel {
     /// <p>The name of the composite model.</p>
@@ -9522,6 +10051,10 @@ impl AssetCompositeModel {
     pub fn properties(&self) -> std::option::Option<&[crate::model::AssetProperty]> {
         self.properties.as_deref()
     }
+    /// <p> The ID of the asset composite model. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 /// See [`AssetCompositeModel`](crate::model::AssetCompositeModel).
 pub mod asset_composite_model {
@@ -9533,6 +10066,7 @@ pub mod asset_composite_model {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) properties: std::option::Option<std::vec::Vec<crate::model::AssetProperty>>,
+        pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the composite model.</p>
@@ -9584,6 +10118,16 @@ pub mod asset_composite_model {
             self.properties = input;
             self
         }
+        /// <p> The ID of the asset composite model. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the asset composite model. </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssetCompositeModel`](crate::model::AssetCompositeModel).
         pub fn build(self) -> crate::model::AssetCompositeModel {
             crate::model::AssetCompositeModel {
@@ -9591,6 +10135,7 @@ pub mod asset_composite_model {
                 description: self.description,
                 r#type: self.r#type,
                 properties: self.properties,
+                id: self.id,
             }
         }
     }

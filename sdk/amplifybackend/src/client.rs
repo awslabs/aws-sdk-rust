@@ -344,6 +344,7 @@ impl Client {
     /// - On success, responds with [`GetBackendApiModelsOutput`](crate::output::GetBackendApiModelsOutput) with field(s):
     ///   - [`models(Option<String>)`](crate::output::GetBackendApiModelsOutput::models): <p>Stringified JSON of the datastore model.</p>
     ///   - [`status(Option<Status>)`](crate::output::GetBackendApiModelsOutput::status): <p>The current status of the request.</p>
+    ///   - [`model_introspection_schema(Option<String>)`](crate::output::GetBackendApiModelsOutput::model_introspection_schema): <p>Stringified JSON of the model introspection schema for an existing backend API resource.</p>
     /// - On failure, responds with [`SdkError<GetBackendAPIModelsError>`](crate::error::GetBackendAPIModelsError)
     pub fn get_backend_api_models(&self) -> fluent_builders::GetBackendAPIModels {
         fluent_builders::GetBackendAPIModels::new(self.handle.clone())
@@ -2109,7 +2110,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBackendAPIModels`.
     ///
-    /// <p>Generates a model schema for existing backend API resource.</p>
+    /// <p>Gets a model introspection schema for an existing backend API resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackendAPIModels {
         handle: std::sync::Arc<super::Handle>,

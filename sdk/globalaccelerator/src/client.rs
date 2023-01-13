@@ -103,6 +103,18 @@ impl Client {
     pub fn add_custom_routing_endpoints(&self) -> fluent_builders::AddCustomRoutingEndpoints {
         fluent_builders::AddCustomRoutingEndpoints::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`AddEndpoints`](crate::client::fluent_builders::AddEndpoints) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_configurations(Vec<EndpointConfiguration>)`](crate::client::fluent_builders::AddEndpoints::endpoint_configurations) / [`set_endpoint_configurations(Option<Vec<EndpointConfiguration>>)`](crate::client::fluent_builders::AddEndpoints::set_endpoint_configurations): <p>The list of endpoint objects.</p>
+    ///   - [`endpoint_group_arn(impl Into<String>)`](crate::client::fluent_builders::AddEndpoints::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::client::fluent_builders::AddEndpoints::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    /// - On success, responds with [`AddEndpointsOutput`](crate::output::AddEndpointsOutput) with field(s):
+    ///   - [`endpoint_descriptions(Option<Vec<EndpointDescription>>)`](crate::output::AddEndpointsOutput::endpoint_descriptions): <p>The list of endpoint objects.</p>
+    ///   - [`endpoint_group_arn(Option<String>)`](crate::output::AddEndpointsOutput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    /// - On failure, responds with [`SdkError<AddEndpointsError>`](crate::error::AddEndpointsError)
+    pub fn add_endpoints(&self) -> fluent_builders::AddEndpoints {
+        fluent_builders::AddEndpoints::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`AdvertiseByoipCidr`](crate::client::fluent_builders::AdvertiseByoipCidr) operation.
     ///
     /// - The fluent builder is configurable:
@@ -563,6 +575,17 @@ impl Client {
     pub fn remove_custom_routing_endpoints(&self) -> fluent_builders::RemoveCustomRoutingEndpoints {
         fluent_builders::RemoveCustomRoutingEndpoints::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`RemoveEndpoints`](crate::client::fluent_builders::RemoveEndpoints) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_identifiers(Vec<EndpointIdentifier>)`](crate::client::fluent_builders::RemoveEndpoints::endpoint_identifiers) / [`set_endpoint_identifiers(Option<Vec<EndpointIdentifier>>)`](crate::client::fluent_builders::RemoveEndpoints::set_endpoint_identifiers): <p>The identifiers of the endpoints that you want to remove.</p>
+    ///   - [`endpoint_group_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveEndpoints::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::client::fluent_builders::RemoveEndpoints::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    /// - On success, responds with [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveEndpointsError>`](crate::error::RemoveEndpointsError)
+    pub fn remove_endpoints(&self) -> fluent_builders::RemoveEndpoints {
+        fluent_builders::RemoveEndpoints::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -794,6 +817,107 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
+        pub fn set_endpoint_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_group_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `AddEndpoints`.
+    ///
+    /// <p>Add endpoints to an endpoint group. The <code>AddEndpoints</code> API operation is the recommended option for adding endpoints. The alternative options are to add endpoints when you create an endpoint group (with the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html">CreateEndpointGroup</a> API) or when you update an endpoint group (with the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a> API). </p>
+    /// <p>There are two advantages to using <code>AddEndpoints</code> to add endpoints:</p>
+    /// <ul>
+    /// <li> <p>It's faster, because Global Accelerator only has to resolve the new endpoints that you're adding.</p> </li>
+    /// <li> <p>It's more convenient, because you don't need to specify all of the current endpoints that are already in the endpoint group in addition to the new endpoints that you want to add.</p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AddEndpoints {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::add_endpoints_input::Builder,
+    }
+    impl AddEndpoints {
+        /// Creates a new `AddEndpoints`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::AddEndpoints,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::AddEndpointsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AddEndpointsOutput,
+            aws_smithy_http::result::SdkError<crate::error::AddEndpointsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `EndpointConfigurations`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_configurations`](Self::set_endpoint_configurations).
+        ///
+        /// <p>The list of endpoint objects.</p>
+        pub fn endpoint_configurations(
+            mut self,
+            input: crate::model::EndpointConfiguration,
+        ) -> Self {
+            self.inner = self.inner.endpoint_configurations(input);
+            self
+        }
+        /// <p>The list of endpoint objects.</p>
+        pub fn set_endpoint_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointConfiguration>>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_configurations(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4346,6 +4470,104 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
+        pub fn set_endpoint_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_group_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `RemoveEndpoints`.
+    ///
+    /// <p>Remove endpoints from an endpoint group. </p>
+    /// <p>The <code>RemoveEndpoints</code> API operation is the recommended option for removing endpoints. The alternative is to remove endpoints by updating an endpoint group by using the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a> API operation. There are two advantages to using <code>AddEndpoints</code> to remove endpoints instead:</p>
+    /// <ul>
+    /// <li> <p>It's more convenient, because you only need to specify the endpoints that you want to remove. With the <code>UpdateEndpointGroup</code> API operation, you must specify all of the endpoints in the endpoint group except the ones that you want to remove from the group.</p> </li>
+    /// <li> <p>It's faster, because Global Accelerator doesn't need to resolve any endpoints. With the <code>UpdateEndpointGroup</code> API operation, Global Accelerator must resolve all of the endpoints that remain in the group.</p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RemoveEndpoints {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::remove_endpoints_input::Builder,
+    }
+    impl RemoveEndpoints {
+        /// Creates a new `RemoveEndpoints`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::RemoveEndpoints,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::RemoveEndpointsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RemoveEndpointsOutput,
+            aws_smithy_http::result::SdkError<crate::error::RemoveEndpointsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `EndpointIdentifiers`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_identifiers`](Self::set_endpoint_identifiers).
+        ///
+        /// <p>The identifiers of the endpoints that you want to remove.</p>
+        pub fn endpoint_identifiers(mut self, input: crate::model::EndpointIdentifier) -> Self {
+            self.inner = self.inner.endpoint_identifiers(input);
+            self
+        }
+        /// <p>The identifiers of the endpoints that you want to remove.</p>
+        pub fn set_endpoint_identifiers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointIdentifier>>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_identifiers(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -666,6 +666,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBlockPublicAccessConf
     }
 }
 
+/// Operation shape for `GetClusterSessionCredentials`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_cluster_session_credentials`](crate::client::Client::get_cluster_session_credentials).
+///
+/// See [`crate::client::fluent_builders::GetClusterSessionCredentials`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetClusterSessionCredentials {
+    _private: (),
+}
+impl GetClusterSessionCredentials {
+    /// Creates a new builder-style object to manufacture [`GetClusterSessionCredentialsInput`](crate::input::GetClusterSessionCredentialsInput).
+    pub fn builder() -> crate::input::get_cluster_session_credentials_input::Builder {
+        crate::input::get_cluster_session_credentials_input::Builder::default()
+    }
+    /// Creates a new `GetClusterSessionCredentials` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetClusterSessionCredentials {
+    type Output = std::result::Result<
+        crate::output::GetClusterSessionCredentialsOutput,
+        crate::error::GetClusterSessionCredentialsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_cluster_session_credentials_error(response)
+        } else {
+            crate::operation_deser::parse_get_cluster_session_credentials_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetManagedScalingPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

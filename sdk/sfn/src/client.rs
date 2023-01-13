@@ -94,8 +94,8 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateActivity`](crate::client::fluent_builders::CreateActivity) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateActivity::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateActivity::set_name): <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>  <p>A name must <i>not</i> contain:</p>  <ul>   <li> <p>white space</p> </li>   <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>   <li> <p>wildcard characters <code>? *</code> </p> </li>   <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>   <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>  </ul>  <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateActivity::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateActivity::set_tags): <p>The list of tags to add to a resource.</p>  <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>  <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateActivity::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateActivity::set_name): <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>  <p>A name must <i>not</i> contain:</p>  <ul>   <li> <p>white space</p> </li>   <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>   <li> <p>wildcard characters <code>? *</code> </p> </li>   <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>   <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>  </ul>  <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateActivity::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateActivity::set_tags): <p>The list of tags to add to a resource.</p>  <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>  <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     /// - On success, responds with [`CreateActivityOutput`](crate::output::CreateActivityOutput) with field(s):
     ///   - [`activity_arn(Option<String>)`](crate::output::CreateActivityOutput::activity_arn): <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::CreateActivityOutput::creation_date): <p>The date the activity is created.</p>
@@ -110,9 +110,9 @@ impl Client {
     ///   - [`definition(impl Into<String>)`](crate::client::fluent_builders::CreateStateMachine::definition) / [`set_definition(Option<String>)`](crate::client::fluent_builders::CreateStateMachine::set_definition): <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStateMachine::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStateMachine::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
     ///   - [`r#type(StateMachineType)`](crate::client::fluent_builders::CreateStateMachine::type) / [`set_type(Option<StateMachineType>)`](crate::client::fluent_builders::CreateStateMachine::set_type): <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
-    ///   - [`logging_configuration(LoggingConfiguration)`](crate::client::fluent_builders::CreateStateMachine::logging_configuration) / [`set_logging_configuration(Option<LoggingConfiguration>)`](crate::client::fluent_builders::CreateStateMachine::set_logging_configuration): <p>Defines what execution history events are logged and where they are logged.</p> <note>   <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS Step Functions User Guide.</p>  </note>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateStateMachine::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateStateMachine::set_tags): <p>Tags to be added when creating a state machine.</p>  <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>  <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    ///   - [`tracing_configuration(TracingConfiguration)`](crate::client::fluent_builders::CreateStateMachine::tracing_configuration) / [`set_tracing_configuration(Option<TracingConfiguration>)`](crate::client::fluent_builders::CreateStateMachine::set_tracing_configuration): <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    ///   - [`logging_configuration(LoggingConfiguration)`](crate::client::fluent_builders::CreateStateMachine::logging_configuration) / [`set_logging_configuration(Option<LoggingConfiguration>)`](crate::client::fluent_builders::CreateStateMachine::set_logging_configuration): <p>Defines what execution history events are logged and where they are logged.</p> <note>   <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateStateMachine::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateStateMachine::set_tags): <p>Tags to be added when creating a state machine.</p>  <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>  <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
+    ///   - [`tracing_configuration(TracingConfiguration)`](crate::client::fluent_builders::CreateStateMachine::tracing_configuration) / [`set_tracing_configuration(Option<TracingConfiguration>)`](crate::client::fluent_builders::CreateStateMachine::set_tracing_configuration): <p>Selects whether X-Ray tracing is enabled.</p>
     /// - On success, responds with [`CreateStateMachineOutput`](crate::output::CreateStateMachineOutput) with field(s):
     ///   - [`state_machine_arn(Option<String>)`](crate::output::CreateStateMachineOutput::state_machine_arn): <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::CreateStateMachineOutput::creation_date): <p>The date the state machine is created.</p>
@@ -167,10 +167,32 @@ impl Client {
     ///   - [`input_details(Option<CloudWatchEventsExecutionDataDetails>)`](crate::output::DescribeExecutionOutput::input_details): <p>Provides details about execution input or output.</p>
     ///   - [`output(Option<String>)`](crate::output::DescribeExecutionOutput::output): <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>   <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>  </note>
     ///   - [`output_details(Option<CloudWatchEventsExecutionDataDetails>)`](crate::output::DescribeExecutionOutput::output_details): <p>Provides details about execution input or output.</p>
-    ///   - [`trace_header(Option<String>)`](crate::output::DescribeExecutionOutput::trace_header): <p>The AWS X-Ray trace header that was passed to the execution.</p>
+    ///   - [`trace_header(Option<String>)`](crate::output::DescribeExecutionOutput::trace_header): <p>The X-Ray trace header that was passed to the execution.</p>
+    ///   - [`map_run_arn(Option<String>)`](crate::output::DescribeExecutionOutput::map_run_arn): <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
+    ///   - [`error(Option<String>)`](crate::output::DescribeExecutionOutput::error): <p>The error string if the state machine execution failed.</p>
+    ///   - [`cause(Option<String>)`](crate::output::DescribeExecutionOutput::cause): <p>The cause string if the state machine execution failed.</p>
     /// - On failure, responds with [`SdkError<DescribeExecutionError>`](crate::error::DescribeExecutionError)
     pub fn describe_execution(&self) -> fluent_builders::DescribeExecution {
         fluent_builders::DescribeExecution::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeMapRun`](crate::client::fluent_builders::DescribeMapRun) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`map_run_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeMapRun::map_run_arn) / [`set_map_run_arn(Option<String>)`](crate::client::fluent_builders::DescribeMapRun::set_map_run_arn): <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
+    /// - On success, responds with [`DescribeMapRunOutput`](crate::output::DescribeMapRunOutput) with field(s):
+    ///   - [`map_run_arn(Option<String>)`](crate::output::DescribeMapRunOutput::map_run_arn): <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
+    ///   - [`execution_arn(Option<String>)`](crate::output::DescribeMapRunOutput::execution_arn): <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
+    ///   - [`status(Option<MapRunStatus>)`](crate::output::DescribeMapRunOutput::status): <p>The current status of the Map Run.</p>
+    ///   - [`start_date(Option<DateTime>)`](crate::output::DescribeMapRunOutput::start_date): <p>The date when the Map Run was started.</p>
+    ///   - [`stop_date(Option<DateTime>)`](crate::output::DescribeMapRunOutput::stop_date): <p>The date when the Map Run was stopped.</p>
+    ///   - [`max_concurrency(i32)`](crate::output::DescribeMapRunOutput::max_concurrency): <p>The maximum number of child workflow executions configured to run in parallel for the Map Run at the same time.</p>
+    ///   - [`tolerated_failure_percentage(f32)`](crate::output::DescribeMapRunOutput::tolerated_failure_percentage): <p>The maximum percentage of failed child workflow executions before the Map Run fails.</p>
+    ///   - [`tolerated_failure_count(i64)`](crate::output::DescribeMapRunOutput::tolerated_failure_count): <p>The maximum number of failed child workflow executions before the Map Run fails.</p>
+    ///   - [`item_counts(Option<MapRunItemCounts>)`](crate::output::DescribeMapRunOutput::item_counts): <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
+    ///   - [`execution_counts(Option<MapRunExecutionCounts>)`](crate::output::DescribeMapRunOutput::execution_counts): <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
+    /// - On failure, responds with [`SdkError<DescribeMapRunError>`](crate::error::DescribeMapRunError)
+    pub fn describe_map_run(&self) -> fluent_builders::DescribeMapRun {
+        fluent_builders::DescribeMapRun::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeStateMachine`](crate::client::fluent_builders::DescribeStateMachine) operation.
     ///
@@ -181,11 +203,12 @@ impl Client {
     ///   - [`name(Option<String>)`](crate::output::DescribeStateMachineOutput::name): <p>The name of the state machine.</p>  <p>A name must <i>not</i> contain:</p>  <ul>   <li> <p>white space</p> </li>   <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>   <li> <p>wildcard characters <code>? *</code> </p> </li>   <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>   <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>  </ul>  <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     ///   - [`status(Option<StateMachineStatus>)`](crate::output::DescribeStateMachineOutput::status): <p>The current status of the state machine.</p>
     ///   - [`definition(Option<String>)`](crate::output::DescribeStateMachineOutput::definition): <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeStateMachineOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeStateMachineOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
     ///   - [`r#type(Option<StateMachineType>)`](crate::output::DescribeStateMachineOutput::type): <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeStateMachineOutput::creation_date): <p>The date the state machine is created.</p>
     ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::output::DescribeStateMachineOutput::logging_configuration): <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    ///   - [`tracing_configuration(Option<TracingConfiguration>)`](crate::output::DescribeStateMachineOutput::tracing_configuration): <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    ///   - [`tracing_configuration(Option<TracingConfiguration>)`](crate::output::DescribeStateMachineOutput::tracing_configuration): <p>Selects whether X-Ray tracing is enabled.</p>
+    ///   - [`label(Option<String>)`](crate::output::DescribeStateMachineOutput::label): <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.</p>
     /// - On failure, responds with [`SdkError<DescribeStateMachineError>`](crate::error::DescribeStateMachineError)
     pub fn describe_state_machine(&self) -> fluent_builders::DescribeStateMachine {
         fluent_builders::DescribeStateMachine::new(self.handle.clone())
@@ -201,7 +224,9 @@ impl Client {
     ///   - [`role_arn(Option<String>)`](crate::output::DescribeStateMachineForExecutionOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
     ///   - [`update_date(Option<DateTime>)`](crate::output::DescribeStateMachineForExecutionOutput::update_date): <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
     ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::output::DescribeStateMachineForExecutionOutput::logging_configuration): <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    ///   - [`tracing_configuration(Option<TracingConfiguration>)`](crate::output::DescribeStateMachineForExecutionOutput::tracing_configuration): <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    ///   - [`tracing_configuration(Option<TracingConfiguration>)`](crate::output::DescribeStateMachineForExecutionOutput::tracing_configuration): <p>Selects whether X-Ray tracing is enabled.</p>
+    ///   - [`map_run_arn(Option<String>)`](crate::output::DescribeStateMachineForExecutionOutput::map_run_arn): <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+    ///   - [`label(Option<String>)`](crate::output::DescribeStateMachineForExecutionOutput::label): <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
     /// - On failure, responds with [`SdkError<DescribeStateMachineForExecutionError>`](crate::error::DescribeStateMachineForExecutionError)
     pub fn describe_state_machine_for_execution(
         &self,
@@ -253,16 +278,31 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExecutions::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`state_machine_arn(impl Into<String>)`](crate::client::fluent_builders::ListExecutions::state_machine_arn) / [`set_state_machine_arn(Option<String>)`](crate::client::fluent_builders::ListExecutions::set_state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
+    ///   - [`state_machine_arn(impl Into<String>)`](crate::client::fluent_builders::ListExecutions::state_machine_arn) / [`set_state_machine_arn(Option<String>)`](crate::client::fluent_builders::ListExecutions::set_state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>  <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
     ///   - [`status_filter(ExecutionStatus)`](crate::client::fluent_builders::ListExecutions::status_filter) / [`set_status_filter(Option<ExecutionStatus>)`](crate::client::fluent_builders::ListExecutions::set_status_filter): <p>If specified, only list the executions whose current execution status matches the given filter.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExecutions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListExecutions::set_max_results): <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>  <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExecutions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExecutions::set_next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    ///   - [`map_run_arn(impl Into<String>)`](crate::client::fluent_builders::ListExecutions::map_run_arn) / [`set_map_run_arn(Option<String>)`](crate::client::fluent_builders::ListExecutions::set_map_run_arn): <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p>  <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
     /// - On success, responds with [`ListExecutionsOutput`](crate::output::ListExecutionsOutput) with field(s):
     ///   - [`executions(Option<Vec<ExecutionListItem>>)`](crate::output::ListExecutionsOutput::executions): <p>The list of matching executions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListExecutionsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     /// - On failure, responds with [`SdkError<ListExecutionsError>`](crate::error::ListExecutionsError)
     pub fn list_executions(&self) -> fluent_builders::ListExecutions {
         fluent_builders::ListExecutions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListMapRuns`](crate::client::fluent_builders::ListMapRuns) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMapRuns::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`execution_arn(impl Into<String>)`](crate::client::fluent_builders::ListMapRuns::execution_arn) / [`set_execution_arn(Option<String>)`](crate::client::fluent_builders::ListMapRuns::set_execution_arn): <p>The Amazon Resource Name (ARN) of the execution for which the Map Runs must be listed.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMapRuns::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListMapRuns::set_max_results): <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>  <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMapRuns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMapRuns::set_next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// - On success, responds with [`ListMapRunsOutput`](crate::output::ListMapRunsOutput) with field(s):
+    ///   - [`map_runs(Option<Vec<MapRunListItem>>)`](crate::output::ListMapRunsOutput::map_runs): <p>An array that lists information related to a Map Run, such as the Amazon Resource Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMapRunsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// - On failure, responds with [`SdkError<ListMapRunsError>`](crate::error::ListMapRunsError)
+    pub fn list_map_runs(&self) -> fluent_builders::ListMapRuns {
+        fluent_builders::ListMapRuns::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListStateMachines`](crate::client::fluent_builders::ListStateMachines) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStateMachines::into_paginator).
@@ -324,9 +364,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`state_machine_arn(impl Into<String>)`](crate::client::fluent_builders::StartExecution::state_machine_arn) / [`set_state_machine_arn(Option<String>)`](crate::client::fluent_builders::StartExecution::set_state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartExecution::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartExecution::set_name): <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>  <p>A name must <i>not</i> contain:</p>  <ul>   <li> <p>white space</p> </li>   <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>   <li> <p>wildcard characters <code>? *</code> </p> </li>   <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>   <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>  </ul>  <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartExecution::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartExecution::set_name): <p>The name of the execution. This name must be unique for your Amazon Web Services account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>  <p>A name must <i>not</i> contain:</p>  <ul>   <li> <p>white space</p> </li>   <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>   <li> <p>wildcard characters <code>? *</code> </p> </li>   <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>   <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>  </ul>  <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     ///   - [`input(impl Into<String>)`](crate::client::fluent_builders::StartExecution::input) / [`set_input(Option<String>)`](crate::client::fluent_builders::StartExecution::set_input): <p>The string that contains the JSON input data for the execution, for example:</p>  <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>   <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>  </note>  <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    ///   - [`trace_header(impl Into<String>)`](crate::client::fluent_builders::StartExecution::trace_header) / [`set_trace_header(Option<String>)`](crate::client::fluent_builders::StartExecution::set_trace_header): <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
+    ///   - [`trace_header(impl Into<String>)`](crate::client::fluent_builders::StartExecution::trace_header) / [`set_trace_header(Option<String>)`](crate::client::fluent_builders::StartExecution::set_trace_header): <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
     /// - On success, responds with [`StartExecutionOutput`](crate::output::StartExecutionOutput) with field(s):
     ///   - [`execution_arn(Option<String>)`](crate::output::StartExecutionOutput::execution_arn): <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     ///   - [`start_date(Option<DateTime>)`](crate::output::StartExecutionOutput::start_date): <p>The date the execution is started.</p>
@@ -340,7 +380,7 @@ impl Client {
     ///   - [`state_machine_arn(impl Into<String>)`](crate::client::fluent_builders::StartSyncExecution::state_machine_arn) / [`set_state_machine_arn(Option<String>)`](crate::client::fluent_builders::StartSyncExecution::set_state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartSyncExecution::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartSyncExecution::set_name): <p>The name of the execution.</p>
     ///   - [`input(impl Into<String>)`](crate::client::fluent_builders::StartSyncExecution::input) / [`set_input(Option<String>)`](crate::client::fluent_builders::StartSyncExecution::set_input): <p>The string that contains the JSON input data for the execution, for example:</p>  <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>   <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>  </note>  <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    ///   - [`trace_header(impl Into<String>)`](crate::client::fluent_builders::StartSyncExecution::trace_header) / [`set_trace_header(Option<String>)`](crate::client::fluent_builders::StartSyncExecution::set_trace_header): <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
+    ///   - [`trace_header(impl Into<String>)`](crate::client::fluent_builders::StartSyncExecution::trace_header) / [`set_trace_header(Option<String>)`](crate::client::fluent_builders::StartSyncExecution::set_trace_header): <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
     /// - On success, responds with [`StartSyncExecutionOutput`](crate::output::StartSyncExecutionOutput) with field(s):
     ///   - [`execution_arn(Option<String>)`](crate::output::StartSyncExecutionOutput::execution_arn): <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     ///   - [`state_machine_arn(Option<String>)`](crate::output::StartSyncExecutionOutput::state_machine_arn): <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
@@ -354,7 +394,7 @@ impl Client {
     ///   - [`input_details(Option<CloudWatchEventsExecutionDataDetails>)`](crate::output::StartSyncExecutionOutput::input_details): <p>Provides details about execution input or output.</p>
     ///   - [`output(Option<String>)`](crate::output::StartSyncExecutionOutput::output): <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>   <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>  </note>
     ///   - [`output_details(Option<CloudWatchEventsExecutionDataDetails>)`](crate::output::StartSyncExecutionOutput::output_details): <p>Provides details about execution input or output.</p>
-    ///   - [`trace_header(Option<String>)`](crate::output::StartSyncExecutionOutput::trace_header): <p>The AWS X-Ray trace header that was passed to the execution.</p>
+    ///   - [`trace_header(Option<String>)`](crate::output::StartSyncExecutionOutput::trace_header): <p>The X-Ray trace header that was passed to the execution.</p>
     ///   - [`billing_details(Option<BillingDetails>)`](crate::output::StartSyncExecutionOutput::billing_details): <p>An object that describes workflow billing details, including billed duration and memory use.</p>
     /// - On failure, responds with [`SdkError<StartSyncExecutionError>`](crate::error::StartSyncExecutionError)
     pub fn start_sync_execution(&self) -> fluent_builders::StartSyncExecution {
@@ -394,6 +434,19 @@ impl Client {
     pub fn untag_resource(&self) -> fluent_builders::UntagResource {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateMapRun`](crate::client::fluent_builders::UpdateMapRun) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`map_run_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateMapRun::map_run_arn) / [`set_map_run_arn(Option<String>)`](crate::client::fluent_builders::UpdateMapRun::set_map_run_arn): <p>The Amazon Resource Name (ARN) of a Map Run.</p>
+    ///   - [`max_concurrency(i32)`](crate::client::fluent_builders::UpdateMapRun::max_concurrency) / [`set_max_concurrency(Option<i32>)`](crate::client::fluent_builders::UpdateMapRun::set_max_concurrency): <p>The maximum number of child workflow executions that can be specified to run in parallel for the Map Run at the same time.</p>
+    ///   - [`tolerated_failure_percentage(f32)`](crate::client::fluent_builders::UpdateMapRun::tolerated_failure_percentage) / [`set_tolerated_failure_percentage(Option<f32>)`](crate::client::fluent_builders::UpdateMapRun::set_tolerated_failure_percentage): <p>The maximum percentage of failed items before the Map Run fails.</p>
+    ///   - [`tolerated_failure_count(i64)`](crate::client::fluent_builders::UpdateMapRun::tolerated_failure_count) / [`set_tolerated_failure_count(Option<i64>)`](crate::client::fluent_builders::UpdateMapRun::set_tolerated_failure_count): <p>The maximum number of failed items before the Map Run fails.</p>
+    /// - On success, responds with [`UpdateMapRunOutput`](crate::output::UpdateMapRunOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateMapRunError>`](crate::error::UpdateMapRunError)
+    pub fn update_map_run(&self) -> fluent_builders::UpdateMapRun {
+        fluent_builders::UpdateMapRun::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateStateMachine`](crate::client::fluent_builders::UpdateStateMachine) operation.
     ///
     /// - The fluent builder is configurable:
@@ -401,7 +454,7 @@ impl Client {
     ///   - [`definition(impl Into<String>)`](crate::client::fluent_builders::UpdateStateMachine::definition) / [`set_definition(Option<String>)`](crate::client::fluent_builders::UpdateStateMachine::set_definition): <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStateMachine::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStateMachine::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
     ///   - [`logging_configuration(LoggingConfiguration)`](crate::client::fluent_builders::UpdateStateMachine::logging_configuration) / [`set_logging_configuration(Option<LoggingConfiguration>)`](crate::client::fluent_builders::UpdateStateMachine::set_logging_configuration): <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    ///   - [`tracing_configuration(TracingConfiguration)`](crate::client::fluent_builders::UpdateStateMachine::tracing_configuration) / [`set_tracing_configuration(Option<TracingConfiguration>)`](crate::client::fluent_builders::UpdateStateMachine::set_tracing_configuration): <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    ///   - [`tracing_configuration(TracingConfiguration)`](crate::client::fluent_builders::UpdateStateMachine::tracing_configuration) / [`set_tracing_configuration(Option<TracingConfiguration>)`](crate::client::fluent_builders::UpdateStateMachine::set_tracing_configuration): <p>Selects whether X-Ray tracing is enabled.</p>
     /// - On success, responds with [`UpdateStateMachineOutput`](crate::output::UpdateStateMachineOutput) with field(s):
     ///   - [`update_date(Option<DateTime>)`](crate::output::UpdateStateMachineOutput::update_date): <p>The date and time the state machine was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateStateMachineError>`](crate::error::UpdateStateMachineError)
@@ -418,7 +471,7 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `CreateActivity`.
     ///
-    /// <p>Creates an activity. An activity is a task that you write in any programming language and host on any machine that has access to AWS Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.</p> <note>
+    /// <p>Creates an activity. An activity is a task that you write in any programming language and host on any machine that has access to Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note> <note>
     /// <p> <code>CreateActivity</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it was already created. <code>CreateActivity</code>'s idempotency check is based on the activity <code>name</code>. If a following request has different <code>tags</code> values, Step Functions will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>tags</code> will not be updated, even if they are different.</p>
@@ -482,7 +535,7 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+        /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
         /// <li> <p>white space</p> </li>
@@ -496,7 +549,7 @@ pub mod fluent_builders {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+        /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
         /// <li> <p>white space</p> </li>
@@ -515,14 +568,14 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags to add to a resource.</p>
-        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
+        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
         /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>The list of tags to add to a resource.</p>
-        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
+        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
         /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn set_tags(
             mut self,
@@ -534,7 +587,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateStateMachine`.
     ///
-    /// <p>Creates a state machine. A state machine consists of a collection of states that can do work (<code>Task</code> states), determine to which states to transition next (<code>Choice</code> states), stop an execution with an error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured language. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> in the AWS Step Functions User Guide.</p> <note>
+    /// <p>Creates a state machine. A state machine consists of a collection of states that can do work (<code>Task</code> states), determine to which states to transition next (<code>Choice</code> states), stop an execution with an error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured language. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> in the Step Functions User Guide.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note> <note>
     /// <p> <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code> and <code>TracingConfiguration</code>. If a following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are different.</p>
@@ -660,14 +713,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
-        /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS Step Functions User Guide.</p>
+        /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
         /// </note>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
             self.inner = self.inner.logging_configuration(input);
             self
         }
         /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
-        /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS Step Functions User Guide.</p>
+        /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
         /// </note>
         pub fn set_logging_configuration(
             mut self,
@@ -681,14 +734,14 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to be added when creating a state machine.</p>
-        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
+        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
         /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>Tags to be added when creating a state machine.</p>
-        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
+        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
         /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn set_tags(
             mut self,
@@ -697,12 +750,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+        /// <p>Selects whether X-Ray tracing is enabled.</p>
         pub fn tracing_configuration(mut self, input: crate::model::TracingConfiguration) -> Self {
             self.inner = self.inner.tracing_configuration(input);
             self
         }
-        /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+        /// <p>Selects whether X-Ray tracing is enabled.</p>
         pub fn set_tracing_configuration(
             mut self,
             input: std::option::Option<crate::model::TracingConfiguration>,
@@ -786,8 +839,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteStateMachine`.
     ///
-    /// <p>Deletes a state machine. This is an asynchronous operation: It sets the state machine's status to <code>DELETING</code> and begins the deletion process. </p> <note>
-    /// <p>For <code>EXPRESS</code>state machines, the deletion will happen eventually (usually less than a minute). Running executions may emit logs after <code>DeleteStateMachine</code> API is called.</p>
+    /// <p>Deletes a state machine. This is an asynchronous operation: It sets the state machine's status to <code>DELETING</code> and begins the deletion process. </p>
+    /// <p>If the given state machine Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with ValidationException.</p>
+    /// <p>A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named <code>stateMachineName</code>.</p> <note>
+    /// <p>For <code>EXPRESS</code> state machines, the deletion will happen eventually (usually less than a minute). Running executions may emit logs after <code>DeleteStateMachine</code> API is called.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStateMachine {
@@ -939,10 +994,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeExecution`.
     ///
-    /// <p>Describes an execution.</p> <note>
+    /// <p>Provides all information about a state machine execution, such as the state machine associated with the execution, the execution input and output, and relevant execution metadata. Use this API action to return the Map Run ARN if the execution was dispatched by a Map Run.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
-    /// <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
+    /// <p>This API action is not supported by <code>EXPRESS</code> state machine executions unless they were dispatched by a Map Run.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExecution {
         handle: std::sync::Arc<super::Handle>,
@@ -1016,9 +1071,83 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeMapRun`.
+    ///
+    /// <p>Provides information about a Map Run's configuration, progress, and results. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeMapRun {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_map_run_input::Builder,
+    }
+    impl DescribeMapRun {
+        /// Creates a new `DescribeMapRun`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeMapRun,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeMapRunError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeMapRunOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeMapRunError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
+        pub fn map_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_run_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
+        pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_map_run_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeStateMachine`.
     ///
-    /// <p>Describes a state machine.</p> <note>
+    /// <p>Provides information about a state machine's definition, its IAM role Amazon Resource Name (ARN), and configuration. If the state machine ARN is a qualified state machine ARN, the response returned includes the <code>Map</code> state's label.</p>
+    /// <p>A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named <code>stateMachineName</code>.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1096,7 +1225,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeStateMachineForExecution`.
     ///
-    /// <p>Describes the state machine associated with a specific execution.</p> <note>
+    /// <p>Provides information about a state machine's definition, its execution role ARN, and configuration. If an execution was dispatched by a Map Run, the Map Run is returned in the response. Additionally, the state machine returned will be the state machine associated with the Map Run.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
     /// <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
@@ -1175,7 +1304,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetActivityTask`.
     ///
-    /// <p>Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for execution by a running state machine. This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available (i.e. an execution of a task of this type is needed.) The maximum time the service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll returns a <code>taskToken</code> with a null string.</p> <important>
+    /// <p>Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for execution by a running state machine. This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available (i.e. an execution of a task of this type is needed.) The maximum time the service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll returns a <code>taskToken</code> with a null string.</p> <note>
+    /// <p>This API action isn't logged in CloudTrail.</p>
+    /// </note> <important>
     /// <p>Workers should set their client side socket timeout to at least 65 seconds (5 seconds higher than the maximum time the service may hold the poll request).</p>
     /// <p>Polling with <code>GetActivityTask</code> can cause latency in some implementations. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling for Activity Tasks</a> in the Step Functions Developer Guide.</p>
     /// </important>
@@ -1481,7 +1612,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListExecutions`.
     ///
-    /// <p>Lists the executions of a state machine that meet the filtering criteria. Results are sorted by time, with the most recent execution first.</p>
+    /// <p>Lists all executions of a state machine or a Map Run. You can list all executions related to a state machine by specifying a state machine Amazon Resource Name (ARN), or those related to a Map Run by specifying a Map Run ARN.</p>
+    /// <p>Results are sorted by time, with the most recent execution first.</p>
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
@@ -1552,11 +1684,13 @@ pub mod fluent_builders {
             crate::paginator::ListExecutionsPaginator::new(self.handle, self.inner)
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
+        /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
         pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.state_machine_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
+        /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
         pub fn set_state_machine_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1575,6 +1709,122 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ExecutionStatus>,
         ) -> Self {
             self.inner = self.inner.set_status_filter(input);
+            self
+        }
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p>
+        /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
+        pub fn map_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_run_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p>
+        /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
+        pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_map_run_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListMapRuns`.
+    ///
+    /// <p>Lists all Map Runs that were started by a given state machine execution. Use this API action to obtain Map Run ARNs, and then call <code>DescribeMapRun</code> to obtain more information, if needed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListMapRuns {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_map_runs_input::Builder,
+    }
+    impl ListMapRuns {
+        /// Creates a new `ListMapRuns`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListMapRuns,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListMapRunsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMapRunsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListMapRunsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMapRunsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMapRunsPaginator {
+            crate::paginator::ListMapRunsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the execution for which the Map Runs must be listed.</p>
+        pub fn execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the execution for which the Map Runs must be listed.</p>
+        pub fn set_execution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_execution_arn(input);
             self
         }
         /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
@@ -2021,8 +2271,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartExecution`.
     ///
-    /// <p>Starts a state machine execution.</p> <note>
-    /// <p> <code>StartExecution</code> is idempotent. If <code>StartExecution</code> is called with the same name and input as a running execution, the call will succeed and return the same response as the original request. If the execution is closed or if the input is different, it will return a 400 <code>ExecutionAlreadyExists</code> error. Names can be reused after 90 days. </p>
+    /// <p>Starts a state machine execution. If the given state machine Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with ValidationException.</p>
+    /// <p>A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named <code>stateMachineName</code>.</p> <note>
+    /// <p> <code>StartExecution</code> is idempotent for <code>STANDARD</code> workflows. For a <code>STANDARD</code> workflow, if <code>StartExecution</code> is called with the same name and input as a running execution, the call will succeed and return the same response as the original request. If the execution is closed or if the input is different, it will return a <code>400 ExecutionAlreadyExists</code> error. Names can be reused after 90 days. </p>
+    /// <p> <code>StartExecution</code> is not idempotent for <code>EXPRESS</code> workflows. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartExecution {
@@ -2096,7 +2348,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_state_machine_arn(input);
             self
         }
-        /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+        /// <p>The name of the execution. This name must be unique for your Amazon Web Services account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
         /// <li> <p>white space</p> </li>
@@ -2110,7 +2362,7 @@ pub mod fluent_builders {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+        /// <p>The name of the execution. This name must be unique for your Amazon Web Services account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
         /// <li> <p>white space</p> </li>
@@ -2142,12 +2394,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input(input);
             self
         }
-        /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
+        /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
         pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.trace_header(input.into());
             self
         }
-        /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
+        /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
         pub fn set_trace_header(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_trace_header(input);
             self
@@ -2155,7 +2407,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartSyncExecution`.
     ///
-    /// <p>Starts a Synchronous Express state machine execution.</p>
+    /// <p>Starts a Synchronous Express state machine execution. <code>StartSyncExecution</code> is not available for <code>STANDARD</code> workflows.</p> <note>
+    /// <p> <code>StartSyncExecution</code> will return a <code>200 OK</code> response, even if your execution fails, because the status code in the API response doesn't reflect function errors. Error codes are reserved for errors that prevent your execution from running, such as permissions errors, limit errors, or issues with your state machine code and configuration. </p>
+    /// </note> <note>
+    /// <p>This API action isn't logged in CloudTrail.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSyncExecution {
         handle: std::sync::Arc<super::Handle>,
@@ -2256,12 +2512,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input(input);
             self
         }
-        /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
+        /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
         pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.trace_header(input.into());
             self
         }
-        /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
+        /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
         pub fn set_trace_header(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_trace_header(input);
             self
@@ -2367,7 +2623,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Add a tag to a Step Functions resource.</p>
-    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
@@ -2548,9 +2804,114 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateMapRun`.
+    ///
+    /// <p>Updates an in-progress Map Run's configuration to include changes to the settings that control maximum concurrency and Map Run failure.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateMapRun {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_map_run_input::Builder,
+    }
+    impl UpdateMapRun {
+        /// Creates a new `UpdateMapRun`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateMapRun,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateMapRunError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateMapRunOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateMapRunError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of a Map Run.</p>
+        pub fn map_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_run_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a Map Run.</p>
+        pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_map_run_arn(input);
+            self
+        }
+        /// <p>The maximum number of child workflow executions that can be specified to run in parallel for the Map Run at the same time.</p>
+        pub fn max_concurrency(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_concurrency(input);
+            self
+        }
+        /// <p>The maximum number of child workflow executions that can be specified to run in parallel for the Map Run at the same time.</p>
+        pub fn set_max_concurrency(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_concurrency(input);
+            self
+        }
+        /// <p>The maximum percentage of failed items before the Map Run fails.</p>
+        pub fn tolerated_failure_percentage(mut self, input: f32) -> Self {
+            self.inner = self.inner.tolerated_failure_percentage(input);
+            self
+        }
+        /// <p>The maximum percentage of failed items before the Map Run fails.</p>
+        pub fn set_tolerated_failure_percentage(mut self, input: std::option::Option<f32>) -> Self {
+            self.inner = self.inner.set_tolerated_failure_percentage(input);
+            self
+        }
+        /// <p>The maximum number of failed items before the Map Run fails.</p>
+        pub fn tolerated_failure_count(mut self, input: i64) -> Self {
+            self.inner = self.inner.tolerated_failure_count(input);
+            self
+        }
+        /// <p>The maximum number of failed items before the Map Run fails.</p>
+        pub fn set_tolerated_failure_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_tolerated_failure_count(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateStateMachine`.
     ///
-    /// <p>Updates an existing state machine by modifying its <code>definition</code>, <code>roleArn</code>, or <code>loggingConfiguration</code>. Running executions will continue to use the previous <code>definition</code> and <code>roleArn</code>. You must include at least one of <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code> error.</p> <note>
+    /// <p>Updates an existing state machine by modifying its <code>definition</code>, <code>roleArn</code>, or <code>loggingConfiguration</code>. Running executions will continue to use the previous <code>definition</code> and <code>roleArn</code>. You must include at least one of <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code> error.</p>
+    /// <p>If the given state machine Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with ValidationException.</p>
+    /// <p>A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named <code>stateMachineName</code>.</p> <note>
     /// <p>All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the previous state machine <code>definition</code> and <code>roleArn</code>. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2658,12 +3019,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_logging_configuration(input);
             self
         }
-        /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+        /// <p>Selects whether X-Ray tracing is enabled.</p>
         pub fn tracing_configuration(mut self, input: crate::model::TracingConfiguration) -> Self {
             self.inner = self.inner.tracing_configuration(input);
             self
         }
-        /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+        /// <p>Selects whether X-Ray tracing is enabled.</p>
         pub fn set_tracing_configuration(
             mut self,
             input: std::option::Option<crate::model::TracingConfiguration>,

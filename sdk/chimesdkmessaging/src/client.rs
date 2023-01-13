@@ -5098,7 +5098,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchChannels`.
     ///
-    /// <p>Allows an <code>AppInstanceUser</code> to search the channels that they belong to. The <code>AppInstanceUser</code> can search by membership or external ID. An <code>AppInstanceAdmin</code> can search across all channels within the <code>AppInstance</code>.</p>
+    /// <p>Allows <code>ChimeBearer</code> to search channels by channel members. AppInstanceUsers can search across the channels that they belong to. AppInstanceAdmins can search across all channels.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchChannels {
         handle: std::sync::Arc<super::Handle>,

@@ -94,11 +94,12 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateAccessPoint`](crate::client::fluent_builders::CreateAccessPoint) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPoint::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateAccessPoint::set_account_id): <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPoint::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateAccessPoint::set_account_id): <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPoint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAccessPoint::set_name): <p>The name you want to assign to this access point.</p>
     ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPoint::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::CreateAccessPoint::set_bucket): <p>The name of the bucket that you want to associate this access point with.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     ///   - [`vpc_configuration(VpcConfiguration)`](crate::client::fluent_builders::CreateAccessPoint::vpc_configuration) / [`set_vpc_configuration(Option<VpcConfiguration>)`](crate::client::fluent_builders::CreateAccessPoint::set_vpc_configuration): <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p> <note>   <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>  </note>
     ///   - [`public_access_block_configuration(PublicAccessBlockConfiguration)`](crate::client::fluent_builders::CreateAccessPoint::public_access_block_configuration) / [`set_public_access_block_configuration(Option<PublicAccessBlockConfiguration>)`](crate::client::fluent_builders::CreateAccessPoint::set_public_access_block_configuration): <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
+    ///   - [`bucket_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPoint::bucket_account_id) / [`set_bucket_account_id(Option<String>)`](crate::client::fluent_builders::CreateAccessPoint::set_bucket_account_id): <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
     /// - On success, responds with [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput) with field(s):
     ///   - [`access_point_arn(Option<String>)`](crate::output::CreateAccessPointOutput::access_point_arn): <p>The ARN of the access point.</p> <note>   <p>This is only supported by Amazon S3 on Outposts.</p>  </note>
     ///   - [`alias(Option<String>)`](crate::output::CreateAccessPointOutput::alias): <p>The name or alias of the access point.</p>
@@ -177,7 +178,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteAccessPoint`](crate::client::fluent_builders::DeleteAccessPoint) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPoint::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessPoint::set_account_id): <p>The account ID for the account that owns the specified access point.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPoint::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessPoint::set_account_id): <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPoint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteAccessPoint::set_name): <p>The name of the access point you want to delete.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /accesspoint/      <my-accesspoint-name></my-accesspoint-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     /// - On success, responds with [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput)
 
@@ -356,18 +357,19 @@ impl Client {
     /// Constructs a fluent builder for the [`GetAccessPoint`](crate::client::fluent_builders::GetAccessPoint) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessPoint::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetAccessPoint::set_account_id): <p>The account ID for the account that owns the specified access point.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessPoint::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetAccessPoint::set_account_id): <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetAccessPoint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetAccessPoint::set_name): <p>The name of the access point whose configuration information you want to retrieve.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /accesspoint/      <my-accesspoint-name></my-accesspoint-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     /// - On success, responds with [`GetAccessPointOutput`](crate::output::GetAccessPointOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::GetAccessPointOutput::name): <p>The name of the specified access point.</p>
     ///   - [`bucket(Option<String>)`](crate::output::GetAccessPointOutput::bucket): <p>The name of the bucket associated with the specified access point.</p>
     ///   - [`network_origin(Option<NetworkOrigin>)`](crate::output::GetAccessPointOutput::network_origin): <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>  <p>This will always be true for an Amazon S3 on Outposts access point</p>
     ///   - [`vpc_configuration(Option<VpcConfiguration>)`](crate::output::GetAccessPointOutput::vpc_configuration): <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>   <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>  </note>
-    ///   - [`public_access_block_configuration(Option<PublicAccessBlockConfiguration>)`](crate::output::GetAccessPointOutput::public_access_block_configuration): <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This is not supported for Amazon S3 on Outposts.</p>
+    ///   - [`public_access_block_configuration(Option<PublicAccessBlockConfiguration>)`](crate::output::GetAccessPointOutput::public_access_block_configuration): <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This data type is not supported for Amazon S3 on Outposts.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::GetAccessPointOutput::creation_date): <p>The date and time when the specified access point was created.</p>
     ///   - [`alias(Option<String>)`](crate::output::GetAccessPointOutput::alias): <p>The name or alias of the access point.</p>
     ///   - [`access_point_arn(Option<String>)`](crate::output::GetAccessPointOutput::access_point_arn): <p>The ARN of the access point.</p>
     ///   - [`endpoints(Option<HashMap<String, String>>)`](crate::output::GetAccessPointOutput::endpoints): <p>The VPC endpoint for the access point.</p>
+    ///   - [`bucket_account_id(Option<String>)`](crate::output::GetAccessPointOutput::bucket_account_id): <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
     /// - On failure, responds with [`SdkError<GetAccessPointError>`](crate::error::GetAccessPointError)
     pub fn get_access_point(&self) -> fluent_builders::GetAccessPoint {
         fluent_builders::GetAccessPoint::new(self.handle.clone())
@@ -556,6 +558,20 @@ impl Client {
     ) -> fluent_builders::GetMultiRegionAccessPointPolicyStatus {
         fluent_builders::GetMultiRegionAccessPointPolicyStatus::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetMultiRegionAccessPointRoutes`](crate::client::fluent_builders::GetMultiRegionAccessPointRoutes) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPointRoutes::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPointRoutes::set_account_id): <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    ///   - [`mrap(impl Into<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPointRoutes::mrap) / [`set_mrap(Option<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPointRoutes::set_mrap): <p>The Multi-Region Access Point ARN.</p>
+    /// - On success, responds with [`GetMultiRegionAccessPointRoutesOutput`](crate::output::GetMultiRegionAccessPointRoutesOutput) with field(s):
+    ///   - [`mrap(Option<String>)`](crate::output::GetMultiRegionAccessPointRoutesOutput::mrap): <p>The Multi-Region Access Point ARN.</p>
+    ///   - [`routes(Option<Vec<MultiRegionAccessPointRoute>>)`](crate::output::GetMultiRegionAccessPointRoutesOutput::routes): <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+    /// - On failure, responds with [`SdkError<GetMultiRegionAccessPointRoutesError>`](crate::error::GetMultiRegionAccessPointRoutesError)
+    pub fn get_multi_region_access_point_routes(
+        &self,
+    ) -> fluent_builders::GetMultiRegionAccessPointRoutes {
+        fluent_builders::GetMultiRegionAccessPointRoutes::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetPublicAccessBlock`](crate::client::fluent_builders::GetPublicAccessBlock) operation.
     ///
     /// - The fluent builder is configurable:
@@ -594,7 +610,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccessPoints::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListAccessPoints::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListAccessPoints::set_account_id): <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListAccessPoints::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListAccessPoints::set_account_id): <p>The Amazon Web Services account ID for the account that owns the specified access points.</p>
     ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::ListAccessPoints::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::ListAccessPoints::set_bucket): <p>The name of the bucket whose associated access points you want to list.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccessPoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccessPoints::set_next_token): <p>A continuation token. If a previous call to <code>ListAccessPoints</code> returned a continuation token in the <code>NextToken</code> field, then providing that value here causes Amazon S3 to retrieve the next page of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccessPoints::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListAccessPoints::set_max_results): <p>The maximum number of access points that you want to include in the list. If the specified bucket has more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
@@ -836,6 +852,20 @@ impl Client {
     ) -> fluent_builders::PutStorageLensConfigurationTagging {
         fluent_builders::PutStorageLensConfigurationTagging::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`SubmitMultiRegionAccessPointRoutes`](crate::client::fluent_builders::SubmitMultiRegionAccessPointRoutes) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::SubmitMultiRegionAccessPointRoutes::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::SubmitMultiRegionAccessPointRoutes::set_account_id): <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    ///   - [`mrap(impl Into<String>)`](crate::client::fluent_builders::SubmitMultiRegionAccessPointRoutes::mrap) / [`set_mrap(Option<String>)`](crate::client::fluent_builders::SubmitMultiRegionAccessPointRoutes::set_mrap): <p>The Multi-Region Access Point ARN.</p>
+    ///   - [`route_updates(Vec<MultiRegionAccessPointRoute>)`](crate::client::fluent_builders::SubmitMultiRegionAccessPointRoutes::route_updates) / [`set_route_updates(Option<Vec<MultiRegionAccessPointRoute>>)`](crate::client::fluent_builders::SubmitMultiRegionAccessPointRoutes::set_route_updates): <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+    /// - On success, responds with [`SubmitMultiRegionAccessPointRoutesOutput`](crate::output::SubmitMultiRegionAccessPointRoutesOutput)
+
+    /// - On failure, responds with [`SdkError<SubmitMultiRegionAccessPointRoutesError>`](crate::error::SubmitMultiRegionAccessPointRoutesError)
+    pub fn submit_multi_region_access_point_routes(
+        &self,
+    ) -> fluent_builders::SubmitMultiRegionAccessPointRoutes {
+        fluent_builders::SubmitMultiRegionAccessPointRoutes::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateJobPriority`](crate::client::fluent_builders::UpdateJobPriority) operation.
     ///
     /// - The fluent builder is configurable:
@@ -946,12 +976,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -1031,6 +1061,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_public_access_block_configuration(input);
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+        pub fn bucket_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_account_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+        pub fn set_bucket_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_bucket_account_id(input);
             self
         }
     }
@@ -1751,12 +1794,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID for the account that owns the specified access point.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The account ID for the account that owns the specified access point.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -3272,12 +3315,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID for the account that owns the specified access point.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The account ID for the account that owns the specified access point.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -4817,6 +4860,99 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetMultiRegionAccessPointRoutes`.
+    ///
+    /// <p>Returns the routing configuration for a Multi-Region Access Point, indicating which Regions are active or passive.</p>
+    /// <p>To obtain routing control changes and failover requests, use the Amazon S3 failover control infrastructure endpoints in these five Amazon Web Services Regions:</p>
+    /// <ul>
+    /// <li> <p> <code>us-east-1</code> </p> </li>
+    /// <li> <p> <code>us-west-2</code> </p> </li>
+    /// <li> <p> <code>ap-southeast-2</code> </p> </li>
+    /// <li> <p> <code>ap-northeast-1</code> </p> </li>
+    /// <li> <p> <code>eu-west-1</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Your Amazon S3 bucket does not need to be in these five Regions.</p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetMultiRegionAccessPointRoutes {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_multi_region_access_point_routes_input::Builder,
+    }
+    impl GetMultiRegionAccessPointRoutes {
+        /// Creates a new `GetMultiRegionAccessPointRoutes`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetMultiRegionAccessPointRoutes,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointRoutesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetMultiRegionAccessPointRoutesOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointRoutesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>The Multi-Region Access Point ARN.</p>
+        pub fn mrap(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mrap(input.into());
+            self
+        }
+        /// <p>The Multi-Region Access Point ARN.</p>
+        pub fn set_mrap(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_mrap(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetPublicAccessBlock`.
     ///
     /// <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3 block public access</a>.</p>
@@ -4897,7 +5033,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetStorageLensConfiguration`.
     ///
-    /// <p>Gets the Amazon S3 Storage Lens configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p>Gets the Amazon S3 Storage Lens configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <p>To use this action, you must have permission to perform the <code>s3:GetStorageLensConfiguration</code> action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -5071,7 +5207,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccessPoints`.
     ///
-    /// <p>Returns a list of the access points currently associated with the specified bucket. You can retrieve up to 1000 access points per call. If the specified bucket has more than 1,000 access points (or the number specified in <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to list the additional access points.</p>
+    /// <p>Returns a list of the access points owned by the current account associated with the specified bucket. You can retrieve up to 1000 access points per call. If the specified bucket has more than 1,000 access points (or the number specified in <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to list the additional access points.</p>
     /// <p></p>
     /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html#API_control_GetAccessPoint_Examples">Examples</a> section.</p>
     /// <p>The following actions are related to <code>ListAccessPoints</code>:</p>
@@ -5145,12 +5281,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListAccessPointsPaginator {
             crate::paginator::ListAccessPointsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access points.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
+        /// <p>The Amazon Web Services account ID for the account that owns the specified access points.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -6938,7 +7074,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutStorageLensConfiguration`.
     ///
-    /// <p>Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p>Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <p>To use this action, you must have permission to perform the <code>s3:PutStorageLensConfiguration</code> action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -7165,6 +7301,123 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `SubmitMultiRegionAccessPointRoutes`.
+    ///
+    /// <p>Submits an updated route configuration for a Multi-Region Access Point. This API operation updates the routing status for the specified Regions from active to passive, or from passive to active. A value of <code>0</code> indicates a passive status, which means that traffic won't be routed to the specified Region. A value of <code>100</code> indicates an active status, which means that traffic will be routed to the specified Region. At least one Region must be active at all times.</p>
+    /// <p>When the routing configuration is changed, any in-progress operations (uploads, copies, deletes, and so on) to formerly active Regions will continue to run to their final completion state (success or failure). The routing configurations of any Regions that aren’t specified remain unchanged.</p> <note>
+    /// <p>Updated routing configurations might not be immediately applied. It can take up to 2 minutes for your changes to take effect.</p>
+    /// </note>
+    /// <p>To submit routing control changes and failover requests, use the Amazon S3 failover control infrastructure endpoints in these five Amazon Web Services Regions:</p>
+    /// <ul>
+    /// <li> <p> <code>us-east-1</code> </p> </li>
+    /// <li> <p> <code>us-west-2</code> </p> </li>
+    /// <li> <p> <code>ap-southeast-2</code> </p> </li>
+    /// <li> <p> <code>ap-northeast-1</code> </p> </li>
+    /// <li> <p> <code>eu-west-1</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Your Amazon S3 bucket does not need to be in these five Regions.</p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct SubmitMultiRegionAccessPointRoutes {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::submit_multi_region_access_point_routes_input::Builder,
+    }
+    impl SubmitMultiRegionAccessPointRoutes {
+        /// Creates a new `SubmitMultiRegionAccessPointRoutes`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::SubmitMultiRegionAccessPointRoutes,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::SubmitMultiRegionAccessPointRoutesError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SubmitMultiRegionAccessPointRoutesOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::SubmitMultiRegionAccessPointRoutesError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>The Multi-Region Access Point ARN.</p>
+        pub fn mrap(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mrap(input.into());
+            self
+        }
+        /// <p>The Multi-Region Access Point ARN.</p>
+        pub fn set_mrap(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_mrap(input);
+            self
+        }
+        /// Appends an item to `RouteUpdates`.
+        ///
+        /// To override the contents of this collection use [`set_route_updates`](Self::set_route_updates).
+        ///
+        /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+        pub fn route_updates(mut self, input: crate::model::MultiRegionAccessPointRoute) -> Self {
+            self.inner = self.inner.route_updates(input);
+            self
+        }
+        /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+        pub fn set_route_updates(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRoute>>,
+        ) -> Self {
+            self.inner = self.inner.set_route_updates(input);
             self
         }
     }

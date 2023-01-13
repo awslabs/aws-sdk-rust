@@ -5286,6 +5286,12 @@ pub struct MonitoredResourceIdentifier {
     /// <p> The permission status of a resource. </p>
     #[doc(hidden)]
     pub resource_permission: std::option::Option<crate::model::ResourcePermission>,
+    /// <p> The time at which DevOps Guru last updated this resource. </p>
+    #[doc(hidden)]
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
+    pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
 }
 impl MonitoredResourceIdentifier {
     /// <p> The name of the resource being monitored. </p>
@@ -5300,6 +5306,14 @@ impl MonitoredResourceIdentifier {
     pub fn resource_permission(&self) -> std::option::Option<&crate::model::ResourcePermission> {
         self.resource_permission.as_ref()
     }
+    /// <p> The time at which DevOps Guru last updated this resource. </p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated.as_ref()
+    }
+    /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    pub fn resource_collection(&self) -> std::option::Option<&crate::model::ResourceCollection> {
+        self.resource_collection.as_ref()
+    }
 }
 /// See [`MonitoredResourceIdentifier`](crate::model::MonitoredResourceIdentifier).
 pub mod monitored_resource_identifier {
@@ -5310,6 +5324,8 @@ pub mod monitored_resource_identifier {
         pub(crate) monitored_resource_name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) resource_permission: std::option::Option<crate::model::ResourcePermission>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) resource_collection: std::option::Option<crate::model::ResourceCollection>,
     }
     impl Builder {
         /// <p> The name of the resource being monitored. </p>
@@ -5348,12 +5364,40 @@ pub mod monitored_resource_identifier {
             self.resource_permission = input;
             self
         }
+        /// <p> The time at which DevOps Guru last updated this resource. </p>
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated = Some(input);
+            self
+        }
+        /// <p> The time at which DevOps Guru last updated this resource. </p>
+        pub fn set_last_updated(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated = input;
+            self
+        }
+        /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        pub fn resource_collection(mut self, input: crate::model::ResourceCollection) -> Self {
+            self.resource_collection = Some(input);
+            self
+        }
+        /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        pub fn set_resource_collection(
+            mut self,
+            input: std::option::Option<crate::model::ResourceCollection>,
+        ) -> Self {
+            self.resource_collection = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MonitoredResourceIdentifier`](crate::model::MonitoredResourceIdentifier).
         pub fn build(self) -> crate::model::MonitoredResourceIdentifier {
             crate::model::MonitoredResourceIdentifier {
                 monitored_resource_name: self.monitored_resource_name,
                 r#type: self.r#type,
                 resource_permission: self.resource_permission,
+                last_updated: self.last_updated,
+                resource_collection: self.resource_collection,
             }
         }
     }
@@ -5551,7 +5595,33 @@ impl ListMonitoredResourcesFilters {
 /// ```text
 /// # let resourcetypefilter = unimplemented!();
 /// match resourcetypefilter {
+///     ResourceTypeFilter::CloudfrontDistribution => { /* ... */ },
+///     ResourceTypeFilter::DynamodbTable => { /* ... */ },
+///     ResourceTypeFilter::Ec2NatGateway => { /* ... */ },
+///     ResourceTypeFilter::EcsCluster => { /* ... */ },
+///     ResourceTypeFilter::EcsService => { /* ... */ },
+///     ResourceTypeFilter::EksCluster => { /* ... */ },
+///     ResourceTypeFilter::ElasticacheCacheCluster => { /* ... */ },
+///     ResourceTypeFilter::ElasticsearchDomain => { /* ... */ },
+///     ResourceTypeFilter::ElasticBeanstalkEnvironment => { /* ... */ },
+///     ResourceTypeFilter::ElasticLoadBalancerLoadBalancer => { /* ... */ },
+///     ResourceTypeFilter::ElasticLoadBalancingV2LoadBalancer => { /* ... */ },
+///     ResourceTypeFilter::ElasticLoadBalancingV2TargetGroup => { /* ... */ },
+///     ResourceTypeFilter::KinesisStream => { /* ... */ },
+///     ResourceTypeFilter::LambdaFunction => { /* ... */ },
 ///     ResourceTypeFilter::LogGroups => { /* ... */ },
+///     ResourceTypeFilter::OpenSearchServiceDomain => { /* ... */ },
+///     ResourceTypeFilter::RdsDbCluster => { /* ... */ },
+///     ResourceTypeFilter::RdsDbInstance => { /* ... */ },
+///     ResourceTypeFilter::RedshiftCluster => { /* ... */ },
+///     ResourceTypeFilter::Route53HealthCheck => { /* ... */ },
+///     ResourceTypeFilter::Route53HostedZone => { /* ... */ },
+///     ResourceTypeFilter::S3Bucket => { /* ... */ },
+///     ResourceTypeFilter::SagemakerEndpoint => { /* ... */ },
+///     ResourceTypeFilter::SnsTopic => { /* ... */ },
+///     ResourceTypeFilter::SqsQueue => { /* ... */ },
+///     ResourceTypeFilter::StepFunctionsActivity => { /* ... */ },
+///     ResourceTypeFilter::StepFunctionsStateMachine => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -5586,14 +5656,98 @@ impl ListMonitoredResourcesFilters {
 )]
 pub enum ResourceTypeFilter {
     #[allow(missing_docs)] // documentation missing in model
+    CloudfrontDistribution,
+    #[allow(missing_docs)] // documentation missing in model
+    DynamodbTable,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2NatGateway,
+    #[allow(missing_docs)] // documentation missing in model
+    EcsCluster,
+    #[allow(missing_docs)] // documentation missing in model
+    EcsService,
+    #[allow(missing_docs)] // documentation missing in model
+    EksCluster,
+    #[allow(missing_docs)] // documentation missing in model
+    ElasticacheCacheCluster,
+    #[allow(missing_docs)] // documentation missing in model
+    ElasticsearchDomain,
+    #[allow(missing_docs)] // documentation missing in model
+    ElasticBeanstalkEnvironment,
+    #[allow(missing_docs)] // documentation missing in model
+    ElasticLoadBalancerLoadBalancer,
+    #[allow(missing_docs)] // documentation missing in model
+    ElasticLoadBalancingV2LoadBalancer,
+    #[allow(missing_docs)] // documentation missing in model
+    ElasticLoadBalancingV2TargetGroup,
+    #[allow(missing_docs)] // documentation missing in model
+    KinesisStream,
+    #[allow(missing_docs)] // documentation missing in model
+    LambdaFunction,
+    #[allow(missing_docs)] // documentation missing in model
     LogGroups,
+    #[allow(missing_docs)] // documentation missing in model
+    OpenSearchServiceDomain,
+    #[allow(missing_docs)] // documentation missing in model
+    RdsDbCluster,
+    #[allow(missing_docs)] // documentation missing in model
+    RdsDbInstance,
+    #[allow(missing_docs)] // documentation missing in model
+    RedshiftCluster,
+    #[allow(missing_docs)] // documentation missing in model
+    Route53HealthCheck,
+    #[allow(missing_docs)] // documentation missing in model
+    Route53HostedZone,
+    #[allow(missing_docs)] // documentation missing in model
+    S3Bucket,
+    #[allow(missing_docs)] // documentation missing in model
+    SagemakerEndpoint,
+    #[allow(missing_docs)] // documentation missing in model
+    SnsTopic,
+    #[allow(missing_docs)] // documentation missing in model
+    SqsQueue,
+    #[allow(missing_docs)] // documentation missing in model
+    StepFunctionsActivity,
+    #[allow(missing_docs)] // documentation missing in model
+    StepFunctionsStateMachine,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceTypeFilter {
     fn from(s: &str) -> Self {
         match s {
+            "CLOUDFRONT_DISTRIBUTION" => ResourceTypeFilter::CloudfrontDistribution,
+            "DYNAMODB_TABLE" => ResourceTypeFilter::DynamodbTable,
+            "EC2_NAT_GATEWAY" => ResourceTypeFilter::Ec2NatGateway,
+            "ECS_CLUSTER" => ResourceTypeFilter::EcsCluster,
+            "ECS_SERVICE" => ResourceTypeFilter::EcsService,
+            "EKS_CLUSTER" => ResourceTypeFilter::EksCluster,
+            "ELASTICACHE_CACHE_CLUSTER" => ResourceTypeFilter::ElasticacheCacheCluster,
+            "ELASTICSEARCH_DOMAIN" => ResourceTypeFilter::ElasticsearchDomain,
+            "ELASTIC_BEANSTALK_ENVIRONMENT" => ResourceTypeFilter::ElasticBeanstalkEnvironment,
+            "ELASTIC_LOAD_BALANCER_LOAD_BALANCER" => {
+                ResourceTypeFilter::ElasticLoadBalancerLoadBalancer
+            }
+            "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER" => {
+                ResourceTypeFilter::ElasticLoadBalancingV2LoadBalancer
+            }
+            "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP" => {
+                ResourceTypeFilter::ElasticLoadBalancingV2TargetGroup
+            }
+            "KINESIS_STREAM" => ResourceTypeFilter::KinesisStream,
+            "LAMBDA_FUNCTION" => ResourceTypeFilter::LambdaFunction,
             "LOG_GROUPS" => ResourceTypeFilter::LogGroups,
+            "OPEN_SEARCH_SERVICE_DOMAIN" => ResourceTypeFilter::OpenSearchServiceDomain,
+            "RDS_DB_CLUSTER" => ResourceTypeFilter::RdsDbCluster,
+            "RDS_DB_INSTANCE" => ResourceTypeFilter::RdsDbInstance,
+            "REDSHIFT_CLUSTER" => ResourceTypeFilter::RedshiftCluster,
+            "ROUTE53_HEALTH_CHECK" => ResourceTypeFilter::Route53HealthCheck,
+            "ROUTE53_HOSTED_ZONE" => ResourceTypeFilter::Route53HostedZone,
+            "S3_BUCKET" => ResourceTypeFilter::S3Bucket,
+            "SAGEMAKER_ENDPOINT" => ResourceTypeFilter::SagemakerEndpoint,
+            "SNS_TOPIC" => ResourceTypeFilter::SnsTopic,
+            "SQS_QUEUE" => ResourceTypeFilter::SqsQueue,
+            "STEP_FUNCTIONS_ACTIVITY" => ResourceTypeFilter::StepFunctionsActivity,
+            "STEP_FUNCTIONS_STATE_MACHINE" => ResourceTypeFilter::StepFunctionsStateMachine,
             other => {
                 ResourceTypeFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
             }
@@ -5611,13 +5765,73 @@ impl ResourceTypeFilter {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceTypeFilter::CloudfrontDistribution => "CLOUDFRONT_DISTRIBUTION",
+            ResourceTypeFilter::DynamodbTable => "DYNAMODB_TABLE",
+            ResourceTypeFilter::Ec2NatGateway => "EC2_NAT_GATEWAY",
+            ResourceTypeFilter::EcsCluster => "ECS_CLUSTER",
+            ResourceTypeFilter::EcsService => "ECS_SERVICE",
+            ResourceTypeFilter::EksCluster => "EKS_CLUSTER",
+            ResourceTypeFilter::ElasticacheCacheCluster => "ELASTICACHE_CACHE_CLUSTER",
+            ResourceTypeFilter::ElasticsearchDomain => "ELASTICSEARCH_DOMAIN",
+            ResourceTypeFilter::ElasticBeanstalkEnvironment => "ELASTIC_BEANSTALK_ENVIRONMENT",
+            ResourceTypeFilter::ElasticLoadBalancerLoadBalancer => {
+                "ELASTIC_LOAD_BALANCER_LOAD_BALANCER"
+            }
+            ResourceTypeFilter::ElasticLoadBalancingV2LoadBalancer => {
+                "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER"
+            }
+            ResourceTypeFilter::ElasticLoadBalancingV2TargetGroup => {
+                "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP"
+            }
+            ResourceTypeFilter::KinesisStream => "KINESIS_STREAM",
+            ResourceTypeFilter::LambdaFunction => "LAMBDA_FUNCTION",
             ResourceTypeFilter::LogGroups => "LOG_GROUPS",
+            ResourceTypeFilter::OpenSearchServiceDomain => "OPEN_SEARCH_SERVICE_DOMAIN",
+            ResourceTypeFilter::RdsDbCluster => "RDS_DB_CLUSTER",
+            ResourceTypeFilter::RdsDbInstance => "RDS_DB_INSTANCE",
+            ResourceTypeFilter::RedshiftCluster => "REDSHIFT_CLUSTER",
+            ResourceTypeFilter::Route53HealthCheck => "ROUTE53_HEALTH_CHECK",
+            ResourceTypeFilter::Route53HostedZone => "ROUTE53_HOSTED_ZONE",
+            ResourceTypeFilter::S3Bucket => "S3_BUCKET",
+            ResourceTypeFilter::SagemakerEndpoint => "SAGEMAKER_ENDPOINT",
+            ResourceTypeFilter::SnsTopic => "SNS_TOPIC",
+            ResourceTypeFilter::SqsQueue => "SQS_QUEUE",
+            ResourceTypeFilter::StepFunctionsActivity => "STEP_FUNCTIONS_ACTIVITY",
+            ResourceTypeFilter::StepFunctionsStateMachine => "STEP_FUNCTIONS_STATE_MACHINE",
             ResourceTypeFilter::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LOG_GROUPS"]
+        &[
+            "CLOUDFRONT_DISTRIBUTION",
+            "DYNAMODB_TABLE",
+            "EC2_NAT_GATEWAY",
+            "ECS_CLUSTER",
+            "ECS_SERVICE",
+            "EKS_CLUSTER",
+            "ELASTICACHE_CACHE_CLUSTER",
+            "ELASTICSEARCH_DOMAIN",
+            "ELASTIC_BEANSTALK_ENVIRONMENT",
+            "ELASTIC_LOAD_BALANCER_LOAD_BALANCER",
+            "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER",
+            "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP",
+            "KINESIS_STREAM",
+            "LAMBDA_FUNCTION",
+            "LOG_GROUPS",
+            "OPEN_SEARCH_SERVICE_DOMAIN",
+            "RDS_DB_CLUSTER",
+            "RDS_DB_INSTANCE",
+            "REDSHIFT_CLUSTER",
+            "ROUTE53_HEALTH_CHECK",
+            "ROUTE53_HOSTED_ZONE",
+            "S3_BUCKET",
+            "SAGEMAKER_ENDPOINT",
+            "SNS_TOPIC",
+            "SQS_QUEUE",
+            "STEP_FUNCTIONS_ACTIVITY",
+            "STEP_FUNCTIONS_STATE_MACHINE",
+        ]
     }
 }
 impl AsRef<str> for ResourceTypeFilter {
@@ -10681,6 +10895,9 @@ pub struct TagHealth {
     /// <p>Information about the health of the Amazon Web Services resources in your account that are specified by an Amazon Web Services tag, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
     #[doc(hidden)]
     pub insight: std::option::Option<crate::model::InsightHealth>,
+    /// <p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>
+    #[doc(hidden)]
+    pub analyzed_resource_count: std::option::Option<i64>,
 }
 impl TagHealth {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p> <important>
@@ -10698,6 +10915,10 @@ impl TagHealth {
     pub fn insight(&self) -> std::option::Option<&crate::model::InsightHealth> {
         self.insight.as_ref()
     }
+    /// <p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>
+    pub fn analyzed_resource_count(&self) -> std::option::Option<i64> {
+        self.analyzed_resource_count
+    }
 }
 /// See [`TagHealth`](crate::model::TagHealth).
 pub mod tag_health {
@@ -10708,6 +10929,7 @@ pub mod tag_health {
         pub(crate) app_boundary_key: std::option::Option<std::string::String>,
         pub(crate) tag_value: std::option::Option<std::string::String>,
         pub(crate) insight: std::option::Option<crate::model::InsightHealth>,
+        pub(crate) analyzed_resource_count: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p> <important>
@@ -10752,12 +10974,23 @@ pub mod tag_health {
             self.insight = input;
             self
         }
+        /// <p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>
+        pub fn analyzed_resource_count(mut self, input: i64) -> Self {
+            self.analyzed_resource_count = Some(input);
+            self
+        }
+        /// <p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>
+        pub fn set_analyzed_resource_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.analyzed_resource_count = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TagHealth`](crate::model::TagHealth).
         pub fn build(self) -> crate::model::TagHealth {
             crate::model::TagHealth {
                 app_boundary_key: self.app_boundary_key,
                 tag_value: self.tag_value,
                 insight: self.insight,
+                analyzed_resource_count: self.analyzed_resource_count,
             }
         }
     }
@@ -10868,6 +11101,9 @@ pub struct ServiceHealth {
     /// <p>Represents the health of an Amazon Web Services service. This is a <code>ServiceInsightHealth</code> that contains the number of open proactive and reactive insights for this service.</p>
     #[doc(hidden)]
     pub insight: std::option::Option<crate::model::ServiceInsightHealth>,
+    /// <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>
+    #[doc(hidden)]
+    pub analyzed_resource_count: std::option::Option<i64>,
 }
 impl ServiceHealth {
     /// <p>The name of the Amazon Web Services service.</p>
@@ -10878,6 +11114,10 @@ impl ServiceHealth {
     pub fn insight(&self) -> std::option::Option<&crate::model::ServiceInsightHealth> {
         self.insight.as_ref()
     }
+    /// <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>
+    pub fn analyzed_resource_count(&self) -> std::option::Option<i64> {
+        self.analyzed_resource_count
+    }
 }
 /// See [`ServiceHealth`](crate::model::ServiceHealth).
 pub mod service_health {
@@ -10887,6 +11127,7 @@ pub mod service_health {
     pub struct Builder {
         pub(crate) service_name: std::option::Option<crate::model::ServiceName>,
         pub(crate) insight: std::option::Option<crate::model::ServiceInsightHealth>,
+        pub(crate) analyzed_resource_count: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The name of the Amazon Web Services service.</p>
@@ -10915,11 +11156,22 @@ pub mod service_health {
             self.insight = input;
             self
         }
+        /// <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>
+        pub fn analyzed_resource_count(mut self, input: i64) -> Self {
+            self.analyzed_resource_count = Some(input);
+            self
+        }
+        /// <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>
+        pub fn set_analyzed_resource_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.analyzed_resource_count = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ServiceHealth`](crate::model::ServiceHealth).
         pub fn build(self) -> crate::model::ServiceHealth {
             crate::model::ServiceHealth {
                 service_name: self.service_name,
                 insight: self.insight,
+                analyzed_resource_count: self.analyzed_resource_count,
             }
         }
     }
@@ -11008,6 +11260,9 @@ pub struct CloudFormationHealth {
     /// <p> Information about the health of the Amazon Web Services resources in your account that are specified by an Amazon Web Services CloudFormation stack, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
     #[doc(hidden)]
     pub insight: std::option::Option<crate::model::InsightHealth>,
+    /// <p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>
+    #[doc(hidden)]
+    pub analyzed_resource_count: std::option::Option<i64>,
 }
 impl CloudFormationHealth {
     /// <p> The name of the CloudFormation stack. </p>
@@ -11018,6 +11273,10 @@ impl CloudFormationHealth {
     pub fn insight(&self) -> std::option::Option<&crate::model::InsightHealth> {
         self.insight.as_ref()
     }
+    /// <p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>
+    pub fn analyzed_resource_count(&self) -> std::option::Option<i64> {
+        self.analyzed_resource_count
+    }
 }
 /// See [`CloudFormationHealth`](crate::model::CloudFormationHealth).
 pub mod cloud_formation_health {
@@ -11027,6 +11286,7 @@ pub mod cloud_formation_health {
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) insight: std::option::Option<crate::model::InsightHealth>,
+        pub(crate) analyzed_resource_count: std::option::Option<i64>,
     }
     impl Builder {
         /// <p> The name of the CloudFormation stack. </p>
@@ -11052,11 +11312,22 @@ pub mod cloud_formation_health {
             self.insight = input;
             self
         }
+        /// <p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>
+        pub fn analyzed_resource_count(mut self, input: i64) -> Self {
+            self.analyzed_resource_count = Some(input);
+            self
+        }
+        /// <p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>
+        pub fn set_analyzed_resource_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.analyzed_resource_count = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CloudFormationHealth`](crate::model::CloudFormationHealth).
         pub fn build(self) -> crate::model::CloudFormationHealth {
             crate::model::CloudFormationHealth {
                 stack_name: self.stack_name,
                 insight: self.insight,
+                analyzed_resource_count: self.analyzed_resource_count,
             }
         }
     }

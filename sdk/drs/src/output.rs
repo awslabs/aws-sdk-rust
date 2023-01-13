@@ -733,6 +733,108 @@ impl UpdateLaunchConfigurationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StopReplicationOutput {
+    /// <p>The Source Server that this action was targeted on.</p>
+    #[doc(hidden)]
+    pub source_server: std::option::Option<crate::model::SourceServer>,
+}
+impl StopReplicationOutput {
+    /// <p>The Source Server that this action was targeted on.</p>
+    pub fn source_server(&self) -> std::option::Option<&crate::model::SourceServer> {
+        self.source_server.as_ref()
+    }
+}
+/// See [`StopReplicationOutput`](crate::output::StopReplicationOutput).
+pub mod stop_replication_output {
+
+    /// A builder for [`StopReplicationOutput`](crate::output::StopReplicationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_server: std::option::Option<crate::model::SourceServer>,
+    }
+    impl Builder {
+        /// <p>The Source Server that this action was targeted on.</p>
+        pub fn source_server(mut self, input: crate::model::SourceServer) -> Self {
+            self.source_server = Some(input);
+            self
+        }
+        /// <p>The Source Server that this action was targeted on.</p>
+        pub fn set_source_server(
+            mut self,
+            input: std::option::Option<crate::model::SourceServer>,
+        ) -> Self {
+            self.source_server = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopReplicationOutput`](crate::output::StopReplicationOutput).
+        pub fn build(self) -> crate::output::StopReplicationOutput {
+            crate::output::StopReplicationOutput {
+                source_server: self.source_server,
+            }
+        }
+    }
+}
+impl StopReplicationOutput {
+    /// Creates a new builder-style object to manufacture [`StopReplicationOutput`](crate::output::StopReplicationOutput).
+    pub fn builder() -> crate::output::stop_replication_output::Builder {
+        crate::output::stop_replication_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartReplicationOutput {
+    /// <p>The Source Server that this action was targeted on.</p>
+    #[doc(hidden)]
+    pub source_server: std::option::Option<crate::model::SourceServer>,
+}
+impl StartReplicationOutput {
+    /// <p>The Source Server that this action was targeted on.</p>
+    pub fn source_server(&self) -> std::option::Option<&crate::model::SourceServer> {
+        self.source_server.as_ref()
+    }
+}
+/// See [`StartReplicationOutput`](crate::output::StartReplicationOutput).
+pub mod start_replication_output {
+
+    /// A builder for [`StartReplicationOutput`](crate::output::StartReplicationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_server: std::option::Option<crate::model::SourceServer>,
+    }
+    impl Builder {
+        /// <p>The Source Server that this action was targeted on.</p>
+        pub fn source_server(mut self, input: crate::model::SourceServer) -> Self {
+            self.source_server = Some(input);
+            self
+        }
+        /// <p>The Source Server that this action was targeted on.</p>
+        pub fn set_source_server(
+            mut self,
+            input: std::option::Option<crate::model::SourceServer>,
+        ) -> Self {
+            self.source_server = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartReplicationOutput`](crate::output::StartReplicationOutput).
+        pub fn build(self) -> crate::output::StartReplicationOutput {
+            crate::output::StartReplicationOutput {
+                source_server: self.source_server,
+            }
+        }
+    }
+}
+impl StartReplicationOutput {
+    /// Creates a new builder-style object to manufacture [`StartReplicationOutput`](crate::output::StartReplicationOutput).
+    pub fn builder() -> crate::output::start_replication_output::Builder {
+        crate::output::start_replication_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryDataReplicationOutput {
     /// <p>The ID of the Source Server.</p>
@@ -763,6 +865,15 @@ pub struct RetryDataReplicationOutput {
     /// <p>The staging area of the source server.</p>
     #[doc(hidden)]
     pub staging_area: std::option::Option<crate::model::StagingArea>,
+    /// <p>Source cloud properties of the Source Server.</p>
+    #[doc(hidden)]
+    pub source_cloud_properties: std::option::Option<crate::model::SourceCloudProperties>,
+    /// <p>Replication direction of the Source Server.</p>
+    #[doc(hidden)]
+    pub replication_direction: std::option::Option<crate::model::ReplicationDirection>,
+    /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
+    #[doc(hidden)]
+    pub reversed_direction_source_server_arn: std::option::Option<std::string::String>,
 }
 impl RetryDataReplicationOutput {
     /// <p>The ID of the Source Server.</p>
@@ -804,6 +915,22 @@ impl RetryDataReplicationOutput {
     pub fn staging_area(&self) -> std::option::Option<&crate::model::StagingArea> {
         self.staging_area.as_ref()
     }
+    /// <p>Source cloud properties of the Source Server.</p>
+    pub fn source_cloud_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceCloudProperties> {
+        self.source_cloud_properties.as_ref()
+    }
+    /// <p>Replication direction of the Source Server.</p>
+    pub fn replication_direction(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationDirection> {
+        self.replication_direction.as_ref()
+    }
+    /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
+    pub fn reversed_direction_source_server_arn(&self) -> std::option::Option<&str> {
+        self.reversed_direction_source_server_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RetryDataReplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -817,6 +944,12 @@ impl std::fmt::Debug for RetryDataReplicationOutput {
         formatter.field("life_cycle", &self.life_cycle);
         formatter.field("source_properties", &self.source_properties);
         formatter.field("staging_area", &self.staging_area);
+        formatter.field("source_cloud_properties", &self.source_cloud_properties);
+        formatter.field("replication_direction", &self.replication_direction);
+        formatter.field(
+            "reversed_direction_source_server_arn",
+            &self.reversed_direction_source_server_arn,
+        );
         formatter.finish()
     }
 }
@@ -837,6 +970,10 @@ pub mod retry_data_replication_output {
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
         pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
         pub(crate) staging_area: std::option::Option<crate::model::StagingArea>,
+        pub(crate) source_cloud_properties:
+            std::option::Option<crate::model::SourceCloudProperties>,
+        pub(crate) replication_direction: std::option::Option<crate::model::ReplicationDirection>,
+        pub(crate) reversed_direction_source_server_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the Source Server.</p>
@@ -965,6 +1102,51 @@ pub mod retry_data_replication_output {
             self.staging_area = input;
             self
         }
+        /// <p>Source cloud properties of the Source Server.</p>
+        pub fn source_cloud_properties(
+            mut self,
+            input: crate::model::SourceCloudProperties,
+        ) -> Self {
+            self.source_cloud_properties = Some(input);
+            self
+        }
+        /// <p>Source cloud properties of the Source Server.</p>
+        pub fn set_source_cloud_properties(
+            mut self,
+            input: std::option::Option<crate::model::SourceCloudProperties>,
+        ) -> Self {
+            self.source_cloud_properties = input;
+            self
+        }
+        /// <p>Replication direction of the Source Server.</p>
+        pub fn replication_direction(mut self, input: crate::model::ReplicationDirection) -> Self {
+            self.replication_direction = Some(input);
+            self
+        }
+        /// <p>Replication direction of the Source Server.</p>
+        pub fn set_replication_direction(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationDirection>,
+        ) -> Self {
+            self.replication_direction = input;
+            self
+        }
+        /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
+        pub fn reversed_direction_source_server_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.reversed_direction_source_server_arn = Some(input.into());
+            self
+        }
+        /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
+        pub fn set_reversed_direction_source_server_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reversed_direction_source_server_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput).
         pub fn build(self) -> crate::output::RetryDataReplicationOutput {
             crate::output::RetryDataReplicationOutput {
@@ -977,6 +1159,9 @@ pub mod retry_data_replication_output {
                 life_cycle: self.life_cycle,
                 source_properties: self.source_properties,
                 staging_area: self.staging_area,
+                source_cloud_properties: self.source_cloud_properties,
+                replication_direction: self.replication_direction,
+                reversed_direction_source_server_arn: self.reversed_direction_source_server_arn,
             }
         }
     }
@@ -992,6 +1177,12 @@ pub mod retry_data_replication_output {
             formatter.field("life_cycle", &self.life_cycle);
             formatter.field("source_properties", &self.source_properties);
             formatter.field("staging_area", &self.staging_area);
+            formatter.field("source_cloud_properties", &self.source_cloud_properties);
+            formatter.field("replication_direction", &self.replication_direction);
+            formatter.field(
+                "reversed_direction_source_server_arn",
+                &self.reversed_direction_source_server_arn,
+            );
             formatter.finish()
         }
     }
@@ -1767,6 +1958,15 @@ pub struct DisconnectSourceServerOutput {
     /// <p>The staging area of the source server.</p>
     #[doc(hidden)]
     pub staging_area: std::option::Option<crate::model::StagingArea>,
+    /// <p>Source cloud properties of the Source Server.</p>
+    #[doc(hidden)]
+    pub source_cloud_properties: std::option::Option<crate::model::SourceCloudProperties>,
+    /// <p>Replication direction of the Source Server.</p>
+    #[doc(hidden)]
+    pub replication_direction: std::option::Option<crate::model::ReplicationDirection>,
+    /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
+    #[doc(hidden)]
+    pub reversed_direction_source_server_arn: std::option::Option<std::string::String>,
 }
 impl DisconnectSourceServerOutput {
     /// <p>The ID of the Source Server.</p>
@@ -1808,6 +2008,22 @@ impl DisconnectSourceServerOutput {
     pub fn staging_area(&self) -> std::option::Option<&crate::model::StagingArea> {
         self.staging_area.as_ref()
     }
+    /// <p>Source cloud properties of the Source Server.</p>
+    pub fn source_cloud_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceCloudProperties> {
+        self.source_cloud_properties.as_ref()
+    }
+    /// <p>Replication direction of the Source Server.</p>
+    pub fn replication_direction(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationDirection> {
+        self.replication_direction.as_ref()
+    }
+    /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
+    pub fn reversed_direction_source_server_arn(&self) -> std::option::Option<&str> {
+        self.reversed_direction_source_server_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DisconnectSourceServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1821,6 +2037,12 @@ impl std::fmt::Debug for DisconnectSourceServerOutput {
         formatter.field("life_cycle", &self.life_cycle);
         formatter.field("source_properties", &self.source_properties);
         formatter.field("staging_area", &self.staging_area);
+        formatter.field("source_cloud_properties", &self.source_cloud_properties);
+        formatter.field("replication_direction", &self.replication_direction);
+        formatter.field(
+            "reversed_direction_source_server_arn",
+            &self.reversed_direction_source_server_arn,
+        );
         formatter.finish()
     }
 }
@@ -1841,6 +2063,10 @@ pub mod disconnect_source_server_output {
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
         pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
         pub(crate) staging_area: std::option::Option<crate::model::StagingArea>,
+        pub(crate) source_cloud_properties:
+            std::option::Option<crate::model::SourceCloudProperties>,
+        pub(crate) replication_direction: std::option::Option<crate::model::ReplicationDirection>,
+        pub(crate) reversed_direction_source_server_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the Source Server.</p>
@@ -1969,6 +2195,51 @@ pub mod disconnect_source_server_output {
             self.staging_area = input;
             self
         }
+        /// <p>Source cloud properties of the Source Server.</p>
+        pub fn source_cloud_properties(
+            mut self,
+            input: crate::model::SourceCloudProperties,
+        ) -> Self {
+            self.source_cloud_properties = Some(input);
+            self
+        }
+        /// <p>Source cloud properties of the Source Server.</p>
+        pub fn set_source_cloud_properties(
+            mut self,
+            input: std::option::Option<crate::model::SourceCloudProperties>,
+        ) -> Self {
+            self.source_cloud_properties = input;
+            self
+        }
+        /// <p>Replication direction of the Source Server.</p>
+        pub fn replication_direction(mut self, input: crate::model::ReplicationDirection) -> Self {
+            self.replication_direction = Some(input);
+            self
+        }
+        /// <p>Replication direction of the Source Server.</p>
+        pub fn set_replication_direction(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationDirection>,
+        ) -> Self {
+            self.replication_direction = input;
+            self
+        }
+        /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
+        pub fn reversed_direction_source_server_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.reversed_direction_source_server_arn = Some(input.into());
+            self
+        }
+        /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
+        pub fn set_reversed_direction_source_server_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reversed_direction_source_server_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DisconnectSourceServerOutput`](crate::output::DisconnectSourceServerOutput).
         pub fn build(self) -> crate::output::DisconnectSourceServerOutput {
             crate::output::DisconnectSourceServerOutput {
@@ -1981,6 +2252,9 @@ pub mod disconnect_source_server_output {
                 life_cycle: self.life_cycle,
                 source_properties: self.source_properties,
                 staging_area: self.staging_area,
+                source_cloud_properties: self.source_cloud_properties,
+                replication_direction: self.replication_direction,
+                reversed_direction_source_server_arn: self.reversed_direction_source_server_arn,
             }
         }
     }
@@ -1996,6 +2270,12 @@ pub mod disconnect_source_server_output {
             formatter.field("life_cycle", &self.life_cycle);
             formatter.field("source_properties", &self.source_properties);
             formatter.field("staging_area", &self.staging_area);
+            formatter.field("source_cloud_properties", &self.source_cloud_properties);
+            formatter.field("replication_direction", &self.replication_direction);
+            formatter.field(
+                "reversed_direction_source_server_arn",
+                &self.reversed_direction_source_server_arn,
+            );
             formatter.finish()
         }
     }
@@ -3456,6 +3736,60 @@ impl StopFailbackOutput {
     /// Creates a new builder-style object to manufacture [`StopFailbackOutput`](crate::output::StopFailbackOutput).
     pub fn builder() -> crate::output::stop_failback_output::Builder {
         crate::output::stop_failback_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReverseReplicationOutput {
+    /// <p>ARN of created SourceServer.</p>
+    #[doc(hidden)]
+    pub reversed_direction_source_server_arn: std::option::Option<std::string::String>,
+}
+impl ReverseReplicationOutput {
+    /// <p>ARN of created SourceServer.</p>
+    pub fn reversed_direction_source_server_arn(&self) -> std::option::Option<&str> {
+        self.reversed_direction_source_server_arn.as_deref()
+    }
+}
+/// See [`ReverseReplicationOutput`](crate::output::ReverseReplicationOutput).
+pub mod reverse_replication_output {
+
+    /// A builder for [`ReverseReplicationOutput`](crate::output::ReverseReplicationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) reversed_direction_source_server_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>ARN of created SourceServer.</p>
+        pub fn reversed_direction_source_server_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.reversed_direction_source_server_arn = Some(input.into());
+            self
+        }
+        /// <p>ARN of created SourceServer.</p>
+        pub fn set_reversed_direction_source_server_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reversed_direction_source_server_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReverseReplicationOutput`](crate::output::ReverseReplicationOutput).
+        pub fn build(self) -> crate::output::ReverseReplicationOutput {
+            crate::output::ReverseReplicationOutput {
+                reversed_direction_source_server_arn: self.reversed_direction_source_server_arn,
+            }
+        }
+    }
+}
+impl ReverseReplicationOutput {
+    /// Creates a new builder-style object to manufacture [`ReverseReplicationOutput`](crate::output::ReverseReplicationOutput).
+    pub fn builder() -> crate::output::reverse_replication_output::Builder {
+        crate::output::reverse_replication_output::Builder::default()
     }
 }
 

@@ -111,6 +111,7 @@ impl Client {
     ///   - [`definition(Definition)`](crate::client::fluent_builders::CreateApplication::definition) / [`set_definition(Option<Definition>)`](crate::client::fluent_builders::CreateApplication::set_definition): <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateApplication::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateApplication::set_tags): <p>A list of tags to apply to the application.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_client_token): <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_kms_key_id): <p>The identifier of a customer managed key.</p>
     /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::CreateApplicationOutput::application_arn): <p>The Amazon Resource Name (ARN) of the application.</p>
     ///   - [`application_id(Option<String>)`](crate::output::CreateApplicationOutput::application_id): <p>The unique application identifier.</p>
@@ -134,7 +135,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_environment_id): <p>The identifier of the environment where this application will be deployed.</p>
+    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_environment_id): <p>The identifier of the runtime environment where you want to deploy this application.</p>
     ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_application_id): <p>The application identifier.</p>
     ///   - [`application_version(i32)`](crate::client::fluent_builders::CreateDeployment::application_version) / [`set_application_version(Option<i32>)`](crate::client::fluent_builders::CreateDeployment::set_application_version): <p>The version of the application to deploy.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_client_token): <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a deployment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
@@ -147,21 +148,22 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateEnvironment`](crate::client::fluent_builders::CreateEnvironment) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_name): <p>The unique identifier of the environment.</p>
-    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_instance_type): <p>The type of instance for the environment.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_description): <p>The description of the environment.</p>
-    ///   - [`engine_type(EngineType)`](crate::client::fluent_builders::CreateEnvironment::engine_type) / [`set_engine_type(Option<EngineType>)`](crate::client::fluent_builders::CreateEnvironment::set_engine_type): <p>The engine type for the environment.</p>
-    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_engine_version): <p>The version of the engine type for the environment.</p>
-    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateEnvironment::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateEnvironment::set_subnet_ids): <p>The list of subnets associated with the VPC for this environment.</p>
-    ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateEnvironment::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateEnvironment::set_security_group_ids): <p>The list of security groups for the VPC associated with this environment.</p>
-    ///   - [`storage_configurations(Vec<StorageConfiguration>)`](crate::client::fluent_builders::CreateEnvironment::storage_configurations) / [`set_storage_configurations(Option<Vec<StorageConfiguration>>)`](crate::client::fluent_builders::CreateEnvironment::set_storage_configurations): <p>Optional. The storage configurations for this environment.</p>
-    ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::CreateEnvironment::publicly_accessible) / [`set_publicly_accessible(bool)`](crate::client::fluent_builders::CreateEnvironment::set_publicly_accessible): <p>Specifies whether the environment is publicly accessible.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_name): <p>The name of the runtime environment. Must be unique within the account.</p>
+    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_instance_type): <p>The type of instance for the runtime environment.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_description): <p>The description of the runtime environment.</p>
+    ///   - [`engine_type(EngineType)`](crate::client::fluent_builders::CreateEnvironment::engine_type) / [`set_engine_type(Option<EngineType>)`](crate::client::fluent_builders::CreateEnvironment::set_engine_type): <p>The engine type for the runtime environment.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_engine_version): <p>The version of the engine type for the runtime environment.</p>
+    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateEnvironment::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateEnvironment::set_subnet_ids): <p>The list of subnets associated with the VPC for this runtime environment.</p>
+    ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateEnvironment::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateEnvironment::set_security_group_ids): <p>The list of security groups for the VPC associated with this runtime environment.</p>
+    ///   - [`storage_configurations(Vec<StorageConfiguration>)`](crate::client::fluent_builders::CreateEnvironment::storage_configurations) / [`set_storage_configurations(Option<Vec<StorageConfiguration>>)`](crate::client::fluent_builders::CreateEnvironment::set_storage_configurations): <p>Optional. The storage configurations for this runtime environment.</p>
+    ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::CreateEnvironment::publicly_accessible) / [`set_publicly_accessible(bool)`](crate::client::fluent_builders::CreateEnvironment::set_publicly_accessible): <p>Specifies whether the runtime environment is publicly accessible.</p>
     ///   - [`high_availability_config(HighAvailabilityConfig)`](crate::client::fluent_builders::CreateEnvironment::high_availability_config) / [`set_high_availability_config(Option<HighAvailabilityConfig>)`](crate::client::fluent_builders::CreateEnvironment::set_high_availability_config): <p>The details of a high availability configuration for this runtime environment.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateEnvironment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateEnvironment::set_tags): <p>The tags for the environment.</p>
-    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_preferred_maintenance_window): <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateEnvironment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateEnvironment::set_tags): <p>The tags for the runtime environment.</p>
+    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_preferred_maintenance_window): <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_client_token): <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create an environment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_kms_key_id): <p>The identifier of a customer managed key.</p>
     /// - On success, responds with [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput) with field(s):
-    ///   - [`environment_id(Option<String>)`](crate::output::CreateEnvironmentOutput::environment_id): <p>The identifier of this environment.</p>
+    ///   - [`environment_id(Option<String>)`](crate::output::CreateEnvironmentOutput::environment_id): <p>The unique identifier of the runtime environment.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::error::CreateEnvironmentError)
     pub fn create_environment(&self) -> fluent_builders::CreateEnvironment {
         fluent_builders::CreateEnvironment::new(self.handle.clone())
@@ -212,16 +214,17 @@ impl Client {
     ///   - [`latest_version(Option<ApplicationVersionSummary>)`](crate::output::GetApplicationOutput::latest_version): <p>The latest version of the application.</p>
     ///   - [`deployed_version(Option<DeployedVersionSummary>)`](crate::output::GetApplicationOutput::deployed_version): <p>The version of the application that is deployed.</p>
     ///   - [`engine_type(Option<EngineType>)`](crate::output::GetApplicationOutput::engine_type): <p>The type of the target platform for the application.</p>
-    ///   - [`log_groups(Option<Vec<LogGroupSummary>>)`](crate::output::GetApplicationOutput::log_groups): <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to CloudWatch under the customer's account.</p>
+    ///   - [`log_groups(Option<Vec<LogGroupSummary>>)`](crate::output::GetApplicationOutput::log_groups): <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the customer's account.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::GetApplicationOutput::creation_time): <p>The timestamp when this application was created.</p>
-    ///   - [`last_start_time(Option<DateTime>)`](crate::output::GetApplicationOutput::last_start_time): <p>The timestamp when the application was last started. Null until the application has started running for the first time.</p>
+    ///   - [`last_start_time(Option<DateTime>)`](crate::output::GetApplicationOutput::last_start_time): <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetApplicationOutput::tags): <p>A list of tags associated with the application.</p>
-    ///   - [`environment_id(Option<String>)`](crate::output::GetApplicationOutput::environment_id): <p>The identifier of the environment where the application will be deployed.</p>
+    ///   - [`environment_id(Option<String>)`](crate::output::GetApplicationOutput::environment_id): <p>The identifier of the runtime environment where you want to deploy the application.</p>
     ///   - [`target_group_arns(Option<Vec<String>>)`](crate::output::GetApplicationOutput::target_group_arns): <p>Returns the Amazon Resource Names (ARNs) of the target groups that are attached to the network load balancer.</p>
-    ///   - [`listener_arns(Option<Vec<String>>)`](crate::output::GetApplicationOutput::listener_arns): <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time you deploy an application.</p>
+    ///   - [`listener_arns(Option<Vec<String>>)`](crate::output::GetApplicationOutput::listener_arns): <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an application.</p>
     ///   - [`listener_ports(Option<Vec<i32>>)`](crate::output::GetApplicationOutput::listener_ports): <p>The port associated with the network load balancer listener created in your Amazon Web Services account.</p>
     ///   - [`load_balancer_dns_name(Option<String>)`](crate::output::GetApplicationOutput::load_balancer_dns_name): <p>The public DNS name of the load balancer created in your Amazon Web Services account.</p>
     ///   - [`status_reason(Option<String>)`](crate::output::GetApplicationOutput::status_reason): <p>The reason for the reported status.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::GetApplicationOutput::kms_key_id): <p>The identifier of a customer managed key.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::error::GetApplicationError)
     pub fn get_application(&self) -> fluent_builders::GetApplication {
         fluent_builders::GetApplication::new(self.handle.clone())
@@ -235,7 +238,7 @@ impl Client {
     ///   - [`name(Option<String>)`](crate::output::GetApplicationVersionOutput::name): <p>The name of the application version.</p>
     ///   - [`application_version(Option<i32>)`](crate::output::GetApplicationVersionOutput::application_version): <p>The specific version of the application.</p>
     ///   - [`description(Option<String>)`](crate::output::GetApplicationVersionOutput::description): <p>The application description.</p>
-    ///   - [`definition_content(Option<String>)`](crate::output::GetApplicationVersionOutput::definition_content): <p>The content of the application definition. This is a JSON object that contains the resource configuration/definitions that identify an application.</p>
+    ///   - [`definition_content(Option<String>)`](crate::output::GetApplicationVersionOutput::definition_content): <p>The content of the application definition. This is a JSON object that contains the resource configuration and definitions that identify an application.</p>
     ///   - [`status(Option<ApplicationVersionLifecycle>)`](crate::output::GetApplicationVersionOutput::status): <p>The status of the application version.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::GetApplicationVersionOutput::creation_time): <p>The timestamp when the application version was created.</p>
     ///   - [`status_reason(Option<String>)`](crate::output::GetApplicationVersionOutput::status_reason): <p>The reason for the reported status.</p>
@@ -270,9 +273,9 @@ impl Client {
     ///   - [`data_set_name(impl Into<String>)`](crate::client::fluent_builders::GetDataSetDetails::data_set_name) / [`set_data_set_name(Option<String>)`](crate::client::fluent_builders::GetDataSetDetails::set_data_set_name): <p>The name of the data set.</p>
     /// - On success, responds with [`GetDataSetDetailsOutput`](crate::output::GetDataSetDetailsOutput) with field(s):
     ///   - [`data_set_name(Option<String>)`](crate::output::GetDataSetDetailsOutput::data_set_name): <p>The name of the data set.</p>
-    ///   - [`data_set_org(Option<DatasetDetailOrgAttributes>)`](crate::output::GetDataSetDetailsOutput::data_set_org): <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.</p>
+    ///   - [`data_set_org(Option<DatasetDetailOrgAttributes>)`](crate::output::GetDataSetDetailsOutput::data_set_org): <p>The type of data set. The only supported value is VSAM.</p>
     ///   - [`record_length(Option<i32>)`](crate::output::GetDataSetDetailsOutput::record_length): <p>The length of records in the data set.</p>
-    ///   - [`location(Option<String>)`](crate::output::GetDataSetDetailsOutput::location): <p>The locaion where the data set is stored.</p>
+    ///   - [`location(Option<String>)`](crate::output::GetDataSetDetailsOutput::location): <p>The location where the data set is stored.</p>
     ///   - [`blocksize(Option<i32>)`](crate::output::GetDataSetDetailsOutput::blocksize): <p>The size of the block on disk. </p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::GetDataSetDetailsOutput::creation_time): <p>The timestamp when the data set was created.</p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::output::GetDataSetDetailsOutput::last_updated_time): <p>The last time the data set was updated.</p>
@@ -316,7 +319,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::GetEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::GetEnvironment::set_environment_id): <p>The unique identifier of the runtime environment.</p>
     /// - On success, responds with [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::GetEnvironmentOutput::name): <p>The name of the runtime environment. </p>
+    ///   - [`name(Option<String>)`](crate::output::GetEnvironmentOutput::name): <p>The name of the runtime environment. Must be unique within the account.</p>
     ///   - [`description(Option<String>)`](crate::output::GetEnvironmentOutput::description): <p>The description of the runtime environment.</p>
     ///   - [`environment_arn(Option<String>)`](crate::output::GetEnvironmentOutput::environment_arn): <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
     ///   - [`environment_id(Option<String>)`](crate::output::GetEnvironmentOutput::environment_id): <p>The unique identifier of the runtime environment.</p>
@@ -335,8 +338,9 @@ impl Client {
     ///   - [`actual_capacity(Option<i32>)`](crate::output::GetEnvironmentOutput::actual_capacity): <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
     ///   - [`load_balancer_arn(Option<String>)`](crate::output::GetEnvironmentOutput::load_balancer_arn): <p>The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.</p>
     ///   - [`status_reason(Option<String>)`](crate::output::GetEnvironmentOutput::status_reason): <p>The reason for the reported status.</p>
-    ///   - [`preferred_maintenance_window(Option<String>)`](crate::output::GetEnvironmentOutput::preferred_maintenance_window): <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    ///   - [`preferred_maintenance_window(Option<String>)`](crate::output::GetEnvironmentOutput::preferred_maintenance_window): <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
     ///   - [`pending_maintenance(Option<PendingMaintenance>)`](crate::output::GetEnvironmentOutput::pending_maintenance): <p>Indicates the pending maintenance scheduled on this environment.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::GetEnvironmentOutput::kms_key_id): <p>The identifier of a customer managed key.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::error::GetEnvironmentError)
     pub fn get_environment(&self) -> fluent_builders::GetEnvironment {
         fluent_builders::GetEnvironment::new(self.handle.clone())
@@ -350,7 +354,7 @@ impl Client {
     ///   - [`names(Vec<String>)`](crate::client::fluent_builders::ListApplications::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::ListApplications::set_names): <p>The names of the applications.</p>
     ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::ListApplications::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::ListApplications::set_environment_id): <p>The unique identifier of the runtime environment where the applications are deployed.</p>
     /// - On success, responds with [`ListApplicationsOutput`](crate::output::ListApplicationsOutput) with field(s):
-    ///   - [`applications(Option<Vec<ApplicationSummary>>)`](crate::output::ListApplicationsOutput::applications): <p>Returns a list of summary details for all the applications in an environment.</p>
+    ///   - [`applications(Option<Vec<ApplicationSummary>>)`](crate::output::ListApplicationsOutput::applications): <p>Returns a list of summary details for all the applications in a runtime environment.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListApplicationsOutput::next_token): <p>A pagination token that's returned when the response doesn't contain all applications.</p>
     /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::error::ListApplicationsError)
     pub fn list_applications(&self) -> fluent_builders::ListApplications {
@@ -427,7 +431,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataSets::set_max_results): <p>The maximum number of objects to return.</p>
     ///   - [`prefix(impl Into<String>)`](crate::client::fluent_builders::ListDataSets::prefix) / [`set_prefix(Option<String>)`](crate::client::fluent_builders::ListDataSets::set_prefix): <p>The prefix of the data set name, which you can use to filter the list of data sets.</p>
     /// - On success, responds with [`ListDataSetsOutput`](crate::output::ListDataSetsOutput) with field(s):
-    ///   - [`data_sets(Option<Vec<DataSetSummary>>)`](crate::output::ListDataSetsOutput::data_sets): <p>The list of data sets, containing ionformation including the creating time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
+    ///   - [`data_sets(Option<Vec<DataSetSummary>>)`](crate::output::ListDataSetsOutput::data_sets): <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDataSetsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<ListDataSetsError>`](crate::error::ListDataSetsError)
     pub fn list_data_sets(&self) -> fluent_builders::ListDataSets {
@@ -465,13 +469,13 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEnvironments::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEnvironments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEnvironments::set_next_token): <p>A pagination token to control the number of environments displayed in the list.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEnvironments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEnvironments::set_max_results): <p>The maximum number of environments to return.</p>
-    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::ListEnvironments::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::ListEnvironments::set_names): <p>The name of the environment.</p>
-    ///   - [`engine_type(EngineType)`](crate::client::fluent_builders::ListEnvironments::engine_type) / [`set_engine_type(Option<EngineType>)`](crate::client::fluent_builders::ListEnvironments::set_engine_type): <p>The engine type for the environment.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEnvironments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEnvironments::set_next_token): <p>A pagination token to control the number of runtime environments displayed in the list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEnvironments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEnvironments::set_max_results): <p>The maximum number of runtime environments to return.</p>
+    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::ListEnvironments::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::ListEnvironments::set_names): <p>The names of the runtime environments. Must be unique within the account.</p>
+    ///   - [`engine_type(EngineType)`](crate::client::fluent_builders::ListEnvironments::engine_type) / [`set_engine_type(Option<EngineType>)`](crate::client::fluent_builders::ListEnvironments::set_engine_type): <p>The engine type for the runtime environment.</p>
     /// - On success, responds with [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput) with field(s):
-    ///   - [`environments(Option<Vec<EnvironmentSummary>>)`](crate::output::ListEnvironmentsOutput::environments): <p>Returns a list of summary details for all the environments in your account. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentsOutput::next_token): <p>A pagination token that's returned when the response doesn't contain all the environments.</p>
+    ///   - [`environments(Option<Vec<EnvironmentSummary>>)`](crate::output::ListEnvironmentsOutput::environments): <p>Returns a list of summary details for all the runtime environments in your account. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentsOutput::next_token): <p>A pagination token that's returned when the response doesn't contain all the runtime environments.</p>
     /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::error::ListEnvironmentsError)
     pub fn list_environments(&self) -> fluent_builders::ListEnvironments {
         fluent_builders::ListEnvironments::new(self.handle.clone())
@@ -558,11 +562,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_environment_id): <p>The unique identifier of the runtime environment that you want to update.</p>
-    ///   - [`desired_capacity(i32)`](crate::client::fluent_builders::UpdateEnvironment::desired_capacity) / [`set_desired_capacity(Option<i32>)`](crate::client::fluent_builders::UpdateEnvironment::set_desired_capacity): <p>The desired capacity for the environment to update.</p>
-    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_instance_type): <p>The instance type for the environment to update.</p>
-    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_engine_version): <p>The version of the runtime engine for the environment.</p>
-    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_preferred_maintenance_window): <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
-    ///   - [`apply_during_maintenance_window(bool)`](crate::client::fluent_builders::UpdateEnvironment::apply_during_maintenance_window) / [`set_apply_during_maintenance_window(bool)`](crate::client::fluent_builders::UpdateEnvironment::set_apply_during_maintenance_window): <p>Indicates whether to update the environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
+    ///   - [`desired_capacity(i32)`](crate::client::fluent_builders::UpdateEnvironment::desired_capacity) / [`set_desired_capacity(Option<i32>)`](crate::client::fluent_builders::UpdateEnvironment::set_desired_capacity): <p>The desired capacity for the runtime environment to update.</p>
+    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_instance_type): <p>The instance type for the runtime environment to update.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_engine_version): <p>The version of the runtime engine for the runtime environment.</p>
+    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_preferred_maintenance_window): <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    ///   - [`apply_during_maintenance_window(bool)`](crate::client::fluent_builders::UpdateEnvironment::apply_during_maintenance_window) / [`set_apply_during_maintenance_window(bool)`](crate::client::fluent_builders::UpdateEnvironment::set_apply_during_maintenance_window): <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
     /// - On success, responds with [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput) with field(s):
     ///   - [`environment_id(Option<String>)`](crate::output::UpdateEnvironmentOutput::environment_id): <p>The unique identifier of the runtime environment that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::error::UpdateEnvironmentError)
@@ -665,7 +669,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
-    /// <p>Creates a new application with given parameters. Requires an existing environment and application definition file.</p>
+    /// <p>Creates a new application with given parameters. Requires an existing runtime environment and application definition file.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication {
         handle: std::sync::Arc<super::Handle>,
@@ -804,6 +808,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
+        /// <p>The identifier of a customer managed key.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
+            self
+        }
+        /// <p>The identifier of a customer managed key.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateDataSetImportTask`.
     ///
@@ -906,7 +920,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDeployment`.
     ///
-    /// <p>Creates and starts a deployment to deploy an application into an environment.</p>
+    /// <p>Creates and starts a deployment to deploy an application into a runtime environment.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeployment {
         handle: std::sync::Arc<super::Handle>,
@@ -966,12 +980,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the environment where this application will be deployed.</p>
+        /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.environment_id(input.into());
             self
         }
-        /// <p>The identifier of the environment where this application will be deployed.</p>
+        /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1075,22 +1089,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the environment.</p>
+        /// <p>The name of the runtime environment. Must be unique within the account.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The unique identifier of the environment.</p>
+        /// <p>The name of the runtime environment. Must be unique within the account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The type of instance for the environment.</p>
+        /// <p>The type of instance for the runtime environment.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_type(input.into());
             self
         }
-        /// <p>The type of instance for the environment.</p>
+        /// <p>The type of instance for the runtime environment.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1098,22 +1112,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_type(input);
             self
         }
-        /// <p>The description of the environment.</p>
+        /// <p>The description of the runtime environment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the environment.</p>
+        /// <p>The description of the runtime environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The engine type for the environment.</p>
+        /// <p>The engine type for the runtime environment.</p>
         pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
             self.inner = self.inner.engine_type(input);
             self
         }
-        /// <p>The engine type for the environment.</p>
+        /// <p>The engine type for the runtime environment.</p>
         pub fn set_engine_type(
             mut self,
             input: std::option::Option<crate::model::EngineType>,
@@ -1121,12 +1135,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_engine_type(input);
             self
         }
-        /// <p>The version of the engine type for the environment.</p>
+        /// <p>The version of the engine type for the runtime environment.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.engine_version(input.into());
             self
         }
-        /// <p>The version of the engine type for the environment.</p>
+        /// <p>The version of the engine type for the runtime environment.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1138,12 +1152,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>The list of subnets associated with the VPC for this environment.</p>
+        /// <p>The list of subnets associated with the VPC for this runtime environment.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subnet_ids(input.into());
             self
         }
-        /// <p>The list of subnets associated with the VPC for this environment.</p>
+        /// <p>The list of subnets associated with the VPC for this runtime environment.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1155,12 +1169,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>The list of security groups for the VPC associated with this environment.</p>
+        /// <p>The list of security groups for the VPC associated with this runtime environment.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_group_ids(input.into());
             self
         }
-        /// <p>The list of security groups for the VPC associated with this environment.</p>
+        /// <p>The list of security groups for the VPC associated with this runtime environment.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1172,12 +1186,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_storage_configurations`](Self::set_storage_configurations).
         ///
-        /// <p>Optional. The storage configurations for this environment.</p>
+        /// <p>Optional. The storage configurations for this runtime environment.</p>
         pub fn storage_configurations(mut self, input: crate::model::StorageConfiguration) -> Self {
             self.inner = self.inner.storage_configurations(input);
             self
         }
-        /// <p>Optional. The storage configurations for this environment.</p>
+        /// <p>Optional. The storage configurations for this runtime environment.</p>
         pub fn set_storage_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StorageConfiguration>>,
@@ -1185,12 +1199,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_storage_configurations(input);
             self
         }
-        /// <p>Specifies whether the environment is publicly accessible.</p>
+        /// <p>Specifies whether the runtime environment is publicly accessible.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.inner = self.inner.publicly_accessible(input);
             self
         }
-        /// <p>Specifies whether the environment is publicly accessible.</p>
+        /// <p>Specifies whether the runtime environment is publicly accessible.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_publicly_accessible(input);
             self
@@ -1215,7 +1229,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags for the environment.</p>
+        /// <p>The tags for the runtime environment.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1224,7 +1238,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags for the environment.</p>
+        /// <p>The tags for the runtime environment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1234,7 +1248,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+        /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
         pub fn preferred_maintenance_window(
             mut self,
             input: impl Into<std::string::String>,
@@ -1242,7 +1256,7 @@ pub mod fluent_builders {
             self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
-        /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+        /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1258,6 +1272,16 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create an environment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The identifier of a customer managed key.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
+            self
+        }
+        /// <p>The identifier of a customer managed key.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
     }
@@ -1339,7 +1363,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteApplicationFromEnvironment`.
     ///
-    /// <p>Deletes a specific application from a specified environment where it has been previously deployed. You cannot delete an environment using DeleteEnvironment, if any application has ever been deployed to it. This API removes the association of the application with the environment so you can delete the environment smoothly.</p>
+    /// <p>Deletes a specific application from the specific runtime environment where it was previously deployed. You cannot delete a runtime environment using DeleteEnvironment if any application has ever been deployed to it. This API removes the association of the application with the runtime environment so you can delete the environment smoothly.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationFromEnvironment {
         handle: std::sync::Arc<super::Handle>,
@@ -1428,7 +1452,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEnvironment`.
     ///
-    /// <p>Deletes a specific environment. The environment cannot contain deployed applications. If it does, you must delete those applications before you delete the environment.</p>
+    /// <p>Deletes a specific runtime environment. The environment cannot contain deployed applications. If it does, you must delete those applications before you delete the environment.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironment {
         handle: std::sync::Arc<super::Handle>,
@@ -2092,7 +2116,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListApplications`.
     ///
-    /// <p>Lists the applications associated with a specific Amazon Web Services account. You can provide the unique identifier of a specific environment in a query parameter to see all applications associated with that environment.</p>
+    /// <p>Lists the applications associated with a specific Amazon Web Services account. You can provide the unique identifier of a specific runtime environment in a query parameter to see all applications associated with that environment.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications {
         handle: std::sync::Arc<super::Handle>,
@@ -2313,7 +2337,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBatchJobDefinitions`.
     ///
-    /// <p>Lists all the available batch job definitions based on the batch job resources uploaded during the application creation. The listed batch job definitions can then be used to start a batch job.</p>
+    /// <p>Lists all the available batch job definitions based on the batch job resources uploaded during the application creation. You can use the batch job definitions in the list to start a batch job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBatchJobDefinitions {
         handle: std::sync::Arc<super::Handle>,
@@ -2695,7 +2719,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDataSets`.
     ///
-    /// <p>Lists the data sets imported for a specific application. In Amazon Web Services Mainframe Modernization, data sets are associated with applications deployed on environments. This is known as importing data sets. Currently, Amazon Web Services Mainframe Modernization can import data sets into catalogs using <a href="https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateDataSetImportTask.html">CreateDataSetImportTask</a>.</p>
+    /// <p>Lists the data sets imported for a specific application. In Amazon Web Services Mainframe Modernization, data sets are associated with applications deployed on runtime environments. This is known as importing data sets. Currently, Amazon Web Services Mainframe Modernization can import data sets into catalogs using <a href="https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateDataSetImportTask.html">CreateDataSetImportTask</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataSets {
         handle: std::sync::Arc<super::Handle>,
@@ -3077,22 +3101,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListEnvironmentsPaginator {
             crate::paginator::ListEnvironmentsPaginator::new(self.handle, self.inner)
         }
-        /// <p>A pagination token to control the number of environments displayed in the list.</p>
+        /// <p>A pagination token to control the number of runtime environments displayed in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token to control the number of environments displayed in the list.</p>
+        /// <p>A pagination token to control the number of runtime environments displayed in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of environments to return.</p>
+        /// <p>The maximum number of runtime environments to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of environments to return.</p>
+        /// <p>The maximum number of runtime environments to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3101,12 +3125,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
-        /// <p>The name of the environment.</p>
+        /// <p>The names of the runtime environments. Must be unique within the account.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.names(input.into());
             self
         }
-        /// <p>The name of the environment.</p>
+        /// <p>The names of the runtime environments. Must be unique within the account.</p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3114,12 +3138,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_names(input);
             self
         }
-        /// <p>The engine type for the environment.</p>
+        /// <p>The engine type for the runtime environment.</p>
         pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
             self.inner = self.inner.engine_type(input);
             self
         }
-        /// <p>The engine type for the environment.</p>
+        /// <p>The engine type for the runtime environment.</p>
         pub fn set_engine_type(
             mut self,
             input: std::option::Option<crate::model::EngineType>,
@@ -3772,7 +3796,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateEnvironment`.
     ///
-    /// <p>Updates the configuration details for a specific environment.</p>
+    /// <p>Updates the configuration details for a specific runtime environment.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironment {
         handle: std::sync::Arc<super::Handle>,
@@ -3845,22 +3869,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_id(input);
             self
         }
-        /// <p>The desired capacity for the environment to update.</p>
+        /// <p>The desired capacity for the runtime environment to update.</p>
         pub fn desired_capacity(mut self, input: i32) -> Self {
             self.inner = self.inner.desired_capacity(input);
             self
         }
-        /// <p>The desired capacity for the environment to update.</p>
+        /// <p>The desired capacity for the runtime environment to update.</p>
         pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_desired_capacity(input);
             self
         }
-        /// <p>The instance type for the environment to update.</p>
+        /// <p>The instance type for the runtime environment to update.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_type(input.into());
             self
         }
-        /// <p>The instance type for the environment to update.</p>
+        /// <p>The instance type for the runtime environment to update.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3868,12 +3892,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_type(input);
             self
         }
-        /// <p>The version of the runtime engine for the environment.</p>
+        /// <p>The version of the runtime engine for the runtime environment.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.engine_version(input.into());
             self
         }
-        /// <p>The version of the runtime engine for the environment.</p>
+        /// <p>The version of the runtime engine for the runtime environment.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3881,7 +3905,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_engine_version(input);
             self
         }
-        /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+        /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
         pub fn preferred_maintenance_window(
             mut self,
             input: impl Into<std::string::String>,
@@ -3889,7 +3913,7 @@ pub mod fluent_builders {
             self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
-        /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+        /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3897,12 +3921,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_preferred_maintenance_window(input);
             self
         }
-        /// <p>Indicates whether to update the environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
+        /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
         pub fn apply_during_maintenance_window(mut self, input: bool) -> Self {
             self.inner = self.inner.apply_during_maintenance_window(input);
             self
         }
-        /// <p>Indicates whether to update the environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
+        /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
         pub fn set_apply_during_maintenance_window(
             mut self,
             input: std::option::Option<bool>,

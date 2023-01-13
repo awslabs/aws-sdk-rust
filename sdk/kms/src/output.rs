@@ -976,7 +976,7 @@ impl ListRetirableGrantsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceTagsOutput {
     /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
-    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -990,7 +990,7 @@ pub struct ListResourceTagsOutput {
 }
 impl ListResourceTagsOutput {
     /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
-    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -1021,7 +1021,7 @@ pub mod list_resource_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
-        /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -1030,7 +1030,7 @@ pub mod list_resource_tags_output {
             self
         }
         /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
-        /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -1495,7 +1495,7 @@ pub struct GetPublicKeyOutput {
     #[doc(hidden)]
     pub public_key: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
-    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
     #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
     #[doc(hidden)]
     pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
@@ -1529,7 +1529,7 @@ impl GetPublicKeyOutput {
         self.public_key.as_ref()
     }
     /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
-    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
     #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
     pub fn customer_master_key_spec(
         &self,
@@ -1605,7 +1605,7 @@ pub mod get_public_key_output {
             self
         }
         /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
-        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
         #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
         pub fn customer_master_key_spec(
             mut self,
@@ -1615,7 +1615,7 @@ pub mod get_public_key_output {
             self
         }
         /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
-        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
         #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
         pub fn set_customer_master_key_spec(
             mut self,
@@ -2013,7 +2013,8 @@ impl GenerateRandomOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateMacOutput {
-    /// <p>The hash-based message authentication code (HMAC) for the given message, key, and MAC algorithm.</p>
+    /// <p>The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and MAC algorithm.</p>
+    /// <p>This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.</p>
     #[doc(hidden)]
     pub mac: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The MAC algorithm that was used to generate the HMAC.</p>
@@ -2024,7 +2025,8 @@ pub struct GenerateMacOutput {
     pub key_id: std::option::Option<std::string::String>,
 }
 impl GenerateMacOutput {
-    /// <p>The hash-based message authentication code (HMAC) for the given message, key, and MAC algorithm.</p>
+    /// <p>The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and MAC algorithm.</p>
+    /// <p>This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.</p>
     pub fn mac(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.mac.as_ref()
     }
@@ -2048,12 +2050,14 @@ pub mod generate_mac_output {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The hash-based message authentication code (HMAC) for the given message, key, and MAC algorithm.</p>
+        /// <p>The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and MAC algorithm.</p>
+        /// <p>This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.</p>
         pub fn mac(mut self, input: aws_smithy_types::Blob) -> Self {
             self.mac = Some(input);
             self
         }
-        /// <p>The hash-based message authentication code (HMAC) for the given message, key, and MAC algorithm.</p>
+        /// <p>The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and MAC algorithm.</p>
+        /// <p>This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.</p>
         pub fn set_mac(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.mac = input;
             self

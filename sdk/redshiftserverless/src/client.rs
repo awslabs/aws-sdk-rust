@@ -97,6 +97,7 @@ impl Client {
     ///   - [`recovery_point_id(impl Into<String>)`](crate::client::fluent_builders::ConvertRecoveryPointToSnapshot::recovery_point_id) / [`set_recovery_point_id(Option<String>)`](crate::client::fluent_builders::ConvertRecoveryPointToSnapshot::set_recovery_point_id): <p>The unique identifier of the recovery point.</p>
     ///   - [`snapshot_name(impl Into<String>)`](crate::client::fluent_builders::ConvertRecoveryPointToSnapshot::snapshot_name) / [`set_snapshot_name(Option<String>)`](crate::client::fluent_builders::ConvertRecoveryPointToSnapshot::set_snapshot_name): <p>The name of the snapshot.</p>
     ///   - [`retention_period(i32)`](crate::client::fluent_builders::ConvertRecoveryPointToSnapshot::retention_period) / [`set_retention_period(Option<i32>)`](crate::client::fluent_builders::ConvertRecoveryPointToSnapshot::set_retention_period): <p>How long to retain the snapshot.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ConvertRecoveryPointToSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ConvertRecoveryPointToSnapshot::set_tags): <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the created snapshot.</p>
     /// - On success, responds with [`ConvertRecoveryPointToSnapshotOutput`](crate::output::ConvertRecoveryPointToSnapshotOutput) with field(s):
     ///   - [`snapshot(Option<Snapshot>)`](crate::output::ConvertRecoveryPointToSnapshotOutput::snapshot): <p>The snapshot converted from the recovery point.</p>
     /// - On failure, responds with [`SdkError<ConvertRecoveryPointToSnapshotError>`](crate::error::ConvertRecoveryPointToSnapshotError)
@@ -142,6 +143,7 @@ impl Client {
     ///   - [`namespace_name(impl Into<String>)`](crate::client::fluent_builders::CreateSnapshot::namespace_name) / [`set_namespace_name(Option<String>)`](crate::client::fluent_builders::CreateSnapshot::set_namespace_name): <p>The namespace to create a snapshot for.</p>
     ///   - [`snapshot_name(impl Into<String>)`](crate::client::fluent_builders::CreateSnapshot::snapshot_name) / [`set_snapshot_name(Option<String>)`](crate::client::fluent_builders::CreateSnapshot::set_snapshot_name): <p>The name of the snapshot.</p>
     ///   - [`retention_period(i32)`](crate::client::fluent_builders::CreateSnapshot::retention_period) / [`set_retention_period(Option<i32>)`](crate::client::fluent_builders::CreateSnapshot::set_retention_period): <p>How long to retain the created snapshot.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateSnapshot::set_tags): <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
     /// - On success, responds with [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput) with field(s):
     ///   - [`snapshot(Option<Snapshot>)`](crate::output::CreateSnapshotOutput::snapshot): <p>The created snapshot object.</p>
     /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::error::CreateSnapshotError)
@@ -174,6 +176,7 @@ impl Client {
     ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateWorkgroup::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateWorkgroup::set_subnet_ids): <p>An array of VPC subnet IDs to associate with the workgroup.</p>
     ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::CreateWorkgroup::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::CreateWorkgroup::set_publicly_accessible): <p>A value that specifies whether the workgroup can be accessed from a public network.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWorkgroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWorkgroup::set_tags): <p>A array of tag instances.</p>
+    ///   - [`port(i32)`](crate::client::fluent_builders::CreateWorkgroup::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::CreateWorkgroup::set_port): <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
     /// - On success, responds with [`CreateWorkgroupOutput`](crate::output::CreateWorkgroupOutput) with field(s):
     ///   - [`workgroup(Option<Workgroup>)`](crate::output::CreateWorkgroupOutput::workgroup): <p>The created workgroup object.</p>
     /// - On failure, responds with [`SdkError<CreateWorkgroupError>`](crate::error::CreateWorkgroupError)
@@ -246,7 +249,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workgroup_name(impl Into<String>)`](crate::client::fluent_builders::GetCredentials::workgroup_name) / [`set_workgroup_name(Option<String>)`](crate::client::fluent_builders::GetCredentials::set_workgroup_name): <p>The name of the workgroup associated with the database.</p>
-    ///   - [`db_name(impl Into<String>)`](crate::client::fluent_builders::GetCredentials::db_name) / [`set_db_name(Option<String>)`](crate::client::fluent_builders::GetCredentials::set_db_name): <p>The name of the database to get temporary authorization to log on to.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 64 alphanumeric characters or hyphens.</p> </li>   <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Must not contain a colon ( : ) or slash ( / ).</p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words </a> in the Amazon Redshift Database Developer Guide</p> </li>  </ul>
+    ///   - [`db_name(impl Into<String>)`](crate::client::fluent_builders::GetCredentials::db_name) / [`set_db_name(Option<String>)`](crate::client::fluent_builders::GetCredentials::set_db_name): <p>The name of the database to get temporary authorization to log on to.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 64 alphanumeric characters or hyphens.</p> </li>   <li> <p>Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Must not contain a colon ( : ) or slash ( / ).</p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words </a> in the Amazon Redshift Database Developer Guide</p> </li>  </ul>
     ///   - [`duration_seconds(i32)`](crate::client::fluent_builders::GetCredentials::duration_seconds) / [`set_duration_seconds(Option<i32>)`](crate::client::fluent_builders::GetCredentials::set_duration_seconds): <p>The number of seconds until the returned temporary password expires. The minimum is 900 seconds, and the maximum is 3600 seconds.</p>
     /// - On success, responds with [`GetCredentialsOutput`](crate::output::GetCredentialsOutput) with field(s):
     ///   - [`db_user(Option<String>)`](crate::output::GetCredentialsOutput::db_user): <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified <code>DbUser</code> exists in the database, the new user name has the same database privileges as the the user named in <code>DbUser</code>. By default, the user is added to PUBLIC.</p>
@@ -309,6 +312,16 @@ impl Client {
     pub fn get_snapshot(&self) -> fluent_builders::GetSnapshot {
         fluent_builders::GetSnapshot::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetTableRestoreStatus`](crate::client::fluent_builders::GetTableRestoreStatus) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`table_restore_request_id(impl Into<String>)`](crate::client::fluent_builders::GetTableRestoreStatus::table_restore_request_id) / [`set_table_restore_request_id(Option<String>)`](crate::client::fluent_builders::GetTableRestoreStatus::set_table_restore_request_id): <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
+    /// - On success, responds with [`GetTableRestoreStatusOutput`](crate::output::GetTableRestoreStatusOutput) with field(s):
+    ///   - [`table_restore_status(Option<TableRestoreStatus>)`](crate::output::GetTableRestoreStatusOutput::table_restore_status): <p>The returned <code>TableRestoreStatus</code> object that contains information about the status of your <code>RestoreTableFromSnapshot</code> request.</p>
+    /// - On failure, responds with [`SdkError<GetTableRestoreStatusError>`](crate::error::GetTableRestoreStatusError)
+    pub fn get_table_restore_status(&self) -> fluent_builders::GetTableRestoreStatus {
+        fluent_builders::GetTableRestoreStatus::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetUsageLimit`](crate::client::fluent_builders::GetUsageLimit) operation.
     ///
     /// - The fluent builder is configurable:
@@ -333,8 +346,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEndpointAccess::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEndpointAccess::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEndpointAccess::set_next_token): <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEndpointAccess::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEndpointAccess::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEndpointAccess::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEndpointAccess::set_next_token): <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEndpointAccess::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEndpointAccess::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     ///   - [`workgroup_name(impl Into<String>)`](crate::client::fluent_builders::ListEndpointAccess::workgroup_name) / [`set_workgroup_name(Option<String>)`](crate::client::fluent_builders::ListEndpointAccess::set_workgroup_name): <p>The name of the workgroup associated with the VPC endpoint to return.</p>
     ///   - [`vpc_id(impl Into<String>)`](crate::client::fluent_builders::ListEndpointAccess::vpc_id) / [`set_vpc_id(Option<String>)`](crate::client::fluent_builders::ListEndpointAccess::set_vpc_id): <p>The unique identifier of the virtual private cloud with access to Amazon Redshift Serverless.</p>
     /// - On success, responds with [`ListEndpointAccessOutput`](crate::output::ListEndpointAccessOutput) with field(s):
@@ -348,8 +361,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListNamespaces::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNamespaces::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNamespaces::set_next_token): <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns results in the next page.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListNamespaces::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListNamespaces::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNamespaces::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNamespaces::set_next_token): <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns results in the next page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListNamespaces::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListNamespaces::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     /// - On success, responds with [`ListNamespacesOutput`](crate::output::ListNamespacesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListNamespacesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     ///   - [`namespaces(Option<Vec<Namespace>>)`](crate::output::ListNamespacesOutput::namespaces): <p>The list of returned namespaces.</p>
@@ -361,11 +374,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecoveryPoints::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecoveryPoints::set_next_token): <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecoveryPoints::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRecoveryPoints::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecoveryPoints::set_next_token): <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecoveryPoints::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRecoveryPoints::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListRecoveryPoints::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListRecoveryPoints::set_start_time): <p>The time when the recovery point's creation was initiated.</p>
     ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListRecoveryPoints::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListRecoveryPoints::set_end_time): <p>The time when creation of the recovery point finished.</p>
     ///   - [`namespace_name(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPoints::namespace_name) / [`set_namespace_name(Option<String>)`](crate::client::fluent_builders::ListRecoveryPoints::set_namespace_name): <p>The name of the namespace to list recovery points for.</p>
+    ///   - [`namespace_arn(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPoints::namespace_arn) / [`set_namespace_arn(Option<String>)`](crate::client::fluent_builders::ListRecoveryPoints::set_namespace_arn): <p>The Amazon Resource Name (ARN) of the namespace from which to list recovery points.</p>
     /// - On success, responds with [`ListRecoveryPointsOutput`](crate::output::ListRecoveryPointsOutput) with field(s):
     ///   - [`recovery_points(Option<Vec<RecoveryPoint>>)`](crate::output::ListRecoveryPointsOutput::recovery_points): <p>The returned recovery point objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRecoveryPointsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -378,7 +392,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSnapshots::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSnapshots::set_next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSnapshots::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSnapshots::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSnapshots::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSnapshots::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     ///   - [`namespace_name(impl Into<String>)`](crate::client::fluent_builders::ListSnapshots::namespace_name) / [`set_namespace_name(Option<String>)`](crate::client::fluent_builders::ListSnapshots::set_namespace_name): <p>The namespace from which to list all snapshots.</p>
     ///   - [`namespace_arn(impl Into<String>)`](crate::client::fluent_builders::ListSnapshots::namespace_arn) / [`set_namespace_arn(Option<String>)`](crate::client::fluent_builders::ListSnapshots::set_namespace_arn): <p>The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.</p>
     ///   - [`owner_account(impl Into<String>)`](crate::client::fluent_builders::ListSnapshots::owner_account) / [`set_owner_account(Option<String>)`](crate::client::fluent_builders::ListSnapshots::set_owner_account): <p>The owner Amazon Web Services account of the snapshot.</p>
@@ -390,6 +404,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListSnapshotsError>`](crate::error::ListSnapshotsError)
     pub fn list_snapshots(&self) -> fluent_builders::ListSnapshots {
         fluent_builders::ListSnapshots::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListTableRestoreStatus`](crate::client::fluent_builders::ListTableRestoreStatus) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTableRestoreStatus::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTableRestoreStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTableRestoreStatus::set_next_token): <p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTableRestoreStatus::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTableRestoreStatus::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
+    ///   - [`namespace_name(impl Into<String>)`](crate::client::fluent_builders::ListTableRestoreStatus::namespace_name) / [`set_namespace_name(Option<String>)`](crate::client::fluent_builders::ListTableRestoreStatus::set_namespace_name): <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
+    ///   - [`workgroup_name(impl Into<String>)`](crate::client::fluent_builders::ListTableRestoreStatus::workgroup_name) / [`set_workgroup_name(Option<String>)`](crate::client::fluent_builders::ListTableRestoreStatus::set_workgroup_name): <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
+    /// - On success, responds with [`ListTableRestoreStatusOutput`](crate::output::ListTableRestoreStatusOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListTableRestoreStatusOutput::next_token): <p>If your initial <code>ListTableRestoreStatus</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will returns results on the next page.</p>
+    ///   - [`table_restore_statuses(Option<Vec<TableRestoreStatus>>)`](crate::output::ListTableRestoreStatusOutput::table_restore_statuses): <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
+    /// - On failure, responds with [`SdkError<ListTableRestoreStatusError>`](crate::error::ListTableRestoreStatusError)
+    pub fn list_table_restore_status(&self) -> fluent_builders::ListTableRestoreStatus {
+        fluent_builders::ListTableRestoreStatus::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
@@ -407,7 +436,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListUsageLimits::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListUsageLimits::set_resource_arn): <p>The Amazon Resource Name (ARN) associated with the resource whose usage limits you want to list.</p>
     ///   - [`usage_type(UsageLimitUsageType)`](crate::client::fluent_builders::ListUsageLimits::usage_type) / [`set_usage_type(Option<UsageLimitUsageType>)`](crate::client::fluent_builders::ListUsageLimits::set_usage_type): <p>The Amazon Redshift Serverless feature whose limits you want to see.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUsageLimits::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUsageLimits::set_next_token): <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUsageLimits::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUsageLimits::set_next_token): <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUsageLimits::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUsageLimits::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 100.</p>
     /// - On success, responds with [`ListUsageLimitsOutput`](crate::output::ListUsageLimitsOutput) with field(s):
     ///   - [`usage_limits(Option<Vec<UsageLimit>>)`](crate::output::ListUsageLimitsOutput::usage_limits): <p>An array of returned usage limit objects.</p>
@@ -420,8 +449,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorkgroups::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorkgroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorkgroups::set_next_token): <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorkgroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorkgroups::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorkgroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorkgroups::set_next_token): <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorkgroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorkgroups::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     /// - On success, responds with [`ListWorkgroupsOutput`](crate::output::ListWorkgroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListWorkgroupsOutput::next_token): <p> If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token.</p>
     ///   - [`workgroups(Option<Vec<Workgroup>>)`](crate::output::ListWorkgroupsOutput::workgroups): <p>The returned array of workgroups.</p>
@@ -458,8 +487,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`namespace_name(impl Into<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::namespace_name) / [`set_namespace_name(Option<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::set_namespace_name): <p>The name of the namespace to restore the snapshot to.</p>
     ///   - [`workgroup_name(impl Into<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::workgroup_name) / [`set_workgroup_name(Option<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::set_workgroup_name): <p>The name of the workgroup used to restore the snapshot.</p>
-    ///   - [`snapshot_name(impl Into<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::snapshot_name) / [`set_snapshot_name(Option<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::set_snapshot_name): <p>The name of the snapshot to restore from.</p>
-    ///   - [`snapshot_arn(impl Into<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::snapshot_arn) / [`set_snapshot_arn(Option<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::set_snapshot_arn): <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+    ///   - [`snapshot_name(impl Into<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::snapshot_name) / [`set_snapshot_name(Option<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::set_snapshot_name): <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
+    ///   - [`snapshot_arn(impl Into<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::snapshot_arn) / [`set_snapshot_arn(Option<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::set_snapshot_arn): <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.</p>  <p>The format of the ARN is arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
     ///   - [`owner_account(impl Into<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::owner_account) / [`set_owner_account(Option<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::set_owner_account): <p>The Amazon Web Services account that owns the snapshot.</p>
     /// - On success, responds with [`RestoreFromSnapshotOutput`](crate::output::RestoreFromSnapshotOutput) with field(s):
     ///   - [`snapshot_name(Option<String>)`](crate::output::RestoreFromSnapshotOutput::snapshot_name): <p>The name of the snapshot used to restore the namespace.</p>
@@ -468,6 +497,25 @@ impl Client {
     /// - On failure, responds with [`SdkError<RestoreFromSnapshotError>`](crate::error::RestoreFromSnapshotError)
     pub fn restore_from_snapshot(&self) -> fluent_builders::RestoreFromSnapshot {
         fluent_builders::RestoreFromSnapshot::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`RestoreTableFromSnapshot`](crate::client::fluent_builders::RestoreTableFromSnapshot) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`namespace_name(impl Into<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::namespace_name) / [`set_namespace_name(Option<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::set_namespace_name): <p>The namespace of the snapshot to restore from.</p>
+    ///   - [`workgroup_name(impl Into<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::workgroup_name) / [`set_workgroup_name(Option<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::set_workgroup_name): <p>The workgroup to restore the table to.</p>
+    ///   - [`snapshot_name(impl Into<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::snapshot_name) / [`set_snapshot_name(Option<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::set_snapshot_name): <p>The name of the snapshot to restore the table from.</p>
+    ///   - [`source_database_name(impl Into<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::source_database_name) / [`set_source_database_name(Option<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::set_source_database_name): <p>The name of the source database that contains the table being restored.</p>
+    ///   - [`source_schema_name(impl Into<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::source_schema_name) / [`set_source_schema_name(Option<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::set_source_schema_name): <p>The name of the source schema that contains the table being restored.</p>
+    ///   - [`source_table_name(impl Into<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::source_table_name) / [`set_source_table_name(Option<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::set_source_table_name): <p>The name of the source table being restored.</p>
+    ///   - [`target_database_name(impl Into<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::target_database_name) / [`set_target_database_name(Option<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::set_target_database_name): <p>The name of the database to restore the table to.</p>
+    ///   - [`target_schema_name(impl Into<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::target_schema_name) / [`set_target_schema_name(Option<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::set_target_schema_name): <p>The name of the schema to restore the table to.</p>
+    ///   - [`new_table_name(impl Into<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::new_table_name) / [`set_new_table_name(Option<String>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::set_new_table_name): <p>The name of the table to create from the restore operation.</p>
+    ///   - [`activate_case_sensitive_identifier(bool)`](crate::client::fluent_builders::RestoreTableFromSnapshot::activate_case_sensitive_identifier) / [`set_activate_case_sensitive_identifier(Option<bool>)`](crate::client::fluent_builders::RestoreTableFromSnapshot::set_activate_case_sensitive_identifier): <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false.</p>
+    /// - On success, responds with [`RestoreTableFromSnapshotOutput`](crate::output::RestoreTableFromSnapshotOutput) with field(s):
+    ///   - [`table_restore_status(Option<TableRestoreStatus>)`](crate::output::RestoreTableFromSnapshotOutput::table_restore_status): <p>The TableRestoreStatus object that contains the status of the restore operation.</p>
+    /// - On failure, responds with [`SdkError<RestoreTableFromSnapshotError>`](crate::error::RestoreTableFromSnapshotError)
+    pub fn restore_table_from_snapshot(&self) -> fluent_builders::RestoreTableFromSnapshot {
+        fluent_builders::RestoreTableFromSnapshot::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
@@ -533,7 +581,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`usage_limit_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUsageLimit::usage_limit_id) / [`set_usage_limit_id(Option<String>)`](crate::client::fluent_builders::UpdateUsageLimit::set_usage_limit_id): <p>The identifier of the usage limit to update.</p>
-    ///   - [`amount(i64)`](crate::client::fluent_builders::UpdateUsageLimit::amount) / [`set_amount(Option<i64>)`](crate::client::fluent_builders::UpdateUsageLimit::set_amount): <p>The new limit amount. For more information about this parameter.</p>
+    ///   - [`amount(i64)`](crate::client::fluent_builders::UpdateUsageLimit::amount) / [`set_amount(Option<i64>)`](crate::client::fluent_builders::UpdateUsageLimit::set_amount): <p>The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
     ///   - [`breach_action(UsageLimitBreachAction)`](crate::client::fluent_builders::UpdateUsageLimit::breach_action) / [`set_breach_action(Option<UsageLimitBreachAction>)`](crate::client::fluent_builders::UpdateUsageLimit::set_breach_action): <p>The new action that Amazon Redshift Serverless takes when the limit is reached.</p>
     /// - On success, responds with [`UpdateUsageLimitOutput`](crate::output::UpdateUsageLimitOutput) with field(s):
     ///   - [`usage_limit(Option<UsageLimit>)`](crate::output::UpdateUsageLimitOutput::usage_limit): <p>The updated usage limit object.</p>
@@ -551,6 +599,7 @@ impl Client {
     ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::UpdateWorkgroup::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::UpdateWorkgroup::set_publicly_accessible): <p>A value that specifies whether the workgroup can be accessible from a public network.</p>
     ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::UpdateWorkgroup::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateWorkgroup::set_subnet_ids): <p>An array of VPC subnet IDs to associate with the workgroup.</p>
     ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::UpdateWorkgroup::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateWorkgroup::set_security_group_ids): <p>An array of security group IDs to associate with the workgroup.</p>
+    ///   - [`port(i32)`](crate::client::fluent_builders::UpdateWorkgroup::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::UpdateWorkgroup::set_port): <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
     /// - On success, responds with [`UpdateWorkgroupOutput`](crate::output::UpdateWorkgroupOutput) with field(s):
     ///   - [`workgroup(Option<Workgroup>)`](crate::output::UpdateWorkgroupOutput::workgroup): <p>The updated workgroup object.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkgroupError>`](crate::error::UpdateWorkgroupError)
@@ -661,6 +710,23 @@ pub mod fluent_builders {
         /// <p>How long to retain the snapshot.</p>
         pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_retention_period(input);
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the created snapshot.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the created snapshot.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1071,6 +1137,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_retention_period(input);
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateUsageLimit`.
     ///
@@ -1378,6 +1461,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
+            self
+        }
+        /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_port(input);
             self
         }
     }
@@ -1864,8 +1957,8 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a database user name and temporary password with temporary authorization to log in to Amazon Redshift Serverless.</p>
     /// <p>By default, the temporary credentials expire in 900 seconds. You can optionally specify a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes).</p>
-    /// <p> The Identity and Access Management (IAM) user or role that runs GetCredentials must have an IAM policy attached that allows access to all necessary actions and resources. </p>
-    /// <p> If the <code>DbName</code> parameter is specified, the IAM policy must allow access to the resource dbname for the specified database name.</p>
+    /// <p>The Identity and Access Management (IAM) user or role that runs GetCredentials must have an IAM policy attached that allows access to all necessary actions and resources.</p>
+    /// <p>If the <code>DbName</code> parameter is specified, the IAM policy must allow access to the resource dbname for the specified database name.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCredentials {
         handle: std::sync::Arc<super::Handle>,
@@ -1942,7 +2035,7 @@ pub mod fluent_builders {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens.</p> </li>
-        /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+        /// <li> <p>Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
         /// <li> <p>The first character must be a letter.</p> </li>
         /// <li> <p>Must not contain a colon ( : ) or slash ( / ).</p> </li>
         /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words </a> in the Amazon Redshift Database Developer Guide</p> </li>
@@ -1955,7 +2048,7 @@ pub mod fluent_builders {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens.</p> </li>
-        /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+        /// <li> <p>Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
         /// <li> <p>The first character must be a letter.</p> </li>
         /// <li> <p>Must not contain a colon ( : ) or slash ( / ).</p> </li>
         /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words </a> in the Amazon Redshift Database Developer Guide</p> </li>
@@ -2375,6 +2468,82 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetTableRestoreStatus`.
+    ///
+    /// <p>Returns information about a <code>TableRestoreStatus</code> object.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetTableRestoreStatus {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_table_restore_status_input::Builder,
+    }
+    impl GetTableRestoreStatus {
+        /// Creates a new `GetTableRestoreStatus`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetTableRestoreStatus,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetTableRestoreStatusError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetTableRestoreStatusOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetTableRestoreStatusError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
+        pub fn table_restore_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_restore_request_id(input.into());
+            self
+        }
+        /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
+        pub fn set_table_restore_request_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_table_restore_request_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetUsageLimit`.
     ///
     /// <p>Returns information about a usage limit.</p>
@@ -2595,22 +2764,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListEndpointAccessPaginator {
             crate::paginator::ListEndpointAccessPaginator::new(self.handle, self.inner)
         }
-        /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
+        /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
+        /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2707,22 +2876,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListNamespacesPaginator {
             crate::paginator::ListNamespacesPaginator::new(self.handle, self.inner)
         }
-        /// <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns results in the next page.</p>
+        /// <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns results in the next page.</p>
+        /// <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2796,22 +2965,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListRecoveryPointsPaginator {
             crate::paginator::ListRecoveryPointsPaginator::new(self.handle, self.inner)
         }
-        /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
+        /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
+        /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2853,6 +3022,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_namespace_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the namespace from which to list recovery points.</p>
+        pub fn namespace_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the namespace from which to list recovery points.</p>
+        pub fn set_namespace_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_namespace_arn(input);
             self
         }
     }
@@ -2934,12 +3116,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3007,6 +3189,121 @@ pub mod fluent_builders {
             input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListTableRestoreStatus`.
+    ///
+    /// <p>Returns information about an array of <code>TableRestoreStatus</code> objects.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListTableRestoreStatus {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_table_restore_status_input::Builder,
+    }
+    impl ListTableRestoreStatus {
+        /// Creates a new `ListTableRestoreStatus`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListTableRestoreStatus,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListTableRestoreStatusError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTableRestoreStatusOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTableRestoreStatusError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTableRestoreStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTableRestoreStatusPaginator {
+            crate::paginator::ListTableRestoreStatusPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
+        pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace_name(input.into());
+            self
+        }
+        /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
+        pub fn set_namespace_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_namespace_name(input);
+            self
+        }
+        /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
+        pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workgroup_name(input.into());
+            self
+        }
+        /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_workgroup_name(input);
             self
         }
     }
@@ -3174,12 +3471,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_usage_type(input);
             self
         }
-        /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
+        /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
+        /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3263,22 +3560,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListWorkgroupsPaginator {
             crate::paginator::ListWorkgroupsPaginator::new(self.handle, self.inner)
         }
-        /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.</p>
+        /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.</p>
+        /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3559,12 +3856,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workgroup_name(input);
             self
         }
-        /// <p>The name of the snapshot to restore from.</p>
+        /// <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
         pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.snapshot_name(input.into());
             self
         }
-        /// <p>The name of the snapshot to restore from.</p>
+        /// <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
         pub fn set_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3572,12 +3869,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.</p>
+        /// <p>The format of the ARN is arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
         pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.snapshot_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.</p>
+        /// <p>The format of the ARN is arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
         pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_snapshot_arn(input);
             self
@@ -3593,6 +3892,199 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_owner_account(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `RestoreTableFromSnapshot`.
+    ///
+    /// <p>Restores a table from a snapshot to your Amazon Redshift Serverless instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RestoreTableFromSnapshot {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::restore_table_from_snapshot_input::Builder,
+    }
+    impl RestoreTableFromSnapshot {
+        /// Creates a new `RestoreTableFromSnapshot`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::RestoreTableFromSnapshot,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::RestoreTableFromSnapshotError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RestoreTableFromSnapshotOutput,
+            aws_smithy_http::result::SdkError<crate::error::RestoreTableFromSnapshotError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The namespace of the snapshot to restore from.</p>
+        pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace_name(input.into());
+            self
+        }
+        /// <p>The namespace of the snapshot to restore from.</p>
+        pub fn set_namespace_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_namespace_name(input);
+            self
+        }
+        /// <p>The workgroup to restore the table to.</p>
+        pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workgroup_name(input.into());
+            self
+        }
+        /// <p>The workgroup to restore the table to.</p>
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_workgroup_name(input);
+            self
+        }
+        /// <p>The name of the snapshot to restore the table from.</p>
+        pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(input.into());
+            self
+        }
+        /// <p>The name of the snapshot to restore the table from.</p>
+        pub fn set_snapshot_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_snapshot_name(input);
+            self
+        }
+        /// <p>The name of the source database that contains the table being restored.</p>
+        pub fn source_database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_database_name(input.into());
+            self
+        }
+        /// <p>The name of the source database that contains the table being restored.</p>
+        pub fn set_source_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_database_name(input);
+            self
+        }
+        /// <p>The name of the source schema that contains the table being restored.</p>
+        pub fn source_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_schema_name(input.into());
+            self
+        }
+        /// <p>The name of the source schema that contains the table being restored.</p>
+        pub fn set_source_schema_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_schema_name(input);
+            self
+        }
+        /// <p>The name of the source table being restored.</p>
+        pub fn source_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_table_name(input.into());
+            self
+        }
+        /// <p>The name of the source table being restored.</p>
+        pub fn set_source_table_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_table_name(input);
+            self
+        }
+        /// <p>The name of the database to restore the table to.</p>
+        pub fn target_database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_database_name(input.into());
+            self
+        }
+        /// <p>The name of the database to restore the table to.</p>
+        pub fn set_target_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_target_database_name(input);
+            self
+        }
+        /// <p>The name of the schema to restore the table to.</p>
+        pub fn target_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_schema_name(input.into());
+            self
+        }
+        /// <p>The name of the schema to restore the table to.</p>
+        pub fn set_target_schema_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_target_schema_name(input);
+            self
+        }
+        /// <p>The name of the table to create from the restore operation.</p>
+        pub fn new_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_table_name(input.into());
+            self
+        }
+        /// <p>The name of the table to create from the restore operation.</p>
+        pub fn set_new_table_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_new_table_name(input);
+            self
+        }
+        /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false.</p>
+        pub fn activate_case_sensitive_identifier(mut self, input: bool) -> Self {
+            self.inner = self.inner.activate_case_sensitive_identifier(input);
+            self
+        }
+        /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false.</p>
+        pub fn set_activate_case_sensitive_identifier(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_activate_case_sensitive_identifier(input);
             self
         }
     }
@@ -4189,12 +4681,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_usage_limit_id(input);
             self
         }
-        /// <p>The new limit amount. For more information about this parameter.</p>
+        /// <p>The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
         pub fn amount(mut self, input: i64) -> Self {
             self.inner = self.inner.amount(input);
             self
         }
-        /// <p>The new limit amount. For more information about this parameter.</p>
+        /// <p>The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
         pub fn set_amount(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_amount(input);
             self
@@ -4367,6 +4859,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_security_group_ids(input);
+            self
+        }
+        /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
+            self
+        }
+        /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_port(input);
             self
         }
     }

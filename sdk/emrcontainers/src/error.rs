@@ -296,6 +296,136 @@ impl std::error::Error for CancelJobRunError {
     }
 }
 
+/// Error type for the `CreateJobTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateJobTemplateError {
+    /// Kind of error that occurred.
+    pub kind: CreateJobTemplateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateJobTemplateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateJobTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateJobTemplateErrorKind {
+    /// <p>This is an internal server exception.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>There are invalid parameters in the client request.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateJobTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateJobTemplateErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateJobTemplateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateJobTemplateErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateJobTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateJobTemplateError {
+    fn code(&self) -> Option<&str> {
+        CreateJobTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateJobTemplateError {
+    /// Creates a new `CreateJobTemplateError`.
+    pub fn new(kind: CreateJobTemplateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateJobTemplateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateJobTemplateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateJobTemplateErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateJobTemplateErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateJobTemplateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateJobTemplateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateJobTemplateErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateJobTemplateErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CreateJobTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateJobTemplateErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateJobTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateJobTemplateErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateJobTemplateErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `CreateManagedEndpoint` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -560,6 +690,125 @@ impl std::error::Error for CreateVirtualClusterError {
             CreateVirtualClusterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateVirtualClusterErrorKind::ValidationException(_inner) => Some(_inner),
             CreateVirtualClusterErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeleteJobTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteJobTemplateError {
+    /// Kind of error that occurred.
+    pub kind: DeleteJobTemplateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteJobTemplateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteJobTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteJobTemplateErrorKind {
+    /// <p>This is an internal server exception.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>There are invalid parameters in the client request.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteJobTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteJobTemplateErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteJobTemplateErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteJobTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteJobTemplateError {
+    fn code(&self) -> Option<&str> {
+        DeleteJobTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteJobTemplateError {
+    /// Creates a new `DeleteJobTemplateError`.
+    pub fn new(kind: DeleteJobTemplateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteJobTemplateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteJobTemplateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteJobTemplateErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteJobTemplateErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteJobTemplateErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteJobTemplateErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteJobTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteJobTemplateErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteJobTemplateErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteJobTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -933,6 +1182,136 @@ impl std::error::Error for DescribeJobRunError {
             DescribeJobRunErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeJobRunErrorKind::ValidationException(_inner) => Some(_inner),
             DescribeJobRunErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeJobTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeJobTemplateError {
+    /// Kind of error that occurred.
+    pub kind: DescribeJobTemplateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeJobTemplateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeJobTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeJobTemplateErrorKind {
+    /// <p>This is an internal server exception.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>There are invalid parameters in the client request.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeJobTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeJobTemplateErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DescribeJobTemplateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeJobTemplateErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribeJobTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeJobTemplateError {
+    fn code(&self) -> Option<&str> {
+        DescribeJobTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeJobTemplateError {
+    /// Creates a new `DescribeJobTemplateError`.
+    pub fn new(kind: DescribeJobTemplateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeJobTemplateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeJobTemplateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeJobTemplateErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeJobTemplateErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeJobTemplateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeJobTemplateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeJobTemplateErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeJobTemplateErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeJobTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeJobTemplateErrorKind::InternalServerException(_inner) => Some(_inner),
+            DescribeJobTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeJobTemplateErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeJobTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1314,6 +1693,125 @@ impl std::error::Error for ListJobRunsError {
             ListJobRunsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListJobRunsErrorKind::ValidationException(_inner) => Some(_inner),
             ListJobRunsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListJobTemplates` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListJobTemplatesError {
+    /// Kind of error that occurred.
+    pub kind: ListJobTemplatesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListJobTemplatesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListJobTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListJobTemplates` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListJobTemplatesErrorKind {
+    /// <p>This is an internal server exception.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>There are invalid parameters in the client request.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListJobTemplatesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListJobTemplatesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListJobTemplatesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListJobTemplatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListJobTemplatesError {
+    fn code(&self) -> Option<&str> {
+        ListJobTemplatesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListJobTemplatesError {
+    /// Creates a new `ListJobTemplatesError`.
+    pub fn new(kind: ListJobTemplatesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListJobTemplatesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListJobTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListJobTemplatesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListJobTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListJobTemplatesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListJobTemplatesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListJobTemplatesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListJobTemplatesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListJobTemplatesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListJobTemplatesErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListJobTemplatesErrorKind::ValidationException(_inner) => Some(_inner),
+            ListJobTemplatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

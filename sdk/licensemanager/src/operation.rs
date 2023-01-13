@@ -1213,6 +1213,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceivedGrants {
     }
 }
 
+/// Operation shape for `ListReceivedGrantsForOrganization`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_received_grants_for_organization`](crate::client::Client::list_received_grants_for_organization).
+///
+/// See [`crate::client::fluent_builders::ListReceivedGrantsForOrganization`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListReceivedGrantsForOrganization {
+    _private: (),
+}
+impl ListReceivedGrantsForOrganization {
+    /// Creates a new builder-style object to manufacture [`ListReceivedGrantsForOrganizationInput`](crate::input::ListReceivedGrantsForOrganizationInput).
+    pub fn builder() -> crate::input::list_received_grants_for_organization_input::Builder {
+        crate::input::list_received_grants_for_organization_input::Builder::default()
+    }
+    /// Creates a new `ListReceivedGrantsForOrganization` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListReceivedGrantsForOrganization {
+    type Output = std::result::Result<
+        crate::output::ListReceivedGrantsForOrganizationOutput,
+        crate::error::ListReceivedGrantsForOrganizationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_received_grants_for_organization_error(response)
+        } else {
+            crate::operation_deser::parse_list_received_grants_for_organization_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListReceivedLicenses`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1243,6 +1277,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceivedLicenses {
             crate::operation_deser::parse_list_received_licenses_error(response)
         } else {
             crate::operation_deser::parse_list_received_licenses_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListReceivedLicensesForOrganization`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_received_licenses_for_organization`](crate::client::Client::list_received_licenses_for_organization).
+///
+/// See [`crate::client::fluent_builders::ListReceivedLicensesForOrganization`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListReceivedLicensesForOrganization {
+    _private: (),
+}
+impl ListReceivedLicensesForOrganization {
+    /// Creates a new builder-style object to manufacture [`ListReceivedLicensesForOrganizationInput`](crate::input::ListReceivedLicensesForOrganizationInput).
+    pub fn builder() -> crate::input::list_received_licenses_for_organization_input::Builder {
+        crate::input::list_received_licenses_for_organization_input::Builder::default()
+    }
+    /// Creates a new `ListReceivedLicensesForOrganization` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListReceivedLicensesForOrganization {
+    type Output = std::result::Result<
+        crate::output::ListReceivedLicensesForOrganizationOutput,
+        crate::error::ListReceivedLicensesForOrganizationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_received_licenses_for_organization_error(response)
+        } else {
+            crate::operation_deser::parse_list_received_licenses_for_organization_response(response)
         }
     }
 }

@@ -107,7 +107,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_name): <p>The name of the application.</p>
-    ///   - [`release_label(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::release_label) / [`set_release_label(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_release_label): <p>The EMR release version associated with the application.</p>
+    ///   - [`release_label(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::release_label) / [`set_release_label(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_release_label): <p>The EMR release associated with the application.</p>
     ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::type) / [`set_type(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_type): <p>The type of application you want to start, such as Spark or Hive.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_client_token): <p>The client idempotency token of the application to create. Its value must be unique for each request.</p>
     ///   - [`initial_capacity(HashMap<String, InitialCapacityConfig>)`](crate::client::fluent_builders::CreateApplication::initial_capacity) / [`set_initial_capacity(Option<HashMap<String, InitialCapacityConfig>>)`](crate::client::fluent_builders::CreateApplication::set_initial_capacity): <p>The capacity to initialize when the application is created.</p>
@@ -116,6 +116,9 @@ impl Client {
     ///   - [`auto_start_configuration(AutoStartConfig)`](crate::client::fluent_builders::CreateApplication::auto_start_configuration) / [`set_auto_start_configuration(Option<AutoStartConfig>)`](crate::client::fluent_builders::CreateApplication::set_auto_start_configuration): <p>The configuration for an application to automatically start on job submission.</p>
     ///   - [`auto_stop_configuration(AutoStopConfig)`](crate::client::fluent_builders::CreateApplication::auto_stop_configuration) / [`set_auto_stop_configuration(Option<AutoStopConfig>)`](crate::client::fluent_builders::CreateApplication::set_auto_stop_configuration): <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
     ///   - [`network_configuration(NetworkConfiguration)`](crate::client::fluent_builders::CreateApplication::network_configuration) / [`set_network_configuration(Option<NetworkConfiguration>)`](crate::client::fluent_builders::CreateApplication::set_network_configuration): <p>The network configuration for customer VPC connectivity.</p>
+    ///   - [`architecture(Architecture)`](crate::client::fluent_builders::CreateApplication::architecture) / [`set_architecture(Option<Architecture>)`](crate::client::fluent_builders::CreateApplication::set_architecture): <p>The CPU architecture of an application.</p>
+    ///   - [`image_configuration(ImageConfigurationInput)`](crate::client::fluent_builders::CreateApplication::image_configuration) / [`set_image_configuration(Option<ImageConfigurationInput>)`](crate::client::fluent_builders::CreateApplication::set_image_configuration): <p>The image configuration for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.</p>
+    ///   - [`worker_type_specifications(HashMap<String, WorkerTypeSpecificationInput>)`](crate::client::fluent_builders::CreateApplication::worker_type_specifications) / [`set_worker_type_specifications(Option<HashMap<String, WorkerTypeSpecificationInput>>)`](crate::client::fluent_builders::CreateApplication::set_worker_type_specifications): <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
     /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::CreateApplicationOutput::application_id): <p>The output contains the application ID.</p>
     ///   - [`name(Option<String>)`](crate::output::CreateApplicationOutput::name): <p>The output contains the name of the application.</p>
@@ -278,6 +281,9 @@ impl Client {
     ///   - [`auto_start_configuration(AutoStartConfig)`](crate::client::fluent_builders::UpdateApplication::auto_start_configuration) / [`set_auto_start_configuration(Option<AutoStartConfig>)`](crate::client::fluent_builders::UpdateApplication::set_auto_start_configuration): <p>The configuration for an application to automatically start on job submission.</p>
     ///   - [`auto_stop_configuration(AutoStopConfig)`](crate::client::fluent_builders::UpdateApplication::auto_stop_configuration) / [`set_auto_stop_configuration(Option<AutoStopConfig>)`](crate::client::fluent_builders::UpdateApplication::set_auto_stop_configuration): <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
     ///   - [`network_configuration(NetworkConfiguration)`](crate::client::fluent_builders::UpdateApplication::network_configuration) / [`set_network_configuration(Option<NetworkConfiguration>)`](crate::client::fluent_builders::UpdateApplication::set_network_configuration): <p>The network configuration for customer VPC connectivity.</p>
+    ///   - [`architecture(Architecture)`](crate::client::fluent_builders::UpdateApplication::architecture) / [`set_architecture(Option<Architecture>)`](crate::client::fluent_builders::UpdateApplication::set_architecture): <p>The CPU architecture of an application.</p>
+    ///   - [`image_configuration(ImageConfigurationInput)`](crate::client::fluent_builders::UpdateApplication::image_configuration) / [`set_image_configuration(Option<ImageConfigurationInput>)`](crate::client::fluent_builders::UpdateApplication::set_image_configuration): <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
+    ///   - [`worker_type_specifications(HashMap<String, WorkerTypeSpecificationInput>)`](crate::client::fluent_builders::UpdateApplication::worker_type_specifications) / [`set_worker_type_specifications(Option<HashMap<String, WorkerTypeSpecificationInput>>)`](crate::client::fluent_builders::UpdateApplication::set_worker_type_specifications): <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
     /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput) with field(s):
     ///   - [`application(Option<Application>)`](crate::output::UpdateApplicationOutput::application): <p>Information about the updated application.</p>
     /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::error::UpdateApplicationError)
@@ -450,12 +456,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The EMR release version associated with the application.</p>
+        /// <p>The EMR release associated with the application.</p>
         pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.release_label(input.into());
             self
         }
-        /// <p>The EMR release version associated with the application.</p>
+        /// <p>The EMR release associated with the application.</p>
         pub fn set_release_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -579,6 +585,58 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::NetworkConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_network_configuration(input);
+            self
+        }
+        /// <p>The CPU architecture of an application.</p>
+        pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
+            self.inner = self.inner.architecture(input);
+            self
+        }
+        /// <p>The CPU architecture of an application.</p>
+        pub fn set_architecture(
+            mut self,
+            input: std::option::Option<crate::model::Architecture>,
+        ) -> Self {
+            self.inner = self.inner.set_architecture(input);
+            self
+        }
+        /// <p>The image configuration for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.</p>
+        pub fn image_configuration(mut self, input: crate::model::ImageConfigurationInput) -> Self {
+            self.inner = self.inner.image_configuration(input);
+            self
+        }
+        /// <p>The image configuration for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.</p>
+        pub fn set_image_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ImageConfigurationInput>,
+        ) -> Self {
+            self.inner = self.inner.set_image_configuration(input);
+            self
+        }
+        /// Adds a key-value pair to `workerTypeSpecifications`.
+        ///
+        /// To override the contents of this collection use [`set_worker_type_specifications`](Self::set_worker_type_specifications).
+        ///
+        /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
+        pub fn worker_type_specifications(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::WorkerTypeSpecificationInput,
+        ) -> Self {
+            self.inner = self.inner.worker_type_specifications(k.into(), v);
+            self
+        }
+        /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
+        pub fn set_worker_type_specifications(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::WorkerTypeSpecificationInput,
+                >,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_worker_type_specifications(input);
             self
         }
     }
@@ -1897,6 +1955,58 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::NetworkConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_network_configuration(input);
+            self
+        }
+        /// <p>The CPU architecture of an application.</p>
+        pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
+            self.inner = self.inner.architecture(input);
+            self
+        }
+        /// <p>The CPU architecture of an application.</p>
+        pub fn set_architecture(
+            mut self,
+            input: std::option::Option<crate::model::Architecture>,
+        ) -> Self {
+            self.inner = self.inner.set_architecture(input);
+            self
+        }
+        /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
+        pub fn image_configuration(mut self, input: crate::model::ImageConfigurationInput) -> Self {
+            self.inner = self.inner.image_configuration(input);
+            self
+        }
+        /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
+        pub fn set_image_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ImageConfigurationInput>,
+        ) -> Self {
+            self.inner = self.inner.set_image_configuration(input);
+            self
+        }
+        /// Adds a key-value pair to `workerTypeSpecifications`.
+        ///
+        /// To override the contents of this collection use [`set_worker_type_specifications`](Self::set_worker_type_specifications).
+        ///
+        /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
+        pub fn worker_type_specifications(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::WorkerTypeSpecificationInput,
+        ) -> Self {
+            self.inner = self.inner.worker_type_specifications(k.into(), v);
+            self
+        }
+        /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
+        pub fn set_worker_type_specifications(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::WorkerTypeSpecificationInput,
+                >,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_worker_type_specifications(input);
             self
         }
     }

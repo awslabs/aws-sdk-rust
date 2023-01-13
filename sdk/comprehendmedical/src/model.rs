@@ -1341,7 +1341,12 @@ impl SnomedctTrait {
 /// # let snomedcttraitname = unimplemented!();
 /// match snomedcttraitname {
 ///     SnomedctTraitName::Diagnosis => { /* ... */ },
+///     SnomedctTraitName::Future => { /* ... */ },
+///     SnomedctTraitName::Hypothetical => { /* ... */ },
+///     SnomedctTraitName::LowConfidence => { /* ... */ },
 ///     SnomedctTraitName::Negation => { /* ... */ },
+///     SnomedctTraitName::PastHistory => { /* ... */ },
+///     SnomedctTraitName::PertainsToFamily => { /* ... */ },
 ///     SnomedctTraitName::Sign => { /* ... */ },
 ///     SnomedctTraitName::Symptom => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -1380,7 +1385,17 @@ pub enum SnomedctTraitName {
     #[allow(missing_docs)] // documentation missing in model
     Diagnosis,
     #[allow(missing_docs)] // documentation missing in model
+    Future,
+    #[allow(missing_docs)] // documentation missing in model
+    Hypothetical,
+    #[allow(missing_docs)] // documentation missing in model
+    LowConfidence,
+    #[allow(missing_docs)] // documentation missing in model
     Negation,
+    #[allow(missing_docs)] // documentation missing in model
+    PastHistory,
+    #[allow(missing_docs)] // documentation missing in model
+    PertainsToFamily,
     #[allow(missing_docs)] // documentation missing in model
     Sign,
     #[allow(missing_docs)] // documentation missing in model
@@ -1392,7 +1407,12 @@ impl std::convert::From<&str> for SnomedctTraitName {
     fn from(s: &str) -> Self {
         match s {
             "DIAGNOSIS" => SnomedctTraitName::Diagnosis,
+            "FUTURE" => SnomedctTraitName::Future,
+            "HYPOTHETICAL" => SnomedctTraitName::Hypothetical,
+            "LOW_CONFIDENCE" => SnomedctTraitName::LowConfidence,
             "NEGATION" => SnomedctTraitName::Negation,
+            "PAST_HISTORY" => SnomedctTraitName::PastHistory,
+            "PERTAINS_TO_FAMILY" => SnomedctTraitName::PertainsToFamily,
             "SIGN" => SnomedctTraitName::Sign,
             "SYMPTOM" => SnomedctTraitName::Symptom,
             other => {
@@ -1413,7 +1433,12 @@ impl SnomedctTraitName {
     pub fn as_str(&self) -> &str {
         match self {
             SnomedctTraitName::Diagnosis => "DIAGNOSIS",
+            SnomedctTraitName::Future => "FUTURE",
+            SnomedctTraitName::Hypothetical => "HYPOTHETICAL",
+            SnomedctTraitName::LowConfidence => "LOW_CONFIDENCE",
             SnomedctTraitName::Negation => "NEGATION",
+            SnomedctTraitName::PastHistory => "PAST_HISTORY",
+            SnomedctTraitName::PertainsToFamily => "PERTAINS_TO_FAMILY",
             SnomedctTraitName::Sign => "SIGN",
             SnomedctTraitName::Symptom => "SYMPTOM",
             SnomedctTraitName::Unknown(value) => value.as_str(),
@@ -1421,7 +1446,17 @@ impl SnomedctTraitName {
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DIAGNOSIS", "NEGATION", "SIGN", "SYMPTOM"]
+        &[
+            "DIAGNOSIS",
+            "FUTURE",
+            "HYPOTHETICAL",
+            "LOW_CONFIDENCE",
+            "NEGATION",
+            "PAST_HISTORY",
+            "PERTAINS_TO_FAMILY",
+            "SIGN",
+            "SYMPTOM",
+        ]
     }
 }
 impl AsRef<str> for SnomedctTraitName {
@@ -3546,7 +3581,10 @@ impl Icd10CmTrait {
 /// # let icd10cmtraitname = unimplemented!();
 /// match icd10cmtraitname {
 ///     Icd10CmTraitName::Diagnosis => { /* ... */ },
+///     Icd10CmTraitName::Hypothetical => { /* ... */ },
+///     Icd10CmTraitName::LowConfidence => { /* ... */ },
 ///     Icd10CmTraitName::Negation => { /* ... */ },
+///     Icd10CmTraitName::PertainsToFamily => { /* ... */ },
 ///     Icd10CmTraitName::Sign => { /* ... */ },
 ///     Icd10CmTraitName::Symptom => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -3585,7 +3623,13 @@ pub enum Icd10CmTraitName {
     #[allow(missing_docs)] // documentation missing in model
     Diagnosis,
     #[allow(missing_docs)] // documentation missing in model
+    Hypothetical,
+    #[allow(missing_docs)] // documentation missing in model
+    LowConfidence,
+    #[allow(missing_docs)] // documentation missing in model
     Negation,
+    #[allow(missing_docs)] // documentation missing in model
+    PertainsToFamily,
     #[allow(missing_docs)] // documentation missing in model
     Sign,
     #[allow(missing_docs)] // documentation missing in model
@@ -3597,7 +3641,10 @@ impl std::convert::From<&str> for Icd10CmTraitName {
     fn from(s: &str) -> Self {
         match s {
             "DIAGNOSIS" => Icd10CmTraitName::Diagnosis,
+            "HYPOTHETICAL" => Icd10CmTraitName::Hypothetical,
+            "LOW_CONFIDENCE" => Icd10CmTraitName::LowConfidence,
             "NEGATION" => Icd10CmTraitName::Negation,
+            "PERTAINS_TO_FAMILY" => Icd10CmTraitName::PertainsToFamily,
             "SIGN" => Icd10CmTraitName::Sign,
             "SYMPTOM" => Icd10CmTraitName::Symptom,
             other => Icd10CmTraitName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
@@ -3616,7 +3663,10 @@ impl Icd10CmTraitName {
     pub fn as_str(&self) -> &str {
         match self {
             Icd10CmTraitName::Diagnosis => "DIAGNOSIS",
+            Icd10CmTraitName::Hypothetical => "HYPOTHETICAL",
+            Icd10CmTraitName::LowConfidence => "LOW_CONFIDENCE",
             Icd10CmTraitName::Negation => "NEGATION",
+            Icd10CmTraitName::PertainsToFamily => "PERTAINS_TO_FAMILY",
             Icd10CmTraitName::Sign => "SIGN",
             Icd10CmTraitName::Symptom => "SYMPTOM",
             Icd10CmTraitName::Unknown(value) => value.as_str(),
@@ -3624,7 +3674,15 @@ impl Icd10CmTraitName {
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DIAGNOSIS", "NEGATION", "SIGN", "SYMPTOM"]
+        &[
+            "DIAGNOSIS",
+            "HYPOTHETICAL",
+            "LOW_CONFIDENCE",
+            "NEGATION",
+            "PERTAINS_TO_FAMILY",
+            "SIGN",
+            "SYMPTOM",
+        ]
     }
 }
 impl AsRef<str> for Icd10CmTraitName {
@@ -4801,7 +4859,12 @@ impl Trait {
 /// # let attributename = unimplemented!();
 /// match attributename {
 ///     AttributeName::Diagnosis => { /* ... */ },
+///     AttributeName::Future => { /* ... */ },
+///     AttributeName::Hypothetical => { /* ... */ },
+///     AttributeName::LowConfidence => { /* ... */ },
 ///     AttributeName::Negation => { /* ... */ },
+///     AttributeName::PastHistory => { /* ... */ },
+///     AttributeName::PertainsToFamily => { /* ... */ },
 ///     AttributeName::Sign => { /* ... */ },
 ///     AttributeName::Symptom => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -4840,7 +4903,17 @@ pub enum AttributeName {
     #[allow(missing_docs)] // documentation missing in model
     Diagnosis,
     #[allow(missing_docs)] // documentation missing in model
+    Future,
+    #[allow(missing_docs)] // documentation missing in model
+    Hypothetical,
+    #[allow(missing_docs)] // documentation missing in model
+    LowConfidence,
+    #[allow(missing_docs)] // documentation missing in model
     Negation,
+    #[allow(missing_docs)] // documentation missing in model
+    PastHistory,
+    #[allow(missing_docs)] // documentation missing in model
+    PertainsToFamily,
     #[allow(missing_docs)] // documentation missing in model
     Sign,
     #[allow(missing_docs)] // documentation missing in model
@@ -4852,7 +4925,12 @@ impl std::convert::From<&str> for AttributeName {
     fn from(s: &str) -> Self {
         match s {
             "DIAGNOSIS" => AttributeName::Diagnosis,
+            "FUTURE" => AttributeName::Future,
+            "HYPOTHETICAL" => AttributeName::Hypothetical,
+            "LOW_CONFIDENCE" => AttributeName::LowConfidence,
             "NEGATION" => AttributeName::Negation,
+            "PAST_HISTORY" => AttributeName::PastHistory,
+            "PERTAINS_TO_FAMILY" => AttributeName::PertainsToFamily,
             "SIGN" => AttributeName::Sign,
             "SYMPTOM" => AttributeName::Symptom,
             other => AttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
@@ -4871,7 +4949,12 @@ impl AttributeName {
     pub fn as_str(&self) -> &str {
         match self {
             AttributeName::Diagnosis => "DIAGNOSIS",
+            AttributeName::Future => "FUTURE",
+            AttributeName::Hypothetical => "HYPOTHETICAL",
+            AttributeName::LowConfidence => "LOW_CONFIDENCE",
             AttributeName::Negation => "NEGATION",
+            AttributeName::PastHistory => "PAST_HISTORY",
+            AttributeName::PertainsToFamily => "PERTAINS_TO_FAMILY",
             AttributeName::Sign => "SIGN",
             AttributeName::Symptom => "SYMPTOM",
             AttributeName::Unknown(value) => value.as_str(),
@@ -4879,7 +4962,17 @@ impl AttributeName {
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DIAGNOSIS", "NEGATION", "SIGN", "SYMPTOM"]
+        &[
+            "DIAGNOSIS",
+            "FUTURE",
+            "HYPOTHETICAL",
+            "LOW_CONFIDENCE",
+            "NEGATION",
+            "PAST_HISTORY",
+            "PERTAINS_TO_FAMILY",
+            "SIGN",
+            "SYMPTOM",
+        ]
     }
 }
 impl AsRef<str> for AttributeName {
@@ -4901,6 +4994,7 @@ impl AsRef<str> for AttributeName {
 /// # let entitytype = unimplemented!();
 /// match entitytype {
 ///     EntityType::Anatomy => { /* ... */ },
+///     EntityType::BehavioralEnvironmentalSocial => { /* ... */ },
 ///     EntityType::MedicalCondition => { /* ... */ },
 ///     EntityType::Medication => { /* ... */ },
 ///     EntityType::ProtectedHealthInformation => { /* ... */ },
@@ -4942,6 +5036,8 @@ pub enum EntityType {
     #[allow(missing_docs)] // documentation missing in model
     Anatomy,
     #[allow(missing_docs)] // documentation missing in model
+    BehavioralEnvironmentalSocial,
+    #[allow(missing_docs)] // documentation missing in model
     MedicalCondition,
     #[allow(missing_docs)] // documentation missing in model
     Medication,
@@ -4958,6 +5054,7 @@ impl std::convert::From<&str> for EntityType {
     fn from(s: &str) -> Self {
         match s {
             "ANATOMY" => EntityType::Anatomy,
+            "BEHAVIORAL_ENVIRONMENTAL_SOCIAL" => EntityType::BehavioralEnvironmentalSocial,
             "MEDICAL_CONDITION" => EntityType::MedicalCondition,
             "MEDICATION" => EntityType::Medication,
             "PROTECTED_HEALTH_INFORMATION" => EntityType::ProtectedHealthInformation,
@@ -4979,6 +5076,7 @@ impl EntityType {
     pub fn as_str(&self) -> &str {
         match self {
             EntityType::Anatomy => "ANATOMY",
+            EntityType::BehavioralEnvironmentalSocial => "BEHAVIORAL_ENVIRONMENTAL_SOCIAL",
             EntityType::MedicalCondition => "MEDICAL_CONDITION",
             EntityType::Medication => "MEDICATION",
             EntityType::ProtectedHealthInformation => "PROTECTED_HEALTH_INFORMATION",
@@ -4991,6 +5089,7 @@ impl EntityType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ANATOMY",
+            "BEHAVIORAL_ENVIRONMENTAL_SOCIAL",
             "MEDICAL_CONDITION",
             "MEDICATION",
             "PROTECTED_HEALTH_INFORMATION",
@@ -5019,6 +5118,7 @@ impl AsRef<str> for EntityType {
 /// match relationshiptype {
 ///     RelationshipType::Acuity => { /* ... */ },
 ///     RelationshipType::AdministeredVia => { /* ... */ },
+///     RelationshipType::Amount => { /* ... */ },
 ///     RelationshipType::Direction => { /* ... */ },
 ///     RelationshipType::Dosage => { /* ... */ },
 ///     RelationshipType::Duration => { /* ... */ },
@@ -5074,6 +5174,8 @@ pub enum RelationshipType {
     #[allow(missing_docs)] // documentation missing in model
     AdministeredVia,
     #[allow(missing_docs)] // documentation missing in model
+    Amount,
+    #[allow(missing_docs)] // documentation missing in model
     Direction,
     #[allow(missing_docs)] // documentation missing in model
     Dosage,
@@ -5115,6 +5217,7 @@ impl std::convert::From<&str> for RelationshipType {
         match s {
             "ACUITY" => RelationshipType::Acuity,
             "ADMINISTERED_VIA" => RelationshipType::AdministeredVia,
+            "AMOUNT" => RelationshipType::Amount,
             "DIRECTION" => RelationshipType::Direction,
             "DOSAGE" => RelationshipType::Dosage,
             "DURATION" => RelationshipType::Duration,
@@ -5149,6 +5252,7 @@ impl RelationshipType {
         match self {
             RelationshipType::Acuity => "ACUITY",
             RelationshipType::AdministeredVia => "ADMINISTERED_VIA",
+            RelationshipType::Amount => "AMOUNT",
             RelationshipType::Direction => "DIRECTION",
             RelationshipType::Dosage => "DOSAGE",
             RelationshipType::Duration => "DURATION",
@@ -5174,6 +5278,7 @@ impl RelationshipType {
         &[
             "ACUITY",
             "ADMINISTERED_VIA",
+            "AMOUNT",
             "DIRECTION",
             "DOSAGE",
             "DURATION",
@@ -5215,6 +5320,9 @@ impl AsRef<str> for RelationshipType {
 ///     EntitySubType::Acuity => { /* ... */ },
 ///     EntitySubType::Address => { /* ... */ },
 ///     EntitySubType::Age => { /* ... */ },
+///     EntitySubType::AlcoholConsumption => { /* ... */ },
+///     EntitySubType::Allergies => { /* ... */ },
+///     EntitySubType::Amount => { /* ... */ },
 ///     EntitySubType::BrandName => { /* ... */ },
 ///     EntitySubType::ContactPoint => { /* ... */ },
 ///     EntitySubType::Date => { /* ... */ },
@@ -5225,6 +5333,7 @@ impl AsRef<str> for RelationshipType {
 ///     EntitySubType::Email => { /* ... */ },
 ///     EntitySubType::Form => { /* ... */ },
 ///     EntitySubType::Frequency => { /* ... */ },
+///     EntitySubType::Gender => { /* ... */ },
 ///     EntitySubType::GenericName => { /* ... */ },
 ///     EntitySubType::Id => { /* ... */ },
 ///     EntitySubType::Identifier => { /* ... */ },
@@ -5234,7 +5343,9 @@ impl AsRef<str> for RelationshipType {
 ///     EntitySubType::Profession => { /* ... */ },
 ///     EntitySubType::Quality => { /* ... */ },
 ///     EntitySubType::Quantity => { /* ... */ },
+///     EntitySubType::RaceEthnicity => { /* ... */ },
 ///     EntitySubType::Rate => { /* ... */ },
+///     EntitySubType::RecDrugUse => { /* ... */ },
 ///     EntitySubType::RouteOrMode => { /* ... */ },
 ///     EntitySubType::Strength => { /* ... */ },
 ///     EntitySubType::SystemOrganSite => { /* ... */ },
@@ -5248,6 +5359,7 @@ impl AsRef<str> for RelationshipType {
 ///     EntitySubType::TimeToProcedureName => { /* ... */ },
 ///     EntitySubType::TimeToTestName => { /* ... */ },
 ///     EntitySubType::TimeToTreatmentName => { /* ... */ },
+///     EntitySubType::TobaccoUse => { /* ... */ },
 ///     EntitySubType::TreatmentName => { /* ... */ },
 ///     EntitySubType::Url => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -5290,6 +5402,12 @@ pub enum EntitySubType {
     #[allow(missing_docs)] // documentation missing in model
     Age,
     #[allow(missing_docs)] // documentation missing in model
+    AlcoholConsumption,
+    #[allow(missing_docs)] // documentation missing in model
+    Allergies,
+    #[allow(missing_docs)] // documentation missing in model
+    Amount,
+    #[allow(missing_docs)] // documentation missing in model
     BrandName,
     #[allow(missing_docs)] // documentation missing in model
     ContactPoint,
@@ -5310,6 +5428,8 @@ pub enum EntitySubType {
     #[allow(missing_docs)] // documentation missing in model
     Frequency,
     #[allow(missing_docs)] // documentation missing in model
+    Gender,
+    #[allow(missing_docs)] // documentation missing in model
     GenericName,
     #[allow(missing_docs)] // documentation missing in model
     Id,
@@ -5328,7 +5448,11 @@ pub enum EntitySubType {
     #[allow(missing_docs)] // documentation missing in model
     Quantity,
     #[allow(missing_docs)] // documentation missing in model
+    RaceEthnicity,
+    #[allow(missing_docs)] // documentation missing in model
     Rate,
+    #[allow(missing_docs)] // documentation missing in model
+    RecDrugUse,
     #[allow(missing_docs)] // documentation missing in model
     RouteOrMode,
     #[allow(missing_docs)] // documentation missing in model
@@ -5356,6 +5480,8 @@ pub enum EntitySubType {
     #[allow(missing_docs)] // documentation missing in model
     TimeToTreatmentName,
     #[allow(missing_docs)] // documentation missing in model
+    TobaccoUse,
+    #[allow(missing_docs)] // documentation missing in model
     TreatmentName,
     #[allow(missing_docs)] // documentation missing in model
     Url,
@@ -5368,6 +5494,9 @@ impl std::convert::From<&str> for EntitySubType {
             "ACUITY" => EntitySubType::Acuity,
             "ADDRESS" => EntitySubType::Address,
             "AGE" => EntitySubType::Age,
+            "ALCOHOL_CONSUMPTION" => EntitySubType::AlcoholConsumption,
+            "ALLERGIES" => EntitySubType::Allergies,
+            "AMOUNT" => EntitySubType::Amount,
             "BRAND_NAME" => EntitySubType::BrandName,
             "CONTACT_POINT" => EntitySubType::ContactPoint,
             "DATE" => EntitySubType::Date,
@@ -5378,6 +5507,7 @@ impl std::convert::From<&str> for EntitySubType {
             "EMAIL" => EntitySubType::Email,
             "FORM" => EntitySubType::Form,
             "FREQUENCY" => EntitySubType::Frequency,
+            "GENDER" => EntitySubType::Gender,
             "GENERIC_NAME" => EntitySubType::GenericName,
             "ID" => EntitySubType::Id,
             "IDENTIFIER" => EntitySubType::Identifier,
@@ -5387,7 +5517,9 @@ impl std::convert::From<&str> for EntitySubType {
             "PROFESSION" => EntitySubType::Profession,
             "QUALITY" => EntitySubType::Quality,
             "QUANTITY" => EntitySubType::Quantity,
+            "RACE_ETHNICITY" => EntitySubType::RaceEthnicity,
             "RATE" => EntitySubType::Rate,
+            "REC_DRUG_USE" => EntitySubType::RecDrugUse,
             "ROUTE_OR_MODE" => EntitySubType::RouteOrMode,
             "STRENGTH" => EntitySubType::Strength,
             "SYSTEM_ORGAN_SITE" => EntitySubType::SystemOrganSite,
@@ -5401,6 +5533,7 @@ impl std::convert::From<&str> for EntitySubType {
             "TIME_TO_PROCEDURE_NAME" => EntitySubType::TimeToProcedureName,
             "TIME_TO_TEST_NAME" => EntitySubType::TimeToTestName,
             "TIME_TO_TREATMENT_NAME" => EntitySubType::TimeToTreatmentName,
+            "TOBACCO_USE" => EntitySubType::TobaccoUse,
             "TREATMENT_NAME" => EntitySubType::TreatmentName,
             "URL" => EntitySubType::Url,
             other => EntitySubType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
@@ -5421,6 +5554,9 @@ impl EntitySubType {
             EntitySubType::Acuity => "ACUITY",
             EntitySubType::Address => "ADDRESS",
             EntitySubType::Age => "AGE",
+            EntitySubType::AlcoholConsumption => "ALCOHOL_CONSUMPTION",
+            EntitySubType::Allergies => "ALLERGIES",
+            EntitySubType::Amount => "AMOUNT",
             EntitySubType::BrandName => "BRAND_NAME",
             EntitySubType::ContactPoint => "CONTACT_POINT",
             EntitySubType::Date => "DATE",
@@ -5431,6 +5567,7 @@ impl EntitySubType {
             EntitySubType::Email => "EMAIL",
             EntitySubType::Form => "FORM",
             EntitySubType::Frequency => "FREQUENCY",
+            EntitySubType::Gender => "GENDER",
             EntitySubType::GenericName => "GENERIC_NAME",
             EntitySubType::Id => "ID",
             EntitySubType::Identifier => "IDENTIFIER",
@@ -5440,7 +5577,9 @@ impl EntitySubType {
             EntitySubType::Profession => "PROFESSION",
             EntitySubType::Quality => "QUALITY",
             EntitySubType::Quantity => "QUANTITY",
+            EntitySubType::RaceEthnicity => "RACE_ETHNICITY",
             EntitySubType::Rate => "RATE",
+            EntitySubType::RecDrugUse => "REC_DRUG_USE",
             EntitySubType::RouteOrMode => "ROUTE_OR_MODE",
             EntitySubType::Strength => "STRENGTH",
             EntitySubType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
@@ -5454,6 +5593,7 @@ impl EntitySubType {
             EntitySubType::TimeToProcedureName => "TIME_TO_PROCEDURE_NAME",
             EntitySubType::TimeToTestName => "TIME_TO_TEST_NAME",
             EntitySubType::TimeToTreatmentName => "TIME_TO_TREATMENT_NAME",
+            EntitySubType::TobaccoUse => "TOBACCO_USE",
             EntitySubType::TreatmentName => "TREATMENT_NAME",
             EntitySubType::Url => "URL",
             EntitySubType::Unknown(value) => value.as_str(),
@@ -5465,6 +5605,9 @@ impl EntitySubType {
             "ACUITY",
             "ADDRESS",
             "AGE",
+            "ALCOHOL_CONSUMPTION",
+            "ALLERGIES",
+            "AMOUNT",
             "BRAND_NAME",
             "CONTACT_POINT",
             "DATE",
@@ -5475,6 +5618,7 @@ impl EntitySubType {
             "EMAIL",
             "FORM",
             "FREQUENCY",
+            "GENDER",
             "GENERIC_NAME",
             "ID",
             "IDENTIFIER",
@@ -5484,7 +5628,9 @@ impl EntitySubType {
             "PROFESSION",
             "QUALITY",
             "QUANTITY",
+            "RACE_ETHNICITY",
             "RATE",
+            "REC_DRUG_USE",
             "ROUTE_OR_MODE",
             "STRENGTH",
             "SYSTEM_ORGAN_SITE",
@@ -5498,6 +5644,7 @@ impl EntitySubType {
             "TIME_TO_PROCEDURE_NAME",
             "TIME_TO_TEST_NAME",
             "TIME_TO_TREATMENT_NAME",
+            "TOBACCO_USE",
             "TREATMENT_NAME",
             "URL",
         ]

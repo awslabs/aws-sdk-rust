@@ -1207,6 +1207,146 @@ impl GetStreamingSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListStreamingSessionBackupsOutput {
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Information about the streaming session backups.</p>
+    #[doc(hidden)]
+    pub streaming_session_backups:
+        std::option::Option<std::vec::Vec<crate::model::StreamingSessionBackup>>,
+}
+impl ListStreamingSessionBackupsOutput {
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the streaming session backups.</p>
+    pub fn streaming_session_backups(
+        &self,
+    ) -> std::option::Option<&[crate::model::StreamingSessionBackup]> {
+        self.streaming_session_backups.as_deref()
+    }
+}
+/// See [`ListStreamingSessionBackupsOutput`](crate::output::ListStreamingSessionBackupsOutput).
+pub mod list_streaming_session_backups_output {
+
+    /// A builder for [`ListStreamingSessionBackupsOutput`](crate::output::ListStreamingSessionBackupsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) streaming_session_backups:
+            std::option::Option<std::vec::Vec<crate::model::StreamingSessionBackup>>,
+    }
+    impl Builder {
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `streaming_session_backups`.
+        ///
+        /// To override the contents of this collection use [`set_streaming_session_backups`](Self::set_streaming_session_backups).
+        ///
+        /// <p>Information about the streaming session backups.</p>
+        pub fn streaming_session_backups(
+            mut self,
+            input: crate::model::StreamingSessionBackup,
+        ) -> Self {
+            let mut v = self.streaming_session_backups.unwrap_or_default();
+            v.push(input);
+            self.streaming_session_backups = Some(v);
+            self
+        }
+        /// <p>Information about the streaming session backups.</p>
+        pub fn set_streaming_session_backups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StreamingSessionBackup>>,
+        ) -> Self {
+            self.streaming_session_backups = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListStreamingSessionBackupsOutput`](crate::output::ListStreamingSessionBackupsOutput).
+        pub fn build(self) -> crate::output::ListStreamingSessionBackupsOutput {
+            crate::output::ListStreamingSessionBackupsOutput {
+                next_token: self.next_token,
+                streaming_session_backups: self.streaming_session_backups,
+            }
+        }
+    }
+}
+impl ListStreamingSessionBackupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListStreamingSessionBackupsOutput`](crate::output::ListStreamingSessionBackupsOutput).
+    pub fn builder() -> crate::output::list_streaming_session_backups_output::Builder {
+        crate::output::list_streaming_session_backups_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetStreamingSessionBackupOutput {
+    /// <p>Information about the streaming session backup.</p>
+    #[doc(hidden)]
+    pub streaming_session_backup: std::option::Option<crate::model::StreamingSessionBackup>,
+}
+impl GetStreamingSessionBackupOutput {
+    /// <p>Information about the streaming session backup.</p>
+    pub fn streaming_session_backup(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingSessionBackup> {
+        self.streaming_session_backup.as_ref()
+    }
+}
+/// See [`GetStreamingSessionBackupOutput`](crate::output::GetStreamingSessionBackupOutput).
+pub mod get_streaming_session_backup_output {
+
+    /// A builder for [`GetStreamingSessionBackupOutput`](crate::output::GetStreamingSessionBackupOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) streaming_session_backup:
+            std::option::Option<crate::model::StreamingSessionBackup>,
+    }
+    impl Builder {
+        /// <p>Information about the streaming session backup.</p>
+        pub fn streaming_session_backup(
+            mut self,
+            input: crate::model::StreamingSessionBackup,
+        ) -> Self {
+            self.streaming_session_backup = Some(input);
+            self
+        }
+        /// <p>Information about the streaming session backup.</p>
+        pub fn set_streaming_session_backup(
+            mut self,
+            input: std::option::Option<crate::model::StreamingSessionBackup>,
+        ) -> Self {
+            self.streaming_session_backup = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetStreamingSessionBackupOutput`](crate::output::GetStreamingSessionBackupOutput).
+        pub fn build(self) -> crate::output::GetStreamingSessionBackupOutput {
+            crate::output::GetStreamingSessionBackupOutput {
+                streaming_session_backup: self.streaming_session_backup,
+            }
+        }
+    }
+}
+impl GetStreamingSessionBackupOutput {
+    /// Creates a new builder-style object to manufacture [`GetStreamingSessionBackupOutput`](crate::output::GetStreamingSessionBackupOutput).
+    pub fn builder() -> crate::output::get_streaming_session_backup_output::Builder {
+        crate::output::get_streaming_session_backup_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamingImagesOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
@@ -1390,7 +1530,7 @@ pub struct UpdateStreamingImageOutput {
     /// <p>Represents a streaming image resource.</p>
     /// <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>
     /// <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>
-    /// <p>You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine image that you create for this purpose. You can also include software that your users require.</p>
+    /// <p>You can create your own streaming images using an Amazon EC2 machine image that you create for this purpose. You can also include software that your users require.</p>
     #[doc(hidden)]
     pub streaming_image: std::option::Option<crate::model::StreamingImage>,
 }
@@ -1398,7 +1538,7 @@ impl UpdateStreamingImageOutput {
     /// <p>Represents a streaming image resource.</p>
     /// <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>
     /// <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>
-    /// <p>You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine image that you create for this purpose. You can also include software that your users require.</p>
+    /// <p>You can create your own streaming images using an Amazon EC2 machine image that you create for this purpose. You can also include software that your users require.</p>
     pub fn streaming_image(&self) -> std::option::Option<&crate::model::StreamingImage> {
         self.streaming_image.as_ref()
     }
@@ -1415,7 +1555,7 @@ pub mod update_streaming_image_output {
         /// <p>Represents a streaming image resource.</p>
         /// <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>
         /// <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>
-        /// <p>You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine image that you create for this purpose. You can also include software that your users require.</p>
+        /// <p>You can create your own streaming images using an Amazon EC2 machine image that you create for this purpose. You can also include software that your users require.</p>
         pub fn streaming_image(mut self, input: crate::model::StreamingImage) -> Self {
             self.streaming_image = Some(input);
             self
@@ -1423,7 +1563,7 @@ pub mod update_streaming_image_output {
         /// <p>Represents a streaming image resource.</p>
         /// <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>
         /// <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>
-        /// <p>You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine image that you create for this purpose. You can also include software that your users require.</p>
+        /// <p>You can create your own streaming images using an Amazon EC2 machine image that you create for this purpose. You can also include software that your users require.</p>
         pub fn set_streaming_image(
             mut self,
             input: std::option::Option<crate::model::StreamingImage>,
@@ -2486,13 +2626,13 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2515,7 +2655,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2526,7 +2666,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

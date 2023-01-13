@@ -20,7 +20,7 @@ version = "0.52.0"
 [dependencies.aws-sdk-s3]
 default-features = false
 path = "../../sdk/s3"
-version = "0.22.0"
+version = "0.23.0"
 
 [dependencies.tokio]
 version = "1.21.2"

@@ -302,6 +302,54 @@ impl UpdateTrainingJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateSpaceOutput {
+    /// <p>The space's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub space_arn: std::option::Option<std::string::String>,
+}
+impl UpdateSpaceOutput {
+    /// <p>The space's Amazon Resource Name (ARN).</p>
+    pub fn space_arn(&self) -> std::option::Option<&str> {
+        self.space_arn.as_deref()
+    }
+}
+/// See [`UpdateSpaceOutput`](crate::output::UpdateSpaceOutput).
+pub mod update_space_output {
+
+    /// A builder for [`UpdateSpaceOutput`](crate::output::UpdateSpaceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) space_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The space's Amazon Resource Name (ARN).</p>
+        pub fn space_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_arn = Some(input.into());
+            self
+        }
+        /// <p>The space's Amazon Resource Name (ARN).</p>
+        pub fn set_space_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.space_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSpaceOutput`](crate::output::UpdateSpaceOutput).
+        pub fn build(self) -> crate::output::UpdateSpaceOutput {
+            crate::output::UpdateSpaceOutput {
+                space_arn: self.space_arn,
+            }
+        }
+    }
+}
+impl UpdateSpaceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSpaceOutput`](crate::output::UpdateSpaceOutput).
+    pub fn builder() -> crate::output::update_space_output::Builder {
+        crate::output::update_space_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProjectOutput {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     #[doc(hidden)]
@@ -548,6 +596,79 @@ impl UpdateMonitoringScheduleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateMonitoringAlertOutput {
+    /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+    #[doc(hidden)]
+    pub monitoring_schedule_arn: std::option::Option<std::string::String>,
+    /// <p>The name of a monitoring alert.</p>
+    #[doc(hidden)]
+    pub monitoring_alert_name: std::option::Option<std::string::String>,
+}
+impl UpdateMonitoringAlertOutput {
+    /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+    pub fn monitoring_schedule_arn(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_arn.as_deref()
+    }
+    /// <p>The name of a monitoring alert.</p>
+    pub fn monitoring_alert_name(&self) -> std::option::Option<&str> {
+        self.monitoring_alert_name.as_deref()
+    }
+}
+/// See [`UpdateMonitoringAlertOutput`](crate::output::UpdateMonitoringAlertOutput).
+pub mod update_monitoring_alert_output {
+
+    /// A builder for [`UpdateMonitoringAlertOutput`](crate::output::UpdateMonitoringAlertOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) monitoring_schedule_arn: std::option::Option<std::string::String>,
+        pub(crate) monitoring_alert_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+        pub fn monitoring_schedule_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_schedule_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+        pub fn set_monitoring_schedule_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.monitoring_schedule_arn = input;
+            self
+        }
+        /// <p>The name of a monitoring alert.</p>
+        pub fn monitoring_alert_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_alert_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a monitoring alert.</p>
+        pub fn set_monitoring_alert_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.monitoring_alert_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateMonitoringAlertOutput`](crate::output::UpdateMonitoringAlertOutput).
+        pub fn build(self) -> crate::output::UpdateMonitoringAlertOutput {
+            crate::output::UpdateMonitoringAlertOutput {
+                monitoring_schedule_arn: self.monitoring_schedule_arn,
+                monitoring_alert_name: self.monitoring_alert_name,
+            }
+        }
+    }
+}
+impl UpdateMonitoringAlertOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMonitoringAlertOutput`](crate::output::UpdateMonitoringAlertOutput).
+    pub fn builder() -> crate::output::update_monitoring_alert_output::Builder {
+        crate::output::update_monitoring_alert_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateModelPackageOutput {
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     #[doc(hidden)]
@@ -599,13 +720,166 @@ impl UpdateModelPackageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateModelCardOutput {
+    /// <p>The Amazon Resource Name (ARN) of the updated model card.</p>
+    #[doc(hidden)]
+    pub model_card_arn: std::option::Option<std::string::String>,
+}
+impl UpdateModelCardOutput {
+    /// <p>The Amazon Resource Name (ARN) of the updated model card.</p>
+    pub fn model_card_arn(&self) -> std::option::Option<&str> {
+        self.model_card_arn.as_deref()
+    }
+}
+/// See [`UpdateModelCardOutput`](crate::output::UpdateModelCardOutput).
+pub mod update_model_card_output {
+
+    /// A builder for [`UpdateModelCardOutput`](crate::output::UpdateModelCardOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_card_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the updated model card.</p>
+        pub fn model_card_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the updated model card.</p>
+        pub fn set_model_card_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateModelCardOutput`](crate::output::UpdateModelCardOutput).
+        pub fn build(self) -> crate::output::UpdateModelCardOutput {
+            crate::output::UpdateModelCardOutput {
+                model_card_arn: self.model_card_arn,
+            }
+        }
+    }
+}
+impl UpdateModelCardOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateModelCardOutput`](crate::output::UpdateModelCardOutput).
+    pub fn builder() -> crate::output::update_model_card_output::Builder {
+        crate::output::update_model_card_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateInferenceExperimentOutput {
+    /// <p>The ARN of the updated inference experiment.</p>
+    #[doc(hidden)]
+    pub inference_experiment_arn: std::option::Option<std::string::String>,
+}
+impl UpdateInferenceExperimentOutput {
+    /// <p>The ARN of the updated inference experiment.</p>
+    pub fn inference_experiment_arn(&self) -> std::option::Option<&str> {
+        self.inference_experiment_arn.as_deref()
+    }
+}
+/// See [`UpdateInferenceExperimentOutput`](crate::output::UpdateInferenceExperimentOutput).
+pub mod update_inference_experiment_output {
+
+    /// A builder for [`UpdateInferenceExperimentOutput`](crate::output::UpdateInferenceExperimentOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) inference_experiment_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the updated inference experiment.</p>
+        pub fn inference_experiment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inference_experiment_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the updated inference experiment.</p>
+        pub fn set_inference_experiment_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_experiment_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateInferenceExperimentOutput`](crate::output::UpdateInferenceExperimentOutput).
+        pub fn build(self) -> crate::output::UpdateInferenceExperimentOutput {
+            crate::output::UpdateInferenceExperimentOutput {
+                inference_experiment_arn: self.inference_experiment_arn,
+            }
+        }
+    }
+}
+impl UpdateInferenceExperimentOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateInferenceExperimentOutput`](crate::output::UpdateInferenceExperimentOutput).
+    pub fn builder() -> crate::output::update_inference_experiment_output::Builder {
+        crate::output::update_inference_experiment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateImageVersionOutput {
+    /// <p>The ARN of the image version.</p>
+    #[doc(hidden)]
+    pub image_version_arn: std::option::Option<std::string::String>,
+}
+impl UpdateImageVersionOutput {
+    /// <p>The ARN of the image version.</p>
+    pub fn image_version_arn(&self) -> std::option::Option<&str> {
+        self.image_version_arn.as_deref()
+    }
+}
+/// See [`UpdateImageVersionOutput`](crate::output::UpdateImageVersionOutput).
+pub mod update_image_version_output {
+
+    /// A builder for [`UpdateImageVersionOutput`](crate::output::UpdateImageVersionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) image_version_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the image version.</p>
+        pub fn image_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_version_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the image version.</p>
+        pub fn set_image_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.image_version_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateImageVersionOutput`](crate::output::UpdateImageVersionOutput).
+        pub fn build(self) -> crate::output::UpdateImageVersionOutput {
+            crate::output::UpdateImageVersionOutput {
+                image_version_arn: self.image_version_arn,
+            }
+        }
+    }
+}
+impl UpdateImageVersionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateImageVersionOutput`](crate::output::UpdateImageVersionOutput).
+    pub fn builder() -> crate::output::update_image_version_output::Builder {
+        crate::output::update_image_version_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateImageOutput {
-    /// <p>The Amazon Resource Name (ARN) of the image.</p>
+    /// <p>The ARN of the image.</p>
     #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
 }
 impl UpdateImageOutput {
-    /// <p>The Amazon Resource Name (ARN) of the image.</p>
+    /// <p>The ARN of the image.</p>
     pub fn image_arn(&self) -> std::option::Option<&str> {
         self.image_arn.as_deref()
     }
@@ -619,12 +893,12 @@ pub mod update_image_output {
         pub(crate) image_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the image.</p>
+        /// <p>The ARN of the image.</p>
         pub fn image_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image.</p>
+        /// <p>The ARN of the image.</p>
         pub fn set_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_arn = input;
             self
@@ -641,6 +915,54 @@ impl UpdateImageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateImageOutput`](crate::output::UpdateImageOutput).
     pub fn builder() -> crate::output::update_image_output::Builder {
         crate::output::update_image_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateHubOutput {
+    /// <p>The Amazon Resource Name (ARN) of the updated hub.</p>
+    #[doc(hidden)]
+    pub hub_arn: std::option::Option<std::string::String>,
+}
+impl UpdateHubOutput {
+    /// <p>The Amazon Resource Name (ARN) of the updated hub.</p>
+    pub fn hub_arn(&self) -> std::option::Option<&str> {
+        self.hub_arn.as_deref()
+    }
+}
+/// See [`UpdateHubOutput`](crate::output::UpdateHubOutput).
+pub mod update_hub_output {
+
+    /// A builder for [`UpdateHubOutput`](crate::output::UpdateHubOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the updated hub.</p>
+        pub fn hub_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the updated hub.</p>
+        pub fn set_hub_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateHubOutput`](crate::output::UpdateHubOutput).
+        pub fn build(self) -> crate::output::UpdateHubOutput {
+            crate::output::UpdateHubOutput {
+                hub_arn: self.hub_arn,
+            }
+        }
+    }
+}
+impl UpdateHubOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateHubOutput`](crate::output::UpdateHubOutput).
+    pub fn builder() -> crate::output::update_hub_output::Builder {
+        crate::output::update_hub_output::Builder::default()
     }
 }
 
@@ -1430,6 +1752,57 @@ impl StopInferenceRecommendationsJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StopInferenceExperimentOutput {
+    /// <p>The ARN of the stopped inference experiment.</p>
+    #[doc(hidden)]
+    pub inference_experiment_arn: std::option::Option<std::string::String>,
+}
+impl StopInferenceExperimentOutput {
+    /// <p>The ARN of the stopped inference experiment.</p>
+    pub fn inference_experiment_arn(&self) -> std::option::Option<&str> {
+        self.inference_experiment_arn.as_deref()
+    }
+}
+/// See [`StopInferenceExperimentOutput`](crate::output::StopInferenceExperimentOutput).
+pub mod stop_inference_experiment_output {
+
+    /// A builder for [`StopInferenceExperimentOutput`](crate::output::StopInferenceExperimentOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) inference_experiment_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the stopped inference experiment.</p>
+        pub fn inference_experiment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inference_experiment_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stopped inference experiment.</p>
+        pub fn set_inference_experiment_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_experiment_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopInferenceExperimentOutput`](crate::output::StopInferenceExperimentOutput).
+        pub fn build(self) -> crate::output::StopInferenceExperimentOutput {
+            crate::output::StopInferenceExperimentOutput {
+                inference_experiment_arn: self.inference_experiment_arn,
+            }
+        }
+    }
+}
+impl StopInferenceExperimentOutput {
+    /// Creates a new builder-style object to manufacture [`StopInferenceExperimentOutput`](crate::output::StopInferenceExperimentOutput).
+    pub fn builder() -> crate::output::stop_inference_experiment_output::Builder {
+        crate::output::stop_inference_experiment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopHyperParameterTuningJobOutput {}
 /// See [`StopHyperParameterTuningJobOutput`](crate::output::StopHyperParameterTuningJobOutput).
 pub mod stop_hyper_parameter_tuning_job_output {
@@ -1643,6 +2016,57 @@ impl StartMonitoringScheduleOutput {
     /// Creates a new builder-style object to manufacture [`StartMonitoringScheduleOutput`](crate::output::StartMonitoringScheduleOutput).
     pub fn builder() -> crate::output::start_monitoring_schedule_output::Builder {
         crate::output::start_monitoring_schedule_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartInferenceExperimentOutput {
+    /// <p>The ARN of the started inference experiment to start.</p>
+    #[doc(hidden)]
+    pub inference_experiment_arn: std::option::Option<std::string::String>,
+}
+impl StartInferenceExperimentOutput {
+    /// <p>The ARN of the started inference experiment to start.</p>
+    pub fn inference_experiment_arn(&self) -> std::option::Option<&str> {
+        self.inference_experiment_arn.as_deref()
+    }
+}
+/// See [`StartInferenceExperimentOutput`](crate::output::StartInferenceExperimentOutput).
+pub mod start_inference_experiment_output {
+
+    /// A builder for [`StartInferenceExperimentOutput`](crate::output::StartInferenceExperimentOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) inference_experiment_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the started inference experiment to start.</p>
+        pub fn inference_experiment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inference_experiment_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the started inference experiment to start.</p>
+        pub fn set_inference_experiment_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_experiment_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartInferenceExperimentOutput`](crate::output::StartInferenceExperimentOutput).
+        pub fn build(self) -> crate::output::StartInferenceExperimentOutput {
+            crate::output::StartInferenceExperimentOutput {
+                inference_experiment_arn: self.inference_experiment_arn,
+            }
+        }
+    }
+}
+impl StartInferenceExperimentOutput {
+    /// Creates a new builder-style object to manufacture [`StartInferenceExperimentOutput`](crate::output::StartInferenceExperimentOutput).
+    pub fn builder() -> crate::output::start_inference_experiment_output::Builder {
+        crate::output::start_inference_experiment_output::Builder::default()
     }
 }
 
@@ -3113,6 +3537,82 @@ impl ListStageDevicesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListSpacesOutput {
+    /// <p>The list of spaces.</p>
+    #[doc(hidden)]
+    pub spaces: std::option::Option<std::vec::Vec<crate::model::SpaceDetails>>,
+    /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSpacesOutput {
+    /// <p>The list of spaces.</p>
+    pub fn spaces(&self) -> std::option::Option<&[crate::model::SpaceDetails]> {
+        self.spaces.as_deref()
+    }
+    /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListSpacesOutput`](crate::output::ListSpacesOutput).
+pub mod list_spaces_output {
+
+    /// A builder for [`ListSpacesOutput`](crate::output::ListSpacesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) spaces: std::option::Option<std::vec::Vec<crate::model::SpaceDetails>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `spaces`.
+        ///
+        /// To override the contents of this collection use [`set_spaces`](Self::set_spaces).
+        ///
+        /// <p>The list of spaces.</p>
+        pub fn spaces(mut self, input: crate::model::SpaceDetails) -> Self {
+            let mut v = self.spaces.unwrap_or_default();
+            v.push(input);
+            self.spaces = Some(v);
+            self
+        }
+        /// <p>The list of spaces.</p>
+        pub fn set_spaces(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SpaceDetails>>,
+        ) -> Self {
+            self.spaces = input;
+            self
+        }
+        /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSpacesOutput`](crate::output::ListSpacesOutput).
+        pub fn build(self) -> crate::output::ListSpacesOutput {
+            crate::output::ListSpacesOutput {
+                spaces: self.spaces,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListSpacesOutput {
+    /// Creates a new builder-style object to manufacture [`ListSpacesOutput`](crate::output::ListSpacesOutput).
+    pub fn builder() -> crate::output::list_spaces_output::Builder {
+        crate::output::list_spaces_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectsOutput {
     /// <p>A list of summaries of projects.</p>
     #[doc(hidden)]
@@ -3924,6 +4424,172 @@ impl ListMonitoringExecutionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListMonitoringAlertsOutput {
+    /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
+    #[doc(hidden)]
+    pub monitoring_alert_summaries:
+        std::option::Option<std::vec::Vec<crate::model::MonitoringAlertSummary>>,
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMonitoringAlertsOutput {
+    /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
+    pub fn monitoring_alert_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::MonitoringAlertSummary]> {
+        self.monitoring_alert_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListMonitoringAlertsOutput`](crate::output::ListMonitoringAlertsOutput).
+pub mod list_monitoring_alerts_output {
+
+    /// A builder for [`ListMonitoringAlertsOutput`](crate::output::ListMonitoringAlertsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) monitoring_alert_summaries:
+            std::option::Option<std::vec::Vec<crate::model::MonitoringAlertSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `monitoring_alert_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_monitoring_alert_summaries`](Self::set_monitoring_alert_summaries).
+        ///
+        /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
+        pub fn monitoring_alert_summaries(
+            mut self,
+            input: crate::model::MonitoringAlertSummary,
+        ) -> Self {
+            let mut v = self.monitoring_alert_summaries.unwrap_or_default();
+            v.push(input);
+            self.monitoring_alert_summaries = Some(v);
+            self
+        }
+        /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
+        pub fn set_monitoring_alert_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MonitoringAlertSummary>>,
+        ) -> Self {
+            self.monitoring_alert_summaries = input;
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMonitoringAlertsOutput`](crate::output::ListMonitoringAlertsOutput).
+        pub fn build(self) -> crate::output::ListMonitoringAlertsOutput {
+            crate::output::ListMonitoringAlertsOutput {
+                monitoring_alert_summaries: self.monitoring_alert_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListMonitoringAlertsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMonitoringAlertsOutput`](crate::output::ListMonitoringAlertsOutput).
+    pub fn builder() -> crate::output::list_monitoring_alerts_output::Builder {
+        crate::output::list_monitoring_alerts_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListMonitoringAlertHistoryOutput {
+    /// <p>An alert history for a model monitoring schedule.</p>
+    #[doc(hidden)]
+    pub monitoring_alert_history:
+        std::option::Option<std::vec::Vec<crate::model::MonitoringAlertHistorySummary>>,
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMonitoringAlertHistoryOutput {
+    /// <p>An alert history for a model monitoring schedule.</p>
+    pub fn monitoring_alert_history(
+        &self,
+    ) -> std::option::Option<&[crate::model::MonitoringAlertHistorySummary]> {
+        self.monitoring_alert_history.as_deref()
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListMonitoringAlertHistoryOutput`](crate::output::ListMonitoringAlertHistoryOutput).
+pub mod list_monitoring_alert_history_output {
+
+    /// A builder for [`ListMonitoringAlertHistoryOutput`](crate::output::ListMonitoringAlertHistoryOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) monitoring_alert_history:
+            std::option::Option<std::vec::Vec<crate::model::MonitoringAlertHistorySummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `monitoring_alert_history`.
+        ///
+        /// To override the contents of this collection use [`set_monitoring_alert_history`](Self::set_monitoring_alert_history).
+        ///
+        /// <p>An alert history for a model monitoring schedule.</p>
+        pub fn monitoring_alert_history(
+            mut self,
+            input: crate::model::MonitoringAlertHistorySummary,
+        ) -> Self {
+            let mut v = self.monitoring_alert_history.unwrap_or_default();
+            v.push(input);
+            self.monitoring_alert_history = Some(v);
+            self
+        }
+        /// <p>An alert history for a model monitoring schedule.</p>
+        pub fn set_monitoring_alert_history(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MonitoringAlertHistorySummary>>,
+        ) -> Self {
+            self.monitoring_alert_history = input;
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMonitoringAlertHistoryOutput`](crate::output::ListMonitoringAlertHistoryOutput).
+        pub fn build(self) -> crate::output::ListMonitoringAlertHistoryOutput {
+            crate::output::ListMonitoringAlertHistoryOutput {
+                monitoring_alert_history: self.monitoring_alert_history,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListMonitoringAlertHistoryOutput {
+    /// Creates a new builder-style object to manufacture [`ListMonitoringAlertHistoryOutput`](crate::output::ListMonitoringAlertHistoryOutput).
+    pub fn builder() -> crate::output::list_monitoring_alert_history_output::Builder {
+        crate::output::list_monitoring_alert_history_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListModelsOutput {
     /// <p>An array of <code>ModelSummary</code> objects, each of which lists a model.</p>
     #[doc(hidden)]
@@ -4415,6 +5081,249 @@ impl ListModelExplainabilityJobDefinitionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListModelCardVersionsOutput {
+    /// <p>The summaries of the listed versions of the model card.</p>
+    #[doc(hidden)]
+    pub model_card_version_summary_list:
+        std::option::Option<std::vec::Vec<crate::model::ModelCardVersionSummary>>,
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card versions, use it in the subsequent request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListModelCardVersionsOutput {
+    /// <p>The summaries of the listed versions of the model card.</p>
+    pub fn model_card_version_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ModelCardVersionSummary]> {
+        self.model_card_version_summary_list.as_deref()
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card versions, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListModelCardVersionsOutput`](crate::output::ListModelCardVersionsOutput).
+pub mod list_model_card_versions_output {
+
+    /// A builder for [`ListModelCardVersionsOutput`](crate::output::ListModelCardVersionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_card_version_summary_list:
+            std::option::Option<std::vec::Vec<crate::model::ModelCardVersionSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `model_card_version_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_model_card_version_summary_list`](Self::set_model_card_version_summary_list).
+        ///
+        /// <p>The summaries of the listed versions of the model card.</p>
+        pub fn model_card_version_summary_list(
+            mut self,
+            input: crate::model::ModelCardVersionSummary,
+        ) -> Self {
+            let mut v = self.model_card_version_summary_list.unwrap_or_default();
+            v.push(input);
+            self.model_card_version_summary_list = Some(v);
+            self
+        }
+        /// <p>The summaries of the listed versions of the model card.</p>
+        pub fn set_model_card_version_summary_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelCardVersionSummary>>,
+        ) -> Self {
+            self.model_card_version_summary_list = input;
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card versions, use it in the subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card versions, use it in the subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListModelCardVersionsOutput`](crate::output::ListModelCardVersionsOutput).
+        pub fn build(self) -> crate::output::ListModelCardVersionsOutput {
+            crate::output::ListModelCardVersionsOutput {
+                model_card_version_summary_list: self.model_card_version_summary_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListModelCardVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListModelCardVersionsOutput`](crate::output::ListModelCardVersionsOutput).
+    pub fn builder() -> crate::output::list_model_card_versions_output::Builder {
+        crate::output::list_model_card_versions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListModelCardsOutput {
+    /// <p>The summaries of the listed model cards.</p>
+    #[doc(hidden)]
+    pub model_card_summaries: std::option::Option<std::vec::Vec<crate::model::ModelCardSummary>>,
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model cards, use it in the subsequent request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListModelCardsOutput {
+    /// <p>The summaries of the listed model cards.</p>
+    pub fn model_card_summaries(&self) -> std::option::Option<&[crate::model::ModelCardSummary]> {
+        self.model_card_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model cards, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListModelCardsOutput`](crate::output::ListModelCardsOutput).
+pub mod list_model_cards_output {
+
+    /// A builder for [`ListModelCardsOutput`](crate::output::ListModelCardsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_card_summaries:
+            std::option::Option<std::vec::Vec<crate::model::ModelCardSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `model_card_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_model_card_summaries`](Self::set_model_card_summaries).
+        ///
+        /// <p>The summaries of the listed model cards.</p>
+        pub fn model_card_summaries(mut self, input: crate::model::ModelCardSummary) -> Self {
+            let mut v = self.model_card_summaries.unwrap_or_default();
+            v.push(input);
+            self.model_card_summaries = Some(v);
+            self
+        }
+        /// <p>The summaries of the listed model cards.</p>
+        pub fn set_model_card_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelCardSummary>>,
+        ) -> Self {
+            self.model_card_summaries = input;
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model cards, use it in the subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model cards, use it in the subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListModelCardsOutput`](crate::output::ListModelCardsOutput).
+        pub fn build(self) -> crate::output::ListModelCardsOutput {
+            crate::output::ListModelCardsOutput {
+                model_card_summaries: self.model_card_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListModelCardsOutput {
+    /// Creates a new builder-style object to manufacture [`ListModelCardsOutput`](crate::output::ListModelCardsOutput).
+    pub fn builder() -> crate::output::list_model_cards_output::Builder {
+        crate::output::list_model_cards_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListModelCardExportJobsOutput {
+    /// <p>The summaries of the listed model card export jobs.</p>
+    #[doc(hidden)]
+    pub model_card_export_job_summaries:
+        std::option::Option<std::vec::Vec<crate::model::ModelCardExportJobSummary>>,
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card export jobs, use it in the subsequent request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListModelCardExportJobsOutput {
+    /// <p>The summaries of the listed model card export jobs.</p>
+    pub fn model_card_export_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ModelCardExportJobSummary]> {
+        self.model_card_export_job_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card export jobs, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListModelCardExportJobsOutput`](crate::output::ListModelCardExportJobsOutput).
+pub mod list_model_card_export_jobs_output {
+
+    /// A builder for [`ListModelCardExportJobsOutput`](crate::output::ListModelCardExportJobsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_card_export_job_summaries:
+            std::option::Option<std::vec::Vec<crate::model::ModelCardExportJobSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `model_card_export_job_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_model_card_export_job_summaries`](Self::set_model_card_export_job_summaries).
+        ///
+        /// <p>The summaries of the listed model card export jobs.</p>
+        pub fn model_card_export_job_summaries(
+            mut self,
+            input: crate::model::ModelCardExportJobSummary,
+        ) -> Self {
+            let mut v = self.model_card_export_job_summaries.unwrap_or_default();
+            v.push(input);
+            self.model_card_export_job_summaries = Some(v);
+            self
+        }
+        /// <p>The summaries of the listed model card export jobs.</p>
+        pub fn set_model_card_export_job_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelCardExportJobSummary>>,
+        ) -> Self {
+            self.model_card_export_job_summaries = input;
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card export jobs, use it in the subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card export jobs, use it in the subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListModelCardExportJobsOutput`](crate::output::ListModelCardExportJobsOutput).
+        pub fn build(self) -> crate::output::ListModelCardExportJobsOutput {
+            crate::output::ListModelCardExportJobsOutput {
+                model_card_export_job_summaries: self.model_card_export_job_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListModelCardExportJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListModelCardExportJobsOutput`](crate::output::ListModelCardExportJobsOutput).
+    pub fn builder() -> crate::output::list_model_card_export_jobs_output::Builder {
+        crate::output::list_model_card_export_jobs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListModelBiasJobDefinitionsOutput {
     /// <p>A JSON array in which each element is a summary for a model bias jobs.</p>
     #[doc(hidden)]
@@ -4744,6 +5653,85 @@ impl ListLabelingJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListInferenceRecommendationsJobStepsOutput {
+    /// <p>A list of all subtask details in Inference Recommender.</p>
+    #[doc(hidden)]
+    pub steps: std::option::Option<std::vec::Vec<crate::model::InferenceRecommendationsJobStep>>,
+    /// <p>A token that you can specify in your next request to return more results from the list.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInferenceRecommendationsJobStepsOutput {
+    /// <p>A list of all subtask details in Inference Recommender.</p>
+    pub fn steps(&self) -> std::option::Option<&[crate::model::InferenceRecommendationsJobStep]> {
+        self.steps.as_deref()
+    }
+    /// <p>A token that you can specify in your next request to return more results from the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListInferenceRecommendationsJobStepsOutput`](crate::output::ListInferenceRecommendationsJobStepsOutput).
+pub mod list_inference_recommendations_job_steps_output {
+
+    /// A builder for [`ListInferenceRecommendationsJobStepsOutput`](crate::output::ListInferenceRecommendationsJobStepsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) steps:
+            std::option::Option<std::vec::Vec<crate::model::InferenceRecommendationsJobStep>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `steps`.
+        ///
+        /// To override the contents of this collection use [`set_steps`](Self::set_steps).
+        ///
+        /// <p>A list of all subtask details in Inference Recommender.</p>
+        pub fn steps(mut self, input: crate::model::InferenceRecommendationsJobStep) -> Self {
+            let mut v = self.steps.unwrap_or_default();
+            v.push(input);
+            self.steps = Some(v);
+            self
+        }
+        /// <p>A list of all subtask details in Inference Recommender.</p>
+        pub fn set_steps(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::InferenceRecommendationsJobStep>,
+            >,
+        ) -> Self {
+            self.steps = input;
+            self
+        }
+        /// <p>A token that you can specify in your next request to return more results from the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that you can specify in your next request to return more results from the list.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListInferenceRecommendationsJobStepsOutput`](crate::output::ListInferenceRecommendationsJobStepsOutput).
+        pub fn build(self) -> crate::output::ListInferenceRecommendationsJobStepsOutput {
+            crate::output::ListInferenceRecommendationsJobStepsOutput {
+                steps: self.steps,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListInferenceRecommendationsJobStepsOutput {
+    /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobStepsOutput`](crate::output::ListInferenceRecommendationsJobStepsOutput).
+    pub fn builder() -> crate::output::list_inference_recommendations_job_steps_output::Builder {
+        crate::output::list_inference_recommendations_job_steps_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInferenceRecommendationsJobsOutput {
     /// <p>The recommendations created from the Amazon SageMaker Inference Recommender job.</p>
     #[doc(hidden)]
@@ -4821,6 +5809,89 @@ impl ListInferenceRecommendationsJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobsOutput`](crate::output::ListInferenceRecommendationsJobsOutput).
     pub fn builder() -> crate::output::list_inference_recommendations_jobs_output::Builder {
         crate::output::list_inference_recommendations_jobs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListInferenceExperimentsOutput {
+    /// <p>List of inference experiments.</p>
+    #[doc(hidden)]
+    pub inference_experiments:
+        std::option::Option<std::vec::Vec<crate::model::InferenceExperimentSummary>>,
+    /// <p>The token to use when calling the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInferenceExperimentsOutput {
+    /// <p>List of inference experiments.</p>
+    pub fn inference_experiments(
+        &self,
+    ) -> std::option::Option<&[crate::model::InferenceExperimentSummary]> {
+        self.inference_experiments.as_deref()
+    }
+    /// <p>The token to use when calling the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListInferenceExperimentsOutput`](crate::output::ListInferenceExperimentsOutput).
+pub mod list_inference_experiments_output {
+
+    /// A builder for [`ListInferenceExperimentsOutput`](crate::output::ListInferenceExperimentsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) inference_experiments:
+            std::option::Option<std::vec::Vec<crate::model::InferenceExperimentSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `inference_experiments`.
+        ///
+        /// To override the contents of this collection use [`set_inference_experiments`](Self::set_inference_experiments).
+        ///
+        /// <p>List of inference experiments.</p>
+        pub fn inference_experiments(
+            mut self,
+            input: crate::model::InferenceExperimentSummary,
+        ) -> Self {
+            let mut v = self.inference_experiments.unwrap_or_default();
+            v.push(input);
+            self.inference_experiments = Some(v);
+            self
+        }
+        /// <p>List of inference experiments.</p>
+        pub fn set_inference_experiments(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InferenceExperimentSummary>>,
+        ) -> Self {
+            self.inference_experiments = input;
+            self
+        }
+        /// <p>The token to use when calling the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use when calling the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListInferenceExperimentsOutput`](crate::output::ListInferenceExperimentsOutput).
+        pub fn build(self) -> crate::output::ListInferenceExperimentsOutput {
+            crate::output::ListInferenceExperimentsOutput {
+                inference_experiments: self.inference_experiments,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListInferenceExperimentsOutput {
+    /// Creates a new builder-style object to manufacture [`ListInferenceExperimentsOutput`](crate::output::ListInferenceExperimentsOutput).
+    pub fn builder() -> crate::output::list_inference_experiments_output::Builder {
+        crate::output::list_inference_experiments_output::Builder::default()
     }
 }
 
@@ -5138,6 +6209,236 @@ impl ListHumanTaskUisOutput {
     /// Creates a new builder-style object to manufacture [`ListHumanTaskUisOutput`](crate::output::ListHumanTaskUisOutput).
     pub fn builder() -> crate::output::list_human_task_uis_output::Builder {
         crate::output::list_human_task_uis_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListHubsOutput {
+    /// <p>The summaries of the listed hubs.</p>
+    #[doc(hidden)]
+    pub hub_summaries: std::option::Option<std::vec::Vec<crate::model::HubInfo>>,
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hubs, use it in the subsequent request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHubsOutput {
+    /// <p>The summaries of the listed hubs.</p>
+    pub fn hub_summaries(&self) -> std::option::Option<&[crate::model::HubInfo]> {
+        self.hub_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hubs, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListHubsOutput`](crate::output::ListHubsOutput).
+pub mod list_hubs_output {
+
+    /// A builder for [`ListHubsOutput`](crate::output::ListHubsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_summaries: std::option::Option<std::vec::Vec<crate::model::HubInfo>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `hub_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_hub_summaries`](Self::set_hub_summaries).
+        ///
+        /// <p>The summaries of the listed hubs.</p>
+        pub fn hub_summaries(mut self, input: crate::model::HubInfo) -> Self {
+            let mut v = self.hub_summaries.unwrap_or_default();
+            v.push(input);
+            self.hub_summaries = Some(v);
+            self
+        }
+        /// <p>The summaries of the listed hubs.</p>
+        pub fn set_hub_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HubInfo>>,
+        ) -> Self {
+            self.hub_summaries = input;
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hubs, use it in the subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hubs, use it in the subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListHubsOutput`](crate::output::ListHubsOutput).
+        pub fn build(self) -> crate::output::ListHubsOutput {
+            crate::output::ListHubsOutput {
+                hub_summaries: self.hub_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListHubsOutput {
+    /// Creates a new builder-style object to manufacture [`ListHubsOutput`](crate::output::ListHubsOutput).
+    pub fn builder() -> crate::output::list_hubs_output::Builder {
+        crate::output::list_hubs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListHubContentVersionsOutput {
+    /// <p>The summaries of the listed hub content versions.</p>
+    #[doc(hidden)]
+    pub hub_content_summaries: std::option::Option<std::vec::Vec<crate::model::HubContentInfo>>,
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content versions, use it in the subsequent request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHubContentVersionsOutput {
+    /// <p>The summaries of the listed hub content versions.</p>
+    pub fn hub_content_summaries(&self) -> std::option::Option<&[crate::model::HubContentInfo]> {
+        self.hub_content_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content versions, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListHubContentVersionsOutput`](crate::output::ListHubContentVersionsOutput).
+pub mod list_hub_content_versions_output {
+
+    /// A builder for [`ListHubContentVersionsOutput`](crate::output::ListHubContentVersionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_content_summaries:
+            std::option::Option<std::vec::Vec<crate::model::HubContentInfo>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `hub_content_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_hub_content_summaries`](Self::set_hub_content_summaries).
+        ///
+        /// <p>The summaries of the listed hub content versions.</p>
+        pub fn hub_content_summaries(mut self, input: crate::model::HubContentInfo) -> Self {
+            let mut v = self.hub_content_summaries.unwrap_or_default();
+            v.push(input);
+            self.hub_content_summaries = Some(v);
+            self
+        }
+        /// <p>The summaries of the listed hub content versions.</p>
+        pub fn set_hub_content_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HubContentInfo>>,
+        ) -> Self {
+            self.hub_content_summaries = input;
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content versions, use it in the subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content versions, use it in the subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListHubContentVersionsOutput`](crate::output::ListHubContentVersionsOutput).
+        pub fn build(self) -> crate::output::ListHubContentVersionsOutput {
+            crate::output::ListHubContentVersionsOutput {
+                hub_content_summaries: self.hub_content_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListHubContentVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListHubContentVersionsOutput`](crate::output::ListHubContentVersionsOutput).
+    pub fn builder() -> crate::output::list_hub_content_versions_output::Builder {
+        crate::output::list_hub_content_versions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListHubContentsOutput {
+    /// <p>The summaries of the listed hub content.</p>
+    #[doc(hidden)]
+    pub hub_content_summaries: std::option::Option<std::vec::Vec<crate::model::HubContentInfo>>,
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content, use it in the subsequent request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHubContentsOutput {
+    /// <p>The summaries of the listed hub content.</p>
+    pub fn hub_content_summaries(&self) -> std::option::Option<&[crate::model::HubContentInfo]> {
+        self.hub_content_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListHubContentsOutput`](crate::output::ListHubContentsOutput).
+pub mod list_hub_contents_output {
+
+    /// A builder for [`ListHubContentsOutput`](crate::output::ListHubContentsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_content_summaries:
+            std::option::Option<std::vec::Vec<crate::model::HubContentInfo>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `hub_content_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_hub_content_summaries`](Self::set_hub_content_summaries).
+        ///
+        /// <p>The summaries of the listed hub content.</p>
+        pub fn hub_content_summaries(mut self, input: crate::model::HubContentInfo) -> Self {
+            let mut v = self.hub_content_summaries.unwrap_or_default();
+            v.push(input);
+            self.hub_content_summaries = Some(v);
+            self
+        }
+        /// <p>The summaries of the listed hub content.</p>
+        pub fn set_hub_content_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HubContentInfo>>,
+        ) -> Self {
+            self.hub_content_summaries = input;
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content, use it in the subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content, use it in the subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListHubContentsOutput`](crate::output::ListHubContentsOutput).
+        pub fn build(self) -> crate::output::ListHubContentsOutput {
+            crate::output::ListHubContentsOutput {
+                hub_content_summaries: self.hub_content_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListHubContentsOutput {
+    /// Creates a new builder-style object to manufacture [`ListHubContentsOutput`](crate::output::ListHubContentsOutput).
+    pub fn builder() -> crate::output::list_hub_contents_output::Builder {
+        crate::output::list_hub_contents_output::Builder::default()
     }
 }
 
@@ -6752,6 +8053,86 @@ impl ListAppImageConfigsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListAliasesOutput {
+    /// <p>A list of SageMaker image version aliases.</p>
+    #[doc(hidden)]
+    pub sage_maker_image_version_aliases: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A token for getting the next set of aliases, if more aliases exist.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAliasesOutput {
+    /// <p>A list of SageMaker image version aliases.</p>
+    pub fn sage_maker_image_version_aliases(&self) -> std::option::Option<&[std::string::String]> {
+        self.sage_maker_image_version_aliases.as_deref()
+    }
+    /// <p>A token for getting the next set of aliases, if more aliases exist.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListAliasesOutput`](crate::output::ListAliasesOutput).
+pub mod list_aliases_output {
+
+    /// A builder for [`ListAliasesOutput`](crate::output::ListAliasesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sage_maker_image_version_aliases:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `sage_maker_image_version_aliases`.
+        ///
+        /// To override the contents of this collection use [`set_sage_maker_image_version_aliases`](Self::set_sage_maker_image_version_aliases).
+        ///
+        /// <p>A list of SageMaker image version aliases.</p>
+        pub fn sage_maker_image_version_aliases(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.sage_maker_image_version_aliases.unwrap_or_default();
+            v.push(input.into());
+            self.sage_maker_image_version_aliases = Some(v);
+            self
+        }
+        /// <p>A list of SageMaker image version aliases.</p>
+        pub fn set_sage_maker_image_version_aliases(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.sage_maker_image_version_aliases = input;
+            self
+        }
+        /// <p>A token for getting the next set of aliases, if more aliases exist.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token for getting the next set of aliases, if more aliases exist.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAliasesOutput`](crate::output::ListAliasesOutput).
+        pub fn build(self) -> crate::output::ListAliasesOutput {
+            crate::output::ListAliasesOutput {
+                sage_maker_image_version_aliases: self.sage_maker_image_version_aliases,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAliasesOutput {
+    /// Creates a new builder-style object to manufacture [`ListAliasesOutput`](crate::output::ListAliasesOutput).
+    pub fn builder() -> crate::output::list_aliases_output::Builder {
+        crate::output::list_aliases_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAlgorithmsOutput {
     /// <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
     #[doc(hidden)]
@@ -6900,6 +8281,76 @@ impl ListActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListActionsOutput`](crate::output::ListActionsOutput).
     pub fn builder() -> crate::output::list_actions_output::Builder {
         crate::output::list_actions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ImportHubContentOutput {
+    /// <p>The ARN of the hub that the content was imported into.</p>
+    #[doc(hidden)]
+    pub hub_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the hub content that was imported.</p>
+    #[doc(hidden)]
+    pub hub_content_arn: std::option::Option<std::string::String>,
+}
+impl ImportHubContentOutput {
+    /// <p>The ARN of the hub that the content was imported into.</p>
+    pub fn hub_arn(&self) -> std::option::Option<&str> {
+        self.hub_arn.as_deref()
+    }
+    /// <p>The ARN of the hub content that was imported.</p>
+    pub fn hub_content_arn(&self) -> std::option::Option<&str> {
+        self.hub_content_arn.as_deref()
+    }
+}
+/// See [`ImportHubContentOutput`](crate::output::ImportHubContentOutput).
+pub mod import_hub_content_output {
+
+    /// A builder for [`ImportHubContentOutput`](crate::output::ImportHubContentOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_arn: std::option::Option<std::string::String>,
+        pub(crate) hub_content_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the hub that the content was imported into.</p>
+        pub fn hub_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the hub that the content was imported into.</p>
+        pub fn set_hub_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_arn = input;
+            self
+        }
+        /// <p>The ARN of the hub content that was imported.</p>
+        pub fn hub_content_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the hub content that was imported.</p>
+        pub fn set_hub_content_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportHubContentOutput`](crate::output::ImportHubContentOutput).
+        pub fn build(self) -> crate::output::ImportHubContentOutput {
+            crate::output::ImportHubContentOutput {
+                hub_arn: self.hub_arn,
+                hub_content_arn: self.hub_content_arn,
+            }
+        }
+    }
+}
+impl ImportHubContentOutput {
+    /// Creates a new builder-style object to manufacture [`ImportHubContentOutput`](crate::output::ImportHubContentOutput).
+    pub fn builder() -> crate::output::import_hub_content_output::Builder {
+        crate::output::import_hub_content_output::Builder::default()
     }
 }
 
@@ -7385,7 +8836,7 @@ impl EnableSagemakerServicecatalogPortfolioOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateTrialComponentOutput {
-    /// <p>The ARN of the trial component.</p>
+    /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     #[doc(hidden)]
     pub trial_component_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
@@ -7393,7 +8844,7 @@ pub struct DisassociateTrialComponentOutput {
     pub trial_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateTrialComponentOutput {
-    /// <p>The ARN of the trial component.</p>
+    /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     pub fn trial_component_arn(&self) -> std::option::Option<&str> {
         self.trial_component_arn.as_deref()
     }
@@ -7412,12 +8863,12 @@ pub mod disassociate_trial_component_output {
         pub(crate) trial_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the trial component.</p>
+        /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
         pub fn trial_component_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.trial_component_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the trial component.</p>
+        /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
         pub fn set_trial_component_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7911,6 +9362,9 @@ pub struct DescribeTrialComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     #[doc(hidden)]
     pub lineage_group_arn: std::option::Option<std::string::String>,
+    /// <p>A list of ARNs and, if applicable, job types for multiple sources of an experiment run.</p>
+    #[doc(hidden)]
+    pub sources: std::option::Option<std::vec::Vec<crate::model::TrialComponentSource>>,
 }
 impl DescribeTrialComponentOutput {
     /// <p>The name of the trial component.</p>
@@ -7998,6 +9452,10 @@ impl DescribeTrialComponentOutput {
     pub fn lineage_group_arn(&self) -> std::option::Option<&str> {
         self.lineage_group_arn.as_deref()
     }
+    /// <p>A list of ARNs and, if applicable, job types for multiple sources of an experiment run.</p>
+    pub fn sources(&self) -> std::option::Option<&[crate::model::TrialComponentSource]> {
+        self.sources.as_deref()
+    }
 }
 /// See [`DescribeTrialComponentOutput`](crate::output::DescribeTrialComponentOutput).
 pub mod describe_trial_component_output {
@@ -8032,6 +9490,7 @@ pub mod describe_trial_component_output {
         pub(crate) metrics:
             std::option::Option<std::vec::Vec<crate::model::TrialComponentMetricSummary>>,
         pub(crate) lineage_group_arn: std::option::Option<std::string::String>,
+        pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::TrialComponentSource>>,
     }
     impl Builder {
         /// <p>The name of the trial component.</p>
@@ -8313,6 +9772,25 @@ pub mod describe_trial_component_output {
             self.lineage_group_arn = input;
             self
         }
+        /// Appends an item to `sources`.
+        ///
+        /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+        ///
+        /// <p>A list of ARNs and, if applicable, job types for multiple sources of an experiment run.</p>
+        pub fn sources(mut self, input: crate::model::TrialComponentSource) -> Self {
+            let mut v = self.sources.unwrap_or_default();
+            v.push(input);
+            self.sources = Some(v);
+            self
+        }
+        /// <p>A list of ARNs and, if applicable, job types for multiple sources of an experiment run.</p>
+        pub fn set_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TrialComponentSource>>,
+        ) -> Self {
+            self.sources = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeTrialComponentOutput`](crate::output::DescribeTrialComponentOutput).
         pub fn build(self) -> crate::output::DescribeTrialComponentOutput {
             crate::output::DescribeTrialComponentOutput {
@@ -8333,6 +9811,7 @@ pub mod describe_trial_component_output {
                 metadata_properties: self.metadata_properties,
                 metrics: self.metrics,
                 lineage_group_arn: self.lineage_group_arn,
+                sources: self.sources,
             }
         }
     }
@@ -8623,6 +10102,9 @@ pub struct DescribeTransformJobOutput {
     /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
     #[doc(hidden)]
     pub transform_output: std::option::Option<crate::model::TransformOutput>,
+    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    #[doc(hidden)]
+    pub data_capture_config: std::option::Option<crate::model::BatchDataCaptureConfig>,
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
     #[doc(hidden)]
     pub transform_resources: std::option::Option<crate::model::TransformResources>,
@@ -8706,6 +10188,12 @@ impl DescribeTransformJobOutput {
     pub fn transform_output(&self) -> std::option::Option<&crate::model::TransformOutput> {
         self.transform_output.as_ref()
     }
+    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    pub fn data_capture_config(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchDataCaptureConfig> {
+        self.data_capture_config.as_ref()
+    }
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
     pub fn transform_resources(&self) -> std::option::Option<&crate::model::TransformResources> {
         self.transform_resources.as_ref()
@@ -8764,6 +10252,7 @@ pub mod describe_transform_job_output {
         >,
         pub(crate) transform_input: std::option::Option<crate::model::TransformInput>,
         pub(crate) transform_output: std::option::Option<crate::model::TransformOutput>,
+        pub(crate) data_capture_config: std::option::Option<crate::model::BatchDataCaptureConfig>,
         pub(crate) transform_resources: std::option::Option<crate::model::TransformResources>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) transform_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -8935,6 +10424,19 @@ pub mod describe_transform_job_output {
             self.transform_output = input;
             self
         }
+        /// <p>Configuration to control how SageMaker captures inference data.</p>
+        pub fn data_capture_config(mut self, input: crate::model::BatchDataCaptureConfig) -> Self {
+            self.data_capture_config = Some(input);
+            self
+        }
+        /// <p>Configuration to control how SageMaker captures inference data.</p>
+        pub fn set_data_capture_config(
+            mut self,
+            input: std::option::Option<crate::model::BatchDataCaptureConfig>,
+        ) -> Self {
+            self.data_capture_config = input;
+            self
+        }
         /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
         pub fn transform_resources(mut self, input: crate::model::TransformResources) -> Self {
             self.transform_resources = Some(input);
@@ -9064,6 +10566,7 @@ pub mod describe_transform_job_output {
                 environment: self.environment,
                 transform_input: self.transform_input,
                 transform_output: self.transform_output,
+                data_capture_config: self.data_capture_config,
                 transform_resources: self.transform_resources,
                 creation_time: self.creation_time,
                 transform_start_time: self.transform_start_time,
@@ -9245,7 +10748,7 @@ pub struct DescribeTrainingJobOutput {
     /// <p>You can calculate the savings from using managed spot training using the formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.</p>
     #[doc(hidden)]
     pub billable_time_in_seconds: std::option::Option<i32>,
-    /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+    /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
     #[doc(hidden)]
     pub debug_hook_config: std::option::Option<crate::model::DebugHookConfig>,
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
@@ -9256,25 +10759,25 @@ pub struct DescribeTrainingJobOutput {
     /// </ul>
     #[doc(hidden)]
     pub experiment_config: std::option::Option<crate::model::ExperimentConfig>,
-    /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
     #[doc(hidden)]
     pub debug_rule_configurations:
         std::option::Option<std::vec::Vec<crate::model::DebugRuleConfiguration>>,
-    /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+    /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
     #[doc(hidden)]
     pub tensor_board_output_config: std::option::Option<crate::model::TensorBoardOutputConfig>,
-    /// <p>Evaluation status of Debugger rules for debugging on a training job.</p>
+    /// <p>Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.</p>
     #[doc(hidden)]
     pub debug_rule_evaluation_statuses:
         std::option::Option<std::vec::Vec<crate::model::DebugRuleEvaluationStatus>>,
-    /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
     #[doc(hidden)]
     pub profiler_config: std::option::Option<crate::model::ProfilerConfig>,
-    /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
     #[doc(hidden)]
     pub profiler_rule_configurations:
         std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
-    /// <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+    /// <p>Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.</p>
     #[doc(hidden)]
     pub profiler_rule_evaluation_statuses:
         std::option::Option<std::vec::Vec<crate::model::ProfilerRuleEvaluationStatus>>,
@@ -9485,7 +10988,7 @@ impl DescribeTrainingJobOutput {
     pub fn billable_time_in_seconds(&self) -> std::option::Option<i32> {
         self.billable_time_in_seconds
     }
-    /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+    /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
     pub fn debug_hook_config(&self) -> std::option::Option<&crate::model::DebugHookConfig> {
         self.debug_hook_config.as_ref()
     }
@@ -9498,35 +11001,35 @@ impl DescribeTrainingJobOutput {
     pub fn experiment_config(&self) -> std::option::Option<&crate::model::ExperimentConfig> {
         self.experiment_config.as_ref()
     }
-    /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
     pub fn debug_rule_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::DebugRuleConfiguration]> {
         self.debug_rule_configurations.as_deref()
     }
-    /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+    /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
     pub fn tensor_board_output_config(
         &self,
     ) -> std::option::Option<&crate::model::TensorBoardOutputConfig> {
         self.tensor_board_output_config.as_ref()
     }
-    /// <p>Evaluation status of Debugger rules for debugging on a training job.</p>
+    /// <p>Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.</p>
     pub fn debug_rule_evaluation_statuses(
         &self,
     ) -> std::option::Option<&[crate::model::DebugRuleEvaluationStatus]> {
         self.debug_rule_evaluation_statuses.as_deref()
     }
-    /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
     pub fn profiler_config(&self) -> std::option::Option<&crate::model::ProfilerConfig> {
         self.profiler_config.as_ref()
     }
-    /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
     pub fn profiler_rule_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::ProfilerRuleConfiguration]> {
         self.profiler_rule_configurations.as_deref()
     }
-    /// <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+    /// <p>Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.</p>
     pub fn profiler_rule_evaluation_statuses(
         &self,
     ) -> std::option::Option<&[crate::model::ProfilerRuleEvaluationStatus]> {
@@ -10152,12 +11655,12 @@ pub mod describe_training_job_output {
             self.billable_time_in_seconds = input;
             self
         }
-        /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+        /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
         pub fn debug_hook_config(mut self, input: crate::model::DebugHookConfig) -> Self {
             self.debug_hook_config = Some(input);
             self
         }
-        /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+        /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
         pub fn set_debug_hook_config(
             mut self,
             input: std::option::Option<crate::model::DebugHookConfig>,
@@ -10192,7 +11695,7 @@ pub mod describe_training_job_output {
         ///
         /// To override the contents of this collection use [`set_debug_rule_configurations`](Self::set_debug_rule_configurations).
         ///
-        /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
         pub fn debug_rule_configurations(
             mut self,
             input: crate::model::DebugRuleConfiguration,
@@ -10202,7 +11705,7 @@ pub mod describe_training_job_output {
             self.debug_rule_configurations = Some(v);
             self
         }
-        /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
         pub fn set_debug_rule_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DebugRuleConfiguration>>,
@@ -10210,7 +11713,7 @@ pub mod describe_training_job_output {
             self.debug_rule_configurations = input;
             self
         }
-        /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+        /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
         pub fn tensor_board_output_config(
             mut self,
             input: crate::model::TensorBoardOutputConfig,
@@ -10218,7 +11721,7 @@ pub mod describe_training_job_output {
             self.tensor_board_output_config = Some(input);
             self
         }
-        /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+        /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
         pub fn set_tensor_board_output_config(
             mut self,
             input: std::option::Option<crate::model::TensorBoardOutputConfig>,
@@ -10230,7 +11733,7 @@ pub mod describe_training_job_output {
         ///
         /// To override the contents of this collection use [`set_debug_rule_evaluation_statuses`](Self::set_debug_rule_evaluation_statuses).
         ///
-        /// <p>Evaluation status of Debugger rules for debugging on a training job.</p>
+        /// <p>Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.</p>
         pub fn debug_rule_evaluation_statuses(
             mut self,
             input: crate::model::DebugRuleEvaluationStatus,
@@ -10240,7 +11743,7 @@ pub mod describe_training_job_output {
             self.debug_rule_evaluation_statuses = Some(v);
             self
         }
-        /// <p>Evaluation status of Debugger rules for debugging on a training job.</p>
+        /// <p>Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.</p>
         pub fn set_debug_rule_evaluation_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DebugRuleEvaluationStatus>>,
@@ -10248,12 +11751,12 @@ pub mod describe_training_job_output {
             self.debug_rule_evaluation_statuses = input;
             self
         }
-        /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
         pub fn profiler_config(mut self, input: crate::model::ProfilerConfig) -> Self {
             self.profiler_config = Some(input);
             self
         }
-        /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
         pub fn set_profiler_config(
             mut self,
             input: std::option::Option<crate::model::ProfilerConfig>,
@@ -10265,7 +11768,7 @@ pub mod describe_training_job_output {
         ///
         /// To override the contents of this collection use [`set_profiler_rule_configurations`](Self::set_profiler_rule_configurations).
         ///
-        /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
         pub fn profiler_rule_configurations(
             mut self,
             input: crate::model::ProfilerRuleConfiguration,
@@ -10275,7 +11778,7 @@ pub mod describe_training_job_output {
             self.profiler_rule_configurations = Some(v);
             self
         }
-        /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
         pub fn set_profiler_rule_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
@@ -10287,7 +11790,7 @@ pub mod describe_training_job_output {
         ///
         /// To override the contents of this collection use [`set_profiler_rule_evaluation_statuses`](Self::set_profiler_rule_evaluation_statuses).
         ///
-        /// <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+        /// <p>Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.</p>
         pub fn profiler_rule_evaluation_statuses(
             mut self,
             input: crate::model::ProfilerRuleEvaluationStatus,
@@ -10297,7 +11800,7 @@ pub mod describe_training_job_output {
             self.profiler_rule_evaluation_statuses = Some(v);
             self
         }
-        /// <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+        /// <p>Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.</p>
         pub fn set_profiler_rule_evaluation_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProfilerRuleEvaluationStatus>>,
@@ -10657,6 +12160,221 @@ impl DescribeStudioLifecycleConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeSpaceOutput {
+    /// <p>The ID of the associated Domain.</p>
+    #[doc(hidden)]
+    pub domain_id: std::option::Option<std::string::String>,
+    /// <p>The space's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub space_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the space.</p>
+    #[doc(hidden)]
+    pub space_name: std::option::Option<std::string::String>,
+    /// <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+    #[doc(hidden)]
+    pub home_efs_file_system_uid: std::option::Option<std::string::String>,
+    /// <p>The status.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::SpaceStatus>,
+    /// <p>The last modified time.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The creation time.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The failure reason.</p>
+    #[doc(hidden)]
+    pub failure_reason: std::option::Option<std::string::String>,
+    /// <p>A collection of space settings.</p>
+    #[doc(hidden)]
+    pub space_settings: std::option::Option<crate::model::SpaceSettings>,
+}
+impl DescribeSpaceOutput {
+    /// <p>The ID of the associated Domain.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The space's Amazon Resource Name (ARN).</p>
+    pub fn space_arn(&self) -> std::option::Option<&str> {
+        self.space_arn.as_deref()
+    }
+    /// <p>The name of the space.</p>
+    pub fn space_name(&self) -> std::option::Option<&str> {
+        self.space_name.as_deref()
+    }
+    /// <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+    pub fn home_efs_file_system_uid(&self) -> std::option::Option<&str> {
+        self.home_efs_file_system_uid.as_deref()
+    }
+    /// <p>The status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SpaceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The last modified time.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The creation time.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The failure reason.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>A collection of space settings.</p>
+    pub fn space_settings(&self) -> std::option::Option<&crate::model::SpaceSettings> {
+        self.space_settings.as_ref()
+    }
+}
+/// See [`DescribeSpaceOutput`](crate::output::DescribeSpaceOutput).
+pub mod describe_space_output {
+
+    /// A builder for [`DescribeSpaceOutput`](crate::output::DescribeSpaceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_id: std::option::Option<std::string::String>,
+        pub(crate) space_arn: std::option::Option<std::string::String>,
+        pub(crate) space_name: std::option::Option<std::string::String>,
+        pub(crate) home_efs_file_system_uid: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::SpaceStatus>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+        pub(crate) space_settings: std::option::Option<crate::model::SpaceSettings>,
+    }
+    impl Builder {
+        /// <p>The ID of the associated Domain.</p>
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the associated Domain.</p>
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_id = input;
+            self
+        }
+        /// <p>The space's Amazon Resource Name (ARN).</p>
+        pub fn space_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_arn = Some(input.into());
+            self
+        }
+        /// <p>The space's Amazon Resource Name (ARN).</p>
+        pub fn set_space_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.space_arn = input;
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.space_name = input;
+            self
+        }
+        /// <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+        pub fn home_efs_file_system_uid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.home_efs_file_system_uid = Some(input.into());
+            self
+        }
+        /// <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+        pub fn set_home_efs_file_system_uid(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.home_efs_file_system_uid = input;
+            self
+        }
+        /// <p>The status.</p>
+        pub fn status(mut self, input: crate::model::SpaceStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status.</p>
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SpaceStatus>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The last modified time.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The last modified time.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The creation time.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The creation time.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The failure reason.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>The failure reason.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// <p>A collection of space settings.</p>
+        pub fn space_settings(mut self, input: crate::model::SpaceSettings) -> Self {
+            self.space_settings = Some(input);
+            self
+        }
+        /// <p>A collection of space settings.</p>
+        pub fn set_space_settings(
+            mut self,
+            input: std::option::Option<crate::model::SpaceSettings>,
+        ) -> Self {
+            self.space_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeSpaceOutput`](crate::output::DescribeSpaceOutput).
+        pub fn build(self) -> crate::output::DescribeSpaceOutput {
+            crate::output::DescribeSpaceOutput {
+                domain_id: self.domain_id,
+                space_arn: self.space_arn,
+                space_name: self.space_name,
+                home_efs_file_system_uid: self.home_efs_file_system_uid,
+                status: self.status,
+                last_modified_time: self.last_modified_time,
+                creation_time: self.creation_time,
+                failure_reason: self.failure_reason,
+                space_settings: self.space_settings,
+            }
+        }
+    }
+}
+impl DescribeSpaceOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSpaceOutput`](crate::output::DescribeSpaceOutput).
+    pub fn builder() -> crate::output::describe_space_output::Builder {
+        crate::output::describe_space_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProjectOutput {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     #[doc(hidden)]
@@ -10681,7 +12399,7 @@ pub struct DescribeProjectOutput {
     /// <p>The status of the project.</p>
     #[doc(hidden)]
     pub project_status: std::option::Option<crate::model::ProjectStatus>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>The time when the project was created.</p>
@@ -10690,7 +12408,7 @@ pub struct DescribeProjectOutput {
     /// <p>The timestamp when project was last modified.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
 }
@@ -10727,7 +12445,7 @@ impl DescribeProjectOutput {
     pub fn project_status(&self) -> std::option::Option<&crate::model::ProjectStatus> {
         self.project_status.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -10739,7 +12457,7 @@ impl DescribeProjectOutput {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -10853,12 +12571,12 @@ pub mod describe_project_output {
             self.project_status = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -10892,12 +12610,12 @@ pub mod describe_project_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -11484,10 +13202,10 @@ pub struct DescribePipelineExecutionOutput {
     /// <p>The time when the pipeline execution was modified last.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::UserContext>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>The parallelism configuration applied to the pipeline.</p>
@@ -11535,11 +13253,11 @@ impl DescribePipelineExecutionOutput {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -11699,12 +13417,12 @@ pub mod describe_pipeline_execution_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -11712,12 +13430,12 @@ pub mod describe_pipeline_execution_output {
             self.created_by = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -11874,10 +13592,10 @@ pub struct DescribePipelineOutput {
     /// <p>The time when the pipeline was last run.</p>
     #[doc(hidden)]
     pub last_run_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::UserContext>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>Lists the parallelism configuration applied to the pipeline.</p>
@@ -11925,11 +13643,11 @@ impl DescribePipelineOutput {
     pub fn last_run_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_run_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -12086,12 +13804,12 @@ pub mod describe_pipeline_output {
             self.last_run_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -12099,12 +13817,12 @@ pub mod describe_pipeline_output {
             self.created_by = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -13505,7 +15223,7 @@ pub struct DescribeModelPackageGroupOutput {
     /// <p>The time that the model group was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>The status of the model group.</p>
@@ -13529,7 +15247,7 @@ impl DescribeModelPackageGroupOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -13610,12 +15328,12 @@ pub mod describe_model_package_group_output {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -13704,7 +15422,7 @@ pub struct DescribeModelPackageOutput {
     /// <p>The approval status of the model package.</p>
     #[doc(hidden)]
     pub model_approval_status: std::option::Option<crate::model::ModelApprovalStatus>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
@@ -13716,7 +15434,7 @@ pub struct DescribeModelPackageOutput {
     /// <p>The last time that the model package was modified.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>A description provided for the model approval.</p>
@@ -13805,7 +15523,7 @@ impl DescribeModelPackageOutput {
     pub fn model_approval_status(&self) -> std::option::Option<&crate::model::ModelApprovalStatus> {
         self.model_approval_status.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -13821,7 +15539,7 @@ impl DescribeModelPackageOutput {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -14075,12 +15793,12 @@ pub mod describe_model_package_output {
             self.model_approval_status = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -14127,12 +15845,12 @@ pub mod describe_model_package_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -14587,6 +16305,639 @@ impl DescribeModelExplainabilityJobDefinitionOutput {
     pub fn builder() -> crate::output::describe_model_explainability_job_definition_output::Builder
     {
         crate::output::describe_model_explainability_job_definition_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeModelCardExportJobOutput {
+    /// <p>The name of the model card export job to describe.</p>
+    #[doc(hidden)]
+    pub model_card_export_job_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the model card export job.</p>
+    #[doc(hidden)]
+    pub model_card_export_job_arn: std::option::Option<std::string::String>,
+    /// <p>The completion status of the model card export job.</p>
+    /// <ul>
+    /// <li> <p> <code>InProgress</code>: The model card export job is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code>: The model card export job is complete.</p> </li>
+    /// <li> <p> <code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::ModelCardExportJobStatus>,
+    /// <p>The name of the model card that the model export job exports.</p>
+    #[doc(hidden)]
+    pub model_card_name: std::option::Option<std::string::String>,
+    /// <p>The version of the model card that the model export job exports.</p>
+    #[doc(hidden)]
+    pub model_card_version: i32,
+    /// <p>The export output details for the model card.</p>
+    #[doc(hidden)]
+    pub output_config: std::option::Option<crate::model::ModelCardExportOutputConfig>,
+    /// <p>The date and time that the model export job was created.</p>
+    #[doc(hidden)]
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time that the model export job was last modified.</p>
+    #[doc(hidden)]
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The failure reason if the model export job fails.</p>
+    #[doc(hidden)]
+    pub failure_reason: std::option::Option<std::string::String>,
+    /// <p>The exported model card artifacts.</p>
+    #[doc(hidden)]
+    pub export_artifacts: std::option::Option<crate::model::ModelCardExportArtifacts>,
+}
+impl DescribeModelCardExportJobOutput {
+    /// <p>The name of the model card export job to describe.</p>
+    pub fn model_card_export_job_name(&self) -> std::option::Option<&str> {
+        self.model_card_export_job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model card export job.</p>
+    pub fn model_card_export_job_arn(&self) -> std::option::Option<&str> {
+        self.model_card_export_job_arn.as_deref()
+    }
+    /// <p>The completion status of the model card export job.</p>
+    /// <ul>
+    /// <li> <p> <code>InProgress</code>: The model card export job is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code>: The model card export job is complete.</p> </li>
+    /// <li> <p> <code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelCardExportJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The name of the model card that the model export job exports.</p>
+    pub fn model_card_name(&self) -> std::option::Option<&str> {
+        self.model_card_name.as_deref()
+    }
+    /// <p>The version of the model card that the model export job exports.</p>
+    pub fn model_card_version(&self) -> i32 {
+        self.model_card_version
+    }
+    /// <p>The export output details for the model card.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::ModelCardExportOutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>The date and time that the model export job was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date and time that the model export job was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_at.as_ref()
+    }
+    /// <p>The failure reason if the model export job fails.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The exported model card artifacts.</p>
+    pub fn export_artifacts(&self) -> std::option::Option<&crate::model::ModelCardExportArtifacts> {
+        self.export_artifacts.as_ref()
+    }
+}
+/// See [`DescribeModelCardExportJobOutput`](crate::output::DescribeModelCardExportJobOutput).
+pub mod describe_model_card_export_job_output {
+
+    /// A builder for [`DescribeModelCardExportJobOutput`](crate::output::DescribeModelCardExportJobOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_card_export_job_name: std::option::Option<std::string::String>,
+        pub(crate) model_card_export_job_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::ModelCardExportJobStatus>,
+        pub(crate) model_card_name: std::option::Option<std::string::String>,
+        pub(crate) model_card_version: std::option::Option<i32>,
+        pub(crate) output_config: std::option::Option<crate::model::ModelCardExportOutputConfig>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+        pub(crate) export_artifacts: std::option::Option<crate::model::ModelCardExportArtifacts>,
+    }
+    impl Builder {
+        /// <p>The name of the model card export job to describe.</p>
+        pub fn model_card_export_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_export_job_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the model card export job to describe.</p>
+        pub fn set_model_card_export_job_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_export_job_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the model card export job.</p>
+        pub fn model_card_export_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_export_job_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the model card export job.</p>
+        pub fn set_model_card_export_job_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_export_job_arn = input;
+            self
+        }
+        /// <p>The completion status of the model card export job.</p>
+        /// <ul>
+        /// <li> <p> <code>InProgress</code>: The model card export job is in progress.</p> </li>
+        /// <li> <p> <code>Completed</code>: The model card export job is complete.</p> </li>
+        /// <li> <p> <code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p> </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::ModelCardExportJobStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The completion status of the model card export job.</p>
+        /// <ul>
+        /// <li> <p> <code>InProgress</code>: The model card export job is in progress.</p> </li>
+        /// <li> <p> <code>Completed</code>: The model card export job is complete.</p> </li>
+        /// <li> <p> <code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p> </li>
+        /// </ul>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardExportJobStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The name of the model card that the model export job exports.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the model card that the model export job exports.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_name = input;
+            self
+        }
+        /// <p>The version of the model card that the model export job exports.</p>
+        pub fn model_card_version(mut self, input: i32) -> Self {
+            self.model_card_version = Some(input);
+            self
+        }
+        /// <p>The version of the model card that the model export job exports.</p>
+        pub fn set_model_card_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.model_card_version = input;
+            self
+        }
+        /// <p>The export output details for the model card.</p>
+        pub fn output_config(mut self, input: crate::model::ModelCardExportOutputConfig) -> Self {
+            self.output_config = Some(input);
+            self
+        }
+        /// <p>The export output details for the model card.</p>
+        pub fn set_output_config(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardExportOutputConfig>,
+        ) -> Self {
+            self.output_config = input;
+            self
+        }
+        /// <p>The date and time that the model export job was created.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The date and time that the model export job was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The date and time that the model export job was last modified.</p>
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_at = Some(input);
+            self
+        }
+        /// <p>The date and time that the model export job was last modified.</p>
+        pub fn set_last_modified_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_at = input;
+            self
+        }
+        /// <p>The failure reason if the model export job fails.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>The failure reason if the model export job fails.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// <p>The exported model card artifacts.</p>
+        pub fn export_artifacts(mut self, input: crate::model::ModelCardExportArtifacts) -> Self {
+            self.export_artifacts = Some(input);
+            self
+        }
+        /// <p>The exported model card artifacts.</p>
+        pub fn set_export_artifacts(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardExportArtifacts>,
+        ) -> Self {
+            self.export_artifacts = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeModelCardExportJobOutput`](crate::output::DescribeModelCardExportJobOutput).
+        pub fn build(self) -> crate::output::DescribeModelCardExportJobOutput {
+            crate::output::DescribeModelCardExportJobOutput {
+                model_card_export_job_name: self.model_card_export_job_name,
+                model_card_export_job_arn: self.model_card_export_job_arn,
+                status: self.status,
+                model_card_name: self.model_card_name,
+                model_card_version: self.model_card_version.unwrap_or_default(),
+                output_config: self.output_config,
+                created_at: self.created_at,
+                last_modified_at: self.last_modified_at,
+                failure_reason: self.failure_reason,
+                export_artifacts: self.export_artifacts,
+            }
+        }
+    }
+}
+impl DescribeModelCardExportJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeModelCardExportJobOutput`](crate::output::DescribeModelCardExportJobOutput).
+    pub fn builder() -> crate::output::describe_model_card_export_job_output::Builder {
+        crate::output::describe_model_card_export_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeModelCardOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model card.</p>
+    #[doc(hidden)]
+    pub model_card_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the model card.</p>
+    #[doc(hidden)]
+    pub model_card_name: std::option::Option<std::string::String>,
+    /// <p>The version of the model card.</p>
+    #[doc(hidden)]
+    pub model_card_version: i32,
+    /// <p>The content of the model card.</p>
+    #[doc(hidden)]
+    pub content: std::option::Option<std::string::String>,
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+    /// <ul>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub model_card_status: std::option::Option<crate::model::ModelCardStatus>,
+    /// <p>The security configuration used to protect model card content.</p>
+    #[doc(hidden)]
+    pub security_config: std::option::Option<crate::model::ModelCardSecurityConfig>,
+    /// <p>The date and time the model card was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    #[doc(hidden)]
+    pub created_by: std::option::Option<crate::model::UserContext>,
+    /// <p>The date and time the model card was last modified.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    #[doc(hidden)]
+    pub last_modified_by: std::option::Option<crate::model::UserContext>,
+    /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
+    /// <ul>
+    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>
+    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>
+    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>
+    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>
+    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
+    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub model_card_processing_status: std::option::Option<crate::model::ModelCardProcessingStatus>,
+}
+impl DescribeModelCardOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model card.</p>
+    pub fn model_card_arn(&self) -> std::option::Option<&str> {
+        self.model_card_arn.as_deref()
+    }
+    /// <p>The name of the model card.</p>
+    pub fn model_card_name(&self) -> std::option::Option<&str> {
+        self.model_card_name.as_deref()
+    }
+    /// <p>The version of the model card.</p>
+    pub fn model_card_version(&self) -> i32 {
+        self.model_card_version
+    }
+    /// <p>The content of the model card.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+    /// <ul>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// </ul>
+    pub fn model_card_status(&self) -> std::option::Option<&crate::model::ModelCardStatus> {
+        self.model_card_status.as_ref()
+    }
+    /// <p>The security configuration used to protect model card content.</p>
+    pub fn security_config(&self) -> std::option::Option<&crate::model::ModelCardSecurityConfig> {
+        self.security_config.as_ref()
+    }
+    /// <p>The date and time the model card was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>The date and time the model card was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.last_modified_by.as_ref()
+    }
+    /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
+    /// <ul>
+    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>
+    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>
+    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>
+    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>
+    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
+    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
+    /// </ul>
+    pub fn model_card_processing_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelCardProcessingStatus> {
+        self.model_card_processing_status.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeModelCardOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeModelCardOutput");
+        formatter.field("model_card_arn", &self.model_card_arn);
+        formatter.field("model_card_name", &self.model_card_name);
+        formatter.field("model_card_version", &self.model_card_version);
+        formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("model_card_status", &self.model_card_status);
+        formatter.field("security_config", &self.security_config);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("created_by", &self.created_by);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_by", &self.last_modified_by);
+        formatter.field(
+            "model_card_processing_status",
+            &self.model_card_processing_status,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DescribeModelCardOutput`](crate::output::DescribeModelCardOutput).
+pub mod describe_model_card_output {
+
+    /// A builder for [`DescribeModelCardOutput`](crate::output::DescribeModelCardOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    pub struct Builder {
+        pub(crate) model_card_arn: std::option::Option<std::string::String>,
+        pub(crate) model_card_name: std::option::Option<std::string::String>,
+        pub(crate) model_card_version: std::option::Option<i32>,
+        pub(crate) content: std::option::Option<std::string::String>,
+        pub(crate) model_card_status: std::option::Option<crate::model::ModelCardStatus>,
+        pub(crate) security_config: std::option::Option<crate::model::ModelCardSecurityConfig>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_by: std::option::Option<crate::model::UserContext>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_by: std::option::Option<crate::model::UserContext>,
+        pub(crate) model_card_processing_status:
+            std::option::Option<crate::model::ModelCardProcessingStatus>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the model card.</p>
+        pub fn model_card_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the model card.</p>
+        pub fn set_model_card_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_arn = input;
+            self
+        }
+        /// <p>The name of the model card.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the model card.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_name = input;
+            self
+        }
+        /// <p>The version of the model card.</p>
+        pub fn model_card_version(mut self, input: i32) -> Self {
+            self.model_card_version = Some(input);
+            self
+        }
+        /// <p>The version of the model card.</p>
+        pub fn set_model_card_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.model_card_version = input;
+            self
+        }
+        /// <p>The content of the model card.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content = Some(input.into());
+            self
+        }
+        /// <p>The content of the model card.</p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content = input;
+            self
+        }
+        /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+        /// <ul>
+        /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+        /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+        /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+        /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+        /// </ul>
+        pub fn model_card_status(mut self, input: crate::model::ModelCardStatus) -> Self {
+            self.model_card_status = Some(input);
+            self
+        }
+        /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+        /// <ul>
+        /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+        /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+        /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+        /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+        /// </ul>
+        pub fn set_model_card_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardStatus>,
+        ) -> Self {
+            self.model_card_status = input;
+            self
+        }
+        /// <p>The security configuration used to protect model card content.</p>
+        pub fn security_config(mut self, input: crate::model::ModelCardSecurityConfig) -> Self {
+            self.security_config = Some(input);
+            self
+        }
+        /// <p>The security configuration used to protect model card content.</p>
+        pub fn set_security_config(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardSecurityConfig>,
+        ) -> Self {
+            self.security_config = input;
+            self
+        }
+        /// <p>The date and time the model card was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The date and time the model card was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+        pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
+            self.created_by = Some(input);
+            self
+        }
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+        pub fn set_created_by(
+            mut self,
+            input: std::option::Option<crate::model::UserContext>,
+        ) -> Self {
+            self.created_by = input;
+            self
+        }
+        /// <p>The date and time the model card was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The date and time the model card was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+        pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
+            self.last_modified_by = Some(input);
+            self
+        }
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+        pub fn set_last_modified_by(
+            mut self,
+            input: std::option::Option<crate::model::UserContext>,
+        ) -> Self {
+            self.last_modified_by = input;
+            self
+        }
+        /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
+        /// <ul>
+        /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>
+        /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>
+        /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>
+        /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>
+        /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
+        /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
+        /// </ul>
+        pub fn model_card_processing_status(
+            mut self,
+            input: crate::model::ModelCardProcessingStatus,
+        ) -> Self {
+            self.model_card_processing_status = Some(input);
+            self
+        }
+        /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
+        /// <ul>
+        /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>
+        /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>
+        /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>
+        /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>
+        /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
+        /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
+        /// </ul>
+        pub fn set_model_card_processing_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardProcessingStatus>,
+        ) -> Self {
+            self.model_card_processing_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeModelCardOutput`](crate::output::DescribeModelCardOutput).
+        pub fn build(self) -> crate::output::DescribeModelCardOutput {
+            crate::output::DescribeModelCardOutput {
+                model_card_arn: self.model_card_arn,
+                model_card_name: self.model_card_name,
+                model_card_version: self.model_card_version.unwrap_or_default(),
+                content: self.content,
+                model_card_status: self.model_card_status,
+                security_config: self.security_config,
+                creation_time: self.creation_time,
+                created_by: self.created_by,
+                last_modified_time: self.last_modified_time,
+                last_modified_by: self.last_modified_by,
+                model_card_processing_status: self.model_card_processing_status,
+            }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("model_card_arn", &self.model_card_arn);
+            formatter.field("model_card_name", &self.model_card_name);
+            formatter.field("model_card_version", &self.model_card_version);
+            formatter.field("content", &"*** Sensitive Data Redacted ***");
+            formatter.field("model_card_status", &self.model_card_status);
+            formatter.field("security_config", &self.security_config);
+            formatter.field("creation_time", &self.creation_time);
+            formatter.field("created_by", &self.created_by);
+            formatter.field("last_modified_time", &self.last_modified_time);
+            formatter.field("last_modified_by", &self.last_modified_by);
+            formatter.field(
+                "model_card_processing_status",
+                &self.model_card_processing_status,
+            );
+            formatter.finish()
+        }
+    }
+}
+impl DescribeModelCardOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeModelCardOutput`](crate::output::DescribeModelCardOutput).
+    pub fn builder() -> crate::output::describe_model_card_output::Builder {
+        crate::output::describe_model_card_output::Builder::default()
     }
 }
 
@@ -15132,13 +17483,13 @@ pub struct DescribeLineageGroupOutput {
     /// <p>The creation time of lineage group.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>The last modified time of the lineage group.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
 }
@@ -15163,7 +17514,7 @@ impl DescribeLineageGroupOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -15171,7 +17522,7 @@ impl DescribeLineageGroupOutput {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -15251,12 +17602,12 @@ pub mod describe_lineage_group_output {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -15277,12 +17628,12 @@ pub mod describe_lineage_group_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -15880,6 +18231,10 @@ pub struct DescribeInferenceRecommendationsJobOutput {
     #[doc(hidden)]
     pub inference_recommendations:
         std::option::Option<std::vec::Vec<crate::model::InferenceRecommendation>>,
+    /// <p>The performance results from running an Inference Recommender job on an existing endpoint.</p>
+    #[doc(hidden)]
+    pub endpoint_performances:
+        std::option::Option<std::vec::Vec<crate::model::EndpointPerformance>>,
 }
 impl DescribeInferenceRecommendationsJobOutput {
     /// <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
@@ -15938,6 +18293,12 @@ impl DescribeInferenceRecommendationsJobOutput {
     ) -> std::option::Option<&[crate::model::InferenceRecommendation]> {
         self.inference_recommendations.as_deref()
     }
+    /// <p>The performance results from running an Inference Recommender job on an existing endpoint.</p>
+    pub fn endpoint_performances(
+        &self,
+    ) -> std::option::Option<&[crate::model::EndpointPerformance]> {
+        self.endpoint_performances.as_deref()
+    }
 }
 /// See [`DescribeInferenceRecommendationsJobOutput`](crate::output::DescribeInferenceRecommendationsJobOutput).
 pub mod describe_inference_recommendations_job_output {
@@ -15960,6 +18321,8 @@ pub mod describe_inference_recommendations_job_output {
             std::option::Option<crate::model::RecommendationJobStoppingConditions>,
         pub(crate) inference_recommendations:
             std::option::Option<std::vec::Vec<crate::model::InferenceRecommendation>>,
+        pub(crate) endpoint_performances:
+            std::option::Option<std::vec::Vec<crate::model::EndpointPerformance>>,
     }
     impl Builder {
         /// <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
@@ -16134,6 +18497,25 @@ pub mod describe_inference_recommendations_job_output {
             self.inference_recommendations = input;
             self
         }
+        /// Appends an item to `endpoint_performances`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_performances`](Self::set_endpoint_performances).
+        ///
+        /// <p>The performance results from running an Inference Recommender job on an existing endpoint.</p>
+        pub fn endpoint_performances(mut self, input: crate::model::EndpointPerformance) -> Self {
+            let mut v = self.endpoint_performances.unwrap_or_default();
+            v.push(input);
+            self.endpoint_performances = Some(v);
+            self
+        }
+        /// <p>The performance results from running an Inference Recommender job on an existing endpoint.</p>
+        pub fn set_endpoint_performances(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointPerformance>>,
+        ) -> Self {
+            self.endpoint_performances = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeInferenceRecommendationsJobOutput`](crate::output::DescribeInferenceRecommendationsJobOutput).
         pub fn build(self) -> crate::output::DescribeInferenceRecommendationsJobOutput {
             crate::output::DescribeInferenceRecommendationsJobOutput {
@@ -16150,6 +18532,7 @@ pub mod describe_inference_recommendations_job_output {
                 input_config: self.input_config,
                 stopping_conditions: self.stopping_conditions,
                 inference_recommendations: self.inference_recommendations,
+                endpoint_performances: self.endpoint_performances,
             }
         }
     }
@@ -16158,6 +18541,428 @@ impl DescribeInferenceRecommendationsJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInferenceRecommendationsJobOutput`](crate::output::DescribeInferenceRecommendationsJobOutput).
     pub fn builder() -> crate::output::describe_inference_recommendations_job_output::Builder {
         crate::output::describe_inference_recommendations_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeInferenceExperimentOutput {
+    /// <p>The ARN of the inference experiment being described.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the inference experiment.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The type of the inference experiment.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::InferenceExperimentType>,
+    /// <p>The duration for which the inference experiment ran or will run.</p>
+    #[doc(hidden)]
+    pub schedule: std::option::Option<crate::model::InferenceExperimentSchedule>,
+    /// <p> The status of the inference experiment. The following are the possible statuses for an inference experiment: </p>
+    /// <ul>
+    /// <li> <p> <code>Creating</code> - Amazon SageMaker is creating your experiment. </p> </li>
+    /// <li> <p> <code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time. </p> </li>
+    /// <li> <p> <code>Updating</code> - When you make changes to your experiment, your experiment shows as updating. </p> </li>
+    /// <li> <p> <code>Starting</code> - Amazon SageMaker is beginning your experiment. </p> </li>
+    /// <li> <p> <code>Running</code> - Your experiment is in progress. </p> </li>
+    /// <li> <p> <code>Stopping</code> - Amazon SageMaker is stopping your experiment. </p> </li>
+    /// <li> <p> <code>Completed</code> - Your experiment has completed. </p> </li>
+    /// <li> <p> <code>Cancelled</code> - When you conclude your experiment early using the <code>StopInferenceExperiment</code> API, or if any operation fails with an unexpected error, it shows as cancelled. </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::InferenceExperimentStatus>,
+    /// <p> The error message or client-specified <code>Reason</code> from the <code>StopInferenceExperiment</code> API, that explains the status of the inference experiment. </p>
+    #[doc(hidden)]
+    pub status_reason: std::option::Option<std::string::String>,
+    /// <p>The description of the inference experiment.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The timestamp at which you created the inference experiment.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The timestamp at which the inference experiment was completed. </p>
+    #[doc(hidden)]
+    pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp at which you last modified the inference experiment.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The metadata of the endpoint on which the inference experiment ran.</p>
+    #[doc(hidden)]
+    pub endpoint_metadata: std::option::Option<crate::model::EndpointMetadata>,
+    /// <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant. </p>
+    #[doc(hidden)]
+    pub model_variants: std::option::Option<std::vec::Vec<crate::model::ModelVariantConfigSummary>>,
+    /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
+    #[doc(hidden)]
+    pub data_storage_config:
+        std::option::Option<crate::model::InferenceExperimentDataStorageConfig>,
+    /// <p> The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates. </p>
+    #[doc(hidden)]
+    pub shadow_mode_config: std::option::Option<crate::model::ShadowModeConfig>,
+    /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <code>CreateInferenceExperimentRequest$KmsKey</code>. </p>
+    #[doc(hidden)]
+    pub kms_key: std::option::Option<std::string::String>,
+}
+impl DescribeInferenceExperimentOutput {
+    /// <p>The ARN of the inference experiment being described.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the inference experiment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the inference experiment.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::InferenceExperimentType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The duration for which the inference experiment ran or will run.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::InferenceExperimentSchedule> {
+        self.schedule.as_ref()
+    }
+    /// <p> The status of the inference experiment. The following are the possible statuses for an inference experiment: </p>
+    /// <ul>
+    /// <li> <p> <code>Creating</code> - Amazon SageMaker is creating your experiment. </p> </li>
+    /// <li> <p> <code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time. </p> </li>
+    /// <li> <p> <code>Updating</code> - When you make changes to your experiment, your experiment shows as updating. </p> </li>
+    /// <li> <p> <code>Starting</code> - Amazon SageMaker is beginning your experiment. </p> </li>
+    /// <li> <p> <code>Running</code> - Your experiment is in progress. </p> </li>
+    /// <li> <p> <code>Stopping</code> - Amazon SageMaker is stopping your experiment. </p> </li>
+    /// <li> <p> <code>Completed</code> - Your experiment has completed. </p> </li>
+    /// <li> <p> <code>Cancelled</code> - When you conclude your experiment early using the <code>StopInferenceExperiment</code> API, or if any operation fails with an unexpected error, it shows as cancelled. </p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::InferenceExperimentStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The error message or client-specified <code>Reason</code> from the <code>StopInferenceExperiment</code> API, that explains the status of the inference experiment. </p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>The description of the inference experiment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The timestamp at which you created the inference experiment.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p> The timestamp at which the inference experiment was completed. </p>
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.completion_time.as_ref()
+    }
+    /// <p>The timestamp at which you last modified the inference experiment.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The metadata of the endpoint on which the inference experiment ran.</p>
+    pub fn endpoint_metadata(&self) -> std::option::Option<&crate::model::EndpointMetadata> {
+        self.endpoint_metadata.as_ref()
+    }
+    /// <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant. </p>
+    pub fn model_variants(
+        &self,
+    ) -> std::option::Option<&[crate::model::ModelVariantConfigSummary]> {
+        self.model_variants.as_deref()
+    }
+    /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
+    pub fn data_storage_config(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceExperimentDataStorageConfig> {
+        self.data_storage_config.as_ref()
+    }
+    /// <p> The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates. </p>
+    pub fn shadow_mode_config(&self) -> std::option::Option<&crate::model::ShadowModeConfig> {
+        self.shadow_mode_config.as_ref()
+    }
+    /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <code>CreateInferenceExperimentRequest$KmsKey</code>. </p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+}
+/// See [`DescribeInferenceExperimentOutput`](crate::output::DescribeInferenceExperimentOutput).
+pub mod describe_inference_experiment_output {
+
+    /// A builder for [`DescribeInferenceExperimentOutput`](crate::output::DescribeInferenceExperimentOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::InferenceExperimentType>,
+        pub(crate) schedule: std::option::Option<crate::model::InferenceExperimentSchedule>,
+        pub(crate) status: std::option::Option<crate::model::InferenceExperimentStatus>,
+        pub(crate) status_reason: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) endpoint_metadata: std::option::Option<crate::model::EndpointMetadata>,
+        pub(crate) model_variants:
+            std::option::Option<std::vec::Vec<crate::model::ModelVariantConfigSummary>>,
+        pub(crate) data_storage_config:
+            std::option::Option<crate::model::InferenceExperimentDataStorageConfig>,
+        pub(crate) shadow_mode_config: std::option::Option<crate::model::ShadowModeConfig>,
+        pub(crate) kms_key: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the inference experiment being described.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the inference experiment being described.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the inference experiment.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the inference experiment.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The type of the inference experiment.</p>
+        pub fn r#type(mut self, input: crate::model::InferenceExperimentType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of the inference experiment.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The duration for which the inference experiment ran or will run.</p>
+        pub fn schedule(mut self, input: crate::model::InferenceExperimentSchedule) -> Self {
+            self.schedule = Some(input);
+            self
+        }
+        /// <p>The duration for which the inference experiment ran or will run.</p>
+        pub fn set_schedule(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentSchedule>,
+        ) -> Self {
+            self.schedule = input;
+            self
+        }
+        /// <p> The status of the inference experiment. The following are the possible statuses for an inference experiment: </p>
+        /// <ul>
+        /// <li> <p> <code>Creating</code> - Amazon SageMaker is creating your experiment. </p> </li>
+        /// <li> <p> <code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time. </p> </li>
+        /// <li> <p> <code>Updating</code> - When you make changes to your experiment, your experiment shows as updating. </p> </li>
+        /// <li> <p> <code>Starting</code> - Amazon SageMaker is beginning your experiment. </p> </li>
+        /// <li> <p> <code>Running</code> - Your experiment is in progress. </p> </li>
+        /// <li> <p> <code>Stopping</code> - Amazon SageMaker is stopping your experiment. </p> </li>
+        /// <li> <p> <code>Completed</code> - Your experiment has completed. </p> </li>
+        /// <li> <p> <code>Cancelled</code> - When you conclude your experiment early using the <code>StopInferenceExperiment</code> API, or if any operation fails with an unexpected error, it shows as cancelled. </p> </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::InferenceExperimentStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p> The status of the inference experiment. The following are the possible statuses for an inference experiment: </p>
+        /// <ul>
+        /// <li> <p> <code>Creating</code> - Amazon SageMaker is creating your experiment. </p> </li>
+        /// <li> <p> <code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time. </p> </li>
+        /// <li> <p> <code>Updating</code> - When you make changes to your experiment, your experiment shows as updating. </p> </li>
+        /// <li> <p> <code>Starting</code> - Amazon SageMaker is beginning your experiment. </p> </li>
+        /// <li> <p> <code>Running</code> - Your experiment is in progress. </p> </li>
+        /// <li> <p> <code>Stopping</code> - Amazon SageMaker is stopping your experiment. </p> </li>
+        /// <li> <p> <code>Completed</code> - Your experiment has completed. </p> </li>
+        /// <li> <p> <code>Cancelled</code> - When you conclude your experiment early using the <code>StopInferenceExperiment</code> API, or if any operation fails with an unexpected error, it shows as cancelled. </p> </li>
+        /// </ul>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p> The error message or client-specified <code>Reason</code> from the <code>StopInferenceExperiment</code> API, that explains the status of the inference experiment. </p>
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
+            self
+        }
+        /// <p> The error message or client-specified <code>Reason</code> from the <code>StopInferenceExperiment</code> API, that explains the status of the inference experiment. </p>
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
+            self
+        }
+        /// <p>The description of the inference experiment.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the inference experiment.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The timestamp at which you created the inference experiment.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp at which you created the inference experiment.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p> The timestamp at which the inference experiment was completed. </p>
+        pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.completion_time = Some(input);
+            self
+        }
+        /// <p> The timestamp at which the inference experiment was completed. </p>
+        pub fn set_completion_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.completion_time = input;
+            self
+        }
+        /// <p>The timestamp at which you last modified the inference experiment.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp at which you last modified the inference experiment.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The metadata of the endpoint on which the inference experiment ran.</p>
+        pub fn endpoint_metadata(mut self, input: crate::model::EndpointMetadata) -> Self {
+            self.endpoint_metadata = Some(input);
+            self
+        }
+        /// <p>The metadata of the endpoint on which the inference experiment ran.</p>
+        pub fn set_endpoint_metadata(
+            mut self,
+            input: std::option::Option<crate::model::EndpointMetadata>,
+        ) -> Self {
+            self.endpoint_metadata = input;
+            self
+        }
+        /// Appends an item to `model_variants`.
+        ///
+        /// To override the contents of this collection use [`set_model_variants`](Self::set_model_variants).
+        ///
+        /// <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant. </p>
+        pub fn model_variants(mut self, input: crate::model::ModelVariantConfigSummary) -> Self {
+            let mut v = self.model_variants.unwrap_or_default();
+            v.push(input);
+            self.model_variants = Some(v);
+            self
+        }
+        /// <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant. </p>
+        pub fn set_model_variants(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelVariantConfigSummary>>,
+        ) -> Self {
+            self.model_variants = input;
+            self
+        }
+        /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
+        pub fn data_storage_config(
+            mut self,
+            input: crate::model::InferenceExperimentDataStorageConfig,
+        ) -> Self {
+            self.data_storage_config = Some(input);
+            self
+        }
+        /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
+        pub fn set_data_storage_config(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentDataStorageConfig>,
+        ) -> Self {
+            self.data_storage_config = input;
+            self
+        }
+        /// <p> The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates. </p>
+        pub fn shadow_mode_config(mut self, input: crate::model::ShadowModeConfig) -> Self {
+            self.shadow_mode_config = Some(input);
+            self
+        }
+        /// <p> The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates. </p>
+        pub fn set_shadow_mode_config(
+            mut self,
+            input: std::option::Option<crate::model::ShadowModeConfig>,
+        ) -> Self {
+            self.shadow_mode_config = input;
+            self
+        }
+        /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <code>CreateInferenceExperimentRequest$KmsKey</code>. </p>
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <code>CreateInferenceExperimentRequest$KmsKey</code>. </p>
+        pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeInferenceExperimentOutput`](crate::output::DescribeInferenceExperimentOutput).
+        pub fn build(self) -> crate::output::DescribeInferenceExperimentOutput {
+            crate::output::DescribeInferenceExperimentOutput {
+                arn: self.arn,
+                name: self.name,
+                r#type: self.r#type,
+                schedule: self.schedule,
+                status: self.status,
+                status_reason: self.status_reason,
+                description: self.description,
+                creation_time: self.creation_time,
+                completion_time: self.completion_time,
+                last_modified_time: self.last_modified_time,
+                role_arn: self.role_arn,
+                endpoint_metadata: self.endpoint_metadata,
+                model_variants: self.model_variants,
+                data_storage_config: self.data_storage_config,
+                shadow_mode_config: self.shadow_mode_config,
+                kms_key: self.kms_key,
+            }
+        }
+    }
+}
+impl DescribeInferenceExperimentOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeInferenceExperimentOutput`](crate::output::DescribeInferenceExperimentOutput).
+    pub fn builder() -> crate::output::describe_inference_experiment_output::Builder {
+        crate::output::describe_inference_experiment_output::Builder::default()
     }
 }
 
@@ -16177,7 +18982,7 @@ pub struct DescribeImageVersionOutput {
     /// <p>When a create or delete operation fails, the reason for the failure.</p>
     #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the image the version is based on.</p>
+    /// <p>The ARN of the image the version is based on.</p>
     #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the version.</p>
@@ -16192,6 +18997,42 @@ pub struct DescribeImageVersionOutput {
     /// <p>The version number.</p>
     #[doc(hidden)]
     pub version: std::option::Option<i32>,
+    /// <p>The stability of the image version specified by the maintainer.</p>
+    /// <ul>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub vendor_guidance: std::option::Option<crate::model::VendorGuidance>,
+    /// <p>Indicates SageMaker job type compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub job_type: std::option::Option<crate::model::JobType>,
+    /// <p>The machine learning framework vended in the image version.</p>
+    #[doc(hidden)]
+    pub ml_framework: std::option::Option<std::string::String>,
+    /// <p>The supported programming language and its version.</p>
+    #[doc(hidden)]
+    pub programming_lang: std::option::Option<std::string::String>,
+    /// <p>Indicates CPU or GPU compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub processor: std::option::Option<crate::model::Processor>,
+    /// <p>Indicates Horovod compatibility.</p>
+    #[doc(hidden)]
+    pub horovod: bool,
+    /// <p>The maintainer description of the image version.</p>
+    #[doc(hidden)]
+    pub release_notes: std::option::Option<std::string::String>,
 }
 impl DescribeImageVersionOutput {
     /// <p>The registry path of the container image on which this image version is based.</p>
@@ -16210,7 +19051,7 @@ impl DescribeImageVersionOutput {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the image the version is based on.</p>
+    /// <p>The ARN of the image the version is based on.</p>
     pub fn image_arn(&self) -> std::option::Option<&str> {
         self.image_arn.as_deref()
     }
@@ -16230,6 +19071,49 @@ impl DescribeImageVersionOutput {
     pub fn version(&self) -> std::option::Option<i32> {
         self.version
     }
+    /// <p>The stability of the image version specified by the maintainer.</p>
+    /// <ul>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+    /// </ul>
+    pub fn vendor_guidance(&self) -> std::option::Option<&crate::model::VendorGuidance> {
+        self.vendor_guidance.as_ref()
+    }
+    /// <p>Indicates SageMaker job type compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+    /// </ul>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>The machine learning framework vended in the image version.</p>
+    pub fn ml_framework(&self) -> std::option::Option<&str> {
+        self.ml_framework.as_deref()
+    }
+    /// <p>The supported programming language and its version.</p>
+    pub fn programming_lang(&self) -> std::option::Option<&str> {
+        self.programming_lang.as_deref()
+    }
+    /// <p>Indicates CPU or GPU compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+    /// </ul>
+    pub fn processor(&self) -> std::option::Option<&crate::model::Processor> {
+        self.processor.as_ref()
+    }
+    /// <p>Indicates Horovod compatibility.</p>
+    pub fn horovod(&self) -> bool {
+        self.horovod
+    }
+    /// <p>The maintainer description of the image version.</p>
+    pub fn release_notes(&self) -> std::option::Option<&str> {
+        self.release_notes.as_deref()
+    }
 }
 /// See [`DescribeImageVersionOutput`](crate::output::DescribeImageVersionOutput).
 pub mod describe_image_version_output {
@@ -16246,6 +19130,13 @@ pub mod describe_image_version_output {
         pub(crate) image_version_status: std::option::Option<crate::model::ImageVersionStatus>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) version: std::option::Option<i32>,
+        pub(crate) vendor_guidance: std::option::Option<crate::model::VendorGuidance>,
+        pub(crate) job_type: std::option::Option<crate::model::JobType>,
+        pub(crate) ml_framework: std::option::Option<std::string::String>,
+        pub(crate) programming_lang: std::option::Option<std::string::String>,
+        pub(crate) processor: std::option::Option<crate::model::Processor>,
+        pub(crate) horovod: std::option::Option<bool>,
+        pub(crate) release_notes: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The registry path of the container image on which this image version is based.</p>
@@ -16297,12 +19188,12 @@ pub mod describe_image_version_output {
             self.failure_reason = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image the version is based on.</p>
+        /// <p>The ARN of the image the version is based on.</p>
         pub fn image_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image the version is based on.</p>
+        /// <p>The ARN of the image the version is based on.</p>
         pub fn set_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_arn = input;
             self
@@ -16356,6 +19247,118 @@ pub mod describe_image_version_output {
             self.version = input;
             self
         }
+        /// <p>The stability of the image version specified by the maintainer.</p>
+        /// <ul>
+        /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+        /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+        /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+        /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+        /// </ul>
+        pub fn vendor_guidance(mut self, input: crate::model::VendorGuidance) -> Self {
+            self.vendor_guidance = Some(input);
+            self
+        }
+        /// <p>The stability of the image version specified by the maintainer.</p>
+        /// <ul>
+        /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+        /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+        /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+        /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+        /// </ul>
+        pub fn set_vendor_guidance(
+            mut self,
+            input: std::option::Option<crate::model::VendorGuidance>,
+        ) -> Self {
+            self.vendor_guidance = input;
+            self
+        }
+        /// <p>Indicates SageMaker job type compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+        /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+        /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+        /// </ul>
+        pub fn job_type(mut self, input: crate::model::JobType) -> Self {
+            self.job_type = Some(input);
+            self
+        }
+        /// <p>Indicates SageMaker job type compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+        /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+        /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+        /// </ul>
+        pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
+            self.job_type = input;
+            self
+        }
+        /// <p>The machine learning framework vended in the image version.</p>
+        pub fn ml_framework(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ml_framework = Some(input.into());
+            self
+        }
+        /// <p>The machine learning framework vended in the image version.</p>
+        pub fn set_ml_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ml_framework = input;
+            self
+        }
+        /// <p>The supported programming language and its version.</p>
+        pub fn programming_lang(mut self, input: impl Into<std::string::String>) -> Self {
+            self.programming_lang = Some(input.into());
+            self
+        }
+        /// <p>The supported programming language and its version.</p>
+        pub fn set_programming_lang(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.programming_lang = input;
+            self
+        }
+        /// <p>Indicates CPU or GPU compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+        /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+        /// </ul>
+        pub fn processor(mut self, input: crate::model::Processor) -> Self {
+            self.processor = Some(input);
+            self
+        }
+        /// <p>Indicates CPU or GPU compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+        /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+        /// </ul>
+        pub fn set_processor(
+            mut self,
+            input: std::option::Option<crate::model::Processor>,
+        ) -> Self {
+            self.processor = input;
+            self
+        }
+        /// <p>Indicates Horovod compatibility.</p>
+        pub fn horovod(mut self, input: bool) -> Self {
+            self.horovod = Some(input);
+            self
+        }
+        /// <p>Indicates Horovod compatibility.</p>
+        pub fn set_horovod(mut self, input: std::option::Option<bool>) -> Self {
+            self.horovod = input;
+            self
+        }
+        /// <p>The maintainer description of the image version.</p>
+        pub fn release_notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.release_notes = Some(input.into());
+            self
+        }
+        /// <p>The maintainer description of the image version.</p>
+        pub fn set_release_notes(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.release_notes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeImageVersionOutput`](crate::output::DescribeImageVersionOutput).
         pub fn build(self) -> crate::output::DescribeImageVersionOutput {
             crate::output::DescribeImageVersionOutput {
@@ -16368,6 +19371,13 @@ pub mod describe_image_version_output {
                 image_version_status: self.image_version_status,
                 last_modified_time: self.last_modified_time,
                 version: self.version,
+                vendor_guidance: self.vendor_guidance,
+                job_type: self.job_type,
+                ml_framework: self.ml_framework,
+                programming_lang: self.programming_lang,
+                processor: self.processor,
+                horovod: self.horovod.unwrap_or_default(),
+                release_notes: self.release_notes,
             }
         }
     }
@@ -16395,7 +19405,7 @@ pub struct DescribeImageOutput {
     /// <p>When a create, update, or delete operation fails, the reason for the failure.</p>
     #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the image.</p>
+    /// <p>The ARN of the image.</p>
     #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
     /// <p>The name of the image.</p>
@@ -16407,7 +19417,7 @@ pub struct DescribeImageOutput {
     /// <p>When the image was last modified.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
@@ -16428,7 +19438,7 @@ impl DescribeImageOutput {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the image.</p>
+    /// <p>The ARN of the image.</p>
     pub fn image_arn(&self) -> std::option::Option<&str> {
         self.image_arn.as_deref()
     }
@@ -16444,7 +19454,7 @@ impl DescribeImageOutput {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -16512,12 +19522,12 @@ pub mod describe_image_output {
             self.failure_reason = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image.</p>
+        /// <p>The ARN of the image.</p>
         pub fn image_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image.</p>
+        /// <p>The ARN of the image.</p>
         pub fn set_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_arn = input;
             self
@@ -16558,12 +19568,12 @@ pub mod describe_image_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+        /// <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+        /// <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -17171,6 +20181,653 @@ impl DescribeHumanTaskUiOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeHubContentOutput {
+    /// <p>The name of the hub content.</p>
+    #[doc(hidden)]
+    pub hub_content_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
+    #[doc(hidden)]
+    pub hub_content_arn: std::option::Option<std::string::String>,
+    /// <p>The version of the hub content.</p>
+    #[doc(hidden)]
+    pub hub_content_version: std::option::Option<std::string::String>,
+    /// <p>The type of hub content.</p>
+    #[doc(hidden)]
+    pub hub_content_type: std::option::Option<crate::model::HubContentType>,
+    /// <p>The document schema version for the hub content.</p>
+    #[doc(hidden)]
+    pub document_schema_version: std::option::Option<std::string::String>,
+    /// <p>The name of the hub that contains the content.</p>
+    #[doc(hidden)]
+    pub hub_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>
+    #[doc(hidden)]
+    pub hub_arn: std::option::Option<std::string::String>,
+    /// <p>The display name of the hub content.</p>
+    #[doc(hidden)]
+    pub hub_content_display_name: std::option::Option<std::string::String>,
+    /// <p>A description of the hub content.</p>
+    #[doc(hidden)]
+    pub hub_content_description: std::option::Option<std::string::String>,
+    /// <p>Markdown files associated with the hub content to import.</p>
+    #[doc(hidden)]
+    pub hub_content_markdown: std::option::Option<std::string::String>,
+    /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
+    #[doc(hidden)]
+    pub hub_content_document: std::option::Option<std::string::String>,
+    /// <p>The searchable keywords for the hub content.</p>
+    #[doc(hidden)]
+    pub hub_content_search_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>
+    #[doc(hidden)]
+    pub hub_content_dependencies:
+        std::option::Option<std::vec::Vec<crate::model::HubContentDependency>>,
+    /// <p>The status of the hub content.</p>
+    #[doc(hidden)]
+    pub hub_content_status: std::option::Option<crate::model::HubContentStatus>,
+    /// <p>The failure reason if importing hub content failed.</p>
+    #[doc(hidden)]
+    pub failure_reason: std::option::Option<std::string::String>,
+    /// <p>The date and time that hub content was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DescribeHubContentOutput {
+    /// <p>The name of the hub content.</p>
+    pub fn hub_content_name(&self) -> std::option::Option<&str> {
+        self.hub_content_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
+    pub fn hub_content_arn(&self) -> std::option::Option<&str> {
+        self.hub_content_arn.as_deref()
+    }
+    /// <p>The version of the hub content.</p>
+    pub fn hub_content_version(&self) -> std::option::Option<&str> {
+        self.hub_content_version.as_deref()
+    }
+    /// <p>The type of hub content.</p>
+    pub fn hub_content_type(&self) -> std::option::Option<&crate::model::HubContentType> {
+        self.hub_content_type.as_ref()
+    }
+    /// <p>The document schema version for the hub content.</p>
+    pub fn document_schema_version(&self) -> std::option::Option<&str> {
+        self.document_schema_version.as_deref()
+    }
+    /// <p>The name of the hub that contains the content.</p>
+    pub fn hub_name(&self) -> std::option::Option<&str> {
+        self.hub_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>
+    pub fn hub_arn(&self) -> std::option::Option<&str> {
+        self.hub_arn.as_deref()
+    }
+    /// <p>The display name of the hub content.</p>
+    pub fn hub_content_display_name(&self) -> std::option::Option<&str> {
+        self.hub_content_display_name.as_deref()
+    }
+    /// <p>A description of the hub content.</p>
+    pub fn hub_content_description(&self) -> std::option::Option<&str> {
+        self.hub_content_description.as_deref()
+    }
+    /// <p>Markdown files associated with the hub content to import.</p>
+    pub fn hub_content_markdown(&self) -> std::option::Option<&str> {
+        self.hub_content_markdown.as_deref()
+    }
+    /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
+    pub fn hub_content_document(&self) -> std::option::Option<&str> {
+        self.hub_content_document.as_deref()
+    }
+    /// <p>The searchable keywords for the hub content.</p>
+    pub fn hub_content_search_keywords(&self) -> std::option::Option<&[std::string::String]> {
+        self.hub_content_search_keywords.as_deref()
+    }
+    /// <p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>
+    pub fn hub_content_dependencies(
+        &self,
+    ) -> std::option::Option<&[crate::model::HubContentDependency]> {
+        self.hub_content_dependencies.as_deref()
+    }
+    /// <p>The status of the hub content.</p>
+    pub fn hub_content_status(&self) -> std::option::Option<&crate::model::HubContentStatus> {
+        self.hub_content_status.as_ref()
+    }
+    /// <p>The failure reason if importing hub content failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The date and time that hub content was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+}
+/// See [`DescribeHubContentOutput`](crate::output::DescribeHubContentOutput).
+pub mod describe_hub_content_output {
+
+    /// A builder for [`DescribeHubContentOutput`](crate::output::DescribeHubContentOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_content_name: std::option::Option<std::string::String>,
+        pub(crate) hub_content_arn: std::option::Option<std::string::String>,
+        pub(crate) hub_content_version: std::option::Option<std::string::String>,
+        pub(crate) hub_content_type: std::option::Option<crate::model::HubContentType>,
+        pub(crate) document_schema_version: std::option::Option<std::string::String>,
+        pub(crate) hub_name: std::option::Option<std::string::String>,
+        pub(crate) hub_arn: std::option::Option<std::string::String>,
+        pub(crate) hub_content_display_name: std::option::Option<std::string::String>,
+        pub(crate) hub_content_description: std::option::Option<std::string::String>,
+        pub(crate) hub_content_markdown: std::option::Option<std::string::String>,
+        pub(crate) hub_content_document: std::option::Option<std::string::String>,
+        pub(crate) hub_content_search_keywords:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) hub_content_dependencies:
+            std::option::Option<std::vec::Vec<crate::model::HubContentDependency>>,
+        pub(crate) hub_content_status: std::option::Option<crate::model::HubContentStatus>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The name of the hub content.</p>
+        pub fn hub_content_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hub content.</p>
+        pub fn set_hub_content_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
+        pub fn hub_content_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
+        pub fn set_hub_content_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_arn = input;
+            self
+        }
+        /// <p>The version of the hub content.</p>
+        pub fn hub_content_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the hub content.</p>
+        pub fn set_hub_content_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_version = input;
+            self
+        }
+        /// <p>The type of hub content.</p>
+        pub fn hub_content_type(mut self, input: crate::model::HubContentType) -> Self {
+            self.hub_content_type = Some(input);
+            self
+        }
+        /// <p>The type of hub content.</p>
+        pub fn set_hub_content_type(
+            mut self,
+            input: std::option::Option<crate::model::HubContentType>,
+        ) -> Self {
+            self.hub_content_type = input;
+            self
+        }
+        /// <p>The document schema version for the hub content.</p>
+        pub fn document_schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_schema_version = Some(input.into());
+            self
+        }
+        /// <p>The document schema version for the hub content.</p>
+        pub fn set_document_schema_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.document_schema_version = input;
+            self
+        }
+        /// <p>The name of the hub that contains the content.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hub that contains the content.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>
+        pub fn hub_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>
+        pub fn set_hub_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_arn = input;
+            self
+        }
+        /// <p>The display name of the hub content.</p>
+        pub fn hub_content_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_display_name = Some(input.into());
+            self
+        }
+        /// <p>The display name of the hub content.</p>
+        pub fn set_hub_content_display_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_display_name = input;
+            self
+        }
+        /// <p>A description of the hub content.</p>
+        pub fn hub_content_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_description = Some(input.into());
+            self
+        }
+        /// <p>A description of the hub content.</p>
+        pub fn set_hub_content_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_description = input;
+            self
+        }
+        /// <p>Markdown files associated with the hub content to import.</p>
+        pub fn hub_content_markdown(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_markdown = Some(input.into());
+            self
+        }
+        /// <p>Markdown files associated with the hub content to import.</p>
+        pub fn set_hub_content_markdown(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_markdown = input;
+            self
+        }
+        /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
+        pub fn hub_content_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_document = Some(input.into());
+            self
+        }
+        /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
+        pub fn set_hub_content_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_document = input;
+            self
+        }
+        /// Appends an item to `hub_content_search_keywords`.
+        ///
+        /// To override the contents of this collection use [`set_hub_content_search_keywords`](Self::set_hub_content_search_keywords).
+        ///
+        /// <p>The searchable keywords for the hub content.</p>
+        pub fn hub_content_search_keywords(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.hub_content_search_keywords.unwrap_or_default();
+            v.push(input.into());
+            self.hub_content_search_keywords = Some(v);
+            self
+        }
+        /// <p>The searchable keywords for the hub content.</p>
+        pub fn set_hub_content_search_keywords(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.hub_content_search_keywords = input;
+            self
+        }
+        /// Appends an item to `hub_content_dependencies`.
+        ///
+        /// To override the contents of this collection use [`set_hub_content_dependencies`](Self::set_hub_content_dependencies).
+        ///
+        /// <p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>
+        pub fn hub_content_dependencies(
+            mut self,
+            input: crate::model::HubContentDependency,
+        ) -> Self {
+            let mut v = self.hub_content_dependencies.unwrap_or_default();
+            v.push(input);
+            self.hub_content_dependencies = Some(v);
+            self
+        }
+        /// <p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>
+        pub fn set_hub_content_dependencies(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HubContentDependency>>,
+        ) -> Self {
+            self.hub_content_dependencies = input;
+            self
+        }
+        /// <p>The status of the hub content.</p>
+        pub fn hub_content_status(mut self, input: crate::model::HubContentStatus) -> Self {
+            self.hub_content_status = Some(input);
+            self
+        }
+        /// <p>The status of the hub content.</p>
+        pub fn set_hub_content_status(
+            mut self,
+            input: std::option::Option<crate::model::HubContentStatus>,
+        ) -> Self {
+            self.hub_content_status = input;
+            self
+        }
+        /// <p>The failure reason if importing hub content failed.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>The failure reason if importing hub content failed.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// <p>The date and time that hub content was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The date and time that hub content was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeHubContentOutput`](crate::output::DescribeHubContentOutput).
+        pub fn build(self) -> crate::output::DescribeHubContentOutput {
+            crate::output::DescribeHubContentOutput {
+                hub_content_name: self.hub_content_name,
+                hub_content_arn: self.hub_content_arn,
+                hub_content_version: self.hub_content_version,
+                hub_content_type: self.hub_content_type,
+                document_schema_version: self.document_schema_version,
+                hub_name: self.hub_name,
+                hub_arn: self.hub_arn,
+                hub_content_display_name: self.hub_content_display_name,
+                hub_content_description: self.hub_content_description,
+                hub_content_markdown: self.hub_content_markdown,
+                hub_content_document: self.hub_content_document,
+                hub_content_search_keywords: self.hub_content_search_keywords,
+                hub_content_dependencies: self.hub_content_dependencies,
+                hub_content_status: self.hub_content_status,
+                failure_reason: self.failure_reason,
+                creation_time: self.creation_time,
+            }
+        }
+    }
+}
+impl DescribeHubContentOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeHubContentOutput`](crate::output::DescribeHubContentOutput).
+    pub fn builder() -> crate::output::describe_hub_content_output::Builder {
+        crate::output::describe_hub_content_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeHubOutput {
+    /// <p>The name of the hub.</p>
+    #[doc(hidden)]
+    pub hub_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the hub.</p>
+    #[doc(hidden)]
+    pub hub_arn: std::option::Option<std::string::String>,
+    /// <p>The display name of the hub.</p>
+    #[doc(hidden)]
+    pub hub_display_name: std::option::Option<std::string::String>,
+    /// <p>A description of the hub.</p>
+    #[doc(hidden)]
+    pub hub_description: std::option::Option<std::string::String>,
+    /// <p>The searchable keywords for the hub.</p>
+    #[doc(hidden)]
+    pub hub_search_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The Amazon S3 storage configuration for the hub.</p>
+    #[doc(hidden)]
+    pub s3_storage_config: std::option::Option<crate::model::HubS3StorageConfig>,
+    /// <p>The status of the hub.</p>
+    #[doc(hidden)]
+    pub hub_status: std::option::Option<crate::model::HubStatus>,
+    /// <p>The failure reason if importing hub content failed.</p>
+    #[doc(hidden)]
+    pub failure_reason: std::option::Option<std::string::String>,
+    /// <p>The date and time that the hub was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time that the hub was last modified.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DescribeHubOutput {
+    /// <p>The name of the hub.</p>
+    pub fn hub_name(&self) -> std::option::Option<&str> {
+        self.hub_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the hub.</p>
+    pub fn hub_arn(&self) -> std::option::Option<&str> {
+        self.hub_arn.as_deref()
+    }
+    /// <p>The display name of the hub.</p>
+    pub fn hub_display_name(&self) -> std::option::Option<&str> {
+        self.hub_display_name.as_deref()
+    }
+    /// <p>A description of the hub.</p>
+    pub fn hub_description(&self) -> std::option::Option<&str> {
+        self.hub_description.as_deref()
+    }
+    /// <p>The searchable keywords for the hub.</p>
+    pub fn hub_search_keywords(&self) -> std::option::Option<&[std::string::String]> {
+        self.hub_search_keywords.as_deref()
+    }
+    /// <p>The Amazon S3 storage configuration for the hub.</p>
+    pub fn s3_storage_config(&self) -> std::option::Option<&crate::model::HubS3StorageConfig> {
+        self.s3_storage_config.as_ref()
+    }
+    /// <p>The status of the hub.</p>
+    pub fn hub_status(&self) -> std::option::Option<&crate::model::HubStatus> {
+        self.hub_status.as_ref()
+    }
+    /// <p>The failure reason if importing hub content failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The date and time that the hub was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The date and time that the hub was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+}
+/// See [`DescribeHubOutput`](crate::output::DescribeHubOutput).
+pub mod describe_hub_output {
+
+    /// A builder for [`DescribeHubOutput`](crate::output::DescribeHubOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_name: std::option::Option<std::string::String>,
+        pub(crate) hub_arn: std::option::Option<std::string::String>,
+        pub(crate) hub_display_name: std::option::Option<std::string::String>,
+        pub(crate) hub_description: std::option::Option<std::string::String>,
+        pub(crate) hub_search_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) s3_storage_config: std::option::Option<crate::model::HubS3StorageConfig>,
+        pub(crate) hub_status: std::option::Option<crate::model::HubStatus>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The name of the hub.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hub.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hub.</p>
+        pub fn hub_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hub.</p>
+        pub fn set_hub_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_arn = input;
+            self
+        }
+        /// <p>The display name of the hub.</p>
+        pub fn hub_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_display_name = Some(input.into());
+            self
+        }
+        /// <p>The display name of the hub.</p>
+        pub fn set_hub_display_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_display_name = input;
+            self
+        }
+        /// <p>A description of the hub.</p>
+        pub fn hub_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_description = Some(input.into());
+            self
+        }
+        /// <p>A description of the hub.</p>
+        pub fn set_hub_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_description = input;
+            self
+        }
+        /// Appends an item to `hub_search_keywords`.
+        ///
+        /// To override the contents of this collection use [`set_hub_search_keywords`](Self::set_hub_search_keywords).
+        ///
+        /// <p>The searchable keywords for the hub.</p>
+        pub fn hub_search_keywords(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.hub_search_keywords.unwrap_or_default();
+            v.push(input.into());
+            self.hub_search_keywords = Some(v);
+            self
+        }
+        /// <p>The searchable keywords for the hub.</p>
+        pub fn set_hub_search_keywords(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.hub_search_keywords = input;
+            self
+        }
+        /// <p>The Amazon S3 storage configuration for the hub.</p>
+        pub fn s3_storage_config(mut self, input: crate::model::HubS3StorageConfig) -> Self {
+            self.s3_storage_config = Some(input);
+            self
+        }
+        /// <p>The Amazon S3 storage configuration for the hub.</p>
+        pub fn set_s3_storage_config(
+            mut self,
+            input: std::option::Option<crate::model::HubS3StorageConfig>,
+        ) -> Self {
+            self.s3_storage_config = input;
+            self
+        }
+        /// <p>The status of the hub.</p>
+        pub fn hub_status(mut self, input: crate::model::HubStatus) -> Self {
+            self.hub_status = Some(input);
+            self
+        }
+        /// <p>The status of the hub.</p>
+        pub fn set_hub_status(
+            mut self,
+            input: std::option::Option<crate::model::HubStatus>,
+        ) -> Self {
+            self.hub_status = input;
+            self
+        }
+        /// <p>The failure reason if importing hub content failed.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>The failure reason if importing hub content failed.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// <p>The date and time that the hub was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The date and time that the hub was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The date and time that the hub was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The date and time that the hub was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeHubOutput`](crate::output::DescribeHubOutput).
+        pub fn build(self) -> crate::output::DescribeHubOutput {
+            crate::output::DescribeHubOutput {
+                hub_name: self.hub_name,
+                hub_arn: self.hub_arn,
+                hub_display_name: self.hub_display_name,
+                hub_description: self.hub_description,
+                hub_search_keywords: self.hub_search_keywords,
+                s3_storage_config: self.s3_storage_config,
+                hub_status: self.hub_status,
+                failure_reason: self.failure_reason,
+                creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
+            }
+        }
+    }
+}
+impl DescribeHubOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeHubOutput`](crate::output::DescribeHubOutput).
+    pub fn builder() -> crate::output::describe_hub_output::Builder {
+        crate::output::describe_hub_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFlowDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the flow defintion.</p>
     #[doc(hidden)]
@@ -17662,10 +21319,17 @@ pub struct DescribeFeatureGroupOutput {
     /// <p>The configuration for the <code>OnlineStore</code>.</p>
     #[doc(hidden)]
     pub online_store_config: std::option::Option<crate::model::OnlineStoreConfig>,
-    /// <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the security configuration.</p>
+    /// <p>The configuration of the offline store. It includes the following configurations:</p>
+    /// <ul>
+    /// <li> <p>Amazon S3 location of the offline store.</p> </li>
+    /// <li> <p>Configuration of the Glue data catalog.</p> </li>
+    /// <li> <p>Table format of the offline store.</p> </li>
+    /// <li> <p>Option to disable the automatic creation of a Glue table for the offline store.</p> </li>
+    /// <li> <p>Encryption configuration.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub offline_store_config: std::option::Option<crate::model::OfflineStoreConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an OfflineStoreConfig is provided.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The status of the feature group.</p>
@@ -17728,11 +21392,18 @@ impl DescribeFeatureGroupOutput {
     pub fn online_store_config(&self) -> std::option::Option<&crate::model::OnlineStoreConfig> {
         self.online_store_config.as_ref()
     }
-    /// <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the security configuration.</p>
+    /// <p>The configuration of the offline store. It includes the following configurations:</p>
+    /// <ul>
+    /// <li> <p>Amazon S3 location of the offline store.</p> </li>
+    /// <li> <p>Configuration of the Glue data catalog.</p> </li>
+    /// <li> <p>Table format of the offline store.</p> </li>
+    /// <li> <p>Option to disable the automatic creation of a Glue table for the offline store.</p> </li>
+    /// <li> <p>Encryption configuration.</p> </li>
+    /// </ul>
     pub fn offline_store_config(&self) -> std::option::Option<&crate::model::OfflineStoreConfig> {
         self.offline_store_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an OfflineStoreConfig is provided.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -17910,12 +21581,26 @@ pub mod describe_feature_group_output {
             self.online_store_config = input;
             self
         }
-        /// <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the security configuration.</p>
+        /// <p>The configuration of the offline store. It includes the following configurations:</p>
+        /// <ul>
+        /// <li> <p>Amazon S3 location of the offline store.</p> </li>
+        /// <li> <p>Configuration of the Glue data catalog.</p> </li>
+        /// <li> <p>Table format of the offline store.</p> </li>
+        /// <li> <p>Option to disable the automatic creation of a Glue table for the offline store.</p> </li>
+        /// <li> <p>Encryption configuration.</p> </li>
+        /// </ul>
         pub fn offline_store_config(mut self, input: crate::model::OfflineStoreConfig) -> Self {
             self.offline_store_config = Some(input);
             self
         }
-        /// <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the security configuration.</p>
+        /// <p>The configuration of the offline store. It includes the following configurations:</p>
+        /// <ul>
+        /// <li> <p>Amazon S3 location of the offline store.</p> </li>
+        /// <li> <p>Configuration of the Glue data catalog.</p> </li>
+        /// <li> <p>Table format of the offline store.</p> </li>
+        /// <li> <p>Option to disable the automatic creation of a Glue table for the offline store.</p> </li>
+        /// <li> <p>Encryption configuration.</p> </li>
+        /// </ul>
         pub fn set_offline_store_config(
             mut self,
             input: std::option::Option<crate::model::OfflineStoreConfig>,
@@ -17923,12 +21608,12 @@ pub mod describe_feature_group_output {
             self.offline_store_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an OfflineStoreConfig is provided.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an OfflineStoreConfig is provided.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -18070,7 +21755,7 @@ pub struct DescribeExperimentOutput {
     /// <p>The name of the experiment as displayed. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
     #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the source and, optionally, the type.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the type.</p>
     #[doc(hidden)]
     pub source: std::option::Option<crate::model::ExperimentSource>,
     /// <p>The description of the experiment.</p>
@@ -18102,7 +21787,7 @@ impl DescribeExperimentOutput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The ARN of the source and, optionally, the type.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the type.</p>
     pub fn source(&self) -> std::option::Option<&crate::model::ExperimentSource> {
         self.source.as_ref()
     }
@@ -18180,12 +21865,12 @@ pub mod describe_experiment_output {
             self.display_name = input;
             self
         }
-        /// <p>The ARN of the source and, optionally, the type.</p>
+        /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the type.</p>
         pub fn source(mut self, input: crate::model::ExperimentSource) -> Self {
             self.source = Some(input);
             self
         }
-        /// <p>The ARN of the source and, optionally, the type.</p>
+        /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the type.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::ExperimentSource>,
@@ -18306,6 +21991,10 @@ pub struct DescribeEndpointConfigOutput {
     /// <p>The configuration parameters for an explainer.</p>
     #[doc(hidden)]
     pub explainer_config: std::option::Option<crate::model::ExplainerConfig>,
+    /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
+    #[doc(hidden)]
+    pub shadow_production_variants:
+        std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
 }
 impl DescribeEndpointConfigOutput {
     /// <p>Name of the SageMaker endpoint configuration.</p>
@@ -18342,6 +22031,12 @@ impl DescribeEndpointConfigOutput {
     pub fn explainer_config(&self) -> std::option::Option<&crate::model::ExplainerConfig> {
         self.explainer_config.as_ref()
     }
+    /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
+    pub fn shadow_production_variants(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProductionVariant]> {
+        self.shadow_production_variants.as_deref()
+    }
 }
 /// See [`DescribeEndpointConfigOutput`](crate::output::DescribeEndpointConfigOutput).
 pub mod describe_endpoint_config_output {
@@ -18358,6 +22053,8 @@ pub mod describe_endpoint_config_output {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
         pub(crate) explainer_config: std::option::Option<crate::model::ExplainerConfig>,
+        pub(crate) shadow_production_variants:
+            std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
     }
     impl Builder {
         /// <p>Name of the SageMaker endpoint configuration.</p>
@@ -18467,6 +22164,28 @@ pub mod describe_endpoint_config_output {
             self.explainer_config = input;
             self
         }
+        /// Appends an item to `shadow_production_variants`.
+        ///
+        /// To override the contents of this collection use [`set_shadow_production_variants`](Self::set_shadow_production_variants).
+        ///
+        /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
+        pub fn shadow_production_variants(
+            mut self,
+            input: crate::model::ProductionVariant,
+        ) -> Self {
+            let mut v = self.shadow_production_variants.unwrap_or_default();
+            v.push(input);
+            self.shadow_production_variants = Some(v);
+            self
+        }
+        /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
+        pub fn set_shadow_production_variants(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
+        ) -> Self {
+            self.shadow_production_variants = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeEndpointConfigOutput`](crate::output::DescribeEndpointConfigOutput).
         pub fn build(self) -> crate::output::DescribeEndpointConfigOutput {
             crate::output::DescribeEndpointConfigOutput {
@@ -18478,6 +22197,7 @@ pub mod describe_endpoint_config_output {
                 creation_time: self.creation_time,
                 async_inference_config: self.async_inference_config,
                 explainer_config: self.explainer_config,
+                shadow_production_variants: self.shadow_production_variants,
             }
         }
     }
@@ -18502,7 +22222,7 @@ pub struct DescribeEndpointOutput {
     /// <p>The name of the endpoint configuration associated with this endpoint.</p>
     #[doc(hidden)]
     pub endpoint_config_name: std::option::Option<std::string::String>,
-    /// <p> An array of <code>ProductionVariantSummary</code> objects, one for each model hosted behind this endpoint. </p>
+    /// <p>An array of <code>ProductionVariantSummary</code> objects, one for each model hosted behind this endpoint.</p>
     #[doc(hidden)]
     pub production_variants:
         std::option::Option<std::vec::Vec<crate::model::ProductionVariantSummary>>,
@@ -18543,6 +22263,10 @@ pub struct DescribeEndpointOutput {
     /// <p>The configuration parameters for an explainer.</p>
     #[doc(hidden)]
     pub explainer_config: std::option::Option<crate::model::ExplainerConfig>,
+    /// <p>An array of <code>ProductionVariantSummary</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
+    #[doc(hidden)]
+    pub shadow_production_variants:
+        std::option::Option<std::vec::Vec<crate::model::ProductionVariantSummary>>,
 }
 impl DescribeEndpointOutput {
     /// <p>Name of the endpoint.</p>
@@ -18557,7 +22281,7 @@ impl DescribeEndpointOutput {
     pub fn endpoint_config_name(&self) -> std::option::Option<&str> {
         self.endpoint_config_name.as_deref()
     }
-    /// <p> An array of <code>ProductionVariantSummary</code> objects, one for each model hosted behind this endpoint. </p>
+    /// <p>An array of <code>ProductionVariantSummary</code> objects, one for each model hosted behind this endpoint.</p>
     pub fn production_variants(
         &self,
     ) -> std::option::Option<&[crate::model::ProductionVariantSummary]> {
@@ -18615,6 +22339,12 @@ impl DescribeEndpointOutput {
     pub fn explainer_config(&self) -> std::option::Option<&crate::model::ExplainerConfig> {
         self.explainer_config.as_ref()
     }
+    /// <p>An array of <code>ProductionVariantSummary</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
+    pub fn shadow_production_variants(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProductionVariantSummary]> {
+        self.shadow_production_variants.as_deref()
+    }
 }
 /// See [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput).
 pub mod describe_endpoint_output {
@@ -18637,6 +22367,8 @@ pub mod describe_endpoint_output {
         pub(crate) pending_deployment_summary:
             std::option::Option<crate::model::PendingDeploymentSummary>,
         pub(crate) explainer_config: std::option::Option<crate::model::ExplainerConfig>,
+        pub(crate) shadow_production_variants:
+            std::option::Option<std::vec::Vec<crate::model::ProductionVariantSummary>>,
     }
     impl Builder {
         /// <p>Name of the endpoint.</p>
@@ -18679,7 +22411,7 @@ pub mod describe_endpoint_output {
         ///
         /// To override the contents of this collection use [`set_production_variants`](Self::set_production_variants).
         ///
-        /// <p> An array of <code>ProductionVariantSummary</code> objects, one for each model hosted behind this endpoint. </p>
+        /// <p>An array of <code>ProductionVariantSummary</code> objects, one for each model hosted behind this endpoint.</p>
         pub fn production_variants(
             mut self,
             input: crate::model::ProductionVariantSummary,
@@ -18689,7 +22421,7 @@ pub mod describe_endpoint_output {
             self.production_variants = Some(v);
             self
         }
-        /// <p> An array of <code>ProductionVariantSummary</code> objects, one for each model hosted behind this endpoint. </p>
+        /// <p>An array of <code>ProductionVariantSummary</code> objects, one for each model hosted behind this endpoint.</p>
         pub fn set_production_variants(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProductionVariantSummary>>,
@@ -18840,6 +22572,28 @@ pub mod describe_endpoint_output {
             self.explainer_config = input;
             self
         }
+        /// Appends an item to `shadow_production_variants`.
+        ///
+        /// To override the contents of this collection use [`set_shadow_production_variants`](Self::set_shadow_production_variants).
+        ///
+        /// <p>An array of <code>ProductionVariantSummary</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
+        pub fn shadow_production_variants(
+            mut self,
+            input: crate::model::ProductionVariantSummary,
+        ) -> Self {
+            let mut v = self.shadow_production_variants.unwrap_or_default();
+            v.push(input);
+            self.shadow_production_variants = Some(v);
+            self
+        }
+        /// <p>An array of <code>ProductionVariantSummary</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
+        pub fn set_shadow_production_variants(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProductionVariantSummary>>,
+        ) -> Self {
+            self.shadow_production_variants = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput).
         pub fn build(self) -> crate::output::DescribeEndpointOutput {
             crate::output::DescribeEndpointOutput {
@@ -18856,6 +22610,7 @@ pub mod describe_endpoint_output {
                 async_inference_config: self.async_inference_config,
                 pending_deployment_summary: self.pending_deployment_summary,
                 explainer_config: self.explainer_config,
+                shadow_production_variants: self.shadow_production_variants,
             }
         }
     }
@@ -19575,6 +23330,9 @@ pub struct DescribeDomainOutput {
     /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
     #[doc(hidden)]
     pub security_group_id_for_domain_boundary: std::option::Option<std::string::String>,
+    /// <p>The default settings used to create a space.</p>
+    #[doc(hidden)]
+    pub default_space_settings: std::option::Option<crate::model::DefaultSpaceSettings>,
 }
 impl DescribeDomainOutput {
     /// <p>The domain's Amazon Resource Name (ARN).</p>
@@ -19667,6 +23425,12 @@ impl DescribeDomainOutput {
     pub fn security_group_id_for_domain_boundary(&self) -> std::option::Option<&str> {
         self.security_group_id_for_domain_boundary.as_deref()
     }
+    /// <p>The default settings used to create a space.</p>
+    pub fn default_space_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultSpaceSettings> {
+        self.default_space_settings.as_ref()
+    }
 }
 /// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
 pub mod describe_domain_output {
@@ -19696,6 +23460,7 @@ pub mod describe_domain_output {
         pub(crate) app_security_group_management:
             std::option::Option<crate::model::AppSecurityGroupManagement>,
         pub(crate) security_group_id_for_domain_boundary: std::option::Option<std::string::String>,
+        pub(crate) default_space_settings: std::option::Option<crate::model::DefaultSpaceSettings>,
     }
     impl Builder {
         /// <p>The domain's Amazon Resource Name (ARN).</p>
@@ -19968,6 +23733,19 @@ pub mod describe_domain_output {
             self.security_group_id_for_domain_boundary = input;
             self
         }
+        /// <p>The default settings used to create a space.</p>
+        pub fn default_space_settings(mut self, input: crate::model::DefaultSpaceSettings) -> Self {
+            self.default_space_settings = Some(input);
+            self
+        }
+        /// <p>The default settings used to create a space.</p>
+        pub fn set_default_space_settings(
+            mut self,
+            input: std::option::Option<crate::model::DefaultSpaceSettings>,
+        ) -> Self {
+            self.default_space_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
         pub fn build(self) -> crate::output::DescribeDomainOutput {
             crate::output::DescribeDomainOutput {
@@ -19992,6 +23770,7 @@ pub mod describe_domain_output {
                 domain_settings: self.domain_settings,
                 app_security_group_management: self.app_security_group_management,
                 security_group_id_for_domain_boundary: self.security_group_id_for_domain_boundary,
+                default_space_settings: self.default_space_settings,
             }
         }
     }
@@ -20785,13 +24564,13 @@ pub struct DescribeContextOutput {
     /// <p>When the context was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>When the context was last modified.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
@@ -20830,7 +24609,7 @@ impl DescribeContextOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -20838,7 +24617,7 @@ impl DescribeContextOutput {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -20959,12 +24738,12 @@ pub mod describe_context_output {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -20985,12 +24764,12 @@ pub mod describe_context_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -21597,7 +25376,7 @@ pub struct DescribeAutoMlJobOutput {
     /// <p>Returns the job's output data config.</p>
     #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::model::AutoMlOutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Returns the job's objective.</p>
@@ -21625,7 +25404,7 @@ pub struct DescribeAutoMlJobOutput {
     #[doc(hidden)]
     pub partial_failure_reasons:
         std::option::Option<std::vec::Vec<crate::model::AutoMlPartialFailureReason>>,
-    /// <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+    /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
     #[doc(hidden)]
     pub best_candidate: std::option::Option<crate::model::AutoMlCandidate>,
     /// <p>Returns the status of the AutoML job.</p>
@@ -21667,7 +25446,7 @@ impl DescribeAutoMlJobOutput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::AutoMlOutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -21705,7 +25484,7 @@ impl DescribeAutoMlJobOutput {
     ) -> std::option::Option<&[crate::model::AutoMlPartialFailureReason]> {
         self.partial_failure_reasons.as_deref()
     }
-    /// <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+    /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
     pub fn best_candidate(&self) -> std::option::Option<&crate::model::AutoMlCandidate> {
         self.best_candidate.as_ref()
     }
@@ -21830,12 +25609,12 @@ pub mod describe_auto_ml_job_output {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -21953,12 +25732,12 @@ pub mod describe_auto_ml_job_output {
             self.partial_failure_reasons = input;
             self
         }
-        /// <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+        /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
         pub fn best_candidate(mut self, input: crate::model::AutoMlCandidate) -> Self {
             self.best_candidate = Some(input);
             self
         }
-        /// <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+        /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
         pub fn set_best_candidate(
             mut self,
             input: std::option::Option<crate::model::AutoMlCandidate>,
@@ -22120,13 +25899,13 @@ pub struct DescribeArtifactOutput {
     /// <p>When the artifact was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>When the artifact was last modified.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
@@ -22164,7 +25943,7 @@ impl DescribeArtifactOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -22172,7 +25951,7 @@ impl DescribeArtifactOutput {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -22293,12 +26072,12 @@ pub mod describe_artifact_output {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -22319,12 +26098,12 @@ pub mod describe_artifact_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -22565,6 +26344,9 @@ pub struct DescribeAppOutput {
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     #[doc(hidden)]
     pub resource_spec: std::option::Option<crate::model::ResourceSpec>,
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    #[doc(hidden)]
+    pub space_name: std::option::Option<std::string::String>,
 }
 impl DescribeAppOutput {
     /// <p>The Amazon Resource Name (ARN) of the app.</p>
@@ -22611,6 +26393,10 @@ impl DescribeAppOutput {
     pub fn resource_spec(&self) -> std::option::Option<&crate::model::ResourceSpec> {
         self.resource_spec.as_ref()
     }
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub fn space_name(&self) -> std::option::Option<&str> {
+        self.space_name.as_deref()
+    }
 }
 /// See [`DescribeAppOutput`](crate::output::DescribeAppOutput).
 pub mod describe_app_output {
@@ -22629,6 +26415,7 @@ pub mod describe_app_output {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) resource_spec: std::option::Option<crate::model::ResourceSpec>,
+        pub(crate) space_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the app.</p>
@@ -22759,6 +26546,16 @@ pub mod describe_app_output {
             self.resource_spec = input;
             self
         }
+        /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.space_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAppOutput`](crate::output::DescribeAppOutput).
         pub fn build(self) -> crate::output::DescribeAppOutput {
             crate::output::DescribeAppOutput {
@@ -22773,6 +26570,7 @@ pub mod describe_app_output {
                 creation_time: self.creation_time,
                 failure_reason: self.failure_reason,
                 resource_spec: self.resource_spec,
+                space_name: self.space_name,
             }
         }
     }
@@ -23102,13 +26900,13 @@ pub struct DescribeActionOutput {
     /// <p>When the action was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>When the action was last modified.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
@@ -23154,7 +26952,7 @@ impl DescribeActionOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -23162,7 +26960,7 @@ impl DescribeActionOutput {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -23302,12 +27100,12 @@ pub mod describe_action_output {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -23328,12 +27126,12 @@ pub mod describe_action_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -23664,6 +27462,30 @@ impl DeleteStudioLifecycleConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteSpaceOutput {}
+/// See [`DeleteSpaceOutput`](crate::output::DeleteSpaceOutput).
+pub mod delete_space_output {
+
+    /// A builder for [`DeleteSpaceOutput`](crate::output::DeleteSpaceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteSpaceOutput`](crate::output::DeleteSpaceOutput).
+        pub fn build(self) -> crate::output::DeleteSpaceOutput {
+            crate::output::DeleteSpaceOutput {}
+        }
+    }
+}
+impl DeleteSpaceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSpaceOutput`](crate::output::DeleteSpaceOutput).
+    pub fn builder() -> crate::output::delete_space_output::Builder {
+        crate::output::delete_space_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectOutput {}
 /// See [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
 pub mod delete_project_output {
@@ -23928,6 +27750,30 @@ impl DeleteModelExplainabilityJobDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteModelCardOutput {}
+/// See [`DeleteModelCardOutput`](crate::output::DeleteModelCardOutput).
+pub mod delete_model_card_output {
+
+    /// A builder for [`DeleteModelCardOutput`](crate::output::DeleteModelCardOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteModelCardOutput`](crate::output::DeleteModelCardOutput).
+        pub fn build(self) -> crate::output::DeleteModelCardOutput {
+            crate::output::DeleteModelCardOutput {}
+        }
+    }
+}
+impl DeleteModelCardOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteModelCardOutput`](crate::output::DeleteModelCardOutput).
+    pub fn builder() -> crate::output::delete_model_card_output::Builder {
+        crate::output::delete_model_card_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteModelBiasJobDefinitionOutput {}
 /// See [`DeleteModelBiasJobDefinitionOutput`](crate::output::DeleteModelBiasJobDefinitionOutput).
 pub mod delete_model_bias_job_definition_output {
@@ -23970,6 +27816,57 @@ impl DeleteModelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteModelOutput`](crate::output::DeleteModelOutput).
     pub fn builder() -> crate::output::delete_model_output::Builder {
         crate::output::delete_model_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteInferenceExperimentOutput {
+    /// <p>The ARN of the deleted inference experiment.</p>
+    #[doc(hidden)]
+    pub inference_experiment_arn: std::option::Option<std::string::String>,
+}
+impl DeleteInferenceExperimentOutput {
+    /// <p>The ARN of the deleted inference experiment.</p>
+    pub fn inference_experiment_arn(&self) -> std::option::Option<&str> {
+        self.inference_experiment_arn.as_deref()
+    }
+}
+/// See [`DeleteInferenceExperimentOutput`](crate::output::DeleteInferenceExperimentOutput).
+pub mod delete_inference_experiment_output {
+
+    /// A builder for [`DeleteInferenceExperimentOutput`](crate::output::DeleteInferenceExperimentOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) inference_experiment_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the deleted inference experiment.</p>
+        pub fn inference_experiment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inference_experiment_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the deleted inference experiment.</p>
+        pub fn set_inference_experiment_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_experiment_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteInferenceExperimentOutput`](crate::output::DeleteInferenceExperimentOutput).
+        pub fn build(self) -> crate::output::DeleteInferenceExperimentOutput {
+            crate::output::DeleteInferenceExperimentOutput {
+                inference_experiment_arn: self.inference_experiment_arn,
+            }
+        }
+    }
+}
+impl DeleteInferenceExperimentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteInferenceExperimentOutput`](crate::output::DeleteInferenceExperimentOutput).
+    pub fn builder() -> crate::output::delete_inference_experiment_output::Builder {
+        crate::output::delete_inference_experiment_output::Builder::default()
     }
 }
 
@@ -24042,6 +27939,54 @@ impl DeleteHumanTaskUiOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHumanTaskUiOutput`](crate::output::DeleteHumanTaskUiOutput).
     pub fn builder() -> crate::output::delete_human_task_ui_output::Builder {
         crate::output::delete_human_task_ui_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteHubContentOutput {}
+/// See [`DeleteHubContentOutput`](crate::output::DeleteHubContentOutput).
+pub mod delete_hub_content_output {
+
+    /// A builder for [`DeleteHubContentOutput`](crate::output::DeleteHubContentOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteHubContentOutput`](crate::output::DeleteHubContentOutput).
+        pub fn build(self) -> crate::output::DeleteHubContentOutput {
+            crate::output::DeleteHubContentOutput {}
+        }
+    }
+}
+impl DeleteHubContentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteHubContentOutput`](crate::output::DeleteHubContentOutput).
+    pub fn builder() -> crate::output::delete_hub_content_output::Builder {
+        crate::output::delete_hub_content_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteHubOutput {}
+/// See [`DeleteHubOutput`](crate::output::DeleteHubOutput).
+pub mod delete_hub_output {
+
+    /// A builder for [`DeleteHubOutput`](crate::output::DeleteHubOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteHubOutput`](crate::output::DeleteHubOutput).
+        pub fn build(self) -> crate::output::DeleteHubOutput {
+            crate::output::DeleteHubOutput {}
+        }
+    }
+}
+impl DeleteHubOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteHubOutput`](crate::output::DeleteHubOutput).
+    pub fn builder() -> crate::output::delete_hub_output::Builder {
+        crate::output::delete_hub_output::Builder::default()
     }
 }
 
@@ -25030,6 +28975,54 @@ impl CreateStudioLifecycleConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateSpaceOutput {
+    /// <p>The space's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub space_arn: std::option::Option<std::string::String>,
+}
+impl CreateSpaceOutput {
+    /// <p>The space's Amazon Resource Name (ARN).</p>
+    pub fn space_arn(&self) -> std::option::Option<&str> {
+        self.space_arn.as_deref()
+    }
+}
+/// See [`CreateSpaceOutput`](crate::output::CreateSpaceOutput).
+pub mod create_space_output {
+
+    /// A builder for [`CreateSpaceOutput`](crate::output::CreateSpaceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) space_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The space's Amazon Resource Name (ARN).</p>
+        pub fn space_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_arn = Some(input.into());
+            self
+        }
+        /// <p>The space's Amazon Resource Name (ARN).</p>
+        pub fn set_space_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.space_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSpaceOutput`](crate::output::CreateSpaceOutput).
+        pub fn build(self) -> crate::output::CreateSpaceOutput {
+            crate::output::CreateSpaceOutput {
+                space_arn: self.space_arn,
+            }
+        }
+    }
+}
+impl CreateSpaceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSpaceOutput`](crate::output::CreateSpaceOutput).
+    pub fn builder() -> crate::output::create_space_output::Builder {
+        crate::output::create_space_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProjectOutput {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     #[doc(hidden)]
@@ -25658,6 +29651,108 @@ impl CreateModelExplainabilityJobDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateModelCardExportJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model card export job.</p>
+    #[doc(hidden)]
+    pub model_card_export_job_arn: std::option::Option<std::string::String>,
+}
+impl CreateModelCardExportJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model card export job.</p>
+    pub fn model_card_export_job_arn(&self) -> std::option::Option<&str> {
+        self.model_card_export_job_arn.as_deref()
+    }
+}
+/// See [`CreateModelCardExportJobOutput`](crate::output::CreateModelCardExportJobOutput).
+pub mod create_model_card_export_job_output {
+
+    /// A builder for [`CreateModelCardExportJobOutput`](crate::output::CreateModelCardExportJobOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_card_export_job_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the model card export job.</p>
+        pub fn model_card_export_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_export_job_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the model card export job.</p>
+        pub fn set_model_card_export_job_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_export_job_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateModelCardExportJobOutput`](crate::output::CreateModelCardExportJobOutput).
+        pub fn build(self) -> crate::output::CreateModelCardExportJobOutput {
+            crate::output::CreateModelCardExportJobOutput {
+                model_card_export_job_arn: self.model_card_export_job_arn,
+            }
+        }
+    }
+}
+impl CreateModelCardExportJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateModelCardExportJobOutput`](crate::output::CreateModelCardExportJobOutput).
+    pub fn builder() -> crate::output::create_model_card_export_job_output::Builder {
+        crate::output::create_model_card_export_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateModelCardOutput {
+    /// <p>The Amazon Resource Name (ARN) of the successfully created model card.</p>
+    #[doc(hidden)]
+    pub model_card_arn: std::option::Option<std::string::String>,
+}
+impl CreateModelCardOutput {
+    /// <p>The Amazon Resource Name (ARN) of the successfully created model card.</p>
+    pub fn model_card_arn(&self) -> std::option::Option<&str> {
+        self.model_card_arn.as_deref()
+    }
+}
+/// See [`CreateModelCardOutput`](crate::output::CreateModelCardOutput).
+pub mod create_model_card_output {
+
+    /// A builder for [`CreateModelCardOutput`](crate::output::CreateModelCardOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_card_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the successfully created model card.</p>
+        pub fn model_card_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the successfully created model card.</p>
+        pub fn set_model_card_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateModelCardOutput`](crate::output::CreateModelCardOutput).
+        pub fn build(self) -> crate::output::CreateModelCardOutput {
+            crate::output::CreateModelCardOutput {
+                model_card_arn: self.model_card_arn,
+            }
+        }
+    }
+}
+impl CreateModelCardOutput {
+    /// Creates a new builder-style object to manufacture [`CreateModelCardOutput`](crate::output::CreateModelCardOutput).
+    pub fn builder() -> crate::output::create_model_card_output::Builder {
+        crate::output::create_model_card_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateModelBiasJobDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the model bias job.</p>
     #[doc(hidden)]
@@ -25856,13 +29951,64 @@ impl CreateInferenceRecommendationsJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateInferenceExperimentOutput {
+    /// <p>The ARN for your inference experiment.</p>
+    #[doc(hidden)]
+    pub inference_experiment_arn: std::option::Option<std::string::String>,
+}
+impl CreateInferenceExperimentOutput {
+    /// <p>The ARN for your inference experiment.</p>
+    pub fn inference_experiment_arn(&self) -> std::option::Option<&str> {
+        self.inference_experiment_arn.as_deref()
+    }
+}
+/// See [`CreateInferenceExperimentOutput`](crate::output::CreateInferenceExperimentOutput).
+pub mod create_inference_experiment_output {
+
+    /// A builder for [`CreateInferenceExperimentOutput`](crate::output::CreateInferenceExperimentOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) inference_experiment_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN for your inference experiment.</p>
+        pub fn inference_experiment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inference_experiment_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for your inference experiment.</p>
+        pub fn set_inference_experiment_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_experiment_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateInferenceExperimentOutput`](crate::output::CreateInferenceExperimentOutput).
+        pub fn build(self) -> crate::output::CreateInferenceExperimentOutput {
+            crate::output::CreateInferenceExperimentOutput {
+                inference_experiment_arn: self.inference_experiment_arn,
+            }
+        }
+    }
+}
+impl CreateInferenceExperimentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateInferenceExperimentOutput`](crate::output::CreateInferenceExperimentOutput).
+    pub fn builder() -> crate::output::create_inference_experiment_output::Builder {
+        crate::output::create_inference_experiment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateImageVersionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the image version.</p>
+    /// <p>The ARN of the image version.</p>
     #[doc(hidden)]
     pub image_version_arn: std::option::Option<std::string::String>,
 }
 impl CreateImageVersionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the image version.</p>
+    /// <p>The ARN of the image version.</p>
     pub fn image_version_arn(&self) -> std::option::Option<&str> {
         self.image_version_arn.as_deref()
     }
@@ -25876,12 +30022,12 @@ pub mod create_image_version_output {
         pub(crate) image_version_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the image version.</p>
+        /// <p>The ARN of the image version.</p>
         pub fn image_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_version_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image version.</p>
+        /// <p>The ARN of the image version.</p>
         pub fn set_image_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25908,12 +30054,12 @@ impl CreateImageVersionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateImageOutput {
-    /// <p>The Amazon Resource Name (ARN) of the image.</p>
+    /// <p>The ARN of the image.</p>
     #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
 }
 impl CreateImageOutput {
-    /// <p>The Amazon Resource Name (ARN) of the image.</p>
+    /// <p>The ARN of the image.</p>
     pub fn image_arn(&self) -> std::option::Option<&str> {
         self.image_arn.as_deref()
     }
@@ -25927,12 +30073,12 @@ pub mod create_image_output {
         pub(crate) image_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the image.</p>
+        /// <p>The ARN of the image.</p>
         pub fn image_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image.</p>
+        /// <p>The ARN of the image.</p>
         pub fn set_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_arn = input;
             self
@@ -26054,6 +30200,54 @@ impl CreateHumanTaskUiOutput {
     /// Creates a new builder-style object to manufacture [`CreateHumanTaskUiOutput`](crate::output::CreateHumanTaskUiOutput).
     pub fn builder() -> crate::output::create_human_task_ui_output::Builder {
         crate::output::create_human_task_ui_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateHubOutput {
+    /// <p>The Amazon Resource Name (ARN) of the hub.</p>
+    #[doc(hidden)]
+    pub hub_arn: std::option::Option<std::string::String>,
+}
+impl CreateHubOutput {
+    /// <p>The Amazon Resource Name (ARN) of the hub.</p>
+    pub fn hub_arn(&self) -> std::option::Option<&str> {
+        self.hub_arn.as_deref()
+    }
+}
+/// See [`CreateHubOutput`](crate::output::CreateHubOutput).
+pub mod create_hub_output {
+
+    /// A builder for [`CreateHubOutput`](crate::output::CreateHubOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the hub.</p>
+        pub fn hub_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hub.</p>
+        pub fn set_hub_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateHubOutput`](crate::output::CreateHubOutput).
+        pub fn build(self) -> crate::output::CreateHubOutput {
+            crate::output::CreateHubOutput {
+                hub_arn: self.hub_arn,
+            }
+        }
+    }
+}
+impl CreateHubOutput {
+    /// Creates a new builder-style object to manufacture [`CreateHubOutput`](crate::output::CreateHubOutput).
+    pub fn builder() -> crate::output::create_hub_output::Builder {
+        crate::output::create_hub_output::Builder::default()
     }
 }
 
@@ -27152,7 +31346,7 @@ impl BatchDescribeModelPackageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateTrialComponentOutput {
-    /// <p>The ARN of the trial component.</p>
+    /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     #[doc(hidden)]
     pub trial_component_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
@@ -27160,7 +31354,7 @@ pub struct AssociateTrialComponentOutput {
     pub trial_arn: std::option::Option<std::string::String>,
 }
 impl AssociateTrialComponentOutput {
-    /// <p>The ARN of the trial component.</p>
+    /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     pub fn trial_component_arn(&self) -> std::option::Option<&str> {
         self.trial_component_arn.as_deref()
     }
@@ -27179,12 +31373,12 @@ pub mod associate_trial_component_output {
         pub(crate) trial_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the trial component.</p>
+        /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
         pub fn trial_component_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.trial_component_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the trial component.</p>
+        /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
         pub fn set_trial_component_arn(
             mut self,
             input: std::option::Option<std::string::String>,

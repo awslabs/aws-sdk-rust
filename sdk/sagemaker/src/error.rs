@@ -2914,6 +2914,119 @@ impl std::error::Error for CreateFlowDefinitionError {
     }
 }
 
+/// Error type for the `CreateHub` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateHubError {
+    /// Kind of error that occurred.
+    pub kind: CreateHubErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateHubError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateHubErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateHub` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateHubErrorKind {
+    /// <p>Resource being accessed is in use.</p>
+    ResourceInUse(crate::error::ResourceInUse),
+    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
+    ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateHubError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateHubErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            CreateHubErrorKind::ResourceLimitExceeded(_inner) => _inner.fmt(f),
+            CreateHubErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateHubError {
+    fn code(&self) -> Option<&str> {
+        CreateHubError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateHubError {
+    /// Creates a new `CreateHubError`.
+    pub fn new(kind: CreateHubErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateHubError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateHubErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateHubError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateHubErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateHubErrorKind::ResourceInUse`.
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateHubErrorKind::ResourceInUse(_))
+    }
+    /// Returns `true` if the error kind is `CreateHubErrorKind::ResourceLimitExceeded`.
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, CreateHubErrorKind::ResourceLimitExceeded(_))
+    }
+}
+impl std::error::Error for CreateHubError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateHubErrorKind::ResourceInUse(_inner) => Some(_inner),
+            CreateHubErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
+            CreateHubErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `CreateHumanTaskUi` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3395,6 +3508,131 @@ impl std::error::Error for CreateImageVersionError {
     }
 }
 
+/// Error type for the `CreateInferenceExperiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateInferenceExperimentError {
+    /// Kind of error that occurred.
+    pub kind: CreateInferenceExperimentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateInferenceExperimentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateInferenceExperiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateInferenceExperimentErrorKind {
+    /// <p>Resource being accessed is in use.</p>
+    ResourceInUse(crate::error::ResourceInUse),
+    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
+    ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateInferenceExperimentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateInferenceExperimentErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            CreateInferenceExperimentErrorKind::ResourceLimitExceeded(_inner) => _inner.fmt(f),
+            CreateInferenceExperimentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateInferenceExperimentError {
+    fn code(&self) -> Option<&str> {
+        CreateInferenceExperimentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateInferenceExperimentError {
+    /// Creates a new `CreateInferenceExperimentError`.
+    pub fn new(kind: CreateInferenceExperimentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateInferenceExperimentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateInferenceExperimentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateInferenceExperimentErrorKind::ResourceInUse`.
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInferenceExperimentErrorKind::ResourceInUse(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateInferenceExperimentErrorKind::ResourceLimitExceeded`.
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInferenceExperimentErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+}
+impl std::error::Error for CreateInferenceExperimentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateInferenceExperimentErrorKind::ResourceInUse(_inner) => Some(_inner),
+            CreateInferenceExperimentErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
+            CreateInferenceExperimentErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `CreateInferenceRecommendationsJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3869,6 +4107,258 @@ impl std::error::Error for CreateModelBiasJobDefinitionError {
             CreateModelBiasJobDefinitionErrorKind::ResourceInUse(_inner) => Some(_inner),
             CreateModelBiasJobDefinitionErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
             CreateModelBiasJobDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `CreateModelCard` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateModelCardError {
+    /// Kind of error that occurred.
+    pub kind: CreateModelCardErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateModelCardError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateModelCardErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateModelCard` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateModelCardErrorKind {
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
+    ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateModelCardError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateModelCardErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateModelCardErrorKind::ResourceLimitExceeded(_inner) => _inner.fmt(f),
+            CreateModelCardErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateModelCardError {
+    fn code(&self) -> Option<&str> {
+        CreateModelCardError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateModelCardError {
+    /// Creates a new `CreateModelCardError`.
+    pub fn new(kind: CreateModelCardErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateModelCardError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateModelCardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateModelCardError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateModelCardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateModelCardErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateModelCardErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateModelCardErrorKind::ResourceLimitExceeded`.
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelCardErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+}
+impl std::error::Error for CreateModelCardError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateModelCardErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateModelCardErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
+            CreateModelCardErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `CreateModelCardExportJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateModelCardExportJobError {
+    /// Kind of error that occurred.
+    pub kind: CreateModelCardExportJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateModelCardExportJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateModelCardExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateModelCardExportJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateModelCardExportJobErrorKind {
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
+    ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateModelCardExportJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateModelCardExportJobErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateModelCardExportJobErrorKind::ResourceLimitExceeded(_inner) => _inner.fmt(f),
+            CreateModelCardExportJobErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            CreateModelCardExportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateModelCardExportJobError {
+    fn code(&self) -> Option<&str> {
+        CreateModelCardExportJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateModelCardExportJobError {
+    /// Creates a new `CreateModelCardExportJobError`.
+    pub fn new(kind: CreateModelCardExportJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateModelCardExportJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateModelCardExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateModelCardExportJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateModelCardExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateModelCardExportJobErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelCardExportJobErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateModelCardExportJobErrorKind::ResourceLimitExceeded`.
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelCardExportJobErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateModelCardExportJobErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelCardExportJobErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for CreateModelCardExportJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateModelCardExportJobErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateModelCardExportJobErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
+            CreateModelCardExportJobErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            CreateModelCardExportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5288,6 +5778,119 @@ impl std::error::Error for CreateProjectError {
         match &self.kind {
             CreateProjectErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
             CreateProjectErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `CreateSpace` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateSpaceError {
+    /// Kind of error that occurred.
+    pub kind: CreateSpaceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateSpaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateSpaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateSpace` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateSpaceErrorKind {
+    /// <p>Resource being accessed is in use.</p>
+    ResourceInUse(crate::error::ResourceInUse),
+    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
+    ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateSpaceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateSpaceErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            CreateSpaceErrorKind::ResourceLimitExceeded(_inner) => _inner.fmt(f),
+            CreateSpaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateSpaceError {
+    fn code(&self) -> Option<&str> {
+        CreateSpaceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateSpaceError {
+    /// Creates a new `CreateSpaceError`.
+    pub fn new(kind: CreateSpaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateSpaceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateSpaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateSpaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateSpaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateSpaceErrorKind::ResourceInUse`.
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateSpaceErrorKind::ResourceInUse(_))
+    }
+    /// Returns `true` if the error kind is `CreateSpaceErrorKind::ResourceLimitExceeded`.
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, CreateSpaceErrorKind::ResourceLimitExceeded(_))
+    }
+}
+impl std::error::Error for CreateSpaceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateSpaceErrorKind::ResourceInUse(_inner) => Some(_inner),
+            CreateSpaceErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
+            CreateSpaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8142,6 +8745,232 @@ impl std::error::Error for DeleteFlowDefinitionError {
     }
 }
 
+/// Error type for the `DeleteHub` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteHubError {
+    /// Kind of error that occurred.
+    pub kind: DeleteHubErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteHubError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteHubErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteHub` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteHubErrorKind {
+    /// <p>Resource being accessed is in use.</p>
+    ResourceInUse(crate::error::ResourceInUse),
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteHubError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteHubErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            DeleteHubErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DeleteHubErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteHubError {
+    fn code(&self) -> Option<&str> {
+        DeleteHubError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteHubError {
+    /// Creates a new `DeleteHubError`.
+    pub fn new(kind: DeleteHubErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteHubError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteHubErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteHubError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteHubErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteHubErrorKind::ResourceInUse`.
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, DeleteHubErrorKind::ResourceInUse(_))
+    }
+    /// Returns `true` if the error kind is `DeleteHubErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteHubErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for DeleteHubError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteHubErrorKind::ResourceInUse(_inner) => Some(_inner),
+            DeleteHubErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DeleteHubErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeleteHubContent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteHubContentError {
+    /// Kind of error that occurred.
+    pub kind: DeleteHubContentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteHubContentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteHubContentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteHubContent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteHubContentErrorKind {
+    /// <p>Resource being accessed is in use.</p>
+    ResourceInUse(crate::error::ResourceInUse),
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteHubContentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteHubContentErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            DeleteHubContentErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DeleteHubContentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteHubContentError {
+    fn code(&self) -> Option<&str> {
+        DeleteHubContentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteHubContentError {
+    /// Creates a new `DeleteHubContentError`.
+    pub fn new(kind: DeleteHubContentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteHubContentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteHubContentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteHubContentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteHubContentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteHubContentErrorKind::ResourceInUse`.
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, DeleteHubContentErrorKind::ResourceInUse(_))
+    }
+    /// Returns `true` if the error kind is `DeleteHubContentErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteHubContentErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for DeleteHubContentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteHubContentErrorKind::ResourceInUse(_inner) => Some(_inner),
+            DeleteHubContentErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DeleteHubContentErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DeleteHumanTaskUi` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8473,6 +9302,131 @@ impl std::error::Error for DeleteImageVersionError {
     }
 }
 
+/// Error type for the `DeleteInferenceExperiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteInferenceExperimentError {
+    /// Kind of error that occurred.
+    pub kind: DeleteInferenceExperimentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteInferenceExperimentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteInferenceExperiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteInferenceExperimentErrorKind {
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteInferenceExperimentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteInferenceExperimentErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteInferenceExperimentErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DeleteInferenceExperimentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteInferenceExperimentError {
+    fn code(&self) -> Option<&str> {
+        DeleteInferenceExperimentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteInferenceExperimentError {
+    /// Creates a new `DeleteInferenceExperimentError`.
+    pub fn new(kind: DeleteInferenceExperimentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteInferenceExperimentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteInferenceExperimentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteInferenceExperimentErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInferenceExperimentErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteInferenceExperimentErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInferenceExperimentErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for DeleteInferenceExperimentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteInferenceExperimentErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteInferenceExperimentErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DeleteInferenceExperimentErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DeleteModel` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8680,6 +9634,119 @@ impl std::error::Error for DeleteModelBiasJobDefinitionError {
         match &self.kind {
             DeleteModelBiasJobDefinitionErrorKind::ResourceNotFound(_inner) => Some(_inner),
             DeleteModelBiasJobDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeleteModelCard` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteModelCardError {
+    /// Kind of error that occurred.
+    pub kind: DeleteModelCardErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteModelCardError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteModelCardErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteModelCard` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteModelCardErrorKind {
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteModelCardError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteModelCardErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteModelCardErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DeleteModelCardErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteModelCardError {
+    fn code(&self) -> Option<&str> {
+        DeleteModelCardError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteModelCardError {
+    /// Creates a new `DeleteModelCardError`.
+    pub fn new(kind: DeleteModelCardErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteModelCardError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteModelCardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteModelCardError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteModelCardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteModelCardErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteModelCardErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteModelCardErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteModelCardErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for DeleteModelCardError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteModelCardErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteModelCardErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DeleteModelCardErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9775,6 +10842,119 @@ impl std::error::Error for DeleteProjectError {
         match &self.kind {
             DeleteProjectErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteProjectErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeleteSpace` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteSpaceError {
+    /// Kind of error that occurred.
+    pub kind: DeleteSpaceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteSpaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteSpaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteSpace` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteSpaceErrorKind {
+    /// <p>Resource being accessed is in use.</p>
+    ResourceInUse(crate::error::ResourceInUse),
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteSpaceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteSpaceErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            DeleteSpaceErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DeleteSpaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteSpaceError {
+    fn code(&self) -> Option<&str> {
+        DeleteSpaceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteSpaceError {
+    /// Creates a new `DeleteSpaceError`.
+    pub fn new(kind: DeleteSpaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteSpaceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteSpaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteSpaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteSpaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteSpaceErrorKind::ResourceInUse`.
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, DeleteSpaceErrorKind::ResourceInUse(_))
+    }
+    /// Returns `true` if the error kind is `DeleteSpaceErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteSpaceErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for DeleteSpaceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteSpaceErrorKind::ResourceInUse(_inner) => Some(_inner),
+            DeleteSpaceErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DeleteSpaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12882,6 +14062,216 @@ impl std::error::Error for DescribeFlowDefinitionError {
     }
 }
 
+/// Error type for the `DescribeHub` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeHubError {
+    /// Kind of error that occurred.
+    pub kind: DescribeHubErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeHubError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeHubErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeHub` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeHubErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeHubError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeHubErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DescribeHubErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeHubError {
+    fn code(&self) -> Option<&str> {
+        DescribeHubError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeHubError {
+    /// Creates a new `DescribeHubError`.
+    pub fn new(kind: DescribeHubErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeHubError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeHubErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeHubError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeHubErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeHubErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeHubErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for DescribeHubError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeHubErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DescribeHubErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeHubContent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeHubContentError {
+    /// Kind of error that occurred.
+    pub kind: DescribeHubContentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeHubContentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeHubContentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeHubContent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeHubContentErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeHubContentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeHubContentErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DescribeHubContentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeHubContentError {
+    fn code(&self) -> Option<&str> {
+        DescribeHubContentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeHubContentError {
+    /// Creates a new `DescribeHubContentError`.
+    pub fn new(kind: DescribeHubContentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeHubContentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeHubContentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeHubContentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeHubContentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeHubContentErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeHubContentErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for DescribeHubContentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeHubContentErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DescribeHubContentErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DescribeHumanTaskUi` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -13320,6 +14710,120 @@ impl std::error::Error for DescribeImageVersionError {
         match &self.kind {
             DescribeImageVersionErrorKind::ResourceNotFound(_inner) => Some(_inner),
             DescribeImageVersionErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeInferenceExperiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeInferenceExperimentError {
+    /// Kind of error that occurred.
+    pub kind: DescribeInferenceExperimentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeInferenceExperimentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeInferenceExperiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeInferenceExperimentErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeInferenceExperimentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeInferenceExperimentErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DescribeInferenceExperimentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeInferenceExperimentError {
+    fn code(&self) -> Option<&str> {
+        DescribeInferenceExperimentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeInferenceExperimentError {
+    /// Creates a new `DescribeInferenceExperimentError`.
+    pub fn new(kind: DescribeInferenceExperimentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeInferenceExperimentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeInferenceExperimentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeInferenceExperimentErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInferenceExperimentErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for DescribeInferenceExperimentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeInferenceExperimentErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DescribeInferenceExperimentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13871,6 +15375,225 @@ impl std::error::Error for DescribeModelBiasJobDefinitionError {
         match &self.kind {
             DescribeModelBiasJobDefinitionErrorKind::ResourceNotFound(_inner) => Some(_inner),
             DescribeModelBiasJobDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeModelCard` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeModelCardError {
+    /// Kind of error that occurred.
+    pub kind: DescribeModelCardErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeModelCardError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeModelCardErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeModelCard` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeModelCardErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeModelCardError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeModelCardErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DescribeModelCardErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeModelCardError {
+    fn code(&self) -> Option<&str> {
+        DescribeModelCardError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeModelCardError {
+    /// Creates a new `DescribeModelCardError`.
+    pub fn new(kind: DescribeModelCardErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeModelCardError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeModelCardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeModelCardError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeModelCardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeModelCardErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeModelCardErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for DescribeModelCardError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeModelCardErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DescribeModelCardErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeModelCardExportJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeModelCardExportJobError {
+    /// Kind of error that occurred.
+    pub kind: DescribeModelCardExportJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeModelCardExportJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeModelCardExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeModelCardExportJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeModelCardExportJobErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeModelCardExportJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeModelCardExportJobErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DescribeModelCardExportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeModelCardExportJobError {
+    fn code(&self) -> Option<&str> {
+        DescribeModelCardExportJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeModelCardExportJobError {
+    /// Creates a new `DescribeModelCardExportJobError`.
+    pub fn new(kind: DescribeModelCardExportJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeModelCardExportJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeModelCardExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeModelCardExportJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeModelCardExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeModelCardExportJobErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeModelCardExportJobErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for DescribeModelCardExportJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeModelCardExportJobErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DescribeModelCardExportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15189,6 +16912,111 @@ impl std::error::Error for DescribeProjectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeProjectErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeSpace` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeSpaceError {
+    /// Kind of error that occurred.
+    pub kind: DescribeSpaceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeSpaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeSpaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeSpace` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeSpaceErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeSpaceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeSpaceErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DescribeSpaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeSpaceError {
+    fn code(&self) -> Option<&str> {
+        DescribeSpaceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeSpaceError {
+    /// Creates a new `DescribeSpaceError`.
+    pub fn new(kind: DescribeSpaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeSpaceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeSpaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeSpaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeSpaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeSpaceErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeSpaceErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for DescribeSpaceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeSpaceErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DescribeSpaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17005,6 +18833,130 @@ impl std::error::Error for GetSearchSuggestionsError {
     }
 }
 
+/// Error type for the `ImportHubContent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ImportHubContentError {
+    /// Kind of error that occurred.
+    pub kind: ImportHubContentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ImportHubContentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ImportHubContentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ImportHubContent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ImportHubContentErrorKind {
+    /// <p>Resource being accessed is in use.</p>
+    ResourceInUse(crate::error::ResourceInUse),
+    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
+    ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ImportHubContentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ImportHubContentErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            ImportHubContentErrorKind::ResourceLimitExceeded(_inner) => _inner.fmt(f),
+            ImportHubContentErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            ImportHubContentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ImportHubContentError {
+    fn code(&self) -> Option<&str> {
+        ImportHubContentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ImportHubContentError {
+    /// Creates a new `ImportHubContentError`.
+    pub fn new(kind: ImportHubContentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ImportHubContentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ImportHubContentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ImportHubContentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ImportHubContentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ImportHubContentErrorKind::ResourceInUse`.
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, ImportHubContentErrorKind::ResourceInUse(_))
+    }
+    /// Returns `true` if the error kind is `ImportHubContentErrorKind::ResourceLimitExceeded`.
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportHubContentErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportHubContentErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, ImportHubContentErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for ImportHubContentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ImportHubContentErrorKind::ResourceInUse(_inner) => Some(_inner),
+            ImportHubContentErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
+            ImportHubContentErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            ImportHubContentErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListActions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -17203,6 +19155,111 @@ impl std::error::Error for ListAlgorithmsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListAlgorithmsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListAliases` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListAliasesError {
+    /// Kind of error that occurred.
+    pub kind: ListAliasesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListAliasesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAliasesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListAliases` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListAliasesErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListAliasesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListAliasesErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            ListAliasesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListAliasesError {
+    fn code(&self) -> Option<&str> {
+        ListAliasesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListAliasesError {
+    /// Creates a new `ListAliasesError`.
+    pub fn new(kind: ListAliasesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListAliasesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListAliasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListAliasesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListAliasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, ListAliasesErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for ListAliasesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListAliasesErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            ListAliasesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19209,6 +21266,320 @@ impl std::error::Error for ListFlowDefinitionsError {
     }
 }
 
+/// Error type for the `ListHubContents` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListHubContentsError {
+    /// Kind of error that occurred.
+    pub kind: ListHubContentsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListHubContentsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListHubContentsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListHubContents` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListHubContentsErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListHubContentsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListHubContentsErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            ListHubContentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListHubContentsError {
+    fn code(&self) -> Option<&str> {
+        ListHubContentsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListHubContentsError {
+    /// Creates a new `ListHubContentsError`.
+    pub fn new(kind: ListHubContentsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListHubContentsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListHubContentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListHubContentsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListHubContentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListHubContentsErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, ListHubContentsErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for ListHubContentsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListHubContentsErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            ListHubContentsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListHubContentVersions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListHubContentVersionsError {
+    /// Kind of error that occurred.
+    pub kind: ListHubContentVersionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListHubContentVersionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListHubContentVersionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListHubContentVersions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListHubContentVersionsErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListHubContentVersionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListHubContentVersionsErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            ListHubContentVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListHubContentVersionsError {
+    fn code(&self) -> Option<&str> {
+        ListHubContentVersionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListHubContentVersionsError {
+    /// Creates a new `ListHubContentVersionsError`.
+    pub fn new(kind: ListHubContentVersionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListHubContentVersionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListHubContentVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListHubContentVersionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListHubContentVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListHubContentVersionsErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListHubContentVersionsErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for ListHubContentVersionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListHubContentVersionsErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            ListHubContentVersionsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListHubs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListHubsError {
+    /// Kind of error that occurred.
+    pub kind: ListHubsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListHubsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListHubsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListHubs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListHubsErrorKind {
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListHubsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListHubsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListHubsError {
+    fn code(&self) -> Option<&str> {
+        ListHubsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListHubsError {
+    /// Creates a new `ListHubsError`.
+    pub fn new(kind: ListHubsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListHubsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListHubsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListHubsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListHubsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ListHubsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListHubsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListHumanTaskUis` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -19611,6 +21982,109 @@ impl std::error::Error for ListImageVersionsError {
     }
 }
 
+/// Error type for the `ListInferenceExperiments` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListInferenceExperimentsError {
+    /// Kind of error that occurred.
+    pub kind: ListInferenceExperimentsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListInferenceExperimentsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListInferenceExperimentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListInferenceExperiments` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListInferenceExperimentsErrorKind {
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListInferenceExperimentsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListInferenceExperimentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListInferenceExperimentsError {
+    fn code(&self) -> Option<&str> {
+        ListInferenceExperimentsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListInferenceExperimentsError {
+    /// Creates a new `ListInferenceExperimentsError`.
+    pub fn new(kind: ListInferenceExperimentsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListInferenceExperimentsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListInferenceExperimentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListInferenceExperimentsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListInferenceExperimentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ListInferenceExperimentsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListInferenceExperimentsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListInferenceRecommendationsJobs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -19713,6 +22187,112 @@ impl std::error::Error for ListInferenceRecommendationsJobsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListInferenceRecommendationsJobsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListInferenceRecommendationsJobSteps` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListInferenceRecommendationsJobStepsError {
+    /// Kind of error that occurred.
+    pub kind: ListInferenceRecommendationsJobStepsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListInferenceRecommendationsJobStepsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListInferenceRecommendationsJobStepsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListInferenceRecommendationsJobSteps` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListInferenceRecommendationsJobStepsErrorKind {
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListInferenceRecommendationsJobStepsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListInferenceRecommendationsJobStepsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListInferenceRecommendationsJobStepsError {
+    fn code(&self) -> Option<&str> {
+        ListInferenceRecommendationsJobStepsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListInferenceRecommendationsJobStepsError {
+    /// Creates a new `ListInferenceRecommendationsJobStepsError`.
+    pub fn new(
+        kind: ListInferenceRecommendationsJobStepsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListInferenceRecommendationsJobStepsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListInferenceRecommendationsJobStepsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListInferenceRecommendationsJobStepsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListInferenceRecommendationsJobStepsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ListInferenceRecommendationsJobStepsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListInferenceRecommendationsJobStepsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20124,6 +22704,316 @@ impl std::error::Error for ListModelBiasJobDefinitionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListModelBiasJobDefinitionsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListModelCardExportJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListModelCardExportJobsError {
+    /// Kind of error that occurred.
+    pub kind: ListModelCardExportJobsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListModelCardExportJobsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListModelCardExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListModelCardExportJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListModelCardExportJobsErrorKind {
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListModelCardExportJobsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListModelCardExportJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListModelCardExportJobsError {
+    fn code(&self) -> Option<&str> {
+        ListModelCardExportJobsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListModelCardExportJobsError {
+    /// Creates a new `ListModelCardExportJobsError`.
+    pub fn new(kind: ListModelCardExportJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListModelCardExportJobsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListModelCardExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListModelCardExportJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListModelCardExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ListModelCardExportJobsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListModelCardExportJobsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListModelCards` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListModelCardsError {
+    /// Kind of error that occurred.
+    pub kind: ListModelCardsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListModelCardsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListModelCardsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListModelCards` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListModelCardsErrorKind {
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListModelCardsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListModelCardsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListModelCardsError {
+    fn code(&self) -> Option<&str> {
+        ListModelCardsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListModelCardsError {
+    /// Creates a new `ListModelCardsError`.
+    pub fn new(kind: ListModelCardsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListModelCardsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListModelCardsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListModelCardsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListModelCardsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ListModelCardsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListModelCardsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListModelCardVersions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListModelCardVersionsError {
+    /// Kind of error that occurred.
+    pub kind: ListModelCardVersionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListModelCardVersionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListModelCardVersionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListModelCardVersions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListModelCardVersionsErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListModelCardVersionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListModelCardVersionsErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            ListModelCardVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListModelCardVersionsError {
+    fn code(&self) -> Option<&str> {
+        ListModelCardVersionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListModelCardVersionsError {
+    /// Creates a new `ListModelCardVersionsError`.
+    pub fn new(kind: ListModelCardVersionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListModelCardVersionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListModelCardVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListModelCardVersionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListModelCardVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListModelCardVersionsErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListModelCardVersionsErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for ListModelCardVersionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListModelCardVersionsErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            ListModelCardVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20728,6 +23618,232 @@ impl std::error::Error for ListModelsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListModelsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListMonitoringAlertHistory` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMonitoringAlertHistoryError {
+    /// Kind of error that occurred.
+    pub kind: ListMonitoringAlertHistoryErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListMonitoringAlertHistoryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListMonitoringAlertHistoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListMonitoringAlertHistory` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMonitoringAlertHistoryErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListMonitoringAlertHistoryError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMonitoringAlertHistoryErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            ListMonitoringAlertHistoryErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListMonitoringAlertHistoryError {
+    fn code(&self) -> Option<&str> {
+        ListMonitoringAlertHistoryError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMonitoringAlertHistoryError {
+    /// Creates a new `ListMonitoringAlertHistoryError`.
+    pub fn new(kind: ListMonitoringAlertHistoryErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListMonitoringAlertHistoryError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMonitoringAlertHistoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListMonitoringAlertHistoryError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMonitoringAlertHistoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListMonitoringAlertHistoryErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMonitoringAlertHistoryErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for ListMonitoringAlertHistoryError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMonitoringAlertHistoryErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            ListMonitoringAlertHistoryErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListMonitoringAlerts` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMonitoringAlertsError {
+    /// Kind of error that occurred.
+    pub kind: ListMonitoringAlertsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListMonitoringAlertsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListMonitoringAlertsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListMonitoringAlerts` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMonitoringAlertsErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListMonitoringAlertsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMonitoringAlertsErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            ListMonitoringAlertsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListMonitoringAlertsError {
+    fn code(&self) -> Option<&str> {
+        ListMonitoringAlertsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMonitoringAlertsError {
+    /// Creates a new `ListMonitoringAlertsError`.
+    pub fn new(kind: ListMonitoringAlertsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListMonitoringAlertsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMonitoringAlertsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListMonitoringAlertsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMonitoringAlertsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListMonitoringAlertsErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMonitoringAlertsErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for ListMonitoringAlertsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMonitoringAlertsErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            ListMonitoringAlertsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21773,6 +24889,103 @@ impl std::error::Error for ListProjectsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListProjectsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListSpaces` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListSpacesError {
+    /// Kind of error that occurred.
+    pub kind: ListSpacesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListSpacesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListSpacesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListSpaces` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListSpacesErrorKind {
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListSpacesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListSpacesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListSpacesError {
+    fn code(&self) -> Option<&str> {
+        ListSpacesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListSpacesError {
+    /// Creates a new `ListSpacesError`.
+    pub fn new(kind: ListSpacesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListSpacesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListSpacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListSpacesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListSpacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ListSpacesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListSpacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -24026,6 +27239,131 @@ impl std::error::Error for StartEdgeDeploymentStageError {
     }
 }
 
+/// Error type for the `StartInferenceExperiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartInferenceExperimentError {
+    /// Kind of error that occurred.
+    pub kind: StartInferenceExperimentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartInferenceExperimentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `StartInferenceExperiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartInferenceExperimentErrorKind {
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for StartInferenceExperimentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartInferenceExperimentErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StartInferenceExperimentErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            StartInferenceExperimentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartInferenceExperimentError {
+    fn code(&self) -> Option<&str> {
+        StartInferenceExperimentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartInferenceExperimentError {
+    /// Creates a new `StartInferenceExperimentError`.
+    pub fn new(kind: StartInferenceExperimentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartInferenceExperimentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartInferenceExperimentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartInferenceExperimentErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartInferenceExperimentErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartInferenceExperimentErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartInferenceExperimentErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for StartInferenceExperimentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartInferenceExperimentErrorKind::ConflictException(_inner) => Some(_inner),
+            StartInferenceExperimentErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            StartInferenceExperimentErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `StartMonitoringSchedule` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -24895,6 +28233,129 @@ impl std::error::Error for StopHyperParameterTuningJobError {
         match &self.kind {
             StopHyperParameterTuningJobErrorKind::ResourceNotFound(_inner) => Some(_inner),
             StopHyperParameterTuningJobErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `StopInferenceExperiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StopInferenceExperimentError {
+    /// Kind of error that occurred.
+    pub kind: StopInferenceExperimentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StopInferenceExperimentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StopInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `StopInferenceExperiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StopInferenceExperimentErrorKind {
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for StopInferenceExperimentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StopInferenceExperimentErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StopInferenceExperimentErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            StopInferenceExperimentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StopInferenceExperimentError {
+    fn code(&self) -> Option<&str> {
+        StopInferenceExperimentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StopInferenceExperimentError {
+    /// Creates a new `StopInferenceExperimentError`.
+    pub fn new(kind: StopInferenceExperimentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StopInferenceExperimentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StopInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StopInferenceExperimentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StopInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StopInferenceExperimentErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopInferenceExperimentErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopInferenceExperimentErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopInferenceExperimentErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for StopInferenceExperimentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StopInferenceExperimentErrorKind::ConflictException(_inner) => Some(_inner),
+            StopInferenceExperimentErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            StopInferenceExperimentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -27195,6 +30656,111 @@ impl std::error::Error for UpdateFeatureMetadataError {
     }
 }
 
+/// Error type for the `UpdateHub` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateHubError {
+    /// Kind of error that occurred.
+    pub kind: UpdateHubErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateHubError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateHubErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateHub` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateHubErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateHubError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateHubErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            UpdateHubErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateHubError {
+    fn code(&self) -> Option<&str> {
+        UpdateHubError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateHubError {
+    /// Creates a new `UpdateHubError`.
+    pub fn new(kind: UpdateHubErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateHubError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateHubErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateHubError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateHubErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateHubErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateHubErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for UpdateHubError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateHubErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            UpdateHubErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `UpdateImage` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -27308,6 +30874,368 @@ impl std::error::Error for UpdateImageError {
     }
 }
 
+/// Error type for the `UpdateImageVersion` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateImageVersionError {
+    /// Kind of error that occurred.
+    pub kind: UpdateImageVersionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateImageVersionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateImageVersionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateImageVersion` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateImageVersionErrorKind {
+    /// <p>Resource being accessed is in use.</p>
+    ResourceInUse(crate::error::ResourceInUse),
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateImageVersionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateImageVersionErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            UpdateImageVersionErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            UpdateImageVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateImageVersionError {
+    fn code(&self) -> Option<&str> {
+        UpdateImageVersionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateImageVersionError {
+    /// Creates a new `UpdateImageVersionError`.
+    pub fn new(kind: UpdateImageVersionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateImageVersionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateImageVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateImageVersionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateImageVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateImageVersionErrorKind::ResourceInUse`.
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, UpdateImageVersionErrorKind::ResourceInUse(_))
+    }
+    /// Returns `true` if the error kind is `UpdateImageVersionErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateImageVersionErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for UpdateImageVersionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateImageVersionErrorKind::ResourceInUse(_inner) => Some(_inner),
+            UpdateImageVersionErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            UpdateImageVersionErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateInferenceExperiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateInferenceExperimentError {
+    /// Kind of error that occurred.
+    pub kind: UpdateInferenceExperimentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateInferenceExperimentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateInferenceExperiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateInferenceExperimentErrorKind {
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateInferenceExperimentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateInferenceExperimentErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateInferenceExperimentErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            UpdateInferenceExperimentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateInferenceExperimentError {
+    fn code(&self) -> Option<&str> {
+        UpdateInferenceExperimentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateInferenceExperimentError {
+    /// Creates a new `UpdateInferenceExperimentError`.
+    pub fn new(kind: UpdateInferenceExperimentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateInferenceExperimentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateInferenceExperimentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateInferenceExperimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateInferenceExperimentErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInferenceExperimentErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateInferenceExperimentErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInferenceExperimentErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for UpdateInferenceExperimentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateInferenceExperimentErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateInferenceExperimentErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            UpdateInferenceExperimentErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateModelCard` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateModelCardError {
+    /// Kind of error that occurred.
+    pub kind: UpdateModelCardErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateModelCardError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateModelCardErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateModelCard` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateModelCardErrorKind {
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
+    ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateModelCardError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateModelCardErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateModelCardErrorKind::ResourceLimitExceeded(_inner) => _inner.fmt(f),
+            UpdateModelCardErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            UpdateModelCardErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateModelCardError {
+    fn code(&self) -> Option<&str> {
+        UpdateModelCardError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateModelCardError {
+    /// Creates a new `UpdateModelCardError`.
+    pub fn new(kind: UpdateModelCardErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateModelCardError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateModelCardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateModelCardError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateModelCardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateModelCardErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateModelCardErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateModelCardErrorKind::ResourceLimitExceeded`.
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateModelCardErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateModelCardErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateModelCardErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for UpdateModelCardError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateModelCardErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateModelCardErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
+            UpdateModelCardErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            UpdateModelCardErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `UpdateModelPackage` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -27401,6 +31329,129 @@ impl std::error::Error for UpdateModelPackageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateModelPackageErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateMonitoringAlert` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateMonitoringAlertError {
+    /// Kind of error that occurred.
+    pub kind: UpdateMonitoringAlertErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateMonitoringAlertError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateMonitoringAlertErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateMonitoringAlert` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateMonitoringAlertErrorKind {
+    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
+    ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateMonitoringAlertError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateMonitoringAlertErrorKind::ResourceLimitExceeded(_inner) => _inner.fmt(f),
+            UpdateMonitoringAlertErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            UpdateMonitoringAlertErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateMonitoringAlertError {
+    fn code(&self) -> Option<&str> {
+        UpdateMonitoringAlertError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateMonitoringAlertError {
+    /// Creates a new `UpdateMonitoringAlertError`.
+    pub fn new(kind: UpdateMonitoringAlertErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateMonitoringAlertError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateMonitoringAlertErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateMonitoringAlertError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateMonitoringAlertErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateMonitoringAlertErrorKind::ResourceLimitExceeded`.
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMonitoringAlertErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateMonitoringAlertErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMonitoringAlertErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for UpdateMonitoringAlertError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateMonitoringAlertErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
+            UpdateMonitoringAlertErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            UpdateMonitoringAlertErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -28073,6 +32124,127 @@ impl std::error::Error for UpdateProjectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateProjectErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateSpace` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateSpaceError {
+    /// Kind of error that occurred.
+    pub kind: UpdateSpaceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateSpaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateSpaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateSpace` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateSpaceErrorKind {
+    /// <p>Resource being accessed is in use.</p>
+    ResourceInUse(crate::error::ResourceInUse),
+    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
+    ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateSpaceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateSpaceErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            UpdateSpaceErrorKind::ResourceLimitExceeded(_inner) => _inner.fmt(f),
+            UpdateSpaceErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            UpdateSpaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateSpaceError {
+    fn code(&self) -> Option<&str> {
+        UpdateSpaceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateSpaceError {
+    /// Creates a new `UpdateSpaceError`.
+    pub fn new(kind: UpdateSpaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateSpaceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateSpaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateSpaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateSpaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateSpaceErrorKind::ResourceInUse`.
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, UpdateSpaceErrorKind::ResourceInUse(_))
+    }
+    /// Returns `true` if the error kind is `UpdateSpaceErrorKind::ResourceLimitExceeded`.
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, UpdateSpaceErrorKind::ResourceLimitExceeded(_))
+    }
+    /// Returns `true` if the error kind is `UpdateSpaceErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateSpaceErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for UpdateSpaceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateSpaceErrorKind::ResourceInUse(_inner) => Some(_inner),
+            UpdateSpaceErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
+            UpdateSpaceErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            UpdateSpaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

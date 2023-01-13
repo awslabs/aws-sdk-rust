@@ -406,7 +406,7 @@ impl Tag {
     }
 }
 
-/// <p>Nameserver includes the following elements.</p>
+/// <p>Name server includes the following elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Nameserver {
@@ -487,6 +487,73 @@ impl Nameserver {
     /// Creates a new builder-style object to manufacture [`Nameserver`](crate::model::Nameserver).
     pub fn builder() -> crate::model::nameserver::Builder {
         crate::model::nameserver::Builder::default()
+    }
+}
+
+/// <p> Customer's consent for the owner change request. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Consent {
+    /// <p> Maximum amount the customer agreed to accept. </p>
+    #[doc(hidden)]
+    pub max_price: f64,
+    /// <p> Currency for the <code>MaxPrice</code>. </p>
+    #[doc(hidden)]
+    pub currency: std::option::Option<std::string::String>,
+}
+impl Consent {
+    /// <p> Maximum amount the customer agreed to accept. </p>
+    pub fn max_price(&self) -> f64 {
+        self.max_price
+    }
+    /// <p> Currency for the <code>MaxPrice</code>. </p>
+    pub fn currency(&self) -> std::option::Option<&str> {
+        self.currency.as_deref()
+    }
+}
+/// See [`Consent`](crate::model::Consent).
+pub mod consent {
+
+    /// A builder for [`Consent`](crate::model::Consent).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_price: std::option::Option<f64>,
+        pub(crate) currency: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> Maximum amount the customer agreed to accept. </p>
+        pub fn max_price(mut self, input: f64) -> Self {
+            self.max_price = Some(input);
+            self
+        }
+        /// <p> Maximum amount the customer agreed to accept. </p>
+        pub fn set_max_price(mut self, input: std::option::Option<f64>) -> Self {
+            self.max_price = input;
+            self
+        }
+        /// <p> Currency for the <code>MaxPrice</code>. </p>
+        pub fn currency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.currency = Some(input.into());
+            self
+        }
+        /// <p> Currency for the <code>MaxPrice</code>. </p>
+        pub fn set_currency(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Consent`](crate::model::Consent).
+        pub fn build(self) -> crate::model::Consent {
+            crate::model::Consent {
+                max_price: self.max_price.unwrap_or_default(),
+                currency: self.currency,
+            }
+        }
+    }
+}
+impl Consent {
+    /// Creates a new builder-style object to manufacture [`Consent`](crate::model::Consent).
+    pub fn builder() -> crate::model::consent::Builder {
+        crate::model::consent::Builder::default()
     }
 }
 
@@ -1124,7 +1191,7 @@ pub struct ExtraParam {
     /// </ul>
     /// </dd>
     /// <dt>
-    /// .co.uk, .me.uk, and .org.uk
+    /// .uk, .co.uk, .me.uk, and .org.uk
     /// </dt>
     /// <dd>
     /// <ul>
@@ -1402,7 +1469,7 @@ impl ExtraParam {
     /// </ul>
     /// </dd>
     /// <dt>
-    /// .co.uk, .me.uk, and .org.uk
+    /// .uk, .co.uk, .me.uk, and .org.uk
     /// </dt>
     /// <dd>
     /// <ul>
@@ -1699,7 +1766,7 @@ pub mod extra_param {
         /// </ul>
         /// </dd>
         /// <dt>
-        /// .co.uk, .me.uk, and .org.uk
+        /// .uk, .co.uk, .me.uk, and .org.uk
         /// </dt>
         /// <dd>
         /// <ul>
@@ -1974,7 +2041,7 @@ pub mod extra_param {
         /// </ul>
         /// </dd>
         /// <dt>
-        /// .co.uk, .me.uk, and .org.uk
+        /// .uk, .co.uk, .me.uk, and .org.uk
         /// </dt>
         /// <dd>
         /// <ul>
@@ -2057,6 +2124,7 @@ impl ExtraParam {
 /// match extraparamname {
 ///     ExtraParamName::AuIdNumber => { /* ... */ },
 ///     ExtraParamName::AuIdType => { /* ... */ },
+///     ExtraParamName::AuPriorityToken => { /* ... */ },
 ///     ExtraParamName::BirthCity => { /* ... */ },
 ///     ExtraParamName::BirthCountry => { /* ... */ },
 ///     ExtraParamName::BirthDateInYyyyMmDd => { /* ... */ },
@@ -2123,6 +2191,8 @@ pub enum ExtraParamName {
     #[allow(missing_docs)] // documentation missing in model
     AuIdType,
     #[allow(missing_docs)] // documentation missing in model
+    AuPriorityToken,
+    #[allow(missing_docs)] // documentation missing in model
     BirthCity,
     #[allow(missing_docs)] // documentation missing in model
     BirthCountry,
@@ -2186,6 +2256,7 @@ impl std::convert::From<&str> for ExtraParamName {
         match s {
             "AU_ID_NUMBER" => ExtraParamName::AuIdNumber,
             "AU_ID_TYPE" => ExtraParamName::AuIdType,
+            "AU_PRIORITY_TOKEN" => ExtraParamName::AuPriorityToken,
             "BIRTH_CITY" => ExtraParamName::BirthCity,
             "BIRTH_COUNTRY" => ExtraParamName::BirthCountry,
             "BIRTH_DATE_IN_YYYY_MM_DD" => ExtraParamName::BirthDateInYyyyMmDd,
@@ -2231,6 +2302,7 @@ impl ExtraParamName {
         match self {
             ExtraParamName::AuIdNumber => "AU_ID_NUMBER",
             ExtraParamName::AuIdType => "AU_ID_TYPE",
+            ExtraParamName::AuPriorityToken => "AU_PRIORITY_TOKEN",
             ExtraParamName::BirthCity => "BIRTH_CITY",
             ExtraParamName::BirthCountry => "BIRTH_COUNTRY",
             ExtraParamName::BirthDateInYyyyMmDd => "BIRTH_DATE_IN_YYYY_MM_DD",
@@ -2267,6 +2339,7 @@ impl ExtraParamName {
         &[
             "AU_ID_NUMBER",
             "AU_ID_TYPE",
+            "AU_PRIORITY_TOKEN",
             "BIRTH_CITY",
             "BIRTH_COUNTRY",
             "BIRTH_DATE_IN_YYYY_MM_DD",
@@ -4010,6 +4083,26 @@ pub struct OperationSummary {
     /// <p>The date when the request was submitted.</p>
     #[doc(hidden)]
     pub submitted_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Name of the domain. </p>
+    #[doc(hidden)]
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p> Message about the operation. </p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p> Automatically checks whether there are no outstanding operations on domains that need customer attention. </p>
+    /// <p> Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
+    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
+    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
+    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
+    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub status_flag: std::option::Option<crate::model::StatusFlag>,
+    /// <p> The date when the last change was made in Unix time format and Coordinated Universal Time (UTC). </p>
+    #[doc(hidden)]
+    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OperationSummary {
     /// <p>Identifier returned to track the requested action.</p>
@@ -4028,6 +4121,30 @@ impl OperationSummary {
     pub fn submitted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_date.as_ref()
     }
+    /// <p> Name of the domain. </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p> Message about the operation. </p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p> Automatically checks whether there are no outstanding operations on domains that need customer attention. </p>
+    /// <p> Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
+    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
+    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
+    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
+    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+    /// </ul>
+    pub fn status_flag(&self) -> std::option::Option<&crate::model::StatusFlag> {
+        self.status_flag.as_ref()
+    }
+    /// <p> The date when the last change was made in Unix time format and Coordinated Universal Time (UTC). </p>
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_date.as_ref()
+    }
 }
 /// See [`OperationSummary`](crate::model::OperationSummary).
 pub mod operation_summary {
@@ -4039,6 +4156,10 @@ pub mod operation_summary {
         pub(crate) status: std::option::Option<crate::model::OperationStatus>,
         pub(crate) r#type: std::option::Option<crate::model::OperationType>,
         pub(crate) submitted_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) status_flag: std::option::Option<crate::model::StatusFlag>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Identifier returned to track the requested action.</p>
@@ -4087,6 +4208,68 @@ pub mod operation_summary {
             self.submitted_date = input;
             self
         }
+        /// <p> Name of the domain. </p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p> Name of the domain. </p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p> Message about the operation. </p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p> Message about the operation. </p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p> Automatically checks whether there are no outstanding operations on domains that need customer attention. </p>
+        /// <p> Valid values are:</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
+        /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
+        /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
+        /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
+        /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+        /// </ul>
+        pub fn status_flag(mut self, input: crate::model::StatusFlag) -> Self {
+            self.status_flag = Some(input);
+            self
+        }
+        /// <p> Automatically checks whether there are no outstanding operations on domains that need customer attention. </p>
+        /// <p> Valid values are:</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
+        /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
+        /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
+        /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
+        /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+        /// </ul>
+        pub fn set_status_flag(
+            mut self,
+            input: std::option::Option<crate::model::StatusFlag>,
+        ) -> Self {
+            self.status_flag = input;
+            self
+        }
+        /// <p> The date when the last change was made in Unix time format and Coordinated Universal Time (UTC). </p>
+        pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_date = Some(input);
+            self
+        }
+        /// <p> The date when the last change was made in Unix time format and Coordinated Universal Time (UTC). </p>
+        pub fn set_last_updated_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_date = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OperationSummary`](crate::model::OperationSummary).
         pub fn build(self) -> crate::model::OperationSummary {
             crate::model::OperationSummary {
@@ -4094,6 +4277,10 @@ pub mod operation_summary {
                 status: self.status,
                 r#type: self.r#type,
                 submitted_date: self.submitted_date,
+                domain_name: self.domain_name,
+                message: self.message,
+                status_flag: self.status_flag,
+                last_updated_date: self.last_updated_date,
             }
         }
     }
@@ -4102,6 +4289,117 @@ impl OperationSummary {
     /// Creates a new builder-style object to manufacture [`OperationSummary`](crate::model::OperationSummary).
     pub fn builder() -> crate::model::operation_summary::Builder {
         crate::model::operation_summary::Builder::default()
+    }
+}
+
+/// When writing a match expression against `StatusFlag`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let statusflag = unimplemented!();
+/// match statusflag {
+///     StatusFlag::PendingAcceptance => { /* ... */ },
+///     StatusFlag::PendingAuthorization => { /* ... */ },
+///     StatusFlag::PendingCustomerAction => { /* ... */ },
+///     StatusFlag::PendingPaymentVerification => { /* ... */ },
+///     StatusFlag::PendingSupportCase => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `statusflag` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StatusFlag::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StatusFlag::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StatusFlag::NewFeature` is defined.
+/// Specifically, when `statusflag` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StatusFlag::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StatusFlag {
+    #[allow(missing_docs)] // documentation missing in model
+    PendingAcceptance,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingAuthorization,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingCustomerAction,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingPaymentVerification,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingSupportCase,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for StatusFlag {
+    fn from(s: &str) -> Self {
+        match s {
+            "PENDING_ACCEPTANCE" => StatusFlag::PendingAcceptance,
+            "PENDING_AUTHORIZATION" => StatusFlag::PendingAuthorization,
+            "PENDING_CUSTOMER_ACTION" => StatusFlag::PendingCustomerAction,
+            "PENDING_PAYMENT_VERIFICATION" => StatusFlag::PendingPaymentVerification,
+            "PENDING_SUPPORT_CASE" => StatusFlag::PendingSupportCase,
+            other => StatusFlag::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for StatusFlag {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StatusFlag::from(s))
+    }
+}
+impl StatusFlag {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StatusFlag::PendingAcceptance => "PENDING_ACCEPTANCE",
+            StatusFlag::PendingAuthorization => "PENDING_AUTHORIZATION",
+            StatusFlag::PendingCustomerAction => "PENDING_CUSTOMER_ACTION",
+            StatusFlag::PendingPaymentVerification => "PENDING_PAYMENT_VERIFICATION",
+            StatusFlag::PendingSupportCase => "PENDING_SUPPORT_CASE",
+            StatusFlag::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "PENDING_ACCEPTANCE",
+            "PENDING_AUTHORIZATION",
+            "PENDING_CUSTOMER_ACTION",
+            "PENDING_PAYMENT_VERIFICATION",
+            "PENDING_SUPPORT_CASE",
+        ]
+    }
+}
+impl AsRef<str> for StatusFlag {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4205,6 +4503,183 @@ impl OperationStatus {
     }
 }
 impl AsRef<str> for OperationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `SortOrder`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sortorder = unimplemented!();
+/// match sortorder {
+///     SortOrder::Asc => { /* ... */ },
+///     SortOrder::Desc => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sortorder` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SortOrder::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SortOrder::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SortOrder::NewFeature` is defined.
+/// Specifically, when `sortorder` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SortOrder::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SortOrder {
+    #[allow(missing_docs)] // documentation missing in model
+    Asc,
+    #[allow(missing_docs)] // documentation missing in model
+    Desc,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SortOrder {
+    fn from(s: &str) -> Self {
+        match s {
+            "ASC" => SortOrder::Asc,
+            "DESC" => SortOrder::Desc,
+            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for SortOrder {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SortOrder::from(s))
+    }
+}
+impl SortOrder {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SortOrder::Asc => "ASC",
+            SortOrder::Desc => "DESC",
+            SortOrder::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ASC", "DESC"]
+    }
+}
+impl AsRef<str> for SortOrder {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `ListOperationsSortAttributeName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let listoperationssortattributename = unimplemented!();
+/// match listoperationssortattributename {
+///     ListOperationsSortAttributeName::SubmittedDate => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `listoperationssortattributename` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ListOperationsSortAttributeName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ListOperationsSortAttributeName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ListOperationsSortAttributeName::NewFeature` is defined.
+/// Specifically, when `listoperationssortattributename` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ListOperationsSortAttributeName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ListOperationsSortAttributeName {
+    #[allow(missing_docs)] // documentation missing in model
+    SubmittedDate,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ListOperationsSortAttributeName {
+    fn from(s: &str) -> Self {
+        match s {
+            "SubmittedDate" => ListOperationsSortAttributeName::SubmittedDate,
+            other => ListOperationsSortAttributeName::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for ListOperationsSortAttributeName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ListOperationsSortAttributeName::from(s))
+    }
+}
+impl ListOperationsSortAttributeName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ListOperationsSortAttributeName::SubmittedDate => "SubmittedDate",
+            ListOperationsSortAttributeName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["SubmittedDate"]
+    }
+}
+impl AsRef<str> for ListOperationsSortAttributeName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -4388,96 +4863,6 @@ impl SortCondition {
     /// Creates a new builder-style object to manufacture [`SortCondition`](crate::model::SortCondition).
     pub fn builder() -> crate::model::sort_condition::Builder {
         crate::model::sort_condition::Builder::default()
-    }
-}
-
-/// When writing a match expression against `SortOrder`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let sortorder = unimplemented!();
-/// match sortorder {
-///     SortOrder::Asc => { /* ... */ },
-///     SortOrder::Desc => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `sortorder` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `SortOrder::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `SortOrder::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `SortOrder::NewFeature` is defined.
-/// Specifically, when `sortorder` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `SortOrder::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum SortOrder {
-    #[allow(missing_docs)] // documentation missing in model
-    Asc,
-    #[allow(missing_docs)] // documentation missing in model
-    Desc,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for SortOrder {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASC" => SortOrder::Asc,
-            "DESC" => SortOrder::Desc,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for SortOrder {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SortOrder::from(s))
-    }
-}
-impl SortOrder {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortOrder::Asc => "ASC",
-            SortOrder::Desc => "DESC",
-            SortOrder::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ASC", "DESC"]
-    }
-}
-impl AsRef<str> for SortOrder {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -5089,6 +5474,189 @@ impl DomainSuggestion {
     }
 }
 
+/// <p>Information about the DNSSEC key.</p>
+/// <p>You get this from your DNS provider and then give it to Route&nbsp;53 (by using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>) to pass it to the registry to establish the chain of trust.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DnssecKey {
+    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p>
+    /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p>
+    /// <p>For more information about enabling DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling DNSSEC signing and establishing a chain of trust</a>.</p>
+    #[doc(hidden)]
+    pub algorithm: std::option::Option<i32>,
+    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p>
+    /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
+    #[doc(hidden)]
+    pub flags: std::option::Option<i32>,
+    /// <p>The base64-encoded public key part of the key pair that is passed to the registry .</p>
+    #[doc(hidden)]
+    pub public_key: std::option::Option<std::string::String>,
+    /// <p> The number of the DS digest algorithm according to an IANA assignment.</p>
+    /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms. </p>
+    #[doc(hidden)]
+    pub digest_type: std::option::Option<i32>,
+    /// <p> The delegation signer digest.</p>
+    /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records. </p>
+    #[doc(hidden)]
+    pub digest: std::option::Option<std::string::String>,
+    /// <p> A numeric identification of the DNSKEY record referred to by this DS record. </p>
+    #[doc(hidden)]
+    pub key_tag: std::option::Option<i32>,
+    /// <p> An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+}
+impl DnssecKey {
+    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p>
+    /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p>
+    /// <p>For more information about enabling DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling DNSSEC signing and establishing a chain of trust</a>.</p>
+    pub fn algorithm(&self) -> std::option::Option<i32> {
+        self.algorithm
+    }
+    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p>
+    /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
+    pub fn flags(&self) -> std::option::Option<i32> {
+        self.flags
+    }
+    /// <p>The base64-encoded public key part of the key pair that is passed to the registry .</p>
+    pub fn public_key(&self) -> std::option::Option<&str> {
+        self.public_key.as_deref()
+    }
+    /// <p> The number of the DS digest algorithm according to an IANA assignment.</p>
+    /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms. </p>
+    pub fn digest_type(&self) -> std::option::Option<i32> {
+        self.digest_type
+    }
+    /// <p> The delegation signer digest.</p>
+    /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records. </p>
+    pub fn digest(&self) -> std::option::Option<&str> {
+        self.digest.as_deref()
+    }
+    /// <p> A numeric identification of the DNSKEY record referred to by this DS record. </p>
+    pub fn key_tag(&self) -> std::option::Option<i32> {
+        self.key_tag
+    }
+    /// <p> An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+/// See [`DnssecKey`](crate::model::DnssecKey).
+pub mod dnssec_key {
+
+    /// A builder for [`DnssecKey`](crate::model::DnssecKey).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) algorithm: std::option::Option<i32>,
+        pub(crate) flags: std::option::Option<i32>,
+        pub(crate) public_key: std::option::Option<std::string::String>,
+        pub(crate) digest_type: std::option::Option<i32>,
+        pub(crate) digest: std::option::Option<std::string::String>,
+        pub(crate) key_tag: std::option::Option<i32>,
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p>
+        /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p>
+        /// <p>For more information about enabling DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling DNSSEC signing and establishing a chain of trust</a>.</p>
+        pub fn algorithm(mut self, input: i32) -> Self {
+            self.algorithm = Some(input);
+            self
+        }
+        /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p>
+        /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p>
+        /// <p>For more information about enabling DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling DNSSEC signing and establishing a chain of trust</a>.</p>
+        pub fn set_algorithm(mut self, input: std::option::Option<i32>) -> Self {
+            self.algorithm = input;
+            self
+        }
+        /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p>
+        /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
+        pub fn flags(mut self, input: i32) -> Self {
+            self.flags = Some(input);
+            self
+        }
+        /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p>
+        /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
+        pub fn set_flags(mut self, input: std::option::Option<i32>) -> Self {
+            self.flags = input;
+            self
+        }
+        /// <p>The base64-encoded public key part of the key pair that is passed to the registry .</p>
+        pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.public_key = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded public key part of the key pair that is passed to the registry .</p>
+        pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_key = input;
+            self
+        }
+        /// <p> The number of the DS digest algorithm according to an IANA assignment.</p>
+        /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms. </p>
+        pub fn digest_type(mut self, input: i32) -> Self {
+            self.digest_type = Some(input);
+            self
+        }
+        /// <p> The number of the DS digest algorithm according to an IANA assignment.</p>
+        /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms. </p>
+        pub fn set_digest_type(mut self, input: std::option::Option<i32>) -> Self {
+            self.digest_type = input;
+            self
+        }
+        /// <p> The delegation signer digest.</p>
+        /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records. </p>
+        pub fn digest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.digest = Some(input.into());
+            self
+        }
+        /// <p> The delegation signer digest.</p>
+        /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records. </p>
+        pub fn set_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.digest = input;
+            self
+        }
+        /// <p> A numeric identification of the DNSKEY record referred to by this DS record. </p>
+        pub fn key_tag(mut self, input: i32) -> Self {
+            self.key_tag = Some(input);
+            self
+        }
+        /// <p> A numeric identification of the DNSKEY record referred to by this DS record. </p>
+        pub fn set_key_tag(mut self, input: std::option::Option<i32>) -> Self {
+            self.key_tag = input;
+            self
+        }
+        /// <p> An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p> An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DnssecKey`](crate::model::DnssecKey).
+        pub fn build(self) -> crate::model::DnssecKey {
+            crate::model::DnssecKey {
+                algorithm: self.algorithm,
+                flags: self.flags,
+                public_key: self.public_key,
+                digest_type: self.digest_type,
+                digest: self.digest,
+                key_tag: self.key_tag,
+                id: self.id,
+            }
+        }
+    }
+}
+impl DnssecKey {
+    /// Creates a new builder-style object to manufacture [`DnssecKey`](crate::model::DnssecKey).
+    pub fn builder() -> crate::model::dnssec_key::Builder {
+        crate::model::dnssec_key::Builder::default()
+    }
+}
+
 /// When writing a match expression against `ReachabilityStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
 /// feature that is supported by the service but has not been represented as an enum
@@ -5191,7 +5759,7 @@ impl AsRef<str> for ReachabilityStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainTransferability {
     /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
-    /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p>
+    /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
     /// <dl>
@@ -5212,6 +5780,24 @@ pub struct DomainTransferability {
     /// </dt>
     /// <dd>
     /// <p>Reserved for future use.</p>
+    /// </dd>
+    /// <dt>
+    /// DOMAIN_IN_OWN_ACCOUNT
+    /// </dt>
+    /// <dd>
+    /// <p>The domain already exists in the current Amazon Web Services account.</p>
+    /// </dd>
+    /// <dt>
+    /// DOMAIN_IN_ANOTHER_ACCOUNT
+    /// </dt>
+    /// <dd>
+    /// <p> the domain exists in another Amazon Web Services account.</p>
+    /// </dd>
+    /// <dt>
+    /// PREMIUM_DOMAIN
+    /// </dt>
+    /// <dd>
+    /// <p>Premium domain transfer is not supported.</p>
     /// </dd>
     /// </dl>
     #[doc(hidden)]
@@ -5219,7 +5805,7 @@ pub struct DomainTransferability {
 }
 impl DomainTransferability {
     /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
-    /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p>
+    /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
     /// <dl>
@@ -5240,6 +5826,24 @@ impl DomainTransferability {
     /// </dt>
     /// <dd>
     /// <p>Reserved for future use.</p>
+    /// </dd>
+    /// <dt>
+    /// DOMAIN_IN_OWN_ACCOUNT
+    /// </dt>
+    /// <dd>
+    /// <p>The domain already exists in the current Amazon Web Services account.</p>
+    /// </dd>
+    /// <dt>
+    /// DOMAIN_IN_ANOTHER_ACCOUNT
+    /// </dt>
+    /// <dd>
+    /// <p> the domain exists in another Amazon Web Services account.</p>
+    /// </dd>
+    /// <dt>
+    /// PREMIUM_DOMAIN
+    /// </dt>
+    /// <dd>
+    /// <p>Premium domain transfer is not supported.</p>
     /// </dd>
     /// </dl>
     pub fn transferable(&self) -> std::option::Option<&crate::model::Transferable> {
@@ -5256,7 +5860,7 @@ pub mod domain_transferability {
     }
     impl Builder {
         /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
-        /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p>
+        /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
         /// </note>
         /// <p>Valid values:</p>
         /// <dl>
@@ -5277,6 +5881,24 @@ pub mod domain_transferability {
         /// </dt>
         /// <dd>
         /// <p>Reserved for future use.</p>
+        /// </dd>
+        /// <dt>
+        /// DOMAIN_IN_OWN_ACCOUNT
+        /// </dt>
+        /// <dd>
+        /// <p>The domain already exists in the current Amazon Web Services account.</p>
+        /// </dd>
+        /// <dt>
+        /// DOMAIN_IN_ANOTHER_ACCOUNT
+        /// </dt>
+        /// <dd>
+        /// <p> the domain exists in another Amazon Web Services account.</p>
+        /// </dd>
+        /// <dt>
+        /// PREMIUM_DOMAIN
+        /// </dt>
+        /// <dd>
+        /// <p>Premium domain transfer is not supported.</p>
         /// </dd>
         /// </dl>
         pub fn transferable(mut self, input: crate::model::Transferable) -> Self {
@@ -5284,7 +5906,7 @@ pub mod domain_transferability {
             self
         }
         /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
-        /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p>
+        /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
         /// </note>
         /// <p>Valid values:</p>
         /// <dl>
@@ -5305,6 +5927,24 @@ pub mod domain_transferability {
         /// </dt>
         /// <dd>
         /// <p>Reserved for future use.</p>
+        /// </dd>
+        /// <dt>
+        /// DOMAIN_IN_OWN_ACCOUNT
+        /// </dt>
+        /// <dd>
+        /// <p>The domain already exists in the current Amazon Web Services account.</p>
+        /// </dd>
+        /// <dt>
+        /// DOMAIN_IN_ANOTHER_ACCOUNT
+        /// </dt>
+        /// <dd>
+        /// <p> the domain exists in another Amazon Web Services account.</p>
+        /// </dd>
+        /// <dt>
+        /// PREMIUM_DOMAIN
+        /// </dt>
+        /// <dd>
+        /// <p>Premium domain transfer is not supported.</p>
         /// </dd>
         /// </dl>
         pub fn set_transferable(
@@ -5341,7 +5981,10 @@ impl DomainTransferability {
 /// ```text
 /// # let transferable = unimplemented!();
 /// match transferable {
+///     Transferable::DomainInAnotherAccount => { /* ... */ },
+///     Transferable::DomainInOwnAccount => { /* ... */ },
 ///     Transferable::DontKnow => { /* ... */ },
+///     Transferable::PremiumDomain => { /* ... */ },
 ///     Transferable::Transferable => { /* ... */ },
 ///     Transferable::Untransferable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -5367,9 +6010,9 @@ impl DomainTransferability {
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Whether the domain name can be transferred to Route 53.</p>
 /// <note>
-/// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p>
+/// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or
+/// <code>Transferable</code>.</p>
 /// </note>
-///
 /// <p>Valid values:</p>
 /// <dl>
 /// <dt>TRANSFERABLE</dt>
@@ -5384,6 +6027,18 @@ impl DomainTransferability {
 /// <dd>
 /// <p>Reserved for future use.</p>
 /// </dd>
+/// <dt>DOMAIN_IN_OWN_ACCOUNT</dt>
+/// <dd>
+/// <p>The domain already exists in the current Amazon Web Services account.</p>
+/// </dd>
+/// <dt>DOMAIN_IN_ANOTHER_ACCOUNT</dt>
+/// <dd>
+/// <p> the domain exists in another Amazon Web Services account.</p>
+/// </dd>
+/// <dt>PREMIUM_DOMAIN</dt>
+/// <dd>
+/// <p>Premium domain transfer is not supported.</p>
+/// </dd>
 /// </dl>
 #[non_exhaustive]
 #[derive(
@@ -5397,7 +6052,13 @@ impl DomainTransferability {
 )]
 pub enum Transferable {
     #[allow(missing_docs)] // documentation missing in model
+    DomainInAnotherAccount,
+    #[allow(missing_docs)] // documentation missing in model
+    DomainInOwnAccount,
+    #[allow(missing_docs)] // documentation missing in model
     DontKnow,
+    #[allow(missing_docs)] // documentation missing in model
+    PremiumDomain,
     #[allow(missing_docs)] // documentation missing in model
     Transferable,
     #[allow(missing_docs)] // documentation missing in model
@@ -5408,7 +6069,10 @@ pub enum Transferable {
 impl std::convert::From<&str> for Transferable {
     fn from(s: &str) -> Self {
         match s {
+            "DOMAIN_IN_ANOTHER_ACCOUNT" => Transferable::DomainInAnotherAccount,
+            "DOMAIN_IN_OWN_ACCOUNT" => Transferable::DomainInOwnAccount,
             "DONT_KNOW" => Transferable::DontKnow,
+            "PREMIUM_DOMAIN" => Transferable::PremiumDomain,
             "TRANSFERABLE" => Transferable::Transferable,
             "UNTRANSFERABLE" => Transferable::Untransferable,
             other => Transferable::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
@@ -5426,7 +6090,10 @@ impl Transferable {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Transferable::DomainInAnotherAccount => "DOMAIN_IN_ANOTHER_ACCOUNT",
+            Transferable::DomainInOwnAccount => "DOMAIN_IN_OWN_ACCOUNT",
             Transferable::DontKnow => "DONT_KNOW",
+            Transferable::PremiumDomain => "PREMIUM_DOMAIN",
             Transferable::Transferable => "TRANSFERABLE",
             Transferable::Untransferable => "UNTRANSFERABLE",
             Transferable::Unknown(value) => value.as_str(),
@@ -5434,7 +6101,14 @@ impl Transferable {
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DONT_KNOW", "TRANSFERABLE", "UNTRANSFERABLE"]
+        &[
+            "DOMAIN_IN_ANOTHER_ACCOUNT",
+            "DOMAIN_IN_OWN_ACCOUNT",
+            "DONT_KNOW",
+            "PREMIUM_DOMAIN",
+            "TRANSFERABLE",
+            "UNTRANSFERABLE",
+        ]
     }
 }
 impl AsRef<str> for Transferable {
@@ -5571,5 +6245,95 @@ impl DomainAvailability {
 impl AsRef<str> for DomainAvailability {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Information about a delegation signer (DS) record that was created in the registry by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DnssecSigningAttributes {
+    /// <p> Algorithm which was used to generate the digest from the public key. </p>
+    #[doc(hidden)]
+    pub algorithm: std::option::Option<i32>,
+    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
+    /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
+    #[doc(hidden)]
+    pub flags: std::option::Option<i32>,
+    /// <p> The base64-encoded public key part of the key pair that is passed to the registry. </p>
+    #[doc(hidden)]
+    pub public_key: std::option::Option<std::string::String>,
+}
+impl DnssecSigningAttributes {
+    /// <p> Algorithm which was used to generate the digest from the public key. </p>
+    pub fn algorithm(&self) -> std::option::Option<i32> {
+        self.algorithm
+    }
+    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
+    /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
+    pub fn flags(&self) -> std::option::Option<i32> {
+        self.flags
+    }
+    /// <p> The base64-encoded public key part of the key pair that is passed to the registry. </p>
+    pub fn public_key(&self) -> std::option::Option<&str> {
+        self.public_key.as_deref()
+    }
+}
+/// See [`DnssecSigningAttributes`](crate::model::DnssecSigningAttributes).
+pub mod dnssec_signing_attributes {
+
+    /// A builder for [`DnssecSigningAttributes`](crate::model::DnssecSigningAttributes).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) algorithm: std::option::Option<i32>,
+        pub(crate) flags: std::option::Option<i32>,
+        pub(crate) public_key: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> Algorithm which was used to generate the digest from the public key. </p>
+        pub fn algorithm(mut self, input: i32) -> Self {
+            self.algorithm = Some(input);
+            self
+        }
+        /// <p> Algorithm which was used to generate the digest from the public key. </p>
+        pub fn set_algorithm(mut self, input: std::option::Option<i32>) -> Self {
+            self.algorithm = input;
+            self
+        }
+        /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
+        /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
+        pub fn flags(mut self, input: i32) -> Self {
+            self.flags = Some(input);
+            self
+        }
+        /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
+        /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
+        pub fn set_flags(mut self, input: std::option::Option<i32>) -> Self {
+            self.flags = input;
+            self
+        }
+        /// <p> The base64-encoded public key part of the key pair that is passed to the registry. </p>
+        pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.public_key = Some(input.into());
+            self
+        }
+        /// <p> The base64-encoded public key part of the key pair that is passed to the registry. </p>
+        pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_key = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DnssecSigningAttributes`](crate::model::DnssecSigningAttributes).
+        pub fn build(self) -> crate::model::DnssecSigningAttributes {
+            crate::model::DnssecSigningAttributes {
+                algorithm: self.algorithm,
+                flags: self.flags,
+                public_key: self.public_key,
+            }
+        }
+    }
+}
+impl DnssecSigningAttributes {
+    /// Creates a new builder-style object to manufacture [`DnssecSigningAttributes`](crate::model::DnssecSigningAttributes).
+    pub fn builder() -> crate::model::dnssec_signing_attributes::Builder {
+        crate::model::dnssec_signing_attributes::Builder::default()
     }
 }

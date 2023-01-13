@@ -481,6 +481,7 @@ impl AsRef<str> for SyncAction {
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
 ///     ResourceType::CfnStack => { /* ... */ },
+///     ResourceType::ResourceTagValue => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -516,6 +517,8 @@ impl AsRef<str> for SyncAction {
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     CfnStack,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceTagValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -523,6 +526,7 @@ impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "CFN_STACK" => ResourceType::CfnStack,
+            "RESOURCE_TAG_VALUE" => ResourceType::ResourceTagValue,
             other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -539,17 +543,123 @@ impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::CfnStack => "CFN_STACK",
+            ResourceType::ResourceTagValue => "RESOURCE_TAG_VALUE",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CFN_STACK"]
+        &["CFN_STACK", "RESOURCE_TAG_VALUE"]
     }
 }
 impl AsRef<str> for ResourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p> Includes all of the Service Catalog AppRegistry settings. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AppRegistryConfiguration {
+    /// <p> Includes the definition of a <code>tagQuery</code>. </p>
+    #[doc(hidden)]
+    pub tag_query_configuration: std::option::Option<crate::model::TagQueryConfiguration>,
+}
+impl AppRegistryConfiguration {
+    /// <p> Includes the definition of a <code>tagQuery</code>. </p>
+    pub fn tag_query_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TagQueryConfiguration> {
+        self.tag_query_configuration.as_ref()
+    }
+}
+/// See [`AppRegistryConfiguration`](crate::model::AppRegistryConfiguration).
+pub mod app_registry_configuration {
+
+    /// A builder for [`AppRegistryConfiguration`](crate::model::AppRegistryConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tag_query_configuration:
+            std::option::Option<crate::model::TagQueryConfiguration>,
+    }
+    impl Builder {
+        /// <p> Includes the definition of a <code>tagQuery</code>. </p>
+        pub fn tag_query_configuration(
+            mut self,
+            input: crate::model::TagQueryConfiguration,
+        ) -> Self {
+            self.tag_query_configuration = Some(input);
+            self
+        }
+        /// <p> Includes the definition of a <code>tagQuery</code>. </p>
+        pub fn set_tag_query_configuration(
+            mut self,
+            input: std::option::Option<crate::model::TagQueryConfiguration>,
+        ) -> Self {
+            self.tag_query_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AppRegistryConfiguration`](crate::model::AppRegistryConfiguration).
+        pub fn build(self) -> crate::model::AppRegistryConfiguration {
+            crate::model::AppRegistryConfiguration {
+                tag_query_configuration: self.tag_query_configuration,
+            }
+        }
+    }
+}
+impl AppRegistryConfiguration {
+    /// Creates a new builder-style object to manufacture [`AppRegistryConfiguration`](crate::model::AppRegistryConfiguration).
+    pub fn builder() -> crate::model::app_registry_configuration::Builder {
+        crate::model::app_registry_configuration::Builder::default()
+    }
+}
+
+/// <p> The definition of <code>tagQuery</code>. Specifies which resources are associated with an application. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TagQueryConfiguration {
+    /// <p> Condition in the IAM policy that associates resources to an application. </p>
+    #[doc(hidden)]
+    pub tag_key: std::option::Option<std::string::String>,
+}
+impl TagQueryConfiguration {
+    /// <p> Condition in the IAM policy that associates resources to an application. </p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+}
+/// See [`TagQueryConfiguration`](crate::model::TagQueryConfiguration).
+pub mod tag_query_configuration {
+
+    /// A builder for [`TagQueryConfiguration`](crate::model::TagQueryConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tag_key: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> Condition in the IAM policy that associates resources to an application. </p>
+        pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_key = Some(input.into());
+            self
+        }
+        /// <p> Condition in the IAM policy that associates resources to an application. </p>
+        pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tag_key = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TagQueryConfiguration`](crate::model::TagQueryConfiguration).
+        pub fn build(self) -> crate::model::TagQueryConfiguration {
+            crate::model::TagQueryConfiguration {
+                tag_key: self.tag_key,
+            }
+        }
+    }
+}
+impl TagQueryConfiguration {
+    /// Creates a new builder-style object to manufacture [`TagQueryConfiguration`](crate::model::TagQueryConfiguration).
+    pub fn builder() -> crate::model::tag_query_configuration::Builder {
+        crate::model::tag_query_configuration::Builder::default()
     }
 }
 
@@ -563,7 +673,13 @@ pub struct AttributeGroupDetails {
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The name of the attribute group. </p>
+    /// <important>
+    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
+    /// </important>
+    /// <p> The name of the attribute group. </p>
+    #[deprecated(
+        note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
+    )]
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
@@ -576,7 +692,13 @@ impl AttributeGroupDetails {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The name of the attribute group. </p>
+    /// <important>
+    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
+    /// </important>
+    /// <p> The name of the attribute group. </p>
+    #[deprecated(
+        note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
+    )]
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -612,12 +734,24 @@ pub mod attribute_group_details {
             self.arn = input;
             self
         }
-        /// <p>The name of the attribute group. </p>
+        /// <important>
+        /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
+        /// </important>
+        /// <p> The name of the attribute group. </p>
+        #[deprecated(
+            note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
+        )]
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the attribute group. </p>
+        /// <important>
+        /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
+        /// </important>
+        /// <p> The name of the attribute group. </p>
+        #[deprecated(
+            note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
+        )]
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -798,6 +932,12 @@ pub struct ResourceInfo {
     /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    /// <p> Provides information about the Service Catalog App Registry resource type. </p>
+    #[doc(hidden)]
+    pub resource_type: std::option::Option<crate::model::ResourceType>,
+    /// <p> The details related to the resource. </p>
+    #[doc(hidden)]
+    pub resource_details: std::option::Option<crate::model::ResourceDetails>,
 }
 impl ResourceInfo {
     /// <p>The name of the resource.</p>
@@ -808,6 +948,14 @@ impl ResourceInfo {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
+    /// <p> Provides information about the Service Catalog App Registry resource type. </p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p> The details related to the resource. </p>
+    pub fn resource_details(&self) -> std::option::Option<&crate::model::ResourceDetails> {
+        self.resource_details.as_ref()
+    }
 }
 /// See [`ResourceInfo`](crate::model::ResourceInfo).
 pub mod resource_info {
@@ -817,6 +965,8 @@ pub mod resource_info {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
+        pub(crate) resource_details: std::option::Option<crate::model::ResourceDetails>,
     }
     impl Builder {
         /// <p>The name of the resource.</p>
@@ -839,11 +989,39 @@ pub mod resource_info {
             self.arn = input;
             self
         }
+        /// <p> Provides information about the Service Catalog App Registry resource type. </p>
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.resource_type = Some(input);
+            self
+        }
+        /// <p> Provides information about the Service Catalog App Registry resource type. </p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::ResourceType>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p> The details related to the resource. </p>
+        pub fn resource_details(mut self, input: crate::model::ResourceDetails) -> Self {
+            self.resource_details = Some(input);
+            self
+        }
+        /// <p> The details related to the resource. </p>
+        pub fn set_resource_details(
+            mut self,
+            input: std::option::Option<crate::model::ResourceDetails>,
+        ) -> Self {
+            self.resource_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResourceInfo`](crate::model::ResourceInfo).
         pub fn build(self) -> crate::model::ResourceInfo {
             crate::model::ResourceInfo {
                 name: self.name,
                 arn: self.arn,
+                resource_type: self.resource_type,
+                resource_details: self.resource_details,
             }
         }
     }
@@ -852,6 +1030,54 @@ impl ResourceInfo {
     /// Creates a new builder-style object to manufacture [`ResourceInfo`](crate::model::ResourceInfo).
     pub fn builder() -> crate::model::resource_info::Builder {
         crate::model::resource_info::Builder::default()
+    }
+}
+
+/// <p> The details related to the resource. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResourceDetails {
+    /// <p>The value of the tag.</p>
+    #[doc(hidden)]
+    pub tag_value: std::option::Option<std::string::String>,
+}
+impl ResourceDetails {
+    /// <p>The value of the tag.</p>
+    pub fn tag_value(&self) -> std::option::Option<&str> {
+        self.tag_value.as_deref()
+    }
+}
+/// See [`ResourceDetails`](crate::model::ResourceDetails).
+pub mod resource_details {
+
+    /// A builder for [`ResourceDetails`](crate::model::ResourceDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tag_value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The value of the tag.</p>
+        pub fn tag_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_value = Some(input.into());
+            self
+        }
+        /// <p>The value of the tag.</p>
+        pub fn set_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tag_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceDetails`](crate::model::ResourceDetails).
+        pub fn build(self) -> crate::model::ResourceDetails {
+            crate::model::ResourceDetails {
+                tag_value: self.tag_value,
+            }
+        }
+    }
+}
+impl ResourceDetails {
+    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
+    pub fn builder() -> crate::model::resource_details::Builder {
+        crate::model::resource_details::Builder::default()
     }
 }
 

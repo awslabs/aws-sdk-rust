@@ -153,7 +153,7 @@ pub struct ApplicationDetail {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+    /// <p>The runtime environment for the application.</p>
     #[doc(hidden)]
     pub runtime_environment: std::option::Option<crate::model::RuntimeEnvironment>,
     /// <p>Specifies the IAM role that the application uses to access external resources.</p>
@@ -212,7 +212,7 @@ impl ApplicationDetail {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+    /// <p>The runtime environment for the application.</p>
     pub fn runtime_environment(&self) -> std::option::Option<&crate::model::RuntimeEnvironment> {
         self.runtime_environment.as_ref()
     }
@@ -343,12 +343,12 @@ pub mod application_detail {
             self.application_name = input;
             self
         }
-        /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+        /// <p>The runtime environment for the application.</p>
         pub fn runtime_environment(mut self, input: crate::model::RuntimeEnvironment) -> Self {
             self.runtime_environment = Some(input);
             self
         }
-        /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+        /// <p>The runtime environment for the application.</p>
         pub fn set_runtime_environment(
             mut self,
             input: std::option::Option<crate::model::RuntimeEnvironment>,
@@ -5960,6 +5960,7 @@ impl AsRef<str> for ApplicationStatus {
 /// match runtimeenvironment {
 ///     RuntimeEnvironment::Flink111 => { /* ... */ },
 ///     RuntimeEnvironment::Flink113 => { /* ... */ },
+///     RuntimeEnvironment::Flink115 => { /* ... */ },
 ///     RuntimeEnvironment::Flink16 => { /* ... */ },
 ///     RuntimeEnvironment::Flink18 => { /* ... */ },
 ///     RuntimeEnvironment::Sql10 => { /* ... */ },
@@ -6003,6 +6004,8 @@ pub enum RuntimeEnvironment {
     #[allow(missing_docs)] // documentation missing in model
     Flink113,
     #[allow(missing_docs)] // documentation missing in model
+    Flink115,
+    #[allow(missing_docs)] // documentation missing in model
     Flink16,
     #[allow(missing_docs)] // documentation missing in model
     Flink18,
@@ -6020,6 +6023,7 @@ impl std::convert::From<&str> for RuntimeEnvironment {
         match s {
             "FLINK-1_11" => RuntimeEnvironment::Flink111,
             "FLINK-1_13" => RuntimeEnvironment::Flink113,
+            "FLINK-1_15" => RuntimeEnvironment::Flink115,
             "FLINK-1_6" => RuntimeEnvironment::Flink16,
             "FLINK-1_8" => RuntimeEnvironment::Flink18,
             "SQL-1_0" => RuntimeEnvironment::Sql10,
@@ -6044,6 +6048,7 @@ impl RuntimeEnvironment {
         match self {
             RuntimeEnvironment::Flink111 => "FLINK-1_11",
             RuntimeEnvironment::Flink113 => "FLINK-1_13",
+            RuntimeEnvironment::Flink115 => "FLINK-1_15",
             RuntimeEnvironment::Flink16 => "FLINK-1_6",
             RuntimeEnvironment::Flink18 => "FLINK-1_8",
             RuntimeEnvironment::Sql10 => "SQL-1_0",
@@ -6057,6 +6062,7 @@ impl RuntimeEnvironment {
         &[
             "FLINK-1_11",
             "FLINK-1_13",
+            "FLINK-1_15",
             "FLINK-1_6",
             "FLINK-1_8",
             "SQL-1_0",

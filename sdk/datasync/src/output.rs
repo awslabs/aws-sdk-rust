@@ -219,12 +219,12 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTaskExecutionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the specific task execution that was started.</p>
+    /// <p>The ARN of the running task execution.</p>
     #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
 }
 impl StartTaskExecutionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the specific task execution that was started.</p>
+    /// <p>The ARN of the running task execution.</p>
     pub fn task_execution_arn(&self) -> std::option::Option<&str> {
         self.task_execution_arn.as_deref()
     }
@@ -238,12 +238,12 @@ pub mod start_task_execution_output {
         pub(crate) task_execution_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the specific task execution that was started.</p>
+        /// <p>The ARN of the running task execution.</p>
         pub fn task_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_execution_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the specific task execution that was started.</p>
+        /// <p>The ARN of the running task execution.</p>
         pub fn set_task_execution_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -423,19 +423,19 @@ impl ListTaskExecutionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
-    /// <p>Array of resource tags.</p>
+    /// <p>An array of tags applied to the specified resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-    /// <p>An opaque string that indicates the position at which to begin returning the next list of resource tags.</p>
+    /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>Array of resource tags.</p>
+    /// <p>An array of tags applied to the specified resource.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
-    /// <p>An opaque string that indicates the position at which to begin returning the next list of resource tags.</p>
+    /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -454,14 +454,14 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of resource tags.</p>
+        /// <p>An array of tags applied to the specified resource.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Array of resource tags.</p>
+        /// <p>An array of tags applied to the specified resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -469,12 +469,12 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin returning the next list of resource tags.</p>
+        /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin returning the next list of resource tags.</p>
+        /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -659,40 +659,41 @@ pub struct DescribeTaskExecutionOutput {
     /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide.</i> </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskExecutionStatus>,
-    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-    /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::model::Options>,
-    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-    /// <p> </p>
+    /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     #[doc(hidden)]
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
-    /// <p>A list of filter rules that determines which files to include when running a task. The list should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-    /// <p> </p>
+    /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     #[doc(hidden)]
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>The time that the task execution was started.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the PREPARING phase, before the TRANSFERRING phase. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
+    /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
     #[doc(hidden)]
     pub estimated_files_to_transfer: i64,
     /// <p>The estimated physical number of bytes that is to be transferred over the network.</p>
     #[doc(hidden)]
     pub estimated_bytes_to_transfer: i64,
-    /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the TRANSFERRING phase. It's updated periodically when each file is read from the source and sent over the network. </p>
-    /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. This value can also be greater than <code>EstimatedFilesTransferred</code> in some cases. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
+    /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p>
+    /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
     #[doc(hidden)]
     pub files_transferred: i64,
     /// <p>The number of logical bytes written to the destination Amazon Web Services storage resource.</p>
     #[doc(hidden)]
     pub bytes_written: i64,
-    /// <p>The physical number of bytes transferred over the network.</p>
+    /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
     #[doc(hidden)]
     pub bytes_transferred: i64,
     /// <p>The result of the task execution.</p>
     #[doc(hidden)]
     pub result: std::option::Option<crate::model::TaskExecutionResultDetail>,
+    /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
+    #[doc(hidden)]
+    pub bytes_compressed: i64,
 }
 impl DescribeTaskExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
@@ -705,18 +706,16 @@ impl DescribeTaskExecutionOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::TaskExecutionStatus> {
         self.status.as_ref()
     }
-    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-    /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     pub fn options(&self) -> std::option::Option<&crate::model::Options> {
         self.options.as_ref()
     }
-    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-    /// <p> </p>
+    /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.excludes.as_deref()
     }
-    /// <p>A list of filter rules that determines which files to include when running a task. The list should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-    /// <p> </p>
+    /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.includes.as_deref()
     }
@@ -724,7 +723,7 @@ impl DescribeTaskExecutionOutput {
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the PREPARING phase, before the TRANSFERRING phase. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
+    /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
     pub fn estimated_files_to_transfer(&self) -> i64 {
         self.estimated_files_to_transfer
     }
@@ -732,8 +731,8 @@ impl DescribeTaskExecutionOutput {
     pub fn estimated_bytes_to_transfer(&self) -> i64 {
         self.estimated_bytes_to_transfer
     }
-    /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the TRANSFERRING phase. It's updated periodically when each file is read from the source and sent over the network. </p>
-    /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. This value can also be greater than <code>EstimatedFilesTransferred</code> in some cases. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
+    /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p>
+    /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
     pub fn files_transferred(&self) -> i64 {
         self.files_transferred
     }
@@ -741,13 +740,17 @@ impl DescribeTaskExecutionOutput {
     pub fn bytes_written(&self) -> i64 {
         self.bytes_written
     }
-    /// <p>The physical number of bytes transferred over the network.</p>
+    /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
     pub fn bytes_transferred(&self) -> i64 {
         self.bytes_transferred
     }
     /// <p>The result of the task execution.</p>
     pub fn result(&self) -> std::option::Option<&crate::model::TaskExecutionResultDetail> {
         self.result.as_ref()
+    }
+    /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
+    pub fn bytes_compressed(&self) -> i64 {
+        self.bytes_compressed
     }
 }
 /// See [`DescribeTaskExecutionOutput`](crate::output::DescribeTaskExecutionOutput).
@@ -768,6 +771,7 @@ pub mod describe_task_execution_output {
         pub(crate) bytes_written: std::option::Option<i64>,
         pub(crate) bytes_transferred: std::option::Option<i64>,
         pub(crate) result: std::option::Option<crate::model::TaskExecutionResultDetail>,
+        pub(crate) bytes_compressed: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
@@ -800,14 +804,14 @@ pub mod describe_task_execution_output {
             self.status = input;
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.options = Some(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
             self.options = input;
             self
@@ -816,16 +820,14 @@ pub mod describe_task_execution_output {
         ///
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-        /// <p> </p>
+        /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
             v.push(input);
             self.excludes = Some(v);
             self
         }
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-        /// <p> </p>
+        /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -837,16 +839,14 @@ pub mod describe_task_execution_output {
         ///
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
-        /// <p>A list of filter rules that determines which files to include when running a task. The list should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-        /// <p> </p>
+        /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
             v.push(input);
             self.includes = Some(v);
             self
         }
-        /// <p>A list of filter rules that determines which files to include when running a task. The list should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-        /// <p> </p>
+        /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -867,12 +867,12 @@ pub mod describe_task_execution_output {
             self.start_time = input;
             self
         }
-        /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the PREPARING phase, before the TRANSFERRING phase. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
+        /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
         pub fn estimated_files_to_transfer(mut self, input: i64) -> Self {
             self.estimated_files_to_transfer = Some(input);
             self
         }
-        /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the PREPARING phase, before the TRANSFERRING phase. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
+        /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
         pub fn set_estimated_files_to_transfer(mut self, input: std::option::Option<i64>) -> Self {
             self.estimated_files_to_transfer = input;
             self
@@ -887,14 +887,14 @@ pub mod describe_task_execution_output {
             self.estimated_bytes_to_transfer = input;
             self
         }
-        /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the TRANSFERRING phase. It's updated periodically when each file is read from the source and sent over the network. </p>
-        /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. This value can also be greater than <code>EstimatedFilesTransferred</code> in some cases. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
+        /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p>
+        /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
         pub fn files_transferred(mut self, input: i64) -> Self {
             self.files_transferred = Some(input);
             self
         }
-        /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the TRANSFERRING phase. It's updated periodically when each file is read from the source and sent over the network. </p>
-        /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. This value can also be greater than <code>EstimatedFilesTransferred</code> in some cases. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
+        /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p>
+        /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
         pub fn set_files_transferred(mut self, input: std::option::Option<i64>) -> Self {
             self.files_transferred = input;
             self
@@ -909,12 +909,12 @@ pub mod describe_task_execution_output {
             self.bytes_written = input;
             self
         }
-        /// <p>The physical number of bytes transferred over the network.</p>
+        /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
         pub fn bytes_transferred(mut self, input: i64) -> Self {
             self.bytes_transferred = Some(input);
             self
         }
-        /// <p>The physical number of bytes transferred over the network.</p>
+        /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
         pub fn set_bytes_transferred(mut self, input: std::option::Option<i64>) -> Self {
             self.bytes_transferred = input;
             self
@@ -932,6 +932,16 @@ pub mod describe_task_execution_output {
             self.result = input;
             self
         }
+        /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
+        pub fn bytes_compressed(mut self, input: i64) -> Self {
+            self.bytes_compressed = Some(input);
+            self
+        }
+        /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
+        pub fn set_bytes_compressed(mut self, input: std::option::Option<i64>) -> Self {
+            self.bytes_compressed = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeTaskExecutionOutput`](crate::output::DescribeTaskExecutionOutput).
         pub fn build(self) -> crate::output::DescribeTaskExecutionOutput {
             crate::output::DescribeTaskExecutionOutput {
@@ -947,6 +957,7 @@ pub mod describe_task_execution_output {
                 bytes_written: self.bytes_written.unwrap_or_default(),
                 bytes_transferred: self.bytes_transferred.unwrap_or_default(),
                 result: self.result,
+                bytes_compressed: self.bytes_compressed.unwrap_or_default(),
             }
         }
     }
@@ -972,7 +983,7 @@ pub struct DescribeTaskOutput {
     /// <p>The name of the task that was described.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the task execution that is syncing files.</p>
+    /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
     #[doc(hidden)]
     pub current_task_execution_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
@@ -985,18 +996,17 @@ pub struct DescribeTaskOutput {
     /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
     #[doc(hidden)]
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for your subnet.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
     #[doc(hidden)]
     pub source_network_interface_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created for your subnet.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
     #[doc(hidden)]
     pub destination_network_interface_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group (GID), file permissions, data integrity verification, and so on.</p>
-    /// <p>For each individual task execution, you can override these options by specifying the overriding <code>OverrideOptions</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+    /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
+    /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::model::Options>,
-    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    /// <p> </p>
+    /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     #[doc(hidden)]
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
@@ -1011,7 +1021,7 @@ pub struct DescribeTaskOutput {
     /// <p>The time that the task was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2</code>".</p>
+    /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     #[doc(hidden)]
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
@@ -1029,7 +1039,7 @@ impl DescribeTaskOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the task execution that is syncing files.</p>
+    /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
     pub fn current_task_execution_arn(&self) -> std::option::Option<&str> {
         self.current_task_execution_arn.as_deref()
     }
@@ -1046,23 +1056,22 @@ impl DescribeTaskOutput {
     pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for your subnet.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
     pub fn source_network_interface_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.source_network_interface_arns.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created for your subnet.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
     pub fn destination_network_interface_arns(
         &self,
     ) -> std::option::Option<&[std::string::String]> {
         self.destination_network_interface_arns.as_deref()
     }
-    /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group (GID), file permissions, data integrity verification, and so on.</p>
-    /// <p>For each individual task execution, you can override these options by specifying the overriding <code>OverrideOptions</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+    /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
+    /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
     pub fn options(&self) -> std::option::Option<&crate::model::Options> {
         self.options.as_ref()
     }
-    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    /// <p> </p>
+    /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.excludes.as_deref()
     }
@@ -1082,7 +1091,7 @@ impl DescribeTaskOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2</code>".</p>
+    /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.includes.as_deref()
     }
@@ -1145,12 +1154,12 @@ pub mod describe_task_output {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the task execution that is syncing files.</p>
+        /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
         pub fn current_task_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.current_task_execution_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the task execution that is syncing files.</p>
+        /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
         pub fn set_current_task_execution_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1203,7 +1212,7 @@ pub mod describe_task_output {
         ///
         /// To override the contents of this collection use [`set_source_network_interface_arns`](Self::set_source_network_interface_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for your subnet.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
         pub fn source_network_interface_arns(
             mut self,
             input: impl Into<std::string::String>,
@@ -1213,7 +1222,7 @@ pub mod describe_task_output {
             self.source_network_interface_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for your subnet.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
         pub fn set_source_network_interface_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1225,7 +1234,7 @@ pub mod describe_task_output {
         ///
         /// To override the contents of this collection use [`set_destination_network_interface_arns`](Self::set_destination_network_interface_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created for your subnet.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
         pub fn destination_network_interface_arns(
             mut self,
             input: impl Into<std::string::String>,
@@ -1235,7 +1244,7 @@ pub mod describe_task_output {
             self.destination_network_interface_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created for your subnet.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
         pub fn set_destination_network_interface_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1243,14 +1252,14 @@ pub mod describe_task_output {
             self.destination_network_interface_arns = input;
             self
         }
-        /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group (GID), file permissions, data integrity verification, and so on.</p>
-        /// <p>For each individual task execution, you can override these options by specifying the overriding <code>OverrideOptions</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+        /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
+        /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.options = Some(input);
             self
         }
-        /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group (GID), file permissions, data integrity verification, and so on.</p>
-        /// <p>For each individual task execution, you can override these options by specifying the overriding <code>OverrideOptions</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+        /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
+        /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
             self.options = input;
             self
@@ -1259,16 +1268,14 @@ pub mod describe_task_output {
         ///
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-        /// <p> </p>
+        /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
             v.push(input);
             self.excludes = Some(v);
             self
         }
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-        /// <p> </p>
+        /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -1326,14 +1333,14 @@ pub mod describe_task_output {
         ///
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2</code>".</p>
+        /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
             v.push(input);
             self.includes = Some(v);
             self
         }
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2</code>".</p>
+        /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -1720,13 +1727,13 @@ pub struct DescribeLocationObjectStorageOutput {
     /// <p>The URL of the object storage system location.</p>
     #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
-    /// <p>The access key (for example, a user name) required to authenticate with the object storage server.</p>
+    /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
     #[doc(hidden)]
     pub access_key: std::option::Option<std::string::String>,
     /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     #[doc(hidden)]
     pub server_port: std::option::Option<i32>,
-    /// <p>The protocol that your object storage server uses to communicate.</p>
+    /// <p>The protocol that your object storage system uses to communicate.</p>
     #[doc(hidden)]
     pub server_protocol: std::option::Option<crate::model::ObjectStorageServerProtocol>,
     /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
@@ -1735,6 +1742,9 @@ pub struct DescribeLocationObjectStorageOutput {
     /// <p>The time that the location was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
+    #[doc(hidden)]
+    pub server_certificate: std::option::Option<aws_smithy_types::Blob>,
 }
 impl DescribeLocationObjectStorageOutput {
     /// <p>The ARN of the object storage system location.</p>
@@ -1745,7 +1755,7 @@ impl DescribeLocationObjectStorageOutput {
     pub fn location_uri(&self) -> std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>The access key (for example, a user name) required to authenticate with the object storage server.</p>
+    /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
     pub fn access_key(&self) -> std::option::Option<&str> {
         self.access_key.as_deref()
     }
@@ -1753,7 +1763,7 @@ impl DescribeLocationObjectStorageOutput {
     pub fn server_port(&self) -> std::option::Option<i32> {
         self.server_port
     }
-    /// <p>The protocol that your object storage server uses to communicate.</p>
+    /// <p>The protocol that your object storage system uses to communicate.</p>
     pub fn server_protocol(
         &self,
     ) -> std::option::Option<&crate::model::ObjectStorageServerProtocol> {
@@ -1766,6 +1776,10 @@ impl DescribeLocationObjectStorageOutput {
     /// <p>The time that the location was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
+    }
+    /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
+    pub fn server_certificate(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.server_certificate.as_ref()
     }
 }
 /// See [`DescribeLocationObjectStorageOutput`](crate::output::DescribeLocationObjectStorageOutput).
@@ -1781,6 +1795,7 @@ pub mod describe_location_object_storage_output {
         pub(crate) server_protocol: std::option::Option<crate::model::ObjectStorageServerProtocol>,
         pub(crate) agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) server_certificate: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The ARN of the object storage system location.</p>
@@ -1803,12 +1818,12 @@ pub mod describe_location_object_storage_output {
             self.location_uri = input;
             self
         }
-        /// <p>The access key (for example, a user name) required to authenticate with the object storage server.</p>
+        /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
         pub fn access_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_key = Some(input.into());
             self
         }
-        /// <p>The access key (for example, a user name) required to authenticate with the object storage server.</p>
+        /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
         pub fn set_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_key = input;
             self
@@ -1823,12 +1838,12 @@ pub mod describe_location_object_storage_output {
             self.server_port = input;
             self
         }
-        /// <p>The protocol that your object storage server uses to communicate.</p>
+        /// <p>The protocol that your object storage system uses to communicate.</p>
         pub fn server_protocol(mut self, input: crate::model::ObjectStorageServerProtocol) -> Self {
             self.server_protocol = Some(input);
             self
         }
-        /// <p>The protocol that your object storage server uses to communicate.</p>
+        /// <p>The protocol that your object storage system uses to communicate.</p>
         pub fn set_server_protocol(
             mut self,
             input: std::option::Option<crate::model::ObjectStorageServerProtocol>,
@@ -1868,6 +1883,19 @@ pub mod describe_location_object_storage_output {
             self.creation_time = input;
             self
         }
+        /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
+        pub fn server_certificate(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.server_certificate = Some(input);
+            self
+        }
+        /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
+        pub fn set_server_certificate(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.server_certificate = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeLocationObjectStorageOutput`](crate::output::DescribeLocationObjectStorageOutput).
         pub fn build(self) -> crate::output::DescribeLocationObjectStorageOutput {
             crate::output::DescribeLocationObjectStorageOutput {
@@ -1878,6 +1906,7 @@ pub mod describe_location_object_storage_output {
                 server_protocol: self.server_protocol,
                 agent_arns: self.agent_arns,
                 creation_time: self.creation_time,
+                server_certificate: self.server_certificate,
             }
         }
     }

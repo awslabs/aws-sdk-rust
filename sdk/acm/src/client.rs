@@ -238,8 +238,9 @@ impl Client {
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::RequestCertificate::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::RequestCertificate::set_idempotency_token): <p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>
     ///   - [`domain_validation_options(Vec<DomainValidationOption>)`](crate::client::fluent_builders::RequestCertificate::domain_validation_options) / [`set_domain_validation_options(Option<Vec<DomainValidationOption>>)`](crate::client::fluent_builders::RequestCertificate::set_domain_validation_options): <p>The domain name that you want ACM to use to send you emails so that you can validate domain ownership.</p>
     ///   - [`options(CertificateOptions)`](crate::client::fluent_builders::RequestCertificate::options) / [`set_options(Option<CertificateOptions>)`](crate::client::fluent_builders::RequestCertificate::set_options): <p>Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
-    ///   - [`certificate_authority_arn(impl Into<String>)`](crate::client::fluent_builders::RequestCertificate::certificate_authority_arn) / [`set_certificate_authority_arn(Option<String>)`](crate::client::fluent_builders::RequestCertificate::set_certificate_authority_arn): <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private Certificate Authority</a> user guide. The ARN must have the following form: </p>  <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
+    ///   - [`certificate_authority_arn(impl Into<String>)`](crate::client::fluent_builders::RequestCertificate::certificate_authority_arn) / [`set_certificate_authority_arn(Option<String>)`](crate::client::fluent_builders::RequestCertificate::set_certificate_authority_arn): <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private Certificate Authority</a> user guide. The ARN must have the following form: </p>  <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RequestCertificate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RequestCertificate::set_tags): <p>One or more resource tags to associate with the certificate.</p>
+    ///   - [`key_algorithm(KeyAlgorithm)`](crate::client::fluent_builders::RequestCertificate::key_algorithm) / [`set_key_algorithm(Option<KeyAlgorithm>)`](crate::client::fluent_builders::RequestCertificate::set_key_algorithm): <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your certificate.</p>  <p>Default: RSA_2048</p>
     /// - On success, responds with [`RequestCertificateOutput`](crate::output::RequestCertificateOutput) with field(s):
     ///   - [`certificate_arn(Option<String>)`](crate::output::RequestCertificateOutput::certificate_arn): <p>String that contains the ARN of the issued certificate. This must be of the form:</p>  <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// - On failure, responds with [`SdkError<RequestCertificateError>`](crate::error::RequestCertificateError)
@@ -1344,7 +1345,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RenewCertificate`.
     ///
-    /// <p>Renews an eligible ACM certificate. At this time, only exported private certificates can be renewed with this operation. In order to renew your ACM Private CA certificates with ACM, you must first <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a> in the ACM User Guide.</p>
+    /// <p>Renews an eligible ACM certificate. At this time, only exported private certificates can be renewed with this operation. In order to renew your Amazon Web Services Private CA certificates with ACM, you must first <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaPermissions.html">grant the ACM service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a> in the ACM User Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RenewCertificate {
         handle: std::sync::Arc<super::Handle>,
@@ -1588,13 +1589,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_options(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private Certificate Authority</a> user guide. The ARN must have the following form: </p>
+        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private Certificate Authority</a> user guide. The ARN must have the following form: </p>
         /// <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_authority_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private Certificate Authority</a> user guide. The ARN must have the following form: </p>
+        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private Certificate Authority</a> user guide. The ARN must have the following form: </p>
         /// <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn set_certificate_authority_arn(
             mut self,
@@ -1618,6 +1619,21 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your certificate.</p>
+        /// <p>Default: RSA_2048</p>
+        pub fn key_algorithm(mut self, input: crate::model::KeyAlgorithm) -> Self {
+            self.inner = self.inner.key_algorithm(input);
+            self
+        }
+        /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your certificate.</p>
+        /// <p>Default: RSA_2048</p>
+        pub fn set_key_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::KeyAlgorithm>,
+        ) -> Self {
+            self.inner = self.inner.set_key_algorithm(input);
             self
         }
     }

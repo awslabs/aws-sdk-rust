@@ -194,6 +194,12 @@ pub struct Settings {
     /// <p> The KMS key details. </p>
     #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
+    /// <p>The current evidence finder status and event data store details.</p>
+    #[doc(hidden)]
+    pub evidence_finder_enablement: std::option::Option<crate::model::EvidenceFinderEnablement>,
+    /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
+    #[doc(hidden)]
+    pub deregistration_policy: std::option::Option<crate::model::DeregistrationPolicy>,
 }
 impl Settings {
     /// <p> Specifies whether Organizations is enabled. </p>
@@ -218,6 +224,18 @@ impl Settings {
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
+    /// <p>The current evidence finder status and event data store details.</p>
+    pub fn evidence_finder_enablement(
+        &self,
+    ) -> std::option::Option<&crate::model::EvidenceFinderEnablement> {
+        self.evidence_finder_enablement.as_ref()
+    }
+    /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
+    pub fn deregistration_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::DeregistrationPolicy> {
+        self.deregistration_policy.as_ref()
+    }
 }
 /// See [`Settings`](crate::model::Settings).
 pub mod settings {
@@ -231,6 +249,9 @@ pub mod settings {
             std::option::Option<crate::model::AssessmentReportsDestination>,
         pub(crate) default_process_owners: std::option::Option<std::vec::Vec<crate::model::Role>>,
         pub(crate) kms_key: std::option::Option<std::string::String>,
+        pub(crate) evidence_finder_enablement:
+            std::option::Option<crate::model::EvidenceFinderEnablement>,
+        pub(crate) deregistration_policy: std::option::Option<crate::model::DeregistrationPolicy>,
     }
     impl Builder {
         /// <p> Specifies whether Organizations is enabled. </p>
@@ -298,6 +319,35 @@ pub mod settings {
             self.kms_key = input;
             self
         }
+        /// <p>The current evidence finder status and event data store details.</p>
+        pub fn evidence_finder_enablement(
+            mut self,
+            input: crate::model::EvidenceFinderEnablement,
+        ) -> Self {
+            self.evidence_finder_enablement = Some(input);
+            self
+        }
+        /// <p>The current evidence finder status and event data store details.</p>
+        pub fn set_evidence_finder_enablement(
+            mut self,
+            input: std::option::Option<crate::model::EvidenceFinderEnablement>,
+        ) -> Self {
+            self.evidence_finder_enablement = input;
+            self
+        }
+        /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
+        pub fn deregistration_policy(mut self, input: crate::model::DeregistrationPolicy) -> Self {
+            self.deregistration_policy = Some(input);
+            self
+        }
+        /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
+        pub fn set_deregistration_policy(
+            mut self,
+            input: std::option::Option<crate::model::DeregistrationPolicy>,
+        ) -> Self {
+            self.deregistration_policy = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Settings`](crate::model::Settings).
         pub fn build(self) -> crate::model::Settings {
             crate::model::Settings {
@@ -306,6 +356,8 @@ pub mod settings {
                 default_assessment_reports_destination: self.default_assessment_reports_destination,
                 default_process_owners: self.default_process_owners,
                 kms_key: self.kms_key,
+                evidence_finder_enablement: self.evidence_finder_enablement,
+                deregistration_policy: self.deregistration_policy,
             }
         }
     }
@@ -314,6 +366,543 @@ impl Settings {
     /// Creates a new builder-style object to manufacture [`Settings`](crate::model::Settings).
     pub fn builder() -> crate::model::settings::Builder {
         crate::model::settings::Builder::default()
+    }
+}
+
+/// <p>The deregistration policy for the data that's stored in Audit Manager. You can use this attribute to determine how your data is handled when you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister Audit Manager</a>.</p>
+/// <p>By default, Audit Manager retains evidence data for two years from the time of its creation. Other Audit Manager resources (including assessments, custom controls, and custom frameworks) remain in Audit Manager indefinitely, and are available if you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register Audit Manager</a> in the future. For more information about data retention, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/data-protection.html">Data Protection</a> in the <i>Audit Manager User Guide</i>.</p> <important>
+/// <p>If you choose to delete all data, this action permanently deletes all evidence data in your account within seven days. It also deletes all of the Audit Manager resources that you created, including assessments, custom controls, and custom frameworks. Your data will not be available if you re-register Audit Manager in the future.</p>
+/// </important>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeregistrationPolicy {
+    /// <p>Specifies which Audit Manager data will be deleted when you deregister Audit Manager.</p>
+    /// <ul>
+    /// <li> <p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p> </li>
+    /// <li> <p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub delete_resources: std::option::Option<crate::model::DeleteResources>,
+}
+impl DeregistrationPolicy {
+    /// <p>Specifies which Audit Manager data will be deleted when you deregister Audit Manager.</p>
+    /// <ul>
+    /// <li> <p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p> </li>
+    /// <li> <p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p> </li>
+    /// </ul>
+    pub fn delete_resources(&self) -> std::option::Option<&crate::model::DeleteResources> {
+        self.delete_resources.as_ref()
+    }
+}
+/// See [`DeregistrationPolicy`](crate::model::DeregistrationPolicy).
+pub mod deregistration_policy {
+
+    /// A builder for [`DeregistrationPolicy`](crate::model::DeregistrationPolicy).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) delete_resources: std::option::Option<crate::model::DeleteResources>,
+    }
+    impl Builder {
+        /// <p>Specifies which Audit Manager data will be deleted when you deregister Audit Manager.</p>
+        /// <ul>
+        /// <li> <p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p> </li>
+        /// <li> <p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p> </li>
+        /// </ul>
+        pub fn delete_resources(mut self, input: crate::model::DeleteResources) -> Self {
+            self.delete_resources = Some(input);
+            self
+        }
+        /// <p>Specifies which Audit Manager data will be deleted when you deregister Audit Manager.</p>
+        /// <ul>
+        /// <li> <p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p> </li>
+        /// <li> <p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p> </li>
+        /// </ul>
+        pub fn set_delete_resources(
+            mut self,
+            input: std::option::Option<crate::model::DeleteResources>,
+        ) -> Self {
+            self.delete_resources = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeregistrationPolicy`](crate::model::DeregistrationPolicy).
+        pub fn build(self) -> crate::model::DeregistrationPolicy {
+            crate::model::DeregistrationPolicy {
+                delete_resources: self.delete_resources,
+            }
+        }
+    }
+}
+impl DeregistrationPolicy {
+    /// Creates a new builder-style object to manufacture [`DeregistrationPolicy`](crate::model::DeregistrationPolicy).
+    pub fn builder() -> crate::model::deregistration_policy::Builder {
+        crate::model::deregistration_policy::Builder::default()
+    }
+}
+
+/// When writing a match expression against `DeleteResources`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let deleteresources = unimplemented!();
+/// match deleteresources {
+///     DeleteResources::All => { /* ... */ },
+///     DeleteResources::Default => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `deleteresources` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DeleteResources::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DeleteResources::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DeleteResources::NewFeature` is defined.
+/// Specifically, when `deleteresources` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DeleteResources::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DeleteResources {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Default,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DeleteResources {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => DeleteResources::All,
+            "DEFAULT" => DeleteResources::Default,
+            other => DeleteResources::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for DeleteResources {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeleteResources::from(s))
+    }
+}
+impl DeleteResources {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeleteResources::All => "ALL",
+            DeleteResources::Default => "DEFAULT",
+            DeleteResources::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ALL", "DEFAULT"]
+    }
+}
+impl AsRef<str> for DeleteResources {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The settings object that specifies whether evidence finder is enabled. This object also describes the related event data store, and the backfill status for populating the event data store with evidence data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EvidenceFinderEnablement {
+    /// <p>The Amazon Resource Name (ARN) of the CloudTrail Lake event data store that’s used by evidence finder. The event data store is the lake of evidence data that evidence finder runs queries against.</p>
+    #[doc(hidden)]
+    pub event_data_store_arn: std::option::Option<std::string::String>,
+    /// <p>The current status of the evidence finder feature and the related event data store. </p>
+    /// <ul>
+    /// <li> <p> <code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p> </li>
+    /// <li> <p> <code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be available until the backfill is complete.</p> </li>
+    /// <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p> </li>
+    /// <li> <p> <code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub enablement_status: std::option::Option<crate::model::EvidenceFinderEnablementStatus>,
+    /// <p>The current status of the evidence data backfill process. </p>
+    /// <p>The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data store with your past two years’ worth of evidence data so that your evidence can be queried.</p>
+    /// <ul>
+    /// <li> <p> <code>NOT_STARTED</code> means that the backfill hasn’t started yet. </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data. </p> </li>
+    /// <li> <p> <code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable. </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub backfill_status: std::option::Option<crate::model::EvidenceFinderBackfillStatus>,
+    /// <p>Represents any errors that occurred when enabling or disabling evidence finder. </p>
+    #[doc(hidden)]
+    pub error: std::option::Option<std::string::String>,
+}
+impl EvidenceFinderEnablement {
+    /// <p>The Amazon Resource Name (ARN) of the CloudTrail Lake event data store that’s used by evidence finder. The event data store is the lake of evidence data that evidence finder runs queries against.</p>
+    pub fn event_data_store_arn(&self) -> std::option::Option<&str> {
+        self.event_data_store_arn.as_deref()
+    }
+    /// <p>The current status of the evidence finder feature and the related event data store. </p>
+    /// <ul>
+    /// <li> <p> <code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p> </li>
+    /// <li> <p> <code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be available until the backfill is complete.</p> </li>
+    /// <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p> </li>
+    /// <li> <p> <code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p> </li>
+    /// </ul>
+    pub fn enablement_status(
+        &self,
+    ) -> std::option::Option<&crate::model::EvidenceFinderEnablementStatus> {
+        self.enablement_status.as_ref()
+    }
+    /// <p>The current status of the evidence data backfill process. </p>
+    /// <p>The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data store with your past two years’ worth of evidence data so that your evidence can be queried.</p>
+    /// <ul>
+    /// <li> <p> <code>NOT_STARTED</code> means that the backfill hasn’t started yet. </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data. </p> </li>
+    /// <li> <p> <code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable. </p> </li>
+    /// </ul>
+    pub fn backfill_status(
+        &self,
+    ) -> std::option::Option<&crate::model::EvidenceFinderBackfillStatus> {
+        self.backfill_status.as_ref()
+    }
+    /// <p>Represents any errors that occurred when enabling or disabling evidence finder. </p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+}
+/// See [`EvidenceFinderEnablement`](crate::model::EvidenceFinderEnablement).
+pub mod evidence_finder_enablement {
+
+    /// A builder for [`EvidenceFinderEnablement`](crate::model::EvidenceFinderEnablement).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
+        pub(crate) enablement_status:
+            std::option::Option<crate::model::EvidenceFinderEnablementStatus>,
+        pub(crate) backfill_status: std::option::Option<crate::model::EvidenceFinderBackfillStatus>,
+        pub(crate) error: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the CloudTrail Lake event data store that’s used by evidence finder. The event data store is the lake of evidence data that evidence finder runs queries against.</p>
+        pub fn event_data_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_data_store_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the CloudTrail Lake event data store that’s used by evidence finder. The event data store is the lake of evidence data that evidence finder runs queries against.</p>
+        pub fn set_event_data_store_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_data_store_arn = input;
+            self
+        }
+        /// <p>The current status of the evidence finder feature and the related event data store. </p>
+        /// <ul>
+        /// <li> <p> <code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p> </li>
+        /// <li> <p> <code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be available until the backfill is complete.</p> </li>
+        /// <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p> </li>
+        /// <li> <p> <code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p> </li>
+        /// </ul>
+        pub fn enablement_status(
+            mut self,
+            input: crate::model::EvidenceFinderEnablementStatus,
+        ) -> Self {
+            self.enablement_status = Some(input);
+            self
+        }
+        /// <p>The current status of the evidence finder feature and the related event data store. </p>
+        /// <ul>
+        /// <li> <p> <code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p> </li>
+        /// <li> <p> <code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be available until the backfill is complete.</p> </li>
+        /// <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p> </li>
+        /// <li> <p> <code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p> </li>
+        /// </ul>
+        pub fn set_enablement_status(
+            mut self,
+            input: std::option::Option<crate::model::EvidenceFinderEnablementStatus>,
+        ) -> Self {
+            self.enablement_status = input;
+            self
+        }
+        /// <p>The current status of the evidence data backfill process. </p>
+        /// <p>The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data store with your past two years’ worth of evidence data so that your evidence can be queried.</p>
+        /// <ul>
+        /// <li> <p> <code>NOT_STARTED</code> means that the backfill hasn’t started yet. </p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data. </p> </li>
+        /// <li> <p> <code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable. </p> </li>
+        /// </ul>
+        pub fn backfill_status(
+            mut self,
+            input: crate::model::EvidenceFinderBackfillStatus,
+        ) -> Self {
+            self.backfill_status = Some(input);
+            self
+        }
+        /// <p>The current status of the evidence data backfill process. </p>
+        /// <p>The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data store with your past two years’ worth of evidence data so that your evidence can be queried.</p>
+        /// <ul>
+        /// <li> <p> <code>NOT_STARTED</code> means that the backfill hasn’t started yet. </p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data. </p> </li>
+        /// <li> <p> <code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable. </p> </li>
+        /// </ul>
+        pub fn set_backfill_status(
+            mut self,
+            input: std::option::Option<crate::model::EvidenceFinderBackfillStatus>,
+        ) -> Self {
+            self.backfill_status = input;
+            self
+        }
+        /// <p>Represents any errors that occurred when enabling or disabling evidence finder. </p>
+        pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error = Some(input.into());
+            self
+        }
+        /// <p>Represents any errors that occurred when enabling or disabling evidence finder. </p>
+        pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EvidenceFinderEnablement`](crate::model::EvidenceFinderEnablement).
+        pub fn build(self) -> crate::model::EvidenceFinderEnablement {
+            crate::model::EvidenceFinderEnablement {
+                event_data_store_arn: self.event_data_store_arn,
+                enablement_status: self.enablement_status,
+                backfill_status: self.backfill_status,
+                error: self.error,
+            }
+        }
+    }
+}
+impl EvidenceFinderEnablement {
+    /// Creates a new builder-style object to manufacture [`EvidenceFinderEnablement`](crate::model::EvidenceFinderEnablement).
+    pub fn builder() -> crate::model::evidence_finder_enablement::Builder {
+        crate::model::evidence_finder_enablement::Builder::default()
+    }
+}
+
+/// When writing a match expression against `EvidenceFinderBackfillStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let evidencefinderbackfillstatus = unimplemented!();
+/// match evidencefinderbackfillstatus {
+///     EvidenceFinderBackfillStatus::Completed => { /* ... */ },
+///     EvidenceFinderBackfillStatus::InProgress => { /* ... */ },
+///     EvidenceFinderBackfillStatus::NotStarted => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `evidencefinderbackfillstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EvidenceFinderBackfillStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EvidenceFinderBackfillStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EvidenceFinderBackfillStatus::NewFeature` is defined.
+/// Specifically, when `evidencefinderbackfillstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EvidenceFinderBackfillStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EvidenceFinderBackfillStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    NotStarted,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EvidenceFinderBackfillStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETED" => EvidenceFinderBackfillStatus::Completed,
+            "IN_PROGRESS" => EvidenceFinderBackfillStatus::InProgress,
+            "NOT_STARTED" => EvidenceFinderBackfillStatus::NotStarted,
+            other => EvidenceFinderBackfillStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for EvidenceFinderBackfillStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EvidenceFinderBackfillStatus::from(s))
+    }
+}
+impl EvidenceFinderBackfillStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EvidenceFinderBackfillStatus::Completed => "COMPLETED",
+            EvidenceFinderBackfillStatus::InProgress => "IN_PROGRESS",
+            EvidenceFinderBackfillStatus::NotStarted => "NOT_STARTED",
+            EvidenceFinderBackfillStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["COMPLETED", "IN_PROGRESS", "NOT_STARTED"]
+    }
+}
+impl AsRef<str> for EvidenceFinderBackfillStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `EvidenceFinderEnablementStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let evidencefinderenablementstatus = unimplemented!();
+/// match evidencefinderenablementstatus {
+///     EvidenceFinderEnablementStatus::Disabled => { /* ... */ },
+///     EvidenceFinderEnablementStatus::DisableInProgress => { /* ... */ },
+///     EvidenceFinderEnablementStatus::Enabled => { /* ... */ },
+///     EvidenceFinderEnablementStatus::EnableInProgress => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `evidencefinderenablementstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EvidenceFinderEnablementStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EvidenceFinderEnablementStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EvidenceFinderEnablementStatus::NewFeature` is defined.
+/// Specifically, when `evidencefinderenablementstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EvidenceFinderEnablementStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EvidenceFinderEnablementStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    DisableInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    #[allow(missing_docs)] // documentation missing in model
+    EnableInProgress,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EvidenceFinderEnablementStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => EvidenceFinderEnablementStatus::Disabled,
+            "DISABLE_IN_PROGRESS" => EvidenceFinderEnablementStatus::DisableInProgress,
+            "ENABLED" => EvidenceFinderEnablementStatus::Enabled,
+            "ENABLE_IN_PROGRESS" => EvidenceFinderEnablementStatus::EnableInProgress,
+            other => EvidenceFinderEnablementStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for EvidenceFinderEnablementStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EvidenceFinderEnablementStatus::from(s))
+    }
+}
+impl EvidenceFinderEnablementStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EvidenceFinderEnablementStatus::Disabled => "DISABLED",
+            EvidenceFinderEnablementStatus::DisableInProgress => "DISABLE_IN_PROGRESS",
+            EvidenceFinderEnablementStatus::Enabled => "ENABLED",
+            EvidenceFinderEnablementStatus::EnableInProgress => "ENABLE_IN_PROGRESS",
+            EvidenceFinderEnablementStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "DISABLED",
+            "DISABLE_IN_PROGRESS",
+            "ENABLED",
+            "ENABLE_IN_PROGRESS",
+        ]
+    }
+}
+impl AsRef<str> for EvidenceFinderEnablementStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -681,17 +1270,17 @@ pub struct Control {
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
     #[doc(hidden)]
     pub action_plan_instructions: std::option::Option<std::string::String>,
-    /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
+    /// <p> The data source types that determine where Audit Manager collects evidence from for the control. </p>
     #[doc(hidden)]
     pub control_sources: std::option::Option<std::string::String>,
     /// <p> The data mapping sources for the control. </p>
     #[doc(hidden)]
     pub control_mapping_sources:
         std::option::Option<std::vec::Vec<crate::model::ControlMappingSource>>,
-    /// <p> Specifies when the control was created. </p>
+    /// <p> The time when the control was created. </p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> Specifies when the control was most recently updated. </p>
+    /// <p> The time when the control was most recently updated. </p>
     #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The IAM user or role that created the control. </p>
@@ -738,7 +1327,7 @@ impl Control {
     pub fn action_plan_instructions(&self) -> std::option::Option<&str> {
         self.action_plan_instructions.as_deref()
     }
-    /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
+    /// <p> The data source types that determine where Audit Manager collects evidence from for the control. </p>
     pub fn control_sources(&self) -> std::option::Option<&str> {
         self.control_sources.as_deref()
     }
@@ -748,11 +1337,11 @@ impl Control {
     ) -> std::option::Option<&[crate::model::ControlMappingSource]> {
         self.control_mapping_sources.as_deref()
     }
-    /// <p> Specifies when the control was created. </p>
+    /// <p> The time when the control was created. </p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p> Specifies when the control was most recently updated. </p>
+    /// <p> The time when the control was most recently updated. </p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -887,12 +1476,12 @@ pub mod control {
             self.action_plan_instructions = input;
             self
         }
-        /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
+        /// <p> The data source types that determine where Audit Manager collects evidence from for the control. </p>
         pub fn control_sources(mut self, input: impl Into<std::string::String>) -> Self {
             self.control_sources = Some(input.into());
             self
         }
-        /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
+        /// <p> The data source types that determine where Audit Manager collects evidence from for the control. </p>
         pub fn set_control_sources(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -922,12 +1511,12 @@ pub mod control {
             self.control_mapping_sources = input;
             self
         }
-        /// <p> Specifies when the control was created. </p>
+        /// <p> The time when the control was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p> Specifies when the control was created. </p>
+        /// <p> The time when the control was created. </p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -935,12 +1524,12 @@ pub mod control {
             self.created_at = input;
             self
         }
-        /// <p> Specifies when the control was most recently updated. </p>
+        /// <p> The time when the control was most recently updated. </p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p> Specifies when the control was most recently updated. </p>
+        /// <p> The time when the control was most recently updated. </p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1041,7 +1630,7 @@ pub struct ControlMappingSource {
     /// <p> The setup option for the data source. This option reflects if the evidence collection is automated or manual. </p>
     #[doc(hidden)]
     pub source_set_up_option: std::option::Option<crate::model::SourceSetUpOption>,
-    /// <p> Specifies one of the five types of data sources for evidence collection. </p>
+    /// <p> Specifies one of the five data source types for evidence collection. </p>
     #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. </p>
@@ -1078,7 +1667,7 @@ impl ControlMappingSource {
     pub fn source_set_up_option(&self) -> std::option::Option<&crate::model::SourceSetUpOption> {
         self.source_set_up_option.as_ref()
     }
-    /// <p> Specifies one of the five types of data sources for evidence collection. </p>
+    /// <p> Specifies one of the five data source types for evidence collection. </p>
     pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
         self.source_type.as_ref()
     }
@@ -1164,12 +1753,12 @@ pub mod control_mapping_source {
             self.source_set_up_option = input;
             self
         }
-        /// <p> Specifies one of the five types of data sources for evidence collection. </p>
+        /// <p> Specifies one of the five data source types for evidence collection. </p>
         pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
             self.source_type = Some(input);
             self
         }
-        /// <p> Specifies one of the five types of data sources for evidence collection. </p>
+        /// <p> Specifies one of the five data source types for evidence collection. </p>
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::SourceType>,
@@ -1375,7 +1964,6 @@ pub struct SourceKeyword {
     /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/service-linked-awsconfig-rules.html">service-linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name. In addition, you remove the suffix ID that appears at the end of the rule name.</p>
     /// <ul>
     /// <li> <p>Service-linked rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p> <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li>
-    /// <li> <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p> <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li>
     /// <li> <p>Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p> <code>keywordValue</code>: <code>Custom_OrgConfigRule-s3-bucket-versioning-enabled</code> </p> </li>
     /// </ul> </li>
     /// </ul>
@@ -1401,7 +1989,6 @@ impl SourceKeyword {
     /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/service-linked-awsconfig-rules.html">service-linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name. In addition, you remove the suffix ID that appears at the end of the rule name.</p>
     /// <ul>
     /// <li> <p>Service-linked rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p> <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li>
-    /// <li> <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p> <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li>
     /// <li> <p>Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p> <code>keywordValue</code>: <code>Custom_OrgConfigRule-s3-bucket-versioning-enabled</code> </p> </li>
     /// </ul> </li>
     /// </ul>
@@ -1446,7 +2033,6 @@ pub mod source_keyword {
         /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/service-linked-awsconfig-rules.html">service-linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name. In addition, you remove the suffix ID that appears at the end of the rule name.</p>
         /// <ul>
         /// <li> <p>Service-linked rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p> <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li>
-        /// <li> <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p> <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li>
         /// <li> <p>Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p> <code>keywordValue</code>: <code>Custom_OrgConfigRule-s3-bucket-versioning-enabled</code> </p> </li>
         /// </ul> </li>
         /// </ul>
@@ -1468,7 +2054,6 @@ pub mod source_keyword {
         /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/service-linked-awsconfig-rules.html">service-linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name. In addition, you remove the suffix ID that appears at the end of the rule name.</p>
         /// <ul>
         /// <li> <p>Service-linked rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p> <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li>
-        /// <li> <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p> <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li>
         /// <li> <p>Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p> <code>keywordValue</code>: <code>Custom_OrgConfigRule-s3-bucket-versioning-enabled</code> </p> </li>
         /// </ul> </li>
         /// </ul>
@@ -2155,7 +2740,7 @@ pub struct AssessmentControlSet {
     /// <p> The description for the control set. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p> Specifies the current status of the control set. </p>
+    /// <p> The current status of the control set. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ControlSetStatus>,
     /// <p> The roles that are associated with the control set. </p>
@@ -2183,7 +2768,7 @@ impl AssessmentControlSet {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> Specifies the current status of the control set. </p>
+    /// <p> The current status of the control set. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::ControlSetStatus> {
         self.status.as_ref()
     }
@@ -2244,12 +2829,12 @@ pub mod assessment_control_set {
             self.description = input;
             self
         }
-        /// <p> Specifies the current status of the control set. </p>
+        /// <p> The current status of the control set. </p>
         pub fn status(mut self, input: crate::model::ControlSetStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p> Specifies the current status of the control set. </p>
+        /// <p> The current status of the control set. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ControlSetStatus>,
@@ -2748,7 +3333,7 @@ pub struct AssessmentControl {
     /// <p> The list of data sources for the evidence. </p>
     #[doc(hidden)]
     pub evidence_sources: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> The amount of evidence that's generated for the control. </p>
+    /// <p> The amount of evidence that's collected for the control. </p>
     #[doc(hidden)]
     pub evidence_count: i32,
     /// <p> The amount of evidence in the assessment report. </p>
@@ -2784,7 +3369,7 @@ impl AssessmentControl {
     pub fn evidence_sources(&self) -> std::option::Option<&[std::string::String]> {
         self.evidence_sources.as_deref()
     }
-    /// <p> The amount of evidence that's generated for the control. </p>
+    /// <p> The amount of evidence that's collected for the control. </p>
     pub fn evidence_count(&self) -> i32 {
         self.evidence_count
     }
@@ -2904,12 +3489,12 @@ pub mod assessment_control {
             self.evidence_sources = input;
             self
         }
-        /// <p> The amount of evidence that's generated for the control. </p>
+        /// <p> The amount of evidence that's collected for the control. </p>
         pub fn evidence_count(mut self, input: i32) -> Self {
             self.evidence_count = Some(input);
             self
         }
-        /// <p> The amount of evidence that's generated for the control. </p>
+        /// <p> The amount of evidence that's collected for the control. </p>
         pub fn set_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
             self.evidence_count = input;
             self
@@ -4722,10 +5307,10 @@ pub struct Framework {
     /// <p> The control sets that are associated with the framework. </p>
     #[doc(hidden)]
     pub control_sets: std::option::Option<std::vec::Vec<crate::model::ControlSet>>,
-    /// <p> Specifies when the framework was created. </p>
+    /// <p> The time when the framework was created. </p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> Specifies when the framework was most recently updated. </p>
+    /// <p> The time when the framework was most recently updated. </p>
     #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The IAM user or role that created the framework. </p>
@@ -4776,11 +5361,11 @@ impl Framework {
     pub fn control_sets(&self) -> std::option::Option<&[crate::model::ControlSet]> {
         self.control_sets.as_deref()
     }
-    /// <p> Specifies when the framework was created. </p>
+    /// <p> The time when the framework was created. </p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p> Specifies when the framework was most recently updated. </p>
+    /// <p> The time when the framework was most recently updated. </p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -4929,12 +5514,12 @@ pub mod framework {
             self.control_sets = input;
             self
         }
-        /// <p> Specifies when the framework was created. </p>
+        /// <p> The time when the framework was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p> Specifies when the framework was created. </p>
+        /// <p> The time when the framework was created. </p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4942,12 +5527,12 @@ pub mod framework {
             self.created_at = input;
             self
         }
-        /// <p> Specifies when the framework was most recently updated. </p>
+        /// <p> The time when the framework was most recently updated. </p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p> Specifies when the framework was most recently updated. </p>
+        /// <p> The time when the framework was most recently updated. </p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5670,10 +6255,10 @@ pub struct ControlMetadata {
     /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
     #[doc(hidden)]
     pub control_sources: std::option::Option<std::string::String>,
-    /// <p> Specifies when the control was created. </p>
+    /// <p> The time when the control was created. </p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> Specifies when the control was most recently updated. </p>
+    /// <p> The time when the control was most recently updated. </p>
     #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -5694,11 +6279,11 @@ impl ControlMetadata {
     pub fn control_sources(&self) -> std::option::Option<&str> {
         self.control_sources.as_deref()
     }
-    /// <p> Specifies when the control was created. </p>
+    /// <p> The time when the control was created. </p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p> Specifies when the control was most recently updated. </p>
+    /// <p> The time when the control was most recently updated. </p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -5760,12 +6345,12 @@ pub mod control_metadata {
             self.control_sources = input;
             self
         }
-        /// <p> Specifies when the control was created. </p>
+        /// <p> The time when the control was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p> Specifies when the control was created. </p>
+        /// <p> The time when the control was created. </p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5773,12 +6358,12 @@ pub mod control_metadata {
             self.created_at = input;
             self
         }
-        /// <p> Specifies when the control was most recently updated. </p>
+        /// <p> The time when the control was most recently updated. </p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p> Specifies when the control was most recently updated. </p>
+        /// <p> The time when the control was most recently updated. </p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6698,10 +7283,10 @@ pub struct AssessmentFrameworkMetadata {
     /// <p> The number of control sets that are associated with the framework. </p>
     #[doc(hidden)]
     pub control_sets_count: i32,
-    /// <p> Specifies when the framework was created. </p>
+    /// <p> The time when the framework was created. </p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> Specifies when the framework was most recently updated. </p>
+    /// <p> The time when the framework was most recently updated. </p>
     #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -6742,11 +7327,11 @@ impl AssessmentFrameworkMetadata {
     pub fn control_sets_count(&self) -> i32 {
         self.control_sets_count
     }
-    /// <p> Specifies when the framework was created. </p>
+    /// <p> The time when the framework was created. </p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p> Specifies when the framework was most recently updated. </p>
+    /// <p> The time when the framework was most recently updated. </p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -6863,12 +7448,12 @@ pub mod assessment_framework_metadata {
             self.control_sets_count = input;
             self
         }
-        /// <p> Specifies when the framework was created. </p>
+        /// <p> The time when the framework was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p> Specifies when the framework was created. </p>
+        /// <p> The time when the framework was created. </p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6876,12 +7461,12 @@ pub mod assessment_framework_metadata {
             self.created_at = input;
             self
         }
-        /// <p> Specifies when the framework was most recently updated. </p>
+        /// <p> The time when the framework was most recently updated. </p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p> Specifies when the framework was most recently updated. </p>
+        /// <p> The time when the framework was most recently updated. </p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7063,6 +7648,8 @@ impl ControlInsightsMetadataByAssessmentItem {
 ///     SettingAttribute::All => { /* ... */ },
 ///     SettingAttribute::DefaultAssessmentReportsDestination => { /* ... */ },
 ///     SettingAttribute::DefaultProcessOwners => { /* ... */ },
+///     SettingAttribute::DeregistrationPolicy => { /* ... */ },
+///     SettingAttribute::EvidenceFinderEnablement => { /* ... */ },
 ///     SettingAttribute::IsAwsOrgEnabled => { /* ... */ },
 ///     SettingAttribute::SnsTopic => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -7105,6 +7692,10 @@ pub enum SettingAttribute {
     #[allow(missing_docs)] // documentation missing in model
     DefaultProcessOwners,
     #[allow(missing_docs)] // documentation missing in model
+    DeregistrationPolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    EvidenceFinderEnablement,
+    #[allow(missing_docs)] // documentation missing in model
     IsAwsOrgEnabled,
     #[allow(missing_docs)] // documentation missing in model
     SnsTopic,
@@ -7119,6 +7710,8 @@ impl std::convert::From<&str> for SettingAttribute {
                 SettingAttribute::DefaultAssessmentReportsDestination
             }
             "DEFAULT_PROCESS_OWNERS" => SettingAttribute::DefaultProcessOwners,
+            "DEREGISTRATION_POLICY" => SettingAttribute::DeregistrationPolicy,
+            "EVIDENCE_FINDER_ENABLEMENT" => SettingAttribute::EvidenceFinderEnablement,
             "IS_AWS_ORG_ENABLED" => SettingAttribute::IsAwsOrgEnabled,
             "SNS_TOPIC" => SettingAttribute::SnsTopic,
             other => SettingAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
@@ -7141,6 +7734,8 @@ impl SettingAttribute {
                 "DEFAULT_ASSESSMENT_REPORTS_DESTINATION"
             }
             SettingAttribute::DefaultProcessOwners => "DEFAULT_PROCESS_OWNERS",
+            SettingAttribute::DeregistrationPolicy => "DEREGISTRATION_POLICY",
+            SettingAttribute::EvidenceFinderEnablement => "EVIDENCE_FINDER_ENABLEMENT",
             SettingAttribute::IsAwsOrgEnabled => "IS_AWS_ORG_ENABLED",
             SettingAttribute::SnsTopic => "SNS_TOPIC",
             SettingAttribute::Unknown(value) => value.as_str(),
@@ -7152,6 +7747,8 @@ impl SettingAttribute {
             "ALL",
             "DEFAULT_ASSESSMENT_REPORTS_DESTINATION",
             "DEFAULT_PROCESS_OWNERS",
+            "DEREGISTRATION_POLICY",
+            "EVIDENCE_FINDER_ENABLEMENT",
             "IS_AWS_ORG_ENABLED",
             "SNS_TOPIC",
         ]
@@ -8042,7 +8639,7 @@ impl AssessmentEvidenceFolder {
     }
 }
 
-/// <p> A record that contains the information needed to demonstrate compliance with the requirements specified by a control. Examples of evidence include change activity triggered by a user, or a system configuration snapshot. </p>
+/// <p> A record that contains the information needed to demonstrate compliance with the requirements specified by a control. Examples of evidence include change activity invoked by a user, or a system configuration snapshot. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Evidence {
@@ -8074,7 +8671,12 @@ pub struct Evidence {
     /// <p> The unique identifier for the IAM user or role that's associated with the evidence. </p>
     #[doc(hidden)]
     pub iam_id: std::option::Option<std::string::String>,
-    /// <p> The evaluation status for evidence that falls under the compliance check category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
+    /// <p>The evaluation status for automated evidence that falls under the compliance check category.</p>
+    /// <ul>
+    /// <li> <p>Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li>
+    /// <li> <p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
+    /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub compliance_check: std::option::Option<std::string::String>,
     /// <p> The Amazon Web Services account that the evidence is collected from, and its organization path. </p>
@@ -8133,7 +8735,12 @@ impl Evidence {
     pub fn iam_id(&self) -> std::option::Option<&str> {
         self.iam_id.as_deref()
     }
-    /// <p> The evaluation status for evidence that falls under the compliance check category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
+    /// <p>The evaluation status for automated evidence that falls under the compliance check category.</p>
+    /// <ul>
+    /// <li> <p>Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li>
+    /// <li> <p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
+    /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
+    /// </ul>
     pub fn compliance_check(&self) -> std::option::Option<&str> {
         self.compliance_check.as_deref()
     }
@@ -8303,12 +8910,22 @@ pub mod evidence {
             self.iam_id = input;
             self
         }
-        /// <p> The evaluation status for evidence that falls under the compliance check category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
+        /// <p>The evaluation status for automated evidence that falls under the compliance check category.</p>
+        /// <ul>
+        /// <li> <p>Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li>
+        /// <li> <p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
+        /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
+        /// </ul>
         pub fn compliance_check(mut self, input: impl Into<std::string::String>) -> Self {
             self.compliance_check = Some(input.into());
             self
         }
-        /// <p> The evaluation status for evidence that falls under the compliance check category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
+        /// <p>The evaluation status for automated evidence that falls under the compliance check category.</p>
+        /// <ul>
+        /// <li> <p>Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li>
+        /// <li> <p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
+        /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
+        /// </ul>
         pub fn set_compliance_check(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8420,6 +9037,14 @@ pub struct Resource {
     /// <p> The value of the resource. </p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
+    /// <p> The evaluation status for a resource that was assessed when collecting compliance check evidence. </p>
+    /// <ul>
+    /// <li> <p>Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li>
+    /// <li> <p>Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
+    /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the resource assessment uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub compliance_check: std::option::Option<std::string::String>,
 }
 impl Resource {
     /// <p> The Amazon Resource Name (ARN) for the resource. </p>
@@ -8430,6 +9055,15 @@ impl Resource {
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
+    /// <p> The evaluation status for a resource that was assessed when collecting compliance check evidence. </p>
+    /// <ul>
+    /// <li> <p>Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li>
+    /// <li> <p>Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
+    /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the resource assessment uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
+    /// </ul>
+    pub fn compliance_check(&self) -> std::option::Option<&str> {
+        self.compliance_check.as_deref()
+    }
 }
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
@@ -8439,6 +9073,7 @@ pub mod resource {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) compliance_check: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) for the resource. </p>
@@ -8461,11 +9096,35 @@ pub mod resource {
             self.value = input;
             self
         }
+        /// <p> The evaluation status for a resource that was assessed when collecting compliance check evidence. </p>
+        /// <ul>
+        /// <li> <p>Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li>
+        /// <li> <p>Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
+        /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the resource assessment uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
+        /// </ul>
+        pub fn compliance_check(mut self, input: impl Into<std::string::String>) -> Self {
+            self.compliance_check = Some(input.into());
+            self
+        }
+        /// <p> The evaluation status for a resource that was assessed when collecting compliance check evidence. </p>
+        /// <ul>
+        /// <li> <p>Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li>
+        /// <li> <p>Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
+        /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the resource assessment uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
+        /// </ul>
+        pub fn set_compliance_check(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.compliance_check = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Resource`](crate::model::Resource).
         pub fn build(self) -> crate::model::Resource {
             crate::model::Resource {
                 arn: self.arn,
                 value: self.value,
+                compliance_check: self.compliance_check,
             }
         }
     }
@@ -9742,17 +10401,17 @@ impl ManualEvidence {
     }
 }
 
-/// <p> An error entity for the <code>AssessmentReportEvidence</code> API. This is used to provide more meaningful errors than a simple string message. </p>
+/// <p> An error entity for assessment report evidence errors. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentReportEvidenceError {
     /// <p> The identifier for the evidence. </p>
     #[doc(hidden)]
     pub evidence_id: std::option::Option<std::string::String>,
-    /// <p> The error code that the <code>AssessmentReportEvidence</code> API returned. </p>
+    /// <p> The error code that was returned. </p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
-    /// <p> The error message that the <code>AssessmentReportEvidence</code> API returned. </p>
+    /// <p> The error message that was returned. </p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
@@ -9761,11 +10420,11 @@ impl AssessmentReportEvidenceError {
     pub fn evidence_id(&self) -> std::option::Option<&str> {
         self.evidence_id.as_deref()
     }
-    /// <p> The error code that the <code>AssessmentReportEvidence</code> API returned. </p>
+    /// <p> The error code that was returned. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p> The error message that the <code>AssessmentReportEvidence</code> API returned. </p>
+    /// <p> The error message that was returned. </p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -9791,22 +10450,22 @@ pub mod assessment_report_evidence_error {
             self.evidence_id = input;
             self
         }
-        /// <p> The error code that the <code>AssessmentReportEvidence</code> API returned. </p>
+        /// <p> The error code that was returned. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p> The error code that the <code>AssessmentReportEvidence</code> API returned. </p>
+        /// <p> The error code that was returned. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        /// <p> The error message that the <code>AssessmentReportEvidence</code> API returned. </p>
+        /// <p> The error message that was returned. </p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p> The error message that the <code>AssessmentReportEvidence</code> API returned. </p>
+        /// <p> The error message that was returned. </p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,

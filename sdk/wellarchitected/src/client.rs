@@ -106,7 +106,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::CreateLensShare::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::CreateLensShare::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    ///   - [`shared_with(impl Into<String>)`](crate::client::fluent_builders::CreateLensShare::shared_with) / [`set_shared_with(Option<String>)`](crate::client::fluent_builders::CreateLensShare::set_shared_with): <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    ///   - [`shared_with(impl Into<String>)`](crate::client::fluent_builders::CreateLensShare::shared_with) / [`set_shared_with(Option<String>)`](crate::client::fluent_builders::CreateLensShare::set_shared_with): <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateLensShare::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateLensShare::set_client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
     /// - On success, responds with [`CreateLensShareOutput`](crate::output::CreateLensShareOutput) with field(s):
     ///   - [`share_id(Option<String>)`](crate::output::CreateLensShareOutput::share_id): <p>The ID associated with the workload share.</p>
@@ -159,6 +159,8 @@ impl Client {
     ///   - [`notes(impl Into<String>)`](crate::client::fluent_builders::CreateWorkload::notes) / [`set_notes(Option<String>)`](crate::client::fluent_builders::CreateWorkload::set_notes): <p>The notes associated with the workload.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateWorkload::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateWorkload::set_client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateWorkload::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateWorkload::set_tags): <p>The tags to be associated with the workload.</p>
+    ///   - [`discovery_config(WorkloadDiscoveryConfig)`](crate::client::fluent_builders::CreateWorkload::discovery_config) / [`set_discovery_config(Option<WorkloadDiscoveryConfig>)`](crate::client::fluent_builders::CreateWorkload::set_discovery_config): <p>Well-Architected discovery configuration settings associated to the workload.</p>
+    ///   - [`applications(Vec<String>)`](crate::client::fluent_builders::CreateWorkload::applications) / [`set_applications(Option<Vec<String>>)`](crate::client::fluent_builders::CreateWorkload::set_applications): <p>List of AppRegistry application ARNs associated to the workload.</p>
     /// - On success, responds with [`CreateWorkloadOutput`](crate::output::CreateWorkloadOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::output::CreateWorkloadOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`workload_arn(Option<String>)`](crate::output::CreateWorkloadOutput::workload_arn): <p>The ARN for the workload.</p>
@@ -170,7 +172,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::client::fluent_builders::CreateWorkloadShare::workload_id) / [`set_workload_id(Option<String>)`](crate::client::fluent_builders::CreateWorkloadShare::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`shared_with(impl Into<String>)`](crate::client::fluent_builders::CreateWorkloadShare::shared_with) / [`set_shared_with(Option<String>)`](crate::client::fluent_builders::CreateWorkloadShare::set_shared_with): <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    ///   - [`shared_with(impl Into<String>)`](crate::client::fluent_builders::CreateWorkloadShare::shared_with) / [`set_shared_with(Option<String>)`](crate::client::fluent_builders::CreateWorkloadShare::set_shared_with): <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     ///   - [`permission_type(PermissionType)`](crate::client::fluent_builders::CreateWorkloadShare::permission_type) / [`set_permission_type(Option<PermissionType>)`](crate::client::fluent_builders::CreateWorkloadShare::set_permission_type): <p>Permission granted on a workload share.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateWorkloadShare::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateWorkloadShare::set_client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
     /// - On success, responds with [`CreateWorkloadShareOutput`](crate::output::CreateWorkloadShareOutput) with field(s):
@@ -379,6 +381,42 @@ impl Client {
     pub fn list_answers(&self) -> fluent_builders::ListAnswers {
         fluent_builders::ListAnswers::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListCheckDetails`](crate::client::fluent_builders::ListCheckDetails) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCheckDetails::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`workload_id(impl Into<String>)`](crate::client::fluent_builders::ListCheckDetails::workload_id) / [`set_workload_id(Option<String>)`](crate::client::fluent_builders::ListCheckDetails::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCheckDetails::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCheckDetails::set_next_token): <p>The token to use to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCheckDetails::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListCheckDetails::set_max_results): <p>The maximum number of results to return for this request.</p>
+    ///   - [`lens_arn(impl Into<String>)`](crate::client::fluent_builders::ListCheckDetails::lens_arn) / [`set_lens_arn(Option<String>)`](crate::client::fluent_builders::ListCheckDetails::set_lens_arn): <p>Well-Architected Lens ARN.</p>
+    ///   - [`pillar_id(impl Into<String>)`](crate::client::fluent_builders::ListCheckDetails::pillar_id) / [`set_pillar_id(Option<String>)`](crate::client::fluent_builders::ListCheckDetails::set_pillar_id): <p>The ID used to identify a pillar, for example, <code>security</code>.</p>  <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    ///   - [`question_id(impl Into<String>)`](crate::client::fluent_builders::ListCheckDetails::question_id) / [`set_question_id(Option<String>)`](crate::client::fluent_builders::ListCheckDetails::set_question_id): <p>The ID of the question.</p>
+    ///   - [`choice_id(impl Into<String>)`](crate::client::fluent_builders::ListCheckDetails::choice_id) / [`set_choice_id(Option<String>)`](crate::client::fluent_builders::ListCheckDetails::set_choice_id): <p>The ID of a choice.</p>
+    /// - On success, responds with [`ListCheckDetailsOutput`](crate::output::ListCheckDetailsOutput) with field(s):
+    ///   - [`check_details(Option<Vec<CheckDetail>>)`](crate::output::ListCheckDetailsOutput::check_details): <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCheckDetailsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListCheckDetailsError>`](crate::error::ListCheckDetailsError)
+    pub fn list_check_details(&self) -> fluent_builders::ListCheckDetails {
+        fluent_builders::ListCheckDetails::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListCheckSummaries`](crate::client::fluent_builders::ListCheckSummaries) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCheckSummaries::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`workload_id(impl Into<String>)`](crate::client::fluent_builders::ListCheckSummaries::workload_id) / [`set_workload_id(Option<String>)`](crate::client::fluent_builders::ListCheckSummaries::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCheckSummaries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCheckSummaries::set_next_token): <p>The token to use to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCheckSummaries::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListCheckSummaries::set_max_results): <p>The maximum number of results to return for this request.</p>
+    ///   - [`lens_arn(impl Into<String>)`](crate::client::fluent_builders::ListCheckSummaries::lens_arn) / [`set_lens_arn(Option<String>)`](crate::client::fluent_builders::ListCheckSummaries::set_lens_arn): <p>Well-Architected Lens ARN.</p>
+    ///   - [`pillar_id(impl Into<String>)`](crate::client::fluent_builders::ListCheckSummaries::pillar_id) / [`set_pillar_id(Option<String>)`](crate::client::fluent_builders::ListCheckSummaries::set_pillar_id): <p>The ID used to identify a pillar, for example, <code>security</code>.</p>  <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    ///   - [`question_id(impl Into<String>)`](crate::client::fluent_builders::ListCheckSummaries::question_id) / [`set_question_id(Option<String>)`](crate::client::fluent_builders::ListCheckSummaries::set_question_id): <p>The ID of the question.</p>
+    ///   - [`choice_id(impl Into<String>)`](crate::client::fluent_builders::ListCheckSummaries::choice_id) / [`set_choice_id(Option<String>)`](crate::client::fluent_builders::ListCheckSummaries::set_choice_id): <p>The ID of a choice.</p>
+    /// - On success, responds with [`ListCheckSummariesOutput`](crate::output::ListCheckSummariesOutput) with field(s):
+    ///   - [`check_summaries(Option<Vec<CheckSummary>>)`](crate::output::ListCheckSummariesOutput::check_summaries): <p>List of Trusted Advisor summaries related to the Well-Architected best practice.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCheckSummariesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListCheckSummariesError>`](crate::error::ListCheckSummariesError)
+    pub fn list_check_summaries(&self) -> fluent_builders::ListCheckSummaries {
+        fluent_builders::ListCheckSummaries::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListLenses`](crate::client::fluent_builders::ListLenses) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLenses::into_paginator).
     ///
@@ -438,7 +476,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::ListLensShares::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::ListLensShares::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    ///   - [`shared_with_prefix(impl Into<String>)`](crate::client::fluent_builders::ListLensShares::shared_with_prefix) / [`set_shared_with_prefix(Option<String>)`](crate::client::fluent_builders::ListLensShares::set_shared_with_prefix): <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
+    ///   - [`shared_with_prefix(impl Into<String>)`](crate::client::fluent_builders::ListLensShares::shared_with_prefix) / [`set_shared_with_prefix(Option<String>)`](crate::client::fluent_builders::ListLensShares::set_shared_with_prefix): <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLensShares::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLensShares::set_next_token): <p>The token to use to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLensShares::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListLensShares::set_max_results): <p>The maximum number of results to return for this request.</p>
     ///   - [`status(ShareStatus)`](crate::client::fluent_builders::ListLensShares::status) / [`set_status(Option<ShareStatus>)`](crate::client::fluent_builders::ListLensShares::set_status): <p>The status of a workload share.</p>
@@ -523,7 +561,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::client::fluent_builders::ListWorkloadShares::workload_id) / [`set_workload_id(Option<String>)`](crate::client::fluent_builders::ListWorkloadShares::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`shared_with_prefix(impl Into<String>)`](crate::client::fluent_builders::ListWorkloadShares::shared_with_prefix) / [`set_shared_with_prefix(Option<String>)`](crate::client::fluent_builders::ListWorkloadShares::set_shared_with_prefix): <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    ///   - [`shared_with_prefix(impl Into<String>)`](crate::client::fluent_builders::ListWorkloadShares::shared_with_prefix) / [`set_shared_with_prefix(Option<String>)`](crate::client::fluent_builders::ListWorkloadShares::set_shared_with_prefix): <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorkloadShares::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorkloadShares::set_next_token): <p>The token to use to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorkloadShares::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListWorkloadShares::set_max_results): <p>The maximum number of results to return for this request.</p>
     ///   - [`status(ShareStatus)`](crate::client::fluent_builders::ListWorkloadShares::status) / [`set_status(Option<ShareStatus>)`](crate::client::fluent_builders::ListWorkloadShares::set_status): <p>The status of a workload share.</p>
@@ -607,7 +645,7 @@ impl Client {
     ///   - [`share_invitation_id(impl Into<String>)`](crate::client::fluent_builders::UpdateShareInvitation::share_invitation_id) / [`set_share_invitation_id(Option<String>)`](crate::client::fluent_builders::UpdateShareInvitation::set_share_invitation_id): <p>The ID assigned to the share invitation.</p>
     ///   - [`share_invitation_action(ShareInvitationAction)`](crate::client::fluent_builders::UpdateShareInvitation::share_invitation_action) / [`set_share_invitation_action(Option<ShareInvitationAction>)`](crate::client::fluent_builders::UpdateShareInvitation::set_share_invitation_action): <p>Share invitation action taken by contributor.</p>
     /// - On success, responds with [`UpdateShareInvitationOutput`](crate::output::UpdateShareInvitationOutput) with field(s):
-    ///   - [`share_invitation(Option<ShareInvitation>)`](crate::output::UpdateShareInvitationOutput::share_invitation): <p>The updated workload share invitation.</p>
+    ///   - [`share_invitation(Option<ShareInvitation>)`](crate::output::UpdateShareInvitationOutput::share_invitation): <p>The updated workload or custom lens share invitation.</p>
     /// - On failure, responds with [`SdkError<UpdateShareInvitationError>`](crate::error::UpdateShareInvitationError)
     pub fn update_share_invitation(&self) -> fluent_builders::UpdateShareInvitation {
         fluent_builders::UpdateShareInvitation::new(self.handle.clone())
@@ -630,6 +668,8 @@ impl Client {
     ///   - [`industry(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkload::industry) / [`set_industry(Option<String>)`](crate::client::fluent_builders::UpdateWorkload::set_industry): <p>The industry for the workload.</p>
     ///   - [`notes(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkload::notes) / [`set_notes(Option<String>)`](crate::client::fluent_builders::UpdateWorkload::set_notes): <p>The notes associated with the workload.</p>
     ///   - [`improvement_status(WorkloadImprovementStatus)`](crate::client::fluent_builders::UpdateWorkload::improvement_status) / [`set_improvement_status(Option<WorkloadImprovementStatus>)`](crate::client::fluent_builders::UpdateWorkload::set_improvement_status): <p>The improvement status for a workload.</p>
+    ///   - [`discovery_config(WorkloadDiscoveryConfig)`](crate::client::fluent_builders::UpdateWorkload::discovery_config) / [`set_discovery_config(Option<WorkloadDiscoveryConfig>)`](crate::client::fluent_builders::UpdateWorkload::set_discovery_config): <p>Well-Architected discovery configuration settings to associate to the workload.</p>
+    ///   - [`applications(Vec<String>)`](crate::client::fluent_builders::UpdateWorkload::applications) / [`set_applications(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateWorkload::set_applications): <p>List of AppRegistry application ARNs to associate to the workload.</p>
     /// - On success, responds with [`UpdateWorkloadOutput`](crate::output::UpdateWorkloadOutput) with field(s):
     ///   - [`workload(Option<Workload>)`](crate::output::UpdateWorkloadOutput::workload): <p>A workload return object.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkloadError>`](crate::error::UpdateWorkloadError)
@@ -769,7 +809,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLensShare`.
     ///
     /// <p>Create a lens share.</p>
-    /// <p>The owner of a lens can share it with other Amazon Web Services accounts and IAM users in the same Amazon Web Services Region. Shared access to a lens is not removed until the lens invitation is deleted.</p> <note>
+    /// <p>The owner of a lens can share it with other Amazon Web Services accounts, IAM users, an organization, and organizational units (OUs) in the same Amazon Web Services Region. Shared access to a lens is not removed until the lens invitation is deleted.</p> <note>
     /// <p> <b>Disclaimer</b> </p>
     /// <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p>
     /// </note>
@@ -848,12 +888,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.shared_with(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_shared_with(input);
             self
@@ -1108,7 +1148,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkload`.
     ///
     /// <p>Create a new workload.</p>
-    /// <p>The owner of a workload can share the workload with other Amazon Web Services accounts and IAM users in the same Amazon Web Services Region. Only the owner of a workload can delete it.</p>
+    /// <p>The owner of a workload can share the workload with other Amazon Web Services accounts, IAM users, an organization, and organizational units (OUs) in the same Amazon Web Services Region. Only the owner of a workload can delete it.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkload {
@@ -1450,6 +1490,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
+        pub fn discovery_config(mut self, input: crate::model::WorkloadDiscoveryConfig) -> Self {
+            self.inner = self.inner.discovery_config(input);
+            self
+        }
+        /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
+        pub fn set_discovery_config(
+            mut self,
+            input: std::option::Option<crate::model::WorkloadDiscoveryConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_discovery_config(input);
+            self
+        }
+        /// Appends an item to `Applications`.
+        ///
+        /// To override the contents of this collection use [`set_applications`](Self::set_applications).
+        ///
+        /// <p>List of AppRegistry application ARNs associated to the workload.</p>
+        pub fn applications(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.applications(input.into());
+            self
+        }
+        /// <p>List of AppRegistry application ARNs associated to the workload.</p>
+        pub fn set_applications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_applications(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateWorkloadShare`.
     ///
@@ -1525,12 +1595,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.shared_with(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_shared_with(input);
             self
@@ -1686,7 +1756,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLensShare`.
     ///
     /// <p>Delete a lens share.</p>
-    /// <p>After the lens share is deleted, Amazon Web Services accounts and IAM users that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.</p> <note>
+    /// <p>After the lens share is deleted, Amazon Web Services accounts, IAM users, organizations, and organizational units (OUs) that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.</p> <note>
     /// <p> <b>Disclaimer</b> </p>
     /// <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p>
     /// </note>
@@ -3118,6 +3188,288 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListCheckDetails`.
+    ///
+    /// <p>List of Trusted Advisor check details by account related to the workload.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListCheckDetails {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_check_details_input::Builder,
+    }
+    impl ListCheckDetails {
+        /// Creates a new `ListCheckDetails`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListCheckDetails,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListCheckDetailsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCheckDetailsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListCheckDetailsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCheckDetailsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCheckDetailsPaginator {
+            crate::paginator::ListCheckDetailsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
+            self
+        }
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+        pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workload_id(input);
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return for this request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return for this request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Well-Architected Lens ARN.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_arn(input.into());
+            self
+        }
+        /// <p>Well-Architected Lens ARN.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lens_arn(input);
+            self
+        }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pillar_id(input.into());
+            self
+        }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_pillar_id(input);
+            self
+        }
+        /// <p>The ID of the question.</p>
+        pub fn question_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.question_id(input.into());
+            self
+        }
+        /// <p>The ID of the question.</p>
+        pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_question_id(input);
+            self
+        }
+        /// <p>The ID of a choice.</p>
+        pub fn choice_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.choice_id(input.into());
+            self
+        }
+        /// <p>The ID of a choice.</p>
+        pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_choice_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListCheckSummaries`.
+    ///
+    /// <p>List of Trusted Advisor checks summarized for all accounts related to the workload.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListCheckSummaries {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_check_summaries_input::Builder,
+    }
+    impl ListCheckSummaries {
+        /// Creates a new `ListCheckSummaries`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListCheckSummaries,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListCheckSummariesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCheckSummariesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListCheckSummariesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCheckSummariesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCheckSummariesPaginator {
+            crate::paginator::ListCheckSummariesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
+            self
+        }
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+        pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workload_id(input);
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return for this request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return for this request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Well-Architected Lens ARN.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_arn(input.into());
+            self
+        }
+        /// <p>Well-Architected Lens ARN.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lens_arn(input);
+            self
+        }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pillar_id(input.into());
+            self
+        }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_pillar_id(input);
+            self
+        }
+        /// <p>The ID of the question.</p>
+        pub fn question_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.question_id(input.into());
+            self
+        }
+        /// <p>The ID of the question.</p>
+        pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_question_id(input);
+            self
+        }
+        /// <p>The ID of a choice.</p>
+        pub fn choice_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.choice_id(input.into());
+            self
+        }
+        /// <p>The ID of a choice.</p>
+        pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_choice_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListLenses`.
     ///
     /// <p>List the available lenses.</p>
@@ -3574,12 +3926,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
         pub fn shared_with_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.shared_with_prefix(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
         pub fn set_shared_with_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4199,12 +4551,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn shared_with_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.shared_with_prefix(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn set_shared_with_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4812,7 +5164,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateShareInvitation`.
     ///
-    /// <p>Update a workload invitation.</p>
+    /// <p>Update a workload or custom lens share invitation.</p> <note>
+    /// <p>This API operation can be called independently of any resource. Previous documentation implied that a workload ARN must be specified.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateShareInvitation {
         handle: std::sync::Arc<super::Handle>,
@@ -5225,6 +5579,36 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::WorkloadImprovementStatus>,
         ) -> Self {
             self.inner = self.inner.set_improvement_status(input);
+            self
+        }
+        /// <p>Well-Architected discovery configuration settings to associate to the workload.</p>
+        pub fn discovery_config(mut self, input: crate::model::WorkloadDiscoveryConfig) -> Self {
+            self.inner = self.inner.discovery_config(input);
+            self
+        }
+        /// <p>Well-Architected discovery configuration settings to associate to the workload.</p>
+        pub fn set_discovery_config(
+            mut self,
+            input: std::option::Option<crate::model::WorkloadDiscoveryConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_discovery_config(input);
+            self
+        }
+        /// Appends an item to `Applications`.
+        ///
+        /// To override the contents of this collection use [`set_applications`](Self::set_applications).
+        ///
+        /// <p>List of AppRegistry application ARNs to associate to the workload.</p>
+        pub fn applications(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.applications(input.into());
+            self
+        }
+        /// <p>List of AppRegistry application ARNs to associate to the workload.</p>
+        pub fn set_applications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_applications(input);
             self
         }
     }

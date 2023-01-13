@@ -98,7 +98,7 @@ impl Client {
     ///   - [`secret_arn(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::secret_arn) / [`set_secret_arn(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_secret_arn): <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>  <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     ///   - [`sql(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::sql) / [`set_sql(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_sql): <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
     ///   - [`database(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::database) / [`set_database(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_database): <p>The name of the database.</p>
-    ///   - [`schema(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::schema) / [`set_schema(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_schema): <p>The name of the database schema.</p>
+    ///   - [`schema(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::schema) / [`set_schema(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_schema): <p>The name of the database schema.</p> <note>   <p>Currently, the <code>schema</code> parameter isn't supported.</p>  </note>
     ///   - [`parameter_sets(Vec<Vec<SqlParameter>>)`](crate::client::fluent_builders::BatchExecuteStatement::parameter_sets) / [`set_parameter_sets(Option<Vec<Vec<SqlParameter>>>)`](crate::client::fluent_builders::BatchExecuteStatement::set_parameter_sets): <p>The parameter set for the batch operation.</p>  <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>  <ul>   <li> <p>Specify one or more empty parameter sets.</p> </li>   <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>  </ul> <note>   <p>Array parameters are not supported.</p>  </note>
     ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_transaction_id): <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>  <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     /// - On success, responds with [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput) with field(s):
@@ -299,12 +299,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database(input);
             self
         }
-        /// <p>The name of the database schema.</p>
+        /// <p>The name of the database schema.</p> <note>
+        /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
+        /// </note>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema(input.into());
             self
         }
-        /// <p>The name of the database schema.</p>
+        /// <p>The name of the database schema.</p> <note>
+        /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
+        /// </note>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema(input);
             self

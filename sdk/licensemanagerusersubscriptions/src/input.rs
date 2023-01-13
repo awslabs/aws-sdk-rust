@@ -1268,6 +1268,7 @@ pub mod register_identity_provider_input {
     pub struct Builder {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProvider>,
         pub(crate) product: std::option::Option<std::string::String>,
+        pub(crate) settings: std::option::Option<crate::model::Settings>,
     }
     impl Builder {
         /// <p>An object that specifies details for the identity provider.</p>
@@ -1293,6 +1294,16 @@ pub mod register_identity_provider_input {
             self.product = input;
             self
         }
+        /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
+        pub fn settings(mut self, input: crate::model::Settings) -> Self {
+            self.settings = Some(input);
+            self
+        }
+        /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
+        pub fn set_settings(mut self, input: std::option::Option<crate::model::Settings>) -> Self {
+            self.settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RegisterIdentityProviderInput`](crate::input::RegisterIdentityProviderInput).
         pub fn build(
             self,
@@ -1303,6 +1314,7 @@ pub mod register_identity_provider_input {
             Ok(crate::input::RegisterIdentityProviderInput {
                 identity_provider: self.identity_provider,
                 product: self.product,
+                settings: self.settings,
             })
         }
     }
@@ -1787,6 +1799,227 @@ impl StopProductSubscriptionInput {
     }
 }
 
+/// See [`UpdateIdentityProviderSettingsInput`](crate::input::UpdateIdentityProviderSettingsInput).
+pub mod update_identity_provider_settings_input {
+
+    /// A builder for [`UpdateIdentityProviderSettingsInput`](crate::input::UpdateIdentityProviderSettingsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) identity_provider: std::option::Option<crate::model::IdentityProvider>,
+        pub(crate) product: std::option::Option<std::string::String>,
+        pub(crate) update_settings: std::option::Option<crate::model::UpdateSettings>,
+    }
+    impl Builder {
+        /// <p>Details about an identity provider.</p>
+        pub fn identity_provider(mut self, input: crate::model::IdentityProvider) -> Self {
+            self.identity_provider = Some(input);
+            self
+        }
+        /// <p>Details about an identity provider.</p>
+        pub fn set_identity_provider(
+            mut self,
+            input: std::option::Option<crate::model::IdentityProvider>,
+        ) -> Self {
+            self.identity_provider = input;
+            self
+        }
+        /// <p>The name of the user-based subscription product.</p>
+        pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product = Some(input.into());
+            self
+        }
+        /// <p>The name of the user-based subscription product.</p>
+        pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.product = input;
+            self
+        }
+        /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
+        /// <ul>
+        /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
+        /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
+        /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
+        /// </ul>
+        pub fn update_settings(mut self, input: crate::model::UpdateSettings) -> Self {
+            self.update_settings = Some(input);
+            self
+        }
+        /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
+        /// <ul>
+        /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
+        /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
+        /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
+        /// </ul>
+        pub fn set_update_settings(
+            mut self,
+            input: std::option::Option<crate::model::UpdateSettings>,
+        ) -> Self {
+            self.update_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateIdentityProviderSettingsInput`](crate::input::UpdateIdentityProviderSettingsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateIdentityProviderSettingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateIdentityProviderSettingsInput {
+                identity_provider: self.identity_provider,
+                product: self.product,
+                update_settings: self.update_settings,
+            })
+        }
+    }
+}
+impl UpdateIdentityProviderSettingsInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateIdentityProviderSettings`](crate::operation::UpdateIdentityProviderSettings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateIdentityProviderSettings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateIdentityProviderSettingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/identity-provider/UpdateIdentityProviderSettings")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateIdentityProviderSettingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_identity_provider_settings(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateIdentityProviderSettings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateIdentityProviderSettings",
+            "licensemanagerusersubscriptions",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderSettingsInput`](crate::input::UpdateIdentityProviderSettingsInput).
+    pub fn builder() -> crate::input::update_identity_provider_settings_input::Builder {
+        crate::input::update_identity_provider_settings_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateIdentityProviderSettingsInput {
+    /// <p>Details about an identity provider.</p>
+    #[doc(hidden)]
+    pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
+    /// <p>The name of the user-based subscription product.</p>
+    #[doc(hidden)]
+    pub product: std::option::Option<std::string::String>,
+    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
+    /// <ul>
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub update_settings: std::option::Option<crate::model::UpdateSettings>,
+}
+impl UpdateIdentityProviderSettingsInput {
+    /// <p>Details about an identity provider.</p>
+    pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProvider> {
+        self.identity_provider.as_ref()
+    }
+    /// <p>The name of the user-based subscription product.</p>
+    pub fn product(&self) -> std::option::Option<&str> {
+        self.product.as_deref()
+    }
+    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
+    /// <ul>
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
+    /// </ul>
+    pub fn update_settings(&self) -> std::option::Option<&crate::model::UpdateSettings> {
+        self.update_settings.as_ref()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1869,6 +2102,9 @@ pub struct RegisterIdentityProviderInput {
     /// <p>The name of the user-based subscription product.</p>
     #[doc(hidden)]
     pub product: std::option::Option<std::string::String>,
+    /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
+    #[doc(hidden)]
+    pub settings: std::option::Option<crate::model::Settings>,
 }
 impl RegisterIdentityProviderInput {
     /// <p>An object that specifies details for the identity provider.</p>
@@ -1878,6 +2114,10 @@ impl RegisterIdentityProviderInput {
     /// <p>The name of the user-based subscription product.</p>
     pub fn product(&self) -> std::option::Option<&str> {
         self.product.as_deref()
+    }
+    /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
+    pub fn settings(&self) -> std::option::Option<&crate::model::Settings> {
+        self.settings.as_ref()
     }
 }
 

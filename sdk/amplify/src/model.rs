@@ -1544,7 +1544,7 @@ pub struct App {
     /// <p> The Git repository for the Amplify app. </p>
     #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
-    /// <p> The platform for the Amplify app. </p>
+    /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p> Creates a date and time for the Amplify app. </p>
@@ -1631,7 +1631,7 @@ impl App {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The platform for the Amplify app. </p>
+    /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
     pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
         self.platform.as_ref()
     }
@@ -1870,12 +1870,12 @@ pub mod app {
             self.repository = input;
             self
         }
-        /// <p> The platform for the Amplify app. </p>
+        /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.platform = Some(input);
             self
         }
-        /// <p> The platform for the Amplify app. </p>
+        /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -2956,6 +2956,7 @@ impl CustomRule {
 /// # let platform = unimplemented!();
 /// match platform {
 ///     Platform::Web => { /* ... */ },
+///     Platform::WebCompute => { /* ... */ },
 ///     Platform::WebDynamic => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -2993,6 +2994,8 @@ pub enum Platform {
     #[allow(missing_docs)] // documentation missing in model
     Web,
     #[allow(missing_docs)] // documentation missing in model
+    WebCompute,
+    #[allow(missing_docs)] // documentation missing in model
     WebDynamic,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
@@ -3001,6 +3004,7 @@ impl std::convert::From<&str> for Platform {
     fn from(s: &str) -> Self {
         match s {
             "WEB" => Platform::Web,
+            "WEB_COMPUTE" => Platform::WebCompute,
             "WEB_DYNAMIC" => Platform::WebDynamic,
             other => Platform::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
@@ -3018,13 +3022,14 @@ impl Platform {
     pub fn as_str(&self) -> &str {
         match self {
             Platform::Web => "WEB",
+            Platform::WebCompute => "WEB_COMPUTE",
             Platform::WebDynamic => "WEB_DYNAMIC",
             Platform::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["WEB", "WEB_DYNAMIC"]
+        &["WEB", "WEB_COMPUTE", "WEB_DYNAMIC"]
     }
 }
 impl AsRef<str> for Platform {

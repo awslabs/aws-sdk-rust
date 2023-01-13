@@ -689,6 +689,74 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnswers {
     }
 }
 
+/// Operation shape for `ListCheckDetails`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_check_details`](crate::client::Client::list_check_details).
+///
+/// See [`crate::client::fluent_builders::ListCheckDetails`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListCheckDetails {
+    _private: (),
+}
+impl ListCheckDetails {
+    /// Creates a new builder-style object to manufacture [`ListCheckDetailsInput`](crate::input::ListCheckDetailsInput).
+    pub fn builder() -> crate::input::list_check_details_input::Builder {
+        crate::input::list_check_details_input::Builder::default()
+    }
+    /// Creates a new `ListCheckDetails` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListCheckDetails {
+    type Output = std::result::Result<
+        crate::output::ListCheckDetailsOutput,
+        crate::error::ListCheckDetailsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_check_details_error(response)
+        } else {
+            crate::operation_deser::parse_list_check_details_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListCheckSummaries`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_check_summaries`](crate::client::Client::list_check_summaries).
+///
+/// See [`crate::client::fluent_builders::ListCheckSummaries`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListCheckSummaries {
+    _private: (),
+}
+impl ListCheckSummaries {
+    /// Creates a new builder-style object to manufacture [`ListCheckSummariesInput`](crate::input::ListCheckSummariesInput).
+    pub fn builder() -> crate::input::list_check_summaries_input::Builder {
+        crate::input::list_check_summaries_input::Builder::default()
+    }
+    /// Creates a new `ListCheckSummaries` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListCheckSummaries {
+    type Output = std::result::Result<
+        crate::output::ListCheckSummariesOutput,
+        crate::error::ListCheckSummariesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_check_summaries_error(response)
+        } else {
+            crate::operation_deser::parse_list_check_summaries_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListLenses`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

@@ -543,7 +543,7 @@ pub struct DeploymentTargets {
     /// <ul>
     /// <li> <p> <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter. </p> </li>
     /// <li> <p> <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter. This enables user to avoid certain accounts within an OU such as suspended accounts.</p> </li>
-    /// <li> <p> <code>UNION</code>: (default value) StackSets includes additional accounts deployment targets. </p> <p>This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an entire OU and individual accounts from a different OU in one request, which used to be two separate requests.</p> </li>
+    /// <li> <p> <code>UNION</code>: StackSets includes additional accounts deployment targets. </p> <p>This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an entire OU and individual accounts from a different OU in one request, which used to be two separate requests.</p> </li>
     /// <li> <p> <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).</p> </li>
     /// </ul>
     #[doc(hidden)]
@@ -567,7 +567,7 @@ impl DeploymentTargets {
     /// <ul>
     /// <li> <p> <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter. </p> </li>
     /// <li> <p> <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter. This enables user to avoid certain accounts within an OU such as suspended accounts.</p> </li>
-    /// <li> <p> <code>UNION</code>: (default value) StackSets includes additional accounts deployment targets. </p> <p>This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an entire OU and individual accounts from a different OU in one request, which used to be two separate requests.</p> </li>
+    /// <li> <p> <code>UNION</code>: StackSets includes additional accounts deployment targets. </p> <p>This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an entire OU and individual accounts from a different OU in one request, which used to be two separate requests.</p> </li>
     /// <li> <p> <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).</p> </li>
     /// </ul>
     pub fn account_filter_type(&self) -> std::option::Option<&crate::model::AccountFilterType> {
@@ -639,7 +639,7 @@ pub mod deployment_targets {
         /// <ul>
         /// <li> <p> <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter. </p> </li>
         /// <li> <p> <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter. This enables user to avoid certain accounts within an OU such as suspended accounts.</p> </li>
-        /// <li> <p> <code>UNION</code>: (default value) StackSets includes additional accounts deployment targets. </p> <p>This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an entire OU and individual accounts from a different OU in one request, which used to be two separate requests.</p> </li>
+        /// <li> <p> <code>UNION</code>: StackSets includes additional accounts deployment targets. </p> <p>This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an entire OU and individual accounts from a different OU in one request, which used to be two separate requests.</p> </li>
         /// <li> <p> <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).</p> </li>
         /// </ul>
         pub fn account_filter_type(mut self, input: crate::model::AccountFilterType) -> Self {
@@ -651,7 +651,7 @@ pub mod deployment_targets {
         /// <ul>
         /// <li> <p> <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter. </p> </li>
         /// <li> <p> <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter. This enables user to avoid certain accounts within an OU such as suspended accounts.</p> </li>
-        /// <li> <p> <code>UNION</code>: (default value) StackSets includes additional accounts deployment targets. </p> <p>This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an entire OU and individual accounts from a different OU in one request, which used to be two separate requests.</p> </li>
+        /// <li> <p> <code>UNION</code>: StackSets includes additional accounts deployment targets. </p> <p>This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an entire OU and individual accounts from a different OU in one request, which used to be two separate requests.</p> </li>
         /// <li> <p> <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).</p> </li>
         /// </ul>
         pub fn set_account_filter_type(
@@ -1835,6 +1835,7 @@ impl LoggingConfig {
 ///     HandlerErrorCode::ServiceLimitExceeded => { /* ... */ },
 ///     HandlerErrorCode::Throttling => { /* ... */ },
 ///     HandlerErrorCode::UnknownValue => { /* ... */ },
+///     HandlerErrorCode::UnsupportedTarget => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -1904,6 +1905,8 @@ pub enum HandlerErrorCode {
     Throttling,
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedTarget,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -1928,6 +1931,7 @@ impl std::convert::From<&str> for HandlerErrorCode {
             "ServiceLimitExceeded" => HandlerErrorCode::ServiceLimitExceeded,
             "Throttling" => HandlerErrorCode::Throttling,
             "Unknown" => HandlerErrorCode::UnknownValue,
+            "UnsupportedTarget" => HandlerErrorCode::UnsupportedTarget,
             other => HandlerErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -1961,6 +1965,7 @@ impl HandlerErrorCode {
             HandlerErrorCode::ServiceLimitExceeded => "ServiceLimitExceeded",
             HandlerErrorCode::Throttling => "Throttling",
             HandlerErrorCode::UnknownValue => "Unknown",
+            HandlerErrorCode::UnsupportedTarget => "UnsupportedTarget",
             HandlerErrorCode::Unknown(value) => value.as_str(),
         }
     }
@@ -1985,6 +1990,7 @@ impl HandlerErrorCode {
             "ServiceLimitExceeded",
             "Throttling",
             "Unknown",
+            "UnsupportedTarget",
         ]
     }
 }
@@ -3819,6 +3825,13 @@ pub struct StackSetOperationSummary {
     /// <p>The status of the operation in details.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
+    /// <p>Detailed information about the stack set operation.</p>
+    #[doc(hidden)]
+    pub status_details: std::option::Option<crate::model::StackSetOperationStatusDetails>,
+    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
+    /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    #[doc(hidden)]
+    pub operation_preferences: std::option::Option<crate::model::StackSetOperationPreferences>,
 }
 impl StackSetOperationSummary {
     /// <p>The unique ID of the stack set operation.</p>
@@ -3853,6 +3866,19 @@ impl StackSetOperationSummary {
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
+    /// <p>Detailed information about the stack set operation.</p>
+    pub fn status_details(
+        &self,
+    ) -> std::option::Option<&crate::model::StackSetOperationStatusDetails> {
+        self.status_details.as_ref()
+    }
+    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
+    /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    pub fn operation_preferences(
+        &self,
+    ) -> std::option::Option<&crate::model::StackSetOperationPreferences> {
+        self.operation_preferences.as_ref()
+    }
 }
 /// See [`StackSetOperationSummary`](crate::model::StackSetOperationSummary).
 pub mod stack_set_operation_summary {
@@ -3866,6 +3892,10 @@ pub mod stack_set_operation_summary {
         pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
+        pub(crate) status_details:
+            std::option::Option<crate::model::StackSetOperationStatusDetails>,
+        pub(crate) operation_preferences:
+            std::option::Option<crate::model::StackSetOperationPreferences>,
     }
     impl Builder {
         /// <p>The unique ID of the stack set operation.</p>
@@ -3959,6 +3989,40 @@ pub mod stack_set_operation_summary {
             self.status_reason = input;
             self
         }
+        /// <p>Detailed information about the stack set operation.</p>
+        pub fn status_details(
+            mut self,
+            input: crate::model::StackSetOperationStatusDetails,
+        ) -> Self {
+            self.status_details = Some(input);
+            self
+        }
+        /// <p>Detailed information about the stack set operation.</p>
+        pub fn set_status_details(
+            mut self,
+            input: std::option::Option<crate::model::StackSetOperationStatusDetails>,
+        ) -> Self {
+            self.status_details = input;
+            self
+        }
+        /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
+        /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+        pub fn operation_preferences(
+            mut self,
+            input: crate::model::StackSetOperationPreferences,
+        ) -> Self {
+            self.operation_preferences = Some(input);
+            self
+        }
+        /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
+        /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+        pub fn set_operation_preferences(
+            mut self,
+            input: std::option::Option<crate::model::StackSetOperationPreferences>,
+        ) -> Self {
+            self.operation_preferences = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StackSetOperationSummary`](crate::model::StackSetOperationSummary).
         pub fn build(self) -> crate::model::StackSetOperationSummary {
             crate::model::StackSetOperationSummary {
@@ -3968,6 +4032,8 @@ pub mod stack_set_operation_summary {
                 creation_timestamp: self.creation_timestamp,
                 end_timestamp: self.end_timestamp,
                 status_reason: self.status_reason,
+                status_details: self.status_details,
+                operation_preferences: self.operation_preferences,
             }
         }
     }
@@ -3976,6 +4042,54 @@ impl StackSetOperationSummary {
     /// Creates a new builder-style object to manufacture [`StackSetOperationSummary`](crate::model::StackSetOperationSummary).
     pub fn builder() -> crate::model::stack_set_operation_summary::Builder {
         crate::model::stack_set_operation_summary::Builder::default()
+    }
+}
+
+/// <p>Detailed information about the StackSet operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StackSetOperationStatusDetails {
+    /// <p>The number of stack instances for which the StackSet operation failed.</p>
+    #[doc(hidden)]
+    pub failed_stack_instances_count: i32,
+}
+impl StackSetOperationStatusDetails {
+    /// <p>The number of stack instances for which the StackSet operation failed.</p>
+    pub fn failed_stack_instances_count(&self) -> i32 {
+        self.failed_stack_instances_count
+    }
+}
+/// See [`StackSetOperationStatusDetails`](crate::model::StackSetOperationStatusDetails).
+pub mod stack_set_operation_status_details {
+
+    /// A builder for [`StackSetOperationStatusDetails`](crate::model::StackSetOperationStatusDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) failed_stack_instances_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The number of stack instances for which the StackSet operation failed.</p>
+        pub fn failed_stack_instances_count(mut self, input: i32) -> Self {
+            self.failed_stack_instances_count = Some(input);
+            self
+        }
+        /// <p>The number of stack instances for which the StackSet operation failed.</p>
+        pub fn set_failed_stack_instances_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.failed_stack_instances_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StackSetOperationStatusDetails`](crate::model::StackSetOperationStatusDetails).
+        pub fn build(self) -> crate::model::StackSetOperationStatusDetails {
+            crate::model::StackSetOperationStatusDetails {
+                failed_stack_instances_count: self.failed_stack_instances_count.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl StackSetOperationStatusDetails {
+    /// Creates a new builder-style object to manufacture [`StackSetOperationStatusDetails`](crate::model::StackSetOperationStatusDetails).
+    pub fn builder() -> crate::model::stack_set_operation_status_details::Builder {
+        crate::model::stack_set_operation_status_details::Builder::default()
     }
 }
 
@@ -4697,6 +4811,163 @@ impl StackSetOperationResultStatus {
     }
 }
 impl AsRef<str> for StackSetOperationResultStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The status that operation results are filtered by.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct OperationResultFilter {
+    /// <p>The type of filter to apply.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<crate::model::OperationResultFilterName>,
+    /// <p>The value to filter by.</p>
+    #[doc(hidden)]
+    pub values: std::option::Option<std::string::String>,
+}
+impl OperationResultFilter {
+    /// <p>The type of filter to apply.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::OperationResultFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The value to filter by.</p>
+    pub fn values(&self) -> std::option::Option<&str> {
+        self.values.as_deref()
+    }
+}
+/// See [`OperationResultFilter`](crate::model::OperationResultFilter).
+pub mod operation_result_filter {
+
+    /// A builder for [`OperationResultFilter`](crate::model::OperationResultFilter).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<crate::model::OperationResultFilterName>,
+        pub(crate) values: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The type of filter to apply.</p>
+        pub fn name(mut self, input: crate::model::OperationResultFilterName) -> Self {
+            self.name = Some(input);
+            self
+        }
+        /// <p>The type of filter to apply.</p>
+        pub fn set_name(
+            mut self,
+            input: std::option::Option<crate::model::OperationResultFilterName>,
+        ) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The value to filter by.</p>
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.values = Some(input.into());
+            self
+        }
+        /// <p>The value to filter by.</p>
+        pub fn set_values(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OperationResultFilter`](crate::model::OperationResultFilter).
+        pub fn build(self) -> crate::model::OperationResultFilter {
+            crate::model::OperationResultFilter {
+                name: self.name,
+                values: self.values,
+            }
+        }
+    }
+}
+impl OperationResultFilter {
+    /// Creates a new builder-style object to manufacture [`OperationResultFilter`](crate::model::OperationResultFilter).
+    pub fn builder() -> crate::model::operation_result_filter::Builder {
+        crate::model::operation_result_filter::Builder::default()
+    }
+}
+
+/// When writing a match expression against `OperationResultFilterName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let operationresultfiltername = unimplemented!();
+/// match operationresultfiltername {
+///     OperationResultFilterName::OperationResultStatus => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `operationresultfiltername` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OperationResultFilterName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OperationResultFilterName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OperationResultFilterName::NewFeature` is defined.
+/// Specifically, when `operationresultfiltername` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OperationResultFilterName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OperationResultFilterName {
+    #[allow(missing_docs)] // documentation missing in model
+    OperationResultStatus,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for OperationResultFilterName {
+    fn from(s: &str) -> Self {
+        match s {
+            "OPERATION_RESULT_STATUS" => OperationResultFilterName::OperationResultStatus,
+            other => OperationResultFilterName::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for OperationResultFilterName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OperationResultFilterName::from(s))
+    }
+}
+impl OperationResultFilterName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OperationResultFilterName::OperationResultStatus => "OPERATION_RESULT_STATUS",
+            OperationResultFilterName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["OPERATION_RESULT_STATUS"]
+    }
+}
+impl AsRef<str> for OperationResultFilterName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -6067,6 +6338,9 @@ pub struct StackInstanceSummary {
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection hasn't yet been performed.</p>
     #[doc(hidden)]
     pub last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+    #[doc(hidden)]
+    pub last_operation_id: std::option::Option<std::string::String>,
 }
 impl StackInstanceSummary {
     /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
@@ -6126,6 +6400,10 @@ impl StackInstanceSummary {
     pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
+    /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+    pub fn last_operation_id(&self) -> std::option::Option<&str> {
+        self.last_operation_id.as_deref()
+    }
 }
 /// See [`StackInstanceSummary`](crate::model::StackInstanceSummary).
 pub mod stack_instance_summary {
@@ -6144,6 +6422,7 @@ pub mod stack_instance_summary {
         pub(crate) organizational_unit_id: std::option::Option<std::string::String>,
         pub(crate) drift_status: std::option::Option<crate::model::StackDriftStatus>,
         pub(crate) last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
@@ -6297,6 +6576,19 @@ pub mod stack_instance_summary {
             self.last_drift_check_timestamp = input;
             self
         }
+        /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+        pub fn last_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_operation_id = Some(input.into());
+            self
+        }
+        /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+        pub fn set_last_operation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_operation_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StackInstanceSummary`](crate::model::StackInstanceSummary).
         pub fn build(self) -> crate::model::StackInstanceSummary {
             crate::model::StackInstanceSummary {
@@ -6310,6 +6602,7 @@ pub mod stack_instance_summary {
                 organizational_unit_id: self.organizational_unit_id,
                 drift_status: self.drift_status,
                 last_drift_check_timestamp: self.last_drift_check_timestamp,
+                last_operation_id: self.last_operation_id,
             }
         }
     }
@@ -6618,7 +6911,7 @@ impl AsRef<str> for StackInstanceStatus {
     }
 }
 
-/// <p>The status that stack instances are filtered by.</p>
+/// <p>The filter to apply to stack instances</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackInstanceFilter {
@@ -6701,6 +6994,7 @@ impl StackInstanceFilter {
 /// # let stackinstancefiltername = unimplemented!();
 /// match stackinstancefiltername {
 ///     StackInstanceFilterName::DetailedStatus => { /* ... */ },
+///     StackInstanceFilterName::LastOperationId => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -6736,6 +7030,8 @@ impl StackInstanceFilter {
 pub enum StackInstanceFilterName {
     #[allow(missing_docs)] // documentation missing in model
     DetailedStatus,
+    #[allow(missing_docs)] // documentation missing in model
+    LastOperationId,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -6743,6 +7039,7 @@ impl std::convert::From<&str> for StackInstanceFilterName {
     fn from(s: &str) -> Self {
         match s {
             "DETAILED_STATUS" => StackInstanceFilterName::DetailedStatus,
+            "LAST_OPERATION_ID" => StackInstanceFilterName::LastOperationId,
             other => StackInstanceFilterName::Unknown(crate::types::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -6761,12 +7058,13 @@ impl StackInstanceFilterName {
     pub fn as_str(&self) -> &str {
         match self {
             StackInstanceFilterName::DetailedStatus => "DETAILED_STATUS",
+            StackInstanceFilterName::LastOperationId => "LAST_OPERATION_ID",
             StackInstanceFilterName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DETAILED_STATUS"]
+        &["DETAILED_STATUS", "LAST_OPERATION_ID"]
     }
 }
 impl AsRef<str> for StackInstanceFilterName {
@@ -8709,6 +9007,9 @@ pub struct StackSetOperation {
     /// <p>The status of the operation in details.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
+    /// <p>Detailed information about the StackSet operation.</p>
+    #[doc(hidden)]
+    pub status_details: std::option::Option<crate::model::StackSetOperationStatusDetails>,
 }
 impl StackSetOperation {
     /// <p>The unique ID of a stack set operation.</p>
@@ -8779,6 +9080,12 @@ impl StackSetOperation {
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
+    /// <p>Detailed information about the StackSet operation.</p>
+    pub fn status_details(
+        &self,
+    ) -> std::option::Option<&crate::model::StackSetOperationStatusDetails> {
+        self.status_details.as_ref()
+    }
 }
 /// See [`StackSetOperation`](crate::model::StackSetOperation).
 pub mod stack_set_operation {
@@ -8801,6 +9108,8 @@ pub mod stack_set_operation {
         pub(crate) stack_set_drift_detection_details:
             std::option::Option<crate::model::StackSetDriftDetectionDetails>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
+        pub(crate) status_details:
+            std::option::Option<crate::model::StackSetOperationStatusDetails>,
     }
     impl Builder {
         /// <p>The unique ID of a stack set operation.</p>
@@ -8993,6 +9302,22 @@ pub mod stack_set_operation {
             self.status_reason = input;
             self
         }
+        /// <p>Detailed information about the StackSet operation.</p>
+        pub fn status_details(
+            mut self,
+            input: crate::model::StackSetOperationStatusDetails,
+        ) -> Self {
+            self.status_details = Some(input);
+            self
+        }
+        /// <p>Detailed information about the StackSet operation.</p>
+        pub fn set_status_details(
+            mut self,
+            input: std::option::Option<crate::model::StackSetOperationStatusDetails>,
+        ) -> Self {
+            self.status_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StackSetOperation`](crate::model::StackSetOperation).
         pub fn build(self) -> crate::model::StackSetOperation {
             crate::model::StackSetOperation {
@@ -9009,6 +9334,7 @@ pub mod stack_set_operation {
                 deployment_targets: self.deployment_targets,
                 stack_set_drift_detection_details: self.stack_set_drift_detection_details,
                 status_reason: self.status_reason,
+                status_details: self.status_details,
             }
         }
     }
@@ -11418,6 +11744,9 @@ pub struct StackInstance {
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection hasn't yet been performed.</p>
     #[doc(hidden)]
     pub last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+    #[doc(hidden)]
+    pub last_operation_id: std::option::Option<std::string::String>,
 }
 impl StackInstance {
     /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
@@ -11481,6 +11810,10 @@ impl StackInstance {
     pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
+    /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+    pub fn last_operation_id(&self) -> std::option::Option<&str> {
+        self.last_operation_id.as_deref()
+    }
 }
 /// See [`StackInstance`](crate::model::StackInstance).
 pub mod stack_instance {
@@ -11500,6 +11833,7 @@ pub mod stack_instance {
         pub(crate) organizational_unit_id: std::option::Option<std::string::String>,
         pub(crate) drift_status: std::option::Option<crate::model::StackDriftStatus>,
         pub(crate) last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
@@ -11672,6 +12006,19 @@ pub mod stack_instance {
             self.last_drift_check_timestamp = input;
             self
         }
+        /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+        pub fn last_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_operation_id = Some(input.into());
+            self
+        }
+        /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+        pub fn set_last_operation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_operation_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StackInstance`](crate::model::StackInstance).
         pub fn build(self) -> crate::model::StackInstance {
             crate::model::StackInstance {
@@ -11686,6 +12033,7 @@ pub mod stack_instance {
                 organizational_unit_id: self.organizational_unit_id,
                 drift_status: self.drift_status,
                 last_drift_check_timestamp: self.last_drift_check_timestamp,
+                last_operation_id: self.last_operation_id,
             }
         }
     }

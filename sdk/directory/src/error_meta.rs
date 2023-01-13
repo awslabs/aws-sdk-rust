@@ -23,6 +23,8 @@ pub enum Error {
     DirectoryAlreadySharedException(crate::error::DirectoryAlreadySharedException),
     /// <p>The specified directory does not exist in the system.</p>
     DirectoryDoesNotExistException(crate::error::DirectoryDoesNotExistException),
+    /// <p> The directory is already updated to desired update type settings. </p>
+    DirectoryInDesiredStateException(crate::error::DirectoryInDesiredStateException),
     /// <p>The maximum number of directories in the region has been reached. You can use the <code>GetDirectoryLimits</code> operation to determine your directory limits in the region.</p>
     DirectoryLimitExceededException(crate::error::DirectoryLimitExceededException),
     /// <p>The specified directory has not been shared with this Amazon Web Services account.</p>
@@ -98,6 +100,7 @@ impl std::fmt::Display for Error {
             Error::DirectoryAlreadyInRegionException(inner) => inner.fmt(f),
             Error::DirectoryAlreadySharedException(inner) => inner.fmt(f),
             Error::DirectoryDoesNotExistException(inner) => inner.fmt(f),
+            Error::DirectoryInDesiredStateException(inner) => inner.fmt(f),
             Error::DirectoryLimitExceededException(inner) => inner.fmt(f),
             Error::DirectoryNotSharedException(inner) => inner.fmt(f),
             Error::DirectoryUnavailableException(inner) => inner.fmt(f),
@@ -1452,6 +1455,49 @@ impl From<crate::error::DescribeTrustsError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeUpdateDirectoryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeUpdateDirectoryError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeUpdateDirectoryError> for Error {
+    fn from(err: crate::error::DescribeUpdateDirectoryError) -> Self {
+        match err.kind {
+            crate::error::DescribeUpdateDirectoryErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DescribeUpdateDirectoryErrorKind::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::error::DescribeUpdateDirectoryErrorKind::DirectoryDoesNotExistException(
+                inner,
+            ) => Error::DirectoryDoesNotExistException(inner),
+            crate::error::DescribeUpdateDirectoryErrorKind::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::DescribeUpdateDirectoryErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::DescribeUpdateDirectoryErrorKind::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::error::DescribeUpdateDirectoryErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisableClientAuthenticationError, R>>
     for Error
 where
@@ -2510,6 +2556,58 @@ impl From<crate::error::UpdateConditionalForwarderError> for Error {
                 inner,
             ) => Error::UnsupportedOperationException(inner),
             crate::error::UpdateConditionalForwarderErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDirectorySetupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateDirectorySetupError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateDirectorySetupError> for Error {
+    fn from(err: crate::error::UpdateDirectorySetupError) -> Self {
+        match err.kind {
+            crate::error::UpdateDirectorySetupErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::UpdateDirectorySetupErrorKind::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::error::UpdateDirectorySetupErrorKind::DirectoryDoesNotExistException(inner) => {
+                Error::DirectoryDoesNotExistException(inner)
+            }
+            crate::error::UpdateDirectorySetupErrorKind::DirectoryInDesiredStateException(
+                inner,
+            ) => Error::DirectoryInDesiredStateException(inner),
+            crate::error::UpdateDirectorySetupErrorKind::DirectoryUnavailableException(inner) => {
+                Error::DirectoryUnavailableException(inner)
+            }
+            crate::error::UpdateDirectorySetupErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::UpdateDirectorySetupErrorKind::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::error::UpdateDirectorySetupErrorKind::SnapshotLimitExceededException(inner) => {
+                Error::SnapshotLimitExceededException(inner)
+            }
+            crate::error::UpdateDirectorySetupErrorKind::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::error::UpdateDirectorySetupErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

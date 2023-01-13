@@ -92,6 +92,9 @@ pub struct GetSatelliteOutput {
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
     #[doc(hidden)]
     pub ground_stations: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
+    #[doc(hidden)]
+    pub current_ephemeris: std::option::Option<crate::model::EphemerisMetaData>,
 }
 impl GetSatelliteOutput {
     /// <p>UUID of a satellite.</p>
@@ -110,6 +113,10 @@ impl GetSatelliteOutput {
     pub fn ground_stations(&self) -> std::option::Option<&[std::string::String]> {
         self.ground_stations.as_deref()
     }
+    /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
+    pub fn current_ephemeris(&self) -> std::option::Option<&crate::model::EphemerisMetaData> {
+        self.current_ephemeris.as_ref()
+    }
 }
 /// See [`GetSatelliteOutput`](crate::output::GetSatelliteOutput).
 pub mod get_satellite_output {
@@ -121,6 +128,7 @@ pub mod get_satellite_output {
         pub(crate) satellite_arn: std::option::Option<std::string::String>,
         pub(crate) norad_satellite_id: std::option::Option<i32>,
         pub(crate) ground_stations: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) current_ephemeris: std::option::Option<crate::model::EphemerisMetaData>,
     }
     impl Builder {
         /// <p>UUID of a satellite.</p>
@@ -175,6 +183,19 @@ pub mod get_satellite_output {
             self.ground_stations = input;
             self
         }
+        /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
+        pub fn current_ephemeris(mut self, input: crate::model::EphemerisMetaData) -> Self {
+            self.current_ephemeris = Some(input);
+            self
+        }
+        /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
+        pub fn set_current_ephemeris(
+            mut self,
+            input: std::option::Option<crate::model::EphemerisMetaData>,
+        ) -> Self {
+            self.current_ephemeris = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetSatelliteOutput`](crate::output::GetSatelliteOutput).
         pub fn build(self) -> crate::output::GetSatelliteOutput {
             crate::output::GetSatelliteOutput {
@@ -182,6 +203,7 @@ pub mod get_satellite_output {
                 satellite_arn: self.satellite_arn,
                 norad_satellite_id: self.norad_satellite_id.unwrap_or_default(),
                 ground_stations: self.ground_stations,
+                current_ephemeris: self.current_ephemeris,
             }
         }
     }
@@ -772,6 +794,486 @@ impl ListGroundStationsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListEphemeridesOutput {
+    /// <p>Pagination token.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>List of ephemerides.</p>
+    #[doc(hidden)]
+    pub ephemerides: std::option::Option<std::vec::Vec<crate::model::EphemerisItem>>,
+}
+impl ListEphemeridesOutput {
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List of ephemerides.</p>
+    pub fn ephemerides(&self) -> std::option::Option<&[crate::model::EphemerisItem]> {
+        self.ephemerides.as_deref()
+    }
+}
+/// See [`ListEphemeridesOutput`](crate::output::ListEphemeridesOutput).
+pub mod list_ephemerides_output {
+
+    /// A builder for [`ListEphemeridesOutput`](crate::output::ListEphemeridesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) ephemerides: std::option::Option<std::vec::Vec<crate::model::EphemerisItem>>,
+    }
+    impl Builder {
+        /// <p>Pagination token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Pagination token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `ephemerides`.
+        ///
+        /// To override the contents of this collection use [`set_ephemerides`](Self::set_ephemerides).
+        ///
+        /// <p>List of ephemerides.</p>
+        pub fn ephemerides(mut self, input: crate::model::EphemerisItem) -> Self {
+            let mut v = self.ephemerides.unwrap_or_default();
+            v.push(input);
+            self.ephemerides = Some(v);
+            self
+        }
+        /// <p>List of ephemerides.</p>
+        pub fn set_ephemerides(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EphemerisItem>>,
+        ) -> Self {
+            self.ephemerides = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEphemeridesOutput`](crate::output::ListEphemeridesOutput).
+        pub fn build(self) -> crate::output::ListEphemeridesOutput {
+            crate::output::ListEphemeridesOutput {
+                next_token: self.next_token,
+                ephemerides: self.ephemerides,
+            }
+        }
+    }
+}
+impl ListEphemeridesOutput {
+    /// Creates a new builder-style object to manufacture [`ListEphemeridesOutput`](crate::output::ListEphemeridesOutput).
+    pub fn builder() -> crate::output::list_ephemerides_output::Builder {
+        crate::output::list_ephemerides_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateEphemerisOutput {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    #[doc(hidden)]
+    pub ephemeris_id: std::option::Option<std::string::String>,
+}
+impl CreateEphemerisOutput {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
+        self.ephemeris_id.as_deref()
+    }
+}
+/// See [`CreateEphemerisOutput`](crate::output::CreateEphemerisOutput).
+pub mod create_ephemeris_output {
+
+    /// A builder for [`CreateEphemerisOutput`](crate::output::CreateEphemerisOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ephemeris_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn ephemeris_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ephemeris_id = Some(input.into());
+            self
+        }
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ephemeris_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateEphemerisOutput`](crate::output::CreateEphemerisOutput).
+        pub fn build(self) -> crate::output::CreateEphemerisOutput {
+            crate::output::CreateEphemerisOutput {
+                ephemeris_id: self.ephemeris_id,
+            }
+        }
+    }
+}
+impl CreateEphemerisOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEphemerisOutput`](crate::output::CreateEphemerisOutput).
+    pub fn builder() -> crate::output::create_ephemeris_output::Builder {
+        crate::output::create_ephemeris_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteEphemerisOutput {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    #[doc(hidden)]
+    pub ephemeris_id: std::option::Option<std::string::String>,
+}
+impl DeleteEphemerisOutput {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
+        self.ephemeris_id.as_deref()
+    }
+}
+/// See [`DeleteEphemerisOutput`](crate::output::DeleteEphemerisOutput).
+pub mod delete_ephemeris_output {
+
+    /// A builder for [`DeleteEphemerisOutput`](crate::output::DeleteEphemerisOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ephemeris_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn ephemeris_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ephemeris_id = Some(input.into());
+            self
+        }
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ephemeris_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteEphemerisOutput`](crate::output::DeleteEphemerisOutput).
+        pub fn build(self) -> crate::output::DeleteEphemerisOutput {
+            crate::output::DeleteEphemerisOutput {
+                ephemeris_id: self.ephemeris_id,
+            }
+        }
+    }
+}
+impl DeleteEphemerisOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEphemerisOutput`](crate::output::DeleteEphemerisOutput).
+    pub fn builder() -> crate::output::delete_ephemeris_output::Builder {
+        crate::output::delete_ephemeris_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateEphemerisOutput {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    #[doc(hidden)]
+    pub ephemeris_id: std::option::Option<std::string::String>,
+}
+impl UpdateEphemerisOutput {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
+        self.ephemeris_id.as_deref()
+    }
+}
+/// See [`UpdateEphemerisOutput`](crate::output::UpdateEphemerisOutput).
+pub mod update_ephemeris_output {
+
+    /// A builder for [`UpdateEphemerisOutput`](crate::output::UpdateEphemerisOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ephemeris_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn ephemeris_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ephemeris_id = Some(input.into());
+            self
+        }
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ephemeris_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateEphemerisOutput`](crate::output::UpdateEphemerisOutput).
+        pub fn build(self) -> crate::output::UpdateEphemerisOutput {
+            crate::output::UpdateEphemerisOutput {
+                ephemeris_id: self.ephemeris_id,
+            }
+        }
+    }
+}
+impl UpdateEphemerisOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEphemerisOutput`](crate::output::UpdateEphemerisOutput).
+    pub fn builder() -> crate::output::update_ephemeris_output::Builder {
+        crate::output::update_ephemeris_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeEphemerisOutput {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    #[doc(hidden)]
+    pub ephemeris_id: std::option::Option<std::string::String>,
+    /// <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
+    #[doc(hidden)]
+    pub satellite_id: std::option::Option<std::string::String>,
+    /// <p>The status of the ephemeris.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::EphemerisStatus>,
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Priority must be 1 or greater</p>
+    #[doc(hidden)]
+    pub priority: std::option::Option<i32>,
+    /// <p>The time the ephemeris was uploaded in UTC.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Whether or not the ephemeris is enabled.</p>
+    #[doc(hidden)]
+    pub enabled: std::option::Option<bool>,
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Tags assigned to an ephemeris.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Supplied ephemeris data.</p>
+    #[doc(hidden)]
+    pub supplied_data: std::option::Option<crate::model::EphemerisTypeDescription>,
+    /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
+    #[doc(hidden)]
+    pub invalid_reason: std::option::Option<crate::model::EphemerisInvalidReason>,
+}
+impl DescribeEphemerisOutput {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
+        self.ephemeris_id.as_deref()
+    }
+    /// <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
+    pub fn satellite_id(&self) -> std::option::Option<&str> {
+        self.satellite_id.as_deref()
+    }
+    /// <p>The status of the ephemeris.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EphemerisStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Priority must be 1 or greater</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>The time the ephemeris was uploaded in UTC.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Whether or not the ephemeris is enabled.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Tags assigned to an ephemeris.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Supplied ephemeris data.</p>
+    pub fn supplied_data(&self) -> std::option::Option<&crate::model::EphemerisTypeDescription> {
+        self.supplied_data.as_ref()
+    }
+    /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
+    pub fn invalid_reason(&self) -> std::option::Option<&crate::model::EphemerisInvalidReason> {
+        self.invalid_reason.as_ref()
+    }
+}
+/// See [`DescribeEphemerisOutput`](crate::output::DescribeEphemerisOutput).
+pub mod describe_ephemeris_output {
+
+    /// A builder for [`DescribeEphemerisOutput`](crate::output::DescribeEphemerisOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ephemeris_id: std::option::Option<std::string::String>,
+        pub(crate) satellite_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::EphemerisStatus>,
+        pub(crate) priority: std::option::Option<i32>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) supplied_data: std::option::Option<crate::model::EphemerisTypeDescription>,
+        pub(crate) invalid_reason: std::option::Option<crate::model::EphemerisInvalidReason>,
+    }
+    impl Builder {
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn ephemeris_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ephemeris_id = Some(input.into());
+            self
+        }
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ephemeris_id = input;
+            self
+        }
+        /// <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
+        pub fn satellite_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.satellite_id = Some(input.into());
+            self
+        }
+        /// <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
+        pub fn set_satellite_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.satellite_id = input;
+            self
+        }
+        /// <p>The status of the ephemeris.</p>
+        pub fn status(mut self, input: crate::model::EphemerisStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the ephemeris.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::EphemerisStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+        /// <p>Priority must be 1 or greater</p>
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
+            self
+        }
+        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+        /// <p>Priority must be 1 or greater</p>
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
+            self
+        }
+        /// <p>The time the ephemeris was uploaded in UTC.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time the ephemeris was uploaded in UTC.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>Whether or not the ephemeris is enabled.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        /// <p>Whether or not the ephemeris is enabled.</p>
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags assigned to an ephemeris.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Tags assigned to an ephemeris.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>Supplied ephemeris data.</p>
+        pub fn supplied_data(mut self, input: crate::model::EphemerisTypeDescription) -> Self {
+            self.supplied_data = Some(input);
+            self
+        }
+        /// <p>Supplied ephemeris data.</p>
+        pub fn set_supplied_data(
+            mut self,
+            input: std::option::Option<crate::model::EphemerisTypeDescription>,
+        ) -> Self {
+            self.supplied_data = input;
+            self
+        }
+        /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
+        pub fn invalid_reason(mut self, input: crate::model::EphemerisInvalidReason) -> Self {
+            self.invalid_reason = Some(input);
+            self
+        }
+        /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
+        pub fn set_invalid_reason(
+            mut self,
+            input: std::option::Option<crate::model::EphemerisInvalidReason>,
+        ) -> Self {
+            self.invalid_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeEphemerisOutput`](crate::output::DescribeEphemerisOutput).
+        pub fn build(self) -> crate::output::DescribeEphemerisOutput {
+            crate::output::DescribeEphemerisOutput {
+                ephemeris_id: self.ephemeris_id,
+                satellite_id: self.satellite_id,
+                status: self.status,
+                priority: self.priority,
+                creation_time: self.creation_time,
+                enabled: self.enabled,
+                name: self.name,
+                tags: self.tags,
+                supplied_data: self.supplied_data,
+                invalid_reason: self.invalid_reason,
+            }
+        }
+    }
+}
+impl DescribeEphemerisOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEphemerisOutput`](crate::output::DescribeEphemerisOutput).
+    pub fn builder() -> crate::output::describe_ephemeris_output::Builder {
+        crate::output::describe_ephemeris_output::Builder::default()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1287,10 +1789,10 @@ pub struct DescribeContactOutput {
     /// <p>ARN of a satellite.</p>
     #[doc(hidden)]
     pub satellite_arn: std::option::Option<std::string::String>,
-    /// <p>Start time of a contact.</p>
+    /// <p>Start time of a contact in UTC.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>End time of a contact.</p>
+    /// <p>End time of a contact in UTC.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
@@ -1335,11 +1837,11 @@ impl DescribeContactOutput {
     pub fn satellite_arn(&self) -> std::option::Option<&str> {
         self.satellite_arn.as_deref()
     }
-    /// <p>Start time of a contact.</p>
+    /// <p>Start time of a contact in UTC.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>End time of a contact.</p>
+    /// <p>End time of a contact in UTC.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -1443,12 +1945,12 @@ pub mod describe_contact_output {
             self.satellite_arn = input;
             self
         }
-        /// <p>Start time of a contact.</p>
+        /// <p>Start time of a contact in UTC.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>Start time of a contact.</p>
+        /// <p>Start time of a contact in UTC.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1456,12 +1958,12 @@ pub mod describe_contact_output {
             self.start_time = input;
             self
         }
-        /// <p>End time of a contact.</p>
+        /// <p>End time of a contact in UTC.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>End time of a contact.</p>
+        /// <p>End time of a contact in UTC.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

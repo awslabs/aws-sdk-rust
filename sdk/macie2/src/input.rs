@@ -1227,12 +1227,12 @@ pub mod create_findings_filter_input {
         >,
     }
     impl Builder {
-        /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+        /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
         pub fn action(mut self, input: crate::model::FindingsFilterAction) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+        /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::FindingsFilterAction>,
@@ -4572,6 +4572,121 @@ impl GetAllowListInput {
     }
 }
 
+/// See [`GetAutomatedDiscoveryConfigurationInput`](crate::input::GetAutomatedDiscoveryConfigurationInput).
+pub mod get_automated_discovery_configuration_input {
+
+    /// A builder for [`GetAutomatedDiscoveryConfigurationInput`](crate::input::GetAutomatedDiscoveryConfigurationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`GetAutomatedDiscoveryConfigurationInput`](crate::input::GetAutomatedDiscoveryConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetAutomatedDiscoveryConfigurationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetAutomatedDiscoveryConfigurationInput {})
+        }
+    }
+}
+impl GetAutomatedDiscoveryConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`GetAutomatedDiscoveryConfiguration`](crate::operation::GetAutomatedDiscoveryConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetAutomatedDiscoveryConfiguration,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetAutomatedDiscoveryConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/automated-discovery/configuration")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetAutomatedDiscoveryConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetAutomatedDiscoveryConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetAutomatedDiscoveryConfiguration",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetAutomatedDiscoveryConfigurationInput`](crate::input::GetAutomatedDiscoveryConfigurationInput).
+    pub fn builder() -> crate::input::get_automated_discovery_configuration_input::Builder {
+        crate::input::get_automated_discovery_configuration_input::Builder::default()
+    }
+}
+
 /// See [`GetBucketStatisticsInput`](crate::input::GetBucketStatisticsInput).
 pub mod get_bucket_statistics_input {
 
@@ -4829,6 +4944,152 @@ impl GetClassificationExportConfigurationInput {
     }
 }
 
+/// See [`GetClassificationScopeInput`](crate::input::GetClassificationScopeInput).
+pub mod get_classification_scope_input {
+
+    /// A builder for [`GetClassificationScopeInput`](crate::input::GetClassificationScopeInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetClassificationScopeInput`](crate::input::GetClassificationScopeInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetClassificationScopeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetClassificationScopeInput { id: self.id })
+        }
+    }
+}
+impl GetClassificationScopeInput {
+    /// Consumes the builder and constructs an Operation<[`GetClassificationScope`](crate::operation::GetClassificationScope)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetClassificationScope,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetClassificationScopeInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_10 = &_input.id;
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(output, "/classification-scopes/{id}", id = id)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetClassificationScopeInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetClassificationScope::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetClassificationScope",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetClassificationScopeInput`](crate::input::GetClassificationScopeInput).
+    pub fn builder() -> crate::input::get_classification_scope_input::Builder {
+        crate::input::get_classification_scope_input::Builder::default()
+    }
+}
+
 /// See [`GetCustomDataIdentifierInput`](crate::input::GetCustomDataIdentifierInput).
 pub mod get_custom_data_identifier_input {
 
@@ -4879,15 +5140,15 @@ impl GetCustomDataIdentifierInput {
                 _input: &crate::input::GetCustomDataIdentifierInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_10 = &_input.id;
-                let input_10 = input_10.as_ref().ok_or_else(|| {
+                let input_11 = &_input.id;
+                let input_11 = input_11.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_10,
+                    input_11,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -5189,15 +5450,15 @@ impl GetFindingsFilterInput {
                 _input: &crate::input::GetFindingsFilterInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_11 = &_input.id;
-                let input_11 = input_11.as_ref().ok_or_else(|| {
+                let input_12 = &_input.id;
+                let input_12 = input_12.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_11,
+                    input_12,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -5986,15 +6247,15 @@ impl GetMemberInput {
                 _input: &crate::input::GetMemberInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_12 = &_input.id;
-                let input_12 = input_12.as_ref().ok_or_else(|| {
+                let input_13 = &_input.id;
+                let input_13 = input_13.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_12,
+                    input_13,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -6076,6 +6337,161 @@ impl GetMemberInput {
     /// Creates a new builder-style object to manufacture [`GetMemberInput`](crate::input::GetMemberInput).
     pub fn builder() -> crate::input::get_member_input::Builder {
         crate::input::get_member_input::Builder::default()
+    }
+}
+
+/// See [`GetResourceProfileInput`](crate::input::GetResourceProfileInput).
+pub mod get_resource_profile_input {
+
+    /// A builder for [`GetResourceProfileInput`](crate::input::GetResourceProfileInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResourceProfileInput`](crate::input::GetResourceProfileInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetResourceProfileInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetResourceProfileInput {
+                resource_arn: self.resource_arn,
+            })
+        }
+    }
+}
+impl GetResourceProfileInput {
+    /// Consumes the builder and constructs an Operation<[`GetResourceProfile`](crate::operation::GetResourceProfile)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetResourceProfile,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetResourceProfileInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/resource-profiles").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::GetResourceProfileInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                let inner_14 = &_input.resource_arn;
+                let inner_14 = inner_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_14.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_14),
+                );
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetResourceProfileInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResourceProfile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetResourceProfile",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetResourceProfileInput`](crate::input::GetResourceProfileInput).
+    pub fn builder() -> crate::input::get_resource_profile_input::Builder {
+        crate::input::get_resource_profile_input::Builder::default()
     }
 }
 
@@ -6245,15 +6661,15 @@ impl GetSensitiveDataOccurrencesInput {
                 _input: &crate::input::GetSensitiveDataOccurrencesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_13 = &_input.finding_id;
-                let input_13 = input_13.as_ref().ok_or_else(|| {
+                let input_15 = &_input.finding_id;
+                let input_15 = input_15.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "finding_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let finding_id = aws_smithy_http::label::fmt_string(
-                    input_13,
+                    input_15,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if finding_id.is_empty() {
@@ -6397,15 +6813,15 @@ impl GetSensitiveDataOccurrencesAvailabilityInput {
                 _input: &crate::input::GetSensitiveDataOccurrencesAvailabilityInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_14 = &_input.finding_id;
-                let input_14 = input_14.as_ref().ok_or_else(|| {
+                let input_16 = &_input.finding_id;
+                let input_16 = input_16.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "finding_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let finding_id = aws_smithy_http::label::fmt_string(
-                    input_14,
+                    input_16,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if finding_id.is_empty() {
@@ -6494,6 +6910,152 @@ impl GetSensitiveDataOccurrencesAvailabilityInput {
     /// Creates a new builder-style object to manufacture [`GetSensitiveDataOccurrencesAvailabilityInput`](crate::input::GetSensitiveDataOccurrencesAvailabilityInput).
     pub fn builder() -> crate::input::get_sensitive_data_occurrences_availability_input::Builder {
         crate::input::get_sensitive_data_occurrences_availability_input::Builder::default()
+    }
+}
+
+/// See [`GetSensitivityInspectionTemplateInput`](crate::input::GetSensitivityInspectionTemplateInput).
+pub mod get_sensitivity_inspection_template_input {
+
+    /// A builder for [`GetSensitivityInspectionTemplateInput`](crate::input::GetSensitivityInspectionTemplateInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSensitivityInspectionTemplateInput`](crate::input::GetSensitivityInspectionTemplateInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetSensitivityInspectionTemplateInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetSensitivityInspectionTemplateInput { id: self.id })
+        }
+    }
+}
+impl GetSensitivityInspectionTemplateInput {
+    /// Consumes the builder and constructs an Operation<[`GetSensitivityInspectionTemplate`](crate::operation::GetSensitivityInspectionTemplate)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetSensitivityInspectionTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetSensitivityInspectionTemplateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_17 = &_input.id;
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(output, "/templates/sensitivity-inspections/{id}", id = id)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetSensitivityInspectionTemplateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetSensitivityInspectionTemplate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetSensitivityInspectionTemplate",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetSensitivityInspectionTemplateInput`](crate::input::GetSensitivityInspectionTemplateInput).
+    pub fn builder() -> crate::input::get_sensitivity_inspection_template_input::Builder {
+        crate::input::get_sensitivity_inspection_template_input::Builder::default()
     }
 }
 
@@ -6761,9 +7323,9 @@ impl GetUsageTotalsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_15) = &_input.time_range {
+                if let Some(inner_18) = &_input.time_range {
                     {
-                        query.push_kv("timeRange", &aws_smithy_http::query::fmt_string(&inner_15));
+                        query.push_kv("timeRange", &aws_smithy_http::query::fmt_string(&inner_18));
                     }
                 }
                 Ok(())
@@ -6918,9 +7480,9 @@ impl ListAllowListsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_16) = &_input.next_token {
+                if let Some(inner_19) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_16));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
                     }
                 }
                 Ok(())
@@ -7182,6 +7744,164 @@ impl ListClassificationJobsInput {
     /// Creates a new builder-style object to manufacture [`ListClassificationJobsInput`](crate::input::ListClassificationJobsInput).
     pub fn builder() -> crate::input::list_classification_jobs_input::Builder {
         crate::input::list_classification_jobs_input::Builder::default()
+    }
+}
+
+/// See [`ListClassificationScopesInput`](crate::input::ListClassificationScopesInput).
+pub mod list_classification_scopes_input {
+
+    /// A builder for [`ListClassificationScopesInput`](crate::input::ListClassificationScopesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the classification scope to retrieve the unique identifier for.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the classification scope to retrieve the unique identifier for.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListClassificationScopesInput`](crate::input::ListClassificationScopesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListClassificationScopesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListClassificationScopesInput {
+                name: self.name,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListClassificationScopesInput {
+    /// Consumes the builder and constructs an Operation<[`ListClassificationScopes`](crate::operation::ListClassificationScopes)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListClassificationScopes,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListClassificationScopesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/classification-scopes").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListClassificationScopesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_20) = &_input.name {
+                    {
+                        query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_20));
+                    }
+                }
+                if let Some(inner_21) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_21));
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListClassificationScopesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListClassificationScopes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListClassificationScopes",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListClassificationScopesInput`](crate::input::ListClassificationScopesInput).
+    pub fn builder() -> crate::input::list_classification_scopes_input::Builder {
+        crate::input::list_classification_scopes_input::Builder::default()
     }
 }
 
@@ -7601,9 +8321,9 @@ impl ListFindingsFiltersInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_17) = &_input.next_token {
+                if let Some(inner_22) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
                     }
                 }
                 Ok(())
@@ -7758,9 +8478,9 @@ impl ListInvitationsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_18) = &_input.next_token {
+                if let Some(inner_23) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_18));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
                     }
                 }
                 Ok(())
@@ -8072,16 +8792,16 @@ impl ListMembersInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_19) = &_input.next_token {
+                if let Some(inner_24) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
                     }
                 }
-                if let Some(inner_20) = &_input.only_associated {
+                if let Some(inner_25) = &_input.only_associated {
                     {
                         query.push_kv(
                             "onlyAssociated",
-                            &aws_smithy_http::query::fmt_string(&inner_20),
+                            &aws_smithy_http::query::fmt_string(&inner_25),
                         );
                     }
                 }
@@ -8239,9 +8959,9 @@ impl ListOrganizationAdminAccountsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_21) = &_input.next_token {
+                if let Some(inner_26) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_21));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_26));
                     }
                 }
                 Ok(())
@@ -8320,6 +9040,528 @@ impl ListOrganizationAdminAccountsInput {
     }
 }
 
+/// See [`ListResourceProfileArtifactsInput`](crate::input::ListResourceProfileArtifactsInput).
+pub mod list_resource_profile_artifacts_input {
+
+    /// A builder for [`ListResourceProfileArtifactsInput`](crate::input::ListResourceProfileArtifactsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListResourceProfileArtifactsInput`](crate::input::ListResourceProfileArtifactsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListResourceProfileArtifactsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListResourceProfileArtifactsInput {
+                next_token: self.next_token,
+                resource_arn: self.resource_arn,
+            })
+        }
+    }
+}
+impl ListResourceProfileArtifactsInput {
+    /// Consumes the builder and constructs an Operation<[`ListResourceProfileArtifacts`](crate::operation::ListResourceProfileArtifacts)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListResourceProfileArtifacts,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListResourceProfileArtifactsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/resource-profiles/artifacts").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListResourceProfileArtifactsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_27) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_27));
+                    }
+                }
+                let inner_28 = &_input.resource_arn;
+                let inner_28 = inner_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_28.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_28),
+                );
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListResourceProfileArtifactsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListResourceProfileArtifacts::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListResourceProfileArtifacts",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListResourceProfileArtifactsInput`](crate::input::ListResourceProfileArtifactsInput).
+    pub fn builder() -> crate::input::list_resource_profile_artifacts_input::Builder {
+        crate::input::list_resource_profile_artifacts_input::Builder::default()
+    }
+}
+
+/// See [`ListResourceProfileDetectionsInput`](crate::input::ListResourceProfileDetectionsInput).
+pub mod list_resource_profile_detections_input {
+
+    /// A builder for [`ListResourceProfileDetectionsInput`](crate::input::ListResourceProfileDetectionsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The maximum number of items to include in each page of a paginated response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of items to include in each page of a paginated response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListResourceProfileDetectionsInput`](crate::input::ListResourceProfileDetectionsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListResourceProfileDetectionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListResourceProfileDetectionsInput {
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+                resource_arn: self.resource_arn,
+            })
+        }
+    }
+}
+impl ListResourceProfileDetectionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListResourceProfileDetections`](crate::operation::ListResourceProfileDetections)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListResourceProfileDetections,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListResourceProfileDetectionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/resource-profiles/detections").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListResourceProfileDetectionsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if _input.max_results != 0 {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    );
+                }
+                if let Some(inner_29) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_29));
+                    }
+                }
+                let inner_30 = &_input.resource_arn;
+                let inner_30 = inner_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_30.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_30),
+                );
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListResourceProfileDetectionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListResourceProfileDetections::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListResourceProfileDetections",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListResourceProfileDetectionsInput`](crate::input::ListResourceProfileDetectionsInput).
+    pub fn builder() -> crate::input::list_resource_profile_detections_input::Builder {
+        crate::input::list_resource_profile_detections_input::Builder::default()
+    }
+}
+
+/// See [`ListSensitivityInspectionTemplatesInput`](crate::input::ListSensitivityInspectionTemplatesInput).
+pub mod list_sensitivity_inspection_templates_input {
+
+    /// A builder for [`ListSensitivityInspectionTemplatesInput`](crate::input::ListSensitivityInspectionTemplatesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The maximum number of items to include in each page of a paginated response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of items to include in each page of a paginated response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSensitivityInspectionTemplatesInput`](crate::input::ListSensitivityInspectionTemplatesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListSensitivityInspectionTemplatesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListSensitivityInspectionTemplatesInput {
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListSensitivityInspectionTemplatesInput {
+    /// Consumes the builder and constructs an Operation<[`ListSensitivityInspectionTemplates`](crate::operation::ListSensitivityInspectionTemplates)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSensitivityInspectionTemplates,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListSensitivityInspectionTemplatesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/templates/sensitivity-inspections")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListSensitivityInspectionTemplatesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if _input.max_results != 0 {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    );
+                }
+                if let Some(inner_31) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListSensitivityInspectionTemplatesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSensitivityInspectionTemplates::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSensitivityInspectionTemplates",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListSensitivityInspectionTemplatesInput`](crate::input::ListSensitivityInspectionTemplatesInput).
+    pub fn builder() -> crate::input::list_sensitivity_inspection_templates_input::Builder {
+        crate::input::list_sensitivity_inspection_templates_input::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
 
@@ -8372,15 +9614,15 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_22 = &_input.resource_arn;
-                let input_22 = input_22.as_ref().ok_or_else(|| {
+                let input_32 = &_input.resource_arn;
+                let input_32 = input_32.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_22,
+                    input_32,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -9048,15 +10290,15 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_23 = &_input.resource_arn;
-                let input_23 = input_23.as_ref().ok_or_else(|| {
+                let input_33 = &_input.resource_arn;
+                let input_33 = input_33.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_23,
+                    input_33,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -9439,15 +10681,15 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_24 = &_input.resource_arn;
-                let input_24 = input_24.as_ref().ok_or_else(|| {
+                let input_34 = &_input.resource_arn;
+                let input_34 = input_34.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_24,
+                    input_34,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -9467,15 +10709,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_25 = &_input.tag_keys;
-                let inner_25 = inner_25.as_ref().ok_or_else(|| {
+                let inner_35 = &_input.tag_keys;
+                let inner_35 = inner_35.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "tag_keys",
                         "cannot be empty or unset",
                     )
                 })?;
-                for inner_26 in inner_25 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_26));
+                for inner_36 in inner_35 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_36));
                 }
                 Ok(())
             }
@@ -9644,15 +10886,15 @@ impl UpdateAllowListInput {
                 _input: &crate::input::UpdateAllowListInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_27 = &_input.id;
-                let input_27 = input_27.as_ref().ok_or_else(|| {
+                let input_37 = &_input.id;
+                let input_37 = input_37.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_27,
+                    input_37,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -9753,6 +10995,153 @@ impl UpdateAllowListInput {
     }
 }
 
+/// See [`UpdateAutomatedDiscoveryConfigurationInput`](crate::input::UpdateAutomatedDiscoveryConfigurationInput).
+pub mod update_automated_discovery_configuration_input {
+
+    /// A builder for [`UpdateAutomatedDiscoveryConfigurationInput`](crate::input::UpdateAutomatedDiscoveryConfigurationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::AutomatedDiscoveryStatus>,
+    }
+    impl Builder {
+        /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
+        /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
+        pub fn status(mut self, input: crate::model::AutomatedDiscoveryStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
+        /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::AutomatedDiscoveryStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateAutomatedDiscoveryConfigurationInput`](crate::input::UpdateAutomatedDiscoveryConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateAutomatedDiscoveryConfigurationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateAutomatedDiscoveryConfigurationInput {
+                status: self.status,
+            })
+        }
+    }
+}
+impl UpdateAutomatedDiscoveryConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateAutomatedDiscoveryConfiguration`](crate::operation::UpdateAutomatedDiscoveryConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateAutomatedDiscoveryConfiguration,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateAutomatedDiscoveryConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/automated-discovery/configuration")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateAutomatedDiscoveryConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_automated_discovery_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAutomatedDiscoveryConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateAutomatedDiscoveryConfiguration",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateAutomatedDiscoveryConfigurationInput`](crate::input::UpdateAutomatedDiscoveryConfigurationInput).
+    pub fn builder() -> crate::input::update_automated_discovery_configuration_input::Builder {
+        crate::input::update_automated_discovery_configuration_input::Builder::default()
+    }
+}
+
 /// See [`UpdateClassificationJobInput`](crate::input::UpdateClassificationJobInput).
 pub mod update_classification_job_input {
 
@@ -9830,15 +11219,15 @@ impl UpdateClassificationJobInput {
                 _input: &crate::input::UpdateClassificationJobInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_28 = &_input.job_id;
-                let input_28 = input_28.as_ref().ok_or_else(|| {
+                let input_38 = &_input.job_id;
+                let input_38 = input_38.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "job_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let job_id = aws_smithy_http::label::fmt_string(
-                    input_28,
+                    input_38,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if job_id.is_empty() {
@@ -9941,6 +11330,185 @@ impl UpdateClassificationJobInput {
     }
 }
 
+/// See [`UpdateClassificationScopeInput`](crate::input::UpdateClassificationScopeInput).
+pub mod update_classification_scope_input {
+
+    /// A builder for [`UpdateClassificationScopeInput`](crate::input::UpdateClassificationScopeInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) s3: std::option::Option<crate::model::S3ClassificationScopeUpdate>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
+        pub fn s3(mut self, input: crate::model::S3ClassificationScopeUpdate) -> Self {
+            self.s3 = Some(input);
+            self
+        }
+        /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
+        pub fn set_s3(
+            mut self,
+            input: std::option::Option<crate::model::S3ClassificationScopeUpdate>,
+        ) -> Self {
+            self.s3 = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateClassificationScopeInput`](crate::input::UpdateClassificationScopeInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateClassificationScopeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateClassificationScopeInput {
+                id: self.id,
+                s3: self.s3,
+            })
+        }
+    }
+}
+impl UpdateClassificationScopeInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateClassificationScope`](crate::operation::UpdateClassificationScope)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateClassificationScope,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateClassificationScopeInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_39 = &_input.id;
+                let input_39 = input_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_39,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(output, "/classification-scopes/{id}", id = id)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateClassificationScopeInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PATCH").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_classification_scope(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateClassificationScope::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateClassificationScope",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateClassificationScopeInput`](crate::input::UpdateClassificationScopeInput).
+    pub fn builder() -> crate::input::update_classification_scope_input::Builder {
+        crate::input::update_classification_scope_input::Builder::default()
+    }
+}
+
 /// See [`UpdateFindingsFilterInput`](crate::input::UpdateFindingsFilterInput).
 pub mod update_findings_filter_input {
 
@@ -9948,25 +11516,35 @@ pub mod update_findings_filter_input {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::FindingsFilterAction>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) finding_criteria: std::option::Option<crate::model::FindingCriteria>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) position: std::option::Option<i32>,
-        pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+        /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
         pub fn action(mut self, input: crate::model::FindingsFilterAction) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+        /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::FindingsFilterAction>,
         ) -> Self {
             self.action = input;
+            self
+        }
+        /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
         /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
@@ -10026,16 +11604,6 @@ pub mod update_findings_filter_input {
             self.position = input;
             self
         }
-        /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(input.into());
-            self
-        }
-        /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
-        }
         /// Consumes the builder and constructs a [`UpdateFindingsFilterInput`](crate::input::UpdateFindingsFilterInput).
         pub fn build(
             self,
@@ -10045,12 +11613,12 @@ pub mod update_findings_filter_input {
         > {
             Ok(crate::input::UpdateFindingsFilterInput {
                 action: self.action,
+                client_token: self.client_token,
                 description: self.description,
                 finding_criteria: self.finding_criteria,
                 id: self.id,
                 name: self.name,
                 position: self.position.unwrap_or_default(),
-                client_token: self.client_token,
             })
         }
     }
@@ -10078,15 +11646,15 @@ impl UpdateFindingsFilterInput {
                 _input: &crate::input::UpdateFindingsFilterInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_29 = &_input.id;
-                let input_29 = input_29.as_ref().ok_or_else(|| {
+                let input_40 = &_input.id;
+                let input_40 = input_40.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_29,
+                    input_40,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -10415,15 +11983,15 @@ impl UpdateMemberSessionInput {
                 _input: &crate::input::UpdateMemberSessionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_30 = &_input.id;
-                let input_30 = input_30.as_ref().ok_or_else(|| {
+                let input_41 = &_input.id;
+                let input_41 = input_41.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_30,
+                    input_41,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -10665,6 +12233,382 @@ impl UpdateOrganizationConfigurationInput {
     }
 }
 
+/// See [`UpdateResourceProfileInput`](crate::input::UpdateResourceProfileInput).
+pub mod update_resource_profile_input {
+
+    /// A builder for [`UpdateResourceProfileInput`](crate::input::UpdateResourceProfileInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) sensitivity_score_override: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
+        pub fn sensitivity_score_override(mut self, input: i32) -> Self {
+            self.sensitivity_score_override = Some(input);
+            self
+        }
+        /// <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
+        pub fn set_sensitivity_score_override(mut self, input: std::option::Option<i32>) -> Self {
+            self.sensitivity_score_override = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateResourceProfileInput`](crate::input::UpdateResourceProfileInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateResourceProfileInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateResourceProfileInput {
+                resource_arn: self.resource_arn,
+                sensitivity_score_override: self.sensitivity_score_override.unwrap_or_default(),
+            })
+        }
+    }
+}
+impl UpdateResourceProfileInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateResourceProfile`](crate::operation::UpdateResourceProfile)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateResourceProfile,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateResourceProfileInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/resource-profiles").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::UpdateResourceProfileInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                let inner_42 = &_input.resource_arn;
+                let inner_42 = inner_42.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_42.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_42),
+                );
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateResourceProfileInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("PATCH").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_resource_profile(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateResourceProfile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateResourceProfile",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateResourceProfileInput`](crate::input::UpdateResourceProfileInput).
+    pub fn builder() -> crate::input::update_resource_profile_input::Builder {
+        crate::input::update_resource_profile_input::Builder::default()
+    }
+}
+
+/// See [`UpdateResourceProfileDetectionsInput`](crate::input::UpdateResourceProfileDetectionsInput).
+pub mod update_resource_profile_detections_input {
+
+    /// A builder for [`UpdateResourceProfileDetectionsInput`](crate::input::UpdateResourceProfileDetectionsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) suppress_data_identifiers:
+            std::option::Option<std::vec::Vec<crate::model::SuppressDataIdentifier>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Appends an item to `suppress_data_identifiers`.
+        ///
+        /// To override the contents of this collection use [`set_suppress_data_identifiers`](Self::set_suppress_data_identifiers).
+        ///
+        /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
+        pub fn suppress_data_identifiers(
+            mut self,
+            input: crate::model::SuppressDataIdentifier,
+        ) -> Self {
+            let mut v = self.suppress_data_identifiers.unwrap_or_default();
+            v.push(input);
+            self.suppress_data_identifiers = Some(v);
+            self
+        }
+        /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
+        pub fn set_suppress_data_identifiers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SuppressDataIdentifier>>,
+        ) -> Self {
+            self.suppress_data_identifiers = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateResourceProfileDetectionsInput`](crate::input::UpdateResourceProfileDetectionsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateResourceProfileDetectionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateResourceProfileDetectionsInput {
+                resource_arn: self.resource_arn,
+                suppress_data_identifiers: self.suppress_data_identifiers,
+            })
+        }
+    }
+}
+impl UpdateResourceProfileDetectionsInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateResourceProfileDetections`](crate::operation::UpdateResourceProfileDetections)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateResourceProfileDetections,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateResourceProfileDetectionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/resource-profiles/detections").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::UpdateResourceProfileDetectionsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                let inner_43 = &_input.resource_arn;
+                let inner_43 = inner_43.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_43.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_43),
+                );
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateResourceProfileDetectionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("PATCH").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_resource_profile_detections(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateResourceProfileDetections::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateResourceProfileDetections",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateResourceProfileDetectionsInput`](crate::input::UpdateResourceProfileDetectionsInput).
+    pub fn builder() -> crate::input::update_resource_profile_detections_input::Builder {
+        crate::input::update_resource_profile_detections_input::Builder::default()
+    }
+}
+
 /// See [`UpdateRevealConfigurationInput`](crate::input::UpdateRevealConfigurationInput).
 pub mod update_reveal_configuration_input {
 
@@ -10812,6 +12756,261 @@ impl UpdateRevealConfigurationInput {
     }
 }
 
+/// See [`UpdateSensitivityInspectionTemplateInput`](crate::input::UpdateSensitivityInspectionTemplateInput).
+pub mod update_sensitivity_inspection_template_input {
+
+    /// A builder for [`UpdateSensitivityInspectionTemplateInput`](crate::input::UpdateSensitivityInspectionTemplateInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) excludes:
+            std::option::Option<crate::model::SensitivityInspectionTemplateExcludes>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) includes:
+            std::option::Option<crate::model::SensitivityInspectionTemplateIncludes>,
+    }
+    impl Builder {
+        /// <p>A custom description of the template.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A custom description of the template.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The managed data identifiers to explicitly exclude (not use) when analyzing data.</p>
+        /// <p>To exclude an allow list or custom data identifier that's currently included by the template, update the values for the SensitivityInspectionTemplateIncludes.allowListIds and SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties, respectively.</p>
+        pub fn excludes(
+            mut self,
+            input: crate::model::SensitivityInspectionTemplateExcludes,
+        ) -> Self {
+            self.excludes = Some(input);
+            self
+        }
+        /// <p>The managed data identifiers to explicitly exclude (not use) when analyzing data.</p>
+        /// <p>To exclude an allow list or custom data identifier that's currently included by the template, update the values for the SensitivityInspectionTemplateIncludes.allowListIds and SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties, respectively.</p>
+        pub fn set_excludes(
+            mut self,
+            input: std::option::Option<crate::model::SensitivityInspectionTemplateExcludes>,
+        ) -> Self {
+            self.excludes = input;
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
+        pub fn includes(
+            mut self,
+            input: crate::model::SensitivityInspectionTemplateIncludes,
+        ) -> Self {
+            self.includes = Some(input);
+            self
+        }
+        /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
+        pub fn set_includes(
+            mut self,
+            input: std::option::Option<crate::model::SensitivityInspectionTemplateIncludes>,
+        ) -> Self {
+            self.includes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSensitivityInspectionTemplateInput`](crate::input::UpdateSensitivityInspectionTemplateInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateSensitivityInspectionTemplateInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateSensitivityInspectionTemplateInput {
+                description: self.description,
+                excludes: self.excludes,
+                id: self.id,
+                includes: self.includes,
+            })
+        }
+    }
+}
+impl UpdateSensitivityInspectionTemplateInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateSensitivityInspectionTemplate`](crate::operation::UpdateSensitivityInspectionTemplate)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateSensitivityInspectionTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateSensitivityInspectionTemplateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_44 = &_input.id;
+                let input_44 = input_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_44,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(output, "/templates/sensitivity-inspections/{id}", id = id)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateSensitivityInspectionTemplateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_sensitivity_inspection_template(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateSensitivityInspectionTemplate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateSensitivityInspectionTemplate",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateSensitivityInspectionTemplateInput`](crate::input::UpdateSensitivityInspectionTemplateInput).
+    pub fn builder() -> crate::input::update_sensitivity_inspection_template_input::Builder {
+        crate::input::update_sensitivity_inspection_template_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateSensitivityInspectionTemplateInput {
+    /// <p>A custom description of the template.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The managed data identifiers to explicitly exclude (not use) when analyzing data.</p>
+    /// <p>To exclude an allow list or custom data identifier that's currently included by the template, update the values for the SensitivityInspectionTemplateIncludes.allowListIds and SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties, respectively.</p>
+    #[doc(hidden)]
+    pub excludes: std::option::Option<crate::model::SensitivityInspectionTemplateExcludes>,
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
+    #[doc(hidden)]
+    pub includes: std::option::Option<crate::model::SensitivityInspectionTemplateIncludes>,
+}
+impl UpdateSensitivityInspectionTemplateInput {
+    /// <p>A custom description of the template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The managed data identifiers to explicitly exclude (not use) when analyzing data.</p>
+    /// <p>To exclude an allow list or custom data identifier that's currently included by the template, update the values for the SensitivityInspectionTemplateIncludes.allowListIds and SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties, respectively.</p>
+    pub fn excludes(
+        &self,
+    ) -> std::option::Option<&crate::model::SensitivityInspectionTemplateExcludes> {
+        self.excludes.as_ref()
+    }
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
+    pub fn includes(
+        &self,
+    ) -> std::option::Option<&crate::model::SensitivityInspectionTemplateIncludes> {
+        self.includes.as_ref()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10824,6 +13023,53 @@ impl UpdateRevealConfigurationInput {
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::RevealConfiguration> {
         self.configuration.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateResourceProfileDetectionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
+    #[doc(hidden)]
+    pub suppress_data_identifiers:
+        std::option::Option<std::vec::Vec<crate::model::SuppressDataIdentifier>>,
+}
+impl UpdateResourceProfileDetectionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
+    pub fn suppress_data_identifiers(
+        &self,
+    ) -> std::option::Option<&[crate::model::SuppressDataIdentifier]> {
+        self.suppress_data_identifiers.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateResourceProfileInput {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
+    #[doc(hidden)]
+    pub sensitivity_score_override: i32,
+}
+impl UpdateResourceProfileInput {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
+    pub fn sensitivity_score_override(&self) -> i32 {
+        self.sensitivity_score_override
     }
 }
 
@@ -10892,9 +13138,12 @@ impl UpdateMacieSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFindingsFilterInput {
-    /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::FindingsFilterAction>,
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
     /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
     /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     #[doc(hidden)]
@@ -10912,14 +13161,15 @@ pub struct UpdateFindingsFilterInput {
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
     #[doc(hidden)]
     pub position: i32,
-    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateFindingsFilterInput {
-    /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     pub fn action(&self) -> std::option::Option<&crate::model::FindingsFilterAction> {
         self.action.as_ref()
+    }
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
     }
     /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
     /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -10943,9 +13193,27 @@ impl UpdateFindingsFilterInput {
     pub fn position(&self) -> i32 {
         self.position
     }
-    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
-        self.client_token.as_deref()
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateClassificationScopeInput {
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
+    #[doc(hidden)]
+    pub s3: std::option::Option<crate::model::S3ClassificationScopeUpdate>,
+}
+impl UpdateClassificationScopeInput {
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3ClassificationScopeUpdate> {
+        self.s3.as_ref()
     }
 }
 
@@ -10978,6 +13246,23 @@ impl UpdateClassificationJobInput {
     /// </ul>
     pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.job_status.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateAutomatedDiscoveryConfigurationInput {
+    /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
+    /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::AutomatedDiscoveryStatus>,
+}
+impl UpdateAutomatedDiscoveryConfigurationInput {
+    /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
+    /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AutomatedDiscoveryStatus> {
+        self.status.as_ref()
     }
 }
 
@@ -11209,6 +13494,79 @@ impl ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListSensitivityInspectionTemplatesInput {
+    /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    #[doc(hidden)]
+    pub max_results: i32,
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSensitivityInspectionTemplatesInput {
+    /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListResourceProfileDetectionsInput {
+    /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    #[doc(hidden)]
+    pub max_results: i32,
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListResourceProfileDetectionsInput {
+    /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListResourceProfileArtifactsInput {
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListResourceProfileArtifactsInput {
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOrganizationAdminAccountsInput {
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
     #[doc(hidden)]
@@ -11377,6 +13735,28 @@ impl ListCustomDataIdentifiersInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListClassificationScopesInput {
+    /// <p>The name of the classification scope to retrieve the unique identifier for.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListClassificationScopesInput {
+    /// <p>The name of the classification scope to retrieve the unique identifier for.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListClassificationJobsInput {
     /// <p>The criteria to use to filter the results.</p>
     #[doc(hidden)]
@@ -11493,6 +13873,21 @@ impl GetUsageStatisticsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetSensitivityInspectionTemplateInput {
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+}
+impl GetSensitivityInspectionTemplateInput {
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSensitiveDataOccurrencesAvailabilityInput {
     /// <p>The unique identifier for the finding.</p>
     #[doc(hidden)]
@@ -11524,6 +13919,21 @@ impl GetSensitiveDataOccurrencesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRevealConfigurationInput {}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetResourceProfileInput {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl GetResourceProfileInput {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11665,6 +14075,21 @@ impl GetCustomDataIdentifierInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetClassificationScopeInput {
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+}
+impl GetClassificationScopeInput {
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetClassificationExportConfigurationInput {}
 
 #[allow(missing_docs)] // documentation missing in model
@@ -11681,6 +14106,11 @@ impl GetBucketStatisticsInput {
         self.account_id.as_deref()
     }
 }
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetAutomatedDiscoveryConfigurationInput {}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -12043,7 +14473,7 @@ impl CreateInvitationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFindingsFilterInput {
-    /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::FindingsFilterAction>,
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -12070,7 +14500,7 @@ pub struct CreateFindingsFilterInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateFindingsFilterInput {
-    /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     pub fn action(&self) -> std::option::Option<&crate::model::FindingsFilterAction> {
         self.action.as_ref()
     }

@@ -264,6 +264,9 @@ pub fn serialize_structure_crate_input_request_certificate_input(
         }
         array_52.finish();
     }
+    if let Some(var_55) = &input.key_algorithm {
+        object.key("KeyAlgorithm").string(var_55.as_str());
+    }
     Ok(())
 }
 
@@ -271,14 +274,14 @@ pub fn serialize_structure_crate_input_resend_validation_email_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ResendValidationEmailInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_55) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_55.as_str());
+    if let Some(var_56) = &input.certificate_arn {
+        object.key("CertificateArn").string(var_56.as_str());
     }
-    if let Some(var_56) = &input.domain {
-        object.key("Domain").string(var_56.as_str());
+    if let Some(var_57) = &input.domain {
+        object.key("Domain").string(var_57.as_str());
     }
-    if let Some(var_57) = &input.validation_domain {
-        object.key("ValidationDomain").string(var_57.as_str());
+    if let Some(var_58) = &input.validation_domain {
+        object.key("ValidationDomain").string(var_58.as_str());
     }
     Ok(())
 }
@@ -287,17 +290,17 @@ pub fn serialize_structure_crate_input_update_certificate_options_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateCertificateOptionsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_58) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_58.as_str());
+    if let Some(var_59) = &input.certificate_arn {
+        object.key("CertificateArn").string(var_59.as_str());
     }
-    if let Some(var_59) = &input.options {
+    if let Some(var_60) = &input.options {
         #[allow(unused_mut)]
-        let mut object_60 = object.key("Options").start_object();
+        let mut object_61 = object.key("Options").start_object();
         crate::json_ser::serialize_structure_crate_model_certificate_options(
-            &mut object_60,
-            var_59,
+            &mut object_61,
+            var_60,
         )?;
-        object_60.finish();
+        object_61.finish();
     }
     Ok(())
 }
@@ -306,11 +309,11 @@ pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_61) = &input.key {
-        object.key("Key").string(var_61.as_str());
+    if let Some(var_62) = &input.key {
+        object.key("Key").string(var_62.as_str());
     }
-    if let Some(var_62) = &input.value {
-        object.key("Value").string(var_62.as_str());
+    if let Some(var_63) = &input.value {
+        object.key("Value").string(var_63.as_str());
     }
     Ok(())
 }
@@ -319,32 +322,32 @@ pub fn serialize_structure_crate_model_filters(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Filters,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_63) = &input.extended_key_usage {
-        let mut array_64 = object.key("extendedKeyUsage").start_array();
-        for item_65 in var_63 {
+    if let Some(var_64) = &input.extended_key_usage {
+        let mut array_65 = object.key("extendedKeyUsage").start_array();
+        for item_66 in var_64 {
             {
-                array_64.value().string(item_65.as_str());
+                array_65.value().string(item_66.as_str());
             }
         }
-        array_64.finish();
+        array_65.finish();
     }
-    if let Some(var_66) = &input.key_usage {
-        let mut array_67 = object.key("keyUsage").start_array();
-        for item_68 in var_66 {
+    if let Some(var_67) = &input.key_usage {
+        let mut array_68 = object.key("keyUsage").start_array();
+        for item_69 in var_67 {
             {
-                array_67.value().string(item_68.as_str());
+                array_68.value().string(item_69.as_str());
             }
         }
-        array_67.finish();
+        array_68.finish();
     }
-    if let Some(var_69) = &input.key_types {
-        let mut array_70 = object.key("keyTypes").start_array();
-        for item_71 in var_69 {
+    if let Some(var_70) = &input.key_types {
+        let mut array_71 = object.key("keyTypes").start_array();
+        for item_72 in var_70 {
             {
-                array_70.value().string(item_71.as_str());
+                array_71.value().string(item_72.as_str());
             }
         }
-        array_70.finish();
+        array_71.finish();
     }
     Ok(())
 }
@@ -353,10 +356,10 @@ pub fn serialize_structure_crate_model_expiry_events_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ExpiryEventsConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_72) = &input.days_before_expiry {
+    if let Some(var_73) = &input.days_before_expiry {
         object.key("DaysBeforeExpiry").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_72).into()),
+            aws_smithy_types::Number::NegInt((*var_73).into()),
         );
     }
     Ok(())
@@ -366,11 +369,11 @@ pub fn serialize_structure_crate_model_domain_validation_option(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DomainValidationOption,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_73) = &input.domain_name {
-        object.key("DomainName").string(var_73.as_str());
+    if let Some(var_74) = &input.domain_name {
+        object.key("DomainName").string(var_74.as_str());
     }
-    if let Some(var_74) = &input.validation_domain {
-        object.key("ValidationDomain").string(var_74.as_str());
+    if let Some(var_75) = &input.validation_domain {
+        object.key("ValidationDomain").string(var_75.as_str());
     }
     Ok(())
 }
@@ -379,10 +382,10 @@ pub fn serialize_structure_crate_model_certificate_options(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CertificateOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_75) = &input.certificate_transparency_logging_preference {
+    if let Some(var_76) = &input.certificate_transparency_logging_preference {
         object
             .key("CertificateTransparencyLoggingPreference")
-            .string(var_75.as_str());
+            .string(var_76.as_str());
     }
     Ok(())
 }

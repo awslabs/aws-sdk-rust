@@ -235,6 +235,11 @@ pub fn serialize_structure_crate_model_dash_package(
             .key("includeEncoderConfigurationInSegments")
             .boolean(input.include_encoder_configuration_in_segments);
     }
+    if input.include_iframe_only_stream {
+        object
+            .key("includeIframeOnlyStream")
+            .boolean(input.include_iframe_only_stream);
+    }
     if let Some(var_54) = &input.period_triggers {
         let mut array_55 = object.key("periodTriggers").start_array();
         for item_56 in var_54 {
@@ -508,20 +513,29 @@ pub fn serialize_structure_crate_model_speke_key_provider(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SpekeKeyProvider,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_96) = &input.role_arn {
-        object.key("roleArn").string(var_96.as_str());
+    if let Some(var_96) = &input.encryption_contract_configuration {
+        #[allow(unused_mut)]
+        let mut object_97 = object.key("encryptionContractConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_encryption_contract_configuration(
+            &mut object_97,
+            var_96,
+        )?;
+        object_97.finish();
     }
-    if let Some(var_97) = &input.system_ids {
-        let mut array_98 = object.key("systemIds").start_array();
-        for item_99 in var_97 {
+    if let Some(var_98) = &input.role_arn {
+        object.key("roleArn").string(var_98.as_str());
+    }
+    if let Some(var_99) = &input.system_ids {
+        let mut array_100 = object.key("systemIds").start_array();
+        for item_101 in var_99 {
             {
-                array_98.value().string(item_99.as_str());
+                array_100.value().string(item_101.as_str());
             }
         }
-        array_98.finish();
+        array_100.finish();
     }
-    if let Some(var_100) = &input.url {
-        object.key("url").string(var_100.as_str());
+    if let Some(var_102) = &input.url {
+        object.key("url").string(var_102.as_str());
     }
     Ok(())
 }
@@ -542,8 +556,21 @@ pub fn serialize_structure_crate_model_stream_selection(
             aws_smithy_types::Number::NegInt((input.min_video_bits_per_second).into()),
         );
     }
-    if let Some(var_101) = &input.stream_order {
-        object.key("streamOrder").string(var_101.as_str());
+    if let Some(var_103) = &input.stream_order {
+        object.key("streamOrder").string(var_103.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_encryption_contract_configuration(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::EncryptionContractConfiguration,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_104) = &input.preset_speke20_audio {
+        object.key("presetSpeke20Audio").string(var_104.as_str());
+    }
+    if let Some(var_105) = &input.preset_speke20_video {
+        object.key("presetSpeke20Video").string(var_105.as_str());
     }
     Ok(())
 }

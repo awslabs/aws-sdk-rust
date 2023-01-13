@@ -308,6 +308,169 @@ impl ConflictExceptionErrorArgument {
     }
 }
 
+/// <p>A signal to a camera node to start or stop processing video.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NodeSignal {
+    /// <p>The camera node's name, from the application manifest.</p>
+    #[doc(hidden)]
+    pub node_instance_id: std::option::Option<std::string::String>,
+    /// <p>The signal value.</p>
+    #[doc(hidden)]
+    pub signal: std::option::Option<crate::model::NodeSignalValue>,
+}
+impl NodeSignal {
+    /// <p>The camera node's name, from the application manifest.</p>
+    pub fn node_instance_id(&self) -> std::option::Option<&str> {
+        self.node_instance_id.as_deref()
+    }
+    /// <p>The signal value.</p>
+    pub fn signal(&self) -> std::option::Option<&crate::model::NodeSignalValue> {
+        self.signal.as_ref()
+    }
+}
+/// See [`NodeSignal`](crate::model::NodeSignal).
+pub mod node_signal {
+
+    /// A builder for [`NodeSignal`](crate::model::NodeSignal).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) node_instance_id: std::option::Option<std::string::String>,
+        pub(crate) signal: std::option::Option<crate::model::NodeSignalValue>,
+    }
+    impl Builder {
+        /// <p>The camera node's name, from the application manifest.</p>
+        pub fn node_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.node_instance_id = Some(input.into());
+            self
+        }
+        /// <p>The camera node's name, from the application manifest.</p>
+        pub fn set_node_instance_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.node_instance_id = input;
+            self
+        }
+        /// <p>The signal value.</p>
+        pub fn signal(mut self, input: crate::model::NodeSignalValue) -> Self {
+            self.signal = Some(input);
+            self
+        }
+        /// <p>The signal value.</p>
+        pub fn set_signal(
+            mut self,
+            input: std::option::Option<crate::model::NodeSignalValue>,
+        ) -> Self {
+            self.signal = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NodeSignal`](crate::model::NodeSignal).
+        pub fn build(self) -> crate::model::NodeSignal {
+            crate::model::NodeSignal {
+                node_instance_id: self.node_instance_id,
+                signal: self.signal,
+            }
+        }
+    }
+}
+impl NodeSignal {
+    /// Creates a new builder-style object to manufacture [`NodeSignal`](crate::model::NodeSignal).
+    pub fn builder() -> crate::model::node_signal::Builder {
+        crate::model::node_signal::Builder::default()
+    }
+}
+
+/// When writing a match expression against `NodeSignalValue`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let nodesignalvalue = unimplemented!();
+/// match nodesignalvalue {
+///     NodeSignalValue::Pause => { /* ... */ },
+///     NodeSignalValue::Resume => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `nodesignalvalue` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `NodeSignalValue::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `NodeSignalValue::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `NodeSignalValue::NewFeature` is defined.
+/// Specifically, when `nodesignalvalue` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `NodeSignalValue::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum NodeSignalValue {
+    #[allow(missing_docs)] // documentation missing in model
+    Pause,
+    #[allow(missing_docs)] // documentation missing in model
+    Resume,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for NodeSignalValue {
+    fn from(s: &str) -> Self {
+        match s {
+            "PAUSE" => NodeSignalValue::Pause,
+            "RESUME" => NodeSignalValue::Resume,
+            other => NodeSignalValue::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for NodeSignalValue {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NodeSignalValue::from(s))
+    }
+}
+impl NodeSignalValue {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NodeSignalValue::Pause => "PAUSE",
+            NodeSignalValue::Resume => "RESUME",
+            NodeSignalValue::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["PAUSE", "RESUME"]
+    }
+}
+impl AsRef<str> for NodeSignalValue {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// When writing a match expression against `DeviceStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
 /// feature that is supported by the service but has not been represented as an enum
@@ -2065,6 +2228,9 @@ pub struct DeviceJob {
     /// <p>When the job was created.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The job's type.</p>
+    #[doc(hidden)]
+    pub job_type: std::option::Option<crate::model::JobType>,
 }
 impl DeviceJob {
     /// <p>The name of the target device</p>
@@ -2083,6 +2249,10 @@ impl DeviceJob {
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
+    /// <p>The job's type.</p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
 }
 /// See [`DeviceJob`](crate::model::DeviceJob).
 pub mod device_job {
@@ -2094,6 +2264,7 @@ pub mod device_job {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) job_type: std::option::Option<crate::model::JobType>,
     }
     impl Builder {
         /// <p>The name of the target device</p>
@@ -2139,6 +2310,16 @@ pub mod device_job {
             self.created_time = input;
             self
         }
+        /// <p>The job's type.</p>
+        pub fn job_type(mut self, input: crate::model::JobType) -> Self {
+            self.job_type = Some(input);
+            self
+        }
+        /// <p>The job's type.</p>
+        pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
+            self.job_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeviceJob`](crate::model::DeviceJob).
         pub fn build(self) -> crate::model::DeviceJob {
             crate::model::DeviceJob {
@@ -2146,6 +2327,7 @@ pub mod device_job {
                 device_id: self.device_id,
                 job_id: self.job_id,
                 created_time: self.created_time,
+                job_type: self.job_type,
             }
         }
     }
@@ -2154,6 +2336,96 @@ impl DeviceJob {
     /// Creates a new builder-style object to manufacture [`DeviceJob`](crate::model::DeviceJob).
     pub fn builder() -> crate::model::device_job::Builder {
         crate::model::device_job::Builder::default()
+    }
+}
+
+/// When writing a match expression against `JobType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let jobtype = unimplemented!();
+/// match jobtype {
+///     JobType::Ota => { /* ... */ },
+///     JobType::Reboot => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `jobtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `JobType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `JobType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `JobType::NewFeature` is defined.
+/// Specifically, when `jobtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `JobType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum JobType {
+    #[allow(missing_docs)] // documentation missing in model
+    Ota,
+    #[allow(missing_docs)] // documentation missing in model
+    Reboot,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for JobType {
+    fn from(s: &str) -> Self {
+        match s {
+            "OTA" => JobType::Ota,
+            "REBOOT" => JobType::Reboot,
+            other => JobType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for JobType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(JobType::from(s))
+    }
+}
+impl JobType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            JobType::Ota => "OTA",
+            JobType::Reboot => "REBOOT",
+            JobType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["OTA", "REBOOT"]
+    }
+}
+impl AsRef<str> for JobType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2501,6 +2773,7 @@ impl Device {
 ///     DeviceAggregatedStatus::Offline => { /* ... */ },
 ///     DeviceAggregatedStatus::Online => { /* ... */ },
 ///     DeviceAggregatedStatus::Pending => { /* ... */ },
+///     DeviceAggregatedStatus::Rebooting => { /* ... */ },
 ///     DeviceAggregatedStatus::UpdateNeeded => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -2552,6 +2825,8 @@ pub enum DeviceAggregatedStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
+    Rebooting,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateNeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
@@ -2567,6 +2842,7 @@ impl std::convert::From<&str> for DeviceAggregatedStatus {
             "OFFLINE" => DeviceAggregatedStatus::Offline,
             "ONLINE" => DeviceAggregatedStatus::Online,
             "PENDING" => DeviceAggregatedStatus::Pending,
+            "REBOOTING" => DeviceAggregatedStatus::Rebooting,
             "UPDATE_NEEDED" => DeviceAggregatedStatus::UpdateNeeded,
             other => {
                 DeviceAggregatedStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
@@ -2593,6 +2869,7 @@ impl DeviceAggregatedStatus {
             DeviceAggregatedStatus::Offline => "OFFLINE",
             DeviceAggregatedStatus::Online => "ONLINE",
             DeviceAggregatedStatus::Pending => "PENDING",
+            DeviceAggregatedStatus::Rebooting => "REBOOTING",
             DeviceAggregatedStatus::UpdateNeeded => "UPDATE_NEEDED",
             DeviceAggregatedStatus::Unknown(value) => value.as_str(),
         }
@@ -2608,6 +2885,7 @@ impl DeviceAggregatedStatus {
             "OFFLINE",
             "ONLINE",
             "PENDING",
+            "REBOOTING",
             "UPDATE_NEEDED",
         ]
     }
@@ -2628,6 +2906,9 @@ pub struct LatestDeviceJob {
     /// <p>Status of the latest device job.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::UpdateProgress>,
+    /// <p>The job's type.</p>
+    #[doc(hidden)]
+    pub job_type: std::option::Option<crate::model::JobType>,
 }
 impl LatestDeviceJob {
     /// <p>The target version of the device software.</p>
@@ -2638,6 +2919,10 @@ impl LatestDeviceJob {
     pub fn status(&self) -> std::option::Option<&crate::model::UpdateProgress> {
         self.status.as_ref()
     }
+    /// <p>The job's type.</p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
 }
 /// See [`LatestDeviceJob`](crate::model::LatestDeviceJob).
 pub mod latest_device_job {
@@ -2647,6 +2932,7 @@ pub mod latest_device_job {
     pub struct Builder {
         pub(crate) image_version: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::UpdateProgress>,
+        pub(crate) job_type: std::option::Option<crate::model::JobType>,
     }
     impl Builder {
         /// <p>The target version of the device software.</p>
@@ -2675,11 +2961,22 @@ pub mod latest_device_job {
             self.status = input;
             self
         }
+        /// <p>The job's type.</p>
+        pub fn job_type(mut self, input: crate::model::JobType) -> Self {
+            self.job_type = Some(input);
+            self
+        }
+        /// <p>The job's type.</p>
+        pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
+            self.job_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LatestDeviceJob`](crate::model::LatestDeviceJob).
         pub fn build(self) -> crate::model::LatestDeviceJob {
             crate::model::LatestDeviceJob {
                 image_version: self.image_version,
                 status: self.status,
+                job_type: self.job_type,
             }
         }
     }
@@ -3229,6 +3526,10 @@ pub struct ApplicationInstance {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The application's state.</p>
+    #[doc(hidden)]
+    pub runtime_context_states:
+        std::option::Option<std::vec::Vec<crate::model::ReportedRuntimeContextState>>,
 }
 impl ApplicationInstance {
     /// <p>The application instance's name.</p>
@@ -3280,6 +3581,12 @@ impl ApplicationInstance {
     {
         self.tags.as_ref()
     }
+    /// <p>The application's state.</p>
+    pub fn runtime_context_states(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReportedRuntimeContextState]> {
+        self.runtime_context_states.as_deref()
+    }
 }
 /// See [`ApplicationInstance`](crate::model::ApplicationInstance).
 pub mod application_instance {
@@ -3301,6 +3608,8 @@ pub mod application_instance {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) runtime_context_states:
+            std::option::Option<std::vec::Vec<crate::model::ReportedRuntimeContextState>>,
     }
     impl Builder {
         /// <p>The application instance's name.</p>
@@ -3458,6 +3767,28 @@ pub mod application_instance {
             self.tags = input;
             self
         }
+        /// Appends an item to `runtime_context_states`.
+        ///
+        /// To override the contents of this collection use [`set_runtime_context_states`](Self::set_runtime_context_states).
+        ///
+        /// <p>The application's state.</p>
+        pub fn runtime_context_states(
+            mut self,
+            input: crate::model::ReportedRuntimeContextState,
+        ) -> Self {
+            let mut v = self.runtime_context_states.unwrap_or_default();
+            v.push(input);
+            self.runtime_context_states = Some(v);
+            self
+        }
+        /// <p>The application's state.</p>
+        pub fn set_runtime_context_states(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ReportedRuntimeContextState>>,
+        ) -> Self {
+            self.runtime_context_states = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ApplicationInstance`](crate::model::ApplicationInstance).
         pub fn build(self) -> crate::model::ApplicationInstance {
             crate::model::ApplicationInstance {
@@ -3472,6 +3803,7 @@ pub mod application_instance {
                 created_time: self.created_time,
                 arn: self.arn,
                 tags: self.tags,
+                runtime_context_states: self.runtime_context_states,
             }
         }
     }
@@ -3480,6 +3812,369 @@ impl ApplicationInstance {
     /// Creates a new builder-style object to manufacture [`ApplicationInstance`](crate::model::ApplicationInstance).
     pub fn builder() -> crate::model::application_instance::Builder {
         crate::model::application_instance::Builder::default()
+    }
+}
+
+/// <p>An application instance's state.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReportedRuntimeContextState {
+    /// <p>The application's desired state.</p>
+    #[doc(hidden)]
+    pub desired_state: std::option::Option<crate::model::DesiredState>,
+    /// <p>The device's name.</p>
+    #[doc(hidden)]
+    pub runtime_context_name: std::option::Option<std::string::String>,
+    /// <p>The application's reported status.</p>
+    #[doc(hidden)]
+    pub device_reported_status: std::option::Option<crate::model::DeviceReportedStatus>,
+    /// <p>When the device reported the application's state.</p>
+    #[doc(hidden)]
+    pub device_reported_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ReportedRuntimeContextState {
+    /// <p>The application's desired state.</p>
+    pub fn desired_state(&self) -> std::option::Option<&crate::model::DesiredState> {
+        self.desired_state.as_ref()
+    }
+    /// <p>The device's name.</p>
+    pub fn runtime_context_name(&self) -> std::option::Option<&str> {
+        self.runtime_context_name.as_deref()
+    }
+    /// <p>The application's reported status.</p>
+    pub fn device_reported_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceReportedStatus> {
+        self.device_reported_status.as_ref()
+    }
+    /// <p>When the device reported the application's state.</p>
+    pub fn device_reported_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.device_reported_time.as_ref()
+    }
+}
+/// See [`ReportedRuntimeContextState`](crate::model::ReportedRuntimeContextState).
+pub mod reported_runtime_context_state {
+
+    /// A builder for [`ReportedRuntimeContextState`](crate::model::ReportedRuntimeContextState).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) desired_state: std::option::Option<crate::model::DesiredState>,
+        pub(crate) runtime_context_name: std::option::Option<std::string::String>,
+        pub(crate) device_reported_status: std::option::Option<crate::model::DeviceReportedStatus>,
+        pub(crate) device_reported_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The application's desired state.</p>
+        pub fn desired_state(mut self, input: crate::model::DesiredState) -> Self {
+            self.desired_state = Some(input);
+            self
+        }
+        /// <p>The application's desired state.</p>
+        pub fn set_desired_state(
+            mut self,
+            input: std::option::Option<crate::model::DesiredState>,
+        ) -> Self {
+            self.desired_state = input;
+            self
+        }
+        /// <p>The device's name.</p>
+        pub fn runtime_context_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.runtime_context_name = Some(input.into());
+            self
+        }
+        /// <p>The device's name.</p>
+        pub fn set_runtime_context_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.runtime_context_name = input;
+            self
+        }
+        /// <p>The application's reported status.</p>
+        pub fn device_reported_status(mut self, input: crate::model::DeviceReportedStatus) -> Self {
+            self.device_reported_status = Some(input);
+            self
+        }
+        /// <p>The application's reported status.</p>
+        pub fn set_device_reported_status(
+            mut self,
+            input: std::option::Option<crate::model::DeviceReportedStatus>,
+        ) -> Self {
+            self.device_reported_status = input;
+            self
+        }
+        /// <p>When the device reported the application's state.</p>
+        pub fn device_reported_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.device_reported_time = Some(input);
+            self
+        }
+        /// <p>When the device reported the application's state.</p>
+        pub fn set_device_reported_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.device_reported_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReportedRuntimeContextState`](crate::model::ReportedRuntimeContextState).
+        pub fn build(self) -> crate::model::ReportedRuntimeContextState {
+            crate::model::ReportedRuntimeContextState {
+                desired_state: self.desired_state,
+                runtime_context_name: self.runtime_context_name,
+                device_reported_status: self.device_reported_status,
+                device_reported_time: self.device_reported_time,
+            }
+        }
+    }
+}
+impl ReportedRuntimeContextState {
+    /// Creates a new builder-style object to manufacture [`ReportedRuntimeContextState`](crate::model::ReportedRuntimeContextState).
+    pub fn builder() -> crate::model::reported_runtime_context_state::Builder {
+        crate::model::reported_runtime_context_state::Builder::default()
+    }
+}
+
+/// When writing a match expression against `DeviceReportedStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let devicereportedstatus = unimplemented!();
+/// match devicereportedstatus {
+///     DeviceReportedStatus::InstallError => { /* ... */ },
+///     DeviceReportedStatus::InstallInProgress => { /* ... */ },
+///     DeviceReportedStatus::Launched => { /* ... */ },
+///     DeviceReportedStatus::LaunchError => { /* ... */ },
+///     DeviceReportedStatus::RemovalFailed => { /* ... */ },
+///     DeviceReportedStatus::RemovalInProgress => { /* ... */ },
+///     DeviceReportedStatus::Running => { /* ... */ },
+///     DeviceReportedStatus::Starting => { /* ... */ },
+///     DeviceReportedStatus::Stopped => { /* ... */ },
+///     DeviceReportedStatus::Stopping => { /* ... */ },
+///     DeviceReportedStatus::StopError => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `devicereportedstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DeviceReportedStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DeviceReportedStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DeviceReportedStatus::NewFeature` is defined.
+/// Specifically, when `devicereportedstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DeviceReportedStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DeviceReportedStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    InstallError,
+    #[allow(missing_docs)] // documentation missing in model
+    InstallInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Launched,
+    #[allow(missing_docs)] // documentation missing in model
+    LaunchError,
+    #[allow(missing_docs)] // documentation missing in model
+    RemovalFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    RemovalInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    #[allow(missing_docs)] // documentation missing in model
+    Starting,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopping,
+    #[allow(missing_docs)] // documentation missing in model
+    StopError,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DeviceReportedStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "INSTALL_ERROR" => DeviceReportedStatus::InstallError,
+            "INSTALL_IN_PROGRESS" => DeviceReportedStatus::InstallInProgress,
+            "LAUNCHED" => DeviceReportedStatus::Launched,
+            "LAUNCH_ERROR" => DeviceReportedStatus::LaunchError,
+            "REMOVAL_FAILED" => DeviceReportedStatus::RemovalFailed,
+            "REMOVAL_IN_PROGRESS" => DeviceReportedStatus::RemovalInProgress,
+            "RUNNING" => DeviceReportedStatus::Running,
+            "STARTING" => DeviceReportedStatus::Starting,
+            "STOPPED" => DeviceReportedStatus::Stopped,
+            "STOPPING" => DeviceReportedStatus::Stopping,
+            "STOP_ERROR" => DeviceReportedStatus::StopError,
+            other => {
+                DeviceReportedStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for DeviceReportedStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeviceReportedStatus::from(s))
+    }
+}
+impl DeviceReportedStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeviceReportedStatus::InstallError => "INSTALL_ERROR",
+            DeviceReportedStatus::InstallInProgress => "INSTALL_IN_PROGRESS",
+            DeviceReportedStatus::Launched => "LAUNCHED",
+            DeviceReportedStatus::LaunchError => "LAUNCH_ERROR",
+            DeviceReportedStatus::RemovalFailed => "REMOVAL_FAILED",
+            DeviceReportedStatus::RemovalInProgress => "REMOVAL_IN_PROGRESS",
+            DeviceReportedStatus::Running => "RUNNING",
+            DeviceReportedStatus::Starting => "STARTING",
+            DeviceReportedStatus::Stopped => "STOPPED",
+            DeviceReportedStatus::Stopping => "STOPPING",
+            DeviceReportedStatus::StopError => "STOP_ERROR",
+            DeviceReportedStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "INSTALL_ERROR",
+            "INSTALL_IN_PROGRESS",
+            "LAUNCHED",
+            "LAUNCH_ERROR",
+            "REMOVAL_FAILED",
+            "REMOVAL_IN_PROGRESS",
+            "RUNNING",
+            "STARTING",
+            "STOPPED",
+            "STOPPING",
+            "STOP_ERROR",
+        ]
+    }
+}
+impl AsRef<str> for DeviceReportedStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `DesiredState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let desiredstate = unimplemented!();
+/// match desiredstate {
+///     DesiredState::Removed => { /* ... */ },
+///     DesiredState::Running => { /* ... */ },
+///     DesiredState::Stopped => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `desiredstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DesiredState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DesiredState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DesiredState::NewFeature` is defined.
+/// Specifically, when `desiredstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DesiredState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DesiredState {
+    #[allow(missing_docs)] // documentation missing in model
+    Removed,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DesiredState {
+    fn from(s: &str) -> Self {
+        match s {
+            "REMOVED" => DesiredState::Removed,
+            "RUNNING" => DesiredState::Running,
+            "STOPPED" => DesiredState::Stopped,
+            other => DesiredState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for DesiredState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DesiredState::from(s))
+    }
+}
+impl DesiredState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DesiredState::Removed => "REMOVED",
+            DesiredState::Running => "RUNNING",
+            DesiredState::Stopped => "STOPPED",
+            DesiredState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["REMOVED", "RUNNING", "STOPPED"]
+    }
+}
+impl AsRef<str> for DesiredState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4040,6 +4735,7 @@ impl NodeInstance {
 /// match nodeinstancestatus {
 ///     NodeInstanceStatus::Error => { /* ... */ },
 ///     NodeInstanceStatus::NotAvailable => { /* ... */ },
+///     NodeInstanceStatus::Paused => { /* ... */ },
 ///     NodeInstanceStatus::Running => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -4079,6 +4775,8 @@ pub enum NodeInstanceStatus {
     #[allow(missing_docs)] // documentation missing in model
     NotAvailable,
     #[allow(missing_docs)] // documentation missing in model
+    Paused,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
@@ -4088,6 +4786,7 @@ impl std::convert::From<&str> for NodeInstanceStatus {
         match s {
             "ERROR" => NodeInstanceStatus::Error,
             "NOT_AVAILABLE" => NodeInstanceStatus::NotAvailable,
+            "PAUSED" => NodeInstanceStatus::Paused,
             "RUNNING" => NodeInstanceStatus::Running,
             other => {
                 NodeInstanceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
@@ -4108,13 +4807,14 @@ impl NodeInstanceStatus {
         match self {
             NodeInstanceStatus::Error => "ERROR",
             NodeInstanceStatus::NotAvailable => "NOT_AVAILABLE",
+            NodeInstanceStatus::Paused => "PAUSED",
             NodeInstanceStatus::Running => "RUNNING",
             NodeInstanceStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "NOT_AVAILABLE", "RUNNING"]
+        &["ERROR", "NOT_AVAILABLE", "PAUSED", "RUNNING"]
     }
 }
 impl AsRef<str> for NodeInstanceStatus {
@@ -6253,91 +6953,6 @@ impl Job {
     /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
     pub fn builder() -> crate::model::job::Builder {
         crate::model::job::Builder::default()
-    }
-}
-
-/// When writing a match expression against `JobType`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let jobtype = unimplemented!();
-/// match jobtype {
-///     JobType::Ota => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `jobtype` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `JobType::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `JobType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `JobType::NewFeature` is defined.
-/// Specifically, when `jobtype` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `JobType::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum JobType {
-    #[allow(missing_docs)] // documentation missing in model
-    Ota,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for JobType {
-    fn from(s: &str) -> Self {
-        match s {
-            "OTA" => JobType::Ota,
-            other => JobType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for JobType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobType::from(s))
-    }
-}
-impl JobType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobType::Ota => "OTA",
-            JobType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["OTA"]
-    }
-}
-impl AsRef<str> for JobType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 

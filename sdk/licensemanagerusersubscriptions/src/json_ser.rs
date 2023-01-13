@@ -190,6 +190,12 @@ pub fn serialize_structure_crate_input_register_identity_provider_input(
     if let Some(var_42) = &input.product {
         object.key("Product").string(var_42.as_str());
     }
+    if let Some(var_43) = &input.settings {
+        #[allow(unused_mut)]
+        let mut object_44 = object.key("Settings").start_object();
+        crate::json_ser::serialize_structure_crate_model_settings(&mut object_44, var_43)?;
+        object_44.finish();
+    }
     Ok(())
 }
 
@@ -197,20 +203,20 @@ pub fn serialize_structure_crate_input_start_product_subscription_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartProductSubscriptionInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_43) = &input.domain {
-        object.key("Domain").string(var_43.as_str());
+    if let Some(var_45) = &input.domain {
+        object.key("Domain").string(var_45.as_str());
     }
-    if let Some(var_44) = &input.identity_provider {
+    if let Some(var_46) = &input.identity_provider {
         #[allow(unused_mut)]
-        let mut object_45 = object.key("IdentityProvider").start_object();
-        crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_45, var_44)?;
-        object_45.finish();
+        let mut object_47 = object.key("IdentityProvider").start_object();
+        crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_47, var_46)?;
+        object_47.finish();
     }
-    if let Some(var_46) = &input.product {
-        object.key("Product").string(var_46.as_str());
+    if let Some(var_48) = &input.product {
+        object.key("Product").string(var_48.as_str());
     }
-    if let Some(var_47) = &input.username {
-        object.key("Username").string(var_47.as_str());
+    if let Some(var_49) = &input.username {
+        object.key("Username").string(var_49.as_str());
     }
     Ok(())
 }
@@ -219,20 +225,42 @@ pub fn serialize_structure_crate_input_stop_product_subscription_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopProductSubscriptionInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_48) = &input.domain {
-        object.key("Domain").string(var_48.as_str());
+    if let Some(var_50) = &input.domain {
+        object.key("Domain").string(var_50.as_str());
     }
-    if let Some(var_49) = &input.identity_provider {
+    if let Some(var_51) = &input.identity_provider {
         #[allow(unused_mut)]
-        let mut object_50 = object.key("IdentityProvider").start_object();
-        crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_50, var_49)?;
-        object_50.finish();
+        let mut object_52 = object.key("IdentityProvider").start_object();
+        crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_52, var_51)?;
+        object_52.finish();
     }
-    if let Some(var_51) = &input.product {
-        object.key("Product").string(var_51.as_str());
+    if let Some(var_53) = &input.product {
+        object.key("Product").string(var_53.as_str());
     }
-    if let Some(var_52) = &input.username {
-        object.key("Username").string(var_52.as_str());
+    if let Some(var_54) = &input.username {
+        object.key("Username").string(var_54.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_update_identity_provider_settings_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UpdateIdentityProviderSettingsInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_55) = &input.identity_provider {
+        #[allow(unused_mut)]
+        let mut object_56 = object.key("IdentityProvider").start_object();
+        crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_56, var_55)?;
+        object_56.finish();
+    }
+    if let Some(var_57) = &input.product {
+        object.key("Product").string(var_57.as_str());
+    }
+    if let Some(var_58) = &input.update_settings {
+        #[allow(unused_mut)]
+        let mut object_59 = object.key("UpdateSettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_update_settings(&mut object_59, var_58)?;
+        object_59.finish();
     }
     Ok(())
 }
@@ -244,14 +272,14 @@ pub fn serialize_union_crate_model_identity_provider(
     match input {
         crate::model::IdentityProvider::ActiveDirectoryIdentityProvider(inner) => {
             #[allow(unused_mut)]
-            let mut object_53 = object_3
+            let mut object_60 = object_3
                 .key("ActiveDirectoryIdentityProvider")
                 .start_object();
             crate::json_ser::serialize_structure_crate_model_active_directory_identity_provider(
-                &mut object_53,
+                &mut object_60,
                 inner,
             )?;
-            object_53.finish();
+            object_60.finish();
         }
         crate::model::IdentityProvider::Unknown => {
             return Err(
@@ -268,14 +296,61 @@ pub fn serialize_structure_crate_model_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Filter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_54) = &input.attribute {
-        object.key("Attribute").string(var_54.as_str());
+    if let Some(var_61) = &input.attribute {
+        object.key("Attribute").string(var_61.as_str());
     }
-    if let Some(var_55) = &input.operation {
-        object.key("Operation").string(var_55.as_str());
+    if let Some(var_62) = &input.operation {
+        object.key("Operation").string(var_62.as_str());
     }
-    if let Some(var_56) = &input.value {
-        object.key("Value").string(var_56.as_str());
+    if let Some(var_63) = &input.value {
+        object.key("Value").string(var_63.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_settings(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::Settings,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_64) = &input.subnets {
+        let mut array_65 = object.key("Subnets").start_array();
+        for item_66 in var_64 {
+            {
+                array_65.value().string(item_66.as_str());
+            }
+        }
+        array_65.finish();
+    }
+    if let Some(var_67) = &input.security_group_id {
+        object.key("SecurityGroupId").string(var_67.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_update_settings(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::UpdateSettings,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_68) = &input.add_subnets {
+        let mut array_69 = object.key("AddSubnets").start_array();
+        for item_70 in var_68 {
+            {
+                array_69.value().string(item_70.as_str());
+            }
+        }
+        array_69.finish();
+    }
+    if let Some(var_71) = &input.remove_subnets {
+        let mut array_72 = object.key("RemoveSubnets").start_array();
+        for item_73 in var_71 {
+            {
+                array_72.value().string(item_73.as_str());
+            }
+        }
+        array_72.finish();
+    }
+    if let Some(var_74) = &input.security_group_id {
+        object.key("SecurityGroupId").string(var_74.as_str());
     }
     Ok(())
 }
@@ -284,8 +359,8 @@ pub fn serialize_structure_crate_model_active_directory_identity_provider(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ActiveDirectoryIdentityProvider,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_57) = &input.directory_id {
-        object.key("DirectoryId").string(var_57.as_str());
+    if let Some(var_75) = &input.directory_id {
+        object.key("DirectoryId").string(var_75.as_str());
     }
     Ok(())
 }

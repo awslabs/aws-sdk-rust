@@ -10,8 +10,8 @@
 #![allow(clippy::needless_return)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <p>AppSync provides API actions for creating and interacting with data
-//! sources using GraphQL from your application.</p>
+//! <p>AppSync provides API actions for creating and interacting with data sources using GraphQL
+//! from your application.</p>
 //!
 //! # Crate Organization
 //!

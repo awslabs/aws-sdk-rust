@@ -97,7 +97,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateApp::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateApp::set_name): <p> The name for an Amplify app. </p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateApp::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateApp::set_description): <p> The description for an Amplify app. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::CreateApp::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::CreateApp::set_repository): <p> The repository for an Amplify app. </p>
-    ///   - [`platform(Platform)`](crate::client::fluent_builders::CreateApp::platform) / [`set_platform(Option<Platform>)`](crate::client::fluent_builders::CreateApp::set_platform): <p> The platform or framework for an Amplify app. </p>
+    ///   - [`platform(Platform)`](crate::client::fluent_builders::CreateApp::platform) / [`set_platform(Option<Platform>)`](crate::client::fluent_builders::CreateApp::set_platform): <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
     ///   - [`iam_service_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateApp::iam_service_role_arn) / [`set_iam_service_role_arn(Option<String>)`](crate::client::fluent_builders::CreateApp::set_iam_service_role_arn): <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
     ///   - [`oauth_token(impl Into<String>)`](crate::client::fluent_builders::CreateApp::oauth_token) / [`set_oauth_token(Option<String>)`](crate::client::fluent_builders::CreateApp::set_oauth_token): <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>  <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit. To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>  <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you create a new app.</p>  <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
     ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::CreateApp::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::CreateApp::set_access_token): <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p>  <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>  <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p>  <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
@@ -528,7 +528,7 @@ impl Client {
     ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_app_id): <p> The unique ID for an Amplify app. </p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_name): <p> The name for an Amplify app. </p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_description): <p> The description for an Amplify app. </p>
-    ///   - [`platform(Platform)`](crate::client::fluent_builders::UpdateApp::platform) / [`set_platform(Option<Platform>)`](crate::client::fluent_builders::UpdateApp::set_platform): <p> The platform for an Amplify app. </p>
+    ///   - [`platform(Platform)`](crate::client::fluent_builders::UpdateApp::platform) / [`set_platform(Option<Platform>)`](crate::client::fluent_builders::UpdateApp::set_platform): <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
     ///   - [`iam_service_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::iam_service_role_arn) / [`set_iam_service_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_iam_service_role_arn): <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
     ///   - [`environment_variables(HashMap<String, String>)`](crate::client::fluent_builders::UpdateApp::environment_variables) / [`set_environment_variables(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateApp::set_environment_variables): <p> The environment variables for an Amplify app. </p>
     ///   - [`enable_branch_auto_build(bool)`](crate::client::fluent_builders::UpdateApp::enable_branch_auto_build) / [`set_enable_branch_auto_build(Option<bool>)`](crate::client::fluent_builders::UpdateApp::set_enable_branch_auto_build): <p> Enables branch auto-building for an Amplify app. </p>
@@ -703,12 +703,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> The platform or framework for an Amplify app. </p>
+        /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.inner = self.inner.platform(input);
             self
         }
-        /// <p> The platform or framework for an Amplify app. </p>
+        /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.inner = self.inner.set_platform(input);
             self
@@ -4212,12 +4212,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p> The platform for an Amplify app. </p>
+        /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.inner = self.inner.platform(input);
             self
         }
-        /// <p> The platform for an Amplify app. </p>
+        /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.inner = self.inner.set_platform(input);
             self

@@ -120,7 +120,7 @@ impl ServiceUnavailable {
     }
 }
 
-/// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
+/// <p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalFailure {
@@ -323,7 +323,7 @@ impl aws_smithy_http::result::CreateUnhandledError for BatchGetRecordError {
 pub enum BatchGetRecordErrorKind {
     /// <p>You do not have permission to perform an action.</p>
     AccessForbidden(crate::error::AccessForbidden),
-    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
+    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>
     InternalFailure(crate::error::InternalFailure),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailable(crate::error::ServiceUnavailable),
@@ -452,7 +452,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteRecordError {
 pub enum DeleteRecordErrorKind {
     /// <p>You do not have permission to perform an action.</p>
     AccessForbidden(crate::error::AccessForbidden),
-    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
+    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>
     InternalFailure(crate::error::InternalFailure),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailable(crate::error::ServiceUnavailable),
@@ -581,7 +581,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GetRecordError {
 pub enum GetRecordErrorKind {
     /// <p>You do not have permission to perform an action.</p>
     AccessForbidden(crate::error::AccessForbidden),
-    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
+    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>
     InternalFailure(crate::error::InternalFailure),
     /// <p>A resource that is required to perform an action was not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -718,7 +718,7 @@ impl aws_smithy_http::result::CreateUnhandledError for PutRecordError {
 pub enum PutRecordErrorKind {
     /// <p>You do not have permission to perform an action.</p>
     AccessForbidden(crate::error::AccessForbidden),
-    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
+    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>
     InternalFailure(crate::error::InternalFailure),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailable(crate::error::ServiceUnavailable),

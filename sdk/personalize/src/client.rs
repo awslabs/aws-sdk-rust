@@ -193,6 +193,7 @@ impl Client {
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_role_arn): <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDatasetImportJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset import job.</p>
     ///   - [`import_mode(ImportMode)`](crate::client::fluent_builders::CreateDatasetImportJob::import_mode) / [`set_import_mode(Option<ImportMode>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_import_mode): <p>Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.</p>  <ul>   <li> <p>Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported individually is not replaced.</p> </li>   <li> <p>Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon Personalize replaces any record with the same ID with the new one.</p> </li>  </ul>
+    ///   - [`publish_attribution_metrics_to_s3(bool)`](crate::client::fluent_builders::CreateDatasetImportJob::publish_attribution_metrics_to_s3) / [`set_publish_attribution_metrics_to_s3(Option<bool>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_publish_attribution_metrics_to_s3): <p>If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3</p>
     /// - On success, responds with [`CreateDatasetImportJobOutput`](crate::output::CreateDatasetImportJobOutput) with field(s):
     ///   - [`dataset_import_job_arn(Option<String>)`](crate::output::CreateDatasetImportJobOutput::dataset_import_job_arn): <p>The ARN of the dataset import job.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetImportJobError>`](crate::error::CreateDatasetImportJobError)
@@ -224,6 +225,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<CreateFilterError>`](crate::error::CreateFilterError)
     pub fn create_filter(&self) -> fluent_builders::CreateFilter {
         fluent_builders::CreateFilter::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateMetricAttribution`](crate::client::fluent_builders::CreateMetricAttribution) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateMetricAttribution::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateMetricAttribution::set_name): <p>A name for the metric attribution.</p>
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateMetricAttribution::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::CreateMetricAttribution::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
+    ///   - [`metrics(Vec<MetricAttribute>)`](crate::client::fluent_builders::CreateMetricAttribution::metrics) / [`set_metrics(Option<Vec<MetricAttribute>>)`](crate::client::fluent_builders::CreateMetricAttribution::set_metrics): <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
+    ///   - [`metrics_output_config(MetricAttributionOutput)`](crate::client::fluent_builders::CreateMetricAttribution::metrics_output_config) / [`set_metrics_output_config(Option<MetricAttributionOutput>)`](crate::client::fluent_builders::CreateMetricAttribution::set_metrics_output_config): <p>The output configuration details for the metric attribution.</p>
+    /// - On success, responds with [`CreateMetricAttributionOutput`](crate::output::CreateMetricAttributionOutput) with field(s):
+    ///   - [`metric_attribution_arn(Option<String>)`](crate::output::CreateMetricAttributionOutput::metric_attribution_arn): <p>The Amazon Resource Name (ARN) for the new metric attribution.</p>
+    /// - On failure, responds with [`SdkError<CreateMetricAttributionError>`](crate::error::CreateMetricAttributionError)
+    pub fn create_metric_attribution(&self) -> fluent_builders::CreateMetricAttribution {
+        fluent_builders::CreateMetricAttribution::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateRecommender`](crate::client::fluent_builders::CreateRecommender) operation.
     ///
@@ -271,6 +285,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateSolutionVersion`](crate::client::fluent_builders::CreateSolutionVersion) operation.
     ///
     /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSolutionVersion::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSolutionVersion::set_name): <p>The name of the solution version.</p>
     ///   - [`solution_arn(impl Into<String>)`](crate::client::fluent_builders::CreateSolutionVersion::solution_arn) / [`set_solution_arn(Option<String>)`](crate::client::fluent_builders::CreateSolutionVersion::set_solution_arn): <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
     ///   - [`training_mode(TrainingMode)`](crate::client::fluent_builders::CreateSolutionVersion::training_mode) / [`set_training_mode(Option<TrainingMode>)`](crate::client::fluent_builders::CreateSolutionVersion::set_training_mode): <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>   <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>  </important>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateSolutionVersion::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateSolutionVersion::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the solution version.</p>
@@ -329,6 +344,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteFilterError>`](crate::error::DeleteFilterError)
     pub fn delete_filter(&self) -> fluent_builders::DeleteFilter {
         fluent_builders::DeleteFilter::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteMetricAttribution`](crate::client::fluent_builders::DeleteMetricAttribution) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`metric_attribution_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteMetricAttribution::metric_attribution_arn) / [`set_metric_attribution_arn(Option<String>)`](crate::client::fluent_builders::DeleteMetricAttribution::set_metric_attribution_arn): <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    /// - On success, responds with [`DeleteMetricAttributionOutput`](crate::output::DeleteMetricAttributionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteMetricAttributionError>`](crate::error::DeleteMetricAttributionError)
+    pub fn delete_metric_attribution(&self) -> fluent_builders::DeleteMetricAttribution {
+        fluent_builders::DeleteMetricAttribution::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteRecommender`](crate::client::fluent_builders::DeleteRecommender) operation.
     ///
@@ -471,6 +496,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeFilterError>`](crate::error::DescribeFilterError)
     pub fn describe_filter(&self) -> fluent_builders::DescribeFilter {
         fluent_builders::DescribeFilter::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeMetricAttribution`](crate::client::fluent_builders::DescribeMetricAttribution) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`metric_attribution_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeMetricAttribution::metric_attribution_arn) / [`set_metric_attribution_arn(Option<String>)`](crate::client::fluent_builders::DescribeMetricAttribution::set_metric_attribution_arn): <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    /// - On success, responds with [`DescribeMetricAttributionOutput`](crate::output::DescribeMetricAttributionOutput) with field(s):
+    ///   - [`metric_attribution(Option<MetricAttribution>)`](crate::output::DescribeMetricAttributionOutput::metric_attribution): <p>The details of the metric attribution.</p>
+    /// - On failure, responds with [`SdkError<DescribeMetricAttributionError>`](crate::error::DescribeMetricAttributionError)
+    pub fn describe_metric_attribution(&self) -> fluent_builders::DescribeMetricAttribution {
+        fluent_builders::DescribeMetricAttribution::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeRecipe`](crate::client::fluent_builders::DescribeRecipe) operation.
     ///
@@ -658,6 +693,34 @@ impl Client {
     pub fn list_filters(&self) -> fluent_builders::ListFilters {
         fluent_builders::ListFilters::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListMetricAttributionMetrics`](crate::client::fluent_builders::ListMetricAttributionMetrics) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMetricAttributionMetrics::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`metric_attribution_arn(impl Into<String>)`](crate::client::fluent_builders::ListMetricAttributionMetrics::metric_attribution_arn) / [`set_metric_attribution_arn(Option<String>)`](crate::client::fluent_builders::ListMetricAttributionMetrics::set_metric_attribution_arn): <p>The Amazon Resource Name (ARN) of the metric attribution to retrieve attributes for.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMetricAttributionMetrics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMetricAttributionMetrics::set_next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMetricAttributionMetrics::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMetricAttributionMetrics::set_max_results): <p>The maximum number of metrics to return in one page of results.</p>
+    /// - On success, responds with [`ListMetricAttributionMetricsOutput`](crate::output::ListMetricAttributionMetricsOutput) with field(s):
+    ///   - [`metrics(Option<Vec<MetricAttribute>>)`](crate::output::ListMetricAttributionMetricsOutput::metrics): <p>The metrics for the specified metric attribution.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMetricAttributionMetricsOutput::next_token): <p>Specify the pagination token from a previous <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListMetricAttributionMetricsError>`](crate::error::ListMetricAttributionMetricsError)
+    pub fn list_metric_attribution_metrics(&self) -> fluent_builders::ListMetricAttributionMetrics {
+        fluent_builders::ListMetricAttributionMetrics::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListMetricAttributions`](crate::client::fluent_builders::ListMetricAttributions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMetricAttributions::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::ListMetricAttributions::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::ListMetricAttributions::set_dataset_group_arn): <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMetricAttributions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMetricAttributions::set_next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMetricAttributions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMetricAttributions::set_max_results): <p>The maximum number of metric attributions to return in one page of results.</p>
+    /// - On success, responds with [`ListMetricAttributionsOutput`](crate::output::ListMetricAttributionsOutput) with field(s):
+    ///   - [`metric_attributions(Option<Vec<MetricAttributionSummary>>)`](crate::output::ListMetricAttributionsOutput::metric_attributions): <p>The list of metric attributions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMetricAttributionsOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListMetricAttributionsError>`](crate::error::ListMetricAttributionsError)
+    pub fn list_metric_attributions(&self) -> fluent_builders::ListMetricAttributions {
+        fluent_builders::ListMetricAttributions::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListRecipes`](crate::client::fluent_builders::ListRecipes) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecipes::into_paginator).
     ///
@@ -802,6 +865,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateCampaignError>`](crate::error::UpdateCampaignError)
     pub fn update_campaign(&self) -> fluent_builders::UpdateCampaign {
         fluent_builders::UpdateCampaign::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateMetricAttribution`](crate::client::fluent_builders::UpdateMetricAttribution) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`add_metrics(Vec<MetricAttribute>)`](crate::client::fluent_builders::UpdateMetricAttribution::add_metrics) / [`set_add_metrics(Option<Vec<MetricAttribute>>)`](crate::client::fluent_builders::UpdateMetricAttribution::set_add_metrics): <p>Add new metric attributes to the metric attribution.</p>
+    ///   - [`remove_metrics(Vec<String>)`](crate::client::fluent_builders::UpdateMetricAttribution::remove_metrics) / [`set_remove_metrics(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateMetricAttribution::set_remove_metrics): <p>Remove metric attributes from the metric attribution.</p>
+    ///   - [`metrics_output_config(MetricAttributionOutput)`](crate::client::fluent_builders::UpdateMetricAttribution::metrics_output_config) / [`set_metrics_output_config(Option<MetricAttributionOutput>)`](crate::client::fluent_builders::UpdateMetricAttribution::set_metrics_output_config): <p>An output config for the metric attribution.</p>
+    ///   - [`metric_attribution_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateMetricAttribution::metric_attribution_arn) / [`set_metric_attribution_arn(Option<String>)`](crate::client::fluent_builders::UpdateMetricAttribution::set_metric_attribution_arn): <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
+    /// - On success, responds with [`UpdateMetricAttributionOutput`](crate::output::UpdateMetricAttributionOutput) with field(s):
+    ///   - [`metric_attribution_arn(Option<String>)`](crate::output::UpdateMetricAttributionOutput::metric_attribution_arn): <p>The Amazon Resource Name (ARN) for the metric attribution that you updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateMetricAttributionError>`](crate::error::UpdateMetricAttributionError)
+    pub fn update_metric_attribution(&self) -> fluent_builders::UpdateMetricAttribution {
+        fluent_builders::UpdateMetricAttribution::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateRecommender`](crate::client::fluent_builders::UpdateRecommender) operation.
     ///
@@ -1904,6 +1980,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_import_mode(input);
             self
         }
+        /// <p>If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3</p>
+        pub fn publish_attribution_metrics_to_s3(mut self, input: bool) -> Self {
+            self.inner = self.inner.publish_attribution_metrics_to_s3(input);
+            self
+        }
+        /// <p>If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3</p>
+        pub fn set_publish_attribution_metrics_to_s3(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_publish_attribution_metrics_to_s3(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateEventTracker`.
     ///
@@ -2138,6 +2227,125 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateMetricAttribution`.
+    ///
+    /// <p>Creates a metric attribution. A metric attribution creates reports on the data that you import into Amazon Personalize. Depending on how you imported the data, you can view reports in Amazon CloudWatch or Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateMetricAttribution {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_metric_attribution_input::Builder,
+    }
+    impl CreateMetricAttribution {
+        /// Creates a new `CreateMetricAttribution`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateMetricAttribution,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateMetricAttributionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateMetricAttributionOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateMetricAttributionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A name for the metric attribution.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>A name for the metric attribution.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
+        pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
+        pub fn set_dataset_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_dataset_group_arn(input);
+            self
+        }
+        /// Appends an item to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
+        pub fn metrics(mut self, input: crate::model::MetricAttribute) -> Self {
+            self.inner = self.inner.metrics(input);
+            self
+        }
+        /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
+        pub fn set_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricAttribute>>,
+        ) -> Self {
+            self.inner = self.inner.set_metrics(input);
+            self
+        }
+        /// <p>The output configuration details for the metric attribution.</p>
+        pub fn metrics_output_config(
+            mut self,
+            input: crate::model::MetricAttributionOutput,
+        ) -> Self {
+            self.inner = self.inner.metrics_output_config(input);
+            self
+        }
+        /// <p>The output configuration details for the metric attribution.</p>
+        pub fn set_metrics_output_config(
+            mut self,
+            input: std::option::Option<crate::model::MetricAttributionOutput>,
+        ) -> Self {
+            self.inner = self.inner.set_metrics_output_config(input);
             self
         }
     }
@@ -2659,6 +2867,16 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// <p>The name of the solution version.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the solution version.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
         /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
         pub fn solution_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.solution_arn(input.into());
@@ -3077,6 +3295,82 @@ pub mod fluent_builders {
         /// <p>The ARN of the filter to delete.</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_filter_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteMetricAttribution`.
+    ///
+    /// <p>Deletes a metric attribution.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteMetricAttribution {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_metric_attribution_input::Builder,
+    }
+    impl DeleteMetricAttribution {
+        /// Creates a new `DeleteMetricAttribution`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteMetricAttribution,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteMetricAttributionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteMetricAttributionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteMetricAttributionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+        pub fn metric_attribution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_attribution_arn(input.into());
+            self
+        }
+        /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+        pub fn set_metric_attribution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_metric_attribution_arn(input);
             self
         }
     }
@@ -4133,6 +4427,82 @@ pub mod fluent_builders {
         /// <p>The ARN of the filter to describe.</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_filter_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeMetricAttribution`.
+    ///
+    /// <p>Describes a metric attribution.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeMetricAttribution {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_metric_attribution_input::Builder,
+    }
+    impl DescribeMetricAttribution {
+        /// Creates a new `DescribeMetricAttribution`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeMetricAttribution,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeMetricAttributionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeMetricAttributionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeMetricAttributionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+        pub fn metric_attribution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_attribution_arn(input.into());
+            self
+        }
+        /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+        pub fn set_metric_attribution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_metric_attribution_arn(input);
             self
         }
     }
@@ -5495,6 +5865,210 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListMetricAttributionMetrics`.
+    ///
+    /// <p>Lists the metrics for the metric attribution.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListMetricAttributionMetrics {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_metric_attribution_metrics_input::Builder,
+    }
+    impl ListMetricAttributionMetrics {
+        /// Creates a new `ListMetricAttributionMetrics`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListMetricAttributionMetrics,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListMetricAttributionMetricsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMetricAttributionMetricsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListMetricAttributionMetricsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMetricAttributionMetricsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMetricAttributionMetricsPaginator {
+            crate::paginator::ListMetricAttributionMetricsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the metric attribution to retrieve attributes for.</p>
+        pub fn metric_attribution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_attribution_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the metric attribution to retrieve attributes for.</p>
+        pub fn set_metric_attribution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_metric_attribution_arn(input);
+            self
+        }
+        /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of metrics to return in one page of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of metrics to return in one page of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListMetricAttributions`.
+    ///
+    /// <p>Lists metric attributions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListMetricAttributions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_metric_attributions_input::Builder,
+    }
+    impl ListMetricAttributions {
+        /// Creates a new `ListMetricAttributions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListMetricAttributions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListMetricAttributionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMetricAttributionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListMetricAttributionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMetricAttributionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMetricAttributionsPaginator {
+            crate::paginator::ListMetricAttributionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
+        pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(input.into());
+            self
+        }
+        /// <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
+        pub fn set_dataset_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_dataset_group_arn(input);
+            self
+        }
+        /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of metric attributions to return in one page of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of metric attributions to return in one page of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListRecipes`.
     ///
     /// <p>Returns a list of available recipes. The response provides the properties for each recipe, including the recipe's Amazon Resource Name (ARN).</p>
@@ -6596,6 +7170,132 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::CampaignConfig>,
         ) -> Self {
             self.inner = self.inner.set_campaign_config(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateMetricAttribution`.
+    ///
+    /// <p>Updates a metric attribution.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateMetricAttribution {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_metric_attribution_input::Builder,
+    }
+    impl UpdateMetricAttribution {
+        /// Creates a new `UpdateMetricAttribution`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateMetricAttribution,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateMetricAttributionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateMetricAttributionOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateMetricAttributionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `addMetrics`.
+        ///
+        /// To override the contents of this collection use [`set_add_metrics`](Self::set_add_metrics).
+        ///
+        /// <p>Add new metric attributes to the metric attribution.</p>
+        pub fn add_metrics(mut self, input: crate::model::MetricAttribute) -> Self {
+            self.inner = self.inner.add_metrics(input);
+            self
+        }
+        /// <p>Add new metric attributes to the metric attribution.</p>
+        pub fn set_add_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricAttribute>>,
+        ) -> Self {
+            self.inner = self.inner.set_add_metrics(input);
+            self
+        }
+        /// Appends an item to `removeMetrics`.
+        ///
+        /// To override the contents of this collection use [`set_remove_metrics`](Self::set_remove_metrics).
+        ///
+        /// <p>Remove metric attributes from the metric attribution.</p>
+        pub fn remove_metrics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remove_metrics(input.into());
+            self
+        }
+        /// <p>Remove metric attributes from the metric attribution.</p>
+        pub fn set_remove_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_remove_metrics(input);
+            self
+        }
+        /// <p>An output config for the metric attribution.</p>
+        pub fn metrics_output_config(
+            mut self,
+            input: crate::model::MetricAttributionOutput,
+        ) -> Self {
+            self.inner = self.inner.metrics_output_config(input);
+            self
+        }
+        /// <p>An output config for the metric attribution.</p>
+        pub fn set_metrics_output_config(
+            mut self,
+            input: std::option::Option<crate::model::MetricAttributionOutput>,
+        ) -> Self {
+            self.inner = self.inner.set_metrics_output_config(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
+        pub fn metric_attribution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_attribution_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
+        pub fn set_metric_attribution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_metric_attribution_arn(input);
             self
         }
     }

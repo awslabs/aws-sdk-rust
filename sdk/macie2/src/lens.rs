@@ -19,8 +19,28 @@ pub(crate) fn reflens_structure_crate_output_get_usage_statistics_output_next_to
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_allow_lists_output_next_token(
+    input: &crate::output::ListAllowListsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_classification_jobs_output_next_token(
     input: &crate::output::ListClassificationJobsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_classification_scopes_output_next_token(
+    input: &crate::output::ListClassificationScopesOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -69,6 +89,16 @@ pub(crate) fn reflens_structure_crate_output_list_invitations_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_managed_data_identifiers_output_next_token(
+    input: &crate::output::ListManagedDataIdentifiersOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_members_output_next_token(
     input: &crate::output::ListMembersOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -81,6 +111,36 @@ pub(crate) fn reflens_structure_crate_output_list_members_output_next_token(
 
 pub(crate) fn reflens_structure_crate_output_list_organization_admin_accounts_output_next_token(
     input: &crate::output::ListOrganizationAdminAccountsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_resource_profile_artifacts_output_next_token(
+    input: &crate::output::ListResourceProfileArtifactsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_resource_profile_detections_output_next_token(
+    input: &crate::output::ListResourceProfileDetectionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_sensitivity_inspection_templates_output_next_token(
+    input: &crate::output::ListSensitivityInspectionTemplatesOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -119,10 +179,30 @@ pub(crate) fn lens_structure_crate_output_get_usage_statistics_output_records(
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_list_allow_lists_output_allow_lists(
+    input: crate::output::ListAllowListsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AllowListSummary>> {
+    let input = match input.allow_lists {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_classification_jobs_output_items(
     input: crate::output::ListClassificationJobsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::JobSummary>> {
     let input = match input.items {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_classification_scopes_output_classification_scopes(
+    input: crate::output::ListClassificationScopesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ClassificationScopeSummary>> {
+    let input = match input.classification_scopes {
         None => return None,
         Some(t) => t,
     };
@@ -169,6 +249,16 @@ pub(crate) fn lens_structure_crate_output_list_invitations_output_invitations(
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_list_managed_data_identifiers_output_items(
+    input: crate::output::ListManagedDataIdentifiersOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ManagedDataIdentifierSummary>> {
+    let input = match input.items {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_members_output_members(
     input: crate::output::ListMembersOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::Member>> {
@@ -183,6 +273,36 @@ pub(crate) fn lens_structure_crate_output_list_organization_admin_accounts_outpu
     input: crate::output::ListOrganizationAdminAccountsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::AdminAccount>> {
     let input = match input.admin_accounts {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_resource_profile_artifacts_output_artifacts(
+    input: crate::output::ListResourceProfileArtifactsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ResourceProfileArtifact>> {
+    let input = match input.artifacts {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_resource_profile_detections_output_detections(
+    input: crate::output::ListResourceProfileDetectionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Detection>> {
+    let input = match input.detections {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_sensitivity_inspection_templates_output_sensitivity_inspection_templates(
+    input: crate::output::ListSensitivityInspectionTemplatesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::SensitivityInspectionTemplatesEntry>> {
+    let input = match input.sensitivity_inspection_templates {
         None => return None,
         Some(t) => t,
     };

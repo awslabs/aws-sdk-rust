@@ -2375,6 +2375,75 @@ pub fn parse_list_cost_category_definitions_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_savings_plans_purchase_recommendation_generation_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput,
+    crate::error::ListSavingsPlansPurchaseRecommendationGenerationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::ListSavingsPlansPurchaseRecommendationGenerationError::unhandled(
+                    generic,
+                ),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidNextTokenException" => crate::error::ListSavingsPlansPurchaseRecommendationGenerationError { meta: generic, kind: crate::error::ListSavingsPlansPurchaseRecommendationGenerationErrorKind::InvalidNextTokenException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "LimitExceededException" => crate::error::ListSavingsPlansPurchaseRecommendationGenerationError { meta: generic, kind: crate::error::ListSavingsPlansPurchaseRecommendationGenerationErrorKind::LimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ListSavingsPlansPurchaseRecommendationGenerationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_savings_plans_purchase_recommendation_generation_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput,
+    crate::error::ListSavingsPlansPurchaseRecommendationGenerationError,
+> {
+    Ok({
+        #[allow(unused_mut)]let mut output = crate::output::list_savings_plans_purchase_recommendation_generation_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_savings_plans_purchase_recommendation_generation(response.body().as_ref(), output).map_err(crate::error::ListSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2505,6 +2574,89 @@ pub fn parse_provide_anomaly_feedback_response(
             output,
         )
         .map_err(crate::error::ProvideAnomalyFeedbackError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_savings_plans_purchase_recommendation_generation_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput,
+    crate::error::StartSavingsPlansPurchaseRecommendationGenerationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::unhandled(
+                    generic,
+                ),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "GenerationExistsException" => crate::error::StartSavingsPlansPurchaseRecommendationGenerationError { meta: generic, kind: crate::error::StartSavingsPlansPurchaseRecommendationGenerationErrorKind::GenerationExistsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::generation_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_generation_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "LimitExceededException" => crate::error::StartSavingsPlansPurchaseRecommendationGenerationError { meta: generic, kind: crate::error::StartSavingsPlansPurchaseRecommendationGenerationErrorKind::LimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServiceQuotaExceededException" => crate::error::StartSavingsPlansPurchaseRecommendationGenerationError { meta: generic, kind: crate::error::StartSavingsPlansPurchaseRecommendationGenerationErrorKind::ServiceQuotaExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_savings_plans_purchase_recommendation_generation_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput,
+    crate::error::StartSavingsPlansPurchaseRecommendationGenerationError,
+> {
+    Ok({
+        #[allow(unused_mut)]let mut output = crate::output::start_savings_plans_purchase_recommendation_generation_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_start_savings_plans_purchase_recommendation_generation(response.body().as_ref(), output).map_err(crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
         output.build()
     })
 }

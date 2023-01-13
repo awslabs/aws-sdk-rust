@@ -667,6 +667,309 @@ impl std::error::Error for AssociateThirdPartyFirewallError {
     }
 }
 
+/// Error type for the `BatchAssociateResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchAssociateResourceError {
+    /// Kind of error that occurred.
+    pub kind: BatchAssociateResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchAssociateResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchAssociateResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `BatchAssociateResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchAssociateResourceErrorKind {
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The parameters of the request were invalid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for BatchAssociateResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchAssociateResourceErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            BatchAssociateResourceErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            BatchAssociateResourceErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            BatchAssociateResourceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            BatchAssociateResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            BatchAssociateResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchAssociateResourceError {
+    fn code(&self) -> Option<&str> {
+        BatchAssociateResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchAssociateResourceError {
+    /// Creates a new `BatchAssociateResourceError`.
+    pub fn new(kind: BatchAssociateResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchAssociateResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchAssociateResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchAssociateResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchAssociateResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchAssociateResourceErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchAssociateResourceErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchAssociateResourceErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchAssociateResourceErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchAssociateResourceErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchAssociateResourceErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchAssociateResourceErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchAssociateResourceErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchAssociateResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchAssociateResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for BatchAssociateResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchAssociateResourceErrorKind::InternalErrorException(_inner) => Some(_inner),
+            BatchAssociateResourceErrorKind::InvalidInputException(_inner) => Some(_inner),
+            BatchAssociateResourceErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            BatchAssociateResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
+            BatchAssociateResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            BatchAssociateResourceErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `BatchDisassociateResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchDisassociateResourceError {
+    /// Kind of error that occurred.
+    pub kind: BatchDisassociateResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchDisassociateResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchDisassociateResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `BatchDisassociateResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchDisassociateResourceErrorKind {
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The parameters of the request were invalid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for BatchDisassociateResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchDisassociateResourceErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            BatchDisassociateResourceErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            BatchDisassociateResourceErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            BatchDisassociateResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            BatchDisassociateResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchDisassociateResourceError {
+    fn code(&self) -> Option<&str> {
+        BatchDisassociateResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchDisassociateResourceError {
+    /// Creates a new `BatchDisassociateResourceError`.
+    pub fn new(kind: BatchDisassociateResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchDisassociateResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchDisassociateResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchDisassociateResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchDisassociateResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchDisassociateResourceErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDisassociateResourceErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDisassociateResourceErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDisassociateResourceErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDisassociateResourceErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDisassociateResourceErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDisassociateResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDisassociateResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for BatchDisassociateResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchDisassociateResourceErrorKind::InternalErrorException(_inner) => Some(_inner),
+            BatchDisassociateResourceErrorKind::InvalidInputException(_inner) => Some(_inner),
+            BatchDisassociateResourceErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            BatchDisassociateResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            BatchDisassociateResourceErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DeleteAppsList` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1202,6 +1505,147 @@ impl std::error::Error for DeleteProtocolsListError {
             DeleteProtocolsListErrorKind::InvalidOperationException(_inner) => Some(_inner),
             DeleteProtocolsListErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteProtocolsListErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeleteResourceSet` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteResourceSetError {
+    /// Kind of error that occurred.
+    pub kind: DeleteResourceSetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteResourceSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteResourceSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteResourceSet` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteResourceSetErrorKind {
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The parameters of the request were invalid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteResourceSetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteResourceSetErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            DeleteResourceSetErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteResourceSetErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            DeleteResourceSetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteResourceSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteResourceSetError {
+    fn code(&self) -> Option<&str> {
+        DeleteResourceSetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteResourceSetError {
+    /// Creates a new `DeleteResourceSetError`.
+    pub fn new(kind: DeleteResourceSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteResourceSetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteResourceSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteResourceSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteResourceSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteResourceSetErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourceSetErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourceSetErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourceSetErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourceSetErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourceSetErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourceSetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourceSetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteResourceSetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteResourceSetErrorKind::InternalErrorException(_inner) => Some(_inner),
+            DeleteResourceSetErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteResourceSetErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            DeleteResourceSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteResourceSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2423,6 +2867,147 @@ impl std::error::Error for GetProtocolsListError {
     }
 }
 
+/// Error type for the `GetResourceSet` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetResourceSetError {
+    /// Kind of error that occurred.
+    pub kind: GetResourceSetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetResourceSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetResourceSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetResourceSet` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetResourceSetErrorKind {
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The parameters of the request were invalid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetResourceSetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetResourceSetErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            GetResourceSetErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetResourceSetErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            GetResourceSetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetResourceSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetResourceSetError {
+    fn code(&self) -> Option<&str> {
+        GetResourceSetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetResourceSetError {
+    /// Creates a new `GetResourceSetError`.
+    pub fn new(kind: GetResourceSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetResourceSetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetResourceSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetResourceSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetResourceSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetResourceSetErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourceSetErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResourceSetErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourceSetErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResourceSetErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourceSetErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResourceSetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourceSetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for GetResourceSetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetResourceSetErrorKind::InternalErrorException(_inner) => Some(_inner),
+            GetResourceSetErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetResourceSetErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            GetResourceSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetResourceSetErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `GetThirdPartyFirewallAssociationStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2983,6 +3568,140 @@ impl std::error::Error for ListComplianceStatusError {
     }
 }
 
+/// Error type for the `ListDiscoveredResources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListDiscoveredResourcesError {
+    /// Kind of error that occurred.
+    pub kind: ListDiscoveredResourcesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListDiscoveredResourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListDiscoveredResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListDiscoveredResources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListDiscoveredResourcesErrorKind {
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The parameters of the request were invalid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListDiscoveredResourcesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListDiscoveredResourcesErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            ListDiscoveredResourcesErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListDiscoveredResourcesErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            ListDiscoveredResourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListDiscoveredResourcesError {
+    fn code(&self) -> Option<&str> {
+        ListDiscoveredResourcesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListDiscoveredResourcesError {
+    /// Creates a new `ListDiscoveredResourcesError`.
+    pub fn new(kind: ListDiscoveredResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListDiscoveredResourcesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListDiscoveredResourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListDiscoveredResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListDiscoveredResourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListDiscoveredResourcesErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDiscoveredResourcesErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDiscoveredResourcesErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDiscoveredResourcesErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDiscoveredResourcesErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDiscoveredResourcesErrorKind::InvalidOperationException(_)
+        )
+    }
+}
+impl std::error::Error for ListDiscoveredResourcesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListDiscoveredResourcesErrorKind::InternalErrorException(_inner) => Some(_inner),
+            ListDiscoveredResourcesErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListDiscoveredResourcesErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            ListDiscoveredResourcesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListMemberAccounts` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3363,6 +4082,283 @@ impl std::error::Error for ListProtocolsListsError {
             ListProtocolsListsErrorKind::InvalidOperationException(_inner) => Some(_inner),
             ListProtocolsListsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListProtocolsListsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListResourceSetResources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListResourceSetResourcesError {
+    /// Kind of error that occurred.
+    pub kind: ListResourceSetResourcesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListResourceSetResourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListResourceSetResourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListResourceSetResources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListResourceSetResourcesErrorKind {
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The parameters of the request were invalid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListResourceSetResourcesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListResourceSetResourcesErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            ListResourceSetResourcesErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListResourceSetResourcesErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            ListResourceSetResourcesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListResourceSetResourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListResourceSetResourcesError {
+    fn code(&self) -> Option<&str> {
+        ListResourceSetResourcesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListResourceSetResourcesError {
+    /// Creates a new `ListResourceSetResourcesError`.
+    pub fn new(kind: ListResourceSetResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListResourceSetResourcesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListResourceSetResourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListResourceSetResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListResourceSetResourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListResourceSetResourcesErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceSetResourcesErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListResourceSetResourcesErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceSetResourcesErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListResourceSetResourcesErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceSetResourcesErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListResourceSetResourcesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceSetResourcesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for ListResourceSetResourcesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListResourceSetResourcesErrorKind::InternalErrorException(_inner) => Some(_inner),
+            ListResourceSetResourcesErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListResourceSetResourcesErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            ListResourceSetResourcesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListResourceSetResourcesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListResourceSets` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListResourceSetsError {
+    /// Kind of error that occurred.
+    pub kind: ListResourceSetsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListResourceSetsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListResourceSetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListResourceSets` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListResourceSetsErrorKind {
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The parameters of the request were invalid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListResourceSetsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListResourceSetsErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            ListResourceSetsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListResourceSetsErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            ListResourceSetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListResourceSetsError {
+    fn code(&self) -> Option<&str> {
+        ListResourceSetsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListResourceSetsError {
+    /// Creates a new `ListResourceSetsError`.
+    pub fn new(kind: ListResourceSetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListResourceSetsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListResourceSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListResourceSetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListResourceSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListResourceSetsErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceSetsErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListResourceSetsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceSetsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListResourceSetsErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceSetsErrorKind::InvalidOperationException(_)
+        )
+    }
+}
+impl std::error::Error for ListResourceSetsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListResourceSetsErrorKind::InternalErrorException(_inner) => Some(_inner),
+            ListResourceSetsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListResourceSetsErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            ListResourceSetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4244,6 +5240,147 @@ impl std::error::Error for PutProtocolsListError {
             PutProtocolsListErrorKind::LimitExceededException(_inner) => Some(_inner),
             PutProtocolsListErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutProtocolsListErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `PutResourceSet` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutResourceSetError {
+    /// Kind of error that occurred.
+    pub kind: PutResourceSetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutResourceSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutResourceSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `PutResourceSet` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutResourceSetErrorKind {
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The parameters of the request were invalid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for PutResourceSetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutResourceSetErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            PutResourceSetErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            PutResourceSetErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            PutResourceSetErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            PutResourceSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutResourceSetError {
+    fn code(&self) -> Option<&str> {
+        PutResourceSetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutResourceSetError {
+    /// Creates a new `PutResourceSetError`.
+    pub fn new(kind: PutResourceSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutResourceSetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutResourceSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutResourceSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutResourceSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutResourceSetErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourceSetErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourceSetErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourceSetErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourceSetErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourceSetErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourceSetErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourceSetErrorKind::LimitExceededException(_)
+        )
+    }
+}
+impl std::error::Error for PutResourceSetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutResourceSetErrorKind::InternalErrorException(_inner) => Some(_inner),
+            PutResourceSetErrorKind::InvalidInputException(_inner) => Some(_inner),
+            PutResourceSetErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            PutResourceSetErrorKind::LimitExceededException(_inner) => Some(_inner),
+            PutResourceSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

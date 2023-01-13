@@ -3986,12 +3986,12 @@ impl ApiGatewayProxyConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaEndpointInput {
-    /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl LambdaEndpointInput {
-    /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -4005,12 +4005,12 @@ pub mod lambda_endpoint_input {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
+        /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
+        /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self

@@ -12,6 +12,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
             })
             .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
             .endpoint(
+                "ProdFips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "kms-fips.eu-central-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("eu-central-2")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "af-south-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "kms.{region}.amazonaws.com",
@@ -132,6 +143,26 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "ap-south-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "kms.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "ap-south-2-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "kms-fips.ap-south-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-south-2")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "ap-southeast-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "kms.{region}.amazonaws.com",
@@ -192,6 +223,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "ap-southeast-4-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "kms-fips.ap-southeast-4.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-southeast-4")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "ca-central-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "kms.{region}.amazonaws.com",
@@ -232,6 +274,26 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "eu-central-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "kms.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "eu-central-2-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "kms-fips.eu-central-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("eu-central-2")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "eu-north-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "kms.{region}.amazonaws.com",
@@ -268,6 +330,26 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder()
                         .region("eu-south-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "eu-south-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "kms.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "eu-south-2-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "kms-fips.eu-south-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("eu-south-2")
                         .build(),
                 },
             )

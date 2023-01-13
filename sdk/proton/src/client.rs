@@ -180,6 +180,7 @@ impl Client {
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEnvironment::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEnvironment::set_tags): <p>An optional list of metadata items that you can associate with the Proton environment. A tag is a key-value pair.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     ///   - [`provisioning_repository(RepositoryBranchInput)`](crate::client::fluent_builders::CreateEnvironment::provisioning_repository) / [`set_provisioning_repository(Option<RepositoryBranchInput>)`](crate::client::fluent_builders::CreateEnvironment::set_provisioning_repository): <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>  <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
     ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>  <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
+    ///   - [`codebuild_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::codebuild_role_arn) / [`set_codebuild_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_codebuild_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>  <p>To use CodeBuild-based provisioning for the environment or for any service instance running in the environment, specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.</p>
     /// - On success, responds with [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::output::CreateEnvironmentOutput::environment): <p>The environment detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::error::CreateEnvironmentError)
@@ -195,6 +196,7 @@ impl Client {
     ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_environment_name): <p>The name of the Proton environment that's created in the associated management account.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_tags): <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>  <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
+    ///   - [`codebuild_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::codebuild_role_arn) / [`set_codebuild_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_codebuild_role_arn): <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
     /// - On success, responds with [`CreateEnvironmentAccountConnectionOutput`](crate::output::CreateEnvironmentAccountConnectionOutput) with field(s):
     ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::CreateEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentAccountConnectionError>`](crate::error::CreateEnvironmentAccountConnectionError)
@@ -784,6 +786,9 @@ impl Client {
     ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::ListServiceInstances::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::ListServiceInstances::set_service_name): <p>The name of the service that the service instance belongs to.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListServiceInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListServiceInstances::set_next_token): <p>A token that indicates the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListServiceInstances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListServiceInstances::set_max_results): <p>The maximum number of service instances to list.</p>
+    ///   - [`filters(Vec<ListServiceInstancesFilter>)`](crate::client::fluent_builders::ListServiceInstances::filters) / [`set_filters(Option<Vec<ListServiceInstancesFilter>>)`](crate::client::fluent_builders::ListServiceInstances::set_filters): <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
+    ///   - [`sort_by(ListServiceInstancesSortBy)`](crate::client::fluent_builders::ListServiceInstances::sort_by) / [`set_sort_by(Option<ListServiceInstancesSortBy>)`](crate::client::fluent_builders::ListServiceInstances::set_sort_by): <p>The field that the result list is sorted by.</p>  <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>  <p>Default: <code>serviceName</code> </p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListServiceInstances::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListServiceInstances::set_sort_order): <p>Result list sort order.</p>  <p>Default: <code>ASCENDING</code> </p>
     /// - On success, responds with [`ListServiceInstancesOutput`](crate::output::ListServiceInstancesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListServiceInstancesOutput::next_token): <p>A token that indicates the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
     ///   - [`service_instances(Option<Vec<ServiceInstanceSummary>>)`](crate::output::ListServiceInstancesOutput::service_instances): <p>An array of service instances with summary data.</p>
@@ -930,6 +935,7 @@ impl Client {
     ///   - [`pipeline_service_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::pipeline_service_role_arn) / [`set_pipeline_service_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_pipeline_service_role_arn): <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>  <p>To remove a previously configured ARN, specify an empty string.</p>
     ///   - [`pipeline_provisioning_repository(RepositoryBranchInput)`](crate::client::fluent_builders::UpdateAccountSettings::pipeline_provisioning_repository) / [`set_pipeline_provisioning_repository(Option<RepositoryBranchInput>)`](crate::client::fluent_builders::UpdateAccountSettings::set_pipeline_provisioning_repository): <p>A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>  <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
     ///   - [`delete_pipeline_provisioning_repository(bool)`](crate::client::fluent_builders::UpdateAccountSettings::delete_pipeline_provisioning_repository) / [`set_delete_pipeline_provisioning_repository(Option<bool>)`](crate::client::fluent_builders::UpdateAccountSettings::set_delete_pipeline_provisioning_repository): <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
+    ///   - [`pipeline_codebuild_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::pipeline_codebuild_role_arn) / [`set_pipeline_codebuild_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_pipeline_codebuild_role_arn): <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
     /// - On success, responds with [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput) with field(s):
     ///   - [`account_settings(Option<AccountSettings>)`](crate::output::UpdateAccountSettingsOutput::account_settings): <p>The Proton pipeline service role and repository data shared across the Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<UpdateAccountSettingsError>`](crate::error::UpdateAccountSettingsError)
@@ -965,6 +971,7 @@ impl Client {
     ///   - [`environment_account_connection_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::environment_account_connection_id) / [`set_environment_account_connection_id(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_environment_account_connection_id): <p>The ID of the environment account connection.</p>  <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
     ///   - [`provisioning_repository(RepositoryBranchInput)`](crate::client::fluent_builders::UpdateEnvironment::provisioning_repository) / [`set_provisioning_repository(Option<RepositoryBranchInput>)`](crate::client::fluent_builders::UpdateEnvironment::set_provisioning_repository): <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>  <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
+    ///   - [`codebuild_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::codebuild_role_arn) / [`set_codebuild_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_codebuild_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
     /// - On success, responds with [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::output::UpdateEnvironmentOutput::environment): <p>The environment detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::error::UpdateEnvironmentError)
@@ -977,6 +984,7 @@ impl Client {
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::set_id): <p>The ID of the environment account connection to update.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with the environment account connection to update.</p>
     ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>  <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
+    ///   - [`codebuild_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::codebuild_role_arn) / [`set_codebuild_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::set_codebuild_role_arn): <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
     /// - On success, responds with [`UpdateEnvironmentAccountConnectionOutput`](crate::output::UpdateEnvironmentAccountConnectionOutput) with field(s):
     ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::UpdateEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentAccountConnectionError>`](crate::error::UpdateEnvironmentAccountConnectionError)
@@ -1913,6 +1921,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_component_role_arn(input);
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+        /// <p>To use CodeBuild-based provisioning for the environment or for any service instance running in the environment, specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.</p>
+        pub fn codebuild_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.codebuild_role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+        /// <p>To use CodeBuild-based provisioning for the environment or for any service instance running in the environment, specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.</p>
+        pub fn set_codebuild_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_codebuild_role_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateEnvironmentAccountConnection`.
     ///
@@ -2061,6 +2084,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_component_role_arn(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+        pub fn codebuild_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.codebuild_role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+        pub fn set_codebuild_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_codebuild_role_arn(input);
             self
         }
     }
@@ -6529,7 +6565,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListServiceInstances`.
     ///
-    /// <p>List service instances with summary data.</p>
+    /// <p>List service instances with summary data. This action lists service instances of all services in the Amazon Web Services account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceInstances {
         handle: std::sync::Arc<super::Handle>,
@@ -6623,6 +6659,55 @@ pub mod fluent_builders {
         /// <p>The maximum number of service instances to list.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
+        pub fn filters(mut self, input: crate::model::ListServiceInstancesFilter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ListServiceInstancesFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The field that the result list is sorted by.</p>
+        /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
+        /// <p>Default: <code>serviceName</code> </p>
+        pub fn sort_by(mut self, input: crate::model::ListServiceInstancesSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
+            self
+        }
+        /// <p>The field that the result list is sorted by.</p>
+        /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
+        /// <p>Default: <code>serviceName</code> </p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ListServiceInstancesSortBy>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p>Result list sort order.</p>
+        /// <p>Default: <code>ASCENDING</code> </p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
+            self
+        }
+        /// <p>Result list sort order.</p>
+        /// <p>Default: <code>ASCENDING</code> </p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -7713,6 +7798,22 @@ pub mod fluent_builders {
                 .set_delete_pipeline_provisioning_repository(input);
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
+        pub fn pipeline_codebuild_role_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.pipeline_codebuild_role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
+        pub fn set_pipeline_codebuild_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pipeline_codebuild_role_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateComponent`.
     ///
@@ -8160,6 +8261,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_component_role_arn(input);
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+        pub fn codebuild_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.codebuild_role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+        pub fn set_codebuild_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_codebuild_role_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateEnvironmentAccountConnection`.
     ///
@@ -8263,6 +8377,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_component_role_arn(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+        pub fn codebuild_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.codebuild_role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+        pub fn set_codebuild_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_codebuild_role_arn(input);
             self
         }
     }

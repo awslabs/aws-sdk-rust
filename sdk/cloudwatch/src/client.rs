@@ -352,7 +352,7 @@ impl Client {
     ///   - [`name(Option<String>)`](crate::output::GetMetricStreamOutput::name): <p>The name of the metric stream.</p>
     ///   - [`include_filters(Option<Vec<MetricStreamFilter>>)`](crate::output::GetMetricStreamOutput::include_filters): <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
     ///   - [`exclude_filters(Option<Vec<MetricStreamFilter>>)`](crate::output::GetMetricStreamOutput::exclude_filters): <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
-    ///   - [`firehose_arn(Option<String>)`](crate::output::GetMetricStreamOutput::firehose_arn): <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.</p>
+    ///   - [`firehose_arn(Option<String>)`](crate::output::GetMetricStreamOutput::firehose_arn): <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
     ///   - [`role_arn(Option<String>)`](crate::output::GetMetricStreamOutput::role_arn): <p>The ARN of the IAM role that is used by this metric stream.</p>
     ///   - [`state(Option<String>)`](crate::output::GetMetricStreamOutput::state): <p>The state of the metric stream. The possible values are <code>running</code> and <code>stopped</code>.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::GetMetricStreamOutput::creation_date): <p>The date that the metric stream was created.</p>
@@ -410,9 +410,12 @@ impl Client {
     ///   - [`dimensions(Vec<DimensionFilter>)`](crate::client::fluent_builders::ListMetrics::dimensions) / [`set_dimensions(Option<Vec<DimensionFilter>>)`](crate::client::fluent_builders::ListMetrics::set_dimensions): <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMetrics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMetrics::set_next_token): <p>The token returned by a previous call to indicate that there is more data available.</p>
     ///   - [`recently_active(RecentlyActive)`](crate::client::fluent_builders::ListMetrics::recently_active) / [`set_recently_active(Option<RecentlyActive>)`](crate::client::fluent_builders::ListMetrics::set_recently_active): <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>  <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
+    ///   - [`include_linked_accounts(bool)`](crate::client::fluent_builders::ListMetrics::include_linked_accounts) / [`set_include_linked_accounts(bool)`](crate::client::fluent_builders::ListMetrics::set_include_linked_accounts): <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>  <p>The default is <code>false</code>.</p>
+    ///   - [`owning_account(impl Into<String>)`](crate::client::fluent_builders::ListMetrics::owning_account) / [`set_owning_account(Option<String>)`](crate::client::fluent_builders::ListMetrics::set_owning_account): <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
     /// - On success, responds with [`ListMetricsOutput`](crate::output::ListMetricsOutput) with field(s):
     ///   - [`metrics(Option<Vec<Metric>>)`](crate::output::ListMetricsOutput::metrics): <p>The metrics that match your request. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListMetricsOutput::next_token): <p>The token that marks the start of the next batch of returned results. </p>
+    ///   - [`owning_accounts(Option<Vec<String>>)`](crate::output::ListMetricsOutput::owning_accounts): <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>  <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
     /// - On failure, responds with [`SdkError<ListMetricsError>`](crate::error::ListMetricsError)
     pub fn list_metrics(&self) -> fluent_builders::ListMetrics {
         fluent_builders::ListMetrics::new(self.handle.clone())
@@ -558,11 +561,11 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PutMetricStream::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PutMetricStream::set_name): <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p>  <p>If you are updating a metric stream, specify the name of that stream here.</p>  <p>Valid characters are A-Z, a-z, 0-9, "-" and "_".</p>
     ///   - [`include_filters(Vec<MetricStreamFilter>)`](crate::client::fluent_builders::PutMetricStream::include_filters) / [`set_include_filters(Option<Vec<MetricStreamFilter>>)`](crate::client::fluent_builders::PutMetricStream::set_include_filters): <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p>  <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same operation.</p>
     ///   - [`exclude_filters(Vec<MetricStreamFilter>)`](crate::client::fluent_builders::PutMetricStream::exclude_filters) / [`set_exclude_filters(Option<Vec<MetricStreamFilter>>)`](crate::client::fluent_builders::PutMetricStream::set_exclude_filters): <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p>  <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same operation.</p>
-    ///   - [`firehose_arn(impl Into<String>)`](crate::client::fluent_builders::PutMetricStream::firehose_arn) / [`set_firehose_arn(Option<String>)`](crate::client::fluent_builders::PutMetricStream::set_firehose_arn): <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::PutMetricStream::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::PutMetricStream::set_role_arn): <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>  <ul>   <li> <p>firehose:PutRecord</p> </li>   <li> <p>firehose:PutRecordBatch</p> </li>  </ul>
+    ///   - [`firehose_arn(impl Into<String>)`](crate::client::fluent_builders::PutMetricStream::firehose_arn) / [`set_firehose_arn(Option<String>)`](crate::client::fluent_builders::PutMetricStream::set_firehose_arn): <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::PutMetricStream::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::PutMetricStream::set_role_arn): <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>  <ul>   <li> <p>firehose:PutRecord</p> </li>   <li> <p>firehose:PutRecordBatch</p> </li>  </ul>
     ///   - [`output_format(MetricStreamOutputFormat)`](crate::client::fluent_builders::PutMetricStream::output_format) / [`set_output_format(Option<MetricStreamOutputFormat>)`](crate::client::fluent_builders::PutMetricStream::set_output_format): <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::PutMetricStream::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::PutMetricStream::set_tags): <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an existing metric stream, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-    ///   - [`statistics_configurations(Vec<MetricStreamStatisticsConfiguration>)`](crate::client::fluent_builders::PutMetricStream::statistics_configurations) / [`set_statistics_configurations(Option<Vec<MetricStreamStatisticsConfiguration>>)`](crate::client::fluent_builders::PutMetricStream::set_statistics_configurations): <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>  <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9 and so on.</p>
+    ///   - [`statistics_configurations(Vec<MetricStreamStatisticsConfiguration>)`](crate::client::fluent_builders::PutMetricStream::statistics_configurations) / [`set_statistics_configurations(Option<Vec<MetricStreamStatisticsConfiguration>>)`](crate::client::fluent_builders::PutMetricStream::set_statistics_configurations): <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>  <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
     /// - On success, responds with [`PutMetricStreamOutput`](crate::output::PutMetricStreamOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::PutMetricStreamOutput::arn): <p>The ARN of the metric stream.</p>
     /// - On failure, responds with [`SdkError<PutMetricStreamError>`](crate::error::PutMetricStreamError)
@@ -637,7 +640,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified alarms. You can delete up to 100 alarms in one operation. However, this total can include no more than one composite alarm. For example, you could delete 99 metric alarms and one composite alarms with one operation, but you can't delete two composite alarms with one operation.</p>
     /// <p> In the event of an error, no alarms are deleted.</p> <note>
     /// <p>It is possible to create a loop or cycle of composite alarms, where composite alarm A depends on composite alarm B, and composite alarm B also depends on composite alarm A. In this scenario, you can't delete any composite alarm that is part of the cycle because there is always still a composite alarm that depends on that alarm that you want to delete.</p>
-    /// <p>To get out of such a situation, you must break the cycle by changing the rule of one of the composite alarms in the cycle to remove a dependency that creates the cycle. The simplest change to make to break a cycle is to change the <code>AlarmRule</code> of one of the alarms to <code>False</code>. </p>
+    /// <p>To get out of such a situation, you must break the cycle by changing the rule of one of the composite alarms in the cycle to remove a dependency that creates the cycle. The simplest change to make to break a cycle is to change the <code>AlarmRule</code> of one of the alarms to <code>false</code>. </p>
     /// <p>Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3287,9 +3290,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMetrics`.
     ///
-    /// <p>List the specified metrics. You can use the returned metrics with <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a> to obtain statistical data.</p>
+    /// <p>List the specified metrics. You can use the returned metrics with <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a> to get statistical data.</p>
     /// <p>Up to 500 results are returned for any one call. To retrieve additional results, use the returned token with subsequent calls.</p>
-    /// <p>After you create a metric, allow up to 15 minutes before the metric appears. You can see statistics about the metric sooner by using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+    /// <p>After you create a metric, allow up to 15 minutes for the metric to appear. To see metric statistics sooner, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+    /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view metrics from the linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
     /// <p> <code>ListMetrics</code> doesn't return information about metrics if those metrics haven't reported data in the past two weeks. To retrieve those metrics, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMetrics {
@@ -3416,6 +3420,31 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::RecentlyActive>,
         ) -> Self {
             self.inner = self.inner.set_recently_active(input);
+            self
+        }
+        /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
+        /// <p>The default is <code>false</code>.</p>
+        pub fn include_linked_accounts(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_linked_accounts(input);
+            self
+        }
+        /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
+        /// <p>The default is <code>false</code>.</p>
+        pub fn set_include_linked_accounts(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_linked_accounts(input);
+            self
+        }
+        /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
+        pub fn owning_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owning_account(input.into());
+            self
+        }
+        /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
+        pub fn set_owning_account(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_owning_account(input);
             self
         }
     }
@@ -3796,7 +3825,7 @@ pub mod fluent_builders {
     /// <p>Using composite alarms can reduce alarm noise. You can create multiple metric alarms, and also create a composite alarm and set up alerts only for the composite alarm. For example, you could create a composite alarm that goes into ALARM state only when more than one of the underlying metric alarms are in ALARM state.</p>
     /// <p>Currently, the only alarm actions that can be taken by composite alarms are notifying SNS topics.</p> <note>
     /// <p>It is possible to create a loop or cycle of composite alarms, where composite alarm A depends on composite alarm B, and composite alarm B also depends on composite alarm A. In this scenario, you can't delete any composite alarm that is part of the cycle because there is always still a composite alarm that depends on that alarm that you want to delete.</p>
-    /// <p>To get out of such a situation, you must break the cycle by changing the rule of one of the composite alarms in the cycle to remove a dependency that creates the cycle. The simplest change to make to break a cycle is to change the <code>AlarmRule</code> of one of the alarms to <code>False</code>. </p>
+    /// <p>To get out of such a situation, you must break the cycle by changing the rule of one of the composite alarms in the cycle to remove a dependency that creates the cycle. The simplest change to make to break a cycle is to change the <code>AlarmRule</code> of one of the alarms to <code>false</code>. </p>
     /// <p>Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path. </p>
     /// </note>
     /// <p>When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then executed. For a composite alarm, this initial time after creation is the only time that the alarm can be in <code>INSUFFICIENT_DATA</code> state.</p>
@@ -4361,7 +4390,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutMetricAlarm`.
     ///
-    /// <p>Creates or updates an alarm and associates it with the specified metric, metric math expression, or anomaly detection model.</p>
+    /// <p>Creates or updates an alarm and associates it with the specified metric, metric math expression, anomaly detection model, or Metrics Insights query. For more information about using a Metrics Insights query for an alarm, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create alarms on Metrics Insights queries</a>.</p>
     /// <p>Alarms based on anomaly detection models cannot have Auto Scaling actions.</p>
     /// <p>When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then executed.</p>
     /// <p>When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous configuration of the alarm.</p>
@@ -4884,16 +4913,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutMetricStream`.
     ///
-    /// <p>Creates or updates a metric stream. Metric streams can automatically stream CloudWatch metrics to Amazon Web Services destinations including Amazon S3 and to many third-party solutions.</p>
+    /// <p>Creates or updates a metric stream. Metric streams can automatically stream CloudWatch metrics to Amazon Web Services destinations, including Amazon S3, and to many third-party solutions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric-Streams.html"> Using Metric Streams</a>.</p>
-    /// <p>To create a metric stream, you must be logged on to an account that has the <code>iam:PassRole</code> permission and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code> permission.</p>
+    /// <p>To create a metric stream, you must be signed in to an account that has the <code>iam:PassRole</code> permission and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code> permission.</p>
     /// <p>When you create or update a metric stream, you choose one of the following:</p>
     /// <ul>
     /// <li> <p>Stream metrics from all metric namespaces in the account.</p> </li>
     /// <li> <p>Stream metrics from all metric namespaces in the account, except for the namespaces that you list in <code>ExcludeFilters</code>.</p> </li>
     /// <li> <p>Stream metrics from only the metric namespaces that you list in <code>IncludeFilters</code>.</p> </li>
     /// </ul>
-    /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use the <code>StatisticsConfigurations</code> parameter to have the metric stream also send additional statistics in the stream. Streaming additional statistics incurs additional costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>. </p>
+    /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use the <code>StatisticsConfigurations</code> parameter to have the metric stream send additional statistics in the stream. Streaming additional statistics incurs additional costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>. </p>
     /// <p>When you use <code>PutMetricStream</code> to create a new metric stream, the stream is created in the <code>running</code> state. If you use it to update an existing stream, the state of the stream is not changed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMetricStream {
@@ -5006,17 +5035,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_exclude_filters(input);
             self
         }
-        /// <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
+        /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
         pub fn firehose_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.firehose_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
+        /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
         pub fn set_firehose_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_firehose_arn(input);
             self
         }
-        /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
+        /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
         /// <ul>
         /// <li> <p>firehose:PutRecord</p> </li>
         /// <li> <p>firehose:PutRecordBatch</p> </li>
@@ -5025,7 +5054,7 @@ pub mod fluent_builders {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
+        /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
         /// <ul>
         /// <li> <p>firehose:PutRecord</p> </li>
         /// <li> <p>firehose:PutRecordBatch</p> </li>
@@ -5073,7 +5102,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_statistics_configurations`](Self::set_statistics_configurations).
         ///
         /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
-        /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9 and so on.</p>
+        /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
         pub fn statistics_configurations(
             mut self,
             input: crate::model::MetricStreamStatisticsConfiguration,
@@ -5082,7 +5111,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
-        /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9 and so on.</p>
+        /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
         pub fn set_statistics_configurations(
             mut self,
             input: std::option::Option<

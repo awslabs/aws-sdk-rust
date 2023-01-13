@@ -1413,6 +1413,9 @@ pub struct DescribeSecretOutput {
     /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret value, is not accessible. To cancel a scheduled deletion and restore access to the secret, use <code>RestoreSecret</code>.</p>
     #[doc(hidden)]
     pub deleted_date: std::option::Option<aws_smithy_types::DateTime>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub next_rotation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1493,6 +1496,10 @@ impl DescribeSecretOutput {
     pub fn deleted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deleted_date.as_ref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn next_rotation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.next_rotation_date.as_ref()
+    }
     /// <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -1553,6 +1560,7 @@ pub mod describe_secret_output {
         pub(crate) last_changed_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deleted_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) next_rotation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) version_ids_to_stages: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -1696,6 +1704,19 @@ pub mod describe_secret_output {
             self.deleted_date = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn next_rotation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.next_rotation_date = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_next_rotation_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.next_rotation_date = input;
+            self
+        }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -1836,6 +1857,7 @@ pub mod describe_secret_output {
                 last_changed_date: self.last_changed_date,
                 last_accessed_date: self.last_accessed_date,
                 deleted_date: self.deleted_date,
+                next_rotation_date: self.next_rotation_date,
                 tags: self.tags,
                 version_ids_to_stages: self.version_ids_to_stages,
                 owning_service: self.owning_service,

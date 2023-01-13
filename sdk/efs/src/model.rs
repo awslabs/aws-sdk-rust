@@ -80,6 +80,7 @@ impl Tag {
 /// # let throughputmode = unimplemented!();
 /// match throughputmode {
 ///     ThroughputMode::Bursting => { /* ... */ },
+///     ThroughputMode::Elastic => { /* ... */ },
 ///     ThroughputMode::Provisioned => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -117,6 +118,8 @@ pub enum ThroughputMode {
     #[allow(missing_docs)] // documentation missing in model
     Bursting,
     #[allow(missing_docs)] // documentation missing in model
+    Elastic,
+    #[allow(missing_docs)] // documentation missing in model
     Provisioned,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
@@ -125,6 +128,7 @@ impl std::convert::From<&str> for ThroughputMode {
     fn from(s: &str) -> Self {
         match s {
             "bursting" => ThroughputMode::Bursting,
+            "elastic" => ThroughputMode::Elastic,
             "provisioned" => ThroughputMode::Provisioned,
             other => ThroughputMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
@@ -142,13 +146,14 @@ impl ThroughputMode {
     pub fn as_str(&self) -> &str {
         match self {
             ThroughputMode::Bursting => "bursting",
+            ThroughputMode::Elastic => "elastic",
             ThroughputMode::Provisioned => "provisioned",
             ThroughputMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["bursting", "provisioned"]
+        &["bursting", "elastic", "provisioned"]
     }
 }
 impl AsRef<str> for ThroughputMode {
@@ -654,6 +659,7 @@ impl AsRef<str> for TransitionToPrimaryStorageClassRules {
 /// # let transitiontoiarules = unimplemented!();
 /// match transitiontoiarules {
 ///     TransitionToIaRules::After14Days => { /* ... */ },
+///     TransitionToIaRules::After1Day => { /* ... */ },
 ///     TransitionToIaRules::After30Days => { /* ... */ },
 ///     TransitionToIaRules::After60Days => { /* ... */ },
 ///     TransitionToIaRules::After7Days => { /* ... */ },
@@ -694,6 +700,8 @@ pub enum TransitionToIaRules {
     #[allow(missing_docs)] // documentation missing in model
     After14Days,
     #[allow(missing_docs)] // documentation missing in model
+    After1Day,
+    #[allow(missing_docs)] // documentation missing in model
     After30Days,
     #[allow(missing_docs)] // documentation missing in model
     After60Days,
@@ -708,6 +716,7 @@ impl std::convert::From<&str> for TransitionToIaRules {
     fn from(s: &str) -> Self {
         match s {
             "AFTER_14_DAYS" => TransitionToIaRules::After14Days,
+            "AFTER_1_DAY" => TransitionToIaRules::After1Day,
             "AFTER_30_DAYS" => TransitionToIaRules::After30Days,
             "AFTER_60_DAYS" => TransitionToIaRules::After60Days,
             "AFTER_7_DAYS" => TransitionToIaRules::After7Days,
@@ -730,6 +739,7 @@ impl TransitionToIaRules {
     pub fn as_str(&self) -> &str {
         match self {
             TransitionToIaRules::After14Days => "AFTER_14_DAYS",
+            TransitionToIaRules::After1Day => "AFTER_1_DAY",
             TransitionToIaRules::After30Days => "AFTER_30_DAYS",
             TransitionToIaRules::After60Days => "AFTER_60_DAYS",
             TransitionToIaRules::After7Days => "AFTER_7_DAYS",
@@ -741,6 +751,7 @@ impl TransitionToIaRules {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AFTER_14_DAYS",
+            "AFTER_1_DAY",
             "AFTER_30_DAYS",
             "AFTER_60_DAYS",
             "AFTER_7_DAYS",

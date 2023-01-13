@@ -435,7 +435,7 @@ impl AutoExportRevisionToS3RequestDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoExportRevisionDestinationEntry {
-    /// <p>The S3 bucket that is the destination for the event action.</p>
+    /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
@@ -443,7 +443,7 @@ pub struct AutoExportRevisionDestinationEntry {
     pub key_pattern: std::option::Option<std::string::String>,
 }
 impl AutoExportRevisionDestinationEntry {
-    /// <p>The S3 bucket that is the destination for the event action.</p>
+    /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -462,12 +462,12 @@ pub mod auto_export_revision_destination_entry {
         pub(crate) key_pattern: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The S3 bucket that is the destination for the event action.</p>
+        /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The S3 bucket that is the destination for the event action.</p>
+        /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -660,7 +660,7 @@ impl AsRef<str> for ServerSideEncryptionTypes {
     }
 }
 
-/// <p>Information about the origin of the data set.</p>
+/// <p>Details about the origin of the data set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginDetails {
@@ -811,7 +811,9 @@ impl AsRef<str> for Origin {
 /// # let assettype = unimplemented!();
 /// match assettype {
 ///     AssetType::ApiGatewayApi => { /* ... */ },
+///     AssetType::LakeFormationDataPermission => { /* ... */ },
 ///     AssetType::RedshiftDataShare => { /* ... */ },
+///     AssetType::S3DataAccess => { /* ... */ },
 ///     AssetType::S3Snapshot => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -849,7 +851,11 @@ pub enum AssetType {
     #[allow(missing_docs)] // documentation missing in model
     ApiGatewayApi,
     #[allow(missing_docs)] // documentation missing in model
+    LakeFormationDataPermission,
+    #[allow(missing_docs)] // documentation missing in model
     RedshiftDataShare,
+    #[allow(missing_docs)] // documentation missing in model
+    S3DataAccess,
     #[allow(missing_docs)] // documentation missing in model
     S3Snapshot,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -859,7 +865,9 @@ impl std::convert::From<&str> for AssetType {
     fn from(s: &str) -> Self {
         match s {
             "API_GATEWAY_API" => AssetType::ApiGatewayApi,
+            "LAKE_FORMATION_DATA_PERMISSION" => AssetType::LakeFormationDataPermission,
             "REDSHIFT_DATA_SHARE" => AssetType::RedshiftDataShare,
+            "S3_DATA_ACCESS" => AssetType::S3DataAccess,
             "S3_SNAPSHOT" => AssetType::S3Snapshot,
             other => AssetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
@@ -877,14 +885,22 @@ impl AssetType {
     pub fn as_str(&self) -> &str {
         match self {
             AssetType::ApiGatewayApi => "API_GATEWAY_API",
+            AssetType::LakeFormationDataPermission => "LAKE_FORMATION_DATA_PERMISSION",
             AssetType::RedshiftDataShare => "REDSHIFT_DATA_SHARE",
+            AssetType::S3DataAccess => "S3_DATA_ACCESS",
             AssetType::S3Snapshot => "S3_SNAPSHOT",
             AssetType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["API_GATEWAY_API", "REDSHIFT_DATA_SHARE", "S3_SNAPSHOT"]
+        &[
+            "API_GATEWAY_API",
+            "LAKE_FORMATION_DATA_PERMISSION",
+            "REDSHIFT_DATA_SHARE",
+            "S3_DATA_ACCESS",
+            "S3_SNAPSHOT",
+        ]
     }
 }
 impl AsRef<str> for AssetType {
@@ -893,11 +909,11 @@ impl AsRef<str> for AssetType {
     }
 }
 
-/// <p>Information about the asset.</p>
+/// <p>Details about the asset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetDetails {
-    /// <p>The S3 object that is the asset.</p>
+    /// <p>The Amazon S3 object that is the asset.</p>
     #[doc(hidden)]
     pub s3_snapshot_asset: std::option::Option<crate::model::S3SnapshotAsset>,
     /// <p>The Amazon Redshift datashare that is the asset.</p>
@@ -906,9 +922,16 @@ pub struct AssetDetails {
     /// <p>Information about the API Gateway API asset.</p>
     #[doc(hidden)]
     pub api_gateway_api_asset: std::option::Option<crate::model::ApiGatewayApiAsset>,
+    /// <p>The Amazon S3 data access that is the asset.</p>
+    #[doc(hidden)]
+    pub s3_data_access_asset: std::option::Option<crate::model::S3DataAccessAsset>,
+    /// <p>The AWS Lake Formation data permission that is the asset.</p>
+    #[doc(hidden)]
+    pub lake_formation_data_permission_asset:
+        std::option::Option<crate::model::LakeFormationDataPermissionAsset>,
 }
 impl AssetDetails {
-    /// <p>The S3 object that is the asset.</p>
+    /// <p>The Amazon S3 object that is the asset.</p>
     pub fn s3_snapshot_asset(&self) -> std::option::Option<&crate::model::S3SnapshotAsset> {
         self.s3_snapshot_asset.as_ref()
     }
@@ -922,6 +945,16 @@ impl AssetDetails {
     pub fn api_gateway_api_asset(&self) -> std::option::Option<&crate::model::ApiGatewayApiAsset> {
         self.api_gateway_api_asset.as_ref()
     }
+    /// <p>The Amazon S3 data access that is the asset.</p>
+    pub fn s3_data_access_asset(&self) -> std::option::Option<&crate::model::S3DataAccessAsset> {
+        self.s3_data_access_asset.as_ref()
+    }
+    /// <p>The AWS Lake Formation data permission that is the asset.</p>
+    pub fn lake_formation_data_permission_asset(
+        &self,
+    ) -> std::option::Option<&crate::model::LakeFormationDataPermissionAsset> {
+        self.lake_formation_data_permission_asset.as_ref()
+    }
 }
 /// See [`AssetDetails`](crate::model::AssetDetails).
 pub mod asset_details {
@@ -933,14 +966,17 @@ pub mod asset_details {
         pub(crate) redshift_data_share_asset:
             std::option::Option<crate::model::RedshiftDataShareAsset>,
         pub(crate) api_gateway_api_asset: std::option::Option<crate::model::ApiGatewayApiAsset>,
+        pub(crate) s3_data_access_asset: std::option::Option<crate::model::S3DataAccessAsset>,
+        pub(crate) lake_formation_data_permission_asset:
+            std::option::Option<crate::model::LakeFormationDataPermissionAsset>,
     }
     impl Builder {
-        /// <p>The S3 object that is the asset.</p>
+        /// <p>The Amazon S3 object that is the asset.</p>
         pub fn s3_snapshot_asset(mut self, input: crate::model::S3SnapshotAsset) -> Self {
             self.s3_snapshot_asset = Some(input);
             self
         }
-        /// <p>The S3 object that is the asset.</p>
+        /// <p>The Amazon S3 object that is the asset.</p>
         pub fn set_s3_snapshot_asset(
             mut self,
             input: std::option::Option<crate::model::S3SnapshotAsset>,
@@ -977,12 +1013,43 @@ pub mod asset_details {
             self.api_gateway_api_asset = input;
             self
         }
+        /// <p>The Amazon S3 data access that is the asset.</p>
+        pub fn s3_data_access_asset(mut self, input: crate::model::S3DataAccessAsset) -> Self {
+            self.s3_data_access_asset = Some(input);
+            self
+        }
+        /// <p>The Amazon S3 data access that is the asset.</p>
+        pub fn set_s3_data_access_asset(
+            mut self,
+            input: std::option::Option<crate::model::S3DataAccessAsset>,
+        ) -> Self {
+            self.s3_data_access_asset = input;
+            self
+        }
+        /// <p>The AWS Lake Formation data permission that is the asset.</p>
+        pub fn lake_formation_data_permission_asset(
+            mut self,
+            input: crate::model::LakeFormationDataPermissionAsset,
+        ) -> Self {
+            self.lake_formation_data_permission_asset = Some(input);
+            self
+        }
+        /// <p>The AWS Lake Formation data permission that is the asset.</p>
+        pub fn set_lake_formation_data_permission_asset(
+            mut self,
+            input: std::option::Option<crate::model::LakeFormationDataPermissionAsset>,
+        ) -> Self {
+            self.lake_formation_data_permission_asset = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssetDetails`](crate::model::AssetDetails).
         pub fn build(self) -> crate::model::AssetDetails {
             crate::model::AssetDetails {
                 s3_snapshot_asset: self.s3_snapshot_asset,
                 redshift_data_share_asset: self.redshift_data_share_asset,
                 api_gateway_api_asset: self.api_gateway_api_asset,
+                s3_data_access_asset: self.s3_data_access_asset,
+                lake_formation_data_permission_asset: self.lake_formation_data_permission_asset,
             }
         }
     }
@@ -991,6 +1058,961 @@ impl AssetDetails {
     /// Creates a new builder-style object to manufacture [`AssetDetails`](crate::model::AssetDetails).
     pub fn builder() -> crate::model::asset_details::Builder {
         crate::model::asset_details::Builder::default()
+    }
+}
+
+/// <p>The AWS Lake Formation data permission asset.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LakeFormationDataPermissionAsset {
+    /// <p>Details about the AWS Lake Formation data permission.</p>
+    #[doc(hidden)]
+    pub lake_formation_data_permission_details:
+        std::option::Option<crate::model::LakeFormationDataPermissionDetails>,
+    /// <p>The data permission type.</p>
+    #[doc(hidden)]
+    pub lake_formation_data_permission_type:
+        std::option::Option<crate::model::LakeFormationDataPermissionType>,
+    /// <p>The permissions granted to the subscribers on the resource.</p>
+    #[doc(hidden)]
+    pub permissions: std::option::Option<std::vec::Vec<crate::model::LfPermission>>,
+    /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
+}
+impl LakeFormationDataPermissionAsset {
+    /// <p>Details about the AWS Lake Formation data permission.</p>
+    pub fn lake_formation_data_permission_details(
+        &self,
+    ) -> std::option::Option<&crate::model::LakeFormationDataPermissionDetails> {
+        self.lake_formation_data_permission_details.as_ref()
+    }
+    /// <p>The data permission type.</p>
+    pub fn lake_formation_data_permission_type(
+        &self,
+    ) -> std::option::Option<&crate::model::LakeFormationDataPermissionType> {
+        self.lake_formation_data_permission_type.as_ref()
+    }
+    /// <p>The permissions granted to the subscribers on the resource.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::LfPermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
+/// See [`LakeFormationDataPermissionAsset`](crate::model::LakeFormationDataPermissionAsset).
+pub mod lake_formation_data_permission_asset {
+
+    /// A builder for [`LakeFormationDataPermissionAsset`](crate::model::LakeFormationDataPermissionAsset).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lake_formation_data_permission_details:
+            std::option::Option<crate::model::LakeFormationDataPermissionDetails>,
+        pub(crate) lake_formation_data_permission_type:
+            std::option::Option<crate::model::LakeFormationDataPermissionType>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::LfPermission>>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Details about the AWS Lake Formation data permission.</p>
+        pub fn lake_formation_data_permission_details(
+            mut self,
+            input: crate::model::LakeFormationDataPermissionDetails,
+        ) -> Self {
+            self.lake_formation_data_permission_details = Some(input);
+            self
+        }
+        /// <p>Details about the AWS Lake Formation data permission.</p>
+        pub fn set_lake_formation_data_permission_details(
+            mut self,
+            input: std::option::Option<crate::model::LakeFormationDataPermissionDetails>,
+        ) -> Self {
+            self.lake_formation_data_permission_details = input;
+            self
+        }
+        /// <p>The data permission type.</p>
+        pub fn lake_formation_data_permission_type(
+            mut self,
+            input: crate::model::LakeFormationDataPermissionType,
+        ) -> Self {
+            self.lake_formation_data_permission_type = Some(input);
+            self
+        }
+        /// <p>The data permission type.</p>
+        pub fn set_lake_formation_data_permission_type(
+            mut self,
+            input: std::option::Option<crate::model::LakeFormationDataPermissionType>,
+        ) -> Self {
+            self.lake_formation_data_permission_type = input;
+            self
+        }
+        /// Appends an item to `permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>The permissions granted to the subscribers on the resource.</p>
+        pub fn permissions(mut self, input: crate::model::LfPermission) -> Self {
+            let mut v = self.permissions.unwrap_or_default();
+            v.push(input);
+            self.permissions = Some(v);
+            self
+        }
+        /// <p>The permissions granted to the subscribers on the resource.</p>
+        pub fn set_permissions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LfPermission>>,
+        ) -> Self {
+            self.permissions = input;
+            self
+        }
+        /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LakeFormationDataPermissionAsset`](crate::model::LakeFormationDataPermissionAsset).
+        pub fn build(self) -> crate::model::LakeFormationDataPermissionAsset {
+            crate::model::LakeFormationDataPermissionAsset {
+                lake_formation_data_permission_details: self.lake_formation_data_permission_details,
+                lake_formation_data_permission_type: self.lake_formation_data_permission_type,
+                permissions: self.permissions,
+                role_arn: self.role_arn,
+            }
+        }
+    }
+}
+impl LakeFormationDataPermissionAsset {
+    /// Creates a new builder-style object to manufacture [`LakeFormationDataPermissionAsset`](crate::model::LakeFormationDataPermissionAsset).
+    pub fn builder() -> crate::model::lake_formation_data_permission_asset::Builder {
+        crate::model::lake_formation_data_permission_asset::Builder::default()
+    }
+}
+
+/// When writing a match expression against `LfPermission`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let lfpermission = unimplemented!();
+/// match lfpermission {
+///     LfPermission::Describe => { /* ... */ },
+///     LfPermission::Select => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `lfpermission` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LfPermission::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LfPermission::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LfPermission::NewFeature` is defined.
+/// Specifically, when `lfpermission` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LfPermission::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LfPermission {
+    #[allow(missing_docs)] // documentation missing in model
+    Describe,
+    #[allow(missing_docs)] // documentation missing in model
+    Select,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for LfPermission {
+    fn from(s: &str) -> Self {
+        match s {
+            "DESCRIBE" => LfPermission::Describe,
+            "SELECT" => LfPermission::Select,
+            other => LfPermission::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for LfPermission {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LfPermission::from(s))
+    }
+}
+impl LfPermission {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LfPermission::Describe => "DESCRIBE",
+            LfPermission::Select => "SELECT",
+            LfPermission::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DESCRIBE", "SELECT"]
+    }
+}
+impl AsRef<str> for LfPermission {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `LakeFormationDataPermissionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let lakeformationdatapermissiontype = unimplemented!();
+/// match lakeformationdatapermissiontype {
+///     LakeFormationDataPermissionType::LfTagPolicy => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `lakeformationdatapermissiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LakeFormationDataPermissionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LakeFormationDataPermissionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LakeFormationDataPermissionType::NewFeature` is defined.
+/// Specifically, when `lakeformationdatapermissiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LakeFormationDataPermissionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LakeFormationDataPermissionType {
+    #[allow(missing_docs)] // documentation missing in model
+    LfTagPolicy,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for LakeFormationDataPermissionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "LFTagPolicy" => LakeFormationDataPermissionType::LfTagPolicy,
+            other => LakeFormationDataPermissionType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for LakeFormationDataPermissionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LakeFormationDataPermissionType::from(s))
+    }
+}
+impl LakeFormationDataPermissionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LakeFormationDataPermissionType::LfTagPolicy => "LFTagPolicy",
+            LakeFormationDataPermissionType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["LFTagPolicy"]
+    }
+}
+impl AsRef<str> for LakeFormationDataPermissionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Details about the AWS Lake Formation data permission.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LakeFormationDataPermissionDetails {
+    /// <p>Details about the LF-tag policy.</p>
+    #[doc(hidden)]
+    pub lf_tag_policy: std::option::Option<crate::model::LfTagPolicyDetails>,
+}
+impl LakeFormationDataPermissionDetails {
+    /// <p>Details about the LF-tag policy.</p>
+    pub fn lf_tag_policy(&self) -> std::option::Option<&crate::model::LfTagPolicyDetails> {
+        self.lf_tag_policy.as_ref()
+    }
+}
+/// See [`LakeFormationDataPermissionDetails`](crate::model::LakeFormationDataPermissionDetails).
+pub mod lake_formation_data_permission_details {
+
+    /// A builder for [`LakeFormationDataPermissionDetails`](crate::model::LakeFormationDataPermissionDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lf_tag_policy: std::option::Option<crate::model::LfTagPolicyDetails>,
+    }
+    impl Builder {
+        /// <p>Details about the LF-tag policy.</p>
+        pub fn lf_tag_policy(mut self, input: crate::model::LfTagPolicyDetails) -> Self {
+            self.lf_tag_policy = Some(input);
+            self
+        }
+        /// <p>Details about the LF-tag policy.</p>
+        pub fn set_lf_tag_policy(
+            mut self,
+            input: std::option::Option<crate::model::LfTagPolicyDetails>,
+        ) -> Self {
+            self.lf_tag_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LakeFormationDataPermissionDetails`](crate::model::LakeFormationDataPermissionDetails).
+        pub fn build(self) -> crate::model::LakeFormationDataPermissionDetails {
+            crate::model::LakeFormationDataPermissionDetails {
+                lf_tag_policy: self.lf_tag_policy,
+            }
+        }
+    }
+}
+impl LakeFormationDataPermissionDetails {
+    /// Creates a new builder-style object to manufacture [`LakeFormationDataPermissionDetails`](crate::model::LakeFormationDataPermissionDetails).
+    pub fn builder() -> crate::model::lake_formation_data_permission_details::Builder {
+        crate::model::lake_formation_data_permission_details::Builder::default()
+    }
+}
+
+/// <p>Details about the LF-tag policy.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LfTagPolicyDetails {
+    /// <p>The identifier for the AWS Glue Data Catalog.</p>
+    #[doc(hidden)]
+    pub catalog_id: std::option::Option<std::string::String>,
+    /// <p>The resource type for which the LF-tag policy applies.</p>
+    #[doc(hidden)]
+    pub resource_type: std::option::Option<crate::model::LfResourceType>,
+    /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
+    #[doc(hidden)]
+    pub resource_details: std::option::Option<crate::model::LfResourceDetails>,
+}
+impl LfTagPolicyDetails {
+    /// <p>The identifier for the AWS Glue Data Catalog.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The resource type for which the LF-tag policy applies.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::LfResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
+    pub fn resource_details(&self) -> std::option::Option<&crate::model::LfResourceDetails> {
+        self.resource_details.as_ref()
+    }
+}
+/// See [`LfTagPolicyDetails`](crate::model::LfTagPolicyDetails).
+pub mod lf_tag_policy_details {
+
+    /// A builder for [`LfTagPolicyDetails`](crate::model::LfTagPolicyDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<crate::model::LfResourceType>,
+        pub(crate) resource_details: std::option::Option<crate::model::LfResourceDetails>,
+    }
+    impl Builder {
+        /// <p>The identifier for the AWS Glue Data Catalog.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the AWS Glue Data Catalog.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_id = input;
+            self
+        }
+        /// <p>The resource type for which the LF-tag policy applies.</p>
+        pub fn resource_type(mut self, input: crate::model::LfResourceType) -> Self {
+            self.resource_type = Some(input);
+            self
+        }
+        /// <p>The resource type for which the LF-tag policy applies.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::LfResourceType>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
+        pub fn resource_details(mut self, input: crate::model::LfResourceDetails) -> Self {
+            self.resource_details = Some(input);
+            self
+        }
+        /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
+        pub fn set_resource_details(
+            mut self,
+            input: std::option::Option<crate::model::LfResourceDetails>,
+        ) -> Self {
+            self.resource_details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LfTagPolicyDetails`](crate::model::LfTagPolicyDetails).
+        pub fn build(self) -> crate::model::LfTagPolicyDetails {
+            crate::model::LfTagPolicyDetails {
+                catalog_id: self.catalog_id,
+                resource_type: self.resource_type,
+                resource_details: self.resource_details,
+            }
+        }
+    }
+}
+impl LfTagPolicyDetails {
+    /// Creates a new builder-style object to manufacture [`LfTagPolicyDetails`](crate::model::LfTagPolicyDetails).
+    pub fn builder() -> crate::model::lf_tag_policy_details::Builder {
+        crate::model::lf_tag_policy_details::Builder::default()
+    }
+}
+
+/// <p>Details about the AWS Lake Formation resource (Table or Database) included in the AWS Lake Formation data permission.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LfResourceDetails {
+    /// <p>Details about the database resource included in the AWS Lake Formation data permission.</p>
+    #[doc(hidden)]
+    pub database: std::option::Option<crate::model::DatabaseLfTagPolicy>,
+    /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
+    #[doc(hidden)]
+    pub table: std::option::Option<crate::model::TableLfTagPolicy>,
+}
+impl LfResourceDetails {
+    /// <p>Details about the database resource included in the AWS Lake Formation data permission.</p>
+    pub fn database(&self) -> std::option::Option<&crate::model::DatabaseLfTagPolicy> {
+        self.database.as_ref()
+    }
+    /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
+    pub fn table(&self) -> std::option::Option<&crate::model::TableLfTagPolicy> {
+        self.table.as_ref()
+    }
+}
+/// See [`LfResourceDetails`](crate::model::LfResourceDetails).
+pub mod lf_resource_details {
+
+    /// A builder for [`LfResourceDetails`](crate::model::LfResourceDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) database: std::option::Option<crate::model::DatabaseLfTagPolicy>,
+        pub(crate) table: std::option::Option<crate::model::TableLfTagPolicy>,
+    }
+    impl Builder {
+        /// <p>Details about the database resource included in the AWS Lake Formation data permission.</p>
+        pub fn database(mut self, input: crate::model::DatabaseLfTagPolicy) -> Self {
+            self.database = Some(input);
+            self
+        }
+        /// <p>Details about the database resource included in the AWS Lake Formation data permission.</p>
+        pub fn set_database(
+            mut self,
+            input: std::option::Option<crate::model::DatabaseLfTagPolicy>,
+        ) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
+        pub fn table(mut self, input: crate::model::TableLfTagPolicy) -> Self {
+            self.table = Some(input);
+            self
+        }
+        /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
+        pub fn set_table(
+            mut self,
+            input: std::option::Option<crate::model::TableLfTagPolicy>,
+        ) -> Self {
+            self.table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LfResourceDetails`](crate::model::LfResourceDetails).
+        pub fn build(self) -> crate::model::LfResourceDetails {
+            crate::model::LfResourceDetails {
+                database: self.database,
+                table: self.table,
+            }
+        }
+    }
+}
+impl LfResourceDetails {
+    /// Creates a new builder-style object to manufacture [`LfResourceDetails`](crate::model::LfResourceDetails).
+    pub fn builder() -> crate::model::lf_resource_details::Builder {
+        crate::model::lf_resource_details::Builder::default()
+    }
+}
+
+/// <p>The LF-tag policy for a table resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TableLfTagPolicy {
+    /// <p>A list of LF-tag conditions that apply to table resources.</p>
+    #[doc(hidden)]
+    pub expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
+}
+impl TableLfTagPolicy {
+    /// <p>A list of LF-tag conditions that apply to table resources.</p>
+    pub fn expression(&self) -> std::option::Option<&[crate::model::LfTag]> {
+        self.expression.as_deref()
+    }
+}
+/// See [`TableLfTagPolicy`](crate::model::TableLfTagPolicy).
+pub mod table_lf_tag_policy {
+
+    /// A builder for [`TableLfTagPolicy`](crate::model::TableLfTagPolicy).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
+    }
+    impl Builder {
+        /// Appends an item to `expression`.
+        ///
+        /// To override the contents of this collection use [`set_expression`](Self::set_expression).
+        ///
+        /// <p>A list of LF-tag conditions that apply to table resources.</p>
+        pub fn expression(mut self, input: crate::model::LfTag) -> Self {
+            let mut v = self.expression.unwrap_or_default();
+            v.push(input);
+            self.expression = Some(v);
+            self
+        }
+        /// <p>A list of LF-tag conditions that apply to table resources.</p>
+        pub fn set_expression(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
+        ) -> Self {
+            self.expression = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TableLfTagPolicy`](crate::model::TableLfTagPolicy).
+        pub fn build(self) -> crate::model::TableLfTagPolicy {
+            crate::model::TableLfTagPolicy {
+                expression: self.expression,
+            }
+        }
+    }
+}
+impl TableLfTagPolicy {
+    /// Creates a new builder-style object to manufacture [`TableLfTagPolicy`](crate::model::TableLfTagPolicy).
+    pub fn builder() -> crate::model::table_lf_tag_policy::Builder {
+        crate::model::table_lf_tag_policy::Builder::default()
+    }
+}
+
+/// <p>A structure that allows an LF-admin to grant permissions on certain conditions.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LfTag {
+    /// <p>The key name for the LF-tag.</p>
+    #[doc(hidden)]
+    pub tag_key: std::option::Option<std::string::String>,
+    /// <p>A list of LF-tag values.</p>
+    #[doc(hidden)]
+    pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl LfTag {
+    /// <p>The key name for the LF-tag.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>A list of LF-tag values.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+}
+/// See [`LfTag`](crate::model::LfTag).
+pub mod lf_tag {
+
+    /// A builder for [`LfTag`](crate::model::LfTag).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tag_key: std::option::Option<std::string::String>,
+        pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The key name for the LF-tag.</p>
+        pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_key = Some(input.into());
+            self
+        }
+        /// <p>The key name for the LF-tag.</p>
+        pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tag_key = input;
+            self
+        }
+        /// Appends an item to `tag_values`.
+        ///
+        /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
+        ///
+        /// <p>A list of LF-tag values.</p>
+        pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.tag_values.unwrap_or_default();
+            v.push(input.into());
+            self.tag_values = Some(v);
+            self
+        }
+        /// <p>A list of LF-tag values.</p>
+        pub fn set_tag_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LfTag`](crate::model::LfTag).
+        pub fn build(self) -> crate::model::LfTag {
+            crate::model::LfTag {
+                tag_key: self.tag_key,
+                tag_values: self.tag_values,
+            }
+        }
+    }
+}
+impl LfTag {
+    /// Creates a new builder-style object to manufacture [`LfTag`](crate::model::LfTag).
+    pub fn builder() -> crate::model::lf_tag::Builder {
+        crate::model::lf_tag::Builder::default()
+    }
+}
+
+/// <p>The LF-tag policy for database resources.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DatabaseLfTagPolicy {
+    /// <p>A list of LF-tag conditions that apply to database resources.</p>
+    #[doc(hidden)]
+    pub expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
+}
+impl DatabaseLfTagPolicy {
+    /// <p>A list of LF-tag conditions that apply to database resources.</p>
+    pub fn expression(&self) -> std::option::Option<&[crate::model::LfTag]> {
+        self.expression.as_deref()
+    }
+}
+/// See [`DatabaseLfTagPolicy`](crate::model::DatabaseLfTagPolicy).
+pub mod database_lf_tag_policy {
+
+    /// A builder for [`DatabaseLfTagPolicy`](crate::model::DatabaseLfTagPolicy).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
+    }
+    impl Builder {
+        /// Appends an item to `expression`.
+        ///
+        /// To override the contents of this collection use [`set_expression`](Self::set_expression).
+        ///
+        /// <p>A list of LF-tag conditions that apply to database resources.</p>
+        pub fn expression(mut self, input: crate::model::LfTag) -> Self {
+            let mut v = self.expression.unwrap_or_default();
+            v.push(input);
+            self.expression = Some(v);
+            self
+        }
+        /// <p>A list of LF-tag conditions that apply to database resources.</p>
+        pub fn set_expression(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
+        ) -> Self {
+            self.expression = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DatabaseLfTagPolicy`](crate::model::DatabaseLfTagPolicy).
+        pub fn build(self) -> crate::model::DatabaseLfTagPolicy {
+            crate::model::DatabaseLfTagPolicy {
+                expression: self.expression,
+            }
+        }
+    }
+}
+impl DatabaseLfTagPolicy {
+    /// Creates a new builder-style object to manufacture [`DatabaseLfTagPolicy`](crate::model::DatabaseLfTagPolicy).
+    pub fn builder() -> crate::model::database_lf_tag_policy::Builder {
+        crate::model::database_lf_tag_policy::Builder::default()
+    }
+}
+
+/// When writing a match expression against `LfResourceType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let lfresourcetype = unimplemented!();
+/// match lfresourcetype {
+///     LfResourceType::Database => { /* ... */ },
+///     LfResourceType::Table => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `lfresourcetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LfResourceType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LfResourceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LfResourceType::NewFeature` is defined.
+/// Specifically, when `lfresourcetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LfResourceType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LfResourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    Database,
+    #[allow(missing_docs)] // documentation missing in model
+    Table,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for LfResourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DATABASE" => LfResourceType::Database,
+            "TABLE" => LfResourceType::Table,
+            other => LfResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for LfResourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LfResourceType::from(s))
+    }
+}
+impl LfResourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LfResourceType::Database => "DATABASE",
+            LfResourceType::Table => "TABLE",
+            LfResourceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DATABASE", "TABLE"]
+    }
+}
+impl AsRef<str> for LfResourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The Amazon S3 data access that is the asset.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct S3DataAccessAsset {
+    /// <p>The Amazon S3 bucket hosting data to be shared in the S3 data access.</p>
+    #[doc(hidden)]
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
+    #[doc(hidden)]
+    pub key_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>S3 keys made available using this asset.</p>
+    #[doc(hidden)]
+    pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The automatically-generated bucket-style alias for your Amazon S3 Access Point. Customers can access their entitled data using the S3 Access Point alias.</p>
+    #[doc(hidden)]
+    pub s3_access_point_alias: std::option::Option<std::string::String>,
+    /// <p>The ARN for your Amazon S3 Access Point. Customers can also access their entitled data using the S3 Access Point ARN.</p>
+    #[doc(hidden)]
+    pub s3_access_point_arn: std::option::Option<std::string::String>,
+}
+impl S3DataAccessAsset {
+    /// <p>The Amazon S3 bucket hosting data to be shared in the S3 data access.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
+    pub fn key_prefixes(&self) -> std::option::Option<&[std::string::String]> {
+        self.key_prefixes.as_deref()
+    }
+    /// <p>S3 keys made available using this asset.</p>
+    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.keys.as_deref()
+    }
+    /// <p>The automatically-generated bucket-style alias for your Amazon S3 Access Point. Customers can access their entitled data using the S3 Access Point alias.</p>
+    pub fn s3_access_point_alias(&self) -> std::option::Option<&str> {
+        self.s3_access_point_alias.as_deref()
+    }
+    /// <p>The ARN for your Amazon S3 Access Point. Customers can also access their entitled data using the S3 Access Point ARN.</p>
+    pub fn s3_access_point_arn(&self) -> std::option::Option<&str> {
+        self.s3_access_point_arn.as_deref()
+    }
+}
+/// See [`S3DataAccessAsset`](crate::model::S3DataAccessAsset).
+pub mod s3_data_access_asset {
+
+    /// A builder for [`S3DataAccessAsset`](crate::model::S3DataAccessAsset).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) key_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) keys: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) s3_access_point_alias: std::option::Option<std::string::String>,
+        pub(crate) s3_access_point_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon S3 bucket hosting data to be shared in the S3 data access.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 bucket hosting data to be shared in the S3 data access.</p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// Appends an item to `key_prefixes`.
+        ///
+        /// To override the contents of this collection use [`set_key_prefixes`](Self::set_key_prefixes).
+        ///
+        /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
+        pub fn key_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.key_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.key_prefixes = Some(v);
+            self
+        }
+        /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
+        pub fn set_key_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.key_prefixes = input;
+            self
+        }
+        /// Appends an item to `keys`.
+        ///
+        /// To override the contents of this collection use [`set_keys`](Self::set_keys).
+        ///
+        /// <p>S3 keys made available using this asset.</p>
+        pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.keys.unwrap_or_default();
+            v.push(input.into());
+            self.keys = Some(v);
+            self
+        }
+        /// <p>S3 keys made available using this asset.</p>
+        pub fn set_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.keys = input;
+            self
+        }
+        /// <p>The automatically-generated bucket-style alias for your Amazon S3 Access Point. Customers can access their entitled data using the S3 Access Point alias.</p>
+        pub fn s3_access_point_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_access_point_alias = Some(input.into());
+            self
+        }
+        /// <p>The automatically-generated bucket-style alias for your Amazon S3 Access Point. Customers can access their entitled data using the S3 Access Point alias.</p>
+        pub fn set_s3_access_point_alias(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_access_point_alias = input;
+            self
+        }
+        /// <p>The ARN for your Amazon S3 Access Point. Customers can also access their entitled data using the S3 Access Point ARN.</p>
+        pub fn s3_access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_access_point_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for your Amazon S3 Access Point. Customers can also access their entitled data using the S3 Access Point ARN.</p>
+        pub fn set_s3_access_point_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_access_point_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3DataAccessAsset`](crate::model::S3DataAccessAsset).
+        pub fn build(self) -> crate::model::S3DataAccessAsset {
+            crate::model::S3DataAccessAsset {
+                bucket: self.bucket,
+                key_prefixes: self.key_prefixes,
+                keys: self.keys,
+                s3_access_point_alias: self.s3_access_point_alias,
+                s3_access_point_arn: self.s3_access_point_arn,
+            }
+        }
+    }
+}
+impl S3DataAccessAsset {
+    /// Creates a new builder-style object to manufacture [`S3DataAccessAsset`](crate::model::S3DataAccessAsset).
+    pub fn builder() -> crate::model::s3_data_access_asset::Builder {
+        crate::model::s3_data_access_asset::Builder::default()
     }
 }
 
@@ -1347,16 +2369,16 @@ impl RedshiftDataShareAsset {
     }
 }
 
-/// <p>The S3 object that is the asset.</p>
+/// <p>The Amazon S3 object that is the asset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3SnapshotAsset {
-    /// <p>The size of the S3 object that is the object.</p>
+    /// <p>The size of the Amazon S3 object that is the object.</p>
     #[doc(hidden)]
     pub size: f64,
 }
 impl S3SnapshotAsset {
-    /// <p>The size of the S3 object that is the object.</p>
+    /// <p>The size of the Amazon S3 object that is the object.</p>
     pub fn size(&self) -> f64 {
         self.size
     }
@@ -1370,12 +2392,12 @@ pub mod s3_snapshot_asset {
         pub(crate) size: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The size of the S3 object that is the object.</p>
+        /// <p>The size of the Amazon S3 object that is the object.</p>
         pub fn size(mut self, input: f64) -> Self {
             self.size = Some(input);
             self
         }
-        /// <p>The size of the S3 object that is the object.</p>
+        /// <p>The size of the Amazon S3 object that is the object.</p>
         pub fn set_size(mut self, input: std::option::Option<f64>) -> Self {
             self.size = input;
             self
@@ -1395,14 +2417,14 @@ impl S3SnapshotAsset {
     }
 }
 
-/// <p>An asset in AWS Data Exchange is a piece of data (S3 object) or a means of fulfilling data (Amazon Redshift datashare or Amazon API Gateway API). The asset can be a structured data file, an image file, or some other data file that can be stored as an S3 object, an Amazon API Gateway API, or an Amazon Redshift datashare. When you create an import job for your files, API Gateway APIs, or Amazon Redshift datashares, you create an asset in AWS Data Exchange.</p>
+/// <p>An asset in AWS Data Exchange is a piece of data (Amazon S3 object) or a means of fulfilling data (Amazon Redshift datashare or Amazon API Gateway API, AWS Lake Formation data permission, or Amazon S3 data access). The asset can be a structured data file, an image file, or some other data file that can be stored as an Amazon S3 object, an Amazon API Gateway API, or an Amazon Redshift datashare, an AWS Lake Formation data permission, or an Amazon S3 data access. When you create an import job for your files, API Gateway APIs, Amazon Redshift datashares, AWS Lake Formation data permission, or Amazon S3 data access, you create an asset in AWS Data Exchange.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetEntry {
     /// <p>The ARN for the asset.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Information about the asset.</p>
+    /// <p>Details about the asset.</p>
     #[doc(hidden)]
     pub asset_details: std::option::Option<crate::model::AssetDetails>,
     /// <p>The type of asset that is added to a data set.</p>
@@ -1417,7 +2439,7 @@ pub struct AssetEntry {
     /// <p>The unique identifier for the asset.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in LF-tag policy" or "Table(s) included in LF-tag policy" are used as the asset name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this asset.</p>
@@ -1435,7 +2457,7 @@ impl AssetEntry {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Information about the asset.</p>
+    /// <p>Details about the asset.</p>
     pub fn asset_details(&self) -> std::option::Option<&crate::model::AssetDetails> {
         self.asset_details.as_ref()
     }
@@ -1455,7 +2477,7 @@ impl AssetEntry {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in LF-tag policy" or "Table(s) included in LF-tag policy" are used as the asset name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -1500,12 +2522,12 @@ pub mod asset_entry {
             self.arn = input;
             self
         }
-        /// <p>Information about the asset.</p>
+        /// <p>Details about the asset.</p>
         pub fn asset_details(mut self, input: crate::model::AssetDetails) -> Self {
             self.asset_details = Some(input);
             self
         }
-        /// <p>Information about the asset.</p>
+        /// <p>Details about the asset.</p>
         pub fn set_asset_details(
             mut self,
             input: std::option::Option<crate::model::AssetDetails>,
@@ -1559,12 +2581,12 @@ pub mod asset_entry {
             self.id = input;
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in LF-tag policy" or "Table(s) included in LF-tag policy" are used as the asset name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in LF-tag policy" or "Table(s) included in LF-tag policy" are used as the asset name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1837,9 +2859,11 @@ impl JobEntry {
 /// ```text
 /// # let type = unimplemented!();
 /// match type {
+///     Type::CreateS3DataAccessFromS3Bucket => { /* ... */ },
 ///     Type::ExportAssetsToS3 => { /* ... */ },
 ///     Type::ExportAssetToSignedUrl => { /* ... */ },
 ///     Type::ExportRevisionsToS3 => { /* ... */ },
+///     Type::ImportAssetsFromLakeFormationTagPolicy => { /* ... */ },
 ///     Type::ImportAssetsFromRedshiftDataShares => { /* ... */ },
 ///     Type::ImportAssetsFromS3 => { /* ... */ },
 ///     Type::ImportAssetFromApiGatewayApi => { /* ... */ },
@@ -1878,11 +2902,15 @@ impl JobEntry {
 )]
 pub enum Type {
     #[allow(missing_docs)] // documentation missing in model
+    CreateS3DataAccessFromS3Bucket,
+    #[allow(missing_docs)] // documentation missing in model
     ExportAssetsToS3,
     #[allow(missing_docs)] // documentation missing in model
     ExportAssetToSignedUrl,
     #[allow(missing_docs)] // documentation missing in model
     ExportRevisionsToS3,
+    #[allow(missing_docs)] // documentation missing in model
+    ImportAssetsFromLakeFormationTagPolicy,
     #[allow(missing_docs)] // documentation missing in model
     ImportAssetsFromRedshiftDataShares,
     #[allow(missing_docs)] // documentation missing in model
@@ -1897,9 +2925,13 @@ pub enum Type {
 impl std::convert::From<&str> for Type {
     fn from(s: &str) -> Self {
         match s {
+            "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET" => Type::CreateS3DataAccessFromS3Bucket,
             "EXPORT_ASSETS_TO_S3" => Type::ExportAssetsToS3,
             "EXPORT_ASSET_TO_SIGNED_URL" => Type::ExportAssetToSignedUrl,
             "EXPORT_REVISIONS_TO_S3" => Type::ExportRevisionsToS3,
+            "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY" => {
+                Type::ImportAssetsFromLakeFormationTagPolicy
+            }
             "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES" => Type::ImportAssetsFromRedshiftDataShares,
             "IMPORT_ASSETS_FROM_S3" => Type::ImportAssetsFromS3,
             "IMPORT_ASSET_FROM_API_GATEWAY_API" => Type::ImportAssetFromApiGatewayApi,
@@ -1919,9 +2951,13 @@ impl Type {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Type::CreateS3DataAccessFromS3Bucket => "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET",
             Type::ExportAssetsToS3 => "EXPORT_ASSETS_TO_S3",
             Type::ExportAssetToSignedUrl => "EXPORT_ASSET_TO_SIGNED_URL",
             Type::ExportRevisionsToS3 => "EXPORT_REVISIONS_TO_S3",
+            Type::ImportAssetsFromLakeFormationTagPolicy => {
+                "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY"
+            }
             Type::ImportAssetsFromRedshiftDataShares => "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES",
             Type::ImportAssetsFromS3 => "IMPORT_ASSETS_FROM_S3",
             Type::ImportAssetFromApiGatewayApi => "IMPORT_ASSET_FROM_API_GATEWAY_API",
@@ -1932,9 +2968,11 @@ impl Type {
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET",
             "EXPORT_ASSETS_TO_S3",
             "EXPORT_ASSET_TO_SIGNED_URL",
             "EXPORT_REVISIONS_TO_S3",
+            "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY",
             "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES",
             "IMPORT_ASSETS_FROM_S3",
             "IMPORT_ASSET_FROM_API_GATEWAY_API",
@@ -2342,7 +3380,9 @@ impl AsRef<str> for JobErrorResourceTypes {
 /// ```text
 /// # let joberrorlimitname = unimplemented!();
 /// match joberrorlimitname {
+///     JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision => { /* ... */ },
 ///     JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision => { /* ... */ },
+///     JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision => { /* ... */ },
 ///     JobErrorLimitName::AssetSizeInGb => { /* ... */ },
 ///     JobErrorLimitName::AssetsPerRevision => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -2379,7 +3419,11 @@ impl AsRef<str> for JobErrorResourceTypes {
 )]
 pub enum JobErrorLimitName {
     #[allow(missing_docs)] // documentation missing in model
+    AwsLakeFormationDataPermissionAssetsPerRevision,
+    #[allow(missing_docs)] // documentation missing in model
     AmazonRedshiftDatashareAssetsPerRevision,
+    #[allow(missing_docs)] // documentation missing in model
+    AmazonS3DataAccessAssetsPerRevision,
     #[allow(missing_docs)] // documentation missing in model
     AssetSizeInGb,
     #[allow(missing_docs)] // documentation missing in model
@@ -2390,8 +3434,14 @@ pub enum JobErrorLimitName {
 impl std::convert::From<&str> for JobErrorLimitName {
     fn from(s: &str) -> Self {
         match s {
+            "AWS Lake Formation data permission assets per revision" => {
+                JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision
+            }
             "Amazon Redshift datashare assets per revision" => {
                 JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision
+            }
+            "Amazon S3 data access assets per revision" => {
+                JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision
             }
             "Asset size in GB" => JobErrorLimitName::AssetSizeInGb,
             "Assets per revision" => JobErrorLimitName::AssetsPerRevision,
@@ -2412,8 +3462,14 @@ impl JobErrorLimitName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision => {
+                "AWS Lake Formation data permission assets per revision"
+            }
             JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision => {
                 "Amazon Redshift datashare assets per revision"
+            }
+            JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision => {
+                "Amazon S3 data access assets per revision"
             }
             JobErrorLimitName::AssetSizeInGb => "Asset size in GB",
             JobErrorLimitName::AssetsPerRevision => "Assets per revision",
@@ -2423,7 +3479,9 @@ impl JobErrorLimitName {
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AWS Lake Formation data permission assets per revision",
             "Amazon Redshift datashare assets per revision",
+            "Amazon S3 data access assets per revision",
             "Asset size in GB",
             "Assets per revision",
         ]
@@ -2443,7 +3501,7 @@ pub struct Details {
     #[doc(hidden)]
     pub import_asset_from_signed_url_job_error_details:
         std::option::Option<crate::model::ImportAssetFromSignedUrlJobErrorDetails>,
-    /// <p>Information about the job error.</p>
+    /// <p>Details about the job error.</p>
     #[doc(hidden)]
     pub import_assets_from_s3_job_error_details:
         std::option::Option<std::vec::Vec<crate::model::AssetSourceEntry>>,
@@ -2455,7 +3513,7 @@ impl Details {
     ) -> std::option::Option<&crate::model::ImportAssetFromSignedUrlJobErrorDetails> {
         self.import_asset_from_signed_url_job_error_details.as_ref()
     }
-    /// <p>Information about the job error.</p>
+    /// <p>Details about the job error.</p>
     pub fn import_assets_from_s3_job_error_details(
         &self,
     ) -> std::option::Option<&[crate::model::AssetSourceEntry]> {
@@ -2494,7 +3552,7 @@ pub mod details {
         ///
         /// To override the contents of this collection use [`set_import_assets_from_s3_job_error_details`](Self::set_import_assets_from_s3_job_error_details).
         ///
-        /// <p>Information about the job error.</p>
+        /// <p>Details about the job error.</p>
         pub fn import_assets_from_s3_job_error_details(
             mut self,
             input: crate::model::AssetSourceEntry,
@@ -2506,7 +3564,7 @@ pub mod details {
             self.import_assets_from_s3_job_error_details = Some(v);
             self
         }
-        /// <p>Information about the job error.</p>
+        /// <p>Details about the job error.</p>
         pub fn set_import_assets_from_s3_job_error_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetSourceEntry>>,
@@ -2536,7 +3594,7 @@ impl Details {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetSourceEntry {
-    /// <p>The S3 bucket that's part of the source of the asset.</p>
+    /// <p>The Amazon S3 bucket that's part of the source of the asset.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name of the object in Amazon S3 for the asset.</p>
@@ -2544,7 +3602,7 @@ pub struct AssetSourceEntry {
     pub key: std::option::Option<std::string::String>,
 }
 impl AssetSourceEntry {
-    /// <p>The S3 bucket that's part of the source of the asset.</p>
+    /// <p>The Amazon S3 bucket that's part of the source of the asset.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -2563,12 +3621,12 @@ pub mod asset_source_entry {
         pub(crate) key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The S3 bucket that's part of the source of the asset.</p>
+        /// <p>The Amazon S3 bucket that's part of the source of the asset.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The S3 bucket that's part of the source of the asset.</p>
+        /// <p>The Amazon S3 bucket that's part of the source of the asset.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -2599,16 +3657,16 @@ impl AssetSourceEntry {
     }
 }
 
-/// <p>Information about the job error.</p>
+/// <p>Details about the job error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportAssetFromSignedUrlJobErrorDetails {
-    /// <p>Information about the job error.</p>
+    /// <p>Details about the job error.</p>
     #[doc(hidden)]
     pub asset_name: std::option::Option<std::string::String>,
 }
 impl ImportAssetFromSignedUrlJobErrorDetails {
-    /// <p>Information about the job error.</p>
+    /// <p>Details about the job error.</p>
     pub fn asset_name(&self) -> std::option::Option<&str> {
         self.asset_name.as_deref()
     }
@@ -2622,12 +3680,12 @@ pub mod import_asset_from_signed_url_job_error_details {
         pub(crate) asset_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about the job error.</p>
+        /// <p>Details about the job error.</p>
         pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_name = Some(input.into());
             self
         }
-        /// <p>Information about the job error.</p>
+        /// <p>Details about the job error.</p>
         pub fn set_asset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asset_name = input;
             self
@@ -2800,6 +3858,14 @@ pub struct ResponseDetails {
     #[doc(hidden)]
     pub import_asset_from_api_gateway_api:
         std::option::Option<crate::model::ImportAssetFromApiGatewayApiResponseDetails>,
+    /// <p>Response details from the CreateS3DataAccessFromS3Bucket job.</p>
+    #[doc(hidden)]
+    pub create_s3_data_access_from_s3_bucket:
+        std::option::Option<crate::model::CreateS3DataAccessFromS3BucketResponseDetails>,
+    /// <p>Response details from the ImportAssetsFromLakeFormationTagPolicy job.</p>
+    #[doc(hidden)]
+    pub import_assets_from_lake_formation_tag_policy:
+        std::option::Option<crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails>,
 }
 impl ResponseDetails {
     /// <p>Details for the export to signed URL response.</p>
@@ -2844,6 +3910,19 @@ impl ResponseDetails {
     ) -> std::option::Option<&crate::model::ImportAssetFromApiGatewayApiResponseDetails> {
         self.import_asset_from_api_gateway_api.as_ref()
     }
+    /// <p>Response details from the CreateS3DataAccessFromS3Bucket job.</p>
+    pub fn create_s3_data_access_from_s3_bucket(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateS3DataAccessFromS3BucketResponseDetails> {
+        self.create_s3_data_access_from_s3_bucket.as_ref()
+    }
+    /// <p>Response details from the ImportAssetsFromLakeFormationTagPolicy job.</p>
+    pub fn import_assets_from_lake_formation_tag_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails>
+    {
+        self.import_assets_from_lake_formation_tag_policy.as_ref()
+    }
 }
 /// See [`ResponseDetails`](crate::model::ResponseDetails).
 pub mod response_details {
@@ -2865,6 +3944,11 @@ pub mod response_details {
             std::option::Option<crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails>,
         pub(crate) import_asset_from_api_gateway_api:
             std::option::Option<crate::model::ImportAssetFromApiGatewayApiResponseDetails>,
+        pub(crate) create_s3_data_access_from_s3_bucket:
+            std::option::Option<crate::model::CreateS3DataAccessFromS3BucketResponseDetails>,
+        pub(crate) import_assets_from_lake_formation_tag_policy: std::option::Option<
+            crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails,
+        >,
     }
     impl Builder {
         /// <p>Details for the export to signed URL response.</p>
@@ -2981,6 +4065,40 @@ pub mod response_details {
             self.import_asset_from_api_gateway_api = input;
             self
         }
+        /// <p>Response details from the CreateS3DataAccessFromS3Bucket job.</p>
+        pub fn create_s3_data_access_from_s3_bucket(
+            mut self,
+            input: crate::model::CreateS3DataAccessFromS3BucketResponseDetails,
+        ) -> Self {
+            self.create_s3_data_access_from_s3_bucket = Some(input);
+            self
+        }
+        /// <p>Response details from the CreateS3DataAccessFromS3Bucket job.</p>
+        pub fn set_create_s3_data_access_from_s3_bucket(
+            mut self,
+            input: std::option::Option<crate::model::CreateS3DataAccessFromS3BucketResponseDetails>,
+        ) -> Self {
+            self.create_s3_data_access_from_s3_bucket = input;
+            self
+        }
+        /// <p>Response details from the ImportAssetsFromLakeFormationTagPolicy job.</p>
+        pub fn import_assets_from_lake_formation_tag_policy(
+            mut self,
+            input: crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails,
+        ) -> Self {
+            self.import_assets_from_lake_formation_tag_policy = Some(input);
+            self
+        }
+        /// <p>Response details from the ImportAssetsFromLakeFormationTagPolicy job.</p>
+        pub fn set_import_assets_from_lake_formation_tag_policy(
+            mut self,
+            input: std::option::Option<
+                crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails,
+            >,
+        ) -> Self {
+            self.import_assets_from_lake_formation_tag_policy = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResponseDetails`](crate::model::ResponseDetails).
         pub fn build(self) -> crate::model::ResponseDetails {
             crate::model::ResponseDetails {
@@ -2992,6 +4110,9 @@ pub mod response_details {
                 import_assets_from_redshift_data_shares: self
                     .import_assets_from_redshift_data_shares,
                 import_asset_from_api_gateway_api: self.import_asset_from_api_gateway_api,
+                create_s3_data_access_from_s3_bucket: self.create_s3_data_access_from_s3_bucket,
+                import_assets_from_lake_formation_tag_policy: self
+                    .import_assets_from_lake_formation_tag_policy,
             }
         }
     }
@@ -3000,6 +4121,706 @@ impl ResponseDetails {
     /// Creates a new builder-style object to manufacture [`ResponseDetails`](crate::model::ResponseDetails).
     pub fn builder() -> crate::model::response_details::Builder {
         crate::model::response_details::Builder::default()
+    }
+}
+
+/// <p>Details from an import AWS Lake Formation tag policy job response.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ImportAssetsFromLakeFormationTagPolicyResponseDetails {
+    /// <p>The identifier for the AWS Glue Data Catalog.</p>
+    #[doc(hidden)]
+    pub catalog_id: std::option::Option<std::string::String>,
+    /// <p>A structure for the database object.</p>
+    #[doc(hidden)]
+    pub database: std::option::Option<crate::model::DatabaseLfTagPolicyAndPermissions>,
+    /// <p>A structure for the table object.</p>
+    #[doc(hidden)]
+    pub table: std::option::Option<crate::model::TableLfTagPolicyAndPermissions>,
+    /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the data set associated with this import job.</p>
+    #[doc(hidden)]
+    pub data_set_id: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the revision associated with this import job.</p>
+    #[doc(hidden)]
+    pub revision_id: std::option::Option<std::string::String>,
+}
+impl ImportAssetsFromLakeFormationTagPolicyResponseDetails {
+    /// <p>The identifier for the AWS Glue Data Catalog.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>A structure for the database object.</p>
+    pub fn database(
+        &self,
+    ) -> std::option::Option<&crate::model::DatabaseLfTagPolicyAndPermissions> {
+        self.database.as_ref()
+    }
+    /// <p>A structure for the table object.</p>
+    pub fn table(&self) -> std::option::Option<&crate::model::TableLfTagPolicyAndPermissions> {
+        self.table.as_ref()
+    }
+    /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The unique identifier for the data set associated with this import job.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for the revision associated with this import job.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
+/// See [`ImportAssetsFromLakeFormationTagPolicyResponseDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails).
+pub mod import_assets_from_lake_formation_tag_policy_response_details {
+
+    /// A builder for [`ImportAssetsFromLakeFormationTagPolicyResponseDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_id: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<crate::model::DatabaseLfTagPolicyAndPermissions>,
+        pub(crate) table: std::option::Option<crate::model::TableLfTagPolicyAndPermissions>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) data_set_id: std::option::Option<std::string::String>,
+        pub(crate) revision_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for the AWS Glue Data Catalog.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the AWS Glue Data Catalog.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_id = input;
+            self
+        }
+        /// <p>A structure for the database object.</p>
+        pub fn database(mut self, input: crate::model::DatabaseLfTagPolicyAndPermissions) -> Self {
+            self.database = Some(input);
+            self
+        }
+        /// <p>A structure for the database object.</p>
+        pub fn set_database(
+            mut self,
+            input: std::option::Option<crate::model::DatabaseLfTagPolicyAndPermissions>,
+        ) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>A structure for the table object.</p>
+        pub fn table(mut self, input: crate::model::TableLfTagPolicyAndPermissions) -> Self {
+            self.table = Some(input);
+            self
+        }
+        /// <p>A structure for the table object.</p>
+        pub fn set_table(
+            mut self,
+            input: std::option::Option<crate::model::TableLfTagPolicyAndPermissions>,
+        ) -> Self {
+            self.table = input;
+            self
+        }
+        /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The unique identifier for the data set associated with this import job.</p>
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_set_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the data set associated with this import job.</p>
+        pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_set_id = input;
+            self
+        }
+        /// <p>The unique identifier for the revision associated with this import job.</p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the revision associated with this import job.</p>
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportAssetsFromLakeFormationTagPolicyResponseDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails).
+        pub fn build(self) -> crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails {
+            crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails {
+                catalog_id: self.catalog_id,
+                database: self.database,
+                table: self.table,
+                role_arn: self.role_arn,
+                data_set_id: self.data_set_id,
+                revision_id: self.revision_id,
+            }
+        }
+    }
+}
+impl ImportAssetsFromLakeFormationTagPolicyResponseDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetsFromLakeFormationTagPolicyResponseDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails).
+    pub fn builder(
+    ) -> crate::model::import_assets_from_lake_formation_tag_policy_response_details::Builder {
+        crate::model::import_assets_from_lake_formation_tag_policy_response_details::Builder::default()
+    }
+}
+
+/// <p>The LF-tag policy and permissions that apply to table resources.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TableLfTagPolicyAndPermissions {
+    /// <p>A list of LF-tag conditions that apply to table resources.</p>
+    #[doc(hidden)]
+    pub expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
+    /// <p>The permissions granted to subscribers on table resources.</p>
+    #[doc(hidden)]
+    pub permissions: std::option::Option<std::vec::Vec<crate::model::TableTagPolicyLfPermission>>,
+}
+impl TableLfTagPolicyAndPermissions {
+    /// <p>A list of LF-tag conditions that apply to table resources.</p>
+    pub fn expression(&self) -> std::option::Option<&[crate::model::LfTag]> {
+        self.expression.as_deref()
+    }
+    /// <p>The permissions granted to subscribers on table resources.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::TableTagPolicyLfPermission]> {
+        self.permissions.as_deref()
+    }
+}
+/// See [`TableLfTagPolicyAndPermissions`](crate::model::TableLfTagPolicyAndPermissions).
+pub mod table_lf_tag_policy_and_permissions {
+
+    /// A builder for [`TableLfTagPolicyAndPermissions`](crate::model::TableLfTagPolicyAndPermissions).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
+        pub(crate) permissions:
+            std::option::Option<std::vec::Vec<crate::model::TableTagPolicyLfPermission>>,
+    }
+    impl Builder {
+        /// Appends an item to `expression`.
+        ///
+        /// To override the contents of this collection use [`set_expression`](Self::set_expression).
+        ///
+        /// <p>A list of LF-tag conditions that apply to table resources.</p>
+        pub fn expression(mut self, input: crate::model::LfTag) -> Self {
+            let mut v = self.expression.unwrap_or_default();
+            v.push(input);
+            self.expression = Some(v);
+            self
+        }
+        /// <p>A list of LF-tag conditions that apply to table resources.</p>
+        pub fn set_expression(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
+        ) -> Self {
+            self.expression = input;
+            self
+        }
+        /// Appends an item to `permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>The permissions granted to subscribers on table resources.</p>
+        pub fn permissions(mut self, input: crate::model::TableTagPolicyLfPermission) -> Self {
+            let mut v = self.permissions.unwrap_or_default();
+            v.push(input);
+            self.permissions = Some(v);
+            self
+        }
+        /// <p>The permissions granted to subscribers on table resources.</p>
+        pub fn set_permissions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TableTagPolicyLfPermission>>,
+        ) -> Self {
+            self.permissions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TableLfTagPolicyAndPermissions`](crate::model::TableLfTagPolicyAndPermissions).
+        pub fn build(self) -> crate::model::TableLfTagPolicyAndPermissions {
+            crate::model::TableLfTagPolicyAndPermissions {
+                expression: self.expression,
+                permissions: self.permissions,
+            }
+        }
+    }
+}
+impl TableLfTagPolicyAndPermissions {
+    /// Creates a new builder-style object to manufacture [`TableLfTagPolicyAndPermissions`](crate::model::TableLfTagPolicyAndPermissions).
+    pub fn builder() -> crate::model::table_lf_tag_policy_and_permissions::Builder {
+        crate::model::table_lf_tag_policy_and_permissions::Builder::default()
+    }
+}
+
+/// When writing a match expression against `TableTagPolicyLfPermission`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let tabletagpolicylfpermission = unimplemented!();
+/// match tabletagpolicylfpermission {
+///     TableTagPolicyLfPermission::Describe => { /* ... */ },
+///     TableTagPolicyLfPermission::Select => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `tabletagpolicylfpermission` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TableTagPolicyLfPermission::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TableTagPolicyLfPermission::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TableTagPolicyLfPermission::NewFeature` is defined.
+/// Specifically, when `tabletagpolicylfpermission` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TableTagPolicyLfPermission::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TableTagPolicyLfPermission {
+    #[allow(missing_docs)] // documentation missing in model
+    Describe,
+    #[allow(missing_docs)] // documentation missing in model
+    Select,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for TableTagPolicyLfPermission {
+    fn from(s: &str) -> Self {
+        match s {
+            "DESCRIBE" => TableTagPolicyLfPermission::Describe,
+            "SELECT" => TableTagPolicyLfPermission::Select,
+            other => TableTagPolicyLfPermission::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for TableTagPolicyLfPermission {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TableTagPolicyLfPermission::from(s))
+    }
+}
+impl TableTagPolicyLfPermission {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TableTagPolicyLfPermission::Describe => "DESCRIBE",
+            TableTagPolicyLfPermission::Select => "SELECT",
+            TableTagPolicyLfPermission::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DESCRIBE", "SELECT"]
+    }
+}
+impl AsRef<str> for TableTagPolicyLfPermission {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The LF-tag policy and permissions for database resources.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DatabaseLfTagPolicyAndPermissions {
+    /// <p>A list of LF-tag conditions that apply to database resources.</p>
+    #[doc(hidden)]
+    pub expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
+    /// <p>The permissions granted to subscribers on database resources.</p>
+    #[doc(hidden)]
+    pub permissions:
+        std::option::Option<std::vec::Vec<crate::model::DatabaseLfTagPolicyPermission>>,
+}
+impl DatabaseLfTagPolicyAndPermissions {
+    /// <p>A list of LF-tag conditions that apply to database resources.</p>
+    pub fn expression(&self) -> std::option::Option<&[crate::model::LfTag]> {
+        self.expression.as_deref()
+    }
+    /// <p>The permissions granted to subscribers on database resources.</p>
+    pub fn permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::DatabaseLfTagPolicyPermission]> {
+        self.permissions.as_deref()
+    }
+}
+/// See [`DatabaseLfTagPolicyAndPermissions`](crate::model::DatabaseLfTagPolicyAndPermissions).
+pub mod database_lf_tag_policy_and_permissions {
+
+    /// A builder for [`DatabaseLfTagPolicyAndPermissions`](crate::model::DatabaseLfTagPolicyAndPermissions).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
+        pub(crate) permissions:
+            std::option::Option<std::vec::Vec<crate::model::DatabaseLfTagPolicyPermission>>,
+    }
+    impl Builder {
+        /// Appends an item to `expression`.
+        ///
+        /// To override the contents of this collection use [`set_expression`](Self::set_expression).
+        ///
+        /// <p>A list of LF-tag conditions that apply to database resources.</p>
+        pub fn expression(mut self, input: crate::model::LfTag) -> Self {
+            let mut v = self.expression.unwrap_or_default();
+            v.push(input);
+            self.expression = Some(v);
+            self
+        }
+        /// <p>A list of LF-tag conditions that apply to database resources.</p>
+        pub fn set_expression(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
+        ) -> Self {
+            self.expression = input;
+            self
+        }
+        /// Appends an item to `permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>The permissions granted to subscribers on database resources.</p>
+        pub fn permissions(mut self, input: crate::model::DatabaseLfTagPolicyPermission) -> Self {
+            let mut v = self.permissions.unwrap_or_default();
+            v.push(input);
+            self.permissions = Some(v);
+            self
+        }
+        /// <p>The permissions granted to subscribers on database resources.</p>
+        pub fn set_permissions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DatabaseLfTagPolicyPermission>>,
+        ) -> Self {
+            self.permissions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DatabaseLfTagPolicyAndPermissions`](crate::model::DatabaseLfTagPolicyAndPermissions).
+        pub fn build(self) -> crate::model::DatabaseLfTagPolicyAndPermissions {
+            crate::model::DatabaseLfTagPolicyAndPermissions {
+                expression: self.expression,
+                permissions: self.permissions,
+            }
+        }
+    }
+}
+impl DatabaseLfTagPolicyAndPermissions {
+    /// Creates a new builder-style object to manufacture [`DatabaseLfTagPolicyAndPermissions`](crate::model::DatabaseLfTagPolicyAndPermissions).
+    pub fn builder() -> crate::model::database_lf_tag_policy_and_permissions::Builder {
+        crate::model::database_lf_tag_policy_and_permissions::Builder::default()
+    }
+}
+
+/// When writing a match expression against `DatabaseLfTagPolicyPermission`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let databaselftagpolicypermission = unimplemented!();
+/// match databaselftagpolicypermission {
+///     DatabaseLfTagPolicyPermission::Describe => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `databaselftagpolicypermission` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DatabaseLfTagPolicyPermission::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DatabaseLfTagPolicyPermission::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DatabaseLfTagPolicyPermission::NewFeature` is defined.
+/// Specifically, when `databaselftagpolicypermission` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DatabaseLfTagPolicyPermission::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DatabaseLfTagPolicyPermission {
+    #[allow(missing_docs)] // documentation missing in model
+    Describe,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DatabaseLfTagPolicyPermission {
+    fn from(s: &str) -> Self {
+        match s {
+            "DESCRIBE" => DatabaseLfTagPolicyPermission::Describe,
+            other => DatabaseLfTagPolicyPermission::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for DatabaseLfTagPolicyPermission {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DatabaseLfTagPolicyPermission::from(s))
+    }
+}
+impl DatabaseLfTagPolicyPermission {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DatabaseLfTagPolicyPermission::Describe => "DESCRIBE",
+            DatabaseLfTagPolicyPermission::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DESCRIBE"]
+    }
+}
+impl AsRef<str> for DatabaseLfTagPolicyPermission {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Details about the response of the operation to create an S3 data access from an S3 bucket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateS3DataAccessFromS3BucketResponseDetails {
+    /// <p>Details about the asset source from an Amazon S3 bucket.</p>
+    #[doc(hidden)]
+    pub asset_source: std::option::Option<crate::model::S3DataAccessAssetSourceEntry>,
+    /// <p>The unique identifier for this data set.</p>
+    #[doc(hidden)]
+    pub data_set_id: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the revision.</p>
+    #[doc(hidden)]
+    pub revision_id: std::option::Option<std::string::String>,
+}
+impl CreateS3DataAccessFromS3BucketResponseDetails {
+    /// <p>Details about the asset source from an Amazon S3 bucket.</p>
+    pub fn asset_source(&self) -> std::option::Option<&crate::model::S3DataAccessAssetSourceEntry> {
+        self.asset_source.as_ref()
+    }
+    /// <p>The unique identifier for this data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for the revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
+/// See [`CreateS3DataAccessFromS3BucketResponseDetails`](crate::model::CreateS3DataAccessFromS3BucketResponseDetails).
+pub mod create_s3_data_access_from_s3_bucket_response_details {
+
+    /// A builder for [`CreateS3DataAccessFromS3BucketResponseDetails`](crate::model::CreateS3DataAccessFromS3BucketResponseDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) asset_source: std::option::Option<crate::model::S3DataAccessAssetSourceEntry>,
+        pub(crate) data_set_id: std::option::Option<std::string::String>,
+        pub(crate) revision_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Details about the asset source from an Amazon S3 bucket.</p>
+        pub fn asset_source(mut self, input: crate::model::S3DataAccessAssetSourceEntry) -> Self {
+            self.asset_source = Some(input);
+            self
+        }
+        /// <p>Details about the asset source from an Amazon S3 bucket.</p>
+        pub fn set_asset_source(
+            mut self,
+            input: std::option::Option<crate::model::S3DataAccessAssetSourceEntry>,
+        ) -> Self {
+            self.asset_source = input;
+            self
+        }
+        /// <p>The unique identifier for this data set.</p>
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_set_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for this data set.</p>
+        pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_set_id = input;
+            self
+        }
+        /// <p>The unique identifier for the revision.</p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the revision.</p>
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateS3DataAccessFromS3BucketResponseDetails`](crate::model::CreateS3DataAccessFromS3BucketResponseDetails).
+        pub fn build(self) -> crate::model::CreateS3DataAccessFromS3BucketResponseDetails {
+            crate::model::CreateS3DataAccessFromS3BucketResponseDetails {
+                asset_source: self.asset_source,
+                data_set_id: self.data_set_id,
+                revision_id: self.revision_id,
+            }
+        }
+    }
+}
+impl CreateS3DataAccessFromS3BucketResponseDetails {
+    /// Creates a new builder-style object to manufacture [`CreateS3DataAccessFromS3BucketResponseDetails`](crate::model::CreateS3DataAccessFromS3BucketResponseDetails).
+    pub fn builder() -> crate::model::create_s3_data_access_from_s3_bucket_response_details::Builder
+    {
+        crate::model::create_s3_data_access_from_s3_bucket_response_details::Builder::default()
+    }
+}
+
+/// <p>Source details for an Amazon S3 data access asset.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct S3DataAccessAssetSourceEntry {
+    /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
+    #[doc(hidden)]
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>Organizes Amazon S3 asset key prefixes stored in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
+    pub key_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The keys used to create the Amazon S3 data access.</p>
+    #[doc(hidden)]
+    pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl S3DataAccessAssetSourceEntry {
+    /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Organizes Amazon S3 asset key prefixes stored in an Amazon S3 bucket.</p>
+    pub fn key_prefixes(&self) -> std::option::Option<&[std::string::String]> {
+        self.key_prefixes.as_deref()
+    }
+    /// <p>The keys used to create the Amazon S3 data access.</p>
+    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.keys.as_deref()
+    }
+}
+/// See [`S3DataAccessAssetSourceEntry`](crate::model::S3DataAccessAssetSourceEntry).
+pub mod s3_data_access_asset_source_entry {
+
+    /// A builder for [`S3DataAccessAssetSourceEntry`](crate::model::S3DataAccessAssetSourceEntry).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) key_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// Appends an item to `key_prefixes`.
+        ///
+        /// To override the contents of this collection use [`set_key_prefixes`](Self::set_key_prefixes).
+        ///
+        /// <p>Organizes Amazon S3 asset key prefixes stored in an Amazon S3 bucket.</p>
+        pub fn key_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.key_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.key_prefixes = Some(v);
+            self
+        }
+        /// <p>Organizes Amazon S3 asset key prefixes stored in an Amazon S3 bucket.</p>
+        pub fn set_key_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.key_prefixes = input;
+            self
+        }
+        /// Appends an item to `keys`.
+        ///
+        /// To override the contents of this collection use [`set_keys`](Self::set_keys).
+        ///
+        /// <p>The keys used to create the Amazon S3 data access.</p>
+        pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.keys.unwrap_or_default();
+            v.push(input.into());
+            self.keys = Some(v);
+            self
+        }
+        /// <p>The keys used to create the Amazon S3 data access.</p>
+        pub fn set_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.keys = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3DataAccessAssetSourceEntry`](crate::model::S3DataAccessAssetSourceEntry).
+        pub fn build(self) -> crate::model::S3DataAccessAssetSourceEntry {
+            crate::model::S3DataAccessAssetSourceEntry {
+                bucket: self.bucket,
+                key_prefixes: self.key_prefixes,
+                keys: self.keys,
+            }
+        }
+    }
+}
+impl S3DataAccessAssetSourceEntry {
+    /// Creates a new builder-style object to manufacture [`S3DataAccessAssetSourceEntry`](crate::model::S3DataAccessAssetSourceEntry).
+    pub fn builder() -> crate::model::s3_data_access_asset_source_entry::Builder {
+        crate::model::s3_data_access_asset_source_entry::Builder::default()
     }
 }
 
@@ -3795,7 +5616,7 @@ impl ExportRevisionsToS3ResponseDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevisionDestinationEntry {
-    /// <p>The S3 bucket that is the destination for the assets in the revision.</p>
+    /// <p>The Amazon S3 bucket that is the destination for the assets in the revision.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
@@ -3806,7 +5627,7 @@ pub struct RevisionDestinationEntry {
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl RevisionDestinationEntry {
-    /// <p>The S3 bucket that is the destination for the assets in the revision.</p>
+    /// <p>The Amazon S3 bucket that is the destination for the assets in the revision.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -3830,12 +5651,12 @@ pub mod revision_destination_entry {
         pub(crate) revision_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The S3 bucket that is the destination for the assets in the revision.</p>
+        /// <p>The Amazon S3 bucket that is the destination for the assets in the revision.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The S3 bucket that is the destination for the assets in the revision.</p>
+        /// <p>The Amazon S3 bucket that is the destination for the assets in the revision.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -4004,7 +5825,7 @@ pub struct AssetDestinationEntry {
     /// <p>The unique identifier for the asset.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
-    /// <p>The S3 bucket that is the destination for the asset.</p>
+    /// <p>The Amazon S3 bucket that is the destination for the asset.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name of the object in Amazon S3 for the asset.</p>
@@ -4016,7 +5837,7 @@ impl AssetDestinationEntry {
     pub fn asset_id(&self) -> std::option::Option<&str> {
         self.asset_id.as_deref()
     }
-    /// <p>The S3 bucket that is the destination for the asset.</p>
+    /// <p>The Amazon S3 bucket that is the destination for the asset.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -4046,12 +5867,12 @@ pub mod asset_destination_entry {
             self.asset_id = input;
             self
         }
-        /// <p>The S3 bucket that is the destination for the asset.</p>
+        /// <p>The Amazon S3 bucket that is the destination for the asset.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The S3 bucket that is the destination for the asset.</p>
+        /// <p>The Amazon S3 bucket that is the destination for the asset.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -4603,7 +6424,7 @@ pub struct RevisionEntry {
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The unique identifier for the data set associated with this revision.</p>
+    /// <p>The unique identifier for the data set associated with the data set revision.</p>
     #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
@@ -4641,7 +6462,7 @@ impl RevisionEntry {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The unique identifier for the data set associated with this revision.</p>
+    /// <p>The unique identifier for the data set associated with the data set revision.</p>
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
@@ -4726,12 +6547,12 @@ pub mod revision_entry {
             self.created_at = input;
             self
         }
-        /// <p>The unique identifier for the data set associated with this revision.</p>
+        /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the data set associated with this revision.</p>
+        /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_set_id = input;
             self
@@ -4859,7 +6680,7 @@ pub struct RequestDetails {
     #[doc(hidden)]
     pub import_asset_from_signed_url:
         std::option::Option<crate::model::ImportAssetFromSignedUrlRequestDetails>,
-    /// <p>Information about the import asset from API Gateway API request.</p>
+    /// <p>Details about the import asset from API Gateway API request.</p>
     #[doc(hidden)]
     pub import_assets_from_s3: std::option::Option<crate::model::ImportAssetsFromS3RequestDetails>,
     /// <p>Details from an import from Amazon Redshift datashare request.</p>
@@ -4870,6 +6691,14 @@ pub struct RequestDetails {
     #[doc(hidden)]
     pub import_asset_from_api_gateway_api:
         std::option::Option<crate::model::ImportAssetFromApiGatewayApiRequestDetails>,
+    /// <p>Details of the request to create S3 data access from the Amazon S3 bucket.</p>
+    #[doc(hidden)]
+    pub create_s3_data_access_from_s3_bucket:
+        std::option::Option<crate::model::CreateS3DataAccessFromS3BucketRequestDetails>,
+    /// <p>Request details for the ImportAssetsFromLakeFormationTagPolicy job.</p>
+    #[doc(hidden)]
+    pub import_assets_from_lake_formation_tag_policy:
+        std::option::Option<crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails>,
 }
 impl RequestDetails {
     /// <p>Details about the export to signed URL request.</p>
@@ -4896,7 +6725,7 @@ impl RequestDetails {
     ) -> std::option::Option<&crate::model::ImportAssetFromSignedUrlRequestDetails> {
         self.import_asset_from_signed_url.as_ref()
     }
-    /// <p>Information about the import asset from API Gateway API request.</p>
+    /// <p>Details about the import asset from API Gateway API request.</p>
     pub fn import_assets_from_s3(
         &self,
     ) -> std::option::Option<&crate::model::ImportAssetsFromS3RequestDetails> {
@@ -4913,6 +6742,19 @@ impl RequestDetails {
         &self,
     ) -> std::option::Option<&crate::model::ImportAssetFromApiGatewayApiRequestDetails> {
         self.import_asset_from_api_gateway_api.as_ref()
+    }
+    /// <p>Details of the request to create S3 data access from the Amazon S3 bucket.</p>
+    pub fn create_s3_data_access_from_s3_bucket(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateS3DataAccessFromS3BucketRequestDetails> {
+        self.create_s3_data_access_from_s3_bucket.as_ref()
+    }
+    /// <p>Request details for the ImportAssetsFromLakeFormationTagPolicy job.</p>
+    pub fn import_assets_from_lake_formation_tag_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails>
+    {
+        self.import_assets_from_lake_formation_tag_policy.as_ref()
     }
 }
 /// See [`RequestDetails`](crate::model::RequestDetails).
@@ -4935,6 +6777,10 @@ pub mod request_details {
             std::option::Option<crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails>,
         pub(crate) import_asset_from_api_gateway_api:
             std::option::Option<crate::model::ImportAssetFromApiGatewayApiRequestDetails>,
+        pub(crate) create_s3_data_access_from_s3_bucket:
+            std::option::Option<crate::model::CreateS3DataAccessFromS3BucketRequestDetails>,
+        pub(crate) import_assets_from_lake_formation_tag_policy:
+            std::option::Option<crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails>,
     }
     impl Builder {
         /// <p>Details about the export to signed URL request.</p>
@@ -5001,7 +6847,7 @@ pub mod request_details {
             self.import_asset_from_signed_url = input;
             self
         }
-        /// <p>Information about the import asset from API Gateway API request.</p>
+        /// <p>Details about the import asset from API Gateway API request.</p>
         pub fn import_assets_from_s3(
             mut self,
             input: crate::model::ImportAssetsFromS3RequestDetails,
@@ -5009,7 +6855,7 @@ pub mod request_details {
             self.import_assets_from_s3 = Some(input);
             self
         }
-        /// <p>Information about the import asset from API Gateway API request.</p>
+        /// <p>Details about the import asset from API Gateway API request.</p>
         pub fn set_import_assets_from_s3(
             mut self,
             input: std::option::Option<crate::model::ImportAssetsFromS3RequestDetails>,
@@ -5051,6 +6897,40 @@ pub mod request_details {
             self.import_asset_from_api_gateway_api = input;
             self
         }
+        /// <p>Details of the request to create S3 data access from the Amazon S3 bucket.</p>
+        pub fn create_s3_data_access_from_s3_bucket(
+            mut self,
+            input: crate::model::CreateS3DataAccessFromS3BucketRequestDetails,
+        ) -> Self {
+            self.create_s3_data_access_from_s3_bucket = Some(input);
+            self
+        }
+        /// <p>Details of the request to create S3 data access from the Amazon S3 bucket.</p>
+        pub fn set_create_s3_data_access_from_s3_bucket(
+            mut self,
+            input: std::option::Option<crate::model::CreateS3DataAccessFromS3BucketRequestDetails>,
+        ) -> Self {
+            self.create_s3_data_access_from_s3_bucket = input;
+            self
+        }
+        /// <p>Request details for the ImportAssetsFromLakeFormationTagPolicy job.</p>
+        pub fn import_assets_from_lake_formation_tag_policy(
+            mut self,
+            input: crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails,
+        ) -> Self {
+            self.import_assets_from_lake_formation_tag_policy = Some(input);
+            self
+        }
+        /// <p>Request details for the ImportAssetsFromLakeFormationTagPolicy job.</p>
+        pub fn set_import_assets_from_lake_formation_tag_policy(
+            mut self,
+            input: std::option::Option<
+                crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails,
+            >,
+        ) -> Self {
+            self.import_assets_from_lake_formation_tag_policy = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RequestDetails`](crate::model::RequestDetails).
         pub fn build(self) -> crate::model::RequestDetails {
             crate::model::RequestDetails {
@@ -5062,6 +6942,9 @@ pub mod request_details {
                 import_assets_from_redshift_data_shares: self
                     .import_assets_from_redshift_data_shares,
                 import_asset_from_api_gateway_api: self.import_asset_from_api_gateway_api,
+                create_s3_data_access_from_s3_bucket: self.create_s3_data_access_from_s3_bucket,
+                import_assets_from_lake_formation_tag_policy: self
+                    .import_assets_from_lake_formation_tag_policy,
             }
         }
     }
@@ -5070,6 +6953,249 @@ impl RequestDetails {
     /// Creates a new builder-style object to manufacture [`RequestDetails`](crate::model::RequestDetails).
     pub fn builder() -> crate::model::request_details::Builder {
         crate::model::request_details::Builder::default()
+    }
+}
+
+/// <p>Details about the assets imported from an AWS Lake Formation tag policy request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ImportAssetsFromLakeFormationTagPolicyRequestDetails {
+    /// <p>The identifier for the AWS Glue Data Catalog.</p>
+    #[doc(hidden)]
+    pub catalog_id: std::option::Option<std::string::String>,
+    /// <p>A structure for the database object.</p>
+    #[doc(hidden)]
+    pub database: std::option::Option<crate::model::DatabaseLfTagPolicyAndPermissions>,
+    /// <p>A structure for the table object.</p>
+    #[doc(hidden)]
+    pub table: std::option::Option<crate::model::TableLfTagPolicyAndPermissions>,
+    /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions of subscribers to AWS Lake Formation data permissions.</p>
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the data set associated with this import job.</p>
+    #[doc(hidden)]
+    pub data_set_id: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the revision associated with this import job.</p>
+    #[doc(hidden)]
+    pub revision_id: std::option::Option<std::string::String>,
+}
+impl ImportAssetsFromLakeFormationTagPolicyRequestDetails {
+    /// <p>The identifier for the AWS Glue Data Catalog.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>A structure for the database object.</p>
+    pub fn database(
+        &self,
+    ) -> std::option::Option<&crate::model::DatabaseLfTagPolicyAndPermissions> {
+        self.database.as_ref()
+    }
+    /// <p>A structure for the table object.</p>
+    pub fn table(&self) -> std::option::Option<&crate::model::TableLfTagPolicyAndPermissions> {
+        self.table.as_ref()
+    }
+    /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions of subscribers to AWS Lake Formation data permissions.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The unique identifier for the data set associated with this import job.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for the revision associated with this import job.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
+/// See [`ImportAssetsFromLakeFormationTagPolicyRequestDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails).
+pub mod import_assets_from_lake_formation_tag_policy_request_details {
+
+    /// A builder for [`ImportAssetsFromLakeFormationTagPolicyRequestDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_id: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<crate::model::DatabaseLfTagPolicyAndPermissions>,
+        pub(crate) table: std::option::Option<crate::model::TableLfTagPolicyAndPermissions>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) data_set_id: std::option::Option<std::string::String>,
+        pub(crate) revision_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for the AWS Glue Data Catalog.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the AWS Glue Data Catalog.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_id = input;
+            self
+        }
+        /// <p>A structure for the database object.</p>
+        pub fn database(mut self, input: crate::model::DatabaseLfTagPolicyAndPermissions) -> Self {
+            self.database = Some(input);
+            self
+        }
+        /// <p>A structure for the database object.</p>
+        pub fn set_database(
+            mut self,
+            input: std::option::Option<crate::model::DatabaseLfTagPolicyAndPermissions>,
+        ) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>A structure for the table object.</p>
+        pub fn table(mut self, input: crate::model::TableLfTagPolicyAndPermissions) -> Self {
+            self.table = Some(input);
+            self
+        }
+        /// <p>A structure for the table object.</p>
+        pub fn set_table(
+            mut self,
+            input: std::option::Option<crate::model::TableLfTagPolicyAndPermissions>,
+        ) -> Self {
+            self.table = input;
+            self
+        }
+        /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions of subscribers to AWS Lake Formation data permissions.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions of subscribers to AWS Lake Formation data permissions.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The unique identifier for the data set associated with this import job.</p>
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_set_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the data set associated with this import job.</p>
+        pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_set_id = input;
+            self
+        }
+        /// <p>The unique identifier for the revision associated with this import job.</p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the revision associated with this import job.</p>
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportAssetsFromLakeFormationTagPolicyRequestDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails).
+        pub fn build(self) -> crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails {
+            crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails {
+                catalog_id: self.catalog_id,
+                database: self.database,
+                table: self.table,
+                role_arn: self.role_arn,
+                data_set_id: self.data_set_id,
+                revision_id: self.revision_id,
+            }
+        }
+    }
+}
+impl ImportAssetsFromLakeFormationTagPolicyRequestDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetsFromLakeFormationTagPolicyRequestDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails).
+    pub fn builder(
+    ) -> crate::model::import_assets_from_lake_formation_tag_policy_request_details::Builder {
+        crate::model::import_assets_from_lake_formation_tag_policy_request_details::Builder::default(
+        )
+    }
+}
+
+/// <p>Details of the operation to create an Amazon S3 data access from an S3 bucket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateS3DataAccessFromS3BucketRequestDetails {
+    /// <p>Details about the S3 data access source asset.</p>
+    #[doc(hidden)]
+    pub asset_source: std::option::Option<crate::model::S3DataAccessAssetSourceEntry>,
+    /// <p>The unique identifier for the data set associated with the creation of this Amazon S3 data access.</p>
+    #[doc(hidden)]
+    pub data_set_id: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for a revision.</p>
+    #[doc(hidden)]
+    pub revision_id: std::option::Option<std::string::String>,
+}
+impl CreateS3DataAccessFromS3BucketRequestDetails {
+    /// <p>Details about the S3 data access source asset.</p>
+    pub fn asset_source(&self) -> std::option::Option<&crate::model::S3DataAccessAssetSourceEntry> {
+        self.asset_source.as_ref()
+    }
+    /// <p>The unique identifier for the data set associated with the creation of this Amazon S3 data access.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for a revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
+/// See [`CreateS3DataAccessFromS3BucketRequestDetails`](crate::model::CreateS3DataAccessFromS3BucketRequestDetails).
+pub mod create_s3_data_access_from_s3_bucket_request_details {
+
+    /// A builder for [`CreateS3DataAccessFromS3BucketRequestDetails`](crate::model::CreateS3DataAccessFromS3BucketRequestDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) asset_source: std::option::Option<crate::model::S3DataAccessAssetSourceEntry>,
+        pub(crate) data_set_id: std::option::Option<std::string::String>,
+        pub(crate) revision_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Details about the S3 data access source asset.</p>
+        pub fn asset_source(mut self, input: crate::model::S3DataAccessAssetSourceEntry) -> Self {
+            self.asset_source = Some(input);
+            self
+        }
+        /// <p>Details about the S3 data access source asset.</p>
+        pub fn set_asset_source(
+            mut self,
+            input: std::option::Option<crate::model::S3DataAccessAssetSourceEntry>,
+        ) -> Self {
+            self.asset_source = input;
+            self
+        }
+        /// <p>The unique identifier for the data set associated with the creation of this Amazon S3 data access.</p>
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_set_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the data set associated with the creation of this Amazon S3 data access.</p>
+        pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_set_id = input;
+            self
+        }
+        /// <p>The unique identifier for a revision.</p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for a revision.</p>
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateS3DataAccessFromS3BucketRequestDetails`](crate::model::CreateS3DataAccessFromS3BucketRequestDetails).
+        pub fn build(self) -> crate::model::CreateS3DataAccessFromS3BucketRequestDetails {
+            crate::model::CreateS3DataAccessFromS3BucketRequestDetails {
+                asset_source: self.asset_source,
+                data_set_id: self.data_set_id,
+                revision_id: self.revision_id,
+            }
+        }
+    }
+}
+impl CreateS3DataAccessFromS3BucketRequestDetails {
+    /// Creates a new builder-style object to manufacture [`CreateS3DataAccessFromS3BucketRequestDetails`](crate::model::CreateS3DataAccessFromS3BucketRequestDetails).
+    pub fn builder() -> crate::model::create_s3_data_access_from_s3_bucket_request_details::Builder
+    {
+        crate::model::create_s3_data_access_from_s3_bucket_request_details::Builder::default()
     }
 }
 
@@ -5391,7 +7517,7 @@ impl ImportAssetsFromRedshiftDataSharesRequestDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportAssetsFromS3RequestDetails {
-    /// <p>Is a list of S3 bucket and object key pairs.</p>
+    /// <p>Is a list of Amazon S3 bucket and object key pairs.</p>
     #[doc(hidden)]
     pub asset_sources: std::option::Option<std::vec::Vec<crate::model::AssetSourceEntry>>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
@@ -5402,7 +7528,7 @@ pub struct ImportAssetsFromS3RequestDetails {
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl ImportAssetsFromS3RequestDetails {
-    /// <p>Is a list of S3 bucket and object key pairs.</p>
+    /// <p>Is a list of Amazon S3 bucket and object key pairs.</p>
     pub fn asset_sources(&self) -> std::option::Option<&[crate::model::AssetSourceEntry]> {
         self.asset_sources.as_deref()
     }
@@ -5431,14 +7557,14 @@ pub mod import_assets_from_s3_request_details {
         ///
         /// To override the contents of this collection use [`set_asset_sources`](Self::set_asset_sources).
         ///
-        /// <p>Is a list of S3 bucket and object key pairs.</p>
+        /// <p>Is a list of Amazon S3 bucket and object key pairs.</p>
         pub fn asset_sources(mut self, input: crate::model::AssetSourceEntry) -> Self {
             let mut v = self.asset_sources.unwrap_or_default();
             v.push(input);
             self.asset_sources = Some(v);
             self
         }
-        /// <p>Is a list of S3 bucket and object key pairs.</p>
+        /// <p>Is a list of Amazon S3 bucket and object key pairs.</p>
         pub fn set_asset_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetSourceEntry>>,
@@ -5487,7 +7613,7 @@ impl ImportAssetsFromS3RequestDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportAssetFromSignedUrlRequestDetails {
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.</p>
     #[doc(hidden)]
     pub asset_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
@@ -5501,7 +7627,7 @@ pub struct ImportAssetFromSignedUrlRequestDetails {
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl ImportAssetFromSignedUrlRequestDetails {
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.</p>
     pub fn asset_name(&self) -> std::option::Option<&str> {
         self.asset_name.as_deref()
     }
@@ -5530,12 +7656,12 @@ pub mod import_asset_from_signed_url_request_details {
         pub(crate) revision_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.</p>
         pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_name = Some(input.into());
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.</p>
         pub fn set_asset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asset_name = input;
             self
@@ -5911,14 +8037,17 @@ impl ExportAssetToSignedUrlRequestDetails {
 /// ```text
 /// # let limitname = unimplemented!();
 /// match limitname {
+///     LimitName::AwsLakeFormationDataPermissionAssetsPerRevision => { /* ... */ },
 ///     LimitName::AmazonApiGatewayApiAssetsPerRevision => { /* ... */ },
 ///     LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift => { /* ... */ },
 ///     LimitName::AmazonRedshiftDatashareAssetsPerRevision => { /* ... */ },
+///     LimitName::AmazonS3DataAccessAssetsPerRevision => { /* ... */ },
 ///     LimitName::AssetPerExportJobFromAmazonS3 => { /* ... */ },
 ///     LimitName::AssetSizeInGb => { /* ... */ },
 ///     LimitName::AssetsPerImportJobFromAmazonS3 => { /* ... */ },
 ///     LimitName::AssetsPerRevision => { /* ... */ },
 ///     LimitName::AutoExportEventActionsPerDataSet => { /* ... */ },
+///     LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets => { /* ... */ },
 ///     LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3 => { /* ... */ },
 ///     LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl => { /* ... */ },
 ///     LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3 => { /* ... */ },
@@ -5926,12 +8055,15 @@ impl ExportAssetToSignedUrlRequestDetails {
 ///     LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3 => { /* ... */ },
 ///     LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl => { /* ... */ },
 ///     LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi => { /* ... */ },
+///     LimitName::ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy => { /* ... */ },
 ///     LimitName::DataSetsPerAccount => { /* ... */ },
 ///     LimitName::DataSetsPerProduct => { /* ... */ },
 ///     LimitName::EventActionsPerAccount => { /* ... */ },
 ///     LimitName::ProductsPerAccount => { /* ... */ },
+///     LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet => { /* ... */ },
 ///     LimitName::RevisionsPerAmazonApiGatewayApiDataSet => { /* ... */ },
 ///     LimitName::RevisionsPerAmazonRedshiftDatashareDataSet => { /* ... */ },
+///     LimitName::RevisionsPerAmazonS3DataAccessDataSet => { /* ... */ },
 ///     LimitName::RevisionsPerDataSet => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -5967,11 +8099,15 @@ impl ExportAssetToSignedUrlRequestDetails {
 )]
 pub enum LimitName {
     #[allow(missing_docs)] // documentation missing in model
+    AwsLakeFormationDataPermissionAssetsPerRevision,
+    #[allow(missing_docs)] // documentation missing in model
     AmazonApiGatewayApiAssetsPerRevision,
     #[allow(missing_docs)] // documentation missing in model
     AmazonRedshiftDatashareAssetsPerImportJobFromRedshift,
     #[allow(missing_docs)] // documentation missing in model
     AmazonRedshiftDatashareAssetsPerRevision,
+    #[allow(missing_docs)] // documentation missing in model
+    AmazonS3DataAccessAssetsPerRevision,
     #[allow(missing_docs)] // documentation missing in model
     AssetPerExportJobFromAmazonS3,
     #[allow(missing_docs)] // documentation missing in model
@@ -5982,6 +8118,8 @@ pub enum LimitName {
     AssetsPerRevision,
     #[allow(missing_docs)] // documentation missing in model
     AutoExportEventActionsPerDataSet,
+    #[allow(missing_docs)] // documentation missing in model
+    ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets,
     #[allow(missing_docs)] // documentation missing in model
     ConcurrentInProgressJobsToExportAssetsToAmazonS3,
     #[allow(missing_docs)] // documentation missing in model
@@ -5997,6 +8135,8 @@ pub enum LimitName {
     #[allow(missing_docs)] // documentation missing in model
     ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi,
     #[allow(missing_docs)] // documentation missing in model
+    ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     DataSetsPerAccount,
     #[allow(missing_docs)] // documentation missing in model
     DataSetsPerProduct,
@@ -6005,9 +8145,13 @@ pub enum LimitName {
     #[allow(missing_docs)] // documentation missing in model
     ProductsPerAccount,
     #[allow(missing_docs)] // documentation missing in model
+    RevisionsPerAwsLakeFormationDataPermissionDataSet,
+    #[allow(missing_docs)] // documentation missing in model
     RevisionsPerAmazonApiGatewayApiDataSet,
     #[allow(missing_docs)] // documentation missing in model
     RevisionsPerAmazonRedshiftDatashareDataSet,
+    #[allow(missing_docs)] // documentation missing in model
+    RevisionsPerAmazonS3DataAccessDataSet,
     #[allow(missing_docs)] // documentation missing in model
     RevisionsPerDataSet,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -6016,53 +8160,35 @@ pub enum LimitName {
 impl std::convert::From<&str> for LimitName {
     fn from(s: &str) -> Self {
         match s {
-            "Amazon API Gateway API assets per revision" => {
-                LimitName::AmazonApiGatewayApiAssetsPerRevision
-            }
-            "Amazon Redshift datashare assets per import job from Redshift" => {
-                LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift
-            }
-            "Amazon Redshift datashare assets per revision" => {
-                LimitName::AmazonRedshiftDatashareAssetsPerRevision
-            }
+            "AWS Lake Formation data permission assets per revision" => LimitName::AwsLakeFormationDataPermissionAssetsPerRevision,
+            "Amazon API Gateway API assets per revision" => LimitName::AmazonApiGatewayApiAssetsPerRevision,
+            "Amazon Redshift datashare assets per import job from Redshift" => LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift,
+            "Amazon Redshift datashare assets per revision" => LimitName::AmazonRedshiftDatashareAssetsPerRevision,
+            "Amazon S3 data access assets per revision" => LimitName::AmazonS3DataAccessAssetsPerRevision,
             "Asset per export job from Amazon S3" => LimitName::AssetPerExportJobFromAmazonS3,
             "Asset size in GB" => LimitName::AssetSizeInGb,
             "Assets per import job from Amazon S3" => LimitName::AssetsPerImportJobFromAmazonS3,
             "Assets per revision" => LimitName::AssetsPerRevision,
             "Auto export event actions per data set" => LimitName::AutoExportEventActionsPerDataSet,
-            "Concurrent in progress jobs to export assets to Amazon S3" => {
-                LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3
-            }
-            "Concurrent in progress jobs to export assets to a signed URL" => {
-                LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl
-            }
-            "Concurrent in progress jobs to export revisions to Amazon S3" => {
-                LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3
-            }
-            "Concurrent in progress jobs to import assets from Amazon Redshift datashares" => {
-                LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares
-            }
-            "Concurrent in progress jobs to import assets from Amazon S3" => {
-                LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3
-            }
-            "Concurrent in progress jobs to import assets from a signed URL" => {
-                LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl
-            }
-            "Concurrent in progress jobs to import assets from an API Gateway API" => {
-                LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi
-            }
+            "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets" => LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets,
+            "Concurrent in progress jobs to export assets to Amazon S3" => LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3,
+            "Concurrent in progress jobs to export assets to a signed URL" => LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl,
+            "Concurrent in progress jobs to export revisions to Amazon S3" => LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3,
+            "Concurrent in progress jobs to import assets from Amazon Redshift datashares" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares,
+            "Concurrent in progress jobs to import assets from Amazon S3" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3,
+            "Concurrent in progress jobs to import assets from a signed URL" => LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl,
+            "Concurrent in progress jobs to import assets from an API Gateway API" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi,
+            "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy,
             "Data sets per account" => LimitName::DataSetsPerAccount,
             "Data sets per product" => LimitName::DataSetsPerProduct,
             "Event actions per account" => LimitName::EventActionsPerAccount,
             "Products per account" => LimitName::ProductsPerAccount,
-            "Revisions per Amazon API Gateway API data set" => {
-                LimitName::RevisionsPerAmazonApiGatewayApiDataSet
-            }
-            "Revisions per Amazon Redshift datashare data set" => {
-                LimitName::RevisionsPerAmazonRedshiftDatashareDataSet
-            }
+            "Revisions per AWS Lake Formation data permission data set" => LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet,
+            "Revisions per Amazon API Gateway API data set" => LimitName::RevisionsPerAmazonApiGatewayApiDataSet,
+            "Revisions per Amazon Redshift datashare data set" => LimitName::RevisionsPerAmazonRedshiftDatashareDataSet,
+            "Revisions per Amazon S3 data access data set" => LimitName::RevisionsPerAmazonS3DataAccessDataSet,
             "Revisions per data set" => LimitName::RevisionsPerDataSet,
-            other => LimitName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LimitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
@@ -6077,6 +8203,9 @@ impl LimitName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            LimitName::AwsLakeFormationDataPermissionAssetsPerRevision => {
+                "AWS Lake Formation data permission assets per revision"
+            }
             LimitName::AmazonApiGatewayApiAssetsPerRevision => {
                 "Amazon API Gateway API assets per revision"
             }
@@ -6086,11 +8215,17 @@ impl LimitName {
             LimitName::AmazonRedshiftDatashareAssetsPerRevision => {
                 "Amazon Redshift datashare assets per revision"
             }
+            LimitName::AmazonS3DataAccessAssetsPerRevision => {
+                "Amazon S3 data access assets per revision"
+            }
             LimitName::AssetPerExportJobFromAmazonS3 => "Asset per export job from Amazon S3",
             LimitName::AssetSizeInGb => "Asset size in GB",
             LimitName::AssetsPerImportJobFromAmazonS3 => "Assets per import job from Amazon S3",
             LimitName::AssetsPerRevision => "Assets per revision",
             LimitName::AutoExportEventActionsPerDataSet => "Auto export event actions per data set",
+            LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets => {
+                "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets"
+            }
             LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3 => {
                 "Concurrent in progress jobs to export assets to Amazon S3"
             }
@@ -6112,15 +8247,24 @@ impl LimitName {
             LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi => {
                 "Concurrent in progress jobs to import assets from an API Gateway API"
             }
+            LimitName::ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy => {
+                "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy"
+            }
             LimitName::DataSetsPerAccount => "Data sets per account",
             LimitName::DataSetsPerProduct => "Data sets per product",
             LimitName::EventActionsPerAccount => "Event actions per account",
             LimitName::ProductsPerAccount => "Products per account",
+            LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet => {
+                "Revisions per AWS Lake Formation data permission data set"
+            }
             LimitName::RevisionsPerAmazonApiGatewayApiDataSet => {
                 "Revisions per Amazon API Gateway API data set"
             }
             LimitName::RevisionsPerAmazonRedshiftDatashareDataSet => {
                 "Revisions per Amazon Redshift datashare data set"
+            }
+            LimitName::RevisionsPerAmazonS3DataAccessDataSet => {
+                "Revisions per Amazon S3 data access data set"
             }
             LimitName::RevisionsPerDataSet => "Revisions per data set",
             LimitName::Unknown(value) => value.as_str(),
@@ -6129,14 +8273,17 @@ impl LimitName {
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AWS Lake Formation data permission assets per revision",
             "Amazon API Gateway API assets per revision",
             "Amazon Redshift datashare assets per import job from Redshift",
             "Amazon Redshift datashare assets per revision",
+            "Amazon S3 data access assets per revision",
             "Asset per export job from Amazon S3",
             "Asset size in GB",
             "Assets per import job from Amazon S3",
             "Assets per revision",
             "Auto export event actions per data set",
+            "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets",
             "Concurrent in progress jobs to export assets to Amazon S3",
             "Concurrent in progress jobs to export assets to a signed URL",
             "Concurrent in progress jobs to export revisions to Amazon S3",
@@ -6144,12 +8291,15 @@ impl LimitName {
             "Concurrent in progress jobs to import assets from Amazon S3",
             "Concurrent in progress jobs to import assets from a signed URL",
             "Concurrent in progress jobs to import assets from an API Gateway API",
+            "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy",
             "Data sets per account",
             "Data sets per product",
             "Event actions per account",
             "Products per account",
+            "Revisions per AWS Lake Formation data permission data set",
             "Revisions per Amazon API Gateway API data set",
             "Revisions per Amazon Redshift datashare data set",
+            "Revisions per Amazon S3 data access data set",
             "Revisions per data set",
         ]
     }

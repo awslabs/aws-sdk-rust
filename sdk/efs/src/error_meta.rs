@@ -53,7 +53,7 @@ pub enum Error {
     SecurityGroupNotFound(crate::error::SecurityGroupNotFound),
     /// <p>Returned if there is no subnet with ID <code>SubnetId</code> provided in the request.</p>
     SubnetNotFound(crate::error::SubnetNotFound),
-    /// <p>Returned when the <code>CreateAccessPoint</code> API action is called too quickly and the number of Access Points in the account is nearing the limit of 120.</p>
+    /// <p>Returned when the <code>CreateAccessPoint</code> API action is called too quickly and the number of Access Points on the file system is nearing the <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">limit of 120</a>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>Returned if the throughput mode or amount of provisioned throughput can't be changed because the throughput limit of 1024 MiB/s has been reached.</p>
     ThroughputLimitExceeded(crate::error::ThroughputLimitExceeded),

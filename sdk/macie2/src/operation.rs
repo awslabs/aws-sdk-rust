@@ -907,6 +907,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAllowList {
     }
 }
 
+/// Operation shape for `GetAutomatedDiscoveryConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_automated_discovery_configuration`](crate::client::Client::get_automated_discovery_configuration).
+///
+/// See [`crate::client::fluent_builders::GetAutomatedDiscoveryConfiguration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetAutomatedDiscoveryConfiguration {
+    _private: (),
+}
+impl GetAutomatedDiscoveryConfiguration {
+    /// Creates a new builder-style object to manufacture [`GetAutomatedDiscoveryConfigurationInput`](crate::input::GetAutomatedDiscoveryConfigurationInput).
+    pub fn builder() -> crate::input::get_automated_discovery_configuration_input::Builder {
+        crate::input::get_automated_discovery_configuration_input::Builder::default()
+    }
+    /// Creates a new `GetAutomatedDiscoveryConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetAutomatedDiscoveryConfiguration {
+    type Output = std::result::Result<
+        crate::output::GetAutomatedDiscoveryConfigurationOutput,
+        crate::error::GetAutomatedDiscoveryConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_automated_discovery_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_get_automated_discovery_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetBucketStatistics`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -971,6 +1005,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetClassificationExportC
             crate::operation_deser::parse_get_classification_export_configuration_error(response)
         } else {
             crate::operation_deser::parse_get_classification_export_configuration_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetClassificationScope`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_classification_scope`](crate::client::Client::get_classification_scope).
+///
+/// See [`crate::client::fluent_builders::GetClassificationScope`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetClassificationScope {
+    _private: (),
+}
+impl GetClassificationScope {
+    /// Creates a new builder-style object to manufacture [`GetClassificationScopeInput`](crate::input::GetClassificationScopeInput).
+    pub fn builder() -> crate::input::get_classification_scope_input::Builder {
+        crate::input::get_classification_scope_input::Builder::default()
+    }
+    /// Creates a new `GetClassificationScope` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetClassificationScope {
+    type Output = std::result::Result<
+        crate::output::GetClassificationScopeOutput,
+        crate::error::GetClassificationScopeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_classification_scope_error(response)
+        } else {
+            crate::operation_deser::parse_get_classification_scope_response(response)
         }
     }
 }
@@ -1276,6 +1344,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMember {
     }
 }
 
+/// Operation shape for `GetResourceProfile`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_resource_profile`](crate::client::Client::get_resource_profile).
+///
+/// See [`crate::client::fluent_builders::GetResourceProfile`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetResourceProfile {
+    _private: (),
+}
+impl GetResourceProfile {
+    /// Creates a new builder-style object to manufacture [`GetResourceProfileInput`](crate::input::GetResourceProfileInput).
+    pub fn builder() -> crate::input::get_resource_profile_input::Builder {
+        crate::input::get_resource_profile_input::Builder::default()
+    }
+    /// Creates a new `GetResourceProfile` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetResourceProfile {
+    type Output = std::result::Result<
+        crate::output::GetResourceProfileOutput,
+        crate::error::GetResourceProfileError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_resource_profile_error(response)
+        } else {
+            crate::operation_deser::parse_get_resource_profile_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetRevealConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1378,6 +1480,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSensitiveDataOccurren
             crate::operation_deser::parse_get_sensitive_data_occurrences_availability_response(
                 response,
             )
+        }
+    }
+}
+
+/// Operation shape for `GetSensitivityInspectionTemplate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_sensitivity_inspection_template`](crate::client::Client::get_sensitivity_inspection_template).
+///
+/// See [`crate::client::fluent_builders::GetSensitivityInspectionTemplate`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetSensitivityInspectionTemplate {
+    _private: (),
+}
+impl GetSensitivityInspectionTemplate {
+    /// Creates a new builder-style object to manufacture [`GetSensitivityInspectionTemplateInput`](crate::input::GetSensitivityInspectionTemplateInput).
+    pub fn builder() -> crate::input::get_sensitivity_inspection_template_input::Builder {
+        crate::input::get_sensitivity_inspection_template_input::Builder::default()
+    }
+    /// Creates a new `GetSensitivityInspectionTemplate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetSensitivityInspectionTemplate {
+    type Output = std::result::Result<
+        crate::output::GetSensitivityInspectionTemplateOutput,
+        crate::error::GetSensitivityInspectionTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_sensitivity_inspection_template_error(response)
+        } else {
+            crate::operation_deser::parse_get_sensitivity_inspection_template_response(response)
         }
     }
 }
@@ -1510,6 +1646,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClassificationJobs {
             crate::operation_deser::parse_list_classification_jobs_error(response)
         } else {
             crate::operation_deser::parse_list_classification_jobs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListClassificationScopes`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_classification_scopes`](crate::client::Client::list_classification_scopes).
+///
+/// See [`crate::client::fluent_builders::ListClassificationScopes`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListClassificationScopes {
+    _private: (),
+}
+impl ListClassificationScopes {
+    /// Creates a new builder-style object to manufacture [`ListClassificationScopesInput`](crate::input::ListClassificationScopesInput).
+    pub fn builder() -> crate::input::list_classification_scopes_input::Builder {
+        crate::input::list_classification_scopes_input::Builder::default()
+    }
+    /// Creates a new `ListClassificationScopes` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListClassificationScopes {
+    type Output = std::result::Result<
+        crate::output::ListClassificationScopesOutput,
+        crate::error::ListClassificationScopesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_classification_scopes_error(response)
+        } else {
+            crate::operation_deser::parse_list_classification_scopes_response(response)
         }
     }
 }
@@ -1744,6 +1914,108 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOrganizationAdminAcc
             crate::operation_deser::parse_list_organization_admin_accounts_error(response)
         } else {
             crate::operation_deser::parse_list_organization_admin_accounts_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListResourceProfileArtifacts`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_resource_profile_artifacts`](crate::client::Client::list_resource_profile_artifacts).
+///
+/// See [`crate::client::fluent_builders::ListResourceProfileArtifacts`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListResourceProfileArtifacts {
+    _private: (),
+}
+impl ListResourceProfileArtifacts {
+    /// Creates a new builder-style object to manufacture [`ListResourceProfileArtifactsInput`](crate::input::ListResourceProfileArtifactsInput).
+    pub fn builder() -> crate::input::list_resource_profile_artifacts_input::Builder {
+        crate::input::list_resource_profile_artifacts_input::Builder::default()
+    }
+    /// Creates a new `ListResourceProfileArtifacts` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListResourceProfileArtifacts {
+    type Output = std::result::Result<
+        crate::output::ListResourceProfileArtifactsOutput,
+        crate::error::ListResourceProfileArtifactsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_resource_profile_artifacts_error(response)
+        } else {
+            crate::operation_deser::parse_list_resource_profile_artifacts_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListResourceProfileDetections`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_resource_profile_detections`](crate::client::Client::list_resource_profile_detections).
+///
+/// See [`crate::client::fluent_builders::ListResourceProfileDetections`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListResourceProfileDetections {
+    _private: (),
+}
+impl ListResourceProfileDetections {
+    /// Creates a new builder-style object to manufacture [`ListResourceProfileDetectionsInput`](crate::input::ListResourceProfileDetectionsInput).
+    pub fn builder() -> crate::input::list_resource_profile_detections_input::Builder {
+        crate::input::list_resource_profile_detections_input::Builder::default()
+    }
+    /// Creates a new `ListResourceProfileDetections` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListResourceProfileDetections {
+    type Output = std::result::Result<
+        crate::output::ListResourceProfileDetectionsOutput,
+        crate::error::ListResourceProfileDetectionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_resource_profile_detections_error(response)
+        } else {
+            crate::operation_deser::parse_list_resource_profile_detections_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListSensitivityInspectionTemplates`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_sensitivity_inspection_templates`](crate::client::Client::list_sensitivity_inspection_templates).
+///
+/// See [`crate::client::fluent_builders::ListSensitivityInspectionTemplates`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListSensitivityInspectionTemplates {
+    _private: (),
+}
+impl ListSensitivityInspectionTemplates {
+    /// Creates a new builder-style object to manufacture [`ListSensitivityInspectionTemplatesInput`](crate::input::ListSensitivityInspectionTemplatesInput).
+    pub fn builder() -> crate::input::list_sensitivity_inspection_templates_input::Builder {
+        crate::input::list_sensitivity_inspection_templates_input::Builder::default()
+    }
+    /// Creates a new `ListSensitivityInspectionTemplates` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSensitivityInspectionTemplates {
+    type Output = std::result::Result<
+        crate::output::ListSensitivityInspectionTemplatesOutput,
+        crate::error::ListSensitivityInspectionTemplatesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_sensitivity_inspection_templates_error(response)
+        } else {
+            crate::operation_deser::parse_list_sensitivity_inspection_templates_response(response)
         }
     }
 }
@@ -2016,6 +2288,42 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAllowList {
     }
 }
 
+/// Operation shape for `UpdateAutomatedDiscoveryConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_automated_discovery_configuration`](crate::client::Client::update_automated_discovery_configuration).
+///
+/// See [`crate::client::fluent_builders::UpdateAutomatedDiscoveryConfiguration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateAutomatedDiscoveryConfiguration {
+    _private: (),
+}
+impl UpdateAutomatedDiscoveryConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateAutomatedDiscoveryConfigurationInput`](crate::input::UpdateAutomatedDiscoveryConfigurationInput).
+    pub fn builder() -> crate::input::update_automated_discovery_configuration_input::Builder {
+        crate::input::update_automated_discovery_configuration_input::Builder::default()
+    }
+    /// Creates a new `UpdateAutomatedDiscoveryConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateAutomatedDiscoveryConfiguration {
+    type Output = std::result::Result<
+        crate::output::UpdateAutomatedDiscoveryConfigurationOutput,
+        crate::error::UpdateAutomatedDiscoveryConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_automated_discovery_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_update_automated_discovery_configuration_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `UpdateClassificationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2046,6 +2354,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateClassificationJob 
             crate::operation_deser::parse_update_classification_job_error(response)
         } else {
             crate::operation_deser::parse_update_classification_job_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateClassificationScope`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_classification_scope`](crate::client::Client::update_classification_scope).
+///
+/// See [`crate::client::fluent_builders::UpdateClassificationScope`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateClassificationScope {
+    _private: (),
+}
+impl UpdateClassificationScope {
+    /// Creates a new builder-style object to manufacture [`UpdateClassificationScopeInput`](crate::input::UpdateClassificationScopeInput).
+    pub fn builder() -> crate::input::update_classification_scope_input::Builder {
+        crate::input::update_classification_scope_input::Builder::default()
+    }
+    /// Creates a new `UpdateClassificationScope` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateClassificationScope {
+    type Output = std::result::Result<
+        crate::output::UpdateClassificationScopeOutput,
+        crate::error::UpdateClassificationScopeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_classification_scope_error(response)
+        } else {
+            crate::operation_deser::parse_update_classification_scope_response(response)
         }
     }
 }
@@ -2186,6 +2528,74 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateOrganizationConfig
     }
 }
 
+/// Operation shape for `UpdateResourceProfile`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_resource_profile`](crate::client::Client::update_resource_profile).
+///
+/// See [`crate::client::fluent_builders::UpdateResourceProfile`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateResourceProfile {
+    _private: (),
+}
+impl UpdateResourceProfile {
+    /// Creates a new builder-style object to manufacture [`UpdateResourceProfileInput`](crate::input::UpdateResourceProfileInput).
+    pub fn builder() -> crate::input::update_resource_profile_input::Builder {
+        crate::input::update_resource_profile_input::Builder::default()
+    }
+    /// Creates a new `UpdateResourceProfile` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateResourceProfile {
+    type Output = std::result::Result<
+        crate::output::UpdateResourceProfileOutput,
+        crate::error::UpdateResourceProfileError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_resource_profile_error(response)
+        } else {
+            crate::operation_deser::parse_update_resource_profile_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateResourceProfileDetections`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_resource_profile_detections`](crate::client::Client::update_resource_profile_detections).
+///
+/// See [`crate::client::fluent_builders::UpdateResourceProfileDetections`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateResourceProfileDetections {
+    _private: (),
+}
+impl UpdateResourceProfileDetections {
+    /// Creates a new builder-style object to manufacture [`UpdateResourceProfileDetectionsInput`](crate::input::UpdateResourceProfileDetectionsInput).
+    pub fn builder() -> crate::input::update_resource_profile_detections_input::Builder {
+        crate::input::update_resource_profile_detections_input::Builder::default()
+    }
+    /// Creates a new `UpdateResourceProfileDetections` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateResourceProfileDetections {
+    type Output = std::result::Result<
+        crate::output::UpdateResourceProfileDetectionsOutput,
+        crate::error::UpdateResourceProfileDetectionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_resource_profile_detections_error(response)
+        } else {
+            crate::operation_deser::parse_update_resource_profile_detections_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateRevealConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2216,6 +2626,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRevealConfiguratio
             crate::operation_deser::parse_update_reveal_configuration_error(response)
         } else {
             crate::operation_deser::parse_update_reveal_configuration_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateSensitivityInspectionTemplate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_sensitivity_inspection_template`](crate::client::Client::update_sensitivity_inspection_template).
+///
+/// See [`crate::client::fluent_builders::UpdateSensitivityInspectionTemplate`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateSensitivityInspectionTemplate {
+    _private: (),
+}
+impl UpdateSensitivityInspectionTemplate {
+    /// Creates a new builder-style object to manufacture [`UpdateSensitivityInspectionTemplateInput`](crate::input::UpdateSensitivityInspectionTemplateInput).
+    pub fn builder() -> crate::input::update_sensitivity_inspection_template_input::Builder {
+        crate::input::update_sensitivity_inspection_template_input::Builder::default()
+    }
+    /// Creates a new `UpdateSensitivityInspectionTemplate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateSensitivityInspectionTemplate {
+    type Output = std::result::Result<
+        crate::output::UpdateSensitivityInspectionTemplateOutput,
+        crate::error::UpdateSensitivityInspectionTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_sensitivity_inspection_template_error(response)
+        } else {
+            crate::operation_deser::parse_update_sensitivity_inspection_template_response(response)
         }
     }
 }

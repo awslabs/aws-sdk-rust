@@ -655,6 +655,74 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeParameters {
     }
 }
 
+/// Operation shape for `DescribeReservedNodes`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_reserved_nodes`](crate::client::Client::describe_reserved_nodes).
+///
+/// See [`crate::client::fluent_builders::DescribeReservedNodes`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeReservedNodes {
+    _private: (),
+}
+impl DescribeReservedNodes {
+    /// Creates a new builder-style object to manufacture [`DescribeReservedNodesInput`](crate::input::DescribeReservedNodesInput).
+    pub fn builder() -> crate::input::describe_reserved_nodes_input::Builder {
+        crate::input::describe_reserved_nodes_input::Builder::default()
+    }
+    /// Creates a new `DescribeReservedNodes` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedNodes {
+    type Output = std::result::Result<
+        crate::output::DescribeReservedNodesOutput,
+        crate::error::DescribeReservedNodesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_reserved_nodes_error(response)
+        } else {
+            crate::operation_deser::parse_describe_reserved_nodes_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeReservedNodesOfferings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_reserved_nodes_offerings`](crate::client::Client::describe_reserved_nodes_offerings).
+///
+/// See [`crate::client::fluent_builders::DescribeReservedNodesOfferings`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeReservedNodesOfferings {
+    _private: (),
+}
+impl DescribeReservedNodesOfferings {
+    /// Creates a new builder-style object to manufacture [`DescribeReservedNodesOfferingsInput`](crate::input::DescribeReservedNodesOfferingsInput).
+    pub fn builder() -> crate::input::describe_reserved_nodes_offerings_input::Builder {
+        crate::input::describe_reserved_nodes_offerings_input::Builder::default()
+    }
+    /// Creates a new `DescribeReservedNodesOfferings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedNodesOfferings {
+    type Output = std::result::Result<
+        crate::output::DescribeReservedNodesOfferingsOutput,
+        crate::error::DescribeReservedNodesOfferingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_reserved_nodes_offerings_error(response)
+        } else {
+            crate::operation_deser::parse_describe_reserved_nodes_offerings_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeServiceUpdates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -882,6 +950,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
             crate::operation_deser::parse_list_tags_error(response)
         } else {
             crate::operation_deser::parse_list_tags_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PurchaseReservedNodesOffering`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`purchase_reserved_nodes_offering`](crate::client::Client::purchase_reserved_nodes_offering).
+///
+/// See [`crate::client::fluent_builders::PurchaseReservedNodesOffering`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct PurchaseReservedNodesOffering {
+    _private: (),
+}
+impl PurchaseReservedNodesOffering {
+    /// Creates a new builder-style object to manufacture [`PurchaseReservedNodesOfferingInput`](crate::input::PurchaseReservedNodesOfferingInput).
+    pub fn builder() -> crate::input::purchase_reserved_nodes_offering_input::Builder {
+        crate::input::purchase_reserved_nodes_offering_input::Builder::default()
+    }
+    /// Creates a new `PurchaseReservedNodesOffering` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PurchaseReservedNodesOffering {
+    type Output = std::result::Result<
+        crate::output::PurchaseReservedNodesOfferingOutput,
+        crate::error::PurchaseReservedNodesOfferingError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_purchase_reserved_nodes_offering_error(response)
+        } else {
+            crate::operation_deser::parse_purchase_reserved_nodes_offering_response(response)
         }
     }
 }

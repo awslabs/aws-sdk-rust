@@ -435,6 +435,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInferenceSchedulers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInferenceSchedulers::set_max_results): <p> Specifies the maximum number of inference schedulers to list. </p>
     ///   - [`inference_scheduler_name_begins_with(impl Into<String>)`](crate::client::fluent_builders::ListInferenceSchedulers::inference_scheduler_name_begins_with) / [`set_inference_scheduler_name_begins_with(Option<String>)`](crate::client::fluent_builders::ListInferenceSchedulers::set_inference_scheduler_name_begins_with): <p>The beginning of the name of the inference schedulers to be listed. </p>
     ///   - [`model_name(impl Into<String>)`](crate::client::fluent_builders::ListInferenceSchedulers::model_name) / [`set_model_name(Option<String>)`](crate::client::fluent_builders::ListInferenceSchedulers::set_model_name): <p>The name of the ML model used by the inference scheduler to be listed. </p>
+    ///   - [`status(InferenceSchedulerStatus)`](crate::client::fluent_builders::ListInferenceSchedulers::status) / [`set_status(Option<InferenceSchedulerStatus>)`](crate::client::fluent_builders::ListInferenceSchedulers::set_status): <p>Specifies the current status of the inference schedulers to list.</p>
     /// - On success, responds with [`ListInferenceSchedulersOutput`](crate::output::ListInferenceSchedulersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListInferenceSchedulersOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     ///   - [`inference_scheduler_summaries(Option<Vec<InferenceSchedulerSummary>>)`](crate::output::ListInferenceSchedulersOutput::inference_scheduler_summaries): <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
@@ -2905,6 +2906,19 @@ pub mod fluent_builders {
         /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_model_name(input);
+            self
+        }
+        /// <p>Specifies the current status of the inference schedulers to list.</p>
+        pub fn status(mut self, input: crate::model::InferenceSchedulerStatus) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        /// <p>Specifies the current status of the inference schedulers to list.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::InferenceSchedulerStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
             self
         }
     }

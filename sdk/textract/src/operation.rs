@@ -232,6 +232,74 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExpenseAnalysis {
     }
 }
 
+/// Operation shape for `GetLendingAnalysis`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_lending_analysis`](crate::client::Client::get_lending_analysis).
+///
+/// See [`crate::client::fluent_builders::GetLendingAnalysis`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetLendingAnalysis {
+    _private: (),
+}
+impl GetLendingAnalysis {
+    /// Creates a new builder-style object to manufacture [`GetLendingAnalysisInput`](crate::input::GetLendingAnalysisInput).
+    pub fn builder() -> crate::input::get_lending_analysis_input::Builder {
+        crate::input::get_lending_analysis_input::Builder::default()
+    }
+    /// Creates a new `GetLendingAnalysis` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetLendingAnalysis {
+    type Output = std::result::Result<
+        crate::output::GetLendingAnalysisOutput,
+        crate::error::GetLendingAnalysisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_lending_analysis_error(response)
+        } else {
+            crate::operation_deser::parse_get_lending_analysis_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetLendingAnalysisSummary`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_lending_analysis_summary`](crate::client::Client::get_lending_analysis_summary).
+///
+/// See [`crate::client::fluent_builders::GetLendingAnalysisSummary`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetLendingAnalysisSummary {
+    _private: (),
+}
+impl GetLendingAnalysisSummary {
+    /// Creates a new builder-style object to manufacture [`GetLendingAnalysisSummaryInput`](crate::input::GetLendingAnalysisSummaryInput).
+    pub fn builder() -> crate::input::get_lending_analysis_summary_input::Builder {
+        crate::input::get_lending_analysis_summary_input::Builder::default()
+    }
+    /// Creates a new `GetLendingAnalysisSummary` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetLendingAnalysisSummary {
+    type Output = std::result::Result<
+        crate::output::GetLendingAnalysisSummaryOutput,
+        crate::error::GetLendingAnalysisSummaryError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_lending_analysis_summary_error(response)
+        } else {
+            crate::operation_deser::parse_get_lending_analysis_summary_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StartDocumentAnalysis`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -330,6 +398,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StartExpenseAnalysis {
             crate::operation_deser::parse_start_expense_analysis_error(response)
         } else {
             crate::operation_deser::parse_start_expense_analysis_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartLendingAnalysis`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_lending_analysis`](crate::client::Client::start_lending_analysis).
+///
+/// See [`crate::client::fluent_builders::StartLendingAnalysis`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct StartLendingAnalysis {
+    _private: (),
+}
+impl StartLendingAnalysis {
+    /// Creates a new builder-style object to manufacture [`StartLendingAnalysisInput`](crate::input::StartLendingAnalysisInput).
+    pub fn builder() -> crate::input::start_lending_analysis_input::Builder {
+        crate::input::start_lending_analysis_input::Builder::default()
+    }
+    /// Creates a new `StartLendingAnalysis` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartLendingAnalysis {
+    type Output = std::result::Result<
+        crate::output::StartLendingAnalysisOutput,
+        crate::error::StartLendingAnalysisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_lending_analysis_error(response)
+        } else {
+            crate::operation_deser::parse_start_lending_analysis_response(response)
         }
     }
 }

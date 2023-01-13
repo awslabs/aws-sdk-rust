@@ -107,7 +107,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreatePrivateDnsNamespace`](crate::client::fluent_builders::CreatePrivateDnsNamespace) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePrivateDnsNamespace::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePrivateDnsNamespace::set_name): <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePrivateDnsNamespace::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePrivateDnsNamespace::set_name): <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route&nbsp;53 private hosted zone that has the same name as the namespace.</p>
     ///   - [`creator_request_id(impl Into<String>)`](crate::client::fluent_builders::CreatePrivateDnsNamespace::creator_request_id) / [`set_creator_request_id(Option<String>)`](crate::client::fluent_builders::CreatePrivateDnsNamespace::set_creator_request_id): <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePrivateDnsNamespace::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePrivateDnsNamespace::set_description): <p>A description for the namespace.</p>
     ///   - [`vpc(impl Into<String>)`](crate::client::fluent_builders::CreatePrivateDnsNamespace::vpc) / [`set_vpc(Option<String>)`](crate::client::fluent_builders::CreatePrivateDnsNamespace::set_vpc): <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>
@@ -122,7 +122,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreatePublicDnsNamespace`](crate::client::fluent_builders::CreatePublicDnsNamespace) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePublicDnsNamespace::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePublicDnsNamespace::set_name): <p>The name that you want to assign to this namespace.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePublicDnsNamespace::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePublicDnsNamespace::set_name): <p>The name that you want to assign to this namespace.</p> <note>   <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>  </note>
     ///   - [`creator_request_id(impl Into<String>)`](crate::client::fluent_builders::CreatePublicDnsNamespace::creator_request_id) / [`set_creator_request_id(Option<String>)`](crate::client::fluent_builders::CreatePublicDnsNamespace::set_creator_request_id): <p>A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePublicDnsNamespace::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePublicDnsNamespace::set_description): <p>A description for the namespace.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreatePublicDnsNamespace::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreatePublicDnsNamespace::set_tags): <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
@@ -136,12 +136,12 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateService`](crate::client::fluent_builders::CreateService) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateService::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateService::set_name): <p>The name that you want to assign to the service.</p>  <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>  <ul>   <li> <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p> </li>   <li> <p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p> </li>  </ul>  <p>When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns a name to the record by concatenating the service name and the namespace name (for example,</p>  <p> <code>_exampleservice._tcp.example.com</code>).</p> <note>   <p>For services that are accessible by DNS queries, you can't create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services that with names that differ only by case.</p>  </note>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateService::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateService::set_name): <p>The name that you want to assign to the service.</p> <note>   <p>Do not include sensitive information in the name if the namespace is discoverable by public DNS queries.</p>  </note>  <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>  <ul>   <li> <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p> </li>   <li> <p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p> </li>  </ul>  <p>When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns a name to the record by concatenating the service name and the namespace name (for example,</p>  <p> <code>_exampleservice._tcp.example.com</code>).</p> <note>   <p>For services that are accessible by DNS queries, you can't create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services that with names that differ only by case.</p>  </note>
     ///   - [`namespace_id(impl Into<String>)`](crate::client::fluent_builders::CreateService::namespace_id) / [`set_namespace_id(Option<String>)`](crate::client::fluent_builders::CreateService::set_namespace_id): <p>The ID of the namespace that you want to use to create the service. The namespace ID must be specified, but it can be specified either here or in the <code>DnsConfig</code> object.</p>
     ///   - [`creator_request_id(impl Into<String>)`](crate::client::fluent_builders::CreateService::creator_request_id) / [`set_creator_request_id(Option<String>)`](crate::client::fluent_builders::CreateService::set_creator_request_id): <p>A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateService::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateService::set_description): <p>A description for the service.</p>
-    ///   - [`dns_config(DnsConfig)`](crate::client::fluent_builders::CreateService::dns_config) / [`set_dns_config(Option<DnsConfig>)`](crate::client::fluent_builders::CreateService::set_dns_config): <p>A complex type that contains information about the Amazon Route 53 records that you want Cloud Map to create when you register an instance. </p>
-    ///   - [`health_check_config(HealthCheckConfig)`](crate::client::fluent_builders::CreateService::health_check_config) / [`set_health_check_config(Option<HealthCheckConfig>)`](crate::client::fluent_builders::CreateService::set_health_check_config): <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route 53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>   <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>  </important>  <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
+    ///   - [`dns_config(DnsConfig)`](crate::client::fluent_builders::CreateService::dns_config) / [`set_dns_config(Option<DnsConfig>)`](crate::client::fluent_builders::CreateService::set_dns_config): <p>A complex type that contains information about the Amazon Route&nbsp;53 records that you want Cloud Map to create when you register an instance. </p>
+    ///   - [`health_check_config(HealthCheckConfig)`](crate::client::fluent_builders::CreateService::health_check_config) / [`set_health_check_config(Option<HealthCheckConfig>)`](crate::client::fluent_builders::CreateService::set_health_check_config): <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>   <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>  </important>  <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
     ///   - [`health_check_custom_config(HealthCheckCustomConfig)`](crate::client::fluent_builders::CreateService::health_check_custom_config) / [`set_health_check_custom_config(Option<HealthCheckCustomConfig>)`](crate::client::fluent_builders::CreateService::set_health_check_custom_config): <p>A complex type that contains information about an optional custom health check.</p> <important>   <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>  </important>  <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateService::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateService::set_tags): <p>The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
     ///   - [`r#type(ServiceTypeOption)`](crate::client::fluent_builders::CreateService::type) / [`set_type(Option<ServiceTypeOption>)`](crate::client::fluent_builders::CreateService::set_type): <p>If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code> API operation. No DNS records is registered for the service instances. The only valid value is <code>HTTP</code>.</p>
@@ -323,9 +323,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`service_id(impl Into<String>)`](crate::client::fluent_builders::RegisterInstance::service_id) / [`set_service_id(Option<String>)`](crate::client::fluent_builders::RegisterInstance::set_service_id): <p>The ID of the service that you want to use for settings for the instance.</p>
-    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::RegisterInstance::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::RegisterInstance::set_instance_id): <p>An identifier that you want to associate with the instance. Note the following:</p>  <ul>   <li> <p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p> </li>   <li> <p>You can use this value to update an existing instance.</p> </li>   <li> <p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service. </p> </li>   <li> <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records, if any. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one. </p> <note>     <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>    </note> </li>  </ul>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::RegisterInstance::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::RegisterInstance::set_instance_id): <p>An identifier that you want to associate with the instance. Note the following:</p>  <ul>   <li> <p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p> </li>   <li> <p>You can use this value to update an existing instance.</p> </li>   <li> <p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service. </p> </li>   <li> <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records, if any. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one. </p> <note>     <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>    </note> </li>  </ul> <note>   <p>Do not include sensitive information in <code>InstanceId</code> if the namespace is discoverable by public DNS queries and any <code>Type</code> member of <code>DnsRecord</code> for the service contains <code>SRV</code> because the <code>InstanceId</code> is discoverable by public DNS queries.</p>  </note>
     ///   - [`creator_request_id(impl Into<String>)`](crate::client::fluent_builders::RegisterInstance::creator_request_id) / [`set_creator_request_id(Option<String>)`](crate::client::fluent_builders::RegisterInstance::set_creator_request_id): <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
-    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::RegisterInstance::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::RegisterInstance::set_attributes): <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>  <ul>   <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>   <li> <p>For each attribute, the applicable value.</p> </li>  </ul>  <p>Supported attribute keys include the following:</p>  <dl>   <dt>   AWS_ALIAS_DNS_NAME  </dt>   <dd>    <p>If you want Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see "DNSName" in the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the <i>Route 53 API Reference</i>.</p>    <p>Note the following:</p>    <ul>     <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>     <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>     <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map will create the Route 53 health check, but it doesn't associate the health check with the alias record.</p> </li>     <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>     <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>    </ul>   </dd>   <dt>   AWS_EC2_INSTANCE_ID  </dt>   <dd>    <p> <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary private IPv4 address.</p>   </dd>   <dt>   AWS_INIT_HEALTH_STATUS  </dt>   <dd>    <p>If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.</p>   </dd>   <dt>   AWS_INSTANCE_CNAME  </dt>   <dd>    <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).</p>    <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>CNAME</code> record.</p>   </dd>   <dt>   AWS_INSTANCE_IPV4  </dt>   <dd>    <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>    <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>   </dd>   <dt>   AWS_INSTANCE_IPV6  </dt>   <dd>    <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>    <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>   </dd>   <dt>   AWS_INSTANCE_PORT  </dt>   <dd>    <p>If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.</p>    <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send requests to. </p>    <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when you created the service.</p>   </dd>   <dt>   Custom attributes  </dt>   <dd>    <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided attributes (sum of all keys and values) must not exceed 5,000 characters.</p>   </dd>  </dl>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::RegisterInstance::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::RegisterInstance::set_attributes): <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>  <ul>   <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>   <li> <p>For each attribute, the applicable value.</p> </li>  </ul> <note>   <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>  </note>  <p>Supported attribute keys include the following:</p>  <dl>   <dt>   AWS_ALIAS_DNS_NAME  </dt>   <dd>    <p>If you want Cloud Map to create an Amazon Route&nbsp;53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see "DNSName" in the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the <i>Route&nbsp;53 API Reference</i>.</p>    <p>Note the following:</p>    <ul>     <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>     <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>     <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map will create the Route&nbsp;53 health check, but it doesn't associate the health check with the alias record.</p> </li>     <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>     <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>    </ul>   </dd>   <dt>   AWS_EC2_INSTANCE_ID  </dt>   <dd>    <p> <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary private IPv4 address.</p>   </dd>   <dt>   AWS_INIT_HEALTH_STATUS  </dt>   <dd>    <p>If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.</p>   </dd>   <dt>   AWS_INSTANCE_CNAME  </dt>   <dd>    <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>example.com</code>).</p>    <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>CNAME</code> record.</p>   </dd>   <dt>   AWS_INSTANCE_IPV4  </dt>   <dd>    <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>    <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>   </dd>   <dt>   AWS_INSTANCE_IPV6  </dt>   <dd>    <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>    <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>   </dd>   <dt>   AWS_INSTANCE_PORT  </dt>   <dd>    <p>If the service includes an <code>SRV</code> record, the value that you want Route&nbsp;53 to return for the port.</p>    <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to. </p>    <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>   </dd>   <dt>   Custom attributes  </dt>   <dd>    <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided attributes (sum of all keys and values) must not exceed 5,000 characters.</p>   </dd>  </dl>
     /// - On success, responds with [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::output::RegisterInstanceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     /// - On failure, responds with [`SdkError<RegisterInstanceError>`](crate::error::RegisterInstanceError)
@@ -426,7 +426,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateHttpNamespace`.
     ///
     /// <p>Creates an HTTP namespace. Service instances registered using an HTTP namespace can be discovered using a <code>DiscoverInstances</code> request but can't be discovered using DNS.</p>
-    /// <p>For the current quota on the number of namespaces that you can create using the same account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    /// <p>For the current quota on the number of namespaces that you can create using the same Amazon Web Services account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHttpNamespace {
         handle: std::sync::Arc<super::Handle>,
@@ -539,7 +539,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePrivateDnsNamespace`.
     ///
-    /// <p>Creates a private namespace based on DNS, which is visible only inside a specified Amazon VPC. The namespace defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. Service instances that are registered using a private DNS namespace can be discovered using either a <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you can create using the same account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    /// <p>Creates a private namespace based on DNS, which is visible only inside a specified Amazon VPC. The namespace defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. Service instances that are registered using a private DNS namespace can be discovered using either a <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you can create using the same Amazon Web Services account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePrivateDnsNamespace {
         handle: std::sync::Arc<super::Handle>,
@@ -599,12 +599,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.</p>
+        /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route&nbsp;53 private hosted zone that has the same name as the namespace.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.</p>
+        /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route&nbsp;53 private hosted zone that has the same name as the namespace.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -675,7 +675,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePublicDnsNamespace`.
     ///
-    /// <p>Creates a public namespace based on DNS, which is visible on the internet. The namespace defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. You can discover instances that were registered with a public DNS namespace by using either a <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you can create using the same account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    /// <p>Creates a public namespace based on DNS, which is visible on the internet. The namespace defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. You can discover instances that were registered with a public DNS namespace by using either a <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you can create using the same Amazon Web Services account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p> <important>
+    /// <p>The <code>CreatePublicDnsNamespace</code> API operation is not supported in the Amazon Web Services GovCloud (US) Regions.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePublicDnsNamespace {
         handle: std::sync::Arc<super::Handle>,
@@ -735,12 +737,16 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name that you want to assign to this namespace.</p>
+        /// <p>The name that you want to assign to this namespace.</p> <note>
+        /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
+        /// </note>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name that you want to assign to this namespace.</p>
+        /// <p>The name that you want to assign to this namespace.</p> <note>
+        /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
+        /// </note>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -803,7 +809,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a service. This action defines the configuration for the following entities:</p>
     /// <ul>
-    /// <li> <p>For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:</p>
+    /// <li> <p>For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route&nbsp;53:</p>
     /// <ul>
     /// <li> <p> <code>A</code> </p> </li>
     /// <li> <p> <code>AAAA</code> </p> </li>
@@ -874,7 +880,9 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name that you want to assign to the service.</p>
+        /// <p>The name that you want to assign to the service.</p> <note>
+        /// <p>Do not include sensitive information in the name if the namespace is discoverable by public DNS queries.</p>
+        /// </note>
         /// <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>
         /// <ul>
         /// <li> <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p> </li>
@@ -888,7 +896,9 @@ pub mod fluent_builders {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name that you want to assign to the service.</p>
+        /// <p>The name that you want to assign to the service.</p> <note>
+        /// <p>Do not include sensitive information in the name if the namespace is discoverable by public DNS queries.</p>
+        /// </note>
         /// <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>
         /// <ul>
         /// <li> <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p> </li>
@@ -935,12 +945,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A complex type that contains information about the Amazon Route 53 records that you want Cloud Map to create when you register an instance. </p>
+        /// <p>A complex type that contains information about the Amazon Route&nbsp;53 records that you want Cloud Map to create when you register an instance. </p>
         pub fn dns_config(mut self, input: crate::model::DnsConfig) -> Self {
             self.inner = self.inner.dns_config(input);
             self
         }
-        /// <p>A complex type that contains information about the Amazon Route 53 records that you want Cloud Map to create when you register an instance. </p>
+        /// <p>A complex type that contains information about the Amazon Route&nbsp;53 records that you want Cloud Map to create when you register an instance. </p>
         pub fn set_dns_config(
             mut self,
             input: std::option::Option<crate::model::DnsConfig>,
@@ -948,7 +958,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dns_config(input);
             self
         }
-        /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route 53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+        /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
         /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
         /// </important>
         /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
@@ -956,7 +966,7 @@ pub mod fluent_builders {
             self.inner = self.inner.health_check_config(input);
             self
         }
-        /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route 53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+        /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
         /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
         /// </important>
         /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
@@ -1168,7 +1178,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterInstance`.
     ///
-    /// <p>Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created for the specified instance.</p>
+    /// <p>Deletes the Amazon Route&nbsp;53 DNS records and health check, if any, that Cloud Map created for the specified instance.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterInstance {
         handle: std::sync::Arc<super::Handle>,
@@ -1989,7 +1999,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListNamespaces`.
     ///
-    /// <p>Lists summary information about the namespaces that were created by the current account.</p>
+    /// <p>Lists summary information about the namespaces that were created by the current Amazon Web Services account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNamespaces {
         handle: std::sync::Arc<super::Handle>,
@@ -2497,7 +2507,9 @@ pub mod fluent_builders {
         /// <li> <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records, if any. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one. </p> <note>
         /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
         /// </note> </li>
-        /// </ul>
+        /// </ul> <note>
+        /// <p>Do not include sensitive information in <code>InstanceId</code> if the namespace is discoverable by public DNS queries and any <code>Type</code> member of <code>DnsRecord</code> for the service contains <code>SRV</code> because the <code>InstanceId</code> is discoverable by public DNS queries.</p>
+        /// </note>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(input.into());
             self
@@ -2510,7 +2522,9 @@ pub mod fluent_builders {
         /// <li> <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records, if any. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one. </p> <note>
         /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
         /// </note> </li>
-        /// </ul>
+        /// </ul> <note>
+        /// <p>Do not include sensitive information in <code>InstanceId</code> if the namespace is discoverable by public DNS queries and any <code>Type</code> member of <code>DnsRecord</code> for the service contains <code>SRV</code> because the <code>InstanceId</code> is discoverable by public DNS queries.</p>
+        /// </note>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -2536,19 +2550,21 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>
         /// <li> <p>For each attribute, the applicable value.</p> </li>
-        /// </ul>
+        /// </ul> <note>
+        /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
+        /// </note>
         /// <p>Supported attribute keys include the following:</p>
         /// <dl>
         /// <dt>
         /// AWS_ALIAS_DNS_NAME
         /// </dt>
         /// <dd>
-        /// <p>If you want Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see "DNSName" in the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the <i>Route 53 API Reference</i>.</p>
+        /// <p>If you want Cloud Map to create an Amazon Route&nbsp;53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see "DNSName" in the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the <i>Route&nbsp;53 API Reference</i>.</p>
         /// <p>Note the following:</p>
         /// <ul>
         /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
         /// <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>
-        /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map will create the Route 53 health check, but it doesn't associate the health check with the alias record.</p> </li>
+        /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map will create the Route&nbsp;53 health check, but it doesn't associate the health check with the alias record.</p> </li>
         /// <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>
         /// <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>
         /// </ul>
@@ -2569,30 +2585,30 @@ pub mod fluent_builders {
         /// AWS_INSTANCE_CNAME
         /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).</p>
+        /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>example.com</code>).</p>
         /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>CNAME</code> record.</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_IPV4
         /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
+        /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
         /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_IPV6
         /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+        /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
         /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_PORT
         /// </dt>
         /// <dd>
-        /// <p>If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.</p>
-        /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send requests to. </p>
-        /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when you created the service.</p>
+        /// <p>If the service includes an <code>SRV</code> record, the value that you want Route&nbsp;53 to return for the port.</p>
+        /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to. </p>
+        /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
         /// </dd>
         /// <dt>
         /// Custom attributes
@@ -2613,19 +2629,21 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>
         /// <li> <p>For each attribute, the applicable value.</p> </li>
-        /// </ul>
+        /// </ul> <note>
+        /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
+        /// </note>
         /// <p>Supported attribute keys include the following:</p>
         /// <dl>
         /// <dt>
         /// AWS_ALIAS_DNS_NAME
         /// </dt>
         /// <dd>
-        /// <p>If you want Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see "DNSName" in the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the <i>Route 53 API Reference</i>.</p>
+        /// <p>If you want Cloud Map to create an Amazon Route&nbsp;53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see "DNSName" in the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the <i>Route&nbsp;53 API Reference</i>.</p>
         /// <p>Note the following:</p>
         /// <ul>
         /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
         /// <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>
-        /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map will create the Route 53 health check, but it doesn't associate the health check with the alias record.</p> </li>
+        /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map will create the Route&nbsp;53 health check, but it doesn't associate the health check with the alias record.</p> </li>
         /// <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>
         /// <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>
         /// </ul>
@@ -2646,30 +2664,30 @@ pub mod fluent_builders {
         /// AWS_INSTANCE_CNAME
         /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).</p>
+        /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>example.com</code>).</p>
         /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>CNAME</code> record.</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_IPV4
         /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
+        /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
         /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_IPV6
         /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+        /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
         /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_PORT
         /// </dt>
         /// <dd>
-        /// <p>If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.</p>
-        /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send requests to. </p>
-        /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when you created the service.</p>
+        /// <p>If the service includes an <code>SRV</code> record, the value that you want Route&nbsp;53 to return for the port.</p>
+        /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to. </p>
+        /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
         /// </dd>
         /// <dt>
         /// Custom attributes
@@ -2970,7 +2988,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInstanceCustomHealthStatus`.
     ///
     /// <p>Submits a request to change the health status of a custom health check to healthy or unhealthy.</p>
-    /// <p>You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only for custom health checks, which you define using <code>HealthCheckCustomConfig</code> when you create a service. You can't use it to change the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.</p>
+    /// <p>You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only for custom health checks, which you define using <code>HealthCheckCustomConfig</code> when you create a service. You can't use it to change the status for Route&nbsp;53 health checks, which you define using <code>HealthCheckConfig</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_HealthCheckCustomConfig.html">HealthCheckCustomConfig</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInstanceCustomHealthStatus {

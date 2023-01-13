@@ -99,6 +99,26 @@ pub(crate) fn reflens_structure_crate_output_get_trace_summaries_output_next_tok
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_resource_policies_output_next_token(
+    input: &crate::output::ListResourcePoliciesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_tags_for_resource_output_next_token(
+    input: &crate::output::ListTagsForResourceOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_batch_get_traces_output_traces(
     input: crate::output::BatchGetTracesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::Trace>> {
@@ -173,6 +193,26 @@ pub(crate) fn lens_structure_crate_output_get_trace_summaries_output_trace_summa
     input: crate::output::GetTraceSummariesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::TraceSummary>> {
     let input = match input.trace_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_resource_policies_output_resource_policies(
+    input: crate::output::ListResourcePoliciesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ResourcePolicy>> {
+    let input = match input.resource_policies {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_tags_for_resource_output_tags(
+    input: crate::output::ListTagsForResourceOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Tag>> {
+    let input = match input.tags {
         None => return None,
         Some(t) => t,
     };

@@ -906,6 +906,15 @@ pub(crate) fn deser_operation_crate_operation_describe_packaging_group(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "approximateAssetCount" => {
+                        builder = builder.set_approximate_asset_count(
+                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(i32::try_from)
+                            .transpose()?,
+                        );
+                    }
                     "arn" => {
                         builder = builder.set_arn(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -1199,6 +1208,15 @@ pub(crate) fn deser_operation_crate_operation_update_packaging_group(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "approximateAssetCount" => {
+                        builder = builder.set_approximate_asset_count(
+                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(i32::try_from)
+                            .transpose()?,
+                        );
+                    }
                     "arn" => {
                         builder = builder.set_arn(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -1601,6 +1619,13 @@ where
                             }
                             "includeEncoderConfigurationInSegments" => {
                                 builder = builder.set_include_encoder_configuration_in_segments(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "includeIframeOnlyStream" => {
+                                builder = builder.set_include_iframe_only_stream(
                                     aws_smithy_json::deserialize::token::expect_bool_or_null(
                                         tokens.next(),
                                     )?,
@@ -2725,6 +2750,15 @@ where
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
+                            "approximateAssetCount" => {
+                                builder = builder.set_approximate_asset_count(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                                );
+                            }
                             "arn" => {
                                 builder = builder.set_arn(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -2816,6 +2850,11 @@ where
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
+                            "encryptionContractConfiguration" => {
+                                builder = builder.set_encryption_contract_configuration(
+                                    crate::json_deser::deser_structure_crate_model_encryption_contract_configuration(tokens)?
+                                );
+                            }
                             "roleArn" => {
                                 builder = builder.set_role_arn(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -3092,6 +3131,79 @@ where
                             "streamSelection" => {
                                 builder = builder.set_stream_selection(
                                     crate::json_deser::deser_structure_crate_model_stream_selection(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
+pub(crate) fn deser_structure_crate_model_encryption_contract_configuration<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::EncryptionContractConfiguration>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::encryption_contract_configuration::Builder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "presetSpeke20Audio" => {
+                                builder = builder.set_preset_speke20_audio(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::PresetSpeke20Audio::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "presetSpeke20Video" => {
+                                builder = builder.set_preset_speke20_video(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::PresetSpeke20Video::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

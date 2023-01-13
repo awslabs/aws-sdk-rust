@@ -3,6 +3,9 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePackagingGroupOutput {
+    /// The approximate asset count of the PackagingGroup.
+    #[doc(hidden)]
+    pub approximate_asset_count: i32,
     /// The ARN of the PackagingGroup.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -24,6 +27,10 @@ pub struct UpdatePackagingGroupOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdatePackagingGroupOutput {
+    /// The approximate asset count of the PackagingGroup.
+    pub fn approximate_asset_count(&self) -> i32 {
+        self.approximate_asset_count
+    }
     /// The ARN of the PackagingGroup.
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
@@ -58,6 +65,7 @@ pub mod update_packaging_group_output {
     /// A builder for [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) approximate_asset_count: std::option::Option<i32>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) authorization: std::option::Option<crate::model::Authorization>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -68,6 +76,16 @@ pub mod update_packaging_group_output {
         >,
     }
     impl Builder {
+        /// The approximate asset count of the PackagingGroup.
+        pub fn approximate_asset_count(mut self, input: i32) -> Self {
+            self.approximate_asset_count = Some(input);
+            self
+        }
+        /// The approximate asset count of the PackagingGroup.
+        pub fn set_approximate_asset_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.approximate_asset_count = input;
+            self
+        }
         /// The ARN of the PackagingGroup.
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
@@ -152,6 +170,7 @@ pub mod update_packaging_group_output {
         /// Consumes the builder and constructs a [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput).
         pub fn build(self) -> crate::output::UpdatePackagingGroupOutput {
             crate::output::UpdatePackagingGroupOutput {
+                approximate_asset_count: self.approximate_asset_count.unwrap_or_default(),
                 arn: self.arn,
                 authorization: self.authorization,
                 domain_name: self.domain_name,
@@ -524,6 +543,9 @@ impl ListAssetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackagingGroupOutput {
+    /// The approximate asset count of the PackagingGroup.
+    #[doc(hidden)]
+    pub approximate_asset_count: i32,
     /// The ARN of the PackagingGroup.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -545,6 +567,10 @@ pub struct DescribePackagingGroupOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DescribePackagingGroupOutput {
+    /// The approximate asset count of the PackagingGroup.
+    pub fn approximate_asset_count(&self) -> i32 {
+        self.approximate_asset_count
+    }
     /// The ARN of the PackagingGroup.
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
@@ -579,6 +605,7 @@ pub mod describe_packaging_group_output {
     /// A builder for [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) approximate_asset_count: std::option::Option<i32>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) authorization: std::option::Option<crate::model::Authorization>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -589,6 +616,16 @@ pub mod describe_packaging_group_output {
         >,
     }
     impl Builder {
+        /// The approximate asset count of the PackagingGroup.
+        pub fn approximate_asset_count(mut self, input: i32) -> Self {
+            self.approximate_asset_count = Some(input);
+            self
+        }
+        /// The approximate asset count of the PackagingGroup.
+        pub fn set_approximate_asset_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.approximate_asset_count = input;
+            self
+        }
         /// The ARN of the PackagingGroup.
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
@@ -673,6 +710,7 @@ pub mod describe_packaging_group_output {
         /// Consumes the builder and constructs a [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput).
         pub fn build(self) -> crate::output::DescribePackagingGroupOutput {
             crate::output::DescribePackagingGroupOutput {
+                approximate_asset_count: self.approximate_asset_count.unwrap_or_default(),
                 arn: self.arn,
                 authorization: self.authorization,
                 domain_name: self.domain_name,

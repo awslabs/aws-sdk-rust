@@ -111,6 +111,15 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "eu-central-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "elasticfilesystem.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
                 "eu-north-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "elasticfilesystem.{region}.amazonaws.com",
@@ -277,6 +286,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "fips-eu-central-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "elasticfilesystem-fips.eu-central-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("eu-central-2")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "fips-eu-north-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "elasticfilesystem-fips.eu-north-1.amazonaws.com",
@@ -328,6 +348,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder()
                         .region("eu-west-3")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-me-central-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "elasticfilesystem-fips.me-central-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("me-central-1")
                         .build(),
                 },
             )
@@ -395,6 +426,15 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     credential_scope: aws_endpoint::CredentialScope::builder()
                         .region("us-west-2")
                         .build(),
+                },
+            )
+            .endpoint(
+                "me-central-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "elasticfilesystem.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
                 },
             )
             .endpoint(
@@ -528,7 +568,27 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     },
                 )
                 .endpoint(
+                    "fips-us-iso-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "elasticfilesystem-fips.us-iso-west-1.c2s.ic.gov",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-iso-west-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
                     "us-iso-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "elasticfilesystem.{region}.c2s.ic.gov",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                    },
+                )
+                .endpoint(
+                    "us-iso-west-1",
                     aws_endpoint::partition::endpoint::Metadata {
                         uri_template: "elasticfilesystem.{region}.c2s.ic.gov",
                         protocol: aws_endpoint::partition::endpoint::Protocol::Https,

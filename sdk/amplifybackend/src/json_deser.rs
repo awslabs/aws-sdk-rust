@@ -1519,6 +1519,15 @@ pub(crate) fn deser_operation_crate_operation_get_backend_api_models(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "modelIntrospectionSchema" => {
+                        builder = builder.set_model_introspection_schema(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "models" => {
                         builder = builder.set_models(
                             aws_smithy_json::deserialize::token::expect_string_or_null(

@@ -348,7 +348,7 @@ pub struct ResourcePolicy {
     /// <p>The details of the policy.</p>
     #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
-    /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub last_updated_time: std::option::Option<i64>,
 }
@@ -361,7 +361,7 @@ impl ResourcePolicy {
     pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
     }
-    /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn last_updated_time(&self) -> std::option::Option<i64> {
         self.last_updated_time
     }
@@ -400,12 +400,12 @@ pub mod resource_policy {
             self.policy_document = input;
             self
         }
-        /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn last_updated_time(mut self, input: i64) -> Self {
             self.last_updated_time = Some(input);
             self
         }
-        /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_last_updated_time(mut self, input: std::option::Option<i64>) -> Self {
             self.last_updated_time = input;
             self
@@ -445,7 +445,7 @@ pub struct MetricTransformation {
     pub default_value: std::option::Option<f64>,
     /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important>
     /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p>
-    /// <p>To help prevent accidental high charges, Amazon disables a metric filter if it generates 1000 different name/value pairs for the dimensions that you have specified within a certain amount of time.</p>
+    /// <p>CloudWatch Logs disables a metric filter if it generates 1000 different name/value pairs for your specified dimensions within a certain amount of time. This helps to prevent accidental high charges.</p>
     /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p>
     /// </important>
     #[doc(hidden)]
@@ -474,7 +474,7 @@ impl MetricTransformation {
     }
     /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important>
     /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p>
-    /// <p>To help prevent accidental high charges, Amazon disables a metric filter if it generates 1000 different name/value pairs for the dimensions that you have specified within a certain amount of time.</p>
+    /// <p>CloudWatch Logs disables a metric filter if it generates 1000 different name/value pairs for your specified dimensions within a certain amount of time. This helps to prevent accidental high charges.</p>
     /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p>
     /// </important>
     pub fn dimensions(
@@ -553,7 +553,7 @@ pub mod metric_transformation {
         ///
         /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important>
         /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p>
-        /// <p>To help prevent accidental high charges, Amazon disables a metric filter if it generates 1000 different name/value pairs for the dimensions that you have specified within a certain amount of time.</p>
+        /// <p>CloudWatch Logs disables a metric filter if it generates 1000 different name/value pairs for your specified dimensions within a certain amount of time. This helps to prevent accidental high charges.</p>
         /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p>
         /// </important>
         pub fn dimensions(
@@ -568,7 +568,7 @@ pub mod metric_transformation {
         }
         /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important>
         /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p>
-        /// <p>To help prevent accidental high charges, Amazon disables a metric filter if it generates 1000 different name/value pairs for the dimensions that you have specified within a certain amount of time.</p>
+        /// <p>CloudWatch Logs disables a metric filter if it generates 1000 different name/value pairs for your specified dimensions within a certain amount of time. This helps to prevent accidental high charges.</p>
         /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p>
         /// </important>
         pub fn set_dimensions(
@@ -860,7 +860,7 @@ pub struct RejectedLogEventsInfo {
     /// <p>The log events that are too new.</p>
     #[doc(hidden)]
     pub too_new_log_event_start_index: std::option::Option<i32>,
-    /// <p>The log events that are too old.</p>
+    /// <p>The log events that are dated too far in the past.</p>
     #[doc(hidden)]
     pub too_old_log_event_end_index: std::option::Option<i32>,
     /// <p>The expired log events.</p>
@@ -872,7 +872,7 @@ impl RejectedLogEventsInfo {
     pub fn too_new_log_event_start_index(&self) -> std::option::Option<i32> {
         self.too_new_log_event_start_index
     }
-    /// <p>The log events that are too old.</p>
+    /// <p>The log events that are dated too far in the past.</p>
     pub fn too_old_log_event_end_index(&self) -> std::option::Option<i32> {
         self.too_old_log_event_end_index
     }
@@ -905,12 +905,12 @@ pub mod rejected_log_events_info {
             self.too_new_log_event_start_index = input;
             self
         }
-        /// <p>The log events that are too old.</p>
+        /// <p>The log events that are dated too far in the past.</p>
         pub fn too_old_log_event_end_index(mut self, input: i32) -> Self {
             self.too_old_log_event_end_index = Some(input);
             self
         }
-        /// <p>The log events that are too old.</p>
+        /// <p>The log events that are dated too far in the past.</p>
         pub fn set_too_old_log_event_end_index(mut self, input: std::option::Option<i32>) -> Self {
             self.too_old_log_event_end_index = input;
             self
@@ -946,7 +946,7 @@ impl RejectedLogEventsInfo {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputLogEvent {
-    /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<i64>,
     /// <p>The raw event message.</p>
@@ -954,7 +954,7 @@ pub struct InputLogEvent {
     pub message: std::option::Option<std::string::String>,
 }
 impl InputLogEvent {
-    /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn timestamp(&self) -> std::option::Option<i64> {
         self.timestamp
     }
@@ -973,12 +973,12 @@ pub mod input_log_event {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn timestamp(mut self, input: i64) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.timestamp = input;
             self
@@ -1506,18 +1506,18 @@ impl LogGroupField {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputLogEvent {
-    /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<i64>,
     /// <p>The data contained in the log event.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-    /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub ingestion_time: std::option::Option<i64>,
 }
 impl OutputLogEvent {
-    /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn timestamp(&self) -> std::option::Option<i64> {
         self.timestamp
     }
@@ -1525,7 +1525,7 @@ impl OutputLogEvent {
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn ingestion_time(&self) -> std::option::Option<i64> {
         self.ingestion_time
     }
@@ -1541,12 +1541,12 @@ pub mod output_log_event {
         pub(crate) ingestion_time: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn timestamp(mut self, input: i64) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.timestamp = input;
             self
@@ -1561,12 +1561,12 @@ pub mod output_log_event {
             self.message = input;
             self
         }
-        /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn ingestion_time(mut self, input: i64) -> Self {
             self.ingestion_time = Some(input);
             self
         }
-        /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_ingestion_time(mut self, input: std::option::Option<i64>) -> Self {
             self.ingestion_time = input;
             self
@@ -1665,13 +1665,13 @@ pub struct FilteredLogEvent {
     /// <p>The name of the log stream to which this event belongs.</p>
     #[doc(hidden)]
     pub log_stream_name: std::option::Option<std::string::String>,
-    /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<i64>,
     /// <p>The data contained in the log event.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-    /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub ingestion_time: std::option::Option<i64>,
     /// <p>The ID of the event.</p>
@@ -1683,7 +1683,7 @@ impl FilteredLogEvent {
     pub fn log_stream_name(&self) -> std::option::Option<&str> {
         self.log_stream_name.as_deref()
     }
-    /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn timestamp(&self) -> std::option::Option<i64> {
         self.timestamp
     }
@@ -1691,7 +1691,7 @@ impl FilteredLogEvent {
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn ingestion_time(&self) -> std::option::Option<i64> {
         self.ingestion_time
     }
@@ -1726,12 +1726,12 @@ pub mod filtered_log_event {
             self.log_stream_name = input;
             self
         }
-        /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn timestamp(mut self, input: i64) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.timestamp = input;
             self
@@ -1746,12 +1746,12 @@ pub mod filtered_log_event {
             self.message = input;
             self
         }
-        /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn ingestion_time(mut self, input: i64) -> Self {
             self.ingestion_time = Some(input);
             self
         }
-        /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_ingestion_time(mut self, input: std::option::Option<i64>) -> Self {
             self.ingestion_time = input;
             self
@@ -1807,7 +1807,7 @@ pub struct SubscriptionFilter {
     /// <p>The method used to distribute log data to the destination, which can be either random or grouped by log stream.</p>
     #[doc(hidden)]
     pub distribution: std::option::Option<crate::model::Distribution>,
-    /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
 }
@@ -1836,7 +1836,7 @@ impl SubscriptionFilter {
     pub fn distribution(&self) -> std::option::Option<&crate::model::Distribution> {
         self.distribution.as_ref()
     }
-    /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn creation_time(&self) -> std::option::Option<i64> {
         self.creation_time
     }
@@ -1928,12 +1928,12 @@ pub mod subscription_filter {
             self.distribution = input;
             self
         }
-        /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn creation_time(mut self, input: i64) -> Self {
             self.creation_time = Some(input);
             self
         }
-        /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
             self.creation_time = input;
             self
@@ -2236,7 +2236,7 @@ pub struct MetricFilter {
     #[doc(hidden)]
     pub metric_transformations:
         std::option::Option<std::vec::Vec<crate::model::MetricTransformation>>,
-    /// <p>The creation time of the metric filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
     /// <p>The name of the log group.</p>
@@ -2258,7 +2258,7 @@ impl MetricFilter {
     ) -> std::option::Option<&[crate::model::MetricTransformation]> {
         self.metric_transformations.as_deref()
     }
-    /// <p>The creation time of the metric filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn creation_time(&self) -> std::option::Option<i64> {
         self.creation_time
     }
@@ -2323,12 +2323,12 @@ pub mod metric_filter {
             self.metric_transformations = input;
             self
         }
-        /// <p>The creation time of the metric filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn creation_time(mut self, input: i64) -> Self {
             self.creation_time = Some(input);
             self
         }
-        /// <p>The creation time of the metric filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
             self.creation_time = input;
             self
@@ -2372,26 +2372,28 @@ pub struct LogStream {
     /// <p>The name of the log stream.</p>
     #[doc(hidden)]
     pub log_stream_name: std::option::Option<std::string::String>,
-    /// <p>The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The creation time of the stream, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
-    /// <p>The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The time of the first event, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub first_event_timestamp: std::option::Option<i64>,
-    /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
+    /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
     #[doc(hidden)]
     pub last_event_timestamp: std::option::Option<i64>,
-    /// <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour after ingestion, but in rare situations might take longer.</p>
     #[doc(hidden)]
     pub last_ingestion_time: std::option::Option<i64>,
-    /// <p>The sequence token.</p>
+    /// <p>The sequence token.</p> <important>
+    /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
+    /// </important>
     #[doc(hidden)]
     pub upload_sequence_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the log stream.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The number of bytes stored.</p>
-    /// <p> <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
+    /// <p> <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
     #[deprecated(
         note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
     )]
@@ -2403,23 +2405,25 @@ impl LogStream {
     pub fn log_stream_name(&self) -> std::option::Option<&str> {
         self.log_stream_name.as_deref()
     }
-    /// <p>The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The creation time of the stream, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn creation_time(&self) -> std::option::Option<i64> {
         self.creation_time
     }
-    /// <p>The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The time of the first event, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn first_event_timestamp(&self) -> std::option::Option<i64> {
         self.first_event_timestamp
     }
-    /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
+    /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
     pub fn last_event_timestamp(&self) -> std::option::Option<i64> {
         self.last_event_timestamp
     }
-    /// <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour after ingestion, but in rare situations might take longer.</p>
     pub fn last_ingestion_time(&self) -> std::option::Option<i64> {
         self.last_ingestion_time
     }
-    /// <p>The sequence token.</p>
+    /// <p>The sequence token.</p> <important>
+    /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
+    /// </important>
     pub fn upload_sequence_token(&self) -> std::option::Option<&str> {
         self.upload_sequence_token.as_deref()
     }
@@ -2428,7 +2432,7 @@ impl LogStream {
         self.arn.as_deref()
     }
     /// <p>The number of bytes stored.</p>
-    /// <p> <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
+    /// <p> <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
     #[deprecated(
         note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
     )]
@@ -2465,52 +2469,56 @@ pub mod log_stream {
             self.log_stream_name = input;
             self
         }
-        /// <p>The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The creation time of the stream, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn creation_time(mut self, input: i64) -> Self {
             self.creation_time = Some(input);
             self
         }
-        /// <p>The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The creation time of the stream, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
             self.creation_time = input;
             self
         }
-        /// <p>The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The time of the first event, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn first_event_timestamp(mut self, input: i64) -> Self {
             self.first_event_timestamp = Some(input);
             self
         }
-        /// <p>The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The time of the first event, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_first_event_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.first_event_timestamp = input;
             self
         }
-        /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
+        /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
         pub fn last_event_timestamp(mut self, input: i64) -> Self {
             self.last_event_timestamp = Some(input);
             self
         }
-        /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
+        /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
         pub fn set_last_event_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.last_event_timestamp = input;
             self
         }
-        /// <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour after ingestion, but in rare situations might take longer.</p>
         pub fn last_ingestion_time(mut self, input: i64) -> Self {
             self.last_ingestion_time = Some(input);
             self
         }
-        /// <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour after ingestion, but in rare situations might take longer.</p>
         pub fn set_last_ingestion_time(mut self, input: std::option::Option<i64>) -> Self {
             self.last_ingestion_time = input;
             self
         }
-        /// <p>The sequence token.</p>
+        /// <p>The sequence token.</p> <important>
+        /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
+        /// </important>
         pub fn upload_sequence_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.upload_sequence_token = Some(input.into());
             self
         }
-        /// <p>The sequence token.</p>
+        /// <p>The sequence token.</p> <important>
+        /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
+        /// </important>
         pub fn set_upload_sequence_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2529,7 +2537,7 @@ pub mod log_stream {
             self
         }
         /// <p>The number of bytes stored.</p>
-        /// <p> <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
+        /// <p> <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
         #[deprecated(
             note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
         )]
@@ -2538,7 +2546,7 @@ pub mod log_stream {
             self
         }
         /// <p>The number of bytes stored.</p>
-        /// <p> <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
+        /// <p> <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
         #[deprecated(
             note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
         )]
@@ -2669,7 +2677,7 @@ pub struct LogGroup {
     #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
     /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
-    /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
+    /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     #[doc(hidden)]
     pub retention_in_days: std::option::Option<i32>,
     /// <p>The number of metric filters.</p>
@@ -2681,9 +2689,12 @@ pub struct LogGroup {
     /// <p>The number of bytes stored.</p>
     #[doc(hidden)]
     pub stored_bytes: std::option::Option<i64>,
-    /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
+    #[doc(hidden)]
+    pub data_protection_status: std::option::Option<crate::model::DataProtectionStatus>,
 }
 impl LogGroup {
     /// <p>The name of the log group.</p>
@@ -2695,7 +2706,7 @@ impl LogGroup {
         self.creation_time
     }
     /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
-    /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
+    /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     pub fn retention_in_days(&self) -> std::option::Option<i32> {
         self.retention_in_days
     }
@@ -2711,9 +2722,15 @@ impl LogGroup {
     pub fn stored_bytes(&self) -> std::option::Option<i64> {
         self.stored_bytes
     }
-    /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
+    }
+    /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
+    pub fn data_protection_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DataProtectionStatus> {
+        self.data_protection_status.as_ref()
     }
 }
 /// See [`LogGroup`](crate::model::LogGroup).
@@ -2729,6 +2746,7 @@ pub mod log_group {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) stored_bytes: std::option::Option<i64>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) data_protection_status: std::option::Option<crate::model::DataProtectionStatus>,
     }
     impl Builder {
         /// <p>The name of the log group.</p>
@@ -2755,13 +2773,13 @@ pub mod log_group {
             self
         }
         /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
-        /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
+        /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
         pub fn retention_in_days(mut self, input: i32) -> Self {
             self.retention_in_days = Some(input);
             self
         }
         /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
-        /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
+        /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
         pub fn set_retention_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.retention_in_days = input;
             self
@@ -2796,14 +2814,27 @@ pub mod log_group {
             self.stored_bytes = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
+            self
+        }
+        /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
+        pub fn data_protection_status(mut self, input: crate::model::DataProtectionStatus) -> Self {
+            self.data_protection_status = Some(input);
+            self
+        }
+        /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
+        pub fn set_data_protection_status(
+            mut self,
+            input: std::option::Option<crate::model::DataProtectionStatus>,
+        ) -> Self {
+            self.data_protection_status = input;
             self
         }
         /// Consumes the builder and constructs a [`LogGroup`](crate::model::LogGroup).
@@ -2816,6 +2847,7 @@ pub mod log_group {
                 arn: self.arn,
                 stored_bytes: self.stored_bytes,
                 kms_key_id: self.kms_key_id,
+                data_protection_status: self.data_protection_status,
             }
         }
     }
@@ -2824,6 +2856,108 @@ impl LogGroup {
     /// Creates a new builder-style object to manufacture [`LogGroup`](crate::model::LogGroup).
     pub fn builder() -> crate::model::log_group::Builder {
         crate::model::log_group::Builder::default()
+    }
+}
+
+/// When writing a match expression against `DataProtectionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dataprotectionstatus = unimplemented!();
+/// match dataprotectionstatus {
+///     DataProtectionStatus::Activated => { /* ... */ },
+///     DataProtectionStatus::Archived => { /* ... */ },
+///     DataProtectionStatus::Deleted => { /* ... */ },
+///     DataProtectionStatus::Disabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dataprotectionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DataProtectionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DataProtectionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DataProtectionStatus::NewFeature` is defined.
+/// Specifically, when `dataprotectionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DataProtectionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DataProtectionStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Activated,
+    #[allow(missing_docs)] // documentation missing in model
+    Archived,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleted,
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DataProtectionStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVATED" => DataProtectionStatus::Activated,
+            "ARCHIVED" => DataProtectionStatus::Archived,
+            "DELETED" => DataProtectionStatus::Deleted,
+            "DISABLED" => DataProtectionStatus::Disabled,
+            other => {
+                DataProtectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for DataProtectionStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DataProtectionStatus::from(s))
+    }
+}
+impl DataProtectionStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DataProtectionStatus::Activated => "ACTIVATED",
+            DataProtectionStatus::Archived => "ARCHIVED",
+            DataProtectionStatus::Deleted => "DELETED",
+            DataProtectionStatus::Disabled => "DISABLED",
+            DataProtectionStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ACTIVATED", "ARCHIVED", "DELETED", "DISABLED"]
+    }
+}
+impl AsRef<str> for DataProtectionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2840,10 +2974,10 @@ pub struct ExportTask {
     /// <p>The name of the log group from which logs data was exported.</p>
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
-    /// <p>The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
+    /// <p>The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not exported.</p>
     #[doc(hidden)]
     pub from: std::option::Option<i64>,
-    /// <p>The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+    /// <p>The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
     #[doc(hidden)]
     pub to: std::option::Option<i64>,
     /// <p>The name of the S3 bucket to which the log data was exported.</p>
@@ -2872,11 +3006,11 @@ impl ExportTask {
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
+    /// <p>The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not exported.</p>
     pub fn from(&self) -> std::option::Option<i64> {
         self.from
     }
-    /// <p>The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+    /// <p>The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
     pub fn to(&self) -> std::option::Option<i64> {
         self.to
     }
@@ -2947,22 +3081,22 @@ pub mod export_task {
             self.log_group_name = input;
             self
         }
-        /// <p>The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
+        /// <p>The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not exported.</p>
         pub fn from(mut self, input: i64) -> Self {
             self.from = Some(input);
             self
         }
-        /// <p>The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
+        /// <p>The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not exported.</p>
         pub fn set_from(mut self, input: std::option::Option<i64>) -> Self {
             self.from = input;
             self
         }
-        /// <p>The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+        /// <p>The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
         pub fn to(mut self, input: i64) -> Self {
             self.to = Some(input);
             self
         }
-        /// <p>The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+        /// <p>The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
         pub fn set_to(mut self, input: std::option::Option<i64>) -> Self {
             self.to = input;
             self
@@ -3043,19 +3177,19 @@ impl ExportTask {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportTaskExecutionInfo {
-    /// <p>The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The creation time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
-    /// <p>The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub completion_time: std::option::Option<i64>,
 }
 impl ExportTaskExecutionInfo {
-    /// <p>The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The creation time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn creation_time(&self) -> std::option::Option<i64> {
         self.creation_time
     }
-    /// <p>The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn completion_time(&self) -> std::option::Option<i64> {
         self.completion_time
     }
@@ -3070,22 +3204,22 @@ pub mod export_task_execution_info {
         pub(crate) completion_time: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The creation time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn creation_time(mut self, input: i64) -> Self {
             self.creation_time = Some(input);
             self
         }
-        /// <p>The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The creation time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
             self.creation_time = input;
             self
         }
-        /// <p>The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn completion_time(mut self, input: i64) -> Self {
             self.completion_time = Some(input);
             self
         }
-        /// <p>The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_completion_time(mut self, input: std::option::Option<i64>) -> Self {
             self.completion_time = input;
             self

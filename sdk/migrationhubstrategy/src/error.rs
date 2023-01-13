@@ -480,6 +480,66 @@ impl ServiceLinkedRoleLockClientException {
     }
 }
 
+/// <p>Dependency encountered an error.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DependencyException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl DependencyException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DependencyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DependencyException")?;
+        if let Some(inner_9) = &self.message {
+            {
+                write!(f, ": {}", inner_9)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DependencyException {}
+/// See [`DependencyException`](crate::error::DependencyException).
+pub mod dependency_exception {
+
+    /// A builder for [`DependencyException`](crate::error::DependencyException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DependencyException`](crate::error::DependencyException).
+        pub fn build(self) -> crate::error::DependencyException {
+            crate::error::DependencyException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl DependencyException {
+    /// Creates a new builder-style object to manufacture [`DependencyException`](crate::error::DependencyException).
+    pub fn builder() -> crate::error::dependency_exception::Builder {
+        crate::error::dependency_exception::Builder::default()
+    }
+}
+
 /// Error type for the `GetApplicationComponentDetails` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1059,6 +1119,151 @@ impl std::error::Error for GetImportFileTaskError {
             GetImportFileTaskErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetImportFileTaskErrorKind::ValidationException(_inner) => Some(_inner),
             GetImportFileTaskErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetLatestAssessmentId` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetLatestAssessmentIdError {
+    /// Kind of error that occurred.
+    pub kind: GetLatestAssessmentIdErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetLatestAssessmentIdError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLatestAssessmentIdErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetLatestAssessmentId` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetLatestAssessmentIdErrorKind {
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Dependency encountered an error.</p>
+    DependencyException(crate::error::DependencyException),
+    /// <p> The server experienced an internal error. Try again. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The request body isn't valid. </p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetLatestAssessmentIdError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetLatestAssessmentIdErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetLatestAssessmentIdErrorKind::DependencyException(_inner) => _inner.fmt(f),
+            GetLatestAssessmentIdErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetLatestAssessmentIdErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetLatestAssessmentIdErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetLatestAssessmentIdError {
+    fn code(&self) -> Option<&str> {
+        GetLatestAssessmentIdError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetLatestAssessmentIdError {
+    /// Creates a new `GetLatestAssessmentIdError`.
+    pub fn new(kind: GetLatestAssessmentIdErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetLatestAssessmentIdError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetLatestAssessmentIdErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetLatestAssessmentIdError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetLatestAssessmentIdErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetLatestAssessmentIdErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLatestAssessmentIdErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLatestAssessmentIdErrorKind::DependencyException`.
+    pub fn is_dependency_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLatestAssessmentIdErrorKind::DependencyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLatestAssessmentIdErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLatestAssessmentIdErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLatestAssessmentIdErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLatestAssessmentIdErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetLatestAssessmentIdError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetLatestAssessmentIdErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetLatestAssessmentIdErrorKind::DependencyException(_inner) => Some(_inner),
+            GetLatestAssessmentIdErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetLatestAssessmentIdErrorKind::ValidationException(_inner) => Some(_inner),
+            GetLatestAssessmentIdErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

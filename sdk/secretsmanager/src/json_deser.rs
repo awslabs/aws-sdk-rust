@@ -866,6 +866,14 @@ pub(crate) fn deser_operation_crate_operation_describe_secret(
                             )?,
                         );
                     }
+                    "NextRotationDate" => {
+                        builder = builder.set_next_rotation_date(
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?,
+                        );
+                    }
                     "Tags" => {
                         builder = builder.set_tags(
                             crate::json_deser::deser_list_com_amazonaws_secretsmanager_tag_list_type(tokens)?
@@ -2624,6 +2632,14 @@ where
                             }
                             "DeletedDate" => {
                                 builder = builder.set_deleted_date(
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            "NextRotationDate" => {
+                                builder = builder.set_next_rotation_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
                                         aws_smithy_types::date_time::Format::EpochSeconds,

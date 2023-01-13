@@ -3805,6 +3805,9 @@ pub mod detect_labels_input {
         pub(crate) image: std::option::Option<crate::model::Image>,
         pub(crate) max_labels: std::option::Option<i32>,
         pub(crate) min_confidence: std::option::Option<f32>,
+        pub(crate) features:
+            std::option::Option<std::vec::Vec<crate::model::DetectLabelsFeatureName>>,
+        pub(crate) settings: std::option::Option<crate::model::DetectLabelsSettings>,
     }
     impl Builder {
         /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
@@ -3841,6 +3844,38 @@ pub mod detect_labels_input {
             self.min_confidence = input;
             self
         }
+        /// Appends an item to `features`.
+        ///
+        /// To override the contents of this collection use [`set_features`](Self::set_features).
+        ///
+        /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
+        pub fn features(mut self, input: crate::model::DetectLabelsFeatureName) -> Self {
+            let mut v = self.features.unwrap_or_default();
+            v.push(input);
+            self.features = Some(v);
+            self
+        }
+        /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
+        pub fn set_features(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DetectLabelsFeatureName>>,
+        ) -> Self {
+            self.features = input;
+            self
+        }
+        /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see LINK HERE.</p>
+        pub fn settings(mut self, input: crate::model::DetectLabelsSettings) -> Self {
+            self.settings = Some(input);
+            self
+        }
+        /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see LINK HERE.</p>
+        pub fn set_settings(
+            mut self,
+            input: std::option::Option<crate::model::DetectLabelsSettings>,
+        ) -> Self {
+            self.settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DetectLabelsInput`](crate::input::DetectLabelsInput).
         pub fn build(
             self,
@@ -3850,6 +3885,8 @@ pub mod detect_labels_input {
                 image: self.image,
                 max_labels: self.max_labels,
                 min_confidence: self.min_confidence,
+                features: self.features,
+                settings: self.settings,
             })
         }
     }
@@ -5523,6 +5560,7 @@ pub mod get_label_detection_input {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) sort_by: std::option::Option<crate::model::LabelDetectionSortBy>,
+        pub(crate) aggregate_by: std::option::Option<crate::model::LabelDetectionAggregateBy>,
     }
     impl Builder {
         /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p>
@@ -5568,6 +5606,19 @@ pub mod get_label_detection_input {
             self.sort_by = input;
             self
         }
+        /// <p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p>
+        pub fn aggregate_by(mut self, input: crate::model::LabelDetectionAggregateBy) -> Self {
+            self.aggregate_by = Some(input);
+            self
+        }
+        /// <p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p>
+        pub fn set_aggregate_by(
+            mut self,
+            input: std::option::Option<crate::model::LabelDetectionAggregateBy>,
+        ) -> Self {
+            self.aggregate_by = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetLabelDetectionInput`](crate::input::GetLabelDetectionInput).
         pub fn build(
             self,
@@ -5580,6 +5631,7 @@ pub mod get_label_detection_input {
                 max_results: self.max_results,
                 next_token: self.next_token,
                 sort_by: self.sort_by,
+                aggregate_by: self.aggregate_by,
             })
         }
     }
@@ -9225,6 +9277,9 @@ pub mod start_label_detection_input {
         pub(crate) min_confidence: std::option::Option<f32>,
         pub(crate) notification_channel: std::option::Option<crate::model::NotificationChannel>,
         pub(crate) job_tag: std::option::Option<std::string::String>,
+        pub(crate) features:
+            std::option::Option<std::vec::Vec<crate::model::LabelDetectionFeatureName>>,
+        pub(crate) settings: std::option::Option<crate::model::LabelDetectionSettings>,
     }
     impl Builder {
         /// <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
@@ -9251,13 +9306,13 @@ pub mod start_label_detection_input {
             self
         }
         /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
-        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
+        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if detected) with confidence values greater than or equal to 50 percent.</p>
         pub fn min_confidence(mut self, input: f32) -> Self {
             self.min_confidence = Some(input);
             self
         }
         /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
-        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
+        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if detected) with confidence values greater than or equal to 50 percent.</p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.min_confidence = input;
             self
@@ -9285,6 +9340,38 @@ pub mod start_label_detection_input {
             self.job_tag = input;
             self
         }
+        /// Appends an item to `features`.
+        ///
+        /// To override the contents of this collection use [`set_features`](Self::set_features).
+        ///
+        /// <p>The features to return after video analysis. You can specify that GENERAL_LABELS are returned.</p>
+        pub fn features(mut self, input: crate::model::LabelDetectionFeatureName) -> Self {
+            let mut v = self.features.unwrap_or_default();
+            v.push(input);
+            self.features = Some(v);
+            self
+        }
+        /// <p>The features to return after video analysis. You can specify that GENERAL_LABELS are returned.</p>
+        pub fn set_features(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LabelDetectionFeatureName>>,
+        ) -> Self {
+            self.features = input;
+            self
+        }
+        /// <p>The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.</p>
+        pub fn settings(mut self, input: crate::model::LabelDetectionSettings) -> Self {
+            self.settings = Some(input);
+            self
+        }
+        /// <p>The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.</p>
+        pub fn set_settings(
+            mut self,
+            input: std::option::Option<crate::model::LabelDetectionSettings>,
+        ) -> Self {
+            self.settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartLabelDetectionInput`](crate::input::StartLabelDetectionInput).
         pub fn build(
             self,
@@ -9298,6 +9385,8 @@ pub mod start_label_detection_input {
                 min_confidence: self.min_confidence,
                 notification_channel: self.notification_channel,
                 job_tag: self.job_tag,
+                features: self.features,
+                settings: self.settings,
             })
         }
     }
@@ -10032,7 +10121,7 @@ pub mod start_stream_processor_input {
             self.name = input;
             self
         }
-        /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
+        /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
         /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
         pub fn start_selector(
             mut self,
@@ -10041,7 +10130,7 @@ pub mod start_stream_processor_input {
             self.start_selector = Some(input);
             self
         }
-        /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
+        /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
         /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
         pub fn set_start_selector(
             mut self,
@@ -11647,7 +11736,7 @@ pub struct StartStreamProcessorInput {
     /// <p>The name of the stream processor to start processing.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
+    /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     #[doc(hidden)]
     pub start_selector: std::option::Option<crate::model::StreamProcessingStartSelector>,
@@ -11661,7 +11750,7 @@ impl StartStreamProcessorInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
+    /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     pub fn start_selector(
         &self,
@@ -11807,7 +11896,7 @@ pub struct StartLabelDetectionInput {
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
-    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
+    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if detected) with confidence values greater than or equal to 50 percent.</p>
     #[doc(hidden)]
     pub min_confidence: std::option::Option<f32>,
     /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
@@ -11816,6 +11905,12 @@ pub struct StartLabelDetectionInput {
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     #[doc(hidden)]
     pub job_tag: std::option::Option<std::string::String>,
+    /// <p>The features to return after video analysis. You can specify that GENERAL_LABELS are returned.</p>
+    #[doc(hidden)]
+    pub features: std::option::Option<std::vec::Vec<crate::model::LabelDetectionFeatureName>>,
+    /// <p>The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.</p>
+    #[doc(hidden)]
+    pub settings: std::option::Option<crate::model::LabelDetectionSettings>,
 }
 impl StartLabelDetectionInput {
     /// <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
@@ -11827,7 +11922,7 @@ impl StartLabelDetectionInput {
         self.client_request_token.as_deref()
     }
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
-    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
+    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if detected) with confidence values greater than or equal to 50 percent.</p>
     pub fn min_confidence(&self) -> std::option::Option<f32> {
         self.min_confidence
     }
@@ -11838,6 +11933,14 @@ impl StartLabelDetectionInput {
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn job_tag(&self) -> std::option::Option<&str> {
         self.job_tag.as_deref()
+    }
+    /// <p>The features to return after video analysis. You can specify that GENERAL_LABELS are returned.</p>
+    pub fn features(&self) -> std::option::Option<&[crate::model::LabelDetectionFeatureName]> {
+        self.features.as_deref()
+    }
+    /// <p>The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.</p>
+    pub fn settings(&self) -> std::option::Option<&crate::model::LabelDetectionSettings> {
+        self.settings.as_ref()
     }
 }
 
@@ -12528,6 +12631,9 @@ pub struct GetLabelDetectionInput {
     /// <p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
     #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::LabelDetectionSortBy>,
+    /// <p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p>
+    #[doc(hidden)]
+    pub aggregate_by: std::option::Option<crate::model::LabelDetectionAggregateBy>,
 }
 impl GetLabelDetectionInput {
     /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p>
@@ -12545,6 +12651,10 @@ impl GetLabelDetectionInput {
     /// <p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::LabelDetectionSortBy> {
         self.sort_by.as_ref()
+    }
+    /// <p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p>
+    pub fn aggregate_by(&self) -> std::option::Option<&crate::model::LabelDetectionAggregateBy> {
+        self.aggregate_by.as_ref()
     }
 }
 
@@ -12812,6 +12922,12 @@ pub struct DetectLabelsInput {
     /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
     #[doc(hidden)]
     pub min_confidence: std::option::Option<f32>,
+    /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
+    #[doc(hidden)]
+    pub features: std::option::Option<std::vec::Vec<crate::model::DetectLabelsFeatureName>>,
+    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see LINK HERE.</p>
+    #[doc(hidden)]
+    pub settings: std::option::Option<crate::model::DetectLabelsSettings>,
 }
 impl DetectLabelsInput {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
@@ -12827,6 +12943,14 @@ impl DetectLabelsInput {
     /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
     pub fn min_confidence(&self) -> std::option::Option<f32> {
         self.min_confidence
+    }
+    /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
+    pub fn features(&self) -> std::option::Option<&[crate::model::DetectLabelsFeatureName]> {
+        self.features.as_deref()
+    }
+    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see LINK HERE.</p>
+    pub fn settings(&self) -> std::option::Option<&crate::model::DetectLabelsSettings> {
+        self.settings.as_ref()
     }
 }
 

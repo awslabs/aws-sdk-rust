@@ -27975,6 +27975,172 @@ impl std::error::Error for ListProvisioningTemplateVersionsError {
     }
 }
 
+/// Error type for the `ListRelatedResourcesForAuditFinding` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListRelatedResourcesForAuditFindingError {
+    /// Kind of error that occurred.
+    pub kind: ListRelatedResourcesForAuditFindingErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListRelatedResourcesForAuditFindingError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListRelatedResourcesForAuditFindingErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListRelatedResourcesForAuditFinding` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListRelatedResourcesForAuditFindingErrorKind {
+    /// <p>An unexpected error has occurred.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The rate exceeds the limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListRelatedResourcesForAuditFindingError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListRelatedResourcesForAuditFindingErrorKind::InternalFailureException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListRelatedResourcesForAuditFindingErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListRelatedResourcesForAuditFindingErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListRelatedResourcesForAuditFindingErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListRelatedResourcesForAuditFindingErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListRelatedResourcesForAuditFindingError {
+    fn code(&self) -> Option<&str> {
+        ListRelatedResourcesForAuditFindingError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListRelatedResourcesForAuditFindingError {
+    /// Creates a new `ListRelatedResourcesForAuditFindingError`.
+    pub fn new(
+        kind: ListRelatedResourcesForAuditFindingErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListRelatedResourcesForAuditFindingError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListRelatedResourcesForAuditFindingErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListRelatedResourcesForAuditFindingError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListRelatedResourcesForAuditFindingErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListRelatedResourcesForAuditFindingErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRelatedResourcesForAuditFindingErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRelatedResourcesForAuditFindingErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRelatedResourcesForAuditFindingErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRelatedResourcesForAuditFindingErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRelatedResourcesForAuditFindingErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRelatedResourcesForAuditFindingErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRelatedResourcesForAuditFindingErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ListRelatedResourcesForAuditFindingError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListRelatedResourcesForAuditFindingErrorKind::InternalFailureException(_inner) => {
+                Some(_inner)
+            }
+            ListRelatedResourcesForAuditFindingErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            ListRelatedResourcesForAuditFindingErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            ListRelatedResourcesForAuditFindingErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            ListRelatedResourcesForAuditFindingErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListRoleAliases` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

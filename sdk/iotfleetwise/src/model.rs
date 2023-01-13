@@ -694,6 +694,7 @@ pub struct Attribute {
     #[doc(hidden)]
     pub max: std::option::Option<f64>,
     /// <p>A specified value for the attribute.</p>
+    #[deprecated(note = "assignedValue is no longer in use")]
     #[doc(hidden)]
     pub assigned_value: std::option::Option<std::string::String>,
     /// <p>The default value of the attribute.</p>
@@ -730,6 +731,7 @@ impl Attribute {
         self.max
     }
     /// <p>A specified value for the attribute.</p>
+    #[deprecated(note = "assignedValue is no longer in use")]
     pub fn assigned_value(&self) -> std::option::Option<&str> {
         self.assigned_value.as_deref()
     }
@@ -841,11 +843,13 @@ pub mod attribute {
             self
         }
         /// <p>A specified value for the attribute.</p>
+        #[deprecated(note = "assignedValue is no longer in use")]
         pub fn assigned_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.assigned_value = Some(input.into());
             self
         }
         /// <p>A specified value for the attribute.</p>
+        #[deprecated(note = "assignedValue is no longer in use")]
         pub fn set_assigned_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1160,6 +1164,7 @@ pub struct Actuator {
     #[doc(hidden)]
     pub max: std::option::Option<f64>,
     /// <p>A specified value for the actuator.</p>
+    #[deprecated(note = "assignedValue is no longer in use")]
     #[doc(hidden)]
     pub assigned_value: std::option::Option<std::string::String>,
 }
@@ -1193,6 +1198,7 @@ impl Actuator {
         self.max
     }
     /// <p>A specified value for the actuator.</p>
+    #[deprecated(note = "assignedValue is no longer in use")]
     pub fn assigned_value(&self) -> std::option::Option<&str> {
         self.assigned_value.as_deref()
     }
@@ -1299,11 +1305,13 @@ pub mod actuator {
             self
         }
         /// <p>A specified value for the actuator.</p>
+        #[deprecated(note = "assignedValue is no longer in use")]
         pub fn assigned_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.assigned_value = Some(input.into());
             self
         }
         /// <p>A specified value for the actuator.</p>
+        #[deprecated(note = "assignedValue is no longer in use")]
         pub fn set_assigned_value(
             mut self,
             input: std::option::Option<std::string::String>,

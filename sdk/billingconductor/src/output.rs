@@ -9,7 +9,7 @@ pub struct ListPricingRulesAssociatedToPricingPlanOutput {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are listed.</p>
     #[doc(hidden)]
     pub pricing_plan_arn: std::option::Option<std::string::String>,
-    /// <p> A list containing pricing rules associated with the requested pricing plan. </p>
+    /// <p> A list containing pricing rules that are associated with the requested pricing plan. </p>
     #[doc(hidden)]
     pub pricing_rule_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The pagination token to be used on subsequent calls. </p>
@@ -25,7 +25,7 @@ impl ListPricingRulesAssociatedToPricingPlanOutput {
     pub fn pricing_plan_arn(&self) -> std::option::Option<&str> {
         self.pricing_plan_arn.as_deref()
     }
-    /// <p> A list containing pricing rules associated with the requested pricing plan. </p>
+    /// <p> A list containing pricing rules that are associated with the requested pricing plan. </p>
     pub fn pricing_rule_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.pricing_rule_arns.as_deref()
     }
@@ -76,14 +76,14 @@ pub mod list_pricing_rules_associated_to_pricing_plan_output {
         ///
         /// To override the contents of this collection use [`set_pricing_rule_arns`](Self::set_pricing_rule_arns).
         ///
-        /// <p> A list containing pricing rules associated with the requested pricing plan. </p>
+        /// <p> A list containing pricing rules that are associated with the requested pricing plan. </p>
         pub fn pricing_rule_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pricing_rule_arns.unwrap_or_default();
             v.push(input.into());
             self.pricing_rule_arns = Some(v);
             self
         }
-        /// <p> A list containing pricing rules associated with the requested pricing plan. </p>
+        /// <p> A list containing pricing rules that are associated with the requested pricing plan. </p>
         pub fn set_pricing_rule_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -130,7 +130,7 @@ pub struct ListPricingRulesOutput {
     /// <p> A list containing the described pricing rules. </p>
     #[doc(hidden)]
     pub pricing_rules: std::option::Option<std::vec::Vec<crate::model::PricingRuleListElement>>,
-    /// <p> The pagination token used on subsequent calls to get pricing rules. </p>
+    /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -143,7 +143,7 @@ impl ListPricingRulesOutput {
     pub fn pricing_rules(&self) -> std::option::Option<&[crate::model::PricingRuleListElement]> {
         self.pricing_rules.as_deref()
     }
-    /// <p> The pagination token used on subsequent calls to get pricing rules. </p>
+    /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -192,12 +192,12 @@ pub mod list_pricing_rules_output {
             self.pricing_rules = input;
             self
         }
-        /// <p> The pagination token used on subsequent calls to get pricing rules. </p>
+        /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The pagination token used on subsequent calls to get pricing rules. </p>
+        /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -324,7 +324,7 @@ pub struct UpdatePricingRuleOutput {
     /// <p> The new description for the pricing rule. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p> The scope of pricing rule that indicates if it is globally applicable, or is service-specific. </p>
+    /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
     #[doc(hidden)]
     pub scope: std::option::Option<crate::model::PricingRuleScope>,
     /// <p> The new pricing rule type. </p>
@@ -342,6 +342,12 @@ pub struct UpdatePricingRuleOutput {
     /// <p> The most recent time the pricing rule was modified. </p>
     #[doc(hidden)]
     pub last_modified_time: i64,
+    /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+    #[doc(hidden)]
+    pub billing_entity: std::option::Option<std::string::String>,
+    /// <p> The set of tiering configurations for the pricing rule. </p>
+    #[doc(hidden)]
+    pub tiering: std::option::Option<crate::model::UpdateTieringInput>,
 }
 impl UpdatePricingRuleOutput {
     /// <p> The Amazon Resource Name (ARN) of the successfully updated pricing rule. </p>
@@ -356,7 +362,7 @@ impl UpdatePricingRuleOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The scope of pricing rule that indicates if it is globally applicable, or is service-specific. </p>
+    /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
     pub fn scope(&self) -> std::option::Option<&crate::model::PricingRuleScope> {
         self.scope.as_ref()
     }
@@ -380,6 +386,14 @@ impl UpdatePricingRuleOutput {
     pub fn last_modified_time(&self) -> i64 {
         self.last_modified_time
     }
+    /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+    pub fn billing_entity(&self) -> std::option::Option<&str> {
+        self.billing_entity.as_deref()
+    }
+    /// <p> The set of tiering configurations for the pricing rule. </p>
+    pub fn tiering(&self) -> std::option::Option<&crate::model::UpdateTieringInput> {
+        self.tiering.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdatePricingRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -396,6 +410,8 @@ impl std::fmt::Debug for UpdatePricingRuleOutput {
             &self.associated_pricing_plan_count,
         );
         formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("billing_entity", &self.billing_entity);
+        formatter.field("tiering", &self.tiering);
         formatter.finish()
     }
 }
@@ -414,6 +430,8 @@ pub mod update_pricing_rule_output {
         pub(crate) service: std::option::Option<std::string::String>,
         pub(crate) associated_pricing_plan_count: std::option::Option<i64>,
         pub(crate) last_modified_time: std::option::Option<i64>,
+        pub(crate) billing_entity: std::option::Option<std::string::String>,
+        pub(crate) tiering: std::option::Option<crate::model::UpdateTieringInput>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the successfully updated pricing rule. </p>
@@ -446,12 +464,12 @@ pub mod update_pricing_rule_output {
             self.description = input;
             self
         }
-        /// <p> The scope of pricing rule that indicates if it is globally applicable, or is service-specific. </p>
+        /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
         pub fn scope(mut self, input: crate::model::PricingRuleScope) -> Self {
             self.scope = Some(input);
             self
         }
-        /// <p> The scope of pricing rule that indicates if it is globally applicable, or is service-specific. </p>
+        /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
         pub fn set_scope(
             mut self,
             input: std::option::Option<crate::model::PricingRuleScope>,
@@ -515,6 +533,32 @@ pub mod update_pricing_rule_output {
             self.last_modified_time = input;
             self
         }
+        /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+        pub fn billing_entity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.billing_entity = Some(input.into());
+            self
+        }
+        /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+        pub fn set_billing_entity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.billing_entity = input;
+            self
+        }
+        /// <p> The set of tiering configurations for the pricing rule. </p>
+        pub fn tiering(mut self, input: crate::model::UpdateTieringInput) -> Self {
+            self.tiering = Some(input);
+            self
+        }
+        /// <p> The set of tiering configurations for the pricing rule. </p>
+        pub fn set_tiering(
+            mut self,
+            input: std::option::Option<crate::model::UpdateTieringInput>,
+        ) -> Self {
+            self.tiering = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdatePricingRuleOutput`](crate::output::UpdatePricingRuleOutput).
         pub fn build(self) -> crate::output::UpdatePricingRuleOutput {
             crate::output::UpdatePricingRuleOutput {
@@ -529,6 +573,8 @@ pub mod update_pricing_rule_output {
                     .associated_pricing_plan_count
                     .unwrap_or_default(),
                 last_modified_time: self.last_modified_time.unwrap_or_default(),
+                billing_entity: self.billing_entity,
+                tiering: self.tiering,
             }
         }
     }
@@ -547,6 +593,8 @@ pub mod update_pricing_rule_output {
                 &self.associated_pricing_plan_count,
             );
             formatter.field("last_modified_time", &self.last_modified_time);
+            formatter.field("billing_entity", &self.billing_entity);
+            formatter.field("tiering", &self.tiering);
             formatter.finish()
         }
     }
@@ -660,7 +708,7 @@ pub struct ListPricingPlansAssociatedWithPricingRuleOutput {
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
     #[doc(hidden)]
     pub pricing_rule_arn: std::option::Option<std::string::String>,
-    /// <p> The list containing pricing plans associated with the requested pricing rule. </p>
+    /// <p> The list containing pricing plans that are associated with the requested pricing rule. </p>
     #[doc(hidden)]
     pub pricing_plan_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The pagination token to be used on subsequent calls. </p>
@@ -676,7 +724,7 @@ impl ListPricingPlansAssociatedWithPricingRuleOutput {
     pub fn pricing_rule_arn(&self) -> std::option::Option<&str> {
         self.pricing_rule_arn.as_deref()
     }
-    /// <p> The list containing pricing plans associated with the requested pricing rule. </p>
+    /// <p> The list containing pricing plans that are associated with the requested pricing rule. </p>
     pub fn pricing_plan_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.pricing_plan_arns.as_deref()
     }
@@ -727,14 +775,14 @@ pub mod list_pricing_plans_associated_with_pricing_rule_output {
         ///
         /// To override the contents of this collection use [`set_pricing_plan_arns`](Self::set_pricing_plan_arns).
         ///
-        /// <p> The list containing pricing plans associated with the requested pricing rule. </p>
+        /// <p> The list containing pricing plans that are associated with the requested pricing rule. </p>
         pub fn pricing_plan_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pricing_plan_arns.unwrap_or_default();
             v.push(input.into());
             self.pricing_plan_arns = Some(v);
             self
         }
-        /// <p> The list containing pricing plans associated with the requested pricing rule. </p>
+        /// <p> The list containing pricing plans that are associated with the requested pricing rule. </p>
         pub fn set_pricing_plan_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -781,7 +829,7 @@ pub struct ListPricingPlansOutput {
     /// <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
     #[doc(hidden)]
     pub pricing_plans: std::option::Option<std::vec::Vec<crate::model::PricingPlanListElement>>,
-    /// <p>The pagination token used on subsequent calls to get pricing plans. </p>
+    /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -794,7 +842,7 @@ impl ListPricingPlansOutput {
     pub fn pricing_plans(&self) -> std::option::Option<&[crate::model::PricingPlanListElement]> {
         self.pricing_plans.as_deref()
     }
-    /// <p>The pagination token used on subsequent calls to get pricing plans. </p>
+    /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -843,12 +891,12 @@ pub mod list_pricing_plans_output {
             self.pricing_plans = input;
             self
         }
-        /// <p>The pagination token used on subsequent calls to get pricing plans. </p>
+        /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used on subsequent calls to get pricing plans. </p>
+        /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -975,10 +1023,10 @@ pub struct UpdatePricingPlanOutput {
     /// <p> The new description for the pricing rule. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p> The pricing rules count currently associated with this pricing plan list. </p>
+    /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
     #[doc(hidden)]
     pub size: i64,
-    /// <p> The most recent time the pricing plan was modified. </p>
+    /// <p> The most recent time when the pricing plan was modified. </p>
     #[doc(hidden)]
     pub last_modified_time: i64,
 }
@@ -995,11 +1043,11 @@ impl UpdatePricingPlanOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The pricing rules count currently associated with this pricing plan list. </p>
+    /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
     pub fn size(&self) -> i64 {
         self.size
     }
-    /// <p> The most recent time the pricing plan was modified. </p>
+    /// <p> The most recent time when the pricing plan was modified. </p>
     pub fn last_modified_time(&self) -> i64 {
         self.last_modified_time
     }
@@ -1058,22 +1106,22 @@ pub mod update_pricing_plan_output {
             self.description = input;
             self
         }
-        /// <p> The pricing rules count currently associated with this pricing plan list. </p>
+        /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
         pub fn size(mut self, input: i64) -> Self {
             self.size = Some(input);
             self
         }
-        /// <p> The pricing rules count currently associated with this pricing plan list. </p>
+        /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
         pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
             self.size = input;
             self
         }
-        /// <p> The most recent time the pricing plan was modified. </p>
+        /// <p> The most recent time when the pricing plan was modified. </p>
         pub fn last_modified_time(mut self, input: i64) -> Self {
             self.last_modified_time = Some(input);
             self
         }
-        /// <p> The most recent time the pricing plan was modified. </p>
+        /// <p> The most recent time when the pricing plan was modified. </p>
         pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
             self.last_modified_time = input;
             self
@@ -1213,6 +1261,91 @@ impl ListResourcesAssociatedToCustomLineItemOutput {
     pub fn builder() -> crate::output::list_resources_associated_to_custom_line_item_output::Builder
     {
         crate::output::list_resources_associated_to_custom_line_item_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListCustomLineItemVersionsOutput {
+    /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
+    #[doc(hidden)]
+    pub custom_line_item_versions:
+        std::option::Option<std::vec::Vec<crate::model::CustomLineItemVersionListElement>>,
+    /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCustomLineItemVersionsOutput {
+    /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
+    pub fn custom_line_item_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomLineItemVersionListElement]> {
+        self.custom_line_item_versions.as_deref()
+    }
+    /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListCustomLineItemVersionsOutput`](crate::output::ListCustomLineItemVersionsOutput).
+pub mod list_custom_line_item_versions_output {
+
+    /// A builder for [`ListCustomLineItemVersionsOutput`](crate::output::ListCustomLineItemVersionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) custom_line_item_versions:
+            std::option::Option<std::vec::Vec<crate::model::CustomLineItemVersionListElement>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `custom_line_item_versions`.
+        ///
+        /// To override the contents of this collection use [`set_custom_line_item_versions`](Self::set_custom_line_item_versions).
+        ///
+        /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
+        pub fn custom_line_item_versions(
+            mut self,
+            input: crate::model::CustomLineItemVersionListElement,
+        ) -> Self {
+            let mut v = self.custom_line_item_versions.unwrap_or_default();
+            v.push(input);
+            self.custom_line_item_versions = Some(v);
+            self
+        }
+        /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
+        pub fn set_custom_line_item_versions(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::CustomLineItemVersionListElement>,
+            >,
+        ) -> Self {
+            self.custom_line_item_versions = input;
+            self
+        }
+        /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCustomLineItemVersionsOutput`](crate::output::ListCustomLineItemVersionsOutput).
+        pub fn build(self) -> crate::output::ListCustomLineItemVersionsOutput {
+            crate::output::ListCustomLineItemVersionsOutput {
+                custom_line_item_versions: self.custom_line_item_versions,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListCustomLineItemVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCustomLineItemVersionsOutput`](crate::output::ListCustomLineItemVersionsOutput).
+    pub fn builder() -> crate::output::list_custom_line_item_versions_output::Builder {
+        crate::output::list_custom_line_item_versions_output::Builder::default()
     }
 }
 
@@ -1434,7 +1567,7 @@ pub struct ListCustomLineItemsOutput {
     #[doc(hidden)]
     pub custom_line_items:
         std::option::Option<std::vec::Vec<crate::model::CustomLineItemListElement>>,
-    /// <p> The pagination token used on subsequent calls to get custom line items (FFLIs). </p>
+    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -1445,7 +1578,7 @@ impl ListCustomLineItemsOutput {
     ) -> std::option::Option<&[crate::model::CustomLineItemListElement]> {
         self.custom_line_items.as_deref()
     }
-    /// <p> The pagination token used on subsequent calls to get custom line items (FFLIs). </p>
+    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1480,12 +1613,12 @@ pub mod list_custom_line_items_output {
             self.custom_line_items = input;
             self
         }
-        /// <p> The pagination token used on subsequent calls to get custom line items (FFLIs). </p>
+        /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The pagination token used on subsequent calls to get custom line items (FFLIs). </p>
+        /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1617,7 +1750,7 @@ pub struct UpdateCustomLineItemOutput {
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the successfully updated custom line item. </p>
     #[doc(hidden)]
     pub charge_details: std::option::Option<crate::model::ListCustomLineItemChargeDetails>,
-    /// <p> The most recent time the custom line item was modified. </p>
+    /// <p> The most recent time when the custom line item was modified. </p>
     #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p> The number of resources that are associated to the custom line item. </p>
@@ -1647,7 +1780,7 @@ impl UpdateCustomLineItemOutput {
     ) -> std::option::Option<&crate::model::ListCustomLineItemChargeDetails> {
         self.charge_details.as_ref()
     }
-    /// <p> The most recent time the custom line item was modified. </p>
+    /// <p> The most recent time when the custom line item was modified. </p>
     pub fn last_modified_time(&self) -> i64 {
         self.last_modified_time
     }
@@ -1744,12 +1877,12 @@ pub mod update_custom_line_item_output {
             self.charge_details = input;
             self
         }
-        /// <p> The most recent time the custom line item was modified. </p>
+        /// <p> The most recent time when the custom line item was modified. </p>
         pub fn last_modified_time(mut self, input: i64) -> Self {
             self.last_modified_time = Some(input);
             self
         }
-        /// <p> The most recent time the custom line item was modified. </p>
+        /// <p> The most recent time when the custom line item was modified. </p>
         pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
             self.last_modified_time = input;
             self
@@ -1897,7 +2030,7 @@ pub struct ListBillingGroupsOutput {
     /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
     #[doc(hidden)]
     pub billing_groups: std::option::Option<std::vec::Vec<crate::model::BillingGroupListElement>>,
-    /// <p>The pagination token used on subsequent calls to get billing groups. </p>
+    /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -1906,7 +2039,7 @@ impl ListBillingGroupsOutput {
     pub fn billing_groups(&self) -> std::option::Option<&[crate::model::BillingGroupListElement]> {
         self.billing_groups.as_deref()
     }
-    /// <p>The pagination token used on subsequent calls to get billing groups. </p>
+    /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1941,12 +2074,12 @@ pub mod list_billing_groups_output {
             self.billing_groups = input;
             self
         }
-        /// <p>The pagination token used on subsequent calls to get billing groups. </p>
+        /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used on subsequent calls to get billing groups. </p>
+        /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2081,7 +2214,7 @@ pub struct UpdateBillingGroupOutput {
     /// <p> The number of accounts in the particular billing group. </p>
     #[doc(hidden)]
     pub size: i64,
-    /// <p> The most recent time the billing group was modified. </p>
+    /// <p> The most recent time when the billing group was modified. </p>
     #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p> The status of the billing group. Only one of the valid values can be used. </p>
@@ -2116,7 +2249,7 @@ impl UpdateBillingGroupOutput {
     pub fn size(&self) -> i64 {
         self.size
     }
-    /// <p> The most recent time the billing group was modified. </p>
+    /// <p> The most recent time when the billing group was modified. </p>
     pub fn last_modified_time(&self) -> i64 {
         self.last_modified_time
     }
@@ -2227,12 +2360,12 @@ pub mod update_billing_group_output {
             self.size = input;
             self
         }
-        /// <p> The most recent time the billing group was modified. </p>
+        /// <p> The most recent time when the billing group was modified. </p>
         pub fn last_modified_time(mut self, input: i64) -> Self {
             self.last_modified_time = Some(input);
             self
         }
-        /// <p> The most recent time the billing group was modified. </p>
+        /// <p> The most recent time when the billing group was modified. </p>
         pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
             self.last_modified_time = input;
             self
@@ -2424,7 +2557,7 @@ pub struct ListBillingGroupCostReportsOutput {
     #[doc(hidden)]
     pub billing_group_cost_reports:
         std::option::Option<std::vec::Vec<crate::model::BillingGroupCostReportElement>>,
-    /// <p>The pagination token used on subsequent calls to get reports. </p>
+    /// <p>The pagination token that's used on subsequent calls to get reports. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -2435,7 +2568,7 @@ impl ListBillingGroupCostReportsOutput {
     ) -> std::option::Option<&[crate::model::BillingGroupCostReportElement]> {
         self.billing_group_cost_reports.as_deref()
     }
-    /// <p>The pagination token used on subsequent calls to get reports. </p>
+    /// <p>The pagination token that's used on subsequent calls to get reports. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2473,12 +2606,12 @@ pub mod list_billing_group_cost_reports_output {
             self.billing_group_cost_reports = input;
             self
         }
-        /// <p>The pagination token used on subsequent calls to get reports. </p>
+        /// <p>The pagination token that's used on subsequent calls to get reports. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used on subsequent calls to get reports. </p>
+        /// <p>The pagination token that's used on subsequent calls to get reports. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2507,7 +2640,7 @@ pub struct ListAccountAssociationsOutput {
     #[doc(hidden)]
     pub linked_accounts:
         std::option::Option<std::vec::Vec<crate::model::AccountAssociationsListElement>>,
-    /// <p> The pagination token used on subsequent calls to get accounts. </p>
+    /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -2518,7 +2651,7 @@ impl ListAccountAssociationsOutput {
     ) -> std::option::Option<&[crate::model::AccountAssociationsListElement]> {
         self.linked_accounts.as_deref()
     }
-    /// <p> The pagination token used on subsequent calls to get accounts. </p>
+    /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2556,12 +2689,12 @@ pub mod list_account_associations_output {
             self.linked_accounts = input;
             self
         }
-        /// <p> The pagination token used on subsequent calls to get accounts. </p>
+        /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The pagination token used on subsequent calls to get accounts. </p>
+        /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

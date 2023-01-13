@@ -969,7 +969,7 @@ pub struct ResourceLocation {
     /// <p>The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
-    /// <p>The AWS Region name.</p>
+    /// <p>The Amazon Web Services Region name.</p>
     #[doc(hidden)]
     pub region_name: std::option::Option<crate::model::RegionName>,
 }
@@ -978,7 +978,7 @@ impl ResourceLocation {
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
-    /// <p>The AWS Region name.</p>
+    /// <p>The Amazon Web Services Region name.</p>
     pub fn region_name(&self) -> std::option::Option<&crate::model::RegionName> {
         self.region_name.as_ref()
     }
@@ -1006,12 +1006,12 @@ pub mod resource_location {
             self.availability_zone = input;
             self
         }
-        /// <p>The AWS Region name.</p>
+        /// <p>The Amazon Web Services Region name.</p>
         pub fn region_name(mut self, input: crate::model::RegionName) -> Self {
             self.region_name = Some(input);
             self
         }
-        /// <p>The AWS Region name.</p>
+        /// <p>The Amazon Web Services Region name.</p>
         pub fn set_region_name(
             mut self,
             input: std::option::Option<crate::model::RegionName>,
@@ -10835,14 +10835,14 @@ impl AsRef<str> for RelationalDatabaseEngine {
     }
 }
 
-/// <p>Describes the AWS Region.</p>
+/// <p>Describes the Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Region {
     /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
     #[doc(hidden)]
     pub continent_code: std::option::Option<std::string::String>,
-    /// <p>The description of the AWS Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
+    /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The display name (e.g., <code>Ohio</code>).</p>
@@ -10864,7 +10864,7 @@ impl Region {
     pub fn continent_code(&self) -> std::option::Option<&str> {
         self.continent_code.as_deref()
     }
-    /// <p>The description of the AWS Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
+    /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -10916,12 +10916,12 @@ pub mod region {
             self.continent_code = input;
             self
         }
-        /// <p>The description of the AWS Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
+        /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the AWS Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
+        /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -11240,7 +11240,7 @@ pub struct LoadBalancerTlsCertificate {
     /// <p>The time when you created your SSL/TLS certificate.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The AWS Region and Availability Zone where you created your certificate.</p>
+    /// <p>The Amazon Web Services Region and Availability Zone where you created your certificate.</p>
     #[doc(hidden)]
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
@@ -11347,7 +11347,7 @@ impl LoadBalancerTlsCertificate {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The AWS Region and Availability Zone where you created your certificate.</p>
+    /// <p>The Amazon Web Services Region and Availability Zone where you created your certificate.</p>
     pub fn location(&self) -> std::option::Option<&crate::model::ResourceLocation> {
         self.location.as_ref()
     }
@@ -11545,12 +11545,12 @@ pub mod load_balancer_tls_certificate {
             self.created_at = input;
             self
         }
-        /// <p>The AWS Region and Availability Zone where you created your certificate.</p>
+        /// <p>The Amazon Web Services Region and Availability Zone where you created your certificate.</p>
         pub fn location(mut self, input: crate::model::ResourceLocation) -> Self {
             self.location = Some(input);
             self
         }
-        /// <p>The AWS Region and Availability Zone where you created your certificate.</p>
+        /// <p>The Amazon Web Services Region and Availability Zone where you created your certificate.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -12617,6 +12617,10 @@ pub struct LoadBalancerTlsCertificateDomainValidationRecord {
     /// <p>The domain name against which your SSL/TLS certificate was validated.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
+    /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of a domain to validate domain ownership.</p>
+    #[doc(hidden)]
+    pub dns_record_creation_state:
+        std::option::Option<crate::model::LoadBalancerTlsCertificateDnsRecordCreationState>,
 }
 impl LoadBalancerTlsCertificateDomainValidationRecord {
     /// <p>A fully qualified domain name in the certificate. For example, <code>example.com</code>.</p>
@@ -12641,6 +12645,12 @@ impl LoadBalancerTlsCertificateDomainValidationRecord {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
+    /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of a domain to validate domain ownership.</p>
+    pub fn dns_record_creation_state(
+        &self,
+    ) -> std::option::Option<&crate::model::LoadBalancerTlsCertificateDnsRecordCreationState> {
+        self.dns_record_creation_state.as_ref()
+    }
 }
 /// See [`LoadBalancerTlsCertificateDomainValidationRecord`](crate::model::LoadBalancerTlsCertificateDomainValidationRecord).
 pub mod load_balancer_tls_certificate_domain_validation_record {
@@ -12654,6 +12664,8 @@ pub mod load_balancer_tls_certificate_domain_validation_record {
         pub(crate) validation_status:
             std::option::Option<crate::model::LoadBalancerTlsCertificateDomainStatus>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) dns_record_creation_state:
+            std::option::Option<crate::model::LoadBalancerTlsCertificateDnsRecordCreationState>,
     }
     impl Builder {
         /// <p>A fully qualified domain name in the certificate. For example, <code>example.com</code>.</p>
@@ -12712,6 +12724,24 @@ pub mod load_balancer_tls_certificate_domain_validation_record {
             self.domain_name = input;
             self
         }
+        /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of a domain to validate domain ownership.</p>
+        pub fn dns_record_creation_state(
+            mut self,
+            input: crate::model::LoadBalancerTlsCertificateDnsRecordCreationState,
+        ) -> Self {
+            self.dns_record_creation_state = Some(input);
+            self
+        }
+        /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of a domain to validate domain ownership.</p>
+        pub fn set_dns_record_creation_state(
+            mut self,
+            input: std::option::Option<
+                crate::model::LoadBalancerTlsCertificateDnsRecordCreationState,
+            >,
+        ) -> Self {
+            self.dns_record_creation_state = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LoadBalancerTlsCertificateDomainValidationRecord`](crate::model::LoadBalancerTlsCertificateDomainValidationRecord).
         pub fn build(self) -> crate::model::LoadBalancerTlsCertificateDomainValidationRecord {
             crate::model::LoadBalancerTlsCertificateDomainValidationRecord {
@@ -12720,6 +12750,7 @@ pub mod load_balancer_tls_certificate_domain_validation_record {
                 value: self.value,
                 validation_status: self.validation_status,
                 domain_name: self.domain_name,
+                dns_record_creation_state: self.dns_record_creation_state,
             }
         }
     }
@@ -12729,6 +12760,210 @@ impl LoadBalancerTlsCertificateDomainValidationRecord {
     pub fn builder() -> crate::model::load_balancer_tls_certificate_domain_validation_record::Builder
     {
         crate::model::load_balancer_tls_certificate_domain_validation_record::Builder::default()
+    }
+}
+
+/// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of the domain to validate domain ownership.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LoadBalancerTlsCertificateDnsRecordCreationState {
+    /// <p>The status code for the automated DNS record creation.</p>
+    /// <p>Following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub code:
+        std::option::Option<crate::model::LoadBalancerTlsCertificateDnsRecordCreationStateCode>,
+    /// <p>The message that describes the reason for the status code.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl LoadBalancerTlsCertificateDnsRecordCreationState {
+    /// <p>The status code for the automated DNS record creation.</p>
+    /// <p>Following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li>
+    /// </ul>
+    pub fn code(
+        &self,
+    ) -> std::option::Option<&crate::model::LoadBalancerTlsCertificateDnsRecordCreationStateCode>
+    {
+        self.code.as_ref()
+    }
+    /// <p>The message that describes the reason for the status code.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+/// See [`LoadBalancerTlsCertificateDnsRecordCreationState`](crate::model::LoadBalancerTlsCertificateDnsRecordCreationState).
+pub mod load_balancer_tls_certificate_dns_record_creation_state {
+
+    /// A builder for [`LoadBalancerTlsCertificateDnsRecordCreationState`](crate::model::LoadBalancerTlsCertificateDnsRecordCreationState).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code:
+            std::option::Option<crate::model::LoadBalancerTlsCertificateDnsRecordCreationStateCode>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status code for the automated DNS record creation.</p>
+        /// <p>Following are the possible values:</p>
+        /// <ul>
+        /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li>
+        /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
+        /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li>
+        /// </ul>
+        pub fn code(
+            mut self,
+            input: crate::model::LoadBalancerTlsCertificateDnsRecordCreationStateCode,
+        ) -> Self {
+            self.code = Some(input);
+            self
+        }
+        /// <p>The status code for the automated DNS record creation.</p>
+        /// <p>Following are the possible values:</p>
+        /// <ul>
+        /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li>
+        /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
+        /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li>
+        /// </ul>
+        pub fn set_code(
+            mut self,
+            input: std::option::Option<
+                crate::model::LoadBalancerTlsCertificateDnsRecordCreationStateCode,
+            >,
+        ) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>The message that describes the reason for the status code.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The message that describes the reason for the status code.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LoadBalancerTlsCertificateDnsRecordCreationState`](crate::model::LoadBalancerTlsCertificateDnsRecordCreationState).
+        pub fn build(self) -> crate::model::LoadBalancerTlsCertificateDnsRecordCreationState {
+            crate::model::LoadBalancerTlsCertificateDnsRecordCreationState {
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl LoadBalancerTlsCertificateDnsRecordCreationState {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificateDnsRecordCreationState`](crate::model::LoadBalancerTlsCertificateDnsRecordCreationState).
+    pub fn builder(
+    ) -> crate::model::load_balancer_tls_certificate_dns_record_creation_state::Builder {
+        crate::model::load_balancer_tls_certificate_dns_record_creation_state::Builder::default()
+    }
+}
+
+/// When writing a match expression against `LoadBalancerTlsCertificateDnsRecordCreationStateCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let loadbalancertlscertificatednsrecordcreationstatecode = unimplemented!();
+/// match loadbalancertlscertificatednsrecordcreationstatecode {
+///     LoadBalancerTlsCertificateDnsRecordCreationStateCode::Failed => { /* ... */ },
+///     LoadBalancerTlsCertificateDnsRecordCreationStateCode::Started => { /* ... */ },
+///     LoadBalancerTlsCertificateDnsRecordCreationStateCode::Succeeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `loadbalancertlscertificatednsrecordcreationstatecode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LoadBalancerTlsCertificateDnsRecordCreationStateCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LoadBalancerTlsCertificateDnsRecordCreationStateCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LoadBalancerTlsCertificateDnsRecordCreationStateCode::NewFeature` is defined.
+/// Specifically, when `loadbalancertlscertificatednsrecordcreationstatecode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LoadBalancerTlsCertificateDnsRecordCreationStateCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LoadBalancerTlsCertificateDnsRecordCreationStateCode {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Started,
+    #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for LoadBalancerTlsCertificateDnsRecordCreationStateCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => LoadBalancerTlsCertificateDnsRecordCreationStateCode::Failed,
+            "STARTED" => LoadBalancerTlsCertificateDnsRecordCreationStateCode::Started,
+            "SUCCEEDED" => LoadBalancerTlsCertificateDnsRecordCreationStateCode::Succeeded,
+            other => LoadBalancerTlsCertificateDnsRecordCreationStateCode::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
+}
+impl std::str::FromStr for LoadBalancerTlsCertificateDnsRecordCreationStateCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LoadBalancerTlsCertificateDnsRecordCreationStateCode::from(
+            s,
+        ))
+    }
+}
+impl LoadBalancerTlsCertificateDnsRecordCreationStateCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LoadBalancerTlsCertificateDnsRecordCreationStateCode::Failed => "FAILED",
+            LoadBalancerTlsCertificateDnsRecordCreationStateCode::Started => "STARTED",
+            LoadBalancerTlsCertificateDnsRecordCreationStateCode::Succeeded => "SUCCEEDED",
+            LoadBalancerTlsCertificateDnsRecordCreationStateCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FAILED", "STARTED", "SUCCEEDED"]
+    }
+}
+impl AsRef<str> for LoadBalancerTlsCertificateDnsRecordCreationStateCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -19310,6 +19545,10 @@ pub struct Domain {
     /// <p>An array of key-value pairs containing information about the domain entries.</p>
     #[doc(hidden)]
     pub domain_entries: std::option::Option<std::vec::Vec<crate::model::DomainEntry>>,
+    /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
+    #[doc(hidden)]
+    pub registered_domain_delegation_info:
+        std::option::Option<crate::model::RegisteredDomainDelegationInfo>,
 }
 impl Domain {
     /// <p>The name of the domain.</p>
@@ -19344,6 +19583,12 @@ impl Domain {
     pub fn domain_entries(&self) -> std::option::Option<&[crate::model::DomainEntry]> {
         self.domain_entries.as_deref()
     }
+    /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
+    pub fn registered_domain_delegation_info(
+        &self,
+    ) -> std::option::Option<&crate::model::RegisteredDomainDelegationInfo> {
+        self.registered_domain_delegation_info.as_ref()
+    }
 }
 /// See [`Domain`](crate::model::Domain).
 pub mod domain {
@@ -19359,6 +19604,8 @@ pub mod domain {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) domain_entries: std::option::Option<std::vec::Vec<crate::model::DomainEntry>>,
+        pub(crate) registered_domain_delegation_info:
+            std::option::Option<crate::model::RegisteredDomainDelegationInfo>,
     }
     impl Builder {
         /// <p>The name of the domain.</p>
@@ -19468,6 +19715,22 @@ pub mod domain {
             self.domain_entries = input;
             self
         }
+        /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
+        pub fn registered_domain_delegation_info(
+            mut self,
+            input: crate::model::RegisteredDomainDelegationInfo,
+        ) -> Self {
+            self.registered_domain_delegation_info = Some(input);
+            self
+        }
+        /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
+        pub fn set_registered_domain_delegation_info(
+            mut self,
+            input: std::option::Option<crate::model::RegisteredDomainDelegationInfo>,
+        ) -> Self {
+            self.registered_domain_delegation_info = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Domain`](crate::model::Domain).
         pub fn build(self) -> crate::model::Domain {
             crate::model::Domain {
@@ -19479,6 +19742,7 @@ pub mod domain {
                 resource_type: self.resource_type,
                 tags: self.tags,
                 domain_entries: self.domain_entries,
+                registered_domain_delegation_info: self.registered_domain_delegation_info,
             }
         }
     }
@@ -19487,6 +19751,501 @@ impl Domain {
     /// Creates a new builder-style object to manufacture [`Domain`](crate::model::Domain).
     pub fn builder() -> crate::model::domain::Builder {
         crate::model::domain::Builder::default()
+    }
+}
+
+/// <p>Describes the delegation state of an Amazon Route&nbsp;53 registered domain to Amazon Lightsail.</p>
+/// <p>When you delegate an Amazon Route&nbsp;53 registered domain to Lightsail, you can manage the DNS of the domain using a Lightsail DNS zone. You no longer use the Route&nbsp;53 hosted zone to manage the DNS of the domain. To delegate the domain, Lightsail automatically updates the domain's name servers in Route&nbsp;53 to the name servers of the Lightsail DNS zone. Then, Lightsail automatically deletes the Route&nbsp;53 hosted zone for the domain.</p>
+/// <p>All of the following conditions must be true for automatic domain delegation to be successful:</p>
+/// <ul>
+/// <li> <p>The registered domain must be in the same Amazon Web Services account as the Lightsail account making the request.</p> </li>
+/// <li> <p>The user or entity making the request must have permission to manage domains in Route&nbsp;53.</p> </li>
+/// <li> <p>The Route&nbsp;53 hosted zone for the domain must be empty. It cannot contain DNS records other than start of authority (SOA) and name server records.</p> </li>
+/// </ul>
+/// <p>If automatic domain delegation fails, or if you manage the DNS of your domain using a service other than Route&nbsp;53, then you must manually add the Lightsail DNS zone name servers to your domain in order to delegate management of its DNS to Lightsail. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-how-to-create-dns-entry">Creating a DNS zone to manage your domain’s records in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RegisteredDomainDelegationInfo {
+    /// <p>An object that describes the state of the name server records that are automatically added to the Route&nbsp;53 domain by Lightsail.</p>
+    #[doc(hidden)]
+    pub name_servers_update_state: std::option::Option<crate::model::NameServersUpdateState>,
+    /// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
+    #[doc(hidden)]
+    pub r53_hosted_zone_deletion_state:
+        std::option::Option<crate::model::R53HostedZoneDeletionState>,
+}
+impl RegisteredDomainDelegationInfo {
+    /// <p>An object that describes the state of the name server records that are automatically added to the Route&nbsp;53 domain by Lightsail.</p>
+    pub fn name_servers_update_state(
+        &self,
+    ) -> std::option::Option<&crate::model::NameServersUpdateState> {
+        self.name_servers_update_state.as_ref()
+    }
+    /// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
+    pub fn r53_hosted_zone_deletion_state(
+        &self,
+    ) -> std::option::Option<&crate::model::R53HostedZoneDeletionState> {
+        self.r53_hosted_zone_deletion_state.as_ref()
+    }
+}
+/// See [`RegisteredDomainDelegationInfo`](crate::model::RegisteredDomainDelegationInfo).
+pub mod registered_domain_delegation_info {
+
+    /// A builder for [`RegisteredDomainDelegationInfo`](crate::model::RegisteredDomainDelegationInfo).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name_servers_update_state:
+            std::option::Option<crate::model::NameServersUpdateState>,
+        pub(crate) r53_hosted_zone_deletion_state:
+            std::option::Option<crate::model::R53HostedZoneDeletionState>,
+    }
+    impl Builder {
+        /// <p>An object that describes the state of the name server records that are automatically added to the Route&nbsp;53 domain by Lightsail.</p>
+        pub fn name_servers_update_state(
+            mut self,
+            input: crate::model::NameServersUpdateState,
+        ) -> Self {
+            self.name_servers_update_state = Some(input);
+            self
+        }
+        /// <p>An object that describes the state of the name server records that are automatically added to the Route&nbsp;53 domain by Lightsail.</p>
+        pub fn set_name_servers_update_state(
+            mut self,
+            input: std::option::Option<crate::model::NameServersUpdateState>,
+        ) -> Self {
+            self.name_servers_update_state = input;
+            self
+        }
+        /// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
+        pub fn r53_hosted_zone_deletion_state(
+            mut self,
+            input: crate::model::R53HostedZoneDeletionState,
+        ) -> Self {
+            self.r53_hosted_zone_deletion_state = Some(input);
+            self
+        }
+        /// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
+        pub fn set_r53_hosted_zone_deletion_state(
+            mut self,
+            input: std::option::Option<crate::model::R53HostedZoneDeletionState>,
+        ) -> Self {
+            self.r53_hosted_zone_deletion_state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegisteredDomainDelegationInfo`](crate::model::RegisteredDomainDelegationInfo).
+        pub fn build(self) -> crate::model::RegisteredDomainDelegationInfo {
+            crate::model::RegisteredDomainDelegationInfo {
+                name_servers_update_state: self.name_servers_update_state,
+                r53_hosted_zone_deletion_state: self.r53_hosted_zone_deletion_state,
+            }
+        }
+    }
+}
+impl RegisteredDomainDelegationInfo {
+    /// Creates a new builder-style object to manufacture [`RegisteredDomainDelegationInfo`](crate::model::RegisteredDomainDelegationInfo).
+    pub fn builder() -> crate::model::registered_domain_delegation_info::Builder {
+        crate::model::registered_domain_delegation_info::Builder::default()
+    }
+}
+
+/// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct R53HostedZoneDeletionState {
+    /// <p>The status code for the deletion state.</p>
+    /// <p>Following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The hosted zone deletion is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The hosted zone deletion failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub code: std::option::Option<crate::model::R53HostedZoneDeletionStateCode>,
+    /// <p>The message that describes the reason for the status code.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl R53HostedZoneDeletionState {
+    /// <p>The status code for the deletion state.</p>
+    /// <p>Following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The hosted zone deletion is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The hosted zone deletion failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
+    /// </ul>
+    pub fn code(&self) -> std::option::Option<&crate::model::R53HostedZoneDeletionStateCode> {
+        self.code.as_ref()
+    }
+    /// <p>The message that describes the reason for the status code.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+/// See [`R53HostedZoneDeletionState`](crate::model::R53HostedZoneDeletionState).
+pub mod r53_hosted_zone_deletion_state {
+
+    /// A builder for [`R53HostedZoneDeletionState`](crate::model::R53HostedZoneDeletionState).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<crate::model::R53HostedZoneDeletionStateCode>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status code for the deletion state.</p>
+        /// <p>Following are the possible values:</p>
+        /// <ul>
+        /// <li> <p> <code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p> </li>
+        /// <li> <p> <code>PENDING</code> - The hosted zone deletion is in progress.</p> </li>
+        /// <li> <p> <code>FAILED</code> - The hosted zone deletion failed.</p> </li>
+        /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
+        /// </ul>
+        pub fn code(mut self, input: crate::model::R53HostedZoneDeletionStateCode) -> Self {
+            self.code = Some(input);
+            self
+        }
+        /// <p>The status code for the deletion state.</p>
+        /// <p>Following are the possible values:</p>
+        /// <ul>
+        /// <li> <p> <code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p> </li>
+        /// <li> <p> <code>PENDING</code> - The hosted zone deletion is in progress.</p> </li>
+        /// <li> <p> <code>FAILED</code> - The hosted zone deletion failed.</p> </li>
+        /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
+        /// </ul>
+        pub fn set_code(
+            mut self,
+            input: std::option::Option<crate::model::R53HostedZoneDeletionStateCode>,
+        ) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>The message that describes the reason for the status code.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The message that describes the reason for the status code.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`R53HostedZoneDeletionState`](crate::model::R53HostedZoneDeletionState).
+        pub fn build(self) -> crate::model::R53HostedZoneDeletionState {
+            crate::model::R53HostedZoneDeletionState {
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl R53HostedZoneDeletionState {
+    /// Creates a new builder-style object to manufacture [`R53HostedZoneDeletionState`](crate::model::R53HostedZoneDeletionState).
+    pub fn builder() -> crate::model::r53_hosted_zone_deletion_state::Builder {
+        crate::model::r53_hosted_zone_deletion_state::Builder::default()
+    }
+}
+
+/// When writing a match expression against `R53HostedZoneDeletionStateCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let r53hostedzonedeletionstatecode = unimplemented!();
+/// match r53hostedzonedeletionstatecode {
+///     R53HostedZoneDeletionStateCode::Failed => { /* ... */ },
+///     R53HostedZoneDeletionStateCode::Pending => { /* ... */ },
+///     R53HostedZoneDeletionStateCode::Started => { /* ... */ },
+///     R53HostedZoneDeletionStateCode::Succeeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `r53hostedzonedeletionstatecode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `R53HostedZoneDeletionStateCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `R53HostedZoneDeletionStateCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `R53HostedZoneDeletionStateCode::NewFeature` is defined.
+/// Specifically, when `r53hostedzonedeletionstatecode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `R53HostedZoneDeletionStateCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum R53HostedZoneDeletionStateCode {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Started,
+    #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for R53HostedZoneDeletionStateCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => R53HostedZoneDeletionStateCode::Failed,
+            "PENDING" => R53HostedZoneDeletionStateCode::Pending,
+            "STARTED" => R53HostedZoneDeletionStateCode::Started,
+            "SUCCEEDED" => R53HostedZoneDeletionStateCode::Succeeded,
+            other => R53HostedZoneDeletionStateCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for R53HostedZoneDeletionStateCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(R53HostedZoneDeletionStateCode::from(s))
+    }
+}
+impl R53HostedZoneDeletionStateCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            R53HostedZoneDeletionStateCode::Failed => "FAILED",
+            R53HostedZoneDeletionStateCode::Pending => "PENDING",
+            R53HostedZoneDeletionStateCode::Started => "STARTED",
+            R53HostedZoneDeletionStateCode::Succeeded => "SUCCEEDED",
+            R53HostedZoneDeletionStateCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FAILED", "PENDING", "STARTED", "SUCCEEDED"]
+    }
+}
+impl AsRef<str> for R53HostedZoneDeletionStateCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the state of the name server records update made by Amazon Lightsail to an Amazon Route&nbsp;53 registered domain.</p>
+/// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/understanding-dns-in-amazon-lightsail">DNS in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NameServersUpdateState {
+    /// <p>The status code for the name servers update.</p>
+    /// <p>Following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>SUCCEEDED</code> - The name server records were successfully updated.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The name server record update is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The name server record update failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic name server record update started.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub code: std::option::Option<crate::model::NameServersUpdateStateCode>,
+    /// <p>The message that describes the reason for the status code.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl NameServersUpdateState {
+    /// <p>The status code for the name servers update.</p>
+    /// <p>Following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>SUCCEEDED</code> - The name server records were successfully updated.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The name server record update is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The name server record update failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic name server record update started.</p> </li>
+    /// </ul>
+    pub fn code(&self) -> std::option::Option<&crate::model::NameServersUpdateStateCode> {
+        self.code.as_ref()
+    }
+    /// <p>The message that describes the reason for the status code.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+/// See [`NameServersUpdateState`](crate::model::NameServersUpdateState).
+pub mod name_servers_update_state {
+
+    /// A builder for [`NameServersUpdateState`](crate::model::NameServersUpdateState).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<crate::model::NameServersUpdateStateCode>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status code for the name servers update.</p>
+        /// <p>Following are the possible values:</p>
+        /// <ul>
+        /// <li> <p> <code>SUCCEEDED</code> - The name server records were successfully updated.</p> </li>
+        /// <li> <p> <code>PENDING</code> - The name server record update is in progress.</p> </li>
+        /// <li> <p> <code>FAILED</code> - The name server record update failed.</p> </li>
+        /// <li> <p> <code>STARTED</code> - The automatic name server record update started.</p> </li>
+        /// </ul>
+        pub fn code(mut self, input: crate::model::NameServersUpdateStateCode) -> Self {
+            self.code = Some(input);
+            self
+        }
+        /// <p>The status code for the name servers update.</p>
+        /// <p>Following are the possible values:</p>
+        /// <ul>
+        /// <li> <p> <code>SUCCEEDED</code> - The name server records were successfully updated.</p> </li>
+        /// <li> <p> <code>PENDING</code> - The name server record update is in progress.</p> </li>
+        /// <li> <p> <code>FAILED</code> - The name server record update failed.</p> </li>
+        /// <li> <p> <code>STARTED</code> - The automatic name server record update started.</p> </li>
+        /// </ul>
+        pub fn set_code(
+            mut self,
+            input: std::option::Option<crate::model::NameServersUpdateStateCode>,
+        ) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>The message that describes the reason for the status code.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The message that describes the reason for the status code.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NameServersUpdateState`](crate::model::NameServersUpdateState).
+        pub fn build(self) -> crate::model::NameServersUpdateState {
+            crate::model::NameServersUpdateState {
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl NameServersUpdateState {
+    /// Creates a new builder-style object to manufacture [`NameServersUpdateState`](crate::model::NameServersUpdateState).
+    pub fn builder() -> crate::model::name_servers_update_state::Builder {
+        crate::model::name_servers_update_state::Builder::default()
+    }
+}
+
+/// When writing a match expression against `NameServersUpdateStateCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let nameserversupdatestatecode = unimplemented!();
+/// match nameserversupdatestatecode {
+///     NameServersUpdateStateCode::Failed => { /* ... */ },
+///     NameServersUpdateStateCode::Pending => { /* ... */ },
+///     NameServersUpdateStateCode::Started => { /* ... */ },
+///     NameServersUpdateStateCode::Succeeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `nameserversupdatestatecode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `NameServersUpdateStateCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `NameServersUpdateStateCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `NameServersUpdateStateCode::NewFeature` is defined.
+/// Specifically, when `nameserversupdatestatecode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `NameServersUpdateStateCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum NameServersUpdateStateCode {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Started,
+    #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for NameServersUpdateStateCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => NameServersUpdateStateCode::Failed,
+            "PENDING" => NameServersUpdateStateCode::Pending,
+            "STARTED" => NameServersUpdateStateCode::Started,
+            "SUCCEEDED" => NameServersUpdateStateCode::Succeeded,
+            other => NameServersUpdateStateCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for NameServersUpdateStateCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NameServersUpdateStateCode::from(s))
+    }
+}
+impl NameServersUpdateStateCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NameServersUpdateStateCode::Failed => "FAILED",
+            NameServersUpdateStateCode::Pending => "PENDING",
+            NameServersUpdateStateCode::Started => "STARTED",
+            NameServersUpdateStateCode::Succeeded => "SUCCEEDED",
+            NameServersUpdateStateCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FAILED", "PENDING", "STARTED", "SUCCEEDED"]
+    }
+}
+impl AsRef<str> for NameServersUpdateStateCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -21993,10 +22752,10 @@ pub struct Certificate {
     /// <p>The following failure reasons are possible:</p>
     /// <ul>
     /// <li> <p> <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available for Lightsail certificates.</p> </li>
-    /// <li> <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.</p> <note>
+    /// <li> <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> to contact Amazon Web Services Support.</p> <note>
     /// <p>You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>
     /// </note> </li>
-    /// <li> <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.</p> </li>
+    /// <li> <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> and create a case.</p> </li>
     /// <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li>
     /// <li> <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request. </p> </li>
     /// </ul>
@@ -22077,10 +22836,10 @@ impl Certificate {
     /// <p>The following failure reasons are possible:</p>
     /// <ul>
     /// <li> <p> <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available for Lightsail certificates.</p> </li>
-    /// <li> <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.</p> <note>
+    /// <li> <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> to contact Amazon Web Services Support.</p> <note>
     /// <p>You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>
     /// </note> </li>
-    /// <li> <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.</p> </li>
+    /// <li> <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> and create a case.</p> </li>
     /// <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li>
     /// <li> <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request. </p> </li>
     /// </ul>
@@ -22272,10 +23031,10 @@ pub mod certificate {
         /// <p>The following failure reasons are possible:</p>
         /// <ul>
         /// <li> <p> <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available for Lightsail certificates.</p> </li>
-        /// <li> <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.</p> <note>
+        /// <li> <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> to contact Amazon Web Services Support.</p> <note>
         /// <p>You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>
         /// </note> </li>
-        /// <li> <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.</p> </li>
+        /// <li> <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> and create a case.</p> </li>
         /// <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li>
         /// <li> <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request. </p> </li>
         /// </ul>
@@ -22287,10 +23046,10 @@ pub mod certificate {
         /// <p>The following failure reasons are possible:</p>
         /// <ul>
         /// <li> <p> <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available for Lightsail certificates.</p> </li>
-        /// <li> <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.</p> <note>
+        /// <li> <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> to contact Amazon Web Services Support.</p> <note>
         /// <p>You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>
         /// </note> </li>
-        /// <li> <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.</p> </li>
+        /// <li> <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> and create a case.</p> </li>
         /// <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li>
         /// <li> <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request. </p> </li>
         /// </ul>
@@ -22765,7 +23524,7 @@ impl AsRef<str> for RenewalStatus {
     }
 }
 
-/// <p>Describes the domain validation records of an Amazon Lightsail SSL/TLS certificate.</p>
+/// <p>Describes the domain name system (DNS) records that you must add to the DNS of your registered domain to validate ownership for an Amazon Lightsail SSL/TLS certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainValidationRecord {
@@ -22775,6 +23534,12 @@ pub struct DomainValidationRecord {
     /// <p>An object that describes the DNS records to add to your domain's DNS to validate it for the certificate.</p>
     #[doc(hidden)]
     pub resource_record: std::option::Option<crate::model::ResourceRecord>,
+    /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of the domain to validate domain ownership.</p>
+    #[doc(hidden)]
+    pub dns_record_creation_state: std::option::Option<crate::model::DnsRecordCreationState>,
+    /// <p>The validation status of the record.</p>
+    #[doc(hidden)]
+    pub validation_status: std::option::Option<crate::model::CertificateDomainValidationStatus>,
 }
 impl DomainValidationRecord {
     /// <p>The domain name of the certificate validation record. For example, <code>example.com</code> or <code>www.example.com</code>.</p>
@@ -22785,6 +23550,18 @@ impl DomainValidationRecord {
     pub fn resource_record(&self) -> std::option::Option<&crate::model::ResourceRecord> {
         self.resource_record.as_ref()
     }
+    /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of the domain to validate domain ownership.</p>
+    pub fn dns_record_creation_state(
+        &self,
+    ) -> std::option::Option<&crate::model::DnsRecordCreationState> {
+        self.dns_record_creation_state.as_ref()
+    }
+    /// <p>The validation status of the record.</p>
+    pub fn validation_status(
+        &self,
+    ) -> std::option::Option<&crate::model::CertificateDomainValidationStatus> {
+        self.validation_status.as_ref()
+    }
 }
 /// See [`DomainValidationRecord`](crate::model::DomainValidationRecord).
 pub mod domain_validation_record {
@@ -22794,6 +23571,10 @@ pub mod domain_validation_record {
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) resource_record: std::option::Option<crate::model::ResourceRecord>,
+        pub(crate) dns_record_creation_state:
+            std::option::Option<crate::model::DnsRecordCreationState>,
+        pub(crate) validation_status:
+            std::option::Option<crate::model::CertificateDomainValidationStatus>,
     }
     impl Builder {
         /// <p>The domain name of the certificate validation record. For example, <code>example.com</code> or <code>www.example.com</code>.</p>
@@ -22819,11 +23600,45 @@ pub mod domain_validation_record {
             self.resource_record = input;
             self
         }
+        /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of the domain to validate domain ownership.</p>
+        pub fn dns_record_creation_state(
+            mut self,
+            input: crate::model::DnsRecordCreationState,
+        ) -> Self {
+            self.dns_record_creation_state = Some(input);
+            self
+        }
+        /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of the domain to validate domain ownership.</p>
+        pub fn set_dns_record_creation_state(
+            mut self,
+            input: std::option::Option<crate::model::DnsRecordCreationState>,
+        ) -> Self {
+            self.dns_record_creation_state = input;
+            self
+        }
+        /// <p>The validation status of the record.</p>
+        pub fn validation_status(
+            mut self,
+            input: crate::model::CertificateDomainValidationStatus,
+        ) -> Self {
+            self.validation_status = Some(input);
+            self
+        }
+        /// <p>The validation status of the record.</p>
+        pub fn set_validation_status(
+            mut self,
+            input: std::option::Option<crate::model::CertificateDomainValidationStatus>,
+        ) -> Self {
+            self.validation_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DomainValidationRecord`](crate::model::DomainValidationRecord).
         pub fn build(self) -> crate::model::DomainValidationRecord {
             crate::model::DomainValidationRecord {
                 domain_name: self.domain_name,
                 resource_record: self.resource_record,
+                dns_record_creation_state: self.dns_record_creation_state,
+                validation_status: self.validation_status,
             }
         }
     }
@@ -22832,6 +23647,295 @@ impl DomainValidationRecord {
     /// Creates a new builder-style object to manufacture [`DomainValidationRecord`](crate::model::DomainValidationRecord).
     pub fn builder() -> crate::model::domain_validation_record::Builder {
         crate::model::domain_validation_record::Builder::default()
+    }
+}
+
+/// When writing a match expression against `CertificateDomainValidationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let certificatedomainvalidationstatus = unimplemented!();
+/// match certificatedomainvalidationstatus {
+///     CertificateDomainValidationStatus::Failed => { /* ... */ },
+///     CertificateDomainValidationStatus::PendingValidation => { /* ... */ },
+///     CertificateDomainValidationStatus::Success => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `certificatedomainvalidationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CertificateDomainValidationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CertificateDomainValidationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CertificateDomainValidationStatus::NewFeature` is defined.
+/// Specifically, when `certificatedomainvalidationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CertificateDomainValidationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CertificateDomainValidationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingValidation,
+    #[allow(missing_docs)] // documentation missing in model
+    Success,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for CertificateDomainValidationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => CertificateDomainValidationStatus::Failed,
+            "PENDING_VALIDATION" => CertificateDomainValidationStatus::PendingValidation,
+            "SUCCESS" => CertificateDomainValidationStatus::Success,
+            other => CertificateDomainValidationStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for CertificateDomainValidationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CertificateDomainValidationStatus::from(s))
+    }
+}
+impl CertificateDomainValidationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CertificateDomainValidationStatus::Failed => "FAILED",
+            CertificateDomainValidationStatus::PendingValidation => "PENDING_VALIDATION",
+            CertificateDomainValidationStatus::Success => "SUCCESS",
+            CertificateDomainValidationStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FAILED", "PENDING_VALIDATION", "SUCCESS"]
+    }
+}
+impl AsRef<str> for CertificateDomainValidationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the creation state of the canonical name (CNAME) records that are automatically added by Amazon Lightsail to the DNS of a domain to validate domain ownership for an SSL/TLS certificate.</p>
+/// <p>When you create an SSL/TLS certificate for a Lightsail resource, you must add a set of CNAME records to the DNS of the domains for the certificate to validate that you own the domains. Lightsail can automatically add the CNAME records to the DNS of the domain if the DNS zone for the domain exists within your Lightsail account. If automatic record addition fails, or if you manage the DNS of your domain using a third-party service, then you must manually add the CNAME records to the DNS of your domain. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/verify-tls-ssl-certificate-using-dns-cname-https">Verify an SSL/TLS certificate in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DnsRecordCreationState {
+    /// <p>The status code for the automated DNS record creation.</p>
+    /// <p>Following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added to the domain.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The validation records failed to be added to the domain.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub code: std::option::Option<crate::model::DnsRecordCreationStateCode>,
+    /// <p>The message that describes the reason for the status code.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl DnsRecordCreationState {
+    /// <p>The status code for the automated DNS record creation.</p>
+    /// <p>Following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added to the domain.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The validation records failed to be added to the domain.</p> </li>
+    /// </ul>
+    pub fn code(&self) -> std::option::Option<&crate::model::DnsRecordCreationStateCode> {
+        self.code.as_ref()
+    }
+    /// <p>The message that describes the reason for the status code.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+/// See [`DnsRecordCreationState`](crate::model::DnsRecordCreationState).
+pub mod dns_record_creation_state {
+
+    /// A builder for [`DnsRecordCreationState`](crate::model::DnsRecordCreationState).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<crate::model::DnsRecordCreationStateCode>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status code for the automated DNS record creation.</p>
+        /// <p>Following are the possible values:</p>
+        /// <ul>
+        /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added to the domain.</p> </li>
+        /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
+        /// <li> <p> <code>FAILED</code> - The validation records failed to be added to the domain.</p> </li>
+        /// </ul>
+        pub fn code(mut self, input: crate::model::DnsRecordCreationStateCode) -> Self {
+            self.code = Some(input);
+            self
+        }
+        /// <p>The status code for the automated DNS record creation.</p>
+        /// <p>Following are the possible values:</p>
+        /// <ul>
+        /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added to the domain.</p> </li>
+        /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
+        /// <li> <p> <code>FAILED</code> - The validation records failed to be added to the domain.</p> </li>
+        /// </ul>
+        pub fn set_code(
+            mut self,
+            input: std::option::Option<crate::model::DnsRecordCreationStateCode>,
+        ) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>The message that describes the reason for the status code.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The message that describes the reason for the status code.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DnsRecordCreationState`](crate::model::DnsRecordCreationState).
+        pub fn build(self) -> crate::model::DnsRecordCreationState {
+            crate::model::DnsRecordCreationState {
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl DnsRecordCreationState {
+    /// Creates a new builder-style object to manufacture [`DnsRecordCreationState`](crate::model::DnsRecordCreationState).
+    pub fn builder() -> crate::model::dns_record_creation_state::Builder {
+        crate::model::dns_record_creation_state::Builder::default()
+    }
+}
+
+/// When writing a match expression against `DnsRecordCreationStateCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dnsrecordcreationstatecode = unimplemented!();
+/// match dnsrecordcreationstatecode {
+///     DnsRecordCreationStateCode::Failed => { /* ... */ },
+///     DnsRecordCreationStateCode::Started => { /* ... */ },
+///     DnsRecordCreationStateCode::Succeeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dnsrecordcreationstatecode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DnsRecordCreationStateCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DnsRecordCreationStateCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DnsRecordCreationStateCode::NewFeature` is defined.
+/// Specifically, when `dnsrecordcreationstatecode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DnsRecordCreationStateCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DnsRecordCreationStateCode {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Started,
+    #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DnsRecordCreationStateCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => DnsRecordCreationStateCode::Failed,
+            "STARTED" => DnsRecordCreationStateCode::Started,
+            "SUCCEEDED" => DnsRecordCreationStateCode::Succeeded,
+            other => DnsRecordCreationStateCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for DnsRecordCreationStateCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DnsRecordCreationStateCode::from(s))
+    }
+}
+impl DnsRecordCreationStateCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DnsRecordCreationStateCode::Failed => "FAILED",
+            DnsRecordCreationStateCode::Started => "STARTED",
+            DnsRecordCreationStateCode::Succeeded => "SUCCEEDED",
+            DnsRecordCreationStateCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FAILED", "STARTED", "SUCCEEDED"]
+    }
+}
+impl AsRef<str> for DnsRecordCreationStateCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -24194,11 +25298,11 @@ pub struct AccessKeyLastUsed {
     /// <p>This value is null if the access key has not been used.</p>
     #[doc(hidden)]
     pub last_used_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The AWS Region where this access key was most recently used.</p>
+    /// <p>The Amazon Web Services Region where this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
-    /// <p>The name of the AWS service with which this access key was most recently used.</p>
+    /// <p>The name of the Amazon Web Services service with which this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
@@ -24209,12 +25313,12 @@ impl AccessKeyLastUsed {
     pub fn last_used_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_used_date.as_ref()
     }
-    /// <p>The AWS Region where this access key was most recently used.</p>
+    /// <p>The Amazon Web Services Region where this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>The name of the AWS service with which this access key was most recently used.</p>
+    /// <p>The name of the Amazon Web Services service with which this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
@@ -24246,25 +25350,25 @@ pub mod access_key_last_used {
             self.last_used_date = input;
             self
         }
-        /// <p>The AWS Region where this access key was most recently used.</p>
+        /// <p>The Amazon Web Services Region where this access key was most recently used.</p>
         /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The AWS Region where this access key was most recently used.</p>
+        /// <p>The Amazon Web Services Region where this access key was most recently used.</p>
         /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
-        /// <p>The name of the AWS service with which this access key was most recently used.</p>
+        /// <p>The name of the Amazon Web Services service with which this access key was most recently used.</p>
         /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_name = Some(input.into());
             self
         }
-        /// <p>The name of the AWS service with which this access key was most recently used.</p>
+        /// <p>The name of the Amazon Web Services service with which this access key was most recently used.</p>
         /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;

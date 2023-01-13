@@ -180,6 +180,66 @@ impl InvalidInputException {
     }
 }
 
+/// <p>The specified resource already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResourceAlreadyExistsException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ResourceAlreadyExistsException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceAlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceAlreadyExistsException")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceAlreadyExistsException {}
+/// See [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
+pub mod resource_already_exists_exception {
+
+    /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
+        pub fn build(self) -> crate::error::ResourceAlreadyExistsException {
+            crate::error::ResourceAlreadyExistsException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourceAlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
+    pub fn builder() -> crate::error::resource_already_exists_exception::Builder {
+        crate::error::resource_already_exists_exception::Builder::default()
+    }
+}
+
 /// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per resource). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -197,9 +257,9 @@ impl TooManyTagKeysException {
 impl std::fmt::Display for TooManyTagKeysException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTagKeysException")?;
-        if let Some(inner_4) = &self.message {
+        if let Some(inner_5) = &self.message {
             {
-                write!(f, ": {}", inner_4)?;
+                write!(f, ": {}", inner_5)?;
             }
         }
         Ok(())
@@ -257,9 +317,9 @@ impl TooManyTagsException {
 impl std::fmt::Display for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTagsException")?;
-        if let Some(inner_5) = &self.message {
+        if let Some(inner_6) = &self.message {
             {
-                write!(f, ": {}", inner_5)?;
+                write!(f, ": {}", inner_6)?;
             }
         }
         Ok(())
@@ -317,9 +377,9 @@ impl LimitExceededException {
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
-        if let Some(inner_6) = &self.message {
+        if let Some(inner_7) = &self.message {
             {
-                write!(f, ": {}", inner_6)?;
+                write!(f, ": {}", inner_7)?;
             }
         }
         Ok(())
@@ -377,9 +437,9 @@ impl InvalidNextTokenException {
 impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
-        if let Some(inner_7) = &self.message {
+        if let Some(inner_8) = &self.message {
             {
-                write!(f, ": {}", inner_7)?;
+                write!(f, ": {}", inner_8)?;
             }
         }
         Ok(())
@@ -417,66 +477,6 @@ impl InvalidNextTokenException {
     /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
     pub fn builder() -> crate::error::invalid_next_token_exception::Builder {
         crate::error::invalid_next_token_exception::Builder::default()
-    }
-}
-
-/// <p>The specified resource already exists.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceAlreadyExistsException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl ResourceAlreadyExistsException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ResourceAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceAlreadyExistsException")?;
-        if let Some(inner_8) = &self.message {
-            {
-                write!(f, ": {}", inner_8)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ResourceAlreadyExistsException {}
-/// See [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
-pub mod resource_already_exists_exception {
-
-    /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
-        pub fn build(self) -> crate::error::ResourceAlreadyExistsException {
-            crate::error::ResourceAlreadyExistsException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ResourceAlreadyExistsException {
-    /// Creates a new builder-style object to manufacture [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
-    pub fn builder() -> crate::error::resource_already_exists_exception::Builder {
-        crate::error::resource_already_exists_exception::Builder::default()
     }
 }
 
@@ -1920,6 +1920,166 @@ impl std::error::Error for CreateFilterError {
     }
 }
 
+/// Error type for the `CreateMetricAttribution` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateMetricAttributionError {
+    /// Kind of error that occurred.
+    pub kind: CreateMetricAttributionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateMetricAttributionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateMetricAttributionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateMetricAttribution` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateMetricAttributionErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The limit on the number of requests per second has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The specified resource already exists.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateMetricAttributionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateMetricAttributionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateMetricAttributionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateMetricAttributionErrorKind::ResourceAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateMetricAttributionErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            CreateMetricAttributionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateMetricAttributionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateMetricAttributionError {
+    fn code(&self) -> Option<&str> {
+        CreateMetricAttributionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateMetricAttributionError {
+    /// Creates a new `CreateMetricAttributionError`.
+    pub fn new(kind: CreateMetricAttributionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateMetricAttributionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateMetricAttributionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateMetricAttributionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateMetricAttributionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateMetricAttributionErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMetricAttributionErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMetricAttributionErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMetricAttributionErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMetricAttributionErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMetricAttributionErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMetricAttributionErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMetricAttributionErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMetricAttributionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMetricAttributionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for CreateMetricAttributionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateMetricAttributionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateMetricAttributionErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateMetricAttributionErrorKind::ResourceAlreadyExistsException(_inner) => {
+                Some(_inner)
+            }
+            CreateMetricAttributionErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            CreateMetricAttributionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateMetricAttributionErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `CreateRecommender` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2392,6 +2552,8 @@ pub enum CreateSolutionVersionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of requests per second has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The specified resource already exists.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
@@ -2413,6 +2575,7 @@ impl std::fmt::Display for CreateSolutionVersionError {
         match &self.kind {
             CreateSolutionVersionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
             CreateSolutionVersionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateSolutionVersionErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             CreateSolutionVersionErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             CreateSolutionVersionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateSolutionVersionErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
@@ -2488,6 +2651,13 @@ impl CreateSolutionVersionError {
             CreateSolutionVersionErrorKind::LimitExceededException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateSolutionVersionErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSolutionVersionErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateSolutionVersionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
@@ -2515,6 +2685,7 @@ impl std::error::Error for CreateSolutionVersionError {
         match &self.kind {
             CreateSolutionVersionErrorKind::InvalidInputException(_inner) => Some(_inner),
             CreateSolutionVersionErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateSolutionVersionErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateSolutionVersionErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateSolutionVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateSolutionVersionErrorKind::TooManyTagsException(_inner) => Some(_inner),
@@ -3160,6 +3331,140 @@ impl std::error::Error for DeleteFilterError {
             DeleteFilterErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteFilterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteFilterErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeleteMetricAttribution` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteMetricAttributionError {
+    /// Kind of error that occurred.
+    pub kind: DeleteMetricAttributionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteMetricAttributionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteMetricAttributionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteMetricAttribution` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteMetricAttributionErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteMetricAttributionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteMetricAttributionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteMetricAttributionErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            DeleteMetricAttributionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteMetricAttributionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteMetricAttributionError {
+    fn code(&self) -> Option<&str> {
+        DeleteMetricAttributionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteMetricAttributionError {
+    /// Creates a new `DeleteMetricAttributionError`.
+    pub fn new(kind: DeleteMetricAttributionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteMetricAttributionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteMetricAttributionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteMetricAttributionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteMetricAttributionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteMetricAttributionErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMetricAttributionErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMetricAttributionErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMetricAttributionErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMetricAttributionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMetricAttributionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteMetricAttributionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteMetricAttributionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteMetricAttributionErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            DeleteMetricAttributionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteMetricAttributionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4896,6 +5201,131 @@ impl std::error::Error for DescribeFilterError {
             DescribeFilterErrorKind::InvalidInputException(_inner) => Some(_inner),
             DescribeFilterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeFilterErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeMetricAttribution` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeMetricAttributionError {
+    /// Kind of error that occurred.
+    pub kind: DescribeMetricAttributionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeMetricAttributionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeMetricAttributionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeMetricAttribution` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeMetricAttributionErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeMetricAttributionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeMetricAttributionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DescribeMetricAttributionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeMetricAttributionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeMetricAttributionError {
+    fn code(&self) -> Option<&str> {
+        DescribeMetricAttributionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeMetricAttributionError {
+    /// Creates a new `DescribeMetricAttributionError`.
+    pub fn new(kind: DescribeMetricAttributionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeMetricAttributionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeMetricAttributionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeMetricAttributionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeMetricAttributionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeMetricAttributionErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMetricAttributionErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeMetricAttributionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMetricAttributionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeMetricAttributionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeMetricAttributionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DescribeMetricAttributionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeMetricAttributionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6696,6 +7126,258 @@ impl std::error::Error for ListFiltersError {
     }
 }
 
+/// Error type for the `ListMetricAttributionMetrics` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMetricAttributionMetricsError {
+    /// Kind of error that occurred.
+    pub kind: ListMetricAttributionMetricsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListMetricAttributionMetricsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListMetricAttributionMetricsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListMetricAttributionMetrics` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMetricAttributionMetricsErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The token is not valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListMetricAttributionMetricsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMetricAttributionMetricsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListMetricAttributionMetricsErrorKind::InvalidNextTokenException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListMetricAttributionMetricsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListMetricAttributionMetricsError {
+    fn code(&self) -> Option<&str> {
+        ListMetricAttributionMetricsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMetricAttributionMetricsError {
+    /// Creates a new `ListMetricAttributionMetricsError`.
+    pub fn new(kind: ListMetricAttributionMetricsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListMetricAttributionMetricsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMetricAttributionMetricsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListMetricAttributionMetricsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMetricAttributionMetricsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListMetricAttributionMetricsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMetricAttributionMetricsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMetricAttributionMetricsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMetricAttributionMetricsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+}
+impl std::error::Error for ListMetricAttributionMetricsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMetricAttributionMetricsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListMetricAttributionMetricsErrorKind::InvalidNextTokenException(_inner) => {
+                Some(_inner)
+            }
+            ListMetricAttributionMetricsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListMetricAttributions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMetricAttributionsError {
+    /// Kind of error that occurred.
+    pub kind: ListMetricAttributionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListMetricAttributionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListMetricAttributionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListMetricAttributions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMetricAttributionsErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The token is not valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListMetricAttributionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMetricAttributionsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListMetricAttributionsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListMetricAttributionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListMetricAttributionsError {
+    fn code(&self) -> Option<&str> {
+        ListMetricAttributionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMetricAttributionsError {
+    /// Creates a new `ListMetricAttributionsError`.
+    pub fn new(kind: ListMetricAttributionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListMetricAttributionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMetricAttributionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListMetricAttributionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMetricAttributionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListMetricAttributionsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMetricAttributionsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMetricAttributionsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMetricAttributionsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+}
+impl std::error::Error for ListMetricAttributionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMetricAttributionsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListMetricAttributionsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListMetricAttributionsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListRecipes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8221,6 +8903,155 @@ impl std::error::Error for UpdateCampaignError {
             UpdateCampaignErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdateCampaignErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateCampaignErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateMetricAttribution` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateMetricAttributionError {
+    /// Kind of error that occurred.
+    pub kind: UpdateMetricAttributionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateMetricAttributionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateMetricAttributionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateMetricAttribution` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateMetricAttributionErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The specified resource already exists.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateMetricAttributionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateMetricAttributionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UpdateMetricAttributionErrorKind::ResourceAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateMetricAttributionErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            UpdateMetricAttributionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateMetricAttributionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateMetricAttributionError {
+    fn code(&self) -> Option<&str> {
+        UpdateMetricAttributionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateMetricAttributionError {
+    /// Creates a new `UpdateMetricAttributionError`.
+    pub fn new(kind: UpdateMetricAttributionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateMetricAttributionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateMetricAttributionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateMetricAttributionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateMetricAttributionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateMetricAttributionErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMetricAttributionErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateMetricAttributionErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMetricAttributionErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateMetricAttributionErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMetricAttributionErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateMetricAttributionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMetricAttributionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateMetricAttributionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateMetricAttributionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UpdateMetricAttributionErrorKind::ResourceAlreadyExistsException(_inner) => {
+                Some(_inner)
+            }
+            UpdateMetricAttributionErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            UpdateMetricAttributionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateMetricAttributionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

@@ -692,6 +692,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnectorProfile {
     }
 }
 
+/// Operation shape for `UpdateConnectorRegistration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_connector_registration`](crate::client::Client::update_connector_registration).
+///
+/// See [`crate::client::fluent_builders::UpdateConnectorRegistration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateConnectorRegistration {
+    _private: (),
+}
+impl UpdateConnectorRegistration {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectorRegistrationInput`](crate::input::UpdateConnectorRegistrationInput).
+    pub fn builder() -> crate::input::update_connector_registration_input::Builder {
+        crate::input::update_connector_registration_input::Builder::default()
+    }
+    /// Creates a new `UpdateConnectorRegistration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateConnectorRegistration {
+    type Output = std::result::Result<
+        crate::output::UpdateConnectorRegistrationOutput,
+        crate::error::UpdateConnectorRegistrationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_connector_registration_error(response)
+        } else {
+            crate::operation_deser::parse_update_connector_registration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateFlow`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

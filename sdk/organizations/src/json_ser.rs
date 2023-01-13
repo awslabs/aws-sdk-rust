@@ -686,15 +686,37 @@ pub fn serialize_structure_crate_input_move_account_input(
     Ok(())
 }
 
+pub fn serialize_structure_crate_input_put_resource_policy_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::PutResourcePolicyInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_117) = &input.content {
+        object.key("Content").string(var_117.as_str());
+    }
+    if let Some(var_118) = &input.tags {
+        let mut array_119 = object.key("Tags").start_array();
+        for item_120 in var_118 {
+            {
+                #[allow(unused_mut)]
+                let mut object_121 = array_119.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_121, item_120)?;
+                object_121.finish();
+            }
+        }
+        array_119.finish();
+    }
+    Ok(())
+}
+
 pub fn serialize_structure_crate_input_register_delegated_administrator_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterDelegatedAdministratorInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_117) = &input.account_id {
-        object.key("AccountId").string(var_117.as_str());
+    if let Some(var_122) = &input.account_id {
+        object.key("AccountId").string(var_122.as_str());
     }
-    if let Some(var_118) = &input.service_principal {
-        object.key("ServicePrincipal").string(var_118.as_str());
+    if let Some(var_123) = &input.service_principal {
+        object.key("ServicePrincipal").string(var_123.as_str());
     }
     Ok(())
 }
@@ -703,8 +725,8 @@ pub fn serialize_structure_crate_input_remove_account_from_organization_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RemoveAccountFromOrganizationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_119) = &input.account_id {
-        object.key("AccountId").string(var_119.as_str());
+    if let Some(var_124) = &input.account_id {
+        object.key("AccountId").string(var_124.as_str());
     }
     Ok(())
 }
@@ -713,20 +735,20 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_120) = &input.resource_id {
-        object.key("ResourceId").string(var_120.as_str());
+    if let Some(var_125) = &input.resource_id {
+        object.key("ResourceId").string(var_125.as_str());
     }
-    if let Some(var_121) = &input.tags {
-        let mut array_122 = object.key("Tags").start_array();
-        for item_123 in var_121 {
+    if let Some(var_126) = &input.tags {
+        let mut array_127 = object.key("Tags").start_array();
+        for item_128 in var_126 {
             {
                 #[allow(unused_mut)]
-                let mut object_124 = array_122.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_124, item_123)?;
-                object_124.finish();
+                let mut object_129 = array_127.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_129, item_128)?;
+                object_129.finish();
             }
         }
-        array_122.finish();
+        array_127.finish();
     }
     Ok(())
 }
@@ -735,17 +757,17 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_125) = &input.resource_id {
-        object.key("ResourceId").string(var_125.as_str());
+    if let Some(var_130) = &input.resource_id {
+        object.key("ResourceId").string(var_130.as_str());
     }
-    if let Some(var_126) = &input.tag_keys {
-        let mut array_127 = object.key("TagKeys").start_array();
-        for item_128 in var_126 {
+    if let Some(var_131) = &input.tag_keys {
+        let mut array_132 = object.key("TagKeys").start_array();
+        for item_133 in var_131 {
             {
-                array_127.value().string(item_128.as_str());
+                array_132.value().string(item_133.as_str());
             }
         }
-        array_127.finish();
+        array_132.finish();
     }
     Ok(())
 }
@@ -754,11 +776,11 @@ pub fn serialize_structure_crate_input_update_organizational_unit_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateOrganizationalUnitInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_129) = &input.organizational_unit_id {
-        object.key("OrganizationalUnitId").string(var_129.as_str());
+    if let Some(var_134) = &input.organizational_unit_id {
+        object.key("OrganizationalUnitId").string(var_134.as_str());
     }
-    if let Some(var_130) = &input.name {
-        object.key("Name").string(var_130.as_str());
+    if let Some(var_135) = &input.name {
+        object.key("Name").string(var_135.as_str());
     }
     Ok(())
 }
@@ -767,17 +789,17 @@ pub fn serialize_structure_crate_input_update_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdatePolicyInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_131) = &input.policy_id {
-        object.key("PolicyId").string(var_131.as_str());
+    if let Some(var_136) = &input.policy_id {
+        object.key("PolicyId").string(var_136.as_str());
     }
-    if let Some(var_132) = &input.name {
-        object.key("Name").string(var_132.as_str());
+    if let Some(var_137) = &input.name {
+        object.key("Name").string(var_137.as_str());
     }
-    if let Some(var_133) = &input.description {
-        object.key("Description").string(var_133.as_str());
+    if let Some(var_138) = &input.description {
+        object.key("Description").string(var_138.as_str());
     }
-    if let Some(var_134) = &input.content {
-        object.key("Content").string(var_134.as_str());
+    if let Some(var_139) = &input.content {
+        object.key("Content").string(var_139.as_str());
     }
     Ok(())
 }
@@ -786,11 +808,11 @@ pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_135) = &input.key {
-        object.key("Key").string(var_135.as_str());
+    if let Some(var_140) = &input.key {
+        object.key("Key").string(var_140.as_str());
     }
-    if let Some(var_136) = &input.value {
-        object.key("Value").string(var_136.as_str());
+    if let Some(var_141) = &input.value {
+        object.key("Value").string(var_141.as_str());
     }
     Ok(())
 }
@@ -799,11 +821,11 @@ pub fn serialize_structure_crate_model_handshake_party(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HandshakeParty,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_137) = &input.id {
-        object.key("Id").string(var_137.as_str());
+    if let Some(var_142) = &input.id {
+        object.key("Id").string(var_142.as_str());
     }
-    if let Some(var_138) = &input.r#type {
-        object.key("Type").string(var_138.as_str());
+    if let Some(var_143) = &input.r#type {
+        object.key("Type").string(var_143.as_str());
     }
     Ok(())
 }
@@ -812,11 +834,11 @@ pub fn serialize_structure_crate_model_handshake_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HandshakeFilter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_139) = &input.action_type {
-        object.key("ActionType").string(var_139.as_str());
+    if let Some(var_144) = &input.action_type {
+        object.key("ActionType").string(var_144.as_str());
     }
-    if let Some(var_140) = &input.parent_handshake_id {
-        object.key("ParentHandshakeId").string(var_140.as_str());
+    if let Some(var_145) = &input.parent_handshake_id {
+        object.key("ParentHandshakeId").string(var_145.as_str());
     }
     Ok(())
 }

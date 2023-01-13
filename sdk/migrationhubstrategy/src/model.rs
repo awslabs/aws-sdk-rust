@@ -135,6 +135,7 @@ impl StrategyOption {
 ///     TargetDestination::AmazonRdsPostgresql => { /* ... */ },
 ///     TargetDestination::AuroraMysql => { /* ... */ },
 ///     TargetDestination::AuroraPostgresql => { /* ... */ },
+///     TargetDestination::BabelfishAuroraPostgresql => { /* ... */ },
 ///     TargetDestination::NoneSpecified => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -194,6 +195,8 @@ pub enum TargetDestination {
     #[allow(missing_docs)] // documentation missing in model
     AuroraPostgresql,
     #[allow(missing_docs)] // documentation missing in model
+    BabelfishAuroraPostgresql,
+    #[allow(missing_docs)] // documentation missing in model
     NoneSpecified,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
@@ -219,6 +222,7 @@ impl std::convert::From<&str> for TargetDestination {
             }
             "Aurora MySQL" => TargetDestination::AuroraMysql,
             "Aurora PostgreSQL" => TargetDestination::AuroraPostgresql,
+            "Babelfish for Aurora PostgreSQL" => TargetDestination::BabelfishAuroraPostgresql,
             "None specified" => TargetDestination::NoneSpecified,
             other => {
                 TargetDestination::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
@@ -255,6 +259,7 @@ impl TargetDestination {
             }
             TargetDestination::AuroraMysql => "Aurora MySQL",
             TargetDestination::AuroraPostgresql => "Aurora PostgreSQL",
+            TargetDestination::BabelfishAuroraPostgresql => "Babelfish for Aurora PostgreSQL",
             TargetDestination::NoneSpecified => "None specified",
             TargetDestination::Unknown(value) => value.as_str(),
         }
@@ -274,6 +279,7 @@ impl TargetDestination {
             "Amazon Relational Database Service on PostgreSQL",
             "Aurora MySQL",
             "Aurora PostgreSQL",
+            "Babelfish for Aurora PostgreSQL",
             "None specified",
         ]
     }
@@ -554,6 +560,219 @@ impl AsRef<str> for Strategy {
     }
 }
 
+/// When writing a match expression against `AppType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let apptype = unimplemented!();
+/// match apptype {
+///     AppType::Cassandra => { /* ... */ },
+///     AppType::Db2 => { /* ... */ },
+///     AppType::DotNetFramework => { /* ... */ },
+///     AppType::Dotnet => { /* ... */ },
+///     AppType::Dotnetcore => { /* ... */ },
+///     AppType::Websphere => { /* ... */ },
+///     AppType::Iis => { /* ... */ },
+///     AppType::Jboss => { /* ... */ },
+///     AppType::Java => { /* ... */ },
+///     AppType::Mariadb => { /* ... */ },
+///     AppType::Mongodb => { /* ... */ },
+///     AppType::Mysql => { /* ... */ },
+///     AppType::Oracle => { /* ... */ },
+///     AppType::Weblogic => { /* ... */ },
+///     AppType::Other => { /* ... */ },
+///     AppType::Postgresqlserver => { /* ... */ },
+///     AppType::SqlServer => { /* ... */ },
+///     AppType::Spring => { /* ... */ },
+///     AppType::Sybase => { /* ... */ },
+///     AppType::Tomcat => { /* ... */ },
+///     AppType::UnknownValue => { /* ... */ },
+///     AppType::Visualbasic => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `apptype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AppType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AppType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AppType::NewFeature` is defined.
+/// Specifically, when `apptype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AppType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// _Note: `AppType::Unknown` has been renamed to `::UnknownValue`._
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AppType {
+    #[allow(missing_docs)] // documentation missing in model
+    Cassandra,
+    #[allow(missing_docs)] // documentation missing in model
+    Db2,
+    #[allow(missing_docs)] // documentation missing in model
+    DotNetFramework,
+    #[allow(missing_docs)] // documentation missing in model
+    Dotnet,
+    #[allow(missing_docs)] // documentation missing in model
+    Dotnetcore,
+    #[allow(missing_docs)] // documentation missing in model
+    Websphere,
+    #[allow(missing_docs)] // documentation missing in model
+    Iis,
+    #[allow(missing_docs)] // documentation missing in model
+    Jboss,
+    #[allow(missing_docs)] // documentation missing in model
+    Java,
+    #[allow(missing_docs)] // documentation missing in model
+    Mariadb,
+    #[allow(missing_docs)] // documentation missing in model
+    Mongodb,
+    #[allow(missing_docs)] // documentation missing in model
+    Mysql,
+    #[allow(missing_docs)] // documentation missing in model
+    Oracle,
+    #[allow(missing_docs)] // documentation missing in model
+    Weblogic,
+    #[allow(missing_docs)] // documentation missing in model
+    Other,
+    #[allow(missing_docs)] // documentation missing in model
+    Postgresqlserver,
+    #[allow(missing_docs)] // documentation missing in model
+    SqlServer,
+    #[allow(missing_docs)] // documentation missing in model
+    Spring,
+    #[allow(missing_docs)] // documentation missing in model
+    Sybase,
+    #[allow(missing_docs)] // documentation missing in model
+    Tomcat,
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
+    UnknownValue,
+    #[allow(missing_docs)] // documentation missing in model
+    Visualbasic,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for AppType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Cassandra" => AppType::Cassandra,
+            "DB2" => AppType::Db2,
+            "DotNetFramework" => AppType::DotNetFramework,
+            "Dotnet" => AppType::Dotnet,
+            "DotnetCore" => AppType::Dotnetcore,
+            "IBM WebSphere" => AppType::Websphere,
+            "IIS" => AppType::Iis,
+            "JBoss" => AppType::Jboss,
+            "Java" => AppType::Java,
+            "Maria DB" => AppType::Mariadb,
+            "Mongo DB" => AppType::Mongodb,
+            "MySQL" => AppType::Mysql,
+            "Oracle" => AppType::Oracle,
+            "Oracle WebLogic" => AppType::Weblogic,
+            "Other" => AppType::Other,
+            "PostgreSQLServer" => AppType::Postgresqlserver,
+            "SQLServer" => AppType::SqlServer,
+            "Spring" => AppType::Spring,
+            "Sybase" => AppType::Sybase,
+            "Tomcat" => AppType::Tomcat,
+            "Unknown" => AppType::UnknownValue,
+            "Visual Basic" => AppType::Visualbasic,
+            other => AppType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for AppType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AppType::from(s))
+    }
+}
+impl AppType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AppType::Cassandra => "Cassandra",
+            AppType::Db2 => "DB2",
+            AppType::DotNetFramework => "DotNetFramework",
+            AppType::Dotnet => "Dotnet",
+            AppType::Dotnetcore => "DotnetCore",
+            AppType::Websphere => "IBM WebSphere",
+            AppType::Iis => "IIS",
+            AppType::Jboss => "JBoss",
+            AppType::Java => "Java",
+            AppType::Mariadb => "Maria DB",
+            AppType::Mongodb => "Mongo DB",
+            AppType::Mysql => "MySQL",
+            AppType::Oracle => "Oracle",
+            AppType::Weblogic => "Oracle WebLogic",
+            AppType::Other => "Other",
+            AppType::Postgresqlserver => "PostgreSQLServer",
+            AppType::SqlServer => "SQLServer",
+            AppType::Spring => "Spring",
+            AppType::Sybase => "Sybase",
+            AppType::Tomcat => "Tomcat",
+            AppType::UnknownValue => "Unknown",
+            AppType::Visualbasic => "Visual Basic",
+            AppType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "Cassandra",
+            "DB2",
+            "DotNetFramework",
+            "Dotnet",
+            "DotnetCore",
+            "IBM WebSphere",
+            "IIS",
+            "JBoss",
+            "Java",
+            "Maria DB",
+            "Mongo DB",
+            "MySQL",
+            "Oracle",
+            "Oracle WebLogic",
+            "Other",
+            "PostgreSQLServer",
+            "SQLServer",
+            "Spring",
+            "Sybase",
+            "Tomcat",
+            "Unknown",
+            "Visual Basic",
+        ]
+    }
+}
+impl AsRef<str> for AppType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p> Object containing source code information that is linked to an application component. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -567,6 +786,9 @@ pub struct SourceCode {
     /// <p> The repository name for the source code. </p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
+    /// <p>The name of the project.</p>
+    #[doc(hidden)]
+    pub project_name: std::option::Option<std::string::String>,
 }
 impl SourceCode {
     /// <p> The type of repository to use for the source code. </p>
@@ -581,6 +803,10 @@ impl SourceCode {
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
+    /// <p>The name of the project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
 }
 /// See [`SourceCode`](crate::model::SourceCode).
 pub mod source_code {
@@ -591,6 +817,7 @@ pub mod source_code {
         pub(crate) version_control: std::option::Option<crate::model::VersionControl>,
         pub(crate) source_version: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<std::string::String>,
+        pub(crate) project_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p> The type of repository to use for the source code. </p>
@@ -629,12 +856,23 @@ pub mod source_code {
             self.location = input;
             self
         }
+        /// <p>The name of the project.</p>
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the project.</p>
+        pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SourceCode`](crate::model::SourceCode).
         pub fn build(self) -> crate::model::SourceCode {
             crate::model::SourceCode {
                 version_control: self.version_control,
                 source_version: self.source_version,
                 location: self.location,
+                project_name: self.project_name,
             }
         }
     }
@@ -658,6 +896,7 @@ impl SourceCode {
 /// ```text
 /// # let versioncontrol = unimplemented!();
 /// match versioncontrol {
+///     VersionControl::AzureDevopsGit => { /* ... */ },
 ///     VersionControl::Github => { /* ... */ },
 ///     VersionControl::GithubEnterprise => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -694,6 +933,8 @@ impl SourceCode {
 )]
 pub enum VersionControl {
     #[allow(missing_docs)] // documentation missing in model
+    AzureDevopsGit,
+    #[allow(missing_docs)] // documentation missing in model
     Github,
     #[allow(missing_docs)] // documentation missing in model
     GithubEnterprise,
@@ -703,6 +944,7 @@ pub enum VersionControl {
 impl std::convert::From<&str> for VersionControl {
     fn from(s: &str) -> Self {
         match s {
+            "AZURE_DEVOPS_GIT" => VersionControl::AzureDevopsGit,
             "GITHUB" => VersionControl::Github,
             "GITHUB_ENTERPRISE" => VersionControl::GithubEnterprise,
             other => VersionControl::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
@@ -720,6 +962,7 @@ impl VersionControl {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            VersionControl::AzureDevopsGit => "AZURE_DEVOPS_GIT",
             VersionControl::Github => "GITHUB",
             VersionControl::GithubEnterprise => "GITHUB_ENTERPRISE",
             VersionControl::Unknown(value) => value.as_str(),
@@ -727,7 +970,7 @@ impl VersionControl {
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GITHUB", "GITHUB_ENTERPRISE"]
+        &["AZURE_DEVOPS_GIT", "GITHUB", "GITHUB_ENTERPRISE"]
     }
 }
 impl AsRef<str> for VersionControl {
@@ -1153,6 +1396,299 @@ impl DataSourceType {
     }
 }
 impl AsRef<str> for DataSourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Defines the criteria of assessment.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AssessmentTarget {
+    /// <p>Condition of an assessment.</p>
+    #[doc(hidden)]
+    pub condition: std::option::Option<crate::model::Condition>,
+    /// <p>Name of an assessment.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Values of an assessment.</p>
+    #[doc(hidden)]
+    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AssessmentTarget {
+    /// <p>Condition of an assessment.</p>
+    pub fn condition(&self) -> std::option::Option<&crate::model::Condition> {
+        self.condition.as_ref()
+    }
+    /// <p>Name of an assessment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Values of an assessment.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
+/// See [`AssessmentTarget`](crate::model::AssessmentTarget).
+pub mod assessment_target {
+
+    /// A builder for [`AssessmentTarget`](crate::model::AssessmentTarget).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) condition: std::option::Option<crate::model::Condition>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>Condition of an assessment.</p>
+        pub fn condition(mut self, input: crate::model::Condition) -> Self {
+            self.condition = Some(input);
+            self
+        }
+        /// <p>Condition of an assessment.</p>
+        pub fn set_condition(
+            mut self,
+            input: std::option::Option<crate::model::Condition>,
+        ) -> Self {
+            self.condition = input;
+            self
+        }
+        /// <p>Name of an assessment.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Name of an assessment.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>Values of an assessment.</p>
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input.into());
+            self.values = Some(v);
+            self
+        }
+        /// <p>Values of an assessment.</p>
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssessmentTarget`](crate::model::AssessmentTarget).
+        pub fn build(self) -> crate::model::AssessmentTarget {
+            crate::model::AssessmentTarget {
+                condition: self.condition,
+                name: self.name,
+                values: self.values,
+            }
+        }
+    }
+}
+impl AssessmentTarget {
+    /// Creates a new builder-style object to manufacture [`AssessmentTarget`](crate::model::AssessmentTarget).
+    pub fn builder() -> crate::model::assessment_target::Builder {
+        crate::model::assessment_target::Builder::default()
+    }
+}
+
+/// When writing a match expression against `Condition`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let condition = unimplemented!();
+/// match condition {
+///     Condition::Contains => { /* ... */ },
+///     Condition::Equals => { /* ... */ },
+///     Condition::NotContains => { /* ... */ },
+///     Condition::NotEquals => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `condition` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Condition::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Condition::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Condition::NewFeature` is defined.
+/// Specifically, when `condition` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Condition::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Condition {
+    #[allow(missing_docs)] // documentation missing in model
+    Contains,
+    #[allow(missing_docs)] // documentation missing in model
+    Equals,
+    #[allow(missing_docs)] // documentation missing in model
+    NotContains,
+    #[allow(missing_docs)] // documentation missing in model
+    NotEquals,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for Condition {
+    fn from(s: &str) -> Self {
+        match s {
+            "CONTAINS" => Condition::Contains,
+            "EQUALS" => Condition::Equals,
+            "NOT_CONTAINS" => Condition::NotContains,
+            "NOT_EQUALS" => Condition::NotEquals,
+            other => Condition::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for Condition {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Condition::from(s))
+    }
+}
+impl Condition {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Condition::Contains => "CONTAINS",
+            Condition::Equals => "EQUALS",
+            Condition::NotContains => "NOT_CONTAINS",
+            Condition::NotEquals => "NOT_EQUALS",
+            Condition::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["CONTAINS", "EQUALS", "NOT_CONTAINS", "NOT_EQUALS"]
+    }
+}
+impl AsRef<str> for Condition {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `ApplicationMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let applicationmode = unimplemented!();
+/// match applicationmode {
+///     ApplicationMode::All => { /* ... */ },
+///     ApplicationMode::Known => { /* ... */ },
+///     ApplicationMode::UnknownValue => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `applicationmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ApplicationMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ApplicationMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ApplicationMode::NewFeature` is defined.
+/// Specifically, when `applicationmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ApplicationMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// _Note: `ApplicationMode::Unknown` has been renamed to `::UnknownValue`._
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ApplicationMode {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Known,
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
+    UnknownValue,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ApplicationMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => ApplicationMode::All,
+            "KNOWN" => ApplicationMode::Known,
+            "UNKNOWN" => ApplicationMode::UnknownValue,
+            other => ApplicationMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ApplicationMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ApplicationMode::from(s))
+    }
+}
+impl ApplicationMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ApplicationMode::All => "ALL",
+            ApplicationMode::Known => "KNOWN",
+            ApplicationMode::UnknownValue => "UNKNOWN",
+            ApplicationMode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ALL", "KNOWN", "UNKNOWN"]
+    }
+}
+impl AsRef<str> for ApplicationMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -2855,6 +3391,9 @@ pub struct ServerDetail {
     /// <p> The timestamp of when the server was assessed. </p>
     #[doc(hidden)]
     pub last_analyzed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The error in server analysis.</p>
+    #[doc(hidden)]
+    pub server_error: std::option::Option<crate::model::ServerError>,
 }
 impl ServerDetail {
     /// <p> The server ID. </p>
@@ -2917,6 +3456,10 @@ impl ServerDetail {
     pub fn last_analyzed_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_analyzed_timestamp.as_ref()
     }
+    /// <p>The error in server analysis.</p>
+    pub fn server_error(&self) -> std::option::Option<&crate::model::ServerError> {
+        self.server_error.as_ref()
+    }
 }
 /// See [`ServerDetail`](crate::model::ServerDetail).
 pub mod server_detail {
@@ -2941,6 +3484,7 @@ pub mod server_detail {
         pub(crate) antipattern_report_status_message: std::option::Option<std::string::String>,
         pub(crate) server_type: std::option::Option<std::string::String>,
         pub(crate) last_analyzed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) server_error: std::option::Option<crate::model::ServerError>,
     }
     impl Builder {
         /// <p> The server ID. </p>
@@ -3132,6 +3676,19 @@ pub mod server_detail {
             self.last_analyzed_timestamp = input;
             self
         }
+        /// <p>The error in server analysis.</p>
+        pub fn server_error(mut self, input: crate::model::ServerError) -> Self {
+            self.server_error = Some(input);
+            self
+        }
+        /// <p>The error in server analysis.</p>
+        pub fn set_server_error(
+            mut self,
+            input: std::option::Option<crate::model::ServerError>,
+        ) -> Self {
+            self.server_error = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ServerDetail`](crate::model::ServerDetail).
         pub fn build(self) -> crate::model::ServerDetail {
             crate::model::ServerDetail {
@@ -3148,6 +3705,7 @@ pub mod server_detail {
                 antipattern_report_status_message: self.antipattern_report_status_message,
                 server_type: self.server_type,
                 last_analyzed_timestamp: self.last_analyzed_timestamp,
+                server_error: self.server_error,
             }
         }
     }
@@ -3156,6 +3714,170 @@ impl ServerDetail {
     /// Creates a new builder-style object to manufacture [`ServerDetail`](crate::model::ServerDetail).
     pub fn builder() -> crate::model::server_detail::Builder {
         crate::model::server_detail::Builder::default()
+    }
+}
+
+/// <p>The error in server analysis.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ServerError {
+    /// <p>The error category of server analysis.</p>
+    #[doc(hidden)]
+    pub server_error_category: std::option::Option<crate::model::ServerErrorCategory>,
+}
+impl ServerError {
+    /// <p>The error category of server analysis.</p>
+    pub fn server_error_category(&self) -> std::option::Option<&crate::model::ServerErrorCategory> {
+        self.server_error_category.as_ref()
+    }
+}
+/// See [`ServerError`](crate::model::ServerError).
+pub mod server_error {
+
+    /// A builder for [`ServerError`](crate::model::ServerError).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) server_error_category: std::option::Option<crate::model::ServerErrorCategory>,
+    }
+    impl Builder {
+        /// <p>The error category of server analysis.</p>
+        pub fn server_error_category(mut self, input: crate::model::ServerErrorCategory) -> Self {
+            self.server_error_category = Some(input);
+            self
+        }
+        /// <p>The error category of server analysis.</p>
+        pub fn set_server_error_category(
+            mut self,
+            input: std::option::Option<crate::model::ServerErrorCategory>,
+        ) -> Self {
+            self.server_error_category = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServerError`](crate::model::ServerError).
+        pub fn build(self) -> crate::model::ServerError {
+            crate::model::ServerError {
+                server_error_category: self.server_error_category,
+            }
+        }
+    }
+}
+impl ServerError {
+    /// Creates a new builder-style object to manufacture [`ServerError`](crate::model::ServerError).
+    pub fn builder() -> crate::model::server_error::Builder {
+        crate::model::server_error::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ServerErrorCategory`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let servererrorcategory = unimplemented!();
+/// match servererrorcategory {
+///     ServerErrorCategory::ArchitectureError => { /* ... */ },
+///     ServerErrorCategory::ConnectivityError => { /* ... */ },
+///     ServerErrorCategory::CredentialError => { /* ... */ },
+///     ServerErrorCategory::OtherError => { /* ... */ },
+///     ServerErrorCategory::PermissionError => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `servererrorcategory` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ServerErrorCategory::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ServerErrorCategory::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ServerErrorCategory::NewFeature` is defined.
+/// Specifically, when `servererrorcategory` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ServerErrorCategory::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ServerErrorCategory {
+    #[allow(missing_docs)] // documentation missing in model
+    ArchitectureError,
+    #[allow(missing_docs)] // documentation missing in model
+    ConnectivityError,
+    #[allow(missing_docs)] // documentation missing in model
+    CredentialError,
+    #[allow(missing_docs)] // documentation missing in model
+    OtherError,
+    #[allow(missing_docs)] // documentation missing in model
+    PermissionError,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ServerErrorCategory {
+    fn from(s: &str) -> Self {
+        match s {
+            "ARCHITECTURE_ERROR" => ServerErrorCategory::ArchitectureError,
+            "CONNECTIVITY_ERROR" => ServerErrorCategory::ConnectivityError,
+            "CREDENTIAL_ERROR" => ServerErrorCategory::CredentialError,
+            "OTHER_ERROR" => ServerErrorCategory::OtherError,
+            "PERMISSION_ERROR" => ServerErrorCategory::PermissionError,
+            other => {
+                ServerErrorCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for ServerErrorCategory {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ServerErrorCategory::from(s))
+    }
+}
+impl ServerErrorCategory {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ServerErrorCategory::ArchitectureError => "ARCHITECTURE_ERROR",
+            ServerErrorCategory::ConnectivityError => "CONNECTIVITY_ERROR",
+            ServerErrorCategory::CredentialError => "CREDENTIAL_ERROR",
+            ServerErrorCategory::OtherError => "OTHER_ERROR",
+            ServerErrorCategory::PermissionError => "PERMISSION_ERROR",
+            ServerErrorCategory::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ARCHITECTURE_ERROR",
+            "CONNECTIVITY_ERROR",
+            "CREDENTIAL_ERROR",
+            "OTHER_ERROR",
+            "PERMISSION_ERROR",
+        ]
+    }
+}
+impl AsRef<str> for ServerErrorCategory {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4351,7 +5073,9 @@ impl AsRef<str> for SortOrder {
 /// ```text
 /// # let servercriteria = unimplemented!();
 /// match servercriteria {
+///     ServerCriteria::AnalysisStatus => { /* ... */ },
 ///     ServerCriteria::Destination => { /* ... */ },
+///     ServerCriteria::ErrorCategory => { /* ... */ },
 ///     ServerCriteria::NotDefined => { /* ... */ },
 ///     ServerCriteria::OsName => { /* ... */ },
 ///     ServerCriteria::ServerId => { /* ... */ },
@@ -4390,7 +5114,11 @@ impl AsRef<str> for SortOrder {
 )]
 pub enum ServerCriteria {
     #[allow(missing_docs)] // documentation missing in model
+    AnalysisStatus,
+    #[allow(missing_docs)] // documentation missing in model
     Destination,
+    #[allow(missing_docs)] // documentation missing in model
+    ErrorCategory,
     #[allow(missing_docs)] // documentation missing in model
     NotDefined,
     #[allow(missing_docs)] // documentation missing in model
@@ -4405,7 +5133,9 @@ pub enum ServerCriteria {
 impl std::convert::From<&str> for ServerCriteria {
     fn from(s: &str) -> Self {
         match s {
+            "ANALYSIS_STATUS" => ServerCriteria::AnalysisStatus,
             "DESTINATION" => ServerCriteria::Destination,
+            "ERROR_CATEGORY" => ServerCriteria::ErrorCategory,
             "NOT_DEFINED" => ServerCriteria::NotDefined,
             "OS_NAME" => ServerCriteria::OsName,
             "SERVER_ID" => ServerCriteria::ServerId,
@@ -4425,7 +5155,9 @@ impl ServerCriteria {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ServerCriteria::AnalysisStatus => "ANALYSIS_STATUS",
             ServerCriteria::Destination => "DESTINATION",
+            ServerCriteria::ErrorCategory => "ERROR_CATEGORY",
             ServerCriteria::NotDefined => "NOT_DEFINED",
             ServerCriteria::OsName => "OS_NAME",
             ServerCriteria::ServerId => "SERVER_ID",
@@ -4436,7 +5168,9 @@ impl ServerCriteria {
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ANALYSIS_STATUS",
             "DESTINATION",
+            "ERROR_CATEGORY",
             "NOT_DEFINED",
             "OS_NAME",
             "SERVER_ID",
@@ -4862,6 +5596,9 @@ pub struct Collector {
     /// <p> Time when the collector last pinged the service. </p>
     #[doc(hidden)]
     pub last_activity_time_stamp: std::option::Option<std::string::String>,
+    /// <p>Summary of the collector configuration.</p>
+    #[doc(hidden)]
+    pub configuration_summary: std::option::Option<crate::model::ConfigurationSummary>,
 }
 impl Collector {
     /// <p> The ID of the collector. </p>
@@ -4892,6 +5629,12 @@ impl Collector {
     pub fn last_activity_time_stamp(&self) -> std::option::Option<&str> {
         self.last_activity_time_stamp.as_deref()
     }
+    /// <p>Summary of the collector configuration.</p>
+    pub fn configuration_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationSummary> {
+        self.configuration_summary.as_ref()
+    }
 }
 /// See [`Collector`](crate::model::Collector).
 pub mod collector {
@@ -4906,6 +5649,7 @@ pub mod collector {
         pub(crate) collector_version: std::option::Option<std::string::String>,
         pub(crate) registered_time_stamp: std::option::Option<std::string::String>,
         pub(crate) last_activity_time_stamp: std::option::Option<std::string::String>,
+        pub(crate) configuration_summary: std::option::Option<crate::model::ConfigurationSummary>,
     }
     impl Builder {
         /// <p> The ID of the collector. </p>
@@ -4990,6 +5734,19 @@ pub mod collector {
             self.last_activity_time_stamp = input;
             self
         }
+        /// <p>Summary of the collector configuration.</p>
+        pub fn configuration_summary(mut self, input: crate::model::ConfigurationSummary) -> Self {
+            self.configuration_summary = Some(input);
+            self
+        }
+        /// <p>Summary of the collector configuration.</p>
+        pub fn set_configuration_summary(
+            mut self,
+            input: std::option::Option<crate::model::ConfigurationSummary>,
+        ) -> Self {
+            self.configuration_summary = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Collector`](crate::model::Collector).
         pub fn build(self) -> crate::model::Collector {
             crate::model::Collector {
@@ -5000,6 +5757,7 @@ pub mod collector {
                 collector_version: self.collector_version,
                 registered_time_stamp: self.registered_time_stamp,
                 last_activity_time_stamp: self.last_activity_time_stamp,
+                configuration_summary: self.configuration_summary,
             }
         }
     }
@@ -5008,6 +5766,855 @@ impl Collector {
     /// Creates a new builder-style object to manufacture [`Collector`](crate::model::Collector).
     pub fn builder() -> crate::model::collector::Builder {
         crate::model::collector::Builder::default()
+    }
+}
+
+/// <p>Summary of the collector configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ConfigurationSummary {
+    /// <p>The list of vCenter configurations.</p>
+    #[doc(hidden)]
+    pub vcenter_based_remote_info_list:
+        std::option::Option<std::vec::Vec<crate::model::VcenterBasedRemoteInfo>>,
+    /// <p>IP address based configurations.</p>
+    #[doc(hidden)]
+    pub ip_address_based_remote_info_list:
+        std::option::Option<std::vec::Vec<crate::model::IpAddressBasedRemoteInfo>>,
+    /// <p>The list of the version control configurations.</p>
+    #[doc(hidden)]
+    pub version_control_info_list:
+        std::option::Option<std::vec::Vec<crate::model::VersionControlInfo>>,
+    /// <p>The list of pipeline info configurations.</p>
+    #[doc(hidden)]
+    pub pipeline_info_list: std::option::Option<std::vec::Vec<crate::model::PipelineInfo>>,
+    /// <p>Info about the remote server source code configuration.</p>
+    #[doc(hidden)]
+    pub remote_source_code_analysis_server_info:
+        std::option::Option<crate::model::RemoteSourceCodeAnalysisServerInfo>,
+}
+impl ConfigurationSummary {
+    /// <p>The list of vCenter configurations.</p>
+    pub fn vcenter_based_remote_info_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::VcenterBasedRemoteInfo]> {
+        self.vcenter_based_remote_info_list.as_deref()
+    }
+    /// <p>IP address based configurations.</p>
+    pub fn ip_address_based_remote_info_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::IpAddressBasedRemoteInfo]> {
+        self.ip_address_based_remote_info_list.as_deref()
+    }
+    /// <p>The list of the version control configurations.</p>
+    pub fn version_control_info_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::VersionControlInfo]> {
+        self.version_control_info_list.as_deref()
+    }
+    /// <p>The list of pipeline info configurations.</p>
+    pub fn pipeline_info_list(&self) -> std::option::Option<&[crate::model::PipelineInfo]> {
+        self.pipeline_info_list.as_deref()
+    }
+    /// <p>Info about the remote server source code configuration.</p>
+    pub fn remote_source_code_analysis_server_info(
+        &self,
+    ) -> std::option::Option<&crate::model::RemoteSourceCodeAnalysisServerInfo> {
+        self.remote_source_code_analysis_server_info.as_ref()
+    }
+}
+/// See [`ConfigurationSummary`](crate::model::ConfigurationSummary).
+pub mod configuration_summary {
+
+    /// A builder for [`ConfigurationSummary`](crate::model::ConfigurationSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vcenter_based_remote_info_list:
+            std::option::Option<std::vec::Vec<crate::model::VcenterBasedRemoteInfo>>,
+        pub(crate) ip_address_based_remote_info_list:
+            std::option::Option<std::vec::Vec<crate::model::IpAddressBasedRemoteInfo>>,
+        pub(crate) version_control_info_list:
+            std::option::Option<std::vec::Vec<crate::model::VersionControlInfo>>,
+        pub(crate) pipeline_info_list:
+            std::option::Option<std::vec::Vec<crate::model::PipelineInfo>>,
+        pub(crate) remote_source_code_analysis_server_info:
+            std::option::Option<crate::model::RemoteSourceCodeAnalysisServerInfo>,
+    }
+    impl Builder {
+        /// Appends an item to `vcenter_based_remote_info_list`.
+        ///
+        /// To override the contents of this collection use [`set_vcenter_based_remote_info_list`](Self::set_vcenter_based_remote_info_list).
+        ///
+        /// <p>The list of vCenter configurations.</p>
+        pub fn vcenter_based_remote_info_list(
+            mut self,
+            input: crate::model::VcenterBasedRemoteInfo,
+        ) -> Self {
+            let mut v = self.vcenter_based_remote_info_list.unwrap_or_default();
+            v.push(input);
+            self.vcenter_based_remote_info_list = Some(v);
+            self
+        }
+        /// <p>The list of vCenter configurations.</p>
+        pub fn set_vcenter_based_remote_info_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VcenterBasedRemoteInfo>>,
+        ) -> Self {
+            self.vcenter_based_remote_info_list = input;
+            self
+        }
+        /// Appends an item to `ip_address_based_remote_info_list`.
+        ///
+        /// To override the contents of this collection use [`set_ip_address_based_remote_info_list`](Self::set_ip_address_based_remote_info_list).
+        ///
+        /// <p>IP address based configurations.</p>
+        pub fn ip_address_based_remote_info_list(
+            mut self,
+            input: crate::model::IpAddressBasedRemoteInfo,
+        ) -> Self {
+            let mut v = self.ip_address_based_remote_info_list.unwrap_or_default();
+            v.push(input);
+            self.ip_address_based_remote_info_list = Some(v);
+            self
+        }
+        /// <p>IP address based configurations.</p>
+        pub fn set_ip_address_based_remote_info_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::IpAddressBasedRemoteInfo>>,
+        ) -> Self {
+            self.ip_address_based_remote_info_list = input;
+            self
+        }
+        /// Appends an item to `version_control_info_list`.
+        ///
+        /// To override the contents of this collection use [`set_version_control_info_list`](Self::set_version_control_info_list).
+        ///
+        /// <p>The list of the version control configurations.</p>
+        pub fn version_control_info_list(
+            mut self,
+            input: crate::model::VersionControlInfo,
+        ) -> Self {
+            let mut v = self.version_control_info_list.unwrap_or_default();
+            v.push(input);
+            self.version_control_info_list = Some(v);
+            self
+        }
+        /// <p>The list of the version control configurations.</p>
+        pub fn set_version_control_info_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VersionControlInfo>>,
+        ) -> Self {
+            self.version_control_info_list = input;
+            self
+        }
+        /// Appends an item to `pipeline_info_list`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_info_list`](Self::set_pipeline_info_list).
+        ///
+        /// <p>The list of pipeline info configurations.</p>
+        pub fn pipeline_info_list(mut self, input: crate::model::PipelineInfo) -> Self {
+            let mut v = self.pipeline_info_list.unwrap_or_default();
+            v.push(input);
+            self.pipeline_info_list = Some(v);
+            self
+        }
+        /// <p>The list of pipeline info configurations.</p>
+        pub fn set_pipeline_info_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PipelineInfo>>,
+        ) -> Self {
+            self.pipeline_info_list = input;
+            self
+        }
+        /// <p>Info about the remote server source code configuration.</p>
+        pub fn remote_source_code_analysis_server_info(
+            mut self,
+            input: crate::model::RemoteSourceCodeAnalysisServerInfo,
+        ) -> Self {
+            self.remote_source_code_analysis_server_info = Some(input);
+            self
+        }
+        /// <p>Info about the remote server source code configuration.</p>
+        pub fn set_remote_source_code_analysis_server_info(
+            mut self,
+            input: std::option::Option<crate::model::RemoteSourceCodeAnalysisServerInfo>,
+        ) -> Self {
+            self.remote_source_code_analysis_server_info = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConfigurationSummary`](crate::model::ConfigurationSummary).
+        pub fn build(self) -> crate::model::ConfigurationSummary {
+            crate::model::ConfigurationSummary {
+                vcenter_based_remote_info_list: self.vcenter_based_remote_info_list,
+                ip_address_based_remote_info_list: self.ip_address_based_remote_info_list,
+                version_control_info_list: self.version_control_info_list,
+                pipeline_info_list: self.pipeline_info_list,
+                remote_source_code_analysis_server_info: self
+                    .remote_source_code_analysis_server_info,
+            }
+        }
+    }
+}
+impl ConfigurationSummary {
+    /// Creates a new builder-style object to manufacture [`ConfigurationSummary`](crate::model::ConfigurationSummary).
+    pub fn builder() -> crate::model::configuration_summary::Builder {
+        crate::model::configuration_summary::Builder::default()
+    }
+}
+
+/// <p>Information about the server configured for source code analysis.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RemoteSourceCodeAnalysisServerInfo {
+    /// <p>The time when the remote source code server was configured.</p>
+    #[doc(hidden)]
+    pub remote_source_code_analysis_server_configuration_timestamp:
+        std::option::Option<std::string::String>,
+}
+impl RemoteSourceCodeAnalysisServerInfo {
+    /// <p>The time when the remote source code server was configured.</p>
+    pub fn remote_source_code_analysis_server_configuration_timestamp(
+        &self,
+    ) -> std::option::Option<&str> {
+        self.remote_source_code_analysis_server_configuration_timestamp
+            .as_deref()
+    }
+}
+/// See [`RemoteSourceCodeAnalysisServerInfo`](crate::model::RemoteSourceCodeAnalysisServerInfo).
+pub mod remote_source_code_analysis_server_info {
+
+    /// A builder for [`RemoteSourceCodeAnalysisServerInfo`](crate::model::RemoteSourceCodeAnalysisServerInfo).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) remote_source_code_analysis_server_configuration_timestamp:
+            std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The time when the remote source code server was configured.</p>
+        pub fn remote_source_code_analysis_server_configuration_timestamp(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.remote_source_code_analysis_server_configuration_timestamp = Some(input.into());
+            self
+        }
+        /// <p>The time when the remote source code server was configured.</p>
+        pub fn set_remote_source_code_analysis_server_configuration_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.remote_source_code_analysis_server_configuration_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RemoteSourceCodeAnalysisServerInfo`](crate::model::RemoteSourceCodeAnalysisServerInfo).
+        pub fn build(self) -> crate::model::RemoteSourceCodeAnalysisServerInfo {
+            crate::model::RemoteSourceCodeAnalysisServerInfo {
+                remote_source_code_analysis_server_configuration_timestamp: self
+                    .remote_source_code_analysis_server_configuration_timestamp,
+            }
+        }
+    }
+}
+impl RemoteSourceCodeAnalysisServerInfo {
+    /// Creates a new builder-style object to manufacture [`RemoteSourceCodeAnalysisServerInfo`](crate::model::RemoteSourceCodeAnalysisServerInfo).
+    pub fn builder() -> crate::model::remote_source_code_analysis_server_info::Builder {
+        crate::model::remote_source_code_analysis_server_info::Builder::default()
+    }
+}
+
+/// <p>Detailed information of the pipeline.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PipelineInfo {
+    /// <p>The type of pipeline.</p>
+    #[doc(hidden)]
+    pub pipeline_type: std::option::Option<crate::model::PipelineType>,
+    /// <p>The time when the pipeline info was configured.</p>
+    #[doc(hidden)]
+    pub pipeline_configuration_time_stamp: std::option::Option<std::string::String>,
+}
+impl PipelineInfo {
+    /// <p>The type of pipeline.</p>
+    pub fn pipeline_type(&self) -> std::option::Option<&crate::model::PipelineType> {
+        self.pipeline_type.as_ref()
+    }
+    /// <p>The time when the pipeline info was configured.</p>
+    pub fn pipeline_configuration_time_stamp(&self) -> std::option::Option<&str> {
+        self.pipeline_configuration_time_stamp.as_deref()
+    }
+}
+/// See [`PipelineInfo`](crate::model::PipelineInfo).
+pub mod pipeline_info {
+
+    /// A builder for [`PipelineInfo`](crate::model::PipelineInfo).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) pipeline_type: std::option::Option<crate::model::PipelineType>,
+        pub(crate) pipeline_configuration_time_stamp: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The type of pipeline.</p>
+        pub fn pipeline_type(mut self, input: crate::model::PipelineType) -> Self {
+            self.pipeline_type = Some(input);
+            self
+        }
+        /// <p>The type of pipeline.</p>
+        pub fn set_pipeline_type(
+            mut self,
+            input: std::option::Option<crate::model::PipelineType>,
+        ) -> Self {
+            self.pipeline_type = input;
+            self
+        }
+        /// <p>The time when the pipeline info was configured.</p>
+        pub fn pipeline_configuration_time_stamp(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.pipeline_configuration_time_stamp = Some(input.into());
+            self
+        }
+        /// <p>The time when the pipeline info was configured.</p>
+        pub fn set_pipeline_configuration_time_stamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pipeline_configuration_time_stamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PipelineInfo`](crate::model::PipelineInfo).
+        pub fn build(self) -> crate::model::PipelineInfo {
+            crate::model::PipelineInfo {
+                pipeline_type: self.pipeline_type,
+                pipeline_configuration_time_stamp: self.pipeline_configuration_time_stamp,
+            }
+        }
+    }
+}
+impl PipelineInfo {
+    /// Creates a new builder-style object to manufacture [`PipelineInfo`](crate::model::PipelineInfo).
+    pub fn builder() -> crate::model::pipeline_info::Builder {
+        crate::model::pipeline_info::Builder::default()
+    }
+}
+
+/// When writing a match expression against `PipelineType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let pipelinetype = unimplemented!();
+/// match pipelinetype {
+///     PipelineType::AzureDevops => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `pipelinetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PipelineType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PipelineType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PipelineType::NewFeature` is defined.
+/// Specifically, when `pipelinetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PipelineType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PipelineType {
+    #[allow(missing_docs)] // documentation missing in model
+    AzureDevops,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for PipelineType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AZURE_DEVOPS" => PipelineType::AzureDevops,
+            other => PipelineType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for PipelineType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PipelineType::from(s))
+    }
+}
+impl PipelineType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PipelineType::AzureDevops => "AZURE_DEVOPS",
+            PipelineType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AZURE_DEVOPS"]
+    }
+}
+impl AsRef<str> for PipelineType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Details about the version control configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VersionControlInfo {
+    /// <p>The type of version control.</p>
+    #[doc(hidden)]
+    pub version_control_type: std::option::Option<crate::model::VersionControlType>,
+    /// <p>The time when the version control system was last configured.</p>
+    #[doc(hidden)]
+    pub version_control_configuration_time_stamp: std::option::Option<std::string::String>,
+}
+impl VersionControlInfo {
+    /// <p>The type of version control.</p>
+    pub fn version_control_type(&self) -> std::option::Option<&crate::model::VersionControlType> {
+        self.version_control_type.as_ref()
+    }
+    /// <p>The time when the version control system was last configured.</p>
+    pub fn version_control_configuration_time_stamp(&self) -> std::option::Option<&str> {
+        self.version_control_configuration_time_stamp.as_deref()
+    }
+}
+/// See [`VersionControlInfo`](crate::model::VersionControlInfo).
+pub mod version_control_info {
+
+    /// A builder for [`VersionControlInfo`](crate::model::VersionControlInfo).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) version_control_type: std::option::Option<crate::model::VersionControlType>,
+        pub(crate) version_control_configuration_time_stamp:
+            std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The type of version control.</p>
+        pub fn version_control_type(mut self, input: crate::model::VersionControlType) -> Self {
+            self.version_control_type = Some(input);
+            self
+        }
+        /// <p>The type of version control.</p>
+        pub fn set_version_control_type(
+            mut self,
+            input: std::option::Option<crate::model::VersionControlType>,
+        ) -> Self {
+            self.version_control_type = input;
+            self
+        }
+        /// <p>The time when the version control system was last configured.</p>
+        pub fn version_control_configuration_time_stamp(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.version_control_configuration_time_stamp = Some(input.into());
+            self
+        }
+        /// <p>The time when the version control system was last configured.</p>
+        pub fn set_version_control_configuration_time_stamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.version_control_configuration_time_stamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VersionControlInfo`](crate::model::VersionControlInfo).
+        pub fn build(self) -> crate::model::VersionControlInfo {
+            crate::model::VersionControlInfo {
+                version_control_type: self.version_control_type,
+                version_control_configuration_time_stamp: self
+                    .version_control_configuration_time_stamp,
+            }
+        }
+    }
+}
+impl VersionControlInfo {
+    /// Creates a new builder-style object to manufacture [`VersionControlInfo`](crate::model::VersionControlInfo).
+    pub fn builder() -> crate::model::version_control_info::Builder {
+        crate::model::version_control_info::Builder::default()
+    }
+}
+
+/// When writing a match expression against `VersionControlType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let versioncontroltype = unimplemented!();
+/// match versioncontroltype {
+///     VersionControlType::AzureDevopsGit => { /* ... */ },
+///     VersionControlType::Github => { /* ... */ },
+///     VersionControlType::GithubEnterprise => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `versioncontroltype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `VersionControlType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `VersionControlType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `VersionControlType::NewFeature` is defined.
+/// Specifically, when `versioncontroltype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `VersionControlType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VersionControlType {
+    #[allow(missing_docs)] // documentation missing in model
+    AzureDevopsGit,
+    #[allow(missing_docs)] // documentation missing in model
+    Github,
+    #[allow(missing_docs)] // documentation missing in model
+    GithubEnterprise,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for VersionControlType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AZURE_DEVOPS_GIT" => VersionControlType::AzureDevopsGit,
+            "GITHUB" => VersionControlType::Github,
+            "GITHUB_ENTERPRISE" => VersionControlType::GithubEnterprise,
+            other => {
+                VersionControlType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for VersionControlType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VersionControlType::from(s))
+    }
+}
+impl VersionControlType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VersionControlType::AzureDevopsGit => "AZURE_DEVOPS_GIT",
+            VersionControlType::Github => "GITHUB",
+            VersionControlType::GithubEnterprise => "GITHUB_ENTERPRISE",
+            VersionControlType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AZURE_DEVOPS_GIT", "GITHUB", "GITHUB_ENTERPRISE"]
+    }
+}
+impl AsRef<str> for VersionControlType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>IP address based configurations.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct IpAddressBasedRemoteInfo {
+    /// <p>The time stamp of the configuration.</p>
+    #[doc(hidden)]
+    pub ip_address_configuration_time_stamp: std::option::Option<std::string::String>,
+    /// <p>The type of authorization.</p>
+    #[doc(hidden)]
+    pub auth_type: std::option::Option<crate::model::AuthType>,
+    /// <p>The type of the operating system.</p>
+    #[doc(hidden)]
+    pub os_type: std::option::Option<crate::model::OsType>,
+}
+impl IpAddressBasedRemoteInfo {
+    /// <p>The time stamp of the configuration.</p>
+    pub fn ip_address_configuration_time_stamp(&self) -> std::option::Option<&str> {
+        self.ip_address_configuration_time_stamp.as_deref()
+    }
+    /// <p>The type of authorization.</p>
+    pub fn auth_type(&self) -> std::option::Option<&crate::model::AuthType> {
+        self.auth_type.as_ref()
+    }
+    /// <p>The type of the operating system.</p>
+    pub fn os_type(&self) -> std::option::Option<&crate::model::OsType> {
+        self.os_type.as_ref()
+    }
+}
+/// See [`IpAddressBasedRemoteInfo`](crate::model::IpAddressBasedRemoteInfo).
+pub mod ip_address_based_remote_info {
+
+    /// A builder for [`IpAddressBasedRemoteInfo`](crate::model::IpAddressBasedRemoteInfo).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ip_address_configuration_time_stamp: std::option::Option<std::string::String>,
+        pub(crate) auth_type: std::option::Option<crate::model::AuthType>,
+        pub(crate) os_type: std::option::Option<crate::model::OsType>,
+    }
+    impl Builder {
+        /// <p>The time stamp of the configuration.</p>
+        pub fn ip_address_configuration_time_stamp(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.ip_address_configuration_time_stamp = Some(input.into());
+            self
+        }
+        /// <p>The time stamp of the configuration.</p>
+        pub fn set_ip_address_configuration_time_stamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ip_address_configuration_time_stamp = input;
+            self
+        }
+        /// <p>The type of authorization.</p>
+        pub fn auth_type(mut self, input: crate::model::AuthType) -> Self {
+            self.auth_type = Some(input);
+            self
+        }
+        /// <p>The type of authorization.</p>
+        pub fn set_auth_type(mut self, input: std::option::Option<crate::model::AuthType>) -> Self {
+            self.auth_type = input;
+            self
+        }
+        /// <p>The type of the operating system.</p>
+        pub fn os_type(mut self, input: crate::model::OsType) -> Self {
+            self.os_type = Some(input);
+            self
+        }
+        /// <p>The type of the operating system.</p>
+        pub fn set_os_type(mut self, input: std::option::Option<crate::model::OsType>) -> Self {
+            self.os_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IpAddressBasedRemoteInfo`](crate::model::IpAddressBasedRemoteInfo).
+        pub fn build(self) -> crate::model::IpAddressBasedRemoteInfo {
+            crate::model::IpAddressBasedRemoteInfo {
+                ip_address_configuration_time_stamp: self.ip_address_configuration_time_stamp,
+                auth_type: self.auth_type,
+                os_type: self.os_type,
+            }
+        }
+    }
+}
+impl IpAddressBasedRemoteInfo {
+    /// Creates a new builder-style object to manufacture [`IpAddressBasedRemoteInfo`](crate::model::IpAddressBasedRemoteInfo).
+    pub fn builder() -> crate::model::ip_address_based_remote_info::Builder {
+        crate::model::ip_address_based_remote_info::Builder::default()
+    }
+}
+
+/// When writing a match expression against `AuthType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let authtype = unimplemented!();
+/// match authtype {
+///     AuthType::Cert => { /* ... */ },
+///     AuthType::Ntlm => { /* ... */ },
+///     AuthType::Ssh => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `authtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AuthType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AuthType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AuthType::NewFeature` is defined.
+/// Specifically, when `authtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AuthType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AuthType {
+    #[allow(missing_docs)] // documentation missing in model
+    Cert,
+    #[allow(missing_docs)] // documentation missing in model
+    Ntlm,
+    #[allow(missing_docs)] // documentation missing in model
+    Ssh,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for AuthType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CERT" => AuthType::Cert,
+            "NTLM" => AuthType::Ntlm,
+            "SSH" => AuthType::Ssh,
+            other => AuthType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for AuthType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AuthType::from(s))
+    }
+}
+impl AuthType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AuthType::Cert => "CERT",
+            AuthType::Ntlm => "NTLM",
+            AuthType::Ssh => "SSH",
+            AuthType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["CERT", "NTLM", "SSH"]
+    }
+}
+impl AsRef<str> for AuthType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Details about the server in vCenter.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VcenterBasedRemoteInfo {
+    /// <p>The time when the remote server based on vCenter was last configured.</p>
+    #[doc(hidden)]
+    pub vcenter_configuration_time_stamp: std::option::Option<std::string::String>,
+    /// <p>The type of the operating system.</p>
+    #[doc(hidden)]
+    pub os_type: std::option::Option<crate::model::OsType>,
+}
+impl VcenterBasedRemoteInfo {
+    /// <p>The time when the remote server based on vCenter was last configured.</p>
+    pub fn vcenter_configuration_time_stamp(&self) -> std::option::Option<&str> {
+        self.vcenter_configuration_time_stamp.as_deref()
+    }
+    /// <p>The type of the operating system.</p>
+    pub fn os_type(&self) -> std::option::Option<&crate::model::OsType> {
+        self.os_type.as_ref()
+    }
+}
+/// See [`VcenterBasedRemoteInfo`](crate::model::VcenterBasedRemoteInfo).
+pub mod vcenter_based_remote_info {
+
+    /// A builder for [`VcenterBasedRemoteInfo`](crate::model::VcenterBasedRemoteInfo).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vcenter_configuration_time_stamp: std::option::Option<std::string::String>,
+        pub(crate) os_type: std::option::Option<crate::model::OsType>,
+    }
+    impl Builder {
+        /// <p>The time when the remote server based on vCenter was last configured.</p>
+        pub fn vcenter_configuration_time_stamp(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.vcenter_configuration_time_stamp = Some(input.into());
+            self
+        }
+        /// <p>The time when the remote server based on vCenter was last configured.</p>
+        pub fn set_vcenter_configuration_time_stamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vcenter_configuration_time_stamp = input;
+            self
+        }
+        /// <p>The type of the operating system.</p>
+        pub fn os_type(mut self, input: crate::model::OsType) -> Self {
+            self.os_type = Some(input);
+            self
+        }
+        /// <p>The type of the operating system.</p>
+        pub fn set_os_type(mut self, input: std::option::Option<crate::model::OsType>) -> Self {
+            self.os_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VcenterBasedRemoteInfo`](crate::model::VcenterBasedRemoteInfo).
+        pub fn build(self) -> crate::model::VcenterBasedRemoteInfo {
+            crate::model::VcenterBasedRemoteInfo {
+                vcenter_configuration_time_stamp: self.vcenter_configuration_time_stamp,
+                os_type: self.os_type,
+            }
+        }
+    }
+}
+impl VcenterBasedRemoteInfo {
+    /// Creates a new builder-style object to manufacture [`VcenterBasedRemoteInfo`](crate::model::VcenterBasedRemoteInfo).
+    pub fn builder() -> crate::model::vcenter_based_remote_info::Builder {
+        crate::model::vcenter_based_remote_info::Builder::default()
     }
 }
 
@@ -5164,6 +6771,15 @@ pub struct ApplicationComponentDetail {
     /// <p> Set to true if the application component is running on multiple servers.</p>
     #[doc(hidden)]
     pub more_server_association_exists: std::option::Option<bool>,
+    /// <p>The status of the application unit.</p>
+    #[doc(hidden)]
+    pub runtime_status: std::option::Option<crate::model::RuntimeAnalysisStatus>,
+    /// <p>The status message for the application unit.</p>
+    #[doc(hidden)]
+    pub runtime_status_message: std::option::Option<std::string::String>,
+    /// <p>The error in the analysis of the source code or database.</p>
+    #[doc(hidden)]
+    pub app_unit_error: std::option::Option<crate::model::AppUnitError>,
 }
 impl ApplicationComponentDetail {
     /// <p> The ID of the application component. </p>
@@ -5250,6 +6866,18 @@ impl ApplicationComponentDetail {
     pub fn more_server_association_exists(&self) -> std::option::Option<bool> {
         self.more_server_association_exists
     }
+    /// <p>The status of the application unit.</p>
+    pub fn runtime_status(&self) -> std::option::Option<&crate::model::RuntimeAnalysisStatus> {
+        self.runtime_status.as_ref()
+    }
+    /// <p>The status message for the application unit.</p>
+    pub fn runtime_status_message(&self) -> std::option::Option<&str> {
+        self.runtime_status_message.as_deref()
+    }
+    /// <p>The error in the analysis of the source code or database.</p>
+    pub fn app_unit_error(&self) -> std::option::Option<&crate::model::AppUnitError> {
+        self.app_unit_error.as_ref()
+    }
 }
 /// See [`ApplicationComponentDetail`](crate::model::ApplicationComponentDetail).
 pub mod application_component_detail {
@@ -5279,6 +6907,9 @@ pub mod application_component_detail {
         pub(crate) last_analyzed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) associated_server_id: std::option::Option<std::string::String>,
         pub(crate) more_server_association_exists: std::option::Option<bool>,
+        pub(crate) runtime_status: std::option::Option<crate::model::RuntimeAnalysisStatus>,
+        pub(crate) runtime_status_message: std::option::Option<std::string::String>,
+        pub(crate) app_unit_error: std::option::Option<crate::model::AppUnitError>,
     }
     impl Builder {
         /// <p> The ID of the application component. </p>
@@ -5537,6 +7168,45 @@ pub mod application_component_detail {
             self.more_server_association_exists = input;
             self
         }
+        /// <p>The status of the application unit.</p>
+        pub fn runtime_status(mut self, input: crate::model::RuntimeAnalysisStatus) -> Self {
+            self.runtime_status = Some(input);
+            self
+        }
+        /// <p>The status of the application unit.</p>
+        pub fn set_runtime_status(
+            mut self,
+            input: std::option::Option<crate::model::RuntimeAnalysisStatus>,
+        ) -> Self {
+            self.runtime_status = input;
+            self
+        }
+        /// <p>The status message for the application unit.</p>
+        pub fn runtime_status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.runtime_status_message = Some(input.into());
+            self
+        }
+        /// <p>The status message for the application unit.</p>
+        pub fn set_runtime_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.runtime_status_message = input;
+            self
+        }
+        /// <p>The error in the analysis of the source code or database.</p>
+        pub fn app_unit_error(mut self, input: crate::model::AppUnitError) -> Self {
+            self.app_unit_error = Some(input);
+            self
+        }
+        /// <p>The error in the analysis of the source code or database.</p>
+        pub fn set_app_unit_error(
+            mut self,
+            input: std::option::Option<crate::model::AppUnitError>,
+        ) -> Self {
+            self.app_unit_error = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ApplicationComponentDetail`](crate::model::ApplicationComponentDetail).
         pub fn build(self) -> crate::model::ApplicationComponentDetail {
             crate::model::ApplicationComponentDetail {
@@ -5559,6 +7229,9 @@ pub mod application_component_detail {
                 last_analyzed_timestamp: self.last_analyzed_timestamp,
                 associated_server_id: self.associated_server_id,
                 more_server_association_exists: self.more_server_association_exists,
+                runtime_status: self.runtime_status,
+                runtime_status_message: self.runtime_status_message,
+                app_unit_error: self.app_unit_error,
             }
         }
     }
@@ -5567,6 +7240,282 @@ impl ApplicationComponentDetail {
     /// Creates a new builder-style object to manufacture [`ApplicationComponentDetail`](crate::model::ApplicationComponentDetail).
     pub fn builder() -> crate::model::application_component_detail::Builder {
         crate::model::application_component_detail::Builder::default()
+    }
+}
+
+/// <p>Error in the analysis of the application unit.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AppUnitError {
+    /// <p>The category of the error.</p>
+    #[doc(hidden)]
+    pub app_unit_error_category: std::option::Option<crate::model::AppUnitErrorCategory>,
+}
+impl AppUnitError {
+    /// <p>The category of the error.</p>
+    pub fn app_unit_error_category(
+        &self,
+    ) -> std::option::Option<&crate::model::AppUnitErrorCategory> {
+        self.app_unit_error_category.as_ref()
+    }
+}
+/// See [`AppUnitError`](crate::model::AppUnitError).
+pub mod app_unit_error {
+
+    /// A builder for [`AppUnitError`](crate::model::AppUnitError).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_unit_error_category: std::option::Option<crate::model::AppUnitErrorCategory>,
+    }
+    impl Builder {
+        /// <p>The category of the error.</p>
+        pub fn app_unit_error_category(
+            mut self,
+            input: crate::model::AppUnitErrorCategory,
+        ) -> Self {
+            self.app_unit_error_category = Some(input);
+            self
+        }
+        /// <p>The category of the error.</p>
+        pub fn set_app_unit_error_category(
+            mut self,
+            input: std::option::Option<crate::model::AppUnitErrorCategory>,
+        ) -> Self {
+            self.app_unit_error_category = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AppUnitError`](crate::model::AppUnitError).
+        pub fn build(self) -> crate::model::AppUnitError {
+            crate::model::AppUnitError {
+                app_unit_error_category: self.app_unit_error_category,
+            }
+        }
+    }
+}
+impl AppUnitError {
+    /// Creates a new builder-style object to manufacture [`AppUnitError`](crate::model::AppUnitError).
+    pub fn builder() -> crate::model::app_unit_error::Builder {
+        crate::model::app_unit_error::Builder::default()
+    }
+}
+
+/// When writing a match expression against `AppUnitErrorCategory`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let appuniterrorcategory = unimplemented!();
+/// match appuniterrorcategory {
+///     AppUnitErrorCategory::ConnectivityError => { /* ... */ },
+///     AppUnitErrorCategory::CredentialError => { /* ... */ },
+///     AppUnitErrorCategory::OtherError => { /* ... */ },
+///     AppUnitErrorCategory::PermissionError => { /* ... */ },
+///     AppUnitErrorCategory::UnsupportedError => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `appuniterrorcategory` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AppUnitErrorCategory::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AppUnitErrorCategory::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AppUnitErrorCategory::NewFeature` is defined.
+/// Specifically, when `appuniterrorcategory` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AppUnitErrorCategory::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AppUnitErrorCategory {
+    #[allow(missing_docs)] // documentation missing in model
+    ConnectivityError,
+    #[allow(missing_docs)] // documentation missing in model
+    CredentialError,
+    #[allow(missing_docs)] // documentation missing in model
+    OtherError,
+    #[allow(missing_docs)] // documentation missing in model
+    PermissionError,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedError,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for AppUnitErrorCategory {
+    fn from(s: &str) -> Self {
+        match s {
+            "CONNECTIVITY_ERROR" => AppUnitErrorCategory::ConnectivityError,
+            "CREDENTIAL_ERROR" => AppUnitErrorCategory::CredentialError,
+            "OTHER_ERROR" => AppUnitErrorCategory::OtherError,
+            "PERMISSION_ERROR" => AppUnitErrorCategory::PermissionError,
+            "UNSUPPORTED_ERROR" => AppUnitErrorCategory::UnsupportedError,
+            other => {
+                AppUnitErrorCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for AppUnitErrorCategory {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AppUnitErrorCategory::from(s))
+    }
+}
+impl AppUnitErrorCategory {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AppUnitErrorCategory::ConnectivityError => "CONNECTIVITY_ERROR",
+            AppUnitErrorCategory::CredentialError => "CREDENTIAL_ERROR",
+            AppUnitErrorCategory::OtherError => "OTHER_ERROR",
+            AppUnitErrorCategory::PermissionError => "PERMISSION_ERROR",
+            AppUnitErrorCategory::UnsupportedError => "UNSUPPORTED_ERROR",
+            AppUnitErrorCategory::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "CONNECTIVITY_ERROR",
+            "CREDENTIAL_ERROR",
+            "OTHER_ERROR",
+            "PERMISSION_ERROR",
+            "UNSUPPORTED_ERROR",
+        ]
+    }
+}
+impl AsRef<str> for AppUnitErrorCategory {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `RuntimeAnalysisStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let runtimeanalysisstatus = unimplemented!();
+/// match runtimeanalysisstatus {
+///     RuntimeAnalysisStatus::AnalysisFailed => { /* ... */ },
+///     RuntimeAnalysisStatus::AnalysisStarted => { /* ... */ },
+///     RuntimeAnalysisStatus::AnalysisSuccess => { /* ... */ },
+///     RuntimeAnalysisStatus::AnalysisToBeScheduled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `runtimeanalysisstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RuntimeAnalysisStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RuntimeAnalysisStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RuntimeAnalysisStatus::NewFeature` is defined.
+/// Specifically, when `runtimeanalysisstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RuntimeAnalysisStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RuntimeAnalysisStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    AnalysisFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    AnalysisStarted,
+    #[allow(missing_docs)] // documentation missing in model
+    AnalysisSuccess,
+    #[allow(missing_docs)] // documentation missing in model
+    AnalysisToBeScheduled,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for RuntimeAnalysisStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ANALYSIS_FAILED" => RuntimeAnalysisStatus::AnalysisFailed,
+            "ANALYSIS_STARTED" => RuntimeAnalysisStatus::AnalysisStarted,
+            "ANALYSIS_SUCCESS" => RuntimeAnalysisStatus::AnalysisSuccess,
+            "ANALYSIS_TO_BE_SCHEDULED" => RuntimeAnalysisStatus::AnalysisToBeScheduled,
+            other => {
+                RuntimeAnalysisStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for RuntimeAnalysisStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RuntimeAnalysisStatus::from(s))
+    }
+}
+impl RuntimeAnalysisStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RuntimeAnalysisStatus::AnalysisFailed => "ANALYSIS_FAILED",
+            RuntimeAnalysisStatus::AnalysisStarted => "ANALYSIS_STARTED",
+            RuntimeAnalysisStatus::AnalysisSuccess => "ANALYSIS_SUCCESS",
+            RuntimeAnalysisStatus::AnalysisToBeScheduled => "ANALYSIS_TO_BE_SCHEDULED",
+            RuntimeAnalysisStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ANALYSIS_FAILED",
+            "ANALYSIS_STARTED",
+            "ANALYSIS_SUCCESS",
+            "ANALYSIS_TO_BE_SCHEDULED",
+        ]
+    }
+}
+impl AsRef<str> for RuntimeAnalysisStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -5665,123 +7614,6 @@ impl AsRef<str> for ResourceSubType {
     }
 }
 
-/// When writing a match expression against `AppType`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let apptype = unimplemented!();
-/// match apptype {
-///     AppType::DotNetFramework => { /* ... */ },
-///     AppType::Iis => { /* ... */ },
-///     AppType::Java => { /* ... */ },
-///     AppType::Oracle => { /* ... */ },
-///     AppType::Other => { /* ... */ },
-///     AppType::SqlServer => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `apptype` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `AppType::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `AppType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `AppType::NewFeature` is defined.
-/// Specifically, when `apptype` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `AppType::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum AppType {
-    #[allow(missing_docs)] // documentation missing in model
-    DotNetFramework,
-    #[allow(missing_docs)] // documentation missing in model
-    Iis,
-    #[allow(missing_docs)] // documentation missing in model
-    Java,
-    #[allow(missing_docs)] // documentation missing in model
-    Oracle,
-    #[allow(missing_docs)] // documentation missing in model
-    Other,
-    #[allow(missing_docs)] // documentation missing in model
-    SqlServer,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for AppType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DotNetFramework" => AppType::DotNetFramework,
-            "IIS" => AppType::Iis,
-            "Java" => AppType::Java,
-            "Oracle" => AppType::Oracle,
-            "Other" => AppType::Other,
-            "SQLServer" => AppType::SqlServer,
-            other => AppType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for AppType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppType::from(s))
-    }
-}
-impl AppType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AppType::DotNetFramework => "DotNetFramework",
-            AppType::Iis => "IIS",
-            AppType::Java => "Java",
-            AppType::Oracle => "Oracle",
-            AppType::Other => "Other",
-            AppType::SqlServer => "SQLServer",
-            AppType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DotNetFramework",
-            "IIS",
-            "Java",
-            "Oracle",
-            "Other",
-            "SQLServer",
-        ]
-    }
-}
-impl AsRef<str> for AppType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p> Object containing source code information that is linked to an application component. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5795,6 +7627,9 @@ pub struct SourceCodeRepository {
     /// <p> The type of repository to use for the source code. </p>
     #[doc(hidden)]
     pub version_control_type: std::option::Option<std::string::String>,
+    /// <p>The name of the project.</p>
+    #[doc(hidden)]
+    pub project_name: std::option::Option<std::string::String>,
 }
 impl SourceCodeRepository {
     /// <p> The repository name for the source code. </p>
@@ -5809,6 +7644,10 @@ impl SourceCodeRepository {
     pub fn version_control_type(&self) -> std::option::Option<&str> {
         self.version_control_type.as_deref()
     }
+    /// <p>The name of the project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
 }
 /// See [`SourceCodeRepository`](crate::model::SourceCodeRepository).
 pub mod source_code_repository {
@@ -5819,6 +7658,7 @@ pub mod source_code_repository {
         pub(crate) repository: std::option::Option<std::string::String>,
         pub(crate) branch: std::option::Option<std::string::String>,
         pub(crate) version_control_type: std::option::Option<std::string::String>,
+        pub(crate) project_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p> The repository name for the source code. </p>
@@ -5854,12 +7694,23 @@ pub mod source_code_repository {
             self.version_control_type = input;
             self
         }
+        /// <p>The name of the project.</p>
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the project.</p>
+        pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SourceCodeRepository`](crate::model::SourceCodeRepository).
         pub fn build(self) -> crate::model::SourceCodeRepository {
             crate::model::SourceCodeRepository {
                 repository: self.repository,
                 branch: self.branch,
                 version_control_type: self.version_control_type,
+                project_name: self.project_name,
             }
         }
     }
@@ -5932,9 +7783,12 @@ impl DatabaseConfigDetail {
 /// # let srccodeordbanalysisstatus = unimplemented!();
 /// match srccodeordbanalysisstatus {
 ///     SrcCodeOrDbAnalysisStatus::AnalysisFailed => { /* ... */ },
+///     SrcCodeOrDbAnalysisStatus::AnalysisPartialSuccess => { /* ... */ },
 ///     SrcCodeOrDbAnalysisStatus::AnalysisStarted => { /* ... */ },
 ///     SrcCodeOrDbAnalysisStatus::AnalysisSuccess => { /* ... */ },
 ///     SrcCodeOrDbAnalysisStatus::AnalysisToBeScheduled => { /* ... */ },
+///     SrcCodeOrDbAnalysisStatus::Configured => { /* ... */ },
+///     SrcCodeOrDbAnalysisStatus::Unconfigured => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -5971,11 +7825,17 @@ pub enum SrcCodeOrDbAnalysisStatus {
     #[allow(missing_docs)] // documentation missing in model
     AnalysisFailed,
     #[allow(missing_docs)] // documentation missing in model
+    AnalysisPartialSuccess,
+    #[allow(missing_docs)] // documentation missing in model
     AnalysisStarted,
     #[allow(missing_docs)] // documentation missing in model
     AnalysisSuccess,
     #[allow(missing_docs)] // documentation missing in model
     AnalysisToBeScheduled,
+    #[allow(missing_docs)] // documentation missing in model
+    Configured,
+    #[allow(missing_docs)] // documentation missing in model
+    Unconfigured,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -5983,9 +7843,12 @@ impl std::convert::From<&str> for SrcCodeOrDbAnalysisStatus {
     fn from(s: &str) -> Self {
         match s {
             "ANALYSIS_FAILED" => SrcCodeOrDbAnalysisStatus::AnalysisFailed,
+            "ANALYSIS_PARTIAL_SUCCESS" => SrcCodeOrDbAnalysisStatus::AnalysisPartialSuccess,
             "ANALYSIS_STARTED" => SrcCodeOrDbAnalysisStatus::AnalysisStarted,
             "ANALYSIS_SUCCESS" => SrcCodeOrDbAnalysisStatus::AnalysisSuccess,
             "ANALYSIS_TO_BE_SCHEDULED" => SrcCodeOrDbAnalysisStatus::AnalysisToBeScheduled,
+            "CONFIGURED" => SrcCodeOrDbAnalysisStatus::Configured,
+            "UNCONFIGURED" => SrcCodeOrDbAnalysisStatus::Unconfigured,
             other => SrcCodeOrDbAnalysisStatus::Unknown(crate::types::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -6004,9 +7867,12 @@ impl SrcCodeOrDbAnalysisStatus {
     pub fn as_str(&self) -> &str {
         match self {
             SrcCodeOrDbAnalysisStatus::AnalysisFailed => "ANALYSIS_FAILED",
+            SrcCodeOrDbAnalysisStatus::AnalysisPartialSuccess => "ANALYSIS_PARTIAL_SUCCESS",
             SrcCodeOrDbAnalysisStatus::AnalysisStarted => "ANALYSIS_STARTED",
             SrcCodeOrDbAnalysisStatus::AnalysisSuccess => "ANALYSIS_SUCCESS",
             SrcCodeOrDbAnalysisStatus::AnalysisToBeScheduled => "ANALYSIS_TO_BE_SCHEDULED",
+            SrcCodeOrDbAnalysisStatus::Configured => "CONFIGURED",
+            SrcCodeOrDbAnalysisStatus::Unconfigured => "UNCONFIGURED",
             SrcCodeOrDbAnalysisStatus::Unknown(value) => value.as_str(),
         }
     }
@@ -6014,9 +7880,12 @@ impl SrcCodeOrDbAnalysisStatus {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ANALYSIS_FAILED",
+            "ANALYSIS_PARTIAL_SUCCESS",
             "ANALYSIS_STARTED",
             "ANALYSIS_SUCCESS",
             "ANALYSIS_TO_BE_SCHEDULED",
+            "CONFIGURED",
+            "UNCONFIGURED",
         ]
     }
 }
@@ -6038,9 +7907,11 @@ impl AsRef<str> for SrcCodeOrDbAnalysisStatus {
 /// ```text
 /// # let applicationcomponentcriteria = unimplemented!();
 /// match applicationcomponentcriteria {
+///     ApplicationComponentCriteria::AnalysisStatus => { /* ... */ },
 ///     ApplicationComponentCriteria::AppName => { /* ... */ },
 ///     ApplicationComponentCriteria::AppType => { /* ... */ },
 ///     ApplicationComponentCriteria::Destination => { /* ... */ },
+///     ApplicationComponentCriteria::ErrorCategory => { /* ... */ },
 ///     ApplicationComponentCriteria::NotDefined => { /* ... */ },
 ///     ApplicationComponentCriteria::ServerId => { /* ... */ },
 ///     ApplicationComponentCriteria::Strategy => { /* ... */ },
@@ -6078,11 +7949,15 @@ impl AsRef<str> for SrcCodeOrDbAnalysisStatus {
 )]
 pub enum ApplicationComponentCriteria {
     #[allow(missing_docs)] // documentation missing in model
+    AnalysisStatus,
+    #[allow(missing_docs)] // documentation missing in model
     AppName,
     #[allow(missing_docs)] // documentation missing in model
     AppType,
     #[allow(missing_docs)] // documentation missing in model
     Destination,
+    #[allow(missing_docs)] // documentation missing in model
+    ErrorCategory,
     #[allow(missing_docs)] // documentation missing in model
     NotDefined,
     #[allow(missing_docs)] // documentation missing in model
@@ -6095,9 +7970,11 @@ pub enum ApplicationComponentCriteria {
 impl std::convert::From<&str> for ApplicationComponentCriteria {
     fn from(s: &str) -> Self {
         match s {
+            "ANALYSIS_STATUS" => ApplicationComponentCriteria::AnalysisStatus,
             "APP_NAME" => ApplicationComponentCriteria::AppName,
             "APP_TYPE" => ApplicationComponentCriteria::AppType,
             "DESTINATION" => ApplicationComponentCriteria::Destination,
+            "ERROR_CATEGORY" => ApplicationComponentCriteria::ErrorCategory,
             "NOT_DEFINED" => ApplicationComponentCriteria::NotDefined,
             "SERVER_ID" => ApplicationComponentCriteria::ServerId,
             "STRATEGY" => ApplicationComponentCriteria::Strategy,
@@ -6118,9 +7995,11 @@ impl ApplicationComponentCriteria {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ApplicationComponentCriteria::AnalysisStatus => "ANALYSIS_STATUS",
             ApplicationComponentCriteria::AppName => "APP_NAME",
             ApplicationComponentCriteria::AppType => "APP_TYPE",
             ApplicationComponentCriteria::Destination => "DESTINATION",
+            ApplicationComponentCriteria::ErrorCategory => "ERROR_CATEGORY",
             ApplicationComponentCriteria::NotDefined => "NOT_DEFINED",
             ApplicationComponentCriteria::ServerId => "SERVER_ID",
             ApplicationComponentCriteria::Strategy => "STRATEGY",
@@ -6130,9 +8009,11 @@ impl ApplicationComponentCriteria {
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ANALYSIS_STATUS",
             "APP_NAME",
             "APP_TYPE",
             "DESTINATION",
+            "ERROR_CATEGORY",
             "NOT_DEFINED",
             "SERVER_ID",
             "STRATEGY",
@@ -6272,6 +8153,7 @@ impl ServerStrategy {
 /// # let strategyrecommendation = unimplemented!();
 /// match strategyrecommendation {
 ///     StrategyRecommendation::NotRecommended => { /* ... */ },
+///     StrategyRecommendation::Potential => { /* ... */ },
 ///     StrategyRecommendation::Recommended => { /* ... */ },
 ///     StrategyRecommendation::ViableOption => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -6310,6 +8192,8 @@ pub enum StrategyRecommendation {
     #[allow(missing_docs)] // documentation missing in model
     NotRecommended,
     #[allow(missing_docs)] // documentation missing in model
+    Potential,
+    #[allow(missing_docs)] // documentation missing in model
     Recommended,
     #[allow(missing_docs)] // documentation missing in model
     ViableOption,
@@ -6320,6 +8204,7 @@ impl std::convert::From<&str> for StrategyRecommendation {
     fn from(s: &str) -> Self {
         match s {
             "notRecommended" => StrategyRecommendation::NotRecommended,
+            "potential" => StrategyRecommendation::Potential,
             "recommended" => StrategyRecommendation::Recommended,
             "viableOption" => StrategyRecommendation::ViableOption,
             other => {
@@ -6340,6 +8225,7 @@ impl StrategyRecommendation {
     pub fn as_str(&self) -> &str {
         match self {
             StrategyRecommendation::NotRecommended => "notRecommended",
+            StrategyRecommendation::Potential => "potential",
             StrategyRecommendation::Recommended => "recommended",
             StrategyRecommendation::ViableOption => "viableOption",
             StrategyRecommendation::Unknown(value) => value.as_str(),
@@ -6347,7 +8233,7 @@ impl StrategyRecommendation {
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["notRecommended", "recommended", "viableOption"]
+        &["notRecommended", "potential", "recommended", "viableOption"]
     }
 }
 impl AsRef<str> for StrategyRecommendation {
@@ -6719,6 +8605,14 @@ pub struct AssessmentSummary {
     /// <p> The time the assessment was performed. </p>
     #[doc(hidden)]
     pub last_analyzed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>List of status summaries of the analyzed application components.</p>
+    #[doc(hidden)]
+    pub list_application_component_status_summary:
+        std::option::Option<std::vec::Vec<crate::model::ApplicationComponentStatusSummary>>,
+    /// <p>List of status summaries of the analyzed servers.</p>
+    #[doc(hidden)]
+    pub list_server_status_summary:
+        std::option::Option<std::vec::Vec<crate::model::ServerStatusSummary>>,
 }
 impl AssessmentSummary {
     /// <p> List of ServerStrategySummary. </p>
@@ -6767,6 +8661,18 @@ impl AssessmentSummary {
     pub fn last_analyzed_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_analyzed_timestamp.as_ref()
     }
+    /// <p>List of status summaries of the analyzed application components.</p>
+    pub fn list_application_component_status_summary(
+        &self,
+    ) -> std::option::Option<&[crate::model::ApplicationComponentStatusSummary]> {
+        self.list_application_component_status_summary.as_deref()
+    }
+    /// <p>List of status summaries of the analyzed servers.</p>
+    pub fn list_server_status_summary(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServerStatusSummary]> {
+        self.list_server_status_summary.as_deref()
+    }
 }
 /// See [`AssessmentSummary`](crate::model::AssessmentSummary).
 pub mod assessment_summary {
@@ -6789,6 +8695,10 @@ pub mod assessment_summary {
             std::option::Option<crate::model::AntipatternReportStatus>,
         pub(crate) antipattern_report_status_message: std::option::Option<std::string::String>,
         pub(crate) last_analyzed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) list_application_component_status_summary:
+            std::option::Option<std::vec::Vec<crate::model::ApplicationComponentStatusSummary>>,
+        pub(crate) list_server_status_summary:
+            std::option::Option<std::vec::Vec<crate::model::ServerStatusSummary>>,
     }
     impl Builder {
         /// Appends an item to `list_server_strategy_summary`.
@@ -6958,6 +8868,54 @@ pub mod assessment_summary {
             self.last_analyzed_timestamp = input;
             self
         }
+        /// Appends an item to `list_application_component_status_summary`.
+        ///
+        /// To override the contents of this collection use [`set_list_application_component_status_summary`](Self::set_list_application_component_status_summary).
+        ///
+        /// <p>List of status summaries of the analyzed application components.</p>
+        pub fn list_application_component_status_summary(
+            mut self,
+            input: crate::model::ApplicationComponentStatusSummary,
+        ) -> Self {
+            let mut v = self
+                .list_application_component_status_summary
+                .unwrap_or_default();
+            v.push(input);
+            self.list_application_component_status_summary = Some(v);
+            self
+        }
+        /// <p>List of status summaries of the analyzed application components.</p>
+        pub fn set_list_application_component_status_summary(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ApplicationComponentStatusSummary>,
+            >,
+        ) -> Self {
+            self.list_application_component_status_summary = input;
+            self
+        }
+        /// Appends an item to `list_server_status_summary`.
+        ///
+        /// To override the contents of this collection use [`set_list_server_status_summary`](Self::set_list_server_status_summary).
+        ///
+        /// <p>List of status summaries of the analyzed servers.</p>
+        pub fn list_server_status_summary(
+            mut self,
+            input: crate::model::ServerStatusSummary,
+        ) -> Self {
+            let mut v = self.list_server_status_summary.unwrap_or_default();
+            v.push(input);
+            self.list_server_status_summary = Some(v);
+            self
+        }
+        /// <p>List of status summaries of the analyzed servers.</p>
+        pub fn set_list_server_status_summary(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ServerStatusSummary>>,
+        ) -> Self {
+            self.list_server_status_summary = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssessmentSummary`](crate::model::AssessmentSummary).
         pub fn build(self) -> crate::model::AssessmentSummary {
             crate::model::AssessmentSummary {
@@ -6971,6 +8929,9 @@ pub mod assessment_summary {
                 antipattern_report_status: self.antipattern_report_status,
                 antipattern_report_status_message: self.antipattern_report_status_message,
                 last_analyzed_timestamp: self.last_analyzed_timestamp,
+                list_application_component_status_summary: self
+                    .list_application_component_status_summary,
+                list_server_status_summary: self.list_server_status_summary,
             }
         }
     }
@@ -6979,6 +8940,159 @@ impl AssessmentSummary {
     /// Creates a new builder-style object to manufacture [`AssessmentSummary`](crate::model::AssessmentSummary).
     pub fn builder() -> crate::model::assessment_summary::Builder {
         crate::model::assessment_summary::Builder::default()
+    }
+}
+
+/// <p>The status summary of the server analysis.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ServerStatusSummary {
+    /// <p>The status of the run time.</p>
+    #[doc(hidden)]
+    pub run_time_assessment_status: std::option::Option<crate::model::RunTimeAssessmentStatus>,
+    /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
+    #[doc(hidden)]
+    pub count: std::option::Option<i32>,
+}
+impl ServerStatusSummary {
+    /// <p>The status of the run time.</p>
+    pub fn run_time_assessment_status(
+        &self,
+    ) -> std::option::Option<&crate::model::RunTimeAssessmentStatus> {
+        self.run_time_assessment_status.as_ref()
+    }
+    /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
+    pub fn count(&self) -> std::option::Option<i32> {
+        self.count
+    }
+}
+/// See [`ServerStatusSummary`](crate::model::ServerStatusSummary).
+pub mod server_status_summary {
+
+    /// A builder for [`ServerStatusSummary`](crate::model::ServerStatusSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) run_time_assessment_status:
+            std::option::Option<crate::model::RunTimeAssessmentStatus>,
+        pub(crate) count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The status of the run time.</p>
+        pub fn run_time_assessment_status(
+            mut self,
+            input: crate::model::RunTimeAssessmentStatus,
+        ) -> Self {
+            self.run_time_assessment_status = Some(input);
+            self
+        }
+        /// <p>The status of the run time.</p>
+        pub fn set_run_time_assessment_status(
+            mut self,
+            input: std::option::Option<crate::model::RunTimeAssessmentStatus>,
+        ) -> Self {
+            self.run_time_assessment_status = input;
+            self
+        }
+        /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
+        pub fn count(mut self, input: i32) -> Self {
+            self.count = Some(input);
+            self
+        }
+        /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
+        pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServerStatusSummary`](crate::model::ServerStatusSummary).
+        pub fn build(self) -> crate::model::ServerStatusSummary {
+            crate::model::ServerStatusSummary {
+                run_time_assessment_status: self.run_time_assessment_status,
+                count: self.count,
+            }
+        }
+    }
+}
+impl ServerStatusSummary {
+    /// Creates a new builder-style object to manufacture [`ServerStatusSummary`](crate::model::ServerStatusSummary).
+    pub fn builder() -> crate::model::server_status_summary::Builder {
+        crate::model::server_status_summary::Builder::default()
+    }
+}
+
+/// <p>Summary of the analysis status of the application component.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ApplicationComponentStatusSummary {
+    /// <p>The status of database analysis.</p>
+    #[doc(hidden)]
+    pub src_code_or_db_analysis_status:
+        std::option::Option<crate::model::SrcCodeOrDbAnalysisStatus>,
+    /// <p>The number of application components successfully analyzed, partially successful or failed analysis.</p>
+    #[doc(hidden)]
+    pub count: std::option::Option<i32>,
+}
+impl ApplicationComponentStatusSummary {
+    /// <p>The status of database analysis.</p>
+    pub fn src_code_or_db_analysis_status(
+        &self,
+    ) -> std::option::Option<&crate::model::SrcCodeOrDbAnalysisStatus> {
+        self.src_code_or_db_analysis_status.as_ref()
+    }
+    /// <p>The number of application components successfully analyzed, partially successful or failed analysis.</p>
+    pub fn count(&self) -> std::option::Option<i32> {
+        self.count
+    }
+}
+/// See [`ApplicationComponentStatusSummary`](crate::model::ApplicationComponentStatusSummary).
+pub mod application_component_status_summary {
+
+    /// A builder for [`ApplicationComponentStatusSummary`](crate::model::ApplicationComponentStatusSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) src_code_or_db_analysis_status:
+            std::option::Option<crate::model::SrcCodeOrDbAnalysisStatus>,
+        pub(crate) count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The status of database analysis.</p>
+        pub fn src_code_or_db_analysis_status(
+            mut self,
+            input: crate::model::SrcCodeOrDbAnalysisStatus,
+        ) -> Self {
+            self.src_code_or_db_analysis_status = Some(input);
+            self
+        }
+        /// <p>The status of database analysis.</p>
+        pub fn set_src_code_or_db_analysis_status(
+            mut self,
+            input: std::option::Option<crate::model::SrcCodeOrDbAnalysisStatus>,
+        ) -> Self {
+            self.src_code_or_db_analysis_status = input;
+            self
+        }
+        /// <p>The number of application components successfully analyzed, partially successful or failed analysis.</p>
+        pub fn count(mut self, input: i32) -> Self {
+            self.count = Some(input);
+            self
+        }
+        /// <p>The number of application components successfully analyzed, partially successful or failed analysis.</p>
+        pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ApplicationComponentStatusSummary`](crate::model::ApplicationComponentStatusSummary).
+        pub fn build(self) -> crate::model::ApplicationComponentStatusSummary {
+            crate::model::ApplicationComponentStatusSummary {
+                src_code_or_db_analysis_status: self.src_code_or_db_analysis_status,
+                count: self.count,
+            }
+        }
+    }
+}
+impl ApplicationComponentStatusSummary {
+    /// Creates a new builder-style object to manufacture [`ApplicationComponentStatusSummary`](crate::model::ApplicationComponentStatusSummary).
+    pub fn builder() -> crate::model::application_component_status_summary::Builder {
+        crate::model::application_component_status_summary::Builder::default()
     }
 }
 
@@ -7255,6 +9369,9 @@ pub struct DataCollectionDetails {
     /// <p> The time the assessment completes. </p>
     #[doc(hidden)]
     pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The status message of the assessment.</p>
+    #[doc(hidden)]
+    pub status_message: std::option::Option<std::string::String>,
 }
 impl DataCollectionDetails {
     /// <p> The status of the assessment. </p>
@@ -7285,6 +9402,10 @@ impl DataCollectionDetails {
     pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
+    /// <p>The status message of the assessment.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
 }
 /// See [`DataCollectionDetails`](crate::model::DataCollectionDetails).
 pub mod data_collection_details {
@@ -7299,6 +9420,7 @@ pub mod data_collection_details {
         pub(crate) in_progress: std::option::Option<i32>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p> The status of the assessment. </p>
@@ -7380,6 +9502,19 @@ pub mod data_collection_details {
             self.completion_time = input;
             self
         }
+        /// <p>The status message of the assessment.</p>
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
+            self
+        }
+        /// <p>The status message of the assessment.</p>
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataCollectionDetails`](crate::model::DataCollectionDetails).
         pub fn build(self) -> crate::model::DataCollectionDetails {
             crate::model::DataCollectionDetails {
@@ -7390,6 +9525,7 @@ pub mod data_collection_details {
                 in_progress: self.in_progress,
                 start_time: self.start_time,
                 completion_time: self.completion_time,
+                status_message: self.status_message,
             }
         }
     }

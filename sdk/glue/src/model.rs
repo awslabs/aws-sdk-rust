@@ -3362,6 +3362,190 @@ impl SerDeInfo {
     }
 }
 
+/// When writing a match expression against `SourceControlAuthStrategy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sourcecontrolauthstrategy = unimplemented!();
+/// match sourcecontrolauthstrategy {
+///     SourceControlAuthStrategy::AwsSecretsManager => { /* ... */ },
+///     SourceControlAuthStrategy::PersonalAccessToken => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sourcecontrolauthstrategy` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SourceControlAuthStrategy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SourceControlAuthStrategy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SourceControlAuthStrategy::NewFeature` is defined.
+/// Specifically, when `sourcecontrolauthstrategy` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SourceControlAuthStrategy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SourceControlAuthStrategy {
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSecretsManager,
+    #[allow(missing_docs)] // documentation missing in model
+    PersonalAccessToken,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SourceControlAuthStrategy {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS_SECRETS_MANAGER" => SourceControlAuthStrategy::AwsSecretsManager,
+            "PERSONAL_ACCESS_TOKEN" => SourceControlAuthStrategy::PersonalAccessToken,
+            other => SourceControlAuthStrategy::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for SourceControlAuthStrategy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SourceControlAuthStrategy::from(s))
+    }
+}
+impl SourceControlAuthStrategy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SourceControlAuthStrategy::AwsSecretsManager => "AWS_SECRETS_MANAGER",
+            SourceControlAuthStrategy::PersonalAccessToken => "PERSONAL_ACCESS_TOKEN",
+            SourceControlAuthStrategy::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AWS_SECRETS_MANAGER", "PERSONAL_ACCESS_TOKEN"]
+    }
+}
+impl AsRef<str> for SourceControlAuthStrategy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `SourceControlProvider`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sourcecontrolprovider = unimplemented!();
+/// match sourcecontrolprovider {
+///     SourceControlProvider::AwsCodeCommit => { /* ... */ },
+///     SourceControlProvider::Github => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sourcecontrolprovider` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SourceControlProvider::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SourceControlProvider::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SourceControlProvider::NewFeature` is defined.
+/// Specifically, when `sourcecontrolprovider` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SourceControlProvider::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SourceControlProvider {
+    #[allow(missing_docs)] // documentation missing in model
+    AwsCodeCommit,
+    #[allow(missing_docs)] // documentation missing in model
+    Github,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SourceControlProvider {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS_CODE_COMMIT" => SourceControlProvider::AwsCodeCommit,
+            "GITHUB" => SourceControlProvider::Github,
+            other => {
+                SourceControlProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for SourceControlProvider {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SourceControlProvider::from(s))
+    }
+}
+impl SourceControlProvider {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SourceControlProvider::AwsCodeCommit => "AWS_CODE_COMMIT",
+            SourceControlProvider::Github => "GITHUB",
+            SourceControlProvider::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AWS_CODE_COMMIT", "GITHUB"]
+    }
+}
+impl AsRef<str> for SourceControlProvider {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// When writing a match expression against `Compatibility`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
 /// feature that is supported by the service but has not been represented as an enum
@@ -4277,6 +4461,9 @@ pub struct JobUpdate {
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     #[doc(hidden)]
     pub execution_class: std::option::Option<crate::model::ExecutionClass>,
+    /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+    #[doc(hidden)]
+    pub source_control_details: std::option::Option<crate::model::SourceControlDetails>,
 }
 impl JobUpdate {
     /// <p>Description of the job being defined.</p>
@@ -4388,6 +4575,12 @@ impl JobUpdate {
     pub fn execution_class(&self) -> std::option::Option<&crate::model::ExecutionClass> {
         self.execution_class.as_ref()
     }
+    /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+    pub fn source_control_details(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceControlDetails> {
+        self.source_control_details.as_ref()
+    }
 }
 impl std::fmt::Debug for JobUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4414,6 +4607,7 @@ impl std::fmt::Debug for JobUpdate {
             &"*** Sensitive Data Redacted ***",
         );
         formatter.field("execution_class", &self.execution_class);
+        formatter.field("source_control_details", &self.source_control_details);
         formatter.finish()
     }
 }
@@ -4448,6 +4642,7 @@ pub mod job_update {
             std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
         >,
         pub(crate) execution_class: std::option::Option<crate::model::ExecutionClass>,
+        pub(crate) source_control_details: std::option::Option<crate::model::SourceControlDetails>,
     }
     impl Builder {
         /// <p>Description of the job being defined.</p>
@@ -4748,6 +4943,19 @@ pub mod job_update {
             self.execution_class = input;
             self
         }
+        /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+        pub fn source_control_details(mut self, input: crate::model::SourceControlDetails) -> Self {
+            self.source_control_details = Some(input);
+            self
+        }
+        /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+        pub fn set_source_control_details(
+            mut self,
+            input: std::option::Option<crate::model::SourceControlDetails>,
+        ) -> Self {
+            self.source_control_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JobUpdate`](crate::model::JobUpdate).
         pub fn build(self) -> crate::model::JobUpdate {
             crate::model::JobUpdate {
@@ -4770,6 +4978,7 @@ pub mod job_update {
                 glue_version: self.glue_version,
                 code_gen_configuration_nodes: self.code_gen_configuration_nodes,
                 execution_class: self.execution_class,
+                source_control_details: self.source_control_details,
             }
         }
     }
@@ -4798,6 +5007,7 @@ pub mod job_update {
                 &"*** Sensitive Data Redacted ***",
             );
             formatter.field("execution_class", &self.execution_class);
+            formatter.field("source_control_details", &self.source_control_details);
             formatter.finish()
         }
     }
@@ -4806,6 +5016,196 @@ impl JobUpdate {
     /// Creates a new builder-style object to manufacture [`JobUpdate`](crate::model::JobUpdate).
     pub fn builder() -> crate::model::job_update::Builder {
         crate::model::job_update::Builder::default()
+    }
+}
+
+/// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SourceControlDetails {
+    /// <p>The provider for the remote repository.</p>
+    #[doc(hidden)]
+    pub provider: std::option::Option<crate::model::SourceControlProvider>,
+    /// <p>The name of the remote repository that contains the job artifacts.</p>
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
+    /// <p>The owner of the remote repository that contains the job artifacts.</p>
+    #[doc(hidden)]
+    pub owner: std::option::Option<std::string::String>,
+    /// <p>An optional branch in the remote repository.</p>
+    #[doc(hidden)]
+    pub branch: std::option::Option<std::string::String>,
+    /// <p>An optional folder in the remote repository.</p>
+    #[doc(hidden)]
+    pub folder: std::option::Option<std::string::String>,
+    /// <p>The last commit ID for a commit in the remote repository.</p>
+    #[doc(hidden)]
+    pub last_commit_id: std::option::Option<std::string::String>,
+    /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+    #[doc(hidden)]
+    pub auth_strategy: std::option::Option<crate::model::SourceControlAuthStrategy>,
+    /// <p>The value of an authorization token.</p>
+    #[doc(hidden)]
+    pub auth_token: std::option::Option<std::string::String>,
+}
+impl SourceControlDetails {
+    /// <p>The provider for the remote repository.</p>
+    pub fn provider(&self) -> std::option::Option<&crate::model::SourceControlProvider> {
+        self.provider.as_ref()
+    }
+    /// <p>The name of the remote repository that contains the job artifacts.</p>
+    pub fn repository(&self) -> std::option::Option<&str> {
+        self.repository.as_deref()
+    }
+    /// <p>The owner of the remote repository that contains the job artifacts.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>An optional branch in the remote repository.</p>
+    pub fn branch(&self) -> std::option::Option<&str> {
+        self.branch.as_deref()
+    }
+    /// <p>An optional folder in the remote repository.</p>
+    pub fn folder(&self) -> std::option::Option<&str> {
+        self.folder.as_deref()
+    }
+    /// <p>The last commit ID for a commit in the remote repository.</p>
+    pub fn last_commit_id(&self) -> std::option::Option<&str> {
+        self.last_commit_id.as_deref()
+    }
+    /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+    pub fn auth_strategy(&self) -> std::option::Option<&crate::model::SourceControlAuthStrategy> {
+        self.auth_strategy.as_ref()
+    }
+    /// <p>The value of an authorization token.</p>
+    pub fn auth_token(&self) -> std::option::Option<&str> {
+        self.auth_token.as_deref()
+    }
+}
+/// See [`SourceControlDetails`](crate::model::SourceControlDetails).
+pub mod source_control_details {
+
+    /// A builder for [`SourceControlDetails`](crate::model::SourceControlDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) provider: std::option::Option<crate::model::SourceControlProvider>,
+        pub(crate) repository: std::option::Option<std::string::String>,
+        pub(crate) owner: std::option::Option<std::string::String>,
+        pub(crate) branch: std::option::Option<std::string::String>,
+        pub(crate) folder: std::option::Option<std::string::String>,
+        pub(crate) last_commit_id: std::option::Option<std::string::String>,
+        pub(crate) auth_strategy: std::option::Option<crate::model::SourceControlAuthStrategy>,
+        pub(crate) auth_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The provider for the remote repository.</p>
+        pub fn provider(mut self, input: crate::model::SourceControlProvider) -> Self {
+            self.provider = Some(input);
+            self
+        }
+        /// <p>The provider for the remote repository.</p>
+        pub fn set_provider(
+            mut self,
+            input: std::option::Option<crate::model::SourceControlProvider>,
+        ) -> Self {
+            self.provider = input;
+            self
+        }
+        /// <p>The name of the remote repository that contains the job artifacts.</p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository = Some(input.into());
+            self
+        }
+        /// <p>The name of the remote repository that contains the job artifacts.</p>
+        pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository = input;
+            self
+        }
+        /// <p>The owner of the remote repository that contains the job artifacts.</p>
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner = Some(input.into());
+            self
+        }
+        /// <p>The owner of the remote repository that contains the job artifacts.</p>
+        pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner = input;
+            self
+        }
+        /// <p>An optional branch in the remote repository.</p>
+        pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.branch = Some(input.into());
+            self
+        }
+        /// <p>An optional branch in the remote repository.</p>
+        pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.branch = input;
+            self
+        }
+        /// <p>An optional folder in the remote repository.</p>
+        pub fn folder(mut self, input: impl Into<std::string::String>) -> Self {
+            self.folder = Some(input.into());
+            self
+        }
+        /// <p>An optional folder in the remote repository.</p>
+        pub fn set_folder(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.folder = input;
+            self
+        }
+        /// <p>The last commit ID for a commit in the remote repository.</p>
+        pub fn last_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_commit_id = Some(input.into());
+            self
+        }
+        /// <p>The last commit ID for a commit in the remote repository.</p>
+        pub fn set_last_commit_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_commit_id = input;
+            self
+        }
+        /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+        pub fn auth_strategy(mut self, input: crate::model::SourceControlAuthStrategy) -> Self {
+            self.auth_strategy = Some(input);
+            self
+        }
+        /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+        pub fn set_auth_strategy(
+            mut self,
+            input: std::option::Option<crate::model::SourceControlAuthStrategy>,
+        ) -> Self {
+            self.auth_strategy = input;
+            self
+        }
+        /// <p>The value of an authorization token.</p>
+        pub fn auth_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.auth_token = Some(input.into());
+            self
+        }
+        /// <p>The value of an authorization token.</p>
+        pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auth_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SourceControlDetails`](crate::model::SourceControlDetails).
+        pub fn build(self) -> crate::model::SourceControlDetails {
+            crate::model::SourceControlDetails {
+                provider: self.provider,
+                repository: self.repository,
+                owner: self.owner,
+                branch: self.branch,
+                folder: self.folder,
+                last_commit_id: self.last_commit_id,
+                auth_strategy: self.auth_strategy,
+                auth_token: self.auth_token,
+            }
+        }
+    }
+}
+impl SourceControlDetails {
+    /// Creates a new builder-style object to manufacture [`SourceControlDetails`](crate::model::SourceControlDetails).
+    pub fn builder() -> crate::model::source_control_details::Builder {
+        crate::model::source_control_details::Builder::default()
     }
 }
 
@@ -5055,6 +5455,12 @@ pub struct CodeGenConfigurationNode {
     /// <p>Specifies a target that uses Postgres SQL.</p>
     #[doc(hidden)]
     pub postgre_sql_catalog_target: std::option::Option<crate::model::PostgreSqlCatalogTarget>,
+    /// <p>Specifies a custom visual transform created by a user.</p>
+    #[doc(hidden)]
+    pub dynamic_transform: std::option::Option<crate::model::DynamicTransform>,
+    /// <p>Specifies your data quality evaluation criteria.</p>
+    #[doc(hidden)]
+    pub evaluate_data_quality: std::option::Option<crate::model::EvaluateDataQuality>,
 }
 impl CodeGenConfigurationNode {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
@@ -5289,6 +5695,14 @@ impl CodeGenConfigurationNode {
     ) -> std::option::Option<&crate::model::PostgreSqlCatalogTarget> {
         self.postgre_sql_catalog_target.as_ref()
     }
+    /// <p>Specifies a custom visual transform created by a user.</p>
+    pub fn dynamic_transform(&self) -> std::option::Option<&crate::model::DynamicTransform> {
+        self.dynamic_transform.as_ref()
+    }
+    /// <p>Specifies your data quality evaluation criteria.</p>
+    pub fn evaluate_data_quality(&self) -> std::option::Option<&crate::model::EvaluateDataQuality> {
+        self.evaluate_data_quality.as_ref()
+    }
 }
 /// See [`CodeGenConfigurationNode`](crate::model::CodeGenConfigurationNode).
 pub mod code_gen_configuration_node {
@@ -5357,6 +5771,8 @@ pub mod code_gen_configuration_node {
             std::option::Option<crate::model::OracleSqlCatalogTarget>,
         pub(crate) postgre_sql_catalog_target:
             std::option::Option<crate::model::PostgreSqlCatalogTarget>,
+        pub(crate) dynamic_transform: std::option::Option<crate::model::DynamicTransform>,
+        pub(crate) evaluate_data_quality: std::option::Option<crate::model::EvaluateDataQuality>,
     }
     impl Builder {
         /// <p>Specifies a connector to an Amazon Athena data source.</p>
@@ -6024,6 +6440,32 @@ pub mod code_gen_configuration_node {
             self.postgre_sql_catalog_target = input;
             self
         }
+        /// <p>Specifies a custom visual transform created by a user.</p>
+        pub fn dynamic_transform(mut self, input: crate::model::DynamicTransform) -> Self {
+            self.dynamic_transform = Some(input);
+            self
+        }
+        /// <p>Specifies a custom visual transform created by a user.</p>
+        pub fn set_dynamic_transform(
+            mut self,
+            input: std::option::Option<crate::model::DynamicTransform>,
+        ) -> Self {
+            self.dynamic_transform = input;
+            self
+        }
+        /// <p>Specifies your data quality evaluation criteria.</p>
+        pub fn evaluate_data_quality(mut self, input: crate::model::EvaluateDataQuality) -> Self {
+            self.evaluate_data_quality = Some(input);
+            self
+        }
+        /// <p>Specifies your data quality evaluation criteria.</p>
+        pub fn set_evaluate_data_quality(
+            mut self,
+            input: std::option::Option<crate::model::EvaluateDataQuality>,
+        ) -> Self {
+            self.evaluate_data_quality = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CodeGenConfigurationNode`](crate::model::CodeGenConfigurationNode).
         pub fn build(self) -> crate::model::CodeGenConfigurationNode {
             crate::model::CodeGenConfigurationNode {
@@ -6077,6 +6519,8 @@ pub mod code_gen_configuration_node {
                 my_sql_catalog_target: self.my_sql_catalog_target,
                 oracle_sql_catalog_target: self.oracle_sql_catalog_target,
                 postgre_sql_catalog_target: self.postgre_sql_catalog_target,
+                dynamic_transform: self.dynamic_transform,
+                evaluate_data_quality: self.evaluate_data_quality,
             }
         }
     }
@@ -6085,6 +6529,1013 @@ impl CodeGenConfigurationNode {
     /// Creates a new builder-style object to manufacture [`CodeGenConfigurationNode`](crate::model::CodeGenConfigurationNode).
     pub fn builder() -> crate::model::code_gen_configuration_node::Builder {
         crate::model::code_gen_configuration_node::Builder::default()
+    }
+}
+
+/// <p>Specifies your data quality evaluation criteria.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EvaluateDataQuality {
+    /// <p>The name of the data quality evaluation.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The inputs of your data quality evaluation.</p>
+    #[doc(hidden)]
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ruleset for your data quality evaluation.</p>
+    #[doc(hidden)]
+    pub ruleset: std::option::Option<std::string::String>,
+    /// <p>The output of your data quality evaluation.</p>
+    #[doc(hidden)]
+    pub output: std::option::Option<crate::model::DqTransformOutput>,
+    /// <p>Options to configure how your results are published.</p>
+    #[doc(hidden)]
+    pub publishing_options: std::option::Option<crate::model::DqResultsPublishingOptions>,
+    /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
+    #[doc(hidden)]
+    pub stop_job_on_failure_options: std::option::Option<crate::model::DqStopJobOnFailureOptions>,
+}
+impl EvaluateDataQuality {
+    /// <p>The name of the data quality evaluation.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The inputs of your data quality evaluation.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The ruleset for your data quality evaluation.</p>
+    pub fn ruleset(&self) -> std::option::Option<&str> {
+        self.ruleset.as_deref()
+    }
+    /// <p>The output of your data quality evaluation.</p>
+    pub fn output(&self) -> std::option::Option<&crate::model::DqTransformOutput> {
+        self.output.as_ref()
+    }
+    /// <p>Options to configure how your results are published.</p>
+    pub fn publishing_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DqResultsPublishingOptions> {
+        self.publishing_options.as_ref()
+    }
+    /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
+    pub fn stop_job_on_failure_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DqStopJobOnFailureOptions> {
+        self.stop_job_on_failure_options.as_ref()
+    }
+}
+/// See [`EvaluateDataQuality`](crate::model::EvaluateDataQuality).
+pub mod evaluate_data_quality {
+
+    /// A builder for [`EvaluateDataQuality`](crate::model::EvaluateDataQuality).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) ruleset: std::option::Option<std::string::String>,
+        pub(crate) output: std::option::Option<crate::model::DqTransformOutput>,
+        pub(crate) publishing_options:
+            std::option::Option<crate::model::DqResultsPublishingOptions>,
+        pub(crate) stop_job_on_failure_options:
+            std::option::Option<crate::model::DqStopJobOnFailureOptions>,
+    }
+    impl Builder {
+        /// <p>The name of the data quality evaluation.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data quality evaluation.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The inputs of your data quality evaluation.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The inputs of your data quality evaluation.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>The ruleset for your data quality evaluation.</p>
+        pub fn ruleset(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ruleset = Some(input.into());
+            self
+        }
+        /// <p>The ruleset for your data quality evaluation.</p>
+        pub fn set_ruleset(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ruleset = input;
+            self
+        }
+        /// <p>The output of your data quality evaluation.</p>
+        pub fn output(mut self, input: crate::model::DqTransformOutput) -> Self {
+            self.output = Some(input);
+            self
+        }
+        /// <p>The output of your data quality evaluation.</p>
+        pub fn set_output(
+            mut self,
+            input: std::option::Option<crate::model::DqTransformOutput>,
+        ) -> Self {
+            self.output = input;
+            self
+        }
+        /// <p>Options to configure how your results are published.</p>
+        pub fn publishing_options(
+            mut self,
+            input: crate::model::DqResultsPublishingOptions,
+        ) -> Self {
+            self.publishing_options = Some(input);
+            self
+        }
+        /// <p>Options to configure how your results are published.</p>
+        pub fn set_publishing_options(
+            mut self,
+            input: std::option::Option<crate::model::DqResultsPublishingOptions>,
+        ) -> Self {
+            self.publishing_options = input;
+            self
+        }
+        /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
+        pub fn stop_job_on_failure_options(
+            mut self,
+            input: crate::model::DqStopJobOnFailureOptions,
+        ) -> Self {
+            self.stop_job_on_failure_options = Some(input);
+            self
+        }
+        /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
+        pub fn set_stop_job_on_failure_options(
+            mut self,
+            input: std::option::Option<crate::model::DqStopJobOnFailureOptions>,
+        ) -> Self {
+            self.stop_job_on_failure_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EvaluateDataQuality`](crate::model::EvaluateDataQuality).
+        pub fn build(self) -> crate::model::EvaluateDataQuality {
+            crate::model::EvaluateDataQuality {
+                name: self.name,
+                inputs: self.inputs,
+                ruleset: self.ruleset,
+                output: self.output,
+                publishing_options: self.publishing_options,
+                stop_job_on_failure_options: self.stop_job_on_failure_options,
+            }
+        }
+    }
+}
+impl EvaluateDataQuality {
+    /// Creates a new builder-style object to manufacture [`EvaluateDataQuality`](crate::model::EvaluateDataQuality).
+    pub fn builder() -> crate::model::evaluate_data_quality::Builder {
+        crate::model::evaluate_data_quality::Builder::default()
+    }
+}
+
+/// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DqStopJobOnFailureOptions {
+    /// <p>When to stop job if your data quality evaluation fails. Options are Immediate or AfterDataLoad.</p>
+    #[doc(hidden)]
+    pub stop_job_on_failure_timing: std::option::Option<crate::model::DqStopJobOnFailureTiming>,
+}
+impl DqStopJobOnFailureOptions {
+    /// <p>When to stop job if your data quality evaluation fails. Options are Immediate or AfterDataLoad.</p>
+    pub fn stop_job_on_failure_timing(
+        &self,
+    ) -> std::option::Option<&crate::model::DqStopJobOnFailureTiming> {
+        self.stop_job_on_failure_timing.as_ref()
+    }
+}
+/// See [`DqStopJobOnFailureOptions`](crate::model::DqStopJobOnFailureOptions).
+pub mod dq_stop_job_on_failure_options {
+
+    /// A builder for [`DqStopJobOnFailureOptions`](crate::model::DqStopJobOnFailureOptions).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stop_job_on_failure_timing:
+            std::option::Option<crate::model::DqStopJobOnFailureTiming>,
+    }
+    impl Builder {
+        /// <p>When to stop job if your data quality evaluation fails. Options are Immediate or AfterDataLoad.</p>
+        pub fn stop_job_on_failure_timing(
+            mut self,
+            input: crate::model::DqStopJobOnFailureTiming,
+        ) -> Self {
+            self.stop_job_on_failure_timing = Some(input);
+            self
+        }
+        /// <p>When to stop job if your data quality evaluation fails. Options are Immediate or AfterDataLoad.</p>
+        pub fn set_stop_job_on_failure_timing(
+            mut self,
+            input: std::option::Option<crate::model::DqStopJobOnFailureTiming>,
+        ) -> Self {
+            self.stop_job_on_failure_timing = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DqStopJobOnFailureOptions`](crate::model::DqStopJobOnFailureOptions).
+        pub fn build(self) -> crate::model::DqStopJobOnFailureOptions {
+            crate::model::DqStopJobOnFailureOptions {
+                stop_job_on_failure_timing: self.stop_job_on_failure_timing,
+            }
+        }
+    }
+}
+impl DqStopJobOnFailureOptions {
+    /// Creates a new builder-style object to manufacture [`DqStopJobOnFailureOptions`](crate::model::DqStopJobOnFailureOptions).
+    pub fn builder() -> crate::model::dq_stop_job_on_failure_options::Builder {
+        crate::model::dq_stop_job_on_failure_options::Builder::default()
+    }
+}
+
+/// When writing a match expression against `DqStopJobOnFailureTiming`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dqstopjobonfailuretiming = unimplemented!();
+/// match dqstopjobonfailuretiming {
+///     DqStopJobOnFailureTiming::AfterDataLoad => { /* ... */ },
+///     DqStopJobOnFailureTiming::Immediate => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dqstopjobonfailuretiming` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DqStopJobOnFailureTiming::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DqStopJobOnFailureTiming::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DqStopJobOnFailureTiming::NewFeature` is defined.
+/// Specifically, when `dqstopjobonfailuretiming` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DqStopJobOnFailureTiming::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DqStopJobOnFailureTiming {
+    #[allow(missing_docs)] // documentation missing in model
+    AfterDataLoad,
+    #[allow(missing_docs)] // documentation missing in model
+    Immediate,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DqStopJobOnFailureTiming {
+    fn from(s: &str) -> Self {
+        match s {
+            "AfterDataLoad" => DqStopJobOnFailureTiming::AfterDataLoad,
+            "Immediate" => DqStopJobOnFailureTiming::Immediate,
+            other => DqStopJobOnFailureTiming::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for DqStopJobOnFailureTiming {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DqStopJobOnFailureTiming::from(s))
+    }
+}
+impl DqStopJobOnFailureTiming {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DqStopJobOnFailureTiming::AfterDataLoad => "AfterDataLoad",
+            DqStopJobOnFailureTiming::Immediate => "Immediate",
+            DqStopJobOnFailureTiming::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AfterDataLoad", "Immediate"]
+    }
+}
+impl AsRef<str> for DqStopJobOnFailureTiming {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Options to configure how your data quality evaluation results are published.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DqResultsPublishingOptions {
+    /// <p>The context of the evaluation.</p>
+    #[doc(hidden)]
+    pub evaluation_context: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 prefix prepended to the results.</p>
+    #[doc(hidden)]
+    pub results_s3_prefix: std::option::Option<std::string::String>,
+    /// <p>Enable metrics for your data quality results.</p>
+    #[doc(hidden)]
+    pub cloud_watch_metrics_enabled: std::option::Option<bool>,
+    /// <p>Enable publishing for your data quality results.</p>
+    #[doc(hidden)]
+    pub results_publishing_enabled: std::option::Option<bool>,
+}
+impl DqResultsPublishingOptions {
+    /// <p>The context of the evaluation.</p>
+    pub fn evaluation_context(&self) -> std::option::Option<&str> {
+        self.evaluation_context.as_deref()
+    }
+    /// <p>The Amazon S3 prefix prepended to the results.</p>
+    pub fn results_s3_prefix(&self) -> std::option::Option<&str> {
+        self.results_s3_prefix.as_deref()
+    }
+    /// <p>Enable metrics for your data quality results.</p>
+    pub fn cloud_watch_metrics_enabled(&self) -> std::option::Option<bool> {
+        self.cloud_watch_metrics_enabled
+    }
+    /// <p>Enable publishing for your data quality results.</p>
+    pub fn results_publishing_enabled(&self) -> std::option::Option<bool> {
+        self.results_publishing_enabled
+    }
+}
+/// See [`DqResultsPublishingOptions`](crate::model::DqResultsPublishingOptions).
+pub mod dq_results_publishing_options {
+
+    /// A builder for [`DqResultsPublishingOptions`](crate::model::DqResultsPublishingOptions).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) evaluation_context: std::option::Option<std::string::String>,
+        pub(crate) results_s3_prefix: std::option::Option<std::string::String>,
+        pub(crate) cloud_watch_metrics_enabled: std::option::Option<bool>,
+        pub(crate) results_publishing_enabled: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The context of the evaluation.</p>
+        pub fn evaluation_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.evaluation_context = Some(input.into());
+            self
+        }
+        /// <p>The context of the evaluation.</p>
+        pub fn set_evaluation_context(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.evaluation_context = input;
+            self
+        }
+        /// <p>The Amazon S3 prefix prepended to the results.</p>
+        pub fn results_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.results_s3_prefix = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 prefix prepended to the results.</p>
+        pub fn set_results_s3_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.results_s3_prefix = input;
+            self
+        }
+        /// <p>Enable metrics for your data quality results.</p>
+        pub fn cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
+            self.cloud_watch_metrics_enabled = Some(input);
+            self
+        }
+        /// <p>Enable metrics for your data quality results.</p>
+        pub fn set_cloud_watch_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.cloud_watch_metrics_enabled = input;
+            self
+        }
+        /// <p>Enable publishing for your data quality results.</p>
+        pub fn results_publishing_enabled(mut self, input: bool) -> Self {
+            self.results_publishing_enabled = Some(input);
+            self
+        }
+        /// <p>Enable publishing for your data quality results.</p>
+        pub fn set_results_publishing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.results_publishing_enabled = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DqResultsPublishingOptions`](crate::model::DqResultsPublishingOptions).
+        pub fn build(self) -> crate::model::DqResultsPublishingOptions {
+            crate::model::DqResultsPublishingOptions {
+                evaluation_context: self.evaluation_context,
+                results_s3_prefix: self.results_s3_prefix,
+                cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled,
+                results_publishing_enabled: self.results_publishing_enabled,
+            }
+        }
+    }
+}
+impl DqResultsPublishingOptions {
+    /// Creates a new builder-style object to manufacture [`DqResultsPublishingOptions`](crate::model::DqResultsPublishingOptions).
+    pub fn builder() -> crate::model::dq_results_publishing_options::Builder {
+        crate::model::dq_results_publishing_options::Builder::default()
+    }
+}
+
+/// When writing a match expression against `DqTransformOutput`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dqtransformoutput = unimplemented!();
+/// match dqtransformoutput {
+///     DqTransformOutput::EvaluationResults => { /* ... */ },
+///     DqTransformOutput::PrimaryInput => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dqtransformoutput` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DqTransformOutput::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DqTransformOutput::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DqTransformOutput::NewFeature` is defined.
+/// Specifically, when `dqtransformoutput` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DqTransformOutput::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DqTransformOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    EvaluationResults,
+    #[allow(missing_docs)] // documentation missing in model
+    PrimaryInput,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DqTransformOutput {
+    fn from(s: &str) -> Self {
+        match s {
+            "EvaluationResults" => DqTransformOutput::EvaluationResults,
+            "PrimaryInput" => DqTransformOutput::PrimaryInput,
+            other => {
+                DqTransformOutput::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for DqTransformOutput {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DqTransformOutput::from(s))
+    }
+}
+impl DqTransformOutput {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DqTransformOutput::EvaluationResults => "EvaluationResults",
+            DqTransformOutput::PrimaryInput => "PrimaryInput",
+            DqTransformOutput::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["EvaluationResults", "PrimaryInput"]
+    }
+}
+impl AsRef<str> for DqTransformOutput {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies the set of parameters needed to perform the dynamic transform.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DynamicTransform {
+    /// <p>Specifies the name of the dynamic transform.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies the name of the dynamic transform as it appears in the Glue Studio visual editor.</p>
+    #[doc(hidden)]
+    pub transform_name: std::option::Option<std::string::String>,
+    /// <p>Specifies the inputs for the dynamic transform that are required.</p>
+    #[doc(hidden)]
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies the parameters of the dynamic transform.</p>
+    #[doc(hidden)]
+    pub parameters: std::option::Option<std::vec::Vec<crate::model::TransformConfigParameter>>,
+    /// <p>Specifies the name of the function of the dynamic transform.</p>
+    #[doc(hidden)]
+    pub function_name: std::option::Option<std::string::String>,
+    /// <p>Specifies the path of the dynamic transform source and config files.</p>
+    #[doc(hidden)]
+    pub path: std::option::Option<std::string::String>,
+    /// <p>This field is not used and will be deprecated in future release.</p>
+    #[doc(hidden)]
+    pub version: std::option::Option<std::string::String>,
+}
+impl DynamicTransform {
+    /// <p>Specifies the name of the dynamic transform.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the name of the dynamic transform as it appears in the Glue Studio visual editor.</p>
+    pub fn transform_name(&self) -> std::option::Option<&str> {
+        self.transform_name.as_deref()
+    }
+    /// <p>Specifies the inputs for the dynamic transform that are required.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>Specifies the parameters of the dynamic transform.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::TransformConfigParameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>Specifies the name of the function of the dynamic transform.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Specifies the path of the dynamic transform source and config files.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>This field is not used and will be deprecated in future release.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
+/// See [`DynamicTransform`](crate::model::DynamicTransform).
+pub mod dynamic_transform {
+
+    /// A builder for [`DynamicTransform`](crate::model::DynamicTransform).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) transform_name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) parameters:
+            std::option::Option<std::vec::Vec<crate::model::TransformConfigParameter>>,
+        pub(crate) function_name: std::option::Option<std::string::String>,
+        pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the name of the dynamic transform.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Specifies the name of the dynamic transform.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Specifies the name of the dynamic transform as it appears in the Glue Studio visual editor.</p>
+        pub fn transform_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transform_name = Some(input.into());
+            self
+        }
+        /// <p>Specifies the name of the dynamic transform as it appears in the Glue Studio visual editor.</p>
+        pub fn set_transform_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transform_name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>Specifies the inputs for the dynamic transform that are required.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>Specifies the inputs for the dynamic transform that are required.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>Specifies the parameters of the dynamic transform.</p>
+        pub fn parameters(mut self, input: crate::model::TransformConfigParameter) -> Self {
+            let mut v = self.parameters.unwrap_or_default();
+            v.push(input);
+            self.parameters = Some(v);
+            self
+        }
+        /// <p>Specifies the parameters of the dynamic transform.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TransformConfigParameter>>,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
+        /// <p>Specifies the name of the function of the dynamic transform.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
+            self
+        }
+        /// <p>Specifies the name of the function of the dynamic transform.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
+            self
+        }
+        /// <p>Specifies the path of the dynamic transform source and config files.</p>
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
+            self
+        }
+        /// <p>Specifies the path of the dynamic transform source and config files.</p>
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
+            self
+        }
+        /// <p>This field is not used and will be deprecated in future release.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        /// <p>This field is not used and will be deprecated in future release.</p>
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DynamicTransform`](crate::model::DynamicTransform).
+        pub fn build(self) -> crate::model::DynamicTransform {
+            crate::model::DynamicTransform {
+                name: self.name,
+                transform_name: self.transform_name,
+                inputs: self.inputs,
+                parameters: self.parameters,
+                function_name: self.function_name,
+                path: self.path,
+                version: self.version,
+            }
+        }
+    }
+}
+impl DynamicTransform {
+    /// Creates a new builder-style object to manufacture [`DynamicTransform`](crate::model::DynamicTransform).
+    pub fn builder() -> crate::model::dynamic_transform::Builder {
+        crate::model::dynamic_transform::Builder::default()
+    }
+}
+
+/// <p>Specifies the parameters in the config file of the dynamic transform.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TransformConfigParameter {
+    /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::ParamType>,
+    /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
+    #[doc(hidden)]
+    pub validation_rule: std::option::Option<std::string::String>,
+    /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
+    #[doc(hidden)]
+    pub validation_message: std::option::Option<std::string::String>,
+    /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
+    #[doc(hidden)]
+    pub value: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
+    #[doc(hidden)]
+    pub list_type: std::option::Option<crate::model::ParamType>,
+    /// <p>Specifies whether the parameter is optional or not in the config file of the dynamic transform.</p>
+    #[doc(hidden)]
+    pub is_optional: std::option::Option<bool>,
+}
+impl TransformConfigParameter {
+    /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ParamType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
+    pub fn validation_rule(&self) -> std::option::Option<&str> {
+        self.validation_rule.as_deref()
+    }
+    /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
+    pub fn validation_message(&self) -> std::option::Option<&str> {
+        self.validation_message.as_deref()
+    }
+    /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
+    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+        self.value.as_deref()
+    }
+    /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
+    pub fn list_type(&self) -> std::option::Option<&crate::model::ParamType> {
+        self.list_type.as_ref()
+    }
+    /// <p>Specifies whether the parameter is optional or not in the config file of the dynamic transform.</p>
+    pub fn is_optional(&self) -> std::option::Option<bool> {
+        self.is_optional
+    }
+}
+/// See [`TransformConfigParameter`](crate::model::TransformConfigParameter).
+pub mod transform_config_parameter {
+
+    /// A builder for [`TransformConfigParameter`](crate::model::TransformConfigParameter).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::ParamType>,
+        pub(crate) validation_rule: std::option::Option<std::string::String>,
+        pub(crate) validation_message: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) list_type: std::option::Option<crate::model::ParamType>,
+        pub(crate) is_optional: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
+        pub fn r#type(mut self, input: crate::model::ParamType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ParamType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
+        pub fn validation_rule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.validation_rule = Some(input.into());
+            self
+        }
+        /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
+        pub fn set_validation_rule(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.validation_rule = input;
+            self
+        }
+        /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
+        pub fn validation_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.validation_message = Some(input.into());
+            self
+        }
+        /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
+        pub fn set_validation_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.validation_message = input;
+            self
+        }
+        /// Appends an item to `value`.
+        ///
+        /// To override the contents of this collection use [`set_value`](Self::set_value).
+        ///
+        /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.value.unwrap_or_default();
+            v.push(input.into());
+            self.value = Some(v);
+            self
+        }
+        /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
+        pub fn set_value(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
+        pub fn list_type(mut self, input: crate::model::ParamType) -> Self {
+            self.list_type = Some(input);
+            self
+        }
+        /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
+        pub fn set_list_type(
+            mut self,
+            input: std::option::Option<crate::model::ParamType>,
+        ) -> Self {
+            self.list_type = input;
+            self
+        }
+        /// <p>Specifies whether the parameter is optional or not in the config file of the dynamic transform.</p>
+        pub fn is_optional(mut self, input: bool) -> Self {
+            self.is_optional = Some(input);
+            self
+        }
+        /// <p>Specifies whether the parameter is optional or not in the config file of the dynamic transform.</p>
+        pub fn set_is_optional(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_optional = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TransformConfigParameter`](crate::model::TransformConfigParameter).
+        pub fn build(self) -> crate::model::TransformConfigParameter {
+            crate::model::TransformConfigParameter {
+                name: self.name,
+                r#type: self.r#type,
+                validation_rule: self.validation_rule,
+                validation_message: self.validation_message,
+                value: self.value,
+                list_type: self.list_type,
+                is_optional: self.is_optional,
+            }
+        }
+    }
+}
+impl TransformConfigParameter {
+    /// Creates a new builder-style object to manufacture [`TransformConfigParameter`](crate::model::TransformConfigParameter).
+    pub fn builder() -> crate::model::transform_config_parameter::Builder {
+        crate::model::transform_config_parameter::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ParamType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let paramtype = unimplemented!();
+/// match paramtype {
+///     ParamType::Bool => { /* ... */ },
+///     ParamType::Complex => { /* ... */ },
+///     ParamType::Float => { /* ... */ },
+///     ParamType::Int => { /* ... */ },
+///     ParamType::List => { /* ... */ },
+///     ParamType::Null => { /* ... */ },
+///     ParamType::Str => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `paramtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ParamType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ParamType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ParamType::NewFeature` is defined.
+/// Specifically, when `paramtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ParamType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ParamType {
+    #[allow(missing_docs)] // documentation missing in model
+    Bool,
+    #[allow(missing_docs)] // documentation missing in model
+    Complex,
+    #[allow(missing_docs)] // documentation missing in model
+    Float,
+    #[allow(missing_docs)] // documentation missing in model
+    Int,
+    #[allow(missing_docs)] // documentation missing in model
+    List,
+    #[allow(missing_docs)] // documentation missing in model
+    Null,
+    #[allow(missing_docs)] // documentation missing in model
+    Str,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ParamType {
+    fn from(s: &str) -> Self {
+        match s {
+            "bool" => ParamType::Bool,
+            "complex" => ParamType::Complex,
+            "float" => ParamType::Float,
+            "int" => ParamType::Int,
+            "list" => ParamType::List,
+            "null" => ParamType::Null,
+            "str" => ParamType::Str,
+            other => ParamType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ParamType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ParamType::from(s))
+    }
+}
+impl ParamType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ParamType::Bool => "bool",
+            ParamType::Complex => "complex",
+            ParamType::Float => "float",
+            ParamType::Int => "int",
+            ParamType::List => "list",
+            ParamType::Null => "null",
+            ParamType::Str => "str",
+            ParamType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["bool", "complex", "float", "int", "list", "null", "str"]
+    }
+}
+impl AsRef<str> for ParamType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -10572,7 +12023,7 @@ impl SparkSql {
     }
 }
 
-/// <p>Specifies a user-defined schema when a schema cannot be determined by AWS Glue.</p>
+/// <p>Specifies a user-defined schema when a schema cannot be determined by Glue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlueSchema {
@@ -19470,6 +20921,9 @@ pub struct DeltaTarget {
     /// <p>Specifies whether to write the manifest files to the Delta table path.</p>
     #[doc(hidden)]
     pub write_manifest: std::option::Option<bool>,
+    /// <p>Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.</p>
+    #[doc(hidden)]
+    pub create_native_delta_table: std::option::Option<bool>,
 }
 impl DeltaTarget {
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
@@ -19484,6 +20938,10 @@ impl DeltaTarget {
     pub fn write_manifest(&self) -> std::option::Option<bool> {
         self.write_manifest
     }
+    /// <p>Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.</p>
+    pub fn create_native_delta_table(&self) -> std::option::Option<bool> {
+        self.create_native_delta_table
+    }
 }
 /// See [`DeltaTarget`](crate::model::DeltaTarget).
 pub mod delta_target {
@@ -19494,6 +20952,7 @@ pub mod delta_target {
         pub(crate) delta_tables: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) connection_name: std::option::Option<std::string::String>,
         pub(crate) write_manifest: std::option::Option<bool>,
+        pub(crate) create_native_delta_table: std::option::Option<bool>,
     }
     impl Builder {
         /// Appends an item to `delta_tables`.
@@ -19538,12 +20997,23 @@ pub mod delta_target {
             self.write_manifest = input;
             self
         }
+        /// <p>Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.</p>
+        pub fn create_native_delta_table(mut self, input: bool) -> Self {
+            self.create_native_delta_table = Some(input);
+            self
+        }
+        /// <p>Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.</p>
+        pub fn set_create_native_delta_table(mut self, input: std::option::Option<bool>) -> Self {
+            self.create_native_delta_table = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeltaTarget`](crate::model::DeltaTarget).
         pub fn build(self) -> crate::model::DeltaTarget {
             crate::model::DeltaTarget {
                 delta_tables: self.delta_tables,
                 connection_name: self.connection_name,
                 write_manifest: self.write_manifest,
+                create_native_delta_table: self.create_native_delta_table,
             }
         }
     }
@@ -19900,6 +21370,11 @@ pub struct JdbcTarget {
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
     #[doc(hidden)]
     pub exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments associated with a column or table in the database.</p>
+    /// <p>If you do not need additional metadata, keep the field empty.</p>
+    #[doc(hidden)]
+    pub enable_additional_metadata:
+        std::option::Option<std::vec::Vec<crate::model::JdbcMetadataEntry>>,
 }
 impl JdbcTarget {
     /// <p>The name of the connection to use to connect to the JDBC target.</p>
@@ -19914,6 +21389,13 @@ impl JdbcTarget {
     pub fn exclusions(&self) -> std::option::Option<&[std::string::String]> {
         self.exclusions.as_deref()
     }
+    /// <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments associated with a column or table in the database.</p>
+    /// <p>If you do not need additional metadata, keep the field empty.</p>
+    pub fn enable_additional_metadata(
+        &self,
+    ) -> std::option::Option<&[crate::model::JdbcMetadataEntry]> {
+        self.enable_additional_metadata.as_deref()
+    }
 }
 /// See [`JdbcTarget`](crate::model::JdbcTarget).
 pub mod jdbc_target {
@@ -19924,6 +21406,8 @@ pub mod jdbc_target {
         pub(crate) connection_name: std::option::Option<std::string::String>,
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) enable_additional_metadata:
+            std::option::Option<std::vec::Vec<crate::model::JdbcMetadataEntry>>,
     }
     impl Builder {
         /// <p>The name of the connection to use to connect to the JDBC target.</p>
@@ -19968,12 +21452,37 @@ pub mod jdbc_target {
             self.exclusions = input;
             self
         }
+        /// Appends an item to `enable_additional_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_enable_additional_metadata`](Self::set_enable_additional_metadata).
+        ///
+        /// <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments associated with a column or table in the database.</p>
+        /// <p>If you do not need additional metadata, keep the field empty.</p>
+        pub fn enable_additional_metadata(
+            mut self,
+            input: crate::model::JdbcMetadataEntry,
+        ) -> Self {
+            let mut v = self.enable_additional_metadata.unwrap_or_default();
+            v.push(input);
+            self.enable_additional_metadata = Some(v);
+            self
+        }
+        /// <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments associated with a column or table in the database.</p>
+        /// <p>If you do not need additional metadata, keep the field empty.</p>
+        pub fn set_enable_additional_metadata(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::JdbcMetadataEntry>>,
+        ) -> Self {
+            self.enable_additional_metadata = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JdbcTarget`](crate::model::JdbcTarget).
         pub fn build(self) -> crate::model::JdbcTarget {
             crate::model::JdbcTarget {
                 connection_name: self.connection_name,
                 path: self.path,
                 exclusions: self.exclusions,
+                enable_additional_metadata: self.enable_additional_metadata,
             }
         }
     }
@@ -19982,6 +21491,98 @@ impl JdbcTarget {
     /// Creates a new builder-style object to manufacture [`JdbcTarget`](crate::model::JdbcTarget).
     pub fn builder() -> crate::model::jdbc_target::Builder {
         crate::model::jdbc_target::Builder::default()
+    }
+}
+
+/// When writing a match expression against `JdbcMetadataEntry`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let jdbcmetadataentry = unimplemented!();
+/// match jdbcmetadataentry {
+///     JdbcMetadataEntry::Comments => { /* ... */ },
+///     JdbcMetadataEntry::Rawtypes => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `jdbcmetadataentry` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `JdbcMetadataEntry::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `JdbcMetadataEntry::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `JdbcMetadataEntry::NewFeature` is defined.
+/// Specifically, when `jdbcmetadataentry` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `JdbcMetadataEntry::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum JdbcMetadataEntry {
+    #[allow(missing_docs)] // documentation missing in model
+    Comments,
+    #[allow(missing_docs)] // documentation missing in model
+    Rawtypes,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for JdbcMetadataEntry {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMMENTS" => JdbcMetadataEntry::Comments,
+            "RAWTYPES" => JdbcMetadataEntry::Rawtypes,
+            other => {
+                JdbcMetadataEntry::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for JdbcMetadataEntry {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(JdbcMetadataEntry::from(s))
+    }
+}
+impl JdbcMetadataEntry {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            JdbcMetadataEntry::Comments => "COMMENTS",
+            JdbcMetadataEntry::Rawtypes => "RAWTYPES",
+            JdbcMetadataEntry::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["COMMENTS", "RAWTYPES"]
+    }
+}
+impl AsRef<str> for JdbcMetadataEntry {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -22296,6 +23897,12 @@ pub struct UpdateCsvClassifierRequest {
     /// <p>Enables the processing of files that contain only one column.</p>
     #[doc(hidden)]
     pub allow_single_column: std::option::Option<bool>,
+    /// <p>Specifies the configuration of custom datatypes.</p>
+    #[doc(hidden)]
+    pub custom_datatype_configured: std::option::Option<bool>,
+    /// <p>Specifies a list of supported custom datatypes.</p>
+    #[doc(hidden)]
+    pub custom_datatypes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateCsvClassifierRequest {
     /// <p>The name of the classifier.</p>
@@ -22326,6 +23933,14 @@ impl UpdateCsvClassifierRequest {
     pub fn allow_single_column(&self) -> std::option::Option<bool> {
         self.allow_single_column
     }
+    /// <p>Specifies the configuration of custom datatypes.</p>
+    pub fn custom_datatype_configured(&self) -> std::option::Option<bool> {
+        self.custom_datatype_configured
+    }
+    /// <p>Specifies a list of supported custom datatypes.</p>
+    pub fn custom_datatypes(&self) -> std::option::Option<&[std::string::String]> {
+        self.custom_datatypes.as_deref()
+    }
 }
 /// See [`UpdateCsvClassifierRequest`](crate::model::UpdateCsvClassifierRequest).
 pub mod update_csv_classifier_request {
@@ -22340,6 +23955,8 @@ pub mod update_csv_classifier_request {
         pub(crate) header: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) disable_value_trimming: std::option::Option<bool>,
         pub(crate) allow_single_column: std::option::Option<bool>,
+        pub(crate) custom_datatype_configured: std::option::Option<bool>,
+        pub(crate) custom_datatypes: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the classifier.</p>
@@ -22424,6 +24041,35 @@ pub mod update_csv_classifier_request {
             self.allow_single_column = input;
             self
         }
+        /// <p>Specifies the configuration of custom datatypes.</p>
+        pub fn custom_datatype_configured(mut self, input: bool) -> Self {
+            self.custom_datatype_configured = Some(input);
+            self
+        }
+        /// <p>Specifies the configuration of custom datatypes.</p>
+        pub fn set_custom_datatype_configured(mut self, input: std::option::Option<bool>) -> Self {
+            self.custom_datatype_configured = input;
+            self
+        }
+        /// Appends an item to `custom_datatypes`.
+        ///
+        /// To override the contents of this collection use [`set_custom_datatypes`](Self::set_custom_datatypes).
+        ///
+        /// <p>Specifies a list of supported custom datatypes.</p>
+        pub fn custom_datatypes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.custom_datatypes.unwrap_or_default();
+            v.push(input.into());
+            self.custom_datatypes = Some(v);
+            self
+        }
+        /// <p>Specifies a list of supported custom datatypes.</p>
+        pub fn set_custom_datatypes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.custom_datatypes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateCsvClassifierRequest`](crate::model::UpdateCsvClassifierRequest).
         pub fn build(self) -> crate::model::UpdateCsvClassifierRequest {
             crate::model::UpdateCsvClassifierRequest {
@@ -22434,6 +24080,8 @@ pub mod update_csv_classifier_request {
                 header: self.header,
                 disable_value_trimming: self.disable_value_trimming,
                 allow_single_column: self.allow_single_column,
+                custom_datatype_configured: self.custom_datatype_configured,
+                custom_datatypes: self.custom_datatypes,
             }
         }
     }
@@ -22812,6 +24460,294 @@ impl UpdateGrokClassifierRequest {
     /// Creates a new builder-style object to manufacture [`UpdateGrokClassifierRequest`](crate::model::UpdateGrokClassifierRequest).
     pub fn builder() -> crate::model::update_grok_classifier_request::Builder {
         crate::model::update_grok_classifier_request::Builder::default()
+    }
+}
+
+/// <p>Additional run options you can specify for an evaluation run.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DataQualityEvaluationRunAdditionalRunOptions {
+    /// <p>Whether or not to enable CloudWatch metrics.</p>
+    #[doc(hidden)]
+    pub cloud_watch_metrics_enabled: std::option::Option<bool>,
+    /// <p>Prefix for Amazon S3 to store results.</p>
+    #[doc(hidden)]
+    pub results_s3_prefix: std::option::Option<std::string::String>,
+}
+impl DataQualityEvaluationRunAdditionalRunOptions {
+    /// <p>Whether or not to enable CloudWatch metrics.</p>
+    pub fn cloud_watch_metrics_enabled(&self) -> std::option::Option<bool> {
+        self.cloud_watch_metrics_enabled
+    }
+    /// <p>Prefix for Amazon S3 to store results.</p>
+    pub fn results_s3_prefix(&self) -> std::option::Option<&str> {
+        self.results_s3_prefix.as_deref()
+    }
+}
+/// See [`DataQualityEvaluationRunAdditionalRunOptions`](crate::model::DataQualityEvaluationRunAdditionalRunOptions).
+pub mod data_quality_evaluation_run_additional_run_options {
+
+    /// A builder for [`DataQualityEvaluationRunAdditionalRunOptions`](crate::model::DataQualityEvaluationRunAdditionalRunOptions).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cloud_watch_metrics_enabled: std::option::Option<bool>,
+        pub(crate) results_s3_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Whether or not to enable CloudWatch metrics.</p>
+        pub fn cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
+            self.cloud_watch_metrics_enabled = Some(input);
+            self
+        }
+        /// <p>Whether or not to enable CloudWatch metrics.</p>
+        pub fn set_cloud_watch_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.cloud_watch_metrics_enabled = input;
+            self
+        }
+        /// <p>Prefix for Amazon S3 to store results.</p>
+        pub fn results_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.results_s3_prefix = Some(input.into());
+            self
+        }
+        /// <p>Prefix for Amazon S3 to store results.</p>
+        pub fn set_results_s3_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.results_s3_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataQualityEvaluationRunAdditionalRunOptions`](crate::model::DataQualityEvaluationRunAdditionalRunOptions).
+        pub fn build(self) -> crate::model::DataQualityEvaluationRunAdditionalRunOptions {
+            crate::model::DataQualityEvaluationRunAdditionalRunOptions {
+                cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled,
+                results_s3_prefix: self.results_s3_prefix,
+            }
+        }
+    }
+}
+impl DataQualityEvaluationRunAdditionalRunOptions {
+    /// Creates a new builder-style object to manufacture [`DataQualityEvaluationRunAdditionalRunOptions`](crate::model::DataQualityEvaluationRunAdditionalRunOptions).
+    pub fn builder() -> crate::model::data_quality_evaluation_run_additional_run_options::Builder {
+        crate::model::data_quality_evaluation_run_additional_run_options::Builder::default()
+    }
+}
+
+/// <p>A data source (an Glue table) for which you want data quality results.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DataSource {
+    /// <p>An Glue table.</p>
+    #[doc(hidden)]
+    pub glue_table: std::option::Option<crate::model::GlueTable>,
+}
+impl DataSource {
+    /// <p>An Glue table.</p>
+    pub fn glue_table(&self) -> std::option::Option<&crate::model::GlueTable> {
+        self.glue_table.as_ref()
+    }
+}
+/// See [`DataSource`](crate::model::DataSource).
+pub mod data_source {
+
+    /// A builder for [`DataSource`](crate::model::DataSource).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) glue_table: std::option::Option<crate::model::GlueTable>,
+    }
+    impl Builder {
+        /// <p>An Glue table.</p>
+        pub fn glue_table(mut self, input: crate::model::GlueTable) -> Self {
+            self.glue_table = Some(input);
+            self
+        }
+        /// <p>An Glue table.</p>
+        pub fn set_glue_table(
+            mut self,
+            input: std::option::Option<crate::model::GlueTable>,
+        ) -> Self {
+            self.glue_table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSource`](crate::model::DataSource).
+        pub fn build(self) -> crate::model::DataSource {
+            crate::model::DataSource {
+                glue_table: self.glue_table,
+            }
+        }
+    }
+}
+impl DataSource {
+    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
+    pub fn builder() -> crate::model::data_source::Builder {
+        crate::model::data_source::Builder::default()
+    }
+}
+
+/// <p>The database and table in the Glue Data Catalog that is used for input or output data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GlueTable {
+    /// <p>A database name in the Glue Data Catalog.</p>
+    #[doc(hidden)]
+    pub database_name: std::option::Option<std::string::String>,
+    /// <p>A table name in the Glue Data Catalog.</p>
+    #[doc(hidden)]
+    pub table_name: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the Glue Data Catalog.</p>
+    #[doc(hidden)]
+    pub catalog_id: std::option::Option<std::string::String>,
+    /// <p>The name of the connection to the Glue Data Catalog.</p>
+    #[doc(hidden)]
+    pub connection_name: std::option::Option<std::string::String>,
+    /// <p>Additional options for the table. Currently there are two keys supported:</p>
+    /// <ul>
+    /// <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li>
+    /// <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub additional_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GlueTable {
+    /// <p>A database name in the Glue Data Catalog.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>A table name in the Glue Data Catalog.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A unique identifier for the Glue Data Catalog.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the connection to the Glue Data Catalog.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>Additional options for the table. Currently there are two keys supported:</p>
+    /// <ul>
+    /// <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li>
+    /// <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li>
+    /// </ul>
+    pub fn additional_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_options.as_ref()
+    }
+}
+/// See [`GlueTable`](crate::model::GlueTable).
+pub mod glue_table {
+
+    /// A builder for [`GlueTable`](crate::model::GlueTable).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) catalog_id: std::option::Option<std::string::String>,
+        pub(crate) connection_name: std::option::Option<std::string::String>,
+        pub(crate) additional_options: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>A database name in the Glue Data Catalog.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>A database name in the Glue Data Catalog.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        /// <p>A table name in the Glue Data Catalog.</p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
+            self
+        }
+        /// <p>A table name in the Glue Data Catalog.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
+            self
+        }
+        /// <p>A unique identifier for the Glue Data Catalog.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the Glue Data Catalog.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_id = input;
+            self
+        }
+        /// <p>The name of the connection to the Glue Data Catalog.</p>
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the connection to the Glue Data Catalog.</p>
+        pub fn set_connection_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_name = input;
+            self
+        }
+        /// Adds a key-value pair to `additional_options`.
+        ///
+        /// To override the contents of this collection use [`set_additional_options`](Self::set_additional_options).
+        ///
+        /// <p>Additional options for the table. Currently there are two keys supported:</p>
+        /// <ul>
+        /// <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li>
+        /// <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li>
+        /// </ul>
+        pub fn additional_options(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.additional_options.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.additional_options = Some(hash_map);
+            self
+        }
+        /// <p>Additional options for the table. Currently there are two keys supported:</p>
+        /// <ul>
+        /// <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li>
+        /// <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li>
+        /// </ul>
+        pub fn set_additional_options(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.additional_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GlueTable`](crate::model::GlueTable).
+        pub fn build(self) -> crate::model::GlueTable {
+            crate::model::GlueTable {
+                database_name: self.database_name,
+                table_name: self.table_name,
+                catalog_id: self.catalog_id,
+                connection_name: self.connection_name,
+                additional_options: self.additional_options,
+            }
+        }
+    }
+}
+impl GlueTable {
+    /// Creates a new builder-style object to manufacture [`GlueTable`](crate::model::GlueTable).
+    pub fn builder() -> crate::model::glue_table::Builder {
+        crate::model::glue_table::Builder::default()
     }
 }
 
@@ -27073,6 +29009,1231 @@ impl TransformStatusType {
 impl AsRef<str> for TransformStatusType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Describes a data quality ruleset returned by <code>GetDataQualityRuleset</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DataQualityRulesetListDetails {
+    /// <p>The name of the data quality ruleset.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A description of the data quality ruleset.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The date and time the data quality ruleset was created.</p>
+    #[doc(hidden)]
+    pub created_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time the data quality ruleset was last modified.</p>
+    #[doc(hidden)]
+    pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>An object representing an Glue table.</p>
+    #[doc(hidden)]
+    pub target_table: std::option::Option<crate::model::DataQualityTargetTable>,
+    /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
+    #[doc(hidden)]
+    pub recommendation_run_id: std::option::Option<std::string::String>,
+    /// <p>The number of rules in the ruleset.</p>
+    #[doc(hidden)]
+    pub rule_count: std::option::Option<i32>,
+}
+impl DataQualityRulesetListDetails {
+    /// <p>The name of the data quality ruleset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the data quality ruleset.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time the data quality ruleset was created.</p>
+    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_on.as_ref()
+    }
+    /// <p>The date and time the data quality ruleset was last modified.</p>
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_on.as_ref()
+    }
+    /// <p>An object representing an Glue table.</p>
+    pub fn target_table(&self) -> std::option::Option<&crate::model::DataQualityTargetTable> {
+        self.target_table.as_ref()
+    }
+    /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
+    pub fn recommendation_run_id(&self) -> std::option::Option<&str> {
+        self.recommendation_run_id.as_deref()
+    }
+    /// <p>The number of rules in the ruleset.</p>
+    pub fn rule_count(&self) -> std::option::Option<i32> {
+        self.rule_count
+    }
+}
+/// See [`DataQualityRulesetListDetails`](crate::model::DataQualityRulesetListDetails).
+pub mod data_quality_ruleset_list_details {
+
+    /// A builder for [`DataQualityRulesetListDetails`](crate::model::DataQualityRulesetListDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) created_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) target_table: std::option::Option<crate::model::DataQualityTargetTable>,
+        pub(crate) recommendation_run_id: std::option::Option<std::string::String>,
+        pub(crate) rule_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the data quality ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data quality ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A description of the data quality ruleset.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the data quality ruleset.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The date and time the data quality ruleset was created.</p>
+        pub fn created_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_on = Some(input);
+            self
+        }
+        /// <p>The date and time the data quality ruleset was created.</p>
+        pub fn set_created_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_on = input;
+            self
+        }
+        /// <p>The date and time the data quality ruleset was last modified.</p>
+        pub fn last_modified_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_on = Some(input);
+            self
+        }
+        /// <p>The date and time the data quality ruleset was last modified.</p>
+        pub fn set_last_modified_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_on = input;
+            self
+        }
+        /// <p>An object representing an Glue table.</p>
+        pub fn target_table(mut self, input: crate::model::DataQualityTargetTable) -> Self {
+            self.target_table = Some(input);
+            self
+        }
+        /// <p>An object representing an Glue table.</p>
+        pub fn set_target_table(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityTargetTable>,
+        ) -> Self {
+            self.target_table = input;
+            self
+        }
+        /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
+        pub fn recommendation_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recommendation_run_id = Some(input.into());
+            self
+        }
+        /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
+        pub fn set_recommendation_run_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recommendation_run_id = input;
+            self
+        }
+        /// <p>The number of rules in the ruleset.</p>
+        pub fn rule_count(mut self, input: i32) -> Self {
+            self.rule_count = Some(input);
+            self
+        }
+        /// <p>The number of rules in the ruleset.</p>
+        pub fn set_rule_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.rule_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataQualityRulesetListDetails`](crate::model::DataQualityRulesetListDetails).
+        pub fn build(self) -> crate::model::DataQualityRulesetListDetails {
+            crate::model::DataQualityRulesetListDetails {
+                name: self.name,
+                description: self.description,
+                created_on: self.created_on,
+                last_modified_on: self.last_modified_on,
+                target_table: self.target_table,
+                recommendation_run_id: self.recommendation_run_id,
+                rule_count: self.rule_count,
+            }
+        }
+    }
+}
+impl DataQualityRulesetListDetails {
+    /// Creates a new builder-style object to manufacture [`DataQualityRulesetListDetails`](crate::model::DataQualityRulesetListDetails).
+    pub fn builder() -> crate::model::data_quality_ruleset_list_details::Builder {
+        crate::model::data_quality_ruleset_list_details::Builder::default()
+    }
+}
+
+/// <p>An object representing an Glue table.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DataQualityTargetTable {
+    /// <p>The name of the Glue table.</p>
+    #[doc(hidden)]
+    pub table_name: std::option::Option<std::string::String>,
+    /// <p>The name of the database where the Glue table exists.</p>
+    #[doc(hidden)]
+    pub database_name: std::option::Option<std::string::String>,
+}
+impl DataQualityTargetTable {
+    /// <p>The name of the Glue table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The name of the database where the Glue table exists.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+}
+/// See [`DataQualityTargetTable`](crate::model::DataQualityTargetTable).
+pub mod data_quality_target_table {
+
+    /// A builder for [`DataQualityTargetTable`](crate::model::DataQualityTargetTable).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Glue table.</p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Glue table.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
+            self
+        }
+        /// <p>The name of the database where the Glue table exists.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the database where the Glue table exists.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataQualityTargetTable`](crate::model::DataQualityTargetTable).
+        pub fn build(self) -> crate::model::DataQualityTargetTable {
+            crate::model::DataQualityTargetTable {
+                table_name: self.table_name,
+                database_name: self.database_name,
+            }
+        }
+    }
+}
+impl DataQualityTargetTable {
+    /// Creates a new builder-style object to manufacture [`DataQualityTargetTable`](crate::model::DataQualityTargetTable).
+    pub fn builder() -> crate::model::data_quality_target_table::Builder {
+        crate::model::data_quality_target_table::Builder::default()
+    }
+}
+
+/// <p>The criteria used to filter data quality rulesets.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DataQualityRulesetFilterCriteria {
+    /// <p>The name of the ruleset filter criteria.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the ruleset filter criteria.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Filter on rulesets created before this date.</p>
+    #[doc(hidden)]
+    pub created_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Filter on rulesets created after this date.</p>
+    #[doc(hidden)]
+    pub created_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Filter on rulesets last modified before this date.</p>
+    #[doc(hidden)]
+    pub last_modified_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Filter on rulesets last modified after this date.</p>
+    #[doc(hidden)]
+    pub last_modified_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The name and database name of the target table.</p>
+    #[doc(hidden)]
+    pub target_table: std::option::Option<crate::model::DataQualityTargetTable>,
+}
+impl DataQualityRulesetFilterCriteria {
+    /// <p>The name of the ruleset filter criteria.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the ruleset filter criteria.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Filter on rulesets created before this date.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_before.as_ref()
+    }
+    /// <p>Filter on rulesets created after this date.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_after.as_ref()
+    }
+    /// <p>Filter on rulesets last modified before this date.</p>
+    pub fn last_modified_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_before.as_ref()
+    }
+    /// <p>Filter on rulesets last modified after this date.</p>
+    pub fn last_modified_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_after.as_ref()
+    }
+    /// <p>The name and database name of the target table.</p>
+    pub fn target_table(&self) -> std::option::Option<&crate::model::DataQualityTargetTable> {
+        self.target_table.as_ref()
+    }
+}
+/// See [`DataQualityRulesetFilterCriteria`](crate::model::DataQualityRulesetFilterCriteria).
+pub mod data_quality_ruleset_filter_criteria {
+
+    /// A builder for [`DataQualityRulesetFilterCriteria`](crate::model::DataQualityRulesetFilterCriteria).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) created_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) target_table: std::option::Option<crate::model::DataQualityTargetTable>,
+    }
+    impl Builder {
+        /// <p>The name of the ruleset filter criteria.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the ruleset filter criteria.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the ruleset filter criteria.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the ruleset filter criteria.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Filter on rulesets created before this date.</p>
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_before = Some(input);
+            self
+        }
+        /// <p>Filter on rulesets created before this date.</p>
+        pub fn set_created_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_before = input;
+            self
+        }
+        /// <p>Filter on rulesets created after this date.</p>
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_after = Some(input);
+            self
+        }
+        /// <p>Filter on rulesets created after this date.</p>
+        pub fn set_created_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_after = input;
+            self
+        }
+        /// <p>Filter on rulesets last modified before this date.</p>
+        pub fn last_modified_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_before = Some(input);
+            self
+        }
+        /// <p>Filter on rulesets last modified before this date.</p>
+        pub fn set_last_modified_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_before = input;
+            self
+        }
+        /// <p>Filter on rulesets last modified after this date.</p>
+        pub fn last_modified_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_after = Some(input);
+            self
+        }
+        /// <p>Filter on rulesets last modified after this date.</p>
+        pub fn set_last_modified_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_after = input;
+            self
+        }
+        /// <p>The name and database name of the target table.</p>
+        pub fn target_table(mut self, input: crate::model::DataQualityTargetTable) -> Self {
+            self.target_table = Some(input);
+            self
+        }
+        /// <p>The name and database name of the target table.</p>
+        pub fn set_target_table(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityTargetTable>,
+        ) -> Self {
+            self.target_table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataQualityRulesetFilterCriteria`](crate::model::DataQualityRulesetFilterCriteria).
+        pub fn build(self) -> crate::model::DataQualityRulesetFilterCriteria {
+            crate::model::DataQualityRulesetFilterCriteria {
+                name: self.name,
+                description: self.description,
+                created_before: self.created_before,
+                created_after: self.created_after,
+                last_modified_before: self.last_modified_before,
+                last_modified_after: self.last_modified_after,
+                target_table: self.target_table,
+            }
+        }
+    }
+}
+impl DataQualityRulesetFilterCriteria {
+    /// Creates a new builder-style object to manufacture [`DataQualityRulesetFilterCriteria`](crate::model::DataQualityRulesetFilterCriteria).
+    pub fn builder() -> crate::model::data_quality_ruleset_filter_criteria::Builder {
+        crate::model::data_quality_ruleset_filter_criteria::Builder::default()
+    }
+}
+
+/// <p>Describes the result of a data quality ruleset evaluation run.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DataQualityRulesetEvaluationRunDescription {
+    /// <p>The unique run identifier associated with this run.</p>
+    #[doc(hidden)]
+    pub run_id: std::option::Option<std::string::String>,
+    /// <p>The status for this run.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::TaskStatusType>,
+    /// <p>The date and time when the run started.</p>
+    #[doc(hidden)]
+    pub started_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The data source (an Glue table) associated with the run.</p>
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::DataSource>,
+}
+impl DataQualityRulesetEvaluationRunDescription {
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+    /// <p>The status for this run.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TaskStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time when the run started.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_on.as_ref()
+    }
+    /// <p>The data source (an Glue table) associated with the run.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+}
+/// See [`DataQualityRulesetEvaluationRunDescription`](crate::model::DataQualityRulesetEvaluationRunDescription).
+pub mod data_quality_ruleset_evaluation_run_description {
+
+    /// A builder for [`DataQualityRulesetEvaluationRunDescription`](crate::model::DataQualityRulesetEvaluationRunDescription).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) run_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::TaskStatusType>,
+        pub(crate) started_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+    }
+    impl Builder {
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.run_id = Some(input.into());
+            self
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.run_id = input;
+            self
+        }
+        /// <p>The status for this run.</p>
+        pub fn status(mut self, input: crate::model::TaskStatusType) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status for this run.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TaskStatusType>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The date and time when the run started.</p>
+        pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_on = Some(input);
+            self
+        }
+        /// <p>The date and time when the run started.</p>
+        pub fn set_started_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_on = input;
+            self
+        }
+        /// <p>The data source (an Glue table) associated with the run.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>The data source (an Glue table) associated with the run.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataQualityRulesetEvaluationRunDescription`](crate::model::DataQualityRulesetEvaluationRunDescription).
+        pub fn build(self) -> crate::model::DataQualityRulesetEvaluationRunDescription {
+            crate::model::DataQualityRulesetEvaluationRunDescription {
+                run_id: self.run_id,
+                status: self.status,
+                started_on: self.started_on,
+                data_source: self.data_source,
+            }
+        }
+    }
+}
+impl DataQualityRulesetEvaluationRunDescription {
+    /// Creates a new builder-style object to manufacture [`DataQualityRulesetEvaluationRunDescription`](crate::model::DataQualityRulesetEvaluationRunDescription).
+    pub fn builder() -> crate::model::data_quality_ruleset_evaluation_run_description::Builder {
+        crate::model::data_quality_ruleset_evaluation_run_description::Builder::default()
+    }
+}
+
+/// When writing a match expression against `TaskStatusType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let taskstatustype = unimplemented!();
+/// match taskstatustype {
+///     TaskStatusType::Failed => { /* ... */ },
+///     TaskStatusType::Running => { /* ... */ },
+///     TaskStatusType::Starting => { /* ... */ },
+///     TaskStatusType::Stopped => { /* ... */ },
+///     TaskStatusType::Stopping => { /* ... */ },
+///     TaskStatusType::Succeeded => { /* ... */ },
+///     TaskStatusType::Timeout => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `taskstatustype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TaskStatusType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TaskStatusType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TaskStatusType::NewFeature` is defined.
+/// Specifically, when `taskstatustype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TaskStatusType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TaskStatusType {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    #[allow(missing_docs)] // documentation missing in model
+    Starting,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopping,
+    #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    #[allow(missing_docs)] // documentation missing in model
+    Timeout,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for TaskStatusType {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => TaskStatusType::Failed,
+            "RUNNING" => TaskStatusType::Running,
+            "STARTING" => TaskStatusType::Starting,
+            "STOPPED" => TaskStatusType::Stopped,
+            "STOPPING" => TaskStatusType::Stopping,
+            "SUCCEEDED" => TaskStatusType::Succeeded,
+            "TIMEOUT" => TaskStatusType::Timeout,
+            other => TaskStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for TaskStatusType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TaskStatusType::from(s))
+    }
+}
+impl TaskStatusType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TaskStatusType::Failed => "FAILED",
+            TaskStatusType::Running => "RUNNING",
+            TaskStatusType::Starting => "STARTING",
+            TaskStatusType::Stopped => "STOPPED",
+            TaskStatusType::Stopping => "STOPPING",
+            TaskStatusType::Succeeded => "SUCCEEDED",
+            TaskStatusType::Timeout => "TIMEOUT",
+            TaskStatusType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "FAILED",
+            "RUNNING",
+            "STARTING",
+            "STOPPED",
+            "STOPPING",
+            "SUCCEEDED",
+            "TIMEOUT",
+        ]
+    }
+}
+impl AsRef<str> for TaskStatusType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The filter criteria.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DataQualityRulesetEvaluationRunFilter {
+    /// <p>Filter based on a data source (an Glue table) associated with the run.</p>
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::DataSource>,
+    /// <p>Filter results by runs that started before this time.</p>
+    #[doc(hidden)]
+    pub started_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Filter results by runs that started after this time.</p>
+    #[doc(hidden)]
+    pub started_after: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DataQualityRulesetEvaluationRunFilter {
+    /// <p>Filter based on a data source (an Glue table) associated with the run.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>Filter results by runs that started before this time.</p>
+    pub fn started_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_before.as_ref()
+    }
+    /// <p>Filter results by runs that started after this time.</p>
+    pub fn started_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_after.as_ref()
+    }
+}
+/// See [`DataQualityRulesetEvaluationRunFilter`](crate::model::DataQualityRulesetEvaluationRunFilter).
+pub mod data_quality_ruleset_evaluation_run_filter {
+
+    /// A builder for [`DataQualityRulesetEvaluationRunFilter`](crate::model::DataQualityRulesetEvaluationRunFilter).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+        pub(crate) started_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_after: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>Filter based on a data source (an Glue table) associated with the run.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>Filter based on a data source (an Glue table) associated with the run.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// <p>Filter results by runs that started before this time.</p>
+        pub fn started_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_before = Some(input);
+            self
+        }
+        /// <p>Filter results by runs that started before this time.</p>
+        pub fn set_started_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_before = input;
+            self
+        }
+        /// <p>Filter results by runs that started after this time.</p>
+        pub fn started_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_after = Some(input);
+            self
+        }
+        /// <p>Filter results by runs that started after this time.</p>
+        pub fn set_started_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_after = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataQualityRulesetEvaluationRunFilter`](crate::model::DataQualityRulesetEvaluationRunFilter).
+        pub fn build(self) -> crate::model::DataQualityRulesetEvaluationRunFilter {
+            crate::model::DataQualityRulesetEvaluationRunFilter {
+                data_source: self.data_source,
+                started_before: self.started_before,
+                started_after: self.started_after,
+            }
+        }
+    }
+}
+impl DataQualityRulesetEvaluationRunFilter {
+    /// Creates a new builder-style object to manufacture [`DataQualityRulesetEvaluationRunFilter`](crate::model::DataQualityRulesetEvaluationRunFilter).
+    pub fn builder() -> crate::model::data_quality_ruleset_evaluation_run_filter::Builder {
+        crate::model::data_quality_ruleset_evaluation_run_filter::Builder::default()
+    }
+}
+
+/// <p>Describes the result of a data quality rule recommendation run.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DataQualityRuleRecommendationRunDescription {
+    /// <p>The unique run identifier associated with this run.</p>
+    #[doc(hidden)]
+    pub run_id: std::option::Option<std::string::String>,
+    /// <p>The status for this run.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::TaskStatusType>,
+    /// <p>The date and time when this run started.</p>
+    #[doc(hidden)]
+    pub started_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The data source (Glue table) associated with the recommendation run.</p>
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::DataSource>,
+}
+impl DataQualityRuleRecommendationRunDescription {
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+    /// <p>The status for this run.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TaskStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time when this run started.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_on.as_ref()
+    }
+    /// <p>The data source (Glue table) associated with the recommendation run.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+}
+/// See [`DataQualityRuleRecommendationRunDescription`](crate::model::DataQualityRuleRecommendationRunDescription).
+pub mod data_quality_rule_recommendation_run_description {
+
+    /// A builder for [`DataQualityRuleRecommendationRunDescription`](crate::model::DataQualityRuleRecommendationRunDescription).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) run_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::TaskStatusType>,
+        pub(crate) started_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+    }
+    impl Builder {
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.run_id = Some(input.into());
+            self
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.run_id = input;
+            self
+        }
+        /// <p>The status for this run.</p>
+        pub fn status(mut self, input: crate::model::TaskStatusType) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status for this run.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TaskStatusType>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The date and time when this run started.</p>
+        pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_on = Some(input);
+            self
+        }
+        /// <p>The date and time when this run started.</p>
+        pub fn set_started_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_on = input;
+            self
+        }
+        /// <p>The data source (Glue table) associated with the recommendation run.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>The data source (Glue table) associated with the recommendation run.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataQualityRuleRecommendationRunDescription`](crate::model::DataQualityRuleRecommendationRunDescription).
+        pub fn build(self) -> crate::model::DataQualityRuleRecommendationRunDescription {
+            crate::model::DataQualityRuleRecommendationRunDescription {
+                run_id: self.run_id,
+                status: self.status,
+                started_on: self.started_on,
+                data_source: self.data_source,
+            }
+        }
+    }
+}
+impl DataQualityRuleRecommendationRunDescription {
+    /// Creates a new builder-style object to manufacture [`DataQualityRuleRecommendationRunDescription`](crate::model::DataQualityRuleRecommendationRunDescription).
+    pub fn builder() -> crate::model::data_quality_rule_recommendation_run_description::Builder {
+        crate::model::data_quality_rule_recommendation_run_description::Builder::default()
+    }
+}
+
+/// <p>A filter for listing data quality recommendation runs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DataQualityRuleRecommendationRunFilter {
+    /// <p>Filter based on a specified data source (Glue table).</p>
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::DataSource>,
+    /// <p>Filter based on time for results started before provided time.</p>
+    #[doc(hidden)]
+    pub started_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Filter based on time for results started after provided time.</p>
+    #[doc(hidden)]
+    pub started_after: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DataQualityRuleRecommendationRunFilter {
+    /// <p>Filter based on a specified data source (Glue table).</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>Filter based on time for results started before provided time.</p>
+    pub fn started_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_before.as_ref()
+    }
+    /// <p>Filter based on time for results started after provided time.</p>
+    pub fn started_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_after.as_ref()
+    }
+}
+/// See [`DataQualityRuleRecommendationRunFilter`](crate::model::DataQualityRuleRecommendationRunFilter).
+pub mod data_quality_rule_recommendation_run_filter {
+
+    /// A builder for [`DataQualityRuleRecommendationRunFilter`](crate::model::DataQualityRuleRecommendationRunFilter).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+        pub(crate) started_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_after: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>Filter based on a specified data source (Glue table).</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>Filter based on a specified data source (Glue table).</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// <p>Filter based on time for results started before provided time.</p>
+        pub fn started_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_before = Some(input);
+            self
+        }
+        /// <p>Filter based on time for results started before provided time.</p>
+        pub fn set_started_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_before = input;
+            self
+        }
+        /// <p>Filter based on time for results started after provided time.</p>
+        pub fn started_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_after = Some(input);
+            self
+        }
+        /// <p>Filter based on time for results started after provided time.</p>
+        pub fn set_started_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_after = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataQualityRuleRecommendationRunFilter`](crate::model::DataQualityRuleRecommendationRunFilter).
+        pub fn build(self) -> crate::model::DataQualityRuleRecommendationRunFilter {
+            crate::model::DataQualityRuleRecommendationRunFilter {
+                data_source: self.data_source,
+                started_before: self.started_before,
+                started_after: self.started_after,
+            }
+        }
+    }
+}
+impl DataQualityRuleRecommendationRunFilter {
+    /// Creates a new builder-style object to manufacture [`DataQualityRuleRecommendationRunFilter`](crate::model::DataQualityRuleRecommendationRunFilter).
+    pub fn builder() -> crate::model::data_quality_rule_recommendation_run_filter::Builder {
+        crate::model::data_quality_rule_recommendation_run_filter::Builder::default()
+    }
+}
+
+/// <p>Describes a data quality result.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DataQualityResultDescription {
+    /// <p>The unique result ID for this data quality result.</p>
+    #[doc(hidden)]
+    pub result_id: std::option::Option<std::string::String>,
+    /// <p>The table name associated with the data quality result.</p>
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::DataSource>,
+    /// <p>The job name associated with the data quality result.</p>
+    #[doc(hidden)]
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>The job run ID associated with the data quality result.</p>
+    #[doc(hidden)]
+    pub job_run_id: std::option::Option<std::string::String>,
+    /// <p>The time that the run started for this data quality result.</p>
+    #[doc(hidden)]
+    pub started_on: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DataQualityResultDescription {
+    /// <p>The unique result ID for this data quality result.</p>
+    pub fn result_id(&self) -> std::option::Option<&str> {
+        self.result_id.as_deref()
+    }
+    /// <p>The table name associated with the data quality result.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>The job name associated with the data quality result.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The job run ID associated with the data quality result.</p>
+    pub fn job_run_id(&self) -> std::option::Option<&str> {
+        self.job_run_id.as_deref()
+    }
+    /// <p>The time that the run started for this data quality result.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_on.as_ref()
+    }
+}
+/// See [`DataQualityResultDescription`](crate::model::DataQualityResultDescription).
+pub mod data_quality_result_description {
+
+    /// A builder for [`DataQualityResultDescription`](crate::model::DataQualityResultDescription).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) result_id: std::option::Option<std::string::String>,
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) job_run_id: std::option::Option<std::string::String>,
+        pub(crate) started_on: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The unique result ID for this data quality result.</p>
+        pub fn result_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.result_id = Some(input.into());
+            self
+        }
+        /// <p>The unique result ID for this data quality result.</p>
+        pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.result_id = input;
+            self
+        }
+        /// <p>The table name associated with the data quality result.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>The table name associated with the data quality result.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// <p>The job name associated with the data quality result.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The job name associated with the data quality result.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>The job run ID associated with the data quality result.</p>
+        pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_run_id = Some(input.into());
+            self
+        }
+        /// <p>The job run ID associated with the data quality result.</p>
+        pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_run_id = input;
+            self
+        }
+        /// <p>The time that the run started for this data quality result.</p>
+        pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_on = Some(input);
+            self
+        }
+        /// <p>The time that the run started for this data quality result.</p>
+        pub fn set_started_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_on = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataQualityResultDescription`](crate::model::DataQualityResultDescription).
+        pub fn build(self) -> crate::model::DataQualityResultDescription {
+            crate::model::DataQualityResultDescription {
+                result_id: self.result_id,
+                data_source: self.data_source,
+                job_name: self.job_name,
+                job_run_id: self.job_run_id,
+                started_on: self.started_on,
+            }
+        }
+    }
+}
+impl DataQualityResultDescription {
+    /// Creates a new builder-style object to manufacture [`DataQualityResultDescription`](crate::model::DataQualityResultDescription).
+    pub fn builder() -> crate::model::data_quality_result_description::Builder {
+        crate::model::data_quality_result_description::Builder::default()
+    }
+}
+
+/// <p>Criteria used to return data quality results.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DataQualityResultFilterCriteria {
+    /// <p>Filter results by the specified data source. For example, retrieving all results for an Glue table.</p>
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::DataSource>,
+    /// <p>Filter results by the specified job name.</p>
+    #[doc(hidden)]
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>Filter results by the specified job run ID.</p>
+    #[doc(hidden)]
+    pub job_run_id: std::option::Option<std::string::String>,
+    /// <p>Filter results by runs that started after this time.</p>
+    #[doc(hidden)]
+    pub started_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Filter results by runs that started before this time.</p>
+    #[doc(hidden)]
+    pub started_before: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DataQualityResultFilterCriteria {
+    /// <p>Filter results by the specified data source. For example, retrieving all results for an Glue table.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>Filter results by the specified job name.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Filter results by the specified job run ID.</p>
+    pub fn job_run_id(&self) -> std::option::Option<&str> {
+        self.job_run_id.as_deref()
+    }
+    /// <p>Filter results by runs that started after this time.</p>
+    pub fn started_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_after.as_ref()
+    }
+    /// <p>Filter results by runs that started before this time.</p>
+    pub fn started_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_before.as_ref()
+    }
+}
+/// See [`DataQualityResultFilterCriteria`](crate::model::DataQualityResultFilterCriteria).
+pub mod data_quality_result_filter_criteria {
+
+    /// A builder for [`DataQualityResultFilterCriteria`](crate::model::DataQualityResultFilterCriteria).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) job_run_id: std::option::Option<std::string::String>,
+        pub(crate) started_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_before: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>Filter results by the specified data source. For example, retrieving all results for an Glue table.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>Filter results by the specified data source. For example, retrieving all results for an Glue table.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// <p>Filter results by the specified job name.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>Filter results by the specified job name.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>Filter results by the specified job run ID.</p>
+        pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_run_id = Some(input.into());
+            self
+        }
+        /// <p>Filter results by the specified job run ID.</p>
+        pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_run_id = input;
+            self
+        }
+        /// <p>Filter results by runs that started after this time.</p>
+        pub fn started_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_after = Some(input);
+            self
+        }
+        /// <p>Filter results by runs that started after this time.</p>
+        pub fn set_started_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_after = input;
+            self
+        }
+        /// <p>Filter results by runs that started before this time.</p>
+        pub fn started_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_before = Some(input);
+            self
+        }
+        /// <p>Filter results by runs that started before this time.</p>
+        pub fn set_started_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_before = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataQualityResultFilterCriteria`](crate::model::DataQualityResultFilterCriteria).
+        pub fn build(self) -> crate::model::DataQualityResultFilterCriteria {
+            crate::model::DataQualityResultFilterCriteria {
+                data_source: self.data_source,
+                job_name: self.job_name,
+                job_run_id: self.job_run_id,
+                started_after: self.started_after,
+                started_before: self.started_before,
+            }
+        }
+    }
+}
+impl DataQualityResultFilterCriteria {
+    /// Creates a new builder-style object to manufacture [`DataQualityResultFilterCriteria`](crate::model::DataQualityResultFilterCriteria).
+    pub fn builder() -> crate::model::data_quality_result_filter_criteria::Builder {
+        crate::model::data_quality_result_filter_criteria::Builder::default()
     }
 }
 
@@ -34498,117 +37659,6 @@ impl ConfusionMatrix {
     }
 }
 
-/// <p>The database and table in the Glue Data Catalog that is used for input or output data.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlueTable {
-    /// <p>A database name in the Glue Data Catalog.</p>
-    #[doc(hidden)]
-    pub database_name: std::option::Option<std::string::String>,
-    /// <p>A table name in the Glue Data Catalog.</p>
-    #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the Glue Data Catalog.</p>
-    #[doc(hidden)]
-    pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the connection to the Glue Data Catalog.</p>
-    #[doc(hidden)]
-    pub connection_name: std::option::Option<std::string::String>,
-}
-impl GlueTable {
-    /// <p>A database name in the Glue Data Catalog.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
-        self.database_name.as_deref()
-    }
-    /// <p>A table name in the Glue Data Catalog.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
-        self.table_name.as_deref()
-    }
-    /// <p>A unique identifier for the Glue Data Catalog.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
-        self.catalog_id.as_deref()
-    }
-    /// <p>The name of the connection to the Glue Data Catalog.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
-        self.connection_name.as_deref()
-    }
-}
-/// See [`GlueTable`](crate::model::GlueTable).
-pub mod glue_table {
-
-    /// A builder for [`GlueTable`](crate::model::GlueTable).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) database_name: std::option::Option<std::string::String>,
-        pub(crate) table_name: std::option::Option<std::string::String>,
-        pub(crate) catalog_id: std::option::Option<std::string::String>,
-        pub(crate) connection_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A database name in the Glue Data Catalog.</p>
-        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.database_name = Some(input.into());
-            self
-        }
-        /// <p>A database name in the Glue Data Catalog.</p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
-        }
-        /// <p>A table name in the Glue Data Catalog.</p>
-        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(input.into());
-            self
-        }
-        /// <p>A table name in the Glue Data Catalog.</p>
-        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
-        }
-        /// <p>A unique identifier for the Glue Data Catalog.</p>
-        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.catalog_id = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier for the Glue Data Catalog.</p>
-        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog_id = input;
-            self
-        }
-        /// <p>The name of the connection to the Glue Data Catalog.</p>
-        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.connection_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the connection to the Glue Data Catalog.</p>
-        pub fn set_connection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GlueTable`](crate::model::GlueTable).
-        pub fn build(self) -> crate::model::GlueTable {
-            crate::model::GlueTable {
-                database_name: self.database_name,
-                table_name: self.table_name,
-                catalog_id: self.catalog_id,
-                connection_name: self.connection_name,
-            }
-        }
-    }
-}
-impl GlueTable {
-    /// Creates a new builder-style object to manufacture [`GlueTable`](crate::model::GlueTable).
-    pub fn builder() -> crate::model::glue_table::Builder {
-        crate::model::glue_table::Builder::default()
-    }
-}
-
 /// <p>The sampling parameters that are associated with the machine learning transform.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -35380,129 +38430,6 @@ impl AsRef<str> for TaskType {
     }
 }
 
-/// When writing a match expression against `TaskStatusType`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let taskstatustype = unimplemented!();
-/// match taskstatustype {
-///     TaskStatusType::Failed => { /* ... */ },
-///     TaskStatusType::Running => { /* ... */ },
-///     TaskStatusType::Starting => { /* ... */ },
-///     TaskStatusType::Stopped => { /* ... */ },
-///     TaskStatusType::Stopping => { /* ... */ },
-///     TaskStatusType::Succeeded => { /* ... */ },
-///     TaskStatusType::Timeout => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `taskstatustype` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `TaskStatusType::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `TaskStatusType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `TaskStatusType::NewFeature` is defined.
-/// Specifically, when `taskstatustype` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `TaskStatusType::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum TaskStatusType {
-    #[allow(missing_docs)] // documentation missing in model
-    Failed,
-    #[allow(missing_docs)] // documentation missing in model
-    Running,
-    #[allow(missing_docs)] // documentation missing in model
-    Starting,
-    #[allow(missing_docs)] // documentation missing in model
-    Stopped,
-    #[allow(missing_docs)] // documentation missing in model
-    Stopping,
-    #[allow(missing_docs)] // documentation missing in model
-    Succeeded,
-    #[allow(missing_docs)] // documentation missing in model
-    Timeout,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for TaskStatusType {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => TaskStatusType::Failed,
-            "RUNNING" => TaskStatusType::Running,
-            "STARTING" => TaskStatusType::Starting,
-            "STOPPED" => TaskStatusType::Stopped,
-            "STOPPING" => TaskStatusType::Stopping,
-            "SUCCEEDED" => TaskStatusType::Succeeded,
-            "TIMEOUT" => TaskStatusType::Timeout,
-            other => TaskStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for TaskStatusType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TaskStatusType::from(s))
-    }
-}
-impl TaskStatusType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TaskStatusType::Failed => "FAILED",
-            TaskStatusType::Running => "RUNNING",
-            TaskStatusType::Starting => "STARTING",
-            TaskStatusType::Stopped => "STOPPED",
-            TaskStatusType::Stopping => "STOPPING",
-            TaskStatusType::Succeeded => "SUCCEEDED",
-            TaskStatusType::Timeout => "TIMEOUT",
-            TaskStatusType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED",
-            "RUNNING",
-            "STARTING",
-            "STOPPED",
-            "STOPPING",
-            "SUCCEEDED",
-            "TIMEOUT",
-        ]
-    }
-}
-impl AsRef<str> for TaskStatusType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>The sorting criteria that are used to sort the list of task runs for the machine learning transform.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -35887,6 +38814,9 @@ pub struct Job {
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     #[doc(hidden)]
     pub execution_class: std::option::Option<crate::model::ExecutionClass>,
+    /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+    #[doc(hidden)]
+    pub source_control_details: std::option::Option<crate::model::SourceControlDetails>,
 }
 impl Job {
     /// <p>The name you assign to this job definition.</p>
@@ -36012,6 +38942,12 @@ impl Job {
     pub fn execution_class(&self) -> std::option::Option<&crate::model::ExecutionClass> {
         self.execution_class.as_ref()
     }
+    /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+    pub fn source_control_details(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceControlDetails> {
+        self.source_control_details.as_ref()
+    }
 }
 impl std::fmt::Debug for Job {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36041,6 +38977,7 @@ impl std::fmt::Debug for Job {
             &"*** Sensitive Data Redacted ***",
         );
         formatter.field("execution_class", &self.execution_class);
+        formatter.field("source_control_details", &self.source_control_details);
         formatter.finish()
     }
 }
@@ -36078,6 +39015,7 @@ pub mod job {
             std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
         >,
         pub(crate) execution_class: std::option::Option<crate::model::ExecutionClass>,
+        pub(crate) source_control_details: std::option::Option<crate::model::SourceControlDetails>,
     }
     impl Builder {
         /// <p>The name you assign to this job definition.</p>
@@ -36418,6 +39356,19 @@ pub mod job {
             self.execution_class = input;
             self
         }
+        /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+        pub fn source_control_details(mut self, input: crate::model::SourceControlDetails) -> Self {
+            self.source_control_details = Some(input);
+            self
+        }
+        /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+        pub fn set_source_control_details(
+            mut self,
+            input: std::option::Option<crate::model::SourceControlDetails>,
+        ) -> Self {
+            self.source_control_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Job`](crate::model::Job).
         pub fn build(self) -> crate::model::Job {
             crate::model::Job {
@@ -36443,6 +39394,7 @@ pub mod job {
                 glue_version: self.glue_version,
                 code_gen_configuration_nodes: self.code_gen_configuration_nodes,
                 execution_class: self.execution_class,
+                source_control_details: self.source_control_details,
             }
         }
     }
@@ -36474,6 +39426,7 @@ pub mod job {
                 &"*** Sensitive Data Redacted ***",
             );
             formatter.field("execution_class", &self.execution_class);
+            formatter.field("source_control_details", &self.source_control_details);
             formatter.finish()
         }
     }
@@ -36538,7 +39491,7 @@ pub struct DevEndpoint {
     /// <p>The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.</p>
     #[doc(hidden)]
     pub number_of_nodes: i32,
-    /// <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+    /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
@@ -36650,7 +39603,7 @@ impl DevEndpoint {
     pub fn number_of_nodes(&self) -> i32 {
         self.number_of_nodes
     }
-    /// <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+    /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -36925,12 +39878,12 @@ pub mod dev_endpoint {
             self.number_of_nodes = input;
             self
         }
-        /// <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+        /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone = Some(input.into());
             self
         }
-        /// <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+        /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37153,6 +40106,214 @@ impl DevEndpoint {
     /// Creates a new builder-style object to manufacture [`DevEndpoint`](crate::model::DevEndpoint).
     pub fn builder() -> crate::model::dev_endpoint::Builder {
         crate::model::dev_endpoint::Builder::default()
+    }
+}
+
+/// <p>Describes the result of the evaluation of a data quality rule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DataQualityRuleResult {
+    /// <p>The name of the data quality rule.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A description of the data quality rule.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>An evaluation message.</p>
+    #[doc(hidden)]
+    pub evaluation_message: std::option::Option<std::string::String>,
+    /// <p>A pass or fail status for the rule.</p>
+    #[doc(hidden)]
+    pub result: std::option::Option<crate::model::DataQualityRuleResultStatus>,
+}
+impl DataQualityRuleResult {
+    /// <p>The name of the data quality rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the data quality rule.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>An evaluation message.</p>
+    pub fn evaluation_message(&self) -> std::option::Option<&str> {
+        self.evaluation_message.as_deref()
+    }
+    /// <p>A pass or fail status for the rule.</p>
+    pub fn result(&self) -> std::option::Option<&crate::model::DataQualityRuleResultStatus> {
+        self.result.as_ref()
+    }
+}
+/// See [`DataQualityRuleResult`](crate::model::DataQualityRuleResult).
+pub mod data_quality_rule_result {
+
+    /// A builder for [`DataQualityRuleResult`](crate::model::DataQualityRuleResult).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) evaluation_message: std::option::Option<std::string::String>,
+        pub(crate) result: std::option::Option<crate::model::DataQualityRuleResultStatus>,
+    }
+    impl Builder {
+        /// <p>The name of the data quality rule.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data quality rule.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A description of the data quality rule.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the data quality rule.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>An evaluation message.</p>
+        pub fn evaluation_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.evaluation_message = Some(input.into());
+            self
+        }
+        /// <p>An evaluation message.</p>
+        pub fn set_evaluation_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.evaluation_message = input;
+            self
+        }
+        /// <p>A pass or fail status for the rule.</p>
+        pub fn result(mut self, input: crate::model::DataQualityRuleResultStatus) -> Self {
+            self.result = Some(input);
+            self
+        }
+        /// <p>A pass or fail status for the rule.</p>
+        pub fn set_result(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityRuleResultStatus>,
+        ) -> Self {
+            self.result = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataQualityRuleResult`](crate::model::DataQualityRuleResult).
+        pub fn build(self) -> crate::model::DataQualityRuleResult {
+            crate::model::DataQualityRuleResult {
+                name: self.name,
+                description: self.description,
+                evaluation_message: self.evaluation_message,
+                result: self.result,
+            }
+        }
+    }
+}
+impl DataQualityRuleResult {
+    /// Creates a new builder-style object to manufacture [`DataQualityRuleResult`](crate::model::DataQualityRuleResult).
+    pub fn builder() -> crate::model::data_quality_rule_result::Builder {
+        crate::model::data_quality_rule_result::Builder::default()
+    }
+}
+
+/// When writing a match expression against `DataQualityRuleResultStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dataqualityruleresultstatus = unimplemented!();
+/// match dataqualityruleresultstatus {
+///     DataQualityRuleResultStatus::Error => { /* ... */ },
+///     DataQualityRuleResultStatus::Fail => { /* ... */ },
+///     DataQualityRuleResultStatus::Pass => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dataqualityruleresultstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DataQualityRuleResultStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DataQualityRuleResultStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DataQualityRuleResultStatus::NewFeature` is defined.
+/// Specifically, when `dataqualityruleresultstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DataQualityRuleResultStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DataQualityRuleResultStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Fail,
+    #[allow(missing_docs)] // documentation missing in model
+    Pass,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DataQualityRuleResultStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ERROR" => DataQualityRuleResultStatus::Error,
+            "FAIL" => DataQualityRuleResultStatus::Fail,
+            "PASS" => DataQualityRuleResultStatus::Pass,
+            other => DataQualityRuleResultStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for DataQualityRuleResultStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DataQualityRuleResultStatus::from(s))
+    }
+}
+impl DataQualityRuleResultStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DataQualityRuleResultStatus::Error => "ERROR",
+            DataQualityRuleResultStatus::Fail => "FAIL",
+            DataQualityRuleResultStatus::Pass => "PASS",
+            DataQualityRuleResultStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ERROR", "FAIL", "PASS"]
+    }
+}
+impl AsRef<str> for DataQualityRuleResultStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -37638,7 +40799,7 @@ pub struct Crawler {
     /// <p>The version of the crawler.</p>
     #[doc(hidden)]
     pub version: i64,
-    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude Patterns</a>.</p>
+    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<std::string::String>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
@@ -37719,7 +40880,7 @@ impl Crawler {
     pub fn version(&self) -> i64 {
         self.version
     }
-    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude Patterns</a>.</p>
+    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
     pub fn configuration(&self) -> std::option::Option<&str> {
         self.configuration.as_deref()
     }
@@ -37966,12 +41127,12 @@ pub mod crawler {
             self.version = input;
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude Patterns</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration = Some(input.into());
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude Patterns</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -39451,6 +42612,12 @@ pub struct CsvClassifier {
     /// <p>Enables the processing of files that contain only one column.</p>
     #[doc(hidden)]
     pub allow_single_column: std::option::Option<bool>,
+    /// <p>Enables the custom datatype to be configured.</p>
+    #[doc(hidden)]
+    pub custom_datatype_configured: std::option::Option<bool>,
+    /// <p>A list of custom datatypes including "BINARY", "BOOLEAN", "DATE", "DECIMAL", "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP".</p>
+    #[doc(hidden)]
+    pub custom_datatypes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CsvClassifier {
     /// <p>The name of the classifier.</p>
@@ -39493,6 +42660,14 @@ impl CsvClassifier {
     pub fn allow_single_column(&self) -> std::option::Option<bool> {
         self.allow_single_column
     }
+    /// <p>Enables the custom datatype to be configured.</p>
+    pub fn custom_datatype_configured(&self) -> std::option::Option<bool> {
+        self.custom_datatype_configured
+    }
+    /// <p>A list of custom datatypes including "BINARY", "BOOLEAN", "DATE", "DECIMAL", "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP".</p>
+    pub fn custom_datatypes(&self) -> std::option::Option<&[std::string::String]> {
+        self.custom_datatypes.as_deref()
+    }
 }
 /// See [`CsvClassifier`](crate::model::CsvClassifier).
 pub mod csv_classifier {
@@ -39510,6 +42685,8 @@ pub mod csv_classifier {
         pub(crate) header: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) disable_value_trimming: std::option::Option<bool>,
         pub(crate) allow_single_column: std::option::Option<bool>,
+        pub(crate) custom_datatype_configured: std::option::Option<bool>,
+        pub(crate) custom_datatypes: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the classifier.</p>
@@ -39630,6 +42807,35 @@ pub mod csv_classifier {
             self.allow_single_column = input;
             self
         }
+        /// <p>Enables the custom datatype to be configured.</p>
+        pub fn custom_datatype_configured(mut self, input: bool) -> Self {
+            self.custom_datatype_configured = Some(input);
+            self
+        }
+        /// <p>Enables the custom datatype to be configured.</p>
+        pub fn set_custom_datatype_configured(mut self, input: std::option::Option<bool>) -> Self {
+            self.custom_datatype_configured = input;
+            self
+        }
+        /// Appends an item to `custom_datatypes`.
+        ///
+        /// To override the contents of this collection use [`set_custom_datatypes`](Self::set_custom_datatypes).
+        ///
+        /// <p>A list of custom datatypes including "BINARY", "BOOLEAN", "DATE", "DECIMAL", "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP".</p>
+        pub fn custom_datatypes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.custom_datatypes.unwrap_or_default();
+            v.push(input.into());
+            self.custom_datatypes = Some(v);
+            self
+        }
+        /// <p>A list of custom datatypes including "BINARY", "BOOLEAN", "DATE", "DECIMAL", "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP".</p>
+        pub fn set_custom_datatypes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.custom_datatypes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CsvClassifier`](crate::model::CsvClassifier).
         pub fn build(self) -> crate::model::CsvClassifier {
             crate::model::CsvClassifier {
@@ -39643,6 +42849,8 @@ pub mod csv_classifier {
                 header: self.header,
                 disable_value_trimming: self.disable_value_trimming,
                 allow_single_column: self.allow_single_column,
+                custom_datatype_configured: self.custom_datatype_configured,
+                custom_datatypes: self.custom_datatypes,
             }
         }
     }
@@ -41319,6 +44527,12 @@ pub struct CreateCsvClassifierRequest {
     /// <p>Enables the processing of files that contain only one column.</p>
     #[doc(hidden)]
     pub allow_single_column: std::option::Option<bool>,
+    /// <p>Enables the configuration of custom datatypes.</p>
+    #[doc(hidden)]
+    pub custom_datatype_configured: std::option::Option<bool>,
+    /// <p>Creates a list of supported custom datatypes.</p>
+    #[doc(hidden)]
+    pub custom_datatypes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateCsvClassifierRequest {
     /// <p>The name of the classifier.</p>
@@ -41349,6 +44563,14 @@ impl CreateCsvClassifierRequest {
     pub fn allow_single_column(&self) -> std::option::Option<bool> {
         self.allow_single_column
     }
+    /// <p>Enables the configuration of custom datatypes.</p>
+    pub fn custom_datatype_configured(&self) -> std::option::Option<bool> {
+        self.custom_datatype_configured
+    }
+    /// <p>Creates a list of supported custom datatypes.</p>
+    pub fn custom_datatypes(&self) -> std::option::Option<&[std::string::String]> {
+        self.custom_datatypes.as_deref()
+    }
 }
 /// See [`CreateCsvClassifierRequest`](crate::model::CreateCsvClassifierRequest).
 pub mod create_csv_classifier_request {
@@ -41363,6 +44585,8 @@ pub mod create_csv_classifier_request {
         pub(crate) header: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) disable_value_trimming: std::option::Option<bool>,
         pub(crate) allow_single_column: std::option::Option<bool>,
+        pub(crate) custom_datatype_configured: std::option::Option<bool>,
+        pub(crate) custom_datatypes: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the classifier.</p>
@@ -41447,6 +44671,35 @@ pub mod create_csv_classifier_request {
             self.allow_single_column = input;
             self
         }
+        /// <p>Enables the configuration of custom datatypes.</p>
+        pub fn custom_datatype_configured(mut self, input: bool) -> Self {
+            self.custom_datatype_configured = Some(input);
+            self
+        }
+        /// <p>Enables the configuration of custom datatypes.</p>
+        pub fn set_custom_datatype_configured(mut self, input: std::option::Option<bool>) -> Self {
+            self.custom_datatype_configured = input;
+            self
+        }
+        /// Appends an item to `custom_datatypes`.
+        ///
+        /// To override the contents of this collection use [`set_custom_datatypes`](Self::set_custom_datatypes).
+        ///
+        /// <p>Creates a list of supported custom datatypes.</p>
+        pub fn custom_datatypes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.custom_datatypes.unwrap_or_default();
+            v.push(input.into());
+            self.custom_datatypes = Some(v);
+            self
+        }
+        /// <p>Creates a list of supported custom datatypes.</p>
+        pub fn set_custom_datatypes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.custom_datatypes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateCsvClassifierRequest`](crate::model::CreateCsvClassifierRequest).
         pub fn build(self) -> crate::model::CreateCsvClassifierRequest {
             crate::model::CreateCsvClassifierRequest {
@@ -41457,6 +44710,8 @@ pub mod create_csv_classifier_request {
                 header: self.header,
                 disable_value_trimming: self.disable_value_trimming,
                 allow_single_column: self.allow_single_column,
+                custom_datatype_configured: self.custom_datatype_configured,
+                custom_datatypes: self.custom_datatypes,
             }
         }
     }
@@ -42054,6 +45309,269 @@ impl BatchStopJobRunSuccessfulSubmission {
     /// Creates a new builder-style object to manufacture [`BatchStopJobRunSuccessfulSubmission`](crate::model::BatchStopJobRunSuccessfulSubmission).
     pub fn builder() -> crate::model::batch_stop_job_run_successful_submission::Builder {
         crate::model::batch_stop_job_run_successful_submission::Builder::default()
+    }
+}
+
+/// <p>Describes a data quality result.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DataQualityResult {
+    /// <p>A unique result ID for the data quality result.</p>
+    #[doc(hidden)]
+    pub result_id: std::option::Option<std::string::String>,
+    /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
+    #[doc(hidden)]
+    pub score: std::option::Option<f64>,
+    /// <p>The table associated with the data quality result, if any.</p>
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::DataSource>,
+    /// <p>The name of the ruleset associated with the data quality result.</p>
+    #[doc(hidden)]
+    pub ruleset_name: std::option::Option<std::string::String>,
+    /// <p>In the context of a job in Glue Studio, each node in the canvas is typically assigned some sort of name and data quality nodes will have names. In the case of multiple nodes, the <code>evaluationContext</code> can differentiate the nodes.</p>
+    #[doc(hidden)]
+    pub evaluation_context: std::option::Option<std::string::String>,
+    /// <p>The date and time when this data quality run started.</p>
+    #[doc(hidden)]
+    pub started_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time when this data quality run completed.</p>
+    #[doc(hidden)]
+    pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The job name associated with the data quality result, if any.</p>
+    #[doc(hidden)]
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>The job run ID associated with the data quality result, if any.</p>
+    #[doc(hidden)]
+    pub job_run_id: std::option::Option<std::string::String>,
+    /// <p>The unique run ID for the ruleset evaluation for this data quality result.</p>
+    #[doc(hidden)]
+    pub ruleset_evaluation_run_id: std::option::Option<std::string::String>,
+    /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+    #[doc(hidden)]
+    pub rule_results: std::option::Option<std::vec::Vec<crate::model::DataQualityRuleResult>>,
+}
+impl DataQualityResult {
+    /// <p>A unique result ID for the data quality result.</p>
+    pub fn result_id(&self) -> std::option::Option<&str> {
+        self.result_id.as_deref()
+    }
+    /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
+    pub fn score(&self) -> std::option::Option<f64> {
+        self.score
+    }
+    /// <p>The table associated with the data quality result, if any.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>The name of the ruleset associated with the data quality result.</p>
+    pub fn ruleset_name(&self) -> std::option::Option<&str> {
+        self.ruleset_name.as_deref()
+    }
+    /// <p>In the context of a job in Glue Studio, each node in the canvas is typically assigned some sort of name and data quality nodes will have names. In the case of multiple nodes, the <code>evaluationContext</code> can differentiate the nodes.</p>
+    pub fn evaluation_context(&self) -> std::option::Option<&str> {
+        self.evaluation_context.as_deref()
+    }
+    /// <p>The date and time when this data quality run started.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_on.as_ref()
+    }
+    /// <p>The date and time when this data quality run completed.</p>
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.completed_on.as_ref()
+    }
+    /// <p>The job name associated with the data quality result, if any.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The job run ID associated with the data quality result, if any.</p>
+    pub fn job_run_id(&self) -> std::option::Option<&str> {
+        self.job_run_id.as_deref()
+    }
+    /// <p>The unique run ID for the ruleset evaluation for this data quality result.</p>
+    pub fn ruleset_evaluation_run_id(&self) -> std::option::Option<&str> {
+        self.ruleset_evaluation_run_id.as_deref()
+    }
+    /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+    pub fn rule_results(&self) -> std::option::Option<&[crate::model::DataQualityRuleResult]> {
+        self.rule_results.as_deref()
+    }
+}
+/// See [`DataQualityResult`](crate::model::DataQualityResult).
+pub mod data_quality_result {
+
+    /// A builder for [`DataQualityResult`](crate::model::DataQualityResult).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) result_id: std::option::Option<std::string::String>,
+        pub(crate) score: std::option::Option<f64>,
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+        pub(crate) ruleset_name: std::option::Option<std::string::String>,
+        pub(crate) evaluation_context: std::option::Option<std::string::String>,
+        pub(crate) started_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completed_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) job_run_id: std::option::Option<std::string::String>,
+        pub(crate) ruleset_evaluation_run_id: std::option::Option<std::string::String>,
+        pub(crate) rule_results:
+            std::option::Option<std::vec::Vec<crate::model::DataQualityRuleResult>>,
+    }
+    impl Builder {
+        /// <p>A unique result ID for the data quality result.</p>
+        pub fn result_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.result_id = Some(input.into());
+            self
+        }
+        /// <p>A unique result ID for the data quality result.</p>
+        pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.result_id = input;
+            self
+        }
+        /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
+        pub fn score(mut self, input: f64) -> Self {
+            self.score = Some(input);
+            self
+        }
+        /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
+        pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
+            self.score = input;
+            self
+        }
+        /// <p>The table associated with the data quality result, if any.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>The table associated with the data quality result, if any.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// <p>The name of the ruleset associated with the data quality result.</p>
+        pub fn ruleset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ruleset_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the ruleset associated with the data quality result.</p>
+        pub fn set_ruleset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ruleset_name = input;
+            self
+        }
+        /// <p>In the context of a job in Glue Studio, each node in the canvas is typically assigned some sort of name and data quality nodes will have names. In the case of multiple nodes, the <code>evaluationContext</code> can differentiate the nodes.</p>
+        pub fn evaluation_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.evaluation_context = Some(input.into());
+            self
+        }
+        /// <p>In the context of a job in Glue Studio, each node in the canvas is typically assigned some sort of name and data quality nodes will have names. In the case of multiple nodes, the <code>evaluationContext</code> can differentiate the nodes.</p>
+        pub fn set_evaluation_context(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.evaluation_context = input;
+            self
+        }
+        /// <p>The date and time when this data quality run started.</p>
+        pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_on = Some(input);
+            self
+        }
+        /// <p>The date and time when this data quality run started.</p>
+        pub fn set_started_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_on = input;
+            self
+        }
+        /// <p>The date and time when this data quality run completed.</p>
+        pub fn completed_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.completed_on = Some(input);
+            self
+        }
+        /// <p>The date and time when this data quality run completed.</p>
+        pub fn set_completed_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.completed_on = input;
+            self
+        }
+        /// <p>The job name associated with the data quality result, if any.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The job name associated with the data quality result, if any.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>The job run ID associated with the data quality result, if any.</p>
+        pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_run_id = Some(input.into());
+            self
+        }
+        /// <p>The job run ID associated with the data quality result, if any.</p>
+        pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_run_id = input;
+            self
+        }
+        /// <p>The unique run ID for the ruleset evaluation for this data quality result.</p>
+        pub fn ruleset_evaluation_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ruleset_evaluation_run_id = Some(input.into());
+            self
+        }
+        /// <p>The unique run ID for the ruleset evaluation for this data quality result.</p>
+        pub fn set_ruleset_evaluation_run_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ruleset_evaluation_run_id = input;
+            self
+        }
+        /// Appends an item to `rule_results`.
+        ///
+        /// To override the contents of this collection use [`set_rule_results`](Self::set_rule_results).
+        ///
+        /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+        pub fn rule_results(mut self, input: crate::model::DataQualityRuleResult) -> Self {
+            let mut v = self.rule_results.unwrap_or_default();
+            v.push(input);
+            self.rule_results = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+        pub fn set_rule_results(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataQualityRuleResult>>,
+        ) -> Self {
+            self.rule_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataQualityResult`](crate::model::DataQualityResult).
+        pub fn build(self) -> crate::model::DataQualityResult {
+            crate::model::DataQualityResult {
+                result_id: self.result_id,
+                score: self.score,
+                data_source: self.data_source,
+                ruleset_name: self.ruleset_name,
+                evaluation_context: self.evaluation_context,
+                started_on: self.started_on,
+                completed_on: self.completed_on,
+                job_name: self.job_name,
+                job_run_id: self.job_run_id,
+                ruleset_evaluation_run_id: self.ruleset_evaluation_run_id,
+                rule_results: self.rule_results,
+            }
+        }
+    }
+}
+impl DataQualityResult {
+    /// Creates a new builder-style object to manufacture [`DataQualityResult`](crate::model::DataQualityResult).
+    pub fn builder() -> crate::model::data_quality_result::Builder {
+        crate::model::data_quality_result::Builder::default()
     }
 }
 

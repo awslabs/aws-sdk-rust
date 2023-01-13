@@ -158,6 +158,30 @@ impl UpdateJobPriorityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SubmitMultiRegionAccessPointRoutesOutput {}
+/// See [`SubmitMultiRegionAccessPointRoutesOutput`](crate::output::SubmitMultiRegionAccessPointRoutesOutput).
+pub mod submit_multi_region_access_point_routes_output {
+
+    /// A builder for [`SubmitMultiRegionAccessPointRoutesOutput`](crate::output::SubmitMultiRegionAccessPointRoutesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`SubmitMultiRegionAccessPointRoutesOutput`](crate::output::SubmitMultiRegionAccessPointRoutesOutput).
+        pub fn build(self) -> crate::output::SubmitMultiRegionAccessPointRoutesOutput {
+            crate::output::SubmitMultiRegionAccessPointRoutesOutput {}
+        }
+    }
+}
+impl SubmitMultiRegionAccessPointRoutesOutput {
+    /// Creates a new builder-style object to manufacture [`SubmitMultiRegionAccessPointRoutesOutput`](crate::output::SubmitMultiRegionAccessPointRoutesOutput).
+    pub fn builder() -> crate::output::submit_multi_region_access_point_routes_output::Builder {
+        crate::output::submit_multi_region_access_point_routes_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutStorageLensConfigurationTaggingOutput {}
 /// See [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput).
 pub mod put_storage_lens_configuration_tagging_output {
@@ -1121,6 +1145,83 @@ impl GetPublicAccessBlockOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetMultiRegionAccessPointRoutesOutput {
+    /// <p>The Multi-Region Access Point ARN.</p>
+    #[doc(hidden)]
+    pub mrap: std::option::Option<std::string::String>,
+    /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+    #[doc(hidden)]
+    pub routes: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRoute>>,
+}
+impl GetMultiRegionAccessPointRoutesOutput {
+    /// <p>The Multi-Region Access Point ARN.</p>
+    pub fn mrap(&self) -> std::option::Option<&str> {
+        self.mrap.as_deref()
+    }
+    /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+    pub fn routes(&self) -> std::option::Option<&[crate::model::MultiRegionAccessPointRoute]> {
+        self.routes.as_deref()
+    }
+}
+/// See [`GetMultiRegionAccessPointRoutesOutput`](crate::output::GetMultiRegionAccessPointRoutesOutput).
+pub mod get_multi_region_access_point_routes_output {
+
+    /// A builder for [`GetMultiRegionAccessPointRoutesOutput`](crate::output::GetMultiRegionAccessPointRoutesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) mrap: std::option::Option<std::string::String>,
+        pub(crate) routes:
+            std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRoute>>,
+    }
+    impl Builder {
+        /// <p>The Multi-Region Access Point ARN.</p>
+        pub fn mrap(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mrap = Some(input.into());
+            self
+        }
+        /// <p>The Multi-Region Access Point ARN.</p>
+        pub fn set_mrap(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mrap = input;
+            self
+        }
+        /// Appends an item to `routes`.
+        ///
+        /// To override the contents of this collection use [`set_routes`](Self::set_routes).
+        ///
+        /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+        pub fn routes(mut self, input: crate::model::MultiRegionAccessPointRoute) -> Self {
+            let mut v = self.routes.unwrap_or_default();
+            v.push(input);
+            self.routes = Some(v);
+            self
+        }
+        /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+        pub fn set_routes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRoute>>,
+        ) -> Self {
+            self.routes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMultiRegionAccessPointRoutesOutput`](crate::output::GetMultiRegionAccessPointRoutesOutput).
+        pub fn build(self) -> crate::output::GetMultiRegionAccessPointRoutesOutput {
+            crate::output::GetMultiRegionAccessPointRoutesOutput {
+                mrap: self.mrap,
+                routes: self.routes,
+            }
+        }
+    }
+}
+impl GetMultiRegionAccessPointRoutesOutput {
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointRoutesOutput`](crate::output::GetMultiRegionAccessPointRoutesOutput).
+    pub fn builder() -> crate::output::get_multi_region_access_point_routes_output::Builder {
+        crate::output::get_multi_region_access_point_routes_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointPolicyStatusOutput {
     /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
     #[doc(hidden)]
@@ -2020,7 +2121,7 @@ pub struct GetAccessPointOutput {
     #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
@@ -2037,6 +2138,9 @@ pub struct GetAccessPointOutput {
     #[doc(hidden)]
     pub endpoints:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+    #[doc(hidden)]
+    pub bucket_account_id: std::option::Option<std::string::String>,
 }
 impl GetAccessPointOutput {
     /// <p>The name of the specified access point.</p>
@@ -2059,7 +2163,7 @@ impl GetAccessPointOutput {
         self.vpc_configuration.as_ref()
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
     pub fn public_access_block_configuration(
         &self,
     ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
@@ -2084,6 +2188,10 @@ impl GetAccessPointOutput {
     {
         self.endpoints.as_ref()
     }
+    /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+    pub fn bucket_account_id(&self) -> std::option::Option<&str> {
+        self.bucket_account_id.as_deref()
+    }
 }
 /// See [`GetAccessPointOutput`](crate::output::GetAccessPointOutput).
 pub mod get_access_point_output {
@@ -2103,6 +2211,7 @@ pub mod get_access_point_output {
         pub(crate) endpoints: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) bucket_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the specified access point.</p>
@@ -2158,7 +2267,7 @@ pub mod get_access_point_output {
             self
         }
         /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
         pub fn public_access_block_configuration(
             mut self,
             input: crate::model::PublicAccessBlockConfiguration,
@@ -2167,7 +2276,7 @@ pub mod get_access_point_output {
             self
         }
         /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
         pub fn set_public_access_block_configuration(
             mut self,
             input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
@@ -2236,6 +2345,19 @@ pub mod get_access_point_output {
             self.endpoints = input;
             self
         }
+        /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+        pub fn bucket_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+        pub fn set_bucket_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bucket_account_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAccessPointOutput`](crate::output::GetAccessPointOutput).
         pub fn build(self) -> crate::output::GetAccessPointOutput {
             crate::output::GetAccessPointOutput {
@@ -2248,6 +2370,7 @@ pub mod get_access_point_output {
                 alias: self.alias,
                 access_point_arn: self.access_point_arn,
                 endpoints: self.endpoints,
+                bucket_account_id: self.bucket_account_id,
             }
         }
     }

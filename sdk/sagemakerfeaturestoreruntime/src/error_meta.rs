@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>You do not have permission to perform an action.</p>
     AccessForbidden(crate::error::AccessForbidden),
-    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
+    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>
     InternalFailure(crate::error::InternalFailure),
     /// <p>A resource that is required to perform an action was not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),

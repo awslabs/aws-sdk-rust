@@ -10,8 +10,7 @@
 #![allow(clippy::needless_return)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <p>Provides translation between one source language and another of the same set of
-//! languages.</p>
+//! <p>Provides translation of the input content from the source language to the target language.</p>
 //!
 //! # Crate Organization
 //!

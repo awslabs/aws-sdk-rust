@@ -720,6 +720,207 @@ impl InvalidNextTokenException {
     }
 }
 
+/// <p>The request couldn't be processed because an error occurred with the Amazon SES API v2.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InternalServiceErrorException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl InternalServiceErrorException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalServiceErrorException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalServiceErrorException")?;
+        if let Some(inner_13) = &self.message {
+            {
+                write!(f, ": {}", inner_13)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalServiceErrorException {}
+/// See [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
+pub mod internal_service_error_exception {
+
+    /// A builder for [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
+        pub fn build(self) -> crate::error::InternalServiceErrorException {
+            crate::error::InternalServiceErrorException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InternalServiceErrorException {
+    /// Creates a new builder-style object to manufacture [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
+    pub fn builder() -> crate::error::internal_service_error_exception::Builder {
+        crate::error::internal_service_error_exception::Builder::default()
+    }
+}
+
+/// Error type for the `BatchGetMetricData` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchGetMetricDataError {
+    /// Kind of error that occurred.
+    pub kind: BatchGetMetricDataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchGetMetricDataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchGetMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `BatchGetMetricData` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchGetMetricDataErrorKind {
+    /// <p>The input you provided is invalid.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The request couldn't be processed because an error occurred with the Amazon SES API v2.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>The resource you attempted to access doesn't exist.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>Too many requests have been made to the operation.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for BatchGetMetricDataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchGetMetricDataErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            BatchGetMetricDataErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
+            BatchGetMetricDataErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            BatchGetMetricDataErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            BatchGetMetricDataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchGetMetricDataError {
+    fn code(&self) -> Option<&str> {
+        BatchGetMetricDataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchGetMetricDataError {
+    /// Creates a new `BatchGetMetricDataError`.
+    pub fn new(kind: BatchGetMetricDataErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchGetMetricDataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchGetMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchGetMetricDataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchGetMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchGetMetricDataErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetMetricDataErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetMetricDataErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetMetricDataErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetMetricDataErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetMetricDataErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetMetricDataErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetMetricDataErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for BatchGetMetricDataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchGetMetricDataErrorKind::BadRequestException(_inner) => Some(_inner),
+            BatchGetMetricDataErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
+            BatchGetMetricDataErrorKind::NotFoundException(_inner) => Some(_inner),
+            BatchGetMetricDataErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            BatchGetMetricDataErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `CreateConfigurationSet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4944,6 +5145,136 @@ impl std::error::Error for GetDedicatedIpError {
     }
 }
 
+/// Error type for the `GetDedicatedIpPool` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetDedicatedIpPoolError {
+    /// Kind of error that occurred.
+    pub kind: GetDedicatedIpPoolErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDedicatedIpPoolError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDedicatedIpPoolErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetDedicatedIpPool` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetDedicatedIpPoolErrorKind {
+    /// <p>The input you provided is invalid.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The resource you attempted to access doesn't exist.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>Too many requests have been made to the operation.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetDedicatedIpPoolError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetDedicatedIpPoolErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetDedicatedIpPoolErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetDedicatedIpPoolErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetDedicatedIpPoolErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetDedicatedIpPoolError {
+    fn code(&self) -> Option<&str> {
+        GetDedicatedIpPoolError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetDedicatedIpPoolError {
+    /// Creates a new `GetDedicatedIpPoolError`.
+    pub fn new(kind: GetDedicatedIpPoolErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetDedicatedIpPoolError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetDedicatedIpPoolErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetDedicatedIpPoolError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetDedicatedIpPoolErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetDedicatedIpPoolErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDedicatedIpPoolErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDedicatedIpPoolErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDedicatedIpPoolErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDedicatedIpPoolErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDedicatedIpPoolErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for GetDedicatedIpPoolError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetDedicatedIpPoolErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetDedicatedIpPoolErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetDedicatedIpPoolErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetDedicatedIpPoolErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `GetDedicatedIps` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7549,6 +7880,136 @@ impl std::error::Error for ListImportJobsError {
     }
 }
 
+/// Error type for the `ListRecommendations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListRecommendationsError {
+    /// Kind of error that occurred.
+    pub kind: ListRecommendationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListRecommendationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListRecommendations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListRecommendationsErrorKind {
+    /// <p>The input you provided is invalid.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The resource you attempted to access doesn't exist.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>Too many requests have been made to the operation.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListRecommendationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListRecommendationsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListRecommendationsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ListRecommendationsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ListRecommendationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListRecommendationsError {
+    fn code(&self) -> Option<&str> {
+        ListRecommendationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListRecommendationsError {
+    /// Creates a new `ListRecommendationsError`.
+    pub fn new(kind: ListRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListRecommendationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListRecommendationsErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRecommendationsErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRecommendationsErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRecommendationsErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRecommendationsErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRecommendationsErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for ListRecommendationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListRecommendationsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListRecommendationsErrorKind::NotFoundException(_inner) => Some(_inner),
+            ListRecommendationsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ListRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListSuppressedDestinations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8335,6 +8796,129 @@ impl std::error::Error for PutAccountSuppressionAttributesError {
     }
 }
 
+/// Error type for the `PutAccountVdmAttributes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutAccountVdmAttributesError {
+    /// Kind of error that occurred.
+    pub kind: PutAccountVdmAttributesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutAccountVdmAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutAccountVdmAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `PutAccountVdmAttributes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutAccountVdmAttributesErrorKind {
+    /// <p>The input you provided is invalid.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>Too many requests have been made to the operation.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for PutAccountVdmAttributesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutAccountVdmAttributesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutAccountVdmAttributesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            PutAccountVdmAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutAccountVdmAttributesError {
+    fn code(&self) -> Option<&str> {
+        PutAccountVdmAttributesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutAccountVdmAttributesError {
+    /// Creates a new `PutAccountVdmAttributesError`.
+    pub fn new(kind: PutAccountVdmAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutAccountVdmAttributesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutAccountVdmAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutAccountVdmAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutAccountVdmAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutAccountVdmAttributesErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccountVdmAttributesErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutAccountVdmAttributesErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccountVdmAttributesErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for PutAccountVdmAttributesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutAccountVdmAttributesErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutAccountVdmAttributesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            PutAccountVdmAttributesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `PutConfigurationSetDeliveryOptions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9072,6 +9656,149 @@ impl std::error::Error for PutConfigurationSetTrackingOptionsError {
                 Some(_inner)
             }
             PutConfigurationSetTrackingOptionsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `PutConfigurationSetVdmOptions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutConfigurationSetVdmOptionsError {
+    /// Kind of error that occurred.
+    pub kind: PutConfigurationSetVdmOptionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutConfigurationSetVdmOptionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutConfigurationSetVdmOptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `PutConfigurationSetVdmOptions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutConfigurationSetVdmOptionsErrorKind {
+    /// <p>The input you provided is invalid.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The resource you attempted to access doesn't exist.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>Too many requests have been made to the operation.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for PutConfigurationSetVdmOptionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutConfigurationSetVdmOptionsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutConfigurationSetVdmOptionsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutConfigurationSetVdmOptionsErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutConfigurationSetVdmOptionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutConfigurationSetVdmOptionsError {
+    fn code(&self) -> Option<&str> {
+        PutConfigurationSetVdmOptionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutConfigurationSetVdmOptionsError {
+    /// Creates a new `PutConfigurationSetVdmOptionsError`.
+    pub fn new(
+        kind: PutConfigurationSetVdmOptionsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutConfigurationSetVdmOptionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutConfigurationSetVdmOptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutConfigurationSetVdmOptionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutConfigurationSetVdmOptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutConfigurationSetVdmOptionsErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetVdmOptionsErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutConfigurationSetVdmOptionsErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetVdmOptionsErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutConfigurationSetVdmOptionsErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetVdmOptionsErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for PutConfigurationSetVdmOptionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutConfigurationSetVdmOptionsErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutConfigurationSetVdmOptionsErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutConfigurationSetVdmOptionsErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
+            PutConfigurationSetVdmOptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

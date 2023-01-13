@@ -802,6 +802,152 @@ impl DisassociateGatewayFromServerInput {
     }
 }
 
+/// See [`GetBandwidthRateLimitScheduleInput`](crate::input::GetBandwidthRateLimitScheduleInput).
+pub mod get_bandwidth_rate_limit_schedule_input {
+
+    /// A builder for [`GetBandwidthRateLimitScheduleInput`](crate::input::GetBandwidthRateLimitScheduleInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) gateway_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.gateway_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+        pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gateway_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBandwidthRateLimitScheduleInput`](crate::input::GetBandwidthRateLimitScheduleInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetBandwidthRateLimitScheduleInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetBandwidthRateLimitScheduleInput {
+                gateway_arn: self.gateway_arn,
+            })
+        }
+    }
+}
+impl GetBandwidthRateLimitScheduleInput {
+    /// Consumes the builder and constructs an Operation<[`GetBandwidthRateLimitSchedule`](crate::operation::GetBandwidthRateLimitSchedule)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetBandwidthRateLimitSchedule,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetBandwidthRateLimitScheduleInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetBandwidthRateLimitScheduleInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "BackupOnPremises_v20210101.GetBandwidthRateLimitSchedule",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_bandwidth_rate_limit_schedule(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetBandwidthRateLimitSchedule::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetBandwidthRateLimitSchedule",
+            "backupgateway",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetBandwidthRateLimitScheduleInput`](crate::input::GetBandwidthRateLimitScheduleInput).
+    pub fn builder() -> crate::input::get_bandwidth_rate_limit_schedule_input::Builder {
+        crate::input::get_bandwidth_rate_limit_schedule_input::Builder::default()
+    }
+}
+
 /// See [`GetGatewayInput`](crate::input::GetGatewayInput).
 pub mod get_gateway_input {
 
@@ -944,6 +1090,303 @@ impl GetGatewayInput {
     /// Creates a new builder-style object to manufacture [`GetGatewayInput`](crate::input::GetGatewayInput).
     pub fn builder() -> crate::input::get_gateway_input::Builder {
         crate::input::get_gateway_input::Builder::default()
+    }
+}
+
+/// See [`GetHypervisorInput`](crate::input::GetHypervisorInput).
+pub mod get_hypervisor_input {
+
+    /// A builder for [`GetHypervisorInput`](crate::input::GetHypervisorInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hypervisor_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn set_hypervisor_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hypervisor_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetHypervisorInput`](crate::input::GetHypervisorInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetHypervisorInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::GetHypervisorInput {
+                hypervisor_arn: self.hypervisor_arn,
+            })
+        }
+    }
+}
+impl GetHypervisorInput {
+    /// Consumes the builder and constructs an Operation<[`GetHypervisor`](crate::operation::GetHypervisor)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetHypervisor,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetHypervisorInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetHypervisorInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "BackupOnPremises_v20210101.GetHypervisor",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_hypervisor(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetHypervisor::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetHypervisor",
+            "backupgateway",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetHypervisorInput`](crate::input::GetHypervisorInput).
+    pub fn builder() -> crate::input::get_hypervisor_input::Builder {
+        crate::input::get_hypervisor_input::Builder::default()
+    }
+}
+
+/// See [`GetHypervisorPropertyMappingsInput`](crate::input::GetHypervisorPropertyMappingsInput).
+pub mod get_hypervisor_property_mappings_input {
+
+    /// A builder for [`GetHypervisorPropertyMappingsInput`](crate::input::GetHypervisorPropertyMappingsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hypervisor_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn set_hypervisor_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hypervisor_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetHypervisorPropertyMappingsInput`](crate::input::GetHypervisorPropertyMappingsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetHypervisorPropertyMappingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetHypervisorPropertyMappingsInput {
+                hypervisor_arn: self.hypervisor_arn,
+            })
+        }
+    }
+}
+impl GetHypervisorPropertyMappingsInput {
+    /// Consumes the builder and constructs an Operation<[`GetHypervisorPropertyMappings`](crate::operation::GetHypervisorPropertyMappings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetHypervisorPropertyMappings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetHypervisorPropertyMappingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetHypervisorPropertyMappingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "BackupOnPremises_v20210101.GetHypervisorPropertyMappings",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_hypervisor_property_mappings(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetHypervisorPropertyMappings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetHypervisorPropertyMappings",
+            "backupgateway",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetHypervisorPropertyMappingsInput`](crate::input::GetHypervisorPropertyMappingsInput).
+    pub fn builder() -> crate::input::get_hypervisor_property_mappings_input::Builder {
+        crate::input::get_hypervisor_property_mappings_input::Builder::default()
     }
 }
 
@@ -1958,6 +2401,363 @@ impl ListVirtualMachinesInput {
     }
 }
 
+/// See [`PutBandwidthRateLimitScheduleInput`](crate::input::PutBandwidthRateLimitScheduleInput).
+pub mod put_bandwidth_rate_limit_schedule_input {
+
+    /// A builder for [`PutBandwidthRateLimitScheduleInput`](crate::input::PutBandwidthRateLimitScheduleInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) gateway_arn: std::option::Option<std::string::String>,
+        pub(crate) bandwidth_rate_limit_intervals:
+            std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.gateway_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+        pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gateway_arn = input;
+            self
+        }
+        /// Appends an item to `bandwidth_rate_limit_intervals`.
+        ///
+        /// To override the contents of this collection use [`set_bandwidth_rate_limit_intervals`](Self::set_bandwidth_rate_limit_intervals).
+        ///
+        /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
+        pub fn bandwidth_rate_limit_intervals(
+            mut self,
+            input: crate::model::BandwidthRateLimitInterval,
+        ) -> Self {
+            let mut v = self.bandwidth_rate_limit_intervals.unwrap_or_default();
+            v.push(input);
+            self.bandwidth_rate_limit_intervals = Some(v);
+            self
+        }
+        /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
+        pub fn set_bandwidth_rate_limit_intervals(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
+        ) -> Self {
+            self.bandwidth_rate_limit_intervals = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutBandwidthRateLimitScheduleInput`](crate::input::PutBandwidthRateLimitScheduleInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::PutBandwidthRateLimitScheduleInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::PutBandwidthRateLimitScheduleInput {
+                gateway_arn: self.gateway_arn,
+                bandwidth_rate_limit_intervals: self.bandwidth_rate_limit_intervals,
+            })
+        }
+    }
+}
+impl PutBandwidthRateLimitScheduleInput {
+    /// Consumes the builder and constructs an Operation<[`PutBandwidthRateLimitSchedule`](crate::operation::PutBandwidthRateLimitSchedule)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutBandwidthRateLimitSchedule,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::PutBandwidthRateLimitScheduleInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutBandwidthRateLimitScheduleInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "BackupOnPremises_v20210101.PutBandwidthRateLimitSchedule",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_bandwidth_rate_limit_schedule(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutBandwidthRateLimitSchedule::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutBandwidthRateLimitSchedule",
+            "backupgateway",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`PutBandwidthRateLimitScheduleInput`](crate::input::PutBandwidthRateLimitScheduleInput).
+    pub fn builder() -> crate::input::put_bandwidth_rate_limit_schedule_input::Builder {
+        crate::input::put_bandwidth_rate_limit_schedule_input::Builder::default()
+    }
+}
+
+/// See [`PutHypervisorPropertyMappingsInput`](crate::input::PutHypervisorPropertyMappingsInput).
+pub mod put_hypervisor_property_mappings_input {
+
+    /// A builder for [`PutHypervisorPropertyMappingsInput`](crate::input::PutHypervisorPropertyMappingsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
+        pub(crate) vmware_to_aws_tag_mappings:
+            std::option::Option<std::vec::Vec<crate::model::VmwareToAwsTagMapping>>,
+        pub(crate) iam_role_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hypervisor_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn set_hypervisor_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hypervisor_arn = input;
+            self
+        }
+        /// Appends an item to `vmware_to_aws_tag_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_vmware_to_aws_tag_mappings`](Self::set_vmware_to_aws_tag_mappings).
+        ///
+        /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+        pub fn vmware_to_aws_tag_mappings(
+            mut self,
+            input: crate::model::VmwareToAwsTagMapping,
+        ) -> Self {
+            let mut v = self.vmware_to_aws_tag_mappings.unwrap_or_default();
+            v.push(input);
+            self.vmware_to_aws_tag_mappings = Some(v);
+            self
+        }
+        /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+        pub fn set_vmware_to_aws_tag_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VmwareToAwsTagMapping>>,
+        ) -> Self {
+            self.vmware_to_aws_tag_mappings = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.iam_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
+        pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_role_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutHypervisorPropertyMappingsInput`](crate::input::PutHypervisorPropertyMappingsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::PutHypervisorPropertyMappingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::PutHypervisorPropertyMappingsInput {
+                hypervisor_arn: self.hypervisor_arn,
+                vmware_to_aws_tag_mappings: self.vmware_to_aws_tag_mappings,
+                iam_role_arn: self.iam_role_arn,
+            })
+        }
+    }
+}
+impl PutHypervisorPropertyMappingsInput {
+    /// Consumes the builder and constructs an Operation<[`PutHypervisorPropertyMappings`](crate::operation::PutHypervisorPropertyMappings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutHypervisorPropertyMappings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::PutHypervisorPropertyMappingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutHypervisorPropertyMappingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "BackupOnPremises_v20210101.PutHypervisorPropertyMappings",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_hypervisor_property_mappings(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutHypervisorPropertyMappings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutHypervisorPropertyMappings",
+            "backupgateway",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`PutHypervisorPropertyMappingsInput`](crate::input::PutHypervisorPropertyMappingsInput).
+    pub fn builder() -> crate::input::put_hypervisor_property_mappings_input::Builder {
+        crate::input::put_hypervisor_property_mappings_input::Builder::default()
+    }
+}
+
 /// See [`PutMaintenanceStartTimeInput`](crate::input::PutMaintenanceStartTimeInput).
 pub mod put_maintenance_start_time_input {
 
@@ -2154,6 +2954,155 @@ impl PutMaintenanceStartTimeInput {
     /// Creates a new builder-style object to manufacture [`PutMaintenanceStartTimeInput`](crate::input::PutMaintenanceStartTimeInput).
     pub fn builder() -> crate::input::put_maintenance_start_time_input::Builder {
         crate::input::put_maintenance_start_time_input::Builder::default()
+    }
+}
+
+/// See [`StartVirtualMachinesMetadataSyncInput`](crate::input::StartVirtualMachinesMetadataSyncInput).
+pub mod start_virtual_machines_metadata_sync_input {
+
+    /// A builder for [`StartVirtualMachinesMetadataSyncInput`](crate::input::StartVirtualMachinesMetadataSyncInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hypervisor_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn set_hypervisor_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hypervisor_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartVirtualMachinesMetadataSyncInput`](crate::input::StartVirtualMachinesMetadataSyncInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StartVirtualMachinesMetadataSyncInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::StartVirtualMachinesMetadataSyncInput {
+                hypervisor_arn: self.hypervisor_arn,
+            })
+        }
+    }
+}
+impl StartVirtualMachinesMetadataSyncInput {
+    /// Consumes the builder and constructs an Operation<[`StartVirtualMachinesMetadataSync`](crate::operation::StartVirtualMachinesMetadataSync)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartVirtualMachinesMetadataSync,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StartVirtualMachinesMetadataSyncInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartVirtualMachinesMetadataSyncInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "BackupOnPremises_v20210101.StartVirtualMachinesMetadataSync",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_virtual_machines_metadata_sync(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartVirtualMachinesMetadataSync::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartVirtualMachinesMetadataSync",
+            "backupgateway",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StartVirtualMachinesMetadataSyncInput`](crate::input::StartVirtualMachinesMetadataSyncInput).
+    pub fn builder() -> crate::input::start_virtual_machines_metadata_sync_input::Builder {
+        crate::input::start_virtual_machines_metadata_sync_input::Builder::default()
     }
 }
 
@@ -3005,6 +3954,7 @@ pub mod update_hypervisor_input {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) log_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
@@ -3060,6 +4010,19 @@ pub mod update_hypervisor_input {
             self.name = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
+        pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
+        pub fn set_log_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_group_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateHypervisorInput`](crate::input::UpdateHypervisorInput).
         pub fn build(
             self,
@@ -3073,6 +4036,7 @@ pub mod update_hypervisor_input {
                 username: self.username,
                 password: self.password,
                 name: self.name,
+                log_group_arn: self.log_group_arn,
             })
         }
     }
@@ -3084,6 +4048,7 @@ pub mod update_hypervisor_input {
             formatter.field("username", &"*** Sensitive Data Redacted ***");
             formatter.field("password", &"*** Sensitive Data Redacted ***");
             formatter.field("name", &self.name);
+            formatter.field("log_group_arn", &self.log_group_arn);
             formatter.finish()
         }
     }
@@ -3250,6 +4215,21 @@ impl GetVirtualMachineInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartVirtualMachinesMetadataSyncInput {
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    #[doc(hidden)]
+    pub hypervisor_arn: std::option::Option<std::string::String>,
+}
+impl StartVirtualMachinesMetadataSyncInput {
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+        self.hypervisor_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHypervisorsInput {
     /// <p>The maximum number of hypervisors to list.</p>
     #[doc(hidden)]
@@ -3365,6 +4345,9 @@ pub struct UpdateHypervisorInput {
     /// <p>The updated name for the hypervisor</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
+    #[doc(hidden)]
+    pub log_group_arn: std::option::Option<std::string::String>,
 }
 impl UpdateHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
@@ -3387,6 +4370,10 @@ impl UpdateHypervisorInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
+    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+        self.log_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateHypervisorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3396,7 +4383,70 @@ impl std::fmt::Debug for UpdateHypervisorInput {
         formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
+        formatter.field("log_group_arn", &self.log_group_arn);
         formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetHypervisorInput {
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    #[doc(hidden)]
+    pub hypervisor_arn: std::option::Option<std::string::String>,
+}
+impl GetHypervisorInput {
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+        self.hypervisor_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PutHypervisorPropertyMappingsInput {
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    #[doc(hidden)]
+    pub hypervisor_arn: std::option::Option<std::string::String>,
+    /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    #[doc(hidden)]
+    pub vmware_to_aws_tag_mappings:
+        std::option::Option<std::vec::Vec<crate::model::VmwareToAwsTagMapping>>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
+    #[doc(hidden)]
+    pub iam_role_arn: std::option::Option<std::string::String>,
+}
+impl PutHypervisorPropertyMappingsInput {
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+        self.hypervisor_arn.as_deref()
+    }
+    /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    pub fn vmware_to_aws_tag_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::VmwareToAwsTagMapping]> {
+        self.vmware_to_aws_tag_mappings.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetHypervisorPropertyMappingsInput {
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    #[doc(hidden)]
+    pub hypervisor_arn: std::option::Option<std::string::String>,
+}
+impl GetHypervisorPropertyMappingsInput {
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+        self.hypervisor_arn.as_deref()
     }
 }
 
@@ -3648,6 +4698,46 @@ pub struct GetGatewayInput {
 }
 impl GetGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PutBandwidthRateLimitScheduleInput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
+    pub gateway_arn: std::option::Option<std::string::String>,
+    /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
+    #[doc(hidden)]
+    pub bandwidth_rate_limit_intervals:
+        std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
+}
+impl PutBandwidthRateLimitScheduleInput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
+    pub fn bandwidth_rate_limit_intervals(
+        &self,
+    ) -> std::option::Option<&[crate::model::BandwidthRateLimitInterval]> {
+        self.bandwidth_rate_limit_intervals.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetBandwidthRateLimitScheduleInput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
+    pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl GetBandwidthRateLimitScheduleInput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }

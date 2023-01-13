@@ -12,6 +12,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
             })
             .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
             .endpoint(
+                "af-south-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "oidc.af-south-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("af-south-1")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "ap-east-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "oidc.ap-east-1.amazonaws.com",
@@ -85,6 +96,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder()
                         .region("ap-southeast-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "ap-southeast-3",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "oidc.ap-southeast-3.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-southeast-3")
                         .build(),
                 },
             )
@@ -206,6 +228,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder()
                         .region("us-east-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "oidc.us-west-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-1")
                         .build(),
                 },
             )

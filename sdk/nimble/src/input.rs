@@ -12,12 +12,12 @@ pub mod accept_eulas_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -223,12 +223,12 @@ pub mod create_launch_profile_input {
         >,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -343,7 +343,7 @@ pub mod create_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -354,7 +354,7 @@ pub mod create_launch_profile_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -557,12 +557,12 @@ pub mod create_streaming_image_input {
         >,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -611,7 +611,7 @@ pub mod create_streaming_image_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -622,7 +622,7 @@ pub mod create_streaming_image_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -820,12 +820,12 @@ pub mod create_streaming_session_input {
         >,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -843,12 +843,12 @@ pub mod create_streaming_session_input {
             self.ec2_instance_type = input;
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -893,7 +893,7 @@ pub mod create_streaming_session_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -904,7 +904,7 @@ pub mod create_streaming_session_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1086,12 +1086,12 @@ pub mod create_streaming_session_stream_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1318,12 +1318,12 @@ pub mod create_studio_input {
         pub(crate) user_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
         pub fn admin_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
         pub fn set_admin_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1331,12 +1331,12 @@ pub mod create_studio_input {
             self.admin_role_arn = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1381,7 +1381,7 @@ pub mod create_studio_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1392,7 +1392,7 @@ pub mod create_studio_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1402,12 +1402,12 @@ pub mod create_studio_input {
             self.tags = input;
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
         pub fn user_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
         pub fn set_user_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1587,12 +1587,12 @@ pub mod create_studio_component_input {
         pub(crate) runtime_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1719,7 +1719,7 @@ pub mod create_studio_component_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1730,7 +1730,7 @@ pub mod create_studio_component_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1753,7 +1753,7 @@ pub mod create_studio_component_input {
             self.r#type = input;
             self
         }
-        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
         pub fn secure_initialization_role_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1761,7 +1761,7 @@ pub mod create_studio_component_input {
             self.secure_initialization_role_arn = Some(input.into());
             self
         }
-        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
         pub fn set_secure_initialization_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1769,12 +1769,12 @@ pub mod create_studio_component_input {
             self.secure_initialization_role_arn = input;
             self
         }
-        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
         pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.runtime_role_arn = Some(input.into());
             self
         }
-        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
         pub fn set_runtime_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1981,22 +1981,22 @@ pub mod delete_launch_profile_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2185,22 +2185,22 @@ pub mod delete_launch_profile_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2413,12 +2413,12 @@ pub mod delete_streaming_image_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2617,12 +2617,12 @@ pub mod delete_streaming_session_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2817,12 +2817,12 @@ pub mod delete_studio_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2984,12 +2984,12 @@ pub mod delete_studio_component_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3188,12 +3188,12 @@ pub mod delete_studio_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3530,12 +3530,12 @@ pub mod get_launch_profile_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3717,12 +3717,12 @@ pub mod get_launch_profile_details_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3908,12 +3908,12 @@ pub mod get_launch_profile_initialization_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3956,12 +3956,12 @@ pub mod get_launch_profile_initialization_input {
             self.launch_purpose = input;
             self
         }
-        /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
+        /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
         pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform = Some(input.into());
             self
         }
-        /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
+        /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -4200,12 +4200,12 @@ pub mod get_launch_profile_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4772,6 +4772,190 @@ impl GetStreamingSessionInput {
     }
 }
 
+/// See [`GetStreamingSessionBackupInput`](crate::input::GetStreamingSessionBackupInput).
+pub mod get_streaming_session_backup_input {
+
+    /// A builder for [`GetStreamingSessionBackupInput`](crate::input::GetStreamingSessionBackupInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) backup_id: std::option::Option<std::string::String>,
+        pub(crate) studio_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the backup.</p>
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the backup.</p>
+        pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backup_id = input;
+            self
+        }
+        /// <p>The studio ID. </p>
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.studio_id = Some(input.into());
+            self
+        }
+        /// <p>The studio ID. </p>
+        pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.studio_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetStreamingSessionBackupInput`](crate::input::GetStreamingSessionBackupInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetStreamingSessionBackupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetStreamingSessionBackupInput {
+                backup_id: self.backup_id,
+                studio_id: self.studio_id,
+            })
+        }
+    }
+}
+impl GetStreamingSessionBackupInput {
+    /// Consumes the builder and constructs an Operation<[`GetStreamingSessionBackup`](crate::operation::GetStreamingSessionBackup)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetStreamingSessionBackup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetStreamingSessionBackupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_40 = &_input.studio_id;
+                let input_40 = input_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "studio_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let studio_id = aws_smithy_http::label::fmt_string(
+                    input_40,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if studio_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "studio_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                let input_41 = &_input.backup_id;
+                let input_41 = input_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backup_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let backup_id = aws_smithy_http::label::fmt_string(
+                    input_41,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if backup_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backup_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2020-08-01/studios/{studioId}/streaming-session-backups/{backupId}",
+                    studioId = studio_id,
+                    backupId = backup_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetStreamingSessionBackupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetStreamingSessionBackup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetStreamingSessionBackup",
+            "nimble",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetStreamingSessionBackupInput`](crate::input::GetStreamingSessionBackupInput).
+    pub fn builder() -> crate::input::get_streaming_session_backup_input::Builder {
+        crate::input::get_streaming_session_backup_input::Builder::default()
+    }
+}
+
 /// See [`GetStreamingSessionStreamInput`](crate::input::GetStreamingSessionStreamInput).
 pub mod get_streaming_session_stream_input {
 
@@ -4848,15 +5032,15 @@ impl GetStreamingSessionStreamInput {
                 _input: &crate::input::GetStreamingSessionStreamInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_40 = &_input.studio_id;
-                let input_40 = input_40.as_ref().ok_or_else(|| {
+                let input_42 = &_input.studio_id;
+                let input_42 = input_42.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_40,
+                    input_42,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -4867,15 +5051,15 @@ impl GetStreamingSessionStreamInput {
                         ),
                     );
                 }
-                let input_41 = &_input.session_id;
-                let input_41 = input_41.as_ref().ok_or_else(|| {
+                let input_43 = &_input.session_id;
+                let input_43 = input_43.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "session_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let session_id = aws_smithy_http::label::fmt_string(
-                    input_41,
+                    input_43,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if session_id.is_empty() {
@@ -4886,15 +5070,15 @@ impl GetStreamingSessionStreamInput {
                         ),
                     );
                 }
-                let input_42 = &_input.stream_id;
-                let input_42 = input_42.as_ref().ok_or_else(|| {
+                let input_44 = &_input.stream_id;
+                let input_44 = input_44.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "stream_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let stream_id = aws_smithy_http::label::fmt_string(
-                    input_42,
+                    input_44,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if stream_id.is_empty() {
@@ -5031,15 +5215,15 @@ impl GetStudioInput {
                 _input: &crate::input::GetStudioInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_43 = &_input.studio_id;
-                let input_43 = input_43.as_ref().ok_or_else(|| {
+                let input_45 = &_input.studio_id;
+                let input_45 = input_45.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_43,
+                    input_45,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -5196,15 +5380,15 @@ impl GetStudioComponentInput {
                 _input: &crate::input::GetStudioComponentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_44 = &_input.studio_id;
-                let input_44 = input_44.as_ref().ok_or_else(|| {
+                let input_46 = &_input.studio_id;
+                let input_46 = input_46.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_44,
+                    input_46,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -5215,15 +5399,15 @@ impl GetStudioComponentInput {
                         ),
                     );
                 }
-                let input_45 = &_input.studio_component_id;
-                let input_45 = input_45.as_ref().ok_or_else(|| {
+                let input_47 = &_input.studio_component_id;
+                let input_47 = input_47.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_component_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_component_id = aws_smithy_http::label::fmt_string(
-                    input_45,
+                    input_47,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_component_id.is_empty() {
@@ -5378,15 +5562,15 @@ impl GetStudioMemberInput {
                 _input: &crate::input::GetStudioMemberInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_46 = &_input.studio_id;
-                let input_46 = input_46.as_ref().ok_or_else(|| {
+                let input_48 = &_input.studio_id;
+                let input_48 = input_48.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_46,
+                    input_48,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -5397,15 +5581,15 @@ impl GetStudioMemberInput {
                         ),
                     );
                 }
-                let input_47 = &_input.principal_id;
-                let input_47 = input_47.as_ref().ok_or_else(|| {
+                let input_49 = &_input.principal_id;
+                let input_49 = input_49.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "principal_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let principal_id = aws_smithy_http::label::fmt_string(
-                    input_47,
+                    input_49,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if principal_id.is_empty() {
@@ -5528,12 +5712,12 @@ pub mod list_eula_acceptances_input {
             self.eula_ids = input;
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5583,15 +5767,15 @@ impl ListEulaAcceptancesInput {
                 _input: &crate::input::ListEulaAcceptancesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_48 = &_input.studio_id;
-                let input_48 = input_48.as_ref().ok_or_else(|| {
+                let input_50 = &_input.studio_id;
+                let input_50 = input_50.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_48,
+                    input_50,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -5615,17 +5799,17 @@ impl ListEulaAcceptancesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_49) = &_input.eula_ids {
+                if let Some(inner_51) = &_input.eula_ids {
                     {
-                        for inner_50 in inner_49 {
+                        for inner_52 in inner_51 {
                             query
-                                .push_kv("eulaIds", &aws_smithy_http::query::fmt_string(&inner_50));
+                                .push_kv("eulaIds", &aws_smithy_http::query::fmt_string(&inner_52));
                         }
                     }
                 }
-                if let Some(inner_51) = &_input.next_token {
+                if let Some(inner_53) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_51));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_53));
                     }
                 }
                 Ok(())
@@ -5733,12 +5917,12 @@ pub mod list_eulas_input {
             self.eula_ids = input;
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5783,17 +5967,17 @@ impl ListEulasInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_52) = &_input.eula_ids {
+                if let Some(inner_54) = &_input.eula_ids {
                     {
-                        for inner_53 in inner_52 {
+                        for inner_55 in inner_54 {
                             query
-                                .push_kv("eulaIds", &aws_smithy_http::query::fmt_string(&inner_53));
+                                .push_kv("eulaIds", &aws_smithy_http::query::fmt_string(&inner_55));
                         }
                     }
                 }
-                if let Some(inner_54) = &_input.next_token {
+                if let Some(inner_56) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_56));
                     }
                 }
                 Ok(())
@@ -5882,12 +6066,12 @@ pub mod list_launch_profile_members_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5905,12 +6089,12 @@ pub mod list_launch_profile_members_input {
             self.max_results = input;
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5961,15 +6145,15 @@ impl ListLaunchProfileMembersInput {
                 _input: &crate::input::ListLaunchProfileMembersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_55 = &_input.studio_id;
-                let input_55 = input_55.as_ref().ok_or_else(|| {
+                let input_57 = &_input.studio_id;
+                let input_57 = input_57.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_55,
+                    input_57,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -5980,15 +6164,15 @@ impl ListLaunchProfileMembersInput {
                         ),
                     );
                 }
-                let input_56 = &_input.launch_profile_id;
-                let input_56 = input_56.as_ref().ok_or_else(|| {
+                let input_58 = &_input.launch_profile_id;
+                let input_58 = input_58.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "launch_profile_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let launch_profile_id = aws_smithy_http::label::fmt_string(
-                    input_56,
+                    input_58,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if launch_profile_id.is_empty() {
@@ -6013,17 +6197,17 @@ impl ListLaunchProfileMembersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_57) = &_input.max_results {
-                    if *inner_57 != 0 {
+                if let Some(inner_59) = &_input.max_results {
+                    if *inner_59 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_57).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_59).encode(),
                         );
                     }
                 }
-                if let Some(inner_58) = &_input.next_token {
+                if let Some(inner_60) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_58));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_60));
                     }
                 }
                 Ok(())
@@ -6125,12 +6309,12 @@ pub mod list_launch_profiles_input {
             self.max_results = input;
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6211,15 +6395,15 @@ impl ListLaunchProfilesInput {
                 _input: &crate::input::ListLaunchProfilesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_59 = &_input.studio_id;
-                let input_59 = input_59.as_ref().ok_or_else(|| {
+                let input_61 = &_input.studio_id;
+                let input_61 = input_61.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_59,
+                    input_61,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -6243,31 +6427,31 @@ impl ListLaunchProfilesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_60) = &_input.max_results {
-                    if *inner_60 != 0 {
+                if let Some(inner_62) = &_input.max_results {
+                    if *inner_62 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_60).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_62).encode(),
                         );
                     }
                 }
-                if let Some(inner_61) = &_input.next_token {
+                if let Some(inner_63) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_61));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_63));
                     }
                 }
-                if let Some(inner_62) = &_input.principal_id {
+                if let Some(inner_64) = &_input.principal_id {
                     {
                         query.push_kv(
                             "principalId",
-                            &aws_smithy_http::query::fmt_string(&inner_62),
+                            &aws_smithy_http::query::fmt_string(&inner_64),
                         );
                     }
                 }
-                if let Some(inner_63) = &_input.states {
+                if let Some(inner_65) = &_input.states {
                     {
-                        for inner_64 in inner_63 {
-                            query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_64));
+                        for inner_66 in inner_65 {
+                            query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_66));
                         }
                     }
                 }
@@ -6358,12 +6542,12 @@ pub mod list_streaming_images_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6423,15 +6607,15 @@ impl ListStreamingImagesInput {
                 _input: &crate::input::ListStreamingImagesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_65 = &_input.studio_id;
-                let input_65 = input_65.as_ref().ok_or_else(|| {
+                let input_67 = &_input.studio_id;
+                let input_67 = input_67.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_65,
+                    input_67,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -6455,14 +6639,14 @@ impl ListStreamingImagesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_66) = &_input.next_token {
+                if let Some(inner_68) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_66));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_68));
                     }
                 }
-                if let Some(inner_67) = &_input.owner {
+                if let Some(inner_69) = &_input.owner {
                     {
-                        query.push_kv("owner", &aws_smithy_http::query::fmt_string(&inner_67));
+                        query.push_kv("owner", &aws_smithy_http::query::fmt_string(&inner_69));
                     }
                 }
                 Ok(())
@@ -6541,6 +6725,200 @@ impl ListStreamingImagesInput {
     }
 }
 
+/// See [`ListStreamingSessionBackupsInput`](crate::input::ListStreamingSessionBackupsInput).
+pub mod list_streaming_session_backups_input {
+
+    /// A builder for [`ListStreamingSessionBackupsInput`](crate::input::ListStreamingSessionBackupsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) owned_by: std::option::Option<std::string::String>,
+        pub(crate) studio_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The user ID of the user that owns the streaming session.</p>
+        pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owned_by = Some(input.into());
+            self
+        }
+        /// <p>The user ID of the user that owns the streaming session.</p>
+        pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owned_by = input;
+            self
+        }
+        /// <p>The studio ID. </p>
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.studio_id = Some(input.into());
+            self
+        }
+        /// <p>The studio ID. </p>
+        pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.studio_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListStreamingSessionBackupsInput`](crate::input::ListStreamingSessionBackupsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListStreamingSessionBackupsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListStreamingSessionBackupsInput {
+                next_token: self.next_token,
+                owned_by: self.owned_by,
+                studio_id: self.studio_id,
+            })
+        }
+    }
+}
+impl ListStreamingSessionBackupsInput {
+    /// Consumes the builder and constructs an Operation<[`ListStreamingSessionBackups`](crate::operation::ListStreamingSessionBackups)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListStreamingSessionBackups,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListStreamingSessionBackupsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_70 = &_input.studio_id;
+                let input_70 = input_70.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "studio_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let studio_id = aws_smithy_http::label::fmt_string(
+                    input_70,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if studio_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "studio_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2020-08-01/studios/{studioId}/streaming-session-backups",
+                    studioId = studio_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListStreamingSessionBackupsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_71) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_71));
+                    }
+                }
+                if let Some(inner_72) = &_input.owned_by {
+                    {
+                        query.push_kv("ownedBy", &aws_smithy_http::query::fmt_string(&inner_72));
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListStreamingSessionBackupsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListStreamingSessionBackups::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListStreamingSessionBackups",
+            "nimble",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListStreamingSessionBackupsInput`](crate::input::ListStreamingSessionBackupsInput).
+    pub fn builder() -> crate::input::list_streaming_session_backups_input::Builder {
+        crate::input::list_streaming_session_backups_input::Builder::default()
+    }
+}
+
 /// See [`ListStreamingSessionsInput`](crate::input::ListStreamingSessionsInput).
 pub mod list_streaming_sessions_input {
 
@@ -6564,12 +6942,12 @@ pub mod list_streaming_sessions_input {
             self.created_by = input;
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6641,15 +7019,15 @@ impl ListStreamingSessionsInput {
                 _input: &crate::input::ListStreamingSessionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_68 = &_input.studio_id;
-                let input_68 = input_68.as_ref().ok_or_else(|| {
+                let input_73 = &_input.studio_id;
+                let input_73 = input_73.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_68,
+                    input_73,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -6673,24 +7051,24 @@ impl ListStreamingSessionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_69) = &_input.created_by {
+                if let Some(inner_74) = &_input.created_by {
                     {
-                        query.push_kv("createdBy", &aws_smithy_http::query::fmt_string(&inner_69));
+                        query.push_kv("createdBy", &aws_smithy_http::query::fmt_string(&inner_74));
                     }
                 }
-                if let Some(inner_70) = &_input.next_token {
+                if let Some(inner_75) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_70));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_75));
                     }
                 }
-                if let Some(inner_71) = &_input.owned_by {
+                if let Some(inner_76) = &_input.owned_by {
                     {
-                        query.push_kv("ownedBy", &aws_smithy_http::query::fmt_string(&inner_71));
+                        query.push_kv("ownedBy", &aws_smithy_http::query::fmt_string(&inner_76));
                     }
                 }
-                if let Some(inner_72) = &_input.session_ids {
+                if let Some(inner_77) = &_input.session_ids {
                     {
-                        query.push_kv("sessionIds", &aws_smithy_http::query::fmt_string(&inner_72));
+                        query.push_kv("sessionIds", &aws_smithy_http::query::fmt_string(&inner_77));
                     }
                 }
                 Ok(())
@@ -6792,12 +7170,12 @@ pub mod list_studio_components_input {
             self.max_results = input;
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6887,15 +7265,15 @@ impl ListStudioComponentsInput {
                 _input: &crate::input::ListStudioComponentsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_73 = &_input.studio_id;
-                let input_73 = input_73.as_ref().ok_or_else(|| {
+                let input_78 = &_input.studio_id;
+                let input_78 = input_78.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_73,
+                    input_78,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -6919,30 +7297,30 @@ impl ListStudioComponentsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_74) = &_input.max_results {
-                    if *inner_74 != 0 {
+                if let Some(inner_79) = &_input.max_results {
+                    if *inner_79 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_74).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_79).encode(),
                         );
                     }
                 }
-                if let Some(inner_75) = &_input.next_token {
+                if let Some(inner_80) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_75));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_80));
                     }
                 }
-                if let Some(inner_76) = &_input.states {
+                if let Some(inner_81) = &_input.states {
                     {
-                        for inner_77 in inner_76 {
-                            query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_77));
+                        for inner_82 in inner_81 {
+                            query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_82));
                         }
                     }
                 }
-                if let Some(inner_78) = &_input.types {
+                if let Some(inner_83) = &_input.types {
                     {
-                        for inner_79 in inner_78 {
-                            query.push_kv("types", &aws_smithy_http::query::fmt_string(&inner_79));
+                        for inner_84 in inner_83 {
+                            query.push_kv("types", &aws_smithy_http::query::fmt_string(&inner_84));
                         }
                     }
                 }
@@ -7043,12 +7421,12 @@ pub mod list_studio_members_input {
             self.max_results = input;
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7098,15 +7476,15 @@ impl ListStudioMembersInput {
                 _input: &crate::input::ListStudioMembersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_80 = &_input.studio_id;
-                let input_80 = input_80.as_ref().ok_or_else(|| {
+                let input_85 = &_input.studio_id;
+                let input_85 = input_85.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_80,
+                    input_85,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -7130,17 +7508,17 @@ impl ListStudioMembersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_81) = &_input.max_results {
-                    if *inner_81 != 0 {
+                if let Some(inner_86) = &_input.max_results {
+                    if *inner_86 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_81).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_86).encode(),
                         );
                     }
                 }
-                if let Some(inner_82) = &_input.next_token {
+                if let Some(inner_87) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_82));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_87));
                     }
                 }
                 Ok(())
@@ -7228,12 +7606,12 @@ pub mod list_studios_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7277,9 +7655,9 @@ impl ListStudiosInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_83) = &_input.next_token {
+                if let Some(inner_88) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_83));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_88));
                     }
                 }
                 Ok(())
@@ -7410,15 +7788,15 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_84 = &_input.resource_arn;
-                let input_84 = input_84.as_ref().ok_or_else(|| {
+                let input_89 = &_input.resource_arn;
+                let input_89 = input_89.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_84,
+                    input_89,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -7524,12 +7902,12 @@ pub mod put_launch_profile_members_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -7547,12 +7925,12 @@ pub mod put_launch_profile_members_input {
             self.identity_store_id = input;
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7629,15 +8007,15 @@ impl PutLaunchProfileMembersInput {
                 _input: &crate::input::PutLaunchProfileMembersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_85 = &_input.studio_id;
-                let input_85 = input_85.as_ref().ok_or_else(|| {
+                let input_90 = &_input.studio_id;
+                let input_90 = input_90.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_85,
+                    input_90,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -7648,15 +8026,15 @@ impl PutLaunchProfileMembersInput {
                         ),
                     );
                 }
-                let input_86 = &_input.launch_profile_id;
-                let input_86 = input_86.as_ref().ok_or_else(|| {
+                let input_91 = &_input.launch_profile_id;
+                let input_91 = input_91.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "launch_profile_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let launch_profile_id = aws_smithy_http::label::fmt_string(
-                    input_86,
+                    input_91,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if launch_profile_id.is_empty() {
@@ -7779,12 +8157,12 @@ pub mod put_studio_members_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -7870,15 +8248,15 @@ impl PutStudioMembersInput {
                 _input: &crate::input::PutStudioMembersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_87 = &_input.studio_id;
-                let input_87 = input_87.as_ref().ok_or_else(|| {
+                let input_92 = &_input.studio_id;
+                let input_92 = input_92.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_87,
+                    input_92,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -7994,24 +8372,25 @@ pub mod start_streaming_session_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) studio_id: std::option::Option<std::string::String>,
+        pub(crate) backup_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+        /// <p>The streaming session ID for the <code>StartStreamingSessionRequest</code>.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_id = Some(input.into());
             self
         }
-        /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+        /// <p>The streaming session ID for the <code>StartStreamingSessionRequest</code>.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
@@ -8026,6 +8405,16 @@ pub mod start_streaming_session_input {
             self.studio_id = input;
             self
         }
+        /// <p>The ID of the backup.</p>
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the backup.</p>
+        pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backup_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartStreamingSessionInput`](crate::input::StartStreamingSessionInput).
         pub fn build(
             self,
@@ -8037,6 +8426,7 @@ pub mod start_streaming_session_input {
                 client_token: self.client_token,
                 session_id: self.session_id,
                 studio_id: self.studio_id,
+                backup_id: self.backup_id,
             })
         }
     }
@@ -8064,15 +8454,15 @@ impl StartStreamingSessionInput {
                 _input: &crate::input::StartStreamingSessionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_88 = &_input.studio_id;
-                let input_88 = input_88.as_ref().ok_or_else(|| {
+                let input_93 = &_input.studio_id;
+                let input_93 = input_93.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_88,
+                    input_93,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -8083,15 +8473,15 @@ impl StartStreamingSessionInput {
                         ),
                     );
                 }
-                let input_89 = &_input.session_id;
-                let input_89 = input_89.as_ref().ok_or_else(|| {
+                let input_94 = &_input.session_id;
+                let input_94 = input_94.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "session_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let session_id = aws_smithy_http::label::fmt_string(
-                    input_89,
+                    input_94,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if session_id.is_empty() {
@@ -8126,11 +8516,27 @@ impl StartStreamingSessionInput {
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_streaming_session(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
@@ -8196,12 +8602,12 @@ pub mod start_studio_sso_configuration_repair_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8253,15 +8659,15 @@ impl StartStudioSsoConfigurationRepairInput {
                 _input: &crate::input::StartStudioSsoConfigurationRepairInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_90 = &_input.studio_id;
-                let input_90 = input_90.as_ref().ok_or_else(|| {
+                let input_95 = &_input.studio_id;
+                let input_95 = input_95.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_90,
+                    input_95,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -8365,24 +8771,25 @@ pub mod stop_streaming_session_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) studio_id: std::option::Option<std::string::String>,
+        pub(crate) volume_retention_mode: std::option::Option<crate::model::VolumeRetentionMode>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+        /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_id = Some(input.into());
             self
         }
-        /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+        /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
@@ -8397,6 +8804,19 @@ pub mod stop_streaming_session_input {
             self.studio_id = input;
             self
         }
+        /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
+        pub fn volume_retention_mode(mut self, input: crate::model::VolumeRetentionMode) -> Self {
+            self.volume_retention_mode = Some(input);
+            self
+        }
+        /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
+        pub fn set_volume_retention_mode(
+            mut self,
+            input: std::option::Option<crate::model::VolumeRetentionMode>,
+        ) -> Self {
+            self.volume_retention_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StopStreamingSessionInput`](crate::input::StopStreamingSessionInput).
         pub fn build(
             self,
@@ -8408,6 +8828,7 @@ pub mod stop_streaming_session_input {
                 client_token: self.client_token,
                 session_id: self.session_id,
                 studio_id: self.studio_id,
+                volume_retention_mode: self.volume_retention_mode,
             })
         }
     }
@@ -8435,15 +8856,15 @@ impl StopStreamingSessionInput {
                 _input: &crate::input::StopStreamingSessionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_91 = &_input.studio_id;
-                let input_91 = input_91.as_ref().ok_or_else(|| {
+                let input_96 = &_input.studio_id;
+                let input_96 = input_96.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_91,
+                    input_96,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -8454,15 +8875,15 @@ impl StopStreamingSessionInput {
                         ),
                     );
                 }
-                let input_92 = &_input.session_id;
-                let input_92 = input_92.as_ref().ok_or_else(|| {
+                let input_97 = &_input.session_id;
+                let input_97 = input_97.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "session_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let session_id = aws_smithy_http::label::fmt_string(
-                    input_92,
+                    input_97,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if session_id.is_empty() {
@@ -8497,11 +8918,27 @@ impl StopStreamingSessionInput {
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_stop_streaming_session(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
@@ -8569,12 +9006,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -8583,7 +9020,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8594,7 +9031,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8636,15 +9073,15 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_93 = &_input.resource_arn;
-                let input_93 = input_93.as_ref().ok_or_else(|| {
+                let input_98 = &_input.resource_arn;
+                let input_98 = input_98.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_93,
+                    input_98,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -8821,15 +9258,15 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_94 = &_input.resource_arn;
-                let input_94 = input_94.as_ref().ok_or_else(|| {
+                let input_99 = &_input.resource_arn;
+                let input_99 = input_99.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_94,
+                    input_99,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -8853,15 +9290,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_95 = &_input.tag_keys;
-                let inner_95 = inner_95.as_ref().ok_or_else(|| {
+                let inner_100 = &_input.tag_keys;
+                let inner_100 = inner_100.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "tag_keys",
                         "cannot be empty or unset",
                     )
                 })?;
-                for inner_96 in inner_95 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_96));
+                for inner_101 in inner_100 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_101));
                 }
                 Ok(())
             }
@@ -8957,12 +9394,12 @@ pub mod update_launch_profile_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8977,12 +9414,12 @@ pub mod update_launch_profile_input {
             self.description = input;
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9127,15 +9564,15 @@ impl UpdateLaunchProfileInput {
                 _input: &crate::input::UpdateLaunchProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_97 = &_input.studio_id;
-                let input_97 = input_97.as_ref().ok_or_else(|| {
+                let input_102 = &_input.studio_id;
+                let input_102 = input_102.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_97,
+                    input_102,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -9146,15 +9583,15 @@ impl UpdateLaunchProfileInput {
                         ),
                     );
                 }
-                let input_98 = &_input.launch_profile_id;
-                let input_98 = input_98.as_ref().ok_or_else(|| {
+                let input_103 = &_input.launch_profile_id;
+                let input_103 = input_103.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "launch_profile_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let launch_profile_id = aws_smithy_http::label::fmt_string(
-                    input_98,
+                    input_103,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if launch_profile_id.is_empty() {
@@ -9275,22 +9712,22 @@ pub mod update_launch_profile_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9371,15 +9808,15 @@ impl UpdateLaunchProfileMemberInput {
                 _input: &crate::input::UpdateLaunchProfileMemberInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_99 = &_input.studio_id;
-                let input_99 = input_99.as_ref().ok_or_else(|| {
+                let input_104 = &_input.studio_id;
+                let input_104 = input_104.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_99,
+                    input_104,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -9390,15 +9827,15 @@ impl UpdateLaunchProfileMemberInput {
                         ),
                     );
                 }
-                let input_100 = &_input.launch_profile_id;
-                let input_100 = input_100.as_ref().ok_or_else(|| {
+                let input_105 = &_input.launch_profile_id;
+                let input_105 = input_105.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "launch_profile_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let launch_profile_id = aws_smithy_http::label::fmt_string(
-                    input_100,
+                    input_105,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if launch_profile_id.is_empty() {
@@ -9409,15 +9846,15 @@ impl UpdateLaunchProfileMemberInput {
                         ),
                     );
                 }
-                let input_101 = &_input.principal_id;
-                let input_101 = input_101.as_ref().ok_or_else(|| {
+                let input_106 = &_input.principal_id;
+                let input_106 = input_106.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "principal_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let principal_id = aws_smithy_http::label::fmt_string(
-                    input_101,
+                    input_106,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if principal_id.is_empty() {
@@ -9535,12 +9972,12 @@ pub mod update_streaming_image_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -9639,15 +10076,15 @@ impl UpdateStreamingImageInput {
                 _input: &crate::input::UpdateStreamingImageInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_102 = &_input.studio_id;
-                let input_102 = input_102.as_ref().ok_or_else(|| {
+                let input_107 = &_input.studio_id;
+                let input_107 = input_107.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_102,
+                    input_107,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -9658,15 +10095,15 @@ impl UpdateStreamingImageInput {
                         ),
                     );
                 }
-                let input_103 = &_input.streaming_image_id;
-                let input_103 = input_103.as_ref().ok_or_else(|| {
+                let input_108 = &_input.streaming_image_id;
+                let input_108 = input_108.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "streaming_image_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let streaming_image_id = aws_smithy_http::label::fmt_string(
-                    input_103,
+                    input_108,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if streaming_image_id.is_empty() {
@@ -9803,12 +10240,12 @@ pub mod update_studio_input {
             self.admin_role_arn = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -9895,15 +10332,15 @@ impl UpdateStudioInput {
                 _input: &crate::input::UpdateStudioInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_104 = &_input.studio_id;
-                let input_104 = input_104.as_ref().ok_or_else(|| {
+                let input_109 = &_input.studio_id;
+                let input_109 = input_109.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_104,
+                    input_109,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -10033,12 +10470,12 @@ pub mod update_studio_component_input {
         pub(crate) runtime_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -10187,7 +10624,7 @@ pub mod update_studio_component_input {
             self.r#type = input;
             self
         }
-        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
         pub fn secure_initialization_role_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -10195,7 +10632,7 @@ pub mod update_studio_component_input {
             self.secure_initialization_role_arn = Some(input.into());
             self
         }
-        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
         pub fn set_secure_initialization_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10203,12 +10640,12 @@ pub mod update_studio_component_input {
             self.secure_initialization_role_arn = input;
             self
         }
-        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
         pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.runtime_role_arn = Some(input.into());
             self
         }
-        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
         pub fn set_runtime_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10286,15 +10723,15 @@ impl UpdateStudioComponentInput {
                 _input: &crate::input::UpdateStudioComponentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_105 = &_input.studio_id;
-                let input_105 = input_105.as_ref().ok_or_else(|| {
+                let input_110 = &_input.studio_id;
+                let input_110 = input_110.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_id = aws_smithy_http::label::fmt_string(
-                    input_105,
+                    input_110,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_id.is_empty() {
@@ -10305,15 +10742,15 @@ impl UpdateStudioComponentInput {
                         ),
                     );
                 }
-                let input_106 = &_input.studio_component_id;
-                let input_106 = input_106.as_ref().ok_or_else(|| {
+                let input_111 = &_input.studio_component_id;
+                let input_111 = input_111.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "studio_component_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let studio_component_id = aws_smithy_http::label::fmt_string(
-                    input_106,
+                    input_111,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if studio_component_id.is_empty() {
@@ -10428,7 +10865,7 @@ impl UpdateStudioComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartStudioSsoConfigurationRepairInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
@@ -10436,7 +10873,7 @@ pub struct StartStudioSsoConfigurationRepairInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl StartStudioSsoConfigurationRepairInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -10450,7 +10887,7 @@ impl StartStudioSsoConfigurationRepairInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutStudioMembersInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The ID of the identity store.</p>
@@ -10464,7 +10901,7 @@ pub struct PutStudioMembersInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl PutStudioMembersInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -10489,7 +10926,7 @@ pub struct ListStudioMembersInput {
     /// <p>The max number of results to return in the response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
@@ -10501,7 +10938,7 @@ impl ListStudioMembersInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10537,7 +10974,7 @@ impl GetStudioMemberInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStudioMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
@@ -10548,7 +10985,7 @@ pub struct DeleteStudioMemberInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStudioMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -10566,12 +11003,12 @@ impl DeleteStudioMemberInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStudiosInput {
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStudiosInput {
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10581,10 +11018,10 @@ impl ListStudiosInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioInput {
-    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+    /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
     #[doc(hidden)]
     pub admin_role_arn: std::option::Option<std::string::String>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A friendly name for the studio.</p>
@@ -10597,20 +11034,20 @@ pub struct CreateStudioInput {
     /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
     #[doc(hidden)]
     pub studio_name: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+    /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
     #[doc(hidden)]
     pub user_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateStudioInput {
-    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+    /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
     pub fn admin_role_arn(&self) -> std::option::Option<&str> {
         self.admin_role_arn.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -10628,14 +11065,14 @@ impl CreateStudioInput {
     pub fn studio_name(&self) -> std::option::Option<&str> {
         self.studio_name.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+    /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
     pub fn user_role_arn(&self) -> std::option::Option<&str> {
         self.user_role_arn.as_deref()
     }
@@ -10661,7 +11098,7 @@ impl std::fmt::Debug for CreateStudioInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStudioInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
@@ -10669,7 +11106,7 @@ pub struct DeleteStudioInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStudioInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -10686,7 +11123,7 @@ pub struct UpdateStudioInput {
     /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
     #[doc(hidden)]
     pub admin_role_arn: std::option::Option<std::string::String>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A friendly name for the studio.</p>
@@ -10704,7 +11141,7 @@ impl UpdateStudioInput {
     pub fn admin_role_arn(&self) -> std::option::Option<&str> {
         self.admin_role_arn.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -10755,7 +11192,7 @@ pub struct ListStudioComponentsInput {
     /// <p>The max number of results to return in the response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters the request to studio components that are in one of the given states. </p>
@@ -10773,7 +11210,7 @@ impl ListStudioComponentsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10795,7 +11232,7 @@ impl ListStudioComponentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The configuration of the studio component, based on component type.</p>
@@ -10824,22 +11261,22 @@ pub struct CreateStudioComponentInput {
     /// <p>The specific subtype of a studio component.</p>
     #[doc(hidden)]
     pub subtype: std::option::Option<crate::model::StudioComponentSubtype>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the studio component.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
-    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     #[doc(hidden)]
     pub secure_initialization_role_arn: std::option::Option<std::string::String>,
-    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     #[doc(hidden)]
     pub runtime_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -10881,7 +11318,7 @@ impl CreateStudioComponentInput {
     pub fn subtype(&self) -> std::option::Option<&crate::model::StudioComponentSubtype> {
         self.subtype.as_ref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -10892,11 +11329,11 @@ impl CreateStudioComponentInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::StudioComponentType> {
         self.r#type.as_ref()
     }
-    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     pub fn secure_initialization_role_arn(&self) -> std::option::Option<&str> {
         self.secure_initialization_role_arn.as_deref()
     }
-    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     pub fn runtime_role_arn(&self) -> std::option::Option<&str> {
         self.runtime_role_arn.as_deref()
     }
@@ -10928,7 +11365,7 @@ impl std::fmt::Debug for CreateStudioComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The studio component ID.</p>
@@ -10939,7 +11376,7 @@ pub struct DeleteStudioComponentInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -10957,7 +11394,7 @@ impl DeleteStudioComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The configuration of the studio component, based on component type.</p>
@@ -10992,15 +11429,15 @@ pub struct UpdateStudioComponentInput {
     /// <p>The type of the studio component.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
-    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     #[doc(hidden)]
     pub secure_initialization_role_arn: std::option::Option<std::string::String>,
-    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     #[doc(hidden)]
     pub runtime_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11050,11 +11487,11 @@ impl UpdateStudioComponentInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::StudioComponentType> {
         self.r#type.as_ref()
     }
-    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     pub fn secure_initialization_role_arn(&self) -> std::option::Option<&str> {
         self.secure_initialization_role_arn.as_deref()
     }
-    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     pub fn runtime_role_arn(&self) -> std::option::Option<&str> {
         self.runtime_role_arn.as_deref()
     }
@@ -11108,28 +11545,35 @@ impl GetStudioComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+    /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The studioId for the StopStreamingSessionRequest.</p>
     #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
+    /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
+    #[doc(hidden)]
+    pub volume_retention_mode: std::option::Option<crate::model::VolumeRetentionMode>,
 }
 impl StopStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+    /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
     /// <p>The studioId for the StopStreamingSessionRequest.</p>
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
+    }
+    /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
+    pub fn volume_retention_mode(&self) -> std::option::Option<&crate::model::VolumeRetentionMode> {
+        self.volume_retention_mode.as_ref()
     }
 }
 
@@ -11137,28 +11581,35 @@ impl StopStreamingSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+    /// <p>The streaming session ID for the <code>StartStreamingSessionRequest</code>.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The studio ID for the StartStreamingSessionRequest.</p>
     #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the backup.</p>
+    #[doc(hidden)]
+    pub backup_id: std::option::Option<std::string::String>,
 }
 impl StartStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+    /// <p>The streaming session ID for the <code>StartStreamingSessionRequest</code>.</p>
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
     /// <p>The studio ID for the StartStreamingSessionRequest.</p>
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
+    }
+    /// <p>The ID of the backup.</p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
     }
 }
 
@@ -11195,7 +11646,7 @@ impl GetStreamingSessionStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamingSessionStreamInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The expiration time in seconds.</p>
@@ -11209,7 +11660,7 @@ pub struct CreateStreamingSessionStreamInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl CreateStreamingSessionStreamInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11234,7 +11685,7 @@ pub struct ListStreamingSessionsInput {
     /// <p>Filters the request to streaming sessions created by the given user.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters the request to streaming session owned by the given user</p>
@@ -11252,7 +11703,7 @@ impl ListStreamingSessionsInput {
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11274,13 +11725,13 @@ impl ListStreamingSessionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The EC2 Instance type used for the streaming session.</p>
     #[doc(hidden)]
     pub ec2_instance_type: std::option::Option<crate::model::StreamingInstanceType>,
-    /// <p>The launch profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
@@ -11292,13 +11743,13 @@ pub struct CreateStreamingSessionInput {
     /// <p>The studio ID. </p>
     #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11306,7 +11757,7 @@ impl CreateStreamingSessionInput {
     pub fn ec2_instance_type(&self) -> std::option::Option<&crate::model::StreamingInstanceType> {
         self.ec2_instance_type.as_ref()
     }
-    /// <p>The launch profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
@@ -11322,7 +11773,7 @@ impl CreateStreamingSessionInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11335,7 +11786,7 @@ impl CreateStreamingSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The streaming session ID.</p>
@@ -11346,7 +11797,7 @@ pub struct DeleteStreamingSessionInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11385,8 +11836,59 @@ impl GetStreamingSessionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListStreamingSessionBackupsInput {
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The user ID of the user that owns the streaming session.</p>
+    #[doc(hidden)]
+    pub owned_by: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    #[doc(hidden)]
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl ListStreamingSessionBackupsInput {
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The user ID of the user that owns the streaming session.</p>
+    pub fn owned_by(&self) -> std::option::Option<&str> {
+        self.owned_by.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetStreamingSessionBackupInput {
+    /// <p>The ID of the backup.</p>
+    #[doc(hidden)]
+    pub backup_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    #[doc(hidden)]
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl GetStreamingSessionBackupInput {
+    /// <p>The ID of the backup.</p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamingImagesInput {
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filter this request to streaming images with the given owner</p>
@@ -11397,7 +11899,7 @@ pub struct ListStreamingImagesInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl ListStreamingImagesInput {
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11415,7 +11917,7 @@ impl ListStreamingImagesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A human-readable description of the streaming image.</p>
@@ -11430,13 +11932,13 @@ pub struct CreateStreamingImageInput {
     /// <p>The studio ID. </p>
     #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11456,7 +11958,7 @@ impl CreateStreamingImageInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11481,7 +11983,7 @@ impl std::fmt::Debug for CreateStreamingImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The streaming image ID.</p>
@@ -11492,7 +11994,7 @@ pub struct DeleteStreamingImageInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11510,7 +12012,7 @@ impl DeleteStreamingImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The description.</p>
@@ -11527,7 +12029,7 @@ pub struct UpdateStreamingImageInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl UpdateStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11586,10 +12088,10 @@ impl GetStreamingImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLaunchProfileMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The persona.</p>
@@ -11603,11 +12105,11 @@ pub struct UpdateLaunchProfileMemberInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl UpdateLaunchProfileMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
@@ -11629,13 +12131,13 @@ impl UpdateLaunchProfileMemberInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLaunchProfileMembersInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The ID of the identity store.</p>
     #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>A list of members.</p>
@@ -11646,7 +12148,7 @@ pub struct PutLaunchProfileMembersInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl PutLaunchProfileMembersInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11654,7 +12156,7 @@ impl PutLaunchProfileMembersInput {
     pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
@@ -11672,13 +12174,13 @@ impl PutLaunchProfileMembersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLaunchProfileMembersInput {
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The max number of results to return in the response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
@@ -11686,7 +12188,7 @@ pub struct ListLaunchProfileMembersInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl ListLaunchProfileMembersInput {
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
@@ -11694,7 +12196,7 @@ impl ListLaunchProfileMembersInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11708,7 +12210,7 @@ impl ListLaunchProfileMembersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLaunchProfileMemberInput {
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
@@ -11719,7 +12221,7 @@ pub struct GetLaunchProfileMemberInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetLaunchProfileMemberInput {
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
@@ -11737,7 +12239,7 @@ impl GetLaunchProfileMemberInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLaunchProfileInitializationInput {
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The launch profile protocol versions supported by the client.</p>
@@ -11746,7 +12248,7 @@ pub struct GetLaunchProfileInitializationInput {
     /// <p>The launch purpose.</p>
     #[doc(hidden)]
     pub launch_purpose: std::option::Option<std::string::String>,
-    /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
+    /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
@@ -11754,7 +12256,7 @@ pub struct GetLaunchProfileInitializationInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetLaunchProfileInitializationInput {
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
@@ -11766,7 +12268,7 @@ impl GetLaunchProfileInitializationInput {
     pub fn launch_purpose(&self) -> std::option::Option<&str> {
         self.launch_purpose.as_deref()
     }
-    /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
+    /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
     pub fn platform(&self) -> std::option::Option<&str> {
         self.platform.as_deref()
     }
@@ -11780,7 +12282,7 @@ impl GetLaunchProfileInitializationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLaunchProfileDetailsInput {
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
@@ -11788,7 +12290,7 @@ pub struct GetLaunchProfileDetailsInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetLaunchProfileDetailsInput {
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
@@ -11802,10 +12304,10 @@ impl GetLaunchProfileDetailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLaunchProfileMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
@@ -11816,11 +12318,11 @@ pub struct DeleteLaunchProfileMemberInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteLaunchProfileMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
@@ -11841,7 +12343,7 @@ pub struct ListLaunchProfilesInput {
     /// <p>The max number of results to return in the response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
@@ -11859,7 +12361,7 @@ impl ListLaunchProfilesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11881,7 +12383,7 @@ impl ListLaunchProfilesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The description.</p>
@@ -11905,13 +12407,13 @@ pub struct CreateLaunchProfileInput {
     /// <p>The studio ID. </p>
     #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11945,7 +12447,7 @@ impl CreateLaunchProfileInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11976,10 +12478,10 @@ impl std::fmt::Debug for CreateLaunchProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
@@ -11987,11 +12489,11 @@ pub struct DeleteLaunchProfileInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
@@ -12005,13 +12507,13 @@ impl DeleteLaunchProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The description.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
@@ -12031,7 +12533,7 @@ pub struct UpdateLaunchProfileInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl UpdateLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12039,7 +12541,7 @@ impl UpdateLaunchProfileInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
@@ -12088,7 +12590,7 @@ impl std::fmt::Debug for UpdateLaunchProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLaunchProfileInput {
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
@@ -12096,7 +12598,7 @@ pub struct GetLaunchProfileInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetLaunchProfileInput {
-    /// <p>The Launch Profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
@@ -12113,7 +12615,7 @@ pub struct ListEulasInput {
     /// <p>The list of EULA IDs that should be returned</p>
     #[doc(hidden)]
     pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -12122,7 +12624,7 @@ impl ListEulasInput {
     pub fn eula_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.eula_ids.as_deref()
     }
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12150,7 +12652,7 @@ pub struct ListEulaAcceptancesInput {
     /// <p>The list of EULA IDs that have been previously accepted.</p>
     #[doc(hidden)]
     pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
@@ -12162,7 +12664,7 @@ impl ListEulaAcceptancesInput {
     pub fn eula_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.eula_ids.as_deref()
     }
-    /// <p>The token to request the next page of results. </p>
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12176,7 +12678,7 @@ impl ListEulaAcceptancesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptEulasInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The EULA ID.</p>
@@ -12187,7 +12689,7 @@ pub struct AcceptEulasInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl AcceptEulasInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12227,20 +12729,20 @@ impl UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
-    /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

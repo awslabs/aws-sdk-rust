@@ -3976,6 +3976,9 @@ pub struct InputDeviceUhdSettings {
     /// The width of the video source, in pixels.
     #[doc(hidden)]
     pub width: i32,
+    /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+    #[doc(hidden)]
+    pub latency_ms: i32,
 }
 impl InputDeviceUhdSettings {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
@@ -4012,6 +4015,10 @@ impl InputDeviceUhdSettings {
     pub fn width(&self) -> i32 {
         self.width
     }
+    /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+    pub fn latency_ms(&self) -> i32 {
+        self.latency_ms
+    }
 }
 /// See [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings).
 pub mod input_device_uhd_settings {
@@ -4027,6 +4034,7 @@ pub mod input_device_uhd_settings {
         pub(crate) max_bitrate: std::option::Option<i32>,
         pub(crate) scan_type: std::option::Option<crate::model::InputDeviceScanType>,
         pub(crate) width: std::option::Option<i32>,
+        pub(crate) latency_ms: std::option::Option<i32>,
     }
     impl Builder {
         /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
@@ -4121,6 +4129,16 @@ pub mod input_device_uhd_settings {
             self.width = input;
             self
         }
+        /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+        pub fn latency_ms(mut self, input: i32) -> Self {
+            self.latency_ms = Some(input);
+            self
+        }
+        /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+        pub fn set_latency_ms(mut self, input: std::option::Option<i32>) -> Self {
+            self.latency_ms = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings).
         pub fn build(self) -> crate::model::InputDeviceUhdSettings {
             crate::model::InputDeviceUhdSettings {
@@ -4132,6 +4150,7 @@ pub mod input_device_uhd_settings {
                 max_bitrate: self.max_bitrate.unwrap_or_default(),
                 scan_type: self.scan_type,
                 width: self.width.unwrap_or_default(),
+                latency_ms: self.latency_ms.unwrap_or_default(),
             }
         }
     }
@@ -4527,6 +4546,7 @@ impl AsRef<str> for InputDeviceActiveInput {
 /// # let inputdevicetype = unimplemented!();
 /// match inputdevicetype {
 ///     InputDeviceType::Hd => { /* ... */ },
+///     InputDeviceType::Uhd => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -4562,6 +4582,8 @@ impl AsRef<str> for InputDeviceActiveInput {
 pub enum InputDeviceType {
     #[allow(missing_docs)] // documentation missing in model
     Hd,
+    #[allow(missing_docs)] // documentation missing in model
+    Uhd,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -4569,6 +4591,7 @@ impl std::convert::From<&str> for InputDeviceType {
     fn from(s: &str) -> Self {
         match s {
             "HD" => InputDeviceType::Hd,
+            "UHD" => InputDeviceType::Uhd,
             other => InputDeviceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -4585,12 +4608,13 @@ impl InputDeviceType {
     pub fn as_str(&self) -> &str {
         match self {
             InputDeviceType::Hd => "HD",
+            InputDeviceType::Uhd => "UHD",
             InputDeviceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HD"]
+        &["HD", "UHD"]
     }
 }
 impl AsRef<str> for InputDeviceType {
@@ -4855,6 +4879,9 @@ pub struct InputDeviceHdSettings {
     /// The width of the video source, in pixels.
     #[doc(hidden)]
     pub width: i32,
+    /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+    #[doc(hidden)]
+    pub latency_ms: i32,
 }
 impl InputDeviceHdSettings {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
@@ -4891,6 +4918,10 @@ impl InputDeviceHdSettings {
     pub fn width(&self) -> i32 {
         self.width
     }
+    /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+    pub fn latency_ms(&self) -> i32 {
+        self.latency_ms
+    }
 }
 /// See [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings).
 pub mod input_device_hd_settings {
@@ -4906,6 +4937,7 @@ pub mod input_device_hd_settings {
         pub(crate) max_bitrate: std::option::Option<i32>,
         pub(crate) scan_type: std::option::Option<crate::model::InputDeviceScanType>,
         pub(crate) width: std::option::Option<i32>,
+        pub(crate) latency_ms: std::option::Option<i32>,
     }
     impl Builder {
         /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
@@ -5000,6 +5032,16 @@ pub mod input_device_hd_settings {
             self.width = input;
             self
         }
+        /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+        pub fn latency_ms(mut self, input: i32) -> Self {
+            self.latency_ms = Some(input);
+            self
+        }
+        /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+        pub fn set_latency_ms(mut self, input: std::option::Option<i32>) -> Self {
+            self.latency_ms = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings).
         pub fn build(self) -> crate::model::InputDeviceHdSettings {
             crate::model::InputDeviceHdSettings {
@@ -5011,6 +5053,7 @@ pub mod input_device_hd_settings {
                 max_bitrate: self.max_bitrate.unwrap_or_default(),
                 scan_type: self.scan_type,
                 width: self.width.unwrap_or_default(),
+                latency_ms: self.latency_ms.unwrap_or_default(),
             }
         }
     }
@@ -5313,6 +5356,9 @@ pub struct InputDeviceConfigurableSettings {
     /// The maximum bitrate in bits per second. Set a value here to throttle the bitrate of the source video.
     #[doc(hidden)]
     pub max_bitrate: i32,
+    /// The Link device's buffer size (latency) in milliseconds (ms).
+    #[doc(hidden)]
+    pub latency_ms: i32,
 }
 impl InputDeviceConfigurableSettings {
     /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
@@ -5325,6 +5371,10 @@ impl InputDeviceConfigurableSettings {
     pub fn max_bitrate(&self) -> i32 {
         self.max_bitrate
     }
+    /// The Link device's buffer size (latency) in milliseconds (ms).
+    pub fn latency_ms(&self) -> i32 {
+        self.latency_ms
+    }
 }
 /// See [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings).
 pub mod input_device_configurable_settings {
@@ -5334,6 +5384,7 @@ pub mod input_device_configurable_settings {
     pub struct Builder {
         pub(crate) configured_input: std::option::Option<crate::model::InputDeviceConfiguredInput>,
         pub(crate) max_bitrate: std::option::Option<i32>,
+        pub(crate) latency_ms: std::option::Option<i32>,
     }
     impl Builder {
         /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
@@ -5359,11 +5410,22 @@ pub mod input_device_configurable_settings {
             self.max_bitrate = input;
             self
         }
+        /// The Link device's buffer size (latency) in milliseconds (ms).
+        pub fn latency_ms(mut self, input: i32) -> Self {
+            self.latency_ms = Some(input);
+            self
+        }
+        /// The Link device's buffer size (latency) in milliseconds (ms).
+        pub fn set_latency_ms(mut self, input: std::option::Option<i32>) -> Self {
+            self.latency_ms = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings).
         pub fn build(self) -> crate::model::InputDeviceConfigurableSettings {
             crate::model::InputDeviceConfigurableSettings {
                 configured_input: self.configured_input,
                 max_bitrate: self.max_bitrate.unwrap_or_default(),
+                latency_ms: self.latency_ms.unwrap_or_default(),
             }
         }
     }
@@ -11908,11 +11970,18 @@ pub struct AudioTrackSelection {
     /// Selects one or more unique audio tracks from within a source.
     #[doc(hidden)]
     pub tracks: std::option::Option<std::vec::Vec<crate::model::AudioTrack>>,
+    /// Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337
+    #[doc(hidden)]
+    pub dolby_e_decode: std::option::Option<crate::model::AudioDolbyEDecode>,
 }
 impl AudioTrackSelection {
     /// Selects one or more unique audio tracks from within a source.
     pub fn tracks(&self) -> std::option::Option<&[crate::model::AudioTrack]> {
         self.tracks.as_deref()
+    }
+    /// Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337
+    pub fn dolby_e_decode(&self) -> std::option::Option<&crate::model::AudioDolbyEDecode> {
+        self.dolby_e_decode.as_ref()
     }
 }
 /// See [`AudioTrackSelection`](crate::model::AudioTrackSelection).
@@ -11922,6 +11991,7 @@ pub mod audio_track_selection {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracks: std::option::Option<std::vec::Vec<crate::model::AudioTrack>>,
+        pub(crate) dolby_e_decode: std::option::Option<crate::model::AudioDolbyEDecode>,
     }
     impl Builder {
         /// Appends an item to `tracks`.
@@ -11943,10 +12013,24 @@ pub mod audio_track_selection {
             self.tracks = input;
             self
         }
+        /// Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337
+        pub fn dolby_e_decode(mut self, input: crate::model::AudioDolbyEDecode) -> Self {
+            self.dolby_e_decode = Some(input);
+            self
+        }
+        /// Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337
+        pub fn set_dolby_e_decode(
+            mut self,
+            input: std::option::Option<crate::model::AudioDolbyEDecode>,
+        ) -> Self {
+            self.dolby_e_decode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AudioTrackSelection`](crate::model::AudioTrackSelection).
         pub fn build(self) -> crate::model::AudioTrackSelection {
             crate::model::AudioTrackSelection {
                 tracks: self.tracks,
+                dolby_e_decode: self.dolby_e_decode,
             }
         }
     }
@@ -11955,6 +12039,194 @@ impl AudioTrackSelection {
     /// Creates a new builder-style object to manufacture [`AudioTrackSelection`](crate::model::AudioTrackSelection).
     pub fn builder() -> crate::model::audio_track_selection::Builder {
         crate::model::audio_track_selection::Builder::default()
+    }
+}
+
+/// Audio Dolby EDecode
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AudioDolbyEDecode {
+    /// Applies only to Dolby E. Enter the program ID (according to the metadata in the audio) of the Dolby E program to extract from the specified track. One program extracted per audio selector. To select multiple programs, create multiple selectors with the same Track and different Program numbers. “All channels” means to ignore the program IDs and include all the channels in this selector; useful if metadata is known to be incorrect.
+    #[doc(hidden)]
+    pub program_selection: std::option::Option<crate::model::DolbyEProgramSelection>,
+}
+impl AudioDolbyEDecode {
+    /// Applies only to Dolby E. Enter the program ID (according to the metadata in the audio) of the Dolby E program to extract from the specified track. One program extracted per audio selector. To select multiple programs, create multiple selectors with the same Track and different Program numbers. “All channels” means to ignore the program IDs and include all the channels in this selector; useful if metadata is known to be incorrect.
+    pub fn program_selection(&self) -> std::option::Option<&crate::model::DolbyEProgramSelection> {
+        self.program_selection.as_ref()
+    }
+}
+/// See [`AudioDolbyEDecode`](crate::model::AudioDolbyEDecode).
+pub mod audio_dolby_e_decode {
+
+    /// A builder for [`AudioDolbyEDecode`](crate::model::AudioDolbyEDecode).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) program_selection: std::option::Option<crate::model::DolbyEProgramSelection>,
+    }
+    impl Builder {
+        /// Applies only to Dolby E. Enter the program ID (according to the metadata in the audio) of the Dolby E program to extract from the specified track. One program extracted per audio selector. To select multiple programs, create multiple selectors with the same Track and different Program numbers. “All channels” means to ignore the program IDs and include all the channels in this selector; useful if metadata is known to be incorrect.
+        pub fn program_selection(mut self, input: crate::model::DolbyEProgramSelection) -> Self {
+            self.program_selection = Some(input);
+            self
+        }
+        /// Applies only to Dolby E. Enter the program ID (according to the metadata in the audio) of the Dolby E program to extract from the specified track. One program extracted per audio selector. To select multiple programs, create multiple selectors with the same Track and different Program numbers. “All channels” means to ignore the program IDs and include all the channels in this selector; useful if metadata is known to be incorrect.
+        pub fn set_program_selection(
+            mut self,
+            input: std::option::Option<crate::model::DolbyEProgramSelection>,
+        ) -> Self {
+            self.program_selection = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AudioDolbyEDecode`](crate::model::AudioDolbyEDecode).
+        pub fn build(self) -> crate::model::AudioDolbyEDecode {
+            crate::model::AudioDolbyEDecode {
+                program_selection: self.program_selection,
+            }
+        }
+    }
+}
+impl AudioDolbyEDecode {
+    /// Creates a new builder-style object to manufacture [`AudioDolbyEDecode`](crate::model::AudioDolbyEDecode).
+    pub fn builder() -> crate::model::audio_dolby_e_decode::Builder {
+        crate::model::audio_dolby_e_decode::Builder::default()
+    }
+}
+
+/// When writing a match expression against `DolbyEProgramSelection`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dolbyeprogramselection = unimplemented!();
+/// match dolbyeprogramselection {
+///     DolbyEProgramSelection::AllChannels => { /* ... */ },
+///     DolbyEProgramSelection::Program1 => { /* ... */ },
+///     DolbyEProgramSelection::Program2 => { /* ... */ },
+///     DolbyEProgramSelection::Program3 => { /* ... */ },
+///     DolbyEProgramSelection::Program4 => { /* ... */ },
+///     DolbyEProgramSelection::Program5 => { /* ... */ },
+///     DolbyEProgramSelection::Program6 => { /* ... */ },
+///     DolbyEProgramSelection::Program7 => { /* ... */ },
+///     DolbyEProgramSelection::Program8 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dolbyeprogramselection` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DolbyEProgramSelection::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DolbyEProgramSelection::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DolbyEProgramSelection::NewFeature` is defined.
+/// Specifically, when `dolbyeprogramselection` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DolbyEProgramSelection::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// Dolby EProgram Selection
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DolbyEProgramSelection {
+    #[allow(missing_docs)] // documentation missing in model
+    AllChannels,
+    #[allow(missing_docs)] // documentation missing in model
+    Program1,
+    #[allow(missing_docs)] // documentation missing in model
+    Program2,
+    #[allow(missing_docs)] // documentation missing in model
+    Program3,
+    #[allow(missing_docs)] // documentation missing in model
+    Program4,
+    #[allow(missing_docs)] // documentation missing in model
+    Program5,
+    #[allow(missing_docs)] // documentation missing in model
+    Program6,
+    #[allow(missing_docs)] // documentation missing in model
+    Program7,
+    #[allow(missing_docs)] // documentation missing in model
+    Program8,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DolbyEProgramSelection {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL_CHANNELS" => DolbyEProgramSelection::AllChannels,
+            "PROGRAM_1" => DolbyEProgramSelection::Program1,
+            "PROGRAM_2" => DolbyEProgramSelection::Program2,
+            "PROGRAM_3" => DolbyEProgramSelection::Program3,
+            "PROGRAM_4" => DolbyEProgramSelection::Program4,
+            "PROGRAM_5" => DolbyEProgramSelection::Program5,
+            "PROGRAM_6" => DolbyEProgramSelection::Program6,
+            "PROGRAM_7" => DolbyEProgramSelection::Program7,
+            "PROGRAM_8" => DolbyEProgramSelection::Program8,
+            other => {
+                DolbyEProgramSelection::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for DolbyEProgramSelection {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DolbyEProgramSelection::from(s))
+    }
+}
+impl DolbyEProgramSelection {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DolbyEProgramSelection::AllChannels => "ALL_CHANNELS",
+            DolbyEProgramSelection::Program1 => "PROGRAM_1",
+            DolbyEProgramSelection::Program2 => "PROGRAM_2",
+            DolbyEProgramSelection::Program3 => "PROGRAM_3",
+            DolbyEProgramSelection::Program4 => "PROGRAM_4",
+            DolbyEProgramSelection::Program5 => "PROGRAM_5",
+            DolbyEProgramSelection::Program6 => "PROGRAM_6",
+            DolbyEProgramSelection::Program7 => "PROGRAM_7",
+            DolbyEProgramSelection::Program8 => "PROGRAM_8",
+            DolbyEProgramSelection::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ALL_CHANNELS",
+            "PROGRAM_1",
+            "PROGRAM_2",
+            "PROGRAM_3",
+            "PROGRAM_4",
+            "PROGRAM_5",
+            "PROGRAM_6",
+            "PROGRAM_7",
+            "PROGRAM_8",
+        ]
+    }
+}
+impl AsRef<str> for DolbyEProgramSelection {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -13728,6 +14000,9 @@ pub struct Mpeg2Settings {
     /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide. DISABLED: do not include timecodes. GOP_TIMECODE: Include timecode metadata in the GOP header.
     #[doc(hidden)]
     pub timecode_insertion: std::option::Option<crate::model::Mpeg2TimecodeInsertionBehavior>,
+    /// Timecode burn-in settings
+    #[doc(hidden)]
+    pub timecode_burnin_settings: std::option::Option<crate::model::TimecodeBurninSettings>,
 }
 impl Mpeg2Settings {
     /// Choose Off to disable adaptive quantization. Or choose another value to enable the quantizer and set its strength. The strengths are: Auto, Off, Low, Medium, High. When you enable this field, MediaLive allows intra-frame quantizers to vary, which might improve visual quality.
@@ -13798,6 +14073,12 @@ impl Mpeg2Settings {
     ) -> std::option::Option<&crate::model::Mpeg2TimecodeInsertionBehavior> {
         self.timecode_insertion.as_ref()
     }
+    /// Timecode burn-in settings
+    pub fn timecode_burnin_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::TimecodeBurninSettings> {
+        self.timecode_burnin_settings.as_ref()
+    }
 }
 /// See [`Mpeg2Settings`](crate::model::Mpeg2Settings).
 pub mod mpeg2_settings {
@@ -13823,6 +14104,8 @@ pub mod mpeg2_settings {
         pub(crate) subgop_length: std::option::Option<crate::model::Mpeg2SubGopLength>,
         pub(crate) timecode_insertion:
             std::option::Option<crate::model::Mpeg2TimecodeInsertionBehavior>,
+        pub(crate) timecode_burnin_settings:
+            std::option::Option<crate::model::TimecodeBurninSettings>,
     }
     impl Builder {
         /// Choose Off to disable adaptive quantization. Or choose another value to enable the quantizer and set its strength. The strengths are: Auto, Off, Low, Medium, High. When you enable this field, MediaLive allows intra-frame quantizers to vary, which might improve visual quality.
@@ -14021,6 +14304,22 @@ pub mod mpeg2_settings {
             self.timecode_insertion = input;
             self
         }
+        /// Timecode burn-in settings
+        pub fn timecode_burnin_settings(
+            mut self,
+            input: crate::model::TimecodeBurninSettings,
+        ) -> Self {
+            self.timecode_burnin_settings = Some(input);
+            self
+        }
+        /// Timecode burn-in settings
+        pub fn set_timecode_burnin_settings(
+            mut self,
+            input: std::option::Option<crate::model::TimecodeBurninSettings>,
+        ) -> Self {
+            self.timecode_burnin_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Mpeg2Settings`](crate::model::Mpeg2Settings).
         pub fn build(self) -> crate::model::Mpeg2Settings {
             crate::model::Mpeg2Settings {
@@ -14040,6 +14339,7 @@ pub mod mpeg2_settings {
                 scan_type: self.scan_type,
                 subgop_length: self.subgop_length,
                 timecode_insertion: self.timecode_insertion,
+                timecode_burnin_settings: self.timecode_burnin_settings,
             }
         }
     }
@@ -14048,6 +14348,337 @@ impl Mpeg2Settings {
     /// Creates a new builder-style object to manufacture [`Mpeg2Settings`](crate::model::Mpeg2Settings).
     pub fn builder() -> crate::model::mpeg2_settings::Builder {
         crate::model::mpeg2_settings::Builder::default()
+    }
+}
+
+/// Timecode Burnin Settings
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TimecodeBurninSettings {
+    /// Choose a timecode burn-in font size
+    #[doc(hidden)]
+    pub font_size: std::option::Option<crate::model::TimecodeBurninFontSize>,
+    /// Choose a timecode burn-in output position
+    #[doc(hidden)]
+    pub position: std::option::Option<crate::model::TimecodeBurninPosition>,
+    /// Create a timecode burn-in prefix (optional)
+    #[doc(hidden)]
+    pub prefix: std::option::Option<std::string::String>,
+}
+impl TimecodeBurninSettings {
+    /// Choose a timecode burn-in font size
+    pub fn font_size(&self) -> std::option::Option<&crate::model::TimecodeBurninFontSize> {
+        self.font_size.as_ref()
+    }
+    /// Choose a timecode burn-in output position
+    pub fn position(&self) -> std::option::Option<&crate::model::TimecodeBurninPosition> {
+        self.position.as_ref()
+    }
+    /// Create a timecode burn-in prefix (optional)
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+}
+/// See [`TimecodeBurninSettings`](crate::model::TimecodeBurninSettings).
+pub mod timecode_burnin_settings {
+
+    /// A builder for [`TimecodeBurninSettings`](crate::model::TimecodeBurninSettings).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) font_size: std::option::Option<crate::model::TimecodeBurninFontSize>,
+        pub(crate) position: std::option::Option<crate::model::TimecodeBurninPosition>,
+        pub(crate) prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Choose a timecode burn-in font size
+        pub fn font_size(mut self, input: crate::model::TimecodeBurninFontSize) -> Self {
+            self.font_size = Some(input);
+            self
+        }
+        /// Choose a timecode burn-in font size
+        pub fn set_font_size(
+            mut self,
+            input: std::option::Option<crate::model::TimecodeBurninFontSize>,
+        ) -> Self {
+            self.font_size = input;
+            self
+        }
+        /// Choose a timecode burn-in output position
+        pub fn position(mut self, input: crate::model::TimecodeBurninPosition) -> Self {
+            self.position = Some(input);
+            self
+        }
+        /// Choose a timecode burn-in output position
+        pub fn set_position(
+            mut self,
+            input: std::option::Option<crate::model::TimecodeBurninPosition>,
+        ) -> Self {
+            self.position = input;
+            self
+        }
+        /// Create a timecode burn-in prefix (optional)
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
+            self
+        }
+        /// Create a timecode burn-in prefix (optional)
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimecodeBurninSettings`](crate::model::TimecodeBurninSettings).
+        pub fn build(self) -> crate::model::TimecodeBurninSettings {
+            crate::model::TimecodeBurninSettings {
+                font_size: self.font_size,
+                position: self.position,
+                prefix: self.prefix,
+            }
+        }
+    }
+}
+impl TimecodeBurninSettings {
+    /// Creates a new builder-style object to manufacture [`TimecodeBurninSettings`](crate::model::TimecodeBurninSettings).
+    pub fn builder() -> crate::model::timecode_burnin_settings::Builder {
+        crate::model::timecode_burnin_settings::Builder::default()
+    }
+}
+
+/// When writing a match expression against `TimecodeBurninPosition`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let timecodeburninposition = unimplemented!();
+/// match timecodeburninposition {
+///     TimecodeBurninPosition::BottomCenter => { /* ... */ },
+///     TimecodeBurninPosition::BottomLeft => { /* ... */ },
+///     TimecodeBurninPosition::BottomRight => { /* ... */ },
+///     TimecodeBurninPosition::MiddleCenter => { /* ... */ },
+///     TimecodeBurninPosition::MiddleLeft => { /* ... */ },
+///     TimecodeBurninPosition::MiddleRight => { /* ... */ },
+///     TimecodeBurninPosition::TopCenter => { /* ... */ },
+///     TimecodeBurninPosition::TopLeft => { /* ... */ },
+///     TimecodeBurninPosition::TopRight => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `timecodeburninposition` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TimecodeBurninPosition::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TimecodeBurninPosition::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TimecodeBurninPosition::NewFeature` is defined.
+/// Specifically, when `timecodeburninposition` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TimecodeBurninPosition::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// Timecode Burnin Position
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TimecodeBurninPosition {
+    #[allow(missing_docs)] // documentation missing in model
+    BottomCenter,
+    #[allow(missing_docs)] // documentation missing in model
+    BottomLeft,
+    #[allow(missing_docs)] // documentation missing in model
+    BottomRight,
+    #[allow(missing_docs)] // documentation missing in model
+    MiddleCenter,
+    #[allow(missing_docs)] // documentation missing in model
+    MiddleLeft,
+    #[allow(missing_docs)] // documentation missing in model
+    MiddleRight,
+    #[allow(missing_docs)] // documentation missing in model
+    TopCenter,
+    #[allow(missing_docs)] // documentation missing in model
+    TopLeft,
+    #[allow(missing_docs)] // documentation missing in model
+    TopRight,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for TimecodeBurninPosition {
+    fn from(s: &str) -> Self {
+        match s {
+            "BOTTOM_CENTER" => TimecodeBurninPosition::BottomCenter,
+            "BOTTOM_LEFT" => TimecodeBurninPosition::BottomLeft,
+            "BOTTOM_RIGHT" => TimecodeBurninPosition::BottomRight,
+            "MIDDLE_CENTER" => TimecodeBurninPosition::MiddleCenter,
+            "MIDDLE_LEFT" => TimecodeBurninPosition::MiddleLeft,
+            "MIDDLE_RIGHT" => TimecodeBurninPosition::MiddleRight,
+            "TOP_CENTER" => TimecodeBurninPosition::TopCenter,
+            "TOP_LEFT" => TimecodeBurninPosition::TopLeft,
+            "TOP_RIGHT" => TimecodeBurninPosition::TopRight,
+            other => {
+                TimecodeBurninPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for TimecodeBurninPosition {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TimecodeBurninPosition::from(s))
+    }
+}
+impl TimecodeBurninPosition {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TimecodeBurninPosition::BottomCenter => "BOTTOM_CENTER",
+            TimecodeBurninPosition::BottomLeft => "BOTTOM_LEFT",
+            TimecodeBurninPosition::BottomRight => "BOTTOM_RIGHT",
+            TimecodeBurninPosition::MiddleCenter => "MIDDLE_CENTER",
+            TimecodeBurninPosition::MiddleLeft => "MIDDLE_LEFT",
+            TimecodeBurninPosition::MiddleRight => "MIDDLE_RIGHT",
+            TimecodeBurninPosition::TopCenter => "TOP_CENTER",
+            TimecodeBurninPosition::TopLeft => "TOP_LEFT",
+            TimecodeBurninPosition::TopRight => "TOP_RIGHT",
+            TimecodeBurninPosition::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "BOTTOM_CENTER",
+            "BOTTOM_LEFT",
+            "BOTTOM_RIGHT",
+            "MIDDLE_CENTER",
+            "MIDDLE_LEFT",
+            "MIDDLE_RIGHT",
+            "TOP_CENTER",
+            "TOP_LEFT",
+            "TOP_RIGHT",
+        ]
+    }
+}
+impl AsRef<str> for TimecodeBurninPosition {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `TimecodeBurninFontSize`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let timecodeburninfontsize = unimplemented!();
+/// match timecodeburninfontsize {
+///     TimecodeBurninFontSize::ExtraSmall10 => { /* ... */ },
+///     TimecodeBurninFontSize::Large48 => { /* ... */ },
+///     TimecodeBurninFontSize::Medium32 => { /* ... */ },
+///     TimecodeBurninFontSize::Small16 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `timecodeburninfontsize` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TimecodeBurninFontSize::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TimecodeBurninFontSize::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TimecodeBurninFontSize::NewFeature` is defined.
+/// Specifically, when `timecodeburninfontsize` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TimecodeBurninFontSize::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// Timecode Burnin Font Size
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TimecodeBurninFontSize {
+    #[allow(missing_docs)] // documentation missing in model
+    ExtraSmall10,
+    #[allow(missing_docs)] // documentation missing in model
+    Large48,
+    #[allow(missing_docs)] // documentation missing in model
+    Medium32,
+    #[allow(missing_docs)] // documentation missing in model
+    Small16,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for TimecodeBurninFontSize {
+    fn from(s: &str) -> Self {
+        match s {
+            "EXTRA_SMALL_10" => TimecodeBurninFontSize::ExtraSmall10,
+            "LARGE_48" => TimecodeBurninFontSize::Large48,
+            "MEDIUM_32" => TimecodeBurninFontSize::Medium32,
+            "SMALL_16" => TimecodeBurninFontSize::Small16,
+            other => {
+                TimecodeBurninFontSize::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for TimecodeBurninFontSize {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TimecodeBurninFontSize::from(s))
+    }
+}
+impl TimecodeBurninFontSize {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TimecodeBurninFontSize::ExtraSmall10 => "EXTRA_SMALL_10",
+            TimecodeBurninFontSize::Large48 => "LARGE_48",
+            TimecodeBurninFontSize::Medium32 => "MEDIUM_32",
+            TimecodeBurninFontSize::Small16 => "SMALL_16",
+            TimecodeBurninFontSize::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["EXTRA_SMALL_10", "LARGE_48", "MEDIUM_32", "SMALL_16"]
+    }
+}
+impl AsRef<str> for TimecodeBurninFontSize {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -15542,6 +16173,9 @@ pub struct H265Settings {
     /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
     #[doc(hidden)]
     pub timecode_insertion: std::option::Option<crate::model::H265TimecodeInsertionBehavior>,
+    /// Timecode burn-in settings
+    #[doc(hidden)]
+    pub timecode_burnin_settings: std::option::Option<crate::model::TimecodeBurninSettings>,
 }
 impl H265Settings {
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
@@ -15670,6 +16304,12 @@ impl H265Settings {
     ) -> std::option::Option<&crate::model::H265TimecodeInsertionBehavior> {
         self.timecode_insertion.as_ref()
     }
+    /// Timecode burn-in settings
+    pub fn timecode_burnin_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::TimecodeBurninSettings> {
+        self.timecode_burnin_settings.as_ref()
+    }
 }
 /// See [`H265Settings`](crate::model::H265Settings).
 pub mod h265_settings {
@@ -15710,6 +16350,8 @@ pub mod h265_settings {
         pub(crate) tier: std::option::Option<crate::model::H265Tier>,
         pub(crate) timecode_insertion:
             std::option::Option<crate::model::H265TimecodeInsertionBehavior>,
+        pub(crate) timecode_burnin_settings:
+            std::option::Option<crate::model::TimecodeBurninSettings>,
     }
     impl Builder {
         /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
@@ -16056,6 +16698,22 @@ pub mod h265_settings {
             self.timecode_insertion = input;
             self
         }
+        /// Timecode burn-in settings
+        pub fn timecode_burnin_settings(
+            mut self,
+            input: crate::model::TimecodeBurninSettings,
+        ) -> Self {
+            self.timecode_burnin_settings = Some(input);
+            self
+        }
+        /// Timecode burn-in settings
+        pub fn set_timecode_burnin_settings(
+            mut self,
+            input: std::option::Option<crate::model::TimecodeBurninSettings>,
+        ) -> Self {
+            self.timecode_burnin_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`H265Settings`](crate::model::H265Settings).
         pub fn build(self) -> crate::model::H265Settings {
             crate::model::H265Settings {
@@ -16088,6 +16746,7 @@ pub mod h265_settings {
                 slices: self.slices.unwrap_or_default(),
                 tier: self.tier,
                 timecode_insertion: self.timecode_insertion,
+                timecode_burnin_settings: self.timecode_burnin_settings,
             }
         }
     }
@@ -17157,7 +17816,7 @@ pub struct H265ColorSpaceSettings {
     #[doc(hidden)]
     pub color_space_passthrough_settings:
         std::option::Option<crate::model::ColorSpacePassthroughSettings>,
-    /// Dolby Vision Profile 8.1 Settings
+    /// Dolby Vision81 Settings
     #[doc(hidden)]
     pub dolby_vision81_settings: std::option::Option<crate::model::DolbyVision81Settings>,
     /// Hdr10 Settings
@@ -17177,7 +17836,7 @@ impl H265ColorSpaceSettings {
     ) -> std::option::Option<&crate::model::ColorSpacePassthroughSettings> {
         self.color_space_passthrough_settings.as_ref()
     }
-    /// Dolby Vision Profile 8.1 Settings
+    /// Dolby Vision81 Settings
     pub fn dolby_vision81_settings(
         &self,
     ) -> std::option::Option<&crate::model::DolbyVision81Settings> {
@@ -17227,7 +17886,7 @@ pub mod h265_color_space_settings {
             self.color_space_passthrough_settings = input;
             self
         }
-        /// Dolby Vision Profile 8.1 Settings
+        /// Dolby Vision81 Settings
         pub fn dolby_vision81_settings(
             mut self,
             input: crate::model::DolbyVision81Settings,
@@ -17235,7 +17894,7 @@ pub mod h265_color_space_settings {
             self.dolby_vision81_settings = Some(input);
             self
         }
-        /// Dolby Vision Profile 8.1 Settings
+        /// Dolby Vision81 Settings
         pub fn set_dolby_vision81_settings(
             mut self,
             input: std::option::Option<crate::model::DolbyVision81Settings>,
@@ -17349,7 +18008,7 @@ impl Rec601Settings {
     }
 }
 
-/// Dolby Vision Profile 8.1 Settings
+/// Dolby Vision81 Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DolbyVision81Settings {}
@@ -17825,6 +18484,9 @@ pub struct H264Settings {
     /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
     #[doc(hidden)]
     pub timecode_insertion: std::option::Option<crate::model::H264TimecodeInsertionBehavior>,
+    /// Timecode burn-in settings
+    #[doc(hidden)]
+    pub timecode_burnin_settings: std::option::Option<crate::model::TimecodeBurninSettings>,
 }
 impl H264Settings {
     /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
@@ -18001,6 +18663,12 @@ impl H264Settings {
     ) -> std::option::Option<&crate::model::H264TimecodeInsertionBehavior> {
         self.timecode_insertion.as_ref()
     }
+    /// Timecode burn-in settings
+    pub fn timecode_burnin_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::TimecodeBurninSettings> {
+        self.timecode_burnin_settings.as_ref()
+    }
 }
 /// See [`H264Settings`](crate::model::H264Settings).
 pub mod h264_settings {
@@ -18052,6 +18720,8 @@ pub mod h264_settings {
         pub(crate) temporal_aq: std::option::Option<crate::model::H264TemporalAq>,
         pub(crate) timecode_insertion:
             std::option::Option<crate::model::H264TimecodeInsertionBehavior>,
+        pub(crate) timecode_burnin_settings:
+            std::option::Option<crate::model::TimecodeBurninSettings>,
     }
     impl Builder {
         /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
@@ -18539,6 +19209,22 @@ pub mod h264_settings {
             self.timecode_insertion = input;
             self
         }
+        /// Timecode burn-in settings
+        pub fn timecode_burnin_settings(
+            mut self,
+            input: crate::model::TimecodeBurninSettings,
+        ) -> Self {
+            self.timecode_burnin_settings = Some(input);
+            self
+        }
+        /// Timecode burn-in settings
+        pub fn set_timecode_burnin_settings(
+            mut self,
+            input: std::option::Option<crate::model::TimecodeBurninSettings>,
+        ) -> Self {
+            self.timecode_burnin_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`H264Settings`](crate::model::H264Settings).
         pub fn build(self) -> crate::model::H264Settings {
             crate::model::H264Settings {
@@ -18583,6 +19269,7 @@ pub mod h264_settings {
                 syntax: self.syntax,
                 temporal_aq: self.temporal_aq,
                 timecode_insertion: self.timecode_insertion,
+                timecode_burnin_settings: self.timecode_burnin_settings,
             }
         }
     }
@@ -20833,6 +21520,9 @@ pub struct FrameCaptureSettings {
     /// Unit for the frame capture interval.
     #[doc(hidden)]
     pub capture_interval_units: std::option::Option<crate::model::FrameCaptureIntervalUnit>,
+    /// Timecode burn-in settings
+    #[doc(hidden)]
+    pub timecode_burnin_settings: std::option::Option<crate::model::TimecodeBurninSettings>,
 }
 impl FrameCaptureSettings {
     /// The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or milliseconds, as specified by captureIntervalUnits.
@@ -20845,6 +21535,12 @@ impl FrameCaptureSettings {
     ) -> std::option::Option<&crate::model::FrameCaptureIntervalUnit> {
         self.capture_interval_units.as_ref()
     }
+    /// Timecode burn-in settings
+    pub fn timecode_burnin_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::TimecodeBurninSettings> {
+        self.timecode_burnin_settings.as_ref()
+    }
 }
 /// See [`FrameCaptureSettings`](crate::model::FrameCaptureSettings).
 pub mod frame_capture_settings {
@@ -20855,6 +21551,8 @@ pub mod frame_capture_settings {
         pub(crate) capture_interval: std::option::Option<i32>,
         pub(crate) capture_interval_units:
             std::option::Option<crate::model::FrameCaptureIntervalUnit>,
+        pub(crate) timecode_burnin_settings:
+            std::option::Option<crate::model::TimecodeBurninSettings>,
     }
     impl Builder {
         /// The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or milliseconds, as specified by captureIntervalUnits.
@@ -20883,11 +21581,28 @@ pub mod frame_capture_settings {
             self.capture_interval_units = input;
             self
         }
+        /// Timecode burn-in settings
+        pub fn timecode_burnin_settings(
+            mut self,
+            input: crate::model::TimecodeBurninSettings,
+        ) -> Self {
+            self.timecode_burnin_settings = Some(input);
+            self
+        }
+        /// Timecode burn-in settings
+        pub fn set_timecode_burnin_settings(
+            mut self,
+            input: std::option::Option<crate::model::TimecodeBurninSettings>,
+        ) -> Self {
+            self.timecode_burnin_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FrameCaptureSettings`](crate::model::FrameCaptureSettings).
         pub fn build(self) -> crate::model::FrameCaptureSettings {
             crate::model::FrameCaptureSettings {
                 capture_interval: self.capture_interval.unwrap_or_default(),
                 capture_interval_units: self.capture_interval_units,
+                timecode_burnin_settings: self.timecode_burnin_settings,
             }
         }
     }
@@ -30378,7 +31093,7 @@ pub struct HlsGroupSettings {
     /// Indicates whether the output manifest should use floating point or integer values for segment duration.
     #[doc(hidden)]
     pub manifest_duration_format: std::option::Option<crate::model::HlsManifestDurationFormat>,
-    /// When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
+    /// Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
     #[doc(hidden)]
     pub min_segment_length: i32,
     /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event. VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
@@ -30399,7 +31114,7 @@ pub struct HlsGroupSettings {
     /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines. DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only. For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
     #[doc(hidden)]
     pub redundant_manifest: std::option::Option<crate::model::HlsRedundantManifest>,
-    /// Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer.
+    /// Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe after this duration, so actual segment length may be longer.
     #[doc(hidden)]
     pub segment_length: i32,
     /// useInputSegmentation has been deprecated. The configured segment size is always used.
@@ -30553,7 +31268,7 @@ impl HlsGroupSettings {
     ) -> std::option::Option<&crate::model::HlsManifestDurationFormat> {
         self.manifest_duration_format.as_ref()
     }
-    /// When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
+    /// Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
     pub fn min_segment_length(&self) -> i32 {
         self.min_segment_length
     }
@@ -30583,7 +31298,7 @@ impl HlsGroupSettings {
     pub fn redundant_manifest(&self) -> std::option::Option<&crate::model::HlsRedundantManifest> {
         self.redundant_manifest.as_ref()
     }
-    /// Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer.
+    /// Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe after this duration, so actual segment length may be longer.
     pub fn segment_length(&self) -> i32 {
         self.segment_length
     }
@@ -31061,12 +31776,12 @@ pub mod hls_group_settings {
             self.manifest_duration_format = input;
             self
         }
-        /// When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
+        /// Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
         pub fn min_segment_length(mut self, input: i32) -> Self {
             self.min_segment_length = Some(input);
             self
         }
-        /// When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
+        /// Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
         pub fn set_min_segment_length(mut self, input: std::option::Option<i32>) -> Self {
             self.min_segment_length = input;
             self
@@ -31146,12 +31861,12 @@ pub mod hls_group_settings {
             self.redundant_manifest = input;
             self
         }
-        /// Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer.
+        /// Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe after this duration, so actual segment length may be longer.
         pub fn segment_length(mut self, input: i32) -> Self {
             self.segment_length = Some(input);
             self
         }
-        /// Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer.
+        /// Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe after this duration, so actual segment length may be longer.
         pub fn set_segment_length(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_length = input;
             self
@@ -40394,6 +41109,9 @@ impl AvailConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailSettings {
+    /// Esam
+    #[doc(hidden)]
+    pub esam: std::option::Option<crate::model::Esam>,
     /// Scte35 Splice Insert
     #[doc(hidden)]
     pub scte35_splice_insert: std::option::Option<crate::model::Scte35SpliceInsert>,
@@ -40402,6 +41120,10 @@ pub struct AvailSettings {
     pub scte35_time_signal_apos: std::option::Option<crate::model::Scte35TimeSignalApos>,
 }
 impl AvailSettings {
+    /// Esam
+    pub fn esam(&self) -> std::option::Option<&crate::model::Esam> {
+        self.esam.as_ref()
+    }
     /// Scte35 Splice Insert
     pub fn scte35_splice_insert(&self) -> std::option::Option<&crate::model::Scte35SpliceInsert> {
         self.scte35_splice_insert.as_ref()
@@ -40419,10 +41141,21 @@ pub mod avail_settings {
     /// A builder for [`AvailSettings`](crate::model::AvailSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) esam: std::option::Option<crate::model::Esam>,
         pub(crate) scte35_splice_insert: std::option::Option<crate::model::Scte35SpliceInsert>,
         pub(crate) scte35_time_signal_apos: std::option::Option<crate::model::Scte35TimeSignalApos>,
     }
     impl Builder {
+        /// Esam
+        pub fn esam(mut self, input: crate::model::Esam) -> Self {
+            self.esam = Some(input);
+            self
+        }
+        /// Esam
+        pub fn set_esam(mut self, input: std::option::Option<crate::model::Esam>) -> Self {
+            self.esam = input;
+            self
+        }
         /// Scte35 Splice Insert
         pub fn scte35_splice_insert(mut self, input: crate::model::Scte35SpliceInsert) -> Self {
             self.scte35_splice_insert = Some(input);
@@ -40455,6 +41188,7 @@ pub mod avail_settings {
         /// Consumes the builder and constructs a [`AvailSettings`](crate::model::AvailSettings).
         pub fn build(self) -> crate::model::AvailSettings {
             crate::model::AvailSettings {
+                esam: self.esam,
                 scte35_splice_insert: self.scte35_splice_insert,
                 scte35_time_signal_apos: self.scte35_time_signal_apos,
             }
@@ -41045,6 +41779,161 @@ impl Scte35SpliceInsertNoRegionalBlackoutBehavior {
 impl AsRef<str> for Scte35SpliceInsertNoRegionalBlackoutBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// Esam
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Esam {
+    /// Sent as acquisitionPointIdentity to identify the MediaLive channel to the POIS.
+    #[doc(hidden)]
+    pub acquisition_point_id: std::option::Option<std::string::String>,
+    /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
+    #[doc(hidden)]
+    pub ad_avail_offset: i32,
+    /// Documentation update needed
+    #[doc(hidden)]
+    pub password_param: std::option::Option<std::string::String>,
+    /// The URL of the signal conditioner endpoint on the Placement Opportunity Information System (POIS). MediaLive sends SignalProcessingEvents here when SCTE-35 messages are read.
+    #[doc(hidden)]
+    pub pois_endpoint: std::option::Option<std::string::String>,
+    /// Documentation update needed
+    #[doc(hidden)]
+    pub username: std::option::Option<std::string::String>,
+    /// Optional data sent as zoneIdentity to identify the MediaLive channel to the POIS.
+    #[doc(hidden)]
+    pub zone_identity: std::option::Option<std::string::String>,
+}
+impl Esam {
+    /// Sent as acquisitionPointIdentity to identify the MediaLive channel to the POIS.
+    pub fn acquisition_point_id(&self) -> std::option::Option<&str> {
+        self.acquisition_point_id.as_deref()
+    }
+    /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
+    pub fn ad_avail_offset(&self) -> i32 {
+        self.ad_avail_offset
+    }
+    /// Documentation update needed
+    pub fn password_param(&self) -> std::option::Option<&str> {
+        self.password_param.as_deref()
+    }
+    /// The URL of the signal conditioner endpoint on the Placement Opportunity Information System (POIS). MediaLive sends SignalProcessingEvents here when SCTE-35 messages are read.
+    pub fn pois_endpoint(&self) -> std::option::Option<&str> {
+        self.pois_endpoint.as_deref()
+    }
+    /// Documentation update needed
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// Optional data sent as zoneIdentity to identify the MediaLive channel to the POIS.
+    pub fn zone_identity(&self) -> std::option::Option<&str> {
+        self.zone_identity.as_deref()
+    }
+}
+/// See [`Esam`](crate::model::Esam).
+pub mod esam {
+
+    /// A builder for [`Esam`](crate::model::Esam).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) acquisition_point_id: std::option::Option<std::string::String>,
+        pub(crate) ad_avail_offset: std::option::Option<i32>,
+        pub(crate) password_param: std::option::Option<std::string::String>,
+        pub(crate) pois_endpoint: std::option::Option<std::string::String>,
+        pub(crate) username: std::option::Option<std::string::String>,
+        pub(crate) zone_identity: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Sent as acquisitionPointIdentity to identify the MediaLive channel to the POIS.
+        pub fn acquisition_point_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.acquisition_point_id = Some(input.into());
+            self
+        }
+        /// Sent as acquisitionPointIdentity to identify the MediaLive channel to the POIS.
+        pub fn set_acquisition_point_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.acquisition_point_id = input;
+            self
+        }
+        /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
+        pub fn ad_avail_offset(mut self, input: i32) -> Self {
+            self.ad_avail_offset = Some(input);
+            self
+        }
+        /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
+        pub fn set_ad_avail_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.ad_avail_offset = input;
+            self
+        }
+        /// Documentation update needed
+        pub fn password_param(mut self, input: impl Into<std::string::String>) -> Self {
+            self.password_param = Some(input.into());
+            self
+        }
+        /// Documentation update needed
+        pub fn set_password_param(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.password_param = input;
+            self
+        }
+        /// The URL of the signal conditioner endpoint on the Placement Opportunity Information System (POIS). MediaLive sends SignalProcessingEvents here when SCTE-35 messages are read.
+        pub fn pois_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pois_endpoint = Some(input.into());
+            self
+        }
+        /// The URL of the signal conditioner endpoint on the Placement Opportunity Information System (POIS). MediaLive sends SignalProcessingEvents here when SCTE-35 messages are read.
+        pub fn set_pois_endpoint(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pois_endpoint = input;
+            self
+        }
+        /// Documentation update needed
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.username = Some(input.into());
+            self
+        }
+        /// Documentation update needed
+        pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.username = input;
+            self
+        }
+        /// Optional data sent as zoneIdentity to identify the MediaLive channel to the POIS.
+        pub fn zone_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.zone_identity = Some(input.into());
+            self
+        }
+        /// Optional data sent as zoneIdentity to identify the MediaLive channel to the POIS.
+        pub fn set_zone_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.zone_identity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Esam`](crate::model::Esam).
+        pub fn build(self) -> crate::model::Esam {
+            crate::model::Esam {
+                acquisition_point_id: self.acquisition_point_id,
+                ad_avail_offset: self.ad_avail_offset.unwrap_or_default(),
+                password_param: self.password_param,
+                pois_endpoint: self.pois_endpoint,
+                username: self.username,
+                zone_identity: self.zone_identity,
+            }
+        }
+    }
+}
+impl Esam {
+    /// Creates a new builder-style object to manufacture [`Esam`](crate::model::Esam).
+    pub fn builder() -> crate::model::esam::Builder {
+        crate::model::esam::Builder::default()
     }
 }
 
@@ -50052,6 +50941,9 @@ pub struct ScheduleActionSettings {
     /// Action to pause or unpause one or both channel pipelines
     #[doc(hidden)]
     pub pause_state_settings: std::option::Option<crate::model::PauseStateScheduleActionSettings>,
+    /// Action to specify scte35 input
+    #[doc(hidden)]
+    pub scte35_input_settings: std::option::Option<crate::model::Scte35InputScheduleActionSettings>,
     /// Action to insert SCTE-35 return_to_network message
     #[doc(hidden)]
     pub scte35_return_to_network_settings:
@@ -50116,6 +51008,12 @@ impl ScheduleActionSettings {
     ) -> std::option::Option<&crate::model::PauseStateScheduleActionSettings> {
         self.pause_state_settings.as_ref()
     }
+    /// Action to specify scte35 input
+    pub fn scte35_input_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::Scte35InputScheduleActionSettings> {
+        self.scte35_input_settings.as_ref()
+    }
     /// Action to insert SCTE-35 return_to_network message
     pub fn scte35_return_to_network_settings(
         &self,
@@ -50167,6 +51065,8 @@ pub mod schedule_action_settings {
             std::option::Option<crate::model::MotionGraphicsDeactivateScheduleActionSettings>,
         pub(crate) pause_state_settings:
             std::option::Option<crate::model::PauseStateScheduleActionSettings>,
+        pub(crate) scte35_input_settings:
+            std::option::Option<crate::model::Scte35InputScheduleActionSettings>,
         pub(crate) scte35_return_to_network_settings:
             std::option::Option<crate::model::Scte35ReturnToNetworkScheduleActionSettings>,
         pub(crate) scte35_splice_insert_settings:
@@ -50293,6 +51193,22 @@ pub mod schedule_action_settings {
             self.pause_state_settings = input;
             self
         }
+        /// Action to specify scte35 input
+        pub fn scte35_input_settings(
+            mut self,
+            input: crate::model::Scte35InputScheduleActionSettings,
+        ) -> Self {
+            self.scte35_input_settings = Some(input);
+            self
+        }
+        /// Action to specify scte35 input
+        pub fn set_scte35_input_settings(
+            mut self,
+            input: std::option::Option<crate::model::Scte35InputScheduleActionSettings>,
+        ) -> Self {
+            self.scte35_input_settings = input;
+            self
+        }
         /// Action to insert SCTE-35 return_to_network message
         pub fn scte35_return_to_network_settings(
             mut self,
@@ -50385,6 +51301,7 @@ pub mod schedule_action_settings {
                 motion_graphics_image_deactivate_settings: self
                     .motion_graphics_image_deactivate_settings,
                 pause_state_settings: self.pause_state_settings,
+                scte35_input_settings: self.scte35_input_settings,
                 scte35_return_to_network_settings: self.scte35_return_to_network_settings,
                 scte35_splice_insert_settings: self.scte35_splice_insert_settings,
                 scte35_time_signal_settings: self.scte35_time_signal_settings,
@@ -51863,6 +52780,172 @@ impl Scte35ReturnToNetworkScheduleActionSettings {
     /// Creates a new builder-style object to manufacture [`Scte35ReturnToNetworkScheduleActionSettings`](crate::model::Scte35ReturnToNetworkScheduleActionSettings).
     pub fn builder() -> crate::model::scte35_return_to_network_schedule_action_settings::Builder {
         crate::model::scte35_return_to_network_schedule_action_settings::Builder::default()
+    }
+}
+
+/// Scte35Input Schedule Action Settings
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Scte35InputScheduleActionSettings {
+    /// In fixed mode, enter the name of the input attachment that you want to use as a SCTE-35 input. (Don't enter the ID of the input.)"
+    #[doc(hidden)]
+    pub input_attachment_name_reference: std::option::Option<std::string::String>,
+    /// Whether the SCTE-35 input should be the active input or a fixed input.
+    #[doc(hidden)]
+    pub mode: std::option::Option<crate::model::Scte35InputMode>,
+}
+impl Scte35InputScheduleActionSettings {
+    /// In fixed mode, enter the name of the input attachment that you want to use as a SCTE-35 input. (Don't enter the ID of the input.)"
+    pub fn input_attachment_name_reference(&self) -> std::option::Option<&str> {
+        self.input_attachment_name_reference.as_deref()
+    }
+    /// Whether the SCTE-35 input should be the active input or a fixed input.
+    pub fn mode(&self) -> std::option::Option<&crate::model::Scte35InputMode> {
+        self.mode.as_ref()
+    }
+}
+/// See [`Scte35InputScheduleActionSettings`](crate::model::Scte35InputScheduleActionSettings).
+pub mod scte35_input_schedule_action_settings {
+
+    /// A builder for [`Scte35InputScheduleActionSettings`](crate::model::Scte35InputScheduleActionSettings).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) input_attachment_name_reference: std::option::Option<std::string::String>,
+        pub(crate) mode: std::option::Option<crate::model::Scte35InputMode>,
+    }
+    impl Builder {
+        /// In fixed mode, enter the name of the input attachment that you want to use as a SCTE-35 input. (Don't enter the ID of the input.)"
+        pub fn input_attachment_name_reference(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.input_attachment_name_reference = Some(input.into());
+            self
+        }
+        /// In fixed mode, enter the name of the input attachment that you want to use as a SCTE-35 input. (Don't enter the ID of the input.)"
+        pub fn set_input_attachment_name_reference(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_attachment_name_reference = input;
+            self
+        }
+        /// Whether the SCTE-35 input should be the active input or a fixed input.
+        pub fn mode(mut self, input: crate::model::Scte35InputMode) -> Self {
+            self.mode = Some(input);
+            self
+        }
+        /// Whether the SCTE-35 input should be the active input or a fixed input.
+        pub fn set_mode(
+            mut self,
+            input: std::option::Option<crate::model::Scte35InputMode>,
+        ) -> Self {
+            self.mode = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Scte35InputScheduleActionSettings`](crate::model::Scte35InputScheduleActionSettings).
+        pub fn build(self) -> crate::model::Scte35InputScheduleActionSettings {
+            crate::model::Scte35InputScheduleActionSettings {
+                input_attachment_name_reference: self.input_attachment_name_reference,
+                mode: self.mode,
+            }
+        }
+    }
+}
+impl Scte35InputScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`Scte35InputScheduleActionSettings`](crate::model::Scte35InputScheduleActionSettings).
+    pub fn builder() -> crate::model::scte35_input_schedule_action_settings::Builder {
+        crate::model::scte35_input_schedule_action_settings::Builder::default()
+    }
+}
+
+/// When writing a match expression against `Scte35InputMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let scte35inputmode = unimplemented!();
+/// match scte35inputmode {
+///     Scte35InputMode::Fixed => { /* ... */ },
+///     Scte35InputMode::FollowActive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `scte35inputmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Scte35InputMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Scte35InputMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Scte35InputMode::NewFeature` is defined.
+/// Specifically, when `scte35inputmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Scte35InputMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// Whether the SCTE-35 input should be the active input or a fixed input.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Scte35InputMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Fixed,
+    #[allow(missing_docs)] // documentation missing in model
+    FollowActive,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for Scte35InputMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "FIXED" => Scte35InputMode::Fixed,
+            "FOLLOW_ACTIVE" => Scte35InputMode::FollowActive,
+            other => Scte35InputMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for Scte35InputMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Scte35InputMode::from(s))
+    }
+}
+impl Scte35InputMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Scte35InputMode::Fixed => "FIXED",
+            Scte35InputMode::FollowActive => "FOLLOW_ACTIVE",
+            Scte35InputMode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FIXED", "FOLLOW_ACTIVE"]
+    }
+}
+impl AsRef<str> for Scte35InputMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

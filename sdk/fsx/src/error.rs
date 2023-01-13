@@ -642,6 +642,134 @@ impl MissingFileSystemConfiguration {
     }
 }
 
+/// <p>One or more network settings specified in the request are invalid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidNetworkSettings {
+    /// <p>Error message explaining what's wrong with network settings.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
+    #[doc(hidden)]
+    pub invalid_subnet_id: std::option::Option<std::string::String>,
+    /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
+    #[doc(hidden)]
+    pub invalid_security_group_id: std::option::Option<std::string::String>,
+    /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
+    #[doc(hidden)]
+    pub invalid_route_table_id: std::option::Option<std::string::String>,
+}
+impl InvalidNetworkSettings {
+    /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
+    pub fn invalid_subnet_id(&self) -> std::option::Option<&str> {
+        self.invalid_subnet_id.as_deref()
+    }
+    /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
+    pub fn invalid_security_group_id(&self) -> std::option::Option<&str> {
+        self.invalid_security_group_id.as_deref()
+    }
+    /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
+    pub fn invalid_route_table_id(&self) -> std::option::Option<&str> {
+        self.invalid_route_table_id.as_deref()
+    }
+}
+impl InvalidNetworkSettings {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidNetworkSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidNetworkSettings")?;
+        if let Some(inner_11) = &self.message {
+            {
+                write!(f, ": {}", inner_11)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidNetworkSettings {}
+/// See [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings).
+pub mod invalid_network_settings {
+
+    /// A builder for [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) invalid_subnet_id: std::option::Option<std::string::String>,
+        pub(crate) invalid_security_group_id: std::option::Option<std::string::String>,
+        pub(crate) invalid_route_table_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Error message explaining what's wrong with network settings.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Error message explaining what's wrong with network settings.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
+        pub fn invalid_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.invalid_subnet_id = Some(input.into());
+            self
+        }
+        /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
+        pub fn set_invalid_subnet_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.invalid_subnet_id = input;
+            self
+        }
+        /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
+        pub fn invalid_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.invalid_security_group_id = Some(input.into());
+            self
+        }
+        /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
+        pub fn set_invalid_security_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.invalid_security_group_id = input;
+            self
+        }
+        /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
+        pub fn invalid_route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.invalid_route_table_id = Some(input.into());
+            self
+        }
+        /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
+        pub fn set_invalid_route_table_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.invalid_route_table_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings).
+        pub fn build(self) -> crate::error::InvalidNetworkSettings {
+            crate::error::InvalidNetworkSettings {
+                message: self.message,
+                invalid_subnet_id: self.invalid_subnet_id,
+                invalid_security_group_id: self.invalid_security_group_id,
+                invalid_route_table_id: self.invalid_route_table_id,
+            }
+        }
+    }
+}
+impl InvalidNetworkSettings {
+    /// Creates a new builder-style object to manufacture [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings).
+    pub fn builder() -> crate::error::invalid_network_settings::Builder {
+        crate::error::invalid_network_settings::Builder::default()
+    }
+}
+
 /// <p>No Amazon FSx file systems were found based upon supplied parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -659,9 +787,9 @@ impl FileSystemNotFound {
 impl std::fmt::Display for FileSystemNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileSystemNotFound")?;
-        if let Some(inner_11) = &self.message {
+        if let Some(inner_12) = &self.message {
             {
-                write!(f, ": {}", inner_11)?;
+                write!(f, ": {}", inner_12)?;
             }
         }
         Ok(())
@@ -719,9 +847,9 @@ impl MissingFileCacheConfiguration {
 impl std::fmt::Display for MissingFileCacheConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MissingFileCacheConfiguration")?;
-        if let Some(inner_12) = &self.message {
+        if let Some(inner_13) = &self.message {
             {
-                write!(f, ": {}", inner_12)?;
+                write!(f, ": {}", inner_13)?;
             }
         }
         Ok(())
@@ -779,9 +907,9 @@ impl FileCacheNotFound {
 impl std::fmt::Display for FileCacheNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileCacheNotFound")?;
-        if let Some(inner_13) = &self.message {
+        if let Some(inner_14) = &self.message {
             {
-                write!(f, ": {}", inner_13)?;
+                write!(f, ": {}", inner_14)?;
             }
         }
         Ok(())
@@ -839,9 +967,9 @@ impl DataRepositoryAssociationNotFound {
 impl std::fmt::Display for DataRepositoryAssociationNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DataRepositoryAssociationNotFound")?;
-        if let Some(inner_14) = &self.message {
+        if let Some(inner_15) = &self.message {
             {
-                write!(f, ": {}", inner_14)?;
+                write!(f, ": {}", inner_15)?;
             }
         }
         Ok(())
@@ -908,9 +1036,9 @@ impl ResourceNotFound {
 impl std::fmt::Display for ResourceNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFound")?;
-        if let Some(inner_15) = &self.message {
+        if let Some(inner_16) = &self.message {
             {
-                write!(f, ": {}", inner_15)?;
+                write!(f, ": {}", inner_16)?;
             }
         }
         Ok(())
@@ -989,9 +1117,9 @@ impl ResourceDoesNotSupportTagging {
 impl std::fmt::Display for ResourceDoesNotSupportTagging {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceDoesNotSupportTagging")?;
-        if let Some(inner_16) = &self.message {
+        if let Some(inner_17) = &self.message {
             {
-                write!(f, ": {}", inner_16)?;
+                write!(f, ": {}", inner_17)?;
             }
         }
         Ok(())
@@ -1070,9 +1198,9 @@ impl NotServiceResourceError {
 impl std::fmt::Display for NotServiceResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotServiceResourceError")?;
-        if let Some(inner_17) = &self.message {
+        if let Some(inner_18) = &self.message {
             {
-                write!(f, ": {}", inner_17)?;
+                write!(f, ": {}", inner_18)?;
             }
         }
         Ok(())
@@ -1142,9 +1270,9 @@ impl DataRepositoryTaskNotFound {
 impl std::fmt::Display for DataRepositoryTaskNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DataRepositoryTaskNotFound")?;
-        if let Some(inner_18) = &self.message {
+        if let Some(inner_19) = &self.message {
             {
-                write!(f, ": {}", inner_18)?;
+                write!(f, ": {}", inner_19)?;
             }
         }
         Ok(())
@@ -1202,9 +1330,9 @@ impl InvalidDataRepositoryType {
 impl std::fmt::Display for InvalidDataRepositoryType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDataRepositoryType")?;
-        if let Some(inner_19) = &self.message {
+        if let Some(inner_20) = &self.message {
             {
-                write!(f, ": {}", inner_19)?;
+                write!(f, ": {}", inner_20)?;
             }
         }
         Ok(())
@@ -1262,9 +1390,9 @@ impl BackupNotFound {
 impl std::fmt::Display for BackupNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupNotFound")?;
-        if let Some(inner_20) = &self.message {
+        if let Some(inner_21) = &self.message {
             {
-                write!(f, ": {}", inner_20)?;
+                write!(f, ": {}", inner_21)?;
             }
         }
         Ok(())
@@ -1331,9 +1459,9 @@ impl BackupRestoring {
 impl std::fmt::Display for BackupRestoring {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupRestoring")?;
-        if let Some(inner_21) = &self.message {
+        if let Some(inner_22) = &self.message {
             {
-                write!(f, ": {}", inner_21)?;
+                write!(f, ": {}", inner_22)?;
             }
         }
         Ok(())
@@ -1406,9 +1534,9 @@ impl BackupInProgress {
 impl std::fmt::Display for BackupInProgress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupInProgress")?;
-        if let Some(inner_22) = &self.message {
+        if let Some(inner_23) = &self.message {
             {
-                write!(f, ": {}", inner_22)?;
+                write!(f, ": {}", inner_23)?;
             }
         }
         Ok(())
@@ -1475,9 +1603,9 @@ impl BackupBeingCopied {
 impl std::fmt::Display for BackupBeingCopied {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupBeingCopied")?;
-        if let Some(inner_23) = &self.message {
+        if let Some(inner_24) = &self.message {
             {
-                write!(f, ": {}", inner_23)?;
+                write!(f, ": {}", inner_24)?;
             }
         }
         Ok(())
@@ -1563,9 +1691,9 @@ impl ActiveDirectoryError {
 impl std::fmt::Display for ActiveDirectoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ActiveDirectoryError")?;
-        if let Some(inner_24) = &self.message {
+        if let Some(inner_25) = &self.message {
             {
-                write!(f, ": {}", inner_24)?;
+                write!(f, ": {}", inner_25)?;
             }
         }
         Ok(())
@@ -1653,9 +1781,9 @@ impl InvalidPerUnitStorageThroughput {
 impl std::fmt::Display for InvalidPerUnitStorageThroughput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPerUnitStorageThroughput")?;
-        if let Some(inner_25) = &self.message {
+        if let Some(inner_26) = &self.message {
             {
-                write!(f, ": {}", inner_25)?;
+                write!(f, ": {}", inner_26)?;
             }
         }
         Ok(())
@@ -1693,134 +1821,6 @@ impl InvalidPerUnitStorageThroughput {
     /// Creates a new builder-style object to manufacture [`InvalidPerUnitStorageThroughput`](crate::error::InvalidPerUnitStorageThroughput).
     pub fn builder() -> crate::error::invalid_per_unit_storage_throughput::Builder {
         crate::error::invalid_per_unit_storage_throughput::Builder::default()
-    }
-}
-
-/// <p>One or more network settings specified in the request are invalid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidNetworkSettings {
-    /// <p>Error message explaining what's wrong with network settings.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
-    #[doc(hidden)]
-    pub invalid_subnet_id: std::option::Option<std::string::String>,
-    /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
-    #[doc(hidden)]
-    pub invalid_security_group_id: std::option::Option<std::string::String>,
-    /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
-    #[doc(hidden)]
-    pub invalid_route_table_id: std::option::Option<std::string::String>,
-}
-impl InvalidNetworkSettings {
-    /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
-    pub fn invalid_subnet_id(&self) -> std::option::Option<&str> {
-        self.invalid_subnet_id.as_deref()
-    }
-    /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
-    pub fn invalid_security_group_id(&self) -> std::option::Option<&str> {
-        self.invalid_security_group_id.as_deref()
-    }
-    /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
-    pub fn invalid_route_table_id(&self) -> std::option::Option<&str> {
-        self.invalid_route_table_id.as_deref()
-    }
-}
-impl InvalidNetworkSettings {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidNetworkSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidNetworkSettings")?;
-        if let Some(inner_26) = &self.message {
-            {
-                write!(f, ": {}", inner_26)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidNetworkSettings {}
-/// See [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings).
-pub mod invalid_network_settings {
-
-    /// A builder for [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) invalid_subnet_id: std::option::Option<std::string::String>,
-        pub(crate) invalid_security_group_id: std::option::Option<std::string::String>,
-        pub(crate) invalid_route_table_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Error message explaining what's wrong with network settings.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>Error message explaining what's wrong with network settings.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
-        pub fn invalid_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.invalid_subnet_id = Some(input.into());
-            self
-        }
-        /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
-        pub fn set_invalid_subnet_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.invalid_subnet_id = input;
-            self
-        }
-        /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
-        pub fn invalid_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.invalid_security_group_id = Some(input.into());
-            self
-        }
-        /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
-        pub fn set_invalid_security_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.invalid_security_group_id = input;
-            self
-        }
-        /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
-        pub fn invalid_route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.invalid_route_table_id = Some(input.into());
-            self
-        }
-        /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
-        pub fn set_invalid_route_table_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.invalid_route_table_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings).
-        pub fn build(self) -> crate::error::InvalidNetworkSettings {
-            crate::error::InvalidNetworkSettings {
-                message: self.message,
-                invalid_subnet_id: self.invalid_subnet_id,
-                invalid_security_group_id: self.invalid_security_group_id,
-                invalid_route_table_id: self.invalid_route_table_id,
-            }
-        }
-    }
-}
-impl InvalidNetworkSettings {
-    /// Creates a new builder-style object to manufacture [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings).
-    pub fn builder() -> crate::error::invalid_network_settings::Builder {
-        crate::error::invalid_network_settings::Builder::default()
     }
 }
 
@@ -8129,6 +8129,8 @@ pub enum UpdateFileSystemErrorKind {
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
+    /// <p>One or more network settings specified in the request are invalid.</p>
+    InvalidNetworkSettings(crate::error::InvalidNetworkSettings),
     /// <p>A file system configuration is required for this operation.</p>
     MissingFileSystemConfiguration(crate::error::MissingFileSystemConfiguration),
     /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
@@ -8152,6 +8154,7 @@ impl std::fmt::Display for UpdateFileSystemError {
             UpdateFileSystemErrorKind::FileSystemNotFound(_inner) => _inner.fmt(f),
             UpdateFileSystemErrorKind::IncompatibleParameterError(_inner) => _inner.fmt(f),
             UpdateFileSystemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            UpdateFileSystemErrorKind::InvalidNetworkSettings(_inner) => _inner.fmt(f),
             UpdateFileSystemErrorKind::MissingFileSystemConfiguration(_inner) => _inner.fmt(f),
             UpdateFileSystemErrorKind::ServiceLimitExceeded(_inner) => _inner.fmt(f),
             UpdateFileSystemErrorKind::UnsupportedOperation(_inner) => _inner.fmt(f),
@@ -8231,6 +8234,13 @@ impl UpdateFileSystemError {
             UpdateFileSystemErrorKind::InternalServerError(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::InvalidNetworkSettings`.
+    pub fn is_invalid_network_settings(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFileSystemErrorKind::InvalidNetworkSettings(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::MissingFileSystemConfiguration`.
     pub fn is_missing_file_system_configuration(&self) -> bool {
         matches!(
@@ -8260,6 +8270,7 @@ impl std::error::Error for UpdateFileSystemError {
             UpdateFileSystemErrorKind::FileSystemNotFound(_inner) => Some(_inner),
             UpdateFileSystemErrorKind::IncompatibleParameterError(_inner) => Some(_inner),
             UpdateFileSystemErrorKind::InternalServerError(_inner) => Some(_inner),
+            UpdateFileSystemErrorKind::InvalidNetworkSettings(_inner) => Some(_inner),
             UpdateFileSystemErrorKind::MissingFileSystemConfiguration(_inner) => Some(_inner),
             UpdateFileSystemErrorKind::ServiceLimitExceeded(_inner) => Some(_inner),
             UpdateFileSystemErrorKind::UnsupportedOperation(_inner) => Some(_inner),

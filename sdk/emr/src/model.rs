@@ -4158,7 +4158,7 @@ impl EbsBlockDeviceConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeSpecification {
-    /// <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
+    /// <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.</p>
     #[doc(hidden)]
     pub volume_type: std::option::Option<std::string::String>,
     /// <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
@@ -4172,7 +4172,7 @@ pub struct VolumeSpecification {
     pub throughput: std::option::Option<i32>,
 }
 impl VolumeSpecification {
-    /// <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
+    /// <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.</p>
     pub fn volume_type(&self) -> std::option::Option<&str> {
         self.volume_type.as_deref()
     }
@@ -4201,12 +4201,12 @@ pub mod volume_specification {
         pub(crate) throughput: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
+        /// <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.</p>
         pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_type = Some(input.into());
             self
         }
-        /// <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
+        /// <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.</p>
         pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_type = input;
             self
@@ -7277,10 +7277,10 @@ pub struct SessionMappingSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store.</p>
+    /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store.</p>
     #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
-    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
     #[doc(hidden)]
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
@@ -7298,11 +7298,11 @@ impl SessionMappingSummary {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store.</p>
+    /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store.</p>
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
     pub fn identity_name(&self) -> std::option::Option<&str> {
         self.identity_name.as_deref()
     }
@@ -7343,22 +7343,22 @@ pub mod session_mapping_summary {
             self.studio_id = input;
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
-        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_name = Some(input.into());
             self
         }
-        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7444,7 +7444,7 @@ pub struct StudioSummary {
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+    /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
     #[doc(hidden)]
     pub auth_mode: std::option::Option<crate::model::AuthMode>,
     /// <p>The time when the Amazon EMR Studio was created.</p>
@@ -7472,7 +7472,7 @@ impl StudioSummary {
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
-    /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+    /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
     pub fn auth_mode(&self) -> std::option::Option<&crate::model::AuthMode> {
         self.auth_mode.as_ref()
     }
@@ -7546,12 +7546,12 @@ pub mod studio_summary {
             self.url = input;
             self
         }
-        /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+        /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
         pub fn auth_mode(mut self, input: crate::model::AuthMode) -> Self {
             self.auth_mode = Some(input);
             self
         }
-        /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+        /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
         pub fn set_auth_mode(mut self, input: std::option::Option<crate::model::AuthMode>) -> Self {
             self.auth_mode = input;
             self
@@ -12786,7 +12786,7 @@ pub struct SessionMappingDetail {
     /// <p>The globally unique identifier (GUID) of the user or group.</p>
     #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
-    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
     #[doc(hidden)]
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
@@ -12811,7 +12811,7 @@ impl SessionMappingDetail {
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
     pub fn identity_name(&self) -> std::option::Option<&str> {
         self.identity_name.as_deref()
     }
@@ -12867,12 +12867,12 @@ pub mod session_mapping_detail {
             self.identity_id = input;
             self
         }
-        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_name = Some(input.into());
             self
         }
-        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12950,6 +12950,138 @@ impl SessionMappingDetail {
     /// Creates a new builder-style object to manufacture [`SessionMappingDetail`](crate::model::SessionMappingDetail).
     pub fn builder() -> crate::model::session_mapping_detail::Builder {
         crate::model::session_mapping_detail::Builder::default()
+    }
+}
+
+/// <p>The credentials that you can use to connect to cluster endpoints. Credentials consist of a username and a password.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub enum Credentials {
+    /// <p>The username and password that you use to connect to cluster endpoints.</p>
+    UsernamePassword(crate::model::UsernamePassword),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl Credentials {
+    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`UsernamePassword`](crate::model::Credentials::UsernamePassword), extracting the inner [`UsernamePassword`](crate::model::UsernamePassword).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_username_password(
+        &self,
+    ) -> std::result::Result<&crate::model::UsernamePassword, &Self> {
+        if let Credentials::UsernamePassword(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`UsernamePassword`](crate::model::Credentials::UsernamePassword).
+    pub fn is_username_password(&self) -> bool {
+        self.as_username_password().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+impl std::fmt::Debug for Credentials {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Credentials::UsernamePassword(_) => {
+                f.debug_tuple("*** Sensitive Data Redacted ***").finish()
+            }
+            Credentials::Unknown => f.debug_tuple("Unknown").finish(),
+        }
+    }
+}
+
+/// <p>The username and password that you use to connect to cluster endpoints.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UsernamePassword {
+    /// <p>The username associated with the temporary credentials that you use to connect to cluster endpoints.</p>
+    #[doc(hidden)]
+    pub username: std::option::Option<std::string::String>,
+    /// <p>The password associated with the temporary credentials that you use to connect to cluster endpoints.</p>
+    #[doc(hidden)]
+    pub password: std::option::Option<std::string::String>,
+}
+impl UsernamePassword {
+    /// <p>The username associated with the temporary credentials that you use to connect to cluster endpoints.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The password associated with the temporary credentials that you use to connect to cluster endpoints.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+}
+impl std::fmt::Debug for UsernamePassword {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UsernamePassword");
+        formatter.field("username", &self.username);
+        formatter.field("password", &self.password);
+        formatter.finish()
+    }
+}
+/// See [`UsernamePassword`](crate::model::UsernamePassword).
+pub mod username_password {
+
+    /// A builder for [`UsernamePassword`](crate::model::UsernamePassword).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    pub struct Builder {
+        pub(crate) username: std::option::Option<std::string::String>,
+        pub(crate) password: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The username associated with the temporary credentials that you use to connect to cluster endpoints.</p>
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.username = Some(input.into());
+            self
+        }
+        /// <p>The username associated with the temporary credentials that you use to connect to cluster endpoints.</p>
+        pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.username = input;
+            self
+        }
+        /// <p>The password associated with the temporary credentials that you use to connect to cluster endpoints.</p>
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.password = Some(input.into());
+            self
+        }
+        /// <p>The password associated with the temporary credentials that you use to connect to cluster endpoints.</p>
+        pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.password = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UsernamePassword`](crate::model::UsernamePassword).
+        pub fn build(self) -> crate::model::UsernamePassword {
+            crate::model::UsernamePassword {
+                username: self.username,
+                password: self.password,
+            }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("username", &self.username);
+            formatter.field("password", &self.password);
+            formatter.finish()
+        }
+    }
+}
+impl UsernamePassword {
+    /// Creates a new builder-style object to manufacture [`UsernamePassword`](crate::model::UsernamePassword).
+    pub fn builder() -> crate::model::username_password::Builder {
+        crate::model::username_password::Builder::default()
     }
 }
 
@@ -13042,7 +13174,7 @@ pub struct Studio {
     /// <p>The detailed description of the Amazon EMR Studio.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+    /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.</p>
     #[doc(hidden)]
     pub auth_mode: std::option::Option<crate::model::AuthMode>,
     /// <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
@@ -13099,7 +13231,7 @@ impl Studio {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+    /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.</p>
     pub fn auth_mode(&self) -> std::option::Option<&crate::model::AuthMode> {
         self.auth_mode.as_ref()
     }
@@ -13217,12 +13349,12 @@ pub mod studio {
             self.description = input;
             self
         }
-        /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+        /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.</p>
         pub fn auth_mode(mut self, input: crate::model::AuthMode) -> Self {
             self.auth_mode = Some(input);
             self
         }
-        /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+        /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.</p>
         pub fn set_auth_mode(mut self, input: std::option::Option<crate::model::AuthMode>) -> Self {
             self.auth_mode = input;
             self

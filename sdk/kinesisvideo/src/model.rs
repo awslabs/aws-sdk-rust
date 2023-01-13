@@ -131,12 +131,12 @@ impl NotificationConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationDestinationConfig {
-    /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+    /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
 }
 impl NotificationDestinationConfig {
-    /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+    /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
     pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
@@ -150,12 +150,12 @@ pub mod notification_destination_config {
         pub(crate) uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+        /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.uri = Some(input.into());
             self
         }
-        /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+        /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -260,6 +260,168 @@ impl ConfigurationStatus {
     }
 }
 impl AsRef<str> for ConfigurationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MediaStorageConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the stream </p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the media storage configuration.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::MediaStorageConfigurationStatus>,
+}
+impl MediaStorageConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the stream </p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The status of the media storage configuration.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MediaStorageConfigurationStatus> {
+        self.status.as_ref()
+    }
+}
+/// See [`MediaStorageConfiguration`](crate::model::MediaStorageConfiguration).
+pub mod media_storage_configuration {
+
+    /// A builder for [`MediaStorageConfiguration`](crate::model::MediaStorageConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::MediaStorageConfigurationStatus>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the stream </p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the stream </p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
+        /// <p>The status of the media storage configuration.</p>
+        pub fn status(mut self, input: crate::model::MediaStorageConfigurationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the media storage configuration.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::MediaStorageConfigurationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MediaStorageConfiguration`](crate::model::MediaStorageConfiguration).
+        pub fn build(self) -> crate::model::MediaStorageConfiguration {
+            crate::model::MediaStorageConfiguration {
+                stream_arn: self.stream_arn,
+                status: self.status,
+            }
+        }
+    }
+}
+impl MediaStorageConfiguration {
+    /// Creates a new builder-style object to manufacture [`MediaStorageConfiguration`](crate::model::MediaStorageConfiguration).
+    pub fn builder() -> crate::model::media_storage_configuration::Builder {
+        crate::model::media_storage_configuration::Builder::default()
+    }
+}
+
+/// When writing a match expression against `MediaStorageConfigurationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let mediastorageconfigurationstatus = unimplemented!();
+/// match mediastorageconfigurationstatus {
+///     MediaStorageConfigurationStatus::Disabled => { /* ... */ },
+///     MediaStorageConfigurationStatus::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `mediastorageconfigurationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MediaStorageConfigurationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MediaStorageConfigurationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MediaStorageConfigurationStatus::NewFeature` is defined.
+/// Specifically, when `mediastorageconfigurationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MediaStorageConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MediaStorageConfigurationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for MediaStorageConfigurationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => MediaStorageConfigurationStatus::Disabled,
+            "ENABLED" => MediaStorageConfigurationStatus::Enabled,
+            other => MediaStorageConfigurationStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for MediaStorageConfigurationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MediaStorageConfigurationStatus::from(s))
+    }
+}
+impl MediaStorageConfigurationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MediaStorageConfigurationStatus::Disabled => "DISABLED",
+            MediaStorageConfigurationStatus::Enabled => "ENABLED",
+            MediaStorageConfigurationStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for MediaStorageConfigurationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -663,7 +825,7 @@ impl AsRef<str> for Format {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageGenerationDestinationConfig {
-    /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+    /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
@@ -671,7 +833,7 @@ pub struct ImageGenerationDestinationConfig {
     pub destination_region: std::option::Option<std::string::String>,
 }
 impl ImageGenerationDestinationConfig {
-    /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+    /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
     pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
@@ -690,12 +852,12 @@ pub mod image_generation_destination_config {
         pub(crate) destination_region: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+        /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.uri = Some(input.into());
             self
         }
-        /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+        /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -977,6 +1139,881 @@ impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
+    }
+}
+
+/// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EdgeConfig {
+    /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
+    #[doc(hidden)]
+    pub hub_device_arn: std::option::Option<std::string::String>,
+    /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
+    #[doc(hidden)]
+    pub recorder_config: std::option::Option<crate::model::RecorderConfig>,
+    /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
+    #[doc(hidden)]
+    pub uploader_config: std::option::Option<crate::model::UploaderConfig>,
+    /// <p>The deletion configuration is made up of the retention time (<code>EdgeRetentionInHours</code>) and local size configuration (<code>LocalSizeConfig</code>) details that are used to make the deletion.</p>
+    #[doc(hidden)]
+    pub deletion_config: std::option::Option<crate::model::DeletionConfig>,
+}
+impl EdgeConfig {
+    /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
+    pub fn hub_device_arn(&self) -> std::option::Option<&str> {
+        self.hub_device_arn.as_deref()
+    }
+    /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
+    pub fn recorder_config(&self) -> std::option::Option<&crate::model::RecorderConfig> {
+        self.recorder_config.as_ref()
+    }
+    /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
+    pub fn uploader_config(&self) -> std::option::Option<&crate::model::UploaderConfig> {
+        self.uploader_config.as_ref()
+    }
+    /// <p>The deletion configuration is made up of the retention time (<code>EdgeRetentionInHours</code>) and local size configuration (<code>LocalSizeConfig</code>) details that are used to make the deletion.</p>
+    pub fn deletion_config(&self) -> std::option::Option<&crate::model::DeletionConfig> {
+        self.deletion_config.as_ref()
+    }
+}
+/// See [`EdgeConfig`](crate::model::EdgeConfig).
+pub mod edge_config {
+
+    /// A builder for [`EdgeConfig`](crate::model::EdgeConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_device_arn: std::option::Option<std::string::String>,
+        pub(crate) recorder_config: std::option::Option<crate::model::RecorderConfig>,
+        pub(crate) uploader_config: std::option::Option<crate::model::UploaderConfig>,
+        pub(crate) deletion_config: std::option::Option<crate::model::DeletionConfig>,
+    }
+    impl Builder {
+        /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
+        pub fn hub_device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_device_arn = Some(input.into());
+            self
+        }
+        /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
+        pub fn set_hub_device_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_device_arn = input;
+            self
+        }
+        /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
+        pub fn recorder_config(mut self, input: crate::model::RecorderConfig) -> Self {
+            self.recorder_config = Some(input);
+            self
+        }
+        /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
+        pub fn set_recorder_config(
+            mut self,
+            input: std::option::Option<crate::model::RecorderConfig>,
+        ) -> Self {
+            self.recorder_config = input;
+            self
+        }
+        /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
+        pub fn uploader_config(mut self, input: crate::model::UploaderConfig) -> Self {
+            self.uploader_config = Some(input);
+            self
+        }
+        /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
+        pub fn set_uploader_config(
+            mut self,
+            input: std::option::Option<crate::model::UploaderConfig>,
+        ) -> Self {
+            self.uploader_config = input;
+            self
+        }
+        /// <p>The deletion configuration is made up of the retention time (<code>EdgeRetentionInHours</code>) and local size configuration (<code>LocalSizeConfig</code>) details that are used to make the deletion.</p>
+        pub fn deletion_config(mut self, input: crate::model::DeletionConfig) -> Self {
+            self.deletion_config = Some(input);
+            self
+        }
+        /// <p>The deletion configuration is made up of the retention time (<code>EdgeRetentionInHours</code>) and local size configuration (<code>LocalSizeConfig</code>) details that are used to make the deletion.</p>
+        pub fn set_deletion_config(
+            mut self,
+            input: std::option::Option<crate::model::DeletionConfig>,
+        ) -> Self {
+            self.deletion_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EdgeConfig`](crate::model::EdgeConfig).
+        pub fn build(self) -> crate::model::EdgeConfig {
+            crate::model::EdgeConfig {
+                hub_device_arn: self.hub_device_arn,
+                recorder_config: self.recorder_config,
+                uploader_config: self.uploader_config,
+                deletion_config: self.deletion_config,
+            }
+        }
+    }
+}
+impl EdgeConfig {
+    /// Creates a new builder-style object to manufacture [`EdgeConfig`](crate::model::EdgeConfig).
+    pub fn builder() -> crate::model::edge_config::Builder {
+        crate::model::edge_config::Builder::default()
+    }
+}
+
+/// <p>The configuration details required to delete the connection of the stream from the Edge Agent.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeletionConfig {
+    /// <p>The number of hours that you want to retain the data in the stream on the Edge Agent. The default value of the retention time is 720 hours, which translates to 30 days.</p>
+    #[doc(hidden)]
+    pub edge_retention_in_hours: std::option::Option<i32>,
+    /// <p>The value of the local size required in order to delete the edge configuration.</p>
+    #[doc(hidden)]
+    pub local_size_config: std::option::Option<crate::model::LocalSizeConfig>,
+    /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p>
+    /// <p>Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files are not being deleted before they are initially uploaded to AWS cloud.</p>
+    #[doc(hidden)]
+    pub delete_after_upload: std::option::Option<bool>,
+}
+impl DeletionConfig {
+    /// <p>The number of hours that you want to retain the data in the stream on the Edge Agent. The default value of the retention time is 720 hours, which translates to 30 days.</p>
+    pub fn edge_retention_in_hours(&self) -> std::option::Option<i32> {
+        self.edge_retention_in_hours
+    }
+    /// <p>The value of the local size required in order to delete the edge configuration.</p>
+    pub fn local_size_config(&self) -> std::option::Option<&crate::model::LocalSizeConfig> {
+        self.local_size_config.as_ref()
+    }
+    /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p>
+    /// <p>Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files are not being deleted before they are initially uploaded to AWS cloud.</p>
+    pub fn delete_after_upload(&self) -> std::option::Option<bool> {
+        self.delete_after_upload
+    }
+}
+/// See [`DeletionConfig`](crate::model::DeletionConfig).
+pub mod deletion_config {
+
+    /// A builder for [`DeletionConfig`](crate::model::DeletionConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edge_retention_in_hours: std::option::Option<i32>,
+        pub(crate) local_size_config: std::option::Option<crate::model::LocalSizeConfig>,
+        pub(crate) delete_after_upload: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The number of hours that you want to retain the data in the stream on the Edge Agent. The default value of the retention time is 720 hours, which translates to 30 days.</p>
+        pub fn edge_retention_in_hours(mut self, input: i32) -> Self {
+            self.edge_retention_in_hours = Some(input);
+            self
+        }
+        /// <p>The number of hours that you want to retain the data in the stream on the Edge Agent. The default value of the retention time is 720 hours, which translates to 30 days.</p>
+        pub fn set_edge_retention_in_hours(mut self, input: std::option::Option<i32>) -> Self {
+            self.edge_retention_in_hours = input;
+            self
+        }
+        /// <p>The value of the local size required in order to delete the edge configuration.</p>
+        pub fn local_size_config(mut self, input: crate::model::LocalSizeConfig) -> Self {
+            self.local_size_config = Some(input);
+            self
+        }
+        /// <p>The value of the local size required in order to delete the edge configuration.</p>
+        pub fn set_local_size_config(
+            mut self,
+            input: std::option::Option<crate::model::LocalSizeConfig>,
+        ) -> Self {
+            self.local_size_config = input;
+            self
+        }
+        /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p>
+        /// <p>Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files are not being deleted before they are initially uploaded to AWS cloud.</p>
+        pub fn delete_after_upload(mut self, input: bool) -> Self {
+            self.delete_after_upload = Some(input);
+            self
+        }
+        /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p>
+        /// <p>Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files are not being deleted before they are initially uploaded to AWS cloud.</p>
+        pub fn set_delete_after_upload(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_after_upload = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeletionConfig`](crate::model::DeletionConfig).
+        pub fn build(self) -> crate::model::DeletionConfig {
+            crate::model::DeletionConfig {
+                edge_retention_in_hours: self.edge_retention_in_hours,
+                local_size_config: self.local_size_config,
+                delete_after_upload: self.delete_after_upload,
+            }
+        }
+    }
+}
+impl DeletionConfig {
+    /// Creates a new builder-style object to manufacture [`DeletionConfig`](crate::model::DeletionConfig).
+    pub fn builder() -> crate::model::deletion_config::Builder {
+        crate::model::deletion_config::Builder::default()
+    }
+}
+
+/// <p>The configuration details that include the maximum size of the media (<code>MaxLocalMediaSizeInMB</code>) that you want to store for a stream on the Edge Agent, as well as the strategy that should be used (<code>StrategyOnFullSize</code>) when a stream's maximum size has been reached.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LocalSizeConfig {
+    /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent. </p>
+    #[doc(hidden)]
+    pub max_local_media_size_in_mb: std::option::Option<i32>,
+    /// <p>The strategy to perform when a stream’s <code>MaxLocalMediaSizeInMB</code> limit is reached.</p>
+    #[doc(hidden)]
+    pub strategy_on_full_size: std::option::Option<crate::model::StrategyOnFullSize>,
+}
+impl LocalSizeConfig {
+    /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent. </p>
+    pub fn max_local_media_size_in_mb(&self) -> std::option::Option<i32> {
+        self.max_local_media_size_in_mb
+    }
+    /// <p>The strategy to perform when a stream’s <code>MaxLocalMediaSizeInMB</code> limit is reached.</p>
+    pub fn strategy_on_full_size(&self) -> std::option::Option<&crate::model::StrategyOnFullSize> {
+        self.strategy_on_full_size.as_ref()
+    }
+}
+/// See [`LocalSizeConfig`](crate::model::LocalSizeConfig).
+pub mod local_size_config {
+
+    /// A builder for [`LocalSizeConfig`](crate::model::LocalSizeConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_local_media_size_in_mb: std::option::Option<i32>,
+        pub(crate) strategy_on_full_size: std::option::Option<crate::model::StrategyOnFullSize>,
+    }
+    impl Builder {
+        /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent. </p>
+        pub fn max_local_media_size_in_mb(mut self, input: i32) -> Self {
+            self.max_local_media_size_in_mb = Some(input);
+            self
+        }
+        /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent. </p>
+        pub fn set_max_local_media_size_in_mb(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_local_media_size_in_mb = input;
+            self
+        }
+        /// <p>The strategy to perform when a stream’s <code>MaxLocalMediaSizeInMB</code> limit is reached.</p>
+        pub fn strategy_on_full_size(mut self, input: crate::model::StrategyOnFullSize) -> Self {
+            self.strategy_on_full_size = Some(input);
+            self
+        }
+        /// <p>The strategy to perform when a stream’s <code>MaxLocalMediaSizeInMB</code> limit is reached.</p>
+        pub fn set_strategy_on_full_size(
+            mut self,
+            input: std::option::Option<crate::model::StrategyOnFullSize>,
+        ) -> Self {
+            self.strategy_on_full_size = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LocalSizeConfig`](crate::model::LocalSizeConfig).
+        pub fn build(self) -> crate::model::LocalSizeConfig {
+            crate::model::LocalSizeConfig {
+                max_local_media_size_in_mb: self.max_local_media_size_in_mb,
+                strategy_on_full_size: self.strategy_on_full_size,
+            }
+        }
+    }
+}
+impl LocalSizeConfig {
+    /// Creates a new builder-style object to manufacture [`LocalSizeConfig`](crate::model::LocalSizeConfig).
+    pub fn builder() -> crate::model::local_size_config::Builder {
+        crate::model::local_size_config::Builder::default()
+    }
+}
+
+/// When writing a match expression against `StrategyOnFullSize`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let strategyonfullsize = unimplemented!();
+/// match strategyonfullsize {
+///     StrategyOnFullSize::DeleteOldestMedia => { /* ... */ },
+///     StrategyOnFullSize::DenyNewMedia => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `strategyonfullsize` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StrategyOnFullSize::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StrategyOnFullSize::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StrategyOnFullSize::NewFeature` is defined.
+/// Specifically, when `strategyonfullsize` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StrategyOnFullSize::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StrategyOnFullSize {
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteOldestMedia,
+    #[allow(missing_docs)] // documentation missing in model
+    DenyNewMedia,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for StrategyOnFullSize {
+    fn from(s: &str) -> Self {
+        match s {
+            "DELETE_OLDEST_MEDIA" => StrategyOnFullSize::DeleteOldestMedia,
+            "DENY_NEW_MEDIA" => StrategyOnFullSize::DenyNewMedia,
+            other => {
+                StrategyOnFullSize::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for StrategyOnFullSize {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StrategyOnFullSize::from(s))
+    }
+}
+impl StrategyOnFullSize {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StrategyOnFullSize::DeleteOldestMedia => "DELETE_OLDEST_MEDIA",
+            StrategyOnFullSize::DenyNewMedia => "DENY_NEW_MEDIA",
+            StrategyOnFullSize::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DELETE_OLDEST_MEDIA", "DENY_NEW_MEDIA"]
+    }
+}
+impl AsRef<str> for StrategyOnFullSize {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutesdetails</code>, that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in upload mode. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UploaderConfig {
+    /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in recording mode.</p>
+    #[doc(hidden)]
+    pub schedule_config: std::option::Option<crate::model::ScheduleConfig>,
+}
+impl UploaderConfig {
+    /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in recording mode.</p>
+    pub fn schedule_config(&self) -> std::option::Option<&crate::model::ScheduleConfig> {
+        self.schedule_config.as_ref()
+    }
+}
+/// See [`UploaderConfig`](crate::model::UploaderConfig).
+pub mod uploader_config {
+
+    /// A builder for [`UploaderConfig`](crate::model::UploaderConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) schedule_config: std::option::Option<crate::model::ScheduleConfig>,
+    }
+    impl Builder {
+        /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in recording mode.</p>
+        pub fn schedule_config(mut self, input: crate::model::ScheduleConfig) -> Self {
+            self.schedule_config = Some(input);
+            self
+        }
+        /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in recording mode.</p>
+        pub fn set_schedule_config(
+            mut self,
+            input: std::option::Option<crate::model::ScheduleConfig>,
+        ) -> Self {
+            self.schedule_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UploaderConfig`](crate::model::UploaderConfig).
+        pub fn build(self) -> crate::model::UploaderConfig {
+            crate::model::UploaderConfig {
+                schedule_config: self.schedule_config,
+            }
+        }
+    }
+}
+impl UploaderConfig {
+    /// Creates a new builder-style object to manufacture [`UploaderConfig`](crate::model::UploaderConfig).
+    pub fn builder() -> crate::model::uploader_config::Builder {
+        crate::model::uploader_config::Builder::default()
+    }
+}
+
+/// <p>This API enables you to specify the duration that the camera, or local media file, should record onto the Edge Agent. The <code>ScheduleConfig</code> consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> attributes. </p>
+/// <p>If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be set to recording mode.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ScheduleConfig {
+    /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p>
+    /// <p>For more information about Quartz, refer to the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html"> <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and its use.</p>
+    #[doc(hidden)]
+    pub schedule_expression: std::option::Option<std::string::String>,
+    /// <p>The total duration to record the media. If the <code>ScheduleExpression</code> attribute is provided, then the <code>DurationInSeconds</code> attribute should also be specified.</p>
+    #[doc(hidden)]
+    pub duration_in_seconds: std::option::Option<i32>,
+}
+impl ScheduleConfig {
+    /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p>
+    /// <p>For more information about Quartz, refer to the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html"> <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and its use.</p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
+    }
+    /// <p>The total duration to record the media. If the <code>ScheduleExpression</code> attribute is provided, then the <code>DurationInSeconds</code> attribute should also be specified.</p>
+    pub fn duration_in_seconds(&self) -> std::option::Option<i32> {
+        self.duration_in_seconds
+    }
+}
+/// See [`ScheduleConfig`](crate::model::ScheduleConfig).
+pub mod schedule_config {
+
+    /// A builder for [`ScheduleConfig`](crate::model::ScheduleConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) schedule_expression: std::option::Option<std::string::String>,
+        pub(crate) duration_in_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p>
+        /// <p>For more information about Quartz, refer to the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html"> <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and its use.</p>
+        pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schedule_expression = Some(input.into());
+            self
+        }
+        /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p>
+        /// <p>For more information about Quartz, refer to the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html"> <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and its use.</p>
+        pub fn set_schedule_expression(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.schedule_expression = input;
+            self
+        }
+        /// <p>The total duration to record the media. If the <code>ScheduleExpression</code> attribute is provided, then the <code>DurationInSeconds</code> attribute should also be specified.</p>
+        pub fn duration_in_seconds(mut self, input: i32) -> Self {
+            self.duration_in_seconds = Some(input);
+            self
+        }
+        /// <p>The total duration to record the media. If the <code>ScheduleExpression</code> attribute is provided, then the <code>DurationInSeconds</code> attribute should also be specified.</p>
+        pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration_in_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScheduleConfig`](crate::model::ScheduleConfig).
+        pub fn build(self) -> crate::model::ScheduleConfig {
+            crate::model::ScheduleConfig {
+                schedule_expression: self.schedule_expression,
+                duration_in_seconds: self.duration_in_seconds,
+            }
+        }
+    }
+}
+impl ScheduleConfig {
+    /// Creates a new builder-style object to manufacture [`ScheduleConfig`](crate::model::ScheduleConfig).
+    pub fn builder() -> crate::model::schedule_config::Builder {
+        crate::model::schedule_config::Builder::default()
+    }
+}
+
+/// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details that are used as credentials to accesss the local media files streamed on the camera. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RecorderConfig {
+    /// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files streamed to the camera. </p>
+    #[doc(hidden)]
+    pub media_source_config: std::option::Option<crate::model::MediaSourceConfig>,
+    /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> attribute is not provided, then the Edge Agent will always be set to recording mode.</p>
+    #[doc(hidden)]
+    pub schedule_config: std::option::Option<crate::model::ScheduleConfig>,
+}
+impl RecorderConfig {
+    /// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files streamed to the camera. </p>
+    pub fn media_source_config(&self) -> std::option::Option<&crate::model::MediaSourceConfig> {
+        self.media_source_config.as_ref()
+    }
+    /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> attribute is not provided, then the Edge Agent will always be set to recording mode.</p>
+    pub fn schedule_config(&self) -> std::option::Option<&crate::model::ScheduleConfig> {
+        self.schedule_config.as_ref()
+    }
+}
+/// See [`RecorderConfig`](crate::model::RecorderConfig).
+pub mod recorder_config {
+
+    /// A builder for [`RecorderConfig`](crate::model::RecorderConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) media_source_config: std::option::Option<crate::model::MediaSourceConfig>,
+        pub(crate) schedule_config: std::option::Option<crate::model::ScheduleConfig>,
+    }
+    impl Builder {
+        /// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files streamed to the camera. </p>
+        pub fn media_source_config(mut self, input: crate::model::MediaSourceConfig) -> Self {
+            self.media_source_config = Some(input);
+            self
+        }
+        /// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files streamed to the camera. </p>
+        pub fn set_media_source_config(
+            mut self,
+            input: std::option::Option<crate::model::MediaSourceConfig>,
+        ) -> Self {
+            self.media_source_config = input;
+            self
+        }
+        /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> attribute is not provided, then the Edge Agent will always be set to recording mode.</p>
+        pub fn schedule_config(mut self, input: crate::model::ScheduleConfig) -> Self {
+            self.schedule_config = Some(input);
+            self
+        }
+        /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> attribute is not provided, then the Edge Agent will always be set to recording mode.</p>
+        pub fn set_schedule_config(
+            mut self,
+            input: std::option::Option<crate::model::ScheduleConfig>,
+        ) -> Self {
+            self.schedule_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RecorderConfig`](crate::model::RecorderConfig).
+        pub fn build(self) -> crate::model::RecorderConfig {
+            crate::model::RecorderConfig {
+                media_source_config: self.media_source_config,
+                schedule_config: self.schedule_config,
+            }
+        }
+    }
+}
+impl RecorderConfig {
+    /// Creates a new builder-style object to manufacture [`RecorderConfig`](crate::model::RecorderConfig).
+    pub fn builder() -> crate::model::recorder_config::Builder {
+        crate::model::recorder_config::Builder::default()
+    }
+}
+
+/// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files that are streamed to the camera.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MediaSourceConfig {
+    /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
+    #[doc(hidden)]
+    pub media_uri_secret_arn: std::option::Option<std::string::String>,
+    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
+    /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
+    /// </note>
+    #[doc(hidden)]
+    pub media_uri_type: std::option::Option<crate::model::MediaUriType>,
+}
+impl MediaSourceConfig {
+    /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
+    pub fn media_uri_secret_arn(&self) -> std::option::Option<&str> {
+        self.media_uri_secret_arn.as_deref()
+    }
+    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
+    /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
+    /// </note>
+    pub fn media_uri_type(&self) -> std::option::Option<&crate::model::MediaUriType> {
+        self.media_uri_type.as_ref()
+    }
+}
+impl std::fmt::Debug for MediaSourceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MediaSourceConfig");
+        formatter.field("media_uri_secret_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("media_uri_type", &self.media_uri_type);
+        formatter.finish()
+    }
+}
+/// See [`MediaSourceConfig`](crate::model::MediaSourceConfig).
+pub mod media_source_config {
+
+    /// A builder for [`MediaSourceConfig`](crate::model::MediaSourceConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    pub struct Builder {
+        pub(crate) media_uri_secret_arn: std::option::Option<std::string::String>,
+        pub(crate) media_uri_type: std::option::Option<crate::model::MediaUriType>,
+    }
+    impl Builder {
+        /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
+        pub fn media_uri_secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.media_uri_secret_arn = Some(input.into());
+            self
+        }
+        /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
+        pub fn set_media_uri_secret_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.media_uri_secret_arn = input;
+            self
+        }
+        /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
+        /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
+        /// </note>
+        pub fn media_uri_type(mut self, input: crate::model::MediaUriType) -> Self {
+            self.media_uri_type = Some(input);
+            self
+        }
+        /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
+        /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
+        /// </note>
+        pub fn set_media_uri_type(
+            mut self,
+            input: std::option::Option<crate::model::MediaUriType>,
+        ) -> Self {
+            self.media_uri_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MediaSourceConfig`](crate::model::MediaSourceConfig).
+        pub fn build(self) -> crate::model::MediaSourceConfig {
+            crate::model::MediaSourceConfig {
+                media_uri_secret_arn: self.media_uri_secret_arn,
+                media_uri_type: self.media_uri_type,
+            }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("media_uri_secret_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("media_uri_type", &self.media_uri_type);
+            formatter.finish()
+        }
+    }
+}
+impl MediaSourceConfig {
+    /// Creates a new builder-style object to manufacture [`MediaSourceConfig`](crate::model::MediaSourceConfig).
+    pub fn builder() -> crate::model::media_source_config::Builder {
+        crate::model::media_source_config::Builder::default()
+    }
+}
+
+/// When writing a match expression against `MediaUriType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let mediauritype = unimplemented!();
+/// match mediauritype {
+///     MediaUriType::FileUri => { /* ... */ },
+///     MediaUriType::RtspUri => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `mediauritype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MediaUriType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MediaUriType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MediaUriType::NewFeature` is defined.
+/// Specifically, when `mediauritype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MediaUriType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MediaUriType {
+    #[allow(missing_docs)] // documentation missing in model
+    FileUri,
+    #[allow(missing_docs)] // documentation missing in model
+    RtspUri,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for MediaUriType {
+    fn from(s: &str) -> Self {
+        match s {
+            "FILE_URI" => MediaUriType::FileUri,
+            "RTSP_URI" => MediaUriType::RtspUri,
+            other => MediaUriType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for MediaUriType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MediaUriType::from(s))
+    }
+}
+impl MediaUriType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MediaUriType::FileUri => "FILE_URI",
+            MediaUriType::RtspUri => "RTSP_URI",
+            MediaUriType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FILE_URI", "RTSP_URI"]
+    }
+}
+impl AsRef<str> for MediaUriType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `SyncStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let syncstatus = unimplemented!();
+/// match syncstatus {
+///     SyncStatus::Acknowledged => { /* ... */ },
+///     SyncStatus::DeleteFailed => { /* ... */ },
+///     SyncStatus::Deleting => { /* ... */ },
+///     SyncStatus::InSync => { /* ... */ },
+///     SyncStatus::Syncing => { /* ... */ },
+///     SyncStatus::SyncFailed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `syncstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SyncStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SyncStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SyncStatus::NewFeature` is defined.
+/// Specifically, when `syncstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SyncStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SyncStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Acknowledged,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    InSync,
+    #[allow(missing_docs)] // documentation missing in model
+    Syncing,
+    #[allow(missing_docs)] // documentation missing in model
+    SyncFailed,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SyncStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACKNOWLEDGED" => SyncStatus::Acknowledged,
+            "DELETE_FAILED" => SyncStatus::DeleteFailed,
+            "DELETING" => SyncStatus::Deleting,
+            "IN_SYNC" => SyncStatus::InSync,
+            "SYNCING" => SyncStatus::Syncing,
+            "SYNC_FAILED" => SyncStatus::SyncFailed,
+            other => SyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for SyncStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SyncStatus::from(s))
+    }
+}
+impl SyncStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SyncStatus::Acknowledged => "ACKNOWLEDGED",
+            SyncStatus::DeleteFailed => "DELETE_FAILED",
+            SyncStatus::Deleting => "DELETING",
+            SyncStatus::InSync => "IN_SYNC",
+            SyncStatus::Syncing => "SYNCING",
+            SyncStatus::SyncFailed => "SYNC_FAILED",
+            SyncStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACKNOWLEDGED",
+            "DELETE_FAILED",
+            "DELETING",
+            "IN_SYNC",
+            "SYNCING",
+            "SYNC_FAILED",
+        ]
+    }
+}
+impl AsRef<str> for SyncStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1872,6 +2909,7 @@ impl ResourceEndpointListItem {
 /// # let channelprotocol = unimplemented!();
 /// match channelprotocol {
 ///     ChannelProtocol::Https => { /* ... */ },
+///     ChannelProtocol::Webrtc => { /* ... */ },
 ///     ChannelProtocol::Wss => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -1909,6 +2947,8 @@ pub enum ChannelProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Https,
     #[allow(missing_docs)] // documentation missing in model
+    Webrtc,
+    #[allow(missing_docs)] // documentation missing in model
     Wss,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
@@ -1917,6 +2957,7 @@ impl std::convert::From<&str> for ChannelProtocol {
     fn from(s: &str) -> Self {
         match s {
             "HTTPS" => ChannelProtocol::Https,
+            "WEBRTC" => ChannelProtocol::Webrtc,
             "WSS" => ChannelProtocol::Wss,
             other => ChannelProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
@@ -1934,13 +2975,14 @@ impl ChannelProtocol {
     pub fn as_str(&self) -> &str {
         match self {
             ChannelProtocol::Https => "HTTPS",
+            ChannelProtocol::Webrtc => "WEBRTC",
             ChannelProtocol::Wss => "WSS",
             ChannelProtocol::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HTTPS", "WSS"]
+        &["HTTPS", "WEBRTC", "WSS"]
     }
 }
 impl AsRef<str> for ChannelProtocol {
@@ -2241,5 +3283,72 @@ impl ApiName {
 impl AsRef<str> for ApiName {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MappedResourceConfigurationListItem {
+    /// <p>The type of the associated resource for the kinesis video stream.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource, associated with the stream.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+}
+impl MappedResourceConfigurationListItem {
+    /// <p>The type of the associated resource for the kinesis video stream.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource, associated with the stream.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+/// See [`MappedResourceConfigurationListItem`](crate::model::MappedResourceConfigurationListItem).
+pub mod mapped_resource_configuration_list_item {
+
+    /// A builder for [`MappedResourceConfigurationListItem`](crate::model::MappedResourceConfigurationListItem).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The type of the associated resource for the kinesis video stream.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The type of the associated resource for the kinesis video stream.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource, associated with the stream.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource, associated with the stream.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MappedResourceConfigurationListItem`](crate::model::MappedResourceConfigurationListItem).
+        pub fn build(self) -> crate::model::MappedResourceConfigurationListItem {
+            crate::model::MappedResourceConfigurationListItem {
+                r#type: self.r#type,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl MappedResourceConfigurationListItem {
+    /// Creates a new builder-style object to manufacture [`MappedResourceConfigurationListItem`](crate::model::MappedResourceConfigurationListItem).
+    pub fn builder() -> crate::model::mapped_resource_configuration_list_item::Builder {
+        crate::model::mapped_resource_configuration_list_item::Builder::default()
     }
 }

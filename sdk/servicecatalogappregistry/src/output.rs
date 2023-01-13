@@ -244,6 +244,30 @@ impl SyncResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PutConfigurationOutput {}
+/// See [`PutConfigurationOutput`](crate::output::PutConfigurationOutput).
+pub mod put_configuration_output {
+
+    /// A builder for [`PutConfigurationOutput`](crate::output::PutConfigurationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutConfigurationOutput`](crate::output::PutConfigurationOutput).
+        pub fn build(self) -> crate::output::PutConfigurationOutput {
+            crate::output::PutConfigurationOutput {}
+        }
+    }
+}
+impl PutConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`PutConfigurationOutput`](crate::output::PutConfigurationOutput).
+    pub fn builder() -> crate::output::put_configuration_output::Builder {
+        crate::output::put_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags on the resource.</p>
     #[doc(hidden)]
@@ -312,7 +336,7 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAttributeGroupsForApplicationOutput {
-    /// <p> The details related to a specific AttributeGroup. </p>
+    /// <p> The details related to a specific attribute group. </p>
     #[doc(hidden)]
     pub attribute_groups_details:
         std::option::Option<std::vec::Vec<crate::model::AttributeGroupDetails>>,
@@ -321,7 +345,7 @@ pub struct ListAttributeGroupsForApplicationOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAttributeGroupsForApplicationOutput {
-    /// <p> The details related to a specific AttributeGroup. </p>
+    /// <p> The details related to a specific attribute group. </p>
     pub fn attribute_groups_details(
         &self,
     ) -> std::option::Option<&[crate::model::AttributeGroupDetails]> {
@@ -347,7 +371,7 @@ pub mod list_attribute_groups_for_application_output {
         ///
         /// To override the contents of this collection use [`set_attribute_groups_details`](Self::set_attribute_groups_details).
         ///
-        /// <p> The details related to a specific AttributeGroup. </p>
+        /// <p> The details related to a specific attribute group. </p>
         pub fn attribute_groups_details(
             mut self,
             input: crate::model::AttributeGroupDetails,
@@ -357,7 +381,7 @@ pub mod list_attribute_groups_for_application_output {
             self.attribute_groups_details = Some(v);
             self
         }
-        /// <p> The details related to a specific AttributeGroup. </p>
+        /// <p> The details related to a specific attribute group. </p>
         pub fn set_attribute_groups_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeGroupDetails>>,
@@ -700,6 +724,57 @@ impl ListApplicationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetConfigurationOutput {
+    /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
+    #[doc(hidden)]
+    pub configuration: std::option::Option<crate::model::AppRegistryConfiguration>,
+}
+impl GetConfigurationOutput {
+    /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::AppRegistryConfiguration> {
+        self.configuration.as_ref()
+    }
+}
+/// See [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
+pub mod get_configuration_output {
+
+    /// A builder for [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) configuration: std::option::Option<crate::model::AppRegistryConfiguration>,
+    }
+    impl Builder {
+        /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
+        pub fn configuration(mut self, input: crate::model::AppRegistryConfiguration) -> Self {
+            self.configuration = Some(input);
+            self
+        }
+        /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AppRegistryConfiguration>,
+        ) -> Self {
+            self.configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
+        pub fn build(self) -> crate::output::GetConfigurationOutput {
+            crate::output::GetConfigurationOutput {
+                configuration: self.configuration,
+            }
+        }
+    }
+}
+impl GetConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
+    pub fn builder() -> crate::output::get_configuration_output::Builder {
+        crate::output::get_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAttributeGroupOutput {
     /// <p>The identifier of the attribute group.</p>
     #[doc(hidden)]
@@ -982,7 +1057,7 @@ pub struct GetApplicationOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The information about the integration of the application with other services, such as Resource Groups.</p>
+    /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
     #[doc(hidden)]
     pub integrations: std::option::Option<crate::model::Integrations>,
 }
@@ -1022,7 +1097,7 @@ impl GetApplicationOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>The information about the integration of the application with other services, such as Resource Groups.</p>
+    /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
     pub fn integrations(&self) -> std::option::Option<&crate::model::Integrations> {
         self.integrations.as_ref()
     }
@@ -1147,12 +1222,12 @@ pub mod get_application_output {
             self.tags = input;
             self
         }
-        /// <p>The information about the integration of the application with other services, such as Resource Groups.</p>
+        /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
         pub fn integrations(mut self, input: crate::model::Integrations) -> Self {
             self.integrations = Some(input);
             self
         }
-        /// <p>The information about the integration of the application with other services, such as Resource Groups.</p>
+        /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
         pub fn set_integrations(
             mut self,
             input: std::option::Option<crate::model::Integrations>,

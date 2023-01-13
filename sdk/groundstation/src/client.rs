@@ -126,6 +126,23 @@ impl Client {
     pub fn create_dataflow_endpoint_group(&self) -> fluent_builders::CreateDataflowEndpointGroup {
         fluent_builders::CreateDataflowEndpointGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateEphemeris`](crate::client::fluent_builders::CreateEphemeris) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`satellite_id(impl Into<String>)`](crate::client::fluent_builders::CreateEphemeris::satellite_id) / [`set_satellite_id(Option<String>)`](crate::client::fluent_builders::CreateEphemeris::set_satellite_id): <p>AWS Ground Station satellite ID for this ephemeris.</p>
+    ///   - [`enabled(bool)`](crate::client::fluent_builders::CreateEphemeris::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::CreateEphemeris::set_enabled): <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>  <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
+    ///   - [`priority(i32)`](crate::client::fluent_builders::CreateEphemeris::priority) / [`set_priority(Option<i32>)`](crate::client::fluent_builders::CreateEphemeris::set_priority): <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>  <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>  <p>Priority must be 1 or greater</p>
+    ///   - [`expiration_time(DateTime)`](crate::client::fluent_builders::CreateEphemeris::expiration_time) / [`set_expiration_time(Option<DateTime>)`](crate::client::fluent_builders::CreateEphemeris::set_expiration_time): <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEphemeris::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEphemeris::set_name): <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    ///   - [`kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEphemeris::kms_key_arn) / [`set_kms_key_arn(Option<String>)`](crate::client::fluent_builders::CreateEphemeris::set_kms_key_arn): <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
+    ///   - [`ephemeris(EphemerisData)`](crate::client::fluent_builders::CreateEphemeris::ephemeris) / [`set_ephemeris(Option<EphemerisData>)`](crate::client::fluent_builders::CreateEphemeris::set_ephemeris): <p>Ephemeris data.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateEphemeris::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateEphemeris::set_tags): <p>Tags assigned to an ephemeris.</p>
+    /// - On success, responds with [`CreateEphemerisOutput`](crate::output::CreateEphemerisOutput) with field(s):
+    ///   - [`ephemeris_id(Option<String>)`](crate::output::CreateEphemerisOutput::ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
+    /// - On failure, responds with [`SdkError<CreateEphemerisError>`](crate::error::CreateEphemerisError)
+    pub fn create_ephemeris(&self) -> fluent_builders::CreateEphemeris {
+        fluent_builders::CreateEphemeris::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateMissionProfile`](crate::client::fluent_builders::CreateMissionProfile) operation.
     ///
     /// - The fluent builder is configurable:
@@ -165,6 +182,16 @@ impl Client {
     pub fn delete_dataflow_endpoint_group(&self) -> fluent_builders::DeleteDataflowEndpointGroup {
         fluent_builders::DeleteDataflowEndpointGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteEphemeris`](crate::client::fluent_builders::DeleteEphemeris) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`ephemeris_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEphemeris::ephemeris_id) / [`set_ephemeris_id(Option<String>)`](crate::client::fluent_builders::DeleteEphemeris::set_ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
+    /// - On success, responds with [`DeleteEphemerisOutput`](crate::output::DeleteEphemerisOutput) with field(s):
+    ///   - [`ephemeris_id(Option<String>)`](crate::output::DeleteEphemerisOutput::ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
+    /// - On failure, responds with [`SdkError<DeleteEphemerisError>`](crate::error::DeleteEphemerisError)
+    pub fn delete_ephemeris(&self) -> fluent_builders::DeleteEphemeris {
+        fluent_builders::DeleteEphemeris::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteMissionProfile`](crate::client::fluent_builders::DeleteMissionProfile) operation.
     ///
     /// - The fluent builder is configurable:
@@ -183,8 +210,8 @@ impl Client {
     ///   - [`contact_id(Option<String>)`](crate::output::DescribeContactOutput::contact_id): <p>UUID of a contact.</p>
     ///   - [`mission_profile_arn(Option<String>)`](crate::output::DescribeContactOutput::mission_profile_arn): <p>ARN of a mission profile.</p>
     ///   - [`satellite_arn(Option<String>)`](crate::output::DescribeContactOutput::satellite_arn): <p>ARN of a satellite.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::output::DescribeContactOutput::start_time): <p>Start time of a contact.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::output::DescribeContactOutput::end_time): <p>End time of a contact.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::output::DescribeContactOutput::start_time): <p>Start time of a contact in UTC.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::output::DescribeContactOutput::end_time): <p>End time of a contact in UTC.</p>
     ///   - [`pre_pass_start_time(Option<DateTime>)`](crate::output::DescribeContactOutput::pre_pass_start_time): <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
     ///   - [`post_pass_end_time(Option<DateTime>)`](crate::output::DescribeContactOutput::post_pass_end_time): <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
     ///   - [`ground_station(Option<String>)`](crate::output::DescribeContactOutput::ground_station): <p>Ground station for a contact.</p>
@@ -197,6 +224,25 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeContactError>`](crate::error::DescribeContactError)
     pub fn describe_contact(&self) -> fluent_builders::DescribeContact {
         fluent_builders::DescribeContact::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeEphemeris`](crate::client::fluent_builders::DescribeEphemeris) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`ephemeris_id(impl Into<String>)`](crate::client::fluent_builders::DescribeEphemeris::ephemeris_id) / [`set_ephemeris_id(Option<String>)`](crate::client::fluent_builders::DescribeEphemeris::set_ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
+    /// - On success, responds with [`DescribeEphemerisOutput`](crate::output::DescribeEphemerisOutput) with field(s):
+    ///   - [`ephemeris_id(Option<String>)`](crate::output::DescribeEphemerisOutput::ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
+    ///   - [`satellite_id(Option<String>)`](crate::output::DescribeEphemerisOutput::satellite_id): <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
+    ///   - [`status(Option<EphemerisStatus>)`](crate::output::DescribeEphemerisOutput::status): <p>The status of the ephemeris.</p>
+    ///   - [`priority(Option<i32>)`](crate::output::DescribeEphemerisOutput::priority): <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>  <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>  <p>Priority must be 1 or greater</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeEphemerisOutput::creation_time): <p>The time the ephemeris was uploaded in UTC.</p>
+    ///   - [`enabled(Option<bool>)`](crate::output::DescribeEphemerisOutput::enabled): <p>Whether or not the ephemeris is enabled.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeEphemerisOutput::name): <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeEphemerisOutput::tags): <p>Tags assigned to an ephemeris.</p>
+    ///   - [`supplied_data(Option<EphemerisTypeDescription>)`](crate::output::DescribeEphemerisOutput::supplied_data): <p>Supplied ephemeris data.</p>
+    ///   - [`invalid_reason(Option<EphemerisInvalidReason>)`](crate::output::DescribeEphemerisOutput::invalid_reason): <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
+    /// - On failure, responds with [`SdkError<DescribeEphemerisError>`](crate::error::DescribeEphemerisError)
+    pub fn describe_ephemeris(&self) -> fluent_builders::DescribeEphemeris {
+        fluent_builders::DescribeEphemeris::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetConfig`](crate::client::fluent_builders::GetConfig) operation.
     ///
@@ -270,6 +316,7 @@ impl Client {
     ///   - [`satellite_arn(Option<String>)`](crate::output::GetSatelliteOutput::satellite_arn): <p>ARN of a satellite.</p>
     ///   - [`norad_satellite_id(i32)`](crate::output::GetSatelliteOutput::norad_satellite_id): <p>NORAD satellite ID number.</p>
     ///   - [`ground_stations(Option<Vec<String>>)`](crate::output::GetSatelliteOutput::ground_stations): <p>A list of ground stations to which the satellite is on-boarded.</p>
+    ///   - [`current_ephemeris(Option<EphemerisMetaData>)`](crate::output::GetSatelliteOutput::current_ephemeris): <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
     /// - On failure, responds with [`SdkError<GetSatelliteError>`](crate::error::GetSatelliteError)
     pub fn get_satellite(&self) -> fluent_builders::GetSatellite {
         fluent_builders::GetSatellite::new(self.handle.clone())
@@ -294,8 +341,8 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListContacts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListContacts::set_max_results): <p>Maximum number of contacts returned.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContacts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContacts::set_next_token): <p>Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
     ///   - [`status_list(Vec<ContactStatus>)`](crate::client::fluent_builders::ListContacts::status_list) / [`set_status_list(Option<Vec<ContactStatus>>)`](crate::client::fluent_builders::ListContacts::set_status_list): <p>Status of a contact reservation.</p>
-    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListContacts::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListContacts::set_start_time): <p>Start time of a contact.</p>
-    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListContacts::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListContacts::set_end_time): <p>End time of a contact.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListContacts::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListContacts::set_start_time): <p>Start time of a contact in UTC.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListContacts::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListContacts::set_end_time): <p>End time of a contact in UTC.</p>
     ///   - [`ground_station(impl Into<String>)`](crate::client::fluent_builders::ListContacts::ground_station) / [`set_ground_station(Option<String>)`](crate::client::fluent_builders::ListContacts::set_ground_station): <p>Name of a ground station.</p>
     ///   - [`satellite_arn(impl Into<String>)`](crate::client::fluent_builders::ListContacts::satellite_arn) / [`set_satellite_arn(Option<String>)`](crate::client::fluent_builders::ListContacts::set_satellite_arn): <p>ARN of a satellite.</p>
     ///   - [`mission_profile_arn(impl Into<String>)`](crate::client::fluent_builders::ListContacts::mission_profile_arn) / [`set_mission_profile_arn(Option<String>)`](crate::client::fluent_builders::ListContacts::set_mission_profile_arn): <p>ARN of a mission profile.</p>
@@ -318,6 +365,23 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListDataflowEndpointGroupsError>`](crate::error::ListDataflowEndpointGroupsError)
     pub fn list_dataflow_endpoint_groups(&self) -> fluent_builders::ListDataflowEndpointGroups {
         fluent_builders::ListDataflowEndpointGroups::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListEphemerides`](crate::client::fluent_builders::ListEphemerides) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEphemerides::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`satellite_id(impl Into<String>)`](crate::client::fluent_builders::ListEphemerides::satellite_id) / [`set_satellite_id(Option<String>)`](crate::client::fluent_builders::ListEphemerides::set_satellite_id): <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListEphemerides::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListEphemerides::set_start_time): <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListEphemerides::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListEphemerides::set_end_time): <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    ///   - [`status_list(Vec<EphemerisStatus>)`](crate::client::fluent_builders::ListEphemerides::status_list) / [`set_status_list(Option<Vec<EphemerisStatus>>)`](crate::client::fluent_builders::ListEphemerides::set_status_list): <p>The list of ephemeris status to return.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEphemerides::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEphemerides::set_max_results): <p>Maximum number of ephemerides to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEphemerides::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEphemerides::set_next_token): <p>Pagination token.</p>
+    /// - On success, responds with [`ListEphemeridesOutput`](crate::output::ListEphemeridesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListEphemeridesOutput::next_token): <p>Pagination token.</p>
+    ///   - [`ephemerides(Option<Vec<EphemerisItem>>)`](crate::output::ListEphemeridesOutput::ephemerides): <p>List of ephemerides.</p>
+    /// - On failure, responds with [`SdkError<ListEphemeridesError>`](crate::error::ListEphemeridesError)
+    pub fn list_ephemerides(&self) -> fluent_builders::ListEphemerides {
+        fluent_builders::ListEphemerides::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListGroundStations`](crate::client::fluent_builders::ListGroundStations) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroundStations::into_paginator).
@@ -374,8 +438,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`mission_profile_arn(impl Into<String>)`](crate::client::fluent_builders::ReserveContact::mission_profile_arn) / [`set_mission_profile_arn(Option<String>)`](crate::client::fluent_builders::ReserveContact::set_mission_profile_arn): <p>ARN of a mission profile.</p>
     ///   - [`satellite_arn(impl Into<String>)`](crate::client::fluent_builders::ReserveContact::satellite_arn) / [`set_satellite_arn(Option<String>)`](crate::client::fluent_builders::ReserveContact::set_satellite_arn): <p>ARN of a satellite</p>
-    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ReserveContact::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ReserveContact::set_start_time): <p>Start time of a contact.</p>
-    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ReserveContact::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ReserveContact::set_end_time): <p>End time of a contact.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ReserveContact::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ReserveContact::set_start_time): <p>Start time of a contact in UTC.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ReserveContact::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ReserveContact::set_end_time): <p>End time of a contact in UTC.</p>
     ///   - [`ground_station(impl Into<String>)`](crate::client::fluent_builders::ReserveContact::ground_station) / [`set_ground_station(Option<String>)`](crate::client::fluent_builders::ReserveContact::set_ground_station): <p>Name of a ground station.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ReserveContact::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ReserveContact::set_tags): <p>Tags assigned to a contact.</p>
     /// - On success, responds with [`ReserveContactOutput`](crate::output::ReserveContactOutput) with field(s):
@@ -420,6 +484,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateConfigError>`](crate::error::UpdateConfigError)
     pub fn update_config(&self) -> fluent_builders::UpdateConfig {
         fluent_builders::UpdateConfig::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateEphemeris`](crate::client::fluent_builders::UpdateEphemeris) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`ephemeris_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEphemeris::ephemeris_id) / [`set_ephemeris_id(Option<String>)`](crate::client::fluent_builders::UpdateEphemeris::set_ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
+    ///   - [`enabled(bool)`](crate::client::fluent_builders::UpdateEphemeris::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateEphemeris::set_enabled): <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateEphemeris::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateEphemeris::set_name): <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    ///   - [`priority(i32)`](crate::client::fluent_builders::UpdateEphemeris::priority) / [`set_priority(Option<i32>)`](crate::client::fluent_builders::UpdateEphemeris::set_priority): <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>  <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>  <p>Priority must be 1 or greater</p>
+    /// - On success, responds with [`UpdateEphemerisOutput`](crate::output::UpdateEphemerisOutput) with field(s):
+    ///   - [`ephemeris_id(Option<String>)`](crate::output::UpdateEphemerisOutput::ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
+    /// - On failure, responds with [`SdkError<UpdateEphemerisError>`](crate::error::UpdateEphemerisError)
+    pub fn update_ephemeris(&self) -> fluent_builders::UpdateEphemeris {
+        fluent_builders::UpdateEphemeris::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateMissionProfile`](crate::client::fluent_builders::UpdateMissionProfile) operation.
     ///
@@ -723,6 +800,174 @@ pub mod fluent_builders {
             self
         }
         /// <p>Tags of a dataflow endpoint group.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateEphemeris`.
+    ///
+    /// <p>Creates an Ephemeris with the specified <code>EphemerisData</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateEphemeris {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_ephemeris_input::Builder,
+    }
+    impl CreateEphemeris {
+        /// Creates a new `CreateEphemeris`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateEphemeris,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateEphemerisError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateEphemerisOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateEphemerisError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
+        pub fn satellite_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.satellite_id(input.into());
+            self
+        }
+        /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
+        pub fn set_satellite_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_satellite_id(input);
+            self
+        }
+        /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
+        /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
+            self
+        }
+        /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
+        /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enabled(input);
+            self
+        }
+        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+        /// <p>Priority must be 1 or greater</p>
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
+            self
+        }
+        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+        /// <p>Priority must be 1 or greater</p>
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_priority(input);
+            self
+        }
+        /// <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
+        pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.expiration_time(input);
+            self
+        }
+        /// <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
+        pub fn set_expiration_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_expiration_time(input);
+            self
+        }
+        /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(input.into());
+            self
+        }
+        /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_arn(input);
+            self
+        }
+        /// <p>Ephemeris data.</p>
+        pub fn ephemeris(mut self, input: crate::model::EphemerisData) -> Self {
+            self.inner = self.inner.ephemeris(input);
+            self
+        }
+        /// <p>Ephemeris data.</p>
+        pub fn set_ephemeris(
+            mut self,
+            input: std::option::Option<crate::model::EphemerisData>,
+        ) -> Self {
+            self.inner = self.inner.set_ephemeris(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags assigned to an ephemeris.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>Tags assigned to an ephemeris.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1063,6 +1308,79 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteEphemeris`.
+    ///
+    /// <p>Deletes an ephemeris</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteEphemeris {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_ephemeris_input::Builder,
+    }
+    impl DeleteEphemeris {
+        /// Creates a new `DeleteEphemeris`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteEphemeris,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteEphemerisError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteEphemerisOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteEphemerisError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn ephemeris_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ephemeris_id(input.into());
+            self
+        }
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ephemeris_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteMissionProfile`.
     ///
     /// <p>Deletes a mission profile.</p>
@@ -1209,6 +1527,79 @@ pub mod fluent_builders {
         /// <p>UUID of a contact.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_contact_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeEphemeris`.
+    ///
+    /// <p>Describes an existing ephemeris.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeEphemeris {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_ephemeris_input::Builder,
+    }
+    impl DescribeEphemeris {
+        /// Creates a new `DescribeEphemeris`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeEphemeris,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeEphemerisError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeEphemerisOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeEphemerisError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn ephemeris_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ephemeris_id(input.into());
+            self
+        }
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ephemeris_id(input);
             self
         }
     }
@@ -1802,12 +2193,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status_list(input);
             self
         }
-        /// <p>Start time of a contact.</p>
+        /// <p>Start time of a contact in UTC.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>Start time of a contact.</p>
+        /// <p>Start time of a contact in UTC.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1815,12 +2206,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>End time of a contact.</p>
+        /// <p>End time of a contact in UTC.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>End time of a contact.</p>
+        /// <p>End time of a contact in UTC.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1952,6 +2343,148 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListEphemerides`.
+    ///
+    /// <p>List existing ephemerides.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListEphemerides {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_ephemerides_input::Builder,
+    }
+    impl ListEphemerides {
+        /// Creates a new `ListEphemerides`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListEphemerides,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListEphemeridesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListEphemeridesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListEphemeridesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEphemeridesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEphemeridesPaginator {
+            crate::paginator::ListEphemeridesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
+        pub fn satellite_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.satellite_id(input.into());
+            self
+        }
+        /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
+        pub fn set_satellite_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_satellite_id(input);
+            self
+        }
+        /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
+            self
+        }
+        /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_start_time(input);
+            self
+        }
+        /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
+            self
+        }
+        /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_end_time(input);
+            self
+        }
+        /// Appends an item to `statusList`.
+        ///
+        /// To override the contents of this collection use [`set_status_list`](Self::set_status_list).
+        ///
+        /// <p>The list of ephemeris status to return.</p>
+        pub fn status_list(mut self, input: crate::model::EphemerisStatus) -> Self {
+            self.inner = self.inner.status_list(input);
+            self
+        }
+        /// <p>The list of ephemeris status to return.</p>
+        pub fn set_status_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EphemerisStatus>>,
+        ) -> Self {
+            self.inner = self.inner.set_status_list(input);
+            self
+        }
+        /// <p>Maximum number of ephemerides to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Maximum number of ephemerides to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Pagination token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2395,12 +2928,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_satellite_arn(input);
             self
         }
-        /// <p>Start time of a contact.</p>
+        /// <p>Start time of a contact in UTC.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>Start time of a contact.</p>
+        /// <p>Start time of a contact in UTC.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2408,12 +2941,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>End time of a contact.</p>
+        /// <p>End time of a contact in UTC.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>End time of a contact.</p>
+        /// <p>End time of a contact in UTC.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2751,6 +3284,113 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ConfigTypeData>,
         ) -> Self {
             self.inner = self.inner.set_config_data(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateEphemeris`.
+    ///
+    /// <p>Updates an existing ephemeris</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateEphemeris {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_ephemeris_input::Builder,
+    }
+    impl UpdateEphemeris {
+        /// Creates a new `UpdateEphemeris`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateEphemeris,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateEphemerisError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateEphemerisOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateEphemerisError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn ephemeris_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ephemeris_id(input.into());
+            self
+        }
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ephemeris_id(input);
+            self
+        }
+        /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
+            self
+        }
+        /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enabled(input);
+            self
+        }
+        /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+        /// <p>Priority must be 1 or greater</p>
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
+            self
+        }
+        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+        /// <p>Priority must be 1 or greater</p>
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_priority(input);
             self
         }
     }

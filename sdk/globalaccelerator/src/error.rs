@@ -600,6 +600,66 @@ impl AcceleratorNotFoundException {
     }
 }
 
+/// <p>There's already a transaction in progress. Another transaction can't be processed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TransactionInProgressException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl TransactionInProgressException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TransactionInProgressException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TransactionInProgressException")?;
+        if let Some(inner_11) = &self.message {
+            {
+                write!(f, ": {}", inner_11)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TransactionInProgressException {}
+/// See [`TransactionInProgressException`](crate::error::TransactionInProgressException).
+pub mod transaction_in_progress_exception {
+
+    /// A builder for [`TransactionInProgressException`](crate::error::TransactionInProgressException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TransactionInProgressException`](crate::error::TransactionInProgressException).
+        pub fn build(self) -> crate::error::TransactionInProgressException {
+            crate::error::TransactionInProgressException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TransactionInProgressException {
+    /// Creates a new builder-style object to manufacture [`TransactionInProgressException`](crate::error::TransactionInProgressException).
+    pub fn builder() -> crate::error::transaction_in_progress_exception::Builder {
+        crate::error::transaction_in_progress_exception::Builder::default()
+    }
+}
+
 /// <p>The endpoint that you specified doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -617,9 +677,9 @@ impl EndpointNotFoundException {
 impl std::fmt::Display for EndpointNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointNotFoundException")?;
-        if let Some(inner_11) = &self.message {
+        if let Some(inner_12) = &self.message {
             {
-                write!(f, ": {}", inner_11)?;
+                write!(f, ": {}", inner_12)?;
             }
         }
         Ok(())
@@ -677,9 +737,9 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_12) = &self.message {
+        if let Some(inner_13) = &self.message {
             {
-                write!(f, ": {}", inner_12)?;
+                write!(f, ": {}", inner_13)?;
             }
         }
         Ok(())
@@ -737,9 +797,9 @@ impl InvalidNextTokenException {
 impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
-        if let Some(inner_13) = &self.message {
+        if let Some(inner_14) = &self.message {
             {
-                write!(f, ": {}", inner_13)?;
+                write!(f, ": {}", inner_14)?;
             }
         }
         Ok(())
@@ -797,9 +857,9 @@ impl AssociatedEndpointGroupFoundException {
 impl std::fmt::Display for AssociatedEndpointGroupFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AssociatedEndpointGroupFoundException")?;
-        if let Some(inner_14) = &self.message {
+        if let Some(inner_15) = &self.message {
             {
-                write!(f, ": {}", inner_14)?;
+                write!(f, ": {}", inner_15)?;
             }
         }
         Ok(())
@@ -857,9 +917,9 @@ impl AssociatedListenerFoundException {
 impl std::fmt::Display for AssociatedListenerFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AssociatedListenerFoundException")?;
-        if let Some(inner_15) = &self.message {
+        if let Some(inner_16) = &self.message {
             {
-                write!(f, ": {}", inner_15)?;
+                write!(f, ": {}", inner_16)?;
             }
         }
         Ok(())
@@ -917,9 +977,9 @@ impl AcceleratorNotDisabledException {
 impl std::fmt::Display for AcceleratorNotDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AcceleratorNotDisabledException")?;
-        if let Some(inner_16) = &self.message {
+        if let Some(inner_17) = &self.message {
             {
-                write!(f, ": {}", inner_16)?;
+                write!(f, ": {}", inner_17)?;
             }
         }
         Ok(())
@@ -977,9 +1037,9 @@ impl EndpointGroupAlreadyExistsException {
 impl std::fmt::Display for EndpointGroupAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointGroupAlreadyExistsException")?;
-        if let Some(inner_17) = &self.message {
+        if let Some(inner_18) = &self.message {
             {
-                write!(f, ": {}", inner_17)?;
+                write!(f, ": {}", inner_18)?;
             }
         }
         Ok(())
@@ -1037,9 +1097,9 @@ impl EndpointAlreadyExistsException {
 impl std::fmt::Display for EndpointAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointAlreadyExistsException")?;
-        if let Some(inner_18) = &self.message {
+        if let Some(inner_19) = &self.message {
             {
-                write!(f, ": {}", inner_18)?;
+                write!(f, ": {}", inner_19)?;
             }
         }
         Ok(())
@@ -1268,6 +1328,163 @@ impl std::error::Error for AddCustomRoutingEndpointsError {
             AddCustomRoutingEndpointsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             AddCustomRoutingEndpointsErrorKind::LimitExceededException(_inner) => Some(_inner),
             AddCustomRoutingEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `AddEndpoints` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AddEndpointsError {
+    /// Kind of error that occurred.
+    pub kind: AddEndpointsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AddEndpointsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `AddEndpoints` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AddEndpointsErrorKind {
+    /// <p>You don't have access permission.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The endpoint group that you specified doesn't exist.</p>
+    EndpointGroupNotFoundException(crate::error::EndpointGroupNotFoundException),
+    /// <p>There was an internal error for Global Accelerator.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>An argument that you specified is invalid.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
+    /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>There's already a transaction in progress. Another transaction can't be processed.</p>
+    TransactionInProgressException(crate::error::TransactionInProgressException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for AddEndpointsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AddEndpointsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            AddEndpointsErrorKind::EndpointGroupNotFoundException(_inner) => _inner.fmt(f),
+            AddEndpointsErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
+            AddEndpointsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
+            AddEndpointsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            AddEndpointsErrorKind::TransactionInProgressException(_inner) => _inner.fmt(f),
+            AddEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AddEndpointsError {
+    fn code(&self) -> Option<&str> {
+        AddEndpointsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AddEndpointsError {
+    /// Creates a new `AddEndpointsError`.
+    pub fn new(kind: AddEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AddEndpointsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AddEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AddEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AddEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AddEndpointsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, AddEndpointsErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `AddEndpointsErrorKind::EndpointGroupNotFoundException`.
+    pub fn is_endpoint_group_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddEndpointsErrorKind::EndpointGroupNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AddEndpointsErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddEndpointsErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AddEndpointsErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddEndpointsErrorKind::InvalidArgumentException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AddEndpointsErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, AddEndpointsErrorKind::LimitExceededException(_))
+    }
+    /// Returns `true` if the error kind is `AddEndpointsErrorKind::TransactionInProgressException`.
+    pub fn is_transaction_in_progress_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddEndpointsErrorKind::TransactionInProgressException(_)
+        )
+    }
+}
+impl std::error::Error for AddEndpointsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AddEndpointsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            AddEndpointsErrorKind::EndpointGroupNotFoundException(_inner) => Some(_inner),
+            AddEndpointsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
+            AddEndpointsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
+            AddEndpointsErrorKind::LimitExceededException(_inner) => Some(_inner),
+            AddEndpointsErrorKind::TransactionInProgressException(_inner) => Some(_inner),
+            AddEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6780,6 +6997,158 @@ impl std::error::Error for RemoveCustomRoutingEndpointsError {
             }
             RemoveCustomRoutingEndpointsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             RemoveCustomRoutingEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `RemoveEndpoints` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RemoveEndpointsError {
+    /// Kind of error that occurred.
+    pub kind: RemoveEndpointsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RemoveEndpointsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemoveEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `RemoveEndpoints` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RemoveEndpointsErrorKind {
+    /// <p>You don't have access permission.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The endpoint group that you specified doesn't exist.</p>
+    EndpointGroupNotFoundException(crate::error::EndpointGroupNotFoundException),
+    /// <p>There was an internal error for Global Accelerator.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>An argument that you specified is invalid.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
+    /// <p>There's already a transaction in progress. Another transaction can't be processed.</p>
+    TransactionInProgressException(crate::error::TransactionInProgressException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for RemoveEndpointsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RemoveEndpointsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            RemoveEndpointsErrorKind::EndpointGroupNotFoundException(_inner) => _inner.fmt(f),
+            RemoveEndpointsErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
+            RemoveEndpointsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
+            RemoveEndpointsErrorKind::TransactionInProgressException(_inner) => _inner.fmt(f),
+            RemoveEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RemoveEndpointsError {
+    fn code(&self) -> Option<&str> {
+        RemoveEndpointsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RemoveEndpointsError {
+    /// Creates a new `RemoveEndpointsError`.
+    pub fn new(kind: RemoveEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RemoveEndpointsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RemoveEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RemoveEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RemoveEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `RemoveEndpointsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveEndpointsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RemoveEndpointsErrorKind::EndpointGroupNotFoundException`.
+    pub fn is_endpoint_group_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveEndpointsErrorKind::EndpointGroupNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RemoveEndpointsErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveEndpointsErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RemoveEndpointsErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveEndpointsErrorKind::InvalidArgumentException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RemoveEndpointsErrorKind::TransactionInProgressException`.
+    pub fn is_transaction_in_progress_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveEndpointsErrorKind::TransactionInProgressException(_)
+        )
+    }
+}
+impl std::error::Error for RemoveEndpointsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RemoveEndpointsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            RemoveEndpointsErrorKind::EndpointGroupNotFoundException(_inner) => Some(_inner),
+            RemoveEndpointsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
+            RemoveEndpointsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
+            RemoveEndpointsErrorKind::TransactionInProgressException(_inner) => Some(_inner),
+            RemoveEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

@@ -120,8 +120,21 @@ pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
+    /// <p>The number of seconds to wait before retrying the request.</p>
+    #[doc(hidden)]
+    pub retry_after_seconds: std::option::Option<i32>,
 }
 impl ThrottlingException {
+    /// <p>The number of seconds to wait before retrying the request.</p>
+    pub fn retry_after_seconds(&self) -> std::option::Option<i32> {
+        self.retry_after_seconds
+    }
+}
+impl ThrottlingException {
+    /// Returns `Some(ErrorKind)` if the error is retryable. Otherwise, returns `None`.
+    pub fn retryable_error_kind(&self) -> aws_smithy_types::retry::ErrorKind {
+        aws_smithy_types::retry::ErrorKind::ThrottlingError
+    }
     /// Returns the error message.
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
@@ -146,6 +159,7 @@ pub mod throttling_exception {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) retry_after_seconds: std::option::Option<i32>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -158,10 +172,21 @@ pub mod throttling_exception {
             self.message = input;
             self
         }
+        /// <p>The number of seconds to wait before retrying the request.</p>
+        pub fn retry_after_seconds(mut self, input: i32) -> Self {
+            self.retry_after_seconds = Some(input);
+            self
+        }
+        /// <p>The number of seconds to wait before retrying the request.</p>
+        pub fn set_retry_after_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.retry_after_seconds = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
                 message: self.message,
+                retry_after_seconds: self.retry_after_seconds,
             }
         }
     }
@@ -681,6 +706,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for AssociateMemberError {
             AssociateMemberErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            AssociateMemberErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
             _ => None,
         }
     }
@@ -822,6 +850,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchGetAccountStatusError {
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             BatchGetAccountStatusErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            BatchGetAccountStatusErrorKind::ThrottlingException(inner) => {
                 Some(inner.retryable_error_kind())
             }
             _ => None,
@@ -982,6 +1013,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchGetFreeTrialInfoError {
             BatchGetFreeTrialInfoErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            BatchGetFreeTrialInfoErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
             _ => None,
         }
     }
@@ -1133,6 +1167,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for CancelFindingsReportError {
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             CancelFindingsReportErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            CancelFindingsReportErrorKind::ThrottlingException(inner) => {
                 Some(inner.retryable_error_kind())
             }
             _ => None,
@@ -1299,6 +1336,7 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateFilterError {
             CreateFilterErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            CreateFilterErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
             _ => None,
         }
     }
@@ -1450,6 +1488,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateFindingsReportError {
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             CreateFindingsReportErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            CreateFindingsReportErrorKind::ThrottlingException(inner) => {
                 Some(inner.retryable_error_kind())
             }
             _ => None,
@@ -1613,6 +1654,7 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteFilterError {
             DeleteFilterErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            DeleteFilterErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
             _ => None,
         }
     }
@@ -1766,6 +1808,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeOrganizationConfigura
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             DescribeOrganizationConfigurationErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            DescribeOrganizationConfigurationErrorKind::ThrottlingException(inner) => {
                 Some(inner.retryable_error_kind())
             }
             _ => None,
@@ -1926,6 +1971,7 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisableError {
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             DisableErrorKind::InternalServerException(inner) => Some(inner.retryable_error_kind()),
+            DisableErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
             _ => None,
         }
     }
@@ -2073,6 +2119,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisableDelegatedAdminAccountE
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             DisableDelegatedAdminAccountErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            DisableDelegatedAdminAccountErrorKind::ThrottlingException(inner) => {
                 Some(inner.retryable_error_kind())
             }
             _ => None,
@@ -2243,6 +2292,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisassociateMemberError {
             DisassociateMemberErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            DisassociateMemberErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
             _ => None,
         }
     }
@@ -2390,6 +2442,7 @@ impl aws_smithy_types::retry::ProvideErrorKind for EnableError {
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             EnableErrorKind::InternalServerException(inner) => Some(inner.retryable_error_kind()),
+            EnableErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
             _ => None,
         }
     }
@@ -2537,6 +2590,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for EnableDelegatedAdminAccountEr
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             EnableDelegatedAdminAccountErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            EnableDelegatedAdminAccountErrorKind::ThrottlingException(inner) => {
                 Some(inner.retryable_error_kind())
             }
             _ => None,
@@ -2702,6 +2758,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetConfigurationError {
             GetConfigurationErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            GetConfigurationErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
             _ => None,
         }
     }
@@ -2843,6 +2902,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetDelegatedAdminAccountError
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             GetDelegatedAdminAccountErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetDelegatedAdminAccountErrorKind::ThrottlingException(inner) => {
                 Some(inner.retryable_error_kind())
             }
             _ => None,
@@ -3006,6 +3068,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetFindingsReportStatusError 
             GetFindingsReportStatusErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            GetFindingsReportStatusErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
             _ => None,
         }
     }
@@ -3167,6 +3232,7 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetMemberError {
             GetMemberErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            GetMemberErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
             _ => None,
         }
     }
@@ -3304,6 +3370,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListAccountPermissionsError {
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             ListAccountPermissionsErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListAccountPermissionsErrorKind::ThrottlingException(inner) => {
                 Some(inner.retryable_error_kind())
             }
             _ => None,
@@ -3453,6 +3522,7 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListCoverageError {
             ListCoverageErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            ListCoverageErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
             _ => None,
         }
     }
@@ -3580,6 +3650,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListCoverageStatisticsError {
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             ListCoverageStatisticsErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListCoverageStatisticsErrorKind::ThrottlingException(inner) => {
                 Some(inner.retryable_error_kind())
             }
             _ => None,
@@ -3724,6 +3797,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListDelegatedAdminAccountsErr
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             ListDelegatedAdminAccountsErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListDelegatedAdminAccountsErrorKind::ThrottlingException(inner) => {
                 Some(inner.retryable_error_kind())
             }
             _ => None,
@@ -3876,6 +3952,7 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListFiltersError {
             ListFiltersErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            ListFiltersErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
             _ => None,
         }
     }
@@ -4005,6 +4082,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListFindingAggregationsError 
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             ListFindingAggregationsErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListFindingAggregationsErrorKind::ThrottlingException(inner) => {
                 Some(inner.retryable_error_kind())
             }
             _ => None,
@@ -4146,6 +4226,7 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListFindingsError {
             ListFindingsErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            ListFindingsErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
             _ => None,
         }
     }
@@ -4278,6 +4359,7 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListMembersError {
             ListMembersErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            ListMembersErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
             _ => None,
         }
     }
@@ -4410,6 +4492,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             ListTagsForResourceErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListTagsForResourceErrorKind::ThrottlingException(inner) => {
                 Some(inner.retryable_error_kind())
             }
             _ => None,
@@ -4558,6 +4643,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListUsageTotalsError {
             ListUsageTotalsErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            ListUsageTotalsErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
             _ => None,
         }
     }
@@ -4701,6 +4789,7 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
             TagResourceErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            TagResourceErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
             _ => None,
         }
     }
@@ -4843,6 +4932,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
             UntagResourceErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            UntagResourceErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
             _ => None,
         }
     }
@@ -4981,6 +5073,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateConfigurationError {
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             UpdateConfigurationErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdateConfigurationErrorKind::ThrottlingException(inner) => {
                 Some(inner.retryable_error_kind())
             }
             _ => None,
@@ -5132,6 +5227,7 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateFilterError {
             UpdateFilterErrorKind::InternalServerException(inner) => {
                 Some(inner.retryable_error_kind())
             }
+            UpdateFilterErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
             _ => None,
         }
     }
@@ -5281,6 +5377,9 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateOrganizationConfigurati
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
             UpdateOrganizationConfigurationErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdateOrganizationConfigurationErrorKind::ThrottlingException(inner) => {
                 Some(inner.retryable_error_kind())
             }
             _ => None,

@@ -119,8 +119,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`principal_arn(impl Into<String>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::principal_arn) / [`set_principal_arn(Option<String>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::set_principal_arn): <p>The ARN of the principal (IAM user, role, or group).</p>
-    ///   - [`principal_type(PrincipalType)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::principal_type) / [`set_principal_type(Option<PrincipalType>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::set_principal_type): <p>The principal type. The supported value is <code>IAM</code>.</p>
+    ///   - [`principal_arn(impl Into<String>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::principal_arn) / [`set_principal_arn(Option<String>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::set_principal_arn): <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>  <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
+    ///   - [`principal_type(PrincipalType)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::principal_type) / [`set_principal_type(Option<PrincipalType>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::set_principal_type): <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
     /// - On success, responds with [`AssociatePrincipalWithPortfolioOutput`](crate::output::AssociatePrincipalWithPortfolioOutput)
 
     /// - On failure, responds with [`SdkError<AssociatePrincipalWithPortfolioError>`](crate::error::AssociatePrincipalWithPortfolioError)
@@ -260,6 +260,7 @@ impl Client {
     ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreatePortfolioShare::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreatePortfolioShare::set_account_id): <p>The Amazon Web Services account ID. For example, <code>123456789012</code>.</p>
     ///   - [`organization_node(OrganizationNode)`](crate::client::fluent_builders::CreatePortfolioShare::organization_node) / [`set_organization_node(Option<OrganizationNode>)`](crate::client::fluent_builders::CreatePortfolioShare::set_organization_node): <p>The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
     ///   - [`share_tag_options(bool)`](crate::client::fluent_builders::CreatePortfolioShare::share_tag_options) / [`set_share_tag_options(bool)`](crate::client::fluent_builders::CreatePortfolioShare::set_share_tag_options): <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
+    ///   - [`share_principals(bool)`](crate::client::fluent_builders::CreatePortfolioShare::share_principals) / [`set_share_principals(bool)`](crate::client::fluent_builders::CreatePortfolioShare::set_share_principals): <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>  <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
     /// - On success, responds with [`CreatePortfolioShareOutput`](crate::output::CreatePortfolioShareOutput) with field(s):
     ///   - [`portfolio_share_token(Option<String>)`](crate::output::CreatePortfolioShareOutput::portfolio_share_token): <p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>
     /// - On failure, responds with [`SdkError<CreatePortfolioShareError>`](crate::error::CreatePortfolioShareError)
@@ -281,6 +282,7 @@ impl Client {
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateProduct::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateProduct::set_tags): <p>One or more tags.</p>
     ///   - [`provisioning_artifact_parameters(ProvisioningArtifactProperties)`](crate::client::fluent_builders::CreateProduct::provisioning_artifact_parameters) / [`set_provisioning_artifact_parameters(Option<ProvisioningArtifactProperties>)`](crate::client::fluent_builders::CreateProduct::set_provisioning_artifact_parameters): <p>The configuration of the provisioning artifact. </p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateProduct::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateProduct::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    ///   - [`source_connection(SourceConnection)`](crate::client::fluent_builders::CreateProduct::source_connection) / [`set_source_connection(Option<SourceConnection>)`](crate::client::fluent_builders::CreateProduct::set_source_connection): <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>  <ul>   <li> <p> <code>Type</code> </p> </li>   <li> <p> <code>ConnectionParamters</code> </p> </li>  </ul>
     /// - On success, responds with [`CreateProductOutput`](crate::output::CreateProductOutput) with field(s):
     ///   - [`product_view_detail(Option<ProductViewDetail>)`](crate::output::CreateProductOutput::product_view_detail): <p>Information about the product view.</p>
     ///   - [`provisioning_artifact_detail(Option<ProvisioningArtifactDetail>)`](crate::output::CreateProductOutput::provisioning_artifact_detail): <p>Information about the provisioning artifact. </p>
@@ -322,7 +324,7 @@ impl Client {
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningArtifact::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateProvisioningArtifact::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     /// - On success, responds with [`CreateProvisioningArtifactOutput`](crate::output::CreateProvisioningArtifactOutput) with field(s):
     ///   - [`provisioning_artifact_detail(Option<ProvisioningArtifactDetail>)`](crate::output::CreateProvisioningArtifactOutput::provisioning_artifact_detail): <p>Information about the provisioning artifact.</p>
-    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::CreateProvisioningArtifactOutput::info): <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>  <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. </p>  <p> <code>LoadTemplateFromURL</code> </p>  <p>Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>  <p> <code>ImportFromPhysicalId</code> </p>  <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
+    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::CreateProvisioningArtifactOutput::info): <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>  <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>  <p> <code>LoadTemplateFromURL</code> </p>  <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>  <p> <code>ImportFromPhysicalId</code> </p>  <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
     ///   - [`status(Option<Status>)`](crate::output::CreateProvisioningArtifactOutput::status): <p>The status of the current request.</p>
     /// - On failure, responds with [`SdkError<CreateProvisioningArtifactError>`](crate::error::CreateProvisioningArtifactError)
     pub fn create_provisioning_artifact(&self) -> fluent_builders::CreateProvisioningArtifact {
@@ -599,7 +601,7 @@ impl Client {
     ///   - [`verbose(bool)`](crate::client::fluent_builders::DescribeProvisioningArtifact::verbose) / [`set_verbose(bool)`](crate::client::fluent_builders::DescribeProvisioningArtifact::set_verbose): <p>Indicates whether a verbose level of detail is enabled.</p>
     /// - On success, responds with [`DescribeProvisioningArtifactOutput`](crate::output::DescribeProvisioningArtifactOutput) with field(s):
     ///   - [`provisioning_artifact_detail(Option<ProvisioningArtifactDetail>)`](crate::output::DescribeProvisioningArtifactOutput::provisioning_artifact_detail): <p>Information about the provisioning artifact.</p>
-    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::DescribeProvisioningArtifactOutput::info): <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
+    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::DescribeProvisioningArtifactOutput::info): <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     ///   - [`status(Option<Status>)`](crate::output::DescribeProvisioningArtifactOutput::status): <p>The status of the current request.</p>
     /// - On failure, responds with [`SdkError<DescribeProvisioningArtifactError>`](crate::error::DescribeProvisioningArtifactError)
     pub fn describe_provisioning_artifact(&self) -> fluent_builders::DescribeProvisioningArtifact {
@@ -709,7 +711,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`principal_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::principal_arn) / [`set_principal_arn(Option<String>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::set_principal_arn): <p>The ARN of the principal (IAM user, role, or group).</p>
+    ///   - [`principal_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::principal_arn) / [`set_principal_arn(Option<String>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::set_principal_arn): <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
+    ///   - [`principal_type(PrincipalType)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::principal_type) / [`set_principal_type(Option<PrincipalType>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::set_principal_type): <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no <code>accountID</code>. </p>
     /// - On success, responds with [`DisassociatePrincipalFromPortfolioOutput`](crate::output::DisassociatePrincipalFromPortfolioOutput)
 
     /// - On failure, responds with [`SdkError<DisassociatePrincipalFromPortfolioError>`](crate::error::DisassociatePrincipalFromPortfolioError)
@@ -977,7 +980,7 @@ impl Client {
     ///   - [`page_size(i32)`](crate::client::fluent_builders::ListPrincipalsForPortfolio::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListPrincipalsForPortfolio::set_page_size): <p>The maximum number of items to return with this call.</p>
     ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListPrincipalsForPortfolio::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListPrincipalsForPortfolio::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     /// - On success, responds with [`ListPrincipalsForPortfolioOutput`](crate::output::ListPrincipalsForPortfolioOutput) with field(s):
-    ///   - [`principals(Option<Vec<Principal>>)`](crate::output::ListPrincipalsForPortfolioOutput::principals): <p>The IAM principals (users or roles) associated with the portfolio.</p>
+    ///   - [`principals(Option<Vec<Principal>>)`](crate::output::ListPrincipalsForPortfolioOutput::principals): <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>
     ///   - [`next_page_token(Option<String>)`](crate::output::ListPrincipalsForPortfolioOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListPrincipalsForPortfolioError>`](crate::error::ListPrincipalsForPortfolioError)
     pub fn list_principals_for_portfolio(&self) -> fluent_builders::ListPrincipalsForPortfolio {
@@ -1277,7 +1280,8 @@ impl Client {
     ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_portfolio_id): <p>The unique identifier of the portfolio for which the share will be updated.</p>
     ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_account_id): <p>The Amazon Web Services account Id of the recipient account. This field is required when updating an external account to account type share.</p>
     ///   - [`organization_node(OrganizationNode)`](crate::client::fluent_builders::UpdatePortfolioShare::organization_node) / [`set_organization_node(Option<OrganizationNode>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_organization_node): <p>Information about the organization node.</p>
-    ///   - [`share_tag_options(bool)`](crate::client::fluent_builders::UpdatePortfolioShare::share_tag_options) / [`set_share_tag_options(Option<bool>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_share_tag_options): <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
+    ///   - [`share_tag_options(bool)`](crate::client::fluent_builders::UpdatePortfolioShare::share_tag_options) / [`set_share_tag_options(Option<bool>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_share_tag_options): <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
+    ///   - [`share_principals(bool)`](crate::client::fluent_builders::UpdatePortfolioShare::share_principals) / [`set_share_principals(Option<bool>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_share_principals): <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
     /// - On success, responds with [`UpdatePortfolioShareOutput`](crate::output::UpdatePortfolioShareOutput) with field(s):
     ///   - [`portfolio_share_token(Option<String>)`](crate::output::UpdatePortfolioShareOutput::portfolio_share_token): <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
     ///   - [`status(Option<ShareStatus>)`](crate::output::UpdatePortfolioShareOutput::status): <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
@@ -1299,6 +1303,7 @@ impl Client {
     ///   - [`support_url(impl Into<String>)`](crate::client::fluent_builders::UpdateProduct::support_url) / [`set_support_url(Option<String>)`](crate::client::fluent_builders::UpdateProduct::set_support_url): <p>The updated support URL for the product.</p>
     ///   - [`add_tags(Vec<Tag>)`](crate::client::fluent_builders::UpdateProduct::add_tags) / [`set_add_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::UpdateProduct::set_add_tags): <p>The tags to add to the product.</p>
     ///   - [`remove_tags(Vec<String>)`](crate::client::fluent_builders::UpdateProduct::remove_tags) / [`set_remove_tags(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateProduct::set_remove_tags): <p>The tags to remove from the product.</p>
+    ///   - [`source_connection(SourceConnection)`](crate::client::fluent_builders::UpdateProduct::source_connection) / [`set_source_connection(Option<SourceConnection>)`](crate::client::fluent_builders::UpdateProduct::set_source_connection): <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>  <ul>   <li> <p> <code>Type</code> </p> </li>   <li> <p> <code>ConnectionParamters</code> </p> </li>  </ul>
     /// - On success, responds with [`UpdateProductOutput`](crate::output::UpdateProductOutput) with field(s):
     ///   - [`product_view_detail(Option<ProductViewDetail>)`](crate::output::UpdateProductOutput::product_view_detail): <p>Information about the product view.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::UpdateProductOutput::tags): <p>Information about the tags associated with the product.</p>
@@ -1358,7 +1363,7 @@ impl Client {
     ///   - [`guidance(ProvisioningArtifactGuidance)`](crate::client::fluent_builders::UpdateProvisioningArtifact::guidance) / [`set_guidance(Option<ProvisioningArtifactGuidance>)`](crate::client::fluent_builders::UpdateProvisioningArtifact::set_guidance): <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>  <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>  <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
     /// - On success, responds with [`UpdateProvisioningArtifactOutput`](crate::output::UpdateProvisioningArtifactOutput) with field(s):
     ///   - [`provisioning_artifact_detail(Option<ProvisioningArtifactDetail>)`](crate::output::UpdateProvisioningArtifactOutput::provisioning_artifact_detail): <p>Information about the provisioning artifact.</p>
-    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::UpdateProvisioningArtifactOutput::info): <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
+    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::UpdateProvisioningArtifactOutput::info): <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     ///   - [`status(Option<Status>)`](crate::output::UpdateProvisioningArtifactOutput::status): <p>The status of the current request.</p>
     /// - On failure, responds with [`SdkError<UpdateProvisioningArtifactError>`](crate::error::UpdateProvisioningArtifactError)
     pub fn update_provisioning_artifact(&self) -> fluent_builders::UpdateProvisioningArtifact {
@@ -1605,6 +1610,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociatePrincipalWithPortfolio`.
     ///
     /// <p>Associates the specified principal ARN with the specified portfolio.</p>
+    /// <p>If you share the portfolio with principal name sharing enabled, the <code>PrincipalARN</code> association is included in the share. </p>
+    /// <p>The <code>PortfolioID</code>, <code>PrincipalARN</code>, and <code>PrincipalType</code> parameters are required. </p>
+    /// <p>You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code> as <code>IAM_PATTERN</code> </p> <note>
+    /// <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal name association for the portfolio. Although this user may not know which principal names are associated through Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated. </p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociatePrincipalWithPortfolio {
         handle: std::sync::Arc<super::Handle>,
@@ -1697,12 +1707,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portfolio_id(input);
             self
         }
-        /// <p>The ARN of the principal (IAM user, role, or group).</p>
+        /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+        /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
         pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_arn(input.into());
             self
         }
-        /// <p>The ARN of the principal (IAM user, role, or group).</p>
+        /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+        /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1710,12 +1722,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principal_arn(input);
             self
         }
-        /// <p>The principal type. The supported value is <code>IAM</code>.</p>
+        /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
         pub fn principal_type(mut self, input: crate::model::PrincipalType) -> Self {
             self.inner = self.inner.principal_type(input);
             self
         }
-        /// <p>The principal type. The supported value is <code>IAM</code>.</p>
+        /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
         pub fn set_principal_type(
             mut self,
             input: std::option::Option<crate::model::PrincipalType>,
@@ -2882,7 +2894,9 @@ pub mod fluent_builders {
     /// <p>Note that if a delegated admin is de-registered, they can no longer create portfolio shares.</p>
     /// <p> <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.</p>
     /// <p>You can't share a shared resource, including portfolios that contain a shared product.</p>
-    /// <p>If the portfolio share with the specified account or organization node already exists, this action will have no effect and will not return an error. To update an existing share, you must use the <code> UpdatePortfolioShare</code> API instead.</p>
+    /// <p>If the portfolio share with the specified account or organization node already exists, this action will have no effect and will not return an error. To update an existing share, you must use the <code> UpdatePortfolioShare</code> API instead. </p> <note>
+    /// <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal name association for the portfolio. Although this user may not know which principal names are associated through Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated. </p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePortfolioShare {
         handle: std::sync::Arc<super::Handle>,
@@ -3006,6 +3020,18 @@ pub mod fluent_builders {
         /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
         pub fn set_share_tag_options(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_share_tag_options(input);
+            self
+        }
+        /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>
+        /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
+        pub fn share_principals(mut self, input: bool) -> Self {
+            self.inner = self.inner.share_principals(input);
+            self
+        }
+        /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>
+        /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
+        pub fn set_share_principals(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_share_principals(input);
             self
         }
     }
@@ -3231,6 +3257,27 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_idempotency_token(input);
+            self
+        }
+        /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+        /// <ul>
+        /// <li> <p> <code>Type</code> </p> </li>
+        /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+        /// </ul>
+        pub fn source_connection(mut self, input: crate::model::SourceConnection) -> Self {
+            self.inner = self.inner.source_connection(input);
+            self
+        }
+        /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+        /// <ul>
+        /// <li> <p> <code>Type</code> </p> </li>
+        /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+        /// </ul>
+        pub fn set_source_connection(
+            mut self,
+            input: std::option::Option<crate::model::SourceConnection>,
+        ) -> Self {
+            self.inner = self.inner.set_source_connection(input);
             self
         }
     }
@@ -6574,6 +6621,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociatePrincipalFromPortfolio`.
     ///
     /// <p>Disassociates a previously associated principal ARN from a specified portfolio.</p>
+    /// <p>The <code>PrincipalType</code> and <code>PrincipalARN</code> must match the <code>AssociatePrincipalWithPortfolio</code> call request details. For example, to disassociate an association created with a <code>PrincipalARN</code> of <code>PrincipalType</code> IAM you must use the <code>PrincipalType</code> IAM when calling <code>DisassociatePrincipalFromPortfolio</code>. </p>
+    /// <p>For portfolios that have been shared with principal name sharing enabled: after disassociating a principal, share recipient accounts will no longer be able to provision products in this portfolio using a role matching the name of the associated principal. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociatePrincipalFromPortfolio {
         handle: std::sync::Arc<super::Handle>,
@@ -6670,17 +6719,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portfolio_id(input);
             self
         }
-        /// <p>The ARN of the principal (IAM user, role, or group).</p>
+        /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
         pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_arn(input.into());
             self
         }
-        /// <p>The ARN of the principal (IAM user, role, or group).</p>
+        /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_principal_arn(input);
+            self
+        }
+        /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no <code>accountID</code>. </p>
+        pub fn principal_type(mut self, input: crate::model::PrincipalType) -> Self {
+            self.inner = self.inner.principal_type(input);
+            self
+        }
+        /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no <code>accountID</code>. </p>
+        pub fn set_principal_type(
+            mut self,
+            input: std::option::Option<crate::model::PrincipalType>,
+        ) -> Self {
+            self.inner = self.inner.set_principal_type(input);
             self
         }
     }
@@ -7551,10 +7613,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportAsProvisionedProduct`.
     ///
-    /// <p>Requests the import of a resource as a Amazon Web Services Service Catalog provisioned product that is associated to a Amazon Web Services Service Catalog product and provisioning artifact. Once imported, all supported Amazon Web Services Service Catalog governance actions are supported on the provisioned product.</p>
+    /// <p>Requests the import of a resource as an Service Catalog provisioned product that is associated to an Service Catalog product and provisioning artifact. Once imported, all supported Service Catalog governance actions are supported on the provisioned product.</p>
     /// <p>Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and non-root nested stacks are not supported.</p>
     /// <p>The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>, <code>IMPORT_ROLLBACK_COMPLETE</code>.</p>
-    /// <p>Import of the resource requires that the CloudFormation stack template matches the associated Amazon Web Services Service Catalog product provisioning artifact. </p>
+    /// <p>Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog product provisioning artifact. </p>
     /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and <code>cloudformation:DescribeStacks</code> IAM policy permissions. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportAsProvisionedProduct {
@@ -8727,7 +8789,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPrincipalsForPortfolio`.
     ///
-    /// <p>Lists all principal ARNs associated with the specified portfolio.</p>
+    /// <p>Lists all <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the specified portfolio.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPrincipalsForPortfolio {
         handle: std::sync::Arc<super::Handle>,
@@ -11494,11 +11556,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePortfolioShare`.
     ///
-    /// <p>Updates the specified portfolio share. You can use this API to enable or disable TagOptions sharing for an existing portfolio share. </p>
-    /// <p>The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation is <code>IN_PROGRESS</code>, as the share is not available to recipient entities. In this case, you must wait for the portfolio share to be COMPLETED.</p>
+    /// <p>Updates the specified portfolio share. You can use this API to enable or disable <code>TagOptions</code> sharing or Principal sharing for an existing portfolio share. </p>
+    /// <p>The portfolio share cannot be updated if the <code>CreatePortfolioShare</code> operation is <code>IN_PROGRESS</code>, as the share is not available to recipient entities. In this case, you must wait for the portfolio share to be COMPLETED.</p>
     /// <p>You must provide the <code>accountId</code> or organization node in the input, but not both.</p>
     /// <p>If the portfolio is shared to both an external account and an organization node, and both shares need to be updated, you must invoke <code>UpdatePortfolioShare</code> separately for each share type. </p>
-    /// <p>This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code> API for that action. </p>
+    /// <p>This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code> API for that action. </p> <note>
+    /// <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal name association for the portfolio. Although this user may not know which principal names are associated through Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated. </p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePortfolioShare {
         handle: std::sync::Arc<super::Handle>,
@@ -11614,14 +11678,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_node(input);
             self
         }
-        /// <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
+        /// <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
         pub fn share_tag_options(mut self, input: bool) -> Self {
             self.inner = self.inner.share_tag_options(input);
             self
         }
-        /// <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
+        /// <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
         pub fn set_share_tag_options(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_share_tag_options(input);
+            self
+        }
+        /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
+        pub fn share_principals(mut self, input: bool) -> Self {
+            self.inner = self.inner.share_principals(input);
+            self
+        }
+        /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
+        pub fn set_share_principals(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_share_principals(input);
             self
         }
     }
@@ -11828,6 +11902,27 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_remove_tags(input);
+            self
+        }
+        /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+        /// <ul>
+        /// <li> <p> <code>Type</code> </p> </li>
+        /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+        /// </ul>
+        pub fn source_connection(mut self, input: crate::model::SourceConnection) -> Self {
+            self.inner = self.inner.source_connection(input);
+            self
+        }
+        /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+        /// <ul>
+        /// <li> <p> <code>Type</code> </p> </li>
+        /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+        /// </ul>
+        pub fn set_source_connection(
+            mut self,
+            input: std::option::Option<crate::model::SourceConnection>,
+        ) -> Self {
+            self.inner = self.inner.set_source_connection(input);
             self
         }
     }

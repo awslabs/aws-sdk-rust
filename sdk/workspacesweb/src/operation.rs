@@ -101,6 +101,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTrustStore {
     }
 }
 
+/// Operation shape for `AssociateUserAccessLoggingSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`associate_user_access_logging_settings`](crate::client::Client::associate_user_access_logging_settings).
+///
+/// See [`crate::client::fluent_builders::AssociateUserAccessLoggingSettings`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct AssociateUserAccessLoggingSettings {
+    _private: (),
+}
+impl AssociateUserAccessLoggingSettings {
+    /// Creates a new builder-style object to manufacture [`AssociateUserAccessLoggingSettingsInput`](crate::input::AssociateUserAccessLoggingSettingsInput).
+    pub fn builder() -> crate::input::associate_user_access_logging_settings_input::Builder {
+        crate::input::associate_user_access_logging_settings_input::Builder::default()
+    }
+    /// Creates a new `AssociateUserAccessLoggingSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AssociateUserAccessLoggingSettings {
+    type Output = std::result::Result<
+        crate::output::AssociateUserAccessLoggingSettingsOutput,
+        crate::error::AssociateUserAccessLoggingSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_associate_user_access_logging_settings_error(response)
+        } else {
+            crate::operation_deser::parse_associate_user_access_logging_settings_response(response)
+        }
+    }
+}
+
 /// Operation shape for `AssociateUserSettings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -299,6 +333,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrustStore {
             crate::operation_deser::parse_create_trust_store_error(response)
         } else {
             crate::operation_deser::parse_create_trust_store_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateUserAccessLoggingSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_user_access_logging_settings`](crate::client::Client::create_user_access_logging_settings).
+///
+/// See [`crate::client::fluent_builders::CreateUserAccessLoggingSettings`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateUserAccessLoggingSettings {
+    _private: (),
+}
+impl CreateUserAccessLoggingSettings {
+    /// Creates a new builder-style object to manufacture [`CreateUserAccessLoggingSettingsInput`](crate::input::CreateUserAccessLoggingSettingsInput).
+    pub fn builder() -> crate::input::create_user_access_logging_settings_input::Builder {
+        crate::input::create_user_access_logging_settings_input::Builder::default()
+    }
+    /// Creates a new `CreateUserAccessLoggingSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateUserAccessLoggingSettings {
+    type Output = std::result::Result<
+        crate::output::CreateUserAccessLoggingSettingsOutput,
+        crate::error::CreateUserAccessLoggingSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_user_access_logging_settings_error(response)
+        } else {
+            crate::operation_deser::parse_create_user_access_logging_settings_response(response)
         }
     }
 }
@@ -505,6 +573,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrustStore {
     }
 }
 
+/// Operation shape for `DeleteUserAccessLoggingSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_user_access_logging_settings`](crate::client::Client::delete_user_access_logging_settings).
+///
+/// See [`crate::client::fluent_builders::DeleteUserAccessLoggingSettings`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteUserAccessLoggingSettings {
+    _private: (),
+}
+impl DeleteUserAccessLoggingSettings {
+    /// Creates a new builder-style object to manufacture [`DeleteUserAccessLoggingSettingsInput`](crate::input::DeleteUserAccessLoggingSettingsInput).
+    pub fn builder() -> crate::input::delete_user_access_logging_settings_input::Builder {
+        crate::input::delete_user_access_logging_settings_input::Builder::default()
+    }
+    /// Creates a new `DeleteUserAccessLoggingSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteUserAccessLoggingSettings {
+    type Output = std::result::Result<
+        crate::output::DeleteUserAccessLoggingSettingsOutput,
+        crate::error::DeleteUserAccessLoggingSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_user_access_logging_settings_error(response)
+        } else {
+            crate::operation_deser::parse_delete_user_access_logging_settings_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteUserSettings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -637,6 +739,42 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTrustStore {
             crate::operation_deser::parse_disassociate_trust_store_error(response)
         } else {
             crate::operation_deser::parse_disassociate_trust_store_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DisassociateUserAccessLoggingSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disassociate_user_access_logging_settings`](crate::client::Client::disassociate_user_access_logging_settings).
+///
+/// See [`crate::client::fluent_builders::DisassociateUserAccessLoggingSettings`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DisassociateUserAccessLoggingSettings {
+    _private: (),
+}
+impl DisassociateUserAccessLoggingSettings {
+    /// Creates a new builder-style object to manufacture [`DisassociateUserAccessLoggingSettingsInput`](crate::input::DisassociateUserAccessLoggingSettingsInput).
+    pub fn builder() -> crate::input::disassociate_user_access_logging_settings_input::Builder {
+        crate::input::disassociate_user_access_logging_settings_input::Builder::default()
+    }
+    /// Creates a new `DisassociateUserAccessLoggingSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DisassociateUserAccessLoggingSettings {
+    type Output = std::result::Result<
+        crate::output::DisassociateUserAccessLoggingSettingsOutput,
+        crate::error::DisassociateUserAccessLoggingSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disassociate_user_access_logging_settings_error(response)
+        } else {
+            crate::operation_deser::parse_disassociate_user_access_logging_settings_response(
+                response,
+            )
         }
     }
 }
@@ -904,6 +1042,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrustStoreCertificate
             crate::operation_deser::parse_get_trust_store_certificate_error(response)
         } else {
             crate::operation_deser::parse_get_trust_store_certificate_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetUserAccessLoggingSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_user_access_logging_settings`](crate::client::Client::get_user_access_logging_settings).
+///
+/// See [`crate::client::fluent_builders::GetUserAccessLoggingSettings`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetUserAccessLoggingSettings {
+    _private: (),
+}
+impl GetUserAccessLoggingSettings {
+    /// Creates a new builder-style object to manufacture [`GetUserAccessLoggingSettingsInput`](crate::input::GetUserAccessLoggingSettingsInput).
+    pub fn builder() -> crate::input::get_user_access_logging_settings_input::Builder {
+        crate::input::get_user_access_logging_settings_input::Builder::default()
+    }
+    /// Creates a new `GetUserAccessLoggingSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetUserAccessLoggingSettings {
+    type Output = std::result::Result<
+        crate::output::GetUserAccessLoggingSettingsOutput,
+        crate::error::GetUserAccessLoggingSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_user_access_logging_settings_error(response)
+        } else {
+            crate::operation_deser::parse_get_user_access_logging_settings_response(response)
         }
     }
 }
@@ -1178,6 +1350,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrustStores {
     }
 }
 
+/// Operation shape for `ListUserAccessLoggingSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_user_access_logging_settings`](crate::client::Client::list_user_access_logging_settings).
+///
+/// See [`crate::client::fluent_builders::ListUserAccessLoggingSettings`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListUserAccessLoggingSettings {
+    _private: (),
+}
+impl ListUserAccessLoggingSettings {
+    /// Creates a new builder-style object to manufacture [`ListUserAccessLoggingSettingsInput`](crate::input::ListUserAccessLoggingSettingsInput).
+    pub fn builder() -> crate::input::list_user_access_logging_settings_input::Builder {
+        crate::input::list_user_access_logging_settings_input::Builder::default()
+    }
+    /// Creates a new `ListUserAccessLoggingSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListUserAccessLoggingSettings {
+    type Output = std::result::Result<
+        crate::output::ListUserAccessLoggingSettingsOutput,
+        crate::error::ListUserAccessLoggingSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_user_access_logging_settings_error(response)
+        } else {
+            crate::operation_deser::parse_list_user_access_logging_settings_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListUserSettings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1440,6 +1646,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTrustStore {
             crate::operation_deser::parse_update_trust_store_error(response)
         } else {
             crate::operation_deser::parse_update_trust_store_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateUserAccessLoggingSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_user_access_logging_settings`](crate::client::Client::update_user_access_logging_settings).
+///
+/// See [`crate::client::fluent_builders::UpdateUserAccessLoggingSettings`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateUserAccessLoggingSettings {
+    _private: (),
+}
+impl UpdateUserAccessLoggingSettings {
+    /// Creates a new builder-style object to manufacture [`UpdateUserAccessLoggingSettingsInput`](crate::input::UpdateUserAccessLoggingSettingsInput).
+    pub fn builder() -> crate::input::update_user_access_logging_settings_input::Builder {
+        crate::input::update_user_access_logging_settings_input::Builder::default()
+    }
+    /// Creates a new `UpdateUserAccessLoggingSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateUserAccessLoggingSettings {
+    type Output = std::result::Result<
+        crate::output::UpdateUserAccessLoggingSettingsOutput,
+        crate::error::UpdateUserAccessLoggingSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_user_access_logging_settings_error(response)
+        } else {
+            crate::operation_deser::parse_update_user_access_logging_settings_response(response)
         }
     }
 }

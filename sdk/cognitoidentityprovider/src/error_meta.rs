@@ -2007,6 +2007,9 @@ where
 impl From<crate::error::DeleteIdentityProviderError> for Error {
     fn from(err: crate::error::DeleteIdentityProviderError) -> Self {
         match err.kind {
+            crate::error::DeleteIdentityProviderErrorKind::ConcurrentModificationException(
+                inner,
+            ) => Error::ConcurrentModificationException(inner),
             crate::error::DeleteIdentityProviderErrorKind::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }
@@ -2231,6 +2234,9 @@ where
 impl From<crate::error::DeleteUserPoolClientError> for Error {
     fn from(err: crate::error::DeleteUserPoolClientError) -> Self {
         match err.kind {
+            crate::error::DeleteUserPoolClientErrorKind::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
             crate::error::DeleteUserPoolClientErrorKind::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }
@@ -4293,6 +4299,9 @@ where
 impl From<crate::error::UpdateIdentityProviderError> for Error {
     fn from(err: crate::error::UpdateIdentityProviderError) -> Self {
         match err.kind {
+            crate::error::UpdateIdentityProviderErrorKind::ConcurrentModificationException(
+                inner,
+            ) => Error::ConcurrentModificationException(inner),
             crate::error::UpdateIdentityProviderErrorKind::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }

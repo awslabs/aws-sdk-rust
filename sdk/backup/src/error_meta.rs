@@ -50,6 +50,43 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelLegalHoldError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelLegalHoldError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CancelLegalHoldError> for Error {
+    fn from(err: crate::error::CancelLegalHoldError) -> Self {
+        match err.kind {
+            crate::error::CancelLegalHoldErrorKind::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::error::CancelLegalHoldErrorKind::InvalidResourceStateException(inner) => {
+                Error::InvalidResourceStateException(inner)
+            }
+            crate::error::CancelLegalHoldErrorKind::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::error::CancelLegalHoldErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::CancelLegalHoldErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::CancelLegalHoldErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBackupPlanError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -200,6 +237,40 @@ impl From<crate::error::CreateFrameworkError> for Error {
                 Error::ServiceUnavailableException(inner)
             }
             crate::error::CreateFrameworkErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLegalHoldError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLegalHoldError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateLegalHoldError> for Error {
+    fn from(err: crate::error::CreateLegalHoldError) -> Self {
+        match err.kind {
+            crate::error::CreateLegalHoldErrorKind::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::error::CreateLegalHoldErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreateLegalHoldErrorKind::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::error::CreateLegalHoldErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::CreateLegalHoldErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -997,6 +1068,42 @@ impl From<crate::error::DisassociateRecoveryPointError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DisassociateRecoveryPointFromParentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DisassociateRecoveryPointFromParentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DisassociateRecoveryPointFromParentError> for Error {
+    fn from(err: crate::error::DisassociateRecoveryPointFromParentError) -> Self {
+        match err.kind {
+            crate::error::DisassociateRecoveryPointFromParentErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::error::DisassociateRecoveryPointFromParentErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DisassociateRecoveryPointFromParentErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::error::DisassociateRecoveryPointFromParentErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DisassociateRecoveryPointFromParentErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DisassociateRecoveryPointFromParentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ExportBackupPlanTemplateError, R>>
     for Error
 where
@@ -1250,6 +1357,40 @@ impl From<crate::error::GetBackupVaultNotificationsError> for Error {
                 inner,
             ) => Error::ServiceUnavailableException(inner),
             crate::error::GetBackupVaultNotificationsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLegalHoldError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetLegalHoldError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetLegalHoldError> for Error {
+    fn from(err: crate::error::GetLegalHoldError) -> Self {
+        match err.kind {
+            crate::error::GetLegalHoldErrorKind::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::error::GetLegalHoldErrorKind::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::error::GetLegalHoldErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetLegalHoldErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::GetLegalHoldErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -1579,6 +1720,34 @@ impl From<crate::error::ListFrameworksError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLegalHoldsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListLegalHoldsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListLegalHoldsError> for Error {
+    fn from(err: crate::error::ListLegalHoldsError) -> Self {
+        match err.kind {
+            crate::error::ListLegalHoldsErrorKind::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::error::ListLegalHoldsErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::ListLegalHoldsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProtectedResourcesError, R>>
     for Error
 where
@@ -1641,6 +1810,32 @@ impl From<crate::error::ListRecoveryPointsByBackupVaultError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRecoveryPointsByLegalHoldError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListRecoveryPointsByLegalHoldError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListRecoveryPointsByLegalHoldError> for Error {
+    fn from(err: crate::error::ListRecoveryPointsByLegalHoldError) -> Self {
+        match err.kind {
+            crate::error::ListRecoveryPointsByLegalHoldErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::error::ListRecoveryPointsByLegalHoldErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::error::ListRecoveryPointsByLegalHoldErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListRecoveryPointsByLegalHoldErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRecoveryPointsByResourceError, R>>
     for Error
 where
@@ -1696,6 +1891,9 @@ impl From<crate::error::ListReportJobsError> for Error {
         match err.kind {
             crate::error::ListReportJobsErrorKind::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
+            }
+            crate::error::ListReportJobsErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
             }
             crate::error::ListReportJobsErrorKind::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)

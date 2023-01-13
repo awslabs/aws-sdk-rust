@@ -192,12 +192,12 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_application_name): <p>The name of your application (for example, <code>sample-app</code>).</p>
     ///   - [`application_description(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::application_description) / [`set_application_description(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_application_description): <p>A summary description of the application.</p>
-    ///   - [`runtime_environment(RuntimeEnvironment)`](crate::client::fluent_builders::CreateApplication::runtime_environment) / [`set_runtime_environment(Option<RuntimeEnvironment>)`](crate::client::fluent_builders::CreateApplication::set_runtime_environment): <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+    ///   - [`runtime_environment(RuntimeEnvironment)`](crate::client::fluent_builders::CreateApplication::runtime_environment) / [`set_runtime_environment(Option<RuntimeEnvironment>)`](crate::client::fluent_builders::CreateApplication::set_runtime_environment): <p>The runtime environment for the application.</p>
     ///   - [`service_execution_role(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::service_execution_role) / [`set_service_execution_role(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_service_execution_role): <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
     ///   - [`application_configuration(ApplicationConfiguration)`](crate::client::fluent_builders::CreateApplication::application_configuration) / [`set_application_configuration(Option<ApplicationConfiguration>)`](crate::client::fluent_builders::CreateApplication::set_application_configuration): <p>Use this parameter to configure the application.</p>
     ///   - [`cloud_watch_logging_options(Vec<CloudWatchLoggingOption>)`](crate::client::fluent_builders::CreateApplication::cloud_watch_logging_options) / [`set_cloud_watch_logging_options(Option<Vec<CloudWatchLoggingOption>>)`](crate::client::fluent_builders::CreateApplication::set_cloud_watch_logging_options): <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateApplication::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateApplication::set_tags): <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    ///   - [`application_mode(ApplicationMode)`](crate::client::fluent_builders::CreateApplication::application_mode) / [`set_application_mode(Option<ApplicationMode>)`](crate::client::fluent_builders::CreateApplication::set_application_mode): <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
+    ///   - [`application_mode(ApplicationMode)`](crate::client::fluent_builders::CreateApplication::application_mode) / [`set_application_mode(Option<ApplicationMode>)`](crate::client::fluent_builders::CreateApplication::set_application_mode): <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
     /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
     ///   - [`application_detail(Option<ApplicationDetail>)`](crate::output::CreateApplicationOutput::application_detail): <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::error::CreateApplicationError)
@@ -1274,12 +1274,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_description(input);
             self
         }
-        /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+        /// <p>The runtime environment for the application.</p>
         pub fn runtime_environment(mut self, input: crate::model::RuntimeEnvironment) -> Self {
             self.inner = self.inner.runtime_environment(input);
             self
         }
-        /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+        /// <p>The runtime environment for the application.</p>
         pub fn set_runtime_environment(
             mut self,
             input: std::option::Option<crate::model::RuntimeEnvironment>,
@@ -1353,12 +1353,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
+        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
         pub fn application_mode(mut self, input: crate::model::ApplicationMode) -> Self {
             self.inner = self.inner.application_mode(input);
             self
         }
-        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
+        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
         pub fn set_application_mode(
             mut self,
             input: std::option::Option<crate::model::ApplicationMode>,
@@ -1369,7 +1369,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateApplicationPresignedUrl`.
     ///
-    /// <p>Creates and returns a URL that you can use to connect to an application's extension. Currently, the only available extension is the Apache Flink dashboard.</p>
+    /// <p>Creates and returns a URL that you can use to connect to an application's extension.</p>
     /// <p>The IAM role or user used to call this API defines the permissions to access the extension. After the presigned URL is created, no additional permission is required to access this URL. IAM authorization policies for this API are also enforced for every HTTP request that attempts to connect to the extension. </p>
     /// <p>You control the amount of time that the URL will be valid using the <code>SessionExpirationDurationInSeconds</code> parameter. If you do not provide this parameter, the returned URL is valid for twelve hours.</p> <note>
     /// <p>The URL that you get from a call to CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If you first try to use the URL after the 3-minute limit expires, the service returns an HTTP 403 Forbidden error.</p>

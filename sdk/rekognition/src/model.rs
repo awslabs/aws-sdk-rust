@@ -1165,17 +1165,17 @@ impl StreamProcessingStopSelector {
     }
 }
 
-/// <p></p>
+/// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamProcessingStartSelector {
-    /// <p> Specifies the starting point in the stream to start processing. This can be done with a timestamp or a fragment number in a Kinesis stream. </p>
+    /// <p> Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a fragment number in a Kinesis stream. </p>
     #[doc(hidden)]
     pub kvs_stream_start_selector:
         std::option::Option<crate::model::KinesisVideoStreamStartSelector>,
 }
 impl StreamProcessingStartSelector {
-    /// <p> Specifies the starting point in the stream to start processing. This can be done with a timestamp or a fragment number in a Kinesis stream. </p>
+    /// <p> Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a fragment number in a Kinesis stream. </p>
     pub fn kvs_stream_start_selector(
         &self,
     ) -> std::option::Option<&crate::model::KinesisVideoStreamStartSelector> {
@@ -1192,7 +1192,7 @@ pub mod stream_processing_start_selector {
             std::option::Option<crate::model::KinesisVideoStreamStartSelector>,
     }
     impl Builder {
-        /// <p> Specifies the starting point in the stream to start processing. This can be done with a timestamp or a fragment number in a Kinesis stream. </p>
+        /// <p> Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a fragment number in a Kinesis stream. </p>
         pub fn kvs_stream_start_selector(
             mut self,
             input: crate::model::KinesisVideoStreamStartSelector,
@@ -1200,7 +1200,7 @@ pub mod stream_processing_start_selector {
             self.kvs_stream_start_selector = Some(input);
             self
         }
-        /// <p> Specifies the starting point in the stream to start processing. This can be done with a timestamp or a fragment number in a Kinesis stream. </p>
+        /// <p> Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a fragment number in a Kinesis stream. </p>
         pub fn set_kvs_stream_start_selector(
             mut self,
             input: std::option::Option<crate::model::KinesisVideoStreamStartSelector>,
@@ -1223,11 +1223,11 @@ impl StreamProcessingStartSelector {
     }
 }
 
-/// <p> Specifies the starting point in a Kinesis stream to start processing. You can use the producer timestamp or the fragment number. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
+/// <p>Specifies the starting point in a Kinesis stream to start processing. You can use the producer timestamp or the fragment number. One of either producer timestamp or fragment number is required. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisVideoStreamStartSelector {
-    /// <p> The timestamp from the producer corresponding to the fragment. </p>
+    /// <p> The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time format. </p>
     #[doc(hidden)]
     pub producer_timestamp: std::option::Option<i64>,
     /// <p> The unique identifier of the fragment. This value monotonically increases based on the ingestion order. </p>
@@ -1235,7 +1235,7 @@ pub struct KinesisVideoStreamStartSelector {
     pub fragment_number: std::option::Option<std::string::String>,
 }
 impl KinesisVideoStreamStartSelector {
-    /// <p> The timestamp from the producer corresponding to the fragment. </p>
+    /// <p> The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time format. </p>
     pub fn producer_timestamp(&self) -> std::option::Option<i64> {
         self.producer_timestamp
     }
@@ -1254,12 +1254,12 @@ pub mod kinesis_video_stream_start_selector {
         pub(crate) fragment_number: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The timestamp from the producer corresponding to the fragment. </p>
+        /// <p> The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time format. </p>
         pub fn producer_timestamp(mut self, input: i64) -> Self {
             self.producer_timestamp = Some(input);
             self
         }
-        /// <p> The timestamp from the producer corresponding to the fragment. </p>
+        /// <p> The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time format. </p>
         pub fn set_producer_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.producer_timestamp = input;
             self
@@ -1664,6 +1664,293 @@ impl BlackFrame {
     /// Creates a new builder-style object to manufacture [`BlackFrame`](crate::model::BlackFrame).
     pub fn builder() -> crate::model::black_frame::Builder {
         crate::model::black_frame::Builder::default()
+    }
+}
+
+/// <p>Contains the specified filters that should be applied to a list of returned GENERAL_LABELS.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LabelDetectionSettings {
+    /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.</p>
+    #[doc(hidden)]
+    pub general_labels: std::option::Option<crate::model::GeneralLabelsSettings>,
+}
+impl LabelDetectionSettings {
+    /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.</p>
+    pub fn general_labels(&self) -> std::option::Option<&crate::model::GeneralLabelsSettings> {
+        self.general_labels.as_ref()
+    }
+}
+/// See [`LabelDetectionSettings`](crate::model::LabelDetectionSettings).
+pub mod label_detection_settings {
+
+    /// A builder for [`LabelDetectionSettings`](crate::model::LabelDetectionSettings).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) general_labels: std::option::Option<crate::model::GeneralLabelsSettings>,
+    }
+    impl Builder {
+        /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.</p>
+        pub fn general_labels(mut self, input: crate::model::GeneralLabelsSettings) -> Self {
+            self.general_labels = Some(input);
+            self
+        }
+        /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.</p>
+        pub fn set_general_labels(
+            mut self,
+            input: std::option::Option<crate::model::GeneralLabelsSettings>,
+        ) -> Self {
+            self.general_labels = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LabelDetectionSettings`](crate::model::LabelDetectionSettings).
+        pub fn build(self) -> crate::model::LabelDetectionSettings {
+            crate::model::LabelDetectionSettings {
+                general_labels: self.general_labels,
+            }
+        }
+    }
+}
+impl LabelDetectionSettings {
+    /// Creates a new builder-style object to manufacture [`LabelDetectionSettings`](crate::model::LabelDetectionSettings).
+    pub fn builder() -> crate::model::label_detection_settings::Builder {
+        crate::model::label_detection_settings::Builder::default()
+    }
+}
+
+/// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GeneralLabelsSettings {
+    /// <p>The labels that should be included in the return from DetectLabels.</p>
+    #[doc(hidden)]
+    pub label_inclusion_filters: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The labels that should be excluded from the return from DetectLabels.</p>
+    #[doc(hidden)]
+    pub label_exclusion_filters: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The label categories that should be included in the return from DetectLabels.</p>
+    #[doc(hidden)]
+    pub label_category_inclusion_filters: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
+    #[doc(hidden)]
+    pub label_category_exclusion_filters: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GeneralLabelsSettings {
+    /// <p>The labels that should be included in the return from DetectLabels.</p>
+    pub fn label_inclusion_filters(&self) -> std::option::Option<&[std::string::String]> {
+        self.label_inclusion_filters.as_deref()
+    }
+    /// <p>The labels that should be excluded from the return from DetectLabels.</p>
+    pub fn label_exclusion_filters(&self) -> std::option::Option<&[std::string::String]> {
+        self.label_exclusion_filters.as_deref()
+    }
+    /// <p>The label categories that should be included in the return from DetectLabels.</p>
+    pub fn label_category_inclusion_filters(&self) -> std::option::Option<&[std::string::String]> {
+        self.label_category_inclusion_filters.as_deref()
+    }
+    /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
+    pub fn label_category_exclusion_filters(&self) -> std::option::Option<&[std::string::String]> {
+        self.label_category_exclusion_filters.as_deref()
+    }
+}
+/// See [`GeneralLabelsSettings`](crate::model::GeneralLabelsSettings).
+pub mod general_labels_settings {
+
+    /// A builder for [`GeneralLabelsSettings`](crate::model::GeneralLabelsSettings).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) label_inclusion_filters: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) label_exclusion_filters: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) label_category_inclusion_filters:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) label_category_exclusion_filters:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `label_inclusion_filters`.
+        ///
+        /// To override the contents of this collection use [`set_label_inclusion_filters`](Self::set_label_inclusion_filters).
+        ///
+        /// <p>The labels that should be included in the return from DetectLabels.</p>
+        pub fn label_inclusion_filters(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.label_inclusion_filters.unwrap_or_default();
+            v.push(input.into());
+            self.label_inclusion_filters = Some(v);
+            self
+        }
+        /// <p>The labels that should be included in the return from DetectLabels.</p>
+        pub fn set_label_inclusion_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.label_inclusion_filters = input;
+            self
+        }
+        /// Appends an item to `label_exclusion_filters`.
+        ///
+        /// To override the contents of this collection use [`set_label_exclusion_filters`](Self::set_label_exclusion_filters).
+        ///
+        /// <p>The labels that should be excluded from the return from DetectLabels.</p>
+        pub fn label_exclusion_filters(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.label_exclusion_filters.unwrap_or_default();
+            v.push(input.into());
+            self.label_exclusion_filters = Some(v);
+            self
+        }
+        /// <p>The labels that should be excluded from the return from DetectLabels.</p>
+        pub fn set_label_exclusion_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.label_exclusion_filters = input;
+            self
+        }
+        /// Appends an item to `label_category_inclusion_filters`.
+        ///
+        /// To override the contents of this collection use [`set_label_category_inclusion_filters`](Self::set_label_category_inclusion_filters).
+        ///
+        /// <p>The label categories that should be included in the return from DetectLabels.</p>
+        pub fn label_category_inclusion_filters(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.label_category_inclusion_filters.unwrap_or_default();
+            v.push(input.into());
+            self.label_category_inclusion_filters = Some(v);
+            self
+        }
+        /// <p>The label categories that should be included in the return from DetectLabels.</p>
+        pub fn set_label_category_inclusion_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.label_category_inclusion_filters = input;
+            self
+        }
+        /// Appends an item to `label_category_exclusion_filters`.
+        ///
+        /// To override the contents of this collection use [`set_label_category_exclusion_filters`](Self::set_label_category_exclusion_filters).
+        ///
+        /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
+        pub fn label_category_exclusion_filters(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.label_category_exclusion_filters.unwrap_or_default();
+            v.push(input.into());
+            self.label_category_exclusion_filters = Some(v);
+            self
+        }
+        /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
+        pub fn set_label_category_exclusion_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.label_category_exclusion_filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GeneralLabelsSettings`](crate::model::GeneralLabelsSettings).
+        pub fn build(self) -> crate::model::GeneralLabelsSettings {
+            crate::model::GeneralLabelsSettings {
+                label_inclusion_filters: self.label_inclusion_filters,
+                label_exclusion_filters: self.label_exclusion_filters,
+                label_category_inclusion_filters: self.label_category_inclusion_filters,
+                label_category_exclusion_filters: self.label_category_exclusion_filters,
+            }
+        }
+    }
+}
+impl GeneralLabelsSettings {
+    /// Creates a new builder-style object to manufacture [`GeneralLabelsSettings`](crate::model::GeneralLabelsSettings).
+    pub fn builder() -> crate::model::general_labels_settings::Builder {
+        crate::model::general_labels_settings::Builder::default()
+    }
+}
+
+/// When writing a match expression against `LabelDetectionFeatureName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let labeldetectionfeaturename = unimplemented!();
+/// match labeldetectionfeaturename {
+///     LabelDetectionFeatureName::GeneralLabels => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `labeldetectionfeaturename` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LabelDetectionFeatureName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LabelDetectionFeatureName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LabelDetectionFeatureName::NewFeature` is defined.
+/// Specifically, when `labeldetectionfeaturename` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LabelDetectionFeatureName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LabelDetectionFeatureName {
+    #[allow(missing_docs)] // documentation missing in model
+    GeneralLabels,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for LabelDetectionFeatureName {
+    fn from(s: &str) -> Self {
+        match s {
+            "GENERAL_LABELS" => LabelDetectionFeatureName::GeneralLabels,
+            other => LabelDetectionFeatureName::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for LabelDetectionFeatureName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LabelDetectionFeatureName::from(s))
+    }
+}
+impl LabelDetectionFeatureName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LabelDetectionFeatureName::GeneralLabels => "GENERAL_LABELS",
+            LabelDetectionFeatureName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["GENERAL_LABELS"]
+    }
+}
+impl AsRef<str> for LabelDetectionFeatureName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4107,7 +4394,7 @@ impl UnindexedFace {
 
 /// <p>Structure containing attributes of the face that the algorithm detected.</p>
 /// <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p>
-/// <p> <code>GetFaceDetection</code> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <code>StartFaceDetection</code>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.</p>
+/// <p> <code>GetFaceDetection</code> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <code>StartFaceDetection</code>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter:</p>
 /// <ul>
 /// <li> <p>GetCelebrityRecognition</p> </li>
 /// <li> <p>GetPersonTracking</p> </li>
@@ -5377,7 +5664,7 @@ impl AsRef<str> for Attribute {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TextDetectionResult {
-    /// <p>The time, in milliseconds from the start of the video, that the text was detected.</p>
+    /// <p>The time, in milliseconds from the start of the video, that the text was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the text first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Details about text detected in a video.</p>
@@ -5385,7 +5672,7 @@ pub struct TextDetectionResult {
     pub text_detection: std::option::Option<crate::model::TextDetection>,
 }
 impl TextDetectionResult {
-    /// <p>The time, in milliseconds from the start of the video, that the text was detected.</p>
+    /// <p>The time, in milliseconds from the start of the video, that the text was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the text first appears.</p>
     pub fn timestamp(&self) -> i64 {
         self.timestamp
     }
@@ -5404,12 +5691,12 @@ pub mod text_detection_result {
         pub(crate) text_detection: std::option::Option<crate::model::TextDetection>,
     }
     impl Builder {
-        /// <p>The time, in milliseconds from the start of the video, that the text was detected.</p>
+        /// <p>The time, in milliseconds from the start of the video, that the text was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the text first appears.</p>
         pub fn timestamp(mut self, input: i64) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>The time, in milliseconds from the start of the video, that the text was detected.</p>
+        /// <p>The time, in milliseconds from the start of the video, that the text was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the text first appears.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.timestamp = input;
             self
@@ -6823,7 +7110,7 @@ impl AudioMetadata {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PersonDetection {
-    /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked.</p>
+    /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the person's path first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Details about a person whose path was tracked in a video.</p>
@@ -6831,7 +7118,7 @@ pub struct PersonDetection {
     pub person: std::option::Option<crate::model::PersonDetail>,
 }
 impl PersonDetection {
-    /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked.</p>
+    /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the person's path first appears.</p>
     pub fn timestamp(&self) -> i64 {
         self.timestamp
     }
@@ -6850,12 +7137,12 @@ pub mod person_detection {
         pub(crate) person: std::option::Option<crate::model::PersonDetail>,
     }
     impl Builder {
-        /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked.</p>
+        /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the person's path first appears.</p>
         pub fn timestamp(mut self, input: i64) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked.</p>
+        /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the person's path first appears.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.timestamp = input;
             self
@@ -7074,21 +7361,42 @@ impl AsRef<str> for PersonTrackingSortBy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LabelDetection {
-    /// <p>Time, in milliseconds from the start of the video, that the label was detected.</p>
+    /// <p>Time, in milliseconds from the start of the video, that the label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the label first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Details about the detected label.</p>
     #[doc(hidden)]
     pub label: std::option::Option<crate::model::Label>,
+    /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected label.</p>
+    #[doc(hidden)]
+    pub start_timestamp_millis: std::option::Option<i64>,
+    /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected label.</p>
+    #[doc(hidden)]
+    pub end_timestamp_millis: std::option::Option<i64>,
+    /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
+    #[doc(hidden)]
+    pub duration_millis: std::option::Option<i64>,
 }
 impl LabelDetection {
-    /// <p>Time, in milliseconds from the start of the video, that the label was detected.</p>
+    /// <p>Time, in milliseconds from the start of the video, that the label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the label first appears.</p>
     pub fn timestamp(&self) -> i64 {
         self.timestamp
     }
     /// <p>Details about the detected label.</p>
     pub fn label(&self) -> std::option::Option<&crate::model::Label> {
         self.label.as_ref()
+    }
+    /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected label.</p>
+    pub fn start_timestamp_millis(&self) -> std::option::Option<i64> {
+        self.start_timestamp_millis
+    }
+    /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected label.</p>
+    pub fn end_timestamp_millis(&self) -> std::option::Option<i64> {
+        self.end_timestamp_millis
+    }
+    /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
+    pub fn duration_millis(&self) -> std::option::Option<i64> {
+        self.duration_millis
     }
 }
 /// See [`LabelDetection`](crate::model::LabelDetection).
@@ -7099,14 +7407,17 @@ pub mod label_detection {
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<i64>,
         pub(crate) label: std::option::Option<crate::model::Label>,
+        pub(crate) start_timestamp_millis: std::option::Option<i64>,
+        pub(crate) end_timestamp_millis: std::option::Option<i64>,
+        pub(crate) duration_millis: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>Time, in milliseconds from the start of the video, that the label was detected.</p>
+        /// <p>Time, in milliseconds from the start of the video, that the label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the label first appears.</p>
         pub fn timestamp(mut self, input: i64) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>Time, in milliseconds from the start of the video, that the label was detected.</p>
+        /// <p>Time, in milliseconds from the start of the video, that the label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the label first appears.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.timestamp = input;
             self
@@ -7121,11 +7432,44 @@ pub mod label_detection {
             self.label = input;
             self
         }
+        /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected label.</p>
+        pub fn start_timestamp_millis(mut self, input: i64) -> Self {
+            self.start_timestamp_millis = Some(input);
+            self
+        }
+        /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected label.</p>
+        pub fn set_start_timestamp_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.start_timestamp_millis = input;
+            self
+        }
+        /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected label.</p>
+        pub fn end_timestamp_millis(mut self, input: i64) -> Self {
+            self.end_timestamp_millis = Some(input);
+            self
+        }
+        /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected label.</p>
+        pub fn set_end_timestamp_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.end_timestamp_millis = input;
+            self
+        }
+        /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
+        pub fn duration_millis(mut self, input: i64) -> Self {
+            self.duration_millis = Some(input);
+            self
+        }
+        /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
+        pub fn set_duration_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.duration_millis = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LabelDetection`](crate::model::LabelDetection).
         pub fn build(self) -> crate::model::LabelDetection {
             crate::model::LabelDetection {
                 timestamp: self.timestamp.unwrap_or_default(),
                 label: self.label,
+                start_timestamp_millis: self.start_timestamp_millis,
+                end_timestamp_millis: self.end_timestamp_millis,
+                duration_millis: self.duration_millis,
             }
         }
     }
@@ -7154,6 +7498,12 @@ pub struct Label {
     /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
     #[doc(hidden)]
     pub parents: std::option::Option<std::vec::Vec<crate::model::Parent>>,
+    /// <p>A list of potential aliases for a given label.</p>
+    #[doc(hidden)]
+    pub aliases: std::option::Option<std::vec::Vec<crate::model::LabelAlias>>,
+    /// <p>A list of the categories associated with a given label.</p>
+    #[doc(hidden)]
+    pub categories: std::option::Option<std::vec::Vec<crate::model::LabelCategory>>,
 }
 impl Label {
     /// <p>The name (label) of the object or scene.</p>
@@ -7172,6 +7522,14 @@ impl Label {
     pub fn parents(&self) -> std::option::Option<&[crate::model::Parent]> {
         self.parents.as_deref()
     }
+    /// <p>A list of potential aliases for a given label.</p>
+    pub fn aliases(&self) -> std::option::Option<&[crate::model::LabelAlias]> {
+        self.aliases.as_deref()
+    }
+    /// <p>A list of the categories associated with a given label.</p>
+    pub fn categories(&self) -> std::option::Option<&[crate::model::LabelCategory]> {
+        self.categories.as_deref()
+    }
 }
 /// See [`Label`](crate::model::Label).
 pub mod label {
@@ -7183,6 +7541,8 @@ pub mod label {
         pub(crate) confidence: std::option::Option<f32>,
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
         pub(crate) parents: std::option::Option<std::vec::Vec<crate::model::Parent>>,
+        pub(crate) aliases: std::option::Option<std::vec::Vec<crate::model::LabelAlias>>,
+        pub(crate) categories: std::option::Option<std::vec::Vec<crate::model::LabelCategory>>,
     }
     impl Builder {
         /// <p>The name (label) of the object or scene.</p>
@@ -7243,6 +7603,44 @@ pub mod label {
             self.parents = input;
             self
         }
+        /// Appends an item to `aliases`.
+        ///
+        /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
+        ///
+        /// <p>A list of potential aliases for a given label.</p>
+        pub fn aliases(mut self, input: crate::model::LabelAlias) -> Self {
+            let mut v = self.aliases.unwrap_or_default();
+            v.push(input);
+            self.aliases = Some(v);
+            self
+        }
+        /// <p>A list of potential aliases for a given label.</p>
+        pub fn set_aliases(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LabelAlias>>,
+        ) -> Self {
+            self.aliases = input;
+            self
+        }
+        /// Appends an item to `categories`.
+        ///
+        /// To override the contents of this collection use [`set_categories`](Self::set_categories).
+        ///
+        /// <p>A list of the categories associated with a given label.</p>
+        pub fn categories(mut self, input: crate::model::LabelCategory) -> Self {
+            let mut v = self.categories.unwrap_or_default();
+            v.push(input);
+            self.categories = Some(v);
+            self
+        }
+        /// <p>A list of the categories associated with a given label.</p>
+        pub fn set_categories(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LabelCategory>>,
+        ) -> Self {
+            self.categories = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Label`](crate::model::Label).
         pub fn build(self) -> crate::model::Label {
             crate::model::Label {
@@ -7250,6 +7648,8 @@ pub mod label {
                 confidence: self.confidence,
                 instances: self.instances,
                 parents: self.parents,
+                aliases: self.aliases,
+                categories: self.categories,
             }
         }
     }
@@ -7258,6 +7658,98 @@ impl Label {
     /// Creates a new builder-style object to manufacture [`Label`](crate::model::Label).
     pub fn builder() -> crate::model::label::Builder {
         crate::model::label::Builder::default()
+    }
+}
+
+/// <p>The category that applies to a given label.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LabelCategory {
+    /// <p>The name of a category that applies to a given label.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl LabelCategory {
+    /// <p>The name of a category that applies to a given label.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+/// See [`LabelCategory`](crate::model::LabelCategory).
+pub mod label_category {
+
+    /// A builder for [`LabelCategory`](crate::model::LabelCategory).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of a category that applies to a given label.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of a category that applies to a given label.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LabelCategory`](crate::model::LabelCategory).
+        pub fn build(self) -> crate::model::LabelCategory {
+            crate::model::LabelCategory { name: self.name }
+        }
+    }
+}
+impl LabelCategory {
+    /// Creates a new builder-style object to manufacture [`LabelCategory`](crate::model::LabelCategory).
+    pub fn builder() -> crate::model::label_category::Builder {
+        crate::model::label_category::Builder::default()
+    }
+}
+
+/// <p>A potential alias of for a given label.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LabelAlias {
+    /// <p>The name of an alias for a given label.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl LabelAlias {
+    /// <p>The name of an alias for a given label.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+/// See [`LabelAlias`](crate::model::LabelAlias).
+pub mod label_alias {
+
+    /// A builder for [`LabelAlias`](crate::model::LabelAlias).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of an alias for a given label.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of an alias for a given label.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LabelAlias`](crate::model::LabelAlias).
+        pub fn build(self) -> crate::model::LabelAlias {
+            crate::model::LabelAlias { name: self.name }
+        }
+    }
+}
+impl LabelAlias {
+    /// Creates a new builder-style object to manufacture [`LabelAlias`](crate::model::LabelAlias).
+    pub fn builder() -> crate::model::label_alias::Builder {
+        crate::model::label_alias::Builder::default()
     }
 }
 
@@ -7317,6 +7809,9 @@ pub struct Instance {
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the bounding box.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
+    /// <p>The dominant colors found in an individual instance of a label.</p>
+    #[doc(hidden)]
+    pub dominant_colors: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
 }
 impl Instance {
     /// <p>The position of the label instance on the image.</p>
@@ -7327,6 +7822,10 @@ impl Instance {
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
     }
+    /// <p>The dominant colors found in an individual instance of a label.</p>
+    pub fn dominant_colors(&self) -> std::option::Option<&[crate::model::DominantColor]> {
+        self.dominant_colors.as_deref()
+    }
 }
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
@@ -7336,6 +7835,7 @@ pub mod instance {
     pub struct Builder {
         pub(crate) bounding_box: std::option::Option<crate::model::BoundingBox>,
         pub(crate) confidence: std::option::Option<f32>,
+        pub(crate) dominant_colors: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
     }
     impl Builder {
         /// <p>The position of the label instance on the image.</p>
@@ -7361,11 +7861,31 @@ pub mod instance {
             self.confidence = input;
             self
         }
+        /// Appends an item to `dominant_colors`.
+        ///
+        /// To override the contents of this collection use [`set_dominant_colors`](Self::set_dominant_colors).
+        ///
+        /// <p>The dominant colors found in an individual instance of a label.</p>
+        pub fn dominant_colors(mut self, input: crate::model::DominantColor) -> Self {
+            let mut v = self.dominant_colors.unwrap_or_default();
+            v.push(input);
+            self.dominant_colors = Some(v);
+            self
+        }
+        /// <p>The dominant colors found in an individual instance of a label.</p>
+        pub fn set_dominant_colors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
+        ) -> Self {
+            self.dominant_colors = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Instance`](crate::model::Instance).
         pub fn build(self) -> crate::model::Instance {
             crate::model::Instance {
                 bounding_box: self.bounding_box,
                 confidence: self.confidence,
+                dominant_colors: self.dominant_colors,
             }
         }
     }
@@ -7374,6 +7894,263 @@ impl Instance {
     /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
     pub fn builder() -> crate::model::instance::Builder {
         crate::model::instance::Builder::default()
+    }
+}
+
+/// <p>A description of the dominant colors in an image.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DominantColor {
+    /// <p>The Red RGB value for a dominant color.</p>
+    #[doc(hidden)]
+    pub red: std::option::Option<i32>,
+    /// <p>The Blue RGB value for a dominant color.</p>
+    #[doc(hidden)]
+    pub blue: std::option::Option<i32>,
+    /// <p>The Green RGB value for a dominant color.</p>
+    #[doc(hidden)]
+    pub green: std::option::Option<i32>,
+    /// <p>The Hex code equivalent of the RGB values for a dominant color.</p>
+    #[doc(hidden)]
+    pub hex_code: std::option::Option<std::string::String>,
+    /// <p>The CSS color name of a dominant color.</p>
+    #[doc(hidden)]
+    pub css_color: std::option::Option<std::string::String>,
+    /// <p>One of 12 simplified color names applied to a dominant color.</p>
+    #[doc(hidden)]
+    pub simplified_color: std::option::Option<std::string::String>,
+    /// <p>The percentage of image pixels that have a given dominant color.</p>
+    #[doc(hidden)]
+    pub pixel_percent: std::option::Option<f32>,
+}
+impl DominantColor {
+    /// <p>The Red RGB value for a dominant color.</p>
+    pub fn red(&self) -> std::option::Option<i32> {
+        self.red
+    }
+    /// <p>The Blue RGB value for a dominant color.</p>
+    pub fn blue(&self) -> std::option::Option<i32> {
+        self.blue
+    }
+    /// <p>The Green RGB value for a dominant color.</p>
+    pub fn green(&self) -> std::option::Option<i32> {
+        self.green
+    }
+    /// <p>The Hex code equivalent of the RGB values for a dominant color.</p>
+    pub fn hex_code(&self) -> std::option::Option<&str> {
+        self.hex_code.as_deref()
+    }
+    /// <p>The CSS color name of a dominant color.</p>
+    pub fn css_color(&self) -> std::option::Option<&str> {
+        self.css_color.as_deref()
+    }
+    /// <p>One of 12 simplified color names applied to a dominant color.</p>
+    pub fn simplified_color(&self) -> std::option::Option<&str> {
+        self.simplified_color.as_deref()
+    }
+    /// <p>The percentage of image pixels that have a given dominant color.</p>
+    pub fn pixel_percent(&self) -> std::option::Option<f32> {
+        self.pixel_percent
+    }
+}
+/// See [`DominantColor`](crate::model::DominantColor).
+pub mod dominant_color {
+
+    /// A builder for [`DominantColor`](crate::model::DominantColor).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) red: std::option::Option<i32>,
+        pub(crate) blue: std::option::Option<i32>,
+        pub(crate) green: std::option::Option<i32>,
+        pub(crate) hex_code: std::option::Option<std::string::String>,
+        pub(crate) css_color: std::option::Option<std::string::String>,
+        pub(crate) simplified_color: std::option::Option<std::string::String>,
+        pub(crate) pixel_percent: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>The Red RGB value for a dominant color.</p>
+        pub fn red(mut self, input: i32) -> Self {
+            self.red = Some(input);
+            self
+        }
+        /// <p>The Red RGB value for a dominant color.</p>
+        pub fn set_red(mut self, input: std::option::Option<i32>) -> Self {
+            self.red = input;
+            self
+        }
+        /// <p>The Blue RGB value for a dominant color.</p>
+        pub fn blue(mut self, input: i32) -> Self {
+            self.blue = Some(input);
+            self
+        }
+        /// <p>The Blue RGB value for a dominant color.</p>
+        pub fn set_blue(mut self, input: std::option::Option<i32>) -> Self {
+            self.blue = input;
+            self
+        }
+        /// <p>The Green RGB value for a dominant color.</p>
+        pub fn green(mut self, input: i32) -> Self {
+            self.green = Some(input);
+            self
+        }
+        /// <p>The Green RGB value for a dominant color.</p>
+        pub fn set_green(mut self, input: std::option::Option<i32>) -> Self {
+            self.green = input;
+            self
+        }
+        /// <p>The Hex code equivalent of the RGB values for a dominant color.</p>
+        pub fn hex_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hex_code = Some(input.into());
+            self
+        }
+        /// <p>The Hex code equivalent of the RGB values for a dominant color.</p>
+        pub fn set_hex_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hex_code = input;
+            self
+        }
+        /// <p>The CSS color name of a dominant color.</p>
+        pub fn css_color(mut self, input: impl Into<std::string::String>) -> Self {
+            self.css_color = Some(input.into());
+            self
+        }
+        /// <p>The CSS color name of a dominant color.</p>
+        pub fn set_css_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.css_color = input;
+            self
+        }
+        /// <p>One of 12 simplified color names applied to a dominant color.</p>
+        pub fn simplified_color(mut self, input: impl Into<std::string::String>) -> Self {
+            self.simplified_color = Some(input.into());
+            self
+        }
+        /// <p>One of 12 simplified color names applied to a dominant color.</p>
+        pub fn set_simplified_color(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.simplified_color = input;
+            self
+        }
+        /// <p>The percentage of image pixels that have a given dominant color.</p>
+        pub fn pixel_percent(mut self, input: f32) -> Self {
+            self.pixel_percent = Some(input);
+            self
+        }
+        /// <p>The percentage of image pixels that have a given dominant color.</p>
+        pub fn set_pixel_percent(mut self, input: std::option::Option<f32>) -> Self {
+            self.pixel_percent = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DominantColor`](crate::model::DominantColor).
+        pub fn build(self) -> crate::model::DominantColor {
+            crate::model::DominantColor {
+                red: self.red,
+                blue: self.blue,
+                green: self.green,
+                hex_code: self.hex_code,
+                css_color: self.css_color,
+                simplified_color: self.simplified_color,
+                pixel_percent: self.pixel_percent,
+            }
+        }
+    }
+}
+impl DominantColor {
+    /// Creates a new builder-style object to manufacture [`DominantColor`](crate::model::DominantColor).
+    pub fn builder() -> crate::model::dominant_color::Builder {
+        crate::model::dominant_color::Builder::default()
+    }
+}
+
+/// When writing a match expression against `LabelDetectionAggregateBy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let labeldetectionaggregateby = unimplemented!();
+/// match labeldetectionaggregateby {
+///     LabelDetectionAggregateBy::Segments => { /* ... */ },
+///     LabelDetectionAggregateBy::Timestamps => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `labeldetectionaggregateby` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LabelDetectionAggregateBy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LabelDetectionAggregateBy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LabelDetectionAggregateBy::NewFeature` is defined.
+/// Specifically, when `labeldetectionaggregateby` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LabelDetectionAggregateBy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LabelDetectionAggregateBy {
+    #[allow(missing_docs)] // documentation missing in model
+    Segments,
+    #[allow(missing_docs)] // documentation missing in model
+    Timestamps,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for LabelDetectionAggregateBy {
+    fn from(s: &str) -> Self {
+        match s {
+            "SEGMENTS" => LabelDetectionAggregateBy::Segments,
+            "TIMESTAMPS" => LabelDetectionAggregateBy::Timestamps,
+            other => LabelDetectionAggregateBy::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for LabelDetectionAggregateBy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LabelDetectionAggregateBy::from(s))
+    }
+}
+impl LabelDetectionAggregateBy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LabelDetectionAggregateBy::Segments => "SEGMENTS",
+            LabelDetectionAggregateBy::Timestamps => "TIMESTAMPS",
+            LabelDetectionAggregateBy::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["SEGMENTS", "TIMESTAMPS"]
+    }
+}
+impl AsRef<str> for LabelDetectionAggregateBy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -7661,7 +8438,7 @@ impl AsRef<str> for FaceSearchSortBy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaceDetection {
-    /// <p>Time, in milliseconds from the start of the video, that the face was detected.</p>
+    /// <p>Time, in milliseconds from the start of the video, that the face was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the face first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
     /// <p>The face properties for the detected face.</p>
@@ -7669,7 +8446,7 @@ pub struct FaceDetection {
     pub face: std::option::Option<crate::model::FaceDetail>,
 }
 impl FaceDetection {
-    /// <p>Time, in milliseconds from the start of the video, that the face was detected.</p>
+    /// <p>Time, in milliseconds from the start of the video, that the face was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the face first appears.</p>
     pub fn timestamp(&self) -> i64 {
         self.timestamp
     }
@@ -7688,12 +8465,12 @@ pub mod face_detection {
         pub(crate) face: std::option::Option<crate::model::FaceDetail>,
     }
     impl Builder {
-        /// <p>Time, in milliseconds from the start of the video, that the face was detected.</p>
+        /// <p>Time, in milliseconds from the start of the video, that the face was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the face first appears.</p>
         pub fn timestamp(mut self, input: i64) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>Time, in milliseconds from the start of the video, that the face was detected.</p>
+        /// <p>Time, in milliseconds from the start of the video, that the face was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the face first appears.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.timestamp = input;
             self
@@ -7728,7 +8505,7 @@ impl FaceDetection {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentModerationDetection {
-    /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected.</p>
+    /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
     /// <p>The content moderation label detected by in the stored video.</p>
@@ -7736,7 +8513,7 @@ pub struct ContentModerationDetection {
     pub moderation_label: std::option::Option<crate::model::ModerationLabel>,
 }
 impl ContentModerationDetection {
-    /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected.</p>
+    /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
     pub fn timestamp(&self) -> i64 {
         self.timestamp
     }
@@ -7755,12 +8532,12 @@ pub mod content_moderation_detection {
         pub(crate) moderation_label: std::option::Option<crate::model::ModerationLabel>,
     }
     impl Builder {
-        /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected.</p>
+        /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
         pub fn timestamp(mut self, input: i64) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected.</p>
+        /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.timestamp = input;
             self
@@ -7980,7 +8757,7 @@ impl AsRef<str> for ContentModerationSortBy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CelebrityRecognition {
-    /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized.</p>
+    /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the celebrity first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Information about a recognized celebrity.</p>
@@ -7988,7 +8765,7 @@ pub struct CelebrityRecognition {
     pub celebrity: std::option::Option<crate::model::CelebrityDetail>,
 }
 impl CelebrityRecognition {
-    /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized.</p>
+    /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the celebrity first appears.</p>
     pub fn timestamp(&self) -> i64 {
         self.timestamp
     }
@@ -8007,12 +8784,12 @@ pub mod celebrity_recognition {
         pub(crate) celebrity: std::option::Option<crate::model::CelebrityDetail>,
     }
     impl Builder {
-        /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized.</p>
+        /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the celebrity first appears.</p>
         pub fn timestamp(mut self, input: i64) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized.</p>
+        /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the celebrity first appears.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.timestamp = input;
             self
@@ -9597,6 +10374,592 @@ impl ContentClassifier {
     }
 }
 impl AsRef<str> for ContentClassifier {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Information about the quality and dominant colors of an input image. Quality and color information is returned for the entire image, foreground, and background.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DetectLabelsImageProperties {
+    /// <p>Information about the quality of the image foreground as defined by brightness, sharpness, and contrast. The higher the value the greater the brightness, sharpness, and contrast respectively.</p>
+    #[doc(hidden)]
+    pub quality: std::option::Option<crate::model::DetectLabelsImageQuality>,
+    /// <p>Information about the dominant colors found in an image, described with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
+    #[doc(hidden)]
+    pub dominant_colors: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
+    /// <p>Information about the properties of an image’s foreground, including the foreground’s quality and dominant colors, including the quality and dominant colors of the image.</p>
+    #[doc(hidden)]
+    pub foreground: std::option::Option<crate::model::DetectLabelsImageForeground>,
+    /// <p>Information about the properties of an image’s background, including the background’s quality and dominant colors, including the quality and dominant colors of the image.</p>
+    #[doc(hidden)]
+    pub background: std::option::Option<crate::model::DetectLabelsImageBackground>,
+}
+impl DetectLabelsImageProperties {
+    /// <p>Information about the quality of the image foreground as defined by brightness, sharpness, and contrast. The higher the value the greater the brightness, sharpness, and contrast respectively.</p>
+    pub fn quality(&self) -> std::option::Option<&crate::model::DetectLabelsImageQuality> {
+        self.quality.as_ref()
+    }
+    /// <p>Information about the dominant colors found in an image, described with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
+    pub fn dominant_colors(&self) -> std::option::Option<&[crate::model::DominantColor]> {
+        self.dominant_colors.as_deref()
+    }
+    /// <p>Information about the properties of an image’s foreground, including the foreground’s quality and dominant colors, including the quality and dominant colors of the image.</p>
+    pub fn foreground(&self) -> std::option::Option<&crate::model::DetectLabelsImageForeground> {
+        self.foreground.as_ref()
+    }
+    /// <p>Information about the properties of an image’s background, including the background’s quality and dominant colors, including the quality and dominant colors of the image.</p>
+    pub fn background(&self) -> std::option::Option<&crate::model::DetectLabelsImageBackground> {
+        self.background.as_ref()
+    }
+}
+/// See [`DetectLabelsImageProperties`](crate::model::DetectLabelsImageProperties).
+pub mod detect_labels_image_properties {
+
+    /// A builder for [`DetectLabelsImageProperties`](crate::model::DetectLabelsImageProperties).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) quality: std::option::Option<crate::model::DetectLabelsImageQuality>,
+        pub(crate) dominant_colors: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
+        pub(crate) foreground: std::option::Option<crate::model::DetectLabelsImageForeground>,
+        pub(crate) background: std::option::Option<crate::model::DetectLabelsImageBackground>,
+    }
+    impl Builder {
+        /// <p>Information about the quality of the image foreground as defined by brightness, sharpness, and contrast. The higher the value the greater the brightness, sharpness, and contrast respectively.</p>
+        pub fn quality(mut self, input: crate::model::DetectLabelsImageQuality) -> Self {
+            self.quality = Some(input);
+            self
+        }
+        /// <p>Information about the quality of the image foreground as defined by brightness, sharpness, and contrast. The higher the value the greater the brightness, sharpness, and contrast respectively.</p>
+        pub fn set_quality(
+            mut self,
+            input: std::option::Option<crate::model::DetectLabelsImageQuality>,
+        ) -> Self {
+            self.quality = input;
+            self
+        }
+        /// Appends an item to `dominant_colors`.
+        ///
+        /// To override the contents of this collection use [`set_dominant_colors`](Self::set_dominant_colors).
+        ///
+        /// <p>Information about the dominant colors found in an image, described with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
+        pub fn dominant_colors(mut self, input: crate::model::DominantColor) -> Self {
+            let mut v = self.dominant_colors.unwrap_or_default();
+            v.push(input);
+            self.dominant_colors = Some(v);
+            self
+        }
+        /// <p>Information about the dominant colors found in an image, described with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
+        pub fn set_dominant_colors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
+        ) -> Self {
+            self.dominant_colors = input;
+            self
+        }
+        /// <p>Information about the properties of an image’s foreground, including the foreground’s quality and dominant colors, including the quality and dominant colors of the image.</p>
+        pub fn foreground(mut self, input: crate::model::DetectLabelsImageForeground) -> Self {
+            self.foreground = Some(input);
+            self
+        }
+        /// <p>Information about the properties of an image’s foreground, including the foreground’s quality and dominant colors, including the quality and dominant colors of the image.</p>
+        pub fn set_foreground(
+            mut self,
+            input: std::option::Option<crate::model::DetectLabelsImageForeground>,
+        ) -> Self {
+            self.foreground = input;
+            self
+        }
+        /// <p>Information about the properties of an image’s background, including the background’s quality and dominant colors, including the quality and dominant colors of the image.</p>
+        pub fn background(mut self, input: crate::model::DetectLabelsImageBackground) -> Self {
+            self.background = Some(input);
+            self
+        }
+        /// <p>Information about the properties of an image’s background, including the background’s quality and dominant colors, including the quality and dominant colors of the image.</p>
+        pub fn set_background(
+            mut self,
+            input: std::option::Option<crate::model::DetectLabelsImageBackground>,
+        ) -> Self {
+            self.background = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectLabelsImageProperties`](crate::model::DetectLabelsImageProperties).
+        pub fn build(self) -> crate::model::DetectLabelsImageProperties {
+            crate::model::DetectLabelsImageProperties {
+                quality: self.quality,
+                dominant_colors: self.dominant_colors,
+                foreground: self.foreground,
+                background: self.background,
+            }
+        }
+    }
+}
+impl DetectLabelsImageProperties {
+    /// Creates a new builder-style object to manufacture [`DetectLabelsImageProperties`](crate::model::DetectLabelsImageProperties).
+    pub fn builder() -> crate::model::detect_labels_image_properties::Builder {
+        crate::model::detect_labels_image_properties::Builder::default()
+    }
+}
+
+/// <p>The background of the image with regard to image quality and dominant colors.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DetectLabelsImageBackground {
+    /// <p>The quality of the image background as defined by brightness and sharpness.</p>
+    #[doc(hidden)]
+    pub quality: std::option::Option<crate::model::DetectLabelsImageQuality>,
+    /// <p>The dominant colors found in the background of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
+    #[doc(hidden)]
+    pub dominant_colors: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
+}
+impl DetectLabelsImageBackground {
+    /// <p>The quality of the image background as defined by brightness and sharpness.</p>
+    pub fn quality(&self) -> std::option::Option<&crate::model::DetectLabelsImageQuality> {
+        self.quality.as_ref()
+    }
+    /// <p>The dominant colors found in the background of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
+    pub fn dominant_colors(&self) -> std::option::Option<&[crate::model::DominantColor]> {
+        self.dominant_colors.as_deref()
+    }
+}
+/// See [`DetectLabelsImageBackground`](crate::model::DetectLabelsImageBackground).
+pub mod detect_labels_image_background {
+
+    /// A builder for [`DetectLabelsImageBackground`](crate::model::DetectLabelsImageBackground).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) quality: std::option::Option<crate::model::DetectLabelsImageQuality>,
+        pub(crate) dominant_colors: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
+    }
+    impl Builder {
+        /// <p>The quality of the image background as defined by brightness and sharpness.</p>
+        pub fn quality(mut self, input: crate::model::DetectLabelsImageQuality) -> Self {
+            self.quality = Some(input);
+            self
+        }
+        /// <p>The quality of the image background as defined by brightness and sharpness.</p>
+        pub fn set_quality(
+            mut self,
+            input: std::option::Option<crate::model::DetectLabelsImageQuality>,
+        ) -> Self {
+            self.quality = input;
+            self
+        }
+        /// Appends an item to `dominant_colors`.
+        ///
+        /// To override the contents of this collection use [`set_dominant_colors`](Self::set_dominant_colors).
+        ///
+        /// <p>The dominant colors found in the background of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
+        pub fn dominant_colors(mut self, input: crate::model::DominantColor) -> Self {
+            let mut v = self.dominant_colors.unwrap_or_default();
+            v.push(input);
+            self.dominant_colors = Some(v);
+            self
+        }
+        /// <p>The dominant colors found in the background of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
+        pub fn set_dominant_colors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
+        ) -> Self {
+            self.dominant_colors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectLabelsImageBackground`](crate::model::DetectLabelsImageBackground).
+        pub fn build(self) -> crate::model::DetectLabelsImageBackground {
+            crate::model::DetectLabelsImageBackground {
+                quality: self.quality,
+                dominant_colors: self.dominant_colors,
+            }
+        }
+    }
+}
+impl DetectLabelsImageBackground {
+    /// Creates a new builder-style object to manufacture [`DetectLabelsImageBackground`](crate::model::DetectLabelsImageBackground).
+    pub fn builder() -> crate::model::detect_labels_image_background::Builder {
+        crate::model::detect_labels_image_background::Builder::default()
+    }
+}
+
+/// <p>The quality of an image provided for label detection, with regard to brightness, sharpness, and contrast.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DetectLabelsImageQuality {
+    /// <p>The brightness of an image provided for label detection.</p>
+    #[doc(hidden)]
+    pub brightness: std::option::Option<f32>,
+    /// <p>The sharpness of an image provided for label detection.</p>
+    #[doc(hidden)]
+    pub sharpness: std::option::Option<f32>,
+    /// <p>The contrast of an image provided for label detection.</p>
+    #[doc(hidden)]
+    pub contrast: std::option::Option<f32>,
+}
+impl DetectLabelsImageQuality {
+    /// <p>The brightness of an image provided for label detection.</p>
+    pub fn brightness(&self) -> std::option::Option<f32> {
+        self.brightness
+    }
+    /// <p>The sharpness of an image provided for label detection.</p>
+    pub fn sharpness(&self) -> std::option::Option<f32> {
+        self.sharpness
+    }
+    /// <p>The contrast of an image provided for label detection.</p>
+    pub fn contrast(&self) -> std::option::Option<f32> {
+        self.contrast
+    }
+}
+/// See [`DetectLabelsImageQuality`](crate::model::DetectLabelsImageQuality).
+pub mod detect_labels_image_quality {
+
+    /// A builder for [`DetectLabelsImageQuality`](crate::model::DetectLabelsImageQuality).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) brightness: std::option::Option<f32>,
+        pub(crate) sharpness: std::option::Option<f32>,
+        pub(crate) contrast: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>The brightness of an image provided for label detection.</p>
+        pub fn brightness(mut self, input: f32) -> Self {
+            self.brightness = Some(input);
+            self
+        }
+        /// <p>The brightness of an image provided for label detection.</p>
+        pub fn set_brightness(mut self, input: std::option::Option<f32>) -> Self {
+            self.brightness = input;
+            self
+        }
+        /// <p>The sharpness of an image provided for label detection.</p>
+        pub fn sharpness(mut self, input: f32) -> Self {
+            self.sharpness = Some(input);
+            self
+        }
+        /// <p>The sharpness of an image provided for label detection.</p>
+        pub fn set_sharpness(mut self, input: std::option::Option<f32>) -> Self {
+            self.sharpness = input;
+            self
+        }
+        /// <p>The contrast of an image provided for label detection.</p>
+        pub fn contrast(mut self, input: f32) -> Self {
+            self.contrast = Some(input);
+            self
+        }
+        /// <p>The contrast of an image provided for label detection.</p>
+        pub fn set_contrast(mut self, input: std::option::Option<f32>) -> Self {
+            self.contrast = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectLabelsImageQuality`](crate::model::DetectLabelsImageQuality).
+        pub fn build(self) -> crate::model::DetectLabelsImageQuality {
+            crate::model::DetectLabelsImageQuality {
+                brightness: self.brightness,
+                sharpness: self.sharpness,
+                contrast: self.contrast,
+            }
+        }
+    }
+}
+impl DetectLabelsImageQuality {
+    /// Creates a new builder-style object to manufacture [`DetectLabelsImageQuality`](crate::model::DetectLabelsImageQuality).
+    pub fn builder() -> crate::model::detect_labels_image_quality::Builder {
+        crate::model::detect_labels_image_quality::Builder::default()
+    }
+}
+
+/// <p>The foreground of the image with regard to image quality and dominant colors.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DetectLabelsImageForeground {
+    /// <p>The quality of the image foreground as defined by brightness and sharpness.</p>
+    #[doc(hidden)]
+    pub quality: std::option::Option<crate::model::DetectLabelsImageQuality>,
+    /// <p>The dominant colors found in the foreground of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
+    #[doc(hidden)]
+    pub dominant_colors: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
+}
+impl DetectLabelsImageForeground {
+    /// <p>The quality of the image foreground as defined by brightness and sharpness.</p>
+    pub fn quality(&self) -> std::option::Option<&crate::model::DetectLabelsImageQuality> {
+        self.quality.as_ref()
+    }
+    /// <p>The dominant colors found in the foreground of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
+    pub fn dominant_colors(&self) -> std::option::Option<&[crate::model::DominantColor]> {
+        self.dominant_colors.as_deref()
+    }
+}
+/// See [`DetectLabelsImageForeground`](crate::model::DetectLabelsImageForeground).
+pub mod detect_labels_image_foreground {
+
+    /// A builder for [`DetectLabelsImageForeground`](crate::model::DetectLabelsImageForeground).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) quality: std::option::Option<crate::model::DetectLabelsImageQuality>,
+        pub(crate) dominant_colors: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
+    }
+    impl Builder {
+        /// <p>The quality of the image foreground as defined by brightness and sharpness.</p>
+        pub fn quality(mut self, input: crate::model::DetectLabelsImageQuality) -> Self {
+            self.quality = Some(input);
+            self
+        }
+        /// <p>The quality of the image foreground as defined by brightness and sharpness.</p>
+        pub fn set_quality(
+            mut self,
+            input: std::option::Option<crate::model::DetectLabelsImageQuality>,
+        ) -> Self {
+            self.quality = input;
+            self
+        }
+        /// Appends an item to `dominant_colors`.
+        ///
+        /// To override the contents of this collection use [`set_dominant_colors`](Self::set_dominant_colors).
+        ///
+        /// <p>The dominant colors found in the foreground of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
+        pub fn dominant_colors(mut self, input: crate::model::DominantColor) -> Self {
+            let mut v = self.dominant_colors.unwrap_or_default();
+            v.push(input);
+            self.dominant_colors = Some(v);
+            self
+        }
+        /// <p>The dominant colors found in the foreground of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
+        pub fn set_dominant_colors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
+        ) -> Self {
+            self.dominant_colors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectLabelsImageForeground`](crate::model::DetectLabelsImageForeground).
+        pub fn build(self) -> crate::model::DetectLabelsImageForeground {
+            crate::model::DetectLabelsImageForeground {
+                quality: self.quality,
+                dominant_colors: self.dominant_colors,
+            }
+        }
+    }
+}
+impl DetectLabelsImageForeground {
+    /// Creates a new builder-style object to manufacture [`DetectLabelsImageForeground`](crate::model::DetectLabelsImageForeground).
+    pub fn builder() -> crate::model::detect_labels_image_foreground::Builder {
+        crate::model::detect_labels_image_foreground::Builder::default()
+    }
+}
+
+/// <p>Settings for the DetectLabels request. Settings can include filters for both GENERAL_LABELS and IMAGE_PROPERTIES. GENERAL_LABELS filters can be inclusive or exclusive and applied to individual labels or label categories. IMAGE_PROPERTIES filters allow specification of a maximum number of dominant colors.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DetectLabelsSettings {
+    /// <p>Contains the specified filters for GENERAL_LABELS.</p>
+    #[doc(hidden)]
+    pub general_labels: std::option::Option<crate::model::GeneralLabelsSettings>,
+    /// <p>Contains the chosen number of maximum dominant colors in an image.</p>
+    #[doc(hidden)]
+    pub image_properties: std::option::Option<crate::model::DetectLabelsImagePropertiesSettings>,
+}
+impl DetectLabelsSettings {
+    /// <p>Contains the specified filters for GENERAL_LABELS.</p>
+    pub fn general_labels(&self) -> std::option::Option<&crate::model::GeneralLabelsSettings> {
+        self.general_labels.as_ref()
+    }
+    /// <p>Contains the chosen number of maximum dominant colors in an image.</p>
+    pub fn image_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectLabelsImagePropertiesSettings> {
+        self.image_properties.as_ref()
+    }
+}
+/// See [`DetectLabelsSettings`](crate::model::DetectLabelsSettings).
+pub mod detect_labels_settings {
+
+    /// A builder for [`DetectLabelsSettings`](crate::model::DetectLabelsSettings).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) general_labels: std::option::Option<crate::model::GeneralLabelsSettings>,
+        pub(crate) image_properties:
+            std::option::Option<crate::model::DetectLabelsImagePropertiesSettings>,
+    }
+    impl Builder {
+        /// <p>Contains the specified filters for GENERAL_LABELS.</p>
+        pub fn general_labels(mut self, input: crate::model::GeneralLabelsSettings) -> Self {
+            self.general_labels = Some(input);
+            self
+        }
+        /// <p>Contains the specified filters for GENERAL_LABELS.</p>
+        pub fn set_general_labels(
+            mut self,
+            input: std::option::Option<crate::model::GeneralLabelsSettings>,
+        ) -> Self {
+            self.general_labels = input;
+            self
+        }
+        /// <p>Contains the chosen number of maximum dominant colors in an image.</p>
+        pub fn image_properties(
+            mut self,
+            input: crate::model::DetectLabelsImagePropertiesSettings,
+        ) -> Self {
+            self.image_properties = Some(input);
+            self
+        }
+        /// <p>Contains the chosen number of maximum dominant colors in an image.</p>
+        pub fn set_image_properties(
+            mut self,
+            input: std::option::Option<crate::model::DetectLabelsImagePropertiesSettings>,
+        ) -> Self {
+            self.image_properties = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectLabelsSettings`](crate::model::DetectLabelsSettings).
+        pub fn build(self) -> crate::model::DetectLabelsSettings {
+            crate::model::DetectLabelsSettings {
+                general_labels: self.general_labels,
+                image_properties: self.image_properties,
+            }
+        }
+    }
+}
+impl DetectLabelsSettings {
+    /// Creates a new builder-style object to manufacture [`DetectLabelsSettings`](crate::model::DetectLabelsSettings).
+    pub fn builder() -> crate::model::detect_labels_settings::Builder {
+        crate::model::detect_labels_settings::Builder::default()
+    }
+}
+
+/// <p>Settings for the IMAGE_PROPERTIES feature type.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DetectLabelsImagePropertiesSettings {
+    /// <p>The maximum number of dominant colors to return when detecting labels in an image. The default value is 10.</p>
+    #[doc(hidden)]
+    pub max_dominant_colors: i32,
+}
+impl DetectLabelsImagePropertiesSettings {
+    /// <p>The maximum number of dominant colors to return when detecting labels in an image. The default value is 10.</p>
+    pub fn max_dominant_colors(&self) -> i32 {
+        self.max_dominant_colors
+    }
+}
+/// See [`DetectLabelsImagePropertiesSettings`](crate::model::DetectLabelsImagePropertiesSettings).
+pub mod detect_labels_image_properties_settings {
+
+    /// A builder for [`DetectLabelsImagePropertiesSettings`](crate::model::DetectLabelsImagePropertiesSettings).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_dominant_colors: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The maximum number of dominant colors to return when detecting labels in an image. The default value is 10.</p>
+        pub fn max_dominant_colors(mut self, input: i32) -> Self {
+            self.max_dominant_colors = Some(input);
+            self
+        }
+        /// <p>The maximum number of dominant colors to return when detecting labels in an image. The default value is 10.</p>
+        pub fn set_max_dominant_colors(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_dominant_colors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectLabelsImagePropertiesSettings`](crate::model::DetectLabelsImagePropertiesSettings).
+        pub fn build(self) -> crate::model::DetectLabelsImagePropertiesSettings {
+            crate::model::DetectLabelsImagePropertiesSettings {
+                max_dominant_colors: self.max_dominant_colors.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl DetectLabelsImagePropertiesSettings {
+    /// Creates a new builder-style object to manufacture [`DetectLabelsImagePropertiesSettings`](crate::model::DetectLabelsImagePropertiesSettings).
+    pub fn builder() -> crate::model::detect_labels_image_properties_settings::Builder {
+        crate::model::detect_labels_image_properties_settings::Builder::default()
+    }
+}
+
+/// When writing a match expression against `DetectLabelsFeatureName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let detectlabelsfeaturename = unimplemented!();
+/// match detectlabelsfeaturename {
+///     DetectLabelsFeatureName::GeneralLabels => { /* ... */ },
+///     DetectLabelsFeatureName::ImageProperties => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `detectlabelsfeaturename` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DetectLabelsFeatureName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DetectLabelsFeatureName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DetectLabelsFeatureName::NewFeature` is defined.
+/// Specifically, when `detectlabelsfeaturename` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DetectLabelsFeatureName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DetectLabelsFeatureName {
+    #[allow(missing_docs)] // documentation missing in model
+    GeneralLabels,
+    #[allow(missing_docs)] // documentation missing in model
+    ImageProperties,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DetectLabelsFeatureName {
+    fn from(s: &str) -> Self {
+        match s {
+            "GENERAL_LABELS" => DetectLabelsFeatureName::GeneralLabels,
+            "IMAGE_PROPERTIES" => DetectLabelsFeatureName::ImageProperties,
+            other => DetectLabelsFeatureName::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for DetectLabelsFeatureName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DetectLabelsFeatureName::from(s))
+    }
+}
+impl DetectLabelsFeatureName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DetectLabelsFeatureName::GeneralLabels => "GENERAL_LABELS",
+            DetectLabelsFeatureName::ImageProperties => "IMAGE_PROPERTIES",
+            DetectLabelsFeatureName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["GENERAL_LABELS", "IMAGE_PROPERTIES"]
+    }
+}
+impl AsRef<str> for DetectLabelsFeatureName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -28,14 +28,16 @@ pub mod create_delivery_stream_input {
         pub(crate) http_endpoint_destination_configuration:
             std::option::Option<crate::model::HttpEndpointDestinationConfiguration>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) amazon_open_search_serverless_destination_configuration:
+            std::option::Option<crate::model::AmazonOpenSearchServerlessDestinationConfiguration>,
     }
     impl Builder {
-        /// <p>The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
+        /// <p>The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
         pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.delivery_stream_name = Some(input.into());
             self
         }
-        /// <p>The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
+        /// <p>The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
         pub fn set_delivery_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -162,7 +164,7 @@ pub mod create_delivery_stream_input {
             self.elasticsearch_destination_configuration = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
         pub fn amazonopensearchservice_destination_configuration(
             mut self,
             input: crate::model::AmazonopensearchserviceDestinationConfiguration,
@@ -170,7 +172,7 @@ pub mod create_delivery_stream_input {
             self.amazonopensearchservice_destination_configuration = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
         pub fn set_amazonopensearchservice_destination_configuration(
             mut self,
             input: std::option::Option<
@@ -216,7 +218,7 @@ pub mod create_delivery_stream_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+        /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
         /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -224,13 +226,31 @@ pub mod create_delivery_stream_input {
             self.tags = Some(v);
             self
         }
-        /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+        /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
         /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.tags = input;
+            self
+        }
+        /// <p>The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.</p>
+        pub fn amazon_open_search_serverless_destination_configuration(
+            mut self,
+            input: crate::model::AmazonOpenSearchServerlessDestinationConfiguration,
+        ) -> Self {
+            self.amazon_open_search_serverless_destination_configuration = Some(input);
+            self
+        }
+        /// <p>The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.</p>
+        pub fn set_amazon_open_search_serverless_destination_configuration(
+            mut self,
+            input: std::option::Option<
+                crate::model::AmazonOpenSearchServerlessDestinationConfiguration,
+            >,
+        ) -> Self {
+            self.amazon_open_search_serverless_destination_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDeliveryStreamInput`](crate::input::CreateDeliveryStreamInput).
@@ -257,6 +277,8 @@ pub mod create_delivery_stream_input {
                 http_endpoint_destination_configuration: self
                     .http_endpoint_destination_configuration,
                 tags: self.tags,
+                amazon_open_search_serverless_destination_configuration: self
+                    .amazon_open_search_serverless_destination_configuration,
             })
         }
     }
@@ -401,13 +423,13 @@ pub mod delete_delivery_stream_input {
             self.delivery_stream_name = input;
             self
         }
-        /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+        /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
         /// <p>The default value is false.</p>
         pub fn allow_force_delete(mut self, input: bool) -> Self {
             self.allow_force_delete = Some(input);
             self
         }
-        /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+        /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
         /// <p>The default value is false.</p>
         pub fn set_allow_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_force_delete = input;
@@ -2101,6 +2123,8 @@ pub mod update_destination_input {
             std::option::Option<crate::model::SplunkDestinationUpdate>,
         pub(crate) http_endpoint_destination_update:
             std::option::Option<crate::model::HttpEndpointDestinationUpdate>,
+        pub(crate) amazon_open_search_serverless_destination_update:
+            std::option::Option<crate::model::AmazonOpenSearchServerlessDestinationUpdate>,
     }
     impl Builder {
         /// <p>The name of the delivery stream.</p>
@@ -2208,7 +2232,7 @@ pub mod update_destination_input {
             self.elasticsearch_destination_update = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
         pub fn amazonopensearchservice_destination_update(
             mut self,
             input: crate::model::AmazonopensearchserviceDestinationUpdate,
@@ -2216,7 +2240,7 @@ pub mod update_destination_input {
             self.amazonopensearchservice_destination_update = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
         pub fn set_amazonopensearchservice_destination_update(
             mut self,
             input: std::option::Option<crate::model::AmazonopensearchserviceDestinationUpdate>,
@@ -2256,6 +2280,22 @@ pub mod update_destination_input {
             self.http_endpoint_destination_update = input;
             self
         }
+        /// <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
+        pub fn amazon_open_search_serverless_destination_update(
+            mut self,
+            input: crate::model::AmazonOpenSearchServerlessDestinationUpdate,
+        ) -> Self {
+            self.amazon_open_search_serverless_destination_update = Some(input);
+            self
+        }
+        /// <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
+        pub fn set_amazon_open_search_serverless_destination_update(
+            mut self,
+            input: std::option::Option<crate::model::AmazonOpenSearchServerlessDestinationUpdate>,
+        ) -> Self {
+            self.amazon_open_search_serverless_destination_update = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).
         pub fn build(
             self,
@@ -2275,6 +2315,8 @@ pub mod update_destination_input {
                     .amazonopensearchservice_destination_update,
                 splunk_destination_update: self.splunk_destination_update,
                 http_endpoint_destination_update: self.http_endpoint_destination_update,
+                amazon_open_search_serverless_destination_update: self
+                    .amazon_open_search_serverless_destination_update,
             })
         }
     }
@@ -2422,7 +2464,7 @@ pub struct UpdateDestinationInput {
     #[doc(hidden)]
     pub elasticsearch_destination_update:
         std::option::Option<crate::model::ElasticsearchDestinationUpdate>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
     #[doc(hidden)]
     pub amazonopensearchservice_destination_update:
         std::option::Option<crate::model::AmazonopensearchserviceDestinationUpdate>,
@@ -2433,6 +2475,10 @@ pub struct UpdateDestinationInput {
     #[doc(hidden)]
     pub http_endpoint_destination_update:
         std::option::Option<crate::model::HttpEndpointDestinationUpdate>,
+    /// <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
+    #[doc(hidden)]
+    pub amazon_open_search_serverless_destination_update:
+        std::option::Option<crate::model::AmazonOpenSearchServerlessDestinationUpdate>,
 }
 impl UpdateDestinationInput {
     /// <p>The name of the delivery stream.</p>
@@ -2470,7 +2516,7 @@ impl UpdateDestinationInput {
     ) -> std::option::Option<&crate::model::ElasticsearchDestinationUpdate> {
         self.elasticsearch_destination_update.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
     pub fn amazonopensearchservice_destination_update(
         &self,
     ) -> std::option::Option<&crate::model::AmazonopensearchserviceDestinationUpdate> {
@@ -2487,6 +2533,13 @@ impl UpdateDestinationInput {
         &self,
     ) -> std::option::Option<&crate::model::HttpEndpointDestinationUpdate> {
         self.http_endpoint_destination_update.as_ref()
+    }
+    /// <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
+    pub fn amazon_open_search_serverless_destination_update(
+        &self,
+    ) -> std::option::Option<&crate::model::AmazonOpenSearchServerlessDestinationUpdate> {
+        self.amazon_open_search_serverless_destination_update
+            .as_ref()
     }
 }
 
@@ -2722,7 +2775,7 @@ pub struct DeleteDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
-    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
     /// <p>The default value is false.</p>
     #[doc(hidden)]
     pub allow_force_delete: std::option::Option<bool>,
@@ -2732,7 +2785,7 @@ impl DeleteDeliveryStreamInput {
     pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
         self.delivery_stream_name.as_deref()
     }
-    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
     /// <p>The default value is false.</p>
     pub fn allow_force_delete(&self) -> std::option::Option<bool> {
         self.allow_force_delete
@@ -2743,7 +2796,7 @@ impl DeleteDeliveryStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeliveryStreamInput {
-    /// <p>The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
+    /// <p>The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
     #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>The delivery stream type. This parameter can be one of the following values:</p>
@@ -2777,7 +2830,7 @@ pub struct CreateDeliveryStreamInput {
     #[doc(hidden)]
     pub elasticsearch_destination_configuration:
         std::option::Option<crate::model::ElasticsearchDestinationConfiguration>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
     #[doc(hidden)]
     pub amazonopensearchservice_destination_configuration:
         std::option::Option<crate::model::AmazonopensearchserviceDestinationConfiguration>,
@@ -2789,13 +2842,17 @@ pub struct CreateDeliveryStreamInput {
     #[doc(hidden)]
     pub http_endpoint_destination_configuration:
         std::option::Option<crate::model::HttpEndpointDestinationConfiguration>,
-    /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+    /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
     /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.</p>
+    #[doc(hidden)]
+    pub amazon_open_search_serverless_destination_configuration:
+        std::option::Option<crate::model::AmazonOpenSearchServerlessDestinationConfiguration>,
 }
 impl CreateDeliveryStreamInput {
-    /// <p>The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
+    /// <p>The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
     pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
         self.delivery_stream_name.as_deref()
     }
@@ -2844,7 +2901,7 @@ impl CreateDeliveryStreamInput {
     ) -> std::option::Option<&crate::model::ElasticsearchDestinationConfiguration> {
         self.elasticsearch_destination_configuration.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
     pub fn amazonopensearchservice_destination_configuration(
         &self,
     ) -> std::option::Option<&crate::model::AmazonopensearchserviceDestinationConfiguration> {
@@ -2863,9 +2920,17 @@ impl CreateDeliveryStreamInput {
     ) -> std::option::Option<&crate::model::HttpEndpointDestinationConfiguration> {
         self.http_endpoint_destination_configuration.as_ref()
     }
-    /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+    /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
     /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+    /// <p>The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.</p>
+    pub fn amazon_open_search_serverless_destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AmazonOpenSearchServerlessDestinationConfiguration>
+    {
+        self.amazon_open_search_serverless_destination_configuration
+            .as_ref()
     }
 }

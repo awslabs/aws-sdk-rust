@@ -212,6 +212,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAssessmentReport::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAssessmentReport::set_name): <p> The name of the new assessment report. </p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateAssessmentReport::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateAssessmentReport::set_description): <p> The description of the assessment report. </p>
     ///   - [`assessment_id(impl Into<String>)`](crate::client::fluent_builders::CreateAssessmentReport::assessment_id) / [`set_assessment_id(Option<String>)`](crate::client::fluent_builders::CreateAssessmentReport::set_assessment_id): <p> The identifier for the assessment. </p>
+    ///   - [`query_statement(impl Into<String>)`](crate::client::fluent_builders::CreateAssessmentReport::query_statement) / [`set_query_statement(Option<String>)`](crate::client::fluent_builders::CreateAssessmentReport::set_query_statement): <p>A SQL statement that represents an evidence finder query.</p>  <p>Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence">added to a report using the console</a>, or <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html">associated with a report using the API</a>. </p>  <p>To use this parameter, the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus">enablementStatus</a> of evidence finder must be <code>ENABLED</code>. </p>  <p> For examples and help resolving <code>queryStatement</code> validation exceptions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting evidence finder issues</a> in the <i>Audit Manager User Guide.</i> </p>
     /// - On success, responds with [`CreateAssessmentReportOutput`](crate::output::CreateAssessmentReportOutput) with field(s):
     ///   - [`assessment_report(Option<AssessmentReport>)`](crate::output::CreateAssessmentReportOutput::assessment_report): <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
     /// - On failure, responds with [`SdkError<CreateAssessmentReportError>`](crate::error::CreateAssessmentReportError)
@@ -412,7 +413,7 @@ impl Client {
     ///   - [`evidence_folder_id(impl Into<String>)`](crate::client::fluent_builders::GetEvidence::evidence_folder_id) / [`set_evidence_folder_id(Option<String>)`](crate::client::fluent_builders::GetEvidence::set_evidence_folder_id): <p> The unique identifier for the folder that the evidence is stored in. </p>
     ///   - [`evidence_id(impl Into<String>)`](crate::client::fluent_builders::GetEvidence::evidence_id) / [`set_evidence_id(Option<String>)`](crate::client::fluent_builders::GetEvidence::set_evidence_id): <p> The unique identifier for the evidence. </p>
     /// - On success, responds with [`GetEvidenceOutput`](crate::output::GetEvidenceOutput) with field(s):
-    ///   - [`evidence(Option<Evidence>)`](crate::output::GetEvidenceOutput::evidence): <p> The evidence that the <code>GetEvidenceResponse</code> API returned. </p>
+    ///   - [`evidence(Option<Evidence>)`](crate::output::GetEvidenceOutput::evidence): <p> The evidence that the <code>GetEvidence</code> API returned. </p>
     /// - On failure, responds with [`SdkError<GetEvidenceError>`](crate::error::GetEvidenceError)
     pub fn get_evidence(&self) -> fluent_builders::GetEvidence {
         fluent_builders::GetEvidence::new(self.handle.clone())
@@ -523,7 +524,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetSettings`](crate::client::fluent_builders::GetSettings) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`attribute(SettingAttribute)`](crate::client::fluent_builders::GetSettings::attribute) / [`set_attribute(Option<SettingAttribute>)`](crate::client::fluent_builders::GetSettings::set_attribute): <p> The list of <code>SettingAttribute</code> enum values. </p>
+    ///   - [`attribute(SettingAttribute)`](crate::client::fluent_builders::GetSettings::attribute) / [`set_attribute(Option<SettingAttribute>)`](crate::client::fluent_builders::GetSettings::set_attribute): <p> The list of setting attribute enum values. </p>
     /// - On success, responds with [`GetSettingsOutput`](crate::output::GetSettingsOutput) with field(s):
     ///   - [`settings(Option<Settings>)`](crate::output::GetSettingsOutput::settings): <p> The settings object that holds all supported Audit Manager settings. </p>
     /// - On failure, responds with [`SdkError<GetSettingsError>`](crate::error::GetSettingsError)
@@ -771,7 +772,7 @@ impl Client {
     ///   - [`assessment_reports_destination(AssessmentReportsDestination)`](crate::client::fluent_builders::UpdateAssessment::assessment_reports_destination) / [`set_assessment_reports_destination(Option<AssessmentReportsDestination>)`](crate::client::fluent_builders::UpdateAssessment::set_assessment_reports_destination): <p> The assessment report storage destination for the assessment that's being updated. </p>
     ///   - [`roles(Vec<Role>)`](crate::client::fluent_builders::UpdateAssessment::roles) / [`set_roles(Option<Vec<Role>>)`](crate::client::fluent_builders::UpdateAssessment::set_roles): <p> The list of roles for the assessment. </p>
     /// - On success, responds with [`UpdateAssessmentOutput`](crate::output::UpdateAssessmentOutput) with field(s):
-    ///   - [`assessment(Option<Assessment>)`](crate::output::UpdateAssessmentOutput::assessment): <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.</p>
+    ///   - [`assessment(Option<Assessment>)`](crate::output::UpdateAssessmentOutput::assessment): <p> The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
     /// - On failure, responds with [`SdkError<UpdateAssessmentError>`](crate::error::UpdateAssessmentError)
     pub fn update_assessment(&self) -> fluent_builders::UpdateAssessment {
         fluent_builders::UpdateAssessment::new(self.handle.clone())
@@ -867,6 +868,8 @@ impl Client {
     ///   - [`default_assessment_reports_destination(AssessmentReportsDestination)`](crate::client::fluent_builders::UpdateSettings::default_assessment_reports_destination) / [`set_default_assessment_reports_destination(Option<AssessmentReportsDestination>)`](crate::client::fluent_builders::UpdateSettings::set_default_assessment_reports_destination): <p> The default storage destination for assessment reports. </p>
     ///   - [`default_process_owners(Vec<Role>)`](crate::client::fluent_builders::UpdateSettings::default_process_owners) / [`set_default_process_owners(Option<Vec<Role>>)`](crate::client::fluent_builders::UpdateSettings::set_default_process_owners): <p> A list of the default audit owners. </p>
     ///   - [`kms_key(impl Into<String>)`](crate::client::fluent_builders::UpdateSettings::kms_key) / [`set_kms_key(Option<String>)`](crate::client::fluent_builders::UpdateSettings::set_kms_key): <p> The KMS key details. </p>
+    ///   - [`evidence_finder_enabled(bool)`](crate::client::fluent_builders::UpdateSettings::evidence_finder_enabled) / [`set_evidence_finder_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateSettings::set_evidence_finder_enabled): <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>   <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>  </important>
+    ///   - [`deregistration_policy(DeregistrationPolicy)`](crate::client::fluent_builders::UpdateSettings::deregistration_policy) / [`set_deregistration_policy(Option<DeregistrationPolicy>)`](crate::client::fluent_builders::UpdateSettings::set_deregistration_policy): <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
     /// - On success, responds with [`UpdateSettingsOutput`](crate::output::UpdateSettingsOutput) with field(s):
     ///   - [`settings(Option<Settings>)`](crate::output::UpdateSettingsOutput::settings): <p> The current list of settings. </p>
     /// - On failure, responds with [`SdkError<UpdateSettingsError>`](crate::error::UpdateSettingsError)
@@ -899,7 +902,7 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `AssociateAssessmentReportEvidenceFolder`.
     ///
-    /// <p> Associates an evidence folder to an assessment report in a Audit Manager assessment. </p>
+    /// <p> Associates an evidence folder to an assessment report in an Audit Manager assessment. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAssessmentReportEvidenceFolder {
         handle: std::sync::Arc<super::Handle>,
@@ -1401,7 +1404,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchImportEvidenceToAssessmentControl`.
     ///
-    /// <p> Uploads one or more pieces of evidence to a control in an Audit Manager assessment. </p>
+    /// <p>Uploads one or more pieces of evidence to a control in an Audit Manager assessment. You can upload manual evidence from any Amazon Simple Storage Service (Amazon S3) bucket by specifying the S3 URI of the evidence. </p>
+    /// <p>You must upload manual evidence to your S3 bucket before you can upload it to your assessment. For instructions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> in the <i>Amazon Simple Storage Service API Reference.</i> </p>
+    /// <p>The following restrictions apply to this action:</p>
+    /// <ul>
+    /// <li> <p>Maximum size of an individual evidence file: 100 MB</p> </li>
+    /// <li> <p>Number of daily manual evidence uploads per control: 100</p> </li>
+    /// <li> <p>Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i> </p> </li>
+    /// </ul>
+    /// <p>For more information about Audit Manager service restrictions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchImportEvidenceToAssessmentControl {
         handle: std::sync::Arc<super::Handle>,
@@ -1912,6 +1923,25 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_assessment_id(input);
+            self
+        }
+        /// <p>A SQL statement that represents an evidence finder query.</p>
+        /// <p>Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence">added to a report using the console</a>, or <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html">associated with a report using the API</a>. </p>
+        /// <p>To use this parameter, the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus">enablementStatus</a> of evidence finder must be <code>ENABLED</code>. </p>
+        /// <p> For examples and help resolving <code>queryStatement</code> validation exceptions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting evidence finder issues</a> in the <i>Audit Manager User Guide.</i> </p>
+        pub fn query_statement(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_statement(input.into());
+            self
+        }
+        /// <p>A SQL statement that represents an evidence finder query.</p>
+        /// <p>Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence">added to a report using the console</a>, or <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html">associated with a report using the API</a>. </p>
+        /// <p>To use this parameter, the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus">enablementStatus</a> of evidence finder must be <code>ENABLED</code>. </p>
+        /// <p> For examples and help resolving <code>queryStatement</code> validation exceptions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting evidence finder issues</a> in the <i>Audit Manager User Guide.</i> </p>
+        pub fn set_query_statement(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_query_statement(input);
             self
         }
     }
@@ -2487,16 +2517,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterAccount`.
     ///
     /// <p> Deregisters an account in Audit Manager. </p> <note>
-    /// <p>When you deregister your account from Audit Manager, your data isn’t deleted. If you want to delete your resource data, you must perform that task separately before you deregister your account. Either, you can do this in the Audit Manager console. Or, you can use one of the delete API operations that are provided by Audit Manager. </p>
-    /// <p>To delete your Audit Manager resource data, see the following instructions: </p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessment.html">DeleteAssessment</a> (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-assessment.html">Deleting an assessment</a> in the <i>Audit Manager User Guide</i>)</p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFramework.html">DeleteAssessmentFramework</a> (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-custom-framework.html">Deleting a custom framework</a> in the <i>Audit Manager User Guide</i>)</p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFrameworkShare.html">DeleteAssessmentFrameworkShare</a> (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/deleting-shared-framework-requests.html">Deleting a share request</a> in the <i>Audit Manager User Guide</i>)</p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentReport.html">DeleteAssessmentReport</a> (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#delete-assessment-report-steps">Deleting an assessment report</a> in the <i>Audit Manager User Guide</i>)</p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteControl.html">DeleteControl</a> (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-controls.html">Deleting a custom control</a> in the <i>Audit Manager User Guide</i>)</p> </li>
-    /// </ul>
-    /// <p>At this time, Audit Manager doesn't provide an option to delete evidence. All available delete operations are listed above.</p>
+    /// <p>Before you deregister, you can use the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateSettings.html">UpdateSettings</a> API operation to set your preferred data retention policy. By default, Audit Manager retains your data. If you want to delete your data, you can use the <code>DeregistrationPolicy</code> attribute to request the deletion of your data. </p>
+    /// <p>For more information about data retention, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/data-protection.html">Data Protection</a> in the <i>Audit Manager User Guide</i>. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterAccount {
@@ -2560,9 +2582,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterOrganizationAdminAccount`.
     ///
-    /// <p>Removes the specified Amazon Web Services account as a delegated administrator for Audit Manager. </p> <important>
-    /// <p>When you remove a delegated administrator from your Audit Manager settings, you continue to have access to the evidence that you previously collected under that account. This is also the case when you deregister a delegated administrator from Organizations. However, Audit Manager will stop collecting and attaching evidence to that delegated administrator account moving forward.</p>
-    /// </important> <note>
+    /// <p>Removes the specified Amazon Web Services account as a delegated administrator for Audit Manager. </p>
+    /// <p>When you remove a delegated administrator from your Audit Manager settings, you continue to have access to the evidence that you previously collected under that account. This is also the case when you deregister a delegated administrator from Organizations. However, Audit Manager stops collecting and attaching evidence to that delegated administrator account moving forward.</p> <important>
+    /// <p>Keep in mind the following cleanup task if you use evidence finder:</p>
+    /// <p>Before you use your management account to remove a delegated administrator, make sure that the current delegated administrator account signs in to Audit Manager and disables evidence finder first. Disabling evidence finder automatically deletes the event data store that was created in their account when they enabled evidence finder. If this task isn’t completed, the event data store remains in their account. In this case, we recommend that the original delegated administrator goes to CloudTrail Lake and manually <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-eds-disable-termination.html">deletes the event data store</a>.</p>
+    /// <p>This cleanup task is necessary to ensure that you don't end up with multiple event data stores. Audit Manager ignores an unused event data store after you remove or change a delegated administrator account. However, the unused event data store continues to incur storage costs from CloudTrail Lake if you don't delete it.</p>
+    /// </important>
     /// <p>When you deregister a delegated administrator account for Audit Manager, the data for that account isn’t deleted. If you want to delete resource data for a delegated administrator account, you must perform that task separately before you deregister the account. Either, you can do this in the Audit Manager console. Or, you can use one of the delete API operations that are provided by Audit Manager. </p>
     /// <p>To delete your Audit Manager resource data, see the following instructions: </p>
     /// <ul>
@@ -2572,8 +2597,7 @@ pub mod fluent_builders {
     /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentReport.html">DeleteAssessmentReport</a> (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#delete-assessment-report-steps">Deleting an assessment report</a> in the <i>Audit Manager User Guide</i>)</p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteControl.html">DeleteControl</a> (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-controls.html">Deleting a custom control</a> in the <i>Audit Manager User Guide</i>)</p> </li>
     /// </ul>
-    /// <p>At this time, Audit Manager doesn't provide an option to delete evidence. All available delete operations are listed above.</p>
-    /// </note>
+    /// <p>At this time, Audit Manager doesn't provide an option to delete evidence for a specific delegated administrator. Instead, when your management account deregisters Audit Manager, we perform a cleanup for the current delegated administrator account at the time of deregistration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterOrganizationAdminAccount {
         handle: std::sync::Arc<super::Handle>,
@@ -3778,7 +3802,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEvidenceFoldersByAssessmentControl`.
     ///
-    /// <p> Returns a list of evidence folders that are associated with a specified control of an assessment in Audit Manager. </p>
+    /// <p> Returns a list of evidence folders that are associated with a specified control in an Audit Manager assessment. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvidenceFoldersByAssessmentControl {
         handle: std::sync::Arc<super::Handle>,
@@ -4114,7 +4138,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetServicesInScope`.
     ///
-    /// <p> Returns a list of the in-scope Amazon Web Services for the specified assessment. </p>
+    /// <p>Returns a list of all of the Amazon Web Services that you can choose to include in your assessment. When you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html">create an assessment</a>, specify which of these services you want to include to narrow the assessment's <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Scope.html">scope</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServicesInScope {
         handle: std::sync::Arc<super::Handle>,
@@ -4237,12 +4261,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The list of <code>SettingAttribute</code> enum values. </p>
+        /// <p> The list of setting attribute enum values. </p>
         pub fn attribute(mut self, input: crate::model::SettingAttribute) -> Self {
             self.inner = self.inner.attribute(input);
             self
         }
-        /// <p> The list of <code>SettingAttribute</code> enum values. </p>
+        /// <p> The list of setting attribute enum values. </p>
         pub fn set_attribute(
             mut self,
             input: std::option::Option<crate::model::SettingAttribute>,
@@ -6891,6 +6915,33 @@ pub mod fluent_builders {
         /// <p> The KMS key details. </p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key(input);
+            self
+        }
+        /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+        /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>
+        /// </important>
+        pub fn evidence_finder_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.evidence_finder_enabled(input);
+            self
+        }
+        /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+        /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>
+        /// </important>
+        pub fn set_evidence_finder_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_evidence_finder_enabled(input);
+            self
+        }
+        /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
+        pub fn deregistration_policy(mut self, input: crate::model::DeregistrationPolicy) -> Self {
+            self.inner = self.inner.deregistration_policy(input);
+            self
+        }
+        /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
+        pub fn set_deregistration_policy(
+            mut self,
+            input: std::option::Option<crate::model::DeregistrationPolicy>,
+        ) -> Self {
+            self.inner = self.inner.set_deregistration_policy(input);
             self
         }
     }

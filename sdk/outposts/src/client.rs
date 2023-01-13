@@ -94,7 +94,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CancelOrder`](crate::client::fluent_builders::CancelOrder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`order_id(impl Into<String>)`](crate::client::fluent_builders::CancelOrder::order_id) / [`set_order_id(Option<String>)`](crate::client::fluent_builders::CancelOrder::set_order_id): <p> The ID of the order to cancel. </p>
+    ///   - [`order_id(impl Into<String>)`](crate::client::fluent_builders::CancelOrder::order_id) / [`set_order_id(Option<String>)`](crate::client::fluent_builders::CancelOrder::set_order_id): <p> The ID of the order. </p>
     /// - On success, responds with [`CancelOrderOutput`](crate::output::CancelOrderOutput)
 
     /// - On failure, responds with [`SdkError<CancelOrderError>`](crate::error::CancelOrderError)
@@ -106,8 +106,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`outpost_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateOrder::outpost_identifier) / [`set_outpost_identifier(Option<String>)`](crate::client::fluent_builders::CreateOrder::set_outpost_identifier): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     ///   - [`line_items(Vec<LineItemRequest>)`](crate::client::fluent_builders::CreateOrder::line_items) / [`set_line_items(Option<Vec<LineItemRequest>>)`](crate::client::fluent_builders::CreateOrder::set_line_items): <p>The line items that make up the order.</p>
-    ///   - [`payment_option(PaymentOption)`](crate::client::fluent_builders::CreateOrder::payment_option) / [`set_payment_option(Option<PaymentOption>)`](crate::client::fluent_builders::CreateOrder::set_payment_option): <p>The payment option for the order.</p>
-    ///   - [`payment_term(PaymentTerm)`](crate::client::fluent_builders::CreateOrder::payment_term) / [`set_payment_term(Option<PaymentTerm>)`](crate::client::fluent_builders::CreateOrder::set_payment_term): <p>The payment terms for the order.</p>
+    ///   - [`payment_option(PaymentOption)`](crate::client::fluent_builders::CreateOrder::payment_option) / [`set_payment_option(Option<PaymentOption>)`](crate::client::fluent_builders::CreateOrder::set_payment_option): <p>The payment option.</p>
+    ///   - [`payment_term(PaymentTerm)`](crate::client::fluent_builders::CreateOrder::payment_term) / [`set_payment_term(Option<PaymentTerm>)`](crate::client::fluent_builders::CreateOrder::set_payment_term): <p>The payment terms.</p>
     /// - On success, responds with [`CreateOrderOutput`](crate::output::CreateOrderOutput) with field(s):
     ///   - [`order(Option<Order>)`](crate::output::CreateOrderOutput::order): <p>Information about this order.</p>
     /// - On failure, responds with [`SdkError<CreateOrderError>`](crate::error::CreateOrderError)
@@ -119,7 +119,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateOutpost::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateOutpost::set_name): <p>The name of the Outpost.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateOutpost::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateOutpost::set_description): <p>The description of the Outpost.</p>
-    ///   - [`site_id(impl Into<String>)`](crate::client::fluent_builders::CreateOutpost::site_id) / [`set_site_id(Option<String>)`](crate::client::fluent_builders::CreateOutpost::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>   <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>  </note>
+    ///   - [`site_id(impl Into<String>)`](crate::client::fluent_builders::CreateOutpost::site_id) / [`set_site_id(Option<String>)`](crate::client::fluent_builders::CreateOutpost::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateOutpost::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateOutpost::set_availability_zone): <p>The Availability Zone.</p>
     ///   - [`availability_zone_id(impl Into<String>)`](crate::client::fluent_builders::CreateOutpost::availability_zone_id) / [`set_availability_zone_id(Option<String>)`](crate::client::fluent_builders::CreateOutpost::set_availability_zone_id): <p>The ID of the Availability Zone.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateOutpost::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateOutpost::set_tags): <p>The tags to apply to the Outpost.</p>
@@ -149,7 +149,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteOutpost`](crate::client::fluent_builders::DeleteOutpost) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::DeleteOutpost::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::DeleteOutpost::set_outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>   <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>  </note>
+    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::DeleteOutpost::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::DeleteOutpost::set_outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     /// - On success, responds with [`DeleteOutpostOutput`](crate::output::DeleteOutpostOutput)
 
     /// - On failure, responds with [`SdkError<DeleteOutpostError>`](crate::error::DeleteOutpostError)
@@ -159,7 +159,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteSite`](crate::client::fluent_builders::DeleteSite) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`site_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSite::site_id) / [`set_site_id(Option<String>)`](crate::client::fluent_builders::DeleteSite::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>   <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>  </note>
+    ///   - [`site_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSite::site_id) / [`set_site_id(Option<String>)`](crate::client::fluent_builders::DeleteSite::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     /// - On success, responds with [`DeleteSiteOutput`](crate::output::DeleteSiteOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSiteError>`](crate::error::DeleteSiteError)
@@ -179,10 +179,10 @@ impl Client {
     /// Constructs a fluent builder for the [`GetConnection`](crate::client::fluent_builders::GetConnection) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connection_id(impl Into<String>)`](crate::client::fluent_builders::GetConnection::connection_id) / [`set_connection_id(Option<String>)`](crate::client::fluent_builders::GetConnection::set_connection_id): <p> The ID of the connection you request. </p>
+    ///   - [`connection_id(impl Into<String>)`](crate::client::fluent_builders::GetConnection::connection_id) / [`set_connection_id(Option<String>)`](crate::client::fluent_builders::GetConnection::set_connection_id): <p> The ID of the connection. </p>
     /// - On success, responds with [`GetConnectionOutput`](crate::output::GetConnectionOutput) with field(s):
-    ///   - [`connection_id(Option<String>)`](crate::output::GetConnectionOutput::connection_id): <p> The ID of the connection you receive. </p>
-    ///   - [`connection_details(Option<ConnectionDetails>)`](crate::output::GetConnectionOutput::connection_details): <p> Information about a connection. </p>
+    ///   - [`connection_id(Option<String>)`](crate::output::GetConnectionOutput::connection_id): <p> The ID of the connection. </p>
+    ///   - [`connection_details(Option<ConnectionDetails>)`](crate::output::GetConnectionOutput::connection_details): <p> Information about the connection. </p>
     /// - On failure, responds with [`SdkError<GetConnectionError>`](crate::error::GetConnectionError)
     pub fn get_connection(&self) -> fluent_builders::GetConnection {
         fluent_builders::GetConnection::new(self.handle.clone())
@@ -200,7 +200,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetOutpost`](crate::client::fluent_builders::GetOutpost) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::GetOutpost::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::GetOutpost::set_outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>   <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>  </note>
+    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::GetOutpost::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::GetOutpost::set_outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     /// - On success, responds with [`GetOutpostOutput`](crate::output::GetOutpostOutput) with field(s):
     ///   - [`outpost(Option<Outpost>)`](crate::output::GetOutpostOutput::outpost): <p>Information about an Outpost.</p>
     /// - On failure, responds with [`SdkError<GetOutpostError>`](crate::error::GetOutpostError)
@@ -211,13 +211,13 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetOutpostInstanceTypes::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::GetOutpostInstanceTypes::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::GetOutpostInstanceTypes::set_outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>   <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>  </note>
+    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::GetOutpostInstanceTypes::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::GetOutpostInstanceTypes::set_outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetOutpostInstanceTypes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetOutpostInstanceTypes::set_next_token): <p>The pagination token.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::GetOutpostInstanceTypes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetOutpostInstanceTypes::set_max_results): <p>The maximum page size.</p>
     /// - On success, responds with [`GetOutpostInstanceTypesOutput`](crate::output::GetOutpostInstanceTypesOutput) with field(s):
     ///   - [`instance_types(Option<Vec<InstanceTypeItem>>)`](crate::output::GetOutpostInstanceTypesOutput::instance_types): <p>Information about the instance types.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetOutpostInstanceTypesOutput::next_token): <p>The pagination token.</p>
-    ///   - [`outpost_id(Option<String>)`](crate::output::GetOutpostInstanceTypesOutput::outpost_id): <p> The ID of the Outpost. </p> <note>   <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>  </note>
+    ///   - [`outpost_id(Option<String>)`](crate::output::GetOutpostInstanceTypesOutput::outpost_id): <p> The ID of the Outpost. </p>
     ///   - [`outpost_arn(Option<String>)`](crate::output::GetOutpostInstanceTypesOutput::outpost_arn): <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     /// - On failure, responds with [`SdkError<GetOutpostInstanceTypesError>`](crate::error::GetOutpostInstanceTypesError)
     pub fn get_outpost_instance_types(&self) -> fluent_builders::GetOutpostInstanceTypes {
@@ -226,7 +226,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetSite`](crate::client::fluent_builders::GetSite) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`site_id(impl Into<String>)`](crate::client::fluent_builders::GetSite::site_id) / [`set_site_id(Option<String>)`](crate::client::fluent_builders::GetSite::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>   <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>  </note>
+    ///   - [`site_id(impl Into<String>)`](crate::client::fluent_builders::GetSite::site_id) / [`set_site_id(Option<String>)`](crate::client::fluent_builders::GetSite::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     /// - On success, responds with [`GetSiteOutput`](crate::output::GetSiteOutput) with field(s):
     ///   - [`site(Option<Site>)`](crate::output::GetSiteOutput::site): <p>Information about a site.</p>
     /// - On failure, responds with [`SdkError<GetSiteError>`](crate::error::GetSiteError)
@@ -236,11 +236,11 @@ impl Client {
     /// Constructs a fluent builder for the [`GetSiteAddress`](crate::client::fluent_builders::GetSiteAddress) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`site_id(impl Into<String>)`](crate::client::fluent_builders::GetSiteAddress::site_id) / [`set_site_id(Option<String>)`](crate::client::fluent_builders::GetSiteAddress::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>   <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>  </note>
-    ///   - [`address_type(AddressType)`](crate::client::fluent_builders::GetSiteAddress::address_type) / [`set_address_type(Option<AddressType>)`](crate::client::fluent_builders::GetSiteAddress::set_address_type): <p> The type of the address you request. </p>
+    ///   - [`site_id(impl Into<String>)`](crate::client::fluent_builders::GetSiteAddress::site_id) / [`set_site_id(Option<String>)`](crate::client::fluent_builders::GetSiteAddress::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    ///   - [`address_type(AddressType)`](crate::client::fluent_builders::GetSiteAddress::address_type) / [`set_address_type(Option<AddressType>)`](crate::client::fluent_builders::GetSiteAddress::set_address_type): <p>The type of the address you request. </p>
     /// - On success, responds with [`GetSiteAddressOutput`](crate::output::GetSiteAddressOutput) with field(s):
-    ///   - [`site_id(Option<String>)`](crate::output::GetSiteAddressOutput::site_id): <p> The ID of the site. </p>
-    ///   - [`address_type(Option<AddressType>)`](crate::output::GetSiteAddressOutput::address_type): <p> The type of the address you receive. </p>
+    ///   - [`site_id(Option<String>)`](crate::output::GetSiteAddressOutput::site_id): <p>The ID of the site.</p>
+    ///   - [`address_type(Option<AddressType>)`](crate::output::GetSiteAddressOutput::address_type): <p>The type of the address you receive. </p>
     ///   - [`address(Option<Address>)`](crate::output::GetSiteAddressOutput::address): <p> Information about the address. </p>
     /// - On failure, responds with [`SdkError<GetSiteAddressError>`](crate::error::GetSiteAddressError)
     pub fn get_site_address(&self) -> fluent_builders::GetSiteAddress {
@@ -251,11 +251,12 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`outpost_identifier(impl Into<String>)`](crate::client::fluent_builders::ListAssets::outpost_identifier) / [`set_outpost_identifier(Option<String>)`](crate::client::fluent_builders::ListAssets::set_outpost_identifier): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-    ///   - [`host_id_filter(Vec<String>)`](crate::client::fluent_builders::ListAssets::host_id_filter) / [`set_host_id_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListAssets::set_host_id_filter): <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    ///   - [`host_id_filter(Vec<String>)`](crate::client::fluent_builders::ListAssets::host_id_filter) / [`set_host_id_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListAssets::set_host_id_filter): <p>Filters the results by the host ID of a Dedicated Host.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssets::set_max_results): <p>The maximum page size.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssets::set_next_token): <p>The pagination token.</p>
+    ///   - [`status_filter(Vec<AssetState>)`](crate::client::fluent_builders::ListAssets::status_filter) / [`set_status_filter(Option<Vec<AssetState>>)`](crate::client::fluent_builders::ListAssets::set_status_filter): <p>Filters the results by state.</p>
     /// - On success, responds with [`ListAssetsOutput`](crate::output::ListAssetsOutput) with field(s):
-    ///   - [`assets(Option<Vec<AssetInfo>>)`](crate::output::ListAssetsOutput::assets): <p> Information about hardware assets. </p>
+    ///   - [`assets(Option<Vec<AssetInfo>>)`](crate::output::ListAssetsOutput::assets): <p>Information about the hardware assets.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssetsOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListAssetsError>`](crate::error::ListAssetsError)
     pub fn list_assets(&self) -> fluent_builders::ListAssets {
@@ -267,9 +268,9 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCatalogItems::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCatalogItems::set_next_token): <p>The pagination token.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCatalogItems::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCatalogItems::set_max_results): <p>The maximum page size.</p>
-    ///   - [`item_class_filter(Vec<CatalogItemClass>)`](crate::client::fluent_builders::ListCatalogItems::item_class_filter) / [`set_item_class_filter(Option<Vec<CatalogItemClass>>)`](crate::client::fluent_builders::ListCatalogItems::set_item_class_filter): <p> A filter for the class of items in the catalog. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    ///   - [`supported_storage_filter(Vec<SupportedStorageEnum>)`](crate::client::fluent_builders::ListCatalogItems::supported_storage_filter) / [`set_supported_storage_filter(Option<Vec<SupportedStorageEnum>>)`](crate::client::fluent_builders::ListCatalogItems::set_supported_storage_filter): <p> A filter for the storage options of items in the catalog. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    ///   - [`ec2_family_filter(Vec<String>)`](crate::client::fluent_builders::ListCatalogItems::ec2_family_filter) / [`set_ec2_family_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListCatalogItems::set_ec2_family_filter): <p> A filter for EC2 family options for items in the catalog. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    ///   - [`item_class_filter(Vec<CatalogItemClass>)`](crate::client::fluent_builders::ListCatalogItems::item_class_filter) / [`set_item_class_filter(Option<Vec<CatalogItemClass>>)`](crate::client::fluent_builders::ListCatalogItems::set_item_class_filter): <p>Filters the results by item class.</p>
+    ///   - [`supported_storage_filter(Vec<SupportedStorageEnum>)`](crate::client::fluent_builders::ListCatalogItems::supported_storage_filter) / [`set_supported_storage_filter(Option<Vec<SupportedStorageEnum>>)`](crate::client::fluent_builders::ListCatalogItems::set_supported_storage_filter): <p>Filters the results by storage option.</p>
+    ///   - [`ec2_family_filter(Vec<String>)`](crate::client::fluent_builders::ListCatalogItems::ec2_family_filter) / [`set_ec2_family_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListCatalogItems::set_ec2_family_filter): <p>Filters the results by EC2 family (for example, M5).</p>
     /// - On success, responds with [`ListCatalogItemsOutput`](crate::output::ListCatalogItemsOutput) with field(s):
     ///   - [`catalog_items(Option<Vec<CatalogItem>>)`](crate::output::ListCatalogItemsOutput::catalog_items): <p>Information about the catalog items.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListCatalogItemsOutput::next_token): <p>The pagination token.</p>
@@ -297,9 +298,9 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOutposts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOutposts::set_next_token): <p>The pagination token.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOutposts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListOutposts::set_max_results): <p>The maximum page size.</p>
-    ///   - [`life_cycle_status_filter(Vec<String>)`](crate::client::fluent_builders::ListOutposts::life_cycle_status_filter) / [`set_life_cycle_status_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListOutposts::set_life_cycle_status_filter): <p> A filter for the lifecycle status of the Outpost. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    ///   - [`availability_zone_filter(Vec<String>)`](crate::client::fluent_builders::ListOutposts::availability_zone_filter) / [`set_availability_zone_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListOutposts::set_availability_zone_filter): <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    ///   - [`availability_zone_id_filter(Vec<String>)`](crate::client::fluent_builders::ListOutposts::availability_zone_id_filter) / [`set_availability_zone_id_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListOutposts::set_availability_zone_id_filter): <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    ///   - [`life_cycle_status_filter(Vec<String>)`](crate::client::fluent_builders::ListOutposts::life_cycle_status_filter) / [`set_life_cycle_status_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListOutposts::set_life_cycle_status_filter): <p>Filters the results by the lifecycle status.</p>
+    ///   - [`availability_zone_filter(Vec<String>)`](crate::client::fluent_builders::ListOutposts::availability_zone_filter) / [`set_availability_zone_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListOutposts::set_availability_zone_filter): <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
+    ///   - [`availability_zone_id_filter(Vec<String>)`](crate::client::fluent_builders::ListOutposts::availability_zone_id_filter) / [`set_availability_zone_id_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListOutposts::set_availability_zone_id_filter): <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
     /// - On success, responds with [`ListOutpostsOutput`](crate::output::ListOutpostsOutput) with field(s):
     ///   - [`outposts(Option<Vec<Outpost>>)`](crate::output::ListOutpostsOutput::outposts): <p>Information about the Outposts.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListOutpostsOutput::next_token): <p>The pagination token.</p>
@@ -313,9 +314,9 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSites::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSites::set_next_token): <p>The pagination token.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSites::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSites::set_max_results): <p>The maximum page size.</p>
-    ///   - [`operating_address_country_code_filter(Vec<String>)`](crate::client::fluent_builders::ListSites::operating_address_country_code_filter) / [`set_operating_address_country_code_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListSites::set_operating_address_country_code_filter): <p> A filter for the country code of the Outpost site. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    ///   - [`operating_address_state_or_region_filter(Vec<String>)`](crate::client::fluent_builders::ListSites::operating_address_state_or_region_filter) / [`set_operating_address_state_or_region_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListSites::set_operating_address_state_or_region_filter): <p> A filter for the state/region of the Outpost site. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    ///   - [`operating_address_city_filter(Vec<String>)`](crate::client::fluent_builders::ListSites::operating_address_city_filter) / [`set_operating_address_city_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListSites::set_operating_address_city_filter): <p> A filter for the city of the Outpost site. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    ///   - [`operating_address_country_code_filter(Vec<String>)`](crate::client::fluent_builders::ListSites::operating_address_country_code_filter) / [`set_operating_address_country_code_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListSites::set_operating_address_country_code_filter): <p>Filters the results by country code.</p>
+    ///   - [`operating_address_state_or_region_filter(Vec<String>)`](crate::client::fluent_builders::ListSites::operating_address_state_or_region_filter) / [`set_operating_address_state_or_region_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListSites::set_operating_address_state_or_region_filter): <p>Filters the results by state or region.</p>
+    ///   - [`operating_address_city_filter(Vec<String>)`](crate::client::fluent_builders::ListSites::operating_address_city_filter) / [`set_operating_address_city_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListSites::set_operating_address_city_filter): <p>Filters the results by city.</p>
     /// - On success, responds with [`ListSitesOutput`](crate::output::ListSitesOutput) with field(s):
     ///   - [`sites(Option<Vec<Site>>)`](crate::output::ListSitesOutput::sites): <p>Information about the sites.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSitesOutput::next_token): <p>The pagination token.</p>
@@ -372,7 +373,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateOutpost`](crate::client::fluent_builders::UpdateOutpost) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::UpdateOutpost::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::UpdateOutpost::set_outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>   <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>  </note>
+    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::UpdateOutpost::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::UpdateOutpost::set_outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateOutpost::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateOutpost::set_name): <p>The name of the Outpost.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateOutpost::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateOutpost::set_description): <p>The description of the Outpost.</p>
     ///   - [`supported_hardware_type(SupportedHardwareType)`](crate::client::fluent_builders::UpdateOutpost::supported_hardware_type) / [`set_supported_hardware_type(Option<SupportedHardwareType>)`](crate::client::fluent_builders::UpdateOutpost::set_supported_hardware_type): <p> The type of hardware for this Outpost. </p>
@@ -385,10 +386,10 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateSite`](crate::client::fluent_builders::UpdateSite) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`site_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSite::site_id) / [`set_site_id(Option<String>)`](crate::client::fluent_builders::UpdateSite::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>   <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>  </note>
+    ///   - [`site_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSite::site_id) / [`set_site_id(Option<String>)`](crate::client::fluent_builders::UpdateSite::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateSite::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateSite::set_name): <p>The name of the site.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSite::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSite::set_description): <p>The description of the site.</p>
-    ///   - [`notes(impl Into<String>)`](crate::client::fluent_builders::UpdateSite::notes) / [`set_notes(Option<String>)`](crate::client::fluent_builders::UpdateSite::set_notes): <p> Notes about a site. </p>
+    ///   - [`notes(impl Into<String>)`](crate::client::fluent_builders::UpdateSite::notes) / [`set_notes(Option<String>)`](crate::client::fluent_builders::UpdateSite::set_notes): <p>Notes about a site.</p>
     /// - On success, responds with [`UpdateSiteOutput`](crate::output::UpdateSiteOutput) with field(s):
     ///   - [`site(Option<Site>)`](crate::output::UpdateSiteOutput::site): <p>Information about a site.</p>
     /// - On failure, responds with [`SdkError<UpdateSiteError>`](crate::error::UpdateSiteError)
@@ -398,7 +399,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateSiteAddress`](crate::client::fluent_builders::UpdateSiteAddress) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`site_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSiteAddress::site_id) / [`set_site_id(Option<String>)`](crate::client::fluent_builders::UpdateSiteAddress::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>   <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>  </note>
+    ///   - [`site_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSiteAddress::site_id) / [`set_site_id(Option<String>)`](crate::client::fluent_builders::UpdateSiteAddress::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     ///   - [`address_type(AddressType)`](crate::client::fluent_builders::UpdateSiteAddress::address_type) / [`set_address_type(Option<AddressType>)`](crate::client::fluent_builders::UpdateSiteAddress::set_address_type): <p> The type of the address. </p>
     ///   - [`address(Address)`](crate::client::fluent_builders::UpdateSiteAddress::address) / [`set_address(Option<Address>)`](crate::client::fluent_builders::UpdateSiteAddress::set_address): <p> The address for the site. </p>
     /// - On success, responds with [`UpdateSiteAddressOutput`](crate::output::UpdateSiteAddressOutput) with field(s):
@@ -411,16 +412,16 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateSiteRackPhysicalProperties`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`site_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::site_id) / [`set_site_id(Option<String>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>   <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>  </note>
-    ///   - [`power_draw_kva(PowerDrawKva)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::power_draw_kva) / [`set_power_draw_kva(Option<PowerDrawKva>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_power_draw_kva): <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
-    ///   - [`power_phase(PowerPhase)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::power_phase) / [`set_power_phase(Option<PowerPhase>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_power_phase): <p> Specify the power option that you can provide for hardware. </p>  <ul>   <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>   <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>  </ul>
-    ///   - [`power_connector(PowerConnector)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::power_connector) / [`set_power_connector(Option<PowerConnector>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_power_connector): <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>  <ul>   <li> <p>Single-phase AC feed</p>    <ul>     <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li>     <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li>    </ul> </li>   <li> <p>Three-phase AC feed</p>    <ul>     <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li>     <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>    </ul> </li>  </ul>
-    ///   - [`power_feed_drop(PowerFeedDrop)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::power_feed_drop) / [`set_power_feed_drop(Option<PowerFeedDrop>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_power_feed_drop): <p> Specify whether the power feed comes above or below the rack. </p>
-    ///   - [`uplink_gbps(UplinkGbps)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::uplink_gbps) / [`set_uplink_gbps(Option<UplinkGbps>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_uplink_gbps): <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
+    ///   - [`site_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::site_id) / [`set_site_id(Option<String>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    ///   - [`power_draw_kva(PowerDrawKva)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::power_draw_kva) / [`set_power_draw_kva(Option<PowerDrawKva>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_power_draw_kva): <p>The power draw, in kVA, available at the hardware placement position for the rack.</p>
+    ///   - [`power_phase(PowerPhase)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::power_phase) / [`set_power_phase(Option<PowerPhase>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_power_phase): <p>The power option that you can provide for hardware. </p>  <ul>   <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>   <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>  </ul>
+    ///   - [`power_connector(PowerConnector)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::power_connector) / [`set_power_connector(Option<PowerConnector>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_power_connector): <p>The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>  <ul>   <li> <p>Single-phase AC feed</p>    <ul>     <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li>     <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li>    </ul> </li>   <li> <p>Three-phase AC feed</p>    <ul>     <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li>     <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>    </ul> </li>  </ul>
+    ///   - [`power_feed_drop(PowerFeedDrop)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::power_feed_drop) / [`set_power_feed_drop(Option<PowerFeedDrop>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_power_feed_drop): <p>Indicates whether the power feed comes above or below the rack. </p>
+    ///   - [`uplink_gbps(UplinkGbps)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::uplink_gbps) / [`set_uplink_gbps(Option<UplinkGbps>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_uplink_gbps): <p>The uplink speed the rack should support for the connection to the Region. </p>
     ///   - [`uplink_count(UplinkCount)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::uplink_count) / [`set_uplink_count(Option<UplinkCount>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_uplink_count): <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>  <ul>   <li> <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p> </li>   <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>   <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>  </ul>
-    ///   - [`fiber_optic_cable_type(FiberOpticCableType)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::fiber_optic_cable_type) / [`set_fiber_optic_cable_type(Option<FiberOpticCableType>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_fiber_optic_cable_type): <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
-    ///   - [`optical_standard(OpticalStandard)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::optical_standard) / [`set_optical_standard(Option<OpticalStandard>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_optical_standard): <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>  <ul>   <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>   <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>   <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li>   <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li>   <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li>   <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li>   <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li>   <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li>   <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li>   <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li>   <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li>   <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>   <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>  </ul>
-    ///   - [`maximum_supported_weight_lbs(MaximumSupportedWeightLbs)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::maximum_supported_weight_lbs) / [`set_maximum_supported_weight_lbs(Option<MaximumSupportedWeightLbs>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_maximum_supported_weight_lbs): <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
+    ///   - [`fiber_optic_cable_type(FiberOpticCableType)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::fiber_optic_cable_type) / [`set_fiber_optic_cable_type(Option<FiberOpticCableType>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_fiber_optic_cable_type): <p>The type of fiber that you will use to attach the Outpost to your network. </p>
+    ///   - [`optical_standard(OpticalStandard)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::optical_standard) / [`set_optical_standard(Option<OpticalStandard>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_optical_standard): <p>The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>  <ul>   <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>   <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>   <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li>   <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li>   <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li>   <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li>   <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li>   <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li>   <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li>   <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li>   <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li>   <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>   <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>  </ul>
+    ///   - [`maximum_supported_weight_lbs(MaximumSupportedWeightLbs)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::maximum_supported_weight_lbs) / [`set_maximum_supported_weight_lbs(Option<MaximumSupportedWeightLbs>)`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties::set_maximum_supported_weight_lbs): <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
     /// - On success, responds with [`UpdateSiteRackPhysicalPropertiesOutput`](crate::output::UpdateSiteRackPhysicalPropertiesOutput) with field(s):
     ///   - [`site(Option<Site>)`](crate::output::UpdateSiteRackPhysicalPropertiesOutput::site): <p>Information about a site.</p>
     /// - On failure, responds with [`SdkError<UpdateSiteRackPhysicalPropertiesError>`](crate::error::UpdateSiteRackPhysicalPropertiesError)
@@ -439,7 +440,7 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `CancelOrder`.
     ///
-    /// <p> Cancels an order for an Outpost. </p>
+    /// <p>Cancels the specified order for an Outpost.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelOrder {
         handle: std::sync::Arc<super::Handle>,
@@ -499,12 +500,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The ID of the order to cancel. </p>
+        /// <p> The ID of the order. </p>
         pub fn order_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.order_id(input.into());
             self
         }
-        /// <p> The ID of the order to cancel. </p>
+        /// <p> The ID of the order. </p>
         pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_order_id(input);
             self
@@ -602,12 +603,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_line_items(input);
             self
         }
-        /// <p>The payment option for the order.</p>
+        /// <p>The payment option.</p>
         pub fn payment_option(mut self, input: crate::model::PaymentOption) -> Self {
             self.inner = self.inner.payment_option(input);
             self
         }
-        /// <p>The payment option for the order.</p>
+        /// <p>The payment option.</p>
         pub fn set_payment_option(
             mut self,
             input: std::option::Option<crate::model::PaymentOption>,
@@ -615,12 +616,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_payment_option(input);
             self
         }
-        /// <p>The payment terms for the order.</p>
+        /// <p>The payment terms.</p>
         pub fn payment_term(mut self, input: crate::model::PaymentTerm) -> Self {
             self.inner = self.inner.payment_term(input);
             self
         }
-        /// <p>The payment terms for the order.</p>
+        /// <p>The payment terms.</p>
         pub fn set_payment_term(
             mut self,
             input: std::option::Option<crate::model::PaymentTerm>,
@@ -632,7 +633,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateOutpost`.
     ///
     /// <p>Creates an Outpost.</p>
-    /// <p>You can specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
+    /// <p>You can specify either an Availability one or an AZ ID.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOutpost {
         handle: std::sync::Arc<super::Handle>,
@@ -712,16 +713,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.site_id(input.into());
             self
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_site_id(input);
             self
@@ -952,7 +949,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteOutpost`.
     ///
-    /// <p>Deletes the Outpost.</p>
+    /// <p>Deletes the specified Outpost.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOutpost {
         handle: std::sync::Arc<super::Handle>,
@@ -1012,16 +1009,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(input.into());
             self
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_outpost_id(input);
             self
@@ -1029,7 +1022,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSite`.
     ///
-    /// <p>Deletes the site.</p>
+    /// <p>Deletes the specified site.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSite {
         handle: std::sync::Arc<super::Handle>,
@@ -1089,16 +1082,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.site_id(input.into());
             self
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_site_id(input);
             self
@@ -1106,7 +1095,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCatalogItem`.
     ///
-    /// <p>Gets information about a catalog item.</p>
+    /// <p>Gets information about the specified catalog item.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCatalogItem {
         handle: std::sync::Arc<super::Handle>,
@@ -1185,7 +1174,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p> Amazon Web Services uses this action to install Outpost servers.</p>
     /// </note>
-    /// <p> Gets information about a specified connection. </p>
+    /// <p> Gets information about the specified connection. </p>
     /// <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnection {
@@ -1246,12 +1235,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The ID of the connection you request. </p>
+        /// <p> The ID of the connection. </p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connection_id(input.into());
             self
         }
-        /// <p> The ID of the connection you request. </p>
+        /// <p> The ID of the connection. </p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1262,7 +1251,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOrder`.
     ///
-    /// <p>Gets an order.</p>
+    /// <p>Gets information about the specified order.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOrder {
         handle: std::sync::Arc<super::Handle>,
@@ -1395,16 +1384,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(input.into());
             self
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_outpost_id(input);
             self
@@ -1478,16 +1463,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::GetOutpostInstanceTypesPaginator {
             crate::paginator::GetOutpostInstanceTypesPaginator::new(self.handle, self.inner)
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(input.into());
             self
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_outpost_id(input);
             self
@@ -1515,7 +1496,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSite`.
     ///
-    /// <p> Gets information about the specified Outpost site. </p>
+    /// <p>Gets information about the specified Outpost site.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSite {
         handle: std::sync::Arc<super::Handle>,
@@ -1575,16 +1556,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.site_id(input.into());
             self
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_site_id(input);
             self
@@ -1592,7 +1569,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSiteAddress`.
     ///
-    /// <p> Gets the site address. </p>
+    /// <p> Gets the site address of the specified site. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSiteAddress {
         handle: std::sync::Arc<super::Handle>,
@@ -1652,26 +1629,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.site_id(input.into());
             self
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_site_id(input);
             self
         }
-        /// <p> The type of the address you request. </p>
+        /// <p>The type of the address you request. </p>
         pub fn address_type(mut self, input: crate::model::AddressType) -> Self {
             self.inner = self.inner.address_type(input);
             self
         }
-        /// <p> The type of the address you request. </p>
+        /// <p>The type of the address you request. </p>
         pub fn set_address_type(
             mut self,
             input: std::option::Option<crate::model::AddressType>,
@@ -1682,7 +1655,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssets`.
     ///
-    /// <p> Lists the hardware assets in an Outpost. If you are using Dedicated Hosts on Amazon Web Services Outposts, you can filter your request by host ID to return a list of hardware assets that allocate resources for Dedicated Hosts. </p>
+    /// <p>Lists the hardware assets for the specified Outpost.</p>
+    /// <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssets {
         handle: std::sync::Arc<super::Handle>,
@@ -1765,14 +1739,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_host_id_filter`](Self::set_host_id_filter).
         ///
-        /// <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by the host ID of a Dedicated Host.</p>
         pub fn host_id_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.host_id_filter(input.into());
             self
         }
-        /// <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by the host ID of a Dedicated Host.</p>
         pub fn set_host_id_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1800,11 +1772,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
+        /// Appends an item to `StatusFilter`.
+        ///
+        /// To override the contents of this collection use [`set_status_filter`](Self::set_status_filter).
+        ///
+        /// <p>Filters the results by state.</p>
+        pub fn status_filter(mut self, input: crate::model::AssetState) -> Self {
+            self.inner = self.inner.status_filter(input);
+            self
+        }
+        /// <p>Filters the results by state.</p>
+        pub fn set_status_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AssetState>>,
+        ) -> Self {
+            self.inner = self.inner.set_status_filter(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListCatalogItems`.
     ///
-    /// <p>Lists the items in the catalog. Add filters to your request to return a more specific list of results. Use filters to match an item class, storage option, or EC2 family. </p>
-    /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only results that match all of the specified filters.</p>
+    /// <p>Lists the items in the catalog.</p>
+    /// <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCatalogItems {
         handle: std::sync::Arc<super::Handle>,
@@ -1894,14 +1883,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_item_class_filter`](Self::set_item_class_filter).
         ///
-        /// <p> A filter for the class of items in the catalog. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by item class.</p>
         pub fn item_class_filter(mut self, input: crate::model::CatalogItemClass) -> Self {
             self.inner = self.inner.item_class_filter(input);
             self
         }
-        /// <p> A filter for the class of items in the catalog. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by item class.</p>
         pub fn set_item_class_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CatalogItemClass>>,
@@ -1913,8 +1900,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_supported_storage_filter`](Self::set_supported_storage_filter).
         ///
-        /// <p> A filter for the storage options of items in the catalog. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by storage option.</p>
         pub fn supported_storage_filter(
             mut self,
             input: crate::model::SupportedStorageEnum,
@@ -1922,8 +1908,7 @@ pub mod fluent_builders {
             self.inner = self.inner.supported_storage_filter(input);
             self
         }
-        /// <p> A filter for the storage options of items in the catalog. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by storage option.</p>
         pub fn set_supported_storage_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
@@ -1935,14 +1920,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ec2_family_filter`](Self::set_ec2_family_filter).
         ///
-        /// <p> A filter for EC2 family options for items in the catalog. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by EC2 family (for example, M5).</p>
         pub fn ec2_family_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ec2_family_filter(input.into());
             self
         }
-        /// <p> A filter for EC2 family options for items in the catalog. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by EC2 family (for example, M5).</p>
         pub fn set_ec2_family_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1953,7 +1936,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOrders`.
     ///
-    /// <p>Lists the Outpost orders for your Amazon Web Services account. You can filter your request by Outpost to return a more specific list of results. </p>
+    /// <p>Lists the Outpost orders for your Amazon Web Services account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrders {
         handle: std::sync::Arc<super::Handle>,
@@ -2055,8 +2038,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOutposts`.
     ///
-    /// <p>Lists the Outposts for your Amazon Web Services account. Add filters to your request to return a more specific list of results. Use filters to match an Outpost lifecycle status, Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>). </p>
-    /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only results that match all of the specified filters.</p>
+    /// <p>Lists the Outposts for your Amazon Web Services account.</p>
+    /// <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOutposts {
         handle: std::sync::Arc<super::Handle>,
@@ -2146,14 +2129,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_life_cycle_status_filter`](Self::set_life_cycle_status_filter).
         ///
-        /// <p> A filter for the lifecycle status of the Outpost. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by the lifecycle status.</p>
         pub fn life_cycle_status_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.life_cycle_status_filter(input.into());
             self
         }
-        /// <p> A filter for the lifecycle status of the Outpost. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by the lifecycle status.</p>
         pub fn set_life_cycle_status_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2165,14 +2146,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_availability_zone_filter`](Self::set_availability_zone_filter).
         ///
-        /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
         pub fn availability_zone_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zone_filter(input.into());
             self
         }
-        /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
         pub fn set_availability_zone_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2184,8 +2163,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_availability_zone_id_filter`](Self::set_availability_zone_id_filter).
         ///
-        /// <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
         pub fn availability_zone_id_filter(
             mut self,
             input: impl Into<std::string::String>,
@@ -2193,8 +2171,7 @@ pub mod fluent_builders {
             self.inner = self.inner.availability_zone_id_filter(input.into());
             self
         }
-        /// <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
         pub fn set_availability_zone_id_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2205,8 +2182,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSites`.
     ///
-    /// <p>Lists the Outpost sites for your Amazon Web Services account. Add operating address filters to your request to return a more specific list of results. Use filters to match site city, country code, or state/region of the operating address. </p>
-    /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only results that match all of the specified filters.</p>
+    /// <p>Lists the Outpost sites for your Amazon Web Services account. Use filters to return specific results.</p>
+    /// <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSites {
         handle: std::sync::Arc<super::Handle>,
@@ -2296,8 +2273,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_operating_address_country_code_filter`](Self::set_operating_address_country_code_filter).
         ///
-        /// <p> A filter for the country code of the Outpost site. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by country code.</p>
         pub fn operating_address_country_code_filter(
             mut self,
             input: impl Into<std::string::String>,
@@ -2307,8 +2283,7 @@ pub mod fluent_builders {
                 .operating_address_country_code_filter(input.into());
             self
         }
-        /// <p> A filter for the country code of the Outpost site. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by country code.</p>
         pub fn set_operating_address_country_code_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2320,8 +2295,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_operating_address_state_or_region_filter`](Self::set_operating_address_state_or_region_filter).
         ///
-        /// <p> A filter for the state/region of the Outpost site. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by state or region.</p>
         pub fn operating_address_state_or_region_filter(
             mut self,
             input: impl Into<std::string::String>,
@@ -2331,8 +2305,7 @@ pub mod fluent_builders {
                 .operating_address_state_or_region_filter(input.into());
             self
         }
-        /// <p> A filter for the state/region of the Outpost site. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by state or region.</p>
         pub fn set_operating_address_state_or_region_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2346,8 +2319,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_operating_address_city_filter`](Self::set_operating_address_city_filter).
         ///
-        /// <p> A filter for the city of the Outpost site. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by city.</p>
         pub fn operating_address_city_filter(
             mut self,
             input: impl Into<std::string::String>,
@@ -2355,8 +2327,7 @@ pub mod fluent_builders {
             self.inner = self.inner.operating_address_city_filter(input.into());
             self
         }
-        /// <p> A filter for the city of the Outpost site. </p>
-        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        /// <p>Filters the results by city.</p>
         pub fn set_operating_address_city_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2802,16 +2773,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(input.into());
             self
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_outpost_id(input);
             self
@@ -2855,7 +2822,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSite`.
     ///
-    /// <p> Updates the site. </p>
+    /// <p>Updates the specified site.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSite {
         handle: std::sync::Arc<super::Handle>,
@@ -2915,16 +2882,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.site_id(input.into());
             self
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_site_id(input);
             self
@@ -2949,12 +2912,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p> Notes about a site. </p>
+        /// <p>Notes about a site.</p>
         pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notes(input.into());
             self
         }
-        /// <p> Notes about a site. </p>
+        /// <p>Notes about a site.</p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_notes(input);
             self
@@ -2962,9 +2925,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSiteAddress`.
     ///
-    /// <p> Updates the site address. </p>
-    /// <p> To update a site address with an order <code>IN_PROGRESS</code>, you must wait for the order to complete or cancel the order. </p>
-    /// <p>You can update the operating address before you place an order at the site, or after all Outposts that belong to the site have been deactivated. </p>
+    /// <p>Updates the address of the specified site.</p>
+    /// <p>You can't update a site address if there is an order in progress. You must wait for the order to complete or cancel the order.</p>
+    /// <p>You can update the operating address before you place an order at the site, or after all Outposts that belong to the site have been deactivated.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSiteAddress {
         handle: std::sync::Arc<super::Handle>,
@@ -3024,16 +2987,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.site_id(input.into());
             self
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_site_id(input);
             self
@@ -3125,26 +3084,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.site_id(input.into());
             self
         }
-        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
-        /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
-        /// </note>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_site_id(input);
             self
         }
-        /// <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
+        /// <p>The power draw, in kVA, available at the hardware placement position for the rack.</p>
         pub fn power_draw_kva(mut self, input: crate::model::PowerDrawKva) -> Self {
             self.inner = self.inner.power_draw_kva(input);
             self
         }
-        /// <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
+        /// <p>The power draw, in kVA, available at the hardware placement position for the rack.</p>
         pub fn set_power_draw_kva(
             mut self,
             input: std::option::Option<crate::model::PowerDrawKva>,
@@ -3152,7 +3107,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_power_draw_kva(input);
             self
         }
-        /// <p> Specify the power option that you can provide for hardware. </p>
+        /// <p>The power option that you can provide for hardware. </p>
         /// <ul>
         /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
         /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
@@ -3161,7 +3116,7 @@ pub mod fluent_builders {
             self.inner = self.inner.power_phase(input);
             self
         }
-        /// <p> Specify the power option that you can provide for hardware. </p>
+        /// <p>The power option that you can provide for hardware. </p>
         /// <ul>
         /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
         /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
@@ -3173,7 +3128,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_power_phase(input);
             self
         }
-        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
+        /// <p>The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
         /// <ul>
         /// <li> <p>Single-phase AC feed</p>
         /// <ul>
@@ -3190,7 +3145,7 @@ pub mod fluent_builders {
             self.inner = self.inner.power_connector(input);
             self
         }
-        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
+        /// <p>The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
         /// <ul>
         /// <li> <p>Single-phase AC feed</p>
         /// <ul>
@@ -3210,12 +3165,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_power_connector(input);
             self
         }
-        /// <p> Specify whether the power feed comes above or below the rack. </p>
+        /// <p>Indicates whether the power feed comes above or below the rack. </p>
         pub fn power_feed_drop(mut self, input: crate::model::PowerFeedDrop) -> Self {
             self.inner = self.inner.power_feed_drop(input);
             self
         }
-        /// <p> Specify whether the power feed comes above or below the rack. </p>
+        /// <p>Indicates whether the power feed comes above or below the rack. </p>
         pub fn set_power_feed_drop(
             mut self,
             input: std::option::Option<crate::model::PowerFeedDrop>,
@@ -3223,12 +3178,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_power_feed_drop(input);
             self
         }
-        /// <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
+        /// <p>The uplink speed the rack should support for the connection to the Region. </p>
         pub fn uplink_gbps(mut self, input: crate::model::UplinkGbps) -> Self {
             self.inner = self.inner.uplink_gbps(input);
             self
         }
-        /// <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
+        /// <p>The uplink speed the rack should support for the connection to the Region. </p>
         pub fn set_uplink_gbps(
             mut self,
             input: std::option::Option<crate::model::UplinkGbps>,
@@ -3259,12 +3214,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_uplink_count(input);
             self
         }
-        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
+        /// <p>The type of fiber that you will use to attach the Outpost to your network. </p>
         pub fn fiber_optic_cable_type(mut self, input: crate::model::FiberOpticCableType) -> Self {
             self.inner = self.inner.fiber_optic_cable_type(input);
             self
         }
-        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
+        /// <p>The type of fiber that you will use to attach the Outpost to your network. </p>
         pub fn set_fiber_optic_cable_type(
             mut self,
             input: std::option::Option<crate::model::FiberOpticCableType>,
@@ -3272,7 +3227,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fiber_optic_cable_type(input);
             self
         }
-        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
+        /// <p>The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
         /// <ul>
         /// <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>
         /// <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>
@@ -3292,7 +3247,7 @@ pub mod fluent_builders {
             self.inner = self.inner.optical_standard(input);
             self
         }
-        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
+        /// <p>The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
         /// <ul>
         /// <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>
         /// <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>
@@ -3315,7 +3270,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_optical_standard(input);
             self
         }
-        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
+        /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
         pub fn maximum_supported_weight_lbs(
             mut self,
             input: crate::model::MaximumSupportedWeightLbs,
@@ -3323,7 +3278,7 @@ pub mod fluent_builders {
             self.inner = self.inner.maximum_supported_weight_lbs(input);
             self
         }
-        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
+        /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
         pub fn set_maximum_supported_weight_lbs(
             mut self,
             input: std::option::Option<crate::model::MaximumSupportedWeightLbs>,

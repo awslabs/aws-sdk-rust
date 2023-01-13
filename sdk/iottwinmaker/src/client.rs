@@ -113,6 +113,8 @@ impl Client {
     ///   - [`extends_from(Vec<String>)`](crate::client::fluent_builders::CreateComponentType::extends_from) / [`set_extends_from(Option<Vec<String>>)`](crate::client::fluent_builders::CreateComponentType::set_extends_from): <p>Specifies the parent component type to extend.</p>
     ///   - [`functions(HashMap<String, FunctionRequest>)`](crate::client::fluent_builders::CreateComponentType::functions) / [`set_functions(Option<HashMap<String, FunctionRequest>>)`](crate::client::fluent_builders::CreateComponentType::set_functions): <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateComponentType::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateComponentType::set_tags): <p>Metadata that you can use to manage the component type.</p>
+    ///   - [`property_groups(HashMap<String, PropertyGroupRequest>)`](crate::client::fluent_builders::CreateComponentType::property_groups) / [`set_property_groups(Option<HashMap<String, PropertyGroupRequest>>)`](crate::client::fluent_builders::CreateComponentType::set_property_groups): <p></p>
+    ///   - [`component_type_name(impl Into<String>)`](crate::client::fluent_builders::CreateComponentType::component_type_name) / [`set_component_type_name(Option<String>)`](crate::client::fluent_builders::CreateComponentType::set_component_type_name): <p>A friendly name for the component type.</p>
     /// - On success, responds with [`CreateComponentTypeOutput`](crate::output::CreateComponentTypeOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateComponentTypeOutput::arn): <p>The ARN of the component type.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::output::CreateComponentTypeOutput::creation_date_time): <p>The date and time when the entity was created.</p>
@@ -155,6 +157,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<CreateSceneError>`](crate::error::CreateSceneError)
     pub fn create_scene(&self) -> fluent_builders::CreateScene {
         fluent_builders::CreateScene::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateSyncJob`](crate::client::fluent_builders::CreateSyncJob) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::CreateSyncJob::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::CreateSyncJob::set_workspace_id): <p>The workspace Id.</p>
+    ///   - [`sync_source(impl Into<String>)`](crate::client::fluent_builders::CreateSyncJob::sync_source) / [`set_sync_source(Option<String>)`](crate::client::fluent_builders::CreateSyncJob::set_sync_source): <p>The sync source.</p> <note>   <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>  </note>
+    ///   - [`sync_role(impl Into<String>)`](crate::client::fluent_builders::CreateSyncJob::sync_role) / [`set_sync_role(Option<String>)`](crate::client::fluent_builders::CreateSyncJob::set_sync_role): <p>The SyncJob IAM role. This IAM role is used by the sync job to read from the syncSource, and create, update or delete the corresponding resources.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSyncJob::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSyncJob::set_tags): <p>The SyncJob tags.</p>
+    /// - On success, responds with [`CreateSyncJobOutput`](crate::output::CreateSyncJobOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateSyncJobOutput::arn): <p>The SyncJob ARN.</p>
+    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::CreateSyncJobOutput::creation_date_time): <p>The date and time for the SyncJob creation.</p>
+    ///   - [`state(Option<SyncJobState>)`](crate::output::CreateSyncJobOutput::state): <p>The SyncJob response state.</p>
+    /// - On failure, responds with [`SdkError<CreateSyncJobError>`](crate::error::CreateSyncJobError)
+    pub fn create_sync_job(&self) -> fluent_builders::CreateSyncJob {
+        fluent_builders::CreateSyncJob::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateWorkspace`](crate::client::fluent_builders::CreateWorkspace) operation.
     ///
@@ -205,6 +222,17 @@ impl Client {
     pub fn delete_scene(&self) -> fluent_builders::DeleteScene {
         fluent_builders::DeleteScene::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteSyncJob`](crate::client::fluent_builders::DeleteSyncJob) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSyncJob::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::DeleteSyncJob::set_workspace_id): <p>The workspace Id.</p>
+    ///   - [`sync_source(impl Into<String>)`](crate::client::fluent_builders::DeleteSyncJob::sync_source) / [`set_sync_source(Option<String>)`](crate::client::fluent_builders::DeleteSyncJob::set_sync_source): <p>The sync source.</p> <note>   <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>  </note>
+    /// - On success, responds with [`DeleteSyncJobOutput`](crate::output::DeleteSyncJobOutput) with field(s):
+    ///   - [`state(Option<SyncJobState>)`](crate::output::DeleteSyncJobOutput::state): <p>The SyncJob response state.</p>
+    /// - On failure, responds with [`SdkError<DeleteSyncJobError>`](crate::error::DeleteSyncJobError)
+    pub fn delete_sync_job(&self) -> fluent_builders::DeleteSyncJob {
+        fluent_builders::DeleteSyncJob::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteWorkspace`](crate::client::fluent_builders::DeleteWorkspace) operation.
     ///
     /// - The fluent builder is configurable:
@@ -214,6 +242,22 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteWorkspaceError>`](crate::error::DeleteWorkspaceError)
     pub fn delete_workspace(&self) -> fluent_builders::DeleteWorkspace {
         fluent_builders::DeleteWorkspace::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ExecuteQuery`](crate::client::fluent_builders::ExecuteQuery) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ExecuteQuery::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::ExecuteQuery::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::ExecuteQuery::set_workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`query_statement(impl Into<String>)`](crate::client::fluent_builders::ExecuteQuery::query_statement) / [`set_query_statement(Option<String>)`](crate::client::fluent_builders::ExecuteQuery::set_query_statement): <p>The query statement.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ExecuteQuery::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ExecuteQuery::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>  <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ExecuteQuery::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ExecuteQuery::set_next_token): <p>The string that specifies the next page of results.</p>
+    /// - On success, responds with [`ExecuteQueryOutput`](crate::output::ExecuteQueryOutput) with field(s):
+    ///   - [`column_descriptions(Option<Vec<ColumnDescription>>)`](crate::output::ExecuteQueryOutput::column_descriptions): <p>A list of ColumnDescription objects.</p>
+    ///   - [`rows(Option<Vec<Row>>)`](crate::output::ExecuteQueryOutput::rows): <p>Represents a single row in the query results.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ExecuteQueryOutput::next_token): <p>The string that specifies the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ExecuteQueryError>`](crate::error::ExecuteQueryError)
+    pub fn execute_query(&self) -> fluent_builders::ExecuteQuery {
+        fluent_builders::ExecuteQuery::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetComponentType`](crate::client::fluent_builders::GetComponentType) operation.
     ///
@@ -234,6 +278,9 @@ impl Client {
     ///   - [`is_abstract(Option<bool>)`](crate::output::GetComponentTypeOutput::is_abstract): <p>A Boolean value that specifies whether the component type is abstract.</p>
     ///   - [`is_schema_initialized(Option<bool>)`](crate::output::GetComponentTypeOutput::is_schema_initialized): <p>A Boolean value that specifies whether the component type has a schema initializer and that the schema initializer has run.</p>
     ///   - [`status(Option<Status>)`](crate::output::GetComponentTypeOutput::status): <p>The current status of the component type.</p>
+    ///   - [`property_groups(Option<HashMap<String, PropertyGroupResponse>>)`](crate::output::GetComponentTypeOutput::property_groups): <p>The maximum number of results to return at one time. The default is 25.</p>  <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    ///   - [`sync_source(Option<String>)`](crate::output::GetComponentTypeOutput::sync_source): <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+    ///   - [`component_type_name(Option<String>)`](crate::output::GetComponentTypeOutput::component_type_name): <p>The component type name.</p>
     /// - On failure, responds with [`SdkError<GetComponentTypeError>`](crate::error::GetComponentTypeError)
     pub fn get_component_type(&self) -> fluent_builders::GetComponentType {
         fluent_builders::GetComponentType::new(self.handle.clone())
@@ -255,11 +302,24 @@ impl Client {
     ///   - [`has_child_entities(Option<bool>)`](crate::output::GetEntityOutput::has_child_entities): <p>A Boolean value that specifies whether the entity has associated child entities.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::output::GetEntityOutput::creation_date_time): <p>The date and time when the entity was created.</p>
     ///   - [`update_date_time(Option<DateTime>)`](crate::output::GetEntityOutput::update_date_time): <p>The date and time when the entity was last updated.</p>
+    ///   - [`sync_source(Option<String>)`](crate::output::GetEntityOutput::sync_source): <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
     /// - On failure, responds with [`SdkError<GetEntityError>`](crate::error::GetEntityError)
     pub fn get_entity(&self) -> fluent_builders::GetEntity {
         fluent_builders::GetEntity::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetPricingPlan`](crate::client::fluent_builders::GetPricingPlan) operation.
+    ///
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetPricingPlan::send) it.
+
+    /// - On success, responds with [`GetPricingPlanOutput`](crate::output::GetPricingPlanOutput) with field(s):
+    ///   - [`current_pricing_plan(Option<PricingPlan>)`](crate::output::GetPricingPlanOutput::current_pricing_plan): <p>The chosen pricing plan for the current billing cycle.</p>
+    ///   - [`pending_pricing_plan(Option<PricingPlan>)`](crate::output::GetPricingPlanOutput::pending_pricing_plan): <p>The pending pricing plan.</p>
+    /// - On failure, responds with [`SdkError<GetPricingPlanError>`](crate::error::GetPricingPlanError)
+    pub fn get_pricing_plan(&self) -> fluent_builders::GetPricingPlan {
+        fluent_builders::GetPricingPlan::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetPropertyValue`](crate::client::fluent_builders::GetPropertyValue) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetPropertyValue::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`component_name(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValue::component_name) / [`set_component_name(Option<String>)`](crate::client::fluent_builders::GetPropertyValue::set_component_name): <p>The name of the component whose property values the operation returns.</p>
@@ -267,8 +327,14 @@ impl Client {
     ///   - [`entity_id(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValue::entity_id) / [`set_entity_id(Option<String>)`](crate::client::fluent_builders::GetPropertyValue::set_entity_id): <p>The ID of the entity whose property values the operation returns.</p>
     ///   - [`selected_properties(Vec<String>)`](crate::client::fluent_builders::GetPropertyValue::selected_properties) / [`set_selected_properties(Option<Vec<String>>)`](crate::client::fluent_builders::GetPropertyValue::set_selected_properties): <p>The properties whose values the operation returns.</p>
     ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValue::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::GetPropertyValue::set_workspace_id): <p>The ID of the workspace whose values the operation returns.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetPropertyValue::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetPropertyValue::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>  <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValue::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetPropertyValue::set_next_token): <p>The string that specifies the next page of results.</p>
+    ///   - [`property_group_name(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValue::property_group_name) / [`set_property_group_name(Option<String>)`](crate::client::fluent_builders::GetPropertyValue::set_property_group_name): <p>The property group name.</p>
+    ///   - [`tabular_conditions(TabularConditions)`](crate::client::fluent_builders::GetPropertyValue::tabular_conditions) / [`set_tabular_conditions(Option<TabularConditions>)`](crate::client::fluent_builders::GetPropertyValue::set_tabular_conditions): <p>The tabular conditions.</p>
     /// - On success, responds with [`GetPropertyValueOutput`](crate::output::GetPropertyValueOutput) with field(s):
     ///   - [`property_values(Option<HashMap<String, PropertyLatestValue>>)`](crate::output::GetPropertyValueOutput::property_values): <p>An object that maps strings to the properties and latest property values in the response. Each string in the mapping must be unique to this object.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetPropertyValueOutput::next_token): <p>The string that specifies the next page of results.</p>
+    ///   - [`tabular_property_values(Option<Vec<Vec<HashMap<String, DataValue>>>>)`](crate::output::GetPropertyValueOutput::tabular_property_values): <p>A table of property values.</p>
     /// - On failure, responds with [`SdkError<GetPropertyValueError>`](crate::error::GetPropertyValueError)
     pub fn get_property_value(&self) -> fluent_builders::GetPropertyValue {
         fluent_builders::GetPropertyValue::new(self.handle.clone())
@@ -287,10 +353,10 @@ impl Client {
     ///   - [`end_date_time(DateTime)`](crate::client::fluent_builders::GetPropertyValueHistory::end_date_time) / [`set_end_date_time(Option<DateTime>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_end_date_time): <p>The date and time of the latest property value to return.</p>
     ///   - [`interpolation(InterpolationParameters)`](crate::client::fluent_builders::GetPropertyValueHistory::interpolation) / [`set_interpolation(Option<InterpolationParameters>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_interpolation): <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_next_token): <p>The string that specifies the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetPropertyValueHistory::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetPropertyValueHistory::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>  <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     ///   - [`order_by_time(OrderByTime)`](crate::client::fluent_builders::GetPropertyValueHistory::order_by_time) / [`set_order_by_time(Option<OrderByTime>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_order_by_time): <p>The time direction to use in the result order.</p>
-    ///   - [`start_time(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::start_time) / [`set_start_time(Option<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_start_time): <p>The ISO8601 DateTime of the earliest property value to return.</p>  <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
-    ///   - [`end_time(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::end_time) / [`set_end_time(Option<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_end_time): <p>The ISO8601 DateTime of the latest property value to return.</p>  <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+    ///   - [`start_time(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::start_time) / [`set_start_time(Option<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_start_time): <p>The ISO8601 DateTime of the earliest property value to return.</p>  <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
+    ///   - [`end_time(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::end_time) / [`set_end_time(Option<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_end_time): <p>The ISO8601 DateTime of the latest property value to return.</p>  <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
     /// - On success, responds with [`GetPropertyValueHistoryOutput`](crate::output::GetPropertyValueHistoryOutput) with field(s):
     ///   - [`property_values(Option<Vec<PropertyValueHistory>>)`](crate::output::GetPropertyValueHistoryOutput::property_values): <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetPropertyValueHistoryOutput::next_token): <p>The string that specifies the next page of results.</p>
@@ -316,6 +382,23 @@ impl Client {
     pub fn get_scene(&self) -> fluent_builders::GetScene {
         fluent_builders::GetScene::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetSyncJob`](crate::client::fluent_builders::GetSyncJob) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`sync_source(impl Into<String>)`](crate::client::fluent_builders::GetSyncJob::sync_source) / [`set_sync_source(Option<String>)`](crate::client::fluent_builders::GetSyncJob::set_sync_source): <p>The sync soucre.</p> <note>   <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>  </note>
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::GetSyncJob::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::GetSyncJob::set_workspace_id): <p>The workspace Id.</p>
+    /// - On success, responds with [`GetSyncJobOutput`](crate::output::GetSyncJobOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetSyncJobOutput::arn): <p>The sync job ARN.</p>
+    ///   - [`workspace_id(Option<String>)`](crate::output::GetSyncJobOutput::workspace_id): <p>The ID of the workspace that contains the sync job.</p>
+    ///   - [`sync_source(Option<String>)`](crate::output::GetSyncJobOutput::sync_source): <p>The sync soucre.</p> <note>   <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>  </note>
+    ///   - [`sync_role(Option<String>)`](crate::output::GetSyncJobOutput::sync_role): <p>The sync IAM role.</p>
+    ///   - [`status(Option<SyncJobStatus>)`](crate::output::GetSyncJobOutput::status): <p>The SyncJob response status.</p>
+    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::GetSyncJobOutput::creation_date_time): <p>The creation date and time.</p>
+    ///   - [`update_date_time(Option<DateTime>)`](crate::output::GetSyncJobOutput::update_date_time): <p>The update date and time.</p>
+    /// - On failure, responds with [`SdkError<GetSyncJobError>`](crate::error::GetSyncJobError)
+    pub fn get_sync_job(&self) -> fluent_builders::GetSyncJob {
+        fluent_builders::GetSyncJob::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetWorkspace`](crate::client::fluent_builders::GetWorkspace) operation.
     ///
     /// - The fluent builder is configurable:
@@ -339,7 +422,7 @@ impl Client {
     ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::ListComponentTypes::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::ListComponentTypes::set_workspace_id): <p>The ID of the workspace.</p>
     ///   - [`filters(Vec<ListComponentTypesFilter>)`](crate::client::fluent_builders::ListComponentTypes::filters) / [`set_filters(Option<Vec<ListComponentTypesFilter>>)`](crate::client::fluent_builders::ListComponentTypes::set_filters): <p>A list of objects that filter the request.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListComponentTypes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListComponentTypes::set_next_token): <p>The string that specifies the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListComponentTypes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListComponentTypes::set_max_results): <p>The maximum number of results to display.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListComponentTypes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListComponentTypes::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>  <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     /// - On success, responds with [`ListComponentTypesOutput`](crate::output::ListComponentTypesOutput) with field(s):
     ///   - [`workspace_id(Option<String>)`](crate::output::ListComponentTypesOutput::workspace_id): <p>The ID of the workspace.</p>
     ///   - [`component_type_summaries(Option<Vec<ComponentTypeSummary>>)`](crate::output::ListComponentTypesOutput::component_type_summaries): <p>A list of objects that contain information about the component types.</p>
@@ -355,7 +438,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::ListEntities::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::ListEntities::set_workspace_id): <p>The ID of the workspace.</p>
     ///   - [`filters(Vec<ListEntitiesFilter>)`](crate::client::fluent_builders::ListEntities::filters) / [`set_filters(Option<Vec<ListEntitiesFilter>>)`](crate::client::fluent_builders::ListEntities::set_filters): <p>A list of objects that filter the request.</p> <note>   <p>Only one object is accepted as a valid input.</p>  </note>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEntities::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEntities::set_max_results): <p>The maximum number of results to display.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEntities::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEntities::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>  <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEntities::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEntities::set_next_token): <p>The string that specifies the next page of results.</p>
     /// - On success, responds with [`ListEntitiesOutput`](crate::output::ListEntitiesOutput) with field(s):
     ///   - [`entity_summaries(Option<Vec<EntitySummary>>)`](crate::output::ListEntitiesOutput::entity_summaries): <p>A list of objects that contain information about the entities.</p>
@@ -378,11 +461,41 @@ impl Client {
     pub fn list_scenes(&self) -> fluent_builders::ListScenes {
         fluent_builders::ListScenes::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListSyncJobs`](crate::client::fluent_builders::ListSyncJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSyncJobs::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::ListSyncJobs::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::ListSyncJobs::set_workspace_id): <p>The ID of the workspace that contains the sync job.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSyncJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSyncJobs::set_max_results): <p>The maximum number of results to return at one time. The default is 50.</p>  <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSyncJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSyncJobs::set_next_token): <p>The string that specifies the next page of results.</p>
+    /// - On success, responds with [`ListSyncJobsOutput`](crate::output::ListSyncJobsOutput) with field(s):
+    ///   - [`sync_job_summaries(Option<Vec<SyncJobSummary>>)`](crate::output::ListSyncJobsOutput::sync_job_summaries): <p>The listed SyncJob summaries.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSyncJobsOutput::next_token): <p>The string that specifies the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListSyncJobsError>`](crate::error::ListSyncJobsError)
+    pub fn list_sync_jobs(&self) -> fluent_builders::ListSyncJobs {
+        fluent_builders::ListSyncJobs::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListSyncResources`](crate::client::fluent_builders::ListSyncResources) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSyncResources::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::ListSyncResources::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::ListSyncResources::set_workspace_id): <p>The ID of the workspace that contains the sync job.</p>
+    ///   - [`sync_source(impl Into<String>)`](crate::client::fluent_builders::ListSyncResources::sync_source) / [`set_sync_source(Option<String>)`](crate::client::fluent_builders::ListSyncResources::set_sync_source): <p>The sync soucre.</p> <note>   <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>  </note>
+    ///   - [`filters(Vec<SyncResourceFilter>)`](crate::client::fluent_builders::ListSyncResources::filters) / [`set_filters(Option<Vec<SyncResourceFilter>>)`](crate::client::fluent_builders::ListSyncResources::set_filters): <p>A list of objects that filter the request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSyncResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSyncResources::set_max_results): <p>The maximum number of results to return at one time. The default is 50.</p>  <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSyncResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSyncResources::set_next_token): <p>The string that specifies the next page of results.</p>
+    /// - On success, responds with [`ListSyncResourcesOutput`](crate::output::ListSyncResourcesOutput) with field(s):
+    ///   - [`sync_resources(Option<Vec<SyncResourceSummary>>)`](crate::output::ListSyncResourcesOutput::sync_resources): <p>The sync resources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSyncResourcesOutput::next_token): <p>The string that specifies the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListSyncResourcesError>`](crate::error::ListSyncResourcesError)
+    pub fn list_sync_resources(&self) -> fluent_builders::ListSyncResources {
+        fluent_builders::ListSyncResources::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTagsForResource::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTagsForResource::set_max_results): <p>The maximum number of results to display.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTagsForResource::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTagsForResource::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>  <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>The string that specifies the next page of results.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Metadata that you can use to manage a resource.</p>
@@ -395,7 +508,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorkspaces::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorkspaces::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorkspaces::set_max_results): <p>The maximum number of results to display.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorkspaces::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorkspaces::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>  <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorkspaces::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorkspaces::set_next_token): <p>The string that specifies the next page of results.</p>
     /// - On success, responds with [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput) with field(s):
     ///   - [`workspace_summaries(Option<Vec<WorkspaceSummary>>)`](crate::output::ListWorkspacesOutput::workspace_summaries): <p>A list of objects that contain information about the workspaces.</p>
@@ -429,13 +542,15 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateComponentType`](crate::client::fluent_builders::UpdateComponentType) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::UpdateComponentType::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::UpdateComponentType::set_workspace_id): <p>The ID of the workspace that contains the component type.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::UpdateComponentType::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::UpdateComponentType::set_workspace_id): <p>The ID of the workspace.</p>
     ///   - [`is_singleton(bool)`](crate::client::fluent_builders::UpdateComponentType::is_singleton) / [`set_is_singleton(Option<bool>)`](crate::client::fluent_builders::UpdateComponentType::set_is_singleton): <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
     ///   - [`component_type_id(impl Into<String>)`](crate::client::fluent_builders::UpdateComponentType::component_type_id) / [`set_component_type_id(Option<String>)`](crate::client::fluent_builders::UpdateComponentType::set_component_type_id): <p>The ID of the component type.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateComponentType::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateComponentType::set_description): <p>The description of the component type.</p>
     ///   - [`property_definitions(HashMap<String, PropertyDefinitionRequest>)`](crate::client::fluent_builders::UpdateComponentType::property_definitions) / [`set_property_definitions(Option<HashMap<String, PropertyDefinitionRequest>>)`](crate::client::fluent_builders::UpdateComponentType::set_property_definitions): <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     ///   - [`extends_from(Vec<String>)`](crate::client::fluent_builders::UpdateComponentType::extends_from) / [`set_extends_from(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateComponentType::set_extends_from): <p>Specifies the component type that this component type extends.</p>
     ///   - [`functions(HashMap<String, FunctionRequest>)`](crate::client::fluent_builders::UpdateComponentType::functions) / [`set_functions(Option<HashMap<String, FunctionRequest>>)`](crate::client::fluent_builders::UpdateComponentType::set_functions): <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
+    ///   - [`property_groups(HashMap<String, PropertyGroupRequest>)`](crate::client::fluent_builders::UpdateComponentType::property_groups) / [`set_property_groups(Option<HashMap<String, PropertyGroupRequest>>)`](crate::client::fluent_builders::UpdateComponentType::set_property_groups): <p>The property groups</p>
+    ///   - [`component_type_name(impl Into<String>)`](crate::client::fluent_builders::UpdateComponentType::component_type_name) / [`set_component_type_name(Option<String>)`](crate::client::fluent_builders::UpdateComponentType::set_component_type_name): <p>The component type name.</p>
     /// - On success, responds with [`UpdateComponentTypeOutput`](crate::output::UpdateComponentTypeOutput) with field(s):
     ///   - [`workspace_id(Option<String>)`](crate::output::UpdateComponentTypeOutput::workspace_id): <p>The ID of the workspace that contains the component type.</p>
     ///   - [`arn(Option<String>)`](crate::output::UpdateComponentTypeOutput::arn): <p>The ARN of the component type.</p>
@@ -460,6 +575,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateEntityError>`](crate::error::UpdateEntityError)
     pub fn update_entity(&self) -> fluent_builders::UpdateEntity {
         fluent_builders::UpdateEntity::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdatePricingPlan`](crate::client::fluent_builders::UpdatePricingPlan) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`pricing_mode(PricingMode)`](crate::client::fluent_builders::UpdatePricingPlan::pricing_mode) / [`set_pricing_mode(Option<PricingMode>)`](crate::client::fluent_builders::UpdatePricingPlan::set_pricing_mode): <p>The pricing mode.</p>
+    ///   - [`bundle_names(Vec<String>)`](crate::client::fluent_builders::UpdatePricingPlan::bundle_names) / [`set_bundle_names(Option<Vec<String>>)`](crate::client::fluent_builders::UpdatePricingPlan::set_bundle_names): <p>The bundle names.</p>
+    /// - On success, responds with [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput) with field(s):
+    ///   - [`current_pricing_plan(Option<PricingPlan>)`](crate::output::UpdatePricingPlanOutput::current_pricing_plan): <p>Update the current pricing plan.</p>
+    ///   - [`pending_pricing_plan(Option<PricingPlan>)`](crate::output::UpdatePricingPlanOutput::pending_pricing_plan): <p>Update the pending pricing plan.</p>
+    /// - On failure, responds with [`SdkError<UpdatePricingPlanError>`](crate::error::UpdatePricingPlanError)
+    pub fn update_pricing_plan(&self) -> fluent_builders::UpdatePricingPlan {
+        fluent_builders::UpdatePricingPlan::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateScene`](crate::client::fluent_builders::UpdateScene) operation.
     ///
@@ -779,6 +906,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// Adds a key-value pair to `propertyGroups`.
+        ///
+        /// To override the contents of this collection use [`set_property_groups`](Self::set_property_groups).
+        ///
+        /// <p></p>
+        pub fn property_groups(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::PropertyGroupRequest,
+        ) -> Self {
+            self.inner = self.inner.property_groups(k.into(), v);
+            self
+        }
+        /// <p></p>
+        pub fn set_property_groups(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::PropertyGroupRequest>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_property_groups(input);
+            self
+        }
+        /// <p>A friendly name for the component type.</p>
+        pub fn component_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_type_name(input.into());
+            self
+        }
+        /// <p>A friendly name for the component type.</p>
+        pub fn set_component_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_component_type_name(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateEntity`.
     ///
@@ -1078,6 +1241,126 @@ pub mod fluent_builders {
             self
         }
         /// <p>Metadata that you can use to manage the scene.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateSyncJob`.
+    ///
+    /// <p>This action creates a SyncJob.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateSyncJob {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_sync_job_input::Builder,
+    }
+    impl CreateSyncJob {
+        /// Creates a new `CreateSyncJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateSyncJob,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateSyncJobError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateSyncJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateSyncJobError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The workspace Id.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// <p>The workspace Id.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// <p>The sync source.</p> <note>
+        /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+        /// </note>
+        pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_source(input.into());
+            self
+        }
+        /// <p>The sync source.</p> <note>
+        /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+        /// </note>
+        pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_sync_source(input);
+            self
+        }
+        /// <p>The SyncJob IAM role. This IAM role is used by the sync job to read from the syncSource, and create, update or delete the corresponding resources.</p>
+        pub fn sync_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_role(input.into());
+            self
+        }
+        /// <p>The SyncJob IAM role. This IAM role is used by the sync job to read from the syncSource, and create, update or delete the corresponding resources.</p>
+        pub fn set_sync_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_sync_role(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The SyncJob tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The SyncJob tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1476,6 +1759,93 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteSyncJob`.
+    ///
+    /// <p>Delete the SyncJob.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteSyncJob {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_sync_job_input::Builder,
+    }
+    impl DeleteSyncJob {
+        /// Creates a new `DeleteSyncJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteSyncJob,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteSyncJobError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteSyncJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteSyncJobError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The workspace Id.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// <p>The workspace Id.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// <p>The sync source.</p> <note>
+        /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+        /// </note>
+        pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_source(input.into());
+            self
+        }
+        /// <p>The sync source.</p> <note>
+        /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+        /// </note>
+        pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_sync_source(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteWorkspace`.
     ///
     /// <p>Deletes a workspace.</p>
@@ -1546,6 +1916,120 @@ pub mod fluent_builders {
         /// <p>The ID of the workspace to delete.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ExecuteQuery`.
+    ///
+    /// <p>Run queries to access information from your knowledge graph of entities within individual workspaces.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ExecuteQuery {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::execute_query_input::Builder,
+    }
+    impl ExecuteQuery {
+        /// Creates a new `ExecuteQuery`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ExecuteQuery,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ExecuteQueryError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ExecuteQueryOutput,
+            aws_smithy_http::result::SdkError<crate::error::ExecuteQueryError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ExecuteQueryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ExecuteQueryPaginator {
+            crate::paginator::ExecuteQueryPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the workspace.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// <p>The ID of the workspace.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// <p>The query statement.</p>
+        pub fn query_statement(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_statement(input.into());
+            self
+        }
+        /// <p>The query statement.</p>
+        pub fn set_query_statement(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_query_statement(input);
+            self
+        }
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -1718,6 +2202,69 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetPricingPlan`.
+    ///
+    /// <p>Gets the pricing plan.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetPricingPlan {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_pricing_plan_input::Builder,
+    }
+    impl GetPricingPlan {
+        /// Creates a new `GetPricingPlan`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetPricingPlan,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetPricingPlanError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetPricingPlanOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetPricingPlanError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+    }
     /// Fluent builder constructing a request to `GetPropertyValue`.
     ///
     /// <p>Gets the property values for a component, component type, entity, or workspace.</p>
@@ -1781,6 +2328,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetPropertyValuePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetPropertyValuePaginator {
+            crate::paginator::GetPropertyValuePaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the component whose property values the operation returns.</p>
         pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.component_name(input.into());
@@ -1842,6 +2395,54 @@ pub mod fluent_builders {
         /// <p>The ID of the workspace whose values the operation returns.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The property group name.</p>
+        pub fn property_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_group_name(input.into());
+            self
+        }
+        /// <p>The property group name.</p>
+        pub fn set_property_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_property_group_name(input);
+            self
+        }
+        /// <p>The tabular conditions.</p>
+        pub fn tabular_conditions(mut self, input: crate::model::TabularConditions) -> Self {
+            self.inner = self.inner.tabular_conditions(input);
+            self
+        }
+        /// <p>The tabular conditions.</p>
+        pub fn set_tabular_conditions(
+            mut self,
+            input: std::option::Option<crate::model::TabularConditions>,
+        ) -> Self {
+            self.inner = self.inner.set_tabular_conditions(input);
             self
         }
     }
@@ -2055,12 +2656,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2079,25 +2682,25 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
-        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
         pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.start_time(input.into());
             self
         }
         /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
-        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>The ISO8601 DateTime of the latest property value to return.</p>
-        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
         pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.end_time(input.into());
             self
         }
         /// <p>The ISO8601 DateTime of the latest property value to return.</p>
-        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -2183,6 +2786,93 @@ pub mod fluent_builders {
         /// <p>The ID of the scene.</p>
         pub fn set_scene_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_scene_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetSyncJob`.
+    ///
+    /// <p>Gets the SyncJob.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetSyncJob {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_sync_job_input::Builder,
+    }
+    impl GetSyncJob {
+        /// Creates a new `GetSyncJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetSyncJob,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetSyncJobError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetSyncJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetSyncJobError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The sync soucre.</p> <note>
+        /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+        /// </note>
+        pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_source(input.into());
+            self
+        }
+        /// <p>The sync soucre.</p> <note>
+        /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+        /// </note>
+        pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_sync_source(input);
+            self
+        }
+        /// <p>The workspace Id.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// <p>The workspace Id.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
             self
         }
     }
@@ -2364,12 +3054,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to display.</p>
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to display.</p>
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2474,12 +3166,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of results to display.</p>
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to display.</p>
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2594,6 +3288,239 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListSyncJobs`.
+    ///
+    /// <p>List all SyncJobs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListSyncJobs {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_sync_jobs_input::Builder,
+    }
+    impl ListSyncJobs {
+        /// Creates a new `ListSyncJobs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListSyncJobs,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListSyncJobsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListSyncJobsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListSyncJobsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSyncJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSyncJobsPaginator {
+            crate::paginator::ListSyncJobsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the workspace that contains the sync job.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// <p>The ID of the workspace that contains the sync job.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// <p>The maximum number of results to return at one time. The default is 50.</p>
+        /// <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return at one time. The default is 50.</p>
+        /// <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListSyncResources`.
+    ///
+    /// <p>Lists the sync resources.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListSyncResources {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_sync_resources_input::Builder,
+    }
+    impl ListSyncResources {
+        /// Creates a new `ListSyncResources`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListSyncResources,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListSyncResourcesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListSyncResourcesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListSyncResourcesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSyncResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSyncResourcesPaginator {
+            crate::paginator::ListSyncResourcesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the workspace that contains the sync job.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// <p>The ID of the workspace that contains the sync job.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// <p>The sync soucre.</p> <note>
+        /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+        /// </note>
+        pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_source(input.into());
+            self
+        }
+        /// <p>The sync soucre.</p> <note>
+        /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+        /// </note>
+        pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_sync_source(input);
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>A list of objects that filter the request.</p>
+        pub fn filters(mut self, input: crate::model::SyncResourceFilter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>A list of objects that filter the request.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SyncResourceFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of results to return at one time. The default is 50.</p>
+        /// <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return at one time. The default is 50.</p>
+        /// <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags associated with a resource.</p>
@@ -2666,12 +3593,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The maximum number of results to display.</p>
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to display.</p>
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2755,12 +3684,14 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListWorkspacesPaginator {
             crate::paginator::ListWorkspacesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The maximum number of results to display.</p>
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to display.</p>
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3024,12 +3955,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the workspace that contains the component type.</p>
+        /// <p>The ID of the workspace.</p>
         pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workspace_id(input.into());
             self
         }
-        /// <p>The ID of the workspace that contains the component type.</p>
+        /// <p>The ID of the workspace.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workspace_id(input);
             self
@@ -3131,6 +4062,42 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_functions(input);
+            self
+        }
+        /// Adds a key-value pair to `propertyGroups`.
+        ///
+        /// To override the contents of this collection use [`set_property_groups`](Self::set_property_groups).
+        ///
+        /// <p>The property groups</p>
+        pub fn property_groups(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::PropertyGroupRequest,
+        ) -> Self {
+            self.inner = self.inner.property_groups(k.into(), v);
+            self
+        }
+        /// <p>The property groups</p>
+        pub fn set_property_groups(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::PropertyGroupRequest>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_property_groups(input);
+            self
+        }
+        /// <p>The component type name.</p>
+        pub fn component_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_type_name(input.into());
+            self
+        }
+        /// <p>The component type name.</p>
+        pub fn set_component_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_component_type_name(input);
             self
         }
     }
@@ -3276,6 +4243,99 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ParentEntityUpdateRequest>,
         ) -> Self {
             self.inner = self.inner.set_parent_entity_update(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdatePricingPlan`.
+    ///
+    /// <p>Update the pricing plan.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdatePricingPlan {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_pricing_plan_input::Builder,
+    }
+    impl UpdatePricingPlan {
+        /// Creates a new `UpdatePricingPlan`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdatePricingPlan,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdatePricingPlanError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdatePricingPlanOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdatePricingPlanError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The pricing mode.</p>
+        pub fn pricing_mode(mut self, input: crate::model::PricingMode) -> Self {
+            self.inner = self.inner.pricing_mode(input);
+            self
+        }
+        /// <p>The pricing mode.</p>
+        pub fn set_pricing_mode(
+            mut self,
+            input: std::option::Option<crate::model::PricingMode>,
+        ) -> Self {
+            self.inner = self.inner.set_pricing_mode(input);
+            self
+        }
+        /// Appends an item to `bundleNames`.
+        ///
+        /// To override the contents of this collection use [`set_bundle_names`](Self::set_bundle_names).
+        ///
+        /// <p>The bundle names.</p>
+        pub fn bundle_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_names(input.into());
+            self
+        }
+        /// <p>The bundle names.</p>
+        pub fn set_bundle_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_bundle_names(input);
             self
         }
     }

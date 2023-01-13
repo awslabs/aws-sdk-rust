@@ -133,6 +133,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImportFileTask {
     }
 }
 
+/// Operation shape for `GetLatestAssessmentId`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_latest_assessment_id`](crate::client::Client::get_latest_assessment_id).
+///
+/// See [`crate::client::fluent_builders::GetLatestAssessmentId`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetLatestAssessmentId {
+    _private: (),
+}
+impl GetLatestAssessmentId {
+    /// Creates a new builder-style object to manufacture [`GetLatestAssessmentIdInput`](crate::input::GetLatestAssessmentIdInput).
+    pub fn builder() -> crate::input::get_latest_assessment_id_input::Builder {
+        crate::input::get_latest_assessment_id_input::Builder::default()
+    }
+    /// Creates a new `GetLatestAssessmentId` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetLatestAssessmentId {
+    type Output = std::result::Result<
+        crate::output::GetLatestAssessmentIdOutput,
+        crate::error::GetLatestAssessmentIdError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_latest_assessment_id_error(response)
+        } else {
+            crate::operation_deser::parse_get_latest_assessment_id_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetPortfolioPreferences`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

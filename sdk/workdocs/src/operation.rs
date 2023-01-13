@@ -425,6 +425,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDocument {
     }
 }
 
+/// Operation shape for `DeleteDocumentVersion`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_document_version`](crate::client::Client::delete_document_version).
+///
+/// See [`crate::client::fluent_builders::DeleteDocumentVersion`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteDocumentVersion {
+    _private: (),
+}
+impl DeleteDocumentVersion {
+    /// Creates a new builder-style object to manufacture [`DeleteDocumentVersionInput`](crate::input::DeleteDocumentVersionInput).
+    pub fn builder() -> crate::input::delete_document_version_input::Builder {
+        crate::input::delete_document_version_input::Builder::default()
+    }
+    /// Creates a new `DeleteDocumentVersion` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteDocumentVersion {
+    type Output = std::result::Result<
+        crate::output::DeleteDocumentVersionOutput,
+        crate::error::DeleteDocumentVersionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_document_version_error(response)
+        } else {
+            crate::operation_deser::parse_delete_document_version_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteFolder`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1216,6 +1250,40 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveResourcePermission
             crate::operation_deser::parse_remove_resource_permission_error(response)
         } else {
             crate::operation_deser::parse_remove_resource_permission_response(response)
+        }
+    }
+}
+
+/// Operation shape for `RestoreDocumentVersions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`restore_document_versions`](crate::client::Client::restore_document_versions).
+///
+/// See [`crate::client::fluent_builders::RestoreDocumentVersions`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct RestoreDocumentVersions {
+    _private: (),
+}
+impl RestoreDocumentVersions {
+    /// Creates a new builder-style object to manufacture [`RestoreDocumentVersionsInput`](crate::input::RestoreDocumentVersionsInput).
+    pub fn builder() -> crate::input::restore_document_versions_input::Builder {
+        crate::input::restore_document_versions_input::Builder::default()
+    }
+    /// Creates a new `RestoreDocumentVersions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RestoreDocumentVersions {
+    type Output = std::result::Result<
+        crate::output::RestoreDocumentVersionsOutput,
+        crate::error::RestoreDocumentVersionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_restore_document_versions_error(response)
+        } else {
+            crate::operation_deser::parse_restore_document_versions_response(response)
         }
     }
 }

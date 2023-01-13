@@ -4529,6 +4529,112 @@ impl std::error::Error for GetMultiRegionAccessPointPolicyStatusError {
     }
 }
 
+/// Error type for the `GetMultiRegionAccessPointRoutes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetMultiRegionAccessPointRoutesError {
+    /// Kind of error that occurred.
+    pub kind: GetMultiRegionAccessPointRoutesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetMultiRegionAccessPointRoutesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetMultiRegionAccessPointRoutesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetMultiRegionAccessPointRoutes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetMultiRegionAccessPointRoutesErrorKind {
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetMultiRegionAccessPointRoutesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetMultiRegionAccessPointRoutesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetMultiRegionAccessPointRoutesError {
+    fn code(&self) -> Option<&str> {
+        GetMultiRegionAccessPointRoutesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetMultiRegionAccessPointRoutesError {
+    /// Creates a new `GetMultiRegionAccessPointRoutesError`.
+    pub fn new(
+        kind: GetMultiRegionAccessPointRoutesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetMultiRegionAccessPointRoutesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetMultiRegionAccessPointRoutesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetMultiRegionAccessPointRoutesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetMultiRegionAccessPointRoutesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for GetMultiRegionAccessPointRoutesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetMultiRegionAccessPointRoutesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `GetPublicAccessBlock` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6743,6 +6849,112 @@ impl std::error::Error for PutStorageLensConfigurationTaggingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutStorageLensConfigurationTaggingErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `SubmitMultiRegionAccessPointRoutes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SubmitMultiRegionAccessPointRoutesError {
+    /// Kind of error that occurred.
+    pub kind: SubmitMultiRegionAccessPointRoutesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SubmitMultiRegionAccessPointRoutesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SubmitMultiRegionAccessPointRoutesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `SubmitMultiRegionAccessPointRoutes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SubmitMultiRegionAccessPointRoutesErrorKind {
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for SubmitMultiRegionAccessPointRoutesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SubmitMultiRegionAccessPointRoutesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SubmitMultiRegionAccessPointRoutesError {
+    fn code(&self) -> Option<&str> {
+        SubmitMultiRegionAccessPointRoutesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SubmitMultiRegionAccessPointRoutesError {
+    /// Creates a new `SubmitMultiRegionAccessPointRoutesError`.
+    pub fn new(
+        kind: SubmitMultiRegionAccessPointRoutesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SubmitMultiRegionAccessPointRoutesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SubmitMultiRegionAccessPointRoutesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SubmitMultiRegionAccessPointRoutesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SubmitMultiRegionAccessPointRoutesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for SubmitMultiRegionAccessPointRoutesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SubmitMultiRegionAccessPointRoutesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

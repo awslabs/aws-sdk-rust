@@ -252,7 +252,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateContainerService`](crate::client::fluent_builders::CreateContainerService) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::CreateContainerService::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::CreateContainerService::set_service_name): <p>The name for the container service.</p>  <p>The name that you specify for your container service will make up part of its default domain. The default domain of a container service is typically <code>https://   <servicename>    .    <randomguid>     .     <awsregion>      .cs.amazonlightsail.com     </awsregion>    </randomguid>   </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>  <p>The following are the requirements for container service names:</p>  <ul>   <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>   <li> <p>Must contain 1 to 63 characters.</p> </li>   <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>   <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>  </ul>
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::CreateContainerService::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::CreateContainerService::set_service_name): <p>The name for the container service.</p>  <p>The name that you specify for your container service will make up part of its default domain. The default domain of a container service is typically <code>https://   <servicename>    .    <randomguid>     .     <awsregion>      .cs.amazonlightsail.com     </awsregion>    </randomguid>   </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>  <p>The following are the requirements for container service names:</p>  <ul>   <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>   <li> <p>Must contain 1 to 63 characters.</p> </li>   <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>   <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>  </ul>
     ///   - [`power(ContainerServicePowerName)`](crate::client::fluent_builders::CreateContainerService::power) / [`set_power(Option<ContainerServicePowerName>)`](crate::client::fluent_builders::CreateContainerService::set_power): <p>The power specification for the container service.</p>  <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>  <p>Use the <code>GetContainerServicePowers</code> action to get a list of power options that you can specify using this parameter, and their base monthly cost.</p>
     ///   - [`scale(i32)`](crate::client::fluent_builders::CreateContainerService::scale) / [`set_scale(Option<i32>)`](crate::client::fluent_builders::CreateContainerService::set_scale): <p>The scale specification for the container service.</p>  <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateContainerService::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateContainerService::set_tags): <p>The tag keys and optional values to add to the container service during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>  <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
@@ -357,7 +357,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateDomain`](crate::client::fluent_builders::CreateDomain) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_domain_name): <p>The domain name to manage (e.g., <code>example.com</code>).</p> <note>   <p>You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or another domain name registrar. If you have already registered your domain, you can enter its name in this parameter to manage the DNS records for that domain using Lightsail.</p>  </note>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_domain_name): <p>The domain name to manage (e.g., <code>example.com</code>).</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDomain::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDomain::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     /// - On success, responds with [`CreateDomainOutput`](crate::output::CreateDomainOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::output::CreateDomainOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
@@ -487,7 +487,7 @@ impl Client {
     ///   - [`master_database_name(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::master_database_name) / [`set_master_database_name(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_master_database_name): <p>The meaning of this parameter differs according to the database engine you use.</p>  <p> <b>MySQL</b> </p>  <p>The name of the database to create when the Lightsail database resource is created. If this parameter isn't specified, no database is created in the database resource.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>   <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0- 9).</p> </li>   <li> <p>Can't be a word reserved by the specified database engine.</p> <p>For more information about reserved words in MySQL, see the Keywords and Reserved Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>, and <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.</p> </li>  </ul>  <p> <b>PostgreSQL</b> </p>  <p>The name of the database to create when the Lightsail database resource is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the database resource.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain 1 to 63 letters or numbers.</p> </li>   <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0- 9).</p> </li>   <li> <p>Can't be a word reserved by the specified database engine.</p> <p>For more information about reserved words in PostgreSQL, see the SQL Key Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>  </ul>
     ///   - [`master_username(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::master_username) / [`set_master_username(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_master_username): <p>The name for the master user.</p>  <p> <b>MySQL</b> </p>  <p>Constraints:</p>  <ul>   <li> <p>Required for MySQL.</p> </li>   <li> <p>Must be 1 to 16 letters or numbers. Can contain underscores.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Can't be a reserved word for the chosen database engine.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>, or <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.</p> </li>  </ul>  <p> <b>PostgreSQL</b> </p>  <p>Constraints:</p>  <ul>   <li> <p>Required for PostgreSQL.</p> </li>   <li> <p>Must be 1 to 63 letters or numbers. Can contain underscores.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Can't be a reserved word for the chosen database engine.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>  </ul>
     ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_master_user_password): <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@". It cannot contain spaces.</p>  <p> <b>MySQL</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>PostgreSQL</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p>
-    ///   - [`preferred_backup_window(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::preferred_backup_window) / [`set_preferred_backup_window(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_preferred_backup_window): <p>The daily time range during which automated backups are created for your new database if automated backups are enabled.</p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Must not conflict with the preferred maintenance window.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>  </ul>
+    ///   - [`preferred_backup_window(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::preferred_backup_window) / [`set_preferred_backup_window(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_preferred_backup_window): <p>The daily time range during which automated backups are created for your new database if automated backups are enabled.</p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service documentation.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Must not conflict with the preferred maintenance window.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>  </ul>
     ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur on your new database.</p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>   <li> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>  </ul>
     ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::CreateRelationalDatabase::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_publicly_accessible): <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRelationalDatabase::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
@@ -619,7 +619,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`disk_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDisk::disk_name) / [`set_disk_name(Option<String>)`](crate::client::fluent_builders::DeleteDisk::set_disk_name): <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
-    ///   - [`force_delete_add_ons(bool)`](crate::client::fluent_builders::DeleteDisk::force_delete_add_ons) / [`set_force_delete_add_ons(Option<bool>)`](crate::client::fluent_builders::DeleteDisk::set_force_delete_add_ons): <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+    ///   - [`force_delete_add_ons(bool)`](crate::client::fluent_builders::DeleteDisk::force_delete_add_ons) / [`set_force_delete_add_ons(Option<bool>)`](crate::client::fluent_builders::DeleteDisk::set_force_delete_add_ons): <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
     /// - On success, responds with [`DeleteDiskOutput`](crate::output::DeleteDiskOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteDiskOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteDiskError>`](crate::error::DeleteDiskError)
@@ -671,7 +671,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::DeleteInstance::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::DeleteInstance::set_instance_name): <p>The name of the instance to delete.</p>
-    ///   - [`force_delete_add_ons(bool)`](crate::client::fluent_builders::DeleteInstance::force_delete_add_ons) / [`set_force_delete_add_ons(Option<bool>)`](crate::client::fluent_builders::DeleteInstance::set_force_delete_add_ons): <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+    ///   - [`force_delete_add_ons(bool)`](crate::client::fluent_builders::DeleteInstance::force_delete_add_ons) / [`set_force_delete_add_ons(Option<bool>)`](crate::client::fluent_builders::DeleteInstance::set_force_delete_add_ons): <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
     /// - On success, responds with [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteInstanceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteInstanceError>`](crate::error::DeleteInstanceError)
@@ -1968,7 +1968,7 @@ impl Client {
     ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_master_user_password): <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>  <p>My<b>SQL</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>PostgreSQL</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p>
     ///   - [`rotate_master_user_password(bool)`](crate::client::fluent_builders::UpdateRelationalDatabase::rotate_master_user_password) / [`set_rotate_master_user_password(Option<bool>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_rotate_master_user_password): <p>When <code>true</code>, the master user password is changed to a new strong password generated by Lightsail.</p>  <p>Use the <code>get relational database master user password</code> operation to get the new password.</p>
     ///   - [`preferred_backup_window(impl Into<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::preferred_backup_window) / [`set_preferred_backup_window(Option<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_preferred_backup_window): <p>The daily time range during which automated backups are created for your database if automated backups are enabled.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Must not conflict with the preferred maintenance window.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>  </ul>
-    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur on your database.</p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>   <li> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>  </ul>
+    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur on your database.</p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>   <li> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>  </ul>
     ///   - [`enable_backup_retention(bool)`](crate::client::fluent_builders::UpdateRelationalDatabase::enable_backup_retention) / [`set_enable_backup_retention(Option<bool>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_enable_backup_retention): <p>When <code>true</code>, enables automated backup retention for your database.</p>  <p>Updates are applied during the next maintenance window because this can result in an outage.</p>
     ///   - [`disable_backup_retention(bool)`](crate::client::fluent_builders::UpdateRelationalDatabase::disable_backup_retention) / [`set_disable_backup_retention(Option<bool>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_disable_backup_retention): <p>When <code>true</code>, disables automated backup retention for your database.</p>  <p>Disabling backup retention deletes all automated database backups. Before disabling this, you may want to create a snapshot of your database using the <code>create relational database snapshot</code> operation.</p>  <p>Updates are applied during the next maintenance window because this can result in an outage.</p>
     ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::UpdateRelationalDatabase::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_publicly_accessible): <p>Specifies the accessibility options for your database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
@@ -3418,7 +3418,7 @@ pub mod fluent_builders {
         /// .cs.amazonlightsail.com
         /// </awsregion>
         /// </randomguid>
-        /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
+        /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
         /// <p>The following are the requirements for container service names:</p>
         /// <ul>
         /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
@@ -3440,7 +3440,7 @@ pub mod fluent_builders {
         /// .cs.amazonlightsail.com
         /// </awsregion>
         /// </randomguid>
-        /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
+        /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
         /// <p>The following are the requirements for container service names:</p>
         /// <ul>
         /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
@@ -4488,16 +4488,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The domain name to manage (e.g., <code>example.com</code>).</p> <note>
-        /// <p>You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or another domain name registrar. If you have already registered your domain, you can enter its name in this parameter to manage the DNS records for that domain using Lightsail.</p>
-        /// </note>
+        /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The domain name to manage (e.g., <code>example.com</code>).</p> <note>
-        /// <p>You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or another domain name registrar. If you have already registered your domain, you can enter its name in this parameter to manage the DNS records for that domain using Lightsail.</p>
-        /// </note>
+        /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -5932,7 +5928,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The daily time range during which automated backups are created for your new database if automated backups are enabled.</p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service documentation.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>
@@ -5945,7 +5941,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The daily time range during which automated backups are created for your new database if automated backups are enabled.</p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service documentation.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>
@@ -7127,12 +7123,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_disk_name(input);
             self
         }
-        /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+        /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
         pub fn force_delete_add_ons(mut self, input: bool) -> Self {
             self.inner = self.inner.force_delete_add_ons(input);
             self
         }
-        /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+        /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
         pub fn set_force_delete_add_ons(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_delete_add_ons(input);
             self
@@ -7531,12 +7527,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_name(input);
             self
         }
-        /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+        /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
         pub fn force_delete_add_ons(mut self, input: bool) -> Self {
             self.inner = self.inner.force_delete_add_ons(input);
             self
         }
-        /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+        /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
         pub fn set_force_delete_add_ons(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_delete_add_ons(input);
             self
@@ -10100,7 +10096,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the log events of a container of your Amazon Lightsail container service.</p>
     /// <p>If your container service has more than one node (i.e., a scale greater than 1), then the log events that are returned for the specified container are merged from all nodes on your container service.</p> <note>
-    /// <p>Container logs are retained for a certain amount of time. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>Container logs are retained for a certain amount of time. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerLog {
@@ -10281,7 +10277,7 @@ pub mod fluent_builders {
     /// <p>Returns the deployments for your Amazon Lightsail container service</p>
     /// <p>A deployment specifies the settings, such as the ports and launch command, of containers that are deployed to your container service.</p>
     /// <p>The deployments are ordered by version in ascending order. The newest version is listed at the top of the response.</p> <note>
-    /// <p>A set number of deployments are kept before the oldest one is replaced with the newest one. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>A set number of deployments are kept before the oldest one is replaced with the newest one. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerServiceDeployments {
@@ -16969,7 +16965,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBucketBundle`.
     ///
     /// <p>Updates the bundle, or storage plan, of an existing Amazon Lightsail bucket.</p>
-    /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket. You can update a bucket's bundle only one time within a monthly AWS billing cycle. To determine if you can update a bucket's bundle, use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action. The <code>ableToUpdateBundle</code> parameter in the response will indicate whether you can currently update a bucket's bundle.</p>
+    /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket. You can update a bucket's bundle only one time within a monthly Amazon Web Services billing cycle. To determine if you can update a bucket's bundle, use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action. The <code>ableToUpdateBundle</code> parameter in the response will indicate whether you can currently update a bucket's bundle.</p>
     /// <p>Update a bucket's bundle if it's consistently going over its storage space or data transfer quota, or if a bucket's usage is consistently in the lower range of its storage space or data transfer quota. Due to the unpredictable usage fluctuations that a bucket might experience, we strongly recommend that you update a bucket's bundle only as a long-term strategy, instead of as a short-term, monthly cost-cutting measure. Choose a bucket bundle that will provide the bucket with ample storage space and data transfer for a long time to come.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBucketBundle {
@@ -17369,7 +17365,7 @@ pub mod fluent_builders {
     /// <p>Updates the bundle of your Amazon Lightsail content delivery network (CDN) distribution.</p>
     /// <p>A distribution bundle specifies the monthly network transfer quota and monthly cost of your distribution.</p>
     /// <p>Update your distribution's bundle if your distribution is going over its monthly network transfer quota and is incurring an overage fee.</p>
-    /// <p>You can update your distribution's bundle only one time within your monthly AWS billing cycle. To determine if you can update your distribution's bundle, use the <code>GetDistributions</code> action. The <code>ableToUpdateBundle</code> parameter in the result will indicate whether you can currently update your distribution's bundle.</p>
+    /// <p>You can update your distribution's bundle only one time within your monthly Amazon Web Services billing cycle. To determine if you can update your distribution's bundle, use the <code>GetDistributions</code> action. The <code>ableToUpdateBundle</code> parameter in the result will indicate whether you can currently update your distribution's bundle.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDistributionBundle {
         handle: std::sync::Arc<super::Handle>,
@@ -17936,7 +17932,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The weekly time range during which system maintenance can occur on your database.</p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>
@@ -17953,7 +17949,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The weekly time range during which system maintenance can occur on your database.</p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>

@@ -125,6 +125,17 @@ impl Client {
     pub fn associate_package(&self) -> fluent_builders::AssociatePackage {
         fluent_builders::AssociatePackage::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`AuthorizeVpcEndpointAccess`](crate::client::fluent_builders::AuthorizeVpcEndpointAccess) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::AuthorizeVpcEndpointAccess::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::AuthorizeVpcEndpointAccess::set_domain_name): <p>The name of the OpenSearch Service domain to provide access to.</p>
+    ///   - [`account(impl Into<String>)`](crate::client::fluent_builders::AuthorizeVpcEndpointAccess::account) / [`set_account(Option<String>)`](crate::client::fluent_builders::AuthorizeVpcEndpointAccess::set_account): <p>The account ID to grant access to.</p>
+    /// - On success, responds with [`AuthorizeVpcEndpointAccessOutput`](crate::output::AuthorizeVpcEndpointAccessOutput) with field(s):
+    ///   - [`authorized_principal(Option<AuthorizedPrincipal>)`](crate::output::AuthorizeVpcEndpointAccessOutput::authorized_principal): <p>Information about the account or service that was provided access to the domain.</p>
+    /// - On failure, responds with [`SdkError<AuthorizeVpcEndpointAccessError>`](crate::error::AuthorizeVpcEndpointAccessError)
+    pub fn authorize_vpc_endpoint_access(&self) -> fluent_builders::AuthorizeVpcEndpointAccess {
+        fluent_builders::AuthorizeVpcEndpointAccess::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CancelElasticsearchServiceSoftwareUpdate`](crate::client::fluent_builders::CancelElasticsearchServiceSoftwareUpdate) operation.
     ///
     /// - The fluent builder is configurable:
@@ -193,6 +204,18 @@ impl Client {
     pub fn create_package(&self) -> fluent_builders::CreatePackage {
         fluent_builders::CreatePackage::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateVpcEndpoint`](crate::client::fluent_builders::CreateVpcEndpoint) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_arn(impl Into<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::domain_arn) / [`set_domain_arn(Option<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_domain_arn): <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+    ///   - [`vpc_options(VpcOptions)`](crate::client::fluent_builders::CreateVpcEndpoint::vpc_options) / [`set_vpc_options(Option<VpcOptions>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_vpc_options): <p>Options to specify the subnets and security groups for the endpoint.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    /// - On success, responds with [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput) with field(s):
+    ///   - [`vpc_endpoint(Option<VpcEndpoint>)`](crate::output::CreateVpcEndpointOutput::vpc_endpoint): <p>Information about the newly created VPC endpoint.</p>
+    /// - On failure, responds with [`SdkError<CreateVpcEndpointError>`](crate::error::CreateVpcEndpointError)
+    pub fn create_vpc_endpoint(&self) -> fluent_builders::CreateVpcEndpoint {
+        fluent_builders::CreateVpcEndpoint::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteElasticsearchDomain`](crate::client::fluent_builders::DeleteElasticsearchDomain) operation.
     ///
     /// - The fluent builder is configurable:
@@ -248,6 +271,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeletePackageError>`](crate::error::DeletePackageError)
     pub fn delete_package(&self) -> fluent_builders::DeletePackage {
         fluent_builders::DeletePackage::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteVpcEndpoint`](crate::client::fluent_builders::DeleteVpcEndpoint) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_endpoint_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVpcEndpoint::vpc_endpoint_id) / [`set_vpc_endpoint_id(Option<String>)`](crate::client::fluent_builders::DeleteVpcEndpoint::set_vpc_endpoint_id): <p>The unique identifier of the endpoint to be deleted.</p>
+    /// - On success, responds with [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput) with field(s):
+    ///   - [`vpc_endpoint_summary(Option<VpcEndpointSummary>)`](crate::output::DeleteVpcEndpointOutput::vpc_endpoint_summary): <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
+    /// - On failure, responds with [`SdkError<DeleteVpcEndpointError>`](crate::error::DeleteVpcEndpointError)
+    pub fn delete_vpc_endpoint(&self) -> fluent_builders::DeleteVpcEndpoint {
+        fluent_builders::DeleteVpcEndpoint::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeDomainAutoTunes`](crate::client::fluent_builders::DescribeDomainAutoTunes) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDomainAutoTunes::into_paginator).
@@ -398,6 +431,17 @@ impl Client {
     ) -> fluent_builders::DescribeReservedElasticsearchInstances {
         fluent_builders::DescribeReservedElasticsearchInstances::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeVpcEndpoints`](crate::client::fluent_builders::DescribeVpcEndpoints) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_endpoint_ids(Vec<String>)`](crate::client::fluent_builders::DescribeVpcEndpoints::vpc_endpoint_ids) / [`set_vpc_endpoint_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeVpcEndpoints::set_vpc_endpoint_ids): <p>The unique identifiers of the endpoints to get information about.</p>
+    /// - On success, responds with [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput) with field(s):
+    ///   - [`vpc_endpoints(Option<Vec<VpcEndpoint>>)`](crate::output::DescribeVpcEndpointsOutput::vpc_endpoints): <p>Information about each requested VPC endpoint.</p>
+    ///   - [`vpc_endpoint_errors(Option<Vec<VpcEndpointError>>)`](crate::output::DescribeVpcEndpointsOutput::vpc_endpoint_errors): <p>Any errors associated with the request.</p>
+    /// - On failure, responds with [`SdkError<DescribeVpcEndpointsError>`](crate::error::DescribeVpcEndpointsError)
+    pub fn describe_vpc_endpoints(&self) -> fluent_builders::DescribeVpcEndpoints {
+        fluent_builders::DescribeVpcEndpoints::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DissociatePackage`](crate::client::fluent_builders::DissociatePackage) operation.
     ///
     /// - The fluent builder is configurable:
@@ -540,6 +584,41 @@ impl Client {
     pub fn list_tags(&self) -> fluent_builders::ListTags {
         fluent_builders::ListTags::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListVpcEndpointAccess`](crate::client::fluent_builders::ListVpcEndpointAccess) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ListVpcEndpointAccess::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ListVpcEndpointAccess::set_domain_name): <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVpcEndpointAccess::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVpcEndpointAccess::set_next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    /// - On success, responds with [`ListVpcEndpointAccessOutput`](crate::output::ListVpcEndpointAccessOutput) with field(s):
+    ///   - [`authorized_principal_list(Option<Vec<AuthorizedPrincipal>>)`](crate::output::ListVpcEndpointAccessOutput::authorized_principal_list): <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVpcEndpointAccessOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    /// - On failure, responds with [`SdkError<ListVpcEndpointAccessError>`](crate::error::ListVpcEndpointAccessError)
+    pub fn list_vpc_endpoint_access(&self) -> fluent_builders::ListVpcEndpointAccess {
+        fluent_builders::ListVpcEndpointAccess::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListVpcEndpoints`](crate::client::fluent_builders::ListVpcEndpoints) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVpcEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVpcEndpoints::set_next_token): <p>Identifier to allow retrieval of paginated results.</p>
+    /// - On success, responds with [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput) with field(s):
+    ///   - [`vpc_endpoint_summary_list(Option<Vec<VpcEndpointSummary>>)`](crate::output::ListVpcEndpointsOutput::vpc_endpoint_summary_list): <p>Information about each endpoint.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVpcEndpointsOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    /// - On failure, responds with [`SdkError<ListVpcEndpointsError>`](crate::error::ListVpcEndpointsError)
+    pub fn list_vpc_endpoints(&self) -> fluent_builders::ListVpcEndpoints {
+        fluent_builders::ListVpcEndpoints::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListVpcEndpointsForDomain`](crate::client::fluent_builders::ListVpcEndpointsForDomain) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ListVpcEndpointsForDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ListVpcEndpointsForDomain::set_domain_name): <p>Name of the ElasticSearch domain whose VPC endpoints are to be listed.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVpcEndpointsForDomain::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVpcEndpointsForDomain::set_next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    /// - On success, responds with [`ListVpcEndpointsForDomainOutput`](crate::output::ListVpcEndpointsForDomainOutput) with field(s):
+    ///   - [`vpc_endpoint_summary_list(Option<Vec<VpcEndpointSummary>>)`](crate::output::ListVpcEndpointsForDomainOutput::vpc_endpoint_summary_list): <p>Provides list of <code>VpcEndpointSummary</code> summarizing details of the VPC endpoints.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVpcEndpointsForDomainOutput::next_token): <p>Information about each endpoint associated with the domain.</p>
+    /// - On failure, responds with [`SdkError<ListVpcEndpointsForDomainError>`](crate::error::ListVpcEndpointsForDomainError)
+    pub fn list_vpc_endpoints_for_domain(&self) -> fluent_builders::ListVpcEndpointsForDomain {
+        fluent_builders::ListVpcEndpointsForDomain::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`PurchaseReservedElasticsearchInstanceOffering`](crate::client::fluent_builders::PurchaseReservedElasticsearchInstanceOffering) operation.
     ///
     /// - The fluent builder is configurable:
@@ -577,6 +656,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<RemoveTagsError>`](crate::error::RemoveTagsError)
     pub fn remove_tags(&self) -> fluent_builders::RemoveTags {
         fluent_builders::RemoveTags::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`RevokeVpcEndpointAccess`](crate::client::fluent_builders::RevokeVpcEndpointAccess) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::RevokeVpcEndpointAccess::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::RevokeVpcEndpointAccess::set_domain_name): <p>The name of the OpenSearch Service domain.</p>
+    ///   - [`account(impl Into<String>)`](crate::client::fluent_builders::RevokeVpcEndpointAccess::account) / [`set_account(Option<String>)`](crate::client::fluent_builders::RevokeVpcEndpointAccess::set_account): <p>The account ID to revoke access from.</p>
+    /// - On success, responds with [`RevokeVpcEndpointAccessOutput`](crate::output::RevokeVpcEndpointAccessOutput)
+
+    /// - On failure, responds with [`SdkError<RevokeVpcEndpointAccessError>`](crate::error::RevokeVpcEndpointAccessError)
+    pub fn revoke_vpc_endpoint_access(&self) -> fluent_builders::RevokeVpcEndpointAccess {
+        fluent_builders::RevokeVpcEndpointAccess::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`StartElasticsearchServiceSoftwareUpdate`](crate::client::fluent_builders::StartElasticsearchServiceSoftwareUpdate) operation.
     ///
@@ -629,6 +719,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdatePackageError>`](crate::error::UpdatePackageError)
     pub fn update_package(&self) -> fluent_builders::UpdatePackage {
         fluent_builders::UpdatePackage::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateVpcEndpoint`](crate::client::fluent_builders::UpdateVpcEndpoint) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_endpoint_id(impl Into<String>)`](crate::client::fluent_builders::UpdateVpcEndpoint::vpc_endpoint_id) / [`set_vpc_endpoint_id(Option<String>)`](crate::client::fluent_builders::UpdateVpcEndpoint::set_vpc_endpoint_id): <p>Unique identifier of the VPC endpoint to be updated.</p>
+    ///   - [`vpc_options(VpcOptions)`](crate::client::fluent_builders::UpdateVpcEndpoint::vpc_options) / [`set_vpc_options(Option<VpcOptions>)`](crate::client::fluent_builders::UpdateVpcEndpoint::set_vpc_options): <p>The security groups and/or subnets to add, remove, or modify.</p>
+    /// - On success, responds with [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput) with field(s):
+    ///   - [`vpc_endpoint(Option<VpcEndpoint>)`](crate::output::UpdateVpcEndpointOutput::vpc_endpoint): <p>The endpoint to be updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateVpcEndpointError>`](crate::error::UpdateVpcEndpointError)
+    pub fn update_vpc_endpoint(&self) -> fluent_builders::UpdateVpcEndpoint {
+        fluent_builders::UpdateVpcEndpoint::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpgradeElasticsearchDomain`](crate::client::fluent_builders::UpgradeElasticsearchDomain) operation.
     ///
@@ -906,6 +1007,89 @@ pub mod fluent_builders {
         /// <p>Name of the domain that you want to associate the package with.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `AuthorizeVpcEndpointAccess`.
+    ///
+    /// <p>Provides access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AuthorizeVpcEndpointAccess {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::authorize_vpc_endpoint_access_input::Builder,
+    }
+    impl AuthorizeVpcEndpointAccess {
+        /// Creates a new `AuthorizeVpcEndpointAccess`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::AuthorizeVpcEndpointAccess,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::AuthorizeVpcEndpointAccessError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AuthorizeVpcEndpointAccessOutput,
+            aws_smithy_http::result::SdkError<crate::error::AuthorizeVpcEndpointAccessError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the OpenSearch Service domain to provide access to.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The name of the OpenSearch Service domain to provide access to.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>The account ID to grant access to.</p>
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account(input.into());
+            self
+        }
+        /// <p>The account ID to grant access to.</p>
+        pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account(input);
             self
         }
     }
@@ -1511,6 +1695,102 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateVpcEndpoint`.
+    ///
+    /// <p>Creates an Amazon OpenSearch Service-managed VPC endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateVpcEndpoint {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_vpc_endpoint_input::Builder,
+    }
+    impl CreateVpcEndpoint {
+        /// Creates a new `CreateVpcEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateVpcEndpoint,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateVpcEndpointError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateVpcEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateVpcEndpointError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+        pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+        pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_arn(input);
+            self
+        }
+        /// <p>Options to specify the subnets and security groups for the endpoint.</p>
+        pub fn vpc_options(mut self, input: crate::model::VpcOptions) -> Self {
+            self.inner = self.inner.vpc_options(input);
+            self
+        }
+        /// <p>Options to specify the subnets and security groups for the endpoint.</p>
+        pub fn set_vpc_options(
+            mut self,
+            input: std::option::Option<crate::model::VpcOptions>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_options(input);
+            self
+        }
+        /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteElasticsearchDomain`.
     ///
     /// <p>Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered.</p>
@@ -1883,6 +2163,82 @@ pub mod fluent_builders {
         /// <p>Internal ID of the package that you want to delete. Use <code>DescribePackages</code> to find this value.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteVpcEndpoint`.
+    ///
+    /// <p>Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteVpcEndpoint {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_vpc_endpoint_input::Builder,
+    }
+    impl DeleteVpcEndpoint {
+        /// Creates a new `DeleteVpcEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteVpcEndpoint,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteVpcEndpointError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteVpcEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteVpcEndpointError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the endpoint to be deleted.</p>
+        pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_endpoint_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the endpoint to be deleted.</p>
+        pub fn set_vpc_endpoint_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_endpoint_id(input);
             self
         }
     }
@@ -2997,6 +3353,86 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeVpcEndpoints`.
+    ///
+    /// <p>Describes one or more Amazon OpenSearch Service-managed VPC endpoints.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeVpcEndpoints {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_vpc_endpoints_input::Builder,
+    }
+    impl DescribeVpcEndpoints {
+        /// Creates a new `DescribeVpcEndpoints`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeVpcEndpoints,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeVpcEndpointsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeVpcEndpointsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeVpcEndpointsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `VpcEndpointIds`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_endpoint_ids`](Self::set_vpc_endpoint_ids).
+        ///
+        /// <p>The unique identifiers of the endpoints to get information about.</p>
+        pub fn vpc_endpoint_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_endpoint_ids(input.into());
+            self
+        }
+        /// <p>The unique identifiers of the endpoints to get information about.</p>
+        pub fn set_vpc_endpoint_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_endpoint_ids(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DissociatePackage`.
     ///
     /// <p>Dissociates a package from the Amazon ES domain.</p>
@@ -3976,6 +4412,245 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListVpcEndpointAccess`.
+    ///
+    /// <p>Retrieves information about each principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListVpcEndpointAccess {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_vpc_endpoint_access_input::Builder,
+    }
+    impl ListVpcEndpointAccess {
+        /// Creates a new `ListVpcEndpointAccess`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListVpcEndpointAccess,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointAccessError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListVpcEndpointAccessOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointAccessError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListVpcEndpoints`.
+    ///
+    /// <p>Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current account and Region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListVpcEndpoints {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_vpc_endpoints_input::Builder,
+    }
+    impl ListVpcEndpoints {
+        /// Creates a new `ListVpcEndpoints`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListVpcEndpoints,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListVpcEndpointsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Identifier to allow retrieval of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Identifier to allow retrieval of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListVpcEndpointsForDomain`.
+    ///
+    /// <p>Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular domain.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListVpcEndpointsForDomain {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_vpc_endpoints_for_domain_input::Builder,
+    }
+    impl ListVpcEndpointsForDomain {
+        /// Creates a new `ListVpcEndpointsForDomain`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListVpcEndpointsForDomain,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointsForDomainError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListVpcEndpointsForDomainOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointsForDomainError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Name of the ElasticSearch domain whose VPC endpoints are to be listed.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>Name of the ElasticSearch domain whose VPC endpoints are to be listed.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `PurchaseReservedElasticsearchInstanceOffering`.
     ///
     /// <p>Allows you to purchase reserved Elasticsearch instances.</p>
@@ -4256,6 +4931,89 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_tag_keys(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `RevokeVpcEndpointAccess`.
+    ///
+    /// <p>Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RevokeVpcEndpointAccess {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::revoke_vpc_endpoint_access_input::Builder,
+    }
+    impl RevokeVpcEndpointAccess {
+        /// Creates a new `RevokeVpcEndpointAccess`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::RevokeVpcEndpointAccess,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::RevokeVpcEndpointAccessError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RevokeVpcEndpointAccessOutput,
+            aws_smithy_http::result::SdkError<crate::error::RevokeVpcEndpointAccessError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the OpenSearch Service domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The name of the OpenSearch Service domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>The account ID to revoke access from.</p>
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account(input.into());
+            self
+        }
+        /// <p>The account ID to revoke access from.</p>
+        pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account(input);
             self
         }
     }
@@ -4732,6 +5490,95 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_commit_message(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateVpcEndpoint`.
+    ///
+    /// <p>Modifies an Amazon OpenSearch Service-managed interface VPC endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateVpcEndpoint {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_vpc_endpoint_input::Builder,
+    }
+    impl UpdateVpcEndpoint {
+        /// Creates a new `UpdateVpcEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateVpcEndpoint,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateVpcEndpointError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateVpcEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateVpcEndpointError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Unique identifier of the VPC endpoint to be updated.</p>
+        pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_endpoint_id(input.into());
+            self
+        }
+        /// <p>Unique identifier of the VPC endpoint to be updated.</p>
+        pub fn set_vpc_endpoint_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_endpoint_id(input);
+            self
+        }
+        /// <p>The security groups and/or subnets to add, remove, or modify.</p>
+        pub fn vpc_options(mut self, input: crate::model::VpcOptions) -> Self {
+            self.inner = self.inner.vpc_options(input);
+            self
+        }
+        /// <p>The security groups and/or subnets to add, remove, or modify.</p>
+        pub fn set_vpc_options(
+            mut self,
+            input: std::option::Option<crate::model::VpcOptions>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_options(input);
             self
         }
     }

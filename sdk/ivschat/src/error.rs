@@ -521,6 +521,109 @@ impl ThrottlingException {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p></p>
+    #[doc(hidden)]
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p></p>
+    #[doc(hidden)]
+    pub resource_type: std::option::Option<crate::model::ResourceType>,
+}
+impl ConflictException {
+    /// <p></p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p></p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+}
+impl ConflictException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConflictException")?;
+        if let Some(inner_7) = &self.message {
+            {
+                write!(f, ": {}", inner_7)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConflictException {}
+/// See [`ConflictException`](crate::error::ConflictException).
+pub mod conflict_exception {
+
+    /// A builder for [`ConflictException`](crate::error::ConflictException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p></p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p></p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p></p>
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.resource_type = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::ResourceType>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
+                message: self.message,
+                resource_id: self.resource_id,
+                resource_type: self.resource_type,
+            }
+        }
+    }
+}
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
+    }
+}
+
+/// <p></p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -558,9 +661,9 @@ impl ServiceQuotaExceededException {
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_7) = &self.message {
+        if let Some(inner_8) = &self.message {
             {
-                write!(f, ": {}", inner_7)?;
+                write!(f, ": {}", inner_8)?;
             }
         }
         Ok(())
@@ -637,109 +740,6 @@ impl ServiceQuotaExceededException {
     /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
     pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
         crate::error::service_quota_exceeded_exception::Builder::default()
-    }
-}
-
-/// <p></p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    /// <p></p>
-    #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
-    /// <p></p>
-    #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::model::ResourceType>,
-}
-impl ConflictException {
-    /// <p></p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
-        self.resource_id.as_deref()
-    }
-    /// <p></p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
-        self.resource_type.as_ref()
-    }
-}
-impl ConflictException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConflictException")?;
-        if let Some(inner_8) = &self.message {
-            {
-                write!(f, ": {}", inner_8)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ConflictException {}
-/// See [`ConflictException`](crate::error::ConflictException).
-pub mod conflict_exception {
-
-    /// A builder for [`ConflictException`](crate::error::ConflictException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) resource_id: std::option::Option<std::string::String>,
-        pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// <p></p>
-        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(input.into());
-            self
-        }
-        /// <p></p>
-        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
-        }
-        /// <p></p>
-        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
-            self.resource_type = Some(input);
-            self
-        }
-        /// <p></p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
-        pub fn build(self) -> crate::error::ConflictException {
-            crate::error::ConflictException {
-                message: self.message,
-                resource_id: self.resource_id,
-                resource_type: self.resource_type,
-            }
-        }
-    }
-}
-impl ConflictException {
-    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
-    pub fn builder() -> crate::error::conflict_exception::Builder {
-        crate::error::conflict_exception::Builder::default()
     }
 }
 
@@ -874,6 +874,179 @@ impl std::error::Error for CreateChatTokenError {
             CreateChatTokenErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateChatTokenErrorKind::ValidationException(_inner) => Some(_inner),
             CreateChatTokenErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `CreateLoggingConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateLoggingConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: CreateLoggingConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateLoggingConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateLoggingConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateLoggingConfigurationErrorKind {
+    /// <p></p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p></p>
+    ConflictException(crate::error::ConflictException),
+    /// <p></p>
+    PendingVerification(crate::error::PendingVerification),
+    /// <p></p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p></p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p></p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateLoggingConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateLoggingConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateLoggingConfigurationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateLoggingConfigurationErrorKind::PendingVerification(_inner) => _inner.fmt(f),
+            CreateLoggingConfigurationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateLoggingConfigurationErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateLoggingConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateLoggingConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateLoggingConfigurationError {
+    fn code(&self) -> Option<&str> {
+        CreateLoggingConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateLoggingConfigurationError {
+    /// Creates a new `CreateLoggingConfigurationError`.
+    pub fn new(kind: CreateLoggingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateLoggingConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateLoggingConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLoggingConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLoggingConfigurationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLoggingConfigurationErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLoggingConfigurationErrorKind::PendingVerification`.
+    pub fn is_pending_verification(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLoggingConfigurationErrorKind::PendingVerification(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLoggingConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLoggingConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLoggingConfigurationErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLoggingConfigurationErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLoggingConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLoggingConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CreateLoggingConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateLoggingConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateLoggingConfigurationErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateLoggingConfigurationErrorKind::PendingVerification(_inner) => Some(_inner),
+            CreateLoggingConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateLoggingConfigurationErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateLoggingConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1029,6 +1202,164 @@ impl std::error::Error for CreateRoomError {
     }
 }
 
+/// Error type for the `DeleteLoggingConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteLoggingConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: DeleteLoggingConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteLoggingConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteLoggingConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteLoggingConfigurationErrorKind {
+    /// <p></p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p></p>
+    ConflictException(crate::error::ConflictException),
+    /// <p></p>
+    PendingVerification(crate::error::PendingVerification),
+    /// <p></p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p></p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteLoggingConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteLoggingConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteLoggingConfigurationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteLoggingConfigurationErrorKind::PendingVerification(_inner) => _inner.fmt(f),
+            DeleteLoggingConfigurationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteLoggingConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteLoggingConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteLoggingConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DeleteLoggingConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteLoggingConfigurationError {
+    /// Creates a new `DeleteLoggingConfigurationError`.
+    pub fn new(kind: DeleteLoggingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteLoggingConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteLoggingConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLoggingConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLoggingConfigurationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLoggingConfigurationErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLoggingConfigurationErrorKind::PendingVerification`.
+    pub fn is_pending_verification(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLoggingConfigurationErrorKind::PendingVerification(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLoggingConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLoggingConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLoggingConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLoggingConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteLoggingConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteLoggingConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteLoggingConfigurationErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteLoggingConfigurationErrorKind::PendingVerification(_inner) => Some(_inner),
+            DeleteLoggingConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteLoggingConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DeleteMessage` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1053,6 +1384,8 @@ pub enum DeleteMessageErrorKind {
     /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p></p>
+    PendingVerification(crate::error::PendingVerification),
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p></p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1072,6 +1405,7 @@ impl std::fmt::Display for DeleteMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteMessageErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteMessageErrorKind::PendingVerification(_inner) => _inner.fmt(f),
             DeleteMessageErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DeleteMessageErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DeleteMessageErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -1133,6 +1467,10 @@ impl DeleteMessageError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteMessageErrorKind::AccessDeniedException(_))
     }
+    /// Returns `true` if the error kind is `DeleteMessageErrorKind::PendingVerification`.
+    pub fn is_pending_verification(&self) -> bool {
+        matches!(&self.kind, DeleteMessageErrorKind::PendingVerification(_))
+    }
     /// Returns `true` if the error kind is `DeleteMessageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -1153,6 +1491,7 @@ impl std::error::Error for DeleteMessageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteMessageErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteMessageErrorKind::PendingVerification(_inner) => Some(_inner),
             DeleteMessageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteMessageErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteMessageErrorKind::ValidationException(_inner) => Some(_inner),
@@ -1317,6 +1656,8 @@ pub enum DisconnectUserErrorKind {
     /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p></p>
+    PendingVerification(crate::error::PendingVerification),
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p></p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1336,6 +1677,7 @@ impl std::fmt::Display for DisconnectUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DisconnectUserErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DisconnectUserErrorKind::PendingVerification(_inner) => _inner.fmt(f),
             DisconnectUserErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DisconnectUserErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DisconnectUserErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -1400,6 +1742,10 @@ impl DisconnectUserError {
             DisconnectUserErrorKind::AccessDeniedException(_)
         )
     }
+    /// Returns `true` if the error kind is `DisconnectUserErrorKind::PendingVerification`.
+    pub fn is_pending_verification(&self) -> bool {
+        matches!(&self.kind, DisconnectUserErrorKind::PendingVerification(_))
+    }
     /// Returns `true` if the error kind is `DisconnectUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -1420,10 +1766,145 @@ impl std::error::Error for DisconnectUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DisconnectUserErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DisconnectUserErrorKind::PendingVerification(_inner) => Some(_inner),
             DisconnectUserErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisconnectUserErrorKind::ThrottlingException(_inner) => Some(_inner),
             DisconnectUserErrorKind::ValidationException(_inner) => Some(_inner),
             DisconnectUserErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetLoggingConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetLoggingConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: GetLoggingConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetLoggingConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetLoggingConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetLoggingConfigurationErrorKind {
+    /// <p></p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p></p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p></p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetLoggingConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetLoggingConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetLoggingConfigurationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetLoggingConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetLoggingConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetLoggingConfigurationError {
+    fn code(&self) -> Option<&str> {
+        GetLoggingConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetLoggingConfigurationError {
+    /// Creates a new `GetLoggingConfigurationError`.
+    pub fn new(kind: GetLoggingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetLoggingConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetLoggingConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLoggingConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLoggingConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLoggingConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLoggingConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLoggingConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetLoggingConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetLoggingConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetLoggingConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetLoggingConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            GetLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1545,6 +2026,131 @@ impl std::error::Error for GetRoomError {
             GetRoomErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetRoomErrorKind::ValidationException(_inner) => Some(_inner),
             GetRoomErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListLoggingConfigurations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListLoggingConfigurationsError {
+    /// Kind of error that occurred.
+    pub kind: ListLoggingConfigurationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListLoggingConfigurationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListLoggingConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListLoggingConfigurations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListLoggingConfigurationsErrorKind {
+    /// <p></p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p></p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListLoggingConfigurationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListLoggingConfigurationsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListLoggingConfigurationsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListLoggingConfigurationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListLoggingConfigurationsError {
+    fn code(&self) -> Option<&str> {
+        ListLoggingConfigurationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListLoggingConfigurationsError {
+    /// Creates a new `ListLoggingConfigurationsError`.
+    pub fn new(kind: ListLoggingConfigurationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListLoggingConfigurationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListLoggingConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListLoggingConfigurationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListLoggingConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListLoggingConfigurationsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLoggingConfigurationsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListLoggingConfigurationsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLoggingConfigurationsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListLoggingConfigurationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListLoggingConfigurationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListLoggingConfigurationsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListLoggingConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1824,6 +2430,8 @@ pub enum SendEventErrorKind {
     /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p></p>
+    PendingVerification(crate::error::PendingVerification),
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p></p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1843,6 +2451,7 @@ impl std::fmt::Display for SendEventError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             SendEventErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SendEventErrorKind::PendingVerification(_inner) => _inner.fmt(f),
             SendEventErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             SendEventErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             SendEventErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -1904,6 +2513,10 @@ impl SendEventError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, SendEventErrorKind::AccessDeniedException(_))
     }
+    /// Returns `true` if the error kind is `SendEventErrorKind::PendingVerification`.
+    pub fn is_pending_verification(&self) -> bool {
+        matches!(&self.kind, SendEventErrorKind::PendingVerification(_))
+    }
     /// Returns `true` if the error kind is `SendEventErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, SendEventErrorKind::ResourceNotFoundException(_))
@@ -1921,6 +2534,7 @@ impl std::error::Error for SendEventError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             SendEventErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SendEventErrorKind::PendingVerification(_inner) => Some(_inner),
             SendEventErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SendEventErrorKind::ThrottlingException(_inner) => Some(_inner),
             SendEventErrorKind::ValidationException(_inner) => Some(_inner),
@@ -2176,6 +2790,153 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateLoggingConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateLoggingConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: UpdateLoggingConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateLoggingConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateLoggingConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateLoggingConfigurationErrorKind {
+    /// <p></p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p></p>
+    PendingVerification(crate::error::PendingVerification),
+    /// <p></p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p></p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateLoggingConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateLoggingConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateLoggingConfigurationErrorKind::PendingVerification(_inner) => _inner.fmt(f),
+            UpdateLoggingConfigurationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateLoggingConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateLoggingConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateLoggingConfigurationError {
+    fn code(&self) -> Option<&str> {
+        UpdateLoggingConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateLoggingConfigurationError {
+    /// Creates a new `UpdateLoggingConfigurationError`.
+    pub fn new(kind: UpdateLoggingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateLoggingConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateLoggingConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLoggingConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateLoggingConfigurationErrorKind::PendingVerification`.
+    pub fn is_pending_verification(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLoggingConfigurationErrorKind::PendingVerification(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateLoggingConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLoggingConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateLoggingConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLoggingConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateLoggingConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateLoggingConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateLoggingConfigurationErrorKind::PendingVerification(_inner) => Some(_inner),
+            UpdateLoggingConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateLoggingConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

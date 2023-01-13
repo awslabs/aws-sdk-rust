@@ -427,6 +427,30 @@ impl RetrieveDomainAuthCodeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResendOperationAuthorizationOutput {}
+/// See [`ResendOperationAuthorizationOutput`](crate::output::ResendOperationAuthorizationOutput).
+pub mod resend_operation_authorization_output {
+
+    /// A builder for [`ResendOperationAuthorizationOutput`](crate::output::ResendOperationAuthorizationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`ResendOperationAuthorizationOutput`](crate::output::ResendOperationAuthorizationOutput).
+        pub fn build(self) -> crate::output::ResendOperationAuthorizationOutput {
+            crate::output::ResendOperationAuthorizationOutput {}
+        }
+    }
+}
+impl ResendOperationAuthorizationOutput {
+    /// Creates a new builder-style object to manufacture [`ResendOperationAuthorizationOutput`](crate::output::ResendOperationAuthorizationOutput).
+    pub fn builder() -> crate::output::resend_operation_authorization_output::Builder {
+        crate::output::resend_operation_authorization_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResendContactReachabilityEmailOutput {
     /// <p>The domain name for which you requested a confirmation email.</p>
     #[doc(hidden)]
@@ -655,6 +679,30 @@ impl RegisterDomainOutput {
     /// Creates a new builder-style object to manufacture [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
     pub fn builder() -> crate::output::register_domain_output::Builder {
         crate::output::register_domain_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PushDomainOutput {}
+/// See [`PushDomainOutput`](crate::output::PushDomainOutput).
+pub mod push_domain_output {
+
+    /// A builder for [`PushDomainOutput`](crate::output::PushDomainOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PushDomainOutput`](crate::output::PushDomainOutput).
+        pub fn build(self) -> crate::output::PushDomainOutput {
+            crate::output::PushDomainOutput {}
+        }
+    }
+}
+impl PushDomainOutput {
+    /// Creates a new builder-style object to manufacture [`PushDomainOutput`](crate::output::PushDomainOutput).
+    pub fn builder() -> crate::output::push_domain_output::Builder {
+        crate::output::push_domain_output::Builder::default()
     }
 }
 
@@ -978,6 +1026,19 @@ pub struct GetOperationDetailOutput {
     /// <p>The date when the request was submitted.</p>
     #[doc(hidden)]
     pub submitted_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The date when the operation was last updated. </p>
+    #[doc(hidden)]
+    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Lists any outstanding operations that require customer action. Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
+    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
+    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
+    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
+    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub status_flag: std::option::Option<crate::model::StatusFlag>,
 }
 impl GetOperationDetailOutput {
     /// <p>The identifier for the operation.</p>
@@ -1004,6 +1065,21 @@ impl GetOperationDetailOutput {
     pub fn submitted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_date.as_ref()
     }
+    /// <p> The date when the operation was last updated. </p>
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_date.as_ref()
+    }
+    /// <p> Lists any outstanding operations that require customer action. Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
+    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
+    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
+    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
+    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+    /// </ul>
+    pub fn status_flag(&self) -> std::option::Option<&crate::model::StatusFlag> {
+        self.status_flag.as_ref()
+    }
 }
 /// See [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput).
 pub mod get_operation_detail_output {
@@ -1017,6 +1093,8 @@ pub mod get_operation_detail_output {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::OperationType>,
         pub(crate) submitted_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) status_flag: std::option::Option<crate::model::StatusFlag>,
     }
     impl Builder {
         /// <p>The identifier for the operation.</p>
@@ -1085,6 +1163,46 @@ pub mod get_operation_detail_output {
             self.submitted_date = input;
             self
         }
+        /// <p> The date when the operation was last updated. </p>
+        pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_date = Some(input);
+            self
+        }
+        /// <p> The date when the operation was last updated. </p>
+        pub fn set_last_updated_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_date = input;
+            self
+        }
+        /// <p> Lists any outstanding operations that require customer action. Valid values are:</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
+        /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
+        /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
+        /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
+        /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+        /// </ul>
+        pub fn status_flag(mut self, input: crate::model::StatusFlag) -> Self {
+            self.status_flag = Some(input);
+            self
+        }
+        /// <p> Lists any outstanding operations that require customer action. Valid values are:</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
+        /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
+        /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
+        /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
+        /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+        /// </ul>
+        pub fn set_status_flag(
+            mut self,
+            input: std::option::Option<crate::model::StatusFlag>,
+        ) -> Self {
+            self.status_flag = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput).
         pub fn build(self) -> crate::output::GetOperationDetailOutput {
             crate::output::GetOperationDetailOutput {
@@ -1094,6 +1212,8 @@ pub mod get_operation_detail_output {
                 domain_name: self.domain_name,
                 r#type: self.r#type,
                 submitted_date: self.submitted_date,
+                last_updated_date: self.last_updated_date,
+                status_flag: self.status_flag,
             }
         }
     }
@@ -1170,7 +1290,7 @@ pub struct GetDomainDetailOutput {
     /// <p>The name of a domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The name of the domain.</p>
+    /// <p>The name servers of the domain.</p>
     #[doc(hidden)]
     pub nameservers: std::option::Option<std::vec::Vec<crate::model::Nameserver>>,
     /// <p>Specifies whether the domain registration is set to renew automatically.</p>
@@ -1232,13 +1352,16 @@ pub struct GetDomainDetailOutput {
     /// <p>For a current list of domain name status codes and an explanation of what each code means, go to the <a href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the ICANN website; web searches sometimes return an old version of the document.)</p>
     #[doc(hidden)]
     pub status_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A complex type that contains information about the DNSSEC configuration.</p>
+    #[doc(hidden)]
+    pub dnssec_keys: std::option::Option<std::vec::Vec<crate::model::DnssecKey>>,
 }
 impl GetDomainDetailOutput {
     /// <p>The name of a domain.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The name of the domain.</p>
+    /// <p>The name servers of the domain.</p>
     pub fn nameservers(&self) -> std::option::Option<&[crate::model::Nameserver]> {
         self.nameservers.as_deref()
     }
@@ -1320,6 +1443,10 @@ impl GetDomainDetailOutput {
     pub fn status_list(&self) -> std::option::Option<&[std::string::String]> {
         self.status_list.as_deref()
     }
+    /// <p>A complex type that contains information about the DNSSEC configuration.</p>
+    pub fn dnssec_keys(&self) -> std::option::Option<&[crate::model::DnssecKey]> {
+        self.dnssec_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDomainDetailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1345,6 +1472,7 @@ impl std::fmt::Debug for GetDomainDetailOutput {
         formatter.field("reseller", &self.reseller);
         formatter.field("dns_sec", &self.dns_sec);
         formatter.field("status_list", &self.status_list);
+        formatter.field("dnssec_keys", &self.dnssec_keys);
         formatter.finish()
     }
 }
@@ -1375,6 +1503,7 @@ pub mod get_domain_detail_output {
         pub(crate) reseller: std::option::Option<std::string::String>,
         pub(crate) dns_sec: std::option::Option<std::string::String>,
         pub(crate) status_list: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) dnssec_keys: std::option::Option<std::vec::Vec<crate::model::DnssecKey>>,
     }
     impl Builder {
         /// <p>The name of a domain.</p>
@@ -1391,14 +1520,14 @@ pub mod get_domain_detail_output {
         ///
         /// To override the contents of this collection use [`set_nameservers`](Self::set_nameservers).
         ///
-        /// <p>The name of the domain.</p>
+        /// <p>The name servers of the domain.</p>
         pub fn nameservers(mut self, input: crate::model::Nameserver) -> Self {
             let mut v = self.nameservers.unwrap_or_default();
             v.push(input);
             self.nameservers = Some(v);
             self
         }
-        /// <p>The name of the domain.</p>
+        /// <p>The name servers of the domain.</p>
         pub fn set_nameservers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Nameserver>>,
@@ -1645,6 +1774,25 @@ pub mod get_domain_detail_output {
             self.status_list = input;
             self
         }
+        /// Appends an item to `dnssec_keys`.
+        ///
+        /// To override the contents of this collection use [`set_dnssec_keys`](Self::set_dnssec_keys).
+        ///
+        /// <p>A complex type that contains information about the DNSSEC configuration.</p>
+        pub fn dnssec_keys(mut self, input: crate::model::DnssecKey) -> Self {
+            let mut v = self.dnssec_keys.unwrap_or_default();
+            v.push(input);
+            self.dnssec_keys = Some(v);
+            self
+        }
+        /// <p>A complex type that contains information about the DNSSEC configuration.</p>
+        pub fn set_dnssec_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DnssecKey>>,
+        ) -> Self {
+            self.dnssec_keys = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput).
         pub fn build(self) -> crate::output::GetDomainDetailOutput {
             crate::output::GetDomainDetailOutput {
@@ -1669,6 +1817,7 @@ pub mod get_domain_detail_output {
                 reseller: self.reseller,
                 dns_sec: self.dns_sec,
                 status_list: self.status_list,
+                dnssec_keys: self.dnssec_keys,
             }
         }
     }
@@ -1696,6 +1845,7 @@ pub mod get_domain_detail_output {
             formatter.field("reseller", &self.reseller);
             formatter.field("dns_sec", &self.dns_sec);
             formatter.field("status_list", &self.status_list);
+            formatter.field("dnssec_keys", &self.dnssec_keys);
             formatter.finish()
         }
     }
@@ -1926,6 +2076,54 @@ impl EnableDomainAutoRenewOutput {
     /// Creates a new builder-style object to manufacture [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput).
     pub fn builder() -> crate::output::enable_domain_auto_renew_output::Builder {
         crate::output::enable_domain_auto_renew_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DisassociateDelegationSignerFromDomainOutput {
+    /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    #[doc(hidden)]
+    pub operation_id: std::option::Option<std::string::String>,
+}
+impl DisassociateDelegationSignerFromDomainOutput {
+    /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+}
+/// See [`DisassociateDelegationSignerFromDomainOutput`](crate::output::DisassociateDelegationSignerFromDomainOutput).
+pub mod disassociate_delegation_signer_from_domain_output {
+
+    /// A builder for [`DisassociateDelegationSignerFromDomainOutput`](crate::output::DisassociateDelegationSignerFromDomainOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) operation_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
+            self
+        }
+        /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateDelegationSignerFromDomainOutput`](crate::output::DisassociateDelegationSignerFromDomainOutput).
+        pub fn build(self) -> crate::output::DisassociateDelegationSignerFromDomainOutput {
+            crate::output::DisassociateDelegationSignerFromDomainOutput {
+                operation_id: self.operation_id,
+            }
+        }
+    }
+}
+impl DisassociateDelegationSignerFromDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateDelegationSignerFromDomainOutput`](crate::output::DisassociateDelegationSignerFromDomainOutput).
+    pub fn builder() -> crate::output::disassociate_delegation_signer_from_domain_output::Builder {
+        crate::output::disassociate_delegation_signer_from_domain_output::Builder::default()
     }
 }
 
@@ -2457,6 +2655,54 @@ impl CancelDomainTransferToAnotherAwsAccountOutput {
     pub fn builder() -> crate::output::cancel_domain_transfer_to_another_aws_account_output::Builder
     {
         crate::output::cancel_domain_transfer_to_another_aws_account_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AssociateDelegationSignerToDomainOutput {
+    /// <p>The identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    #[doc(hidden)]
+    pub operation_id: std::option::Option<std::string::String>,
+}
+impl AssociateDelegationSignerToDomainOutput {
+    /// <p>The identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+}
+/// See [`AssociateDelegationSignerToDomainOutput`](crate::output::AssociateDelegationSignerToDomainOutput).
+pub mod associate_delegation_signer_to_domain_output {
+
+    /// A builder for [`AssociateDelegationSignerToDomainOutput`](crate::output::AssociateDelegationSignerToDomainOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) operation_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateDelegationSignerToDomainOutput`](crate::output::AssociateDelegationSignerToDomainOutput).
+        pub fn build(self) -> crate::output::AssociateDelegationSignerToDomainOutput {
+            crate::output::AssociateDelegationSignerToDomainOutput {
+                operation_id: self.operation_id,
+            }
+        }
+    }
+}
+impl AssociateDelegationSignerToDomainOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateDelegationSignerToDomainOutput`](crate::output::AssociateDelegationSignerToDomainOutput).
+    pub fn builder() -> crate::output::associate_delegation_signer_to_domain_output::Builder {
+        crate::output::associate_delegation_signer_to_domain_output::Builder::default()
     }
 }
 

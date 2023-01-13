@@ -34,7 +34,7 @@ pub struct JobRunSummary {
     /// <p>The state details of the job run.</p>
     #[doc(hidden)]
     pub state_details: std::option::Option<std::string::String>,
-    /// <p>The EMR release version associated with the application your job is running on.</p>
+    /// <p>The EMR release associated with the application your job is running on.</p>
     #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The type of job run, such as Spark or Hive.</p>
@@ -82,7 +82,7 @@ impl JobRunSummary {
     pub fn state_details(&self) -> std::option::Option<&str> {
         self.state_details.as_deref()
     }
-    /// <p>The EMR release version associated with the application your job is running on.</p>
+    /// <p>The EMR release associated with the application your job is running on.</p>
     pub fn release_label(&self) -> std::option::Option<&str> {
         self.release_label.as_deref()
     }
@@ -226,12 +226,12 @@ pub mod job_run_summary {
             self.state_details = input;
             self
         }
-        /// <p>The EMR release version associated with the application your job is running on.</p>
+        /// <p>The EMR release associated with the application your job is running on.</p>
         pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
             self.release_label = Some(input.into());
             self
         }
-        /// <p>The EMR release version associated with the application your job is running on.</p>
+        /// <p>The EMR release associated with the application your job is running on.</p>
         pub fn set_release_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1168,7 +1168,7 @@ pub struct JobRun {
     /// <p>The state details of the job run.</p>
     #[doc(hidden)]
     pub state_details: std::option::Option<std::string::String>,
-    /// <p>The EMR release version associated with the application your job is running on.</p>
+    /// <p>The EMR release associated with the application your job is running on.</p>
     #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The configuration settings that are used to override default configuration.</p>
@@ -1232,7 +1232,7 @@ impl JobRun {
     pub fn state_details(&self) -> std::option::Option<&str> {
         self.state_details.as_deref()
     }
-    /// <p>The EMR release version associated with the application your job is running on.</p>
+    /// <p>The EMR release associated with the application your job is running on.</p>
     pub fn release_label(&self) -> std::option::Option<&str> {
         self.release_label.as_deref()
     }
@@ -1414,12 +1414,12 @@ pub mod job_run {
             self.state_details = input;
             self
         }
-        /// <p>The EMR release version associated with the application your job is running on.</p>
+        /// <p>The EMR release associated with the application your job is running on.</p>
         pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
             self.release_label = Some(input.into());
             self
         }
-        /// <p>The EMR release version associated with the application your job is running on.</p>
+        /// <p>The EMR release associated with the application your job is running on.</p>
         pub fn set_release_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1738,7 +1738,7 @@ pub struct ApplicationSummary {
     /// <p>The ARN of the application.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The EMR release version associated with the application.</p>
+    /// <p>The EMR release associated with the application.</p>
     #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The type of application, such as Spark or Hive.</p>
@@ -1756,6 +1756,9 @@ pub struct ApplicationSummary {
     /// <p>The date and time when the application was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The CPU architecture of an application.</p>
+    #[doc(hidden)]
+    pub architecture: std::option::Option<crate::model::Architecture>,
 }
 impl ApplicationSummary {
     /// <p>The ID of the application.</p>
@@ -1770,7 +1773,7 @@ impl ApplicationSummary {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The EMR release version associated with the application.</p>
+    /// <p>The EMR release associated with the application.</p>
     pub fn release_label(&self) -> std::option::Option<&str> {
         self.release_label.as_deref()
     }
@@ -1794,6 +1797,10 @@ impl ApplicationSummary {
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>The CPU architecture of an application.</p>
+    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+        self.architecture.as_ref()
+    }
 }
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
@@ -1810,6 +1817,7 @@ pub mod application_summary {
         pub(crate) state_details: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) architecture: std::option::Option<crate::model::Architecture>,
     }
     impl Builder {
         /// <p>The ID of the application.</p>
@@ -1842,12 +1850,12 @@ pub mod application_summary {
             self.arn = input;
             self
         }
-        /// <p>The EMR release version associated with the application.</p>
+        /// <p>The EMR release associated with the application.</p>
         pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
             self.release_label = Some(input.into());
             self
         }
-        /// <p>The EMR release version associated with the application.</p>
+        /// <p>The EMR release associated with the application.</p>
         pub fn set_release_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1917,6 +1925,19 @@ pub mod application_summary {
             self.updated_at = input;
             self
         }
+        /// <p>The CPU architecture of an application.</p>
+        pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
+            self.architecture = Some(input);
+            self
+        }
+        /// <p>The CPU architecture of an application.</p>
+        pub fn set_architecture(
+            mut self,
+            input: std::option::Option<crate::model::Architecture>,
+        ) -> Self {
+            self.architecture = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ApplicationSummary`](crate::model::ApplicationSummary).
         pub fn build(self) -> crate::model::ApplicationSummary {
             crate::model::ApplicationSummary {
@@ -1929,6 +1950,7 @@ pub mod application_summary {
                 state_details: self.state_details,
                 created_at: self.created_at,
                 updated_at: self.updated_at,
+                architecture: self.architecture,
             }
         }
     }
@@ -1937,6 +1959,96 @@ impl ApplicationSummary {
     /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
     pub fn builder() -> crate::model::application_summary::Builder {
         crate::model::application_summary::Builder::default()
+    }
+}
+
+/// When writing a match expression against `Architecture`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let architecture = unimplemented!();
+/// match architecture {
+///     Architecture::Arm64 => { /* ... */ },
+///     Architecture::X8664 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `architecture` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Architecture::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Architecture::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Architecture::NewFeature` is defined.
+/// Specifically, when `architecture` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Architecture::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Architecture {
+    #[allow(missing_docs)] // documentation missing in model
+    Arm64,
+    #[allow(missing_docs)] // documentation missing in model
+    X8664,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for Architecture {
+    fn from(s: &str) -> Self {
+        match s {
+            "ARM64" => Architecture::Arm64,
+            "X86_64" => Architecture::X8664,
+            other => Architecture::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for Architecture {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Architecture::from(s))
+    }
+}
+impl Architecture {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Architecture::Arm64 => "ARM64",
+            Architecture::X8664 => "X86_64",
+            Architecture::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ARM64", "X86_64"]
+    }
+}
+impl AsRef<str> for Architecture {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2060,6 +2172,107 @@ impl ApplicationState {
 impl AsRef<str> for ApplicationState {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>The specifications for a worker type.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct WorkerTypeSpecificationInput {
+    /// <p>The image configuration for a worker type.</p>
+    #[doc(hidden)]
+    pub image_configuration: std::option::Option<crate::model::ImageConfigurationInput>,
+}
+impl WorkerTypeSpecificationInput {
+    /// <p>The image configuration for a worker type.</p>
+    pub fn image_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageConfigurationInput> {
+        self.image_configuration.as_ref()
+    }
+}
+/// See [`WorkerTypeSpecificationInput`](crate::model::WorkerTypeSpecificationInput).
+pub mod worker_type_specification_input {
+
+    /// A builder for [`WorkerTypeSpecificationInput`](crate::model::WorkerTypeSpecificationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) image_configuration: std::option::Option<crate::model::ImageConfigurationInput>,
+    }
+    impl Builder {
+        /// <p>The image configuration for a worker type.</p>
+        pub fn image_configuration(mut self, input: crate::model::ImageConfigurationInput) -> Self {
+            self.image_configuration = Some(input);
+            self
+        }
+        /// <p>The image configuration for a worker type.</p>
+        pub fn set_image_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ImageConfigurationInput>,
+        ) -> Self {
+            self.image_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WorkerTypeSpecificationInput`](crate::model::WorkerTypeSpecificationInput).
+        pub fn build(self) -> crate::model::WorkerTypeSpecificationInput {
+            crate::model::WorkerTypeSpecificationInput {
+                image_configuration: self.image_configuration,
+            }
+        }
+    }
+}
+impl WorkerTypeSpecificationInput {
+    /// Creates a new builder-style object to manufacture [`WorkerTypeSpecificationInput`](crate::model::WorkerTypeSpecificationInput).
+    pub fn builder() -> crate::model::worker_type_specification_input::Builder {
+        crate::model::worker_type_specification_input::Builder::default()
+    }
+}
+
+/// <p>The image configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ImageConfigurationInput {
+    /// <p>The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.</p>
+    #[doc(hidden)]
+    pub image_uri: std::option::Option<std::string::String>,
+}
+impl ImageConfigurationInput {
+    /// <p>The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.</p>
+    pub fn image_uri(&self) -> std::option::Option<&str> {
+        self.image_uri.as_deref()
+    }
+}
+/// See [`ImageConfigurationInput`](crate::model::ImageConfigurationInput).
+pub mod image_configuration_input {
+
+    /// A builder for [`ImageConfigurationInput`](crate::model::ImageConfigurationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) image_uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.</p>
+        pub fn image_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_uri = Some(input.into());
+            self
+        }
+        /// <p>The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.</p>
+        pub fn set_image_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImageConfigurationInput`](crate::model::ImageConfigurationInput).
+        pub fn build(self) -> crate::model::ImageConfigurationInput {
+            crate::model::ImageConfigurationInput {
+                image_uri: self.image_uri,
+            }
+        }
+    }
+}
+impl ImageConfigurationInput {
+    /// Creates a new builder-style object to manufacture [`ImageConfigurationInput`](crate::model::ImageConfigurationInput).
+    pub fn builder() -> crate::model::image_configuration_input::Builder {
+        crate::model::image_configuration_input::Builder::default()
     }
 }
 
@@ -2433,7 +2646,7 @@ pub struct Application {
     /// <p>The ARN of the application.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The EMR release version associated with the application.</p>
+    /// <p>The EMR release associated with the application.</p>
     #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The type of application, such as Spark or Hive.</p>
@@ -2472,6 +2685,17 @@ pub struct Application {
     /// <p>The network configuration for customer VPC connectivity for the application.</p>
     #[doc(hidden)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
+    /// <p>The CPU architecture of an application.</p>
+    #[doc(hidden)]
+    pub architecture: std::option::Option<crate::model::Architecture>,
+    /// <p>The image configuration applied to all worker types.</p>
+    #[doc(hidden)]
+    pub image_configuration: std::option::Option<crate::model::ImageConfiguration>,
+    /// <p>The specification applied to each worker type.</p>
+    #[doc(hidden)]
+    pub worker_type_specifications: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::WorkerTypeSpecification>,
+    >,
 }
 impl Application {
     /// <p>The ID of the application.</p>
@@ -2486,7 +2710,7 @@ impl Application {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The EMR release version associated with the application.</p>
+    /// <p>The EMR release associated with the application.</p>
     pub fn release_label(&self) -> std::option::Option<&str> {
         self.release_label.as_deref()
     }
@@ -2543,6 +2767,22 @@ impl Application {
     ) -> std::option::Option<&crate::model::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
+    /// <p>The CPU architecture of an application.</p>
+    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+        self.architecture.as_ref()
+    }
+    /// <p>The image configuration applied to all worker types.</p>
+    pub fn image_configuration(&self) -> std::option::Option<&crate::model::ImageConfiguration> {
+        self.image_configuration.as_ref()
+    }
+    /// <p>The specification applied to each worker type.</p>
+    pub fn worker_type_specifications(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::WorkerTypeSpecification>,
+    > {
+        self.worker_type_specifications.as_ref()
+    }
 }
 /// See [`Application`](crate::model::Application).
 pub mod application {
@@ -2569,6 +2809,11 @@ pub mod application {
         pub(crate) auto_start_configuration: std::option::Option<crate::model::AutoStartConfig>,
         pub(crate) auto_stop_configuration: std::option::Option<crate::model::AutoStopConfig>,
         pub(crate) network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
+        pub(crate) architecture: std::option::Option<crate::model::Architecture>,
+        pub(crate) image_configuration: std::option::Option<crate::model::ImageConfiguration>,
+        pub(crate) worker_type_specifications: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::WorkerTypeSpecification>,
+        >,
     }
     impl Builder {
         /// <p>The ID of the application.</p>
@@ -2604,12 +2849,12 @@ pub mod application {
             self.arn = input;
             self
         }
-        /// <p>The EMR release version associated with the application.</p>
+        /// <p>The EMR release associated with the application.</p>
         pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
             self.release_label = Some(input.into());
             self
         }
-        /// <p>The EMR release version associated with the application.</p>
+        /// <p>The EMR release associated with the application.</p>
         pub fn set_release_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2781,6 +3026,60 @@ pub mod application {
             self.network_configuration = input;
             self
         }
+        /// <p>The CPU architecture of an application.</p>
+        pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
+            self.architecture = Some(input);
+            self
+        }
+        /// <p>The CPU architecture of an application.</p>
+        pub fn set_architecture(
+            mut self,
+            input: std::option::Option<crate::model::Architecture>,
+        ) -> Self {
+            self.architecture = input;
+            self
+        }
+        /// <p>The image configuration applied to all worker types.</p>
+        pub fn image_configuration(mut self, input: crate::model::ImageConfiguration) -> Self {
+            self.image_configuration = Some(input);
+            self
+        }
+        /// <p>The image configuration applied to all worker types.</p>
+        pub fn set_image_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ImageConfiguration>,
+        ) -> Self {
+            self.image_configuration = input;
+            self
+        }
+        /// Adds a key-value pair to `worker_type_specifications`.
+        ///
+        /// To override the contents of this collection use [`set_worker_type_specifications`](Self::set_worker_type_specifications).
+        ///
+        /// <p>The specification applied to each worker type.</p>
+        pub fn worker_type_specifications(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::WorkerTypeSpecification,
+        ) -> Self {
+            let mut hash_map = self.worker_type_specifications.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.worker_type_specifications = Some(hash_map);
+            self
+        }
+        /// <p>The specification applied to each worker type.</p>
+        pub fn set_worker_type_specifications(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::WorkerTypeSpecification,
+                >,
+            >,
+        ) -> Self {
+            self.worker_type_specifications = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Application`](crate::model::Application).
         pub fn build(self) -> crate::model::Application {
             crate::model::Application {
@@ -2799,6 +3098,9 @@ pub mod application {
                 auto_start_configuration: self.auto_start_configuration,
                 auto_stop_configuration: self.auto_stop_configuration,
                 network_configuration: self.network_configuration,
+                architecture: self.architecture,
+                image_configuration: self.image_configuration,
+                worker_type_specifications: self.worker_type_specifications,
             }
         }
     }
@@ -2807,5 +3109,126 @@ impl Application {
     /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
     pub fn builder() -> crate::model::application::Builder {
         crate::model::application::Builder::default()
+    }
+}
+
+/// <p>The specifications for a worker type.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct WorkerTypeSpecification {
+    /// <p>The image configuration for a worker type.</p>
+    #[doc(hidden)]
+    pub image_configuration: std::option::Option<crate::model::ImageConfiguration>,
+}
+impl WorkerTypeSpecification {
+    /// <p>The image configuration for a worker type.</p>
+    pub fn image_configuration(&self) -> std::option::Option<&crate::model::ImageConfiguration> {
+        self.image_configuration.as_ref()
+    }
+}
+/// See [`WorkerTypeSpecification`](crate::model::WorkerTypeSpecification).
+pub mod worker_type_specification {
+
+    /// A builder for [`WorkerTypeSpecification`](crate::model::WorkerTypeSpecification).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) image_configuration: std::option::Option<crate::model::ImageConfiguration>,
+    }
+    impl Builder {
+        /// <p>The image configuration for a worker type.</p>
+        pub fn image_configuration(mut self, input: crate::model::ImageConfiguration) -> Self {
+            self.image_configuration = Some(input);
+            self
+        }
+        /// <p>The image configuration for a worker type.</p>
+        pub fn set_image_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ImageConfiguration>,
+        ) -> Self {
+            self.image_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WorkerTypeSpecification`](crate::model::WorkerTypeSpecification).
+        pub fn build(self) -> crate::model::WorkerTypeSpecification {
+            crate::model::WorkerTypeSpecification {
+                image_configuration: self.image_configuration,
+            }
+        }
+    }
+}
+impl WorkerTypeSpecification {
+    /// Creates a new builder-style object to manufacture [`WorkerTypeSpecification`](crate::model::WorkerTypeSpecification).
+    pub fn builder() -> crate::model::worker_type_specification::Builder {
+        crate::model::worker_type_specification::Builder::default()
+    }
+}
+
+/// <p>The applied image configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ImageConfiguration {
+    /// <p>The image URI.</p>
+    #[doc(hidden)]
+    pub image_uri: std::option::Option<std::string::String>,
+    /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
+    #[doc(hidden)]
+    pub resolved_image_digest: std::option::Option<std::string::String>,
+}
+impl ImageConfiguration {
+    /// <p>The image URI.</p>
+    pub fn image_uri(&self) -> std::option::Option<&str> {
+        self.image_uri.as_deref()
+    }
+    /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
+    pub fn resolved_image_digest(&self) -> std::option::Option<&str> {
+        self.resolved_image_digest.as_deref()
+    }
+}
+/// See [`ImageConfiguration`](crate::model::ImageConfiguration).
+pub mod image_configuration {
+
+    /// A builder for [`ImageConfiguration`](crate::model::ImageConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) image_uri: std::option::Option<std::string::String>,
+        pub(crate) resolved_image_digest: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The image URI.</p>
+        pub fn image_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_uri = Some(input.into());
+            self
+        }
+        /// <p>The image URI.</p>
+        pub fn set_image_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_uri = input;
+            self
+        }
+        /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
+        pub fn resolved_image_digest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resolved_image_digest = Some(input.into());
+            self
+        }
+        /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
+        pub fn set_resolved_image_digest(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resolved_image_digest = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImageConfiguration`](crate::model::ImageConfiguration).
+        pub fn build(self) -> crate::model::ImageConfiguration {
+            crate::model::ImageConfiguration {
+                image_uri: self.image_uri,
+                resolved_image_digest: self.resolved_image_digest,
+            }
+        }
+    }
+}
+impl ImageConfiguration {
+    /// Creates a new builder-style object to manufacture [`ImageConfiguration`](crate::model::ImageConfiguration).
+    pub fn builder() -> crate::model::image_configuration::Builder {
+        crate::model::image_configuration::Builder::default()
     }
 }

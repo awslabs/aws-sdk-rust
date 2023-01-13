@@ -1560,6 +1560,40 @@ impl From<crate::error::ListReceivedGrantsError> for Error {
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::ListReceivedGrantsForOrganizationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListReceivedGrantsForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListReceivedGrantsForOrganizationError> for Error {
+    fn from(err: crate::error::ListReceivedGrantsForOrganizationError) -> Self {
+        match err.kind {
+            crate::error::ListReceivedGrantsForOrganizationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListReceivedGrantsForOrganizationErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::error::ListReceivedGrantsForOrganizationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::error::ListReceivedGrantsForOrganizationErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::error::ListReceivedGrantsForOrganizationErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::ListReceivedGrantsForOrganizationErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::error::ListReceivedGrantsForOrganizationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListReceivedGrantsForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListReceivedLicensesError, R>>
     for Error
 where
@@ -1603,6 +1637,44 @@ impl From<crate::error::ListReceivedLicensesError> for Error {
             crate::error::ListReceivedLicensesErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::ListReceivedLicensesForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListReceivedLicensesForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListReceivedLicensesForOrganizationError> for Error {
+    fn from(err: crate::error::ListReceivedLicensesForOrganizationError) -> Self {
+        match err.kind {
+            crate::error::ListReceivedLicensesForOrganizationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListReceivedLicensesForOrganizationErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::error::ListReceivedLicensesForOrganizationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::error::ListReceivedLicensesForOrganizationErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::error::ListReceivedLicensesForOrganizationErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::ListReceivedLicensesForOrganizationErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::error::ListReceivedLicensesForOrganizationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListReceivedLicensesForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }

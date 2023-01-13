@@ -7100,6 +7100,24 @@ pub fn parse_delete_identity_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConcurrentModificationException" => crate::error::DeleteIdentityProviderError {
+            meta: generic,
+            kind: crate::error::DeleteIdentityProviderErrorKind::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteIdentityProviderError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::DeleteIdentityProviderError {
             meta: generic,
             kind: crate::error::DeleteIdentityProviderErrorKind::InternalErrorException({
@@ -7863,6 +7881,24 @@ pub fn parse_delete_user_pool_client_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConcurrentModificationException" => crate::error::DeleteUserPoolClientError {
+            meta: generic,
+            kind: crate::error::DeleteUserPoolClientErrorKind::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserPoolClientError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::DeleteUserPoolClientError {
             meta: generic,
             kind: crate::error::DeleteUserPoolClientErrorKind::InternalErrorException({
@@ -15448,6 +15484,24 @@ pub fn parse_update_identity_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConcurrentModificationException" => crate::error::UpdateIdentityProviderError {
+            meta: generic,
+            kind: crate::error::UpdateIdentityProviderErrorKind::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIdentityProviderError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::UpdateIdentityProviderError {
             meta: generic,
             kind: crate::error::UpdateIdentityProviderErrorKind::InternalErrorException({

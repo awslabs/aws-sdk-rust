@@ -1568,6 +1568,89 @@ impl ListAssetRelationshipsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListAssetPropertiesOutput {
+    /// <p>A list that summarizes the properties associated with the specified asset.</p>
+    #[doc(hidden)]
+    pub asset_property_summaries:
+        std::option::Option<std::vec::Vec<crate::model::AssetPropertySummary>>,
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssetPropertiesOutput {
+    /// <p>A list that summarizes the properties associated with the specified asset.</p>
+    pub fn asset_property_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssetPropertySummary]> {
+        self.asset_property_summaries.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListAssetPropertiesOutput`](crate::output::ListAssetPropertiesOutput).
+pub mod list_asset_properties_output {
+
+    /// A builder for [`ListAssetPropertiesOutput`](crate::output::ListAssetPropertiesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) asset_property_summaries:
+            std::option::Option<std::vec::Vec<crate::model::AssetPropertySummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `asset_property_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_asset_property_summaries`](Self::set_asset_property_summaries).
+        ///
+        /// <p>A list that summarizes the properties associated with the specified asset.</p>
+        pub fn asset_property_summaries(
+            mut self,
+            input: crate::model::AssetPropertySummary,
+        ) -> Self {
+            let mut v = self.asset_property_summaries.unwrap_or_default();
+            v.push(input);
+            self.asset_property_summaries = Some(v);
+            self
+        }
+        /// <p>A list that summarizes the properties associated with the specified asset.</p>
+        pub fn set_asset_property_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AssetPropertySummary>>,
+        ) -> Self {
+            self.asset_property_summaries = input;
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAssetPropertiesOutput`](crate::output::ListAssetPropertiesOutput).
+        pub fn build(self) -> crate::output::ListAssetPropertiesOutput {
+            crate::output::ListAssetPropertiesOutput {
+                asset_property_summaries: self.asset_property_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAssetPropertiesOutput {
+    /// Creates a new builder-style object to manufacture [`ListAssetPropertiesOutput`](crate::output::ListAssetPropertiesOutput).
+    pub fn builder() -> crate::output::list_asset_properties_output::Builder {
+        crate::output::list_asset_properties_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssetModelsOutput {
     /// <p>A list that summarizes each asset model.</p>
     #[doc(hidden)]
@@ -1639,6 +1722,89 @@ impl ListAssetModelsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetModelsOutput`](crate::output::ListAssetModelsOutput).
     pub fn builder() -> crate::output::list_asset_models_output::Builder {
         crate::output::list_asset_models_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListAssetModelPropertiesOutput {
+    /// <p>A list that summarizes the properties associated with the specified asset model.</p>
+    #[doc(hidden)]
+    pub asset_model_property_summaries:
+        std::option::Option<std::vec::Vec<crate::model::AssetModelPropertySummary>>,
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssetModelPropertiesOutput {
+    /// <p>A list that summarizes the properties associated with the specified asset model.</p>
+    pub fn asset_model_property_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssetModelPropertySummary]> {
+        self.asset_model_property_summaries.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListAssetModelPropertiesOutput`](crate::output::ListAssetModelPropertiesOutput).
+pub mod list_asset_model_properties_output {
+
+    /// A builder for [`ListAssetModelPropertiesOutput`](crate::output::ListAssetModelPropertiesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) asset_model_property_summaries:
+            std::option::Option<std::vec::Vec<crate::model::AssetModelPropertySummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `asset_model_property_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_asset_model_property_summaries`](Self::set_asset_model_property_summaries).
+        ///
+        /// <p>A list that summarizes the properties associated with the specified asset model.</p>
+        pub fn asset_model_property_summaries(
+            mut self,
+            input: crate::model::AssetModelPropertySummary,
+        ) -> Self {
+            let mut v = self.asset_model_property_summaries.unwrap_or_default();
+            v.push(input);
+            self.asset_model_property_summaries = Some(v);
+            self
+        }
+        /// <p>A list that summarizes the properties associated with the specified asset model.</p>
+        pub fn set_asset_model_property_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AssetModelPropertySummary>>,
+        ) -> Self {
+            self.asset_model_property_summaries = input;
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAssetModelPropertiesOutput`](crate::output::ListAssetModelPropertiesOutput).
+        pub fn build(self) -> crate::output::ListAssetModelPropertiesOutput {
+            crate::output::ListAssetModelPropertiesOutput {
+                asset_model_property_summaries: self.asset_model_property_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAssetModelPropertiesOutput {
+    /// Creates a new builder-style object to manufacture [`ListAssetModelPropertiesOutput`](crate::output::ListAssetModelPropertiesOutput).
+    pub fn builder() -> crate::output::list_asset_model_properties_output::Builder {
+        crate::output::list_asset_model_properties_output::Builder::default()
     }
 }
 
@@ -2673,10 +2839,10 @@ pub struct DescribePortalOutput {
     /// <p>The portal's description.</p>
     #[doc(hidden)]
     pub portal_description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
+    /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
     #[doc(hidden)]
     pub portal_client_id: std::option::Option<std::string::String>,
-    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     #[doc(hidden)]
     pub portal_start_url: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services administrator's contact email address.</p>
@@ -2725,11 +2891,11 @@ impl DescribePortalOutput {
     pub fn portal_description(&self) -> std::option::Option<&str> {
         self.portal_description.as_deref()
     }
-    /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
+    /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
     pub fn portal_client_id(&self) -> std::option::Option<&str> {
         self.portal_client_id.as_deref()
     }
-    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub fn portal_start_url(&self) -> std::option::Option<&str> {
         self.portal_start_url.as_deref()
     }
@@ -2838,12 +3004,12 @@ pub mod describe_portal_output {
             self.portal_description = input;
             self
         }
-        /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
+        /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
         pub fn portal_client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_client_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
+        /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
         pub fn set_portal_client_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2851,12 +3017,12 @@ pub mod describe_portal_output {
             self.portal_client_id = input;
             self
         }
-        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn portal_start_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_start_url = Some(input.into());
             self
         }
-        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn set_portal_start_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4665,7 +4831,7 @@ pub struct DescribeAccessPolicyOutput {
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     #[doc(hidden)]
     pub access_policy_arn: std::option::Option<std::string::String>,
-    /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy applies.</p>
+    /// <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies.</p>
     #[doc(hidden)]
     pub access_policy_identity: std::option::Option<crate::model::Identity>,
     /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
@@ -4691,7 +4857,7 @@ impl DescribeAccessPolicyOutput {
     pub fn access_policy_arn(&self) -> std::option::Option<&str> {
         self.access_policy_arn.as_deref()
     }
-    /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy applies.</p>
+    /// <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies.</p>
     pub fn access_policy_identity(&self) -> std::option::Option<&crate::model::Identity> {
         self.access_policy_identity.as_ref()
     }
@@ -4757,12 +4923,12 @@ pub mod describe_access_policy_output {
             self.access_policy_arn = input;
             self
         }
-        /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy applies.</p>
+        /// <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies.</p>
         pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
             self.access_policy_identity = Some(input);
             self
         }
-        /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy applies.</p>
+        /// <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies.</p>
         pub fn set_access_policy_identity(
             mut self,
             input: std::option::Option<crate::model::Identity>,
@@ -5198,13 +5364,13 @@ pub struct CreatePortalOutput {
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
     #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
-    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     #[doc(hidden)]
     pub portal_start_url: std::option::Option<std::string::String>,
     /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     #[doc(hidden)]
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
-    /// <p>The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.</p>
+    /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
     #[doc(hidden)]
     pub sso_application_id: std::option::Option<std::string::String>,
 }
@@ -5218,7 +5384,7 @@ impl CreatePortalOutput {
     pub fn portal_arn(&self) -> std::option::Option<&str> {
         self.portal_arn.as_deref()
     }
-    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub fn portal_start_url(&self) -> std::option::Option<&str> {
         self.portal_start_url.as_deref()
     }
@@ -5226,7 +5392,7 @@ impl CreatePortalOutput {
     pub fn portal_status(&self) -> std::option::Option<&crate::model::PortalStatus> {
         self.portal_status.as_ref()
     }
-    /// <p>The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.</p>
+    /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
     pub fn sso_application_id(&self) -> std::option::Option<&str> {
         self.sso_application_id.as_deref()
     }
@@ -5266,12 +5432,12 @@ pub mod create_portal_output {
             self.portal_arn = input;
             self
         }
-        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn portal_start_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_start_url = Some(input.into());
             self
         }
-        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn set_portal_start_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5292,12 +5458,12 @@ pub mod create_portal_output {
             self.portal_status = input;
             self
         }
-        /// <p>The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.</p>
+        /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
         pub fn sso_application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sso_application_id = Some(input.into());
             self
         }
-        /// <p>The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.</p>
+        /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
         pub fn set_sso_application_id(
             mut self,
             input: std::option::Option<std::string::String>,

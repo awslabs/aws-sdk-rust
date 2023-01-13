@@ -324,11 +324,11 @@ impl WorkspaceSummary {
     }
 }
 
-/// <p>A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication, and whether that authentication is fully configured.</p>
+/// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication, and whether that authentication is fully configured.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticationSummary {
-    /// <p>Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.</p>
+    /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
     #[doc(hidden)]
     pub providers: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
     /// <p>Specifies whether the workplace's user authentication method is fully configured.</p>
@@ -336,7 +336,7 @@ pub struct AuthenticationSummary {
     pub saml_configuration_status: std::option::Option<crate::model::SamlConfigurationStatus>,
 }
 impl AuthenticationSummary {
-    /// <p>Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.</p>
+    /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
     pub fn providers(&self) -> std::option::Option<&[crate::model::AuthenticationProviderTypes]> {
         self.providers.as_deref()
     }
@@ -363,14 +363,14 @@ pub mod authentication_summary {
         ///
         /// To override the contents of this collection use [`set_providers`](Self::set_providers).
         ///
-        /// <p>Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.</p>
+        /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
         pub fn providers(mut self, input: crate::model::AuthenticationProviderTypes) -> Self {
             let mut v = self.providers.unwrap_or_default();
             v.push(input);
             self.providers = Some(v);
             self
         }
-        /// <p>Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.</p>
+        /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
         pub fn set_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
@@ -1069,13 +1069,16 @@ pub struct WorkspaceDescription {
     /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
     #[doc(hidden)]
     pub free_trial_expiration: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.</p>
+    /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
     #[doc(hidden)]
     pub authentication: std::option::Option<crate::model::AuthenticationSummary>,
     /// <p>The list of tags associated with the workspace.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
+    #[doc(hidden)]
+    pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
 }
 impl WorkspaceDescription {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
@@ -1162,7 +1165,7 @@ impl WorkspaceDescription {
     pub fn free_trial_expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.free_trial_expiration.as_ref()
     }
-    /// <p>A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.</p>
+    /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
     pub fn authentication(&self) -> std::option::Option<&crate::model::AuthenticationSummary> {
         self.authentication.as_ref()
     }
@@ -1172,6 +1175,10 @@ impl WorkspaceDescription {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
+    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+        self.vpc_configuration.as_ref()
     }
 }
 impl std::fmt::Debug for WorkspaceDescription {
@@ -1199,6 +1206,7 @@ impl std::fmt::Debug for WorkspaceDescription {
         formatter.field("free_trial_expiration", &self.free_trial_expiration);
         formatter.field("authentication", &self.authentication);
         formatter.field("tags", &self.tags);
+        formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.finish()
     }
 }
@@ -1233,6 +1241,7 @@ pub mod workspace_description {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
     }
     impl Builder {
         /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
@@ -1505,12 +1514,12 @@ pub mod workspace_description {
             self.free_trial_expiration = input;
             self
         }
-        /// <p>A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.</p>
+        /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
         pub fn authentication(mut self, input: crate::model::AuthenticationSummary) -> Self {
             self.authentication = Some(input);
             self
         }
-        /// <p>A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.</p>
+        /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
         pub fn set_authentication(
             mut self,
             input: std::option::Option<crate::model::AuthenticationSummary>,
@@ -1543,6 +1552,19 @@ pub mod workspace_description {
             self.tags = input;
             self
         }
+        /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
+        pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
+            self.vpc_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfiguration>,
+        ) -> Self {
+            self.vpc_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkspaceDescription`](crate::model::WorkspaceDescription).
         pub fn build(self) -> crate::model::WorkspaceDescription {
             crate::model::WorkspaceDescription {
@@ -1568,6 +1590,7 @@ pub mod workspace_description {
                 free_trial_expiration: self.free_trial_expiration,
                 authentication: self.authentication,
                 tags: self.tags,
+                vpc_configuration: self.vpc_configuration,
             }
         }
     }
@@ -1596,6 +1619,7 @@ pub mod workspace_description {
             formatter.field("free_trial_expiration", &self.free_trial_expiration);
             formatter.field("authentication", &self.authentication);
             formatter.field("tags", &self.tags);
+            formatter.field("vpc_configuration", &self.vpc_configuration);
             formatter.finish()
         }
     }
@@ -1604,6 +1628,91 @@ impl WorkspaceDescription {
     /// Creates a new builder-style object to manufacture [`WorkspaceDescription`](crate::model::WorkspaceDescription).
     pub fn builder() -> crate::model::workspace_description::Builder {
         crate::model::workspace_description::Builder::default()
+    }
+}
+
+/// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VpcConfiguration {
+    /// <p>The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.</p>
+    #[doc(hidden)]
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.</p>
+    #[doc(hidden)]
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VpcConfiguration {
+    /// <p>The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+}
+/// See [`VpcConfiguration`](crate::model::VpcConfiguration).
+pub mod vpc_configuration {
+
+    /// A builder for [`VpcConfiguration`](crate::model::VpcConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        /// <p>The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        /// <p>The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.</p>
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcConfiguration`](crate::model::VpcConfiguration).
+        pub fn build(self) -> crate::model::VpcConfiguration {
+            crate::model::VpcConfiguration {
+                security_group_ids: self.security_group_ids,
+                subnet_ids: self.subnet_ids,
+            }
+        }
+    }
+}
+impl VpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
+    pub fn builder() -> crate::model::vpc_configuration::Builder {
+        crate::model::vpc_configuration::Builder::default()
     }
 }
 
@@ -1806,6 +1915,7 @@ impl AsRef<str> for PermissionType {
 ///     DataSourceType::Redshift => { /* ... */ },
 ///     DataSourceType::Sitewise => { /* ... */ },
 ///     DataSourceType::Timestream => { /* ... */ },
+///     DataSourceType::Twinmaker => { /* ... */ },
 ///     DataSourceType::Xray => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -1854,6 +1964,8 @@ pub enum DataSourceType {
     Sitewise,
     /// Timestream
     Timestream,
+    /// IoT TwinMaker
+    Twinmaker,
     /// X-Ray
     Xray,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -1869,6 +1981,7 @@ impl std::convert::From<&str> for DataSourceType {
             "REDSHIFT" => DataSourceType::Redshift,
             "SITEWISE" => DataSourceType::Sitewise,
             "TIMESTREAM" => DataSourceType::Timestream,
+            "TWINMAKER" => DataSourceType::Twinmaker,
             "XRAY" => DataSourceType::Xray,
             other => DataSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
@@ -1892,6 +2005,7 @@ impl DataSourceType {
             DataSourceType::Redshift => "REDSHIFT",
             DataSourceType::Sitewise => "SITEWISE",
             DataSourceType::Timestream => "TIMESTREAM",
+            DataSourceType::Twinmaker => "TWINMAKER",
             DataSourceType::Xray => "XRAY",
             DataSourceType::Unknown(value) => value.as_str(),
         }
@@ -1906,6 +2020,7 @@ impl DataSourceType {
             "REDSHIFT",
             "SITEWISE",
             "TIMESTREAM",
+            "TWINMAKER",
             "XRAY",
         ]
     }
@@ -2541,14 +2656,14 @@ impl AsRef<str> for UpdateAction {
     }
 }
 
-/// <p>A structure containing the identity of one user or group and the <code>Admin</code> or <code>Editor</code> role that they have.</p>
+/// <p>A structure containing the identity of one user or group and the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role that they have.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PermissionEntry {
     /// <p>A structure with the ID of the user or group with this role.</p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
-    /// <p>Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code> role.</p>
+    /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
     #[doc(hidden)]
     pub role: std::option::Option<crate::model::Role>,
 }
@@ -2557,7 +2672,7 @@ impl PermissionEntry {
     pub fn user(&self) -> std::option::Option<&crate::model::User> {
         self.user.as_ref()
     }
-    /// <p>Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code> role.</p>
+    /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
     pub fn role(&self) -> std::option::Option<&crate::model::Role> {
         self.role.as_ref()
     }
@@ -2582,12 +2697,12 @@ pub mod permission_entry {
             self.user = input;
             self
         }
-        /// <p>Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code> role.</p>
+        /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
         pub fn role(mut self, input: crate::model::Role) -> Self {
             self.role = Some(input);
             self
         }
-        /// <p>Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code> role.</p>
+        /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
             self.role = input;
             self
@@ -2612,18 +2727,18 @@ impl PermissionEntry {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticationDescription {
-    /// <p>Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
+    /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
     #[doc(hidden)]
     pub providers: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
     /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
     #[doc(hidden)]
     pub saml: std::option::Option<crate::model::SamlAuthentication>,
-    /// <p>A structure containing information about how this workspace works with Amazon Web Services SSO. </p>
+    /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
     #[doc(hidden)]
     pub aws_sso: std::option::Option<crate::model::AwsSsoAuthentication>,
 }
 impl AuthenticationDescription {
-    /// <p>Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
+    /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
     pub fn providers(&self) -> std::option::Option<&[crate::model::AuthenticationProviderTypes]> {
         self.providers.as_deref()
     }
@@ -2631,7 +2746,7 @@ impl AuthenticationDescription {
     pub fn saml(&self) -> std::option::Option<&crate::model::SamlAuthentication> {
         self.saml.as_ref()
     }
-    /// <p>A structure containing information about how this workspace works with Amazon Web Services SSO. </p>
+    /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
     pub fn aws_sso(&self) -> std::option::Option<&crate::model::AwsSsoAuthentication> {
         self.aws_sso.as_ref()
     }
@@ -2652,14 +2767,14 @@ pub mod authentication_description {
         ///
         /// To override the contents of this collection use [`set_providers`](Self::set_providers).
         ///
-        /// <p>Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
+        /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
         pub fn providers(mut self, input: crate::model::AuthenticationProviderTypes) -> Self {
             let mut v = self.providers.unwrap_or_default();
             v.push(input);
             self.providers = Some(v);
             self
         }
-        /// <p>Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
+        /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
         pub fn set_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
@@ -2680,12 +2795,12 @@ pub mod authentication_description {
             self.saml = input;
             self
         }
-        /// <p>A structure containing information about how this workspace works with Amazon Web Services SSO. </p>
+        /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
         pub fn aws_sso(mut self, input: crate::model::AwsSsoAuthentication) -> Self {
             self.aws_sso = Some(input);
             self
         }
-        /// <p>A structure containing information about how this workspace works with Amazon Web Services SSO. </p>
+        /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
         pub fn set_aws_sso(
             mut self,
             input: std::option::Option<crate::model::AwsSsoAuthentication>,
@@ -2710,16 +2825,16 @@ impl AuthenticationDescription {
     }
 }
 
-/// <p>A structure containing information about how this workspace works with Amazon Web Services SSO. </p>
+/// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsSsoAuthentication {
-    /// <p>The ID of the Amazon Web Services SSO-managed application that is created by Amazon Managed Grafana.</p>
+    /// <p>The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.</p>
     #[doc(hidden)]
     pub sso_client_id: std::option::Option<std::string::String>,
 }
 impl AwsSsoAuthentication {
-    /// <p>The ID of the Amazon Web Services SSO-managed application that is created by Amazon Managed Grafana.</p>
+    /// <p>The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.</p>
     pub fn sso_client_id(&self) -> std::option::Option<&str> {
         self.sso_client_id.as_deref()
     }
@@ -2733,12 +2848,12 @@ pub mod aws_sso_authentication {
         pub(crate) sso_client_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services SSO-managed application that is created by Amazon Managed Grafana.</p>
+        /// <p>The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.</p>
         pub fn sso_client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sso_client_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services SSO-managed application that is created by Amazon Managed Grafana.</p>
+        /// <p>The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.</p>
         pub fn set_sso_client_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2976,7 +3091,7 @@ impl SamlConfiguration {
     }
 }
 
-/// <p>This structure defines which groups defined in the SAML assertion attribute are to be mapped to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
+/// <p>This structure defines which groups defined in the SAML assertion attribute are to be mapped to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace. SAML authenticated users not part of <code>Admin</code> or <code>Editor</code> role groups have <code>Viewer</code> permission over the workspace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoleValues {
@@ -3204,13 +3319,13 @@ impl AssertionAttributes {
     }
 }
 
-/// <p>A structure containing the identity provider (IdP) metadata used to integrate the identity provider with this workspace. You can specify the metadata either by providing a URL to its location in the <code>url</code> parameter, or by specifying the full metadata in XML format in the <code>xml</code> parameter.</p>
+/// <p>A structure containing the identity provider (IdP) metadata used to integrate the identity provider with this workspace. You can specify the metadata either by providing a URL to its location in the <code>url</code> parameter, or by specifying the full metadata in XML format in the <code>xml</code> parameter. Specifying both will cause an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum IdpMetadata {
-    /// <p>The URL of the location containing the metadata.</p>
+    /// <p>The URL of the location containing the IdP metadata.</p>
     Url(std::string::String),
-    /// <p>The actual full metadata file, in XML format.</p>
+    /// <p>The full IdP metadata, in XML format.</p>
     Xml(std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

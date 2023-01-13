@@ -923,18 +923,19 @@ pub mod create_deployment_input {
         pub(crate) iot_job_configuration:
             std::option::Option<crate::model::DeploymentIoTJobConfiguration>,
         pub(crate) deployment_policies: std::option::Option<crate::model::DeploymentPolicies>,
+        pub(crate) parent_target_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -1009,6 +1010,19 @@ pub mod create_deployment_input {
             self.deployment_policies = input;
             self
         }
+        /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+        pub fn parent_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_target_arn = Some(input.into());
+            self
+        }
+        /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+        pub fn set_parent_target_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parent_target_arn = input;
+            self
+        }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -1057,6 +1071,7 @@ pub mod create_deployment_input {
                 components: self.components,
                 iot_job_configuration: self.iot_job_configuration,
                 deployment_policies: self.deployment_policies,
+                parent_target_arn: self.parent_target_arn,
                 tags: self.tags,
                 client_token: self.client_token,
             })
@@ -3631,6 +3646,7 @@ pub mod list_deployments_input {
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) history_filter: std::option::Option<crate::model::DeploymentHistoryFilter>,
+        pub(crate) parent_target_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -3668,6 +3684,19 @@ pub mod list_deployments_input {
             self.history_filter = input;
             self
         }
+        /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+        pub fn parent_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_target_arn = Some(input.into());
+            self
+        }
+        /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+        pub fn set_parent_target_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parent_target_arn = input;
+            self
+        }
         /// <p>The maximum number of results to be returned per paginated request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
@@ -3696,6 +3725,7 @@ pub mod list_deployments_input {
             Ok(crate::input::ListDeploymentsInput {
                 target_arn: self.target_arn,
                 history_filter: self.history_filter,
+                parent_target_arn: self.parent_target_arn,
                 max_results: self.max_results,
                 next_token: self.next_token,
             })
@@ -3743,17 +3773,25 @@ impl ListDeploymentsInput {
                         );
                     }
                 }
-                if let Some(inner_30) = &_input.max_results {
-                    if *inner_30 != 0 {
+                if let Some(inner_30) = &_input.parent_target_arn {
+                    {
                         query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_30).encode(),
+                            "parentTargetArn",
+                            &aws_smithy_http::query::fmt_string(&inner_30),
                         );
                     }
                 }
-                if let Some(inner_31) = &_input.next_token {
+                if let Some(inner_31) = &_input.max_results {
+                    if *inner_31 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
+                        );
+                    }
+                }
+                if let Some(inner_32) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
                     }
                 }
                 Ok(())
@@ -3911,15 +3949,15 @@ impl ListEffectiveDeploymentsInput {
                 _input: &crate::input::ListEffectiveDeploymentsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_32 = &_input.core_device_thing_name;
-                let input_32 = input_32.as_ref().ok_or_else(|| {
+                let input_33 = &_input.core_device_thing_name;
+                let input_33 = input_33.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "core_device_thing_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let core_device_thing_name = aws_smithy_http::label::fmt_string(
-                    input_32,
+                    input_33,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if core_device_thing_name.is_empty() {
@@ -3943,17 +3981,17 @@ impl ListEffectiveDeploymentsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_33) = &_input.max_results {
-                    if *inner_33 != 0 {
+                if let Some(inner_34) = &_input.max_results {
+                    if *inner_34 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
                         );
                     }
                 }
-                if let Some(inner_34) = &_input.next_token {
+                if let Some(inner_35) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
                     }
                 }
                 Ok(())
@@ -4140,15 +4178,15 @@ impl ListInstalledComponentsInput {
                 _input: &crate::input::ListInstalledComponentsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_35 = &_input.core_device_thing_name;
-                let input_35 = input_35.as_ref().ok_or_else(|| {
+                let input_36 = &_input.core_device_thing_name;
+                let input_36 = input_36.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "core_device_thing_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let core_device_thing_name = aws_smithy_http::label::fmt_string(
-                    input_35,
+                    input_36,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if core_device_thing_name.is_empty() {
@@ -4172,24 +4210,24 @@ impl ListInstalledComponentsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_36) = &_input.max_results {
-                    if *inner_36 != 0 {
+                if let Some(inner_37) = &_input.max_results {
+                    if *inner_37 != 0 {
                         query.push_kv(
                             "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_36).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_37).encode(),
                         );
                     }
                 }
-                if let Some(inner_37) = &_input.next_token {
+                if let Some(inner_38) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
                     }
                 }
-                if let Some(inner_38) = &_input.topology_filter {
+                if let Some(inner_39) = &_input.topology_filter {
                     {
                         query.push_kv(
                             "topologyFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_38),
+                            &aws_smithy_http::query::fmt_string(&inner_39),
                         );
                     }
                 }
@@ -4321,15 +4359,15 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_39 = &_input.resource_arn;
-                let input_39 = input_39.as_ref().ok_or_else(|| {
+                let input_40 = &_input.resource_arn;
+                let input_40 = input_40.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_39,
+                    input_40,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -4666,15 +4704,15 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_40 = &_input.resource_arn;
-                let input_40 = input_40.as_ref().ok_or_else(|| {
+                let input_41 = &_input.resource_arn;
+                let input_41 = input_41.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_40,
+                    input_41,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -4847,15 +4885,15 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_41 = &_input.resource_arn;
-                let input_41 = input_41.as_ref().ok_or_else(|| {
+                let input_42 = &_input.resource_arn;
+                let input_42 = input_42.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_41,
+                    input_42,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -4875,15 +4913,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_42 = &_input.tag_keys;
-                let inner_42 = inner_42.as_ref().ok_or_else(|| {
+                let inner_43 = &_input.tag_keys;
+                let inner_43 = inner_43.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "tag_keys",
                         "cannot be empty or unset",
                     )
                 })?;
-                for inner_43 in inner_42 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_43));
+                for inner_44 in inner_43 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_44));
                 }
                 Ok(())
             }
@@ -5035,15 +5073,15 @@ impl UpdateConnectivityInfoInput {
                 _input: &crate::input::UpdateConnectivityInfoInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_44 = &_input.thing_name;
-                let input_44 = input_44.as_ref().ok_or_else(|| {
+                let input_45 = &_input.thing_name;
+                let input_45 = input_45.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "thing_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let thing_name = aws_smithy_http::label::fmt_string(
-                    input_44,
+                    input_45,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if thing_name.is_empty() {
@@ -5350,6 +5388,9 @@ pub struct ListDeploymentsInput {
     /// <p>Default: <code>LATEST_ONLY</code> </p>
     #[doc(hidden)]
     pub history_filter: std::option::Option<crate::model::DeploymentHistoryFilter>,
+    /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+    #[doc(hidden)]
+    pub parent_target_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -5370,6 +5411,10 @@ impl ListDeploymentsInput {
     /// <p>Default: <code>LATEST_ONLY</code> </p>
     pub fn history_filter(&self) -> std::option::Option<&crate::model::DeploymentHistoryFilter> {
         self.history_filter.as_ref()
+    }
+    /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+    pub fn parent_target_arn(&self) -> std::option::Option<&str> {
+        self.parent_target_arn.as_deref()
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
@@ -5679,7 +5724,7 @@ impl DeleteComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The name of the deployment.</p>
@@ -5699,6 +5744,9 @@ pub struct CreateDeploymentInput {
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
     #[doc(hidden)]
     pub deployment_policies: std::option::Option<crate::model::DeploymentPolicies>,
+    /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+    #[doc(hidden)]
+    pub parent_target_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     #[doc(hidden)]
     pub tags:
@@ -5708,7 +5756,7 @@ pub struct CreateDeploymentInput {
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
     }
@@ -5736,6 +5784,10 @@ impl CreateDeploymentInput {
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
     pub fn deployment_policies(&self) -> std::option::Option<&crate::model::DeploymentPolicies> {
         self.deployment_policies.as_ref()
+    }
+    /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+    pub fn parent_target_arn(&self) -> std::option::Option<&str> {
+        self.parent_target_arn.as_deref()
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(

@@ -487,6 +487,146 @@ pub fn parse_create_custom_key_store_error(
                                                     }
             tmp
         })},
+        "LimitExceededException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::LimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyIncorrectAuthenticationCredentialException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_incorrect_authentication_credential_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_incorrect_authentication_credential_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyInvalidConfigurationException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_invalid_configuration_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyInvalidResponseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyInvalidResponseException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_invalid_response_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_invalid_response_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyUriEndpointInUseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_uri_endpoint_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_endpoint_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyUriInUseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyUriInUseException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_uri_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyUriUnreachableException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyUriUnreachableException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_uri_unreachable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_unreachable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyVpcEndpointServiceInUseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_vpc_endpoint_service_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyVpcEndpointServiceInvalidConfigurationException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_vpc_endpoint_service_invalid_configuration_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyVpcEndpointServiceNotFoundException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_vpc_endpoint_service_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         _ => crate::error::CreateCustomKeyStoreError::generic(generic)
     })
 }
@@ -866,6 +1006,59 @@ pub fn parse_create_key_error(
                         crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "XksKeyAlreadyInUseException" => crate::error::CreateKeyError {
+            meta: generic,
+            kind: crate::error::CreateKeyErrorKind::XksKeyAlreadyInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::xks_key_already_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_key_already_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "XksKeyInvalidConfigurationException" => crate::error::CreateKeyError {
+            meta: generic,
+            kind: crate::error::CreateKeyErrorKind::XksKeyInvalidConfigurationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::xks_key_invalid_configuration_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_key_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "XksKeyNotFoundException" => crate::error::CreateKeyError {
+            meta: generic,
+            kind: crate::error::CreateKeyErrorKind::XksKeyNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_key_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -3435,6 +3628,24 @@ pub fn parse_generate_random_error(
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateRandomError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::GenerateRandomError {
+            meta: generic,
+            kind: crate::error::GenerateRandomErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateRandomError::unhandled)?;
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -6642,6 +6853,132 @@ pub fn parse_update_custom_key_store_error(
                     #[allow(unused_mut)]let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyIncorrectAuthenticationCredentialException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_incorrect_authentication_credential_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_incorrect_authentication_credential_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyInvalidConfigurationException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_invalid_configuration_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyInvalidResponseException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyInvalidResponseException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_invalid_response_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_invalid_response_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyUriEndpointInUseException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_uri_endpoint_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_endpoint_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyUriInUseException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyUriInUseException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_uri_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyUriUnreachableException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyUriUnreachableException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_uri_unreachable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_unreachable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyVpcEndpointServiceInUseException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_vpc_endpoint_service_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyVpcEndpointServiceInvalidConfigurationException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_vpc_endpoint_service_invalid_configuration_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "XksProxyVpcEndpointServiceNotFoundException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_vpc_endpoint_service_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
                 }
             ;

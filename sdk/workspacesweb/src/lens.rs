@@ -59,6 +59,16 @@ pub(crate) fn reflens_structure_crate_output_list_trust_stores_output_next_token
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_user_access_logging_settings_output_next_token(
+    input: &crate::output::ListUserAccessLoggingSettingsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_user_settings_output_next_token(
     input: &crate::output::ListUserSettingsOutput,
 ) -> std::option::Option<&std::string::String> {

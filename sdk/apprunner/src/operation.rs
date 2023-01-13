@@ -201,6 +201,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpcConnector {
     }
 }
 
+/// Operation shape for `CreateVpcIngressConnection`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_vpc_ingress_connection`](crate::client::Client::create_vpc_ingress_connection).
+///
+/// See [`crate::client::fluent_builders::CreateVpcIngressConnection`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateVpcIngressConnection {
+    _private: (),
+}
+impl CreateVpcIngressConnection {
+    /// Creates a new builder-style object to manufacture [`CreateVpcIngressConnectionInput`](crate::input::CreateVpcIngressConnectionInput).
+    pub fn builder() -> crate::input::create_vpc_ingress_connection_input::Builder {
+        crate::input::create_vpc_ingress_connection_input::Builder::default()
+    }
+    /// Creates a new `CreateVpcIngressConnection` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateVpcIngressConnection {
+    type Output = std::result::Result<
+        crate::output::CreateVpcIngressConnectionOutput,
+        crate::error::CreateVpcIngressConnectionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_vpc_ingress_connection_error(response)
+        } else {
+            crate::operation_deser::parse_create_vpc_ingress_connection_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteAutoScalingConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -365,6 +399,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcConnector {
             crate::operation_deser::parse_delete_vpc_connector_error(response)
         } else {
             crate::operation_deser::parse_delete_vpc_connector_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteVpcIngressConnection`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_vpc_ingress_connection`](crate::client::Client::delete_vpc_ingress_connection).
+///
+/// See [`crate::client::fluent_builders::DeleteVpcIngressConnection`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteVpcIngressConnection {
+    _private: (),
+}
+impl DeleteVpcIngressConnection {
+    /// Creates a new builder-style object to manufacture [`DeleteVpcIngressConnectionInput`](crate::input::DeleteVpcIngressConnectionInput).
+    pub fn builder() -> crate::input::delete_vpc_ingress_connection_input::Builder {
+        crate::input::delete_vpc_ingress_connection_input::Builder::default()
+    }
+    /// Creates a new `DeleteVpcIngressConnection` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcIngressConnection {
+    type Output = std::result::Result<
+        crate::output::DeleteVpcIngressConnectionOutput,
+        crate::error::DeleteVpcIngressConnectionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_vpc_ingress_connection_error(response)
+        } else {
+            crate::operation_deser::parse_delete_vpc_ingress_connection_response(response)
         }
     }
 }
@@ -535,6 +603,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcConnector {
             crate::operation_deser::parse_describe_vpc_connector_error(response)
         } else {
             crate::operation_deser::parse_describe_vpc_connector_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeVpcIngressConnection`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_vpc_ingress_connection`](crate::client::Client::describe_vpc_ingress_connection).
+///
+/// See [`crate::client::fluent_builders::DescribeVpcIngressConnection`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeVpcIngressConnection {
+    _private: (),
+}
+impl DescribeVpcIngressConnection {
+    /// Creates a new builder-style object to manufacture [`DescribeVpcIngressConnectionInput`](crate::input::DescribeVpcIngressConnectionInput).
+    pub fn builder() -> crate::input::describe_vpc_ingress_connection_input::Builder {
+        crate::input::describe_vpc_ingress_connection_input::Builder::default()
+    }
+    /// Creates a new `DescribeVpcIngressConnection` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcIngressConnection {
+    type Output = std::result::Result<
+        crate::output::DescribeVpcIngressConnectionOutput,
+        crate::error::DescribeVpcIngressConnectionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_vpc_ingress_connection_error(response)
+        } else {
+            crate::operation_deser::parse_describe_vpc_ingress_connection_response(response)
         }
     }
 }
@@ -807,6 +909,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVpcConnectors {
     }
 }
 
+/// Operation shape for `ListVpcIngressConnections`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_vpc_ingress_connections`](crate::client::Client::list_vpc_ingress_connections).
+///
+/// See [`crate::client::fluent_builders::ListVpcIngressConnections`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListVpcIngressConnections {
+    _private: (),
+}
+impl ListVpcIngressConnections {
+    /// Creates a new builder-style object to manufacture [`ListVpcIngressConnectionsInput`](crate::input::ListVpcIngressConnectionsInput).
+    pub fn builder() -> crate::input::list_vpc_ingress_connections_input::Builder {
+        crate::input::list_vpc_ingress_connections_input::Builder::default()
+    }
+    /// Creates a new `ListVpcIngressConnections` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListVpcIngressConnections {
+    type Output = std::result::Result<
+        crate::output::ListVpcIngressConnectionsOutput,
+        crate::error::ListVpcIngressConnectionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_vpc_ingress_connections_error(response)
+        } else {
+            crate::operation_deser::parse_list_vpc_ingress_connections_response(response)
+        }
+    }
+}
+
 /// Operation shape for `PauseService`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -997,6 +1133,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateService {
             crate::operation_deser::parse_update_service_error(response)
         } else {
             crate::operation_deser::parse_update_service_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateVpcIngressConnection`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_vpc_ingress_connection`](crate::client::Client::update_vpc_ingress_connection).
+///
+/// See [`crate::client::fluent_builders::UpdateVpcIngressConnection`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateVpcIngressConnection {
+    _private: (),
+}
+impl UpdateVpcIngressConnection {
+    /// Creates a new builder-style object to manufacture [`UpdateVpcIngressConnectionInput`](crate::input::UpdateVpcIngressConnectionInput).
+    pub fn builder() -> crate::input::update_vpc_ingress_connection_input::Builder {
+        crate::input::update_vpc_ingress_connection_input::Builder::default()
+    }
+    /// Creates a new `UpdateVpcIngressConnection` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateVpcIngressConnection {
+    type Output = std::result::Result<
+        crate::output::UpdateVpcIngressConnectionOutput,
+        crate::error::UpdateVpcIngressConnectionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_vpc_ingress_connection_error(response)
+        } else {
+            crate::operation_deser::parse_update_vpc_ingress_connection_response(response)
         }
     }
 }

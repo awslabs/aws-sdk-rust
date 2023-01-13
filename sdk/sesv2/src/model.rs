@@ -724,7 +724,7 @@ pub struct CloudWatchDimensionConfiguration {
     pub dimension_value_source: std::option::Option<crate::model::DimensionValueSource>,
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@), and periods (.).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
     #[doc(hidden)]
@@ -747,7 +747,7 @@ impl CloudWatchDimensionConfiguration {
     }
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@), and periods (.).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
     pub fn default_dimension_value(&self) -> std::option::Option<&str> {
@@ -801,7 +801,7 @@ pub mod cloud_watch_dimension_configuration {
         }
         /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p>
         /// <ul>
-        /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
+        /// <li> <p>Can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@), and periods (.).</p> </li>
         /// <li> <p>It can contain no more than 256 characters.</p> </li>
         /// </ul>
         pub fn default_dimension_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -810,7 +810,7 @@ pub mod cloud_watch_dimension_configuration {
         }
         /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p>
         /// <ul>
-        /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
+        /// <li> <p>Can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@), and periods (.).</p> </li>
         /// <li> <p>It can contain no more than 256 characters.</p> </li>
         /// </ul>
         pub fn set_default_dimension_value(
@@ -3259,7 +3259,7 @@ pub struct DomainDeliverabilityTrackingOption {
     /// <p>A verified domain that’s associated with your Amazon Web Services account and currently has an active Deliverability dashboard subscription.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
-    /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.</p>
+    /// <p>The date when you enabled the Deliverability dashboard for the domain.</p>
     #[doc(hidden)]
     pub subscription_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that contains information about the inbox placement data settings for the domain.</p>
@@ -3272,7 +3272,7 @@ impl DomainDeliverabilityTrackingOption {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.</p>
+    /// <p>The date when you enabled the Deliverability dashboard for the domain.</p>
     pub fn subscription_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.subscription_start_date.as_ref()
     }
@@ -3305,12 +3305,12 @@ pub mod domain_deliverability_tracking_option {
             self.domain = input;
             self
         }
-        /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.</p>
+        /// <p>The date when you enabled the Deliverability dashboard for the domain.</p>
         pub fn subscription_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.subscription_start_date = Some(input);
             self
         }
-        /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.</p>
+        /// <p>The date when you enabled the Deliverability dashboard for the domain.</p>
         pub fn set_subscription_start_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3427,6 +3427,303 @@ impl InboxPlacementTrackingOption {
     }
 }
 
+/// <p>An object that defines the VDM settings that apply to emails that you send using the configuration set.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VdmOptions {
+    /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
+    #[doc(hidden)]
+    pub dashboard_options: std::option::Option<crate::model::DashboardOptions>,
+    /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
+    #[doc(hidden)]
+    pub guardian_options: std::option::Option<crate::model::GuardianOptions>,
+}
+impl VdmOptions {
+    /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
+    pub fn dashboard_options(&self) -> std::option::Option<&crate::model::DashboardOptions> {
+        self.dashboard_options.as_ref()
+    }
+    /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
+    pub fn guardian_options(&self) -> std::option::Option<&crate::model::GuardianOptions> {
+        self.guardian_options.as_ref()
+    }
+}
+/// See [`VdmOptions`](crate::model::VdmOptions).
+pub mod vdm_options {
+
+    /// A builder for [`VdmOptions`](crate::model::VdmOptions).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dashboard_options: std::option::Option<crate::model::DashboardOptions>,
+        pub(crate) guardian_options: std::option::Option<crate::model::GuardianOptions>,
+    }
+    impl Builder {
+        /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
+        pub fn dashboard_options(mut self, input: crate::model::DashboardOptions) -> Self {
+            self.dashboard_options = Some(input);
+            self
+        }
+        /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
+        pub fn set_dashboard_options(
+            mut self,
+            input: std::option::Option<crate::model::DashboardOptions>,
+        ) -> Self {
+            self.dashboard_options = input;
+            self
+        }
+        /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
+        pub fn guardian_options(mut self, input: crate::model::GuardianOptions) -> Self {
+            self.guardian_options = Some(input);
+            self
+        }
+        /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
+        pub fn set_guardian_options(
+            mut self,
+            input: std::option::Option<crate::model::GuardianOptions>,
+        ) -> Self {
+            self.guardian_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VdmOptions`](crate::model::VdmOptions).
+        pub fn build(self) -> crate::model::VdmOptions {
+            crate::model::VdmOptions {
+                dashboard_options: self.dashboard_options,
+                guardian_options: self.guardian_options,
+            }
+        }
+    }
+}
+impl VdmOptions {
+    /// Creates a new builder-style object to manufacture [`VdmOptions`](crate::model::VdmOptions).
+    pub fn builder() -> crate::model::vdm_options::Builder {
+        crate::model::vdm_options::Builder::default()
+    }
+}
+
+/// <p>An object containing additional settings for your VDM configuration as applicable to the Guardian.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GuardianOptions {
+    /// <p>Specifies the status of your VDM optimized shared delivery. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables optimized shared delivery for the configuration set.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables optimized shared delivery for the configuration set.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub optimized_shared_delivery: std::option::Option<crate::model::FeatureStatus>,
+}
+impl GuardianOptions {
+    /// <p>Specifies the status of your VDM optimized shared delivery. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables optimized shared delivery for the configuration set.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables optimized shared delivery for the configuration set.</p> </li>
+    /// </ul>
+    pub fn optimized_shared_delivery(&self) -> std::option::Option<&crate::model::FeatureStatus> {
+        self.optimized_shared_delivery.as_ref()
+    }
+}
+/// See [`GuardianOptions`](crate::model::GuardianOptions).
+pub mod guardian_options {
+
+    /// A builder for [`GuardianOptions`](crate::model::GuardianOptions).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) optimized_shared_delivery: std::option::Option<crate::model::FeatureStatus>,
+    }
+    impl Builder {
+        /// <p>Specifies the status of your VDM optimized shared delivery. Can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – Amazon SES enables optimized shared delivery for the configuration set.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – Amazon SES disables optimized shared delivery for the configuration set.</p> </li>
+        /// </ul>
+        pub fn optimized_shared_delivery(mut self, input: crate::model::FeatureStatus) -> Self {
+            self.optimized_shared_delivery = Some(input);
+            self
+        }
+        /// <p>Specifies the status of your VDM optimized shared delivery. Can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – Amazon SES enables optimized shared delivery for the configuration set.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – Amazon SES disables optimized shared delivery for the configuration set.</p> </li>
+        /// </ul>
+        pub fn set_optimized_shared_delivery(
+            mut self,
+            input: std::option::Option<crate::model::FeatureStatus>,
+        ) -> Self {
+            self.optimized_shared_delivery = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GuardianOptions`](crate::model::GuardianOptions).
+        pub fn build(self) -> crate::model::GuardianOptions {
+            crate::model::GuardianOptions {
+                optimized_shared_delivery: self.optimized_shared_delivery,
+            }
+        }
+    }
+}
+impl GuardianOptions {
+    /// Creates a new builder-style object to manufacture [`GuardianOptions`](crate::model::GuardianOptions).
+    pub fn builder() -> crate::model::guardian_options::Builder {
+        crate::model::guardian_options::Builder::default()
+    }
+}
+
+/// When writing a match expression against `FeatureStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let featurestatus = unimplemented!();
+/// match featurestatus {
+///     FeatureStatus::Disabled => { /* ... */ },
+///     FeatureStatus::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `featurestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FeatureStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FeatureStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FeatureStatus::NewFeature` is defined.
+/// Specifically, when `featurestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FeatureStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FeatureStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for FeatureStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => FeatureStatus::Disabled,
+            "ENABLED" => FeatureStatus::Enabled,
+            other => FeatureStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for FeatureStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FeatureStatus::from(s))
+    }
+}
+impl FeatureStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FeatureStatus::Disabled => "DISABLED",
+            FeatureStatus::Enabled => "ENABLED",
+            FeatureStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for FeatureStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>An object containing additional settings for your VDM configuration as applicable to the Dashboard.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DashboardOptions {
+    /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for the configuration set.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for the configuration set.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub engagement_metrics: std::option::Option<crate::model::FeatureStatus>,
+}
+impl DashboardOptions {
+    /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for the configuration set.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for the configuration set.</p> </li>
+    /// </ul>
+    pub fn engagement_metrics(&self) -> std::option::Option<&crate::model::FeatureStatus> {
+        self.engagement_metrics.as_ref()
+    }
+}
+/// See [`DashboardOptions`](crate::model::DashboardOptions).
+pub mod dashboard_options {
+
+    /// A builder for [`DashboardOptions`](crate::model::DashboardOptions).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) engagement_metrics: std::option::Option<crate::model::FeatureStatus>,
+    }
+    impl Builder {
+        /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for the configuration set.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for the configuration set.</p> </li>
+        /// </ul>
+        pub fn engagement_metrics(mut self, input: crate::model::FeatureStatus) -> Self {
+            self.engagement_metrics = Some(input);
+            self
+        }
+        /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for the configuration set.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for the configuration set.</p> </li>
+        /// </ul>
+        pub fn set_engagement_metrics(
+            mut self,
+            input: std::option::Option<crate::model::FeatureStatus>,
+        ) -> Self {
+            self.engagement_metrics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DashboardOptions`](crate::model::DashboardOptions).
+        pub fn build(self) -> crate::model::DashboardOptions {
+            crate::model::DashboardOptions {
+                engagement_metrics: self.engagement_metrics,
+            }
+        }
+    }
+}
+impl DashboardOptions {
+    /// Creates a new builder-style object to manufacture [`DashboardOptions`](crate::model::DashboardOptions).
+    pub fn builder() -> crate::model::dashboard_options::Builder {
+        crate::model::dashboard_options::Builder::default()
+    }
+}
+
 /// When writing a match expression against `TlsPolicy`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
 /// feature that is supported by the service but has not been represented as an enum
@@ -3517,6 +3814,251 @@ impl TlsPolicy {
 impl AsRef<str> for TlsPolicy {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>The VDM attributes that apply to your Amazon SES account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VdmAttributes {
+    /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub vdm_enabled: std::option::Option<crate::model::FeatureStatus>,
+    /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
+    #[doc(hidden)]
+    pub dashboard_attributes: std::option::Option<crate::model::DashboardAttributes>,
+    /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
+    #[doc(hidden)]
+    pub guardian_attributes: std::option::Option<crate::model::GuardianAttributes>,
+}
+impl VdmAttributes {
+    /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
+    /// </ul>
+    pub fn vdm_enabled(&self) -> std::option::Option<&crate::model::FeatureStatus> {
+        self.vdm_enabled.as_ref()
+    }
+    /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
+    pub fn dashboard_attributes(&self) -> std::option::Option<&crate::model::DashboardAttributes> {
+        self.dashboard_attributes.as_ref()
+    }
+    /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
+    pub fn guardian_attributes(&self) -> std::option::Option<&crate::model::GuardianAttributes> {
+        self.guardian_attributes.as_ref()
+    }
+}
+/// See [`VdmAttributes`](crate::model::VdmAttributes).
+pub mod vdm_attributes {
+
+    /// A builder for [`VdmAttributes`](crate::model::VdmAttributes).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vdm_enabled: std::option::Option<crate::model::FeatureStatus>,
+        pub(crate) dashboard_attributes: std::option::Option<crate::model::DashboardAttributes>,
+        pub(crate) guardian_attributes: std::option::Option<crate::model::GuardianAttributes>,
+    }
+    impl Builder {
+        /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
+        /// </ul>
+        pub fn vdm_enabled(mut self, input: crate::model::FeatureStatus) -> Self {
+            self.vdm_enabled = Some(input);
+            self
+        }
+        /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
+        /// </ul>
+        pub fn set_vdm_enabled(
+            mut self,
+            input: std::option::Option<crate::model::FeatureStatus>,
+        ) -> Self {
+            self.vdm_enabled = input;
+            self
+        }
+        /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
+        pub fn dashboard_attributes(mut self, input: crate::model::DashboardAttributes) -> Self {
+            self.dashboard_attributes = Some(input);
+            self
+        }
+        /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
+        pub fn set_dashboard_attributes(
+            mut self,
+            input: std::option::Option<crate::model::DashboardAttributes>,
+        ) -> Self {
+            self.dashboard_attributes = input;
+            self
+        }
+        /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
+        pub fn guardian_attributes(mut self, input: crate::model::GuardianAttributes) -> Self {
+            self.guardian_attributes = Some(input);
+            self
+        }
+        /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
+        pub fn set_guardian_attributes(
+            mut self,
+            input: std::option::Option<crate::model::GuardianAttributes>,
+        ) -> Self {
+            self.guardian_attributes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VdmAttributes`](crate::model::VdmAttributes).
+        pub fn build(self) -> crate::model::VdmAttributes {
+            crate::model::VdmAttributes {
+                vdm_enabled: self.vdm_enabled,
+                dashboard_attributes: self.dashboard_attributes,
+                guardian_attributes: self.guardian_attributes,
+            }
+        }
+    }
+}
+impl VdmAttributes {
+    /// Creates a new builder-style object to manufacture [`VdmAttributes`](crate::model::VdmAttributes).
+    pub fn builder() -> crate::model::vdm_attributes::Builder {
+        crate::model::vdm_attributes::Builder::default()
+    }
+}
+
+/// <p>An object containing additional settings for your VDM configuration as applicable to the Guardian.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GuardianAttributes {
+    /// <p>Specifies the status of your VDM optimized shared delivery. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables optimized shared delivery for your account.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables optimized shared delivery for your account.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub optimized_shared_delivery: std::option::Option<crate::model::FeatureStatus>,
+}
+impl GuardianAttributes {
+    /// <p>Specifies the status of your VDM optimized shared delivery. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables optimized shared delivery for your account.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables optimized shared delivery for your account.</p> </li>
+    /// </ul>
+    pub fn optimized_shared_delivery(&self) -> std::option::Option<&crate::model::FeatureStatus> {
+        self.optimized_shared_delivery.as_ref()
+    }
+}
+/// See [`GuardianAttributes`](crate::model::GuardianAttributes).
+pub mod guardian_attributes {
+
+    /// A builder for [`GuardianAttributes`](crate::model::GuardianAttributes).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) optimized_shared_delivery: std::option::Option<crate::model::FeatureStatus>,
+    }
+    impl Builder {
+        /// <p>Specifies the status of your VDM optimized shared delivery. Can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – Amazon SES enables optimized shared delivery for your account.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – Amazon SES disables optimized shared delivery for your account.</p> </li>
+        /// </ul>
+        pub fn optimized_shared_delivery(mut self, input: crate::model::FeatureStatus) -> Self {
+            self.optimized_shared_delivery = Some(input);
+            self
+        }
+        /// <p>Specifies the status of your VDM optimized shared delivery. Can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – Amazon SES enables optimized shared delivery for your account.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – Amazon SES disables optimized shared delivery for your account.</p> </li>
+        /// </ul>
+        pub fn set_optimized_shared_delivery(
+            mut self,
+            input: std::option::Option<crate::model::FeatureStatus>,
+        ) -> Self {
+            self.optimized_shared_delivery = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GuardianAttributes`](crate::model::GuardianAttributes).
+        pub fn build(self) -> crate::model::GuardianAttributes {
+            crate::model::GuardianAttributes {
+                optimized_shared_delivery: self.optimized_shared_delivery,
+            }
+        }
+    }
+}
+impl GuardianAttributes {
+    /// Creates a new builder-style object to manufacture [`GuardianAttributes`](crate::model::GuardianAttributes).
+    pub fn builder() -> crate::model::guardian_attributes::Builder {
+        crate::model::guardian_attributes::Builder::default()
+    }
+}
+
+/// <p>An object containing additional settings for your VDM configuration as applicable to the Dashboard.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DashboardAttributes {
+    /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for your account.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for your account.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub engagement_metrics: std::option::Option<crate::model::FeatureStatus>,
+}
+impl DashboardAttributes {
+    /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for your account.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for your account.</p> </li>
+    /// </ul>
+    pub fn engagement_metrics(&self) -> std::option::Option<&crate::model::FeatureStatus> {
+        self.engagement_metrics.as_ref()
+    }
+}
+/// See [`DashboardAttributes`](crate::model::DashboardAttributes).
+pub mod dashboard_attributes {
+
+    /// A builder for [`DashboardAttributes`](crate::model::DashboardAttributes).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) engagement_metrics: std::option::Option<crate::model::FeatureStatus>,
+    }
+    impl Builder {
+        /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for your account.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for your account.</p> </li>
+        /// </ul>
+        pub fn engagement_metrics(mut self, input: crate::model::FeatureStatus) -> Self {
+            self.engagement_metrics = Some(input);
+            self
+        }
+        /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for your account.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for your account.</p> </li>
+        /// </ul>
+        pub fn set_engagement_metrics(
+            mut self,
+            input: std::option::Option<crate::model::FeatureStatus>,
+        ) -> Self {
+            self.engagement_metrics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DashboardAttributes`](crate::model::DashboardAttributes).
+        pub fn build(self) -> crate::model::DashboardAttributes {
+            crate::model::DashboardAttributes {
+                engagement_metrics: self.engagement_metrics,
+            }
+        }
+    }
+}
+impl DashboardAttributes {
+    /// Creates a new builder-style object to manufacture [`DashboardAttributes`](crate::model::DashboardAttributes).
+    pub fn builder() -> crate::model::dashboard_attributes::Builder {
+        crate::model::dashboard_attributes::Builder::default()
     }
 }
 
@@ -3795,6 +4337,588 @@ impl SuppressedDestinationSummary {
     }
 }
 
+/// <p>A recommendation generated for your account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Recommendation {
+    /// <p>The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::RecommendationType>,
+    /// <p>The recommendation description / disambiguator - e.g. <code>DKIM1</code> and <code>DKIM2</code> are different recommendations about your DKIM setup.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::RecommendationStatus>,
+    /// <p>The first time this issue was encountered and the recommendation was generated.</p>
+    #[doc(hidden)]
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The last time the recommendation was updated.</p>
+    #[doc(hidden)]
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>.</p>
+    #[doc(hidden)]
+    pub impact: std::option::Option<crate::model::RecommendationImpact>,
+}
+impl Recommendation {
+    /// <p>The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RecommendationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The recommendation description / disambiguator - e.g. <code>DKIM1</code> and <code>DKIM2</code> are different recommendations about your DKIM setup.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RecommendationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The first time this issue was encountered and the recommendation was generated.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The last time the recommendation was updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_timestamp.as_ref()
+    }
+    /// <p>The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>.</p>
+    pub fn impact(&self) -> std::option::Option<&crate::model::RecommendationImpact> {
+        self.impact.as_ref()
+    }
+}
+/// See [`Recommendation`](crate::model::Recommendation).
+pub mod recommendation {
+
+    /// A builder for [`Recommendation`](crate::model::Recommendation).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::RecommendationType>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::RecommendationStatus>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) impact: std::option::Option<crate::model::RecommendationImpact>,
+    }
+    impl Builder {
+        /// <p>The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.</p>
+        pub fn r#type(mut self, input: crate::model::RecommendationType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The recommendation description / disambiguator - e.g. <code>DKIM1</code> and <code>DKIM2</code> are different recommendations about your DKIM setup.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The recommendation description / disambiguator - e.g. <code>DKIM1</code> and <code>DKIM2</code> are different recommendations about your DKIM setup.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>.</p>
+        pub fn status(mut self, input: crate::model::RecommendationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The first time this issue was encountered and the recommendation was generated.</p>
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_timestamp = Some(input);
+            self
+        }
+        /// <p>The first time this issue was encountered and the recommendation was generated.</p>
+        pub fn set_created_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_timestamp = input;
+            self
+        }
+        /// <p>The last time the recommendation was updated.</p>
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_timestamp = Some(input);
+            self
+        }
+        /// <p>The last time the recommendation was updated.</p>
+        pub fn set_last_updated_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_timestamp = input;
+            self
+        }
+        /// <p>The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>.</p>
+        pub fn impact(mut self, input: crate::model::RecommendationImpact) -> Self {
+            self.impact = Some(input);
+            self
+        }
+        /// <p>The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>.</p>
+        pub fn set_impact(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationImpact>,
+        ) -> Self {
+            self.impact = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Recommendation`](crate::model::Recommendation).
+        pub fn build(self) -> crate::model::Recommendation {
+            crate::model::Recommendation {
+                resource_arn: self.resource_arn,
+                r#type: self.r#type,
+                description: self.description,
+                status: self.status,
+                created_timestamp: self.created_timestamp,
+                last_updated_timestamp: self.last_updated_timestamp,
+                impact: self.impact,
+            }
+        }
+    }
+}
+impl Recommendation {
+    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
+    pub fn builder() -> crate::model::recommendation::Builder {
+        crate::model::recommendation::Builder::default()
+    }
+}
+
+/// When writing a match expression against `RecommendationImpact`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let recommendationimpact = unimplemented!();
+/// match recommendationimpact {
+///     RecommendationImpact::High => { /* ... */ },
+///     RecommendationImpact::Low => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `recommendationimpact` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RecommendationImpact::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RecommendationImpact::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RecommendationImpact::NewFeature` is defined.
+/// Specifically, when `recommendationimpact` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RecommendationImpact::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RecommendationImpact {
+    #[allow(missing_docs)] // documentation missing in model
+    High,
+    #[allow(missing_docs)] // documentation missing in model
+    Low,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for RecommendationImpact {
+    fn from(s: &str) -> Self {
+        match s {
+            "HIGH" => RecommendationImpact::High,
+            "LOW" => RecommendationImpact::Low,
+            other => {
+                RecommendationImpact::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for RecommendationImpact {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RecommendationImpact::from(s))
+    }
+}
+impl RecommendationImpact {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RecommendationImpact::High => "HIGH",
+            RecommendationImpact::Low => "LOW",
+            RecommendationImpact::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["HIGH", "LOW"]
+    }
+}
+impl AsRef<str> for RecommendationImpact {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `RecommendationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let recommendationstatus = unimplemented!();
+/// match recommendationstatus {
+///     RecommendationStatus::Fixed => { /* ... */ },
+///     RecommendationStatus::Open => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `recommendationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RecommendationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RecommendationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RecommendationStatus::NewFeature` is defined.
+/// Specifically, when `recommendationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RecommendationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RecommendationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Fixed,
+    #[allow(missing_docs)] // documentation missing in model
+    Open,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for RecommendationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FIXED" => RecommendationStatus::Fixed,
+            "OPEN" => RecommendationStatus::Open,
+            other => {
+                RecommendationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for RecommendationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RecommendationStatus::from(s))
+    }
+}
+impl RecommendationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RecommendationStatus::Fixed => "FIXED",
+            RecommendationStatus::Open => "OPEN",
+            RecommendationStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FIXED", "OPEN"]
+    }
+}
+impl AsRef<str> for RecommendationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `RecommendationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let recommendationtype = unimplemented!();
+/// match recommendationtype {
+///     RecommendationType::Dkim => { /* ... */ },
+///     RecommendationType::Dmarc => { /* ... */ },
+///     RecommendationType::Spf => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `recommendationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RecommendationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RecommendationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RecommendationType::NewFeature` is defined.
+/// Specifically, when `recommendationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RecommendationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RecommendationType {
+    #[allow(missing_docs)] // documentation missing in model
+    Dkim,
+    #[allow(missing_docs)] // documentation missing in model
+    Dmarc,
+    #[allow(missing_docs)] // documentation missing in model
+    Spf,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for RecommendationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DKIM" => RecommendationType::Dkim,
+            "DMARC" => RecommendationType::Dmarc,
+            "SPF" => RecommendationType::Spf,
+            other => {
+                RecommendationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for RecommendationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RecommendationType::from(s))
+    }
+}
+impl RecommendationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RecommendationType::Dkim => "DKIM",
+            RecommendationType::Dmarc => "DMARC",
+            RecommendationType::Spf => "SPF",
+            RecommendationType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DKIM", "DMARC", "SPF"]
+    }
+}
+impl AsRef<str> for RecommendationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `ListRecommendationsFilterKey`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let listrecommendationsfilterkey = unimplemented!();
+/// match listrecommendationsfilterkey {
+///     ListRecommendationsFilterKey::Impact => { /* ... */ },
+///     ListRecommendationsFilterKey::ResourceArn => { /* ... */ },
+///     ListRecommendationsFilterKey::Status => { /* ... */ },
+///     ListRecommendationsFilterKey::Type => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `listrecommendationsfilterkey` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ListRecommendationsFilterKey::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ListRecommendationsFilterKey::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ListRecommendationsFilterKey::NewFeature` is defined.
+/// Specifically, when `listrecommendationsfilterkey` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ListRecommendationsFilterKey::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// <p>The <code>ListRecommendations</code> filter type. This can be one of the following:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <code>TYPE</code> – The recommendation type, with values like <code>DKIM</code>,
+/// <code>SPF</code> or <code>DMARC</code>.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>IMPACT</code> – The recommendation impact, with values like
+/// <code>HIGH</code> or <code>LOW</code>.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>STATUS</code> – The recommendation status, with values like
+/// <code>OPEN</code> or <code>FIXED</code>.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>RESOURCE_ARN</code> – The resource affected by the recommendation,
+/// with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+/// </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ListRecommendationsFilterKey {
+    #[allow(missing_docs)] // documentation missing in model
+    Impact,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceArn,
+    #[allow(missing_docs)] // documentation missing in model
+    Status,
+    #[allow(missing_docs)] // documentation missing in model
+    Type,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ListRecommendationsFilterKey {
+    fn from(s: &str) -> Self {
+        match s {
+            "IMPACT" => ListRecommendationsFilterKey::Impact,
+            "RESOURCE_ARN" => ListRecommendationsFilterKey::ResourceArn,
+            "STATUS" => ListRecommendationsFilterKey::Status,
+            "TYPE" => ListRecommendationsFilterKey::Type,
+            other => ListRecommendationsFilterKey::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for ListRecommendationsFilterKey {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ListRecommendationsFilterKey::from(s))
+    }
+}
+impl ListRecommendationsFilterKey {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ListRecommendationsFilterKey::Impact => "IMPACT",
+            ListRecommendationsFilterKey::ResourceArn => "RESOURCE_ARN",
+            ListRecommendationsFilterKey::Status => "STATUS",
+            ListRecommendationsFilterKey::Type => "TYPE",
+            ListRecommendationsFilterKey::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["IMPACT", "RESOURCE_ARN", "STATUS", "TYPE"]
+    }
+}
+impl AsRef<str> for ListRecommendationsFilterKey {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A summary of the import job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3811,6 +4935,12 @@ pub struct ImportJobSummary {
     /// <p>The date and time when the import job was created.</p>
     #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The current number of records processed.</p>
+    #[doc(hidden)]
+    pub processed_records_count: std::option::Option<i32>,
+    /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
+    #[doc(hidden)]
+    pub failed_records_count: std::option::Option<i32>,
 }
 impl ImportJobSummary {
     /// <p>A string that represents the import job ID.</p>
@@ -3829,6 +4959,14 @@ impl ImportJobSummary {
     pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
+    /// <p>The current number of records processed.</p>
+    pub fn processed_records_count(&self) -> std::option::Option<i32> {
+        self.processed_records_count
+    }
+    /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
+    pub fn failed_records_count(&self) -> std::option::Option<i32> {
+        self.failed_records_count
+    }
 }
 /// See [`ImportJobSummary`](crate::model::ImportJobSummary).
 pub mod import_job_summary {
@@ -3840,6 +4978,8 @@ pub mod import_job_summary {
         pub(crate) import_destination: std::option::Option<crate::model::ImportDestination>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) processed_records_count: std::option::Option<i32>,
+        pub(crate) failed_records_count: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>A string that represents the import job ID.</p>
@@ -3891,6 +5031,26 @@ pub mod import_job_summary {
             self.created_timestamp = input;
             self
         }
+        /// <p>The current number of records processed.</p>
+        pub fn processed_records_count(mut self, input: i32) -> Self {
+            self.processed_records_count = Some(input);
+            self
+        }
+        /// <p>The current number of records processed.</p>
+        pub fn set_processed_records_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.processed_records_count = input;
+            self
+        }
+        /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
+        pub fn failed_records_count(mut self, input: i32) -> Self {
+            self.failed_records_count = Some(input);
+            self
+        }
+        /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
+        pub fn set_failed_records_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.failed_records_count = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ImportJobSummary`](crate::model::ImportJobSummary).
         pub fn build(self) -> crate::model::ImportJobSummary {
             crate::model::ImportJobSummary {
@@ -3898,6 +5058,8 @@ pub mod import_job_summary {
                 import_destination: self.import_destination,
                 job_status: self.job_status,
                 created_timestamp: self.created_timestamp,
+                processed_records_count: self.processed_records_count,
+                failed_records_count: self.failed_records_count,
             }
         }
     }
@@ -4635,6 +5797,16 @@ pub struct IdentityInfo {
     /// <p>An <i>identity</i> is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon SES to send email from that identity.</p>
     #[doc(hidden)]
     pub sending_enabled: bool,
+    /// <p>The verification status of the identity. The status can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
+    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub verification_status: std::option::Option<crate::model::VerificationStatus>,
 }
 impl IdentityInfo {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.</p>
@@ -4650,6 +5822,17 @@ impl IdentityInfo {
     pub fn sending_enabled(&self) -> bool {
         self.sending_enabled
     }
+    /// <p>The verification status of the identity. The status can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
+    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// </ul>
+    pub fn verification_status(&self) -> std::option::Option<&crate::model::VerificationStatus> {
+        self.verification_status.as_ref()
+    }
 }
 /// See [`IdentityInfo`](crate::model::IdentityInfo).
 pub mod identity_info {
@@ -4660,6 +5843,7 @@ pub mod identity_info {
         pub(crate) identity_type: std::option::Option<crate::model::IdentityType>,
         pub(crate) identity_name: std::option::Option<std::string::String>,
         pub(crate) sending_enabled: std::option::Option<bool>,
+        pub(crate) verification_status: std::option::Option<crate::model::VerificationStatus>,
     }
     impl Builder {
         /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.</p>
@@ -4700,12 +5884,40 @@ pub mod identity_info {
             self.sending_enabled = input;
             self
         }
+        /// <p>The verification status of the identity. The status can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+        /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+        /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
+        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
+        /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+        /// </ul>
+        pub fn verification_status(mut self, input: crate::model::VerificationStatus) -> Self {
+            self.verification_status = Some(input);
+            self
+        }
+        /// <p>The verification status of the identity. The status can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+        /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+        /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
+        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
+        /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+        /// </ul>
+        pub fn set_verification_status(
+            mut self,
+            input: std::option::Option<crate::model::VerificationStatus>,
+        ) -> Self {
+            self.verification_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`IdentityInfo`](crate::model::IdentityInfo).
         pub fn build(self) -> crate::model::IdentityInfo {
             crate::model::IdentityInfo {
                 identity_type: self.identity_type,
                 identity_name: self.identity_name,
                 sending_enabled: self.sending_enabled.unwrap_or_default(),
+                verification_status: self.verification_status,
             }
         }
     }
@@ -4714,6 +5926,119 @@ impl IdentityInfo {
     /// Creates a new builder-style object to manufacture [`IdentityInfo`](crate::model::IdentityInfo).
     pub fn builder() -> crate::model::identity_info::Builder {
         crate::model::identity_info::Builder::default()
+    }
+}
+
+/// When writing a match expression against `VerificationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let verificationstatus = unimplemented!();
+/// match verificationstatus {
+///     VerificationStatus::Failed => { /* ... */ },
+///     VerificationStatus::NotStarted => { /* ... */ },
+///     VerificationStatus::Pending => { /* ... */ },
+///     VerificationStatus::Success => { /* ... */ },
+///     VerificationStatus::TemporaryFailure => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `verificationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `VerificationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `VerificationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `VerificationStatus::NewFeature` is defined.
+/// Specifically, when `verificationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `VerificationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VerificationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    NotStarted,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Success,
+    #[allow(missing_docs)] // documentation missing in model
+    TemporaryFailure,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for VerificationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => VerificationStatus::Failed,
+            "NOT_STARTED" => VerificationStatus::NotStarted,
+            "PENDING" => VerificationStatus::Pending,
+            "SUCCESS" => VerificationStatus::Success,
+            "TEMPORARY_FAILURE" => VerificationStatus::TemporaryFailure,
+            other => {
+                VerificationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for VerificationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VerificationStatus::from(s))
+    }
+}
+impl VerificationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VerificationStatus::Failed => "FAILED",
+            VerificationStatus::NotStarted => "NOT_STARTED",
+            VerificationStatus::Pending => "PENDING",
+            VerificationStatus::Success => "SUCCESS",
+            VerificationStatus::TemporaryFailure => "TEMPORARY_FAILURE",
+            VerificationStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "FAILED",
+            "NOT_STARTED",
+            "PENDING",
+            "SUCCESS",
+            "TEMPORARY_FAILURE",
+        ]
+    }
+}
+impl AsRef<str> for VerificationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4831,10 +6156,10 @@ pub struct DomainDeliverabilityCampaign {
     /// <p>The IP addresses that were used to send the email message.</p>
     #[doc(hidden)]
     pub sending_ips: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
+    /// <p>The first time when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
     #[doc(hidden)]
     pub first_seen_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
+    /// <p>The last time when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
     #[doc(hidden)]
     pub last_seen_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
@@ -4880,11 +6205,11 @@ impl DomainDeliverabilityCampaign {
     pub fn sending_ips(&self) -> std::option::Option<&[std::string::String]> {
         self.sending_ips.as_deref()
     }
-    /// <p>The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
+    /// <p>The first time when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
     pub fn first_seen_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.first_seen_date_time.as_ref()
     }
-    /// <p>The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
+    /// <p>The last time when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
     pub fn last_seen_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_seen_date_time.as_ref()
     }
@@ -4998,12 +6323,12 @@ pub mod domain_deliverability_campaign {
             self.sending_ips = input;
             self
         }
-        /// <p>The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
+        /// <p>The first time when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
         pub fn first_seen_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.first_seen_date_time = Some(input);
             self
         }
-        /// <p>The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
+        /// <p>The first time when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
         pub fn set_first_seen_date_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5011,12 +6336,12 @@ pub mod domain_deliverability_campaign {
             self.first_seen_date_time = input;
             self
         }
-        /// <p>The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
+        /// <p>The last time when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
         pub fn last_seen_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_seen_date_time = Some(input);
             self
         }
-        /// <p>The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
+        /// <p>The last time when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
         pub fn set_last_seen_date_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5147,7 +6472,7 @@ pub struct DeliverabilityTestReport {
     /// <p>The sender address that you specified for the predictive inbox placement test.</p>
     #[doc(hidden)]
     pub from_email_address: std::option::Option<std::string::String>,
-    /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
+    /// <p>The date and time when the predictive inbox placement test was created.</p>
     #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
@@ -5171,7 +6496,7 @@ impl DeliverabilityTestReport {
     pub fn from_email_address(&self) -> std::option::Option<&str> {
         self.from_email_address.as_deref()
     }
-    /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
+    /// <p>The date and time when the predictive inbox placement test was created.</p>
     pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
@@ -5240,12 +6565,12 @@ pub mod deliverability_test_report {
             self.from_email_address = input;
             self
         }
-        /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
+        /// <p>The date and time when the predictive inbox placement test was created.</p>
         pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
-        /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
+        /// <p>The date and time when the predictive inbox placement test was created.</p>
         pub fn set_create_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6334,7 +7659,7 @@ pub struct MailFromAttributes {
     /// </ul>
     #[doc(hidden)]
     pub mail_from_domain_status: std::option::Option<crate::model::MailFromDomainStatus>,
-    /// <p>The action to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+    /// <p>The action to take if the required MX record can't be found when you send an email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     #[doc(hidden)]
     pub behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
@@ -6356,7 +7681,7 @@ impl MailFromAttributes {
     ) -> std::option::Option<&crate::model::MailFromDomainStatus> {
         self.mail_from_domain_status.as_ref()
     }
-    /// <p>The action to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+    /// <p>The action to take if the required MX record can't be found when you send an email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     pub fn behavior_on_mx_failure(
         &self,
@@ -6416,13 +7741,13 @@ pub mod mail_from_attributes {
             self.mail_from_domain_status = input;
             self
         }
-        /// <p>The action to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+        /// <p>The action to take if the required MX record can't be found when you send an email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
         /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
         pub fn behavior_on_mx_failure(mut self, input: crate::model::BehaviorOnMxFailure) -> Self {
             self.behavior_on_mx_failure = Some(input);
             self
         }
-        /// <p>The action to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+        /// <p>The action to take if the required MX record can't be found when you send an email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
         /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
         pub fn set_behavior_on_mx_failure(
             mut self,
@@ -7769,6 +9094,182 @@ impl AsRef<str> for WarmupStatus {
     }
 }
 
+/// <p>Contains information about a dedicated IP pool.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DedicatedIpPool {
+    /// <p>The name of the dedicated IP pool.</p>
+    #[doc(hidden)]
+    pub pool_name: std::option::Option<std::string::String>,
+    /// <p>The type of the dedicated IP pool.</p>
+    /// <ul>
+    /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.</p> </li>
+    /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed by Amazon SES.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub scaling_mode: std::option::Option<crate::model::ScalingMode>,
+}
+impl DedicatedIpPool {
+    /// <p>The name of the dedicated IP pool.</p>
+    pub fn pool_name(&self) -> std::option::Option<&str> {
+        self.pool_name.as_deref()
+    }
+    /// <p>The type of the dedicated IP pool.</p>
+    /// <ul>
+    /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.</p> </li>
+    /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed by Amazon SES.</p> </li>
+    /// </ul>
+    pub fn scaling_mode(&self) -> std::option::Option<&crate::model::ScalingMode> {
+        self.scaling_mode.as_ref()
+    }
+}
+/// See [`DedicatedIpPool`](crate::model::DedicatedIpPool).
+pub mod dedicated_ip_pool {
+
+    /// A builder for [`DedicatedIpPool`](crate::model::DedicatedIpPool).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) pool_name: std::option::Option<std::string::String>,
+        pub(crate) scaling_mode: std::option::Option<crate::model::ScalingMode>,
+    }
+    impl Builder {
+        /// <p>The name of the dedicated IP pool.</p>
+        pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pool_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the dedicated IP pool.</p>
+        pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pool_name = input;
+            self
+        }
+        /// <p>The type of the dedicated IP pool.</p>
+        /// <ul>
+        /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.</p> </li>
+        /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed by Amazon SES.</p> </li>
+        /// </ul>
+        pub fn scaling_mode(mut self, input: crate::model::ScalingMode) -> Self {
+            self.scaling_mode = Some(input);
+            self
+        }
+        /// <p>The type of the dedicated IP pool.</p>
+        /// <ul>
+        /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.</p> </li>
+        /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed by Amazon SES.</p> </li>
+        /// </ul>
+        pub fn set_scaling_mode(
+            mut self,
+            input: std::option::Option<crate::model::ScalingMode>,
+        ) -> Self {
+            self.scaling_mode = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DedicatedIpPool`](crate::model::DedicatedIpPool).
+        pub fn build(self) -> crate::model::DedicatedIpPool {
+            crate::model::DedicatedIpPool {
+                pool_name: self.pool_name,
+                scaling_mode: self.scaling_mode,
+            }
+        }
+    }
+}
+impl DedicatedIpPool {
+    /// Creates a new builder-style object to manufacture [`DedicatedIpPool`](crate::model::DedicatedIpPool).
+    pub fn builder() -> crate::model::dedicated_ip_pool::Builder {
+        crate::model::dedicated_ip_pool::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ScalingMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let scalingmode = unimplemented!();
+/// match scalingmode {
+///     ScalingMode::Managed => { /* ... */ },
+///     ScalingMode::Standard => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `scalingmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ScalingMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ScalingMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ScalingMode::NewFeature` is defined.
+/// Specifically, when `scalingmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ScalingMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ScalingMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Managed,
+    #[allow(missing_docs)] // documentation missing in model
+    Standard,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ScalingMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "MANAGED" => ScalingMode::Managed,
+            "STANDARD" => ScalingMode::Standard,
+            other => ScalingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ScalingMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScalingMode::from(s))
+    }
+}
+impl ScalingMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScalingMode::Managed => "MANAGED",
+            ScalingMode::Standard => "STANDARD",
+            ScalingMode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["MANAGED", "STANDARD"]
+    }
+}
+impl AsRef<str> for ScalingMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>In the Amazon SES API v2, <i>events</i> include message sends, deliveries, opens, clicks, bounces, complaints and delivery delays. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8295,7 +9796,7 @@ pub struct BlacklistEntry {
     /// <p>The name of the blacklist that the IP address appears on.</p>
     #[doc(hidden)]
     pub rbl_name: std::option::Option<std::string::String>,
-    /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
+    /// <p>The time when the blacklisting event occurred.</p>
     #[doc(hidden)]
     pub listing_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Additional information about the blacklisting event, as provided by the blacklist maintainer.</p>
@@ -8307,7 +9808,7 @@ impl BlacklistEntry {
     pub fn rbl_name(&self) -> std::option::Option<&str> {
         self.rbl_name.as_deref()
     }
-    /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
+    /// <p>The time when the blacklisting event occurred.</p>
     pub fn listing_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.listing_time.as_ref()
     }
@@ -8337,12 +9838,12 @@ pub mod blacklist_entry {
             self.rbl_name = input;
             self
         }
-        /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
+        /// <p>The time when the blacklisting event occurred.</p>
         pub fn listing_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.listing_time = Some(input);
             self
         }
-        /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
+        /// <p>The time when the blacklisting event occurred.</p>
         pub fn set_listing_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -8864,7 +10365,7 @@ impl SuppressionAttributes {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendQuota {
-    /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. This value is also called your <i>sending quota</i>.</p>
+    /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. A value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending quota</i>.)</p>
     #[doc(hidden)]
     pub max24_hour_send: f64,
     /// <p>The maximum number of emails that you can send per second in the current Amazon Web Services Region. This value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.</p>
@@ -8875,7 +10376,7 @@ pub struct SendQuota {
     pub sent_last24_hours: f64,
 }
 impl SendQuota {
-    /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. This value is also called your <i>sending quota</i>.</p>
+    /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. A value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending quota</i>.)</p>
     pub fn max24_hour_send(&self) -> f64 {
         self.max24_hour_send
     }
@@ -8899,12 +10400,12 @@ pub mod send_quota {
         pub(crate) sent_last24_hours: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. This value is also called your <i>sending quota</i>.</p>
+        /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. A value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending quota</i>.)</p>
         pub fn max24_hour_send(mut self, input: f64) -> Self {
             self.max24_hour_send = Some(input);
             self
         }
-        /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. This value is also called your <i>sending quota</i>.</p>
+        /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. A value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending quota</i>.)</p>
         pub fn set_max24_hour_send(mut self, input: std::option::Option<f64>) -> Self {
             self.max24_hour_send = input;
             self
@@ -8943,5 +10444,863 @@ impl SendQuota {
     /// Creates a new builder-style object to manufacture [`SendQuota`](crate::model::SendQuota).
     pub fn builder() -> crate::model::send_quota::Builder {
         crate::model::send_quota::Builder::default()
+    }
+}
+
+/// <p>An error corresponding to the unsuccessful processing of a single metric data query.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MetricDataError {
+    /// <p>The query identifier.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The query error code. Can be one of:</p>
+    /// <ul>
+    /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub code: std::option::Option<crate::model::QueryErrorCode>,
+    /// <p>The error message associated with the current query error.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl MetricDataError {
+    /// <p>The query identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The query error code. Can be one of:</p>
+    /// <ul>
+    /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
+    /// </ul>
+    pub fn code(&self) -> std::option::Option<&crate::model::QueryErrorCode> {
+        self.code.as_ref()
+    }
+    /// <p>The error message associated with the current query error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+/// See [`MetricDataError`](crate::model::MetricDataError).
+pub mod metric_data_error {
+
+    /// A builder for [`MetricDataError`](crate::model::MetricDataError).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<crate::model::QueryErrorCode>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The query identifier.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The query identifier.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The query error code. Can be one of:</p>
+        /// <ul>
+        /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
+        /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
+        /// </ul>
+        pub fn code(mut self, input: crate::model::QueryErrorCode) -> Self {
+            self.code = Some(input);
+            self
+        }
+        /// <p>The query error code. Can be one of:</p>
+        /// <ul>
+        /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
+        /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
+        /// </ul>
+        pub fn set_code(
+            mut self,
+            input: std::option::Option<crate::model::QueryErrorCode>,
+        ) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>The error message associated with the current query error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The error message associated with the current query error.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricDataError`](crate::model::MetricDataError).
+        pub fn build(self) -> crate::model::MetricDataError {
+            crate::model::MetricDataError {
+                id: self.id,
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl MetricDataError {
+    /// Creates a new builder-style object to manufacture [`MetricDataError`](crate::model::MetricDataError).
+    pub fn builder() -> crate::model::metric_data_error::Builder {
+        crate::model::metric_data_error::Builder::default()
+    }
+}
+
+/// When writing a match expression against `QueryErrorCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let queryerrorcode = unimplemented!();
+/// match queryerrorcode {
+///     QueryErrorCode::AccessDenied => { /* ... */ },
+///     QueryErrorCode::InternalFailure => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `queryerrorcode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `QueryErrorCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `QueryErrorCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `QueryErrorCode::NewFeature` is defined.
+/// Specifically, when `queryerrorcode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `QueryErrorCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum QueryErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
+    AccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    InternalFailure,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for QueryErrorCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCESS_DENIED" => QueryErrorCode::AccessDenied,
+            "INTERNAL_FAILURE" => QueryErrorCode::InternalFailure,
+            other => QueryErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for QueryErrorCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(QueryErrorCode::from(s))
+    }
+}
+impl QueryErrorCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            QueryErrorCode::AccessDenied => "ACCESS_DENIED",
+            QueryErrorCode::InternalFailure => "INTERNAL_FAILURE",
+            QueryErrorCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ACCESS_DENIED", "INTERNAL_FAILURE"]
+    }
+}
+impl AsRef<str> for QueryErrorCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The result of a single metric data query.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MetricDataResult {
+    /// <p>The query identifier.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>A list of timestamps for the metric data results.</p>
+    #[doc(hidden)]
+    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+    /// <p>A list of values (cumulative / sum) for the metric data results.</p>
+    #[doc(hidden)]
+    pub values: std::option::Option<std::vec::Vec<i64>>,
+}
+impl MetricDataResult {
+    /// <p>The query identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A list of timestamps for the metric data results.</p>
+    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
+        self.timestamps.as_deref()
+    }
+    /// <p>A list of values (cumulative / sum) for the metric data results.</p>
+    pub fn values(&self) -> std::option::Option<&[i64]> {
+        self.values.as_deref()
+    }
+}
+/// See [`MetricDataResult`](crate::model::MetricDataResult).
+pub mod metric_data_result {
+
+    /// A builder for [`MetricDataResult`](crate::model::MetricDataResult).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+        pub(crate) values: std::option::Option<std::vec::Vec<i64>>,
+    }
+    impl Builder {
+        /// <p>The query identifier.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The query identifier.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Appends an item to `timestamps`.
+        ///
+        /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
+        ///
+        /// <p>A list of timestamps for the metric data results.</p>
+        pub fn timestamps(mut self, input: aws_smithy_types::DateTime) -> Self {
+            let mut v = self.timestamps.unwrap_or_default();
+            v.push(input);
+            self.timestamps = Some(v);
+            self
+        }
+        /// <p>A list of timestamps for the metric data results.</p>
+        pub fn set_timestamps(
+            mut self,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+        ) -> Self {
+            self.timestamps = input;
+            self
+        }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>A list of values (cumulative / sum) for the metric data results.</p>
+        pub fn values(mut self, input: i64) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input);
+            self.values = Some(v);
+            self
+        }
+        /// <p>A list of values (cumulative / sum) for the metric data results.</p>
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<i64>>) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricDataResult`](crate::model::MetricDataResult).
+        pub fn build(self) -> crate::model::MetricDataResult {
+            crate::model::MetricDataResult {
+                id: self.id,
+                timestamps: self.timestamps,
+                values: self.values,
+            }
+        }
+    }
+}
+impl MetricDataResult {
+    /// Creates a new builder-style object to manufacture [`MetricDataResult`](crate::model::MetricDataResult).
+    pub fn builder() -> crate::model::metric_data_result::Builder {
+        crate::model::metric_data_result::Builder::default()
+    }
+}
+
+/// <p>Represents a single metric data query to include in a batch.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BatchGetMetricDataQuery {
+    /// <p>The query identifier.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The query namespace - e.g. <code>VDM</code> </p>
+    #[doc(hidden)]
+    pub namespace: std::option::Option<crate::model::MetricNamespace>,
+    /// <p>The queried metric. This can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SEND</code> – Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>COMPLAINT</code> – Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p> </li>
+    /// <li> <p> <code>PERMANENT_BOUNCE</code> – Permanent bounces - i.e. feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>TRANSIENT_BOUNCE</code> – Transient bounces - i.e. feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>OPEN</code> – Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>CLICK</code> – Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>DELIVERY</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>DELIVERY_OPEN</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p> </li>
+    /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li>
+    /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub metric: std::option::Option<crate::model::Metric>,
+    /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
+    #[doc(hidden)]
+    pub dimensions: std::option::Option<
+        std::collections::HashMap<crate::model::MetricDimensionName, std::string::String>,
+    >,
+    /// <p>Represents the start date for the query interval.</p>
+    #[doc(hidden)]
+    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Represents the end date for the query interval.</p>
+    #[doc(hidden)]
+    pub end_date: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl BatchGetMetricDataQuery {
+    /// <p>The query identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The query namespace - e.g. <code>VDM</code> </p>
+    pub fn namespace(&self) -> std::option::Option<&crate::model::MetricNamespace> {
+        self.namespace.as_ref()
+    }
+    /// <p>The queried metric. This can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SEND</code> – Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>COMPLAINT</code> – Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p> </li>
+    /// <li> <p> <code>PERMANENT_BOUNCE</code> – Permanent bounces - i.e. feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>TRANSIENT_BOUNCE</code> – Transient bounces - i.e. feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>OPEN</code> – Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>CLICK</code> – Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>DELIVERY</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>DELIVERY_OPEN</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p> </li>
+    /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li>
+    /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li>
+    /// </ul>
+    pub fn metric(&self) -> std::option::Option<&crate::model::Metric> {
+        self.metric.as_ref()
+    }
+    /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
+    pub fn dimensions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::MetricDimensionName, std::string::String>,
+    > {
+        self.dimensions.as_ref()
+    }
+    /// <p>Represents the start date for the query interval.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_date.as_ref()
+    }
+    /// <p>Represents the end date for the query interval.</p>
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_date.as_ref()
+    }
+}
+/// See [`BatchGetMetricDataQuery`](crate::model::BatchGetMetricDataQuery).
+pub mod batch_get_metric_data_query {
+
+    /// A builder for [`BatchGetMetricDataQuery`](crate::model::BatchGetMetricDataQuery).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) namespace: std::option::Option<crate::model::MetricNamespace>,
+        pub(crate) metric: std::option::Option<crate::model::Metric>,
+        pub(crate) dimensions: std::option::Option<
+            std::collections::HashMap<crate::model::MetricDimensionName, std::string::String>,
+        >,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The query identifier.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The query identifier.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The query namespace - e.g. <code>VDM</code> </p>
+        pub fn namespace(mut self, input: crate::model::MetricNamespace) -> Self {
+            self.namespace = Some(input);
+            self
+        }
+        /// <p>The query namespace - e.g. <code>VDM</code> </p>
+        pub fn set_namespace(
+            mut self,
+            input: std::option::Option<crate::model::MetricNamespace>,
+        ) -> Self {
+            self.namespace = input;
+            self
+        }
+        /// <p>The queried metric. This can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>SEND</code> – Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p> </li>
+        /// <li> <p> <code>COMPLAINT</code> – Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p> </li>
+        /// <li> <p> <code>PERMANENT_BOUNCE</code> – Permanent bounces - i.e. feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p> </li>
+        /// <li> <p> <code>TRANSIENT_BOUNCE</code> – Transient bounces - i.e. feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p> </li>
+        /// <li> <p> <code>OPEN</code> – Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p> </li>
+        /// <li> <p> <code>CLICK</code> – Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p> </li>
+        /// <li> <p> <code>DELIVERY</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p> </li>
+        /// <li> <p> <code>DELIVERY_OPEN</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p> </li>
+        /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li>
+        /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li>
+        /// </ul>
+        pub fn metric(mut self, input: crate::model::Metric) -> Self {
+            self.metric = Some(input);
+            self
+        }
+        /// <p>The queried metric. This can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>SEND</code> – Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p> </li>
+        /// <li> <p> <code>COMPLAINT</code> – Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p> </li>
+        /// <li> <p> <code>PERMANENT_BOUNCE</code> – Permanent bounces - i.e. feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p> </li>
+        /// <li> <p> <code>TRANSIENT_BOUNCE</code> – Transient bounces - i.e. feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p> </li>
+        /// <li> <p> <code>OPEN</code> – Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p> </li>
+        /// <li> <p> <code>CLICK</code> – Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p> </li>
+        /// <li> <p> <code>DELIVERY</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p> </li>
+        /// <li> <p> <code>DELIVERY_OPEN</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p> </li>
+        /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li>
+        /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li>
+        /// </ul>
+        pub fn set_metric(mut self, input: std::option::Option<crate::model::Metric>) -> Self {
+            self.metric = input;
+            self
+        }
+        /// Adds a key-value pair to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
+        pub fn dimensions(
+            mut self,
+            k: crate::model::MetricDimensionName,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.dimensions.unwrap_or_default();
+            hash_map.insert(k, v.into());
+            self.dimensions = Some(hash_map);
+            self
+        }
+        /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
+        pub fn set_dimensions(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<crate::model::MetricDimensionName, std::string::String>,
+            >,
+        ) -> Self {
+            self.dimensions = input;
+            self
+        }
+        /// <p>Represents the start date for the query interval.</p>
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_date = Some(input);
+            self
+        }
+        /// <p>Represents the start date for the query interval.</p>
+        pub fn set_start_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_date = input;
+            self
+        }
+        /// <p>Represents the end date for the query interval.</p>
+        pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_date = Some(input);
+            self
+        }
+        /// <p>Represents the end date for the query interval.</p>
+        pub fn set_end_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_date = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetMetricDataQuery`](crate::model::BatchGetMetricDataQuery).
+        pub fn build(self) -> crate::model::BatchGetMetricDataQuery {
+            crate::model::BatchGetMetricDataQuery {
+                id: self.id,
+                namespace: self.namespace,
+                metric: self.metric,
+                dimensions: self.dimensions,
+                start_date: self.start_date,
+                end_date: self.end_date,
+            }
+        }
+    }
+}
+impl BatchGetMetricDataQuery {
+    /// Creates a new builder-style object to manufacture [`BatchGetMetricDataQuery`](crate::model::BatchGetMetricDataQuery).
+    pub fn builder() -> crate::model::batch_get_metric_data_query::Builder {
+        crate::model::batch_get_metric_data_query::Builder::default()
+    }
+}
+
+/// When writing a match expression against `MetricDimensionName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let metricdimensionname = unimplemented!();
+/// match metricdimensionname {
+///     MetricDimensionName::ConfigurationSet => { /* ... */ },
+///     MetricDimensionName::EmailIdentity => { /* ... */ },
+///     MetricDimensionName::Isp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `metricdimensionname` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MetricDimensionName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MetricDimensionName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MetricDimensionName::NewFeature` is defined.
+/// Specifically, when `metricdimensionname` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MetricDimensionName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// <p>The <code>BatchGetMetricDataQuery</code> dimension name. This can be one of the following:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <code>EMAIL_IDENTITY</code> – The email identity used when sending messages.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>CONFIGURATION_SET</code> – The configuration set used when sending messages
+/// (if one was used).</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>ISP</code> – The recipient ISP (e.g. <code>Gmail</code>, <code>Yahoo</code>,
+/// etc.).</p>
+/// </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MetricDimensionName {
+    #[allow(missing_docs)] // documentation missing in model
+    ConfigurationSet,
+    #[allow(missing_docs)] // documentation missing in model
+    EmailIdentity,
+    #[allow(missing_docs)] // documentation missing in model
+    Isp,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for MetricDimensionName {
+    fn from(s: &str) -> Self {
+        match s {
+            "CONFIGURATION_SET" => MetricDimensionName::ConfigurationSet,
+            "EMAIL_IDENTITY" => MetricDimensionName::EmailIdentity,
+            "ISP" => MetricDimensionName::Isp,
+            other => {
+                MetricDimensionName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for MetricDimensionName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MetricDimensionName::from(s))
+    }
+}
+impl MetricDimensionName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MetricDimensionName::ConfigurationSet => "CONFIGURATION_SET",
+            MetricDimensionName::EmailIdentity => "EMAIL_IDENTITY",
+            MetricDimensionName::Isp => "ISP",
+            MetricDimensionName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["CONFIGURATION_SET", "EMAIL_IDENTITY", "ISP"]
+    }
+}
+impl AsRef<str> for MetricDimensionName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `Metric`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let metric = unimplemented!();
+/// match metric {
+///     Metric::Click => { /* ... */ },
+///     Metric::Complaint => { /* ... */ },
+///     Metric::Delivery => { /* ... */ },
+///     Metric::DeliveryClick => { /* ... */ },
+///     Metric::DeliveryComplaint => { /* ... */ },
+///     Metric::DeliveryOpen => { /* ... */ },
+///     Metric::Open => { /* ... */ },
+///     Metric::PermanentBounce => { /* ... */ },
+///     Metric::Send => { /* ... */ },
+///     Metric::TransientBounce => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `metric` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Metric::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Metric::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Metric::NewFeature` is defined.
+/// Specifically, when `metric` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Metric::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Metric {
+    #[allow(missing_docs)] // documentation missing in model
+    Click,
+    #[allow(missing_docs)] // documentation missing in model
+    Complaint,
+    #[allow(missing_docs)] // documentation missing in model
+    Delivery,
+    #[allow(missing_docs)] // documentation missing in model
+    DeliveryClick,
+    #[allow(missing_docs)] // documentation missing in model
+    DeliveryComplaint,
+    #[allow(missing_docs)] // documentation missing in model
+    DeliveryOpen,
+    #[allow(missing_docs)] // documentation missing in model
+    Open,
+    #[allow(missing_docs)] // documentation missing in model
+    PermanentBounce,
+    #[allow(missing_docs)] // documentation missing in model
+    Send,
+    #[allow(missing_docs)] // documentation missing in model
+    TransientBounce,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for Metric {
+    fn from(s: &str) -> Self {
+        match s {
+            "CLICK" => Metric::Click,
+            "COMPLAINT" => Metric::Complaint,
+            "DELIVERY" => Metric::Delivery,
+            "DELIVERY_CLICK" => Metric::DeliveryClick,
+            "DELIVERY_COMPLAINT" => Metric::DeliveryComplaint,
+            "DELIVERY_OPEN" => Metric::DeliveryOpen,
+            "OPEN" => Metric::Open,
+            "PERMANENT_BOUNCE" => Metric::PermanentBounce,
+            "SEND" => Metric::Send,
+            "TRANSIENT_BOUNCE" => Metric::TransientBounce,
+            other => Metric::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for Metric {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Metric::from(s))
+    }
+}
+impl Metric {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Metric::Click => "CLICK",
+            Metric::Complaint => "COMPLAINT",
+            Metric::Delivery => "DELIVERY",
+            Metric::DeliveryClick => "DELIVERY_CLICK",
+            Metric::DeliveryComplaint => "DELIVERY_COMPLAINT",
+            Metric::DeliveryOpen => "DELIVERY_OPEN",
+            Metric::Open => "OPEN",
+            Metric::PermanentBounce => "PERMANENT_BOUNCE",
+            Metric::Send => "SEND",
+            Metric::TransientBounce => "TRANSIENT_BOUNCE",
+            Metric::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "CLICK",
+            "COMPLAINT",
+            "DELIVERY",
+            "DELIVERY_CLICK",
+            "DELIVERY_COMPLAINT",
+            "DELIVERY_OPEN",
+            "OPEN",
+            "PERMANENT_BOUNCE",
+            "SEND",
+            "TRANSIENT_BOUNCE",
+        ]
+    }
+}
+impl AsRef<str> for Metric {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `MetricNamespace`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let metricnamespace = unimplemented!();
+/// match metricnamespace {
+///     MetricNamespace::Vdm => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `metricnamespace` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MetricNamespace::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MetricNamespace::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MetricNamespace::NewFeature` is defined.
+/// Specifically, when `metricnamespace` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MetricNamespace::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MetricNamespace {
+    #[allow(missing_docs)] // documentation missing in model
+    Vdm,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for MetricNamespace {
+    fn from(s: &str) -> Self {
+        match s {
+            "VDM" => MetricNamespace::Vdm,
+            other => MetricNamespace::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for MetricNamespace {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MetricNamespace::from(s))
+    }
+}
+impl MetricNamespace {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MetricNamespace::Vdm => "VDM",
+            MetricNamespace::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["VDM"]
+    }
+}
+impl AsRef<str> for MetricNamespace {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }

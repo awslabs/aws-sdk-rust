@@ -395,6 +395,7 @@ pub mod create_cluster_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) storage_mode: std::option::Option<crate::model::StorageMode>,
     }
     impl Builder {
         /// <p>Information about the broker nodes in the cluster.</p>
@@ -546,6 +547,19 @@ pub mod create_cluster_input {
             self.tags = input;
             self
         }
+        /// <p>This controls storage mode for supported storage tiers.</p>
+        pub fn storage_mode(mut self, input: crate::model::StorageMode) -> Self {
+            self.storage_mode = Some(input);
+            self
+        }
+        /// <p>This controls storage mode for supported storage tiers.</p>
+        pub fn set_storage_mode(
+            mut self,
+            input: std::option::Option<crate::model::StorageMode>,
+        ) -> Self {
+            self.storage_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateClusterInput`](crate::input::CreateClusterInput).
         pub fn build(
             self,
@@ -563,6 +577,7 @@ pub mod create_cluster_input {
                 logging_info: self.logging_info,
                 number_of_broker_nodes: self.number_of_broker_nodes.unwrap_or_default(),
                 tags: self.tags,
+                storage_mode: self.storage_mode,
             })
         }
     }
@@ -6504,6 +6519,275 @@ impl UpdateSecurityInput {
     }
 }
 
+/// See [`UpdateStorageInput`](crate::input::UpdateStorageInput).
+pub mod update_storage_input {
+
+    /// A builder for [`UpdateStorageInput`](crate::input::UpdateStorageInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cluster_arn: std::option::Option<std::string::String>,
+        pub(crate) current_version: std::option::Option<std::string::String>,
+        pub(crate) provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
+        pub(crate) storage_mode: std::option::Option<crate::model::StorageMode>,
+        pub(crate) volume_size_gb: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_arn = input;
+            self
+        }
+        /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.current_version = Some(input.into());
+            self
+        }
+        /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+        pub fn set_current_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.current_version = input;
+            self
+        }
+        /// <p>EBS volume provisioned throughput information.</p>
+        pub fn provisioned_throughput(
+            mut self,
+            input: crate::model::ProvisionedThroughput,
+        ) -> Self {
+            self.provisioned_throughput = Some(input);
+            self
+        }
+        /// <p>EBS volume provisioned throughput information.</p>
+        pub fn set_provisioned_throughput(
+            mut self,
+            input: std::option::Option<crate::model::ProvisionedThroughput>,
+        ) -> Self {
+            self.provisioned_throughput = input;
+            self
+        }
+        /// <p>Controls storage mode for supported storage tiers.</p>
+        pub fn storage_mode(mut self, input: crate::model::StorageMode) -> Self {
+            self.storage_mode = Some(input);
+            self
+        }
+        /// <p>Controls storage mode for supported storage tiers.</p>
+        pub fn set_storage_mode(
+            mut self,
+            input: std::option::Option<crate::model::StorageMode>,
+        ) -> Self {
+            self.storage_mode = input;
+            self
+        }
+        /// <p>size of the EBS volume to update.</p>
+        pub fn volume_size_gb(mut self, input: i32) -> Self {
+            self.volume_size_gb = Some(input);
+            self
+        }
+        /// <p>size of the EBS volume to update.</p>
+        pub fn set_volume_size_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.volume_size_gb = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateStorageInput`](crate::input::UpdateStorageInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateStorageInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::UpdateStorageInput {
+                cluster_arn: self.cluster_arn,
+                current_version: self.current_version,
+                provisioned_throughput: self.provisioned_throughput,
+                storage_mode: self.storage_mode,
+                volume_size_gb: self.volume_size_gb.unwrap_or_default(),
+            })
+        }
+    }
+}
+impl UpdateStorageInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateStorage`](crate::operation::UpdateStorage)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateStorage,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateStorageInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_44 = &_input.cluster_arn;
+                let input_44 = input_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let cluster_arn = aws_smithy_http::label::fmt_string(
+                    input_44,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if cluster_arn.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/v1/clusters/{ClusterArn}/storage",
+                    ClusterArn = cluster_arn
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateStorageInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_storage(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateStorage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateStorage",
+            "kafka",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateStorageInput`](crate::input::UpdateStorageInput).
+    pub fn builder() -> crate::input::update_storage_input::Builder {
+        crate::input::update_storage_input::Builder::default()
+    }
+}
+
+/// <p>Request object for UpdateStorage api. Its used to update the storage attributes for the cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateStorageInput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    #[doc(hidden)]
+    pub cluster_arn: std::option::Option<std::string::String>,
+    /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    #[doc(hidden)]
+    pub current_version: std::option::Option<std::string::String>,
+    /// <p>EBS volume provisioned throughput information.</p>
+    #[doc(hidden)]
+    pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
+    /// <p>Controls storage mode for supported storage tiers.</p>
+    #[doc(hidden)]
+    pub storage_mode: std::option::Option<crate::model::StorageMode>,
+    /// <p>size of the EBS volume to update.</p>
+    #[doc(hidden)]
+    pub volume_size_gb: i32,
+}
+impl UpdateStorageInput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
+    /// <p>EBS volume provisioned throughput information.</p>
+    pub fn provisioned_throughput(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
+        self.provisioned_throughput.as_ref()
+    }
+    /// <p>Controls storage mode for supported storage tiers.</p>
+    pub fn storage_mode(&self) -> std::option::Option<&crate::model::StorageMode> {
+        self.storage_mode.as_ref()
+    }
+    /// <p>size of the EBS volume to update.</p>
+    pub fn volume_size_gb(&self) -> i32 {
+        self.volume_size_gb
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7399,6 +7683,9 @@ pub struct CreateClusterInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>This controls storage mode for supported storage tiers.</p>
+    #[doc(hidden)]
+    pub storage_mode: std::option::Option<crate::model::StorageMode>,
 }
 impl CreateClusterInput {
     /// <p>Information about the broker nodes in the cluster.</p>
@@ -7451,6 +7738,10 @@ impl CreateClusterInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>This controls storage mode for supported storage tiers.</p>
+    pub fn storage_mode(&self) -> std::option::Option<&crate::model::StorageMode> {
+        self.storage_mode.as_ref()
     }
 }
 

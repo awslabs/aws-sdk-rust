@@ -810,6 +810,249 @@ impl DomainControllerLimitExceededException {
     }
 }
 
+/// <p>The maximum number of manual snapshots for the directory has been reached. You can use the <code>GetSnapshotLimits</code> operation to determine the snapshot limits for a directory.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SnapshotLimitExceededException {
+    /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl SnapshotLimitExceededException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+impl SnapshotLimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for SnapshotLimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "SnapshotLimitExceededException")?;
+        if let Some(inner_11) = &self.message {
+            {
+                write!(f, ": {}", inner_11)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for SnapshotLimitExceededException {}
+/// See [`SnapshotLimitExceededException`](crate::error::SnapshotLimitExceededException).
+pub mod snapshot_limit_exceeded_exception {
+
+    /// A builder for [`SnapshotLimitExceededException`](crate::error::SnapshotLimitExceededException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The descriptive message for the exception.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The descriptive message for the exception.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The Amazon Web Services request identifier.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request identifier.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SnapshotLimitExceededException`](crate::error::SnapshotLimitExceededException).
+        pub fn build(self) -> crate::error::SnapshotLimitExceededException {
+            crate::error::SnapshotLimitExceededException {
+                message: self.message,
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl SnapshotLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`SnapshotLimitExceededException`](crate::error::SnapshotLimitExceededException).
+    pub fn builder() -> crate::error::snapshot_limit_exceeded_exception::Builder {
+        crate::error::snapshot_limit_exceeded_exception::Builder::default()
+    }
+}
+
+/// <p> The directory is already updated to desired update type settings. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DirectoryInDesiredStateException {
+    /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl DirectoryInDesiredStateException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+impl DirectoryInDesiredStateException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DirectoryInDesiredStateException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DirectoryInDesiredStateException")?;
+        if let Some(inner_12) = &self.message {
+            {
+                write!(f, ": {}", inner_12)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DirectoryInDesiredStateException {}
+/// See [`DirectoryInDesiredStateException`](crate::error::DirectoryInDesiredStateException).
+pub mod directory_in_desired_state_exception {
+
+    /// A builder for [`DirectoryInDesiredStateException`](crate::error::DirectoryInDesiredStateException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The descriptive message for the exception.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The descriptive message for the exception.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The Amazon Web Services request identifier.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request identifier.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DirectoryInDesiredStateException`](crate::error::DirectoryInDesiredStateException).
+        pub fn build(self) -> crate::error::DirectoryInDesiredStateException {
+            crate::error::DirectoryInDesiredStateException {
+                message: self.message,
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl DirectoryInDesiredStateException {
+    /// Creates a new builder-style object to manufacture [`DirectoryInDesiredStateException`](crate::error::DirectoryInDesiredStateException).
+    pub fn builder() -> crate::error::directory_in_desired_state_exception::Builder {
+        crate::error::directory_in_desired_state_exception::Builder::default()
+    }
+}
+
+/// <p>Client authentication is not available in this region at this time.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AccessDeniedException {
+    /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl AccessDeniedException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+impl AccessDeniedException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDeniedException")?;
+        if let Some(inner_13) = &self.message {
+            {
+                write!(f, ": {}", inner_13)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
+pub mod access_denied_exception {
+
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The descriptive message for the exception.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The descriptive message for the exception.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The Amazon Web Services request identifier.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request identifier.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
+                message: self.message,
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
+    }
+}
+
 /// <p>The specified shared target is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -836,9 +1079,9 @@ impl InvalidTargetException {
 impl std::fmt::Display for InvalidTargetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTargetException")?;
-        if let Some(inner_11) = &self.message {
+        if let Some(inner_14) = &self.message {
             {
-                write!(f, ": {}", inner_11)?;
+                write!(f, ": {}", inner_14)?;
             }
         }
         Ok(())
@@ -917,9 +1160,9 @@ impl DirectoryNotSharedException {
 impl std::fmt::Display for DirectoryNotSharedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DirectoryNotSharedException")?;
-        if let Some(inner_12) = &self.message {
+        if let Some(inner_15) = &self.message {
             {
-                write!(f, ": {}", inner_12)?;
+                write!(f, ": {}", inner_15)?;
             }
         }
         Ok(())
@@ -972,87 +1215,6 @@ impl DirectoryNotSharedException {
     }
 }
 
-/// <p>The maximum number of manual snapshots for the directory has been reached. You can use the <code>GetSnapshotLimits</code> operation to determine the snapshot limits for a directory.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotLimitExceededException {
-    /// <p>The descriptive message for the exception.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services request identifier.</p>
-    #[doc(hidden)]
-    pub request_id: std::option::Option<std::string::String>,
-}
-impl SnapshotLimitExceededException {
-    /// <p>The Amazon Web Services request identifier.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
-        self.request_id.as_deref()
-    }
-}
-impl SnapshotLimitExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for SnapshotLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "SnapshotLimitExceededException")?;
-        if let Some(inner_13) = &self.message {
-            {
-                write!(f, ": {}", inner_13)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for SnapshotLimitExceededException {}
-/// See [`SnapshotLimitExceededException`](crate::error::SnapshotLimitExceededException).
-pub mod snapshot_limit_exceeded_exception {
-
-    /// A builder for [`SnapshotLimitExceededException`](crate::error::SnapshotLimitExceededException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) request_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The descriptive message for the exception.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The descriptive message for the exception.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// <p>The Amazon Web Services request identifier.</p>
-        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.request_id = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services request identifier.</p>
-        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`SnapshotLimitExceededException`](crate::error::SnapshotLimitExceededException).
-        pub fn build(self) -> crate::error::SnapshotLimitExceededException {
-            crate::error::SnapshotLimitExceededException {
-                message: self.message,
-                request_id: self.request_id,
-            }
-        }
-    }
-}
-impl SnapshotLimitExceededException {
-    /// Creates a new builder-style object to manufacture [`SnapshotLimitExceededException`](crate::error::SnapshotLimitExceededException).
-    pub fn builder() -> crate::error::snapshot_limit_exceeded_exception::Builder {
-        crate::error::snapshot_limit_exceeded_exception::Builder::default()
-    }
-}
-
 /// <p>The maximum number of Amazon Web Services accounts that you can share with this directory has been reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1079,9 +1241,9 @@ impl ShareLimitExceededException {
 impl std::fmt::Display for ShareLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ShareLimitExceededException")?;
-        if let Some(inner_14) = &self.message {
+        if let Some(inner_16) = &self.message {
             {
-                write!(f, ": {}", inner_14)?;
+                write!(f, ": {}", inner_16)?;
             }
         }
         Ok(())
@@ -1160,9 +1322,9 @@ impl OrganizationsException {
 impl std::fmt::Display for OrganizationsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OrganizationsException")?;
-        if let Some(inner_15) = &self.message {
+        if let Some(inner_17) = &self.message {
             {
-                write!(f, ": {}", inner_15)?;
+                write!(f, ": {}", inner_17)?;
             }
         }
         Ok(())
@@ -1241,9 +1403,9 @@ impl DirectoryAlreadySharedException {
 impl std::fmt::Display for DirectoryAlreadySharedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DirectoryAlreadySharedException")?;
-        if let Some(inner_16) = &self.message {
+        if let Some(inner_18) = &self.message {
             {
-                write!(f, ": {}", inner_16)?;
+                write!(f, ": {}", inner_18)?;
             }
         }
         Ok(())
@@ -1296,87 +1458,6 @@ impl DirectoryAlreadySharedException {
     }
 }
 
-/// <p>Client authentication is not available in this region at this time.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
-    /// <p>The descriptive message for the exception.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services request identifier.</p>
-    #[doc(hidden)]
-    pub request_id: std::option::Option<std::string::String>,
-}
-impl AccessDeniedException {
-    /// <p>The Amazon Web Services request identifier.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
-        self.request_id.as_deref()
-    }
-}
-impl AccessDeniedException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AccessDeniedException")?;
-        if let Some(inner_17) = &self.message {
-            {
-                write!(f, ": {}", inner_17)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AccessDeniedException {}
-/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
-pub mod access_denied_exception {
-
-    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) request_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The descriptive message for the exception.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The descriptive message for the exception.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// <p>The Amazon Web Services request identifier.</p>
-        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.request_id = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services request identifier.</p>
-        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
-        pub fn build(self) -> crate::error::AccessDeniedException {
-            crate::error::AccessDeniedException {
-                message: self.message,
-                request_id: self.request_id,
-            }
-        }
-    }
-}
-impl AccessDeniedException {
-    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
-    pub fn builder() -> crate::error::access_denied_exception::Builder {
-        crate::error::access_denied_exception::Builder::default()
-    }
-}
-
 /// <p>The user provided a username that does not exist in your directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1403,9 +1484,9 @@ impl UserDoesNotExistException {
 impl std::fmt::Display for UserDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserDoesNotExistException")?;
-        if let Some(inner_18) = &self.message {
+        if let Some(inner_19) = &self.message {
             {
-                write!(f, ": {}", inner_18)?;
+                write!(f, ": {}", inner_19)?;
             }
         }
         Ok(())
@@ -1484,9 +1565,9 @@ impl InvalidPasswordException {
 impl std::fmt::Display for InvalidPasswordException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPasswordException")?;
-        if let Some(inner_19) = &self.message {
+        if let Some(inner_20) = &self.message {
             {
-                write!(f, ": {}", inner_19)?;
+                write!(f, ": {}", inner_20)?;
             }
         }
         Ok(())
@@ -1565,9 +1646,9 @@ impl InvalidCertificateException {
 impl std::fmt::Display for InvalidCertificateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCertificateException")?;
-        if let Some(inner_20) = &self.message {
+        if let Some(inner_21) = &self.message {
             {
-                write!(f, ": {}", inner_20)?;
+                write!(f, ": {}", inner_21)?;
             }
         }
         Ok(())
@@ -1646,9 +1727,9 @@ impl CertificateLimitExceededException {
 impl std::fmt::Display for CertificateLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CertificateLimitExceededException")?;
-        if let Some(inner_21) = &self.message {
+        if let Some(inner_22) = &self.message {
             {
-                write!(f, ": {}", inner_21)?;
+                write!(f, ": {}", inner_22)?;
             }
         }
         Ok(())
@@ -1727,9 +1808,9 @@ impl CertificateAlreadyExistsException {
 impl std::fmt::Display for CertificateAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CertificateAlreadyExistsException")?;
-        if let Some(inner_22) = &self.message {
+        if let Some(inner_23) = &self.message {
             {
-                write!(f, ": {}", inner_22)?;
+                write!(f, ": {}", inner_23)?;
             }
         }
         Ok(())
@@ -1808,9 +1889,9 @@ impl InvalidNextTokenException {
 impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
-        if let Some(inner_23) = &self.message {
+        if let Some(inner_24) = &self.message {
             {
-                write!(f, ": {}", inner_23)?;
+                write!(f, ": {}", inner_24)?;
             }
         }
         Ok(())
@@ -1889,9 +1970,9 @@ impl InsufficientPermissionsException {
 impl std::fmt::Display for InsufficientPermissionsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientPermissionsException")?;
-        if let Some(inner_24) = &self.message {
+        if let Some(inner_25) = &self.message {
             {
-                write!(f, ": {}", inner_24)?;
+                write!(f, ": {}", inner_25)?;
             }
         }
         Ok(())
@@ -1970,9 +2051,9 @@ impl AuthenticationFailedException {
 impl std::fmt::Display for AuthenticationFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthenticationFailedException")?;
-        if let Some(inner_25) = &self.message {
+        if let Some(inner_26) = &self.message {
             {
-                write!(f, ": {}", inner_25)?;
+                write!(f, ": {}", inner_26)?;
             }
         }
         Ok(())
@@ -2051,9 +2132,9 @@ impl EntityAlreadyExistsException {
 impl std::fmt::Display for EntityAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EntityAlreadyExistsException")?;
-        if let Some(inner_26) = &self.message {
+        if let Some(inner_27) = &self.message {
             {
-                write!(f, ": {}", inner_26)?;
+                write!(f, ": {}", inner_27)?;
             }
         }
         Ok(())
@@ -2132,9 +2213,9 @@ impl NoAvailableCertificateException {
 impl std::fmt::Display for NoAvailableCertificateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoAvailableCertificateException")?;
-        if let Some(inner_27) = &self.message {
+        if let Some(inner_28) = &self.message {
             {
-                write!(f, ": {}", inner_27)?;
+                write!(f, ": {}", inner_28)?;
             }
         }
         Ok(())
@@ -2216,9 +2297,9 @@ impl std::fmt::Display for InvalidLdapsStatusException {
             f,
             "InvalidLdapsStatusException [InvalidLDAPSStatusException]"
         )?;
-        if let Some(inner_28) = &self.message {
+        if let Some(inner_29) = &self.message {
             {
-                write!(f, ": {}", inner_28)?;
+                write!(f, ": {}", inner_29)?;
             }
         }
         Ok(())
@@ -2297,9 +2378,9 @@ impl InvalidClientAuthStatusException {
 impl std::fmt::Display for InvalidClientAuthStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidClientAuthStatusException")?;
-        if let Some(inner_29) = &self.message {
+        if let Some(inner_30) = &self.message {
             {
-                write!(f, ": {}", inner_29)?;
+                write!(f, ": {}", inner_30)?;
             }
         }
         Ok(())
@@ -2378,9 +2459,9 @@ impl CertificateDoesNotExistException {
 impl std::fmt::Display for CertificateDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CertificateDoesNotExistException")?;
-        if let Some(inner_30) = &self.message {
+        if let Some(inner_31) = &self.message {
             {
-                write!(f, ": {}", inner_30)?;
+                write!(f, ": {}", inner_31)?;
             }
         }
         Ok(())
@@ -2459,9 +2540,9 @@ impl CertificateInUseException {
 impl std::fmt::Display for CertificateInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CertificateInUseException")?;
-        if let Some(inner_31) = &self.message {
+        if let Some(inner_32) = &self.message {
             {
-                write!(f, ": {}", inner_31)?;
+                write!(f, ": {}", inner_32)?;
             }
         }
         Ok(())
@@ -2540,9 +2621,9 @@ impl DirectoryLimitExceededException {
 impl std::fmt::Display for DirectoryLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DirectoryLimitExceededException")?;
-        if let Some(inner_32) = &self.message {
+        if let Some(inner_33) = &self.message {
             {
-                write!(f, ": {}", inner_32)?;
+                write!(f, ": {}", inner_33)?;
             }
         }
         Ok(())
@@ -2621,9 +2702,9 @@ impl TagLimitExceededException {
 impl std::fmt::Display for TagLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagLimitExceededException")?;
-        if let Some(inner_33) = &self.message {
+        if let Some(inner_34) = &self.message {
             {
-                write!(f, ": {}", inner_33)?;
+                write!(f, ": {}", inner_34)?;
             }
         }
         Ok(())
@@ -2702,9 +2783,9 @@ impl RegionLimitExceededException {
 impl std::fmt::Display for RegionLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RegionLimitExceededException")?;
-        if let Some(inner_34) = &self.message {
+        if let Some(inner_35) = &self.message {
             {
-                write!(f, ": {}", inner_34)?;
+                write!(f, ": {}", inner_35)?;
             }
         }
         Ok(())
@@ -2783,9 +2864,9 @@ impl DirectoryAlreadyInRegionException {
 impl std::fmt::Display for DirectoryAlreadyInRegionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DirectoryAlreadyInRegionException")?;
-        if let Some(inner_35) = &self.message {
+        if let Some(inner_36) = &self.message {
             {
-                write!(f, ": {}", inner_35)?;
+                write!(f, ": {}", inner_36)?;
             }
         }
         Ok(())
@@ -2864,9 +2945,9 @@ impl IpRouteLimitExceededException {
 impl std::fmt::Display for IpRouteLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IpRouteLimitExceededException")?;
-        if let Some(inner_36) = &self.message {
+        if let Some(inner_37) = &self.message {
             {
-                write!(f, ": {}", inner_36)?;
+                write!(f, ": {}", inner_37)?;
             }
         }
         Ok(())
@@ -8170,6 +8251,177 @@ impl std::error::Error for DescribeTrustsError {
     }
 }
 
+/// Error type for the `DescribeUpdateDirectory` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeUpdateDirectoryError {
+    /// Kind of error that occurred.
+    pub kind: DescribeUpdateDirectoryErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeUpdateDirectoryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeUpdateDirectoryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeUpdateDirectory` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeUpdateDirectoryErrorKind {
+    /// <p>Client authentication is not available in this region at this time.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A client exception has occurred.</p>
+    ClientException(crate::error::ClientException),
+    /// <p>The specified directory does not exist in the system.</p>
+    DirectoryDoesNotExistException(crate::error::DirectoryDoesNotExistException),
+    /// <p>The <code>NextToken</code> value is not valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>One or more parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An exception has occurred in Directory Service.</p>
+    ServiceException(crate::error::ServiceException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeUpdateDirectoryError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeUpdateDirectoryErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeUpdateDirectoryErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DescribeUpdateDirectoryErrorKind::DirectoryDoesNotExistException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeUpdateDirectoryErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            DescribeUpdateDirectoryErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeUpdateDirectoryErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            DescribeUpdateDirectoryErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeUpdateDirectoryError {
+    fn code(&self) -> Option<&str> {
+        DescribeUpdateDirectoryError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeUpdateDirectoryError {
+    /// Creates a new `DescribeUpdateDirectoryError`.
+    pub fn new(kind: DescribeUpdateDirectoryErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeUpdateDirectoryError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeUpdateDirectoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeUpdateDirectoryError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeUpdateDirectoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeUpdateDirectoryErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeUpdateDirectoryErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeUpdateDirectoryErrorKind::ClientException`.
+    pub fn is_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeUpdateDirectoryErrorKind::ClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeUpdateDirectoryErrorKind::DirectoryDoesNotExistException`.
+    pub fn is_directory_does_not_exist_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeUpdateDirectoryErrorKind::DirectoryDoesNotExistException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeUpdateDirectoryErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeUpdateDirectoryErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeUpdateDirectoryErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeUpdateDirectoryErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeUpdateDirectoryErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeUpdateDirectoryErrorKind::ServiceException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeUpdateDirectoryError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeUpdateDirectoryErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeUpdateDirectoryErrorKind::ClientException(_inner) => Some(_inner),
+            DescribeUpdateDirectoryErrorKind::DirectoryDoesNotExistException(_inner) => {
+                Some(_inner)
+            }
+            DescribeUpdateDirectoryErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            DescribeUpdateDirectoryErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeUpdateDirectoryErrorKind::ServiceException(_inner) => Some(_inner),
+            DescribeUpdateDirectoryErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DisableClientAuthentication` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -12378,6 +12630,208 @@ impl std::error::Error for UpdateConditionalForwarderError {
                 Some(_inner)
             }
             UpdateConditionalForwarderErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateDirectorySetup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateDirectorySetupError {
+    /// Kind of error that occurred.
+    pub kind: UpdateDirectorySetupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDirectorySetupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDirectorySetupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateDirectorySetup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateDirectorySetupErrorKind {
+    /// <p>Client authentication is not available in this region at this time.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A client exception has occurred.</p>
+    ClientException(crate::error::ClientException),
+    /// <p>The specified directory does not exist in the system.</p>
+    DirectoryDoesNotExistException(crate::error::DirectoryDoesNotExistException),
+    /// <p> The directory is already updated to desired update type settings. </p>
+    DirectoryInDesiredStateException(crate::error::DirectoryInDesiredStateException),
+    /// <p>The specified directory is unavailable or could not be found.</p>
+    DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
+    /// <p>One or more parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An exception has occurred in Directory Service.</p>
+    ServiceException(crate::error::ServiceException),
+    /// <p>The maximum number of manual snapshots for the directory has been reached. You can use the <code>GetSnapshotLimits</code> operation to determine the snapshot limits for a directory.</p>
+    SnapshotLimitExceededException(crate::error::SnapshotLimitExceededException),
+    /// <p>The operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateDirectorySetupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateDirectorySetupErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateDirectorySetupErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UpdateDirectorySetupErrorKind::DirectoryDoesNotExistException(_inner) => _inner.fmt(f),
+            UpdateDirectorySetupErrorKind::DirectoryInDesiredStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateDirectorySetupErrorKind::DirectoryUnavailableException(_inner) => _inner.fmt(f),
+            UpdateDirectorySetupErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateDirectorySetupErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            UpdateDirectorySetupErrorKind::SnapshotLimitExceededException(_inner) => _inner.fmt(f),
+            UpdateDirectorySetupErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            UpdateDirectorySetupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateDirectorySetupError {
+    fn code(&self) -> Option<&str> {
+        UpdateDirectorySetupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateDirectorySetupError {
+    /// Creates a new `UpdateDirectorySetupError`.
+    pub fn new(kind: UpdateDirectorySetupErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateDirectorySetupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateDirectorySetupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateDirectorySetupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateDirectorySetupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateDirectorySetupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDirectorySetupErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDirectorySetupErrorKind::ClientException`.
+    pub fn is_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDirectorySetupErrorKind::ClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDirectorySetupErrorKind::DirectoryDoesNotExistException`.
+    pub fn is_directory_does_not_exist_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDirectorySetupErrorKind::DirectoryDoesNotExistException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDirectorySetupErrorKind::DirectoryInDesiredStateException`.
+    pub fn is_directory_in_desired_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDirectorySetupErrorKind::DirectoryInDesiredStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDirectorySetupErrorKind::DirectoryUnavailableException`.
+    pub fn is_directory_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDirectorySetupErrorKind::DirectoryUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDirectorySetupErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDirectorySetupErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDirectorySetupErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDirectorySetupErrorKind::ServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDirectorySetupErrorKind::SnapshotLimitExceededException`.
+    pub fn is_snapshot_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDirectorySetupErrorKind::SnapshotLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDirectorySetupErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDirectorySetupErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateDirectorySetupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateDirectorySetupErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateDirectorySetupErrorKind::ClientException(_inner) => Some(_inner),
+            UpdateDirectorySetupErrorKind::DirectoryDoesNotExistException(_inner) => Some(_inner),
+            UpdateDirectorySetupErrorKind::DirectoryInDesiredStateException(_inner) => Some(_inner),
+            UpdateDirectorySetupErrorKind::DirectoryUnavailableException(_inner) => Some(_inner),
+            UpdateDirectorySetupErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateDirectorySetupErrorKind::ServiceException(_inner) => Some(_inner),
+            UpdateDirectorySetupErrorKind::SnapshotLimitExceededException(_inner) => Some(_inner),
+            UpdateDirectorySetupErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            UpdateDirectorySetupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

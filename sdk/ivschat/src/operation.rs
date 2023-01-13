@@ -33,6 +33,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChatToken {
     }
 }
 
+/// Operation shape for `CreateLoggingConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_logging_configuration`](crate::client::Client::create_logging_configuration).
+///
+/// See [`crate::client::fluent_builders::CreateLoggingConfiguration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateLoggingConfiguration {
+    _private: (),
+}
+impl CreateLoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateLoggingConfigurationInput`](crate::input::CreateLoggingConfigurationInput).
+    pub fn builder() -> crate::input::create_logging_configuration_input::Builder {
+        crate::input::create_logging_configuration_input::Builder::default()
+    }
+    /// Creates a new `CreateLoggingConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateLoggingConfiguration {
+    type Output = std::result::Result<
+        crate::output::CreateLoggingConfigurationOutput,
+        crate::error::CreateLoggingConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_logging_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_create_logging_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateRoom`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -61,6 +95,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoom {
             crate::operation_deser::parse_create_room_error(response)
         } else {
             crate::operation_deser::parse_create_room_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteLoggingConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_logging_configuration`](crate::client::Client::delete_logging_configuration).
+///
+/// See [`crate::client::fluent_builders::DeleteLoggingConfiguration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteLoggingConfiguration {
+    _private: (),
+}
+impl DeleteLoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationInput`](crate::input::DeleteLoggingConfigurationInput).
+    pub fn builder() -> crate::input::delete_logging_configuration_input::Builder {
+        crate::input::delete_logging_configuration_input::Builder::default()
+    }
+    /// Creates a new `DeleteLoggingConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteLoggingConfiguration {
+    type Output = std::result::Result<
+        crate::output::DeleteLoggingConfigurationOutput,
+        crate::error::DeleteLoggingConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_logging_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_delete_logging_configuration_response(response)
         }
     }
 }
@@ -161,6 +229,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DisconnectUser {
     }
 }
 
+/// Operation shape for `GetLoggingConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_logging_configuration`](crate::client::Client::get_logging_configuration).
+///
+/// See [`crate::client::fluent_builders::GetLoggingConfiguration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetLoggingConfiguration {
+    _private: (),
+}
+impl GetLoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationInput`](crate::input::GetLoggingConfigurationInput).
+    pub fn builder() -> crate::input::get_logging_configuration_input::Builder {
+        crate::input::get_logging_configuration_input::Builder::default()
+    }
+    /// Creates a new `GetLoggingConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetLoggingConfiguration {
+    type Output = std::result::Result<
+        crate::output::GetLoggingConfigurationOutput,
+        crate::error::GetLoggingConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_logging_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_get_logging_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetRoom`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -188,6 +290,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoom {
             crate::operation_deser::parse_get_room_error(response)
         } else {
             crate::operation_deser::parse_get_room_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListLoggingConfigurations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_logging_configurations`](crate::client::Client::list_logging_configurations).
+///
+/// See [`crate::client::fluent_builders::ListLoggingConfigurations`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListLoggingConfigurations {
+    _private: (),
+}
+impl ListLoggingConfigurations {
+    /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsInput`](crate::input::ListLoggingConfigurationsInput).
+    pub fn builder() -> crate::input::list_logging_configurations_input::Builder {
+        crate::input::list_logging_configurations_input::Builder::default()
+    }
+    /// Creates a new `ListLoggingConfigurations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListLoggingConfigurations {
+    type Output = std::result::Result<
+        crate::output::ListLoggingConfigurationsOutput,
+        crate::error::ListLoggingConfigurationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_logging_configurations_error(response)
+        } else {
+            crate::operation_deser::parse_list_logging_configurations_response(response)
         }
     }
 }
@@ -348,6 +484,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateLoggingConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_logging_configuration`](crate::client::Client::update_logging_configuration).
+///
+/// See [`crate::client::fluent_builders::UpdateLoggingConfiguration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateLoggingConfiguration {
+    _private: (),
+}
+impl UpdateLoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateLoggingConfigurationInput`](crate::input::UpdateLoggingConfigurationInput).
+    pub fn builder() -> crate::input::update_logging_configuration_input::Builder {
+        crate::input::update_logging_configuration_input::Builder::default()
+    }
+    /// Creates a new `UpdateLoggingConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateLoggingConfiguration {
+    type Output = std::result::Result<
+        crate::output::UpdateLoggingConfigurationOutput,
+        crate::error::UpdateLoggingConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_logging_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_update_logging_configuration_response(response)
         }
     }
 }

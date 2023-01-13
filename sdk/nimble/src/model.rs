@@ -3,9 +3,9 @@
 /// <p>Represents a studio resource.</p>
 /// <p>A studio is the core resource used with Nimble Studio. You must create a studio first, before any other resource type can be created. All other resources you create and manage in Nimble Studio are contained within a studio.</p>
 /// <p>When creating a studio, you must provides two IAM roles for use with the Nimble Studio portal. These roles are assumed by your users when they log in to the Nimble Studio portal via IAM Identity Center and your identity source.</p>
-/// <p>The user role must have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to function properly.</p>
-/// <p>The admin role must have the AmazonNimbleStudio-StudioAdmin managed policy attached for the portal to function properly.</p>
-/// <p>Your studio roles must trust the identity.nimble.amazonaws.com service principal to function properly.</p>
+/// <p>The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy attached for the portal to function properly.</p>
+/// <p>The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy attached for the portal to function properly.</p>
+/// <p>Your studio roles must trust the <code>identity.nimble.amazonaws.com</code> service principal to function properly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Studio {
@@ -15,7 +15,7 @@ pub struct Studio {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A friendly name for the studio.</p>
@@ -24,7 +24,7 @@ pub struct Studio {
     /// <p>The Amazon Web Services Region where the studio resource is located.</p>
     #[doc(hidden)]
     pub home_region: std::option::Option<std::string::String>,
-    /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity Center users to log in to Nimble Studio portal.</p>
+    /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows IAM Identity Center users to log in to Nimble Studio portal.</p>
     #[doc(hidden)]
     pub sso_client_id: std::option::Option<std::string::String>,
     /// <p>The current state of the studio resource.</p>
@@ -49,11 +49,11 @@ pub struct Studio {
     /// <p>The address of the web page for the studio.</p>
     #[doc(hidden)]
     pub studio_url: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The IAM role that studio users assume when logging in to the Nimble Studio portal.</p>
@@ -69,7 +69,7 @@ impl Studio {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -81,7 +81,7 @@ impl Studio {
     pub fn home_region(&self) -> std::option::Option<&str> {
         self.home_region.as_deref()
     }
-    /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity Center users to log in to Nimble Studio portal.</p>
+    /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows IAM Identity Center users to log in to Nimble Studio portal.</p>
     pub fn sso_client_id(&self) -> std::option::Option<&str> {
         self.sso_client_id.as_deref()
     }
@@ -115,14 +115,14 @@ impl Studio {
     pub fn studio_url(&self) -> std::option::Option<&str> {
         self.studio_url.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -206,12 +206,12 @@ pub mod studio {
             self.arn = input;
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -239,12 +239,12 @@ pub mod studio {
             self.home_region = input;
             self
         }
-        /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity Center users to log in to Nimble Studio portal.</p>
+        /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows IAM Identity Center users to log in to Nimble Studio portal.</p>
         pub fn sso_client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sso_client_id = Some(input.into());
             self
         }
-        /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity Center users to log in to Nimble Studio portal.</p>
+        /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows IAM Identity Center users to log in to Nimble Studio portal.</p>
         pub fn set_sso_client_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -338,7 +338,7 @@ pub mod studio {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -349,7 +349,7 @@ pub mod studio {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -359,12 +359,12 @@ pub mod studio {
             self.tags = input;
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
         pub fn set_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -624,6 +624,7 @@ impl AsRef<str> for StudioEncryptionConfigurationKeyType {
 ///     StudioStatusCode::AwsSsoConfigurationRepaired => { /* ... */ },
 ///     StudioStatusCode::AwsSsoConfigurationRepairInProgress => { /* ... */ },
 ///     StudioStatusCode::AwsSsoNotEnabled => { /* ... */ },
+///     StudioStatusCode::AwsStsRegionDisabled => { /* ... */ },
 ///     StudioStatusCode::EncryptionKeyAccessDenied => { /* ... */ },
 ///     StudioStatusCode::EncryptionKeyNotFound => { /* ... */ },
 ///     StudioStatusCode::InternalError => { /* ... */ },
@@ -680,6 +681,8 @@ pub enum StudioStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     AwsSsoNotEnabled,
     #[allow(missing_docs)] // documentation missing in model
+    AwsStsRegionDisabled,
+    #[allow(missing_docs)] // documentation missing in model
     EncryptionKeyAccessDenied,
     #[allow(missing_docs)] // documentation missing in model
     EncryptionKeyNotFound,
@@ -719,6 +722,7 @@ impl std::convert::From<&str> for StudioStatusCode {
                 StudioStatusCode::AwsSsoConfigurationRepairInProgress
             }
             "AWS_SSO_NOT_ENABLED" => StudioStatusCode::AwsSsoNotEnabled,
+            "AWS_STS_REGION_DISABLED" => StudioStatusCode::AwsStsRegionDisabled,
             "ENCRYPTION_KEY_ACCESS_DENIED" => StudioStatusCode::EncryptionKeyAccessDenied,
             "ENCRYPTION_KEY_NOT_FOUND" => StudioStatusCode::EncryptionKeyNotFound,
             "INTERNAL_ERROR" => StudioStatusCode::InternalError,
@@ -760,6 +764,7 @@ impl StudioStatusCode {
                 "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS"
             }
             StudioStatusCode::AwsSsoNotEnabled => "AWS_SSO_NOT_ENABLED",
+            StudioStatusCode::AwsStsRegionDisabled => "AWS_STS_REGION_DISABLED",
             StudioStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
             StudioStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
             StudioStatusCode::InternalError => "INTERNAL_ERROR",
@@ -790,6 +795,7 @@ impl StudioStatusCode {
             "AWS_SSO_CONFIGURATION_REPAIRED",
             "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS",
             "AWS_SSO_NOT_ENABLED",
+            "AWS_STS_REGION_DISABLED",
             "ENCRYPTION_KEY_ACCESS_DENIED",
             "ENCRYPTION_KEY_NOT_FOUND",
             "INTERNAL_ERROR",
@@ -1099,7 +1105,7 @@ impl AsRef<str> for StudioPersona {
 
 /// <p>A studio member is an association of a user from your studio identity source to elevated permissions that they are granted in the studio.</p>
 /// <p>When you add a user to your studio using the Nimble Studio console, they are given access to the studio's IAM Identity Center application and are given access to log in to the Nimble Studio portal. These users have the permissions provided by the studio's user IAM role and do not appear in the studio membership collection. Only studio admins appear in studio membership.</p>
-/// <p>When you add a user to studio membership with the persona ADMIN, upon logging in to the Nimble Studio portal, they are granted permissions specified by the Studio's Admin IAM role.</p>
+/// <p>When you add a user to studio membership with the ADMIN persona, upon logging in to the Nimble Studio portal, they are granted permissions specified by the Studio's Admin IAM role.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StudioMembership {
@@ -1216,13 +1222,13 @@ impl StudioMembership {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StudioComponent {
-    /// <p>The ARN of the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The configuration of the studio component, based on component type.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
-    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the studio component.</p>
@@ -1260,28 +1266,28 @@ pub struct StudioComponent {
     /// <p>The specific subtype of a studio component.</p>
     #[doc(hidden)]
     pub subtype: std::option::Option<crate::model::StudioComponentSubtype>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the studio component.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
-    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     #[doc(hidden)]
     pub updated_by: std::option::Option<std::string::String>,
-    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     #[doc(hidden)]
     pub secure_initialization_role_arn: std::option::Option<std::string::String>,
-    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     #[doc(hidden)]
     pub runtime_role_arn: std::option::Option<std::string::String>,
 }
 impl StudioComponent {
-    /// <p>The ARN of the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -1291,7 +1297,7 @@ impl StudioComponent {
     ) -> std::option::Option<&crate::model::StudioComponentConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -1343,7 +1349,7 @@ impl StudioComponent {
     pub fn subtype(&self) -> std::option::Option<&crate::model::StudioComponentSubtype> {
         self.subtype.as_ref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1354,7 +1360,7 @@ impl StudioComponent {
     pub fn r#type(&self) -> std::option::Option<&crate::model::StudioComponentType> {
         self.r#type.as_ref()
     }
-    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -1362,11 +1368,11 @@ impl StudioComponent {
     pub fn updated_by(&self) -> std::option::Option<&str> {
         self.updated_by.as_deref()
     }
-    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     pub fn secure_initialization_role_arn(&self) -> std::option::Option<&str> {
         self.secure_initialization_role_arn.as_deref()
     }
-    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     pub fn runtime_role_arn(&self) -> std::option::Option<&str> {
         self.runtime_role_arn.as_deref()
     }
@@ -1432,12 +1438,12 @@ pub mod studio_component {
         pub(crate) runtime_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the resource.</p>
+        /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the resource.</p>
+        /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1455,12 +1461,12 @@ pub mod studio_component {
             self.configuration = input;
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1629,7 +1635,7 @@ pub mod studio_component {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1640,7 +1646,7 @@ pub mod studio_component {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1663,12 +1669,12 @@ pub mod studio_component {
             self.r#type = input;
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
         pub fn set_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1686,7 +1692,7 @@ pub mod studio_component {
             self.updated_by = input;
             self
         }
-        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
         pub fn secure_initialization_role_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1694,7 +1700,7 @@ pub mod studio_component {
             self.secure_initialization_role_arn = Some(input.into());
             self
         }
-        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
         pub fn set_secure_initialization_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1702,12 +1708,12 @@ pub mod studio_component {
             self.secure_initialization_role_arn = input;
             self
         }
-        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
         pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.runtime_role_arn = Some(input.into());
             self
         }
-        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
         pub fn set_runtime_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2042,10 +2048,11 @@ impl AsRef<str> for StudioComponentSubtype {
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The current status of the studio component resource.</p>
-/// <p>When the resource is in the 'READY' state, the status code signals what the last
-/// mutation made to the resource was.</p>
-/// <p>When the resource is in a CREATE_FAILED/UPDATE_FAILED/DELETE_FAILED state, the status
-/// code signals what went wrong and why the mutation failed.</p>
+/// <p>When the resource is in the <code>READY</code> state, the status code signals what the
+/// last mutation made to the resource was.</p>
+/// <p>When the resource is in a <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, or
+/// <code>DELETE_FAILED</code> state, the status code signals what went wrong and why
+/// the mutation failed.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2203,25 +2210,28 @@ impl AsRef<str> for StudioComponentStatusCode {
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The current state of the studio component resource.</p>
-/// <p>While a studio component is being created, modified, or deleted, its state will equal
-/// "CREATE_IN_PROGRESS", "UPDATE_IN_PROGRESS", or "DELETE_IN_PROGRESS"</p>
-/// <p>These are called 'transition states'.</p>
+/// <p>While a studio component is being created, modified, or deleted, its state will be
+/// <code>CREATE_IN_PROGRESS</code>, <code>UPDATE_IN_PROGRESS</code>, or
+/// <code>DELETE_IN_PROGRESS</code>.</p>
+/// <p>These are called <i>transition states</i>.</p>
 /// <p>No modifications may be made to the studio component while it is in a transition
 /// state.</p>
-/// <p>If creation of the resource fails, the state will change to `CREATE_FAILED`. The
-/// resource StatusCode and StatusMessage will provide more information of why creation
-/// failed. The resource in this state will automatically be deleted from your account after
-/// a period of time.</p>
-/// <p>If updating the resource fails, the state will change to `UPDATE_FAILED`. The resource
-/// StatusCode and StatusMessage will provide more information of why the update failed. The
-/// resource will be returned to the state it was in when the update request was
-/// invoked.</p>
-/// <p>If deleting the resource fails, the state will change to `DELETE_FAILED`. The resource
-/// StatusCode and StatusMessage will provide more information of why the update failed. The
-/// resource will be returned to the state it was in when the update request was invoked.
-/// After the resource is deleted successfully, it will change to the "DELETED" state. The
-/// resource will no longer count against service quotas and cannot be used or acted upon
-/// any futher. It will be removed from your account after a period of time.</p>
+/// <p>If creation of the resource fails, the state will change to
+/// <code>CREATE_FAILED</code>. The resource <code>StatusCode</code> and
+/// <code>StatusMessage</code> will provide more information of why creation failed. The
+/// resource in this state will automatically be deleted from your account after a period of
+/// time.</p>
+/// <p>If updating the resource fails, the state will change to <code>UPDATE_FAILED</code>.
+/// The resource <code>StatusCode</code> and <code>StatusMessage</code> will provide more
+/// information of why the update failed. The resource will be returned to the state it was
+/// in when the update request was invoked.</p>
+/// <p>If deleting the resource fails, the state will change to <code>DELETE_FAILED</code>.
+/// The resource <code>StatusCode</code> and <code>StatusMessage</code> will provide more
+/// information of why the update failed. The resource will be returned to the state it was
+/// in when the update request was invoked. After the resource is deleted successfully, it
+/// will change to the <code>DELETED</code> state. The resource will no longer count against
+/// service quotas and cannot be used or acted upon any futher. It will be removed from your
+/// account after a period of time.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2311,7 +2321,7 @@ impl AsRef<str> for StudioComponentState {
     }
 }
 
-/// <p>A parameter for a studio component script, in the form of a key:value pair.</p>
+/// <p>A parameter for a studio component script, in the form of a key-value pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScriptParameterKeyValue {
@@ -2385,7 +2395,7 @@ pub struct StudioComponentInitializationScript {
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     #[doc(hidden)]
     pub launch_profile_protocol_version: std::option::Option<std::string::String>,
-    /// <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+    /// <p>The platform of the initialization script, either Windows or Linux.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::model::LaunchProfilePlatform>,
     /// <p>The method to use when running the initialization script.</p>
@@ -2401,7 +2411,7 @@ impl StudioComponentInitializationScript {
     pub fn launch_profile_protocol_version(&self) -> std::option::Option<&str> {
         self.launch_profile_protocol_version.as_deref()
     }
-    /// <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+    /// <p>The platform of the initialization script, either Windows or Linux.</p>
     pub fn platform(&self) -> std::option::Option<&crate::model::LaunchProfilePlatform> {
         self.platform.as_ref()
     }
@@ -2458,12 +2468,12 @@ pub mod studio_component_initialization_script {
             self.launch_profile_protocol_version = input;
             self
         }
-        /// <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+        /// <p>The platform of the initialization script, either Windows or Linux.</p>
         pub fn platform(mut self, input: crate::model::LaunchProfilePlatform) -> Self {
             self.platform = Some(input);
             self
         }
-        /// <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+        /// <p>The platform of the initialization script, either Windows or Linux.</p>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::LaunchProfilePlatform>,
@@ -2724,7 +2734,7 @@ impl AsRef<str> for LaunchProfilePlatform {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum StudioComponentConfiguration {
-    /// <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio resource.</p>
+    /// <p>The configuration for a Directory Service for Microsoft Active Directory studio resource.</p>
     ActiveDirectoryConfiguration(crate::model::ActiveDirectoryConfiguration),
     /// <p>The configuration for a render farm that is associated with a studio resource.</p>
     ComputeFarmConfiguration(crate::model::ComputeFarmConfiguration),
@@ -3112,7 +3122,7 @@ impl ComputeFarmConfiguration {
     }
 }
 
-/// <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio resource.</p>
+/// <p>The configuration for a Directory Service for Microsoft Active Directory studio resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveDirectoryConfiguration {
@@ -3317,10 +3327,10 @@ impl ActiveDirectoryComputerAttribute {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingSession {
-    /// <p>The ARN of the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the streaming session.</p>
@@ -3350,26 +3360,26 @@ pub struct StreamingSession {
     /// <p>The ID of the streaming image.</p>
     #[doc(hidden)]
     pub streaming_image_id: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time the streaming session will automatically terminate if not terminated by the user.</p>
     #[doc(hidden)]
     pub terminate_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     #[doc(hidden)]
     pub updated_by: std::option::Option<std::string::String>,
-    /// <p>The time the session entered STOP_IN_PROGRESS state.</p>
+    /// <p>The time the session entered <code>STOP_IN_PROGRESS</code> state.</p>
     #[doc(hidden)]
     pub stopped_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that stopped the streaming session.</p>
     #[doc(hidden)]
     pub stopped_by: std::option::Option<std::string::String>,
-    /// <p>The time the session entered START_IN_PROGRESS state.</p>
+    /// <p>The time the session entered <code>START_IN_PROGRESS</code> state.</p>
     #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that started the streaming session.</p>
@@ -3378,13 +3388,40 @@ pub struct StreamingSession {
     /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves. </p>
     #[doc(hidden)]
     pub stop_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The backup ID used to restore a streaming session.</p>
+    #[doc(hidden)]
+    pub started_from_backup_id: std::option::Option<std::string::String>,
+    /// <p>Shows the current backup setting of the session.</p>
+    #[doc(hidden)]
+    pub backup_mode: std::option::Option<crate::model::SessionBackupMode>,
+    /// <p>The maximum number of backups of a streaming session that you can have. When the maximum number of backups is reached, the oldest backup is deleted.</p>
+    #[doc(hidden)]
+    pub max_backups_to_retain: i32,
+    /// <p>Determine if an EBS volume created from this streaming session will be backed up.</p>
+    #[doc(hidden)]
+    pub volume_retention_mode: std::option::Option<crate::model::VolumeRetentionMode>,
+    /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
+    #[doc(hidden)]
+    pub session_persistence_mode: std::option::Option<crate::model::SessionPersistenceMode>,
+    /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+    #[doc(hidden)]
+    pub volume_configuration: std::option::Option<crate::model::VolumeConfiguration>,
+    /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
+    /// <ul>
+    /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
+    /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+    /// </ul>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
+    #[doc(hidden)]
+    pub automatic_termination_mode: std::option::Option<crate::model::AutomaticTerminationMode>,
 }
 impl StreamingSession {
-    /// <p>The ARN of the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -3424,7 +3461,7 @@ impl StreamingSession {
     pub fn streaming_image_id(&self) -> std::option::Option<&str> {
         self.streaming_image_id.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3435,7 +3472,7 @@ impl StreamingSession {
     pub fn terminate_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.terminate_at.as_ref()
     }
-    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -3443,7 +3480,7 @@ impl StreamingSession {
     pub fn updated_by(&self) -> std::option::Option<&str> {
         self.updated_by.as_deref()
     }
-    /// <p>The time the session entered STOP_IN_PROGRESS state.</p>
+    /// <p>The time the session entered <code>STOP_IN_PROGRESS</code> state.</p>
     pub fn stopped_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stopped_at.as_ref()
     }
@@ -3451,7 +3488,7 @@ impl StreamingSession {
     pub fn stopped_by(&self) -> std::option::Option<&str> {
         self.stopped_by.as_deref()
     }
-    /// <p>The time the session entered START_IN_PROGRESS state.</p>
+    /// <p>The time the session entered <code>START_IN_PROGRESS</code> state.</p>
     pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
@@ -3462,6 +3499,44 @@ impl StreamingSession {
     /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves. </p>
     pub fn stop_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_at.as_ref()
+    }
+    /// <p>The backup ID used to restore a streaming session.</p>
+    pub fn started_from_backup_id(&self) -> std::option::Option<&str> {
+        self.started_from_backup_id.as_deref()
+    }
+    /// <p>Shows the current backup setting of the session.</p>
+    pub fn backup_mode(&self) -> std::option::Option<&crate::model::SessionBackupMode> {
+        self.backup_mode.as_ref()
+    }
+    /// <p>The maximum number of backups of a streaming session that you can have. When the maximum number of backups is reached, the oldest backup is deleted.</p>
+    pub fn max_backups_to_retain(&self) -> i32 {
+        self.max_backups_to_retain
+    }
+    /// <p>Determine if an EBS volume created from this streaming session will be backed up.</p>
+    pub fn volume_retention_mode(&self) -> std::option::Option<&crate::model::VolumeRetentionMode> {
+        self.volume_retention_mode.as_ref()
+    }
+    /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
+    pub fn session_persistence_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::SessionPersistenceMode> {
+        self.session_persistence_mode.as_ref()
+    }
+    /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+    pub fn volume_configuration(&self) -> std::option::Option<&crate::model::VolumeConfiguration> {
+        self.volume_configuration.as_ref()
+    }
+    /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
+    /// <ul>
+    /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
+    /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+    /// </ul>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
+    pub fn automatic_termination_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::AutomaticTerminationMode> {
+        self.automatic_termination_mode.as_ref()
     }
 }
 /// See [`StreamingSession`](crate::model::StreamingSession).
@@ -3492,24 +3567,33 @@ pub mod streaming_session {
         pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) started_by: std::option::Option<std::string::String>,
         pub(crate) stop_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_from_backup_id: std::option::Option<std::string::String>,
+        pub(crate) backup_mode: std::option::Option<crate::model::SessionBackupMode>,
+        pub(crate) max_backups_to_retain: std::option::Option<i32>,
+        pub(crate) volume_retention_mode: std::option::Option<crate::model::VolumeRetentionMode>,
+        pub(crate) session_persistence_mode:
+            std::option::Option<crate::model::SessionPersistenceMode>,
+        pub(crate) volume_configuration: std::option::Option<crate::model::VolumeConfiguration>,
+        pub(crate) automatic_termination_mode:
+            std::option::Option<crate::model::AutomaticTerminationMode>,
     }
     impl Builder {
-        /// <p>The ARN of the resource.</p>
+        /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the resource.</p>
+        /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3629,7 +3713,7 @@ pub mod streaming_session {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3640,7 +3724,7 @@ pub mod streaming_session {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3663,12 +3747,12 @@ pub mod streaming_session {
             self.terminate_at = input;
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
         pub fn set_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3686,12 +3770,12 @@ pub mod streaming_session {
             self.updated_by = input;
             self
         }
-        /// <p>The time the session entered STOP_IN_PROGRESS state.</p>
+        /// <p>The time the session entered <code>STOP_IN_PROGRESS</code> state.</p>
         pub fn stopped_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stopped_at = Some(input);
             self
         }
-        /// <p>The time the session entered STOP_IN_PROGRESS state.</p>
+        /// <p>The time the session entered <code>STOP_IN_PROGRESS</code> state.</p>
         pub fn set_stopped_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3709,12 +3793,12 @@ pub mod streaming_session {
             self.stopped_by = input;
             self
         }
-        /// <p>The time the session entered START_IN_PROGRESS state.</p>
+        /// <p>The time the session entered <code>START_IN_PROGRESS</code> state.</p>
         pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
-        /// <p>The time the session entered START_IN_PROGRESS state.</p>
+        /// <p>The time the session entered <code>START_IN_PROGRESS</code> state.</p>
         pub fn set_started_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3745,6 +3829,112 @@ pub mod streaming_session {
             self.stop_at = input;
             self
         }
+        /// <p>The backup ID used to restore a streaming session.</p>
+        pub fn started_from_backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.started_from_backup_id = Some(input.into());
+            self
+        }
+        /// <p>The backup ID used to restore a streaming session.</p>
+        pub fn set_started_from_backup_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.started_from_backup_id = input;
+            self
+        }
+        /// <p>Shows the current backup setting of the session.</p>
+        pub fn backup_mode(mut self, input: crate::model::SessionBackupMode) -> Self {
+            self.backup_mode = Some(input);
+            self
+        }
+        /// <p>Shows the current backup setting of the session.</p>
+        pub fn set_backup_mode(
+            mut self,
+            input: std::option::Option<crate::model::SessionBackupMode>,
+        ) -> Self {
+            self.backup_mode = input;
+            self
+        }
+        /// <p>The maximum number of backups of a streaming session that you can have. When the maximum number of backups is reached, the oldest backup is deleted.</p>
+        pub fn max_backups_to_retain(mut self, input: i32) -> Self {
+            self.max_backups_to_retain = Some(input);
+            self
+        }
+        /// <p>The maximum number of backups of a streaming session that you can have. When the maximum number of backups is reached, the oldest backup is deleted.</p>
+        pub fn set_max_backups_to_retain(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_backups_to_retain = input;
+            self
+        }
+        /// <p>Determine if an EBS volume created from this streaming session will be backed up.</p>
+        pub fn volume_retention_mode(mut self, input: crate::model::VolumeRetentionMode) -> Self {
+            self.volume_retention_mode = Some(input);
+            self
+        }
+        /// <p>Determine if an EBS volume created from this streaming session will be backed up.</p>
+        pub fn set_volume_retention_mode(
+            mut self,
+            input: std::option::Option<crate::model::VolumeRetentionMode>,
+        ) -> Self {
+            self.volume_retention_mode = input;
+            self
+        }
+        /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
+        pub fn session_persistence_mode(
+            mut self,
+            input: crate::model::SessionPersistenceMode,
+        ) -> Self {
+            self.session_persistence_mode = Some(input);
+            self
+        }
+        /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
+        pub fn set_session_persistence_mode(
+            mut self,
+            input: std::option::Option<crate::model::SessionPersistenceMode>,
+        ) -> Self {
+            self.session_persistence_mode = input;
+            self
+        }
+        /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+        /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+        pub fn volume_configuration(mut self, input: crate::model::VolumeConfiguration) -> Self {
+            self.volume_configuration = Some(input);
+            self
+        }
+        /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+        /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+        pub fn set_volume_configuration(
+            mut self,
+            input: std::option::Option<crate::model::VolumeConfiguration>,
+        ) -> Self {
+            self.volume_configuration = input;
+            self
+        }
+        /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
+        /// <ul>
+        /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
+        /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+        /// </ul>
+        /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
+        pub fn automatic_termination_mode(
+            mut self,
+            input: crate::model::AutomaticTerminationMode,
+        ) -> Self {
+            self.automatic_termination_mode = Some(input);
+            self
+        }
+        /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
+        /// <ul>
+        /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
+        /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+        /// </ul>
+        /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
+        pub fn set_automatic_termination_mode(
+            mut self,
+            input: std::option::Option<crate::model::AutomaticTerminationMode>,
+        ) -> Self {
+            self.automatic_termination_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StreamingSession`](crate::model::StreamingSession).
         pub fn build(self) -> crate::model::StreamingSession {
             crate::model::StreamingSession {
@@ -3768,6 +3958,13 @@ pub mod streaming_session {
                 started_at: self.started_at,
                 started_by: self.started_by,
                 stop_at: self.stop_at,
+                started_from_backup_id: self.started_from_backup_id,
+                backup_mode: self.backup_mode,
+                max_backups_to_retain: self.max_backups_to_retain.unwrap_or_default(),
+                volume_retention_mode: self.volume_retention_mode,
+                session_persistence_mode: self.session_persistence_mode,
+                volume_configuration: self.volume_configuration,
+                automatic_termination_mode: self.automatic_termination_mode,
             }
         }
     }
@@ -3776,6 +3973,461 @@ impl StreamingSession {
     /// Creates a new builder-style object to manufacture [`StreamingSession`](crate::model::StreamingSession).
     pub fn builder() -> crate::model::streaming_session::Builder {
         crate::model::streaming_session::Builder::default()
+    }
+}
+
+/// When writing a match expression against `AutomaticTerminationMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let automaticterminationmode = unimplemented!();
+/// match automaticterminationmode {
+///     AutomaticTerminationMode::Activated => { /* ... */ },
+///     AutomaticTerminationMode::Deactivated => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `automaticterminationmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AutomaticTerminationMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AutomaticTerminationMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AutomaticTerminationMode::NewFeature` is defined.
+/// Specifically, when `automaticterminationmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AutomaticTerminationMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AutomaticTerminationMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Activated,
+    #[allow(missing_docs)] // documentation missing in model
+    Deactivated,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for AutomaticTerminationMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVATED" => AutomaticTerminationMode::Activated,
+            "DEACTIVATED" => AutomaticTerminationMode::Deactivated,
+            other => AutomaticTerminationMode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for AutomaticTerminationMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AutomaticTerminationMode::from(s))
+    }
+}
+impl AutomaticTerminationMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AutomaticTerminationMode::Activated => "ACTIVATED",
+            AutomaticTerminationMode::Deactivated => "DEACTIVATED",
+            AutomaticTerminationMode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ACTIVATED", "DEACTIVATED"]
+    }
+}
+impl AsRef<str> for AutomaticTerminationMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+/// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VolumeConfiguration {
+    /// <p>The size of the root volume that is attached to the streaming session. The root volume size is measured in GiBs.</p>
+    #[doc(hidden)]
+    pub size: std::option::Option<i32>,
+    /// <p>The throughput to provision for the root volume that is attached to the streaming session. The throughput is measured in MiB/s.</p>
+    #[doc(hidden)]
+    pub throughput: std::option::Option<i32>,
+    /// <p>The number of I/O operations per second for the root volume that is attached to streaming session.</p>
+    #[doc(hidden)]
+    pub iops: std::option::Option<i32>,
+}
+impl VolumeConfiguration {
+    /// <p>The size of the root volume that is attached to the streaming session. The root volume size is measured in GiBs.</p>
+    pub fn size(&self) -> std::option::Option<i32> {
+        self.size
+    }
+    /// <p>The throughput to provision for the root volume that is attached to the streaming session. The throughput is measured in MiB/s.</p>
+    pub fn throughput(&self) -> std::option::Option<i32> {
+        self.throughput
+    }
+    /// <p>The number of I/O operations per second for the root volume that is attached to streaming session.</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
+}
+/// See [`VolumeConfiguration`](crate::model::VolumeConfiguration).
+pub mod volume_configuration {
+
+    /// A builder for [`VolumeConfiguration`](crate::model::VolumeConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) size: std::option::Option<i32>,
+        pub(crate) throughput: std::option::Option<i32>,
+        pub(crate) iops: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The size of the root volume that is attached to the streaming session. The root volume size is measured in GiBs.</p>
+        pub fn size(mut self, input: i32) -> Self {
+            self.size = Some(input);
+            self
+        }
+        /// <p>The size of the root volume that is attached to the streaming session. The root volume size is measured in GiBs.</p>
+        pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.size = input;
+            self
+        }
+        /// <p>The throughput to provision for the root volume that is attached to the streaming session. The throughput is measured in MiB/s.</p>
+        pub fn throughput(mut self, input: i32) -> Self {
+            self.throughput = Some(input);
+            self
+        }
+        /// <p>The throughput to provision for the root volume that is attached to the streaming session. The throughput is measured in MiB/s.</p>
+        pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.throughput = input;
+            self
+        }
+        /// <p>The number of I/O operations per second for the root volume that is attached to streaming session.</p>
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
+            self
+        }
+        /// <p>The number of I/O operations per second for the root volume that is attached to streaming session.</p>
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VolumeConfiguration`](crate::model::VolumeConfiguration).
+        pub fn build(self) -> crate::model::VolumeConfiguration {
+            crate::model::VolumeConfiguration {
+                size: self.size,
+                throughput: self.throughput,
+                iops: self.iops,
+            }
+        }
+    }
+}
+impl VolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`VolumeConfiguration`](crate::model::VolumeConfiguration).
+    pub fn builder() -> crate::model::volume_configuration::Builder {
+        crate::model::volume_configuration::Builder::default()
+    }
+}
+
+/// When writing a match expression against `SessionPersistenceMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sessionpersistencemode = unimplemented!();
+/// match sessionpersistencemode {
+///     SessionPersistenceMode::Activated => { /* ... */ },
+///     SessionPersistenceMode::Deactivated => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sessionpersistencemode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SessionPersistenceMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SessionPersistenceMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SessionPersistenceMode::NewFeature` is defined.
+/// Specifically, when `sessionpersistencemode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SessionPersistenceMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SessionPersistenceMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Activated,
+    #[allow(missing_docs)] // documentation missing in model
+    Deactivated,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SessionPersistenceMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVATED" => SessionPersistenceMode::Activated,
+            "DEACTIVATED" => SessionPersistenceMode::Deactivated,
+            other => {
+                SessionPersistenceMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for SessionPersistenceMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SessionPersistenceMode::from(s))
+    }
+}
+impl SessionPersistenceMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SessionPersistenceMode::Activated => "ACTIVATED",
+            SessionPersistenceMode::Deactivated => "DEACTIVATED",
+            SessionPersistenceMode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ACTIVATED", "DEACTIVATED"]
+    }
+}
+impl AsRef<str> for SessionPersistenceMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `VolumeRetentionMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let volumeretentionmode = unimplemented!();
+/// match volumeretentionmode {
+///     VolumeRetentionMode::Delete => { /* ... */ },
+///     VolumeRetentionMode::Retain => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `volumeretentionmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `VolumeRetentionMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `VolumeRetentionMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `VolumeRetentionMode::NewFeature` is defined.
+/// Specifically, when `volumeretentionmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `VolumeRetentionMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VolumeRetentionMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Delete,
+    #[allow(missing_docs)] // documentation missing in model
+    Retain,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for VolumeRetentionMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "DELETE" => VolumeRetentionMode::Delete,
+            "RETAIN" => VolumeRetentionMode::Retain,
+            other => {
+                VolumeRetentionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for VolumeRetentionMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VolumeRetentionMode::from(s))
+    }
+}
+impl VolumeRetentionMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VolumeRetentionMode::Delete => "DELETE",
+            VolumeRetentionMode::Retain => "RETAIN",
+            VolumeRetentionMode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DELETE", "RETAIN"]
+    }
+}
+impl AsRef<str> for VolumeRetentionMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `SessionBackupMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sessionbackupmode = unimplemented!();
+/// match sessionbackupmode {
+///     SessionBackupMode::Automatic => { /* ... */ },
+///     SessionBackupMode::Deactivated => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sessionbackupmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SessionBackupMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SessionBackupMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SessionBackupMode::NewFeature` is defined.
+/// Specifically, when `sessionbackupmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SessionBackupMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SessionBackupMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Automatic,
+    #[allow(missing_docs)] // documentation missing in model
+    Deactivated,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SessionBackupMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTOMATIC" => SessionBackupMode::Automatic,
+            "DEACTIVATED" => SessionBackupMode::Deactivated,
+            other => {
+                SessionBackupMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for SessionBackupMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SessionBackupMode::from(s))
+    }
+}
+impl SessionBackupMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SessionBackupMode::Automatic => "AUTOMATIC",
+            SessionBackupMode::Deactivated => "DEACTIVATED",
+            SessionBackupMode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AUTOMATIC", "DEACTIVATED"]
+    }
+}
+impl AsRef<str> for SessionBackupMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4135,13 +4787,13 @@ impl AsRef<str> for StreamingSessionState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingSessionStream {
-    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the streaming session stream.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
-    /// <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
+    /// <p>The ISO timestamp in seconds for when the resource expires.</p>
     #[doc(hidden)]
     pub expires_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
@@ -4161,7 +4813,7 @@ pub struct StreamingSessionStream {
     pub url: std::option::Option<std::string::String>,
 }
 impl StreamingSessionStream {
-    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -4169,7 +4821,7 @@ impl StreamingSessionStream {
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
-    /// <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
+    /// <p>The ISO timestamp in seconds for when the resource expires.</p>
     pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires_at.as_ref()
     }
@@ -4226,12 +4878,12 @@ pub mod streaming_session_stream {
         pub(crate) url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4249,12 +4901,12 @@ pub mod streaming_session_stream {
             self.created_by = input;
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
+        /// <p>The ISO timestamp in seconds for when the resource expires.</p>
         pub fn expires_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
+        /// <p>The ISO timestamp in seconds for when the resource expires.</p>
         pub fn set_expires_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4756,14 +5408,269 @@ impl AsRef<str> for StreamingInstanceType {
     }
 }
 
+/// <p>Information about the streaming session backup.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StreamingSessionBackup {
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The ISO timestamp in for when the resource was created.</p>
+    #[doc(hidden)]
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The ID of the launch profile which allowed the backups for the streaming session.</p>
+    #[doc(hidden)]
+    pub launch_profile_id: std::option::Option<std::string::String>,
+    /// <p>The user ID of the user that owns the streaming session.</p>
+    #[doc(hidden)]
+    pub owned_by: std::option::Option<std::string::String>,
+    /// <p>The streaming session ID for the <code>StreamingSessionBackup</code>.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The streaming session state.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::StreamingSessionState>,
+    /// <p>The status code.</p>
+    #[doc(hidden)]
+    pub status_code: std::option::Option<crate::model::StreamingSessionStatusCode>,
+    /// <p>The status message for the streaming session backup.</p>
+    #[doc(hidden)]
+    pub status_message: std::option::Option<std::string::String>,
+    /// <p>The ID of the backup.</p>
+    #[doc(hidden)]
+    pub backup_id: std::option::Option<std::string::String>,
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl StreamingSessionBackup {
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ISO timestamp in for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The ID of the launch profile which allowed the backups for the streaming session.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>The user ID of the user that owns the streaming session.</p>
+    pub fn owned_by(&self) -> std::option::Option<&str> {
+        self.owned_by.as_deref()
+    }
+    /// <p>The streaming session ID for the <code>StreamingSessionBackup</code>.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The streaming session state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::StreamingSessionState> {
+        self.state.as_ref()
+    }
+    /// <p>The status code.</p>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::StreamingSessionStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>The status message for the streaming session backup.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The ID of the backup.</p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
+    }
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+/// See [`StreamingSessionBackup`](crate::model::StreamingSessionBackup).
+pub mod streaming_session_backup {
+
+    /// A builder for [`StreamingSessionBackup`](crate::model::StreamingSessionBackup).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) launch_profile_id: std::option::Option<std::string::String>,
+        pub(crate) owned_by: std::option::Option<std::string::String>,
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::StreamingSessionState>,
+        pub(crate) status_code: std::option::Option<crate::model::StreamingSessionStatusCode>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
+        pub(crate) backup_id: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The ISO timestamp in for when the resource was created.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The ISO timestamp in for when the resource was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The ID of the launch profile which allowed the backups for the streaming session.</p>
+        pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.launch_profile_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the launch profile which allowed the backups for the streaming session.</p>
+        pub fn set_launch_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.launch_profile_id = input;
+            self
+        }
+        /// <p>The user ID of the user that owns the streaming session.</p>
+        pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owned_by = Some(input.into());
+            self
+        }
+        /// <p>The user ID of the user that owns the streaming session.</p>
+        pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owned_by = input;
+            self
+        }
+        /// <p>The streaming session ID for the <code>StreamingSessionBackup</code>.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The streaming session ID for the <code>StreamingSessionBackup</code>.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>The streaming session state.</p>
+        pub fn state(mut self, input: crate::model::StreamingSessionState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The streaming session state.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::StreamingSessionState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The status code.</p>
+        pub fn status_code(mut self, input: crate::model::StreamingSessionStatusCode) -> Self {
+            self.status_code = Some(input);
+            self
+        }
+        /// <p>The status code.</p>
+        pub fn set_status_code(
+            mut self,
+            input: std::option::Option<crate::model::StreamingSessionStatusCode>,
+        ) -> Self {
+            self.status_code = input;
+            self
+        }
+        /// <p>The status message for the streaming session backup.</p>
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
+            self
+        }
+        /// <p>The status message for the streaming session backup.</p>
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
+            self
+        }
+        /// <p>The ID of the backup.</p>
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the backup.</p>
+        pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backup_id = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StreamingSessionBackup`](crate::model::StreamingSessionBackup).
+        pub fn build(self) -> crate::model::StreamingSessionBackup {
+            crate::model::StreamingSessionBackup {
+                arn: self.arn,
+                created_at: self.created_at,
+                launch_profile_id: self.launch_profile_id,
+                owned_by: self.owned_by,
+                session_id: self.session_id,
+                state: self.state,
+                status_code: self.status_code,
+                status_message: self.status_message,
+                backup_id: self.backup_id,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl StreamingSessionBackup {
+    /// Creates a new builder-style object to manufacture [`StreamingSessionBackup`](crate::model::StreamingSessionBackup).
+    pub fn builder() -> crate::model::streaming_session_backup::Builder {
+        crate::model::streaming_session_backup::Builder::default()
+    }
+}
+
 /// <p>Represents a streaming image resource.</p>
 /// <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>
 /// <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>
-/// <p>You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine image that you create for this purpose. You can also include software that your users require.</p>
+/// <p>You can create your own streaming images using an Amazon EC2 machine image that you create for this purpose. You can also include software that your users require.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingImage {
-    /// <p>The ARN of the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A human-readable description of the streaming image.</p>
@@ -4782,10 +5689,10 @@ pub struct StreamingImage {
     /// <p>A friendly name for a streaming image resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The owner of the streaming image, either the studioId that contains the streaming image, or 'amazon' for images that are provided by Amazon Nimble Studio.</p>
+    /// <p>The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or <code>amazon</code> for images that are provided by Amazon Nimble Studio.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
-    /// <p>The platform of the streaming image, either WINDOWS or LINUX.</p>
+    /// <p>The platform of the streaming image, either Windows or Linux.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>The current state.</p>
@@ -4800,13 +5707,13 @@ pub struct StreamingImage {
     /// <p>The ID of the streaming image.</p>
     #[doc(hidden)]
     pub streaming_image_id: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StreamingImage {
-    /// <p>The ARN of the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -4832,11 +5739,11 @@ impl StreamingImage {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The owner of the streaming image, either the studioId that contains the streaming image, or 'amazon' for images that are provided by Amazon Nimble Studio.</p>
+    /// <p>The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or <code>amazon</code> for images that are provided by Amazon Nimble Studio.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
-    /// <p>The platform of the streaming image, either WINDOWS or LINUX.</p>
+    /// <p>The platform of the streaming image, either Windows or Linux.</p>
     pub fn platform(&self) -> std::option::Option<&str> {
         self.platform.as_deref()
     }
@@ -4856,7 +5763,7 @@ impl StreamingImage {
     pub fn streaming_image_id(&self) -> std::option::Option<&str> {
         self.streaming_image_id.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -4907,12 +5814,12 @@ pub mod streaming_image {
         >,
     }
     impl Builder {
-        /// <p>The ARN of the resource.</p>
+        /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the resource.</p>
+        /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4982,22 +5889,22 @@ pub mod streaming_image {
             self.name = input;
             self
         }
-        /// <p>The owner of the streaming image, either the studioId that contains the streaming image, or 'amazon' for images that are provided by Amazon Nimble Studio.</p>
+        /// <p>The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or <code>amazon</code> for images that are provided by Amazon Nimble Studio.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
-        /// <p>The owner of the streaming image, either the studioId that contains the streaming image, or 'amazon' for images that are provided by Amazon Nimble Studio.</p>
+        /// <p>The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or <code>amazon</code> for images that are provided by Amazon Nimble Studio.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
         }
-        /// <p>The platform of the streaming image, either WINDOWS or LINUX.</p>
+        /// <p>The platform of the streaming image, either Windows or Linux.</p>
         pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform = Some(input.into());
             self
         }
-        /// <p>The platform of the streaming image, either WINDOWS or LINUX.</p>
+        /// <p>The platform of the streaming image, either Windows or Linux.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -5058,7 +5965,7 @@ pub mod streaming_image {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5069,7 +5976,7 @@ pub mod streaming_image {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5560,7 +6467,7 @@ impl AsRef<str> for StreamingImageEncryptionConfigurationKeyType {
     }
 }
 
-/// <p>Launch profile membership enables your studio admins to delegate launch profile access to other studio users in the Nimble Studio portal without needing to write or maintain complex IAM policies. A launch profile member is a user association from your studio identity source who is granted permissions to a launch profile.</p>
+/// <p>Studio admins can use launch profile membership to delegate launch profile access to studio users in the Nimble Studio portal without writing or maintaining complex IAM policies. A launch profile member is a user association from your studio identity source who is granted permissions to a launch profile.</p>
 /// <p>A launch profile member (type USER) provides the following permissions to that launch profile:</p>
 /// <ul>
 /// <li> <p>GetLaunchProfile</p> </li>
@@ -5837,19 +6744,19 @@ impl NewLaunchProfileMember {
     }
 }
 
-/// <p>A Launch Profile Initialization contains information required for a workstation or server to connect to a launch profile.</p>
+/// <p>A launch profile initialization contains information required for a workstation or server to connect to a launch profile.</p>
 /// <p>This includes scripts, endpoints, security groups, subnets, and other configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchProfileInitialization {
-    /// <p>A LaunchProfileInitializationActiveDirectory resource.</p>
+    /// <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
     #[doc(hidden)]
     pub active_directory:
         std::option::Option<crate::model::LaunchProfileInitializationActiveDirectory>,
     /// <p>The EC2 security groups that control access to the studio component.</p>
     #[doc(hidden)]
     pub ec2_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The launch profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
@@ -5861,7 +6768,7 @@ pub struct LaunchProfileInitialization {
     /// <p>The name for the launch profile.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The platform of the launch platform, either WINDOWS or LINUX.</p>
+    /// <p>The platform of the launch platform, either Windows or Linux.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::model::LaunchProfilePlatform>,
     /// <p>The system initializtion scripts.</p>
@@ -5874,7 +6781,7 @@ pub struct LaunchProfileInitialization {
         std::option::Option<std::vec::Vec<crate::model::LaunchProfileInitializationScript>>,
 }
 impl LaunchProfileInitialization {
-    /// <p>A LaunchProfileInitializationActiveDirectory resource.</p>
+    /// <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
     pub fn active_directory(
         &self,
     ) -> std::option::Option<&crate::model::LaunchProfileInitializationActiveDirectory> {
@@ -5884,7 +6791,7 @@ impl LaunchProfileInitialization {
     pub fn ec2_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ec2_security_group_ids.as_deref()
     }
-    /// <p>The launch profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
@@ -5900,7 +6807,7 @@ impl LaunchProfileInitialization {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The platform of the launch platform, either WINDOWS or LINUX.</p>
+    /// <p>The platform of the launch platform, either Windows or Linux.</p>
     pub fn platform(&self) -> std::option::Option<&crate::model::LaunchProfilePlatform> {
         self.platform.as_ref()
     }
@@ -5961,7 +6868,7 @@ pub mod launch_profile_initialization {
             std::option::Option<std::vec::Vec<crate::model::LaunchProfileInitializationScript>>,
     }
     impl Builder {
-        /// <p>A LaunchProfileInitializationActiveDirectory resource.</p>
+        /// <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
         pub fn active_directory(
             mut self,
             input: crate::model::LaunchProfileInitializationActiveDirectory,
@@ -5969,7 +6876,7 @@ pub mod launch_profile_initialization {
             self.active_directory = Some(input);
             self
         }
-        /// <p>A LaunchProfileInitializationActiveDirectory resource.</p>
+        /// <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
         pub fn set_active_directory(
             mut self,
             input: std::option::Option<crate::model::LaunchProfileInitializationActiveDirectory>,
@@ -5996,12 +6903,12 @@ pub mod launch_profile_initialization {
             self.ec2_security_group_ids = input;
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6048,12 +6955,12 @@ pub mod launch_profile_initialization {
             self.name = input;
             self
         }
-        /// <p>The platform of the launch platform, either WINDOWS or LINUX.</p>
+        /// <p>The platform of the launch platform, either Windows or Linux.</p>
         pub fn platform(mut self, input: crate::model::LaunchProfilePlatform) -> Self {
             self.platform = Some(input);
             self
         }
-        /// <p>The platform of the launch platform, either WINDOWS or LINUX.</p>
+        /// <p>The platform of the launch platform, either Windows or Linux.</p>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::LaunchProfilePlatform>,
@@ -6156,7 +7063,7 @@ impl LaunchProfileInitialization {
     }
 }
 
-/// <p>The Launch Profile Initialization Script is used when start streaming session runs.</p>
+/// <p>The launch profile initialization script is used when start streaming session runs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchProfileInitializationScript {
@@ -6169,10 +7076,10 @@ pub struct LaunchProfileInitializationScript {
     /// <p>The name for the studio component.</p>
     #[doc(hidden)]
     pub studio_component_name: std::option::Option<std::string::String>,
-    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     #[doc(hidden)]
     pub secure_initialization_role_arn: std::option::Option<std::string::String>,
-    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     #[doc(hidden)]
     pub runtime_role_arn: std::option::Option<std::string::String>,
 }
@@ -6189,11 +7096,11 @@ impl LaunchProfileInitializationScript {
     pub fn studio_component_name(&self) -> std::option::Option<&str> {
         self.studio_component_name.as_deref()
     }
-    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     pub fn secure_initialization_role_arn(&self) -> std::option::Option<&str> {
         self.secure_initialization_role_arn.as_deref()
     }
-    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     pub fn runtime_role_arn(&self) -> std::option::Option<&str> {
         self.runtime_role_arn.as_deref()
     }
@@ -6261,7 +7168,7 @@ pub mod launch_profile_initialization_script {
             self.studio_component_name = input;
             self
         }
-        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
         pub fn secure_initialization_role_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -6269,7 +7176,7 @@ pub mod launch_profile_initialization_script {
             self.secure_initialization_role_arn = Some(input.into());
             self
         }
-        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
         pub fn set_secure_initialization_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6277,12 +7184,12 @@ pub mod launch_profile_initialization_script {
             self.secure_initialization_role_arn = input;
             self
         }
-        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
         pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.runtime_role_arn = Some(input.into());
             self
         }
-        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
         pub fn set_runtime_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6323,7 +7230,7 @@ impl LaunchProfileInitializationScript {
     }
 }
 
-/// <p>The Launch Profile Initialization Active Directory contains information required for the launch profile to connect to the Active Directory.</p>
+/// <p>The launch profile initialization Active Directory contains information required for the launch profile to connect to the Active Directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchProfileInitializationActiveDirectory {
@@ -6563,7 +7470,7 @@ impl LaunchProfileInitializationActiveDirectory {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StudioComponentSummary {
-    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the studio component.</p>
@@ -6584,7 +7491,7 @@ pub struct StudioComponentSummary {
     /// <p>The type of the studio component.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
-    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
@@ -6592,7 +7499,7 @@ pub struct StudioComponentSummary {
     pub updated_by: std::option::Option<std::string::String>,
 }
 impl StudioComponentSummary {
-    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -6620,7 +7527,7 @@ impl StudioComponentSummary {
     pub fn r#type(&self) -> std::option::Option<&crate::model::StudioComponentType> {
         self.r#type.as_ref()
     }
-    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -6661,12 +7568,12 @@ pub mod studio_component_summary {
         pub(crate) updated_by: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6743,12 +7650,12 @@ pub mod studio_component_summary {
             self.r#type = input;
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
         pub fn set_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6809,10 +7716,10 @@ impl StudioComponentSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchProfile {
-    /// <p>The ARN of the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the launch profile.</p>
@@ -6824,7 +7731,7 @@ pub struct LaunchProfile {
     /// <p>Unique identifiers for a collection of EC2 subnets.</p>
     #[doc(hidden)]
     pub ec2_subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The launch profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
@@ -6848,11 +7755,11 @@ pub struct LaunchProfile {
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
     #[doc(hidden)]
     pub studio_component_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
@@ -6863,11 +7770,11 @@ pub struct LaunchProfile {
     pub validation_results: std::option::Option<std::vec::Vec<crate::model::ValidationResult>>,
 }
 impl LaunchProfile {
-    /// <p>The ARN of the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -6883,7 +7790,7 @@ impl LaunchProfile {
     pub fn ec2_subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ec2_subnet_ids.as_deref()
     }
-    /// <p>The launch profile ID.</p>
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
@@ -6915,14 +7822,14 @@ impl LaunchProfile {
     pub fn studio_component_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.studio_component_ids.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -6990,22 +7897,22 @@ pub mod launch_profile {
             std::option::Option<std::vec::Vec<crate::model::ValidationResult>>,
     }
     impl Builder {
-        /// <p>The ARN of the resource.</p>
+        /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the resource.</p>
+        /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7052,12 +7959,12 @@ pub mod launch_profile {
             self.ec2_subnet_ids = input;
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7172,7 +8079,7 @@ pub mod launch_profile {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -7183,7 +8090,7 @@ pub mod launch_profile {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -7193,12 +8100,12 @@ pub mod launch_profile {
             self.tags = input;
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
         pub fn set_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7790,7 +8697,7 @@ impl AsRef<str> for LaunchProfileValidationType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamConfiguration {
-    /// <p>Enable or disable the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
+    /// <p>Allows or deactivates the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
     #[doc(hidden)]
     pub clipboard_mode: std::option::Option<crate::model::StreamingClipboardMode>,
     /// <p>The EC2 instance types that users can select from when launching a streaming session with this launch profile.</p>
@@ -7798,21 +8705,40 @@ pub struct StreamConfiguration {
     pub ec2_instance_types: std::option::Option<std::vec::Vec<crate::model::StreamingInstanceType>>,
     /// <p>The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690 minutes, and the maximum length of time is 30 days.</p>
     #[doc(hidden)]
-    pub max_session_length_in_minutes: i32,
+    pub max_session_length_in_minutes: std::option::Option<i32>,
     /// <p>The streaming images that users can select from when launching a streaming session with this launch profile.</p>
     #[doc(hidden)]
     pub streaming_image_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
-    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
+    /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the <code>STOPPED</code> state. The default value is 0. The maximum value is 5760.</p>
+    /// <p>This field is allowed only when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code> and <code>automaticTerminationMode</code> is <code>ACTIVATED</code>.</p>
+    /// <p>If the value is set to 0, your sessions can’t be <code>STOPPED</code>. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of <code>STOPPED</code>).</p>
+    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the <code>READY</code> state. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
     #[doc(hidden)]
     pub max_stopped_session_length_in_minutes: i32,
-    /// <p>(Optional) The upload storage for a streaming session.</p>
+    /// <p>The upload storage for a streaming session.</p>
     #[doc(hidden)]
     pub session_storage: std::option::Option<crate::model::StreamConfigurationSessionStorage>,
+    /// <p>Information about the streaming session backup.</p>
+    #[doc(hidden)]
+    pub session_backup: std::option::Option<crate::model::StreamConfigurationSessionBackup>,
+    /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
+    #[doc(hidden)]
+    pub session_persistence_mode: std::option::Option<crate::model::SessionPersistenceMode>,
+    /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+    #[doc(hidden)]
+    pub volume_configuration: std::option::Option<crate::model::VolumeConfiguration>,
+    /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
+    /// <ul>
+    /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
+    /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+    /// </ul>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
+    #[doc(hidden)]
+    pub automatic_termination_mode: std::option::Option<crate::model::AutomaticTerminationMode>,
 }
 impl StreamConfiguration {
-    /// <p>Enable or disable the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
+    /// <p>Allows or deactivates the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
     pub fn clipboard_mode(&self) -> std::option::Option<&crate::model::StreamingClipboardMode> {
         self.clipboard_mode.as_ref()
     }
@@ -7823,24 +8749,53 @@ impl StreamConfiguration {
         self.ec2_instance_types.as_deref()
     }
     /// <p>The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690 minutes, and the maximum length of time is 30 days.</p>
-    pub fn max_session_length_in_minutes(&self) -> i32 {
+    pub fn max_session_length_in_minutes(&self) -> std::option::Option<i32> {
         self.max_session_length_in_minutes
     }
     /// <p>The streaming images that users can select from when launching a streaming session with this launch profile.</p>
     pub fn streaming_image_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.streaming_image_ids.as_deref()
     }
-    /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
-    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
+    /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the <code>STOPPED</code> state. The default value is 0. The maximum value is 5760.</p>
+    /// <p>This field is allowed only when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code> and <code>automaticTerminationMode</code> is <code>ACTIVATED</code>.</p>
+    /// <p>If the value is set to 0, your sessions can’t be <code>STOPPED</code>. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of <code>STOPPED</code>).</p>
+    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the <code>READY</code> state. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
     pub fn max_stopped_session_length_in_minutes(&self) -> i32 {
         self.max_stopped_session_length_in_minutes
     }
-    /// <p>(Optional) The upload storage for a streaming session.</p>
+    /// <p>The upload storage for a streaming session.</p>
     pub fn session_storage(
         &self,
     ) -> std::option::Option<&crate::model::StreamConfigurationSessionStorage> {
         self.session_storage.as_ref()
+    }
+    /// <p>Information about the streaming session backup.</p>
+    pub fn session_backup(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamConfigurationSessionBackup> {
+        self.session_backup.as_ref()
+    }
+    /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
+    pub fn session_persistence_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::SessionPersistenceMode> {
+        self.session_persistence_mode.as_ref()
+    }
+    /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+    pub fn volume_configuration(&self) -> std::option::Option<&crate::model::VolumeConfiguration> {
+        self.volume_configuration.as_ref()
+    }
+    /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
+    /// <ul>
+    /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
+    /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+    /// </ul>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
+    pub fn automatic_termination_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::AutomaticTerminationMode> {
+        self.automatic_termination_mode.as_ref()
     }
 }
 /// See [`StreamConfiguration`](crate::model::StreamConfiguration).
@@ -7857,14 +8812,21 @@ pub mod stream_configuration {
         pub(crate) max_stopped_session_length_in_minutes: std::option::Option<i32>,
         pub(crate) session_storage:
             std::option::Option<crate::model::StreamConfigurationSessionStorage>,
+        pub(crate) session_backup:
+            std::option::Option<crate::model::StreamConfigurationSessionBackup>,
+        pub(crate) session_persistence_mode:
+            std::option::Option<crate::model::SessionPersistenceMode>,
+        pub(crate) volume_configuration: std::option::Option<crate::model::VolumeConfiguration>,
+        pub(crate) automatic_termination_mode:
+            std::option::Option<crate::model::AutomaticTerminationMode>,
     }
     impl Builder {
-        /// <p>Enable or disable the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
+        /// <p>Allows or deactivates the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
         pub fn clipboard_mode(mut self, input: crate::model::StreamingClipboardMode) -> Self {
             self.clipboard_mode = Some(input);
             self
         }
-        /// <p>Enable or disable the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
+        /// <p>Allows or deactivates the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
         pub fn set_clipboard_mode(
             mut self,
             input: std::option::Option<crate::model::StreamingClipboardMode>,
@@ -7923,16 +8885,18 @@ pub mod stream_configuration {
             self.streaming_image_ids = input;
             self
         }
-        /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
-        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
+        /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the <code>STOPPED</code> state. The default value is 0. The maximum value is 5760.</p>
+        /// <p>This field is allowed only when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code> and <code>automaticTerminationMode</code> is <code>ACTIVATED</code>.</p>
+        /// <p>If the value is set to 0, your sessions can’t be <code>STOPPED</code>. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of <code>STOPPED</code>).</p>
+        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the <code>READY</code> state. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
         pub fn max_stopped_session_length_in_minutes(mut self, input: i32) -> Self {
             self.max_stopped_session_length_in_minutes = Some(input);
             self
         }
-        /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
-        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
+        /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the <code>STOPPED</code> state. The default value is 0. The maximum value is 5760.</p>
+        /// <p>This field is allowed only when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code> and <code>automaticTerminationMode</code> is <code>ACTIVATED</code>.</p>
+        /// <p>If the value is set to 0, your sessions can’t be <code>STOPPED</code>. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of <code>STOPPED</code>).</p>
+        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the <code>READY</code> state. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
         pub fn set_max_stopped_session_length_in_minutes(
             mut self,
             input: std::option::Option<i32>,
@@ -7940,7 +8904,7 @@ pub mod stream_configuration {
             self.max_stopped_session_length_in_minutes = input;
             self
         }
-        /// <p>(Optional) The upload storage for a streaming session.</p>
+        /// <p>The upload storage for a streaming session.</p>
         pub fn session_storage(
             mut self,
             input: crate::model::StreamConfigurationSessionStorage,
@@ -7948,7 +8912,7 @@ pub mod stream_configuration {
             self.session_storage = Some(input);
             self
         }
-        /// <p>(Optional) The upload storage for a streaming session.</p>
+        /// <p>The upload storage for a streaming session.</p>
         pub fn set_session_storage(
             mut self,
             input: std::option::Option<crate::model::StreamConfigurationSessionStorage>,
@@ -7956,19 +8920,94 @@ pub mod stream_configuration {
             self.session_storage = input;
             self
         }
+        /// <p>Information about the streaming session backup.</p>
+        pub fn session_backup(
+            mut self,
+            input: crate::model::StreamConfigurationSessionBackup,
+        ) -> Self {
+            self.session_backup = Some(input);
+            self
+        }
+        /// <p>Information about the streaming session backup.</p>
+        pub fn set_session_backup(
+            mut self,
+            input: std::option::Option<crate::model::StreamConfigurationSessionBackup>,
+        ) -> Self {
+            self.session_backup = input;
+            self
+        }
+        /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
+        pub fn session_persistence_mode(
+            mut self,
+            input: crate::model::SessionPersistenceMode,
+        ) -> Self {
+            self.session_persistence_mode = Some(input);
+            self
+        }
+        /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
+        pub fn set_session_persistence_mode(
+            mut self,
+            input: std::option::Option<crate::model::SessionPersistenceMode>,
+        ) -> Self {
+            self.session_persistence_mode = input;
+            self
+        }
+        /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+        /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+        pub fn volume_configuration(mut self, input: crate::model::VolumeConfiguration) -> Self {
+            self.volume_configuration = Some(input);
+            self
+        }
+        /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+        /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+        pub fn set_volume_configuration(
+            mut self,
+            input: std::option::Option<crate::model::VolumeConfiguration>,
+        ) -> Self {
+            self.volume_configuration = input;
+            self
+        }
+        /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
+        /// <ul>
+        /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
+        /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+        /// </ul>
+        /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
+        pub fn automatic_termination_mode(
+            mut self,
+            input: crate::model::AutomaticTerminationMode,
+        ) -> Self {
+            self.automatic_termination_mode = Some(input);
+            self
+        }
+        /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
+        /// <ul>
+        /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
+        /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+        /// </ul>
+        /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
+        pub fn set_automatic_termination_mode(
+            mut self,
+            input: std::option::Option<crate::model::AutomaticTerminationMode>,
+        ) -> Self {
+            self.automatic_termination_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StreamConfiguration`](crate::model::StreamConfiguration).
         pub fn build(self) -> crate::model::StreamConfiguration {
             crate::model::StreamConfiguration {
                 clipboard_mode: self.clipboard_mode,
                 ec2_instance_types: self.ec2_instance_types,
-                max_session_length_in_minutes: self
-                    .max_session_length_in_minutes
-                    .unwrap_or_default(),
+                max_session_length_in_minutes: self.max_session_length_in_minutes,
                 streaming_image_ids: self.streaming_image_ids,
                 max_stopped_session_length_in_minutes: self
                     .max_stopped_session_length_in_minutes
                     .unwrap_or_default(),
                 session_storage: self.session_storage,
+                session_backup: self.session_backup,
+                session_persistence_mode: self.session_persistence_mode,
+                volume_configuration: self.volume_configuration,
+                automatic_termination_mode: self.automatic_termination_mode,
             }
         }
     }
@@ -7977,6 +9016,80 @@ impl StreamConfiguration {
     /// Creates a new builder-style object to manufacture [`StreamConfiguration`](crate::model::StreamConfiguration).
     pub fn builder() -> crate::model::stream_configuration::Builder {
         crate::model::stream_configuration::Builder::default()
+    }
+}
+
+/// <p>Configures how streaming sessions are backed up when launched from this launch profile.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StreamConfigurationSessionBackup {
+    /// <p>Specifies how artists sessions are backed up.</p>
+    /// <p>Configures backups for streaming sessions launched with this launch profile. The default value is <code>DEACTIVATED</code>, which means that backups are deactivated. To allow backups, set this value to <code>AUTOMATIC</code>.</p>
+    #[doc(hidden)]
+    pub mode: std::option::Option<crate::model::SessionBackupMode>,
+    /// <p>The maximum number of backups that each streaming session created from this launch profile can have.</p>
+    #[doc(hidden)]
+    pub max_backups_to_retain: i32,
+}
+impl StreamConfigurationSessionBackup {
+    /// <p>Specifies how artists sessions are backed up.</p>
+    /// <p>Configures backups for streaming sessions launched with this launch profile. The default value is <code>DEACTIVATED</code>, which means that backups are deactivated. To allow backups, set this value to <code>AUTOMATIC</code>.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::SessionBackupMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The maximum number of backups that each streaming session created from this launch profile can have.</p>
+    pub fn max_backups_to_retain(&self) -> i32 {
+        self.max_backups_to_retain
+    }
+}
+/// See [`StreamConfigurationSessionBackup`](crate::model::StreamConfigurationSessionBackup).
+pub mod stream_configuration_session_backup {
+
+    /// A builder for [`StreamConfigurationSessionBackup`](crate::model::StreamConfigurationSessionBackup).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) mode: std::option::Option<crate::model::SessionBackupMode>,
+        pub(crate) max_backups_to_retain: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Specifies how artists sessions are backed up.</p>
+        /// <p>Configures backups for streaming sessions launched with this launch profile. The default value is <code>DEACTIVATED</code>, which means that backups are deactivated. To allow backups, set this value to <code>AUTOMATIC</code>.</p>
+        pub fn mode(mut self, input: crate::model::SessionBackupMode) -> Self {
+            self.mode = Some(input);
+            self
+        }
+        /// <p>Specifies how artists sessions are backed up.</p>
+        /// <p>Configures backups for streaming sessions launched with this launch profile. The default value is <code>DEACTIVATED</code>, which means that backups are deactivated. To allow backups, set this value to <code>AUTOMATIC</code>.</p>
+        pub fn set_mode(
+            mut self,
+            input: std::option::Option<crate::model::SessionBackupMode>,
+        ) -> Self {
+            self.mode = input;
+            self
+        }
+        /// <p>The maximum number of backups that each streaming session created from this launch profile can have.</p>
+        pub fn max_backups_to_retain(mut self, input: i32) -> Self {
+            self.max_backups_to_retain = Some(input);
+            self
+        }
+        /// <p>The maximum number of backups that each streaming session created from this launch profile can have.</p>
+        pub fn set_max_backups_to_retain(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_backups_to_retain = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StreamConfigurationSessionBackup`](crate::model::StreamConfigurationSessionBackup).
+        pub fn build(self) -> crate::model::StreamConfigurationSessionBackup {
+            crate::model::StreamConfigurationSessionBackup {
+                mode: self.mode,
+                max_backups_to_retain: self.max_backups_to_retain.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl StreamConfigurationSessionBackup {
+    /// Creates a new builder-style object to manufacture [`StreamConfigurationSessionBackup`](crate::model::StreamConfigurationSessionBackup).
+    pub fn builder() -> crate::model::stream_configuration_session_backup::Builder {
+        crate::model::stream_configuration_session_backup::Builder::default()
     }
 }
 
@@ -8650,7 +9763,7 @@ impl AsRef<str> for LaunchProfileState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamConfigurationCreate {
-    /// <p>Enable or disable the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
+    /// <p>Allows or deactivates the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
     #[doc(hidden)]
     pub clipboard_mode: std::option::Option<crate::model::StreamingClipboardMode>,
     /// <p>The EC2 instance types that users can select from when launching a streaming session with this launch profile.</p>
@@ -8658,21 +9771,40 @@ pub struct StreamConfigurationCreate {
     pub ec2_instance_types: std::option::Option<std::vec::Vec<crate::model::StreamingInstanceType>>,
     /// <p>The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690 minutes, and the maximum length of time is 30 days.</p>
     #[doc(hidden)]
-    pub max_session_length_in_minutes: i32,
+    pub max_session_length_in_minutes: std::option::Option<i32>,
     /// <p>The streaming images that users can select from when launching a streaming session with this launch profile.</p>
     #[doc(hidden)]
     pub streaming_image_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
-    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
+    /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the <code>STOPPED</code> state. The default value is 0. The maximum value is 5760.</p>
+    /// <p>This field is allowed only when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code> and <code>automaticTerminationMode</code> is <code>ACTIVATED</code>.</p>
+    /// <p>If the value is set to 0, your sessions can’t be <code>STOPPED</code>. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of <code>STOPPED</code>).</p>
+    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the <code>READY</code> state. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
     #[doc(hidden)]
     pub max_stopped_session_length_in_minutes: i32,
-    /// <p>(Optional) The upload storage for a streaming workstation that is created using this launch profile.</p>
+    /// <p>The upload storage for a streaming workstation that is created using this launch profile.</p>
     #[doc(hidden)]
     pub session_storage: std::option::Option<crate::model::StreamConfigurationSessionStorage>,
+    /// <p>Configures how streaming sessions are backed up when launched from this launch profile.</p>
+    #[doc(hidden)]
+    pub session_backup: std::option::Option<crate::model::StreamConfigurationSessionBackup>,
+    /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
+    #[doc(hidden)]
+    pub session_persistence_mode: std::option::Option<crate::model::SessionPersistenceMode>,
+    /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+    #[doc(hidden)]
+    pub volume_configuration: std::option::Option<crate::model::VolumeConfiguration>,
+    /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
+    /// <ul>
+    /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
+    /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+    /// </ul>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
+    #[doc(hidden)]
+    pub automatic_termination_mode: std::option::Option<crate::model::AutomaticTerminationMode>,
 }
 impl StreamConfigurationCreate {
-    /// <p>Enable or disable the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
+    /// <p>Allows or deactivates the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
     pub fn clipboard_mode(&self) -> std::option::Option<&crate::model::StreamingClipboardMode> {
         self.clipboard_mode.as_ref()
     }
@@ -8683,24 +9815,53 @@ impl StreamConfigurationCreate {
         self.ec2_instance_types.as_deref()
     }
     /// <p>The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690 minutes, and the maximum length of time is 30 days.</p>
-    pub fn max_session_length_in_minutes(&self) -> i32 {
+    pub fn max_session_length_in_minutes(&self) -> std::option::Option<i32> {
         self.max_session_length_in_minutes
     }
     /// <p>The streaming images that users can select from when launching a streaming session with this launch profile.</p>
     pub fn streaming_image_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.streaming_image_ids.as_deref()
     }
-    /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
-    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
+    /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the <code>STOPPED</code> state. The default value is 0. The maximum value is 5760.</p>
+    /// <p>This field is allowed only when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code> and <code>automaticTerminationMode</code> is <code>ACTIVATED</code>.</p>
+    /// <p>If the value is set to 0, your sessions can’t be <code>STOPPED</code>. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of <code>STOPPED</code>).</p>
+    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the <code>READY</code> state. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
     pub fn max_stopped_session_length_in_minutes(&self) -> i32 {
         self.max_stopped_session_length_in_minutes
     }
-    /// <p>(Optional) The upload storage for a streaming workstation that is created using this launch profile.</p>
+    /// <p>The upload storage for a streaming workstation that is created using this launch profile.</p>
     pub fn session_storage(
         &self,
     ) -> std::option::Option<&crate::model::StreamConfigurationSessionStorage> {
         self.session_storage.as_ref()
+    }
+    /// <p>Configures how streaming sessions are backed up when launched from this launch profile.</p>
+    pub fn session_backup(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamConfigurationSessionBackup> {
+        self.session_backup.as_ref()
+    }
+    /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
+    pub fn session_persistence_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::SessionPersistenceMode> {
+        self.session_persistence_mode.as_ref()
+    }
+    /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+    pub fn volume_configuration(&self) -> std::option::Option<&crate::model::VolumeConfiguration> {
+        self.volume_configuration.as_ref()
+    }
+    /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
+    /// <ul>
+    /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
+    /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+    /// </ul>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
+    pub fn automatic_termination_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::AutomaticTerminationMode> {
+        self.automatic_termination_mode.as_ref()
     }
 }
 /// See [`StreamConfigurationCreate`](crate::model::StreamConfigurationCreate).
@@ -8717,14 +9878,21 @@ pub mod stream_configuration_create {
         pub(crate) max_stopped_session_length_in_minutes: std::option::Option<i32>,
         pub(crate) session_storage:
             std::option::Option<crate::model::StreamConfigurationSessionStorage>,
+        pub(crate) session_backup:
+            std::option::Option<crate::model::StreamConfigurationSessionBackup>,
+        pub(crate) session_persistence_mode:
+            std::option::Option<crate::model::SessionPersistenceMode>,
+        pub(crate) volume_configuration: std::option::Option<crate::model::VolumeConfiguration>,
+        pub(crate) automatic_termination_mode:
+            std::option::Option<crate::model::AutomaticTerminationMode>,
     }
     impl Builder {
-        /// <p>Enable or disable the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
+        /// <p>Allows or deactivates the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
         pub fn clipboard_mode(mut self, input: crate::model::StreamingClipboardMode) -> Self {
             self.clipboard_mode = Some(input);
             self
         }
-        /// <p>Enable or disable the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
+        /// <p>Allows or deactivates the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
         pub fn set_clipboard_mode(
             mut self,
             input: std::option::Option<crate::model::StreamingClipboardMode>,
@@ -8783,16 +9951,18 @@ pub mod stream_configuration_create {
             self.streaming_image_ids = input;
             self
         }
-        /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
-        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
+        /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the <code>STOPPED</code> state. The default value is 0. The maximum value is 5760.</p>
+        /// <p>This field is allowed only when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code> and <code>automaticTerminationMode</code> is <code>ACTIVATED</code>.</p>
+        /// <p>If the value is set to 0, your sessions can’t be <code>STOPPED</code>. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of <code>STOPPED</code>).</p>
+        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the <code>READY</code> state. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
         pub fn max_stopped_session_length_in_minutes(mut self, input: i32) -> Self {
             self.max_stopped_session_length_in_minutes = Some(input);
             self
         }
-        /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
-        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
+        /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the <code>STOPPED</code> state. The default value is 0. The maximum value is 5760.</p>
+        /// <p>This field is allowed only when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code> and <code>automaticTerminationMode</code> is <code>ACTIVATED</code>.</p>
+        /// <p>If the value is set to 0, your sessions can’t be <code>STOPPED</code>. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of <code>STOPPED</code>).</p>
+        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the <code>READY</code> state. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
         pub fn set_max_stopped_session_length_in_minutes(
             mut self,
             input: std::option::Option<i32>,
@@ -8800,7 +9970,7 @@ pub mod stream_configuration_create {
             self.max_stopped_session_length_in_minutes = input;
             self
         }
-        /// <p>(Optional) The upload storage for a streaming workstation that is created using this launch profile.</p>
+        /// <p>The upload storage for a streaming workstation that is created using this launch profile.</p>
         pub fn session_storage(
             mut self,
             input: crate::model::StreamConfigurationSessionStorage,
@@ -8808,7 +9978,7 @@ pub mod stream_configuration_create {
             self.session_storage = Some(input);
             self
         }
-        /// <p>(Optional) The upload storage for a streaming workstation that is created using this launch profile.</p>
+        /// <p>The upload storage for a streaming workstation that is created using this launch profile.</p>
         pub fn set_session_storage(
             mut self,
             input: std::option::Option<crate::model::StreamConfigurationSessionStorage>,
@@ -8816,19 +9986,94 @@ pub mod stream_configuration_create {
             self.session_storage = input;
             self
         }
+        /// <p>Configures how streaming sessions are backed up when launched from this launch profile.</p>
+        pub fn session_backup(
+            mut self,
+            input: crate::model::StreamConfigurationSessionBackup,
+        ) -> Self {
+            self.session_backup = Some(input);
+            self
+        }
+        /// <p>Configures how streaming sessions are backed up when launched from this launch profile.</p>
+        pub fn set_session_backup(
+            mut self,
+            input: std::option::Option<crate::model::StreamConfigurationSessionBackup>,
+        ) -> Self {
+            self.session_backup = input;
+            self
+        }
+        /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
+        pub fn session_persistence_mode(
+            mut self,
+            input: crate::model::SessionPersistenceMode,
+        ) -> Self {
+            self.session_persistence_mode = Some(input);
+            self
+        }
+        /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
+        pub fn set_session_persistence_mode(
+            mut self,
+            input: std::option::Option<crate::model::SessionPersistenceMode>,
+        ) -> Self {
+            self.session_persistence_mode = input;
+            self
+        }
+        /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+        /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+        pub fn volume_configuration(mut self, input: crate::model::VolumeConfiguration) -> Self {
+            self.volume_configuration = Some(input);
+            self
+        }
+        /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+        /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+        pub fn set_volume_configuration(
+            mut self,
+            input: std::option::Option<crate::model::VolumeConfiguration>,
+        ) -> Self {
+            self.volume_configuration = input;
+            self
+        }
+        /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
+        /// <ul>
+        /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
+        /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+        /// </ul>
+        /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
+        pub fn automatic_termination_mode(
+            mut self,
+            input: crate::model::AutomaticTerminationMode,
+        ) -> Self {
+            self.automatic_termination_mode = Some(input);
+            self
+        }
+        /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
+        /// <ul>
+        /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
+        /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+        /// </ul>
+        /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
+        pub fn set_automatic_termination_mode(
+            mut self,
+            input: std::option::Option<crate::model::AutomaticTerminationMode>,
+        ) -> Self {
+            self.automatic_termination_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StreamConfigurationCreate`](crate::model::StreamConfigurationCreate).
         pub fn build(self) -> crate::model::StreamConfigurationCreate {
             crate::model::StreamConfigurationCreate {
                 clipboard_mode: self.clipboard_mode,
                 ec2_instance_types: self.ec2_instance_types,
-                max_session_length_in_minutes: self
-                    .max_session_length_in_minutes
-                    .unwrap_or_default(),
+                max_session_length_in_minutes: self.max_session_length_in_minutes,
                 streaming_image_ids: self.streaming_image_ids,
                 max_stopped_session_length_in_minutes: self
                     .max_stopped_session_length_in_minutes
                     .unwrap_or_default(),
                 session_storage: self.session_storage,
+                session_backup: self.session_backup,
+                session_persistence_mode: self.session_persistence_mode,
+                volume_configuration: self.volume_configuration,
+                automatic_termination_mode: self.automatic_termination_mode,
             }
         }
     }
@@ -8847,7 +10092,7 @@ pub struct Eula {
     /// <p>The EULA content.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The EULA ID.</p>
@@ -8856,7 +10101,7 @@ pub struct Eula {
     /// <p>The name for the EULA.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -8865,7 +10110,7 @@ impl Eula {
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -8877,7 +10122,7 @@ impl Eula {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -8905,12 +10150,12 @@ pub mod eula {
             self.content = input;
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -8938,12 +10183,12 @@ pub mod eula {
             self.name = input;
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
         pub fn set_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -8974,7 +10219,7 @@ impl Eula {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EulaAcceptance {
-    /// <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+    /// <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
     #[doc(hidden)]
     pub accepted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the person who accepted the EULA.</p>
@@ -8991,7 +10236,7 @@ pub struct EulaAcceptance {
     pub eula_id: std::option::Option<std::string::String>,
 }
 impl EulaAcceptance {
-    /// <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+    /// <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
     pub fn accepted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.accepted_at.as_ref()
     }
@@ -9025,12 +10270,12 @@ pub mod eula_acceptance {
         pub(crate) eula_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+        /// <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
         pub fn accepted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.accepted_at = Some(input);
             self
         }
-        /// <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+        /// <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
         pub fn set_accepted_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

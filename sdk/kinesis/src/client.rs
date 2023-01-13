@@ -96,6 +96,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::AddTagsToStream::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::AddTagsToStream::set_stream_name): <p>The name of the stream.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::AddTagsToStream::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::AddTagsToStream::set_tags): <p>A set of up to 10 key-value pairs to use to create the tags.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::AddTagsToStream::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::AddTagsToStream::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`AddTagsToStreamOutput`](crate::output::AddTagsToStreamOutput)
 
     /// - On failure, responds with [`SdkError<AddTagsToStreamError>`](crate::error::AddTagsToStreamError)
@@ -119,6 +120,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::DecreaseStreamRetentionPeriod::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::DecreaseStreamRetentionPeriod::set_stream_name): <p>The name of the stream to modify.</p>
     ///   - [`retention_period_hours(i32)`](crate::client::fluent_builders::DecreaseStreamRetentionPeriod::retention_period_hours) / [`set_retention_period_hours(Option<i32>)`](crate::client::fluent_builders::DecreaseStreamRetentionPeriod::set_retention_period_hours): <p>The new retention period of the stream, in hours. Must be less than the current retention period.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DecreaseStreamRetentionPeriod::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DecreaseStreamRetentionPeriod::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`DecreaseStreamRetentionPeriodOutput`](crate::output::DecreaseStreamRetentionPeriodOutput)
 
     /// - On failure, responds with [`SdkError<DecreaseStreamRetentionPeriodError>`](crate::error::DecreaseStreamRetentionPeriodError)
@@ -132,6 +134,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::DeleteStream::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::DeleteStream::set_stream_name): <p>The name of the stream to delete.</p>
     ///   - [`enforce_consumer_deletion(bool)`](crate::client::fluent_builders::DeleteStream::enforce_consumer_deletion) / [`set_enforce_consumer_deletion(Option<bool>)`](crate::client::fluent_builders::DeleteStream::set_enforce_consumer_deletion): <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteStream::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DeleteStream::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`DeleteStreamOutput`](crate::output::DeleteStreamOutput)
 
     /// - On failure, responds with [`SdkError<DeleteStreamError>`](crate::error::DeleteStreamError)
@@ -169,6 +172,7 @@ impl Client {
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::DescribeStream::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::DescribeStream::set_stream_name): <p>The name of the stream to describe.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeStream::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeStream::set_limit): <p>The maximum number of shards to return in a single call. The default value is 100. If you specify a value greater than 100, at most 100 results are returned.</p>
     ///   - [`exclusive_start_shard_id(impl Into<String>)`](crate::client::fluent_builders::DescribeStream::exclusive_start_shard_id) / [`set_exclusive_start_shard_id(Option<String>)`](crate::client::fluent_builders::DescribeStream::set_exclusive_start_shard_id): <p>The shard ID of the shard to start with.</p>  <p>Specify this parameter to indicate that you want to describe the stream starting with the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>  <p>If you don't specify this parameter, the default behavior for <code>DescribeStream</code> is to describe the stream starting with the first shard in the stream.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeStream::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DescribeStream::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`DescribeStreamOutput`](crate::output::DescribeStreamOutput) with field(s):
     ///   - [`stream_description(Option<StreamDescription>)`](crate::output::DescribeStreamOutput::stream_description): <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of shard objects that comprise the stream, and whether there are more shards available.</p>
     /// - On failure, responds with [`SdkError<DescribeStreamError>`](crate::error::DescribeStreamError)
@@ -191,6 +195,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::DescribeStreamSummary::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::DescribeStreamSummary::set_stream_name): <p>The name of the stream to describe.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeStreamSummary::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DescribeStreamSummary::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`DescribeStreamSummaryOutput`](crate::output::DescribeStreamSummaryOutput) with field(s):
     ///   - [`stream_description_summary(Option<StreamDescriptionSummary>)`](crate::output::DescribeStreamSummaryOutput::stream_description_summary): <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
     /// - On failure, responds with [`SdkError<DescribeStreamSummaryError>`](crate::error::DescribeStreamSummaryError)
@@ -202,10 +207,12 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::DisableEnhancedMonitoring::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::DisableEnhancedMonitoring::set_stream_name): <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
     ///   - [`shard_level_metrics(Vec<MetricsName>)`](crate::client::fluent_builders::DisableEnhancedMonitoring::shard_level_metrics) / [`set_shard_level_metrics(Option<Vec<MetricsName>>)`](crate::client::fluent_builders::DisableEnhancedMonitoring::set_shard_level_metrics): <p>List of shard-level metrics to disable.</p>  <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.</p>  <ul>   <li> <p> <code>IncomingBytes</code> </p> </li>   <li> <p> <code>IncomingRecords</code> </p> </li>   <li> <p> <code>OutgoingBytes</code> </p> </li>   <li> <p> <code>OutgoingRecords</code> </p> </li>   <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li>   <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li>   <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li>   <li> <p> <code>ALL</code> </p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DisableEnhancedMonitoring::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DisableEnhancedMonitoring::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`DisableEnhancedMonitoringOutput`](crate::output::DisableEnhancedMonitoringOutput) with field(s):
     ///   - [`stream_name(Option<String>)`](crate::output::DisableEnhancedMonitoringOutput::stream_name): <p>The name of the Kinesis data stream.</p>
     ///   - [`current_shard_level_metrics(Option<Vec<MetricsName>>)`](crate::output::DisableEnhancedMonitoringOutput::current_shard_level_metrics): <p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>
     ///   - [`desired_shard_level_metrics(Option<Vec<MetricsName>>)`](crate::output::DisableEnhancedMonitoringOutput::desired_shard_level_metrics): <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
+    ///   - [`stream_arn(Option<String>)`](crate::output::DisableEnhancedMonitoringOutput::stream_arn): <p>The ARN of the stream.</p>
     /// - On failure, responds with [`SdkError<DisableEnhancedMonitoringError>`](crate::error::DisableEnhancedMonitoringError)
     pub fn disable_enhanced_monitoring(&self) -> fluent_builders::DisableEnhancedMonitoring {
         fluent_builders::DisableEnhancedMonitoring::new(self.handle.clone())
@@ -215,10 +222,12 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::EnableEnhancedMonitoring::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::EnableEnhancedMonitoring::set_stream_name): <p>The name of the stream for which to enable enhanced monitoring.</p>
     ///   - [`shard_level_metrics(Vec<MetricsName>)`](crate::client::fluent_builders::EnableEnhancedMonitoring::shard_level_metrics) / [`set_shard_level_metrics(Option<Vec<MetricsName>>)`](crate::client::fluent_builders::EnableEnhancedMonitoring::set_shard_level_metrics): <p>List of shard-level metrics to enable.</p>  <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables every metric.</p>  <ul>   <li> <p> <code>IncomingBytes</code> </p> </li>   <li> <p> <code>IncomingRecords</code> </p> </li>   <li> <p> <code>OutgoingBytes</code> </p> </li>   <li> <p> <code>OutgoingRecords</code> </p> </li>   <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li>   <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li>   <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li>   <li> <p> <code>ALL</code> </p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::EnableEnhancedMonitoring::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::EnableEnhancedMonitoring::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`EnableEnhancedMonitoringOutput`](crate::output::EnableEnhancedMonitoringOutput) with field(s):
     ///   - [`stream_name(Option<String>)`](crate::output::EnableEnhancedMonitoringOutput::stream_name): <p>The name of the Kinesis data stream.</p>
     ///   - [`current_shard_level_metrics(Option<Vec<MetricsName>>)`](crate::output::EnableEnhancedMonitoringOutput::current_shard_level_metrics): <p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>
     ///   - [`desired_shard_level_metrics(Option<Vec<MetricsName>>)`](crate::output::EnableEnhancedMonitoringOutput::desired_shard_level_metrics): <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
+    ///   - [`stream_arn(Option<String>)`](crate::output::EnableEnhancedMonitoringOutput::stream_arn): <p>The ARN of the stream.</p>
     /// - On failure, responds with [`SdkError<EnableEnhancedMonitoringError>`](crate::error::EnableEnhancedMonitoringError)
     pub fn enable_enhanced_monitoring(&self) -> fluent_builders::EnableEnhancedMonitoring {
         fluent_builders::EnableEnhancedMonitoring::new(self.handle.clone())
@@ -228,6 +237,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`shard_iterator(impl Into<String>)`](crate::client::fluent_builders::GetRecords::shard_iterator) / [`set_shard_iterator(Option<String>)`](crate::client::fluent_builders::GetRecords::set_shard_iterator): <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::GetRecords::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::GetRecords::set_limit): <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <code>GetRecords</code> throws <code>InvalidArgumentException</code>. The default value is 10,000.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::GetRecords::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::GetRecords::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`GetRecordsOutput`](crate::output::GetRecordsOutput) with field(s):
     ///   - [`records(Option<Vec<Record>>)`](crate::output::GetRecordsOutput::records): <p>The data records retrieved from the shard.</p>
     ///   - [`next_shard_iterator(Option<String>)`](crate::output::GetRecordsOutput::next_shard_iterator): <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
@@ -245,6 +255,7 @@ impl Client {
     ///   - [`shard_iterator_type(ShardIteratorType)`](crate::client::fluent_builders::GetShardIterator::shard_iterator_type) / [`set_shard_iterator_type(Option<ShardIteratorType>)`](crate::client::fluent_builders::GetShardIterator::set_shard_iterator_type): <p>Determines how the shard iterator is used to start reading data records from the shard.</p>  <p>The following are the valid Amazon Kinesis shard iterator types:</p>  <ul>   <li> <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li>   <li> <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li>   <li> <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value <code>Timestamp</code>.</p> </li>   <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li>   <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li>  </ul>
     ///   - [`starting_sequence_number(impl Into<String>)`](crate::client::fluent_builders::GetShardIterator::starting_sequence_number) / [`set_starting_sequence_number(Option<String>)`](crate::client::fluent_builders::GetShardIterator::set_starting_sequence_number): <p>The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
     ///   - [`timestamp(DateTime)`](crate::client::fluent_builders::GetShardIterator::timestamp) / [`set_timestamp(Option<DateTime>)`](crate::client::fluent_builders::GetShardIterator::set_timestamp): <p>The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::GetShardIterator::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::GetShardIterator::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput) with field(s):
     ///   - [`shard_iterator(Option<String>)`](crate::output::GetShardIteratorOutput::shard_iterator): <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
     /// - On failure, responds with [`SdkError<GetShardIteratorError>`](crate::error::GetShardIteratorError)
@@ -256,6 +267,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::IncreaseStreamRetentionPeriod::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::IncreaseStreamRetentionPeriod::set_stream_name): <p>The name of the stream to modify.</p>
     ///   - [`retention_period_hours(i32)`](crate::client::fluent_builders::IncreaseStreamRetentionPeriod::retention_period_hours) / [`set_retention_period_hours(Option<i32>)`](crate::client::fluent_builders::IncreaseStreamRetentionPeriod::set_retention_period_hours): <p>The new retention period of the stream, in hours. Must be more than the current retention period.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::IncreaseStreamRetentionPeriod::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::IncreaseStreamRetentionPeriod::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`IncreaseStreamRetentionPeriodOutput`](crate::output::IncreaseStreamRetentionPeriodOutput)
 
     /// - On failure, responds with [`SdkError<IncreaseStreamRetentionPeriodError>`](crate::error::IncreaseStreamRetentionPeriodError)
@@ -273,6 +285,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListShards::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListShards::set_max_results): <p>The maximum number of shards to return in a single call to <code>ListShards</code>. The maximum number of shards to return in a single call. The default value is 1000. If you specify a value greater than 1000, at most 1000 results are returned. </p>  <p>When the number of shards to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListShards</code> to list the next set of shards.</p>
     ///   - [`stream_creation_timestamp(DateTime)`](crate::client::fluent_builders::ListShards::stream_creation_timestamp) / [`set_stream_creation_timestamp(Option<DateTime>)`](crate::client::fluent_builders::ListShards::set_stream_creation_timestamp): <p>Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the shards for.</p>  <p>You cannot specify this parameter if you specify the <code>NextToken</code> parameter.</p>
     ///   - [`shard_filter(ShardFilter)`](crate::client::fluent_builders::ListShards::shard_filter) / [`set_shard_filter(Option<ShardFilter>)`](crate::client::fluent_builders::ListShards::set_shard_filter): <p>Enables you to filter out the response of the <code>ListShards</code> API. You can only specify one filter at a time. </p>  <p>If you use the <code>ShardFilter</code> parameter when invoking the ListShards API, the <code>Type</code> is the required property and must be specified. If you specify the <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or <code>AT_LATEST</code> types, you do not need to specify either the <code>ShardId</code> or the <code>Timestamp</code> optional properties. </p>  <p>If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide the value for the optional <code>ShardId</code> property. The <code>ShardId</code> property is identical in fuctionality to the <code>ExclusiveStartShardId</code> parameter of the <code>ListShards</code> API. When <code>ShardId</code> property is specified, the response includes the shards starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided. </p>  <p>If you specify the <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type, you must also provide the value for the optional <code>Timestamp</code> property. If you specify the AT_TIMESTAMP type, then all shards that were open at the provided timestamp are returned. If you specify the FROM_TIMESTAMP type, then all shards starting from the provided timestamp to TIP are returned. </p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::ListShards::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::ListShards::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`ListShardsOutput`](crate::output::ListShardsOutput) with field(s):
     ///   - [`shards(Option<Vec<Shard>>)`](crate::output::ListShardsOutput::shards): <p>An array of JSON objects. Each object represents one shard and specifies the IDs of the shard, the shard's parent, and the shard that's adjacent to the shard's parent. Each object also contains the starting and ending hash keys and the starting and ending sequence numbers for the shard.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListShardsOutput::next_token): <p>When the number of shards in the data stream is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of shards in the data stream, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListShards</code> to list the next set of shards. For more information about the use of this pagination token when calling the <code>ListShards</code> operation, see <code>ListShardsInput$NextToken</code>.</p> <important>   <p>Tokens expire after 300 seconds. When you obtain a value for <code>NextToken</code> in the response to a call to <code>ListShards</code>, you have 300 seconds to use that value. If you specify an expired token in a call to <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>  </important>
@@ -296,13 +309,17 @@ impl Client {
         fluent_builders::ListStreamConsumers::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListStreams`](crate::client::fluent_builders::ListStreams) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreams::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListStreams::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListStreams::set_limit): <p>The maximum number of streams to list. The default value is 100. If you specify a value greater than 100, at most 100 results are returned.</p>
     ///   - [`exclusive_start_stream_name(impl Into<String>)`](crate::client::fluent_builders::ListStreams::exclusive_start_stream_name) / [`set_exclusive_start_stream_name(Option<String>)`](crate::client::fluent_builders::ListStreams::set_exclusive_start_stream_name): <p>The name of the stream to start the list with.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreams::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreams::set_next_token): <p></p>
     /// - On success, responds with [`ListStreamsOutput`](crate::output::ListStreamsOutput) with field(s):
     ///   - [`stream_names(Option<Vec<String>>)`](crate::output::ListStreamsOutput::stream_names): <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
     ///   - [`has_more_streams(Option<bool>)`](crate::output::ListStreamsOutput::has_more_streams): <p>If set to <code>true</code>, there are more streams available to list.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListStreamsOutput::next_token): <p></p>
+    ///   - [`stream_summaries(Option<Vec<StreamSummary>>)`](crate::output::ListStreamsOutput::stream_summaries): <p></p>
     /// - On failure, responds with [`SdkError<ListStreamsError>`](crate::error::ListStreamsError)
     pub fn list_streams(&self) -> fluent_builders::ListStreams {
         fluent_builders::ListStreams::new(self.handle.clone())
@@ -313,6 +330,7 @@ impl Client {
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::ListTagsForStream::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::ListTagsForStream::set_stream_name): <p>The name of the stream.</p>
     ///   - [`exclusive_start_tag_key(impl Into<String>)`](crate::client::fluent_builders::ListTagsForStream::exclusive_start_tag_key) / [`set_exclusive_start_tag_key(Option<String>)`](crate::client::fluent_builders::ListTagsForStream::set_exclusive_start_tag_key): <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListTagsForStream::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListTagsForStream::set_limit): <p>The number of tags to return. If this number is less than the total number of tags associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForStream::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForStream::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`ListTagsForStreamOutput`](crate::output::ListTagsForStreamOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForStreamOutput::tags): <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
     ///   - [`has_more_tags(Option<bool>)`](crate::output::ListTagsForStreamOutput::has_more_tags): <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
@@ -326,6 +344,7 @@ impl Client {
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::MergeShards::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::MergeShards::set_stream_name): <p>The name of the stream for the merge.</p>
     ///   - [`shard_to_merge(impl Into<String>)`](crate::client::fluent_builders::MergeShards::shard_to_merge) / [`set_shard_to_merge(Option<String>)`](crate::client::fluent_builders::MergeShards::set_shard_to_merge): <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
     ///   - [`adjacent_shard_to_merge(impl Into<String>)`](crate::client::fluent_builders::MergeShards::adjacent_shard_to_merge) / [`set_adjacent_shard_to_merge(Option<String>)`](crate::client::fluent_builders::MergeShards::set_adjacent_shard_to_merge): <p>The shard ID of the adjacent shard for the merge.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::MergeShards::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::MergeShards::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`MergeShardsOutput`](crate::output::MergeShardsOutput)
 
     /// - On failure, responds with [`SdkError<MergeShardsError>`](crate::error::MergeShardsError)
@@ -340,6 +359,7 @@ impl Client {
     ///   - [`partition_key(impl Into<String>)`](crate::client::fluent_builders::PutRecord::partition_key) / [`set_partition_key(Option<String>)`](crate::client::fluent_builders::PutRecord::set_partition_key): <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
     ///   - [`explicit_hash_key(impl Into<String>)`](crate::client::fluent_builders::PutRecord::explicit_hash_key) / [`set_explicit_hash_key(Option<String>)`](crate::client::fluent_builders::PutRecord::set_explicit_hash_key): <p>The hash value used to explicitly determine the shard the data record is assigned to by overriding the partition key hash.</p>
     ///   - [`sequence_number_for_ordering(impl Into<String>)`](crate::client::fluent_builders::PutRecord::sequence_number_for_ordering) / [`set_sequence_number_for_ordering(Option<String>)`](crate::client::fluent_builders::PutRecord::set_sequence_number_for_ordering): <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are coarsely ordered based on arrival time.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::PutRecord::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::PutRecord::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`PutRecordOutput`](crate::output::PutRecordOutput) with field(s):
     ///   - [`shard_id(Option<String>)`](crate::output::PutRecordOutput::shard_id): <p>The shard ID of the shard where the data record was placed.</p>
     ///   - [`sequence_number(Option<String>)`](crate::output::PutRecordOutput::sequence_number): <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
@@ -353,6 +373,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`records(Vec<PutRecordsRequestEntry>)`](crate::client::fluent_builders::PutRecords::records) / [`set_records(Option<Vec<PutRecordsRequestEntry>>)`](crate::client::fluent_builders::PutRecords::set_records): <p>The records associated with the request.</p>
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::PutRecords::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::PutRecords::set_stream_name): <p>The stream name associated with the request.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::PutRecords::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::PutRecords::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`PutRecordsOutput`](crate::output::PutRecordsOutput) with field(s):
     ///   - [`failed_record_count(Option<i32>)`](crate::output::PutRecordsOutput::failed_record_count): <p>The number of unsuccessfully processed records in a <code>PutRecords</code> request.</p>
     ///   - [`records(Option<Vec<PutRecordsResultEntry>>)`](crate::output::PutRecordsOutput::records): <p>An array of successfully and unsuccessfully processed record results. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
@@ -377,6 +398,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::RemoveTagsFromStream::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::RemoveTagsFromStream::set_stream_name): <p>The name of the stream.</p>
     ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::RemoveTagsFromStream::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveTagsFromStream::set_tag_keys): <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveTagsFromStream::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::RemoveTagsFromStream::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`RemoveTagsFromStreamOutput`](crate::output::RemoveTagsFromStreamOutput)
 
     /// - On failure, responds with [`SdkError<RemoveTagsFromStreamError>`](crate::error::RemoveTagsFromStreamError)
@@ -389,6 +411,7 @@ impl Client {
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::SplitShard::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::SplitShard::set_stream_name): <p>The name of the stream for the shard split.</p>
     ///   - [`shard_to_split(impl Into<String>)`](crate::client::fluent_builders::SplitShard::shard_to_split) / [`set_shard_to_split(Option<String>)`](crate::client::fluent_builders::SplitShard::set_shard_to_split): <p>The shard ID of the shard to split.</p>
     ///   - [`new_starting_hash_key(impl Into<String>)`](crate::client::fluent_builders::SplitShard::new_starting_hash_key) / [`set_new_starting_hash_key(Option<String>)`](crate::client::fluent_builders::SplitShard::set_new_starting_hash_key): <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::SplitShard::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::SplitShard::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`SplitShardOutput`](crate::output::SplitShardOutput)
 
     /// - On failure, responds with [`SdkError<SplitShardError>`](crate::error::SplitShardError)
@@ -401,6 +424,7 @@ impl Client {
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::StartStreamEncryption::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::StartStreamEncryption::set_stream_name): <p>The name of the stream for which to start encrypting records.</p>
     ///   - [`encryption_type(EncryptionType)`](crate::client::fluent_builders::StartStreamEncryption::encryption_type) / [`set_encryption_type(Option<EncryptionType>)`](crate::client::fluent_builders::StartStreamEncryption::set_encryption_type): <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
     ///   - [`key_id(impl Into<String>)`](crate::client::fluent_builders::StartStreamEncryption::key_id) / [`set_key_id(Option<String>)`](crate::client::fluent_builders::StartStreamEncryption::set_key_id): <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>  <ul>   <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>   <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>   <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>   <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>   <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>  </ul>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::StartStreamEncryption::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::StartStreamEncryption::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`StartStreamEncryptionOutput`](crate::output::StartStreamEncryptionOutput)
 
     /// - On failure, responds with [`SdkError<StartStreamEncryptionError>`](crate::error::StartStreamEncryptionError)
@@ -413,6 +437,7 @@ impl Client {
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::StopStreamEncryption::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::StopStreamEncryption::set_stream_name): <p>The name of the stream on which to stop encrypting records.</p>
     ///   - [`encryption_type(EncryptionType)`](crate::client::fluent_builders::StopStreamEncryption::encryption_type) / [`set_encryption_type(Option<EncryptionType>)`](crate::client::fluent_builders::StopStreamEncryption::set_encryption_type): <p>The encryption type. The only valid value is <code>KMS</code>.</p>
     ///   - [`key_id(impl Into<String>)`](crate::client::fluent_builders::StopStreamEncryption::key_id) / [`set_key_id(Option<String>)`](crate::client::fluent_builders::StopStreamEncryption::set_key_id): <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>  <ul>   <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>   <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>   <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>   <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>   <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>  </ul>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::StopStreamEncryption::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::StopStreamEncryption::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`StopStreamEncryptionOutput`](crate::output::StopStreamEncryptionOutput)
 
     /// - On failure, responds with [`SdkError<StopStreamEncryptionError>`](crate::error::StopStreamEncryptionError)
@@ -425,10 +450,12 @@ impl Client {
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::UpdateShardCount::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::UpdateShardCount::set_stream_name): <p>The name of the stream.</p>
     ///   - [`target_shard_count(i32)`](crate::client::fluent_builders::UpdateShardCount::target_shard_count) / [`set_target_shard_count(Option<i32>)`](crate::client::fluent_builders::UpdateShardCount::set_target_shard_count): <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p>  <ul>   <li> <p>Set this value to more than double your current shard count for a stream.</p> </li>   <li> <p>Set this value below half your current shard count for a stream.</p> </li>   <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li>   <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li>  </ul>
     ///   - [`scaling_type(ScalingType)`](crate::client::fluent_builders::UpdateShardCount::scaling_type) / [`set_scaling_type(Option<ScalingType>)`](crate::client::fluent_builders::UpdateShardCount::set_scaling_type): <p>The scaling type. Uniform scaling creates shards of equal size.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateShardCount::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::UpdateShardCount::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`UpdateShardCountOutput`](crate::output::UpdateShardCountOutput) with field(s):
     ///   - [`stream_name(Option<String>)`](crate::output::UpdateShardCountOutput::stream_name): <p>The name of the stream.</p>
     ///   - [`current_shard_count(Option<i32>)`](crate::output::UpdateShardCountOutput::current_shard_count): <p>The current number of shards.</p>
     ///   - [`target_shard_count(Option<i32>)`](crate::output::UpdateShardCountOutput::target_shard_count): <p>The updated number of shards.</p>
+    ///   - [`stream_arn(Option<String>)`](crate::output::UpdateShardCountOutput::stream_arn): <p>The ARN of the stream.</p>
     /// - On failure, responds with [`SdkError<UpdateShardCountError>`](crate::error::UpdateShardCountError)
     pub fn update_shard_count(&self) -> fluent_builders::UpdateShardCount {
         fluent_builders::UpdateShardCount::new(self.handle.clone())
@@ -454,7 +481,9 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `AddTagsToStream`.
     ///
-    /// <p>Adds or updates tags for the specified Kinesis data stream. You can assign up to 50 tags to a data stream.</p>
+    /// <p>Adds or updates tags for the specified Kinesis data stream. You can assign up to 50 tags to a data stream.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     /// <p>If tags have already been assigned to the stream, <code>AddTagsToStream</code> overwrites any existing tags that correspond to the specified tag keys.</p>
     /// <p> <code>AddTagsToStream</code> has a limit of five transactions per second per account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -549,11 +578,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateStream`.
     ///
     /// <p>Creates a Kinesis data stream. A stream captures and transports data records that are continuously emitted from different data sources or <i>producers</i>. Scale-out within a stream is explicitly supported by means of shards, which are uniquely identified groups of data records in a stream.</p>
-    /// <p>You specify and control the number of shards that a stream is composed of. Each shard can support reads up to five transactions per second, up to a maximum data read total of 2 MiB per second. Each shard can support writes up to 1,000 records per second, up to a maximum data write total of 1 MiB per second. If the amount of data input increases or decreases, you can add or remove shards.</p>
+    /// <p>You can create your data stream using either on-demand or provisioned capacity mode. Data streams with an on-demand mode require no capacity planning and automatically scale to handle gigabytes of write and read throughput per minute. With the on-demand mode, Kinesis Data Streams automatically manages the shards in order to provide the necessary throughput. For the data streams with a provisioned mode, you must specify the number of shards for the data stream. Each shard can support reads up to five transactions per second, up to a maximum data read total of 2 MiB per second. Each shard can support writes up to 1,000 records per second, up to a maximum data write total of 1 MiB per second. If the amount of data input increases or decreases, you can add or remove shards.</p>
     /// <p>The stream name identifies the stream. The name is scoped to the Amazon Web Services account used by the application. It is also scoped by Amazon Web Services Region. That is, two streams in two different accounts can have the same name, and two streams in the same account, but in two different Regions, can have the same name.</p>
     /// <p> <code>CreateStream</code> is an asynchronous operation. Upon receiving a <code>CreateStream</code> request, Kinesis Data Streams immediately returns and sets the stream status to <code>CREATING</code>. After the stream is created, Kinesis Data Streams sets the stream status to <code>ACTIVE</code>. You should perform read and write operations only on an <code>ACTIVE</code> stream. </p>
     /// <p>You receive a <code>LimitExceededException</code> when making a <code>CreateStream</code> request when you try to do one of the following:</p>
@@ -659,7 +698,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DecreaseStreamRetentionPeriod`.
     ///
-    /// <p>Decreases the Kinesis data stream's retention period, which is the length of time data records are accessible after they are added to the stream. The minimum value of a stream's retention period is 24 hours.</p>
+    /// <p>Decreases the Kinesis data stream's retention period, which is the length of time data records are accessible after they are added to the stream. The minimum value of a stream's retention period is 24 hours.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     /// <p>This operation may result in lost data. For example, if the stream's retention period is 48 hours and is decreased to 24 hours, any data already in the stream that is older than 24 hours is inaccessible.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DecreaseStreamRetentionPeriod {
@@ -740,10 +781,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_retention_period_hours(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteStream`.
     ///
-    /// <p>Deletes a Kinesis data stream and all its shards and data. You must shut down any applications that are operating on the stream before you delete the stream. If an application attempts to operate on a deleted stream, it receives the exception <code>ResourceNotFoundException</code>.</p>
+    /// <p>Deletes a Kinesis data stream and all its shards and data. You must shut down any applications that are operating on the stream before you delete the stream. If an application attempts to operate on a deleted stream, it receives the exception <code>ResourceNotFoundException</code>.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     /// <p>If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code> request, the specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p>
     /// <p> <b>Note:</b> Kinesis Data Streams might continue to accept data read and write operations, such as <code>PutRecord</code>, <code>PutRecords</code>, and <code>GetRecords</code>, on a stream in the <code>DELETING</code> state until the stream deletion is complete.</p>
     /// <p>When you delete a stream, any shards in that stream are also deleted, and any tags are dissociated from the stream.</p>
@@ -826,6 +879,16 @@ pub mod fluent_builders {
         /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
         pub fn set_enforce_consumer_deletion(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enforce_consumer_deletion(input);
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
             self
         }
     }
@@ -995,6 +1058,8 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the specified Kinesis data stream.</p> <note>
     /// <p>This API has been revised. It's highly recommended that you use the <code>DescribeStreamSummary</code> API to get a summarized description of the specified Kinesis data stream and the <code>ListShards</code> API to list the shards in a specified data stream and obtain information about each shard. </p>
+    /// </note> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
     /// </note>
     /// <p>The information returned includes the stream name, Amazon Resource Name (ARN), creation time, enhanced metric configuration, and shard map. The shard map is an array of shard objects. For each shard object, there is the hash key and sequence number ranges that the shard spans, and the IDs of any earlier shards that played in a role in creating the shard. Every record ingested in the stream is identified by a sequence number, which is assigned when the record is put into the stream.</p>
     /// <p>You can limit the number of shards returned by each call. For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-retrieve-shards.html">Retrieving Shards from a Stream</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
@@ -1094,6 +1159,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_exclusive_start_shard_id(input);
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
             self
         }
     }
@@ -1196,7 +1271,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeStreamSummary`.
     ///
-    /// <p>Provides a summarized description of the specified Kinesis data stream without the shard list.</p>
+    /// <p>Provides a summarized description of the specified Kinesis data stream without the shard list.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     /// <p>The information returned includes the stream name, Amazon Resource Name (ARN), status, record retention period, approximate creation time, monitoring, encryption details, and open shard count. </p>
     /// <p> <code>DescribeStreamSummary</code> has a limit of 20 transactions per second per account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1268,10 +1345,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stream_name(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DisableEnhancedMonitoring`.
     ///
-    /// <p>Disables enhanced monitoring.</p>
+    /// <p>Disables enhanced monitoring.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableEnhancedMonitoring {
         handle: std::sync::Arc<super::Handle>,
@@ -1382,10 +1471,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_shard_level_metrics(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `EnableEnhancedMonitoring`.
     ///
-    /// <p>Enables enhanced Kinesis data stream monitoring for shard-level metrics.</p>
+    /// <p>Enables enhanced Kinesis data stream monitoring for shard-level metrics.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableEnhancedMonitoring {
         handle: std::sync::Arc<super::Handle>,
@@ -1496,10 +1597,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_shard_level_metrics(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `GetRecords`.
     ///
-    /// <p>Gets data records from a Kinesis data stream's shard.</p>
+    /// <p>Gets data records from a Kinesis data stream's shard.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter in addition to the <code>ShardIterator</code> parameter.</p>
+    /// </note>
     /// <p>Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard iterator specifies the position in the shard from which you want to start reading data records sequentially. If there are no records available in the portion of the shard that the iterator points to, <code>GetRecords</code> returns an empty list. It might take multiple calls to get to a portion of the shard that contains records.</p>
     /// <p>You can scale by provisioning multiple shards per stream while considering service limits (for more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>). Your application should have one thread per shard, each reading continuously from its stream. To read from a stream continually, call <code>GetRecords</code> in a loop. Use <code>GetShardIterator</code> to get the shard iterator to specify in the first <code>GetRecords</code> call. <code>GetRecords</code> returns a new shard iterator in <code>NextShardIterator</code>. Specify the shard iterator returned in <code>NextShardIterator</code> in subsequent calls to <code>GetRecords</code>. If the shard has been closed, the shard iterator can't return more data and <code>GetRecords</code> returns <code>null</code> in <code>NextShardIterator</code>. You can terminate the loop when the shard is closed, or when the shard iterator reaches the record with the sequence number or other attribute that marks it as the last record to process.</p>
     /// <p>Each data record can be up to 1 MiB in size, and each shard can read up to 2 MiB per second. You can ensure that your calls don't exceed the maximum supported size or throughput by using the <code>Limit</code> parameter to specify the maximum number of records that <code>GetRecords</code> can return. Consider your average record size when determining this limit. The maximum number of records that can be returned per call is 10,000.</p>
@@ -1589,10 +1702,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `GetShardIterator`.
     ///
-    /// <p>Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes after it is returned to the requester.</p>
+    /// <p>Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes after it is returned to the requester.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     /// <p>A shard iterator specifies the shard position from which to start reading data records sequentially. The position is specified using the sequence number of a data record in a shard. A sequence number is the identifier associated with every record ingested in the stream, and is assigned when a record is put into the stream. Each stream has one or more shards.</p>
     /// <p>You must specify the shard iterator type. For example, you can set the <code>ShardIteratorType</code> parameter to read exactly from the position denoted by a specific sequence number by using the <code>AT_SEQUENCE_NUMBER</code> shard iterator type. Alternatively, the parameter can read right after the sequence number by using the <code>AFTER_SEQUENCE_NUMBER</code> shard iterator type, using sequence numbers returned by earlier calls to <code>PutRecord</code>, <code>PutRecords</code>, <code>GetRecords</code>, or <code>DescribeStream</code>. In the request, you can specify the shard iterator type <code>AT_TIMESTAMP</code> to read records from an arbitrary point in time, <code>TRIM_HORIZON</code> to cause <code>ShardIterator</code> to point to the last untrimmed record in the shard in the system (the oldest data record in the shard), or <code>LATEST</code> so that you always read the most recent data in the shard. </p>
     /// <p>When you read repeatedly from a stream, use a <code>GetShardIterator</code> request to get the first shard iterator for use in your first <code>GetRecords</code> request and for subsequent reads use the shard iterator returned by the <code>GetRecords</code> request in <code>NextShardIterator</code>. A new shard iterator is returned by every <code>GetRecords</code> request in <code>NextShardIterator</code>, which you use in the <code>ShardIterator</code> parameter of the next <code>GetRecords</code> request. </p>
@@ -1733,10 +1858,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_timestamp(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `IncreaseStreamRetentionPeriod`.
     ///
-    /// <p>Increases the Kinesis data stream's retention period, which is the length of time data records are accessible after they are added to the stream. The maximum value of a stream's retention period is 8760 hours (365 days).</p>
+    /// <p>Increases the Kinesis data stream's retention period, which is the length of time data records are accessible after they are added to the stream. The maximum value of a stream's retention period is 8760 hours (365 days).</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     /// <p>If you choose a longer stream retention period, this operation increases the time period during which records that have not yet expired are accessible. However, it does not make previous, expired data (older than the stream's previous retention period) accessible after the operation has been called. For example, if a stream's retention period is set to 24 hours and is increased to 168 hours, any data that is older than 24 hours remains inaccessible to consumer applications.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct IncreaseStreamRetentionPeriod {
@@ -1817,10 +1954,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_retention_period_hours(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListShards`.
     ///
-    /// <p>Lists the shards in a stream and provides information about each shard. This operation has a limit of 1000 transactions per second per data stream.</p>
+    /// <p>Lists the shards in a stream and provides information about each shard. This operation has a limit of 1000 transactions per second per data stream.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     /// <p>This action does not list expired shards. For information about expired shards, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-using-sdk-java-after-resharding.html#kinesis-using-sdk-java-resharding-data-routing">Data Routing, Data Persistence, and Shard State after a Reshard</a>. </p> <important>
     /// <p>This API is a new operation that is used by the Amazon Kinesis Client Library (KCL). If you have a fine-grained IAM policy that only allows specific operations, you must update your policy to allow calls to this API. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling Access to Amazon Kinesis Data Streams Resources Using IAM</a>.</p>
     /// </important>
@@ -1974,6 +2123,16 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ShardFilter>,
         ) -> Self {
             self.inner = self.inner.set_shard_filter(input);
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
             self
         }
     }
@@ -2165,6 +2324,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStreamsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListStreamsPaginator {
+            crate::paginator::ListStreamsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of streams to list. The default value is 100. If you specify a value greater than 100, at most 100 results are returned.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
@@ -2191,10 +2356,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_exclusive_start_stream_name(input);
             self
         }
+        /// <p></p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p></p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListTagsForStream`.
     ///
-    /// <p>Lists the tags for the specified Kinesis data stream. This operation has a limit of five transactions per second per account.</p>
+    /// <p>Lists the tags for the specified Kinesis data stream. This operation has a limit of five transactions per second per account.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForStream {
         handle: std::sync::Arc<super::Handle>,
@@ -2287,10 +2464,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `MergeShards`.
     ///
-    /// <p>Merges two adjacent shards in a Kinesis data stream and combines them into a single shard to reduce the stream's capacity to ingest and transport data. Two shards are considered adjacent if the union of the hash key ranges for the two shards form a contiguous set with no gaps. For example, if you have two shards, one with a hash key range of 276...381 and the other with a hash key range of 382...454, then you could merge these two shards into a single shard that would have a hash key range of 276...454. After the merge, the single child shard receives data for all hash key values covered by the two parent shards.</p>
+    /// <p>Merges two adjacent shards in a Kinesis data stream and combines them into a single shard to reduce the stream's capacity to ingest and transport data. This API is only supported for the data streams with the provisioned capacity mode. Two shards are considered adjacent if the union of the hash key ranges for the two shards form a contiguous set with no gaps. For example, if you have two shards, one with a hash key range of 276...381 and the other with a hash key range of 382...454, then you could merge these two shards into a single shard that would have a hash key range of 276...454. After the merge, the single child shard receives data for all hash key values covered by the two parent shards.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     /// <p> <code>MergeShards</code> is called when there is a need to reduce the overall capacity of a stream because of excess capacity that is not being used. You must specify the shard to be merged and the adjacent shard for a stream. For more information about merging shards, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html">Merge Two Shards</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     /// <p>If the stream is in the <code>ACTIVE</code> state, you can call <code>MergeShards</code>. If a stream is in the <code>CREATING</code>, <code>UPDATING</code>, or <code>DELETING</code> state, <code>MergeShards</code> returns a <code>ResourceInUseException</code>. If the specified stream does not exist, <code>MergeShards</code> returns a <code>ResourceNotFoundException</code>. </p>
     /// <p>You can use <code>DescribeStreamSummary</code> to check the state of the stream, which is returned in <code>StreamStatus</code>.</p>
@@ -2393,10 +2582,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_adjacent_shard_to_merge(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `PutRecord`.
     ///
-    /// <p>Writes a single data record into an Amazon Kinesis data stream. Call <code>PutRecord</code> to send data into the stream for real-time ingestion and subsequent processing, one record at a time. Each shard can support writes up to 1,000 records per second, up to a maximum data write total of 1 MiB per second.</p>
+    /// <p>Writes a single data record into an Amazon Kinesis data stream. Call <code>PutRecord</code> to send data into the stream for real-time ingestion and subsequent processing, one record at a time. Each shard can support writes up to 1,000 records per second, up to a maximum data write total of 1 MiB per second.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     /// <p>You must specify the name of the stream that captures, stores, and transports the data; a partition key; and the data blob itself.</p>
     /// <p>The data blob can be any type of data; for example, a segment from a log file, geographic/location data, website clickstream data, and so on.</p>
     /// <p>The partition key is used by Kinesis Data Streams to distribute data across shards. Kinesis Data Streams segregates the data records that belong to a stream into multiple shards, using the partition key associated with each data record to determine the shard to which a given data record belongs.</p>
@@ -2528,10 +2729,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sequence_number_for_ordering(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `PutRecords`.
     ///
-    /// <p>Writes multiple data records into a Kinesis data stream in a single call (also referred to as a <code>PutRecords</code> request). Use this operation to send data into the stream for data ingestion and processing. </p>
+    /// <p>Writes multiple data records into a Kinesis data stream in a single call (also referred to as a <code>PutRecords</code> request). Use this operation to send data into the stream for data ingestion and processing. </p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     /// <p>Each <code>PutRecords</code> request can support up to 500 records. Each record in the request can be as large as 1 MiB, up to a limit of 5 MiB for the entire request, including partition keys. Each shard can support writes up to 1,000 records per second, up to a maximum data write total of 1 MiB per second.</p>
     /// <p>You must specify the name of the stream that captures, stores, and transports the data; and an array of request <code>Records</code>, with each record in the array requiring a partition key and data blob. The record size limit applies to the total size of the partition key and data blob.</p>
     /// <p>The data blob can be any type of data; for example, a segment from a log file, geographic/location data, website clickstream data, and so on.</p>
@@ -2630,6 +2843,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stream_name(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `RegisterStreamConsumer`.
     ///
@@ -2722,7 +2945,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveTagsFromStream`.
     ///
-    /// <p>Removes tags from the specified Kinesis data stream. Removed tags are deleted and cannot be recovered after this operation successfully completes.</p>
+    /// <p>Removes tags from the specified Kinesis data stream. Removed tags are deleted and cannot be recovered after this operation successfully completes.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     /// <p>If you specify a tag that does not exist, it is ignored.</p>
     /// <p> <code>RemoveTagsFromStream</code> has a limit of five transactions per second per account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2811,10 +3036,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tag_keys(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `SplitShard`.
     ///
-    /// <p>Splits a shard into two new shards in the Kinesis data stream, to increase the stream's capacity to ingest and transport data. <code>SplitShard</code> is called when there is a need to increase the overall capacity of a stream because of an expected increase in the volume of data records being ingested. </p>
+    /// <p>Splits a shard into two new shards in the Kinesis data stream, to increase the stream's capacity to ingest and transport data. <code>SplitShard</code> is called when there is a need to increase the overall capacity of a stream because of an expected increase in the volume of data records being ingested. This API is only supported for the data streams with the provisioned capacity mode.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     /// <p>You can also use <code>SplitShard</code> when a shard appears to be approaching its maximum utilization; for example, the producers sending data into the specific shard are suddenly sending more than previously anticipated. You can also call <code>SplitShard</code> to increase stream capacity, so that more Kinesis Data Streams applications can simultaneously read data from the stream for real-time processing. </p>
     /// <p>You must specify the shard to be split and the new hash key, which is the position in the shard where the shard gets split in two. In many cases, the new hash key might be the average of the beginning and ending hash key, but it can be any hash key value in the range being mapped into the shard. For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split a Shard</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     /// <p>You can use <code>DescribeStreamSummary</code> and the <code>ListShards</code> APIs to determine the shard ID and hash key values for the <code>ShardToSplit</code> and <code>NewStartingHashKey</code> parameters that are specified in the <code>SplitShard</code> request.</p>
@@ -2919,13 +3156,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_new_starting_hash_key(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `StartStreamEncryption`.
     ///
     /// <p>Enables or updates server-side encryption using an Amazon Web Services KMS key for a specified stream. </p>
     /// <p>Starting encryption is an asynchronous operation. Upon receiving the request, Kinesis Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Kinesis Data Streams sets the status of the stream back to <code>ACTIVE</code>. Updating or applying encryption normally takes a few seconds to complete, but it can take minutes. You can continue to read and write data to your stream while its status is <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code>, encryption begins for records written to the stream. </p>
     /// <p>API Limits: You can successfully apply a new Amazon Web Services KMS key for server-side encryption 25 times in a rolling 24-hour period.</p>
-    /// <p>Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status before all records written to the stream are encrypted. After you enable encryption, you can verify that encryption is applied by inspecting the API response from <code>PutRecord</code> or <code>PutRecords</code>.</p>
+    /// <p>Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status before all records written to the stream are encrypted. After you enable encryption, you can verify that encryption is applied by inspecting the API response from <code>PutRecord</code> or <code>PutRecords</code>.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartStreamEncryption {
         handle: std::sync::Arc<super::Handle>,
@@ -3032,10 +3281,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_key_id(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `StopStreamEncryption`.
     ///
-    /// <p>Disables server-side encryption for a specified stream. </p>
+    /// <p>Disables server-side encryption for a specified stream. </p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     /// <p>Stopping encryption is an asynchronous operation. Upon receiving the request, Kinesis Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Kinesis Data Streams sets the status of the stream back to <code>ACTIVE</code>. Stopping encryption normally takes a few seconds to complete, but it can take minutes. You can continue to read and write data to your stream while its status is <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code>, records written to the stream are no longer encrypted by Kinesis Data Streams. </p>
     /// <p>API Limits: You can successfully disable server-side encryption 25 times in a rolling 24-hour period. </p>
     /// <p>Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status before all records written to the stream are no longer subject to encryption. After you disabled encryption, you can verify that encryption is not applied by inspecting the API response from <code>PutRecord</code> or <code>PutRecords</code>.</p>
@@ -3145,10 +3406,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_key_id(input);
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateShardCount`.
     ///
-    /// <p>Updates the shard count of the specified stream to the specified number of shards.</p>
+    /// <p>Updates the shard count of the specified stream to the specified number of shards. This API is only supported for the data streams with the provisioned capacity mode.</p> <note>
+    /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+    /// </note>
     /// <p>Updating the shard count is an asynchronous operation. Upon receiving the request, Kinesis Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Kinesis Data Streams sets the status of the stream back to <code>ACTIVE</code>. Depending on the size of the stream, the scaling action could take a few minutes to complete. You can continue to read and write data to your stream while its status is <code>UPDATING</code>.</p>
     /// <p>To update the shard count, Kinesis Data Streams performs splits or merges on individual shards. This can cause short-lived shards to be created, in addition to the final shards. These short-lived shards count towards your total shard limit for your account in the Region.</p>
     /// <p>When using this operation, we recommend that you specify a target shard count that is a multiple of 25% (25%, 50%, 75%, 100%). You can specify any target value within your shard limit. However, if you specify a target that isn't a multiple of 25%, the scaling action might take longer to complete. </p>
@@ -3264,6 +3537,16 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ScalingType>,
         ) -> Self {
             self.inner = self.inner.set_scaling_type(input);
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
             self
         }
     }

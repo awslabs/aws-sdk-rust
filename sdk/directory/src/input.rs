@@ -6061,6 +6061,194 @@ impl DescribeTrustsInput {
     }
 }
 
+/// See [`DescribeUpdateDirectoryInput`](crate::input::DescribeUpdateDirectoryInput).
+pub mod describe_update_directory_input {
+
+    /// A builder for [`DescribeUpdateDirectoryInput`](crate::input::DescribeUpdateDirectoryInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) directory_id: std::option::Option<std::string::String>,
+        pub(crate) update_type: std::option::Option<crate::model::UpdateType>,
+        pub(crate) region_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The unique identifier of the directory. </p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.directory_id = Some(input.into());
+            self
+        }
+        /// <p> The unique identifier of the directory. </p>
+        pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_id = input;
+            self
+        }
+        /// <p> The type of updates you want to describe for the directory. </p>
+        pub fn update_type(mut self, input: crate::model::UpdateType) -> Self {
+            self.update_type = Some(input);
+            self
+        }
+        /// <p> The type of updates you want to describe for the directory. </p>
+        pub fn set_update_type(
+            mut self,
+            input: std::option::Option<crate::model::UpdateType>,
+        ) -> Self {
+            self.update_type = input;
+            self
+        }
+        /// <p> The name of the Region. </p>
+        pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the Region. </p>
+        pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region_name = input;
+            self
+        }
+        /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeUpdateDirectoryInput`](crate::input::DescribeUpdateDirectoryInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeUpdateDirectoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DescribeUpdateDirectoryInput {
+                directory_id: self.directory_id,
+                update_type: self.update_type,
+                region_name: self.region_name,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl DescribeUpdateDirectoryInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeUpdateDirectory`](crate::operation::DescribeUpdateDirectory)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeUpdateDirectory,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeUpdateDirectoryInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeUpdateDirectoryInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DirectoryService_20150416.DescribeUpdateDirectory",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_update_directory(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeUpdateDirectory::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeUpdateDirectory",
+            "directoryservice",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeUpdateDirectoryInput`](crate::input::DescribeUpdateDirectoryInput).
+    pub fn builder() -> crate::input::describe_update_directory_input::Builder {
+        crate::input::describe_update_directory_input::Builder::default()
+    }
+}
+
 /// See [`DisableClientAuthenticationInput`](crate::input::DisableClientAuthenticationInput).
 pub mod disable_client_authentication_input {
 
@@ -10544,6 +10732,200 @@ impl UpdateConditionalForwarderInput {
     }
 }
 
+/// See [`UpdateDirectorySetupInput`](crate::input::UpdateDirectorySetupInput).
+pub mod update_directory_setup_input {
+
+    /// A builder for [`UpdateDirectorySetupInput`](crate::input::UpdateDirectorySetupInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) directory_id: std::option::Option<std::string::String>,
+        pub(crate) update_type: std::option::Option<crate::model::UpdateType>,
+        pub(crate) os_update_settings: std::option::Option<crate::model::OsUpdateSettings>,
+        pub(crate) create_snapshot_before_update: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p> The identifier of the directory on which you want to perform the update. </p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.directory_id = Some(input.into());
+            self
+        }
+        /// <p> The identifier of the directory on which you want to perform the update. </p>
+        pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_id = input;
+            self
+        }
+        /// <p> The type of update that needs to be performed on the directory. For example, OS. </p>
+        pub fn update_type(mut self, input: crate::model::UpdateType) -> Self {
+            self.update_type = Some(input);
+            self
+        }
+        /// <p> The type of update that needs to be performed on the directory. For example, OS. </p>
+        pub fn set_update_type(
+            mut self,
+            input: std::option::Option<crate::model::UpdateType>,
+        ) -> Self {
+            self.update_type = input;
+            self
+        }
+        /// <p> The settings for the OS update that needs to be performed on the directory. </p>
+        pub fn os_update_settings(mut self, input: crate::model::OsUpdateSettings) -> Self {
+            self.os_update_settings = Some(input);
+            self
+        }
+        /// <p> The settings for the OS update that needs to be performed on the directory. </p>
+        pub fn set_os_update_settings(
+            mut self,
+            input: std::option::Option<crate::model::OsUpdateSettings>,
+        ) -> Self {
+            self.os_update_settings = input;
+            self
+        }
+        /// <p> The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory. </p>
+        pub fn create_snapshot_before_update(mut self, input: bool) -> Self {
+            self.create_snapshot_before_update = Some(input);
+            self
+        }
+        /// <p> The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory. </p>
+        pub fn set_create_snapshot_before_update(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.create_snapshot_before_update = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateDirectorySetupInput`](crate::input::UpdateDirectorySetupInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateDirectorySetupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateDirectorySetupInput {
+                directory_id: self.directory_id,
+                update_type: self.update_type,
+                os_update_settings: self.os_update_settings,
+                create_snapshot_before_update: self.create_snapshot_before_update,
+            })
+        }
+    }
+}
+impl UpdateDirectorySetupInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateDirectorySetup`](crate::operation::UpdateDirectorySetup)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateDirectorySetup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateDirectorySetupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateDirectorySetupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DirectoryService_20150416.UpdateDirectorySetup",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_directory_setup(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateDirectorySetup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateDirectorySetup",
+            "directoryservice",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateDirectorySetupInput`](crate::input::UpdateDirectorySetupInput).
+    pub fn builder() -> crate::input::update_directory_setup_input::Builder {
+        crate::input::update_directory_setup_input::Builder::default()
+    }
+}
+
 /// See [`UpdateNumberOfDomainControllersInput`](crate::input::UpdateNumberOfDomainControllersInput).
 pub mod update_number_of_domain_controllers_input {
 
@@ -11436,6 +11818,42 @@ impl UpdateNumberOfDomainControllersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateDirectorySetupInput {
+    /// <p> The identifier of the directory on which you want to perform the update. </p>
+    #[doc(hidden)]
+    pub directory_id: std::option::Option<std::string::String>,
+    /// <p> The type of update that needs to be performed on the directory. For example, OS. </p>
+    #[doc(hidden)]
+    pub update_type: std::option::Option<crate::model::UpdateType>,
+    /// <p> The settings for the OS update that needs to be performed on the directory. </p>
+    #[doc(hidden)]
+    pub os_update_settings: std::option::Option<crate::model::OsUpdateSettings>,
+    /// <p> The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory. </p>
+    #[doc(hidden)]
+    pub create_snapshot_before_update: std::option::Option<bool>,
+}
+impl UpdateDirectorySetupInput {
+    /// <p> The identifier of the directory on which you want to perform the update. </p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p> The type of update that needs to be performed on the directory. For example, OS. </p>
+    pub fn update_type(&self) -> std::option::Option<&crate::model::UpdateType> {
+        self.update_type.as_ref()
+    }
+    /// <p> The settings for the OS update that needs to be performed on the directory. </p>
+    pub fn os_update_settings(&self) -> std::option::Option<&crate::model::OsUpdateSettings> {
+        self.os_update_settings.as_ref()
+    }
+    /// <p> The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory. </p>
+    pub fn create_snapshot_before_update(&self) -> std::option::Option<bool> {
+        self.create_snapshot_before_update
+    }
+}
+
 /// <p>Updates a conditional forwarder.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12123,6 +12541,42 @@ impl DisableClientAuthenticationInput {
     /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ClientAuthenticationType> {
         self.r#type.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeUpdateDirectoryInput {
+    /// <p> The unique identifier of the directory. </p>
+    #[doc(hidden)]
+    pub directory_id: std::option::Option<std::string::String>,
+    /// <p> The type of updates you want to describe for the directory. </p>
+    #[doc(hidden)]
+    pub update_type: std::option::Option<crate::model::UpdateType>,
+    /// <p> The name of the Region. </p>
+    #[doc(hidden)]
+    pub region_name: std::option::Option<std::string::String>,
+    /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeUpdateDirectoryInput {
+    /// <p> The unique identifier of the directory. </p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p> The type of updates you want to describe for the directory. </p>
+    pub fn update_type(&self) -> std::option::Option<&crate::model::UpdateType> {
+        self.update_type.as_ref()
+    }
+    /// <p> The name of the Region. </p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+    /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 

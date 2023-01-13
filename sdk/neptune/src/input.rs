@@ -1458,6 +1458,8 @@ pub mod create_db_cluster_input {
         pub(crate) enable_cloudwatch_logs_exports:
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) deletion_protection: std::option::Option<bool>,
+        pub(crate) serverless_v2_scaling_configuration:
+            std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
         pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1885,6 +1887,24 @@ pub mod create_db_cluster_input {
             self.deletion_protection = input;
             self
         }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = Some(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = input;
+            self
+        }
         /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
         pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.global_cluster_identifier = Some(input.into());
@@ -1929,6 +1949,7 @@ pub mod create_db_cluster_input {
                 enable_iam_database_authentication: self.enable_iam_database_authentication,
                 enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports,
                 deletion_protection: self.deletion_protection,
+                serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
                 global_cluster_identifier: self.global_cluster_identifier,
             })
         }
@@ -10687,6 +10708,8 @@ pub mod modify_db_cluster_input {
         pub(crate) db_instance_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) deletion_protection: std::option::Option<bool>,
         pub(crate) copy_tags_to_snapshot: std::option::Option<bool>,
+        pub(crate) serverless_v2_scaling_configuration:
+            std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
     }
     impl Builder {
         /// <p>The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>
@@ -11009,6 +11032,24 @@ pub mod modify_db_cluster_input {
             self.copy_tags_to_snapshot = input;
             self
         }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = Some(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::input::ModifyDbClusterInput).
         pub fn build(
             self,
@@ -11033,6 +11074,7 @@ pub mod modify_db_cluster_input {
                 db_instance_parameter_group_name: self.db_instance_parameter_group_name,
                 deletion_protection: self.deletion_protection,
                 copy_tags_to_snapshot: self.copy_tags_to_snapshot,
+                serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             })
         }
     }
@@ -14675,6 +14717,8 @@ pub mod restore_db_cluster_from_snapshot_input {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) deletion_protection: std::option::Option<bool>,
         pub(crate) copy_tags_to_snapshot: std::option::Option<bool>,
+        pub(crate) serverless_v2_scaling_configuration:
+            std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -14971,6 +15015,24 @@ pub mod restore_db_cluster_from_snapshot_input {
             self.copy_tags_to_snapshot = input;
             self
         }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = Some(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotInput`](crate::input::RestoreDbClusterFromSnapshotInput).
         pub fn build(
             self,
@@ -14996,6 +15058,7 @@ pub mod restore_db_cluster_from_snapshot_input {
                 db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
                 deletion_protection: self.deletion_protection,
                 copy_tags_to_snapshot: self.copy_tags_to_snapshot,
+                serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             })
         }
     }
@@ -15131,6 +15194,8 @@ pub mod restore_db_cluster_to_point_in_time_input {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) deletion_protection: std::option::Option<bool>,
+        pub(crate) serverless_v2_scaling_configuration:
+            std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
     }
     impl Builder {
         /// <p>The name of the new DB cluster to be created.</p>
@@ -15426,6 +15491,24 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self.deletion_protection = input;
             self
         }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = Some(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeInput`](crate::input::RestoreDbClusterToPointInTimeInput).
         pub fn build(
             self,
@@ -15449,6 +15532,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
                 enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports,
                 db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
                 deletion_protection: self.deletion_protection,
+                serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             })
         }
     }
@@ -15970,6 +16054,11 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
     #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
+    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    #[doc(hidden)]
+    pub serverless_v2_scaling_configuration:
+        std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// <p>The name of the new DB cluster to be created.</p>
@@ -16075,6 +16164,13 @@ impl RestoreDbClusterToPointInTimeInput {
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
+    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
+    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -16161,6 +16257,11 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the restored DB cluster that is created.</i> </p>
     #[doc(hidden)]
     pub copy_tags_to_snapshot: std::option::Option<bool>,
+    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    #[doc(hidden)]
+    pub serverless_v2_scaling_configuration:
+        std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
@@ -16259,6 +16360,13 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the restored DB cluster that is created.</i> </p>
     pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
         self.copy_tags_to_snapshot
+    }
+    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
     }
 }
 
@@ -17237,6 +17345,11 @@ pub struct ModifyDbClusterInput {
     /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
     #[doc(hidden)]
     pub copy_tags_to_snapshot: std::option::Option<bool>,
+    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    #[doc(hidden)]
+    pub serverless_v2_scaling_configuration:
+        std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
 }
 impl ModifyDbClusterInput {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>
@@ -17355,6 +17468,13 @@ impl ModifyDbClusterInput {
     /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
     pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
         self.copy_tags_to_snapshot
+    }
+    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
     }
 }
 
@@ -19645,6 +19765,11 @@ pub struct CreateDbClusterInput {
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
     #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
+    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    #[doc(hidden)]
+    pub serverless_v2_scaling_configuration:
+        std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
     /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
     #[doc(hidden)]
     pub global_cluster_identifier: std::option::Option<std::string::String>,
@@ -19791,6 +19916,13 @@ impl CreateDbClusterInput {
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
+    }
+    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
     }
     /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
     pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {

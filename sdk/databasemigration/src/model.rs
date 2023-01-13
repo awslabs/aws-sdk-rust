@@ -2172,6 +2172,10 @@ pub struct ReplicationInstance {
     #[doc(hidden)]
     pub replication_instance_private_ip_addresses:
         std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>One or more IPv6 addresses for the replication instance.</p>
+    #[doc(hidden)]
+    pub replication_instance_ipv6_addresses:
+        std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
     #[doc(hidden)]
     pub publicly_accessible: bool,
@@ -2184,6 +2188,9 @@ pub struct ReplicationInstance {
     /// <p>The DNS name servers supported for the replication instance to access your on-premise source or target database.</p>
     #[doc(hidden)]
     pub dns_name_servers: std::option::Option<std::string::String>,
+    /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
+    #[doc(hidden)]
+    pub network_type: std::option::Option<std::string::String>,
 }
 impl ReplicationInstance {
     /// <p>The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.</p>
@@ -2301,6 +2308,12 @@ impl ReplicationInstance {
     ) -> std::option::Option<&[std::string::String]> {
         self.replication_instance_private_ip_addresses.as_deref()
     }
+    /// <p>One or more IPv6 addresses for the replication instance.</p>
+    pub fn replication_instance_ipv6_addresses(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.replication_instance_ipv6_addresses.as_deref()
+    }
     /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
     pub fn publicly_accessible(&self) -> bool {
         self.publicly_accessible
@@ -2316,6 +2329,10 @@ impl ReplicationInstance {
     /// <p>The DNS name servers supported for the replication instance to access your on-premise source or target database.</p>
     pub fn dns_name_servers(&self) -> std::option::Option<&str> {
         self.dns_name_servers.as_deref()
+    }
+    /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
+    pub fn network_type(&self) -> std::option::Option<&str> {
+        self.network_type.as_deref()
     }
 }
 /// See [`ReplicationInstance`](crate::model::ReplicationInstance).
@@ -2349,10 +2366,13 @@ pub mod replication_instance {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) replication_instance_private_ip_addresses:
             std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) replication_instance_ipv6_addresses:
+            std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) publicly_accessible: std::option::Option<bool>,
         pub(crate) secondary_availability_zone: std::option::Option<std::string::String>,
         pub(crate) free_until: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) dns_name_servers: std::option::Option<std::string::String>,
+        pub(crate) network_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.</p>
@@ -2700,6 +2720,28 @@ pub mod replication_instance {
             self.replication_instance_private_ip_addresses = input;
             self
         }
+        /// Appends an item to `replication_instance_ipv6_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_replication_instance_ipv6_addresses`](Self::set_replication_instance_ipv6_addresses).
+        ///
+        /// <p>One or more IPv6 addresses for the replication instance.</p>
+        pub fn replication_instance_ipv6_addresses(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.replication_instance_ipv6_addresses.unwrap_or_default();
+            v.push(input.into());
+            self.replication_instance_ipv6_addresses = Some(v);
+            self
+        }
+        /// <p>One or more IPv6 addresses for the replication instance.</p>
+        pub fn set_replication_instance_ipv6_addresses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.replication_instance_ipv6_addresses = input;
+            self
+        }
         /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.publicly_accessible = Some(input);
@@ -2752,6 +2794,16 @@ pub mod replication_instance {
             self.dns_name_servers = input;
             self
         }
+        /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
+        pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_type = Some(input.into());
+            self
+        }
+        /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
+        pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ReplicationInstance`](crate::model::ReplicationInstance).
         pub fn build(self) -> crate::model::ReplicationInstance {
             crate::model::ReplicationInstance {
@@ -2777,10 +2829,12 @@ pub mod replication_instance {
                     .replication_instance_public_ip_addresses,
                 replication_instance_private_ip_addresses: self
                     .replication_instance_private_ip_addresses,
+                replication_instance_ipv6_addresses: self.replication_instance_ipv6_addresses,
                 publicly_accessible: self.publicly_accessible.unwrap_or_default(),
                 secondary_availability_zone: self.secondary_availability_zone,
                 free_until: self.free_until,
                 dns_name_servers: self.dns_name_servers,
+                network_type: self.network_type,
             }
         }
     }
@@ -2809,6 +2863,9 @@ pub struct ReplicationPendingModifiedValues {
     /// <p>The engine version number of the replication instance.</p>
     #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
+    /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
+    #[doc(hidden)]
+    pub network_type: std::option::Option<std::string::String>,
 }
 impl ReplicationPendingModifiedValues {
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class.</p>
@@ -2828,6 +2885,10 @@ impl ReplicationPendingModifiedValues {
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
+    /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
+    pub fn network_type(&self) -> std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 /// See [`ReplicationPendingModifiedValues`](crate::model::ReplicationPendingModifiedValues).
 pub mod replication_pending_modified_values {
@@ -2839,6 +2900,7 @@ pub mod replication_pending_modified_values {
         pub(crate) allocated_storage: std::option::Option<i32>,
         pub(crate) multi_az: std::option::Option<bool>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
+        pub(crate) network_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class.</p>
@@ -2889,6 +2951,16 @@ pub mod replication_pending_modified_values {
             self.engine_version = input;
             self
         }
+        /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
+        pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_type = Some(input.into());
+            self
+        }
+        /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
+        pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ReplicationPendingModifiedValues`](crate::model::ReplicationPendingModifiedValues).
         pub fn build(self) -> crate::model::ReplicationPendingModifiedValues {
             crate::model::ReplicationPendingModifiedValues {
@@ -2896,6 +2968,7 @@ pub mod replication_pending_modified_values {
                 allocated_storage: self.allocated_storage,
                 multi_az: self.multi_az,
                 engine_version: self.engine_version,
+                network_type: self.network_type,
             }
         }
     }
@@ -2926,6 +2999,9 @@ pub struct ReplicationSubnetGroup {
     /// <p>The subnets that are in the subnet group.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
+    /// <p>The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
+    #[doc(hidden)]
+    pub supported_network_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ReplicationSubnetGroup {
     /// <p>The identifier of the replication instance subnet group.</p>
@@ -2948,6 +3024,10 @@ impl ReplicationSubnetGroup {
     pub fn subnets(&self) -> std::option::Option<&[crate::model::Subnet]> {
         self.subnets.as_deref()
     }
+    /// <p>The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
+    pub fn supported_network_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_network_types.as_deref()
+    }
 }
 /// See [`ReplicationSubnetGroup`](crate::model::ReplicationSubnetGroup).
 pub mod replication_subnet_group {
@@ -2960,6 +3040,7 @@ pub mod replication_subnet_group {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) subnet_group_status: std::option::Option<std::string::String>,
         pub(crate) subnets: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
+        pub(crate) supported_network_types: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The identifier of the replication instance subnet group.</p>
@@ -3036,6 +3117,25 @@ pub mod replication_subnet_group {
             self.subnets = input;
             self
         }
+        /// Appends an item to `supported_network_types`.
+        ///
+        /// To override the contents of this collection use [`set_supported_network_types`](Self::set_supported_network_types).
+        ///
+        /// <p>The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
+        pub fn supported_network_types(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.supported_network_types.unwrap_or_default();
+            v.push(input.into());
+            self.supported_network_types = Some(v);
+            self
+        }
+        /// <p>The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
+        pub fn set_supported_network_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_network_types = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ReplicationSubnetGroup`](crate::model::ReplicationSubnetGroup).
         pub fn build(self) -> crate::model::ReplicationSubnetGroup {
             crate::model::ReplicationSubnetGroup {
@@ -3044,6 +3144,7 @@ pub mod replication_subnet_group {
                 vpc_id: self.vpc_id,
                 subnet_group_status: self.subnet_group_status,
                 subnets: self.subnets,
+                supported_network_types: self.supported_network_types,
             }
         }
     }
@@ -3527,10 +3628,10 @@ pub struct Endpoint {
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
     #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::ReplicationEndpointTypeValue>,
-    /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+    /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
     #[doc(hidden)]
     pub engine_name: std::option::Option<std::string::String>,
-    /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this value would be "Amazon Aurora MySQL."</p>
+    /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
     #[doc(hidden)]
     pub engine_display_name: std::option::Option<std::string::String>,
     /// <p>The user name used to connect to the endpoint.</p>
@@ -3641,11 +3742,11 @@ impl Endpoint {
     ) -> std::option::Option<&crate::model::ReplicationEndpointTypeValue> {
         self.endpoint_type.as_ref()
     }
-    /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+    /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
     pub fn engine_name(&self) -> std::option::Option<&str> {
         self.engine_name.as_deref()
     }
-    /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this value would be "Amazon Aurora MySQL."</p>
+    /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
     pub fn engine_display_name(&self) -> std::option::Option<&str> {
         self.engine_display_name.as_deref()
     }
@@ -3850,22 +3951,22 @@ pub mod endpoint {
             self.endpoint_type = input;
             self
         }
-        /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+        /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
         pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_name = Some(input.into());
             self
         }
-        /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+        /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
         pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_name = input;
             self
         }
-        /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this value would be "Amazon Aurora MySQL."</p>
+        /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
         pub fn engine_display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_display_name = Some(input.into());
             self
         }
-        /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this value would be "Amazon Aurora MySQL."</p>
+        /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
         pub fn set_engine_display_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6683,7 +6784,7 @@ pub struct OracleSettings {
     /// <p>When set to <code>true</code>, this attribute helps to increase the commit rate on the Oracle target database by writing directly to tables and not writing a trail to database logs.</p>
     #[doc(hidden)]
     pub direct_path_no_log: std::option::Option<bool>,
-    /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.</p>
+    /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
     #[doc(hidden)]
     pub archived_logs_only: std::option::Option<bool>,
     /// <p>For an Oracle source endpoint, your Oracle Automatic Storage Management (ASM) password. You can set this value from the <code> <i>asm_user_password</i> </code> value. You set this value as part of the comma-separated value that you set to the <code>Password</code> request parameter when you create the endpoint to access transaction logs using Binary Reader. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source database</a>.</p>
@@ -6762,12 +6863,12 @@ pub struct OracleSettings {
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Oracle endpoint connection details.</p>
     #[doc(hidden)]
     pub secrets_manager_secret_id: std::option::Option<std::string::String>,
-    /// <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows access to the Oracle ASM of the endpoint.</p> <note>
+    /// <p>Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows access to the Oracle ASM of the endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
     pub secrets_manager_oracle_asm_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the Oracle endpoint.</p>
+    /// <p>Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the Oracle endpoint.</p>
     #[doc(hidden)]
     pub secrets_manager_oracle_asm_secret_id: std::option::Option<std::string::String>,
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
@@ -6838,7 +6939,7 @@ impl OracleSettings {
     pub fn direct_path_no_log(&self) -> std::option::Option<bool> {
         self.direct_path_no_log
     }
-    /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.</p>
+    /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
     pub fn archived_logs_only(&self) -> std::option::Option<bool> {
         self.archived_logs_only
     }
@@ -6942,13 +7043,13 @@ impl OracleSettings {
     pub fn secrets_manager_secret_id(&self) -> std::option::Option<&str> {
         self.secrets_manager_secret_id.as_deref()
     }
-    /// <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows access to the Oracle ASM of the endpoint.</p> <note>
+    /// <p>Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows access to the Oracle ASM of the endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
     pub fn secrets_manager_oracle_asm_access_role_arn(&self) -> std::option::Option<&str> {
         self.secrets_manager_oracle_asm_access_role_arn.as_deref()
     }
-    /// <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the Oracle endpoint.</p>
+    /// <p>Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the Oracle endpoint.</p>
     pub fn secrets_manager_oracle_asm_secret_id(&self) -> std::option::Option<&str> {
         self.secrets_manager_oracle_asm_secret_id.as_deref()
     }
@@ -7266,12 +7367,12 @@ pub mod oracle_settings {
             self.direct_path_no_log = input;
             self
         }
-        /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.</p>
+        /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
         pub fn archived_logs_only(mut self, input: bool) -> Self {
             self.archived_logs_only = Some(input);
             self
         }
-        /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.</p>
+        /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
         pub fn set_archived_logs_only(mut self, input: std::option::Option<bool>) -> Self {
             self.archived_logs_only = input;
             self
@@ -7553,7 +7654,7 @@ pub mod oracle_settings {
             self.secrets_manager_secret_id = input;
             self
         }
-        /// <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows access to the Oracle ASM of the endpoint.</p> <note>
+        /// <p>Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows access to the Oracle ASM of the endpoint.</p> <note>
         /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
         /// </note>
         pub fn secrets_manager_oracle_asm_access_role_arn(
@@ -7563,7 +7664,7 @@ pub mod oracle_settings {
             self.secrets_manager_oracle_asm_access_role_arn = Some(input.into());
             self
         }
-        /// <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows access to the Oracle ASM of the endpoint.</p> <note>
+        /// <p>Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows access to the Oracle ASM of the endpoint.</p> <note>
         /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
         /// </note>
         pub fn set_secrets_manager_oracle_asm_access_role_arn(
@@ -7573,7 +7674,7 @@ pub mod oracle_settings {
             self.secrets_manager_oracle_asm_access_role_arn = input;
             self
         }
-        /// <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the Oracle endpoint.</p>
+        /// <p>Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the Oracle endpoint.</p>
         pub fn secrets_manager_oracle_asm_secret_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -7581,7 +7682,7 @@ pub mod oracle_settings {
             self.secrets_manager_oracle_asm_secret_id = Some(input.into());
             self
         }
-        /// <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the Oracle endpoint.</p>
+        /// <p>Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the Oracle endpoint.</p>
         pub fn set_secrets_manager_oracle_asm_secret_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11761,7 +11862,7 @@ pub struct S3Settings {
     /// <p>The default value is 60 seconds.</p>
     #[doc(hidden)]
     pub cdc_max_batch_interval: std::option::Option<i32>,
-    /// <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.</p>
+    /// <p>Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.</p>
     /// <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is triggered by whichever parameter condition is met first within an DMS CloudFormation template.</p>
     /// <p>The default value is 32 MB.</p>
     #[doc(hidden)]
@@ -12001,7 +12102,7 @@ impl S3Settings {
     pub fn cdc_max_batch_interval(&self) -> std::option::Option<i32> {
         self.cdc_max_batch_interval
     }
-    /// <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.</p>
+    /// <p>Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.</p>
     /// <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is triggered by whichever parameter condition is met first within an DMS CloudFormation template.</p>
     /// <p>The default value is 32 MB.</p>
     pub fn cdc_min_file_size(&self) -> std::option::Option<i32> {
@@ -12621,14 +12722,14 @@ pub mod s3_settings {
             self.cdc_max_batch_interval = input;
             self
         }
-        /// <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.</p>
+        /// <p>Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.</p>
         /// <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is triggered by whichever parameter condition is met first within an DMS CloudFormation template.</p>
         /// <p>The default value is 32 MB.</p>
         pub fn cdc_min_file_size(mut self, input: i32) -> Self {
             self.cdc_min_file_size = Some(input);
             self
         }
-        /// <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.</p>
+        /// <p>Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.</p>
         /// <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is triggered by whichever parameter condition is met first within an DMS CloudFormation template.</p>
         /// <p>The default value is 32 MB.</p>
         pub fn set_cdc_min_file_size(mut self, input: std::option::Option<i32>) -> Self {
@@ -14101,6 +14202,18 @@ pub struct TableStatistics {
     /// <p>The data definition language (DDL) used to build and modify the structure of your tables.</p>
     #[doc(hidden)]
     pub ddls: i64,
+    /// <p>The number of insert actions applied on a target table.</p>
+    #[doc(hidden)]
+    pub applied_inserts: std::option::Option<i64>,
+    /// <p>The number of delete actions applied on a target table.</p>
+    #[doc(hidden)]
+    pub applied_deletes: std::option::Option<i64>,
+    /// <p>The number of update actions applied on a target table.</p>
+    #[doc(hidden)]
+    pub applied_updates: std::option::Option<i64>,
+    /// <p>The number of data definition language (DDL) statements used to build and modify the structure of your tables applied on the target.</p>
+    #[doc(hidden)]
+    pub applied_ddls: std::option::Option<i64>,
     /// <p>The number of rows added during the full load operation.</p>
     #[doc(hidden)]
     pub full_load_rows: i64,
@@ -14180,6 +14293,22 @@ impl TableStatistics {
     /// <p>The data definition language (DDL) used to build and modify the structure of your tables.</p>
     pub fn ddls(&self) -> i64 {
         self.ddls
+    }
+    /// <p>The number of insert actions applied on a target table.</p>
+    pub fn applied_inserts(&self) -> std::option::Option<i64> {
+        self.applied_inserts
+    }
+    /// <p>The number of delete actions applied on a target table.</p>
+    pub fn applied_deletes(&self) -> std::option::Option<i64> {
+        self.applied_deletes
+    }
+    /// <p>The number of update actions applied on a target table.</p>
+    pub fn applied_updates(&self) -> std::option::Option<i64> {
+        self.applied_updates
+    }
+    /// <p>The number of data definition language (DDL) statements used to build and modify the structure of your tables applied on the target.</p>
+    pub fn applied_ddls(&self) -> std::option::Option<i64> {
+        self.applied_ddls
     }
     /// <p>The number of rows added during the full load operation.</p>
     pub fn full_load_rows(&self) -> i64 {
@@ -14261,6 +14390,10 @@ pub mod table_statistics {
         pub(crate) deletes: std::option::Option<i64>,
         pub(crate) updates: std::option::Option<i64>,
         pub(crate) ddls: std::option::Option<i64>,
+        pub(crate) applied_inserts: std::option::Option<i64>,
+        pub(crate) applied_deletes: std::option::Option<i64>,
+        pub(crate) applied_updates: std::option::Option<i64>,
+        pub(crate) applied_ddls: std::option::Option<i64>,
         pub(crate) full_load_rows: std::option::Option<i64>,
         pub(crate) full_load_condtnl_chk_failed_rows: std::option::Option<i64>,
         pub(crate) full_load_error_rows: std::option::Option<i64>,
@@ -14334,6 +14467,46 @@ pub mod table_statistics {
         /// <p>The data definition language (DDL) used to build and modify the structure of your tables.</p>
         pub fn set_ddls(mut self, input: std::option::Option<i64>) -> Self {
             self.ddls = input;
+            self
+        }
+        /// <p>The number of insert actions applied on a target table.</p>
+        pub fn applied_inserts(mut self, input: i64) -> Self {
+            self.applied_inserts = Some(input);
+            self
+        }
+        /// <p>The number of insert actions applied on a target table.</p>
+        pub fn set_applied_inserts(mut self, input: std::option::Option<i64>) -> Self {
+            self.applied_inserts = input;
+            self
+        }
+        /// <p>The number of delete actions applied on a target table.</p>
+        pub fn applied_deletes(mut self, input: i64) -> Self {
+            self.applied_deletes = Some(input);
+            self
+        }
+        /// <p>The number of delete actions applied on a target table.</p>
+        pub fn set_applied_deletes(mut self, input: std::option::Option<i64>) -> Self {
+            self.applied_deletes = input;
+            self
+        }
+        /// <p>The number of update actions applied on a target table.</p>
+        pub fn applied_updates(mut self, input: i64) -> Self {
+            self.applied_updates = Some(input);
+            self
+        }
+        /// <p>The number of update actions applied on a target table.</p>
+        pub fn set_applied_updates(mut self, input: std::option::Option<i64>) -> Self {
+            self.applied_updates = input;
+            self
+        }
+        /// <p>The number of data definition language (DDL) statements used to build and modify the structure of your tables applied on the target.</p>
+        pub fn applied_ddls(mut self, input: i64) -> Self {
+            self.applied_ddls = Some(input);
+            self
+        }
+        /// <p>The number of data definition language (DDL) statements used to build and modify the structure of your tables applied on the target.</p>
+        pub fn set_applied_ddls(mut self, input: std::option::Option<i64>) -> Self {
+            self.applied_ddls = input;
             self
         }
         /// <p>The number of rows added during the full load operation.</p>
@@ -14523,6 +14696,10 @@ pub mod table_statistics {
                 deletes: self.deletes.unwrap_or_default(),
                 updates: self.updates.unwrap_or_default(),
                 ddls: self.ddls.unwrap_or_default(),
+                applied_inserts: self.applied_inserts,
+                applied_deletes: self.applied_deletes,
+                applied_updates: self.applied_updates,
+                applied_ddls: self.applied_ddls,
                 full_load_rows: self.full_load_rows.unwrap_or_default(),
                 full_load_condtnl_chk_failed_rows: self
                     .full_load_condtnl_chk_failed_rows
@@ -17847,7 +18024,7 @@ impl EventCategoryGroup {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SupportedEndpointType {
-    /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+    /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
     #[doc(hidden)]
     pub engine_name: std::option::Option<std::string::String>,
     /// <p>Indicates if change data capture (CDC) is supported.</p>
@@ -17859,12 +18036,12 @@ pub struct SupportedEndpointType {
     /// <p>The earliest DMS engine version that supports this endpoint engine. Note that endpoint engines released with DMS versions earlier than 3.1.1 do not return a value for this parameter.</p>
     #[doc(hidden)]
     pub replication_instance_engine_minimum_version: std::option::Option<std::string::String>,
-    /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this value would be "Amazon Aurora MySQL."</p>
+    /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
     #[doc(hidden)]
     pub engine_display_name: std::option::Option<std::string::String>,
 }
 impl SupportedEndpointType {
-    /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+    /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
     pub fn engine_name(&self) -> std::option::Option<&str> {
         self.engine_name.as_deref()
     }
@@ -17882,7 +18059,7 @@ impl SupportedEndpointType {
     pub fn replication_instance_engine_minimum_version(&self) -> std::option::Option<&str> {
         self.replication_instance_engine_minimum_version.as_deref()
     }
-    /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this value would be "Amazon Aurora MySQL."</p>
+    /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
     pub fn engine_display_name(&self) -> std::option::Option<&str> {
         self.engine_display_name.as_deref()
     }
@@ -17901,12 +18078,12 @@ pub mod supported_endpoint_type {
         pub(crate) engine_display_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+        /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
         pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_name = Some(input.into());
             self
         }
-        /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+        /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
         pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_name = input;
             self
@@ -17950,12 +18127,12 @@ pub mod supported_endpoint_type {
             self.replication_instance_engine_minimum_version = input;
             self
         }
-        /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this value would be "Amazon Aurora MySQL."</p>
+        /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
         pub fn engine_display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_display_name = Some(input.into());
             self
         }
-        /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this value would be "Amazon Aurora MySQL."</p>
+        /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
         pub fn set_engine_display_name(
             mut self,
             input: std::option::Option<std::string::String>,

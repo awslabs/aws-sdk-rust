@@ -97,18 +97,122 @@ impl AsRef<str> for NotificationSeverityLevel {
     }
 }
 
+/// When writing a match expression against `AccountType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let accounttype = unimplemented!();
+/// match accounttype {
+///     AccountType::Management => { /* ... */ },
+///     AccountType::Member => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `accounttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AccountType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AccountType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AccountType::NewFeature` is defined.
+/// Specifically, when `accounttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AccountType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AccountType {
+    #[allow(missing_docs)] // documentation missing in model
+    Management,
+    #[allow(missing_docs)] // documentation missing in model
+    Member,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for AccountType {
+    fn from(s: &str) -> Self {
+        match s {
+            "management" => AccountType::Management,
+            "member" => AccountType::Member,
+            other => AccountType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for AccountType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AccountType::from(s))
+    }
+}
+impl AccountType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AccountType::Management => "management",
+            AccountType::Member => "member",
+            AccountType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["management", "member"]
+    }
+}
+impl AsRef<str> for AccountType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The configuration for a Slack workspace that you added to an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlackWorkspaceConfiguration {
-    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
+    /// <p>The name of the Slack workspace.</p>
+    #[doc(hidden)]
+    pub team_name: std::option::Option<std::string::String>,
+    /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
+    #[doc(hidden)]
+    pub allow_organization_member_account: std::option::Option<bool>,
 }
 impl SlackWorkspaceConfiguration {
-    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn team_id(&self) -> std::option::Option<&str> {
         self.team_id.as_deref()
+    }
+    /// <p>The name of the Slack workspace.</p>
+    pub fn team_name(&self) -> std::option::Option<&str> {
+        self.team_name.as_deref()
+    }
+    /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
+    pub fn allow_organization_member_account(&self) -> std::option::Option<bool> {
+        self.allow_organization_member_account
     }
 }
 /// See [`SlackWorkspaceConfiguration`](crate::model::SlackWorkspaceConfiguration).
@@ -118,22 +222,49 @@ pub mod slack_workspace_configuration {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
+        pub(crate) team_name: std::option::Option<std::string::String>,
+        pub(crate) allow_organization_member_account: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.team_id = Some(input.into());
             self
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.team_id = input;
+            self
+        }
+        /// <p>The name of the Slack workspace.</p>
+        pub fn team_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.team_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Slack workspace.</p>
+        pub fn set_team_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.team_name = input;
+            self
+        }
+        /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
+        pub fn allow_organization_member_account(mut self, input: bool) -> Self {
+            self.allow_organization_member_account = Some(input);
+            self
+        }
+        /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
+        pub fn set_allow_organization_member_account(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allow_organization_member_account = input;
             self
         }
         /// Consumes the builder and constructs a [`SlackWorkspaceConfiguration`](crate::model::SlackWorkspaceConfiguration).
         pub fn build(self) -> crate::model::SlackWorkspaceConfiguration {
             crate::model::SlackWorkspaceConfiguration {
                 team_id: self.team_id,
+                team_name: self.team_name,
+                allow_organization_member_account: self.allow_organization_member_account,
             }
         }
     }
@@ -145,17 +276,17 @@ impl SlackWorkspaceConfiguration {
     }
 }
 
-/// <p>The configuration for a Slack channel that you added to an Amazon Web Services account.</p>
+/// <p>The configuration for a Slack channel that you added for your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlackChannelConfiguration {
-    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
-    /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App.</p>
+    /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web Services account.</p>
     #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
@@ -175,7 +306,7 @@ pub struct SlackChannelConfiguration {
     pub channel_role_arn: std::option::Option<std::string::String>,
 }
 impl SlackChannelConfiguration {
-    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn team_id(&self) -> std::option::Option<&str> {
         self.team_id.as_deref()
     }
@@ -183,7 +314,7 @@ impl SlackChannelConfiguration {
     pub fn channel_id(&self) -> std::option::Option<&str> {
         self.channel_id.as_deref()
     }
-    /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App.</p>
+    /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web Services account.</p>
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
@@ -227,12 +358,12 @@ pub mod slack_channel_configuration {
         pub(crate) channel_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.team_id = Some(input.into());
             self
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.team_id = input;
             self
@@ -247,12 +378,12 @@ pub mod slack_channel_configuration {
             self.channel_id = input;
             self
         }
-        /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App.</p>
+        /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web Services account.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App.</p>
+        /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web Services account.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self

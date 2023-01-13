@@ -3956,6 +3956,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "codebuildRoleArn" => {
+                                builder = builder.set_codebuild_role_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -4316,6 +4325,15 @@ where
                             }
                             "componentRoleArn" => {
                                 builder = builder.set_component_role_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "codebuildRoleArn" => {
+                                builder = builder.set_codebuild_role_arn(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
@@ -5608,6 +5626,15 @@ where
                             "pipelineProvisioningRepository" => {
                                 builder = builder.set_pipeline_provisioning_repository(
                                     crate::json_deser::deser_structure_crate_model_repository_branch(tokens)?
+                                );
+                            }
+                            "pipelineCodebuildRoleArn" => {
+                                builder = builder.set_pipeline_codebuild_role_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

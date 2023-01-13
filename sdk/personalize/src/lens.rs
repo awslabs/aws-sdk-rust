@@ -89,6 +89,26 @@ pub(crate) fn reflens_structure_crate_output_list_filters_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_metric_attribution_metrics_output_next_token(
+    input: &crate::output::ListMetricAttributionMetricsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_metric_attributions_output_next_token(
+    input: &crate::output::ListMetricAttributionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_recipes_output_next_token(
     input: &crate::output::ListRecipesOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -223,6 +243,26 @@ pub(crate) fn lens_structure_crate_output_list_filters_output_filters(
     input: crate::output::ListFiltersOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::FilterSummary>> {
     let input = match input.filters {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_metric_attribution_metrics_output_metrics(
+    input: crate::output::ListMetricAttributionMetricsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::MetricAttribute>> {
+    let input = match input.metrics {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_metric_attributions_output_metric_attributions(
+    input: crate::output::ListMetricAttributionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::MetricAttributionSummary>> {
+    let input = match input.metric_attributions {
         None => return None,
         Some(t) => t,
     };

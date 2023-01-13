@@ -1180,7 +1180,7 @@ impl DescribeClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAddonVersionsOutput {
-    /// <p>The list of available versions with Kubernetes version compatibility.</p>
+    /// <p>The list of available versions with Kubernetes version compatibility and other properties.</p>
     #[doc(hidden)]
     pub addons: std::option::Option<std::vec::Vec<crate::model::AddonInfo>>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
@@ -1190,7 +1190,7 @@ pub struct DescribeAddonVersionsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAddonVersionsOutput {
-    /// <p>The list of available versions with Kubernetes version compatibility.</p>
+    /// <p>The list of available versions with Kubernetes version compatibility and other properties.</p>
     pub fn addons(&self) -> std::option::Option<&[crate::model::AddonInfo]> {
         self.addons.as_deref()
     }
@@ -1215,14 +1215,14 @@ pub mod describe_addon_versions_output {
         ///
         /// To override the contents of this collection use [`set_addons`](Self::set_addons).
         ///
-        /// <p>The list of available versions with Kubernetes version compatibility.</p>
+        /// <p>The list of available versions with Kubernetes version compatibility and other properties.</p>
         pub fn addons(mut self, input: crate::model::AddonInfo) -> Self {
             let mut v = self.addons.unwrap_or_default();
             v.push(input);
             self.addons = Some(v);
             self
         }
-        /// <p>The list of available versions with Kubernetes version compatibility.</p>
+        /// <p>The list of available versions with Kubernetes version compatibility and other properties.</p>
         pub fn set_addons(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AddonInfo>>,
@@ -1257,6 +1257,98 @@ impl DescribeAddonVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAddonVersionsOutput`](crate::output::DescribeAddonVersionsOutput).
     pub fn builder() -> crate::output::describe_addon_versions_output::Builder {
         crate::output::describe_addon_versions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeAddonConfigurationOutput {
+    /// <p>The name of the add-on.</p>
+    #[doc(hidden)]
+    pub addon_name: std::option::Option<std::string::String>,
+    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    #[doc(hidden)]
+    pub addon_version: std::option::Option<std::string::String>,
+    /// <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
+    #[doc(hidden)]
+    pub configuration_schema: std::option::Option<std::string::String>,
+}
+impl DescribeAddonConfigurationOutput {
+    /// <p>The name of the add-on.</p>
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
+    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    pub fn addon_version(&self) -> std::option::Option<&str> {
+        self.addon_version.as_deref()
+    }
+    /// <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
+    pub fn configuration_schema(&self) -> std::option::Option<&str> {
+        self.configuration_schema.as_deref()
+    }
+}
+/// See [`DescribeAddonConfigurationOutput`](crate::output::DescribeAddonConfigurationOutput).
+pub mod describe_addon_configuration_output {
+
+    /// A builder for [`DescribeAddonConfigurationOutput`](crate::output::DescribeAddonConfigurationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) addon_name: std::option::Option<std::string::String>,
+        pub(crate) addon_version: std::option::Option<std::string::String>,
+        pub(crate) configuration_schema: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the add-on.</p>
+        pub fn addon_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.addon_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the add-on.</p>
+        pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.addon_name = input;
+            self
+        }
+        /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+        pub fn addon_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.addon_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+        pub fn set_addon_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.addon_version = input;
+            self
+        }
+        /// <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
+        pub fn configuration_schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_schema = Some(input.into());
+            self
+        }
+        /// <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
+        pub fn set_configuration_schema(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_schema = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAddonConfigurationOutput`](crate::output::DescribeAddonConfigurationOutput).
+        pub fn build(self) -> crate::output::DescribeAddonConfigurationOutput {
+            crate::output::DescribeAddonConfigurationOutput {
+                addon_name: self.addon_name,
+                addon_version: self.addon_version,
+                configuration_schema: self.configuration_schema,
+            }
+        }
+    }
+}
+impl DescribeAddonConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAddonConfigurationOutput`](crate::output::DescribeAddonConfigurationOutput).
+    pub fn builder() -> crate::output::describe_addon_configuration_output::Builder {
+        crate::output::describe_addon_configuration_output::Builder::default()
     }
 }
 

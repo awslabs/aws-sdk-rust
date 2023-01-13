@@ -2581,6 +2581,131 @@ impl std::error::Error for GetBlockPublicAccessConfigurationError {
     }
 }
 
+/// Error type for the `GetClusterSessionCredentials` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetClusterSessionCredentialsError {
+    /// Kind of error that occurred.
+    pub kind: GetClusterSessionCredentialsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetClusterSessionCredentialsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetClusterSessionCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetClusterSessionCredentials` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetClusterSessionCredentialsErrorKind {
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>This exception occurs when there is something wrong with user input.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetClusterSessionCredentialsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetClusterSessionCredentialsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            GetClusterSessionCredentialsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            GetClusterSessionCredentialsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetClusterSessionCredentialsError {
+    fn code(&self) -> Option<&str> {
+        GetClusterSessionCredentialsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetClusterSessionCredentialsError {
+    /// Creates a new `GetClusterSessionCredentialsError`.
+    pub fn new(kind: GetClusterSessionCredentialsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetClusterSessionCredentialsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetClusterSessionCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetClusterSessionCredentialsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetClusterSessionCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetClusterSessionCredentialsErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetClusterSessionCredentialsErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetClusterSessionCredentialsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetClusterSessionCredentialsErrorKind::InvalidRequestException(_)
+        )
+    }
+}
+impl std::error::Error for GetClusterSessionCredentialsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetClusterSessionCredentialsErrorKind::InternalServerError(_inner) => Some(_inner),
+            GetClusterSessionCredentialsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            GetClusterSessionCredentialsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `GetManagedScalingPolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

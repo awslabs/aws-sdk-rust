@@ -1233,6 +1233,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoin
     }
 }
 
+/// Operation shape for `GetMultiRegionAccessPointRoutes`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_multi_region_access_point_routes`](crate::client::Client::get_multi_region_access_point_routes).
+///
+/// See [`crate::client::fluent_builders::GetMultiRegionAccessPointRoutes`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetMultiRegionAccessPointRoutes {
+    _private: (),
+}
+impl GetMultiRegionAccessPointRoutes {
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointRoutesInput`](crate::input::GetMultiRegionAccessPointRoutesInput).
+    pub fn builder() -> crate::input::get_multi_region_access_point_routes_input::Builder {
+        crate::input::get_multi_region_access_point_routes_input::Builder::default()
+    }
+    /// Creates a new `GetMultiRegionAccessPointRoutes` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPointRoutes {
+    type Output = std::result::Result<
+        crate::output::GetMultiRegionAccessPointRoutesOutput,
+        crate::error::GetMultiRegionAccessPointRoutesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_multi_region_access_point_routes_error(response)
+        } else {
+            crate::operation_deser::parse_get_multi_region_access_point_routes_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetPublicAccessBlock`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1945,6 +1979,40 @@ impl aws_smithy_http::response::ParseStrictResponse for PutStorageLensConfigurat
             crate::operation_deser::parse_put_storage_lens_configuration_tagging_error(response)
         } else {
             crate::operation_deser::parse_put_storage_lens_configuration_tagging_response(response)
+        }
+    }
+}
+
+/// Operation shape for `SubmitMultiRegionAccessPointRoutes`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`submit_multi_region_access_point_routes`](crate::client::Client::submit_multi_region_access_point_routes).
+///
+/// See [`crate::client::fluent_builders::SubmitMultiRegionAccessPointRoutes`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct SubmitMultiRegionAccessPointRoutes {
+    _private: (),
+}
+impl SubmitMultiRegionAccessPointRoutes {
+    /// Creates a new builder-style object to manufacture [`SubmitMultiRegionAccessPointRoutesInput`](crate::input::SubmitMultiRegionAccessPointRoutesInput).
+    pub fn builder() -> crate::input::submit_multi_region_access_point_routes_input::Builder {
+        crate::input::submit_multi_region_access_point_routes_input::Builder::default()
+    }
+    /// Creates a new `SubmitMultiRegionAccessPointRoutes` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SubmitMultiRegionAccessPointRoutes {
+    type Output = std::result::Result<
+        crate::output::SubmitMultiRegionAccessPointRoutesOutput,
+        crate::error::SubmitMultiRegionAccessPointRoutesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_submit_multi_region_access_point_routes_error(response)
+        } else {
+            crate::operation_deser::parse_submit_multi_region_access_point_routes_response(response)
         }
     }
 }

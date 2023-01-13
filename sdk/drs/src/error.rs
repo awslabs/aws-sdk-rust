@@ -4398,6 +4398,180 @@ impl std::error::Error for RetryDataReplicationError {
     }
 }
 
+/// Error type for the `ReverseReplication` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ReverseReplicationError {
+    /// Kind of error that occurred.
+    pub kind: ReverseReplicationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ReverseReplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ReverseReplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ReverseReplication` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ReverseReplicationErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request could not be completed due to a conflict with the current state of the target resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource for this operation was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The account performing the request has not been initialized.</p>
+    UninitializedAccountException(crate::error::UninitializedAccountException),
+    /// <p>The input fails to satisfy the constraints specified by the AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ReverseReplicationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ReverseReplicationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ReverseReplicationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            ReverseReplicationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ReverseReplicationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ReverseReplicationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ReverseReplicationErrorKind::UninitializedAccountException(_inner) => _inner.fmt(f),
+            ReverseReplicationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ReverseReplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ReverseReplicationError {
+    fn code(&self) -> Option<&str> {
+        ReverseReplicationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ReverseReplicationError {
+    /// Creates a new `ReverseReplicationError`.
+    pub fn new(kind: ReverseReplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ReverseReplicationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ReverseReplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ReverseReplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ReverseReplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ReverseReplicationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReverseReplicationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ReverseReplicationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReverseReplicationErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ReverseReplicationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReverseReplicationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ReverseReplicationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReverseReplicationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ReverseReplicationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReverseReplicationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ReverseReplicationErrorKind::UninitializedAccountException`.
+    pub fn is_uninitialized_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReverseReplicationErrorKind::UninitializedAccountException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ReverseReplicationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReverseReplicationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ReverseReplicationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ReverseReplicationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ReverseReplicationErrorKind::ConflictException(_inner) => Some(_inner),
+            ReverseReplicationErrorKind::InternalServerException(_inner) => Some(_inner),
+            ReverseReplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ReverseReplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ReverseReplicationErrorKind::UninitializedAccountException(_inner) => Some(_inner),
+            ReverseReplicationErrorKind::ValidationException(_inner) => Some(_inner),
+            ReverseReplicationErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `StartFailbackLaunch` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4707,6 +4881,155 @@ impl std::error::Error for StartRecoveryError {
     }
 }
 
+/// Error type for the `StartReplication` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartReplicationError {
+    /// Kind of error that occurred.
+    pub kind: StartReplicationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartReplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartReplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `StartReplication` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartReplicationErrorKind {
+    /// <p>The request could not be completed due to a conflict with the current state of the target resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource for this operation was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The account performing the request has not been initialized.</p>
+    UninitializedAccountException(crate::error::UninitializedAccountException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for StartReplicationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartReplicationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StartReplicationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            StartReplicationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StartReplicationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            StartReplicationErrorKind::UninitializedAccountException(_inner) => _inner.fmt(f),
+            StartReplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartReplicationError {
+    fn code(&self) -> Option<&str> {
+        StartReplicationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartReplicationError {
+    /// Creates a new `StartReplicationError`.
+    pub fn new(kind: StartReplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartReplicationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartReplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartReplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartReplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartReplicationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, StartReplicationErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `StartReplicationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartReplicationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartReplicationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartReplicationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartReplicationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartReplicationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartReplicationErrorKind::UninitializedAccountException`.
+    pub fn is_uninitialized_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartReplicationErrorKind::UninitializedAccountException(_)
+        )
+    }
+}
+impl std::error::Error for StartReplicationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartReplicationErrorKind::ConflictException(_inner) => Some(_inner),
+            StartReplicationErrorKind::InternalServerException(_inner) => Some(_inner),
+            StartReplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StartReplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            StartReplicationErrorKind::UninitializedAccountException(_inner) => Some(_inner),
+            StartReplicationErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `StopFailback` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4841,6 +5164,152 @@ impl std::error::Error for StopFailbackError {
             StopFailbackErrorKind::ThrottlingException(_inner) => Some(_inner),
             StopFailbackErrorKind::UninitializedAccountException(_inner) => Some(_inner),
             StopFailbackErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `StopReplication` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StopReplicationError {
+    /// Kind of error that occurred.
+    pub kind: StopReplicationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StopReplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StopReplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `StopReplication` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StopReplicationErrorKind {
+    /// <p>The request could not be completed due to a conflict with the current state of the target resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource for this operation was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The account performing the request has not been initialized.</p>
+    UninitializedAccountException(crate::error::UninitializedAccountException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for StopReplicationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StopReplicationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StopReplicationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            StopReplicationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StopReplicationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            StopReplicationErrorKind::UninitializedAccountException(_inner) => _inner.fmt(f),
+            StopReplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StopReplicationError {
+    fn code(&self) -> Option<&str> {
+        StopReplicationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StopReplicationError {
+    /// Creates a new `StopReplicationError`.
+    pub fn new(kind: StopReplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StopReplicationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StopReplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StopReplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StopReplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StopReplicationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, StopReplicationErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `StopReplicationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopReplicationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopReplicationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopReplicationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopReplicationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, StopReplicationErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `StopReplicationErrorKind::UninitializedAccountException`.
+    pub fn is_uninitialized_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopReplicationErrorKind::UninitializedAccountException(_)
+        )
+    }
+}
+impl std::error::Error for StopReplicationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StopReplicationErrorKind::ConflictException(_inner) => Some(_inner),
+            StopReplicationErrorKind::InternalServerException(_inner) => Some(_inner),
+            StopReplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StopReplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            StopReplicationErrorKind::UninitializedAccountException(_inner) => Some(_inner),
+            StopReplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

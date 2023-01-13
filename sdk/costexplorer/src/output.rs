@@ -285,6 +285,104 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartSavingsPlansPurchaseRecommendationGenerationOutput {
+    /// <p>The ID for this specific recommendation.</p>
+    #[doc(hidden)]
+    pub recommendation_id: std::option::Option<std::string::String>,
+    /// <p>The start time of the recommendation generation.</p>
+    #[doc(hidden)]
+    pub generation_started_time: std::option::Option<std::string::String>,
+    /// <p>The estimated time for when the recommendation generation will complete.</p>
+    #[doc(hidden)]
+    pub estimated_completion_time: std::option::Option<std::string::String>,
+}
+impl StartSavingsPlansPurchaseRecommendationGenerationOutput {
+    /// <p>The ID for this specific recommendation.</p>
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+        self.recommendation_id.as_deref()
+    }
+    /// <p>The start time of the recommendation generation.</p>
+    pub fn generation_started_time(&self) -> std::option::Option<&str> {
+        self.generation_started_time.as_deref()
+    }
+    /// <p>The estimated time for when the recommendation generation will complete.</p>
+    pub fn estimated_completion_time(&self) -> std::option::Option<&str> {
+        self.estimated_completion_time.as_deref()
+    }
+}
+/// See [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput).
+pub mod start_savings_plans_purchase_recommendation_generation_output {
+
+    /// A builder for [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recommendation_id: std::option::Option<std::string::String>,
+        pub(crate) generation_started_time: std::option::Option<std::string::String>,
+        pub(crate) estimated_completion_time: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID for this specific recommendation.</p>
+        pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recommendation_id = Some(input.into());
+            self
+        }
+        /// <p>The ID for this specific recommendation.</p>
+        pub fn set_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recommendation_id = input;
+            self
+        }
+        /// <p>The start time of the recommendation generation.</p>
+        pub fn generation_started_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.generation_started_time = Some(input.into());
+            self
+        }
+        /// <p>The start time of the recommendation generation.</p>
+        pub fn set_generation_started_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.generation_started_time = input;
+            self
+        }
+        /// <p>The estimated time for when the recommendation generation will complete.</p>
+        pub fn estimated_completion_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.estimated_completion_time = Some(input.into());
+            self
+        }
+        /// <p>The estimated time for when the recommendation generation will complete.</p>
+        pub fn set_estimated_completion_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.estimated_completion_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput).
+        pub fn build(
+            self,
+        ) -> crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput {
+            crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput {
+                recommendation_id: self.recommendation_id,
+                generation_started_time: self.generation_started_time,
+                estimated_completion_time: self.estimated_completion_time,
+            }
+        }
+    }
+}
+impl StartSavingsPlansPurchaseRecommendationGenerationOutput {
+    /// Creates a new builder-style object to manufacture [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput).
+    pub fn builder(
+    ) -> crate::output::start_savings_plans_purchase_recommendation_generation_output::Builder {
+        crate::output::start_savings_plans_purchase_recommendation_generation_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvideAnomalyFeedbackOutput {
     /// <p>The ID of the modified cost anomaly. </p>
     #[doc(hidden)]
@@ -384,6 +482,92 @@ impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListSavingsPlansPurchaseRecommendationGenerationOutput {
+    /// <p>The list of historical recommendation generations.</p>
+    #[doc(hidden)]
+    pub generation_summary_list:
+        std::option::Option<std::vec::Vec<crate::model::GenerationSummary>>,
+    /// <p>The token to retrieve the next set of results.</p>
+    #[doc(hidden)]
+    pub next_page_token: std::option::Option<std::string::String>,
+}
+impl ListSavingsPlansPurchaseRecommendationGenerationOutput {
+    /// <p>The list of historical recommendation generations.</p>
+    pub fn generation_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::GenerationSummary]> {
+        self.generation_summary_list.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
+/// See [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput).
+pub mod list_savings_plans_purchase_recommendation_generation_output {
+
+    /// A builder for [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) generation_summary_list:
+            std::option::Option<std::vec::Vec<crate::model::GenerationSummary>>,
+        pub(crate) next_page_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `generation_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_generation_summary_list`](Self::set_generation_summary_list).
+        ///
+        /// <p>The list of historical recommendation generations.</p>
+        pub fn generation_summary_list(mut self, input: crate::model::GenerationSummary) -> Self {
+            let mut v = self.generation_summary_list.unwrap_or_default();
+            v.push(input);
+            self.generation_summary_list = Some(v);
+            self
+        }
+        /// <p>The list of historical recommendation generations.</p>
+        pub fn set_generation_summary_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GenerationSummary>>,
+        ) -> Self {
+            self.generation_summary_list = input;
+            self
+        }
+        /// <p>The token to retrieve the next set of results.</p>
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_page_token = Some(input.into());
+            self
+        }
+        /// <p>The token to retrieve the next set of results.</p>
+        pub fn set_next_page_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.next_page_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput).
+        pub fn build(
+            self,
+        ) -> crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput {
+            crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput {
+                generation_summary_list: self.generation_summary_list,
+                next_page_token: self.next_page_token,
+            }
+        }
+    }
+}
+impl ListSavingsPlansPurchaseRecommendationGenerationOutput {
+    /// Creates a new builder-style object to manufacture [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput).
+    pub fn builder(
+    ) -> crate::output::list_savings_plans_purchase_recommendation_generation_output::Builder {
+        crate::output::list_savings_plans_purchase_recommendation_generation_output::Builder::default()
     }
 }
 

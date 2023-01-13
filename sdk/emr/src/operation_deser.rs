@@ -1334,6 +1334,85 @@ pub fn parse_get_block_public_access_configuration_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_cluster_session_credentials_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetClusterSessionCredentialsOutput,
+    crate::error::GetClusterSessionCredentialsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetClusterSessionCredentialsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetClusterSessionCredentialsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerError" => crate::error::GetClusterSessionCredentialsError {
+            meta: generic,
+            kind: crate::error::GetClusterSessionCredentialsErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::GetClusterSessionCredentialsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::GetClusterSessionCredentialsError {
+            meta: generic,
+            kind: crate::error::GetClusterSessionCredentialsErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetClusterSessionCredentialsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetClusterSessionCredentialsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_cluster_session_credentials_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetClusterSessionCredentialsOutput,
+    crate::error::GetClusterSessionCredentialsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_cluster_session_credentials_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_get_cluster_session_credentials(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetClusterSessionCredentialsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_managed_scaling_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

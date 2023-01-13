@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSlackChannelConfigurationOutput {
-    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
@@ -29,7 +29,7 @@ pub struct UpdateSlackChannelConfigurationOutput {
     pub channel_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSlackChannelConfigurationOutput {
-    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn team_id(&self) -> std::option::Option<&str> {
         self.team_id.as_deref()
     }
@@ -81,12 +81,12 @@ pub mod update_slack_channel_configuration_output {
         pub(crate) channel_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.team_id = Some(input.into());
             self
         }
-        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.team_id = input;
             self
@@ -195,6 +195,95 @@ impl UpdateSlackChannelConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSlackChannelConfigurationOutput`](crate::output::UpdateSlackChannelConfigurationOutput).
     pub fn builder() -> crate::output::update_slack_channel_configuration_output::Builder {
         crate::output::update_slack_channel_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RegisterSlackWorkspaceForOrganizationOutput {
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    #[doc(hidden)]
+    pub team_id: std::option::Option<std::string::String>,
+    /// <p>The name of the Slack workspace.</p>
+    #[doc(hidden)]
+    pub team_name: std::option::Option<std::string::String>,
+    /// <p>Whether the Amazon Web Services account is a management or member account that's part of an organization in Organizations.</p>
+    #[doc(hidden)]
+    pub account_type: std::option::Option<crate::model::AccountType>,
+}
+impl RegisterSlackWorkspaceForOrganizationOutput {
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    pub fn team_id(&self) -> std::option::Option<&str> {
+        self.team_id.as_deref()
+    }
+    /// <p>The name of the Slack workspace.</p>
+    pub fn team_name(&self) -> std::option::Option<&str> {
+        self.team_name.as_deref()
+    }
+    /// <p>Whether the Amazon Web Services account is a management or member account that's part of an organization in Organizations.</p>
+    pub fn account_type(&self) -> std::option::Option<&crate::model::AccountType> {
+        self.account_type.as_ref()
+    }
+}
+/// See [`RegisterSlackWorkspaceForOrganizationOutput`](crate::output::RegisterSlackWorkspaceForOrganizationOutput).
+pub mod register_slack_workspace_for_organization_output {
+
+    /// A builder for [`RegisterSlackWorkspaceForOrganizationOutput`](crate::output::RegisterSlackWorkspaceForOrganizationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) team_id: std::option::Option<std::string::String>,
+        pub(crate) team_name: std::option::Option<std::string::String>,
+        pub(crate) account_type: std::option::Option<crate::model::AccountType>,
+    }
+    impl Builder {
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+        pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.team_id = Some(input.into());
+            self
+        }
+        /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+        pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.team_id = input;
+            self
+        }
+        /// <p>The name of the Slack workspace.</p>
+        pub fn team_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.team_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Slack workspace.</p>
+        pub fn set_team_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.team_name = input;
+            self
+        }
+        /// <p>Whether the Amazon Web Services account is a management or member account that's part of an organization in Organizations.</p>
+        pub fn account_type(mut self, input: crate::model::AccountType) -> Self {
+            self.account_type = Some(input);
+            self
+        }
+        /// <p>Whether the Amazon Web Services account is a management or member account that's part of an organization in Organizations.</p>
+        pub fn set_account_type(
+            mut self,
+            input: std::option::Option<crate::model::AccountType>,
+        ) -> Self {
+            self.account_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegisterSlackWorkspaceForOrganizationOutput`](crate::output::RegisterSlackWorkspaceForOrganizationOutput).
+        pub fn build(self) -> crate::output::RegisterSlackWorkspaceForOrganizationOutput {
+            crate::output::RegisterSlackWorkspaceForOrganizationOutput {
+                team_id: self.team_id,
+                team_name: self.team_name,
+                account_type: self.account_type,
+            }
+        }
+    }
+}
+impl RegisterSlackWorkspaceForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterSlackWorkspaceForOrganizationOutput`](crate::output::RegisterSlackWorkspaceForOrganizationOutput).
+    pub fn builder() -> crate::output::register_slack_workspace_for_organization_output::Builder {
+        crate::output::register_slack_workspace_for_organization_output::Builder::default()
     }
 }
 

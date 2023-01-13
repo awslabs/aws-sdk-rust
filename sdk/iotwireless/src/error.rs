@@ -8509,6 +8509,158 @@ impl std::error::Error for GetPositionConfigurationError {
     }
 }
 
+/// Error type for the `GetPositionEstimate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetPositionEstimateError {
+    /// Kind of error that occurred.
+    pub kind: GetPositionEstimateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetPositionEstimateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetPositionEstimateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetPositionEstimate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetPositionEstimateErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetPositionEstimateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetPositionEstimateErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetPositionEstimateErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetPositionEstimateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetPositionEstimateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetPositionEstimateErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetPositionEstimateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetPositionEstimateError {
+    fn code(&self) -> Option<&str> {
+        GetPositionEstimateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetPositionEstimateError {
+    /// Creates a new `GetPositionEstimateError`.
+    pub fn new(kind: GetPositionEstimateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetPositionEstimateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetPositionEstimateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetPositionEstimateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetPositionEstimateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetPositionEstimateErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPositionEstimateErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetPositionEstimateErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPositionEstimateErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetPositionEstimateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPositionEstimateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetPositionEstimateErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPositionEstimateErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetPositionEstimateErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPositionEstimateErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetPositionEstimateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetPositionEstimateErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetPositionEstimateErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetPositionEstimateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetPositionEstimateErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetPositionEstimateErrorKind::ValidationException(_inner) => Some(_inner),
+            GetPositionEstimateErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `GetResourceEventConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8824,6 +8976,158 @@ impl std::error::Error for GetResourceLogLevelError {
             GetResourceLogLevelErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetResourceLogLevelErrorKind::ValidationException(_inner) => Some(_inner),
             GetResourceLogLevelErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetResourcePosition` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetResourcePositionError {
+    /// Kind of error that occurred.
+    pub kind: GetResourcePositionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetResourcePositionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetResourcePositionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetResourcePosition` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetResourcePositionErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetResourcePositionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetResourcePositionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetResourcePositionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetResourcePositionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetResourcePositionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetResourcePositionErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetResourcePositionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetResourcePositionError {
+    fn code(&self) -> Option<&str> {
+        GetResourcePositionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetResourcePositionError {
+    /// Creates a new `GetResourcePositionError`.
+    pub fn new(kind: GetResourcePositionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetResourcePositionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetResourcePositionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetResourcePositionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetResourcePositionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetResourcePositionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourcePositionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResourcePositionErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourcePositionErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResourcePositionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourcePositionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResourcePositionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourcePositionErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResourcePositionErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourcePositionErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetResourcePositionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetResourcePositionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetResourcePositionErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetResourcePositionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetResourcePositionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetResourcePositionErrorKind::ValidationException(_inner) => Some(_inner),
+            GetResourcePositionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16192,6 +16496,162 @@ impl std::error::Error for UpdateResourceEventConfigurationError {
             UpdateResourceEventConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateResourceEventConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateResourceEventConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateResourcePosition` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateResourcePositionError {
+    /// Kind of error that occurred.
+    pub kind: UpdateResourcePositionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateResourcePositionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateResourcePositionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateResourcePosition` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateResourcePositionErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateResourcePositionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateResourcePositionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateResourcePositionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateResourcePositionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateResourcePositionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateResourcePositionErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateResourcePositionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateResourcePositionError {
+    fn code(&self) -> Option<&str> {
+        UpdateResourcePositionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateResourcePositionError {
+    /// Creates a new `UpdateResourcePositionError`.
+    pub fn new(kind: UpdateResourcePositionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateResourcePositionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateResourcePositionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateResourcePositionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateResourcePositionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateResourcePositionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourcePositionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResourcePositionErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourcePositionErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResourcePositionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourcePositionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResourcePositionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourcePositionErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResourcePositionErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourcePositionErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateResourcePositionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateResourcePositionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateResourcePositionErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateResourcePositionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateResourcePositionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateResourcePositionErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateResourcePositionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

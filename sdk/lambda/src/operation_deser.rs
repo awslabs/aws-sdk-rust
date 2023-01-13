@@ -4240,6 +4240,58 @@ pub fn parse_invoke_error(
                 }),
             }
         }
+        "SnapStartException" => crate::error::InvokeError {
+            meta: generic,
+            kind: crate::error::InvokeErrorKind::SnapStartException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::snap_start_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_snap_start_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "SnapStartNotReadyException" => crate::error::InvokeError {
+            meta: generic,
+            kind: crate::error::InvokeErrorKind::SnapStartNotReadyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::snap_start_not_ready_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_snap_start_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "SnapStartTimeoutException" => crate::error::InvokeError {
+            meta: generic,
+            kind: crate::error::InvokeErrorKind::SnapStartTimeoutException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::snap_start_timeout_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_snap_start_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "SubnetIPAddressLimitReachedException" => {
             crate::error::InvokeError {
                 meta: generic,

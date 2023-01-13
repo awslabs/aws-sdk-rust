@@ -717,6 +717,133 @@ impl std::error::Error for CreateDataflowEndpointGroupError {
     }
 }
 
+/// Error type for the `CreateEphemeris` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateEphemerisError {
+    /// Kind of error that occurred.
+    pub kind: CreateEphemerisErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateEphemerisError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateEphemerisErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateEphemeris` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateEphemerisErrorKind {
+    /// <p>Dependency encountered an error.</p>
+    DependencyException(crate::error::DependencyException),
+    /// <p>One or more parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateEphemerisError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateEphemerisErrorKind::DependencyException(_inner) => _inner.fmt(f),
+            CreateEphemerisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateEphemerisErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateEphemerisErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateEphemerisError {
+    fn code(&self) -> Option<&str> {
+        CreateEphemerisError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateEphemerisError {
+    /// Creates a new `CreateEphemerisError`.
+    pub fn new(kind: CreateEphemerisErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateEphemerisError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateEphemerisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateEphemerisError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateEphemerisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateEphemerisErrorKind::DependencyException`.
+    pub fn is_dependency_exception(&self) -> bool {
+        matches!(&self.kind, CreateEphemerisErrorKind::DependencyException(_))
+    }
+    /// Returns `true` if the error kind is `CreateEphemerisErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEphemerisErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEphemerisErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEphemerisErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for CreateEphemerisError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateEphemerisErrorKind::DependencyException(_inner) => Some(_inner),
+            CreateEphemerisErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateEphemerisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateEphemerisErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `CreateMissionProfile` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1118,6 +1245,133 @@ impl std::error::Error for DeleteDataflowEndpointGroupError {
     }
 }
 
+/// Error type for the `DeleteEphemeris` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteEphemerisError {
+    /// Kind of error that occurred.
+    pub kind: DeleteEphemerisErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteEphemerisError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteEphemerisErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteEphemeris` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteEphemerisErrorKind {
+    /// <p>Dependency encountered an error.</p>
+    DependencyException(crate::error::DependencyException),
+    /// <p>One or more parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteEphemerisError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteEphemerisErrorKind::DependencyException(_inner) => _inner.fmt(f),
+            DeleteEphemerisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteEphemerisErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteEphemerisErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteEphemerisError {
+    fn code(&self) -> Option<&str> {
+        DeleteEphemerisError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteEphemerisError {
+    /// Creates a new `DeleteEphemerisError`.
+    pub fn new(kind: DeleteEphemerisErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteEphemerisError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteEphemerisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteEphemerisError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteEphemerisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteEphemerisErrorKind::DependencyException`.
+    pub fn is_dependency_exception(&self) -> bool {
+        matches!(&self.kind, DeleteEphemerisErrorKind::DependencyException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteEphemerisErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEphemerisErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEphemerisErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEphemerisErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteEphemerisError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteEphemerisErrorKind::DependencyException(_inner) => Some(_inner),
+            DeleteEphemerisErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteEphemerisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteEphemerisErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DeleteMissionProfile` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1375,6 +1629,136 @@ impl std::error::Error for DescribeContactError {
             DescribeContactErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeContactErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeContactErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeEphemeris` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeEphemerisError {
+    /// Kind of error that occurred.
+    pub kind: DescribeEphemerisErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEphemerisError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEphemerisErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeEphemeris` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeEphemerisErrorKind {
+    /// <p>Dependency encountered an error.</p>
+    DependencyException(crate::error::DependencyException),
+    /// <p>One or more parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeEphemerisError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeEphemerisErrorKind::DependencyException(_inner) => _inner.fmt(f),
+            DescribeEphemerisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeEphemerisErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeEphemerisErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeEphemerisError {
+    fn code(&self) -> Option<&str> {
+        DescribeEphemerisError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeEphemerisError {
+    /// Creates a new `DescribeEphemerisError`.
+    pub fn new(kind: DescribeEphemerisErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeEphemerisError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeEphemerisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeEphemerisError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeEphemerisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeEphemerisErrorKind::DependencyException`.
+    pub fn is_dependency_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEphemerisErrorKind::DependencyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeEphemerisErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEphemerisErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeEphemerisErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEphemerisErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeEphemerisError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeEphemerisErrorKind::DependencyException(_inner) => Some(_inner),
+            DescribeEphemerisErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeEphemerisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeEphemerisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2410,6 +2794,133 @@ impl std::error::Error for ListDataflowEndpointGroupsError {
     }
 }
 
+/// Error type for the `ListEphemerides` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListEphemeridesError {
+    /// Kind of error that occurred.
+    pub kind: ListEphemeridesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListEphemeridesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListEphemeridesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListEphemerides` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListEphemeridesErrorKind {
+    /// <p>Dependency encountered an error.</p>
+    DependencyException(crate::error::DependencyException),
+    /// <p>One or more parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListEphemeridesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListEphemeridesErrorKind::DependencyException(_inner) => _inner.fmt(f),
+            ListEphemeridesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListEphemeridesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListEphemeridesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListEphemeridesError {
+    fn code(&self) -> Option<&str> {
+        ListEphemeridesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListEphemeridesError {
+    /// Creates a new `ListEphemeridesError`.
+    pub fn new(kind: ListEphemeridesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListEphemeridesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListEphemeridesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListEphemeridesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListEphemeridesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListEphemeridesErrorKind::DependencyException`.
+    pub fn is_dependency_exception(&self) -> bool {
+        matches!(&self.kind, ListEphemeridesErrorKind::DependencyException(_))
+    }
+    /// Returns `true` if the error kind is `ListEphemeridesErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEphemeridesErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListEphemeridesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEphemeridesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for ListEphemeridesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListEphemeridesErrorKind::DependencyException(_inner) => Some(_inner),
+            ListEphemeridesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListEphemeridesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListEphemeridesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListGroundStations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3431,6 +3942,133 @@ impl std::error::Error for UpdateConfigError {
             UpdateConfigErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateConfigErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateEphemeris` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateEphemerisError {
+    /// Kind of error that occurred.
+    pub kind: UpdateEphemerisErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateEphemerisError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateEphemerisErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateEphemeris` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateEphemerisErrorKind {
+    /// <p>Dependency encountered an error.</p>
+    DependencyException(crate::error::DependencyException),
+    /// <p>One or more parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateEphemerisError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateEphemerisErrorKind::DependencyException(_inner) => _inner.fmt(f),
+            UpdateEphemerisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateEphemerisErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateEphemerisErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateEphemerisError {
+    fn code(&self) -> Option<&str> {
+        UpdateEphemerisError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateEphemerisError {
+    /// Creates a new `UpdateEphemerisError`.
+    pub fn new(kind: UpdateEphemerisErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateEphemerisError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateEphemerisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateEphemerisError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateEphemerisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateEphemerisErrorKind::DependencyException`.
+    pub fn is_dependency_exception(&self) -> bool {
+        matches!(&self.kind, UpdateEphemerisErrorKind::DependencyException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateEphemerisErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEphemerisErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEphemerisErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEphemerisErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateEphemerisError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateEphemerisErrorKind::DependencyException(_inner) => Some(_inner),
+            UpdateEphemerisErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateEphemerisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateEphemerisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

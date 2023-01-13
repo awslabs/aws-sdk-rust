@@ -692,6 +692,109 @@ impl UnsupportedUserEditionException {
     }
 }
 
+/// <p>A limit is exceeded.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p>Limit exceeded.</p>
+    #[doc(hidden)]
+    pub resource_type: std::option::Option<crate::model::ExceptionResourceType>,
+    /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl LimitExceededException {
+    /// <p>Limit exceeded.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ExceptionResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+impl LimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "LimitExceededException")?;
+        if let Some(inner_9) = &self.message {
+            {
+                write!(f, ": {}", inner_9)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException).
+pub mod limit_exceeded_exception {
+
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<crate::model::ExceptionResourceType>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>Limit exceeded.</p>
+        pub fn resource_type(mut self, input: crate::model::ExceptionResourceType) -> Self {
+            self.resource_type = Some(input);
+            self
+        }
+        /// <p>Limit exceeded.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::ExceptionResourceType>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this request.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this request.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
+                message: self.message,
+                resource_type: self.resource_type,
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>The resource specified already exists. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -725,9 +828,9 @@ impl ResourceExistsException {
 impl std::fmt::Display for ResourceExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceExistsException")?;
-        if let Some(inner_9) = &self.message {
+        if let Some(inner_10) = &self.message {
             {
-                write!(f, ": {}", inner_9)?;
+                write!(f, ": {}", inner_10)?;
             }
         }
         Ok(())
@@ -821,9 +924,9 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_10) = &self.message {
+        if let Some(inner_11) = &self.message {
             {
-                write!(f, ": {}", inner_10)?;
+                write!(f, ": {}", inner_11)?;
             }
         }
         Ok(())
@@ -873,109 +976,6 @@ impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
     pub fn builder() -> crate::error::conflict_exception::Builder {
         crate::error::conflict_exception::Builder::default()
-    }
-}
-
-/// <p>A limit is exceeded.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    /// <p>Limit exceeded.</p>
-    #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::model::ExceptionResourceType>,
-    /// <p>The Amazon Web Services request ID for this request.</p>
-    #[doc(hidden)]
-    pub request_id: std::option::Option<std::string::String>,
-}
-impl LimitExceededException {
-    /// <p>Limit exceeded.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ExceptionResourceType> {
-        self.resource_type.as_ref()
-    }
-    /// <p>The Amazon Web Services request ID for this request.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
-        self.request_id.as_deref()
-    }
-}
-impl LimitExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededException")?;
-        if let Some(inner_11) = &self.message {
-            {
-                write!(f, ": {}", inner_11)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for LimitExceededException {}
-/// See [`LimitExceededException`](crate::error::LimitExceededException).
-pub mod limit_exceeded_exception {
-
-    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) resource_type: std::option::Option<crate::model::ExceptionResourceType>,
-        pub(crate) request_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// <p>Limit exceeded.</p>
-        pub fn resource_type(mut self, input: crate::model::ExceptionResourceType) -> Self {
-            self.resource_type = Some(input);
-            self
-        }
-        /// <p>Limit exceeded.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ExceptionResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
-        }
-        /// <p>The Amazon Web Services request ID for this request.</p>
-        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.request_id = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services request ID for this request.</p>
-        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
-        pub fn build(self) -> crate::error::LimitExceededException {
-            crate::error::LimitExceededException {
-                message: self.message,
-                resource_type: self.resource_type,
-                request_id: self.request_id,
-            }
-        }
-    }
-}
-impl LimitExceededException {
-    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
-    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
-        crate::error::limit_exceeded_exception::Builder::default()
     }
 }
 
@@ -1223,6 +1223,87 @@ impl InvalidNextTokenException {
     }
 }
 
+/// <p>You don't have this feature activated for your account. To fix this issue, contact Amazon Web Services support.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidRequestException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl InvalidRequestException {
+    /// <p>The Amazon Web Services request ID for this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+impl InvalidRequestException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidRequestException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidRequestException")?;
+        if let Some(inner_15) = &self.message {
+            {
+                write!(f, ": {}", inner_15)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidRequestException {}
+/// See [`InvalidRequestException`](crate::error::InvalidRequestException).
+pub mod invalid_request_exception {
+
+    /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this request.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this request.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidRequestException`](crate::error::InvalidRequestException).
+        pub fn build(self) -> crate::error::InvalidRequestException {
+            crate::error::InvalidRequestException {
+                message: self.message,
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl InvalidRequestException {
+    /// Creates a new builder-style object to manufacture [`InvalidRequestException`](crate::error::InvalidRequestException).
+    pub fn builder() -> crate::error::invalid_request_exception::Builder {
+        crate::error::invalid_request_exception::Builder::default()
+    }
+}
+
 /// <p>The number of minutes specified for the lifetime of a session isn't valid. The session lifetime must be 15-600 minutes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1249,9 +1330,9 @@ impl SessionLifetimeInMinutesInvalidException {
 impl std::fmt::Display for SessionLifetimeInMinutesInvalidException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SessionLifetimeInMinutesInvalidException")?;
-        if let Some(inner_15) = &self.message {
+        if let Some(inner_16) = &self.message {
             {
-                write!(f, ": {}", inner_15)?;
+                write!(f, ": {}", inner_16)?;
             }
         }
         Ok(())
@@ -1330,9 +1411,9 @@ impl QuickSightUserNotFoundException {
 impl std::fmt::Display for QuickSightUserNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "QuickSightUserNotFoundException")?;
-        if let Some(inner_16) = &self.message {
+        if let Some(inner_17) = &self.message {
             {
-                write!(f, ": {}", inner_16)?;
+                write!(f, ": {}", inner_17)?;
             }
         }
         Ok(())
@@ -1411,9 +1492,9 @@ impl IdentityTypeNotSupportedException {
 impl std::fmt::Display for IdentityTypeNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IdentityTypeNotSupportedException")?;
-        if let Some(inner_17) = &self.message {
+        if let Some(inner_18) = &self.message {
             {
-                write!(f, ": {}", inner_17)?;
+                write!(f, ": {}", inner_18)?;
             }
         }
         Ok(())
@@ -1492,9 +1573,9 @@ impl DomainNotWhitelistedException {
 impl std::fmt::Display for DomainNotWhitelistedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DomainNotWhitelistedException")?;
-        if let Some(inner_18) = &self.message {
+        if let Some(inner_19) = &self.message {
             {
-                write!(f, ": {}", inner_18)?;
+                write!(f, ": {}", inner_19)?;
             }
         }
         Ok(())
@@ -2145,6 +2226,8 @@ pub enum CreateAnalysisErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>A limit is exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified already exists. </p>
     ResourceExistsException(crate::error::ResourceExistsException),
     /// <p>One or more resources can't be found.</p>
@@ -2169,6 +2252,7 @@ impl std::fmt::Display for CreateAnalysisError {
             CreateAnalysisErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateAnalysisErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
             CreateAnalysisErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            CreateAnalysisErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateAnalysisErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
             CreateAnalysisErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateAnalysisErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
@@ -2245,6 +2329,13 @@ impl CreateAnalysisError {
             CreateAnalysisErrorKind::InvalidParameterValueException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateAnalysisErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAnalysisErrorKind::LimitExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateAnalysisErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
@@ -2277,6 +2368,7 @@ impl std::error::Error for CreateAnalysisError {
             CreateAnalysisErrorKind::ConflictException(_inner) => Some(_inner),
             CreateAnalysisErrorKind::InternalFailureException(_inner) => Some(_inner),
             CreateAnalysisErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            CreateAnalysisErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateAnalysisErrorKind::ResourceExistsException(_inner) => Some(_inner),
             CreateAnalysisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
@@ -2313,6 +2405,8 @@ pub enum CreateDashboardErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>A limit is exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified already exists. </p>
     ResourceExistsException(crate::error::ResourceExistsException),
     /// <p>One or more resources can't be found.</p>
@@ -2337,6 +2431,7 @@ impl std::fmt::Display for CreateDashboardError {
             CreateDashboardErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateDashboardErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
             CreateDashboardErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            CreateDashboardErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateDashboardErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
             CreateDashboardErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateDashboardErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
@@ -2413,6 +2508,13 @@ impl CreateDashboardError {
             CreateDashboardErrorKind::InvalidParameterValueException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateDashboardErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDashboardErrorKind::LimitExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateDashboardErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
@@ -2445,6 +2547,7 @@ impl std::error::Error for CreateDashboardError {
             CreateDashboardErrorKind::ConflictException(_inner) => Some(_inner),
             CreateDashboardErrorKind::InternalFailureException(_inner) => Some(_inner),
             CreateDashboardErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            CreateDashboardErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateDashboardErrorKind::ResourceExistsException(_inner) => Some(_inner),
             CreateDashboardErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateDashboardErrorKind::ThrottlingException(_inner) => Some(_inner),
@@ -5025,6 +5128,196 @@ impl std::error::Error for DeleteAccountCustomizationError {
             }
             DeleteAccountCustomizationErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteAccountCustomizationErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeleteAccountSubscription` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteAccountSubscriptionError {
+    /// Kind of error that occurred.
+    pub kind: DeleteAccountSubscriptionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAccountSubscriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAccountSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteAccountSubscription` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteAccountSubscriptionErrorKind {
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal failure occurred.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>One or more parameters has a value that isn't valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>One or more preconditions aren't met.</p>
+    PreconditionNotMetException(crate::error::PreconditionNotMetException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>This resource is currently unavailable.</p>
+    ResourceUnavailableException(crate::error::ResourceUnavailableException),
+    /// <p>Access is throttled.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteAccountSubscriptionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteAccountSubscriptionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteAccountSubscriptionErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            DeleteAccountSubscriptionErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteAccountSubscriptionErrorKind::PreconditionNotMetException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteAccountSubscriptionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteAccountSubscriptionErrorKind::ResourceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteAccountSubscriptionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteAccountSubscriptionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteAccountSubscriptionError {
+    fn code(&self) -> Option<&str> {
+        DeleteAccountSubscriptionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteAccountSubscriptionError {
+    /// Creates a new `DeleteAccountSubscriptionError`.
+    pub fn new(kind: DeleteAccountSubscriptionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteAccountSubscriptionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteAccountSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteAccountSubscriptionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteAccountSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteAccountSubscriptionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountSubscriptionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAccountSubscriptionErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountSubscriptionErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAccountSubscriptionErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountSubscriptionErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAccountSubscriptionErrorKind::PreconditionNotMetException`.
+    pub fn is_precondition_not_met_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountSubscriptionErrorKind::PreconditionNotMetException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAccountSubscriptionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountSubscriptionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAccountSubscriptionErrorKind::ResourceUnavailableException`.
+    pub fn is_resource_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountSubscriptionErrorKind::ResourceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAccountSubscriptionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountSubscriptionErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteAccountSubscriptionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteAccountSubscriptionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteAccountSubscriptionErrorKind::InternalFailureException(_inner) => Some(_inner),
+            DeleteAccountSubscriptionErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            DeleteAccountSubscriptionErrorKind::PreconditionNotMetException(_inner) => Some(_inner),
+            DeleteAccountSubscriptionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteAccountSubscriptionErrorKind::ResourceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            DeleteAccountSubscriptionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteAccountSubscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8381,6 +8674,205 @@ impl std::error::Error for DescribeAnalysisError {
     }
 }
 
+/// Error type for the `DescribeAnalysisDefinition` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeAnalysisDefinitionError {
+    /// Kind of error that occurred.
+    pub kind: DescribeAnalysisDefinitionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAnalysisDefinitionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAnalysisDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeAnalysisDefinition` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeAnalysisDefinitionErrorKind {
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An internal failure occurred.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>One or more parameters has a value that isn't valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The resource specified already exists. </p>
+    ResourceExistsException(crate::error::ResourceExistsException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Access is throttled.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
+    UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeAnalysisDefinitionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeAnalysisDefinitionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeAnalysisDefinitionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DescribeAnalysisDefinitionErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            DescribeAnalysisDefinitionErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeAnalysisDefinitionErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
+            DescribeAnalysisDefinitionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeAnalysisDefinitionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeAnalysisDefinitionErrorKind::UnsupportedUserEditionException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeAnalysisDefinitionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeAnalysisDefinitionError {
+    fn code(&self) -> Option<&str> {
+        DescribeAnalysisDefinitionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeAnalysisDefinitionError {
+    /// Creates a new `DescribeAnalysisDefinitionError`.
+    pub fn new(kind: DescribeAnalysisDefinitionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeAnalysisDefinitionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeAnalysisDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeAnalysisDefinitionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeAnalysisDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeAnalysisDefinitionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAnalysisDefinitionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAnalysisDefinitionErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAnalysisDefinitionErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAnalysisDefinitionErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAnalysisDefinitionErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAnalysisDefinitionErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAnalysisDefinitionErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAnalysisDefinitionErrorKind::ResourceExistsException`.
+    pub fn is_resource_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAnalysisDefinitionErrorKind::ResourceExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAnalysisDefinitionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAnalysisDefinitionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAnalysisDefinitionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAnalysisDefinitionErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAnalysisDefinitionErrorKind::UnsupportedUserEditionException`.
+    pub fn is_unsupported_user_edition_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAnalysisDefinitionErrorKind::UnsupportedUserEditionException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeAnalysisDefinitionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeAnalysisDefinitionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeAnalysisDefinitionErrorKind::ConflictException(_inner) => Some(_inner),
+            DescribeAnalysisDefinitionErrorKind::InternalFailureException(_inner) => Some(_inner),
+            DescribeAnalysisDefinitionErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            DescribeAnalysisDefinitionErrorKind::ResourceExistsException(_inner) => Some(_inner),
+            DescribeAnalysisDefinitionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeAnalysisDefinitionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeAnalysisDefinitionErrorKind::UnsupportedUserEditionException(_inner) => {
+                Some(_inner)
+            }
+            DescribeAnalysisDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DescribeAnalysisPermissions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8708,6 +9200,207 @@ impl std::error::Error for DescribeDashboardError {
             DescribeDashboardErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeDashboardErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
             DescribeDashboardErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeDashboardDefinition` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeDashboardDefinitionError {
+    /// Kind of error that occurred.
+    pub kind: DescribeDashboardDefinitionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDashboardDefinitionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDashboardDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeDashboardDefinition` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeDashboardDefinitionErrorKind {
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An internal failure occurred.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>One or more parameters has a value that isn't valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The resource specified already exists. </p>
+    ResourceExistsException(crate::error::ResourceExistsException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Access is throttled.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
+    UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeDashboardDefinitionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeDashboardDefinitionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeDashboardDefinitionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DescribeDashboardDefinitionErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            DescribeDashboardDefinitionErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeDashboardDefinitionErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
+            DescribeDashboardDefinitionErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeDashboardDefinitionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeDashboardDefinitionErrorKind::UnsupportedUserEditionException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeDashboardDefinitionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeDashboardDefinitionError {
+    fn code(&self) -> Option<&str> {
+        DescribeDashboardDefinitionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeDashboardDefinitionError {
+    /// Creates a new `DescribeDashboardDefinitionError`.
+    pub fn new(kind: DescribeDashboardDefinitionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeDashboardDefinitionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeDashboardDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeDashboardDefinitionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeDashboardDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeDashboardDefinitionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDashboardDefinitionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDashboardDefinitionErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDashboardDefinitionErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDashboardDefinitionErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDashboardDefinitionErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDashboardDefinitionErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDashboardDefinitionErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDashboardDefinitionErrorKind::ResourceExistsException`.
+    pub fn is_resource_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDashboardDefinitionErrorKind::ResourceExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDashboardDefinitionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDashboardDefinitionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDashboardDefinitionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDashboardDefinitionErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDashboardDefinitionErrorKind::UnsupportedUserEditionException`.
+    pub fn is_unsupported_user_edition_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDashboardDefinitionErrorKind::UnsupportedUserEditionException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeDashboardDefinitionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeDashboardDefinitionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeDashboardDefinitionErrorKind::ConflictException(_inner) => Some(_inner),
+            DescribeDashboardDefinitionErrorKind::InternalFailureException(_inner) => Some(_inner),
+            DescribeDashboardDefinitionErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            DescribeDashboardDefinitionErrorKind::ResourceExistsException(_inner) => Some(_inner),
+            DescribeDashboardDefinitionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeDashboardDefinitionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeDashboardDefinitionErrorKind::UnsupportedUserEditionException(_inner) => {
+                Some(_inner)
+            }
+            DescribeDashboardDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11385,6 +12078,205 @@ impl std::error::Error for DescribeTemplateAliasError {
             DescribeTemplateAliasErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeTemplateAliasErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
             DescribeTemplateAliasErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeTemplateDefinition` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeTemplateDefinitionError {
+    /// Kind of error that occurred.
+    pub kind: DescribeTemplateDefinitionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeTemplateDefinitionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeTemplateDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeTemplateDefinition` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeTemplateDefinitionErrorKind {
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An internal failure occurred.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>One or more parameters has a value that isn't valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The resource specified already exists. </p>
+    ResourceExistsException(crate::error::ResourceExistsException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Access is throttled.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
+    UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeTemplateDefinitionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeTemplateDefinitionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeTemplateDefinitionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DescribeTemplateDefinitionErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            DescribeTemplateDefinitionErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeTemplateDefinitionErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
+            DescribeTemplateDefinitionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeTemplateDefinitionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeTemplateDefinitionErrorKind::UnsupportedUserEditionException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeTemplateDefinitionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeTemplateDefinitionError {
+    fn code(&self) -> Option<&str> {
+        DescribeTemplateDefinitionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeTemplateDefinitionError {
+    /// Creates a new `DescribeTemplateDefinitionError`.
+    pub fn new(kind: DescribeTemplateDefinitionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeTemplateDefinitionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeTemplateDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeTemplateDefinitionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeTemplateDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeTemplateDefinitionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTemplateDefinitionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTemplateDefinitionErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTemplateDefinitionErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTemplateDefinitionErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTemplateDefinitionErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTemplateDefinitionErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTemplateDefinitionErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTemplateDefinitionErrorKind::ResourceExistsException`.
+    pub fn is_resource_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTemplateDefinitionErrorKind::ResourceExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTemplateDefinitionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTemplateDefinitionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTemplateDefinitionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTemplateDefinitionErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTemplateDefinitionErrorKind::UnsupportedUserEditionException`.
+    pub fn is_unsupported_user_edition_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTemplateDefinitionErrorKind::UnsupportedUserEditionException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeTemplateDefinitionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeTemplateDefinitionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeTemplateDefinitionErrorKind::ConflictException(_inner) => Some(_inner),
+            DescribeTemplateDefinitionErrorKind::InternalFailureException(_inner) => Some(_inner),
+            DescribeTemplateDefinitionErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            DescribeTemplateDefinitionErrorKind::ResourceExistsException(_inner) => Some(_inner),
+            DescribeTemplateDefinitionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeTemplateDefinitionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeTemplateDefinitionErrorKind::UnsupportedUserEditionException(_inner) => {
+                Some(_inner)
+            }
+            DescribeTemplateDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17490,6 +18382,329 @@ impl std::error::Error for SearchDashboardsError {
     }
 }
 
+/// Error type for the `SearchDataSets` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SearchDataSetsError {
+    /// Kind of error that occurred.
+    pub kind: SearchDataSetsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SearchDataSetsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SearchDataSetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `SearchDataSets` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SearchDataSetsErrorKind {
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal failure occurred.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The <code>NextToken</code> value isn't valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>One or more parameters has a value that isn't valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Access is throttled.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for SearchDataSetsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SearchDataSetsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SearchDataSetsErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            SearchDataSetsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            SearchDataSetsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            SearchDataSetsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            SearchDataSetsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SearchDataSetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SearchDataSetsError {
+    fn code(&self) -> Option<&str> {
+        SearchDataSetsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SearchDataSetsError {
+    /// Creates a new `SearchDataSetsError`.
+    pub fn new(kind: SearchDataSetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SearchDataSetsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SearchDataSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SearchDataSetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SearchDataSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SearchDataSetsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchDataSetsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchDataSetsErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchDataSetsErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchDataSetsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchDataSetsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchDataSetsErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchDataSetsErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchDataSetsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchDataSetsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchDataSetsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, SearchDataSetsErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for SearchDataSetsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SearchDataSetsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SearchDataSetsErrorKind::InternalFailureException(_inner) => Some(_inner),
+            SearchDataSetsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            SearchDataSetsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            SearchDataSetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            SearchDataSetsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SearchDataSetsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `SearchDataSources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SearchDataSourcesError {
+    /// Kind of error that occurred.
+    pub kind: SearchDataSourcesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SearchDataSourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SearchDataSourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `SearchDataSources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SearchDataSourcesErrorKind {
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal failure occurred.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The <code>NextToken</code> value isn't valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>One or more parameters has a value that isn't valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Access is throttled.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for SearchDataSourcesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SearchDataSourcesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SearchDataSourcesErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            SearchDataSourcesErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            SearchDataSourcesErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            SearchDataSourcesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            SearchDataSourcesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SearchDataSourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SearchDataSourcesError {
+    fn code(&self) -> Option<&str> {
+        SearchDataSourcesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SearchDataSourcesError {
+    /// Creates a new `SearchDataSourcesError`.
+    pub fn new(kind: SearchDataSourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SearchDataSourcesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SearchDataSourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SearchDataSourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SearchDataSourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SearchDataSourcesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchDataSourcesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchDataSourcesErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchDataSourcesErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchDataSourcesErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchDataSourcesErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchDataSourcesErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchDataSourcesErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchDataSourcesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchDataSourcesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchDataSourcesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchDataSourcesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for SearchDataSourcesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SearchDataSourcesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SearchDataSourcesErrorKind::InternalFailureException(_inner) => Some(_inner),
+            SearchDataSourcesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            SearchDataSourcesErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            SearchDataSourcesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            SearchDataSourcesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SearchDataSourcesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `SearchFolders` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -17519,6 +18734,8 @@ pub enum SearchFoldersErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>You don't have this feature activated for your account. To fix this issue, contact Amazon Web Services support.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
@@ -17542,6 +18759,7 @@ impl std::fmt::Display for SearchFoldersError {
             SearchFoldersErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
             SearchFoldersErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
             SearchFoldersErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            SearchFoldersErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             SearchFoldersErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             SearchFoldersErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             SearchFoldersErrorKind::UnsupportedUserEditionException(_inner) => _inner.fmt(f),
@@ -17624,6 +18842,13 @@ impl SearchFoldersError {
             SearchFoldersErrorKind::InvalidParameterValueException(_)
         )
     }
+    /// Returns `true` if the error kind is `SearchFoldersErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchFoldersErrorKind::InvalidRequestException(_)
+        )
+    }
     /// Returns `true` if the error kind is `SearchFoldersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -17650,6 +18875,7 @@ impl std::error::Error for SearchFoldersError {
             SearchFoldersErrorKind::InternalFailureException(_inner) => Some(_inner),
             SearchFoldersErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             SearchFoldersErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            SearchFoldersErrorKind::InvalidRequestException(_inner) => Some(_inner),
             SearchFoldersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SearchFoldersErrorKind::ThrottlingException(_inner) => Some(_inner),
             SearchFoldersErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
@@ -18689,6 +19915,8 @@ pub enum UpdateAnalysisPermissionsErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>A limit is exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
@@ -18713,6 +19941,7 @@ impl std::fmt::Display for UpdateAnalysisPermissionsError {
             UpdateAnalysisPermissionsErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
+            UpdateAnalysisPermissionsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateAnalysisPermissionsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateAnalysisPermissionsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateAnalysisPermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
@@ -18797,6 +20026,13 @@ impl UpdateAnalysisPermissionsError {
             UpdateAnalysisPermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateAnalysisPermissionsErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAnalysisPermissionsErrorKind::LimitExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateAnalysisPermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -18827,6 +20063,7 @@ impl std::error::Error for UpdateAnalysisPermissionsError {
             UpdateAnalysisPermissionsErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
+            UpdateAnalysisPermissionsErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateAnalysisPermissionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAnalysisPermissionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateAnalysisPermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
@@ -19034,6 +20271,8 @@ pub enum UpdateDashboardPermissionsErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>A limit is exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
@@ -19058,6 +20297,7 @@ impl std::fmt::Display for UpdateDashboardPermissionsError {
             UpdateDashboardPermissionsErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
+            UpdateDashboardPermissionsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateDashboardPermissionsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateDashboardPermissionsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateDashboardPermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
@@ -19142,6 +20382,13 @@ impl UpdateDashboardPermissionsError {
             UpdateDashboardPermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateDashboardPermissionsErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDashboardPermissionsErrorKind::LimitExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateDashboardPermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -19172,6 +20419,7 @@ impl std::error::Error for UpdateDashboardPermissionsError {
             UpdateDashboardPermissionsErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
+            UpdateDashboardPermissionsErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateDashboardPermissionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDashboardPermissionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateDashboardPermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
@@ -21473,6 +22721,8 @@ pub enum UpdateTemplatePermissionsErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>A limit is exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
@@ -21497,6 +22747,7 @@ impl std::fmt::Display for UpdateTemplatePermissionsError {
             UpdateTemplatePermissionsErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
+            UpdateTemplatePermissionsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateTemplatePermissionsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateTemplatePermissionsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateTemplatePermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
@@ -21581,6 +22832,13 @@ impl UpdateTemplatePermissionsError {
             UpdateTemplatePermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateTemplatePermissionsErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTemplatePermissionsErrorKind::LimitExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateTemplatePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -21611,6 +22869,7 @@ impl std::error::Error for UpdateTemplatePermissionsError {
             UpdateTemplatePermissionsErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
+            UpdateTemplatePermissionsErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateTemplatePermissionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateTemplatePermissionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateTemplatePermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
@@ -21992,6 +23251,8 @@ pub enum UpdateThemePermissionsErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>A limit is exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
@@ -22016,6 +23277,7 @@ impl std::fmt::Display for UpdateThemePermissionsError {
             UpdateThemePermissionsErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
+            UpdateThemePermissionsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateThemePermissionsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateThemePermissionsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateThemePermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
@@ -22100,6 +23362,13 @@ impl UpdateThemePermissionsError {
             UpdateThemePermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateThemePermissionsErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateThemePermissionsErrorKind::LimitExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateThemePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -22128,6 +23397,7 @@ impl std::error::Error for UpdateThemePermissionsError {
             UpdateThemePermissionsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UpdateThemePermissionsErrorKind::InternalFailureException(_inner) => Some(_inner),
             UpdateThemePermissionsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            UpdateThemePermissionsErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateThemePermissionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateThemePermissionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateThemePermissionsErrorKind::UnsupportedUserEditionException(_inner) => {

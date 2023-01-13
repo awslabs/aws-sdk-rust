@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
+    /// <p> This error is returned if you call <code>AssociateDelegationSignerToDomain</code> when the specified domain has reached the maximum number of DS records. You can't add any additional DS records unless you delete an existing one first. </p>
+    DnssecLimitExceeded(crate::error::DnssecLimitExceeded),
     /// <p>The number of domains has exceeded the allowed threshold for the account.</p>
     DomainLimitExceeded(crate::error::DomainLimitExceeded),
     /// <p>The request is already in progress for the domain.</p>
@@ -28,6 +30,7 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::DnssecLimitExceeded(inner) => inner.fmt(f),
             Error::DomainLimitExceeded(inner) => inner.fmt(f),
             Error::DuplicateRequest(inner) => inner.fmt(f),
             Error::InvalidInput(inner) => inner.fmt(f),
@@ -70,6 +73,53 @@ impl From<crate::error::AcceptDomainTransferFromAnotherAwsAccountError> for Erro
             crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
             crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
             crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::AssociateDelegationSignerToDomainError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::AssociateDelegationSignerToDomainError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AssociateDelegationSignerToDomainError> for Error {
+    fn from(err: crate::error::AssociateDelegationSignerToDomainError) -> Self {
+        match err.kind {
+            crate::error::AssociateDelegationSignerToDomainErrorKind::DnssecLimitExceeded(
+                inner,
+            ) => Error::DnssecLimitExceeded(inner),
+            crate::error::AssociateDelegationSignerToDomainErrorKind::DuplicateRequest(inner) => {
+                Error::DuplicateRequest(inner)
+            }
+            crate::error::AssociateDelegationSignerToDomainErrorKind::InvalidInput(inner) => {
+                Error::InvalidInput(inner)
+            }
+            crate::error::AssociateDelegationSignerToDomainErrorKind::OperationLimitExceeded(
+                inner,
+            ) => Error::OperationLimitExceeded(inner),
+            crate::error::AssociateDelegationSignerToDomainErrorKind::TldRulesViolation(inner) => {
+                Error::TldRulesViolation(inner)
+            }
+            crate::error::AssociateDelegationSignerToDomainErrorKind::UnsupportedTld(inner) => {
+                Error::UnsupportedTld(inner)
+            }
+            crate::error::AssociateDelegationSignerToDomainErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -302,6 +352,42 @@ impl From<crate::error::DisableDomainTransferLockError> for Error {
             crate::error::DisableDomainTransferLockErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DisassociateDelegationSignerFromDomainError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DisassociateDelegationSignerFromDomainError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DisassociateDelegationSignerFromDomainError> for Error {
+    fn from(err: crate::error::DisassociateDelegationSignerFromDomainError) -> Self {
+        match err.kind {
+            crate::error::DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
+            crate::error::DisassociateDelegationSignerFromDomainErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
+            crate::error::DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::DisassociateDelegationSignerFromDomainErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -606,6 +692,35 @@ impl From<crate::error::ListTagsForDomainError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PushDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PushDomainError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PushDomainError> for Error {
+    fn from(err: crate::error::PushDomainError) -> Self {
+        match err.kind {
+            crate::error::PushDomainErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::PushDomainErrorKind::OperationLimitExceeded(inner) => {
+                Error::OperationLimitExceeded(inner)
+            }
+            crate::error::PushDomainErrorKind::UnsupportedTld(inner) => {
+                Error::UnsupportedTld(inner)
+            }
+            crate::error::PushDomainErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterDomainError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -748,6 +863,34 @@ impl From<crate::error::ResendContactReachabilityEmailError> for Error {
                 Error::UnsupportedTld(inner)
             }
             crate::error::ResendContactReachabilityEmailErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResendOperationAuthorizationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ResendOperationAuthorizationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ResendOperationAuthorizationError> for Error {
+    fn from(err: crate::error::ResendOperationAuthorizationError) -> Self {
+        match err.kind {
+            crate::error::ResendOperationAuthorizationErrorKind::InvalidInput(inner) => {
+                Error::InvalidInput(inner)
+            }
+            crate::error::ResendOperationAuthorizationErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

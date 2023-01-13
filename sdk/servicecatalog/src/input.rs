@@ -405,12 +405,14 @@ pub mod associate_principal_with_portfolio_input {
             self.portfolio_id = input;
             self
         }
-        /// <p>The ARN of the principal (IAM user, role, or group).</p>
+        /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+        /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
         pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the principal (IAM user, role, or group).</p>
+        /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+        /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -418,12 +420,12 @@ pub mod associate_principal_with_portfolio_input {
             self.principal_arn = input;
             self
         }
-        /// <p>The principal type. The supported value is <code>IAM</code>.</p>
+        /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
         pub fn principal_type(mut self, input: crate::model::PrincipalType) -> Self {
             self.principal_type = Some(input);
             self
         }
-        /// <p>The principal type. The supported value is <code>IAM</code>.</p>
+        /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
         pub fn set_principal_type(
             mut self,
             input: std::option::Option<crate::model::PrincipalType>,
@@ -2381,6 +2383,7 @@ pub mod create_portfolio_share_input {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) organization_node: std::option::Option<crate::model::OrganizationNode>,
         pub(crate) share_tag_options: std::option::Option<bool>,
+        pub(crate) share_principals: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The language code.</p>
@@ -2449,6 +2452,18 @@ pub mod create_portfolio_share_input {
             self.share_tag_options = input;
             self
         }
+        /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>
+        /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
+        pub fn share_principals(mut self, input: bool) -> Self {
+            self.share_principals = Some(input);
+            self
+        }
+        /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>
+        /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
+        pub fn set_share_principals(mut self, input: std::option::Option<bool>) -> Self {
+            self.share_principals = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePortfolioShareInput`](crate::input::CreatePortfolioShareInput).
         pub fn build(
             self,
@@ -2462,6 +2477,7 @@ pub mod create_portfolio_share_input {
                 account_id: self.account_id,
                 organization_node: self.organization_node,
                 share_tag_options: self.share_tag_options.unwrap_or_default(),
+                share_principals: self.share_principals.unwrap_or_default(),
             })
         }
     }
@@ -2602,6 +2618,7 @@ pub mod create_product_input {
         pub(crate) provisioning_artifact_parameters:
             std::option::Option<crate::model::ProvisioningArtifactProperties>,
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
+        pub(crate) source_connection: std::option::Option<crate::model::SourceConnection>,
     }
     impl Builder {
         /// <p>The language code.</p>
@@ -2766,6 +2783,27 @@ pub mod create_product_input {
             self.idempotency_token = input;
             self
         }
+        /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+        /// <ul>
+        /// <li> <p> <code>Type</code> </p> </li>
+        /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+        /// </ul>
+        pub fn source_connection(mut self, input: crate::model::SourceConnection) -> Self {
+            self.source_connection = Some(input);
+            self
+        }
+        /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+        /// <ul>
+        /// <li> <p> <code>Type</code> </p> </li>
+        /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+        /// </ul>
+        pub fn set_source_connection(
+            mut self,
+            input: std::option::Option<crate::model::SourceConnection>,
+        ) -> Self {
+            self.source_connection = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateProductInput`](crate::input::CreateProductInput).
         pub fn build(
             self,
@@ -2784,6 +2822,7 @@ pub mod create_product_input {
                 tags: self.tags,
                 provisioning_artifact_parameters: self.provisioning_artifact_parameters,
                 idempotency_token: self.idempotency_token,
+                source_connection: self.source_connection,
             })
         }
     }
@@ -8573,6 +8612,7 @@ pub mod disassociate_principal_from_portfolio_input {
         pub(crate) accept_language: std::option::Option<std::string::String>,
         pub(crate) portfolio_id: std::option::Option<std::string::String>,
         pub(crate) principal_arn: std::option::Option<std::string::String>,
+        pub(crate) principal_type: std::option::Option<crate::model::PrincipalType>,
     }
     impl Builder {
         /// <p>The language code.</p>
@@ -8608,17 +8648,30 @@ pub mod disassociate_principal_from_portfolio_input {
             self.portfolio_id = input;
             self
         }
-        /// <p>The ARN of the principal (IAM user, role, or group).</p>
+        /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
         pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the principal (IAM user, role, or group).</p>
+        /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.principal_arn = input;
+            self
+        }
+        /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no <code>accountID</code>. </p>
+        pub fn principal_type(mut self, input: crate::model::PrincipalType) -> Self {
+            self.principal_type = Some(input);
+            self
+        }
+        /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no <code>accountID</code>. </p>
+        pub fn set_principal_type(
+            mut self,
+            input: std::option::Option<crate::model::PrincipalType>,
+        ) -> Self {
+            self.principal_type = input;
             self
         }
         /// Consumes the builder and constructs a [`DisassociatePrincipalFromPortfolioInput`](crate::input::DisassociatePrincipalFromPortfolioInput).
@@ -8632,6 +8685,7 @@ pub mod disassociate_principal_from_portfolio_input {
                 accept_language: self.accept_language,
                 portfolio_id: self.portfolio_id,
                 principal_arn: self.principal_arn,
+                principal_type: self.principal_type,
             })
         }
     }
@@ -16353,6 +16407,7 @@ pub mod update_portfolio_share_input {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) organization_node: std::option::Option<crate::model::OrganizationNode>,
         pub(crate) share_tag_options: std::option::Option<bool>,
+        pub(crate) share_principals: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The language code.</p>
@@ -16411,14 +16466,24 @@ pub mod update_portfolio_share_input {
             self.organization_node = input;
             self
         }
-        /// <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
+        /// <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
         pub fn share_tag_options(mut self, input: bool) -> Self {
             self.share_tag_options = Some(input);
             self
         }
-        /// <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
+        /// <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
         pub fn set_share_tag_options(mut self, input: std::option::Option<bool>) -> Self {
             self.share_tag_options = input;
+            self
+        }
+        /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
+        pub fn share_principals(mut self, input: bool) -> Self {
+            self.share_principals = Some(input);
+            self
+        }
+        /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
+        pub fn set_share_principals(mut self, input: std::option::Option<bool>) -> Self {
+            self.share_principals = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdatePortfolioShareInput`](crate::input::UpdatePortfolioShareInput).
@@ -16434,6 +16499,7 @@ pub mod update_portfolio_share_input {
                 account_id: self.account_id,
                 organization_node: self.organization_node,
                 share_tag_options: self.share_tag_options,
+                share_principals: self.share_principals,
             })
         }
     }
@@ -16572,6 +16638,7 @@ pub mod update_product_input {
         pub(crate) support_url: std::option::Option<std::string::String>,
         pub(crate) add_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) remove_tags: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) source_connection: std::option::Option<crate::model::SourceConnection>,
     }
     impl Builder {
         /// <p>The language code.</p>
@@ -16721,6 +16788,27 @@ pub mod update_product_input {
             self.remove_tags = input;
             self
         }
+        /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+        /// <ul>
+        /// <li> <p> <code>Type</code> </p> </li>
+        /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+        /// </ul>
+        pub fn source_connection(mut self, input: crate::model::SourceConnection) -> Self {
+            self.source_connection = Some(input);
+            self
+        }
+        /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+        /// <ul>
+        /// <li> <p> <code>Type</code> </p> </li>
+        /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+        /// </ul>
+        pub fn set_source_connection(
+            mut self,
+            input: std::option::Option<crate::model::SourceConnection>,
+        ) -> Self {
+            self.source_connection = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateProductInput`](crate::input::UpdateProductInput).
         pub fn build(
             self,
@@ -16738,6 +16826,7 @@ pub mod update_product_input {
                 support_url: self.support_url,
                 add_tags: self.add_tags,
                 remove_tags: self.remove_tags,
+                source_connection: self.source_connection,
             })
         }
     }
@@ -18459,6 +18548,13 @@ pub struct UpdateProductInput {
     /// <p>The tags to remove from the product.</p>
     #[doc(hidden)]
     pub remove_tags: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+    /// <ul>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub source_connection: std::option::Option<crate::model::SourceConnection>,
 }
 impl UpdateProductInput {
     /// <p>The language code.</p>
@@ -18510,6 +18606,14 @@ impl UpdateProductInput {
     pub fn remove_tags(&self) -> std::option::Option<&[std::string::String]> {
         self.remove_tags.as_deref()
     }
+    /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+    /// <ul>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+    /// </ul>
+    pub fn source_connection(&self) -> std::option::Option<&crate::model::SourceConnection> {
+        self.source_connection.as_ref()
+    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -18533,9 +18637,12 @@ pub struct UpdatePortfolioShareInput {
     /// <p>Information about the organization node.</p>
     #[doc(hidden)]
     pub organization_node: std::option::Option<crate::model::OrganizationNode>,
-    /// <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
+    /// <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
     #[doc(hidden)]
     pub share_tag_options: std::option::Option<bool>,
+    /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
+    #[doc(hidden)]
+    pub share_principals: std::option::Option<bool>,
 }
 impl UpdatePortfolioShareInput {
     /// <p>The language code.</p>
@@ -18559,9 +18666,13 @@ impl UpdatePortfolioShareInput {
     pub fn organization_node(&self) -> std::option::Option<&crate::model::OrganizationNode> {
         self.organization_node.as_ref()
     }
-    /// <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
+    /// <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
     pub fn share_tag_options(&self) -> std::option::Option<bool> {
         self.share_tag_options
+    }
+    /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
+    pub fn share_principals(&self) -> std::option::Option<bool> {
+        self.share_principals
     }
 }
 
@@ -20483,9 +20594,12 @@ pub struct DisassociatePrincipalFromPortfolioInput {
     /// <p>The portfolio identifier.</p>
     #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the principal (IAM user, role, or group).</p>
+    /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
     #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
+    /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no <code>accountID</code>. </p>
+    #[doc(hidden)]
+    pub principal_type: std::option::Option<crate::model::PrincipalType>,
 }
 impl DisassociatePrincipalFromPortfolioInput {
     /// <p>The language code.</p>
@@ -20501,9 +20615,13 @@ impl DisassociatePrincipalFromPortfolioInput {
     pub fn portfolio_id(&self) -> std::option::Option<&str> {
         self.portfolio_id.as_deref()
     }
-    /// <p>The ARN of the principal (IAM user, role, or group).</p>
+    /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
     pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
+    }
+    /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no <code>accountID</code>. </p>
+    pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+        self.principal_type.as_ref()
     }
 }
 
@@ -21764,6 +21882,13 @@ pub struct CreateProductInput {
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
+    /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+    /// <ul>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub source_connection: std::option::Option<crate::model::SourceConnection>,
 }
 impl CreateProductInput {
     /// <p>The language code.</p>
@@ -21822,6 +21947,14 @@ impl CreateProductInput {
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
+    /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+    /// <ul>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+    /// </ul>
+    pub fn source_connection(&self) -> std::option::Option<&crate::model::SourceConnection> {
+        self.source_connection.as_ref()
+    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -21848,6 +21981,10 @@ pub struct CreatePortfolioShareInput {
     /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
     #[doc(hidden)]
     pub share_tag_options: bool,
+    /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>
+    /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
+    #[doc(hidden)]
+    pub share_principals: bool,
 }
 impl CreatePortfolioShareInput {
     /// <p>The language code.</p>
@@ -21874,6 +22011,11 @@ impl CreatePortfolioShareInput {
     /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
     pub fn share_tag_options(&self) -> bool {
         self.share_tag_options
+    }
+    /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>
+    /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
+    pub fn share_principals(&self) -> bool {
+        self.share_principals
     }
 }
 
@@ -22394,10 +22536,11 @@ pub struct AssociatePrincipalWithPortfolioInput {
     /// <p>The portfolio identifier.</p>
     #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the principal (IAM user, role, or group).</p>
+    /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+    /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
     #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
-    /// <p>The principal type. The supported value is <code>IAM</code>.</p>
+    /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
     #[doc(hidden)]
     pub principal_type: std::option::Option<crate::model::PrincipalType>,
 }
@@ -22415,11 +22558,12 @@ impl AssociatePrincipalWithPortfolioInput {
     pub fn portfolio_id(&self) -> std::option::Option<&str> {
         self.portfolio_id.as_deref()
     }
-    /// <p>The ARN of the principal (IAM user, role, or group).</p>
+    /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+    /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
     pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
     }
-    /// <p>The principal type. The supported value is <code>IAM</code>.</p>
+    /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
     pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
         self.principal_type.as_ref()
     }

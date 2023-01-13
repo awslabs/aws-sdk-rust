@@ -125,6 +125,7 @@ impl Client {
     /// - On success, responds with [`GetAssessmentOutput`](crate::output::GetAssessmentOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::GetAssessmentOutput::id): <p> The ID for the specific assessment task. </p>
     ///   - [`data_collection_details(Option<DataCollectionDetails>)`](crate::output::GetAssessmentOutput::data_collection_details): <p> Detailed information about the assessment. </p>
+    ///   - [`assessment_targets(Option<Vec<AssessmentTarget>>)`](crate::output::GetAssessmentOutput::assessment_targets): <p>List of criteria for assessment.</p>
     /// - On failure, responds with [`SdkError<GetAssessmentError>`](crate::error::GetAssessmentError)
     pub fn get_assessment(&self) -> fluent_builders::GetAssessment {
         fluent_builders::GetAssessment::new(self.handle.clone())
@@ -149,6 +150,16 @@ impl Client {
     pub fn get_import_file_task(&self) -> fluent_builders::GetImportFileTask {
         fluent_builders::GetImportFileTask::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetLatestAssessmentId`](crate::client::fluent_builders::GetLatestAssessmentId) operation.
+    ///
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetLatestAssessmentId::send) it.
+
+    /// - On success, responds with [`GetLatestAssessmentIdOutput`](crate::output::GetLatestAssessmentIdOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::GetLatestAssessmentIdOutput::id): <p>The latest ID for the specific assessment task.</p>
+    /// - On failure, responds with [`SdkError<GetLatestAssessmentIdError>`](crate::error::GetLatestAssessmentIdError)
+    pub fn get_latest_assessment_id(&self) -> fluent_builders::GetLatestAssessmentId {
+        fluent_builders::GetLatestAssessmentId::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetPortfolioPreferences`](crate::client::fluent_builders::GetPortfolioPreferences) operation.
     ///
     /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetPortfolioPreferences::send) it.
@@ -157,6 +168,7 @@ impl Client {
     ///   - [`prioritize_business_goals(Option<PrioritizeBusinessGoals>)`](crate::output::GetPortfolioPreferencesOutput::prioritize_business_goals): <p> The rank of business goals based on priority. </p>
     ///   - [`application_preferences(Option<ApplicationPreferences>)`](crate::output::GetPortfolioPreferencesOutput::application_preferences): <p> The transformation preferences for non-database applications. </p>
     ///   - [`database_preferences(Option<DatabasePreferences>)`](crate::output::GetPortfolioPreferencesOutput::database_preferences): <p> The transformation preferences for database applications. </p>
+    ///   - [`application_mode(Option<ApplicationMode>)`](crate::output::GetPortfolioPreferencesOutput::application_mode): <p>The classification for application component types.</p>
     /// - On failure, responds with [`SdkError<GetPortfolioPreferencesError>`](crate::error::GetPortfolioPreferencesError)
     pub fn get_portfolio_preferences(&self) -> fluent_builders::GetPortfolioPreferences {
         fluent_builders::GetPortfolioPreferences::new(self.handle.clone())
@@ -275,6 +287,7 @@ impl Client {
     ///   - [`prioritize_business_goals(PrioritizeBusinessGoals)`](crate::client::fluent_builders::PutPortfolioPreferences::prioritize_business_goals) / [`set_prioritize_business_goals(Option<PrioritizeBusinessGoals>)`](crate::client::fluent_builders::PutPortfolioPreferences::set_prioritize_business_goals): <p> The rank of the business goals based on priority. </p>
     ///   - [`application_preferences(ApplicationPreferences)`](crate::client::fluent_builders::PutPortfolioPreferences::application_preferences) / [`set_application_preferences(Option<ApplicationPreferences>)`](crate::client::fluent_builders::PutPortfolioPreferences::set_application_preferences): <p> The transformation preferences for non-database applications. </p>
     ///   - [`database_preferences(DatabasePreferences)`](crate::client::fluent_builders::PutPortfolioPreferences::database_preferences) / [`set_database_preferences(Option<DatabasePreferences>)`](crate::client::fluent_builders::PutPortfolioPreferences::set_database_preferences): <p> The transformation preferences for database applications. </p>
+    ///   - [`application_mode(ApplicationMode)`](crate::client::fluent_builders::PutPortfolioPreferences::application_mode) / [`set_application_mode(Option<ApplicationMode>)`](crate::client::fluent_builders::PutPortfolioPreferences::set_application_mode): <p>The classification for application component types.</p>
     /// - On success, responds with [`PutPortfolioPreferencesOutput`](crate::output::PutPortfolioPreferencesOutput)
 
     /// - On failure, responds with [`SdkError<PutPortfolioPreferencesError>`](crate::error::PutPortfolioPreferencesError)
@@ -286,6 +299,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`s3bucket_for_analysis_data(impl Into<String>)`](crate::client::fluent_builders::StartAssessment::s3bucket_for_analysis_data) / [`set_s3bucket_for_analysis_data(Option<String>)`](crate::client::fluent_builders::StartAssessment::set_s3bucket_for_analysis_data): <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
     ///   - [`s3bucket_for_report_data(impl Into<String>)`](crate::client::fluent_builders::StartAssessment::s3bucket_for_report_data) / [`set_s3bucket_for_report_data(Option<String>)`](crate::client::fluent_builders::StartAssessment::set_s3bucket_for_report_data): <p> The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
+    ///   - [`assessment_targets(Vec<AssessmentTarget>)`](crate::client::fluent_builders::StartAssessment::assessment_targets) / [`set_assessment_targets(Option<Vec<AssessmentTarget>>)`](crate::client::fluent_builders::StartAssessment::set_assessment_targets): <p>List of criteria for assessment.</p>
     /// - On success, responds with [`StartAssessmentOutput`](crate::output::StartAssessmentOutput) with field(s):
     ///   - [`assessment_id(Option<String>)`](crate::output::StartAssessmentOutput::assessment_id): <p> The ID of the assessment. </p>
     /// - On failure, responds with [`SdkError<StartAssessmentError>`](crate::error::StartAssessmentError)
@@ -338,6 +352,8 @@ impl Client {
     ///   - [`strategy_option(StrategyOption)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::strategy_option) / [`set_strategy_option(Option<StrategyOption>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::set_strategy_option): <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
     ///   - [`source_code_list(Vec<SourceCode>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::source_code_list) / [`set_source_code_list(Option<Vec<SourceCode>>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::set_source_code_list): <p> The list of source code configurations to update for the application component. </p>
     ///   - [`secrets_manager_key(impl Into<String>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::secrets_manager_key) / [`set_secrets_manager_key(Option<String>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::set_secrets_manager_key): <p> Database credentials. </p>
+    ///   - [`configure_only(bool)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::configure_only) / [`set_configure_only(Option<bool>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::set_configure_only): <p>Update the configuration request of an application component. If it is set to true, the source code and/or database credentials are updated. If it is set to false, the source code and/or database credentials are updated and an analysis is initiated.</p>
+    ///   - [`app_type(AppType)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::app_type) / [`set_app_type(Option<AppType>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::set_app_type): <p>The type of known component.</p>
     /// - On success, responds with [`UpdateApplicationComponentConfigOutput`](crate::output::UpdateApplicationComponentConfigOutput)
 
     /// - On failure, responds with [`SdkError<UpdateApplicationComponentConfigError>`](crate::error::UpdateApplicationComponentConfigError)
@@ -661,6 +677,69 @@ pub mod fluent_builders {
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
+        }
+    }
+    /// Fluent builder constructing a request to `GetLatestAssessmentId`.
+    ///
+    /// <p>Retrieve the latest ID of a specific assessment task.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetLatestAssessmentId {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_latest_assessment_id_input::Builder,
+    }
+    impl GetLatestAssessmentId {
+        /// Creates a new `GetLatestAssessmentId`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetLatestAssessmentId,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetLatestAssessmentIdError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetLatestAssessmentIdOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetLatestAssessmentIdError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
         }
     }
     /// Fluent builder constructing a request to `GetPortfolioPreferences`.
@@ -1600,6 +1679,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_preferences(input);
             self
         }
+        /// <p>The classification for application component types.</p>
+        pub fn application_mode(mut self, input: crate::model::ApplicationMode) -> Self {
+            self.inner = self.inner.application_mode(input);
+            self
+        }
+        /// <p>The classification for application component types.</p>
+        pub fn set_application_mode(
+            mut self,
+            input: std::option::Option<crate::model::ApplicationMode>,
+        ) -> Self {
+            self.inner = self.inner.set_application_mode(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `StartAssessment`.
     ///
@@ -1687,6 +1779,23 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_s3bucket_for_report_data(input);
+            self
+        }
+        /// Appends an item to `assessmentTargets`.
+        ///
+        /// To override the contents of this collection use [`set_assessment_targets`](Self::set_assessment_targets).
+        ///
+        /// <p>List of criteria for assessment.</p>
+        pub fn assessment_targets(mut self, input: crate::model::AssessmentTarget) -> Self {
+            self.inner = self.inner.assessment_targets(input);
+            self
+        }
+        /// <p>List of criteria for assessment.</p>
+        pub fn set_assessment_targets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AssessmentTarget>>,
+        ) -> Self {
+            self.inner = self.inner.set_assessment_targets(input);
             self
         }
     }
@@ -2128,6 +2237,26 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_secrets_manager_key(input);
+            self
+        }
+        /// <p>Update the configuration request of an application component. If it is set to true, the source code and/or database credentials are updated. If it is set to false, the source code and/or database credentials are updated and an analysis is initiated.</p>
+        pub fn configure_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.configure_only(input);
+            self
+        }
+        /// <p>Update the configuration request of an application component. If it is set to true, the source code and/or database credentials are updated. If it is set to false, the source code and/or database credentials are updated and an analysis is initiated.</p>
+        pub fn set_configure_only(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_configure_only(input);
+            self
+        }
+        /// <p>The type of known component.</p>
+        pub fn app_type(mut self, input: crate::model::AppType) -> Self {
+            self.inner = self.inner.app_type(input);
+            self
+        }
+        /// <p>The type of known component.</p>
+        pub fn set_app_type(mut self, input: std::option::Option<crate::model::AppType>) -> Self {
+            self.inner = self.inner.set_app_type(input);
             self
         }
     }

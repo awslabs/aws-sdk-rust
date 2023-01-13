@@ -111,7 +111,7 @@ pub struct BatchGetRecordOutput {
     /// <p>A list of Records you requested to be retrieved in batch.</p>
     #[doc(hidden)]
     pub records: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordResultDetail>>,
-    /// <p>A list of errors that have occured when retrieving a batch of Records.</p>
+    /// <p>A list of errors that have occurred when retrieving a batch of Records.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordError>>,
     /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name.</p>
@@ -124,7 +124,7 @@ impl BatchGetRecordOutput {
     pub fn records(&self) -> std::option::Option<&[crate::model::BatchGetRecordResultDetail]> {
         self.records.as_deref()
     }
-    /// <p>A list of errors that have occured when retrieving a batch of Records.</p>
+    /// <p>A list of errors that have occurred when retrieving a batch of Records.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchGetRecordError]> {
         self.errors.as_deref()
     }
@@ -171,14 +171,14 @@ pub mod batch_get_record_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>A list of errors that have occured when retrieving a batch of Records.</p>
+        /// <p>A list of errors that have occurred when retrieving a batch of Records.</p>
         pub fn errors(mut self, input: crate::model::BatchGetRecordError) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>A list of errors that have occured when retrieving a batch of Records.</p>
+        /// <p>A list of errors that have occurred when retrieving a batch of Records.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordError>>,

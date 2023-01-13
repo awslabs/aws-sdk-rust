@@ -2202,6 +2202,7 @@ pub mod copy_db_snapshot_input {
         pub(crate) pre_signed_url: std::option::Option<std::string::String>,
         pub(crate) option_group_name: std::option::Option<std::string::String>,
         pub(crate) target_custom_availability_zone: std::option::Option<std::string::String>,
+        pub(crate) copy_option_group: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The identifier for the source DB snapshot.</p>
@@ -2309,12 +2310,12 @@ pub mod copy_db_snapshot_input {
             self.tags = input;
             self
         }
-        /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags are not copied.</p>
+        /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't copied.</p>
         pub fn copy_tags(mut self, input: bool) -> Self {
             self.copy_tags = Some(input);
             self
         }
-        /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags are not copied.</p>
+        /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't copied.</p>
         pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags = input;
             self
@@ -2387,6 +2388,16 @@ pub mod copy_db_snapshot_input {
             self.target_custom_availability_zone = input;
             self
         }
+        /// <p>A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+        pub fn copy_option_group(mut self, input: bool) -> Self {
+            self.copy_option_group = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+        pub fn set_copy_option_group(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_option_group = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CopyDbSnapshotInput`](crate::input::CopyDbSnapshotInput).
         pub fn build(
             self,
@@ -2401,6 +2412,7 @@ pub mod copy_db_snapshot_input {
                 pre_signed_url: self.pre_signed_url,
                 option_group_name: self.option_group_name,
                 target_custom_availability_zone: self.target_custom_availability_zone,
+                copy_option_group: self.copy_option_group,
             })
         }
     }
@@ -2742,6 +2754,253 @@ impl CopyOptionGroupInput {
     }
 }
 
+/// See [`CreateBlueGreenDeploymentInput`](crate::input::CreateBlueGreenDeploymentInput).
+pub mod create_blue_green_deployment_input {
+
+    /// A builder for [`CreateBlueGreenDeploymentInput`](crate::input::CreateBlueGreenDeploymentInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blue_green_deployment_name: std::option::Option<std::string::String>,
+        pub(crate) source: std::option::Option<std::string::String>,
+        pub(crate) target_engine_version: std::option::Option<std::string::String>,
+        pub(crate) target_db_parameter_group_name: std::option::Option<std::string::String>,
+        pub(crate) target_db_cluster_parameter_group_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The name of the blue/green deployment.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
+        /// </ul>
+        pub fn blue_green_deployment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.blue_green_deployment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the blue/green deployment.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
+        /// </ul>
+        pub fn set_blue_green_deployment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.blue_green_deployment_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
+        /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
+        /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
+            self
+        }
+        /// <p>The engine version of the database in the green environment.</p>
+        /// <p>Specify the engine version to upgrade to in the green environment.</p>
+        pub fn target_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_engine_version = Some(input.into());
+            self
+        }
+        /// <p>The engine version of the database in the green environment.</p>
+        /// <p>Specify the engine version to upgrade to in the green environment.</p>
+        pub fn set_target_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_engine_version = input;
+            self
+        }
+        /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
+        /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
+        pub fn target_db_parameter_group_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.target_db_parameter_group_name = Some(input.into());
+            self
+        }
+        /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
+        /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
+        pub fn set_target_db_parameter_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_db_parameter_group_name = input;
+            self
+        }
+        /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
+        /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
+        pub fn target_db_cluster_parameter_group_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.target_db_cluster_parameter_group_name = Some(input.into());
+            self
+        }
+        /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
+        /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
+        pub fn set_target_db_cluster_parameter_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_db_cluster_parameter_group_name = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to assign to the blue/green deployment.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Tags to assign to the blue/green deployment.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateBlueGreenDeploymentInput`](crate::input::CreateBlueGreenDeploymentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateBlueGreenDeploymentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::CreateBlueGreenDeploymentInput {
+                blue_green_deployment_name: self.blue_green_deployment_name,
+                source: self.source,
+                target_engine_version: self.target_engine_version,
+                target_db_parameter_group_name: self.target_db_parameter_group_name,
+                target_db_cluster_parameter_group_name: self.target_db_cluster_parameter_group_name,
+                tags: self.tags,
+            })
+        }
+    }
+}
+impl CreateBlueGreenDeploymentInput {
+    /// Consumes the builder and constructs an Operation<[`CreateBlueGreenDeployment`](crate::operation::CreateBlueGreenDeployment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateBlueGreenDeployment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateBlueGreenDeploymentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateBlueGreenDeploymentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_blue_green_deployment(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateBlueGreenDeployment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateBlueGreenDeployment",
+            "rds",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateBlueGreenDeploymentInput`](crate::input::CreateBlueGreenDeploymentInput).
+    pub fn builder() -> crate::input::create_blue_green_deployment_input::Builder {
+        crate::input::create_blue_green_deployment_input::Builder::default()
+    }
+}
+
 /// See [`CreateCustomDbEngineVersionInput`](crate::input::CreateCustomDbEngineVersionInput).
 pub mod create_custom_db_engine_version_input {
 
@@ -2753,6 +3012,7 @@ pub mod create_custom_db_engine_version_input {
         pub(crate) database_installation_files_s3_bucket_name:
             std::option::Option<std::string::String>,
         pub(crate) database_installation_files_s3_prefix: std::option::Option<std::string::String>,
+        pub(crate) image_id: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) manifest: std::option::Option<std::string::String>,
@@ -2769,12 +3029,12 @@ pub mod create_custom_db_engine_version_input {
             self.engine = input;
             self
         }
-        /// <p>The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
+        /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
         }
-        /// <p>The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
+        /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2812,6 +3072,16 @@ pub mod create_custom_db_engine_version_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.database_installation_files_s3_prefix = input;
+            self
+        }
+        /// <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for SQL Server.</p>
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for SQL Server.</p>
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_id = input;
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
@@ -2948,6 +3218,7 @@ pub mod create_custom_db_engine_version_input {
                 database_installation_files_s3_bucket_name: self
                     .database_installation_files_s3_bucket_name,
                 database_installation_files_s3_prefix: self.database_installation_files_s3_prefix,
+                image_id: self.image_id,
                 kms_key_id: self.kms_key_id,
                 description: self.description,
                 manifest: self.manifest,
@@ -3119,6 +3390,9 @@ pub mod create_db_cluster_input {
         pub(crate) serverless_v2_scaling_configuration:
             std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
         pub(crate) network_type: std::option::Option<std::string::String>,
+        pub(crate) db_system_id: std::option::Option<std::string::String>,
+        pub(crate) manage_master_user_password: std::option::Option<bool>,
+        pub(crate) master_user_secret_kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -3424,14 +3698,22 @@ pub mod create_db_cluster_input {
             self
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+        /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+        /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_user_password = Some(input.into());
             self
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+        /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+        /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_master_user_password(
             mut self,
@@ -3919,7 +4201,7 @@ pub mod create_db_cluster_input {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
@@ -3928,7 +4210,7 @@ pub mod create_db_cluster_input {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
@@ -4140,6 +4422,64 @@ pub mod create_db_cluster_input {
             self.network_type = input;
             self
         }
+        /// <p>Reserved for future use.</p>
+        pub fn db_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_system_id = Some(input.into());
+            self
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn set_db_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_system_id = input;
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn manage_master_user_password(mut self, input: bool) -> Self {
+            self.manage_master_user_password = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn set_manage_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.manage_master_user_password = input;
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn master_user_secret_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.master_user_secret_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn set_master_user_secret_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.master_user_secret_kms_key_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::input::CreateDbClusterInput).
         pub fn build(
             self,
@@ -4192,6 +4532,9 @@ pub mod create_db_cluster_input {
                 performance_insights_retention_period: self.performance_insights_retention_period,
                 serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
                 network_type: self.network_type,
+                db_system_id: self.db_system_id,
+                manage_master_user_password: self.manage_master_user_password,
+                master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             })
         }
     }
@@ -5071,6 +5414,10 @@ pub mod create_db_instance_input {
         pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
         pub(crate) backup_target: std::option::Option<std::string::String>,
         pub(crate) network_type: std::option::Option<std::string::String>,
+        pub(crate) storage_throughput: std::option::Option<i32>,
+        pub(crate) manage_master_user_password: std::option::Option<bool>,
+        pub(crate) master_user_secret_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) ca_certificate_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -5235,41 +5582,41 @@ pub mod create_db_instance_input {
         /// <p> <b>Amazon RDS Custom</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
         /// </ul>
         /// <p> <b>MySQL</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>PostgreSQL</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>Oracle</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>SQL Server</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2):</p>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3):</p>
         /// <ul>
         /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p> </li>
         /// <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p> </li>
@@ -5296,41 +5643,41 @@ pub mod create_db_instance_input {
         /// <p> <b>Amazon RDS Custom</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
         /// </ul>
         /// <p> <b>MySQL</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>PostgreSQL</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>Oracle</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
         /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
         /// <li> <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p> </li>
         /// </ul>
         /// <p> <b>SQL Server</b> </p>
         /// <p>Constraints to the amount of storage for each storage type are the following:</p>
         /// <ul>
-        /// <li> <p>General Purpose (SSD) storage (gp2):</p>
+        /// <li> <p>General Purpose (SSD) storage (gp2, gp3):</p>
         /// <ul>
         /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p> </li>
         /// <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p> </li>
@@ -5453,6 +5800,7 @@ pub mod create_db_instance_input {
         /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. The password for the master user is managed by the DB cluster.</p>
+        /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
         /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
         /// <p> <b>Microsoft SQL Server</b> </p>
@@ -5470,6 +5818,7 @@ pub mod create_db_instance_input {
         /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. The password for the master user is managed by the DB cluster.</p>
+        /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
         /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
         /// <p> <b>Microsoft SQL Server</b> </p>
@@ -5759,7 +6108,7 @@ pub mod create_db_instance_input {
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster.</p>
         /// <p> <b>Amazon RDS Custom for Oracle</b> </p>
-        /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: <code>19.<i>customized_string</i> </code>. An example identifier is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p> <b>Amazon RDS Custom for SQL Server</b> </p>
         /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p> <b>MariaDB</b> </p>
@@ -5782,7 +6131,7 @@ pub mod create_db_instance_input {
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster.</p>
         /// <p> <b>Amazon RDS Custom for Oracle</b> </p>
-        /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: <code>19.<i>customized_string</i> </code>. An example identifier is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p> <b>Amazon RDS Custom for SQL Server</b> </p>
         /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p> <b>MariaDB</b> </p>
@@ -5835,7 +6184,7 @@ pub mod create_db_instance_input {
             self.license_model = input;
             self
         }
-        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. Storage is managed by the DB cluster.</p>
@@ -5843,7 +6192,7 @@ pub mod create_db_instance_input {
             self.iops = Some(input);
             self
         }
-        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. Storage is managed by the DB cluster.</p>
@@ -5977,8 +6326,8 @@ pub mod create_db_instance_input {
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. Storage is managed by the DB cluster.</p>
@@ -5987,8 +6336,8 @@ pub mod create_db_instance_input {
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. Storage is managed by the DB cluster.</p>
@@ -6384,7 +6733,7 @@ pub mod create_db_instance_input {
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
             self.enable_customer_owned_ip = Some(input);
             self
@@ -6392,7 +6741,7 @@ pub mod create_db_instance_input {
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_customer_owned_ip = input;
             self
@@ -6468,6 +6817,81 @@ pub mod create_db_instance_input {
             self.network_type = input;
             self
         }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.storage_throughput = Some(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_throughput = input;
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn manage_master_user_password(mut self, input: bool) -> Self {
+            self.manage_master_user_password = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn set_manage_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.manage_master_user_password = input;
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn master_user_secret_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.master_user_secret_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn set_master_user_secret_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.master_user_secret_kms_key_id = input;
+            self
+        }
+        /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn ca_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ca_certificate_identifier = Some(input.into());
+            self
+        }
+        /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_ca_certificate_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ca_certificate_identifier = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::input::CreateDbInstanceInput).
         pub fn build(
             self,
@@ -6527,6 +6951,10 @@ pub mod create_db_instance_input {
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
                 backup_target: self.backup_target,
                 network_type: self.network_type,
+                storage_throughput: self.storage_throughput,
+                manage_master_user_password: self.manage_master_user_password,
+                master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
+                ca_certificate_identifier: self.ca_certificate_identifier,
             })
         }
     }
@@ -6683,6 +7111,9 @@ pub mod create_db_instance_read_replica_input {
         pub(crate) max_allocated_storage: std::option::Option<i32>,
         pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
         pub(crate) network_type: std::option::Option<std::string::String>,
+        pub(crate) storage_throughput: std::option::Option<i32>,
+        pub(crate) enable_customer_owned_ip: std::option::Option<bool>,
+        pub(crate) allocated_storage: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</p>
@@ -6964,16 +7395,16 @@ pub mod create_db_instance_read_replica_input {
             self
         }
         /// <p>Specifies the storage type to be associated with the read replica.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_type = Some(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the read replica.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.storage_type = input;
@@ -7363,6 +7794,48 @@ pub mod create_db_instance_read_replica_input {
             self.network_type = input;
             self
         }
+        /// <p>Specifies the storage throughput value for the read replica.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.storage_throughput = Some(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the read replica.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_throughput = input;
+            self
+        }
+        /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
+        /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
+        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+            self.enable_customer_owned_ip = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
+        /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
+        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_customer_owned_ip = input;
+            self
+        }
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+        /// <p>Be sure to allocate enough memory for your read replica so that the create operation can succeed. You can also allocate additional memory for future growth.</p>
+        /// </note>
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
+            self
+        }
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+        /// <p>Be sure to allocate enough memory for your read replica so that the create operation can succeed. You can also allocate additional memory for future growth.</p>
+        /// </note>
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDbInstanceReadReplicaInput`](crate::input::CreateDbInstanceReadReplicaInput).
         pub fn build(
             self,
@@ -7405,6 +7878,9 @@ pub mod create_db_instance_read_replica_input {
                 max_allocated_storage: self.max_allocated_storage,
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
                 network_type: self.network_type,
+                storage_throughput: self.storage_throughput,
+                enable_customer_owned_ip: self.enable_customer_owned_ip,
+                allocated_storage: self.allocated_storage,
             })
         }
     }
@@ -9686,6 +10162,176 @@ impl CreateOptionGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateOptionGroupInput`](crate::input::CreateOptionGroupInput).
     pub fn builder() -> crate::input::create_option_group_input::Builder {
         crate::input::create_option_group_input::Builder::default()
+    }
+}
+
+/// See [`DeleteBlueGreenDeploymentInput`](crate::input::DeleteBlueGreenDeploymentInput).
+pub mod delete_blue_green_deployment_input {
+
+    /// A builder for [`DeleteBlueGreenDeploymentInput`](crate::input::DeleteBlueGreenDeploymentInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blue_green_deployment_identifier: std::option::Option<std::string::String>,
+        pub(crate) delete_target: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>
+        /// <p>Constraints: </p>
+        /// <ul>
+        /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+        /// </ul>
+        pub fn blue_green_deployment_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.blue_green_deployment_identifier = Some(input.into());
+            self
+        }
+        /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>
+        /// <p>Constraints: </p>
+        /// <ul>
+        /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+        /// </ul>
+        pub fn set_blue_green_deployment_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.blue_green_deployment_identifier = input;
+            self
+        }
+        /// <p>A value that indicates whether to delete the resources in the green environment.</p>
+        pub fn delete_target(mut self, input: bool) -> Self {
+            self.delete_target = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to delete the resources in the green environment.</p>
+        pub fn set_delete_target(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_target = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteBlueGreenDeploymentInput`](crate::input::DeleteBlueGreenDeploymentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteBlueGreenDeploymentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DeleteBlueGreenDeploymentInput {
+                blue_green_deployment_identifier: self.blue_green_deployment_identifier,
+                delete_target: self.delete_target,
+            })
+        }
+    }
+}
+impl DeleteBlueGreenDeploymentInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteBlueGreenDeployment`](crate::operation::DeleteBlueGreenDeployment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteBlueGreenDeployment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteBlueGreenDeploymentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteBlueGreenDeploymentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_blue_green_deployment(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteBlueGreenDeployment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteBlueGreenDeployment",
+            "rds",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteBlueGreenDeploymentInput`](crate::input::DeleteBlueGreenDeploymentInput).
+    pub fn builder() -> crate::input::delete_blue_green_deployment_input::Builder {
+        crate::input::delete_blue_green_deployment_input::Builder::default()
     }
 }
 
@@ -12580,6 +13226,224 @@ impl DescribeAccountAttributesInput {
     }
 }
 
+/// See [`DescribeBlueGreenDeploymentsInput`](crate::input::DescribeBlueGreenDeploymentsInput).
+pub mod describe_blue_green_deployments_input {
+
+    /// A builder for [`DescribeBlueGreenDeploymentsInput`](crate::input::DescribeBlueGreenDeploymentsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blue_green_deployment_identifier: std::option::Option<std::string::String>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        pub(crate) marker: std::option::Option<std::string::String>,
+        pub(crate) max_records: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The blue/green deployment identifier. If this parameter is specified, information from only the specific blue/green deployment is returned. This parameter isn't case-sensitive.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>If supplied, must match an existing blue/green deployment identifier.</p> </li>
+        /// </ul>
+        pub fn blue_green_deployment_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.blue_green_deployment_identifier = Some(input.into());
+            self
+        }
+        /// <p>The blue/green deployment identifier. If this parameter is specified, information from only the specific blue/green deployment is returned. This parameter isn't case-sensitive.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>If supplied, must match an existing blue/green deployment identifier.</p> </li>
+        /// </ul>
+        pub fn set_blue_green_deployment_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.blue_green_deployment_identifier = input;
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
+        /// <p>Supported filters:</p>
+        /// <ul>
+        /// <li> <p> <code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p> </li>
+        /// <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p> </li>
+        /// <li> <p> <code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p> </li>
+        /// <li> <p> <code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p> </li>
+        /// </ul>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
+        /// <p>Supported filters:</p>
+        /// <ul>
+        /// <li> <p> <code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p> </li>
+        /// <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p> </li>
+        /// <li> <p> <code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p> </li>
+        /// <li> <p> <code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p> </li>
+        /// </ul>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
+        /// <p>Default: 100</p>
+        /// <p>Constraints: Minimum 20, maximum 100.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
+            self
+        }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
+        /// <p>Default: 100</p>
+        /// <p>Constraints: Minimum 20, maximum 100.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeBlueGreenDeploymentsInput`](crate::input::DescribeBlueGreenDeploymentsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeBlueGreenDeploymentsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DescribeBlueGreenDeploymentsInput {
+                blue_green_deployment_identifier: self.blue_green_deployment_identifier,
+                filters: self.filters,
+                marker: self.marker,
+                max_records: self.max_records,
+            })
+        }
+    }
+}
+impl DescribeBlueGreenDeploymentsInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeBlueGreenDeployments`](crate::operation::DescribeBlueGreenDeployments)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeBlueGreenDeployments,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeBlueGreenDeploymentsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeBlueGreenDeploymentsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_blue_green_deployments(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeBlueGreenDeployments::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeBlueGreenDeployments",
+            "rds",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeBlueGreenDeploymentsInput`](crate::input::DescribeBlueGreenDeploymentsInput).
+    pub fn builder() -> crate::input::describe_blue_green_deployments_input::Builder {
+        crate::input::describe_blue_green_deployments_input::Builder::default()
+    }
+}
+
 /// See [`DescribeCertificatesInput`](crate::input::DescribeCertificatesInput).
 pub mod describe_certificates_input {
 
@@ -13678,7 +14542,7 @@ pub mod describe_db_clusters_input {
         pub(crate) include_shared: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+        /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
@@ -13687,7 +14551,7 @@ pub mod describe_db_clusters_input {
             self.db_cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+        /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
@@ -14966,7 +15830,7 @@ pub mod describe_db_instances_input {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
+        /// <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
@@ -14975,7 +15839,7 @@ pub mod describe_db_instances_input {
             self.db_instance_identifier = Some(input.into());
             self
         }
-        /// <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
+        /// <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
@@ -17731,6 +18595,8 @@ pub mod describe_engine_default_parameters_input {
         /// <li> <p> <code>aurora-postgresql11</code> </p> </li>
         /// <li> <p> <code>aurora-postgresql12</code> </p> </li>
         /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql14</code> </p> </li>
+        /// <li> <p> <code>custom-oracle-ee-19</code> </p> </li>
         /// <li> <p> <code>mariadb10.2</code> </p> </li>
         /// <li> <p> <code>mariadb10.3</code> </p> </li>
         /// <li> <p> <code>mariadb10.4</code> </p> </li>
@@ -17738,6 +18604,12 @@ pub mod describe_engine_default_parameters_input {
         /// <li> <p> <code>mariadb10.6</code> </p> </li>
         /// <li> <p> <code>mysql5.7</code> </p> </li>
         /// <li> <p> <code>mysql8.0</code> </p> </li>
+        /// <li> <p> <code>oracle-ee-19</code> </p> </li>
+        /// <li> <p> <code>oracle-ee-cdb-19</code> </p> </li>
+        /// <li> <p> <code>oracle-ee-cdb-21</code> </p> </li>
+        /// <li> <p> <code>oracle-se2-19</code> </p> </li>
+        /// <li> <p> <code>oracle-se2-cdb-19</code> </p> </li>
+        /// <li> <p> <code>oracle-se2-cdb-21</code> </p> </li>
         /// <li> <p> <code>postgres10</code> </p> </li>
         /// <li> <p> <code>postgres11</code> </p> </li>
         /// <li> <p> <code>postgres12</code> </p> </li>
@@ -17778,6 +18650,8 @@ pub mod describe_engine_default_parameters_input {
         /// <li> <p> <code>aurora-postgresql11</code> </p> </li>
         /// <li> <p> <code>aurora-postgresql12</code> </p> </li>
         /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql14</code> </p> </li>
+        /// <li> <p> <code>custom-oracle-ee-19</code> </p> </li>
         /// <li> <p> <code>mariadb10.2</code> </p> </li>
         /// <li> <p> <code>mariadb10.3</code> </p> </li>
         /// <li> <p> <code>mariadb10.4</code> </p> </li>
@@ -17785,6 +18659,12 @@ pub mod describe_engine_default_parameters_input {
         /// <li> <p> <code>mariadb10.6</code> </p> </li>
         /// <li> <p> <code>mysql5.7</code> </p> </li>
         /// <li> <p> <code>mysql8.0</code> </p> </li>
+        /// <li> <p> <code>oracle-ee-19</code> </p> </li>
+        /// <li> <p> <code>oracle-ee-cdb-19</code> </p> </li>
+        /// <li> <p> <code>oracle-ee-cdb-21</code> </p> </li>
+        /// <li> <p> <code>oracle-se2-19</code> </p> </li>
+        /// <li> <p> <code>oracle-se2-cdb-19</code> </p> </li>
+        /// <li> <p> <code>oracle-se2-cdb-21</code> </p> </li>
         /// <li> <p> <code>postgres10</code> </p> </li>
         /// <li> <p> <code>postgres11</code> </p> </li>
         /// <li> <p> <code>postgres12</code> </p> </li>
@@ -18660,6 +19540,7 @@ pub mod describe_export_tasks_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
+        pub(crate) source_type: std::option::Option<crate::model::ExportSourceType>,
     }
     impl Builder {
         /// <p>The identifier of the snapshot export task to be described.</p>
@@ -18758,6 +19639,19 @@ pub mod describe_export_tasks_input {
             self.max_records = input;
             self
         }
+        /// <p>The type of source for the export.</p>
+        pub fn source_type(mut self, input: crate::model::ExportSourceType) -> Self {
+            self.source_type = Some(input);
+            self
+        }
+        /// <p>The type of source for the export.</p>
+        pub fn set_source_type(
+            mut self,
+            input: std::option::Option<crate::model::ExportSourceType>,
+        ) -> Self {
+            self.source_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeExportTasksInput`](crate::input::DescribeExportTasksInput).
         pub fn build(
             self,
@@ -18771,6 +19665,7 @@ pub mod describe_export_tasks_input {
                 filters: self.filters,
                 marker: self.marker,
                 max_records: self.max_records,
+                source_type: self.source_type,
             })
         }
     }
@@ -22508,6 +23403,9 @@ pub mod modify_db_cluster_input {
         pub(crate) serverless_v2_scaling_configuration:
             std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
         pub(crate) network_type: std::option::Option<std::string::String>,
+        pub(crate) manage_master_user_password: std::option::Option<bool>,
+        pub(crate) rotate_master_user_password: std::option::Option<bool>,
+        pub(crate) master_user_secret_kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -22535,7 +23433,7 @@ pub mod modify_db_cluster_input {
         /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
         /// </ul>
         /// <p>Example: <code>my-cluster2</code> </p>
-        /// <p>Valid for: Aurora DB clusters only</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn new_db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.new_db_cluster_identifier = Some(input.into());
             self
@@ -22548,7 +23446,7 @@ pub mod modify_db_cluster_input {
         /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
         /// </ul>
         /// <p>Example: <code>my-cluster2</code> </p>
-        /// <p>Valid for: Aurora DB clusters only</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_new_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22650,14 +23548,22 @@ pub mod modify_db_cluster_input {
             self
         }
         /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+        /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+        /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_user_password = Some(input.into());
             self
         }
         /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+        /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+        /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_master_user_password(
             mut self,
@@ -23049,7 +23955,7 @@ pub mod modify_db_cluster_input {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn iops(mut self, input: i32) -> Self {
@@ -23057,7 +23963,7 @@ pub mod modify_db_cluster_input {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
@@ -23230,6 +24136,80 @@ pub mod modify_db_cluster_input {
             self.network_type = input;
             self
         }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+        /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn manage_master_user_password(mut self, input: bool) -> Self {
+            self.manage_master_user_password = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+        /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn set_manage_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.manage_master_user_password = input;
+            self
+        }
+        /// <p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+        /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn rotate_master_user_password(mut self, input: bool) -> Self {
+            self.rotate_master_user_password = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+        /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn set_rotate_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.rotate_master_user_password = input;
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if both of the following conditions are met:</p>
+        /// <ul>
+        /// <li> <p>The DB cluster doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB cluster already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key that is used to encrypt the secret.</p> </li>
+        /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+        /// </ul>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn master_user_secret_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.master_user_secret_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if both of the following conditions are met:</p>
+        /// <ul>
+        /// <li> <p>The DB cluster doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB cluster already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key that is used to encrypt the secret.</p> </li>
+        /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+        /// </ul>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn set_master_user_secret_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.master_user_secret_kms_key_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::input::ModifyDbClusterInput).
         pub fn build(
             self,
@@ -23272,6 +24252,9 @@ pub mod modify_db_cluster_input {
                 performance_insights_retention_period: self.performance_insights_retention_period,
                 serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
                 network_type: self.network_type,
+                manage_master_user_password: self.manage_master_user_password,
+                rotate_master_user_password: self.rotate_master_user_password,
+                master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             })
         }
     }
@@ -24039,6 +25022,10 @@ pub mod modify_db_instance_input {
         pub(crate) automation_mode: std::option::Option<crate::model::AutomationMode>,
         pub(crate) resume_full_automation_mode_minutes: std::option::Option<i32>,
         pub(crate) network_type: std::option::Option<std::string::String>,
+        pub(crate) storage_throughput: std::option::Option<i32>,
+        pub(crate) manage_master_user_password: std::option::Option<bool>,
+        pub(crate) rotate_master_user_password: std::option::Option<bool>,
+        pub(crate) master_user_secret_kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
@@ -24076,17 +25063,15 @@ pub mod modify_db_instance_input {
             self.allocated_storage = input;
             self
         }
-        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
-        /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
+        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS"> DB instance class support for RDS Custom for SQL Server</a>.</p>
+        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless you specify <code>ApplyImmediately</code> in your request. </p>
         /// <p>Default: Uses existing setting</p>
         pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_instance_class = Some(input.into());
             self
         }
-        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
-        /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
+        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS"> DB instance class support for RDS Custom for SQL Server</a>.</p>
+        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless you specify <code>ApplyImmediately</code> in your request. </p>
         /// <p>Default: Uses existing setting</p>
         pub fn set_db_instance_class(
             mut self,
@@ -24196,6 +25181,7 @@ pub mod modify_db_instance_input {
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
         /// <p>Default: Uses existing setting</p>
+        /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
         /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
         /// <p> <b>Microsoft SQL Server</b> </p>
@@ -24218,6 +25204,7 @@ pub mod modify_db_instance_input {
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
         /// <p>Default: Uses existing setting</p>
+        /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
         /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
         /// <p> <b>Microsoft SQL Server</b> </p>
@@ -24506,7 +25493,7 @@ pub mod modify_db_instance_input {
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
         /// <p>If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_type = Some(input.into());
@@ -24515,7 +25502,7 @@ pub mod modify_db_instance_input {
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
         /// <p>If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.storage_type = input;
@@ -24551,14 +25538,16 @@ pub mod modify_db_instance_input {
             self.tde_credential_password = input;
             self
         }
-        /// <p>Specifies the certificate to associate with the DB instance.</p>
+        /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn ca_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.ca_certificate_identifier = Some(input.into());
             self
         }
-        /// <p>Specifies the certificate to associate with the DB instance.</p>
+        /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn set_ca_certificate_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24961,7 +25950,7 @@ pub mod modify_db_instance_input {
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
             self.enable_customer_owned_ip = Some(input);
             self
@@ -24969,7 +25958,7 @@ pub mod modify_db_instance_input {
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_customer_owned_ip = input;
             self
@@ -25042,6 +26031,96 @@ pub mod modify_db_instance_input {
             self.network_type = input;
             self
         }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.storage_throughput = Some(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_throughput = input;
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+        /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn manage_master_user_password(mut self, input: bool) -> Self {
+            self.manage_master_user_password = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+        /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn set_manage_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.manage_master_user_password = input;
+            self
+        }
+        /// <p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+        /// </ul>
+        pub fn rotate_master_user_password(mut self, input: bool) -> Self {
+            self.rotate_master_user_password = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+        /// </ul>
+        pub fn set_rotate_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.rotate_master_user_password = input;
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if both of the following conditions are met:</p>
+        /// <ul>
+        /// <li> <p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p> </li>
+        /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+        /// </ul>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn master_user_secret_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.master_user_secret_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if both of the following conditions are met:</p>
+        /// <ul>
+        /// <li> <p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p> </li>
+        /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+        /// </ul>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn set_master_user_secret_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.master_user_secret_kms_key_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModifyDbInstanceInput`](crate::input::ModifyDbInstanceInput).
         pub fn build(
             self,
@@ -25098,6 +26177,10 @@ pub mod modify_db_instance_input {
                 automation_mode: self.automation_mode,
                 resume_full_automation_mode_minutes: self.resume_full_automation_mode_minutes,
                 network_type: self.network_type,
+                storage_throughput: self.storage_throughput,
+                manage_master_user_password: self.manage_master_user_password,
+                rotate_master_user_password: self.rotate_master_user_password,
+                master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             })
         }
     }
@@ -29627,6 +30710,8 @@ pub mod restore_db_cluster_from_s3_input {
         pub(crate) serverless_v2_scaling_configuration:
             std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
         pub(crate) network_type: std::option::Option<std::string::String>,
+        pub(crate) manage_master_user_password: std::option::Option<bool>,
+        pub(crate) master_user_secret_kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -29856,13 +30941,21 @@ pub mod restore_db_cluster_from_s3_input {
             self
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+        /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+        /// </ul>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_user_password = Some(input.into());
             self
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+        /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+        /// </ul>
         pub fn set_master_user_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30207,6 +31300,50 @@ pub mod restore_db_cluster_from_s3_input {
             self.network_type = input;
             self
         }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn manage_master_user_password(mut self, input: bool) -> Self {
+            self.manage_master_user_password = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn set_manage_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.manage_master_user_password = input;
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn master_user_secret_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.master_user_secret_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn set_master_user_secret_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.master_user_secret_kms_key_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbClusterFromS3Input`](crate::input::RestoreDbClusterFromS3Input).
         pub fn build(
             self,
@@ -30248,6 +31385,8 @@ pub mod restore_db_cluster_from_s3_input {
                 domain_iam_role_name: self.domain_iam_role_name,
                 serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
                 network_type: self.network_type,
+                manage_master_user_password: self.manage_master_user_password,
+                master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             })
         }
     }
@@ -30912,7 +32051,7 @@ pub mod restore_db_cluster_from_snapshot_input {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn iops(mut self, input: i32) -> Self {
@@ -30920,7 +32059,7 @@ pub mod restore_db_cluster_from_snapshot_input {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
@@ -31706,7 +32845,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn iops(mut self, input: i32) -> Self {
@@ -31714,7 +32853,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-        /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
@@ -31953,6 +33092,9 @@ pub mod restore_db_instance_from_db_snapshot_input {
         pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
         pub(crate) backup_target: std::option::Option<std::string::String>,
         pub(crate) network_type: std::option::Option<std::string::String>,
+        pub(crate) storage_throughput: std::option::Option<i32>,
+        pub(crate) db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
+        pub(crate) allocated_storage: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
@@ -31986,6 +33128,8 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li>
+        /// <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.</p> </li>
+        /// <li> <p>Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li>
         /// <li> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> </li>
         /// </ul>
         pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -31996,6 +33140,8 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li>
+        /// <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.</p> </li>
+        /// <li> <p>Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li>
         /// <li> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> </li>
         /// </ul>
         pub fn set_db_snapshot_identifier(
@@ -32188,14 +33334,14 @@ pub mod restore_db_instance_from_db_snapshot_input {
             self
         }
         /// <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second. If this parameter isn't specified, the IOPS value is taken from the backup. If this parameter is set to 0, the new instance is converted to a non-PIOPS instance. The conversion takes additional time, though your DB instance is available for connections before the conversion starts.</p>
-        /// <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
         /// <p>Constraints: Must be an integer greater than 1000.</p>
         pub fn iops(mut self, input: i32) -> Self {
             self.iops = Some(input);
             self
         }
         /// <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second. If this parameter isn't specified, the IOPS value is taken from the backup. If this parameter is set to 0, the new instance is converted to a non-PIOPS instance. The conversion takes additional time, though your DB instance is available for connections before the conversion starts.</p>
-        /// <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
         /// <p>Constraints: Must be an integer greater than 1000.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.iops = input;
@@ -32238,16 +33384,16 @@ pub mod restore_db_instance_from_db_snapshot_input {
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_type = Some(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.storage_type = input;
@@ -32469,7 +33615,7 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
             self.enable_customer_owned_ip = Some(input);
             self
@@ -32478,7 +33624,7 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_customer_owned_ip = input;
             self
@@ -32554,6 +33700,68 @@ pub mod restore_db_instance_from_db_snapshot_input {
             self.network_type = input;
             self
         }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.storage_throughput = Some(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_throughput = input;
+            self
+        }
+        /// <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
+        /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must match the identifier of an existing Multi-AZ DB cluster snapshot.</p> </li>
+        /// <li> <p>Can't be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li>
+        /// <li> <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p> </li>
+        /// <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.</p> </li>
+        /// <li> <p>Can't be the identifier of an Aurora DB cluster snapshot.</p> </li>
+        /// <li> <p>Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.</p> </li>
+        /// </ul>
+        pub fn db_cluster_snapshot_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.db_cluster_snapshot_identifier = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
+        /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must match the identifier of an existing Multi-AZ DB cluster snapshot.</p> </li>
+        /// <li> <p>Can't be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li>
+        /// <li> <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p> </li>
+        /// <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.</p> </li>
+        /// <li> <p>Can't be the identifier of an Aurora DB cluster snapshot.</p> </li>
+        /// <li> <p>Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.</p> </li>
+        /// </ul>
+        pub fn set_db_cluster_snapshot_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_cluster_snapshot_identifier = input;
+            self
+        }
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p> <note>
+        /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+        /// </note>
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
+            self
+        }
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p> <note>
+        /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+        /// </note>
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbInstanceFromDbSnapshotInput`](crate::input::RestoreDbInstanceFromDbSnapshotInput).
         pub fn build(
             self,
@@ -32594,6 +33802,9 @@ pub mod restore_db_instance_from_db_snapshot_input {
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
                 backup_target: self.backup_target,
                 network_type: self.network_type,
+                storage_throughput: self.storage_throughput,
+                db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
+                allocated_storage: self.allocated_storage,
             })
         }
     }
@@ -32760,6 +33971,9 @@ pub mod restore_db_instance_from_s3_input {
         pub(crate) deletion_protection: std::option::Option<bool>,
         pub(crate) max_allocated_storage: std::option::Option<i32>,
         pub(crate) network_type: std::option::Option<std::string::String>,
+        pub(crate) storage_throughput: std::option::Option<i32>,
+        pub(crate) manage_master_user_password: std::option::Option<bool>,
+        pub(crate) master_user_secret_kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
@@ -32799,14 +34013,14 @@ pub mod restore_db_instance_from_s3_input {
             self.db_instance_identifier = input;
             self
         }
-        /// <p>The amount of storage (in gigabytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
         /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
         /// </note>
         pub fn allocated_storage(mut self, input: i32) -> Self {
             self.allocated_storage = Some(input);
             self
         }
-        /// <p>The amount of storage (in gigabytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
         /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
         /// </note>
         pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
@@ -32866,13 +34080,33 @@ pub mod restore_db_instance_from_s3_input {
             self
         }
         /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
+        /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
+        /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p> <b>Microsoft SQL Server</b> </p>
+        /// <p>Constraints: Must contain from 8 to 128 characters.</p>
+        /// <p> <b>MySQL</b> </p>
+        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p> <b>Oracle</b> </p>
+        /// <p>Constraints: Must contain from 8 to 30 characters.</p>
+        /// <p> <b>PostgreSQL</b> </p>
+        /// <p>Constraints: Must contain from 8 to 128 characters.</p>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_user_password = Some(input.into());
             self
         }
         /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
+        /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
+        /// <p> <b>MariaDB</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p> <b>Microsoft SQL Server</b> </p>
+        /// <p>Constraints: Must contain from 8 to 128 characters.</p>
+        /// <p> <b>MySQL</b> </p>
+        /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p> <b>Oracle</b> </p>
+        /// <p>Constraints: Must contain from 8 to 30 characters.</p>
+        /// <p> <b>PostgreSQL</b> </p>
+        /// <p>Constraints: Must contain from 8 to 128 characters.</p>
         pub fn set_master_user_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -33102,12 +34336,12 @@ pub mod restore_db_instance_from_s3_input {
             self.license_model = input;
             self
         }
-        /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn iops(mut self, input: i32) -> Self {
             self.iops = Some(input);
             self
         }
-        /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.iops = input;
             self
@@ -33161,16 +34395,16 @@ pub mod restore_db_instance_from_s3_input {
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_type = Some(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.storage_type = input;
@@ -33495,6 +34729,62 @@ pub mod restore_db_instance_from_s3_input {
             self.network_type = input;
             self
         }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.storage_throughput = Some(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_throughput = input;
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn manage_master_user_password(mut self, input: bool) -> Self {
+            self.manage_master_user_password = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+        /// </ul>
+        pub fn set_manage_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+            self.manage_master_user_password = input;
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn master_user_secret_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.master_user_secret_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+        /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        pub fn set_master_user_secret_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.master_user_secret_kms_key_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbInstanceFromS3Input`](crate::input::RestoreDbInstanceFromS3Input).
         pub fn build(
             self,
@@ -33548,6 +34838,9 @@ pub mod restore_db_instance_from_s3_input {
                 deletion_protection: self.deletion_protection,
                 max_allocated_storage: self.max_allocated_storage,
                 network_type: self.network_type,
+                storage_throughput: self.storage_throughput,
+                manage_master_user_password: self.manage_master_user_password,
+                master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             })
         }
     }
@@ -33710,6 +35003,8 @@ pub mod restore_db_instance_to_point_in_time_input {
         pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
         pub(crate) backup_target: std::option::Option<std::string::String>,
         pub(crate) network_type: std::option::Option<std::string::String>,
+        pub(crate) storage_throughput: std::option::Option<i32>,
+        pub(crate) allocated_storage: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The identifier of the source DB instance from which to restore.</p>
@@ -34050,16 +35345,16 @@ pub mod restore_db_instance_to_point_in_time_input {
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_type = Some(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
-        /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-        /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+        /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+        /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.storage_type = input;
@@ -34312,7 +35607,7 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
             self.enable_customer_owned_ip = Some(input);
             self
@@ -34321,7 +35616,7 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+        /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_customer_owned_ip = input;
             self
@@ -34397,6 +35692,32 @@ pub mod restore_db_instance_to_point_in_time_input {
             self.network_type = input;
             self
         }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn storage_throughput(mut self, input: i32) -> Self {
+            self.storage_throughput = Some(input);
+            self
+        }
+        /// <p>Specifies the storage throughput value for the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+        pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_throughput = input;
+            self
+        }
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+        /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+        /// </note>
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
+            self
+        }
+        /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+        /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+        /// </note>
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbInstanceToPointInTimeInput`](crate::input::RestoreDbInstanceToPointInTimeInput).
         pub fn build(
             self,
@@ -34443,6 +35764,8 @@ pub mod restore_db_instance_to_point_in_time_input {
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
                 backup_target: self.backup_target,
                 network_type: self.network_type,
+                storage_throughput: self.storage_throughput,
+                allocated_storage: self.allocated_storage,
             })
         }
     }
@@ -35497,33 +36820,33 @@ pub mod start_export_task_input {
             self.iam_role_arn = input;
             self
         }
-        /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to execute the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
+        /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
         /// <ul>
-        /// <li> <p>GrantOperation.Encrypt</p> </li>
-        /// <li> <p>GrantOperation.Decrypt</p> </li>
-        /// <li> <p>GrantOperation.GenerateDataKey</p> </li>
-        /// <li> <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li>
-        /// <li> <p>GrantOperation.ReEncryptFrom</p> </li>
-        /// <li> <p>GrantOperation.ReEncryptTo</p> </li>
-        /// <li> <p>GrantOperation.CreateGrant</p> </li>
-        /// <li> <p>GrantOperation.DescribeKey</p> </li>
-        /// <li> <p>GrantOperation.RetireGrant</p> </li>
+        /// <li> <p>kms:Encrypt</p> </li>
+        /// <li> <p>kms:Decrypt</p> </li>
+        /// <li> <p>kms:GenerateDataKey</p> </li>
+        /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li>
+        /// <li> <p>kms:ReEncryptFrom</p> </li>
+        /// <li> <p>kms:ReEncryptTo</p> </li>
+        /// <li> <p>kms:CreateGrant</p> </li>
+        /// <li> <p>kms:DescribeKey</p> </li>
+        /// <li> <p>kms:RetireGrant</p> </li>
         /// </ul>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to execute the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
+        /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
         /// <ul>
-        /// <li> <p>GrantOperation.Encrypt</p> </li>
-        /// <li> <p>GrantOperation.Decrypt</p> </li>
-        /// <li> <p>GrantOperation.GenerateDataKey</p> </li>
-        /// <li> <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li>
-        /// <li> <p>GrantOperation.ReEncryptFrom</p> </li>
-        /// <li> <p>GrantOperation.ReEncryptTo</p> </li>
-        /// <li> <p>GrantOperation.CreateGrant</p> </li>
-        /// <li> <p>GrantOperation.DescribeKey</p> </li>
-        /// <li> <p>GrantOperation.RetireGrant</p> </li>
+        /// <li> <p>kms:Encrypt</p> </li>
+        /// <li> <p>kms:Decrypt</p> </li>
+        /// <li> <p>kms:GenerateDataKey</p> </li>
+        /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li>
+        /// <li> <p>kms:ReEncryptFrom</p> </li>
+        /// <li> <p>kms:ReEncryptTo</p> </li>
+        /// <li> <p>kms:CreateGrant</p> </li>
+        /// <li> <p>kms:DescribeKey</p> </li>
+        /// <li> <p>kms:RetireGrant</p> </li>
         /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
@@ -36299,6 +37622,175 @@ impl StopDbInstanceAutomatedBackupsReplicationInput {
     }
 }
 
+/// See [`SwitchoverBlueGreenDeploymentInput`](crate::input::SwitchoverBlueGreenDeploymentInput).
+pub mod switchover_blue_green_deployment_input {
+
+    /// A builder for [`SwitchoverBlueGreenDeploymentInput`](crate::input::SwitchoverBlueGreenDeploymentInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blue_green_deployment_identifier: std::option::Option<std::string::String>,
+        pub(crate) switchover_timeout: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The blue/green deployment identifier.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+        /// </ul>
+        pub fn blue_green_deployment_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.blue_green_deployment_identifier = Some(input.into());
+            self
+        }
+        /// <p>The blue/green deployment identifier.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+        /// </ul>
+        pub fn set_blue_green_deployment_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.blue_green_deployment_identifier = input;
+            self
+        }
+        /// <p>The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+        /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
+        pub fn switchover_timeout(mut self, input: i32) -> Self {
+            self.switchover_timeout = Some(input);
+            self
+        }
+        /// <p>The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+        /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
+        pub fn set_switchover_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.switchover_timeout = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SwitchoverBlueGreenDeploymentInput`](crate::input::SwitchoverBlueGreenDeploymentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::SwitchoverBlueGreenDeploymentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::SwitchoverBlueGreenDeploymentInput {
+                blue_green_deployment_identifier: self.blue_green_deployment_identifier,
+                switchover_timeout: self.switchover_timeout,
+            })
+        }
+    }
+}
+impl SwitchoverBlueGreenDeploymentInput {
+    /// Consumes the builder and constructs an Operation<[`SwitchoverBlueGreenDeployment`](crate::operation::SwitchoverBlueGreenDeployment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SwitchoverBlueGreenDeployment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::SwitchoverBlueGreenDeploymentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SwitchoverBlueGreenDeploymentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_switchover_blue_green_deployment(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SwitchoverBlueGreenDeployment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SwitchoverBlueGreenDeployment",
+            "rds",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`SwitchoverBlueGreenDeploymentInput`](crate::input::SwitchoverBlueGreenDeploymentInput).
+    pub fn builder() -> crate::input::switchover_blue_green_deployment_input::Builder {
+        crate::input::switchover_blue_green_deployment_input::Builder::default()
+    }
+}
+
 /// See [`SwitchoverReadReplicaInput`](crate::input::SwitchoverReadReplicaInput).
 pub mod switchover_read_replica_input {
 
@@ -36480,6 +37972,38 @@ impl SwitchoverReadReplicaInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SwitchoverBlueGreenDeploymentInput {
+    /// <p>The blue/green deployment identifier.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub blue_green_deployment_identifier: std::option::Option<std::string::String>,
+    /// <p>The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+    /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
+    #[doc(hidden)]
+    pub switchover_timeout: std::option::Option<i32>,
+}
+impl SwitchoverBlueGreenDeploymentInput {
+    /// <p>The blue/green deployment identifier.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+    /// </ul>
+    pub fn blue_green_deployment_identifier(&self) -> std::option::Option<&str> {
+        self.blue_green_deployment_identifier.as_deref()
+    }
+    /// <p>The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+    /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
+    pub fn switchover_timeout(&self) -> std::option::Option<i32> {
+        self.switchover_timeout
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDbInstanceAutomatedBackupsReplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
     #[doc(hidden)]
@@ -36567,17 +38091,17 @@ pub struct StartExportTaskInput {
     /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot.</p>
     #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to execute the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
+    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
     /// <ul>
-    /// <li> <p>GrantOperation.Encrypt</p> </li>
-    /// <li> <p>GrantOperation.Decrypt</p> </li>
-    /// <li> <p>GrantOperation.GenerateDataKey</p> </li>
-    /// <li> <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li>
-    /// <li> <p>GrantOperation.ReEncryptFrom</p> </li>
-    /// <li> <p>GrantOperation.ReEncryptTo</p> </li>
-    /// <li> <p>GrantOperation.CreateGrant</p> </li>
-    /// <li> <p>GrantOperation.DescribeKey</p> </li>
-    /// <li> <p>GrantOperation.RetireGrant</p> </li>
+    /// <li> <p>kms:Encrypt</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li>
+    /// <li> <p>kms:ReEncryptFrom</p> </li>
+    /// <li> <p>kms:ReEncryptTo</p> </li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:RetireGrant</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -36611,17 +38135,17 @@ impl StartExportTaskInput {
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to execute the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
+    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
     /// <ul>
-    /// <li> <p>GrantOperation.Encrypt</p> </li>
-    /// <li> <p>GrantOperation.Decrypt</p> </li>
-    /// <li> <p>GrantOperation.GenerateDataKey</p> </li>
-    /// <li> <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li>
-    /// <li> <p>GrantOperation.ReEncryptFrom</p> </li>
-    /// <li> <p>GrantOperation.ReEncryptTo</p> </li>
-    /// <li> <p>GrantOperation.CreateGrant</p> </li>
-    /// <li> <p>GrantOperation.DescribeKey</p> </li>
-    /// <li> <p>GrantOperation.RetireGrant</p> </li>
+    /// <li> <p>kms:Encrypt</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li>
+    /// <li> <p>kms:ReEncryptFrom</p> </li>
+    /// <li> <p>kms:ReEncryptTo</p> </li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:RetireGrant</p> </li>
     /// </ul>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -36920,8 +38444,8 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-    /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
@@ -36994,7 +38518,7 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     #[doc(hidden)]
     pub enable_customer_owned_ip: std::option::Option<bool>,
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
@@ -37022,6 +38546,15 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub network_type: std::option::Option<std::string::String>,
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    #[doc(hidden)]
+    pub storage_throughput: std::option::Option<i32>,
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+    /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub allocated_storage: std::option::Option<i32>,
 }
 impl RestoreDbInstanceToPointInTimeInput {
     /// <p>The identifier of the source DB instance from which to restore.</p>
@@ -37156,8 +38689,8 @@ impl RestoreDbInstanceToPointInTimeInput {
         self.tags.as_deref()
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-    /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     pub fn storage_type(&self) -> std::option::Option<&str> {
         self.storage_type.as_deref()
@@ -37245,7 +38778,7 @@ impl RestoreDbInstanceToPointInTimeInput {
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub fn enable_customer_owned_ip(&self) -> std::option::Option<bool> {
         self.enable_customer_owned_ip
     }
@@ -37277,6 +38810,17 @@ impl RestoreDbInstanceToPointInTimeInput {
     pub fn network_type(&self) -> std::option::Option<&str> {
         self.network_type.as_deref()
     }
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub fn storage_throughput(&self) -> std::option::Option<i32> {
+        self.storage_throughput
+    }
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+    /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+    /// </note>
+    pub fn allocated_storage(&self) -> std::option::Option<i32> {
+        self.allocated_storage
+    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -37296,7 +38840,7 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>Example: <code>mydbinstance</code> </p>
     #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
-    /// <p>The amount of storage (in gigabytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
     /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
     /// </note>
     #[doc(hidden)]
@@ -37319,7 +38863,17 @@ pub struct RestoreDbInstanceFromS3Input {
     #[doc(hidden)]
     pub master_username: std::option::Option<std::string::String>,
     /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
+    /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
+    /// <p> <b>MariaDB</b> </p>
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p> <b>Microsoft SQL Server</b> </p>
+    /// <p>Constraints: Must contain from 8 to 128 characters.</p>
+    /// <p> <b>MySQL</b> </p>
+    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p> <b>Oracle</b> </p>
+    /// <p>Constraints: Must contain from 8 to 30 characters.</p>
+    /// <p> <b>PostgreSQL</b> </p>
+    /// <p>Constraints: Must contain from 8 to 128 characters.</p>
     #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>A list of DB security groups to associate with this DB instance.</p>
@@ -37386,7 +38940,7 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>The license model for this DB instance. Use <code>general-public-license</code>.</p>
     #[doc(hidden)]
     pub license_model: std::option::Option<std::string::String>,
-    /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub iops: std::option::Option<i32>,
     /// <p>The name of the option group to associate with this DB instance. If this argument is omitted, the default option group for the specified engine is used.</p>
@@ -37402,8 +38956,8 @@ pub struct RestoreDbInstanceFromS3Input {
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code> </p>
-    /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
@@ -37501,6 +39055,25 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub network_type: std::option::Option<std::string::String>,
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    #[doc(hidden)]
+    pub storage_throughput: std::option::Option<i32>,
+    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub manage_master_user_password: std::option::Option<bool>,
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    #[doc(hidden)]
+    pub master_user_secret_kms_key_id: std::option::Option<std::string::String>,
 }
 impl RestoreDbInstanceFromS3Input {
     /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
@@ -37518,7 +39091,7 @@ impl RestoreDbInstanceFromS3Input {
     pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
-    /// <p>The amount of storage (in gigabytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
     /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
     /// </note>
     pub fn allocated_storage(&self) -> std::option::Option<i32> {
@@ -37545,7 +39118,17 @@ impl RestoreDbInstanceFromS3Input {
         self.master_username.as_deref()
     }
     /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
+    /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
+    /// <p> <b>MariaDB</b> </p>
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p> <b>Microsoft SQL Server</b> </p>
+    /// <p>Constraints: Must contain from 8 to 128 characters.</p>
+    /// <p> <b>MySQL</b> </p>
+    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p> <b>Oracle</b> </p>
+    /// <p>Constraints: Must contain from 8 to 30 characters.</p>
+    /// <p> <b>PostgreSQL</b> </p>
+    /// <p>Constraints: Must contain from 8 to 128 characters.</p>
     pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()
     }
@@ -37626,7 +39209,7 @@ impl RestoreDbInstanceFromS3Input {
     pub fn license_model(&self) -> std::option::Option<&str> {
         self.license_model.as_deref()
     }
-    /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
     }
@@ -37646,8 +39229,8 @@ impl RestoreDbInstanceFromS3Input {
         self.tags.as_deref()
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code> </p>
-    /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
     pub fn storage_type(&self) -> std::option::Option<&str> {
         self.storage_type.as_deref()
@@ -37766,6 +39349,28 @@ impl RestoreDbInstanceFromS3Input {
     pub fn network_type(&self) -> std::option::Option<&str> {
         self.network_type.as_deref()
     }
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub fn storage_throughput(&self) -> std::option::Option<i32> {
+        self.storage_throughput
+    }
+    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// </ul>
+    pub fn manage_master_user_password(&self) -> std::option::Option<bool> {
+        self.manage_master_user_password
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn master_user_secret_kms_key_id(&self) -> std::option::Option<&str> {
+        self.master_user_secret_kms_key_id.as_deref()
+    }
 }
 
 /// <p></p>
@@ -37786,6 +39391,8 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li>
+    /// <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.</p> </li>
+    /// <li> <p>Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li>
     /// <li> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> </li>
     /// </ul>
     #[doc(hidden)]
@@ -37856,7 +39463,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second. If this parameter isn't specified, the IOPS value is taken from the backup. If this parameter is set to 0, the new instance is converted to a non-PIOPS instance. The conversion takes additional time, though your DB instance is available for connections before the conversion starts.</p>
-    /// <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Constraints: Must be an integer greater than 1000.</p>
     #[doc(hidden)]
     pub iops: std::option::Option<i32>,
@@ -37869,8 +39476,8 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-    /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
@@ -37936,7 +39543,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     #[doc(hidden)]
     pub enable_customer_owned_ip: std::option::Option<bool>,
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
@@ -37964,6 +39571,28 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub network_type: std::option::Option<std::string::String>,
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    #[doc(hidden)]
+    pub storage_throughput: std::option::Option<i32>,
+    /// <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
+    /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing Multi-AZ DB cluster snapshot.</p> </li>
+    /// <li> <p>Can't be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li>
+    /// <li> <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p> </li>
+    /// <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.</p> </li>
+    /// <li> <p>Can't be the identifier of an Aurora DB cluster snapshot.</p> </li>
+    /// <li> <p>Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p> <note>
+    /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub allocated_storage: std::option::Option<i32>,
 }
 impl RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
@@ -37981,6 +39610,8 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li>
+    /// <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.</p> </li>
+    /// <li> <p>Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li>
     /// <li> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> </li>
     /// </ul>
     pub fn db_snapshot_identifier(&self) -> std::option::Option<&str> {
@@ -38062,7 +39693,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
         self.engine.as_deref()
     }
     /// <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second. If this parameter isn't specified, the IOPS value is taken from the backup. If this parameter is set to 0, the new instance is converted to a non-PIOPS instance. The conversion takes additional time, though your DB instance is available for connections before the conversion starts.</p>
-    /// <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Constraints: Must be an integer greater than 1000.</p>
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
@@ -38078,8 +39709,8 @@ impl RestoreDbInstanceFromDbSnapshotInput {
         self.tags.as_deref()
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-    /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     pub fn storage_type(&self) -> std::option::Option<&str> {
         self.storage_type.as_deref()
@@ -38158,7 +39789,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub fn enable_customer_owned_ip(&self) -> std::option::Option<bool> {
         self.enable_customer_owned_ip
     }
@@ -38189,6 +39820,31 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn network_type(&self) -> std::option::Option<&str> {
         self.network_type.as_deref()
+    }
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub fn storage_throughput(&self) -> std::option::Option<i32> {
+        self.storage_throughput
+    }
+    /// <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
+    /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing Multi-AZ DB cluster snapshot.</p> </li>
+    /// <li> <p>Can't be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li>
+    /// <li> <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p> </li>
+    /// <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.</p> </li>
+    /// <li> <p>Can't be the identifier of an Aurora DB cluster snapshot.</p> </li>
+    /// <li> <p>Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.</p> </li>
+    /// </ul>
+    pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_snapshot_identifier.as_deref()
+    }
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p> <note>
+    /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+    /// </note>
+    pub fn allocated_storage(&self) -> std::option::Option<i32> {
+        self.allocated_storage
     }
 }
 
@@ -38371,7 +40027,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     #[doc(hidden)]
     pub publicly_accessible: std::option::Option<bool>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-    /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     #[doc(hidden)]
@@ -38595,7 +40251,7 @@ impl RestoreDbClusterToPointInTimeInput {
         self.publicly_accessible
     }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-    /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn iops(&self) -> std::option::Option<i32> {
@@ -38796,7 +40452,7 @@ pub struct RestoreDbClusterFromSnapshotInput {
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-    /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     #[doc(hidden)]
@@ -39032,7 +40688,7 @@ impl RestoreDbClusterFromSnapshotInput {
         self.storage_type.as_deref()
     }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-    /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn iops(&self) -> std::option::Option<i32> {
@@ -39150,7 +40806,11 @@ pub struct RestoreDbClusterFromS3Input {
     #[doc(hidden)]
     pub master_username: std::option::Option<std::string::String>,
     /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>A value that indicates that the restored DB cluster should be associated with the specified option group.</p>
@@ -39254,6 +40914,21 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     #[doc(hidden)]
     pub network_type: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub manage_master_user_password: std::option::Option<bool>,
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    #[doc(hidden)]
+    pub master_user_secret_kms_key_id: std::option::Option<std::string::String>,
 }
 impl RestoreDbClusterFromS3Input {
     /// <p>A list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
@@ -39337,7 +41012,11 @@ impl RestoreDbClusterFromS3Input {
         self.master_username.as_deref()
     }
     /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// </ul>
     pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()
     }
@@ -39462,6 +41141,23 @@ impl RestoreDbClusterFromS3Input {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub fn network_type(&self) -> std::option::Option<&str> {
         self.network_type.as_deref()
+    }
+    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// </ul>
+    pub fn manage_master_user_password(&self) -> std::option::Option<bool> {
+        self.manage_master_user_password
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn master_user_secret_kms_key_id(&self) -> std::option::Option<&str> {
+        self.master_user_secret_kms_key_id.as_deref()
     }
 }
 
@@ -40387,9 +42083,8 @@ pub struct ModifyDbInstanceInput {
     /// <p>For the valid values for allocated storage for each engine, see <code>CreateDBInstance</code>.</p>
     #[doc(hidden)]
     pub allocated_storage: std::option::Option<i32>,
-    /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
-    /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
+    /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS"> DB instance class support for RDS Custom for SQL Server</a>.</p>
+    /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless you specify <code>ApplyImmediately</code> in your request. </p>
     /// <p>Default: Uses existing setting</p>
     #[doc(hidden)]
     pub db_instance_class: std::option::Option<std::string::String>,
@@ -40428,6 +42123,7 @@ pub struct ModifyDbInstanceInput {
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Default: Uses existing setting</p>
+    /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
     /// <p> <b>MariaDB</b> </p>
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
     /// <p> <b>Microsoft SQL Server</b> </p>
@@ -40542,7 +42238,7 @@ pub struct ModifyDbInstanceInput {
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
     /// <p>If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>
-    /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
+    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
@@ -40554,8 +42250,9 @@ pub struct ModifyDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     #[doc(hidden)]
     pub tde_credential_password: std::option::Option<std::string::String>,
-    /// <p>Specifies the certificate to associate with the DB instance.</p>
+    /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
     pub ca_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance from its current domain. You must create the domain before this operation. Currently, you can create only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
@@ -40699,7 +42396,7 @@ pub struct ModifyDbInstanceInput {
     /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     #[doc(hidden)]
     pub enable_customer_owned_ip: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
@@ -40722,6 +42419,40 @@ pub struct ModifyDbInstanceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub network_type: std::option::Option<std::string::String>,
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    #[doc(hidden)]
+    pub storage_throughput: std::option::Option<i32>,
+    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+    /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub manage_master_user_password: std::option::Option<bool>,
+    /// <p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub rotate_master_user_password: std::option::Option<bool>,
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if both of the following conditions are met:</p>
+    /// <ul>
+    /// <li> <p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p> </li>
+    /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+    /// </ul>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    #[doc(hidden)]
+    pub master_user_secret_kms_key_id: std::option::Option<std::string::String>,
 }
 impl ModifyDbInstanceInput {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
@@ -40738,9 +42469,8 @@ impl ModifyDbInstanceInput {
     pub fn allocated_storage(&self) -> std::option::Option<i32> {
         self.allocated_storage
     }
-    /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
-    /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
+    /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS"> DB instance class support for RDS Custom for SQL Server</a>.</p>
+    /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless you specify <code>ApplyImmediately</code> in your request. </p>
     /// <p>Default: Uses existing setting</p>
     pub fn db_instance_class(&self) -> std::option::Option<&str> {
         self.db_instance_class.as_deref()
@@ -40784,6 +42514,7 @@ impl ModifyDbInstanceInput {
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Default: Uses existing setting</p>
+    /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
     /// <p> <b>MariaDB</b> </p>
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
     /// <p> <b>Microsoft SQL Server</b> </p>
@@ -40911,7 +42642,7 @@ impl ModifyDbInstanceInput {
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
     /// <p>If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>
-    /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
+    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     pub fn storage_type(&self) -> std::option::Option<&str> {
         self.storage_type.as_deref()
@@ -40926,8 +42657,9 @@ impl ModifyDbInstanceInput {
     pub fn tde_credential_password(&self) -> std::option::Option<&str> {
         self.tde_credential_password.as_deref()
     }
-    /// <p>Specifies the certificate to associate with the DB instance.</p>
+    /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn ca_certificate_identifier(&self) -> std::option::Option<&str> {
         self.ca_certificate_identifier.as_deref()
     }
@@ -41092,7 +42824,7 @@ impl ModifyDbInstanceInput {
     /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub fn enable_customer_owned_ip(&self) -> std::option::Option<bool> {
         self.enable_customer_owned_ip
     }
@@ -41119,6 +42851,44 @@ impl ModifyDbInstanceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn network_type(&self) -> std::option::Option<&str> {
         self.network_type.as_deref()
+    }
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub fn storage_throughput(&self) -> std::option::Option<i32> {
+        self.storage_throughput
+    }
+    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+    /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// </ul>
+    pub fn manage_master_user_password(&self) -> std::option::Option<bool> {
+        self.manage_master_user_password
+    }
+    /// <p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+    /// </ul>
+    pub fn rotate_master_user_password(&self) -> std::option::Option<bool> {
+        self.rotate_master_user_password
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if both of the following conditions are met:</p>
+    /// <ul>
+    /// <li> <p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p> </li>
+    /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+    /// </ul>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn master_user_secret_kms_key_id(&self) -> std::option::Option<&str> {
+        self.master_user_secret_kms_key_id.as_deref()
     }
 }
 
@@ -41251,7 +43021,7 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    /// <p>Valid for: Aurora DB clusters only</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     #[doc(hidden)]
     pub new_db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this parameter is disabled, changes to the DB cluster are applied during the next maintenance window.</p>
@@ -41284,7 +43054,11 @@ pub struct ModifyDbClusterInput {
     #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
@@ -41422,7 +43196,7 @@ pub struct ModifyDbClusterInput {
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-    /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     #[doc(hidden)]
@@ -41486,6 +43260,34 @@ pub struct ModifyDbClusterInput {
     /// <p>Valid for: Aurora DB clusters only</p>
     #[doc(hidden)]
     pub network_type: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+    /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    #[doc(hidden)]
+    pub manage_master_user_password: std::option::Option<bool>,
+    /// <p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+    /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    #[doc(hidden)]
+    pub rotate_master_user_password: std::option::Option<bool>,
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if both of the following conditions are met:</p>
+    /// <ul>
+    /// <li> <p>The DB cluster doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB cluster already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key that is used to encrypt the secret.</p> </li>
+    /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+    /// </ul>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    #[doc(hidden)]
+    pub master_user_secret_kms_key_id: std::option::Option<std::string::String>,
 }
 impl ModifyDbClusterInput {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -41502,7 +43304,7 @@ impl ModifyDbClusterInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    /// <p>Valid for: Aurora DB clusters only</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn new_db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.new_db_cluster_identifier.as_deref()
     }
@@ -41541,7 +43343,11 @@ impl ModifyDbClusterInput {
         self.port
     }
     /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()
@@ -41702,7 +43508,7 @@ impl ModifyDbClusterInput {
         self.storage_type.as_deref()
     }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-    /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn iops(&self) -> std::option::Option<i32> {
@@ -41775,6 +43581,37 @@ impl ModifyDbClusterInput {
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn network_type(&self) -> std::option::Option<&str> {
         self.network_type.as_deref()
+    }
+    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+    /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn manage_master_user_password(&self) -> std::option::Option<bool> {
+        self.manage_master_user_password
+    }
+    /// <p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+    /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn rotate_master_user_password(&self) -> std::option::Option<bool> {
+        self.rotate_master_user_password
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if both of the following conditions are met:</p>
+    /// <ul>
+    /// <li> <p>The DB cluster doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB cluster already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key that is used to encrypt the secret.</p> </li>
+    /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+    /// </ul>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn master_user_secret_kms_key_id(&self) -> std::option::Option<&str> {
+        self.master_user_secret_kms_key_id.as_deref()
     }
 }
 
@@ -42749,6 +44586,9 @@ pub struct DescribeExportTasksInput {
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
+    /// <p>The type of source for the export.</p>
+    #[doc(hidden)]
+    pub source_type: std::option::Option<crate::model::ExportSourceType>,
 }
 impl DescribeExportTasksInput {
     /// <p>The identifier of the snapshot export task to be described.</p>
@@ -42787,6 +44627,10 @@ impl DescribeExportTasksInput {
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
+    }
+    /// <p>The type of source for the export.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::ExportSourceType> {
+        self.source_type.as_ref()
     }
 }
 
@@ -42973,6 +44817,8 @@ pub struct DescribeEngineDefaultParametersInput {
     /// <li> <p> <code>aurora-postgresql11</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql12</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql14</code> </p> </li>
+    /// <li> <p> <code>custom-oracle-ee-19</code> </p> </li>
     /// <li> <p> <code>mariadb10.2</code> </p> </li>
     /// <li> <p> <code>mariadb10.3</code> </p> </li>
     /// <li> <p> <code>mariadb10.4</code> </p> </li>
@@ -42980,6 +44826,12 @@ pub struct DescribeEngineDefaultParametersInput {
     /// <li> <p> <code>mariadb10.6</code> </p> </li>
     /// <li> <p> <code>mysql5.7</code> </p> </li>
     /// <li> <p> <code>mysql8.0</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-19</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb-19</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb-21</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-19</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb-19</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb-21</code> </p> </li>
     /// <li> <p> <code>postgres10</code> </p> </li>
     /// <li> <p> <code>postgres11</code> </p> </li>
     /// <li> <p> <code>postgres12</code> </p> </li>
@@ -43031,6 +44883,8 @@ impl DescribeEngineDefaultParametersInput {
     /// <li> <p> <code>aurora-postgresql11</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql12</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql14</code> </p> </li>
+    /// <li> <p> <code>custom-oracle-ee-19</code> </p> </li>
     /// <li> <p> <code>mariadb10.2</code> </p> </li>
     /// <li> <p> <code>mariadb10.3</code> </p> </li>
     /// <li> <p> <code>mariadb10.4</code> </p> </li>
@@ -43038,6 +44892,12 @@ impl DescribeEngineDefaultParametersInput {
     /// <li> <p> <code>mariadb10.6</code> </p> </li>
     /// <li> <p> <code>mysql5.7</code> </p> </li>
     /// <li> <p> <code>mysql8.0</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-19</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb-19</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb-21</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-19</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb-19</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb-21</code> </p> </li>
     /// <li> <p> <code>postgres10</code> </p> </li>
     /// <li> <p> <code>postgres11</code> </p> </li>
     /// <li> <p> <code>postgres12</code> </p> </li>
@@ -43710,7 +45570,7 @@ impl DescribeDbLogFilesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbInstancesInput {
-    /// <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
@@ -43738,7 +45598,7 @@ pub struct DescribeDbInstancesInput {
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbInstancesInput {
-    /// <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
@@ -44157,7 +46017,7 @@ impl DescribeDbClusterSnapshotAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbClustersInput {
-    /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
@@ -44187,7 +46047,7 @@ pub struct DescribeDbClustersInput {
     pub include_shared: bool,
 }
 impl DescribeDbClustersInput {
-    /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
@@ -44508,6 +46368,68 @@ impl DescribeCertificatesInput {
     /// <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeBlueGreenDeploymentsInput {
+    /// <p>The blue/green deployment identifier. If this parameter is specified, information from only the specific blue/green deployment is returned. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match an existing blue/green deployment identifier.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub blue_green_deployment_identifier: std::option::Option<std::string::String>,
+    /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
+    /// <p>Supported filters:</p>
+    /// <ul>
+    /// <li> <p> <code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p> </li>
+    /// <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p> </li>
+    /// <li> <p> <code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p> </li>
+    /// <li> <p> <code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
+    pub marker: std::option::Option<std::string::String>,
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
+    pub max_records: std::option::Option<i32>,
+}
+impl DescribeBlueGreenDeploymentsInput {
+    /// <p>The blue/green deployment identifier. If this parameter is specified, information from only the specific blue/green deployment is returned. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match an existing blue/green deployment identifier.</p> </li>
+    /// </ul>
+    pub fn blue_green_deployment_identifier(&self) -> std::option::Option<&str> {
+        self.blue_green_deployment_identifier.as_deref()
+    }
+    /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
+    /// <p>Supported filters:</p>
+    /// <ul>
+    /// <li> <p> <code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p> </li>
+    /// <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p> </li>
+    /// <li> <p> <code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p> </li>
+    /// <li> <p> <code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p> </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
     }
 }
 
@@ -44964,6 +46886,36 @@ impl DeleteCustomDbEngineVersionInput {
     /// <p>The custom engine version (CEV) for your DB instance. This option is required for RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteBlueGreenDeploymentInput {
+    /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints: </p>
+    /// <ul>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub blue_green_deployment_identifier: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether to delete the resources in the green environment.</p>
+    #[doc(hidden)]
+    pub delete_target: std::option::Option<bool>,
+}
+impl DeleteBlueGreenDeploymentInput {
+    /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints: </p>
+    /// <ul>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+    /// </ul>
+    pub fn blue_green_deployment_identifier(&self) -> std::option::Option<&str> {
+        self.blue_green_deployment_identifier.as_deref()
+    }
+    /// <p>A value that indicates whether to delete the resources in the green environment.</p>
+    pub fn delete_target(&self) -> std::option::Option<bool> {
+        self.delete_target
     }
 }
 
@@ -45663,8 +47615,8 @@ pub struct CreateDbInstanceReadReplicaInput {
     #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the storage type to be associated with the read replica.</p>
-    /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-    /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
@@ -45795,6 +47747,21 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub network_type: std::option::Option<std::string::String>,
+    /// <p>Specifies the storage throughput value for the read replica.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    #[doc(hidden)]
+    pub storage_throughput: std::option::Option<i32>,
+    /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
+    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    #[doc(hidden)]
+    pub enable_customer_owned_ip: std::option::Option<bool>,
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+    /// <p>Be sure to allocate enough memory for your read replica so that the create operation can succeed. You can also allocate additional memory for future growth.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub allocated_storage: std::option::Option<i32>,
 }
 impl CreateDbInstanceReadReplicaInput {
     /// <p>The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</p>
@@ -45902,8 +47869,8 @@ impl CreateDbInstanceReadReplicaInput {
         self.vpc_security_group_ids.as_deref()
     }
     /// <p>Specifies the storage type to be associated with the read replica.</p>
-    /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-    /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     pub fn storage_type(&self) -> std::option::Option<&str> {
         self.storage_type.as_deref()
@@ -46054,6 +48021,24 @@ impl CreateDbInstanceReadReplicaInput {
     pub fn network_type(&self) -> std::option::Option<&str> {
         self.network_type.as_deref()
     }
+    /// <p>Specifies the storage throughput value for the read replica.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub fn storage_throughput(&self) -> std::option::Option<i32> {
+        self.storage_throughput
+    }
+    /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
+    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    pub fn enable_customer_owned_ip(&self) -> std::option::Option<bool> {
+        self.enable_customer_owned_ip
+    }
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+    /// <p>Be sure to allocate enough memory for your read replica so that the create operation can succeed. You can also allocate additional memory for future growth.</p>
+    /// </note>
+    pub fn allocated_storage(&self) -> std::option::Option<i32> {
+        self.allocated_storage
+    }
 }
 
 /// <p></p>
@@ -46139,41 +48124,41 @@ pub struct CreateDbInstanceInput {
     /// <p> <b>Amazon RDS Custom</b> </p>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
     /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
     /// </ul>
     /// <p> <b>MySQL</b> </p>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
     /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
     /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
     /// </ul>
     /// <p> <b>MariaDB</b> </p>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
     /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
     /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
     /// </ul>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
     /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
     /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
     /// </ul>
     /// <p> <b>Oracle</b> </p>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
     /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
     /// <li> <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p> </li>
     /// </ul>
     /// <p> <b>SQL Server</b> </p>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2):</p>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3):</p>
     /// <ul>
     /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p> </li>
     /// <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p> </li>
@@ -46235,6 +48220,7 @@ pub struct CreateDbInstanceInput {
     /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The password for the master user is managed by the DB cluster.</p>
+    /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
     /// <p> <b>MariaDB</b> </p>
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
     /// <p> <b>Microsoft SQL Server</b> </p>
@@ -46348,7 +48334,7 @@ pub struct CreateDbInstanceInput {
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster.</p>
     /// <p> <b>Amazon RDS Custom for Oracle</b> </p>
-    /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: <code>19.<i>customized_string</i> </code>. An example identifier is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>Amazon RDS Custom for SQL Server</b> </p>
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>MariaDB</b> </p>
@@ -46374,7 +48360,7 @@ pub struct CreateDbInstanceInput {
     /// <p>Not applicable.</p>
     #[doc(hidden)]
     pub license_model: std::option::Option<std::string::String>,
-    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
@@ -46421,8 +48407,8 @@ pub struct CreateDbInstanceInput {
     #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-    /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
@@ -46563,7 +48549,7 @@ pub struct CreateDbInstanceInput {
     /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     #[doc(hidden)]
     pub enable_customer_owned_ip: std::option::Option<bool>,
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
@@ -46591,6 +48577,31 @@ pub struct CreateDbInstanceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub network_type: std::option::Option<std::string::String>,
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    #[doc(hidden)]
+    pub storage_throughput: std::option::Option<i32>,
+    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub manage_master_user_password: std::option::Option<bool>,
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    #[doc(hidden)]
+    pub master_user_secret_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    #[doc(hidden)]
+    pub ca_certificate_identifier: std::option::Option<std::string::String>,
 }
 impl CreateDbInstanceInput {
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -46674,41 +48685,41 @@ impl CreateDbInstanceInput {
     /// <p> <b>Amazon RDS Custom</b> </p>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
     /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
     /// </ul>
     /// <p> <b>MySQL</b> </p>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
     /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
     /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
     /// </ul>
     /// <p> <b>MariaDB</b> </p>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
     /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
     /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
     /// </ul>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
     /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
     /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
     /// </ul>
     /// <p> <b>Oracle</b> </p>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
     /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
     /// <li> <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p> </li>
     /// </ul>
     /// <p> <b>SQL Server</b> </p>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2):</p>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3):</p>
     /// <ul>
     /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p> </li>
     /// <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p> </li>
@@ -46774,6 +48785,7 @@ impl CreateDbInstanceInput {
     /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The password for the master user is managed by the DB cluster.</p>
+    /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
     /// <p> <b>MariaDB</b> </p>
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
     /// <p> <b>Microsoft SQL Server</b> </p>
@@ -46898,7 +48910,7 @@ impl CreateDbInstanceInput {
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster.</p>
     /// <p> <b>Amazon RDS Custom for Oracle</b> </p>
-    /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: <code>19.<i>customized_string</i> </code>. An example identifier is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>Amazon RDS Custom for SQL Server</b> </p>
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>MariaDB</b> </p>
@@ -46927,7 +48939,7 @@ impl CreateDbInstanceInput {
     pub fn license_model(&self) -> std::option::Option<&str> {
         self.license_model.as_deref()
     }
-    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
@@ -46981,8 +48993,8 @@ impl CreateDbInstanceInput {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
-    /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
@@ -47143,7 +49155,7 @@ impl CreateDbInstanceInput {
     /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub fn enable_customer_owned_ip(&self) -> std::option::Option<bool> {
         self.enable_customer_owned_ip
     }
@@ -47174,6 +49186,35 @@ impl CreateDbInstanceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn network_type(&self) -> std::option::Option<&str> {
         self.network_type.as_deref()
+    }
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub fn storage_throughput(&self) -> std::option::Option<i32> {
+        self.storage_throughput
+    }
+    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// </ul>
+    pub fn manage_master_user_password(&self) -> std::option::Option<bool> {
+        self.manage_master_user_password
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn master_user_secret_kms_key_id(&self) -> std::option::Option<&str> {
+        self.master_user_secret_kms_key_id.as_deref()
+    }
+    /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn ca_certificate_identifier(&self) -> std::option::Option<&str> {
+        self.ca_certificate_identifier.as_deref()
     }
 }
 
@@ -47485,7 +49526,11 @@ pub struct CreateDbClusterInput {
     #[doc(hidden)]
     pub master_username: std::option::Option<std::string::String>,
     /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
@@ -47653,7 +49698,7 @@ pub struct CreateDbClusterInput {
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-    /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
     /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
@@ -47735,6 +49780,26 @@ pub struct CreateDbClusterInput {
     /// <p>Valid for: Aurora DB clusters only</p>
     #[doc(hidden)]
     pub network_type: std::option::Option<std::string::String>,
+    /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
+    pub db_system_id: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    #[doc(hidden)]
+    pub manage_master_user_password: std::option::Option<bool>,
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    #[doc(hidden)]
+    pub master_user_secret_kms_key_id: std::option::Option<std::string::String>,
 }
 impl CreateDbClusterInput {
     /// <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can be created.</p>
@@ -47856,7 +49921,11 @@ impl CreateDbClusterInput {
         self.master_username.as_deref()
     }
     /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
-    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()
@@ -48050,7 +50119,7 @@ impl CreateDbClusterInput {
         self.storage_type.as_deref()
     }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
-    /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
     /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
@@ -48143,6 +50212,29 @@ impl CreateDbClusterInput {
     pub fn network_type(&self) -> std::option::Option<&str> {
         self.network_type.as_deref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn db_system_id(&self) -> std::option::Option<&str> {
+        self.db_system_id.as_deref()
+    }
+    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn manage_master_user_password(&self) -> std::option::Option<bool> {
+        self.manage_master_user_password
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn master_user_secret_kms_key_id(&self) -> std::option::Option<&str> {
+        self.master_user_secret_kms_key_id.as_deref()
+    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -48152,7 +50244,7 @@ pub struct CreateCustomDbEngineVersionInput {
     /// <p>The database engine to use for your custom engine version (CEV). The only supported value is <code>custom-oracle-ee</code>.</p>
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
-    /// <p>The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
+    /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
     #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is <code>my-custom-installation-files</code>.</p>
@@ -48161,6 +50253,9 @@ pub struct CreateCustomDbEngineVersionInput {
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
     #[doc(hidden)]
     pub database_installation_files_s3_prefix: std::option::Option<std::string::String>,
+    /// <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for SQL Server.</p>
+    #[doc(hidden)]
+    pub image_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
     /// <p>If you have an existing symmetric encryption KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric encryption KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     /// <p>You can choose the same symmetric encryption key when you create a CEV and a DB instance, or choose different keys.</p>
@@ -48215,7 +50310,7 @@ impl CreateCustomDbEngineVersionInput {
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
-    /// <p>The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
+    /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
@@ -48226,6 +50321,10 @@ impl CreateCustomDbEngineVersionInput {
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
     pub fn database_installation_files_s3_prefix(&self) -> std::option::Option<&str> {
         self.database_installation_files_s3_prefix.as_deref()
+    }
+    /// <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for SQL Server.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
     /// <p>If you have an existing symmetric encryption KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric encryption KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
@@ -48276,6 +50375,72 @@ impl CreateCustomDbEngineVersionInput {
         self.manifest.as_deref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateBlueGreenDeploymentInput {
+    /// <p>The name of the blue/green deployment.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub blue_green_deployment_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
+    /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
+    #[doc(hidden)]
+    pub source: std::option::Option<std::string::String>,
+    /// <p>The engine version of the database in the green environment.</p>
+    /// <p>Specify the engine version to upgrade to in the green environment.</p>
+    #[doc(hidden)]
+    pub target_engine_version: std::option::Option<std::string::String>,
+    /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
+    /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
+    #[doc(hidden)]
+    pub target_db_parameter_group_name: std::option::Option<std::string::String>,
+    /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
+    /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
+    #[doc(hidden)]
+    pub target_db_cluster_parameter_group_name: std::option::Option<std::string::String>,
+    /// <p>Tags to assign to the blue/green deployment.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateBlueGreenDeploymentInput {
+    /// <p>The name of the blue/green deployment.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
+    /// </ul>
+    pub fn blue_green_deployment_name(&self) -> std::option::Option<&str> {
+        self.blue_green_deployment_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
+    /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The engine version of the database in the green environment.</p>
+    /// <p>Specify the engine version to upgrade to in the green environment.</p>
+    pub fn target_engine_version(&self) -> std::option::Option<&str> {
+        self.target_engine_version.as_deref()
+    }
+    /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
+    /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
+    pub fn target_db_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.target_db_parameter_group_name.as_deref()
+    }
+    /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
+    /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
+    pub fn target_db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.target_db_cluster_parameter_group_name.as_deref()
+    }
+    /// <p>Tags to assign to the blue/green deployment.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -48379,7 +50544,7 @@ pub struct CopyDbSnapshotInput {
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags are not copied.</p>
+    /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't copied.</p>
     #[doc(hidden)]
     pub copy_tags: std::option::Option<bool>,
     /// <p>When you are copying a snapshot from one Amazon Web Services GovCloud (US) Region to another, the URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API operation in the source Amazon Web Services Region that contains the source DB snapshot to copy.</p>
@@ -48404,6 +50569,9 @@ pub struct CopyDbSnapshotInput {
     /// <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
     #[doc(hidden)]
     pub target_custom_availability_zone: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    #[doc(hidden)]
+    pub copy_option_group: std::option::Option<bool>,
 }
 impl CopyDbSnapshotInput {
     /// <p>The identifier for the source DB snapshot.</p>
@@ -48444,7 +50612,7 @@ impl CopyDbSnapshotInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags are not copied.</p>
+    /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't copied.</p>
     pub fn copy_tags(&self) -> std::option::Option<bool> {
         self.copy_tags
     }
@@ -48472,6 +50640,10 @@ impl CopyDbSnapshotInput {
     /// <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
     pub fn target_custom_availability_zone(&self) -> std::option::Option<&str> {
         self.target_custom_availability_zone.as_deref()
+    }
+    /// <p>A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    pub fn copy_option_group(&self) -> std::option::Option<bool> {
+        self.copy_option_group
     }
 }
 

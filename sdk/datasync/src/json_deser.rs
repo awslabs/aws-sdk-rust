@@ -1555,6 +1555,13 @@ pub(crate) fn deser_operation_crate_operation_describe_location_object_storage(
                             )?,
                         );
                     }
+                    "ServerCertificate" => {
+                        builder = builder.set_server_certificate(
+                            aws_smithy_json::deserialize::token::expect_blob_or_null(
+                                tokens.next(),
+                            )?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -2045,6 +2052,15 @@ pub(crate) fn deser_operation_crate_operation_describe_task_execution(
                     "Result" => {
                         builder = builder.set_result(
                             crate::json_deser::deser_structure_crate_model_task_execution_result_detail(tokens)?
+                        );
+                    }
+                    "BytesCompressed" => {
+                        builder = builder.set_bytes_compressed(
+                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(i64::try_from)
+                            .transpose()?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

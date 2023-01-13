@@ -171,15 +171,6 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                         credential_scope: aws_endpoint::CredentialScope::builder().build(),
                     },
                 )
-                .endpoint(
-                    "us-gov-west-1",
-                    aws_endpoint::partition::endpoint::Metadata {
-                        uri_template: "cloudtrail.{region}.amazonaws.com",
-                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
-                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
-                        credential_scope: aws_endpoint::CredentialScope::builder().build(),
-                    },
-                )
                 .build()
                 .expect("invalid partition"),
         ],

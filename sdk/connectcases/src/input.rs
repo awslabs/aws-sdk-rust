@@ -458,12 +458,12 @@ pub mod create_case_input {
             self.fields = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1375,6 +1375,7 @@ pub mod create_template_input {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) layout_configuration: std::option::Option<crate::model::LayoutConfiguration>,
         pub(crate) required_fields: std::option::Option<std::vec::Vec<crate::model::RequiredField>>,
+        pub(crate) status: std::option::Option<crate::model::TemplateStatus>,
     }
     impl Builder {
         /// <p>The unique identifier of the Cases domain. </p>
@@ -1439,6 +1440,19 @@ pub mod create_template_input {
             self.required_fields = input;
             self
         }
+        /// <p>The status of the template.</p>
+        pub fn status(mut self, input: crate::model::TemplateStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the template.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TemplateStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::input::CreateTemplateInput).
         pub fn build(
             self,
@@ -1450,6 +1464,7 @@ pub mod create_template_input {
                 description: self.description,
                 layout_configuration: self.layout_configuration,
                 required_fields: self.required_fields,
+                status: self.status,
             })
         }
     }
@@ -3637,6 +3652,7 @@ pub mod list_templates_input {
         pub(crate) domain_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::vec::Vec<crate::model::TemplateStatus>>,
     }
     impl Builder {
         /// <p>The unique identifier of the Cases domain. </p>
@@ -3669,6 +3685,25 @@ pub mod list_templates_input {
             self.next_token = input;
             self
         }
+        /// Appends an item to `status`.
+        ///
+        /// To override the contents of this collection use [`set_status`](Self::set_status).
+        ///
+        /// <p>A list of status values to filter on.</p>
+        pub fn status(mut self, input: crate::model::TemplateStatus) -> Self {
+            let mut v = self.status.unwrap_or_default();
+            v.push(input);
+            self.status = Some(v);
+            self
+        }
+        /// <p>A list of status values to filter on.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TemplateStatus>>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTemplatesInput`](crate::input::ListTemplatesInput).
         pub fn build(
             self,
@@ -3678,6 +3713,7 @@ pub mod list_templates_input {
                 domain_id: self.domain_id,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                status: self.status,
             })
         }
     }
@@ -3745,6 +3781,13 @@ impl ListTemplatesInput {
                 if let Some(inner_36) = &_input.next_token {
                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+                    }
+                }
+                if let Some(inner_37) = &_input.status {
+                    {
+                        for inner_38 in inner_37 {
+                            query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_38));
+                        }
                     }
                 }
                 Ok(())
@@ -3890,15 +3933,15 @@ impl PutCaseEventConfigurationInput {
                 _input: &crate::input::PutCaseEventConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_37 = &_input.domain_id;
-                let input_37 = input_37.as_ref().ok_or_else(|| {
+                let input_39 = &_input.domain_id;
+                let input_39 = input_39.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_id = aws_smithy_http::label::fmt_string(
-                    input_37,
+                    input_39,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_id.is_empty() {
@@ -4146,15 +4189,15 @@ impl SearchCasesInput {
                 _input: &crate::input::SearchCasesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_38 = &_input.domain_id;
-                let input_38 = input_38.as_ref().ok_or_else(|| {
+                let input_40 = &_input.domain_id;
+                let input_40 = input_40.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_id = aws_smithy_http::label::fmt_string(
-                    input_38,
+                    input_40,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_id.is_empty() {
@@ -4369,15 +4412,15 @@ impl SearchRelatedItemsInput {
                 _input: &crate::input::SearchRelatedItemsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_39 = &_input.domain_id;
-                let input_39 = input_39.as_ref().ok_or_else(|| {
+                let input_41 = &_input.domain_id;
+                let input_41 = input_41.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_id = aws_smithy_http::label::fmt_string(
-                    input_39,
+                    input_41,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_id.is_empty() {
@@ -4388,15 +4431,15 @@ impl SearchRelatedItemsInput {
                         ),
                     );
                 }
-                let input_40 = &_input.case_id;
-                let input_40 = input_40.as_ref().ok_or_else(|| {
+                let input_42 = &_input.case_id;
+                let input_42 = input_42.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "case_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let case_id = aws_smithy_http::label::fmt_string(
-                    input_40,
+                    input_42,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if case_id.is_empty() {
@@ -4588,15 +4631,15 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_41 = &_input.arn;
-                let input_41 = input_41.as_ref().ok_or_else(|| {
+                let input_43 = &_input.arn;
+                let input_43 = input_43.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let arn = aws_smithy_http::label::fmt_string(
-                    input_41,
+                    input_43,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if arn.is_empty() {
@@ -4768,15 +4811,15 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_42 = &_input.arn;
-                let input_42 = input_42.as_ref().ok_or_else(|| {
+                let input_44 = &_input.arn;
+                let input_44 = input_44.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let arn = aws_smithy_http::label::fmt_string(
-                    input_42,
+                    input_44,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if arn.is_empty() {
@@ -4795,15 +4838,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_43 = &_input.tag_keys;
-                let inner_43 = inner_43.as_ref().ok_or_else(|| {
+                let inner_45 = &_input.tag_keys;
+                let inner_45 = inner_45.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "tag_keys",
                         "cannot be empty or unset",
                     )
                 })?;
-                for inner_44 in inner_43 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_44));
+                for inner_46 in inner_45 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_46));
                 }
                 Ok(())
             }
@@ -4964,15 +5007,15 @@ impl UpdateCaseInput {
                 _input: &crate::input::UpdateCaseInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_45 = &_input.domain_id;
-                let input_45 = input_45.as_ref().ok_or_else(|| {
+                let input_47 = &_input.domain_id;
+                let input_47 = input_47.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_id = aws_smithy_http::label::fmt_string(
-                    input_45,
+                    input_47,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_id.is_empty() {
@@ -4983,15 +5026,15 @@ impl UpdateCaseInput {
                         ),
                     );
                 }
-                let input_46 = &_input.case_id;
-                let input_46 = input_46.as_ref().ok_or_else(|| {
+                let input_48 = &_input.case_id;
+                let input_48 = input_48.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "case_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let case_id = aws_smithy_http::label::fmt_string(
-                    input_46,
+                    input_48,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if case_id.is_empty() {
@@ -5184,15 +5227,15 @@ impl UpdateFieldInput {
                 _input: &crate::input::UpdateFieldInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_47 = &_input.domain_id;
-                let input_47 = input_47.as_ref().ok_or_else(|| {
+                let input_49 = &_input.domain_id;
+                let input_49 = input_49.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_id = aws_smithy_http::label::fmt_string(
-                    input_47,
+                    input_49,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_id.is_empty() {
@@ -5203,15 +5246,15 @@ impl UpdateFieldInput {
                         ),
                     );
                 }
-                let input_48 = &_input.field_id;
-                let input_48 = input_48.as_ref().ok_or_else(|| {
+                let input_50 = &_input.field_id;
+                let input_50 = input_50.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "field_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let field_id = aws_smithy_http::label::fmt_string(
-                    input_48,
+                    input_50,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if field_id.is_empty() {
@@ -5407,15 +5450,15 @@ impl UpdateLayoutInput {
                 _input: &crate::input::UpdateLayoutInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_49 = &_input.domain_id;
-                let input_49 = input_49.as_ref().ok_or_else(|| {
+                let input_51 = &_input.domain_id;
+                let input_51 = input_51.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_id = aws_smithy_http::label::fmt_string(
-                    input_49,
+                    input_51,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_id.is_empty() {
@@ -5426,15 +5469,15 @@ impl UpdateLayoutInput {
                         ),
                     );
                 }
-                let input_50 = &_input.layout_id;
-                let input_50 = input_50.as_ref().ok_or_else(|| {
+                let input_52 = &_input.layout_id;
+                let input_52 = input_52.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "layout_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let layout_id = aws_smithy_http::label::fmt_string(
-                    input_50,
+                    input_52,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if layout_id.is_empty() {
@@ -5553,6 +5596,7 @@ pub mod update_template_input {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) layout_configuration: std::option::Option<crate::model::LayoutConfiguration>,
         pub(crate) required_fields: std::option::Option<std::vec::Vec<crate::model::RequiredField>>,
+        pub(crate) status: std::option::Option<crate::model::TemplateStatus>,
     }
     impl Builder {
         /// <p>The unique identifier of the Cases domain. </p>
@@ -5627,6 +5671,19 @@ pub mod update_template_input {
             self.required_fields = input;
             self
         }
+        /// <p>The status of the template.</p>
+        pub fn status(mut self, input: crate::model::TemplateStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the template.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TemplateStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateTemplateInput`](crate::input::UpdateTemplateInput).
         pub fn build(
             self,
@@ -5639,6 +5696,7 @@ pub mod update_template_input {
                 description: self.description,
                 layout_configuration: self.layout_configuration,
                 required_fields: self.required_fields,
+                status: self.status,
             })
         }
     }
@@ -5663,15 +5721,15 @@ impl UpdateTemplateInput {
                 _input: &crate::input::UpdateTemplateInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_51 = &_input.domain_id;
-                let input_51 = input_51.as_ref().ok_or_else(|| {
+                let input_53 = &_input.domain_id;
+                let input_53 = input_53.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let domain_id = aws_smithy_http::label::fmt_string(
-                    input_51,
+                    input_53,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if domain_id.is_empty() {
@@ -5682,15 +5740,15 @@ impl UpdateTemplateInput {
                         ),
                     );
                 }
-                let input_52 = &_input.template_id;
-                let input_52 = input_52.as_ref().ok_or_else(|| {
+                let input_54 = &_input.template_id;
+                let input_54 = input_54.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "template_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let template_id = aws_smithy_http::label::fmt_string(
-                    input_52,
+                    input_54,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if template_id.is_empty() {
@@ -5810,6 +5868,9 @@ pub struct ListTemplatesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>A list of status values to filter on.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<std::vec::Vec<crate::model::TemplateStatus>>,
 }
 impl ListTemplatesInput {
     /// <p>The unique identifier of the Cases domain. </p>
@@ -5823,6 +5884,10 @@ impl ListTemplatesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>A list of status values to filter on.</p>
+    pub fn status(&self) -> std::option::Option<&[crate::model::TemplateStatus]> {
+        self.status.as_deref()
     }
 }
 
@@ -5845,6 +5910,9 @@ pub struct CreateTemplateInput {
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
     #[doc(hidden)]
     pub required_fields: std::option::Option<std::vec::Vec<crate::model::RequiredField>>,
+    /// <p>The status of the template.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::TemplateStatus>,
 }
 impl CreateTemplateInput {
     /// <p>The unique identifier of the Cases domain. </p>
@@ -5866,6 +5934,10 @@ impl CreateTemplateInput {
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
     pub fn required_fields(&self) -> std::option::Option<&[crate::model::RequiredField]> {
         self.required_fields.as_deref()
+    }
+    /// <p>The status of the template.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TemplateStatus> {
+        self.status.as_ref()
     }
 }
 
@@ -5891,6 +5963,9 @@ pub struct UpdateTemplateInput {
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
     #[doc(hidden)]
     pub required_fields: std::option::Option<std::vec::Vec<crate::model::RequiredField>>,
+    /// <p>The status of the template.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::TemplateStatus>,
 }
 impl UpdateTemplateInput {
     /// <p>The unique identifier of the Cases domain. </p>
@@ -5916,6 +5991,10 @@ impl UpdateTemplateInput {
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
     pub fn required_fields(&self) -> std::option::Option<&[crate::model::RequiredField]> {
         self.required_fields.as_deref()
+    }
+    /// <p>The status of the template.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TemplateStatus> {
+        self.status.as_ref()
     }
 }
 
@@ -6447,7 +6526,7 @@ pub struct CreateCaseInput {
     /// <p>An array of objects with field ID (matching ListFields/DescribeField) and value union data.</p>
     #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::FieldValue>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
@@ -6464,7 +6543,7 @@ impl CreateCaseInput {
     pub fn fields(&self) -> std::option::Option<&[crate::model::FieldValue]> {
         self.fields.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }

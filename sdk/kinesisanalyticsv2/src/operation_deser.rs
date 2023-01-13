@@ -1769,6 +1769,26 @@ pub fn parse_delete_application_snapshot_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConcurrentModificationException" => crate::error::DeleteApplicationSnapshotError {
+            meta: generic,
+            kind: crate::error::DeleteApplicationSnapshotErrorKind::ConcurrentModificationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::concurrent_modification_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationSnapshotError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidArgumentException" => crate::error::DeleteApplicationSnapshotError {
             meta: generic,
             kind: crate::error::DeleteApplicationSnapshotErrorKind::InvalidArgumentException({

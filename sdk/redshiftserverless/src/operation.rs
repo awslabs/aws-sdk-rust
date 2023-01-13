@@ -601,6 +601,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSnapshot {
     }
 }
 
+/// Operation shape for `GetTableRestoreStatus`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_table_restore_status`](crate::client::Client::get_table_restore_status).
+///
+/// See [`crate::client::fluent_builders::GetTableRestoreStatus`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetTableRestoreStatus {
+    _private: (),
+}
+impl GetTableRestoreStatus {
+    /// Creates a new builder-style object to manufacture [`GetTableRestoreStatusInput`](crate::input::GetTableRestoreStatusInput).
+    pub fn builder() -> crate::input::get_table_restore_status_input::Builder {
+        crate::input::get_table_restore_status_input::Builder::default()
+    }
+    /// Creates a new `GetTableRestoreStatus` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetTableRestoreStatus {
+    type Output = std::result::Result<
+        crate::output::GetTableRestoreStatusOutput,
+        crate::error::GetTableRestoreStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_table_restore_status_error(response)
+        } else {
+            crate::operation_deser::parse_get_table_restore_status_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetUsageLimit`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -793,6 +827,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSnapshots {
             crate::operation_deser::parse_list_snapshots_error(response)
         } else {
             crate::operation_deser::parse_list_snapshots_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListTableRestoreStatus`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_table_restore_status`](crate::client::Client::list_table_restore_status).
+///
+/// See [`crate::client::fluent_builders::ListTableRestoreStatus`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListTableRestoreStatus {
+    _private: (),
+}
+impl ListTableRestoreStatus {
+    /// Creates a new builder-style object to manufacture [`ListTableRestoreStatusInput`](crate::input::ListTableRestoreStatusInput).
+    pub fn builder() -> crate::input::list_table_restore_status_input::Builder {
+        crate::input::list_table_restore_status_input::Builder::default()
+    }
+    /// Creates a new `ListTableRestoreStatus` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListTableRestoreStatus {
+    type Output = std::result::Result<
+        crate::output::ListTableRestoreStatusOutput,
+        crate::error::ListTableRestoreStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_table_restore_status_error(response)
+        } else {
+            crate::operation_deser::parse_list_table_restore_status_response(response)
         }
     }
 }
@@ -995,6 +1063,40 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreFromSnapshot {
             crate::operation_deser::parse_restore_from_snapshot_error(response)
         } else {
             crate::operation_deser::parse_restore_from_snapshot_response(response)
+        }
+    }
+}
+
+/// Operation shape for `RestoreTableFromSnapshot`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`restore_table_from_snapshot`](crate::client::Client::restore_table_from_snapshot).
+///
+/// See [`crate::client::fluent_builders::RestoreTableFromSnapshot`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct RestoreTableFromSnapshot {
+    _private: (),
+}
+impl RestoreTableFromSnapshot {
+    /// Creates a new builder-style object to manufacture [`RestoreTableFromSnapshotInput`](crate::input::RestoreTableFromSnapshotInput).
+    pub fn builder() -> crate::input::restore_table_from_snapshot_input::Builder {
+        crate::input::restore_table_from_snapshot_input::Builder::default()
+    }
+    /// Creates a new `RestoreTableFromSnapshot` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RestoreTableFromSnapshot {
+    type Output = std::result::Result<
+        crate::output::RestoreTableFromSnapshotOutput,
+        crate::error::RestoreTableFromSnapshotError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_restore_table_from_snapshot_error(response)
+        } else {
+            crate::operation_deser::parse_restore_table_from_snapshot_response(response)
         }
     }
 }

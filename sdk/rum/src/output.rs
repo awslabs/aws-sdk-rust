@@ -2,6 +2,131 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateRumMetricDefinitionOutput {}
+/// See [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
+pub mod update_rum_metric_definition_output {
+
+    /// A builder for [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
+        pub fn build(self) -> crate::output::UpdateRumMetricDefinitionOutput {
+            crate::output::UpdateRumMetricDefinitionOutput {}
+        }
+    }
+}
+impl UpdateRumMetricDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
+    pub fn builder() -> crate::output::update_rum_metric_definition_output::Builder {
+        crate::output::update_rum_metric_definition_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PutRumMetricsDestinationOutput {}
+/// See [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
+pub mod put_rum_metrics_destination_output {
+
+    /// A builder for [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
+        pub fn build(self) -> crate::output::PutRumMetricsDestinationOutput {
+            crate::output::PutRumMetricsDestinationOutput {}
+        }
+    }
+}
+impl PutRumMetricsDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
+    pub fn builder() -> crate::output::put_rum_metrics_destination_output::Builder {
+        crate::output::put_rum_metrics_destination_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListRumMetricsDestinationsOutput {
+    /// <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
+    #[doc(hidden)]
+    pub destinations: std::option::Option<std::vec::Vec<crate::model::MetricDestinationSummary>>,
+    /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRumMetricsDestinationsOutput {
+    /// <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::MetricDestinationSummary]> {
+        self.destinations.as_deref()
+    }
+    /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput).
+pub mod list_rum_metrics_destinations_output {
+
+    /// A builder for [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) destinations:
+            std::option::Option<std::vec::Vec<crate::model::MetricDestinationSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
+        pub fn destinations(mut self, input: crate::model::MetricDestinationSummary) -> Self {
+            let mut v = self.destinations.unwrap_or_default();
+            v.push(input);
+            self.destinations = Some(v);
+            self
+        }
+        /// <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
+        pub fn set_destinations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricDestinationSummary>>,
+        ) -> Self {
+            self.destinations = input;
+            self
+        }
+        /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput).
+        pub fn build(self) -> crate::output::ListRumMetricsDestinationsOutput {
+            crate::output::ListRumMetricsDestinationsOutput {
+                destinations: self.destinations,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListRumMetricsDestinationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput).
+    pub fn builder() -> crate::output::list_rum_metrics_destinations_output::Builder {
+        crate::output::list_rum_metrics_destinations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAppMonitorDataOutput {
     /// <p>The events that RUM collected that match your request.</p>
     #[doc(hidden)]
@@ -78,6 +203,30 @@ impl GetAppMonitorDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteRumMetricsDestinationOutput {}
+/// See [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
+pub mod delete_rum_metrics_destination_output {
+
+    /// A builder for [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
+        pub fn build(self) -> crate::output::DeleteRumMetricsDestinationOutput {
+            crate::output::DeleteRumMetricsDestinationOutput {}
+        }
+    }
+}
+impl DeleteRumMetricsDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
+    pub fn builder() -> crate::output::delete_rum_metrics_destination_output::Builder {
+        crate::output::delete_rum_metrics_destination_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppMonitorOutput {
     /// <p>The unique ID of the new app monitor.</p>
     #[doc(hidden)]
@@ -118,6 +267,266 @@ impl CreateAppMonitorOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
     pub fn builder() -> crate::output::create_app_monitor_output::Builder {
         crate::output::create_app_monitor_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BatchGetRumMetricDefinitionsOutput {
+    /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
+    #[doc(hidden)]
+    pub metric_definitions: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
+    /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl BatchGetRumMetricDefinitionsOutput {
+    /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
+    pub fn metric_definitions(&self) -> std::option::Option<&[crate::model::MetricDefinition]> {
+        self.metric_definitions.as_deref()
+    }
+    /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput).
+pub mod batch_get_rum_metric_definitions_output {
+
+    /// A builder for [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_definitions:
+            std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `metric_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_metric_definitions`](Self::set_metric_definitions).
+        ///
+        /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
+        pub fn metric_definitions(mut self, input: crate::model::MetricDefinition) -> Self {
+            let mut v = self.metric_definitions.unwrap_or_default();
+            v.push(input);
+            self.metric_definitions = Some(v);
+            self
+        }
+        /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
+        pub fn set_metric_definitions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
+        ) -> Self {
+            self.metric_definitions = input;
+            self
+        }
+        /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput).
+        pub fn build(self) -> crate::output::BatchGetRumMetricDefinitionsOutput {
+            crate::output::BatchGetRumMetricDefinitionsOutput {
+                metric_definitions: self.metric_definitions,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl BatchGetRumMetricDefinitionsOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput).
+    pub fn builder() -> crate::output::batch_get_rum_metric_definitions_output::Builder {
+        crate::output::batch_get_rum_metric_definitions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BatchDeleteRumMetricDefinitionsOutput {
+    /// <p>An array of error objects, if the operation caused any errors.</p>
+    #[doc(hidden)]
+    pub errors:
+        std::option::Option<std::vec::Vec<crate::model::BatchDeleteRumMetricDefinitionsError>>,
+    /// <p>The IDs of the metric definitions that were deleted.</p>
+    #[doc(hidden)]
+    pub metric_definition_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchDeleteRumMetricDefinitionsOutput {
+    /// <p>An array of error objects, if the operation caused any errors.</p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchDeleteRumMetricDefinitionsError]> {
+        self.errors.as_deref()
+    }
+    /// <p>The IDs of the metric definitions that were deleted.</p>
+    pub fn metric_definition_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.metric_definition_ids.as_deref()
+    }
+}
+/// See [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput).
+pub mod batch_delete_rum_metric_definitions_output {
+
+    /// A builder for [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) errors:
+            std::option::Option<std::vec::Vec<crate::model::BatchDeleteRumMetricDefinitionsError>>,
+        pub(crate) metric_definition_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>An array of error objects, if the operation caused any errors.</p>
+        pub fn errors(mut self, input: crate::model::BatchDeleteRumMetricDefinitionsError) -> Self {
+            let mut v = self.errors.unwrap_or_default();
+            v.push(input);
+            self.errors = Some(v);
+            self
+        }
+        /// <p>An array of error objects, if the operation caused any errors.</p>
+        pub fn set_errors(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchDeleteRumMetricDefinitionsError>,
+            >,
+        ) -> Self {
+            self.errors = input;
+            self
+        }
+        /// Appends an item to `metric_definition_ids`.
+        ///
+        /// To override the contents of this collection use [`set_metric_definition_ids`](Self::set_metric_definition_ids).
+        ///
+        /// <p>The IDs of the metric definitions that were deleted.</p>
+        pub fn metric_definition_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.metric_definition_ids.unwrap_or_default();
+            v.push(input.into());
+            self.metric_definition_ids = Some(v);
+            self
+        }
+        /// <p>The IDs of the metric definitions that were deleted.</p>
+        pub fn set_metric_definition_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.metric_definition_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput).
+        pub fn build(self) -> crate::output::BatchDeleteRumMetricDefinitionsOutput {
+            crate::output::BatchDeleteRumMetricDefinitionsOutput {
+                errors: self.errors,
+                metric_definition_ids: self.metric_definition_ids,
+            }
+        }
+    }
+}
+impl BatchDeleteRumMetricDefinitionsOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput).
+    pub fn builder() -> crate::output::batch_delete_rum_metric_definitions_output::Builder {
+        crate::output::batch_delete_rum_metric_definitions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BatchCreateRumMetricDefinitionsOutput {
+    /// <p>An array of error objects, if the operation caused any errors.</p>
+    #[doc(hidden)]
+    pub errors:
+        std::option::Option<std::vec::Vec<crate::model::BatchCreateRumMetricDefinitionsError>>,
+    /// <p>An array of structures that define the extended metrics.</p>
+    #[doc(hidden)]
+    pub metric_definitions: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
+}
+impl BatchCreateRumMetricDefinitionsOutput {
+    /// <p>An array of error objects, if the operation caused any errors.</p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchCreateRumMetricDefinitionsError]> {
+        self.errors.as_deref()
+    }
+    /// <p>An array of structures that define the extended metrics.</p>
+    pub fn metric_definitions(&self) -> std::option::Option<&[crate::model::MetricDefinition]> {
+        self.metric_definitions.as_deref()
+    }
+}
+/// See [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput).
+pub mod batch_create_rum_metric_definitions_output {
+
+    /// A builder for [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) errors:
+            std::option::Option<std::vec::Vec<crate::model::BatchCreateRumMetricDefinitionsError>>,
+        pub(crate) metric_definitions:
+            std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
+    }
+    impl Builder {
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>An array of error objects, if the operation caused any errors.</p>
+        pub fn errors(mut self, input: crate::model::BatchCreateRumMetricDefinitionsError) -> Self {
+            let mut v = self.errors.unwrap_or_default();
+            v.push(input);
+            self.errors = Some(v);
+            self
+        }
+        /// <p>An array of error objects, if the operation caused any errors.</p>
+        pub fn set_errors(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchCreateRumMetricDefinitionsError>,
+            >,
+        ) -> Self {
+            self.errors = input;
+            self
+        }
+        /// Appends an item to `metric_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_metric_definitions`](Self::set_metric_definitions).
+        ///
+        /// <p>An array of structures that define the extended metrics.</p>
+        pub fn metric_definitions(mut self, input: crate::model::MetricDefinition) -> Self {
+            let mut v = self.metric_definitions.unwrap_or_default();
+            v.push(input);
+            self.metric_definitions = Some(v);
+            self
+        }
+        /// <p>An array of structures that define the extended metrics.</p>
+        pub fn set_metric_definitions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
+        ) -> Self {
+            self.metric_definitions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput).
+        pub fn build(self) -> crate::output::BatchCreateRumMetricDefinitionsOutput {
+            crate::output::BatchCreateRumMetricDefinitionsOutput {
+                errors: self.errors,
+                metric_definitions: self.metric_definitions,
+            }
+        }
+    }
+}
+impl BatchCreateRumMetricDefinitionsOutput {
+    /// Creates a new builder-style object to manufacture [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput).
+    pub fn builder() -> crate::output::batch_create_rum_metric_definitions_output::Builder {
+        crate::output::batch_create_rum_metric_definitions_output::Builder::default()
     }
 }
 

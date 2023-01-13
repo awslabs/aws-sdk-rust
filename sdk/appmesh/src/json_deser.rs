@@ -7424,7 +7424,7 @@ where
                             }
                             "ports" => {
                                 builder = builder.set_ports(
-                                    crate::json_deser::deser_set_com_amazonaws_appmesh_port_set(
+                                    crate::json_deser::deser_list_com_amazonaws_appmesh_port_set(
                                         tokens,
                                     )?,
                                 );
@@ -8485,7 +8485,7 @@ where
                             }
                             "ports" => {
                                 builder = builder.set_ports(
-                                    crate::json_deser::deser_set_com_amazonaws_appmesh_port_set(
+                                    crate::json_deser::deser_list_com_amazonaws_appmesh_port_set(
                                         tokens,
                                     )?,
                                 );
@@ -9243,7 +9243,7 @@ where
 }
 
 #[allow(non_snake_case)]
-pub(crate) fn deser_set_com_amazonaws_appmesh_port_set<'a, I>(
+pub(crate) fn deser_list_com_amazonaws_appmesh_port_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<i32>>, aws_smithy_json::deserialize::error::DeserializeError>
 where

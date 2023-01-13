@@ -120,6 +120,7 @@ impl Client {
     ///   - [`open_proactive_insights(i32)`](crate::output::DescribeAccountHealthOutput::open_proactive_insights): <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account. </p>
     ///   - [`metrics_analyzed(i32)`](crate::output::DescribeAccountHealthOutput::metrics_analyzed): <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services account. </p>
     ///   - [`resource_hours(Option<i64>)`](crate::output::DescribeAccountHealthOutput::resource_hours): <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
+    ///   - [`analyzed_resource_count(Option<i64>)`](crate::output::DescribeAccountHealthOutput::analyzed_resource_count): <p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>
     /// - On failure, responds with [`SdkError<DescribeAccountHealthError>`](crate::error::DescribeAccountHealthError)
     pub fn describe_account_health(&self) -> fluent_builders::DescribeAccountHealth {
         fluent_builders::DescribeAccountHealth::new(self.handle.clone())
@@ -2832,7 +2833,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchInsights`.
     ///
-    /// <p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    /// <p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time, one or more statuses (<code>ONGOING</code> or <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     /// <p> Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code> in your search. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchInsights {

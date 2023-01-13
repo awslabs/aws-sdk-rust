@@ -165,6 +165,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateGatewayFromS
     }
 }
 
+/// Operation shape for `GetBandwidthRateLimitSchedule`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_bandwidth_rate_limit_schedule`](crate::client::Client::get_bandwidth_rate_limit_schedule).
+///
+/// See [`crate::client::fluent_builders::GetBandwidthRateLimitSchedule`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetBandwidthRateLimitSchedule {
+    _private: (),
+}
+impl GetBandwidthRateLimitSchedule {
+    /// Creates a new builder-style object to manufacture [`GetBandwidthRateLimitScheduleInput`](crate::input::GetBandwidthRateLimitScheduleInput).
+    pub fn builder() -> crate::input::get_bandwidth_rate_limit_schedule_input::Builder {
+        crate::input::get_bandwidth_rate_limit_schedule_input::Builder::default()
+    }
+    /// Creates a new `GetBandwidthRateLimitSchedule` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetBandwidthRateLimitSchedule {
+    type Output = std::result::Result<
+        crate::output::GetBandwidthRateLimitScheduleOutput,
+        crate::error::GetBandwidthRateLimitScheduleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_bandwidth_rate_limit_schedule_error(response)
+        } else {
+            crate::operation_deser::parse_get_bandwidth_rate_limit_schedule_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetGateway`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -193,6 +227,72 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGateway {
             crate::operation_deser::parse_get_gateway_error(response)
         } else {
             crate::operation_deser::parse_get_gateway_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetHypervisor`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_hypervisor`](crate::client::Client::get_hypervisor).
+///
+/// See [`crate::client::fluent_builders::GetHypervisor`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetHypervisor {
+    _private: (),
+}
+impl GetHypervisor {
+    /// Creates a new builder-style object to manufacture [`GetHypervisorInput`](crate::input::GetHypervisorInput).
+    pub fn builder() -> crate::input::get_hypervisor_input::Builder {
+        crate::input::get_hypervisor_input::Builder::default()
+    }
+    /// Creates a new `GetHypervisor` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetHypervisor {
+    type Output =
+        std::result::Result<crate::output::GetHypervisorOutput, crate::error::GetHypervisorError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_hypervisor_error(response)
+        } else {
+            crate::operation_deser::parse_get_hypervisor_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetHypervisorPropertyMappings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_hypervisor_property_mappings`](crate::client::Client::get_hypervisor_property_mappings).
+///
+/// See [`crate::client::fluent_builders::GetHypervisorPropertyMappings`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetHypervisorPropertyMappings {
+    _private: (),
+}
+impl GetHypervisorPropertyMappings {
+    /// Creates a new builder-style object to manufacture [`GetHypervisorPropertyMappingsInput`](crate::input::GetHypervisorPropertyMappingsInput).
+    pub fn builder() -> crate::input::get_hypervisor_property_mappings_input::Builder {
+        crate::input::get_hypervisor_property_mappings_input::Builder::default()
+    }
+    /// Creates a new `GetHypervisorPropertyMappings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetHypervisorPropertyMappings {
+    type Output = std::result::Result<
+        crate::output::GetHypervisorPropertyMappingsOutput,
+        crate::error::GetHypervisorPropertyMappingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_hypervisor_property_mappings_error(response)
+        } else {
+            crate::operation_deser::parse_get_hypervisor_property_mappings_response(response)
         }
     }
 }
@@ -399,6 +499,74 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualMachines {
     }
 }
 
+/// Operation shape for `PutBandwidthRateLimitSchedule`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_bandwidth_rate_limit_schedule`](crate::client::Client::put_bandwidth_rate_limit_schedule).
+///
+/// See [`crate::client::fluent_builders::PutBandwidthRateLimitSchedule`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct PutBandwidthRateLimitSchedule {
+    _private: (),
+}
+impl PutBandwidthRateLimitSchedule {
+    /// Creates a new builder-style object to manufacture [`PutBandwidthRateLimitScheduleInput`](crate::input::PutBandwidthRateLimitScheduleInput).
+    pub fn builder() -> crate::input::put_bandwidth_rate_limit_schedule_input::Builder {
+        crate::input::put_bandwidth_rate_limit_schedule_input::Builder::default()
+    }
+    /// Creates a new `PutBandwidthRateLimitSchedule` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutBandwidthRateLimitSchedule {
+    type Output = std::result::Result<
+        crate::output::PutBandwidthRateLimitScheduleOutput,
+        crate::error::PutBandwidthRateLimitScheduleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_bandwidth_rate_limit_schedule_error(response)
+        } else {
+            crate::operation_deser::parse_put_bandwidth_rate_limit_schedule_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutHypervisorPropertyMappings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_hypervisor_property_mappings`](crate::client::Client::put_hypervisor_property_mappings).
+///
+/// See [`crate::client::fluent_builders::PutHypervisorPropertyMappings`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct PutHypervisorPropertyMappings {
+    _private: (),
+}
+impl PutHypervisorPropertyMappings {
+    /// Creates a new builder-style object to manufacture [`PutHypervisorPropertyMappingsInput`](crate::input::PutHypervisorPropertyMappingsInput).
+    pub fn builder() -> crate::input::put_hypervisor_property_mappings_input::Builder {
+        crate::input::put_hypervisor_property_mappings_input::Builder::default()
+    }
+    /// Creates a new `PutHypervisorPropertyMappings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutHypervisorPropertyMappings {
+    type Output = std::result::Result<
+        crate::output::PutHypervisorPropertyMappingsOutput,
+        crate::error::PutHypervisorPropertyMappingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_hypervisor_property_mappings_error(response)
+        } else {
+            crate::operation_deser::parse_put_hypervisor_property_mappings_response(response)
+        }
+    }
+}
+
 /// Operation shape for `PutMaintenanceStartTime`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -429,6 +597,40 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMaintenanceStartTime 
             crate::operation_deser::parse_put_maintenance_start_time_error(response)
         } else {
             crate::operation_deser::parse_put_maintenance_start_time_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartVirtualMachinesMetadataSync`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_virtual_machines_metadata_sync`](crate::client::Client::start_virtual_machines_metadata_sync).
+///
+/// See [`crate::client::fluent_builders::StartVirtualMachinesMetadataSync`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct StartVirtualMachinesMetadataSync {
+    _private: (),
+}
+impl StartVirtualMachinesMetadataSync {
+    /// Creates a new builder-style object to manufacture [`StartVirtualMachinesMetadataSyncInput`](crate::input::StartVirtualMachinesMetadataSyncInput).
+    pub fn builder() -> crate::input::start_virtual_machines_metadata_sync_input::Builder {
+        crate::input::start_virtual_machines_metadata_sync_input::Builder::default()
+    }
+    /// Creates a new `StartVirtualMachinesMetadataSync` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartVirtualMachinesMetadataSync {
+    type Output = std::result::Result<
+        crate::output::StartVirtualMachinesMetadataSyncOutput,
+        crate::error::StartVirtualMachinesMetadataSyncError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_virtual_machines_metadata_sync_error(response)
+        } else {
+            crate::operation_deser::parse_start_virtual_machines_metadata_sync_response(response)
         }
     }
 }

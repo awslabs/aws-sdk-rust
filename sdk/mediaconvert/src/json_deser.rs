@@ -5846,6 +5846,21 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "manifestMetadataSignaling" => {
+                                builder = builder.set_manifest_metadata_signaling(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::CmfcManifestMetadataSignaling::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "scte35Esam" => {
                                 builder = builder.set_scte35_esam(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -5881,6 +5896,39 @@ where
                                             crate::model::CmfcTimedMetadata::from(u.as_ref())
                                         })
                                     })
+                                    .transpose()?,
+                                );
+                            }
+                            "timedMetadataBoxVersion" => {
+                                builder = builder.set_timed_metadata_box_version(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::CmfcTimedMetadataBoxVersion::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "timedMetadataSchemeIdUri" => {
+                                builder = builder.set_timed_metadata_scheme_id_uri(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "timedMetadataValue" => {
+                                builder = builder.set_timed_metadata_value(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                                 );
                             }
@@ -6914,6 +6962,21 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "manifestMetadataSignaling" => {
+                                builder = builder.set_manifest_metadata_signaling(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::MpdManifestMetadataSignaling::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "scte35Esam" => {
                                 builder = builder.set_scte35_esam(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -6949,6 +7012,39 @@ where
                                             crate::model::MpdTimedMetadata::from(u.as_ref())
                                         })
                                     })
+                                    .transpose()?,
+                                );
+                            }
+                            "timedMetadataBoxVersion" => {
+                                builder = builder.set_timed_metadata_box_version(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::MpdTimedMetadataBoxVersion::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "timedMetadataSchemeIdUri" => {
+                                builder = builder.set_timed_metadata_scheme_id_uri(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "timedMetadataValue" => {
+                                builder = builder.set_timed_metadata_value(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                                 );
                             }
@@ -7689,6 +7785,15 @@ where
                             "insertableImages" => {
                                 builder = builder.set_insertable_images(
                                     crate::json_deser::deser_list_com_amazonaws_mediaconvert___list_of_insertable_image(tokens)?
+                                );
+                            }
+                            "sdrReferenceWhiteLevel" => {
+                                builder = builder.set_sdr_reference_white_level(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -9773,6 +9878,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "hrdBufferFinalFillPercentage" => {
+                                builder = builder.set_hrd_buffer_final_fill_percentage(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                                );
+                            }
                             "hrdBufferInitialFillPercentage" => {
                                 builder = builder.set_hrd_buffer_initial_fill_percentage(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
@@ -10263,6 +10377,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "hrdBufferFinalFillPercentage" => {
+                                builder = builder.set_hrd_buffer_final_fill_percentage(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                                );
+                            }
                             "hrdBufferInitialFillPercentage" => {
                                 builder = builder.set_hrd_buffer_initial_fill_percentage(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
@@ -10735,6 +10858,15 @@ where
                                             crate::model::Mpeg2GopSizeUnits::from(u.as_ref())
                                         })
                                     })
+                                    .transpose()?,
+                                );
+                            }
+                            "hrdBufferFinalFillPercentage" => {
+                                builder = builder.set_hrd_buffer_final_fill_percentage(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -12000,6 +12132,15 @@ where
                             }
                             "saturation" => {
                                 builder = builder.set_saturation(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "sdrReferenceWhiteLevel" => {
+                                builder = builder.set_sdr_reference_white_level(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
@@ -13308,6 +13449,21 @@ where
                                     .map(|v| v.to_f64_lossy()),
                                 );
                             }
+                            "mpdManifestBandwidthType" => {
+                                builder = builder.set_mpd_manifest_bandwidth_type(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::CmafMpdManifestBandwidthType::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "mpdProfile" => {
                                 builder = builder.set_mpd_profile(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -13391,6 +13547,21 @@ where
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
                                             crate::model::CmafTargetDurationCompatibilityMode::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "videoCompositionOffsets" => {
+                                builder = builder.set_video_composition_offsets(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::CmafVideoCompositionOffsets::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -13581,6 +13752,21 @@ where
                                     .map(|v| v.to_f64_lossy()),
                                 );
                             }
+                            "mpdManifestBandwidthType" => {
+                                builder = builder.set_mpd_manifest_bandwidth_type(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DashIsoMpdManifestBandwidthType::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "mpdProfile" => {
                                 builder = builder.set_mpd_profile(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -13639,6 +13825,21 @@ where
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
                                             crate::model::DashIsoSegmentLengthControl::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "videoCompositionOffsets" => {
+                                builder = builder.set_video_composition_offsets(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DashIsoVideoCompositionOffsets::from(
                                                 u.as_ref(),
                                             )
                                         })

@@ -2,6 +2,76 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateStorageOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
+    pub cluster_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    #[doc(hidden)]
+    pub cluster_operation_arn: std::option::Option<std::string::String>,
+}
+impl UpdateStorageOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+        self.cluster_operation_arn.as_deref()
+    }
+}
+/// See [`UpdateStorageOutput`](crate::output::UpdateStorageOutput).
+pub mod update_storage_output {
+
+    /// A builder for [`UpdateStorageOutput`](crate::output::UpdateStorageOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cluster_arn: std::option::Option<std::string::String>,
+        pub(crate) cluster_operation_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+        pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_operation_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+        pub fn set_cluster_operation_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_operation_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateStorageOutput`](crate::output::UpdateStorageOutput).
+        pub fn build(self) -> crate::output::UpdateStorageOutput {
+            crate::output::UpdateStorageOutput {
+                cluster_arn: self.cluster_arn,
+                cluster_operation_arn: self.cluster_operation_arn,
+            }
+        }
+    }
+}
+impl UpdateStorageOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateStorageOutput`](crate::output::UpdateStorageOutput).
+    pub fn builder() -> crate::output::update_storage_output::Builder {
+        crate::output::update_storage_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSecurityOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]

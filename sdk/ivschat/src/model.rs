@@ -409,6 +409,313 @@ impl AsRef<str> for FallbackResult {
     }
 }
 
+/// When writing a match expression against `UpdateLoggingConfigurationState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let updateloggingconfigurationstate = unimplemented!();
+/// match updateloggingconfigurationstate {
+///     UpdateLoggingConfigurationState::Active => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `updateloggingconfigurationstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `UpdateLoggingConfigurationState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `UpdateLoggingConfigurationState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `UpdateLoggingConfigurationState::NewFeature` is defined.
+/// Specifically, when `updateloggingconfigurationstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `UpdateLoggingConfigurationState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum UpdateLoggingConfigurationState {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for UpdateLoggingConfigurationState {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => UpdateLoggingConfigurationState::Active,
+            other => UpdateLoggingConfigurationState::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for UpdateLoggingConfigurationState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UpdateLoggingConfigurationState::from(s))
+    }
+}
+impl UpdateLoggingConfigurationState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            UpdateLoggingConfigurationState::Active => "ACTIVE",
+            UpdateLoggingConfigurationState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ACTIVE"]
+    }
+}
+impl AsRef<str> for UpdateLoggingConfigurationState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A complex type that describes a location where chat logs will be stored. Each member represents the configuration of one log destination. For logging, you define only one type of destination (for CloudWatch Logs, Kinesis Firehose, or S3).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum DestinationConfiguration {
+    /// <p>An Amazon CloudWatch Logs destination configuration where chat activity will be logged.</p>
+    CloudWatchLogs(crate::model::CloudWatchLogsDestinationConfiguration),
+    /// <p>An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.</p>
+    Firehose(crate::model::FirehoseDestinationConfiguration),
+    /// <p>An Amazon S3 destination configuration where chat activity will be logged.</p>
+    S3(crate::model::S3DestinationConfiguration),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl DestinationConfiguration {
+    /// Tries to convert the enum instance into [`CloudWatchLogs`](crate::model::DestinationConfiguration::CloudWatchLogs), extracting the inner [`CloudWatchLogsDestinationConfiguration`](crate::model::CloudWatchLogsDestinationConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_cloud_watch_logs(
+        &self,
+    ) -> std::result::Result<&crate::model::CloudWatchLogsDestinationConfiguration, &Self> {
+        if let DestinationConfiguration::CloudWatchLogs(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`CloudWatchLogs`](crate::model::DestinationConfiguration::CloudWatchLogs).
+    pub fn is_cloud_watch_logs(&self) -> bool {
+        self.as_cloud_watch_logs().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Firehose`](crate::model::DestinationConfiguration::Firehose), extracting the inner [`FirehoseDestinationConfiguration`](crate::model::FirehoseDestinationConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_firehose(
+        &self,
+    ) -> std::result::Result<&crate::model::FirehoseDestinationConfiguration, &Self> {
+        if let DestinationConfiguration::Firehose(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Firehose`](crate::model::DestinationConfiguration::Firehose).
+    pub fn is_firehose(&self) -> bool {
+        self.as_firehose().is_ok()
+    }
+    /// Tries to convert the enum instance into [`S3`](crate::model::DestinationConfiguration::S3), extracting the inner [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_s3(&self) -> std::result::Result<&crate::model::S3DestinationConfiguration, &Self> {
+        if let DestinationConfiguration::S3(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`S3`](crate::model::DestinationConfiguration::S3).
+    pub fn is_s3(&self) -> bool {
+        self.as_s3().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+/// <p>Specifies a Kinesis Firehose location where chat logs will be stored.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct FirehoseDestinationConfiguration {
+    /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
+    #[doc(hidden)]
+    pub delivery_stream_name: std::option::Option<std::string::String>,
+}
+impl FirehoseDestinationConfiguration {
+    /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.delivery_stream_name.as_deref()
+    }
+}
+/// See [`FirehoseDestinationConfiguration`](crate::model::FirehoseDestinationConfiguration).
+pub mod firehose_destination_configuration {
+
+    /// A builder for [`FirehoseDestinationConfiguration`](crate::model::FirehoseDestinationConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delivery_stream_name = Some(input.into());
+            self
+        }
+        /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
+        pub fn set_delivery_stream_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.delivery_stream_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FirehoseDestinationConfiguration`](crate::model::FirehoseDestinationConfiguration).
+        pub fn build(self) -> crate::model::FirehoseDestinationConfiguration {
+            crate::model::FirehoseDestinationConfiguration {
+                delivery_stream_name: self.delivery_stream_name,
+            }
+        }
+    }
+}
+impl FirehoseDestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`FirehoseDestinationConfiguration`](crate::model::FirehoseDestinationConfiguration).
+    pub fn builder() -> crate::model::firehose_destination_configuration::Builder {
+        crate::model::firehose_destination_configuration::Builder::default()
+    }
+}
+
+/// <p>Specifies a CloudWatch Logs location where chat logs will be stored.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CloudWatchLogsDestinationConfiguration {
+    /// <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be logged.</p>
+    #[doc(hidden)]
+    pub log_group_name: std::option::Option<std::string::String>,
+}
+impl CloudWatchLogsDestinationConfiguration {
+    /// <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be logged.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+}
+/// See [`CloudWatchLogsDestinationConfiguration`](crate::model::CloudWatchLogsDestinationConfiguration).
+pub mod cloud_watch_logs_destination_configuration {
+
+    /// A builder for [`CloudWatchLogsDestinationConfiguration`](crate::model::CloudWatchLogsDestinationConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) log_group_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be logged.</p>
+        pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group_name = Some(input.into());
+            self
+        }
+        /// <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be logged.</p>
+        pub fn set_log_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_group_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CloudWatchLogsDestinationConfiguration`](crate::model::CloudWatchLogsDestinationConfiguration).
+        pub fn build(self) -> crate::model::CloudWatchLogsDestinationConfiguration {
+            crate::model::CloudWatchLogsDestinationConfiguration {
+                log_group_name: self.log_group_name,
+            }
+        }
+    }
+}
+impl CloudWatchLogsDestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestinationConfiguration`](crate::model::CloudWatchLogsDestinationConfiguration).
+    pub fn builder() -> crate::model::cloud_watch_logs_destination_configuration::Builder {
+        crate::model::cloud_watch_logs_destination_configuration::Builder::default()
+    }
+}
+
+/// <p>Specifies an S3 location where chat logs will be stored.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct S3DestinationConfiguration {
+    /// <p>Name of the Amazon S3 bucket where chat activity will be logged.</p>
+    #[doc(hidden)]
+    pub bucket_name: std::option::Option<std::string::String>,
+}
+impl S3DestinationConfiguration {
+    /// <p>Name of the Amazon S3 bucket where chat activity will be logged.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+}
+/// See [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
+pub mod s3_destination_configuration {
+
+    /// A builder for [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Name of the Amazon S3 bucket where chat activity will be logged.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_name = Some(input.into());
+            self
+        }
+        /// <p>Name of the Amazon S3 bucket where chat activity will be logged.</p>
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
+        pub fn build(self) -> crate::model::S3DestinationConfiguration {
+            crate::model::S3DestinationConfiguration {
+                bucket_name: self.bucket_name,
+            }
+        }
+    }
+}
+impl S3DestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
+    pub fn builder() -> crate::model::s3_destination_configuration::Builder {
+        crate::model::s3_destination_configuration::Builder::default()
+    }
+}
+
 /// <p>Summary information about a room.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -431,10 +738,13 @@ pub struct RoomSummary {
     /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Tags attached to the resource. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
+    /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>List of logging-configuration identifiers attached to the room.</p>
+    #[doc(hidden)]
+    pub logging_configuration_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RoomSummary {
     /// <p>Room ARN.</p>
@@ -463,12 +773,16 @@ impl RoomSummary {
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
-    /// <p>Tags attached to the resource. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
+    /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>List of logging-configuration identifiers attached to the room.</p>
+    pub fn logging_configuration_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+        self.logging_configuration_identifiers.as_deref()
     }
 }
 /// See [`RoomSummary`](crate::model::RoomSummary).
@@ -486,6 +800,8 @@ pub mod room_summary {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) logging_configuration_identifiers:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>Room ARN.</p>
@@ -561,7 +877,7 @@ pub mod room_summary {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags attached to the resource. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
+        /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -572,7 +888,7 @@ pub mod room_summary {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Tags attached to the resource. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
+        /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -580,6 +896,28 @@ pub mod room_summary {
             >,
         ) -> Self {
             self.tags = input;
+            self
+        }
+        /// Appends an item to `logging_configuration_identifiers`.
+        ///
+        /// To override the contents of this collection use [`set_logging_configuration_identifiers`](Self::set_logging_configuration_identifiers).
+        ///
+        /// <p>List of logging-configuration identifiers attached to the room.</p>
+        pub fn logging_configuration_identifiers(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.logging_configuration_identifiers.unwrap_or_default();
+            v.push(input.into());
+            self.logging_configuration_identifiers = Some(v);
+            self
+        }
+        /// <p>List of logging-configuration identifiers attached to the room.</p>
+        pub fn set_logging_configuration_identifiers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.logging_configuration_identifiers = input;
             self
         }
         /// Consumes the builder and constructs a [`RoomSummary`](crate::model::RoomSummary).
@@ -592,6 +930,7 @@ pub mod room_summary {
                 create_time: self.create_time,
                 update_time: self.update_time,
                 tags: self.tags,
+                logging_configuration_identifiers: self.logging_configuration_identifiers,
             }
         }
     }
@@ -600,6 +939,438 @@ impl RoomSummary {
     /// Creates a new builder-style object to manufacture [`RoomSummary`](crate::model::RoomSummary).
     pub fn builder() -> crate::model::room_summary::Builder {
         crate::model::room_summary::Builder::default()
+    }
+}
+
+/// <p>Summary information about a logging configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LoggingConfigurationSummary {
+    /// <p>Logging-configuration ARN.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Logging-configuration ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the room.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>Time when the logging configuration was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    #[doc(hidden)]
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Time of the logging configuration’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    #[doc(hidden)]
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Logging-configuration name. The value does not need to be unique.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A complex type that contains a destination configuration for where chat content will be logged.</p>
+    #[doc(hidden)]
+    pub destination_configuration: std::option::Option<crate::model::DestinationConfiguration>,
+    /// <p>The state of the logging configuration. When this is <code>ACTIVE</code>, the configuration is ready for logging chat content.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::LoggingConfigurationState>,
+    /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl LoggingConfigurationSummary {
+    /// <p>Logging-configuration ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Logging-configuration ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the room.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Time when the logging configuration was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.create_time.as_ref()
+    }
+    /// <p>Time of the logging configuration’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.update_time.as_ref()
+    }
+    /// <p>Logging-configuration name. The value does not need to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A complex type that contains a destination configuration for where chat content will be logged.</p>
+    pub fn destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DestinationConfiguration> {
+        self.destination_configuration.as_ref()
+    }
+    /// <p>The state of the logging configuration. When this is <code>ACTIVE</code>, the configuration is ready for logging chat content.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::LoggingConfigurationState> {
+        self.state.as_ref()
+    }
+    /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+/// See [`LoggingConfigurationSummary`](crate::model::LoggingConfigurationSummary).
+pub mod logging_configuration_summary {
+
+    /// A builder for [`LoggingConfigurationSummary`](crate::model::LoggingConfigurationSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) destination_configuration:
+            std::option::Option<crate::model::DestinationConfiguration>,
+        pub(crate) state: std::option::Option<crate::model::LoggingConfigurationState>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>Logging-configuration ARN.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>Logging-configuration ARN.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Logging-configuration ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the room.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>Logging-configuration ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the room.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>Time when the logging configuration was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.create_time = Some(input);
+            self
+        }
+        /// <p>Time when the logging configuration was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+        pub fn set_create_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.create_time = input;
+            self
+        }
+        /// <p>Time of the logging configuration’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.update_time = Some(input);
+            self
+        }
+        /// <p>Time of the logging configuration’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+        pub fn set_update_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.update_time = input;
+            self
+        }
+        /// <p>Logging-configuration name. The value does not need to be unique.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Logging-configuration name. The value does not need to be unique.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A complex type that contains a destination configuration for where chat content will be logged.</p>
+        pub fn destination_configuration(
+            mut self,
+            input: crate::model::DestinationConfiguration,
+        ) -> Self {
+            self.destination_configuration = Some(input);
+            self
+        }
+        /// <p>A complex type that contains a destination configuration for where chat content will be logged.</p>
+        pub fn set_destination_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DestinationConfiguration>,
+        ) -> Self {
+            self.destination_configuration = input;
+            self
+        }
+        /// <p>The state of the logging configuration. When this is <code>ACTIVE</code>, the configuration is ready for logging chat content.</p>
+        pub fn state(mut self, input: crate::model::LoggingConfigurationState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of the logging configuration. When this is <code>ACTIVE</code>, the configuration is ready for logging chat content.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::LoggingConfigurationState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LoggingConfigurationSummary`](crate::model::LoggingConfigurationSummary).
+        pub fn build(self) -> crate::model::LoggingConfigurationSummary {
+            crate::model::LoggingConfigurationSummary {
+                arn: self.arn,
+                id: self.id,
+                create_time: self.create_time,
+                update_time: self.update_time,
+                name: self.name,
+                destination_configuration: self.destination_configuration,
+                state: self.state,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl LoggingConfigurationSummary {
+    /// Creates a new builder-style object to manufacture [`LoggingConfigurationSummary`](crate::model::LoggingConfigurationSummary).
+    pub fn builder() -> crate::model::logging_configuration_summary::Builder {
+        crate::model::logging_configuration_summary::Builder::default()
+    }
+}
+
+/// When writing a match expression against `LoggingConfigurationState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let loggingconfigurationstate = unimplemented!();
+/// match loggingconfigurationstate {
+///     LoggingConfigurationState::Active => { /* ... */ },
+///     LoggingConfigurationState::CreateFailed => { /* ... */ },
+///     LoggingConfigurationState::Creating => { /* ... */ },
+///     LoggingConfigurationState::DeleteFailed => { /* ... */ },
+///     LoggingConfigurationState::Deleting => { /* ... */ },
+///     LoggingConfigurationState::UpdateFailed => { /* ... */ },
+///     LoggingConfigurationState::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `loggingconfigurationstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LoggingConfigurationState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LoggingConfigurationState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LoggingConfigurationState::NewFeature` is defined.
+/// Specifically, when `loggingconfigurationstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LoggingConfigurationState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LoggingConfigurationState {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for LoggingConfigurationState {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => LoggingConfigurationState::Active,
+            "CREATE_FAILED" => LoggingConfigurationState::CreateFailed,
+            "CREATING" => LoggingConfigurationState::Creating,
+            "DELETE_FAILED" => LoggingConfigurationState::DeleteFailed,
+            "DELETING" => LoggingConfigurationState::Deleting,
+            "UPDATE_FAILED" => LoggingConfigurationState::UpdateFailed,
+            "UPDATING" => LoggingConfigurationState::Updating,
+            other => LoggingConfigurationState::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for LoggingConfigurationState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LoggingConfigurationState::from(s))
+    }
+}
+impl LoggingConfigurationState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LoggingConfigurationState::Active => "ACTIVE",
+            LoggingConfigurationState::CreateFailed => "CREATE_FAILED",
+            LoggingConfigurationState::Creating => "CREATING",
+            LoggingConfigurationState::DeleteFailed => "DELETE_FAILED",
+            LoggingConfigurationState::Deleting => "DELETING",
+            LoggingConfigurationState::UpdateFailed => "UPDATE_FAILED",
+            LoggingConfigurationState::Updating => "UPDATING",
+            LoggingConfigurationState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATE_FAILED",
+            "CREATING",
+            "DELETE_FAILED",
+            "DELETING",
+            "UPDATE_FAILED",
+            "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for LoggingConfigurationState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `CreateLoggingConfigurationState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let createloggingconfigurationstate = unimplemented!();
+/// match createloggingconfigurationstate {
+///     CreateLoggingConfigurationState::Active => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `createloggingconfigurationstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CreateLoggingConfigurationState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CreateLoggingConfigurationState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CreateLoggingConfigurationState::NewFeature` is defined.
+/// Specifically, when `createloggingconfigurationstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CreateLoggingConfigurationState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CreateLoggingConfigurationState {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for CreateLoggingConfigurationState {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => CreateLoggingConfigurationState::Active,
+            other => CreateLoggingConfigurationState::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for CreateLoggingConfigurationState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CreateLoggingConfigurationState::from(s))
+    }
+}
+impl CreateLoggingConfigurationState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CreateLoggingConfigurationState::Active => "ACTIVE",
+            CreateLoggingConfigurationState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ACTIVE"]
+    }
+}
+impl AsRef<str> for CreateLoggingConfigurationState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

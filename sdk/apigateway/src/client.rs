@@ -168,7 +168,7 @@ impl Client {
     ///   - [`stage_description(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::stage_description) / [`set_stage_description(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_stage_description): <p>The description of the Stage resource for the Deployment resource to create.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_description): <p>The description for the Deployment resource to create.</p>
     ///   - [`cache_cluster_enabled(bool)`](crate::client::fluent_builders::CreateDeployment::cache_cluster_enabled) / [`set_cache_cluster_enabled(Option<bool>)`](crate::client::fluent_builders::CreateDeployment::set_cache_cluster_enabled): <p>Enables a cache cluster for the Stage resource specified in the input.</p>
-    ///   - [`cache_cluster_size(CacheClusterSize)`](crate::client::fluent_builders::CreateDeployment::cache_cluster_size) / [`set_cache_cluster_size(Option<CacheClusterSize>)`](crate::client::fluent_builders::CreateDeployment::set_cache_cluster_size): <p>Specifies the cache cluster size for the Stage resource specified in the input, if a cache cluster is enabled.</p>
+    ///   - [`cache_cluster_size(CacheClusterSize)`](crate::client::fluent_builders::CreateDeployment::cache_cluster_size) / [`set_cache_cluster_size(Option<CacheClusterSize>)`](crate::client::fluent_builders::CreateDeployment::set_cache_cluster_size): <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     ///   - [`variables(HashMap<String, String>)`](crate::client::fluent_builders::CreateDeployment::variables) / [`set_variables(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDeployment::set_variables): <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
     ///   - [`canary_settings(DeploymentCanarySettings)`](crate::client::fluent_builders::CreateDeployment::canary_settings) / [`set_canary_settings(Option<DeploymentCanarySettings>)`](crate::client::fluent_builders::CreateDeployment::set_canary_settings): <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
     ///   - [`tracing_enabled(bool)`](crate::client::fluent_builders::CreateDeployment::tracing_enabled) / [`set_tracing_enabled(Option<bool>)`](crate::client::fluent_builders::CreateDeployment::set_tracing_enabled): <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
@@ -338,7 +338,7 @@ impl Client {
     ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::CreateStage::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::CreateStage::set_deployment_id): <p>The identifier of the Deployment resource for the Stage resource.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateStage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateStage::set_description): <p>The description of the Stage resource.</p>
     ///   - [`cache_cluster_enabled(bool)`](crate::client::fluent_builders::CreateStage::cache_cluster_enabled) / [`set_cache_cluster_enabled(bool)`](crate::client::fluent_builders::CreateStage::set_cache_cluster_enabled): <p>Whether cache clustering is enabled for the stage.</p>
-    ///   - [`cache_cluster_size(CacheClusterSize)`](crate::client::fluent_builders::CreateStage::cache_cluster_size) / [`set_cache_cluster_size(Option<CacheClusterSize>)`](crate::client::fluent_builders::CreateStage::set_cache_cluster_size): <p>The stage's cache cluster size.</p>
+    ///   - [`cache_cluster_size(CacheClusterSize)`](crate::client::fluent_builders::CreateStage::cache_cluster_size) / [`set_cache_cluster_size(Option<CacheClusterSize>)`](crate::client::fluent_builders::CreateStage::set_cache_cluster_size): <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     ///   - [`variables(HashMap<String, String>)`](crate::client::fluent_builders::CreateStage::variables) / [`set_variables(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStage::set_variables): <p>A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
     ///   - [`documentation_version(impl Into<String>)`](crate::client::fluent_builders::CreateStage::documentation_version) / [`set_documentation_version(Option<String>)`](crate::client::fluent_builders::CreateStage::set_documentation_version): <p>The version of the associated API documentation.</p>
     ///   - [`canary_settings(CanarySettings)`](crate::client::fluent_builders::CreateStage::canary_settings) / [`set_canary_settings(Option<CanarySettings>)`](crate::client::fluent_builders::CreateStage::set_canary_settings): <p>The canary deployment settings of this stage.</p>
@@ -350,7 +350,7 @@ impl Client {
     ///   - [`stage_name(Option<String>)`](crate::output::CreateStageOutput::stage_name): <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     ///   - [`description(Option<String>)`](crate::output::CreateStageOutput::description): <p>The stage's description.</p>
     ///   - [`cache_cluster_enabled(bool)`](crate::output::CreateStageOutput::cache_cluster_enabled): <p>Specifies whether a cache cluster is enabled for the stage.</p>
-    ///   - [`cache_cluster_size(Option<CacheClusterSize>)`](crate::output::CreateStageOutput::cache_cluster_size): <p>The size of the cache cluster for the stage, if enabled.</p>
+    ///   - [`cache_cluster_size(Option<CacheClusterSize>)`](crate::output::CreateStageOutput::cache_cluster_size): <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     ///   - [`cache_cluster_status(Option<CacheClusterStatus>)`](crate::output::CreateStageOutput::cache_cluster_status): <p>The status of the cache cluster for the stage, if enabled.</p>
     ///   - [`method_settings(Option<HashMap<String, MethodSetting>>)`](crate::output::CreateStageOutput::method_settings): <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
     ///   - [`variables(Option<HashMap<String, String>>)`](crate::output::CreateStageOutput::variables): <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
@@ -1261,7 +1261,7 @@ impl Client {
     ///   - [`stage_name(Option<String>)`](crate::output::GetStageOutput::stage_name): <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     ///   - [`description(Option<String>)`](crate::output::GetStageOutput::description): <p>The stage's description.</p>
     ///   - [`cache_cluster_enabled(bool)`](crate::output::GetStageOutput::cache_cluster_enabled): <p>Specifies whether a cache cluster is enabled for the stage.</p>
-    ///   - [`cache_cluster_size(Option<CacheClusterSize>)`](crate::output::GetStageOutput::cache_cluster_size): <p>The size of the cache cluster for the stage, if enabled.</p>
+    ///   - [`cache_cluster_size(Option<CacheClusterSize>)`](crate::output::GetStageOutput::cache_cluster_size): <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     ///   - [`cache_cluster_status(Option<CacheClusterStatus>)`](crate::output::GetStageOutput::cache_cluster_status): <p>The status of the cache cluster for the stage, if enabled.</p>
     ///   - [`method_settings(Option<HashMap<String, MethodSetting>>)`](crate::output::GetStageOutput::method_settings): <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
     ///   - [`variables(Option<HashMap<String, String>>)`](crate::output::GetStageOutput::variables): <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
@@ -2016,7 +2016,7 @@ impl Client {
     ///   - [`stage_name(Option<String>)`](crate::output::UpdateStageOutput::stage_name): <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     ///   - [`description(Option<String>)`](crate::output::UpdateStageOutput::description): <p>The stage's description.</p>
     ///   - [`cache_cluster_enabled(bool)`](crate::output::UpdateStageOutput::cache_cluster_enabled): <p>Specifies whether a cache cluster is enabled for the stage.</p>
-    ///   - [`cache_cluster_size(Option<CacheClusterSize>)`](crate::output::UpdateStageOutput::cache_cluster_size): <p>The size of the cache cluster for the stage, if enabled.</p>
+    ///   - [`cache_cluster_size(Option<CacheClusterSize>)`](crate::output::UpdateStageOutput::cache_cluster_size): <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     ///   - [`cache_cluster_status(Option<CacheClusterStatus>)`](crate::output::UpdateStageOutput::cache_cluster_status): <p>The status of the cache cluster for the stage, if enabled.</p>
     ///   - [`method_settings(Option<HashMap<String, MethodSetting>>)`](crate::output::UpdateStageOutput::method_settings): <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
     ///   - [`variables(Option<HashMap<String, String>>)`](crate::output::UpdateStageOutput::variables): <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
@@ -2663,12 +2663,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cache_cluster_enabled(input);
             self
         }
-        /// <p>Specifies the cache cluster size for the Stage resource specified in the input, if a cache cluster is enabled.</p>
+        /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
         pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
             self.inner = self.inner.cache_cluster_size(input);
             self
         }
-        /// <p>Specifies the cache cluster size for the Stage resource specified in the input, if a cache cluster is enabled.</p>
+        /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
         pub fn set_cache_cluster_size(
             mut self,
             input: std::option::Option<crate::model::CacheClusterSize>,
@@ -3804,12 +3804,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cache_cluster_enabled(input);
             self
         }
-        /// <p>The stage's cache cluster size.</p>
+        /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
         pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
             self.inner = self.inner.cache_cluster_size(input);
             self
         }
-        /// <p>The stage's cache cluster size.</p>
+        /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
         pub fn set_cache_cluster_size(
             mut self,
             input: std::option::Option<crate::model::CacheClusterSize>,

@@ -250,7 +250,9 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstalledComponentsOutput {
     /// <p>A list that summarizes each component on the core device.</p> <note>
-    /// <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.</p>
+    /// <p>Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
+    /// </note> <note>
+    /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>
     /// </note>
     #[doc(hidden)]
     pub installed_components: std::option::Option<std::vec::Vec<crate::model::InstalledComponent>>,
@@ -260,7 +262,9 @@ pub struct ListInstalledComponentsOutput {
 }
 impl ListInstalledComponentsOutput {
     /// <p>A list that summarizes each component on the core device.</p> <note>
-    /// <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.</p>
+    /// <p>Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
+    /// </note> <note>
+    /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>
     /// </note>
     pub fn installed_components(&self) -> std::option::Option<&[crate::model::InstalledComponent]> {
         self.installed_components.as_deref()
@@ -286,7 +290,9 @@ pub mod list_installed_components_output {
         /// To override the contents of this collection use [`set_installed_components`](Self::set_installed_components).
         ///
         /// <p>A list that summarizes each component on the core device.</p> <note>
-        /// <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.</p>
+        /// <p>Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
+        /// </note> <note>
+        /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>
         /// </note>
         pub fn installed_components(mut self, input: crate::model::InstalledComponent) -> Self {
             let mut v = self.installed_components.unwrap_or_default();
@@ -295,7 +301,9 @@ pub mod list_installed_components_output {
             self
         }
         /// <p>A list that summarizes each component on the core device.</p> <note>
-        /// <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.</p>
+        /// <p>Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
+        /// </note> <note>
+        /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>
         /// </note>
         pub fn set_installed_components(
             mut self,
@@ -917,6 +925,9 @@ pub struct GetDeploymentOutput {
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
     #[doc(hidden)]
     pub is_latest_for_target: bool,
+    /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+    #[doc(hidden)]
+    pub parent_target_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     #[doc(hidden)]
     pub tags:
@@ -980,6 +991,10 @@ impl GetDeploymentOutput {
     pub fn is_latest_for_target(&self) -> bool {
         self.is_latest_for_target
     }
+    /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+    pub fn parent_target_arn(&self) -> std::option::Option<&str> {
+        self.parent_target_arn.as_deref()
+    }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(
         &self,
@@ -1012,6 +1027,7 @@ pub mod get_deployment_output {
             std::option::Option<crate::model::DeploymentIoTJobConfiguration>,
         pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) is_latest_for_target: std::option::Option<bool>,
+        pub(crate) parent_target_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -1176,6 +1192,19 @@ pub mod get_deployment_output {
             self.is_latest_for_target = input;
             self
         }
+        /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+        pub fn parent_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_target_arn = Some(input.into());
+            self
+        }
+        /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+        pub fn set_parent_target_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parent_target_arn = input;
+            self
+        }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -1216,6 +1245,7 @@ pub mod get_deployment_output {
                 iot_job_configuration: self.iot_job_configuration,
                 creation_timestamp: self.creation_timestamp,
                 is_latest_for_target: self.is_latest_for_target.unwrap_or_default(),
+                parent_target_arn: self.parent_target_arn,
                 tags: self.tags,
             }
         }

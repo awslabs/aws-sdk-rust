@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>One or more arguments to the <code>StartStreamTranscription</code> or <code>StartMedicalStreamTranscription</code> operation was invalid. For example, <code>MediaEncoding</code> was not set to a valid encoding, or <code>LanguageCode</code> was not set to a valid code. Check the parameters and try your request again.</p>
+    /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used not valid values. Check the specified parameters and try your request again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>A new stream started with the same session ID. The current stream has been terminated.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>A problem occurred while processing the audio. Amazon Transcribe or Amazon Transcribe Medical terminated processing. Try your request again.</p>
+    /// <p>A problem occurred while processing the audio. Amazon Transcribe terminated processing.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>You have exceeded the maximum number of concurrent transcription streams, are starting transcription streams too quickly, or the maximum audio length of 4 hours. Wait until a stream has finished processing, or break your audio stream into smaller chunks and try your request again.</p>
+    /// <p>Your client has exceeded one of the Amazon Transcribe limits. This is typically the audio length limit. Break your audio stream into smaller chunks and try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Service is currently unavailable. Try your request later.</p>
+    /// <p>The service is currently unavailable. Try your request later.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -32,6 +32,42 @@ impl std::fmt::Display for Error {
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::StartCallAnalyticsStreamTranscriptionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::StartCallAnalyticsStreamTranscriptionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::StartCallAnalyticsStreamTranscriptionError> for Error {
+    fn from(err: crate::error::StartCallAnalyticsStreamTranscriptionError) -> Self {
+        match err.kind {
+            crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -138,6 +174,42 @@ impl From<crate::error::AudioStreamError> for Error {
             crate::error::AudioStreamErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::CallAnalyticsTranscriptResultStreamError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CallAnalyticsTranscriptResultStreamError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CallAnalyticsTranscriptResultStreamError> for Error {
+    fn from(err: crate::error::CallAnalyticsTranscriptResultStreamError) -> Self {
+        match err.kind {
+            crate::error::CallAnalyticsTranscriptResultStreamErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CallAnalyticsTranscriptResultStreamErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CallAnalyticsTranscriptResultStreamErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::error::CallAnalyticsTranscriptResultStreamErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CallAnalyticsTranscriptResultStreamErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CallAnalyticsTranscriptResultStreamErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }

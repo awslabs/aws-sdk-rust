@@ -812,12 +812,39 @@ impl AsRef<str> for CostCategoryInheritedValueDimensionName {
     }
 }
 
-/// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
+/// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
+/// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+/// <p>There are two patterns:</p>
 /// <ul>
-/// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
-/// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
-/// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
-/// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+/// <li> <p>Simple dimension values.</p>
+/// <ul>
+/// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+/// <ul>
+/// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li>
+/// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li>
+/// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li>
+/// </ul> </li>
+/// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
+/// <ul>
+/// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
+/// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
+/// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
+/// </ul> </li>
+/// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
+/// <ul>
+/// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
+/// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
+/// </ul> </li>
+/// </ul> </li>
+/// <li> <p>Compound <code>Expression</code> types with logical operations.</p>
+/// <ul>
+/// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li>
+/// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li>
+/// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li>
+/// </ul> <note>
+/// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p>
+/// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p>
+/// </note> </li>
 /// </ul> <note>
 /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
 /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
@@ -1115,6 +1142,7 @@ impl CostCategoryValues {
 ///     MatchOption::Contains => { /* ... */ },
 ///     MatchOption::EndsWith => { /* ... */ },
 ///     MatchOption::Equals => { /* ... */ },
+///     MatchOption::GreaterThanOrEqual => { /* ... */ },
 ///     MatchOption::StartsWith => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -1162,6 +1190,8 @@ pub enum MatchOption {
     #[allow(missing_docs)] // documentation missing in model
     Equals,
     #[allow(missing_docs)] // documentation missing in model
+    GreaterThanOrEqual,
+    #[allow(missing_docs)] // documentation missing in model
     StartsWith,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
@@ -1175,6 +1205,7 @@ impl std::convert::From<&str> for MatchOption {
             "CONTAINS" => MatchOption::Contains,
             "ENDS_WITH" => MatchOption::EndsWith,
             "EQUALS" => MatchOption::Equals,
+            "GREATER_THAN_OR_EQUAL" => MatchOption::GreaterThanOrEqual,
             "STARTS_WITH" => MatchOption::StartsWith,
             other => MatchOption::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
@@ -1197,6 +1228,7 @@ impl MatchOption {
             MatchOption::Contains => "CONTAINS",
             MatchOption::EndsWith => "ENDS_WITH",
             MatchOption::Equals => "EQUALS",
+            MatchOption::GreaterThanOrEqual => "GREATER_THAN_OR_EQUAL",
             MatchOption::StartsWith => "STARTS_WITH",
             MatchOption::Unknown(value) => value.as_str(),
         }
@@ -1210,6 +1242,7 @@ impl MatchOption {
             "CONTAINS",
             "ENDS_WITH",
             "EQUALS",
+            "GREATER_THAN_OR_EQUAL",
             "STARTS_WITH",
         ]
     }
@@ -1330,18 +1363,26 @@ impl TagValues {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionValues {
-    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
+    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+    /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
+    /// <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
     #[doc(hidden)]
     pub key: std::option::Option<crate::model::Dimension>,
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    /// <p>The match options that you can use to filter your results.</p>
+    /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
     #[doc(hidden)]
     pub match_options: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
 }
 impl DimensionValues {
-    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
+    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+    /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
+    /// <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
     pub fn key(&self) -> std::option::Option<&crate::model::Dimension> {
         self.key.as_ref()
     }
@@ -1349,7 +1390,9 @@ impl DimensionValues {
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
-    /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    /// <p>The match options that you can use to filter your results.</p>
+    /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
     pub fn match_options(&self) -> std::option::Option<&[crate::model::MatchOption]> {
         self.match_options.as_deref()
     }
@@ -1365,12 +1408,18 @@ pub mod dimension_values {
         pub(crate) match_options: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
     }
     impl Builder {
-        /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
+        /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+        /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+        /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
+        /// <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
         pub fn key(mut self, input: crate::model::Dimension) -> Self {
             self.key = Some(input);
             self
         }
-        /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
+        /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+        /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+        /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
+        /// <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
         pub fn set_key(mut self, input: std::option::Option<crate::model::Dimension>) -> Self {
             self.key = input;
             self
@@ -1398,14 +1447,18 @@ pub mod dimension_values {
         ///
         /// To override the contents of this collection use [`set_match_options`](Self::set_match_options).
         ///
-        /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+        /// <p>The match options that you can use to filter your results.</p>
+        /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
+        /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
         pub fn match_options(mut self, input: crate::model::MatchOption) -> Self {
             let mut v = self.match_options.unwrap_or_default();
             v.push(input);
             self.match_options = Some(v);
             self
         }
-        /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+        /// <p>The match options that you can use to filter your results.</p>
+        /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
+        /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
         pub fn set_match_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
@@ -1444,6 +1497,8 @@ impl DimensionValues {
 /// match dimension {
 ///     Dimension::AgreementEndDateTimeAfter => { /* ... */ },
 ///     Dimension::AgreementEndDateTimeBefore => { /* ... */ },
+///     Dimension::AnomalyTotalImpactAbsolute => { /* ... */ },
+///     Dimension::AnomalyTotalImpactPercentage => { /* ... */ },
 ///     Dimension::Az => { /* ... */ },
 ///     Dimension::BillingEntity => { /* ... */ },
 ///     Dimension::CacheEngine => { /* ... */ },
@@ -1512,6 +1567,10 @@ pub enum Dimension {
     #[allow(missing_docs)] // documentation missing in model
     AgreementEndDateTimeBefore,
     #[allow(missing_docs)] // documentation missing in model
+    AnomalyTotalImpactAbsolute,
+    #[allow(missing_docs)] // documentation missing in model
+    AnomalyTotalImpactPercentage,
+    #[allow(missing_docs)] // documentation missing in model
     Az,
     #[allow(missing_docs)] // documentation missing in model
     BillingEntity,
@@ -1579,6 +1638,8 @@ impl std::convert::From<&str> for Dimension {
         match s {
             "AGREEMENT_END_DATE_TIME_AFTER" => Dimension::AgreementEndDateTimeAfter,
             "AGREEMENT_END_DATE_TIME_BEFORE" => Dimension::AgreementEndDateTimeBefore,
+            "ANOMALY_TOTAL_IMPACT_ABSOLUTE" => Dimension::AnomalyTotalImpactAbsolute,
+            "ANOMALY_TOTAL_IMPACT_PERCENTAGE" => Dimension::AnomalyTotalImpactPercentage,
             "AZ" => Dimension::Az,
             "BILLING_ENTITY" => Dimension::BillingEntity,
             "CACHE_ENGINE" => Dimension::CacheEngine,
@@ -1626,6 +1687,8 @@ impl Dimension {
         match self {
             Dimension::AgreementEndDateTimeAfter => "AGREEMENT_END_DATE_TIME_AFTER",
             Dimension::AgreementEndDateTimeBefore => "AGREEMENT_END_DATE_TIME_BEFORE",
+            Dimension::AnomalyTotalImpactAbsolute => "ANOMALY_TOTAL_IMPACT_ABSOLUTE",
+            Dimension::AnomalyTotalImpactPercentage => "ANOMALY_TOTAL_IMPACT_PERCENTAGE",
             Dimension::Az => "AZ",
             Dimension::BillingEntity => "BILLING_ENTITY",
             Dimension::CacheEngine => "CACHE_ENGINE",
@@ -1664,6 +1727,8 @@ impl Dimension {
         &[
             "AGREEMENT_END_DATE_TIME_AFTER",
             "AGREEMENT_END_DATE_TIME_BEFORE",
+            "ANOMALY_TOTAL_IMPACT_ABSOLUTE",
+            "ANOMALY_TOTAL_IMPACT_PERCENTAGE",
             "AZ",
             "BILLING_ENTITY",
             "CACHE_ENGINE",
@@ -2568,6 +2633,240 @@ impl AnomalyFeedbackType {
     }
 }
 impl AsRef<str> for AnomalyFeedbackType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The summary of the Savings Plans recommendation generation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GenerationSummary {
+    /// <p>Indicates the ID for this specific recommendation.</p>
+    #[doc(hidden)]
+    pub recommendation_id: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the recommendation generation succeeded, is processing, or failed.</p>
+    #[doc(hidden)]
+    pub generation_status: std::option::Option<crate::model::GenerationStatus>,
+    /// <p>Indicates the start time of the recommendation generation.</p>
+    #[doc(hidden)]
+    pub generation_started_time: std::option::Option<std::string::String>,
+    /// <p>Indicates the completion time of the recommendation generation.</p>
+    #[doc(hidden)]
+    pub generation_completion_time: std::option::Option<std::string::String>,
+    /// <p>Indicates the estimated time for when the recommendation generation will complete.</p>
+    #[doc(hidden)]
+    pub estimated_completion_time: std::option::Option<std::string::String>,
+}
+impl GenerationSummary {
+    /// <p>Indicates the ID for this specific recommendation.</p>
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+        self.recommendation_id.as_deref()
+    }
+    /// <p>Indicates whether the recommendation generation succeeded, is processing, or failed.</p>
+    pub fn generation_status(&self) -> std::option::Option<&crate::model::GenerationStatus> {
+        self.generation_status.as_ref()
+    }
+    /// <p>Indicates the start time of the recommendation generation.</p>
+    pub fn generation_started_time(&self) -> std::option::Option<&str> {
+        self.generation_started_time.as_deref()
+    }
+    /// <p>Indicates the completion time of the recommendation generation.</p>
+    pub fn generation_completion_time(&self) -> std::option::Option<&str> {
+        self.generation_completion_time.as_deref()
+    }
+    /// <p>Indicates the estimated time for when the recommendation generation will complete.</p>
+    pub fn estimated_completion_time(&self) -> std::option::Option<&str> {
+        self.estimated_completion_time.as_deref()
+    }
+}
+/// See [`GenerationSummary`](crate::model::GenerationSummary).
+pub mod generation_summary {
+
+    /// A builder for [`GenerationSummary`](crate::model::GenerationSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recommendation_id: std::option::Option<std::string::String>,
+        pub(crate) generation_status: std::option::Option<crate::model::GenerationStatus>,
+        pub(crate) generation_started_time: std::option::Option<std::string::String>,
+        pub(crate) generation_completion_time: std::option::Option<std::string::String>,
+        pub(crate) estimated_completion_time: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Indicates the ID for this specific recommendation.</p>
+        pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recommendation_id = Some(input.into());
+            self
+        }
+        /// <p>Indicates the ID for this specific recommendation.</p>
+        pub fn set_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recommendation_id = input;
+            self
+        }
+        /// <p>Indicates whether the recommendation generation succeeded, is processing, or failed.</p>
+        pub fn generation_status(mut self, input: crate::model::GenerationStatus) -> Self {
+            self.generation_status = Some(input);
+            self
+        }
+        /// <p>Indicates whether the recommendation generation succeeded, is processing, or failed.</p>
+        pub fn set_generation_status(
+            mut self,
+            input: std::option::Option<crate::model::GenerationStatus>,
+        ) -> Self {
+            self.generation_status = input;
+            self
+        }
+        /// <p>Indicates the start time of the recommendation generation.</p>
+        pub fn generation_started_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.generation_started_time = Some(input.into());
+            self
+        }
+        /// <p>Indicates the start time of the recommendation generation.</p>
+        pub fn set_generation_started_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.generation_started_time = input;
+            self
+        }
+        /// <p>Indicates the completion time of the recommendation generation.</p>
+        pub fn generation_completion_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.generation_completion_time = Some(input.into());
+            self
+        }
+        /// <p>Indicates the completion time of the recommendation generation.</p>
+        pub fn set_generation_completion_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.generation_completion_time = input;
+            self
+        }
+        /// <p>Indicates the estimated time for when the recommendation generation will complete.</p>
+        pub fn estimated_completion_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.estimated_completion_time = Some(input.into());
+            self
+        }
+        /// <p>Indicates the estimated time for when the recommendation generation will complete.</p>
+        pub fn set_estimated_completion_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.estimated_completion_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GenerationSummary`](crate::model::GenerationSummary).
+        pub fn build(self) -> crate::model::GenerationSummary {
+            crate::model::GenerationSummary {
+                recommendation_id: self.recommendation_id,
+                generation_status: self.generation_status,
+                generation_started_time: self.generation_started_time,
+                generation_completion_time: self.generation_completion_time,
+                estimated_completion_time: self.estimated_completion_time,
+            }
+        }
+    }
+}
+impl GenerationSummary {
+    /// Creates a new builder-style object to manufacture [`GenerationSummary`](crate::model::GenerationSummary).
+    pub fn builder() -> crate::model::generation_summary::Builder {
+        crate::model::generation_summary::Builder::default()
+    }
+}
+
+/// When writing a match expression against `GenerationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let generationstatus = unimplemented!();
+/// match generationstatus {
+///     GenerationStatus::Failed => { /* ... */ },
+///     GenerationStatus::Processing => { /* ... */ },
+///     GenerationStatus::Succeeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `generationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `GenerationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `GenerationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `GenerationStatus::NewFeature` is defined.
+/// Specifically, when `generationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `GenerationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum GenerationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Processing,
+    #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for GenerationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => GenerationStatus::Failed,
+            "PROCESSING" => GenerationStatus::Processing,
+            "SUCCEEDED" => GenerationStatus::Succeeded,
+            other => GenerationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for GenerationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(GenerationStatus::from(s))
+    }
+}
+impl GenerationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            GenerationStatus::Failed => "FAILED",
+            GenerationStatus::Processing => "PROCESSING",
+            GenerationStatus::Succeeded => "SUCCEEDED",
+            GenerationStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FAILED", "PROCESSING", "SUCCEEDED"]
+    }
+}
+impl AsRef<str> for GenerationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -12770,7 +13069,11 @@ pub struct AnomalySubscription {
     /// <p>A list of subscribers to notify. </p>
     #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
+    /// <p>(deprecated)</p>
     /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p>
+    /// <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
+    /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
+    #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
     #[doc(hidden)]
     pub threshold: std::option::Option<f64>,
     /// <p>The frequency that anomaly reports are sent over email. </p>
@@ -12779,6 +13082,17 @@ pub struct AnomalySubscription {
     /// <p>The name for the subscription. </p>
     #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
+    /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p>
+    /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
+    /// <p>The following are examples of valid ThresholdExpressions:</p>
+    /// <ul>
+    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub threshold_expression: std::option::Option<crate::model::Expression>,
 }
 impl AnomalySubscription {
     /// <p>The <code>AnomalySubscription</code> Amazon Resource Name (ARN). </p>
@@ -12797,7 +13111,11 @@ impl AnomalySubscription {
     pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
         self.subscribers.as_deref()
     }
+    /// <p>(deprecated)</p>
     /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p>
+    /// <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
+    /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
+    #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
     pub fn threshold(&self) -> std::option::Option<f64> {
         self.threshold
     }
@@ -12808,6 +13126,18 @@ impl AnomalySubscription {
     /// <p>The name for the subscription. </p>
     pub fn subscription_name(&self) -> std::option::Option<&str> {
         self.subscription_name.as_deref()
+    }
+    /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p>
+    /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
+    /// <p>The following are examples of valid ThresholdExpressions:</p>
+    /// <ul>
+    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+    /// </ul>
+    pub fn threshold_expression(&self) -> std::option::Option<&crate::model::Expression> {
+        self.threshold_expression.as_ref()
     }
 }
 /// See [`AnomalySubscription`](crate::model::AnomalySubscription).
@@ -12823,6 +13153,7 @@ pub mod anomaly_subscription {
         pub(crate) threshold: std::option::Option<f64>,
         pub(crate) frequency: std::option::Option<crate::model::AnomalySubscriptionFrequency>,
         pub(crate) subscription_name: std::option::Option<std::string::String>,
+        pub(crate) threshold_expression: std::option::Option<crate::model::Expression>,
     }
     impl Builder {
         /// <p>The <code>AnomalySubscription</code> Amazon Resource Name (ARN). </p>
@@ -12886,12 +13217,20 @@ pub mod anomaly_subscription {
             self.subscribers = input;
             self
         }
+        /// <p>(deprecated)</p>
         /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p>
+        /// <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
+        /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
+        #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
         pub fn threshold(mut self, input: f64) -> Self {
             self.threshold = Some(input);
             self
         }
+        /// <p>(deprecated)</p>
         /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p>
+        /// <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
+        /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
+        #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
         pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
             self.threshold = input;
             self
@@ -12922,6 +13261,35 @@ pub mod anomaly_subscription {
             self.subscription_name = input;
             self
         }
+        /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p>
+        /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
+        /// <p>The following are examples of valid ThresholdExpressions:</p>
+        /// <ul>
+        /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+        /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+        /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+        /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+        /// </ul>
+        pub fn threshold_expression(mut self, input: crate::model::Expression) -> Self {
+            self.threshold_expression = Some(input);
+            self
+        }
+        /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p>
+        /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
+        /// <p>The following are examples of valid ThresholdExpressions:</p>
+        /// <ul>
+        /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+        /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+        /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+        /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+        /// </ul>
+        pub fn set_threshold_expression(
+            mut self,
+            input: std::option::Option<crate::model::Expression>,
+        ) -> Self {
+            self.threshold_expression = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AnomalySubscription`](crate::model::AnomalySubscription).
         pub fn build(self) -> crate::model::AnomalySubscription {
             crate::model::AnomalySubscription {
@@ -12932,6 +13300,7 @@ pub mod anomaly_subscription {
                 threshold: self.threshold,
                 frequency: self.frequency,
                 subscription_name: self.subscription_name,
+                threshold_expression: self.threshold_expression,
             }
         }
     }
@@ -12968,12 +13337,39 @@ pub struct AnomalyMonitor {
     /// <p>The dimensions to evaluate. </p>
     #[doc(hidden)]
     pub monitor_dimension: std::option::Option<crate::model::MonitorDimension>,
-    /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
+    /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
+    /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p>There are two patterns:</p>
     /// <ul>
-    /// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
-    /// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
-    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
-    /// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+    /// <li> <p>Simple dimension values.</p>
+    /// <ul>
+    /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <ul>
+    /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li>
+    /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li>
+    /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
+    /// <ul>
+    /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
+    /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <ul>
+    /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>Compound <code>Expression</code> types with logical operations.</p>
+    /// <ul>
+    /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li>
+    /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li>
+    /// </ul> <note>
+    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p>
+    /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p>
+    /// </note> </li>
     /// </ul> <note>
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
@@ -13013,12 +13409,39 @@ impl AnomalyMonitor {
     pub fn monitor_dimension(&self) -> std::option::Option<&crate::model::MonitorDimension> {
         self.monitor_dimension.as_ref()
     }
-    /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
+    /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
+    /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p>There are two patterns:</p>
     /// <ul>
-    /// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
-    /// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
-    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
-    /// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+    /// <li> <p>Simple dimension values.</p>
+    /// <ul>
+    /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <ul>
+    /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li>
+    /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li>
+    /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
+    /// <ul>
+    /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
+    /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <ul>
+    /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>Compound <code>Expression</code> types with logical operations.</p>
+    /// <ul>
+    /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li>
+    /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li>
+    /// </ul> <note>
+    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p>
+    /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p>
+    /// </note> </li>
     /// </ul> <note>
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
@@ -13133,12 +13556,39 @@ pub mod anomaly_monitor {
             self.monitor_dimension = input;
             self
         }
-        /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
+        /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
+        /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+        /// <p>There are two patterns:</p>
         /// <ul>
-        /// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
-        /// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
-        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
-        /// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+        /// <li> <p>Simple dimension values.</p>
+        /// <ul>
+        /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+        /// <ul>
+        /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li>
+        /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li>
+        /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
+        /// <ul>
+        /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
+        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
+        /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
+        /// <ul>
+        /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
+        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
+        /// </ul> </li>
+        /// </ul> </li>
+        /// <li> <p>Compound <code>Expression</code> types with logical operations.</p>
+        /// <ul>
+        /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li>
+        /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li>
+        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li>
+        /// </ul> <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p>
+        /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p>
+        /// </note> </li>
         /// </ul> <note>
         /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
         /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
@@ -13147,12 +13597,39 @@ pub mod anomaly_monitor {
             self.monitor_specification = Some(input);
             self
         }
-        /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
+        /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
+        /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+        /// <p>There are two patterns:</p>
         /// <ul>
-        /// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
-        /// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
-        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
-        /// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+        /// <li> <p>Simple dimension values.</p>
+        /// <ul>
+        /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+        /// <ul>
+        /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li>
+        /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li>
+        /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
+        /// <ul>
+        /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
+        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
+        /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
+        /// <ul>
+        /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
+        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
+        /// </ul> </li>
+        /// </ul> </li>
+        /// <li> <p>Compound <code>Expression</code> types with logical operations.</p>
+        /// <ul>
+        /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li>
+        /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li>
+        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li>
+        /// </ul> <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p>
+        /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p>
+        /// </note> </li>
         /// </ul> <note>
         /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
         /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
@@ -13600,21 +14077,42 @@ impl Anomaly {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Impact {
-    /// <p>The maximum dollar value that's observed for an anomaly. </p>
+    /// <p>The maximum dollar value that's observed for an anomaly.</p>
     #[doc(hidden)]
     pub max_impact: f64,
-    /// <p>The cumulative dollar value that's observed for an anomaly. </p>
+    /// <p>The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.</p>
     #[doc(hidden)]
     pub total_impact: f64,
+    /// <p>The cumulative dollar amount that was actually spent during the anomaly.</p>
+    #[doc(hidden)]
+    pub total_actual_spend: std::option::Option<f64>,
+    /// <p>The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced machine learning models to determine the typical spending pattern based on historical data for a customer.</p>
+    #[doc(hidden)]
+    pub total_expected_spend: std::option::Option<f64>,
+    /// <p>The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.</p>
+    #[doc(hidden)]
+    pub total_impact_percentage: std::option::Option<f64>,
 }
 impl Impact {
-    /// <p>The maximum dollar value that's observed for an anomaly. </p>
+    /// <p>The maximum dollar value that's observed for an anomaly.</p>
     pub fn max_impact(&self) -> f64 {
         self.max_impact
     }
-    /// <p>The cumulative dollar value that's observed for an anomaly. </p>
+    /// <p>The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.</p>
     pub fn total_impact(&self) -> f64 {
         self.total_impact
+    }
+    /// <p>The cumulative dollar amount that was actually spent during the anomaly.</p>
+    pub fn total_actual_spend(&self) -> std::option::Option<f64> {
+        self.total_actual_spend
+    }
+    /// <p>The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced machine learning models to determine the typical spending pattern based on historical data for a customer.</p>
+    pub fn total_expected_spend(&self) -> std::option::Option<f64> {
+        self.total_expected_spend
+    }
+    /// <p>The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.</p>
+    pub fn total_impact_percentage(&self) -> std::option::Option<f64> {
+        self.total_impact_percentage
     }
 }
 /// See [`Impact`](crate::model::Impact).
@@ -13625,26 +14123,59 @@ pub mod impact {
     pub struct Builder {
         pub(crate) max_impact: std::option::Option<f64>,
         pub(crate) total_impact: std::option::Option<f64>,
+        pub(crate) total_actual_spend: std::option::Option<f64>,
+        pub(crate) total_expected_spend: std::option::Option<f64>,
+        pub(crate) total_impact_percentage: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The maximum dollar value that's observed for an anomaly. </p>
+        /// <p>The maximum dollar value that's observed for an anomaly.</p>
         pub fn max_impact(mut self, input: f64) -> Self {
             self.max_impact = Some(input);
             self
         }
-        /// <p>The maximum dollar value that's observed for an anomaly. </p>
+        /// <p>The maximum dollar value that's observed for an anomaly.</p>
         pub fn set_max_impact(mut self, input: std::option::Option<f64>) -> Self {
             self.max_impact = input;
             self
         }
-        /// <p>The cumulative dollar value that's observed for an anomaly. </p>
+        /// <p>The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.</p>
         pub fn total_impact(mut self, input: f64) -> Self {
             self.total_impact = Some(input);
             self
         }
-        /// <p>The cumulative dollar value that's observed for an anomaly. </p>
+        /// <p>The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.</p>
         pub fn set_total_impact(mut self, input: std::option::Option<f64>) -> Self {
             self.total_impact = input;
+            self
+        }
+        /// <p>The cumulative dollar amount that was actually spent during the anomaly.</p>
+        pub fn total_actual_spend(mut self, input: f64) -> Self {
+            self.total_actual_spend = Some(input);
+            self
+        }
+        /// <p>The cumulative dollar amount that was actually spent during the anomaly.</p>
+        pub fn set_total_actual_spend(mut self, input: std::option::Option<f64>) -> Self {
+            self.total_actual_spend = input;
+            self
+        }
+        /// <p>The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced machine learning models to determine the typical spending pattern based on historical data for a customer.</p>
+        pub fn total_expected_spend(mut self, input: f64) -> Self {
+            self.total_expected_spend = Some(input);
+            self
+        }
+        /// <p>The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced machine learning models to determine the typical spending pattern based on historical data for a customer.</p>
+        pub fn set_total_expected_spend(mut self, input: std::option::Option<f64>) -> Self {
+            self.total_expected_spend = input;
+            self
+        }
+        /// <p>The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.</p>
+        pub fn total_impact_percentage(mut self, input: f64) -> Self {
+            self.total_impact_percentage = Some(input);
+            self
+        }
+        /// <p>The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.</p>
+        pub fn set_total_impact_percentage(mut self, input: std::option::Option<f64>) -> Self {
+            self.total_impact_percentage = input;
             self
         }
         /// Consumes the builder and constructs a [`Impact`](crate::model::Impact).
@@ -13652,6 +14183,9 @@ pub mod impact {
             crate::model::Impact {
                 max_impact: self.max_impact.unwrap_or_default(),
                 total_impact: self.total_impact.unwrap_or_default(),
+                total_actual_spend: self.total_actual_spend,
+                total_expected_spend: self.total_expected_spend,
+                total_impact_percentage: self.total_impact_percentage,
             }
         }
     }
@@ -13730,7 +14264,7 @@ impl AnomalyScore {
     }
 }
 
-/// <p>The combination of Amazon Web Service, linked account, Region, and usage type where a cost anomaly is observed. </p>
+/// <p>The combination of Amazon Web Service, linked account, linked account name, Region, and usage type where a cost anomaly is observed. The linked account name will only be available when the account name can be identified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RootCause {
@@ -13746,6 +14280,9 @@ pub struct RootCause {
     /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
     #[doc(hidden)]
     pub usage_type: std::option::Option<std::string::String>,
+    /// <p>The member account name value that's associated with the cost anomaly.</p>
+    #[doc(hidden)]
+    pub linked_account_name: std::option::Option<std::string::String>,
 }
 impl RootCause {
     /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
@@ -13764,6 +14301,10 @@ impl RootCause {
     pub fn usage_type(&self) -> std::option::Option<&str> {
         self.usage_type.as_deref()
     }
+    /// <p>The member account name value that's associated with the cost anomaly.</p>
+    pub fn linked_account_name(&self) -> std::option::Option<&str> {
+        self.linked_account_name.as_deref()
+    }
 }
 /// See [`RootCause`](crate::model::RootCause).
 pub mod root_cause {
@@ -13775,6 +14316,7 @@ pub mod root_cause {
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) linked_account: std::option::Option<std::string::String>,
         pub(crate) usage_type: std::option::Option<std::string::String>,
+        pub(crate) linked_account_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
@@ -13820,6 +14362,19 @@ pub mod root_cause {
             self.usage_type = input;
             self
         }
+        /// <p>The member account name value that's associated with the cost anomaly.</p>
+        pub fn linked_account_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.linked_account_name = Some(input.into());
+            self
+        }
+        /// <p>The member account name value that's associated with the cost anomaly.</p>
+        pub fn set_linked_account_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.linked_account_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RootCause`](crate::model::RootCause).
         pub fn build(self) -> crate::model::RootCause {
             crate::model::RootCause {
@@ -13827,6 +14382,7 @@ pub mod root_cause {
                 region: self.region,
                 linked_account: self.linked_account,
                 usage_type: self.usage_type,
+                linked_account_name: self.linked_account_name,
             }
         }
     }

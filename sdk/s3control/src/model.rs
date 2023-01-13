@@ -251,6 +251,109 @@ impl AsRef<str> for RequestedJobStatus {
     }
 }
 
+/// <p>A structure for a Multi-Region Access Point that indicates where Amazon S3 traffic can be routed. Routes can be either active or passive. Active routes can process Amazon S3 requests through the Multi-Region Access Point, but passive routes are not eligible to process Amazon S3 requests. </p>
+/// <p>Each route contains the Amazon S3 bucket name and the Amazon Web Services Region that the bucket is located in. The route also includes the <code>TrafficDialPercentage</code> value, which shows whether the bucket and Region are active (indicated by a value of <code>100</code>) or passive (indicated by a value of <code>0</code>).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MultiRegionAccessPointRoute {
+    /// <p>The name of the Amazon S3 bucket for which you'll submit a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
+    #[doc(hidden)]
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
+    #[doc(hidden)]
+    pub region: std::option::Option<std::string::String>,
+    /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p>
+    /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
+    /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
+    /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
+    /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error. </p>
+    #[doc(hidden)]
+    pub traffic_dial_percentage: std::option::Option<i32>,
+}
+impl MultiRegionAccessPointRoute {
+    /// <p>The name of the Amazon S3 bucket for which you'll submit a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p>
+    /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
+    /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
+    /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
+    /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error. </p>
+    pub fn traffic_dial_percentage(&self) -> std::option::Option<i32> {
+        self.traffic_dial_percentage
+    }
+}
+/// See [`MultiRegionAccessPointRoute`](crate::model::MultiRegionAccessPointRoute).
+pub mod multi_region_access_point_route {
+
+    /// A builder for [`MultiRegionAccessPointRoute`](crate::model::MultiRegionAccessPointRoute).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) region: std::option::Option<std::string::String>,
+        pub(crate) traffic_dial_percentage: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the Amazon S3 bucket for which you'll submit a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        /// <p>The name of the Amazon S3 bucket for which you'll submit a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
+            self
+        }
+        /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p>
+        /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
+        /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
+        /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
+        /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error. </p>
+        pub fn traffic_dial_percentage(mut self, input: i32) -> Self {
+            self.traffic_dial_percentage = Some(input);
+            self
+        }
+        /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p>
+        /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
+        /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
+        /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
+        /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error. </p>
+        pub fn set_traffic_dial_percentage(mut self, input: std::option::Option<i32>) -> Self {
+            self.traffic_dial_percentage = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MultiRegionAccessPointRoute`](crate::model::MultiRegionAccessPointRoute).
+        pub fn build(self) -> crate::model::MultiRegionAccessPointRoute {
+            crate::model::MultiRegionAccessPointRoute {
+                bucket: self.bucket,
+                region: self.region,
+                traffic_dial_percentage: self.traffic_dial_percentage,
+            }
+        }
+    }
+}
+impl MultiRegionAccessPointRoute {
+    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointRoute`](crate::model::MultiRegionAccessPointRoute).
+    pub fn builder() -> crate::model::multi_region_access_point_route::Builder {
+        crate::model::multi_region_access_point_route::Builder::default()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1324,25 +1427,56 @@ impl Include {
     }
 }
 
-/// <p>A container for the account level Amazon S3 Storage Lens configuration.</p>
+/// <p>A container for the account-level Amazon S3 Storage Lens configuration.</p>
+/// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountLevel {
-    /// <p>A container for the S3 Storage Lens activity metrics.</p>
+    /// <p>A container for S3 Storage Lens activity metrics.</p>
     #[doc(hidden)]
     pub activity_metrics: std::option::Option<crate::model::ActivityMetrics>,
     /// <p>A container for the S3 Storage Lens bucket-level configuration.</p>
     #[doc(hidden)]
     pub bucket_level: std::option::Option<crate::model::BucketLevel>,
+    /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
+    #[doc(hidden)]
+    pub advanced_cost_optimization_metrics:
+        std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
+    /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
+    #[doc(hidden)]
+    pub advanced_data_protection_metrics:
+        std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
+    /// <p>A container for detailed status code metrics. </p>
+    #[doc(hidden)]
+    pub detailed_status_codes_metrics:
+        std::option::Option<crate::model::DetailedStatusCodesMetrics>,
 }
 impl AccountLevel {
-    /// <p>A container for the S3 Storage Lens activity metrics.</p>
+    /// <p>A container for S3 Storage Lens activity metrics.</p>
     pub fn activity_metrics(&self) -> std::option::Option<&crate::model::ActivityMetrics> {
         self.activity_metrics.as_ref()
     }
     /// <p>A container for the S3 Storage Lens bucket-level configuration.</p>
     pub fn bucket_level(&self) -> std::option::Option<&crate::model::BucketLevel> {
         self.bucket_level.as_ref()
+    }
+    /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
+    pub fn advanced_cost_optimization_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::AdvancedCostOptimizationMetrics> {
+        self.advanced_cost_optimization_metrics.as_ref()
+    }
+    /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
+    pub fn advanced_data_protection_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::AdvancedDataProtectionMetrics> {
+        self.advanced_data_protection_metrics.as_ref()
+    }
+    /// <p>A container for detailed status code metrics. </p>
+    pub fn detailed_status_codes_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::DetailedStatusCodesMetrics> {
+        self.detailed_status_codes_metrics.as_ref()
     }
 }
 /// See [`AccountLevel`](crate::model::AccountLevel).
@@ -1353,14 +1487,20 @@ pub mod account_level {
     pub struct Builder {
         pub(crate) activity_metrics: std::option::Option<crate::model::ActivityMetrics>,
         pub(crate) bucket_level: std::option::Option<crate::model::BucketLevel>,
+        pub(crate) advanced_cost_optimization_metrics:
+            std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
+        pub(crate) advanced_data_protection_metrics:
+            std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
+        pub(crate) detailed_status_codes_metrics:
+            std::option::Option<crate::model::DetailedStatusCodesMetrics>,
     }
     impl Builder {
-        /// <p>A container for the S3 Storage Lens activity metrics.</p>
+        /// <p>A container for S3 Storage Lens activity metrics.</p>
         pub fn activity_metrics(mut self, input: crate::model::ActivityMetrics) -> Self {
             self.activity_metrics = Some(input);
             self
         }
-        /// <p>A container for the S3 Storage Lens activity metrics.</p>
+        /// <p>A container for S3 Storage Lens activity metrics.</p>
         pub fn set_activity_metrics(
             mut self,
             input: std::option::Option<crate::model::ActivityMetrics>,
@@ -1381,11 +1521,62 @@ pub mod account_level {
             self.bucket_level = input;
             self
         }
+        /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
+        pub fn advanced_cost_optimization_metrics(
+            mut self,
+            input: crate::model::AdvancedCostOptimizationMetrics,
+        ) -> Self {
+            self.advanced_cost_optimization_metrics = Some(input);
+            self
+        }
+        /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
+        pub fn set_advanced_cost_optimization_metrics(
+            mut self,
+            input: std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
+        ) -> Self {
+            self.advanced_cost_optimization_metrics = input;
+            self
+        }
+        /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
+        pub fn advanced_data_protection_metrics(
+            mut self,
+            input: crate::model::AdvancedDataProtectionMetrics,
+        ) -> Self {
+            self.advanced_data_protection_metrics = Some(input);
+            self
+        }
+        /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
+        pub fn set_advanced_data_protection_metrics(
+            mut self,
+            input: std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
+        ) -> Self {
+            self.advanced_data_protection_metrics = input;
+            self
+        }
+        /// <p>A container for detailed status code metrics. </p>
+        pub fn detailed_status_codes_metrics(
+            mut self,
+            input: crate::model::DetailedStatusCodesMetrics,
+        ) -> Self {
+            self.detailed_status_codes_metrics = Some(input);
+            self
+        }
+        /// <p>A container for detailed status code metrics. </p>
+        pub fn set_detailed_status_codes_metrics(
+            mut self,
+            input: std::option::Option<crate::model::DetailedStatusCodesMetrics>,
+        ) -> Self {
+            self.detailed_status_codes_metrics = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AccountLevel`](crate::model::AccountLevel).
         pub fn build(self) -> crate::model::AccountLevel {
             crate::model::AccountLevel {
                 activity_metrics: self.activity_metrics,
                 bucket_level: self.bucket_level,
+                advanced_cost_optimization_metrics: self.advanced_cost_optimization_metrics,
+                advanced_data_protection_metrics: self.advanced_data_protection_metrics,
+                detailed_status_codes_metrics: self.detailed_status_codes_metrics,
             }
         }
     }
@@ -1397,25 +1588,203 @@ impl AccountLevel {
     }
 }
 
-/// <p>A container for the bucket-level configuration.</p>
+/// <p>The container element for Amazon S3 Storage Lens detailed status code metrics. Detailed status code metrics generate metrics for HTTP status codes, such as <code>200 OK</code>, <code>403 Forbidden</code>, <code>503 Service Unavailable</code> and others. </p>
+/// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DetailedStatusCodesMetrics {
+    /// <p>A container that indicates whether detailed status code metrics are enabled.</p>
+    #[doc(hidden)]
+    pub is_enabled: bool,
+}
+impl DetailedStatusCodesMetrics {
+    /// <p>A container that indicates whether detailed status code metrics are enabled.</p>
+    pub fn is_enabled(&self) -> bool {
+        self.is_enabled
+    }
+}
+/// See [`DetailedStatusCodesMetrics`](crate::model::DetailedStatusCodesMetrics).
+pub mod detailed_status_codes_metrics {
+
+    /// A builder for [`DetailedStatusCodesMetrics`](crate::model::DetailedStatusCodesMetrics).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) is_enabled: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>A container that indicates whether detailed status code metrics are enabled.</p>
+        pub fn is_enabled(mut self, input: bool) -> Self {
+            self.is_enabled = Some(input);
+            self
+        }
+        /// <p>A container that indicates whether detailed status code metrics are enabled.</p>
+        pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_enabled = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetailedStatusCodesMetrics`](crate::model::DetailedStatusCodesMetrics).
+        pub fn build(self) -> crate::model::DetailedStatusCodesMetrics {
+            crate::model::DetailedStatusCodesMetrics {
+                is_enabled: self.is_enabled.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl DetailedStatusCodesMetrics {
+    /// Creates a new builder-style object to manufacture [`DetailedStatusCodesMetrics`](crate::model::DetailedStatusCodesMetrics).
+    pub fn builder() -> crate::model::detailed_status_codes_metrics::Builder {
+        crate::model::detailed_status_codes_metrics::Builder::default()
+    }
+}
+
+/// <p>The container element for Amazon S3 Storage Lens advanced data-protection metrics. Advanced data-protection metrics provide insights that you can use to perform audits and protect your data, for example replication rule counts within and across Regions.</p>
+/// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AdvancedDataProtectionMetrics {
+    /// <p>A container that indicates whether advanced data-protection metrics are enabled.</p>
+    #[doc(hidden)]
+    pub is_enabled: bool,
+}
+impl AdvancedDataProtectionMetrics {
+    /// <p>A container that indicates whether advanced data-protection metrics are enabled.</p>
+    pub fn is_enabled(&self) -> bool {
+        self.is_enabled
+    }
+}
+/// See [`AdvancedDataProtectionMetrics`](crate::model::AdvancedDataProtectionMetrics).
+pub mod advanced_data_protection_metrics {
+
+    /// A builder for [`AdvancedDataProtectionMetrics`](crate::model::AdvancedDataProtectionMetrics).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) is_enabled: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>A container that indicates whether advanced data-protection metrics are enabled.</p>
+        pub fn is_enabled(mut self, input: bool) -> Self {
+            self.is_enabled = Some(input);
+            self
+        }
+        /// <p>A container that indicates whether advanced data-protection metrics are enabled.</p>
+        pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_enabled = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AdvancedDataProtectionMetrics`](crate::model::AdvancedDataProtectionMetrics).
+        pub fn build(self) -> crate::model::AdvancedDataProtectionMetrics {
+            crate::model::AdvancedDataProtectionMetrics {
+                is_enabled: self.is_enabled.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AdvancedDataProtectionMetrics {
+    /// Creates a new builder-style object to manufacture [`AdvancedDataProtectionMetrics`](crate::model::AdvancedDataProtectionMetrics).
+    pub fn builder() -> crate::model::advanced_data_protection_metrics::Builder {
+        crate::model::advanced_data_protection_metrics::Builder::default()
+    }
+}
+
+/// <p>The container element for Amazon S3 Storage Lens advanced cost-optimization metrics. Advanced cost-optimization metrics provide insights that you can use to manage and optimize your storage costs, for example, lifecycle rule counts for transitions, expirations, and incomplete multipart uploads.</p>
+/// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AdvancedCostOptimizationMetrics {
+    /// <p>A container that indicates whether advanced cost-optimization metrics are enabled.</p>
+    #[doc(hidden)]
+    pub is_enabled: bool,
+}
+impl AdvancedCostOptimizationMetrics {
+    /// <p>A container that indicates whether advanced cost-optimization metrics are enabled.</p>
+    pub fn is_enabled(&self) -> bool {
+        self.is_enabled
+    }
+}
+/// See [`AdvancedCostOptimizationMetrics`](crate::model::AdvancedCostOptimizationMetrics).
+pub mod advanced_cost_optimization_metrics {
+
+    /// A builder for [`AdvancedCostOptimizationMetrics`](crate::model::AdvancedCostOptimizationMetrics).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) is_enabled: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>A container that indicates whether advanced cost-optimization metrics are enabled.</p>
+        pub fn is_enabled(mut self, input: bool) -> Self {
+            self.is_enabled = Some(input);
+            self
+        }
+        /// <p>A container that indicates whether advanced cost-optimization metrics are enabled.</p>
+        pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_enabled = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AdvancedCostOptimizationMetrics`](crate::model::AdvancedCostOptimizationMetrics).
+        pub fn build(self) -> crate::model::AdvancedCostOptimizationMetrics {
+            crate::model::AdvancedCostOptimizationMetrics {
+                is_enabled: self.is_enabled.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AdvancedCostOptimizationMetrics {
+    /// Creates a new builder-style object to manufacture [`AdvancedCostOptimizationMetrics`](crate::model::AdvancedCostOptimizationMetrics).
+    pub fn builder() -> crate::model::advanced_cost_optimization_metrics::Builder {
+        crate::model::advanced_cost_optimization_metrics::Builder::default()
+    }
+}
+
+/// <p>A container for the bucket-level configuration for Amazon S3 Storage Lens.</p>
+/// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketLevel {
-    /// <p>A container for the bucket-level activity metrics for Amazon S3 Storage Lens</p>
+    /// <p>A container for the bucket-level activity metrics for S3 Storage Lens.</p>
     #[doc(hidden)]
     pub activity_metrics: std::option::Option<crate::model::ActivityMetrics>,
-    /// <p>A container for the bucket-level prefix-level metrics for S3 Storage Lens</p>
+    /// <p>A container for the prefix-level metrics for S3 Storage Lens. </p>
     #[doc(hidden)]
     pub prefix_level: std::option::Option<crate::model::PrefixLevel>,
+    /// <p>A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.</p>
+    #[doc(hidden)]
+    pub advanced_cost_optimization_metrics:
+        std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
+    /// <p>A container for bucket-level advanced data-protection metrics for S3 Storage Lens.</p>
+    #[doc(hidden)]
+    pub advanced_data_protection_metrics:
+        std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
+    /// <p>A container for bucket-level detailed status code metrics for S3 Storage Lens.</p>
+    #[doc(hidden)]
+    pub detailed_status_codes_metrics:
+        std::option::Option<crate::model::DetailedStatusCodesMetrics>,
 }
 impl BucketLevel {
-    /// <p>A container for the bucket-level activity metrics for Amazon S3 Storage Lens</p>
+    /// <p>A container for the bucket-level activity metrics for S3 Storage Lens.</p>
     pub fn activity_metrics(&self) -> std::option::Option<&crate::model::ActivityMetrics> {
         self.activity_metrics.as_ref()
     }
-    /// <p>A container for the bucket-level prefix-level metrics for S3 Storage Lens</p>
+    /// <p>A container for the prefix-level metrics for S3 Storage Lens. </p>
     pub fn prefix_level(&self) -> std::option::Option<&crate::model::PrefixLevel> {
         self.prefix_level.as_ref()
+    }
+    /// <p>A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.</p>
+    pub fn advanced_cost_optimization_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::AdvancedCostOptimizationMetrics> {
+        self.advanced_cost_optimization_metrics.as_ref()
+    }
+    /// <p>A container for bucket-level advanced data-protection metrics for S3 Storage Lens.</p>
+    pub fn advanced_data_protection_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::AdvancedDataProtectionMetrics> {
+        self.advanced_data_protection_metrics.as_ref()
+    }
+    /// <p>A container for bucket-level detailed status code metrics for S3 Storage Lens.</p>
+    pub fn detailed_status_codes_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::DetailedStatusCodesMetrics> {
+        self.detailed_status_codes_metrics.as_ref()
     }
 }
 /// See [`BucketLevel`](crate::model::BucketLevel).
@@ -1426,14 +1795,20 @@ pub mod bucket_level {
     pub struct Builder {
         pub(crate) activity_metrics: std::option::Option<crate::model::ActivityMetrics>,
         pub(crate) prefix_level: std::option::Option<crate::model::PrefixLevel>,
+        pub(crate) advanced_cost_optimization_metrics:
+            std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
+        pub(crate) advanced_data_protection_metrics:
+            std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
+        pub(crate) detailed_status_codes_metrics:
+            std::option::Option<crate::model::DetailedStatusCodesMetrics>,
     }
     impl Builder {
-        /// <p>A container for the bucket-level activity metrics for Amazon S3 Storage Lens</p>
+        /// <p>A container for the bucket-level activity metrics for S3 Storage Lens.</p>
         pub fn activity_metrics(mut self, input: crate::model::ActivityMetrics) -> Self {
             self.activity_metrics = Some(input);
             self
         }
-        /// <p>A container for the bucket-level activity metrics for Amazon S3 Storage Lens</p>
+        /// <p>A container for the bucket-level activity metrics for S3 Storage Lens.</p>
         pub fn set_activity_metrics(
             mut self,
             input: std::option::Option<crate::model::ActivityMetrics>,
@@ -1441,12 +1816,12 @@ pub mod bucket_level {
             self.activity_metrics = input;
             self
         }
-        /// <p>A container for the bucket-level prefix-level metrics for S3 Storage Lens</p>
+        /// <p>A container for the prefix-level metrics for S3 Storage Lens. </p>
         pub fn prefix_level(mut self, input: crate::model::PrefixLevel) -> Self {
             self.prefix_level = Some(input);
             self
         }
-        /// <p>A container for the bucket-level prefix-level metrics for S3 Storage Lens</p>
+        /// <p>A container for the prefix-level metrics for S3 Storage Lens. </p>
         pub fn set_prefix_level(
             mut self,
             input: std::option::Option<crate::model::PrefixLevel>,
@@ -1454,11 +1829,62 @@ pub mod bucket_level {
             self.prefix_level = input;
             self
         }
+        /// <p>A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.</p>
+        pub fn advanced_cost_optimization_metrics(
+            mut self,
+            input: crate::model::AdvancedCostOptimizationMetrics,
+        ) -> Self {
+            self.advanced_cost_optimization_metrics = Some(input);
+            self
+        }
+        /// <p>A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.</p>
+        pub fn set_advanced_cost_optimization_metrics(
+            mut self,
+            input: std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
+        ) -> Self {
+            self.advanced_cost_optimization_metrics = input;
+            self
+        }
+        /// <p>A container for bucket-level advanced data-protection metrics for S3 Storage Lens.</p>
+        pub fn advanced_data_protection_metrics(
+            mut self,
+            input: crate::model::AdvancedDataProtectionMetrics,
+        ) -> Self {
+            self.advanced_data_protection_metrics = Some(input);
+            self
+        }
+        /// <p>A container for bucket-level advanced data-protection metrics for S3 Storage Lens.</p>
+        pub fn set_advanced_data_protection_metrics(
+            mut self,
+            input: std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
+        ) -> Self {
+            self.advanced_data_protection_metrics = input;
+            self
+        }
+        /// <p>A container for bucket-level detailed status code metrics for S3 Storage Lens.</p>
+        pub fn detailed_status_codes_metrics(
+            mut self,
+            input: crate::model::DetailedStatusCodesMetrics,
+        ) -> Self {
+            self.detailed_status_codes_metrics = Some(input);
+            self
+        }
+        /// <p>A container for bucket-level detailed status code metrics for S3 Storage Lens.</p>
+        pub fn set_detailed_status_codes_metrics(
+            mut self,
+            input: std::option::Option<crate::model::DetailedStatusCodesMetrics>,
+        ) -> Self {
+            self.detailed_status_codes_metrics = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BucketLevel`](crate::model::BucketLevel).
         pub fn build(self) -> crate::model::BucketLevel {
             crate::model::BucketLevel {
                 activity_metrics: self.activity_metrics,
                 prefix_level: self.prefix_level,
+                advanced_cost_optimization_metrics: self.advanced_cost_optimization_metrics,
+                advanced_data_protection_metrics: self.advanced_data_protection_metrics,
+                detailed_status_codes_metrics: self.detailed_status_codes_metrics,
             }
         }
     }
@@ -1685,16 +2111,17 @@ impl SelectionCriteria {
     }
 }
 
-/// <p>A container for the activity metrics.</p>
+/// <p>The container element for Amazon S3 Storage Lens activity metrics. Activity metrics show details about how your storage is requested, such as requests (for example, All requests, Get requests, Put requests), bytes uploaded or downloaded, and errors.</p>
+/// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityMetrics {
-    /// <p>A container for whether the activity metrics are enabled.</p>
+    /// <p>A container that indicates whether activity metrics are enabled.</p>
     #[doc(hidden)]
     pub is_enabled: bool,
 }
 impl ActivityMetrics {
-    /// <p>A container for whether the activity metrics are enabled.</p>
+    /// <p>A container that indicates whether activity metrics are enabled.</p>
     pub fn is_enabled(&self) -> bool {
         self.is_enabled
     }
@@ -1708,12 +2135,12 @@ pub mod activity_metrics {
         pub(crate) is_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>A container for whether the activity metrics are enabled.</p>
+        /// <p>A container that indicates whether activity metrics are enabled.</p>
         pub fn is_enabled(mut self, input: bool) -> Self {
             self.is_enabled = Some(input);
             self
         }
-        /// <p>A container for whether the activity metrics are enabled.</p>
+        /// <p>A container that indicates whether activity metrics are enabled.</p>
         pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.is_enabled = input;
             self
@@ -1734,63 +2161,63 @@ impl ActivityMetrics {
 }
 
 /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
-/// <p>This is not supported for Amazon S3 on Outposts.</p>
+/// <p>This data type is not supported for Amazon S3 on Outposts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicAccessBlockConfiguration {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li> <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.</p> </li>
+    /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li>
     /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
     /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
-    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
     pub block_public_acls: bool,
     /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
-    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
     pub ignore_public_acls: bool,
     /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
-    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
     pub block_public_policy: bool,
     /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
-    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
     pub restrict_public_buckets: bool,
 }
 impl PublicAccessBlockConfiguration {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li> <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.</p> </li>
+    /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li>
     /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
     /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
-    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn block_public_acls(&self) -> bool {
         self.block_public_acls
     }
     /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
-    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn ignore_public_acls(&self) -> bool {
         self.ignore_public_acls
     }
     /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
-    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn block_public_policy(&self) -> bool {
         self.block_public_policy
     }
     /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
-    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn restrict_public_buckets(&self) -> bool {
         self.restrict_public_buckets
     }
@@ -1809,66 +2236,66 @@ pub mod public_access_block_configuration {
     impl Builder {
         /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
         /// <ul>
-        /// <li> <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.</p> </li>
+        /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li>
         /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
         /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
         /// </ul>
         /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
-        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn block_public_acls(mut self, input: bool) -> Self {
             self.block_public_acls = Some(input);
             self
         }
         /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
         /// <ul>
-        /// <li> <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.</p> </li>
+        /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li>
         /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
         /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
         /// </ul>
         /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
-        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn set_block_public_acls(mut self, input: std::option::Option<bool>) -> Self {
             self.block_public_acls = input;
             self
         }
         /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p>
         /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
-        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn ignore_public_acls(mut self, input: bool) -> Self {
             self.ignore_public_acls = Some(input);
             self
         }
         /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p>
         /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
-        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn set_ignore_public_acls(mut self, input: std::option::Option<bool>) -> Self {
             self.ignore_public_acls = input;
             self
         }
         /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
         /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
-        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn block_public_policy(mut self, input: bool) -> Self {
             self.block_public_policy = Some(input);
             self
         }
         /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
         /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
-        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn set_block_public_policy(mut self, input: std::option::Option<bool>) -> Self {
             self.block_public_policy = input;
             self
         }
         /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p>
         /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
-        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn restrict_public_buckets(mut self, input: bool) -> Self {
             self.restrict_public_buckets = Some(input);
             self
         }
         /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p>
         /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
-        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn set_restrict_public_buckets(mut self, input: std::option::Option<bool>) -> Self {
             self.restrict_public_buckets = input;
             self
@@ -1958,23 +2385,23 @@ impl PutMultiRegionAccessPointPolicyInput {
     }
 }
 
-/// <p></p>
+/// <p>A container for a key-value name pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Tag {
-    /// <p></p>
+    /// <p>Key of the tag</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>Value of the tag</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl S3Tag {
-    /// <p></p>
+    /// <p>Key of the tag</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p></p>
+    /// <p>Value of the tag</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -1989,22 +2416,22 @@ pub mod s3_tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>Key of the tag</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>Key of the tag</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p></p>
+        /// <p>Value of the tag</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>Value of the tag</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2419,9 +2846,7 @@ pub struct LifecycleRule {
     #[doc(hidden)]
     pub noncurrent_version_transitions:
         std::option::Option<std::vec::Vec<crate::model::NoncurrentVersionTransition>>,
-    /// <p>The noncurrent version expiration of the lifecycle rule.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
-    /// </note>
+    /// <p>The noncurrent version expiration of the lifecycle rule.</p>
     #[doc(hidden)]
     pub noncurrent_version_expiration:
         std::option::Option<crate::model::NoncurrentVersionExpiration>,
@@ -2461,9 +2886,7 @@ impl LifecycleRule {
     ) -> std::option::Option<&[crate::model::NoncurrentVersionTransition]> {
         self.noncurrent_version_transitions.as_deref()
     }
-    /// <p>The noncurrent version expiration of the lifecycle rule.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
-    /// </note>
+    /// <p>The noncurrent version expiration of the lifecycle rule.</p>
     pub fn noncurrent_version_expiration(
         &self,
     ) -> std::option::Option<&crate::model::NoncurrentVersionExpiration> {
@@ -2593,9 +3016,7 @@ pub mod lifecycle_rule {
             self.noncurrent_version_transitions = input;
             self
         }
-        /// <p>The noncurrent version expiration of the lifecycle rule.</p> <note>
-        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
-        /// </note>
+        /// <p>The noncurrent version expiration of the lifecycle rule.</p>
         pub fn noncurrent_version_expiration(
             mut self,
             input: crate::model::NoncurrentVersionExpiration,
@@ -2603,9 +3024,7 @@ pub mod lifecycle_rule {
             self.noncurrent_version_expiration = Some(input);
             self
         }
-        /// <p>The noncurrent version expiration of the lifecycle rule.</p> <note>
-        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
-        /// </note>
+        /// <p>The noncurrent version expiration of the lifecycle rule.</p>
         pub fn set_noncurrent_version_expiration(
             mut self,
             input: std::option::Option<crate::model::NoncurrentVersionExpiration>,
@@ -2706,11 +3125,18 @@ pub struct NoncurrentVersionExpiration {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
     pub noncurrent_days: i32,
+    /// <p>Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent noncurrent versions, S3 on Outposts will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
+    pub newer_noncurrent_versions: std::option::Option<i32>,
 }
 impl NoncurrentVersionExpiration {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn noncurrent_days(&self) -> i32 {
         self.noncurrent_days
+    }
+    /// <p>Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent noncurrent versions, S3 on Outposts will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn newer_noncurrent_versions(&self) -> std::option::Option<i32> {
+        self.newer_noncurrent_versions
     }
 }
 /// See [`NoncurrentVersionExpiration`](crate::model::NoncurrentVersionExpiration).
@@ -2720,6 +3146,7 @@ pub mod noncurrent_version_expiration {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) noncurrent_days: std::option::Option<i32>,
+        pub(crate) newer_noncurrent_versions: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -2732,10 +3159,21 @@ pub mod noncurrent_version_expiration {
             self.noncurrent_days = input;
             self
         }
+        /// <p>Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent noncurrent versions, S3 on Outposts will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn newer_noncurrent_versions(mut self, input: i32) -> Self {
+            self.newer_noncurrent_versions = Some(input);
+            self
+        }
+        /// <p>Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent noncurrent versions, S3 on Outposts will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_newer_noncurrent_versions(mut self, input: std::option::Option<i32>) -> Self {
+            self.newer_noncurrent_versions = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NoncurrentVersionExpiration`](crate::model::NoncurrentVersionExpiration).
         pub fn build(self) -> crate::model::NoncurrentVersionExpiration {
             crate::model::NoncurrentVersionExpiration {
                 noncurrent_days: self.noncurrent_days.unwrap_or_default(),
+                newer_noncurrent_versions: self.newer_noncurrent_versions,
             }
         }
     }
@@ -3118,12 +3556,18 @@ pub struct LifecycleRuleFilter {
     /// </important>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>A container for a key-value name pair.</p>
     #[doc(hidden)]
     pub tag: std::option::Option<crate::model::S3Tag>,
     /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
     #[doc(hidden)]
     pub and: std::option::Option<crate::model::LifecycleRuleAndOperator>,
+    /// <p>Minimum object size to which the rule applies.</p>
+    #[doc(hidden)]
+    pub object_size_greater_than: std::option::Option<i64>,
+    /// <p>Maximum object size to which the rule applies.</p>
+    #[doc(hidden)]
+    pub object_size_less_than: std::option::Option<i64>,
 }
 impl LifecycleRuleFilter {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
@@ -3132,13 +3576,21 @@ impl LifecycleRuleFilter {
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p></p>
+    /// <p>A container for a key-value name pair.</p>
     pub fn tag(&self) -> std::option::Option<&crate::model::S3Tag> {
         self.tag.as_ref()
     }
     /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
     pub fn and(&self) -> std::option::Option<&crate::model::LifecycleRuleAndOperator> {
         self.and.as_ref()
+    }
+    /// <p>Minimum object size to which the rule applies.</p>
+    pub fn object_size_greater_than(&self) -> std::option::Option<i64> {
+        self.object_size_greater_than
+    }
+    /// <p>Maximum object size to which the rule applies.</p>
+    pub fn object_size_less_than(&self) -> std::option::Option<i64> {
+        self.object_size_less_than
     }
 }
 /// See [`LifecycleRuleFilter`](crate::model::LifecycleRuleFilter).
@@ -3150,6 +3602,8 @@ pub mod lifecycle_rule_filter {
         pub(crate) prefix: std::option::Option<std::string::String>,
         pub(crate) tag: std::option::Option<crate::model::S3Tag>,
         pub(crate) and: std::option::Option<crate::model::LifecycleRuleAndOperator>,
+        pub(crate) object_size_greater_than: std::option::Option<i64>,
+        pub(crate) object_size_less_than: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
@@ -3166,12 +3620,12 @@ pub mod lifecycle_rule_filter {
             self.prefix = input;
             self
         }
-        /// <p></p>
+        /// <p>A container for a key-value name pair.</p>
         pub fn tag(mut self, input: crate::model::S3Tag) -> Self {
             self.tag = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>A container for a key-value name pair.</p>
         pub fn set_tag(mut self, input: std::option::Option<crate::model::S3Tag>) -> Self {
             self.tag = input;
             self
@@ -3189,12 +3643,34 @@ pub mod lifecycle_rule_filter {
             self.and = input;
             self
         }
+        /// <p>Minimum object size to which the rule applies.</p>
+        pub fn object_size_greater_than(mut self, input: i64) -> Self {
+            self.object_size_greater_than = Some(input);
+            self
+        }
+        /// <p>Minimum object size to which the rule applies.</p>
+        pub fn set_object_size_greater_than(mut self, input: std::option::Option<i64>) -> Self {
+            self.object_size_greater_than = input;
+            self
+        }
+        /// <p>Maximum object size to which the rule applies.</p>
+        pub fn object_size_less_than(mut self, input: i64) -> Self {
+            self.object_size_less_than = Some(input);
+            self
+        }
+        /// <p>Maximum object size to which the rule applies.</p>
+        pub fn set_object_size_less_than(mut self, input: std::option::Option<i64>) -> Self {
+            self.object_size_less_than = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LifecycleRuleFilter`](crate::model::LifecycleRuleFilter).
         pub fn build(self) -> crate::model::LifecycleRuleFilter {
             crate::model::LifecycleRuleFilter {
                 prefix: self.prefix,
                 tag: self.tag,
                 and: self.and,
+                object_size_greater_than: self.object_size_greater_than,
+                object_size_less_than: self.object_size_less_than,
             }
         }
     }
@@ -3216,6 +3692,12 @@ pub struct LifecycleRuleAndOperator {
     /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
+    /// <p>Minimum object size to which the rule applies.</p>
+    #[doc(hidden)]
+    pub object_size_greater_than: std::option::Option<i64>,
+    /// <p>Maximum object size to which the rule applies.</p>
+    #[doc(hidden)]
+    pub object_size_less_than: std::option::Option<i64>,
 }
 impl LifecycleRuleAndOperator {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
@@ -3226,6 +3708,14 @@ impl LifecycleRuleAndOperator {
     pub fn tags(&self) -> std::option::Option<&[crate::model::S3Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Minimum object size to which the rule applies.</p>
+    pub fn object_size_greater_than(&self) -> std::option::Option<i64> {
+        self.object_size_greater_than
+    }
+    /// <p>Maximum object size to which the rule applies.</p>
+    pub fn object_size_less_than(&self) -> std::option::Option<i64> {
+        self.object_size_less_than
+    }
 }
 /// See [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator).
 pub mod lifecycle_rule_and_operator {
@@ -3235,6 +3725,8 @@ pub mod lifecycle_rule_and_operator {
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
+        pub(crate) object_size_greater_than: std::option::Option<i64>,
+        pub(crate) object_size_less_than: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>Prefix identifying one or more objects to which the rule applies.</p>
@@ -3266,11 +3758,33 @@ pub mod lifecycle_rule_and_operator {
             self.tags = input;
             self
         }
+        /// <p>Minimum object size to which the rule applies.</p>
+        pub fn object_size_greater_than(mut self, input: i64) -> Self {
+            self.object_size_greater_than = Some(input);
+            self
+        }
+        /// <p>Minimum object size to which the rule applies.</p>
+        pub fn set_object_size_greater_than(mut self, input: std::option::Option<i64>) -> Self {
+            self.object_size_greater_than = input;
+            self
+        }
+        /// <p>Maximum object size to which the rule applies.</p>
+        pub fn object_size_less_than(mut self, input: i64) -> Self {
+            self.object_size_less_than = Some(input);
+            self
+        }
+        /// <p>Maximum object size to which the rule applies.</p>
+        pub fn set_object_size_less_than(mut self, input: std::option::Option<i64>) -> Self {
+            self.object_size_less_than = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator).
         pub fn build(self) -> crate::model::LifecycleRuleAndOperator {
             crate::model::LifecycleRuleAndOperator {
                 prefix: self.prefix,
                 tags: self.tags,
+                object_size_greater_than: self.object_size_greater_than,
+                object_size_less_than: self.object_size_less_than,
             }
         }
     }
@@ -3381,7 +3895,7 @@ pub struct ObjectLambdaConfiguration {
     /// <p>A container for whether the CloudWatch metrics configuration is enabled.</p>
     #[doc(hidden)]
     pub cloud_watch_metrics_enabled: bool,
-    /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code> and <code>GetObject-PartNumber</code>.</p>
+    /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
     #[doc(hidden)]
     pub allowed_features:
         std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAllowedFeature>>,
@@ -3399,7 +3913,7 @@ impl ObjectLambdaConfiguration {
     pub fn cloud_watch_metrics_enabled(&self) -> bool {
         self.cloud_watch_metrics_enabled
     }
-    /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code> and <code>GetObject-PartNumber</code>.</p>
+    /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
     pub fn allowed_features(
         &self,
     ) -> std::option::Option<&[crate::model::ObjectLambdaAllowedFeature]> {
@@ -3454,14 +3968,14 @@ pub mod object_lambda_configuration {
         ///
         /// To override the contents of this collection use [`set_allowed_features`](Self::set_allowed_features).
         ///
-        /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code> and <code>GetObject-PartNumber</code>.</p>
+        /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
         pub fn allowed_features(mut self, input: crate::model::ObjectLambdaAllowedFeature) -> Self {
             let mut v = self.allowed_features.unwrap_or_default();
             v.push(input);
             self.allowed_features = Some(v);
             self
         }
-        /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code> and <code>GetObject-PartNumber</code>.</p>
+        /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
         pub fn set_allowed_features(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAllowedFeature>>,
@@ -3515,7 +4029,7 @@ impl ObjectLambdaConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectLambdaTransformationConfiguration {
-    /// <p>A container for the action of an Object Lambda Access Point configuration. Valid input is <code>GetObject</code>.</p>
+    /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
     #[doc(hidden)]
     pub actions: std::option::Option<
         std::vec::Vec<crate::model::ObjectLambdaTransformationConfigurationAction>,
@@ -3526,7 +4040,7 @@ pub struct ObjectLambdaTransformationConfiguration {
         std::option::Option<crate::model::ObjectLambdaContentTransformation>,
 }
 impl ObjectLambdaTransformationConfiguration {
-    /// <p>A container for the action of an Object Lambda Access Point configuration. Valid input is <code>GetObject</code>.</p>
+    /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
     pub fn actions(
         &self,
     ) -> std::option::Option<&[crate::model::ObjectLambdaTransformationConfigurationAction]> {
@@ -3556,7 +4070,7 @@ pub mod object_lambda_transformation_configuration {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>A container for the action of an Object Lambda Access Point configuration. Valid input is <code>GetObject</code>.</p>
+        /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
         pub fn actions(
             mut self,
             input: crate::model::ObjectLambdaTransformationConfigurationAction,
@@ -3566,7 +4080,7 @@ pub mod object_lambda_transformation_configuration {
             self.actions = Some(v);
             self
         }
-        /// <p>A container for the action of an Object Lambda Access Point configuration. Valid input is <code>GetObject</code>.</p>
+        /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<
@@ -4175,7 +4689,7 @@ pub struct MultiRegionAccessPointReport {
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
     pub public_access_block: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The current status of the Multi-Region Access Point.</p>
@@ -4200,7 +4714,7 @@ impl MultiRegionAccessPointReport {
         self.created_at.as_ref()
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
     pub fn public_access_block(
         &self,
     ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
@@ -4265,7 +4779,7 @@ pub mod multi_region_access_point_report {
             self
         }
         /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
         pub fn public_access_block(
             mut self,
             input: crate::model::PublicAccessBlockConfiguration,
@@ -4274,7 +4788,7 @@ pub mod multi_region_access_point_report {
             self
         }
         /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
         pub fn set_public_access_block(
             mut self,
             input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
@@ -5107,6 +5621,9 @@ pub struct AccessPoint {
     /// <p>The name or alias of the access point.</p>
     #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+    #[doc(hidden)]
+    pub bucket_account_id: std::option::Option<std::string::String>,
 }
 impl AccessPoint {
     /// <p>The name of this access point.</p>
@@ -5135,6 +5652,10 @@ impl AccessPoint {
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
+    /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+    pub fn bucket_account_id(&self) -> std::option::Option<&str> {
+        self.bucket_account_id.as_deref()
+    }
 }
 /// See [`AccessPoint`](crate::model::AccessPoint).
 pub mod access_point {
@@ -5148,6 +5669,7 @@ pub mod access_point {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) access_point_arn: std::option::Option<std::string::String>,
         pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) bucket_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of this access point.</p>
@@ -5223,6 +5745,19 @@ pub mod access_point {
             self.alias = input;
             self
         }
+        /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+        pub fn bucket_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+        pub fn set_bucket_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bucket_account_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AccessPoint`](crate::model::AccessPoint).
         pub fn build(self) -> crate::model::AccessPoint {
             crate::model::AccessPoint {
@@ -5232,6 +5767,7 @@ pub mod access_point {
                 bucket: self.bucket,
                 access_point_arn: self.access_point_arn,
                 alias: self.alias,
+                bucket_account_id: self.bucket_account_id,
             }
         }
     }
@@ -6359,7 +6895,7 @@ pub struct CreateMultiRegionAccessPointInput {
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
     pub public_access_block: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
@@ -6372,7 +6908,7 @@ impl CreateMultiRegionAccessPointInput {
         self.name.as_deref()
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
     pub fn public_access_block(
         &self,
     ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
@@ -6406,7 +6942,7 @@ pub mod create_multi_region_access_point_input {
             self
         }
         /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
         pub fn public_access_block(
             mut self,
             input: crate::model::PublicAccessBlockConfiguration,
@@ -6415,7 +6951,7 @@ pub mod create_multi_region_access_point_input {
             self
         }
         /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
         pub fn set_public_access_block(
             mut self,
             input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
@@ -8418,7 +8954,7 @@ pub struct JobOperation {
     /// <p>Directs the specified job to run a PUT Copy object call on every object in the manifest.</p>
     #[doc(hidden)]
     pub s3_put_object_copy: std::option::Option<crate::model::S3CopyObjectOperation>,
-    /// <p>Directs the specified job to run a PUT Object acl call on every object in the manifest.</p>
+    /// <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.</p>
     #[doc(hidden)]
     pub s3_put_object_acl: std::option::Option<crate::model::S3SetObjectAclOperation>,
     /// <p>Directs the specified job to run a PUT Object tagging call on every object in the manifest.</p>
@@ -8450,7 +8986,7 @@ impl JobOperation {
     pub fn s3_put_object_copy(&self) -> std::option::Option<&crate::model::S3CopyObjectOperation> {
         self.s3_put_object_copy.as_ref()
     }
-    /// <p>Directs the specified job to run a PUT Object acl call on every object in the manifest.</p>
+    /// <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.</p>
     pub fn s3_put_object_acl(&self) -> std::option::Option<&crate::model::S3SetObjectAclOperation> {
         self.s3_put_object_acl.as_ref()
     }
@@ -8540,12 +9076,12 @@ pub mod job_operation {
             self.s3_put_object_copy = input;
             self
         }
-        /// <p>Directs the specified job to run a PUT Object acl call on every object in the manifest.</p>
+        /// <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.</p>
         pub fn s3_put_object_acl(mut self, input: crate::model::S3SetObjectAclOperation) -> Self {
             self.s3_put_object_acl = Some(input);
             self
         }
-        /// <p>Directs the specified job to run a PUT Object acl call on every object in the manifest.</p>
+        /// <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.</p>
         pub fn set_s3_put_object_acl(
             mut self,
             input: std::option::Option<crate::model::S3SetObjectAclOperation>,
@@ -9374,7 +9910,7 @@ impl S3SetObjectTaggingOperation {
     }
 }
 
-/// <p>Contains the configuration parameters for a Set Object ACL operation. S3 Batch Operations passes every object to the underlying PUT Object acl API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html">PUT Object acl</a>.</p>
+/// <p>Contains the configuration parameters for a Set Object ACL operation. S3 Batch Operations passes every object to the underlying <code>PutObjectAcl</code> API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html"> <code>PutObjectAcl</code> </a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3SetObjectAclOperation {
@@ -10142,7 +10678,7 @@ impl S3ObjectOwner {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3CopyObjectOperation {
-    /// <p>Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".</p>
+    /// <p>Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p>
     #[doc(hidden)]
     pub target_resource: std::option::Option<std::string::String>,
     /// <p></p>
@@ -10200,7 +10736,7 @@ pub struct S3CopyObjectOperation {
     pub checksum_algorithm: std::option::Option<crate::model::S3ChecksumAlgorithm>,
 }
 impl S3CopyObjectOperation {
-    /// <p>Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".</p>
+    /// <p>Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p>
     pub fn target_resource(&self) -> std::option::Option<&str> {
         self.target_resource.as_deref()
     }
@@ -10308,12 +10844,12 @@ pub mod s3_copy_object_operation {
         pub(crate) checksum_algorithm: std::option::Option<crate::model::S3ChecksumAlgorithm>,
     }
     impl Builder {
-        /// <p>Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".</p>
+        /// <p>Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p>
         pub fn target_resource(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_resource = Some(input.into());
             self
         }
-        /// <p>Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".</p>
+        /// <p>Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p>
         pub fn set_target_resource(
             mut self,
             input: std::option::Option<std::string::String>,

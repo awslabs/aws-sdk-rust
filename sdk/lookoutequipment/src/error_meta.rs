@@ -286,6 +286,9 @@ impl From<crate::error::DeleteDatasetError> for Error {
             crate::error::DeleteDatasetErrorKind::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
+            crate::error::DeleteDatasetErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::error::DeleteDatasetErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
@@ -366,6 +369,9 @@ impl From<crate::error::DeleteLabelError> for Error {
             crate::error::DeleteLabelErrorKind::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
+            crate::error::DeleteLabelErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::error::DeleteLabelErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
@@ -405,6 +411,9 @@ impl From<crate::error::DeleteLabelGroupError> for Error {
             crate::error::DeleteLabelGroupErrorKind::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
+            crate::error::DeleteLabelGroupErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::error::DeleteLabelGroupErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
@@ -441,6 +450,9 @@ impl From<crate::error::DeleteModelError> for Error {
             }
             crate::error::DeleteModelErrorKind::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::error::DeleteModelErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
             }
             crate::error::DeleteModelErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))

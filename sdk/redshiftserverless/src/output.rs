@@ -610,6 +610,57 @@ impl UpdateSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RestoreTableFromSnapshotOutput {
+    /// <p>The TableRestoreStatus object that contains the status of the restore operation.</p>
+    #[doc(hidden)]
+    pub table_restore_status: std::option::Option<crate::model::TableRestoreStatus>,
+}
+impl RestoreTableFromSnapshotOutput {
+    /// <p>The TableRestoreStatus object that contains the status of the restore operation.</p>
+    pub fn table_restore_status(&self) -> std::option::Option<&crate::model::TableRestoreStatus> {
+        self.table_restore_status.as_ref()
+    }
+}
+/// See [`RestoreTableFromSnapshotOutput`](crate::output::RestoreTableFromSnapshotOutput).
+pub mod restore_table_from_snapshot_output {
+
+    /// A builder for [`RestoreTableFromSnapshotOutput`](crate::output::RestoreTableFromSnapshotOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) table_restore_status: std::option::Option<crate::model::TableRestoreStatus>,
+    }
+    impl Builder {
+        /// <p>The TableRestoreStatus object that contains the status of the restore operation.</p>
+        pub fn table_restore_status(mut self, input: crate::model::TableRestoreStatus) -> Self {
+            self.table_restore_status = Some(input);
+            self
+        }
+        /// <p>The TableRestoreStatus object that contains the status of the restore operation.</p>
+        pub fn set_table_restore_status(
+            mut self,
+            input: std::option::Option<crate::model::TableRestoreStatus>,
+        ) -> Self {
+            self.table_restore_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RestoreTableFromSnapshotOutput`](crate::output::RestoreTableFromSnapshotOutput).
+        pub fn build(self) -> crate::output::RestoreTableFromSnapshotOutput {
+            crate::output::RestoreTableFromSnapshotOutput {
+                table_restore_status: self.table_restore_status,
+            }
+        }
+    }
+}
+impl RestoreTableFromSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreTableFromSnapshotOutput`](crate::output::RestoreTableFromSnapshotOutput).
+    pub fn builder() -> crate::output::restore_table_from_snapshot_output::Builder {
+        crate::output::restore_table_from_snapshot_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreFromSnapshotOutput {
     /// <p>The name of the snapshot used to restore the namespace.</p>
     #[doc(hidden)]
@@ -705,6 +756,86 @@ impl RestoreFromSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListTableRestoreStatusOutput {
+    /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will returns results on the next page.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
+    #[doc(hidden)]
+    pub table_restore_statuses:
+        std::option::Option<std::vec::Vec<crate::model::TableRestoreStatus>>,
+}
+impl ListTableRestoreStatusOutput {
+    /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will returns results on the next page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
+    pub fn table_restore_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::TableRestoreStatus]> {
+        self.table_restore_statuses.as_deref()
+    }
+}
+/// See [`ListTableRestoreStatusOutput`](crate::output::ListTableRestoreStatusOutput).
+pub mod list_table_restore_status_output {
+
+    /// A builder for [`ListTableRestoreStatusOutput`](crate::output::ListTableRestoreStatusOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) table_restore_statuses:
+            std::option::Option<std::vec::Vec<crate::model::TableRestoreStatus>>,
+    }
+    impl Builder {
+        /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will returns results on the next page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will returns results on the next page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `table_restore_statuses`.
+        ///
+        /// To override the contents of this collection use [`set_table_restore_statuses`](Self::set_table_restore_statuses).
+        ///
+        /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
+        pub fn table_restore_statuses(mut self, input: crate::model::TableRestoreStatus) -> Self {
+            let mut v = self.table_restore_statuses.unwrap_or_default();
+            v.push(input);
+            self.table_restore_statuses = Some(v);
+            self
+        }
+        /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
+        pub fn set_table_restore_statuses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TableRestoreStatus>>,
+        ) -> Self {
+            self.table_restore_statuses = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTableRestoreStatusOutput`](crate::output::ListTableRestoreStatusOutput).
+        pub fn build(self) -> crate::output::ListTableRestoreStatusOutput {
+            crate::output::ListTableRestoreStatusOutput {
+                next_token: self.next_token,
+                table_restore_statuses: self.table_restore_statuses,
+            }
+        }
+    }
+}
+impl ListTableRestoreStatusOutput {
+    /// Creates a new builder-style object to manufacture [`ListTableRestoreStatusOutput`](crate::output::ListTableRestoreStatusOutput).
+    pub fn builder() -> crate::output::list_table_restore_status_output::Builder {
+        crate::output::list_table_restore_status_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSnapshotsOutput {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
@@ -775,6 +906,57 @@ impl ListSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`ListSnapshotsOutput`](crate::output::ListSnapshotsOutput).
     pub fn builder() -> crate::output::list_snapshots_output::Builder {
         crate::output::list_snapshots_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetTableRestoreStatusOutput {
+    /// <p>The returned <code>TableRestoreStatus</code> object that contains information about the status of your <code>RestoreTableFromSnapshot</code> request.</p>
+    #[doc(hidden)]
+    pub table_restore_status: std::option::Option<crate::model::TableRestoreStatus>,
+}
+impl GetTableRestoreStatusOutput {
+    /// <p>The returned <code>TableRestoreStatus</code> object that contains information about the status of your <code>RestoreTableFromSnapshot</code> request.</p>
+    pub fn table_restore_status(&self) -> std::option::Option<&crate::model::TableRestoreStatus> {
+        self.table_restore_status.as_ref()
+    }
+}
+/// See [`GetTableRestoreStatusOutput`](crate::output::GetTableRestoreStatusOutput).
+pub mod get_table_restore_status_output {
+
+    /// A builder for [`GetTableRestoreStatusOutput`](crate::output::GetTableRestoreStatusOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) table_restore_status: std::option::Option<crate::model::TableRestoreStatus>,
+    }
+    impl Builder {
+        /// <p>The returned <code>TableRestoreStatus</code> object that contains information about the status of your <code>RestoreTableFromSnapshot</code> request.</p>
+        pub fn table_restore_status(mut self, input: crate::model::TableRestoreStatus) -> Self {
+            self.table_restore_status = Some(input);
+            self
+        }
+        /// <p>The returned <code>TableRestoreStatus</code> object that contains information about the status of your <code>RestoreTableFromSnapshot</code> request.</p>
+        pub fn set_table_restore_status(
+            mut self,
+            input: std::option::Option<crate::model::TableRestoreStatus>,
+        ) -> Self {
+            self.table_restore_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTableRestoreStatusOutput`](crate::output::GetTableRestoreStatusOutput).
+        pub fn build(self) -> crate::output::GetTableRestoreStatusOutput {
+            crate::output::GetTableRestoreStatusOutput {
+                table_restore_status: self.table_restore_status,
+            }
+        }
+    }
+}
+impl GetTableRestoreStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetTableRestoreStatusOutput`](crate::output::GetTableRestoreStatusOutput).
+    pub fn builder() -> crate::output::get_table_restore_status_output::Builder {
+        crate::output::get_table_restore_status_output::Builder::default()
     }
 }
 

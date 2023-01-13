@@ -360,6 +360,66 @@ impl DomainLimitExceeded {
     }
 }
 
+/// <p> This error is returned if you call <code>AssociateDelegationSignerToDomain</code> when the specified domain has reached the maximum number of DS records. You can't add any additional DS records unless you delete an existing one first. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DnssecLimitExceeded {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl DnssecLimitExceeded {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DnssecLimitExceeded {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DnssecLimitExceeded")?;
+        if let Some(inner_7) = &self.message {
+            {
+                write!(f, ": {}", inner_7)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DnssecLimitExceeded {}
+/// See [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
+pub mod dnssec_limit_exceeded {
+
+    /// A builder for [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
+        pub fn build(self) -> crate::error::DnssecLimitExceeded {
+            crate::error::DnssecLimitExceeded {
+                message: self.message,
+            }
+        }
+    }
+}
+impl DnssecLimitExceeded {
+    /// Creates a new builder-style object to manufacture [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
+    pub fn builder() -> crate::error::dnssec_limit_exceeded::Builder {
+        crate::error::dnssec_limit_exceeded::Builder::default()
+    }
+}
+
 /// Error type for the `AcceptDomainTransferFromAnotherAwsAccount` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -524,6 +584,184 @@ impl std::error::Error for AcceptDomainTransferFromAnotherAwsAccountError {
                 Some(_inner)
             }
             AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `AssociateDelegationSignerToDomain` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AssociateDelegationSignerToDomainError {
+    /// Kind of error that occurred.
+    pub kind: AssociateDelegationSignerToDomainErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AssociateDelegationSignerToDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateDelegationSignerToDomainErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `AssociateDelegationSignerToDomain` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssociateDelegationSignerToDomainErrorKind {
+    /// <p> This error is returned if you call <code>AssociateDelegationSignerToDomain</code> when the specified domain has reached the maximum number of DS records. You can't add any additional DS records unless you delete an existing one first. </p>
+    DnssecLimitExceeded(crate::error::DnssecLimitExceeded),
+    /// <p>The request is already in progress for the domain.</p>
+    DuplicateRequest(crate::error::DuplicateRequest),
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
+    InvalidInput(crate::error::InvalidInput),
+    /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
+    OperationLimitExceeded(crate::error::OperationLimitExceeded),
+    /// <p>The top-level domain does not support this operation.</p>
+    TldRulesViolation(crate::error::TldRulesViolation),
+    /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
+    UnsupportedTld(crate::error::UnsupportedTld),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for AssociateDelegationSignerToDomainError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssociateDelegationSignerToDomainErrorKind::DnssecLimitExceeded(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateDelegationSignerToDomainErrorKind::DuplicateRequest(_inner) => _inner.fmt(f),
+            AssociateDelegationSignerToDomainErrorKind::InvalidInput(_inner) => _inner.fmt(f),
+            AssociateDelegationSignerToDomainErrorKind::OperationLimitExceeded(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateDelegationSignerToDomainErrorKind::TldRulesViolation(_inner) => _inner.fmt(f),
+            AssociateDelegationSignerToDomainErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
+            AssociateDelegationSignerToDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AssociateDelegationSignerToDomainError {
+    fn code(&self) -> Option<&str> {
+        AssociateDelegationSignerToDomainError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssociateDelegationSignerToDomainError {
+    /// Creates a new `AssociateDelegationSignerToDomainError`.
+    pub fn new(
+        kind: AssociateDelegationSignerToDomainErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AssociateDelegationSignerToDomainError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssociateDelegationSignerToDomainErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AssociateDelegationSignerToDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssociateDelegationSignerToDomainErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AssociateDelegationSignerToDomainErrorKind::DnssecLimitExceeded`.
+    pub fn is_dnssec_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateDelegationSignerToDomainErrorKind::DnssecLimitExceeded(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateDelegationSignerToDomainErrorKind::DuplicateRequest`.
+    pub fn is_duplicate_request(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateDelegationSignerToDomainErrorKind::DuplicateRequest(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateDelegationSignerToDomainErrorKind::InvalidInput`.
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateDelegationSignerToDomainErrorKind::InvalidInput(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateDelegationSignerToDomainErrorKind::OperationLimitExceeded`.
+    pub fn is_operation_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateDelegationSignerToDomainErrorKind::OperationLimitExceeded(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateDelegationSignerToDomainErrorKind::TldRulesViolation`.
+    pub fn is_tld_rules_violation(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateDelegationSignerToDomainErrorKind::TldRulesViolation(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateDelegationSignerToDomainErrorKind::UnsupportedTld`.
+    pub fn is_unsupported_tld(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateDelegationSignerToDomainErrorKind::UnsupportedTld(_)
+        )
+    }
+}
+impl std::error::Error for AssociateDelegationSignerToDomainError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssociateDelegationSignerToDomainErrorKind::DnssecLimitExceeded(_inner) => Some(_inner),
+            AssociateDelegationSignerToDomainErrorKind::DuplicateRequest(_inner) => Some(_inner),
+            AssociateDelegationSignerToDomainErrorKind::InvalidInput(_inner) => Some(_inner),
+            AssociateDelegationSignerToDomainErrorKind::OperationLimitExceeded(_inner) => {
+                Some(_inner)
+            }
+            AssociateDelegationSignerToDomainErrorKind::TldRulesViolation(_inner) => Some(_inner),
+            AssociateDelegationSignerToDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
+            AssociateDelegationSignerToDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1452,6 +1690,181 @@ impl std::error::Error for DisableDomainTransferLockError {
             DisableDomainTransferLockErrorKind::TldRulesViolation(_inner) => Some(_inner),
             DisableDomainTransferLockErrorKind::UnsupportedTld(_inner) => Some(_inner),
             DisableDomainTransferLockErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DisassociateDelegationSignerFromDomain` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DisassociateDelegationSignerFromDomainError {
+    /// Kind of error that occurred.
+    pub kind: DisassociateDelegationSignerFromDomainErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateDelegationSignerFromDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateDelegationSignerFromDomainErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DisassociateDelegationSignerFromDomain` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisassociateDelegationSignerFromDomainErrorKind {
+    /// <p>The request is already in progress for the domain.</p>
+    DuplicateRequest(crate::error::DuplicateRequest),
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
+    InvalidInput(crate::error::InvalidInput),
+    /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
+    OperationLimitExceeded(crate::error::OperationLimitExceeded),
+    /// <p>The top-level domain does not support this operation.</p>
+    TldRulesViolation(crate::error::TldRulesViolation),
+    /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
+    UnsupportedTld(crate::error::UnsupportedTld),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DisassociateDelegationSignerFromDomainError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateDelegationSignerFromDomainErrorKind::InvalidInput(_inner) => _inner.fmt(f),
+            DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateDelegationSignerFromDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DisassociateDelegationSignerFromDomainError {
+    fn code(&self) -> Option<&str> {
+        DisassociateDelegationSignerFromDomainError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisassociateDelegationSignerFromDomainError {
+    /// Creates a new `DisassociateDelegationSignerFromDomainError`.
+    pub fn new(
+        kind: DisassociateDelegationSignerFromDomainErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DisassociateDelegationSignerFromDomainError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisassociateDelegationSignerFromDomainErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DisassociateDelegationSignerFromDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisassociateDelegationSignerFromDomainErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest`.
+    pub fn is_duplicate_request(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateDelegationSignerFromDomainErrorKind::InvalidInput`.
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateDelegationSignerFromDomainErrorKind::InvalidInput(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded`.
+    pub fn is_operation_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation`.
+    pub fn is_tld_rules_violation(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld`.
+    pub fn is_unsupported_tld(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld(_)
+        )
+    }
+}
+impl std::error::Error for DisassociateDelegationSignerFromDomainError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest(_inner) => {
+                Some(_inner)
+            }
+            DisassociateDelegationSignerFromDomainErrorKind::InvalidInput(_inner) => Some(_inner),
+            DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded(_inner) => {
+                Some(_inner)
+            }
+            DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation(_inner) => {
+                Some(_inner)
+            }
+            DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
+            DisassociateDelegationSignerFromDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2663,6 +3076,127 @@ impl std::error::Error for ListTagsForDomainError {
     }
 }
 
+/// Error type for the `PushDomain` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PushDomainError {
+    /// Kind of error that occurred.
+    pub kind: PushDomainErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PushDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PushDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `PushDomain` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PushDomainErrorKind {
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
+    InvalidInput(crate::error::InvalidInput),
+    /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
+    OperationLimitExceeded(crate::error::OperationLimitExceeded),
+    /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
+    UnsupportedTld(crate::error::UnsupportedTld),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for PushDomainError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PushDomainErrorKind::InvalidInput(_inner) => _inner.fmt(f),
+            PushDomainErrorKind::OperationLimitExceeded(_inner) => _inner.fmt(f),
+            PushDomainErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
+            PushDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PushDomainError {
+    fn code(&self) -> Option<&str> {
+        PushDomainError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PushDomainError {
+    /// Creates a new `PushDomainError`.
+    pub fn new(kind: PushDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PushDomainError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PushDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PushDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PushDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PushDomainErrorKind::InvalidInput`.
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, PushDomainErrorKind::InvalidInput(_))
+    }
+    /// Returns `true` if the error kind is `PushDomainErrorKind::OperationLimitExceeded`.
+    pub fn is_operation_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, PushDomainErrorKind::OperationLimitExceeded(_))
+    }
+    /// Returns `true` if the error kind is `PushDomainErrorKind::UnsupportedTld`.
+    pub fn is_unsupported_tld(&self) -> bool {
+        matches!(&self.kind, PushDomainErrorKind::UnsupportedTld(_))
+    }
+}
+impl std::error::Error for PushDomainError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PushDomainErrorKind::InvalidInput(_inner) => Some(_inner),
+            PushDomainErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
+            PushDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
+            PushDomainErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `RegisterDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3238,6 +3772,120 @@ impl std::error::Error for ResendContactReachabilityEmailError {
             ResendContactReachabilityEmailErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
             ResendContactReachabilityEmailErrorKind::UnsupportedTld(_inner) => Some(_inner),
             ResendContactReachabilityEmailErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ResendOperationAuthorization` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ResendOperationAuthorizationError {
+    /// Kind of error that occurred.
+    pub kind: ResendOperationAuthorizationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ResendOperationAuthorizationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ResendOperationAuthorizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ResendOperationAuthorization` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ResendOperationAuthorizationErrorKind {
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
+    InvalidInput(crate::error::InvalidInput),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ResendOperationAuthorizationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ResendOperationAuthorizationErrorKind::InvalidInput(_inner) => _inner.fmt(f),
+            ResendOperationAuthorizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ResendOperationAuthorizationError {
+    fn code(&self) -> Option<&str> {
+        ResendOperationAuthorizationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ResendOperationAuthorizationError {
+    /// Creates a new `ResendOperationAuthorizationError`.
+    pub fn new(kind: ResendOperationAuthorizationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ResendOperationAuthorizationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ResendOperationAuthorizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ResendOperationAuthorizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ResendOperationAuthorizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ResendOperationAuthorizationErrorKind::InvalidInput`.
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResendOperationAuthorizationErrorKind::InvalidInput(_)
+        )
+    }
+}
+impl std::error::Error for ResendOperationAuthorizationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ResendOperationAuthorizationErrorKind::InvalidInput(_inner) => Some(_inner),
+            ResendOperationAuthorizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

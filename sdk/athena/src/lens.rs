@@ -9,6 +9,26 @@ pub(crate) fn reflens_structure_crate_output_get_query_results_output_next_token
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_application_dpu_sizes_output_next_token(
+    input: &crate::output::ListApplicationDpuSizesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_calculation_executions_output_next_token(
+    input: &crate::output::ListCalculationExecutionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_databases_output_next_token(
     input: &crate::output::ListDatabasesOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -39,6 +59,16 @@ pub(crate) fn reflens_structure_crate_output_list_engine_versions_output_next_to
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_executors_output_next_token(
+    input: &crate::output::ListExecutorsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_named_queries_output_next_token(
     input: &crate::output::ListNamedQueriesOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -61,6 +91,16 @@ pub(crate) fn reflens_structure_crate_output_list_prepared_statements_output_nex
 
 pub(crate) fn reflens_structure_crate_output_list_query_executions_output_next_token(
     input: &crate::output::ListQueryExecutionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_sessions_output_next_token(
+    input: &crate::output::ListSessionsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,

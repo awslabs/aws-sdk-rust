@@ -3,11 +3,9 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-Use the Amazon OpenSearch configuration API to create, configure, and manage Amazon OpenSearch Service domains.
+Use the Amazon OpenSearch Service configuration API to create, configure, and manage OpenSearch Service domains.
 
-For sample code that uses the configuration API, see the [Amazon OpenSearch Service Developer Guide](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-configuration-samples.html). The guide also contains [sample code for sending signed HTTP requests to the OpenSearch APIs](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/request-signing.html).
-
-The endpoint for configuration service requests is region-specific: es._region_.amazonaws.com. For example, es.us-east-1.amazonaws.com. For a current list of supported regions and endpoints, see [Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions).
+For sample code that uses the configuration API, see the [_Amazon OpenSearch Service Developer Guide_](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-configuration-samples.html). The guide also contains [sample code](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/request-signing.html) for sending signed HTTP requests to the OpenSearch APIs. The endpoint for configuration service requests is Region specific: es._region_.amazonaws.com. For example, es.us-east-1.amazonaws.com. For a current list of supported Regions and endpoints, see [Amazon Web Services service endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions).
 
 ## Getting Started
 
@@ -21,7 +19,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.52.0"
-aws-sdk-opensearch = "0.22.0"
+aws-sdk-opensearch = "0.23.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

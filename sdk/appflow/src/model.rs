@@ -117,6 +117,160 @@ impl AsRef<str> for FlowStatus {
     }
 }
 
+/// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data. When Amazon AppFlow catalogs your data, it stores metadata in a data catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MetadataCatalogConfig {
+    /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with the Glue Data Catalog.</p>
+    #[doc(hidden)]
+    pub glue_data_catalog: std::option::Option<crate::model::GlueDataCatalogConfig>,
+}
+impl MetadataCatalogConfig {
+    /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with the Glue Data Catalog.</p>
+    pub fn glue_data_catalog(&self) -> std::option::Option<&crate::model::GlueDataCatalogConfig> {
+        self.glue_data_catalog.as_ref()
+    }
+}
+/// See [`MetadataCatalogConfig`](crate::model::MetadataCatalogConfig).
+pub mod metadata_catalog_config {
+
+    /// A builder for [`MetadataCatalogConfig`](crate::model::MetadataCatalogConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) glue_data_catalog: std::option::Option<crate::model::GlueDataCatalogConfig>,
+    }
+    impl Builder {
+        /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with the Glue Data Catalog.</p>
+        pub fn glue_data_catalog(mut self, input: crate::model::GlueDataCatalogConfig) -> Self {
+            self.glue_data_catalog = Some(input);
+            self
+        }
+        /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with the Glue Data Catalog.</p>
+        pub fn set_glue_data_catalog(
+            mut self,
+            input: std::option::Option<crate::model::GlueDataCatalogConfig>,
+        ) -> Self {
+            self.glue_data_catalog = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetadataCatalogConfig`](crate::model::MetadataCatalogConfig).
+        pub fn build(self) -> crate::model::MetadataCatalogConfig {
+            crate::model::MetadataCatalogConfig {
+                glue_data_catalog: self.glue_data_catalog,
+            }
+        }
+    }
+}
+impl MetadataCatalogConfig {
+    /// Creates a new builder-style object to manufacture [`MetadataCatalogConfig`](crate::model::MetadataCatalogConfig).
+    pub fn builder() -> crate::model::metadata_catalog_config::Builder {
+        crate::model::metadata_catalog_config::Builder::default()
+    }
+}
+
+/// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with the Glue Data Catalog. When Amazon AppFlow catalogs your data, it stores metadata in Data Catalog tables. This metadata represents the data that's transferred by the flow that you configure with these settings.</p> <note>
+/// <p>You can configure a flow with these settings only when the flow destination is Amazon S3.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GlueDataCatalogConfig {
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants Amazon AppFlow the permissions it needs to create Data Catalog tables, databases, and partitions.</p>
+    /// <p>For an example IAM policy that has the required permissions, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_id-based-policy-examples.html">Identity-based policy examples for Amazon AppFlow</a>.</p>
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the Data Catalog database that stores the metadata tables that Amazon AppFlow creates in your Amazon Web Services account. These tables contain metadata for the data that's transferred by the flow that you configure with this parameter.</p> <note>
+    /// <p>When you configure a new flow with this parameter, you must specify an existing database.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub database_name: std::option::Option<std::string::String>,
+    /// <p>A naming prefix for each Data Catalog table that Amazon AppFlow creates for the flow that you configure with this setting. Amazon AppFlow adds the prefix to the beginning of the each table name.</p>
+    #[doc(hidden)]
+    pub table_prefix: std::option::Option<std::string::String>,
+}
+impl GlueDataCatalogConfig {
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants Amazon AppFlow the permissions it needs to create Data Catalog tables, databases, and partitions.</p>
+    /// <p>For an example IAM policy that has the required permissions, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_id-based-policy-examples.html">Identity-based policy examples for Amazon AppFlow</a>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The name of the Data Catalog database that stores the metadata tables that Amazon AppFlow creates in your Amazon Web Services account. These tables contain metadata for the data that's transferred by the flow that you configure with this parameter.</p> <note>
+    /// <p>When you configure a new flow with this parameter, you must specify an existing database.</p>
+    /// </note>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>A naming prefix for each Data Catalog table that Amazon AppFlow creates for the flow that you configure with this setting. Amazon AppFlow adds the prefix to the beginning of the each table name.</p>
+    pub fn table_prefix(&self) -> std::option::Option<&str> {
+        self.table_prefix.as_deref()
+    }
+}
+/// See [`GlueDataCatalogConfig`](crate::model::GlueDataCatalogConfig).
+pub mod glue_data_catalog_config {
+
+    /// A builder for [`GlueDataCatalogConfig`](crate::model::GlueDataCatalogConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) table_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants Amazon AppFlow the permissions it needs to create Data Catalog tables, databases, and partitions.</p>
+        /// <p>For an example IAM policy that has the required permissions, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_id-based-policy-examples.html">Identity-based policy examples for Amazon AppFlow</a>.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants Amazon AppFlow the permissions it needs to create Data Catalog tables, databases, and partitions.</p>
+        /// <p>For an example IAM policy that has the required permissions, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_id-based-policy-examples.html">Identity-based policy examples for Amazon AppFlow</a>.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The name of the Data Catalog database that stores the metadata tables that Amazon AppFlow creates in your Amazon Web Services account. These tables contain metadata for the data that's transferred by the flow that you configure with this parameter.</p> <note>
+        /// <p>When you configure a new flow with this parameter, you must specify an existing database.</p>
+        /// </note>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Data Catalog database that stores the metadata tables that Amazon AppFlow creates in your Amazon Web Services account. These tables contain metadata for the data that's transferred by the flow that you configure with this parameter.</p> <note>
+        /// <p>When you configure a new flow with this parameter, you must specify an existing database.</p>
+        /// </note>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        /// <p>A naming prefix for each Data Catalog table that Amazon AppFlow creates for the flow that you configure with this setting. Amazon AppFlow adds the prefix to the beginning of the each table name.</p>
+        pub fn table_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_prefix = Some(input.into());
+            self
+        }
+        /// <p>A naming prefix for each Data Catalog table that Amazon AppFlow creates for the flow that you configure with this setting. Amazon AppFlow adds the prefix to the beginning of the each table name.</p>
+        pub fn set_table_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GlueDataCatalogConfig`](crate::model::GlueDataCatalogConfig).
+        pub fn build(self) -> crate::model::GlueDataCatalogConfig {
+            crate::model::GlueDataCatalogConfig {
+                role_arn: self.role_arn,
+                database_name: self.database_name,
+                table_prefix: self.table_prefix,
+            }
+        }
+    }
+}
+impl GlueDataCatalogConfig {
+    /// Creates a new builder-style object to manufacture [`GlueDataCatalogConfig`](crate::model::GlueDataCatalogConfig).
+    pub fn builder() -> crate::model::glue_data_catalog_config::Builder {
+        crate::model::glue_data_catalog_config::Builder::default()
+    }
+}
+
 /// <p> A class for modeling different type of tasks. Task implementation varies based on the <code>TaskType</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -298,10 +452,12 @@ impl Task {
 ///     OperatorPropertiesKeys::DataType => { /* ... */ },
 ///     OperatorPropertiesKeys::DestinationDataType => { /* ... */ },
 ///     OperatorPropertiesKeys::ExcludeSourceFieldsList => { /* ... */ },
+///     OperatorPropertiesKeys::IncludeNewFields => { /* ... */ },
 ///     OperatorPropertiesKeys::LowerBound => { /* ... */ },
 ///     OperatorPropertiesKeys::MaskLength => { /* ... */ },
 ///     OperatorPropertiesKeys::MaskValue => { /* ... */ },
 ///     OperatorPropertiesKeys::MathOperationFieldsOrder => { /* ... */ },
+///     OperatorPropertiesKeys::OrderedPartitionKeysList => { /* ... */ },
 ///     OperatorPropertiesKeys::SourceDataType => { /* ... */ },
 ///     OperatorPropertiesKeys::SubfieldCategoryMap => { /* ... */ },
 ///     OperatorPropertiesKeys::TruncateLength => { /* ... */ },
@@ -351,6 +507,8 @@ pub enum OperatorPropertiesKeys {
     #[allow(missing_docs)] // documentation missing in model
     ExcludeSourceFieldsList,
     #[allow(missing_docs)] // documentation missing in model
+    IncludeNewFields,
+    #[allow(missing_docs)] // documentation missing in model
     LowerBound,
     #[allow(missing_docs)] // documentation missing in model
     MaskLength,
@@ -358,6 +516,8 @@ pub enum OperatorPropertiesKeys {
     MaskValue,
     #[allow(missing_docs)] // documentation missing in model
     MathOperationFieldsOrder,
+    #[allow(missing_docs)] // documentation missing in model
+    OrderedPartitionKeysList,
     #[allow(missing_docs)] // documentation missing in model
     SourceDataType,
     #[allow(missing_docs)] // documentation missing in model
@@ -382,10 +542,12 @@ impl std::convert::From<&str> for OperatorPropertiesKeys {
             "DATA_TYPE" => OperatorPropertiesKeys::DataType,
             "DESTINATION_DATA_TYPE" => OperatorPropertiesKeys::DestinationDataType,
             "EXCLUDE_SOURCE_FIELDS_LIST" => OperatorPropertiesKeys::ExcludeSourceFieldsList,
+            "INCLUDE_NEW_FIELDS" => OperatorPropertiesKeys::IncludeNewFields,
             "LOWER_BOUND" => OperatorPropertiesKeys::LowerBound,
             "MASK_LENGTH" => OperatorPropertiesKeys::MaskLength,
             "MASK_VALUE" => OperatorPropertiesKeys::MaskValue,
             "MATH_OPERATION_FIELDS_ORDER" => OperatorPropertiesKeys::MathOperationFieldsOrder,
+            "ORDERED_PARTITION_KEYS_LIST" => OperatorPropertiesKeys::OrderedPartitionKeysList,
             "SOURCE_DATA_TYPE" => OperatorPropertiesKeys::SourceDataType,
             "SUBFIELD_CATEGORY_MAP" => OperatorPropertiesKeys::SubfieldCategoryMap,
             "TRUNCATE_LENGTH" => OperatorPropertiesKeys::TruncateLength,
@@ -414,10 +576,12 @@ impl OperatorPropertiesKeys {
             OperatorPropertiesKeys::DataType => "DATA_TYPE",
             OperatorPropertiesKeys::DestinationDataType => "DESTINATION_DATA_TYPE",
             OperatorPropertiesKeys::ExcludeSourceFieldsList => "EXCLUDE_SOURCE_FIELDS_LIST",
+            OperatorPropertiesKeys::IncludeNewFields => "INCLUDE_NEW_FIELDS",
             OperatorPropertiesKeys::LowerBound => "LOWER_BOUND",
             OperatorPropertiesKeys::MaskLength => "MASK_LENGTH",
             OperatorPropertiesKeys::MaskValue => "MASK_VALUE",
             OperatorPropertiesKeys::MathOperationFieldsOrder => "MATH_OPERATION_FIELDS_ORDER",
+            OperatorPropertiesKeys::OrderedPartitionKeysList => "ORDERED_PARTITION_KEYS_LIST",
             OperatorPropertiesKeys::SourceDataType => "SOURCE_DATA_TYPE",
             OperatorPropertiesKeys::SubfieldCategoryMap => "SUBFIELD_CATEGORY_MAP",
             OperatorPropertiesKeys::TruncateLength => "TRUNCATE_LENGTH",
@@ -435,10 +599,12 @@ impl OperatorPropertiesKeys {
             "DATA_TYPE",
             "DESTINATION_DATA_TYPE",
             "EXCLUDE_SOURCE_FIELDS_LIST",
+            "INCLUDE_NEW_FIELDS",
             "LOWER_BOUND",
             "MASK_LENGTH",
             "MASK_VALUE",
             "MATH_OPERATION_FIELDS_ORDER",
+            "ORDERED_PARTITION_KEYS_LIST",
             "SOURCE_DATA_TYPE",
             "SUBFIELD_CATEGORY_MAP",
             "TRUNCATE_LENGTH",
@@ -473,6 +639,7 @@ impl AsRef<str> for OperatorPropertiesKeys {
 ///     TaskType::MapAll => { /* ... */ },
 ///     TaskType::Mask => { /* ... */ },
 ///     TaskType::Merge => { /* ... */ },
+///     TaskType::Partition => { /* ... */ },
 ///     TaskType::Passthrough => { /* ... */ },
 ///     TaskType::Truncate => { /* ... */ },
 ///     TaskType::Validate => { /* ... */ },
@@ -522,6 +689,8 @@ pub enum TaskType {
     #[allow(missing_docs)] // documentation missing in model
     Merge,
     #[allow(missing_docs)] // documentation missing in model
+    Partition,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     #[allow(missing_docs)] // documentation missing in model
     Truncate,
@@ -539,6 +708,7 @@ impl std::convert::From<&str> for TaskType {
             "Map_all" => TaskType::MapAll,
             "Mask" => TaskType::Mask,
             "Merge" => TaskType::Merge,
+            "Partition" => TaskType::Partition,
             "Passthrough" => TaskType::Passthrough,
             "Truncate" => TaskType::Truncate,
             "Validate" => TaskType::Validate,
@@ -563,6 +733,7 @@ impl TaskType {
             TaskType::MapAll => "Map_all",
             TaskType::Mask => "Mask",
             TaskType::Merge => "Merge",
+            TaskType::Partition => "Partition",
             TaskType::Passthrough => "Passthrough",
             TaskType::Truncate => "Truncate",
             TaskType::Validate => "Validate",
@@ -578,6 +749,7 @@ impl TaskType {
             "Map_all",
             "Mask",
             "Merge",
+            "Partition",
             "Passthrough",
             "Truncate",
             "Validate",
@@ -5276,7 +5448,7 @@ pub struct UpsolverS3OutputFormatConfig {
     /// <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3 bucket. </p>
     #[doc(hidden)]
     pub file_type: std::option::Option<crate::model::FileType>,
-    /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination folders according to the flow frequency and date. </p>
+    /// <p>Specifies elements that Amazon AppFlow includes in the file and folder names in the flow destination.</p>
     #[doc(hidden)]
     pub prefix_config: std::option::Option<crate::model::PrefixConfig>,
     /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
@@ -5288,7 +5460,7 @@ impl UpsolverS3OutputFormatConfig {
     pub fn file_type(&self) -> std::option::Option<&crate::model::FileType> {
         self.file_type.as_ref()
     }
-    /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination folders according to the flow frequency and date. </p>
+    /// <p>Specifies elements that Amazon AppFlow includes in the file and folder names in the flow destination.</p>
     pub fn prefix_config(&self) -> std::option::Option<&crate::model::PrefixConfig> {
         self.prefix_config.as_ref()
     }
@@ -5318,12 +5490,12 @@ pub mod upsolver_s3_output_format_config {
             self.file_type = input;
             self
         }
-        /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination folders according to the flow frequency and date. </p>
+        /// <p>Specifies elements that Amazon AppFlow includes in the file and folder names in the flow destination.</p>
         pub fn prefix_config(mut self, input: crate::model::PrefixConfig) -> Self {
             self.prefix_config = Some(input);
             self
         }
-        /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination folders according to the flow frequency and date. </p>
+        /// <p>Specifies elements that Amazon AppFlow includes in the file and folder names in the flow destination.</p>
         pub fn set_prefix_config(
             mut self,
             input: std::option::Option<crate::model::PrefixConfig>,
@@ -5368,11 +5540,18 @@ pub struct AggregationConfig {
     /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
     #[doc(hidden)]
     pub aggregation_type: std::option::Option<crate::model::AggregationType>,
+    /// <p>The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For each file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might differ from this target based on the number and size of the records that each file contains.</p>
+    #[doc(hidden)]
+    pub target_file_size: std::option::Option<i64>,
 }
 impl AggregationConfig {
     /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
     pub fn aggregation_type(&self) -> std::option::Option<&crate::model::AggregationType> {
         self.aggregation_type.as_ref()
+    }
+    /// <p>The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For each file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might differ from this target based on the number and size of the records that each file contains.</p>
+    pub fn target_file_size(&self) -> std::option::Option<i64> {
+        self.target_file_size
     }
 }
 /// See [`AggregationConfig`](crate::model::AggregationConfig).
@@ -5382,6 +5561,7 @@ pub mod aggregation_config {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aggregation_type: std::option::Option<crate::model::AggregationType>,
+        pub(crate) target_file_size: std::option::Option<i64>,
     }
     impl Builder {
         /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
@@ -5397,10 +5577,21 @@ pub mod aggregation_config {
             self.aggregation_type = input;
             self
         }
+        /// <p>The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For each file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might differ from this target based on the number and size of the records that each file contains.</p>
+        pub fn target_file_size(mut self, input: i64) -> Self {
+            self.target_file_size = Some(input);
+            self
+        }
+        /// <p>The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For each file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might differ from this target based on the number and size of the records that each file contains.</p>
+        pub fn set_target_file_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.target_file_size = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AggregationConfig`](crate::model::AggregationConfig).
         pub fn build(self) -> crate::model::AggregationConfig {
             crate::model::AggregationConfig {
                 aggregation_type: self.aggregation_type,
+                target_file_size: self.target_file_size,
             }
         }
     }
@@ -5502,25 +5693,70 @@ impl AsRef<str> for AggregationType {
     }
 }
 
-/// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination folders according to the flow frequency and date. </p>
+/// <p>Specifies elements that Amazon AppFlow includes in the file and folder names in the flow destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrefixConfig {
-    /// <p> Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
+    /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
     #[doc(hidden)]
     pub prefix_type: std::option::Option<crate::model::PrefixType>,
-    /// <p> Determines the level of granularity that's included in the prefix. </p>
+    /// <p>Determines the level of granularity for the date and time that's included in the prefix. </p>
     #[doc(hidden)]
     pub prefix_format: std::option::Option<crate::model::PrefixFormat>,
+    /// <p>Specifies whether the destination file path includes either or both of the following elements:</p>
+    /// <dl>
+    /// <dt>
+    /// EXECUTION_ID
+    /// </dt>
+    /// <dd>
+    /// <p>The ID that Amazon AppFlow assigns to the flow run.</p>
+    /// </dd>
+    /// <dt>
+    /// SCHEMA_VERSION
+    /// </dt>
+    /// <dd>
+    /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
+    /// <ul>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
+    /// </ul>
+    /// </dd>
+    /// </dl>
+    #[doc(hidden)]
+    pub path_prefix_hierarchy: std::option::Option<std::vec::Vec<crate::model::PathPrefix>>,
 }
 impl PrefixConfig {
-    /// <p> Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
+    /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
     pub fn prefix_type(&self) -> std::option::Option<&crate::model::PrefixType> {
         self.prefix_type.as_ref()
     }
-    /// <p> Determines the level of granularity that's included in the prefix. </p>
+    /// <p>Determines the level of granularity for the date and time that's included in the prefix. </p>
     pub fn prefix_format(&self) -> std::option::Option<&crate::model::PrefixFormat> {
         self.prefix_format.as_ref()
+    }
+    /// <p>Specifies whether the destination file path includes either or both of the following elements:</p>
+    /// <dl>
+    /// <dt>
+    /// EXECUTION_ID
+    /// </dt>
+    /// <dd>
+    /// <p>The ID that Amazon AppFlow assigns to the flow run.</p>
+    /// </dd>
+    /// <dt>
+    /// SCHEMA_VERSION
+    /// </dt>
+    /// <dd>
+    /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
+    /// <ul>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
+    /// </ul>
+    /// </dd>
+    /// </dl>
+    pub fn path_prefix_hierarchy(&self) -> std::option::Option<&[crate::model::PathPrefix]> {
+        self.path_prefix_hierarchy.as_deref()
     }
 }
 /// See [`PrefixConfig`](crate::model::PrefixConfig).
@@ -5531,14 +5767,16 @@ pub mod prefix_config {
     pub struct Builder {
         pub(crate) prefix_type: std::option::Option<crate::model::PrefixType>,
         pub(crate) prefix_format: std::option::Option<crate::model::PrefixFormat>,
+        pub(crate) path_prefix_hierarchy:
+            std::option::Option<std::vec::Vec<crate::model::PathPrefix>>,
     }
     impl Builder {
-        /// <p> Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
+        /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
         pub fn prefix_type(mut self, input: crate::model::PrefixType) -> Self {
             self.prefix_type = Some(input);
             self
         }
-        /// <p> Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
+        /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
         pub fn set_prefix_type(
             mut self,
             input: std::option::Option<crate::model::PrefixType>,
@@ -5546,12 +5784,12 @@ pub mod prefix_config {
             self.prefix_type = input;
             self
         }
-        /// <p> Determines the level of granularity that's included in the prefix. </p>
+        /// <p>Determines the level of granularity for the date and time that's included in the prefix. </p>
         pub fn prefix_format(mut self, input: crate::model::PrefixFormat) -> Self {
             self.prefix_format = Some(input);
             self
         }
-        /// <p> Determines the level of granularity that's included in the prefix. </p>
+        /// <p>Determines the level of granularity for the date and time that's included in the prefix. </p>
         pub fn set_prefix_format(
             mut self,
             input: std::option::Option<crate::model::PrefixFormat>,
@@ -5559,11 +5797,69 @@ pub mod prefix_config {
             self.prefix_format = input;
             self
         }
+        /// Appends an item to `path_prefix_hierarchy`.
+        ///
+        /// To override the contents of this collection use [`set_path_prefix_hierarchy`](Self::set_path_prefix_hierarchy).
+        ///
+        /// <p>Specifies whether the destination file path includes either or both of the following elements:</p>
+        /// <dl>
+        /// <dt>
+        /// EXECUTION_ID
+        /// </dt>
+        /// <dd>
+        /// <p>The ID that Amazon AppFlow assigns to the flow run.</p>
+        /// </dd>
+        /// <dt>
+        /// SCHEMA_VERSION
+        /// </dt>
+        /// <dd>
+        /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
+        /// <ul>
+        /// <li> <p>Source-to-destination field mappings</p> </li>
+        /// <li> <p>Field data types</p> </li>
+        /// <li> <p>Partition keys</p> </li>
+        /// </ul>
+        /// </dd>
+        /// </dl>
+        pub fn path_prefix_hierarchy(mut self, input: crate::model::PathPrefix) -> Self {
+            let mut v = self.path_prefix_hierarchy.unwrap_or_default();
+            v.push(input);
+            self.path_prefix_hierarchy = Some(v);
+            self
+        }
+        /// <p>Specifies whether the destination file path includes either or both of the following elements:</p>
+        /// <dl>
+        /// <dt>
+        /// EXECUTION_ID
+        /// </dt>
+        /// <dd>
+        /// <p>The ID that Amazon AppFlow assigns to the flow run.</p>
+        /// </dd>
+        /// <dt>
+        /// SCHEMA_VERSION
+        /// </dt>
+        /// <dd>
+        /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
+        /// <ul>
+        /// <li> <p>Source-to-destination field mappings</p> </li>
+        /// <li> <p>Field data types</p> </li>
+        /// <li> <p>Partition keys</p> </li>
+        /// </ul>
+        /// </dd>
+        /// </dl>
+        pub fn set_path_prefix_hierarchy(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PathPrefix>>,
+        ) -> Self {
+            self.path_prefix_hierarchy = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PrefixConfig`](crate::model::PrefixConfig).
         pub fn build(self) -> crate::model::PrefixConfig {
             crate::model::PrefixConfig {
                 prefix_type: self.prefix_type,
                 prefix_format: self.prefix_format,
+                path_prefix_hierarchy: self.path_prefix_hierarchy,
             }
         }
     }
@@ -5572,6 +5868,96 @@ impl PrefixConfig {
     /// Creates a new builder-style object to manufacture [`PrefixConfig`](crate::model::PrefixConfig).
     pub fn builder() -> crate::model::prefix_config::Builder {
         crate::model::prefix_config::Builder::default()
+    }
+}
+
+/// When writing a match expression against `PathPrefix`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let pathprefix = unimplemented!();
+/// match pathprefix {
+///     PathPrefix::ExecutionId => { /* ... */ },
+///     PathPrefix::SchemaVersion => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `pathprefix` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PathPrefix::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PathPrefix::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PathPrefix::NewFeature` is defined.
+/// Specifically, when `pathprefix` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PathPrefix::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PathPrefix {
+    #[allow(missing_docs)] // documentation missing in model
+    ExecutionId,
+    #[allow(missing_docs)] // documentation missing in model
+    SchemaVersion,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for PathPrefix {
+    fn from(s: &str) -> Self {
+        match s {
+            "EXECUTION_ID" => PathPrefix::ExecutionId,
+            "SCHEMA_VERSION" => PathPrefix::SchemaVersion,
+            other => PathPrefix::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for PathPrefix {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PathPrefix::from(s))
+    }
+}
+impl PathPrefix {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PathPrefix::ExecutionId => "EXECUTION_ID",
+            PathPrefix::SchemaVersion => "SCHEMA_VERSION",
+            PathPrefix::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["EXECUTION_ID", "SCHEMA_VERSION"]
+    }
+}
+impl AsRef<str> for PathPrefix {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -6094,6 +6480,32 @@ pub struct SalesforceDestinationProperties {
     /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
     #[doc(hidden)]
     pub write_operation_type: std::option::Option<crate::model::WriteOperationType>,
+    /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p>
+    /// <dl>
+    /// <dt>
+    /// AUTOMATIC
+    /// </dt>
+    /// <dd>
+    /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers to Salesforce. If your flow transfers fewer than 1,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p>
+    /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900 records, and it might use Bulk API 2.0 on the next day to transfer 1,100 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p>
+    /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p>
+    /// </dd>
+    /// <dt>
+    /// BULKV2
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p>
+    /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p>
+    /// </dd>
+    /// <dt>
+    /// REST_SYNC
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.</p>
+    /// </dd>
+    /// </dl>
+    #[doc(hidden)]
+    pub data_transfer_api: std::option::Option<crate::model::SalesforceDataTransferApi>,
 }
 impl SalesforceDestinationProperties {
     /// <p> The object specified in the Salesforce flow destination. </p>
@@ -6112,6 +6524,35 @@ impl SalesforceDestinationProperties {
     pub fn write_operation_type(&self) -> std::option::Option<&crate::model::WriteOperationType> {
         self.write_operation_type.as_ref()
     }
+    /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p>
+    /// <dl>
+    /// <dt>
+    /// AUTOMATIC
+    /// </dt>
+    /// <dd>
+    /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers to Salesforce. If your flow transfers fewer than 1,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p>
+    /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900 records, and it might use Bulk API 2.0 on the next day to transfer 1,100 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p>
+    /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p>
+    /// </dd>
+    /// <dt>
+    /// BULKV2
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p>
+    /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p>
+    /// </dd>
+    /// <dt>
+    /// REST_SYNC
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.</p>
+    /// </dd>
+    /// </dl>
+    pub fn data_transfer_api(
+        &self,
+    ) -> std::option::Option<&crate::model::SalesforceDataTransferApi> {
+        self.data_transfer_api.as_ref()
+    }
 }
 /// See [`SalesforceDestinationProperties`](crate::model::SalesforceDestinationProperties).
 pub mod salesforce_destination_properties {
@@ -6123,6 +6564,7 @@ pub mod salesforce_destination_properties {
         pub(crate) id_field_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
         pub(crate) write_operation_type: std::option::Option<crate::model::WriteOperationType>,
+        pub(crate) data_transfer_api: std::option::Option<crate::model::SalesforceDataTransferApi>,
     }
     impl Builder {
         /// <p> The object specified in the Salesforce flow destination. </p>
@@ -6180,6 +6622,65 @@ pub mod salesforce_destination_properties {
             self.write_operation_type = input;
             self
         }
+        /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p>
+        /// <dl>
+        /// <dt>
+        /// AUTOMATIC
+        /// </dt>
+        /// <dd>
+        /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers to Salesforce. If your flow transfers fewer than 1,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p>
+        /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900 records, and it might use Bulk API 2.0 on the next day to transfer 1,100 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p>
+        /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p>
+        /// </dd>
+        /// <dt>
+        /// BULKV2
+        /// </dt>
+        /// <dd>
+        /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p>
+        /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p>
+        /// </dd>
+        /// <dt>
+        /// REST_SYNC
+        /// </dt>
+        /// <dd>
+        /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.</p>
+        /// </dd>
+        /// </dl>
+        pub fn data_transfer_api(mut self, input: crate::model::SalesforceDataTransferApi) -> Self {
+            self.data_transfer_api = Some(input);
+            self
+        }
+        /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p>
+        /// <dl>
+        /// <dt>
+        /// AUTOMATIC
+        /// </dt>
+        /// <dd>
+        /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers to Salesforce. If your flow transfers fewer than 1,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p>
+        /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900 records, and it might use Bulk API 2.0 on the next day to transfer 1,100 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p>
+        /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p>
+        /// </dd>
+        /// <dt>
+        /// BULKV2
+        /// </dt>
+        /// <dd>
+        /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p>
+        /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p>
+        /// </dd>
+        /// <dt>
+        /// REST_SYNC
+        /// </dt>
+        /// <dd>
+        /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.</p>
+        /// </dd>
+        /// </dl>
+        pub fn set_data_transfer_api(
+            mut self,
+            input: std::option::Option<crate::model::SalesforceDataTransferApi>,
+        ) -> Self {
+            self.data_transfer_api = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SalesforceDestinationProperties`](crate::model::SalesforceDestinationProperties).
         pub fn build(self) -> crate::model::SalesforceDestinationProperties {
             crate::model::SalesforceDestinationProperties {
@@ -6187,6 +6688,7 @@ pub mod salesforce_destination_properties {
                 id_field_names: self.id_field_names,
                 error_handling_config: self.error_handling_config,
                 write_operation_type: self.write_operation_type,
+                data_transfer_api: self.data_transfer_api,
             }
         }
     }
@@ -6195,6 +6697,103 @@ impl SalesforceDestinationProperties {
     /// Creates a new builder-style object to manufacture [`SalesforceDestinationProperties`](crate::model::SalesforceDestinationProperties).
     pub fn builder() -> crate::model::salesforce_destination_properties::Builder {
         crate::model::salesforce_destination_properties::Builder::default()
+    }
+}
+
+/// When writing a match expression against `SalesforceDataTransferApi`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let salesforcedatatransferapi = unimplemented!();
+/// match salesforcedatatransferapi {
+///     SalesforceDataTransferApi::Automatic => { /* ... */ },
+///     SalesforceDataTransferApi::Bulkv2 => { /* ... */ },
+///     SalesforceDataTransferApi::RestSync => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `salesforcedatatransferapi` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SalesforceDataTransferApi::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SalesforceDataTransferApi::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SalesforceDataTransferApi::NewFeature` is defined.
+/// Specifically, when `salesforcedatatransferapi` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SalesforceDataTransferApi::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SalesforceDataTransferApi {
+    #[allow(missing_docs)] // documentation missing in model
+    Automatic,
+    #[allow(missing_docs)] // documentation missing in model
+    Bulkv2,
+    #[allow(missing_docs)] // documentation missing in model
+    RestSync,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SalesforceDataTransferApi {
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTOMATIC" => SalesforceDataTransferApi::Automatic,
+            "BULKV2" => SalesforceDataTransferApi::Bulkv2,
+            "REST_SYNC" => SalesforceDataTransferApi::RestSync,
+            other => SalesforceDataTransferApi::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for SalesforceDataTransferApi {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SalesforceDataTransferApi::from(s))
+    }
+}
+impl SalesforceDataTransferApi {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SalesforceDataTransferApi::Automatic => "AUTOMATIC",
+            SalesforceDataTransferApi::Bulkv2 => "BULKV2",
+            SalesforceDataTransferApi::RestSync => "REST_SYNC",
+            SalesforceDataTransferApi::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AUTOMATIC", "BULKV2", "REST_SYNC"]
+    }
+}
+impl AsRef<str> for SalesforceDataTransferApi {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -7863,6 +8462,32 @@ pub struct SalesforceSourceProperties {
     /// <p> Indicates whether Amazon AppFlow includes deleted files in the flow run. </p>
     #[doc(hidden)]
     pub include_deleted_records: bool,
+    /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from Salesforce.</p>
+    /// <dl>
+    /// <dt>
+    /// AUTOMATIC
+    /// </dt>
+    /// <dd>
+    /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers from Salesforce. If your flow transfers fewer than 1,000,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p>
+    /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900,000 records, and it might use Bulk API 2.0 on the next day to transfer 1,100,000 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p>
+    /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p>
+    /// </dd>
+    /// <dt>
+    /// BULKV2
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p>
+    /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p>
+    /// </dd>
+    /// <dt>
+    /// REST_SYNC
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a timed out error.</p>
+    /// </dd>
+    /// </dl>
+    #[doc(hidden)]
+    pub data_transfer_api: std::option::Option<crate::model::SalesforceDataTransferApi>,
 }
 impl SalesforceSourceProperties {
     /// <p> The object specified in the Salesforce flow source. </p>
@@ -7877,6 +8502,35 @@ impl SalesforceSourceProperties {
     pub fn include_deleted_records(&self) -> bool {
         self.include_deleted_records
     }
+    /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from Salesforce.</p>
+    /// <dl>
+    /// <dt>
+    /// AUTOMATIC
+    /// </dt>
+    /// <dd>
+    /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers from Salesforce. If your flow transfers fewer than 1,000,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p>
+    /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900,000 records, and it might use Bulk API 2.0 on the next day to transfer 1,100,000 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p>
+    /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p>
+    /// </dd>
+    /// <dt>
+    /// BULKV2
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p>
+    /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p>
+    /// </dd>
+    /// <dt>
+    /// REST_SYNC
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a timed out error.</p>
+    /// </dd>
+    /// </dl>
+    pub fn data_transfer_api(
+        &self,
+    ) -> std::option::Option<&crate::model::SalesforceDataTransferApi> {
+        self.data_transfer_api.as_ref()
+    }
 }
 /// See [`SalesforceSourceProperties`](crate::model::SalesforceSourceProperties).
 pub mod salesforce_source_properties {
@@ -7887,6 +8541,7 @@ pub mod salesforce_source_properties {
         pub(crate) object: std::option::Option<std::string::String>,
         pub(crate) enable_dynamic_field_update: std::option::Option<bool>,
         pub(crate) include_deleted_records: std::option::Option<bool>,
+        pub(crate) data_transfer_api: std::option::Option<crate::model::SalesforceDataTransferApi>,
     }
     impl Builder {
         /// <p> The object specified in the Salesforce flow source. </p>
@@ -7919,12 +8574,72 @@ pub mod salesforce_source_properties {
             self.include_deleted_records = input;
             self
         }
+        /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from Salesforce.</p>
+        /// <dl>
+        /// <dt>
+        /// AUTOMATIC
+        /// </dt>
+        /// <dd>
+        /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers from Salesforce. If your flow transfers fewer than 1,000,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p>
+        /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900,000 records, and it might use Bulk API 2.0 on the next day to transfer 1,100,000 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p>
+        /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p>
+        /// </dd>
+        /// <dt>
+        /// BULKV2
+        /// </dt>
+        /// <dd>
+        /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p>
+        /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p>
+        /// </dd>
+        /// <dt>
+        /// REST_SYNC
+        /// </dt>
+        /// <dd>
+        /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a timed out error.</p>
+        /// </dd>
+        /// </dl>
+        pub fn data_transfer_api(mut self, input: crate::model::SalesforceDataTransferApi) -> Self {
+            self.data_transfer_api = Some(input);
+            self
+        }
+        /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from Salesforce.</p>
+        /// <dl>
+        /// <dt>
+        /// AUTOMATIC
+        /// </dt>
+        /// <dd>
+        /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers from Salesforce. If your flow transfers fewer than 1,000,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p>
+        /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900,000 records, and it might use Bulk API 2.0 on the next day to transfer 1,100,000 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p>
+        /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p>
+        /// </dd>
+        /// <dt>
+        /// BULKV2
+        /// </dt>
+        /// <dd>
+        /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p>
+        /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p>
+        /// </dd>
+        /// <dt>
+        /// REST_SYNC
+        /// </dt>
+        /// <dd>
+        /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a timed out error.</p>
+        /// </dd>
+        /// </dl>
+        pub fn set_data_transfer_api(
+            mut self,
+            input: std::option::Option<crate::model::SalesforceDataTransferApi>,
+        ) -> Self {
+            self.data_transfer_api = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SalesforceSourceProperties`](crate::model::SalesforceSourceProperties).
         pub fn build(self) -> crate::model::SalesforceSourceProperties {
             crate::model::SalesforceSourceProperties {
                 object: self.object,
                 enable_dynamic_field_update: self.enable_dynamic_field_update.unwrap_or_default(),
                 include_deleted_records: self.include_deleted_records.unwrap_or_default(),
+                data_transfer_api: self.data_transfer_api,
             }
         }
     }
@@ -8968,6 +9683,105 @@ impl TriggerType {
 impl AsRef<str> for TriggerType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Contains information about the configuration of the connector being registered.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ConnectorProvisioningConfig {
+    /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
+    #[doc(hidden)]
+    pub lambda: std::option::Option<crate::model::LambdaConnectorProvisioningConfig>,
+}
+impl ConnectorProvisioningConfig {
+    /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
+    pub fn lambda(&self) -> std::option::Option<&crate::model::LambdaConnectorProvisioningConfig> {
+        self.lambda.as_ref()
+    }
+}
+/// See [`ConnectorProvisioningConfig`](crate::model::ConnectorProvisioningConfig).
+pub mod connector_provisioning_config {
+
+    /// A builder for [`ConnectorProvisioningConfig`](crate::model::ConnectorProvisioningConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lambda: std::option::Option<crate::model::LambdaConnectorProvisioningConfig>,
+    }
+    impl Builder {
+        /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
+        pub fn lambda(mut self, input: crate::model::LambdaConnectorProvisioningConfig) -> Self {
+            self.lambda = Some(input);
+            self
+        }
+        /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
+        pub fn set_lambda(
+            mut self,
+            input: std::option::Option<crate::model::LambdaConnectorProvisioningConfig>,
+        ) -> Self {
+            self.lambda = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConnectorProvisioningConfig`](crate::model::ConnectorProvisioningConfig).
+        pub fn build(self) -> crate::model::ConnectorProvisioningConfig {
+            crate::model::ConnectorProvisioningConfig {
+                lambda: self.lambda,
+            }
+        }
+    }
+}
+impl ConnectorProvisioningConfig {
+    /// Creates a new builder-style object to manufacture [`ConnectorProvisioningConfig`](crate::model::ConnectorProvisioningConfig).
+    pub fn builder() -> crate::model::connector_provisioning_config::Builder {
+        crate::model::connector_provisioning_config::Builder::default()
+    }
+}
+
+/// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LambdaConnectorProvisioningConfig {
+    /// <p>Lambda ARN of the connector being registered.</p>
+    #[doc(hidden)]
+    pub lambda_arn: std::option::Option<std::string::String>,
+}
+impl LambdaConnectorProvisioningConfig {
+    /// <p>Lambda ARN of the connector being registered.</p>
+    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+        self.lambda_arn.as_deref()
+    }
+}
+/// See [`LambdaConnectorProvisioningConfig`](crate::model::LambdaConnectorProvisioningConfig).
+pub mod lambda_connector_provisioning_config {
+
+    /// A builder for [`LambdaConnectorProvisioningConfig`](crate::model::LambdaConnectorProvisioningConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lambda_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Lambda ARN of the connector being registered.</p>
+        pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lambda_arn = Some(input.into());
+            self
+        }
+        /// <p>Lambda ARN of the connector being registered.</p>
+        pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lambda_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LambdaConnectorProvisioningConfig`](crate::model::LambdaConnectorProvisioningConfig).
+        pub fn build(self) -> crate::model::LambdaConnectorProvisioningConfig {
+            crate::model::LambdaConnectorProvisioningConfig {
+                lambda_arn: self.lambda_arn,
+            }
+        }
+    }
+}
+impl LambdaConnectorProvisioningConfig {
+    /// Creates a new builder-style object to manufacture [`LambdaConnectorProvisioningConfig`](crate::model::LambdaConnectorProvisioningConfig).
+    pub fn builder() -> crate::model::lambda_connector_provisioning_config::Builder {
+        crate::model::lambda_connector_provisioning_config::Builder::default()
     }
 }
 
@@ -13677,9 +14491,24 @@ pub struct RedshiftConnectorProfileProperties {
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
     #[doc(hidden)]
     pub bucket_prefix: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
+    /// <p> The Amazon Resource Name (ARN) of IAM role that grants Amazon Redshift read-only access to Amazon S3. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#redshift-access-s3">Allow Amazon Redshift to access your Amazon AppFlow data in Amazon S3</a>.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that permits Amazon AppFlow to access your Amazon Redshift database through the Data API. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#access-redshift">Allow Amazon AppFlow to access Amazon Redshift databases with the Data API</a>.</p>
+    #[doc(hidden)]
+    pub data_api_role_arn: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the connector profile defines a connection to an Amazon Redshift Serverless data warehouse.</p>
+    #[doc(hidden)]
+    pub is_redshift_serverless: bool,
+    /// <p>The unique ID that's assigned to an Amazon Redshift cluster.</p>
+    #[doc(hidden)]
+    pub cluster_identifier: std::option::Option<std::string::String>,
+    /// <p>The name of an Amazon Redshift workgroup.</p>
+    #[doc(hidden)]
+    pub workgroup_name: std::option::Option<std::string::String>,
+    /// <p>The name of an Amazon Redshift database.</p>
+    #[doc(hidden)]
+    pub database_name: std::option::Option<std::string::String>,
 }
 impl RedshiftConnectorProfileProperties {
     /// <p> The JDBC URL of the Amazon Redshift cluster. </p>
@@ -13694,9 +14523,29 @@ impl RedshiftConnectorProfileProperties {
     pub fn bucket_prefix(&self) -> std::option::Option<&str> {
         self.bucket_prefix.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
+    /// <p> The Amazon Resource Name (ARN) of IAM role that grants Amazon Redshift read-only access to Amazon S3. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#redshift-access-s3">Allow Amazon Redshift to access your Amazon AppFlow data in Amazon S3</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that permits Amazon AppFlow to access your Amazon Redshift database through the Data API. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#access-redshift">Allow Amazon AppFlow to access Amazon Redshift databases with the Data API</a>.</p>
+    pub fn data_api_role_arn(&self) -> std::option::Option<&str> {
+        self.data_api_role_arn.as_deref()
+    }
+    /// <p>Indicates whether the connector profile defines a connection to an Amazon Redshift Serverless data warehouse.</p>
+    pub fn is_redshift_serverless(&self) -> bool {
+        self.is_redshift_serverless
+    }
+    /// <p>The unique ID that's assigned to an Amazon Redshift cluster.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The name of an Amazon Redshift workgroup.</p>
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+        self.workgroup_name.as_deref()
+    }
+    /// <p>The name of an Amazon Redshift database.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
     }
 }
 /// See [`RedshiftConnectorProfileProperties`](crate::model::RedshiftConnectorProfileProperties).
@@ -13709,6 +14558,11 @@ pub mod redshift_connector_profile_properties {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) bucket_prefix: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) data_api_role_arn: std::option::Option<std::string::String>,
+        pub(crate) is_redshift_serverless: std::option::Option<bool>,
+        pub(crate) cluster_identifier: std::option::Option<std::string::String>,
+        pub(crate) workgroup_name: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p> The JDBC URL of the Amazon Redshift cluster. </p>
@@ -13744,14 +14598,76 @@ pub mod redshift_connector_profile_properties {
             self.bucket_prefix = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
+        /// <p> The Amazon Resource Name (ARN) of IAM role that grants Amazon Redshift read-only access to Amazon S3. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#redshift-access-s3">Allow Amazon Redshift to access your Amazon AppFlow data in Amazon S3</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
+        /// <p> The Amazon Resource Name (ARN) of IAM role that grants Amazon Redshift read-only access to Amazon S3. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#redshift-access-s3">Allow Amazon Redshift to access your Amazon AppFlow data in Amazon S3</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that permits Amazon AppFlow to access your Amazon Redshift database through the Data API. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#access-redshift">Allow Amazon AppFlow to access Amazon Redshift databases with the Data API</a>.</p>
+        pub fn data_api_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_api_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that permits Amazon AppFlow to access your Amazon Redshift database through the Data API. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#access-redshift">Allow Amazon AppFlow to access Amazon Redshift databases with the Data API</a>.</p>
+        pub fn set_data_api_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_api_role_arn = input;
+            self
+        }
+        /// <p>Indicates whether the connector profile defines a connection to an Amazon Redshift Serverless data warehouse.</p>
+        pub fn is_redshift_serverless(mut self, input: bool) -> Self {
+            self.is_redshift_serverless = Some(input);
+            self
+        }
+        /// <p>Indicates whether the connector profile defines a connection to an Amazon Redshift Serverless data warehouse.</p>
+        pub fn set_is_redshift_serverless(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_redshift_serverless = input;
+            self
+        }
+        /// <p>The unique ID that's assigned to an Amazon Redshift cluster.</p>
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>The unique ID that's assigned to an Amazon Redshift cluster.</p>
+        pub fn set_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_identifier = input;
+            self
+        }
+        /// <p>The name of an Amazon Redshift workgroup.</p>
+        pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workgroup_name = Some(input.into());
+            self
+        }
+        /// <p>The name of an Amazon Redshift workgroup.</p>
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
+        }
+        /// <p>The name of an Amazon Redshift database.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>The name of an Amazon Redshift database.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
             self
         }
         /// Consumes the builder and constructs a [`RedshiftConnectorProfileProperties`](crate::model::RedshiftConnectorProfileProperties).
@@ -13761,6 +14677,11 @@ pub mod redshift_connector_profile_properties {
                 bucket_name: self.bucket_name,
                 bucket_prefix: self.bucket_prefix,
                 role_arn: self.role_arn,
+                data_api_role_arn: self.data_api_role_arn,
+                is_redshift_serverless: self.is_redshift_serverless.unwrap_or_default(),
+                cluster_identifier: self.cluster_identifier,
+                workgroup_name: self.workgroup_name,
+                database_name: self.database_name,
             }
         }
     }
@@ -14123,105 +15044,6 @@ impl ConnectionMode {
 impl AsRef<str> for ConnectionMode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-
-/// <p>Contains information about the configuration of the connector being registered.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectorProvisioningConfig {
-    /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
-    #[doc(hidden)]
-    pub lambda: std::option::Option<crate::model::LambdaConnectorProvisioningConfig>,
-}
-impl ConnectorProvisioningConfig {
-    /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
-    pub fn lambda(&self) -> std::option::Option<&crate::model::LambdaConnectorProvisioningConfig> {
-        self.lambda.as_ref()
-    }
-}
-/// See [`ConnectorProvisioningConfig`](crate::model::ConnectorProvisioningConfig).
-pub mod connector_provisioning_config {
-
-    /// A builder for [`ConnectorProvisioningConfig`](crate::model::ConnectorProvisioningConfig).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) lambda: std::option::Option<crate::model::LambdaConnectorProvisioningConfig>,
-    }
-    impl Builder {
-        /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
-        pub fn lambda(mut self, input: crate::model::LambdaConnectorProvisioningConfig) -> Self {
-            self.lambda = Some(input);
-            self
-        }
-        /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
-        pub fn set_lambda(
-            mut self,
-            input: std::option::Option<crate::model::LambdaConnectorProvisioningConfig>,
-        ) -> Self {
-            self.lambda = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ConnectorProvisioningConfig`](crate::model::ConnectorProvisioningConfig).
-        pub fn build(self) -> crate::model::ConnectorProvisioningConfig {
-            crate::model::ConnectorProvisioningConfig {
-                lambda: self.lambda,
-            }
-        }
-    }
-}
-impl ConnectorProvisioningConfig {
-    /// Creates a new builder-style object to manufacture [`ConnectorProvisioningConfig`](crate::model::ConnectorProvisioningConfig).
-    pub fn builder() -> crate::model::connector_provisioning_config::Builder {
-        crate::model::connector_provisioning_config::Builder::default()
-    }
-}
-
-/// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaConnectorProvisioningConfig {
-    /// <p>Lambda ARN of the connector being registered.</p>
-    #[doc(hidden)]
-    pub lambda_arn: std::option::Option<std::string::String>,
-}
-impl LambdaConnectorProvisioningConfig {
-    /// <p>Lambda ARN of the connector being registered.</p>
-    pub fn lambda_arn(&self) -> std::option::Option<&str> {
-        self.lambda_arn.as_deref()
-    }
-}
-/// See [`LambdaConnectorProvisioningConfig`](crate::model::LambdaConnectorProvisioningConfig).
-pub mod lambda_connector_provisioning_config {
-
-    /// A builder for [`LambdaConnectorProvisioningConfig`](crate::model::LambdaConnectorProvisioningConfig).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) lambda_arn: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Lambda ARN of the connector being registered.</p>
-        pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.lambda_arn = Some(input.into());
-            self
-        }
-        /// <p>Lambda ARN of the connector being registered.</p>
-        pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lambda_arn = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LambdaConnectorProvisioningConfig`](crate::model::LambdaConnectorProvisioningConfig).
-        pub fn build(self) -> crate::model::LambdaConnectorProvisioningConfig {
-            crate::model::LambdaConnectorProvisioningConfig {
-                lambda_arn: self.lambda_arn,
-            }
-        }
-    }
-}
-impl LambdaConnectorProvisioningConfig {
-    /// Creates a new builder-style object to manufacture [`LambdaConnectorProvisioningConfig`](crate::model::LambdaConnectorProvisioningConfig).
-    pub fn builder() -> crate::model::lambda_connector_provisioning_config::Builder {
-        crate::model::lambda_connector_provisioning_config::Builder::default()
     }
 }
 
@@ -15274,6 +16096,10 @@ pub struct ExecutionRecord {
     /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow run. </p>
     #[doc(hidden)]
     pub data_pull_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
+    #[doc(hidden)]
+    pub metadata_catalog_details:
+        std::option::Option<std::vec::Vec<crate::model::MetadataCatalogDetail>>,
 }
 impl ExecutionRecord {
     /// <p> Specifies the identifier of the given flow run. </p>
@@ -15304,6 +16130,12 @@ impl ExecutionRecord {
     pub fn data_pull_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_pull_end_time.as_ref()
     }
+    /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
+    pub fn metadata_catalog_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetadataCatalogDetail]> {
+        self.metadata_catalog_details.as_deref()
+    }
 }
 /// See [`ExecutionRecord`](crate::model::ExecutionRecord).
 pub mod execution_record {
@@ -15318,6 +16150,8 @@ pub mod execution_record {
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_pull_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_pull_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) metadata_catalog_details:
+            std::option::Option<std::vec::Vec<crate::model::MetadataCatalogDetail>>,
     }
     impl Builder {
         /// <p> Specifies the identifier of the given flow run. </p>
@@ -15408,6 +16242,28 @@ pub mod execution_record {
             self.data_pull_end_time = input;
             self
         }
+        /// Appends an item to `metadata_catalog_details`.
+        ///
+        /// To override the contents of this collection use [`set_metadata_catalog_details`](Self::set_metadata_catalog_details).
+        ///
+        /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
+        pub fn metadata_catalog_details(
+            mut self,
+            input: crate::model::MetadataCatalogDetail,
+        ) -> Self {
+            let mut v = self.metadata_catalog_details.unwrap_or_default();
+            v.push(input);
+            self.metadata_catalog_details = Some(v);
+            self
+        }
+        /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
+        pub fn set_metadata_catalog_details(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetadataCatalogDetail>>,
+        ) -> Self {
+            self.metadata_catalog_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExecutionRecord`](crate::model::ExecutionRecord).
         pub fn build(self) -> crate::model::ExecutionRecord {
             crate::model::ExecutionRecord {
@@ -15418,6 +16274,7 @@ pub mod execution_record {
                 last_updated_at: self.last_updated_at,
                 data_pull_start_time: self.data_pull_start_time,
                 data_pull_end_time: self.data_pull_end_time,
+                metadata_catalog_details: self.metadata_catalog_details,
             }
         }
     }
@@ -15426,6 +16283,338 @@ impl ExecutionRecord {
     /// Creates a new builder-style object to manufacture [`ExecutionRecord`](crate::model::ExecutionRecord).
     pub fn builder() -> crate::model::execution_record::Builder {
         crate::model::execution_record::Builder::default()
+    }
+}
+
+/// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MetadataCatalogDetail {
+    /// <p>The type of metadata catalog that Amazon AppFlow used for the associated flow run. This parameter returns the following value:</p>
+    /// <dl>
+    /// <dt>
+    /// GLUE
+    /// </dt>
+    /// <dd>
+    /// <p>The metadata catalog is provided by the Glue Data Catalog. Glue includes the Glue Data Catalog as a component.</p>
+    /// </dd>
+    /// </dl>
+    #[doc(hidden)]
+    pub catalog_type: std::option::Option<crate::model::CatalogType>,
+    /// <p>The name of the table that stores the metadata for the associated flow run. The table stores metadata that represents the data that the flow transferred. Amazon AppFlow stores the table in the metadata catalog.</p>
+    #[doc(hidden)]
+    pub table_name: std::option::Option<std::string::String>,
+    /// <p>Describes the status of the attempt from Amazon AppFlow to register the metadata table with the metadata catalog. Amazon AppFlow creates or updates this table for the associated flow run.</p>
+    #[doc(hidden)]
+    pub table_registration_output: std::option::Option<crate::model::RegistrationOutput>,
+    /// <p>Describes the status of the attempt from Amazon AppFlow to register the data partitions with the metadata catalog. The data partitions organize the flow output into a hierarchical path, such as a folder path in an S3 bucket. Amazon AppFlow creates the partitions (if they don't already exist) based on your flow configuration.</p>
+    #[doc(hidden)]
+    pub partition_registration_output: std::option::Option<crate::model::RegistrationOutput>,
+}
+impl MetadataCatalogDetail {
+    /// <p>The type of metadata catalog that Amazon AppFlow used for the associated flow run. This parameter returns the following value:</p>
+    /// <dl>
+    /// <dt>
+    /// GLUE
+    /// </dt>
+    /// <dd>
+    /// <p>The metadata catalog is provided by the Glue Data Catalog. Glue includes the Glue Data Catalog as a component.</p>
+    /// </dd>
+    /// </dl>
+    pub fn catalog_type(&self) -> std::option::Option<&crate::model::CatalogType> {
+        self.catalog_type.as_ref()
+    }
+    /// <p>The name of the table that stores the metadata for the associated flow run. The table stores metadata that represents the data that the flow transferred. Amazon AppFlow stores the table in the metadata catalog.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>Describes the status of the attempt from Amazon AppFlow to register the metadata table with the metadata catalog. Amazon AppFlow creates or updates this table for the associated flow run.</p>
+    pub fn table_registration_output(
+        &self,
+    ) -> std::option::Option<&crate::model::RegistrationOutput> {
+        self.table_registration_output.as_ref()
+    }
+    /// <p>Describes the status of the attempt from Amazon AppFlow to register the data partitions with the metadata catalog. The data partitions organize the flow output into a hierarchical path, such as a folder path in an S3 bucket. Amazon AppFlow creates the partitions (if they don't already exist) based on your flow configuration.</p>
+    pub fn partition_registration_output(
+        &self,
+    ) -> std::option::Option<&crate::model::RegistrationOutput> {
+        self.partition_registration_output.as_ref()
+    }
+}
+/// See [`MetadataCatalogDetail`](crate::model::MetadataCatalogDetail).
+pub mod metadata_catalog_detail {
+
+    /// A builder for [`MetadataCatalogDetail`](crate::model::MetadataCatalogDetail).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_type: std::option::Option<crate::model::CatalogType>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) table_registration_output: std::option::Option<crate::model::RegistrationOutput>,
+        pub(crate) partition_registration_output:
+            std::option::Option<crate::model::RegistrationOutput>,
+    }
+    impl Builder {
+        /// <p>The type of metadata catalog that Amazon AppFlow used for the associated flow run. This parameter returns the following value:</p>
+        /// <dl>
+        /// <dt>
+        /// GLUE
+        /// </dt>
+        /// <dd>
+        /// <p>The metadata catalog is provided by the Glue Data Catalog. Glue includes the Glue Data Catalog as a component.</p>
+        /// </dd>
+        /// </dl>
+        pub fn catalog_type(mut self, input: crate::model::CatalogType) -> Self {
+            self.catalog_type = Some(input);
+            self
+        }
+        /// <p>The type of metadata catalog that Amazon AppFlow used for the associated flow run. This parameter returns the following value:</p>
+        /// <dl>
+        /// <dt>
+        /// GLUE
+        /// </dt>
+        /// <dd>
+        /// <p>The metadata catalog is provided by the Glue Data Catalog. Glue includes the Glue Data Catalog as a component.</p>
+        /// </dd>
+        /// </dl>
+        pub fn set_catalog_type(
+            mut self,
+            input: std::option::Option<crate::model::CatalogType>,
+        ) -> Self {
+            self.catalog_type = input;
+            self
+        }
+        /// <p>The name of the table that stores the metadata for the associated flow run. The table stores metadata that represents the data that the flow transferred. Amazon AppFlow stores the table in the metadata catalog.</p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the table that stores the metadata for the associated flow run. The table stores metadata that represents the data that the flow transferred. Amazon AppFlow stores the table in the metadata catalog.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
+            self
+        }
+        /// <p>Describes the status of the attempt from Amazon AppFlow to register the metadata table with the metadata catalog. Amazon AppFlow creates or updates this table for the associated flow run.</p>
+        pub fn table_registration_output(
+            mut self,
+            input: crate::model::RegistrationOutput,
+        ) -> Self {
+            self.table_registration_output = Some(input);
+            self
+        }
+        /// <p>Describes the status of the attempt from Amazon AppFlow to register the metadata table with the metadata catalog. Amazon AppFlow creates or updates this table for the associated flow run.</p>
+        pub fn set_table_registration_output(
+            mut self,
+            input: std::option::Option<crate::model::RegistrationOutput>,
+        ) -> Self {
+            self.table_registration_output = input;
+            self
+        }
+        /// <p>Describes the status of the attempt from Amazon AppFlow to register the data partitions with the metadata catalog. The data partitions organize the flow output into a hierarchical path, such as a folder path in an S3 bucket. Amazon AppFlow creates the partitions (if they don't already exist) based on your flow configuration.</p>
+        pub fn partition_registration_output(
+            mut self,
+            input: crate::model::RegistrationOutput,
+        ) -> Self {
+            self.partition_registration_output = Some(input);
+            self
+        }
+        /// <p>Describes the status of the attempt from Amazon AppFlow to register the data partitions with the metadata catalog. The data partitions organize the flow output into a hierarchical path, such as a folder path in an S3 bucket. Amazon AppFlow creates the partitions (if they don't already exist) based on your flow configuration.</p>
+        pub fn set_partition_registration_output(
+            mut self,
+            input: std::option::Option<crate::model::RegistrationOutput>,
+        ) -> Self {
+            self.partition_registration_output = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetadataCatalogDetail`](crate::model::MetadataCatalogDetail).
+        pub fn build(self) -> crate::model::MetadataCatalogDetail {
+            crate::model::MetadataCatalogDetail {
+                catalog_type: self.catalog_type,
+                table_name: self.table_name,
+                table_registration_output: self.table_registration_output,
+                partition_registration_output: self.partition_registration_output,
+            }
+        }
+    }
+}
+impl MetadataCatalogDetail {
+    /// Creates a new builder-style object to manufacture [`MetadataCatalogDetail`](crate::model::MetadataCatalogDetail).
+    pub fn builder() -> crate::model::metadata_catalog_detail::Builder {
+        crate::model::metadata_catalog_detail::Builder::default()
+    }
+}
+
+/// <p>Describes the status of an attempt from Amazon AppFlow to register a resource.</p>
+/// <p>When you run a flow that you've configured to use a metadata catalog, Amazon AppFlow registers a metadata table and data partitions with that catalog. This operation provides the status of that registration attempt. The operation also indicates how many related resources Amazon AppFlow created or updated.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RegistrationOutput {
+    /// <p>Explains the status of the registration attempt from Amazon AppFlow. If the attempt fails, the message explains why.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p>Indicates the number of resources that Amazon AppFlow created or updated. Possible resources include metadata tables and data partitions.</p>
+    #[doc(hidden)]
+    pub result: std::option::Option<std::string::String>,
+    /// <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::ExecutionStatus>,
+}
+impl RegistrationOutput {
+    /// <p>Explains the status of the registration attempt from Amazon AppFlow. If the attempt fails, the message explains why.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>Indicates the number of resources that Amazon AppFlow created or updated. Possible resources include metadata tables and data partitions.</p>
+    pub fn result(&self) -> std::option::Option<&str> {
+        self.result.as_deref()
+    }
+    /// <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
+        self.status.as_ref()
+    }
+}
+/// See [`RegistrationOutput`](crate::model::RegistrationOutput).
+pub mod registration_output {
+
+    /// A builder for [`RegistrationOutput`](crate::model::RegistrationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) result: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
+    }
+    impl Builder {
+        /// <p>Explains the status of the registration attempt from Amazon AppFlow. If the attempt fails, the message explains why.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Explains the status of the registration attempt from Amazon AppFlow. If the attempt fails, the message explains why.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>Indicates the number of resources that Amazon AppFlow created or updated. Possible resources include metadata tables and data partitions.</p>
+        pub fn result(mut self, input: impl Into<std::string::String>) -> Self {
+            self.result = Some(input.into());
+            self
+        }
+        /// <p>Indicates the number of resources that Amazon AppFlow created or updated. Possible resources include metadata tables and data partitions.</p>
+        pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.result = input;
+            self
+        }
+        /// <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
+        pub fn status(mut self, input: crate::model::ExecutionStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegistrationOutput`](crate::model::RegistrationOutput).
+        pub fn build(self) -> crate::model::RegistrationOutput {
+            crate::model::RegistrationOutput {
+                message: self.message,
+                result: self.result,
+                status: self.status,
+            }
+        }
+    }
+}
+impl RegistrationOutput {
+    /// Creates a new builder-style object to manufacture [`RegistrationOutput`](crate::model::RegistrationOutput).
+    pub fn builder() -> crate::model::registration_output::Builder {
+        crate::model::registration_output::Builder::default()
+    }
+}
+
+/// When writing a match expression against `CatalogType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let catalogtype = unimplemented!();
+/// match catalogtype {
+///     CatalogType::Glue => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `catalogtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CatalogType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CatalogType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CatalogType::NewFeature` is defined.
+/// Specifically, when `catalogtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CatalogType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CatalogType {
+    #[allow(missing_docs)] // documentation missing in model
+    Glue,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for CatalogType {
+    fn from(s: &str) -> Self {
+        match s {
+            "GLUE" => CatalogType::Glue,
+            other => CatalogType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for CatalogType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CatalogType::from(s))
+    }
+}
+impl CatalogType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CatalogType::Glue => "GLUE",
+            CatalogType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["GLUE"]
+    }
+}
+impl AsRef<str> for CatalogType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -18427,11 +19616,21 @@ pub struct SalesforceMetadata {
     /// <p> The desired authorization scope for the Salesforce account. </p>
     #[doc(hidden)]
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.</p>
+    #[doc(hidden)]
+    pub data_transfer_apis:
+        std::option::Option<std::vec::Vec<crate::model::SalesforceDataTransferApi>>,
 }
 impl SalesforceMetadata {
     /// <p> The desired authorization scope for the Salesforce account. </p>
     pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.o_auth_scopes.as_deref()
+    }
+    /// <p>The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.</p>
+    pub fn data_transfer_apis(
+        &self,
+    ) -> std::option::Option<&[crate::model::SalesforceDataTransferApi]> {
+        self.data_transfer_apis.as_deref()
     }
 }
 /// See [`SalesforceMetadata`](crate::model::SalesforceMetadata).
@@ -18441,6 +19640,8 @@ pub mod salesforce_metadata {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) data_transfer_apis:
+            std::option::Option<std::vec::Vec<crate::model::SalesforceDataTransferApi>>,
     }
     impl Builder {
         /// Appends an item to `o_auth_scopes`.
@@ -18462,10 +19663,33 @@ pub mod salesforce_metadata {
             self.o_auth_scopes = input;
             self
         }
+        /// Appends an item to `data_transfer_apis`.
+        ///
+        /// To override the contents of this collection use [`set_data_transfer_apis`](Self::set_data_transfer_apis).
+        ///
+        /// <p>The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.</p>
+        pub fn data_transfer_apis(
+            mut self,
+            input: crate::model::SalesforceDataTransferApi,
+        ) -> Self {
+            let mut v = self.data_transfer_apis.unwrap_or_default();
+            v.push(input);
+            self.data_transfer_apis = Some(v);
+            self
+        }
+        /// <p>The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.</p>
+        pub fn set_data_transfer_apis(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SalesforceDataTransferApi>>,
+        ) -> Self {
+            self.data_transfer_apis = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SalesforceMetadata`](crate::model::SalesforceMetadata).
         pub fn build(self) -> crate::model::SalesforceMetadata {
             crate::model::SalesforceMetadata {
                 o_auth_scopes: self.o_auth_scopes,
+                data_transfer_apis: self.data_transfer_apis,
             }
         }
     }

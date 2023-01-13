@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnvironmentsOutput {
-    /// <p>Returns a list of summary details for all the environments in your account. </p>
+    /// <p>Returns a list of summary details for all the runtime environments in your account. </p>
     #[doc(hidden)]
     pub environments: std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>,
-    /// <p>A pagination token that's returned when the response doesn't contain all the environments.</p>
+    /// <p>A pagination token that's returned when the response doesn't contain all the runtime environments.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentsOutput {
-    /// <p>Returns a list of summary details for all the environments in your account. </p>
+    /// <p>Returns a list of summary details for all the runtime environments in your account. </p>
     pub fn environments(&self) -> std::option::Option<&[crate::model::EnvironmentSummary]> {
         self.environments.as_deref()
     }
-    /// <p>A pagination token that's returned when the response doesn't contain all the environments.</p>
+    /// <p>A pagination token that's returned when the response doesn't contain all the runtime environments.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -35,14 +35,14 @@ pub mod list_environments_output {
         ///
         /// To override the contents of this collection use [`set_environments`](Self::set_environments).
         ///
-        /// <p>Returns a list of summary details for all the environments in your account. </p>
+        /// <p>Returns a list of summary details for all the runtime environments in your account. </p>
         pub fn environments(mut self, input: crate::model::EnvironmentSummary) -> Self {
             let mut v = self.environments.unwrap_or_default();
             v.push(input);
             self.environments = Some(v);
             self
         }
-        /// <p>Returns a list of summary details for all the environments in your account. </p>
+        /// <p>Returns a list of summary details for all the runtime environments in your account. </p>
         pub fn set_environments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>,
@@ -50,12 +50,12 @@ pub mod list_environments_output {
             self.environments = input;
             self
         }
-        /// <p>A pagination token that's returned when the response doesn't contain all the environments.</p>
+        /// <p>A pagination token that's returned when the response doesn't contain all the runtime environments.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token that's returned when the response doesn't contain all the environments.</p>
+        /// <p>A pagination token that's returned when the response doesn't contain all the runtime environments.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -80,12 +80,12 @@ impl ListEnvironmentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEnvironmentOutput {
-    /// <p>The identifier of this environment.</p>
+    /// <p>The unique identifier of the runtime environment.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentOutput {
-    /// <p>The identifier of this environment.</p>
+    /// <p>The unique identifier of the runtime environment.</p>
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
@@ -99,12 +99,12 @@ pub mod create_environment_output {
         pub(crate) environment_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of this environment.</p>
+        /// <p>The unique identifier of the runtime environment.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.environment_id = Some(input.into());
             self
         }
-        /// <p>The identifier of this environment.</p>
+        /// <p>The unique identifier of the runtime environment.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -206,7 +206,7 @@ impl UpdateEnvironmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEnvironmentOutput {
-    /// <p>The name of the runtime environment. </p>
+    /// <p>The name of the runtime environment. Must be unique within the account.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the runtime environment.</p>
@@ -265,15 +265,18 @@ pub struct GetEnvironmentOutput {
     /// <p>The reason for the reported status.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
-    /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
     #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>Indicates the pending maintenance scheduled on this environment.</p>
     #[doc(hidden)]
     pub pending_maintenance: std::option::Option<crate::model::PendingMaintenance>,
+    /// <p>The identifier of a customer managed key.</p>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentOutput {
-    /// <p>The name of the runtime environment. </p>
+    /// <p>The name of the runtime environment. Must be unique within the account.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -356,13 +359,17 @@ impl GetEnvironmentOutput {
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Indicates the pending maintenance scheduled on this environment.</p>
     pub fn pending_maintenance(&self) -> std::option::Option<&crate::model::PendingMaintenance> {
         self.pending_maintenance.as_ref()
+    }
+    /// <p>The identifier of a customer managed key.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
     }
 }
 /// See [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
@@ -396,14 +403,15 @@ pub mod get_environment_output {
         pub(crate) status_reason: std::option::Option<std::string::String>,
         pub(crate) preferred_maintenance_window: std::option::Option<std::string::String>,
         pub(crate) pending_maintenance: std::option::Option<crate::model::PendingMaintenance>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the runtime environment. </p>
+        /// <p>The name of the runtime environment. Must be unique within the account.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the runtime environment. </p>
+        /// <p>The name of the runtime environment. Must be unique within the account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -663,7 +671,7 @@ pub mod get_environment_output {
             self.status_reason = input;
             self
         }
-        /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+        /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
         pub fn preferred_maintenance_window(
             mut self,
             input: impl Into<std::string::String>,
@@ -671,7 +679,7 @@ pub mod get_environment_output {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
-        /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+        /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -690,6 +698,16 @@ pub mod get_environment_output {
             input: std::option::Option<crate::model::PendingMaintenance>,
         ) -> Self {
             self.pending_maintenance = input;
+            self
+        }
+        /// <p>The identifier of a customer managed key.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a customer managed key.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
@@ -716,6 +734,7 @@ pub mod get_environment_output {
                 status_reason: self.status_reason,
                 preferred_maintenance_window: self.preferred_maintenance_window,
                 pending_maintenance: self.pending_maintenance,
+                kms_key_id: self.kms_key_id,
             }
         }
     }
@@ -903,7 +922,7 @@ impl ListDeploymentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataSetsOutput {
-    /// <p>The list of data sets, containing ionformation including the creating time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
+    /// <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
     #[doc(hidden)]
     pub data_sets: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
@@ -911,7 +930,7 @@ pub struct ListDataSetsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataSetsOutput {
-    /// <p>The list of data sets, containing ionformation including the creating time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
+    /// <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
     pub fn data_sets(&self) -> std::option::Option<&[crate::model::DataSetSummary]> {
         self.data_sets.as_deref()
     }
@@ -934,14 +953,14 @@ pub mod list_data_sets_output {
         ///
         /// To override the contents of this collection use [`set_data_sets`](Self::set_data_sets).
         ///
-        /// <p>The list of data sets, containing ionformation including the creating time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
+        /// <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
         pub fn data_sets(mut self, input: crate::model::DataSetSummary) -> Self {
             let mut v = self.data_sets.unwrap_or_default();
             v.push(input);
             self.data_sets = Some(v);
             self
         }
-        /// <p>The list of data sets, containing ionformation including the creating time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
+        /// <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
         pub fn set_data_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
@@ -1576,13 +1595,13 @@ pub struct GetDataSetDetailsOutput {
     /// <p>The name of the data set.</p>
     #[doc(hidden)]
     pub data_set_name: std::option::Option<std::string::String>,
-    /// <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.</p>
+    /// <p>The type of data set. The only supported value is VSAM.</p>
     #[doc(hidden)]
     pub data_set_org: std::option::Option<crate::model::DatasetDetailOrgAttributes>,
     /// <p>The length of records in the data set.</p>
     #[doc(hidden)]
     pub record_length: std::option::Option<i32>,
-    /// <p>The locaion where the data set is stored.</p>
+    /// <p>The location where the data set is stored.</p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The size of the block on disk. </p>
@@ -1603,7 +1622,7 @@ impl GetDataSetDetailsOutput {
     pub fn data_set_name(&self) -> std::option::Option<&str> {
         self.data_set_name.as_deref()
     }
-    /// <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.</p>
+    /// <p>The type of data set. The only supported value is VSAM.</p>
     pub fn data_set_org(&self) -> std::option::Option<&crate::model::DatasetDetailOrgAttributes> {
         self.data_set_org.as_ref()
     }
@@ -1611,7 +1630,7 @@ impl GetDataSetDetailsOutput {
     pub fn record_length(&self) -> std::option::Option<i32> {
         self.record_length
     }
-    /// <p>The locaion where the data set is stored.</p>
+    /// <p>The location where the data set is stored.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -1661,12 +1680,12 @@ pub mod get_data_set_details_output {
             self.data_set_name = input;
             self
         }
-        /// <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.</p>
+        /// <p>The type of data set. The only supported value is VSAM.</p>
         pub fn data_set_org(mut self, input: crate::model::DatasetDetailOrgAttributes) -> Self {
             self.data_set_org = Some(input);
             self
         }
-        /// <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.</p>
+        /// <p>The type of data set. The only supported value is VSAM.</p>
         pub fn set_data_set_org(
             mut self,
             input: std::option::Option<crate::model::DatasetDetailOrgAttributes>,
@@ -1684,12 +1703,12 @@ pub mod get_data_set_details_output {
             self.record_length = input;
             self
         }
-        /// <p>The locaion where the data set is stored.</p>
+        /// <p>The location where the data set is stored.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The locaion where the data set is stored.</p>
+        /// <p>The location where the data set is stored.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -2015,7 +2034,7 @@ pub struct GetApplicationVersionOutput {
     /// <p>The application description.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The content of the application definition. This is a JSON object that contains the resource configuration/definitions that identify an application.</p>
+    /// <p>The content of the application definition. This is a JSON object that contains the resource configuration and definitions that identify an application.</p>
     #[doc(hidden)]
     pub definition_content: std::option::Option<std::string::String>,
     /// <p>The status of the application version.</p>
@@ -2041,7 +2060,7 @@ impl GetApplicationVersionOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The content of the application definition. This is a JSON object that contains the resource configuration/definitions that identify an application.</p>
+    /// <p>The content of the application definition. This is a JSON object that contains the resource configuration and definitions that identify an application.</p>
     pub fn definition_content(&self) -> std::option::Option<&str> {
         self.definition_content.as_deref()
     }
@@ -2103,12 +2122,12 @@ pub mod get_application_version_output {
             self.description = input;
             self
         }
-        /// <p>The content of the application definition. This is a JSON object that contains the resource configuration/definitions that identify an application.</p>
+        /// <p>The content of the application definition. This is a JSON object that contains the resource configuration and definitions that identify an application.</p>
         pub fn definition_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.definition_content = Some(input.into());
             self
         }
-        /// <p>The content of the application definition. This is a JSON object that contains the resource configuration/definitions that identify an application.</p>
+        /// <p>The content of the application definition. This is a JSON object that contains the resource configuration and definitions that identify an application.</p>
         pub fn set_definition_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2327,7 +2346,7 @@ impl CancelBatchJobExecutionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationsOutput {
-    /// <p>Returns a list of summary details for all the applications in an environment.</p>
+    /// <p>Returns a list of summary details for all the applications in a runtime environment.</p>
     #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
     /// <p>A pagination token that's returned when the response doesn't contain all applications.</p>
@@ -2335,7 +2354,7 @@ pub struct ListApplicationsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
-    /// <p>Returns a list of summary details for all the applications in an environment.</p>
+    /// <p>Returns a list of summary details for all the applications in a runtime environment.</p>
     pub fn applications(&self) -> std::option::Option<&[crate::model::ApplicationSummary]> {
         self.applications.as_deref()
     }
@@ -2359,14 +2378,14 @@ pub mod list_applications_output {
         ///
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
-        /// <p>Returns a list of summary details for all the applications in an environment.</p>
+        /// <p>Returns a list of summary details for all the applications in a runtime environment.</p>
         pub fn applications(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.applications.unwrap_or_default();
             v.push(input);
             self.applications = Some(v);
             self
         }
-        /// <p>Returns a list of summary details for all the applications in an environment.</p>
+        /// <p>Returns a list of summary details for all the applications in a runtime environment.</p>
         pub fn set_applications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
@@ -2592,26 +2611,26 @@ pub struct GetApplicationOutput {
     /// <p>The type of the target platform for the application.</p>
     #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
-    /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to CloudWatch under the customer's account.</p>
+    /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the customer's account.</p>
     #[doc(hidden)]
     pub log_groups: std::option::Option<std::vec::Vec<crate::model::LogGroupSummary>>,
     /// <p>The timestamp when this application was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp when the application was last started. Null until the application has started running for the first time.</p>
+    /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
     #[doc(hidden)]
     pub last_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags associated with the application.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The identifier of the environment where the application will be deployed.</p>
+    /// <p>The identifier of the runtime environment where you want to deploy the application.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>Returns the Amazon Resource Names (ARNs) of the target groups that are attached to the network load balancer.</p>
     #[doc(hidden)]
     pub target_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time you deploy an application.</p>
+    /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an application.</p>
     #[doc(hidden)]
     pub listener_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The port associated with the network load balancer listener created in your Amazon Web Services account.</p>
@@ -2623,6 +2642,9 @@ pub struct GetApplicationOutput {
     /// <p>The reason for the reported status.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
+    /// <p>The identifier of a customer managed key.</p>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl GetApplicationOutput {
     /// <p>The unique identifier of the application.</p>
@@ -2657,7 +2679,7 @@ impl GetApplicationOutput {
     pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
         self.engine_type.as_ref()
     }
-    /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to CloudWatch under the customer's account.</p>
+    /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the customer's account.</p>
     pub fn log_groups(&self) -> std::option::Option<&[crate::model::LogGroupSummary]> {
         self.log_groups.as_deref()
     }
@@ -2665,7 +2687,7 @@ impl GetApplicationOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The timestamp when the application was last started. Null until the application has started running for the first time.</p>
+    /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
     pub fn last_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_start_time.as_ref()
     }
@@ -2676,7 +2698,7 @@ impl GetApplicationOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>The identifier of the environment where the application will be deployed.</p>
+    /// <p>The identifier of the runtime environment where you want to deploy the application.</p>
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
@@ -2684,7 +2706,7 @@ impl GetApplicationOutput {
     pub fn target_group_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.target_group_arns.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time you deploy an application.</p>
+    /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an application.</p>
     pub fn listener_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.listener_arns.as_deref()
     }
@@ -2699,6 +2721,10 @@ impl GetApplicationOutput {
     /// <p>The reason for the reported status.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
+    }
+    /// <p>The identifier of a customer managed key.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
     }
 }
 /// See [`GetApplicationOutput`](crate::output::GetApplicationOutput).
@@ -2727,6 +2753,7 @@ pub mod get_application_output {
         pub(crate) listener_ports: std::option::Option<std::vec::Vec<i32>>,
         pub(crate) load_balancer_dns_name: std::option::Option<std::string::String>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier of the application.</p>
@@ -2831,14 +2858,14 @@ pub mod get_application_output {
         ///
         /// To override the contents of this collection use [`set_log_groups`](Self::set_log_groups).
         ///
-        /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to CloudWatch under the customer's account.</p>
+        /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the customer's account.</p>
         pub fn log_groups(mut self, input: crate::model::LogGroupSummary) -> Self {
             let mut v = self.log_groups.unwrap_or_default();
             v.push(input);
             self.log_groups = Some(v);
             self
         }
-        /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to CloudWatch under the customer's account.</p>
+        /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the customer's account.</p>
         pub fn set_log_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogGroupSummary>>,
@@ -2859,12 +2886,12 @@ pub mod get_application_output {
             self.creation_time = input;
             self
         }
-        /// <p>The timestamp when the application was last started. Null until the application has started running for the first time.</p>
+        /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
         pub fn last_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_start_time = Some(input);
             self
         }
-        /// <p>The timestamp when the application was last started. Null until the application has started running for the first time.</p>
+        /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
         pub fn set_last_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2897,12 +2924,12 @@ pub mod get_application_output {
             self.tags = input;
             self
         }
-        /// <p>The identifier of the environment where the application will be deployed.</p>
+        /// <p>The identifier of the runtime environment where you want to deploy the application.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.environment_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the environment where the application will be deployed.</p>
+        /// <p>The identifier of the runtime environment where you want to deploy the application.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2933,14 +2960,14 @@ pub mod get_application_output {
         ///
         /// To override the contents of this collection use [`set_listener_arns`](Self::set_listener_arns).
         ///
-        /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time you deploy an application.</p>
+        /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an application.</p>
         pub fn listener_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.listener_arns.unwrap_or_default();
             v.push(input.into());
             self.listener_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time you deploy an application.</p>
+        /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an application.</p>
         pub fn set_listener_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2993,6 +3020,16 @@ pub mod get_application_output {
             self.status_reason = input;
             self
         }
+        /// <p>The identifier of a customer managed key.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a customer managed key.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::output::GetApplicationOutput).
         pub fn build(self) -> crate::output::GetApplicationOutput {
             crate::output::GetApplicationOutput {
@@ -3014,6 +3051,7 @@ pub mod get_application_output {
                 listener_ports: self.listener_ports,
                 load_balancer_dns_name: self.load_balancer_dns_name,
                 status_reason: self.status_reason,
+                kms_key_id: self.kms_key_id,
             }
         }
     }

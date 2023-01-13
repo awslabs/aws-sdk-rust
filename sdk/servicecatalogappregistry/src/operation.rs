@@ -371,6 +371,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAttributeGroup {
     }
 }
 
+/// Operation shape for `GetConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_configuration`](crate::client::Client::get_configuration).
+///
+/// See [`crate::client::fluent_builders::GetConfiguration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetConfiguration {
+    _private: (),
+}
+impl GetConfiguration {
+    /// Creates a new builder-style object to manufacture [`GetConfigurationInput`](crate::input::GetConfigurationInput).
+    pub fn builder() -> crate::input::get_configuration_input::Builder {
+        crate::input::get_configuration_input::Builder::default()
+    }
+    /// Creates a new `GetConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetConfiguration {
+    type Output = std::result::Result<
+        crate::output::GetConfigurationOutput,
+        crate::error::GetConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_get_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListApplications`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -571,6 +605,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_configuration`](crate::client::Client::put_configuration).
+///
+/// See [`crate::client::fluent_builders::PutConfiguration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct PutConfiguration {
+    _private: (),
+}
+impl PutConfiguration {
+    /// Creates a new builder-style object to manufacture [`PutConfigurationInput`](crate::input::PutConfigurationInput).
+    pub fn builder() -> crate::input::put_configuration_input::Builder {
+        crate::input::put_configuration_input::Builder::default()
+    }
+    /// Creates a new `PutConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutConfiguration {
+    type Output = std::result::Result<
+        crate::output::PutConfigurationOutput,
+        crate::error::PutConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_put_configuration_response(response)
         }
     }
 }

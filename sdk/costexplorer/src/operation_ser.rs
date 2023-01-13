@@ -329,6 +329,16 @@ pub fn serialize_operation_crate_operation_list_cost_category_definitions(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_list_savings_plans_purchase_recommendation_generation(
+    input: &crate::input::ListSavingsPlansPurchaseRecommendationGenerationInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::error::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_savings_plans_purchase_recommendation_generation_input(&mut object, input)?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_list_tags_for_resource(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::error::SerializationError> {
@@ -353,6 +363,12 @@ pub fn serialize_operation_crate_operation_provide_anomaly_feedback(
     )?;
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_start_savings_plans_purchase_recommendation_generation(
+    _input: &crate::input::StartSavingsPlansPurchaseRecommendationGenerationInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::error::SerializationError> {
+    Ok(aws_smithy_http::body::SdkBody::from("{}"))
 }
 
 pub fn serialize_operation_crate_operation_tag_resource(

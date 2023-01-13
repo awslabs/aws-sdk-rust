@@ -517,6 +517,81 @@ impl AssociateLicenseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateWorkspaceConfigurationOutput {}
+/// See [`UpdateWorkspaceConfigurationOutput`](crate::output::UpdateWorkspaceConfigurationOutput).
+pub mod update_workspace_configuration_output {
+
+    /// A builder for [`UpdateWorkspaceConfigurationOutput`](crate::output::UpdateWorkspaceConfigurationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateWorkspaceConfigurationOutput`](crate::output::UpdateWorkspaceConfigurationOutput).
+        pub fn build(self) -> crate::output::UpdateWorkspaceConfigurationOutput {
+            crate::output::UpdateWorkspaceConfigurationOutput {}
+        }
+    }
+}
+impl UpdateWorkspaceConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateWorkspaceConfigurationOutput`](crate::output::UpdateWorkspaceConfigurationOutput).
+    pub fn builder() -> crate::output::update_workspace_configuration_output::Builder {
+        crate::output::update_workspace_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeWorkspaceConfigurationOutput {
+    /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+    #[doc(hidden)]
+    pub configuration: std::option::Option<std::string::String>,
+}
+impl DescribeWorkspaceConfigurationOutput {
+    /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+    pub fn configuration(&self) -> std::option::Option<&str> {
+        self.configuration.as_deref()
+    }
+}
+/// See [`DescribeWorkspaceConfigurationOutput`](crate::output::DescribeWorkspaceConfigurationOutput).
+pub mod describe_workspace_configuration_output {
+
+    /// A builder for [`DescribeWorkspaceConfigurationOutput`](crate::output::DescribeWorkspaceConfigurationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) configuration: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration = Some(input.into());
+            self
+        }
+        /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeWorkspaceConfigurationOutput`](crate::output::DescribeWorkspaceConfigurationOutput).
+        pub fn build(self) -> crate::output::DescribeWorkspaceConfigurationOutput {
+            crate::output::DescribeWorkspaceConfigurationOutput {
+                configuration: self.configuration,
+            }
+        }
+    }
+}
+impl DescribeWorkspaceConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceConfigurationOutput`](crate::output::DescribeWorkspaceConfigurationOutput).
+    pub fn builder() -> crate::output::describe_workspace_configuration_output::Builder {
+        crate::output::describe_workspace_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkspaceAuthenticationOutput {
     /// <p>A structure that describes the user authentication for this workspace after the update is made.</p>
     #[doc(hidden)]
@@ -620,7 +695,7 @@ impl DescribeWorkspaceAuthenticationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkspaceApiKeyOutput {
-    /// <p>The name of the API key that was deleted.</p>
+    /// <p>The name of the key that was deleted.</p>
     #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>The ID of the workspace where the key was deleted.</p>
@@ -628,7 +703,7 @@ pub struct DeleteWorkspaceApiKeyOutput {
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DeleteWorkspaceApiKeyOutput {
-    /// <p>The name of the API key that was deleted.</p>
+    /// <p>The name of the key that was deleted.</p>
     pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
@@ -647,12 +722,12 @@ pub mod delete_workspace_api_key_output {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the API key that was deleted.</p>
+        /// <p>The name of the key that was deleted.</p>
         pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_name = Some(input.into());
             self
         }
-        /// <p>The name of the API key that was deleted.</p>
+        /// <p>The name of the key that was deleted.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_name = input;
             self
@@ -690,7 +765,7 @@ pub struct CreateWorkspaceApiKeyOutput {
     /// <p>The name of the key that was created.</p>
     #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
-    /// <p>The key token that was created. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
+    /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The ID of the workspace that the key is valid for.</p>
@@ -702,7 +777,7 @@ impl CreateWorkspaceApiKeyOutput {
     pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
-    /// <p>The key token that was created. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
+    /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -741,12 +816,12 @@ pub mod create_workspace_api_key_output {
             self.key_name = input;
             self
         }
-        /// <p>The key token that was created. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
+        /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The key token that was created. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
+        /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self

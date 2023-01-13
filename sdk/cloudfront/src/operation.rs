@@ -31,6 +31,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAlias {
     }
 }
 
+/// Operation shape for `CopyDistribution`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`copy_distribution`](crate::client::Client::copy_distribution).
+///
+/// See [`crate::client::fluent_builders::CopyDistribution`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CopyDistribution {
+    _private: (),
+}
+impl CopyDistribution {
+    /// Creates a new builder-style object to manufacture [`CopyDistributionInput`](crate::input::CopyDistributionInput).
+    pub fn builder() -> crate::input::copy_distribution_input::Builder {
+        crate::input::copy_distribution_input::Builder::default()
+    }
+    /// Creates a new `CopyDistribution` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CopyDistribution {
+    type Output = std::result::Result<
+        crate::output::CopyDistributionOutput,
+        crate::error::CopyDistributionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_copy_distribution_error(response)
+        } else {
+            crate::operation_deser::parse_copy_distribution_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateCachePolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -97,6 +131,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCloudFrontOriginAc
             crate::operation_deser::parse_create_cloud_front_origin_access_identity_response(
                 response,
             )
+        }
+    }
+}
+
+/// Operation shape for `CreateContinuousDeploymentPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_continuous_deployment_policy`](crate::client::Client::create_continuous_deployment_policy).
+///
+/// See [`crate::client::fluent_builders::CreateContinuousDeploymentPolicy`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateContinuousDeploymentPolicy {
+    _private: (),
+}
+impl CreateContinuousDeploymentPolicy {
+    /// Creates a new builder-style object to manufacture [`CreateContinuousDeploymentPolicyInput`](crate::input::CreateContinuousDeploymentPolicyInput).
+    pub fn builder() -> crate::input::create_continuous_deployment_policy_input::Builder {
+        crate::input::create_continuous_deployment_policy_input::Builder::default()
+    }
+    /// Creates a new `CreateContinuousDeploymentPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateContinuousDeploymentPolicy {
+    type Output = std::result::Result<
+        crate::output::CreateContinuousDeploymentPolicyOutput,
+        crate::error::CreateContinuousDeploymentPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_continuous_deployment_policy_error(response)
+        } else {
+            crate::operation_deser::parse_create_continuous_deployment_policy_response(response)
         }
     }
 }
@@ -677,6 +745,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCloudFrontOriginAc
     }
 }
 
+/// Operation shape for `DeleteContinuousDeploymentPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_continuous_deployment_policy`](crate::client::Client::delete_continuous_deployment_policy).
+///
+/// See [`crate::client::fluent_builders::DeleteContinuousDeploymentPolicy`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteContinuousDeploymentPolicy {
+    _private: (),
+}
+impl DeleteContinuousDeploymentPolicy {
+    /// Creates a new builder-style object to manufacture [`DeleteContinuousDeploymentPolicyInput`](crate::input::DeleteContinuousDeploymentPolicyInput).
+    pub fn builder() -> crate::input::delete_continuous_deployment_policy_input::Builder {
+        crate::input::delete_continuous_deployment_policy_input::Builder::default()
+    }
+    /// Creates a new `DeleteContinuousDeploymentPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteContinuousDeploymentPolicy {
+    type Output = std::result::Result<
+        crate::output::DeleteContinuousDeploymentPolicyOutput,
+        crate::error::DeleteContinuousDeploymentPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_continuous_deployment_policy_error(response)
+        } else {
+            crate::operation_deser::parse_delete_continuous_deployment_policy_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteDistribution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1249,6 +1351,74 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCloudFrontOriginAcces
             crate::operation_deser::parse_get_cloud_front_origin_access_identity_config_response(
                 response,
             )
+        }
+    }
+}
+
+/// Operation shape for `GetContinuousDeploymentPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_continuous_deployment_policy`](crate::client::Client::get_continuous_deployment_policy).
+///
+/// See [`crate::client::fluent_builders::GetContinuousDeploymentPolicy`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetContinuousDeploymentPolicy {
+    _private: (),
+}
+impl GetContinuousDeploymentPolicy {
+    /// Creates a new builder-style object to manufacture [`GetContinuousDeploymentPolicyInput`](crate::input::GetContinuousDeploymentPolicyInput).
+    pub fn builder() -> crate::input::get_continuous_deployment_policy_input::Builder {
+        crate::input::get_continuous_deployment_policy_input::Builder::default()
+    }
+    /// Creates a new `GetContinuousDeploymentPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetContinuousDeploymentPolicy {
+    type Output = std::result::Result<
+        crate::output::GetContinuousDeploymentPolicyOutput,
+        crate::error::GetContinuousDeploymentPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_continuous_deployment_policy_error(response)
+        } else {
+            crate::operation_deser::parse_get_continuous_deployment_policy_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetContinuousDeploymentPolicyConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_continuous_deployment_policy_config`](crate::client::Client::get_continuous_deployment_policy_config).
+///
+/// See [`crate::client::fluent_builders::GetContinuousDeploymentPolicyConfig`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetContinuousDeploymentPolicyConfig {
+    _private: (),
+}
+impl GetContinuousDeploymentPolicyConfig {
+    /// Creates a new builder-style object to manufacture [`GetContinuousDeploymentPolicyConfigInput`](crate::input::GetContinuousDeploymentPolicyConfigInput).
+    pub fn builder() -> crate::input::get_continuous_deployment_policy_config_input::Builder {
+        crate::input::get_continuous_deployment_policy_config_input::Builder::default()
+    }
+    /// Creates a new `GetContinuousDeploymentPolicyConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetContinuousDeploymentPolicyConfig {
+    type Output = std::result::Result<
+        crate::output::GetContinuousDeploymentPolicyConfigOutput,
+        crate::error::GetContinuousDeploymentPolicyConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_continuous_deployment_policy_config_error(response)
+        } else {
+            crate::operation_deser::parse_get_continuous_deployment_policy_config_response(response)
         }
     }
 }
@@ -2097,6 +2267,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConflictingAliases {
             crate::operation_deser::parse_list_conflicting_aliases_error(response)
         } else {
             crate::operation_deser::parse_list_conflicting_aliases_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListContinuousDeploymentPolicies`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_continuous_deployment_policies`](crate::client::Client::list_continuous_deployment_policies).
+///
+/// See [`crate::client::fluent_builders::ListContinuousDeploymentPolicies`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListContinuousDeploymentPolicies {
+    _private: (),
+}
+impl ListContinuousDeploymentPolicies {
+    /// Creates a new builder-style object to manufacture [`ListContinuousDeploymentPoliciesInput`](crate::input::ListContinuousDeploymentPoliciesInput).
+    pub fn builder() -> crate::input::list_continuous_deployment_policies_input::Builder {
+        crate::input::list_continuous_deployment_policies_input::Builder::default()
+    }
+    /// Creates a new `ListContinuousDeploymentPolicies` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListContinuousDeploymentPolicies {
+    type Output = std::result::Result<
+        crate::output::ListContinuousDeploymentPoliciesOutput,
+        crate::error::ListContinuousDeploymentPoliciesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_continuous_deployment_policies_error(response)
+        } else {
+            crate::operation_deser::parse_list_continuous_deployment_policies_response(response)
         }
     }
 }
@@ -2953,6 +3157,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCloudFrontOriginAc
     }
 }
 
+/// Operation shape for `UpdateContinuousDeploymentPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_continuous_deployment_policy`](crate::client::Client::update_continuous_deployment_policy).
+///
+/// See [`crate::client::fluent_builders::UpdateContinuousDeploymentPolicy`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateContinuousDeploymentPolicy {
+    _private: (),
+}
+impl UpdateContinuousDeploymentPolicy {
+    /// Creates a new builder-style object to manufacture [`UpdateContinuousDeploymentPolicyInput`](crate::input::UpdateContinuousDeploymentPolicyInput).
+    pub fn builder() -> crate::input::update_continuous_deployment_policy_input::Builder {
+        crate::input::update_continuous_deployment_policy_input::Builder::default()
+    }
+    /// Creates a new `UpdateContinuousDeploymentPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateContinuousDeploymentPolicy {
+    type Output = std::result::Result<
+        crate::output::UpdateContinuousDeploymentPolicyOutput,
+        crate::error::UpdateContinuousDeploymentPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_continuous_deployment_policy_error(response)
+        } else {
+            crate::operation_deser::parse_update_continuous_deployment_policy_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateDistribution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2983,6 +3221,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDistribution {
             crate::operation_deser::parse_update_distribution_error(response)
         } else {
             crate::operation_deser::parse_update_distribution_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateDistributionWithStagingConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_distribution_with_staging_config`](crate::client::Client::update_distribution_with_staging_config).
+///
+/// See [`crate::client::fluent_builders::UpdateDistributionWithStagingConfig`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateDistributionWithStagingConfig {
+    _private: (),
+}
+impl UpdateDistributionWithStagingConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateDistributionWithStagingConfigInput`](crate::input::UpdateDistributionWithStagingConfigInput).
+    pub fn builder() -> crate::input::update_distribution_with_staging_config_input::Builder {
+        crate::input::update_distribution_with_staging_config_input::Builder::default()
+    }
+    /// Creates a new `UpdateDistributionWithStagingConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateDistributionWithStagingConfig {
+    type Output = std::result::Result<
+        crate::output::UpdateDistributionWithStagingConfigOutput,
+        crate::error::UpdateDistributionWithStagingConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_distribution_with_staging_config_error(response)
+        } else {
+            crate::operation_deser::parse_update_distribution_with_staging_config_response(response)
         }
     }
 }

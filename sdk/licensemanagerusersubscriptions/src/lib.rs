@@ -10,7 +10,8 @@
 #![allow(clippy::needless_return)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <p>With License Manager, you can create user-based subscriptions to utilize licensed software with a per user subscription fee on Amazon EC2 instances.</p>
+//! <p>With License Manager, you can create user-based subscriptions to utilize licensed software with
+//! a per user subscription fee on Amazon EC2 instances.</p>
 //!
 //! # Crate Organization
 //!

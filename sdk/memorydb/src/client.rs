@@ -140,7 +140,7 @@ impl Client {
     ///   - [`num_replicas_per_shard(i32)`](crate::client::fluent_builders::CreateCluster::num_replicas_per_shard) / [`set_num_replicas_per_shard(Option<i32>)`](crate::client::fluent_builders::CreateCluster::set_num_replicas_per_shard): <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
     ///   - [`subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::subnet_group_name) / [`set_subnet_group_name(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_subnet_group_name): <p>The name of the subnet group to be used for the cluster.</p>
     ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateCluster::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCluster::set_security_group_ids): <p>A list of security group names to associate with this cluster.</p>
-    ///   - [`maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::maintenance_window) / [`set_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_maintenance_window): <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+    ///   - [`maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::maintenance_window) / [`set_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_maintenance_window): <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>  <p>Valid values for <code>ddd</code> are:</p>  <ul>   <li> <p> <code>sun</code> </p> </li>   <li> <p> <code>mon</code> </p> </li>   <li> <p> <code>tue</code> </p> </li>   <li> <p> <code>wed</code> </p> </li>   <li> <p> <code>thu</code> </p> </li>   <li> <p> <code>fri</code> </p> </li>   <li> <p> <code>sat</code> </p> </li>  </ul>  <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     ///   - [`port(i32)`](crate::client::fluent_builders::CreateCluster::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::CreateCluster::set_port): <p>The port number on which each of the nodes accepts connections.</p>
     ///   - [`sns_topic_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::sns_topic_arn) / [`set_sns_topic_arn(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_sns_topic_arn): <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
     ///   - [`tls_enabled(bool)`](crate::client::fluent_builders::CreateCluster::tls_enabled) / [`set_tls_enabled(Option<bool>)`](crate::client::fluent_builders::CreateCluster::set_tls_enabled): <p>A flag to enable in-transit encryption on the cluster.</p>
@@ -153,6 +153,7 @@ impl Client {
     ///   - [`acl_name(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::acl_name) / [`set_acl_name(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_acl_name): <p>The name of the Access Control List to associate with the cluster.</p>
     ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_engine_version): <p>The version number of the Redis engine to be used for the cluster.</p>
     ///   - [`auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::CreateCluster::auto_minor_version_upgrade) / [`set_auto_minor_version_upgrade(Option<bool>)`](crate::client::fluent_builders::CreateCluster::set_auto_minor_version_upgrade): <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
+    ///   - [`data_tiering(bool)`](crate::client::fluent_builders::CreateCluster::data_tiering) / [`set_data_tiering(Option<bool>)`](crate::client::fluent_builders::CreateCluster::set_data_tiering): <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
     /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::CreateClusterOutput::cluster): <p>The newly-created cluster.</p>
     /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::error::CreateClusterError)
@@ -273,6 +274,7 @@ impl Client {
         fluent_builders::DeleteUser::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeACLs`](crate::client::fluent_builders::DescribeACLs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeACLs::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`acl_name(impl Into<String>)`](crate::client::fluent_builders::DescribeACLs::acl_name) / [`set_acl_name(Option<String>)`](crate::client::fluent_builders::DescribeACLs::set_acl_name): <p>The name of the ACL</p>
@@ -286,6 +288,7 @@ impl Client {
         fluent_builders::DescribeACLs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeClusters`](crate::client::fluent_builders::DescribeClusters) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeClusters::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::DescribeClusters::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::DescribeClusters::set_cluster_name): <p>The name of the cluster</p>
@@ -300,6 +303,7 @@ impl Client {
         fluent_builders::DescribeClusters::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeEngineVersions`](crate::client::fluent_builders::DescribeEngineVersions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeEngineVersions::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::DescribeEngineVersions::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::DescribeEngineVersions::set_engine_version): <p>The Redis engine version</p>
@@ -315,6 +319,7 @@ impl Client {
         fluent_builders::DescribeEngineVersions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeEvents::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`source_name(impl Into<String>)`](crate::client::fluent_builders::DescribeEvents::source_name) / [`set_source_name(Option<String>)`](crate::client::fluent_builders::DescribeEvents::set_source_name): <p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p>
@@ -332,6 +337,7 @@ impl Client {
         fluent_builders::DescribeEvents::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeParameterGroups`](crate::client::fluent_builders::DescribeParameterGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeParameterGroups::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeParameterGroups::parameter_group_name) / [`set_parameter_group_name(Option<String>)`](crate::client::fluent_builders::DescribeParameterGroups::set_parameter_group_name): <p>The name of a specific parameter group to return details for.</p>
@@ -345,6 +351,7 @@ impl Client {
         fluent_builders::DescribeParameterGroups::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeParameters`](crate::client::fluent_builders::DescribeParameters) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeParameters::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeParameters::parameter_group_name) / [`set_parameter_group_name(Option<String>)`](crate::client::fluent_builders::DescribeParameters::set_parameter_group_name): <p>he name of a specific parameter group to return details for.</p>
@@ -357,7 +364,45 @@ impl Client {
     pub fn describe_parameters(&self) -> fluent_builders::DescribeParameters {
         fluent_builders::DescribeParameters::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeReservedNodes`](crate::client::fluent_builders::DescribeReservedNodes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReservedNodes::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`reservation_id(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedNodes::reservation_id) / [`set_reservation_id(Option<String>)`](crate::client::fluent_builders::DescribeReservedNodes::set_reservation_id): <p>The reserved node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p>
+    ///   - [`reserved_nodes_offering_id(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedNodes::reserved_nodes_offering_id) / [`set_reserved_nodes_offering_id(Option<String>)`](crate::client::fluent_builders::DescribeReservedNodes::set_reserved_nodes_offering_id): <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
+    ///   - [`node_type(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedNodes::node_type) / [`set_node_type(Option<String>)`](crate::client::fluent_builders::DescribeReservedNodes::set_node_type): <p>The node type filter value. Use this parameter to show only those reservations matching the specified node type. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
+    ///   - [`duration(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedNodes::duration) / [`set_duration(Option<String>)`](crate::client::fluent_builders::DescribeReservedNodes::set_duration): <p>The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration.</p>
+    ///   - [`offering_type(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedNodes::offering_type) / [`set_offering_type(Option<String>)`](crate::client::fluent_builders::DescribeReservedNodes::set_offering_type): <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeReservedNodes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeReservedNodes::set_max_results): <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedNodes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeReservedNodes::set_next_token): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+    /// - On success, responds with [`DescribeReservedNodesOutput`](crate::output::DescribeReservedNodesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeReservedNodesOutput::next_token): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+    ///   - [`reserved_nodes(Option<Vec<ReservedNode>>)`](crate::output::DescribeReservedNodesOutput::reserved_nodes): <p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>
+    /// - On failure, responds with [`SdkError<DescribeReservedNodesError>`](crate::error::DescribeReservedNodesError)
+    pub fn describe_reserved_nodes(&self) -> fluent_builders::DescribeReservedNodes {
+        fluent_builders::DescribeReservedNodes::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeReservedNodesOfferings`](crate::client::fluent_builders::DescribeReservedNodesOfferings) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReservedNodesOfferings::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`reserved_nodes_offering_id(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedNodesOfferings::reserved_nodes_offering_id) / [`set_reserved_nodes_offering_id(Option<String>)`](crate::client::fluent_builders::DescribeReservedNodesOfferings::set_reserved_nodes_offering_id): <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
+    ///   - [`node_type(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedNodesOfferings::node_type) / [`set_node_type(Option<String>)`](crate::client::fluent_builders::DescribeReservedNodesOfferings::set_node_type): <p>The node type for the reserved nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
+    ///   - [`duration(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedNodesOfferings::duration) / [`set_duration(Option<String>)`](crate::client::fluent_builders::DescribeReservedNodesOfferings::set_duration): <p>Duration filter value, specified in years or seconds. Use this parameter to show only reservations for a given duration.</p>
+    ///   - [`offering_type(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedNodesOfferings::offering_type) / [`set_offering_type(Option<String>)`](crate::client::fluent_builders::DescribeReservedNodesOfferings::set_offering_type): <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeReservedNodesOfferings::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeReservedNodesOfferings::set_max_results): <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedNodesOfferings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeReservedNodesOfferings::set_next_token): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+    /// - On success, responds with [`DescribeReservedNodesOfferingsOutput`](crate::output::DescribeReservedNodesOfferingsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeReservedNodesOfferingsOutput::next_token): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+    ///   - [`reserved_nodes_offerings(Option<Vec<ReservedNodesOffering>>)`](crate::output::DescribeReservedNodesOfferingsOutput::reserved_nodes_offerings): <p>Lists available reserved node offerings.</p>
+    /// - On failure, responds with [`SdkError<DescribeReservedNodesOfferingsError>`](crate::error::DescribeReservedNodesOfferingsError)
+    pub fn describe_reserved_nodes_offerings(
+        &self,
+    ) -> fluent_builders::DescribeReservedNodesOfferings {
+        fluent_builders::DescribeReservedNodesOfferings::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeServiceUpdates`](crate::client::fluent_builders::DescribeServiceUpdates) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeServiceUpdates::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`service_update_name(impl Into<String>)`](crate::client::fluent_builders::DescribeServiceUpdates::service_update_name) / [`set_service_update_name(Option<String>)`](crate::client::fluent_builders::DescribeServiceUpdates::set_service_update_name): <p>The unique ID of the service update to describe.</p>
@@ -373,6 +418,7 @@ impl Client {
         fluent_builders::DescribeServiceUpdates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeSnapshots`](crate::client::fluent_builders::DescribeSnapshots) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeSnapshots::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::DescribeSnapshots::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::DescribeSnapshots::set_cluster_name): <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
@@ -389,6 +435,7 @@ impl Client {
         fluent_builders::DescribeSnapshots::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeSubnetGroups`](crate::client::fluent_builders::DescribeSubnetGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeSubnetGroups::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeSubnetGroups::subnet_group_name) / [`set_subnet_group_name(Option<String>)`](crate::client::fluent_builders::DescribeSubnetGroups::set_subnet_group_name): <p>The name of the subnet group to return details for.</p>
@@ -402,6 +449,7 @@ impl Client {
         fluent_builders::DescribeSubnetGroups::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeUsers`](crate::client::fluent_builders::DescribeUsers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeUsers::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DescribeUsers::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DescribeUsers::set_user_name): <p>The name of the user</p>
@@ -446,6 +494,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListTagsError>`](crate::error::ListTagsError)
     pub fn list_tags(&self) -> fluent_builders::ListTags {
         fluent_builders::ListTags::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PurchaseReservedNodesOffering`](crate::client::fluent_builders::PurchaseReservedNodesOffering) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`reserved_nodes_offering_id(impl Into<String>)`](crate::client::fluent_builders::PurchaseReservedNodesOffering::reserved_nodes_offering_id) / [`set_reserved_nodes_offering_id(Option<String>)`](crate::client::fluent_builders::PurchaseReservedNodesOffering::set_reserved_nodes_offering_id): <p>The ID of the reserved node offering to purchase.</p>
+    ///   - [`reservation_id(impl Into<String>)`](crate::client::fluent_builders::PurchaseReservedNodesOffering::reservation_id) / [`set_reservation_id(Option<String>)`](crate::client::fluent_builders::PurchaseReservedNodesOffering::set_reservation_id): <p>A customer-specified identifier to track this reservation.</p>
+    ///   - [`node_count(i32)`](crate::client::fluent_builders::PurchaseReservedNodesOffering::node_count) / [`set_node_count(Option<i32>)`](crate::client::fluent_builders::PurchaseReservedNodesOffering::set_node_count): <p>The number of node instances to reserve.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::PurchaseReservedNodesOffering::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::PurchaseReservedNodesOffering::set_tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`PurchaseReservedNodesOfferingOutput`](crate::output::PurchaseReservedNodesOfferingOutput) with field(s):
+    ///   - [`reserved_node(Option<ReservedNode>)`](crate::output::PurchaseReservedNodesOfferingOutput::reserved_node): <p>Represents the output of a <code>PurchaseReservedNodesOffering</code> operation.</p>
+    /// - On failure, responds with [`SdkError<PurchaseReservedNodesOfferingError>`](crate::error::PurchaseReservedNodesOfferingError)
+    pub fn purchase_reserved_nodes_offering(
+        &self,
+    ) -> fluent_builders::PurchaseReservedNodesOffering {
+        fluent_builders::PurchaseReservedNodesOffering::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ResetParameterGroup`](crate::client::fluent_builders::ResetParameterGroup) operation.
     ///
@@ -499,7 +562,7 @@ impl Client {
     ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_cluster_name): <p>The name of the cluster to update</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_description): <p>The description of the cluster to update</p>
     ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::UpdateCluster::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateCluster::set_security_group_ids): <p>The SecurityGroupIds to update</p>
-    ///   - [`maintenance_window(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::maintenance_window) / [`set_maintenance_window(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_maintenance_window): <p>The maintenance window to update</p>
+    ///   - [`maintenance_window(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::maintenance_window) / [`set_maintenance_window(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_maintenance_window): <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>  <p>Valid values for <code>ddd</code> are:</p>  <ul>   <li> <p> <code>sun</code> </p> </li>   <li> <p> <code>mon</code> </p> </li>   <li> <p> <code>tue</code> </p> </li>   <li> <p> <code>wed</code> </p> </li>   <li> <p> <code>thu</code> </p> </li>   <li> <p> <code>fri</code> </p> </li>   <li> <p> <code>sat</code> </p> </li>  </ul>  <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     ///   - [`sns_topic_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::sns_topic_arn) / [`set_sns_topic_arn(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_sns_topic_arn): <p>The SNS topic ARN to update</p>
     ///   - [`sns_topic_status(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::sns_topic_status) / [`set_sns_topic_status(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_sns_topic_status): <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
     ///   - [`parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::parameter_group_name) / [`set_parameter_group_name(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_parameter_group_name): <p>The name of the parameter group to update</p>
@@ -1043,12 +1106,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_group_ids(input);
             self
         }
-        /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+        /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+        /// <p>Valid values for <code>ddd</code> are:</p>
+        /// <ul>
+        /// <li> <p> <code>sun</code> </p> </li>
+        /// <li> <p> <code>mon</code> </p> </li>
+        /// <li> <p> <code>tue</code> </p> </li>
+        /// <li> <p> <code>wed</code> </p> </li>
+        /// <li> <p> <code>thu</code> </p> </li>
+        /// <li> <p> <code>fri</code> </p> </li>
+        /// <li> <p> <code>sat</code> </p> </li>
+        /// </ul>
+        /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
         pub fn maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.maintenance_window(input.into());
             self
         }
-        /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+        /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+        /// <p>Valid values for <code>ddd</code> are:</p>
+        /// <ul>
+        /// <li> <p> <code>sun</code> </p> </li>
+        /// <li> <p> <code>mon</code> </p> </li>
+        /// <li> <p> <code>tue</code> </p> </li>
+        /// <li> <p> <code>wed</code> </p> </li>
+        /// <li> <p> <code>thu</code> </p> </li>
+        /// <li> <p> <code>fri</code> </p> </li>
+        /// <li> <p> <code>sat</code> </p> </li>
+        /// </ul>
+        /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
         pub fn set_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1204,6 +1289,16 @@ pub mod fluent_builders {
         /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_minor_version_upgrade(input);
+            self
+        }
+        /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
+        pub fn data_tiering(mut self, input: bool) -> Self {
+            self.inner = self.inner.data_tiering(input);
+            self
+        }
+        /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
+        pub fn set_data_tiering(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_data_tiering(input);
             self
         }
     }
@@ -2191,6 +2286,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeAcLsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeAcLsPaginator {
+            crate::paginator::DescribeAcLsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the ACL</p>
         pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.acl_name(input.into());
@@ -2283,6 +2384,12 @@ pub mod fluent_builders {
                 .await
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeClustersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeClustersPaginator {
+            crate::paginator::DescribeClustersPaginator::new(self.handle, self.inner)
         }
         /// <p>The name of the cluster</p>
         pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2386,6 +2493,12 @@ pub mod fluent_builders {
                 .await
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeEngineVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeEngineVersionsPaginator {
+            crate::paginator::DescribeEngineVersionsPaginator::new(self.handle, self.inner)
         }
         /// <p>The Redis engine version</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2505,6 +2618,12 @@ pub mod fluent_builders {
                 .await
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeEventsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeEventsPaginator {
+            crate::paginator::DescribeEventsPaginator::new(self.handle, self.inner)
         }
         /// <p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p>
         pub fn source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2648,6 +2767,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeParameterGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeParameterGroupsPaginator {
+            crate::paginator::DescribeParameterGroupsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of a specific parameter group to return details for.</p>
         pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.parameter_group_name(input.into());
@@ -2744,6 +2869,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeParametersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeParametersPaginator {
+            crate::paginator::DescribeParametersPaginator::new(self.handle, self.inner)
+        }
         /// <p>he name of a specific parameter group to return details for.</p>
         pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.parameter_group_name(input.into());
@@ -2773,6 +2904,289 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeReservedNodes`.
+    ///
+    /// <p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeReservedNodes {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_reserved_nodes_input::Builder,
+    }
+    impl DescribeReservedNodes {
+        /// Creates a new `DescribeReservedNodes`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeReservedNodes,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeReservedNodesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeReservedNodesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeReservedNodesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReservedNodesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeReservedNodesPaginator {
+            crate::paginator::DescribeReservedNodesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The reserved node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p>
+        pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reservation_id(input.into());
+            self
+        }
+        /// <p>The reserved node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p>
+        pub fn set_reservation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_reservation_id(input);
+            self
+        }
+        /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
+        pub fn reserved_nodes_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_nodes_offering_id(input.into());
+            self
+        }
+        /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
+        pub fn set_reserved_nodes_offering_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_reserved_nodes_offering_id(input);
+            self
+        }
+        /// <p>The node type filter value. Use this parameter to show only those reservations matching the specified node type. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
+        pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_type(input.into());
+            self
+        }
+        /// <p>The node type filter value. Use this parameter to show only those reservations matching the specified node type. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
+        pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_node_type(input);
+            self
+        }
+        /// <p>The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration.</p>
+        pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.duration(input.into());
+            self
+        }
+        /// <p>The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration.</p>
+        pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_duration(input);
+            self
+        }
+        /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
+        pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_type(input.into());
+            self
+        }
+        /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
+        pub fn set_offering_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_offering_type(input);
+            self
+        }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeReservedNodesOfferings`.
+    ///
+    /// <p>Lists available reserved node offerings.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeReservedNodesOfferings {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_reserved_nodes_offerings_input::Builder,
+    }
+    impl DescribeReservedNodesOfferings {
+        /// Creates a new `DescribeReservedNodesOfferings`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeReservedNodesOfferings,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeReservedNodesOfferingsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeReservedNodesOfferingsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeReservedNodesOfferingsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReservedNodesOfferingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeReservedNodesOfferingsPaginator {
+            crate::paginator::DescribeReservedNodesOfferingsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
+        pub fn reserved_nodes_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_nodes_offering_id(input.into());
+            self
+        }
+        /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
+        pub fn set_reserved_nodes_offering_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_reserved_nodes_offering_id(input);
+            self
+        }
+        /// <p>The node type for the reserved nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
+        pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_type(input.into());
+            self
+        }
+        /// <p>The node type for the reserved nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
+        pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_node_type(input);
+            self
+        }
+        /// <p>Duration filter value, specified in years or seconds. Use this parameter to show only reservations for a given duration.</p>
+        pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.duration(input.into());
+            self
+        }
+        /// <p>Duration filter value, specified in years or seconds. Use this parameter to show only reservations for a given duration.</p>
+        pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_duration(input);
+            self
+        }
+        /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
+        pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_type(input.into());
+            self
+        }
+        /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
+        pub fn set_offering_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_offering_type(input);
+            self
+        }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2839,6 +3253,12 @@ pub mod fluent_builders {
                 .await
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeServiceUpdatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeServiceUpdatesPaginator {
+            crate::paginator::DescribeServiceUpdatesPaginator::new(self.handle, self.inner)
         }
         /// <p>The unique ID of the service update to describe.</p>
         pub fn service_update_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2970,6 +3390,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeSnapshotsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeSnapshotsPaginator {
+            crate::paginator::DescribeSnapshotsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
         pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_name(input.into());
@@ -3096,6 +3522,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeSubnetGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeSubnetGroupsPaginator {
+            crate::paginator::DescribeSubnetGroupsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the subnet group to return details for.</p>
         pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subnet_group_name(input.into());
@@ -3192,6 +3624,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeUsersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeUsersPaginator {
+            crate::paginator::DescribeUsersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the user</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_name(input.into());
@@ -3242,7 +3680,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `FailoverShard`.
     ///
-    /// <p>Used to failover a shard</p>
+    /// <p>Used to failover a shard. This API is designed for testing the behavior of your application in case of MemoryDB failover. It is not designed to be used as a production-level tool for initiating a failover to overcome a problem you may have with the cluster. Moreover, in certain conditions such as large scale operational events, Amazon may block this API. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct FailoverShard {
         handle: std::sync::Arc<super::Handle>,
@@ -3466,6 +3904,122 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PurchaseReservedNodesOffering`.
+    ///
+    /// <p>Allows you to purchase a reserved node offering. Reserved nodes are not eligible for cancellation and are non-refundable.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PurchaseReservedNodesOffering {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::purchase_reserved_nodes_offering_input::Builder,
+    }
+    impl PurchaseReservedNodesOffering {
+        /// Creates a new `PurchaseReservedNodesOffering`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PurchaseReservedNodesOffering,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PurchaseReservedNodesOfferingError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PurchaseReservedNodesOfferingOutput,
+            aws_smithy_http::result::SdkError<crate::error::PurchaseReservedNodesOfferingError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the reserved node offering to purchase.</p>
+        pub fn reserved_nodes_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_nodes_offering_id(input.into());
+            self
+        }
+        /// <p>The ID of the reserved node offering to purchase.</p>
+        pub fn set_reserved_nodes_offering_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_reserved_nodes_offering_id(input);
+            self
+        }
+        /// <p>A customer-specified identifier to track this reservation.</p>
+        pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reservation_id(input.into());
+            self
+        }
+        /// <p>A customer-specified identifier to track this reservation.</p>
+        pub fn set_reservation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_reservation_id(input);
+            self
+        }
+        /// <p>The number of node instances to reserve.</p>
+        pub fn node_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.node_count(input);
+            self
+        }
+        /// <p>The number of node instances to reserve.</p>
+        pub fn set_node_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_node_count(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -3959,12 +4513,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_group_ids(input);
             self
         }
-        /// <p>The maintenance window to update</p>
+        /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+        /// <p>Valid values for <code>ddd</code> are:</p>
+        /// <ul>
+        /// <li> <p> <code>sun</code> </p> </li>
+        /// <li> <p> <code>mon</code> </p> </li>
+        /// <li> <p> <code>tue</code> </p> </li>
+        /// <li> <p> <code>wed</code> </p> </li>
+        /// <li> <p> <code>thu</code> </p> </li>
+        /// <li> <p> <code>fri</code> </p> </li>
+        /// <li> <p> <code>sat</code> </p> </li>
+        /// </ul>
+        /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
         pub fn maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.maintenance_window(input.into());
             self
         }
-        /// <p>The maintenance window to update</p>
+        /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+        /// <p>Valid values for <code>ddd</code> are:</p>
+        /// <ul>
+        /// <li> <p> <code>sun</code> </p> </li>
+        /// <li> <p> <code>mon</code> </p> </li>
+        /// <li> <p> <code>tue</code> </p> </li>
+        /// <li> <p> <code>wed</code> </p> </li>
+        /// <li> <p> <code>thu</code> </p> </li>
+        /// <li> <p> <code>fri</code> </p> </li>
+        /// <li> <p> <code>sat</code> </p> </li>
+        /// </ul>
+        /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
         pub fn set_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,

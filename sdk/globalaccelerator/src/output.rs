@@ -468,6 +468,30 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RemoveEndpointsOutput {}
+/// See [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput).
+pub mod remove_endpoints_output {
+
+    /// A builder for [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput).
+        pub fn build(self) -> crate::output::RemoveEndpointsOutput {
+            crate::output::RemoveEndpointsOutput {}
+        }
+    }
+}
+impl RemoveEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput).
+    pub fn builder() -> crate::output::remove_endpoints_output::Builder {
+        crate::output::remove_endpoints_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveCustomRoutingEndpointsOutput {}
 /// See [`RemoveCustomRoutingEndpointsOutput`](crate::output::RemoveCustomRoutingEndpointsOutput).
 pub mod remove_custom_routing_endpoints_output {
@@ -2305,6 +2329,89 @@ impl AdvertiseByoipCidrOutput {
     /// Creates a new builder-style object to manufacture [`AdvertiseByoipCidrOutput`](crate::output::AdvertiseByoipCidrOutput).
     pub fn builder() -> crate::output::advertise_byoip_cidr_output::Builder {
         crate::output::advertise_byoip_cidr_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AddEndpointsOutput {
+    /// <p>The list of endpoint objects.</p>
+    #[doc(hidden)]
+    pub endpoint_descriptions:
+        std::option::Option<std::vec::Vec<crate::model::EndpointDescription>>,
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    #[doc(hidden)]
+    pub endpoint_group_arn: std::option::Option<std::string::String>,
+}
+impl AddEndpointsOutput {
+    /// <p>The list of endpoint objects.</p>
+    pub fn endpoint_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::EndpointDescription]> {
+        self.endpoint_descriptions.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
+}
+/// See [`AddEndpointsOutput`](crate::output::AddEndpointsOutput).
+pub mod add_endpoints_output {
+
+    /// A builder for [`AddEndpointsOutput`](crate::output::AddEndpointsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) endpoint_descriptions:
+            std::option::Option<std::vec::Vec<crate::model::EndpointDescription>>,
+        pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `endpoint_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_descriptions`](Self::set_endpoint_descriptions).
+        ///
+        /// <p>The list of endpoint objects.</p>
+        pub fn endpoint_descriptions(mut self, input: crate::model::EndpointDescription) -> Self {
+            let mut v = self.endpoint_descriptions.unwrap_or_default();
+            v.push(input);
+            self.endpoint_descriptions = Some(v);
+            self
+        }
+        /// <p>The list of endpoint objects.</p>
+        pub fn set_endpoint_descriptions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointDescription>>,
+        ) -> Self {
+            self.endpoint_descriptions = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+        pub fn set_endpoint_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.endpoint_group_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AddEndpointsOutput`](crate::output::AddEndpointsOutput).
+        pub fn build(self) -> crate::output::AddEndpointsOutput {
+            crate::output::AddEndpointsOutput {
+                endpoint_descriptions: self.endpoint_descriptions,
+                endpoint_group_arn: self.endpoint_group_arn,
+            }
+        }
+    }
+}
+impl AddEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`AddEndpointsOutput`](crate::output::AddEndpointsOutput).
+    pub fn builder() -> crate::output::add_endpoints_output::Builder {
+        crate::output::add_endpoints_output::Builder::default()
     }
 }
 

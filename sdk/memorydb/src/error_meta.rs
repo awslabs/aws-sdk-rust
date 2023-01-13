@@ -61,6 +61,14 @@ pub enum Error {
     ParameterGroupNotFoundFault(crate::error::ParameterGroupNotFoundFault),
     /// <p></p>
     ParameterGroupQuotaExceededFault(crate::error::ParameterGroupQuotaExceededFault),
+    /// <p>You already have a reservation with the given identifier.</p>
+    ReservedNodeAlreadyExistsFault(crate::error::ReservedNodeAlreadyExistsFault),
+    /// <p>The requested node does not exist.</p>
+    ReservedNodeNotFoundFault(crate::error::ReservedNodeNotFoundFault),
+    /// <p>The request cannot be processed because it would exceed the user's node quota.</p>
+    ReservedNodeQuotaExceededFault(crate::error::ReservedNodeQuotaExceededFault),
+    /// <p>The requested node offering does not exist. </p>
+    ReservedNodesOfferingNotFoundFault(crate::error::ReservedNodesOfferingNotFoundFault),
     /// <p></p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p></p>
@@ -143,6 +151,10 @@ impl std::fmt::Display for Error {
             Error::ParameterGroupAlreadyExistsFault(inner) => inner.fmt(f),
             Error::ParameterGroupNotFoundFault(inner) => inner.fmt(f),
             Error::ParameterGroupQuotaExceededFault(inner) => inner.fmt(f),
+            Error::ReservedNodeAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::ReservedNodeNotFoundFault(inner) => inner.fmt(f),
+            Error::ReservedNodeQuotaExceededFault(inner) => inner.fmt(f),
+            Error::ReservedNodesOfferingNotFoundFault(inner) => inner.fmt(f),
             Error::ServiceLinkedRoleNotFoundFault(inner) => inner.fmt(f),
             Error::ServiceUpdateNotFoundFault(inner) => inner.fmt(f),
             Error::ShardNotFoundFault(inner) => inner.fmt(f),
@@ -937,6 +949,74 @@ impl From<crate::error::DescribeParametersError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeReservedNodesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeReservedNodesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeReservedNodesError> for Error {
+    fn from(err: crate::error::DescribeReservedNodesError) -> Self {
+        match err.kind {
+            crate::error::DescribeReservedNodesErrorKind::InvalidParameterCombinationException(
+                inner,
+            ) => Error::InvalidParameterCombinationException(inner),
+            crate::error::DescribeReservedNodesErrorKind::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::error::DescribeReservedNodesErrorKind::ReservedNodeNotFoundFault(inner) => {
+                Error::ReservedNodeNotFoundFault(inner)
+            }
+            crate::error::DescribeReservedNodesErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
+                Error::ServiceLinkedRoleNotFoundFault(inner)
+            }
+            crate::error::DescribeReservedNodesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DescribeReservedNodesOfferingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeReservedNodesOfferingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeReservedNodesOfferingsError> for Error {
+    fn from(err: crate::error::DescribeReservedNodesOfferingsError) -> Self {
+        match err.kind {
+            crate::error::DescribeReservedNodesOfferingsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::error::DescribeReservedNodesOfferingsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::error::DescribeReservedNodesOfferingsErrorKind::ReservedNodesOfferingNotFoundFault(inner) => Error::ReservedNodesOfferingNotFoundFault(inner),
+            crate::error::DescribeReservedNodesOfferingsErrorKind::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::error::DescribeReservedNodesOfferingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeServiceUpdatesError, R>>
     for Error
 where
@@ -1182,6 +1262,36 @@ impl From<crate::error::ListTagsError> for Error {
             crate::error::ListTagsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PurchaseReservedNodesOfferingError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::PurchaseReservedNodesOfferingError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PurchaseReservedNodesOfferingError> for Error {
+    fn from(err: crate::error::PurchaseReservedNodesOfferingError) -> Self {
+        match err.kind {
+            crate::error::PurchaseReservedNodesOfferingErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::error::PurchaseReservedNodesOfferingErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::error::PurchaseReservedNodesOfferingErrorKind::ReservedNodeAlreadyExistsFault(inner) => Error::ReservedNodeAlreadyExistsFault(inner),
+            crate::error::PurchaseReservedNodesOfferingErrorKind::ReservedNodeQuotaExceededFault(inner) => Error::ReservedNodeQuotaExceededFault(inner),
+            crate::error::PurchaseReservedNodesOfferingErrorKind::ReservedNodesOfferingNotFoundFault(inner) => Error::ReservedNodesOfferingNotFoundFault(inner),
+            crate::error::PurchaseReservedNodesOfferingErrorKind::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::error::PurchaseReservedNodesOfferingErrorKind::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
+            crate::error::PurchaseReservedNodesOfferingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }

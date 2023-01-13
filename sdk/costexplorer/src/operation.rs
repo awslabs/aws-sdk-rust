@@ -914,6 +914,44 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCostCategoryDefiniti
     }
 }
 
+/// Operation shape for `ListSavingsPlansPurchaseRecommendationGeneration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_savings_plans_purchase_recommendation_generation`](crate::client::Client::list_savings_plans_purchase_recommendation_generation).
+///
+/// See [`crate::client::fluent_builders::ListSavingsPlansPurchaseRecommendationGeneration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListSavingsPlansPurchaseRecommendationGeneration {
+    _private: (),
+}
+impl ListSavingsPlansPurchaseRecommendationGeneration {
+    /// Creates a new builder-style object to manufacture [`ListSavingsPlansPurchaseRecommendationGenerationInput`](crate::input::ListSavingsPlansPurchaseRecommendationGenerationInput).
+    pub fn builder(
+    ) -> crate::input::list_savings_plans_purchase_recommendation_generation_input::Builder {
+        crate::input::list_savings_plans_purchase_recommendation_generation_input::Builder::default(
+        )
+    }
+    /// Creates a new `ListSavingsPlansPurchaseRecommendationGeneration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse
+    for ListSavingsPlansPurchaseRecommendationGeneration
+{
+    type Output = std::result::Result<
+        crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput,
+        crate::error::ListSavingsPlansPurchaseRecommendationGenerationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_savings_plans_purchase_recommendation_generation_error(response)
+        } else {
+            crate::operation_deser::parse_list_savings_plans_purchase_recommendation_generation_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -978,6 +1016,44 @@ impl aws_smithy_http::response::ParseStrictResponse for ProvideAnomalyFeedback {
             crate::operation_deser::parse_provide_anomaly_feedback_error(response)
         } else {
             crate::operation_deser::parse_provide_anomaly_feedback_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartSavingsPlansPurchaseRecommendationGeneration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_savings_plans_purchase_recommendation_generation`](crate::client::Client::start_savings_plans_purchase_recommendation_generation).
+///
+/// See [`crate::client::fluent_builders::StartSavingsPlansPurchaseRecommendationGeneration`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct StartSavingsPlansPurchaseRecommendationGeneration {
+    _private: (),
+}
+impl StartSavingsPlansPurchaseRecommendationGeneration {
+    /// Creates a new builder-style object to manufacture [`StartSavingsPlansPurchaseRecommendationGenerationInput`](crate::input::StartSavingsPlansPurchaseRecommendationGenerationInput).
+    pub fn builder(
+    ) -> crate::input::start_savings_plans_purchase_recommendation_generation_input::Builder {
+        crate::input::start_savings_plans_purchase_recommendation_generation_input::Builder::default(
+        )
+    }
+    /// Creates a new `StartSavingsPlansPurchaseRecommendationGeneration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse
+    for StartSavingsPlansPurchaseRecommendationGeneration
+{
+    type Output = std::result::Result<
+        crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput,
+        crate::error::StartSavingsPlansPurchaseRecommendationGenerationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_savings_plans_purchase_recommendation_generation_error(response)
+        } else {
+            crate::operation_deser::parse_start_savings_plans_purchase_recommendation_generation_response(response)
         }
     }
 }

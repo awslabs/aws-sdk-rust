@@ -434,6 +434,9 @@ impl From<crate::error::CreateGeofenceCollectionError> for Error {
             crate::error::CreateGeofenceCollectionErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::error::CreateGeofenceCollectionErrorKind::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
             crate::error::CreateGeofenceCollectionErrorKind::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
@@ -470,6 +473,9 @@ impl From<crate::error::CreateMapError> for Error {
             }
             crate::error::CreateMapErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
+            }
+            crate::error::CreateMapErrorKind::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::error::CreateMapErrorKind::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
@@ -510,6 +516,9 @@ impl From<crate::error::CreatePlaceIndexError> for Error {
             crate::error::CreatePlaceIndexErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::error::CreatePlaceIndexErrorKind::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::error::CreatePlaceIndexErrorKind::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
@@ -549,6 +558,9 @@ impl From<crate::error::CreateRouteCalculatorError> for Error {
             }
             crate::error::CreateRouteCalculatorErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
+            }
+            crate::error::CreateRouteCalculatorErrorKind::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::error::CreateRouteCalculatorErrorKind::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)

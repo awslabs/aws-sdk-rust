@@ -171,6 +171,9 @@ pub struct VirtualMachineDetails {
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
     #[doc(hidden)]
     pub last_backup_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
+    #[doc(hidden)]
+    pub vmware_tags: std::option::Option<std::vec::Vec<crate::model::VmwareTag>>,
 }
 impl VirtualMachineDetails {
     /// <p>The host name of the virtual machine.</p>
@@ -197,6 +200,10 @@ impl VirtualMachineDetails {
     pub fn last_backup_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_backup_date.as_ref()
     }
+    /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
+    pub fn vmware_tags(&self) -> std::option::Option<&[crate::model::VmwareTag]> {
+        self.vmware_tags.as_deref()
+    }
 }
 /// See [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
 pub mod virtual_machine_details {
@@ -210,6 +217,7 @@ pub mod virtual_machine_details {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) last_backup_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) vmware_tags: std::option::Option<std::vec::Vec<crate::model::VmwareTag>>,
     }
     impl Builder {
         /// <p>The host name of the virtual machine.</p>
@@ -278,6 +286,25 @@ pub mod virtual_machine_details {
             self.last_backup_date = input;
             self
         }
+        /// Appends an item to `vmware_tags`.
+        ///
+        /// To override the contents of this collection use [`set_vmware_tags`](Self::set_vmware_tags).
+        ///
+        /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
+        pub fn vmware_tags(mut self, input: crate::model::VmwareTag) -> Self {
+            let mut v = self.vmware_tags.unwrap_or_default();
+            v.push(input);
+            self.vmware_tags = Some(v);
+            self
+        }
+        /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
+        pub fn set_vmware_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VmwareTag>>,
+        ) -> Self {
+            self.vmware_tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
         pub fn build(self) -> crate::model::VirtualMachineDetails {
             crate::model::VirtualMachineDetails {
@@ -287,6 +314,7 @@ pub mod virtual_machine_details {
                 path: self.path,
                 resource_arn: self.resource_arn,
                 last_backup_date: self.last_backup_date,
+                vmware_tags: self.vmware_tags,
             }
         }
     }
@@ -295,6 +323,102 @@ impl VirtualMachineDetails {
     /// Creates a new builder-style object to manufacture [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
     pub fn builder() -> crate::model::virtual_machine_details::Builder {
         crate::model::virtual_machine_details::Builder::default()
+    }
+}
+
+/// <p>A VMware tag is a tag attached to a specific virtual machine. A <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_Tag.html">tag</a> is a key-value pair you can use to manage, filter, and search for your resources.</p>
+/// <p>The content of VMware tags can be matched to Amazon Web Services tags.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VmwareTag {
+    /// <p>The is the category of VMware.</p>
+    #[doc(hidden)]
+    pub vmware_category: std::option::Option<std::string::String>,
+    /// <p>This is the user-defined name of a VMware tag.</p>
+    #[doc(hidden)]
+    pub vmware_tag_name: std::option::Option<std::string::String>,
+    /// <p>This is a user-defined description of a VMware tag.</p>
+    #[doc(hidden)]
+    pub vmware_tag_description: std::option::Option<std::string::String>,
+}
+impl VmwareTag {
+    /// <p>The is the category of VMware.</p>
+    pub fn vmware_category(&self) -> std::option::Option<&str> {
+        self.vmware_category.as_deref()
+    }
+    /// <p>This is the user-defined name of a VMware tag.</p>
+    pub fn vmware_tag_name(&self) -> std::option::Option<&str> {
+        self.vmware_tag_name.as_deref()
+    }
+    /// <p>This is a user-defined description of a VMware tag.</p>
+    pub fn vmware_tag_description(&self) -> std::option::Option<&str> {
+        self.vmware_tag_description.as_deref()
+    }
+}
+/// See [`VmwareTag`](crate::model::VmwareTag).
+pub mod vmware_tag {
+
+    /// A builder for [`VmwareTag`](crate::model::VmwareTag).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vmware_category: std::option::Option<std::string::String>,
+        pub(crate) vmware_tag_name: std::option::Option<std::string::String>,
+        pub(crate) vmware_tag_description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The is the category of VMware.</p>
+        pub fn vmware_category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vmware_category = Some(input.into());
+            self
+        }
+        /// <p>The is the category of VMware.</p>
+        pub fn set_vmware_category(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vmware_category = input;
+            self
+        }
+        /// <p>This is the user-defined name of a VMware tag.</p>
+        pub fn vmware_tag_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vmware_tag_name = Some(input.into());
+            self
+        }
+        /// <p>This is the user-defined name of a VMware tag.</p>
+        pub fn set_vmware_tag_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vmware_tag_name = input;
+            self
+        }
+        /// <p>This is a user-defined description of a VMware tag.</p>
+        pub fn vmware_tag_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vmware_tag_description = Some(input.into());
+            self
+        }
+        /// <p>This is a user-defined description of a VMware tag.</p>
+        pub fn set_vmware_tag_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vmware_tag_description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VmwareTag`](crate::model::VmwareTag).
+        pub fn build(self) -> crate::model::VmwareTag {
+            crate::model::VmwareTag {
+                vmware_category: self.vmware_category,
+                vmware_tag_name: self.vmware_tag_name,
+                vmware_tag_description: self.vmware_tag_description,
+            }
+        }
+    }
+}
+impl VmwareTag {
+    /// Creates a new builder-style object to manufacture [`VmwareTag`](crate::model::VmwareTag).
+    pub fn builder() -> crate::model::vmware_tag::Builder {
+        crate::model::vmware_tag::Builder::default()
     }
 }
 
@@ -593,6 +717,470 @@ impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
+    }
+}
+
+/// <p>These are the details of the specified hypervisor. A hypervisor is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct HypervisorDetails {
+    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    #[doc(hidden)]
+    pub host: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    #[doc(hidden)]
+    pub hypervisor_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the KMS used to encrypt the hypervisor.</p>
+    #[doc(hidden)]
+    pub kms_key_arn: std::option::Option<std::string::String>,
+    /// <p>This is the name of the specified hypervisor.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
+    #[doc(hidden)]
+    pub log_group_arn: std::option::Option<std::string::String>,
+    /// <p>This is the current state of the specified hypervisor.</p>
+    /// <p>The possible states are <code>PENDING</code>, <code>ONLINE</code>, <code>OFFLINE</code>, or <code>ERROR</code>.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::HypervisorState>,
+    /// <p>This is the time when the most recent successful sync of metadata occurred.</p>
+    #[doc(hidden)]
+    pub last_successful_metadata_sync_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>This is the most recent status for the indicated metadata sync.</p>
+    #[doc(hidden)]
+    pub latest_metadata_sync_status_message: std::option::Option<std::string::String>,
+    /// <p>This is the most recent status for the indicated metadata sync.</p>
+    #[doc(hidden)]
+    pub latest_metadata_sync_status: std::option::Option<crate::model::SyncMetadataStatus>,
+}
+impl HypervisorDetails {
+    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+        self.hypervisor_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS used to encrypt the hypervisor.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>This is the name of the specified hypervisor.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
+    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+        self.log_group_arn.as_deref()
+    }
+    /// <p>This is the current state of the specified hypervisor.</p>
+    /// <p>The possible states are <code>PENDING</code>, <code>ONLINE</code>, <code>OFFLINE</code>, or <code>ERROR</code>.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::HypervisorState> {
+        self.state.as_ref()
+    }
+    /// <p>This is the time when the most recent successful sync of metadata occurred.</p>
+    pub fn last_successful_metadata_sync_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_successful_metadata_sync_time.as_ref()
+    }
+    /// <p>This is the most recent status for the indicated metadata sync.</p>
+    pub fn latest_metadata_sync_status_message(&self) -> std::option::Option<&str> {
+        self.latest_metadata_sync_status_message.as_deref()
+    }
+    /// <p>This is the most recent status for the indicated metadata sync.</p>
+    pub fn latest_metadata_sync_status(
+        &self,
+    ) -> std::option::Option<&crate::model::SyncMetadataStatus> {
+        self.latest_metadata_sync_status.as_ref()
+    }
+}
+/// See [`HypervisorDetails`](crate::model::HypervisorDetails).
+pub mod hypervisor_details {
+
+    /// A builder for [`HypervisorDetails`](crate::model::HypervisorDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) host: std::option::Option<std::string::String>,
+        pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
+        pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) log_group_arn: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::HypervisorState>,
+        pub(crate) last_successful_metadata_sync_time:
+            std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) latest_metadata_sync_status_message: std::option::Option<std::string::String>,
+        pub(crate) latest_metadata_sync_status:
+            std::option::Option<crate::model::SyncMetadataStatus>,
+    }
+    impl Builder {
+        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+        pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host = Some(input.into());
+            self
+        }
+        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+        pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hypervisor_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+        pub fn set_hypervisor_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hypervisor_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the KMS used to encrypt the hypervisor.</p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the KMS used to encrypt the hypervisor.</p>
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
+            self
+        }
+        /// <p>This is the name of the specified hypervisor.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>This is the name of the specified hypervisor.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
+        pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
+        pub fn set_log_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_group_arn = input;
+            self
+        }
+        /// <p>This is the current state of the specified hypervisor.</p>
+        /// <p>The possible states are <code>PENDING</code>, <code>ONLINE</code>, <code>OFFLINE</code>, or <code>ERROR</code>.</p>
+        pub fn state(mut self, input: crate::model::HypervisorState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>This is the current state of the specified hypervisor.</p>
+        /// <p>The possible states are <code>PENDING</code>, <code>ONLINE</code>, <code>OFFLINE</code>, or <code>ERROR</code>.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::HypervisorState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>This is the time when the most recent successful sync of metadata occurred.</p>
+        pub fn last_successful_metadata_sync_time(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.last_successful_metadata_sync_time = Some(input);
+            self
+        }
+        /// <p>This is the time when the most recent successful sync of metadata occurred.</p>
+        pub fn set_last_successful_metadata_sync_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_successful_metadata_sync_time = input;
+            self
+        }
+        /// <p>This is the most recent status for the indicated metadata sync.</p>
+        pub fn latest_metadata_sync_status_message(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.latest_metadata_sync_status_message = Some(input.into());
+            self
+        }
+        /// <p>This is the most recent status for the indicated metadata sync.</p>
+        pub fn set_latest_metadata_sync_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.latest_metadata_sync_status_message = input;
+            self
+        }
+        /// <p>This is the most recent status for the indicated metadata sync.</p>
+        pub fn latest_metadata_sync_status(
+            mut self,
+            input: crate::model::SyncMetadataStatus,
+        ) -> Self {
+            self.latest_metadata_sync_status = Some(input);
+            self
+        }
+        /// <p>This is the most recent status for the indicated metadata sync.</p>
+        pub fn set_latest_metadata_sync_status(
+            mut self,
+            input: std::option::Option<crate::model::SyncMetadataStatus>,
+        ) -> Self {
+            self.latest_metadata_sync_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HypervisorDetails`](crate::model::HypervisorDetails).
+        pub fn build(self) -> crate::model::HypervisorDetails {
+            crate::model::HypervisorDetails {
+                host: self.host,
+                hypervisor_arn: self.hypervisor_arn,
+                kms_key_arn: self.kms_key_arn,
+                name: self.name,
+                log_group_arn: self.log_group_arn,
+                state: self.state,
+                last_successful_metadata_sync_time: self.last_successful_metadata_sync_time,
+                latest_metadata_sync_status_message: self.latest_metadata_sync_status_message,
+                latest_metadata_sync_status: self.latest_metadata_sync_status,
+            }
+        }
+    }
+}
+impl HypervisorDetails {
+    /// Creates a new builder-style object to manufacture [`HypervisorDetails`](crate::model::HypervisorDetails).
+    pub fn builder() -> crate::model::hypervisor_details::Builder {
+        crate::model::hypervisor_details::Builder::default()
+    }
+}
+
+/// When writing a match expression against `SyncMetadataStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let syncmetadatastatus = unimplemented!();
+/// match syncmetadatastatus {
+///     SyncMetadataStatus::Created => { /* ... */ },
+///     SyncMetadataStatus::Failed => { /* ... */ },
+///     SyncMetadataStatus::PartiallyFailed => { /* ... */ },
+///     SyncMetadataStatus::Running => { /* ... */ },
+///     SyncMetadataStatus::Succeeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `syncmetadatastatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SyncMetadataStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SyncMetadataStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SyncMetadataStatus::NewFeature` is defined.
+/// Specifically, when `syncmetadatastatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SyncMetadataStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SyncMetadataStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Created,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    PartiallyFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SyncMetadataStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CREATED" => SyncMetadataStatus::Created,
+            "FAILED" => SyncMetadataStatus::Failed,
+            "PARTIALLY_FAILED" => SyncMetadataStatus::PartiallyFailed,
+            "RUNNING" => SyncMetadataStatus::Running,
+            "SUCCEEDED" => SyncMetadataStatus::Succeeded,
+            other => {
+                SyncMetadataStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for SyncMetadataStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SyncMetadataStatus::from(s))
+    }
+}
+impl SyncMetadataStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SyncMetadataStatus::Created => "CREATED",
+            SyncMetadataStatus::Failed => "FAILED",
+            SyncMetadataStatus::PartiallyFailed => "PARTIALLY_FAILED",
+            SyncMetadataStatus::Running => "RUNNING",
+            SyncMetadataStatus::Succeeded => "SUCCEEDED",
+            SyncMetadataStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "CREATED",
+            "FAILED",
+            "PARTIALLY_FAILED",
+            "RUNNING",
+            "SUCCEEDED",
+        ]
+    }
+}
+impl AsRef<str> for SyncMetadataStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>This displays the mapping of on-premises VMware tags to the corresponding Amazon Web Services tags.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VmwareToAwsTagMapping {
+    /// <p>The is the category of VMware.</p>
+    #[doc(hidden)]
+    pub vmware_category: std::option::Option<std::string::String>,
+    /// <p>This is the user-defined name of a VMware tag.</p>
+    #[doc(hidden)]
+    pub vmware_tag_name: std::option::Option<std::string::String>,
+    /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
+    #[doc(hidden)]
+    pub aws_tag_key: std::option::Option<std::string::String>,
+    /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
+    #[doc(hidden)]
+    pub aws_tag_value: std::option::Option<std::string::String>,
+}
+impl VmwareToAwsTagMapping {
+    /// <p>The is the category of VMware.</p>
+    pub fn vmware_category(&self) -> std::option::Option<&str> {
+        self.vmware_category.as_deref()
+    }
+    /// <p>This is the user-defined name of a VMware tag.</p>
+    pub fn vmware_tag_name(&self) -> std::option::Option<&str> {
+        self.vmware_tag_name.as_deref()
+    }
+    /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
+    pub fn aws_tag_key(&self) -> std::option::Option<&str> {
+        self.aws_tag_key.as_deref()
+    }
+    /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
+    pub fn aws_tag_value(&self) -> std::option::Option<&str> {
+        self.aws_tag_value.as_deref()
+    }
+}
+/// See [`VmwareToAwsTagMapping`](crate::model::VmwareToAwsTagMapping).
+pub mod vmware_to_aws_tag_mapping {
+
+    /// A builder for [`VmwareToAwsTagMapping`](crate::model::VmwareToAwsTagMapping).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vmware_category: std::option::Option<std::string::String>,
+        pub(crate) vmware_tag_name: std::option::Option<std::string::String>,
+        pub(crate) aws_tag_key: std::option::Option<std::string::String>,
+        pub(crate) aws_tag_value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The is the category of VMware.</p>
+        pub fn vmware_category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vmware_category = Some(input.into());
+            self
+        }
+        /// <p>The is the category of VMware.</p>
+        pub fn set_vmware_category(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vmware_category = input;
+            self
+        }
+        /// <p>This is the user-defined name of a VMware tag.</p>
+        pub fn vmware_tag_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vmware_tag_name = Some(input.into());
+            self
+        }
+        /// <p>This is the user-defined name of a VMware tag.</p>
+        pub fn set_vmware_tag_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vmware_tag_name = input;
+            self
+        }
+        /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
+        pub fn aws_tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_tag_key = Some(input.into());
+            self
+        }
+        /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
+        pub fn set_aws_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_tag_key = input;
+            self
+        }
+        /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
+        pub fn aws_tag_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_tag_value = Some(input.into());
+            self
+        }
+        /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
+        pub fn set_aws_tag_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_tag_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VmwareToAwsTagMapping`](crate::model::VmwareToAwsTagMapping).
+        pub fn build(self) -> crate::model::VmwareToAwsTagMapping {
+            crate::model::VmwareToAwsTagMapping {
+                vmware_category: self.vmware_category,
+                vmware_tag_name: self.vmware_tag_name,
+                aws_tag_key: self.aws_tag_key,
+                aws_tag_value: self.aws_tag_value,
+            }
+        }
+    }
+}
+impl VmwareToAwsTagMapping {
+    /// Creates a new builder-style object to manufacture [`VmwareToAwsTagMapping`](crate::model::VmwareToAwsTagMapping).
+    pub fn builder() -> crate::model::vmware_to_aws_tag_mapping::Builder {
+        crate::model::vmware_to_aws_tag_mapping::Builder::default()
     }
 }
 
@@ -1122,5 +1710,174 @@ impl MaintenanceStartTime {
     /// Creates a new builder-style object to manufacture [`MaintenanceStartTime`](crate::model::MaintenanceStartTime).
     pub fn builder() -> crate::model::maintenance_start_time::Builder {
         crate::model::maintenance_start_time::Builder::default()
+    }
+}
+
+/// <p>Describes a bandwidth rate limit interval for a gateway. A bandwidth rate limit schedule consists of one or more bandwidth rate limit intervals. A bandwidth rate limit interval defines a period of time on one or more days of the week, during which bandwidth rate limits are specified for uploading, downloading, or both.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BandwidthRateLimitInterval {
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
+    /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub average_upload_rate_limit_in_bits_per_sec: std::option::Option<i64>,
+    /// <p>The hour of the day to start the bandwidth rate limit interval.</p>
+    #[doc(hidden)]
+    pub start_hour_of_day: std::option::Option<i32>,
+    /// <p>The hour of the day to end the bandwidth rate limit interval.</p>
+    #[doc(hidden)]
+    pub end_hour_of_day: std::option::Option<i32>,
+    /// <p>The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>.</p>
+    #[doc(hidden)]
+    pub start_minute_of_hour: std::option::Option<i32>,
+    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
+    /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub end_minute_of_hour: std::option::Option<i32>,
+    /// <p>The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
+    #[doc(hidden)]
+    pub days_of_week: std::option::Option<std::vec::Vec<i32>>,
+}
+impl BandwidthRateLimitInterval {
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
+    /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
+    /// </note>
+    pub fn average_upload_rate_limit_in_bits_per_sec(&self) -> std::option::Option<i64> {
+        self.average_upload_rate_limit_in_bits_per_sec
+    }
+    /// <p>The hour of the day to start the bandwidth rate limit interval.</p>
+    pub fn start_hour_of_day(&self) -> std::option::Option<i32> {
+        self.start_hour_of_day
+    }
+    /// <p>The hour of the day to end the bandwidth rate limit interval.</p>
+    pub fn end_hour_of_day(&self) -> std::option::Option<i32> {
+        self.end_hour_of_day
+    }
+    /// <p>The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>.</p>
+    pub fn start_minute_of_hour(&self) -> std::option::Option<i32> {
+        self.start_minute_of_hour
+    }
+    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
+    /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
+    /// </important>
+    pub fn end_minute_of_hour(&self) -> std::option::Option<i32> {
+        self.end_minute_of_hour
+    }
+    /// <p>The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
+    pub fn days_of_week(&self) -> std::option::Option<&[i32]> {
+        self.days_of_week.as_deref()
+    }
+}
+/// See [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
+pub mod bandwidth_rate_limit_interval {
+
+    /// A builder for [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) average_upload_rate_limit_in_bits_per_sec: std::option::Option<i64>,
+        pub(crate) start_hour_of_day: std::option::Option<i32>,
+        pub(crate) end_hour_of_day: std::option::Option<i32>,
+        pub(crate) start_minute_of_hour: std::option::Option<i32>,
+        pub(crate) end_minute_of_hour: std::option::Option<i32>,
+        pub(crate) days_of_week: std::option::Option<std::vec::Vec<i32>>,
+    }
+    impl Builder {
+        /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
+        /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
+        /// </note>
+        pub fn average_upload_rate_limit_in_bits_per_sec(mut self, input: i64) -> Self {
+            self.average_upload_rate_limit_in_bits_per_sec = Some(input);
+            self
+        }
+        /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
+        /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
+        /// </note>
+        pub fn set_average_upload_rate_limit_in_bits_per_sec(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.average_upload_rate_limit_in_bits_per_sec = input;
+            self
+        }
+        /// <p>The hour of the day to start the bandwidth rate limit interval.</p>
+        pub fn start_hour_of_day(mut self, input: i32) -> Self {
+            self.start_hour_of_day = Some(input);
+            self
+        }
+        /// <p>The hour of the day to start the bandwidth rate limit interval.</p>
+        pub fn set_start_hour_of_day(mut self, input: std::option::Option<i32>) -> Self {
+            self.start_hour_of_day = input;
+            self
+        }
+        /// <p>The hour of the day to end the bandwidth rate limit interval.</p>
+        pub fn end_hour_of_day(mut self, input: i32) -> Self {
+            self.end_hour_of_day = Some(input);
+            self
+        }
+        /// <p>The hour of the day to end the bandwidth rate limit interval.</p>
+        pub fn set_end_hour_of_day(mut self, input: std::option::Option<i32>) -> Self {
+            self.end_hour_of_day = input;
+            self
+        }
+        /// <p>The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>.</p>
+        pub fn start_minute_of_hour(mut self, input: i32) -> Self {
+            self.start_minute_of_hour = Some(input);
+            self
+        }
+        /// <p>The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>.</p>
+        pub fn set_start_minute_of_hour(mut self, input: std::option::Option<i32>) -> Self {
+            self.start_minute_of_hour = input;
+            self
+        }
+        /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
+        /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
+        /// </important>
+        pub fn end_minute_of_hour(mut self, input: i32) -> Self {
+            self.end_minute_of_hour = Some(input);
+            self
+        }
+        /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
+        /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
+        /// </important>
+        pub fn set_end_minute_of_hour(mut self, input: std::option::Option<i32>) -> Self {
+            self.end_minute_of_hour = input;
+            self
+        }
+        /// Appends an item to `days_of_week`.
+        ///
+        /// To override the contents of this collection use [`set_days_of_week`](Self::set_days_of_week).
+        ///
+        /// <p>The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
+        pub fn days_of_week(mut self, input: i32) -> Self {
+            let mut v = self.days_of_week.unwrap_or_default();
+            v.push(input);
+            self.days_of_week = Some(v);
+            self
+        }
+        /// <p>The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
+        pub fn set_days_of_week(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.days_of_week = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
+        pub fn build(self) -> crate::model::BandwidthRateLimitInterval {
+            crate::model::BandwidthRateLimitInterval {
+                average_upload_rate_limit_in_bits_per_sec: self
+                    .average_upload_rate_limit_in_bits_per_sec,
+                start_hour_of_day: self.start_hour_of_day,
+                end_hour_of_day: self.end_hour_of_day,
+                start_minute_of_hour: self.start_minute_of_hour,
+                end_minute_of_hour: self.end_minute_of_hour,
+                days_of_week: self.days_of_week,
+            }
+        }
+    }
+}
+impl BandwidthRateLimitInterval {
+    /// Creates a new builder-style object to manufacture [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
+    pub fn builder() -> crate::model::bandwidth_rate_limit_interval::Builder {
+        crate::model::bandwidth_rate_limit_interval::Builder::default()
     }
 }

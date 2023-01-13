@@ -1073,14 +1073,16 @@ pub mod classify_document_input {
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
+        pub(crate) bytes: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) document_reader_config: std::option::Option<crate::model::DocumentReaderConfig>,
     }
     impl Builder {
-        /// <p>The document text to be analyzed.</p>
+        /// <p>The document text to be analyzed. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>The document text to be analyzed.</p>
+        /// <p>The document text to be analyzed. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -1095,6 +1097,35 @@ pub mod classify_document_input {
             self.endpoint_arn = input;
             self
         }
+        /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
+        /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
+        /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+        /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+        pub fn bytes(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.bytes = Some(input);
+            self
+        }
+        /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
+        /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
+        /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+        /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+        pub fn set_bytes(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.bytes = input;
+            self
+        }
+        /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
+        pub fn document_reader_config(mut self, input: crate::model::DocumentReaderConfig) -> Self {
+            self.document_reader_config = Some(input);
+            self
+        }
+        /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
+        pub fn set_document_reader_config(
+            mut self,
+            input: std::option::Option<crate::model::DocumentReaderConfig>,
+        ) -> Self {
+            self.document_reader_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ClassifyDocumentInput`](crate::input::ClassifyDocumentInput).
         pub fn build(
             self,
@@ -1105,6 +1136,8 @@ pub mod classify_document_input {
             Ok(crate::input::ClassifyDocumentInput {
                 text: self.text,
                 endpoint_arn: self.endpoint_arn,
+                bytes: self.bytes,
+                document_reader_config: self.document_reader_config,
             })
         }
     }
@@ -1113,6 +1146,8 @@ pub mod classify_document_input {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("text", &"*** Sensitive Data Redacted ***");
             formatter.field("endpoint_arn", &self.endpoint_arn);
+            formatter.field("bytes", &self.bytes);
+            formatter.field("document_reader_config", &self.document_reader_config);
             formatter.finish()
         }
     }
@@ -2091,12 +2126,12 @@ pub mod create_entity_recognizer_input {
             self.client_request_token = input;
             self
         }
-        /// <p> You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.</p>
+        /// <p> You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or image input files, you must specify English as the language. All training documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p> You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.</p>
+        /// <p> You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or image input files, you must specify English as the language. All training documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -4269,12 +4304,12 @@ pub mod describe_resource_policy_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
+        /// <p>The Amazon Resource Name (ARN) of the custom model version that has the resource policy.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
+        /// <p>The Amazon Resource Name (ARN) of the custom model version that has the resource policy.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5010,26 +5045,28 @@ pub mod detect_entities_input {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
+        pub(crate) bytes: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) document_reader_config: std::option::Option<crate::model::DocumentReaderConfig>,
     }
     impl Builder {
-        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-        /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
+        /// <p>All input documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-        /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
+        /// <p>All input documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -5051,6 +5088,39 @@ pub mod detect_entities_input {
             self.endpoint_arn = input;
             self
         }
+        /// <p>This field applies only when you use a custom entity recognition model that was trained with PDF annotations. For other cases, enter your text input in the <code>Text</code> field.</p>
+        /// <p> Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. Using a plain-text file in the <code>Bytes</code> parameter is equivelent to using the <code>Text</code> parameter (the <code>Entities</code> field in the response is identical).</p>
+        /// <p>You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
+        /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to detect entities, the SDK may encode the document file bytes for you. </p>
+        /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+        /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+        pub fn bytes(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.bytes = Some(input);
+            self
+        }
+        /// <p>This field applies only when you use a custom entity recognition model that was trained with PDF annotations. For other cases, enter your text input in the <code>Text</code> field.</p>
+        /// <p> Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. Using a plain-text file in the <code>Bytes</code> parameter is equivelent to using the <code>Text</code> parameter (the <code>Entities</code> field in the response is identical).</p>
+        /// <p>You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
+        /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to detect entities, the SDK may encode the document file bytes for you. </p>
+        /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+        /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+        pub fn set_bytes(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.bytes = input;
+            self
+        }
+        /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
+        pub fn document_reader_config(mut self, input: crate::model::DocumentReaderConfig) -> Self {
+            self.document_reader_config = Some(input);
+            self
+        }
+        /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
+        pub fn set_document_reader_config(
+            mut self,
+            input: std::option::Option<crate::model::DocumentReaderConfig>,
+        ) -> Self {
+            self.document_reader_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DetectEntitiesInput`](crate::input::DetectEntitiesInput).
         pub fn build(
             self,
@@ -5060,6 +5130,8 @@ pub mod detect_entities_input {
                 text: self.text,
                 language_code: self.language_code,
                 endpoint_arn: self.endpoint_arn,
+                bytes: self.bytes,
+                document_reader_config: self.document_reader_config,
             })
         }
     }
@@ -5069,6 +5141,8 @@ pub mod detect_entities_input {
             formatter.field("text", &"*** Sensitive Data Redacted ***");
             formatter.field("language_code", &self.language_code);
             formatter.field("endpoint_arn", &self.endpoint_arn);
+            formatter.field("bytes", &self.bytes);
+            formatter.field("document_reader_config", &self.document_reader_config);
             formatter.finish()
         }
     }
@@ -10982,12 +11056,12 @@ pub mod start_targeted_sentiment_detection_job_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The input properties for an inference job.</p>
+        /// <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
             self.input_data_config = Some(input);
             self
         }
-        /// <p>The input properties for an inference job.</p>
+        /// <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -13680,7 +13754,7 @@ impl StartTopicsDetectionJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTargetedSentimentDetectionJobInput {
-    /// <p>The input properties for an inference job.</p>
+    /// <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
     #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies where to send the output files. </p>
@@ -13713,7 +13787,7 @@ pub struct StartTargetedSentimentDetectionJobInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartTargetedSentimentDetectionJobInput {
-    /// <p>The input properties for an inference job.</p>
+    /// <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
     pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
     }
@@ -14939,11 +15013,11 @@ impl std::fmt::Debug for DetectKeyPhrasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectEntitiesInput {
-    /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
+    /// <p>A UTF-8 text string. The maximum string size is 100 KB. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
-    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
+    /// <p>All input documents must be in the same language.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>
@@ -14951,14 +15025,25 @@ pub struct DetectEntitiesInput {
     /// <p>For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
+    /// <p>This field applies only when you use a custom entity recognition model that was trained with PDF annotations. For other cases, enter your text input in the <code>Text</code> field.</p>
+    /// <p> Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. Using a plain-text file in the <code>Bytes</code> parameter is equivelent to using the <code>Text</code> parameter (the <code>Entities</code> field in the response is identical).</p>
+    /// <p>You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
+    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to detect entities, the SDK may encode the document file bytes for you. </p>
+    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+    /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+    #[doc(hidden)]
+    pub bytes: std::option::Option<aws_smithy_types::Blob>,
+    /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
+    #[doc(hidden)]
+    pub document_reader_config: std::option::Option<crate::model::DocumentReaderConfig>,
 }
 impl DetectEntitiesInput {
-    /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
+    /// <p>A UTF-8 text string. The maximum string size is 100 KB. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
+    /// <p>All input documents must be in the same language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -14968,6 +15053,21 @@ impl DetectEntitiesInput {
     pub fn endpoint_arn(&self) -> std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
+    /// <p>This field applies only when you use a custom entity recognition model that was trained with PDF annotations. For other cases, enter your text input in the <code>Text</code> field.</p>
+    /// <p> Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. Using a plain-text file in the <code>Bytes</code> parameter is equivelent to using the <code>Text</code> parameter (the <code>Entities</code> field in the response is identical).</p>
+    /// <p>You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
+    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to detect entities, the SDK may encode the document file bytes for you. </p>
+    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+    /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+    pub fn bytes(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.bytes.as_ref()
+    }
+    /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
+    pub fn document_reader_config(
+        &self,
+    ) -> std::option::Option<&crate::model::DocumentReaderConfig> {
+        self.document_reader_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DetectEntitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14975,6 +15075,8 @@ impl std::fmt::Debug for DetectEntitiesInput {
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.field("language_code", &self.language_code);
         formatter.field("endpoint_arn", &self.endpoint_arn);
+        formatter.field("bytes", &self.bytes);
+        formatter.field("document_reader_config", &self.document_reader_config);
         formatter.finish()
     }
 }
@@ -15050,12 +15152,12 @@ impl DescribeSentimentDetectionJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom model version that has the resource policy.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DescribeResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom model version that has the resource policy.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -15285,7 +15387,7 @@ pub struct CreateEntityRecognizerInput {
     /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p> You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.</p>
+    /// <p> You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or image input files, you must specify English as the language. All training documents must be in the same language.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
@@ -15340,7 +15442,7 @@ impl CreateEntityRecognizerInput {
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p> You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.</p>
+    /// <p> You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or image input files, you must specify English as the language. All training documents must be in the same language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -15577,15 +15679,24 @@ impl ContainsPiiEntitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClassifyDocumentInput {
-    /// <p>The document text to be analyzed.</p>
+    /// <p>The document text to be analyzed. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
+    /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
+    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
+    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+    /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+    #[doc(hidden)]
+    pub bytes: std::option::Option<aws_smithy_types::Blob>,
+    /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
+    #[doc(hidden)]
+    pub document_reader_config: std::option::Option<crate::model::DocumentReaderConfig>,
 }
 impl ClassifyDocumentInput {
-    /// <p>The document text to be analyzed.</p>
+    /// <p>The document text to be analyzed. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -15593,12 +15704,27 @@ impl ClassifyDocumentInput {
     pub fn endpoint_arn(&self) -> std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
+    /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
+    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
+    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+    /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+    pub fn bytes(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.bytes.as_ref()
+    }
+    /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
+    pub fn document_reader_config(
+        &self,
+    ) -> std::option::Option<&crate::model::DocumentReaderConfig> {
+        self.document_reader_config.as_ref()
+    }
 }
 impl std::fmt::Debug for ClassifyDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClassifyDocumentInput");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.field("endpoint_arn", &self.endpoint_arn);
+        formatter.field("bytes", &self.bytes);
+        formatter.field("document_reader_config", &self.document_reader_config);
         formatter.finish()
     }
 }

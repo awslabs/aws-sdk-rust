@@ -8419,14 +8419,14 @@ pub mod list_stack_instances_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The status that stack instances are filtered by.</p>
+        /// <p>The filter to apply to stack instances</p>
         pub fn filters(mut self, input: crate::model::StackInstanceFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The status that stack instances are filtered by.</p>
+        /// <p>The filter to apply to stack instances</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackInstanceFilter>>,
@@ -8946,6 +8946,7 @@ pub mod list_stack_set_operation_results_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) call_as: std::option::Option<crate::model::CallAs>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::OperationResultFilter>>,
     }
     impl Builder {
         /// <p>The name or unique ID of the stack set that you want to get operation results for.</p>
@@ -9011,6 +9012,25 @@ pub mod list_stack_set_operation_results_input {
             self.call_as = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filter to apply to operation results.</p>
+        pub fn filters(mut self, input: crate::model::OperationResultFilter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p>The filter to apply to operation results.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::OperationResultFilter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListStackSetOperationResultsInput`](crate::input::ListStackSetOperationResultsInput).
         pub fn build(
             self,
@@ -9024,6 +9044,7 @@ pub mod list_stack_set_operation_results_input {
                 next_token: self.next_token,
                 max_results: self.max_results,
                 call_as: self.call_as,
+                filters: self.filters,
             })
         }
     }
@@ -15521,6 +15542,9 @@ pub struct ListStackSetOperationResultsInput {
     /// </ul>
     #[doc(hidden)]
     pub call_as: std::option::Option<crate::model::CallAs>,
+    /// <p>The filter to apply to operation results.</p>
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::OperationResultFilter>>,
 }
 impl ListStackSetOperationResultsInput {
     /// <p>The name or unique ID of the stack set that you want to get operation results for.</p>
@@ -15547,6 +15571,10 @@ impl ListStackSetOperationResultsInput {
     /// </ul>
     pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
         self.call_as.as_ref()
+    }
+    /// <p>The filter to apply to operation results.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::OperationResultFilter]> {
+        self.filters.as_deref()
     }
 }
 
@@ -15617,7 +15645,7 @@ pub struct ListStackInstancesInput {
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The status that stack instances are filtered by.</p>
+    /// <p>The filter to apply to stack instances</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::StackInstanceFilter>>,
     /// <p>The name of the Amazon Web Services account that you want to list stack instances for.</p>
@@ -15648,7 +15676,7 @@ impl ListStackInstancesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The status that stack instances are filtered by.</p>
+    /// <p>The filter to apply to stack instances</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::StackInstanceFilter]> {
         self.filters.as_deref()
     }

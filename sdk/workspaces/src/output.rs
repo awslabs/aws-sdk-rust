@@ -682,6 +682,30 @@ impl ModifyClientPropertiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ModifyCertificateBasedAuthPropertiesOutput {}
+/// See [`ModifyCertificateBasedAuthPropertiesOutput`](crate::output::ModifyCertificateBasedAuthPropertiesOutput).
+pub mod modify_certificate_based_auth_properties_output {
+
+    /// A builder for [`ModifyCertificateBasedAuthPropertiesOutput`](crate::output::ModifyCertificateBasedAuthPropertiesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`ModifyCertificateBasedAuthPropertiesOutput`](crate::output::ModifyCertificateBasedAuthPropertiesOutput).
+        pub fn build(self) -> crate::output::ModifyCertificateBasedAuthPropertiesOutput {
+            crate::output::ModifyCertificateBasedAuthPropertiesOutput {}
+        }
+    }
+}
+impl ModifyCertificateBasedAuthPropertiesOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyCertificateBasedAuthPropertiesOutput`](crate::output::ModifyCertificateBasedAuthPropertiesOutput).
+    pub fn builder() -> crate::output::modify_certificate_based_auth_properties_output::Builder {
+        crate::output::modify_certificate_based_auth_properties_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyAccountOutput {}
 /// See [`ModifyAccountOutput`](crate::output::ModifyAccountOutput).
 pub mod modify_account_output {
@@ -2835,7 +2859,7 @@ pub struct CreateWorkspaceImageOutput {
     /// <p>The availability status of the image.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::WorkspaceImageState>,
-    /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a> </p>
+    /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a>.</p>
     #[doc(hidden)]
     pub required_tenancy: std::option::Option<crate::model::WorkspaceImageRequiredTenancy>,
     /// <p>The date when the image was created.</p>
@@ -2866,7 +2890,7 @@ impl CreateWorkspaceImageOutput {
     pub fn state(&self) -> std::option::Option<&crate::model::WorkspaceImageState> {
         self.state.as_ref()
     }
-    /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a> </p>
+    /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a>.</p>
     pub fn required_tenancy(
         &self,
     ) -> std::option::Option<&crate::model::WorkspaceImageRequiredTenancy> {
@@ -2954,7 +2978,7 @@ pub mod create_workspace_image_output {
             self.state = input;
             self
         }
-        /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a> </p>
+        /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a>.</p>
         pub fn required_tenancy(
             mut self,
             input: crate::model::WorkspaceImageRequiredTenancy,
@@ -2962,7 +2986,7 @@ pub mod create_workspace_image_output {
             self.required_tenancy = Some(input);
             self
         }
-        /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a> </p>
+        /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a>.</p>
         pub fn set_required_tenancy(
             mut self,
             input: std::option::Option<crate::model::WorkspaceImageRequiredTenancy>,
@@ -3138,6 +3162,109 @@ impl CreateTagsOutput {
     /// Creates a new builder-style object to manufacture [`CreateTagsOutput`](crate::output::CreateTagsOutput).
     pub fn builder() -> crate::output::create_tags_output::Builder {
         crate::output::create_tags_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateStandbyWorkspacesOutput {
+    /// <p>Information about the Standby WorkSpace that could not be created. </p>
+    #[doc(hidden)]
+    pub failed_standby_requests:
+        std::option::Option<std::vec::Vec<crate::model::FailedCreateStandbyWorkspacesRequest>>,
+    /// <p>Information about the Standby WorkSpace that was created.</p>
+    #[doc(hidden)]
+    pub pending_standby_requests:
+        std::option::Option<std::vec::Vec<crate::model::PendingCreateStandbyWorkspacesRequest>>,
+}
+impl CreateStandbyWorkspacesOutput {
+    /// <p>Information about the Standby WorkSpace that could not be created. </p>
+    pub fn failed_standby_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedCreateStandbyWorkspacesRequest]> {
+        self.failed_standby_requests.as_deref()
+    }
+    /// <p>Information about the Standby WorkSpace that was created.</p>
+    pub fn pending_standby_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::PendingCreateStandbyWorkspacesRequest]> {
+        self.pending_standby_requests.as_deref()
+    }
+}
+/// See [`CreateStandbyWorkspacesOutput`](crate::output::CreateStandbyWorkspacesOutput).
+pub mod create_standby_workspaces_output {
+
+    /// A builder for [`CreateStandbyWorkspacesOutput`](crate::output::CreateStandbyWorkspacesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) failed_standby_requests:
+            std::option::Option<std::vec::Vec<crate::model::FailedCreateStandbyWorkspacesRequest>>,
+        pub(crate) pending_standby_requests:
+            std::option::Option<std::vec::Vec<crate::model::PendingCreateStandbyWorkspacesRequest>>,
+    }
+    impl Builder {
+        /// Appends an item to `failed_standby_requests`.
+        ///
+        /// To override the contents of this collection use [`set_failed_standby_requests`](Self::set_failed_standby_requests).
+        ///
+        /// <p>Information about the Standby WorkSpace that could not be created. </p>
+        pub fn failed_standby_requests(
+            mut self,
+            input: crate::model::FailedCreateStandbyWorkspacesRequest,
+        ) -> Self {
+            let mut v = self.failed_standby_requests.unwrap_or_default();
+            v.push(input);
+            self.failed_standby_requests = Some(v);
+            self
+        }
+        /// <p>Information about the Standby WorkSpace that could not be created. </p>
+        pub fn set_failed_standby_requests(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::FailedCreateStandbyWorkspacesRequest>,
+            >,
+        ) -> Self {
+            self.failed_standby_requests = input;
+            self
+        }
+        /// Appends an item to `pending_standby_requests`.
+        ///
+        /// To override the contents of this collection use [`set_pending_standby_requests`](Self::set_pending_standby_requests).
+        ///
+        /// <p>Information about the Standby WorkSpace that was created.</p>
+        pub fn pending_standby_requests(
+            mut self,
+            input: crate::model::PendingCreateStandbyWorkspacesRequest,
+        ) -> Self {
+            let mut v = self.pending_standby_requests.unwrap_or_default();
+            v.push(input);
+            self.pending_standby_requests = Some(v);
+            self
+        }
+        /// <p>Information about the Standby WorkSpace that was created.</p>
+        pub fn set_pending_standby_requests(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::PendingCreateStandbyWorkspacesRequest>,
+            >,
+        ) -> Self {
+            self.pending_standby_requests = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateStandbyWorkspacesOutput`](crate::output::CreateStandbyWorkspacesOutput).
+        pub fn build(self) -> crate::output::CreateStandbyWorkspacesOutput {
+            crate::output::CreateStandbyWorkspacesOutput {
+                failed_standby_requests: self.failed_standby_requests,
+                pending_standby_requests: self.pending_standby_requests,
+            }
+        }
+    }
+}
+impl CreateStandbyWorkspacesOutput {
+    /// Creates a new builder-style object to manufacture [`CreateStandbyWorkspacesOutput`](crate::output::CreateStandbyWorkspacesOutput).
+    pub fn builder() -> crate::output::create_standby_workspaces_output::Builder {
+        crate::output::create_standby_workspaces_output::Builder::default()
     }
 }
 

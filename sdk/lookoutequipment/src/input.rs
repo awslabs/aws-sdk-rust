@@ -3768,6 +3768,7 @@ pub mod list_inference_schedulers_input {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) inference_scheduler_name_begins_with: std::option::Option<std::string::String>,
         pub(crate) model_name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::InferenceSchedulerStatus>,
     }
     impl Builder {
         /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
@@ -3816,6 +3817,19 @@ pub mod list_inference_schedulers_input {
             self.model_name = input;
             self
         }
+        /// <p>Specifies the current status of the inference schedulers to list.</p>
+        pub fn status(mut self, input: crate::model::InferenceSchedulerStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Specifies the current status of the inference schedulers to list.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::InferenceSchedulerStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListInferenceSchedulersInput`](crate::input::ListInferenceSchedulersInput).
         pub fn build(
             self,
@@ -3828,6 +3842,7 @@ pub mod list_inference_schedulers_input {
                 max_results: self.max_results,
                 inference_scheduler_name_begins_with: self.inference_scheduler_name_begins_with,
                 model_name: self.model_name,
+                status: self.status,
             })
         }
     }
@@ -6506,6 +6521,9 @@ pub struct ListInferenceSchedulersInput {
     /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
     #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
+    /// <p>Specifies the current status of the inference schedulers to list.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::InferenceSchedulerStatus>,
 }
 impl ListInferenceSchedulersInput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
@@ -6523,6 +6541,10 @@ impl ListInferenceSchedulersInput {
     /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
     pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
+    }
+    /// <p>Specifies the current status of the inference schedulers to list.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InferenceSchedulerStatus> {
+        self.status.as_ref()
     }
 }
 

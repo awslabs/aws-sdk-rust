@@ -118,13 +118,3 @@ pub(crate) fn lens_structure_crate_output_list_dashboards_output_dashboard_entri
     };
     Some(input)
 }
-
-pub(crate) fn lens_structure_crate_output_list_metrics_output_metrics(
-    input: crate::output::ListMetricsOutput,
-) -> std::option::Option<std::vec::Vec<crate::model::Metric>> {
-    let input = match input.metrics {
-        None => return None,
-        Some(t) => t,
-    };
-    Some(input)
-}

@@ -206,6 +206,14 @@ pub mod create_application_input {
         pub(crate) auto_start_configuration: std::option::Option<crate::model::AutoStartConfig>,
         pub(crate) auto_stop_configuration: std::option::Option<crate::model::AutoStopConfig>,
         pub(crate) network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
+        pub(crate) architecture: std::option::Option<crate::model::Architecture>,
+        pub(crate) image_configuration: std::option::Option<crate::model::ImageConfigurationInput>,
+        pub(crate) worker_type_specifications: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                crate::model::WorkerTypeSpecificationInput,
+            >,
+        >,
     }
     impl Builder {
         /// <p>The name of the application.</p>
@@ -218,12 +226,12 @@ pub mod create_application_input {
             self.name = input;
             self
         }
-        /// <p>The EMR release version associated with the application.</p>
+        /// <p>The EMR release associated with the application.</p>
         pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
             self.release_label = Some(input.into());
             self
         }
-        /// <p>The EMR release version associated with the application.</p>
+        /// <p>The EMR release associated with the application.</p>
         pub fn set_release_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -353,6 +361,60 @@ pub mod create_application_input {
             self.network_configuration = input;
             self
         }
+        /// <p>The CPU architecture of an application.</p>
+        pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
+            self.architecture = Some(input);
+            self
+        }
+        /// <p>The CPU architecture of an application.</p>
+        pub fn set_architecture(
+            mut self,
+            input: std::option::Option<crate::model::Architecture>,
+        ) -> Self {
+            self.architecture = input;
+            self
+        }
+        /// <p>The image configuration for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.</p>
+        pub fn image_configuration(mut self, input: crate::model::ImageConfigurationInput) -> Self {
+            self.image_configuration = Some(input);
+            self
+        }
+        /// <p>The image configuration for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.</p>
+        pub fn set_image_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ImageConfigurationInput>,
+        ) -> Self {
+            self.image_configuration = input;
+            self
+        }
+        /// Adds a key-value pair to `worker_type_specifications`.
+        ///
+        /// To override the contents of this collection use [`set_worker_type_specifications`](Self::set_worker_type_specifications).
+        ///
+        /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
+        pub fn worker_type_specifications(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::WorkerTypeSpecificationInput,
+        ) -> Self {
+            let mut hash_map = self.worker_type_specifications.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.worker_type_specifications = Some(hash_map);
+            self
+        }
+        /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
+        pub fn set_worker_type_specifications(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::WorkerTypeSpecificationInput,
+                >,
+            >,
+        ) -> Self {
+            self.worker_type_specifications = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::input::CreateApplicationInput).
         pub fn build(
             self,
@@ -371,6 +433,9 @@ pub mod create_application_input {
                 auto_start_configuration: self.auto_start_configuration,
                 auto_stop_configuration: self.auto_stop_configuration,
                 network_configuration: self.network_configuration,
+                architecture: self.architecture,
+                image_configuration: self.image_configuration,
+                worker_type_specifications: self.worker_type_specifications,
             })
         }
     }
@@ -2762,6 +2827,14 @@ pub mod update_application_input {
         pub(crate) auto_start_configuration: std::option::Option<crate::model::AutoStartConfig>,
         pub(crate) auto_stop_configuration: std::option::Option<crate::model::AutoStopConfig>,
         pub(crate) network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
+        pub(crate) architecture: std::option::Option<crate::model::Architecture>,
+        pub(crate) image_configuration: std::option::Option<crate::model::ImageConfigurationInput>,
+        pub(crate) worker_type_specifications: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                crate::model::WorkerTypeSpecificationInput,
+            >,
+        >,
     }
     impl Builder {
         /// <p>The ID of the application to update.</p>
@@ -2864,6 +2937,60 @@ pub mod update_application_input {
             self.network_configuration = input;
             self
         }
+        /// <p>The CPU architecture of an application.</p>
+        pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
+            self.architecture = Some(input);
+            self
+        }
+        /// <p>The CPU architecture of an application.</p>
+        pub fn set_architecture(
+            mut self,
+            input: std::option::Option<crate::model::Architecture>,
+        ) -> Self {
+            self.architecture = input;
+            self
+        }
+        /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
+        pub fn image_configuration(mut self, input: crate::model::ImageConfigurationInput) -> Self {
+            self.image_configuration = Some(input);
+            self
+        }
+        /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
+        pub fn set_image_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ImageConfigurationInput>,
+        ) -> Self {
+            self.image_configuration = input;
+            self
+        }
+        /// Adds a key-value pair to `worker_type_specifications`.
+        ///
+        /// To override the contents of this collection use [`set_worker_type_specifications`](Self::set_worker_type_specifications).
+        ///
+        /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
+        pub fn worker_type_specifications(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::WorkerTypeSpecificationInput,
+        ) -> Self {
+            let mut hash_map = self.worker_type_specifications.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.worker_type_specifications = Some(hash_map);
+            self
+        }
+        /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
+        pub fn set_worker_type_specifications(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::WorkerTypeSpecificationInput,
+                >,
+            >,
+        ) -> Self {
+            self.worker_type_specifications = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
         pub fn build(
             self,
@@ -2879,6 +3006,9 @@ pub mod update_application_input {
                 auto_start_configuration: self.auto_start_configuration,
                 auto_stop_configuration: self.auto_stop_configuration,
                 network_configuration: self.network_configuration,
+                architecture: self.architecture,
+                image_configuration: self.image_configuration,
+                worker_type_specifications: self.worker_type_specifications,
             })
         }
     }
@@ -3272,7 +3402,7 @@ pub struct CreateApplicationInput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The EMR release version associated with the application.</p>
+    /// <p>The EMR release associated with the application.</p>
     #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The type of application you want to start, such as Spark or Hive.</p>
@@ -3302,13 +3432,24 @@ pub struct CreateApplicationInput {
     /// <p>The network configuration for customer VPC connectivity.</p>
     #[doc(hidden)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
+    /// <p>The CPU architecture of an application.</p>
+    #[doc(hidden)]
+    pub architecture: std::option::Option<crate::model::Architecture>,
+    /// <p>The image configuration for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.</p>
+    #[doc(hidden)]
+    pub image_configuration: std::option::Option<crate::model::ImageConfigurationInput>,
+    /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
+    #[doc(hidden)]
+    pub worker_type_specifications: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::WorkerTypeSpecificationInput>,
+    >,
 }
 impl CreateApplicationInput {
     /// <p>The name of the application.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The EMR release version associated with the application.</p>
+    /// <p>The EMR release associated with the application.</p>
     pub fn release_label(&self) -> std::option::Option<&str> {
         self.release_label.as_deref()
     }
@@ -3352,6 +3493,24 @@ impl CreateApplicationInput {
         &self,
     ) -> std::option::Option<&crate::model::NetworkConfiguration> {
         self.network_configuration.as_ref()
+    }
+    /// <p>The CPU architecture of an application.</p>
+    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+        self.architecture.as_ref()
+    }
+    /// <p>The image configuration for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.</p>
+    pub fn image_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageConfigurationInput> {
+        self.image_configuration.as_ref()
+    }
+    /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
+    pub fn worker_type_specifications(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::WorkerTypeSpecificationInput>,
+    > {
+        self.worker_type_specifications.as_ref()
     }
 }
 
@@ -3397,6 +3556,17 @@ pub struct UpdateApplicationInput {
     /// <p>The network configuration for customer VPC connectivity.</p>
     #[doc(hidden)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
+    /// <p>The CPU architecture of an application.</p>
+    #[doc(hidden)]
+    pub architecture: std::option::Option<crate::model::Architecture>,
+    /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
+    #[doc(hidden)]
+    pub image_configuration: std::option::Option<crate::model::ImageConfigurationInput>,
+    /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
+    #[doc(hidden)]
+    pub worker_type_specifications: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::WorkerTypeSpecificationInput>,
+    >,
 }
 impl UpdateApplicationInput {
     /// <p>The ID of the application to update.</p>
@@ -3432,6 +3602,24 @@ impl UpdateApplicationInput {
         &self,
     ) -> std::option::Option<&crate::model::NetworkConfiguration> {
         self.network_configuration.as_ref()
+    }
+    /// <p>The CPU architecture of an application.</p>
+    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+        self.architecture.as_ref()
+    }
+    /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
+    pub fn image_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageConfigurationInput> {
+        self.image_configuration.as_ref()
+    }
+    /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
+    pub fn worker_type_specifications(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::WorkerTypeSpecificationInput>,
+    > {
+        self.worker_type_specifications.as_ref()
     }
 }
 

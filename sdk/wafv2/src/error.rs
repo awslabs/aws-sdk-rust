@@ -2201,6 +2201,10 @@ pub enum CreateWebACLErrorKind {
     WafConfigurationWarningException(crate::error::WafConfigurationWarningException),
     /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
+    /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
+    WafExpiredManagedRuleGroupVersionException(
+        crate::error::WafExpiredManagedRuleGroupVersionException,
+    ),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
@@ -2244,6 +2248,9 @@ impl std::fmt::Display for CreateWebACLError {
         match &self.kind {
             CreateWebACLErrorKind::WafConfigurationWarningException(_inner) => _inner.fmt(f),
             CreateWebACLErrorKind::WafDuplicateItemException(_inner) => _inner.fmt(f),
+            CreateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) => {
+                _inner.fmt(f)
+            }
             CreateWebACLErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
             CreateWebACLErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
             CreateWebACLErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
@@ -2321,6 +2328,13 @@ impl CreateWebACLError {
         matches!(
             &self.kind,
             CreateWebACLErrorKind::WafDuplicateItemException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException`.
+    pub fn is_waf_expired_managed_rule_group_version_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_)
         )
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafInternalErrorException`.
@@ -2406,6 +2420,9 @@ impl std::error::Error for CreateWebACLError {
         match &self.kind {
             CreateWebACLErrorKind::WafConfigurationWarningException(_inner) => Some(_inner),
             CreateWebACLErrorKind::WafDuplicateItemException(_inner) => Some(_inner),
+            CreateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) => {
+                Some(_inner)
+            }
             CreateWebACLErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             CreateWebACLErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             CreateWebACLErrorKind::WafInvalidParameterException(_inner) => Some(_inner),

@@ -592,6 +592,9 @@ pub struct ConflictException {
     /// <p>Type of the resource in use. </p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
+    /// <p>Reason for the inconsistent state. </p>
+    #[doc(hidden)]
+    pub reason: std::option::Option<crate::model::ConflictExceptionReason>,
 }
 impl ConflictException {
     /// <p>Identifier of the resource in use. </p>
@@ -601,6 +604,10 @@ impl ConflictException {
     /// <p>Type of the resource in use. </p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
+    }
+    /// <p>Reason for the inconsistent state. </p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::ConflictExceptionReason> {
+        self.reason.as_ref()
     }
 }
 impl ConflictException {
@@ -630,6 +637,7 @@ pub mod conflict_exception {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) reason: std::option::Option<crate::model::ConflictExceptionReason>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -665,12 +673,26 @@ pub mod conflict_exception {
             self.resource_type = input;
             self
         }
+        /// <p>Reason for the inconsistent state. </p>
+        pub fn reason(mut self, input: crate::model::ConflictExceptionReason) -> Self {
+            self.reason = Some(input);
+            self
+        }
+        /// <p>Reason for the inconsistent state. </p>
+        pub fn set_reason(
+            mut self,
+            input: std::option::Option<crate::model::ConflictExceptionReason>,
+        ) -> Self {
+            self.reason = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
                 message: self.message,
                 resource_id: self.resource_id,
                 resource_type: self.resource_type,
+                reason: self.reason,
             }
         }
     }
@@ -3656,6 +3678,153 @@ impl std::error::Error for ListCustomLineItemsError {
             ListCustomLineItemsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListCustomLineItemsErrorKind::ValidationException(_inner) => Some(_inner),
             ListCustomLineItemsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListCustomLineItemVersions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListCustomLineItemVersionsError {
+    /// Kind of error that occurred.
+    pub kind: ListCustomLineItemVersionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListCustomLineItemVersionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListCustomLineItemVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListCustomLineItemVersions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListCustomLineItemVersionsErrorKind {
+    /// <p>You do not have sufficient access to perform this action. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied due to request throttling. </p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListCustomLineItemVersionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListCustomLineItemVersionsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListCustomLineItemVersionsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListCustomLineItemVersionsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListCustomLineItemVersionsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListCustomLineItemVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListCustomLineItemVersionsError {
+    fn code(&self) -> Option<&str> {
+        ListCustomLineItemVersionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListCustomLineItemVersionsError {
+    /// Creates a new `ListCustomLineItemVersionsError`.
+    pub fn new(kind: ListCustomLineItemVersionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListCustomLineItemVersionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListCustomLineItemVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListCustomLineItemVersionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListCustomLineItemVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListCustomLineItemVersionsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCustomLineItemVersionsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListCustomLineItemVersionsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCustomLineItemVersionsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListCustomLineItemVersionsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCustomLineItemVersionsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListCustomLineItemVersionsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCustomLineItemVersionsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListCustomLineItemVersionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListCustomLineItemVersionsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListCustomLineItemVersionsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListCustomLineItemVersionsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListCustomLineItemVersionsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListCustomLineItemVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

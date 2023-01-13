@@ -36,6 +36,9 @@ pub struct UpdateShardCountOutput {
     /// <p>The updated number of shards.</p>
     #[doc(hidden)]
     pub target_shard_count: std::option::Option<i32>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl UpdateShardCountOutput {
     /// <p>The name of the stream.</p>
@@ -50,6 +53,10 @@ impl UpdateShardCountOutput {
     pub fn target_shard_count(&self) -> std::option::Option<i32> {
         self.target_shard_count
     }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
 }
 /// See [`UpdateShardCountOutput`](crate::output::UpdateShardCountOutput).
 pub mod update_shard_count_output {
@@ -60,6 +67,7 @@ pub mod update_shard_count_output {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) current_shard_count: std::option::Option<i32>,
         pub(crate) target_shard_count: std::option::Option<i32>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream.</p>
@@ -92,12 +100,23 @@ pub mod update_shard_count_output {
             self.target_shard_count = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateShardCountOutput`](crate::output::UpdateShardCountOutput).
         pub fn build(self) -> crate::output::UpdateShardCountOutput {
             crate::output::UpdateShardCountOutput {
                 stream_name: self.stream_name,
                 current_shard_count: self.current_shard_count,
                 target_shard_count: self.target_shard_count,
+                stream_arn: self.stream_arn,
             }
         }
     }
@@ -585,6 +604,12 @@ pub struct ListStreamsOutput {
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
     #[doc(hidden)]
     pub has_more_streams: std::option::Option<bool>,
+    /// <p></p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p></p>
+    #[doc(hidden)]
+    pub stream_summaries: std::option::Option<std::vec::Vec<crate::model::StreamSummary>>,
 }
 impl ListStreamsOutput {
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
@@ -595,6 +620,14 @@ impl ListStreamsOutput {
     pub fn has_more_streams(&self) -> std::option::Option<bool> {
         self.has_more_streams
     }
+    /// <p></p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p></p>
+    pub fn stream_summaries(&self) -> std::option::Option<&[crate::model::StreamSummary]> {
+        self.stream_summaries.as_deref()
+    }
 }
 /// See [`ListStreamsOutput`](crate::output::ListStreamsOutput).
 pub mod list_streams_output {
@@ -604,6 +637,9 @@ pub mod list_streams_output {
     pub struct Builder {
         pub(crate) stream_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) has_more_streams: std::option::Option<bool>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) stream_summaries:
+            std::option::Option<std::vec::Vec<crate::model::StreamSummary>>,
     }
     impl Builder {
         /// Appends an item to `stream_names`.
@@ -635,11 +671,42 @@ pub mod list_streams_output {
             self.has_more_streams = input;
             self
         }
+        /// <p></p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p></p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `stream_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_stream_summaries`](Self::set_stream_summaries).
+        ///
+        /// <p></p>
+        pub fn stream_summaries(mut self, input: crate::model::StreamSummary) -> Self {
+            let mut v = self.stream_summaries.unwrap_or_default();
+            v.push(input);
+            self.stream_summaries = Some(v);
+            self
+        }
+        /// <p></p>
+        pub fn set_stream_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StreamSummary>>,
+        ) -> Self {
+            self.stream_summaries = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListStreamsOutput`](crate::output::ListStreamsOutput).
         pub fn build(self) -> crate::output::ListStreamsOutput {
             crate::output::ListStreamsOutput {
                 stream_names: self.stream_names,
                 has_more_streams: self.has_more_streams,
+                next_token: self.next_token,
+                stream_summaries: self.stream_summaries,
             }
         }
     }
@@ -1033,6 +1100,9 @@ pub struct EnableEnhancedMonitoringOutput {
     /// <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
     #[doc(hidden)]
     pub desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl EnableEnhancedMonitoringOutput {
     /// <p>The name of the Kinesis data stream.</p>
@@ -1047,6 +1117,10 @@ impl EnableEnhancedMonitoringOutput {
     pub fn desired_shard_level_metrics(&self) -> std::option::Option<&[crate::model::MetricsName]> {
         self.desired_shard_level_metrics.as_deref()
     }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
 }
 /// See [`EnableEnhancedMonitoringOutput`](crate::output::EnableEnhancedMonitoringOutput).
 pub mod enable_enhanced_monitoring_output {
@@ -1059,6 +1133,7 @@ pub mod enable_enhanced_monitoring_output {
             std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         pub(crate) desired_shard_level_metrics:
             std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the Kinesis data stream.</p>
@@ -1109,12 +1184,23 @@ pub mod enable_enhanced_monitoring_output {
             self.desired_shard_level_metrics = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EnableEnhancedMonitoringOutput`](crate::output::EnableEnhancedMonitoringOutput).
         pub fn build(self) -> crate::output::EnableEnhancedMonitoringOutput {
             crate::output::EnableEnhancedMonitoringOutput {
                 stream_name: self.stream_name,
                 current_shard_level_metrics: self.current_shard_level_metrics,
                 desired_shard_level_metrics: self.desired_shard_level_metrics,
+                stream_arn: self.stream_arn,
             }
         }
     }
@@ -1139,6 +1225,9 @@ pub struct DisableEnhancedMonitoringOutput {
     /// <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
     #[doc(hidden)]
     pub desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl DisableEnhancedMonitoringOutput {
     /// <p>The name of the Kinesis data stream.</p>
@@ -1153,6 +1242,10 @@ impl DisableEnhancedMonitoringOutput {
     pub fn desired_shard_level_metrics(&self) -> std::option::Option<&[crate::model::MetricsName]> {
         self.desired_shard_level_metrics.as_deref()
     }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
 }
 /// See [`DisableEnhancedMonitoringOutput`](crate::output::DisableEnhancedMonitoringOutput).
 pub mod disable_enhanced_monitoring_output {
@@ -1165,6 +1258,7 @@ pub mod disable_enhanced_monitoring_output {
             std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         pub(crate) desired_shard_level_metrics:
             std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the Kinesis data stream.</p>
@@ -1215,12 +1309,23 @@ pub mod disable_enhanced_monitoring_output {
             self.desired_shard_level_metrics = input;
             self
         }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DisableEnhancedMonitoringOutput`](crate::output::DisableEnhancedMonitoringOutput).
         pub fn build(self) -> crate::output::DisableEnhancedMonitoringOutput {
             crate::output::DisableEnhancedMonitoringOutput {
                 stream_name: self.stream_name,
                 current_shard_level_metrics: self.current_shard_level_metrics,
                 desired_shard_level_metrics: self.desired_shard_level_metrics,
+                stream_arn: self.stream_arn,
             }
         }
     }

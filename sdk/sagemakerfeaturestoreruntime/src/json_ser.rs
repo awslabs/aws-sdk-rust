@@ -40,6 +40,15 @@ pub fn serialize_structure_crate_input_put_record_input(
         }
         array_6.finish();
     }
+    if let Some(var_9) = &input.target_stores {
+        let mut array_10 = object.key("TargetStores").start_array();
+        for item_11 in var_9 {
+            {
+                array_10.value().string(item_11.as_str());
+            }
+        }
+        array_10.finish();
+    }
     Ok(())
 }
 
@@ -47,26 +56,26 @@ pub fn serialize_structure_crate_model_batch_get_record_identifier(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BatchGetRecordIdentifier,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_9) = &input.feature_group_name {
-        object.key("FeatureGroupName").string(var_9.as_str());
+    if let Some(var_12) = &input.feature_group_name {
+        object.key("FeatureGroupName").string(var_12.as_str());
     }
-    if let Some(var_10) = &input.record_identifiers_value_as_string {
-        let mut array_11 = object.key("RecordIdentifiersValueAsString").start_array();
-        for item_12 in var_10 {
-            {
-                array_11.value().string(item_12.as_str());
-            }
-        }
-        array_11.finish();
-    }
-    if let Some(var_13) = &input.feature_names {
-        let mut array_14 = object.key("FeatureNames").start_array();
+    if let Some(var_13) = &input.record_identifiers_value_as_string {
+        let mut array_14 = object.key("RecordIdentifiersValueAsString").start_array();
         for item_15 in var_13 {
             {
                 array_14.value().string(item_15.as_str());
             }
         }
         array_14.finish();
+    }
+    if let Some(var_16) = &input.feature_names {
+        let mut array_17 = object.key("FeatureNames").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().string(item_18.as_str());
+            }
+        }
+        array_17.finish();
     }
     Ok(())
 }
@@ -75,11 +84,11 @@ pub fn serialize_structure_crate_model_feature_value(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FeatureValue,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_16) = &input.feature_name {
-        object.key("FeatureName").string(var_16.as_str());
+    if let Some(var_19) = &input.feature_name {
+        object.key("FeatureName").string(var_19.as_str());
     }
-    if let Some(var_17) = &input.value_as_string {
-        object.key("ValueAsString").string(var_17.as_str());
+    if let Some(var_20) = &input.value_as_string {
+        object.key("ValueAsString").string(var_20.as_str());
     }
     Ok(())
 }

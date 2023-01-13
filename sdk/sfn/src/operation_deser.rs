@@ -406,6 +406,23 @@ pub fn parse_delete_state_machine_error(
                 tmp
             }),
         },
+        "ValidationException" => crate::error::DeleteStateMachineError {
+            meta: generic,
+            kind: crate::error::DeleteStateMachineErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteStateMachineError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteStateMachineError::generic(generic),
     })
 }
@@ -569,6 +586,80 @@ pub fn parse_describe_execution_response(
             output,
         )
         .map_err(crate::error::DescribeExecutionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_map_run_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeMapRunOutput, crate::error::DescribeMapRunError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeMapRunError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeMapRunError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidArn" => crate::error::DescribeMapRunError {
+            meta: generic,
+            kind: crate::error::DescribeMapRunErrorKind::InvalidArn({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_arn::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeMapRunError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFound" => {
+            crate::error::DescribeMapRunError {
+                meta: generic,
+                kind: crate::error::DescribeMapRunErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMapRunError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeMapRunError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_map_run_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeMapRunOutput, crate::error::DescribeMapRunError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_map_run_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_map_run(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeMapRunError::unhandled)?;
         output.build()
     })
 }
@@ -1027,6 +1118,25 @@ pub fn parse_list_executions_error(
                 tmp
             }),
         },
+        "ResourceNotFound" => {
+            crate::error::ListExecutionsError {
+                meta: generic,
+                kind: crate::error::ListExecutionsErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ListExecutionsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "StateMachineDoesNotExist" => crate::error::ListExecutionsError {
             meta: generic,
             kind: crate::error::ListExecutionsErrorKind::StateMachineDoesNotExist({
@@ -1062,6 +1172,23 @@ pub fn parse_list_executions_error(
                 tmp
             }),
         },
+        "ValidationException" => crate::error::ListExecutionsError {
+            meta: generic,
+            kind: crate::error::ListExecutionsErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListExecutionsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ListExecutionsError::generic(generic),
     })
 }
@@ -1079,6 +1206,99 @@ pub fn parse_list_executions_response(
             output,
         )
         .map_err(crate::error::ListExecutionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_map_runs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListMapRunsOutput, crate::error::ListMapRunsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListMapRunsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListMapRunsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ExecutionDoesNotExist" => crate::error::ListMapRunsError {
+            meta: generic,
+            kind: crate::error::ListMapRunsErrorKind::ExecutionDoesNotExist({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::execution_does_not_exist::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_execution_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::ListMapRunsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidArn" => crate::error::ListMapRunsError {
+            meta: generic,
+            kind: crate::error::ListMapRunsErrorKind::InvalidArn({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_arn::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListMapRunsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidToken" => crate::error::ListMapRunsError {
+            meta: generic,
+            kind: crate::error::ListMapRunsErrorKind::InvalidToken({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_token::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListMapRunsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListMapRunsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_map_runs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListMapRunsOutput, crate::error::ListMapRunsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_map_runs_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_map_runs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListMapRunsError::unhandled)?;
         output.build()
     })
 }
@@ -1651,6 +1871,23 @@ pub fn parse_start_execution_error(
                 tmp
             }),
         },
+        "ValidationException" => crate::error::StartExecutionError {
+            meta: generic,
+            kind: crate::error::StartExecutionErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StartExecutionError::generic(generic),
     })
 }
@@ -1874,6 +2111,23 @@ pub fn parse_stop_execution_error(
                 tmp
             }),
         },
+        "ValidationException" => crate::error::StopExecutionError {
+            meta: generic,
+            kind: crate::error::StopExecutionErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopExecutionError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StopExecutionError::generic(generic),
     })
 }
@@ -2055,6 +2309,92 @@ pub fn parse_untag_resource_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_map_run_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateMapRunOutput, crate::error::UpdateMapRunError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateMapRunError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateMapRunError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidArn" => crate::error::UpdateMapRunError {
+            meta: generic,
+            kind: crate::error::UpdateMapRunErrorKind::InvalidArn({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_arn::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateMapRunError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFound" => {
+            crate::error::UpdateMapRunError {
+                meta: generic,
+                kind: crate::error::UpdateMapRunErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMapRunError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ValidationException" => crate::error::UpdateMapRunError {
+            meta: generic,
+            kind: crate::error::UpdateMapRunErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMapRunError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateMapRunError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_map_run_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateMapRunOutput, crate::error::UpdateMapRunError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_map_run_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_state_machine_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2189,6 +2529,23 @@ pub fn parse_update_state_machine_error(
                     let mut output = crate::error::state_machine_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::UpdateStateMachineError {
+            meta: generic,
+            kind: crate::error::UpdateStateMachineErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
                     output.build()
                 };
                 if tmp.message.is_none() {

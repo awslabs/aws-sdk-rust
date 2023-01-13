@@ -159,6 +159,37 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     }
 }
 
+/// Operation shape for `LockRule`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`lock_rule`](crate::client::Client::lock_rule).
+///
+/// See [`crate::client::fluent_builders::LockRule`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct LockRule {
+    _private: (),
+}
+impl LockRule {
+    /// Creates a new builder-style object to manufacture [`LockRuleInput`](crate::input::LockRuleInput).
+    pub fn builder() -> crate::input::lock_rule_input::Builder {
+        crate::input::lock_rule_input::Builder::default()
+    }
+    /// Creates a new `LockRule` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for LockRule {
+    type Output = std::result::Result<crate::output::LockRuleOutput, crate::error::LockRuleError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_lock_rule_error(response)
+        } else {
+            crate::operation_deser::parse_lock_rule_response(response)
+        }
+    }
+}
+
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -187,6 +218,38 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             crate::operation_deser::parse_tag_resource_error(response)
         } else {
             crate::operation_deser::parse_tag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UnlockRule`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`unlock_rule`](crate::client::Client::unlock_rule).
+///
+/// See [`crate::client::fluent_builders::UnlockRule`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UnlockRule {
+    _private: (),
+}
+impl UnlockRule {
+    /// Creates a new builder-style object to manufacture [`UnlockRuleInput`](crate::input::UnlockRuleInput).
+    pub fn builder() -> crate::input::unlock_rule_input::Builder {
+        crate::input::unlock_rule_input::Builder::default()
+    }
+    /// Creates a new `UnlockRule` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UnlockRule {
+    type Output =
+        std::result::Result<crate::output::UnlockRuleOutput, crate::error::UnlockRuleError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_unlock_rule_error(response)
+        } else {
+            crate::operation_deser::parse_unlock_rule_response(response)
         }
     }
 }

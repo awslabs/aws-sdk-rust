@@ -91,6 +91,17 @@ impl Client {
     }
 }
 impl Client {
+    /// Constructs a fluent builder for the [`BatchGetMetricData`](crate::client::fluent_builders::BatchGetMetricData) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`queries(Vec<BatchGetMetricDataQuery>)`](crate::client::fluent_builders::BatchGetMetricData::queries) / [`set_queries(Option<Vec<BatchGetMetricDataQuery>>)`](crate::client::fluent_builders::BatchGetMetricData::set_queries): <p>A list of queries for metrics to be retrieved.</p>
+    /// - On success, responds with [`BatchGetMetricDataOutput`](crate::output::BatchGetMetricDataOutput) with field(s):
+    ///   - [`results(Option<Vec<MetricDataResult>>)`](crate::output::BatchGetMetricDataOutput::results): <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
+    ///   - [`errors(Option<Vec<MetricDataError>>)`](crate::output::BatchGetMetricDataOutput::errors): <p>A list of <code>MetricDataError</code> encountered while processing your metric data batch request.</p>
+    /// - On failure, responds with [`SdkError<BatchGetMetricDataError>`](crate::error::BatchGetMetricDataError)
+    pub fn batch_get_metric_data(&self) -> fluent_builders::BatchGetMetricData {
+        fluent_builders::BatchGetMetricData::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateConfigurationSet`](crate::client::fluent_builders::CreateConfigurationSet) operation.
     ///
     /// - The fluent builder is configurable:
@@ -101,6 +112,7 @@ impl Client {
     ///   - [`sending_options(SendingOptions)`](crate::client::fluent_builders::CreateConfigurationSet::sending_options) / [`set_sending_options(Option<SendingOptions>)`](crate::client::fluent_builders::CreateConfigurationSet::set_sending_options): <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateConfigurationSet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateConfigurationSet::set_tags): <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
     ///   - [`suppression_options(SuppressionOptions)`](crate::client::fluent_builders::CreateConfigurationSet::suppression_options) / [`set_suppression_options(Option<SuppressionOptions>)`](crate::client::fluent_builders::CreateConfigurationSet::set_suppression_options): <p>An object that contains information about the suppression list preferences for your account.</p>
+    ///   - [`vdm_options(VdmOptions)`](crate::client::fluent_builders::CreateConfigurationSet::vdm_options) / [`set_vdm_options(Option<VdmOptions>)`](crate::client::fluent_builders::CreateConfigurationSet::set_vdm_options): <p>An object that defines the VDM options for emails that you send using the configuration set.</p>
     /// - On success, responds with [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput)
 
     /// - On failure, responds with [`SdkError<CreateConfigurationSetError>`](crate::error::CreateConfigurationSetError)
@@ -154,7 +166,7 @@ impl Client {
     ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::set_template_name): <p>The name of the custom verification email template.</p>
     ///   - [`from_email_address(impl Into<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::from_email_address) / [`set_from_email_address(Option<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::set_from_email_address): <p>The email address that the custom verification email is sent from.</p>
     ///   - [`template_subject(impl Into<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::template_subject) / [`set_template_subject(Option<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::set_template_subject): <p>The subject line of the custom verification email.</p>
-    ///   - [`template_content(impl Into<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::template_content) / [`set_template_content(Option<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::set_template_content): <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
+    ///   - [`template_content(impl Into<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::template_content) / [`set_template_content(Option<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::set_template_content): <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom-faq">Custom verification email frequently asked questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
     ///   - [`success_redirection_url(impl Into<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::success_redirection_url) / [`set_success_redirection_url(Option<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::set_success_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     ///   - [`failure_redirection_url(impl Into<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::failure_redirection_url) / [`set_failure_redirection_url(Option<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::set_failure_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     /// - On success, responds with [`CreateCustomVerificationEmailTemplateOutput`](crate::output::CreateCustomVerificationEmailTemplateOutput)
@@ -170,6 +182,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`pool_name(impl Into<String>)`](crate::client::fluent_builders::CreateDedicatedIpPool::pool_name) / [`set_pool_name(Option<String>)`](crate::client::fluent_builders::CreateDedicatedIpPool::set_pool_name): <p>The name of the dedicated IP pool.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDedicatedIpPool::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDedicatedIpPool::set_tags): <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
+    ///   - [`scaling_mode(ScalingMode)`](crate::client::fluent_builders::CreateDedicatedIpPool::scaling_mode) / [`set_scaling_mode(Option<ScalingMode>)`](crate::client::fluent_builders::CreateDedicatedIpPool::set_scaling_mode): <p>The type of scaling mode.</p>
     /// - On success, responds with [`CreateDedicatedIpPoolOutput`](crate::output::CreateDedicatedIpPoolOutput)
 
     /// - On failure, responds with [`SdkError<CreateDedicatedIpPoolError>`](crate::error::CreateDedicatedIpPoolError)
@@ -360,6 +373,7 @@ impl Client {
     ///   - [`sending_enabled(bool)`](crate::output::GetAccountOutput::sending_enabled): <p>Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     ///   - [`suppression_attributes(Option<SuppressionAttributes>)`](crate::output::GetAccountOutput::suppression_attributes): <p>An object that contains information about the email address suppression preferences for your account in the current Amazon Web Services Region.</p>
     ///   - [`details(Option<AccountDetails>)`](crate::output::GetAccountOutput::details): <p>An object that defines your account details.</p>
+    ///   - [`vdm_attributes(Option<VdmAttributes>)`](crate::output::GetAccountOutput::vdm_attributes): <p>The VDM attributes that apply to your Amazon SES account.</p>
     /// - On failure, responds with [`SdkError<GetAccountError>`](crate::error::GetAccountError)
     pub fn get_account(&self) -> fluent_builders::GetAccount {
         fluent_builders::GetAccount::new(self.handle.clone())
@@ -386,6 +400,7 @@ impl Client {
     ///   - [`sending_options(Option<SendingOptions>)`](crate::output::GetConfigurationSetOutput::sending_options): <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::GetConfigurationSetOutput::tags): <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
     ///   - [`suppression_options(Option<SuppressionOptions>)`](crate::output::GetConfigurationSetOutput::suppression_options): <p>An object that contains information about the suppression list preferences for your account.</p>
+    ///   - [`vdm_options(Option<VdmOptions>)`](crate::output::GetConfigurationSetOutput::vdm_options): <p>An object that contains information about the VDM preferences for your configuration set.</p>
     /// - On failure, responds with [`SdkError<GetConfigurationSetError>`](crate::error::GetConfigurationSetError)
     pub fn get_configuration_set(&self) -> fluent_builders::GetConfigurationSet {
         fluent_builders::GetConfigurationSet::new(self.handle.clone())
@@ -462,6 +477,16 @@ impl Client {
     pub fn get_dedicated_ip(&self) -> fluent_builders::GetDedicatedIp {
         fluent_builders::GetDedicatedIp::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetDedicatedIpPool`](crate::client::fluent_builders::GetDedicatedIpPool) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`pool_name(impl Into<String>)`](crate::client::fluent_builders::GetDedicatedIpPool::pool_name) / [`set_pool_name(Option<String>)`](crate::client::fluent_builders::GetDedicatedIpPool::set_pool_name): <p>The name of the dedicated IP pool to retrieve.</p>
+    /// - On success, responds with [`GetDedicatedIpPoolOutput`](crate::output::GetDedicatedIpPoolOutput) with field(s):
+    ///   - [`dedicated_ip_pool(Option<DedicatedIpPool>)`](crate::output::GetDedicatedIpPoolOutput::dedicated_ip_pool): <p>An object that contains information about a dedicated IP pool.</p>
+    /// - On failure, responds with [`SdkError<GetDedicatedIpPoolError>`](crate::error::GetDedicatedIpPoolError)
+    pub fn get_dedicated_ip_pool(&self) -> fluent_builders::GetDedicatedIpPool {
+        fluent_builders::GetDedicatedIpPool::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetDedicatedIps`](crate::client::fluent_builders::GetDedicatedIps) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetDedicatedIps::into_paginator).
     ///
@@ -482,7 +507,7 @@ impl Client {
 
     /// - On success, responds with [`GetDeliverabilityDashboardOptionsOutput`](crate::output::GetDeliverabilityDashboardOptionsOutput) with field(s):
     ///   - [`dashboard_enabled(bool)`](crate::output::GetDeliverabilityDashboardOptionsOutput::dashboard_enabled): <p>Specifies whether the Deliverability dashboard is enabled. If this value is <code>true</code>, the dashboard is enabled.</p>
-    ///   - [`subscription_expiry_date(Option<DateTime>)`](crate::output::GetDeliverabilityDashboardOptionsOutput::subscription_expiry_date): <p>The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
+    ///   - [`subscription_expiry_date(Option<DateTime>)`](crate::output::GetDeliverabilityDashboardOptionsOutput::subscription_expiry_date): <p>The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
     ///   - [`account_status(Option<DeliverabilityDashboardAccountStatus>)`](crate::output::GetDeliverabilityDashboardOptionsOutput::account_status): <p>The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.</p>
     ///   - [`active_subscribed_domains(Option<Vec<DomainDeliverabilityTrackingOption>>)`](crate::output::GetDeliverabilityDashboardOptionsOutput::active_subscribed_domains): <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at the end of the current calendar month.</p>
     ///   - [`pending_expiration_subscribed_domains(Option<Vec<DomainDeliverabilityTrackingOption>>)`](crate::output::GetDeliverabilityDashboardOptionsOutput::pending_expiration_subscribed_domains): <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that's scheduled to expire at the end of the current calendar month.</p>
@@ -544,6 +569,7 @@ impl Client {
     ///   - [`policies(Option<HashMap<String, String>>)`](crate::output::GetEmailIdentityOutput::policies): <p>A map of policy names to policies.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::GetEmailIdentityOutput::tags): <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
     ///   - [`configuration_set_name(Option<String>)`](crate::output::GetEmailIdentityOutput::configuration_set_name): <p>The configuration set used by default when sending from this identity.</p>
+    ///   - [`verification_status(Option<VerificationStatus>)`](crate::output::GetEmailIdentityOutput::verification_status): <p>The verification status of the identity. The status can be one of the following:</p>  <ul>   <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>   <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>   <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>   <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>   <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetEmailIdentityError>`](crate::error::GetEmailIdentityError)
     pub fn get_email_identity(&self) -> fluent_builders::GetEmailIdentity {
         fluent_builders::GetEmailIdentity::new(self.handle.clone())
@@ -685,8 +711,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`start_date(DateTime)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::start_date) / [`set_start_date(Option<DateTime>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_start_date): <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
-    ///   - [`end_date(DateTime)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::end_date) / [`set_end_date(Option<DateTime>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_end_date): <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
+    ///   - [`start_date(DateTime)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::start_date) / [`set_start_date(Option<DateTime>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_start_date): <p>The first day that you want to obtain deliverability data for.</p>
+    ///   - [`end_date(DateTime)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::end_date) / [`set_end_date(Option<DateTime>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_end_date): <p>The last day that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
     ///   - [`subscribed_domain(impl Into<String>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::subscribed_domain) / [`set_subscribed_domain(Option<String>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_subscribed_domain): <p>The domain to obtain deliverability data for.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_next_token): <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
     ///   - [`page_size(i32)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_page_size): <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
@@ -739,13 +765,27 @@ impl Client {
     pub fn list_import_jobs(&self) -> fluent_builders::ListImportJobs {
         fluent_builders::ListImportJobs::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListRecommendations`](crate::client::fluent_builders::ListRecommendations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecommendations::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filter(HashMap<ListRecommendationsFilterKey, String>)`](crate::client::fluent_builders::ListRecommendations::filter) / [`set_filter(Option<HashMap<ListRecommendationsFilterKey, String>>)`](crate::client::fluent_builders::ListRecommendations::set_filter): <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code> </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecommendations::set_next_token): <p>A token returned from a previous call to <code>ListRecommendations</code> to indicate the position in the list of recommendations.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListRecommendations::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListRecommendations::set_page_size): <p>The number of results to show in a single call to <code>ListRecommendations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>  <p>The value you specify has to be at least 1, and can be no more than 100.</p>
+    /// - On success, responds with [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput) with field(s):
+    ///   - [`recommendations(Option<Vec<Recommendation>>)`](crate::output::ListRecommendationsOutput::recommendations): <p>The recommendations applicable to your account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRecommendationsOutput::next_token): <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
+    /// - On failure, responds with [`SdkError<ListRecommendationsError>`](crate::error::ListRecommendationsError)
+    pub fn list_recommendations(&self) -> fluent_builders::ListRecommendations {
+        fluent_builders::ListRecommendations::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListSuppressedDestinations`](crate::client::fluent_builders::ListSuppressedDestinations) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSuppressedDestinations::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`reasons(Vec<SuppressionListReason>)`](crate::client::fluent_builders::ListSuppressedDestinations::reasons) / [`set_reasons(Option<Vec<SuppressionListReason>>)`](crate::client::fluent_builders::ListSuppressedDestinations::set_reasons): <p>The factors that caused the email address to be added to .</p>
-    ///   - [`start_date(DateTime)`](crate::client::fluent_builders::ListSuppressedDestinations::start_date) / [`set_start_date(Option<DateTime>)`](crate::client::fluent_builders::ListSuppressedDestinations::set_start_date): <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date. The date that you specify should be in Unix time format.</p>
-    ///   - [`end_date(DateTime)`](crate::client::fluent_builders::ListSuppressedDestinations::end_date) / [`set_end_date(Option<DateTime>)`](crate::client::fluent_builders::ListSuppressedDestinations::set_end_date): <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date. The date that you specify should be in Unix time format.</p>
+    ///   - [`start_date(DateTime)`](crate::client::fluent_builders::ListSuppressedDestinations::start_date) / [`set_start_date(Option<DateTime>)`](crate::client::fluent_builders::ListSuppressedDestinations::set_start_date): <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date.</p>
+    ///   - [`end_date(DateTime)`](crate::client::fluent_builders::ListSuppressedDestinations::end_date) / [`set_end_date(Option<DateTime>)`](crate::client::fluent_builders::ListSuppressedDestinations::set_end_date): <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSuppressedDestinations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSuppressedDestinations::set_next_token): <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
     ///   - [`page_size(i32)`](crate::client::fluent_builders::ListSuppressedDestinations::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListSuppressedDestinations::set_page_size): <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// - On success, responds with [`ListSuppressedDestinationsOutput`](crate::output::ListSuppressedDestinationsOutput) with field(s):
@@ -814,6 +854,16 @@ impl Client {
     ) -> fluent_builders::PutAccountSuppressionAttributes {
         fluent_builders::PutAccountSuppressionAttributes::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`PutAccountVdmAttributes`](crate::client::fluent_builders::PutAccountVdmAttributes) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`vdm_attributes(VdmAttributes)`](crate::client::fluent_builders::PutAccountVdmAttributes::vdm_attributes) / [`set_vdm_attributes(Option<VdmAttributes>)`](crate::client::fluent_builders::PutAccountVdmAttributes::set_vdm_attributes): <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
+    /// - On success, responds with [`PutAccountVdmAttributesOutput`](crate::output::PutAccountVdmAttributesOutput)
+
+    /// - On failure, responds with [`SdkError<PutAccountVdmAttributesError>`](crate::error::PutAccountVdmAttributesError)
+    pub fn put_account_vdm_attributes(&self) -> fluent_builders::PutAccountVdmAttributes {
+        fluent_builders::PutAccountVdmAttributes::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`PutConfigurationSetDeliveryOptions`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions) operation.
     ///
     /// - The fluent builder is configurable:
@@ -879,6 +929,19 @@ impl Client {
         &self,
     ) -> fluent_builders::PutConfigurationSetTrackingOptions {
         fluent_builders::PutConfigurationSetTrackingOptions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutConfigurationSetVdmOptions`](crate::client::fluent_builders::PutConfigurationSetVdmOptions) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationSetVdmOptions::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::PutConfigurationSetVdmOptions::set_configuration_set_name): <p>The name of the configuration set.</p>
+    ///   - [`vdm_options(VdmOptions)`](crate::client::fluent_builders::PutConfigurationSetVdmOptions::vdm_options) / [`set_vdm_options(Option<VdmOptions>)`](crate::client::fluent_builders::PutConfigurationSetVdmOptions::set_vdm_options): <p>The VDM options to apply to the configuration set.</p>
+    /// - On success, responds with [`PutConfigurationSetVdmOptionsOutput`](crate::output::PutConfigurationSetVdmOptionsOutput)
+
+    /// - On failure, responds with [`SdkError<PutConfigurationSetVdmOptionsError>`](crate::error::PutConfigurationSetVdmOptionsError)
+    pub fn put_configuration_set_vdm_options(
+        &self,
+    ) -> fluent_builders::PutConfigurationSetVdmOptions {
+        fluent_builders::PutConfigurationSetVdmOptions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`PutDedicatedIpInPool`](crate::client::fluent_builders::PutDedicatedIpInPool) operation.
     ///
@@ -1124,7 +1187,7 @@ impl Client {
     ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::set_template_name): <p>The name of the custom verification email template that you want to update.</p>
     ///   - [`from_email_address(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::from_email_address) / [`set_from_email_address(Option<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::set_from_email_address): <p>The email address that the custom verification email is sent from.</p>
     ///   - [`template_subject(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::template_subject) / [`set_template_subject(Option<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::set_template_subject): <p>The subject line of the custom verification email.</p>
-    ///   - [`template_content(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::template_content) / [`set_template_content(Option<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::set_template_content): <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
+    ///   - [`template_content(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::template_content) / [`set_template_content(Option<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::set_template_content): <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom-faq">Custom verification email frequently asked questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
     ///   - [`success_redirection_url(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::success_redirection_url) / [`set_success_redirection_url(Option<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::set_success_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     ///   - [`failure_redirection_url(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::failure_redirection_url) / [`set_failure_redirection_url(Option<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::set_failure_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     /// - On success, responds with [`UpdateCustomVerificationEmailTemplateOutput`](crate::output::UpdateCustomVerificationEmailTemplateOutput)
@@ -1166,6 +1229,87 @@ pub mod fluent_builders {
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
+    /// Fluent builder constructing a request to `BatchGetMetricData`.
+    ///
+    /// <p>Retrieves batches of metric data collected based on your sending activity.</p>
+    /// <p>You can execute this operation no more than 16 times per second, and with at most 160 queries from the batches per second (cumulative).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchGetMetricData {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_get_metric_data_input::Builder,
+    }
+    impl BatchGetMetricData {
+        /// Creates a new `BatchGetMetricData`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::BatchGetMetricData,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::BatchGetMetricDataError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchGetMetricDataOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchGetMetricDataError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `Queries`.
+        ///
+        /// To override the contents of this collection use [`set_queries`](Self::set_queries).
+        ///
+        /// <p>A list of queries for metrics to be retrieved.</p>
+        pub fn queries(mut self, input: crate::model::BatchGetMetricDataQuery) -> Self {
+            self.inner = self.inner.queries(input);
+            self
+        }
+        /// <p>A list of queries for metrics to be retrieved.</p>
+        pub fn set_queries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchGetMetricDataQuery>>,
+        ) -> Self {
+            self.inner = self.inner.set_queries(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateConfigurationSet`.
     ///
     /// <p>Create a configuration set. <i>Configuration sets</i> are groups of rules that you can apply to the emails that you send. You apply a configuration set to an email by specifying the name of the configuration set when you call the Amazon SES API v2. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email. </p>
@@ -1321,6 +1465,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::SuppressionOptions>,
         ) -> Self {
             self.inner = self.inner.set_suppression_options(input);
+            self
+        }
+        /// <p>An object that defines the VDM options for emails that you send using the configuration set.</p>
+        pub fn vdm_options(mut self, input: crate::model::VdmOptions) -> Self {
+            self.inner = self.inner.vdm_options(input);
+            self
+        }
+        /// <p>An object that defines the VDM options for emails that you send using the configuration set.</p>
+        pub fn set_vdm_options(
+            mut self,
+            input: std::option::Option<crate::model::VdmOptions>,
+        ) -> Self {
+            self.inner = self.inner.set_vdm_options(input);
             self
         }
     }
@@ -1686,7 +1843,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCustomVerificationEmailTemplate`.
     ///
     /// <p>Creates a new custom verification email template.</p>
-    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
+    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomVerificationEmailTemplate {
@@ -1790,12 +1947,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_subject(input);
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom-faq">Custom verification email frequently asked questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn template_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_content(input.into());
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom-faq">Custom verification email frequently asked questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn set_template_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1917,6 +2074,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The type of scaling mode.</p>
+        pub fn scaling_mode(mut self, input: crate::model::ScalingMode) -> Self {
+            self.inner = self.inner.scaling_mode(input);
+            self
+        }
+        /// <p>The type of scaling mode.</p>
+        pub fn set_scaling_mode(
+            mut self,
+            input: std::option::Option<crate::model::ScalingMode>,
+        ) -> Self {
+            self.inner = self.inner.set_scaling_mode(input);
             self
         }
     }
@@ -2787,7 +2957,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCustomVerificationEmailTemplate`.
     ///
     /// <p>Deletes an existing custom verification email template.</p>
-    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
+    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomVerificationEmailTemplate {
@@ -3729,7 +3899,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCustomVerificationEmailTemplate`.
     ///
     /// <p>Returns the custom email verification template for the template name you specify.</p>
-    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
+    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCustomVerificationEmailTemplate {
@@ -3878,6 +4048,79 @@ pub mod fluent_builders {
         /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ip(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetDedicatedIpPool`.
+    ///
+    /// <p>Retrieve information about the dedicated pool.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetDedicatedIpPool {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_dedicated_ip_pool_input::Builder,
+    }
+    impl GetDedicatedIpPool {
+        /// Creates a new `GetDedicatedIpPool`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetDedicatedIpPool,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetDedicatedIpPoolError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetDedicatedIpPoolOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetDedicatedIpPoolError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the dedicated IP pool to retrieve.</p>
+        pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pool_name(input.into());
+            self
+        }
+        /// <p>The name of the dedicated IP pool to retrieve.</p>
+        pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_pool_name(input);
             self
         }
     }
@@ -4968,7 +5211,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCustomVerificationEmailTemplates`.
     ///
     /// <p>Lists the existing custom verification email templates for your account in the current Amazon Web Services Region.</p>
-    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
+    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomVerificationEmailTemplates {
@@ -5320,12 +5563,12 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
+        /// <p>The first day that you want to obtain deliverability data for.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_date(input);
             self
         }
-        /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
+        /// <p>The first day that you want to obtain deliverability data for.</p>
         pub fn set_start_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5333,12 +5576,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_date(input);
             self
         }
-        /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
+        /// <p>The last day that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_date(input);
             self
         }
-        /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
+        /// <p>The last day that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
         pub fn set_end_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5668,6 +5911,124 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListRecommendations`.
+    ///
+    /// <p>Lists the recommendations present in your Amazon SES account in the current Amazon Web Services Region.</p>
+    /// <p>You can execute this operation no more than once per second.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListRecommendations {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_recommendations_input::Builder,
+    }
+    impl ListRecommendations {
+        /// Creates a new `ListRecommendations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListRecommendations,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListRecommendationsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListRecommendationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListRecommendationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRecommendationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRecommendationsPaginator {
+            crate::paginator::ListRecommendationsPaginator::new(self.handle, self.inner)
+        }
+        /// Adds a key-value pair to `Filter`.
+        ///
+        /// To override the contents of this collection use [`set_filter`](Self::set_filter).
+        ///
+        /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code> </p>
+        pub fn filter(
+            mut self,
+            k: crate::model::ListRecommendationsFilterKey,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.filter(k, v.into());
+            self
+        }
+        /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code> </p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::ListRecommendationsFilterKey,
+                    std::string::String,
+                >,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_filter(input);
+            self
+        }
+        /// <p>A token returned from a previous call to <code>ListRecommendations</code> to indicate the position in the list of recommendations.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token returned from a previous call to <code>ListRecommendations</code> to indicate the position in the list of recommendations.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The number of results to show in a single call to <code>ListRecommendations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        /// <p>The value you specify has to be at least 1, and can be no more than 100.</p>
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
+            self
+        }
+        /// <p>The number of results to show in a single call to <code>ListRecommendations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        /// <p>The value you specify has to be at least 1, and can be no more than 100.</p>
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_page_size(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListSuppressedDestinations`.
     ///
     /// <p>Retrieves a list of email addresses that are on the suppression list for your account.</p>
@@ -5753,12 +6114,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_reasons(input);
             self
         }
-        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date. The date that you specify should be in Unix time format.</p>
+        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_date(input);
             self
         }
-        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date. The date that you specify should be in Unix time format.</p>
+        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date.</p>
         pub fn set_start_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5766,12 +6127,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_date(input);
             self
         }
-        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date. The date that you specify should be in Unix time format.</p>
+        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_date(input);
             self
         }
-        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date. The date that you specify should be in Unix time format.</p>
+        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date.</p>
         pub fn set_end_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6258,6 +6619,83 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `PutAccountVdmAttributes`.
+    ///
+    /// <p>Update your Amazon SES account VDM attributes.</p>
+    /// <p>You can execute this operation no more than once per second.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutAccountVdmAttributes {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_account_vdm_attributes_input::Builder,
+    }
+    impl PutAccountVdmAttributes {
+        /// Creates a new `PutAccountVdmAttributes`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PutAccountVdmAttributes,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutAccountVdmAttributesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutAccountVdmAttributesOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutAccountVdmAttributesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
+        pub fn vdm_attributes(mut self, input: crate::model::VdmAttributes) -> Self {
+            self.inner = self.inner.vdm_attributes(input);
+            self
+        }
+        /// <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
+        pub fn set_vdm_attributes(
+            mut self,
+            input: std::option::Option<crate::model::VdmAttributes>,
+        ) -> Self {
+            self.inner = self.inner.set_vdm_attributes(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `PutConfigurationSetDeliveryOptions`.
     ///
     /// <p>Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools to create groups of dedicated IP addresses for sending specific types of email.</p>
@@ -6735,6 +7173,96 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_custom_redirect_domain(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutConfigurationSetVdmOptions`.
+    ///
+    /// <p>Specify VDM preferences for email that you send using the configuration set.</p>
+    /// <p>You can execute this operation no more than once per second.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutConfigurationSetVdmOptions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_configuration_set_vdm_options_input::Builder,
+    }
+    impl PutConfigurationSetVdmOptions {
+        /// Creates a new `PutConfigurationSetVdmOptions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PutConfigurationSetVdmOptions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutConfigurationSetVdmOptionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutConfigurationSetVdmOptionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutConfigurationSetVdmOptionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the configuration set.</p>
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
+            self
+        }
+        /// <p>The name of the configuration set.</p>
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_set_name(input);
+            self
+        }
+        /// <p>The VDM options to apply to the configuration set.</p>
+        pub fn vdm_options(mut self, input: crate::model::VdmOptions) -> Self {
+            self.inner = self.inner.vdm_options(input);
+            self
+        }
+        /// <p>The VDM options to apply to the configuration set.</p>
+        pub fn set_vdm_options(
+            mut self,
+            input: std::option::Option<crate::model::VdmOptions>,
+        ) -> Self {
+            self.inner = self.inner.set_vdm_options(input);
             self
         }
     }
@@ -7831,7 +8359,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendCustomVerificationEmail`.
     ///
     /// <p>Adds an email address to the list of identities for your Amazon SES account in the current Amazon Web Services Region and attempts to verify it. As a result of executing this operation, a customized verification email is sent to the specified address.</p>
-    /// <p>To use this operation, you must first create a custom verification email template. For more information about creating and using custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
+    /// <p>To use this operation, you must first create a custom verification email template. For more information about creating and using custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendCustomVerificationEmail {
@@ -8782,7 +9310,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCustomVerificationEmailTemplate`.
     ///
     /// <p>Updates an existing custom verification email template.</p>
-    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
+    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCustomVerificationEmailTemplate {
@@ -8886,12 +9414,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_subject(input);
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom-faq">Custom verification email frequently asked questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn template_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_content(input.into());
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom-faq">Custom verification email frequently asked questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn set_template_content(
             mut self,
             input: std::option::Option<std::string::String>,

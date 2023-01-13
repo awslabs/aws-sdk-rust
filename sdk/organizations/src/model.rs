@@ -24,6 +24,7 @@
 ///     InvalidInputExceptionReason::InvalidPartyTypeTarget => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidPattern => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidPatternTargetId => { /* ... */ },
+///     InvalidInputExceptionReason::InvalidResourcePolicyJson => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidRoleName => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidSyntaxOrganization => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidSyntaxPolicy => { /* ... */ },
@@ -36,6 +37,9 @@
 ///     InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots => { /* ... */ },
 ///     InvalidInputExceptionReason::TargetNotSupported => { /* ... */ },
 ///     InvalidInputExceptionReason::UnrecognizedServicePrincipal => { /* ... */ },
+///     InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => { /* ... */ },
+///     InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy => { /* ... */ },
+///     InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -94,6 +98,8 @@ pub enum InvalidInputExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidPatternTargetId,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidResourcePolicyJson,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidRoleName,
     #[allow(missing_docs)] // documentation missing in model
     InvalidSyntaxOrganization,
@@ -117,6 +123,12 @@ pub enum InvalidInputExceptionReason {
     TargetNotSupported,
     #[allow(missing_docs)] // documentation missing in model
     UnrecognizedServicePrincipal,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedActionInResourcePolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedPolicyTypeInResourcePolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedResourceInResourcePolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -137,6 +149,9 @@ impl std::convert::From<&str> for InvalidInputExceptionReason {
             "INVALID_PARTY_TYPE_TARGET" => InvalidInputExceptionReason::InvalidPartyTypeTarget,
             "INVALID_PATTERN" => InvalidInputExceptionReason::InvalidPattern,
             "INVALID_PATTERN_TARGET_ID" => InvalidInputExceptionReason::InvalidPatternTargetId,
+            "INVALID_RESOURCE_POLICY_JSON" => {
+                InvalidInputExceptionReason::InvalidResourcePolicyJson
+            }
             "INVALID_ROLE_NAME" => InvalidInputExceptionReason::InvalidRoleName,
             "INVALID_SYNTAX_ORGANIZATION_ARN" => {
                 InvalidInputExceptionReason::InvalidSyntaxOrganization
@@ -156,6 +171,15 @@ impl std::convert::From<&str> for InvalidInputExceptionReason {
             "TARGET_NOT_SUPPORTED" => InvalidInputExceptionReason::TargetNotSupported,
             "UNRECOGNIZED_SERVICE_PRINCIPAL" => {
                 InvalidInputExceptionReason::UnrecognizedServicePrincipal
+            }
+            "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY" => {
+                InvalidInputExceptionReason::UnsupportedActionInResourcePolicy
+            }
+            "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY" => {
+                InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy
+            }
+            "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY" => {
+                InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy
             }
             other => InvalidInputExceptionReason::Unknown(crate::types::UnknownVariantValue(
                 other.to_owned(),
@@ -188,6 +212,9 @@ impl InvalidInputExceptionReason {
             InvalidInputExceptionReason::InvalidPartyTypeTarget => "INVALID_PARTY_TYPE_TARGET",
             InvalidInputExceptionReason::InvalidPattern => "INVALID_PATTERN",
             InvalidInputExceptionReason::InvalidPatternTargetId => "INVALID_PATTERN_TARGET_ID",
+            InvalidInputExceptionReason::InvalidResourcePolicyJson => {
+                "INVALID_RESOURCE_POLICY_JSON"
+            }
             InvalidInputExceptionReason::InvalidRoleName => "INVALID_ROLE_NAME",
             InvalidInputExceptionReason::InvalidSyntaxOrganization => {
                 "INVALID_SYNTAX_ORGANIZATION_ARN"
@@ -208,6 +235,15 @@ impl InvalidInputExceptionReason {
             InvalidInputExceptionReason::UnrecognizedServicePrincipal => {
                 "UNRECOGNIZED_SERVICE_PRINCIPAL"
             }
+            InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => {
+                "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY"
+            }
+            InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy => {
+                "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY"
+            }
+            InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy => {
+                "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY"
+            }
             InvalidInputExceptionReason::Unknown(value) => value.as_str(),
         }
     }
@@ -226,6 +262,7 @@ impl InvalidInputExceptionReason {
             "INVALID_PARTY_TYPE_TARGET",
             "INVALID_PATTERN",
             "INVALID_PATTERN_TARGET_ID",
+            "INVALID_RESOURCE_POLICY_JSON",
             "INVALID_ROLE_NAME",
             "INVALID_SYNTAX_ORGANIZATION_ARN",
             "INVALID_SYNTAX_POLICY_ID",
@@ -238,6 +275,9 @@ impl InvalidInputExceptionReason {
             "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS",
             "TARGET_NOT_SUPPORTED",
             "UNRECOGNIZED_SERVICE_PRINCIPAL",
+            "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY",
+            "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY",
+            "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY",
         ]
     }
 }
@@ -1025,6 +1065,149 @@ impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
+    }
+}
+
+/// <p>A structure that contains details about a resource policy.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResourcePolicy {
+    /// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub resource_policy_summary: std::option::Option<crate::model::ResourcePolicySummary>,
+    /// <p>The policy text of the resource policy.</p>
+    #[doc(hidden)]
+    pub content: std::option::Option<std::string::String>,
+}
+impl ResourcePolicy {
+    /// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
+    pub fn resource_policy_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourcePolicySummary> {
+        self.resource_policy_summary.as_ref()
+    }
+    /// <p>The policy text of the resource policy.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+}
+/// See [`ResourcePolicy`](crate::model::ResourcePolicy).
+pub mod resource_policy {
+
+    /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_policy_summary:
+            std::option::Option<crate::model::ResourcePolicySummary>,
+        pub(crate) content: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
+        pub fn resource_policy_summary(
+            mut self,
+            input: crate::model::ResourcePolicySummary,
+        ) -> Self {
+            self.resource_policy_summary = Some(input);
+            self
+        }
+        /// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
+        pub fn set_resource_policy_summary(
+            mut self,
+            input: std::option::Option<crate::model::ResourcePolicySummary>,
+        ) -> Self {
+            self.resource_policy_summary = input;
+            self
+        }
+        /// <p>The policy text of the resource policy.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content = Some(input.into());
+            self
+        }
+        /// <p>The policy text of the resource policy.</p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourcePolicy`](crate::model::ResourcePolicy).
+        pub fn build(self) -> crate::model::ResourcePolicy {
+            crate::model::ResourcePolicy {
+                resource_policy_summary: self.resource_policy_summary,
+                content: self.content,
+            }
+        }
+    }
+}
+impl ResourcePolicy {
+    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
+    pub fn builder() -> crate::model::resource_policy::Builder {
+        crate::model::resource_policy::Builder::default()
+    }
+}
+
+/// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResourcePolicySummary {
+    /// <p>The unique identifier (ID) of the resource policy.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the resource policy.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+}
+impl ResourcePolicySummary {
+    /// <p>The unique identifier (ID) of the resource policy.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource policy.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+/// See [`ResourcePolicySummary`](crate::model::ResourcePolicySummary).
+pub mod resource_policy_summary {
+
+    /// A builder for [`ResourcePolicySummary`](crate::model::ResourcePolicySummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier (ID) of the resource policy.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier (ID) of the resource policy.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource policy.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource policy.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourcePolicySummary`](crate::model::ResourcePolicySummary).
+        pub fn build(self) -> crate::model::ResourcePolicySummary {
+            crate::model::ResourcePolicySummary {
+                id: self.id,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl ResourcePolicySummary {
+    /// Creates a new builder-style object to manufacture [`ResourcePolicySummary`](crate::model::ResourcePolicySummary).
+    pub fn builder() -> crate::model::resource_policy_summary::Builder {
+        crate::model::resource_policy_summary::Builder::default()
     }
 }
 
@@ -3586,6 +3769,7 @@ impl CreateAccountStatus {
 ///     CreateAccountFailureReason::MissingPaymentInstrument => { /* ... */ },
 ///     CreateAccountFailureReason::PendingBusinessValidatioNv => { /* ... */ },
 ///     CreateAccountFailureReason::UnknownBusinessValidation => { /* ... */ },
+///     CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -3647,6 +3831,8 @@ pub enum CreateAccountFailureReason {
     PendingBusinessValidatioNv,
     #[allow(missing_docs)] // documentation missing in model
     UnknownBusinessValidation,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateExistingResourcePolicyWithTagsNotSupported,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -3673,6 +3859,9 @@ impl std::convert::From<&str> for CreateAccountFailureReason {
             "MISSING_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::MissingPaymentInstrument,
             "PENDING_BUSINESS_VALIDATION" => CreateAccountFailureReason::PendingBusinessValidatioNv,
             "UNKNOWN_BUSINESS_VALIDATION" => CreateAccountFailureReason::UnknownBusinessValidation,
+            "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED" => {
+                CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported
+            }
             other => CreateAccountFailureReason::Unknown(crate::types::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -3710,6 +3899,9 @@ impl CreateAccountFailureReason {
             CreateAccountFailureReason::MissingPaymentInstrument => "MISSING_PAYMENT_INSTRUMENT",
             CreateAccountFailureReason::PendingBusinessValidatioNv => "PENDING_BUSINESS_VALIDATION",
             CreateAccountFailureReason::UnknownBusinessValidation => "UNKNOWN_BUSINESS_VALIDATION",
+            CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported => {
+                "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED"
+            }
             CreateAccountFailureReason::Unknown(value) => value.as_str(),
         }
     }
@@ -3730,6 +3922,7 @@ impl CreateAccountFailureReason {
             "MISSING_PAYMENT_INSTRUMENT",
             "PENDING_BUSINESS_VALIDATION",
             "UNKNOWN_BUSINESS_VALIDATION",
+            "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED",
         ]
     }
 }

@@ -103,6 +103,23 @@ impl Client {
     pub fn cancel_job_run(&self) -> fluent_builders::CancelJobRun {
         fluent_builders::CancelJobRun::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateJobTemplate`](crate::client::fluent_builders::CreateJobTemplate) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateJobTemplate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateJobTemplate::set_name): <p>The specified name of the job template.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateJobTemplate::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateJobTemplate::set_client_token): <p>The client token of the job template.</p>
+    ///   - [`job_template_data(JobTemplateData)`](crate::client::fluent_builders::CreateJobTemplate::job_template_data) / [`set_job_template_data(Option<JobTemplateData>)`](crate::client::fluent_builders::CreateJobTemplate::set_job_template_data): <p>The job template data which holds values of StartJobRun API request.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateJobTemplate::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateJobTemplate::set_tags): <p>The tags that are associated with the job template.</p>
+    ///   - [`kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::CreateJobTemplate::kms_key_arn) / [`set_kms_key_arn(Option<String>)`](crate::client::fluent_builders::CreateJobTemplate::set_kms_key_arn): <p>The KMS key ARN used to encrypt the job template.</p>
+    /// - On success, responds with [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::CreateJobTemplateOutput::id): <p>This output display the created job template ID.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateJobTemplateOutput::name): <p>This output displays the name of the created job template.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateJobTemplateOutput::arn): <p>This output display the ARN of the created job template.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateJobTemplateOutput::created_at): <p>This output displays the date and time when the job template was created.</p>
+    /// - On failure, responds with [`SdkError<CreateJobTemplateError>`](crate::error::CreateJobTemplateError)
+    pub fn create_job_template(&self) -> fluent_builders::CreateJobTemplate {
+        fluent_builders::CreateJobTemplate::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateManagedEndpoint`](crate::client::fluent_builders::CreateManagedEndpoint) operation.
     ///
     /// - The fluent builder is configurable:
@@ -139,6 +156,16 @@ impl Client {
     pub fn create_virtual_cluster(&self) -> fluent_builders::CreateVirtualCluster {
         fluent_builders::CreateVirtualCluster::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteJobTemplate`](crate::client::fluent_builders::DeleteJobTemplate) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteJobTemplate::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteJobTemplate::set_id): <p>The ID of the job template that will be deleted.</p>
+    /// - On success, responds with [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::DeleteJobTemplateOutput::id): <p>This output contains the ID of the job template that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteJobTemplateError>`](crate::error::DeleteJobTemplateError)
+    pub fn delete_job_template(&self) -> fluent_builders::DeleteJobTemplate {
+        fluent_builders::DeleteJobTemplate::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteManagedEndpoint`](crate::client::fluent_builders::DeleteManagedEndpoint) operation.
     ///
     /// - The fluent builder is configurable:
@@ -171,6 +198,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeJobRunError>`](crate::error::DescribeJobRunError)
     pub fn describe_job_run(&self) -> fluent_builders::DescribeJobRun {
         fluent_builders::DescribeJobRun::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeJobTemplate`](crate::client::fluent_builders::DescribeJobTemplate) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeJobTemplate::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeJobTemplate::set_id): <p>The ID of the job template that will be described.</p>
+    /// - On success, responds with [`DescribeJobTemplateOutput`](crate::output::DescribeJobTemplateOutput) with field(s):
+    ///   - [`job_template(Option<JobTemplate>)`](crate::output::DescribeJobTemplateOutput::job_template): <p>This output displays information about the specified job template.</p>
+    /// - On failure, responds with [`SdkError<DescribeJobTemplateError>`](crate::error::DescribeJobTemplateError)
+    pub fn describe_job_template(&self) -> fluent_builders::DescribeJobTemplate {
+        fluent_builders::DescribeJobTemplate::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeManagedEndpoint`](crate::client::fluent_builders::DescribeManagedEndpoint) operation.
     ///
@@ -210,6 +247,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListJobRunsError>`](crate::error::ListJobRunsError)
     pub fn list_job_runs(&self) -> fluent_builders::ListJobRuns {
         fluent_builders::ListJobRuns::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListJobTemplates`](crate::client::fluent_builders::ListJobTemplates) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListJobTemplates::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`created_after(DateTime)`](crate::client::fluent_builders::ListJobTemplates::created_after) / [`set_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListJobTemplates::set_created_after): <p>The date and time after which the job templates were created.</p>
+    ///   - [`created_before(DateTime)`](crate::client::fluent_builders::ListJobTemplates::created_before) / [`set_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListJobTemplates::set_created_before): <p> The date and time before which the job templates were created.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListJobTemplates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListJobTemplates::set_max_results): <p> The maximum number of job templates that can be listed.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListJobTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListJobTemplates::set_next_token): <p> The token for the next set of job templates to return.</p>
+    /// - On success, responds with [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput) with field(s):
+    ///   - [`templates(Option<Vec<JobTemplate>>)`](crate::output::ListJobTemplatesOutput::templates): <p>This output lists information about the specified job templates.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListJobTemplatesOutput::next_token): <p> This output displays the token for the next set of job templates.</p>
+    /// - On failure, responds with [`SdkError<ListJobTemplatesError>`](crate::error::ListJobTemplatesError)
+    pub fn list_job_templates(&self) -> fluent_builders::ListJobTemplates {
+        fluent_builders::ListJobTemplates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListManagedEndpoints`](crate::client::fluent_builders::ListManagedEndpoints) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListManagedEndpoints::into_paginator).
@@ -268,6 +320,8 @@ impl Client {
     ///   - [`job_driver(JobDriver)`](crate::client::fluent_builders::StartJobRun::job_driver) / [`set_job_driver(Option<JobDriver>)`](crate::client::fluent_builders::StartJobRun::set_job_driver): <p>The job driver for the job run.</p>
     ///   - [`configuration_overrides(ConfigurationOverrides)`](crate::client::fluent_builders::StartJobRun::configuration_overrides) / [`set_configuration_overrides(Option<ConfigurationOverrides>)`](crate::client::fluent_builders::StartJobRun::set_configuration_overrides): <p>The configuration overrides for the job run.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::StartJobRun::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartJobRun::set_tags): <p>The tags assigned to job runs.</p>
+    ///   - [`job_template_id(impl Into<String>)`](crate::client::fluent_builders::StartJobRun::job_template_id) / [`set_job_template_id(Option<String>)`](crate::client::fluent_builders::StartJobRun::set_job_template_id): <p>The job template ID to be used to start the job run.</p>
+    ///   - [`job_template_parameters(HashMap<String, String>)`](crate::client::fluent_builders::StartJobRun::job_template_parameters) / [`set_job_template_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartJobRun::set_job_template_parameters): <p>The values of job template parameters to start a job run.</p>
     /// - On success, responds with [`StartJobRunOutput`](crate::output::StartJobRunOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::StartJobRunOutput::id): <p>This output displays the started job run ID.</p>
     ///   - [`name(Option<String>)`](crate::output::StartJobRunOutput::name): <p>This output displays the name of the started job run.</p>
@@ -390,6 +444,135 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_virtual_cluster_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateJobTemplate`.
+    ///
+    /// <p>Creates a job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateJobTemplate {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_job_template_input::Builder,
+    }
+    impl CreateJobTemplate {
+        /// Creates a new `CreateJobTemplate`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateJobTemplate,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateJobTemplateError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateJobTemplateOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateJobTemplateError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The specified name of the job template.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The specified name of the job template.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The client token of the job template.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>The client token of the job template.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The job template data which holds values of StartJobRun API request.</p>
+        pub fn job_template_data(mut self, input: crate::model::JobTemplateData) -> Self {
+            self.inner = self.inner.job_template_data(input);
+            self
+        }
+        /// <p>The job template data which holds values of StartJobRun API request.</p>
+        pub fn set_job_template_data(
+            mut self,
+            input: std::option::Option<crate::model::JobTemplateData>,
+        ) -> Self {
+            self.inner = self.inner.set_job_template_data(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags that are associated with the job template.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The tags that are associated with the job template.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The KMS key ARN used to encrypt the job template.</p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(input.into());
+            self
+        }
+        /// <p>The KMS key ARN used to encrypt the job template.</p>
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_arn(input);
             self
         }
     }
@@ -702,6 +885,79 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteJobTemplate`.
+    ///
+    /// <p>Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteJobTemplate {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_job_template_input::Builder,
+    }
+    impl DeleteJobTemplate {
+        /// Creates a new `DeleteJobTemplate`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteJobTemplate,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteJobTemplateError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteJobTemplateOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteJobTemplateError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the job template that will be deleted.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The ID of the job template that will be deleted.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteManagedEndpoint`.
     ///
     /// <p>Deletes a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.</p>
@@ -944,6 +1200,79 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_virtual_cluster_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeJobTemplate`.
+    ///
+    /// <p>Displays detailed information about a specified job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeJobTemplate {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_job_template_input::Builder,
+    }
+    impl DescribeJobTemplate {
+        /// Creates a new `DescribeJobTemplate`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeJobTemplate,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeJobTemplateError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeJobTemplateOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeJobTemplateError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the job template that will be described.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The ID of the job template that will be described.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -1256,6 +1585,121 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of job runs to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListJobTemplates`.
+    ///
+    /// <p>Lists job templates based on a set of parameters. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListJobTemplates {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_job_templates_input::Builder,
+    }
+    impl ListJobTemplates {
+        /// Creates a new `ListJobTemplates`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListJobTemplates,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListJobTemplatesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListJobTemplatesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListJobTemplatesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListJobTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListJobTemplatesPaginator {
+            crate::paginator::ListJobTemplatesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The date and time after which the job templates were created.</p>
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
+            self
+        }
+        /// <p>The date and time after which the job templates were created.</p>
+        pub fn set_created_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_created_after(input);
+            self
+        }
+        /// <p> The date and time before which the job templates were created.</p>
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
+            self
+        }
+        /// <p> The date and time before which the job templates were created.</p>
+        pub fn set_created_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_created_before(input);
+            self
+        }
+        /// <p> The maximum number of job templates that can be listed.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p> The maximum number of job templates that can be listed.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p> The token for the next set of job templates to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p> The token for the next set of job templates to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1828,6 +2272,42 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The job template ID to be used to start the job run.</p>
+        pub fn job_template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_template_id(input.into());
+            self
+        }
+        /// <p>The job template ID to be used to start the job run.</p>
+        pub fn set_job_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_job_template_id(input);
+            self
+        }
+        /// Adds a key-value pair to `jobTemplateParameters`.
+        ///
+        /// To override the contents of this collection use [`set_job_template_parameters`](Self::set_job_template_parameters).
+        ///
+        /// <p>The values of job template parameters to start a job run.</p>
+        pub fn job_template_parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.job_template_parameters(k.into(), v.into());
+            self
+        }
+        /// <p>The values of job template parameters to start a job run.</p>
+        pub fn set_job_template_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_job_template_parameters(input);
             self
         }
     }

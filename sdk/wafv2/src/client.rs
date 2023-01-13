@@ -171,6 +171,8 @@ impl Client {
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWebACL::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWebACL::set_tags): <p>An array of key:value pairs to associate with the resource.</p>
     ///   - [`custom_response_bodies(HashMap<String, CustomResponseBody>)`](crate::client::fluent_builders::CreateWebACL::custom_response_bodies) / [`set_custom_response_bodies(Option<HashMap<String, CustomResponseBody>>)`](crate::client::fluent_builders::CreateWebACL::set_custom_response_bodies): <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>  <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>  <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     ///   - [`captcha_config(CaptchaConfig)`](crate::client::fluent_builders::CreateWebACL::captcha_config) / [`set_captcha_config(Option<CaptchaConfig>)`](crate::client::fluent_builders::CreateWebACL::set_captcha_config): <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+    ///   - [`challenge_config(ChallengeConfig)`](crate::client::fluent_builders::CreateWebACL::challenge_config) / [`set_challenge_config(Option<ChallengeConfig>)`](crate::client::fluent_builders::CreateWebACL::set_challenge_config): <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+    ///   - [`token_domains(Vec<String>)`](crate::client::fluent_builders::CreateWebACL::token_domains) / [`set_token_domains(Option<Vec<String>>)`](crate::client::fluent_builders::CreateWebACL::set_token_domains): <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>  <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>  <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
     /// - On success, responds with [`CreateWebAclOutput`](crate::output::CreateWebAclOutput) with field(s):
     ///   - [`summary(Option<WebAclSummary>)`](crate::output::CreateWebAclOutput::summary): <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
     /// - On failure, responds with [`SdkError<CreateWebACLError>`](crate::error::CreateWebACLError)
@@ -728,6 +730,8 @@ impl Client {
     ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::UpdateWebACL::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::UpdateWebACL::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     ///   - [`custom_response_bodies(HashMap<String, CustomResponseBody>)`](crate::client::fluent_builders::UpdateWebACL::custom_response_bodies) / [`set_custom_response_bodies(Option<HashMap<String, CustomResponseBody>>)`](crate::client::fluent_builders::UpdateWebACL::set_custom_response_bodies): <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>  <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>  <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     ///   - [`captcha_config(CaptchaConfig)`](crate::client::fluent_builders::UpdateWebACL::captcha_config) / [`set_captcha_config(Option<CaptchaConfig>)`](crate::client::fluent_builders::UpdateWebACL::set_captcha_config): <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+    ///   - [`challenge_config(ChallengeConfig)`](crate::client::fluent_builders::UpdateWebACL::challenge_config) / [`set_challenge_config(Option<ChallengeConfig>)`](crate::client::fluent_builders::UpdateWebACL::set_challenge_config): <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+    ///   - [`token_domains(Vec<String>)`](crate::client::fluent_builders::UpdateWebACL::token_domains) / [`set_token_domains(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateWebACL::set_token_domains): <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>  <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>  <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
     /// - On success, responds with [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput) with field(s):
     ///   - [`next_lock_token(Option<String>)`](crate::output::UpdateWebAclOutput::next_lock_token): <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     /// - On failure, responds with [`SdkError<UpdateWebACLError>`](crate::error::UpdateWebACLError)
@@ -1654,6 +1658,40 @@ pub mod fluent_builders {
             self.inner = self.inner.set_captcha_config(input);
             self
         }
+        /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+        pub fn challenge_config(mut self, input: crate::model::ChallengeConfig) -> Self {
+            self.inner = self.inner.challenge_config(input);
+            self
+        }
+        /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+        pub fn set_challenge_config(
+            mut self,
+            input: std::option::Option<crate::model::ChallengeConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_challenge_config(input);
+            self
+        }
+        /// Appends an item to `TokenDomains`.
+        ///
+        /// To override the contents of this collection use [`set_token_domains`](Self::set_token_domains).
+        ///
+        /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+        /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+        /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+        pub fn token_domains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token_domains(input.into());
+            self
+        }
+        /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+        /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+        /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+        pub fn set_token_domains(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_token_domains(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteFirewallManagerRuleGroups`.
     ///
@@ -2562,7 +2600,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GenerateMobileSdkReleaseUrl`.
     ///
     /// <p>Generates a presigned download URL for the specified release of the mobile SDK.</p>
-    /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateMobileSdkReleaseUrl {
         handle: std::sync::Arc<super::Handle>,
@@ -2933,7 +2971,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMobileSdkRelease`.
     ///
     /// <p>Retrieves information for the specified mobile SDK release, including release notes and tags.</p>
-    /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMobileSdkRelease {
         handle: std::sync::Arc<super::Handle>,
@@ -4300,7 +4338,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMobileSdkReleases`.
     ///
     /// <p>Retrieves a list of the available releases for the mobile SDK and the specified device platform. </p>
-    /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMobileSdkReleases {
         handle: std::sync::Arc<super::Handle>,
@@ -4893,7 +4931,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>You can access information about the traffic that WAF inspects using the following steps:</p>
     /// <ol>
-    /// <li> <p>Create your logging destination. You can use an Amazon CloudWatch Logs log group, an Amazon Simple Storage Service (Amazon S3) bucket, or an Amazon Kinesis Data Firehose. For information about configuring logging destinations and the permissions that are required for each, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p> </li>
+    /// <li> <p>Create your logging destination. You can use an Amazon CloudWatch Logs log group, an Amazon Simple Storage Service (Amazon S3) bucket, or an Amazon Kinesis Data Firehose. </p> <p>The name that you give the destination must start with <code>aws-waf-logs-</code>. Depending on the type of destination, you might need to configure additional settings or permissions. </p> <p>For configuration requirements and pricing information for each destination type, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p> </li>
     /// <li> <p>Associate your logging destination to your web ACL using a <code>PutLoggingConfiguration</code> request.</p> </li>
     /// </ol>
     /// <p>When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, WAF creates an additional role or policy that is required to write logs to the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource policy on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For an Amazon Kinesis Data Firehose, WAF creates a service-linked role.</p>
@@ -6275,6 +6313,40 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::CaptchaConfig>,
         ) -> Self {
             self.inner = self.inner.set_captcha_config(input);
+            self
+        }
+        /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+        pub fn challenge_config(mut self, input: crate::model::ChallengeConfig) -> Self {
+            self.inner = self.inner.challenge_config(input);
+            self
+        }
+        /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+        pub fn set_challenge_config(
+            mut self,
+            input: std::option::Option<crate::model::ChallengeConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_challenge_config(input);
+            self
+        }
+        /// Appends an item to `TokenDomains`.
+        ///
+        /// To override the contents of this collection use [`set_token_domains`](Self::set_token_domains).
+        ///
+        /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+        /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+        /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+        pub fn token_domains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token_domains(input.into());
+            self
+        }
+        /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+        /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+        /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+        pub fn set_token_domains(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_token_domains(input);
             self
         }
     }

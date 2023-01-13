@@ -205,6 +205,75 @@ pub fn parse_attach_load_balancer_target_groups_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_attach_traffic_sources_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AttachTrafficSourcesOutput,
+    crate::error::AttachTrafficSourcesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::AttachTrafficSourcesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::AttachTrafficSourcesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceContention" => crate::error::AttachTrafficSourcesError {
+            meta: generic,
+            kind: crate::error::AttachTrafficSourcesErrorKind::ResourceContentionFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_contention_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachTrafficSourcesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceLinkedRoleFailure" => crate::error::AttachTrafficSourcesError {
+            meta: generic,
+            kind: crate::error::AttachTrafficSourcesErrorKind::ServiceLinkedRoleFailure({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_linked_role_failure::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachTrafficSourcesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::AttachTrafficSourcesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_attach_traffic_sources_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AttachTrafficSourcesOutput,
+    crate::error::AttachTrafficSourcesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::attach_traffic_sources_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_batch_delete_scheduled_action_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2749,6 +2818,86 @@ pub fn parse_describe_termination_policy_types_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_traffic_sources_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeTrafficSourcesOutput,
+    crate::error::DescribeTrafficSourcesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeTrafficSourcesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeTrafficSourcesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidNextToken" => {
+            crate::error::DescribeTrafficSourcesError {
+                meta: generic,
+                kind: crate::error::DescribeTrafficSourcesErrorKind::InvalidNextToken({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrafficSourcesError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceContention" => crate::error::DescribeTrafficSourcesError {
+            meta: generic,
+            kind: crate::error::DescribeTrafficSourcesErrorKind::ResourceContentionFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_contention_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrafficSourcesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeTrafficSourcesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_traffic_sources_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeTrafficSourcesOutput,
+    crate::error::DescribeTrafficSourcesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_traffic_sources_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_traffic_sources(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeTrafficSourcesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_warm_pool_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeWarmPoolOutput, crate::error::DescribeWarmPoolError>
@@ -2990,6 +3139,58 @@ pub fn parse_detach_load_balancer_target_groups_response(
         #[allow(unused_mut)]
         let mut output =
             crate::output::detach_load_balancer_target_groups_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_detach_traffic_sources_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DetachTrafficSourcesOutput,
+    crate::error::DetachTrafficSourcesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DetachTrafficSourcesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DetachTrafficSourcesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceContention" => crate::error::DetachTrafficSourcesError {
+            meta: generic,
+            kind: crate::error::DetachTrafficSourcesErrorKind::ResourceContentionFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_contention_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachTrafficSourcesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DetachTrafficSourcesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_detach_traffic_sources_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DetachTrafficSourcesOutput,
+    crate::error::DetachTrafficSourcesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::detach_traffic_sources_output::Builder::default();
         let _ = response;
         output.build()
     })

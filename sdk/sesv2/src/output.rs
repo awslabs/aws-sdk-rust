@@ -731,6 +731,30 @@ impl PutDedicatedIpInPoolOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PutConfigurationSetVdmOptionsOutput {}
+/// See [`PutConfigurationSetVdmOptionsOutput`](crate::output::PutConfigurationSetVdmOptionsOutput).
+pub mod put_configuration_set_vdm_options_output {
+
+    /// A builder for [`PutConfigurationSetVdmOptionsOutput`](crate::output::PutConfigurationSetVdmOptionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutConfigurationSetVdmOptionsOutput`](crate::output::PutConfigurationSetVdmOptionsOutput).
+        pub fn build(self) -> crate::output::PutConfigurationSetVdmOptionsOutput {
+            crate::output::PutConfigurationSetVdmOptionsOutput {}
+        }
+    }
+}
+impl PutConfigurationSetVdmOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`PutConfigurationSetVdmOptionsOutput`](crate::output::PutConfigurationSetVdmOptionsOutput).
+    pub fn builder() -> crate::output::put_configuration_set_vdm_options_output::Builder {
+        crate::output::put_configuration_set_vdm_options_output::Builder::default()
+    }
+}
+
+/// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigurationSetTrackingOptionsOutput {}
 /// See [`PutConfigurationSetTrackingOptionsOutput`](crate::output::PutConfigurationSetTrackingOptionsOutput).
 pub mod put_configuration_set_tracking_options_output {
@@ -845,6 +869,30 @@ impl PutConfigurationSetDeliveryOptionsOutput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput).
     pub fn builder() -> crate::output::put_configuration_set_delivery_options_output::Builder {
         crate::output::put_configuration_set_delivery_options_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PutAccountVdmAttributesOutput {}
+/// See [`PutAccountVdmAttributesOutput`](crate::output::PutAccountVdmAttributesOutput).
+pub mod put_account_vdm_attributes_output {
+
+    /// A builder for [`PutAccountVdmAttributesOutput`](crate::output::PutAccountVdmAttributesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutAccountVdmAttributesOutput`](crate::output::PutAccountVdmAttributesOutput).
+        pub fn build(self) -> crate::output::PutAccountVdmAttributesOutput {
+            crate::output::PutAccountVdmAttributesOutput {}
+        }
+    }
+}
+impl PutAccountVdmAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`PutAccountVdmAttributesOutput`](crate::output::PutAccountVdmAttributesOutput).
+    pub fn builder() -> crate::output::put_account_vdm_attributes_output::Builder {
+        crate::output::put_account_vdm_attributes_output::Builder::default()
     }
 }
 
@@ -1079,6 +1127,83 @@ impl ListSuppressedDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSuppressedDestinationsOutput`](crate::output::ListSuppressedDestinationsOutput).
     pub fn builder() -> crate::output::list_suppressed_destinations_output::Builder {
         crate::output::list_suppressed_destinations_output::Builder::default()
+    }
+}
+
+/// <p>Contains the response to your request to retrieve the list of recommendations for your account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListRecommendationsOutput {
+    /// <p>The recommendations applicable to your account.</p>
+    #[doc(hidden)]
+    pub recommendations: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
+    /// <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRecommendationsOutput {
+    /// <p>The recommendations applicable to your account.</p>
+    pub fn recommendations(&self) -> std::option::Option<&[crate::model::Recommendation]> {
+        self.recommendations.as_deref()
+    }
+    /// <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
+pub mod list_recommendations_output {
+
+    /// A builder for [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recommendations:
+            std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `recommendations`.
+        ///
+        /// To override the contents of this collection use [`set_recommendations`](Self::set_recommendations).
+        ///
+        /// <p>The recommendations applicable to your account.</p>
+        pub fn recommendations(mut self, input: crate::model::Recommendation) -> Self {
+            let mut v = self.recommendations.unwrap_or_default();
+            v.push(input);
+            self.recommendations = Some(v);
+            self
+        }
+        /// <p>The recommendations applicable to your account.</p>
+        pub fn set_recommendations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
+        ) -> Self {
+            self.recommendations = input;
+            self
+        }
+        /// <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
+        pub fn build(self) -> crate::output::ListRecommendationsOutput {
+            crate::output::ListRecommendationsOutput {
+                recommendations: self.recommendations,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
+    pub fn builder() -> crate::output::list_recommendations_output::Builder {
+        crate::output::list_recommendations_output::Builder::default()
     }
 }
 
@@ -2316,6 +2441,16 @@ pub struct GetEmailIdentityOutput {
     /// <p>The configuration set used by default when sending from this identity.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
+    /// <p>The verification status of the identity. The status can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
+    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub verification_status: std::option::Option<crate::model::VerificationStatus>,
 }
 impl GetEmailIdentityOutput {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
@@ -2355,6 +2490,17 @@ impl GetEmailIdentityOutput {
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
+    /// <p>The verification status of the identity. The status can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
+    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// </ul>
+    pub fn verification_status(&self) -> std::option::Option<&crate::model::VerificationStatus> {
+        self.verification_status.as_ref()
+    }
 }
 /// See [`GetEmailIdentityOutput`](crate::output::GetEmailIdentityOutput).
 pub mod get_email_identity_output {
@@ -2372,6 +2518,7 @@ pub mod get_email_identity_output {
         >,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
+        pub(crate) verification_status: std::option::Option<crate::model::VerificationStatus>,
     }
     impl Builder {
         /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
@@ -2494,6 +2641,33 @@ pub mod get_email_identity_output {
             self.configuration_set_name = input;
             self
         }
+        /// <p>The verification status of the identity. The status can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+        /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+        /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
+        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
+        /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+        /// </ul>
+        pub fn verification_status(mut self, input: crate::model::VerificationStatus) -> Self {
+            self.verification_status = Some(input);
+            self
+        }
+        /// <p>The verification status of the identity. The status can be one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+        /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+        /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
+        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
+        /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+        /// </ul>
+        pub fn set_verification_status(
+            mut self,
+            input: std::option::Option<crate::model::VerificationStatus>,
+        ) -> Self {
+            self.verification_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetEmailIdentityOutput`](crate::output::GetEmailIdentityOutput).
         pub fn build(self) -> crate::output::GetEmailIdentityOutput {
             crate::output::GetEmailIdentityOutput {
@@ -2505,6 +2679,7 @@ pub mod get_email_identity_output {
                 policies: self.policies,
                 tags: self.tags,
                 configuration_set_name: self.configuration_set_name,
+                verification_status: self.verification_status,
             }
         }
     }
@@ -2814,7 +2989,7 @@ pub struct GetDeliverabilityDashboardOptionsOutput {
     /// <p>Specifies whether the Deliverability dashboard is enabled. If this value is <code>true</code>, the dashboard is enabled.</p>
     #[doc(hidden)]
     pub dashboard_enabled: bool,
-    /// <p>The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
+    /// <p>The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
     #[doc(hidden)]
     pub subscription_expiry_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.</p>
@@ -2834,7 +3009,7 @@ impl GetDeliverabilityDashboardOptionsOutput {
     pub fn dashboard_enabled(&self) -> bool {
         self.dashboard_enabled
     }
-    /// <p>The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
+    /// <p>The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
     pub fn subscription_expiry_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.subscription_expiry_date.as_ref()
     }
@@ -2883,12 +3058,12 @@ pub mod get_deliverability_dashboard_options_output {
             self.dashboard_enabled = input;
             self
         }
-        /// <p>The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
+        /// <p>The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
         pub fn subscription_expiry_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.subscription_expiry_date = Some(input);
             self
         }
-        /// <p>The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
+        /// <p>The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
         pub fn set_subscription_expiry_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3054,6 +3229,57 @@ impl GetDedicatedIpsOutput {
     /// Creates a new builder-style object to manufacture [`GetDedicatedIpsOutput`](crate::output::GetDedicatedIpsOutput).
     pub fn builder() -> crate::output::get_dedicated_ips_output::Builder {
         crate::output::get_dedicated_ips_output::Builder::default()
+    }
+}
+
+/// <p>The following element is returned by the service.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetDedicatedIpPoolOutput {
+    /// <p>An object that contains information about a dedicated IP pool.</p>
+    #[doc(hidden)]
+    pub dedicated_ip_pool: std::option::Option<crate::model::DedicatedIpPool>,
+}
+impl GetDedicatedIpPoolOutput {
+    /// <p>An object that contains information about a dedicated IP pool.</p>
+    pub fn dedicated_ip_pool(&self) -> std::option::Option<&crate::model::DedicatedIpPool> {
+        self.dedicated_ip_pool.as_ref()
+    }
+}
+/// See [`GetDedicatedIpPoolOutput`](crate::output::GetDedicatedIpPoolOutput).
+pub mod get_dedicated_ip_pool_output {
+
+    /// A builder for [`GetDedicatedIpPoolOutput`](crate::output::GetDedicatedIpPoolOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dedicated_ip_pool: std::option::Option<crate::model::DedicatedIpPool>,
+    }
+    impl Builder {
+        /// <p>An object that contains information about a dedicated IP pool.</p>
+        pub fn dedicated_ip_pool(mut self, input: crate::model::DedicatedIpPool) -> Self {
+            self.dedicated_ip_pool = Some(input);
+            self
+        }
+        /// <p>An object that contains information about a dedicated IP pool.</p>
+        pub fn set_dedicated_ip_pool(
+            mut self,
+            input: std::option::Option<crate::model::DedicatedIpPool>,
+        ) -> Self {
+            self.dedicated_ip_pool = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDedicatedIpPoolOutput`](crate::output::GetDedicatedIpPoolOutput).
+        pub fn build(self) -> crate::output::GetDedicatedIpPoolOutput {
+            crate::output::GetDedicatedIpPoolOutput {
+                dedicated_ip_pool: self.dedicated_ip_pool,
+            }
+        }
+    }
+}
+impl GetDedicatedIpPoolOutput {
+    /// Creates a new builder-style object to manufacture [`GetDedicatedIpPoolOutput`](crate::output::GetDedicatedIpPoolOutput).
+    pub fn builder() -> crate::output::get_dedicated_ip_pool_output::Builder {
+        crate::output::get_dedicated_ip_pool_output::Builder::default()
     }
 }
 
@@ -3741,6 +3967,9 @@ pub struct GetConfigurationSetOutput {
     /// <p>An object that contains information about the suppression list preferences for your account.</p>
     #[doc(hidden)]
     pub suppression_options: std::option::Option<crate::model::SuppressionOptions>,
+    /// <p>An object that contains information about the VDM preferences for your configuration set.</p>
+    #[doc(hidden)]
+    pub vdm_options: std::option::Option<crate::model::VdmOptions>,
 }
 impl GetConfigurationSetOutput {
     /// <p>The name of the configuration set.</p>
@@ -3771,6 +4000,10 @@ impl GetConfigurationSetOutput {
     pub fn suppression_options(&self) -> std::option::Option<&crate::model::SuppressionOptions> {
         self.suppression_options.as_ref()
     }
+    /// <p>An object that contains information about the VDM preferences for your configuration set.</p>
+    pub fn vdm_options(&self) -> std::option::Option<&crate::model::VdmOptions> {
+        self.vdm_options.as_ref()
+    }
 }
 /// See [`GetConfigurationSetOutput`](crate::output::GetConfigurationSetOutput).
 pub mod get_configuration_set_output {
@@ -3785,6 +4018,7 @@ pub mod get_configuration_set_output {
         pub(crate) sending_options: std::option::Option<crate::model::SendingOptions>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) suppression_options: std::option::Option<crate::model::SuppressionOptions>,
+        pub(crate) vdm_options: std::option::Option<crate::model::VdmOptions>,
     }
     impl Builder {
         /// <p>The name of the configuration set.</p>
@@ -3884,6 +4118,19 @@ pub mod get_configuration_set_output {
             self.suppression_options = input;
             self
         }
+        /// <p>An object that contains information about the VDM preferences for your configuration set.</p>
+        pub fn vdm_options(mut self, input: crate::model::VdmOptions) -> Self {
+            self.vdm_options = Some(input);
+            self
+        }
+        /// <p>An object that contains information about the VDM preferences for your configuration set.</p>
+        pub fn set_vdm_options(
+            mut self,
+            input: std::option::Option<crate::model::VdmOptions>,
+        ) -> Self {
+            self.vdm_options = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetConfigurationSetOutput`](crate::output::GetConfigurationSetOutput).
         pub fn build(self) -> crate::output::GetConfigurationSetOutput {
             crate::output::GetConfigurationSetOutput {
@@ -3894,6 +4141,7 @@ pub mod get_configuration_set_output {
                 sending_options: self.sending_options,
                 tags: self.tags,
                 suppression_options: self.suppression_options,
+                vdm_options: self.vdm_options,
             }
         }
     }
@@ -4017,6 +4265,9 @@ pub struct GetAccountOutput {
     /// <p>An object that defines your account details.</p>
     #[doc(hidden)]
     pub details: std::option::Option<crate::model::AccountDetails>,
+    /// <p>The VDM attributes that apply to your Amazon SES account.</p>
+    #[doc(hidden)]
+    pub vdm_attributes: std::option::Option<crate::model::VdmAttributes>,
 }
 impl GetAccountOutput {
     /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>
@@ -4056,6 +4307,10 @@ impl GetAccountOutput {
     pub fn details(&self) -> std::option::Option<&crate::model::AccountDetails> {
         self.details.as_ref()
     }
+    /// <p>The VDM attributes that apply to your Amazon SES account.</p>
+    pub fn vdm_attributes(&self) -> std::option::Option<&crate::model::VdmAttributes> {
+        self.vdm_attributes.as_ref()
+    }
 }
 /// See [`GetAccountOutput`](crate::output::GetAccountOutput).
 pub mod get_account_output {
@@ -4070,6 +4325,7 @@ pub mod get_account_output {
         pub(crate) sending_enabled: std::option::Option<bool>,
         pub(crate) suppression_attributes: std::option::Option<crate::model::SuppressionAttributes>,
         pub(crate) details: std::option::Option<crate::model::AccountDetails>,
+        pub(crate) vdm_attributes: std::option::Option<crate::model::VdmAttributes>,
     }
     impl Builder {
         /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>
@@ -4174,6 +4430,19 @@ pub mod get_account_output {
             self.details = input;
             self
         }
+        /// <p>The VDM attributes that apply to your Amazon SES account.</p>
+        pub fn vdm_attributes(mut self, input: crate::model::VdmAttributes) -> Self {
+            self.vdm_attributes = Some(input);
+            self
+        }
+        /// <p>The VDM attributes that apply to your Amazon SES account.</p>
+        pub fn set_vdm_attributes(
+            mut self,
+            input: std::option::Option<crate::model::VdmAttributes>,
+        ) -> Self {
+            self.vdm_attributes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAccountOutput`](crate::output::GetAccountOutput).
         pub fn build(self) -> crate::output::GetAccountOutput {
             crate::output::GetAccountOutput {
@@ -4186,6 +4455,7 @@ pub mod get_account_output {
                 sending_enabled: self.sending_enabled.unwrap_or_default(),
                 suppression_attributes: self.suppression_attributes,
                 details: self.details,
+                vdm_attributes: self.vdm_attributes,
             }
         }
     }
@@ -4843,5 +5113,90 @@ impl CreateConfigurationSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
     pub fn builder() -> crate::output::create_configuration_set_output::Builder {
         crate::output::create_configuration_set_output::Builder::default()
+    }
+}
+
+/// <p>Represents the result of processing your metric data batch request</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BatchGetMetricDataOutput {
+    /// <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
+    #[doc(hidden)]
+    pub results: std::option::Option<std::vec::Vec<crate::model::MetricDataResult>>,
+    /// <p>A list of <code>MetricDataError</code> encountered while processing your metric data batch request.</p>
+    #[doc(hidden)]
+    pub errors: std::option::Option<std::vec::Vec<crate::model::MetricDataError>>,
+}
+impl BatchGetMetricDataOutput {
+    /// <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
+    pub fn results(&self) -> std::option::Option<&[crate::model::MetricDataResult]> {
+        self.results.as_deref()
+    }
+    /// <p>A list of <code>MetricDataError</code> encountered while processing your metric data batch request.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::MetricDataError]> {
+        self.errors.as_deref()
+    }
+}
+/// See [`BatchGetMetricDataOutput`](crate::output::BatchGetMetricDataOutput).
+pub mod batch_get_metric_data_output {
+
+    /// A builder for [`BatchGetMetricDataOutput`](crate::output::BatchGetMetricDataOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) results: std::option::Option<std::vec::Vec<crate::model::MetricDataResult>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::MetricDataError>>,
+    }
+    impl Builder {
+        /// Appends an item to `results`.
+        ///
+        /// To override the contents of this collection use [`set_results`](Self::set_results).
+        ///
+        /// <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
+        pub fn results(mut self, input: crate::model::MetricDataResult) -> Self {
+            let mut v = self.results.unwrap_or_default();
+            v.push(input);
+            self.results = Some(v);
+            self
+        }
+        /// <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
+        pub fn set_results(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricDataResult>>,
+        ) -> Self {
+            self.results = input;
+            self
+        }
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>A list of <code>MetricDataError</code> encountered while processing your metric data batch request.</p>
+        pub fn errors(mut self, input: crate::model::MetricDataError) -> Self {
+            let mut v = self.errors.unwrap_or_default();
+            v.push(input);
+            self.errors = Some(v);
+            self
+        }
+        /// <p>A list of <code>MetricDataError</code> encountered while processing your metric data batch request.</p>
+        pub fn set_errors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricDataError>>,
+        ) -> Self {
+            self.errors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetMetricDataOutput`](crate::output::BatchGetMetricDataOutput).
+        pub fn build(self) -> crate::output::BatchGetMetricDataOutput {
+            crate::output::BatchGetMetricDataOutput {
+                results: self.results,
+                errors: self.errors,
+            }
+        }
+    }
+}
+impl BatchGetMetricDataOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetMetricDataOutput`](crate::output::BatchGetMetricDataOutput).
+    pub fn builder() -> crate::output::batch_get_metric_data_output::Builder {
+        crate::output::batch_get_metric_data_output::Builder::default()
     }
 }

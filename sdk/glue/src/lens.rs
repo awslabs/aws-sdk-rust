@@ -239,6 +239,46 @@ pub(crate) fn reflens_structure_crate_output_list_custom_entity_types_output_nex
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_data_quality_results_output_next_token(
+    input: &crate::output::ListDataQualityResultsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_data_quality_rule_recommendation_runs_output_next_token(
+    input: &crate::output::ListDataQualityRuleRecommendationRunsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_data_quality_ruleset_evaluation_runs_output_next_token(
+    input: &crate::output::ListDataQualityRulesetEvaluationRunsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_data_quality_rulesets_output_next_token(
+    input: &crate::output::ListDataQualityRulesetsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_dev_endpoints_output_next_token(
     input: &crate::output::ListDevEndpointsOutput,
 ) -> std::option::Option<&std::string::String> {

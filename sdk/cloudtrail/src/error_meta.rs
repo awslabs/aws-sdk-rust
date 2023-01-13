@@ -5,7 +5,17 @@
 pub enum Error {
     /// <p> This exception is thrown when you start a new import and a previous import is still in progress. </p>
     AccountHasOngoingImportException(crate::error::AccountHasOngoingImportException),
-    /// <p> The specified channel ARN is not valid or does not map to a channel in your account. </p>
+    /// <p>This exception is thrown when when the specified account is not found or not part of an organization.</p>
+    AccountNotFoundException(crate::error::AccountNotFoundException),
+    /// <p>This exception is thrown when the specified account is not registered as the CloudTrail delegated administrator.</p>
+    AccountNotRegisteredException(crate::error::AccountNotRegisteredException),
+    /// <p>This exception is thrown when the account is already registered as the CloudTrail delegated administrator.</p>
+    AccountRegisteredException(crate::error::AccountRegisteredException),
+    /// <p>This exception is thrown when the management account of an organization is registered as the CloudTrail delegated administrator.</p>
+    CannotDelegateManagementAccountException(
+        crate::error::CannotDelegateManagementAccountException,
+    ),
+    /// <p>This exception is thrown when the specified value of <code>ChannelARN</code> is not valid.</p>
     ChannelArnInvalidException(crate::error::ChannelArnInvalidException),
     /// <p> The specified channel was not found. </p>
     ChannelNotFoundException(crate::error::ChannelNotFoundException),
@@ -22,6 +32,10 @@ pub enum Error {
     ),
     /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
     ConflictException(crate::error::ConflictException),
+    /// <p>This exception is thrown when the maximum number of CloudTrail delegated administrators is reached.</p>
+    DelegatedAdminAccountLimitExceededException(
+        crate::error::DelegatedAdminAccountLimitExceededException,
+    ),
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
     EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
     /// <p>An event data store with that name already exists.</p>
@@ -48,7 +62,7 @@ pub enum Error {
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
-    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.</p>
+    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
     InsufficientEncryptionPolicyException(crate::error::InsufficientEncryptionPolicyException),
     /// <p>This exception is thrown when the policy on the S3 bucket is not sufficient.</p>
     InsufficientS3BucketPolicyException(crate::error::InsufficientS3BucketPolicyException),
@@ -64,7 +78,7 @@ pub enum Error {
     InvalidDateRangeException(crate::error::InvalidDateRangeException),
     /// <p>Occurs if an event category that is not valid is specified as a value of <code>EventCategory</code>.</p>
     InvalidEventCategoryException(crate::error::InvalidEventCategoryException),
-    /// <p> This exception is thrown when the event data store category is not valid for the import. </p>
+    /// <p>This exception is thrown when event categories of specified event data stores are not valid.</p>
     InvalidEventDataStoreCategoryException(crate::error::InvalidEventDataStoreCategoryException),
     /// <p>The event data store is not in a status that supports the operation.</p>
     InvalidEventDataStoreStatusException(crate::error::InvalidEventDataStoreStatusException),
@@ -120,7 +134,7 @@ pub enum Error {
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.</p>
+    /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail or event data store can't be updated.</p>
     KmsException(crate::error::KmsException),
     /// <p>This exception is no longer in use.</p>
     #[deprecated]
@@ -131,6 +145,12 @@ pub enum Error {
     MaxConcurrentQueriesException(crate::error::MaxConcurrentQueriesException),
     /// <p>This exception is thrown when the maximum number of trails is reached.</p>
     MaximumNumberOfTrailsExceededException(crate::error::MaximumNumberOfTrailsExceededException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
+    /// <p> This exception is thrown when the account making the request is not the organization's management account. </p>
+    NotOrganizationManagementAccountException(
+        crate::error::NotOrganizationManagementAccountException,
+    ),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -173,6 +193,10 @@ impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccountHasOngoingImportException(inner) => inner.fmt(f),
+            Error::AccountNotFoundException(inner) => inner.fmt(f),
+            Error::AccountNotRegisteredException(inner) => inner.fmt(f),
+            Error::AccountRegisteredException(inner) => inner.fmt(f),
+            Error::CannotDelegateManagementAccountException(inner) => inner.fmt(f),
             Error::ChannelArnInvalidException(inner) => inner.fmt(f),
             Error::ChannelNotFoundException(inner) => inner.fmt(f),
             Error::CloudTrailArnInvalidException(inner) => inner.fmt(f),
@@ -180,6 +204,7 @@ impl std::fmt::Display for Error {
             Error::CloudTrailInvalidClientTokenIdException(inner) => inner.fmt(f),
             Error::CloudWatchLogsDeliveryUnavailableException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::DelegatedAdminAccountLimitExceededException(inner) => inner.fmt(f),
             Error::EventDataStoreArnInvalidException(inner) => inner.fmt(f),
             Error::EventDataStoreAlreadyExistsException(inner) => inner.fmt(f),
             Error::EventDataStoreHasOngoingImportException(inner) => inner.fmt(f),
@@ -224,6 +249,8 @@ impl std::fmt::Display for Error {
             Error::KmsKeyNotFoundException(inner) => inner.fmt(f),
             Error::MaxConcurrentQueriesException(inner) => inner.fmt(f),
             Error::MaximumNumberOfTrailsExceededException(inner) => inner.fmt(f),
+            Error::NoManagementAccountSlrExistsException(inner) => inner.fmt(f),
+            Error::NotOrganizationManagementAccountException(inner) => inner.fmt(f),
             Error::NotOrganizationMasterAccountException(inner) => inner.fmt(f),
             Error::OperationNotPermittedException(inner) => inner.fmt(f),
             Error::OrganizationNotInAllFeaturesModeException(inner) => inner.fmt(f),
@@ -274,6 +301,9 @@ impl From<crate::error::AddTagsError> for Error {
             }
             crate::error::AddTagsErrorKind::InvalidTrailNameException(inner) => {
                 Error::InvalidTrailNameException(inner)
+            }
+            crate::error::AddTagsErrorKind::NoManagementAccountSlrExistsException(inner) => {
+                Error::NoManagementAccountSlrExistsException(inner)
             }
             crate::error::AddTagsErrorKind::NotOrganizationMasterAccountException(inner) => {
                 Error::NotOrganizationMasterAccountException(inner)
@@ -333,6 +363,9 @@ impl From<crate::error::CancelQueryError> for Error {
             crate::error::CancelQueryErrorKind::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
+            crate::error::CancelQueryErrorKind::NoManagementAccountSlrExistsException(inner) => {
+                Error::NoManagementAccountSlrExistsException(inner)
+            }
             crate::error::CancelQueryErrorKind::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
             }
@@ -372,8 +405,14 @@ impl From<crate::error::CreateEventDataStoreError> for Error {
             crate::error::CreateEventDataStoreErrorKind::EventDataStoreAlreadyExistsException(inner) => Error::EventDataStoreAlreadyExistsException(inner),
             crate::error::CreateEventDataStoreErrorKind::EventDataStoreMaxLimitExceededException(inner) => Error::EventDataStoreMaxLimitExceededException(inner),
             crate::error::CreateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
+            crate::error::CreateEventDataStoreErrorKind::InsufficientEncryptionPolicyException(inner) => Error::InsufficientEncryptionPolicyException(inner),
+            crate::error::CreateEventDataStoreErrorKind::InvalidEventSelectorsException(inner) => Error::InvalidEventSelectorsException(inner),
+            crate::error::CreateEventDataStoreErrorKind::InvalidKmsKeyIdException(inner) => Error::InvalidKmsKeyIdException(inner),
             crate::error::CreateEventDataStoreErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::error::CreateEventDataStoreErrorKind::InvalidTagParameterException(inner) => Error::InvalidTagParameterException(inner),
+            crate::error::CreateEventDataStoreErrorKind::KmsException(inner) => Error::KmsException(inner),
+            crate::error::CreateEventDataStoreErrorKind::KmsKeyNotFoundException(inner) => Error::KmsKeyNotFoundException(inner),
+            crate::error::CreateEventDataStoreErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::CreateEventDataStoreErrorKind::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
             crate::error::CreateEventDataStoreErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::error::CreateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
@@ -420,11 +459,13 @@ impl From<crate::error::CreateTrailError> for Error {
             crate::error::CreateTrailErrorKind::KmsKeyDisabledException(inner) => Error::KmsKeyDisabledException(inner),
             crate::error::CreateTrailErrorKind::KmsKeyNotFoundException(inner) => Error::KmsKeyNotFoundException(inner),
             crate::error::CreateTrailErrorKind::MaximumNumberOfTrailsExceededException(inner) => Error::MaximumNumberOfTrailsExceededException(inner),
+            crate::error::CreateTrailErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::CreateTrailErrorKind::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
             crate::error::CreateTrailErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::error::CreateTrailErrorKind::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
             crate::error::CreateTrailErrorKind::OrganizationsNotInUseException(inner) => Error::OrganizationsNotInUseException(inner),
             crate::error::CreateTrailErrorKind::S3BucketDoesNotExistException(inner) => Error::S3BucketDoesNotExistException(inner),
+            crate::error::CreateTrailErrorKind::TagsLimitExceededException(inner) => Error::TagsLimitExceededException(inner),
             crate::error::CreateTrailErrorKind::TrailAlreadyExistsException(inner) => Error::TrailAlreadyExistsException(inner),
             crate::error::CreateTrailErrorKind::TrailNotProvidedException(inner) => Error::TrailNotProvidedException(inner),
             crate::error::CreateTrailErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
@@ -455,8 +496,10 @@ impl From<crate::error::DeleteEventDataStoreError> for Error {
             crate::error::DeleteEventDataStoreErrorKind::EventDataStoreHasOngoingImportException(inner) => Error::EventDataStoreHasOngoingImportException(inner),
             crate::error::DeleteEventDataStoreErrorKind::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
             crate::error::DeleteEventDataStoreErrorKind::EventDataStoreTerminationProtectedException(inner) => Error::EventDataStoreTerminationProtectedException(inner),
+            crate::error::DeleteEventDataStoreErrorKind::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
             crate::error::DeleteEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
             crate::error::DeleteEventDataStoreErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DeleteEventDataStoreErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::DeleteEventDataStoreErrorKind::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
             crate::error::DeleteEventDataStoreErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::error::DeleteEventDataStoreErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
@@ -480,15 +523,58 @@ where
 impl From<crate::error::DeleteTrailError> for Error {
     fn from(err: crate::error::DeleteTrailError) -> Self {
         match err.kind {
+            crate::error::DeleteTrailErrorKind::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
             crate::error::DeleteTrailErrorKind::ConflictException(inner) => Error::ConflictException(inner),
             crate::error::DeleteTrailErrorKind::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
             crate::error::DeleteTrailErrorKind::InvalidHomeRegionException(inner) => Error::InvalidHomeRegionException(inner),
             crate::error::DeleteTrailErrorKind::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
+            crate::error::DeleteTrailErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::DeleteTrailErrorKind::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
             crate::error::DeleteTrailErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::error::DeleteTrailErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
             crate::error::DeleteTrailErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::error::DeleteTrailErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DeregisterOrganizationDelegatedAdminError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeregisterOrganizationDelegatedAdminError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeregisterOrganizationDelegatedAdminError> for Error {
+    fn from(err: crate::error::DeregisterOrganizationDelegatedAdminError) -> Self {
+        match err.kind {
+            crate::error::DeregisterOrganizationDelegatedAdminErrorKind::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::error::DeregisterOrganizationDelegatedAdminErrorKind::AccountNotRegisteredException(inner) => Error::AccountNotRegisteredException(inner),
+            crate::error::DeregisterOrganizationDelegatedAdminErrorKind::CloudTrailAccessNotEnabledException(inner) => Error::CloudTrailAccessNotEnabledException(inner),
+            crate::error::DeregisterOrganizationDelegatedAdminErrorKind::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
+            crate::error::DeregisterOrganizationDelegatedAdminErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DeregisterOrganizationDelegatedAdminErrorKind::NotOrganizationManagementAccountException(inner) => Error::NotOrganizationManagementAccountException(inner),
+            crate::error::DeregisterOrganizationDelegatedAdminErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::DeregisterOrganizationDelegatedAdminErrorKind::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
+            crate::error::DeregisterOrganizationDelegatedAdminErrorKind::OrganizationsNotInUseException(inner) => Error::OrganizationsNotInUseException(inner),
+            crate::error::DeregisterOrganizationDelegatedAdminErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::DeregisterOrganizationDelegatedAdminErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -519,6 +605,9 @@ impl From<crate::error::DescribeQueryError> for Error {
             }
             crate::error::DescribeQueryErrorKind::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
+            }
+            crate::error::DescribeQueryErrorKind::NoManagementAccountSlrExistsException(inner) => {
+                Error::NoManagementAccountSlrExistsException(inner)
             }
             crate::error::DescribeQueryErrorKind::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
@@ -553,6 +642,9 @@ impl From<crate::error::DescribeTrailsError> for Error {
         match err.kind {
             crate::error::DescribeTrailsErrorKind::InvalidTrailNameException(inner) => {
                 Error::InvalidTrailNameException(inner)
+            }
+            crate::error::DescribeTrailsErrorKind::NoManagementAccountSlrExistsException(inner) => {
+                Error::NoManagementAccountSlrExistsException(inner)
             }
             crate::error::DescribeTrailsErrorKind::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
@@ -627,6 +719,9 @@ impl From<crate::error::GetEventDataStoreError> for Error {
             crate::error::GetEventDataStoreErrorKind::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
+            crate::error::GetEventDataStoreErrorKind::NoManagementAccountSlrExistsException(
+                inner,
+            ) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::GetEventDataStoreErrorKind::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
             }
@@ -657,9 +752,15 @@ where
 impl From<crate::error::GetEventSelectorsError> for Error {
     fn from(err: crate::error::GetEventSelectorsError) -> Self {
         match err.kind {
+            crate::error::GetEventSelectorsErrorKind::CloudTrailArnInvalidException(inner) => {
+                Error::CloudTrailArnInvalidException(inner)
+            }
             crate::error::GetEventSelectorsErrorKind::InvalidTrailNameException(inner) => {
                 Error::InvalidTrailNameException(inner)
             }
+            crate::error::GetEventSelectorsErrorKind::NoManagementAccountSlrExistsException(
+                inner,
+            ) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::GetEventSelectorsErrorKind::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
             }
@@ -727,12 +828,18 @@ where
 impl From<crate::error::GetInsightSelectorsError> for Error {
     fn from(err: crate::error::GetInsightSelectorsError) -> Self {
         match err.kind {
+            crate::error::GetInsightSelectorsErrorKind::CloudTrailArnInvalidException(inner) => {
+                Error::CloudTrailArnInvalidException(inner)
+            }
             crate::error::GetInsightSelectorsErrorKind::InsightNotEnabledException(inner) => {
                 Error::InsightNotEnabledException(inner)
             }
             crate::error::GetInsightSelectorsErrorKind::InvalidTrailNameException(inner) => {
                 Error::InvalidTrailNameException(inner)
             }
+            crate::error::GetInsightSelectorsErrorKind::NoManagementAccountSlrExistsException(
+                inner,
+            ) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::GetInsightSelectorsErrorKind::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
             }
@@ -773,6 +880,9 @@ impl From<crate::error::GetQueryResultsError> for Error {
             crate::error::GetQueryResultsErrorKind::InactiveEventDataStoreException(inner) => {
                 Error::InactiveEventDataStoreException(inner)
             }
+            crate::error::GetQueryResultsErrorKind::InsufficientEncryptionPolicyException(
+                inner,
+            ) => Error::InsufficientEncryptionPolicyException(inner),
             crate::error::GetQueryResultsErrorKind::InvalidMaxResultsException(inner) => {
                 Error::InvalidMaxResultsException(inner)
             }
@@ -782,6 +892,9 @@ impl From<crate::error::GetQueryResultsError> for Error {
             crate::error::GetQueryResultsErrorKind::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
+            crate::error::GetQueryResultsErrorKind::NoManagementAccountSlrExistsException(
+                inner,
+            ) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::GetQueryResultsErrorKind::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
             }
@@ -813,6 +926,9 @@ where
 impl From<crate::error::GetTrailError> for Error {
     fn from(err: crate::error::GetTrailError) -> Self {
         match err.kind {
+            crate::error::GetTrailErrorKind::CloudTrailArnInvalidException(inner) => {
+                Error::CloudTrailArnInvalidException(inner)
+            }
             crate::error::GetTrailErrorKind::InvalidTrailNameException(inner) => {
                 Error::InvalidTrailNameException(inner)
             }
@@ -847,6 +963,9 @@ where
 impl From<crate::error::GetTrailStatusError> for Error {
     fn from(err: crate::error::GetTrailStatusError) -> Self {
         match err.kind {
+            crate::error::GetTrailStatusErrorKind::CloudTrailArnInvalidException(inner) => {
+                Error::CloudTrailArnInvalidException(inner)
+            }
             crate::error::GetTrailStatusErrorKind::InvalidTrailNameException(inner) => {
                 Error::InvalidTrailNameException(inner)
             }
@@ -920,6 +1039,9 @@ impl From<crate::error::ListEventDataStoresError> for Error {
             crate::error::ListEventDataStoresErrorKind::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
+            crate::error::ListEventDataStoresErrorKind::NoManagementAccountSlrExistsException(
+                inner,
+            ) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::ListEventDataStoresErrorKind::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
             }
@@ -1076,6 +1198,9 @@ impl From<crate::error::ListQueriesError> for Error {
             crate::error::ListQueriesErrorKind::InvalidQueryStatusException(inner) => {
                 Error::InvalidQueryStatusException(inner)
             }
+            crate::error::ListQueriesErrorKind::NoManagementAccountSlrExistsException(inner) => {
+                Error::NoManagementAccountSlrExistsException(inner)
+            }
             crate::error::ListQueriesErrorKind::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
             }
@@ -1118,6 +1243,9 @@ impl From<crate::error::ListTagsError> for Error {
             }
             crate::error::ListTagsErrorKind::InvalidTrailNameException(inner) => {
                 Error::InvalidTrailNameException(inner)
+            }
+            crate::error::ListTagsErrorKind::NoManagementAccountSlrExistsException(inner) => {
+                Error::NoManagementAccountSlrExistsException(inner)
             }
             crate::error::ListTagsErrorKind::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
@@ -1226,10 +1354,12 @@ where
 impl From<crate::error::PutEventSelectorsError> for Error {
     fn from(err: crate::error::PutEventSelectorsError) -> Self {
         match err.kind {
+            crate::error::PutEventSelectorsErrorKind::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
             crate::error::PutEventSelectorsErrorKind::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
             crate::error::PutEventSelectorsErrorKind::InvalidEventSelectorsException(inner) => Error::InvalidEventSelectorsException(inner),
             crate::error::PutEventSelectorsErrorKind::InvalidHomeRegionException(inner) => Error::InvalidHomeRegionException(inner),
             crate::error::PutEventSelectorsErrorKind::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
+            crate::error::PutEventSelectorsErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::PutEventSelectorsErrorKind::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
             crate::error::PutEventSelectorsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::error::PutEventSelectorsErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
@@ -1256,6 +1386,9 @@ where
 impl From<crate::error::PutInsightSelectorsError> for Error {
     fn from(err: crate::error::PutInsightSelectorsError) -> Self {
         match err.kind {
+            crate::error::PutInsightSelectorsErrorKind::CloudTrailArnInvalidException(inner) => {
+                Error::CloudTrailArnInvalidException(inner)
+            }
             crate::error::PutInsightSelectorsErrorKind::InsufficientEncryptionPolicyException(
                 inner,
             ) => Error::InsufficientEncryptionPolicyException(inner),
@@ -1274,6 +1407,9 @@ impl From<crate::error::PutInsightSelectorsError> for Error {
             crate::error::PutInsightSelectorsErrorKind::KmsException(inner) => {
                 Error::KmsException(inner)
             }
+            crate::error::PutInsightSelectorsErrorKind::NoManagementAccountSlrExistsException(
+                inner,
+            ) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::PutInsightSelectorsErrorKind::NotOrganizationMasterAccountException(
                 inner,
             ) => Error::NotOrganizationMasterAccountException(inner),
@@ -1292,6 +1428,46 @@ impl From<crate::error::PutInsightSelectorsError> for Error {
             crate::error::PutInsightSelectorsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::RegisterOrganizationDelegatedAdminError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::RegisterOrganizationDelegatedAdminError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RegisterOrganizationDelegatedAdminError> for Error {
+    fn from(err: crate::error::RegisterOrganizationDelegatedAdminError) -> Self {
+        match err.kind {
+            crate::error::RegisterOrganizationDelegatedAdminErrorKind::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::error::RegisterOrganizationDelegatedAdminErrorKind::AccountRegisteredException(inner) => Error::AccountRegisteredException(inner),
+            crate::error::RegisterOrganizationDelegatedAdminErrorKind::CannotDelegateManagementAccountException(inner) => Error::CannotDelegateManagementAccountException(inner),
+            crate::error::RegisterOrganizationDelegatedAdminErrorKind::CloudTrailAccessNotEnabledException(inner) => Error::CloudTrailAccessNotEnabledException(inner),
+            crate::error::RegisterOrganizationDelegatedAdminErrorKind::DelegatedAdminAccountLimitExceededException(inner) => Error::DelegatedAdminAccountLimitExceededException(inner),
+            crate::error::RegisterOrganizationDelegatedAdminErrorKind::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
+            crate::error::RegisterOrganizationDelegatedAdminErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::RegisterOrganizationDelegatedAdminErrorKind::NotOrganizationManagementAccountException(inner) => Error::NotOrganizationManagementAccountException(inner),
+            crate::error::RegisterOrganizationDelegatedAdminErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::RegisterOrganizationDelegatedAdminErrorKind::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
+            crate::error::RegisterOrganizationDelegatedAdminErrorKind::OrganizationsNotInUseException(inner) => Error::OrganizationsNotInUseException(inner),
+            crate::error::RegisterOrganizationDelegatedAdminErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::RegisterOrganizationDelegatedAdminErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1325,6 +1501,9 @@ impl From<crate::error::RemoveTagsError> for Error {
             }
             crate::error::RemoveTagsErrorKind::InvalidTrailNameException(inner) => {
                 Error::InvalidTrailNameException(inner)
+            }
+            crate::error::RemoveTagsErrorKind::NoManagementAccountSlrExistsException(inner) => {
+                Error::NoManagementAccountSlrExistsException(inner)
             }
             crate::error::RemoveTagsErrorKind::NotOrganizationMasterAccountException(inner) => {
                 Error::NotOrganizationMasterAccountException(inner)
@@ -1373,6 +1552,7 @@ impl From<crate::error::RestoreEventDataStoreError> for Error {
             crate::error::RestoreEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
             crate::error::RestoreEventDataStoreErrorKind::InvalidEventDataStoreStatusException(inner) => Error::InvalidEventDataStoreStatusException(inner),
             crate::error::RestoreEventDataStoreErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::RestoreEventDataStoreErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::RestoreEventDataStoreErrorKind::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
             crate::error::RestoreEventDataStoreErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::error::RestoreEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
@@ -1453,9 +1633,11 @@ where
 impl From<crate::error::StartLoggingError> for Error {
     fn from(err: crate::error::StartLoggingError) -> Self {
         match err.kind {
+            crate::error::StartLoggingErrorKind::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
             crate::error::StartLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
             crate::error::StartLoggingErrorKind::InvalidHomeRegionException(inner) => Error::InvalidHomeRegionException(inner),
             crate::error::StartLoggingErrorKind::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
+            crate::error::StartLoggingErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::StartLoggingErrorKind::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
             crate::error::StartLoggingErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::error::StartLoggingErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
@@ -1489,17 +1671,35 @@ impl From<crate::error::StartQueryError> for Error {
             crate::error::StartQueryErrorKind::InactiveEventDataStoreException(inner) => {
                 Error::InactiveEventDataStoreException(inner)
             }
+            crate::error::StartQueryErrorKind::InsufficientEncryptionPolicyException(inner) => {
+                Error::InsufficientEncryptionPolicyException(inner)
+            }
+            crate::error::StartQueryErrorKind::InsufficientS3BucketPolicyException(inner) => {
+                Error::InsufficientS3BucketPolicyException(inner)
+            }
             crate::error::StartQueryErrorKind::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::error::StartQueryErrorKind::InvalidQueryStatementException(inner) => {
                 Error::InvalidQueryStatementException(inner)
             }
+            crate::error::StartQueryErrorKind::InvalidS3BucketNameException(inner) => {
+                Error::InvalidS3BucketNameException(inner)
+            }
+            crate::error::StartQueryErrorKind::InvalidS3PrefixException(inner) => {
+                Error::InvalidS3PrefixException(inner)
+            }
             crate::error::StartQueryErrorKind::MaxConcurrentQueriesException(inner) => {
                 Error::MaxConcurrentQueriesException(inner)
             }
+            crate::error::StartQueryErrorKind::NoManagementAccountSlrExistsException(inner) => {
+                Error::NoManagementAccountSlrExistsException(inner)
+            }
             crate::error::StartQueryErrorKind::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
+            }
+            crate::error::StartQueryErrorKind::S3BucketDoesNotExistException(inner) => {
+                Error::S3BucketDoesNotExistException(inner)
             }
             crate::error::StartQueryErrorKind::UnsupportedOperationException(inner) => {
                 Error::UnsupportedOperationException(inner)
@@ -1560,9 +1760,11 @@ where
 impl From<crate::error::StopLoggingError> for Error {
     fn from(err: crate::error::StopLoggingError) -> Self {
         match err.kind {
+            crate::error::StopLoggingErrorKind::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
             crate::error::StopLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
             crate::error::StopLoggingErrorKind::InvalidHomeRegionException(inner) => Error::InvalidHomeRegionException(inner),
             crate::error::StopLoggingErrorKind::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
+            crate::error::StopLoggingErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::StopLoggingErrorKind::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
             crate::error::StopLoggingErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::error::StopLoggingErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
@@ -1596,7 +1798,13 @@ impl From<crate::error::UpdateEventDataStoreError> for Error {
             crate::error::UpdateEventDataStoreErrorKind::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
             crate::error::UpdateEventDataStoreErrorKind::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
             crate::error::UpdateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
+            crate::error::UpdateEventDataStoreErrorKind::InsufficientEncryptionPolicyException(inner) => Error::InsufficientEncryptionPolicyException(inner),
+            crate::error::UpdateEventDataStoreErrorKind::InvalidEventSelectorsException(inner) => Error::InvalidEventSelectorsException(inner),
+            crate::error::UpdateEventDataStoreErrorKind::InvalidKmsKeyIdException(inner) => Error::InvalidKmsKeyIdException(inner),
             crate::error::UpdateEventDataStoreErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::UpdateEventDataStoreErrorKind::KmsException(inner) => Error::KmsException(inner),
+            crate::error::UpdateEventDataStoreErrorKind::KmsKeyNotFoundException(inner) => Error::KmsKeyNotFoundException(inner),
+            crate::error::UpdateEventDataStoreErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::UpdateEventDataStoreErrorKind::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
             crate::error::UpdateEventDataStoreErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::error::UpdateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
@@ -1623,6 +1831,7 @@ impl From<crate::error::UpdateTrailError> for Error {
     fn from(err: crate::error::UpdateTrailError) -> Self {
         match err.kind {
             crate::error::UpdateTrailErrorKind::CloudTrailAccessNotEnabledException(inner) => Error::CloudTrailAccessNotEnabledException(inner),
+            crate::error::UpdateTrailErrorKind::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
             crate::error::UpdateTrailErrorKind::CloudTrailInvalidClientTokenIdException(inner) => Error::CloudTrailInvalidClientTokenIdException(inner),
             crate::error::UpdateTrailErrorKind::CloudWatchLogsDeliveryUnavailableException(inner) => Error::CloudWatchLogsDeliveryUnavailableException(inner),
             crate::error::UpdateTrailErrorKind::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
@@ -1635,6 +1844,7 @@ impl From<crate::error::UpdateTrailError> for Error {
             crate::error::UpdateTrailErrorKind::InvalidHomeRegionException(inner) => Error::InvalidHomeRegionException(inner),
             crate::error::UpdateTrailErrorKind::InvalidKmsKeyIdException(inner) => Error::InvalidKmsKeyIdException(inner),
             crate::error::UpdateTrailErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::error::UpdateTrailErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::error::UpdateTrailErrorKind::InvalidS3BucketNameException(inner) => Error::InvalidS3BucketNameException(inner),
             crate::error::UpdateTrailErrorKind::InvalidS3PrefixException(inner) => Error::InvalidS3PrefixException(inner),
             crate::error::UpdateTrailErrorKind::InvalidSnsTopicNameException(inner) => Error::InvalidSnsTopicNameException(inner),
@@ -1642,6 +1852,7 @@ impl From<crate::error::UpdateTrailError> for Error {
             crate::error::UpdateTrailErrorKind::KmsException(inner) => Error::KmsException(inner),
             crate::error::UpdateTrailErrorKind::KmsKeyDisabledException(inner) => Error::KmsKeyDisabledException(inner),
             crate::error::UpdateTrailErrorKind::KmsKeyNotFoundException(inner) => Error::KmsKeyNotFoundException(inner),
+            crate::error::UpdateTrailErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
             crate::error::UpdateTrailErrorKind::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
             crate::error::UpdateTrailErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::error::UpdateTrailErrorKind::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),

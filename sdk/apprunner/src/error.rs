@@ -1132,6 +1132,162 @@ impl std::error::Error for CreateVpcConnectorError {
     }
 }
 
+/// Error type for the `CreateVpcIngressConnection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateVpcIngressConnectionError {
+    /// Kind of error that occurred.
+    pub kind: CreateVpcIngressConnectionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateVpcIngressConnectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateVpcIngressConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateVpcIngressConnection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateVpcIngressConnectionErrorKind {
+    /// <p>An unexpected service exception occurred.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>You can't perform this action when the resource is in its current state.</p>
+    InvalidStateException(crate::error::InvalidStateException),
+    /// <p>App Runner can't create this resource. You've reached your account quota for this resource type.</p>
+    /// <p>For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateVpcIngressConnectionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateVpcIngressConnectionErrorKind::InternalServiceErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateVpcIngressConnectionErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateVpcIngressConnectionErrorKind::InvalidStateException(_inner) => _inner.fmt(f),
+            CreateVpcIngressConnectionErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateVpcIngressConnectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateVpcIngressConnectionError {
+    fn code(&self) -> Option<&str> {
+        CreateVpcIngressConnectionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateVpcIngressConnectionError {
+    /// Creates a new `CreateVpcIngressConnectionError`.
+    pub fn new(kind: CreateVpcIngressConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateVpcIngressConnectionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateVpcIngressConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateVpcIngressConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateVpcIngressConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateVpcIngressConnectionErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVpcIngressConnectionErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateVpcIngressConnectionErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVpcIngressConnectionErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateVpcIngressConnectionErrorKind::InvalidStateException`.
+    pub fn is_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVpcIngressConnectionErrorKind::InvalidStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateVpcIngressConnectionErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVpcIngressConnectionErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+}
+impl std::error::Error for CreateVpcIngressConnectionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateVpcIngressConnectionErrorKind::InternalServiceErrorException(_inner) => {
+                Some(_inner)
+            }
+            CreateVpcIngressConnectionErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateVpcIngressConnectionErrorKind::InvalidStateException(_inner) => Some(_inner),
+            CreateVpcIngressConnectionErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateVpcIngressConnectionErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DeleteAutoScalingConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1832,6 +1988,157 @@ impl std::error::Error for DeleteVpcConnectorError {
     }
 }
 
+/// Error type for the `DeleteVpcIngressConnection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteVpcIngressConnectionError {
+    /// Kind of error that occurred.
+    pub kind: DeleteVpcIngressConnectionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteVpcIngressConnectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteVpcIngressConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteVpcIngressConnection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteVpcIngressConnectionErrorKind {
+    /// <p>An unexpected service exception occurred.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>You can't perform this action when the resource is in its current state.</p>
+    InvalidStateException(crate::error::InvalidStateException),
+    /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteVpcIngressConnectionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteVpcIngressConnectionErrorKind::InternalServiceErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteVpcIngressConnectionErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteVpcIngressConnectionErrorKind::InvalidStateException(_inner) => _inner.fmt(f),
+            DeleteVpcIngressConnectionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteVpcIngressConnectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteVpcIngressConnectionError {
+    fn code(&self) -> Option<&str> {
+        DeleteVpcIngressConnectionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteVpcIngressConnectionError {
+    /// Creates a new `DeleteVpcIngressConnectionError`.
+    pub fn new(kind: DeleteVpcIngressConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteVpcIngressConnectionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteVpcIngressConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteVpcIngressConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteVpcIngressConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteVpcIngressConnectionErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVpcIngressConnectionErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteVpcIngressConnectionErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVpcIngressConnectionErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteVpcIngressConnectionErrorKind::InvalidStateException`.
+    pub fn is_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVpcIngressConnectionErrorKind::InvalidStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteVpcIngressConnectionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVpcIngressConnectionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteVpcIngressConnectionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteVpcIngressConnectionErrorKind::InternalServiceErrorException(_inner) => {
+                Some(_inner)
+            }
+            DeleteVpcIngressConnectionErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteVpcIngressConnectionErrorKind::InvalidStateException(_inner) => Some(_inner),
+            DeleteVpcIngressConnectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteVpcIngressConnectionErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DescribeAutoScalingConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2528,6 +2835,150 @@ impl std::error::Error for DescribeVpcConnectorError {
             DescribeVpcConnectorErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeVpcConnectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeVpcConnectorErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeVpcIngressConnection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeVpcIngressConnectionError {
+    /// Kind of error that occurred.
+    pub kind: DescribeVpcIngressConnectionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeVpcIngressConnectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeVpcIngressConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeVpcIngressConnection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeVpcIngressConnectionErrorKind {
+    /// <p>An unexpected service exception occurred.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeVpcIngressConnectionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeVpcIngressConnectionErrorKind::InternalServiceErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeVpcIngressConnectionErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeVpcIngressConnectionErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeVpcIngressConnectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeVpcIngressConnectionError {
+    fn code(&self) -> Option<&str> {
+        DescribeVpcIngressConnectionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeVpcIngressConnectionError {
+    /// Creates a new `DescribeVpcIngressConnectionError`.
+    pub fn new(kind: DescribeVpcIngressConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeVpcIngressConnectionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeVpcIngressConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeVpcIngressConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeVpcIngressConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeVpcIngressConnectionErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVpcIngressConnectionErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeVpcIngressConnectionErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVpcIngressConnectionErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeVpcIngressConnectionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVpcIngressConnectionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeVpcIngressConnectionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeVpcIngressConnectionErrorKind::InternalServiceErrorException(_inner) => {
+                Some(_inner)
+            }
+            DescribeVpcIngressConnectionErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeVpcIngressConnectionErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeVpcIngressConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3581,6 +4032,135 @@ impl std::error::Error for ListVpcConnectorsError {
     }
 }
 
+/// Error type for the `ListVpcIngressConnections` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListVpcIngressConnectionsError {
+    /// Kind of error that occurred.
+    pub kind: ListVpcIngressConnectionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListVpcIngressConnectionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListVpcIngressConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListVpcIngressConnections` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListVpcIngressConnectionsErrorKind {
+    /// <p>An unexpected service exception occurred.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListVpcIngressConnectionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListVpcIngressConnectionsErrorKind::InternalServiceErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListVpcIngressConnectionsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListVpcIngressConnectionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListVpcIngressConnectionsError {
+    fn code(&self) -> Option<&str> {
+        ListVpcIngressConnectionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListVpcIngressConnectionsError {
+    /// Creates a new `ListVpcIngressConnectionsError`.
+    pub fn new(kind: ListVpcIngressConnectionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListVpcIngressConnectionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListVpcIngressConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListVpcIngressConnectionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListVpcIngressConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListVpcIngressConnectionsErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVpcIngressConnectionsErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListVpcIngressConnectionsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVpcIngressConnectionsErrorKind::InvalidRequestException(_)
+        )
+    }
+}
+impl std::error::Error for ListVpcIngressConnectionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListVpcIngressConnectionsErrorKind::InternalServiceErrorException(_inner) => {
+                Some(_inner)
+            }
+            ListVpcIngressConnectionsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListVpcIngressConnectionsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `PauseService` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4394,6 +4974,157 @@ impl std::error::Error for UpdateServiceError {
             UpdateServiceErrorKind::InvalidStateException(_inner) => Some(_inner),
             UpdateServiceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateServiceErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateVpcIngressConnection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateVpcIngressConnectionError {
+    /// Kind of error that occurred.
+    pub kind: UpdateVpcIngressConnectionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateVpcIngressConnectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateVpcIngressConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateVpcIngressConnection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateVpcIngressConnectionErrorKind {
+    /// <p>An unexpected service exception occurred.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>You can't perform this action when the resource is in its current state.</p>
+    InvalidStateException(crate::error::InvalidStateException),
+    /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateVpcIngressConnectionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateVpcIngressConnectionErrorKind::InternalServiceErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateVpcIngressConnectionErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            UpdateVpcIngressConnectionErrorKind::InvalidStateException(_inner) => _inner.fmt(f),
+            UpdateVpcIngressConnectionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateVpcIngressConnectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateVpcIngressConnectionError {
+    fn code(&self) -> Option<&str> {
+        UpdateVpcIngressConnectionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateVpcIngressConnectionError {
+    /// Creates a new `UpdateVpcIngressConnectionError`.
+    pub fn new(kind: UpdateVpcIngressConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateVpcIngressConnectionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateVpcIngressConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateVpcIngressConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateVpcIngressConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateVpcIngressConnectionErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateVpcIngressConnectionErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateVpcIngressConnectionErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateVpcIngressConnectionErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateVpcIngressConnectionErrorKind::InvalidStateException`.
+    pub fn is_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateVpcIngressConnectionErrorKind::InvalidStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateVpcIngressConnectionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateVpcIngressConnectionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateVpcIngressConnectionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateVpcIngressConnectionErrorKind::InternalServiceErrorException(_inner) => {
+                Some(_inner)
+            }
+            UpdateVpcIngressConnectionErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            UpdateVpcIngressConnectionErrorKind::InvalidStateException(_inner) => Some(_inner),
+            UpdateVpcIngressConnectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateVpcIngressConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

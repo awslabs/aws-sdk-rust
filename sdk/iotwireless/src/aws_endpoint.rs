@@ -34,6 +34,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "eu-central-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "api.iotwireless.eu-central-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("eu-central-1")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "eu-west-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "api.iotwireless.eu-west-1.amazonaws.com",
@@ -41,6 +52,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder()
                         .region("eu-west-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "sa-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "api.iotwireless.sa-east-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("sa-east-1")
                         .build(),
                 },
             )

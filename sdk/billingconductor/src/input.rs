@@ -778,12 +778,12 @@ pub mod create_billing_group_input {
             self.primary_account_id = input;
             self
         }
-        /// <p>The billing group description. </p>
+        /// <p>The description of the billing group. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The billing group description. </p>
+        /// <p>The description of the billing group. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1248,22 +1248,22 @@ pub mod create_pricing_plan_input {
             self.client_token = input;
             self
         }
-        /// <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+        /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+        /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The pricing plan description. </p>
+        /// <p>The description of the pricing plan. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The pricing plan description. </p>
+        /// <p>The description of the pricing plan. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1470,14 +1470,16 @@ pub mod create_pricing_rule_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) billing_entity: std::option::Option<std::string::String>,
+        pub(crate) tiering: std::option::Option<crate::model::CreateTieringInput>,
     }
     impl Builder {
-        /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+        /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+        /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1502,12 +1504,12 @@ pub mod create_pricing_rule_input {
             self.description = input;
             self
         }
-        /// <p> The scope of pricing rule that indicates if it is globally applicable, or is service-specific. </p>
+        /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
         pub fn scope(mut self, input: crate::model::PricingRuleScope) -> Self {
             self.scope = Some(input);
             self
         }
-        /// <p> The scope of pricing rule that indicates if it is globally applicable, or is service-specific. </p>
+        /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
         pub fn set_scope(
             mut self,
             input: std::option::Option<crate::model::PricingRuleScope>,
@@ -1528,12 +1530,12 @@ pub mod create_pricing_rule_input {
             self.r#type = input;
             self
         }
-        /// <p> A percentage modifier applied on the public pricing rates. </p>
+        /// <p> A percentage modifier that's applied on the public pricing rates. </p>
         pub fn modifier_percentage(mut self, input: f64) -> Self {
             self.modifier_percentage = Some(input);
             self
         }
-        /// <p> A percentage modifier applied on the public pricing rates. </p>
+        /// <p> A percentage modifier that's applied on the public pricing rates. </p>
         pub fn set_modifier_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.modifier_percentage = input;
             self
@@ -1573,6 +1575,32 @@ pub mod create_pricing_rule_input {
             self.tags = input;
             self
         }
+        /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+        pub fn billing_entity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.billing_entity = Some(input.into());
+            self
+        }
+        /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+        pub fn set_billing_entity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.billing_entity = input;
+            self
+        }
+        /// <p> The set of tiering configurations for the pricing rule. </p>
+        pub fn tiering(mut self, input: crate::model::CreateTieringInput) -> Self {
+            self.tiering = Some(input);
+            self
+        }
+        /// <p> The set of tiering configurations for the pricing rule. </p>
+        pub fn set_tiering(
+            mut self,
+            input: std::option::Option<crate::model::CreateTieringInput>,
+        ) -> Self {
+            self.tiering = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePricingRuleInput`](crate::input::CreatePricingRuleInput).
         pub fn build(
             self,
@@ -1589,6 +1617,8 @@ pub mod create_pricing_rule_input {
                 modifier_percentage: self.modifier_percentage,
                 service: self.service,
                 tags: self.tags,
+                billing_entity: self.billing_entity,
+                tiering: self.tiering,
             })
         }
     }
@@ -1603,6 +1633,8 @@ pub mod create_pricing_rule_input {
             formatter.field("modifier_percentage", &self.modifier_percentage);
             formatter.field("service", &self.service);
             formatter.field("tags", &self.tags);
+            formatter.field("billing_entity", &self.billing_entity);
+            formatter.field("tiering", &self.tiering);
             formatter.finish()
         }
     }
@@ -1730,12 +1762,12 @@ pub mod delete_billing_group_input {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the billing group you're deleting.</p>
+        /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the billing group you're deleting.</p>
+        /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2033,12 +2065,12 @@ pub mod delete_pricing_plan_input {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the pricing plan you're deleting. </p>
+        /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the pricing plan you're deleting. </p>
+        /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2173,12 +2205,12 @@ pub mod delete_pricing_rule_input {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+        /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+        /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2658,7 +2690,7 @@ pub mod list_account_associations_input {
         }
         /// <p>The filter on the account ID of the linked account, or any of the following:</p>
         /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
-        /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
+        /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
         /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
         pub fn filters(mut self, input: crate::model::ListAccountAssociationsFilter) -> Self {
             self.filters = Some(input);
@@ -2666,7 +2698,7 @@ pub mod list_account_associations_input {
         }
         /// <p>The filter on the account ID of the linked account, or any of the following:</p>
         /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
-        /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
+        /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
         /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
         pub fn set_filters(
             mut self,
@@ -2675,12 +2707,12 @@ pub mod list_account_associations_input {
             self.filters = input;
             self
         }
-        /// <p> The pagination token used on subsequent calls to retrieve accounts. </p>
+        /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The pagination token used on subsequent calls to retrieve accounts. </p>
+        /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2847,12 +2879,12 @@ pub mod list_billing_group_cost_reports_input {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token used on subsequent calls to get reports. </p>
+        /// <p>The pagination token that's used on subsequent calls to get reports. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used on subsequent calls to get reports. </p>
+        /// <p>The pagination token that's used on subsequent calls to get reports. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3031,12 +3063,12 @@ pub mod list_billing_groups_input {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token used on subsequent calls to get billing groups. </p>
+        /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used on subsequent calls to get billing groups. </p>
+        /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3215,12 +3247,12 @@ pub mod list_custom_line_items_input {
             self.max_results = input;
             self
         }
-        /// <p> The pagination token used on subsequent calls to get custom line items (FFLIs). </p>
+        /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The pagination token used on subsequent calls to get custom line items (FFLIs). </p>
+        /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3366,6 +3398,187 @@ impl ListCustomLineItemsInput {
     }
 }
 
+/// See [`ListCustomLineItemVersionsInput`](crate::input::ListCustomLineItemVersionsInput).
+pub mod list_custom_line_item_versions_input {
+
+    /// A builder for [`ListCustomLineItemVersionsInput`](crate::input::ListCustomLineItemVersionsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) filters: std::option::Option<crate::model::ListCustomLineItemVersionsFilter>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The maximum number of custom line item versions to retrieve.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of custom line item versions to retrieve.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
+        pub fn filters(mut self, input: crate::model::ListCustomLineItemVersionsFilter) -> Self {
+            self.filters = Some(input);
+            self
+        }
+        /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::ListCustomLineItemVersionsFilter>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCustomLineItemVersionsInput`](crate::input::ListCustomLineItemVersionsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListCustomLineItemVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListCustomLineItemVersionsInput {
+                arn: self.arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                filters: self.filters,
+            })
+        }
+    }
+}
+impl ListCustomLineItemVersionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListCustomLineItemVersions`](crate::operation::ListCustomLineItemVersions)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListCustomLineItemVersions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListCustomLineItemVersionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/list-custom-line-item-versions")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListCustomLineItemVersionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_line_item_versions(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListCustomLineItemVersions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListCustomLineItemVersions",
+            "billingconductor",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListCustomLineItemVersionsInput`](crate::input::ListCustomLineItemVersionsInput).
+    pub fn builder() -> crate::input::list_custom_line_item_versions_input::Builder {
+        crate::input::list_custom_line_item_versions_input::Builder::default()
+    }
+}
+
 /// See [`ListPricingPlansInput`](crate::input::ListPricingPlansInput).
 pub mod list_pricing_plans_input {
 
@@ -3414,12 +3627,12 @@ pub mod list_pricing_plans_input {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token used on subsequent call to get pricing plans. </p>
+        /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used on subsequent call to get pricing plans. </p>
+        /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3785,12 +3998,12 @@ pub mod list_pricing_rules_input {
             self.max_results = input;
             self
         }
-        /// <p> The pagination token used on subsequent call to get pricing rules. </p>
+        /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The pagination token used on subsequent call to get pricing rules. </p>
+        /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4152,12 +4365,12 @@ pub mod list_resources_associated_to_custom_line_item_input {
             self.max_results = input;
             self
         }
-        /// <p> (Optional) The pagination token returned by a previous request. </p>
+        /// <p> (Optional) The pagination token that's returned by a previous request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> (Optional) The pagination token returned by a previous request. </p>
+        /// <p> (Optional) The pagination token that's returned by a previous request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5265,12 +5478,12 @@ pub mod update_pricing_plan_input {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+        /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+        /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5285,12 +5498,12 @@ pub mod update_pricing_plan_input {
             self.name = input;
             self
         }
-        /// <p>The pricing plan description. </p>
+        /// <p>The description of the pricing plan. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The pricing plan description. </p>
+        /// <p>The description of the pricing plan. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5440,6 +5653,7 @@ pub mod update_pricing_rule_input {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::PricingRuleType>,
         pub(crate) modifier_percentage: std::option::Option<f64>,
+        pub(crate) tiering: std::option::Option<crate::model::UpdateTieringInput>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
@@ -5495,6 +5709,19 @@ pub mod update_pricing_rule_input {
             self.modifier_percentage = input;
             self
         }
+        /// <p> The set of tiering configurations for the pricing rule. </p>
+        pub fn tiering(mut self, input: crate::model::UpdateTieringInput) -> Self {
+            self.tiering = Some(input);
+            self
+        }
+        /// <p> The set of tiering configurations for the pricing rule. </p>
+        pub fn set_tiering(
+            mut self,
+            input: std::option::Option<crate::model::UpdateTieringInput>,
+        ) -> Self {
+            self.tiering = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdatePricingRuleInput`](crate::input::UpdatePricingRuleInput).
         pub fn build(
             self,
@@ -5508,6 +5735,7 @@ pub mod update_pricing_rule_input {
                 description: self.description,
                 r#type: self.r#type,
                 modifier_percentage: self.modifier_percentage,
+                tiering: self.tiering,
             })
         }
     }
@@ -5519,6 +5747,7 @@ pub mod update_pricing_rule_input {
             formatter.field("description", &"*** Sensitive Data Redacted ***");
             formatter.field("r#type", &self.r#type);
             formatter.field("modifier_percentage", &self.modifier_percentage);
+            formatter.field("tiering", &self.tiering);
             formatter.finish()
         }
     }
@@ -5682,7 +5911,7 @@ pub struct ListPricingRulesInput {
     /// <p> The maximum number of pricing rules to retrieve. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p> The pagination token used on subsequent call to get pricing rules. </p>
+    /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -5699,7 +5928,7 @@ impl ListPricingRulesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p> The pagination token used on subsequent call to get pricing rules. </p>
+    /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5709,7 +5938,7 @@ impl ListPricingRulesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePricingRuleInput {
-    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
@@ -5718,13 +5947,13 @@ pub struct CreatePricingRuleInput {
     /// <p> The pricing rule description. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p> The scope of pricing rule that indicates if it is globally applicable, or is service-specific. </p>
+    /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
     #[doc(hidden)]
     pub scope: std::option::Option<crate::model::PricingRuleScope>,
     /// <p> The type of pricing rule. </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PricingRuleType>,
-    /// <p> A percentage modifier applied on the public pricing rates. </p>
+    /// <p> A percentage modifier that's applied on the public pricing rates. </p>
     #[doc(hidden)]
     pub modifier_percentage: std::option::Option<f64>,
     /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
@@ -5734,9 +5963,15 @@ pub struct CreatePricingRuleInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+    #[doc(hidden)]
+    pub billing_entity: std::option::Option<std::string::String>,
+    /// <p> The set of tiering configurations for the pricing rule. </p>
+    #[doc(hidden)]
+    pub tiering: std::option::Option<crate::model::CreateTieringInput>,
 }
 impl CreatePricingRuleInput {
-    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5748,7 +5983,7 @@ impl CreatePricingRuleInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The scope of pricing rule that indicates if it is globally applicable, or is service-specific. </p>
+    /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
     pub fn scope(&self) -> std::option::Option<&crate::model::PricingRuleScope> {
         self.scope.as_ref()
     }
@@ -5756,7 +5991,7 @@ impl CreatePricingRuleInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::PricingRuleType> {
         self.r#type.as_ref()
     }
-    /// <p> A percentage modifier applied on the public pricing rates. </p>
+    /// <p> A percentage modifier that's applied on the public pricing rates. </p>
     pub fn modifier_percentage(&self) -> std::option::Option<f64> {
         self.modifier_percentage
     }
@@ -5771,6 +6006,14 @@ impl CreatePricingRuleInput {
     {
         self.tags.as_ref()
     }
+    /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+    pub fn billing_entity(&self) -> std::option::Option<&str> {
+        self.billing_entity.as_deref()
+    }
+    /// <p> The set of tiering configurations for the pricing rule. </p>
+    pub fn tiering(&self) -> std::option::Option<&crate::model::CreateTieringInput> {
+        self.tiering.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePricingRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5783,6 +6026,8 @@ impl std::fmt::Debug for CreatePricingRuleInput {
         formatter.field("modifier_percentage", &self.modifier_percentage);
         formatter.field("service", &self.service);
         formatter.field("tags", &self.tags);
+        formatter.field("billing_entity", &self.billing_entity);
+        formatter.field("tiering", &self.tiering);
         formatter.finish()
     }
 }
@@ -5791,12 +6036,12 @@ impl std::fmt::Debug for CreatePricingRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePricingRuleInput {
-    /// <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+    /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeletePricingRuleInput {
-    /// <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+    /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -5821,6 +6066,9 @@ pub struct UpdatePricingRuleInput {
     /// <p> The new modifier to show pricing plan rates as a percentage. </p>
     #[doc(hidden)]
     pub modifier_percentage: std::option::Option<f64>,
+    /// <p> The set of tiering configurations for the pricing rule. </p>
+    #[doc(hidden)]
+    pub tiering: std::option::Option<crate::model::UpdateTieringInput>,
 }
 impl UpdatePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
@@ -5843,6 +6091,10 @@ impl UpdatePricingRuleInput {
     pub fn modifier_percentage(&self) -> std::option::Option<f64> {
         self.modifier_percentage
     }
+    /// <p> The set of tiering configurations for the pricing rule. </p>
+    pub fn tiering(&self) -> std::option::Option<&crate::model::UpdateTieringInput> {
+        self.tiering.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdatePricingRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5852,6 +6104,7 @@ impl std::fmt::Debug for UpdatePricingRuleInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
         formatter.field("modifier_percentage", &self.modifier_percentage);
+        formatter.field("tiering", &self.tiering);
         formatter.finish()
     }
 }
@@ -5949,7 +6202,7 @@ pub struct ListPricingPlansInput {
     /// <p>The maximum number of pricing plans to retrieve.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token used on subsequent call to get pricing plans. </p>
+    /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -5966,7 +6219,7 @@ impl ListPricingPlansInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token used on subsequent call to get pricing plans. </p>
+    /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5979,10 +6232,10 @@ pub struct CreatePricingPlanInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+    /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The pricing plan description. </p>
+    /// <p>The description of the pricing plan. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
@@ -5998,11 +6251,11 @@ impl CreatePricingPlanInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+    /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The pricing plan description. </p>
+    /// <p>The description of the pricing plan. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -6034,12 +6287,12 @@ impl std::fmt::Debug for CreatePricingPlanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePricingPlanInput {
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan you're deleting. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeletePricingPlanInput {
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan you're deleting. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -6049,18 +6302,18 @@ impl DeletePricingPlanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePricingPlanInput {
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The pricing plan description. </p>
+    /// <p>The description of the pricing plan. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdatePricingPlanInput {
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -6068,7 +6321,7 @@ impl UpdatePricingPlanInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The pricing plan description. </p>
+    /// <p>The description of the pricing plan. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -6096,7 +6349,7 @@ pub struct ListResourcesAssociatedToCustomLineItemInput {
     /// <p> (Optional) The maximum number of resource associations to be retrieved. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p> (Optional) The pagination token returned by a previous request. </p>
+    /// <p> (Optional) The pagination token that's returned by a previous request. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
@@ -6116,7 +6369,7 @@ impl ListResourcesAssociatedToCustomLineItemInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p> (Optional) The pagination token returned by a previous request. </p>
+    /// <p> (Optional) The pagination token that's returned by a previous request. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6124,6 +6377,42 @@ impl ListResourcesAssociatedToCustomLineItemInput {
     pub fn filters(
         &self,
     ) -> std::option::Option<&crate::model::ListResourcesAssociatedToCustomLineItemFilter> {
+        self.filters.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListCustomLineItemVersionsInput {
+    /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The maximum number of custom line item versions to retrieve.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
+    #[doc(hidden)]
+    pub filters: std::option::Option<crate::model::ListCustomLineItemVersionsFilter>,
+}
+impl ListCustomLineItemVersionsInput {
+    /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The maximum number of custom line item versions to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::ListCustomLineItemVersionsFilter> {
         self.filters.as_ref()
     }
 }
@@ -6200,7 +6489,7 @@ pub struct ListCustomLineItemsInput {
     /// <p> The maximum number of billing groups to retrieve. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p> The pagination token used on subsequent calls to get custom line items (FFLIs). </p>
+    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
@@ -6216,7 +6505,7 @@ impl ListCustomLineItemsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p> The pagination token used on subsequent calls to get custom line items (FFLIs). </p>
+    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6440,7 +6729,7 @@ pub struct ListBillingGroupsInput {
     /// <p>The maximum number of billing groups to retrieve. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token used on subsequent calls to get billing groups. </p>
+    /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information. </p>
@@ -6456,7 +6745,7 @@ impl ListBillingGroupsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token used on subsequent calls to get billing groups. </p>
+    /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6485,7 +6774,7 @@ pub struct CreateBillingGroupInput {
     /// <p> The account ID that serves as the main account in a billing group. </p>
     #[doc(hidden)]
     pub primary_account_id: std::option::Option<std::string::String>,
-    /// <p>The billing group description. </p>
+    /// <p>The description of the billing group. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
@@ -6516,7 +6805,7 @@ impl CreateBillingGroupInput {
     pub fn primary_account_id(&self) -> std::option::Option<&str> {
         self.primary_account_id.as_deref()
     }
-    /// <p>The billing group description. </p>
+    /// <p>The description of the billing group. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -6546,12 +6835,12 @@ impl std::fmt::Debug for CreateBillingGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBillingGroupInput {
-    /// <p>The Amazon Resource Name (ARN) of the billing group you're deleting.</p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteBillingGroupInput {
-    /// <p>The Amazon Resource Name (ARN) of the billing group you're deleting.</p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -6686,7 +6975,7 @@ pub struct ListBillingGroupCostReportsInput {
     /// <p>The maximum number of reports to retrieve. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token used on subsequent calls to get reports. </p>
+    /// <p>The pagination token that's used on subsequent calls to get reports. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
@@ -6702,7 +6991,7 @@ impl ListBillingGroupCostReportsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token used on subsequent calls to get reports. </p>
+    /// <p>The pagination token that's used on subsequent calls to get reports. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6721,11 +7010,11 @@ pub struct ListAccountAssociationsInput {
     pub billing_period: std::option::Option<std::string::String>,
     /// <p>The filter on the account ID of the linked account, or any of the following:</p>
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
-    /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
+    /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
     #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ListAccountAssociationsFilter>,
-    /// <p> The pagination token used on subsequent calls to retrieve accounts. </p>
+    /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -6736,12 +7025,12 @@ impl ListAccountAssociationsInput {
     }
     /// <p>The filter on the account ID of the linked account, or any of the following:</p>
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
-    /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
+    /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
     pub fn filters(&self) -> std::option::Option<&crate::model::ListAccountAssociationsFilter> {
         self.filters.as_ref()
     }
-    /// <p> The pagination token used on subsequent calls to retrieve accounts. </p>
+    /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }

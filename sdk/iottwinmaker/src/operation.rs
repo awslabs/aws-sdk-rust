@@ -131,6 +131,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateScene {
     }
 }
 
+/// Operation shape for `CreateSyncJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_sync_job`](crate::client::Client::create_sync_job).
+///
+/// See [`crate::client::fluent_builders::CreateSyncJob`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateSyncJob {
+    _private: (),
+}
+impl CreateSyncJob {
+    /// Creates a new builder-style object to manufacture [`CreateSyncJobInput`](crate::input::CreateSyncJobInput).
+    pub fn builder() -> crate::input::create_sync_job_input::Builder {
+        crate::input::create_sync_job_input::Builder::default()
+    }
+    /// Creates a new `CreateSyncJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateSyncJob {
+    type Output =
+        std::result::Result<crate::output::CreateSyncJobOutput, crate::error::CreateSyncJobError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_sync_job_error(response)
+        } else {
+            crate::operation_deser::parse_create_sync_job_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateWorkspace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -263,6 +295,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScene {
     }
 }
 
+/// Operation shape for `DeleteSyncJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_sync_job`](crate::client::Client::delete_sync_job).
+///
+/// See [`crate::client::fluent_builders::DeleteSyncJob`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteSyncJob {
+    _private: (),
+}
+impl DeleteSyncJob {
+    /// Creates a new builder-style object to manufacture [`DeleteSyncJobInput`](crate::input::DeleteSyncJobInput).
+    pub fn builder() -> crate::input::delete_sync_job_input::Builder {
+        crate::input::delete_sync_job_input::Builder::default()
+    }
+    /// Creates a new `DeleteSyncJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteSyncJob {
+    type Output =
+        std::result::Result<crate::output::DeleteSyncJobOutput, crate::error::DeleteSyncJobError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_sync_job_error(response)
+        } else {
+            crate::operation_deser::parse_delete_sync_job_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteWorkspace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -293,6 +357,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkspace {
             crate::operation_deser::parse_delete_workspace_error(response)
         } else {
             crate::operation_deser::parse_delete_workspace_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ExecuteQuery`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`execute_query`](crate::client::Client::execute_query).
+///
+/// See [`crate::client::fluent_builders::ExecuteQuery`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ExecuteQuery {
+    _private: (),
+}
+impl ExecuteQuery {
+    /// Creates a new builder-style object to manufacture [`ExecuteQueryInput`](crate::input::ExecuteQueryInput).
+    pub fn builder() -> crate::input::execute_query_input::Builder {
+        crate::input::execute_query_input::Builder::default()
+    }
+    /// Creates a new `ExecuteQuery` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ExecuteQuery {
+    type Output =
+        std::result::Result<crate::output::ExecuteQueryOutput, crate::error::ExecuteQueryError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_execute_query_error(response)
+        } else {
+            crate::operation_deser::parse_execute_query_response(response)
         }
     }
 }
@@ -358,6 +454,38 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEntity {
             crate::operation_deser::parse_get_entity_error(response)
         } else {
             crate::operation_deser::parse_get_entity_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetPricingPlan`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_pricing_plan`](crate::client::Client::get_pricing_plan).
+///
+/// See [`crate::client::fluent_builders::GetPricingPlan`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetPricingPlan {
+    _private: (),
+}
+impl GetPricingPlan {
+    /// Creates a new builder-style object to manufacture [`GetPricingPlanInput`](crate::input::GetPricingPlanInput).
+    pub fn builder() -> crate::input::get_pricing_plan_input::Builder {
+        crate::input::get_pricing_plan_input::Builder::default()
+    }
+    /// Creates a new `GetPricingPlan` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetPricingPlan {
+    type Output =
+        std::result::Result<crate::output::GetPricingPlanOutput, crate::error::GetPricingPlanError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_pricing_plan_error(response)
+        } else {
+            crate::operation_deser::parse_get_pricing_plan_response(response)
         }
     }
 }
@@ -457,6 +585,38 @@ impl aws_smithy_http::response::ParseStrictResponse for GetScene {
             crate::operation_deser::parse_get_scene_error(response)
         } else {
             crate::operation_deser::parse_get_scene_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetSyncJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_sync_job`](crate::client::Client::get_sync_job).
+///
+/// See [`crate::client::fluent_builders::GetSyncJob`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetSyncJob {
+    _private: (),
+}
+impl GetSyncJob {
+    /// Creates a new builder-style object to manufacture [`GetSyncJobInput`](crate::input::GetSyncJobInput).
+    pub fn builder() -> crate::input::get_sync_job_input::Builder {
+        crate::input::get_sync_job_input::Builder::default()
+    }
+    /// Creates a new `GetSyncJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetSyncJob {
+    type Output =
+        std::result::Result<crate::output::GetSyncJobOutput, crate::error::GetSyncJobError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_sync_job_error(response)
+        } else {
+            crate::operation_deser::parse_get_sync_job_response(response)
         }
     }
 }
@@ -587,6 +747,72 @@ impl aws_smithy_http::response::ParseStrictResponse for ListScenes {
             crate::operation_deser::parse_list_scenes_error(response)
         } else {
             crate::operation_deser::parse_list_scenes_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListSyncJobs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_sync_jobs`](crate::client::Client::list_sync_jobs).
+///
+/// See [`crate::client::fluent_builders::ListSyncJobs`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListSyncJobs {
+    _private: (),
+}
+impl ListSyncJobs {
+    /// Creates a new builder-style object to manufacture [`ListSyncJobsInput`](crate::input::ListSyncJobsInput).
+    pub fn builder() -> crate::input::list_sync_jobs_input::Builder {
+        crate::input::list_sync_jobs_input::Builder::default()
+    }
+    /// Creates a new `ListSyncJobs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSyncJobs {
+    type Output =
+        std::result::Result<crate::output::ListSyncJobsOutput, crate::error::ListSyncJobsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_sync_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_sync_jobs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListSyncResources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_sync_resources`](crate::client::Client::list_sync_resources).
+///
+/// See [`crate::client::fluent_builders::ListSyncResources`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListSyncResources {
+    _private: (),
+}
+impl ListSyncResources {
+    /// Creates a new builder-style object to manufacture [`ListSyncResourcesInput`](crate::input::ListSyncResourcesInput).
+    pub fn builder() -> crate::input::list_sync_resources_input::Builder {
+        crate::input::list_sync_resources_input::Builder::default()
+    }
+    /// Creates a new `ListSyncResources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSyncResources {
+    type Output = std::result::Result<
+        crate::output::ListSyncResourcesOutput,
+        crate::error::ListSyncResourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_sync_resources_error(response)
+        } else {
+            crate::operation_deser::parse_list_sync_resources_response(response)
         }
     }
 }
@@ -783,6 +1009,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEntity {
             crate::operation_deser::parse_update_entity_error(response)
         } else {
             crate::operation_deser::parse_update_entity_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdatePricingPlan`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_pricing_plan`](crate::client::Client::update_pricing_plan).
+///
+/// See [`crate::client::fluent_builders::UpdatePricingPlan`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdatePricingPlan {
+    _private: (),
+}
+impl UpdatePricingPlan {
+    /// Creates a new builder-style object to manufacture [`UpdatePricingPlanInput`](crate::input::UpdatePricingPlanInput).
+    pub fn builder() -> crate::input::update_pricing_plan_input::Builder {
+        crate::input::update_pricing_plan_input::Builder::default()
+    }
+    /// Creates a new `UpdatePricingPlan` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdatePricingPlan {
+    type Output = std::result::Result<
+        crate::output::UpdatePricingPlanOutput,
+        crate::error::UpdatePricingPlanError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_pricing_plan_error(response)
+        } else {
+            crate::operation_deser::parse_update_pricing_plan_response(response)
         }
     }
 }

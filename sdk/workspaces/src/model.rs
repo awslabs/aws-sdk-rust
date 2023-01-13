@@ -719,7 +719,9 @@ impl AsRef<str> for TargetWorkspaceState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkspaceProperties {
-    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p>
+    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note>
+    /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+    /// </note>
     #[doc(hidden)]
     pub running_mode: std::option::Option<crate::model::RunningMode>,
     /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
@@ -734,9 +736,20 @@ pub struct WorkspaceProperties {
     /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
     #[doc(hidden)]
     pub compute_type_name: std::option::Option<crate::model::Compute>,
+    /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
+    /// <ul>
+    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li>
+    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li>
+    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
+    /// </ul>
+    /// </note>
+    #[doc(hidden)]
+    pub protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
 }
 impl WorkspaceProperties {
-    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p>
+    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note>
+    /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+    /// </note>
     pub fn running_mode(&self) -> std::option::Option<&crate::model::RunningMode> {
         self.running_mode.as_ref()
     }
@@ -756,6 +769,16 @@ impl WorkspaceProperties {
     pub fn compute_type_name(&self) -> std::option::Option<&crate::model::Compute> {
         self.compute_type_name.as_ref()
     }
+    /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
+    /// <ul>
+    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li>
+    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li>
+    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn protocols(&self) -> std::option::Option<&[crate::model::Protocol]> {
+        self.protocols.as_deref()
+    }
 }
 /// See [`WorkspaceProperties`](crate::model::WorkspaceProperties).
 pub mod workspace_properties {
@@ -768,14 +791,19 @@ pub mod workspace_properties {
         pub(crate) root_volume_size_gib: std::option::Option<i32>,
         pub(crate) user_volume_size_gib: std::option::Option<i32>,
         pub(crate) compute_type_name: std::option::Option<crate::model::Compute>,
+        pub(crate) protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
     }
     impl Builder {
-        /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p>
+        /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note>
+        /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+        /// </note>
         pub fn running_mode(mut self, input: crate::model::RunningMode) -> Self {
             self.running_mode = Some(input);
             self
         }
-        /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p>
+        /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note>
+        /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+        /// </note>
         pub fn set_running_mode(
             mut self,
             input: std::option::Option<crate::model::RunningMode>,
@@ -829,6 +857,37 @@ pub mod workspace_properties {
             self.compute_type_name = input;
             self
         }
+        /// Appends an item to `protocols`.
+        ///
+        /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
+        ///
+        /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
+        /// <ul>
+        /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li>
+        /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li>
+        /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
+            let mut v = self.protocols.unwrap_or_default();
+            v.push(input);
+            self.protocols = Some(v);
+            self
+        }
+        /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
+        /// <ul>
+        /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li>
+        /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li>
+        /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn set_protocols(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
+        ) -> Self {
+            self.protocols = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkspaceProperties`](crate::model::WorkspaceProperties).
         pub fn build(self) -> crate::model::WorkspaceProperties {
             crate::model::WorkspaceProperties {
@@ -838,6 +897,7 @@ pub mod workspace_properties {
                 root_volume_size_gib: self.root_volume_size_gib,
                 user_volume_size_gib: self.user_volume_size_gib,
                 compute_type_name: self.compute_type_name,
+                protocols: self.protocols,
             }
         }
     }
@@ -846,6 +906,96 @@ impl WorkspaceProperties {
     /// Creates a new builder-style object to manufacture [`WorkspaceProperties`](crate::model::WorkspaceProperties).
     pub fn builder() -> crate::model::workspace_properties::Builder {
         crate::model::workspace_properties::Builder::default()
+    }
+}
+
+/// When writing a match expression against `Protocol`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let protocol = unimplemented!();
+/// match protocol {
+///     Protocol::Pcoip => { /* ... */ },
+///     Protocol::Wsp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `protocol` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Protocol::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Protocol::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Protocol::NewFeature` is defined.
+/// Specifically, when `protocol` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Protocol::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Protocol {
+    #[allow(missing_docs)] // documentation missing in model
+    Pcoip,
+    #[allow(missing_docs)] // documentation missing in model
+    Wsp,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for Protocol {
+    fn from(s: &str) -> Self {
+        match s {
+            "PCOIP" => Protocol::Pcoip,
+            "WSP" => Protocol::Wsp,
+            other => Protocol::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for Protocol {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Protocol::from(s))
+    }
+}
+impl Protocol {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Protocol::Pcoip => "PCOIP",
+            Protocol::Wsp => "WSP",
+            Protocol::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["PCOIP", "WSP"]
+    }
+}
+impl AsRef<str> for Protocol {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -998,6 +1148,7 @@ impl AsRef<str> for Compute {
 /// match runningmode {
 ///     RunningMode::AlwaysOn => { /* ... */ },
 ///     RunningMode::AutoStop => { /* ... */ },
+///     RunningMode::Manual => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -1035,6 +1186,8 @@ pub enum RunningMode {
     AlwaysOn,
     #[allow(missing_docs)] // documentation missing in model
     AutoStop,
+    #[allow(missing_docs)] // documentation missing in model
+    Manual,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -1043,6 +1196,7 @@ impl std::convert::From<&str> for RunningMode {
         match s {
             "ALWAYS_ON" => RunningMode::AlwaysOn,
             "AUTO_STOP" => RunningMode::AutoStop,
+            "MANUAL" => RunningMode::Manual,
             other => RunningMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -1060,12 +1214,13 @@ impl RunningMode {
         match self {
             RunningMode::AlwaysOn => "ALWAYS_ON",
             RunningMode::AutoStop => "AUTO_STOP",
+            RunningMode::Manual => "MANUAL",
             RunningMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALWAYS_ON", "AUTO_STOP"]
+        &["ALWAYS_ON", "AUTO_STOP", "MANUAL"]
     }
 }
 impl AsRef<str> for RunningMode {
@@ -2267,6 +2422,256 @@ impl AsRef<str> for LogUploadEnum {
     }
 }
 
+/// When writing a match expression against `DeletableCertificateBasedAuthProperty`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let deletablecertificatebasedauthproperty = unimplemented!();
+/// match deletablecertificatebasedauthproperty {
+///     DeletableCertificateBasedAuthProperty::CertificateBasedAuthPropertiesCertificateAuthorityArn => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `deletablecertificatebasedauthproperty` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DeletableCertificateBasedAuthProperty::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DeletableCertificateBasedAuthProperty::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DeletableCertificateBasedAuthProperty::NewFeature` is defined.
+/// Specifically, when `deletablecertificatebasedauthproperty` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DeletableCertificateBasedAuthProperty::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DeletableCertificateBasedAuthProperty {
+    #[allow(missing_docs)] // documentation missing in model
+    CertificateBasedAuthPropertiesCertificateAuthorityArn,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DeletableCertificateBasedAuthProperty {
+    fn from(s: &str) -> Self {
+        match s {
+            "CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN" => DeletableCertificateBasedAuthProperty::CertificateBasedAuthPropertiesCertificateAuthorityArn,
+            other => DeletableCertificateBasedAuthProperty::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+        }
+    }
+}
+impl std::str::FromStr for DeletableCertificateBasedAuthProperty {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeletableCertificateBasedAuthProperty::from(s))
+    }
+}
+impl DeletableCertificateBasedAuthProperty {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeletableCertificateBasedAuthProperty::CertificateBasedAuthPropertiesCertificateAuthorityArn => "CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN",
+            DeletableCertificateBasedAuthProperty::Unknown(value) => value.as_str()
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN"]
+    }
+}
+impl AsRef<str> for DeletableCertificateBasedAuthProperty {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the properties of the certificate-based authentication you want to use with your WorkSpaces.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CertificateBasedAuthProperties {
+    /// <p>The status of the certificate-based authentication properties.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::CertificateBasedAuthStatusEnum>,
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager Private CA resource.</p>
+    #[doc(hidden)]
+    pub certificate_authority_arn: std::option::Option<std::string::String>,
+}
+impl CertificateBasedAuthProperties {
+    /// <p>The status of the certificate-based authentication properties.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CertificateBasedAuthStatusEnum> {
+        self.status.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager Private CA resource.</p>
+    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+        self.certificate_authority_arn.as_deref()
+    }
+}
+/// See [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
+pub mod certificate_based_auth_properties {
+
+    /// A builder for [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::CertificateBasedAuthStatusEnum>,
+        pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status of the certificate-based authentication properties.</p>
+        pub fn status(mut self, input: crate::model::CertificateBasedAuthStatusEnum) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the certificate-based authentication properties.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CertificateBasedAuthStatusEnum>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager Private CA resource.</p>
+        pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_authority_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager Private CA resource.</p>
+        pub fn set_certificate_authority_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_authority_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
+        pub fn build(self) -> crate::model::CertificateBasedAuthProperties {
+            crate::model::CertificateBasedAuthProperties {
+                status: self.status,
+                certificate_authority_arn: self.certificate_authority_arn,
+            }
+        }
+    }
+}
+impl CertificateBasedAuthProperties {
+    /// Creates a new builder-style object to manufacture [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
+    pub fn builder() -> crate::model::certificate_based_auth_properties::Builder {
+        crate::model::certificate_based_auth_properties::Builder::default()
+    }
+}
+
+/// When writing a match expression against `CertificateBasedAuthStatusEnum`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let certificatebasedauthstatusenum = unimplemented!();
+/// match certificatebasedauthstatusenum {
+///     CertificateBasedAuthStatusEnum::Disabled => { /* ... */ },
+///     CertificateBasedAuthStatusEnum::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `certificatebasedauthstatusenum` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CertificateBasedAuthStatusEnum::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CertificateBasedAuthStatusEnum::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CertificateBasedAuthStatusEnum::NewFeature` is defined.
+/// Specifically, when `certificatebasedauthstatusenum` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CertificateBasedAuthStatusEnum::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CertificateBasedAuthStatusEnum {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for CertificateBasedAuthStatusEnum {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => CertificateBasedAuthStatusEnum::Disabled,
+            "ENABLED" => CertificateBasedAuthStatusEnum::Enabled,
+            other => CertificateBasedAuthStatusEnum::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for CertificateBasedAuthStatusEnum {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CertificateBasedAuthStatusEnum::from(s))
+    }
+}
+impl CertificateBasedAuthStatusEnum {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CertificateBasedAuthStatusEnum::Disabled => "DISABLED",
+            CertificateBasedAuthStatusEnum::Enabled => "ENABLED",
+            CertificateBasedAuthStatusEnum::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for CertificateBasedAuthStatusEnum {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// When writing a match expression against `DedicatedTenancySupportEnum`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
 /// feature that is supported by the service but has not been represented as an enum
@@ -2459,7 +2864,9 @@ impl AsRef<str> for Application {
 ///     WorkspaceImageIngestionProcess::ByolGraphics => { /* ... */ },
 ///     WorkspaceImageIngestionProcess::ByolGraphicspro => { /* ... */ },
 ///     WorkspaceImageIngestionProcess::ByolGraphicsG4Dn => { /* ... */ },
+///     WorkspaceImageIngestionProcess::ByolGraphicsG4DnByop => { /* ... */ },
 ///     WorkspaceImageIngestionProcess::ByolRegular => { /* ... */ },
+///     WorkspaceImageIngestionProcess::ByolRegularByop => { /* ... */ },
 ///     WorkspaceImageIngestionProcess::ByolRegularWsp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -2501,7 +2908,11 @@ pub enum WorkspaceImageIngestionProcess {
     #[allow(missing_docs)] // documentation missing in model
     ByolGraphicsG4Dn,
     #[allow(missing_docs)] // documentation missing in model
+    ByolGraphicsG4DnByop,
+    #[allow(missing_docs)] // documentation missing in model
     ByolRegular,
+    #[allow(missing_docs)] // documentation missing in model
+    ByolRegularByop,
     #[allow(missing_docs)] // documentation missing in model
     ByolRegularWsp,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -2513,7 +2924,9 @@ impl std::convert::From<&str> for WorkspaceImageIngestionProcess {
             "BYOL_GRAPHICS" => WorkspaceImageIngestionProcess::ByolGraphics,
             "BYOL_GRAPHICSPRO" => WorkspaceImageIngestionProcess::ByolGraphicspro,
             "BYOL_GRAPHICS_G4DN" => WorkspaceImageIngestionProcess::ByolGraphicsG4Dn,
+            "BYOL_GRAPHICS_G4DN_BYOP" => WorkspaceImageIngestionProcess::ByolGraphicsG4DnByop,
             "BYOL_REGULAR" => WorkspaceImageIngestionProcess::ByolRegular,
+            "BYOL_REGULAR_BYOP" => WorkspaceImageIngestionProcess::ByolRegularByop,
             "BYOL_REGULAR_WSP" => WorkspaceImageIngestionProcess::ByolRegularWsp,
             other => WorkspaceImageIngestionProcess::Unknown(crate::types::UnknownVariantValue(
                 other.to_owned(),
@@ -2535,7 +2948,9 @@ impl WorkspaceImageIngestionProcess {
             WorkspaceImageIngestionProcess::ByolGraphics => "BYOL_GRAPHICS",
             WorkspaceImageIngestionProcess::ByolGraphicspro => "BYOL_GRAPHICSPRO",
             WorkspaceImageIngestionProcess::ByolGraphicsG4Dn => "BYOL_GRAPHICS_G4DN",
+            WorkspaceImageIngestionProcess::ByolGraphicsG4DnByop => "BYOL_GRAPHICS_G4DN_BYOP",
             WorkspaceImageIngestionProcess::ByolRegular => "BYOL_REGULAR",
+            WorkspaceImageIngestionProcess::ByolRegularByop => "BYOL_REGULAR_BYOP",
             WorkspaceImageIngestionProcess::ByolRegularWsp => "BYOL_REGULAR_WSP",
             WorkspaceImageIngestionProcess::Unknown(value) => value.as_str(),
         }
@@ -2546,7 +2961,9 @@ impl WorkspaceImageIngestionProcess {
             "BYOL_GRAPHICS",
             "BYOL_GRAPHICSPRO",
             "BYOL_GRAPHICS_G4DN",
+            "BYOL_GRAPHICS_G4DN_BYOP",
             "BYOL_REGULAR",
+            "BYOL_REGULAR_BYOP",
             "BYOL_REGULAR_WSP",
         ]
     }
@@ -3760,6 +4177,10 @@ pub struct Workspace {
     /// <p>The modification states of the WorkSpace.</p>
     #[doc(hidden)]
     pub modification_states: std::option::Option<std::vec::Vec<crate::model::ModificationState>>,
+    /// <p>The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.</p>
+    #[doc(hidden)]
+    pub related_workspaces:
+        std::option::Option<std::vec::Vec<crate::model::RelatedWorkspaceProperties>>,
 }
 impl Workspace {
     /// <p>The identifier of the WorkSpace.</p>
@@ -3824,6 +4245,12 @@ impl Workspace {
     pub fn modification_states(&self) -> std::option::Option<&[crate::model::ModificationState]> {
         self.modification_states.as_deref()
     }
+    /// <p>The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.</p>
+    pub fn related_workspaces(
+        &self,
+    ) -> std::option::Option<&[crate::model::RelatedWorkspaceProperties]> {
+        self.related_workspaces.as_deref()
+    }
 }
 /// See [`Workspace`](crate::model::Workspace).
 pub mod workspace {
@@ -3847,6 +4274,8 @@ pub mod workspace {
         pub(crate) workspace_properties: std::option::Option<crate::model::WorkspaceProperties>,
         pub(crate) modification_states:
             std::option::Option<std::vec::Vec<crate::model::ModificationState>>,
+        pub(crate) related_workspaces:
+            std::option::Option<std::vec::Vec<crate::model::RelatedWorkspaceProperties>>,
     }
     impl Builder {
         /// <p>The identifier of the WorkSpace.</p>
@@ -4033,6 +4462,28 @@ pub mod workspace {
             self.modification_states = input;
             self
         }
+        /// Appends an item to `related_workspaces`.
+        ///
+        /// To override the contents of this collection use [`set_related_workspaces`](Self::set_related_workspaces).
+        ///
+        /// <p>The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.</p>
+        pub fn related_workspaces(
+            mut self,
+            input: crate::model::RelatedWorkspaceProperties,
+        ) -> Self {
+            let mut v = self.related_workspaces.unwrap_or_default();
+            v.push(input);
+            self.related_workspaces = Some(v);
+            self
+        }
+        /// <p>The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.</p>
+        pub fn set_related_workspaces(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RelatedWorkspaceProperties>>,
+        ) -> Self {
+            self.related_workspaces = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Workspace`](crate::model::Workspace).
         pub fn build(self) -> crate::model::Workspace {
             crate::model::Workspace {
@@ -4051,6 +4502,7 @@ pub mod workspace {
                 root_volume_encryption_enabled: self.root_volume_encryption_enabled,
                 workspace_properties: self.workspace_properties,
                 modification_states: self.modification_states,
+                related_workspaces: self.related_workspaces,
             }
         }
     }
@@ -4059,6 +4511,392 @@ impl Workspace {
     /// Creates a new builder-style object to manufacture [`Workspace`](crate::model::Workspace).
     pub fn builder() -> crate::model::workspace::Builder {
         crate::model::workspace::Builder::default()
+    }
+}
+
+/// <p>Describes the related WorkSpace. The related WorkSpace could be a Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RelatedWorkspaceProperties {
+    /// <p>The identifier of the related WorkSpace.</p>
+    #[doc(hidden)]
+    pub workspace_id: std::option::Option<std::string::String>,
+    /// <p>The Region of the related WorkSpace.</p>
+    #[doc(hidden)]
+    pub region: std::option::Option<std::string::String>,
+    /// <p>Indicates the state of the WorkSpace.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::WorkspaceState>,
+    /// <p>Indicates the type of WorkSpace.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::StandbyWorkspaceRelationshipType>,
+}
+impl RelatedWorkspaceProperties {
+    /// <p>The identifier of the related WorkSpace.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// <p>The Region of the related WorkSpace.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>Indicates the state of the WorkSpace.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::WorkspaceState> {
+        self.state.as_ref()
+    }
+    /// <p>Indicates the type of WorkSpace.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::StandbyWorkspaceRelationshipType> {
+        self.r#type.as_ref()
+    }
+}
+/// See [`RelatedWorkspaceProperties`](crate::model::RelatedWorkspaceProperties).
+pub mod related_workspace_properties {
+
+    /// A builder for [`RelatedWorkspaceProperties`](crate::model::RelatedWorkspaceProperties).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workspace_id: std::option::Option<std::string::String>,
+        pub(crate) region: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::WorkspaceState>,
+        pub(crate) r#type: std::option::Option<crate::model::StandbyWorkspaceRelationshipType>,
+    }
+    impl Builder {
+        /// <p>The identifier of the related WorkSpace.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workspace_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the related WorkSpace.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workspace_id = input;
+            self
+        }
+        /// <p>The Region of the related WorkSpace.</p>
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
+            self
+        }
+        /// <p>The Region of the related WorkSpace.</p>
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
+            self
+        }
+        /// <p>Indicates the state of the WorkSpace.</p>
+        pub fn state(mut self, input: crate::model::WorkspaceState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>Indicates the state of the WorkSpace.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::WorkspaceState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>Indicates the type of WorkSpace.</p>
+        pub fn r#type(mut self, input: crate::model::StandbyWorkspaceRelationshipType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Indicates the type of WorkSpace.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::StandbyWorkspaceRelationshipType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RelatedWorkspaceProperties`](crate::model::RelatedWorkspaceProperties).
+        pub fn build(self) -> crate::model::RelatedWorkspaceProperties {
+            crate::model::RelatedWorkspaceProperties {
+                workspace_id: self.workspace_id,
+                region: self.region,
+                state: self.state,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl RelatedWorkspaceProperties {
+    /// Creates a new builder-style object to manufacture [`RelatedWorkspaceProperties`](crate::model::RelatedWorkspaceProperties).
+    pub fn builder() -> crate::model::related_workspace_properties::Builder {
+        crate::model::related_workspace_properties::Builder::default()
+    }
+}
+
+/// When writing a match expression against `StandbyWorkspaceRelationshipType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let standbyworkspacerelationshiptype = unimplemented!();
+/// match standbyworkspacerelationshiptype {
+///     StandbyWorkspaceRelationshipType::Primary => { /* ... */ },
+///     StandbyWorkspaceRelationshipType::Standby => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `standbyworkspacerelationshiptype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StandbyWorkspaceRelationshipType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StandbyWorkspaceRelationshipType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StandbyWorkspaceRelationshipType::NewFeature` is defined.
+/// Specifically, when `standbyworkspacerelationshiptype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StandbyWorkspaceRelationshipType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StandbyWorkspaceRelationshipType {
+    #[allow(missing_docs)] // documentation missing in model
+    Primary,
+    #[allow(missing_docs)] // documentation missing in model
+    Standby,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for StandbyWorkspaceRelationshipType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PRIMARY" => StandbyWorkspaceRelationshipType::Primary,
+            "STANDBY" => StandbyWorkspaceRelationshipType::Standby,
+            other => StandbyWorkspaceRelationshipType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for StandbyWorkspaceRelationshipType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StandbyWorkspaceRelationshipType::from(s))
+    }
+}
+impl StandbyWorkspaceRelationshipType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StandbyWorkspaceRelationshipType::Primary => "PRIMARY",
+            StandbyWorkspaceRelationshipType::Standby => "STANDBY",
+            StandbyWorkspaceRelationshipType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["PRIMARY", "STANDBY"]
+    }
+}
+impl AsRef<str> for StandbyWorkspaceRelationshipType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `WorkspaceState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let workspacestate = unimplemented!();
+/// match workspacestate {
+///     WorkspaceState::AdminMaintenance => { /* ... */ },
+///     WorkspaceState::Available => { /* ... */ },
+///     WorkspaceState::Error => { /* ... */ },
+///     WorkspaceState::Impaired => { /* ... */ },
+///     WorkspaceState::Maintenance => { /* ... */ },
+///     WorkspaceState::Pending => { /* ... */ },
+///     WorkspaceState::Rebooting => { /* ... */ },
+///     WorkspaceState::Rebuilding => { /* ... */ },
+///     WorkspaceState::Restoring => { /* ... */ },
+///     WorkspaceState::Starting => { /* ... */ },
+///     WorkspaceState::Stopped => { /* ... */ },
+///     WorkspaceState::Stopping => { /* ... */ },
+///     WorkspaceState::Suspended => { /* ... */ },
+///     WorkspaceState::Terminated => { /* ... */ },
+///     WorkspaceState::Terminating => { /* ... */ },
+///     WorkspaceState::Unhealthy => { /* ... */ },
+///     WorkspaceState::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `workspacestate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `WorkspaceState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `WorkspaceState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `WorkspaceState::NewFeature` is defined.
+/// Specifically, when `workspacestate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `WorkspaceState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum WorkspaceState {
+    #[allow(missing_docs)] // documentation missing in model
+    AdminMaintenance,
+    #[allow(missing_docs)] // documentation missing in model
+    Available,
+    #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Impaired,
+    #[allow(missing_docs)] // documentation missing in model
+    Maintenance,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Rebooting,
+    #[allow(missing_docs)] // documentation missing in model
+    Rebuilding,
+    #[allow(missing_docs)] // documentation missing in model
+    Restoring,
+    #[allow(missing_docs)] // documentation missing in model
+    Starting,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopping,
+    #[allow(missing_docs)] // documentation missing in model
+    Suspended,
+    #[allow(missing_docs)] // documentation missing in model
+    Terminated,
+    #[allow(missing_docs)] // documentation missing in model
+    Terminating,
+    #[allow(missing_docs)] // documentation missing in model
+    Unhealthy,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for WorkspaceState {
+    fn from(s: &str) -> Self {
+        match s {
+            "ADMIN_MAINTENANCE" => WorkspaceState::AdminMaintenance,
+            "AVAILABLE" => WorkspaceState::Available,
+            "ERROR" => WorkspaceState::Error,
+            "IMPAIRED" => WorkspaceState::Impaired,
+            "MAINTENANCE" => WorkspaceState::Maintenance,
+            "PENDING" => WorkspaceState::Pending,
+            "REBOOTING" => WorkspaceState::Rebooting,
+            "REBUILDING" => WorkspaceState::Rebuilding,
+            "RESTORING" => WorkspaceState::Restoring,
+            "STARTING" => WorkspaceState::Starting,
+            "STOPPED" => WorkspaceState::Stopped,
+            "STOPPING" => WorkspaceState::Stopping,
+            "SUSPENDED" => WorkspaceState::Suspended,
+            "TERMINATED" => WorkspaceState::Terminated,
+            "TERMINATING" => WorkspaceState::Terminating,
+            "UNHEALTHY" => WorkspaceState::Unhealthy,
+            "UPDATING" => WorkspaceState::Updating,
+            other => WorkspaceState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for WorkspaceState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WorkspaceState::from(s))
+    }
+}
+impl WorkspaceState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            WorkspaceState::AdminMaintenance => "ADMIN_MAINTENANCE",
+            WorkspaceState::Available => "AVAILABLE",
+            WorkspaceState::Error => "ERROR",
+            WorkspaceState::Impaired => "IMPAIRED",
+            WorkspaceState::Maintenance => "MAINTENANCE",
+            WorkspaceState::Pending => "PENDING",
+            WorkspaceState::Rebooting => "REBOOTING",
+            WorkspaceState::Rebuilding => "REBUILDING",
+            WorkspaceState::Restoring => "RESTORING",
+            WorkspaceState::Starting => "STARTING",
+            WorkspaceState::Stopped => "STOPPED",
+            WorkspaceState::Stopping => "STOPPING",
+            WorkspaceState::Suspended => "SUSPENDED",
+            WorkspaceState::Terminated => "TERMINATED",
+            WorkspaceState::Terminating => "TERMINATING",
+            WorkspaceState::Unhealthy => "UNHEALTHY",
+            WorkspaceState::Updating => "UPDATING",
+            WorkspaceState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ADMIN_MAINTENANCE",
+            "AVAILABLE",
+            "ERROR",
+            "IMPAIRED",
+            "MAINTENANCE",
+            "PENDING",
+            "REBOOTING",
+            "REBUILDING",
+            "RESTORING",
+            "STARTING",
+            "STOPPED",
+            "STOPPING",
+            "SUSPENDED",
+            "TERMINATED",
+            "TERMINATING",
+            "UNHEALTHY",
+            "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for WorkspaceState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4319,189 +5157,6 @@ impl ModificationResourceEnum {
     }
 }
 impl AsRef<str> for ModificationResourceEnum {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// When writing a match expression against `WorkspaceState`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let workspacestate = unimplemented!();
-/// match workspacestate {
-///     WorkspaceState::AdminMaintenance => { /* ... */ },
-///     WorkspaceState::Available => { /* ... */ },
-///     WorkspaceState::Error => { /* ... */ },
-///     WorkspaceState::Impaired => { /* ... */ },
-///     WorkspaceState::Maintenance => { /* ... */ },
-///     WorkspaceState::Pending => { /* ... */ },
-///     WorkspaceState::Rebooting => { /* ... */ },
-///     WorkspaceState::Rebuilding => { /* ... */ },
-///     WorkspaceState::Restoring => { /* ... */ },
-///     WorkspaceState::Starting => { /* ... */ },
-///     WorkspaceState::Stopped => { /* ... */ },
-///     WorkspaceState::Stopping => { /* ... */ },
-///     WorkspaceState::Suspended => { /* ... */ },
-///     WorkspaceState::Terminated => { /* ... */ },
-///     WorkspaceState::Terminating => { /* ... */ },
-///     WorkspaceState::Unhealthy => { /* ... */ },
-///     WorkspaceState::Updating => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `workspacestate` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `WorkspaceState::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `WorkspaceState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `WorkspaceState::NewFeature` is defined.
-/// Specifically, when `workspacestate` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `WorkspaceState::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum WorkspaceState {
-    #[allow(missing_docs)] // documentation missing in model
-    AdminMaintenance,
-    #[allow(missing_docs)] // documentation missing in model
-    Available,
-    #[allow(missing_docs)] // documentation missing in model
-    Error,
-    #[allow(missing_docs)] // documentation missing in model
-    Impaired,
-    #[allow(missing_docs)] // documentation missing in model
-    Maintenance,
-    #[allow(missing_docs)] // documentation missing in model
-    Pending,
-    #[allow(missing_docs)] // documentation missing in model
-    Rebooting,
-    #[allow(missing_docs)] // documentation missing in model
-    Rebuilding,
-    #[allow(missing_docs)] // documentation missing in model
-    Restoring,
-    #[allow(missing_docs)] // documentation missing in model
-    Starting,
-    #[allow(missing_docs)] // documentation missing in model
-    Stopped,
-    #[allow(missing_docs)] // documentation missing in model
-    Stopping,
-    #[allow(missing_docs)] // documentation missing in model
-    Suspended,
-    #[allow(missing_docs)] // documentation missing in model
-    Terminated,
-    #[allow(missing_docs)] // documentation missing in model
-    Terminating,
-    #[allow(missing_docs)] // documentation missing in model
-    Unhealthy,
-    #[allow(missing_docs)] // documentation missing in model
-    Updating,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for WorkspaceState {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADMIN_MAINTENANCE" => WorkspaceState::AdminMaintenance,
-            "AVAILABLE" => WorkspaceState::Available,
-            "ERROR" => WorkspaceState::Error,
-            "IMPAIRED" => WorkspaceState::Impaired,
-            "MAINTENANCE" => WorkspaceState::Maintenance,
-            "PENDING" => WorkspaceState::Pending,
-            "REBOOTING" => WorkspaceState::Rebooting,
-            "REBUILDING" => WorkspaceState::Rebuilding,
-            "RESTORING" => WorkspaceState::Restoring,
-            "STARTING" => WorkspaceState::Starting,
-            "STOPPED" => WorkspaceState::Stopped,
-            "STOPPING" => WorkspaceState::Stopping,
-            "SUSPENDED" => WorkspaceState::Suspended,
-            "TERMINATED" => WorkspaceState::Terminated,
-            "TERMINATING" => WorkspaceState::Terminating,
-            "UNHEALTHY" => WorkspaceState::Unhealthy,
-            "UPDATING" => WorkspaceState::Updating,
-            other => WorkspaceState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for WorkspaceState {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorkspaceState::from(s))
-    }
-}
-impl WorkspaceState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WorkspaceState::AdminMaintenance => "ADMIN_MAINTENANCE",
-            WorkspaceState::Available => "AVAILABLE",
-            WorkspaceState::Error => "ERROR",
-            WorkspaceState::Impaired => "IMPAIRED",
-            WorkspaceState::Maintenance => "MAINTENANCE",
-            WorkspaceState::Pending => "PENDING",
-            WorkspaceState::Rebooting => "REBOOTING",
-            WorkspaceState::Rebuilding => "REBUILDING",
-            WorkspaceState::Restoring => "RESTORING",
-            WorkspaceState::Starting => "STARTING",
-            WorkspaceState::Stopped => "STOPPED",
-            WorkspaceState::Stopping => "STOPPING",
-            WorkspaceState::Suspended => "SUSPENDED",
-            WorkspaceState::Terminated => "TERMINATED",
-            WorkspaceState::Terminating => "TERMINATING",
-            WorkspaceState::Unhealthy => "UNHEALTHY",
-            WorkspaceState::Updating => "UPDATING",
-            WorkspaceState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADMIN_MAINTENANCE",
-            "AVAILABLE",
-            "ERROR",
-            "IMPAIRED",
-            "MAINTENANCE",
-            "PENDING",
-            "REBOOTING",
-            "REBUILDING",
-            "RESTORING",
-            "STARTING",
-            "STOPPED",
-            "STOPPING",
-            "SUSPENDED",
-            "TERMINATED",
-            "TERMINATING",
-            "UNHEALTHY",
-            "UPDATING",
-        ]
-    }
-}
-impl AsRef<str> for WorkspaceState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -5370,6 +6025,10 @@ pub struct WorkspaceDirectory {
     /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
     #[doc(hidden)]
     pub saml_properties: std::option::Option<crate::model::SamlProperties>,
+    /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
+    #[doc(hidden)]
+    pub certificate_based_auth_properties:
+        std::option::Option<crate::model::CertificateBasedAuthProperties>,
 }
 impl WorkspaceDirectory {
     /// <p>The directory identifier.</p>
@@ -5446,6 +6105,12 @@ impl WorkspaceDirectory {
     pub fn saml_properties(&self) -> std::option::Option<&crate::model::SamlProperties> {
         self.saml_properties.as_ref()
     }
+    /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
+    pub fn certificate_based_auth_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::CertificateBasedAuthProperties> {
+        self.certificate_based_auth_properties.as_ref()
+    }
 }
 /// See [`WorkspaceDirectory`](crate::model::WorkspaceDirectory).
 pub mod workspace_directory {
@@ -5473,6 +6138,8 @@ pub mod workspace_directory {
         pub(crate) selfservice_permissions:
             std::option::Option<crate::model::SelfservicePermissions>,
         pub(crate) saml_properties: std::option::Option<crate::model::SamlProperties>,
+        pub(crate) certificate_based_auth_properties:
+            std::option::Option<crate::model::CertificateBasedAuthProperties>,
     }
     impl Builder {
         /// <p>The directory identifier.</p>
@@ -5714,6 +6381,22 @@ pub mod workspace_directory {
             self.saml_properties = input;
             self
         }
+        /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
+        pub fn certificate_based_auth_properties(
+            mut self,
+            input: crate::model::CertificateBasedAuthProperties,
+        ) -> Self {
+            self.certificate_based_auth_properties = Some(input);
+            self
+        }
+        /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
+        pub fn set_certificate_based_auth_properties(
+            mut self,
+            input: std::option::Option<crate::model::CertificateBasedAuthProperties>,
+        ) -> Self {
+            self.certificate_based_auth_properties = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkspaceDirectory`](crate::model::WorkspaceDirectory).
         pub fn build(self) -> crate::model::WorkspaceDirectory {
             crate::model::WorkspaceDirectory {
@@ -5734,6 +6417,7 @@ pub mod workspace_directory {
                 tenancy: self.tenancy,
                 selfservice_permissions: self.selfservice_permissions,
                 saml_properties: self.saml_properties,
+                certificate_based_auth_properties: self.certificate_based_auth_properties,
             }
         }
     }
@@ -6133,6 +6817,12 @@ pub struct WorkspaceBundle {
     /// <p>The time when the bundle was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The state of the WorkSpace bundle.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::WorkspaceBundleState>,
+    /// <p>The type of WorkSpace bundle.</p>
+    #[doc(hidden)]
+    pub bundle_type: std::option::Option<crate::model::BundleType>,
 }
 impl WorkspaceBundle {
     /// <p>The identifier of the bundle.</p>
@@ -6175,6 +6865,14 @@ impl WorkspaceBundle {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p>The state of the WorkSpace bundle.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::WorkspaceBundleState> {
+        self.state.as_ref()
+    }
+    /// <p>The type of WorkSpace bundle.</p>
+    pub fn bundle_type(&self) -> std::option::Option<&crate::model::BundleType> {
+        self.bundle_type.as_ref()
+    }
 }
 /// See [`WorkspaceBundle`](crate::model::WorkspaceBundle).
 pub mod workspace_bundle {
@@ -6192,6 +6890,8 @@ pub mod workspace_bundle {
         pub(crate) compute_type: std::option::Option<crate::model::ComputeType>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) state: std::option::Option<crate::model::WorkspaceBundleState>,
+        pub(crate) bundle_type: std::option::Option<crate::model::BundleType>,
     }
     impl Builder {
         /// <p>The identifier of the bundle.</p>
@@ -6309,6 +7009,32 @@ pub mod workspace_bundle {
             self.creation_time = input;
             self
         }
+        /// <p>The state of the WorkSpace bundle.</p>
+        pub fn state(mut self, input: crate::model::WorkspaceBundleState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of the WorkSpace bundle.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::WorkspaceBundleState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The type of WorkSpace bundle.</p>
+        pub fn bundle_type(mut self, input: crate::model::BundleType) -> Self {
+            self.bundle_type = Some(input);
+            self
+        }
+        /// <p>The type of WorkSpace bundle.</p>
+        pub fn set_bundle_type(
+            mut self,
+            input: std::option::Option<crate::model::BundleType>,
+        ) -> Self {
+            self.bundle_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkspaceBundle`](crate::model::WorkspaceBundle).
         pub fn build(self) -> crate::model::WorkspaceBundle {
             crate::model::WorkspaceBundle {
@@ -6322,6 +7048,8 @@ pub mod workspace_bundle {
                 compute_type: self.compute_type,
                 last_updated_time: self.last_updated_time,
                 creation_time: self.creation_time,
+                state: self.state,
+                bundle_type: self.bundle_type,
             }
         }
     }
@@ -6330,6 +7058,193 @@ impl WorkspaceBundle {
     /// Creates a new builder-style object to manufacture [`WorkspaceBundle`](crate::model::WorkspaceBundle).
     pub fn builder() -> crate::model::workspace_bundle::Builder {
         crate::model::workspace_bundle::Builder::default()
+    }
+}
+
+/// When writing a match expression against `BundleType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let bundletype = unimplemented!();
+/// match bundletype {
+///     BundleType::Regular => { /* ... */ },
+///     BundleType::Standby => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `bundletype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BundleType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BundleType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BundleType::NewFeature` is defined.
+/// Specifically, when `bundletype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BundleType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BundleType {
+    #[allow(missing_docs)] // documentation missing in model
+    Regular,
+    #[allow(missing_docs)] // documentation missing in model
+    Standby,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for BundleType {
+    fn from(s: &str) -> Self {
+        match s {
+            "REGULAR" => BundleType::Regular,
+            "STANDBY" => BundleType::Standby,
+            other => BundleType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for BundleType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BundleType::from(s))
+    }
+}
+impl BundleType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            BundleType::Regular => "REGULAR",
+            BundleType::Standby => "STANDBY",
+            BundleType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["REGULAR", "STANDBY"]
+    }
+}
+impl AsRef<str> for BundleType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `WorkspaceBundleState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let workspacebundlestate = unimplemented!();
+/// match workspacebundlestate {
+///     WorkspaceBundleState::Available => { /* ... */ },
+///     WorkspaceBundleState::Error => { /* ... */ },
+///     WorkspaceBundleState::Pending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `workspacebundlestate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `WorkspaceBundleState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `WorkspaceBundleState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `WorkspaceBundleState::NewFeature` is defined.
+/// Specifically, when `workspacebundlestate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `WorkspaceBundleState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum WorkspaceBundleState {
+    #[allow(missing_docs)] // documentation missing in model
+    Available,
+    #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for WorkspaceBundleState {
+    fn from(s: &str) -> Self {
+        match s {
+            "AVAILABLE" => WorkspaceBundleState::Available,
+            "ERROR" => WorkspaceBundleState::Error,
+            "PENDING" => WorkspaceBundleState::Pending,
+            other => {
+                WorkspaceBundleState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for WorkspaceBundleState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WorkspaceBundleState::from(s))
+    }
+}
+impl WorkspaceBundleState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            WorkspaceBundleState::Available => "AVAILABLE",
+            WorkspaceBundleState::Error => "ERROR",
+            WorkspaceBundleState::Pending => "PENDING",
+            WorkspaceBundleState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AVAILABLE", "ERROR", "PENDING"]
+    }
+}
+impl AsRef<str> for WorkspaceBundleState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -8005,5 +8920,331 @@ impl WorkspaceRequest {
     /// Creates a new builder-style object to manufacture [`WorkspaceRequest`](crate::model::WorkspaceRequest).
     pub fn builder() -> crate::model::workspace_request::Builder {
         crate::model::workspace_request::Builder::default()
+    }
+}
+
+/// <p>Information about the Standby WorkSpace.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PendingCreateStandbyWorkspacesRequest {
+    /// <p>Describes the Standby WorkSpace that was created.</p>
+    /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkspaces</a> before the WorkSpace is created, the information returned can be incomplete. </p>
+    #[doc(hidden)]
+    pub user_name: std::option::Option<std::string::String>,
+    /// <p>The identifier of the directory for the Standby WorkSpace.</p>
+    #[doc(hidden)]
+    pub directory_id: std::option::Option<std::string::String>,
+    /// <p>The operational state of the Standby WorkSpace.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::WorkspaceState>,
+    /// <p>The identifier of the Standby WorkSpace.</p>
+    #[doc(hidden)]
+    pub workspace_id: std::option::Option<std::string::String>,
+}
+impl PendingCreateStandbyWorkspacesRequest {
+    /// <p>Describes the Standby WorkSpace that was created.</p>
+    /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkspaces</a> before the WorkSpace is created, the information returned can be incomplete. </p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The identifier of the directory for the Standby WorkSpace.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The operational state of the Standby WorkSpace.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::WorkspaceState> {
+        self.state.as_ref()
+    }
+    /// <p>The identifier of the Standby WorkSpace.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+}
+/// See [`PendingCreateStandbyWorkspacesRequest`](crate::model::PendingCreateStandbyWorkspacesRequest).
+pub mod pending_create_standby_workspaces_request {
+
+    /// A builder for [`PendingCreateStandbyWorkspacesRequest`](crate::model::PendingCreateStandbyWorkspacesRequest).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_name: std::option::Option<std::string::String>,
+        pub(crate) directory_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::WorkspaceState>,
+        pub(crate) workspace_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Describes the Standby WorkSpace that was created.</p>
+        /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkspaces</a> before the WorkSpace is created, the information returned can be incomplete. </p>
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
+            self
+        }
+        /// <p>Describes the Standby WorkSpace that was created.</p>
+        /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkspaces</a> before the WorkSpace is created, the information returned can be incomplete. </p>
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
+            self
+        }
+        /// <p>The identifier of the directory for the Standby WorkSpace.</p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.directory_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the directory for the Standby WorkSpace.</p>
+        pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_id = input;
+            self
+        }
+        /// <p>The operational state of the Standby WorkSpace.</p>
+        pub fn state(mut self, input: crate::model::WorkspaceState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The operational state of the Standby WorkSpace.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::WorkspaceState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The identifier of the Standby WorkSpace.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workspace_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Standby WorkSpace.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workspace_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PendingCreateStandbyWorkspacesRequest`](crate::model::PendingCreateStandbyWorkspacesRequest).
+        pub fn build(self) -> crate::model::PendingCreateStandbyWorkspacesRequest {
+            crate::model::PendingCreateStandbyWorkspacesRequest {
+                user_name: self.user_name,
+                directory_id: self.directory_id,
+                state: self.state,
+                workspace_id: self.workspace_id,
+            }
+        }
+    }
+}
+impl PendingCreateStandbyWorkspacesRequest {
+    /// Creates a new builder-style object to manufacture [`PendingCreateStandbyWorkspacesRequest`](crate::model::PendingCreateStandbyWorkspacesRequest).
+    pub fn builder() -> crate::model::pending_create_standby_workspaces_request::Builder {
+        crate::model::pending_create_standby_workspaces_request::Builder::default()
+    }
+}
+
+/// <p>Describes the Standby WorkSpace that could not be created.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct FailedCreateStandbyWorkspacesRequest {
+    /// <p>Information about the Standby WorkSpace that could not be created.</p>
+    #[doc(hidden)]
+    pub standby_workspace_request: std::option::Option<crate::model::StandbyWorkspace>,
+    /// <p>The error code that is returned if the Standby WorkSpace could not be created.</p>
+    #[doc(hidden)]
+    pub error_code: std::option::Option<std::string::String>,
+    /// <p>The text of the error message that is returned if the Standby WorkSpace could not be created.</p>
+    #[doc(hidden)]
+    pub error_message: std::option::Option<std::string::String>,
+}
+impl FailedCreateStandbyWorkspacesRequest {
+    /// <p>Information about the Standby WorkSpace that could not be created.</p>
+    pub fn standby_workspace_request(
+        &self,
+    ) -> std::option::Option<&crate::model::StandbyWorkspace> {
+        self.standby_workspace_request.as_ref()
+    }
+    /// <p>The error code that is returned if the Standby WorkSpace could not be created.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The text of the error message that is returned if the Standby WorkSpace could not be created.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
+/// See [`FailedCreateStandbyWorkspacesRequest`](crate::model::FailedCreateStandbyWorkspacesRequest).
+pub mod failed_create_standby_workspaces_request {
+
+    /// A builder for [`FailedCreateStandbyWorkspacesRequest`](crate::model::FailedCreateStandbyWorkspacesRequest).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) standby_workspace_request: std::option::Option<crate::model::StandbyWorkspace>,
+        pub(crate) error_code: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Information about the Standby WorkSpace that could not be created.</p>
+        pub fn standby_workspace_request(mut self, input: crate::model::StandbyWorkspace) -> Self {
+            self.standby_workspace_request = Some(input);
+            self
+        }
+        /// <p>Information about the Standby WorkSpace that could not be created.</p>
+        pub fn set_standby_workspace_request(
+            mut self,
+            input: std::option::Option<crate::model::StandbyWorkspace>,
+        ) -> Self {
+            self.standby_workspace_request = input;
+            self
+        }
+        /// <p>The error code that is returned if the Standby WorkSpace could not be created.</p>
+        pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_code = Some(input.into());
+            self
+        }
+        /// <p>The error code that is returned if the Standby WorkSpace could not be created.</p>
+        pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>The text of the error message that is returned if the Standby WorkSpace could not be created.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>The text of the error message that is returned if the Standby WorkSpace could not be created.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FailedCreateStandbyWorkspacesRequest`](crate::model::FailedCreateStandbyWorkspacesRequest).
+        pub fn build(self) -> crate::model::FailedCreateStandbyWorkspacesRequest {
+            crate::model::FailedCreateStandbyWorkspacesRequest {
+                standby_workspace_request: self.standby_workspace_request,
+                error_code: self.error_code,
+                error_message: self.error_message,
+            }
+        }
+    }
+}
+impl FailedCreateStandbyWorkspacesRequest {
+    /// Creates a new builder-style object to manufacture [`FailedCreateStandbyWorkspacesRequest`](crate::model::FailedCreateStandbyWorkspacesRequest).
+    pub fn builder() -> crate::model::failed_create_standby_workspaces_request::Builder {
+        crate::model::failed_create_standby_workspaces_request::Builder::default()
+    }
+}
+
+/// <p>Describes a Standby WorkSpace.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StandbyWorkspace {
+    /// <p>The identifier of the Standby WorkSpace.</p>
+    #[doc(hidden)]
+    pub primary_workspace_id: std::option::Option<std::string::String>,
+    /// <p>The volume encryption key of the Standby WorkSpace.</p>
+    #[doc(hidden)]
+    pub volume_encryption_key: std::option::Option<std::string::String>,
+    /// <p>The identifier of the directory for the Standby WorkSpace.</p>
+    #[doc(hidden)]
+    pub directory_id: std::option::Option<std::string::String>,
+    /// <p>The tags associated with the Standby WorkSpace.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl StandbyWorkspace {
+    /// <p>The identifier of the Standby WorkSpace.</p>
+    pub fn primary_workspace_id(&self) -> std::option::Option<&str> {
+        self.primary_workspace_id.as_deref()
+    }
+    /// <p>The volume encryption key of the Standby WorkSpace.</p>
+    pub fn volume_encryption_key(&self) -> std::option::Option<&str> {
+        self.volume_encryption_key.as_deref()
+    }
+    /// <p>The identifier of the directory for the Standby WorkSpace.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The tags associated with the Standby WorkSpace.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+/// See [`StandbyWorkspace`](crate::model::StandbyWorkspace).
+pub mod standby_workspace {
+
+    /// A builder for [`StandbyWorkspace`](crate::model::StandbyWorkspace).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) primary_workspace_id: std::option::Option<std::string::String>,
+        pub(crate) volume_encryption_key: std::option::Option<std::string::String>,
+        pub(crate) directory_id: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Standby WorkSpace.</p>
+        pub fn primary_workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.primary_workspace_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Standby WorkSpace.</p>
+        pub fn set_primary_workspace_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.primary_workspace_id = input;
+            self
+        }
+        /// <p>The volume encryption key of the Standby WorkSpace.</p>
+        pub fn volume_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_encryption_key = Some(input.into());
+            self
+        }
+        /// <p>The volume encryption key of the Standby WorkSpace.</p>
+        pub fn set_volume_encryption_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.volume_encryption_key = input;
+            self
+        }
+        /// <p>The identifier of the directory for the Standby WorkSpace.</p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.directory_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the directory for the Standby WorkSpace.</p>
+        pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_id = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the Standby WorkSpace.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tags associated with the Standby WorkSpace.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StandbyWorkspace`](crate::model::StandbyWorkspace).
+        pub fn build(self) -> crate::model::StandbyWorkspace {
+            crate::model::StandbyWorkspace {
+                primary_workspace_id: self.primary_workspace_id,
+                volume_encryption_key: self.volume_encryption_key,
+                directory_id: self.directory_id,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl StandbyWorkspace {
+    /// Creates a new builder-style object to manufacture [`StandbyWorkspace`](crate::model::StandbyWorkspace).
+    pub fn builder() -> crate::model::standby_workspace::Builder {
+        crate::model::standby_workspace::Builder::default()
     }
 }

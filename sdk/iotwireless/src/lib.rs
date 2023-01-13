@@ -81,6 +81,8 @@ mod operation_ser;
 /// Paginators for the service
 pub mod paginator;
 
+mod http_serde;
+
 mod json_deser;
 
 mod json_ser;

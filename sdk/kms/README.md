@@ -13,7 +13,7 @@ All KMS API calls must be signed and be transmitted using Transport Layer Securi
 
 __Signing Requests__
 
-Requests must be signed by using an access key ID and a secret access key. We strongly recommend that you _do not_ use your Amazon Web Services account (root) access key ID and secret key for everyday work with KMS. Instead, use the access key ID and secret access key for an IAM user. You can also use the Amazon Web Services Security Token Service to generate temporary security credentials that you can use to sign requests.
+Requests must be signed by using an access key ID and a secret access key. We strongly recommend that you _do not_ use your Amazon Web Services account (root) access key ID and secret access key for everyday work with KMS. Instead, use the access key ID and secret access key for an IAM user. You can also use the Amazon Web Services Security Token Service to generate temporary security credentials that you can use to sign requests.
 
 All KMS operations require [Signature Version 4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html).
 
@@ -48,7 +48,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.52.0"
-aws-sdk-kms = "0.22.0"
+aws-sdk-kms = "0.23.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

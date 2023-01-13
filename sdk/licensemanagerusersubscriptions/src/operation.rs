@@ -335,5 +335,39 @@ impl aws_smithy_http::response::ParseStrictResponse for StopProductSubscription 
     }
 }
 
+/// Operation shape for `UpdateIdentityProviderSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_identity_provider_settings`](crate::client::Client::update_identity_provider_settings).
+///
+/// See [`crate::client::fluent_builders::UpdateIdentityProviderSettings`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateIdentityProviderSettings {
+    _private: (),
+}
+impl UpdateIdentityProviderSettings {
+    /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderSettingsInput`](crate::input::UpdateIdentityProviderSettingsInput).
+    pub fn builder() -> crate::input::update_identity_provider_settings_input::Builder {
+        crate::input::update_identity_provider_settings_input::Builder::default()
+    }
+    /// Creates a new `UpdateIdentityProviderSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateIdentityProviderSettings {
+    type Output = std::result::Result<
+        crate::output::UpdateIdentityProviderSettingsOutput,
+        crate::error::UpdateIdentityProviderSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_identity_provider_settings_error(response)
+        } else {
+            crate::operation_deser::parse_update_identity_provider_settings_response(response)
+        }
+    }
+}
+
 /// Operation customization and supporting types
 pub mod customize;

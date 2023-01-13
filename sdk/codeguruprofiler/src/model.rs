@@ -256,10 +256,8 @@ impl Channel {
         self.uri.as_deref()
     }
     /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
-    pub fn event_publishers(
-        &self,
-    ) -> std::option::Option<&std::vec::Vec<crate::model::EventPublisher>> {
-        self.event_publishers.as_ref()
+    pub fn event_publishers(&self) -> std::option::Option<&[crate::model::EventPublisher]> {
+        self.event_publishers.as_deref()
     }
 }
 /// See [`Channel`](crate::model::Channel).
@@ -294,12 +292,15 @@ pub mod channel {
             self.uri = input;
             self
         }
+        /// Appends an item to `event_publishers`.
+        ///
+        /// To override the contents of this collection use [`set_event_publishers`](Self::set_event_publishers).
+        ///
         /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
-        pub fn event_publishers(
-            mut self,
-            input: std::vec::Vec<crate::model::EventPublisher>,
-        ) -> Self {
-            self.event_publishers = Some(input);
+        pub fn event_publishers(mut self, input: crate::model::EventPublisher) -> Self {
+            let mut v = self.event_publishers.unwrap_or_default();
+            v.push(input);
+            self.event_publishers = Some(v);
             self
         }
         /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>

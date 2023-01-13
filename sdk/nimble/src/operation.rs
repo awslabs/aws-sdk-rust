@@ -704,6 +704,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamingSession {
     }
 }
 
+/// Operation shape for `GetStreamingSessionBackup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_streaming_session_backup`](crate::client::Client::get_streaming_session_backup).
+///
+/// See [`crate::client::fluent_builders::GetStreamingSessionBackup`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetStreamingSessionBackup {
+    _private: (),
+}
+impl GetStreamingSessionBackup {
+    /// Creates a new builder-style object to manufacture [`GetStreamingSessionBackupInput`](crate::input::GetStreamingSessionBackupInput).
+    pub fn builder() -> crate::input::get_streaming_session_backup_input::Builder {
+        crate::input::get_streaming_session_backup_input::Builder::default()
+    }
+    /// Creates a new `GetStreamingSessionBackup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetStreamingSessionBackup {
+    type Output = std::result::Result<
+        crate::output::GetStreamingSessionBackupOutput,
+        crate::error::GetStreamingSessionBackupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_streaming_session_backup_error(response)
+        } else {
+            crate::operation_deser::parse_get_streaming_session_backup_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetStreamingSessionStream`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1000,6 +1034,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreamingImages {
             crate::operation_deser::parse_list_streaming_images_error(response)
         } else {
             crate::operation_deser::parse_list_streaming_images_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListStreamingSessionBackups`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_streaming_session_backups`](crate::client::Client::list_streaming_session_backups).
+///
+/// See [`crate::client::fluent_builders::ListStreamingSessionBackups`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListStreamingSessionBackups {
+    _private: (),
+}
+impl ListStreamingSessionBackups {
+    /// Creates a new builder-style object to manufacture [`ListStreamingSessionBackupsInput`](crate::input::ListStreamingSessionBackupsInput).
+    pub fn builder() -> crate::input::list_streaming_session_backups_input::Builder {
+        crate::input::list_streaming_session_backups_input::Builder::default()
+    }
+    /// Creates a new `ListStreamingSessionBackups` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListStreamingSessionBackups {
+    type Output = std::result::Result<
+        crate::output::ListStreamingSessionBackupsOutput,
+        crate::error::ListStreamingSessionBackupsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_streaming_session_backups_error(response)
+        } else {
+            crate::operation_deser::parse_list_streaming_session_backups_response(response)
         }
     }
 }

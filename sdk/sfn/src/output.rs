@@ -53,6 +53,30 @@ impl UpdateStateMachineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateMapRunOutput {}
+/// See [`UpdateMapRunOutput`](crate::output::UpdateMapRunOutput).
+pub mod update_map_run_output {
+
+    /// A builder for [`UpdateMapRunOutput`](crate::output::UpdateMapRunOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateMapRunOutput`](crate::output::UpdateMapRunOutput).
+        pub fn build(self) -> crate::output::UpdateMapRunOutput {
+            crate::output::UpdateMapRunOutput {}
+        }
+    }
+}
+impl UpdateMapRunOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMapRunOutput`](crate::output::UpdateMapRunOutput).
+    pub fn builder() -> crate::output::update_map_run_output::Builder {
+        crate::output::update_map_run_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
@@ -191,7 +215,7 @@ pub struct StartSyncExecutionOutput {
     /// <p>Provides details about execution input or output.</p>
     #[doc(hidden)]
     pub output_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
-    /// <p>The AWS X-Ray trace header that was passed to the execution.</p>
+    /// <p>The X-Ray trace header that was passed to the execution.</p>
     #[doc(hidden)]
     pub trace_header: std::option::Option<std::string::String>,
     /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
@@ -253,7 +277,7 @@ impl StartSyncExecutionOutput {
     ) -> std::option::Option<&crate::model::CloudWatchEventsExecutionDataDetails> {
         self.output_details.as_ref()
     }
-    /// <p>The AWS X-Ray trace header that was passed to the execution.</p>
+    /// <p>The X-Ray trace header that was passed to the execution.</p>
     pub fn trace_header(&self) -> std::option::Option<&str> {
         self.trace_header.as_deref()
     }
@@ -457,12 +481,12 @@ pub mod start_sync_execution_output {
             self.output_details = input;
             self
         }
-        /// <p>The AWS X-Ray trace header that was passed to the execution.</p>
+        /// <p>The X-Ray trace header that was passed to the execution.</p>
         pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
             self.trace_header = Some(input.into());
             self
         }
-        /// <p>The AWS X-Ray trace header that was passed to the execution.</p>
+        /// <p>The X-Ray trace header that was passed to the execution.</p>
         pub fn set_trace_header(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trace_header = input;
             self
@@ -807,6 +831,82 @@ impl ListStateMachinesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListMapRunsOutput {
+    /// <p>An array that lists information related to a Map Run, such as the Amazon Resource Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.</p>
+    #[doc(hidden)]
+    pub map_runs: std::option::Option<std::vec::Vec<crate::model::MapRunListItem>>,
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMapRunsOutput {
+    /// <p>An array that lists information related to a Map Run, such as the Amazon Resource Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.</p>
+    pub fn map_runs(&self) -> std::option::Option<&[crate::model::MapRunListItem]> {
+        self.map_runs.as_deref()
+    }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListMapRunsOutput`](crate::output::ListMapRunsOutput).
+pub mod list_map_runs_output {
+
+    /// A builder for [`ListMapRunsOutput`](crate::output::ListMapRunsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) map_runs: std::option::Option<std::vec::Vec<crate::model::MapRunListItem>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `map_runs`.
+        ///
+        /// To override the contents of this collection use [`set_map_runs`](Self::set_map_runs).
+        ///
+        /// <p>An array that lists information related to a Map Run, such as the Amazon Resource Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.</p>
+        pub fn map_runs(mut self, input: crate::model::MapRunListItem) -> Self {
+            let mut v = self.map_runs.unwrap_or_default();
+            v.push(input);
+            self.map_runs = Some(v);
+            self
+        }
+        /// <p>An array that lists information related to a Map Run, such as the Amazon Resource Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.</p>
+        pub fn set_map_runs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MapRunListItem>>,
+        ) -> Self {
+            self.map_runs = input;
+            self
+        }
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMapRunsOutput`](crate::output::ListMapRunsOutput).
+        pub fn build(self) -> crate::output::ListMapRunsOutput {
+            crate::output::ListMapRunsOutput {
+                map_runs: self.map_runs,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListMapRunsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMapRunsOutput`](crate::output::ListMapRunsOutput).
+    pub fn builder() -> crate::output::list_map_runs_output::Builder {
+        crate::output::list_map_runs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExecutionsOutput {
     /// <p>The list of matching executions.</p>
     #[doc(hidden)]
@@ -1137,9 +1237,15 @@ pub struct DescribeStateMachineForExecutionOutput {
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
-    /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    /// <p>Selects whether X-Ray tracing is enabled.</p>
     #[doc(hidden)]
     pub tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
+    /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+    #[doc(hidden)]
+    pub map_run_arn: std::option::Option<std::string::String>,
+    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+    #[doc(hidden)]
+    pub label: std::option::Option<std::string::String>,
 }
 impl DescribeStateMachineForExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>
@@ -1168,11 +1274,19 @@ impl DescribeStateMachineForExecutionOutput {
     ) -> std::option::Option<&crate::model::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
-    /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub fn tracing_configuration(
         &self,
     ) -> std::option::Option<&crate::model::TracingConfiguration> {
         self.tracing_configuration.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+    pub fn map_run_arn(&self) -> std::option::Option<&str> {
+        self.map_run_arn.as_deref()
+    }
+    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
     }
 }
 impl std::fmt::Debug for DescribeStateMachineForExecutionOutput {
@@ -1185,6 +1299,8 @@ impl std::fmt::Debug for DescribeStateMachineForExecutionOutput {
         formatter.field("update_date", &self.update_date);
         formatter.field("logging_configuration", &self.logging_configuration);
         formatter.field("tracing_configuration", &self.tracing_configuration);
+        formatter.field("map_run_arn", &self.map_run_arn);
+        formatter.field("label", &self.label);
         formatter.finish()
     }
 }
@@ -1201,6 +1317,8 @@ pub mod describe_state_machine_for_execution_output {
         pub(crate) update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
         pub(crate) tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
+        pub(crate) map_run_arn: std::option::Option<std::string::String>,
+        pub(crate) label: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>
@@ -1272,17 +1390,37 @@ pub mod describe_state_machine_for_execution_output {
             self.logging_configuration = input;
             self
         }
-        /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+        /// <p>Selects whether X-Ray tracing is enabled.</p>
         pub fn tracing_configuration(mut self, input: crate::model::TracingConfiguration) -> Self {
             self.tracing_configuration = Some(input);
             self
         }
-        /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+        /// <p>Selects whether X-Ray tracing is enabled.</p>
         pub fn set_tracing_configuration(
             mut self,
             input: std::option::Option<crate::model::TracingConfiguration>,
         ) -> Self {
             self.tracing_configuration = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+        pub fn map_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.map_run_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+        pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.map_run_arn = input;
+            self
+        }
+        /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label = Some(input.into());
+            self
+        }
+        /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+        pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStateMachineForExecutionOutput`](crate::output::DescribeStateMachineForExecutionOutput).
@@ -1295,6 +1433,8 @@ pub mod describe_state_machine_for_execution_output {
                 update_date: self.update_date,
                 logging_configuration: self.logging_configuration,
                 tracing_configuration: self.tracing_configuration,
+                map_run_arn: self.map_run_arn,
+                label: self.label,
             }
         }
     }
@@ -1308,6 +1448,8 @@ pub mod describe_state_machine_for_execution_output {
             formatter.field("update_date", &self.update_date);
             formatter.field("logging_configuration", &self.logging_configuration);
             formatter.field("tracing_configuration", &self.tracing_configuration);
+            formatter.field("map_run_arn", &self.map_run_arn);
+            formatter.field("label", &self.label);
             formatter.finish()
         }
     }
@@ -1344,7 +1486,7 @@ pub struct DescribeStateMachineOutput {
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     #[doc(hidden)]
     pub definition: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
@@ -1356,9 +1498,12 @@ pub struct DescribeStateMachineOutput {
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
-    /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    /// <p>Selects whether X-Ray tracing is enabled.</p>
     #[doc(hidden)]
     pub tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
+    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.</p>
+    #[doc(hidden)]
+    pub label: std::option::Option<std::string::String>,
 }
 impl DescribeStateMachineOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
@@ -1386,7 +1531,7 @@ impl DescribeStateMachineOutput {
     pub fn definition(&self) -> std::option::Option<&str> {
         self.definition.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -1404,11 +1549,15 @@ impl DescribeStateMachineOutput {
     ) -> std::option::Option<&crate::model::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
-    /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub fn tracing_configuration(
         &self,
     ) -> std::option::Option<&crate::model::TracingConfiguration> {
         self.tracing_configuration.as_ref()
+    }
+    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
     }
 }
 impl std::fmt::Debug for DescribeStateMachineOutput {
@@ -1423,6 +1572,7 @@ impl std::fmt::Debug for DescribeStateMachineOutput {
         formatter.field("creation_date", &self.creation_date);
         formatter.field("logging_configuration", &self.logging_configuration);
         formatter.field("tracing_configuration", &self.tracing_configuration);
+        formatter.field("label", &self.label);
         formatter.finish()
     }
 }
@@ -1441,6 +1591,7 @@ pub mod describe_state_machine_output {
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
         pub(crate) tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
+        pub(crate) label: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
@@ -1507,12 +1658,12 @@ pub mod describe_state_machine_output {
             self.definition = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1556,17 +1707,27 @@ pub mod describe_state_machine_output {
             self.logging_configuration = input;
             self
         }
-        /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+        /// <p>Selects whether X-Ray tracing is enabled.</p>
         pub fn tracing_configuration(mut self, input: crate::model::TracingConfiguration) -> Self {
             self.tracing_configuration = Some(input);
             self
         }
-        /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+        /// <p>Selects whether X-Ray tracing is enabled.</p>
         pub fn set_tracing_configuration(
             mut self,
             input: std::option::Option<crate::model::TracingConfiguration>,
         ) -> Self {
             self.tracing_configuration = input;
+            self
+        }
+        /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.</p>
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label = Some(input.into());
+            self
+        }
+        /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.</p>
+        pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStateMachineOutput`](crate::output::DescribeStateMachineOutput).
@@ -1581,6 +1742,7 @@ pub mod describe_state_machine_output {
                 creation_date: self.creation_date,
                 logging_configuration: self.logging_configuration,
                 tracing_configuration: self.tracing_configuration,
+                label: self.label,
             }
         }
     }
@@ -1596,6 +1758,7 @@ pub mod describe_state_machine_output {
             formatter.field("creation_date", &self.creation_date);
             formatter.field("logging_configuration", &self.logging_configuration);
             formatter.field("tracing_configuration", &self.tracing_configuration);
+            formatter.field("label", &self.label);
             formatter.finish()
         }
     }
@@ -1604,6 +1767,243 @@ impl DescribeStateMachineOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStateMachineOutput`](crate::output::DescribeStateMachineOutput).
     pub fn builder() -> crate::output::describe_state_machine_output::Builder {
         crate::output::describe_state_machine_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeMapRunOutput {
+    /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
+    #[doc(hidden)]
+    pub map_run_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
+    #[doc(hidden)]
+    pub execution_arn: std::option::Option<std::string::String>,
+    /// <p>The current status of the Map Run.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::MapRunStatus>,
+    /// <p>The date when the Map Run was started.</p>
+    #[doc(hidden)]
+    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date when the Map Run was stopped.</p>
+    #[doc(hidden)]
+    pub stop_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The maximum number of child workflow executions configured to run in parallel for the Map Run at the same time.</p>
+    #[doc(hidden)]
+    pub max_concurrency: i32,
+    /// <p>The maximum percentage of failed child workflow executions before the Map Run fails.</p>
+    #[doc(hidden)]
+    pub tolerated_failure_percentage: f32,
+    /// <p>The maximum number of failed child workflow executions before the Map Run fails.</p>
+    #[doc(hidden)]
+    pub tolerated_failure_count: i64,
+    /// <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
+    #[doc(hidden)]
+    pub item_counts: std::option::Option<crate::model::MapRunItemCounts>,
+    /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
+    #[doc(hidden)]
+    pub execution_counts: std::option::Option<crate::model::MapRunExecutionCounts>,
+}
+impl DescribeMapRunOutput {
+    /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
+    pub fn map_run_arn(&self) -> std::option::Option<&str> {
+        self.map_run_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
+    pub fn execution_arn(&self) -> std::option::Option<&str> {
+        self.execution_arn.as_deref()
+    }
+    /// <p>The current status of the Map Run.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MapRunStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date when the Map Run was started.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_date.as_ref()
+    }
+    /// <p>The date when the Map Run was stopped.</p>
+    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.stop_date.as_ref()
+    }
+    /// <p>The maximum number of child workflow executions configured to run in parallel for the Map Run at the same time.</p>
+    pub fn max_concurrency(&self) -> i32 {
+        self.max_concurrency
+    }
+    /// <p>The maximum percentage of failed child workflow executions before the Map Run fails.</p>
+    pub fn tolerated_failure_percentage(&self) -> f32 {
+        self.tolerated_failure_percentage
+    }
+    /// <p>The maximum number of failed child workflow executions before the Map Run fails.</p>
+    pub fn tolerated_failure_count(&self) -> i64 {
+        self.tolerated_failure_count
+    }
+    /// <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
+    pub fn item_counts(&self) -> std::option::Option<&crate::model::MapRunItemCounts> {
+        self.item_counts.as_ref()
+    }
+    /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
+    pub fn execution_counts(&self) -> std::option::Option<&crate::model::MapRunExecutionCounts> {
+        self.execution_counts.as_ref()
+    }
+}
+/// See [`DescribeMapRunOutput`](crate::output::DescribeMapRunOutput).
+pub mod describe_map_run_output {
+
+    /// A builder for [`DescribeMapRunOutput`](crate::output::DescribeMapRunOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) map_run_arn: std::option::Option<std::string::String>,
+        pub(crate) execution_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::MapRunStatus>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stop_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) max_concurrency: std::option::Option<i32>,
+        pub(crate) tolerated_failure_percentage: std::option::Option<f32>,
+        pub(crate) tolerated_failure_count: std::option::Option<i64>,
+        pub(crate) item_counts: std::option::Option<crate::model::MapRunItemCounts>,
+        pub(crate) execution_counts: std::option::Option<crate::model::MapRunExecutionCounts>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
+        pub fn map_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.map_run_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
+        pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.map_run_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
+        pub fn execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
+        pub fn set_execution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.execution_arn = input;
+            self
+        }
+        /// <p>The current status of the Map Run.</p>
+        pub fn status(mut self, input: crate::model::MapRunStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The current status of the Map Run.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::MapRunStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The date when the Map Run was started.</p>
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_date = Some(input);
+            self
+        }
+        /// <p>The date when the Map Run was started.</p>
+        pub fn set_start_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_date = input;
+            self
+        }
+        /// <p>The date when the Map Run was stopped.</p>
+        pub fn stop_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.stop_date = Some(input);
+            self
+        }
+        /// <p>The date when the Map Run was stopped.</p>
+        pub fn set_stop_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.stop_date = input;
+            self
+        }
+        /// <p>The maximum number of child workflow executions configured to run in parallel for the Map Run at the same time.</p>
+        pub fn max_concurrency(mut self, input: i32) -> Self {
+            self.max_concurrency = Some(input);
+            self
+        }
+        /// <p>The maximum number of child workflow executions configured to run in parallel for the Map Run at the same time.</p>
+        pub fn set_max_concurrency(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_concurrency = input;
+            self
+        }
+        /// <p>The maximum percentage of failed child workflow executions before the Map Run fails.</p>
+        pub fn tolerated_failure_percentage(mut self, input: f32) -> Self {
+            self.tolerated_failure_percentage = Some(input);
+            self
+        }
+        /// <p>The maximum percentage of failed child workflow executions before the Map Run fails.</p>
+        pub fn set_tolerated_failure_percentage(mut self, input: std::option::Option<f32>) -> Self {
+            self.tolerated_failure_percentage = input;
+            self
+        }
+        /// <p>The maximum number of failed child workflow executions before the Map Run fails.</p>
+        pub fn tolerated_failure_count(mut self, input: i64) -> Self {
+            self.tolerated_failure_count = Some(input);
+            self
+        }
+        /// <p>The maximum number of failed child workflow executions before the Map Run fails.</p>
+        pub fn set_tolerated_failure_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.tolerated_failure_count = input;
+            self
+        }
+        /// <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
+        pub fn item_counts(mut self, input: crate::model::MapRunItemCounts) -> Self {
+            self.item_counts = Some(input);
+            self
+        }
+        /// <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
+        pub fn set_item_counts(
+            mut self,
+            input: std::option::Option<crate::model::MapRunItemCounts>,
+        ) -> Self {
+            self.item_counts = input;
+            self
+        }
+        /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
+        pub fn execution_counts(mut self, input: crate::model::MapRunExecutionCounts) -> Self {
+            self.execution_counts = Some(input);
+            self
+        }
+        /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
+        pub fn set_execution_counts(
+            mut self,
+            input: std::option::Option<crate::model::MapRunExecutionCounts>,
+        ) -> Self {
+            self.execution_counts = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeMapRunOutput`](crate::output::DescribeMapRunOutput).
+        pub fn build(self) -> crate::output::DescribeMapRunOutput {
+            crate::output::DescribeMapRunOutput {
+                map_run_arn: self.map_run_arn,
+                execution_arn: self.execution_arn,
+                status: self.status,
+                start_date: self.start_date,
+                stop_date: self.stop_date,
+                max_concurrency: self.max_concurrency.unwrap_or_default(),
+                tolerated_failure_percentage: self.tolerated_failure_percentage.unwrap_or_default(),
+                tolerated_failure_count: self.tolerated_failure_count.unwrap_or_default(),
+                item_counts: self.item_counts,
+                execution_counts: self.execution_counts,
+            }
+        }
+    }
+}
+impl DescribeMapRunOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMapRunOutput`](crate::output::DescribeMapRunOutput).
+    pub fn builder() -> crate::output::describe_map_run_output::Builder {
+        crate::output::describe_map_run_output::Builder::default()
     }
 }
 
@@ -1652,9 +2052,18 @@ pub struct DescribeExecutionOutput {
     /// <p>Provides details about execution input or output.</p>
     #[doc(hidden)]
     pub output_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
-    /// <p>The AWS X-Ray trace header that was passed to the execution.</p>
+    /// <p>The X-Ray trace header that was passed to the execution.</p>
     #[doc(hidden)]
     pub trace_header: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
+    #[doc(hidden)]
+    pub map_run_arn: std::option::Option<std::string::String>,
+    /// <p>The error string if the state machine execution failed.</p>
+    #[doc(hidden)]
+    pub error: std::option::Option<std::string::String>,
+    /// <p>The cause string if the state machine execution failed.</p>
+    #[doc(hidden)]
+    pub cause: std::option::Option<std::string::String>,
 }
 impl DescribeExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
@@ -1712,9 +2121,21 @@ impl DescribeExecutionOutput {
     ) -> std::option::Option<&crate::model::CloudWatchEventsExecutionDataDetails> {
         self.output_details.as_ref()
     }
-    /// <p>The AWS X-Ray trace header that was passed to the execution.</p>
+    /// <p>The X-Ray trace header that was passed to the execution.</p>
     pub fn trace_header(&self) -> std::option::Option<&str> {
         self.trace_header.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
+    pub fn map_run_arn(&self) -> std::option::Option<&str> {
+        self.map_run_arn.as_deref()
+    }
+    /// <p>The error string if the state machine execution failed.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The cause string if the state machine execution failed.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
     }
 }
 impl std::fmt::Debug for DescribeExecutionOutput {
@@ -1731,6 +2152,9 @@ impl std::fmt::Debug for DescribeExecutionOutput {
         formatter.field("output", &"*** Sensitive Data Redacted ***");
         formatter.field("output_details", &self.output_details);
         formatter.field("trace_header", &self.trace_header);
+        formatter.field("map_run_arn", &self.map_run_arn);
+        formatter.field("error", &"*** Sensitive Data Redacted ***");
+        formatter.field("cause", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -1753,6 +2177,9 @@ pub mod describe_execution_output {
         pub(crate) output_details:
             std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
         pub(crate) trace_header: std::option::Option<std::string::String>,
+        pub(crate) map_run_arn: std::option::Option<std::string::String>,
+        pub(crate) error: std::option::Option<std::string::String>,
+        pub(crate) cause: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
@@ -1904,14 +2331,44 @@ pub mod describe_execution_output {
             self.output_details = input;
             self
         }
-        /// <p>The AWS X-Ray trace header that was passed to the execution.</p>
+        /// <p>The X-Ray trace header that was passed to the execution.</p>
         pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
             self.trace_header = Some(input.into());
             self
         }
-        /// <p>The AWS X-Ray trace header that was passed to the execution.</p>
+        /// <p>The X-Ray trace header that was passed to the execution.</p>
         pub fn set_trace_header(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trace_header = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
+        pub fn map_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.map_run_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
+        pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.map_run_arn = input;
+            self
+        }
+        /// <p>The error string if the state machine execution failed.</p>
+        pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error = Some(input.into());
+            self
+        }
+        /// <p>The error string if the state machine execution failed.</p>
+        pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error = input;
+            self
+        }
+        /// <p>The cause string if the state machine execution failed.</p>
+        pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cause = Some(input.into());
+            self
+        }
+        /// <p>The cause string if the state machine execution failed.</p>
+        pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cause = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
@@ -1928,6 +2385,9 @@ pub mod describe_execution_output {
                 output: self.output,
                 output_details: self.output_details,
                 trace_header: self.trace_header,
+                map_run_arn: self.map_run_arn,
+                error: self.error,
+                cause: self.cause,
             }
         }
     }
@@ -1945,6 +2405,9 @@ pub mod describe_execution_output {
             formatter.field("output", &"*** Sensitive Data Redacted ***");
             formatter.field("output_details", &self.output_details);
             formatter.field("trace_header", &self.trace_header);
+            formatter.field("map_run_arn", &self.map_run_arn);
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }

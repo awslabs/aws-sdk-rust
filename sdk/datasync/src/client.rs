@@ -94,7 +94,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CancelTaskExecution`](crate::client::fluent_builders::CancelTaskExecution) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_execution_arn(impl Into<String>)`](crate::client::fluent_builders::CancelTaskExecution::task_execution_arn) / [`set_task_execution_arn(Option<String>)`](crate::client::fluent_builders::CancelTaskExecution::set_task_execution_arn): <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
+    ///   - [`task_execution_arn(impl Into<String>)`](crate::client::fluent_builders::CancelTaskExecution::task_execution_arn) / [`set_task_execution_arn(Option<String>)`](crate::client::fluent_builders::CancelTaskExecution::set_task_execution_arn): <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
     /// - On success, responds with [`CancelTaskExecutionOutput`](crate::output::CancelTaskExecutionOutput)
 
     /// - On failure, responds with [`SdkError<CancelTaskExecutionError>`](crate::error::CancelTaskExecutionError)
@@ -237,6 +237,7 @@ impl Client {
     ///   - [`secret_key(impl Into<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::secret_key) / [`set_secret_key(Option<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_secret_key): <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
     ///   - [`agent_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_agent_arns): <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
     ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationObjectStorage::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_tags): <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
+    ///   - [`server_certificate(Blob)`](crate::client::fluent_builders::CreateLocationObjectStorage::server_certificate) / [`set_server_certificate(Option<Blob>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_server_certificate): <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>  <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     /// - On success, responds with [`CreateLocationObjectStorageOutput`](crate::output::CreateLocationObjectStorageOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationObjectStorageOutput::location_arn): <p>Specifies the ARN of the object storage system location that you create.</p>
     /// - On failure, responds with [`SdkError<CreateLocationObjectStorageError>`](crate::error::CreateLocationObjectStorageError)
@@ -282,11 +283,11 @@ impl Client {
     ///   - [`destination_location_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTask::destination_location_arn) / [`set_destination_location_arn(Option<String>)`](crate::client::fluent_builders::CreateTask::set_destination_location_arn): <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
     ///   - [`cloud_watch_log_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTask::cloud_watch_log_group_arn) / [`set_cloud_watch_log_group_arn(Option<String>)`](crate::client::fluent_builders::CreateTask::set_cloud_watch_log_group_arn): <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateTask::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateTask::set_name): <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
-    ///   - [`options(Options)`](crate::client::fluent_builders::CreateTask::options) / [`set_options(Option<Options>)`](crate::client::fluent_builders::CreateTask::set_options): <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>  <p>For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code> before starting the task execution. For more information, see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
-    ///   - [`excludes(Vec<FilterRule>)`](crate::client::fluent_builders::CreateTask::excludes) / [`set_excludes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::CreateTask::set_excludes): <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>  <p> </p>
+    ///   - [`options(Options)`](crate::client::fluent_builders::CreateTask::options) / [`set_options(Option<Options>)`](crate::client::fluent_builders::CreateTask::set_options): <p>Specifies the configuration options for a task. Some options include preserving file or object metadata and verifying data integrity.</p>  <p>You can also override these options before starting an individual run of a task (also known as a <i>task execution</i>). For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    ///   - [`excludes(Vec<FilterRule>)`](crate::client::fluent_builders::CreateTask::excludes) / [`set_excludes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::CreateTask::set_excludes): <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     ///   - [`schedule(TaskSchedule)`](crate::client::fluent_builders::CreateTask::schedule) / [`set_schedule(Option<TaskSchedule>)`](crate::client::fluent_builders::CreateTask::set_schedule): <p>Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateTask::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateTask::set_tags): <p>The key-value pair that represents the tag that you want to add to the resource. The value can be an empty string. </p>
-    ///   - [`includes(Vec<FilterRule>)`](crate::client::fluent_builders::CreateTask::includes) / [`set_includes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::CreateTask::set_includes): <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateTask::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateTask::set_tags): <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>  <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    ///   - [`includes(Vec<FilterRule>)`](crate::client::fluent_builders::CreateTask::includes) / [`set_includes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::CreateTask::set_includes): <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     /// - On success, responds with [`CreateTaskOutput`](crate::output::CreateTaskOutput) with field(s):
     ///   - [`task_arn(Option<String>)`](crate::output::CreateTaskOutput::task_arn): <p>The Amazon Resource Name (ARN) of the task.</p>
     /// - On failure, responds with [`SdkError<CreateTaskError>`](crate::error::CreateTaskError)
@@ -316,7 +317,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteTask`](crate::client::fluent_builders::DeleteTask) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteTask::task_arn) / [`set_task_arn(Option<String>)`](crate::client::fluent_builders::DeleteTask::set_task_arn): <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+    ///   - [`task_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteTask::task_arn) / [`set_task_arn(Option<String>)`](crate::client::fluent_builders::DeleteTask::set_task_arn): <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
     /// - On success, responds with [`DeleteTaskOutput`](crate::output::DeleteTaskOutput)
 
     /// - On failure, responds with [`SdkError<DeleteTaskError>`](crate::error::DeleteTaskError)
@@ -455,11 +456,12 @@ impl Client {
     /// - On success, responds with [`DescribeLocationObjectStorageOutput`](crate::output::DescribeLocationObjectStorageOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::output::DescribeLocationObjectStorageOutput::location_arn): <p>The ARN of the object storage system location.</p>
     ///   - [`location_uri(Option<String>)`](crate::output::DescribeLocationObjectStorageOutput::location_uri): <p>The URL of the object storage system location.</p>
-    ///   - [`access_key(Option<String>)`](crate::output::DescribeLocationObjectStorageOutput::access_key): <p>The access key (for example, a user name) required to authenticate with the object storage server.</p>
+    ///   - [`access_key(Option<String>)`](crate::output::DescribeLocationObjectStorageOutput::access_key): <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
     ///   - [`server_port(Option<i32>)`](crate::output::DescribeLocationObjectStorageOutput::server_port): <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
-    ///   - [`server_protocol(Option<ObjectStorageServerProtocol>)`](crate::output::DescribeLocationObjectStorageOutput::server_protocol): <p>The protocol that your object storage server uses to communicate.</p>
+    ///   - [`server_protocol(Option<ObjectStorageServerProtocol>)`](crate::output::DescribeLocationObjectStorageOutput::server_protocol): <p>The protocol that your object storage system uses to communicate.</p>
     ///   - [`agent_arns(Option<Vec<String>>)`](crate::output::DescribeLocationObjectStorageOutput::agent_arns): <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLocationObjectStorageOutput::creation_time): <p>The time that the location was created.</p>
+    ///   - [`server_certificate(Option<Blob>)`](crate::output::DescribeLocationObjectStorageOutput::server_certificate): <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationObjectStorageError>`](crate::error::DescribeLocationObjectStorageError)
     pub fn describe_location_object_storage(
         &self,
@@ -505,19 +507,19 @@ impl Client {
     ///   - [`task_arn(Option<String>)`](crate::output::DescribeTaskOutput::task_arn): <p>The Amazon Resource Name (ARN) of the task that was described.</p>
     ///   - [`status(Option<TaskStatus>)`](crate::output::DescribeTaskOutput::status): <p>The status of the task that was described.</p>  <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
     ///   - [`name(Option<String>)`](crate::output::DescribeTaskOutput::name): <p>The name of the task that was described.</p>
-    ///   - [`current_task_execution_arn(Option<String>)`](crate::output::DescribeTaskOutput::current_task_execution_arn): <p>The Amazon Resource Name (ARN) of the task execution that is syncing files.</p>
+    ///   - [`current_task_execution_arn(Option<String>)`](crate::output::DescribeTaskOutput::current_task_execution_arn): <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
     ///   - [`source_location_arn(Option<String>)`](crate::output::DescribeTaskOutput::source_location_arn): <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
     ///   - [`destination_location_arn(Option<String>)`](crate::output::DescribeTaskOutput::destination_location_arn): <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
     ///   - [`cloud_watch_log_group_arn(Option<String>)`](crate::output::DescribeTaskOutput::cloud_watch_log_group_arn): <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>  <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
-    ///   - [`source_network_interface_arns(Option<Vec<String>>)`](crate::output::DescribeTaskOutput::source_network_interface_arns): <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for your subnet.</p>
-    ///   - [`destination_network_interface_arns(Option<Vec<String>>)`](crate::output::DescribeTaskOutput::destination_network_interface_arns): <p>The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created for your subnet.</p>
-    ///   - [`options(Option<Options>)`](crate::output::DescribeTaskOutput::options): <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group (GID), file permissions, data integrity verification, and so on.</p>  <p>For each individual task execution, you can override these options by specifying the overriding <code>OverrideOptions</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
-    ///   - [`excludes(Option<Vec<FilterRule>>)`](crate::output::DescribeTaskOutput::excludes): <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>  <p> </p>
+    ///   - [`source_network_interface_arns(Option<Vec<String>>)`](crate::output::DescribeTaskOutput::source_network_interface_arns): <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
+    ///   - [`destination_network_interface_arns(Option<Vec<String>>)`](crate::output::DescribeTaskOutput::destination_network_interface_arns): <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
+    ///   - [`options(Option<Options>)`](crate::output::DescribeTaskOutput::options): <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>  <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    ///   - [`excludes(Option<Vec<FilterRule>>)`](crate::output::DescribeTaskOutput::excludes): <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     ///   - [`schedule(Option<TaskSchedule>)`](crate::output::DescribeTaskOutput::schedule): <p>The schedule used to periodically transfer files from a source to a destination location.</p>
     ///   - [`error_code(Option<String>)`](crate::output::DescribeTaskOutput::error_code): <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
     ///   - [`error_detail(Option<String>)`](crate::output::DescribeTaskOutput::error_detail): <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeTaskOutput::creation_time): <p>The time that the task was created.</p>
-    ///   - [`includes(Option<Vec<FilterRule>>)`](crate::output::DescribeTaskOutput::includes): <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2</code>".</p>
+    ///   - [`includes(Option<Vec<FilterRule>>)`](crate::output::DescribeTaskOutput::includes): <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeTaskError>`](crate::error::DescribeTaskError)
     pub fn describe_task(&self) -> fluent_builders::DescribeTask {
         fluent_builders::DescribeTask::new(self.handle.clone())
@@ -529,16 +531,17 @@ impl Client {
     /// - On success, responds with [`DescribeTaskExecutionOutput`](crate::output::DescribeTaskExecutionOutput) with field(s):
     ///   - [`task_execution_arn(Option<String>)`](crate::output::DescribeTaskExecutionOutput::task_execution_arn): <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>  <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
     ///   - [`status(Option<TaskExecutionStatus>)`](crate::output::DescribeTaskExecutionOutput::status): <p>The status of the task execution. </p>  <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide.</i> </p>
-    ///   - [`options(Option<Options>)`](crate::output::DescribeTaskExecutionOutput::options): <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>  <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-    ///   - [`excludes(Option<Vec<FilterRule>>)`](crate::output::DescribeTaskExecutionOutput::excludes): <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>  <p> </p>
-    ///   - [`includes(Option<Vec<FilterRule>>)`](crate::output::DescribeTaskExecutionOutput::includes): <p>A list of filter rules that determines which files to include when running a task. The list should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>  <p> </p>
+    ///   - [`options(Option<Options>)`](crate::output::DescribeTaskExecutionOutput::options): <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>  <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    ///   - [`excludes(Option<Vec<FilterRule>>)`](crate::output::DescribeTaskExecutionOutput::excludes): <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    ///   - [`includes(Option<Vec<FilterRule>>)`](crate::output::DescribeTaskExecutionOutput::includes): <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     ///   - [`start_time(Option<DateTime>)`](crate::output::DescribeTaskExecutionOutput::start_time): <p>The time that the task execution was started.</p>
-    ///   - [`estimated_files_to_transfer(i64)`](crate::output::DescribeTaskExecutionOutput::estimated_files_to_transfer): <p>The expected number of files that is to be transferred over the network. This value is calculated during the PREPARING phase, before the TRANSFERRING phase. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
+    ///   - [`estimated_files_to_transfer(i64)`](crate::output::DescribeTaskExecutionOutput::estimated_files_to_transfer): <p>The expected number of files that is to be transferred over the network. This value is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
     ///   - [`estimated_bytes_to_transfer(i64)`](crate::output::DescribeTaskExecutionOutput::estimated_bytes_to_transfer): <p>The estimated physical number of bytes that is to be transferred over the network.</p>
-    ///   - [`files_transferred(i64)`](crate::output::DescribeTaskExecutionOutput::files_transferred): <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the TRANSFERRING phase. It's updated periodically when each file is read from the source and sent over the network. </p>  <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. This value can also be greater than <code>EstimatedFilesTransferred</code> in some cases. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
+    ///   - [`files_transferred(i64)`](crate::output::DescribeTaskExecutionOutput::files_transferred): <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p>  <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
     ///   - [`bytes_written(i64)`](crate::output::DescribeTaskExecutionOutput::bytes_written): <p>The number of logical bytes written to the destination Amazon Web Services storage resource.</p>
-    ///   - [`bytes_transferred(i64)`](crate::output::DescribeTaskExecutionOutput::bytes_transferred): <p>The physical number of bytes transferred over the network.</p>
+    ///   - [`bytes_transferred(i64)`](crate::output::DescribeTaskExecutionOutput::bytes_transferred): <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
     ///   - [`result(Option<TaskExecutionResultDetail>)`](crate::output::DescribeTaskExecutionOutput::result): <p>The result of the task execution.</p>
+    ///   - [`bytes_compressed(i64)`](crate::output::DescribeTaskExecutionOutput::bytes_compressed): <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
     /// - On failure, responds with [`SdkError<DescribeTaskExecutionError>`](crate::error::DescribeTaskExecutionError)
     pub fn describe_task_execution(&self) -> fluent_builders::DescribeTaskExecution {
         fluent_builders::DescribeTaskExecution::new(self.handle.clone())
@@ -574,12 +577,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTagsForResource::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTagsForResource::set_max_results): <p>The maximum number of locations to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTagsForResource::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTagsForResource::set_max_results): <p>Specifies how many results that you want in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<TagListEntry>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Array of resource tags.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>An opaque string that indicates the position at which to begin returning the next list of resource tags.</p>
+    ///   - [`tags(Option<Vec<TagListEntry>>)`](crate::output::ListTagsForResourceOutput::tags): <p>An array of tags applied to the specified resource.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
@@ -615,12 +618,13 @@ impl Client {
     /// Constructs a fluent builder for the [`StartTaskExecution`](crate::client::fluent_builders::StartTaskExecution) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_arn(impl Into<String>)`](crate::client::fluent_builders::StartTaskExecution::task_arn) / [`set_task_arn(Option<String>)`](crate::client::fluent_builders::StartTaskExecution::set_task_arn): <p>The Amazon Resource Name (ARN) of the task to start.</p>
-    ///   - [`override_options(Options)`](crate::client::fluent_builders::StartTaskExecution::override_options) / [`set_override_options(Option<Options>)`](crate::client::fluent_builders::StartTaskExecution::set_override_options): <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>  <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-    ///   - [`includes(Vec<FilterRule>)`](crate::client::fluent_builders::StartTaskExecution::includes) / [`set_includes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::StartTaskExecution::set_includes): <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>  <p> </p>
-    ///   - [`excludes(Vec<FilterRule>)`](crate::client::fluent_builders::StartTaskExecution::excludes) / [`set_excludes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::StartTaskExecution::set_excludes): <p>A list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+    ///   - [`task_arn(impl Into<String>)`](crate::client::fluent_builders::StartTaskExecution::task_arn) / [`set_task_arn(Option<String>)`](crate::client::fluent_builders::StartTaskExecution::set_task_arn): <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
+    ///   - [`override_options(Options)`](crate::client::fluent_builders::StartTaskExecution::override_options) / [`set_override_options(Option<Options>)`](crate::client::fluent_builders::StartTaskExecution::set_override_options): <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>  <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    ///   - [`includes(Vec<FilterRule>)`](crate::client::fluent_builders::StartTaskExecution::includes) / [`set_includes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::StartTaskExecution::set_includes): <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+    ///   - [`excludes(Vec<FilterRule>)`](crate::client::fluent_builders::StartTaskExecution::excludes) / [`set_excludes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::StartTaskExecution::set_excludes): <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::StartTaskExecution::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::StartTaskExecution::set_tags): <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>  <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     /// - On success, responds with [`StartTaskExecutionOutput`](crate::output::StartTaskExecutionOutput) with field(s):
-    ///   - [`task_execution_arn(Option<String>)`](crate::output::StartTaskExecutionOutput::task_execution_arn): <p>The Amazon Resource Name (ARN) of the specific task execution that was started.</p>
+    ///   - [`task_execution_arn(Option<String>)`](crate::output::StartTaskExecutionOutput::task_execution_arn): <p>The ARN of the running task execution.</p>
     /// - On failure, responds with [`SdkError<StartTaskExecutionError>`](crate::error::StartTaskExecutionError)
     pub fn start_task_execution(&self) -> fluent_builders::StartTaskExecution {
         fluent_builders::StartTaskExecution::new(self.handle.clone())
@@ -628,8 +632,8 @@ impl Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to apply.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
+    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Specifies the tags that you want to apply to the resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -639,8 +643,8 @@ impl Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
-    ///   - [`keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::keys) / [`set_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_keys): <p>The keys in the key-value pair in the tag to remove.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>Specifies the Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
+    ///   - [`keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::keys) / [`set_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_keys): <p>Specifies the keys in the tags that you want to remove.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -696,13 +700,14 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateLocationObjectStorage`](crate::client::fluent_builders::UpdateLocationObjectStorage) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_location_arn): <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.</p>
-    ///   - [`server_port(i32)`](crate::client::fluent_builders::UpdateLocationObjectStorage::server_port) / [`set_server_port(Option<i32>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_server_port): <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
-    ///   - [`server_protocol(ObjectStorageServerProtocol)`](crate::client::fluent_builders::UpdateLocationObjectStorage::server_protocol) / [`set_server_protocol(Option<ObjectStorageServerProtocol>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_server_protocol): <p>The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or <code>HTTPS</code>.</p>
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_subdirectory): <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
-    ///   - [`access_key(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::access_key) / [`set_access_key(Option<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_access_key): <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
-    ///   - [`secret_key(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::secret_key) / [`set_secret_key(Option<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_secret_key): <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
-    ///   - [`agent_arns(Vec<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_agent_arns): <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_location_arn): <p>Specifies the ARN of the object storage system location that you're updating.</p>
+    ///   - [`server_port(i32)`](crate::client::fluent_builders::UpdateLocationObjectStorage::server_port) / [`set_server_port(Option<i32>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_server_port): <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
+    ///   - [`server_protocol(ObjectStorageServerProtocol)`](crate::client::fluent_builders::UpdateLocationObjectStorage::server_protocol) / [`set_server_protocol(Option<ObjectStorageServerProtocol>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_server_protocol): <p>Specifies the protocol that your object storage server uses to communicate.</p>
+    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_subdirectory): <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
+    ///   - [`access_key(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::access_key) / [`set_access_key(Option<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_access_key): <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
+    ///   - [`secret_key(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::secret_key) / [`set_secret_key(Option<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_secret_key): <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
+    ///   - [`agent_arns(Vec<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_agent_arns): <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
+    ///   - [`server_certificate(Blob)`](crate::client::fluent_builders::UpdateLocationObjectStorage::server_certificate) / [`set_server_certificate(Option<Blob>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_server_certificate): <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>  <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>  <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
     /// - On success, responds with [`UpdateLocationObjectStorageOutput`](crate::output::UpdateLocationObjectStorageOutput)
 
     /// - On failure, responds with [`SdkError<UpdateLocationObjectStorageError>`](crate::error::UpdateLocationObjectStorageError)
@@ -729,12 +734,12 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`task_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateTask::task_arn) / [`set_task_arn(Option<String>)`](crate::client::fluent_builders::UpdateTask::set_task_arn): <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
-    ///   - [`options(Options)`](crate::client::fluent_builders::UpdateTask::options) / [`set_options(Option<Options>)`](crate::client::fluent_builders::UpdateTask::set_options): <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>  <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-    ///   - [`excludes(Vec<FilterRule>)`](crate::client::fluent_builders::UpdateTask::excludes) / [`set_excludes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::UpdateTask::set_excludes): <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>  <p> </p>
+    ///   - [`options(Options)`](crate::client::fluent_builders::UpdateTask::options) / [`set_options(Option<Options>)`](crate::client::fluent_builders::UpdateTask::set_options): <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>  <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    ///   - [`excludes(Vec<FilterRule>)`](crate::client::fluent_builders::UpdateTask::excludes) / [`set_excludes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::UpdateTask::set_excludes): <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     ///   - [`schedule(TaskSchedule)`](crate::client::fluent_builders::UpdateTask::schedule) / [`set_schedule(Option<TaskSchedule>)`](crate::client::fluent_builders::UpdateTask::set_schedule): <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateTask::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateTask::set_name): <p>The name of the task to update.</p>
     ///   - [`cloud_watch_log_group_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateTask::cloud_watch_log_group_arn) / [`set_cloud_watch_log_group_arn(Option<String>)`](crate::client::fluent_builders::UpdateTask::set_cloud_watch_log_group_arn): <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
-    ///   - [`includes(Vec<FilterRule>)`](crate::client::fluent_builders::UpdateTask::includes) / [`set_includes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::UpdateTask::set_includes): <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    ///   - [`includes(Vec<FilterRule>)`](crate::client::fluent_builders::UpdateTask::includes) / [`set_includes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::UpdateTask::set_includes): <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     /// - On success, responds with [`UpdateTaskOutput`](crate::output::UpdateTaskOutput)
 
     /// - On failure, responds with [`SdkError<UpdateTaskError>`](crate::error::UpdateTaskError)
@@ -745,7 +750,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`task_execution_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateTaskExecution::task_execution_arn) / [`set_task_execution_arn(Option<String>)`](crate::client::fluent_builders::UpdateTaskExecution::set_task_execution_arn): <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
-    ///   - [`options(Options)`](crate::client::fluent_builders::UpdateTaskExecution::options) / [`set_options(Option<Options>)`](crate::client::fluent_builders::UpdateTaskExecution::set_options): <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>  <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    ///   - [`options(Options)`](crate::client::fluent_builders::UpdateTaskExecution::options) / [`set_options(Option<Options>)`](crate::client::fluent_builders::UpdateTaskExecution::set_options): <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>  <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     /// - On success, responds with [`UpdateTaskExecutionOutput`](crate::output::UpdateTaskExecutionOutput)
 
     /// - On failure, responds with [`SdkError<UpdateTaskExecutionError>`](crate::error::UpdateTaskExecutionError)
@@ -762,8 +767,8 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `CancelTaskExecution`.
     ///
-    /// <p>Cancels execution of a task. </p>
-    /// <p>When you cancel a task execution, the transfer of some files is abruptly interrupted. The contents of files that are transferred to the destination might be incomplete or inconsistent with the source files. However, if you start a new task execution on the same task and you allow the task execution to complete, file content on the destination is complete and consistent. This applies to other unexpected failures that interrupt a task execution. In all of these cases, DataSync successfully complete the transfer when you start the next task execution.</p>
+    /// <p>Stops an DataSync task execution that's in progress. The transfer of some files are abruptly interrupted. File contents that're transferred to the destination might be incomplete or inconsistent with the source files.</p>
+    /// <p>However, if you start a new task execution using the same task and allow it to finish, file content on the destination will be complete and consistent. This applies to other unexpected failures that interrupt a task execution. In all of these cases, DataSync successfully completes the transfer when you start the next task execution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelTaskExecution {
         handle: std::sync::Arc<super::Handle>,
@@ -823,12 +828,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
+        /// <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
         pub fn task_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.task_execution_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
+        /// <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
         pub fn set_task_execution_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -839,11 +844,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAgent`.
     ///
-    /// <p>Activates an DataSync agent that you have deployed on your host. The activation process associates your agent with your account. In the activation process, you specify information such as the Amazon Web Services Region that you want to activate the agent in. You activate the agent in the Amazon Web Services Region where your target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in this Amazon Web Services Region.</p>
+    /// <p>Activates an DataSync agent that you have deployed in your storage environment. The activation process associates your agent with your account. In the activation process, you specify information such as the Amazon Web Services Region that you want to activate the agent in. You activate the agent in the Amazon Web Services Region where your target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in this Amazon Web Services Region.</p>
     /// <p>You can activate the agent in a VPC (virtual private cloud) or provide the agent access to a VPC endpoint so you can run tasks without going over the public internet.</p>
     /// <p>You can use an agent for more than one location. If a task uses multiple agents, all of them need to have status AVAILABLE for the task to run. If you use multiple agents for a source location, the status of all the agents must be AVAILABLE for the task to run. </p>
     /// <p>Agents are automatically updated by Amazon Web Services on a regular basis, using a mechanism that ensures minimal interruption to your tasks.</p>
-    /// <p></p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAgent {
         handle: std::sync::Arc<super::Handle>,
@@ -1442,7 +1446,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateLocationFsxOpenZfs`.
     ///
-    /// <p>Creates an endpoint for an Amazon FSx for OpenZFS file system.</p>
+    /// <p>Creates an endpoint for an Amazon FSx for OpenZFS file system that DataSync can access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-openzfs-location.html">Creating a location for FSx for OpenZFS</a>.</p> <note>
+    /// <p>Request parameters related to <code>SMB</code> aren't supported with the <code>CreateLocationFsxOpenZfs</code> operation.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocationFsxOpenZfs {
         handle: std::sync::Arc<super::Handle>,
@@ -2302,10 +2308,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+        /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+        pub fn server_certificate(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.server_certificate(input);
+            self
+        }
+        /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+        /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+        pub fn set_server_certificate(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.inner = self.inner.set_server_certificate(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateLocationS3`.
     ///
-    /// <p>Creates an endpoint for an Amazon S3 bucket.</p>
+    /// <p>Creates an endpoint for an Amazon S3 bucket that DataSync can access for a transfer.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create an Amazon S3 location</a> in the <i>DataSync User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocationS3 {
@@ -2630,12 +2651,6 @@ pub mod fluent_builders {
     ///
     /// <p>Configures a task, which defines where and how DataSync transfers your data.</p>
     /// <p>A task includes a source location, a destination location, and the preferences for how and when you want to transfer your data (such as bandwidth limits, scheduling, among other options).</p>
-    /// <p>When you create a task that transfers data between Amazon Web Services services in different Amazon Web Services Regions, one of your locations must reside in the Region where you're using DataSync.</p>
-    /// <p>For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html">Working with DataSync locations</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure DataSync task settings</a> </p> </li>
-    /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTask {
         handle: std::sync::Arc<super::Handle>,
@@ -2744,14 +2759,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
-        /// <p>For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code> before starting the task execution. For more information, see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+        /// <p>Specifies the configuration options for a task. Some options include preserving file or object metadata and verifying data integrity.</p>
+        /// <p>You can also override these options before starting an individual run of a task (also known as a <i>task execution</i>). For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.inner = self.inner.options(input);
             self
         }
-        /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
-        /// <p>For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code> before starting the task execution. For more information, see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+        /// <p>Specifies the configuration options for a task. Some options include preserving file or object metadata and verifying data integrity.</p>
+        /// <p>You can also override these options before starting an individual run of a task (also known as a <i>task execution</i>). For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
             self.inner = self.inner.set_options(input);
             self
@@ -2760,14 +2775,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-        /// <p> </p>
+        /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             self.inner = self.inner.excludes(input);
             self
         }
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-        /// <p> </p>
+        /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -2792,12 +2805,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pair that represents the tag that you want to add to the resource. The value can be an empty string. </p>
+        /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
+        /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The key-value pair that represents the tag that you want to add to the resource. The value can be an empty string. </p>
+        /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
+        /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -2809,12 +2824,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             self.inner = self.inner.includes(input);
             self
         }
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -2971,7 +2986,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTask`.
     ///
-    /// <p>Deletes a task.</p>
+    /// <p>Deletes an DataSync task.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTask {
         handle: std::sync::Arc<super::Handle>,
@@ -3031,12 +3046,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
         pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.task_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_arn(input);
             self
@@ -3190,7 +3205,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLocationFsxLustre`.
     ///
-    /// <p>Returns metadata about an Amazon FSx for Lustre location, such as information about its path.</p>
+    /// <p>Provides details about how an DataSync location for an Amazon FSx for Lustre file system is configured.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationFsxLustre {
         handle: std::sync::Arc<super::Handle>,
@@ -3263,7 +3278,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLocationFsxOntap`.
     ///
-    /// <p>Provides details about how an DataSync location for an Amazon FSx for NetApp ONTAP file system is configured.</p>
+    /// <p>Provides details about how an DataSync location for an Amazon FSx for NetApp ONTAP file system is configured.</p> <note>
+    /// <p>If your location uses SMB, the <code>DescribeLocationFsxOntap</code> operation doesn't actually return a <code>Password</code>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationFsxOntap {
         handle: std::sync::Arc<super::Handle>,
@@ -3336,7 +3353,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLocationFsxOpenZfs`.
     ///
-    /// <p>Returns metadata about an Amazon FSx for OpenZFS location, such as information about its path.</p>
+    /// <p>Provides details about how an DataSync location for an Amazon FSx for OpenZFS file system is configured.</p> <note>
+    /// <p>Response elements related to <code>SMB</code> aren't supported with the <code>DescribeLocationFsxOpenZfs</code> operation.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationFsxOpenZfs {
         handle: std::sync::Arc<super::Handle>,
@@ -4194,7 +4213,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Returns all the tags associated with a specified resource. </p>
+    /// <p>Returns all the tags associated with an Amazon Web Services resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -4260,32 +4279,32 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListTagsForResourcePaginator {
             crate::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The maximum number of locations to return.</p>
+        /// <p>Specifies how many results that you want in the response.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of locations to return.</p>
+        /// <p>Specifies how many results that you want in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
+        /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
+        /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4498,9 +4517,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartTaskExecution`.
     ///
-    /// <p>Starts a specific invocation of a task. A <code>TaskExecution</code> value represents an individual run of a task. Each task can have at most one <code>TaskExecution</code> at a time.</p>
-    /// <p> <code>TaskExecution</code> has the following transition phases: INITIALIZING | PREPARING | TRANSFERRING | VERIFYING | SUCCESS/FAILURE. </p>
-    /// <p>For detailed information, see the Task Execution section in the Components and Terminology topic in the <i>DataSync User Guide</i>.</p>
+    /// <p>Starts an DataSync task. For each task, you can only run one task execution at a time.</p>
+    /// <p>There are several phases to a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTaskExecution {
         handle: std::sync::Arc<super::Handle>,
@@ -4560,24 +4578,24 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
         pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.task_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_arn(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn override_options(mut self, input: crate::model::Options) -> Self {
             self.inner = self.inner.override_options(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn set_override_options(
             mut self,
             input: std::option::Option<crate::model::Options>,
@@ -4589,14 +4607,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-        /// <p> </p>
+        /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             self.inner = self.inner.includes(input);
             self
         }
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-        /// <p> </p>
+        /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -4608,12 +4624,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+        /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             self.inner = self.inner.excludes(input);
             self
         }
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+        /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -4621,10 +4637,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_excludes(input);
             self
         }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
+        /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
+        /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Applies a key-value pair to an Amazon Web Services resource.</p>
+    /// <p>Applies a <i>tag</i> to an Amazon Web Services resource. Tags are key-value pairs that can help you manage, filter, and search for your resources.</p>
+    /// <p>These include DataSync resources, such as locations, tasks, and task executions.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -4684,12 +4720,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4698,12 +4734,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to apply.</p>
+        /// <p>Specifies the tags that you want to apply to the resource.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to apply.</p>
+        /// <p>Specifies the tags that you want to apply to the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -4714,7 +4750,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes a tag from an Amazon Web Services resource.</p>
+    /// <p>Removes tags from an Amazon Web Services resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -4774,12 +4810,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4788,12 +4824,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_keys`](Self::set_keys).
         ///
-        /// <p>The keys in the key-value pair in the tag to remove.</p>
+        /// <p>Specifies the keys in the tags that you want to remove.</p>
         pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.keys(input.into());
             self
         }
-        /// <p>The keys in the key-value pair in the tag to remove.</p>
+        /// <p>Specifies the keys in the tags that you want to remove.</p>
         pub fn set_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5229,7 +5265,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateLocationObjectStorage`.
     ///
-    /// <p>Updates some of the parameters of a previously created location for self-managed object storage server access. For information about creating a self-managed object storage location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>
+    /// <p>Updates some parameters of an existing object storage location that DataSync accesses for a transfer. For information about creating a self-managed object storage location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLocationObjectStorage {
         handle: std::sync::Arc<super::Handle>,
@@ -5289,32 +5325,32 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.</p>
+        /// <p>Specifies the ARN of the object storage system location that you're updating.</p>
         pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.</p>
+        /// <p>Specifies the ARN of the object storage system location that you're updating.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location_arn(input);
             self
         }
-        /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
+        /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
         pub fn server_port(mut self, input: i32) -> Self {
             self.inner = self.inner.server_port(input);
             self
         }
-        /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
+        /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
         pub fn set_server_port(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_server_port(input);
             self
         }
-        /// <p>The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or <code>HTTPS</code>.</p>
+        /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
         pub fn server_protocol(mut self, input: crate::model::ObjectStorageServerProtocol) -> Self {
             self.inner = self.inner.server_protocol(input);
             self
         }
-        /// <p>The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or <code>HTTPS</code>.</p>
+        /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
         pub fn set_server_protocol(
             mut self,
             input: std::option::Option<crate::model::ObjectStorageServerProtocol>,
@@ -5322,32 +5358,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_protocol(input);
             self
         }
-        /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
+        /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subdirectory(input.into());
             self
         }
-        /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
+        /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
             self
         }
-        /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+        /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
         pub fn access_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.access_key(input.into());
             self
         }
-        /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+        /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
         pub fn set_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_key(input);
             self
         }
-        /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+        /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
         pub fn secret_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_key(input.into());
             self
         }
-        /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+        /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
         pub fn set_secret_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_key(input);
             self
@@ -5356,17 +5392,34 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
         ///
-        /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+        /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.agent_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+        /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
         pub fn set_agent_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_agent_arns(input);
+            self
+        }
+        /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+        /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+        /// <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
+        pub fn server_certificate(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.server_certificate(input);
+            self
+        }
+        /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+        /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+        /// <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
+        pub fn set_server_certificate(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.inner = self.inner.set_server_certificate(input);
             self
         }
     }
@@ -5601,14 +5654,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_arn(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.inner = self.inner.options(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
             self.inner = self.inner.set_options(input);
             self
@@ -5617,14 +5670,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-        /// <p> </p>
+        /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             self.inner = self.inner.excludes(input);
             self
         }
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-        /// <p> </p>
+        /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -5672,12 +5723,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             self.inner = self.inner.includes(input);
             self
         }
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -5764,14 +5815,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_execution_arn(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.inner = self.inner.options(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
             self.inner = self.inner.set_options(input);
             self

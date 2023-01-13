@@ -15,7 +15,7 @@ pub(crate) fn deser_header_associate_member_internal_server_exception_retry_afte
     }
 }
 
-pub(crate) fn deser_header_batch_get_account_status_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_associate_member_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -31,7 +31,7 @@ pub(crate) fn deser_header_batch_get_account_status_internal_server_exception_re
     }
 }
 
-pub(crate) fn deser_header_batch_get_free_trial_info_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_batch_get_account_status_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -47,7 +47,7 @@ pub(crate) fn deser_header_batch_get_free_trial_info_internal_server_exception_r
     }
 }
 
-pub(crate) fn deser_header_cancel_findings_report_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_batch_get_account_status_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -63,7 +63,7 @@ pub(crate) fn deser_header_cancel_findings_report_internal_server_exception_retr
     }
 }
 
-pub(crate) fn deser_header_create_filter_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_batch_get_free_trial_info_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -79,7 +79,7 @@ pub(crate) fn deser_header_create_filter_internal_server_exception_retry_after_s
     }
 }
 
-pub(crate) fn deser_header_create_findings_report_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_batch_get_free_trial_info_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -95,7 +95,7 @@ pub(crate) fn deser_header_create_findings_report_internal_server_exception_retr
     }
 }
 
-pub(crate) fn deser_header_delete_filter_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_cancel_findings_report_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -111,7 +111,7 @@ pub(crate) fn deser_header_delete_filter_internal_server_exception_retry_after_s
     }
 }
 
-pub(crate) fn deser_header_describe_organization_configuration_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_cancel_findings_report_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -127,7 +127,7 @@ pub(crate) fn deser_header_describe_organization_configuration_internal_server_e
     }
 }
 
-pub(crate) fn deser_header_disable_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_filter_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -143,7 +143,7 @@ pub(crate) fn deser_header_disable_internal_server_exception_retry_after_seconds
     }
 }
 
-pub(crate) fn deser_header_disable_delegated_admin_account_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_filter_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -159,7 +159,7 @@ pub(crate) fn deser_header_disable_delegated_admin_account_internal_server_excep
     }
 }
 
-pub(crate) fn deser_header_disassociate_member_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_findings_report_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -175,7 +175,7 @@ pub(crate) fn deser_header_disassociate_member_internal_server_exception_retry_a
     }
 }
 
-pub(crate) fn deser_header_enable_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_findings_report_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -191,7 +191,7 @@ pub(crate) fn deser_header_enable_internal_server_exception_retry_after_seconds(
     }
 }
 
-pub(crate) fn deser_header_enable_delegated_admin_account_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_filter_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -207,7 +207,7 @@ pub(crate) fn deser_header_enable_delegated_admin_account_internal_server_except
     }
 }
 
-pub(crate) fn deser_header_get_configuration_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_filter_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -223,7 +223,7 @@ pub(crate) fn deser_header_get_configuration_internal_server_exception_retry_aft
     }
 }
 
-pub(crate) fn deser_header_get_delegated_admin_account_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_describe_organization_configuration_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -239,7 +239,7 @@ pub(crate) fn deser_header_get_delegated_admin_account_internal_server_exception
     }
 }
 
-pub(crate) fn deser_header_get_findings_report_status_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_describe_organization_configuration_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -255,7 +255,7 @@ pub(crate) fn deser_header_get_findings_report_status_internal_server_exception_
     }
 }
 
-pub(crate) fn deser_header_get_member_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_disable_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -271,7 +271,7 @@ pub(crate) fn deser_header_get_member_internal_server_exception_retry_after_seco
     }
 }
 
-pub(crate) fn deser_header_list_account_permissions_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_disable_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -287,7 +287,7 @@ pub(crate) fn deser_header_list_account_permissions_internal_server_exception_re
     }
 }
 
-pub(crate) fn deser_header_list_coverage_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_disable_delegated_admin_account_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -303,7 +303,7 @@ pub(crate) fn deser_header_list_coverage_internal_server_exception_retry_after_s
     }
 }
 
-pub(crate) fn deser_header_list_coverage_statistics_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_disable_delegated_admin_account_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -319,7 +319,7 @@ pub(crate) fn deser_header_list_coverage_statistics_internal_server_exception_re
     }
 }
 
-pub(crate) fn deser_header_list_delegated_admin_accounts_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_disassociate_member_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -335,7 +335,7 @@ pub(crate) fn deser_header_list_delegated_admin_accounts_internal_server_excepti
     }
 }
 
-pub(crate) fn deser_header_list_filters_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_disassociate_member_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -351,7 +351,7 @@ pub(crate) fn deser_header_list_filters_internal_server_exception_retry_after_se
     }
 }
 
-pub(crate) fn deser_header_list_finding_aggregations_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_enable_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -367,7 +367,7 @@ pub(crate) fn deser_header_list_finding_aggregations_internal_server_exception_r
     }
 }
 
-pub(crate) fn deser_header_list_findings_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_enable_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -383,7 +383,7 @@ pub(crate) fn deser_header_list_findings_internal_server_exception_retry_after_s
     }
 }
 
-pub(crate) fn deser_header_list_members_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_enable_delegated_admin_account_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -399,7 +399,7 @@ pub(crate) fn deser_header_list_members_internal_server_exception_retry_after_se
     }
 }
 
-pub(crate) fn deser_header_list_tags_for_resource_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_enable_delegated_admin_account_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -415,7 +415,7 @@ pub(crate) fn deser_header_list_tags_for_resource_internal_server_exception_retr
     }
 }
 
-pub(crate) fn deser_header_list_usage_totals_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_configuration_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -431,7 +431,7 @@ pub(crate) fn deser_header_list_usage_totals_internal_server_exception_retry_aft
     }
 }
 
-pub(crate) fn deser_header_tag_resource_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_configuration_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -447,7 +447,7 @@ pub(crate) fn deser_header_tag_resource_internal_server_exception_retry_after_se
     }
 }
 
-pub(crate) fn deser_header_untag_resource_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_delegated_admin_account_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -463,7 +463,7 @@ pub(crate) fn deser_header_untag_resource_internal_server_exception_retry_after_
     }
 }
 
-pub(crate) fn deser_header_update_configuration_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_delegated_admin_account_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -479,7 +479,7 @@ pub(crate) fn deser_header_update_configuration_internal_server_exception_retry_
     }
 }
 
-pub(crate) fn deser_header_update_filter_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_findings_report_status_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -495,7 +495,7 @@ pub(crate) fn deser_header_update_filter_internal_server_exception_retry_after_s
     }
 }
 
-pub(crate) fn deser_header_update_organization_configuration_internal_server_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_findings_report_status_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -508,5 +508,517 @@ pub(crate) fn deser_header_update_organization_configuration_internal_server_exc
     } else {
         let mut var_32 = var_32;
         Ok(var_32.pop())
+    }
+}
+
+pub(crate) fn deser_header_get_member_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_33 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_33.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_33.len()
+        )))
+    } else {
+        let mut var_33 = var_33;
+        Ok(var_33.pop())
+    }
+}
+
+pub(crate) fn deser_header_get_member_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_34 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_34.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_34.len()
+        )))
+    } else {
+        let mut var_34 = var_34;
+        Ok(var_34.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_account_permissions_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_35 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_35.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_35.len()
+        )))
+    } else {
+        let mut var_35 = var_35;
+        Ok(var_35.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_account_permissions_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_36 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_36.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_36.len()
+        )))
+    } else {
+        let mut var_36 = var_36;
+        Ok(var_36.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_coverage_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_37 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_37.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_37.len()
+        )))
+    } else {
+        let mut var_37 = var_37;
+        Ok(var_37.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_coverage_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_38 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_38.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_38.len()
+        )))
+    } else {
+        let mut var_38 = var_38;
+        Ok(var_38.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_coverage_statistics_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_39 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_39.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_39.len()
+        )))
+    } else {
+        let mut var_39 = var_39;
+        Ok(var_39.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_coverage_statistics_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_40 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_40.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_40.len()
+        )))
+    } else {
+        let mut var_40 = var_40;
+        Ok(var_40.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_delegated_admin_accounts_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_41 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_41.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_41.len()
+        )))
+    } else {
+        let mut var_41 = var_41;
+        Ok(var_41.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_delegated_admin_accounts_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_42 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_42.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_42.len()
+        )))
+    } else {
+        let mut var_42 = var_42;
+        Ok(var_42.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_filters_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_43 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_43.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_43.len()
+        )))
+    } else {
+        let mut var_43 = var_43;
+        Ok(var_43.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_filters_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_44 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_44.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_44.len()
+        )))
+    } else {
+        let mut var_44 = var_44;
+        Ok(var_44.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_finding_aggregations_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_45 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_45.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_45.len()
+        )))
+    } else {
+        let mut var_45 = var_45;
+        Ok(var_45.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_finding_aggregations_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_46 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_46.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_46.len()
+        )))
+    } else {
+        let mut var_46 = var_46;
+        Ok(var_46.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_findings_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_47 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_47.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_47.len()
+        )))
+    } else {
+        let mut var_47 = var_47;
+        Ok(var_47.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_findings_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_48 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_48.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_48.len()
+        )))
+    } else {
+        let mut var_48 = var_48;
+        Ok(var_48.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_members_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_49 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_49.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_49.len()
+        )))
+    } else {
+        let mut var_49 = var_49;
+        Ok(var_49.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_members_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_50 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_50.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_50.len()
+        )))
+    } else {
+        let mut var_50 = var_50;
+        Ok(var_50.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_tags_for_resource_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_51 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_51.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_51.len()
+        )))
+    } else {
+        let mut var_51 = var_51;
+        Ok(var_51.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_tags_for_resource_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_52 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_52.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_52.len()
+        )))
+    } else {
+        let mut var_52 = var_52;
+        Ok(var_52.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_usage_totals_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_53 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_53.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_53.len()
+        )))
+    } else {
+        let mut var_53 = var_53;
+        Ok(var_53.pop())
+    }
+}
+
+pub(crate) fn deser_header_list_usage_totals_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_54 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_54.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_54.len()
+        )))
+    } else {
+        let mut var_54 = var_54;
+        Ok(var_54.pop())
+    }
+}
+
+pub(crate) fn deser_header_tag_resource_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_55 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_55.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_55.len()
+        )))
+    } else {
+        let mut var_55 = var_55;
+        Ok(var_55.pop())
+    }
+}
+
+pub(crate) fn deser_header_tag_resource_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_56 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_56.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_56.len()
+        )))
+    } else {
+        let mut var_56 = var_56;
+        Ok(var_56.pop())
+    }
+}
+
+pub(crate) fn deser_header_untag_resource_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_57 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_57.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_57.len()
+        )))
+    } else {
+        let mut var_57 = var_57;
+        Ok(var_57.pop())
+    }
+}
+
+pub(crate) fn deser_header_untag_resource_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_58 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_58.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_58.len()
+        )))
+    } else {
+        let mut var_58 = var_58;
+        Ok(var_58.pop())
+    }
+}
+
+pub(crate) fn deser_header_update_configuration_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_59 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_59.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_59.len()
+        )))
+    } else {
+        let mut var_59 = var_59;
+        Ok(var_59.pop())
+    }
+}
+
+pub(crate) fn deser_header_update_configuration_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_60 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_60.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_60.len()
+        )))
+    } else {
+        let mut var_60 = var_60;
+        Ok(var_60.pop())
+    }
+}
+
+pub(crate) fn deser_header_update_filter_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_61 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_61.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_61.len()
+        )))
+    } else {
+        let mut var_61 = var_61;
+        Ok(var_61.pop())
+    }
+}
+
+pub(crate) fn deser_header_update_filter_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_62 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_62.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_62.len()
+        )))
+    } else {
+        let mut var_62 = var_62;
+        Ok(var_62.pop())
+    }
+}
+
+pub(crate) fn deser_header_update_organization_configuration_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_63 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_63.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_63.len()
+        )))
+    } else {
+        let mut var_63 = var_63;
+        Ok(var_63.pop())
+    }
+}
+
+pub(crate) fn deser_header_update_organization_configuration_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_64 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_64.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_64.len()
+        )))
+    } else {
+        let mut var_64 = var_64;
+        Ok(var_64.pop())
     }
 }

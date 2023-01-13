@@ -914,6 +914,129 @@ impl std::error::Error for AttachLoadBalancerTargetGroupsError {
     }
 }
 
+/// Error type for the `AttachTrafficSources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AttachTrafficSourcesError {
+    /// Kind of error that occurred.
+    pub kind: AttachTrafficSourcesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AttachTrafficSourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AttachTrafficSourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `AttachTrafficSources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AttachTrafficSourcesErrorKind {
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
+    ResourceContentionFault(crate::error::ResourceContentionFault),
+    /// <p>The service-linked role is not yet ready for use.</p>
+    ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for AttachTrafficSourcesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AttachTrafficSourcesErrorKind::ResourceContentionFault(_inner) => _inner.fmt(f),
+            AttachTrafficSourcesErrorKind::ServiceLinkedRoleFailure(_inner) => _inner.fmt(f),
+            AttachTrafficSourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AttachTrafficSourcesError {
+    fn code(&self) -> Option<&str> {
+        AttachTrafficSourcesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AttachTrafficSourcesError {
+    /// Creates a new `AttachTrafficSourcesError`.
+    pub fn new(kind: AttachTrafficSourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AttachTrafficSourcesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AttachTrafficSourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AttachTrafficSourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AttachTrafficSourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AttachTrafficSourcesErrorKind::ResourceContentionFault`.
+    pub fn is_resource_contention_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachTrafficSourcesErrorKind::ResourceContentionFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AttachTrafficSourcesErrorKind::ServiceLinkedRoleFailure`.
+    pub fn is_service_linked_role_failure(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachTrafficSourcesErrorKind::ServiceLinkedRoleFailure(_)
+        )
+    }
+}
+impl std::error::Error for AttachTrafficSourcesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AttachTrafficSourcesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
+            AttachTrafficSourcesErrorKind::ServiceLinkedRoleFailure(_inner) => Some(_inner),
+            AttachTrafficSourcesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `BatchDeleteScheduledAction` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5121,6 +5244,129 @@ impl std::error::Error for DescribeTerminationPolicyTypesError {
     }
 }
 
+/// Error type for the `DescribeTrafficSources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeTrafficSourcesError {
+    /// Kind of error that occurred.
+    pub kind: DescribeTrafficSourcesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeTrafficSourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeTrafficSourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeTrafficSources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeTrafficSourcesErrorKind {
+    /// <p>The <code>NextToken</code> value is not valid.</p>
+    InvalidNextToken(crate::error::InvalidNextToken),
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
+    ResourceContentionFault(crate::error::ResourceContentionFault),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeTrafficSourcesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeTrafficSourcesErrorKind::InvalidNextToken(_inner) => _inner.fmt(f),
+            DescribeTrafficSourcesErrorKind::ResourceContentionFault(_inner) => _inner.fmt(f),
+            DescribeTrafficSourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeTrafficSourcesError {
+    fn code(&self) -> Option<&str> {
+        DescribeTrafficSourcesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeTrafficSourcesError {
+    /// Creates a new `DescribeTrafficSourcesError`.
+    pub fn new(kind: DescribeTrafficSourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeTrafficSourcesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeTrafficSourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeTrafficSourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeTrafficSourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeTrafficSourcesErrorKind::InvalidNextToken`.
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTrafficSourcesErrorKind::InvalidNextToken(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTrafficSourcesErrorKind::ResourceContentionFault`.
+    pub fn is_resource_contention_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTrafficSourcesErrorKind::ResourceContentionFault(_)
+        )
+    }
+}
+impl std::error::Error for DescribeTrafficSourcesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeTrafficSourcesErrorKind::InvalidNextToken(_inner) => Some(_inner),
+            DescribeTrafficSourcesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
+            DescribeTrafficSourcesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DescribeWarmPool` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5578,6 +5824,118 @@ impl std::error::Error for DetachLoadBalancerTargetGroupsError {
                 Some(_inner)
             }
             DetachLoadBalancerTargetGroupsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DetachTrafficSources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DetachTrafficSourcesError {
+    /// Kind of error that occurred.
+    pub kind: DetachTrafficSourcesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DetachTrafficSourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DetachTrafficSourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DetachTrafficSources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DetachTrafficSourcesErrorKind {
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
+    ResourceContentionFault(crate::error::ResourceContentionFault),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DetachTrafficSourcesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DetachTrafficSourcesErrorKind::ResourceContentionFault(_inner) => _inner.fmt(f),
+            DetachTrafficSourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DetachTrafficSourcesError {
+    fn code(&self) -> Option<&str> {
+        DetachTrafficSourcesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DetachTrafficSourcesError {
+    /// Creates a new `DetachTrafficSourcesError`.
+    pub fn new(kind: DetachTrafficSourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DetachTrafficSourcesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DetachTrafficSourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DetachTrafficSourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DetachTrafficSourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DetachTrafficSourcesErrorKind::ResourceContentionFault`.
+    pub fn is_resource_contention_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetachTrafficSourcesErrorKind::ResourceContentionFault(_)
+        )
+    }
+}
+impl std::error::Error for DetachTrafficSourcesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DetachTrafficSourcesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
+            DetachTrafficSourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

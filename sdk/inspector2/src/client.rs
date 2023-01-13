@@ -1117,7 +1117,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganizationConfiguration`.
     ///
-    /// <p>Describe Amazon Inspector configuration settings for an Amazon Web Services organization</p>
+    /// <p>Describe Amazon Inspector configuration settings for an Amazon Web Services organization.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfiguration {
         handle: std::sync::Arc<super::Handle>,

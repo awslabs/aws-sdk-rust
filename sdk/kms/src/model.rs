@@ -338,6 +338,188 @@ impl AsRef<str> for MessageType {
     }
 }
 
+/// When writing a match expression against `XksProxyConnectivityType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let xksproxyconnectivitytype = unimplemented!();
+/// match xksproxyconnectivitytype {
+///     XksProxyConnectivityType::PublicEndpoint => { /* ... */ },
+///     XksProxyConnectivityType::VpcEndpointService => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `xksproxyconnectivitytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `XksProxyConnectivityType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `XksProxyConnectivityType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `XksProxyConnectivityType::NewFeature` is defined.
+/// Specifically, when `xksproxyconnectivitytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `XksProxyConnectivityType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum XksProxyConnectivityType {
+    #[allow(missing_docs)] // documentation missing in model
+    PublicEndpoint,
+    #[allow(missing_docs)] // documentation missing in model
+    VpcEndpointService,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for XksProxyConnectivityType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PUBLIC_ENDPOINT" => XksProxyConnectivityType::PublicEndpoint,
+            "VPC_ENDPOINT_SERVICE" => XksProxyConnectivityType::VpcEndpointService,
+            other => XksProxyConnectivityType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for XksProxyConnectivityType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(XksProxyConnectivityType::from(s))
+    }
+}
+impl XksProxyConnectivityType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            XksProxyConnectivityType::PublicEndpoint => "PUBLIC_ENDPOINT",
+            XksProxyConnectivityType::VpcEndpointService => "VPC_ENDPOINT_SERVICE",
+            XksProxyConnectivityType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["PUBLIC_ENDPOINT", "VPC_ENDPOINT_SERVICE"]
+    }
+}
+impl AsRef<str> for XksProxyConnectivityType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>KMS uses the authentication credential to sign requests that it sends to the external key store proxy (XKS proxy) on your behalf. You establish these credentials on your external key store proxy and report them to KMS.</p>
+/// <p>The <code>XksProxyAuthenticationCredential</code> includes two required elements.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct XksProxyAuthenticationCredentialType {
+    /// <p>A unique identifier for the raw secret access key.</p>
+    #[doc(hidden)]
+    pub access_key_id: std::option::Option<std::string::String>,
+    /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
+    #[doc(hidden)]
+    pub raw_secret_access_key: std::option::Option<std::string::String>,
+}
+impl XksProxyAuthenticationCredentialType {
+    /// <p>A unique identifier for the raw secret access key.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
+    pub fn raw_secret_access_key(&self) -> std::option::Option<&str> {
+        self.raw_secret_access_key.as_deref()
+    }
+}
+impl std::fmt::Debug for XksProxyAuthenticationCredentialType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("XksProxyAuthenticationCredentialType");
+        formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("raw_secret_access_key", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`XksProxyAuthenticationCredentialType`](crate::model::XksProxyAuthenticationCredentialType).
+pub mod xks_proxy_authentication_credential_type {
+
+    /// A builder for [`XksProxyAuthenticationCredentialType`](crate::model::XksProxyAuthenticationCredentialType).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    pub struct Builder {
+        pub(crate) access_key_id: std::option::Option<std::string::String>,
+        pub(crate) raw_secret_access_key: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the raw secret access key.</p>
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_key_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the raw secret access key.</p>
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_key_id = input;
+            self
+        }
+        /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
+        pub fn raw_secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.raw_secret_access_key = Some(input.into());
+            self
+        }
+        /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
+        pub fn set_raw_secret_access_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.raw_secret_access_key = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksProxyAuthenticationCredentialType`](crate::model::XksProxyAuthenticationCredentialType).
+        pub fn build(self) -> crate::model::XksProxyAuthenticationCredentialType {
+            crate::model::XksProxyAuthenticationCredentialType {
+                access_key_id: self.access_key_id,
+                raw_secret_access_key: self.raw_secret_access_key,
+            }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("raw_secret_access_key", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
+}
+impl XksProxyAuthenticationCredentialType {
+    /// Creates a new builder-style object to manufacture [`XksProxyAuthenticationCredentialType`](crate::model::XksProxyAuthenticationCredentialType).
+    pub fn builder() -> crate::model::xks_proxy_authentication_credential_type::Builder {
+        crate::model::xks_proxy_authentication_credential_type::Builder::default()
+    }
+}
+
 /// <p>A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p>
 /// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
 #[non_exhaustive]
@@ -536,7 +718,7 @@ impl AsRef<str> for KeyState {
 }
 
 /// <p>Contains metadata about a KMS key.</p>
-/// <p>This data type is used as a response element for the <code>CreateKey</code> and <code>DescribeKey</code> operations.</p>
+/// <p>This data type is used as a response element for the <code>CreateKey</code>, <code>DescribeKey</code>, and <code>ReplicateKey</code> operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyMetadata {
@@ -575,10 +757,10 @@ pub struct KeyMetadata {
     /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>, KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was imported or the KMS key doesn't have any key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
     #[doc(hidden)]
     pub origin: std::option::Option<crate::model::OriginType>,
-    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This value is present only when the KMS key is created in a custom key store.</p>
+    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
     #[doc(hidden)]
     pub custom_key_store_id: std::option::Option<std::string::String>,
-    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This value is present only when the KMS key is created in a custom key store.</p>
+    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
     #[doc(hidden)]
     pub cloud_hsm_cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the KMS key's key material expires. This value is present only when <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
@@ -588,7 +770,7 @@ pub struct KeyMetadata {
     #[doc(hidden)]
     pub key_manager: std::option::Option<crate::model::KeyManagerType>,
     /// <p>Instead, use the <code>KeySpec</code> field.</p>
-    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
     #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
     #[doc(hidden)]
     pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
@@ -625,6 +807,10 @@ pub struct KeyMetadata {
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
     #[doc(hidden)]
     pub mac_algorithms: std::option::Option<std::vec::Vec<crate::model::MacAlgorithmSpec>>,
+    /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub xks_key_configuration: std::option::Option<crate::model::XksKeyConfigurationType>,
 }
 impl KeyMetadata {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
@@ -673,11 +859,11 @@ impl KeyMetadata {
     pub fn origin(&self) -> std::option::Option<&crate::model::OriginType> {
         self.origin.as_ref()
     }
-    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This value is present only when the KMS key is created in a custom key store.</p>
+    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
     pub fn custom_key_store_id(&self) -> std::option::Option<&str> {
         self.custom_key_store_id.as_deref()
     }
-    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This value is present only when the KMS key is created in a custom key store.</p>
+    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
     pub fn cloud_hsm_cluster_id(&self) -> std::option::Option<&str> {
         self.cloud_hsm_cluster_id.as_deref()
     }
@@ -690,7 +876,7 @@ impl KeyMetadata {
         self.key_manager.as_ref()
     }
     /// <p>Instead, use the <code>KeySpec</code> field.</p>
-    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
     #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
     pub fn customer_master_key_spec(
         &self,
@@ -740,6 +926,13 @@ impl KeyMetadata {
     pub fn mac_algorithms(&self) -> std::option::Option<&[crate::model::MacAlgorithmSpec]> {
         self.mac_algorithms.as_deref()
     }
+    /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn xks_key_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::XksKeyConfigurationType> {
+        self.xks_key_configuration.as_ref()
+    }
 }
 /// See [`KeyMetadata`](crate::model::KeyMetadata).
 pub mod key_metadata {
@@ -775,6 +968,8 @@ pub mod key_metadata {
         pub(crate) pending_deletion_window_in_days: std::option::Option<i32>,
         pub(crate) mac_algorithms:
             std::option::Option<std::vec::Vec<crate::model::MacAlgorithmSpec>>,
+        pub(crate) xks_key_configuration:
+            std::option::Option<crate::model::XksKeyConfigurationType>,
     }
     impl Builder {
         /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
@@ -906,12 +1101,12 @@ pub mod key_metadata {
             self.origin = input;
             self
         }
-        /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This value is present only when the KMS key is created in a custom key store.</p>
+        /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
         pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_key_store_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This value is present only when the KMS key is created in a custom key store.</p>
+        /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
         pub fn set_custom_key_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -919,12 +1114,12 @@ pub mod key_metadata {
             self.custom_key_store_id = input;
             self
         }
-        /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This value is present only when the KMS key is created in a custom key store.</p>
+        /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
         pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_hsm_cluster_id = Some(input.into());
             self
         }
-        /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This value is present only when the KMS key is created in a custom key store.</p>
+        /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
         pub fn set_cloud_hsm_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -959,7 +1154,7 @@ pub mod key_metadata {
             self
         }
         /// <p>Instead, use the <code>KeySpec</code> field.</p>
-        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
         #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
         pub fn customer_master_key_spec(
             mut self,
@@ -969,7 +1164,7 @@ pub mod key_metadata {
             self
         }
         /// <p>Instead, use the <code>KeySpec</code> field.</p>
-        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
         #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
         pub fn set_customer_master_key_spec(
             mut self,
@@ -1109,6 +1304,24 @@ pub mod key_metadata {
             self.mac_algorithms = input;
             self
         }
+        /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        pub fn xks_key_configuration(
+            mut self,
+            input: crate::model::XksKeyConfigurationType,
+        ) -> Self {
+            self.xks_key_configuration = Some(input);
+            self
+        }
+        /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        pub fn set_xks_key_configuration(
+            mut self,
+            input: std::option::Option<crate::model::XksKeyConfigurationType>,
+        ) -> Self {
+            self.xks_key_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`KeyMetadata`](crate::model::KeyMetadata).
         pub fn build(self) -> crate::model::KeyMetadata {
             crate::model::KeyMetadata {
@@ -1135,6 +1348,7 @@ pub mod key_metadata {
                 multi_region_configuration: self.multi_region_configuration,
                 pending_deletion_window_in_days: self.pending_deletion_window_in_days,
                 mac_algorithms: self.mac_algorithms,
+                xks_key_configuration: self.xks_key_configuration,
             }
         }
     }
@@ -1143,6 +1357,54 @@ impl KeyMetadata {
     /// Creates a new builder-style object to manufacture [`KeyMetadata`](crate::model::KeyMetadata).
     pub fn builder() -> crate::model::key_metadata::Builder {
         crate::model::key_metadata::Builder::default()
+    }
+}
+
+/// <p>Information about the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">external key </a>that is associated with a KMS key in an external key store. </p>
+/// <p>This element appears in a <code>CreateKey</code> or <code>DescribeKey</code> response only for a KMS key in an external key store.</p>
+/// <p>The <i>external key</i> is a symmetric encryption key that is hosted by an external key manager outside of Amazon Web Services. When you use the KMS key in an external key store in a cryptographic operation, the cryptographic operation is performed in the external key manager using the specified external key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct XksKeyConfigurationType {
+    /// <p>The ID of the external key in its external key manager. This is the ID that the external key store proxy uses to identify the external key.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+}
+impl XksKeyConfigurationType {
+    /// <p>The ID of the external key in its external key manager. This is the ID that the external key store proxy uses to identify the external key.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+/// See [`XksKeyConfigurationType`](crate::model::XksKeyConfigurationType).
+pub mod xks_key_configuration_type {
+
+    /// A builder for [`XksKeyConfigurationType`](crate::model::XksKeyConfigurationType).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the external key in its external key manager. This is the ID that the external key store proxy uses to identify the external key.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the external key in its external key manager. This is the ID that the external key store proxy uses to identify the external key.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksKeyConfigurationType`](crate::model::XksKeyConfigurationType).
+        pub fn build(self) -> crate::model::XksKeyConfigurationType {
+            crate::model::XksKeyConfigurationType { id: self.id }
+        }
+    }
+}
+impl XksKeyConfigurationType {
+    /// Creates a new builder-style object to manufacture [`XksKeyConfigurationType`](crate::model::XksKeyConfigurationType).
+    pub fn builder() -> crate::model::xks_key_configuration_type::Builder {
+        crate::model::xks_key_configuration_type::Builder::default()
     }
 }
 
@@ -2032,6 +2294,7 @@ impl AsRef<str> for ExpirationModelType {
 ///     OriginType::AwsCloudhsm => { /* ... */ },
 ///     OriginType::AwsKms => { /* ... */ },
 ///     OriginType::External => { /* ... */ },
+///     OriginType::ExternalKeyStore => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -2071,6 +2334,8 @@ pub enum OriginType {
     AwsKms,
     #[allow(missing_docs)] // documentation missing in model
     External,
+    #[allow(missing_docs)] // documentation missing in model
+    ExternalKeyStore,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -2080,6 +2345,7 @@ impl std::convert::From<&str> for OriginType {
             "AWS_CLOUDHSM" => OriginType::AwsCloudhsm,
             "AWS_KMS" => OriginType::AwsKms,
             "EXTERNAL" => OriginType::External,
+            "EXTERNAL_KEY_STORE" => OriginType::ExternalKeyStore,
             other => OriginType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -2098,12 +2364,13 @@ impl OriginType {
             OriginType::AwsCloudhsm => "AWS_CLOUDHSM",
             OriginType::AwsKms => "AWS_KMS",
             OriginType::External => "EXTERNAL",
+            OriginType::ExternalKeyStore => "EXTERNAL_KEY_STORE",
             OriginType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_CLOUDHSM", "AWS_KMS", "EXTERNAL"]
+        &["AWS_CLOUDHSM", "AWS_KMS", "EXTERNAL", "EXTERNAL_KEY_STORE"]
     }
 }
 impl AsRef<str> for OriginType {
@@ -2436,7 +2703,7 @@ impl GrantListEntry {
 }
 
 /// <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p>
-/// <p>KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric encryption KMS key</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with HMAC KMS keys or asymmetric KMS keys, and management operations, such as <code>DescribeKey</code> or <code>RetireGrant</code>.</p> <important>
+/// <p>KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric KMS key</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric KMS keys and management operations, such as <code>DescribeKey</code> or <code>RetireGrant</code>.</p> <important>
 /// <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p>
 /// <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p>
 /// <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
@@ -3339,36 +3606,73 @@ pub struct CustomKeyStoresListEntry {
     /// <p>The user-specified friendly name for the custom key store.</p>
     #[doc(hidden)]
     pub custom_key_store_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the CloudHSM cluster that is associated with the custom key store.</p>
+    /// <p>A unique identifier for the CloudHSM cluster that is associated with an CloudHSM key store. This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
     #[doc(hidden)]
     pub cloud_hsm_cluster_id: std::option::Option<std::string::String>,
-    /// <p>The trust anchor certificate of the associated CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
+    /// <p>The trust anchor certificate of the CloudHSM cluster associated with an CloudHSM key store. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
+    /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
     #[doc(hidden)]
     pub trust_anchor_certificate: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the custom key store is connected to its CloudHSM cluster.</p>
-    /// <p>You can create and use KMS keys in your custom key stores only when its connection state is <code>CONNECTED</code>.</p>
-    /// <p>The value is <code>DISCONNECTED</code> if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that its associated CloudHSM cluster is active and contains at least one active HSM.</p>
-    /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Indicates whether the custom key store is connected to its backing key store. For an CloudHSM key store, the <code>ConnectionState</code> indicates whether it is connected to its CloudHSM cluster. For an external key store, the <code>ConnectionState</code> indicates whether it is connected to the external key store proxy that communicates with your external key manager.</p>
+    /// <p>You can create and use KMS keys in your custom key stores only when its <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
+    /// <p>The <code>ConnectionState</code> value is <code>DISCONNECTED</code> only if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that the backing key store is reachable and active. For an CloudHSM key store, verify that its associated CloudHSM cluster is active and contains at least one active HSM. For an external key store, verify that the external key store proxy and external key manager are connected and enabled.</p>
+    /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a custom key store</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionStateType>,
-    /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
-    /// <p>Valid values are:</p>
+    /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>.</p>
+    /// <p>Many failures can be resolved by updating the properties of the custom key store. To update a custom key store, disconnect it (<code>DisconnectCustomKeyStore</code>), correct the errors (<code>UpdateCustomKeyStore</code>), and try to connect again (<code>ConnectCustomKeyStore</code>). For additional help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
+    /// <p> <b>All custom key stores:</b> </p>
     /// <ul>
-    /// <li> <p> <code>CLUSTER_NOT_FOUND</code> - KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
-    /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> - The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
-    /// <li> <p> <code>INTERNAL_ERROR</code> - KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
-    /// <li> <p> <code>INVALID_CREDENTIALS</code> - KMS does not have the correct password for the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
-    /// <li> <p> <code>NETWORK_ERRORS</code> - Network errors are preventing KMS from connecting to the custom key store.</p> </li>
-    /// <li> <p> <code>SUBNET_NOT_FOUND</code> - A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-    /// <li> <p> <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
-    /// <li> <p> <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-    /// <li> <p> <code>USER_NOT_FOUND</code> - KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
+    /// <li> <p> <code>INTERNAL_ERROR</code> — KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
+    /// <li> <p> <code>NETWORK_ERRORS</code> — Network errors are preventing KMS from connecting the custom key store to its backing key store.</p> </li>
+    /// </ul>
+    /// <p> <b>CloudHSM key stores:</b> </p>
+    /// <ul>
+    /// <li> <p> <code>CLUSTER_NOT_FOUND</code> — KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
+    /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> — The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
+    /// <li> <p> <code>INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET</code> — At least one private subnet associated with the CloudHSM cluster doesn't have any available IP addresses. A CloudHSM key store connection requires one free IP address in each of the associated private subnets, although two are preferable. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>INVALID_CREDENTIALS</code> — The <code>KeyStorePassword</code> for the custom key store doesn't match the current password of the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the <code>KeyStorePassword</code> value for the custom key store.</p> </li>
+    /// <li> <p> <code>SUBNET_NOT_FOUND</code> — A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>USER_LOCKED_OUT</code> — The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
+    /// <li> <p> <code>USER_LOGGED_IN</code> — The <code>kmsuser</code> CU account is logged into the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>USER_NOT_FOUND</code> — KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
+    /// </ul>
+    /// <p> <b>External key stores:</b> </p>
+    /// <ul>
+    /// <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of the <code>XksProxyAuthenticationCredential</code> values is not valid on the specified external key store proxy.</p> </li>
+    /// <li> <p> <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the external key store proxy. If the external key store proxy has authorization rules, verify that they permit KMS to communicate with the proxy on your behalf.</p> </li>
+    /// <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A configuration error is preventing the external key store from connecting to its proxy. Verify the value of the <code>XksProxyUriPath</code>.</p> </li>
+    /// <li> <p> <code>XKS_PROXY_INVALID_RESPONSE</code> — KMS cannot interpret the response from the external key store proxy. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
+    /// <li> <p> <code>XKS_PROXY_INVALID_TLS_CONFIGURATION</code> — KMS cannot connect to the external key store proxy because the TLS configuration is invalid. Verify that the XKS proxy supports TLS 1.2 or 1.3. Also, verify that the TLS certificate is not expired, and that it matches the hostname in the <code>XksProxyUriEndpoint</code> value, and that it is signed by a certificate authority included in the <a href="https://github.com/aws/aws-kms-xksproxy-api-spec/blob/main/TrustedCertificateAuthorities">Trusted Certificate Authorities</a> list.</p> </li>
+    /// <li> <p> <code>XKS_PROXY_NOT_REACHABLE</code> — KMS can't communicate with your external key store proxy. Verify that the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> are correct. Use the tools for your external key store proxy to verify that the proxy is active and available on its network. Also, verify that your external key manager instances are operating properly. Connection attempts fail with this connection error code if the proxy reports that all external key manager instances are unavailable.</p> </li>
+    /// <li> <p> <code>XKS_PROXY_TIMED_OUT</code> — KMS can connect to the external key store proxy, but the proxy does not respond to KMS in the time allotted. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
+    /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION</code> — The Amazon VPC endpoint service configuration doesn't conform to the requirements for an KMS external key store.</p>
+    /// <ul>
+    /// <li> <p>The VPC endpoint service must be an endpoint service for interface endpoints in the caller's Amazon Web Services account.</p> </li>
+    /// <li> <p>It must have a network load balancer (NLB) connected to at least two subnets, each in a different Availability Zone.</p> </li>
+    /// <li> <p>The <code>Allow principals</code> list must include the KMS service principal for the Region, <code>cks.kms.
+    /// <region>
+    /// .amazonaws.com
+    /// </region></code>, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p> </li>
+    /// <li> <p>It must <i>not</i> require <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html">acceptance</a> of connection requests.</p> </li>
+    /// <li> <p>It must have a private DNS name. The private DNS name for an external key store with <code>VPC_ENDPOINT_SERVICE</code> connectivity must be unique in its Amazon Web Services Region.</p> </li>
+    /// <li> <p>The domain of the private DNS name must have a <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/verify-domains.html">verification status</a> of <code>verified</code>.</p> </li>
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS certificate</a> specifies the private DNS hostname at which the endpoint is reachable.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub connection_error_code: std::option::Option<crate::model::ConnectionErrorCodeType>,
     /// <p>The date and time when the custom key store was created.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Indicates the type of the custom key store. <code>AWS_CLOUDHSM</code> indicates a custom key store backed by an CloudHSM cluster. <code>EXTERNAL_KEY_STORE</code> indicates a custom key store backed by an external key store proxy and external key manager outside of Amazon Web Services.</p>
+    #[doc(hidden)]
+    pub custom_key_store_type: std::option::Option<crate::model::CustomKeyStoreType>,
+    /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p>
+    /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
+    #[doc(hidden)]
+    pub xks_proxy_configuration: std::option::Option<crate::model::XksProxyConfigurationType>,
 }
 impl CustomKeyStoresListEntry {
     /// <p>A unique identifier for the custom key store.</p>
@@ -3379,33 +3683,63 @@ impl CustomKeyStoresListEntry {
     pub fn custom_key_store_name(&self) -> std::option::Option<&str> {
         self.custom_key_store_name.as_deref()
     }
-    /// <p>A unique identifier for the CloudHSM cluster that is associated with the custom key store.</p>
+    /// <p>A unique identifier for the CloudHSM cluster that is associated with an CloudHSM key store. This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
     pub fn cloud_hsm_cluster_id(&self) -> std::option::Option<&str> {
         self.cloud_hsm_cluster_id.as_deref()
     }
-    /// <p>The trust anchor certificate of the associated CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
+    /// <p>The trust anchor certificate of the CloudHSM cluster associated with an CloudHSM key store. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
+    /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
     pub fn trust_anchor_certificate(&self) -> std::option::Option<&str> {
         self.trust_anchor_certificate.as_deref()
     }
-    /// <p>Indicates whether the custom key store is connected to its CloudHSM cluster.</p>
-    /// <p>You can create and use KMS keys in your custom key stores only when its connection state is <code>CONNECTED</code>.</p>
-    /// <p>The value is <code>DISCONNECTED</code> if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that its associated CloudHSM cluster is active and contains at least one active HSM.</p>
-    /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Indicates whether the custom key store is connected to its backing key store. For an CloudHSM key store, the <code>ConnectionState</code> indicates whether it is connected to its CloudHSM cluster. For an external key store, the <code>ConnectionState</code> indicates whether it is connected to the external key store proxy that communicates with your external key manager.</p>
+    /// <p>You can create and use KMS keys in your custom key stores only when its <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
+    /// <p>The <code>ConnectionState</code> value is <code>DISCONNECTED</code> only if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that the backing key store is reachable and active. For an CloudHSM key store, verify that its associated CloudHSM cluster is active and contains at least one active HSM. For an external key store, verify that the external key store proxy and external key manager are connected and enabled.</p>
+    /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a custom key store</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionStateType> {
         self.connection_state.as_ref()
     }
-    /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
-    /// <p>Valid values are:</p>
+    /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>.</p>
+    /// <p>Many failures can be resolved by updating the properties of the custom key store. To update a custom key store, disconnect it (<code>DisconnectCustomKeyStore</code>), correct the errors (<code>UpdateCustomKeyStore</code>), and try to connect again (<code>ConnectCustomKeyStore</code>). For additional help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
+    /// <p> <b>All custom key stores:</b> </p>
     /// <ul>
-    /// <li> <p> <code>CLUSTER_NOT_FOUND</code> - KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
-    /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> - The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
-    /// <li> <p> <code>INTERNAL_ERROR</code> - KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
-    /// <li> <p> <code>INVALID_CREDENTIALS</code> - KMS does not have the correct password for the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
-    /// <li> <p> <code>NETWORK_ERRORS</code> - Network errors are preventing KMS from connecting to the custom key store.</p> </li>
-    /// <li> <p> <code>SUBNET_NOT_FOUND</code> - A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-    /// <li> <p> <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
-    /// <li> <p> <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-    /// <li> <p> <code>USER_NOT_FOUND</code> - KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
+    /// <li> <p> <code>INTERNAL_ERROR</code> — KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
+    /// <li> <p> <code>NETWORK_ERRORS</code> — Network errors are preventing KMS from connecting the custom key store to its backing key store.</p> </li>
+    /// </ul>
+    /// <p> <b>CloudHSM key stores:</b> </p>
+    /// <ul>
+    /// <li> <p> <code>CLUSTER_NOT_FOUND</code> — KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
+    /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> — The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
+    /// <li> <p> <code>INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET</code> — At least one private subnet associated with the CloudHSM cluster doesn't have any available IP addresses. A CloudHSM key store connection requires one free IP address in each of the associated private subnets, although two are preferable. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>INVALID_CREDENTIALS</code> — The <code>KeyStorePassword</code> for the custom key store doesn't match the current password of the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the <code>KeyStorePassword</code> value for the custom key store.</p> </li>
+    /// <li> <p> <code>SUBNET_NOT_FOUND</code> — A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>USER_LOCKED_OUT</code> — The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
+    /// <li> <p> <code>USER_LOGGED_IN</code> — The <code>kmsuser</code> CU account is logged into the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>USER_NOT_FOUND</code> — KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
+    /// </ul>
+    /// <p> <b>External key stores:</b> </p>
+    /// <ul>
+    /// <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of the <code>XksProxyAuthenticationCredential</code> values is not valid on the specified external key store proxy.</p> </li>
+    /// <li> <p> <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the external key store proxy. If the external key store proxy has authorization rules, verify that they permit KMS to communicate with the proxy on your behalf.</p> </li>
+    /// <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A configuration error is preventing the external key store from connecting to its proxy. Verify the value of the <code>XksProxyUriPath</code>.</p> </li>
+    /// <li> <p> <code>XKS_PROXY_INVALID_RESPONSE</code> — KMS cannot interpret the response from the external key store proxy. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
+    /// <li> <p> <code>XKS_PROXY_INVALID_TLS_CONFIGURATION</code> — KMS cannot connect to the external key store proxy because the TLS configuration is invalid. Verify that the XKS proxy supports TLS 1.2 or 1.3. Also, verify that the TLS certificate is not expired, and that it matches the hostname in the <code>XksProxyUriEndpoint</code> value, and that it is signed by a certificate authority included in the <a href="https://github.com/aws/aws-kms-xksproxy-api-spec/blob/main/TrustedCertificateAuthorities">Trusted Certificate Authorities</a> list.</p> </li>
+    /// <li> <p> <code>XKS_PROXY_NOT_REACHABLE</code> — KMS can't communicate with your external key store proxy. Verify that the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> are correct. Use the tools for your external key store proxy to verify that the proxy is active and available on its network. Also, verify that your external key manager instances are operating properly. Connection attempts fail with this connection error code if the proxy reports that all external key manager instances are unavailable.</p> </li>
+    /// <li> <p> <code>XKS_PROXY_TIMED_OUT</code> — KMS can connect to the external key store proxy, but the proxy does not respond to KMS in the time allotted. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
+    /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION</code> — The Amazon VPC endpoint service configuration doesn't conform to the requirements for an KMS external key store.</p>
+    /// <ul>
+    /// <li> <p>The VPC endpoint service must be an endpoint service for interface endpoints in the caller's Amazon Web Services account.</p> </li>
+    /// <li> <p>It must have a network load balancer (NLB) connected to at least two subnets, each in a different Availability Zone.</p> </li>
+    /// <li> <p>The <code>Allow principals</code> list must include the KMS service principal for the Region, <code>cks.kms.
+    /// <region>
+    /// .amazonaws.com
+    /// </region></code>, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p> </li>
+    /// <li> <p>It must <i>not</i> require <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html">acceptance</a> of connection requests.</p> </li>
+    /// <li> <p>It must have a private DNS name. The private DNS name for an external key store with <code>VPC_ENDPOINT_SERVICE</code> connectivity must be unique in its Amazon Web Services Region.</p> </li>
+    /// <li> <p>The domain of the private DNS name must have a <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/verify-domains.html">verification status</a> of <code>verified</code>.</p> </li>
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS certificate</a> specifies the private DNS hostname at which the endpoint is reachable.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li>
     /// </ul>
     pub fn connection_error_code(
         &self,
@@ -3415,6 +3749,17 @@ impl CustomKeyStoresListEntry {
     /// <p>The date and time when the custom key store was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
+    }
+    /// <p>Indicates the type of the custom key store. <code>AWS_CLOUDHSM</code> indicates a custom key store backed by an CloudHSM cluster. <code>EXTERNAL_KEY_STORE</code> indicates a custom key store backed by an external key store proxy and external key manager outside of Amazon Web Services.</p>
+    pub fn custom_key_store_type(&self) -> std::option::Option<&crate::model::CustomKeyStoreType> {
+        self.custom_key_store_type.as_ref()
+    }
+    /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p>
+    /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
+    pub fn xks_proxy_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::XksProxyConfigurationType> {
+        self.xks_proxy_configuration.as_ref()
     }
 }
 /// See [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
@@ -3431,6 +3776,9 @@ pub mod custom_key_stores_list_entry {
         pub(crate) connection_error_code:
             std::option::Option<crate::model::ConnectionErrorCodeType>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) custom_key_store_type: std::option::Option<crate::model::CustomKeyStoreType>,
+        pub(crate) xks_proxy_configuration:
+            std::option::Option<crate::model::XksProxyConfigurationType>,
     }
     impl Builder {
         /// <p>A unique identifier for the custom key store.</p>
@@ -3459,12 +3807,12 @@ pub mod custom_key_stores_list_entry {
             self.custom_key_store_name = input;
             self
         }
-        /// <p>A unique identifier for the CloudHSM cluster that is associated with the custom key store.</p>
+        /// <p>A unique identifier for the CloudHSM cluster that is associated with an CloudHSM key store. This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
         pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_hsm_cluster_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the CloudHSM cluster that is associated with the custom key store.</p>
+        /// <p>A unique identifier for the CloudHSM cluster that is associated with an CloudHSM key store. This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
         pub fn set_cloud_hsm_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3472,12 +3820,14 @@ pub mod custom_key_stores_list_entry {
             self.cloud_hsm_cluster_id = input;
             self
         }
-        /// <p>The trust anchor certificate of the associated CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
+        /// <p>The trust anchor certificate of the CloudHSM cluster associated with an CloudHSM key store. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
+        /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
         pub fn trust_anchor_certificate(mut self, input: impl Into<std::string::String>) -> Self {
             self.trust_anchor_certificate = Some(input.into());
             self
         }
-        /// <p>The trust anchor certificate of the associated CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
+        /// <p>The trust anchor certificate of the CloudHSM cluster associated with an CloudHSM key store. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
+        /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
         pub fn set_trust_anchor_certificate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3485,18 +3835,18 @@ pub mod custom_key_stores_list_entry {
             self.trust_anchor_certificate = input;
             self
         }
-        /// <p>Indicates whether the custom key store is connected to its CloudHSM cluster.</p>
-        /// <p>You can create and use KMS keys in your custom key stores only when its connection state is <code>CONNECTED</code>.</p>
-        /// <p>The value is <code>DISCONNECTED</code> if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that its associated CloudHSM cluster is active and contains at least one active HSM.</p>
-        /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Indicates whether the custom key store is connected to its backing key store. For an CloudHSM key store, the <code>ConnectionState</code> indicates whether it is connected to its CloudHSM cluster. For an external key store, the <code>ConnectionState</code> indicates whether it is connected to the external key store proxy that communicates with your external key manager.</p>
+        /// <p>You can create and use KMS keys in your custom key stores only when its <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
+        /// <p>The <code>ConnectionState</code> value is <code>DISCONNECTED</code> only if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that the backing key store is reachable and active. For an CloudHSM key store, verify that its associated CloudHSM cluster is active and contains at least one active HSM. For an external key store, verify that the external key store proxy and external key manager are connected and enabled.</p>
+        /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a custom key store</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn connection_state(mut self, input: crate::model::ConnectionStateType) -> Self {
             self.connection_state = Some(input);
             self
         }
-        /// <p>Indicates whether the custom key store is connected to its CloudHSM cluster.</p>
-        /// <p>You can create and use KMS keys in your custom key stores only when its connection state is <code>CONNECTED</code>.</p>
-        /// <p>The value is <code>DISCONNECTED</code> if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that its associated CloudHSM cluster is active and contains at least one active HSM.</p>
-        /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Indicates whether the custom key store is connected to its backing key store. For an CloudHSM key store, the <code>ConnectionState</code> indicates whether it is connected to its CloudHSM cluster. For an external key store, the <code>ConnectionState</code> indicates whether it is connected to the external key store proxy that communicates with your external key manager.</p>
+        /// <p>You can create and use KMS keys in your custom key stores only when its <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
+        /// <p>The <code>ConnectionState</code> value is <code>DISCONNECTED</code> only if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that the backing key store is reachable and active. For an CloudHSM key store, verify that its associated CloudHSM cluster is active and contains at least one active HSM. For an external key store, verify that the external key store proxy and external key manager are connected and enabled.</p>
+        /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a custom key store</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_connection_state(
             mut self,
             input: std::option::Option<crate::model::ConnectionStateType>,
@@ -3504,18 +3854,47 @@ pub mod custom_key_stores_list_entry {
             self.connection_state = input;
             self
         }
-        /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
-        /// <p>Valid values are:</p>
+        /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>.</p>
+        /// <p>Many failures can be resolved by updating the properties of the custom key store. To update a custom key store, disconnect it (<code>DisconnectCustomKeyStore</code>), correct the errors (<code>UpdateCustomKeyStore</code>), and try to connect again (<code>ConnectCustomKeyStore</code>). For additional help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
+        /// <p> <b>All custom key stores:</b> </p>
         /// <ul>
-        /// <li> <p> <code>CLUSTER_NOT_FOUND</code> - KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
-        /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> - The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
-        /// <li> <p> <code>INTERNAL_ERROR</code> - KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
-        /// <li> <p> <code>INVALID_CREDENTIALS</code> - KMS does not have the correct password for the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
-        /// <li> <p> <code>NETWORK_ERRORS</code> - Network errors are preventing KMS from connecting to the custom key store.</p> </li>
-        /// <li> <p> <code>SUBNET_NOT_FOUND</code> - A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-        /// <li> <p> <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
-        /// <li> <p> <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-        /// <li> <p> <code>USER_NOT_FOUND</code> - KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
+        /// <li> <p> <code>INTERNAL_ERROR</code> — KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
+        /// <li> <p> <code>NETWORK_ERRORS</code> — Network errors are preventing KMS from connecting the custom key store to its backing key store.</p> </li>
+        /// </ul>
+        /// <p> <b>CloudHSM key stores:</b> </p>
+        /// <ul>
+        /// <li> <p> <code>CLUSTER_NOT_FOUND</code> — KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
+        /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> — The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
+        /// <li> <p> <code>INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET</code> — At least one private subnet associated with the CloudHSM cluster doesn't have any available IP addresses. A CloudHSM key store connection requires one free IP address in each of the associated private subnets, although two are preferable. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>INVALID_CREDENTIALS</code> — The <code>KeyStorePassword</code> for the custom key store doesn't match the current password of the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the <code>KeyStorePassword</code> value for the custom key store.</p> </li>
+        /// <li> <p> <code>SUBNET_NOT_FOUND</code> — A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>USER_LOCKED_OUT</code> — The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
+        /// <li> <p> <code>USER_LOGGED_IN</code> — The <code>kmsuser</code> CU account is logged into the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>USER_NOT_FOUND</code> — KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
+        /// </ul>
+        /// <p> <b>External key stores:</b> </p>
+        /// <ul>
+        /// <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of the <code>XksProxyAuthenticationCredential</code> values is not valid on the specified external key store proxy.</p> </li>
+        /// <li> <p> <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the external key store proxy. If the external key store proxy has authorization rules, verify that they permit KMS to communicate with the proxy on your behalf.</p> </li>
+        /// <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A configuration error is preventing the external key store from connecting to its proxy. Verify the value of the <code>XksProxyUriPath</code>.</p> </li>
+        /// <li> <p> <code>XKS_PROXY_INVALID_RESPONSE</code> — KMS cannot interpret the response from the external key store proxy. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
+        /// <li> <p> <code>XKS_PROXY_INVALID_TLS_CONFIGURATION</code> — KMS cannot connect to the external key store proxy because the TLS configuration is invalid. Verify that the XKS proxy supports TLS 1.2 or 1.3. Also, verify that the TLS certificate is not expired, and that it matches the hostname in the <code>XksProxyUriEndpoint</code> value, and that it is signed by a certificate authority included in the <a href="https://github.com/aws/aws-kms-xksproxy-api-spec/blob/main/TrustedCertificateAuthorities">Trusted Certificate Authorities</a> list.</p> </li>
+        /// <li> <p> <code>XKS_PROXY_NOT_REACHABLE</code> — KMS can't communicate with your external key store proxy. Verify that the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> are correct. Use the tools for your external key store proxy to verify that the proxy is active and available on its network. Also, verify that your external key manager instances are operating properly. Connection attempts fail with this connection error code if the proxy reports that all external key manager instances are unavailable.</p> </li>
+        /// <li> <p> <code>XKS_PROXY_TIMED_OUT</code> — KMS can connect to the external key store proxy, but the proxy does not respond to KMS in the time allotted. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
+        /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION</code> — The Amazon VPC endpoint service configuration doesn't conform to the requirements for an KMS external key store.</p>
+        /// <ul>
+        /// <li> <p>The VPC endpoint service must be an endpoint service for interface endpoints in the caller's Amazon Web Services account.</p> </li>
+        /// <li> <p>It must have a network load balancer (NLB) connected to at least two subnets, each in a different Availability Zone.</p> </li>
+        /// <li> <p>The <code>Allow principals</code> list must include the KMS service principal for the Region, <code>cks.kms.
+        /// <region>
+        /// .amazonaws.com
+        /// </region></code>, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p> </li>
+        /// <li> <p>It must <i>not</i> require <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html">acceptance</a> of connection requests.</p> </li>
+        /// <li> <p>It must have a private DNS name. The private DNS name for an external key store with <code>VPC_ENDPOINT_SERVICE</code> connectivity must be unique in its Amazon Web Services Region.</p> </li>
+        /// <li> <p>The domain of the private DNS name must have a <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/verify-domains.html">verification status</a> of <code>verified</code>.</p> </li>
+        /// <li> <p>The <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS certificate</a> specifies the private DNS hostname at which the endpoint is reachable.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li>
         /// </ul>
         pub fn connection_error_code(
             mut self,
@@ -3524,18 +3903,47 @@ pub mod custom_key_stores_list_entry {
             self.connection_error_code = Some(input);
             self
         }
-        /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
-        /// <p>Valid values are:</p>
+        /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>.</p>
+        /// <p>Many failures can be resolved by updating the properties of the custom key store. To update a custom key store, disconnect it (<code>DisconnectCustomKeyStore</code>), correct the errors (<code>UpdateCustomKeyStore</code>), and try to connect again (<code>ConnectCustomKeyStore</code>). For additional help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
+        /// <p> <b>All custom key stores:</b> </p>
         /// <ul>
-        /// <li> <p> <code>CLUSTER_NOT_FOUND</code> - KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
-        /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> - The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
-        /// <li> <p> <code>INTERNAL_ERROR</code> - KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
-        /// <li> <p> <code>INVALID_CREDENTIALS</code> - KMS does not have the correct password for the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
-        /// <li> <p> <code>NETWORK_ERRORS</code> - Network errors are preventing KMS from connecting to the custom key store.</p> </li>
-        /// <li> <p> <code>SUBNET_NOT_FOUND</code> - A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-        /// <li> <p> <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
-        /// <li> <p> <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-        /// <li> <p> <code>USER_NOT_FOUND</code> - KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
+        /// <li> <p> <code>INTERNAL_ERROR</code> — KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
+        /// <li> <p> <code>NETWORK_ERRORS</code> — Network errors are preventing KMS from connecting the custom key store to its backing key store.</p> </li>
+        /// </ul>
+        /// <p> <b>CloudHSM key stores:</b> </p>
+        /// <ul>
+        /// <li> <p> <code>CLUSTER_NOT_FOUND</code> — KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
+        /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> — The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
+        /// <li> <p> <code>INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET</code> — At least one private subnet associated with the CloudHSM cluster doesn't have any available IP addresses. A CloudHSM key store connection requires one free IP address in each of the associated private subnets, although two are preferable. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>INVALID_CREDENTIALS</code> — The <code>KeyStorePassword</code> for the custom key store doesn't match the current password of the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the <code>KeyStorePassword</code> value for the custom key store.</p> </li>
+        /// <li> <p> <code>SUBNET_NOT_FOUND</code> — A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>USER_LOCKED_OUT</code> — The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
+        /// <li> <p> <code>USER_LOGGED_IN</code> — The <code>kmsuser</code> CU account is logged into the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>USER_NOT_FOUND</code> — KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
+        /// </ul>
+        /// <p> <b>External key stores:</b> </p>
+        /// <ul>
+        /// <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of the <code>XksProxyAuthenticationCredential</code> values is not valid on the specified external key store proxy.</p> </li>
+        /// <li> <p> <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the external key store proxy. If the external key store proxy has authorization rules, verify that they permit KMS to communicate with the proxy on your behalf.</p> </li>
+        /// <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A configuration error is preventing the external key store from connecting to its proxy. Verify the value of the <code>XksProxyUriPath</code>.</p> </li>
+        /// <li> <p> <code>XKS_PROXY_INVALID_RESPONSE</code> — KMS cannot interpret the response from the external key store proxy. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
+        /// <li> <p> <code>XKS_PROXY_INVALID_TLS_CONFIGURATION</code> — KMS cannot connect to the external key store proxy because the TLS configuration is invalid. Verify that the XKS proxy supports TLS 1.2 or 1.3. Also, verify that the TLS certificate is not expired, and that it matches the hostname in the <code>XksProxyUriEndpoint</code> value, and that it is signed by a certificate authority included in the <a href="https://github.com/aws/aws-kms-xksproxy-api-spec/blob/main/TrustedCertificateAuthorities">Trusted Certificate Authorities</a> list.</p> </li>
+        /// <li> <p> <code>XKS_PROXY_NOT_REACHABLE</code> — KMS can't communicate with your external key store proxy. Verify that the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> are correct. Use the tools for your external key store proxy to verify that the proxy is active and available on its network. Also, verify that your external key manager instances are operating properly. Connection attempts fail with this connection error code if the proxy reports that all external key manager instances are unavailable.</p> </li>
+        /// <li> <p> <code>XKS_PROXY_TIMED_OUT</code> — KMS can connect to the external key store proxy, but the proxy does not respond to KMS in the time allotted. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
+        /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION</code> — The Amazon VPC endpoint service configuration doesn't conform to the requirements for an KMS external key store.</p>
+        /// <ul>
+        /// <li> <p>The VPC endpoint service must be an endpoint service for interface endpoints in the caller's Amazon Web Services account.</p> </li>
+        /// <li> <p>It must have a network load balancer (NLB) connected to at least two subnets, each in a different Availability Zone.</p> </li>
+        /// <li> <p>The <code>Allow principals</code> list must include the KMS service principal for the Region, <code>cks.kms.
+        /// <region>
+        /// .amazonaws.com
+        /// </region></code>, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p> </li>
+        /// <li> <p>It must <i>not</i> require <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html">acceptance</a> of connection requests.</p> </li>
+        /// <li> <p>It must have a private DNS name. The private DNS name for an external key store with <code>VPC_ENDPOINT_SERVICE</code> connectivity must be unique in its Amazon Web Services Region.</p> </li>
+        /// <li> <p>The domain of the private DNS name must have a <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/verify-domains.html">verification status</a> of <code>verified</code>.</p> </li>
+        /// <li> <p>The <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS certificate</a> specifies the private DNS hostname at which the endpoint is reachable.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li>
         /// </ul>
         pub fn set_connection_error_code(
             mut self,
@@ -3557,6 +3965,37 @@ pub mod custom_key_stores_list_entry {
             self.creation_date = input;
             self
         }
+        /// <p>Indicates the type of the custom key store. <code>AWS_CLOUDHSM</code> indicates a custom key store backed by an CloudHSM cluster. <code>EXTERNAL_KEY_STORE</code> indicates a custom key store backed by an external key store proxy and external key manager outside of Amazon Web Services.</p>
+        pub fn custom_key_store_type(mut self, input: crate::model::CustomKeyStoreType) -> Self {
+            self.custom_key_store_type = Some(input);
+            self
+        }
+        /// <p>Indicates the type of the custom key store. <code>AWS_CLOUDHSM</code> indicates a custom key store backed by an CloudHSM cluster. <code>EXTERNAL_KEY_STORE</code> indicates a custom key store backed by an external key store proxy and external key manager outside of Amazon Web Services.</p>
+        pub fn set_custom_key_store_type(
+            mut self,
+            input: std::option::Option<crate::model::CustomKeyStoreType>,
+        ) -> Self {
+            self.custom_key_store_type = input;
+            self
+        }
+        /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p>
+        /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
+        pub fn xks_proxy_configuration(
+            mut self,
+            input: crate::model::XksProxyConfigurationType,
+        ) -> Self {
+            self.xks_proxy_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p>
+        /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
+        pub fn set_xks_proxy_configuration(
+            mut self,
+            input: std::option::Option<crate::model::XksProxyConfigurationType>,
+        ) -> Self {
+            self.xks_proxy_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
         pub fn build(self) -> crate::model::CustomKeyStoresListEntry {
             crate::model::CustomKeyStoresListEntry {
@@ -3567,6 +4006,8 @@ pub mod custom_key_stores_list_entry {
                 connection_state: self.connection_state,
                 connection_error_code: self.connection_error_code,
                 creation_date: self.creation_date,
+                custom_key_store_type: self.custom_key_store_type,
+                xks_proxy_configuration: self.xks_proxy_configuration,
             }
         }
     }
@@ -3575,6 +4016,261 @@ impl CustomKeyStoresListEntry {
     /// Creates a new builder-style object to manufacture [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
     pub fn builder() -> crate::model::custom_key_stores_list_entry::Builder {
         crate::model::custom_key_stores_list_entry::Builder::default()
+    }
+}
+
+/// <p>Detailed information about the external key store proxy (XKS proxy). Your external key store proxy translates KMS requests into a format that your external key manager can understand. These fields appear in a <code>DescribeCustomKeyStores</code> response only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct XksProxyConfigurationType {
+    /// <p>Indicates whether the external key store proxy uses a public endpoint or an Amazon VPC endpoint service to communicate with KMS.</p>
+    #[doc(hidden)]
+    pub connectivity: std::option::Option<crate::model::XksProxyConnectivityType>,
+    /// <p>The part of the external key store <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html#KMS-CreateCustomKeyStore-request-XksProxyAuthenticationCredential">proxy authentication credential</a> that uniquely identifies the secret access key.</p>
+    #[doc(hidden)]
+    pub access_key_id: std::option::Option<std::string::String>,
+    /// <p>The URI endpoint for the external key store proxy.</p>
+    /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p>
+    /// <p>If the external key store proxy uses an Amazon VPC endpoint service name, this field displays the private DNS name associated with the VPC endpoint service.</p>
+    #[doc(hidden)]
+    pub uri_endpoint: std::option::Option<std::string::String>,
+    /// <p>The path to the external key store proxy APIs.</p>
+    #[doc(hidden)]
+    pub uri_path: std::option::Option<std::string::String>,
+    /// <p>The Amazon VPC endpoint service used to communicate with the external key store proxy. This field appears only when the external key store proxy uses an Amazon VPC endpoint service to communicate with KMS.</p>
+    #[doc(hidden)]
+    pub vpc_endpoint_service_name: std::option::Option<std::string::String>,
+}
+impl XksProxyConfigurationType {
+    /// <p>Indicates whether the external key store proxy uses a public endpoint or an Amazon VPC endpoint service to communicate with KMS.</p>
+    pub fn connectivity(&self) -> std::option::Option<&crate::model::XksProxyConnectivityType> {
+        self.connectivity.as_ref()
+    }
+    /// <p>The part of the external key store <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html#KMS-CreateCustomKeyStore-request-XksProxyAuthenticationCredential">proxy authentication credential</a> that uniquely identifies the secret access key.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p>The URI endpoint for the external key store proxy.</p>
+    /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p>
+    /// <p>If the external key store proxy uses an Amazon VPC endpoint service name, this field displays the private DNS name associated with the VPC endpoint service.</p>
+    pub fn uri_endpoint(&self) -> std::option::Option<&str> {
+        self.uri_endpoint.as_deref()
+    }
+    /// <p>The path to the external key store proxy APIs.</p>
+    pub fn uri_path(&self) -> std::option::Option<&str> {
+        self.uri_path.as_deref()
+    }
+    /// <p>The Amazon VPC endpoint service used to communicate with the external key store proxy. This field appears only when the external key store proxy uses an Amazon VPC endpoint service to communicate with KMS.</p>
+    pub fn vpc_endpoint_service_name(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint_service_name.as_deref()
+    }
+}
+impl std::fmt::Debug for XksProxyConfigurationType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("XksProxyConfigurationType");
+        formatter.field("connectivity", &self.connectivity);
+        formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("uri_endpoint", &self.uri_endpoint);
+        formatter.field("uri_path", &self.uri_path);
+        formatter.field("vpc_endpoint_service_name", &self.vpc_endpoint_service_name);
+        formatter.finish()
+    }
+}
+/// See [`XksProxyConfigurationType`](crate::model::XksProxyConfigurationType).
+pub mod xks_proxy_configuration_type {
+
+    /// A builder for [`XksProxyConfigurationType`](crate::model::XksProxyConfigurationType).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    pub struct Builder {
+        pub(crate) connectivity: std::option::Option<crate::model::XksProxyConnectivityType>,
+        pub(crate) access_key_id: std::option::Option<std::string::String>,
+        pub(crate) uri_endpoint: std::option::Option<std::string::String>,
+        pub(crate) uri_path: std::option::Option<std::string::String>,
+        pub(crate) vpc_endpoint_service_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Indicates whether the external key store proxy uses a public endpoint or an Amazon VPC endpoint service to communicate with KMS.</p>
+        pub fn connectivity(mut self, input: crate::model::XksProxyConnectivityType) -> Self {
+            self.connectivity = Some(input);
+            self
+        }
+        /// <p>Indicates whether the external key store proxy uses a public endpoint or an Amazon VPC endpoint service to communicate with KMS.</p>
+        pub fn set_connectivity(
+            mut self,
+            input: std::option::Option<crate::model::XksProxyConnectivityType>,
+        ) -> Self {
+            self.connectivity = input;
+            self
+        }
+        /// <p>The part of the external key store <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html#KMS-CreateCustomKeyStore-request-XksProxyAuthenticationCredential">proxy authentication credential</a> that uniquely identifies the secret access key.</p>
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_key_id = Some(input.into());
+            self
+        }
+        /// <p>The part of the external key store <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html#KMS-CreateCustomKeyStore-request-XksProxyAuthenticationCredential">proxy authentication credential</a> that uniquely identifies the secret access key.</p>
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_key_id = input;
+            self
+        }
+        /// <p>The URI endpoint for the external key store proxy.</p>
+        /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p>
+        /// <p>If the external key store proxy uses an Amazon VPC endpoint service name, this field displays the private DNS name associated with the VPC endpoint service.</p>
+        pub fn uri_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uri_endpoint = Some(input.into());
+            self
+        }
+        /// <p>The URI endpoint for the external key store proxy.</p>
+        /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p>
+        /// <p>If the external key store proxy uses an Amazon VPC endpoint service name, this field displays the private DNS name associated with the VPC endpoint service.</p>
+        pub fn set_uri_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uri_endpoint = input;
+            self
+        }
+        /// <p>The path to the external key store proxy APIs.</p>
+        pub fn uri_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uri_path = Some(input.into());
+            self
+        }
+        /// <p>The path to the external key store proxy APIs.</p>
+        pub fn set_uri_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uri_path = input;
+            self
+        }
+        /// <p>The Amazon VPC endpoint service used to communicate with the external key store proxy. This field appears only when the external key store proxy uses an Amazon VPC endpoint service to communicate with KMS.</p>
+        pub fn vpc_endpoint_service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_endpoint_service_name = Some(input.into());
+            self
+        }
+        /// <p>The Amazon VPC endpoint service used to communicate with the external key store proxy. This field appears only when the external key store proxy uses an Amazon VPC endpoint service to communicate with KMS.</p>
+        pub fn set_vpc_endpoint_service_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_endpoint_service_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`XksProxyConfigurationType`](crate::model::XksProxyConfigurationType).
+        pub fn build(self) -> crate::model::XksProxyConfigurationType {
+            crate::model::XksProxyConfigurationType {
+                connectivity: self.connectivity,
+                access_key_id: self.access_key_id,
+                uri_endpoint: self.uri_endpoint,
+                uri_path: self.uri_path,
+                vpc_endpoint_service_name: self.vpc_endpoint_service_name,
+            }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("connectivity", &self.connectivity);
+            formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("uri_endpoint", &self.uri_endpoint);
+            formatter.field("uri_path", &self.uri_path);
+            formatter.field("vpc_endpoint_service_name", &self.vpc_endpoint_service_name);
+            formatter.finish()
+        }
+    }
+}
+impl XksProxyConfigurationType {
+    /// Creates a new builder-style object to manufacture [`XksProxyConfigurationType`](crate::model::XksProxyConfigurationType).
+    pub fn builder() -> crate::model::xks_proxy_configuration_type::Builder {
+        crate::model::xks_proxy_configuration_type::Builder::default()
+    }
+}
+
+/// When writing a match expression against `CustomKeyStoreType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let customkeystoretype = unimplemented!();
+/// match customkeystoretype {
+///     CustomKeyStoreType::AwsCloudhsm => { /* ... */ },
+///     CustomKeyStoreType::ExternalKeyStore => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `customkeystoretype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CustomKeyStoreType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CustomKeyStoreType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CustomKeyStoreType::NewFeature` is defined.
+/// Specifically, when `customkeystoretype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CustomKeyStoreType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CustomKeyStoreType {
+    #[allow(missing_docs)] // documentation missing in model
+    AwsCloudhsm,
+    #[allow(missing_docs)] // documentation missing in model
+    ExternalKeyStore,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for CustomKeyStoreType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS_CLOUDHSM" => CustomKeyStoreType::AwsCloudhsm,
+            "EXTERNAL_KEY_STORE" => CustomKeyStoreType::ExternalKeyStore,
+            other => {
+                CustomKeyStoreType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for CustomKeyStoreType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CustomKeyStoreType::from(s))
+    }
+}
+impl CustomKeyStoreType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CustomKeyStoreType::AwsCloudhsm => "AWS_CLOUDHSM",
+            CustomKeyStoreType::ExternalKeyStore => "EXTERNAL_KEY_STORE",
+            CustomKeyStoreType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AWS_CLOUDHSM", "EXTERNAL_KEY_STORE"]
+    }
+}
+impl AsRef<str> for CustomKeyStoreType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3600,6 +4296,14 @@ impl CustomKeyStoresListEntry {
 ///     ConnectionErrorCodeType::UserLockedOut => { /* ... */ },
 ///     ConnectionErrorCodeType::UserLoggedIn => { /* ... */ },
 ///     ConnectionErrorCodeType::UserNotFound => { /* ... */ },
+///     ConnectionErrorCodeType::XksProxyAccessDenied => { /* ... */ },
+///     ConnectionErrorCodeType::XksProxyInvalidConfiguration => { /* ... */ },
+///     ConnectionErrorCodeType::XksProxyInvalidResponse => { /* ... */ },
+///     ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration => { /* ... */ },
+///     ConnectionErrorCodeType::XksProxyNotReachable => { /* ... */ },
+///     ConnectionErrorCodeType::XksProxyTimedOut => { /* ... */ },
+///     ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration => { /* ... */ },
+///     ConnectionErrorCodeType::XksVpcEndpointServiceNotFound => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -3653,6 +4357,22 @@ pub enum ConnectionErrorCodeType {
     UserLoggedIn,
     #[allow(missing_docs)] // documentation missing in model
     UserNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    XksProxyAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    XksProxyInvalidConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
+    XksProxyInvalidResponse,
+    #[allow(missing_docs)] // documentation missing in model
+    XksProxyInvalidTlsConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
+    XksProxyNotReachable,
+    #[allow(missing_docs)] // documentation missing in model
+    XksProxyTimedOut,
+    #[allow(missing_docs)] // documentation missing in model
+    XksVpcEndpointServiceInvalidConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
+    XksVpcEndpointServiceNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -3671,6 +4391,22 @@ impl std::convert::From<&str> for ConnectionErrorCodeType {
             "USER_LOCKED_OUT" => ConnectionErrorCodeType::UserLockedOut,
             "USER_LOGGED_IN" => ConnectionErrorCodeType::UserLoggedIn,
             "USER_NOT_FOUND" => ConnectionErrorCodeType::UserNotFound,
+            "XKS_PROXY_ACCESS_DENIED" => ConnectionErrorCodeType::XksProxyAccessDenied,
+            "XKS_PROXY_INVALID_CONFIGURATION" => {
+                ConnectionErrorCodeType::XksProxyInvalidConfiguration
+            }
+            "XKS_PROXY_INVALID_RESPONSE" => ConnectionErrorCodeType::XksProxyInvalidResponse,
+            "XKS_PROXY_INVALID_TLS_CONFIGURATION" => {
+                ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration
+            }
+            "XKS_PROXY_NOT_REACHABLE" => ConnectionErrorCodeType::XksProxyNotReachable,
+            "XKS_PROXY_TIMED_OUT" => ConnectionErrorCodeType::XksProxyTimedOut,
+            "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION" => {
+                ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration
+            }
+            "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND" => {
+                ConnectionErrorCodeType::XksVpcEndpointServiceNotFound
+            }
             other => ConnectionErrorCodeType::Unknown(crate::types::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -3700,6 +4436,22 @@ impl ConnectionErrorCodeType {
             ConnectionErrorCodeType::UserLockedOut => "USER_LOCKED_OUT",
             ConnectionErrorCodeType::UserLoggedIn => "USER_LOGGED_IN",
             ConnectionErrorCodeType::UserNotFound => "USER_NOT_FOUND",
+            ConnectionErrorCodeType::XksProxyAccessDenied => "XKS_PROXY_ACCESS_DENIED",
+            ConnectionErrorCodeType::XksProxyInvalidConfiguration => {
+                "XKS_PROXY_INVALID_CONFIGURATION"
+            }
+            ConnectionErrorCodeType::XksProxyInvalidResponse => "XKS_PROXY_INVALID_RESPONSE",
+            ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration => {
+                "XKS_PROXY_INVALID_TLS_CONFIGURATION"
+            }
+            ConnectionErrorCodeType::XksProxyNotReachable => "XKS_PROXY_NOT_REACHABLE",
+            ConnectionErrorCodeType::XksProxyTimedOut => "XKS_PROXY_TIMED_OUT",
+            ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration => {
+                "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION"
+            }
+            ConnectionErrorCodeType::XksVpcEndpointServiceNotFound => {
+                "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND"
+            }
             ConnectionErrorCodeType::Unknown(value) => value.as_str(),
         }
     }
@@ -3716,6 +4468,14 @@ impl ConnectionErrorCodeType {
             "USER_LOCKED_OUT",
             "USER_LOGGED_IN",
             "USER_NOT_FOUND",
+            "XKS_PROXY_ACCESS_DENIED",
+            "XKS_PROXY_INVALID_CONFIGURATION",
+            "XKS_PROXY_INVALID_RESPONSE",
+            "XKS_PROXY_INVALID_TLS_CONFIGURATION",
+            "XKS_PROXY_NOT_REACHABLE",
+            "XKS_PROXY_TIMED_OUT",
+            "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION",
+            "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND",
         ]
     }
 }

@@ -120,6 +120,24 @@ pub fn parse_add_tags_error(
                 tmp
             }),
         },
+        "NoManagementAccountSLRExistsException" => {
+            crate::error::AddTagsError {
+                meta: generic,
+                kind: crate::error::AddTagsErrorKind::NoManagementAccountSlrExistsException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "NotOrganizationMasterAccountException" => {
             crate::error::AddTagsError {
                 meta: generic,
@@ -363,6 +381,24 @@ pub fn parse_cancel_query_error(
                 tmp
             }),
         },
+        "NoManagementAccountSLRExistsException" => {
+            crate::error::CancelQueryError {
+                meta: generic,
+                kind: crate::error::CancelQueryErrorKind::NoManagementAccountSlrExistsException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelQueryError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "OperationNotPermittedException" => crate::error::CancelQueryError {
             meta: generic,
             kind: crate::error::CancelQueryErrorKind::OperationNotPermittedException({
@@ -523,6 +559,48 @@ pub fn parse_create_event_data_store_error(
                                                     }
             tmp
         })},
+        "InsufficientEncryptionPolicyException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::InsufficientEncryptionPolicyException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::insufficient_encryption_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidEventSelectorsException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::InvalidEventSelectorsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_event_selectors_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_event_selectors_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidKmsKeyIdException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::InvalidKmsKeyIdException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_kms_key_id_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_kms_key_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "InvalidParameterException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::InvalidParameterException({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -543,6 +621,48 @@ pub fn parse_create_event_data_store_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_tag_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_tag_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "KmsException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::KmsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::kms_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_kms_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "KmsKeyNotFoundException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::KmsKeyNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::kms_key_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_kms_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoManagementAccountSLRExistsException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::NoManagementAccountSlrExistsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
                 }
             ;
@@ -952,6 +1072,20 @@ pub fn parse_create_trail_error(
                                                     }
             tmp
         })},
+        "NoManagementAccountSLRExistsException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::NoManagementAccountSlrExistsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "NotOrganizationMasterAccountException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::NotOrganizationMasterAccountException({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -1014,6 +1148,20 @@ pub fn parse_create_trail_error(
                     #[allow(unused_mut)]let mut output = crate::error::s3_bucket_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_s3_bucket_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TagsLimitExceededException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::TagsLimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::tags_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_tags_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1157,6 +1305,20 @@ pub fn parse_delete_event_data_store_error(
                                                     }
             tmp
         })},
+        "InactiveEventDataStoreException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::InactiveEventDataStoreException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::inactive_event_data_store_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -1177,6 +1339,20 @@ pub fn parse_delete_event_data_store_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoManagementAccountSLRExistsException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::NoManagementAccountSlrExistsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1259,6 +1435,20 @@ pub fn parse_delete_trail_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "CloudTrailARNInvalidException" => crate::error::DeleteTrailError { meta: generic, kind: crate::error::DeleteTrailErrorKind::CloudTrailArnInvalidException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrailError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "ConflictException" => crate::error::DeleteTrailError { meta: generic, kind: crate::error::DeleteTrailErrorKind::ConflictException({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -1307,6 +1497,20 @@ pub fn parse_delete_trail_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_trail_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrailError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoManagementAccountSLRExistsException" => crate::error::DeleteTrailError { meta: generic, kind: crate::error::DeleteTrailErrorKind::NoManagementAccountSlrExistsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrailError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1388,6 +1592,184 @@ pub fn parse_delete_trail_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_deregister_organization_delegated_admin_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeregisterOrganizationDelegatedAdminOutput,
+    crate::error::DeregisterOrganizationDelegatedAdminError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccountNotFoundException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::AccountNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::account_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "AccountNotRegisteredException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::AccountNotRegisteredException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::account_not_registered_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_account_not_registered_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "CloudTrailAccessNotEnabledException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::CloudTrailAccessNotEnabledException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InsufficientDependencyServiceAccessPermissionException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::InsufficientDependencyServiceAccessPermissionException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NotOrganizationManagementAccountException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::NotOrganizationManagementAccountException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::not_organization_management_account_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_organization_management_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OperationNotPermittedException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::OperationNotPermittedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationNotInAllFeaturesModeException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::OrganizationNotInAllFeaturesModeException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationsNotInUseException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::OrganizationsNotInUseException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedOperationException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::UnsupportedOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DeregisterOrganizationDelegatedAdminError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_deregister_organization_delegated_admin_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeregisterOrganizationDelegatedAdminOutput,
+    crate::error::DeregisterOrganizationDelegatedAdminError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::deregister_organization_delegated_admin_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_query_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeQueryOutput, crate::error::DescribeQueryError> {
@@ -1463,6 +1845,25 @@ pub fn parse_describe_query_error(
                     let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeQueryError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoManagementAccountSLRExistsException" => crate::error::DescribeQueryError {
+            meta: generic,
+            kind: crate::error::DescribeQueryErrorKind::NoManagementAccountSlrExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_management_account_slr_exists_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeQueryError::unhandled)?;
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -1567,6 +1968,25 @@ pub fn parse_describe_trails_error(
                     let mut output = crate::error::invalid_trail_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrailsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoManagementAccountSLRExistsException" => crate::error::DescribeTrailsError {
+            meta: generic,
+            kind: crate::error::DescribeTrailsErrorKind::NoManagementAccountSlrExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_management_account_slr_exists_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrailsError::unhandled)?;
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -1804,6 +2224,24 @@ pub fn parse_get_event_data_store_error(
                 tmp
             }),
         },
+        "NoManagementAccountSLRExistsException" => crate::error::GetEventDataStoreError {
+            meta: generic,
+            kind: crate::error::GetEventDataStoreErrorKind::NoManagementAccountSlrExistsException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventDataStoreError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "OperationNotPermittedException" => crate::error::GetEventDataStoreError {
             meta: generic,
             kind: crate::error::GetEventDataStoreErrorKind::OperationNotPermittedException({
@@ -1876,6 +2314,24 @@ pub fn parse_get_event_selectors_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "CloudTrailARNInvalidException" => crate::error::GetEventSelectorsError {
+            meta: generic,
+            kind: crate::error::GetEventSelectorsErrorKind::CloudTrailArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventSelectorsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidTrailNameException" => crate::error::GetEventSelectorsError {
             meta: generic,
             kind: crate::error::GetEventSelectorsErrorKind::InvalidTrailNameException({
@@ -1892,6 +2348,24 @@ pub fn parse_get_event_selectors_error(
                 }
                 tmp
             }),
+        },
+        "NoManagementAccountSLRExistsException" => crate::error::GetEventSelectorsError {
+            meta: generic,
+            kind: crate::error::GetEventSelectorsErrorKind::NoManagementAccountSlrExistsException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventSelectorsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
         },
         "OperationNotPermittedException" => crate::error::GetEventSelectorsError {
             meta: generic,
@@ -2088,6 +2562,24 @@ pub fn parse_get_insight_selectors_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "CloudTrailARNInvalidException" => crate::error::GetInsightSelectorsError {
+            meta: generic,
+            kind: crate::error::GetInsightSelectorsErrorKind::CloudTrailArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightSelectorsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InsightNotEnabledException" => crate::error::GetInsightSelectorsError {
             meta: generic,
             kind: crate::error::GetInsightSelectorsErrorKind::InsightNotEnabledException({
@@ -2122,6 +2614,24 @@ pub fn parse_get_insight_selectors_error(
                 }
                 tmp
             }),
+        },
+        "NoManagementAccountSLRExistsException" => crate::error::GetInsightSelectorsError {
+            meta: generic,
+            kind: crate::error::GetInsightSelectorsErrorKind::NoManagementAccountSlrExistsException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightSelectorsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
         },
         "OperationNotPermittedException" => crate::error::GetInsightSelectorsError {
             meta: generic,
@@ -2267,6 +2777,24 @@ pub fn parse_get_query_results_error(
                 tmp
             }),
         },
+        "InsufficientEncryptionPolicyException" => crate::error::GetQueryResultsError {
+            meta: generic,
+            kind: crate::error::GetQueryResultsErrorKind::InsufficientEncryptionPolicyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::insufficient_encryption_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQueryResultsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidMaxResultsException" => crate::error::GetQueryResultsError {
             meta: generic,
             kind: crate::error::GetQueryResultsErrorKind::InvalidMaxResultsException({
@@ -2311,6 +2839,25 @@ pub fn parse_get_query_results_error(
                     let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQueryResultsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoManagementAccountSLRExistsException" => crate::error::GetQueryResultsError {
+            meta: generic,
+            kind: crate::error::GetQueryResultsErrorKind::NoManagementAccountSlrExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_management_account_slr_exists_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQueryResultsError::unhandled)?;
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -2406,6 +2953,24 @@ pub fn parse_get_trail_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "CloudTrailARNInvalidException" => crate::error::GetTrailError {
+            meta: generic,
+            kind: crate::error::GetTrailErrorKind::CloudTrailArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTrailError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidTrailNameException" => crate::error::GetTrailError {
             meta: generic,
             kind: crate::error::GetTrailErrorKind::InvalidTrailNameException({
@@ -2510,6 +3075,24 @@ pub fn parse_get_trail_status_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "CloudTrailARNInvalidException" => crate::error::GetTrailStatusError {
+            meta: generic,
+            kind: crate::error::GetTrailStatusErrorKind::CloudTrailArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTrailStatusError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidTrailNameException" => crate::error::GetTrailStatusError {
             meta: generic,
             kind: crate::error::GetTrailStatusErrorKind::InvalidTrailNameException({
@@ -2738,6 +3321,24 @@ pub fn parse_list_event_data_stores_error(
                 }
                 tmp
             }),
+        },
+        "NoManagementAccountSLRExistsException" => crate::error::ListEventDataStoresError {
+            meta: generic,
+            kind: crate::error::ListEventDataStoresErrorKind::NoManagementAccountSlrExistsException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventDataStoresError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
         },
         "OperationNotPermittedException" => crate::error::ListEventDataStoresError {
             meta: generic,
@@ -3272,6 +3873,24 @@ pub fn parse_list_queries_error(
                 tmp
             }),
         },
+        "NoManagementAccountSLRExistsException" => {
+            crate::error::ListQueriesError {
+                meta: generic,
+                kind: crate::error::ListQueriesErrorKind::NoManagementAccountSlrExistsException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueriesError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "OperationNotPermittedException" => crate::error::ListQueriesError {
             meta: generic,
             kind: crate::error::ListQueriesErrorKind::OperationNotPermittedException({
@@ -3430,6 +4049,24 @@ pub fn parse_list_tags_error(
                 tmp
             }),
         },
+        "NoManagementAccountSLRExistsException" => {
+            crate::error::ListTagsError {
+                meta: generic,
+                kind: crate::error::ListTagsErrorKind::NoManagementAccountSlrExistsException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "OperationNotPermittedException" => crate::error::ListTagsError {
             meta: generic,
             kind: crate::error::ListTagsErrorKind::OperationNotPermittedException({
@@ -3764,6 +4401,20 @@ pub fn parse_put_event_selectors_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "CloudTrailARNInvalidException" => crate::error::PutEventSelectorsError { meta: generic, kind: crate::error::PutEventSelectorsErrorKind::CloudTrailArnInvalidException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEventSelectorsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::PutEventSelectorsError { meta: generic, kind: crate::error::PutEventSelectorsErrorKind::InsufficientDependencyServiceAccessPermissionException({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -3812,6 +4463,20 @@ pub fn parse_put_event_selectors_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_trail_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEventSelectorsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoManagementAccountSLRExistsException" => crate::error::PutEventSelectorsError { meta: generic, kind: crate::error::PutEventSelectorsErrorKind::NoManagementAccountSlrExistsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEventSelectorsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3914,6 +4579,24 @@ pub fn parse_put_insight_selectors_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "CloudTrailARNInvalidException" => crate::error::PutInsightSelectorsError {
+            meta: generic,
+            kind: crate::error::PutInsightSelectorsErrorKind::CloudTrailArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutInsightSelectorsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InsufficientEncryptionPolicyException" => crate::error::PutInsightSelectorsError {
             meta: generic,
             kind: crate::error::PutInsightSelectorsErrorKind::InsufficientEncryptionPolicyException(
@@ -4026,6 +4709,24 @@ pub fn parse_put_insight_selectors_error(
                 }
                 tmp
             }),
+        },
+        "NoManagementAccountSLRExistsException" => crate::error::PutInsightSelectorsError {
+            meta: generic,
+            kind: crate::error::PutInsightSelectorsErrorKind::NoManagementAccountSlrExistsException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutInsightSelectorsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
         },
         "NotOrganizationMasterAccountException" => crate::error::PutInsightSelectorsError {
             meta: generic,
@@ -4141,6 +4842,212 @@ pub fn parse_put_insight_selectors_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_register_organization_delegated_admin_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RegisterOrganizationDelegatedAdminOutput,
+    crate::error::RegisterOrganizationDelegatedAdminError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccountNotFoundException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::AccountNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::account_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "AccountRegisteredException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::AccountRegisteredException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::account_registered_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_account_registered_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "CannotDelegateManagementAccountException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::CannotDelegateManagementAccountException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cannot_delegate_management_account_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cannot_delegate_management_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "CloudTrailAccessNotEnabledException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::CloudTrailAccessNotEnabledException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "DelegatedAdminAccountLimitExceededException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::DelegatedAdminAccountLimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::delegated_admin_account_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_delegated_admin_account_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InsufficientDependencyServiceAccessPermissionException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::InsufficientDependencyServiceAccessPermissionException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NotOrganizationManagementAccountException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::NotOrganizationManagementAccountException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::not_organization_management_account_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_organization_management_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OperationNotPermittedException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::OperationNotPermittedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationNotInAllFeaturesModeException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::OrganizationNotInAllFeaturesModeException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationsNotInUseException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::OrganizationsNotInUseException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedOperationException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::UnsupportedOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::RegisterOrganizationDelegatedAdminError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_register_organization_delegated_admin_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RegisterOrganizationDelegatedAdminOutput,
+    crate::error::RegisterOrganizationDelegatedAdminError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::register_organization_delegated_admin_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RemoveTagsOutput, crate::error::RemoveTagsError> {
@@ -4242,6 +5149,24 @@ pub fn parse_remove_tags_error(
                 tmp
             }),
         },
+        "NoManagementAccountSLRExistsException" => {
+            crate::error::RemoveTagsError {
+                meta: generic,
+                kind: crate::error::RemoveTagsErrorKind::NoManagementAccountSlrExistsException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "NotOrganizationMasterAccountException" => {
             crate::error::RemoveTagsError {
                 meta: generic,
@@ -4453,6 +5378,20 @@ pub fn parse_restore_event_data_store_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoManagementAccountSLRExistsException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::NoManagementAccountSlrExistsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4798,6 +5737,20 @@ pub fn parse_start_logging_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "CloudTrailARNInvalidException" => crate::error::StartLoggingError { meta: generic, kind: crate::error::StartLoggingErrorKind::CloudTrailArnInvalidException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLoggingError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::StartLoggingError { meta: generic, kind: crate::error::StartLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -4832,6 +5785,20 @@ pub fn parse_start_logging_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_trail_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLoggingError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoManagementAccountSLRExistsException" => crate::error::StartLoggingError { meta: generic, kind: crate::error::StartLoggingErrorKind::NoManagementAccountSlrExistsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLoggingError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4979,6 +5946,42 @@ pub fn parse_start_query_error(
                 tmp
             }),
         },
+        "InsufficientEncryptionPolicyException" => {
+            crate::error::StartQueryError {
+                meta: generic,
+                kind: crate::error::StartQueryErrorKind::InsufficientEncryptionPolicyException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::insufficient_encryption_policy_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InsufficientS3BucketPolicyException" => crate::error::StartQueryError {
+            meta: generic,
+            kind: crate::error::StartQueryErrorKind::InsufficientS3BucketPolicyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::insufficient_s3_bucket_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_insufficient_s3_bucket_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidParameterException" => crate::error::StartQueryError {
             meta: generic,
             kind: crate::error::StartQueryErrorKind::InvalidParameterException({
@@ -5014,6 +6017,41 @@ pub fn parse_start_query_error(
                 tmp
             }),
         },
+        "InvalidS3BucketNameException" => crate::error::StartQueryError {
+            meta: generic,
+            kind: crate::error::StartQueryErrorKind::InvalidS3BucketNameException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_s3_bucket_name_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_bucket_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidS3PrefixException" => crate::error::StartQueryError {
+            meta: generic,
+            kind: crate::error::StartQueryErrorKind::InvalidS3PrefixException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_s3_prefix_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_prefix_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "MaxConcurrentQueriesException" => crate::error::StartQueryError {
             meta: generic,
             kind: crate::error::StartQueryErrorKind::MaxConcurrentQueriesException({
@@ -5032,6 +6070,24 @@ pub fn parse_start_query_error(
                 tmp
             }),
         },
+        "NoManagementAccountSLRExistsException" => {
+            crate::error::StartQueryError {
+                meta: generic,
+                kind: crate::error::StartQueryErrorKind::NoManagementAccountSlrExistsException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "OperationNotPermittedException" => crate::error::StartQueryError {
             meta: generic,
             kind: crate::error::StartQueryErrorKind::OperationNotPermittedException({
@@ -5042,6 +6098,24 @@ pub fn parse_start_query_error(
                         crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "S3BucketDoesNotExistException" => crate::error::StartQueryError {
+            meta: generic,
+            kind: crate::error::StartQueryErrorKind::S3BucketDoesNotExistException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::s3_bucket_does_not_exist_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_s3_bucket_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -5206,6 +6280,20 @@ pub fn parse_stop_logging_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "CloudTrailARNInvalidException" => crate::error::StopLoggingError { meta: generic, kind: crate::error::StopLoggingErrorKind::CloudTrailArnInvalidException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopLoggingError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::StopLoggingError { meta: generic, kind: crate::error::StopLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -5240,6 +6328,20 @@ pub fn parse_stop_logging_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_trail_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopLoggingError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoManagementAccountSLRExistsException" => crate::error::StopLoggingError { meta: generic, kind: crate::error::StopLoggingErrorKind::NoManagementAccountSlrExistsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopLoggingError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5420,12 +6522,96 @@ pub fn parse_update_event_data_store_error(
                                                     }
             tmp
         })},
+        "InsufficientEncryptionPolicyException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::InsufficientEncryptionPolicyException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::insufficient_encryption_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidEventSelectorsException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::InvalidEventSelectorsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_event_selectors_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_event_selectors_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidKmsKeyIdException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::InvalidKmsKeyIdException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_kms_key_id_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_kms_key_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "InvalidParameterException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::InvalidParameterException({
             #[allow(unused_mut)]let mut tmp =
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "KmsException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::KmsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::kms_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_kms_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "KmsKeyNotFoundException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::KmsKeyNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::kms_key_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_kms_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoManagementAccountSLRExistsException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::NoManagementAccountSlrExistsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5547,6 +6733,20 @@ pub fn parse_update_trail_error(
                     #[allow(unused_mut)]let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "CloudTrailARNInvalidException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::CloudTrailArnInvalidException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5723,6 +6923,20 @@ pub fn parse_update_trail_error(
                                                     }
             tmp
         })},
+        "InvalidParameterException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "InvalidS3BucketNameException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InvalidS3BucketNameException({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -5813,6 +7027,20 @@ pub fn parse_update_trail_error(
                     #[allow(unused_mut)]let mut output = crate::error::kms_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoManagementAccountSLRExistsException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::NoManagementAccountSlrExistsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
                 }
             ;

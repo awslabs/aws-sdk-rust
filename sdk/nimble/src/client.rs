@@ -94,7 +94,7 @@ impl Client {
     /// Constructs a fluent builder for the [`AcceptEulas`](crate::client::fluent_builders::AcceptEulas) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::AcceptEulas::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::AcceptEulas::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::AcceptEulas::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::AcceptEulas::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`eula_ids(Vec<String>)`](crate::client::fluent_builders::AcceptEulas::eula_ids) / [`set_eula_ids(Option<Vec<String>>)`](crate::client::fluent_builders::AcceptEulas::set_eula_ids): <p>The EULA ID.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::AcceptEulas::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::AcceptEulas::set_studio_id): <p>The studio ID.</p>
     /// - On success, responds with [`AcceptEulasOutput`](crate::output::AcceptEulasOutput) with field(s):
@@ -106,7 +106,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateLaunchProfile`](crate::client::fluent_builders::CreateLaunchProfile) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchProfile::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateLaunchProfile::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchProfile::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateLaunchProfile::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateLaunchProfile::set_description): <p>The description.</p>
     ///   - [`ec2_subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateLaunchProfile::ec2_subnet_ids) / [`set_ec2_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLaunchProfile::set_ec2_subnet_ids): <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
     ///   - [`launch_profile_protocol_versions(Vec<String>)`](crate::client::fluent_builders::CreateLaunchProfile::launch_profile_protocol_versions) / [`set_launch_profile_protocol_versions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLaunchProfile::set_launch_profile_protocol_versions): <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
@@ -114,7 +114,7 @@ impl Client {
     ///   - [`stream_configuration(StreamConfigurationCreate)`](crate::client::fluent_builders::CreateLaunchProfile::stream_configuration) / [`set_stream_configuration(Option<StreamConfigurationCreate>)`](crate::client::fluent_builders::CreateLaunchProfile::set_stream_configuration): <p>A configuration for a streaming session.</p>
     ///   - [`studio_component_ids(Vec<String>)`](crate::client::fluent_builders::CreateLaunchProfile::studio_component_ids) / [`set_studio_component_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLaunchProfile::set_studio_component_ids): <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchProfile::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateLaunchProfile::set_studio_id): <p>The studio ID. </p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLaunchProfile::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLaunchProfile::set_tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLaunchProfile::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLaunchProfile::set_tags): <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     /// - On success, responds with [`CreateLaunchProfileOutput`](crate::output::CreateLaunchProfileOutput) with field(s):
     ///   - [`launch_profile(Option<LaunchProfile>)`](crate::output::CreateLaunchProfileOutput::launch_profile): <p>The launch profile.</p>
     /// - On failure, responds with [`SdkError<CreateLaunchProfileError>`](crate::error::CreateLaunchProfileError)
@@ -124,12 +124,12 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateStreamingImage`](crate::client::fluent_builders::CreateStreamingImage) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingImage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStreamingImage::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingImage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStreamingImage::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingImage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateStreamingImage::set_description): <p>A human-readable description of the streaming image.</p>
     ///   - [`ec2_image_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingImage::ec2_image_id) / [`set_ec2_image_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingImage::set_ec2_image_id): <p>The ID of an EC2 machine image with which to create this streaming image.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingImage::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateStreamingImage::set_name): <p>A friendly name for a streaming image resource.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingImage::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingImage::set_studio_id): <p>The studio ID. </p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStreamingImage::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStreamingImage::set_tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStreamingImage::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStreamingImage::set_tags): <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     /// - On success, responds with [`CreateStreamingImageOutput`](crate::output::CreateStreamingImageOutput) with field(s):
     ///   - [`streaming_image(Option<StreamingImage>)`](crate::output::CreateStreamingImageOutput::streaming_image): <p>The streaming image.</p>
     /// - On failure, responds with [`SdkError<CreateStreamingImageError>`](crate::error::CreateStreamingImageError)
@@ -139,13 +139,13 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateStreamingSession`](crate::client::fluent_builders::CreateStreamingSession) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`ec2_instance_type(StreamingInstanceType)`](crate::client::fluent_builders::CreateStreamingSession::ec2_instance_type) / [`set_ec2_instance_type(Option<StreamingInstanceType>)`](crate::client::fluent_builders::CreateStreamingSession::set_ec2_instance_type): <p>The EC2 Instance type used for the streaming session.</p>
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_launch_profile_id): <p>The launch profile ID.</p>
+    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
     ///   - [`owned_by(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::owned_by) / [`set_owned_by(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_owned_by): <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
     ///   - [`streaming_image_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::streaming_image_id) / [`set_streaming_image_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_streaming_image_id): <p>The ID of the streaming image.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_studio_id): <p>The studio ID. </p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStreamingSession::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStreamingSession::set_tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStreamingSession::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStreamingSession::set_tags): <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     /// - On success, responds with [`CreateStreamingSessionOutput`](crate::output::CreateStreamingSessionOutput) with field(s):
     ///   - [`session(Option<StreamingSession>)`](crate::output::CreateStreamingSessionOutput::session): <p>The session.</p>
     /// - On failure, responds with [`SdkError<CreateStreamingSessionError>`](crate::error::CreateStreamingSessionError)
@@ -155,7 +155,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateStreamingSessionStream`](crate::client::fluent_builders::CreateStreamingSessionStream) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`expiration_in_seconds(i32)`](crate::client::fluent_builders::CreateStreamingSessionStream::expiration_in_seconds) / [`set_expiration_in_seconds(Option<i32>)`](crate::client::fluent_builders::CreateStreamingSessionStream::set_expiration_in_seconds): <p>The expiration time in seconds.</p>
     ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::set_session_id): <p>The streaming session ID.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::set_studio_id): <p>The studio ID. </p>
@@ -168,13 +168,13 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateStudio`](crate::client::fluent_builders::CreateStudio) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`admin_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::admin_role_arn) / [`set_admin_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_admin_role_arn): <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`admin_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::admin_role_arn) / [`set_admin_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_admin_role_arn): <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_display_name): <p>A friendly name for the studio.</p>
     ///   - [`studio_encryption_configuration(StudioEncryptionConfiguration)`](crate::client::fluent_builders::CreateStudio::studio_encryption_configuration) / [`set_studio_encryption_configuration(Option<StudioEncryptionConfiguration>)`](crate::client::fluent_builders::CreateStudio::set_studio_encryption_configuration): <p>The studio encryption configuration.</p>
     ///   - [`studio_name(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::studio_name) / [`set_studio_name(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_studio_name): <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStudio::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStudio::set_tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-    ///   - [`user_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::user_role_arn) / [`set_user_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_user_role_arn): <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStudio::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStudio::set_tags): <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+    ///   - [`user_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::user_role_arn) / [`set_user_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_user_role_arn): <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
     /// - On success, responds with [`CreateStudioOutput`](crate::output::CreateStudioOutput) with field(s):
     ///   - [`studio(Option<Studio>)`](crate::output::CreateStudioOutput::studio): <p>Information about a studio.</p>
     /// - On failure, responds with [`SdkError<CreateStudioError>`](crate::error::CreateStudioError)
@@ -184,7 +184,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateStudioComponent`](crate::client::fluent_builders::CreateStudioComponent) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`configuration(StudioComponentConfiguration)`](crate::client::fluent_builders::CreateStudioComponent::configuration) / [`set_configuration(Option<StudioComponentConfiguration>)`](crate::client::fluent_builders::CreateStudioComponent::set_configuration): <p>The configuration of the studio component, based on component type.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_description): <p>The description.</p>
     ///   - [`ec2_security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateStudioComponent::ec2_security_group_ids) / [`set_ec2_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateStudioComponent::set_ec2_security_group_ids): <p>The EC2 security groups that control access to the studio component.</p>
@@ -193,10 +193,10 @@ impl Client {
     ///   - [`script_parameters(Vec<ScriptParameterKeyValue>)`](crate::client::fluent_builders::CreateStudioComponent::script_parameters) / [`set_script_parameters(Option<Vec<ScriptParameterKeyValue>>)`](crate::client::fluent_builders::CreateStudioComponent::set_script_parameters): <p>Parameters for the studio component scripts.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_studio_id): <p>The studio ID. </p>
     ///   - [`subtype(StudioComponentSubtype)`](crate::client::fluent_builders::CreateStudioComponent::subtype) / [`set_subtype(Option<StudioComponentSubtype>)`](crate::client::fluent_builders::CreateStudioComponent::set_subtype): <p>The specific subtype of a studio component.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStudioComponent::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStudioComponent::set_tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStudioComponent::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStudioComponent::set_tags): <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     ///   - [`r#type(StudioComponentType)`](crate::client::fluent_builders::CreateStudioComponent::type) / [`set_type(Option<StudioComponentType>)`](crate::client::fluent_builders::CreateStudioComponent::set_type): <p>The type of the studio component.</p>
-    ///   - [`secure_initialization_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::secure_initialization_role_arn) / [`set_secure_initialization_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_secure_initialization_role_arn): <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
-    ///   - [`runtime_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::runtime_role_arn) / [`set_runtime_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_runtime_role_arn): <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    ///   - [`secure_initialization_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::secure_initialization_role_arn) / [`set_secure_initialization_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_secure_initialization_role_arn): <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
+    ///   - [`runtime_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::runtime_role_arn) / [`set_runtime_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_runtime_role_arn): <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     /// - On success, responds with [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput) with field(s):
     ///   - [`studio_component(Option<StudioComponent>)`](crate::output::CreateStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
     /// - On failure, responds with [`SdkError<CreateStudioComponentError>`](crate::error::CreateStudioComponentError)
@@ -206,8 +206,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteLaunchProfile`](crate::client::fluent_builders::DeleteLaunchProfile) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::set_launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`DeleteLaunchProfileOutput`](crate::output::DeleteLaunchProfileOutput) with field(s):
     ///   - [`launch_profile(Option<LaunchProfile>)`](crate::output::DeleteLaunchProfileOutput::launch_profile): <p>The launch profile.</p>
@@ -218,8 +218,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteLaunchProfileMember`](crate::client::fluent_builders::DeleteLaunchProfileMember) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
     ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`DeleteLaunchProfileMemberOutput`](crate::output::DeleteLaunchProfileMemberOutput)
@@ -231,7 +231,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteStreamingImage`](crate::client::fluent_builders::DeleteStreamingImage) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingImage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStreamingImage::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingImage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStreamingImage::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`streaming_image_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingImage::streaming_image_id) / [`set_streaming_image_id(Option<String>)`](crate::client::fluent_builders::DeleteStreamingImage::set_streaming_image_id): <p>The streaming image ID.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingImage::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteStreamingImage::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`DeleteStreamingImageOutput`](crate::output::DeleteStreamingImageOutput) with field(s):
@@ -243,7 +243,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteStreamingSession`](crate::client::fluent_builders::DeleteStreamingSession) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingSession::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStreamingSession::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingSession::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStreamingSession::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::DeleteStreamingSession::set_session_id): <p>The streaming session ID.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingSession::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteStreamingSession::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`DeleteStreamingSessionOutput`](crate::output::DeleteStreamingSessionOutput) with field(s):
@@ -255,7 +255,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteStudio`](crate::client::fluent_builders::DeleteStudio) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStudio::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStudio::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStudio::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStudio::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudio::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteStudio::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`DeleteStudioOutput`](crate::output::DeleteStudioOutput) with field(s):
     ///   - [`studio(Option<Studio>)`](crate::output::DeleteStudioOutput::studio): <p>Information about a studio.</p>
@@ -266,7 +266,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteStudioComponent`](crate::client::fluent_builders::DeleteStudioComponent) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioComponent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStudioComponent::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioComponent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStudioComponent::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`studio_component_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioComponent::studio_component_id) / [`set_studio_component_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioComponent::set_studio_component_id): <p>The studio component ID.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioComponent::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioComponent::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`DeleteStudioComponentOutput`](crate::output::DeleteStudioComponentOutput) with field(s):
@@ -278,7 +278,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteStudioMember`](crate::client::fluent_builders::DeleteStudioMember) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioMember::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStudioMember::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioMember::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStudioMember::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioMember::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioMember::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioMember::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`DeleteStudioMemberOutput`](crate::output::DeleteStudioMemberOutput)
@@ -300,7 +300,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetLaunchProfile`](crate::client::fluent_builders::GetLaunchProfile) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfile::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfile::set_launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfile::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfile::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfile::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfile::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`GetLaunchProfileOutput`](crate::output::GetLaunchProfileOutput) with field(s):
     ///   - [`launch_profile(Option<LaunchProfile>)`](crate::output::GetLaunchProfileOutput::launch_profile): <p>The launch profile.</p>
@@ -311,7 +311,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetLaunchProfileDetails`](crate::client::fluent_builders::GetLaunchProfileDetails) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileDetails::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileDetails::set_launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileDetails::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileDetails::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileDetails::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileDetails::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`GetLaunchProfileDetailsOutput`](crate::output::GetLaunchProfileDetailsOutput) with field(s):
     ///   - [`launch_profile(Option<LaunchProfile>)`](crate::output::GetLaunchProfileDetailsOutput::launch_profile): <p>The launch profile.</p>
@@ -324,10 +324,10 @@ impl Client {
     /// Constructs a fluent builder for the [`GetLaunchProfileInitialization`](crate::client::fluent_builders::GetLaunchProfileInitialization) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::set_launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
     ///   - [`launch_profile_protocol_versions(Vec<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::launch_profile_protocol_versions) / [`set_launch_profile_protocol_versions(Option<Vec<String>>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::set_launch_profile_protocol_versions): <p>The launch profile protocol versions supported by the client.</p>
     ///   - [`launch_purpose(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::launch_purpose) / [`set_launch_purpose(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::set_launch_purpose): <p>The launch purpose.</p>
-    ///   - [`platform(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::platform) / [`set_platform(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::set_platform): <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
+    ///   - [`platform(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::platform) / [`set_platform(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::set_platform): <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`GetLaunchProfileInitializationOutput`](crate::output::GetLaunchProfileInitializationOutput) with field(s):
     ///   - [`launch_profile_initialization(Option<LaunchProfileInitialization>)`](crate::output::GetLaunchProfileInitializationOutput::launch_profile_initialization): <p>The launch profile initialization.</p>
@@ -340,7 +340,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetLaunchProfileMember`](crate::client::fluent_builders::GetLaunchProfileMember) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::set_launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
     ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`GetLaunchProfileMemberOutput`](crate::output::GetLaunchProfileMemberOutput) with field(s):
@@ -370,6 +370,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetStreamingSessionError>`](crate::error::GetStreamingSessionError)
     pub fn get_streaming_session(&self) -> fluent_builders::GetStreamingSession {
         fluent_builders::GetStreamingSession::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetStreamingSessionBackup`](crate::client::fluent_builders::GetStreamingSessionBackup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`backup_id(impl Into<String>)`](crate::client::fluent_builders::GetStreamingSessionBackup::backup_id) / [`set_backup_id(Option<String>)`](crate::client::fluent_builders::GetStreamingSessionBackup::set_backup_id): <p>The ID of the backup.</p>
+    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetStreamingSessionBackup::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetStreamingSessionBackup::set_studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`GetStreamingSessionBackupOutput`](crate::output::GetStreamingSessionBackupOutput) with field(s):
+    ///   - [`streaming_session_backup(Option<StreamingSessionBackup>)`](crate::output::GetStreamingSessionBackupOutput::streaming_session_backup): <p>Information about the streaming session backup.</p>
+    /// - On failure, responds with [`SdkError<GetStreamingSessionBackupError>`](crate::error::GetStreamingSessionBackupError)
+    pub fn get_streaming_session_backup(&self) -> fluent_builders::GetStreamingSessionBackup {
+        fluent_builders::GetStreamingSessionBackup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetStreamingSessionStream`](crate::client::fluent_builders::GetStreamingSessionStream) operation.
     ///
@@ -420,7 +431,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`eula_ids(Vec<String>)`](crate::client::fluent_builders::ListEulaAcceptances::eula_ids) / [`set_eula_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ListEulaAcceptances::set_eula_ids): <p>The list of EULA IDs that have been previously accepted.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEulaAcceptances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEulaAcceptances::set_next_token): <p>The token to request the next page of results. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEulaAcceptances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEulaAcceptances::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListEulaAcceptances::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListEulaAcceptances::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`ListEulaAcceptancesOutput`](crate::output::ListEulaAcceptancesOutput) with field(s):
     ///   - [`eula_acceptances(Option<Vec<EulaAcceptance>>)`](crate::output::ListEulaAcceptancesOutput::eula_acceptances): <p>A collection of EULA acceptances.</p>
@@ -434,7 +445,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`eula_ids(Vec<String>)`](crate::client::fluent_builders::ListEulas::eula_ids) / [`set_eula_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ListEulas::set_eula_ids): <p>The list of EULA IDs that should be returned</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEulas::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEulas::set_next_token): <p>The token to request the next page of results. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEulas::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEulas::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On success, responds with [`ListEulasOutput`](crate::output::ListEulasOutput) with field(s):
     ///   - [`eulas(Option<Vec<Eula>>)`](crate::output::ListEulasOutput::eulas): <p>A collection of EULA resources.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEulasOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
@@ -446,9 +457,9 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLaunchProfileMembers::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLaunchProfileMembers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_max_results): <p>The max number of results to return in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_next_token): <p>The token to request the next page of results. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`ListLaunchProfileMembersOutput`](crate::output::ListLaunchProfileMembersOutput) with field(s):
     ///   - [`members(Option<Vec<LaunchProfileMembership>>)`](crate::output::ListLaunchProfileMembersOutput::members): <p>A list of members.</p>
@@ -462,7 +473,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLaunchProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLaunchProfiles::set_max_results): <p>The max number of results to return in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLaunchProfiles::set_next_token): <p>The token to request the next page of results. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLaunchProfiles::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfiles::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfiles::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     ///   - [`states(Vec<LaunchProfileState>)`](crate::client::fluent_builders::ListLaunchProfiles::states) / [`set_states(Option<Vec<LaunchProfileState>>)`](crate::client::fluent_builders::ListLaunchProfiles::set_states): <p>Filter this request to launch profiles in any of the given states.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfiles::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfiles::set_studio_id): <p>The studio ID. </p>
@@ -477,7 +488,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreamingImages::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreamingImages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreamingImages::set_next_token): <p>The token to request the next page of results. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreamingImages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreamingImages::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`owner(impl Into<String>)`](crate::client::fluent_builders::ListStreamingImages::owner) / [`set_owner(Option<String>)`](crate::client::fluent_builders::ListStreamingImages::set_owner): <p>Filter this request to streaming images with the given owner</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListStreamingImages::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListStreamingImages::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`ListStreamingImagesOutput`](crate::output::ListStreamingImagesOutput) with field(s):
@@ -487,12 +498,26 @@ impl Client {
     pub fn list_streaming_images(&self) -> fluent_builders::ListStreamingImages {
         fluent_builders::ListStreamingImages::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListStreamingSessionBackups`](crate::client::fluent_builders::ListStreamingSessionBackups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreamingSessionBackups::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessionBackups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreamingSessionBackups::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`owned_by(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessionBackups::owned_by) / [`set_owned_by(Option<String>)`](crate::client::fluent_builders::ListStreamingSessionBackups::set_owned_by): <p>The user ID of the user that owns the streaming session.</p>
+    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessionBackups::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListStreamingSessionBackups::set_studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`ListStreamingSessionBackupsOutput`](crate::output::ListStreamingSessionBackupsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListStreamingSessionBackupsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`streaming_session_backups(Option<Vec<StreamingSessionBackup>>)`](crate::output::ListStreamingSessionBackupsOutput::streaming_session_backups): <p>Information about the streaming session backups.</p>
+    /// - On failure, responds with [`SdkError<ListStreamingSessionBackupsError>`](crate::error::ListStreamingSessionBackupsError)
+    pub fn list_streaming_session_backups(&self) -> fluent_builders::ListStreamingSessionBackups {
+        fluent_builders::ListStreamingSessionBackups::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListStreamingSessions`](crate::client::fluent_builders::ListStreamingSessions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreamingSessions::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`created_by(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessions::created_by) / [`set_created_by(Option<String>)`](crate::client::fluent_builders::ListStreamingSessions::set_created_by): <p>Filters the request to streaming sessions created by the given user.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreamingSessions::set_next_token): <p>The token to request the next page of results. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreamingSessions::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`owned_by(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessions::owned_by) / [`set_owned_by(Option<String>)`](crate::client::fluent_builders::ListStreamingSessions::set_owned_by): <p>Filters the request to streaming session owned by the given user</p>
     ///   - [`session_ids(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessions::session_ids) / [`set_session_ids(Option<String>)`](crate::client::fluent_builders::ListStreamingSessions::set_session_ids): <p>Filters the request to only the provided session IDs.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessions::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListStreamingSessions::set_studio_id): <p>The studio ID. </p>
@@ -508,7 +533,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStudioComponents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStudioComponents::set_max_results): <p>The max number of results to return in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStudioComponents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStudioComponents::set_next_token): <p>The token to request the next page of results. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStudioComponents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStudioComponents::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`states(Vec<StudioComponentState>)`](crate::client::fluent_builders::ListStudioComponents::states) / [`set_states(Option<Vec<StudioComponentState>>)`](crate::client::fluent_builders::ListStudioComponents::set_states): <p>Filters the request to studio components that are in one of the given states. </p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListStudioComponents::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListStudioComponents::set_studio_id): <p>The studio ID. </p>
     ///   - [`types(Vec<StudioComponentType>)`](crate::client::fluent_builders::ListStudioComponents::types) / [`set_types(Option<Vec<StudioComponentType>>)`](crate::client::fluent_builders::ListStudioComponents::set_types): <p>Filters the request to studio components that are of one of the given types.</p>
@@ -524,7 +549,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStudioMembers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStudioMembers::set_max_results): <p>The max number of results to return in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStudioMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStudioMembers::set_next_token): <p>The token to request the next page of results. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStudioMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStudioMembers::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListStudioMembers::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListStudioMembers::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`ListStudioMembersOutput`](crate::output::ListStudioMembersOutput) with field(s):
     ///   - [`members(Option<Vec<StudioMembership>>)`](crate::output::ListStudioMembersOutput::members): <p>A list of admin members.</p>
@@ -537,7 +562,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStudios::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStudios::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStudios::set_next_token): <p>The token to request the next page of results. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStudios::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStudios::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On success, responds with [`ListStudiosOutput`](crate::output::ListStudiosOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListStudiosOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`studios(Option<Vec<Studio>>)`](crate::output::ListStudiosOutput::studios): <p>A collection of studios.</p>
@@ -550,7 +575,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
@@ -558,9 +583,9 @@ impl Client {
     /// Constructs a fluent builder for the [`PutLaunchProfileMembers`](crate::client::fluent_builders::PutLaunchProfileMembers) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::set_identity_store_id): <p>The ID of the identity store.</p>
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::set_launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
     ///   - [`members(Vec<NewLaunchProfileMember>)`](crate::client::fluent_builders::PutLaunchProfileMembers::members) / [`set_members(Option<Vec<NewLaunchProfileMember>>)`](crate::client::fluent_builders::PutLaunchProfileMembers::set_members): <p>A list of members.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`PutLaunchProfileMembersOutput`](crate::output::PutLaunchProfileMembersOutput)
@@ -572,7 +597,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutStudioMembers`](crate::client::fluent_builders::PutStudioMembers) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::PutStudioMembers::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::PutStudioMembers::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::PutStudioMembers::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::PutStudioMembers::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::PutStudioMembers::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::PutStudioMembers::set_identity_store_id): <p>The ID of the identity store.</p>
     ///   - [`members(Vec<NewStudioMember>)`](crate::client::fluent_builders::PutStudioMembers::members) / [`set_members(Option<Vec<NewStudioMember>>)`](crate::client::fluent_builders::PutStudioMembers::set_members): <p>A list of members.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::PutStudioMembers::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::PutStudioMembers::set_studio_id): <p>The studio ID. </p>
@@ -585,9 +610,10 @@ impl Client {
     /// Constructs a fluent builder for the [`StartStreamingSession`](crate::client::fluent_builders::StartStreamingSession) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartStreamingSession::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartStreamingSession::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::StartStreamingSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::StartStreamingSession::set_session_id): <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartStreamingSession::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartStreamingSession::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::StartStreamingSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::StartStreamingSession::set_session_id): <p>The streaming session ID for the <code>StartStreamingSessionRequest</code>.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::StartStreamingSession::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::StartStreamingSession::set_studio_id): <p>The studio ID for the StartStreamingSessionRequest.</p>
+    ///   - [`backup_id(impl Into<String>)`](crate::client::fluent_builders::StartStreamingSession::backup_id) / [`set_backup_id(Option<String>)`](crate::client::fluent_builders::StartStreamingSession::set_backup_id): <p>The ID of the backup.</p>
     /// - On success, responds with [`StartStreamingSessionOutput`](crate::output::StartStreamingSessionOutput) with field(s):
     ///   - [`session(Option<StreamingSession>)`](crate::output::StartStreamingSessionOutput::session): <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
     /// - On failure, responds with [`SdkError<StartStreamingSessionError>`](crate::error::StartStreamingSessionError)
@@ -597,7 +623,7 @@ impl Client {
     /// Constructs a fluent builder for the [`StartStudioSSOConfigurationRepair`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`StartStudioSsoConfigurationRepairOutput`](crate::output::StartStudioSsoConfigurationRepairOutput) with field(s):
     ///   - [`studio(Option<Studio>)`](crate::output::StartStudioSsoConfigurationRepairOutput::studio): <p>Information about a studio.</p>
@@ -610,9 +636,10 @@ impl Client {
     /// Constructs a fluent builder for the [`StopStreamingSession`](crate::client::fluent_builders::StopStreamingSession) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StopStreamingSession::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StopStreamingSession::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::StopStreamingSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::StopStreamingSession::set_session_id): <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StopStreamingSession::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StopStreamingSession::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::StopStreamingSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::StopStreamingSession::set_session_id): <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::StopStreamingSession::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::StopStreamingSession::set_studio_id): <p>The studioId for the StopStreamingSessionRequest.</p>
+    ///   - [`volume_retention_mode(VolumeRetentionMode)`](crate::client::fluent_builders::StopStreamingSession::volume_retention_mode) / [`set_volume_retention_mode(Option<VolumeRetentionMode>)`](crate::client::fluent_builders::StopStreamingSession::set_volume_retention_mode): <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
     /// - On success, responds with [`StopStreamingSessionOutput`](crate::output::StopStreamingSessionOutput) with field(s):
     ///   - [`session(Option<StreamingSession>)`](crate::output::StopStreamingSessionOutput::session): <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
     /// - On failure, responds with [`SdkError<StopStreamingSessionError>`](crate::error::StopStreamingSessionError)
@@ -622,8 +649,8 @@ impl Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -644,9 +671,9 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateLaunchProfile`](crate::client::fluent_builders::UpdateLaunchProfile) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_description): <p>The description.</p>
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
     ///   - [`launch_profile_protocol_versions(Vec<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::launch_profile_protocol_versions) / [`set_launch_profile_protocol_versions(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_launch_profile_protocol_versions): <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_name): <p>The name for the launch profile.</p>
     ///   - [`stream_configuration(StreamConfigurationCreate)`](crate::client::fluent_builders::UpdateLaunchProfile::stream_configuration) / [`set_stream_configuration(Option<StreamConfigurationCreate>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_stream_configuration): <p>A configuration for a streaming session.</p>
@@ -661,8 +688,8 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateLaunchProfileMember`](crate::client::fluent_builders::UpdateLaunchProfileMember) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
     ///   - [`persona(LaunchProfilePersona)`](crate::client::fluent_builders::UpdateLaunchProfileMember::persona) / [`set_persona(Option<LaunchProfilePersona>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_persona): <p>The persona.</p>
     ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_studio_id): <p>The studio ID. </p>
@@ -675,13 +702,13 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateStreamingImage`](crate::client::fluent_builders::UpdateStreamingImage) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateStreamingImage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateStreamingImage::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateStreamingImage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateStreamingImage::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateStreamingImage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateStreamingImage::set_description): <p>The description.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateStreamingImage::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateStreamingImage::set_name): <p>The name for the streaming image.</p>
     ///   - [`streaming_image_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStreamingImage::streaming_image_id) / [`set_streaming_image_id(Option<String>)`](crate::client::fluent_builders::UpdateStreamingImage::set_streaming_image_id): <p>The streaming image ID.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStreamingImage::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateStreamingImage::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`UpdateStreamingImageOutput`](crate::output::UpdateStreamingImageOutput) with field(s):
-    ///   - [`streaming_image(Option<StreamingImage>)`](crate::output::UpdateStreamingImageOutput::streaming_image): <p>Represents a streaming image resource.</p>  <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>  <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>  <p>You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine image that you create for this purpose. You can also include software that your users require.</p>
+    ///   - [`streaming_image(Option<StreamingImage>)`](crate::output::UpdateStreamingImageOutput::streaming_image): <p>Represents a streaming image resource.</p>  <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>  <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>  <p>You can create your own streaming images using an Amazon EC2 machine image that you create for this purpose. You can also include software that your users require.</p>
     /// - On failure, responds with [`SdkError<UpdateStreamingImageError>`](crate::error::UpdateStreamingImageError)
     pub fn update_streaming_image(&self) -> fluent_builders::UpdateStreamingImage {
         fluent_builders::UpdateStreamingImage::new(self.handle.clone())
@@ -690,7 +717,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`admin_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::admin_role_arn) / [`set_admin_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_admin_role_arn): <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_display_name): <p>A friendly name for the studio.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_studio_id): <p>The studio ID. </p>
     ///   - [`user_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::user_role_arn) / [`set_user_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_user_role_arn): <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
@@ -703,7 +730,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateStudioComponent`](crate::client::fluent_builders::UpdateStudioComponent) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`configuration(StudioComponentConfiguration)`](crate::client::fluent_builders::UpdateStudioComponent::configuration) / [`set_configuration(Option<StudioComponentConfiguration>)`](crate::client::fluent_builders::UpdateStudioComponent::set_configuration): <p>The configuration of the studio component, based on component type.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_description): <p>The description.</p>
     ///   - [`ec2_security_group_ids(Vec<String>)`](crate::client::fluent_builders::UpdateStudioComponent::ec2_security_group_ids) / [`set_ec2_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateStudioComponent::set_ec2_security_group_ids): <p>The EC2 security groups that control access to the studio component.</p>
@@ -714,8 +741,8 @@ impl Client {
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_studio_id): <p>The studio ID. </p>
     ///   - [`subtype(StudioComponentSubtype)`](crate::client::fluent_builders::UpdateStudioComponent::subtype) / [`set_subtype(Option<StudioComponentSubtype>)`](crate::client::fluent_builders::UpdateStudioComponent::set_subtype): <p>The specific subtype of a studio component.</p>
     ///   - [`r#type(StudioComponentType)`](crate::client::fluent_builders::UpdateStudioComponent::type) / [`set_type(Option<StudioComponentType>)`](crate::client::fluent_builders::UpdateStudioComponent::set_type): <p>The type of the studio component.</p>
-    ///   - [`secure_initialization_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::secure_initialization_role_arn) / [`set_secure_initialization_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_secure_initialization_role_arn): <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
-    ///   - [`runtime_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::runtime_role_arn) / [`set_runtime_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_runtime_role_arn): <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    ///   - [`secure_initialization_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::secure_initialization_role_arn) / [`set_secure_initialization_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_secure_initialization_role_arn): <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
+    ///   - [`runtime_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::runtime_role_arn) / [`set_runtime_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_runtime_role_arn): <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     /// - On success, responds with [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput) with field(s):
     ///   - [`studio_component(Option<StudioComponent>)`](crate::output::UpdateStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
     /// - On failure, responds with [`SdkError<UpdateStudioComponentError>`](crate::error::UpdateStudioComponentError)
@@ -792,12 +819,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -892,12 +919,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1006,7 +1033,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1015,7 +1042,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1088,12 +1115,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1142,7 +1169,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1151,7 +1178,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1165,7 +1192,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStreamingSession`.
     ///
     /// <p>Creates a streaming session in a studio.</p>
-    /// <p>After invoking this operation, you must poll GetStreamingSession until the streaming session is in state READY.</p>
+    /// <p>After invoking this operation, you must poll GetStreamingSession until the streaming session is in the <code>READY</code> state.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamingSession {
         handle: std::sync::Arc<super::Handle>,
@@ -1225,12 +1252,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1248,12 +1275,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ec2_instance_type(input);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(input.into());
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1298,7 +1325,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1307,7 +1334,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1321,7 +1348,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStreamingSessionStream`.
     ///
     /// <p>Creates a streaming session stream for a streaming session.</p>
-    /// <p>After invoking this API, invoke GetStreamingSessionStream with the returned streamId to poll the resource until it is in state READY.</p>
+    /// <p>After invoking this API, invoke GetStreamingSessionStream with the returned streamId to poll the resource until it is in the <code>READY</code> state.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamingSessionStream {
         handle: std::sync::Arc<super::Handle>,
@@ -1381,12 +1408,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1424,12 +1451,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateStudio`.
     ///
-    /// <p>Create a new Studio.</p>
-    /// <p>When creating a Studio, two IAM roles must be provided: the admin role and the user Role. These roles are assumed by your users when they log in to the Nimble Studio portal.</p>
-    /// <p>The user role must have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to function properly.</p>
-    /// <p>The Admin Role must have the AmazonNimbleStudio-StudioAdmin managed policy attached for the portal to function properly.</p>
-    /// <p>You may optionally specify a KMS key in the StudioEncryptionConfiguration.</p>
-    /// <p>In Nimble Studio, resource names, descriptions, initialization scripts, and other data you provide are always encrypted at rest using an KMS key. By default, this key is owned by Amazon Web Services and managed on your behalf. You may provide your own KMS key when calling CreateStudio to encrypt this data using a key you own and manage.</p>
+    /// <p>Create a new studio.</p>
+    /// <p>When creating a studio, two IAM roles must be provided: the admin role and the user role. These roles are assumed by your users when they log in to the Nimble Studio portal.</p>
+    /// <p>The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy attached for the portal to function properly.</p>
+    /// <p>The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy attached for the portal to function properly.</p>
+    /// <p>You may optionally specify a KMS key in the <code>StudioEncryptionConfiguration</code>.</p>
+    /// <p>In Nimble Studio, resource names, descriptions, initialization scripts, and other data you provide are always encrypted at rest using an KMS key. By default, this key is owned by Amazon Web Services and managed on your behalf. You may provide your own KMS key when calling <code>CreateStudio</code> to encrypt this data using a key you own and manage.</p>
     /// <p>When providing an KMS key during studio creation, Nimble Studio creates KMS grants in your account to provide your studio user and admin roles access to these KMS keys.</p>
     /// <p>If you delete this grant, the studio will no longer be accessible to your portal users.</p>
     /// <p>If you delete the studio KMS key, your studio will no longer be accessible.</p>
@@ -1492,12 +1519,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
         pub fn admin_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.admin_role_arn(input.into());
             self
         }
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
         pub fn set_admin_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1505,12 +1532,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_admin_role_arn(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1555,7 +1582,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1564,7 +1591,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1574,12 +1601,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
         pub fn user_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_role_arn(input.into());
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
         pub fn set_user_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1650,12 +1677,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1776,7 +1803,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1785,7 +1812,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1808,7 +1835,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
         pub fn secure_initialization_role_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1816,7 +1843,7 @@ pub mod fluent_builders {
             self.inner = self.inner.secure_initialization_role_arn(input.into());
             self
         }
-        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
         pub fn set_secure_initialization_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1824,12 +1851,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secure_initialization_role_arn(input);
             self
         }
-        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
         pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.runtime_role_arn(input.into());
             self
         }
-        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
         pub fn set_runtime_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1900,22 +1927,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1996,22 +2023,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2102,12 +2129,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2139,8 +2166,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStreamingSession`.
     ///
     /// <p>Deletes streaming session resource.</p>
-    /// <p>After invoking this operation, use GetStreamingSession to poll the resource until it transitions to a DELETED state.</p>
-    /// <p>A streaming session will count against your streaming session quota until it is marked DELETED.</p>
+    /// <p>After invoking this operation, use GetStreamingSession to poll the resource until it transitions to a <code>DELETED</code> state.</p>
+    /// <p>A streaming session will count against your streaming session quota until it is marked <code>DELETED</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStreamingSession {
         handle: std::sync::Arc<super::Handle>,
@@ -2200,12 +2227,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2293,12 +2320,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2376,12 +2403,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2472,12 +2499,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2505,7 +2532,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEula`.
     ///
-    /// <p>Get Eula.</p>
+    /// <p>Get EULA.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEula {
         handle: std::sync::Arc<super::Handle>,
@@ -2638,12 +2665,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2724,12 +2751,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2810,12 +2837,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2856,12 +2883,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_purpose(input);
             self
         }
-        /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
+        /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
         pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.platform(input.into());
             self
         }
-        /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
+        /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_platform(input);
             self
@@ -2939,12 +2966,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3143,11 +3170,95 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetStreamingSessionBackup`.
+    ///
+    /// <p>Gets <code>StreamingSessionBackup</code> resource.</p>
+    /// <p>Invoke this operation to poll for a streaming session backup while stopping a streaming session.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetStreamingSessionBackup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_streaming_session_backup_input::Builder,
+    }
+    impl GetStreamingSessionBackup {
+        /// Creates a new `GetStreamingSessionBackup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetStreamingSessionBackup,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetStreamingSessionBackupError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetStreamingSessionBackupOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetStreamingSessionBackupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the backup.</p>
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(input.into());
+            self
+        }
+        /// <p>The ID of the backup.</p>
+        pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_backup_id(input);
+            self
+        }
+        /// <p>The studio ID. </p>
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
+            self
+        }
+        /// <p>The studio ID. </p>
+        pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_studio_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetStreamingSessionStream`.
     ///
     /// <p>Gets a StreamingSessionStream for a streaming session.</p>
-    /// <p>Invoke this operation to poll the resource after invoking CreateStreamingSessionStream.</p>
-    /// <p>After the StreamingSessionStream changes to the state READY, the url property will contain a stream to be used with the DCV streaming client.</p>
+    /// <p>Invoke this operation to poll the resource after invoking <code>CreateStreamingSessionStream</code>.</p>
+    /// <p>After the <code>StreamingSessionStream</code> changes to the <code>READY</code> state, the url property will contain a stream to be used with the DCV streaming client.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStreamingSessionStream {
         handle: std::sync::Arc<super::Handle>,
@@ -3240,7 +3351,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetStudio`.
     ///
-    /// <p>Get a Studio resource.</p>
+    /// <p>Get a studio resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStudio {
         handle: std::sync::Arc<super::Handle>,
@@ -3482,7 +3593,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEulaAcceptances`.
     ///
-    /// <p>List Eula Acceptances.</p>
+    /// <p>List EULA acceptances.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEulaAcceptances {
         handle: std::sync::Arc<super::Handle>,
@@ -3565,12 +3676,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_eula_ids(input);
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3588,7 +3699,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEulas`.
     ///
-    /// <p>List Eulas.</p>
+    /// <p>List EULAs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEulas {
         handle: std::sync::Arc<super::Handle>,
@@ -3671,12 +3782,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_eula_ids(input);
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3750,12 +3861,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListLaunchProfileMembersPaginator {
             crate::paginator::ListLaunchProfileMembersPaginator::new(self.handle, self.inner)
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3773,12 +3884,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3872,12 +3983,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3989,12 +4100,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListStreamingImagesPaginator {
             crate::paginator::ListStreamingImagesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4007,6 +4118,105 @@ pub mod fluent_builders {
         /// <p>Filter this request to streaming images with the given owner</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_owner(input);
+            self
+        }
+        /// <p>The studio ID. </p>
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
+            self
+        }
+        /// <p>The studio ID. </p>
+        pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_studio_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListStreamingSessionBackups`.
+    ///
+    /// <p>Lists the backups of a streaming session in a studio.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListStreamingSessionBackups {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_streaming_session_backups_input::Builder,
+    }
+    impl ListStreamingSessionBackups {
+        /// Creates a new `ListStreamingSessionBackups`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListStreamingSessionBackups,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListStreamingSessionBackupsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListStreamingSessionBackupsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListStreamingSessionBackupsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStreamingSessionBackupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListStreamingSessionBackupsPaginator {
+            crate::paginator::ListStreamingSessionBackupsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The user ID of the user that owns the streaming session.</p>
+        pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owned_by(input.into());
+            self
+        }
+        /// <p>The user ID of the user that owns the streaming session.</p>
+        pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_owned_by(input);
             self
         }
         /// <p>The studio ID. </p>
@@ -4098,12 +4308,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_created_by(input);
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4141,7 +4351,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStudioComponents`.
     ///
-    /// <p>Lists the StudioComponents in a studio.</p>
+    /// <p>Lists the <code>StudioComponents</code> in a studio.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStudioComponents {
         handle: std::sync::Arc<super::Handle>,
@@ -4217,12 +4427,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4352,12 +4562,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4375,7 +4585,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStudios`.
     ///
-    /// <p>List studios in your Amazon Web Services account in the requested Amazon Web Services Region.</p>
+    /// <p>List studios in your Amazon Web Services accounts in the requested Amazon Web Services Region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStudios {
         handle: std::sync::Arc<super::Handle>,
@@ -4441,12 +4651,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListStudiosPaginator {
             crate::paginator::ListStudiosPaginator::new(self.handle, self.inner)
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to request the next page of results. </p>
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4588,12 +4798,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -4611,12 +4821,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_store_id(input);
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4714,12 +4924,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -4767,7 +4977,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartStreamingSession`.
     ///
-    /// <p> Transitions sessions from the STOPPED state into the READY state. The START_IN_PROGRESS state is the intermediate state between the STOPPED and READY states.</p>
+    /// <p>Transitions sessions from the <code>STOPPED</code> state into the <code>READY</code> state. The <code>START_IN_PROGRESS</code> state is the intermediate state between the <code>STOPPED</code> and <code>READY</code> states.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartStreamingSession {
         handle: std::sync::Arc<super::Handle>,
@@ -4827,22 +5037,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+        /// <p>The streaming session ID for the <code>StartStreamingSessionRequest</code>.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_id(input.into());
             self
         }
-        /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+        /// <p>The streaming session ID for the <code>StartStreamingSessionRequest</code>.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_id(input);
             self
@@ -4857,12 +5067,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_id(input);
             self
         }
+        /// <p>The ID of the backup.</p>
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(input.into());
+            self
+        }
+        /// <p>The ID of the backup.</p>
+        pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_backup_id(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `StartStudioSSOConfigurationRepair`.
     ///
     /// <p>Repairs the IAM Identity Center configuration for a given studio.</p>
     /// <p>If the studio has a valid IAM Identity Center configuration currently associated with it, this operation will fail with a validation error.</p>
-    /// <p>If the studio does not have a valid IAM Identity Center configuration currently associated with it, then a new IAM Identity Center application is created for the studio and the studio is changed to the READY state.</p>
+    /// <p>If the studio does not have a valid IAM Identity Center configuration currently associated with it, then a new IAM Identity Center application is created for the studio and the studio is changed to the <code>READY</code> state.</p>
     /// <p>After the IAM Identity Center application is repaired, you must use the Amazon Nimble Studio console to add administrators and users to your studio.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartStudioSSOConfigurationRepair {
@@ -4923,12 +5143,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -4946,7 +5166,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopStreamingSession`.
     ///
-    /// <p>Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS state is the intermediate state between the READY and STOPPED states.</p>
+    /// <p>Transitions sessions from the <code>READY</code> state into the <code>STOPPED</code> state. The <code>STOP_IN_PROGRESS</code> state is the intermediate state between the <code>READY</code> and <code>STOPPED</code> states.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopStreamingSession {
         handle: std::sync::Arc<super::Handle>,
@@ -5006,22 +5226,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+        /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_id(input.into());
             self
         }
-        /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+        /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_id(input);
             self
@@ -5034,6 +5254,19 @@ pub mod fluent_builders {
         /// <p>The studioId for the StopStreamingSessionRequest.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
+            self
+        }
+        /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
+        pub fn volume_retention_mode(mut self, input: crate::model::VolumeRetentionMode) -> Self {
+            self.inner = self.inner.volume_retention_mode(input);
+            self
+        }
+        /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
+        pub fn set_volume_retention_mode(
+            mut self,
+            input: std::option::Option<crate::model::VolumeRetentionMode>,
+        ) -> Self {
+            self.inner = self.inner.set_volume_retention_mode(input);
             self
         }
     }
@@ -5099,12 +5332,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -5113,7 +5346,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5122,7 +5355,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5285,12 +5518,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -5305,12 +5538,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5454,22 +5687,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(input.into());
             self
         }
-        /// <p>The Launch Profile ID.</p>
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5573,12 +5806,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -5703,12 +5936,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_admin_role_arn(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -5809,12 +6042,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -5957,7 +6190,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
         pub fn secure_initialization_role_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -5965,7 +6198,7 @@ pub mod fluent_builders {
             self.inner = self.inner.secure_initialization_role_arn(input.into());
             self
         }
-        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
         pub fn set_secure_initialization_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5973,12 +6206,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secure_initialization_role_arn(input);
             self
         }
-        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
         pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.runtime_role_arn(input.into());
             self
         }
-        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
         pub fn set_runtime_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,

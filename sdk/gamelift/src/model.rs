@@ -2,7 +2,7 @@
 
 /// <p>Properties describing a Realtime script.</p>
 /// <p> <b>Related actions</b> </p>
-/// <p> <code>CreateScript</code> | <code>ListScripts</code> | <code>DescribeScript</code> | <code>UpdateScript</code> | <code>DeleteScript</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Script {
@@ -15,7 +15,7 @@ pub struct Script {
     /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
+    /// <p>Version information associated with a build or script. Version strings do not need to be unique.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location, this value remains at "0".</p>
@@ -24,7 +24,7 @@ pub struct Script {
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
     #[doc(hidden)]
     pub storage_location: std::option::Option<crate::model::S3Location>,
 }
@@ -41,7 +41,7 @@ impl Script {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
+    /// <p>Version information associated with a build or script. Version strings do not need to be unique.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -53,7 +53,7 @@ impl Script {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
     pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.storage_location.as_ref()
     }
@@ -103,12 +103,12 @@ pub mod script {
             self.name = input;
             self
         }
-        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
+        /// <p>Version information associated with a build or script. Version strings do not need to be unique.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
+        /// <p>Version information associated with a build or script. Version strings do not need to be unique.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -136,12 +136,12 @@ pub mod script {
             self.creation_time = input;
             self
         }
-        /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
             self.storage_location = Some(input);
             self
         }
-        /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -170,12 +170,12 @@ impl Script {
     }
 }
 
-/// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+/// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
-    /// <p>An Amazon S3 bucket identifier. This is the name of the S3 bucket.</p> <note>
-    /// <p>GameLift currently does not support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
+    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
+    /// <p>GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
     /// </note>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -190,8 +190,8 @@ pub struct S3Location {
     pub object_version: std::option::Option<std::string::String>,
 }
 impl S3Location {
-    /// <p>An Amazon S3 bucket identifier. This is the name of the S3 bucket.</p> <note>
-    /// <p>GameLift currently does not support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
+    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
+    /// <p>GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
     /// </note>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
@@ -221,15 +221,15 @@ pub mod s3_location {
         pub(crate) object_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An Amazon S3 bucket identifier. This is the name of the S3 bucket.</p> <note>
-        /// <p>GameLift currently does not support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
+        /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
+        /// <p>GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
         /// </note>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>An Amazon S3 bucket identifier. This is the name of the S3 bucket.</p> <note>
-        /// <p>GameLift currently does not support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
+        /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
+        /// <p>GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
         /// </note>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
@@ -287,9 +287,7 @@ impl S3Location {
 }
 
 /// <p>A collection of server process configurations that describe the set of processes to run on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. GameLift launches the configured processes, manages their life cycle, and replaces them as needed. Each instance checks regularly for an updated runtime configuration. </p>
-/// <p>A GameLift instance is limited to 50 processes running concurrently. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each <code>ServerProcess</code>. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html"> Running Multiple Processes on a Fleet</a>.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>DescribeRuntimeConfiguration</code> | <code>UpdateRuntimeConfiguration</code> </p>
+/// <p>A GameLift instance is limited to 50 processes running concurrently. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each server process. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html"> Running Multiple Processes on a Fleet</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuntimeConfiguration {
@@ -393,7 +391,7 @@ impl RuntimeConfiguration {
     }
 }
 
-/// <p>A set of instructions for launching server processes on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. Server process configurations are part of a fleet's <code>RuntimeConfiguration</code>.</p>
+/// <p>A set of instructions for launching server processes on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. Server process configurations are part of a fleet's runtime configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerProcess {
@@ -546,13 +544,13 @@ pub struct MatchmakingConfiguration {
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     #[doc(hidden)]
     pub game_properties: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     #[doc(hidden)]
     pub game_session_data: std::option::Option<std::string::String>,
-    /// <p>The method used to backfill game sessions created with this matchmaking configuration. MANUAL indicates that the game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that GameLift creates <code>StartMatchBackfill</code> requests whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>The method used to backfill game sessions created with this matchmaking configuration. MANUAL indicates that the game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that GameLift creates backfill requests whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     #[doc(hidden)]
     pub backfill_mode: std::option::Option<crate::model::BackfillMode>,
     /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>
@@ -624,15 +622,15 @@ impl MatchmakingConfiguration {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn game_properties(&self) -> std::option::Option<&[crate::model::GameProperty]> {
         self.game_properties.as_deref()
     }
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn game_session_data(&self) -> std::option::Option<&str> {
         self.game_session_data.as_deref()
     }
-    /// <p>The method used to backfill game sessions created with this matchmaking configuration. MANUAL indicates that the game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that GameLift creates <code>StartMatchBackfill</code> requests whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>The method used to backfill game sessions created with this matchmaking configuration. MANUAL indicates that the game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that GameLift creates backfill requests whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn backfill_mode(&self) -> std::option::Option<&crate::model::BackfillMode> {
         self.backfill_mode.as_ref()
     }
@@ -844,14 +842,14 @@ pub mod matchmaking_configuration {
         ///
         /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
         ///
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
             v.push(input);
             self.game_properties = Some(v);
             self
         }
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -859,12 +857,12 @@ pub mod matchmaking_configuration {
             self.game_properties = input;
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_session_data = Some(input.into());
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -872,12 +870,12 @@ pub mod matchmaking_configuration {
             self.game_session_data = input;
             self
         }
-        /// <p>The method used to backfill game sessions created with this matchmaking configuration. MANUAL indicates that the game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that GameLift creates <code>StartMatchBackfill</code> requests whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>The method used to backfill game sessions created with this matchmaking configuration. MANUAL indicates that the game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that GameLift creates backfill requests whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn backfill_mode(mut self, input: crate::model::BackfillMode) -> Self {
             self.backfill_mode = Some(input);
             self
         }
-        /// <p>The method used to backfill game sessions created with this matchmaking configuration. MANUAL indicates that the game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that GameLift creates <code>StartMatchBackfill</code> requests whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>The method used to backfill game sessions created with this matchmaking configuration. MANUAL indicates that the game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that GameLift creates backfill requests whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_backfill_mode(
             mut self,
             input: std::option::Option<crate::model::BackfillMode>,
@@ -1185,8 +1183,6 @@ impl GameProperty {
 }
 
 /// <p>Configuration for a game session placement mechanism that processes requests for new game sessions. A queue can be used on its own or as part of a matchmaking solution.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html">CreateGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html">DescribeGameSessionQueues</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html">UpdateGameSessionQueue</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameSessionQueue {
@@ -1216,7 +1212,7 @@ pub struct GameSessionQueue {
     /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
     #[doc(hidden)]
     pub priority_configuration: std::option::Option<crate::model::PriorityConfiguration>,
-    /// <p> Information that is added to all events that are related to this game session queue. </p>
+    /// <p> Information that is added to all events that are related to this game session queue.</p>
     #[doc(hidden)]
     pub custom_event_data: std::option::Option<std::string::String>,
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
@@ -1262,7 +1258,7 @@ impl GameSessionQueue {
     ) -> std::option::Option<&crate::model::PriorityConfiguration> {
         self.priority_configuration.as_ref()
     }
-    /// <p> Information that is added to all events that are related to this game session queue. </p>
+    /// <p> Information that is added to all events that are related to this game session queue.</p>
     pub fn custom_event_data(&self) -> std::option::Option<&str> {
         self.custom_event_data.as_deref()
     }
@@ -1398,12 +1394,12 @@ pub mod game_session_queue {
             self.priority_configuration = input;
             self
         }
-        /// <p> Information that is added to all events that are related to this game session queue. </p>
+        /// <p> Information that is added to all events that are related to this game session queue.</p>
         pub fn custom_event_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_event_data = Some(input.into());
             self
         }
-        /// <p> Information that is added to all events that are related to this game session queue. </p>
+        /// <p> Information that is added to all events that are related to this game session queue.</p>
         pub fn set_custom_event_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1453,7 +1449,6 @@ impl GameSessionQueue {
 /// <li> <p>If player latency data is not included, destinations and locations are prioritized first on destination list order (1), and then on location (alphabetical) (2). This approach ensures that the queue's top priority is to place game sessions on the first destination fleet listed. If that fleet has multiple locations, the game session is placed on the first location (when listed alphabetically).</p> </li>
 /// </ul>
 /// <p>Changing the priority order will affect how game sessions are placed.</p>
-/// <p>Priority configurations are part of a <code>GameSessionQueue</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PriorityConfiguration {
@@ -1663,7 +1658,6 @@ impl AsRef<str> for PriorityType {
 }
 
 /// <p>A list of fleet locations where a game session queue can place new game sessions. You can use a filter to temporarily turn off placements for specific locations. For queues that have multi-location fleets, you can use a filter configuration allow placement with some, but not all of these locations.</p>
-/// <p>Filter configurations are part of a <code>GameSessionQueue</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterConfiguration {
@@ -1721,16 +1715,15 @@ impl FilterConfiguration {
 }
 
 /// <p>A fleet or alias designated in a game session queue. Queues fulfill requests for new game sessions by placing a new game session on any of the queue's destinations. </p>
-/// <p>Destinations are part of a <code>GameSessionQueue</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameSessionQueueDestination {
-    /// <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which include a fleet ID or alias ID and a Region name, provide a unique identifier across all Regions. </p>
+    /// <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which include a fleet ID or alias ID and a Region name, provide a unique identifier across all Regions.</p>
     #[doc(hidden)]
     pub destination_arn: std::option::Option<std::string::String>,
 }
 impl GameSessionQueueDestination {
-    /// <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which include a fleet ID or alias ID and a Region name, provide a unique identifier across all Regions. </p>
+    /// <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which include a fleet ID or alias ID and a Region name, provide a unique identifier across all Regions.</p>
     pub fn destination_arn(&self) -> std::option::Option<&str> {
         self.destination_arn.as_deref()
     }
@@ -1744,12 +1737,12 @@ pub mod game_session_queue_destination {
         pub(crate) destination_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which include a fleet ID or alias ID and a Region name, provide a unique identifier across all Regions. </p>
+        /// <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which include a fleet ID or alias ID and a Region name, provide a unique identifier across all Regions.</p>
         pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which include a fleet ID or alias ID and a Region name, provide a unique identifier across all Regions. </p>
+        /// <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which include a fleet ID or alias ID and a Region name, provide a unique identifier across all Regions.</p>
         pub fn set_destination_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1773,7 +1766,6 @@ impl GameSessionQueueDestination {
 }
 
 /// <p>Sets a latency cap for individual players when placing a game session. With a latency policy in force, a game session cannot be placed in a fleet location where a player reports latency higher than the cap. Latency policies are used only with placement request that provide player latency information. Player latency policies can be stacked to gradually relax latency requirements over time. </p>
-/// <p>Latency policies are part of a <code>GameSessionQueue</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlayerLatencyPolicy {
@@ -1847,8 +1839,7 @@ impl PlayerLatencyPolicy {
 /// <p>Properties describing a game session.</p>
 /// <p>A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>. </p>
 /// <p>Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>CreateGameSession</code> | <code>DescribeGameSessions</code> | <code>DescribeGameSessionDetails</code> | <code>SearchGameSessions</code> | <code>UpdateGameSession</code> | <code>GetGameSessionLogUrl</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameSession {
@@ -1889,7 +1880,7 @@ pub struct GameSession {
     /// <p>Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<crate::model::GameSessionStatusReason>,
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). You can search for active game sessions based on this custom data with <code>SearchGameSessions</code>.</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     #[doc(hidden)]
     pub game_properties: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
     /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
@@ -1922,7 +1913,7 @@ pub struct GameSession {
     /// <p>A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that limits the number of game sessions a player can create.</p>
     #[doc(hidden)]
     pub creator_id: std::option::Option<std::string::String>,
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     #[doc(hidden)]
     pub game_session_data: std::option::Option<std::string::String>,
     /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>). </p>
@@ -1980,7 +1971,7 @@ impl GameSession {
     pub fn status_reason(&self) -> std::option::Option<&crate::model::GameSessionStatusReason> {
         self.status_reason.as_ref()
     }
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). You can search for active game sessions based on this custom data with <code>SearchGameSessions</code>.</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn game_properties(&self) -> std::option::Option<&[crate::model::GameProperty]> {
         self.game_properties.as_deref()
     }
@@ -2020,7 +2011,7 @@ impl GameSession {
     pub fn creator_id(&self) -> std::option::Option<&str> {
         self.creator_id.as_deref()
     }
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn game_session_data(&self) -> std::option::Option<&str> {
         self.game_session_data.as_deref()
     }
@@ -2194,14 +2185,14 @@ pub mod game_session {
         ///
         /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
         ///
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). You can search for active game sessions based on this custom data with <code>SearchGameSessions</code>.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
             v.push(input);
             self.game_properties = Some(v);
             self
         }
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). You can search for active game sessions based on this custom data with <code>SearchGameSessions</code>.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -2293,12 +2284,12 @@ pub mod game_session {
             self.creator_id = input;
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_session_data = Some(input.into());
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2741,8 +2732,6 @@ impl AsRef<str> for ProtectionPolicy {
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p>
 /// <p>Properties that describe a game server group resource. A game server group manages certain properties related to a corresponding Amazon EC2 Auto Scaling group. </p>
 /// <p>A game server group is created by a successful call to <code>CreateGameServerGroup</code> and deleted by calling <code>DeleteGameServerGroup</code>. Game server group activity can be temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code> and <code>ResumeGameServerGroup</code>, respectively. </p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>CreateGameServerGroup</code> | <code>ListGameServerGroups</code> | <code>DescribeGameServerGroup</code> | <code>UpdateGameServerGroup</code> | <code>DeleteGameServerGroup</code> | <code>ResumeGameServerGroup</code> | <code>SuspendGameServerGroup</code> | <code>DescribeGameServerInstances</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameServerGroup {
@@ -3511,7 +3500,7 @@ impl AsRef<str> for BalancingStrategy {
 }
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p>
-/// <p>An allowed instance type for a <code>GameServerGroup</code>. All game server groups must have at least two instance types defined for it. GameLift FleetIQ periodically evaluates each defined instance type for viability. It then updates the Auto Scaling group with the list of viable instance types.</p>
+/// <p>An allowed instance type for a game server group. All game server groups must have at least two instance types defined for it. GameLift FleetIQ periodically evaluates each defined instance type for viability. It then updates the Auto Scaling group with the list of viable instance types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceDefinition {
@@ -4196,14 +4185,12 @@ impl AsRef<str> for GameServerGroupInstanceType {
 }
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p>
-/// <p>Properties describing a game server that is running on an instance in a <code>GameServerGroup</code>. </p>
+/// <p>Properties describing a game server that is running on an instance in a game server group. </p>
 /// <p>A game server is created by a successful call to <code>RegisterGameServer</code> and deleted by calling <code>DeregisterGameServer</code>. A game server is claimed to host a game session by calling <code>ClaimGameServer</code>. </p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>RegisterGameServer</code> | <code>ListGameServers</code> | <code>ClaimGameServer</code> | <code>DescribeGameServer</code> | <code>UpdateGameServer</code> | <code>DeregisterGameServer</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameServer {
-    /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group where the game server is running.</p>
     #[doc(hidden)]
     pub game_server_group_name: std::option::Option<std::string::String>,
     /// <p>The ARN identifier for the game server group where the game server is located.</p>
@@ -4218,7 +4205,7 @@ pub struct GameServer {
     /// <p>The port and IP address that must be used to establish a client connection to the game server.</p>
     #[doc(hidden)]
     pub connection_info: std::option::Option<std::string::String>,
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
     #[doc(hidden)]
     pub game_server_data: std::option::Option<std::string::String>,
     /// <p>Indicates when an available game server has been reserved for gameplay but has not yet started hosting a game. Once it is claimed, the game server remains in <code>CLAIMED</code> status for a maximum of one minute. During this time, game clients connect to the game server to start the game and trigger the game server to update its utilization status. After one minute, the game server claim status reverts to null.</p>
@@ -4231,18 +4218,18 @@ pub struct GameServer {
     /// </ul>
     #[doc(hidden)]
     pub utilization_status: std::option::Option<crate::model::GameServerUtilizationStatus>,
-    /// <p>Timestamp that indicates when the game server was created with a <code>RegisterGameServer</code> request. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    /// <p>Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     #[doc(hidden)]
     pub registration_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Timestamp that indicates the last time the game server was claimed with a <code>ClaimGameServer</code> request. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game server's status should revert to null.</p>
+    /// <p>Timestamp that indicates the last time the game server was claimed. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game server's status should revert to null.</p>
     #[doc(hidden)]
     pub last_claim_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Timestamp that indicates the last time the game server was updated with health status using an <code>UpdateGameServer</code> request. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.</p>
+    /// <p>Timestamp that indicates the last time the game server was updated with health status. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.</p>
     #[doc(hidden)]
     pub last_health_check_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GameServer {
-    /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group where the game server is running.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
@@ -4262,7 +4249,7 @@ impl GameServer {
     pub fn connection_info(&self) -> std::option::Option<&str> {
         self.connection_info.as_deref()
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
     pub fn game_server_data(&self) -> std::option::Option<&str> {
         self.game_server_data.as_deref()
     }
@@ -4280,15 +4267,15 @@ impl GameServer {
     ) -> std::option::Option<&crate::model::GameServerUtilizationStatus> {
         self.utilization_status.as_ref()
     }
-    /// <p>Timestamp that indicates when the game server was created with a <code>RegisterGameServer</code> request. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    /// <p>Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn registration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.registration_time.as_ref()
     }
-    /// <p>Timestamp that indicates the last time the game server was claimed with a <code>ClaimGameServer</code> request. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game server's status should revert to null.</p>
+    /// <p>Timestamp that indicates the last time the game server was claimed. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game server's status should revert to null.</p>
     pub fn last_claim_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_claim_time.as_ref()
     }
-    /// <p>Timestamp that indicates the last time the game server was updated with health status using an <code>UpdateGameServer</code> request. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.</p>
+    /// <p>Timestamp that indicates the last time the game server was updated with health status. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.</p>
     pub fn last_health_check_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_health_check_time.as_ref()
     }
@@ -4313,12 +4300,12 @@ pub mod game_server {
         pub(crate) last_health_check_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group where the game server is running.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group where the game server is running.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4375,12 +4362,12 @@ pub mod game_server {
             self.connection_info = input;
             self
         }
-        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>.</p>
+        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
         pub fn game_server_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_data = Some(input.into());
             self
         }
-        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>.</p>
+        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
         pub fn set_game_server_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4425,12 +4412,12 @@ pub mod game_server {
             self.utilization_status = input;
             self
         }
-        /// <p>Timestamp that indicates when the game server was created with a <code>RegisterGameServer</code> request. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        /// <p>Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn registration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.registration_time = Some(input);
             self
         }
-        /// <p>Timestamp that indicates when the game server was created with a <code>RegisterGameServer</code> request. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        /// <p>Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_registration_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4438,12 +4425,12 @@ pub mod game_server {
             self.registration_time = input;
             self
         }
-        /// <p>Timestamp that indicates the last time the game server was claimed with a <code>ClaimGameServer</code> request. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game server's status should revert to null.</p>
+        /// <p>Timestamp that indicates the last time the game server was claimed. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game server's status should revert to null.</p>
         pub fn last_claim_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_claim_time = Some(input);
             self
         }
-        /// <p>Timestamp that indicates the last time the game server was claimed with a <code>ClaimGameServer</code> request. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game server's status should revert to null.</p>
+        /// <p>Timestamp that indicates the last time the game server was claimed. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game server's status should revert to null.</p>
         pub fn set_last_claim_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4451,12 +4438,12 @@ pub mod game_server {
             self.last_claim_time = input;
             self
         }
-        /// <p>Timestamp that indicates the last time the game server was updated with health status using an <code>UpdateGameServer</code> request. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.</p>
+        /// <p>Timestamp that indicates the last time the game server was updated with health status. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.</p>
         pub fn last_health_check_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_health_check_time = Some(input);
             self
         }
-        /// <p>Timestamp that indicates the last time the game server was updated with health status using an <code>UpdateGameServer</code> request. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.</p>
+        /// <p>Timestamp that indicates the last time the game server was updated with health status. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.</p>
         pub fn set_last_health_check_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4756,8 +4743,6 @@ impl AsRef<str> for GameServerHealthCheck {
 }
 
 /// <p>A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an instance in a fleet. New game sessions are assigned an IP address/port number combination, which must fall into the fleet's allowed ranges. Fleets with custom game builds must have permissions explicitly set. For Realtime Servers fleets, GameLift automatically opens two port ranges, one for TCP messaging and one for UDP.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>DescribeFleetPortSettings</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpPermission {
@@ -4963,13 +4948,59 @@ impl AsRef<str> for IpProtocol {
     }
 }
 
+/// <p>GameLift Anywhere configuration options for your Anywhere fleets.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AnywhereConfiguration {
+    /// <p>The cost to run your fleet per hour. GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a>.</p>
+    #[doc(hidden)]
+    pub cost: std::option::Option<std::string::String>,
+}
+impl AnywhereConfiguration {
+    /// <p>The cost to run your fleet per hour. GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a>.</p>
+    pub fn cost(&self) -> std::option::Option<&str> {
+        self.cost.as_deref()
+    }
+}
+/// See [`AnywhereConfiguration`](crate::model::AnywhereConfiguration).
+pub mod anywhere_configuration {
+
+    /// A builder for [`AnywhereConfiguration`](crate::model::AnywhereConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cost: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The cost to run your fleet per hour. GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a>.</p>
+        pub fn cost(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cost = Some(input.into());
+            self
+        }
+        /// <p>The cost to run your fleet per hour. GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a>.</p>
+        pub fn set_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cost = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AnywhereConfiguration`](crate::model::AnywhereConfiguration).
+        pub fn build(self) -> crate::model::AnywhereConfiguration {
+            crate::model::AnywhereConfiguration { cost: self.cost }
+        }
+    }
+}
+impl AnywhereConfiguration {
+    /// Creates a new builder-style object to manufacture [`AnywhereConfiguration`](crate::model::AnywhereConfiguration).
+    pub fn builder() -> crate::model::anywhere_configuration::Builder {
+        crate::model::anywhere_configuration::Builder::default()
+    }
+}
+
 /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
 /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
-/// <p>The resource creation limit policy is included in <code>FleetAttributes</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceCreationLimitPolicy {
-    /// <p>The maximum number of game sessions that an individual can create during the policy period. </p>
+    /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
+    /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
     #[doc(hidden)]
     pub new_game_sessions_per_creator: std::option::Option<i32>,
     /// <p>The time span used in evaluating the resource creation limit policy. </p>
@@ -4977,7 +5008,8 @@ pub struct ResourceCreationLimitPolicy {
     pub policy_period_in_minutes: std::option::Option<i32>,
 }
 impl ResourceCreationLimitPolicy {
-    /// <p>The maximum number of game sessions that an individual can create during the policy period. </p>
+    /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
+    /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
     pub fn new_game_sessions_per_creator(&self) -> std::option::Option<i32> {
         self.new_game_sessions_per_creator
     }
@@ -4996,12 +5028,14 @@ pub mod resource_creation_limit_policy {
         pub(crate) policy_period_in_minutes: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The maximum number of game sessions that an individual can create during the policy period. </p>
+        /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
+        /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
         pub fn new_game_sessions_per_creator(mut self, input: i32) -> Self {
             self.new_game_sessions_per_creator = Some(input);
             self
         }
-        /// <p>The maximum number of game sessions that an individual can create during the policy period. </p>
+        /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
+        /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
         pub fn set_new_game_sessions_per_creator(
             mut self,
             input: std::option::Option<i32>,
@@ -5036,24 +5070,23 @@ impl ResourceCreationLimitPolicy {
 }
 
 /// <p>Properties describing a custom game build.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>CreateBuild</code> | <code>ListBuilds</code> | <code>DescribeBuild</code> | <code>UpdateBuild</code> | <code>DeleteBuild</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Build {
     /// <p>A unique identifier for the build.</p>
     #[doc(hidden)]
     pub build_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) assigned to a GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
     #[doc(hidden)]
     pub build_arn: std::option::Option<std::string::String>,
-    /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. It can be set using <code>CreateBuild</code> or <code>UpdateBuild</code>.</p>
+    /// <p>A descriptive label associated with a build. Build names do not need to be unique. It can be set using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a> or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. This value can be set using <code>CreateBuild</code> or <code>UpdateBuild</code>.</p>
+    /// <p>Version information associated with a build or script. Version strings do not need to be unique.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Current status of the build.</p>
@@ -5074,24 +5107,27 @@ pub struct Build {
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The GameLift Server SDK version used to develop your game server.</p>
+    #[doc(hidden)]
+    pub server_sdk_version: std::option::Option<std::string::String>,
 }
 impl Build {
     /// <p>A unique identifier for the build.</p>
     pub fn build_id(&self) -> std::option::Option<&str> {
         self.build_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) assigned to a GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
     pub fn build_arn(&self) -> std::option::Option<&str> {
         self.build_arn.as_deref()
     }
-    /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. It can be set using <code>CreateBuild</code> or <code>UpdateBuild</code>.</p>
+    /// <p>A descriptive label associated with a build. Build names do not need to be unique. It can be set using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a> or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. This value can be set using <code>CreateBuild</code> or <code>UpdateBuild</code>.</p>
+    /// <p>Version information associated with a build or script. Version strings do not need to be unique.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -5117,6 +5153,10 @@ impl Build {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p>The GameLift Server SDK version used to develop your game server.</p>
+    pub fn server_sdk_version(&self) -> std::option::Option<&str> {
+        self.server_sdk_version.as_deref()
+    }
 }
 /// See [`Build`](crate::model::Build).
 pub mod build {
@@ -5132,6 +5172,7 @@ pub mod build {
         pub(crate) size_on_disk: std::option::Option<i64>,
         pub(crate) operating_system: std::option::Option<crate::model::OperatingSystem>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) server_sdk_version: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A unique identifier for the build.</p>
@@ -5144,7 +5185,7 @@ pub mod build {
             self.build_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) assigned to a GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
         /// ::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code>. In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
@@ -5152,7 +5193,7 @@ pub mod build {
             self.build_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) assigned to a GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
         /// ::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code>. In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
@@ -5160,22 +5201,22 @@ pub mod build {
             self.build_arn = input;
             self
         }
-        /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. It can be set using <code>CreateBuild</code> or <code>UpdateBuild</code>.</p>
+        /// <p>A descriptive label associated with a build. Build names do not need to be unique. It can be set using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a> or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. It can be set using <code>CreateBuild</code> or <code>UpdateBuild</code>.</p>
+        /// <p>A descriptive label associated with a build. Build names do not need to be unique. It can be set using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a> or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. This value can be set using <code>CreateBuild</code> or <code>UpdateBuild</code>.</p>
+        /// <p>Version information associated with a build or script. Version strings do not need to be unique.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. This value can be set using <code>CreateBuild</code> or <code>UpdateBuild</code>.</p>
+        /// <p>Version information associated with a build or script. Version strings do not need to be unique.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -5238,6 +5279,19 @@ pub mod build {
             self.creation_time = input;
             self
         }
+        /// <p>The GameLift Server SDK version used to develop your game server.</p>
+        pub fn server_sdk_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_sdk_version = Some(input.into());
+            self
+        }
+        /// <p>The GameLift Server SDK version used to develop your game server.</p>
+        pub fn set_server_sdk_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.server_sdk_version = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Build`](crate::model::Build).
         pub fn build(self) -> crate::model::Build {
             crate::model::Build {
@@ -5249,6 +5303,7 @@ pub mod build {
                 size_on_disk: self.size_on_disk,
                 operating_system: self.operating_system,
                 creation_time: self.creation_time,
+                server_sdk_version: self.server_sdk_version,
             }
         }
     }
@@ -5452,7 +5507,7 @@ impl AsRef<str> for BuildStatus {
 
 /// <p>Properties that describe an alias resource.</p>
 /// <p> <b>Related actions</b> </p>
-/// <p> <code>CreateAlias</code> | <code>ListAliases</code> | <code>DescribeAlias</code> | <code>UpdateAlias</code> | <code>DeleteAlias</code> | <code>ResolveAlias</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alias {
@@ -5637,7 +5692,7 @@ impl Alias {
 
 /// <p>The routing configuration for a fleet alias.</p>
 /// <p> <b>Related actions</b> </p>
-/// <p> <code>CreateAlias</code> | <code>ListAliases</code> | <code>DescribeAlias</code> | <code>UpdateAlias</code> | <code>DeleteAlias</code> | <code>ResolveAlias</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingStrategy {
@@ -5645,7 +5700,7 @@ pub struct RoutingStrategy {
     /// <p>Possible routing types include the following:</p>
     /// <ul>
     /// <li> <p> <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
-    /// <li> <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <code>RoutingStrategy</code> message embedded.</p> </li>
+    /// <li> <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RoutingStrategyType>,
@@ -5661,7 +5716,7 @@ impl RoutingStrategy {
     /// <p>Possible routing types include the following:</p>
     /// <ul>
     /// <li> <p> <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
-    /// <li> <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <code>RoutingStrategy</code> message embedded.</p> </li>
+    /// <li> <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::RoutingStrategyType> {
         self.r#type.as_ref()
@@ -5690,7 +5745,7 @@ pub mod routing_strategy {
         /// <p>Possible routing types include the following:</p>
         /// <ul>
         /// <li> <p> <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
-        /// <li> <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <code>RoutingStrategy</code> message embedded.</p> </li>
+        /// <li> <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::RoutingStrategyType) -> Self {
             self.r#type = Some(input);
@@ -5700,7 +5755,7 @@ pub mod routing_strategy {
         /// <p>Possible routing types include the following:</p>
         /// <ul>
         /// <li> <p> <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
-        /// <li> <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <code>RoutingStrategy</code> message embedded.</p> </li>
+        /// <li> <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -5838,28 +5893,28 @@ impl AsRef<str> for RoutingStrategyType {
     }
 }
 
-/// <p> A label that can be assigned to a GameLift resource. </p>
+/// <p>A label that can be assigned to a GameLift resource. </p>
 /// <p> <b>Learn more</b> </p>
 /// <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i> </p>
 /// <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> Amazon Web Services Tagging Strategies</a> </p>
 /// <p> <b>Related actions</b> </p>
-/// <p> <code>TagResource</code> | <code>UntagResource</code> | <code>ListTagsForResource</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
-    /// <p> The key for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
+    /// <p>The key for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
-    /// <p> The value for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
+    /// <p>The value for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p> The key for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
+    /// <p>The key for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p> The value for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
+    /// <p>The value for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -5874,22 +5929,22 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The key for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
+        /// <p>The key for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p> The key for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
+        /// <p>The key for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p> The value for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
+        /// <p>The value for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p> The value for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
+        /// <p>The value for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -5910,13 +5965,7 @@ impl Tag {
     }
 }
 
-/// <p>Object that describes a <code>StartGameSessionPlacement</code> request. This object includes the full details of the original request plus the current status and start/end time stamps.</p>
-/// <p>Game session placement-related operations include:</p>
-/// <ul>
-/// <li> <p> <code>StartGameSessionPlacement</code> </p> </li>
-/// <li> <p> <code>DescribeGameSessionPlacement</code> </p> </li>
-/// <li> <p> <code>StopGameSessionPlacement</code> </p> </li>
-/// </ul>
+/// <p>This object includes the full details of the original request plus the current status and start/end time stamps.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameSessionPlacement {
@@ -5930,13 +5979,13 @@ pub struct GameSessionPlacement {
     /// <ul>
     /// <li> <p> <b>PENDING</b> -- The placement request is currently in the queue waiting to be processed.</p> </li>
     /// <li> <p> <b>FULFILLED</b> -- A new game session and player sessions (if requested) have been successfully created. Values for <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-    /// <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to <code>StopGameSessionPlacement</code>.</p> </li>
+    /// <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li>
     /// <li> <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit the placement request as needed.</p> </li>
     /// <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons are the game session terminated before the placement process was completed, or an unexpected internal error.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::GameSessionPlacementState>,
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     #[doc(hidden)]
     pub game_properties: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
@@ -5954,7 +6003,7 @@ pub struct GameSessionPlacement {
     /// <p>Name of the Region where the game session created by this placement request is running. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).</p>
     #[doc(hidden)]
     pub game_session_region: std::option::Option<std::string::String>,
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
     #[doc(hidden)]
     pub player_latencies: std::option::Option<std::vec::Vec<crate::model::PlayerLatency>>,
     /// <p>Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
@@ -5986,7 +6035,7 @@ pub struct GameSessionPlacement {
     /// <p>The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).</p>
     #[doc(hidden)]
     pub port: std::option::Option<i32>,
-    /// <p>A collection of information on player sessions created in response to the game session placement request. These player sessions are created only once a new game session is successfully placed (placement status is <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request) and the corresponding player session ID. Retrieve full player sessions by calling <code>DescribePlayerSessions</code> with the player session ID.</p>
+    /// <p>A collection of information on player sessions created in response to the game session placement request. These player sessions are created only once a new game session is successfully placed (placement status is <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request) and the corresponding player session ID.</p>
     #[doc(hidden)]
     pub placed_player_sessions:
         std::option::Option<std::vec::Vec<crate::model::PlacedPlayerSession>>,
@@ -6010,14 +6059,14 @@ impl GameSessionPlacement {
     /// <ul>
     /// <li> <p> <b>PENDING</b> -- The placement request is currently in the queue waiting to be processed.</p> </li>
     /// <li> <p> <b>FULFILLED</b> -- A new game session and player sessions (if requested) have been successfully created. Values for <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-    /// <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to <code>StopGameSessionPlacement</code>.</p> </li>
+    /// <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li>
     /// <li> <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit the placement request as needed.</p> </li>
     /// <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons are the game session terminated before the placement process was completed, or an unexpected internal error.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::GameSessionPlacementState> {
         self.status.as_ref()
     }
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn game_properties(&self) -> std::option::Option<&[crate::model::GameProperty]> {
         self.game_properties.as_deref()
     }
@@ -6041,7 +6090,7 @@ impl GameSessionPlacement {
     pub fn game_session_region(&self) -> std::option::Option<&str> {
         self.game_session_region.as_deref()
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
     pub fn player_latencies(&self) -> std::option::Option<&[crate::model::PlayerLatency]> {
         self.player_latencies.as_deref()
     }
@@ -6079,7 +6128,7 @@ impl GameSessionPlacement {
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>A collection of information on player sessions created in response to the game session placement request. These player sessions are created only once a new game session is successfully placed (placement status is <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request) and the corresponding player session ID. Retrieve full player sessions by calling <code>DescribePlayerSessions</code> with the player session ID.</p>
+    /// <p>A collection of information on player sessions created in response to the game session placement request. These player sessions are created only once a new game session is successfully placed (placement status is <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request) and the corresponding player session ID.</p>
     pub fn placed_player_sessions(
         &self,
     ) -> std::option::Option<&[crate::model::PlacedPlayerSession]> {
@@ -6149,7 +6198,7 @@ pub mod game_session_placement {
         /// <ul>
         /// <li> <p> <b>PENDING</b> -- The placement request is currently in the queue waiting to be processed.</p> </li>
         /// <li> <p> <b>FULFILLED</b> -- A new game session and player sessions (if requested) have been successfully created. Values for <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-        /// <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to <code>StopGameSessionPlacement</code>.</p> </li>
+        /// <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li>
         /// <li> <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit the placement request as needed.</p> </li>
         /// <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons are the game session terminated before the placement process was completed, or an unexpected internal error.</p> </li>
         /// </ul>
@@ -6161,7 +6210,7 @@ pub mod game_session_placement {
         /// <ul>
         /// <li> <p> <b>PENDING</b> -- The placement request is currently in the queue waiting to be processed.</p> </li>
         /// <li> <p> <b>FULFILLED</b> -- A new game session and player sessions (if requested) have been successfully created. Values for <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-        /// <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to <code>StopGameSessionPlacement</code>.</p> </li>
+        /// <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li>
         /// <li> <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit the placement request as needed.</p> </li>
         /// <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons are the game session terminated before the placement process was completed, or an unexpected internal error.</p> </li>
         /// </ul>
@@ -6176,14 +6225,14 @@ pub mod game_session_placement {
         ///
         /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
         ///
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
             v.push(input);
             self.game_properties = Some(v);
             self
         }
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -6257,14 +6306,14 @@ pub mod game_session_placement {
         ///
         /// To override the contents of this collection use [`set_player_latencies`](Self::set_player_latencies).
         ///
-        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions.</p>
+        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
         pub fn player_latencies(mut self, input: crate::model::PlayerLatency) -> Self {
             let mut v = self.player_latencies.unwrap_or_default();
             v.push(input);
             self.player_latencies = Some(v);
             self
         }
-        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions.</p>
+        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
         pub fn set_player_latencies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlayerLatency>>,
@@ -6360,14 +6409,14 @@ pub mod game_session_placement {
         ///
         /// To override the contents of this collection use [`set_placed_player_sessions`](Self::set_placed_player_sessions).
         ///
-        /// <p>A collection of information on player sessions created in response to the game session placement request. These player sessions are created only once a new game session is successfully placed (placement status is <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request) and the corresponding player session ID. Retrieve full player sessions by calling <code>DescribePlayerSessions</code> with the player session ID.</p>
+        /// <p>A collection of information on player sessions created in response to the game session placement request. These player sessions are created only once a new game session is successfully placed (placement status is <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request) and the corresponding player session ID.</p>
         pub fn placed_player_sessions(mut self, input: crate::model::PlacedPlayerSession) -> Self {
             let mut v = self.placed_player_sessions.unwrap_or_default();
             v.push(input);
             self.placed_player_sessions = Some(v);
             self
         }
-        /// <p>A collection of information on player sessions created in response to the game session placement request. These player sessions are created only once a new game session is successfully placed (placement status is <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request) and the corresponding player session ID. Retrieve full player sessions by calling <code>DescribePlayerSessions</code> with the player session ID.</p>
+        /// <p>A collection of information on player sessions created in response to the game session placement request. These player sessions are created only once a new game session is successfully placed (placement status is <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request) and the corresponding player session ID.</p>
         pub fn set_placed_player_sessions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacedPlayerSession>>,
@@ -6433,9 +6482,7 @@ impl GameSessionPlacement {
     }
 }
 
-/// <p>Information about a player session that was created as part of a <code>StartGameSessionPlacement</code> request. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <code>DescribePlayerSessions</code> with the player session ID.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>CreatePlayerSession</code> | <code>CreatePlayerSessions</code> | <code>DescribePlayerSessions</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p>Information about a player session. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html">DescribePlayerSessions</a> with the player session ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlacedPlayerSession {
@@ -6505,7 +6552,7 @@ impl PlacedPlayerSession {
     }
 }
 
-/// <p>Regional latency information for a player, used when requesting a new game session with <code>StartGameSessionPlacement</code>. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference between a player's latency values for multiple Regions are used to determine which fleets are best suited to place a new game session for the player. </p>
+/// <p>Regional latency information for a player, used when requesting a new game session. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference between a player's latency values for multiple Regions are used to determine which fleets are best suited to place a new game session for the player. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlayerLatency {
@@ -6786,14 +6833,14 @@ impl AsRef<str> for FleetAction {
     }
 }
 
-/// <p>Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID, supplied by the requester, when creating a matchmaking request with <code>StartMatchmaking</code>. Tickets can be retrieved by calling <code>DescribeMatchmaking</code> with the ticket ID.</p>
+/// <p>Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID, supplied by the requester, when creating a matchmaking request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MatchmakingTicket {
     /// <p>A unique identifier for a matchmaking ticket.</p>
     #[doc(hidden)]
     pub ticket_id: std::option::Option<std::string::String>,
-    /// <p>Name of the <code>MatchmakingConfiguration</code> that is used with this ticket. Matchmaking configurations determine how players are grouped into a match and how a new game session is created for the match.</p>
+    /// <p>Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations determine how players are grouped into a match and how a new game session is created for the match.</p>
     #[doc(hidden)]
     pub configuration_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift matchmaking configuration resource that is used with this ticket.</p>
@@ -6803,11 +6850,11 @@ pub struct MatchmakingTicket {
     /// <ul>
     /// <li> <p> <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p> </li>
     /// <li> <p> <b>SEARCHING</b> -- The matchmaking request is currently being processed. </p> </li>
-    /// <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see <code>AcceptMatch</code>). This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p> </li>
+    /// <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p> </li>
     /// <li> <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p> </li>
     /// <li> <p> <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p> </li>
     /// <li> <p> <b>FAILED</b> -- The matchmaking request was not completed.</p> </li>
-    /// <li> <p> <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to <code>StopMatchmaking</code> or a proposed match that one or more players failed to accept.</p> </li>
+    /// <li> <p> <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p> </li>
     /// <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration. </p> </li>
     /// </ul> <note>
     /// <p>Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with new ticket IDs.</p>
@@ -6823,13 +6870,13 @@ pub struct MatchmakingTicket {
     /// <p>Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    /// <p>Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A set of <code>Player</code> objects, each representing a player to find matches for. Players are identified by a unique player ID and may include latency data for use during matchmaking. If the ticket is in status <code>COMPLETED</code>, the <code>Player</code> objects include the team the players were assigned to in the resulting match.</p>
     #[doc(hidden)]
     pub players: std::option::Option<std::vec::Vec<crate::model::Player>>,
-    /// <p>Identifier and connection information of the game session created for the match. This information is added to the ticket only after the matchmaking request has been successfully completed. This parameter is not set when FlexMatch is being used without GameLift hosting.</p>
+    /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
     #[doc(hidden)]
     pub game_session_connection_info: std::option::Option<crate::model::GameSessionConnectionInfo>,
     /// <p>Average amount of time (in seconds) that players are currently waiting for a match. If there is not enough recent data, this property may be empty.</p>
@@ -6841,7 +6888,7 @@ impl MatchmakingTicket {
     pub fn ticket_id(&self) -> std::option::Option<&str> {
         self.ticket_id.as_deref()
     }
-    /// <p>Name of the <code>MatchmakingConfiguration</code> that is used with this ticket. Matchmaking configurations determine how players are grouped into a match and how a new game session is created for the match.</p>
+    /// <p>Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations determine how players are grouped into a match and how a new game session is created for the match.</p>
     pub fn configuration_name(&self) -> std::option::Option<&str> {
         self.configuration_name.as_deref()
     }
@@ -6853,11 +6900,11 @@ impl MatchmakingTicket {
     /// <ul>
     /// <li> <p> <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p> </li>
     /// <li> <p> <b>SEARCHING</b> -- The matchmaking request is currently being processed. </p> </li>
-    /// <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see <code>AcceptMatch</code>). This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p> </li>
+    /// <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p> </li>
     /// <li> <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p> </li>
     /// <li> <p> <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p> </li>
     /// <li> <p> <b>FAILED</b> -- The matchmaking request was not completed.</p> </li>
-    /// <li> <p> <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to <code>StopMatchmaking</code> or a proposed match that one or more players failed to accept.</p> </li>
+    /// <li> <p> <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p> </li>
     /// <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration. </p> </li>
     /// </ul> <note>
     /// <p>Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with new ticket IDs.</p>
@@ -6877,7 +6924,7 @@ impl MatchmakingTicket {
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    /// <p>Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -6885,7 +6932,7 @@ impl MatchmakingTicket {
     pub fn players(&self) -> std::option::Option<&[crate::model::Player]> {
         self.players.as_deref()
     }
-    /// <p>Identifier and connection information of the game session created for the match. This information is added to the ticket only after the matchmaking request has been successfully completed. This parameter is not set when FlexMatch is being used without GameLift hosting.</p>
+    /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
     pub fn game_session_connection_info(
         &self,
     ) -> std::option::Option<&crate::model::GameSessionConnectionInfo> {
@@ -6926,12 +6973,12 @@ pub mod matchmaking_ticket {
             self.ticket_id = input;
             self
         }
-        /// <p>Name of the <code>MatchmakingConfiguration</code> that is used with this ticket. Matchmaking configurations determine how players are grouped into a match and how a new game session is created for the match.</p>
+        /// <p>Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations determine how players are grouped into a match and how a new game session is created for the match.</p>
         pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_name = Some(input.into());
             self
         }
-        /// <p>Name of the <code>MatchmakingConfiguration</code> that is used with this ticket. Matchmaking configurations determine how players are grouped into a match and how a new game session is created for the match.</p>
+        /// <p>Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations determine how players are grouped into a match and how a new game session is created for the match.</p>
         pub fn set_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6956,11 +7003,11 @@ pub mod matchmaking_ticket {
         /// <ul>
         /// <li> <p> <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p> </li>
         /// <li> <p> <b>SEARCHING</b> -- The matchmaking request is currently being processed. </p> </li>
-        /// <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see <code>AcceptMatch</code>). This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p> </li>
+        /// <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p> </li>
         /// <li> <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p> </li>
         /// <li> <p> <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p> </li>
         /// <li> <p> <b>FAILED</b> -- The matchmaking request was not completed.</p> </li>
-        /// <li> <p> <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to <code>StopMatchmaking</code> or a proposed match that one or more players failed to accept.</p> </li>
+        /// <li> <p> <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p> </li>
         /// <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration. </p> </li>
         /// </ul> <note>
         /// <p>Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with new ticket IDs.</p>
@@ -6973,11 +7020,11 @@ pub mod matchmaking_ticket {
         /// <ul>
         /// <li> <p> <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p> </li>
         /// <li> <p> <b>SEARCHING</b> -- The matchmaking request is currently being processed. </p> </li>
-        /// <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see <code>AcceptMatch</code>). This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p> </li>
+        /// <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p> </li>
         /// <li> <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p> </li>
         /// <li> <p> <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p> </li>
         /// <li> <p> <b>FAILED</b> -- The matchmaking request was not completed.</p> </li>
-        /// <li> <p> <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to <code>StopMatchmaking</code> or a proposed match that one or more players failed to accept.</p> </li>
+        /// <li> <p> <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p> </li>
         /// <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration. </p> </li>
         /// </ul> <note>
         /// <p>Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with new ticket IDs.</p>
@@ -7028,12 +7075,12 @@ pub mod matchmaking_ticket {
             self.start_time = input;
             self
         }
-        /// <p>Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        /// <p>Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        /// <p>Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7060,7 +7107,7 @@ pub mod matchmaking_ticket {
             self.players = input;
             self
         }
-        /// <p>Identifier and connection information of the game session created for the match. This information is added to the ticket only after the matchmaking request has been successfully completed. This parameter is not set when FlexMatch is being used without GameLift hosting.</p>
+        /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
         pub fn game_session_connection_info(
             mut self,
             input: crate::model::GameSessionConnectionInfo,
@@ -7068,7 +7115,7 @@ pub mod matchmaking_ticket {
             self.game_session_connection_info = Some(input);
             self
         }
-        /// <p>Identifier and connection information of the game session created for the match. This information is added to the ticket only after the matchmaking request has been successfully completed. This parameter is not set when FlexMatch is being used without GameLift hosting.</p>
+        /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
         pub fn set_game_session_connection_info(
             mut self,
             input: std::option::Option<crate::model::GameSessionConnectionInfo>,
@@ -7111,7 +7158,7 @@ impl MatchmakingTicket {
     }
 }
 
-/// <p>Connection information for a new game session that is created in response to a <code>StartMatchmaking</code> request. Once a match is made, the FlexMatch engine creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the <code>MatchmakingTicket</code>, which can be retrieved by calling <code>DescribeMatchmaking</code>.</p>
+/// <p>Connection information for a new game session that is created in response to a start matchmaking request. Once a match is made, the FlexMatch engine creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the matchmaking ticket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameSessionConnectionInfo {
@@ -7389,6 +7436,7 @@ pub struct Player {
     #[doc(hidden)]
     pub player_id: std::option::Option<std::string::String>,
     /// <p>A collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+    /// <p>You can provide up to 10 <code>PlayerAttributes</code>.</p>
     #[doc(hidden)]
     pub player_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
@@ -7407,6 +7455,7 @@ impl Player {
         self.player_id.as_deref()
     }
     /// <p>A collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+    /// <p>You can provide up to 10 <code>PlayerAttributes</code>.</p>
     pub fn player_attributes(
         &self,
     ) -> std::option::Option<
@@ -7456,6 +7505,7 @@ pub mod player {
         /// To override the contents of this collection use [`set_player_attributes`](Self::set_player_attributes).
         ///
         /// <p>A collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+        /// <p>You can provide up to 10 <code>PlayerAttributes</code>.</p>
         pub fn player_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -7467,6 +7517,7 @@ pub mod player {
             self
         }
         /// <p>A collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+        /// <p>You can provide up to 10 <code>PlayerAttributes</code>.</p>
         pub fn set_player_attributes(
             mut self,
             input: std::option::Option<
@@ -7525,7 +7576,7 @@ impl Player {
     }
 }
 
-/// <p>Values for use in <code>Player</code> attribute key-value pairs. This object lets you specify an attribute value using any of the valid data types: string, number, string array, or data map. Each <code>AttributeValue</code> object can use only one of the available properties.</p>
+/// <p>Values for use in player attribute key-value pairs. This object lets you specify an attribute value using any of the valid data types: string, number, string array, or data map. Each <code>AttributeValue</code> object can use only one of the available properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeValue {
@@ -7779,7 +7830,7 @@ impl AsRef<str> for MatchmakingConfigurationStatus {
     }
 }
 
-/// <p>Player information for use when creating player sessions using a game session placement request with <code>StartGameSessionPlacement</code>.</p>
+/// <p>Player information for use when creating player sessions using a game session placement request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DesiredPlayerSession {
@@ -7846,7 +7897,7 @@ impl DesiredPlayerSession {
     }
 }
 
-/// <p>Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <code>RequestUploadCredentials</code>.</p>
+/// <p>Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCredentials {
@@ -7959,2080 +8010,200 @@ impl AwsCredentials {
     }
 }
 
-/// <p>Settings for a target-based scaling policy (see <code>ScalingPolicy</code>. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value. </p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>DescribeFleetCapacity</code> | <code>UpdateFleetCapacity</code> | <code>DescribeEC2InstanceLimits</code> | <code>PutScalingPolicy</code> | <code>DescribeScalingPolicies</code> | <code>DeleteScalingPolicy</code> | <code>StopFleetActions</code> | <code>StartFleetActions</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p>Resources used to host your game servers. A compute resource can be managed GameLift Amazon EC2 instances or your own resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetConfiguration {
-    /// <p>Desired value to use with a target-based scaling policy. The value must be relevant for whatever metric the scaling policy is using. For example, in a policy using the metric PercentAvailableGameSessions, the target value should be the preferred size of the fleet's buffer (the percent of capacity that should be idle and ready for new game sessions).</p>
-    #[doc(hidden)]
-    pub target_value: f64,
-}
-impl TargetConfiguration {
-    /// <p>Desired value to use with a target-based scaling policy. The value must be relevant for whatever metric the scaling policy is using. For example, in a policy using the metric PercentAvailableGameSessions, the target value should be the preferred size of the fleet's buffer (the percent of capacity that should be idle and ready for new game sessions).</p>
-    pub fn target_value(&self) -> f64 {
-        self.target_value
-    }
-}
-/// See [`TargetConfiguration`](crate::model::TargetConfiguration).
-pub mod target_configuration {
-
-    /// A builder for [`TargetConfiguration`](crate::model::TargetConfiguration).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) target_value: std::option::Option<f64>,
-    }
-    impl Builder {
-        /// <p>Desired value to use with a target-based scaling policy. The value must be relevant for whatever metric the scaling policy is using. For example, in a policy using the metric PercentAvailableGameSessions, the target value should be the preferred size of the fleet's buffer (the percent of capacity that should be idle and ready for new game sessions).</p>
-        pub fn target_value(mut self, input: f64) -> Self {
-            self.target_value = Some(input);
-            self
-        }
-        /// <p>Desired value to use with a target-based scaling policy. The value must be relevant for whatever metric the scaling policy is using. For example, in a policy using the metric PercentAvailableGameSessions, the target value should be the preferred size of the fleet's buffer (the percent of capacity that should be idle and ready for new game sessions).</p>
-        pub fn set_target_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.target_value = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`TargetConfiguration`](crate::model::TargetConfiguration).
-        pub fn build(self) -> crate::model::TargetConfiguration {
-            crate::model::TargetConfiguration {
-                target_value: self.target_value.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl TargetConfiguration {
-    /// Creates a new builder-style object to manufacture [`TargetConfiguration`](crate::model::TargetConfiguration).
-    pub fn builder() -> crate::model::target_configuration::Builder {
-        crate::model::target_configuration::Builder::default()
-    }
-}
-
-/// When writing a match expression against `PolicyType`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let policytype = unimplemented!();
-/// match policytype {
-///     PolicyType::RuleBased => { /* ... */ },
-///     PolicyType::TargetBased => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `policytype` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `PolicyType::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `PolicyType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `PolicyType::NewFeature` is defined.
-/// Specifically, when `policytype` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `PolicyType::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum PolicyType {
-    #[allow(missing_docs)] // documentation missing in model
-    RuleBased,
-    #[allow(missing_docs)] // documentation missing in model
-    TargetBased,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for PolicyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "RuleBased" => PolicyType::RuleBased,
-            "TargetBased" => PolicyType::TargetBased,
-            other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for PolicyType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PolicyType::from(s))
-    }
-}
-impl PolicyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PolicyType::RuleBased => "RuleBased",
-            PolicyType::TargetBased => "TargetBased",
-            PolicyType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["RuleBased", "TargetBased"]
-    }
-}
-impl AsRef<str> for PolicyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// When writing a match expression against `MetricName`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let metricname = unimplemented!();
-/// match metricname {
-///     MetricName::ActivatingGameSessions => { /* ... */ },
-///     MetricName::ActiveGameSessions => { /* ... */ },
-///     MetricName::ActiveInstances => { /* ... */ },
-///     MetricName::AvailableGameSessions => { /* ... */ },
-///     MetricName::AvailablePlayerSessions => { /* ... */ },
-///     MetricName::CurrentPlayerSessions => { /* ... */ },
-///     MetricName::IdleInstances => { /* ... */ },
-///     MetricName::PercentAvailableGameSessions => { /* ... */ },
-///     MetricName::PercentIdleInstances => { /* ... */ },
-///     MetricName::QueueDepth => { /* ... */ },
-///     MetricName::WaitTime => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `metricname` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `MetricName::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `MetricName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `MetricName::NewFeature` is defined.
-/// Specifically, when `metricname` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `MetricName::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum MetricName {
-    #[allow(missing_docs)] // documentation missing in model
-    ActivatingGameSessions,
-    #[allow(missing_docs)] // documentation missing in model
-    ActiveGameSessions,
-    #[allow(missing_docs)] // documentation missing in model
-    ActiveInstances,
-    #[allow(missing_docs)] // documentation missing in model
-    AvailableGameSessions,
-    #[allow(missing_docs)] // documentation missing in model
-    AvailablePlayerSessions,
-    #[allow(missing_docs)] // documentation missing in model
-    CurrentPlayerSessions,
-    #[allow(missing_docs)] // documentation missing in model
-    IdleInstances,
-    #[allow(missing_docs)] // documentation missing in model
-    PercentAvailableGameSessions,
-    #[allow(missing_docs)] // documentation missing in model
-    PercentIdleInstances,
-    #[allow(missing_docs)] // documentation missing in model
-    QueueDepth,
-    #[allow(missing_docs)] // documentation missing in model
-    WaitTime,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for MetricName {
-    fn from(s: &str) -> Self {
-        match s {
-            "ActivatingGameSessions" => MetricName::ActivatingGameSessions,
-            "ActiveGameSessions" => MetricName::ActiveGameSessions,
-            "ActiveInstances" => MetricName::ActiveInstances,
-            "AvailableGameSessions" => MetricName::AvailableGameSessions,
-            "AvailablePlayerSessions" => MetricName::AvailablePlayerSessions,
-            "CurrentPlayerSessions" => MetricName::CurrentPlayerSessions,
-            "IdleInstances" => MetricName::IdleInstances,
-            "PercentAvailableGameSessions" => MetricName::PercentAvailableGameSessions,
-            "PercentIdleInstances" => MetricName::PercentIdleInstances,
-            "QueueDepth" => MetricName::QueueDepth,
-            "WaitTime" => MetricName::WaitTime,
-            other => MetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for MetricName {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MetricName::from(s))
-    }
-}
-impl MetricName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricName::ActivatingGameSessions => "ActivatingGameSessions",
-            MetricName::ActiveGameSessions => "ActiveGameSessions",
-            MetricName::ActiveInstances => "ActiveInstances",
-            MetricName::AvailableGameSessions => "AvailableGameSessions",
-            MetricName::AvailablePlayerSessions => "AvailablePlayerSessions",
-            MetricName::CurrentPlayerSessions => "CurrentPlayerSessions",
-            MetricName::IdleInstances => "IdleInstances",
-            MetricName::PercentAvailableGameSessions => "PercentAvailableGameSessions",
-            MetricName::PercentIdleInstances => "PercentIdleInstances",
-            MetricName::QueueDepth => "QueueDepth",
-            MetricName::WaitTime => "WaitTime",
-            MetricName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ActivatingGameSessions",
-            "ActiveGameSessions",
-            "ActiveInstances",
-            "AvailableGameSessions",
-            "AvailablePlayerSessions",
-            "CurrentPlayerSessions",
-            "IdleInstances",
-            "PercentAvailableGameSessions",
-            "PercentIdleInstances",
-            "QueueDepth",
-            "WaitTime",
-        ]
-    }
-}
-impl AsRef<str> for MetricName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// When writing a match expression against `ComparisonOperatorType`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let comparisonoperatortype = unimplemented!();
-/// match comparisonoperatortype {
-///     ComparisonOperatorType::GreaterThanOrEqualToThreshold => { /* ... */ },
-///     ComparisonOperatorType::GreaterThanThreshold => { /* ... */ },
-///     ComparisonOperatorType::LessThanOrEqualToThreshold => { /* ... */ },
-///     ComparisonOperatorType::LessThanThreshold => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `comparisonoperatortype` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `ComparisonOperatorType::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `ComparisonOperatorType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `ComparisonOperatorType::NewFeature` is defined.
-/// Specifically, when `comparisonoperatortype` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `ComparisonOperatorType::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ComparisonOperatorType {
-    #[allow(missing_docs)] // documentation missing in model
-    GreaterThanOrEqualToThreshold,
-    #[allow(missing_docs)] // documentation missing in model
-    GreaterThanThreshold,
-    #[allow(missing_docs)] // documentation missing in model
-    LessThanOrEqualToThreshold,
-    #[allow(missing_docs)] // documentation missing in model
-    LessThanThreshold,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for ComparisonOperatorType {
-    fn from(s: &str) -> Self {
-        match s {
-            "GreaterThanOrEqualToThreshold" => {
-                ComparisonOperatorType::GreaterThanOrEqualToThreshold
-            }
-            "GreaterThanThreshold" => ComparisonOperatorType::GreaterThanThreshold,
-            "LessThanOrEqualToThreshold" => ComparisonOperatorType::LessThanOrEqualToThreshold,
-            "LessThanThreshold" => ComparisonOperatorType::LessThanThreshold,
-            other => {
-                ComparisonOperatorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
-        }
-    }
-}
-impl std::str::FromStr for ComparisonOperatorType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComparisonOperatorType::from(s))
-    }
-}
-impl ComparisonOperatorType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ComparisonOperatorType::GreaterThanOrEqualToThreshold => {
-                "GreaterThanOrEqualToThreshold"
-            }
-            ComparisonOperatorType::GreaterThanThreshold => "GreaterThanThreshold",
-            ComparisonOperatorType::LessThanOrEqualToThreshold => "LessThanOrEqualToThreshold",
-            ComparisonOperatorType::LessThanThreshold => "LessThanThreshold",
-            ComparisonOperatorType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "GreaterThanOrEqualToThreshold",
-            "GreaterThanThreshold",
-            "LessThanOrEqualToThreshold",
-            "LessThanThreshold",
-        ]
-    }
-}
-impl AsRef<str> for ComparisonOperatorType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// When writing a match expression against `ScalingAdjustmentType`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let scalingadjustmenttype = unimplemented!();
-/// match scalingadjustmenttype {
-///     ScalingAdjustmentType::ChangeInCapacity => { /* ... */ },
-///     ScalingAdjustmentType::ExactCapacity => { /* ... */ },
-///     ScalingAdjustmentType::PercentChangeInCapacity => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `scalingadjustmenttype` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `ScalingAdjustmentType::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `ScalingAdjustmentType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `ScalingAdjustmentType::NewFeature` is defined.
-/// Specifically, when `scalingadjustmenttype` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `ScalingAdjustmentType::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ScalingAdjustmentType {
-    #[allow(missing_docs)] // documentation missing in model
-    ChangeInCapacity,
-    #[allow(missing_docs)] // documentation missing in model
-    ExactCapacity,
-    #[allow(missing_docs)] // documentation missing in model
-    PercentChangeInCapacity,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for ScalingAdjustmentType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ChangeInCapacity" => ScalingAdjustmentType::ChangeInCapacity,
-            "ExactCapacity" => ScalingAdjustmentType::ExactCapacity,
-            "PercentChangeInCapacity" => ScalingAdjustmentType::PercentChangeInCapacity,
-            other => {
-                ScalingAdjustmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
-        }
-    }
-}
-impl std::str::FromStr for ScalingAdjustmentType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScalingAdjustmentType::from(s))
-    }
-}
-impl ScalingAdjustmentType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScalingAdjustmentType::ChangeInCapacity => "ChangeInCapacity",
-            ScalingAdjustmentType::ExactCapacity => "ExactCapacity",
-            ScalingAdjustmentType::PercentChangeInCapacity => "PercentChangeInCapacity",
-            ScalingAdjustmentType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ChangeInCapacity",
-            "ExactCapacity",
-            "PercentChangeInCapacity",
-        ]
-    }
-}
-impl AsRef<str> for ScalingAdjustmentType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// When writing a match expression against `SortOrder`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let sortorder = unimplemented!();
-/// match sortorder {
-///     SortOrder::Ascending => { /* ... */ },
-///     SortOrder::Descending => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `sortorder` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `SortOrder::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `SortOrder::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `SortOrder::NewFeature` is defined.
-/// Specifically, when `sortorder` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `SortOrder::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum SortOrder {
-    #[allow(missing_docs)] // documentation missing in model
-    Ascending,
-    #[allow(missing_docs)] // documentation missing in model
-    Descending,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for SortOrder {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASCENDING" => SortOrder::Ascending,
-            "DESCENDING" => SortOrder::Descending,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for SortOrder {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SortOrder::from(s))
-    }
-}
-impl SortOrder {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortOrder::Ascending => "ASCENDING",
-            SortOrder::Descending => "DESCENDING",
-            SortOrder::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ASCENDING", "DESCENDING"]
-    }
-}
-impl AsRef<str> for SortOrder {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Information required to remotely connect to a fleet instance. Access is requested by calling <code>GetInstanceAccess</code>. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InstanceAccess {
-    /// <p>A unique identifier for the fleet containing the instance being accessed.</p>
+pub struct Compute {
+    /// <p>A unique identifier for the fleet that the compute is registered to.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the instance being accessed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered to.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
-    /// <p>IP address that is assigned to the instance.</p>
+    pub fleet_arn: std::option::Option<std::string::String>,
+    /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+    #[doc(hidden)]
+    pub compute_name: std::option::Option<std::string::String>,
+    /// <p>The ARN that is assigned to the compute resource and uniquely identifies it. ARNs are unique across locations.</p>
+    #[doc(hidden)]
+    pub compute_arn: std::option::Option<std::string::String>,
+    /// <p>The IP address of the compute resource. GameLift requires the DNS name or IP address to manage your compute resource.</p>
     #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
-    /// <p>Operating system that is running on the instance.</p>
+    /// <p>The DNS name of the compute resource. GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    #[doc(hidden)]
+    pub dns_name: std::option::Option<std::string::String>,
+    /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
+    #[doc(hidden)]
+    pub compute_status: std::option::Option<crate::model::ComputeStatus>,
+    /// <p>The name of the custom location you added to the fleet that this compute resource resides in.</p>
+    #[doc(hidden)]
+    pub location: std::option::Option<std::string::String>,
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The type of operating system on your compute resource.</p>
     #[doc(hidden)]
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
-    /// <p>Credentials required to access the instance.</p>
+    /// <p>Which compute type that the fleet uses. A fleet can use Anywhere compute resources owned by you or managed Amazon EC2 instances.</p>
     #[doc(hidden)]
-    pub credentials: std::option::Option<crate::model::InstanceCredentials>,
+    pub r#type: std::option::Option<crate::model::Ec2InstanceType>,
+    /// <p>The endpoint connection details of the GameLift SDK endpoint that your game server connects to.</p>
+    #[doc(hidden)]
+    pub game_lift_service_sdk_endpoint: std::option::Option<std::string::String>,
 }
-impl InstanceAccess {
-    /// <p>A unique identifier for the fleet containing the instance being accessed.</p>
+impl Compute {
+    /// <p>A unique identifier for the fleet that the compute is registered to.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A unique identifier for the instance being accessed.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
-        self.instance_id.as_deref()
+    /// <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered to.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
     }
-    /// <p>IP address that is assigned to the instance.</p>
+    /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+    pub fn compute_name(&self) -> std::option::Option<&str> {
+        self.compute_name.as_deref()
+    }
+    /// <p>The ARN that is assigned to the compute resource and uniquely identifies it. ARNs are unique across locations.</p>
+    pub fn compute_arn(&self) -> std::option::Option<&str> {
+        self.compute_arn.as_deref()
+    }
+    /// <p>The IP address of the compute resource. GameLift requires the DNS name or IP address to manage your compute resource.</p>
     pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>Operating system that is running on the instance.</p>
+    /// <p>The DNS name of the compute resource. GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
+    pub fn compute_status(&self) -> std::option::Option<&crate::model::ComputeStatus> {
+        self.compute_status.as_ref()
+    }
+    /// <p>The name of the custom location you added to the fleet that this compute resource resides in.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The type of operating system on your compute resource.</p>
     pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
         self.operating_system.as_ref()
     }
-    /// <p>Credentials required to access the instance.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::model::InstanceCredentials> {
-        self.credentials.as_ref()
+    /// <p>Which compute type that the fleet uses. A fleet can use Anywhere compute resources owned by you or managed Amazon EC2 instances.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Ec2InstanceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The endpoint connection details of the GameLift SDK endpoint that your game server connects to.</p>
+    pub fn game_lift_service_sdk_endpoint(&self) -> std::option::Option<&str> {
+        self.game_lift_service_sdk_endpoint.as_deref()
     }
 }
-impl std::fmt::Debug for InstanceAccess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceAccess");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("operating_system", &self.operating_system);
-        formatter.field("credentials", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
-    }
-}
-/// See [`InstanceAccess`](crate::model::InstanceAccess).
-pub mod instance_access {
+/// See [`Compute`](crate::model::Compute).
+pub mod compute {
 
-    /// A builder for [`InstanceAccess`](crate::model::InstanceAccess).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    /// A builder for [`Compute`](crate::model::Compute).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
-        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) fleet_arn: std::option::Option<std::string::String>,
+        pub(crate) compute_name: std::option::Option<std::string::String>,
+        pub(crate) compute_arn: std::option::Option<std::string::String>,
         pub(crate) ip_address: std::option::Option<std::string::String>,
+        pub(crate) dns_name: std::option::Option<std::string::String>,
+        pub(crate) compute_status: std::option::Option<crate::model::ComputeStatus>,
+        pub(crate) location: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) operating_system: std::option::Option<crate::model::OperatingSystem>,
-        pub(crate) credentials: std::option::Option<crate::model::InstanceCredentials>,
+        pub(crate) r#type: std::option::Option<crate::model::Ec2InstanceType>,
+        pub(crate) game_lift_service_sdk_endpoint: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet containing the instance being accessed.</p>
+        /// <p>A unique identifier for the fleet that the compute is registered to.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet containing the instance being accessed.</p>
+        /// <p>A unique identifier for the fleet that the compute is registered to.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>A unique identifier for the instance being accessed.</p>
-        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(input.into());
+        /// <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered to.</p>
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fleet_arn = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the instance being accessed.</p>
-        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
+        /// <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered to.</p>
+        pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_arn = input;
             self
         }
-        /// <p>IP address that is assigned to the instance.</p>
+        /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+        pub fn compute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.compute_name = Some(input.into());
+            self
+        }
+        /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+        pub fn set_compute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.compute_name = input;
+            self
+        }
+        /// <p>The ARN that is assigned to the compute resource and uniquely identifies it. ARNs are unique across locations.</p>
+        pub fn compute_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.compute_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN that is assigned to the compute resource and uniquely identifies it. ARNs are unique across locations.</p>
+        pub fn set_compute_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.compute_arn = input;
+            self
+        }
+        /// <p>The IP address of the compute resource. GameLift requires the DNS name or IP address to manage your compute resource.</p>
         pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.ip_address = Some(input.into());
             self
         }
-        /// <p>IP address that is assigned to the instance.</p>
+        /// <p>The IP address of the compute resource. GameLift requires the DNS name or IP address to manage your compute resource.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_address = input;
             self
         }
-        /// <p>Operating system that is running on the instance.</p>
-        pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
-            self.operating_system = Some(input);
+        /// <p>The DNS name of the compute resource. GameLift requires the DNS name or IP address to manage your compute resource.</p>
+        pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dns_name = Some(input.into());
             self
         }
-        /// <p>Operating system that is running on the instance.</p>
-        pub fn set_operating_system(
+        /// <p>The DNS name of the compute resource. GameLift requires the DNS name or IP address to manage your compute resource.</p>
+        pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dns_name = input;
+            self
+        }
+        /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
+        pub fn compute_status(mut self, input: crate::model::ComputeStatus) -> Self {
+            self.compute_status = Some(input);
+            self
+        }
+        /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
+        pub fn set_compute_status(
             mut self,
-            input: std::option::Option<crate::model::OperatingSystem>,
+            input: std::option::Option<crate::model::ComputeStatus>,
         ) -> Self {
-            self.operating_system = input;
+            self.compute_status = input;
             self
         }
-        /// <p>Credentials required to access the instance.</p>
-        pub fn credentials(mut self, input: crate::model::InstanceCredentials) -> Self {
-            self.credentials = Some(input);
-            self
-        }
-        /// <p>Credentials required to access the instance.</p>
-        pub fn set_credentials(
-            mut self,
-            input: std::option::Option<crate::model::InstanceCredentials>,
-        ) -> Self {
-            self.credentials = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InstanceAccess`](crate::model::InstanceAccess).
-        pub fn build(self) -> crate::model::InstanceAccess {
-            crate::model::InstanceAccess {
-                fleet_id: self.fleet_id,
-                instance_id: self.instance_id,
-                ip_address: self.ip_address,
-                operating_system: self.operating_system,
-                credentials: self.credentials,
-            }
-        }
-    }
-    impl std::fmt::Debug for Builder {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-            let mut formatter = f.debug_struct("Builder");
-            formatter.field("fleet_id", &self.fleet_id);
-            formatter.field("instance_id", &self.instance_id);
-            formatter.field("ip_address", &self.ip_address);
-            formatter.field("operating_system", &self.operating_system);
-            formatter.field("credentials", &"*** Sensitive Data Redacted ***");
-            formatter.finish()
-        }
-    }
-}
-impl InstanceAccess {
-    /// Creates a new builder-style object to manufacture [`InstanceAccess`](crate::model::InstanceAccess).
-    pub fn builder() -> crate::model::instance_access::Builder {
-        crate::model::instance_access::Builder::default()
-    }
-}
-
-/// <p>Set of credentials required to remotely access a fleet instance. Access credentials are requested by calling <code>GetInstanceAccess</code> and returned in an <code>InstanceAccess</code> object.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InstanceCredentials {
-    /// <p>User login string.</p>
-    #[doc(hidden)]
-    pub user_name: std::option::Option<std::string::String>,
-    /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
-    #[doc(hidden)]
-    pub secret: std::option::Option<std::string::String>,
-}
-impl InstanceCredentials {
-    /// <p>User login string.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
-        self.user_name.as_deref()
-    }
-    /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
-    pub fn secret(&self) -> std::option::Option<&str> {
-        self.secret.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceCredentials");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("secret", &self.secret);
-        formatter.finish()
-    }
-}
-/// See [`InstanceCredentials`](crate::model::InstanceCredentials).
-pub mod instance_credentials {
-
-    /// A builder for [`InstanceCredentials`](crate::model::InstanceCredentials).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
-    pub struct Builder {
-        pub(crate) user_name: std::option::Option<std::string::String>,
-        pub(crate) secret: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>User login string.</p>
-        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(input.into());
-            self
-        }
-        /// <p>User login string.</p>
-        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
-        }
-        /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
-        pub fn secret(mut self, input: impl Into<std::string::String>) -> Self {
-            self.secret = Some(input.into());
-            self
-        }
-        /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
-        pub fn set_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InstanceCredentials`](crate::model::InstanceCredentials).
-        pub fn build(self) -> crate::model::InstanceCredentials {
-            crate::model::InstanceCredentials {
-                user_name: self.user_name,
-                secret: self.secret,
-            }
-        }
-    }
-    impl std::fmt::Debug for Builder {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-            let mut formatter = f.debug_struct("Builder");
-            formatter.field("user_name", &self.user_name);
-            formatter.field("secret", &self.secret);
-            formatter.finish()
-        }
-    }
-}
-impl InstanceCredentials {
-    /// Creates a new builder-style object to manufacture [`InstanceCredentials`](crate::model::InstanceCredentials).
-    pub fn builder() -> crate::model::instance_credentials::Builder {
-        crate::model::instance_credentials::Builder::default()
-    }
-}
-
-/// <p>Represents a peering connection between a VPC on one of your Amazon Web Services accounts and the VPC for your Amazon GameLift fleets. This record may be for an active peering connection or a pending connection that has not yet been established.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcPeeringConnection {
-    /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
-    #[doc(hidden)]
-    pub fleet_id: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource for this connection. </p>
-    #[doc(hidden)]
-    pub fleet_arn: std::option::Option<std::string::String>,
-    /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
-    #[doc(hidden)]
-    pub ip_v4_cidr_block: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering connection events, and is used when deleting a connection with <code>DeleteVpcPeeringConnection</code>. </p>
-    #[doc(hidden)]
-    pub vpc_peering_connection_id: std::option::Option<std::string::String>,
-    /// <p>The status information about the connection. Status indicates if a connection is pending, successful, or failed.</p>
-    #[doc(hidden)]
-    pub status: std::option::Option<crate::model::VpcPeeringConnectionStatus>,
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
-    #[doc(hidden)]
-    pub peer_vpc_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
-    #[doc(hidden)]
-    pub game_lift_vpc_id: std::option::Option<std::string::String>,
-}
-impl VpcPeeringConnection {
-    /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
-        self.fleet_id.as_deref()
-    }
-    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource for this connection. </p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
-        self.fleet_arn.as_deref()
-    }
-    /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
-    pub fn ip_v4_cidr_block(&self) -> std::option::Option<&str> {
-        self.ip_v4_cidr_block.as_deref()
-    }
-    /// <p>A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering connection events, and is used when deleting a connection with <code>DeleteVpcPeeringConnection</code>. </p>
-    pub fn vpc_peering_connection_id(&self) -> std::option::Option<&str> {
-        self.vpc_peering_connection_id.as_deref()
-    }
-    /// <p>The status information about the connection. Status indicates if a connection is pending, successful, or failed.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VpcPeeringConnectionStatus> {
-        self.status.as_ref()
-    }
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
-    pub fn peer_vpc_id(&self) -> std::option::Option<&str> {
-        self.peer_vpc_id.as_deref()
-    }
-    /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
-    pub fn game_lift_vpc_id(&self) -> std::option::Option<&str> {
-        self.game_lift_vpc_id.as_deref()
-    }
-}
-/// See [`VpcPeeringConnection`](crate::model::VpcPeeringConnection).
-pub mod vpc_peering_connection {
-
-    /// A builder for [`VpcPeeringConnection`](crate::model::VpcPeeringConnection).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) fleet_id: std::option::Option<std::string::String>,
-        pub(crate) fleet_arn: std::option::Option<std::string::String>,
-        pub(crate) ip_v4_cidr_block: std::option::Option<std::string::String>,
-        pub(crate) vpc_peering_connection_id: std::option::Option<std::string::String>,
-        pub(crate) status: std::option::Option<crate::model::VpcPeeringConnectionStatus>,
-        pub(crate) peer_vpc_id: std::option::Option<std::string::String>,
-        pub(crate) game_lift_vpc_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
-        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.fleet_id = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
-        pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
-        }
-        /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource for this connection. </p>
-        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.fleet_arn = Some(input.into());
-            self
-        }
-        /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource for this connection. </p>
-        pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
-        }
-        /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
-        pub fn ip_v4_cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
-            self.ip_v4_cidr_block = Some(input.into());
-            self
-        }
-        /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
-        pub fn set_ip_v4_cidr_block(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ip_v4_cidr_block = input;
-            self
-        }
-        /// <p>A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering connection events, and is used when deleting a connection with <code>DeleteVpcPeeringConnection</code>. </p>
-        pub fn vpc_peering_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vpc_peering_connection_id = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering connection events, and is used when deleting a connection with <code>DeleteVpcPeeringConnection</code>. </p>
-        pub fn set_vpc_peering_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_peering_connection_id = input;
-            self
-        }
-        /// <p>The status information about the connection. Status indicates if a connection is pending, successful, or failed.</p>
-        pub fn status(mut self, input: crate::model::VpcPeeringConnectionStatus) -> Self {
-            self.status = Some(input);
-            self
-        }
-        /// <p>The status information about the connection. Status indicates if a connection is pending, successful, or failed.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VpcPeeringConnectionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
-        }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
-        pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.peer_vpc_id = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
-        pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.peer_vpc_id = input;
-            self
-        }
-        /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
-        pub fn game_lift_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.game_lift_vpc_id = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
-        pub fn set_game_lift_vpc_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.game_lift_vpc_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`VpcPeeringConnection`](crate::model::VpcPeeringConnection).
-        pub fn build(self) -> crate::model::VpcPeeringConnection {
-            crate::model::VpcPeeringConnection {
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
-                ip_v4_cidr_block: self.ip_v4_cidr_block,
-                vpc_peering_connection_id: self.vpc_peering_connection_id,
-                status: self.status,
-                peer_vpc_id: self.peer_vpc_id,
-                game_lift_vpc_id: self.game_lift_vpc_id,
-            }
-        }
-    }
-}
-impl VpcPeeringConnection {
-    /// Creates a new builder-style object to manufacture [`VpcPeeringConnection`](crate::model::VpcPeeringConnection).
-    pub fn builder() -> crate::model::vpc_peering_connection::Builder {
-        crate::model::vpc_peering_connection::Builder::default()
-    }
-}
-
-/// <p>Represents status information for a VPC peering connection. Status is associated with a <code>VpcPeeringConnection</code> object. Status codes and messages are provided from EC2 (see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>). Connection status information is also communicated as a fleet <code>Event</code>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcPeeringConnectionStatus {
-    /// <p>Code indicating the status of a VPC peering connection.</p>
-    #[doc(hidden)]
-    pub code: std::option::Option<std::string::String>,
-    /// <p>Additional messaging associated with the connection status. </p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl VpcPeeringConnectionStatus {
-    /// <p>Code indicating the status of a VPC peering connection.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
-        self.code.as_deref()
-    }
-    /// <p>Additional messaging associated with the connection status. </p>
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-/// See [`VpcPeeringConnectionStatus`](crate::model::VpcPeeringConnectionStatus).
-pub mod vpc_peering_connection_status {
-
-    /// A builder for [`VpcPeeringConnectionStatus`](crate::model::VpcPeeringConnectionStatus).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) code: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Code indicating the status of a VPC peering connection.</p>
-        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.code = Some(input.into());
-            self
-        }
-        /// <p>Code indicating the status of a VPC peering connection.</p>
-        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
-        }
-        /// <p>Additional messaging associated with the connection status. </p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>Additional messaging associated with the connection status. </p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`VpcPeeringConnectionStatus`](crate::model::VpcPeeringConnectionStatus).
-        pub fn build(self) -> crate::model::VpcPeeringConnectionStatus {
-            crate::model::VpcPeeringConnectionStatus {
-                code: self.code,
-                message: self.message,
-            }
-        }
-    }
-}
-impl VpcPeeringConnectionStatus {
-    /// Creates a new builder-style object to manufacture [`VpcPeeringConnectionStatus`](crate::model::VpcPeeringConnectionStatus).
-    pub fn builder() -> crate::model::vpc_peering_connection_status::Builder {
-        crate::model::vpc_peering_connection_status::Builder::default()
-    }
-}
-
-/// <p>Represents an authorization for a VPC peering connection between the VPC for an Amazon GameLift fleet and another VPC on an account you have access to. This authorization must exist and be valid for the peering connection to be established. Authorizations are valid for 24 hours after they are issued.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcPeeringAuthorization {
-    /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-    #[doc(hidden)]
-    pub game_lift_aws_account_id: std::option::Option<std::string::String>,
-    /// <p></p>
-    #[doc(hidden)]
-    pub peer_vpc_aws_account_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
-    #[doc(hidden)]
-    pub peer_vpc_id: std::option::Option<std::string::String>,
-    /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Time stamp indicating when this authorization expires (24 hours after issuance). Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
-    pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
-}
-impl VpcPeeringAuthorization {
-    /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-    pub fn game_lift_aws_account_id(&self) -> std::option::Option<&str> {
-        self.game_lift_aws_account_id.as_deref()
-    }
-    /// <p></p>
-    pub fn peer_vpc_aws_account_id(&self) -> std::option::Option<&str> {
-        self.peer_vpc_aws_account_id.as_deref()
-    }
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
-    pub fn peer_vpc_id(&self) -> std::option::Option<&str> {
-        self.peer_vpc_id.as_deref()
-    }
-    /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
-    }
-    /// <p>Time stamp indicating when this authorization expires (24 hours after issuance). Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.expiration_time.as_ref()
-    }
-}
-/// See [`VpcPeeringAuthorization`](crate::model::VpcPeeringAuthorization).
-pub mod vpc_peering_authorization {
-
-    /// A builder for [`VpcPeeringAuthorization`](crate::model::VpcPeeringAuthorization).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) game_lift_aws_account_id: std::option::Option<std::string::String>,
-        pub(crate) peer_vpc_aws_account_id: std::option::Option<std::string::String>,
-        pub(crate) peer_vpc_id: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) expiration_time: std::option::Option<aws_smithy_types::DateTime>,
-    }
-    impl Builder {
-        /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-        pub fn game_lift_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.game_lift_aws_account_id = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-        pub fn set_game_lift_aws_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.game_lift_aws_account_id = input;
-            self
-        }
-        /// <p></p>
-        pub fn peer_vpc_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.peer_vpc_aws_account_id = Some(input.into());
-            self
-        }
-        /// <p></p>
-        pub fn set_peer_vpc_aws_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.peer_vpc_aws_account_id = input;
-            self
-        }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
-        pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.peer_vpc_id = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
-        pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.peer_vpc_id = input;
-            self
-        }
-        /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.creation_time = Some(input);
-            self
-        }
-        /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
-        }
-        /// <p>Time stamp indicating when this authorization expires (24 hours after issuance). Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.expiration_time = Some(input);
-            self
-        }
-        /// <p>Time stamp indicating when this authorization expires (24 hours after issuance). Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn set_expiration_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiration_time = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`VpcPeeringAuthorization`](crate::model::VpcPeeringAuthorization).
-        pub fn build(self) -> crate::model::VpcPeeringAuthorization {
-            crate::model::VpcPeeringAuthorization {
-                game_lift_aws_account_id: self.game_lift_aws_account_id,
-                peer_vpc_aws_account_id: self.peer_vpc_aws_account_id,
-                peer_vpc_id: self.peer_vpc_id,
-                creation_time: self.creation_time,
-                expiration_time: self.expiration_time,
-            }
-        }
-    }
-}
-impl VpcPeeringAuthorization {
-    /// Creates a new builder-style object to manufacture [`VpcPeeringAuthorization`](crate::model::VpcPeeringAuthorization).
-    pub fn builder() -> crate::model::vpc_peering_authorization::Builder {
-        crate::model::vpc_peering_authorization::Builder::default()
-    }
-}
-
-/// <p>Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and fleet ID.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>DescribeFleetCapacity</code> | <code>UpdateFleetCapacity</code> | <code>DescribeEC2InstanceLimits</code> | <code>PutScalingPolicy</code> | <code>DescribeScalingPolicies</code> | <code>DeleteScalingPolicy</code> | <code>StopFleetActions</code> | <code>StartFleetActions</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScalingPolicy {
-    /// <p>A unique identifier for the fleet that is associated with this scaling policy.</p>
-    #[doc(hidden)]
-    pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
-    /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
-    /// </region></code>.</p>
-    #[doc(hidden)]
-    pub fleet_arn: std::option::Option<std::string::String>,
-    /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets (see <code>StopFleetActions</code>; if suspended for a fleet, the policy status does not change. View a fleet's stopped actions by calling <code>DescribeFleetCapacity</code>.</p>
-    /// <ul>
-    /// <li> <p> <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p> </li>
-    /// <li> <p> <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
-    /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
-    /// <li> <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
-    /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
-    /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
-    /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
-    /// </ul>
-    #[doc(hidden)]
-    pub status: std::option::Option<crate::model::ScalingStatusType>,
-    /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
-    #[doc(hidden)]
-    pub scaling_adjustment: i32,
-    /// <p>The type of adjustment to make to a fleet's instance count (see <code>FleetCapacity</code>):</p>
-    /// <ul>
-    /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
-    /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
-    /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p> </li>
-    /// </ul>
-    #[doc(hidden)]
-    pub scaling_adjustment_type: std::option::Option<crate::model::ScalingAdjustmentType>,
-    /// <p>Comparison operator to use when measuring a metric against the threshold value.</p>
-    #[doc(hidden)]
-    pub comparison_operator: std::option::Option<crate::model::ComparisonOperatorType>,
-    /// <p>Metric value used to trigger a scaling event.</p>
-    #[doc(hidden)]
-    pub threshold: f64,
-    /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
-    #[doc(hidden)]
-    pub evaluation_periods: std::option::Option<i32>,
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
-    /// <ul>
-    /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
-    /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
-    /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
-    /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
-    /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
-    /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
-    /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
-    /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
-    /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
-    /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
-    /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
-    /// </ul>
-    #[doc(hidden)]
-    pub metric_name: std::option::Option<crate::model::MetricName>,
-    /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
-    #[doc(hidden)]
-    pub policy_type: std::option::Option<crate::model::PolicyType>,
-    /// <p>An object that contains settings for a target-based scaling policy.</p>
-    #[doc(hidden)]
-    pub target_configuration: std::option::Option<crate::model::TargetConfiguration>,
-    /// <p>The current status of the fleet's scaling policies in a requested fleet location. The status <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
-    #[doc(hidden)]
-    pub update_status: std::option::Option<crate::model::LocationUpdateStatus>,
-    /// <p> The fleet location. </p>
-    #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
-}
-impl ScalingPolicy {
-    /// <p>A unique identifier for the fleet that is associated with this scaling policy.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
-        self.fleet_id.as_deref()
-    }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
-    /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
-    /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
-        self.fleet_arn.as_deref()
-    }
-    /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets (see <code>StopFleetActions</code>; if suspended for a fleet, the policy status does not change. View a fleet's stopped actions by calling <code>DescribeFleetCapacity</code>.</p>
-    /// <ul>
-    /// <li> <p> <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p> </li>
-    /// <li> <p> <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
-    /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
-    /// <li> <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
-    /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
-    /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
-    /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
-    /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::ScalingStatusType> {
-        self.status.as_ref()
-    }
-    /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
-    pub fn scaling_adjustment(&self) -> i32 {
-        self.scaling_adjustment
-    }
-    /// <p>The type of adjustment to make to a fleet's instance count (see <code>FleetCapacity</code>):</p>
-    /// <ul>
-    /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
-    /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
-    /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p> </li>
-    /// </ul>
-    pub fn scaling_adjustment_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ScalingAdjustmentType> {
-        self.scaling_adjustment_type.as_ref()
-    }
-    /// <p>Comparison operator to use when measuring a metric against the threshold value.</p>
-    pub fn comparison_operator(
-        &self,
-    ) -> std::option::Option<&crate::model::ComparisonOperatorType> {
-        self.comparison_operator.as_ref()
-    }
-    /// <p>Metric value used to trigger a scaling event.</p>
-    pub fn threshold(&self) -> f64 {
-        self.threshold
-    }
-    /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
-    pub fn evaluation_periods(&self) -> std::option::Option<i32> {
-        self.evaluation_periods
-    }
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
-    /// <ul>
-    /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
-    /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
-    /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
-    /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
-    /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
-    /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
-    /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
-    /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
-    /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
-    /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
-    /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
-    /// </ul>
-    pub fn metric_name(&self) -> std::option::Option<&crate::model::MetricName> {
-        self.metric_name.as_ref()
-    }
-    /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
-    pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyType> {
-        self.policy_type.as_ref()
-    }
-    /// <p>An object that contains settings for a target-based scaling policy.</p>
-    pub fn target_configuration(&self) -> std::option::Option<&crate::model::TargetConfiguration> {
-        self.target_configuration.as_ref()
-    }
-    /// <p>The current status of the fleet's scaling policies in a requested fleet location. The status <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
-    pub fn update_status(&self) -> std::option::Option<&crate::model::LocationUpdateStatus> {
-        self.update_status.as_ref()
-    }
-    /// <p> The fleet location. </p>
-    pub fn location(&self) -> std::option::Option<&str> {
-        self.location.as_deref()
-    }
-}
-/// See [`ScalingPolicy`](crate::model::ScalingPolicy).
-pub mod scaling_policy {
-
-    /// A builder for [`ScalingPolicy`](crate::model::ScalingPolicy).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) fleet_id: std::option::Option<std::string::String>,
-        pub(crate) fleet_arn: std::option::Option<std::string::String>,
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) status: std::option::Option<crate::model::ScalingStatusType>,
-        pub(crate) scaling_adjustment: std::option::Option<i32>,
-        pub(crate) scaling_adjustment_type:
-            std::option::Option<crate::model::ScalingAdjustmentType>,
-        pub(crate) comparison_operator: std::option::Option<crate::model::ComparisonOperatorType>,
-        pub(crate) threshold: std::option::Option<f64>,
-        pub(crate) evaluation_periods: std::option::Option<i32>,
-        pub(crate) metric_name: std::option::Option<crate::model::MetricName>,
-        pub(crate) policy_type: std::option::Option<crate::model::PolicyType>,
-        pub(crate) target_configuration: std::option::Option<crate::model::TargetConfiguration>,
-        pub(crate) update_status: std::option::Option<crate::model::LocationUpdateStatus>,
-        pub(crate) location: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A unique identifier for the fleet that is associated with this scaling policy.</p>
-        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.fleet_id = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier for the fleet that is associated with this scaling policy.</p>
-        pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
-        }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-        /// <region>
-        /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
-        /// </region></code>.</p>
-        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.fleet_arn = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-        /// <region>
-        /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
-        /// </region></code>.</p>
-        pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
-        }
-        /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets (see <code>StopFleetActions</code>; if suspended for a fleet, the policy status does not change. View a fleet's stopped actions by calling <code>DescribeFleetCapacity</code>.</p>
-        /// <ul>
-        /// <li> <p> <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p> </li>
-        /// <li> <p> <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
-        /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
-        /// <li> <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
-        /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
-        /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
-        /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
-        /// </ul>
-        pub fn status(mut self, input: crate::model::ScalingStatusType) -> Self {
-            self.status = Some(input);
-            self
-        }
-        /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets (see <code>StopFleetActions</code>; if suspended for a fleet, the policy status does not change. View a fleet's stopped actions by calling <code>DescribeFleetCapacity</code>.</p>
-        /// <ul>
-        /// <li> <p> <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p> </li>
-        /// <li> <p> <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
-        /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
-        /// <li> <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
-        /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
-        /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
-        /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
-        /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ScalingStatusType>,
-        ) -> Self {
-            self.status = input;
-            self
-        }
-        /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
-        pub fn scaling_adjustment(mut self, input: i32) -> Self {
-            self.scaling_adjustment = Some(input);
-            self
-        }
-        /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
-        pub fn set_scaling_adjustment(mut self, input: std::option::Option<i32>) -> Self {
-            self.scaling_adjustment = input;
-            self
-        }
-        /// <p>The type of adjustment to make to a fleet's instance count (see <code>FleetCapacity</code>):</p>
-        /// <ul>
-        /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
-        /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
-        /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p> </li>
-        /// </ul>
-        pub fn scaling_adjustment_type(
-            mut self,
-            input: crate::model::ScalingAdjustmentType,
-        ) -> Self {
-            self.scaling_adjustment_type = Some(input);
-            self
-        }
-        /// <p>The type of adjustment to make to a fleet's instance count (see <code>FleetCapacity</code>):</p>
-        /// <ul>
-        /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
-        /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
-        /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p> </li>
-        /// </ul>
-        pub fn set_scaling_adjustment_type(
-            mut self,
-            input: std::option::Option<crate::model::ScalingAdjustmentType>,
-        ) -> Self {
-            self.scaling_adjustment_type = input;
-            self
-        }
-        /// <p>Comparison operator to use when measuring a metric against the threshold value.</p>
-        pub fn comparison_operator(mut self, input: crate::model::ComparisonOperatorType) -> Self {
-            self.comparison_operator = Some(input);
-            self
-        }
-        /// <p>Comparison operator to use when measuring a metric against the threshold value.</p>
-        pub fn set_comparison_operator(
-            mut self,
-            input: std::option::Option<crate::model::ComparisonOperatorType>,
-        ) -> Self {
-            self.comparison_operator = input;
-            self
-        }
-        /// <p>Metric value used to trigger a scaling event.</p>
-        pub fn threshold(mut self, input: f64) -> Self {
-            self.threshold = Some(input);
-            self
-        }
-        /// <p>Metric value used to trigger a scaling event.</p>
-        pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
-            self.threshold = input;
-            self
-        }
-        /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
-        pub fn evaluation_periods(mut self, input: i32) -> Self {
-            self.evaluation_periods = Some(input);
-            self
-        }
-        /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
-        pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
-            self.evaluation_periods = input;
-            self
-        }
-        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
-        /// <ul>
-        /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
-        /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
-        /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
-        /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
-        /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
-        /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
-        /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
-        /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
-        /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
-        /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
-        /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
-        /// </ul>
-        pub fn metric_name(mut self, input: crate::model::MetricName) -> Self {
-            self.metric_name = Some(input);
-            self
-        }
-        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
-        /// <ul>
-        /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
-        /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
-        /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
-        /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
-        /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
-        /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
-        /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
-        /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
-        /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
-        /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
-        /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
-        /// </ul>
-        pub fn set_metric_name(
-            mut self,
-            input: std::option::Option<crate::model::MetricName>,
-        ) -> Self {
-            self.metric_name = input;
-            self
-        }
-        /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
-        pub fn policy_type(mut self, input: crate::model::PolicyType) -> Self {
-            self.policy_type = Some(input);
-            self
-        }
-        /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
-        pub fn set_policy_type(
-            mut self,
-            input: std::option::Option<crate::model::PolicyType>,
-        ) -> Self {
-            self.policy_type = input;
-            self
-        }
-        /// <p>An object that contains settings for a target-based scaling policy.</p>
-        pub fn target_configuration(mut self, input: crate::model::TargetConfiguration) -> Self {
-            self.target_configuration = Some(input);
-            self
-        }
-        /// <p>An object that contains settings for a target-based scaling policy.</p>
-        pub fn set_target_configuration(
-            mut self,
-            input: std::option::Option<crate::model::TargetConfiguration>,
-        ) -> Self {
-            self.target_configuration = input;
-            self
-        }
-        /// <p>The current status of the fleet's scaling policies in a requested fleet location. The status <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
-        pub fn update_status(mut self, input: crate::model::LocationUpdateStatus) -> Self {
-            self.update_status = Some(input);
-            self
-        }
-        /// <p>The current status of the fleet's scaling policies in a requested fleet location. The status <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
-        pub fn set_update_status(
-            mut self,
-            input: std::option::Option<crate::model::LocationUpdateStatus>,
-        ) -> Self {
-            self.update_status = input;
-            self
-        }
-        /// <p> The fleet location. </p>
+        /// <p>The name of the custom location you added to the fleet that this compute resource resides in.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p> The fleet location. </p>
+        /// <p>The name of the custom location you added to the fleet that this compute resource resides in.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScalingPolicy`](crate::model::ScalingPolicy).
-        pub fn build(self) -> crate::model::ScalingPolicy {
-            crate::model::ScalingPolicy {
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
-                name: self.name,
-                status: self.status,
-                scaling_adjustment: self.scaling_adjustment.unwrap_or_default(),
-                scaling_adjustment_type: self.scaling_adjustment_type,
-                comparison_operator: self.comparison_operator,
-                threshold: self.threshold.unwrap_or_default(),
-                evaluation_periods: self.evaluation_periods,
-                metric_name: self.metric_name,
-                policy_type: self.policy_type,
-                target_configuration: self.target_configuration,
-                update_status: self.update_status,
-                location: self.location,
-            }
-        }
-    }
-}
-impl ScalingPolicy {
-    /// Creates a new builder-style object to manufacture [`ScalingPolicy`](crate::model::ScalingPolicy).
-    pub fn builder() -> crate::model::scaling_policy::Builder {
-        crate::model::scaling_policy::Builder::default()
-    }
-}
-
-/// When writing a match expression against `LocationUpdateStatus`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let locationupdatestatus = unimplemented!();
-/// match locationupdatestatus {
-///     LocationUpdateStatus::PendingUpdate => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `locationupdatestatus` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `LocationUpdateStatus::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `LocationUpdateStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `LocationUpdateStatus::NewFeature` is defined.
-/// Specifically, when `locationupdatestatus` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `LocationUpdateStatus::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum LocationUpdateStatus {
-    #[allow(missing_docs)] // documentation missing in model
-    PendingUpdate,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for LocationUpdateStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "PENDING_UPDATE" => LocationUpdateStatus::PendingUpdate,
-            other => {
-                LocationUpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
-        }
-    }
-}
-impl std::str::FromStr for LocationUpdateStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LocationUpdateStatus::from(s))
-    }
-}
-impl LocationUpdateStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LocationUpdateStatus::PendingUpdate => "PENDING_UPDATE",
-            LocationUpdateStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["PENDING_UPDATE"]
-    }
-}
-impl AsRef<str> for LocationUpdateStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// When writing a match expression against `ScalingStatusType`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let scalingstatustype = unimplemented!();
-/// match scalingstatustype {
-///     ScalingStatusType::Active => { /* ... */ },
-///     ScalingStatusType::Deleted => { /* ... */ },
-///     ScalingStatusType::DeleteRequested => { /* ... */ },
-///     ScalingStatusType::Deleting => { /* ... */ },
-///     ScalingStatusType::Error => { /* ... */ },
-///     ScalingStatusType::UpdateRequested => { /* ... */ },
-///     ScalingStatusType::Updating => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `scalingstatustype` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `ScalingStatusType::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `ScalingStatusType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `ScalingStatusType::NewFeature` is defined.
-/// Specifically, when `scalingstatustype` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `ScalingStatusType::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ScalingStatusType {
-    #[allow(missing_docs)] // documentation missing in model
-    Active,
-    #[allow(missing_docs)] // documentation missing in model
-    Deleted,
-    #[allow(missing_docs)] // documentation missing in model
-    DeleteRequested,
-    #[allow(missing_docs)] // documentation missing in model
-    Deleting,
-    #[allow(missing_docs)] // documentation missing in model
-    Error,
-    #[allow(missing_docs)] // documentation missing in model
-    UpdateRequested,
-    #[allow(missing_docs)] // documentation missing in model
-    Updating,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for ScalingStatusType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ScalingStatusType::Active,
-            "DELETED" => ScalingStatusType::Deleted,
-            "DELETE_REQUESTED" => ScalingStatusType::DeleteRequested,
-            "DELETING" => ScalingStatusType::Deleting,
-            "ERROR" => ScalingStatusType::Error,
-            "UPDATE_REQUESTED" => ScalingStatusType::UpdateRequested,
-            "UPDATING" => ScalingStatusType::Updating,
-            other => {
-                ScalingStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
-        }
-    }
-}
-impl std::str::FromStr for ScalingStatusType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScalingStatusType::from(s))
-    }
-}
-impl ScalingStatusType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScalingStatusType::Active => "ACTIVE",
-            ScalingStatusType::Deleted => "DELETED",
-            ScalingStatusType::DeleteRequested => "DELETE_REQUESTED",
-            ScalingStatusType::Deleting => "DELETING",
-            ScalingStatusType::Error => "ERROR",
-            ScalingStatusType::UpdateRequested => "UPDATE_REQUESTED",
-            ScalingStatusType::Updating => "UPDATING",
-            ScalingStatusType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "DELETED",
-            "DELETE_REQUESTED",
-            "DELETING",
-            "ERROR",
-            "UPDATE_REQUESTED",
-            "UPDATING",
-        ]
-    }
-}
-impl AsRef<str> for ScalingStatusType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Represents a player session. Player sessions are created either for a specific game session, or as part of a game session placement or matchmaking request. A player session can represents a reserved player slot in a game session (when status is <code>RESERVED</code>) or actual player activity in a game session (when status is <code>ACTIVE</code>). A player session object, including player data, is automatically passed to a game session when the player connects to the game session and is validated. After the game session ends, player sessions information is retained for 30 days and then removed.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>CreatePlayerSession</code> | <code>CreatePlayerSessions</code> | <code>DescribePlayerSessions</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlayerSession {
-    /// <p>A unique identifier for a player session.</p>
-    #[doc(hidden)]
-    pub player_session_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for a player that is associated with this player session.</p>
-    #[doc(hidden)]
-    pub player_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the game session that the player session is connected to.</p>
-    #[doc(hidden)]
-    pub game_session_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the fleet that the player's game session is running on.</p>
-    #[doc(hidden)]
-    pub fleet_id: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that the player's game session is running on. </p>
-    #[doc(hidden)]
-    pub fleet_arn: std::option::Option<std::string::String>,
-    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
-    pub termination_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Current status of the player session.</p>
-    /// <p>Possible player session statuses include the following:</p>
-    /// <ul>
-    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
-    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
-    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
-    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
-    /// </ul>
-    #[doc(hidden)]
-    pub status: std::option::Option<crate::model::PlayerSessionStatus>,
-    /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
-    #[doc(hidden)]
-    pub ip_address: std::option::Option<std::string::String>,
-    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
-    /// <ul>
-    /// <li> <p>TLS-enabled fleets: <code>
-    /// <unique identifier>
-    /// .
-    /// <region identifier>
-    /// .amazongamelift.com
-    /// </region>
-    /// </unique></code>.</p> </li>
-    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
-    /// .compute.amazonaws.com
-    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
-    /// </ul>
-    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-    #[doc(hidden)]
-    pub dns_name: std::option::Option<std::string::String>,
-    /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
-    #[doc(hidden)]
-    pub port: std::option::Option<i32>,
-    /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game. </p>
-    #[doc(hidden)]
-    pub player_data: std::option::Option<std::string::String>,
-}
-impl PlayerSession {
-    /// <p>A unique identifier for a player session.</p>
-    pub fn player_session_id(&self) -> std::option::Option<&str> {
-        self.player_session_id.as_deref()
-    }
-    /// <p>A unique identifier for a player that is associated with this player session.</p>
-    pub fn player_id(&self) -> std::option::Option<&str> {
-        self.player_id.as_deref()
-    }
-    /// <p>A unique identifier for the game session that the player session is connected to.</p>
-    pub fn game_session_id(&self) -> std::option::Option<&str> {
-        self.game_session_id.as_deref()
-    }
-    /// <p>A unique identifier for the fleet that the player's game session is running on.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
-        self.fleet_id.as_deref()
-    }
-    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that the player's game session is running on. </p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
-        self.fleet_arn.as_deref()
-    }
-    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
-    }
-    /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn termination_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.termination_time.as_ref()
-    }
-    /// <p>Current status of the player session.</p>
-    /// <p>Possible player session statuses include the following:</p>
-    /// <ul>
-    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
-    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
-    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
-    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
-    /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::PlayerSessionStatus> {
-        self.status.as_ref()
-    }
-    /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
-        self.ip_address.as_deref()
-    }
-    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
-    /// <ul>
-    /// <li> <p>TLS-enabled fleets: <code>
-    /// <unique identifier>
-    /// .
-    /// <region identifier>
-    /// .amazongamelift.com
-    /// </region>
-    /// </unique></code>.</p> </li>
-    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
-    /// .compute.amazonaws.com
-    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
-    /// </ul>
-    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-    pub fn dns_name(&self) -> std::option::Option<&str> {
-        self.dns_name.as_deref()
-    }
-    /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
-        self.port
-    }
-    /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game. </p>
-    pub fn player_data(&self) -> std::option::Option<&str> {
-        self.player_data.as_deref()
-    }
-}
-/// See [`PlayerSession`](crate::model::PlayerSession).
-pub mod player_session {
-
-    /// A builder for [`PlayerSession`](crate::model::PlayerSession).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) player_session_id: std::option::Option<std::string::String>,
-        pub(crate) player_id: std::option::Option<std::string::String>,
-        pub(crate) game_session_id: std::option::Option<std::string::String>,
-        pub(crate) fleet_id: std::option::Option<std::string::String>,
-        pub(crate) fleet_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) termination_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) status: std::option::Option<crate::model::PlayerSessionStatus>,
-        pub(crate) ip_address: std::option::Option<std::string::String>,
-        pub(crate) dns_name: std::option::Option<std::string::String>,
-        pub(crate) port: std::option::Option<i32>,
-        pub(crate) player_data: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A unique identifier for a player session.</p>
-        pub fn player_session_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.player_session_id = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier for a player session.</p>
-        pub fn set_player_session_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.player_session_id = input;
-            self
-        }
-        /// <p>A unique identifier for a player that is associated with this player session.</p>
-        pub fn player_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.player_id = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier for a player that is associated with this player session.</p>
-        pub fn set_player_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.player_id = input;
-            self
-        }
-        /// <p>A unique identifier for the game session that the player session is connected to.</p>
-        pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.game_session_id = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier for the game session that the player session is connected to.</p>
-        pub fn set_game_session_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.game_session_id = input;
-            self
-        }
-        /// <p>A unique identifier for the fleet that the player's game session is running on.</p>
-        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.fleet_id = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier for the fleet that the player's game session is running on.</p>
-        pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
-        }
-        /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that the player's game session is running on. </p>
-        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.fleet_arn = Some(input.into());
-            self
-        }
-        /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that the player's game session is running on. </p>
-        pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
-        }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
@@ -10046,610 +8217,12 @@ pub mod player_session {
             self.creation_time = input;
             self
         }
-        /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn termination_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.termination_time = Some(input);
-            self
-        }
-        /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn set_termination_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.termination_time = input;
-            self
-        }
-        /// <p>Current status of the player session.</p>
-        /// <p>Possible player session statuses include the following:</p>
-        /// <ul>
-        /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
-        /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
-        /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
-        /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
-        /// </ul>
-        pub fn status(mut self, input: crate::model::PlayerSessionStatus) -> Self {
-            self.status = Some(input);
-            self
-        }
-        /// <p>Current status of the player session.</p>
-        /// <p>Possible player session statuses include the following:</p>
-        /// <ul>
-        /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
-        /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
-        /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
-        /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
-        /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PlayerSessionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
-        }
-        /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
-        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-            self.ip_address = Some(input.into());
-            self
-        }
-        /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
-        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = input;
-            self
-        }
-        /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
-        /// <ul>
-        /// <li> <p>TLS-enabled fleets: <code>
-        /// <unique identifier>
-        /// .
-        /// <region identifier>
-        /// .amazongamelift.com
-        /// </region>
-        /// </unique></code>.</p> </li>
-        /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
-        /// <unique identifier>
-        /// .compute.amazonaws.com
-        /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
-        /// </ul>
-        /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-        pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.dns_name = Some(input.into());
-            self
-        }
-        /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
-        /// <ul>
-        /// <li> <p>TLS-enabled fleets: <code>
-        /// <unique identifier>
-        /// .
-        /// <region identifier>
-        /// .amazongamelift.com
-        /// </region>
-        /// </unique></code>.</p> </li>
-        /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
-        /// <unique identifier>
-        /// .compute.amazonaws.com
-        /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
-        /// </ul>
-        /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-        pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dns_name = input;
-            self
-        }
-        /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
-        pub fn port(mut self, input: i32) -> Self {
-            self.port = Some(input);
-            self
-        }
-        /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
-        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
-        }
-        /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game. </p>
-        pub fn player_data(mut self, input: impl Into<std::string::String>) -> Self {
-            self.player_data = Some(input.into());
-            self
-        }
-        /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game. </p>
-        pub fn set_player_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.player_data = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`PlayerSession`](crate::model::PlayerSession).
-        pub fn build(self) -> crate::model::PlayerSession {
-            crate::model::PlayerSession {
-                player_session_id: self.player_session_id,
-                player_id: self.player_id,
-                game_session_id: self.game_session_id,
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
-                creation_time: self.creation_time,
-                termination_time: self.termination_time,
-                status: self.status,
-                ip_address: self.ip_address,
-                dns_name: self.dns_name,
-                port: self.port,
-                player_data: self.player_data,
-            }
-        }
-    }
-}
-impl PlayerSession {
-    /// Creates a new builder-style object to manufacture [`PlayerSession`](crate::model::PlayerSession).
-    pub fn builder() -> crate::model::player_session::Builder {
-        crate::model::player_session::Builder::default()
-    }
-}
-
-/// When writing a match expression against `PlayerSessionStatus`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let playersessionstatus = unimplemented!();
-/// match playersessionstatus {
-///     PlayerSessionStatus::Active => { /* ... */ },
-///     PlayerSessionStatus::Completed => { /* ... */ },
-///     PlayerSessionStatus::Reserved => { /* ... */ },
-///     PlayerSessionStatus::Timedout => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `playersessionstatus` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `PlayerSessionStatus::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `PlayerSessionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `PlayerSessionStatus::NewFeature` is defined.
-/// Specifically, when `playersessionstatus` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `PlayerSessionStatus::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum PlayerSessionStatus {
-    #[allow(missing_docs)] // documentation missing in model
-    Active,
-    #[allow(missing_docs)] // documentation missing in model
-    Completed,
-    #[allow(missing_docs)] // documentation missing in model
-    Reserved,
-    #[allow(missing_docs)] // documentation missing in model
-    Timedout,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for PlayerSessionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => PlayerSessionStatus::Active,
-            "COMPLETED" => PlayerSessionStatus::Completed,
-            "RESERVED" => PlayerSessionStatus::Reserved,
-            "TIMEDOUT" => PlayerSessionStatus::Timedout,
-            other => {
-                PlayerSessionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
-        }
-    }
-}
-impl std::str::FromStr for PlayerSessionStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PlayerSessionStatus::from(s))
-    }
-}
-impl PlayerSessionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PlayerSessionStatus::Active => "ACTIVE",
-            PlayerSessionStatus::Completed => "COMPLETED",
-            PlayerSessionStatus::Reserved => "RESERVED",
-            PlayerSessionStatus::Timedout => "TIMEDOUT",
-            PlayerSessionStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "COMPLETED", "RESERVED", "TIMEDOUT"]
-    }
-}
-impl AsRef<str> for PlayerSessionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Set of rule statements, used with FlexMatch, that determine how to build your player matches. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches. Rule sets are used in <code>MatchmakingConfiguration</code> objects.</p>
-/// <p>A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a FlexMatch rule set</a>. </p>
-/// <ul>
-/// <li> <p>Teams -- Required. A rule set must define one or multiple teams for the match and set minimum and maximum team sizes. For example, a rule set might describe a 4x4 match that requires all eight slots to be filled. </p> </li>
-/// <li> <p>Player attributes -- Optional. These attributes specify a set of player characteristics to evaluate when looking for a match. Matchmaking requests that use a rule set with player attributes must provide the corresponding attribute values. For example, an attribute might specify a player's skill or level.</p> </li>
-/// <li> <p>Rules -- Optional. Rules define how to evaluate potential players for a match based on player attributes. A rule might specify minimum requirements for individual players, teams, or entire matches. For example, a rule might require each player to meet a certain skill level, each team to have at least one player in a certain role, or the match to have a minimum average skill level. or may describe an entire group--such as all teams must be evenly matched or have at least one player in a certain role. </p> </li>
-/// <li> <p>Expansions -- Optional. Expansions allow you to relax the rules after a period of time when no acceptable matches are found. This feature lets you balance getting players into games in a reasonable amount of time instead of making them wait indefinitely for the best possible match. For example, you might use an expansion to increase the maximum skill variance between players after 30 seconds.</p> </li>
-/// </ul>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MatchmakingRuleSet {
-    /// <p>A unique identifier for the matchmaking rule set</p>
-    #[doc(hidden)]
-    pub rule_set_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
-    /// ::matchmakingruleset/
-    /// <ruleset name></ruleset>
-    /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
-    #[doc(hidden)]
-    pub rule_set_arn: std::option::Option<std::string::String>,
-    /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-    #[doc(hidden)]
-    pub rule_set_body: std::option::Option<std::string::String>,
-    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-}
-impl MatchmakingRuleSet {
-    /// <p>A unique identifier for the matchmaking rule set</p>
-    pub fn rule_set_name(&self) -> std::option::Option<&str> {
-        self.rule_set_name.as_deref()
-    }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
-    /// ::matchmakingruleset/
-    /// <ruleset name></ruleset>
-    /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
-    pub fn rule_set_arn(&self) -> std::option::Option<&str> {
-        self.rule_set_arn.as_deref()
-    }
-    /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-    pub fn rule_set_body(&self) -> std::option::Option<&str> {
-        self.rule_set_body.as_deref()
-    }
-    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
-    }
-}
-/// See [`MatchmakingRuleSet`](crate::model::MatchmakingRuleSet).
-pub mod matchmaking_rule_set {
-
-    /// A builder for [`MatchmakingRuleSet`](crate::model::MatchmakingRuleSet).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) rule_set_name: std::option::Option<std::string::String>,
-        pub(crate) rule_set_arn: std::option::Option<std::string::String>,
-        pub(crate) rule_set_body: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    }
-    impl Builder {
-        /// <p>A unique identifier for the matchmaking rule set</p>
-        pub fn rule_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.rule_set_name = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier for the matchmaking rule set</p>
-        pub fn set_rule_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rule_set_name = input;
-            self
-        }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-        /// <region>
-        /// ::matchmakingruleset/
-        /// <ruleset name></ruleset>
-        /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
-        pub fn rule_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.rule_set_arn = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-        /// <region>
-        /// ::matchmakingruleset/
-        /// <ruleset name></ruleset>
-        /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
-        pub fn set_rule_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_set_arn = input;
-            self
-        }
-        /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-        pub fn rule_set_body(mut self, input: impl Into<std::string::String>) -> Self {
-            self.rule_set_body = Some(input.into());
-            self
-        }
-        /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-        pub fn set_rule_set_body(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rule_set_body = input;
-            self
-        }
-        /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.creation_time = Some(input);
-            self
-        }
-        /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`MatchmakingRuleSet`](crate::model::MatchmakingRuleSet).
-        pub fn build(self) -> crate::model::MatchmakingRuleSet {
-            crate::model::MatchmakingRuleSet {
-                rule_set_name: self.rule_set_name,
-                rule_set_arn: self.rule_set_arn,
-                rule_set_body: self.rule_set_body,
-                creation_time: self.creation_time,
-            }
-        }
-    }
-}
-impl MatchmakingRuleSet {
-    /// Creates a new builder-style object to manufacture [`MatchmakingRuleSet`](crate::model::MatchmakingRuleSet).
-    pub fn builder() -> crate::model::matchmaking_rule_set::Builder {
-        crate::model::matchmaking_rule_set::Builder::default()
-    }
-}
-
-/// <p>Represents an EC2 instance of virtual computing resources that hosts one or more game servers. In GameLift, a fleet can contain zero or more instances.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>DescribeInstances</code> </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Instance {
-    /// <p>A unique identifier for the fleet that the instance is in.</p>
-    #[doc(hidden)]
-    pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
-    /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
-    /// </region></code>.</p>
-    #[doc(hidden)]
-    pub fleet_arn: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the instance.</p>
-    #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
-    /// <p>IP address that is assigned to the instance.</p>
-    #[doc(hidden)]
-    pub ip_address: std::option::Option<std::string::String>,
-    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
-    /// <ul>
-    /// <li> <p>TLS-enabled fleets: <code>
-    /// <unique identifier>
-    /// .
-    /// <region identifier>
-    /// .amazongamelift.com
-    /// </region>
-    /// </unique></code>.</p> </li>
-    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
-    /// .compute.amazonaws.com
-    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
-    /// </ul>
-    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-    #[doc(hidden)]
-    pub dns_name: std::option::Option<std::string::String>,
-    /// <p>Operating system that is running on this instance. </p>
-    #[doc(hidden)]
-    pub operating_system: std::option::Option<crate::model::OperatingSystem>,
-    /// <p>Amazon EC2 instance type that defines the computing resources of this instance. </p>
-    #[doc(hidden)]
-    pub r#type: std::option::Option<crate::model::Ec2InstanceType>,
-    /// <p>Current status of the instance. Possible statuses include the following:</p>
-    /// <ul>
-    /// <li> <p> <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration. </p> </li>
-    /// <li> <p> <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions. </p> </li>
-    /// <li> <p> <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p> </li>
-    /// </ul>
-    #[doc(hidden)]
-    pub status: std::option::Option<crate::model::InstanceStatus>,
-    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-    #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
-}
-impl Instance {
-    /// <p>A unique identifier for the fleet that the instance is in.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
-        self.fleet_id.as_deref()
-    }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
-    /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
-    /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
-        self.fleet_arn.as_deref()
-    }
-    /// <p>A unique identifier for the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
-        self.instance_id.as_deref()
-    }
-    /// <p>IP address that is assigned to the instance.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
-        self.ip_address.as_deref()
-    }
-    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
-    /// <ul>
-    /// <li> <p>TLS-enabled fleets: <code>
-    /// <unique identifier>
-    /// .
-    /// <region identifier>
-    /// .amazongamelift.com
-    /// </region>
-    /// </unique></code>.</p> </li>
-    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
-    /// .compute.amazonaws.com
-    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
-    /// </ul>
-    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-    pub fn dns_name(&self) -> std::option::Option<&str> {
-        self.dns_name.as_deref()
-    }
-    /// <p>Operating system that is running on this instance. </p>
-    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
-        self.operating_system.as_ref()
-    }
-    /// <p>Amazon EC2 instance type that defines the computing resources of this instance. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::Ec2InstanceType> {
-        self.r#type.as_ref()
-    }
-    /// <p>Current status of the instance. Possible statuses include the following:</p>
-    /// <ul>
-    /// <li> <p> <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration. </p> </li>
-    /// <li> <p> <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions. </p> </li>
-    /// <li> <p> <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p> </li>
-    /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::InstanceStatus> {
-        self.status.as_ref()
-    }
-    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
-    }
-    /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-    pub fn location(&self) -> std::option::Option<&str> {
-        self.location.as_deref()
-    }
-}
-/// See [`Instance`](crate::model::Instance).
-pub mod instance {
-
-    /// A builder for [`Instance`](crate::model::Instance).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) fleet_id: std::option::Option<std::string::String>,
-        pub(crate) fleet_arn: std::option::Option<std::string::String>,
-        pub(crate) instance_id: std::option::Option<std::string::String>,
-        pub(crate) ip_address: std::option::Option<std::string::String>,
-        pub(crate) dns_name: std::option::Option<std::string::String>,
-        pub(crate) operating_system: std::option::Option<crate::model::OperatingSystem>,
-        pub(crate) r#type: std::option::Option<crate::model::Ec2InstanceType>,
-        pub(crate) status: std::option::Option<crate::model::InstanceStatus>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) location: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A unique identifier for the fleet that the instance is in.</p>
-        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.fleet_id = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier for the fleet that the instance is in.</p>
-        pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
-        }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-        /// <region>
-        /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
-        /// </region></code>.</p>
-        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.fleet_arn = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-        /// <region>
-        /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
-        /// </region></code>.</p>
-        pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
-        }
-        /// <p>A unique identifier for the instance.</p>
-        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(input.into());
-            self
-        }
-        /// <p>A unique identifier for the instance.</p>
-        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
-        }
-        /// <p>IP address that is assigned to the instance.</p>
-        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-            self.ip_address = Some(input.into());
-            self
-        }
-        /// <p>IP address that is assigned to the instance.</p>
-        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = input;
-            self
-        }
-        /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
-        /// <ul>
-        /// <li> <p>TLS-enabled fleets: <code>
-        /// <unique identifier>
-        /// .
-        /// <region identifier>
-        /// .amazongamelift.com
-        /// </region>
-        /// </unique></code>.</p> </li>
-        /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
-        /// <unique identifier>
-        /// .compute.amazonaws.com
-        /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
-        /// </ul>
-        /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-        pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.dns_name = Some(input.into());
-            self
-        }
-        /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
-        /// <ul>
-        /// <li> <p>TLS-enabled fleets: <code>
-        /// <unique identifier>
-        /// .
-        /// <region identifier>
-        /// .amazongamelift.com
-        /// </region>
-        /// </unique></code>.</p> </li>
-        /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
-        /// <unique identifier>
-        /// .compute.amazonaws.com
-        /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
-        /// </ul>
-        /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-        pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dns_name = input;
-            self
-        }
-        /// <p>Operating system that is running on this instance. </p>
+        /// <p>The type of operating system on your compute resource.</p>
         pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
             self.operating_system = Some(input);
             self
         }
-        /// <p>Operating system that is running on this instance. </p>
+        /// <p>The type of operating system on your compute resource.</p>
         pub fn set_operating_system(
             mut self,
             input: std::option::Option<crate::model::OperatingSystem>,
@@ -10657,12 +8230,12 @@ pub mod instance {
             self.operating_system = input;
             self
         }
-        /// <p>Amazon EC2 instance type that defines the computing resources of this instance. </p>
+        /// <p>Which compute type that the fleet uses. A fleet can use Anywhere compute resources owned by you or managed Amazon EC2 instances.</p>
         pub fn r#type(mut self, input: crate::model::Ec2InstanceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Amazon EC2 instance type that defines the computing resources of this instance. </p>
+        /// <p>Which compute type that the fleet uses. A fleet can use Anywhere compute resources owned by you or managed Amazon EC2 instances.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceType>,
@@ -10670,168 +8243,45 @@ pub mod instance {
             self.r#type = input;
             self
         }
-        /// <p>Current status of the instance. Possible statuses include the following:</p>
-        /// <ul>
-        /// <li> <p> <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration. </p> </li>
-        /// <li> <p> <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions. </p> </li>
-        /// <li> <p> <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p> </li>
-        /// </ul>
-        pub fn status(mut self, input: crate::model::InstanceStatus) -> Self {
-            self.status = Some(input);
-            self
-        }
-        /// <p>Current status of the instance. Possible statuses include the following:</p>
-        /// <ul>
-        /// <li> <p> <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration. </p> </li>
-        /// <li> <p> <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions. </p> </li>
-        /// <li> <p> <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p> </li>
-        /// </ul>
-        pub fn set_status(
+        /// <p>The endpoint connection details of the GameLift SDK endpoint that your game server connects to.</p>
+        pub fn game_lift_service_sdk_endpoint(
             mut self,
-            input: std::option::Option<crate::model::InstanceStatus>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.status = input;
+            self.game_lift_service_sdk_endpoint = Some(input.into());
             self
         }
-        /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.creation_time = Some(input);
-            self
-        }
-        /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn set_creation_time(
+        /// <p>The endpoint connection details of the GameLift SDK endpoint that your game server connects to.</p>
+        pub fn set_game_lift_service_sdk_endpoint(
             mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.creation_time = input;
+            self.game_lift_service_sdk_endpoint = input;
             self
         }
-        /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-            self.location = Some(input.into());
-            self
-        }
-        /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Instance`](crate::model::Instance).
-        pub fn build(self) -> crate::model::Instance {
-            crate::model::Instance {
+        /// Consumes the builder and constructs a [`Compute`](crate::model::Compute).
+        pub fn build(self) -> crate::model::Compute {
+            crate::model::Compute {
                 fleet_id: self.fleet_id,
                 fleet_arn: self.fleet_arn,
-                instance_id: self.instance_id,
+                compute_name: self.compute_name,
+                compute_arn: self.compute_arn,
                 ip_address: self.ip_address,
                 dns_name: self.dns_name,
+                compute_status: self.compute_status,
+                location: self.location,
+                creation_time: self.creation_time,
                 operating_system: self.operating_system,
                 r#type: self.r#type,
-                status: self.status,
-                creation_time: self.creation_time,
-                location: self.location,
+                game_lift_service_sdk_endpoint: self.game_lift_service_sdk_endpoint,
             }
         }
     }
 }
-impl Instance {
-    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
-    pub fn builder() -> crate::model::instance::Builder {
-        crate::model::instance::Builder::default()
-    }
-}
-
-/// When writing a match expression against `InstanceStatus`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let instancestatus = unimplemented!();
-/// match instancestatus {
-///     InstanceStatus::Active => { /* ... */ },
-///     InstanceStatus::Pending => { /* ... */ },
-///     InstanceStatus::Terminating => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `instancestatus` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `InstanceStatus::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `InstanceStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `InstanceStatus::NewFeature` is defined.
-/// Specifically, when `instancestatus` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `InstanceStatus::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum InstanceStatus {
-    #[allow(missing_docs)] // documentation missing in model
-    Active,
-    #[allow(missing_docs)] // documentation missing in model
-    Pending,
-    #[allow(missing_docs)] // documentation missing in model
-    Terminating,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for InstanceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => InstanceStatus::Active,
-            "PENDING" => InstanceStatus::Pending,
-            "TERMINATING" => InstanceStatus::Terminating,
-            other => InstanceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for InstanceStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceStatus::from(s))
-    }
-}
-impl InstanceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InstanceStatus::Active => "ACTIVE",
-            InstanceStatus::Pending => "PENDING",
-            InstanceStatus::Terminating => "TERMINATING",
-            InstanceStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "PENDING", "TERMINATING"]
-    }
-}
-impl AsRef<str> for InstanceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
+impl Compute {
+    /// Creates a new builder-style object to manufacture [`Compute`](crate::model::Compute).
+    pub fn builder() -> crate::model::compute::Builder {
+        crate::model::compute::Builder::default()
     }
 }
 
@@ -11600,6 +9050,3150 @@ impl AsRef<str> for Ec2InstanceType {
     }
 }
 
+/// When writing a match expression against `ComputeStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let computestatus = unimplemented!();
+/// match computestatus {
+///     ComputeStatus::Active => { /* ... */ },
+///     ComputeStatus::Pending => { /* ... */ },
+///     ComputeStatus::Terminating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `computestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ComputeStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ComputeStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ComputeStatus::NewFeature` is defined.
+/// Specifically, when `computestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ComputeStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ComputeStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Terminating,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ComputeStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => ComputeStatus::Active,
+            "PENDING" => ComputeStatus::Pending,
+            "TERMINATING" => ComputeStatus::Terminating,
+            other => ComputeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ComputeStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ComputeStatus::from(s))
+    }
+}
+impl ComputeStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ComputeStatus::Active => "ACTIVE",
+            ComputeStatus::Pending => "PENDING",
+            ComputeStatus::Terminating => "TERMINATING",
+            ComputeStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ACTIVE", "PENDING", "TERMINATING"]
+    }
+}
+impl AsRef<str> for ComputeStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Settings for a target-based scaling policy. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TargetConfiguration {
+    /// <p>Desired value to use with a target-based scaling policy. The value must be relevant for whatever metric the scaling policy is using. For example, in a policy using the metric PercentAvailableGameSessions, the target value should be the preferred size of the fleet's buffer (the percent of capacity that should be idle and ready for new game sessions).</p>
+    #[doc(hidden)]
+    pub target_value: f64,
+}
+impl TargetConfiguration {
+    /// <p>Desired value to use with a target-based scaling policy. The value must be relevant for whatever metric the scaling policy is using. For example, in a policy using the metric PercentAvailableGameSessions, the target value should be the preferred size of the fleet's buffer (the percent of capacity that should be idle and ready for new game sessions).</p>
+    pub fn target_value(&self) -> f64 {
+        self.target_value
+    }
+}
+/// See [`TargetConfiguration`](crate::model::TargetConfiguration).
+pub mod target_configuration {
+
+    /// A builder for [`TargetConfiguration`](crate::model::TargetConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) target_value: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>Desired value to use with a target-based scaling policy. The value must be relevant for whatever metric the scaling policy is using. For example, in a policy using the metric PercentAvailableGameSessions, the target value should be the preferred size of the fleet's buffer (the percent of capacity that should be idle and ready for new game sessions).</p>
+        pub fn target_value(mut self, input: f64) -> Self {
+            self.target_value = Some(input);
+            self
+        }
+        /// <p>Desired value to use with a target-based scaling policy. The value must be relevant for whatever metric the scaling policy is using. For example, in a policy using the metric PercentAvailableGameSessions, the target value should be the preferred size of the fleet's buffer (the percent of capacity that should be idle and ready for new game sessions).</p>
+        pub fn set_target_value(mut self, input: std::option::Option<f64>) -> Self {
+            self.target_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TargetConfiguration`](crate::model::TargetConfiguration).
+        pub fn build(self) -> crate::model::TargetConfiguration {
+            crate::model::TargetConfiguration {
+                target_value: self.target_value.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl TargetConfiguration {
+    /// Creates a new builder-style object to manufacture [`TargetConfiguration`](crate::model::TargetConfiguration).
+    pub fn builder() -> crate::model::target_configuration::Builder {
+        crate::model::target_configuration::Builder::default()
+    }
+}
+
+/// When writing a match expression against `PolicyType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let policytype = unimplemented!();
+/// match policytype {
+///     PolicyType::RuleBased => { /* ... */ },
+///     PolicyType::TargetBased => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `policytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PolicyType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PolicyType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PolicyType::NewFeature` is defined.
+/// Specifically, when `policytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PolicyType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PolicyType {
+    #[allow(missing_docs)] // documentation missing in model
+    RuleBased,
+    #[allow(missing_docs)] // documentation missing in model
+    TargetBased,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for PolicyType {
+    fn from(s: &str) -> Self {
+        match s {
+            "RuleBased" => PolicyType::RuleBased,
+            "TargetBased" => PolicyType::TargetBased,
+            other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for PolicyType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PolicyType::from(s))
+    }
+}
+impl PolicyType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PolicyType::RuleBased => "RuleBased",
+            PolicyType::TargetBased => "TargetBased",
+            PolicyType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["RuleBased", "TargetBased"]
+    }
+}
+impl AsRef<str> for PolicyType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `MetricName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let metricname = unimplemented!();
+/// match metricname {
+///     MetricName::ActivatingGameSessions => { /* ... */ },
+///     MetricName::ActiveGameSessions => { /* ... */ },
+///     MetricName::ActiveInstances => { /* ... */ },
+///     MetricName::AvailableGameSessions => { /* ... */ },
+///     MetricName::AvailablePlayerSessions => { /* ... */ },
+///     MetricName::ConcurrentActivatableGameSessions => { /* ... */ },
+///     MetricName::CurrentPlayerSessions => { /* ... */ },
+///     MetricName::IdleInstances => { /* ... */ },
+///     MetricName::PercentAvailableGameSessions => { /* ... */ },
+///     MetricName::PercentIdleInstances => { /* ... */ },
+///     MetricName::QueueDepth => { /* ... */ },
+///     MetricName::WaitTime => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `metricname` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MetricName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MetricName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MetricName::NewFeature` is defined.
+/// Specifically, when `metricname` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MetricName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MetricName {
+    #[allow(missing_docs)] // documentation missing in model
+    ActivatingGameSessions,
+    #[allow(missing_docs)] // documentation missing in model
+    ActiveGameSessions,
+    #[allow(missing_docs)] // documentation missing in model
+    ActiveInstances,
+    #[allow(missing_docs)] // documentation missing in model
+    AvailableGameSessions,
+    #[allow(missing_docs)] // documentation missing in model
+    AvailablePlayerSessions,
+    #[allow(missing_docs)] // documentation missing in model
+    ConcurrentActivatableGameSessions,
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentPlayerSessions,
+    #[allow(missing_docs)] // documentation missing in model
+    IdleInstances,
+    #[allow(missing_docs)] // documentation missing in model
+    PercentAvailableGameSessions,
+    #[allow(missing_docs)] // documentation missing in model
+    PercentIdleInstances,
+    #[allow(missing_docs)] // documentation missing in model
+    QueueDepth,
+    #[allow(missing_docs)] // documentation missing in model
+    WaitTime,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for MetricName {
+    fn from(s: &str) -> Self {
+        match s {
+            "ActivatingGameSessions" => MetricName::ActivatingGameSessions,
+            "ActiveGameSessions" => MetricName::ActiveGameSessions,
+            "ActiveInstances" => MetricName::ActiveInstances,
+            "AvailableGameSessions" => MetricName::AvailableGameSessions,
+            "AvailablePlayerSessions" => MetricName::AvailablePlayerSessions,
+            "ConcurrentActivatableGameSessions" => MetricName::ConcurrentActivatableGameSessions,
+            "CurrentPlayerSessions" => MetricName::CurrentPlayerSessions,
+            "IdleInstances" => MetricName::IdleInstances,
+            "PercentAvailableGameSessions" => MetricName::PercentAvailableGameSessions,
+            "PercentIdleInstances" => MetricName::PercentIdleInstances,
+            "QueueDepth" => MetricName::QueueDepth,
+            "WaitTime" => MetricName::WaitTime,
+            other => MetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for MetricName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MetricName::from(s))
+    }
+}
+impl MetricName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MetricName::ActivatingGameSessions => "ActivatingGameSessions",
+            MetricName::ActiveGameSessions => "ActiveGameSessions",
+            MetricName::ActiveInstances => "ActiveInstances",
+            MetricName::AvailableGameSessions => "AvailableGameSessions",
+            MetricName::AvailablePlayerSessions => "AvailablePlayerSessions",
+            MetricName::ConcurrentActivatableGameSessions => "ConcurrentActivatableGameSessions",
+            MetricName::CurrentPlayerSessions => "CurrentPlayerSessions",
+            MetricName::IdleInstances => "IdleInstances",
+            MetricName::PercentAvailableGameSessions => "PercentAvailableGameSessions",
+            MetricName::PercentIdleInstances => "PercentIdleInstances",
+            MetricName::QueueDepth => "QueueDepth",
+            MetricName::WaitTime => "WaitTime",
+            MetricName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ActivatingGameSessions",
+            "ActiveGameSessions",
+            "ActiveInstances",
+            "AvailableGameSessions",
+            "AvailablePlayerSessions",
+            "ConcurrentActivatableGameSessions",
+            "CurrentPlayerSessions",
+            "IdleInstances",
+            "PercentAvailableGameSessions",
+            "PercentIdleInstances",
+            "QueueDepth",
+            "WaitTime",
+        ]
+    }
+}
+impl AsRef<str> for MetricName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `ComparisonOperatorType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let comparisonoperatortype = unimplemented!();
+/// match comparisonoperatortype {
+///     ComparisonOperatorType::GreaterThanOrEqualToThreshold => { /* ... */ },
+///     ComparisonOperatorType::GreaterThanThreshold => { /* ... */ },
+///     ComparisonOperatorType::LessThanOrEqualToThreshold => { /* ... */ },
+///     ComparisonOperatorType::LessThanThreshold => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `comparisonoperatortype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ComparisonOperatorType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ComparisonOperatorType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ComparisonOperatorType::NewFeature` is defined.
+/// Specifically, when `comparisonoperatortype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ComparisonOperatorType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ComparisonOperatorType {
+    #[allow(missing_docs)] // documentation missing in model
+    GreaterThanOrEqualToThreshold,
+    #[allow(missing_docs)] // documentation missing in model
+    GreaterThanThreshold,
+    #[allow(missing_docs)] // documentation missing in model
+    LessThanOrEqualToThreshold,
+    #[allow(missing_docs)] // documentation missing in model
+    LessThanThreshold,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ComparisonOperatorType {
+    fn from(s: &str) -> Self {
+        match s {
+            "GreaterThanOrEqualToThreshold" => {
+                ComparisonOperatorType::GreaterThanOrEqualToThreshold
+            }
+            "GreaterThanThreshold" => ComparisonOperatorType::GreaterThanThreshold,
+            "LessThanOrEqualToThreshold" => ComparisonOperatorType::LessThanOrEqualToThreshold,
+            "LessThanThreshold" => ComparisonOperatorType::LessThanThreshold,
+            other => {
+                ComparisonOperatorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for ComparisonOperatorType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ComparisonOperatorType::from(s))
+    }
+}
+impl ComparisonOperatorType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ComparisonOperatorType::GreaterThanOrEqualToThreshold => {
+                "GreaterThanOrEqualToThreshold"
+            }
+            ComparisonOperatorType::GreaterThanThreshold => "GreaterThanThreshold",
+            ComparisonOperatorType::LessThanOrEqualToThreshold => "LessThanOrEqualToThreshold",
+            ComparisonOperatorType::LessThanThreshold => "LessThanThreshold",
+            ComparisonOperatorType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "GreaterThanOrEqualToThreshold",
+            "GreaterThanThreshold",
+            "LessThanOrEqualToThreshold",
+            "LessThanThreshold",
+        ]
+    }
+}
+impl AsRef<str> for ComparisonOperatorType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `ScalingAdjustmentType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let scalingadjustmenttype = unimplemented!();
+/// match scalingadjustmenttype {
+///     ScalingAdjustmentType::ChangeInCapacity => { /* ... */ },
+///     ScalingAdjustmentType::ExactCapacity => { /* ... */ },
+///     ScalingAdjustmentType::PercentChangeInCapacity => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `scalingadjustmenttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ScalingAdjustmentType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ScalingAdjustmentType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ScalingAdjustmentType::NewFeature` is defined.
+/// Specifically, when `scalingadjustmenttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ScalingAdjustmentType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ScalingAdjustmentType {
+    #[allow(missing_docs)] // documentation missing in model
+    ChangeInCapacity,
+    #[allow(missing_docs)] // documentation missing in model
+    ExactCapacity,
+    #[allow(missing_docs)] // documentation missing in model
+    PercentChangeInCapacity,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ScalingAdjustmentType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ChangeInCapacity" => ScalingAdjustmentType::ChangeInCapacity,
+            "ExactCapacity" => ScalingAdjustmentType::ExactCapacity,
+            "PercentChangeInCapacity" => ScalingAdjustmentType::PercentChangeInCapacity,
+            other => {
+                ScalingAdjustmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for ScalingAdjustmentType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScalingAdjustmentType::from(s))
+    }
+}
+impl ScalingAdjustmentType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScalingAdjustmentType::ChangeInCapacity => "ChangeInCapacity",
+            ScalingAdjustmentType::ExactCapacity => "ExactCapacity",
+            ScalingAdjustmentType::PercentChangeInCapacity => "PercentChangeInCapacity",
+            ScalingAdjustmentType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ChangeInCapacity",
+            "ExactCapacity",
+            "PercentChangeInCapacity",
+        ]
+    }
+}
+impl AsRef<str> for ScalingAdjustmentType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Properties of a location</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LocationModel {
+    /// <p>The location's name.</p>
+    #[doc(hidden)]
+    pub location_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift location resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+    /// </region></code>.</p>
+    #[doc(hidden)]
+    pub location_arn: std::option::Option<std::string::String>,
+}
+impl LocationModel {
+    /// <p>The location's name.</p>
+    pub fn location_name(&self) -> std::option::Option<&str> {
+        self.location_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift location resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+    /// </region></code>.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+}
+/// See [`LocationModel`](crate::model::LocationModel).
+pub mod location_model {
+
+    /// A builder for [`LocationModel`](crate::model::LocationModel).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) location_name: std::option::Option<std::string::String>,
+        pub(crate) location_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The location's name.</p>
+        pub fn location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_name = Some(input.into());
+            self
+        }
+        /// <p>The location's name.</p>
+        pub fn set_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.location_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift location resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+        /// </region></code>.</p>
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift location resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+        /// </region></code>.</p>
+        pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LocationModel`](crate::model::LocationModel).
+        pub fn build(self) -> crate::model::LocationModel {
+            crate::model::LocationModel {
+                location_name: self.location_name,
+                location_arn: self.location_arn,
+            }
+        }
+    }
+}
+impl LocationModel {
+    /// Creates a new builder-style object to manufacture [`LocationModel`](crate::model::LocationModel).
+    pub fn builder() -> crate::model::location_model::Builder {
+        crate::model::location_model::Builder::default()
+    }
+}
+
+/// When writing a match expression against `LocationFilter`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let locationfilter = unimplemented!();
+/// match locationfilter {
+///     LocationFilter::Aws => { /* ... */ },
+///     LocationFilter::Custom => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `locationfilter` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LocationFilter::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LocationFilter::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LocationFilter::NewFeature` is defined.
+/// Specifically, when `locationfilter` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LocationFilter::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LocationFilter {
+    #[allow(missing_docs)] // documentation missing in model
+    Aws,
+    #[allow(missing_docs)] // documentation missing in model
+    Custom,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for LocationFilter {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS" => LocationFilter::Aws,
+            "CUSTOM" => LocationFilter::Custom,
+            other => LocationFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for LocationFilter {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LocationFilter::from(s))
+    }
+}
+impl LocationFilter {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LocationFilter::Aws => "AWS",
+            LocationFilter::Custom => "CUSTOM",
+            LocationFilter::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AWS", "CUSTOM"]
+    }
+}
+impl AsRef<str> for LocationFilter {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `SortOrder`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sortorder = unimplemented!();
+/// match sortorder {
+///     SortOrder::Ascending => { /* ... */ },
+///     SortOrder::Descending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sortorder` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SortOrder::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SortOrder::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SortOrder::NewFeature` is defined.
+/// Specifically, when `sortorder` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SortOrder::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SortOrder {
+    #[allow(missing_docs)] // documentation missing in model
+    Ascending,
+    #[allow(missing_docs)] // documentation missing in model
+    Descending,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SortOrder {
+    fn from(s: &str) -> Self {
+        match s {
+            "ASCENDING" => SortOrder::Ascending,
+            "DESCENDING" => SortOrder::Descending,
+            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for SortOrder {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SortOrder::from(s))
+    }
+}
+impl SortOrder {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SortOrder::Ascending => "ASCENDING",
+            SortOrder::Descending => "DESCENDING",
+            SortOrder::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ASCENDING", "DESCENDING"]
+    }
+}
+impl AsRef<str> for SortOrder {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Information required to remotely connect to a fleet instance. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceAccess {
+    /// <p>A unique identifier for the fleet containing the instance being accessed.</p>
+    #[doc(hidden)]
+    pub fleet_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the instance being accessed.</p>
+    #[doc(hidden)]
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>IP address that is assigned to the instance.</p>
+    #[doc(hidden)]
+    pub ip_address: std::option::Option<std::string::String>,
+    /// <p>Operating system that is running on the instance.</p>
+    #[doc(hidden)]
+    pub operating_system: std::option::Option<crate::model::OperatingSystem>,
+    /// <p>Credentials required to access the instance.</p>
+    #[doc(hidden)]
+    pub credentials: std::option::Option<crate::model::InstanceCredentials>,
+}
+impl InstanceAccess {
+    /// <p>A unique identifier for the fleet containing the instance being accessed.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>A unique identifier for the instance being accessed.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>IP address that is assigned to the instance.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>Operating system that is running on the instance.</p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
+    /// <p>Credentials required to access the instance.</p>
+    pub fn credentials(&self) -> std::option::Option<&crate::model::InstanceCredentials> {
+        self.credentials.as_ref()
+    }
+}
+impl std::fmt::Debug for InstanceAccess {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceAccess");
+        formatter.field("fleet_id", &self.fleet_id);
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("ip_address", &self.ip_address);
+        formatter.field("operating_system", &self.operating_system);
+        formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`InstanceAccess`](crate::model::InstanceAccess).
+pub mod instance_access {
+
+    /// A builder for [`InstanceAccess`](crate::model::InstanceAccess).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    pub struct Builder {
+        pub(crate) fleet_id: std::option::Option<std::string::String>,
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) ip_address: std::option::Option<std::string::String>,
+        pub(crate) operating_system: std::option::Option<crate::model::OperatingSystem>,
+        pub(crate) credentials: std::option::Option<crate::model::InstanceCredentials>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the fleet containing the instance being accessed.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fleet_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the fleet containing the instance being accessed.</p>
+        pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_id = input;
+            self
+        }
+        /// <p>A unique identifier for the instance being accessed.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the instance being accessed.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>IP address that is assigned to the instance.</p>
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
+            self
+        }
+        /// <p>IP address that is assigned to the instance.</p>
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
+            self
+        }
+        /// <p>Operating system that is running on the instance.</p>
+        pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
+            self.operating_system = Some(input);
+            self
+        }
+        /// <p>Operating system that is running on the instance.</p>
+        pub fn set_operating_system(
+            mut self,
+            input: std::option::Option<crate::model::OperatingSystem>,
+        ) -> Self {
+            self.operating_system = input;
+            self
+        }
+        /// <p>Credentials required to access the instance.</p>
+        pub fn credentials(mut self, input: crate::model::InstanceCredentials) -> Self {
+            self.credentials = Some(input);
+            self
+        }
+        /// <p>Credentials required to access the instance.</p>
+        pub fn set_credentials(
+            mut self,
+            input: std::option::Option<crate::model::InstanceCredentials>,
+        ) -> Self {
+            self.credentials = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceAccess`](crate::model::InstanceAccess).
+        pub fn build(self) -> crate::model::InstanceAccess {
+            crate::model::InstanceAccess {
+                fleet_id: self.fleet_id,
+                instance_id: self.instance_id,
+                ip_address: self.ip_address,
+                operating_system: self.operating_system,
+                credentials: self.credentials,
+            }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("fleet_id", &self.fleet_id);
+            formatter.field("instance_id", &self.instance_id);
+            formatter.field("ip_address", &self.ip_address);
+            formatter.field("operating_system", &self.operating_system);
+            formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
+}
+impl InstanceAccess {
+    /// Creates a new builder-style object to manufacture [`InstanceAccess`](crate::model::InstanceAccess).
+    pub fn builder() -> crate::model::instance_access::Builder {
+        crate::model::instance_access::Builder::default()
+    }
+}
+
+/// <p>Set of credentials required to remotely access a fleet instance.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceCredentials {
+    /// <p>User login string.</p>
+    #[doc(hidden)]
+    pub user_name: std::option::Option<std::string::String>,
+    /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
+    #[doc(hidden)]
+    pub secret: std::option::Option<std::string::String>,
+}
+impl InstanceCredentials {
+    /// <p>User login string.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
+    pub fn secret(&self) -> std::option::Option<&str> {
+        self.secret.as_deref()
+    }
+}
+impl std::fmt::Debug for InstanceCredentials {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceCredentials");
+        formatter.field("user_name", &self.user_name);
+        formatter.field("secret", &self.secret);
+        formatter.finish()
+    }
+}
+/// See [`InstanceCredentials`](crate::model::InstanceCredentials).
+pub mod instance_credentials {
+
+    /// A builder for [`InstanceCredentials`](crate::model::InstanceCredentials).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    pub struct Builder {
+        pub(crate) user_name: std::option::Option<std::string::String>,
+        pub(crate) secret: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>User login string.</p>
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
+            self
+        }
+        /// <p>User login string.</p>
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
+            self
+        }
+        /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
+        pub fn secret(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret = Some(input.into());
+            self
+        }
+        /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
+        pub fn set_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceCredentials`](crate::model::InstanceCredentials).
+        pub fn build(self) -> crate::model::InstanceCredentials {
+            crate::model::InstanceCredentials {
+                user_name: self.user_name,
+                secret: self.secret,
+            }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_name", &self.user_name);
+            formatter.field("secret", &self.secret);
+            formatter.finish()
+        }
+    }
+}
+impl InstanceCredentials {
+    /// Creates a new builder-style object to manufacture [`InstanceCredentials`](crate::model::InstanceCredentials).
+    pub fn builder() -> crate::model::instance_credentials::Builder {
+        crate::model::instance_credentials::Builder::default()
+    }
+}
+
+/// <p>Represents a peering connection between a VPC on one of your Amazon Web Services accounts and the VPC for your Amazon GameLift fleets. This record may be for an active peering connection or a pending connection that has not yet been established.</p>
+/// <p> <b>Related actions</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VpcPeeringConnection {
+    /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
+    #[doc(hidden)]
+    pub fleet_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource for this connection. </p>
+    #[doc(hidden)]
+    pub fleet_arn: std::option::Option<std::string::String>,
+    /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
+    #[doc(hidden)]
+    pub ip_v4_cidr_block: std::option::Option<std::string::String>,
+    /// <p>A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering connection events, and is used when deleting a connection.</p>
+    #[doc(hidden)]
+    pub vpc_peering_connection_id: std::option::Option<std::string::String>,
+    /// <p>The status information about the connection. Status indicates if a connection is pending, successful, or failed.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::VpcPeeringConnectionStatus>,
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    #[doc(hidden)]
+    pub peer_vpc_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
+    #[doc(hidden)]
+    pub game_lift_vpc_id: std::option::Option<std::string::String>,
+}
+impl VpcPeeringConnection {
+    /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource for this connection. </p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
+    pub fn ip_v4_cidr_block(&self) -> std::option::Option<&str> {
+        self.ip_v4_cidr_block.as_deref()
+    }
+    /// <p>A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering connection events, and is used when deleting a connection.</p>
+    pub fn vpc_peering_connection_id(&self) -> std::option::Option<&str> {
+        self.vpc_peering_connection_id.as_deref()
+    }
+    /// <p>The status information about the connection. Status indicates if a connection is pending, successful, or failed.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VpcPeeringConnectionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    pub fn peer_vpc_id(&self) -> std::option::Option<&str> {
+        self.peer_vpc_id.as_deref()
+    }
+    /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
+    pub fn game_lift_vpc_id(&self) -> std::option::Option<&str> {
+        self.game_lift_vpc_id.as_deref()
+    }
+}
+/// See [`VpcPeeringConnection`](crate::model::VpcPeeringConnection).
+pub mod vpc_peering_connection {
+
+    /// A builder for [`VpcPeeringConnection`](crate::model::VpcPeeringConnection).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) fleet_id: std::option::Option<std::string::String>,
+        pub(crate) fleet_arn: std::option::Option<std::string::String>,
+        pub(crate) ip_v4_cidr_block: std::option::Option<std::string::String>,
+        pub(crate) vpc_peering_connection_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::VpcPeeringConnectionStatus>,
+        pub(crate) peer_vpc_id: std::option::Option<std::string::String>,
+        pub(crate) game_lift_vpc_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fleet_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
+        pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource for this connection. </p>
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fleet_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource for this connection. </p>
+        pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_arn = input;
+            self
+        }
+        /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
+        pub fn ip_v4_cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_v4_cidr_block = Some(input.into());
+            self
+        }
+        /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
+        pub fn set_ip_v4_cidr_block(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ip_v4_cidr_block = input;
+            self
+        }
+        /// <p>A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering connection events, and is used when deleting a connection.</p>
+        pub fn vpc_peering_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_peering_connection_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering connection events, and is used when deleting a connection.</p>
+        pub fn set_vpc_peering_connection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_peering_connection_id = input;
+            self
+        }
+        /// <p>The status information about the connection. Status indicates if a connection is pending, successful, or failed.</p>
+        pub fn status(mut self, input: crate::model::VpcPeeringConnectionStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status information about the connection. Status indicates if a connection is pending, successful, or failed.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::VpcPeeringConnectionStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.peer_vpc_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.peer_vpc_id = input;
+            self
+        }
+        /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
+        pub fn game_lift_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.game_lift_vpc_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
+        pub fn set_game_lift_vpc_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.game_lift_vpc_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcPeeringConnection`](crate::model::VpcPeeringConnection).
+        pub fn build(self) -> crate::model::VpcPeeringConnection {
+            crate::model::VpcPeeringConnection {
+                fleet_id: self.fleet_id,
+                fleet_arn: self.fleet_arn,
+                ip_v4_cidr_block: self.ip_v4_cidr_block,
+                vpc_peering_connection_id: self.vpc_peering_connection_id,
+                status: self.status,
+                peer_vpc_id: self.peer_vpc_id,
+                game_lift_vpc_id: self.game_lift_vpc_id,
+            }
+        }
+    }
+}
+impl VpcPeeringConnection {
+    /// Creates a new builder-style object to manufacture [`VpcPeeringConnection`](crate::model::VpcPeeringConnection).
+    pub fn builder() -> crate::model::vpc_peering_connection::Builder {
+        crate::model::vpc_peering_connection::Builder::default()
+    }
+}
+
+/// <p>Represents status information for a VPC peering connection. Status codes and messages are provided from EC2 (see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>). Connection status information is also communicated as a fleet event.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VpcPeeringConnectionStatus {
+    /// <p>Code indicating the status of a VPC peering connection.</p>
+    #[doc(hidden)]
+    pub code: std::option::Option<std::string::String>,
+    /// <p>Additional messaging associated with the connection status. </p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl VpcPeeringConnectionStatus {
+    /// <p>Code indicating the status of a VPC peering connection.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>Additional messaging associated with the connection status. </p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+/// See [`VpcPeeringConnectionStatus`](crate::model::VpcPeeringConnectionStatus).
+pub mod vpc_peering_connection_status {
+
+    /// A builder for [`VpcPeeringConnectionStatus`](crate::model::VpcPeeringConnectionStatus).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Code indicating the status of a VPC peering connection.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>Code indicating the status of a VPC peering connection.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>Additional messaging associated with the connection status. </p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Additional messaging associated with the connection status. </p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcPeeringConnectionStatus`](crate::model::VpcPeeringConnectionStatus).
+        pub fn build(self) -> crate::model::VpcPeeringConnectionStatus {
+            crate::model::VpcPeeringConnectionStatus {
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl VpcPeeringConnectionStatus {
+    /// Creates a new builder-style object to manufacture [`VpcPeeringConnectionStatus`](crate::model::VpcPeeringConnectionStatus).
+    pub fn builder() -> crate::model::vpc_peering_connection_status::Builder {
+        crate::model::vpc_peering_connection_status::Builder::default()
+    }
+}
+
+/// <p>Represents an authorization for a VPC peering connection between the VPC for an Amazon GameLift fleet and another VPC on an account you have access to. This authorization must exist and be valid for the peering connection to be established. Authorizations are valid for 24 hours after they are issued.</p>
+/// <p> <b>Related actions</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct VpcPeeringAuthorization {
+    /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
+    #[doc(hidden)]
+    pub game_lift_aws_account_id: std::option::Option<std::string::String>,
+    /// <p>The authorization's peer VPC Amazon Web Services account ID.</p>
+    #[doc(hidden)]
+    pub peer_vpc_aws_account_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    #[doc(hidden)]
+    pub peer_vpc_id: std::option::Option<std::string::String>,
+    /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Time stamp indicating when this authorization expires (24 hours after issuance). Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    #[doc(hidden)]
+    pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl VpcPeeringAuthorization {
+    /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
+    pub fn game_lift_aws_account_id(&self) -> std::option::Option<&str> {
+        self.game_lift_aws_account_id.as_deref()
+    }
+    /// <p>The authorization's peer VPC Amazon Web Services account ID.</p>
+    pub fn peer_vpc_aws_account_id(&self) -> std::option::Option<&str> {
+        self.peer_vpc_aws_account_id.as_deref()
+    }
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    pub fn peer_vpc_id(&self) -> std::option::Option<&str> {
+        self.peer_vpc_id.as_deref()
+    }
+    /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Time stamp indicating when this authorization expires (24 hours after issuance). Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.expiration_time.as_ref()
+    }
+}
+/// See [`VpcPeeringAuthorization`](crate::model::VpcPeeringAuthorization).
+pub mod vpc_peering_authorization {
+
+    /// A builder for [`VpcPeeringAuthorization`](crate::model::VpcPeeringAuthorization).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) game_lift_aws_account_id: std::option::Option<std::string::String>,
+        pub(crate) peer_vpc_aws_account_id: std::option::Option<std::string::String>,
+        pub(crate) peer_vpc_id: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
+        pub fn game_lift_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.game_lift_aws_account_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
+        pub fn set_game_lift_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.game_lift_aws_account_id = input;
+            self
+        }
+        /// <p>The authorization's peer VPC Amazon Web Services account ID.</p>
+        pub fn peer_vpc_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.peer_vpc_aws_account_id = Some(input.into());
+            self
+        }
+        /// <p>The authorization's peer VPC Amazon Web Services account ID.</p>
+        pub fn set_peer_vpc_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.peer_vpc_aws_account_id = input;
+            self
+        }
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.peer_vpc_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.peer_vpc_id = input;
+            self
+        }
+        /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>Time stamp indicating when this authorization expires (24 hours after issuance). Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.expiration_time = Some(input);
+            self
+        }
+        /// <p>Time stamp indicating when this authorization expires (24 hours after issuance). Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        pub fn set_expiration_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.expiration_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcPeeringAuthorization`](crate::model::VpcPeeringAuthorization).
+        pub fn build(self) -> crate::model::VpcPeeringAuthorization {
+            crate::model::VpcPeeringAuthorization {
+                game_lift_aws_account_id: self.game_lift_aws_account_id,
+                peer_vpc_aws_account_id: self.peer_vpc_aws_account_id,
+                peer_vpc_id: self.peer_vpc_id,
+                creation_time: self.creation_time,
+                expiration_time: self.expiration_time,
+            }
+        }
+    }
+}
+impl VpcPeeringAuthorization {
+    /// Creates a new builder-style object to manufacture [`VpcPeeringAuthorization`](crate::model::VpcPeeringAuthorization).
+    pub fn builder() -> crate::model::vpc_peering_authorization::Builder {
+        crate::model::vpc_peering_authorization::Builder::default()
+    }
+}
+
+/// <p>Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and fleet ID.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ScalingPolicy {
+    /// <p>A unique identifier for the fleet that is associated with this scaling policy.</p>
+    #[doc(hidden)]
+    pub fleet_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+    /// </region></code>.</p>
+    #[doc(hidden)]
+    pub fleet_arn: std::option::Option<std::string::String>,
+    /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the policy status does not change.</p>
+    /// <ul>
+    /// <li> <p> <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p> </li>
+    /// <li> <p> <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
+    /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
+    /// <li> <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
+    /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
+    /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
+    /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::ScalingStatusType>,
+    /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
+    #[doc(hidden)]
+    pub scaling_adjustment: i32,
+    /// <p>The type of adjustment to make to a fleet's instance count.</p>
+    /// <ul>
+    /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
+    /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
+    /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub scaling_adjustment_type: std::option::Option<crate::model::ScalingAdjustmentType>,
+    /// <p>Comparison operator to use when measuring a metric against the threshold value.</p>
+    #[doc(hidden)]
+    pub comparison_operator: std::option::Option<crate::model::ComparisonOperatorType>,
+    /// <p>Metric value used to trigger a scaling event.</p>
+    #[doc(hidden)]
+    pub threshold: f64,
+    /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
+    #[doc(hidden)]
+    pub evaluation_periods: std::option::Option<i32>,
+    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+    /// <ul>
+    /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
+    /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
+    /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
+    /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
+    /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
+    /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
+    /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
+    /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
+    /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
+    /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
+    /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub metric_name: std::option::Option<crate::model::MetricName>,
+    /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
+    #[doc(hidden)]
+    pub policy_type: std::option::Option<crate::model::PolicyType>,
+    /// <p>An object that contains settings for a target-based scaling policy.</p>
+    #[doc(hidden)]
+    pub target_configuration: std::option::Option<crate::model::TargetConfiguration>,
+    /// <p>The current status of the fleet's scaling policies in a requested fleet location. The status <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
+    #[doc(hidden)]
+    pub update_status: std::option::Option<crate::model::LocationUpdateStatus>,
+    /// <p> The fleet location. </p>
+    #[doc(hidden)]
+    pub location: std::option::Option<std::string::String>,
+}
+impl ScalingPolicy {
+    /// <p>A unique identifier for the fleet that is associated with this scaling policy.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+    /// </region></code>.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the policy status does not change.</p>
+    /// <ul>
+    /// <li> <p> <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p> </li>
+    /// <li> <p> <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
+    /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
+    /// <li> <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
+    /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
+    /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
+    /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::ScalingStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
+    pub fn scaling_adjustment(&self) -> i32 {
+        self.scaling_adjustment
+    }
+    /// <p>The type of adjustment to make to a fleet's instance count.</p>
+    /// <ul>
+    /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
+    /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
+    /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p> </li>
+    /// </ul>
+    pub fn scaling_adjustment_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ScalingAdjustmentType> {
+        self.scaling_adjustment_type.as_ref()
+    }
+    /// <p>Comparison operator to use when measuring a metric against the threshold value.</p>
+    pub fn comparison_operator(
+        &self,
+    ) -> std::option::Option<&crate::model::ComparisonOperatorType> {
+        self.comparison_operator.as_ref()
+    }
+    /// <p>Metric value used to trigger a scaling event.</p>
+    pub fn threshold(&self) -> f64 {
+        self.threshold
+    }
+    /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
+    pub fn evaluation_periods(&self) -> std::option::Option<i32> {
+        self.evaluation_periods
+    }
+    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+    /// <ul>
+    /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
+    /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
+    /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
+    /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
+    /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
+    /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
+    /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
+    /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
+    /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
+    /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
+    /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
+    /// </ul>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::MetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
+    pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyType> {
+        self.policy_type.as_ref()
+    }
+    /// <p>An object that contains settings for a target-based scaling policy.</p>
+    pub fn target_configuration(&self) -> std::option::Option<&crate::model::TargetConfiguration> {
+        self.target_configuration.as_ref()
+    }
+    /// <p>The current status of the fleet's scaling policies in a requested fleet location. The status <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
+    pub fn update_status(&self) -> std::option::Option<&crate::model::LocationUpdateStatus> {
+        self.update_status.as_ref()
+    }
+    /// <p> The fleet location. </p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+}
+/// See [`ScalingPolicy`](crate::model::ScalingPolicy).
+pub mod scaling_policy {
+
+    /// A builder for [`ScalingPolicy`](crate::model::ScalingPolicy).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) fleet_id: std::option::Option<std::string::String>,
+        pub(crate) fleet_arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::ScalingStatusType>,
+        pub(crate) scaling_adjustment: std::option::Option<i32>,
+        pub(crate) scaling_adjustment_type:
+            std::option::Option<crate::model::ScalingAdjustmentType>,
+        pub(crate) comparison_operator: std::option::Option<crate::model::ComparisonOperatorType>,
+        pub(crate) threshold: std::option::Option<f64>,
+        pub(crate) evaluation_periods: std::option::Option<i32>,
+        pub(crate) metric_name: std::option::Option<crate::model::MetricName>,
+        pub(crate) policy_type: std::option::Option<crate::model::PolicyType>,
+        pub(crate) target_configuration: std::option::Option<crate::model::TargetConfiguration>,
+        pub(crate) update_status: std::option::Option<crate::model::LocationUpdateStatus>,
+        pub(crate) location: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the fleet that is associated with this scaling policy.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fleet_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the fleet that is associated with this scaling policy.</p>
+        pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+        /// </region></code>.</p>
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fleet_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+        /// </region></code>.</p>
+        pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_arn = input;
+            self
+        }
+        /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the policy status does not change.</p>
+        /// <ul>
+        /// <li> <p> <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p> </li>
+        /// <li> <p> <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
+        /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
+        /// <li> <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
+        /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
+        /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
+        /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::ScalingStatusType) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the policy status does not change.</p>
+        /// <ul>
+        /// <li> <p> <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p> </li>
+        /// <li> <p> <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
+        /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
+        /// <li> <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
+        /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
+        /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
+        /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
+        /// </ul>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ScalingStatusType>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
+        pub fn scaling_adjustment(mut self, input: i32) -> Self {
+            self.scaling_adjustment = Some(input);
+            self
+        }
+        /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
+        pub fn set_scaling_adjustment(mut self, input: std::option::Option<i32>) -> Self {
+            self.scaling_adjustment = input;
+            self
+        }
+        /// <p>The type of adjustment to make to a fleet's instance count.</p>
+        /// <ul>
+        /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
+        /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
+        /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p> </li>
+        /// </ul>
+        pub fn scaling_adjustment_type(
+            mut self,
+            input: crate::model::ScalingAdjustmentType,
+        ) -> Self {
+            self.scaling_adjustment_type = Some(input);
+            self
+        }
+        /// <p>The type of adjustment to make to a fleet's instance count.</p>
+        /// <ul>
+        /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
+        /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
+        /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p> </li>
+        /// </ul>
+        pub fn set_scaling_adjustment_type(
+            mut self,
+            input: std::option::Option<crate::model::ScalingAdjustmentType>,
+        ) -> Self {
+            self.scaling_adjustment_type = input;
+            self
+        }
+        /// <p>Comparison operator to use when measuring a metric against the threshold value.</p>
+        pub fn comparison_operator(mut self, input: crate::model::ComparisonOperatorType) -> Self {
+            self.comparison_operator = Some(input);
+            self
+        }
+        /// <p>Comparison operator to use when measuring a metric against the threshold value.</p>
+        pub fn set_comparison_operator(
+            mut self,
+            input: std::option::Option<crate::model::ComparisonOperatorType>,
+        ) -> Self {
+            self.comparison_operator = input;
+            self
+        }
+        /// <p>Metric value used to trigger a scaling event.</p>
+        pub fn threshold(mut self, input: f64) -> Self {
+            self.threshold = Some(input);
+            self
+        }
+        /// <p>Metric value used to trigger a scaling event.</p>
+        pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
+            self.threshold = input;
+            self
+        }
+        /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
+        pub fn evaluation_periods(mut self, input: i32) -> Self {
+            self.evaluation_periods = Some(input);
+            self
+        }
+        /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
+        pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
+            self.evaluation_periods = input;
+            self
+        }
+        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+        /// <ul>
+        /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
+        /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
+        /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
+        /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
+        /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
+        /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
+        /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
+        /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
+        /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
+        /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
+        /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
+        /// </ul>
+        pub fn metric_name(mut self, input: crate::model::MetricName) -> Self {
+            self.metric_name = Some(input);
+            self
+        }
+        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+        /// <ul>
+        /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
+        /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
+        /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
+        /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
+        /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
+        /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
+        /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
+        /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
+        /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
+        /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
+        /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
+        /// </ul>
+        pub fn set_metric_name(
+            mut self,
+            input: std::option::Option<crate::model::MetricName>,
+        ) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
+        pub fn policy_type(mut self, input: crate::model::PolicyType) -> Self {
+            self.policy_type = Some(input);
+            self
+        }
+        /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
+        pub fn set_policy_type(
+            mut self,
+            input: std::option::Option<crate::model::PolicyType>,
+        ) -> Self {
+            self.policy_type = input;
+            self
+        }
+        /// <p>An object that contains settings for a target-based scaling policy.</p>
+        pub fn target_configuration(mut self, input: crate::model::TargetConfiguration) -> Self {
+            self.target_configuration = Some(input);
+            self
+        }
+        /// <p>An object that contains settings for a target-based scaling policy.</p>
+        pub fn set_target_configuration(
+            mut self,
+            input: std::option::Option<crate::model::TargetConfiguration>,
+        ) -> Self {
+            self.target_configuration = input;
+            self
+        }
+        /// <p>The current status of the fleet's scaling policies in a requested fleet location. The status <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
+        pub fn update_status(mut self, input: crate::model::LocationUpdateStatus) -> Self {
+            self.update_status = Some(input);
+            self
+        }
+        /// <p>The current status of the fleet's scaling policies in a requested fleet location. The status <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
+        pub fn set_update_status(
+            mut self,
+            input: std::option::Option<crate::model::LocationUpdateStatus>,
+        ) -> Self {
+            self.update_status = input;
+            self
+        }
+        /// <p> The fleet location. </p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
+            self
+        }
+        /// <p> The fleet location. </p>
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScalingPolicy`](crate::model::ScalingPolicy).
+        pub fn build(self) -> crate::model::ScalingPolicy {
+            crate::model::ScalingPolicy {
+                fleet_id: self.fleet_id,
+                fleet_arn: self.fleet_arn,
+                name: self.name,
+                status: self.status,
+                scaling_adjustment: self.scaling_adjustment.unwrap_or_default(),
+                scaling_adjustment_type: self.scaling_adjustment_type,
+                comparison_operator: self.comparison_operator,
+                threshold: self.threshold.unwrap_or_default(),
+                evaluation_periods: self.evaluation_periods,
+                metric_name: self.metric_name,
+                policy_type: self.policy_type,
+                target_configuration: self.target_configuration,
+                update_status: self.update_status,
+                location: self.location,
+            }
+        }
+    }
+}
+impl ScalingPolicy {
+    /// Creates a new builder-style object to manufacture [`ScalingPolicy`](crate::model::ScalingPolicy).
+    pub fn builder() -> crate::model::scaling_policy::Builder {
+        crate::model::scaling_policy::Builder::default()
+    }
+}
+
+/// When writing a match expression against `LocationUpdateStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let locationupdatestatus = unimplemented!();
+/// match locationupdatestatus {
+///     LocationUpdateStatus::PendingUpdate => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `locationupdatestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LocationUpdateStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LocationUpdateStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LocationUpdateStatus::NewFeature` is defined.
+/// Specifically, when `locationupdatestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LocationUpdateStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LocationUpdateStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    PendingUpdate,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for LocationUpdateStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "PENDING_UPDATE" => LocationUpdateStatus::PendingUpdate,
+            other => {
+                LocationUpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for LocationUpdateStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LocationUpdateStatus::from(s))
+    }
+}
+impl LocationUpdateStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LocationUpdateStatus::PendingUpdate => "PENDING_UPDATE",
+            LocationUpdateStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["PENDING_UPDATE"]
+    }
+}
+impl AsRef<str> for LocationUpdateStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `ScalingStatusType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let scalingstatustype = unimplemented!();
+/// match scalingstatustype {
+///     ScalingStatusType::Active => { /* ... */ },
+///     ScalingStatusType::Deleted => { /* ... */ },
+///     ScalingStatusType::DeleteRequested => { /* ... */ },
+///     ScalingStatusType::Deleting => { /* ... */ },
+///     ScalingStatusType::Error => { /* ... */ },
+///     ScalingStatusType::UpdateRequested => { /* ... */ },
+///     ScalingStatusType::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `scalingstatustype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ScalingStatusType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ScalingStatusType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ScalingStatusType::NewFeature` is defined.
+/// Specifically, when `scalingstatustype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ScalingStatusType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ScalingStatusType {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleted,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteRequested,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateRequested,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ScalingStatusType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => ScalingStatusType::Active,
+            "DELETED" => ScalingStatusType::Deleted,
+            "DELETE_REQUESTED" => ScalingStatusType::DeleteRequested,
+            "DELETING" => ScalingStatusType::Deleting,
+            "ERROR" => ScalingStatusType::Error,
+            "UPDATE_REQUESTED" => ScalingStatusType::UpdateRequested,
+            "UPDATING" => ScalingStatusType::Updating,
+            other => {
+                ScalingStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for ScalingStatusType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScalingStatusType::from(s))
+    }
+}
+impl ScalingStatusType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScalingStatusType::Active => "ACTIVE",
+            ScalingStatusType::Deleted => "DELETED",
+            ScalingStatusType::DeleteRequested => "DELETE_REQUESTED",
+            ScalingStatusType::Deleting => "DELETING",
+            ScalingStatusType::Error => "ERROR",
+            ScalingStatusType::UpdateRequested => "UPDATE_REQUESTED",
+            ScalingStatusType::Updating => "UPDATING",
+            ScalingStatusType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "DELETED",
+            "DELETE_REQUESTED",
+            "DELETING",
+            "ERROR",
+            "UPDATE_REQUESTED",
+            "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for ScalingStatusType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Represents a player session. Player sessions are created either for a specific game session, or as part of a game session placement or matchmaking request. A player session can represents a reserved player slot in a game session (when status is <code>RESERVED</code>) or actual player activity in a game session (when status is <code>ACTIVE</code>). A player session object, including player data, is automatically passed to a game session when the player connects to the game session and is validated. After the game session ends, player sessions information is retained for 30 days and then removed.</p>
+/// <p> <b>Related actions</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PlayerSession {
+    /// <p>A unique identifier for a player session.</p>
+    #[doc(hidden)]
+    pub player_session_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for a player that is associated with this player session.</p>
+    #[doc(hidden)]
+    pub player_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the game session that the player session is connected to.</p>
+    #[doc(hidden)]
+    pub game_session_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the fleet that the player's game session is running on.</p>
+    #[doc(hidden)]
+    pub fleet_id: std::option::Option<std::string::String>,
+    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that the player's game session is running on. </p>
+    #[doc(hidden)]
+    pub fleet_arn: std::option::Option<std::string::String>,
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    #[doc(hidden)]
+    pub termination_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Current status of the player session.</p>
+    /// <p>Possible player session statuses include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
+    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
+    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
+    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::PlayerSessionStatus>,
+    /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
+    #[doc(hidden)]
+    pub ip_address: std::option::Option<std::string::String>,
+    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
+    /// <ul>
+    /// <li> <p>TLS-enabled fleets: <code>
+    /// <unique identifier>
+    /// .
+    /// <region identifier>
+    /// .amazongamelift.com
+    /// </region>
+    /// </unique></code>.</p> </li>
+    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+    /// <unique identifier>
+    /// .compute.amazonaws.com
+    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
+    /// </ul>
+    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+    #[doc(hidden)]
+    pub dns_name: std::option::Option<std::string::String>,
+    /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
+    #[doc(hidden)]
+    pub port: std::option::Option<i32>,
+    /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game. </p>
+    #[doc(hidden)]
+    pub player_data: std::option::Option<std::string::String>,
+}
+impl PlayerSession {
+    /// <p>A unique identifier for a player session.</p>
+    pub fn player_session_id(&self) -> std::option::Option<&str> {
+        self.player_session_id.as_deref()
+    }
+    /// <p>A unique identifier for a player that is associated with this player session.</p>
+    pub fn player_id(&self) -> std::option::Option<&str> {
+        self.player_id.as_deref()
+    }
+    /// <p>A unique identifier for the game session that the player session is connected to.</p>
+    pub fn game_session_id(&self) -> std::option::Option<&str> {
+        self.game_session_id.as_deref()
+    }
+    /// <p>A unique identifier for the fleet that the player's game session is running on.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that the player's game session is running on. </p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn termination_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.termination_time.as_ref()
+    }
+    /// <p>Current status of the player session.</p>
+    /// <p>Possible player session statuses include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
+    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
+    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
+    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::PlayerSessionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
+    /// <ul>
+    /// <li> <p>TLS-enabled fleets: <code>
+    /// <unique identifier>
+    /// .
+    /// <region identifier>
+    /// .amazongamelift.com
+    /// </region>
+    /// </unique></code>.</p> </li>
+    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+    /// <unique identifier>
+    /// .compute.amazonaws.com
+    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
+    /// </ul>
+    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game. </p>
+    pub fn player_data(&self) -> std::option::Option<&str> {
+        self.player_data.as_deref()
+    }
+}
+/// See [`PlayerSession`](crate::model::PlayerSession).
+pub mod player_session {
+
+    /// A builder for [`PlayerSession`](crate::model::PlayerSession).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) player_session_id: std::option::Option<std::string::String>,
+        pub(crate) player_id: std::option::Option<std::string::String>,
+        pub(crate) game_session_id: std::option::Option<std::string::String>,
+        pub(crate) fleet_id: std::option::Option<std::string::String>,
+        pub(crate) fleet_arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) termination_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) status: std::option::Option<crate::model::PlayerSessionStatus>,
+        pub(crate) ip_address: std::option::Option<std::string::String>,
+        pub(crate) dns_name: std::option::Option<std::string::String>,
+        pub(crate) port: std::option::Option<i32>,
+        pub(crate) player_data: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for a player session.</p>
+        pub fn player_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.player_session_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for a player session.</p>
+        pub fn set_player_session_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.player_session_id = input;
+            self
+        }
+        /// <p>A unique identifier for a player that is associated with this player session.</p>
+        pub fn player_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.player_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for a player that is associated with this player session.</p>
+        pub fn set_player_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.player_id = input;
+            self
+        }
+        /// <p>A unique identifier for the game session that the player session is connected to.</p>
+        pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.game_session_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the game session that the player session is connected to.</p>
+        pub fn set_game_session_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.game_session_id = input;
+            self
+        }
+        /// <p>A unique identifier for the fleet that the player's game session is running on.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fleet_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the fleet that the player's game session is running on.</p>
+        pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_id = input;
+            self
+        }
+        /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that the player's game session is running on. </p>
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fleet_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that the player's game session is running on. </p>
+        pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_arn = input;
+            self
+        }
+        /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        pub fn termination_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.termination_time = Some(input);
+            self
+        }
+        /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        pub fn set_termination_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.termination_time = input;
+            self
+        }
+        /// <p>Current status of the player session.</p>
+        /// <p>Possible player session statuses include the following:</p>
+        /// <ul>
+        /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
+        /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
+        /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
+        /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::PlayerSessionStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Current status of the player session.</p>
+        /// <p>Possible player session statuses include the following:</p>
+        /// <ul>
+        /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
+        /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
+        /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
+        /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
+        /// </ul>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::PlayerSessionStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
+            self
+        }
+        /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
+            self
+        }
+        /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
+        /// <ul>
+        /// <li> <p>TLS-enabled fleets: <code>
+        /// <unique identifier>
+        /// .
+        /// <region identifier>
+        /// .amazongamelift.com
+        /// </region>
+        /// </unique></code>.</p> </li>
+        /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+        /// <unique identifier>
+        /// .compute.amazonaws.com
+        /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
+        /// </ul>
+        /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+        pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dns_name = Some(input.into());
+            self
+        }
+        /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
+        /// <ul>
+        /// <li> <p>TLS-enabled fleets: <code>
+        /// <unique identifier>
+        /// .
+        /// <region identifier>
+        /// .amazongamelift.com
+        /// </region>
+        /// </unique></code>.</p> </li>
+        /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+        /// <unique identifier>
+        /// .compute.amazonaws.com
+        /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
+        /// </ul>
+        /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+        pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dns_name = input;
+            self
+        }
+        /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
+        /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game. </p>
+        pub fn player_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.player_data = Some(input.into());
+            self
+        }
+        /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game. </p>
+        pub fn set_player_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.player_data = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PlayerSession`](crate::model::PlayerSession).
+        pub fn build(self) -> crate::model::PlayerSession {
+            crate::model::PlayerSession {
+                player_session_id: self.player_session_id,
+                player_id: self.player_id,
+                game_session_id: self.game_session_id,
+                fleet_id: self.fleet_id,
+                fleet_arn: self.fleet_arn,
+                creation_time: self.creation_time,
+                termination_time: self.termination_time,
+                status: self.status,
+                ip_address: self.ip_address,
+                dns_name: self.dns_name,
+                port: self.port,
+                player_data: self.player_data,
+            }
+        }
+    }
+}
+impl PlayerSession {
+    /// Creates a new builder-style object to manufacture [`PlayerSession`](crate::model::PlayerSession).
+    pub fn builder() -> crate::model::player_session::Builder {
+        crate::model::player_session::Builder::default()
+    }
+}
+
+/// When writing a match expression against `PlayerSessionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let playersessionstatus = unimplemented!();
+/// match playersessionstatus {
+///     PlayerSessionStatus::Active => { /* ... */ },
+///     PlayerSessionStatus::Completed => { /* ... */ },
+///     PlayerSessionStatus::Reserved => { /* ... */ },
+///     PlayerSessionStatus::Timedout => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `playersessionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PlayerSessionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PlayerSessionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PlayerSessionStatus::NewFeature` is defined.
+/// Specifically, when `playersessionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PlayerSessionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PlayerSessionStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Reserved,
+    #[allow(missing_docs)] // documentation missing in model
+    Timedout,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for PlayerSessionStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => PlayerSessionStatus::Active,
+            "COMPLETED" => PlayerSessionStatus::Completed,
+            "RESERVED" => PlayerSessionStatus::Reserved,
+            "TIMEDOUT" => PlayerSessionStatus::Timedout,
+            other => {
+                PlayerSessionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for PlayerSessionStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PlayerSessionStatus::from(s))
+    }
+}
+impl PlayerSessionStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PlayerSessionStatus::Active => "ACTIVE",
+            PlayerSessionStatus::Completed => "COMPLETED",
+            PlayerSessionStatus::Reserved => "RESERVED",
+            PlayerSessionStatus::Timedout => "TIMEDOUT",
+            PlayerSessionStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ACTIVE", "COMPLETED", "RESERVED", "TIMEDOUT"]
+    }
+}
+impl AsRef<str> for PlayerSessionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Set of rule statements, used with FlexMatch, that determine how to build your player matches. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches.</p>
+/// <p>A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a FlexMatch rule set</a>. </p>
+/// <ul>
+/// <li> <p>Teams -- Required. A rule set must define one or multiple teams for the match and set minimum and maximum team sizes. For example, a rule set might describe a 4x4 match that requires all eight slots to be filled. </p> </li>
+/// <li> <p>Player attributes -- Optional. These attributes specify a set of player characteristics to evaluate when looking for a match. Matchmaking requests that use a rule set with player attributes must provide the corresponding attribute values. For example, an attribute might specify a player's skill or level.</p> </li>
+/// <li> <p>Rules -- Optional. Rules define how to evaluate potential players for a match based on player attributes. A rule might specify minimum requirements for individual players, teams, or entire matches. For example, a rule might require each player to meet a certain skill level, each team to have at least one player in a certain role, or the match to have a minimum average skill level. or may describe an entire group--such as all teams must be evenly matched or have at least one player in a certain role. </p> </li>
+/// <li> <p>Expansions -- Optional. Expansions allow you to relax the rules after a period of time when no acceptable matches are found. This feature lets you balance getting players into games in a reasonable amount of time instead of making them wait indefinitely for the best possible match. For example, you might use an expansion to increase the maximum skill variance between players after 30 seconds.</p> </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MatchmakingRuleSet {
+    /// <p>A unique identifier for the matchmaking rule set</p>
+    #[doc(hidden)]
+    pub rule_set_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::matchmakingruleset/
+    /// <ruleset name></ruleset>
+    /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
+    #[doc(hidden)]
+    pub rule_set_arn: std::option::Option<std::string::String>,
+    /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
+    #[doc(hidden)]
+    pub rule_set_body: std::option::Option<std::string::String>,
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl MatchmakingRuleSet {
+    /// <p>A unique identifier for the matchmaking rule set</p>
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+        self.rule_set_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::matchmakingruleset/
+    /// <ruleset name></ruleset>
+    /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
+    pub fn rule_set_arn(&self) -> std::option::Option<&str> {
+        self.rule_set_arn.as_deref()
+    }
+    /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
+    pub fn rule_set_body(&self) -> std::option::Option<&str> {
+        self.rule_set_body.as_deref()
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+}
+/// See [`MatchmakingRuleSet`](crate::model::MatchmakingRuleSet).
+pub mod matchmaking_rule_set {
+
+    /// A builder for [`MatchmakingRuleSet`](crate::model::MatchmakingRuleSet).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rule_set_name: std::option::Option<std::string::String>,
+        pub(crate) rule_set_arn: std::option::Option<std::string::String>,
+        pub(crate) rule_set_body: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the matchmaking rule set</p>
+        pub fn rule_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_set_name = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the matchmaking rule set</p>
+        pub fn set_rule_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rule_set_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::matchmakingruleset/
+        /// <ruleset name></ruleset>
+        /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
+        pub fn rule_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_set_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::matchmakingruleset/
+        /// <ruleset name></ruleset>
+        /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
+        pub fn set_rule_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_set_arn = input;
+            self
+        }
+        /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
+        pub fn rule_set_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_set_body = Some(input.into());
+            self
+        }
+        /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
+        pub fn set_rule_set_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rule_set_body = input;
+            self
+        }
+        /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MatchmakingRuleSet`](crate::model::MatchmakingRuleSet).
+        pub fn build(self) -> crate::model::MatchmakingRuleSet {
+            crate::model::MatchmakingRuleSet {
+                rule_set_name: self.rule_set_name,
+                rule_set_arn: self.rule_set_arn,
+                rule_set_body: self.rule_set_body,
+                creation_time: self.creation_time,
+            }
+        }
+    }
+}
+impl MatchmakingRuleSet {
+    /// Creates a new builder-style object to manufacture [`MatchmakingRuleSet`](crate::model::MatchmakingRuleSet).
+    pub fn builder() -> crate::model::matchmaking_rule_set::Builder {
+        crate::model::matchmaking_rule_set::Builder::default()
+    }
+}
+
+/// <p>Represents an EC2 instance of virtual computing resources that hosts one or more game servers. In GameLift, a fleet can contain zero or more instances.</p>
+/// <p> <b>Related actions</b> </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Instance {
+    /// <p>A unique identifier for the fleet that the instance is in.</p>
+    #[doc(hidden)]
+    pub fleet_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+    /// </region></code>.</p>
+    #[doc(hidden)]
+    pub fleet_arn: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the instance.</p>
+    #[doc(hidden)]
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>IP address that is assigned to the instance.</p>
+    #[doc(hidden)]
+    pub ip_address: std::option::Option<std::string::String>,
+    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
+    /// <ul>
+    /// <li> <p>TLS-enabled fleets: <code>
+    /// <unique identifier>
+    /// .
+    /// <region identifier>
+    /// .amazongamelift.com
+    /// </region>
+    /// </unique></code>.</p> </li>
+    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+    /// <unique identifier>
+    /// .compute.amazonaws.com
+    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
+    /// </ul>
+    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+    #[doc(hidden)]
+    pub dns_name: std::option::Option<std::string::String>,
+    /// <p>Operating system that is running on this instance. </p>
+    #[doc(hidden)]
+    pub operating_system: std::option::Option<crate::model::OperatingSystem>,
+    /// <p>Amazon EC2 instance type that defines the computing resources of this instance. </p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::Ec2InstanceType>,
+    /// <p>Current status of the instance. Possible statuses include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration. </p> </li>
+    /// <li> <p> <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions. </p> </li>
+    /// <li> <p> <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::InstanceStatus>,
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    #[doc(hidden)]
+    pub location: std::option::Option<std::string::String>,
+}
+impl Instance {
+    /// <p>A unique identifier for the fleet that the instance is in.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+    /// </region></code>.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>A unique identifier for the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>IP address that is assigned to the instance.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
+    /// <ul>
+    /// <li> <p>TLS-enabled fleets: <code>
+    /// <unique identifier>
+    /// .
+    /// <region identifier>
+    /// .amazongamelift.com
+    /// </region>
+    /// </unique></code>.</p> </li>
+    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+    /// <unique identifier>
+    /// .compute.amazonaws.com
+    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
+    /// </ul>
+    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>Operating system that is running on this instance. </p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
+    /// <p>Amazon EC2 instance type that defines the computing resources of this instance. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Ec2InstanceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Current status of the instance. Possible statuses include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration. </p> </li>
+    /// <li> <p> <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions. </p> </li>
+    /// <li> <p> <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::InstanceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+}
+/// See [`Instance`](crate::model::Instance).
+pub mod instance {
+
+    /// A builder for [`Instance`](crate::model::Instance).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) fleet_id: std::option::Option<std::string::String>,
+        pub(crate) fleet_arn: std::option::Option<std::string::String>,
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) ip_address: std::option::Option<std::string::String>,
+        pub(crate) dns_name: std::option::Option<std::string::String>,
+        pub(crate) operating_system: std::option::Option<crate::model::OperatingSystem>,
+        pub(crate) r#type: std::option::Option<crate::model::Ec2InstanceType>,
+        pub(crate) status: std::option::Option<crate::model::InstanceStatus>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) location: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the fleet that the instance is in.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fleet_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the fleet that the instance is in.</p>
+        pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+        /// </region></code>.</p>
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fleet_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+        /// </region></code>.</p>
+        pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_arn = input;
+            self
+        }
+        /// <p>A unique identifier for the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>IP address that is assigned to the instance.</p>
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
+            self
+        }
+        /// <p>IP address that is assigned to the instance.</p>
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
+            self
+        }
+        /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
+        /// <ul>
+        /// <li> <p>TLS-enabled fleets: <code>
+        /// <unique identifier>
+        /// .
+        /// <region identifier>
+        /// .amazongamelift.com
+        /// </region>
+        /// </unique></code>.</p> </li>
+        /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+        /// <unique identifier>
+        /// .compute.amazonaws.com
+        /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
+        /// </ul>
+        /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+        pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dns_name = Some(input.into());
+            self
+        }
+        /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
+        /// <ul>
+        /// <li> <p>TLS-enabled fleets: <code>
+        /// <unique identifier>
+        /// .
+        /// <region identifier>
+        /// .amazongamelift.com
+        /// </region>
+        /// </unique></code>.</p> </li>
+        /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+        /// <unique identifier>
+        /// .compute.amazonaws.com
+        /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
+        /// </ul>
+        /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+        pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dns_name = input;
+            self
+        }
+        /// <p>Operating system that is running on this instance. </p>
+        pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
+            self.operating_system = Some(input);
+            self
+        }
+        /// <p>Operating system that is running on this instance. </p>
+        pub fn set_operating_system(
+            mut self,
+            input: std::option::Option<crate::model::OperatingSystem>,
+        ) -> Self {
+            self.operating_system = input;
+            self
+        }
+        /// <p>Amazon EC2 instance type that defines the computing resources of this instance. </p>
+        pub fn r#type(mut self, input: crate::model::Ec2InstanceType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Amazon EC2 instance type that defines the computing resources of this instance. </p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::Ec2InstanceType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>Current status of the instance. Possible statuses include the following:</p>
+        /// <ul>
+        /// <li> <p> <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration. </p> </li>
+        /// <li> <p> <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions. </p> </li>
+        /// <li> <p> <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p> </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::InstanceStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Current status of the instance. Possible statuses include the following:</p>
+        /// <ul>
+        /// <li> <p> <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration. </p> </li>
+        /// <li> <p> <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions. </p> </li>
+        /// <li> <p> <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p> </li>
+        /// </ul>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::InstanceStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
+            self
+        }
+        /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Instance`](crate::model::Instance).
+        pub fn build(self) -> crate::model::Instance {
+            crate::model::Instance {
+                fleet_id: self.fleet_id,
+                fleet_arn: self.fleet_arn,
+                instance_id: self.instance_id,
+                ip_address: self.ip_address,
+                dns_name: self.dns_name,
+                operating_system: self.operating_system,
+                r#type: self.r#type,
+                status: self.status,
+                creation_time: self.creation_time,
+                location: self.location,
+            }
+        }
+    }
+}
+impl Instance {
+    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
+    pub fn builder() -> crate::model::instance::Builder {
+        crate::model::instance::Builder::default()
+    }
+}
+
+/// When writing a match expression against `InstanceStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let instancestatus = unimplemented!();
+/// match instancestatus {
+///     InstanceStatus::Active => { /* ... */ },
+///     InstanceStatus::Pending => { /* ... */ },
+///     InstanceStatus::Terminating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `instancestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InstanceStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InstanceStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InstanceStatus::NewFeature` is defined.
+/// Specifically, when `instancestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InstanceStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum InstanceStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Terminating,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for InstanceStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => InstanceStatus::Active,
+            "PENDING" => InstanceStatus::Pending,
+            "TERMINATING" => InstanceStatus::Terminating,
+            other => InstanceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for InstanceStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InstanceStatus::from(s))
+    }
+}
+impl InstanceStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            InstanceStatus::Active => "ACTIVE",
+            InstanceStatus::Pending => "PENDING",
+            InstanceStatus::Terminating => "TERMINATING",
+            InstanceStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ACTIVE", "PENDING", "TERMINATING"]
+    }
+}
+impl AsRef<str> for InstanceStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A game session's properties plus the protection policy currently in force.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11692,8 +12286,6 @@ impl GameSessionDetail {
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p>
 /// <p> Additional properties, including status, that describe an EC2 instance in a game server group. Instance configurations are set with game server group properties (see <code>DescribeGameServerGroup</code> and with the EC2 launch template that was used when creating the game server group. </p>
 /// <p>Retrieve game server instances for a game server group by calling <code>DescribeGameServerInstances</code>. </p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>CreateGameServerGroup</code> | <code>ListGameServerGroups</code> | <code>DescribeGameServerGroup</code> | <code>UpdateGameServerGroup</code> | <code>DeleteGameServerGroup</code> | <code>ResumeGameServerGroup</code> | <code>SuspendGameServerGroup</code> | <code>DescribeGameServerInstances</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameServerInstance {
@@ -11706,12 +12298,7 @@ pub struct GameServerInstance {
     /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p> Current status of the game server instance. </p>
-    /// <ul>
-    /// <li> <p> <b>ACTIVE</b> -- The instance is viable for hosting game servers. </p> </li>
-    /// <li> <p> <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing game servers are in the process of ending, and new game servers are not started on this instance unless no other resources are available. When the instance is put in DRAINING, a new instance is started up to replace it. Once the instance has no UTILIZED game servers, it will be terminated in favor of the new instance.</p> </li>
-    /// <li> <p> <b>SPOT_TERMINATING</b> -- The instance is in the process of shutting down due to a Spot instance interruption. No new game servers are started on this instance.</p> </li>
-    /// </ul>
+    /// <p>Current status of the game server instance</p>
     #[doc(hidden)]
     pub instance_status: std::option::Option<crate::model::GameServerInstanceStatus>,
 }
@@ -11728,12 +12315,7 @@ impl GameServerInstance {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p> Current status of the game server instance. </p>
-    /// <ul>
-    /// <li> <p> <b>ACTIVE</b> -- The instance is viable for hosting game servers. </p> </li>
-    /// <li> <p> <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing game servers are in the process of ending, and new game servers are not started on this instance unless no other resources are available. When the instance is put in DRAINING, a new instance is started up to replace it. Once the instance has no UTILIZED game servers, it will be terminated in favor of the new instance.</p> </li>
-    /// <li> <p> <b>SPOT_TERMINATING</b> -- The instance is in the process of shutting down due to a Spot instance interruption. No new game servers are started on this instance.</p> </li>
-    /// </ul>
+    /// <p>Current status of the game server instance</p>
     pub fn instance_status(&self) -> std::option::Option<&crate::model::GameServerInstanceStatus> {
         self.instance_status.as_ref()
     }
@@ -11786,22 +12368,12 @@ pub mod game_server_instance {
             self.instance_id = input;
             self
         }
-        /// <p> Current status of the game server instance. </p>
-        /// <ul>
-        /// <li> <p> <b>ACTIVE</b> -- The instance is viable for hosting game servers. </p> </li>
-        /// <li> <p> <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing game servers are in the process of ending, and new game servers are not started on this instance unless no other resources are available. When the instance is put in DRAINING, a new instance is started up to replace it. Once the instance has no UTILIZED game servers, it will be terminated in favor of the new instance.</p> </li>
-        /// <li> <p> <b>SPOT_TERMINATING</b> -- The instance is in the process of shutting down due to a Spot instance interruption. No new game servers are started on this instance.</p> </li>
-        /// </ul>
+        /// <p>Current status of the game server instance</p>
         pub fn instance_status(mut self, input: crate::model::GameServerInstanceStatus) -> Self {
             self.instance_status = Some(input);
             self
         }
-        /// <p> Current status of the game server instance. </p>
-        /// <ul>
-        /// <li> <p> <b>ACTIVE</b> -- The instance is viable for hosting game servers. </p> </li>
-        /// <li> <p> <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing game servers are in the process of ending, and new game servers are not started on this instance unless no other resources are available. When the instance is put in DRAINING, a new instance is started up to replace it. Once the instance has no UTILIZED game servers, it will be terminated in favor of the new instance.</p> </li>
-        /// <li> <p> <b>SPOT_TERMINATING</b> -- The instance is in the process of shutting down due to a Spot instance interruption. No new game servers are started on this instance.</p> </li>
-        /// </ul>
+        /// <p>Current status of the game server instance</p>
         pub fn set_instance_status(
             mut self,
             input: std::option::Option<crate::model::GameServerInstanceStatus>,
@@ -11926,7 +12498,6 @@ impl AsRef<str> for GameServerInstanceStatus {
 
 /// <p>Current resource utilization statistics in a specified fleet or location. The location value might refer to a fleet's remote location or its home Region.</p>
 /// <p> <b>Related actions</b> </p>
-/// <p> <code>DescribeFleetUtilization</code> | <code>DescribeFleetLocationUtilization</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FleetUtilization {
@@ -12118,7 +12689,7 @@ pub struct FleetCapacity {
     /// <p>The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the computing resources in use, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<crate::model::Ec2InstanceType>,
-    /// <p>The current instance count and capacity settings for the fleet location. </p>
+    /// <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.</p>
     #[doc(hidden)]
     pub instance_counts: std::option::Option<crate::model::Ec2InstanceCounts>,
     /// <p>The fleet location for the instance count information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
@@ -12141,7 +12712,7 @@ impl FleetCapacity {
     pub fn instance_type(&self) -> std::option::Option<&crate::model::Ec2InstanceType> {
         self.instance_type.as_ref()
     }
-    /// <p>The current instance count and capacity settings for the fleet location. </p>
+    /// <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.</p>
     pub fn instance_counts(&self) -> std::option::Option<&crate::model::Ec2InstanceCounts> {
         self.instance_counts.as_ref()
     }
@@ -12202,12 +12773,12 @@ pub mod fleet_capacity {
             self.instance_type = input;
             self
         }
-        /// <p>The current instance count and capacity settings for the fleet location. </p>
+        /// <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.</p>
         pub fn instance_counts(mut self, input: crate::model::Ec2InstanceCounts) -> Self {
             self.instance_counts = Some(input);
             self
         }
-        /// <p>The current instance count and capacity settings for the fleet location. </p>
+        /// <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.</p>
         pub fn set_instance_counts(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceCounts>,
@@ -12245,7 +12816,6 @@ impl FleetCapacity {
 }
 
 /// <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.</p>
-/// <p>EC2 instance counts are part of <code>FleetCapacity</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2InstanceCounts {
@@ -12407,9 +12977,7 @@ impl Ec2InstanceCounts {
     }
 }
 
-/// <p>Represents a location in a multi-location fleet.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>DescribeFleetLocationAttributes</code> </p>
+/// <p>Details about a location in a multi-location fleet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LocationAttributes {
@@ -12511,8 +13079,15 @@ impl LocationAttributes {
 }
 
 /// <p>A fleet location and its life-cycle state. A location state object might be used to describe a fleet's remote location or home Region. Life-cycle state tracks the progress of launching the first instance in a new location and preparing it for game hosting, and then removing all instances and deleting the location from the fleet.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>CreateFleet</code> | <code>CreateFleetLocations</code> | <code>DeleteFleetLocations</code> </p>
+/// <ul>
+/// <li> <p> <b>NEW</b> -- A new fleet location has been defined and desired instances is set to 1. </p> </li>
+/// <li> <p> <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new fleet location, creating new instances with the game build or Realtime script and starting server processes.</p> </li>
+/// <li> <p> <b>ACTIVE</b> -- Hosts can now accept game sessions.</p> </li>
+/// <li> <p> <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet location.</p> </li>
+/// <li> <p> <b>DELETING</b> -- Hosts are responding to a delete fleet location request.</p> </li>
+/// <li> <p> <b>TERMINATED</b> -- The fleet location no longer exists.</p> </li>
+/// <li> <p> <b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom location was removed or not created. </p> </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LocationState {
@@ -12598,6 +13173,7 @@ impl LocationState {
 ///     FleetStatus::Downloading => { /* ... */ },
 ///     FleetStatus::Error => { /* ... */ },
 ///     FleetStatus::New => { /* ... */ },
+///     FleetStatus::NotFound => { /* ... */ },
 ///     FleetStatus::Terminated => { /* ... */ },
 ///     FleetStatus::Validating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -12648,6 +13224,8 @@ pub enum FleetStatus {
     #[allow(missing_docs)] // documentation missing in model
     New,
     #[allow(missing_docs)] // documentation missing in model
+    NotFound,
+    #[allow(missing_docs)] // documentation missing in model
     Terminated,
     #[allow(missing_docs)] // documentation missing in model
     Validating,
@@ -12664,6 +13242,7 @@ impl std::convert::From<&str> for FleetStatus {
             "DOWNLOADING" => FleetStatus::Downloading,
             "ERROR" => FleetStatus::Error,
             "NEW" => FleetStatus::New,
+            "NOT_FOUND" => FleetStatus::NotFound,
             "TERMINATED" => FleetStatus::Terminated,
             "VALIDATING" => FleetStatus::Validating,
             other => FleetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
@@ -12688,6 +13267,7 @@ impl FleetStatus {
             FleetStatus::Downloading => "DOWNLOADING",
             FleetStatus::Error => "ERROR",
             FleetStatus::New => "NEW",
+            FleetStatus::NotFound => "NOT_FOUND",
             FleetStatus::Terminated => "TERMINATED",
             FleetStatus::Validating => "VALIDATING",
             FleetStatus::Unknown(value) => value.as_str(),
@@ -12703,6 +13283,7 @@ impl FleetStatus {
             "DOWNLOADING",
             "ERROR",
             "NEW",
+            "NOT_FOUND",
             "TERMINATED",
             "VALIDATING",
         ]
@@ -12715,8 +13296,6 @@ impl AsRef<str> for FleetStatus {
 }
 
 /// <p>Log entry describing an event that involves GameLift resources (such as a fleet). In addition to tracking activity, event codes and messages can provide additional information for troubleshooting and debugging problems.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>DescribeFleetEvents</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
@@ -12753,14 +13332,14 @@ pub struct Event {
     /// <p> <b>VPC peering events:</b> </p>
     /// <ul>
     /// <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift fleet and a VPC in your Amazon Web Services account.</p> </li>
-    /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information (see <code>DescribeVpcPeeringConnections</code>) provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
+    /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
     /// <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has been successfully deleted.</p> </li>
     /// </ul>
     /// <p> <b>Spot instance events:</b> </p>
     /// <ul>
     /// <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.</p> </li>
     /// </ul>
-    /// <p> <b>Spot process events:</b> </p>
+    /// <p> <b>Server process events:</b> </p>
     /// <ul>
     /// <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or script could not be found based on the Fleet runtime configuration. Check that the launch path is correct based on the operating system of the Fleet.</p> </li>
     /// <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time expected. Check your game session log to see why InitSDK() was not called in time.</p> </li>
@@ -12829,14 +13408,14 @@ impl Event {
     /// <p> <b>VPC peering events:</b> </p>
     /// <ul>
     /// <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift fleet and a VPC in your Amazon Web Services account.</p> </li>
-    /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information (see <code>DescribeVpcPeeringConnections</code>) provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
+    /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
     /// <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has been successfully deleted.</p> </li>
     /// </ul>
     /// <p> <b>Spot instance events:</b> </p>
     /// <ul>
     /// <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.</p> </li>
     /// </ul>
-    /// <p> <b>Spot process events:</b> </p>
+    /// <p> <b>Server process events:</b> </p>
     /// <ul>
     /// <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or script could not be found based on the Fleet runtime configuration. Check that the launch path is correct based on the operating system of the Fleet.</p> </li>
     /// <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time expected. Check your game session log to see why InitSDK() was not called in time.</p> </li>
@@ -12934,14 +13513,14 @@ pub mod event {
         /// <p> <b>VPC peering events:</b> </p>
         /// <ul>
         /// <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift fleet and a VPC in your Amazon Web Services account.</p> </li>
-        /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information (see <code>DescribeVpcPeeringConnections</code>) provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
+        /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
         /// <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has been successfully deleted.</p> </li>
         /// </ul>
         /// <p> <b>Spot instance events:</b> </p>
         /// <ul>
         /// <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.</p> </li>
         /// </ul>
-        /// <p> <b>Spot process events:</b> </p>
+        /// <p> <b>Server process events:</b> </p>
         /// <ul>
         /// <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or script could not be found based on the Fleet runtime configuration. Check that the launch path is correct based on the operating system of the Fleet.</p> </li>
         /// <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time expected. Check your game session log to see why InitSDK() was not called in time.</p> </li>
@@ -12993,14 +13572,14 @@ pub mod event {
         /// <p> <b>VPC peering events:</b> </p>
         /// <ul>
         /// <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift fleet and a VPC in your Amazon Web Services account.</p> </li>
-        /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information (see <code>DescribeVpcPeeringConnections</code>) provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
+        /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
         /// <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has been successfully deleted.</p> </li>
         /// </ul>
         /// <p> <b>Spot instance events:</b> </p>
         /// <ul>
         /// <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.</p> </li>
         /// </ul>
-        /// <p> <b>Spot process events:</b> </p>
+        /// <p> <b>Server process events:</b> </p>
         /// <ul>
         /// <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or script could not be found based on the Fleet runtime configuration. Check that the launch path is correct based on the operating system of the Fleet.</p> </li>
         /// <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time expected. Check your game session log to see why InitSDK() was not called in time.</p> </li>
@@ -13122,6 +13701,7 @@ impl Event {
 ///     EventCode::GameSessionActivationTimeout => { /* ... */ },
 ///     EventCode::GenericEvent => { /* ... */ },
 ///     EventCode::InstanceInterrupted => { /* ... */ },
+///     EventCode::InstanceRecycled => { /* ... */ },
 ///     EventCode::ServerProcessCrashed => { /* ... */ },
 ///     EventCode::ServerProcessForceTerminated => { /* ... */ },
 ///     EventCode::ServerProcessInvalidPath => { /* ... */ },
@@ -13215,6 +13795,8 @@ pub enum EventCode {
     #[allow(missing_docs)] // documentation missing in model
     InstanceInterrupted,
     #[allow(missing_docs)] // documentation missing in model
+    InstanceRecycled,
+    #[allow(missing_docs)] // documentation missing in model
     ServerProcessCrashed,
     #[allow(missing_docs)] // documentation missing in model
     ServerProcessForceTerminated,
@@ -13268,6 +13850,7 @@ impl std::convert::From<&str> for EventCode {
             "GAME_SESSION_ACTIVATION_TIMEOUT" => EventCode::GameSessionActivationTimeout,
             "GENERIC_EVENT" => EventCode::GenericEvent,
             "INSTANCE_INTERRUPTED" => EventCode::InstanceInterrupted,
+            "INSTANCE_RECYCLED" => EventCode::InstanceRecycled,
             "SERVER_PROCESS_CRASHED" => EventCode::ServerProcessCrashed,
             "SERVER_PROCESS_FORCE_TERMINATED" => EventCode::ServerProcessForceTerminated,
             "SERVER_PROCESS_INVALID_PATH" => EventCode::ServerProcessInvalidPath,
@@ -13326,6 +13909,7 @@ impl EventCode {
             EventCode::GameSessionActivationTimeout => "GAME_SESSION_ACTIVATION_TIMEOUT",
             EventCode::GenericEvent => "GENERIC_EVENT",
             EventCode::InstanceInterrupted => "INSTANCE_INTERRUPTED",
+            EventCode::InstanceRecycled => "INSTANCE_RECYCLED",
             EventCode::ServerProcessCrashed => "SERVER_PROCESS_CRASHED",
             EventCode::ServerProcessForceTerminated => "SERVER_PROCESS_FORCE_TERMINATED",
             EventCode::ServerProcessInvalidPath => "SERVER_PROCESS_INVALID_PATH",
@@ -13367,6 +13951,7 @@ impl EventCode {
             "GAME_SESSION_ACTIVATION_TIMEOUT",
             "GENERIC_EVENT",
             "INSTANCE_INTERRUPTED",
+            "INSTANCE_RECYCLED",
             "SERVER_PROCESS_CRASHED",
             "SERVER_PROCESS_FORCE_TERMINATED",
             "SERVER_PROCESS_INVALID_PATH",
@@ -13385,7 +13970,6 @@ impl AsRef<str> for EventCode {
 
 /// <p>Describes a GameLift fleet of game hosting resources.</p>
 /// <p> <b>Related actions</b> </p>
-/// <p> <code>CreateFleet</code> | <code>DescribeFleetAttributes</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FleetAttributes {
@@ -13398,7 +13982,7 @@ pub struct FleetAttributes {
     /// </region></code>. In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.</p>
     #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
-    /// <p>The kind of instances, On-Demand or Spot, that this fleet uses.</p>
+    /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
     #[doc(hidden)]
     pub fleet_type: std::option::Option<crate::model::FleetType>,
     /// <p>The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
@@ -13439,10 +14023,10 @@ pub struct FleetAttributes {
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift script resource that is deployed on instances in this fleet. In a GameLift script ARN, the resource ID matches the <code>ScriptId</code> value.</p>
     #[doc(hidden)]
     pub script_arn: std::option::Option<std::string::String>,
-    /// <p> <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
+    /// <p> <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.</p>
     #[doc(hidden)]
     pub server_launch_path: std::option::Option<std::string::String>,
-    /// <p> <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
+    /// <p> <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter instead continue to be valid.</p>
     #[doc(hidden)]
     pub server_launch_parameters: std::option::Option<std::string::String>,
     /// <p> <b>This parameter is no longer used.</b> Game session log paths are now defined using the GameLift server API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
@@ -13458,22 +14042,29 @@ pub struct FleetAttributes {
     /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet.</p>
     #[doc(hidden)]
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
-    /// <p>The fleet policy that limits the number of game sessions an individual player can create over a span of time.</p>
+    /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
+    /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
     #[doc(hidden)]
     pub resource_creation_limit_policy:
         std::option::Option<crate::model::ResourceCreationLimitPolicy>,
     /// <p>Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.</p>
     #[doc(hidden)]
     pub metric_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of fleet activity that has been suspended using <code>StopFleetActions</code>. This includes fleet auto-scaling.</p>
+    /// <p>A list of fleet activity that has been suspended using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> . This includes fleet auto-scaling.</p>
     #[doc(hidden)]
     pub stopped_actions: std::option::Option<std::vec::Vec<crate::model::FleetAction>>,
     /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
     #[doc(hidden)]
     pub instance_role_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
+    /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
     #[doc(hidden)]
     pub certificate_configuration: std::option::Option<crate::model::CertificateConfiguration>,
+    /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with GameLift Anywhere or use Amazon EC2 instances with managed GameLift.</p>
+    #[doc(hidden)]
+    pub compute_type: std::option::Option<crate::model::ComputeType>,
+    /// <p>GameLift Anywhere configuration options for your Anywhere fleets.</p>
+    #[doc(hidden)]
+    pub anywhere_configuration: std::option::Option<crate::model::AnywhereConfiguration>,
 }
 impl FleetAttributes {
     /// <p>A unique identifier for the fleet.</p>
@@ -13487,7 +14078,7 @@ impl FleetAttributes {
     pub fn fleet_arn(&self) -> std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
-    /// <p>The kind of instances, On-Demand or Spot, that this fleet uses.</p>
+    /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
     pub fn fleet_type(&self) -> std::option::Option<&crate::model::FleetType> {
         self.fleet_type.as_ref()
     }
@@ -13539,11 +14130,11 @@ impl FleetAttributes {
     pub fn script_arn(&self) -> std::option::Option<&str> {
         self.script_arn.as_deref()
     }
-    /// <p> <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
+    /// <p> <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.</p>
     pub fn server_launch_path(&self) -> std::option::Option<&str> {
         self.server_launch_path.as_deref()
     }
-    /// <p> <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
+    /// <p> <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter instead continue to be valid.</p>
     pub fn server_launch_parameters(&self) -> std::option::Option<&str> {
         self.server_launch_parameters.as_deref()
     }
@@ -13565,7 +14156,8 @@ impl FleetAttributes {
     pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
         self.operating_system.as_ref()
     }
-    /// <p>The fleet policy that limits the number of game sessions an individual player can create over a span of time.</p>
+    /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
+    /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
     pub fn resource_creation_limit_policy(
         &self,
     ) -> std::option::Option<&crate::model::ResourceCreationLimitPolicy> {
@@ -13575,7 +14167,7 @@ impl FleetAttributes {
     pub fn metric_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.metric_groups.as_deref()
     }
-    /// <p>A list of fleet activity that has been suspended using <code>StopFleetActions</code>. This includes fleet auto-scaling.</p>
+    /// <p>A list of fleet activity that has been suspended using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> . This includes fleet auto-scaling.</p>
     pub fn stopped_actions(&self) -> std::option::Option<&[crate::model::FleetAction]> {
         self.stopped_actions.as_deref()
     }
@@ -13583,11 +14175,21 @@ impl FleetAttributes {
     pub fn instance_role_arn(&self) -> std::option::Option<&str> {
         self.instance_role_arn.as_deref()
     }
-    /// <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
+    /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
     pub fn certificate_configuration(
         &self,
     ) -> std::option::Option<&crate::model::CertificateConfiguration> {
         self.certificate_configuration.as_ref()
+    }
+    /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with GameLift Anywhere or use Amazon EC2 instances with managed GameLift.</p>
+    pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
+        self.compute_type.as_ref()
+    }
+    /// <p>GameLift Anywhere configuration options for your Anywhere fleets.</p>
+    pub fn anywhere_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AnywhereConfiguration> {
+        self.anywhere_configuration.as_ref()
     }
 }
 /// See [`FleetAttributes`](crate::model::FleetAttributes).
@@ -13622,6 +14224,8 @@ pub mod fleet_attributes {
         pub(crate) instance_role_arn: std::option::Option<std::string::String>,
         pub(crate) certificate_configuration:
             std::option::Option<crate::model::CertificateConfiguration>,
+        pub(crate) compute_type: std::option::Option<crate::model::ComputeType>,
+        pub(crate) anywhere_configuration: std::option::Option<crate::model::AnywhereConfiguration>,
     }
     impl Builder {
         /// <p>A unique identifier for the fleet.</p>
@@ -13650,12 +14254,12 @@ pub mod fleet_attributes {
             self.fleet_arn = input;
             self
         }
-        /// <p>The kind of instances, On-Demand or Spot, that this fleet uses.</p>
+        /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
         pub fn fleet_type(mut self, input: crate::model::FleetType) -> Self {
             self.fleet_type = Some(input);
             self
         }
-        /// <p>The kind of instances, On-Demand or Spot, that this fleet uses.</p>
+        /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
         pub fn set_fleet_type(
             mut self,
             input: std::option::Option<crate::model::FleetType>,
@@ -13788,12 +14392,12 @@ pub mod fleet_attributes {
             self.script_arn = input;
             self
         }
-        /// <p> <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
+        /// <p> <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.</p>
         pub fn server_launch_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_launch_path = Some(input.into());
             self
         }
-        /// <p> <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
+        /// <p> <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.</p>
         pub fn set_server_launch_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13801,12 +14405,12 @@ pub mod fleet_attributes {
             self.server_launch_path = input;
             self
         }
-        /// <p> <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
+        /// <p> <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter instead continue to be valid.</p>
         pub fn server_launch_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_launch_parameters = Some(input.into());
             self
         }
-        /// <p> <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
+        /// <p> <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter instead continue to be valid.</p>
         pub fn set_server_launch_parameters(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13870,7 +14474,8 @@ pub mod fleet_attributes {
             self.operating_system = input;
             self
         }
-        /// <p>The fleet policy that limits the number of game sessions an individual player can create over a span of time.</p>
+        /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
+        /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
         pub fn resource_creation_limit_policy(
             mut self,
             input: crate::model::ResourceCreationLimitPolicy,
@@ -13878,7 +14483,8 @@ pub mod fleet_attributes {
             self.resource_creation_limit_policy = Some(input);
             self
         }
-        /// <p>The fleet policy that limits the number of game sessions an individual player can create over a span of time.</p>
+        /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
+        /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
         pub fn set_resource_creation_limit_policy(
             mut self,
             input: std::option::Option<crate::model::ResourceCreationLimitPolicy>,
@@ -13909,14 +14515,14 @@ pub mod fleet_attributes {
         ///
         /// To override the contents of this collection use [`set_stopped_actions`](Self::set_stopped_actions).
         ///
-        /// <p>A list of fleet activity that has been suspended using <code>StopFleetActions</code>. This includes fleet auto-scaling.</p>
+        /// <p>A list of fleet activity that has been suspended using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> . This includes fleet auto-scaling.</p>
         pub fn stopped_actions(mut self, input: crate::model::FleetAction) -> Self {
             let mut v = self.stopped_actions.unwrap_or_default();
             v.push(input);
             self.stopped_actions = Some(v);
             self
         }
-        /// <p>A list of fleet activity that has been suspended using <code>StopFleetActions</code>. This includes fleet auto-scaling.</p>
+        /// <p>A list of fleet activity that has been suspended using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> . This includes fleet auto-scaling.</p>
         pub fn set_stopped_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FleetAction>>,
@@ -13937,7 +14543,7 @@ pub mod fleet_attributes {
             self.instance_role_arn = input;
             self
         }
-        /// <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
+        /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
         pub fn certificate_configuration(
             mut self,
             input: crate::model::CertificateConfiguration,
@@ -13945,12 +14551,41 @@ pub mod fleet_attributes {
             self.certificate_configuration = Some(input);
             self
         }
-        /// <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
+        /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
         pub fn set_certificate_configuration(
             mut self,
             input: std::option::Option<crate::model::CertificateConfiguration>,
         ) -> Self {
             self.certificate_configuration = input;
+            self
+        }
+        /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with GameLift Anywhere or use Amazon EC2 instances with managed GameLift.</p>
+        pub fn compute_type(mut self, input: crate::model::ComputeType) -> Self {
+            self.compute_type = Some(input);
+            self
+        }
+        /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with GameLift Anywhere or use Amazon EC2 instances with managed GameLift.</p>
+        pub fn set_compute_type(
+            mut self,
+            input: std::option::Option<crate::model::ComputeType>,
+        ) -> Self {
+            self.compute_type = input;
+            self
+        }
+        /// <p>GameLift Anywhere configuration options for your Anywhere fleets.</p>
+        pub fn anywhere_configuration(
+            mut self,
+            input: crate::model::AnywhereConfiguration,
+        ) -> Self {
+            self.anywhere_configuration = Some(input);
+            self
+        }
+        /// <p>GameLift Anywhere configuration options for your Anywhere fleets.</p>
+        pub fn set_anywhere_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AnywhereConfiguration>,
+        ) -> Self {
+            self.anywhere_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`FleetAttributes`](crate::model::FleetAttributes).
@@ -13979,6 +14614,8 @@ pub mod fleet_attributes {
                 stopped_actions: self.stopped_actions,
                 instance_role_arn: self.instance_role_arn,
                 certificate_configuration: self.certificate_configuration,
+                compute_type: self.compute_type,
+                anywhere_configuration: self.anywhere_configuration,
             }
         }
     }
@@ -13990,8 +14627,97 @@ impl FleetAttributes {
     }
 }
 
+/// When writing a match expression against `ComputeType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let computetype = unimplemented!();
+/// match computetype {
+///     ComputeType::Anywhere => { /* ... */ },
+///     ComputeType::Ec2 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `computetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ComputeType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ComputeType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ComputeType::NewFeature` is defined.
+/// Specifically, when `computetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ComputeType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ComputeType {
+    #[allow(missing_docs)] // documentation missing in model
+    Anywhere,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ComputeType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ANYWHERE" => ComputeType::Anywhere,
+            "EC2" => ComputeType::Ec2,
+            other => ComputeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ComputeType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ComputeType::from(s))
+    }
+}
+impl ComputeType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ComputeType::Anywhere => "ANYWHERE",
+            ComputeType::Ec2 => "EC2",
+            ComputeType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ANYWHERE", "EC2"]
+    }
+}
+impl AsRef<str> for ComputeType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
-/// <p>A fleet's certificate configuration is part of <code>FleetAttributes</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateConfiguration {
@@ -14243,8 +14969,6 @@ impl AsRef<str> for FleetType {
 }
 
 /// <p>The GameLift service limits for an Amazon EC2 instance type and current utilization. GameLift allows Amazon Web Services accounts a maximum number of instances, per instance type, per Amazon Web Services Region or location, for use with GameLift. You can request an limit increase for your account by using the <b>Service limits</b> page in the GameLift console.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <code>DescribeEC2InstanceLimits</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2InstanceLimit {
@@ -14450,7 +15174,7 @@ impl AsRef<str> for GameServerGroupDeleteOption {
 }
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p>
-/// <p>Configuration settings for intelligent automatic scaling that uses target tracking. These settings are used to add an Auto Scaling policy when creating the corresponding Auto Scaling group with <code>CreateGameServerGroup</code>. After the Auto Scaling group is created, all updates to Auto Scaling policies, including changing this policy and adding or removing other policies, is done directly on the Auto Scaling group. </p>
+/// <p>Configuration settings for intelligent automatic scaling that uses target tracking. These settings are used to add an Auto Scaling policy when creating the corresponding Auto Scaling group. After the Auto Scaling group is created, all updates to Auto Scaling policies, including changing this policy and adding or removing other policies, is done directly on the Auto Scaling group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameServerGroupAutoScalingPolicy {
@@ -14528,7 +15252,7 @@ impl GameServerGroupAutoScalingPolicy {
 }
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p>
-/// <p>Settings for a target-based scaling policy as part of a <code>GameServerGroupAutoScalingPolicy</code>. These settings are used to create a target-based policy that tracks the GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value. </p>
+/// <p>Settings for a target-based scaling policy as part of a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerGroupAutoScalingPolicy.html">GameServerGroupAutoScalingPolicy</a> . These settings are used to create a target-based policy that tracks the GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetTrackingConfiguration {
@@ -14577,7 +15301,7 @@ impl TargetTrackingConfiguration {
 }
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p>
-/// <p>An Amazon Elastic Compute Cloud launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group with <code>CreateGameServerGroup</code>. </p>
+/// <p>An Amazon Elastic Compute Cloud launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchTemplateSpecification {
@@ -14670,8 +15394,6 @@ impl LaunchTemplateSpecification {
 }
 
 /// <p>A remote location where a multi-location fleet can deploy EC2 instances for game hosting. </p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html">CreateFleet</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LocationConfiguration {

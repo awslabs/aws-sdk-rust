@@ -117,6 +117,7 @@ impl Client {
     ///   - [`destination_flow_config_list(Vec<DestinationFlowConfig>)`](crate::client::fluent_builders::CreateFlow::destination_flow_config_list) / [`set_destination_flow_config_list(Option<Vec<DestinationFlowConfig>>)`](crate::client::fluent_builders::CreateFlow::set_destination_flow_config_list): <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
     ///   - [`tasks(Vec<Task>)`](crate::client::fluent_builders::CreateFlow::tasks) / [`set_tasks(Option<Vec<Task>>)`](crate::client::fluent_builders::CreateFlow::set_tasks): <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateFlow::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateFlow::set_tags): <p> The tags used to organize, track, or control access for your flow. </p>
+    ///   - [`metadata_catalog_config(MetadataCatalogConfig)`](crate::client::fluent_builders::CreateFlow::metadata_catalog_config) / [`set_metadata_catalog_config(Option<MetadataCatalogConfig>)`](crate::client::fluent_builders::CreateFlow::set_metadata_catalog_config): <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
     /// - On success, responds with [`CreateFlowOutput`](crate::output::CreateFlowOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::CreateFlowOutput::flow_arn): <p> The flow's Amazon Resource Name (ARN). </p>
     ///   - [`flow_status(Option<FlowStatus>)`](crate::output::CreateFlowOutput::flow_status): <p> Indicates the current status of the flow. </p>
@@ -222,6 +223,9 @@ impl Client {
     ///   - [`created_by(Option<String>)`](crate::output::DescribeFlowOutput::created_by): <p> The ARN of the user who created the flow. </p>
     ///   - [`last_updated_by(Option<String>)`](crate::output::DescribeFlowOutput::last_updated_by): <p> Specifies the user name of the account that performed the most recent update. </p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeFlowOutput::tags): <p> The tags used to organize, track, or control access for your flow. </p>
+    ///   - [`metadata_catalog_config(Option<MetadataCatalogConfig>)`](crate::output::DescribeFlowOutput::metadata_catalog_config): <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
+    ///   - [`last_run_metadata_catalog_details(Option<Vec<MetadataCatalogDetail>>)`](crate::output::DescribeFlowOutput::last_run_metadata_catalog_details): <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
+    ///   - [`schema_version(Option<i64>)`](crate::output::DescribeFlowOutput::schema_version): <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>  <ul>   <li> <p>Source-to-destination field mappings</p> </li>   <li> <p>Field data types</p> </li>   <li> <p>Partition keys</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DescribeFlowError>`](crate::error::DescribeFlowError)
     pub fn describe_flow(&self) -> fluent_builders::DescribeFlow {
         fluent_builders::DescribeFlow::new(self.handle.clone())
@@ -247,8 +251,11 @@ impl Client {
     ///   - [`connector_type(ConnectorType)`](crate::client::fluent_builders::ListConnectorEntities::connector_type) / [`set_connector_type(Option<ConnectorType>)`](crate::client::fluent_builders::ListConnectorEntities::set_connector_type): <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     ///   - [`entities_path(impl Into<String>)`](crate::client::fluent_builders::ListConnectorEntities::entities_path) / [`set_entities_path(Option<String>)`](crate::client::fluent_builders::ListConnectorEntities::set_entities_path): <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
     ///   - [`api_version(impl Into<String>)`](crate::client::fluent_builders::ListConnectorEntities::api_version) / [`set_api_version(Option<String>)`](crate::client::fluent_builders::ListConnectorEntities::set_api_version): <p>The version of the API that's used by the connector.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConnectorEntities::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListConnectorEntities::set_max_results): <p>The maximum number of items that the operation returns in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConnectorEntities::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConnectorEntities::set_next_token): <p>A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big for the page size. You specify this token to get the next page of results in paginated response.</p>
     /// - On success, responds with [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput) with field(s):
     ///   - [`connector_entity_map(Option<HashMap<String, Vec<ConnectorEntity>>>)`](crate::output::ListConnectorEntitiesOutput::connector_entity_map): <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListConnectorEntitiesOutput::next_token): <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>
     /// - On failure, responds with [`SdkError<ListConnectorEntitiesError>`](crate::error::ListConnectorEntitiesError)
     pub fn list_connector_entities(&self) -> fluent_builders::ListConnectorEntities {
         fluent_builders::ListConnectorEntities::new(self.handle.clone())
@@ -370,6 +377,18 @@ impl Client {
     pub fn update_connector_profile(&self) -> fluent_builders::UpdateConnectorProfile {
         fluent_builders::UpdateConnectorProfile::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateConnectorRegistration`](crate::client::fluent_builders::UpdateConnectorRegistration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`connector_label(impl Into<String>)`](crate::client::fluent_builders::UpdateConnectorRegistration::connector_label) / [`set_connector_label(Option<String>)`](crate::client::fluent_builders::UpdateConnectorRegistration::set_connector_label): <p>The name of the connector. The name is unique for each connector registration in your AWS account.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateConnectorRegistration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateConnectorRegistration::set_description): <p>A description about the update that you're applying to the connector.</p>
+    ///   - [`connector_provisioning_config(ConnectorProvisioningConfig)`](crate::client::fluent_builders::UpdateConnectorRegistration::connector_provisioning_config) / [`set_connector_provisioning_config(Option<ConnectorProvisioningConfig>)`](crate::client::fluent_builders::UpdateConnectorRegistration::set_connector_provisioning_config): <p>Contains information about the configuration of the connector being registered.</p>
+    /// - On success, responds with [`UpdateConnectorRegistrationOutput`](crate::output::UpdateConnectorRegistrationOutput) with field(s):
+    ///   - [`connector_arn(Option<String>)`](crate::output::UpdateConnectorRegistrationOutput::connector_arn): <p>The ARN of the connector being updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateConnectorRegistrationError>`](crate::error::UpdateConnectorRegistrationError)
+    pub fn update_connector_registration(&self) -> fluent_builders::UpdateConnectorRegistration {
+        fluent_builders::UpdateConnectorRegistration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateFlow`](crate::client::fluent_builders::UpdateFlow) operation.
     ///
     /// - The fluent builder is configurable:
@@ -379,6 +398,7 @@ impl Client {
     ///   - [`source_flow_config(SourceFlowConfig)`](crate::client::fluent_builders::UpdateFlow::source_flow_config) / [`set_source_flow_config(Option<SourceFlowConfig>)`](crate::client::fluent_builders::UpdateFlow::set_source_flow_config): <p> Contains information about the configuration of the source connector used in the flow. </p>
     ///   - [`destination_flow_config_list(Vec<DestinationFlowConfig>)`](crate::client::fluent_builders::UpdateFlow::destination_flow_config_list) / [`set_destination_flow_config_list(Option<Vec<DestinationFlowConfig>>)`](crate::client::fluent_builders::UpdateFlow::set_destination_flow_config_list): <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     ///   - [`tasks(Vec<Task>)`](crate::client::fluent_builders::UpdateFlow::tasks) / [`set_tasks(Option<Vec<Task>>)`](crate::client::fluent_builders::UpdateFlow::set_tasks): <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
+    ///   - [`metadata_catalog_config(MetadataCatalogConfig)`](crate::client::fluent_builders::UpdateFlow::metadata_catalog_config) / [`set_metadata_catalog_config(Option<MetadataCatalogConfig>)`](crate::client::fluent_builders::UpdateFlow::set_metadata_catalog_config): <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
     /// - On success, responds with [`UpdateFlowOutput`](crate::output::UpdateFlowOutput) with field(s):
     ///   - [`flow_status(Option<FlowStatus>)`](crate::output::UpdateFlowOutput::flow_status): <p>Indicates the current status of the flow. </p>
     /// - On failure, responds with [`SdkError<UpdateFlowError>`](crate::error::UpdateFlowError)
@@ -710,6 +730,22 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
+        pub fn metadata_catalog_config(
+            mut self,
+            input: crate::model::MetadataCatalogConfig,
+        ) -> Self {
+            self.inner = self.inner.metadata_catalog_config(input);
+            self
+        }
+        /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
+        pub fn set_metadata_catalog_config(
+            mut self,
+            input: std::option::Option<crate::model::MetadataCatalogConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_metadata_catalog_config(input);
             self
         }
     }
@@ -1605,6 +1641,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_api_version(input);
             self
         }
+        /// <p>The maximum number of items that the operation returns in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of items that the operation returns in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big for the page size. You specify this token to get the next page of results in paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big for the page size. You specify this token to get the next page of results in paginated response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListConnectors`.
     ///
@@ -1859,7 +1915,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterConnector`.
     ///
-    /// <p>Registers a new connector with your Amazon Web Services account. Before you can register the connector, you must deploy lambda in your account.</p>
+    /// <p>Registers a new custom connector with your Amazon Web Services account. Before you can register the connector, you must deploy the associated AWS lambda function in your account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterConnector {
         handle: std::sync::Arc<super::Handle>,
@@ -2219,7 +2275,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UnregisterConnector`.
     ///
-    /// <p>Unregisters the custom connector registered in your account that matches the connectorLabel provided in the request.</p>
+    /// <p>Unregisters the custom connector registered in your account that matches the connector label provided in the request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnregisterConnector {
         handle: std::sync::Arc<super::Handle>,
@@ -2498,6 +2554,112 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateConnectorRegistration`.
+    ///
+    /// <p>Updates a custom connector that you've previously registered. This operation updates the connector with one of the following:</p>
+    /// <ul>
+    /// <li> <p>The latest version of the AWS Lambda function that's assigned to the connector</p> </li>
+    /// <li> <p>A new AWS Lambda function that you specify</p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateConnectorRegistration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_connector_registration_input::Builder,
+    }
+    impl UpdateConnectorRegistration {
+        /// Creates a new `UpdateConnectorRegistration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateConnectorRegistration,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateConnectorRegistrationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateConnectorRegistrationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateConnectorRegistrationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the connector. The name is unique for each connector registration in your AWS account.</p>
+        pub fn connector_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_label(input.into());
+            self
+        }
+        /// <p>The name of the connector. The name is unique for each connector registration in your AWS account.</p>
+        pub fn set_connector_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connector_label(input);
+            self
+        }
+        /// <p>A description about the update that you're applying to the connector.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A description about the update that you're applying to the connector.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>Contains information about the configuration of the connector being registered.</p>
+        pub fn connector_provisioning_config(
+            mut self,
+            input: crate::model::ConnectorProvisioningConfig,
+        ) -> Self {
+            self.inner = self.inner.connector_provisioning_config(input);
+            self
+        }
+        /// <p>Contains information about the configuration of the connector being registered.</p>
+        pub fn set_connector_provisioning_config(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorProvisioningConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_connector_provisioning_config(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateFlow`.
     ///
     /// <p> Updates an existing flow. </p>
@@ -2641,6 +2803,22 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Task>>,
         ) -> Self {
             self.inner = self.inner.set_tasks(input);
+            self
+        }
+        /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
+        pub fn metadata_catalog_config(
+            mut self,
+            input: crate::model::MetadataCatalogConfig,
+        ) -> Self {
+            self.inner = self.inner.metadata_catalog_config(input);
+            self
+        }
+        /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
+        pub fn set_metadata_catalog_config(
+            mut self,
+            input: std::option::Option<crate::model::MetadataCatalogConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_metadata_catalog_config(input);
             self
         }
     }

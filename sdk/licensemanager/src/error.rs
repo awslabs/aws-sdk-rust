@@ -7467,6 +7467,215 @@ impl std::error::Error for ListReceivedGrantsError {
     }
 }
 
+/// Error type for the `ListReceivedGrantsForOrganization` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListReceivedGrantsForOrganizationError {
+    /// Kind of error that occurred.
+    pub kind: ListReceivedGrantsForOrganizationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListReceivedGrantsForOrganizationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListReceivedGrantsForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListReceivedGrantsForOrganization` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListReceivedGrantsForOrganizationErrorKind {
+    /// <p>Access to resource denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    AuthorizationException(crate::error::AuthorizationException),
+    /// <p>One or more parameter values are not valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>Too many requests have been submitted. Try again after a brief wait.</p>
+    RateLimitExceededException(crate::error::RateLimitExceededException),
+    /// <p>Your resource limits have been exceeded.</p>
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    /// <p>The server experienced an internal error. Try again.</p>
+    ServerInternalException(crate::error::ServerInternalException),
+    /// <p>The provided input is not valid. Try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListReceivedGrantsForOrganizationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListReceivedGrantsForOrganizationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListReceivedGrantsForOrganizationErrorKind::AuthorizationException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListReceivedGrantsForOrganizationErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListReceivedGrantsForOrganizationErrorKind::RateLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListReceivedGrantsForOrganizationErrorKind::ResourceLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListReceivedGrantsForOrganizationErrorKind::ServerInternalException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListReceivedGrantsForOrganizationErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListReceivedGrantsForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListReceivedGrantsForOrganizationError {
+    fn code(&self) -> Option<&str> {
+        ListReceivedGrantsForOrganizationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListReceivedGrantsForOrganizationError {
+    /// Creates a new `ListReceivedGrantsForOrganizationError`.
+    pub fn new(
+        kind: ListReceivedGrantsForOrganizationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListReceivedGrantsForOrganizationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListReceivedGrantsForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListReceivedGrantsForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListReceivedGrantsForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListReceivedGrantsForOrganizationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReceivedGrantsForOrganizationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListReceivedGrantsForOrganizationErrorKind::AuthorizationException`.
+    pub fn is_authorization_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReceivedGrantsForOrganizationErrorKind::AuthorizationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListReceivedGrantsForOrganizationErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReceivedGrantsForOrganizationErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListReceivedGrantsForOrganizationErrorKind::RateLimitExceededException`.
+    pub fn is_rate_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReceivedGrantsForOrganizationErrorKind::RateLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListReceivedGrantsForOrganizationErrorKind::ResourceLimitExceededException`.
+    pub fn is_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReceivedGrantsForOrganizationErrorKind::ResourceLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListReceivedGrantsForOrganizationErrorKind::ServerInternalException`.
+    pub fn is_server_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReceivedGrantsForOrganizationErrorKind::ServerInternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListReceivedGrantsForOrganizationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReceivedGrantsForOrganizationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListReceivedGrantsForOrganizationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListReceivedGrantsForOrganizationErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            ListReceivedGrantsForOrganizationErrorKind::AuthorizationException(_inner) => {
+                Some(_inner)
+            }
+            ListReceivedGrantsForOrganizationErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            ListReceivedGrantsForOrganizationErrorKind::RateLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            ListReceivedGrantsForOrganizationErrorKind::ResourceLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            ListReceivedGrantsForOrganizationErrorKind::ServerInternalException(_inner) => {
+                Some(_inner)
+            }
+            ListReceivedGrantsForOrganizationErrorKind::ValidationException(_inner) => Some(_inner),
+            ListReceivedGrantsForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListReceivedLicenses` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7641,6 +7850,217 @@ impl std::error::Error for ListReceivedLicensesError {
             ListReceivedLicensesErrorKind::ServerInternalException(_inner) => Some(_inner),
             ListReceivedLicensesErrorKind::ValidationException(_inner) => Some(_inner),
             ListReceivedLicensesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListReceivedLicensesForOrganization` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListReceivedLicensesForOrganizationError {
+    /// Kind of error that occurred.
+    pub kind: ListReceivedLicensesForOrganizationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListReceivedLicensesForOrganizationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListReceivedLicensesForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListReceivedLicensesForOrganization` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListReceivedLicensesForOrganizationErrorKind {
+    /// <p>Access to resource denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    AuthorizationException(crate::error::AuthorizationException),
+    /// <p>One or more parameter values are not valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>Too many requests have been submitted. Try again after a brief wait.</p>
+    RateLimitExceededException(crate::error::RateLimitExceededException),
+    /// <p>Your resource limits have been exceeded.</p>
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    /// <p>The server experienced an internal error. Try again.</p>
+    ServerInternalException(crate::error::ServerInternalException),
+    /// <p>The provided input is not valid. Try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListReceivedLicensesForOrganizationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListReceivedLicensesForOrganizationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListReceivedLicensesForOrganizationErrorKind::AuthorizationException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListReceivedLicensesForOrganizationErrorKind::InvalidParameterValueException(
+                _inner,
+            ) => _inner.fmt(f),
+            ListReceivedLicensesForOrganizationErrorKind::RateLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListReceivedLicensesForOrganizationErrorKind::ResourceLimitExceededException(
+                _inner,
+            ) => _inner.fmt(f),
+            ListReceivedLicensesForOrganizationErrorKind::ServerInternalException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListReceivedLicensesForOrganizationErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListReceivedLicensesForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListReceivedLicensesForOrganizationError {
+    fn code(&self) -> Option<&str> {
+        ListReceivedLicensesForOrganizationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListReceivedLicensesForOrganizationError {
+    /// Creates a new `ListReceivedLicensesForOrganizationError`.
+    pub fn new(
+        kind: ListReceivedLicensesForOrganizationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListReceivedLicensesForOrganizationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListReceivedLicensesForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListReceivedLicensesForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListReceivedLicensesForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListReceivedLicensesForOrganizationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReceivedLicensesForOrganizationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListReceivedLicensesForOrganizationErrorKind::AuthorizationException`.
+    pub fn is_authorization_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReceivedLicensesForOrganizationErrorKind::AuthorizationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListReceivedLicensesForOrganizationErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReceivedLicensesForOrganizationErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListReceivedLicensesForOrganizationErrorKind::RateLimitExceededException`.
+    pub fn is_rate_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReceivedLicensesForOrganizationErrorKind::RateLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListReceivedLicensesForOrganizationErrorKind::ResourceLimitExceededException`.
+    pub fn is_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReceivedLicensesForOrganizationErrorKind::ResourceLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListReceivedLicensesForOrganizationErrorKind::ServerInternalException`.
+    pub fn is_server_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReceivedLicensesForOrganizationErrorKind::ServerInternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListReceivedLicensesForOrganizationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReceivedLicensesForOrganizationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListReceivedLicensesForOrganizationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListReceivedLicensesForOrganizationErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            ListReceivedLicensesForOrganizationErrorKind::AuthorizationException(_inner) => {
+                Some(_inner)
+            }
+            ListReceivedLicensesForOrganizationErrorKind::InvalidParameterValueException(
+                _inner,
+            ) => Some(_inner),
+            ListReceivedLicensesForOrganizationErrorKind::RateLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            ListReceivedLicensesForOrganizationErrorKind::ResourceLimitExceededException(
+                _inner,
+            ) => Some(_inner),
+            ListReceivedLicensesForOrganizationErrorKind::ServerInternalException(_inner) => {
+                Some(_inner)
+            }
+            ListReceivedLicensesForOrganizationErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            ListReceivedLicensesForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

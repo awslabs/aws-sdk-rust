@@ -816,12 +816,15 @@ pub struct GetResponsePlanOutput {
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     #[doc(hidden)]
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
-    /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
+    /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
     #[doc(hidden)]
     pub engagements: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The actions that this response plan takes at the beginning of the incident.</p>
     #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
+    /// <p>Information about third-party services integrated into the Incident Manager response plan.</p>
+    #[doc(hidden)]
+    pub integrations: std::option::Option<std::vec::Vec<crate::model::Integration>>,
 }
 impl GetResponsePlanOutput {
     /// <p>The ARN of the response plan.</p>
@@ -844,13 +847,17 @@ impl GetResponsePlanOutput {
     pub fn chat_channel(&self) -> std::option::Option<&crate::model::ChatChannel> {
         self.chat_channel.as_ref()
     }
-    /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn engagements(&self) -> std::option::Option<&std::vec::Vec<std::string::String>> {
-        self.engagements.as_ref()
+    /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
+    pub fn engagements(&self) -> std::option::Option<&[std::string::String]> {
+        self.engagements.as_deref()
     }
     /// <p>The actions that this response plan takes at the beginning of the incident.</p>
     pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
         self.actions.as_deref()
+    }
+    /// <p>Information about third-party services integrated into the Incident Manager response plan.</p>
+    pub fn integrations(&self) -> std::option::Option<&[crate::model::Integration]> {
+        self.integrations.as_deref()
     }
 }
 /// See [`GetResponsePlanOutput`](crate::output::GetResponsePlanOutput).
@@ -866,6 +873,7 @@ pub mod get_response_plan_output {
         pub(crate) chat_channel: std::option::Option<crate::model::ChatChannel>,
         pub(crate) engagements: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
+        pub(crate) integrations: std::option::Option<std::vec::Vec<crate::model::Integration>>,
     }
     impl Builder {
         /// <p>The ARN of the response plan.</p>
@@ -924,12 +932,18 @@ pub mod get_response_plan_output {
             self.chat_channel = input;
             self
         }
-        /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
-        pub fn engagements(mut self, input: std::vec::Vec<std::string::String>) -> Self {
-            self.engagements = Some(input);
+        /// Appends an item to `engagements`.
+        ///
+        /// To override the contents of this collection use [`set_engagements`](Self::set_engagements).
+        ///
+        /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
+        pub fn engagements(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.engagements.unwrap_or_default();
+            v.push(input.into());
+            self.engagements = Some(v);
             self
         }
-        /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
+        /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
         pub fn set_engagements(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -956,6 +970,25 @@ pub mod get_response_plan_output {
             self.actions = input;
             self
         }
+        /// Appends an item to `integrations`.
+        ///
+        /// To override the contents of this collection use [`set_integrations`](Self::set_integrations).
+        ///
+        /// <p>Information about third-party services integrated into the Incident Manager response plan.</p>
+        pub fn integrations(mut self, input: crate::model::Integration) -> Self {
+            let mut v = self.integrations.unwrap_or_default();
+            v.push(input);
+            self.integrations = Some(v);
+            self
+        }
+        /// <p>Information about third-party services integrated into the Incident Manager response plan.</p>
+        pub fn set_integrations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Integration>>,
+        ) -> Self {
+            self.integrations = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetResponsePlanOutput`](crate::output::GetResponsePlanOutput).
         pub fn build(self) -> crate::output::GetResponsePlanOutput {
             crate::output::GetResponsePlanOutput {
@@ -966,6 +999,7 @@ pub mod get_response_plan_output {
                 chat_channel: self.chat_channel,
                 engagements: self.engagements,
                 actions: self.actions,
+                integrations: self.integrations,
             }
         }
     }

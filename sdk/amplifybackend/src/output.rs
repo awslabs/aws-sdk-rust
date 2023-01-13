@@ -1831,6 +1831,9 @@ pub struct GetBackendApiModelsOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
+    /// <p>Stringified JSON of the model introspection schema for an existing backend API resource.</p>
+    #[doc(hidden)]
+    pub model_introspection_schema: std::option::Option<std::string::String>,
 }
 impl GetBackendApiModelsOutput {
     /// <p>Stringified JSON of the datastore model.</p>
@@ -1841,6 +1844,10 @@ impl GetBackendApiModelsOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
     }
+    /// <p>Stringified JSON of the model introspection schema for an existing backend API resource.</p>
+    pub fn model_introspection_schema(&self) -> std::option::Option<&str> {
+        self.model_introspection_schema.as_deref()
+    }
 }
 /// See [`GetBackendApiModelsOutput`](crate::output::GetBackendApiModelsOutput).
 pub mod get_backend_api_models_output {
@@ -1850,6 +1857,7 @@ pub mod get_backend_api_models_output {
     pub struct Builder {
         pub(crate) models: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
+        pub(crate) model_introspection_schema: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Stringified JSON of the datastore model.</p>
@@ -1872,11 +1880,25 @@ pub mod get_backend_api_models_output {
             self.status = input;
             self
         }
+        /// <p>Stringified JSON of the model introspection schema for an existing backend API resource.</p>
+        pub fn model_introspection_schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_introspection_schema = Some(input.into());
+            self
+        }
+        /// <p>Stringified JSON of the model introspection schema for an existing backend API resource.</p>
+        pub fn set_model_introspection_schema(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_introspection_schema = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBackendApiModelsOutput`](crate::output::GetBackendApiModelsOutput).
         pub fn build(self) -> crate::output::GetBackendApiModelsOutput {
             crate::output::GetBackendApiModelsOutput {
                 models: self.models,
                 status: self.status,
+                model_introspection_schema: self.model_introspection_schema,
             }
         }
     }

@@ -132,7 +132,7 @@ impl Client {
     ///   - [`signal_catalog_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCampaign::signal_catalog_arn) / [`set_signal_catalog_arn(Option<String>)`](crate::client::fluent_builders::CreateCampaign::set_signal_catalog_arn): <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign. </p>
     ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCampaign::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::CreateCampaign::set_target_arn): <p> The ARN of the vehicle or fleet to deploy a campaign to. </p>
     ///   - [`start_time(DateTime)`](crate::client::fluent_builders::CreateCampaign::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::CreateCampaign::set_start_time): <p>(Optional) The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>  <p>Default: <code>0</code> </p>
-    ///   - [`expiry_time(DateTime)`](crate::client::fluent_builders::CreateCampaign::expiry_time) / [`set_expiry_time(Option<DateTime>)`](crate::client::fluent_builders::CreateCampaign::set_expiry_time): <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p>  <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>
+    ///   - [`expiry_time(DateTime)`](crate::client::fluent_builders::CreateCampaign::expiry_time) / [`set_expiry_time(Option<DateTime>)`](crate::client::fluent_builders::CreateCampaign::set_expiry_time): <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p>  <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
     ///   - [`post_trigger_collection_duration(i64)`](crate::client::fluent_builders::CreateCampaign::post_trigger_collection_duration) / [`set_post_trigger_collection_duration(Option<i64>)`](crate::client::fluent_builders::CreateCampaign::set_post_trigger_collection_duration): <p> (Optional) How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>  <p>Default: <code>0</code> </p>
     ///   - [`diagnostics_mode(DiagnosticsMode)`](crate::client::fluent_builders::CreateCampaign::diagnostics_mode) / [`set_diagnostics_mode(Option<DiagnosticsMode>)`](crate::client::fluent_builders::CreateCampaign::set_diagnostics_mode): <p> (Optional) Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. If you want to send diagnostic trouble codes, use <code>SEND_ACTIVE_DTCS</code>. If it's not specified, <code>OFF</code> is used.</p>  <p>Default: <code>OFF</code> </p>
     ///   - [`spooling_mode(SpoolingMode)`](crate::client::fluent_builders::CreateCampaign::spooling_mode) / [`set_spooling_mode(Option<SpoolingMode>)`](crate::client::fluent_builders::CreateCampaign::set_spooling_mode): <p>(Optional) Whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle loses connection with the cloud, use <code>TO_DISK</code>. If it's not specified, <code>OFF</code> is used.</p>  <p>Default: <code>OFF</code> </p>
@@ -140,7 +140,7 @@ impl Client {
     ///   - [`priority(i32)`](crate::client::fluent_builders::CreateCampaign::priority) / [`set_priority(Option<i32>)`](crate::client::fluent_builders::CreateCampaign::set_priority): <p>(Optional) A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used. </p>  <p>Default: <code>0</code> </p>
     ///   - [`signals_to_collect(Vec<SignalInformation>)`](crate::client::fluent_builders::CreateCampaign::signals_to_collect) / [`set_signals_to_collect(Option<Vec<SignalInformation>>)`](crate::client::fluent_builders::CreateCampaign::set_signals_to_collect): <p>(Optional) A list of information about signals to collect. </p>
     ///   - [`collection_scheme(CollectionScheme)`](crate::client::fluent_builders::CreateCampaign::collection_scheme) / [`set_collection_scheme(Option<CollectionScheme>)`](crate::client::fluent_builders::CreateCampaign::set_collection_scheme): <p> The data collection scheme associated with the campaign. You can specify a scheme that collects data based on time or an event.</p>
-    ///   - [`data_extra_dimensions(Vec<String>)`](crate::client::fluent_builders::CreateCampaign::data_extra_dimensions) / [`set_data_extra_dimensions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCampaign::set_data_extra_dimensions): <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>  <p>Default: An empty array</p>
+    ///   - [`data_extra_dimensions(Vec<String>)`](crate::client::fluent_builders::CreateCampaign::data_extra_dimensions) / [`set_data_extra_dimensions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCampaign::set_data_extra_dimensions): <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>  <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>  <p>Default: An empty array</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCampaign::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCampaign::set_tags): <p>Metadata that can be used to manage the campaign.</p>
     /// - On success, responds with [`CreateCampaignOutput`](crate::output::CreateCampaignOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::CreateCampaignOutput::name): <p>The name of the created campaign.</p>
@@ -1167,13 +1167,13 @@ pub mod fluent_builders {
             self
         }
         /// <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p>
-        /// <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>
+        /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
         pub fn expiry_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.expiry_time(input);
             self
         }
         /// <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p>
-        /// <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>
+        /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
         pub fn set_expiry_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1288,12 +1288,14 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_data_extra_dimensions`](Self::set_data_extra_dimensions).
         ///
         /// <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
+        /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
         /// <p>Default: An empty array</p>
         pub fn data_extra_dimensions(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_extra_dimensions(input.into());
             self
         }
         /// <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
+        /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
         /// <p>Default: An empty array</p>
         pub fn set_data_extra_dimensions(
             mut self,

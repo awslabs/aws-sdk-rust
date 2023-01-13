@@ -2305,6 +2305,9 @@ pub struct DescribeAccountHealthOutput {
     /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
     #[doc(hidden)]
     pub resource_hours: std::option::Option<i64>,
+    /// <p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>
+    #[doc(hidden)]
+    pub analyzed_resource_count: std::option::Option<i64>,
 }
 impl DescribeAccountHealthOutput {
     /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account. </p>
@@ -2323,6 +2326,10 @@ impl DescribeAccountHealthOutput {
     pub fn resource_hours(&self) -> std::option::Option<i64> {
         self.resource_hours
     }
+    /// <p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>
+    pub fn analyzed_resource_count(&self) -> std::option::Option<i64> {
+        self.analyzed_resource_count
+    }
 }
 /// See [`DescribeAccountHealthOutput`](crate::output::DescribeAccountHealthOutput).
 pub mod describe_account_health_output {
@@ -2334,6 +2341,7 @@ pub mod describe_account_health_output {
         pub(crate) open_proactive_insights: std::option::Option<i32>,
         pub(crate) metrics_analyzed: std::option::Option<i32>,
         pub(crate) resource_hours: std::option::Option<i64>,
+        pub(crate) analyzed_resource_count: std::option::Option<i64>,
     }
     impl Builder {
         /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account. </p>
@@ -2376,6 +2384,16 @@ pub mod describe_account_health_output {
             self.resource_hours = input;
             self
         }
+        /// <p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>
+        pub fn analyzed_resource_count(mut self, input: i64) -> Self {
+            self.analyzed_resource_count = Some(input);
+            self
+        }
+        /// <p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>
+        pub fn set_analyzed_resource_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.analyzed_resource_count = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAccountHealthOutput`](crate::output::DescribeAccountHealthOutput).
         pub fn build(self) -> crate::output::DescribeAccountHealthOutput {
             crate::output::DescribeAccountHealthOutput {
@@ -2383,6 +2401,7 @@ pub mod describe_account_health_output {
                 open_proactive_insights: self.open_proactive_insights.unwrap_or_default(),
                 metrics_analyzed: self.metrics_analyzed.unwrap_or_default(),
                 resource_hours: self.resource_hours,
+                analyzed_resource_count: self.analyzed_resource_count,
             }
         }
     }

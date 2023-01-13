@@ -7,6 +7,8 @@ pub enum Error {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> Exception to indicate that there is an ongoing task when a new task is created. Return when once the existing tasks are complete. </p>
     ConflictException(crate::error::ConflictException),
+    /// <p>Dependency encountered an error.</p>
+    DependencyException(crate::error::DependencyException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The specified ID in the request is not found. </p>
@@ -34,6 +36,7 @@ impl std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::DependencyException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceLinkedRoleLockClientException(inner) => inner.fmt(f),
@@ -188,6 +191,43 @@ impl From<crate::error::GetImportFileTaskError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::GetImportFileTaskErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLatestAssessmentIdError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetLatestAssessmentIdError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetLatestAssessmentIdError> for Error {
+    fn from(err: crate::error::GetLatestAssessmentIdError) -> Self {
+        match err.kind {
+            crate::error::GetLatestAssessmentIdErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::GetLatestAssessmentIdErrorKind::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::error::GetLatestAssessmentIdErrorKind::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::error::GetLatestAssessmentIdErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::GetLatestAssessmentIdErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

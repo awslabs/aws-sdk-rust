@@ -4014,6 +4014,146 @@ impl ListExportsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListCustomVocabularyItemsOutput {
+    /// <p>The unique identifier of the bot to the list custom vocabulary response.</p>
+    #[doc(hidden)]
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The bot version of the bot to the list custom vocabulary response.</p>
+    #[doc(hidden)]
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The locale identifier of the bot to the list custom vocabulary response.</p>
+    #[doc(hidden)]
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
+    #[doc(hidden)]
+    pub custom_vocabulary_items:
+        std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+    /// <p>The nextToken identifier to the list custom vocabulary response.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCustomVocabularyItemsOutput {
+    /// <p>The unique identifier of the bot to the list custom vocabulary response.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The bot version of the bot to the list custom vocabulary response.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The locale identifier of the bot to the list custom vocabulary response.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
+    pub fn custom_vocabulary_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomVocabularyItem]> {
+        self.custom_vocabulary_items.as_deref()
+    }
+    /// <p>The nextToken identifier to the list custom vocabulary response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListCustomVocabularyItemsOutput`](crate::output::ListCustomVocabularyItemsOutput).
+pub mod list_custom_vocabulary_items_output {
+
+    /// A builder for [`ListCustomVocabularyItemsOutput`](crate::output::ListCustomVocabularyItemsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) custom_vocabulary_items:
+            std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot to the list custom vocabulary response.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot to the list custom vocabulary response.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The bot version of the bot to the list custom vocabulary response.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The bot version of the bot to the list custom vocabulary response.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The locale identifier of the bot to the list custom vocabulary response.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The locale identifier of the bot to the list custom vocabulary response.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// Appends an item to `custom_vocabulary_items`.
+        ///
+        /// To override the contents of this collection use [`set_custom_vocabulary_items`](Self::set_custom_vocabulary_items).
+        ///
+        /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
+        pub fn custom_vocabulary_items(
+            mut self,
+            input: crate::model::CustomVocabularyItem,
+        ) -> Self {
+            let mut v = self.custom_vocabulary_items.unwrap_or_default();
+            v.push(input);
+            self.custom_vocabulary_items = Some(v);
+            self
+        }
+        /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
+        pub fn set_custom_vocabulary_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+        ) -> Self {
+            self.custom_vocabulary_items = input;
+            self
+        }
+        /// <p>The nextToken identifier to the list custom vocabulary response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The nextToken identifier to the list custom vocabulary response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCustomVocabularyItemsOutput`](crate::output::ListCustomVocabularyItemsOutput).
+        pub fn build(self) -> crate::output::ListCustomVocabularyItemsOutput {
+            crate::output::ListCustomVocabularyItemsOutput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                custom_vocabulary_items: self.custom_vocabulary_items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListCustomVocabularyItemsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCustomVocabularyItemsOutput`](crate::output::ListCustomVocabularyItemsOutput).
+    pub fn builder() -> crate::output::list_custom_vocabulary_items_output::Builder {
+        crate::output::list_custom_vocabulary_items_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBuiltInSlotTypesOutput {
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     #[doc(hidden)]
@@ -11612,5 +11752,437 @@ impl BuildBotLocaleOutput {
     /// Creates a new builder-style object to manufacture [`BuildBotLocaleOutput`](crate::output::BuildBotLocaleOutput).
     pub fn builder() -> crate::output::build_bot_locale_output::Builder {
         crate::output::build_bot_locale_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BatchUpdateCustomVocabularyItemOutput {
+    /// <p>The unique identifier of the bot to the batch update response for the custom vocabulary item.</p>
+    #[doc(hidden)]
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The bot version of the bot to the batch update response for the custom vocabulary item.</p>
+    #[doc(hidden)]
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The locale identifier of the bot to the batch update response for the custom vocabulary item.</p>
+    #[doc(hidden)]
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The errors of the action to batch update response for the custom vocabulary item.</p>
+    #[doc(hidden)]
+    pub errors: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
+    /// <p>The resources of the action to batch update response for the custom vocabulary item.</p>
+    #[doc(hidden)]
+    pub resources: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+}
+impl BatchUpdateCustomVocabularyItemOutput {
+    /// <p>The unique identifier of the bot to the batch update response for the custom vocabulary item.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The bot version of the bot to the batch update response for the custom vocabulary item.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The locale identifier of the bot to the batch update response for the custom vocabulary item.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The errors of the action to batch update response for the custom vocabulary item.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::FailedCustomVocabularyItem]> {
+        self.errors.as_deref()
+    }
+    /// <p>The resources of the action to batch update response for the custom vocabulary item.</p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::CustomVocabularyItem]> {
+        self.resources.as_deref()
+    }
+}
+/// See [`BatchUpdateCustomVocabularyItemOutput`](crate::output::BatchUpdateCustomVocabularyItemOutput).
+pub mod batch_update_custom_vocabulary_item_output {
+
+    /// A builder for [`BatchUpdateCustomVocabularyItemOutput`](crate::output::BatchUpdateCustomVocabularyItemOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) errors:
+            std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
+        pub(crate) resources:
+            std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot to the batch update response for the custom vocabulary item.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot to the batch update response for the custom vocabulary item.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The bot version of the bot to the batch update response for the custom vocabulary item.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The bot version of the bot to the batch update response for the custom vocabulary item.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The locale identifier of the bot to the batch update response for the custom vocabulary item.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The locale identifier of the bot to the batch update response for the custom vocabulary item.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>The errors of the action to batch update response for the custom vocabulary item.</p>
+        pub fn errors(mut self, input: crate::model::FailedCustomVocabularyItem) -> Self {
+            let mut v = self.errors.unwrap_or_default();
+            v.push(input);
+            self.errors = Some(v);
+            self
+        }
+        /// <p>The errors of the action to batch update response for the custom vocabulary item.</p>
+        pub fn set_errors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
+        ) -> Self {
+            self.errors = input;
+            self
+        }
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>The resources of the action to batch update response for the custom vocabulary item.</p>
+        pub fn resources(mut self, input: crate::model::CustomVocabularyItem) -> Self {
+            let mut v = self.resources.unwrap_or_default();
+            v.push(input);
+            self.resources = Some(v);
+            self
+        }
+        /// <p>The resources of the action to batch update response for the custom vocabulary item.</p>
+        pub fn set_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+        ) -> Self {
+            self.resources = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchUpdateCustomVocabularyItemOutput`](crate::output::BatchUpdateCustomVocabularyItemOutput).
+        pub fn build(self) -> crate::output::BatchUpdateCustomVocabularyItemOutput {
+            crate::output::BatchUpdateCustomVocabularyItemOutput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                errors: self.errors,
+                resources: self.resources,
+            }
+        }
+    }
+}
+impl BatchUpdateCustomVocabularyItemOutput {
+    /// Creates a new builder-style object to manufacture [`BatchUpdateCustomVocabularyItemOutput`](crate::output::BatchUpdateCustomVocabularyItemOutput).
+    pub fn builder() -> crate::output::batch_update_custom_vocabulary_item_output::Builder {
+        crate::output::batch_update_custom_vocabulary_item_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BatchDeleteCustomVocabularyItemOutput {
+    /// <p>The unique identifier of the bot to batch delete response for the custom vocabulary item.</p>
+    #[doc(hidden)]
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot to batch delete response for the custom vocabulary item.</p>
+    #[doc(hidden)]
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The locale identifier of the bot to batch delete response for the custom vocabulary item.</p>
+    #[doc(hidden)]
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The errors of the action to batch delete response for the custom vocabulary item.</p>
+    #[doc(hidden)]
+    pub errors: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
+    /// <p>The resources of the action to batch delete response for the custom vocabulary item.</p>
+    #[doc(hidden)]
+    pub resources: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+}
+impl BatchDeleteCustomVocabularyItemOutput {
+    /// <p>The unique identifier of the bot to batch delete response for the custom vocabulary item.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot to batch delete response for the custom vocabulary item.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The locale identifier of the bot to batch delete response for the custom vocabulary item.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The errors of the action to batch delete response for the custom vocabulary item.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::FailedCustomVocabularyItem]> {
+        self.errors.as_deref()
+    }
+    /// <p>The resources of the action to batch delete response for the custom vocabulary item.</p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::CustomVocabularyItem]> {
+        self.resources.as_deref()
+    }
+}
+/// See [`BatchDeleteCustomVocabularyItemOutput`](crate::output::BatchDeleteCustomVocabularyItemOutput).
+pub mod batch_delete_custom_vocabulary_item_output {
+
+    /// A builder for [`BatchDeleteCustomVocabularyItemOutput`](crate::output::BatchDeleteCustomVocabularyItemOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) errors:
+            std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
+        pub(crate) resources:
+            std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot to batch delete response for the custom vocabulary item.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot to batch delete response for the custom vocabulary item.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot to batch delete response for the custom vocabulary item.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot to batch delete response for the custom vocabulary item.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The locale identifier of the bot to batch delete response for the custom vocabulary item.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The locale identifier of the bot to batch delete response for the custom vocabulary item.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>The errors of the action to batch delete response for the custom vocabulary item.</p>
+        pub fn errors(mut self, input: crate::model::FailedCustomVocabularyItem) -> Self {
+            let mut v = self.errors.unwrap_or_default();
+            v.push(input);
+            self.errors = Some(v);
+            self
+        }
+        /// <p>The errors of the action to batch delete response for the custom vocabulary item.</p>
+        pub fn set_errors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
+        ) -> Self {
+            self.errors = input;
+            self
+        }
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>The resources of the action to batch delete response for the custom vocabulary item.</p>
+        pub fn resources(mut self, input: crate::model::CustomVocabularyItem) -> Self {
+            let mut v = self.resources.unwrap_or_default();
+            v.push(input);
+            self.resources = Some(v);
+            self
+        }
+        /// <p>The resources of the action to batch delete response for the custom vocabulary item.</p>
+        pub fn set_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+        ) -> Self {
+            self.resources = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchDeleteCustomVocabularyItemOutput`](crate::output::BatchDeleteCustomVocabularyItemOutput).
+        pub fn build(self) -> crate::output::BatchDeleteCustomVocabularyItemOutput {
+            crate::output::BatchDeleteCustomVocabularyItemOutput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                errors: self.errors,
+                resources: self.resources,
+            }
+        }
+    }
+}
+impl BatchDeleteCustomVocabularyItemOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteCustomVocabularyItemOutput`](crate::output::BatchDeleteCustomVocabularyItemOutput).
+    pub fn builder() -> crate::output::batch_delete_custom_vocabulary_item_output::Builder {
+        crate::output::batch_delete_custom_vocabulary_item_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BatchCreateCustomVocabularyItemOutput {
+    /// <p>The unique identifier of the bot to batch create response for the custom vocabulary item.</p>
+    #[doc(hidden)]
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The bot version of the bot to batch create the custom vocabulary item response for.</p>
+    #[doc(hidden)]
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The unique locale identifier of the bot to batch create the custom vocabulary item response for.</p>
+    #[doc(hidden)]
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The errors of the action to batch create the custom vocabulary item response for a bot.</p>
+    #[doc(hidden)]
+    pub errors: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
+    /// <p>The resources of the action to batch create the custom vocabulary item response for a bot.</p>
+    #[doc(hidden)]
+    pub resources: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+}
+impl BatchCreateCustomVocabularyItemOutput {
+    /// <p>The unique identifier of the bot to batch create response for the custom vocabulary item.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The bot version of the bot to batch create the custom vocabulary item response for.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The unique locale identifier of the bot to batch create the custom vocabulary item response for.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The errors of the action to batch create the custom vocabulary item response for a bot.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::FailedCustomVocabularyItem]> {
+        self.errors.as_deref()
+    }
+    /// <p>The resources of the action to batch create the custom vocabulary item response for a bot.</p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::CustomVocabularyItem]> {
+        self.resources.as_deref()
+    }
+}
+/// See [`BatchCreateCustomVocabularyItemOutput`](crate::output::BatchCreateCustomVocabularyItemOutput).
+pub mod batch_create_custom_vocabulary_item_output {
+
+    /// A builder for [`BatchCreateCustomVocabularyItemOutput`](crate::output::BatchCreateCustomVocabularyItemOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) errors:
+            std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
+        pub(crate) resources:
+            std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot to batch create response for the custom vocabulary item.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot to batch create response for the custom vocabulary item.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The bot version of the bot to batch create the custom vocabulary item response for.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The bot version of the bot to batch create the custom vocabulary item response for.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The unique locale identifier of the bot to batch create the custom vocabulary item response for.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The unique locale identifier of the bot to batch create the custom vocabulary item response for.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>The errors of the action to batch create the custom vocabulary item response for a bot.</p>
+        pub fn errors(mut self, input: crate::model::FailedCustomVocabularyItem) -> Self {
+            let mut v = self.errors.unwrap_or_default();
+            v.push(input);
+            self.errors = Some(v);
+            self
+        }
+        /// <p>The errors of the action to batch create the custom vocabulary item response for a bot.</p>
+        pub fn set_errors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
+        ) -> Self {
+            self.errors = input;
+            self
+        }
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>The resources of the action to batch create the custom vocabulary item response for a bot.</p>
+        pub fn resources(mut self, input: crate::model::CustomVocabularyItem) -> Self {
+            let mut v = self.resources.unwrap_or_default();
+            v.push(input);
+            self.resources = Some(v);
+            self
+        }
+        /// <p>The resources of the action to batch create the custom vocabulary item response for a bot.</p>
+        pub fn set_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+        ) -> Self {
+            self.resources = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchCreateCustomVocabularyItemOutput`](crate::output::BatchCreateCustomVocabularyItemOutput).
+        pub fn build(self) -> crate::output::BatchCreateCustomVocabularyItemOutput {
+            crate::output::BatchCreateCustomVocabularyItemOutput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                errors: self.errors,
+                resources: self.resources,
+            }
+        }
+    }
+}
+impl BatchCreateCustomVocabularyItemOutput {
+    /// Creates a new builder-style object to manufacture [`BatchCreateCustomVocabularyItemOutput`](crate::output::BatchCreateCustomVocabularyItemOutput).
+    pub fn builder() -> crate::output::batch_create_custom_vocabulary_item_output::Builder {
+        crate::output::batch_create_custom_vocabulary_item_output::Builder::default()
     }
 }

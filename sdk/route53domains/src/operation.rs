@@ -38,6 +38,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptDomainTransferFrom
     }
 }
 
+/// Operation shape for `AssociateDelegationSignerToDomain`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`associate_delegation_signer_to_domain`](crate::client::Client::associate_delegation_signer_to_domain).
+///
+/// See [`crate::client::fluent_builders::AssociateDelegationSignerToDomain`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct AssociateDelegationSignerToDomain {
+    _private: (),
+}
+impl AssociateDelegationSignerToDomain {
+    /// Creates a new builder-style object to manufacture [`AssociateDelegationSignerToDomainInput`](crate::input::AssociateDelegationSignerToDomainInput).
+    pub fn builder() -> crate::input::associate_delegation_signer_to_domain_input::Builder {
+        crate::input::associate_delegation_signer_to_domain_input::Builder::default()
+    }
+    /// Creates a new `AssociateDelegationSignerToDomain` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AssociateDelegationSignerToDomain {
+    type Output = std::result::Result<
+        crate::output::AssociateDelegationSignerToDomainOutput,
+        crate::error::AssociateDelegationSignerToDomainError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_associate_delegation_signer_to_domain_error(response)
+        } else {
+            crate::operation_deser::parse_associate_delegation_signer_to_domain_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CancelDomainTransferToAnotherAwsAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -274,6 +308,42 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableDomainTransferLoc
             crate::operation_deser::parse_disable_domain_transfer_lock_error(response)
         } else {
             crate::operation_deser::parse_disable_domain_transfer_lock_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DisassociateDelegationSignerFromDomain`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disassociate_delegation_signer_from_domain`](crate::client::Client::disassociate_delegation_signer_from_domain).
+///
+/// See [`crate::client::fluent_builders::DisassociateDelegationSignerFromDomain`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DisassociateDelegationSignerFromDomain {
+    _private: (),
+}
+impl DisassociateDelegationSignerFromDomain {
+    /// Creates a new builder-style object to manufacture [`DisassociateDelegationSignerFromDomainInput`](crate::input::DisassociateDelegationSignerFromDomainInput).
+    pub fn builder() -> crate::input::disassociate_delegation_signer_from_domain_input::Builder {
+        crate::input::disassociate_delegation_signer_from_domain_input::Builder::default()
+    }
+    /// Creates a new `DisassociateDelegationSignerFromDomain` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DisassociateDelegationSignerFromDomain {
+    type Output = std::result::Result<
+        crate::output::DisassociateDelegationSignerFromDomainOutput,
+        crate::error::DisassociateDelegationSignerFromDomainError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disassociate_delegation_signer_from_domain_error(response)
+        } else {
+            crate::operation_deser::parse_disassociate_delegation_signer_from_domain_response(
+                response,
+            )
         }
     }
 }
@@ -612,6 +682,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForDomain {
     }
 }
 
+/// Operation shape for `PushDomain`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`push_domain`](crate::client::Client::push_domain).
+///
+/// See [`crate::client::fluent_builders::PushDomain`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct PushDomain {
+    _private: (),
+}
+impl PushDomain {
+    /// Creates a new builder-style object to manufacture [`PushDomainInput`](crate::input::PushDomainInput).
+    pub fn builder() -> crate::input::push_domain_input::Builder {
+        crate::input::push_domain_input::Builder::default()
+    }
+    /// Creates a new `PushDomain` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PushDomain {
+    type Output =
+        std::result::Result<crate::output::PushDomainOutput, crate::error::PushDomainError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_push_domain_error(response)
+        } else {
+            crate::operation_deser::parse_push_domain_response(response)
+        }
+    }
+}
+
 /// Operation shape for `RegisterDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -745,6 +847,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ResendContactReachabilit
             crate::operation_deser::parse_resend_contact_reachability_email_error(response)
         } else {
             crate::operation_deser::parse_resend_contact_reachability_email_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ResendOperationAuthorization`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`resend_operation_authorization`](crate::client::Client::resend_operation_authorization).
+///
+/// See [`crate::client::fluent_builders::ResendOperationAuthorization`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ResendOperationAuthorization {
+    _private: (),
+}
+impl ResendOperationAuthorization {
+    /// Creates a new builder-style object to manufacture [`ResendOperationAuthorizationInput`](crate::input::ResendOperationAuthorizationInput).
+    pub fn builder() -> crate::input::resend_operation_authorization_input::Builder {
+        crate::input::resend_operation_authorization_input::Builder::default()
+    }
+    /// Creates a new `ResendOperationAuthorization` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ResendOperationAuthorization {
+    type Output = std::result::Result<
+        crate::output::ResendOperationAuthorizationOutput,
+        crate::error::ResendOperationAuthorizationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_resend_operation_authorization_error(response)
+        } else {
+            crate::operation_deser::parse_resend_operation_authorization_response(response)
         }
     }
 }

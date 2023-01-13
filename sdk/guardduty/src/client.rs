@@ -138,6 +138,7 @@ impl Client {
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDetector::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDetector::set_tags): <p>The tags to be added to a new detector resource.</p>
     /// - On success, responds with [`CreateDetectorOutput`](crate::output::CreateDetectorOutput) with field(s):
     ///   - [`detector_id(Option<String>)`](crate::output::CreateDetectorOutput::detector_id): <p>The unique ID of the created detector.</p>
+    ///   - [`unprocessed_data_sources(Option<UnprocessedDataSourcesResult>)`](crate::output::CreateDetectorOutput::unprocessed_data_sources): <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
     /// - On failure, responds with [`SdkError<CreateDetectorError>`](crate::error::CreateDetectorError)
     pub fn create_detector(&self) -> fluent_builders::CreateDetector {
         fluent_builders::CreateDetector::new(self.handle.clone())
@@ -146,8 +147,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_detector_id): <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_name): <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_description): <p>The description of the filter.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_name): <p>The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_description): <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
     ///   - [`action(FilterAction)`](crate::client::fluent_builders::CreateFilter::action) / [`set_action(Option<FilterAction>)`](crate::client::fluent_builders::CreateFilter::set_action): <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     ///   - [`rank(i32)`](crate::client::fluent_builders::CreateFilter::rank) / [`set_rank(i32)`](crate::client::fluent_builders::CreateFilter::set_rank): <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::CreateFilter::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::CreateFilter::set_finding_criteria): <p>Represents the criteria to be used in the filter for querying findings.</p>  <p>You can only use the following attributes to query findings:</p>  <ul>   <li> <p>accountId</p> </li>   <li> <p>region</p> </li>   <li> <p>confidence</p> </li>   <li> <p>id</p> </li>   <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>   <li> <p>resource.accessKeyDetails.principalId</p> </li>   <li> <p>resource.accessKeyDetails.userName</p> </li>   <li> <p>resource.accessKeyDetails.userType</p> </li>   <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>   <li> <p>resource.instanceDetails.imageId</p> </li>   <li> <p>resource.instanceDetails.instanceId</p> </li>   <li> <p>resource.instanceDetails.outpostArn</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>   <li> <p>resource.instanceDetails.tags.key</p> </li>   <li> <p>resource.instanceDetails.tags.value</p> </li>   <li> <p>resource.resourceType</p> </li>   <li> <p>service.action.actionType</p> </li>   <li> <p>service.action.awsApiCallAction.api</p> </li>   <li> <p>service.action.awsApiCallAction.callerType</p> </li>   <li> <p>service.action.awsApiCallAction.errorCode</p> </li>   <li> <p>service.action.awsApiCallAction.userAgent</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>   <li> <p>service.action.awsApiCallAction.serviceName</p> </li>   <li> <p>service.action.dnsRequestAction.domain</p> </li>   <li> <p>service.action.networkConnectionAction.blocked</p> </li>   <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>   <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>   <li> <p>service.action.networkConnectionAction.protocol</p> </li>   <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>   <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>   <li> <p>service.additionalInfo.threatListName</p> </li>   <li> <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li>   <li> <p>resource.s3BucketDetails.name</p> </li>   <li> <p>resource.s3BucketDetails.tags.key</p> </li>   <li> <p>resource.s3BucketDetails.tags.value</p> </li>   <li> <p>resource.s3BucketDetails.type</p> </li>   <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>   <li> <p>service.resourceRole</p> </li>   <li> <p>severity</p> </li>   <li> <p>type</p> </li>   <li> <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p> </li>  </ul>
@@ -514,7 +515,7 @@ impl Client {
     ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetMalwareScanSettings::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetMalwareScanSettings::set_detector_id): <p>The unique ID of the detector that the scan setting is associated with.</p>
     /// - On success, responds with [`GetMalwareScanSettingsOutput`](crate::output::GetMalwareScanSettingsOutput) with field(s):
     ///   - [`scan_resource_criteria(Option<ScanResourceCriteria>)`](crate::output::GetMalwareScanSettingsOutput::scan_resource_criteria): <p>Represents the criteria to be used in the filter for scanning resources.</p>
-    ///   - [`ebs_snapshot_preservation(Option<EbsSnapshotPreservation>)`](crate::output::GetMalwareScanSettingsOutput::ebs_snapshot_preservation): <p>An enum value representing possible snapshot preservations.</p>
+    ///   - [`ebs_snapshot_preservation(Option<EbsSnapshotPreservation>)`](crate::output::GetMalwareScanSettingsOutput::ebs_snapshot_preservation): <p>An enum value representing possible snapshot preservation settings.</p>
     /// - On failure, responds with [`SdkError<GetMalwareScanSettingsError>`](crate::error::GetMalwareScanSettingsError)
     pub fn get_malware_scan_settings(&self) -> fluent_builders::GetMalwareScanSettings {
         fluent_builders::GetMalwareScanSettings::new(self.handle.clone())
@@ -687,7 +688,7 @@ impl Client {
     ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::ListMembers::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::ListMembers::set_detector_id): <p>The unique ID of the detector the member is associated with.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMembers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListMembers::set_max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMembers::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
-    ///   - [`only_associated(impl Into<String>)`](crate::client::fluent_builders::ListMembers::only_associated) / [`set_only_associated(Option<String>)`](crate::client::fluent_builders::ListMembers::set_only_associated): <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
+    ///   - [`only_associated(impl Into<String>)`](crate::client::fluent_builders::ListMembers::only_associated) / [`set_only_associated(Option<String>)`](crate::client::fluent_builders::ListMembers::set_only_associated): <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html"> <code>Create Members</code> </a>. </p>
     /// - On success, responds with [`ListMembersOutput`](crate::output::ListMembersOutput) with field(s):
     ///   - [`members(Option<Vec<Member>>)`](crate::output::ListMembersOutput::members): <p>A list of members.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListMembersOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
@@ -821,7 +822,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFilter::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::UpdateFilter::set_detector_id): <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
     ///   - [`filter_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFilter::filter_name) / [`set_filter_name(Option<String>)`](crate::client::fluent_builders::UpdateFilter::set_filter_name): <p>The name of the filter.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFilter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFilter::set_description): <p>The description of the filter.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFilter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFilter::set_description): <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
     ///   - [`action(FilterAction)`](crate::client::fluent_builders::UpdateFilter::action) / [`set_action(Option<FilterAction>)`](crate::client::fluent_builders::UpdateFilter::set_action): <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     ///   - [`rank(i32)`](crate::client::fluent_builders::UpdateFilter::rank) / [`set_rank(i32)`](crate::client::fluent_builders::UpdateFilter::set_rank): <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::UpdateFilter::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::UpdateFilter::set_finding_criteria): <p>Represents the criteria to be used in the filter for querying findings.</p>
@@ -863,7 +864,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::UpdateMalwareScanSettings::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::UpdateMalwareScanSettings::set_detector_id): <p>The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.</p>
     ///   - [`scan_resource_criteria(ScanResourceCriteria)`](crate::client::fluent_builders::UpdateMalwareScanSettings::scan_resource_criteria) / [`set_scan_resource_criteria(Option<ScanResourceCriteria>)`](crate::client::fluent_builders::UpdateMalwareScanSettings::set_scan_resource_criteria): <p>Represents the criteria to be used in the filter for selecting resources to scan.</p>
-    ///   - [`ebs_snapshot_preservation(EbsSnapshotPreservation)`](crate::client::fluent_builders::UpdateMalwareScanSettings::ebs_snapshot_preservation) / [`set_ebs_snapshot_preservation(Option<EbsSnapshotPreservation>)`](crate::client::fluent_builders::UpdateMalwareScanSettings::set_ebs_snapshot_preservation): <p>An enum value representing possible snapshot preservations.</p>
+    ///   - [`ebs_snapshot_preservation(EbsSnapshotPreservation)`](crate::client::fluent_builders::UpdateMalwareScanSettings::ebs_snapshot_preservation) / [`set_ebs_snapshot_preservation(Option<EbsSnapshotPreservation>)`](crate::client::fluent_builders::UpdateMalwareScanSettings::set_ebs_snapshot_preservation): <p>An enum value representing possible snapshot preservation settings.</p>
     /// - On success, responds with [`UpdateMalwareScanSettingsOutput`](crate::output::UpdateMalwareScanSettingsOutput)
 
     /// - On failure, responds with [`SdkError<UpdateMalwareScanSettingsError>`](crate::error::UpdateMalwareScanSettingsError)
@@ -1425,22 +1426,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_id(input);
             self
         }
-        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
+        /// <p>The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
+        /// <p>The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The description of the filter.</p>
+        /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the filter.</p>
+        /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -2889,7 +2890,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeMalwareScans`.
     ///
-    /// <p>Returns a list of malware scans.</p>
+    /// <p>Returns a list of malware scans. Each member account can view the malware scans for their own accounts. An administrator can view the malware scans for all the member accounts.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMalwareScans {
         handle: std::sync::Arc<super::Handle>,
@@ -3402,7 +3403,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateMembers`.
     ///
-    /// <p>Disassociates GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account IDs.</p>
+    /// <p>Disassociates GuardDuty member accounts (to the current administrator account) specified by the account IDs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMembers {
         handle: std::sync::Arc<super::Handle>,
@@ -5597,12 +5598,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
+        /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html"> <code>Create Members</code> </a>. </p>
         pub fn only_associated(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.only_associated(input.into());
             self
         }
-        /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
+        /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html"> <code>Create Members</code> </a>. </p>
         pub fn set_only_associated(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6621,12 +6622,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_name(input);
             self
         }
-        /// <p>The description of the filter.</p>
+        /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the filter.</p>
+        /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -6976,7 +6977,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scan_resource_criteria(input);
             self
         }
-        /// <p>An enum value representing possible snapshot preservations.</p>
+        /// <p>An enum value representing possible snapshot preservation settings.</p>
         pub fn ebs_snapshot_preservation(
             mut self,
             input: crate::model::EbsSnapshotPreservation,
@@ -6984,7 +6985,7 @@ pub mod fluent_builders {
             self.inner = self.inner.ebs_snapshot_preservation(input);
             self
         }
-        /// <p>An enum value representing possible snapshot preservations.</p>
+        /// <p>An enum value representing possible snapshot preservation settings.</p>
         pub fn set_ebs_snapshot_preservation(
             mut self,
             input: std::option::Option<crate::model::EbsSnapshotPreservation>,

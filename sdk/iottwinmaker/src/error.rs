@@ -600,6 +600,70 @@ impl ConnectorFailureException {
     }
 }
 
+/// <p>The query timeout exception.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct QueryTimeoutException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl QueryTimeoutException {
+    /// Returns `Some(ErrorKind)` if the error is retryable. Otherwise, returns `None`.
+    pub fn retryable_error_kind(&self) -> aws_smithy_types::retry::ErrorKind {
+        aws_smithy_types::retry::ErrorKind::ClientError
+    }
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for QueryTimeoutException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "QueryTimeoutException")?;
+        if let Some(inner_11) = &self.message {
+            {
+                write!(f, ": {}", inner_11)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for QueryTimeoutException {}
+/// See [`QueryTimeoutException`](crate::error::QueryTimeoutException).
+pub mod query_timeout_exception {
+
+    /// A builder for [`QueryTimeoutException`](crate::error::QueryTimeoutException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueryTimeoutException`](crate::error::QueryTimeoutException).
+        pub fn build(self) -> crate::error::QueryTimeoutException {
+            crate::error::QueryTimeoutException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl QueryTimeoutException {
+    /// Creates a new builder-style object to manufacture [`QueryTimeoutException`](crate::error::QueryTimeoutException).
+    pub fn builder() -> crate::error::query_timeout_exception::Builder {
+        crate::error::query_timeout_exception::Builder::default()
+    }
+}
+
 /// Error type for the `BatchPutPropertyValues` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1207,6 +1271,157 @@ impl std::error::Error for CreateSceneError {
     }
 }
 
+/// Error type for the `CreateSyncJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateSyncJobError {
+    /// Kind of error that occurred.
+    pub kind: CreateSyncJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateSyncJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateSyncJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateSyncJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateSyncJobErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A conflict occurred.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error has occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The service quota was exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The rate exceeds the limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Failed</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateSyncJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateSyncJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateSyncJobErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateSyncJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateSyncJobErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateSyncJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateSyncJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateSyncJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateSyncJobError {
+    fn code(&self) -> Option<&str> {
+        CreateSyncJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateSyncJobError {
+    /// Creates a new `CreateSyncJobError`.
+    pub fn new(kind: CreateSyncJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateSyncJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateSyncJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateSyncJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateSyncJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateSyncJobErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, CreateSyncJobErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `CreateSyncJobErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateSyncJobErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateSyncJobErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSyncJobErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateSyncJobErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSyncJobErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateSyncJobErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateSyncJobErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `CreateSyncJobErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, CreateSyncJobErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for CreateSyncJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateSyncJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateSyncJobErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateSyncJobErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateSyncJobErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateSyncJobErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateSyncJobErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateSyncJobErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `CreateWorkspace` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1799,6 +2014,160 @@ impl std::error::Error for DeleteSceneError {
     }
 }
 
+/// Error type for the `DeleteSyncJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteSyncJobError {
+    /// Kind of error that occurred.
+    pub kind: DeleteSyncJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteSyncJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteSyncJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteSyncJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteSyncJobErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error has occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource wasn't found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The service quota was exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The rate exceeds the limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Failed</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteSyncJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteSyncJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteSyncJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteSyncJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteSyncJobErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            DeleteSyncJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteSyncJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteSyncJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteSyncJobError {
+    fn code(&self) -> Option<&str> {
+        DeleteSyncJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteSyncJobError {
+    /// Creates a new `DeleteSyncJobError`.
+    pub fn new(kind: DeleteSyncJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteSyncJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteSyncJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteSyncJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteSyncJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteSyncJobErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, DeleteSyncJobErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteSyncJobErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSyncJobErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteSyncJobErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSyncJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteSyncJobErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSyncJobErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteSyncJobErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteSyncJobErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteSyncJobErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DeleteSyncJobErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for DeleteSyncJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteSyncJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteSyncJobErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteSyncJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteSyncJobErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            DeleteSyncJobErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteSyncJobErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteSyncJobErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DeleteWorkspace` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1945,6 +2314,162 @@ impl std::error::Error for DeleteWorkspaceError {
     }
 }
 
+/// Error type for the `ExecuteQuery` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ExecuteQueryError {
+    /// Kind of error that occurred.
+    pub kind: ExecuteQueryErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ExecuteQueryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ExecuteQueryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ExecuteQuery` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ExecuteQueryErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error has occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The query timeout exception.</p>
+    QueryTimeoutException(crate::error::QueryTimeoutException),
+    /// <p>The service quota was exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The rate exceeds the limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Failed</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ExecuteQueryError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ExecuteQueryErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ExecuteQueryErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ExecuteQueryErrorKind::QueryTimeoutException(_inner) => _inner.fmt(f),
+            ExecuteQueryErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            ExecuteQueryErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ExecuteQueryErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ExecuteQueryErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ExecuteQueryError {
+    fn code(&self) -> Option<&str> {
+        ExecuteQueryError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            ExecuteQueryErrorKind::QueryTimeoutException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl ExecuteQueryError {
+    /// Creates a new `ExecuteQueryError`.
+    pub fn new(kind: ExecuteQueryErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ExecuteQueryError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ExecuteQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ExecuteQueryError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ExecuteQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ExecuteQueryErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, ExecuteQueryErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `ExecuteQueryErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteQueryErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExecuteQueryErrorKind::QueryTimeoutException`.
+    pub fn is_query_timeout_exception(&self) -> bool {
+        matches!(&self.kind, ExecuteQueryErrorKind::QueryTimeoutException(_))
+    }
+    /// Returns `true` if the error kind is `ExecuteQueryErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteQueryErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExecuteQueryErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ExecuteQueryErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ExecuteQueryErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ExecuteQueryErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ExecuteQueryError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ExecuteQueryErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ExecuteQueryErrorKind::InternalServerException(_inner) => Some(_inner),
+            ExecuteQueryErrorKind::QueryTimeoutException(_inner) => Some(_inner),
+            ExecuteQueryErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            ExecuteQueryErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ExecuteQueryErrorKind::ValidationException(_inner) => Some(_inner),
+            ExecuteQueryErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `GetComponentType` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1974,6 +2499,8 @@ pub enum GetComponentTypeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Failed</p>
+    ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -1991,6 +2518,7 @@ impl std::fmt::Display for GetComponentTypeError {
             GetComponentTypeErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             GetComponentTypeErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             GetComponentTypeErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetComponentTypeErrorKind::ValidationException(_inner) => _inner.fmt(f),
             GetComponentTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2073,6 +2601,13 @@ impl GetComponentTypeError {
             GetComponentTypeErrorKind::ThrottlingException(_)
         )
     }
+    /// Returns `true` if the error kind is `GetComponentTypeErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetComponentTypeErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for GetComponentTypeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2081,6 +2616,7 @@ impl std::error::Error for GetComponentTypeError {
             GetComponentTypeErrorKind::InternalServerException(_inner) => Some(_inner),
             GetComponentTypeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetComponentTypeErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetComponentTypeErrorKind::ValidationException(_inner) => Some(_inner),
             GetComponentTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -2222,6 +2758,141 @@ impl std::error::Error for GetEntityError {
             GetEntityErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetEntityErrorKind::ValidationException(_inner) => Some(_inner),
             GetEntityErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetPricingPlan` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetPricingPlanError {
+    /// Kind of error that occurred.
+    pub kind: GetPricingPlanErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetPricingPlanError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetPricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetPricingPlan` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetPricingPlanErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error has occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The rate exceeds the limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Failed</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetPricingPlanError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetPricingPlanErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetPricingPlanErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetPricingPlanErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetPricingPlanErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetPricingPlanErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetPricingPlanError {
+    fn code(&self) -> Option<&str> {
+        GetPricingPlanError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetPricingPlanError {
+    /// Creates a new `GetPricingPlanError`.
+    pub fn new(kind: GetPricingPlanErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetPricingPlanError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetPricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetPricingPlanError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetPricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetPricingPlanErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPricingPlanErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetPricingPlanErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPricingPlanErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetPricingPlanErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetPricingPlanErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `GetPricingPlanErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetPricingPlanErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for GetPricingPlanError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetPricingPlanErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetPricingPlanErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetPricingPlanErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetPricingPlanErrorKind::ValidationException(_inner) => Some(_inner),
+            GetPricingPlanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2711,6 +3382,157 @@ impl std::error::Error for GetSceneError {
             GetSceneErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetSceneErrorKind::ValidationException(_inner) => Some(_inner),
             GetSceneErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetSyncJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetSyncJobError {
+    /// Kind of error that occurred.
+    pub kind: GetSyncJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetSyncJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetSyncJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetSyncJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetSyncJobErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error has occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource wasn't found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The service quota was exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The rate exceeds the limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Failed</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetSyncJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetSyncJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetSyncJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetSyncJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetSyncJobErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            GetSyncJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetSyncJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetSyncJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetSyncJobError {
+    fn code(&self) -> Option<&str> {
+        GetSyncJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetSyncJobError {
+    /// Creates a new `GetSyncJobError`.
+    pub fn new(kind: GetSyncJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetSyncJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetSyncJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetSyncJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetSyncJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetSyncJobErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetSyncJobErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetSyncJobErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, GetSyncJobErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `GetSyncJobErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSyncJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetSyncJobErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSyncJobErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetSyncJobErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetSyncJobErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `GetSyncJobErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetSyncJobErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for GetSyncJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetSyncJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetSyncJobErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetSyncJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetSyncJobErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            GetSyncJobErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetSyncJobErrorKind::ValidationException(_inner) => Some(_inner),
+            GetSyncJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3262,6 +4084,301 @@ impl std::error::Error for ListScenesError {
             ListScenesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListScenesErrorKind::ValidationException(_inner) => Some(_inner),
             ListScenesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListSyncJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListSyncJobsError {
+    /// Kind of error that occurred.
+    pub kind: ListSyncJobsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListSyncJobsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListSyncJobsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListSyncJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListSyncJobsErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error has occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The service quota was exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The rate exceeds the limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Failed</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListSyncJobsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListSyncJobsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListSyncJobsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListSyncJobsErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            ListSyncJobsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListSyncJobsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListSyncJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListSyncJobsError {
+    fn code(&self) -> Option<&str> {
+        ListSyncJobsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListSyncJobsError {
+    /// Creates a new `ListSyncJobsError`.
+    pub fn new(kind: ListSyncJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListSyncJobsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListSyncJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListSyncJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListSyncJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListSyncJobsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, ListSyncJobsErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `ListSyncJobsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSyncJobsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSyncJobsErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSyncJobsErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSyncJobsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ListSyncJobsErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ListSyncJobsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ListSyncJobsErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ListSyncJobsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListSyncJobsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListSyncJobsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListSyncJobsErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            ListSyncJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListSyncJobsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListSyncJobsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListSyncResources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListSyncResourcesError {
+    /// Kind of error that occurred.
+    pub kind: ListSyncResourcesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListSyncResourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListSyncResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListSyncResources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListSyncResourcesErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error has occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The service quota was exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The rate exceeds the limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Failed</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListSyncResourcesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListSyncResourcesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListSyncResourcesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListSyncResourcesErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            ListSyncResourcesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListSyncResourcesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListSyncResourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListSyncResourcesError {
+    fn code(&self) -> Option<&str> {
+        ListSyncResourcesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListSyncResourcesError {
+    /// Creates a new `ListSyncResourcesError`.
+    pub fn new(kind: ListSyncResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListSyncResourcesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListSyncResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListSyncResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListSyncResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListSyncResourcesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSyncResourcesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSyncResourcesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSyncResourcesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSyncResourcesErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSyncResourcesErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSyncResourcesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSyncResourcesErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSyncResourcesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSyncResourcesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListSyncResourcesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListSyncResourcesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListSyncResourcesErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListSyncResourcesErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            ListSyncResourcesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListSyncResourcesErrorKind::ValidationException(_inner) => Some(_inner),
+            ListSyncResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4081,6 +5198,147 @@ impl std::error::Error for UpdateEntityError {
             UpdateEntityErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateEntityErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateEntityErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdatePricingPlan` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdatePricingPlanError {
+    /// Kind of error that occurred.
+    pub kind: UpdatePricingPlanErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdatePricingPlanError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdatePricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdatePricingPlan` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdatePricingPlanErrorKind {
+    /// <p>Access is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error has occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The rate exceeds the limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Failed</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdatePricingPlanError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdatePricingPlanErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdatePricingPlanErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdatePricingPlanErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdatePricingPlanErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdatePricingPlanErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdatePricingPlanError {
+    fn code(&self) -> Option<&str> {
+        UpdatePricingPlanError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdatePricingPlanError {
+    /// Creates a new `UpdatePricingPlanError`.
+    pub fn new(kind: UpdatePricingPlanErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdatePricingPlanError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdatePricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdatePricingPlanError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdatePricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdatePricingPlanErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePricingPlanErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdatePricingPlanErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePricingPlanErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdatePricingPlanErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePricingPlanErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdatePricingPlanErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePricingPlanErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdatePricingPlanError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdatePricingPlanErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdatePricingPlanErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdatePricingPlanErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdatePricingPlanErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdatePricingPlanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
